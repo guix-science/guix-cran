@@ -278,43 +278,6 @@ parts of the data and start values can differ between the expected latent
 classes.")
     (license license:expat)))
 
-(define-public r-hypsoloop
-  (package
-    (name "r-hypsoloop")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hypsoLoop" version))
-       (sha256
-        (base32 "0kwxzw2r406li2pmby92a3jik4k3z1vdgs54m4q45a8r8vz3y1nn"))))
-    (properties `((upstream-name . "hypsoLoop")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-stars
-                             r-sjplot
-                             r-sf
-                             r-polynomf
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hypsoLoop")
-    (synopsis "Tool Used to Conduct Hypsometric Analysis of a Watershed")
-    (description
-     "This package provides functions for generating tables required for drawing and
-calculating hypsometric curves and hypsometric integrals.  These functions
-accept as input the DEM of the region of interest (your watershed) and a spatial
-data frame file specifying delineation of sub-catchments within the watershed.
-They then generate output in the form of PNG images and HTML files contained in
-a folder named \"HYPSO_OUTPUT\" created in the current directory.  S. K. Sharma,
-S. Gajbhiye, et al. (2018) <doi:10.1007/978-981-10-5801-1_19>.  Omvir Singh, A.
-Sarangi, and Milap C. Sharma (2006) <doi:10.1007/s11269-008-9242-z>.  James A.
-Vanderwaal and Herbert Ssegane (2013) <doi:10.1111/jawr.12089>.")
-    (license license:gpl3)))
-
 (define-public r-hypr
   (package
     (name "r-hypr")
@@ -5983,13 +5946,13 @@ experiments.")
 (define-public r-hmmtmb
   (package
     (name "r-hmmtmb")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmmTMB" version))
        (sha256
-        (base32 "0h0rx244jk34p7s2c40w0vhfgnhr1jkkzkjzj1scc2s6gh7vcbff"))))
+        (base32 "10rbwhi7zisb9r5nn6hkr3spdcbn8jisb9w80m95fmd988wsjr64"))))
     (properties `((upstream-name . "hmmTMB")))
     (build-system r-build-system)
     (arguments
@@ -11103,13 +11066,13 @@ Markov models), etc.")
 (define-public r-hedgehog
   (package
     (name "r-hedgehog")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hedgehog" version))
        (sha256
-        (base32 "1mvjnm2zlc4pvw9vnhxr0dj1g1sfqvlrnnhcipzfbvr147yan9l5"))))
+        (base32 "001f7cr6mdfv72nj23p09vj28y37z70ip5s2wfzr49kpq8x65rwy"))))
     (properties `((upstream-name . "hedgehog")))
     (build-system r-build-system)
     (arguments
@@ -11117,7 +11080,7 @@ Markov models), etc.")
       #:tests? #f))
     (propagated-inputs (list r-testthat r-rlang))
     (native-inputs (list r-knitr))
-    (home-page "https://hedgehog.qa")
+    (home-page "https://github.com/hedgehogqa")
     (synopsis "Property-Based Testing")
     (description
      "Hedgehog will eat all your bugs.  Hedgehog is a property-based testing package
@@ -12624,19 +12587,19 @@ calibration, and comparison for high-dimensional data.")
 (define-public r-hdmtd
   (package
     (name "r-hdmtd")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdMTD" version))
        (sha256
-        (base32 "0q1d74dsx6b5dri422vfnk6xv29g478pvj9rwmm8skgk1zg07vz6"))))
+        (base32 "143gdpnmmmb3z7ai3nwbr0nwbg3dqy4hy01r9adpyhfplsaqrx18"))))
     (properties `((upstream-name . "hdMTD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-purrr r-dplyr))
+    (propagated-inputs (list r-purrr r-igraph r-dplyr))
     (home-page "https://github.com/MaiaraGripp/hdMTD")
     (synopsis
      "Inference for High-Dimensional Mixture Transition Distribution Models")

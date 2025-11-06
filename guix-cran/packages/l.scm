@@ -9707,13 +9707,13 @@ the visualizations are based on rigorous statistical models.")
 (define-public r-lipidms
   (package
     (name "r-lipidms")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LipidMS" version))
        (sha256
-        (base32 "14p0p2a717nb3c3rzaakjv641fz6gajpsrbf5qa0vs7kfpmq06b7"))))
+        (base32 "074ix4zzf610w7brl0isilhnb647dbj16f11nijac6kcwlw9klkm"))))
     (properties `((upstream-name . "LipidMS")))
     (build-system r-build-system)
     (arguments
@@ -11726,13 +11726,13 @@ wavelet lifting scales and wavelet energy of Knight et al (2017)
 (define-public r-lifertable
   (package
     (name "r-lifertable")
-    (version "0.1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Lifertable" version))
        (sha256
-        (base32 "0zvm9ayr3r0bs9bpan04wipwm6ghxgh90bj902km3n8m2bc4h3n0"))))
+        (base32 "1n6lmxdalxbrlwbvdx114jriiwgxbkjpddk6qwv7kxhr9n14yifg"))))
     (properties `((upstream-name . "Lifertable")))
     (build-system r-build-system)
     (arguments
@@ -11746,10 +11746,8 @@ wavelet lifting scales and wavelet energy of Knight et al (2017)
 populations.  This package provides utilities for constructing Life Tables and
 Fertility Tables, related demographic parameters, and some simple graphs of
 interest.  It also offers functions to transform the obtained data into a known
-format for better manipulation.  This document is based on the article by Maia,
-Luiz, and Campanhola \"Statistical Inference on Associated Fertility Life Table
-Parameters Using Jackknife Technique Computational Aspects\" (April 2000, Journal
-of Economic Entomology, Volume 93, Issue 2) <doi:10.1603/0022-0493-93.2.511>.")
+format for better manipulation.  In addition, two methods for obtaining the
+confidence interval are included.")
     (license license:expat)))
 
 (define-public r-lifer
@@ -17331,6 +17329,32 @@ Bayesian learning: the partially CFA (Chen, Guo, Zhang, & Pan, 2020) <DOI:
 10.1080/10705511.2020.1854763>; Fully and partially EFA.")
     (license license:gpl3)))
 
+(define-public r-lavinteract
+  (package
+    (name "r-lavinteract")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lavinteract" version))
+       (sha256
+        (base32 "0zb374v0l02fj4ch2id04jci958lzcdg34p26pyrd74rclnj5wfz"))))
+    (properties `((upstream-name . "lavinteract")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-lavaan r-ggplot2))
+    (home-page "https://github.com/g-corbelli/lavinteract")
+    (synopsis "Post-Estimation Utilities for 'lavaan' Fitted Models")
+    (description
+     "Companion toolbox for structural equation models fitted with lavaan'.  Provides
+post-estimation diagnostics and graphics that operate directly on a fitted
+object using its estimates and covariance, and refits auxiliary models when
+needed.  The package relies on lavaan (Rosseel, 2012)
+<doi:10.18637/jss.v048.i02>.")
+    (license license:gpl3)))
+
 (define-public r-lavasearch2
   (package
     (name "r-lavasearch2")
@@ -17982,13 +18006,13 @@ Chandrasekaran, V., Parrilo, P. A. & Willsky, A. S. (2012)
 (define-public r-latentfactor
   (package
     (name "r-latentfactor")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latentFactoR" version))
        (sha256
-        (base32 "0zcvy7dafigv2zwjyyiwrs7zjn2j933ynfbwsk6qgzfbw1khh9bk"))))
+        (base32 "115caxpsc1fcidgh1gdvalfh60yj2c913zh5nm13byx9c3rm3aay"))))
     (properties `((upstream-name . "latentFactoR")))
     (build-system r-build-system)
     (arguments
@@ -18005,6 +18029,7 @@ Chandrasekaran, V., Parrilo, P. A. & Willsky, A. S. (2012)
                              r-googledrive
                              r-fspe
                              r-eganet
+                             r-car
                              r-bbmisc))
     (home-page "https://cran.r-project.org/package=latentFactoR")
     (synopsis "Data Simulation Based on Latent Factors")

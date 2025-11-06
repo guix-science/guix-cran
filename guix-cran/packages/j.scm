@@ -1270,13 +1270,13 @@ of Anatomy in the Faculty of Medicine at KKU in Khon Kaen.")
 (define-public r-jsdm
   (package
     (name "r-jsdm")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jSDM" version))
        (sha256
-        (base32 "1rqy6xh6qhvmfgjnjlbkq71dr6c0fdwddvs7cbvv1p5qvf12zhx9"))))
+        (base32 "0bri27gsdabi1im6bf4811hjqrvxx105mli2clyn0q4ry4rhkd33"))))
     (properties `((upstream-name . "jSDM")))
     (build-system r-build-system)
     (arguments
@@ -4472,13 +4472,13 @@ deep-neural networks using tensorflow'.")
 (define-public r-jane
   (package
     (name "r-jane")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JANE" version))
        (sha256
-        (base32 "0cwsgdkfd94wzm86q53swlh4dvzgigl2wfpbvycsrnbh6r4bv2ly"))))
+        (base32 "1mgcndi427rjyy81idwhxnb9ql1y10vahz3n1qdz37fkimp37gjp"))))
     (properties `((upstream-name . "JANE")))
     (build-system r-build-system)
     (arguments
@@ -4499,7 +4499,7 @@ deep-neural networks using tensorflow'.")
                              r-extradistr
                              r-aricode))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/a1arakkal/JANE")
+    (home-page "https://a1arakkal.github.io/JANE/")
     (synopsis "Just Another Latent Space Network Clustering Algorithm")
     (description
      "Fit latent space network cluster models using an expectation-maximization

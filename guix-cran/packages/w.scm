@@ -5461,6 +5461,48 @@ messages, extracting timestamps from messages, extracting and anonymizing author
 names from messages.  Can be used to create anonymized versions of data.")
     (license license:gpl3)))
 
+(define-public r-whatifbandit
+  (package
+    (name "r-whatifbandit")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "whatifbandit" version))
+       (sha256
+        (base32 "1jskymg8n0axjli902g98s73xl07m0r416826sica3h7f9aqx45a"))))
+    (properties `((upstream-name . "whatifbandit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-randomizr
+                             r-purrr
+                             r-lubridate
+                             r-ggplot2
+                             r-furrr
+                             r-dplyr
+                             r-data-table
+                             r-bandit))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Noch05/whatifbandit")
+    (synopsis "Analyzing Randomized Experiments as Multi-Arm Bandits")
+    (description
+     "Simulates the results of completed randomized controlled trials, as if they had
+been conducted as adaptive Multi-Arm Bandit (MAB) trials instead.  Augmented
+inverse probability weighted estimation (AIPW), outlined by Hadad et al. (2021)
+<doi:10.1073/pnas.2014602118>, is used to robustly estimate the probability of
+success for each treatment arm under the adaptive design.  Provides
+customization options to simulate perfect/imperfect information,
+stationary/non-stationary bandits, blocked treatment assignments, along with
+control augmentation, and other hybrid strategies for assigning treatment arms.
+The methods used in simulation were inspired by Offer-Westort et al. (2021)
+<doi:10.1111/ajps.12597>.")
+    (license license:gpl3+)))
+
 (define-public r-whatif
   (package
     (name "r-whatif")
@@ -8495,13 +8537,13 @@ datasets.")
 (define-public r-wayfindr
   (package
     (name "r-wayfindr")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WayFindR" version))
        (sha256
-        (base32 "11xq2lgy0qnscj4vs7h4c960vvy1dli9zmd1h10wvaw96hl4w441"))))
+        (base32 "197l08ppgl874cpchjd28ji7anc3k86simm5pgbc2hjxdd0v2df3"))))
     (properties `((upstream-name . "WayFindR")))
     (build-system r-build-system)
     (arguments
@@ -8509,7 +8551,6 @@ datasets.")
       #:tests? #f))
     (propagated-inputs (list r-xml
                              r-rgraphviz
-                             r-pubchemr
                              r-org-hs-eg-db
                              r-keggrest
                              r-igraph

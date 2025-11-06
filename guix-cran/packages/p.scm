@@ -2513,6 +2513,44 @@ implements the mixture of truncated normals model for p-hacking described in
 Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
     (license license:gpl3)))
 
+(define-public r-publicationbiasbenchmark
+  (package
+    (name "r-publicationbiasbenchmark")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PublicationBiasBenchmark" version))
+       (sha256
+        (base32 "1pll1lh2jgfqvc0lda7wzdfkvapacwwmaaqa6qma00nw5dlpxp05"))))
+    (properties `((upstream-name . "PublicationBiasBenchmark")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-rdpack
+                             r-pwr
+                             r-puniform
+                             r-osfr
+                             r-numderiv
+                             r-metafor
+                             r-mass
+                             r-lmtest
+                             r-clubsandwich))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FBartos/PublicationBiasBenchmark")
+    (synopsis "Benchmark for Publication Bias Correction Methods")
+    (description
+     "This package implements a unified interface for benchmarking meta-analytic
+publication bias correction methods through simulation studies (see BartoÅ¡ et
+al., 2022, <doi:10.48550/@code{arXiv.2510.19489>}).  It provides 1) predefined
+data-generating mechanisms from the literature, 2) functions for running
+meta-analytic methods on simulated data, 3) pre-simulated datasets and
+pre-computed results for reproducible benchmarks, 4) tools for visualizing and
+comparing method performance.")
+    (license license:gpl3)))
+
 (define-public r-publicationbias
   (package
     (name "r-publicationbias")
@@ -2662,13 +2700,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "0d84w2ms3dndv3r59hg01mzlah5ksl2n53q5zp5kzwd6g7npnjgm"))))
+        (base32 "1lw7m8p1242akc57x4v1ipq834ja3l09mwrb9ydf16j1s3cxbmbw"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (arguments
@@ -10082,13 +10120,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "0xbnz8yp8kcm1vpj2sq7mry94l18vzjs3jqrn73kq1iq9phggyi1"))))
+        (base32 "1dhdxannwhrbqjnqkanzcrp01yxnklgywdr7wnrjkmwi6sk7ijjv"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (arguments
@@ -12665,13 +12703,13 @@ models (glm) and local polynomial regression fittings (loess).")
 (define-public r-predhy-gui
   (package
     (name "r-predhy-gui")
-    (version "2.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy.GUI" version))
        (sha256
-        (base32 "1cpdh7d7h6d03wbhrrgfx01q1n998dq07jrk0702ydvq4zqga0ia"))))
+        (base32 "04vw4s4rjg7d7jldknsqxg4v7iq79lay8kd9nghd7jpy088iywyl"))))
     (properties `((upstream-name . "predhy.GUI")))
     (build-system r-build-system)
     (arguments
@@ -12700,7 +12738,10 @@ reproducing kernel Hilbert space, PLS: partial least squares regression, LASSO:
 least absolute shrinkage and selection operator, XGBoost: extreme gradient
 boosting, @code{LightGBM}: light gradient boosting machine.  It also provides
 fast cross-validation and mating design scheme for training population (Xu S et
-al (2016) <doi:10.1111/tpj.13242>; Xu S (2017) <doi:10.1534/g3.116.038059>).")
+al (2016) <doi:10.1111/tpj.13242>; Xu S (2017) <doi:10.1534/g3.116.038059>).  A
+complete manual for this package is provided in the manual folder of the package
+installation directory.  You can locate the manual by running the following
+command in R: system.file(\"manual\", package = \"predhy.GUI\").")
     (license license:gpl3)))
 
 (define-public r-predhy
@@ -13102,13 +13143,13 @@ hinge and linear functions of the predictor variables.")
 (define-public r-prda
   (package
     (name "r-prda")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRDA" version))
        (sha256
-        (base32 "1lklwfakd54ylm5gizq36ng6498c2izapsz9yz2a95cjf860rr23"))))
+        (base32 "0wmwk3irjlr76pdbz2x2i8y4fmvc2ivn36wwzw100ndj43qw4k4d"))))
     (properties `((upstream-name . "PRDA")))
     (build-system r-build-system)
     (arguments
@@ -16803,13 +16844,13 @@ chosen.")
 (define-public r-portfoliotester
   (package
     (name "r-portfoliotester")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PortfolioTesteR" version))
        (sha256
-        (base32 "08lykrgsflzfp9kz52m7cg9j8arrk3w88x6x70dyq1kikg6kbrdc"))))
+        (base32 "0ib1ivvyc2a3s52bsywcivwzpg1sh020svbrr5004j2k9kdwi23y"))))
     (properties `((upstream-name . "PortfolioTesteR")))
     (build-system r-build-system)
     (arguments
@@ -17890,13 +17931,13 @@ stability or stationarity, and diagnostic and manipulation tools.")
 (define-public r-popcomm
   (package
     (name "r-popcomm")
-    (version "0.1.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopComm" version))
        (sha256
-        (base32 "0szj0a6k64bkwslig62rncf9mam316nrq0aw1352v8nm821jkglm"))))
+        (base32 "1f6b3kvmwylsxrhirfs8i5i1db5cins9sj5bjnnf50hxrvw0zvl9"))))
     (properties `((upstream-name . "PopComm")))
     (build-system r-build-system)
     (arguments
@@ -17919,8 +17960,9 @@ stability or stationarity, and diagnostic and manipulation tools.")
                              r-ggpubr
                              r-ggplot2
                              r-dplyr
+                             r-cowplot
                              r-broom))
-    (home-page "https://cran.r-project.org/package=PopComm")
+    (home-page "https://github.com/JusticeGO/PopComm")
     (synopsis "Population-Level Cell-Cell Communication Analysis Tools")
     (description
      "Facilitates population-level analysis of ligand-receptor (LR) interactions using
@@ -29659,13 +29701,13 @@ population of European Brown Hares settled in central Italy.")
 (define-public r-phsopendata
   (package
     (name "r-phsopendata")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phsopendata" version))
        (sha256
-        (base32 "033zksm4cc4g65qym74vq4kn0fd3hj1qc739d9glbwqqj5iqj90b"))))
+        (base32 "0nls7ib12dg6z1nyn0a5wk52i8dq327b83ims811qc453vm96jjf"))))
     (properties `((upstream-name . "phsopendata")))
     (build-system r-build-system)
     (arguments
@@ -29674,6 +29716,7 @@ population of European Brown Hares settled in central Italy.")
     (propagated-inputs (list r-tibble
                              r-stringdist
                              r-rlang
+                             r-readr
                              r-purrr
                              r-magrittr
                              r-httr
@@ -33422,6 +33465,41 @@ SEmi-integrated Likelihood (PESEL).  See Piotr Sobczyk, Malgorzata Bogdan, Julie
 Josse \"Bayesian dimensionality reduction with PCA using penalized
 semi-integrated likelihood\" (2017) <doi:10.1080/10618600.2017.1340302>.")
     (license license:gpl3)))
+
+(define-public r-pervasive
+  (package
+    (name "r-pervasive")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pervasive" version))
+       (sha256
+        (base32 "18943nr011dy39dgzvpx2hkf276v89ckgxqxr7dfral05ljm9gk4"))))
+    (properties `((upstream-name . "pervasive")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-psych r-dplyr r-arules))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pervasive")
+    (synopsis "Pervasiveness Functions for Correlational Data")
+    (description
+     "Analysis of pervasiveness of effects in correlational data.  The Observed
+Proportion (or Percentage) of Concordant Pairs (OPCP) is Kendall's Tau expressed
+on a 0 to 1 metric instead of the traditional -1 to 1 metric to facilitate
+interpretation.  As its name implies, it represents the proportion of concordant
+pairs in a sample (with an adjustment for ties).  Pairs are concordant when a
+participant who has a larger value on a variable than another participant also
+has a larger value on a second variable.  The OPCP is therefore an easily
+interpretable indicator of monotonicity.  The pervasive functions are
+essentially wrappers for the arules package by Hahsler et al.
+(2025)<doi:10.32614/CRAN.package.arules> and serve to count individuals who
+actually display the pattern(s) suggested by a regression.  For more details,
+see the paper \"Considering approaches to pervasiveness in the context of
+personality psychology\" now accepted at the journal Personality Science.")
+    (license license:expat)))
 
 (define-public r-perutimber
   (package
@@ -44014,6 +44092,56 @@ it can create documents in many formats (for more information see
     (description
      "This package provides a set of tools to install, manage and run several Pandoc
 versions.")
+    (license license:expat)))
+
+(define-public r-pandemonium
+  (package
+    (name "r-pandemonium")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pandemonium" version))
+       (sha256
+        (base32 "1sryfw4sfsl31rp49r4bk9r21kx4yiyl69dzl6g63fhd44smj4cb"))))
+    (properties `((upstream-name . "pandemonium")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-uwot
+                             r-tourr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-shinythemes
+                             r-shinyfeedback
+                             r-shiny
+                             r-rtsne
+                             r-rlang
+                             r-rcolorbrewer
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-ggpcp
+                             r-fpc
+                             r-dt
+                             r-dplyr
+                             r-detourr
+                             r-dendextend
+                             r-crosstalk
+                             r-alphahull))
+    (native-inputs (list r-knitr))
+    (home-page "https://gabrielmccoy.github.io/pandemonium/")
+    (synopsis "High Dimensional Analysis in Linked Spaces")
+    (description
+     "This package provides a shiny GUI that performs high dimensional cluster
+analysis.  This tool performs data preparation, clustering and visualisation
+within a dynamic GUI. With interactive methods allowing the user to change
+settings all without having to to leave the GUI. An earlier version of this
+package was described in Laa and Valencia (2022)
+<doi:10.1140/epjp/s13360-021-02310-1>.")
     (license license:expat)))
 
 (define-public r-pandemics

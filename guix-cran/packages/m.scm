@@ -655,13 +655,13 @@ package helps you to go between them.")
 (define-public r-mwcsr
   (package
     (name "r-mwcsr")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mwcsr" version))
        (sha256
-        (base32 "09pw4x9kbmbk3cnvh1xxwfan6kc4bmab52jly9fm3b0nji3apbkj"))))
+        (base32 "1layfv9gmdfcwrqzfmpsh3rnylhv90jp8q5kkiyb3vifzbb7fz3p"))))
     (properties `((upstream-name . "mwcsr")))
     (build-system r-build-system)
     (arguments
@@ -2908,13 +2908,13 @@ Acoustic detection of NMR experiments.  OMICS. 2015;19(3):147-56.
 (define-public r-musicmct
   (package
     (name "r-musicmct")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "musicMCT" version))
        (sha256
-        (base32 "1cihcmkr1x0vjxm5adwcrkldc58ixrw2hjys3228s772iyz169n3"))))
+        (base32 "0wq3n8qpk8dql008g2ilxgf5vmjsm66ii3dsnwh9hdm6x1nyp412"))))
     (properties `((upstream-name . "musicMCT")))
     (build-system r-build-system)
     (arguments
@@ -6957,13 +6957,13 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "1pnlyprl15p4npwrckkck4hdxyp9202v7757akyb0dpq6gda5gv2"))))
+        (base32 "0485rb0wjz5j122j3hx9q8gn5d7jc6h1ydh270qliiqadd7ijlgn"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (arguments
@@ -10576,13 +10576,13 @@ methodology developed in Sample Size Calculations for Micro-randomized Trials in
 (define-public r-mrtanalysis
   (package
     (name "r-mrtanalysis")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRTAnalysis" version))
        (sha256
-        (base32 "0cvmqpv2fp4ckfk0i190hlzkqlwmxdi63km57mdclqw3sf2m8h6n"))))
+        (base32 "0j7v37zxprcagnxjgg4cmm713chdd0phpy0q77qvqkqcpl2xc200"))))
     (properties `((upstream-name . "MRTAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -14980,13 +14980,13 @@ and examples are given by Koutra et al. (2024)
 (define-public r-moocore
   (package
     (name "r-moocore")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moocore" version))
        (sha256
-        (base32 "11kbccl4npn09kh9h5ad68bxamr2plpyn65ry9wd8qai0z4fi80q"))))
+        (base32 "1ayp2a4i2ylfhygzz9qi80lqnj6xf4gp4xg6v0pn6sw759hx7bqn"))))
     (properties `((upstream-name . "moocore")))
     (build-system r-build-system)
     (arguments
@@ -20584,13 +20584,13 @@ for continuous, count, categorical, and time-to-event data.")
 (define-public r-mlwrap
   (package
     (name "r-mlwrap")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLwrap" version))
        (sha256
-        (base32 "03cig8sv0ilbqgxswk4fw48wy638f2vxcxs736gl0lpnwlz2wnn6"))))
+        (base32 "0japh5nsggb677nwijcvdl4vl7qhpi2mzdrxxi2b202hmb2imgnw"))))
     (properties `((upstream-name . "MLwrap")))
     (build-system r-build-system)
     (arguments
@@ -21976,25 +21976,33 @@ with multiple interaction effects.")
 (define-public r-mlmorph
   (package
     (name "r-mlmorph")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLmorph" version))
        (sha256
-        (base32 "1abbix9m79v2mbw08684jsvpz09fsn0hqvi8fa1jkvaymx7rmp1a"))))
+        (base32 "0pvzj8wrblypibwmrszgn5v9a8hhacxhbjzjwn45i76cwbnc5k0r"))))
     (properties `((upstream-name . "MLmorph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-shinyjs
+                             r-shinyfiles
                              r-shiny
+                             r-reactable
                              r-randomforest
+                             r-plotly
                              r-openxlsx
                              r-magrittr
                              r-jsonlite
-                             r-caret))
+                             r-htmltools
+                             r-ggplot2
+                             r-dplyr
+                             r-caret
+                             r-bslib))
     (home-page "https://github.com/theogrost/MLmorph")
     (synopsis
      "Integrating Morphological Modeling and Machine Learning for Decision Support")
@@ -24023,6 +24031,46 @@ data.  Predicting mixture toxicity based on reference models such as
 concentration addition', independent action', and generalized concentration
 addition'.")
     (license license:gpl2)))
+
+(define-public r-mixstable
+  (package
+    (name "r-mixstable")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MixStable" version))
+       (sha256
+        (base32 "0wdc1v66spb8s5l52x9b53gszbn05wa8h3fq619j3y2azzsix0nk"))))
+    (properties `((upstream-name . "MixStable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stabledist
+                             r-openxlsx
+                             r-nortest
+                             r-mixtools
+                             r-mass
+                             r-libstable4u
+                             r-jsonlite
+                             r-e1071))
+    (home-page "https://cran.r-project.org/package=MixStable")
+    (synopsis
+     "Parameter Estimation for Stable Distributions and Their Mixtures")
+    (description
+     "This package provides various functions for parameter estimation of
+one-dimensional stable distributions and their mixtures.  It implements a
+diverse set of estimation methods, including quantile-based approaches,
+regression methods based on the empirical characteristic function (empirical,
+kernel, and recursive), and maximum likelihood estimation.  For mixture models,
+it provides stochastic expectationâmaximization (SEM) algorithms and Bayesian
+estimation methods using sampling and importance sampling to overcome the long
+burn-in period of Markov Chain Monte Carlo (MCMC) strategies.  The package also
+includes tools and statistical tests for analyzing whether a dataset follows a
+stable distribution.  Some of the implemented methods are described in Hajjaji,
+O., Manou-Abi, S. M., and Slaoui, Y. (2024) <doi:10.1080/02664763.2024.2434627>.")
+    (license license:gpl3)))
 
 (define-public r-mixssg
   (package
@@ -28031,13 +28079,13 @@ only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
 (define-public r-mini007
   (package
     (name "r-mini007")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mini007" version))
        (sha256
-        (base32 "0lzg6pxj1k63jgnhip5f09gj0yl28fddbbw3wdgg523g2jwa7zw0"))))
+        (base32 "0dmc4sfijsazlrz8vfixxvrhfqmnfmsvbylq3z2q633q4vvws9gz"))))
     (properties `((upstream-name . "mini007")))
     (build-system r-build-system)
     (arguments
@@ -39987,13 +40035,13 @@ theorem and the central limit theorem.")
 (define-public r-measuring
   (package
     (name "r-measuring")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "measuRing" version))
        (sha256
-        (base32 "0rgyllvj9mwnrp8alq2kr05w2wri6n40vbpc3qns426qnqjai997"))))
+        (base32 "1fs2lwcjab5dcg820l6pm16rv0vhiv584hpada746iszf0117raw"))))
     (properties `((upstream-name . "measuRing")))
     (build-system r-build-system)
     (arguments
@@ -47489,13 +47537,13 @@ regression estimator.")
 (define-public r-mas
   (package
     (name "r-mas")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mas" version))
        (sha256
-        (base32 "1d6ca7dj8bxrq0ka552sjb38j004bl1lzhfm14syr4h4wp08028m"))))
+        (base32 "0wqsg1m0gb5y1i2959yqnh2bbkg87ia89x791g5sxfiy3bdi0b2x"))))
     (properties `((upstream-name . "mas")))
     (build-system r-build-system)
     (arguments
@@ -47503,10 +47551,10 @@ regression estimator.")
       #:tests? #f))
     (propagated-inputs (list r-truncdist r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=mas")
-    (synopsis "Marker Association Studies")
+    (synopsis "Multi-Population Association Studies")
     (description
-     "Genome-wide association analysis that accommodate membership information,
-variance adjustment, and correlated responses.")
+     "Mixed model-based genome-wide association analysis that accommodate population
+membership information, variance adjustment, and correlated responses.")
     (license license:gpl3)))
 
 (define-public r-marzic
@@ -50796,6 +50844,37 @@ samples.  Refer to Tu et al. (2021) <doi:10.1101/gr.262675.120> and Chen et al.
 (2022) <doi:10.1186/s13059-022-02627-9> for associated statistical details.")
     (license license:gpl3)))
 
+(define-public r-mannwhitneycopula
+  (package
+    (name "r-mannwhitneycopula")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MannWhitneyCopula" version))
+       (sha256
+        (base32 "1hvgsd7q8shfr75119a20pdn869r6528wvpdfwi50p59j3h5sa9i"))))
+    (properties `((upstream-name . "MannWhitneyCopula")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-survival
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=MannWhitneyCopula")
+    (synopsis "Computing Mann-Whitney Effect Based on Copulas")
+    (description
+     "Computing the Mann-Whitney effect based on copula models.  Estimation of the
+association parameter in survival copula models.  A description of the
+underlying methods is described in Nakazono et al. (2024)
+<doi:10.3390/math12101453> and Nakazono et al. (accepted for publication in
+Statistical Papers).")
+    (license license:expat)))
+
 (define-public r-manlymix
   (package
     (name "r-manlymix")
@@ -51572,6 +51651,35 @@ algorithm proposed in <doi:10.1093/bioinformatics/btac241>.  The algorithm fits
 multiple approximate kernel learning (MAKL) models that are fast, scalable and
 interpretable.")
     (license license:gpl3+)))
+
+(define-public r-makicoint
+  (package
+    (name "r-makicoint")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "makicoint" version))
+       (sha256
+        (base32 "1h2a20cdqvwy29cy0p20s841433mh3z09cmslf5nhlb9ygl086ci"))))
+    (properties `((upstream-name . "makicoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/merwanroudane/makicoint")
+    (synopsis "Maki Cointegration Test with Structural Breaks")
+    (description
+     "This package implements the Maki (2012) <doi:10.1016/j.econmod.2012.05.006>
+cointegration test that allows for an unknown number of structural breaks.  The
+test detects cointegration relationships in the presence of up to five
+structural breaks in the intercept and/or slope coefficients.  Four different
+model specifications are supported: level shifts, level shifts with trend,
+regime shifts, and trend with regime shifts.  The method is described in Maki
+(2012) \"Tests for cointegration allowing for an unknown number of breaks\"
+<doi:10.1016/j.econmod.2012.05.006>.")
+    (license license:gpl3)))
 
 (define-public r-makeunique
   (package

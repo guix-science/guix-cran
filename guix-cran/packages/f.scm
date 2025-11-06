@@ -10648,6 +10648,36 @@ Methods are based on standard @code{fMRI} analysis techniques as described in
 Jezzard et al. (2001, ISBN:9780192630711).")
     (license license:expat)))
 
+(define-public r-fmriar
+  (package
+    (name "r-fmriar")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmriAR" version))
+       (sha256
+        (base32 "09596bsvmhxmpmf6hnfwvff5qwj8zxa8771lk9b9169rigrg921s"))))
+    (properties `((upstream-name . "fmriAR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://bbuchsbaum.github.io/fmriAR/")
+    (synopsis
+     "Fast AR and ARMA Noise Whitening for Functional MRI (fMRI) Design and Data")
+    (description
+     "Lightweight utilities to estimate autoregressive (AR) and autoregressive moving
+average (ARMA) noise models from residuals and apply matched generalized least
+squares to whiten functional magnetic resonance imaging (@code{fMRI}) design and
+data matrices.  The ARMA estimator follows a classic 1982 approach
+<doi:10.1093/biomet/69.1.81>, and a restricted AR family mirrors workflows
+described by Cox (2012) <doi:10.1016/j.neuroimage.2011.08.056>.")
+    (license license:expat)))
+
 (define-public r-fmradio
   (package
     (name "r-fmradio")
@@ -13238,6 +13268,47 @@ covariate effects are determined.  For the response function a strictly monotone
 P-spline is used while the covariate effects are estimated based on a modified
 Fisher-Scoring algorithm.  Overall the estimation relies on the mgcv'-package.")
     (license license:gpl2)))
+
+(define-public r-flexfitr
+  (package
+    (name "r-flexfitr")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexFitR" version))
+       (sha256
+        (base32 "08s31lj45pfqkgpwgwgpcsbnffij5710zn2qvan9n0rcp5hnzqh4"))))
+    (properties `((upstream-name . "flexFitR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-subplex
+                             r-rlang
+                             r-progressr
+                             r-optimx
+                             r-numderiv
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-dplyr
+                             r-dofuture
+                             r-agriutilities))
+    (native-inputs (list r-knitr))
+    (home-page "https://apariciojohan.github.io/flexFitR/")
+    (synopsis "Flexible Non-Linear Least Square Model Fitting")
+    (description
+     "This package provides tools for flexible non-linear least squares model fitting
+using general-purpose optimization techniques.  The package supports a variety
+of optimization algorithms, including those provided by the optimx package,
+making it suitable for handling complex non-linear models.  Features include
+parallel processing support via the future and foreach packages, comprehensive
+model diagnostics, and visualization capabilities.  Implements methods described
+in Nash and Varadhan (2011, <doi:10.18637/jss.v043.i09>).")
+    (license license:expat)))
 
 (define-public r-flexdir
   (package
@@ -20159,6 +20230,32 @@ of the analyzes is related to the quality of the data present in the database
 with a focus on consistency , punctuality and completeness of data.")
     (license license:gpl3)))
 
+(define-public r-fdp
+  (package
+    (name "r-fdp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdp" version))
+       (sha256
+        (base32 "0mlf0mzg3g0kx1wy5asqy6bw95f92rv78pp6yfrgrvnvm97y5lkv"))))
+    (properties `((upstream-name . "fdp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-cli))
+    (home-page "https://fdp.louisaslett.com/")
+    (synopsis "f-Differential Privacy and Gaussian Differential Privacy")
+    (description
+     "Constructs and visualises trade-off functions for f-differential privacy (f-DP)
+as introduced by Dong et al. (2022) <doi:10.1111/rssb.12454>.  Supports Gaussian
+differential privacy, the f-DP generalisation of (epsilon, delta)-differential
+privacy, and accepts user-specified optimal type I / type II errors from which
+the lower convex hull trade-off function is automatically constructed.")
+    (license license:gpl3+)))
+
 (define-public r-fdott
   (package
     (name "r-fdott")
@@ -22447,59 +22544,6 @@ faster than its competitors, while often producing more accurate predictions.
 Also included is a long hourly series of arrivals into the University of Iowa
 Emergency Department with concurrent local temperature.")
     (license license:gpl3+)))
-
-(define-public r-fasttopics
-  (package
-    (name "r-fasttopics")
-    (version "0.7-30")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastTopics" version))
-       (sha256
-        (base32 "1zv8fc10g4j2a8kqrp6i8rasw3zrmmqnwakl71d50mkwnhqx8ffv"))))
-    (properties `((upstream-name . "fastTopics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-uwot
-                             r-rtsne
-                             r-rhpcblasctl
-                             r-reshape2
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quadprog
-                             r-progress
-                             r-plotly
-                             r-pbapply
-                             r-matrix
-                             r-irlba
-                             r-htmlwidgets
-                             r-gtools
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-ashr))
-    (native-inputs (list r-knitr))
-    (home-page "https://stephenslab.github.io/fastTopics/")
-    (synopsis
-     "Fast Algorithms for Fitting Topic Models and Non-Negative Matrix Factorizations to Count Data")
-    (description
-     "This package implements fast, scalable optimization algorithms for fitting topic
-models (\"grade of membership\" models) and non-negative matrix factorizations to
-count data.  The methods exploit the special relationship between the
-multinomial topic model (also, \"probabilistic latent semantic indexing\") and
-Poisson non-negative matrix factorization.  The package provides tools to
-compare, annotate and visualize model fits, including functions to efficiently
-create \"structure plots\" and identify key features in topics.  The
-@code{fastTopics} package is a successor to the @code{CountClust} package.  For
-more information, see <doi:10.48550/@code{arXiv.2105.13440>} and
-<doi:10.1186/s13059-023-03067-9>.  Please also see the @code{GitHub} repository
-for additional vignettes not included in the package on CRAN.")
-    (license license:bsd-2)))
 
 (define-public r-fasttime
   (package
@@ -24800,13 +24844,13 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "17a6817kv95wz83h49s023kkb8jqssi6j6axjw7is9ayj2hcpwbf"))))
+        (base32 "1k6lrghx23paj82bngadnzwc45agqqzg7jd5yl4m5xp3hkf7gh0h"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments
@@ -25321,38 +25365,6 @@ tool which outputs path diagram, goodness-of-fit indices and model selection
 criteria for each regularization parameter.  The user can change the
 regularization parameter by manipulating scrollbars, which is helpful to find a
 suitable value of regularization parameter.")
-    (license license:gpl2+)))
-
-(define-public r-famt
-  (package
-    (name "r-famt")
-    (version "2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FAMT" version))
-       (sha256
-        (base32 "0msb02fz8blm6wgg31xwwxv8phg35w7844q1xz4v307ixz2qgs1h"))))
-    (properties `((upstream-name . "FAMT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mnormt r-impute))
-    (home-page "http://famt.free.fr/")
-    (synopsis
-     "Factor Analysis for Multiple Testing (FAMT) : Simultaneous Tests under Dependence in High-Dimensional Data")
-    (description
-     "The method proposed in this package takes into account the impact of dependence
-on the multiple testing procedures for high-throughput data as proposed by
-Friguet et al. (2009).  The common information shared by all the variables is
-modeled by a factor analysis structure.  The number of factors considered in the
-model is chosen to reduce the false discoveries variance in multiple tests.  The
-model parameters are estimated thanks to an EM algorithm.  Adjusted tests
-statistics are derived, as well as the associated p-values.  The proportion of
-true null hypotheses (an important parameter when controlling the false
-discovery rate) is also estimated from the FAMT model.  Graphics are proposed to
-interpret and describe the factors.")
     (license license:gpl2+)))
 
 (define-public r-famskatrc
@@ -26528,19 +26540,19 @@ of Normal-Gamma priors on the factor loading matrix
 (define-public r-factorplot
   (package
     (name "r-factorplot")
-    (version "1.2.4")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factorplot" version))
        (sha256
-        (base32 "007pd621qwi48xbr6p0zr7zxqm3mqi3bsqwgnpmr4m7c7xc4ms4s"))))
+        (base32 "081dl8yi16f84xn6aqynha84q2jwjq500vg5r50lisg3iq3lfbca"))))
     (properties `((upstream-name . "factorplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-multcomp))
+    (propagated-inputs (list r-multcomp r-ggtext r-ggplot2))
     (home-page "https://cran.r-project.org/package=factorplot")
     (synopsis "Presenting Pairwise Comparisons")
     (description
@@ -26648,13 +26660,13 @@ Pashley (2024) <doi:10.48550/ARXIV.2201.01357> provide further details.")
 (define-public r-factorh
   (package
     (name "r-factorh")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factorH" version))
        (sha256
-        (base32 "02fm2lqz9pvvc6647bwa4qsyzm8vwja56ikciscif05iysaf9hky"))))
+        (base32 "08h869hv586993aybanwpg32yqixjadr3h9dig0plp8x2nmqiyki"))))
     (properties `((upstream-name . "factorH")))
     (build-system r-build-system)
     (arguments

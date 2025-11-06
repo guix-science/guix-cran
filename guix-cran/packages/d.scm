@@ -2286,13 +2286,13 @@ writing, and performing some geometric operations.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "0grb5n98vyi4vbpqxdv3lb1dby51fg96q0adph2d8jgb2rsrdhf0"))))
+        (base32 "0jp214szf9ghdblc001nmmjsbhl3f23gcda15s4jsq69q9qmxiqf"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (arguments
@@ -4171,13 +4171,13 @@ underlying scores for example.")
 (define-public r-dsopal
   (package
     (name "r-dsopal")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSOpal" version))
        (sha256
-        (base32 "0n06rjj0kp4i1rzb4l8w0nn92a3idwyanrcqvy2z8xdaqgk4qk6x"))))
+        (base32 "1ix263qywy5kg7b6hfm485dmz0p6wln1ixbqczjswp7acfjkkxfn"))))
     (properties `((upstream-name . "DSOpal")))
     (build-system r-build-system)
     (arguments
@@ -4579,13 +4579,13 @@ with distance sampling at <https://distancesampling.org/>.")
 (define-public r-dsi
   (package
     (name "r-dsi")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSI" version))
        (sha256
-        (base32 "1jd6pa5k3dwh51ysg68rk2n9gxxc2c7malb7n2j0vllzy1casm1s"))))
+        (base32 "1k94cljlrf6h0hfn1j6pnvsk8pvgb9dadd19q7ybwzpk7fhs79qd"))))
     (properties `((upstream-name . "DSI")))
     (build-system r-build-system)
     (arguments
@@ -4959,13 +4959,13 @@ time series.  Bundesbank Discussion Paper 41/2018.")
 (define-public r-ds4psy
   (package
     (name "r-ds4psy")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ds4psy" version))
        (sha256
-        (base32 "0g7g7hh381qln2n1wxqrizd0635sfc49qrb57fc44a2ckn33ai6h"))))
+        (base32 "18bim77q06mn7cx34y3fixf1bjcfgkm2h3llk6cspiwg30xxddd7"))))
     (properties `((upstream-name . "ds4psy")))
     (build-system r-build-system)
     (arguments
@@ -4977,14 +4977,15 @@ time series.  Bundesbank Discussion Paper 41/2018.")
     (synopsis "Data Science for Psychologists")
     (description
      "All datasets and functions required for the examples and exercises of the book
-\"Data Science for Psychologists\" (by Hansjoerg Neth, Konstanz University, 2025),
-freely available at <https://bookdown.org/hneth/ds4psy/>.  The book and
-corresponding courses introduce principles and methods of data science to
-students of psychology and other biological or social sciences.  The ds4psy
-package primarily provides datasets, but also functions for data generation and
-manipulation (e.g., of text and time data) and graphics that are used in the
-book and its exercises.  All functions included in ds4psy are designed to be
-explicit and instructive, rather than efficient or elegant.")
+\"Data Science for Psychologists\" (by Hansjoerg Neth, Konstanz University, 2025,
+<doi:10.5281/zenodo.7229812>), freely available at
+<https://bookdown.org/hneth/ds4psy/>.  The book and corresponding courses
+introduce principles and methods of data science to students of psychology and
+other biological or social sciences.  The ds4psy package primarily provides
+datasets, but also functions for data generation and manipulation (e.g., of text
+and time data) and graphics that are used in the book and its exercises.  All
+functions included in ds4psy are designed to be explicit and instructive, rather
+than efficient or elegant.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-ds
@@ -14046,13 +14047,13 @@ implementation of the algorithm supports both directed and undirected networks."
 (define-public r-disordr
   (package
     (name "r-disordr")
-    (version "0.9-8-4")
+    (version "0.9-8-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disordR" version))
        (sha256
-        (base32 "00c9glxzabcprnzh60qq9zsjp3psm4a09s5psn9jl9720ckjngcp"))))
+        (base32 "1wgraj1ss0clnsxvg09j19gsyw2ry968j2b6am33hcgff0xy410m"))))
     (properties `((upstream-name . "disordR")))
     (build-system r-build-system)
     (arguments
@@ -15523,6 +15524,37 @@ ISBN:978-0-387-35439-2); (3) Novel techniques by Mosley, Gibberd, and Eckley
 (2022, <doi:10.1111/rssa.12952>) for disaggregating low-frequency series in the
 presence of high-dimensional indicator matrices.")
     (license license:gpl3)))
+
+(define-public r-disaggr
+  (package
+    (name "r-disaggr")
+    (version "1.0.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "disaggR" version))
+       (sha256
+        (base32 "09pmq5cli34bqw4cm8mffabvfsnr5jls0xq75v6bxb31wvh8l8bg"))))
+    (properties `((upstream-name . "disaggR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer))
+    (native-inputs (list r-knitr))
+    (home-page "https://inseefr.github.io/disaggR/")
+    (synopsis "Two-Steps Benchmarks for Time Series Disaggregation")
+    (description
+     "The @code{twoStepsBenchmark()} and @code{threeRuleSmooth()} functions allow you
+to disaggregate a low-frequency time series with higher frequency time series,
+using the French National Accounts methodology.  The aggregated sum of the
+resulting time series is strictly equal to the low-frequency time series within
+the benchmarking window.  Typically, the low-frequency time series is an annual
+one, unknown for the last year, and the high frequency one is either quarterly
+or monthly.  See \"Methodology of quarterly national accounts\", Insee MÃ©thodes
+NÂ°126, by Insee (2012, ISBN:978-2-11-068613-8,
+<https://www.insee.fr/en/information/2579410>).")
+    (license license:expat)))
 
 (define-public r-disagg2
   (package
@@ -22126,19 +22158,19 @@ datasets of interest rates for the BRICS countries.")
 (define-public r-der
   (package
     (name "r-der")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DER" version))
        (sha256
-        (base32 "1g2bsa7kd33pkrzykadpyq9q1wy3pq60jkyw16k8zf4xxn6qkkic"))))
+        (base32 "0dz1cd3klk00wndikddnlxq0n6djglkgkr2simqibjdcdspbnbwq"))))
     (properties `((upstream-name . "DER")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast2 r-rfast))
+    (propagated-inputs (list r-rfast2 r-rfast r-rcppparallel r-rcpp))
     (home-page "https://cran.r-project.org/package=DER")
     (synopsis "Income Polarization Index")
     (description
@@ -29876,13 +29908,13 @@ workflows.")
 (define-public r-dataverse
   (package
     (name "r-dataverse")
-    (version "0.3.15")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataverse" version))
        (sha256
-        (base32 "0ffq6r521nzhlr5w97msmncij141qmj0z2255d6nahsmvfd36pci"))))
+        (base32 "0mc125hfv7ad55wyx7v70x31byki37c21h0w3dky6fcm1fs5m3zl"))))
     (properties `((upstream-name . "dataverse")))
     (build-system r-build-system)
     (arguments
@@ -31264,6 +31296,35 @@ a data frame, collection of data frames and sequences of data frames and
 individual vectors.  For more information see
 <https://community.visualdatatools.com/datagraph/knowledge-base/r-package/>.")
     (license license:gpl2+)))
+
+(define-public r-datafusiongdm
+  (package
+    (name "r-datafusiongdm")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataFusionGDM" version))
+       (sha256
+        (base32 "11qfw9j5bw61m3nx3vizjn1m24x6fkih18xsj99fkk3y3br5q2g8"))))
+    (properties `((upstream-name . "DataFusionGDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-mice r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jiashuaiz/DataFusion-GDM")
+    (synopsis
+     "Machine Learning for Integrating Partially Overlapped Genetic Datasets")
+    (description
+     "This package provides tools to simulate genetic distance matrices, align and
+compare them via multidimensional scaling (MDS) and Procrustes, and evaluate
+imputation with the Bootstrapping Evaluation for Structural Missingness
+Imputation (BESMI) framework.  Methods align with Zhu et al. (2025)
+<doi:10.3389/fpls.2025.1543956> and the associated software resource Zhu (2025)
+<doi:10.26188/28602953>.")
+    (license license:gpl3)))
 
 (define-public r-datafsm
   (package

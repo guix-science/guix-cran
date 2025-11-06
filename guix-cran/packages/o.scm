@@ -7675,13 +7675,13 @@ data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
 (define-public r-openesm
   (package
     (name "r-openesm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openesm" version))
        (sha256
-        (base32 "1lvhbjg5qwkij99967zxzlmlk21nq6s0scghv5wdplg25544vjs0"))))
+        (base32 "172s416pakwcikcmlx0n043xj48k3r8q6s742xq096svq06g38zf"))))
     (properties `((upstream-name . "openesm")))
     (build-system r-build-system)
     (arguments
@@ -8280,13 +8280,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.4.2")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "08jh04m6bpcfidibgl6qb01fii6smb5wvjxji6fp19iahcl9wn6h"))))
+        (base32 "1yq5fabw60xh4gl7hy6086lzv08ig06hjypia33mral31isfcxf0"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (arguments
@@ -12512,13 +12512,13 @@ partitioning clustering algorithms such as Fuzzy C-means and its variants.")
 (define-public r-odeguts
   (package
     (name "r-odeguts")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odeGUTS" version))
        (sha256
-        (base32 "0bk2ahk9qigqx00rdppgml4fb1czibhqal8wymqgs1bifixxb5wy"))))
+        (base32 "0jpv8gd1vwaxxzzrhbh04j6wgb07l67g5w2wnflv8a742pd5gf5l"))))
     (properties `((upstream-name . "odeGUTS")))
     (build-system r-build-system)
     (arguments
@@ -12807,6 +12807,33 @@ geometries of surveys conducted in different years and across various urban
 areas in Brazil.  For some cities, the package will include enhanced versions of
 the data sets with variables \"harmonized\" across different years.")
     (license license:gpl3+)))
+
+(define-public r-odbc-resourcer
+  (package
+    (name "r-odbc-resourcer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odbc.resourcer" version))
+       (sha256
+        (base32 "1g9y6n0mym5akip8j6qqbz9dp03l9g8qf9dkax75crf36h8xq6ww"))))
+    (properties `((upstream-name . "odbc.resourcer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-resourcer r-r6 r-odbc r-httr r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=odbc.resourcer")
+    (synopsis "Open Database Connectivity Resource Resolver")
+    (description
+     "This package provides a database resource that is accessible through the Open
+Database Connectivity ('ODBC') API. This package uses the Resource model, with
+URL \"resolver\" and \"client\", to dynamically discover and make accessible tables
+stored in a MS SQL Server database.  For more details see Marcon (2021)
+<doi:10.1371/journal.pcbi.1008880>.")
+    (license license:lgpl2.1+)))
 
 (define-public r-odbc
   (package

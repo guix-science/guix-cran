@@ -9163,6 +9163,37 @@ in the project \"Mixed models in ratemaking\" supported by grant NN 111461540 fr
 Polish National Science Center.")
     (license license:gpl2)))
 
+(define-public r-insulin-secretion
+  (package
+    (name "r-insulin-secretion")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insulin.secretion" version))
+       (sha256
+        (base32 "0vf0qwn1fvyxdfm076b8y5zk11l88jswrhhz4c31znqicph78byi"))))
+    (properties `((upstream-name . "insulin.secretion")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-npreg r-lifecycle r-glue))
+    (home-page "https://github.com/kstier/isr.deconv")
+    (synopsis "Insulin Secretion Rate Deconvolution")
+    (description
+     "Calculates insulin secretion rates from C-peptide values based on the methods
+described in Van Cauter et al. (1992) <doi:10.2337/diab.41.3.368>.  Includes
+functions to calculate estimated insulin secretion rates using linear or cubic
+spline interpolation of c-peptide values (see Eaton et al., 1980
+<doi:10.1210/jcem-51-3-520> and Polonsky et al., 1986 <doi:10.1172/JCI112308>)
+and to calculate estimates of input coefficients (volume of distribution, short
+half life, long half life, and fraction attributed to short half life) as
+described by Van Cauter.  Although the generated coefficients are specific to
+insulin secretion, the two-compartment secretion model used here is useful for
+certain applications beyond insulin.")
+    (license license:gpl3+)))
+
 (define-public r-instar
   (package
     (name "r-instar")
@@ -10505,6 +10536,32 @@ expected mean squares.  Thus, the balanced incomplete block design and provides
 the efficiency factors of the fixed effects can also be studied and compared
 much easily.")
     (license license:gpl3+)))
+
+(define-public r-infocausality
+  (package
+    (name "r-infocausality")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infocausality" version))
+       (sha256
+        (base32 "1n43fgmbk5s3q1akaf79xkyc35mkn60iah4bjpb1q5cvr9826cf7"))))
+    (properties `((upstream-name . "infocausality")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-sdsfun r-reticulate r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://stscl.github.io/infocausality/")
+    (synopsis "Information-Theoretic Measure of Causality")
+    (description
+     "This package provides methods for quantifying temporal and spatial causality
+through information flow, and decomposing it into unique, redundant, and
+synergistic components, following the framework described in Martinez-Sanchez et
+al. (2024) <doi:10.1038/s41467-024-53373-4>.")
+    (license license:gpl3)))
 
 (define-public r-influxdbr
   (package
@@ -14107,38 +14164,6 @@ of genomics data.  IMIX features statistically-principled model selection,
 global FDR control and computational efficiency.  Details are described in
 Ziqiao Wang and Peng Wei (2020) <doi:10.1093/bioinformatics/btaa1001>.")
     (license license:gpl2)))
-
-(define-public r-imhd
-  (package
-    (name "r-imhd")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ImHD" version))
-       (sha256
-        (base32 "0aawa3slyf2i05q73v8qicwkf80ry527c87z72anapy8nfzkija6"))))
-    (properties `((upstream-name . "ImHD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-rpart
-                             r-reshape2
-                             r-randomforest
-                             r-ggplot2
-                             r-e1071))
-    (home-page "https://cran.r-project.org/package=ImHD")
-    (synopsis
-     "Artificial Intelligence Based Machine Learning Algorithms for Height Diameter Relationships of Conifer Trees")
-    (description
-     "Estimating height of forest plant is one of the key challenges of recent times.
-This package will help to fit and validate AI (Artificial Intelligence) based
-machine learning algorithms for estimation of height of conifer trees based on
-diameter at breast height as explanatory variable using algorithm of Paul et al.
-(2022) <doi:10.1371/journal.pone.0270553>..")
-    (license license:gpl3)))
 
 (define-public r-imgrec
   (package

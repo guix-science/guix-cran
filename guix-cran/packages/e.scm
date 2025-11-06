@@ -7576,6 +7576,69 @@ parameters are selected via information criteria (AIC / BIC / extended BIC) or
 cross validation.")
     (license license:gpl2+)))
 
+(define-public r-estimatebreed
+  (package
+    (name "r-estimatebreed")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EstimateBreed" version))
+       (sha256
+        (base32 "0djw4ppnpa0ha1h448lxw9svp65x4p0dvz0w34nc9h0m8x1qz4nw"))))
+    (properties `((upstream-name . "EstimateBreed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-sommer
+                             r-purrr
+                             r-nasapower
+                             r-minque
+                             r-lubridate
+                             r-lmtest
+                             r-lme4
+                             r-jsonlite
+                             r-httr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-car
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/willyanjnr/EstimateBreed")
+    (synopsis "Estimation of Environmental Variables and Genetic Parameters")
+    (description
+     "This package performs analyzes and estimates of environmental covariates and
+genetic parameters related to selection strategies and development of superior
+genotypes.  It has two main functionalities, the first being about prediction
+models of covariates and environmental processes, while the second deals with
+the estimation of genetic parameters and selection strategies.  Designed for
+researchers and professionals in genetics and environmental sciences, the
+package combines statistical methods for modeling and data analysis.  This
+includes the plastochron estimate proposed by Porta et al. (2024)
+<doi:10.1590/1807-1929/agriambi.v28n10e278299>, Stress indices for genotype
+selection referenced by Ghazvini et al. (2024) <doi:10.1007/s10343-024-00981-1>,
+the Environmental Stress Index described by Tazzo et al. (2024)
+<https://revistas.ufg.br/vet/article/view/77035>, industrial quality indices of
+wheat genotypes (Szareski et al., 2019), <doi:10.4238/gmr18223>, Ear Indexes
+estimation (Rigotti et al., 2024), <doi:10.13083/reveng.v32i1.17394>, Selection
+index for protein and grain yield (de Pelegrin et al., 2017),
+<doi:10.4236/ajps.2017.813224>, Estimation of the ISGR - Genetic Selection Index
+for Resilience for environmental resilience (Bandeira et al., 2024)
+<https://www.cropj.com/Carvalho_18_12_2024_825_830.pdf>, estimation of Leaf Area
+Index (Meira et al., 2015)
+<https://www.fag.edu.br/upload/revista/cultivando_o_saber/55d1ef202e494.pdf>,
+Restriction of control variability (Carvalho et al., 2023)
+<doi:10.4025/actasciagron.v45i1.56156>, Risk of Disease Occurrence in Soybeans
+described by Engers et al. (2024) <doi:10.1007/s40858-024-00649-1> and
+estimation of genetic parameters for selection based on balanced experiments
+(Yadav et al., 2024) <doi:10.1155/2024/9946332>.")
+    (license license:gpl3+)))
+
 (define-public r-ester
   (package
     (name "r-ester")
@@ -7638,6 +7701,32 @@ Samejima, 1973, <doi:10.1007/BF02291114>), computes item fit residual
 statistics, draws empirical 3D item category response curves, draws theoretical
 3D item category response curves, and generates data under the CRM for
 simulation studies.")
+    (license license:gpl2+)))
+
+(define-public r-estats
+  (package
+    (name "r-estats")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "estats" version))
+       (sha256
+        (base32 "0d4aminnilymimh0dxcn0ha0wb4487kiwnpzwbjvbw88apdvq00d"))))
+    (properties `((upstream-name . "estats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2 r-rfast r-pdcor r-dcov))
+    (home-page "https://cran.r-project.org/package=estats")
+    (synopsis "Fast and Light-Weight Energy Statistics")
+    (description
+     "Fast and memory-less computation of the energy statistics related quantities for
+vectors and matrices.  References include: Szekely G. J. and Rizzo M. L. (2014),
+<doi:10.1214/14-AOS1255>.  Szekely G. J. and Rizzo M. L. (2023),
+<ISBN:9781482242744>.  Tsagris M. and Papadakis M. (2025).
+<doi:10.48550/@code{arXiv.2501.02849>}.")
     (license license:gpl2+)))
 
 (define-public r-estatapi
@@ -11335,13 +11424,13 @@ Prevention and Control.")
 (define-public r-episensr
   (package
     (name "r-episensr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "episensr" version))
        (sha256
-        (base32 "0b0hnrzyq4w2zl5p8lz7gxsfsbr4mb4388s86b7gs4mcyay5i6k2"))))
+        (base32 "0djnrvk139rcrj83hsxri22q5p3cvizhc26l92x38hz8wc0qqp9q"))))
     (properties `((upstream-name . "episensr")))
     (build-system r-build-system)
     (arguments
@@ -11905,13 +11994,13 @@ Studies\".  Bioinformatics, 39(9): btad545. <doi:10.1093/bioinformatics/btad545>
 (define-public r-epikit
   (package
     (name "r-epikit")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epikit" version))
        (sha256
-        (base32 "1lw1hiccxw705pa9kkyc7gvyg3vggaqri4nfxhasjxhxp2wy6bfz"))))
+        (base32 "02c9nqzmxncwagiq2fj963ccracviyv2zyq3sp0pp79s9gycl0d2"))))
     (properties `((upstream-name . "epikit")))
     (build-system r-build-system)
     (arguments
@@ -11926,17 +12015,16 @@ Studies\".  Bioinformatics, 39(9): btad545. <doi:10.1093/bioinformatics/btad545>
                              r-glue
                              r-ggplot2
                              r-forcats
-                             r-dplyr
-                             r-binom))
+                             r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/R4EPI/epikit")
+    (home-page "https://github.com/R4EPI/epikit/")
     (synopsis "Miscellaneous Helper Tools for Epidemiologists")
     (description
      "This package contains tools for formatting inline code, renaming redundant
 columns, aggregating age categories, adding survey weights, finding the earliest
-date of an event, plotting z-curves, generating population counts and
-calculating proportions with confidence intervals.  This is part of the R4Epis
-project <https://r4epis.netlify.app/>.")
+date of an event, plotting z-curves, generating population counts and formatting
+proportions with confidence intervals.  This is part of the R4Epis project
+<https://r4epi.github.io/sitrep/>.")
     (license license:gpl3)))
 
 (define-public r-epiinvert
@@ -12323,6 +12411,44 @@ held by the UK Health Security Agency, UKHSA.")
      "Package for data exploration and result presentation.  Full epicalc package with
 data management functions is available at <https://medipe.psu.ac.th/epicalc/>'.")
     (license license:gpl2+)))
+
+(define-public r-epidigir
+  (package
+    (name "r-epidigir")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EpidigiR" version))
+       (sha256
+        (base32 "143ynglrh1w89iclazxrnwc6b9z55zyjbxifq129sq2ickan45vc"))))
+    (properties `((upstream-name . "EpidigiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tm
+                             r-survival
+                             r-sp
+                             r-glmnet
+                             r-desolve
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EpidigiR")
+    (synopsis "Digital Epidemiological Analysis and Visualization Tools")
+    (description
+     "Integrates methods for epidemiological analysis, modeling, and visualization,
+including functions for summary statistics, SIR
+(Susceptible-Infectious-Recovered) modeling, DALY (Disability-Adjusted Life
+Years) estimation, age standardization, diagnostic test evaluation, NLP (Natural
+Language Processing) keyword extraction, clinical trial power analysis, survival
+analysis, SNP (Single Nucleotide Polymorphism) association, and machine learning
+methods such as logistic regression, k-means clustering, Random Forest, and
+Support Vector Machine (SVM).  Includes datasets for prevalence estimation, SIR
+modeling, genomic analysis, clinical trials, DALY, diagnostic tests, and
+survival analysis.  Methods are based on Gelman et al. (2013)
+<doi:10.1201/b16018> and Wickham et al. (2019, ISBN:9781492052040>.")
+    (license license:expat)))
 
 (define-public r-epidatr
   (package
@@ -19100,13 +19226,13 @@ semi-variogram fitting process.")
 (define-public r-egm
   (package
     (name "r-egm")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGM" version))
        (sha256
-        (base32 "1vy3sk7gx6nr66ia9jw992jia3g6x707l3c8wpn9snngsdsnvfik"))))
+        (base32 "0mvg86pk9dnlallaqirn1zkswrds6zsn48x4np658111z7m6mbf4"))))
     (properties `((upstream-name . "EGM")))
     (build-system r-build-system)
     (arguments
@@ -19117,7 +19243,6 @@ semi-variogram fitting process.")
                              r-stringr
                              r-signal
                              r-rlang
-                             r-lifecycle
                              r-ggplot2
                              r-fs
                              r-data-table
@@ -19130,11 +19255,11 @@ semi-variogram fitting process.")
     (description
      "This package provides a system for importing electrophysiological signal, based
 on the Waveform Database (WFDB) software package, written by Moody et al 2022
-<doi:10.13026/gjvw-1m31>.  A wrapper for utilizing WFDB functions for reading
-and writing signal data, as well as functions for visualization and analysis are
-provided.  A stable and broadly compatible class for working with signal data,
-supporting the reading in of cardiac electrophysiological files such as
-intracardiac electrograms, is introduced.")
+<doi:10.13026/gjvw-1m31>.  A R-based system to utilize WFDB functions for
+reading and writing signal data, as well as functions for visualization and
+analysis are provided.  A stable and broadly compatible class for working with
+signal data, supporting the reading in of cardiac electrophysiological files
+such as intracardiac electrograms, is introduced.")
     (license license:gpl3+)))
 
 (define-public r-eglhmm
@@ -23943,13 +24068,13 @@ from <https://echo.epa.gov/>.")
 (define-public r-echoice2
   (package
     (name "r-echoice2")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echoice2" version))
        (sha256
-        (base32 "0dsyr2fk94nvcd1749amk8mvvli5aalapb2mlhr25mj6d2iyrc30"))))
+        (base32 "046ckdqfhlc71aiddwvivb8g0yiy5rp5h8bvdg9y7zznx1qslshw"))))
     (properties `((upstream-name . "echoice2")))
     (build-system r-build-system)
     (arguments
@@ -23958,7 +24083,6 @@ from <https://echo.epa.gov/>.")
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-stringr
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp

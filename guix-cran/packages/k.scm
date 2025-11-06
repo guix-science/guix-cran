@@ -2382,30 +2382,6 @@ from @code{file()}.  Useful when using knitr or rmarkdown', and you still want
 to see progress of calculations in the terminal.")
     (license license:expat)))
 
-(define-public r-knitrdata
-  (package
-    (name "r-knitrdata")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "knitrdata" version))
-       (sha256
-        (base32 "1am79r4rkrw7vjmyzc0cq4p52l2ypdw99rfhrvdsaq11yllx08mx"))))
-    (properties `((upstream-name . "knitrdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xfun r-knitr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dmkaplan2000/knitrdata")
-    (synopsis "Data Language Engine for 'knitr' / 'rmarkdown'")
-    (description
-     "This package implements a data language engine for incorporating data directly
-in rmarkdown documents so that they can be made completely standalone.")
-    (license license:gpl3)))
-
 (define-public r-knitlatex
   (package
     (name "r-knitlatex")
@@ -6574,13 +6550,13 @@ provided to automatically render beautiful math in R documentation files.")
 (define-public r-karyotapr
   (package
     (name "r-karyotapr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "karyotapR" version))
        (sha256
-        (base32 "01mxsv4ky6d16xjkvi6lc2cfvrdll6whyizxf500m8ds9bdlmqha"))))
+        (base32 "0i4j5y6ck855c0yv3dg55613yhw5wz84bcmparl92bcr2jilry1i"))))
     (properties `((upstream-name . "karyotapR")))
     (build-system r-build-system)
     (arguments
@@ -6601,6 +6577,7 @@ provided to automatically render beautiful math in R documentation files.")
                              r-gtools
                              r-ggplot2
                              r-genomicranges
+                             r-genomeinfodb
                              r-fitdistrplus
                              r-dplyr
                              r-dbscan

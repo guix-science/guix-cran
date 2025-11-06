@@ -13724,6 +13724,41 @@ package delivers the foundational data structures that power glycomics and
 glycoproteomics analysis workflows.")
     (license license:expat)))
 
+(define-public r-glyparse
+  (package
+    (name "r-glyparse")
+    (version "0.5.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glyparse" version))
+       (sha256
+        (base32 "15y483v085ka8fqzcch8qdw60249lslgzlj4k3lhb0cjpfkgn9zg"))))
+    (properties `((upstream-name . "glyparse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rstackdeque
+                             r-rlang
+                             r-purrr
+                             r-igraph
+                             r-glyrepr
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://glycoverse.github.io/glyparse/")
+    (synopsis "Parsing Glycan Structure Text Representations")
+    (description
+     "This package provides functions to parse glycan structure text representations
+into glyrepr glycan structures.  Currently, it supports @code{StrucGP-style},
+@code{pGlyco-style}, IUPAC-condensed, IUPAC-extended, IUPAC-short, WURCS, Linear
+Code, and @code{GlycoCT} format.  It also provides an automatic parser to detect
+the format and parse the structure string.")
+    (license license:expat)))
+
 (define-public r-glvmfit
   (package
     (name "r-glvmfit")
@@ -18194,13 +18229,13 @@ O'Reilly et al. (2021) <doi:10.1016/S2542-5196(20)30292-8>.")
 (define-public r-ghrexplore
   (package
     (name "r-ghrexplore")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHRexplore" version))
        (sha256
-        (base32 "0qfnk4s2szrpr33vh3i3cl6qalpl945iqg0z343nmd2fjja8lkd5"))))
+        (base32 "0y12fv7160n8ap36xzwmjl2h8s5k8vvbnby6csmx962hsx92r5c3"))))
     (properties `((upstream-name . "GHRexplore")))
     (build-system r-build-system)
     (arguments
@@ -18215,7 +18250,7 @@ O'Reilly et al. (2021) <doi:10.1016/S2542-5196(20)30292-8>.")
                              r-cowplot
                              r-colorspace))
     (native-inputs (list r-knitr))
-    (home-page "https://earth.bsc.es/gitlab/ghr/ghrexplore")
+    (home-page "https://gitlab.earth.bsc.es/ghr/ghrexplore")
     (synopsis
      "Exploratory Analysis of Temporal and Spatio-Temporal Health Data")
     (description
@@ -22788,6 +22823,38 @@ days.  This package is part of the rethomics framework
 <https://rethomics.github.io/>.")
     (license license:gpl3)))
 
+(define-public r-ggenemy
+  (package
+    (name "r-ggenemy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GGenemy" version))
+       (sha256
+        (base32 "0b25fz8wpm38n1q7y3kmpl2zbv1h1vcpdikf38xgbrz3m9y7zib6"))))
+    (properties `((upstream-name . "GGenemy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andytai7/GGenemy")
+    (synopsis
+     "Audit 'ggplot2' Visualizations for Accessibility and Best Practices")
+    (description
+     "Audits ggplot2 visualizations for accessibility issues, misleading practices,
+and readability problems.  Checks for color accessibility concerns including
+colorblind-unfriendly palettes, misleading scale manipulations such as truncated
+axes and dual y-axes, text readability issues like small fonts and overlapping
+labels, and general accessibility barriers.  Provides comprehensive audit
+reports with actionable suggestions for improvement.  Color vision deficiency
+simulation uses methods from the colorspace package Zeileis et al. (2020)
+<doi:10.18637/jss.v096.i01>.  Contrast calculations follow WCAG 2.1 guidelines
+(W3C 2018 <https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum>).")
+    (license license:expat)))
+
 (define-public r-ggenealogy
   (package
     (name "r-ggenealogy")
@@ -24297,6 +24364,47 @@ It creates multiple synthetic imputed datasets under treatment regimes of
 interest using the mice package.  These can then be analysed using rules
 developed for analysing multiple synthetic datasets.")
     (license license:gpl3+)))
+
+(define-public r-gformulaice
+  (package
+    (name "r-gformulaice")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gfoRmulaICE" version))
+       (sha256
+        (base32 "0xnb5ni5h3vg8wjxqgikirgdd8jfpf9k3v3by56j5jrc0f1v35pg"))))
+    (properties `((upstream-name . "gfoRmulaICE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-speedglm
+                             r-rlang
+                             r-reshape2
+                             r-nnet
+                             r-magrittr
+                             r-hmisc
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=gfoRmulaICE")
+    (synopsis "Parametric Iterative Conditional Expectation G-Formula")
+    (description
+     "This package implements iterative conditional expectation (ICE) estimators of
+the plug-in g-formula (Wen, Young, Robins, and HernÃ¡n (2020)
+<doi:10.1111/biom.13321>).  Both singly robust and doubly robust ICE estimators
+based on parametric models are available.  The package can be used to estimate
+survival curves under sustained treatment strategies (interventions) using
+longitudinal data with time-varying treatments, time-varying confounders,
+censoring, and competing events.  The interventions can be static or dynamic,
+and deterministic or stochastic (including threshold interventions).  Both
+prespecified and user-defined interventions are available.")
+    (license license:expat)))
 
 (define-public r-gformula
   (package
@@ -26587,13 +26695,13 @@ sequential and simultaneous points methods.")
 (define-public r-geospatialsuite
   (package
     (name "r-geospatialsuite")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geospatialsuite" version))
        (sha256
-        (base32 "07hqmswycd8bszf9lsavq352l8xh49k1pv2jjj93bxrhxbb8b18m"))))
+        (base32 "0m5syqp9ssbphdwa12jrr27qpaif7bpzv89fr7yblz2hv1vf591w"))))
     (properties `((upstream-name . "geospatialsuite")))
     (build-system r-build-system)
     (arguments
@@ -26625,7 +26733,8 @@ agricultural research, environmental monitoring, remote sensing applications,
 and publication-quality mapping with support for any geographic region and
 robust error handling.  Methods include vegetation indices calculations (Rouse
 et al.  1974), NDVI and enhanced vegetation indices (Huete et al.  1997)
-<doi:10.1016/S0034-4257(97)00104-1>, spatial interpolation techniques (Cressie
+<doi:10.1016/S0034-4257(97)00104-1>, (Akanbi et al.  2024)
+<doi:10.1007/s41651-023-00164-y>, spatial interpolation techniques (Cressie
 1993, ISBN:9780471002556), water quality indices (@code{McFeeters} 1996)
 <doi:10.1080/01431169608948714>, and crop data layer analysis (USDA NASS 2024)
 <https://www.nass.usda.gov/Research_and_Science/Cropland/>.  Funding: This
@@ -30372,33 +30481,6 @@ estimating bird and bat mortality at wind and solar power facilities, following
 Dalthorp, et al. (2018) <doi:10.3133/tm7A2>.")
     (license license:cc0)))
 
-(define-public r-geneslope
-  (package
-    (name "r-geneslope")
-    (version "0.38.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geneSLOPE" version))
-       (sha256
-        (base32 "0qrij0jmd9p0chf5vs4clp6098d93w8slj46d43c2g0gc1d3p6vp"))))
-    (properties `((upstream-name . "geneSLOPE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-slope r-ggplot2 r-bigmemory))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/psobczyk/geneSLOPE")
-    (synopsis "Genome-Wide Association Study with SLOPE")
-    (description
-     "Genome-wide association study (GWAS) performed with SLOPE, short for Sorted
-L-One Penalized Estimation, a method for estimating the vector of coefficients
-in linear model.  In the first step of GWAS, SNPs are clumped according to their
-correlations and distances.  Then, SLOPE is performed on data where each clump
-has one representative.")
-    (license license:gpl3)))
-
 (define-public r-geneset
   (package
     (name "r-geneset")
@@ -33244,13 +33326,13 @@ Susceptible-Infected-Recovered (SIR) framework.")
 (define-public r-gdilm-seirs
   (package
     (name "r-gdilm-seirs")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDILM.SEIRS" version))
        (sha256
-        (base32 "1vv8g3hs32hsksvw59wpdcjvacndr0hprmw0hid6ipyw41v01xf5"))))
+        (base32 "1wkmpykp1bmr1g7my6nlanz0hjngdjbp10qlxbz5zh66wv6k18r3"))))
     (properties `((upstream-name . "GDILM.SEIRS")))
     (build-system r-build-system)
     (arguments

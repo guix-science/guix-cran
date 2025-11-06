@@ -8,8 +8,8 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages multiprecision)
@@ -280,13 +280,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.14")
+    (version "2.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "1kjmzr3xd6ql7xsdky7c2avyzrpxgcw9zmji8k58czi82awn26dm"))))
+        (base32 "14876871774mj60f32nil9spim4hwr4hadlgy4qvwwwjpccjfcb5"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (arguments
@@ -1856,6 +1856,68 @@ scoring, and plotting for the BG/BB (Fader, Hardie, and Shang 2010
 <doi:10.1287/mksc.1040.0098>) and Pareto/NBD and Gamma/Gamma (Fader, Hardie, and
 Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
     (license license:gpl3)))
+
+(define-public r-btw
+  (package
+    (name "r-btw")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "btw" version))
+       (sha256
+        (base32 "0b1mh31ry4s0fm1xkbrm62s8x68m2yzyjdbc7xgzaczlpsgjfvr4"))))
+    (properties `((upstream-name . "btw")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-xml2
+                             r-withr
+                             r-tibble
+                             r-skimr
+                             r-sessioninfo
+                             r-s7
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-rlang
+                             r-pkgsearch
+                             r-mcptools
+                             r-lifecycle
+                             r-jsonlite
+                             r-fs
+                             r-ellmer
+                             r-dplyr
+                             r-clipr
+                             r-cli))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/posit-dev/btw")
+    (synopsis "Toolkit for Connecting R and Large Language Models")
+    (description
+     "This package provides a complete toolkit for connecting R environments with
+Large Language Models (LLMs).  Provides utilities for describing R objects,
+package documentation, and workspace state in plain text formats optimized for
+LLM consumption.  Supports multiple workflows: interactive copy-paste to
+external chat interfaces, programmatic tool registration with ellmer chat
+clients, batteries-included chat applications via shinychat', and exposure to
+external coding agents through the Model Context Protocol.  Project
+configuration files enable stable, repeatable conversations with
+project-specific context and preferred LLM settings.")
+    (license license:expat)))
 
 (define-public r-bttl
   (package
@@ -8263,13 +8325,13 @@ and time using gradient boosting approach.")
 (define-public r-boostmath
   (package
     (name "r-boostmath")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boostmath" version))
        (sha256
-        (base32 "1q4qswlll5ph8pd8ql83jwixsr6almbm2hksyxbn2hi5y2qr8lad"))))
+        (base32 "1vwxhkc0f3iqkb4prw08w23az7nxjckc8lsn6pc3vs9hh5mqgjnw"))))
     (properties `((upstream-name . "boostmath")))
     (build-system r-build-system)
     (arguments
@@ -10855,19 +10917,20 @@ refining procedure proposed by George Casella (1986) <doi:10.2307/3314658>.")
 (define-public r-bluecarbon
   (package
     (name "r-bluecarbon")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BlueCarbon" version))
        (sha256
-        (base32 "0jq0n3143b0dgfr7a3lnvyi8pbiidmccp2hw4p4zzk0fw03m878m"))))
+        (base32 "10f4gqlnnfw99b62kx87r0cmpwmryg2pr0czl3lkj96prj9sr03w"))))
     (properties `((upstream-name . "BlueCarbon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-reshape r-gridextra r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/EcologyR/BlueCarbon")
     (synopsis
      "Estimation of Organic Carbon Stocks and Sequestration Rates from Soil Core Data")
@@ -15309,13 +15372,13 @@ expression analysis.")
 (define-public r-bioinactivation
   (package
     (name "r-bioinactivation")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioinactivation" version))
        (sha256
-        (base32 "1m1j68xgcxw1bjfpbwbfbac7b8z977d30f6yhpq5kvvahb8wb5hx"))))
+        (base32 "0nk82lh0sh5m072j7dhnwhr51yz048yavk258w3j1dr2mnjdw70d"))))
     (properties `((upstream-name . "bioinactivation")))
     (build-system r-build-system)
     (arguments
@@ -17265,13 +17328,13 @@ additional metadata on stations and weather.")
 (define-public r-bigvar
   (package
     (name "r-bigvar")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BigVAR" version))
        (sha256
-        (base32 "1aqmgmpwfkll7q20l3sda26nkmi2fjjs4cfxbhvhjy5q3a7k1lr1"))))
+        (base32 "1jvj7g3l742l81bmf4sm33wsbasbp4avffm5rg8zv1pnkc08d9fk"))))
     (properties `((upstream-name . "BigVAR")))
     (build-system r-build-system)
     (arguments
@@ -19904,13 +19967,13 @@ Extreme Value random variable.")
 (define-public r-bgev
   (package
     (name "r-bgev")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgev" version))
        (sha256
-        (base32 "1vvv44lf5vdg88fv6zkvggprxbf33msbjmsxli18m3vpwxdjxdm0"))))
+        (base32 "0760n9jy6wj20agsc9zrapz8gdypc1khqzam5rkwq32bpk5dnlms"))))
     (properties `((upstream-name . "bgev")))
     (build-system r-build-system)
     (arguments
@@ -20068,13 +20131,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "1rhzd5v1kspvc421ph86dzq9mmmkz39pg5mr458vvb5bdabfbx7w"))))
+        (base32 "08nm5lhpxrdxnkkhmx0dmfpxfkjidicg5ni553wf0rydl5ym1ffb"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (arguments
@@ -20082,6 +20145,7 @@ the bfsl solution.")
       #:tests? #f))
     (propagated-inputs (list r-zip
                              r-xml2
+                             r-tidyr
                              r-tibble
                              r-rvest
                              r-rlang
@@ -29140,13 +29204,13 @@ meta-analysis.")
 (define-public r-bayeschange
   (package
     (name "r-bayeschange")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesChange" version))
        (sha256
-        (base32 "0b1219gi571l2nraq2prhzq9db1jgl8v57ygkj72581ibcckal19"))))
+        (base32 "0wi025iphbz262rc0ashsvyl86fki0fx52a8h209h4lyh0a5x2n5"))))
     (properties `((upstream-name . "BayesChange")))
     (build-system r-build-system)
     (arguments
@@ -29401,43 +29465,6 @@ been used to estimate the bivariate time series data using Bayesian technique.")
 Package includes data generating function, and Bayesian hypothesis testing
 function.")
     (license license:gpl3)))
-
-(define-public r-bayesassurance
-  (package
-    (name "r-bayesassurance")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesassurance" version))
-       (sha256
-        (base32 "0y62q0340j3781f0l9azxdn6k4isj1zds6y50fg38a73pi7mbfbm"))))
-    (properties `((upstream-name . "bayesassurance")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-plotly
-                             r-plot3d
-                             r-pbapply
-                             r-mathjaxr
-                             r-mass
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jpan928/bayesassurance_rpackage")
-    (synopsis "Bayesian Assurance Computation")
-    (description
-     "Computes Bayesian assurance under various settings characterized by different
-assumptions and objectives, including precision-based conditions, credible
-intervals, and goal functions.  All simulation-based functions included in this
-package rely on a two-stage Bayesian method that assigns two distinct priors to
-evaluate the probability of observing a positive outcome, which addresses subtle
-limitations that take place when using the standard single-prior approach.  For
-more information, please refer to Pan and Banerjee (2021)
-<@code{arXiv:2112.03509>}.")
-    (license license:gpl2+)))
 
 (define-public r-bayesarimax
   (package
@@ -31522,6 +31549,41 @@ al.  2019) <doi:10.1016/j.ecolmodel.2019.108775>, CHAPY (Ogris et al.  2020)
 JÃ¶nsson et al. (2011) <doi:10.1007/s10584-011-0038-4>.  The package may be
 expanded by models for other bark beetle species in the future.")
     (license license:gpl3+)))
+
+(define-public r-barrel
+  (package
+    (name "r-barrel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "barrel" version))
+       (sha256
+        (base32 "1bi8x7ps9jx1n3ls30cxnghwn8b4cmaiziwi1g6h5jw8a84pdfqv"))))
+    (properties `((upstream-name . "barrel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-robustbase r-rlang r-ggrepel r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=barrel")
+    (synopsis
+     "Covariance-Based Ellipses and Annotation Tools for Ordination Plots")
+    (description
+     "This package provides tools to visualize ordination results in R by adding
+covariance-based ellipses, centroids, vectors, and confidence regions to plots
+created with ggplot2'.  The package extends the vegan framework and supports
+Principal Component Analysis (PCA), Redundancy Analysis (RDA), and Non-metric
+Multidimensional Scaling (NMDS).  Ellipses can represent either group dispersion
+(standard deviation, SD) or centroid precision (standard error, SE), following
+Wang et al. (2015) <doi:10.1371/journal.pone.0118537>.  Robust estimators of
+covariance are implemented, including the Minimum Covariance Determinant (MCD)
+method of Hubert et al. (2018) <doi:10.1002/wics.1421>.  This approach reduces
+the influence of outliers.  barrel is particularly useful for multivariate
+ecological datasets, promoting reproducible, publication-quality ordination
+graphics with minimal effort.")
+    (license license:expat)))
 
 (define-public r-barnard
   (package

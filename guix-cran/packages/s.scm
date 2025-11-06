@@ -484,13 +484,13 @@ Privacy Metrics for Synthetic Data).")
 (define-public r-synthetic
   (package
     (name "r-synthetic")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SynthETIC" version))
        (sha256
-        (base32 "1nrqfy2gl2x9fz5vh7c3rlnk1zw9pghv1fqlsndzs5nwr5ww8db5"))))
+        (base32 "1n6z29zq4csyaqaj2cxiasyj470wkk9vlysyhb2k1snk14fnf2id"))))
     (properties `((upstream-name . "SynthETIC")))
     (build-system r-build-system)
     (arguments
@@ -511,7 +511,7 @@ actuarial assumptions made in claims modelling.  The distributional assumptions
 used to generate this data set can be easily modified by users to match their
 experiences.  Reference: Avanzi B, Taylor G, Wang M, Wong B (2020)
 \"@code{SynthETIC}: an individual insurance claim simulator with feature control\"
-<@code{arXiv:2008.05693>}.")
+<doi:10.48550/@code{arXiv.2008.05693>}.")
     (license license:gpl3)))
 
 (define-public r-synthesizer
@@ -5632,13 +5632,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.13.3")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "14g0v628q5yjczmzi3fv4hl8z0kjrldbwzp0pqiyy406baxy35wk"))))
+        (base32 "1lv8lrszagq5ipg0imbm5s6j8bdzvqxkf8nbla25d8xmikgbggm9"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -8325,64 +8325,36 @@ estimating and projecting under-five mortality rates, described in Mercer et al.
 21, 2021), and Li et al. (2023) <doi:10.48550/@code{arXiv.2007.05117>}.")
     (license license:gpl2+)))
 
-(define-public r-summclust
-  (package
-    (name "r-summclust")
-    (version "0.7.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "summclust" version))
-       (sha256
-        (base32 "1cdzv5bm3l8fnnpk0c94y32ss1pmx7dddks33ha9r2yqw7p9xwvq"))))
-    (properties `((upstream-name . "summclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-mass
-                             r-generics
-                             r-dreamerr
-                             r-collapse
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://s3alfisc.github.io/summclust/")
-    (synopsis
-     "Module to Compute Influence and Leverage Statistics for Regression Models with Clustered Errors")
-    (description
-     "Module to compute cluster specific information for regression models with
-clustered errors, including leverage and influence statistics.  Models of type
-lm and fixest'(from the stats and fixest packages) are supported.  summclust
-implements similar features as the user-written summclust.ado Stata module
-(@code{MacKinnon}, Nielsen & Webb, 2022; <@code{arXiv:2205.03288v1>}).")
-    (license license:expat)))
-
 (define-public r-summarytabl
   (package
     (name "r-summarytabl")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "summarytabl" version))
        (sha256
-        (base32 "1cd9gxwxjjipzp6l9mnhgb3vzwj6ba8vjw70j34w1fvgddhgw44z"))))
+        (base32 "0l51jbdi76h7by08zs9mirjfvcrg7yrs03fd43gkhaznc93zcnzr"))))
     (properties `((upstream-name . "summarytabl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-rlang r-purrr r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://anyamemensah.github.io/summarytabl/")
     (synopsis
-     "Generate Summary Tables for Continuous, Ordinal, and Categorical Data")
+     "Generate Summary Tables for Categorical, Ordinal, and Continuous Data")
     (description
-     "This package provides functions for tabulating and summarizing continuous,
-ordinal, and categorical variables in data frames.  The package was designed to
-streamline exploratory data analysis and simplify the creation of summary tables
-for reports and other purposes.")
+     "This package provides functions for tabulating and summarizing categorical,
+multiple response, ordinal, and continuous variables in R data frames.  Makes it
+easy to create clear, structured summary tables, so you spend less time
+wrangling data and more time interpreting it.")
     (license license:expat)))
 
 (define-public r-summarysci
@@ -13814,6 +13786,53 @@ Siwabessy, J., Tran, M., Huang, Z., Przeslawski, R., Radke, L., Howard, F.,
 Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
     (license license:gpl2+)))
 
+(define-public r-stepregshiny
+  (package
+    (name "r-stepregshiny")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StepRegShiny" version))
+       (sha256
+        (base32 "17n0lxnrlyf243isrq95n61b0f92rs6iizpq8sbkf66mc2slwzdy"))))
+    (properties `((upstream-name . "StepRegShiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-summarytools
+                             r-stringr
+                             r-stepreg
+                             r-shinythemes
+                             r-shinycssloaders
+                             r-shiny
+                             r-rmarkdown
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-flextable
+                             r-dt
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=StepRegShiny")
+    (synopsis "Graphical User Interface for 'StepReg'")
+    (description
+     "This package provides a web-based shiny interface for the @code{StepReg} package
+enables stepwise regression analysis across linear, generalized linear
+(including logistic, Poisson, Gamma, and negative binomial), and Cox models.  It
+supports forward, backward, bidirectional, and best-subset selection under a
+range of criteria.  The package also supports stepwise regression to
+multivariate settings, allowing multiple dependent variables to be modeled
+simultaneously.  Users can explore and combine multiple selection strategies and
+criteria to optimize model selection.  For enhanced robustness, the package
+offers optional randomized forward selection to reduce overfitting, and a
+data-splitting workflow for more reliable post-selection inference.  Additional
+features include logging and visualization of the selection process, as well as
+the ability to export results in common formats.")
+    (license license:expat)))
+
 (define-public r-stepreg
   (package
     (name "r-stepreg")
@@ -18733,13 +18752,13 @@ custom functions.")
 (define-public r-sspse
   (package
     (name "r-sspse")
-    (version "1.1.0-2")
+    (version "1.1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sspse" version))
        (sha256
-        (base32 "1qm6gy689yy1hfffzhvw5y984cvx0hsqjh6nh97fni2hidwwxpqn"))))
+        (base32 "0kw0wnf91sxp1qp1hv54kq8ii3i2s84x52y84wiii73rwjvjj1ll"))))
     (properties `((upstream-name . "sspse")))
     (build-system r-build-system)
     (arguments
@@ -19256,6 +19275,29 @@ estimation of the SSM metamodel error using a GP model with a variety of defined
 correlation functions.")
     (license license:gpl3)))
 
+(define-public r-sslasso
+  (package
+    (name "r-sslasso")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSLASSO" version))
+       (sha256
+        (base32 "1ha0sn60a6xww1w402aiy2klm5kgkq6z9rqcy0n4n9qb3n44myv7"))))
+    (properties `((upstream-name . "SSLASSO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://doi.org/10.1080/01621459.2016.1260469")
+    (synopsis "The Spike-and-Slab LASSO")
+    (description
+     "Efficient coordinate ascent algorithm for fitting regularization paths for
+linear models penalized by Spike-and-Slab LASSO of Rockova and George (2018)
+<doi:10.1080/01621459.2016.1260469>.")
+    (license license:gpl3)))
+
 (define-public r-ssizerna
   (package
     (name "r-ssizerna")
@@ -19738,6 +19780,34 @@ are also provided.")
      "Functionality to parse server-sent events with a high-level interface that can
 be extended for custom applications.")
     (license license:expat)))
+
+(define-public r-ssebief
+  (package
+    (name "r-ssebief")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ssebiEF" version))
+       (sha256
+        (base32 "0iiw2af57ba00b4ngzc2rf9x9kg8b8dgya6nrdmvli7ljav5lns5"))))
+    (properties `((upstream-name . "ssebiEF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-dplyr))
+    (home-page "https://cran.r-project.org/package=ssebiEF")
+    (synopsis "Calculation of SSEBI and Evaporative Fraction from Raster Data")
+    (description
+     "Calculates a modified Simplified Surface Energy Balance Index (SSEBI) and the
+Evaporative Fraction (EF) using geospatial raster data such as albedo and
+surface-air temperature difference (TSâTA).  The SSEBI is computed from albedo
+and TSâTA to estimate surface moisture and evaporative dynamics, providing a
+robust assessment of surface dryness while accounting for atmospheric
+variations.  Based on Roerink, Su, and Menenti (2000)
+<doi:10.1016/S1464-1909(99)00128-8>.")
+    (license license:gpl3)))
 
 (define-public r-ssdtools
   (package
@@ -24480,13 +24550,13 @@ model allows an EM algorithm, optimizing a type-II log-likelihood.")
 (define-public r-spinner
   (package
     (name "r-spinner")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spinner" version))
        (sha256
-        (base32 "18fmcqqarfkixx4060paq236dc4fg8mbj9ngfz3khljb59lyh379"))))
+        (base32 "11m4n0g0nw0yjrbcjp27b5nx50cwx7qc5icbkvf8z4gwf6hj59pi"))))
     (properties `((upstream-name . "spinner")))
     (build-system r-build-system)
     (arguments
@@ -32681,32 +32751,6 @@ Sotkanet open data portal <https://sotkanet.fi/sotkanet/fi/index>.")
     (description
      "Misc support functions for @code{rOpenGov} and open data downloads.")
     (license license:bsd-2)))
-
-(define-public r-sortedeffects
-  (package
-    (name "r-sortedeffects")
-    (version "1.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SortedEffects" version))
-       (sha256
-        (base32 "188qlgg3m8f07hbjim65yw3qy6200y0b54imkdqm8mq0f14nmi0f"))))
-    (properties `((upstream-name . "SortedEffects")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsem r-quantreg r-pbapply r-hmisc r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/shuowencs/SortedEffects")
-    (synopsis
-     "Estimation and Inference Methods for Sorted Causal Effects and Classification Analysis")
-    (description
-     "This package implements the estimation and inference methods for sorted causal
-effects and classification analysis as in Chernozhukov, Fernandez-Val and Luo
-(2018) <doi:10.3982/ECTA14415>.")
-    (license license:expat)))
 
 (define-public r-sortable
   (package
@@ -48666,39 +48710,6 @@ and is the system where IBGE turns available aggregate data from their
 researches.")
     (license license:gpl3)))
 
-(define-public r-sidra
-  (package
-    (name "r-sidra")
-    (version "0.1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sidra" version))
-       (sha256
-        (base32 "1l88ppkrvqz0nwdixaxcl23dpqmxpgf4mkaa8hy0krrdnd89mrx7"))))
-    (properties `((upstream-name . "sidra")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rodrigoesborges/sidra")
-    (synopsis "Acesso aos Dados do 'SIDRA' do IBGE")
-    (description
-     "This package provides functions for accessing and manipulating data from
-Brazilian Institute of Geography and Statistics (IBGE)'s API SIDRA (acronym for
-IBGE System of Automatic Retrieval) from the new endpoints at
-<https://servicodados.ibge.gov.br/api/docs/agregados?versao=3>.  Ferramentas
-para acessar e manipular dados via API do Sistema IBGE De RecuperaÃ§Ã£o
-AutomÃ¡tica SIDRA do Instituto Brasileiro de Geografia e EstatÃ­stica (IBGE).")
-    (license license:gpl3)))
-
 (define-public r-sidier
   (package
     (name "r-sidier")
@@ -60151,13 +60162,13 @@ process more accurate, efficient, and reproducible.")
 (define-public r-semnet
   (package
     (name "r-semnet")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SemNeT" version))
        (sha256
-        (base32 "0240r7vsr39s53756gmg3s70cv0qaipxaw6b2bgr8fipf11dw15m"))))
+        (base32 "1wa0q6cp1czc9hmnwl2zw4f34kmqqn0z54y162wyyv20vk4afz4s"))))
     (properties `((upstream-name . "SemNeT")))
     (build-system r-build-system)
     (arguments
@@ -63465,13 +63476,13 @@ checking the case-crossover code.")
 (define-public r-seasepi
   (package
     (name "r-seasepi")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeasEpi" version))
        (sha256
-        (base32 "1yvhl04hifa6rgxf8dw19900r7i0f3j0r98w2h4ffhdj98i9039w"))))
+        (base32 "0lndawdvny440q9sdds6hql79rfipfiap37974zz0hj49bhbh792"))))
     (properties `((upstream-name . "SeasEpi")))
     (build-system r-build-system)
     (arguments
@@ -64971,13 +64982,13 @@ complex hierarchical tables used for statistical disclosure control.")
 (define-public r-sdbuildr
   (package
     (name "r-sdbuildr")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdbuildR" version))
        (sha256
-        (base32 "1jbv5942b82kksvd5m2ymvcpsfm5ahpd03myjrbms8i45lhhfw9b"))))
+        (base32 "151zwzp8v0586l0i1p8p8210ri9laiqssg3r3afqcaqh7m9c3nmg"))))
     (properties `((upstream-name . "sdbuildR")))
     (build-system r-build-system)
     (arguments
@@ -68062,13 +68073,13 @@ is known as the Standardized Precipitation Index (SPI).")
 (define-public r-schwabr
   (package
     (name "r-schwabr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schwabr" version))
        (sha256
-        (base32 "02p6fbw8rm88p69a5z5gac1mxx9qywqffzyy1bjkrbz3p5kz8kyk"))))
+        (base32 "0jk3ggc90ah25mkvbx5w448v78djhprh2rry5h53k7qx7zck3sm2"))))
     (properties `((upstream-name . "schwabr")))
     (build-system r-build-system)
     (arguments
@@ -70018,13 +70029,13 @@ variability in the data.")
 (define-public r-sc2sc
   (package
     (name "r-sc2sc")
-    (version "0.0.1-17")
+    (version "0.0.1-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sc2sc" version))
        (sha256
-        (base32 "02frhwbjbmlm87zg62r9bglm9277qixx3ypd9jmi1wz9akxa05na"))))
+        (base32 "0a6czcy7yg8zgx2999v127ws3ifc9ralp3vhsvygx4kag7a2x640"))))
     (properties `((upstream-name . "sc2sc")))
     (build-system r-build-system)
     (arguments
@@ -70043,10 +70054,11 @@ weighting or polygon overlay).  References: Goerlich (2022)
 <doi:10.12842/WPIVIE_0322>.  PavÃ­a and Cantarino (2017a, b)
 <doi:10.1111/gean.12112>, <doi:10.1016/j.apgeog.2017.06.021>.  PÃ©rez and PavÃ­a
 (2024a, b) <doi:10.4995/CARMA2024.2024.17796>, <doi:10.38191/iirr-jorr.24.057>.
-Acknowledgements: The authors wish to thank ConsellerÃ­a de EducaciÃ³n,
-Universidades y Empleo, Generalitat Valenciana (grant AICO/2021/257), Ministerio
-de EconomÃ­a e InnovaciÃ³n (grant PID2021-128228NB-I00) and FundaciÃ³n Mapfre
-for supporting this research.")
+Acknowledgements: The authors wish to thank ConsellerÃ­a de EducaciÃ³n, Cultura,
+Universidades y Empleo, Generalitat Valenciana (grant CIACIO/2023/031),
+ConsellerÃ­a de EducaciÃ³n, Universidades y Empleo, Generalitat Valenciana
+(grant AICO/2021/257), Ministerio de EconomÃ­a e InnovaciÃ³n (grant
+PID2021-128228NB-I00) and FundaciÃ³n Mapfre for supporting this research.")
     (license license:gpl2+)))
 
 (define-public r-sc2api
@@ -71054,13 +71066,13 @@ compatibility is ensured for the Landsat Global Land Survey data set.")
 (define-public r-sate
   (package
     (name "r-sate")
-    (version "2.4.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sate" version))
        (sha256
-        (base32 "1dv5pw2f9hhb5sin10r7qh2gmpy63953l5jbnf3gbsl6b2k0gbsz"))))
+        (base32 "08sarb63sb5xfp57mykgxfwby0kh591z7i4lzc9ax1dq3nrhyv54"))))
     (properties `((upstream-name . "sate")))
     (build-system r-build-system)
     (arguments
@@ -71071,14 +71083,21 @@ compatibility is ensured for the Landsat Global Land Survey data set.")
     (synopsis "Scientific Analysis of Trial Errors (SATE)")
     (description
      "Bundles functions used to analyze the harmfulness of trial errors in criminal
-trials.  Functions in the Scientific Analysis of Trial Errors ('SATE') package
+trials.  Functions in the Scientific Analysis of Trial Errors ('sate') package
 help users estimate the probability that a jury will find a defendant guilty
 given jurors preferences for a guilty verdict and the uncertainty of that
 estimate.  Users can also compare actual and hypothetical trial conditions to
-conduct harmful error analysis.  The relationship between individual jurors
-verdict preferences and the probability that a jury returns a guilty verdict has
-been studied by Davis (1973) <doi:10.1037/h0033951>; @code{MacCoun} & Kerr
-(1988) <doi:10.1037/0022-3514.54.1.21>, and Devine et el. (2001)
+conduct harmful error analysis.  The conceptual framework is discussed by Barry
+Edwards, A Scientific Framework for Analyzing the Harmfulness of Trial Errors,
+UCLA Criminal Justice Law Review (2024) <doi:10.5070/CJ88164341> and Barry
+Edwards, If The Jury Only Knew: The Effect Of Omitted Mitigation Evidence On The
+Probability Of A Death Sentence, Virginia Journal of Social Policy & the Law
+(2025)
+<https://vasocialpolicy.org/wp-content/uploads/2025/05/Edwards-If-The-Jury-Only-Knew.pdf>.
+ The relationship between individual jurors verdict preferences and the
+probability that a jury returns a guilty verdict has been studied by Davis
+(1973) <doi:10.1037/h0033951>; @code{MacCoun} & Kerr (1988)
+<doi:10.1037/0022-3514.54.1.21>, and Devine et el. (2001)
 <doi:10.1037/1076-8971.7.3.622>, among others.")
     (license license:cc0)))
 
@@ -76131,13 +76150,13 @@ Elastic-Net.")
 (define-public r-s2dv
   (package
     (name "r-s2dv")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s2dv" version))
        (sha256
-        (base32 "1dg51nyjg54c9z1ikhvbxc23cq8nlivk7akbrbaglhgm13w7wgkz"))))
+        (base32 "1qjdzxpfrl97qx9l7bwa2kn84y9v58p0d4wfnbyackjffqddml52"))))
     (properties `((upstream-name . "s2dv")))
     (build-system r-build-system)
     (arguments
@@ -76156,7 +76175,7 @@ Elastic-Net.")
                              r-climprojdiags
                              r-bigmemory
                              r-abind))
-    (home-page "https://earth.bsc.es/gitlab/es/s2dv/")
+    (home-page "https://gitlab.earth.bsc.es/es/s2dv/")
     (synopsis "Seasonal to Decadal Verification")
     (description
      "An advanced version of package s2dverification'.  Intended for seasonal to

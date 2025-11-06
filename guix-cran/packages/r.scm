@@ -2548,13 +2548,13 @@ any revisions, for all groups within the supplied data.")
 (define-public r-ruminate
   (package
     (name "r-ruminate")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ruminate" version))
        (sha256
-        (base32 "00hkk70sx4nyfv1icxyhvpk4fgr1dm9mz8phq58pvl39pqm51z53"))))
+        (base32 "18d6ny3kzi0kkrnvdd0pd9pghkm9cl6pxw9bp6wgd4cykd7v2fqk"))))
     (properties `((upstream-name . "ruminate")))
     (build-system r-build-system)
     (arguments
@@ -4256,40 +4256,6 @@ by business centers, advertisers, budgets and reports.")
 <https://tika.apache.org/>.  Get either plain text or structured XHTML content.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-rtiger
-  (package
-    (name "r-rtiger")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RTIGER" version))
-       (sha256
-        (base32 "08gs26wv6jnd4rzdhb87as26aslgqs128x1ip8h9nmr3l9mwg5fq"))))
-    (properties `((upstream-name . "RTIGER")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tailrank
-                             r-reshape2
-                             r-qpdf
-                             r-juliacall
-                             r-iranges
-                             r-ggplot2
-                             r-genomicranges
-                             r-genomeinfodb
-                             r-extradistr
-                             r-e1071))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RTIGER")
-    (synopsis "HMM-Based Model for Genotyping and Cross-Over Identification")
-    (description
-     "Our method integrates information from all sequenced samples, thus avoiding loss
-of alleles due to low coverage.  Moreover, it increases the statistical power to
-uncover sequencing or alignment errors <doi:10.1093/plphys/kiad191>.")
-    (license license:gpl2+)))
 
 (define-public r-rtide
   (package
@@ -16031,19 +15997,20 @@ roxygen comments of another function by inserting inline code.")
 (define-public r-roclab
   (package
     (name "r-roclab")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roclab" version))
        (sha256
-        (base32 "1sdz0sd04192adavr4isgn421v3ymr6nqb8bzv1ydy13n8hjxwiy"))))
+        (base32 "1i2w9n71zssw9zhcbfp9mrv14g7p7xhf4fpwfwxb96hyp9lbl9jh"))))
     (properties `((upstream-name . "roclab")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rsample
+                             r-proc
                              r-pracma
                              r-kernlab
                              r-ggplot2
@@ -23333,36 +23300,6 @@ jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
 
-(define-public r-rlibkriging
-  (package
-    (name "r-rlibkriging")
-    (version "0.9-2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rlibkriging" version))
-       (sha256
-        (base32 "1zvn9z58l9y4rxqkp609vvfy9zszjr54m44hypvdj05rfcaz0r2l"))))
-    (properties `((upstream-name . "rlibkriging")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gfortran gcc cmake))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/libKriging")
-    (synopsis "Kriging Models using the 'libKriging' Library")
-    (description
-     "Interface to @code{libKriging} C++ library
-<https://github.com/@code{libKriging>} that should provide most standard Kriging
-/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
-@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
-algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
-around by Pascal Have of lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard
-Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters optimization.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-rlibkdv
   (package
     (name "r-rlibkdv")
@@ -24740,20 +24677,20 @@ functionalities are useful as part of a CVS data production chain.")
 (define-public r-rjdqa
   (package
     (name "r-rjdqa")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdqa" version))
        (sha256
-        (base32 "0m3r5ficsj1hlp72imb1v2fbl2kvh9gni2rkff66wag805v0sjxp"))))
+        (base32 "1ji0g0dy04sj7bgvl4l9p3c2xwxajk021r4x08x6zqd7yx37d1h3"))))
     (properties `((upstream-name . "rjdqa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list openjdk))
-    (propagated-inputs (list r-rjdemetra r-plotrix r-ggdemetra))
+    (propagated-inputs (list r-rjdemetra r-rjava r-plotrix r-ggdemetra))
     (home-page "https://aqlt.github.io/rjdqa/")
     (synopsis "Quality Assessment for Seasonal Adjustment")
     (description
@@ -35109,13 +35046,13 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 (define-public r-report
   (package
     (name "r-report")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "report" version))
        (sha256
-        (base32 "0y8yj3qjb1pcy4lv5az3xks9gw8cnv8fwpcg6lllnn6wqjmm8jfs"))))
+        (base32 "1xvws1j9y3lp9id3aixnvp9bjkqdm8pbcqv52wzmvj24ksz15ihx"))))
     (properties `((upstream-name . "report")))
     (build-system r-build-system)
     (arguments
@@ -40254,13 +40191,13 @@ obtain updated taxonomic details, and explore the dataset.")
 (define-public r-redatamx
   (package
     (name "r-redatamx")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatamx" version))
        (sha256
-        (base32 "0qpa5ka1fb6iq7sii4jzngkl675hn9bwsk2pc2mh6rdkqq27jvkp"))))
+        (base32 "07r1f0b371q7nfw7w87a345bp73yq4546z774gmxagxhb5cb6ghs"))))
     (properties `((upstream-name . "redatamx")))
     (build-system r-build-system)
     (arguments
@@ -44855,13 +44792,13 @@ then be imported to access the check functions in other packages.")
 (define-public r-rdav
   (package
     (name "r-rdav")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdav" version))
        (sha256
-        (base32 "1ya2xhwdh6r2k5anwpyiqqymm2cs3dbxfsq72wlc9f2zi03ny66g"))))
+        (base32 "11iskdw61vic2yfmjfkh39j06kqrz9bl6x528hcvy6c4v18y92rh"))))
     (properties `((upstream-name . "rdav")))
     (build-system r-build-system)
     (arguments
@@ -45091,13 +45028,13 @@ embedded in a web page ready for its interactive analysis and exploration.")
 (define-public r-rd2roxygen
   (package
     (name "r-rd2roxygen")
-    (version "1.16")
+    (version "1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rd2roxygen" version))
        (sha256
-        (base32 "1p8xzgzl1h1ykj1j9c3gyr7a9m89sd9kwr5yqbdy9jkiwmmbb919"))))
+        (base32 "0q3xx6sidc21mmw5jzpr14vak8rkcchaahjh3vi29ws02n9j0ssl"))))
     (properties `((upstream-name . "Rd2roxygen")))
     (build-system r-build-system)
     (arguments
@@ -46732,13 +46669,13 @@ efficient computation implemented with Rcpp'.")
 (define-public r-rcppcnpy
   (package
     (name "r-rcppcnpy")
-    (version "0.2.13")
+    (version "0.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCNPy" version))
        (sha256
-        (base32 "0v2y1y1j2gfqyj9as556vy6pfc4fj16sk3dyzikwagpav4a83p01"))))
+        (base32 "1375alv889ga6dv5xi8cqil877cljygh9fy5nshx761lglfjanh8"))))
     (properties `((upstream-name . "RcppCNPy")))
     (build-system r-build-system)
     (arguments
@@ -58007,6 +57944,51 @@ Nowosad (2020) <doi:10.1016/j.apgeog.2020.102239>).  It is a reimagined approach
 for analyzing residential segregation and racial diversity based on the concept
 of landscapeâ used in the domain of landscape ecology.")
     (license license:expat)))
+
+(define-public r-raccess
+  (package
+    (name "r-raccess")
+    (version "0.1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rAccess" version))
+       (sha256
+        (base32 "0k5lr232wk8fhqlwcnq4sqkqysnv49jc2f79d1kijf00zlz9bh6d"))))
+    (properties `((upstream-name . "rAccess")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-tibble
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyalert
+                             r-shiny
+                             r-r6
+                             r-pins
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-htmlwidgets
+                             r-here
+                             r-dt
+                             r-dplyr
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://johnsonandjohnson.github.io/rAccess/")
+    (synopsis "Access Control Module for 'shiny' Applications")
+    (description
+     "This package provides a flexible framework for implementing hierarchical access
+control in shiny applications.  Features include user permission management
+through a two-tier system of access panels and units, pluggable shiny module for
+administrative interfaces, and support for multiple storage backends (local, AWS
+S3', Posit Connect').  The system enables fine-grained control over application
+features, with built-in audit trails and user management capabilities.
+Integrates seamlessly with Posit Connect's authentication system.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-racademyocean
   (package

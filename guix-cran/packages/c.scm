@@ -1200,13 +1200,13 @@ vignette for more, including full details of citations.")
 (define-public r-cvdprevent
   (package
     (name "r-cvdprevent")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvdprevent" version))
        (sha256
-        (base32 "1n44j83yanrppwln5n0ixwyzazw0fsvq3q5fxcj64pn6cmbrcsv1"))))
+        (base32 "11wrxsqv7p2fbv9qqc3mmcd6j07g8a1f3sl3ma2g2dlkxs6cnjch"))))
     (properties `((upstream-name . "cvdprevent")))
     (build-system r-build-system)
     (arguments
@@ -1214,21 +1214,24 @@ vignette for more, including full details of citations.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-rappdirs
                              r-purrr
-                             r-jsonlite
+                             r-memoise
                              r-httr2
                              r-glue
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-cachem))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/craig-parylo/cvdprevent")
-    (synopsis
-     "Wrapper for the 'CVD Prevent' Application Programming Interface")
+    (home-page "https://cran.r-project.org/package=cvdprevent")
+    (synopsis "Access and Analyse Data from the 'CVD Prevent' API")
     (description
-     "This package provides an R wrapper to the CVD Prevent application programming
-interface (API).  Users can make API requests through built-in R functions.  The
-Cardiovascular Disease Prevention Audit (CVDPREVENT) is an England-wide primary
-care audit that automatically extracts routinely held GP health data.
+     "This package provides an R interface to the CVD Prevent application programming
+interface (API), allowing users to retrieve and analyse cardiovascular disease
+prevention data from primary care records across England.  The Cardiovascular
+Disease Prevention Audit (CVDPREVENT) automatically extracts routinely held GP
+health data to support national reporting and improvement initiatives.  See the
+API documentation for details:
 <https://bmchealthdocs.atlassian.net/wiki/spaces/CP/pages/317882369/CVDPREVENT+API+Documentation>.")
     (license license:expat)))
 
@@ -2085,6 +2088,33 @@ of the iterations where you stopped (reading the already evaluated ones from
 cache), and work with the currently evaluated iterations while remaining ones
 are running in a background job.  Parallel computing is also easier with the
 workers parameter.")
+    (license license:expat)))
+
+(define-public r-curricularcomplexity
+  (package
+    (name "r-curricularcomplexity")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CurricularComplexity" version))
+       (sha256
+        (base32 "04mrcv40zgb9nsms0wpkp61ygg2fisvin2mzcqac02pvh3k5rww9"))))
+    (properties `((upstream-name . "CurricularComplexity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CurricularComplexity")
+    (synopsis "Toolkit for Analyzing Curricular Complexity")
+    (description
+     "Enables educational researchers and practitioners to calculate the curricular
+complexity of a plan of study, visualize its prerequisite structure at scale,
+and conduct customizable analyses.  The original tool can be found at
+<https://curricularanalytics.org>.  Additional functions to explore curriculum
+complexity from the literature are also included.")
     (license license:expat)))
 
 (define-public r-curricularanalytics
@@ -6995,6 +7025,33 @@ Chaudhary (1985) \"Biometrical Methods in Quantitative Genetic Analysis\"
 underlying command-line tools installed.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-crookr
+  (package
+    (name "r-crookr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crookR" version))
+       (sha256
+        (base32 "1w0zkajdalqsdb54afd07ry24qdrmiz28qrbch3js89x6wvfiwqp"))))
+    (properties `((upstream-name . "crookR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/raudep/crookR")
+    (synopsis "Synthetic Crook Deformations in Stem Point Clouds")
+    (description
+     "Simulates parameterized single- and double-directional stem deformations in tree
+point clouds derived from terrestrial or mobile laser scanning, enabling the
+generation of realistic synthetic datasets for training and validating machine
+learning models in wood defect detection, quality assessment, and precision
+forestry.  For more details see Pires (2025) <doi:10.54612/a.7hln0kr0ta>.")
+    (license license:expat)))
+
 (define-public r-cronr
   (package
     (name "r-cronr")
@@ -9763,13 +9820,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.2-2")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "1k61y9iymyfdphmkz61nk8cs7wgw9lv7ka8slfvrv6bkmivzq0iq"))))
+        (base32 "0a16bmn7d0v5dk37p8mr6zdc3qar6h6p0yw46bqrvgrj5cm39brp"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -12995,21 +13052,23 @@ Bulus (2021) <doi:10.1080/19345747.2021.1947425>.")
 (define-public r-corx
   (package
     (name "r-corx")
-    (version "1.0.7.2")
+    (version "1.0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corx" version))
        (sha256
-        (base32 "0dyrxw90xrs1sqzniqxh8rnafcng38qrm5izwlgpfafihipx9ss8"))))
+        (base32 "130hs6ndnim011jmn8zmyam7llcfn824zjkiynggfpkg50vyjkn2"))))
     (properties `((upstream-name . "corx")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
+                             r-rlang
                              r-ppcor
                              r-moments
+                             r-labelled
                              r-glue
                              r-ggpubr
                              r-ggplot2
@@ -15795,13 +15854,13 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.9")
+    (version "2.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "197lw578waa3ygcz066xf3mnzvx4r09wb5yb03ska4nibl4ir243"))))
+        (base32 "1h6v3n73zhchipxxkki8l10kzr1qfcnfkkdghy5djdb06cspmy6n"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (arguments
@@ -21042,13 +21101,13 @@ Discriminant Analysis (HDDA) algorithm of Bouveyron C. Girard S. and Schmid C.
 (define-public r-compositionalclust
   (package
     (name "r-compositionalclust")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalClust" version))
        (sha256
-        (base32 "1jayq5sfblbihqk9173y37ndyd07czfivs5npiqab8s9w4b00a2k"))))
+        (base32 "0iawh6mzn29lqxk79311lp2hxk9x8i0jpzsvihlzvh5swqpdc4n6"))))
     (properties `((upstream-name . "CompositionalClust")))
     (build-system r-build-system)
     (arguments
@@ -21059,6 +21118,7 @@ Discriminant Analysis (HDDA) algorithm of Bouveyron C. Girard S. and Schmid C.
                              r-mixture
                              r-lowmemtkmeans
                              r-foreach
+                             r-factoextra
                              r-doparallel
                              r-compositional))
     (home-page "https://cran.r-project.org/package=CompositionalClust")
@@ -22855,13 +22915,13 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-comets
   (package
     (name "r-comets")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comets" version))
        (sha256
-        (base32 "1vqzbayii05fx9q38i14d2vzi32padpfzrzzcx50np16blhpsmjc"))))
+        (base32 "0ndxdnxsg1kxhjgh8qp3xc2xv236lncqw2kzs9gpr3iqgg81qywh"))))
     (properties `((upstream-name . "comets")))
     (build-system r-build-system)
     (arguments
@@ -27121,13 +27181,13 @@ with copula functions\".  Statistical Papers, 60, p.35-51.
 (define-public r-cocktailapp
   (package
     (name "r-cocktailapp")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocktailApp" version))
        (sha256
-        (base32 "134y64z297r6fqiakqa42f15i5sxlaczc9adxrkicq9275kjf2fn"))))
+        (base32 "14mirid1lca0hp4l674cqm0zb5kvyin06yqpxb73kl9ilc13r3bf"))))
     (properties `((upstream-name . "cocktailApp")))
     (build-system r-build-system)
     (arguments
@@ -27138,7 +27198,6 @@ with copula functions\".  Statistical Papers, 60, p.35-51.
                              r-shinythemes
                              r-shiny
                              r-magrittr
-                             r-ggtern
                              r-ggplot2
                              r-forcats
                              r-dt
@@ -31860,46 +31919,6 @@ efficiently.")
      "This package provides a set of functions to fit a boosting conditional logit
 model.")
     (license license:gpl2+)))
-
-(define-public r-clocksim
-  (package
-    (name "r-clocksim")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clockSim" version))
-       (sha256
-        (base32 "0v8bkvzfif8ljjircxr5wk20qajfmzbdgpn3hsaq10spf62px07a"))))
-    (properties `((upstream-name . "clockSim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-odin
-                             r-matrixstats
-                             r-lomb
-                             r-ggplot2
-                             r-dplyr
-                             r-dde
-                             r-bench))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yeyuan98/clockSim")
-    (synopsis "Streamlined Simulation of Circadian Gene Networks")
-    (description
-     "This package provides a user-friendly workflow for simulating circadian clock
-gene networks.  Despite decades of advances in modeling circadian clock
-dynamics, the lack of accessible tools for reproducible simulation workflows
-hinders the integration of computational modeling with experimental studies.
-@code{clockSim} addresses this gap by providing models and helper functions with
-step-by-step vignettes.  This package opens up system-level exploration of the
-circadian clock to wet-lab experimentalists, and future development will include
-additional clock architectures and other gene circuit models.  Currently
-implemented models are based on Leloup and Goldbeter (1998)
-<doi:10.1177/074873098128999934>.")
-    (license license:gpl3+)))
 
 (define-public r-clockplot
   (package
@@ -40698,13 +40717,13 @@ user-friendly graphical interface for package @code{ChannelAttribution}'.")
 (define-public r-channelattribution
   (package
     (name "r-channelattribution")
-    (version "2.0.7")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChannelAttribution" version))
        (sha256
-        (base32 "0ak7s5l990kfkf5bzggqplss5pd06rfalghk1rzy92js1n1qxrs7"))))
+        (base32 "0nsm353c0c5j7way4q2l8xzgb39ba3i5cgsaciby4x76wbsipssr"))))
     (properties `((upstream-name . "ChannelAttribution")))
     (build-system r-build-system)
     (arguments
@@ -41334,6 +41353,36 @@ American Diabetes Association (2020)
 Tamborlane W V., Beck RW, Bode BW, et al. (2008) <doi:10.1056/NEJMoa0805017>
 Umpierrez GE, P. Kovatchev B (2018) <doi:10.1016/j.amjms.2018.09.010>.")
     (license (license:fsdg-compatible "MIT License + file LICENSE"))))
+
+(define-public r-cgmguru
+  (package
+    (name "r-cgmguru")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cgmguru" version))
+       (sha256
+        (base32 "1f0n3azlqg0wrwzxcrg8d0p2i7pvxcci8hgsrc5bbn4zm3v7g3yy"))))
+    (properties `((upstream-name . "cgmguru")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shstat1729/cgmguru")
+    (synopsis
+     "Advanced Continuous Glucose Monitoring Analysis with High-Performance C++ Backend")
+    (description
+     "This package provides tools for advanced analysis of continuous glucose
+monitoring (CGM) time-series, implementing GRID (Glucose Rate Increase Detector)
+and GRID-based algorithms for postprandial peak detection, and detection of
+hypoglycemic and hyperglycemic episodes (Levels 1/2/Extended) aligned with
+international consensus CGM metrics.  Core algorithms are implemented in
+optimized C++ using Rcpp to provide accurate and fast analysis on large
+datasets.")
+    (license license:expat)))
 
 (define-public r-cgmanalyzer
   (package
@@ -47982,34 +48031,6 @@ rules.  Realistic trial trajectories are simulated and the operating
 characteristics of the designs are calculated.")
     (license license:expat)))
 
-(define-public r-catregs
-  (package
-    (name "r-catregs")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "catregs" version))
-       (sha256
-        (base32 "0zmgq5w8kd8ldfkz9j43vpzjnyv5rcaaj57r7b7gsxwi3gdvqr4a"))))
-    (properties `((upstream-name . "catregs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=catregs")
-    (synopsis "Post-Estimation Functions for Generalized Linear Mixed Models")
-    (description
-     "Several functions for working with mixed effects regression models for limited
-dependent variables.  The functions facilitate post-estimation of model
-predictions or margins, and comparisons between model predictions for assessing
-or probing moderation.  Additional helper functions facilitate model comparisons
-and implements simulation-based inference for model predictions of
-alternative-specific outcome models.  See also, Melamed and Doan (2024, ISBN:
-978-1032509518).")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-catreg
   (package
     (name "r-catreg")
@@ -51239,19 +51260,19 @@ settings.")
 (define-public r-candisc
   (package
     (name "r-candisc")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "candisc" version))
        (sha256
-        (base32 "0wl5hmx0hb0d1rk9as989nfpvdj64s4kjxd6852qvh9i54dab254"))))
+        (base32 "1rx6llv7c9n92l5nr917svy0w7l8rm3xgp7a9jddc4wfqyxq2gbx"))))
     (properties `((upstream-name . "candisc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-heplots r-car))
+    (propagated-inputs (list r-insight r-heplots r-ggplot2 r-dplyr r-car))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/friendly/candisc/")
     (synopsis
@@ -51267,7 +51288,8 @@ to higher-way MANOVA designs for all factors in a multivariate linear model,
 computing canonical scores and vectors for each term.  The graphic functions
 provide low-rank (1D, 2D, 3D) visualizations of terms in an mlm via the
 plot.candisc and heplot.candisc methods.  Related plots are now provided for
-canonical correlation analysis when all predictors are quantitative.")
+canonical correlation analysis when all predictors are quantitative.  Methods
+for linear discriminant analysis are now included.")
     (license license:gpl2+)))
 
 (define-public r-cancerscreening
@@ -51463,19 +51485,26 @@ and can be further refined as needed by the user.")
 (define-public r-cancensus
   (package
     (name "r-cancensus")
-    (version "0.5.7")
+    (version "0.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancensus" version))
        (sha256
-        (base32 "02392bbyzdn2nacjsc3rjv6f3y0mczacpa96azrm300l1j6zsszr"))))
+        (base32 "0ig7qzrn73mhqfszml3393qf4jmq9qyhlbqfxccpvi2k6valphyw"))))
     (properties `((upstream-name . "cancensus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-jsonlite r-httr r-dplyr r-digest))
+    (propagated-inputs (list r-sf
+                             r-rlang
+                             r-readr
+                             r-jsonlite
+                             r-httr
+                             r-geojsonsf
+                             r-dplyr
+                             r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mountainMath/cancensus")
     (synopsis
@@ -51488,7 +51517,7 @@ convenience functions for working with Census variables, variable hierarchies,
 and region selection.  API keys are freely available with free registration at
 <https://censusmapper.ca/api>.  Census data and boundary geometries are
 reproduced and distributed on an \"as is\" basis with the permission of Statistics
-Canada (Statistics Canada 2001; 2006; 2011; 2016; 2021).")
+Canada (Statistics Canada 1996; 2001; 2006; 2011; 2016; 2021).")
     (license license:expat)))
 
 (define-public r-canaper

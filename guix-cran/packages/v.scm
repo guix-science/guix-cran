@@ -6631,13 +6631,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "056dvyjkyij19fdsy65x1x24h6clrvsm9ghagvxgra4iq871chnz"))))
+        (base32 "1az29fv9q16280kz88gz78wzd9wdbdc3gg19x1pbxfgk62r50z6j"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments
@@ -6646,13 +6646,16 @@ analyses.")
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sf
+                             r-scales
                              r-rstudioapi
+                             r-rlang
                              r-magrittr
                              r-lubridate
                              r-knitr
                              r-kableextra
                              r-jsonlite
                              r-httr2
+                             r-ggplot2
                              r-dt
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -10261,6 +10264,32 @@ Gilbert P, Fong Y, Kenny A, and Carone, M (2022)
 <doi:10.1093/biostatistics/kxac024> and Fay MP and Follmann DA (2023)
 <doi:10.48550/@code{arXiv.2208.06465>}.")
     (license license:gpl3)))
+
+(define-public r-vaccinationimpact
+  (package
+    (name "r-vaccinationimpact")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaccinationimpact" version))
+       (sha256
+        (base32 "0az8npqxyc80y5chn7rjilnw3dl2l7fyh2pkwhvim7cymqcamc0a"))))
+    (properties `((upstream-name . "vaccinationimpact")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Epiconcept-Paris/vaccinationimpact/")
+    (synopsis "Impact Study of Vaccination Campaigns")
+    (description
+     "This package provides tools to estimate the impact of vaccination campaigns at
+population level (number of events averted, number of avertable events, number
+needed to vaccinate).  Inspired by the methodology proposed by Foppa et al.
+(2015) <doi:10.1016/j.vaccine.2015.02.042> and Machado et al. (2019)
+<doi:10.2807/1560-7917.ES.2019.24.45.1900268> for influenza vaccination impact.")
+    (license license:expat)))
 
 (define-public r-vacalibration
   (package

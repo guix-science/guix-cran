@@ -3945,6 +3945,32 @@ more detailed description is available at
 implemented methods in the tsmodels framework.")
     (license license:gpl2)))
 
+(define-public r-tsmcp
+  (package
+    (name "r-tsmcp")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TSMCP" version))
+       (sha256
+        (base32 "1p4hi33nzbs60mp9qahjrgi625f68773cmmkc28nlyp9v2gljrgm"))))
+    (properties `((upstream-name . "TSMCP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ncvreg r-lars))
+    (home-page "https://cran.r-project.org/package=TSMCP")
+    (synopsis "Fast Two Stage Multiple Change Point Detection")
+    (description
+     "This package provides a novel and fast two stage method for simultaneous
+multiple change point detection and variable selection for piecewise stationary
+autoregressive (PSAR) processes and linear regression model.  It also
+simultaneously performs variable selection for each autoregressive model and
+hence the order selection.")
+    (license license:gpl2+)))
+
 (define-public r-tsmarch
   (package
     (name "r-tsmarch")
@@ -8478,13 +8504,13 @@ model from high resolution tree disk image.")
 (define-public r-treeplotarea
   (package
     (name "r-treeplotarea")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treePlotArea" version))
        (sha256
-        (base32 "0swj43mv121jjljabng43ljllrb3ap7clmxjy8j6aav28i2mv0f5"))))
+        (base32 "0ln6f0hnl8xmf92d4sprvyxy8yncw3b5p6i1cpka1yqy05i745h0"))))
     (properties `((upstream-name . "treePlotArea")))
     (build-system r-build-system)
     (arguments
@@ -15547,6 +15573,29 @@ of the package is described in Guo G. (2020)
 <doi:10.1080/02664763.2022.2053949>.")
     (license license:expat)))
 
+(define-public r-tldrdocs
+  (package
+    (name "r-tldrdocs")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tldrDocs" version))
+       (sha256
+        (base32 "1jxb3a43lws2agv3x39mrhpgfddbwphscf1919j1azbsd4xx9zxp"))))
+    (properties `((upstream-name . "tldrDocs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=tldrDocs")
+    (synopsis "Provide 'tldrPages' Documentation for Base R Functions")
+    (description
+     "Documentation for commonly-used objects included in the base distribution of R.
+Note that @code{tldrDocs} does not export any functions itself, its purpose is
+to write .Rd files during its installation for @code{tldr()} to find.")
+    (license license:expat)))
+
 (define-public r-tldr
   (package
     (name "r-tldr")
@@ -16486,13 +16535,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.15.0")
+    (version "0.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "1xhmjdcqjrhrf3x77zjlh18sfzd94b88i5skhy7pi32asbyqlmfv"))))
+        (base32 "0g44sfckfhka3sgbw4vj2kkym66fqh0cf4iq01zal3lavh4mpgzz"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -17814,13 +17863,13 @@ support for Python'.")
 (define-public r-tilemaps
   (package
     (name "r-tilemaps")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tilemaps" version))
        (sha256
-        (base32 "0w89spnrzs0whjy071wn2i5c5llhssjzisz9xgv89s0764z5mh9j"))))
+        (base32 "0s9lwqxb2bgfzk856rdmljs5m5l1xm5zj13nqy7nrw2zz59ip1p5"))))
     (properties `((upstream-name . "tilemaps")))
     (build-system r-build-system)
     (arguments
@@ -24010,33 +24059,36 @@ functions are piecewise polynomial with adaptively chosen knots.")
 (define-public r-tfarima
   (package
     (name "r-tfarima")
-    (version "0.3.2")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfarima" version))
        (sha256
-        (base32 "1vql4592js9kzv3466dn57dfx19w6i573nh933v2gcnr6mlzhiga"))))
+        (base32 "0azagfb5v9m11p5gasz9dhm3qjfcmnbd2v0nqzva6dxns8mnc5gy"))))
     (properties `((upstream-name . "tfarima")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-rcpparmadillo r-rcpp r-numderiv))
+    (propagated-inputs (list r-zoo
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quadprog
+                             r-numderiv
+                             r-nnls
+                             r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gallegoj/tfarima")
     (synopsis "Transfer Function and ARIMA Models")
     (description
-     "Building customized transfer function and ARIMA models with multiple operators
-and parameter restrictions.  Functions for model identification, model
-estimation (exact or conditional maximum likelihood), model diagnostic checking,
-automatic outlier detection, calendar effects, forecasting and seasonal
-adjustment.  See Bell and Hillmer (1983) <doi:10.1080/01621459.1983.10478005>,
-Box, Jenkins, Reinsel and Ljung <ISBN:978-1-118-67502-1>, Box, Pierce and
-Newbold (1987) <doi:10.1080/01621459.1987.10478430>, Box and Tiao (1975)
-<doi:10.1080/01621459.1975.10480264>, Chen and Liu (1993)
-<doi:10.1080/01621459.1993.10594321>.")
-    (license license:gpl2)))
+     "Build customized transfer function and ARIMA models with multiple operators and
+parameter restrictions.  Provides tools for model identification, estimation
+using exact or conditional maximum likelihood, diagnostic checking, automatic
+outlier detection, calendar effects, forecasting, and seasonal adjustment.  The
+new version also supports unobserved component ARIMA model specification and
+estimation for structural time series analysis.")
+    (license license:gpl2+)))
 
 (define-public r-tfaddons
   (package
@@ -26872,13 +26924,13 @@ de-escalated only if an unacceptable level of toxicity is experienced.")
 (define-public r-tepr
   (package
     (name "r-tepr")
-    (version "1.1.11")
+    (version "1.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tepr" version))
        (sha256
-        (base32 "1zl72phqpxsk6lkwhwcnh6rk3sywsff61inxlsqcnqird15h0vaq"))))
+        (base32 "0fydklx8mf9makfa9nydlcycz05ldp67c0zb4l2hihp98lqqjaqx"))))
     (properties `((upstream-name . "tepr")))
     (build-system r-build-system)
     (arguments
@@ -27741,20 +27793,20 @@ plus mixture-distribution post-processing.")
 (define-public r-tempdisagg
   (package
     (name "r-tempdisagg")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tempdisagg" version))
        (sha256
-        (base32 "11dr5z1s9d8d2xsl4gm9x15v7jyi88f5c5gk05layh5nl2c1bxni"))))
+        (base32 "080g16v25s57fhb9mkhkcjssp1qaxw5n7ki5c8clhp21rqml50g5"))))
     (properties `((upstream-name . "tempdisagg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://journal.r-project.org/archive/2013-2/sax-steiner.pdf")
+    (home-page "https://cynkra.github.io/tempdisagg/")
     (synopsis
      "Methods for Temporal Disaggregation and Interpolation of Time Series")
     (description

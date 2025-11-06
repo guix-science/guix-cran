@@ -620,6 +620,33 @@ family of packages.")
 submit events.")
     (license license:expat)))
 
+(define-public r-azr
+  (package
+    (name "r-azr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "azr" version))
+       (sha256
+        (base32 "1iiz4ambzqjxaszwag7fxf81r7d3wah8pqhly6j5hr26c2kc8cjn"))))
+    (properties `((upstream-name . "azr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-r6 r-jsonlite r-httr2 r-cli))
+    (home-page "https://pedrobtz.github.io/azr/")
+    (synopsis
+     "Credential Chain for Seamless 'OAuth 2.0' Authentication to 'Azure Services'")
+    (description
+     "This package implements a credential chain for Azure OAuth 2.0 authentication
+based on the package httr2''s OAuth framework.  Sequentially attempts
+authentication methods until one succeeds.  During development allows
+interactive browser-based flows ('Device Code and Auth Code flows) and
+non-interactive flow ('Client Secret') in batch mode.")
+    (license license:expat)))
+
 (define-public r-azlogr
   (package
     (name "r-azlogr")
@@ -5117,13 +5144,13 @@ R code.")
 (define-public r-asterisk
   (package
     (name "r-asterisk")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asteRisk" version))
        (sha256
-        (base32 "0fdfii4g42ydp1x0hay1wq69xnbnxs222zg2gilp0zb01760zc8j"))))
+        (base32 "1vslir7rbn9m025p9v064qq4zs742sjmnzp5lhmjz7makshyjfx1"))))
     (properties `((upstream-name . "asteRisk")))
     (build-system r-build-system)
     (arguments
@@ -7679,6 +7706,31 @@ fractionally integrated moving average (ARFIMA) models can be implemented.
 Details can be found in Box et al. (2015, ISBN: 978-1-118-67502-1) and
 Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
     (license license:gpl3)))
+
+(define-public r-armadillo4r
+  (package
+    (name "r-armadillo4r")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "armadillo4r" version))
+       (sha256
+        (base32 "12xryns1x5zqcxx1c973jsb75nwqki0v6qmkiihw0m06i5bcm1g7"))))
+    (properties `((upstream-name . "armadillo4r")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp4r))
+    (home-page "https://pacha.dev/armadillo4r/")
+    (synopsis "An 'Armadillo' Interface")
+    (description
+     "This package provides function declarations and inline function definitions that
+facilitate communication between R and the Armadillo C++ library for linear
+algebra and scientific computing.  This implementation is derived from Vargas
+Sepulveda and Schneider Malamud (2024) <doi:10.1016/j.softx.2025.102087>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arlclustering
   (package
@@ -10853,6 +10905,29 @@ Analysis Ready Samples services (@code{AppEEARS};
 <https://appeears.earthdatacloud.nasa.gov/>).  The package provides easy access
 to analysis ready earth observation data in R.")
     (license license:agpl3)))
+
+(define-public r-apor
+  (package
+    (name "r-apor")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apor" version))
+       (sha256
+        (base32 "0a4cw2dss43kvy42h3v2bwysnqbwf5c9zhpb1jl69q3h45w0zmbg"))))
+    (properties `((upstream-name . "apor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=apor")
+    (synopsis "Assessment of Predictions for an Ordinal Response")
+    (description
+     "This package produces several metrics to assess the prediction of ordinal
+categories based on the estimated probability distribution for each unit of
+analysis produced by any model returning a matrix with these probabilities.")
+    (license license:gpl2)))
 
 (define-public r-apollo
   (package
@@ -26453,6 +26528,36 @@ variant scores in a reproducible and standardised manner.  For details, see
 Badonyi and Marsh (2025) <doi:10.1093/bioinformatics/btaf503>.")
     (license license:expat)))
 
+(define-public r-aclhs
+  (package
+    (name "r-aclhs")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aclhs" version))
+       (sha256
+        (base32 "0p5y4v1l96qzf4xdn4l864yhfinmv5kic3mfchl136mpggg2fjxw"))))
+    (properties `((upstream-name . "aclhs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-geor r-deoptim))
+    (home-page "https://github.com/vargaslab/acLHS")
+    (synopsis "Autocorrelated Conditioned Latin Hypercube Sampling")
+    (description
+     "Implementation of the autocorrelated conditioned Latin Hypercube Sampling
+(@code{acLHS}) algorithm for 1D (time-series) and 2D (spatial) data.  The
+@code{acLHS} algorithm is an extension of the conditioned Latin Hypercube
+Sampling (@code{cLHS}) algorithm that allows sampled data to have similar
+correlative and statistical features of the original data.  Only a properly
+formatted dataframe needs to be provided to yield subsample indices from the
+primary function.  For more details about the @code{cLHS} algorithm, see Minasny
+and @code{McBratney} (2006), <doi:10.1016/j.cageo.2005.12.009>.  For
+@code{acLHS}, see Le and Vargas (2024) <doi:10.1016/j.cageo.2024.105539>.")
+    (license license:expat)))
+
 (define-public r-acledr
   (package
     (name "r-acledr")
@@ -27150,6 +27255,33 @@ manage and reshape the format in which data is provided on the client side.")
     (description
      "Functionality to allow users to easily colour plots with the colour palettes of
 various academic institutions.")
+    (license license:expat)))
+
+(define-public r-abwm
+  (package
+    (name "r-abwm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "abwm" version))
+       (sha256
+        (base32 "0l14zxcyv09zv9v1kmcbipxjblhkyb71skcshsy7y2kb3adamv1m"))))
+    (properties `((upstream-name . "abwm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=abwm")
+    (synopsis "Ansari-Bradley Test with Arbitrarily Missing Data")
+    (description
+     "This package performs the two-sample AnsariâBradley test (Ansari & Bradley,
+1960 <https://www.jstor.org/stable/2237814>) for univariate, distinct data in
+the presence of missing values, as described in Zeng et al. (2025)
+<doi:10.48550/@code{arXiv.2509.20332>}.  This method does not make any
+assumptions about the missingness mechanisms and controls the Type I error
+regardless of the missing values by taking all possible missing values into
+account.")
     (license license:expat)))
 
 (define-public r-absurvtdc

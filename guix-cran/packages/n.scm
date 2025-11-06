@@ -801,13 +801,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "1yhg9i1yh8k891nzzs5g30a5qpil08871w76a0d0c73q4jfj1s2y"))))
+        (base32 "1j2q12zx7wnh05372vk4c77j0mhmda80qd48s5f99vg6rxp7qqjs"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (arguments
@@ -826,11 +826,14 @@ lineup, and examine the distributions of metrics.")
                              r-rcpp
                              r-purrr
                              r-lifecycle
+                             r-jsonlite
+                             r-htmlwidgets
                              r-htmltools
                              r-ggplot2
                              r-generics
                              r-fastmatch
                              r-dt
+                             r-dplyr
                              r-cli
                              r-classint
                              r-bh))
@@ -6886,13 +6889,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "1k49ar6s314n5rakfgdx540hcrwldk98p798k68a8p9fqblmdlsv"))))
+        (base32 "026b14qwk84ac6z6a7mqyclsralihsyvahdlyc7s8jlmy4ic2wa2"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -7183,13 +7186,13 @@ the updating process.  See e.g. TomÃ© et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "0icnh0icpanvyi3p5s7ddqiyiim86glvxyjk1sjaz6c7il9b4a09"))))
+        (base32 "14g0zs3q5r17452j3fkd6g9pkbvc8mr3f0ldnmr0z1h3f2hxxqfl"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (arguments
