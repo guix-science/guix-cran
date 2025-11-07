@@ -12771,13 +12771,13 @@ visually explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.9.2")
+    (version "2.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresRead" version))
        (sha256
-        (base32 "1bci61vfnhffahcnslyad4snr69ccmrka424akcs85njj01sh0w2"))))
+        (base32 "12h6b8n6rak634zqsmqiwhbi7fckyz2qy9k5kh6h24wlpk86bg20"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (arguments
@@ -12797,7 +12797,8 @@ visually explore the results of their simulations.")
                              r-doparallel
                              r-data-table
                              r-bit64
-                             r-assertthat))
+                             r-assertthat
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rte-antares-rpackage/antaresRead")
     (synopsis

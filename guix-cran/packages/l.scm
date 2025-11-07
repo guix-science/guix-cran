@@ -12033,13 +12033,13 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.2.1")
+    (version "4.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "0p8ripfni2n84wq2rihcfi4abhrbiqrhnk5sn3qvcygk21ls92az"))))
+        (base32 "1lhd35gdyz5k833s2alyj334p7rg7112qhg7jwim66rpfakiap02"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (arguments
@@ -12048,6 +12048,7 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
     (propagated-inputs (list r-terra
                              r-stars
                              r-sf
+                             r-rnanoflann
                              r-rlas
                              r-rgl
                              r-rcpparmadillo

@@ -8328,13 +8328,13 @@ estimating and projecting under-five mortality rates, described in Mercer et al.
 (define-public r-summarytabl
   (package
     (name "r-summarytabl")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "summarytabl" version))
        (sha256
-        (base32 "0l51jbdi76h7by08zs9mirjfvcrg7yrs03fd43gkhaznc93zcnzr"))))
+        (base32 "1y9hhdxm7s4is9fjpz6ssxm3wdplknxs54y4388769qpqn0ypqw0"))))
     (properties `((upstream-name . "summarytabl")))
     (build-system r-build-system)
     (arguments
@@ -18752,13 +18752,13 @@ custom functions.")
 (define-public r-sspse
   (package
     (name "r-sspse")
-    (version "1.1.0-3")
+    (version "1.1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sspse" version))
        (sha256
-        (base32 "0kw0wnf91sxp1qp1hv54kq8ii3i2s84x52y84wiii73rwjvjj1ll"))))
+        (base32 "1xykns78d145x00kdgi8inhkkn63f5q8b9l94xah7lg8q7y1868j"))))
     (properties `((upstream-name . "sspse")))
     (build-system r-build-system)
     (arguments
@@ -47940,13 +47940,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "signnet" version))
        (sha256
-        (base32 "178038anj8xig3zkkisc9ik6jwww84y9017as9hafaqgfh5m17qk"))))
+        (base32 "10896mkybqmsx1b8iilx69jxylqz5rwz3zpyh9581qq65gim55dr"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (arguments
@@ -57997,13 +57997,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.1.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "061cvi84qkcymcyqxdis88d4hh54yr7lg7pb999c80hvzhbp7cpn"))))
+        (base32 "0j7743lv27c20hw3hsy8r840cchjaagy0viyz4n376mrqmqzyjsz"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments

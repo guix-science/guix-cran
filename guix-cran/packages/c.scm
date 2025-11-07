@@ -24073,6 +24073,34 @@ where, when, and how consistently a species, group, or individual is likely to
 be found.")
     (license license:gpl3)))
 
+(define-public r-colorify
+  (package
+    (name "r-colorify")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colorify" version))
+       (sha256
+        (base32 "1909ia4w80qz7vyqhl38p0nlfbwykd71n65zravvj5mi28rajpnd"))))
+    (properties `((upstream-name . "colorify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mauritsunkel/colorify")
+    (synopsis "Intuitive Color and Palette Generation and Modification")
+    (description
+     "This package provides a one-stop shop for intuitive and dependency-free color
+and palette creation and modification.  Includes palettes and functionality from
+popular packages such as viridis', R@code{ColorBrewer}', and base R
+@code{grDevices}', as well as ggplot2 plot bindings.  Users can generate
+perceptually uniform and colorblind-friendly palettes, adjust palettes in HSL
+and RGB color spaces, map color gradients to value ranges, and create
+color-generating functions.")
+    (license license:asl2.0)))
+
 (define-public r-colorhcplot
   (package
     (name "r-colorhcplot")
@@ -29413,13 +29441,13 @@ multidimensional contexts.")
 (define-public r-clvtools
   (package
     (name "r-clvtools")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CLVTools" version))
        (sha256
-        (base32 "084dc8rivfmzrn9x62sls4m4bca30yvyf5yr9w1zq13z5kk94xxq"))))
+        (base32 "0wbf7i3v8kyfwjyp3r8clwnghz64abax8zkjlzscrzdwdr8sxqp4"))))
     (properties `((upstream-name . "CLVTools")))
     (build-system r-build-system)
     (arguments
@@ -48031,6 +48059,34 @@ rules.  Realistic trial trajectories are simulated and the operating
 characteristics of the designs are calculated.")
     (license license:expat)))
 
+(define-public r-catregs
+  (package
+    (name "r-catregs")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "catregs" version))
+       (sha256
+        (base32 "077cgr23138y7h62ss5wv8dmm1ypjh0d6pfq9idpbpnrwnz5dw2a"))))
+    (properties `((upstream-name . "catregs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=catregs")
+    (synopsis "Post-Estimation Functions for Generalized Linear Mixed Models")
+    (description
+     "Several functions for working with mixed effects regression models for limited
+dependent variables.  The functions facilitate post-estimation of model
+predictions or margins, and comparisons between model predictions for assessing
+or probing moderation.  Additional helper functions facilitate model comparisons
+and implements simulation-based inference for model predictions of
+alternative-specific outcome models.  See also, Melamed and Doan (2024, ISBN:
+978-1032509518).")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-catreg
   (package
     (name "r-catreg")
@@ -49818,13 +49874,13 @@ H, q) process given the model parameters and observation times.")
 (define-public r-caretsdm
   (package
     (name "r-caretsdm")
-    (version "1.1.4")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caretSDM" version))
        (sha256
-        (base32 "014nwcm4ihqkiwb8hxrzqgk340sq8krdar89r8vlyp34i3fg3c2b"))))
+        (base32 "1immnd2b05kj91amhy0zwvw4h5i61nl319ly3ih4xxxz0wr28iy9"))))
     (properties `((upstream-name . "caretSDM")))
     (build-system r-build-system)
     (arguments
@@ -49845,6 +49901,7 @@ H, q) process given the model parameters and observation times.")
                              r-proc
                              r-pdp
                              r-parallelly
+                             r-maxnet
                              r-mapview
                              r-lwgeom
                              r-httr
@@ -49855,13 +49912,15 @@ H, q) process given the model parameters and observation times.")
                              r-future
                              r-furrr
                              r-fs
+                             r-ecospat
                              r-dplyr
                              r-dismo
                              r-data-table
                              r-coordinatecleaner
                              r-cli
                              r-checkmate
-                             r-caret))
+                             r-caret
+                             r-blockcv))
     (home-page "https://luizesser.github.io/caretSDM/")
     (synopsis "Build Species Distribution Modeling using 'caret'")
     (description

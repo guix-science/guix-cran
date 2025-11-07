@@ -22676,26 +22676,24 @@ Liebscher (2019, submitted).")
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depCensoring" version))
        (sha256
-        (base32 "1xd9w7cchwp615dh43qfanlyin3fpi5p9jnim1a7x5rm820sx9hy"))))
+        (base32 "1brj9j1rinxi4xhnwax9n3pmvxkc9853ywp44ywfv7zqkl01s22d"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
-                             r-stringr
                              r-splines2
                              r-rvinecopulib
                              r-rafalib
                              r-r6
                              r-pbivnorm
-                             r-openmx
                              r-numderiv
                              r-nloptr
                              r-nleqslv
@@ -22720,8 +22718,9 @@ survival data.  For more details on the methods, refer to Deresa and Van
 Keilegom (2021) <doi:10.1093/biomet/asaa095>, Czado and Van Keilegom (2023)
 <doi:10.1093/biomet/asac067>, Crommen et al. (2024)
 <doi:10.1007/s11749-023-00903-9>, Deresa and Van Keilegom (2024)
-<doi:10.1080/01621459.2022.2161387>, Rutten et al. (2024+)
-<doi:10.48550/@code{arXiv.2403.11860>} and Ding and Van Keilegom (2024).")
+<doi:10.1080/01621459.2022.2161387>, Willems et al. (2025)
+<doi:10.48550/@code{arXiv.2403.11860>}, Ding and Van Keilegom (2025) and D'Haen
+et al. (2025) <doi:10.1007/s10985-025-09647-0>.")
     (license license:gpl3)))
 
 (define-public r-depcens

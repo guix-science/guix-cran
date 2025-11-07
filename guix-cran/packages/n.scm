@@ -1755,13 +1755,13 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
 (define-public r-nrlr
   (package
     (name "r-nrlr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nrlR" version))
        (sha256
-        (base32 "1iq6927v3r1fzmlkpnpzh5srmb54kd8a0g78hc2q8ivci9lpp8mp"))))
+        (base32 "04b8wfvi3lg2gv17l2nn9zwnis7fprinhn7cpmfp164vk9bmr1cs"))))
     (properties `((upstream-name . "nrlR")))
     (build-system r-build-system)
     (arguments
@@ -1778,7 +1778,7 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
                              r-glue
                              r-dplyr
                              r-cli))
-    (home-page "https://cran.r-project.org/package=nrlR")
+    (home-page "https://github.com/DanielTomaro13/nrlR")
     (synopsis "Functions to Scrape Rugby Data")
     (description
      "This package provides a set of functions to scrape and analyze rugby data.
@@ -16049,13 +16049,13 @@ feature selection.  Plot functions.  Automated feature selections.  Kosztyan et.
 (define-public r-ncvreg
   (package
     (name "r-ncvreg")
-    (version "3.15.0")
+    (version "3.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncvreg" version))
        (sha256
-        (base32 "0ssmmsa081s8k762yx5dis4y18mfzx7zhf36avzk1891f5fh3c3x"))))
+        (base32 "0i9116zaima329kkdycd9yzf4hj5zvx0jilbhxkb3q3a2v3wakim"))))
     (properties `((upstream-name . "ncvreg")))
     (build-system r-build-system)
     (arguments

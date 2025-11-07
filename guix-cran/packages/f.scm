@@ -7564,13 +7564,13 @@ speciation, preservation and sampling.")
 (define-public r-fossilsim
   (package
     (name "r-fossilsim")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FossilSim" version))
        (sha256
-        (base32 "10bi2s4p31ifbfjfk2knrkss1jfgc7958bl3fzx2pk4w5wxwl39p"))))
+        (base32 "13mzvj7lwnyr98dm1110pl6s1d1kjp8fxj5rmjh7ffzd4di1870d"))))
     (properties `((upstream-name . "FossilSim")))
     (build-system r-build-system)
     (arguments
@@ -26689,13 +26689,13 @@ tables of descriptive statistics (to APA-style reports).")
 (define-public r-factorcopulamodel
   (package
     (name "r-factorcopulamodel")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FactorCopulaModel" version))
        (sha256
-        (base32 "0d7dn3q7iv3f18mdxsmxmz5b3qxf4hbpvfxkl7abf3jigvr4q38i"))))
+        (base32 "0lsjxc39571p7j5wmr1npi7ba6i7hfz6hwqfmw4jvfsz206l87ds"))))
     (properties `((upstream-name . "FactorCopulaModel")))
     (build-system r-build-system)
     (arguments
@@ -27092,13 +27092,13 @@ as open source of any kind, and they are not to be redistributed in any form.")
 (define-public r-facilityepimath
   (package
     (name "r-facilityepimath")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "facilityepimath" version))
        (sha256
-        (base32 "0gnx2q71jw7mpsp21q9k9arkcfpzc2i6crcr5vwjp6cv2m1zh5kd"))))
+        (base32 "1p4ayhb6mbzyaxbg19rlpra90mbi0yhf1lv3dzcb9q3sm9phq25w"))))
     (properties `((upstream-name . "facilityepimath")))
     (build-system r-build-system)
     (arguments
@@ -27117,7 +27117,7 @@ disease-causing organism, distributions of states at facility admission,
 relative infectivity of transmissible states, and the facility length of stay
 distribution.  Calculate the model equilibrium and the basic facility
 reproduction number, as described in Toth et al. (2025)
-<doi:10.1101/2025.02.21.25322698>.")
+<doi:10.1371/journal.pcbi.1013577>.")
     (license license:expat)))
 
 (define-public r-facerec

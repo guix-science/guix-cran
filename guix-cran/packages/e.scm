@@ -3789,13 +3789,13 @@ R.")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.6.3")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "06h2z0854kmb1v6w2vzwlpy7m7jpqmd3kazvhaih4sjdvnkdnniw"))))
+        (base32 "0xvkn7vyy8swd7nbihm6wahfsckciyxyaml2qasdg4fvyyip98r4"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -6701,6 +6701,35 @@ asked to correct it.")
 a la Wooldridge (2021, 2023) <doi:10.2139/ssrn.3906345>,
 <doi:10.1093/ectj/utad016>.")
     (license license:expat)))
+
+(define-public r-etsi
+  (package
+    (name "r-etsi")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "etsi" version))
+       (sha256
+        (base32 "04z6qi3d0px5iyv7afq28a45ch7xxy6cg8zj4va2mdpwmrg892bs"))))
+    (properties `((upstream-name . "etsi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-hetsurr))
+    (home-page "https://cran.r-project.org/package=etsi")
+    (synopsis "Efficient Testing Using Surrogate Information")
+    (description
+     "This package provides functions for treatment effect estimation, hypothesis
+testing, and future study design for settings where the surrogate is used in
+place of the primary outcome for individuals for whom the surrogate is valid,
+and the primary outcome is purposefully measured in the remaining patients.
+More details are available in: Knowlton, R., Parast, L. (2024) ``Efficient
+Testing Using Surrogate Information,\" Biometrical Journal, 67(6): e70086,
+<doi:10.1002/bimj.70086>.  A tutorial for this package can be found at
+<https://www.laylaparast.com/etsi>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-etrm
   (package
@@ -15065,13 +15094,13 @@ analysis and editing of clinical and epidemiological data.")
 (define-public r-emplikauc
   (package
     (name "r-emplikauc")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emplikAUC" version))
        (sha256
-        (base32 "1pxcvz7x8dfc30m1yb1k9xhlaj4z1i29xxg9vdz1l374k4f449sb"))))
+        (base32 "1a0yzifwxhs7mz0zxwsc84ydd06pqwi5j0bb50dqgw98d3vwv7mw"))))
     (properties `((upstream-name . "emplikAUC")))
     (build-system r-build-system)
     (arguments

@@ -5595,13 +5595,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "12yv1l62ghhabplb5c6w4kqabraphdbw7ayg0cgvj558jd4wi6dc"))))
+        (base32 "0b81fmi973iqvzm9lcryb6r6azqjpxpbsr4i6yryzdmw6iiwqi54"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (arguments
@@ -15118,13 +15118,13 @@ based on Dette, Holger, Neumeyer, and Pilz (2006) <doi:10.3150/bj/1151525131>.")
 (define-public r-monotonicitytest
   (package
     (name "r-monotonicitytest")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MonotonicityTest" version))
        (sha256
-        (base32 "0j2156hh5xmzfkdi7mir1gpxy79xmg230f974pinf39pg092815r"))))
+        (base32 "1wh6k52996az9v5l5bqbpnm5zzgliab8jamrccp67411j9x06h06"))))
     (properties `((upstream-name . "MonotonicityTest")))
     (build-system r-build-system)
     (arguments
@@ -15137,7 +15137,10 @@ based on Dette, Holger, Neumeyer, and Pilz (2006) <doi:10.3150/bj/1151525131>.")
      "This package implements nonparametric bootstrap tests for detecting monotonicity
 in regression functions from Hall, P. and Heckman, N. (2000)
 <doi:10.1214/aos/1016120363> Includes tools for visualizing results using
-Nadaraya-Watson kernel regression and supports efficient computation with C++'.")
+Nadaraya-Watson kernel regression and supports efficient computation with C++'.
+Tutorials and shiny application demo are available at
+<https://www.laylaparast.com/monotonicitytest> and
+<https://parastlab.shinyapps.io/@code{MonotonicityTest>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-monotonicity

@@ -6268,13 +6268,13 @@ release files.  For more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "167c5ck6czj2vah8b6w4y13x6ckyr9a74ba4ibyz2d0j4q1a29g1"))))
+        (base32 "1iq7c74mc9b1gwa8cwhrcr73g8cgp03v1wrcc3gkydjd65i96cgy"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -6285,11 +6285,11 @@ release files.  For more information on the API, see
     (home-page "https://github.com/kaifenglu/trtswitch")
     (synopsis "Treatment Switching")
     (description
-     "This package implements rank-preserving structural failure time model (RPSFTM),
+     "This package implements rank preserving structural failure time model (RPSFTM),
 iterative parameter estimation (IPE), inverse probability of censoring weights
 (IPCW), marginal structural model (MSM), simple two-stage estimation (TSEsimp),
-and improved two-stage with g-estimation (TSEgest) methods for treatment
-switching in randomized clinical trials.")
+and improved two-stage estimation with g-estimation (TSEgest) methods for
+treatment switching in randomized clinical trials.")
     (license license:gpl2+)))
 
 (define-public r-trtf
@@ -13062,13 +13062,13 @@ learning models.")
 (define-public r-torchvision
   (package
     (name "r-torchvision")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchvision" version))
        (sha256
-        (base32 "0dx09wk211wzb0qkvfiv864z63h0c3s7q6pdvqk8a7zysv844w9a"))))
+        (base32 "0xqym9p5vkwh54k55hbvvy4y8jqi699z7dzjgs02ia914m6a8adh"))))
     (properties `((upstream-name . "torchvision")))
     (build-system r-build-system)
     (arguments
@@ -16940,38 +16940,6 @@ that you can tinker to your hearts content.")
      "This package provides a universal non-uniform random number generator for quite
 arbitrary distributions with piecewise twice differentiable densities.")
     (license license:gpl2+)))
-
-(define-public r-tind
-  (package
-    (name "r-tind")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tind" version))
-       (sha256
-        (base32 "062dkr1r3zjjsx99mmarl3h575fxh6z3ps3bazi7mx3ni1gkyvcd"))))
-    (properties `((upstream-name . "tind")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dever-pl/tind")
-    (synopsis "Common Representation of Time Indices of Different Types")
-    (description
-     "This package provides an easy-to-use tind class representing time indices of
-different types (years, quarters, months, ISO 8601 weeks, dates, time of day,
-date-time, and arbitrary integer/numeric indices).  Includes an extensive
-collection of functions for calendrical computations (including business
-applications), index conversions, index parsing, and other operations.
-Auxiliary classes representing time differences and time intervals (with set
-operations and index matching functionality) are also provided.  All routines
-have been optimised for speed in order to facilitate computations on large
-datasets.  More details regarding calendars in general and calendrical
-algorithms can be found in \"Calendar FAQ\" by Claus TÃ¸ndering
-<https://www.tondering.dk/claus/calendar.html>.")
-    (license license:gpl3)))
 
 (define-public r-timsac
   (package

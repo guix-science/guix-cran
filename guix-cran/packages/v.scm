@@ -7401,13 +7401,13 @@ storyteller.  VChart examples and documentation are available here:
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "1w05am3ilyvrybnq7sy8g4dy5qdlircxg6fzhszj53klmm7305vi"))))
+        (base32 "0fdnyv0m85fi0jv7i09pgqq8p1p7xlwp7x9qfg1dcawnaiza6786"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (arguments

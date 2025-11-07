@@ -680,6 +680,30 @@ response curves.  The method implemented by the package is described in Poggiato
 et al. (2023) <doi:10.1111/geb.13706>.")
     (license license:gpl3)))
 
+(define-public r-jsutils
+  (package
+    (name "r-jsutils")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsutils" version))
+       (sha256
+        (base32 "06190lhm01yf068rcbcgmkqp5p3ahbb6dfpm2nwsp7m6dwm2vjga"))))
+    (properties `((upstream-name . "jsutils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quickjsr))
+    (home-page "https://andrjohns.github.io/jsutils/")
+    (synopsis "'JavaScript' Utilities for 'R'")
+    (description
+     "This package provides a collection of popular/useful @code{JavaScript}
+utilities, including the terser minifier, sass compiler, typescript transpiler,
+and more.")
+    (license license:expat)))
+
 (define-public r-jsuparameters
   (package
     (name "r-jsuparameters")

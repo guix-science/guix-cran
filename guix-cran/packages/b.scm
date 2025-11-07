@@ -5677,6 +5677,33 @@ brand.yml standard, providing functions to consistently access and apply brand
 colors, typography, and other visual elements across your R projects.")
     (license license:expat)))
 
+(define-public r-brand-yml
+  (package
+    (name "r-brand-yml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brand.yml" version))
+       (sha256
+        (base32 "03i8p40rzlsx6kmjkf1x31ifn2jhb6xqs14p8rb717nxyjx9w5zf"))))
+    (properties `((upstream-name . "brand.yml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://posit-dev.github.io/brand-yml/pkg/r/")
+    (synopsis "Unified Branding with a Simple YAML File")
+    (description
+     "Read and process brand.yml YAML files.  brand.yml is a simple, portable YAML
+file that codifies your company's brand guidelines into a format that can be
+used by Quarto', Shiny and R tooling to create branded outputs.  Maintain
+unified, branded theming for web applications to printed reports to dashboards
+and presentations with a consistent look and feel.")
+    (license license:expat)))
+
 (define-public r-branchingprocess
   (package
     (name "r-branchingprocess")
@@ -10083,36 +10110,6 @@ averaging.  Development snapshots with the latest bugfixes are available from
 <doi:10.2139/ssrn.3866876> estimator, which bounds an omitted variable bias
 using auxiliary data.")
     (license license:gpl3)))
-
-(define-public r-bndesr
-  (package
-    (name "r-bndesr")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bndesr" version))
-       (sha256
-        (base32 "1vjh7861gnrqwd910vz9x27fqkhylp5a6wzjfsjx6wgvq4m6rdl3"))))
-    (properties `((upstream-name . "bndesr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-readxl
-                             r-readr
-                             r-rcurl
-                             r-lubridate
-                             r-janitor
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=bndesr")
-    (synopsis "Access Data from the Brazilian Development Bank (BNDES)")
-    (description
-     "Allows access to data on BNDES disbursements and contracts since 1995.  The
-package makes it easy to import data from the bank into
-R.<https://www.bndes.gov.br/@code{SiteBNDES/bndes/bndes_en>}.")
-    (license license:expat)))
 
 (define-public r-bnclassify
   (package
@@ -20304,13 +20301,13 @@ populations, see Jonker, Pazira and Coolen (2025) <doi:10.1017/rsm.2025.6>.")
 (define-public r-bff
   (package
     (name "r-bff")
-    (version "4.4.2")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFF" version))
        (sha256
-        (base32 "08si8552yvn8hc97y74hxgl6c3n5ix0148p1v8v4x71rcis1fkcd"))))
+        (base32 "1xfxc37mas6l6g1rxxcf0qbk6k0qjqsji0ci86kc0wwvrpi20yag"))))
     (properties `((upstream-name . "BFF")))
     (build-system r-build-system)
     (arguments
@@ -29747,13 +29744,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "0yhxlzmy45f0nl3a7d57krgc8731fssvznnf0abnqql3hivmb5r6"))))
+        (base32 "1hx63ixvhpp24p3wbnq981ca13a9dfh7lgfn3bk77kkw2kaw2z1n"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments

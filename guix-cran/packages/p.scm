@@ -3509,49 +3509,6 @@ Cumulative Sum (CUSUM) charts are provided.  Options are given for banks with
 polytomous and dichotomous data.")
     (license license:gpl2)))
 
-(define-public r-psycmodel
-  (package
-    (name "r-psycmodel")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psycModel" version))
-       (sha256
-        (base32 "08n2vc5mjzv28qxayzw7b20y5ci4vgh0ppks4mpyx0a97hnnz24r"))))
-    (properties `((upstream-name . "psycModel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-psych
-                             r-performance
-                             r-patchwork
-                             r-parameters
-                             r-lmertest
-                             r-lme4
-                             r-lifecycle
-                             r-lavaan
-                             r-insight
-                             r-glue
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jasonmoy28/psycModel")
-    (synopsis
-     "Integrated Toolkit for Psychological Analysis and Modeling in R")
-    (description
-     "This package provides a beginner-friendly R package for modeling in psychology
-or related field.  It allows fitting models, plotting, checking goodness of fit,
-and model assumption violations all in one place.  It also produces beautiful
-and easy-to-read output.")
-    (license license:gpl3+)))
-
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
@@ -40695,13 +40652,13 @@ robust to parameter perturbations.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "1gmc938n5sr4kmqab27b1wlk3l6nb3vimcmp1hpljr4dmn1r7m5q"))))
+        (base32 "0bq7cjfazaplbsqy6qpjhf3vysyhk5fr36dhmfpx75w5c1nx2qc7"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (arguments
@@ -40715,7 +40672,7 @@ robust to parameter perturbations.")
                              r-ggrepel
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/sysbiolab/PathwaySpace")
+    (home-page "https://sysbiolab.github.io/PathwaySpace/")
     (synopsis "Spatial Projection of Network Signals along Geodesic Paths")
     (description
      "For a given graph containing vertices, edges, and a signal associated with the
@@ -40723,12 +40680,12 @@ vertices, the @code{PathwaySpace} package performs a convolution operation,
 which involves a weighted combination of neighboring vertices and their
 associated signals.  The package then uses a decay function to project these
 signals, creating geodesic paths on a 2D-image space. @code{PathwaySpace} could
-have various applications, such as visualizing and analyzing network data in a
-graphical format that highlights the relationships and signal strengths between
-vertices.  It can be particularly useful for understanding the influence of
-signals through complex networks.  By combining graph theory, signal processing,
-and visualization, the @code{PathwaySpace} package provides a novel way of
-representing and analyzing graph data.")
+have various applications, such as visualizing network data in a graphical
+format that highlights the relationships and signal strengths between vertices.
+It can be particularly useful for understanding the influence of signals through
+complex networks.  By combining graph theory, signal processing, and
+visualization, the @code{PathwaySpace} package provides a novel way of
+representing graph data.")
     (license license:artistic2.0)))
 
 (define-public r-pathviewr

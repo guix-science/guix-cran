@@ -18964,13 +18964,13 @@ and seasonal sub-series plots.")
 (define-public r-ggtikz
   (package
     (name "r-ggtikz")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtikz" version))
        (sha256
-        (base32 "131iwivag6w6nzsvi6fgrkq26n017q4nix91chszg7wr5hhj7idn"))))
+        (base32 "0w7mgrnc2lc8z43fn6y5v5vzpqh6r9xdvwg610my0awn356idmyh"))))
     (properties `((upstream-name . "ggtikz")))
     (build-system r-build-system)
     (arguments

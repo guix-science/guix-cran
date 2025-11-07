@@ -7617,13 +7617,13 @@ histone modification in plants. <doi:10.1186/s12864-019-5489-4>.")
 (define-public r-opengraph
   (package
     (name "r-opengraph")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opengraph" version))
        (sha256
-        (base32 "1a986cn0mhw16sn261cvmkrl5waba2xq8w8bkin27hk52ww0ylk7"))))
+        (base32 "0l10vx9c9g91b5imh4k1hva3gr2xkw9ndn4ahh3z0bc1rr74vjgb"))))
     (properties `((upstream-name . "opengraph")))
     (build-system r-build-system)
     (arguments

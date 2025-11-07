@@ -4783,6 +4783,30 @@ Development, the IMF and the World Bank.  The database is being updated once a
 month.")
     (license license:gpl3)))
 
+(define-public r-ugarima
+  (package
+    (name "r-ugarima")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UGarima" version))
+       (sha256
+        (base32 "16ihrmjyfz5yh5zbiy60swsg1fkd2nf73jcgk1x39r4jc55zfnjr"))))
+    (properties `((upstream-name . "UGarima")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lamw))
+    (home-page "https://cran.r-project.org/package=UGarima")
+    (synopsis "The Unit-Garima Distribution")
+    (description
+     "Density, distribution function, quantile function, and random generating
+function of the Unit-Garima distribution based on Ayuyuen, S., & Bodhisuwan, W.
+(2024)<doi:10.18187/pjsor.v20i1.4307>.")
+    (license license:gpl3)))
+
 (define-public r-ufs
   (package
     (name "r-ufs")
