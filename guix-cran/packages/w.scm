@@ -2077,13 +2077,13 @@ calculated distance matrices from figshare <https://figshare.com>.")
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "0.10.1")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldmet" version))
        (sha256
-        (base32 "0f72np6ibwminbn90yb1a807sgqgbzmninf08rhqq49rvalhi4s1"))))
+        (base32 "00y46cx3wmamcqyfzvmgbbhbw4cjhdxlsbgq0m1i1ipw5klr15wz"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (arguments
@@ -2094,7 +2094,6 @@ calculated distance matrices from figshare <https://figshare.com>.")
                              r-rlang
                              r-readr
                              r-purrr
-                             r-openair
                              r-leaflet
                              r-dplyr
                              r-cli))
@@ -2210,32 +2209,6 @@ Taxonomic Backbone is an updated version of The Plant List
 (<http://www.theplantlist.org/>), a working list of plant names that has become
 static since 2013.")
     (license license:gpl3)))
-
-(define-public r-worldbank
-  (package
-    (name "r-worldbank")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "worldbank" version))
-       (sha256
-        (base32 "0d2pdgq0fv4lnxywk0h4l933cxqpinp2invzgbznqczzk6kgaiss"))))
-    (properties `((upstream-name . "worldbank")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-httr2))
-    (home-page "https://m-muecke.github.io/worldbank/")
-    (synopsis
-     "Client for World Banks's 'Indicators' and 'Poverty and Inequality Platform (PIP)' APIs")
-    (description
-     "Download and search data from the World Bank Indicators API', which provides
-access to nearly 16,000 time series indicators.  See
-<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation>
-for further details about the API.")
-    (license license:expat)))
 
 (define-public r-workspace
   (package
@@ -3442,13 +3415,13 @@ Spotfire'.")
 (define-public r-wizardry
   (package
     (name "r-wizardry")
-    (version "0.2.6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wizaRdry" version))
        (sha256
-        (base32 "1rnrmh2hzal0bw35ynj6r4nc31bi8xlqn4999zsz2pqnhap3gw4a"))))
+        (base32 "081hwswpic50y2lbqvqpcxxwk46k5qa0jasm1n5kfh1kspap8w23"))))
     (properties `((upstream-name . "wizaRdry")))
     (build-system r-build-system)
     (arguments
@@ -3457,10 +3430,14 @@ Spotfire'.")
     (propagated-inputs (list r-testthat
                              r-stringdist
                              r-rstudioapi
+                             r-rmariadb
                              r-rlang
                              r-redcapr
                              r-r6
                              r-qualtrics
+                             r-openxlsx2
+                             r-openxlsx
+                             r-odbc
                              r-mongolite
                              r-lubridate
                              r-knitr
@@ -3470,6 +3447,7 @@ Spotfire'.")
                              r-future-apply
                              r-future
                              r-dplyr
+                             r-dbi
                              r-config
                              r-cli
                              r-beepr))
@@ -3478,13 +3456,14 @@ Spotfire'.")
      "Magical Framework for Collaborative & Reproducible Data Analysis")
     (description
      "This package provides a comprehensive data analysis framework for NIH-funded
-research that streamlines workflows for both data cleaning and preparing NIH
-Data Archive ('NDA') submission templates.  Provides unified access to multiple
-data sources ('REDCap', @code{MongoDB}', Qualtrics') through interfaces to their
-APIs, with specialized functions for data cleaning, filtering, merging, and
-parsing.  Features automatic validation, field harmonization, and memory-aware
-processing to enhance reproducibility in multi-site collaborative research as
-described in Mittal et al. (2021) <doi:10.20900/jpbs.20210011>.")
+research that streamlines workflows for both data cleaning and preparing and
+modifying NIH Data Archive ('NDA') data structures and submission templates.
+Provides unified access to multiple data sources ('REDCap', @code{MongoDB}',
+Qualtrics', SQL', ORACLE') through interfaces to their APIs, with specialized
+functions for data cleaning, filtering, merging, and parsing.  Features
+automatic validation, field harmonization, and memory-aware processing to
+enhance reproducibility in multi-site collaborative research as described in
+Mittal et al. (2021) <doi:10.20900/jpbs.20210011>.")
     (license license:expat)))
 
 (define-public r-wither
@@ -3985,37 +3964,6 @@ Facebook Ads, and many others using the Windsor.ai API
 Chemometrics.  Segmentation of spectra, evolving dimensions regions and sliding
 windows as selection methods.  Election of the best model among those computed
 based on error metrics.  Chen et al.(2017) <doi:10.1007/s00216-017-0218-9>.")
-    (license license:expat)))
-
-(define-public r-windfarmga
-  (package
-    (name "r-windfarmga")
-    (version "4.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "windfarmGA" version))
-       (sha256
-        (base32 "1ngxr4ysvxfijp17cmj8m6waxxwrq034qlqjhj9k3xi9s1832592"))))
-    (properties `((upstream-name . "windfarmGA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-sf
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-magrittr
-                             r-calibrate))
-    (home-page "https://ysosirius.github.io/windfarmGA/index.html")
-    (synopsis "Genetic Algorithm for Wind Farm Layout Optimization")
-    (description
-     "The genetic algorithm is designed to optimize wind farms of any shape.  It
-requires a predefined amount of turbines, a unified rotor radius and an average
-wind speed value for each incoming wind direction.  A terrain effect model can
-be included that downloads an SRTM elevation model and loads a Corine Land Cover
-raster to approximate surface roughness.")
     (license license:expat)))
 
 (define-public r-windex

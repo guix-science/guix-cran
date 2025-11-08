@@ -725,41 +725,6 @@ the independent variables based on specified p-value and Variance Inflation
 Factor (VIF) level.")
     (license license:gpl3)))
 
-(define-public r-quickreg
-  (package
-    (name "r-quickreg")
-    (version "1.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quickReg" version))
-       (sha256
-        (base32 "1l1v3k8albxlaz18l2b2x2ryifq4pbdq6n4q7555hnfcik9rqmw5"))))
-    (properties `((upstream-name . "quickReg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rlang
-                             r-psych
-                             r-nortest
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=quickReg")
-    (synopsis
-     "Build Regression Models Quickly and Display the Results Using 'ggplot2'")
-    (description
-     "This package provides a set of functions to extract results from regression
-models and plot the effect size using ggplot2 seamlessly.  While broom is useful
-to convert statistical analysis objects into tidy data frames, coefplot is adept
-at showing multivariate regression results.  With specific outcome, this package
-could build regression models automatically, extract results into a data frame
-and provide a quicker way to summarize models statistical findings using
-ggplot2'.")
-    (license license:gpl2)))
-
 (define-public r-quickr
   (package
     (name "r-quickr")
@@ -4689,34 +4654,6 @@ Esquivel (2024) <doi:10.1093/jalm/jfad109>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-qqboxplot
-  (package
-    (name "r-qqboxplot")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qqboxplot" version))
-       (sha256
-        (base32 "1rsipw7cn2gqpqpa0ysj99ms5jpnbynjs4gkkmbr2w0c2466fhgx"))))
-    (properties `((upstream-name . "qqboxplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=qqboxplot")
-    (synopsis "Implementation of the Q-Q Boxplot")
-    (description
-     "This package provides a system to implement the Q-Q boxplot.  It is implemented
-as an extension to ggplot2'.  The Q-Q boxplot is an amalgam of the boxplot and
-the Q-Q plot and allows the user to rapidly examine summary statistics and tail
-behavior for multiple distributions in the same pane.  As an extension of the
-ggplot2 implementation of the boxplot, possible modifications to the boxplot
-extend to the Q-Q boxplot.")
-    (license license:expat)))
-
 (define-public r-qpraentry
   (package
     (name "r-qpraentry")
@@ -6462,34 +6399,6 @@ the corresponding capability analysis graphical outputs, including the process
 capability plots.  See Flores et al. (2021) <doi:10.32614/RJ-2021-034>.")
     (license license:gpl2+)))
 
-(define-public r-qcqpcr
-  (package
-    (name "r-qcqpcr")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qcQpcr" version))
-       (sha256
-        (base32 "1298zla8z5w9z4idc07v3ca9rc1afx853y7iz3jmqnqnv8mr0s48"))))
-    (properties `((upstream-name . "qcQpcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=qcQpcr")
-    (synopsis "Histone ChIP-Seq qPCR Analyzer")
-    (description
-     "Quality control of chromatin immunoprecipitation libraries (@code{ChIP-seq}) by
-quantitative polymerase chain reaction (@code{qPCR}).  This function calculates
-Enrichment value with respect to reference for each histone modification
-(specific to Vii7 software
-<http://www.thermofisher.com/ca/en/home/life-science/pcr/real-time-pcr/real-time-pcr-instruments/viia-7-real-time-pcr-system/viia-7-software.html>).
- This function is applicable to full panel of histone modifications described by
-International Human Epigenomic Consortium (IHEC).")
-    (license license:expat)))
-
 (define-public r-qcpm
   (package
     (name "r-qcpm")
@@ -7183,41 +7092,6 @@ the paper by Junker, Griessenberger & Trutschnig (2021,
 <doi:10.1016/j.csda.2020.107058>), and the paper by Trutschnig (2011,
 <doi:10.1016/j.jmaa.2011.06.013>).")
     (license license:gpl2)))
-
-(define-public r-qacbase
-  (package
-    (name "r-qacbase")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qacBase" version))
-       (sha256
-        (base32 "0rmxmaaa162w1qrbkcm2fd2rnrp2kqjjh6mpszpv1lpfdaq7p4yq"))))
-    (properties `((upstream-name . "qacBase")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-pmcmrplus
-                             r-patchwork
-                             r-multcompview
-                             r-haven
-                             r-ggplot2
-                             r-ggextra
-                             r-ggcorrplot
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rkabacoff/qacBase")
-    (synopsis "Functions to Facilitate Exploratory Data Analysis")
-    (description
-     "This package provides functions for descriptive statistics, data management, and
-data visualization.")
-    (license license:expat)))
 
 (define-public r-q7
   (package

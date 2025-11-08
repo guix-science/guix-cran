@@ -2955,40 +2955,6 @@ singular value decomposition framework.  Refer to paper A Group-Specific
 Recommender System <doi:10.1080/01621459.2016.1219261> for the details.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-gspcr
-  (package
-    (name "r-gspcr")
-    (version "0.9.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gspcr" version))
-       (sha256
-        (base32 "19k07yg3z2p63dgq8hyyqpnq2r23rwbh1wqwna4d4w1bif9vgq8b"))))
-    (properties `((upstream-name . "gspcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-reshape2
-                             r-pcamixdata
-                             r-nnet
-                             r-mlmetrics
-                             r-mass
-                             r-ggplot2
-                             r-factominer
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=gspcr")
-    (synopsis "Generalized Supervised Principal Component Regression")
-    (description
-     "Generalization of supervised principal component regression (SPCR; Bair et al.,
-2006, <doi:10.1198/016214505000000628>) to support continuous, binary, and
-discrete variables as outcomes and predictors (inspired by the superpc R package
-<https://cran.r-project.org/package=superpc>).")
-    (license license:expat)))
-
 (define-public r-gsparo
   (package
     (name "r-gsparo")
@@ -7503,47 +7469,6 @@ building blocks combined and to other latent Gaussian models in order to build
 complex data models.")
     (license license:gpl2+)))
 
-(define-public r-graphpaf
-  (package
-    (name "r-graphpaf")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graphPAF" version))
-       (sha256
-        (base32 "0m6v796hwxdv7nan3157x7b8xpph605ihj6gnmlh3v1p95dygsy7"))))
-    (properties `((upstream-name . "graphPAF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-survival
-                             r-reshape2
-                             r-mass
-                             r-madness
-                             r-gtools
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-boot))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/johnfergusonNUIG/graphPAF")
-    (synopsis "Estimating and Displaying Population Attributable Fractions")
-    (description
-     "Estimation and display of various types of population attributable fraction and
-impact fractions.  As well as the usual calculations of attributable fractions
-and impact fractions, functions are provided for attributable fraction nomograms
-and fan plots, continuous exposures, for pathway specific population
-attributable fractions, and for joint, average and sequential population
-attributable fractions.")
-    (license license:expat)))
-
 (define-public r-graphonmix
   (package
     (name "r-graphonmix")
@@ -9262,44 +9187,6 @@ are given in Wang H, Dwyer-Lindgren L, Lofgren KT, et al. (2012)
 et al. (2017) <doi:10.1016/S2214-109X(17)30105-5>.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-gppm
-  (package
-    (name "r-gppm")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gppm" version))
-       (sha256
-        (base32 "0sr7q98ff9142rhh28gr2y88xcfp55rrbd3plgjkj5q3zpqxr4al"))))
-    (properties `((upstream-name . "gppm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-mvtnorm
-                             r-mass
-                             r-ggthemes
-                             r-ggplot2
-                             r-bh))
-    (home-page "https://github.com/karchjd/gppm")
-    (synopsis "Gaussian Process Panel Modeling")
-    (description
-     "This package provides an implementation of Gaussian process panel modeling
-(GPPM).  GPPM is described in Karch, Brandmaier & Voelkle (2020;
-<DOI:10.3389/fpsyg.2020.00351>) and Karch (2016; <DOI:10.18452/17641>).
-Essentially, GPPM is Gaussian process based modeling of longitudinal panel data.
- gppm also supports regular Gaussian process regression (with a focus on
-flexible model specification), and multi-task learning.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-gppenalty
   (package
     (name "r-gppenalty")
@@ -9968,13 +9855,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0zkdivbgxsw77qay3h06qy3wb5s5xv5zls2x2dlsmwwqqfykvj34"))))
+        (base32 "0r6m6v5ljv3z6yymiz6ng8zq9n01iw0h7gw59r2ig034pncivp10"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -15631,13 +15518,13 @@ stability for models that may fail to converge using glm.")
 (define-public r-glm-predict
   (package
     (name "r-glm-predict")
-    (version "4.3-0")
+    (version "4.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glm.predict" version))
        (sha256
-        (base32 "18cs6z6573vq8sdjb4kgz8kahizs9njdbip4cm1dk63ldjjrl0kf"))))
+        (base32 "18sahiy53bdwfirq854rajdbd1dkx7750klg9s13h6jwvha7b9cw"))))
     (properties `((upstream-name . "glm.predict")))
     (build-system r-build-system)
     (arguments
@@ -18192,13 +18079,13 @@ authored by Wang(2012) <doi:10.1214/12-BA729>.")
 (define-public r-ghrmodel
   (package
     (name "r-ghrmodel")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHRmodel" version))
        (sha256
-        (base32 "1zq3ahr16w687z36x69ag1ijnvpi17z1901qnhcnv58x148vwazw"))))
+        (base32 "1jazwqk36gs63j33dsqwy2q83jwkqn7yv45c4bqwpk7533x3wmq0"))))
     (properties `((upstream-name . "GHRmodel")))
     (build-system r-build-system)
     (arguments
@@ -18533,53 +18420,6 @@ which are safer than a personal access token for automated tasks.  This package
 extends the gh package to let you authenticate and interact with @code{GitHub}
 <https://docs.github.com/en/rest/overview> in R as an app.")
     (license license:expat)))
-
-(define-public r-ghap
-  (package
-    (name "r-ghap")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GHap" version))
-       (sha256
-        (base32 "1fyxgnn6b474rx8cqg9lgdybq5j4nriq2axwgmhx7m8f7mysrqny"))))
-    (properties `((upstream-name . "GHap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-stringi
-                             r-sparseinv
-                             r-pedigreemm
-                             r-matrix
-                             r-e1071
-                             r-data-table
-                             r-class))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=GHap")
-    (synopsis "Genome-Wide Haplotyping")
-    (description
-     "Haplotype calling from phased marker data.  Given user-defined haplotype blocks
-(@code{HapBlock}), the package identifies the different haplotype alleles
-(@code{HapAllele}) present in the data and scores sample haplotype allele
-genotypes (@code{HapGenotype}) based on @code{HapAllele} dose (i.e.  0, 1 or 2
-copies).  The output is not only useful for analyses that can handle
-multi-allelic markers, but is also conveniently formatted for existing pipelines
-intended for bi-allelic markers.  The package was first described in
-Bioinformatics by Utsunomiya et al. (2016, <doi:10.1093/bioinformatics/btw356>).
- Since the v2 release, the package provides functions for unsupervised and
-supervised detection of ancestry tracks.  The methods implemented in these
-functions were described in an article published in Methods in Ecology and
-Evolution by Utsunomiya et al. (2020, <doi:10.1111/2041-210X.13467>).  The
-source code for v3 was modified for improved performance and inclusion of new
-functionality, including analysis of unphased data, runs of homozygosity,
-sampling methods for virtual gamete mating, mixed model fitting and GWAS.")
-    (license license:gpl2+)))
 
 (define-public r-ggx
   (package
@@ -19236,34 +19076,6 @@ probability density function of the t-distribution.  These visualizations are
 studied in (Helske, Helske, Cooper, Ynnerman, and Besancon, 2021)
 <doi:10.1109/TVCG.2021.3073466>.")
     (license license:gpl2+)))
-
-(define-public r-ggstream
-  (package
-    (name "r-ggstream")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggstream" version))
-       (sha256
-        (base32 "0d6g5916mfrg2srcqjhlpm4acp4g16vq9ks4x37yzkpr34vi5x7j"))))
-    (properties `((upstream-name . "ggstream")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ggstream")
-    (synopsis "Create Streamplots in 'ggplot2'")
-    (description
-     "Make smoothed stacked area charts in ggplot2'.  Stream plots are useful to show
-magnitude trends over time.")
-    (license license:expat)))
 
 (define-public r-ggstar
   (package
@@ -20691,37 +20503,6 @@ microplates.  Both continuous and discrete values can be plotted onto the plate
 layout.")
     (license license:expat)))
 
-(define-public r-ggpie
-  (package
-    (name "r-ggpie")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggpie" version))
-       (sha256
-        (base32 "11c431ggrhyxiql1v9qajp568jri6hlp1kgl334j4f7sgyh73ng5"))))
-    (properties `((upstream-name . "ggpie")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-magrittr
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggnewscale
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/showteeth/ggpie")
-    (synopsis "Pie, Donut and Rose Pie Plots")
-    (description "Create pie, donut and rose pie plot with ggplot2'.")
-    (license license:expat)))
-
 (define-public r-ggperiodic
   (package
     (name "r-ggperiodic")
@@ -20912,28 +20693,6 @@ panels and theme elements.")
 necessary tools to create clearly structured and highly customizable
 visualizations for tree-objects of the class party'.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-ggparallel
-  (package
-    (name "r-ggparallel")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggparallel" version))
-       (sha256
-        (base32 "1flhy0731phknzxwmr6lza7a6r0mqy7j8z93p4aala3d3cg2x1nw"))))
-    (properties `((upstream-name . "ggparallel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-plyr r-ggplot2))
-    (home-page "https://github.com/heike/ggparallel/")
-    (synopsis "Variations of Parallel Coordinate Plots for Categorical Data")
-    (description
-     "Create hammock plots, parallel sets, and common angle plots with ggplot2'.")
-    (license license:expat)))
 
 (define-public r-ggpage
   (package
@@ -22335,48 +22094,6 @@ ggplot2 to allow for plotting multiple moon charts in a single panel and does
 not require a square coordinate system.")
     (license license:gpl3)))
 
-(define-public r-gggenomes
-  (package
-    (name "r-gggenomes")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gggenomes" version))
-       (sha256
-        (base32 "1imahf69d17l7fk8j3jkiwlhbbc71yvdvp4q440w2mn4pnbzf6xx"))))
-    (properties `((upstream-name . "gggenomes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-snakecase
-                             r-scales
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-ggplot2
-                             r-ellipsis
-                             r-dplyr
-                             r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/thackl/gggenomes")
-    (synopsis "Grammar of Graphics for Comparative Genomics")
-    (description
-     "An extension of ggplot2 for creating complex genomic maps.  It builds on the
-power of ggplot2 and tidyverse adding new ggplot2'-style geoms & positions and
-dplyr'-style verbs to manipulate the underlying data.  It implements a layout
-concept inspired by ggraph and introduces tracks to bring tidiness to the mess
-that is genomics data.")
-    (license license:expat)))
-
 (define-public r-gggda
   (package
     (name "r-gggda")
@@ -23417,33 +23134,6 @@ visually distinguishes daytime and nighttime periods.  It is useful for
 visualizing data that spans multiple days and for highlighting diurnal patterns.")
     (license license:expat)))
 
-(define-public r-ggdark
-  (package
-    (name "r-ggdark")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggdark" version))
-       (sha256
-        (base32 "1w93g2j4g45x9s841v9zi18lxzda81ipa13fajqc6p9xk8frvgrf"))))
-    (properties `((upstream-name . "ggdark")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=ggdark")
-    (synopsis "Dark Mode for 'ggplot2' Themes")
-    (description
-     "Activate dark mode on your favorite ggplot2 theme with @code{dark_mode()} or use
-the dark versions of ggplot2 themes, including @code{dark_theme_gray()},
-@code{dark_theme_minimal()}, and others.  When a dark theme is applied, all geom
-color and geom fill defaults are changed to make them visible against a dark
-background.  To restore the defaults to their original values, use
-@code{invert_geom_defaults()}.")
-    (license license:expat)))
-
 (define-public r-ggdag
   (package
     (name "r-ggdag")
@@ -24340,13 +24030,13 @@ if things do not work as they should.")
 (define-public r-gformulami
   (package
     (name "r-gformulami")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gFormulaMI" version))
        (sha256
-        (base32 "0ix5wdii6ncdxwahf2d8v604zwib14hixn1hcdvk4cbqkpwpks1r"))))
+        (base32 "0pnvdp9r6ivwl915kvkayf9rcplxrgd3w0wb5accjia5c7pi3rvj"))))
     (properties `((upstream-name . "gFormulaMI")))
     (build-system r-build-system)
     (arguments
@@ -31206,51 +30896,6 @@ on the conserved domains that specifically define that family.  See Die et al.
 (2018) <doi:10.1101/436659> for more information and examples.")
     (license license:expat)))
 
-(define-public r-genehapr
-  (package
-    (name "r-genehapr")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geneHapR" version))
-       (sha256
-        (base32 "1yairrndrggvkiwwamqv3qwjs8sci4jc6k53rqs766n752vsbisz"))))
-    (properties `((upstream-name . "geneHapR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vcfr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringdist
-                             r-shinyjs
-                             r-shiny
-                             r-sf
-                             r-rtracklayer
-                             r-rlang
-                             r-reshape2
-                             r-pegas
-                             r-maps
-                             r-lolliplot
-                             r-iranges
-                             r-ggpubr
-                             r-ggplot2
-                             r-genomicranges
-                             r-genetics
-                             r-biostrings
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=geneHapR")
-    (synopsis
-     "Gene Haplotype Statistics, Phenotype Association and Visualization")
-    (description
-     "Import genome variants data and perform gene haplotype Statistics, visualization
-and phenotype association with R'.")
-    (license license:gpl3)))
-
 (define-public r-genef
   (package
     (name "r-genef")
@@ -36976,29 +36621,6 @@ Linear and Quadratic Discriminant Analysis, Tree-based methods, and Random
 Forests.")
     (license license:gpl2+)))
 
-(define-public r-gamboostmsm
-  (package
-    (name "r-gamboostmsm")
-    (version "1.1.88")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gamboostMSM" version))
-       (sha256
-        (base32 "16khm2fpsb3ivfszrilxbrzc8a281vmd1q36dcn50xbkvn19syxg"))))
-    (properties `((upstream-name . "gamboostMSM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mboost))
-    (home-page "https://cran.r-project.org/package=gamboostMSM")
-    (synopsis "Boosting Multistate Models")
-    (description
-     "This package contains infrastructure for using @code{mboost::gamboost()} in
-order to estimate multistate models.")
-    (license license:gpl2+)))
-
 (define-public r-gamboostlss
   (package
     (name "r-gamboostlss")
@@ -37400,6 +37022,37 @@ combinations thereof.  Syntax for model formulation is close to lme4 (Bates et
 al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
 <doi:10.1080/00273171.2018.1516541>).")
     (license license:gpl3+)))
+
+(define-public r-galahad
+  (package
+    (name "r-galahad")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GALAHAD" version))
+       (sha256
+        (base32 "0i2a96nk1i0dh3pdijr9hk2drxlbfwqki97snvymz0w2inh81gx1"))))
+    (properties `((upstream-name . "GALAHAD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=GALAHAD")
+    (synopsis "Geometry-Adaptive Lyapunov-Assured Hybrid Optimizer")
+    (description
+     "This package implements the GALAHAD algorithm (Geometry-Adaptive
+Lyapunov'-Assured Hybrid Optimizer), combining Riemannian metrics, Lyapunov
+stability checks, and trust-region methods for stable optimization of
+mixed-geometry parameters.  Designed for biological modeling (germination,
+dose-response, survival) where rates, concentrations, and unconstrained
+variables coexist.  Developed at the Minnesota Center for Prion Research and
+Outreach (MNPRO), University of Minnesota.  Based on Conn et al. (2000)
+<doi:10.1137/1.9780898719857>, Amari (1998) <doi:10.1162/089976698300017746>,
+Beck & Teboulle (2003) <doi:10.1016/S0167-6377(02)00231-6>, Nesterov (2017)
+<https://www.jstor.org/stable/resrep30722>, and Walne et al. (2020)
+<doi:10.1002/agg2.20098>.")
+    (license license:expat)))
 
 (define-public r-galah
   (package

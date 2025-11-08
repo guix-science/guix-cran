@@ -1938,22 +1938,18 @@ problems.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.7.0")
+    (version "5.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "1wb97w9rcxf46qca19zin5g2mnh9bw0429l87ln5cjhx63dld9g3"))))
+        (base32 "0b2jgrakcaa8am853c6g7jjkl8aa3l8wj0pq26dmm7dyvsjwqp3w"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (inputs (list calc))
     (propagated-inputs (list r-xml2
                              r-tidyselect
@@ -1969,17 +1965,17 @@ problems.")
                              r-commonmark
                              r-base64enc
                              r-assertthat))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://hughjonesd.github.io/huxtable/")
     (synopsis
      "Easily Create and Style Tables for LaTeX, HTML and Other Formats")
     (description
      "This package creates styled tables for data presentation.  Export to HTML,
-@code{LaTeX}, RTF, Word', Excel', and @code{PowerPoint}'.  Simple, modern
-interface to manipulate borders, size, position, captions, colours, text styles
-and number formatting.  Table cells can span multiple rows and/or columns.
-Includes a huxreg function for creation of regression tables, and quick_*
-one-liners to print data to a new document.")
+@code{LaTeX}, RTF, Word', Excel', @code{PowerPoint}', typst', SVG and PNG.
+Simple, modern interface to manipulate borders, size, position, captions,
+colours, text styles and number formatting.  Table cells can span multiple rows
+and/or columns.  Includes a huxreg function to create regression tables, and
+quick_* one-liners to print tables to a new document.")
     (license license:expat)))
 
 (define-public r-hutilscpp
@@ -9373,31 +9369,6 @@ extended for spatial modeling (Alam, Ronnegard and Shen 2015)
 <https://journal.r-project.org/archive/2015/RJ-2015-017/RJ-2015-017.pdf>.")
     (license license:gpl2+)))
 
-(define-public r-hglasso
-  (package
-    (name "r-hglasso")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hglasso" version))
-       (sha256
-        (base32 "15sq5fk7iicglpyxdkh44mg112zij05ic4x3snhqyc2lx1hvp7cy"))))
-    (properties `((upstream-name . "hglasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-igraph r-glasso r-fields))
-    (home-page "https://cran.r-project.org/package=hglasso")
-    (synopsis "Learning Graphical Models with Hubs")
-    (description
-     "This package implements the hub graphical lasso and hub covariance graph
-proposal by Tan, KM., London, P., Mohan, K., Lee, S-I., Fazel, M., and Witten,
-D. (2014).  Learning graphical models with hubs.  Journal of Machine Learning
-Research 15(Oct):3297-3331.")
-    (license license:gpl2+)))
-
 (define-public r-hgdmr
   (package
     (name "r-hgdmr")
@@ -14779,6 +14750,32 @@ values that is stored in a structure equivalent to the input.  See
 <http://www.azillionmonkeys.com/qed/hash.html> for a description of the hash
 algorithm.")
     (license license:gpl3)))
+
+(define-public r-hashmapr
+  (package
+    (name "r-hashmapr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hashmapR" version))
+       (sha256
+        (base32 "0f841kkpi3hn5har9vcm8gj4m3lrmpv35q11rh2s12b7h1ppc4r1"))))
+    (properties `((upstream-name . "hashmapR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/svensglinz/hashmapR")
+    (synopsis "Fast, Vectorized Hashmap")
+    (description
+     "This package provides a fast, vectorized hashmap that is built on top of C++
+std::unordered_map
+<https://en.cppreference.com/w/cpp/container/unordered_map.html>.  The map can
+hold any R object as key / value as long as it is serializable and supports
+vectorized insertion, lookup, and deletion.")
+    (license license:expat)))
 
 (define-public r-hashids
   (package

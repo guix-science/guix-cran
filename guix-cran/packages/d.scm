@@ -1152,40 +1152,6 @@ Google Drive to minimise the computing power and storage demands associated with
 species distribution modelling at high spatio-temporal resolution.")
     (license license:gpl3+)))
 
-(define-public r-dynamic
-  (package
-    (name "r-dynamic")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynamic" version))
-       (sha256
-        (base32 "15jxly44rj2x79jvps2ln0hrm1384p56yll9jk96w1vhaf3gbsxm"))))
-    (properties `((upstream-name . "dynamic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-simstandard
-                             r-purrr
-                             r-patchwork
-                             r-magrittr
-                             r-lavaan
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/melissagwolf/dynamic")
-    (synopsis "DFI Cutoffs for Latent Variable Models")
-    (description
-     "Returns dynamic fit index (DFI) cutoffs for latent variable models that are
-tailored to the user's model statement, model type, and sample size.  This is
-the counterpart of the Shiny Application, <https://dynamicfit.app>.")
-    (license license:agpl3)))
-
 (define-public r-dynamaedes
   (package
     (name "r-dynamaedes")
@@ -1288,43 +1254,6 @@ concentration.  The package dynafluxr can be used as a library but also as an
 application with command line interface dynafluxr::cli(\"-h\") or graphical user
 interface @code{dynafluxr::gui()}.")
     (license license:gpl2)))
-
-(define-public r-dyn-log
-  (package
-    (name "r-dyn-log")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dyn.log" version))
-       (sha256
-        (base32 "0vlzv6zy29qhygm77kww65wpnp77a93ja13vr4p2yyychrjspqx3"))))
-    (properties `((upstream-name . "dyn.log")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-stringr
-                             r-rlang
-                             r-r6
-                             r-glue
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://bmoretz.github.io/dyn.log/")
-    (synopsis
-     "Dynamic Logging for R Inspired by Configuration Driven Development")
-    (description
-     "This package provides a comprehensive and dynamic configuration driven logging
-package for R. While there are several excellent logging solutions already in
-the R ecosystem, I always feel constrained in some way by each of them.  Every
-project is designed differently to solve it's domain specific problem, and
-ultimately the utility of a logging solution is its ability to adapt to this
-design.  This is the raison d'Ãªtre for dyn.log': to provide a modular design,
-template mechanics and a configuration-based integration model, so that the
-logger can integrate deeply into your design, even though it knows nothing about
-it.")
-    (license license:expat)))
 
 (define-public r-dymo
   (package
@@ -2189,30 +2118,6 @@ training set) and deploying them on another (e.g., a test set).")
     (home-page "https://github.com/foocheung2/dumbbell")
     (synopsis "Displaying Changes Between Two Points Using Dumbbell Plots")
     (description "This package creates a Dumbbell Plot.")
-    (license license:expat)))
-
-(define-public r-duke
-  (package
-    (name "r-duke")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "duke" version))
-       (sha256
-        (base32 "04z7vcgdljp47grn1ppdj4acfs3gq7xmghyzj96wq1aisnh0777b"))))
-    (properties `((upstream-name . "duke")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/aidangildea/duke")
-    (synopsis "Creating a Color-Blind Friendly Duke Color Package")
-    (description
-     "Generates visualizations with Dukeâs official suite of colors in a color blind
-friendly way.")
     (license license:expat)))
 
 (define-public r-duet
@@ -14963,47 +14868,6 @@ and subgroup information for each group.  Based on the analytical framework laid
 out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
     (license license:expat)))
 
-(define-public r-discos
-  (package
-    (name "r-discos")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DiSCos" version))
-       (sha256
-        (base32 "0xwbiaqmlp7bpnkagadc87ay7shp9gls7d6vhi7ksws9r03134sm"))))
-    (properties `((upstream-name . "DiSCos")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-pracma
-                             r-mass
-                             r-ggplot2
-                             r-extremestat
-                             r-evmix
-                             r-data-table
-                             r-cvxr))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.davidvandijcke.com/DiSCos/")
-    (synopsis "Distributional Synthetic Controls Estimation")
-    (description
-     "The method of synthetic controls is a widely-adopted tool for evaluating causal
-effects of policy changes in settings with observational data.  In many settings
-where it is applicable, researchers want to identify causal effects of policy
-changes on a treated unit at an aggregate level while having access to data at a
-finer granularity.  This package implements a simple extension of the synthetic
-controls estimator, developed in Gunsilius (2023) <doi:10.3982/ECTA18260>, that
-takes advantage of this additional structure and provides nonparametric
-estimates of the heterogeneity within the aggregate unit.  The idea is to
-replicate the quantile function associated with the treated unit by a weighted
-average of quantile functions of the control units.  The package contains tools
-for aggregating and plotting the resulting distributional estimates, as well as
-for carrying out inference on them.")
-    (license license:expat)))
-
 (define-public r-discord
   (package
     (name "r-discord")
@@ -26688,45 +26552,6 @@ straightforward R API. The package relies on the r2d3 R package and the D3
 <https://d3js.org/> respectively.")
     (license license:gpl3+)))
 
-(define-public r-ddpcr
-  (package
-    (name "r-ddpcr")
-    (version "1.15.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ddpcr" version))
-       (sha256
-        (base32 "1as25yc23n6jj87nccp7g2jrpvz6yxa7f6ba65g6ynvkzk57531b"))))
-    (properties `((upstream-name . "ddpcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-shinyjs
-                             r-shinydisconnect
-                             r-shiny
-                             r-readr
-                             r-plyr
-                             r-mixtools
-                             r-magrittr
-                             r-lazyeval
-                             r-ggplot2
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/daattali/ddpcr")
-    (synopsis
-     "Analysis and Visualization of Droplet Digital PCR in R and on the Web")
-    (description
-     "An interface to explore, analyze, and visualize droplet digital PCR
-(@code{ddPCR}) data in R. This is the first non-proprietary software for
-analyzing two-channel @code{ddPCR} data.  An interactive tool was also created
-and is available online to facilitate this analysis for anyone who is not
-comfortable with using R.")
-    (license license:expat)))
-
 (define-public r-ddpca
   (package
     (name "r-ddpca")
@@ -32798,38 +32623,6 @@ methods described in Quartagno et al. (2019) <@code{arXiv:1905.00241>}.")
      "This package contains the function used to create the Dandelion Plot.  Dandelion
 Plot is a visualization method for R-mode Exploratory Factor Analysis.")
     (license license:gpl2)))
-
-(define-public r-dams
-  (package
-    (name "r-dams")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dams" version))
-       (sha256
-        (base32 "1jlx1b4cir1vwq75jnmk0pc6j95syfpi0hlnkx82g7pwfxwrdrib"))))
-    (properties `((upstream-name . "dams")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readxl r-janitor r-fauxpas r-crul))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jsta/dams")
-    (synopsis
-     "Dams in the United States from the National Inventory of Dams (NID)")
-    (description
-     "The single largest source of dams in the United States is the National Inventory
-of Dams (NID) <http://nid.usace.army.mil> from the US Army Corps of Engineers.
-Entire data from the NID cannot be obtained all at once and NID's website limits
-extraction of more than a couple of thousand records at a time.  Moreover,
-selected data from the NID's user interface cannot not be saved to a file.  In
-order to make the analysis of this data easier, all the data from NID was
-extracted manually.  Subsequently, the raw data was checked for potential errors
-and cleaned.  This package provides sample cleaned data from the NID and
-provides functionality to access the entire cleaned NID data.")
-    (license license:gpl2+)))
 
 (define-public r-damr
   (package

@@ -175,49 +175,6 @@ details).  Additionally, it includes functions to perform manipulations on local
 Tableau workbooks.")
     (license license:expat)))
 
-(define-public r-vvshiny
-  (package
-    (name "r-vvshiny")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vvshiny" version))
-       (sha256
-        (base32 "015rac6hz6k5wrg75abiyicjpljfs3cxibrala4dm5jxnwrm79sa"))))
-    (properties `((upstream-name . "vvshiny")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-shinywidgets
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-plotly
-                             r-magrittr
-                             r-htmlwidgets
-                             r-htmltools
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggalluvial
-                             r-forcats
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=vvshiny")
-    (synopsis "Create Complex Shiny Apps More Easily")
-    (description
-     "Helper and Wrapper functions for making shiny dashboards more easily.  Functions
-are made modular and lower level functions are exported as well, so many
-use-cases are supported.")
-    (license license:expat)))
-
 (define-public r-vvsculptor
   (package
     (name "r-vvsculptor")
@@ -1080,45 +1037,6 @@ repository.  To access this data package, see the instructions at
 <https://github.com/kharchenkolab/vrnmf>.  The size of the @code{simulatedNMF}
 package is approximately 8 MB.")
     (license license:gpl3)))
-
-(define-public r-vprr
-  (package
-    (name "r-vprr")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vprr" version))
-       (sha256
-        (base32 "02hx3wbj921fsir8yldkgcygci01w1171bxsxi2khplck4gkqn9i"))))
-    (properties `((upstream-name . "vprr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-usethis
-                             r-tidyr
-                             r-stringr
-                             r-oce
-                             r-metr
-                             r-magick
-                             r-lubridate
-                             r-interp
-                             r-gsw
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-cmocean))
-    (native-inputs (list r-knitr))
-    (home-page "https://eogrady21.github.io/vprr/")
-    (synopsis "Processing and Visualization of Video Plankton Recorder Data")
-    (description
-     "An oceanographic data processing package for analyzing and visualizing Video
-Plankton Recorder data.  This package was developed at Bedford Institute of
-Oceanography'.  Functions are designed to process automated image classification
-output and create organized and easily portable data products.")
-    (license license:expat)))
 
 (define-public r-vprint
   (package
@@ -3517,19 +3435,20 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "07bdmi0054a5sjp97zidim3s3bfnzs2p0h2k9abxvpqcpja6v49l"))))
+        (base32 "0sfpjlww430j8x514hvm3wqrxnj2wyx09a80ipfbdnhq3918nh1n"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-yaml
+                             r-tidyr
                              r-stringr
                              r-rlang
                              r-purrr
@@ -5926,13 +5845,13 @@ input number.")
 (define-public r-verdata
   (package
     (name "r-verdata")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verdata" version))
        (sha256
-        (base32 "1i5qzwsjn01mrh57xhkmq97hlwwjglf3j11ynjpdsjvqwqwwv16y"))))
+        (base32 "1c9lrmm927sa9yk5z2jvq3r4lyl4kkihp3xmdzccjrn7p7621gp3"))))
     (properties `((upstream-name . "verdata")))
     (build-system r-build-system)
     (arguments

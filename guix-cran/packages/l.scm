@@ -544,29 +544,6 @@ an existing script.  Track changes in multiple datasets, using multiple loggers.
 <doi:10.18637/jss.v098.i01>.")
     (license (license:fsdg-compatible "EUPL"))))
 
-(define-public r-lulcc
-  (package
-    (name "r-lulcc")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lulcc" version))
-       (sha256
-        (base32 "00ymbp20kbjyzrsrxa262y0y7fj4jgsbqf56aapb657xvafxvy5q"))))
-    (properties `((upstream-name . "lulcc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rocr r-rastervis r-raster r-lattice))
-    (home-page "https://cran.r-project.org/package=lulcc")
-    (synopsis "Land Use Change Modelling in R")
-    (description
-     "This package provides classes and methods for spatially explicit land use change
-modelling in R.")
-    (license license:gpl2+)))
-
 (define-public r-lulab-utils
   (package
     (name "r-lulab-utils")
@@ -5768,13 +5745,13 @@ conditional inference framework is described by Hothorn T, Hornik K, Zeileis A
 (define-public r-logib
   (package
     (name "r-logib")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logib" version))
        (sha256
-        (base32 "1zf6xw88ikp587g9whqx4cs0lrf2lxivqqpxz0457v7r971g02ih"))))
+        (base32 "1h3wyq5flbccq5g8ycc160q0zcdi7rj98z74jrl1k74vjw8vy0iq"))))
     (properties `((upstream-name . "logib")))
     (build-system r-build-system)
     (arguments
@@ -5786,14 +5763,14 @@ conditional inference framework is described by Hothorn T, Hornik K, Zeileis A
      "Salary Analysis by the Swiss Federal Office for Gender Equality")
     (description
      "Implementation of the Swiss Confederation's standard analysis model for salary
-analyses <https://www.ebg.admin.ch/en/equal-pay-analysis-with-logib> in R. The
-analysis is run at company-level and the model is intended for medium-sized and
-large companies.  It can technically be used with 50 or more employees
-(apprentices, trainees/interns and expats are not included in the analysis).
-Employees with at least 100 employees are required by the Gender Equality Act to
-conduct an equal pay analysis.  This package allows users to run the equal
-salary analysis in R, providing additional transparency with respect to the
-methodology and simple automation possibilities.")
+analyses <www.ebg.admin.ch/en/equal-pay-analysis-with-logib> in R. The analysis
+is run at company-level and the model is intended for medium-sized and large
+companies.  It can technically be used with 50 or more employees (apprentices,
+trainees/interns and expats are not included in the analysis).  Employees with
+at least 100 employees are required by the Gender Equality Act to conduct an
+equal pay analysis.  This package allows users to run the equal salary analysis
+in R, providing additional transparency with respect to the methodology and
+simple automation possibilities.")
     (license license:gpl3+)))
 
 (define-public r-loggit2
@@ -9340,28 +9317,6 @@ installed from CRAN or <https://github.com/timelyportfolio/@code{reactR>}.")
 short-cuts to operations like selecting and merging data stored in lists.  The
 functions in this package are designed to be used with pipes.")
     (license (license:fsdg-compatible "EUPL"))))
-
-(define-public r-listdown
-  (package
-    (name "r-listdown")
-    (version "0.5.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "listdown" version))
-       (sha256
-        (base32 "0dw41ylja9ibznsqfr0621sqsmwb4kzlrwaycjl2hc4wmbabbliv"))))
-    (properties `((upstream-name . "listdown")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml r-tibble r-rmarkdown r-fs r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kaneplusplus/listdown")
-    (synopsis "Create R Markdown from Lists")
-    (description "Programmatically create R Markdown documents from lists.")
-    (license license:asl2.0)))
 
 (define-public r-listcompr
   (package
@@ -16583,38 +16538,6 @@ curvature.  The method estimates local Gaussian curvature by approximating the
 shape operator of the data manifold.  This approach aims to improve
 classification performance, particularly in datasets with limited samples.")
     (license license:expat)))
-
-(define-public r-lcc
-  (package
-    (name "r-lcc")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lcc" version))
-       (sha256
-        (base32 "16iaja9dgnm6rjsaliz574mds1rgz07rk0r5dgwp2mc7kx0lhvgz"))))
-    (properties `((upstream-name . "lcc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme
-                             r-hnp
-                             r-ggplot2
-                             r-foreach
-                             r-dosnow
-                             r-dorng))
-    (home-page "https://cran.r-project.org/package=lcc")
-    (synopsis "Longitudinal Concordance Correlation")
-    (description
-     "Estimates the longitudinal concordance correlation to access the longitudinal
-agreement profile.  The estimation approach implemented is variance components
-approach based on polynomial mixed effects regression model, as proposed by
-Oliveira, Hinde and Zocchi (2018) <doi:10.1007/s13253-018-0321-1>.  In addition,
-non-parametric confidence intervals were implemented using percentile method or
-normal-approximation based on Fisher Z-transformation.")
-    (license license:gpl2+)))
 
 (define-public r-lcars
   (package

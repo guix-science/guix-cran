@@ -14705,35 +14705,6 @@ sediment characterization, see: Davey, E., C. Wigand, R. Johnson, K. Sundberg,
 J. Morris, and C. Roman. (2011) <DOI: 10.1890/10-2037.1>.")
     (license license:gpl3)))
 
-(define-public r-corecollection
-  (package
-    (name "r-corecollection")
-    (version "0.9.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coreCollection" version))
-       (sha256
-        (base32 "1r5x5j91k0zfa2krcd0v2hsifv8a3f7czv6yb7zi7qx5wqak5kk9"))))
-    (properties `((upstream-name . "coreCollection")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-r6))
-    (home-page "https://cran.r-project.org/package=coreCollection")
-    (synopsis "Core Collection")
-    (description
-     "Create a custom sized Core Collection based on a distance matrix and applying
-the A-NE (accession nearest entry), E-NE (entry nearest entry) or E-E (entry
-entry) method as introduced in Jansen and van Hintum (2007)
-<doi:10.1007/s00122-006-0433-9> and further elaborated on in Odong, T.L. (2012)
-<https://edepot.wur.nl/212422>.  Optionally a list of preselected accessions to
-be included into the core can be set.  For each accession in the computed core,
-if available nearby accessions are retrievable that can be used as an
-alternative.")
-    (license license:gpl2+)))
-
 (define-public r-core
   (package
     (name "r-core")
@@ -15406,38 +15377,6 @@ non-parametric estimators of the Pickands dependence function.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file LICENCE")))))
 
-(define-public r-copsens
-  (package
-    (name "r-copsens")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CopSens" version))
-       (sha256
-        (base32 "0ljp2c25zmyiv88mdari08z9845y9niyg90a8vlq75im5w825w8a"))))
-    (properties `((upstream-name . "CopSens")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
-                             r-pcamethods
-                             r-mass
-                             r-ggplot2
-                             r-dplyr
-                             r-cvxr))
-    (home-page "https://github.com/JiajingZ/CopSens")
-    (synopsis
-     "Copula-Based Sensitivity Analysis for Observational Causal Inference")
-    (description
-     "This package implements the copula-based sensitivity analysis method, as
-discussed in Copula-based Sensitivity Analysis for Multi-Treatment Causal
-Inference with Unobserved Confounding <@code{arXiv:2102.09412>}, with Gaussian
-copula adopted in particular.")
-    (license license:gpl3)))
-
 (define-public r-cops
   (package
     (name "r-cops")
@@ -15603,13 +15542,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.3.2")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "107a7rh7mq0r76q0wz0chflhl7ihxj0ays42abgvamz1nhx5j59b"))))
+        (base32 "1pimc0lr2bsb2g1cj747vcscizdj6nifmqn8sxqfx8gqz5m1q9bp"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -29134,51 +29073,6 @@ implementation performs variable selection on only binary CMEs; we are working
 on an extension for the continuous setting.")
     (license license:gpl2+)))
 
-(define-public r-cmcr
-  (package
-    (name "r-cmcr")
-    (version "0.1.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cmcR" version))
-       (sha256
-        (base32 "15d85mjy6y68jysji0910kg9vp69iz4pbb2l4vmn501xq4md3kx3"))))
-    (properties `((upstream-name . "cmcR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-x3ptools
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-quantreg
-                             r-purrr
-                             r-patchwork
-                             r-magrittr
-                             r-imager
-                             r-ggplotify
-                             r-ggplot2
-                             r-ggnewscale
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cmcR")
-    (synopsis "An Implementation of the 'Congruent Matching Cells' Method")
-    (description
-     "An open-source implementation of the Congruent Matching Cells method for
-cartridge case identification as proposed by Song (2013)
-<https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=911193> as well as an
-extension of the method proposed by Tong et al. (2015)
-<doi:10.6028/jres.120.008>.  Provides a wide range of pre, inter, and
-post-processing options when working with cartridge case scan data and their
-associated comparisons.  See the @code{cmcR} package website for more details
-and examples.")
-    (license license:gpl3+)))
-
 (define-public r-cmce
   (package
     (name "r-cmce")
@@ -33270,79 +33164,6 @@ and Mingarro and Lobo (2022) <doi:10.1017/S037689292100014X>.")
 wavelet energy from Knight, M. I and Nunes, M. A. (2018)
 <doi:10.1007/s11222-018-9820-8>.")
     (license license:gpl2)))
-
-(define-public r-clifro
-  (package
-    (name "r-clifro")
-    (version "3.2-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clifro" version))
-       (sha256
-        (base32 "1p2xy5r9axkj8yk6ywaq0w5i00bdfm15drjz227nx8p4vd3q6si8"))))
-    (properties `((upstream-name . "clifro")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-scales
-                             r-rvest
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/clifro/")
-    (synopsis "Easily Download and Visualise Climate Data from CliFlo")
-    (description
-     "@code{CliFlo} is a web portal to the New Zealand National Climate Database and
-provides public access (via subscription) to around 6,500 various climate
-stations (see <https://cliflo.niwa.co.nz/> for more information).  Collating and
-manipulating data from @code{CliFlo} (hence clifro) and importing into R for
-further analysis, exploration and visualisation is now straightforward and
-coherent.  The user is required to have an internet connection, and a current
-@code{CliFlo} subscription (free) if data from stations, other than the public
-Reefton electronic weather station, is sought.")
-    (license license:gpl2)))
-
-(define-public r-clifford
-  (package
-    (name "r-clifford")
-    (version "1.1-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clifford" version))
-       (sha256
-        (base32 "0frm60rirh52g95zsrarwb5nsv6bhirg697vx71m98f2mjaklc03"))))
-    (properties `((upstream-name . "clifford")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-partitions
-                             r-magrittr
-                             r-freealg
-                             r-disordr
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RobinHankin/clifford")
-    (synopsis "Arbitrary Dimensional Clifford Algebras")
-    (description
-     "This package provides a suite of routines for Clifford algebras, using the Map
-class of the Standard Template Library.  Canonical reference: Hestenes (1987,
-ISBN 90-277-1673-0, \"Clifford algebra to geometric calculus\").  Special cases
-including Lorentz transforms, quaternion multiplication, and Grassmann algebra,
-are discussed.  Vignettes presenting conformal geometric algebra, quaternions
-and split quaternions, dual numbers, and Lorentz transforms are included.  The
-package follows @code{disordR} discipline.")
-    (license license:gpl2+)))
 
 (define-public r-cliff
   (package
@@ -39901,43 +39722,6 @@ eye.  Additionally, the checkthat package is optimized to work within tidyverse
 data manipulation pipelines.")
     (license license:expat)))
 
-(define-public r-checkpoint
-  (package
-    (name "r-checkpoint")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "checkpoint" version))
-       (sha256
-        (base32 "1987vn13b5j914vkzwbn7q1138b0xsjs55x5b2090kjk6kc900x8"))))
-    (properties `((upstream-name . "checkpoint")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml r-withr r-pkgdepends r-jsonlite))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RevolutionAnalytics/checkpoint")
-    (synopsis
-     "Install Packages from Snapshots on the Checkpoint Server for Reproducibility")
-    (description
-     "The goal of checkpoint is to solve the problem of package reproducibility in R.
-Specifically, checkpoint allows you to install packages as they existed on CRAN
-on a specific snapshot date as if you had a CRAN time machine.  To achieve
-reproducibility, the @code{checkpoint()} function installs the packages required
-or called by your project and scripts to a local library exactly as they existed
-at the specified point in time.  Only those packages are available to your
-project, thereby avoiding any package updates that came later and may have
-altered your results.  In this way, anyone using checkpoint's
-@code{checkpoint()} can ensure the reproducibility of your scripts or projects
-at any time.  To create the snapshot archives, once a day (at midnight UTC)
-Microsoft refreshes the Austria CRAN mirror on the \"Microsoft R Archived
-Network\" server (<https://mran.microsoft.com/>).  Immediately after completion
-of the rsync mirror process, the process takes a snapshot, thus creating the
-archive.  Snapshot archives exist starting from 2014-09-17.")
-    (license license:gpl2)))
-
 (define-public r-checkluhn
   (package
     (name "r-checkluhn")
@@ -41244,46 +41028,6 @@ is first converted to semilog form and then analyzed using Ordinary Least
 Squares (OLS) regression.  This package has been developed using concept of
 Shankar et al. (2022)<doi:10.3389/fsufs.2023.1208898>.")
     (license license:gpl3)))
-
-(define-public r-cgpfunctions
-  (package
-    (name "r-cgpfunctions")
-    (version "0.6.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CGPfunctions" version))
-       (sha256
-        (base32 "12l3ww9wfrk8i0a63wv5h4ayqj6fj5fz5yvkiskvaaida32vds2m"))))
-    (properties `((upstream-name . "CGPfunctions")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-sjstats
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-partykit
-                             r-paletteer
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggmosaic
-                             r-forcats
-                             r-dplyr
-                             r-desctools
-                             r-bayesfactor))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ibecav/CGPfunctions")
-    (synopsis
-     "Powell Miscellaneous Functions for Teaching and Learning Statistics")
-    (description
-     "Miscellaneous functions useful for teaching statistics as well as actually
-practicing the art.  They typically are not new methods but rather wrappers
-around either base R or other packages.")
-    (license license:expat)))
 
 (define-public r-cgp
   (package
@@ -45106,8 +44850,7 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
                              r-formula
                              r-foreach
                              r-dorng
-                             r-doparallel
-                             r-ddpcr))
+                             r-doparallel))
     (home-page "https://github.com/ahoundetoungan/CDatanet")
     (synopsis "Econometrics of Network Data")
     (description
@@ -53093,6 +52836,59 @@ described in Lee, Kim, Perera, @code{McLachlan} and Bae (2015)
 <doi:10.1007/s00431-015-2581-x>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-caesar-suite
+  (package
+    (name "r-caesar-suite")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CAESAR.Suite" version))
+       (sha256
+        (base32 "1lgy79jyr03fj4p73x7h5idwvxwq81n066ii0dkv4ki0hbb1rfzb"))))
+    (properties `((upstream-name . "CAESAR.Suite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seurat
+                             r-scater
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-profast
+                             r-pbapply
+                             r-matrix
+                             r-irlba
+                             r-ggrepel
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-desctools
+                             r-ade4))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/XiaoZhangryy/CAESAR.Suite")
+    (synopsis
+     "CAESAR: a Cross-Technology and Cross-Resolution Framework for Spatial Omics Annotation")
+    (description
+     "Biotechnology in spatial omics has advanced rapidly over the past few years,
+enhancing both throughput and resolution.  However, existing annotation
+pipelines in spatial omics predominantly rely on clustering methods, lacking the
+flexibility to integrate extensive annotated information from single-cell RNA
+sequencing (@code{scRNA-seq}) due to discrepancies in spatial resolutions,
+species, or modalities.  Here we introduce the CAESAR suite, an open-source
+software package that provides image-based spatial co-embedding of locations and
+genomic features.  It uniquely transfers labels from @code{scRNA-seq} reference,
+enabling the annotation of spatial omics datasets across different technologies,
+resolutions, species, and modalities, based on the conserved relationship
+between signature genes and cells/locations at an appropriate level of
+granularity.  Notably, CAESAR enriches location-level pathways, allowing for the
+detection of gradual biological pathway activation within spatially defined
+domain types.  More details on the methods related to our paper currently under
+submission.  A full reference to the paper will be provided in future versions
+once the paper is published.")
+    (license license:gpl2+)))
 
 (define-public r-caesar
   (package

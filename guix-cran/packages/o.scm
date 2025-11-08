@@ -6682,6 +6682,52 @@ indicadores del Ãndice de Confianza en el Gobierno (ICG), elaborado por la
 Universidad Torcuato Di Tella.")
     (license license:expat)))
 
+(define-public r-opimputation
+  (package
+    (name "r-opimputation")
+    (version "0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opImputation" version))
+       (sha256
+        (base32 "0wg1ldib4vmq6jdfmbwdy974ivdpzz4lfcpsqb1jnafflw3h5ls3"))))
+    (properties `((upstream-name . "opImputation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-twosamples
+                             r-rfit
+                             r-reshape2
+                             r-progressr
+                             r-multius
+                             r-missforest
+                             r-miceranger
+                             r-mice
+                             r-mi
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggh4x
+                             r-future-apply
+                             r-future
+                             r-datavisualizations
+                             r-cowplot
+                             r-caret
+                             r-amelia
+                             r-abind
+                             r-abcanalysis))
+    (home-page "https://github.com/JornLotsch/opImputation")
+    (synopsis
+     "Optimal Selection of Imputation Methods for Pain-Related Numerical Data")
+    (description
+     "This package provides a model-agnostic framework for selecting dataset-specific
+imputation methods for missing values in numerical data related to pain.  Lotsch
+J, Ultsch A (2025) \"A model-agnostic framework for dataset-specific selection of
+missing value imputation methods in pain-related numerical data\" Canadian
+Journal of Pain (in minor revision).")
+    (license license:gpl3)))
+
 (define-public r-opi
   (package
     (name "r-opi")
@@ -14386,42 +14432,6 @@ Harvesting (OAI-PMH) version 2.0 (for more information, see
      "This package provides carefully chosen color palettes as used a.o.  at
 @code{OpenAnalytics} <http://www.openanalytics.eu>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
-
-(define-public r-o2plsda
-  (package
-    (name "r-o2plsda")
-    (version "0.0.25")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "o2plsda" version))
-       (sha256
-        (base32 "1lsww2g9inpaw7mhg49ia517am14sjvy9i92h2xsfv4qygqkl1wq"))))
-    (properties `((upstream-name . "o2plsda")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-magrittr
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=o2plsda")
-    (synopsis "Multiomics Data Integration")
-    (description
-     "This package provides functions to do O2PLS-DA analysis for multiple omics data
-integration.  The algorithm came from \"O2-PLS, a two-block (XÂ±Y) latent
-variable regression (LVR) method with an integral OSC filter\" which published by
-Johan Trygg and Svante Wold at 2003 <doi:10.1002/cem.775>.  O2PLS is a
-bidirectional multivariate regression method that aims to separate the
-covariance between two data sets (it was recently extended to multiple data
-sets) (LÃ¶fstedt and Trygg, 2011 <doi:10.1002/cem.1388>; LÃ¶fstedt et al., 2012
-<doi:10.1016/j.aca.2013.06.026>) from the systematic sources of variance being
-specific for each data set separately.")
-    (license license:gpl3)))
 
 (define-public r-o2ools
   (package

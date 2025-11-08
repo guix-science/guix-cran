@@ -6659,35 +6659,6 @@ sequencing error rates and allelic bias.  For details of the algorithm, please
 see Delomas (2019) <doi:10.1111/1755-0998.13073>.")
     (license license:expat)))
 
-(define-public r-triplot
-  (package
-    (name "r-triplot")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "triplot" version))
-       (sha256
-        (base32 "1apmdpxdnnmjyi7gcrjrqw44iqphr84nbgw0nfxcspzjgxhc81l1"))))
-    (properties `((upstream-name . "triplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-patchwork r-glmnet r-ggplot2 r-ggdendro r-dalex))
-    (home-page "https://github.com/ModelOriented/triplot")
-    (synopsis "Explaining Correlated Features in Machine Learning Models")
-    (description
-     "This package provides tools for exploring effects of correlated features in
-predictive models.  The @code{predict_triplot()} function delivers
-instance-level explanations that calculate the importance of the groups of
-explanatory variables.  The @code{model_triplot()} function delivers data-level
-explanations.  The generic plot function visualises in a concise way importance
-of hierarchical groups of predictors.  All of the the tools are model agnostic,
-therefore works for any predictive machine learning models.  Find more details
-in Biecek (2018) <@code{arXiv:1806.08915>}.")
-    (license license:gpl3)))
-
 (define-public r-triplesmatch
   (package
     (name "r-triplesmatch")
@@ -11244,44 +11215,6 @@ Trade Policy Analysis\" and functions to report regression summaries with
 clustered robust standard errors.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-tradeoffaucdim
-  (package
-    (name "r-tradeoffaucdim")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tradeoffaucdim" version))
-       (sha256
-        (base32 "0s7phmx8giai1mlh1mzm9xgkk3azvcfkjqdvml0fika2apqwlsz1"))))
-    (properties `((upstream-name . "tradeoffaucdim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-superlearner
-                             r-stringr
-                             r-speedglm
-                             r-rsample
-                             r-rocr
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-fuzzysim
-                             r-fastdummies
-                             r-ez
-                             r-dplyr
-                             r-caret))
-    (home-page "https://github.com/luisgarcez11/tradeoffaucdim")
-    (synopsis "Plotting Trade-Off AUC-Dimensionality")
-    (description
-     "Perform and Runtime statistical comparisons between models.  This package aims
-at choosing the best model for a particular dataset, regarding its discriminant
-power and runtime.")
-    (license license:expat)))
-
 (define-public r-trade
   (package
     (name "r-trade")
@@ -12624,6 +12557,33 @@ with little overhead, it is mainly meant for other package developers to
 implement new behavior.")
     (license license:expat)))
 
+(define-public r-tout
+  (package
+    (name "r-tout")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tout" version))
+       (sha256
+        (base32 "0pxvr78jhbb5ijbg714j8lcd78nzabixshc6j91yn7i95g3m7f5n"))))
+    (properties `((upstream-name . "tout")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DTWilson/tout")
+    (synopsis
+     "Optimal Sample Size and Progression Criteria for Three-Outcome Trials")
+    (description
+     "Find the optimal decision rules (AKA progression criteria) and sample size for
+clinical trials with three (stop/pause/go) outcomes.  Both binary and continuous
+endpoints can be accommodated, as can cases where an adjustment is planned
+following a pause outcome.  For more details see Wilson et al. (2024)
+<doi:10.1186/s12874-024-02351-x>.")
+    (license license:expat)))
+
 (define-public r-tourr
   (package
     (name "r-tourr")
@@ -12928,6 +12888,39 @@ other programming languages, such as the ability to concatenate strings using +
 or to repeat strings using *.  This package aims at providing such functionality
 without breaking existing code, i.e., only statements, that would throw errors
 in pure base R are patched.")
+    (license license:expat)))
+
+(define-public r-toscca
+  (package
+    (name "r-toscca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toscca" version))
+       (sha256
+        (base32 "0c54bgc21q9zv0xx653mb0f9wha44ykgnvmm326357y3xhaa6lsi"))))
+    (properties `((upstream-name . "toscca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-mcompanion
+                             r-mass
+                             r-lme4
+                             r-ggplot2
+                             r-forecast
+                             r-foreach
+                             r-envstats
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=toscca")
+    (synopsis "Thresholded Ordered Sparse CCA")
+    (description
+     "This package performs Thresholded Ordered Sparse Canonical Correlation Analysis
+(CCA).  For more details see Senar, N. (2024) <doi:10.1093/bioadv/vbae021> and
+Senar, N. et al. (2025) <doi:10.48550/@code{arXiv.2503.15140>}.")
     (license license:expat)))
 
 (define-public r-tosca
@@ -20666,38 +20659,6 @@ experience of working with Emoji as smooth as possible, as it has the tidyverse
 style.")
     (license license:gpl3+)))
 
-(define-public r-tidyedsurvey
-  (package
-    (name "r-tidyedsurvey")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyEdSurvey" version))
-       (sha256
-        (base32 "0vimgaq09dbz78i68ks5p3wiiahl59grdcvbg4bgdq3147pbmd3k"))))
-    (properties `((upstream-name . "tidyEdSurvey")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-rlang
-                             r-lifecycle
-                             r-ggplot2
-                             r-edsurvey
-                             r-dplyr
-                             r-cli))
-    (home-page "https://cran.r-project.org/package=tidyEdSurvey")
-    (synopsis "Integration of 'dplyr' and 'ggplot2' with 'EdSurvey'")
-    (description
-     "Takes objects of class edsurvey.data.frame and converts them to a data.frame
-within the calling environment of dplyr and ggplot2 functions.  Additionally,
-for plotting with ggplot2', users can map aesthetics to subject scales and all
-plausible values will be used.  This package supports student level data; to
-work with school or teacher level data, see ?@code{EdSurvey::getData}'.")
-    (license license:gpl2)))
-
 (define-public r-tidyedgar
   (package
     (name "r-tidyedgar")
@@ -22578,13 +22539,13 @@ tasks to streamline workflows.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.7.0")
+    (version "2.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "0wg51vyhw2dl6ycm7q6ygpkb56bihi734dmpb061yw99x6qfanbi"))))
+        (base32 "11ynrhfhf1dr4rjmzk3ppa9jlvvphxkv7hgl4kn9c1ynfn92p9fj"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (arguments
@@ -23262,30 +23223,6 @@ posterior values via reciprocal importance sampling.  Metodiev, Perrot-DockÃ¨s
 Ouadah, Irons, Latouche, & Raftery (2024).  Bayesian Analysis.
 <doi:10.1214/24-BA1422>.")
     (license license:gpl3+)))
-
-(define-public r-thaipdf
-  (package
-    (name "r-thaipdf")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "thaipdf" version))
-       (sha256
-        (base32 "03h03bmw6q60jc80z14k7hpli0knhfbmhns0inbz0nhvisfzmsbq"))))
-    (properties `((upstream-name . "thaipdf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-fs r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://lightbridge-ks.github.io/thaipdf/")
-    (synopsis "R Markdown to PDF in Thai Language")
-    (description
-     "Provide R Markdown templates and @code{LaTeX} preamble which are necessary for
-creating PDF from R Markdown documents in Thai language.")
-    (license license:expat)))
 
 (define-public r-tgver
   (package

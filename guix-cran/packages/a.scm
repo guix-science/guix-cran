@@ -2386,34 +2386,6 @@ automatic routing of the functional elements such as the domain and the mutation
 site is completed.")
     (license license:gpl3)))
 
-(define-public r-autoplotly
-  (package
-    (name "r-autoplotly")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autoplotly" version))
-       (sha256
-        (base32 "1z577jvadgiz028z7x0786d3qhlkrvv9i34xmllizvg94kxv3bl1"))))
-    (properties `((upstream-name . "autoplotly")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotly r-ggplot2 r-ggfortify))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/terrytangyuan/autoplotly")
-    (synopsis
-     "Automatic Generation of Interactive Visualizations for Statistical Results")
-    (description
-     "Functionalities to automatically generate interactive visualizations for
-statistical results supported by ggfortify', such as time series, PCA,
-clustering and survival analysis, with plotly.js <https://plotly.com/> and
-ggplot2 style.  The generated visualizations can also be easily extended using
-ggplot2 and plotly syntax while staying interactive.")
-    (license license:gpl2)))
-
 (define-public r-autopipe
   (package
     (name "r-autopipe")
@@ -5799,13 +5771,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.51")
+    (version "4.4.55")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "0gd0mrv50kzxjwr8szwvc1xxffh4zdpf02w7cpb8byjva238fz7f"))))
+        (base32 "0z8nvds9p33dv6kmy9is95wsaq6yg971a6vrmhpmxapi7yb9mb23"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (arguments
@@ -8467,40 +8439,6 @@ Levenshtein, V.I. (1966)
 server with XAI (Explainable Artificial Intelligence) plots to be generated
 on-demand or precalculate and auto-upload data file beside shareable Arena URL.")
     (license license:gpl3)))
-
-(define-public r-arena2r
-  (package
-    (name "r-arena2r")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arena2r" version))
-       (sha256
-        (base32 "14zjpglp389pldi436935fz6mgi4jdgfii1m035nsvihrms9gqkh"))))
-    (properties `((upstream-name . "arena2r")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinybs
-                             r-shiny
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pedroliman/arena2r")
-    (synopsis "Plots, Summary Statistics and Tools for Arena Simulation Users")
-    (description
-     "Reads Arena <https://www.arenasimulation.com/> CSV output files and generates
-nice tables and plots.  The package contains a Shiny App that can be used to
-interactively visualize Arena's results.")
-    (license license:expat)))
 
 (define-public r-areaplot
   (package
@@ -11205,6 +11143,43 @@ subplots and complex plots.")
 Lemeshow and R.X. Sturdivant (3rd ed., 2013) containing the dataset used in the
 book.")
     (license license:gpl3)))
+
+(define-public r-aplms
+  (package
+    (name "r-aplms")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aplms" version))
+       (sha256
+        (base32 "1v349klkgzm1yaddghcnx6vdwhbd538rj7ssv656v0614krxcgfs"))))
+    (properties `((upstream-name . "aplms")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmutil
+                             r-rlist
+                             r-psych
+                             r-mgcv
+                             r-matrix
+                             r-mass))
+    (home-page "https://github.com/shuwei325/aplms")
+    (synopsis
+     "Additive Partial Linear Models with Symmetric Autoregressive Errors")
+    (description
+     "Set of tools for fitting the additive partial linear models with symmetric
+autoregressive errors of order p, or APLMS-AR(p).  This setup enables the
+modeling of a time series response variable using linear and nonlinear
+structures of a set of explanatory variables, with nonparametric components
+approximated by natural cubic splines or P-splines.  It also accounts for
+autoregressive error terms with distributions that have lighter or heavier tails
+than the normal distribution.  The package includes various error distributions,
+such as normal, generalized normal, Student's t, generalized Student's t,
+power-exponential, and Cauchy distributions.  Chou-Chen, S.W., Oliveira, R.A.,
+Raicher, I., Gilberto A. Paula (2024) <doi:10.1007/s00362-024-01590-w>.")
+    (license license:gpl2)))
 
 (define-public r-apisensr
   (package
@@ -14206,41 +14181,6 @@ allows greater user specification than other available raking algorithms.  A
 variety of simple weighted statistics that were previously in this package
 (version .55 and earlier) have been moved to the package weights.'.")
     (license license:gpl2+)))
-
-(define-public r-andurinha
-  (package
-    (name "r-andurinha")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "andurinha" version))
-       (sha256
-        (base32 "1cpz16zv3al6lmsqsb7dl5v6kml2a0hg084rbmwa4wsyk5ygl8bm"))))
-    (properties `((upstream-name . "andurinha")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-signal
-                             r-rlang
-                             r-plyr
-                             r-ggplot2
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/noemiallefs/andurinha")
-    (synopsis "Make Spectroscopic Data Processing Easier")
-    (description
-     "The goal of andurinha is provide a fast and friendly way to process
-spectroscopic data.  It is intended for processing several spectra of samples
-with similar composition (tens to hundreds of spectra).  It compiles
-spectroscopy data files, produces standardized and second derivative spectra,
-finds peaks and allows to select the most significant ones based on the second
-derivative/absorbance sum spectrum.  It also provides functions for graphic
-evaluation of the outputs.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-andromeda
   (package
@@ -19708,33 +19648,6 @@ k-Nearest Neighbor Classification, 1-Nearest Neighbor Classification, and
 Conditional Inference Trees are available.")
     (license license:gpl3)))
 
-(define-public r-ahw
-  (package
-    (name "r-ahw")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ahw" version))
-       (sha256
-        (base32 "1dq40qf5r5h011d9fk2c4qjj6dbh0kxl2xfjaflr69r2dlsslgds"))))
-    (properties `((upstream-name . "ahw")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-timereg r-plyr r-data-table))
-    (home-page "https://cran.r-project.org/package=ahw")
-    (synopsis
-     "Calculates Continuous Time Likelihood Ratio Weights Assuming Multiplicative Intensity Models and Additive Hazard Models")
-    (description
-     "Estimates continuous time weights for performing causal survival analysis.  For
-instance, weighted Nelson-Aalen or Kaplan-Meier estimates can be given a causal
-interpretation.  See Ryalen, Stensrud, and RÃ¸ysland (2019)
-<doi:10.1007/s10985-019-09468-y> and Ryalen (2019)
-<https://www.duo.uio.no/handle/10852/70353> for theory and examples.")
-    (license license:gpl3+)))
-
 (define-public r-ahsurv
   (package
     (name "r-ahsurv")
@@ -23722,32 +23635,6 @@ Xian A (2023) \"Ensemble distributional forecasting for insurance loss reserving
 neighbourhood regression, from Nunes et al. (2006)
 <doi:10.1007/s11222-006-6560-y>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-adklakedata
-  (package
-    (name "r-adklakedata")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "adklakedata" version))
-       (sha256
-        (base32 "1lzj3ib4bgfkq5lq12n47pwc52h7k35xbbwj6brwsgx1gd4fx3x6"))))
-    (properties `((upstream-name . "adklakedata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rappdirs r-httr))
-    (home-page "https://cran.r-project.org/package=adklakedata")
-    (synopsis "Adirondack Long-Term Lake Data")
-    (description
-     "Package for the access and distribution of Long-term lake datasets from lakes in
-the Adirondack Park, northern New York state.  Includes a wide variety of
-physical, chemical, and biological parameters from 28 lakes.  Data are from
-multiple collection organizations and have been harmonized in both time and
-space for ease of reuse.")
-    (license license:expat)))
 
 (define-public r-adjustedcurves
   (package

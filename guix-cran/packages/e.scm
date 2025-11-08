@@ -7706,6 +7706,36 @@ computed from the WAIC or the LOO-IC of models fitted with brms and following
 Yao et al. (2017, <@code{arXiv:1704.02030v3>}).")
     (license license:expat)))
 
+(define-public r-estempmm
+  (package
+    (name "r-estempmm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EstemPMM" version))
+       (sha256
+        (base32 "0932c3vd2yscarbhllhmzq8ndj4apgzqj9zd0v6j8hrr12rjkqq1"))))
+    (properties `((upstream-name . "EstemPMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SZabolotnii/EstemPMM")
+    (synopsis "Polynomial Maximization Method for Non-Gaussian Regression")
+    (description
+     "This package implements the Polynomial Maximization Method ('PMM') for parameter
+estimation in linear and time series models when error distributions deviate
+from normality.  The PMM2 variant achieves lower variance parameter estimates
+compared to ordinary least squares ('OLS') when errors exhibit significant
+skewness.  Includes methods for linear regression, AR'/'MA'/'ARMA'/'ARIMA
+models, and bootstrap inference.  Methodology described in Zabolotnii, Warsza,
+and Tkachenko (2018) <doi:10.1007/978-3-319-77179-3_75>, Zabolotnii, Tkachenko,
+and Warsza (2022) <doi:10.1007/978-3-031-03502-9_37>, and Zabolotnii, Tkachenko,
+and Warsza (2023) <doi:10.1007/978-3-031-25844-2_21>.")
+    (license license:gpl3)))
+
 (define-public r-estcrm
   (package
     (name "r-estcrm")
@@ -20001,7 +20031,6 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
                              r-matrix
                              r-mass
                              r-ineq
-                             r-ddpcr
                              r-checkmate
                              r-bbmisc))
     (home-page "https://haijiangqin.com/EFAfactors/")
@@ -22728,13 +22757,13 @@ System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/api/#/>.")
 (define-public r-ecorisk
   (package
     (name "r-ecorisk")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecorisk" version))
        (sha256
-        (base32 "1ri4f0a5vq9cr4w8gppjlzkpri5r3w6qsdqcy44bb1a9m255z2wv"))))
+        (base32 "03mcw6cncrizk0av9i6f11lg4h28ms1z7k6jlhlb88r0gj55hdc1"))))
     (properties `((upstream-name . "ecorisk")))
     (build-system r-build-system)
     (arguments
@@ -22757,7 +22786,7 @@ System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/api/#/>.")
      "Implementation of a modular framework for ecosystem risk assessments, combining
 existing risk assessment approaches tailored to semi-quantitative and
 quantitative analyses.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
+    (license license:expat)))
 
 (define-public r-ecorest
   (package

@@ -21773,29 +21773,6 @@ effects model to jointly model two related outcomes (e.g., reading and math
 achievement; see Peralta et al., (2022) <doi:10.1037/met0000358>).")
     (license license:expat)))
 
-(define-public r-benchr
-  (package
-    (name "r-benchr")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "benchr" version))
-       (sha256
-        (base32 "1xh1n41ll50zz3v26i8lg5f92i90rc78ywnl0rczryh621whx80n"))))
-    (properties `((upstream-name . "benchr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppprogress r-rcpp))
-    (home-page "https://gitlab.com/artemklevtsov/benchr")
-    (synopsis "High Precise Measurement of R Expressions Execution Time")
-    (description
-     "This package provides infrastructure to accurately measure and compare the
-execution time of R expressions.")
-    (license license:gpl2+)))
-
 (define-public r-benchmarking
   (package
     (name "r-benchmarking")
@@ -24016,37 +23993,6 @@ of a marginal model estimated with generalized estimating equations.  Details
 about the bias formula used are in Lunardon, N., Scharfstein, D. (2017)
 <doi:10.1002/sim.7366>.")
     (license license:gpl2)))
-
-(define-public r-bcfrailphdv
-  (package
-    (name "r-bcfrailphdv")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bcfrailphdv" version))
-       (sha256
-        (base32 "1amfpyb9y7ngfq1npnjwzgbs6g3dmpp979q7ajf0khjgj55fkirw"))))
-    (properties `((upstream-name . "bcfrailphdv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-bcfrailph))
-    (home-page "https://cran.r-project.org/package=bcfrailphdv")
-    (synopsis "Bivariate Correlated Frailty Models with Varied Variances")
-    (description
-     "Fit and simulate bivariate correlated frailty models with proportional hazard
-structure.  Frailty distributions, such as gamma and lognormal models are
-supported for semiparametric procedures.  Frailty variances of the two subjects
-can be varied or equal.  Details on the models are available in book of Wienke
-(2011,ISBN:978-1-4200-7388-1).  Bivariate gamma fit is obtained using the
-approach given in Iachine (1995) with modifications.  Lognormal fit is based on
-the approach by Ripatti and Palmgren (2000)
-<doi:10.1111/j.0006-341X.2000.01016.x>.  Frailty distributions, such as gamma,
-inverse gaussian and power variance frailty models are supported for parametric
-approach.")
-    (license license:gpl2+)))
 
 (define-public r-bcfrailph
   (package
@@ -29555,31 +29501,6 @@ Perez-Elizalde, S., Jarquin, D., Cotes, J.M., Viele, K., Liu, G. and Cornelius,
 P.L. (2011) (<doi:10.2135/cropsci2010.06.0343>).")
     (license license:gpl2)))
 
-(define-public r-bayesab
-  (package
-    (name "r-bayesab")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesAB" version))
-       (sha256
-        (base32 "1mwwbkd8mqm22mkbgrp5mq7i52qqjr9if09fnhb3ybdpqq3sdg73"))))
-    (properties `((upstream-name . "bayesAB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcpp r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/FrankPortman/bayesAB")
-    (synopsis "Fast Bayesian Methods for AB Testing")
-    (description
-     "This package provides a suite of functions that allow the user to analyze A/B
-test data in a Bayesian framework.  Intended to be a drop-in replacement for
-common frequentist hypothesis test such as the t-test and chi-sq test.")
-    (license license:expat)))
-
 (define-public r-bayes4psy
   (package
     (name "r-bayes4psy")
@@ -31914,42 +31835,6 @@ downloading and ordering the data conveniently.")
      "Create a hierarchical acoustic event species classifier out of multiple call
 type detectors as described in Rankin et al (2017) <doi:10.1111/mms.12381>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-banova
-  (package
-    (name "r-banova")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BANOVA" version))
-       (sha256
-        (base32 "07ghmzsb77vcd3snmg59spp60j603gawnqs847x1x44pnxs9l4wl"))))
-    (properties `((upstream-name . "BANOVA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-runjags r-rstan r-rjags r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BANOVA")
-    (synopsis "Hierarchical Bayesian ANOVA Models")
-    (description
-     "It covers several Bayesian Analysis of Variance (BANOVA) models used in analysis
-of experimental designs in which both within- and between- subjects factors are
-manipulated.  They can be applied to data that are common in the behavioral and
-social sciences.  The package includes: Hierarchical Bayes ANOVA models with
-normal response, t response, Binomial (Bernoulli) response, Poisson response,
-ordered multinomial response and multinomial response variables.  All models
-accommodate unobserved heterogeneity by including a normal distribution of the
-parameters across individuals.  Outputs of the package include tables of sums of
-squares, effect sizes and p-values, and tables of predictions, which are easily
-interpretable for behavioral and social researchers.  The floodlight analysis
-and mediation analysis based on these models are also provided.  BANOVA uses
-Stan and JAGS as the computational platform.  References: Dong and Wedel (2017)
-<doi:10.18637/jss.v081.i09>; Wedel and Dong (2020) <doi:10.1002/jcpy.1111>.")
-    (license license:gpl2+)))
 
 (define-public r-bannercommenter
   (package

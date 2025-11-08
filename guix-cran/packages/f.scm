@@ -1965,13 +1965,13 @@ first-first and last-firstafter.")
 (define-public r-funmodisco
   (package
     (name "r-funmodisco")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funMoDisco" version))
        (sha256
-        (base32 "0qiarbb5jgkyljjprhp1qaf28gky6pbkl9z9c6r70ar7lxbp27vb"))))
+        (base32 "0gjp1xppa0xc3fbi1pr8qcp9qczminwxvdv5w3m7z3nhw6knyffh"))))
     (properties `((upstream-name . "funMoDisco")))
     (build-system r-build-system)
     (arguments
@@ -1982,12 +1982,7 @@ first-first and last-firstafter.")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (inputs (list))
-    (propagated-inputs (list r-zoo
-                             r-stringr
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinybusy
-                             r-shiny
+    (propagated-inputs (list r-stringr
                              r-scales
                              r-rcpparmadillo
                              r-rcpp
@@ -2102,30 +2097,6 @@ official views of the funding institutions mentioned above.  This software is
 distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 PURPOSE. See the GNU General Public License for more details.")
-    (license license:gpl2+)))
-
-(define-public r-funlbm
-  (package
-    (name "r-funlbm")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "funLBM" version))
-       (sha256
-        (base32 "0aa9h6nbxbvd6iq4q00rndhvb6sq79lpdgr3zwz0lcgjx6p56s5g"))))
-    (properties `((upstream-name . "funLBM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-funfem r-fda r-abind))
-    (home-page "https://cran.r-project.org/package=funLBM")
-    (synopsis "Model-Based Co-Clustering of Functional Data")
-    (description
-     "The @code{funLBM} algorithm allows to simultaneously cluster the rows and the
-columns of a data matrix where each entry of the matrix is a function or a time
-series.")
     (license license:gpl2+)))
 
 (define-public r-funkyheatmap
@@ -4996,37 +4967,6 @@ specific behavioral patterns of individual subjects to be graphed from
 occurrence/nonoccurrence behavioral data.")
     (license license:gpl3)))
 
-(define-public r-freqpcr
-  (package
-    (name "r-freqpcr")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "freqpcr" version))
-       (sha256
-        (base32 "04s6yrzxk4v86nhs9mwam1y2lfac73r6i8af9xbbmrlzj61wiia9"))))
-    (properties `((upstream-name . "freqpcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cubature))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sudoms/freqpcr")
-    (synopsis
-     "Estimates Allele Frequency on qPCR DeltaDeltaCq from Bulk Samples")
-    (description
-     "Interval estimation of the population allele frequency from @code{qPCR} analysis
-based on the restriction enzyme digestion (RED)-@code{DeltaDeltaCq} method
-(Osakabe et al.  2017, <doi:10.1016/j.pestbp.2017.04.003>), as well as general
-@code{DeltaDeltaCq} analysis.  Compatible with the Cq measurement of DNA
-extracted from multiple individuals at once, so called \"group-testing\", this
-model assumes that the quantity of DNA extracted from an individual organism
-follows a gamma distribution.  Therefore, the point estimate is robust regarding
-the uncertainty of the DNA yield.")
-    (license license:gpl3+)))
-
 (define-public r-freqparcoord
   (package
     (name "r-freqparcoord")
@@ -5051,33 +4991,6 @@ visualization, including applications to clustering, outlier hunting and
 regression diagnostics.  Includes general functions for multivariate
 nonparametric density and regression estimation, using parallel computation.")
     (license license:gpl2+)))
-
-(define-public r-freqdom-fda
-  (package
-    (name "r-freqdom-fda")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "freqdom.fda" version))
-       (sha256
-        (base32 "1y9g85sp0w8rvhmsrln64bj1h03wkpgriqidc3pf123if58ap72m"))))
-    (properties `((upstream-name . "freqdom.fda")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-freqdom r-fda))
-    (home-page "https://cran.r-project.org/package=freqdom.fda")
-    (synopsis
-     "Functional Time Series: Dynamic Functional Principal Components")
-    (description
-     "Implementations of functional dynamic principle components analysis.  Related
-graphic tools and frequency domain methods.  These methods directly use
-multivariate dynamic principal components implementation, following the
-guidelines from Hormann, Kidzinski and Hallin (2016), Dynamic Functional
-Principal Component <doi:10.1111/rssb.12076>.")
-    (license license:gpl3)))
 
 (define-public r-freqdom
   (package
@@ -8433,39 +8346,6 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 2013 <doi:10.3390/f4030537>; Parker et al.  2004
 <doi:10.1111/j.0021-8901.2004.00925.x>.")
     (license license:gpl3)))
-
-(define-public r-forestpsd
-  (package
-    (name "r-forestpsd")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forestPSD" version))
-       (sha256
-        (base32 "1n5axvkj3sdm6196kg5vm4g33djf17cqkqql2vmmqjyzh9hqc8as"))))
-    (properties `((upstream-name . "forestPSD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ttr r-reshape2 r-modelr r-minpack-lm r-ggplot2))
-    (home-page "https://cran.r-project.org/package=forestPSD")
-    (synopsis "Forest Population Structure and Numeric Dynamics")
-    (description
-     "Analysis of forest population structure and quantitative dynamics is the
-research and evaluation of the composition, distribution, age structure and
-changes in quantity over time of various populations in the forest.  By deeply
-understanding these characteristics of forest populations, scientific basis can
-be provided for the management, protection and sustainable utilization of forest
-resources.  This R package conducts a systematic analysis of forest population
-structure and quantitative dynamics through analyzing age structure, compiling
-life tables, population quantitative dynamic change indices and time series
-models, in order to provide support for forest population protection and
-sustainable management.  References: Zhang Y, Wang J, Wang X, et
-al(2024)<doi:10.3390/plants13070946>.  Yuan G, Guo Q, Xie N, et
-al(2023)<doi:10.1007/s11629-022-7429-z>.")
-    (license license:gpl2)))
 
 (define-public r-forestploter
   (package
@@ -14712,39 +14592,6 @@ estimates and predictions with bootstrap or parametric methods, and provides
 convenient plotting methods.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-fitode
-  (package
-    (name "r-fitode")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fitode" version))
-       (sha256
-        (base32 "18c5sgvkv9w370zli2kc2gdcbpnb3f5s3ivp0zyd6rqlwdy0c6cg"))))
-    (properties `((upstream-name . "fitode")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv
-                             r-mvtnorm
-                             r-mass
-                             r-desolve
-                             r-deriv
-                             r-coda
-                             r-bbmle))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fitode")
-    (synopsis "Tools for Ordinary Differential Equations Model Fitting")
-    (description
-     "This package provides methods and functions for fitting ordinary differential
-equations (ODE) model in R'.  Sensitivity equations are used to compute the
-gradients of ODE trajectories with respect to underlying parameters, which in
-turn allows for more stable fitting.  Other fitting methods, such as MCMC
-(Markov chain Monte Carlo), are also available.")
-    (license license:gpl2+)))
-
 (define-public r-fitodbodrshiny
   (package
     (name "r-fitodbodrshiny")
@@ -15435,13 +15282,13 @@ Kirkkojarvi, Finland\".")
 (define-public r-fishgrowth
   (package
     (name "r-fishgrowth")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishgrowth" version))
        (sha256
-        (base32 "04qxvmbcj4cfpj8xy1dgwnslsw5lhf3q77z3y4xj50di73v75mrf"))))
+        (base32 "0ilmg1c3vj6f0c642sj83rdmn0623xyk0ljhvaz4iwzll059yp46"))))
     (properties `((upstream-name . "fishgrowth")))
     (build-system r-build-system)
     (arguments
@@ -19240,13 +19087,13 @@ version of the Hausman test.")
 (define-public r-fegarch
   (package
     (name "r-fegarch")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fEGarch" version))
        (sha256
-        (base32 "0n1q2y7k516s7b4qdn60v1c2slbbzbwgyvjfgn93fiz482qiyqaq"))))
+        (base32 "0s7iy7wp5q30vx1441y6ndd833innd24qkwr9qh3448jpn34zn3m"))))
     (properties `((upstream-name . "fEGarch")))
     (build-system r-build-system)
     (arguments
@@ -22544,6 +22391,33 @@ faster than its competitors, while often producing more accurate predictions.
 Also included is a long hourly series of arrivals into the University of Iowa
 Emergency Department with concurrent local temperature.")
     (license license:gpl3+)))
+
+(define-public r-fasttreeid
+  (package
+    (name "r-fasttreeid")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fasttreeid" version))
+       (sha256
+        (base32 "0krdm6r2185zad7mq9y8h87vzhskjhd6snvdghlr5jp5k59ra15j"))))
+    (properties `((upstream-name . "fasttreeid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/yasminebriefs/FastTreeID")
+    (synopsis "Identifies Parameters in a Tree-Shaped SCM")
+    (description
+     "This package implements the algorithm by Briefs and BlÃ¤ser (2025)
+<https://openreview.net/forum?id=8PHOPPH35D>, based on the approach of Gupta and
+BlÃ¤ser (2024) <doi:10.1609/aaai.v38i18.30023>.  It determines, for a structural
+causal model (SCM) whose directed edges form a tree, whether each parameter is
+unidentifiable, 1-identifiable or 2-identifiable (other cases cannot occur),
+using a randomized algorithm with provable running time O(n^3 log^2 n).")
+    (license license:expat)))
 
 (define-public r-fasttime
   (package

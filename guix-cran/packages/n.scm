@@ -169,31 +169,6 @@ information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 clean the data once in R.")
     (license license:expat)))
 
-(define-public r-nzelect
-  (package
-    (name "r-nzelect")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nzelect" version))
-       (sha256
-        (base32 "19kcbq454yg9g76ix7v3nibgw2203d7vv6f2d6d2zkcc0h08bjm7"))))
-    (properties `((upstream-name . "nzelect")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=nzelect")
-    (synopsis "New Zealand Election Data")
-    (description
-     "Convenient access to New Zealand election results by voting place.  Voting
-places have been matched to Regional Council, Territorial Authority, and Area
-Unit, to facilitate matching with additional data.  Opinion polls since 2002 and
-some convenience analytical function are also supplied.")
-    (license license:gpl3)))
-
 (define-public r-nycflights23
   (package
     (name "r-nycflights23")

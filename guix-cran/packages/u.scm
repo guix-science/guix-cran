@@ -1638,36 +1638,6 @@ template, startr', along with utilities for day-to-day data journalism tasks,
 such as reading and writing files, producing graphics and cleaning up datasets.")
     (license license:expat)))
 
-(define-public r-upsetvp
-  (package
-    (name "r-upsetvp")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "UpSetVP" version))
-       (sha256
-        (base32 "1v6djfwaix978vzfjnj0vd3r0m3svfqkn9aqnf9qz2xsjk43m9zr"))))
-    (properties `((upstream-name . "UpSetVP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdacca-hp r-patchwork r-ggplot2))
-    (home-page "https://github.com/LiuXYh/UpSetVP")
-    (synopsis
-     "An Alternative Visualization of VPA and HP in Canonical Analysis")
-    (description
-     "Using matrix layout to visualize the unique, common, or individual contribution
-of each predictor (or matrix of predictors) towards explained variation on
-canonical analysis.  These contributions were derived from variance partitioning
-analysis (VPA) and hierarchical partitioning (HP), applying the algorithm of Lai
-J., Zou Y., Zhang J., Peres-Neto P. (2022) Generalizing hierarchical and
-variation partitioning in multiple regression and canonical analyses using the
-rdacca.hp R package.Methods in Ecology and Evolution, 13: 782-788
-<doi:10.1111/2041-210X.13800>.")
-    (license license:gpl2+)))
-
 (define-public r-upsetjs
   (package
     (name "r-upsetjs")
@@ -4985,39 +4955,6 @@ this data set, can be found back in the publications found in the reference
 list.")
     (license license:gpl3)))
 
-(define-public r-ucsfindustrydocs
-  (package
-    (name "r-ucsfindustrydocs")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ucsfindustrydocs" version))
-       (sha256
-        (base32 "17c3cfnc8k189dlz0asrp6kkfvfi59xd8f8rzp0v6sbg3lwrxiha"))))
-    (properties `((upstream-name . "ucsfindustrydocs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-r6
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-data-table
-                             r-arrow))
-    (home-page "https://cran.r-project.org/package=ucsfindustrydocs")
-    (synopsis "UCSF Industry Documents Library API Wrapper")
-    (description
-     "Serves as a R wrapper for the University of California San Francisco's [Industry
-Documents Digital Library]<https://www.industrydocuments.ucsf.edu/> API. The
-API, and this wrapper, serve to pull metadata about of items within the digital
-library.  For more information the API, see the [API's
-documentation]<https://www.industrydocuments.ucsf.edu/wp-content/uploads/2020/08/@code{IndustryDocumentsDataAPI_v7.pdf>}.")
-    (license license:expat)))
-
 (define-public r-ucscxenatools
   (package
     (name "r-ucscxenatools")
@@ -5221,13 +5158,13 @@ capture much of the structure of the original data.")
 (define-public r-uci
   (package
     (name "r-uci")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uci" version))
        (sha256
-        (base32 "0bqyj69xplr8hbc1b9rpjxvzmnhwkqy2xdyd4my53niq2gm55750"))))
+        (base32 "0prgjw1j6x9cwh3zl29x35yyr81g9zv40znxljx69v3yqkl75zga"))))
     (properties `((upstream-name . "uci")))
     (build-system r-build-system)
     (arguments

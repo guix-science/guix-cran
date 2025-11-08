@@ -13,7 +13,6 @@
   #:use-module (gnu packages spreadsheet)
   #:use-module (gnu packages web)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages cmake)
@@ -21,6 +20,7 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
@@ -697,45 +697,6 @@ automates many of the functions of the AWTY package in the R environment, as
 well as a host of other functions.  Warren, Geneva, and Lanfear (2017),
 <doi:10.1093/molbev/msw279>.")
     (license license:gpl2)))
-
-(define-public r-rwtss
-  (package
-    (name "r-rwtss")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rwtss" version))
-       (sha256
-        (base32 "0lxjzznigk4i8lzga88m0i6x2j5c5q79rvs5knd762ycfxwlmx6w"))))
-    (properties `((upstream-name . "Rwtss")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tibble
-                             r-stringr
-                             r-reshape2
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-geosphere
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/e-sensing/Rwtss/")
-    (synopsis "Client for Web Time-Series Service")
-    (description
-     "Allows remote access to satellite image time series provided by the web time
-series service (WTSS) available at servers such as
-<https://brazildatacube.dpi.inpe.br/wtss/>.  The functions include listing the
-data sets available in WTSS servers, describing the contents of a data set, and
-retrieving a time series based on spatial location and temporal filters.")
-    (license license:gpl3)))
 
 (define-public r-rwstats
   (package
@@ -2098,53 +2059,6 @@ univariate and multivariate testing procedures with a special emphasis on
 permutation tests.  Many functions intend to simplify user's life by shortening
 existing procedures or by implementing plotting functions that can be used with
 as many methods from different packages as possible.")
-    (license license:gpl2)))
-
-(define-public r-rva
-  (package
-    (name "r-rva")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RVA" version))
-       (sha256
-        (base32 "1a0av2vhqnkc4w76q5dhds0p12icmkkxyr1d04rsd83srwkwh4fb"))))
-    (properties `((upstream-name . "RVA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-plotly
-                             r-org-hs-eg-db
-                             r-msigdbr
-                             r-haven
-                             r-gsvadata
-                             r-gseabase
-                             r-gridextra
-                             r-ggpubr
-                             r-ggplot2
-                             r-edger
-                             r-dplyr
-                             r-data-table
-                             r-complexheatmap
-                             r-clusterprofiler
-                             r-circlize))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/THERMOSTATS/RVA")
-    (synopsis "RNAseq Visualization Automation")
-    (description
-     "Automate downstream visualization & pathway analysis in RNAseq analysis.  RVA is
-a collection of functions that efficiently visualize RNAseq differential
-expression analysis result from summary statistics tables.  It also utilize the
-Fisher's exact test to evaluate gene set or pathway enrichment in a convenient
-and efficient manner.")
     (license license:gpl2)))
 
 (define-public r-rutledge
@@ -3652,55 +3566,6 @@ the theory part of the vignette.")
      "This package provides a toolkit for the analysis of paths from spatial tracking
 experiments and calculation of goal-finding strategies.  This package is
 centered on an approach using machine learning for path classification.")
-    (license license:gpl3)))
-
-(define-public r-rtpcr
-  (package
-    (name "r-rtpcr")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rtpcr" version))
-       (sha256
-        (base32 "035pnk6a846ck3p12jwhxx1j4279acvlzsjj2qiy2gyq4yr3g4pb"))))
-    (properties `((upstream-name . "rtpcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-reshape2
-                             r-purrr
-                             r-multcompview
-                             r-multcomp
-                             r-lmertest
-                             r-ggplot2
-                             r-emmeans
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mirzaghaderi/rtpcr")
-    (synopsis "qPCR Data Analysis")
-    (description
-     "Various methods are employed for statistical analysis and graphical presentation
-of real-time PCR (quantitative PCR or @code{qPCR}) data.  rtpcr handles
-amplification efficiency calculation, statistical analysis and graphical
-representation of real-time PCR data based on up to two reference genes.  By
-accounting for amplification efficiency values, rtpcr was developed using a
-general calculation method described by Ganger et al. (2017)
-<doi:10.1186/s12859-017-1949-5> and Taylor et al. (2019)
-<doi:10.1016/j.tibtech.2018.12.002>, covering both the Livak and Pfaffl methods.
- Based on the experimental conditions, the functions of the rtpcr package use
-t-test (for experiments with a two-level factor), analysis of variance (ANOVA),
-analysis of covariance (ANCOVA) or analysis of repeated measure data to
-calculate the fold change (FC, Delta Delta Ct method) or relative expression
-(RE, Delta Ct method).  The functions further provide standard errors and
-confidence intervals for means, apply statistical mean comparisons and present
-significance.  To facilitate function application, different data sets were used
-as examples and the outputs were explained.  ârtpcrâ package also provides
-bar plots using various controlling arguments.  The rtpcr package is
-user-friendly and easy to work with and provides an applicable resource for
-analyzing real-time PCR data.")
     (license license:gpl3)))
 
 (define-public r-rtpc
@@ -15761,6 +15626,29 @@ ROC surfaces.  Computes @code{eROC} curve and the corresponding AUC for
 imperfect reference standard.")
     (license license:gpl2)))
 
+(define-public r-rocrater
+  (package
+    (name "r-rocrater")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rocrateR" version))
+       (sha256
+        (base32 "17x1imgnada6shk5hs6jq6qyz6qb2vpsmr2f6yk2awbgg0kx6fm2"))))
+    (properties `((upstream-name . "rocrateR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip r-tibble r-jsonlite r-digest))
+    (home-page "https://github.com/ResearchObject/ro-crate-r/")
+    (synopsis "RO-Crate R Package Wrapper")
+    (description
+     "R package for creating, manipulating and reading RO-Crates.  Latest supported
+version of the specification: <https://w3id.org/ro/crate/1.2/>.")
+    (license license:expat)))
+
 (define-public r-rocpsych
   (package
     (name "r-rocpsych")
@@ -23757,6 +23645,44 @@ format versions 1.0 to 1.4 <https://laszip.org/>.")
 management, fuel modeling, ecology, natural resource management, climate,
 conservation, etc., via the LANDFIRE (<https://www.landfire.gov/>) Product
 Service ('LFPS') API.")
+    (license license:gpl3+)))
+
+(define-public r-rlakehabitat
+  (package
+    (name "r-rlakehabitat")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rLakeHabitat" version))
+       (sha256
+        (base32 "15951sk165rd7zrrc167nijy6q9psy1y4ajg816565m8gip5cbc6"))))
+    (properties `((upstream-name . "rLakeHabitat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyterra
+                             r-terra
+                             r-sf
+                             r-rlakeanalyzer
+                             r-isoband
+                             r-gstat
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/tristanblechinger/rlakehabitat")
+    (synopsis "Interpolate Bathymetry and Quantify Physical Aquatic Habitat")
+    (description
+     "Offers bathymetric interpolation using Inverse Distance Weighted and Ordinary
+Kriging via the gstat and terra packages.  Other functions focus on quantifying
+physical aquatic habitats (e.g., littoral, epliminion, metalimnion, hypolimnion)
+from interpolated digital elevation models (DEMs).  Functions were designed to
+calculate these metrics across water levels for use in reservoirs but can be
+applied to any DEM and will provide values for fixed conditions.  Parameters
+like Secchi disk depth or estimated photic zone, thermocline depth, and water
+level fluctuation depth are included in most functions.")
     (license license:gpl3+)))
 
 (define-public r-rlakeanalyzer
@@ -34393,6 +34319,32 @@ prediction pipeline is built on this R package.  See
 <https://github.com/yupenghe/REPTILE> for more information.")
     (license license:bsd-2)))
 
+(define-public r-repsim
+  (package
+    (name "r-repsim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "repsim" version))
+       (sha256
+        (base32 "0is0131rgzjw3nxi9826wab6q1988hzz123cy431r6npmzp3dgvx"))))
+    (properties `((upstream-name . "repsim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=repsim")
+    (synopsis "Measures of Representational Similarity Across Models")
+    (description
+     "This package provides a collection of methods for quantifying representational
+similarity between learned features or multivariate data.  The package offers an
+efficient C++ backend, designed for applications in machine learning,
+computational neuroscience, and multivariate statistics.  See Klabunde et al.
+(2025) <doi:10.1145/3728458> for a comprehensive overview of the topic.")
+    (license license:expat)))
+
 (define-public r-repsd
   (package
     (name "r-repsd")
@@ -36849,19 +36801,19 @@ and applied statistical modeling.")
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "0lvlj2f5s93c040r52fxzagsv77dnwih4hn4ihinm9z7d1g1npgl"))))
+        (base32 "1zzlh2609qkdbppf3jykwy54j1wcr8qxa44g6dg6chmwv2qa2m78"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-segmented))
+    (propagated-inputs (list r-segmented r-plumber))
     (native-inputs (list r-knitr))
     (home-page "https://paulgovan.github.io/ReliaGrowR/")
     (synopsis "Reliability Growth Analysis")
@@ -48503,28 +48455,6 @@ functions regarding parametric DCCV analysis in the package DCchoice.  See
 Carson and Hanemann (2005) <doi:10.1016/S1574-0099(05)02017-6> for DCCV.")
     (license license:gpl2+)))
 
-(define-public r-rcmdrplugin-cpd
-  (package
-    (name "r-rcmdrplugin-cpd")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcmdrPlugin.cpd" version))
-       (sha256
-        (base32 "1s0y40nh91fi6i91zvn7q106d4nnshflfnzs8m63skklsdxk3by0"))))
-    (properties `((upstream-name . "RcmdrPlugin.cpd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcmdrmisc r-rcmdr r-cpd))
-    (home-page "https://cran.r-project.org/package=RcmdrPlugin.cpd")
-    (synopsis "R Commander Plug-in for Complex Pearson Distributions")
-    (description
-     "This package provides an Rcmdr plug-in based on the cpd package.")
-    (license license:gpl2+)))
-
 (define-public r-rcmdrplugin-bws3
   (package
     (name "r-rcmdrplugin-bws3")
@@ -54170,42 +54100,6 @@ Distances Method, under a Brownian Motion Model.  See Peng et al. (2021)
 <doi:10.1016/j.ympev.2021.107142>.")
     (license license:agpl3)))
 
-(define-public r-rapidopgs
-  (package
-    (name "r-rapidopgs")
-    (version "2.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RapidoPGS" version))
-       (sha256
-        (base32 "11lwy0gfygxgmb8hr8fpfs08dqin9dd1xngk3mdfky02v4ahyskl"))))
-    (properties `((upstream-name . "RapidoPGS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcurl
-                             r-magrittr
-                             r-iranges
-                             r-genomicranges
-                             r-dplyr
-                             r-data-table
-                             r-curl
-                             r-coloc
-                             r-bigsnpr
-                             r-bigreadr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RapidoPGS")
-    (synopsis "Fast and Light Package to Compute Polygenic Risk Scores")
-    (description
-     "Quickly computes polygenic scores from GWAS summary statistics of either
-case-control or quantitative traits without parameter tuning.  Reales,G.,
-Vigorito, E., Kelemen,M., Wallace,C. (2021) <doi:10.1101/2020.07.24.220392>
-\"RÃ¡@code{pidoPGS}: A rapid polygenic score calculator for summary GWAS data
-without a test dataset\".")
-    (license license:gpl3)))
-
 (define-public r-rapidoc
   (package
     (name "r-rapidoc")
@@ -55230,6 +55124,36 @@ found in breeding populations! This package exploits sparse matrices and
 randomised linear algebra to deliver a gazillion-times speed-up compared to
 naive singular value decoposition (SVD) (and eigen decomposition).")
     (license license:gpl2+)))
+
+(define-public r-randotools
+  (package
+    (name "r-randotools")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "randotools" version))
+       (sha256
+        (base32 "1mdqapkxf763bay38jabs59cy9ffvh0cknggyh0z2nc1s5mslvvi"))))
+    (properties `((upstream-name . "randotools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ctu-bern.github.io/randotools/")
+    (synopsis "Create Randomization Lists")
+    (description
+     "Randomization lists are an integral component of randomized clinical trials.
+randotools provides tools to easily create such lists.")
+    (license license:gpl3+)))
 
 (define-public r-randomwalker
   (package
@@ -56336,35 +56260,6 @@ information about @code{AmCharts} company.")
      "Parser generator for R using combinatory parsers.  It is inspired by combinatory
 parsers developed in Haskell.")
     (license license:expat)))
-
-(define-public r-ramanmp
-  (package
-    (name "r-ramanmp")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RamanMP" version))
-       (sha256
-        (base32 "0rdj8vvs9l86yscx2mvy6nazzws8gd1x5bxvszlssinb20pns69z"))))
-    (properties `((upstream-name . "RamanMP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-imputets r-ggrepel r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=RamanMP")
-    (synopsis "Analysis and Identification of Raman Spectra of Microplastics")
-    (description
-     "Pre-processing and polymer identification of Raman spectra of plastics.
-Pre-processing includes normalisation functions, peak identification based on
-local maxima, smoothing process and removal of spectral region of no interest.
-Polymer identification can be performed using Pearson correlation coefficient or
-Euclidean distance (Renner et al. (2019), <doi:10.1016/j.trac.2018.12.004>), and
-the comparison can be done with a user-defined database or with the database
-already implemented in the package, which currently includes 356 spectra, with
-several spectra of plastic colorants.")
-    (license license:gpl2+)))
 
 (define-public r-ralsa
   (package

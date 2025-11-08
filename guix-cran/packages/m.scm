@@ -83,6 +83,53 @@ provide functions for cases with exposure-mediator interactions with four-way
 decomposition of total effect.")
     (license license:expat)))
 
+(define-public r-mytai
+  (package
+    (name "r-mytai")
+    (version "2.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "myTAI" version))
+       (sha256
+        (base32 "03bkl7jlb7n3mcy088sw4dp16cnjc1q08axqdsqkg6z331m65vw9"))))
+    (properties `((upstream-name . "myTAI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-s7
+                             r-readr
+                             r-rcppthread
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-purrr
+                             r-pheatmap
+                             r-patchwork
+                             r-memoise
+                             r-matrix
+                             r-ggtext
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplotify
+                             r-ggplot2
+                             r-ggforce
+                             r-fitdistrplus
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://drostlab.github.io/myTAI/")
+    (synopsis "Evolutionary Transcriptomics")
+    (description
+     "Investigate the evolution of biological processes by capturing evolutionary
+signatures in transcriptomes (Drost et al. (2018)
+<doi:10.1093/bioinformatics/btx835>).  This package aims to provide a
+transcriptome analysis environment to quantify the average evolutionary age of
+genes contributing to a transcriptome of interest.")
+    (license license:gpl2)))
+
 (define-public r-myownrobs
   (package
     (name "r-myownrobs")
@@ -9486,44 +9533,6 @@ can be made from local database, which can be updated by @code{msig_update()}
 function.")
     (license license:gpl2)))
 
-(define-public r-mshap
-  (package
-    (name "r-mshap")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mshap" version))
-       (sha256
-        (base32 "1q01q1w5wsiynabsvd5vl5jffiyxrmyj4ad6b07zhja0ff6b2n9j"))))
-    (properties `((upstream-name . "mshap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-ggbeeswarm
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mshap")
-    (synopsis "Multiplicative SHAP Values for Two-Part Models")
-    (description
-     "Allows for the computation of @code{mSHAP} values on two-part models as proposed
-by Matthews, S. and Hartman, B. (2021) <@code{arXiv:2106.08990>}.  Also contains
-functions for simple plotting of the results (or any SHAP values).  For
-information about the @code{TreeSHAP} algorithm that @code{mSHAP} builds on, see
-Lundberg, S.M., Erion, G., Chen, H., @code{DeGrave}, A., Prutkin, J.M., Nair,
-B., Katz, R., Himmelfarb, J., Bansal, N., Lee, S.I. (2020)
-<doi:10.1038/s42256-019-0138-9>.")
-    (license license:expat)))
-
 (define-public r-msgr
   (package
     (name "r-msgr")
@@ -13377,13 +13386,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move2
   (package
     (name "r-move2")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move2" version))
        (sha256
-        (base32 "1ci6j2vvdbzgiwsbwlizqkhn9jxpcg344v3lx2nzlnv8kd2kj1ic"))))
+        (base32 "03r6q8m7yfylyqkhfrm85cqrzgv3aa63lq4s7la7ajszbmaargyd"))))
     (properties `((upstream-name . "move2")))
     (build-system r-build-system)
     (arguments
@@ -19999,39 +20008,6 @@ and the maximum contrast method (Yoshimura et al. (1997)
 @code{pmvt()} function of package mvtnorm', and @code{mmcm.resamp()} gives
 P-value by using a permutation method.")
     (license license:gpl3)))
-
-(define-public r-mmcif
-  (package
-    (name "r-mmcif")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mmcif" version))
-       (sha256
-        (base32 "14kp0n24nxcfnfq8drxfhsvd4apg4f7iwdamzw005rlhi5srmw3r"))))
-    (properties `((upstream-name . "mmcif")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-psqn
-                             r-alabama))
-    (native-inputs (list r-r-rsp gfortran))
-    (home-page "https://github.com/boennecd/mmcif")
-    (synopsis "Mixed Multivariate Cumulative Incidence Functions")
-    (description
-     "Fits the mixed cumulative incidence functions model suggested by
-<doi:10.1093/biostatistics/kxx072> which decomposes within cluster dependence of
-risk and timing.  The estimation method supports computation in parallel using a
-shared memory C++ implementation.  A sandwich estimator of the covariance matrix
-is available.  Natural cubic splines are used to provide a flexible model for
-the cumulative incidence functions.")
-    (license license:gpl3+)))
 
 (define-public r-mmcards
   (package
@@ -27100,57 +27076,6 @@ effect is modeled nonparametrically through a kernel function, which can
 incorporate phylogenetic tree information.")
     (license license:gpl2+)))
 
-(define-public r-miretrieve
-  (package
-    (name "r-miretrieve")
-    (version "1.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "miRetrieve" version))
-       (sha256
-        (base32 "0y9ycvqyxax4qdn4inwl8jnv77fvhs2i0b4v8nmrcvk1kvb1v8jw"))))
-    (properties `((upstream-name . "miRetrieve")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xml2
-                             r-wordcloud
-                             r-topicmodels
-                             r-tidytext
-                             r-tidyr
-                             r-textclean
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-purrr
-                             r-plotly
-                             r-openxlsx
-                             r-magrittr
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=miRetrieve")
-    (synopsis "miRNA Text Mining in Abstracts")
-    (description
-     "Providing tools for @code{microRNA} (@code{miRNA}) text mining.
-@code{miRetrieve} summarizes @code{miRNA} literature by extracting, counting,
-and analyzing @code{miRNA} names, thus aiming at gaining biological insights
-into a large amount of text within a short period of time.  To do so,
-@code{miRetrieve} uses regular expressions to extract @code{miRNAs} and
-tokenization to identify meaningful @code{miRNA} associations.  In addition,
-@code{miRetrieve} uses the latest @code{miRTarBase} version 8.0 (Hsi-Yuan Huang
-et al. (2020) \"@code{miRTarBase} 2020: updates to the experimentally validated
-@code{microRNAâtarget} interaction database\" <doi:10.1093/nar/gkz896>) to
-display field-specific @code{miRNA-mRNA} interactions.  The most important
-functions are available as a Shiny web application under
-<https://miretrieve.shinyapps.io/@code{miRetrieve/>}.")
-    (license license:gpl3)))
-
 (define-public r-mires
   (package
     (name "r-mires")
@@ -28503,54 +28428,6 @@ and Intille, S. (2019) <doi:10.1123/jmpb.2018-0068>).")
 co-membership matrices with similar information into components and to partition
 observations into different clusters.  See De Santiago (2023, ISBN:
 978-2-87587-088-9).")
-    (license license:gpl3)))
-
-(define-public r-mimir
-  (package
-    (name "r-mimir")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MiMIR" version))
-       (sha256
-        (base32 "18z825r866yj9jadhdc5rlp8ykxrfbkdz5bpgpazm8r9w1ypk6hx"))))
-    (properties `((upstream-name . "MiMIR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
-                             r-purrr
-                             r-proc
-                             r-plotly
-                             r-matrixstats
-                             r-heatmaply
-                             r-ggplot2
-                             r-fs
-                             r-foreach
-                             r-dt
-                             r-dplyr
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=MiMIR")
-    (synopsis "Metabolomics-Based Models for Imputing Risk")
-    (description
-     "This package provides an intuitive framework for ad-hoc statistical analysis of
-1H-NMR metabolomics by Nightingale Health.  It allows to easily explore new
-metabolomics measurements assayed by Nightingale Health, comparing the
-distributions with a large Consortium (BBMRI-nl); project previously published
-metabolic scores [<doi:10.1016/j.ebiom.2021.103764>,
-<doi:10.1161/CIRCGEN.119.002610>, <doi:10.1038/s41467-019-11311-9>,
-<doi:10.7554/@code{eLife.63033>}, <doi:10.1161/CIRCULATIONAHA.114.013116>,
-<doi:10.1007/s00125-019-05001-w>]; and calibrate the metabolic surrogate values
-to a desired dataset.")
     (license license:gpl3)))
 
 (define-public r-mimi
@@ -42828,36 +42705,6 @@ GPD and GEV distribution.  The package calculate some important extreme measures
 like return level for each t periods of time, and some plots as the predictive
 distribution, and return level plots.")
     (license license:gpl2)))
-
-(define-public r-mcmc-qpcr
-  (package
-    (name "r-mcmc-qpcr")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MCMC.qpcr" version))
-       (sha256
-        (base32 "0v0d43wnq3swbrcsbg9qmwkmk4s50grd6cik4ng5baj2i6i4hd2n"))))
-    (properties `((upstream-name . "MCMC.qpcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mcmcglmm r-ggplot2 r-coda))
-    (home-page "https://cran.r-project.org/package=MCMC.qpcr")
-    (synopsis "Bayesian Analysis of qRT-PCR Data")
-    (description
-     "Quantitative RT-PCR data are analyzed using generalized linear mixed models
-based on lognormal-Poisson error distribution, fitted using MCMC. Control genes
-are not required but can be incorporated as Bayesian priors or, when template
-abundances correlate with conditions, as trackers of global effects (common to
-all genes).  The package also implements a lognormal model for higher-abundance
-data and a \"classic\" model involving multi-gene normalization on a by-sample
-basis.  Several plotting functions are included to extract and visualize
-results.  The detailed tutorial is available here:
-<https://matzlab.weebly.com/uploads/7/6/2/2/76229469/mcmc.qpcr.tutorial.v1.2.4.pdf>.")
-    (license license:gpl3)))
 
 (define-public r-mcmapper
   (package

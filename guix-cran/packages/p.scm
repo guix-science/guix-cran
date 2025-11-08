@@ -8135,31 +8135,6 @@ respect to the loss of the forecast combination.  Methods like @code{predict()},
 <https://github.com/kthohr/optim>.")
     (license license:gpl3+)))
 
-(define-public r-profiplots
-  (package
-    (name "r-profiplots")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "profiplots" version))
-       (sha256
-        (base32 "0b2i1m9x7aqhlizv059q1gv8m15myim4q0s81gaskqf9rid83apz"))))
-    (properties `((upstream-name . "profiplots")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://profinit.eu")
-    (synopsis "Profinit Plotting Theme")
-    (description
-     "Help unify visual output of R analyses in the Profinit EU company.  So far,
-there are color and fill scales for ggplot2', plotting theme for ggplot2', color
-palettes and utils to make the tools default choices.")
-    (license license:expat)))
-
 (define-public r-profiler
   (package
     (name "r-profiler")
@@ -12985,29 +12960,6 @@ multi-source precipitation data.  More information and an example of
 implementation can be found in Vargas Godoy and Markonis (2023,
 <doi:10.1016/j.envsoft.2023.105711>).")
     (license license:gpl3)))
-
-(define-public r-precintcon
-  (package
-    (name "r-precintcon")
-    (version "2.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "precintcon" version))
-       (sha256
-        (base32 "1sf0mfqa77aqhbx3hg8pv582ibmfnv6vigqcd3xqsbq7nigy2ms9"))))
-    (properties `((upstream-name . "precintcon")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-ggplot2))
-    (home-page "https://github.com/lucasvenez/precintcon")
-    (synopsis "Precipitation Intensity, Concentration and Anomaly Analysis")
-    (description
-     "It contains functions to analyze the precipitation intensity, concentration and
-anomaly.")
-    (license license:gpl2+)))
 
 (define-public r-precast
   (package
@@ -19593,42 +19545,6 @@ implementing advanced statistical procedures.  Respective data structures
 on the indexed corpora.")
     (license license:gpl3)))
 
-(define-public r-pollster
-  (package
-    (name "r-pollster")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pollster" version))
-       (sha256
-        (base32 "0zjyy36mapg1c3fj8cav43f1x1aqg3ysf74fgsiiwqwjhdm08hpx"))))
-    (properties `((upstream-name . "pollster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-labelled
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pollster")
-    (synopsis "Calculate Crosstab and Topline Tables of Weighted Survey Data")
-    (description
-     "Calculate common types of tables for weighted survey data.  Options include
-topline and (2-way and 3-way) crosstab tables of categorical or ordinal data as
-well as summary tables of weighted numeric variables.  Optionally, include the
-margin of error at selected confidence intervals including the design effect.
-The design effect is calculated as described by Kish (1965)
-<doi:10.1002/bimj.19680100122> beginning on page 257.  Output takes the form of
-tibbles (simple data frames).  This package conveniently handles labelled data,
-such as that commonly used by Stata and SPSS. Complex survey design is not
-supported at this time.")
-    (license license:cc0)))
-
 (define-public r-pollen
   (package
     (name "r-pollen")
@@ -21488,6 +21404,34 @@ introduces advanced features such as computing derivatives of arbitrary order,
 improving the accuracy of Hessian approximations by avoiding repeated
 differencing, and parallelising slow functions on Windows, Mac, and Linux.")
     (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-pnc
+  (package
+    (name "r-pnc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PNC" version))
+       (sha256
+        (base32 "08n920vpqr2v1inhw5fs9sbqgf7c562v333npng178himi4f4qrl"))))
+    (properties `((upstream-name . "PNC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-phytools r-geiger r-ape))
+    (home-page "https://cran.r-project.org/package=PNC")
+    (synopsis
+     "Phylogenetic Niche Conservatism Analysis for Ecological Communities")
+    (description
+     "This package provides functions for testing phylogenetic niche conservatism, a
+key prerequisite in community assembly studies.  The package integrates global
+functional trait data across major taxonomic groups and implements methods such
+as Pagel's Lambda and Blomberg's K to quantify phylogenetic signals in
+ecological communities.  Methods are described in MÃ¼nkemÃ¼ller et al. (2012)
+<doi:10.1111/j.2041-210X.2012.00196.x>.")
+    (license license:gpl3)))
 
 (define-public r-pnar
   (package
@@ -23838,38 +23782,6 @@ transformÃ©e de Fourier (IRTF) de qualitÃ© journal dans R Ã  l'aide de ggp
 par les fonctions ggplot2'.")
     (license license:gpl3+)))
 
-(define-public r-plotdk
-  (package
-    (name "r-plotdk")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plotDK" version))
-       (sha256
-        (base32 "0lyhhc8yjxj3jhw72pn7i565z64mifi5iyc375yavs7axlcsl2nr"))))
-    (properties `((upstream-name . "plotDK")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-purrr
-                             r-plotly
-                             r-mapproj
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=plotDK")
-    (synopsis
-     "Plot Summary Statistics as Choropleth Maps of Danish Administrative Areas")
-    (description
-     "This package provides a ggplot2 front end to plot summary statistics on danish
-provinces, regions, municipalities, and zipcodes.  The needed geoms of each of
-the four levels are inherent in the package, thus making these types of plots
-easy for the user.  This is essentially an updated port of the previously
-available @code{mapDK} package by Sebastian Barfort.")
-    (license license:expat)))
-
 (define-public r-plotdap
   (package
     (name "r-plotdap")
@@ -25462,34 +25374,6 @@ linear additive quantile regression.  Intuitive functions for fitting and
 plotting partially linear additive quantile regression models.  Uses and works
 with functions from the quantreg package.")
     (license license:gpl2+)))
-
-(define-public r-planttracker
-  (package
-    (name "r-planttracker")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plantTracker" version))
-       (sha256
-        (base32 "0qn07pb84j110zrml24gwb27za4wdxn0a4yfhc0c1174fipl6az1"))))
-    (properties `((upstream-name . "plantTracker")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-units r-sf r-matrix r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/aestears/plantTracker")
-    (synopsis "Extract Demographic and Competition Data from Fine-Scale Maps")
-    (description
-     "Extracts growth, survival, and local neighborhood density information from
-repeated, fine-scale maps of organism occurrence.  Further information about
-this package can be found in our journal article, \"@code{plantTracker}: An R
-package to translate maps of plant occurrence into demographic data\" published
-in 2022 in Methods in Ecology and Evolution (Stears, et al., 2022)
-<doi:10.1111/2041-210X.13950>.")
-    (license license:expat)))
 
 (define-public r-plantphysior
   (package
@@ -28604,13 +28488,13 @@ corresponding functions for general interval-censored data.")
 (define-public r-pic
   (package
     (name "r-pic")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PiC" version))
        (sha256
-        (base32 "1xf60f271ynd5v37fx427pd8pa08mky0l4m2205ck57mwdcvqhsp"))))
+        (base32 "1mpbnrwhw6zslaazzj7y1sq217yjb65fnsdpgcfx57ra641ah6pf"))))
     (properties `((upstream-name . "PiC")))
     (build-system r-build-system)
     (arguments
@@ -38208,34 +38092,6 @@ assignments and student projects.  The data sets include cross-sections of stock
 data from the Center for Research on Security Prices, LLC (CRSP), corresponding
 factor exposures data from S&P Global, and several SP500 data sets.")
     (license license:gpl2)))
-
-(define-public r-pcr
-  (package
-    (name "r-pcr")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pcr" version))
-       (sha256
-        (base32 "1lmgm8k3s7780ivrdj0zk1ninx7b5jffir6q5p2p47h62qqjmp5d"))))
-    (properties `((upstream-name . "pcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MahShaaban/pcr")
-    (synopsis "Analyzing Real-Time Quantitative PCR Data")
-    (description
-     "Calculates the amplification efficiency and curves from real-time quantitative
-PCR (Polymerase Chain Reaction) data.  Estimates the relative expression from
-PCR data using the double delta CT and the standard curve methods Livak &
-Schmittgen (2001) <doi:10.1006/meth.2001.1262>.  Tests for statistical
-significance using two-group tests and linear regression Yuan et al. (2006)
-<doi: 10.1186/1471-2105-7-85>.")
-    (license license:gpl3)))
 
 (define-public r-pcps
   (package

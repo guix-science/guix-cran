@@ -6695,13 +6695,13 @@ residual treatment effects.  More details are available in Hsiao et al 2025
 (define-public r-surrogateoutcome
   (package
     (name "r-surrogateoutcome")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateOutcome" version))
        (sha256
-        (base32 "1wiqn9gfvj225dvmp49fyybp77np507s04f28a9wa9jiyvqf7m97"))))
+        (base32 "0in4cf12z2ywwnsv2b8sixqwf0nh95xvbgmpm60naj9302dc3ny0"))))
     (properties `((upstream-name . "SurrogateOutcome")))
     (build-system r-build-system)
     (arguments
@@ -6712,18 +6712,13 @@ residual treatment effects.  More details are available in Hsiao et al 2025
     (synopsis
      "Estimation of the Proportion of Treatment Effect Explained by Surrogate Outcome Information")
     (description
-     "This package provides functions to estimate the proportion of treatment effect
-on a censored primary outcome that is explained by the treatment effect on a
-censored surrogate outcome/event.  All methods are described in detail in
-Parast, Tian, Cai (2020) \"Assessing the Value of a Censored Surrogate Outcome\"
-<doi:10.1007/s10985-019-09473-1>.  The main functions are (1) @code{R.q.event()}
-which calculates the proportion of the treatment effect (the difference in
-restricted mean survival time at time t) explained by surrogate outcome
-information observed up to a selected landmark time, (2) @code{R.t.estimate()}
-which calculates the proportion of the treatment effect explained by primary
-outcome information only observed up to a selected landmark time, and (3)
-@code{IV.event()} which calculates the incremental value of the surrogate
-outcome information.")
+     "Estimates the proportion of treatment effect on a censored primary outcome that
+is explained by the treatment effect on a censored surrogate outcome/event.  All
+methods are described in detail in Parast, et al (2020) \"Assessing the Value of
+a Censored Surrogate Outcome\" <doi:10.1007/s10985-019-09473-1> and Wang et al
+(2025) \"Model-free Approach to Evaluate a Censored Intermediate Outcome as a
+Surrogate for Overall Survival\" <doi:10.1002/sim.70268>.  A tutorial for this
+package can be found at <https://www.laylaparast.com/surrogateoutcome>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-surrogatebma
@@ -7614,30 +7609,6 @@ for building machine learning models.  This package provides a scikit-learn's
 fit, predict interface to train machine learning models in R.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-supermice
-  (package
-    (name "r-supermice")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "superMICE" version))
-       (sha256
-        (base32 "0wf043vyd89a5jdvm128rqmfrnm9c0lhir35jyzy20rm75aqqh1w"))))
-    (properties `((upstream-name . "superMICE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-superlearner r-mice))
-    (home-page "https://cran.r-project.org/package=superMICE")
-    (synopsis "SuperLearner Method for MICE")
-    (description
-     "Adds a Super Learner ensemble model method (using the @code{SuperLearner}
-package) to the mice package.  Laqueur, H. S., Shev, A. B., Kagawa, R. M. C.
-(2021) <doi:10.1093/aje/kwab271>.")
-    (license license:gpl3)))
 
 (define-public r-supergauss
   (package
@@ -17686,51 +17657,6 @@ the package @code{stacomiR} for connections to the database.  Development
 versions of @code{stacomiR} are available in R-forge.")
     (license license:gpl2+)))
 
-(define-public r-stacomir
-  (package
-    (name "r-stacomir")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stacomiR" version))
-       (sha256
-        (base32 "0ik0804j8fvqmpj0xyzmjdsykw3672a5vyb4dhiss7dc1g4la20f"))))
-    (properties `((upstream-name . "stacomiR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-withr
-                             r-stringr
-                             r-stacomirtools
-                             r-scales
-                             r-rpostgres
-                             r-rlang
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-pool
-                             r-mgcv
-                             r-magrittr
-                             r-lubridate
-                             r-lattice
-                             r-intervals
-                             r-hmisc
-                             r-ggplot2
-                             r-dplyr
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://forgemia.inra.fr/stacomi/stacomir")
-    (synopsis "Fish Migration Monitoring")
-    (description
-     "Graphical outputs and treatment for a database of fish pass monitoring.  It is a
-part of the STACOMI open source project developed in France by the French Office
-for Biodiversity institute to centralize data obtained by fish pass monitoring.
-This version is available in French and English.  See
-<http://stacomir.r-forge.r-project.org/> for more information on STACOMI'.")
-    (license license:gpl2+)))
-
 (define-public r-stacks
   (package
     (name "r-stacks")
@@ -27299,28 +27225,6 @@ sites to identify the most likely origin.")
 Distribution for the tails with a kernel based interior.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-spcr
-  (package
-    (name "r-spcr")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spcr" version))
-       (sha256
-        (base32 "09clpz0vqssagmfjcrs2qp5i61ppjr9nxn342l6gbdnbw91wc7f3"))))
-    (properties `((upstream-name . "spcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://doi.org/10.1016/j.csda.2015.03.016")
-    (synopsis "Sparse Principal Component Regression")
-    (description
-     "The sparse principal component regression is computed.  The regularization
-parameters are optimized by cross-validation.")
-    (license license:gpl2+)))
-
 (define-public r-spcp
   (package
     (name "r-spcp")
@@ -29055,40 +28959,6 @@ autocorrelation analysis, tissue domain detection, gene set enrichment, and
 differential expression analysis using spatial mixed models.")
     (license license:expat)))
 
-(define-public r-spatialfdar
-  (package
-    (name "r-spatialfdar")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpatialfdaR" version))
-       (sha256
-        (base32 "14l3fvwrzyrldbk8d2p0syk9lmhn208yi20493qd41babsaaxll3"))))
-    (properties `((upstream-name . "SpatialfdaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-rgl r-knitr r-geometry r-fda))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.functionaldata.org")
-    (synopsis "Spatial Functional Data Analysis")
-    (description
-     "Finite element modeling (FEM) uses meshes of triangles to define surfaces.  A
-surface within a triangle may be either linear or quadratic.  In the order one
-case each node in the mesh is associated with a basis function and the basis is
-called the order one finite element basis.  In the order two case each edge
-mid-point is also associated with a basis function.  Functions are provided for
-smoothing, density function estimation point evaluation and plotting results.
-Two papers illustrating the finite element data analysis are Sangalli, L.M.,
-Ramsay, J.O., Ramsay, T.O. (2013)<http://www.mox.polimi.it/~sangalli> and
-Bernardi, M.S, Carey, M., Ramsay, J. O., Sangalli, L.
-(2018)<http://www.mox.polimi.it/~sangalli>.  Modelling spatial anisotropy via
-regression with partial differential regularization Journal of Multivariate
-Analysis, 167, 15-30.")
-    (license license:gpl2+)))
-
 (define-public r-spatialepi
   (package
     (name "r-spatialepi")
@@ -30219,38 +30089,6 @@ where there are pairs of lists which have no observed individuals in common.  It
 deals correctly with parameters whose estimated values can be considered as
 being negative infinity.  It also addresses other possible issues of
 non-existence and non-identifiability of maximum likelihood estimates.")
-    (license license:gpl2+)))
-
-(define-public r-sparsemodr
-  (package
-    (name "r-sparsemodr")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SPARSEMODr" version))
-       (sha256
-        (base32 "0nshy1ppwsik7x1n0xp3wknm7fsl7c6y5523qnr41ijh18j165bq"))))
-    (properties `((upstream-name . "SPARSEMODr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tidyverse
-                             r-rcpp
-                             r-lubridate
-                             r-geosphere
-                             r-future-apply
-                             r-future
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/NAU-CCL/SPARSEMODr")
-    (synopsis "SPAtial Resolution-SEnsitive Models of Outbreak Dynamics")
-    (description
-     "Implementation of spatially-explicit, stochastic disease models with
-customizable time windows that describe how parameter values fluctuate during
-outbreaks (e.g., in response to public health or conservation interventions).")
     (license license:gpl2+)))
 
 (define-public r-sparsemdc
@@ -32019,49 +31857,6 @@ algorithm.  See D Angelo et al. (2018) <@code{arXiv:1803.07166>} and D Angelo et
 al. (2018) <@code{arXiv:1807.03874>}.")
     (license license:gpl2+)))
 
-(define-public r-spacejamr
-  (package
-    (name "r-spacejamr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spacejamr" version))
-       (sha256
-        (base32 "05rprsgnihhz3xhh7p9mkn4scpi318kvrkkrrw9j645d6bwfms5l"))))
-    (properties `((upstream-name . "spacejamr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spatstat-random
-                             r-spatstat-geom
-                             r-sf
-                             r-magrittr
-                             r-igraph
-                             r-ggthemes
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-crsuggest))
-    (home-page "https://github.com/dscolby/spacejamr")
-    (synopsis "Simulate Spatial Bernoulli Networks")
-    (description
-     "Social network analysis is becoming commonplace in many social science
-disciplines, but access to useful network data, especially among marginalized
-populations, still remains a formidable challenge.  This package mitigates that
-problem by providing tools to simulate spatial Bernoulli networks as proposed in
-Carter T. Butts (2002, ISBN:978-0-493-72676-2), \"Spatial models of large-scale
-interpersonal networks.\" Using this package, network analysts can simulate a
-spatial point process or sequence with a given number of nodes inside a
-geographical boundary and estimate the probability of a tie formation between
-all node pairs.  When simulating a network, an analyst can choose between five
-spatial interaction functions.  The package also enables quick comparison of
-summary statistics for simulated networks and provides simple to use plotting
-methods for its classes that return plots which can be further refined with the
-ggplot2 package.")
-    (license license:expat)))
-
 (define-public r-spacci
   (package
     (name "r-spacci")
@@ -33823,33 +33618,6 @@ and sunset.")
     (synopsis "Solar Position Algorithm for Solar Radiation Applications")
     (description "Calculation of solar zenith and azimuth angles.")
     (license license:gpl2)))
-
-(define-public r-solar2
-  (package
-    (name "r-solar2")
-    (version "0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "solaR2" version))
-       (sha256
-        (base32 "0vrqrhmm6xi9gxm0afnk6pn54jylyd8w0vkx959rgakhy459n1hc"))))
-    (properties `((upstream-name . "solaR2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer r-latticeextra r-lattice r-httr2
-                             r-data-table))
-    (home-page "https://solarization.github.io/solaR2/")
-    (synopsis "Radiation and Photovoltaic Systems")
-    (description
-     "This package provides tools for calculating solar geometry, solar radiation on
-horizontal and inclined planes, and simulating the performance of various
-photovoltaic (PV) systems.  Supports daily and intradaily irradiation data,
-enabling detailed analysis of grid-connected and water-pumping PV systems,
-including shading effects and solar angle calculations.")
-    (license license:gpl3)))
 
 (define-public r-solar
   (package
@@ -37494,13 +37262,13 @@ package's idea and use case is discussed in the following article:
 (define-public r-smmr
   (package
     (name "r-smmr")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smmR" version))
        (sha256
-        (base32 "0b6w2k5j65jdngc871ch9ragr7qgwbkl4nhk3gqnbpvkr9m4x88f"))))
+        (base32 "1kmvccwhdfwqj4zaia5n0hwbgs7mqmxbk2922q0w6jp2qdh5dpmw"))))
     (properties `((upstream-name . "smmR")))
     (build-system r-build-system)
     (arguments
@@ -37508,7 +37276,7 @@ package's idea and use case is discussed in the following article:
       #:tests? #f))
     (propagated-inputs (list r-seqinr r-rcpparmadillo r-rcpp r-discreteweibull))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=smmR")
+    (home-page "https://plmlab.math.cnrs.fr/lmrs/statistique/smmR")
     (synopsis "Simulation, Estimation and Reliability of Semi-Markov Models")
     (description
      "This package performs parametric and non-parametric estimation and simulation
@@ -37526,7 +37294,7 @@ well.  The implemented methods are described in Barbu, V.S., Limnios, N. (2008)
 <doi:10.1080/10485250701261913> and Trevezas, S., Limnios, N. (2011)
 <doi:10.1080/10485252.2011.555543>.  Estimation and simulation of discrete-time
 k-th order Markov chains are also considered.")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl3)))
 
 (define-public r-smme
   (package
@@ -52658,36 +52426,6 @@ manage files using R functions directly.")
      "Add functionality to create drag and drop div elements in shiny.")
     (license license:gpl3)))
 
-(define-public r-shinydlplot
-  (package
-    (name "r-shinydlplot")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shinydlplot" version))
-       (sha256
-        (base32 "1gxr98p2zyvwa6q8a80bz4h1pkgbdn58cwqbd19dbn4liszfxsy8"))))
-    (properties `((upstream-name . "shinydlplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinyjs
-                             r-shinybs
-                             r-shiny
-                             r-plotly
-                             r-htmlwidgets
-                             r-htmltools))
-    (home-page "https://cran.r-project.org/package=shinydlplot")
-    (synopsis "Add a Download Button to a 'shiny' Plot or 'plotly'")
-    (description
-     "Add a download button to a shiny plot or plotly that appears when the plot is
-hovered.  A tooltip, styled to resemble plotly buttons, is displayed on hover of
-the download button.  The download button can be used to allow users to download
-the dataset used for a plot.")
-    (license license:expat)))
-
 (define-public r-shinydbauth
   (package
     (name "r-shinydbauth")
@@ -63651,31 +63389,6 @@ comprehensive visualization tools for performance assessment.  Methods based on
 Manning et al. (2008) for information retrieval metrics, Moher et al. (2009) for
 PRISMA guidelines, and Sampson et al. (2006) for systematic review search
 methodology.")
-    (license license:gpl3)))
-
-(define-public r-seamless
-  (package
-    (name "r-seamless")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "seAMLess" version))
-       (sha256
-        (base32 "0yx09scpvc1n8998j4gqkss11vl9snp146ssdsnjzffrkki2mflb"))))
-    (properties `((upstream-name . "seAMLess")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-optparse r-ggplot2 r-data-table r-biobase))
-    (home-page "https://github.com/eonurk/seAMLess")
-    (synopsis
-     "Single Cell Transcriptomics Based Deconvolution Pipeline for Leukemia")
-    (description
-     "Given a bulk transcriptomic (RNA-seq) sample of an Myeloid Leukemia patient
-calculates immune composition and drug resistance for different small-molecule
-inhibitors.  Published in <https://www.nature.com/articles/s41698-024-00596-9>.")
     (license license:gpl3)))
 
 (define-public r-sealasso
