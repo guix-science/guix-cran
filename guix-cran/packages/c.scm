@@ -20221,13 +20221,13 @@ procedures for the simplifying assumption (proposed in Derumigny and Fermanian
 (define-public r-condathis
   (package
     (name "r-condathis")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condathis" version))
        (sha256
-        (base32 "1y5wy8imakzpd1v78h885njfcrq3kffiqm2mzk4aw78mb3zzzk6v"))))
+        (base32 "05bdzi2dl3gian6lpki0y54ixzyr5cr0wsh5j4bxrzhsxpyknbrd"))))
     (properties `((upstream-name . "condathis")))
     (build-system r-build-system)
     (arguments
@@ -20241,6 +20241,7 @@ procedures for the simplifying assumption (proposed in Derumigny and Fermanian
                              r-jsonlite
                              r-fs
                              r-cli))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/luciorq/condathis")
     (synopsis "Run Any CLI Tool on a 'Conda' Environment")
     (description
@@ -44850,7 +44851,8 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
                              r-formula
                              r-foreach
                              r-dorng
-                             r-doparallel))
+                             r-doparallel
+                             r-ddpcr))
     (home-page "https://github.com/ahoundetoungan/CDatanet")
     (synopsis "Econometrics of Network Data")
     (description
@@ -50828,13 +50830,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.57.4")
+    (version "1.58.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "16lpivcfqv2hvyf0hy4i9xmlkl6q2p932qwi49dnd7kk8qqnx5af"))))
+        (base32 "00r0brixkxzc9ipxgpjb4msiaqh56aqwca7axvvycgf13y22x8p4"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (arguments

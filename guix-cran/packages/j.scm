@@ -1762,13 +1762,13 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpinfect
   (package
     (name "r-jpinfect")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpinfect" version))
        (sha256
-        (base32 "1vb12j4wbfsg5xf7kh73qymbnvzablgjz0hhzln6smbnxf78312g"))))
+        (base32 "07wx617fhjblcikgmkl8kiv2v9vn5l7yyga3mcr15xzic6m3fr93"))))
     (properties `((upstream-name . "jpinfect")))
     (build-system r-build-system)
     (arguments

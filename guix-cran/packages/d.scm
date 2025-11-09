@@ -6110,13 +6110,13 @@ is a significant effect modifier.")
 (define-public r-drdimont
   (package
     (name "r-drdimont")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrDimont" version))
        (sha256
-        (base32 "1ax70932zn0q21drbp8wr5xy5xjnaqvkqd2cp4cb7bl9f6bcsz9p"))))
+        (base32 "1xz8vhin0h6c9552lvnm16n3z2c8d44756ni665l6814wrxbymmj"))))
     (properties `((upstream-name . "DrDimont")))
     (build-system r-build-system)
     (arguments
@@ -26551,6 +26551,45 @@ straightforward R API. The package relies on the r2d3 R package and the D3
 @code{JavaScript} library.  See <https://rstudio.github.io/r2d3/> and
 <https://d3js.org/> respectively.")
     (license license:gpl3+)))
+
+(define-public r-ddpcr
+  (package
+    (name "r-ddpcr")
+    (version "1.15.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ddpcr" version))
+       (sha256
+        (base32 "1as25yc23n6jj87nccp7g2jrpvz6yxa7f6ba65g6ynvkzk57531b"))))
+    (properties `((upstream-name . "ddpcr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-shinyjs
+                             r-shinydisconnect
+                             r-shiny
+                             r-readr
+                             r-plyr
+                             r-mixtools
+                             r-magrittr
+                             r-lazyeval
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/daattali/ddpcr")
+    (synopsis
+     "Analysis and Visualization of Droplet Digital PCR in R and on the Web")
+    (description
+     "An interface to explore, analyze, and visualize droplet digital PCR
+(@code{ddPCR}) data in R. This is the first non-proprietary software for
+analyzing two-channel @code{ddPCR} data.  An interactive tool was also created
+and is available online to facilitate this analysis for anyone who is not
+comfortable with using R.")
+    (license license:expat)))
 
 (define-public r-ddpca
   (package

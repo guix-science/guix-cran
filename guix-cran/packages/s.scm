@@ -27225,6 +27225,28 @@ sites to identify the most likely origin.")
 Distribution for the tails with a kernel based interior.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-spcr
+  (package
+    (name "r-spcr")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spcr" version))
+       (sha256
+        (base32 "09clpz0vqssagmfjcrs2qp5i61ppjr9nxn342l6gbdnbw91wc7f3"))))
+    (properties `((upstream-name . "spcr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://doi.org/10.1016/j.csda.2015.03.016")
+    (synopsis "Sparse Principal Component Regression")
+    (description
+     "The sparse principal component regression is computed.  The regularization
+parameters are optimized by cross-validation.")
+    (license license:gpl2+)))
+
 (define-public r-spcp
   (package
     (name "r-spcp")
@@ -43445,45 +43467,6 @@ method benchmarking functions are also provided.  Described in Yao and Ochoa
 (2022) <doi:10.1101/2022.03.25.485885>.")
     (license license:gpl3)))
 
-(define-public r-simtost
-  (package
-    (name "r-simtost")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SimTOST" version))
-       (sha256
-        (base32 "1dgjiw9g7yp3nfdl9nraqlkaazw8bm6k20jb52kdj619lvx9hnjv"))))
-    (properties `((upstream-name . "SimTOST")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixcalc r-mass
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://smartdata-analysis-and-statistics.github.io/SimTOST/")
-    (synopsis
-     "Sample Size Estimation for Bio-Equivalence Trials Through Simulation")
-    (description
-     "Sample size estimation for bio-equivalence trials is supported through a
-simulation-based approach that extends the Two One-Sided Tests (TOST) procedure.
- The methodology provides flexibility in hypothesis testing, accommodates
-multiple treatment comparisons, and accounts for correlated endpoints.  Users
-can model complex trial scenarios, including parallel and crossover designs,
-intra-subject variability, and different equivalence margins.  Monte Carlo
-simulations enable accurate estimation of power and type I error rates, ensuring
-well-calibrated study designs.  The statistical framework builds on established
-methods for equivalence testing and multiple hypothesis testing in
-bio-equivalence studies, as described in Schuirmann (1987)
-<doi:10.1007/BF01068419>, Mielke et al. (2018)
-<doi:10.1080/19466315.2017.1371071>, Shieh (2022)
-<doi:10.1371/journal.pone.0269128>, and Sozu et al. (2015)
-<doi:10.1007/978-3-319-22005-5>.  Comprehensive documentation and vignettes
-guide users through implementation and interpretation of results.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-simtool
   (package
     (name "r-simtool")
@@ -55193,13 +55176,13 @@ Buch, G., Schulz, A., Schmidtmann, I., Strauch, K., & Wild, P. S. (2024)
 (define-public r-sgpls
   (package
     (name "r-sgpls")
-    (version "1.8")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgPLS" version))
        (sha256
-        (base32 "16cjhrla1f4pf2gqfnbi5n1ai69nbr80crwn1f29ldk483d6hjc5"))))
+        (base32 "1is5b3m5arapi4ghcj6mynkrgchrsp6d50n6sk189498kminj3sc"))))
     (properties `((upstream-name . "sgPLS")))
     (build-system r-build-system)
     (arguments
@@ -55214,7 +55197,7 @@ and sparse group versions of partial least square regression models (Liquet, B.,
 Lafaye de Micheaux, P., Hejblum B., Thiebaut, R. (2016)
 <doi:10.1093/bioinformatics/btv535>).  Version of PLS Discriminant analysis is
 also provided.")
-    (license license:gpl2+)))
+    (license license:gpl2)))
 
 (define-public r-sgplot
   (package

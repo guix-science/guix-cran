@@ -18990,13 +18990,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "5.1.1")
+    (version "5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "1jcffgdnfrv1sb1npb8326ajsddkhgvlm0hbdrj6dhdz7r438j3d"))))
+        (base32 "16rkbk6m7yg099hylh277idcasw8kkcqqvmmq61wlvsjkfh35bdf"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments
@@ -19028,6 +19028,7 @@ They can be used to test the different features of the package bibliometrix
                              r-dt
                              r-dplyr
                              r-dimensionsr
+                             r-contentanalysis
                              r-ca
                              r-bibliometrixdata))
     (home-page "https://www.bibliometrix.org")

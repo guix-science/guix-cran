@@ -16522,13 +16522,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AlphaSimR" version))
        (sha256
-        (base32 "1raphb4by4xr56bf3xqjsmbv452y81ji44567ssrfdk155npr2y1"))))
+        (base32 "0r35m5ir4m535w693l28f9v10iq0chwrpwms144k9dv1334wv7p2"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (arguments
@@ -24785,13 +24785,13 @@ biomarker-informed adaptive design, etc.")
 (define-public r-adcontabil
   (package
     (name "r-adcontabil")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adcontabil" version))
        (sha256
-        (base32 "03lixcib0rgknqvhx25nqskc43p4769lh107alilxj7f34nymn7q"))))
+        (base32 "0k8fzmq5l8xyhk7s4yaw6m8g60an0n0j5hiz78aahxhz0hhpb8pd"))))
     (properties `((upstream-name . "adcontabil")))
     (build-system r-build-system)
     (arguments

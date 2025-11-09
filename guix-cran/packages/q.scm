@@ -6399,6 +6399,34 @@ the corresponding capability analysis graphical outputs, including the process
 capability plots.  See Flores et al. (2021) <doi:10.32614/RJ-2021-034>.")
     (license license:gpl2+)))
 
+(define-public r-qcqpcr
+  (package
+    (name "r-qcqpcr")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcQpcr" version))
+       (sha256
+        (base32 "1298zla8z5w9z4idc07v3ca9rc1afx853y7iz3jmqnqnv8mr0s48"))))
+    (properties `((upstream-name . "qcQpcr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=qcQpcr")
+    (synopsis "Histone ChIP-Seq qPCR Analyzer")
+    (description
+     "Quality control of chromatin immunoprecipitation libraries (@code{ChIP-seq}) by
+quantitative polymerase chain reaction (@code{qPCR}).  This function calculates
+Enrichment value with respect to reference for each histone modification
+(specific to Vii7 software
+<http://www.thermofisher.com/ca/en/home/life-science/pcr/real-time-pcr/real-time-pcr-instruments/viia-7-real-time-pcr-system/viia-7-software.html>).
+ This function is applicable to full panel of histone modifications described by
+International Human Epigenomic Consortium (IHEC).")
+    (license license:expat)))
+
 (define-public r-qcpm
   (package
     (name "r-qcpm")

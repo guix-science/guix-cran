@@ -2855,13 +2855,13 @@ that string.")
 (define-public r-uniprotr
   (package
     (name "r-uniprotr")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UniprotR" version))
        (sha256
-        (base32 "1rfaavzfqbllgnc45wawr15v53xfbbzg17z35plxxz6v9ibqxa6a"))))
+        (base32 "0cfk10vamfs0vr0cfhfs3zijxmfpf9xis0lzvpicg0l4fn66mwmd"))))
     (properties `((upstream-name . "UniprotR")))
     (build-system r-build-system)
     (arguments

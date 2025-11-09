@@ -16248,19 +16248,19 @@ changed.")
 (define-public r-molar
   (package
     (name "r-molar")
-    (version "5.3")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "molaR" version))
        (sha256
-        (base32 "01l68a4jsp0dlylnp9ij1db0q4510l38jlql787bi6ah07xwf8zq"))))
+        (base32 "1q0298cn8sxri7nw60sf2n1cxrzqn0xkh95432p4rmzy6vrvkm3z"))))
     (properties `((upstream-name . "molaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rvcg r-rgl r-pracma r-alphahull))
+    (propagated-inputs (list r-rvcg r-pracma r-htmltools r-alphahull))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=molaR")
     (synopsis "Dental Surface Complexity Measurement Tools")
@@ -38159,19 +38159,20 @@ S and S-PLUS\" (Springer, 2000).")
 (define-public r-memshare
   (package
     (name "r-memshare")
-    (version "1.0.2")
+    (version "1.0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memshare" version))
        (sha256
-        (base32 "1azss8wf2m28iykvs93k77z45h242jlghi1y96m2ggp6npa8xv70"))))
+        (base32 "155mnfkwamqr1g4i8ic513lsdb7v2n6alimd0pnbxysqcc0ix2y0"))))
     (properties `((upstream-name . "memshare")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://www.iap-gmbh.de")
     (synopsis "Shared Memory Multithreading")
     (description
@@ -42706,6 +42707,36 @@ like return level for each t periods of time, and some plots as the predictive
 distribution, and return level plots.")
     (license license:gpl2)))
 
+(define-public r-mcmc-qpcr
+  (package
+    (name "r-mcmc-qpcr")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MCMC.qpcr" version))
+       (sha256
+        (base32 "0v0d43wnq3swbrcsbg9qmwkmk4s50grd6cik4ng5baj2i6i4hd2n"))))
+    (properties `((upstream-name . "MCMC.qpcr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mcmcglmm r-ggplot2 r-coda))
+    (home-page "https://cran.r-project.org/package=MCMC.qpcr")
+    (synopsis "Bayesian Analysis of qRT-PCR Data")
+    (description
+     "Quantitative RT-PCR data are analyzed using generalized linear mixed models
+based on lognormal-Poisson error distribution, fitted using MCMC. Control genes
+are not required but can be incorporated as Bayesian priors or, when template
+abundances correlate with conditions, as trackers of global effects (common to
+all genes).  The package also implements a lognormal model for higher-abundance
+data and a \"classic\" model involving multi-gene normalization on a by-sample
+basis.  Several plotting functions are included to extract and visualize
+results.  The detailed tutorial is available here:
+<https://matzlab.weebly.com/uploads/7/6/2/2/76229469/mcmc.qpcr.tutorial.v1.2.4.pdf>.")
+    (license license:gpl3)))
+
 (define-public r-mcmapper
   (package
     (name "r-mcmapper")
@@ -43792,13 +43823,13 @@ described in Bai and Ghosh (2018) <doi:10.1016/j.jmva.2018.04.010>.")
 (define-public r-mbsgs
   (package
     (name "r-mbsgs")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBSGS" version))
        (sha256
-        (base32 "1h5vhmpgrqza12j7ivhwgd5wyb7kkb8mjbxl5w756vyid8g03flz"))))
+        (base32 "1azs9rj2ad6jq9pf7i4pgblvkkxkax5skj84vrv8vvbr8p36jj76"))))
     (properties `((upstream-name . "MBSGS")))
     (build-system r-build-system)
     (arguments

@@ -7649,13 +7649,13 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prome
   (package
     (name "r-prome")
-    (version "2.0.1.9")
+    (version "3.0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prome" version))
        (sha256
-        (base32 "0mbv8n5a3ag29dgj6c7bin7c26wbabk086qa1c2apcbdy9b0v1jk"))))
+        (base32 "0ad328pd1nzb5mnw7xbj7j4c087ln7j57yppxqzg3v1pxhnsi6v6"))))
     (properties `((upstream-name . "prome")))
     (build-system r-build-system)
     (arguments
@@ -7666,7 +7666,7 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
                              r-rstan
                              r-rcppeigen
                              r-rcpp
-                             r-posterior
+                             r-bi
                              r-bh))
     (home-page "https://cran.r-project.org/package=prome")
     (synopsis "Patient-Reported Outcome Data Analysis with Stan")
@@ -26352,13 +26352,13 @@ Network (CRAN).")
 (define-public r-pkgdown-offline
   (package
     (name "r-pkgdown-offline")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdown.offline" version))
        (sha256
-        (base32 "0wwyhw6dfh9dhpnxgc5wg5lfi1f2w5xpbkljll5gv4x1fh6yrkdc"))))
+        (base32 "04fxn4qwm2829v4qb4jf8ji8ckyixwcjplf5za19k71yppppk9ab"))))
     (properties `((upstream-name . "pkgdown.offline")))
     (build-system r-build-system)
     (arguments

@@ -1286,49 +1286,6 @@ et al, (2017) <doi:10.3390/life7040040> are included in the extraterrestrial
 package.")
     (license license:gpl3)))
 
-(define-public r-extrasuperpower
-  (package
-    (name "r-extrasuperpower")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "extraSuperpower" version))
-       (sha256
-        (base32 "1h5bmf9kda7s4sfwfpsikd7r18rcvq9g4iaskpqy0x2ygrbrpbf3"))))
-    (properties `((upstream-name . "extraSuperpower")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncnorm
-                             r-tmvtnorm
-                             r-sn
-                             r-scales
-                             r-rlist
-                             r-rlang
-                             r-reshape2
-                             r-plyr
-                             r-permuco
-                             r-matrix
-                             r-mass
-                             r-ggthemes
-                             r-ggplot2
-                             r-fgarch
-                             r-artool
-                             r-afex))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/luisrmacias/extraSuperpower")
-    (synopsis "Power Calculation for Two-Way Factorial Designs")
-    (description
-     "The basic use of this package is with 3 sequential functions.  One to generate
-expected cell means and standard deviations, along with correlation and
-covariance matrices in the case of repeated measurements.  This is followed by
-experiment simulation i number of times.  Finally, power is calculated from the
-simulated data.  Features that may be considered in the model are interaction,
-measure correlation and non-normal distributions.")
-    (license license:expat)))
-
 (define-public r-extrasteps
   (package
     (name "r-extrasteps")
@@ -20031,6 +19988,7 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
                              r-matrix
                              r-mass
                              r-ineq
+                             r-ddpcr
                              r-checkmate
                              r-bbmisc))
     (home-page "https://haijiangqin.com/EFAfactors/")

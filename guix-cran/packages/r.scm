@@ -3568,6 +3568,55 @@ experiments and calculation of goal-finding strategies.  This package is
 centered on an approach using machine learning for path classification.")
     (license license:gpl3)))
 
+(define-public r-rtpcr
+  (package
+    (name "r-rtpcr")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtpcr" version))
+       (sha256
+        (base32 "035pnk6a846ck3p12jwhxx1j4279acvlzsjj2qiy2gyq4yr3g4pb"))))
+    (properties `((upstream-name . "rtpcr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-reshape2
+                             r-purrr
+                             r-multcompview
+                             r-multcomp
+                             r-lmertest
+                             r-ggplot2
+                             r-emmeans
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mirzaghaderi/rtpcr")
+    (synopsis "qPCR Data Analysis")
+    (description
+     "Various methods are employed for statistical analysis and graphical presentation
+of real-time PCR (quantitative PCR or @code{qPCR}) data.  rtpcr handles
+amplification efficiency calculation, statistical analysis and graphical
+representation of real-time PCR data based on up to two reference genes.  By
+accounting for amplification efficiency values, rtpcr was developed using a
+general calculation method described by Ganger et al. (2017)
+<doi:10.1186/s12859-017-1949-5> and Taylor et al. (2019)
+<doi:10.1016/j.tibtech.2018.12.002>, covering both the Livak and Pfaffl methods.
+ Based on the experimental conditions, the functions of the rtpcr package use
+t-test (for experiments with a two-level factor), analysis of variance (ANOVA),
+analysis of covariance (ANCOVA) or analysis of repeated measure data to
+calculate the fold change (FC, Delta Delta Ct method) or relative expression
+(RE, Delta Ct method).  The functions further provide standard errors and
+confidence intervals for means, apply statistical mean comparisons and present
+significance.  To facilitate function application, different data sets were used
+as examples and the outputs were explained.  ârtpcrâ package also provides
+bar plots using various controlling arguments.  The rtpcr package is
+user-friendly and easy to work with and provides an applicable resource for
+analyzing real-time PCR data.")
+    (license license:gpl3)))
+
 (define-public r-rtpc
   (package
     (name "r-rtpc")
@@ -25356,35 +25405,6 @@ service (<https://www.itis.gov/solr_documentation.html>).")
 Titration Calorimetry (ITC) data with the most commonly used one-to-one binding
 model.")
     (license license:gpl3)))
-
-(define-public r-ritalic
-  (package
-    (name "r-ritalic")
-    (version "0.11.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ritalic" version))
-       (sha256
-        (base32 "06x125x0mj29mgb7l1d9mslr228x8dg18w30c3zscllsx2bqw099"))))
-    (properties `((upstream-name . "ritalic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf r-jsonlite r-httr r-ggplot2))
-    (home-page "https://github.com/plant-data/ritalic")
-    (synopsis "Interface to the ITALIC Database of Lichen Biodiversity")
-    (description
-     "This package provides a programmatic interface to the Web Service methods
-provided by ITALIC (<https://italic.units.it>).  ITALIC is a database of lichen
-data in Italy and bordering European countries.  ritalic includes functions for
-retrieving information about lichen scientific names, geographic distribution,
-ecological data, morpho-functional traits and identification keys.  More
-information about the data is available at
-<https://italic.units.it/?procedure=base&t=59&c=60>.  The API documentation is
-available at <https://italic.units.it/?procedure=api>.")
-    (license license:expat)))
 
 (define-public r-rita
   (package

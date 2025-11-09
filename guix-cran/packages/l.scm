@@ -544,6 +544,29 @@ an existing script.  Track changes in multiple datasets, using multiple loggers.
 <doi:10.18637/jss.v098.i01>.")
     (license (license:fsdg-compatible "EUPL"))))
 
+(define-public r-lulcc
+  (package
+    (name "r-lulcc")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lulcc" version))
+       (sha256
+        (base32 "00ymbp20kbjyzrsrxa262y0y7fj4jgsbqf56aapb657xvafxvy5q"))))
+    (properties `((upstream-name . "lulcc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rocr r-rastervis r-raster r-lattice))
+    (home-page "https://cran.r-project.org/package=lulcc")
+    (synopsis "Land Use Change Modelling in R")
+    (description
+     "This package provides classes and methods for spatially explicit land use change
+modelling in R.")
+    (license license:gpl2+)))
+
 (define-public r-lulab-utils
   (package
     (name "r-lulab-utils")

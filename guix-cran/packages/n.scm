@@ -10043,13 +10043,13 @@ COVID-19 scale, NIAID OS.")
 (define-public r-nhstplot
   (package
     (name "r-nhstplot")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhstplot" version))
        (sha256
-        (base32 "04hayyfi0f0288v9wvwciyf0hwiy8kdp9vjyn030p1373slxjgrn"))))
+        (base32 "137dl3p8dvm4d1shk4n7053jprrqbb7kf9biqjqgrp4s8jaa7z2v"))))
     (properties `((upstream-name . "nhstplot")))
     (build-system r-build-system)
     (arguments

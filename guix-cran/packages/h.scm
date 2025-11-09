@@ -10603,13 +10603,13 @@ density and alluvial plots) for ease of usage and flexibility.")
 (define-public r-hemispher
   (package
     (name "r-hemispher")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemispheR" version))
        (sha256
-        (base32 "1nnlz4r6dsmbi29wdakj092nggdqknq0ma0arnm905hk2x0kcab7"))))
+        (base32 "0r4f5g23lfjjww0bnip7h1b5jdgbggs8nrabgviyk99nv94yinfw"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (arguments

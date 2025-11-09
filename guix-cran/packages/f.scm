@@ -4967,6 +4967,37 @@ specific behavioral patterns of individual subjects to be graphed from
 occurrence/nonoccurrence behavioral data.")
     (license license:gpl3)))
 
+(define-public r-freqpcr
+  (package
+    (name "r-freqpcr")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "freqpcr" version))
+       (sha256
+        (base32 "04s6yrzxk4v86nhs9mwam1y2lfac73r6i8af9xbbmrlzj61wiia9"))))
+    (properties `((upstream-name . "freqpcr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cubature))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sudoms/freqpcr")
+    (synopsis
+     "Estimates Allele Frequency on qPCR DeltaDeltaCq from Bulk Samples")
+    (description
+     "Interval estimation of the population allele frequency from @code{qPCR} analysis
+based on the restriction enzyme digestion (RED)-@code{DeltaDeltaCq} method
+(Osakabe et al.  2017, <doi:10.1016/j.pestbp.2017.04.003>), as well as general
+@code{DeltaDeltaCq} analysis.  Compatible with the Cq measurement of DNA
+extracted from multiple individuals at once, so called \"group-testing\", this
+model assumes that the quantity of DNA extracted from an individual organism
+follows a gamma distribution.  Therefore, the point estimate is robust regarding
+the uncertainty of the DNA yield.")
+    (license license:gpl3+)))
+
 (define-public r-freqparcoord
   (package
     (name "r-freqparcoord")
@@ -23662,13 +23693,13 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "1agplciavmaca9lwvrx33z8zjj12aq56j49dsk1s8sbnavfp3yx1"))))
+        (base32 "01cdivs125ss9z1vfngywcnwcpg46d0j2349p0ka8vgm5sjshsm1"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (arguments
@@ -23677,6 +23708,7 @@ computing to reduce overall processing time.")
     (propagated-inputs (list r-timeroc
                              r-survival
                              r-statmod
+                             r-rlang
                              r-rcppeigen
                              r-rcpp
                              r-nlme
@@ -23690,14 +23722,19 @@ computing to reduce overall processing time.")
     (synopsis
      "Semi-Parametric Joint Modeling of Longitudinal and Survival Data")
     (description
-     "Maximum likelihood estimation for the semi-parametric joint modeling of
-competing risks and (multivariate) longitudinal data applying customized linear
-scan algorithms, proposed by Li and colleagues (2022)
-<doi:10.1155/2022/1362913>.  The time-to-event data is modelled using a
-(cause-specific) Cox proportional hazards regression model with time-fixed
-covariates.  The longitudinal outcome is modelled using a linear mixed effects
-model.  The association is captured by shared random effects.  The model is
-estimated using an Expectation Maximization algorithm.")
+     "This package provides a joint model for large-scale, competing risks
+time-to-event data with singular or multiple longitudinal biomarkers,
+implemented with the efficient algorithms developed by Li and colleagues (2022)
+<doi:10.1155/2022/1362913> and <doi:10.48550/@code{arXiv.2506.12741>}.  The
+time-to-event data is modelled using a (cause-specific) Cox proportional hazards
+regression model with time-fixed covariates.  The longitudinal biomarkers are
+modelled using a linear mixed effects model.  The association between the
+longitudinal submodel and the survival submodel is captured through shared
+random effects.  It allows researchers to analyze large-scale data to model
+biomarker trajectories, estimate their effects on event outcomes, and
+dynamically predict future events from patientsâ past histories.  A function
+for simulating survival and longitudinal data for multiple biomarkers is also
+included alongside built-in datasets.")
     (license license:gpl3+)))
 
 (define-public r-fastimputation

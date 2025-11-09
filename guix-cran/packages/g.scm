@@ -1575,13 +1575,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "0nsfiw930kmkx34najiqdmk0inzngg3da95db4pnzp3jn04qa19a"))))
+        (base32 "07qj5bypf00ya8msmgyd2skf6f5wixhf7lnpflrv371pzqasxbgn"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -1592,6 +1592,7 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
                              r-stringr
                              r-srvyr
                              r-scales
+                             r-rstudioapi
                              r-rlang
                              r-renv
                              r-purrr
@@ -2954,6 +2955,40 @@ information from users and items which share similar characteristics under the
 singular value decomposition framework.  Refer to paper A Group-Specific
 Recommender System <doi:10.1080/01621459.2016.1219261> for the details.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-gspcr
+  (package
+    (name "r-gspcr")
+    (version "0.9.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gspcr" version))
+       (sha256
+        (base32 "19k07yg3z2p63dgq8hyyqpnq2r23rwbh1wqwna4d4w1bif9vgq8b"))))
+    (properties `((upstream-name . "gspcr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-reshape2
+                             r-pcamixdata
+                             r-nnet
+                             r-mlmetrics
+                             r-mass
+                             r-ggplot2
+                             r-factominer
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gspcr")
+    (synopsis "Generalized Supervised Principal Component Regression")
+    (description
+     "Generalization of supervised principal component regression (SPCR; Bair et al.,
+2006, <doi:10.1198/016214505000000628>) to support continuous, binary, and
+discrete variables as outcomes and predictors (inspired by the superpc R package
+<https://cran.r-project.org/package=superpc>).")
+    (license license:expat)))
 
 (define-public r-gsparo
   (package
