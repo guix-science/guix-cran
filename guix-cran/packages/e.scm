@@ -20302,37 +20302,6 @@ method details see Das
 (2020).<http://krishi.icar.gov.in/jspui/handle/123456789/44138>.")
     (license license:gpl3)))
 
-(define-public r-eemdlstm
-  (package
-    (name "r-eemdlstm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EEMDlstm" version))
-       (sha256
-        (base32 "0cilmbk100gym5kaa7fq8bx0cdqa07xk82kxgxjf4k6gyzs39nlh"))))
-    (properties `((upstream-name . "EEMDlstm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsutils
-                             r-tsdeeplearning
-                             r-tensorflow
-                             r-rlibeemd
-                             r-reticulate
-                             r-magrittr
-                             r-keras
-                             r-biocgenerics))
-    (home-page "https://cran.r-project.org/package=EEMDlstm")
-    (synopsis "EEMD Based LSTM Model for Time Series Forecasting")
-    (description
-     "Forecasting univariate time series with ensemble empirical mode decomposition
-(EEMD) with long short-term memory (LSTM).  For method details see Jaiswal, R.
-et al. (2022). <doi:10.1007/s00521-021-06621-3>.")
-    (license license:gpl3)))
-
 (define-public r-eemdelm
   (package
     (name "r-eemdelm")

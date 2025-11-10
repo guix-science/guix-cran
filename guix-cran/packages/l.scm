@@ -4161,13 +4161,13 @@ the expense of added complexity.")
 (define-public r-longsurr
   (package
     (name "r-longsurr")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longsurr" version))
        (sha256
-        (base32 "0hlsgf7cfqg3f9m3hmqhsfa8a5xqwb3k0z22dzkrcmxynikc416s"))))
+        (base32 "1ay5rm04z6wz8f50n8y8zybpxsqmaxf0801wzyzc4gdgmnw2pnly"))))
     (properties `((upstream-name . "longsurr")))
     (build-system r-build-system)
     (arguments
@@ -4175,6 +4175,7 @@ the expense of added complexity.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-survival
                              r-stringr
                              r-rsurrogate
                              r-refund
@@ -4183,6 +4184,7 @@ the expense of added complexity.")
                              r-plyr
                              r-mvnfast
                              r-mgcv
+                             r-mass
                              r-magrittr
                              r-lme4
                              r-kernsmooth
@@ -4198,7 +4200,10 @@ the expense of added complexity.")
     (synopsis "Longitudinal Surrogate Marker Analysis")
     (description
      "Assess the proportion of treatment effect explained by a longitudinal surrogate
-marker as described in Agniel D and Parast L (2021) <doi:10.1111/biom.13310>.")
+marker as described in Agniel D and Parast L (2021) <doi:10.1111/biom.13310>;
+and estimate the treatment effect on a longitudinal surrogate marker as
+described in Wang et al. (2025) <doi:10.1093/biomtc/ujaf104>.  A tutorial for
+this package can be found at <https://www.laylaparast.com/longsurr>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-longrpart2

@@ -381,13 +381,13 @@ L. (2010, ISBN:9780812109917).")
 (define-public r-nutrinetwork
   (package
     (name "r-nutrinetwork")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nutriNetwork" version))
        (sha256
-        (base32 "0wmprgibx9jzaav93m3kqx1h8cflvx287yjfi3b8pvmgna7q8fsy"))))
+        (base32 "1g2knmdqrsnir3rvmrl9l5kmj022vlv4xgqs62mi7cx6b0a87csn"))))
     (properties `((upstream-name . "nutriNetwork")))
     (build-system r-build-system)
     (arguments
@@ -3713,6 +3713,34 @@ present.  RA is the relative amplitude of a rhythm.  Note that to obtain
 reliable results, actigraphy data should cover a reasonable number of days.")
     (license license:gpl3)))
 
+(define-public r-npancova
+  (package
+    (name "r-npancova")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npANCOVA" version))
+       (sha256
+        (base32 "1r2d8nx4zz06gazq0z1759rdafsds45vc6629sjm4l1cz6f80lg0"))))
+    (properties `((upstream-name . "npANCOVA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Mina7Jahangiri7/npANCOVA")
+    (synopsis "Nonparametric ANCOVA Methods")
+    (description
+     "Nonparametric methods for analysis of covariance (ANCOVA) are distribution-free
+and provide a flexible statistical framework for situations where the
+assumptions of parametric ANCOVA are violated or when the response variable is
+ordinal.  This package implements several well-known nonparametric ANCOVA
+procedures, including Quade, Puri and Sen, @code{McSweeney} and Porter, Burnett
+and Barr, Hettmansperger and @code{McKean}, Shirley, and
+Puri-Sen-Harwell-Serlin.  The package provides user-friendly functions to apply
+these methods in practice.")
+    (license license:gpl3)))
+
 (define-public r-noweb
   (package
     (name "r-noweb")
@@ -4160,13 +4188,13 @@ a measure of network modularity.")
 (define-public r-nortstest
   (package
     (name "r-nortstest")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nortsTest" version))
        (sha256
-        (base32 "0z3ganmaz3p0s957g123gcmcf6x01gvsmrl6ddi3n588hysscqsy"))))
+        (base32 "167vqa3lm1fbw63xms5gpz6ghfz69ydk0a3xygnnbqvzcgr33na4"))))
     (properties `((upstream-name . "nortsTest")))
     (build-system r-build-system)
     (arguments
@@ -15753,6 +15781,32 @@ to reportable printed statistics is covered for basic experimental designs.")
     (synopsis "Tidy Up Date/Time Ranges")
     (description
      "Collapse, partition, combine, fill gaps in and expand date/time ranges.")
+    (license license:expat)))
+
+(define-public r-neatr
+  (package
+    (name "r-neatr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neatR" version))
+       (sha256
+        (base32 "1c5vciqlw0lm770r8pmsj17zhsdz33r7dzjiphp68dl48r6imzi3"))))
+    (properties `((upstream-name . "neatR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=neatR")
+    (synopsis "Neat Data for Presentation")
+    (description
+     "Utilities for unambiguous, neat and legible representation of data (date, time
+stamp, numbers, percentages and strings) for presentation of analysis , aiming
+for elegance and consistency.  The purpose of this package is to format data,
+that is better for presentation and any automation jobs that reports numbers.")
     (license license:expat)))
 
 (define-public r-neatmaps

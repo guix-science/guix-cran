@@ -14754,19 +14754,18 @@ algorithm.")
 (define-public r-hashmapr
   (package
     (name "r-hashmapr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hashmapR" version))
        (sha256
-        (base32 "0f841kkpi3hn5har9vcm8gj4m3lrmpv35q11rh2s12b7h1ppc4r1"))))
+        (base32 "05316gfj0kqhm9cabz6pwr007vxvi1jyh23psk80f2a4pw7mxmx7"))))
     (properties `((upstream-name . "hashmapR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
     (home-page "https://github.com/svensglinz/hashmapR")
     (synopsis "Fast, Vectorized Hashmap")
     (description

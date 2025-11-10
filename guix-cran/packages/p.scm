@@ -29637,6 +29637,32 @@ particularly since it has functions for working with Community Health Index
 efficient and reproducible.")
     (license license:gpl2+)))
 
+(define-public r-phscs
+  (package
+    (name "r-phscs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phscs" version))
+       (sha256
+        (base32 "0x05rirb195bdy40jaykvgqxaqzcn5y0kd4vd7da5nhlk3nmaisx"))))
+    (properties `((upstream-name . "phscs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-stringr r-purrr r-jsonlite r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://yng-me.github.io/phscs/")
+    (synopsis "Philippine Statistical Classification Systems")
+    (description
+     "This package provides a unified interface to access and manipulate various
+Philippine statistical classifications.  It allows users to retrieve, filter,
+and harmonize classification data, making it easier to work with Philippine
+statistical data in R.")
+    (license license:expat)))
+
 (define-public r-phrases
   (package
     (name "r-phrases")

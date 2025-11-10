@@ -24785,13 +24785,13 @@ biomarker-informed adaptive design, etc.")
 (define-public r-adcontabil
   (package
     (name "r-adcontabil")
-    (version "1.1.0")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adcontabil" version))
        (sha256
-        (base32 "0k8fzmq5l8xyhk7s4yaw6m8g60an0n0j5hiz78aahxhz0hhpb8pd"))))
+        (base32 "1yf9d5nfyjp787hqzbs7psxrl771941zkbcbp0p8zzcmh9p151hb"))))
     (properties `((upstream-name . "adcontabil")))
     (build-system r-build-system)
     (arguments

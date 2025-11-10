@@ -155,20 +155,20 @@ spectral decomposition of the Hamiltonian.  E. Farhi (1997):
 (define-public r-qvirus
   (package
     (name "r-qvirus")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qvirus" version))
        (sha256
-        (base32 "1318pcp897nxazshp4marj8mkf62jf9r2879zqcbcjagm668gqjn"))))
+        (base32 "0nxhh07z5rx687fpim60kl28i1aaaspijm7qds8m4l3rbjdwjj8g"))))
     (properties `((upstream-name . "qvirus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-magrittr r-dplyr))
-    (home-page "https://cran.r-project.org/package=qvirus")
+    (home-page "https://github.com/juan-acu/qvirus")
     (synopsis
      "Quantum Computing for Analyzing CD4 Lymphocytes and Antiretroviral Therapy")
     (description

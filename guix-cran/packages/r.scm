@@ -7801,13 +7801,13 @@ rare species.  Conservation Biology, In press.")
 (define-public r-rsdr
   (package
     (name "r-rsdr")
-    (version "1.0.2.1")
+    (version "1.0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rSDR" version))
        (sha256
-        (base32 "1nvm3zcrnldcglh07y1px7fha5r2b0sp0qfcxqihlqaxncw9hzyy"))))
+        (base32 "1w9rc73jywp4g4jy7j43jys37ryd20bn4i1axb781pvy5cl2wajm"))))
     (properties `((upstream-name . "rSDR")))
     (build-system r-build-system)
     (arguments
@@ -7820,8 +7820,7 @@ rare species.  Conservation Biology, In press.")
                              r-ggsci
                              r-ggplot2
                              r-future-apply
-                             r-future
-                             r-expm))
+                             r-future))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rSDR")
     (synopsis "Robust Sufficient Dimension Reduction")
@@ -25405,6 +25404,35 @@ service (<https://www.itis.gov/solr_documentation.html>).")
 Titration Calorimetry (ITC) data with the most commonly used one-to-one binding
 model.")
     (license license:gpl3)))
+
+(define-public r-ritalic
+  (package
+    (name "r-ritalic")
+    (version "0.11.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ritalic" version))
+       (sha256
+        (base32 "06x125x0mj29mgb7l1d9mslr228x8dg18w30c3zscllsx2bqw099"))))
+    (properties `((upstream-name . "ritalic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-jsonlite r-httr r-ggplot2))
+    (home-page "https://github.com/plant-data/ritalic")
+    (synopsis "Interface to the ITALIC Database of Lichen Biodiversity")
+    (description
+     "This package provides a programmatic interface to the Web Service methods
+provided by ITALIC (<https://italic.units.it>).  ITALIC is a database of lichen
+data in Italy and bordering European countries.  ritalic includes functions for
+retrieving information about lichen scientific names, geographic distribution,
+ecological data, morpho-functional traits and identification keys.  More
+information about the data is available at
+<https://italic.units.it/?procedure=base&t=59&c=60>.  The API documentation is
+available at <https://italic.units.it/?procedure=api>.")
+    (license license:expat)))
 
 (define-public r-rita
   (package
@@ -51162,13 +51190,13 @@ and Qunhua Li (2016).  Robust bent line regression, submitted.\".")
 (define-public r-rbedrock
   (package
     (name "r-rbedrock")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbedrock" version))
        (sha256
-        (base32 "0nc8rcysbncwph7f16a591gp38ihz6pzwassgn3fg5qs9kp625d4"))))
+        (base32 "1wvid0dhhcpkf6s82gybfavrf2np1rh038r2fgicnd10jjsixbhh"))))
     (properties `((upstream-name . "rbedrock")))
     (build-system r-build-system)
     (arguments

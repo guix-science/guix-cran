@@ -44827,13 +44827,13 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 (define-public r-cdatanet
   (package
     (name "r-cdatanet")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDatanet" version))
        (sha256
-        (base32 "03mn0bdkrik26w0xmvbvki4gyhlnafg76rpw4khbm7rfgsjyk9vh"))))
+        (base32 "0h0w9yyk7vwwbd8vyq8n1agl83il95wwnpq6k13d03d6lr0b9398"))))
     (properties `((upstream-name . "CDatanet")))
     (build-system r-build-system)
     (arguments
@@ -44851,8 +44851,7 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
                              r-formula
                              r-foreach
                              r-dorng
-                             r-doparallel
-                             r-ddpcr))
+                             r-doparallel))
     (home-page "https://github.com/ahoundetoungan/CDatanet")
     (synopsis "Econometrics of Network Data")
     (description
@@ -44860,10 +44859,10 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 class of peer effect models includes linear-in-means models (Lee, 2004;
 <doi:10.1111/j.1468-0262.2004.00558.x>), Tobit models (Xu and Lee, 2015;
 <doi:10.1016/j.jeconom.2015.05.004>), and discrete numerical data models
-(Houndetoungan, 2024; <doi:10.2139/ssrn.3721250>).  The network formation models
-include pair-wise regressions with degree heterogeneity (Graham, 2017;
-<doi:10.3982/ECTA12679>) and exponential random graph models (Mele, 2017;
-<doi:10.3982/ECTA10400>).")
+(Houndetoungan, 2025; <doi:10.48550/@code{arXiv.2405.17290>}).  The network
+formation models include pair-wise regressions with degree heterogeneity
+(Graham, 2017; <doi:10.3982/ECTA12679>) and exponential random graph models
+(Mele, 2017; <doi:10.3982/ECTA10400>).")
     (license license:gpl3)))
 
 (define-public r-cdata

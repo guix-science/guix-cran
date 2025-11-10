@@ -13606,13 +13606,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "0.7.5")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "03749kb1vvk543r2zyqlb1v7h01g6kjag5090a79cqsl3m23n0b5"))))
+        (base32 "0qi99vfmqsg1k8qnj451pfsxraqk2fqs2hmv865pqgd4479wgcjl"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments
@@ -30241,53 +30241,6 @@ provides data frame of geneset and geneset_name'.  The geneset has two columns
 of term ID and gene ID. The geneset_name has two columns of terms ID and term
 description.")
     (license license:gpl3)))
-
-(define-public r-geneselectr
-  (package
-    (name "r-geneselectr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeneSelectR" version))
-       (sha256
-        (base32 "0hxdnfhah3a29f00ycanf7ssxm2z7inp9sf72l61ilcrg9bx22hq"))))
-    (properties `((upstream-name . "GeneSelectR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmod
-                             r-tidyr
-                             r-tibble
-                             r-testthat
-                             r-rlang
-                             r-reticulate
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-magrittr
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dzhakparov/GeneSelectR")
-    (synopsis
-     "'GeneSelectR' - Comprehensive Feature Selection Workflow for Bulk RNAseq Datasets")
-    (description
-     "The workflow is a versatile R package designed for comprehensive feature
-selection in bulk RNAseq datasets.  Its key innovation lies in the seamless
-integration of the Python scikit-learn
-(<https://scikit-learn.org/stable/index.html>) machine learning framework with
-R-based bioinformatics tools. @code{GeneSelectR} performs robust Machine
-Learning-driven (ML) feature selection while leveraging Gene Ontology (GO)
-enrichment analysis as described by Thomas PD et al. (2022)
-<doi:10.1002/pro.4218>, using @code{clusterProfiler} (Wu et al., 2021)
-<doi:10.1016/j.xinn.2021.100141> and semantic similarity analysis powered by
-@code{simplifyEnrichment} (Gu, Huebschmann, 2021)
-<doi:10.1016/j.gpb.2022.04.008>.  This combination of methodologies optimizes
-computational and biological insights for analyzing complex RNAseq datasets.")
-    (license license:expat)))
 
 (define-public r-genescorer
   (package

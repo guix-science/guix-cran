@@ -4263,13 +4263,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-broadcast
   (package
     (name "r-broadcast")
-    (version "0.1.5.3")
+    (version "0.1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broadcast" version))
        (sha256
-        (base32 "16cwapklrgxar9lk9kgivyblf1razhxc8wf5qqmnyclkga7xs0vm"))))
+        (base32 "13fxsibx7862b5k77asxfsqrld8g8p3sw4d0893xgn4wbdj2nq2g"))))
     (properties `((upstream-name . "broadcast")))
     (build-system r-build-system)
     (arguments
@@ -4281,20 +4281,20 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
     (description
      "This package implements efficient @code{NumPy'-like} broadcasted operations for
 atomic and recursive arrays.  In the context of operations involving 2 (or more)
-arrays, âbroadcastingâ refers to efficiently recycling array dimensions
-without allocating additional memory.  Besides linking to Rcpp', broadcast does
-not use any external libraries in any way; broadcast was essentially made from
-scratch and can be installed out-of-the-box.  The implementations available in
-broadcast include, but are not limited to, the following.  1) Broadcasted
-element-wise operations on any 2 arrays; they support a large set of relational,
-arithmetic, Boolean, string, and bit-wise operations.  2) A faster, more memory
-efficient, and broadcasted abind-like function, for binding arrays along an
-arbitrary dimension.  3) Broadcasted ifelse-like, and apply-like functions.  4)
-Casting functions, that cast subset-groups of an array to a new dimension, cast
-nested lists to dimensional lists, and vice-versa.  5) A few linear algebra
-functions for statistics.  The functions in the broadcast package strive to
-minimize computation time and memory usage (which is not just better for
-efficient computing, but also for the environment).")
+arrays, âbroadcastingâ refers to efficiently recycling array dimensions,
+without making copies.  Besides linking to Rcpp', broadcast does not use any
+external libraries in any way; broadcast was essentially made from scratch and
+can be installed out-of-the-box.  The implementations available in broadcast
+include, but are not limited to, the following.  1) Broadcasted element-wise
+operations on any 2 arrays; they support a large set of relational, arithmetic,
+Boolean, string, and bit-wise operations.  2) A faster, more memory efficient,
+and broadcasted abind-like function, for binding arrays along an arbitrary
+dimension.  3) Broadcasted ifelse-like, and apply-like functions.  4) Casting
+functions, that cast subset-groups of an array to a new dimension, cast nested
+lists to dimensional lists, and vice-versa.  5) A few linear algebra functions
+for statistics.  The functions in the broadcast package strive to minimize
+computation time and memory usage (which is not just better for efficient
+computing, but also for the environment).")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-brnn
@@ -32569,13 +32569,13 @@ supported, which is particularly helpful for genome-wide association study.")
 (define-public r-baldur
   (package
     (name "r-baldur")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baldur" version))
        (sha256
-        (base32 "13nl5apdmb1pm32d58qq04vc2xngc35n6cv4sivf2s34yk4k0n4c"))))
+        (base32 "0438bcy81vc2f8xw7f155qr0v74lrdp1iq4bqnpkwz4bm2wv3dmj"))))
     (properties `((upstream-name . "baldur")))
     (build-system r-build-system)
     (arguments
@@ -32614,7 +32614,7 @@ estimate the posterior distribution (by Hamiltonian Monte Carlo) for the
 differences in means for each peptide in the data.  Once the posterior is
 inferred, it integrates the tails to estimate the probability of error from
 which a statistical decision can be made.  See Berg and Popescu for details
-(<doi:10.1101/2023.05.11.540411>).")
+(<doi:10.1016/j.mcpro.2023.100658>).")
     (license license:expat)))
 
 (define-public r-balancedsampling

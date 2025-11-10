@@ -35000,13 +35000,13 @@ and Brown, Sibly and Kodric-Brown (2012) <doi:10.1002/9781119968535.ch>).")
 (define-public r-metaquant
   (package
     (name "r-metaquant")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaquant" version))
        (sha256
-        (base32 "1m80nzfixc9jg4b66id1kkpf5a7k90fdv96a3hv262vfkz442mz2"))))
+        (base32 "10vcap9vm53yl534mxzfvcj2w0bqn7ffqpi5hiijg3qhykbz0myg"))))
     (properties `((upstream-name . "metaquant")))
     (build-system r-build-system)
     (arguments
@@ -35014,21 +35014,21 @@ and Brown, Sibly and Kodric-Brown (2012) <doi:10.1002/9781119968535.ch>).")
       #:tests? #f))
     (propagated-inputs (list r-sld
                              r-plotly
+                             r-metafor
                              r-magrittr
                              r-gld
                              r-ggplot2
                              r-estmeansd
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=metaquant")
-    (synopsis
-     "Estimating Means, Standard Deviations and Visualising Distributions using Quantiles")
+    (synopsis "Meta-Analysis of Quantiles and Functions of Quantiles")
     (description
      "This package implements a novel density-based approach for estimating unknown
-means, visualizing distributions, and meta-analyses of quantiles.  A detailed
-vignettes with example datasets and code to prepare data and analyses is
-available at <https://bookdown.org/a2delivera/metaquant/>.  The methods are
-described in the pre-print by De Livera, Prendergast and Kumaranathunga (2024,
-<doi:10.48550/@code{arXiv.2411.10971>}).")
+parameters, distribution visualisations and meta-analyses of quantiles and ther
+functions.  A detailed vignettes with example datasets and code to prepare data
+and analyses is available at <https://bookdown.org/a2delivera/metaquant/>.  The
+methods are described in the pre-print by De Livera, Prendergast and
+Kumaranathunga (2024, <doi:10.48550/@code{arXiv.2411.10971>}).")
     (license license:gpl3)))
 
 (define-public r-metaprotr

@@ -3500,24 +3500,26 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "2.3.1")
+    (version "2.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "0vh61pn51v9y0kpg8xzp10srd3lf6kacccqcmzfb1whi8ahln0fd"))))
+        (base32 "0a4h77iyrx89f497w04y9armsxij7vkbwar29nbxhbs6h4f54drp"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lhs
+    (propagated-inputs (list r-rlang
+                             r-lhs
                              r-glmnet
                              r-ggplot2
                              r-gamlss-dist
                              r-gamlss
                              r-foreach
+                             r-dorng
                              r-doparallel
                              r-cluster))
     (native-inputs (list r-knitr))
@@ -3529,9 +3531,11 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (2021) <doi:10.1016/j.chemolab.2021.104439>) using elastic net regression via
 glmnet (Friedman et al. (2010) <doi:10.18637/jss.v033.i01>).  SVEM averages
 predictions from multiple models fitted to fractionally weighted bootstraps of
-the data, tuned with anti-correlated validation weights.  Also implements the
-randomized permutation whole-model test for SVEM (Karl (2024)
-<doi:10.1016/j.chemolab.2024.105122>).")
+the data, tuned with anti-correlated validation weights.  Supports Gaussian and
+binomial responses.  Also implements the randomized permutation whole-model test
+for SVEM with Gaussian responses (Karl (2024)
+<doi:10.1016/j.chemolab.2024.105122>).  Some parts of the package code were
+drafted with assistance from generative AI tools.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-svelteplots
@@ -5570,19 +5574,20 @@ and Kreuter (2018), <doi:10.1007/978-3-319-93632-1>).")
 (define-public r-surveygraph
   (package
     (name "r-surveygraph")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveygraph" version))
        (sha256
-        (base32 "06izdycgrggzgyf730fkrd1m3d9a8k2f4fvs9hhihsbkcns2kpgi"))))
+        (base32 "1wb4irhy2bqg6qs54yvvsfpmgdc9wvjzi6m2fdxji4db6a8r18xh"))))
     (properties `((upstream-name . "surveygraph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://surveygraph.ie/")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/surveygraph/surveygraphr")
     (synopsis "Network Representations of Attitudes")
     (description
      "This package provides a tool for computing network representations of attitudes,
@@ -25053,13 +25058,13 @@ effects of functional variables -Application to agri-environmental issues\"
 (define-public r-sphunif
   (package
     (name "r-sphunif")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphunif" version))
        (sha256
-        (base32 "1f3j3b5qq80yi4w83c9aqzbx6kgyn19vg40sca85m7x5ajhjn8h4"))))
+        (base32 "1v1jdjd21mpwxdq9k45gll3x0n0lm0kksk5bvv3px6gz5hqlx5n1"))))
     (properties `((upstream-name . "sphunif")))
     (build-system r-build-system)
     (arguments
@@ -25091,7 +25096,7 @@ and gives the replicability for the data applications/simulations in
 GarcÃ­a-PortuguÃ©s et al. (2021) <doi:10.1007/978-3-030-69944-4_12>,
 GarcÃ­a-PortuguÃ©s et al. (2023) <doi:10.3150/21-BEJ1454>, FernÃ¡ndez-de-Marcos
 and GarcÃ­a-PortuguÃ©s (2024) <doi:10.1016/j.spl.2024.110218>, and
-GarcÃ­a-PortuguÃ©s et al. (2024) <doi:10.48550/@code{arXiv.2108.09874>}.")
+GarcÃ­a-PortuguÃ©s et al. (2025) <doi:10.1080/01621459.2025.2566414>.")
     (license license:gpl3)))
 
 (define-public r-sphet
@@ -43467,6 +43472,45 @@ method benchmarking functions are also provided.  Described in Yao and Ochoa
 (2022) <doi:10.1101/2022.03.25.485885>.")
     (license license:gpl3)))
 
+(define-public r-simtost
+  (package
+    (name "r-simtost")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimTOST" version))
+       (sha256
+        (base32 "1dgjiw9g7yp3nfdl9nraqlkaazw8bm6k20jb52kdj619lvx9hnjv"))))
+    (properties `((upstream-name . "SimTOST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixcalc r-mass
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://smartdata-analysis-and-statistics.github.io/SimTOST/")
+    (synopsis
+     "Sample Size Estimation for Bio-Equivalence Trials Through Simulation")
+    (description
+     "Sample size estimation for bio-equivalence trials is supported through a
+simulation-based approach that extends the Two One-Sided Tests (TOST) procedure.
+ The methodology provides flexibility in hypothesis testing, accommodates
+multiple treatment comparisons, and accounts for correlated endpoints.  Users
+can model complex trial scenarios, including parallel and crossover designs,
+intra-subject variability, and different equivalence margins.  Monte Carlo
+simulations enable accurate estimation of power and type I error rates, ensuring
+well-calibrated study designs.  The statistical framework builds on established
+methods for equivalence testing and multiple hypothesis testing in
+bio-equivalence studies, as described in Schuirmann (1987)
+<doi:10.1007/BF01068419>, Mielke et al. (2018)
+<doi:10.1080/19466315.2017.1371071>, Shieh (2022)
+<doi:10.1371/journal.pone.0269128>, and Sozu et al. (2015)
+<doi:10.1007/978-3-319-22005-5>.  Comprehensive documentation and vignettes
+guide users through implementation and interpretation of results.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-simtool
   (package
     (name "r-simtool")
@@ -50949,6 +50993,46 @@ will suggest, you will be able to test your server and ui functions
 interactively.")
     (license license:gpl3)))
 
+(define-public r-shinyoauth
+  (package
+    (name "r-shinyoauth")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyOAuth" version))
+       (sha256
+        (base32 "13i9yyn815biciygnkwg3xjpgnciyxi4dq3w2pgqg27jbiwvcna9"))))
+    (properties `((upstream-name . "shinyOAuth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-s7
+                             r-rlang
+                             r-r6
+                             r-openssl
+                             r-jsonlite
+                             r-jose
+                             r-httr2
+                             r-htmltools
+                             r-cli
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lukakoning/shinyOAuth")
+    (synopsis
+     "Provider-Agnostic OAuth Authentication for 'shiny' Applications")
+    (description
+     "This package provides a simple, configurable, provider-agnostic OAuth 2.0 and
+@code{OpenID} Connect (OIDC) authentication framework for shiny applications
+using S7 classes.  Defines providers, clients, and tokens, as well as various
+supporting functions and a shiny module.  Features include cross-site request
+forgery (CSRF) protection, state encryption, Proof Key for Code Exchange (PKCE)
+handling, validation of OIDC identity tokens (nonces, signatures, claims),
+automatic user info retrieval, asynchronous flows, and hooks for audit logging.")
+    (license license:expat)))
+
 (define-public r-shinynotes
   (package
     (name "r-shinynotes")
@@ -52245,6 +52329,34 @@ popovers or tooltips.")
     (home-page "https://github.com/merlinoa/shinyFeedback")
     (synopsis "Display User Feedback in Shiny Apps")
     (description "Easily display user feedback in Shiny apps.")
+    (license license:expat)))
+
+(define-public r-shinyfa
+  (package
+    (name "r-shinyfa")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyfa" version))
+       (sha256
+        (base32 "0fwmns36sx4lgjx1rilh1ac1kg1wn7gzc2z59ns1a7lp3ymjy181"))))
+    (properties `((upstream-name . "shinyfa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr))
+    (home-page "https://github.com/dalyanalytics/shinyfa")
+    (synopsis "Analyze the File Contents of 'shiny' Directories")
+    (description
+     "This package provides tools for analyzing and understanding the file contents of
+large shiny application directories.  The package extracts key information about
+render functions, reactive functions, and their inputs from app files,
+organizing them into structured data frames for easy reference.  This
+streamlines the onboarding process for new contributors and helps identify areas
+for optimization in complex shiny codebases with multiple files and sourcing
+chains.")
     (license license:expat)))
 
 (define-public r-shinyexprportal

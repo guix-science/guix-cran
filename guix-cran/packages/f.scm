@@ -599,18 +599,19 @@ statistical distributions.")
 (define-public r-fuzzyranktests
   (package
     (name "r-fuzzyranktests")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzyRankTests" version))
        (sha256
-        (base32 "04841fh4nf7qriqk0b2ny943bji60bj42j8czg056d2dza4q4039"))))
+        (base32 "1q510sf3p5qczfriy4gm6wxah0ngacvwdrxjpwhmpcsh4rfxagpv"))))
     (properties `((upstream-name . "fuzzyRankTests")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "http://www.stat.umn.edu/geyer/fuzz/")
     (synopsis "Fuzzy Rank Tests and Confidence Intervals")
     (description
@@ -1520,6 +1521,35 @@ analysis.  Other data summary and cleaning tools are also available.")
 and other interesting sequences, calculate a fraction which is a close
 approximation to some value (e.g., 22/7 or 355/113 for pi), and so on.")
     (license license:lgpl3)))
+
+(define-public r-funviewr
+  (package
+    (name "r-funviewr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funviewR" version))
+       (sha256
+        (base32 "1g65xn05hvm2sgfc8zz47k3vhpd3c9hn7lwzd2ad4ryghci3jsrm"))))
+    (properties `((upstream-name . "funviewR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork r-magrittr r-igraph r-htmltools
+                             r-codetools))
+    (home-page "https://github.com/deamonpog/funviewR")
+    (synopsis "Visualize Function Call Dependencies in R Source Code")
+    (description
+     "This package provides tools to analyze R source code and detect function
+definitions and their internal dependencies across multiple files.  Creates
+interactive network visualizations using @code{visNetwork} to display function
+call relationships, with detailed tooltips showing function arguments, return
+values, and documentation.  Supports both individual files and directory-based
+analysis with automatic file detection.  Useful for understanding code
+structure, identifying dependencies, and documenting R projects.")
+    (license license:gpl3)))
 
 (define-public r-funtimes
   (package
@@ -18385,6 +18415,42 @@ extended to continuous design variables as described in Langsrud et al. (2007)
 scale changes and that common pitfalls are avoided.")
     (license license:gpl2)))
 
+(define-public r-ffm
+  (package
+    (name "r-ffm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ffm" version))
+       (sha256
+        (base32 "1l177dph20kcm6x09svn0jqsjzp6q9kjyn0p03qkb69ih1vqn7kz"))))
+    (properties `((upstream-name . "ffm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-xml2
+                             r-sf
+                             r-rlang
+                             r-httr2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ffm")
+    (synopsis "Download Official Spatial Data from Germany")
+    (description
+     "This package provides quick and easy access to official spatial data from
+Germanyâs Federal Agency for Cartography and Geodesy (BKG)
+<https://gdz.bkg.bund.de/>.  Interfaces various web feature services (WFS) and
+download servers.  Allows retrieval, caching and filtering with a wide range of
+open geodata products, including administrative or non-administrative
+boundaries, land cover, elevation models, geographic names, and points of
+interest covering Germany.  Can be particularly useful for linking regional
+statistics to their spatial representations and streamlining workflows that
+involve spatial data of Germany.")
+    (license license:expat)))
+
 (define-public r-ffiec
   (package
     (name "r-ffiec")
@@ -20169,56 +20235,6 @@ space.  Such relationships include equality of all measures (no treatment
 effect), interaction effects between a number of factors, as well as main and
 simple factor effects.")
     (license license:gpl3+)))
-
-(define-public r-fdma
-  (package
-    (name "r-fdma")
-    (version "2.2.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fDMA" version))
-       (sha256
-        (base32 "1njyi2dnjhf0lmjfqbjlmk168kwlvck86bzny32nsknf32b6gb7c"))))
-    (properties `((upstream-name . "fDMA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-tseries
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-psych
-                             r-png
-                             r-itertools
-                             r-iterators
-                             r-gplots
-                             r-forecast
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://CRAN.R-project.org/package=fDMA")
-    (synopsis
-     "Dynamic Model Averaging and Dynamic Model Selection for Continuous Outcomes")
-    (description
-     "Allows to estimate dynamic model averaging, dynamic model selection and median
-probability model.  The original methods are implemented, as well as, selected
-further modifications of these methods.  In particular the user might choose
-between recursive moment estimation and exponentially moving average for
-variance updating.  Inclusion probabilities might be modified in a way using
-Google Trends'.  The code is written in a way which minimises the computational
-burden (which is quite an obstacle for dynamic model averaging if many variables
-are used).  For example, this package allows for parallel computations and
-Occam's window approach.  The package is designed in a way that is hoped to be
-especially useful in economics and finance.  Main reference: Raftery, A.E.,
-Karny, M., Ettler, P. (2010) <doi:10.1198/TECH.2009.08104>.")
-    (license license:gpl3)))
 
 (define-public r-fdm2id
   (package

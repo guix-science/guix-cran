@@ -11063,19 +11063,19 @@ single-cell RNA-seq data.")
 (define-public r-infectiousr
   (package
     (name "r-infectiousr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "infectiousR" version))
        (sha256
-        (base32 "19lwxw3vcpwsvcr5an9d3644bmm5w0pk31b0cfmkcffpmnrgli8c"))))
+        (base32 "19xmxn8fw7p00w1xpax584scnxb4dmscmlksw3gd7gdiqafzgl7k"))))
     (properties `((upstream-name . "infectiousR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lubridate r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-lubridate r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lightbluetitan/infectiousr")
     (synopsis
@@ -11083,7 +11083,7 @@ single-cell RNA-seq data.")
     (description
      "This package provides functions to access real-time infectious disease data from
 the disease.sh API', including COVID-19 global, US states, continent, and
-country statistics, vaccination coverage, influenza-like illness data from
+country statistics, vaccination coverage, influenza-like illness data from the
 Centers for Disease Control and Prevention (CDC), and more.  Also includes
 curated datasets on a variety of infectious diseases such as influenza, measles,
 dengue, Ebola, tuberculosis, meningitis, AIDS, and others.  The package supports

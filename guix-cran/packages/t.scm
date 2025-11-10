@@ -4514,6 +4514,43 @@ simulation, statistical testing and more.  Represents a partial re-write and
 re-think of rugarch', making use of automatic differentiation for estimation.")
     (license license:gpl2)))
 
+(define-public r-tsg
+  (package
+    (name "r-tsg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsg" version))
+       (sha256
+        (base32 "13w4s6g5sf3y3caag9ibyccz3c402z6p77fwfhyi52ssr4lsgkrz"))))
+    (properties `((upstream-name . "tsg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-openxlsx
+                             r-jsonlite
+                             r-haven
+                             r-glue
+                             r-fs
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://yng-me.github.io/tsg/")
+    (synopsis "Generate Publication-Ready Statistical Tables")
+    (description
+     "This package provides a collection of functions for generating frequency tables
+and cross-tabulations of categorical variables.  The resulting tables can be
+exported to various formats (Excel, PDF, HTML, etc.) with extensive formatting
+and layout customization options.")
+    (license license:expat)))
+
 (define-public r-tsfngm
   (package
     (name "r-tsfngm")
@@ -18975,13 +19012,13 @@ the results in a tidy format.")
 (define-public r-tidyseurat
   (package
     (name "r-tidyseurat")
-    (version "0.8.4")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyseurat" version))
        (sha256
-        (base32 "1gv74y0g9dvx2phfc675nymssa15d9vailq4696xs8k4r796abdz"))))
+        (base32 "19j3jxq7b33hh9kgd2x27k102p3wxpiphlp6v7ymhkh7qdxc95ql"))))
     (properties `((upstream-name . "tidyseurat")))
     (build-system r-build-system)
     (arguments
@@ -19003,6 +19040,7 @@ the results in a tidy format.")
                              r-magrittr
                              r-lifecycle
                              r-ggplot2
+                             r-generics
                              r-fansi
                              r-dplyr
                              r-cli))
@@ -21756,13 +21794,13 @@ be installed.")
 (define-public r-tican
   (package
     (name "r-tican")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tican" version))
        (sha256
-        (base32 "0pl580gq17sc2m1lcmqxs7qihszk1h5hsi02d9wprhcrb0db3z60"))))
+        (base32 "14c99g2737swj2q4jr9r15g9d73cxff8yd5xqypqmjsdfphmszvj"))))
     (properties `((upstream-name . "tican")))
     (build-system r-build-system)
     (arguments
@@ -21773,8 +21811,8 @@ be installed.")
     (synopsis "Plot and Analyse Time-Intensity Data")
     (description
      "Plots and analyzes time-intensity curve data, such as data from
-(contrast-enhanced) ultrasound.  Values such as peak intensity, time to peak and
-area under the curve are calculated.")
+(contrast-enhanced) ultrasound.  Values such as peak intensity, time to peak,
+area under the curve, wash in rate and wash out rate are calculated.")
     (license license:expat)))
 
 (define-public r-tibblify
