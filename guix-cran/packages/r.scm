@@ -20594,13 +20594,13 @@ more details.")
 (define-public r-rmsmd
   (package
     (name "r-rmsmd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmsMD" version))
        (sha256
-        (base32 "1i6pnwa8icnkjcixmg4z6qss574n48shqf9wls3d44wcba1k9kvn"))))
+        (base32 "06m1xv4fkwpcgm8hvhp8ifhncxdamb8s4wqm1gbq8s994lwklxyv"))))
     (properties `((upstream-name . "rmsMD")))
     (build-system r-build-system)
     (arguments
@@ -27074,37 +27074,40 @@ Investors Exchange Group (IEX Group) terms and conditions before using Riex
 (define-public r-riemtan
   (package
     (name "r-riemtan")
-    (version "0.1.0")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riemtan" version))
        (sha256
-        (base32 "0i833vvqvac2l827xsd683g878n16ljkp56fwr3q22nd2c1442sa"))))
+        (base32 "1i77l92ndjcl9l72ghff7sz36m4911phdihh4k38swl65zdnkqv7"))))
     (properties `((upstream-name . "riemtan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-r6
                              r-purrr
+                             r-matrixstats
                              r-matrix
                              r-mass
+                             r-jsonlite
+                             r-future
                              r-furrr
-                             r-expm))
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://nicoesve.github.io/riemtan/")
     (synopsis "Riemannian Metrics for Symmetric Positive Definite Matrices")
     (description
      "This package implements various Riemannian metrics for symmetric positive
-definite matrices, including AIRM (Affine Invariant Riemannian Metric, see
-Pennec, Fillard, and Ayache (2006) <doi:10.1007/s11263-005-3222-z>),
-Log-Euclidean (see Arsigny, Fillard, Pennec, and Ayache (2006)
-<doi:10.1002/mrm.20965>), Euclidean, Log-Cholesky (see Lin (2019)
-<doi:10.1137/18M1221084>), and Bures-Wasserstein metrics (see Bhatia, Jain, and
-Lim (2019) <doi:10.1016/j.exmath.2018.01.002>).  Provides functions for
-computing logarithmic and exponential maps, vectorization, and statistical
-operations on the manifold of positive definite matrices.")
+definite matrices, including AIRM (Affine Invariant Riemannian Metric,
+<doi:10.1007/s11263-005-3222-z>), Log-Euclidean (<doi:10.1002/mrm.20965>),
+Euclidean, Log-Cholesky (<doi:10.1137/18M1221084>), and Bures-Wasserstein
+metrics (<doi:10.1016/j.exmath.2018.01.002>).  Provides functions for computing
+logarithmic and exponential maps, vectorization, and statistical operations on
+the manifold of positive definite matrices.")
     (license license:expat)))
 
 (define-public r-riembase
@@ -33263,13 +33266,13 @@ spectral density.")
 (define-public r-resourcecode
   (package
     (name "r-resourcecode")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resourcecode" version))
        (sha256
-        (base32 "1pc0z12icm6vg5zkqb4s9w2ims20c4gwxi82qajs56yiyyjzpjia"))))
+        (base32 "1wp1ymr92whjznk1dyqaafnzb7b6301vjlyraj8s9ccdw7145jkb"))))
     (properties `((upstream-name . "resourcecode")))
     (build-system r-build-system)
     (arguments
@@ -33285,6 +33288,7 @@ spectral density.")
                              r-pracma
                              r-patchwork
                              r-ncdf4
+                             r-lubridate
                              r-latex2exp
                              r-jsonlite
                              r-gridtext
@@ -41560,13 +41564,13 @@ rebus.* dependencies.")
 (define-public r-rebmix
   (package
     (name "r-rebmix")
-    (version "2.17.0")
+    (version "2.17.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rebmix" version))
        (sha256
-        (base32 "1c4vgw5aigm4cmzkn23r92avnjvpp9rlsf5p6yyyn2rm19zllg75"))))
+        (base32 "1qfvxzg835hkpqzgsyk04scfmqci0svjkdipyw39zvxdmnfsvg8f"))))
     (properties `((upstream-name . "rebmix")))
     (build-system r-build-system)
     (arguments
@@ -54045,13 +54049,13 @@ header-only library.")
 (define-public r-rapidsplithalf
   (package
     (name "r-rapidsplithalf")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapidsplithalf" version))
        (sha256
-        (base32 "0rchkg2151qzpry3xbvidhh8y2v9syl9vl9n9pzj1ns21d9my8rn"))))
+        (base32 "13cp4f1cj20pgkpjhr31az184ya2iap15q90xivj7cd39h1fvnh3"))))
     (properties `((upstream-name . "rapidsplithalf")))
     (build-system r-build-system)
     (arguments

@@ -42193,13 +42193,13 @@ competition (Makridakis and Hibon, 2000) <DOI:10.1016/S0169-2070(00)00057-1>.")
 (define-public r-mcoe
   (package
     (name "r-mcoe")
-    (version "0.4.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCOE" version))
        (sha256
-        (base32 "1ajijv3zl01am5qrkb6fdgrynnw31hgqdg8ph7bvm3z2y7z8zrbr"))))
+        (base32 "1vc646hdiv4r70gpiyi06dh5i4j6bq13bkc9g0f6nlb1ayrw5c52"))))
     (properties `((upstream-name . "MCOE")))
     (build-system r-build-system)
     (arguments

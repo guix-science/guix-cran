@@ -17396,13 +17396,13 @@ Service, Forest Inventory and Analysis (FIA) Program.")
 (define-public r-fiery
   (package
     (name "r-fiery")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fiery" version))
        (sha256
-        (base32 "1ywq3sqj1d73k8fx7dwkxp22arifx7h0yswg4h1bm0j5s9wj35nc"))))
+        (base32 "1knrs5492dp7bwfhllyr400cgsflnxpdh3mgzgdqfi20hms4pi1v"))))
     (properties `((upstream-name . "fiery")))
     (build-system r-build-system)
     (arguments
@@ -17415,12 +17415,11 @@ Service, Forest Inventory and Analysis (FIA) Program.")
                              r-reqres
                              r-r6
                              r-promises
-                             r-parallelly
+                             r-otel
                              r-lifecycle
                              r-later
                              r-httpuv
                              r-glue
-                             r-future
                              r-fs
                              r-cli))
     (native-inputs (list r-knitr))

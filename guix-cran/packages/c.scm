@@ -934,13 +934,13 @@ Association (AHA) as described in Dâagostino, et al (2008)
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.8.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvms" version))
        (sha256
-        (base32 "0pvqkhh69jpqy0pjh8kgzgpr52zbp0wy2hwjbvxflxhyi2fg43y7"))))
+        (base32 "1i1r45ffn8qaa87g659lh0w722v7darwmw8845azri5ay1rdlci5"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (arguments
@@ -11454,6 +11454,41 @@ smaller version from dbdataset package.  It contains only information about
 COVID-19 possible treatment.")
     (license license:cc0)))
 
+(define-public r-covid19br
+  (package
+    (name "r-covid19br")
+    (version "1.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covid19br" version))
+       (sha256
+        (base32 "1d50s2mmh1vlkjv1hhx8v3q2p1dm9gz6xzm1cwfh6bivh0izk72j"))))
+    (properties `((upstream-name . "covid19br")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-rlang
+                             r-httr2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://fndemarqui.github.io/covid19br/")
+    (synopsis "Brazilian COVID-19 Pandemic Data")
+    (description
+     "Set of functions to import COVID-19 pandemic data into R. The Brazilian COVID-19
+data, obtained from the official Brazilian repository at
+<https://covid.saude.gov.br/>, is available at the country, region, state, and
+city levels.  The package also downloads world-level COVID-19 data from Johns
+Hopkins University's repository.  COVID-19 data is available from the start of
+follow-up until to May 5, 2023, when the World Health Organization (WHO)
+declared an end to the Public Health Emergency of International Concern (PHEIC)
+for COVID-19.")
+    (license license:expat)))
+
 (define-public r-covid19-analytics
   (package
     (name "r-covid19-analytics")
@@ -17287,13 +17322,13 @@ reliably shared, archived, and rerun across systems.  See R Core Team (2025)
 (define-public r-container
   (package
     (name "r-container")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "container" version))
        (sha256
-        (base32 "0kirab46p51n6592lsa82bkwi5g3rx5ixz6ag1ds74yw3r8j62g5"))))
+        (base32 "130pggdclyd5j1h68k4fna8pdna16m5dj3cyps1xfidd4mhgk8d8"))))
     (properties `((upstream-name . "container")))
     (build-system r-build-system)
     (arguments
@@ -33166,6 +33201,40 @@ wavelet energy from Knight, M. I and Nunes, M. A. (2018)
 <doi:10.1007/s11222-018-9820-8>.")
     (license license:gpl2)))
 
+(define-public r-clifford
+  (package
+    (name "r-clifford")
+    (version "1.1-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clifford" version))
+       (sha256
+        (base32 "0q1mwf7yydfrkxmp1bv2cqgp7qqgvka4flhx994hw7rsr5pxbl1s"))))
+    (properties `((upstream-name . "clifford")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-partitions
+                             r-magrittr
+                             r-freealg
+                             r-disordr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RobinHankin/clifford")
+    (synopsis "Arbitrary Dimensional Clifford Algebras")
+    (description
+     "This package provides a suite of routines for Clifford algebras, using the Map
+class of the Standard Template Library.  Canonical reference: Hestenes (1987,
+ISBN 90-277-1673-0, \"Clifford algebra to geometric calculus\").  Special cases
+including Lorentz transforms, quaternion multiplication, and Grassmann algebra,
+are discussed.  Vignettes presenting conformal geometric algebra, quaternions
+and split quaternions, dual numbers, and Lorentz transforms are included.  The
+package follows @code{disordR} discipline.")
+    (license license:gpl2+)))
+
 (define-public r-cliff
   (package
     (name "r-cliff")
@@ -36307,13 +36376,13 @@ data.  For dev version and change history, see @code{GitHub} assaforon/cir.")
 (define-public r-cipostselect
   (package
     (name "r-cipostselect")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CIpostSelect" version))
        (sha256
-        (base32 "1fmkdjgnkqmm369n1lg7zbm3ccpq9cv105m18418q1qp4zdjfz8a"))))
+        (base32 "01x23y4413l98fmg50arwzx6nkcfgagqiwgg18ylyhh5rv95iwsi"))))
     (properties `((upstream-name . "CIpostSelect")))
     (build-system r-build-system)
     (arguments
@@ -36327,7 +36396,7 @@ data.  For dev version and change history, see @code{GitHub} assaforon/cir.")
                              r-ggplot2
                              r-foreach
                              r-doparallel))
-    (home-page "https://cran.r-project.org/package=CIpostSelect")
+    (home-page "https://github.com/Diallo0/CIpostSelect")
     (synopsis "Confidence Interval Post-Selection of Variable")
     (description
      "Calculates confidence intervals after variable selection using repeated data
@@ -44699,6 +44768,33 @@ distribution.  For more details, see section 9.2.3 of Casella and Berger (2002)
 <ISBN:0534243126>.")
     (license license:expat)))
 
+(define-public r-cdf
+  (package
+    (name "r-cdf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDF" version))
+       (sha256
+        (base32 "1ipajrc29wjq2gi4pxc5ds2vhq3a6z7yg7vd8ikfnymmyvfbmp1j"))))
+    (properties `((upstream-name . "CDF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixstats))
+    (home-page "https://cran.r-project.org/package=CDF")
+    (synopsis "Centroid Decision Forest for High-Dimensional Classification")
+    (description
+     "This package implements the Centroid Decision Forest (CDF) as a single
+user-facing function @code{CDF()}.  The method selects discriminative features
+via a multi-class class separability score (CSS), splits by nearest class
+centroid, and aggregates tree votes to produce predictions and class
+probabilities.  Returns CSS-based feature importance as well.  Amjad Ali, Saeed
+Aldahmani, Zardad Khan (2025) <doi:10.48550/@code{arXiv.2503.19306>}.")
+    (license license:expat)))
+
 (define-public r-cder
   (package
     (name "r-cder")
@@ -51130,13 +51226,13 @@ the Kenya Health Information System <https://hiskenya.org> in a consistent way."
 (define-public r-cancerradarr
   (package
     (name "r-cancerradarr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancerradarr" version))
        (sha256
-        (base32 "13byqbhgcc6mfccqss3vm2hdn95nykz8wf57nvsj4904l036kxnv"))))
+        (base32 "09wzqiw9z0gni965hf2v7swp6liqyw92zlsn9qkblyzxlzz5bflw"))))
     (properties `((upstream-name . "cancerradarr")))
     (build-system r-build-system)
     (arguments

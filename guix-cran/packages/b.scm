@@ -23995,32 +23995,6 @@ about the bias formula used are in Lunardon, N., Scharfstein, D. (2017)
 <doi:10.1002/sim.7366>.")
     (license license:gpl2)))
 
-(define-public r-bcfrailph
-  (package
-    (name "r-bcfrailph")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bcfrailph" version))
-       (sha256
-        (base32 "0qq885wfd7sr8cjxygw33l321q7jk4b6996p0j6inzlwycs8d6bc"))))
-    (properties `((upstream-name . "bcfrailph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=bcfrailph")
-    (synopsis "Semiparametric Bivariate Correlated Frailty Models Fit")
-    (description
-     "Fit and simulate a semiparametric bivariate correlated frailty models with
-proportional hazard structure.  Frailty distributions, such as gamma and
-lognormal models are supported.  Bivariate gamma fit is obtained using the
-approach given in Iachine (1995) and lognormal fit is based on the approach by
-Ripatti and Palmgren (2000) <doi:10.1111/j.0006-341X.2000.01016.x>.")
-    (license license:gpl2+)))
-
 (define-public r-bcf
   (package
     (name "r-bcf")

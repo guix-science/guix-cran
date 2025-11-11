@@ -10067,13 +10067,13 @@ package.")
 (define-public r-inlajoint
   (package
     (name "r-inlajoint")
-    (version "24.3.25")
+    (version "25.11.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAjoint" version))
        (sha256
-        (base32 "03hd29x8arww3fkyzgj8wv1b0sm5nl994bmg6m2sb4xg00slhp05"))))
+        (base32 "120cal4asm94cql6xzdp97lz4q3k0mzmh86hypncq4zbhdiqpwh3"))))
     (properties `((upstream-name . "INLAjoint")))
     (build-system r-build-system)
     (arguments
@@ -10085,10 +10085,10 @@ package.")
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-numderiv
                              r-nlme
-                             r-mvtnorm
                              r-matrix
                              r-lme4
-                             r-ggplot2))
+                             r-ggplot2
+                             r-data-table))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/DenisRustand/INLAjoint")
     (synopsis

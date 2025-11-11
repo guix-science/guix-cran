@@ -7517,51 +7517,6 @@ API. Alteryx Promote is available at the URL:
 <https://www.alteryx.com/products/alteryx-promote>.")
     (license (license:fsdg-compatible "FreeBSD"))))
 
-(define-public r-promor
-  (package
-    (name "r-promor")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "promor" version))
-       (sha256
-        (base32 "0cpf6946522lhnsr6fxm8ppvq69vjpkx7p7p0chx7kibc9ivb1ia"))))
-    (properties `((upstream-name . "promor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-viridis
-                             r-vim
-                             r-statmod
-                             r-reshape2
-                             r-proc
-                             r-pcamethods
-                             r-naivebayes
-                             r-missforest
-                             r-limma
-                             r-kernlab
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/caranathunge/promor")
-    (synopsis "Proteomics Data Analysis and Modeling Tools")
-    (description
-     "This package provides a comprehensive, user-friendly package for label-free
-proteomics data analysis and machine learning-based modeling.  Data generated
-from @code{MaxQuant} can be easily used to conduct differential expression
-analysis, build predictive models with top protein candidates, and assess model
-performance.  promor includes a suite of tools for quality control,
-visualization, missing data imputation (Lazar et.  al. (2016)
-<doi:10.1021/acs.jproteome.5b00981>), differential expression analysis (Ritchie
-et.  al. (2015) <doi:10.1093/nar/gkv007>), and machine learning-based modeling
-(Kuhn (2008) <doi:10.18637/jss.v028.i05>).")
-    (license license:lgpl2.1+)))
-
 (define-public r-prometheetools
   (package
     (name "r-prometheetools")
@@ -9915,22 +9870,22 @@ the model in the presence of incomplete datasets.")
 (define-public r-prioritizr
   (package
     (name "r-prioritizr")
-    (version "8.0.6")
+    (version "8.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prioritizr" version))
        (sha256
-        (base32 "1calig2j27nqps39892dgbc9xhch7z2w2b2g5m3h1pk3fnmvdl55"))))
+        (base32 "05nwnqi615n9vix0aqmi6iczri25l3vlcb6kiwawkjrzf5d3a81p"))))
     (properties `((upstream-name . "prioritizr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
+                             r-units
                              r-tibble
                              r-terra
-                             r-slam
                              r-sf
                              r-rlang
                              r-rcpparmadillo
@@ -9968,7 +9923,7 @@ and the @code{cplexAPI} R package (available at
 (available at <https://github.com/dirkschumacher/rcbc>) can be used to generate
 solutions using the CBC optimization software
 (<https://github.com/coin-or/Cbc>).  For further details, see Hanson et al.
-(2024) <doi:10.1111/cobi.14376>.")
+(2025) <doi:10.1111/cobi.14376>.")
     (license license:gpl3)))
 
 (define-public r-prioriactions
@@ -23258,13 +23213,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "0km4spcc31xvfgw9y25chhckynmbgs0367xsyp55mdm2z5sy75l4"))))
+        (base32 "0k9hfibh0i1270qj6l9j1raw6zc3ws24nikwns4fh8q97ydznq5h"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -36467,6 +36422,35 @@ generalized factor models.")
 two-samples t-tests in a multivariate framework.")
     (license license:gpl2+)))
 
+(define-public r-pecan
+  (package
+    (name "r-pecan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pecan" version))
+       (sha256
+        (base32 "1s4balhkirzw3d7zbpl10jlb7ra193hnrq7fm06f1i3sq0qryr3k"))))
+    (properties `((upstream-name . "pecan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-rdpack r-dplyr))
+    (home-page "https://github.com/Carol-seven/pecan")
+    (synopsis "Portfolio for Economic Complexity Analysis and Navigation")
+    (description
+     "This package provides a portfolio of tools for economic complexity analysis and
+industrial upgrading navigation.  The package implements essential measures in
+international trade and development economics, including the relative
+comparative advantage (RCA), economic complexity index (ECI) and product
+complexity index (PCI).  It enables users to analyze export structures, explore
+product relatedness, and identify potential upgrading paths grounded in economic
+theory, following the framework in Hausmann et al. (2014)
+<doi:10.7551/mitpress/9647.001.0001>.")
+    (license license:gpl3+)))
+
 (define-public r-pec
   (package
     (name "r-pec")
@@ -41737,13 +41721,13 @@ result.")
 (define-public r-partialnetwork
   (package
     (name "r-partialnetwork")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PartialNetwork" version))
        (sha256
-        (base32 "1qdy1nvri354klkbyryglfg5l69abnvj32bvxdpfmacqmkazgd0a"))))
+        (base32 "15gx7zjhnxdn6bj8z8y7s9i8gwgxg2sbb1fzyy0ypg6idci6x639"))))
     (properties `((upstream-name . "PartialNetwork")))
     (build-system r-build-system)
     (arguments
@@ -41772,7 +41756,7 @@ Spatial Autoregressive (SAR) model (see @code{LeSage}, 1997
 <doi:10.1016/j.jeconom.2008.12.021>), while assuming that only a partial
 information about the network structure is available.  Examples are when the
 adjacency matrix is not fully observed or when only consistent estimation of the
-network formation model is available (see Boucher and Houndetoungan
+network formation model is available (see Boucher and Houndetoungan, 2025
 <doi:10.48550/@code{arXiv.2509.08145>}).")
     (license license:gpl3)))
 
@@ -42098,45 +42082,6 @@ on the analysis of poverty.  References, Fattore M. (2016)
 <doi:10.1007/s11205-016-1501-4> Arcagni A. (2017)
 <doi:10.1007/978-3-319-45421-4_19>.")
     (license license:gpl2+)))
-
-(define-public r-parquetize
-  (package
-    (name "r-parquetize")
-    (version "0.5.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "parquetize" version))
-       (sha256
-        (base32 "0vmvjycyw4kihdx13wgi8qbynnaic96wgvw2hhdjz8fjrg1lb9sy"))))
-    (properties `((upstream-name . "parquetize")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-rsqlite
-                             r-rlang
-                             r-readr
-                             r-lifecycle
-                             r-jsonlite
-                             r-haven
-                             r-glue
-                             r-fst
-                             r-dplyr
-                             r-dbi
-                             r-curl
-                             r-cli
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://ddotta.github.io/parquetize/")
-    (synopsis "Convert Files to Parquet Format")
-    (description
-     "Collection of functions to get files in parquet format.  Parquet is a columnar
-storage file format <https://parquet.apache.org/>.  The files to convert can be
-of several formats (\"csv\", \"RData\", \"rds\", \"RSQLite\", \"json\", \"ndjson\", \"SAS\",
-\"SPSS\"...).")
-    (license license:asl2.0)))
 
 (define-public r-parqr
   (package

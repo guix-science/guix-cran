@@ -13165,6 +13165,34 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
 <https://anndata.readthedocs.io/en/latest/fileformat-prose.html>.")
     (license license:expat)))
 
+(define-public r-hdf5lib
+  (package
+    (name "r-hdf5lib")
+    (version "1.14.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdf5lib" version))
+       (sha256
+        (base32 "0qxlngrrlwqcv9dfv5ra3f5qx40vcifvlgd03fn6y9rii912d7hb"))))
+    (properties `((upstream-name . "hdf5lib")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/cmmr/hdf5lib")
+    (synopsis "Headers and Static Libraries for 'HDF5'")
+    (description
+     "HDF5 (Hierarchical Data Format 5) is a high-performance library and file format
+for storing and managing large, complex data.  This package provides the static
+libraries and headers for the HDF5 C library (release 1.14.6).  It is intended
+for R package developers to use in the @code{LinkingTo} field, which eliminates
+the need for users to install system-level HDF5 dependencies.  This build is
+compiled with thread-safety enabled and supports dynamic loading of external
+compression filters.  HDF5 is developed by The HDF Group
+<https://www.hdfgroup.org/>.")
+    (license license:expat)))
+
 (define-public r-hdd
   (package
     (name "r-hdd")

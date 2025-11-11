@@ -328,13 +328,13 @@ academic year.")
 (define-public r-vvcanvas
   (package
     (name "r-vvcanvas")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvcanvas" version))
        (sha256
-        (base32 "1dljkig8mlzn33p91958awp0hn4l34c5x46whhhpfr2cfiz4gif4"))))
+        (base32 "172ab2ad51rd4byp1b4wdmj182dry2czr4qxvmxjizhqr5j1wq3f"))))
     (properties `((upstream-name . "vvcanvas")))
     (build-system r-build-system)
     (arguments

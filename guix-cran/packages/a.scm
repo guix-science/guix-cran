@@ -4568,13 +4568,13 @@ area-to-area (co)Kriging and area-to-point (co)Kriging.")
 (define-public r-ataforecasting
   (package
     (name "r-ataforecasting")
-    (version "0.0.60")
+    (version "0.0.61")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ATAforecasting" version))
        (sha256
-        (base32 "0q21dg4p9xw28r3q0ayf2bvwwyccilw93849x4c7k82xpyfnwvpb"))))
+        (base32 "1wwlz87asfdkpd1gdxv8jcsnbaj2298lah4xdpb2q22slrx7128x"))))
     (properties `((upstream-name . "ATAforecasting")))
     (build-system r-build-system)
     (arguments
@@ -4591,7 +4591,7 @@ area-to-area (co)Kriging and area-to-point (co)Kriging.")
                              r-rcpparmadillo
                              r-rcpp
                              r-forecast))
-    (home-page "https://github.com/alsabtay/ATAforecasting")
+    (home-page "https://alsabtay.github.io/ATAforecasting/")
     (synopsis
      "Automatic Time Series Analysis and Forecasting using the Ata Method")
     (description

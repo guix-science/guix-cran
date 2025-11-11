@@ -1480,32 +1480,6 @@ without contamination and non-normal populations (Henrique J. P. Alves & Daniel
 F. Ferreira (2019) <DOI: 10.1080/03610918.2019.1693596>).")
     (license license:gpl2)))
 
-(define-public r-tvmediation
-  (package
-    (name "r-tvmediation")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tvmediation" version))
-       (sha256
-        (base32 "082lw56yhlb6nj7srdinim1hgvb8szzb3gp2y985115qgdypbv6n"))))
-    (properties `((upstream-name . "tvmediation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-locpol r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dcoffman/tvmediation/wiki")
-    (synopsis "Time Varying Mediation Analysis")
-    (description
-     "This package provides functions for estimating mediation effects that vary over
-time as described in Cai X, Coffman DL, Piper ME, Li R. Estimation and inference
-for the mediation effect in a time-varying mediation model.  BMC Med Res
-Methodol.  2022;22(1):1-12.")
-    (license license:gpl3)))
-
 (define-public r-tvmcomp
   (package
     (name "r-tvmcomp")
@@ -2243,13 +2217,13 @@ players.")
 (define-public r-tugboat
   (package
     (name "r-tugboat")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tugboat" version))
        (sha256
-        (base32 "1a4w7f37p6wz1plv50ks5ivww2b9wlz6q92wh90bj2aw2zp02lji"))))
+        (base32 "0nklxhw19ggh7bdjp7im1ww55cv39pmxnv6raj1ifnqvzfcdbiwb"))))
     (properties `((upstream-name . "tugboat")))
     (build-system r-build-system)
     (arguments
@@ -13888,6 +13862,30 @@ variations.")
     (description "Language specific cardinal to ordinal number conversion.")
     (license license:gpl3)))
 
+(define-public r-toon
+  (package
+    (name "r-toon")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toon" version))
+       (sha256
+        (base32 "051l3ck7kbm0vryr1qa9kz0jg3vrvisxf4kwwb8sn9allqkq62sg"))))
+    (properties `((upstream-name . "toon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/laresbernardo/toon")
+    (synopsis "Token-Oriented Object Notation (TOON)")
+    (description
+     "Token-Oriented Object Notation (TOON) is a compact, human-readable serialization
+format designed for passing structured data to Large Language Models with
+significantly reduced token usage.  It's intended for LLM input as a lossless,
+drop-in representation of JSON data.")
+    (license license:expat)))
+
 (define-public r-toomanycellsr
   (package
     (name "r-toomanycellsr")
@@ -21296,6 +21294,33 @@ for several different changepoint detection algorithms.  We also provide
 consistent numerical and graphical reporting leveraging the broom and ggplot2
 packages.")
     (license license:gpl3+)))
+
+(define-public r-tidycensuskr
+  (package
+    (name "r-tidycensuskr")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidycensuskr" version))
+       (sha256
+        (base32 "0hivfy64a52al1nwqj1nrgr5gfz9dc1ck8nwd1qlg0vzradw81c2"))))
+    (properties `((upstream-name . "tidycensuskr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-sf r-rlang r-kosis r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sigmafelix/tidycensuskr")
+    (synopsis "Easy Access for South Korea Census Data and Boundaries")
+    (description
+     "Census and administrative data in South Korea are a basic source of quantitative
+and mixed-methods research for social and urban scientists.  This package
+provides a sf (Pebesma et al., 2024 <doi:10.32614/CRAN.package.sf>) based
+standardized workflow based on direct open API access to the major census and
+administrative data sources and pre-generated files in South Korea.")
+    (license license:expat)))
 
 (define-public r-tidycensus
   (package

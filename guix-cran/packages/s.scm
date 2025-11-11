@@ -21170,13 +21170,13 @@ Puente-SÃ¡nchez et al., (2020) <doi:10.1186/s12859-020-03703-2>.")
 (define-public r-sqltargets
   (package
     (name "r-sqltargets")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sqltargets" version))
        (sha256
-        (base32 "1wncxgjcaxn8dqc78vpqmp0hv7hvmyhp8i32k0992wrmvnghh1l3"))))
+        (base32 "1lhsg1jd27flxay6dc86zv243w2y1gynpmihq70cngandkq9spvv"))))
     (properties `((upstream-name . "sqltargets")))
     (build-system r-build-system)
     (arguments
@@ -50996,13 +50996,13 @@ interactively.")
 (define-public r-shinyoauth
   (package
     (name "r-shinyoauth")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyOAuth" version))
        (sha256
-        (base32 "13i9yyn815biciygnkwg3xjpgnciyxi4dq3w2pgqg27jbiwvcna9"))))
+        (base32 "15rkqqlwjhjzyy0ixyqf8c796b2v9qqf37q21ndikpqqf7cfpwyd"))))
     (properties `((upstream-name . "shinyOAuth")))
     (build-system r-build-system)
     (arguments
@@ -57830,13 +57830,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.3.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "0j7743lv27c20hw3hsy8r840cchjaagy0viyz4n376mrqmqzyjsz"))))
+        (base32 "0v965x5k6bm3ybdcz9nrr5ikfx46b3lm2iwasgiv0hhnr4dhmdab"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -60785,13 +60785,13 @@ technique.  Runtime examples are provided in the package function as well as at
 (define-public r-semdeep
   (package
     (name "r-semdeep")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMdeep" version))
        (sha256
-        (base32 "148vdwf6nazc20y9ix71z1l30c7kamn2lk1ai35yifq28fw17r07"))))
+        (base32 "1019l4lm56gnh3n8bz3rd5s5sbdcq7iq6sgfdgp0gxcpnd27gv3d"))))
     (properties `((upstream-name . "SEMdeep")))
     (build-system r-build-system)
     (arguments
@@ -60803,19 +60803,16 @@ technique.  Runtime examples are provided in the package function as well as at
                              r-rpart
                              r-ranger
                              r-progress
-                             r-nnet
+                             r-parabar
                              r-neuralnettools
                              r-lavaan
                              r-kernelshap
                              r-igraph
-                             r-glmnet
-                             r-foreach
-                             r-dosnow
                              r-corpcor
-                             r-cito))
+                             r-coro))
     (home-page "https://github.com/BarbaraTarantino/SEMdeep")
     (synopsis
-     "Structural Equation Modeling with Deep Neural Network and Machine Learning")
+     "Structural Equation Modeling with Deep Neural Network and Machine Learning Algorithms")
     (description
      "Training and validation of a custom (or data-driven) Structural Equation Models
 using layer-wise Deep Neural Networks or node-wise Machine Learning algorithms,
@@ -71451,13 +71448,13 @@ drafted reports.")
 (define-public r-saros
   (package
     (name "r-saros")
-    (version "1.5.4")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saros" version))
        (sha256
-        (base32 "0ygb0wdj8jm1452dm34vgdbgwrm0025igl0skkypimrzcbrg8qdb"))))
+        (base32 "1mv3dy12777bwhwak13wxkh4macasy55ynp880q7panf9xmjrvav"))))
     (properties `((upstream-name . "saros")))
     (build-system r-build-system)
     (arguments

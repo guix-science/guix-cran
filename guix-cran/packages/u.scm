@@ -5376,13 +5376,13 @@ block feature selection.")
 (define-public r-ubair
   (package
     (name "r-ubair")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ubair" version))
        (sha256
-        (base32 "17ddfphgr8j45ig0d6hbsyv6rnyf87g3wnqjl8qhv18rx25rjkvl"))))
+        (base32 "1fh7jfv9prznm7slnvgz0spy6j5f7pgk0lhz91wfnvjcgf5s6890"))))
     (properties `((upstream-name . "ubair")))
     (build-system r-build-system)
     (arguments

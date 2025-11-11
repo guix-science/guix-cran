@@ -772,24 +772,26 @@ see Beck and Hagy (2015) <doi:10.1007/s10666-015-9452-8> for details.")
 (define-public r-wrswor
   (package
     (name "r-wrswor")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrswoR" version))
        (sha256
-        (base32 "1q0nc08q8f3kl9yvcivzylykk1ar5j5dw3ian2y9nrzgzri5l10i"))))
+        (base32 "0f8lbpypik0vl7dldpgviyqigc1qgf74g2l2xj5r0g01vl9826k1"))))
     (properties `((upstream-name . "wrswoR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-logging))
-    (home-page "http://krlmlr.github.io/wrswoR")
+    (home-page "http://krlmlr.github.io/wrswoR/")
     (synopsis "Weighted Random Sampling without Replacement")
     (description
      "This package provides a collection of implementations of classical and novel
-algorithms for weighted sampling without replacement.")
+algorithms for weighted sampling without replacement.  Implementations include
+the algorithm of Efraimidis and Spirakis (2006) <doi:10.1016/j.ipl.2005.11.003>
+and Wong and Easton (1980) <doi:10.1137/0209009>.")
     (license license:gpl3)))
 
 (define-public r-wrss
@@ -2209,6 +2211,32 @@ Taxonomic Backbone is an updated version of The Plant List
 (<http://www.theplantlist.org/>), a working list of plant names that has become
 static since 2013.")
     (license license:gpl3)))
+
+(define-public r-worldbank
+  (package
+    (name "r-worldbank")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "worldbank" version))
+       (sha256
+        (base32 "00z43is79jipxlczb2pgscj85ybfnpmf60nm1157vbbl7xq8c4il"))))
+    (properties `((upstream-name . "worldbank")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2))
+    (home-page "https://m-muecke.github.io/worldbank/")
+    (synopsis
+     "Client for World Banks's 'Indicators' and 'Poverty and Inequality Platform (PIP)' APIs")
+    (description
+     "Download and search data from the World Bank Indicators API', which provides
+access to nearly 16,000 time series indicators.  See
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation>
+for further details about the API.")
+    (license license:expat)))
 
 (define-public r-workspace
   (package

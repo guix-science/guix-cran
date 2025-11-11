@@ -67,50 +67,6 @@ Originally published by the New Zealand Police at
 <http://www.police.govt.nz/about-us/publication/road-policing-driver-offence-data-january-2009-december-2017>.")
     (license license:cc0)))
 
-(define-public r-nzilbb-vowels
-  (package
-    (name "r-nzilbb-vowels")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nzilbb.vowels" version))
-       (sha256
-        (base32 "0gqm31s2jk1j126cqzzgwll06y30i689alpiha3ancjy776h3i6y"))))
-    (properties `((upstream-name . "nzilbb.vowels")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-smacof
-                             r-rstudioapi
-                             r-rsample
-                             r-rlang
-                             r-rdpack
-                             r-purrr
-                             r-patchwork
-                             r-magrittr
-                             r-lifecycle
-                             r-glue
-                             r-ggrepel
-                             r-ggplot2
-                             r-gghalves
-                             r-forcats
-                             r-dplyr))
-    (home-page "https://nzilbb.github.io/nzilbb_vowels/")
-    (synopsis "Vowel Covariation Tools")
-    (description
-     "This package provides tools to support research on vowel covariation.  Methods
-are provided to support Principal Component Analysis workflows (as in Brand et
-al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
-<doi:10.1515/lingvan-2022-0086>).")
-    (license license:expat)))
-
 (define-public r-nzilbb-labbcat
   (package
     (name "r-nzilbb-labbcat")
@@ -13931,13 +13887,13 @@ clones.The model is based on the estimation result from Andrew Roth (2014)
 (define-public r-netgwas
   (package
     (name "r-netgwas")
-    (version "1.14.3")
+    (version "1.14.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netgwas" version))
        (sha256
-        (base32 "1id90w27h6z458ibkndnp7hp6wx0yffq9ywj4b2lkf5g4nwcwz23"))))
+        (base32 "112514b467fmrpzxjb7vmch9f0bmsd4zjya7ilkiarrkn5gl89v1"))))
     (properties `((upstream-name . "netgwas")))
     (build-system r-build-system)
     (arguments

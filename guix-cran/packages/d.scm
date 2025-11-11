@@ -15924,19 +15924,19 @@ be satisfied without penalization.  Yu and Rosenbaum (2019)
 (define-public r-dipm
   (package
     (name "r-dipm")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipm" version))
        (sha256
-        (base32 "0xvwh2myj0k6dzlm041axwg4q7z66pkxb0fam8n9xyd1aag0svyn"))))
+        (base32 "1d3xn0wsihiwhyj1r5m1p4wycvv87c4yqzlj2mh78pbkljbryx84"))))
     (properties `((upstream-name . "dipm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-partykit r-ggplot2))
+    (propagated-inputs (list r-survival r-rlang r-partykit r-ggplot2))
     (home-page "https://cran.r-project.org/package=dipm")
     (synopsis "Depth Importance in Precision Medicine (DIPM) Method")
     (description
@@ -20323,13 +20323,13 @@ any practical use.")
 (define-public r-devianlm
   (package
     (name "r-devianlm")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devianLM" version))
        (sha256
-        (base32 "1sprqc75ij33yx9p8sqqs8cycx2kdvzxwi36fx7znn5crgg9fc18"))))
+        (base32 "0kfck6v4mnq8g5swbc20n284h532ljwmnhjpjajnw41cm9fqri0p"))))
     (properties `((upstream-name . "devianLM")))
     (build-system r-build-system)
     (arguments
