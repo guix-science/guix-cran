@@ -164,6 +164,41 @@ arrangements (e.g., multiple baseline), annotations (e.g., brackets, arrows),
 and output formats (e.g., svg, rasters).")
     (license license:gpl3+)))
 
+(define-public r-fwtraits
+  (package
+    (name "r-fwtraits")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fwtraits" version))
+       (sha256
+        (base32 "00g2nfygidf10qlxv61llv1cpvdbzkqn3a6vbxcqhaazcq7ll7w4"))))
+    (properties `((upstream-name . "fwtraits")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-rstudioapi r-r-cache r-jsonlite r-httr2 r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AnthonyBasooma/fwtraits")
+    (synopsis
+     "Extract Species Ecological Parameters from Www.freshwaterecology.info")
+    (description
+     "Support the extraction and seamless integration of species ecological traits or
+preferences from the www.freshwaterecology.info into several ecological model
+workflows.  During data extraction, different taxonomic levels are acceptable,
+including species, genus, and family, based on the availability of data in the
+database.  The data is cached after the first search and can be accessed during
+and after online interactions.  Only scientific names are acceptable in the
+search; local or English names are not allowed.  A user API key is required to
+start using the package.")
+    (license license:gpl3+)))
+
 (define-public r-fwsim
   (package
     (name "r-fwsim")
@@ -3864,13 +3899,13 @@ which for many rows contain all 1's.")
 (define-public r-fsinr
   (package
     (name "r-fsinr")
-    (version "2.0.9")
+    (version "2.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FSinR" version))
        (sha256
-        (base32 "1w4ibpr8r4df454sg7lzpfqbfpqbl0ydm7wv2n026c67hllj4ykn"))))
+        (base32 "14mk6y9igvg4nw3905b88y978rdd6cv5bkpacpfknl8j05pxvv3n"))))
     (properties `((upstream-name . "FSinR")))
     (build-system r-build-system)
     (arguments
@@ -7724,13 +7759,13 @@ result sets and time-series analysis of island performance.  The API endpoint is
 (define-public r-fortls
   (package
     (name "r-fortls")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FORTLS" version))
        (sha256
-        (base32 "1cfxcj8ivpbbsnjgwba7bv6r0pwp2kiv8i50rxlfb82jw46hr6xk"))))
+        (base32 "0fcmm28vbvnz35xibrcig9vw4l2vkbz43x6yb97kml5i9661686f"))))
     (properties `((upstream-name . "FORTLS")))
     (build-system r-build-system)
     (arguments
@@ -7752,7 +7787,6 @@ result sets and time-series analysis of island performance.  The API endpoint is
                              r-moments
                              r-lidr
                              r-htmlwidgets
-                             r-glue
                              r-distance
                              r-dbscan
                              r-data-table))
@@ -11218,13 +11252,13 @@ R script for reproducibility.  Reference: Key (2025)
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "0d4p1gv6c8zpzds90pkchbxzblrnaxjri5yd83sh636yl4d0pfxz"))))
+        (base32 "1cvzk59v80iy09q2snhim04ai3ljg0qsb2wdn0s9spwy56c51mk0"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
@@ -15834,6 +15868,39 @@ as well as the package vignette.")
 information about 5-digit or 2-digit US FIPS codes.")
     (license license:expat)))
 
+(define-public r-fiora
+  (package
+    (name "r-fiora")
+    (version "0.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fioRa" version))
+       (sha256
+        (base32 "1jzbcl1pksans8qliq0v9cn05jnswv6q6qzbm2bxb2i3ijm8v9qb"))))
+    (properties `((upstream-name . "fioRa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waiter
+                             r-shinyjs
+                             r-shiny
+                             r-rcdk
+                             r-interpretmsspectrum
+                             r-golem
+                             r-config
+                             r-bslib))
+    (home-page "https://github.com/janlisec/fioRa")
+    (synopsis "Mass-Spectra Prediction Using the FIORA Model")
+    (description
+     "This package provides a wrapper for the python module FIORA as well as a
+shiny'-App to facilitate data processing and visualization.  FIORA allows to
+predict Mass-Spectra based on the SMILES code of chemical compounds.  It is
+described in the Nature Communications article by Nowatzky (2025)
+<doi:10.1038/s41467-025-57422-4>.")
+    (license license:expat)))
+
 (define-public r-fio
   (package
     (name "r-fio")
@@ -20267,29 +20334,6 @@ brings a certain loss of flexibility, but also a gain of simplicity.  The
 package name came from the French \"Fouille de DonnÃ©es en Master 2 Informatique
 DÃ©cisionnelle\".")
     (license license:gpl3)))
-
-(define-public r-fdicdata
-  (package
-    (name "r-fdicdata")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fdicdata" version))
-       (sha256
-        (base32 "116i6r65n3kqp0mpy6y1krcap03q965hp1vpc765iphflpv9ysf6"))))
-    (properties `((upstream-name . "fdicdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml r-httr r-dplyr))
-    (home-page "https://github.com/visbanking/fdicdata")
-    (synopsis "Accessing FDIC Bank Data")
-    (description
-     "Retrieves financial data from Federal Deposit Insurance Corporation
-(FDIC)-insured institutions and provides access to the FDIC data taxonomy.")
-    (license license:expat)))
 
 (define-public r-fdesigns
   (package

@@ -16,6 +16,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages haskell-xyz)
@@ -1200,13 +1201,13 @@ vignette for more, including full details of citations.")
 (define-public r-cvdprevent
   (package
     (name "r-cvdprevent")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvdprevent" version))
        (sha256
-        (base32 "11wrxsqv7p2fbv9qqc3mmcd6j07g8a1f3sl3ma2g2dlkxs6cnjch"))))
+        (base32 "0j5kbhph4y0a3xx63n296gzsh6xn31skqpz5wrw10mp21w1zy22l"))))
     (properties `((upstream-name . "cvdprevent")))
     (build-system r-build-system)
     (arguments
@@ -15577,13 +15578,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "1pimc0lr2bsb2g1cj747vcscizdj6nifmqn8sxqfx8gqz5m1q9bp"))))
+        (base32 "0v3v5k1r13z6vxl4aygp7xfymayd2pn6j89nq3l8grwvbj6vji6s"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -17013,13 +17014,13 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contingencytables" version))
        (sha256
-        (base32 "0fy5rrwkas8rxvl08vvhxzcdddkhd3qy9fxxx0sgjw034k3fps3h"))))
+        (base32 "13i225h5rfgqrq7fymi2pcgi11hfpj9nw1cacs8zdgh56rgrr7l2"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (arguments
@@ -22741,13 +22742,13 @@ presence of a misclassified binary mediator\"
 (define-public r-comix
   (package
     (name "r-comix")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COMIX" version))
        (sha256
-        (base32 "0dhc3zb8jkfq8b9vj8m2a9jbd9fc7xxvhz16l8xhz9v5iffgk6hh"))))
+        (base32 "0810m8v0lx2qr8dsyp7c9f8w6rclxwsn0q2261ar7j9qmigvz3d0"))))
     (properties `((upstream-name . "COMIX")))
     (build-system r-build-system)
     (arguments
@@ -22773,7 +22774,7 @@ presence of a misclassified binary mediator\"
     (description
      "Bayesian fit of a Dirichlet Process Mixture with hierarchical multivariate skew
 normal kernels and coarsened posteriors.  For more information, see Gorsky, Chan
-and Ma (2020) <@code{arXiv:2001.06451>}.")
+and Ma (2024) <doi:10.1214/22-BA1356>.")
     (license license:cc0)))
 
 (define-public r-comire
@@ -50656,6 +50657,37 @@ read <https://shreddr.captricity.com/developer/overview/>.")
      "Git hook scripts are useful for identifying simple issues before submission to
 code review.  captain (hook) is an R package to manage and run git pre-commit
 hooks.")
+    (license license:expat)))
+
+(define-public r-capsule
+  (package
+    (name "r-capsule")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Capsule" version))
+       (sha256
+        (base32 "1y4brwlv7pz4bad94nmm3152makhbdy09ygzp9fczdsk1bwbbp33"))))
+    (properties `((upstream-name . "Capsule")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-renv r-jsonlite r-digest r-cli))
+    (home-page "https://cran.r-project.org/package=Capsule")
+    (synopsis
+     "Comprehensive Reproducibility Framework for R and Bioinformatics Analysis")
+    (description
+     "This package provides a comprehensive reproducibility framework designed for R
+and bioinformatics workflows.  Automatically captures the entire analysis
+environment including R session info, package versions, external tool versions
+('Samtools', STAR', BWA', etc.), conda environments, reference genomes, data
+provenance with smart checksumming for large files, parameter choices, random
+seeds, and hardware specifications.  Generates executable scripts with Docker',
+Singularity', and renv configurations.  Integrates with workflow managers
+('Nextflow', Snakemake', WDL', CWL') to ensure complete reproducibility of
+computational research workflows.")
     (license license:expat)))
 
 (define-public r-capo4sim

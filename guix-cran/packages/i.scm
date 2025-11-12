@@ -3400,6 +3400,34 @@ Classification of Occupations which is used to organise information on labour
 and jobs.")
     (license license:gpl2+)))
 
+(define-public r-iscam
+  (package
+    (name "r-iscam")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISCAM" version))
+       (sha256
+        (base32 "02vp5h08c6hr0czcsysr4c294y6yih9qkn43xxgx8qf7yyifr61p"))))
+    (properties `((upstream-name . "ISCAM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://iscam4.github.io/ISCAM/")
+    (synopsis
+     "Companion to the Book \"Investigating Statistical Concepts, Applications, and Methods\"")
+    (description
+     "Introductory statistics methods to accompany \"Investigating Statistical
+Concepts, Applications, and Methods\" (ISCAM) by Beth Chance & Allan Rossman
+(2024) <https://rossmanchance.com/iscam4/>.  Tools to introduce statistical
+concepts with a focus on simulation approaches.  Functions are verbose, designed
+to provide ample output for students to understand what each function does.
+Additionally, most functions are accompanied with plots.  The package is
+designed to be used in an educational setting alongside the ISCAM textbook.")
+    (license license:expat)))
+
 (define-public r-isca
   (package
     (name "r-isca")

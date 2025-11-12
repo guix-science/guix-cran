@@ -14332,6 +14332,34 @@ knowledge.")
 Beancount'.")
     (license license:expat)))
 
+(define-public r-ledecomp
+  (package
+    (name "r-ledecomp")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LEdecomp" version))
+       (sha256
+        (base32 "1a1v0galy1mj31cri4viszwaaqc4q02rvpi8qgw2d73nyiax12kq"))))
+    (properties `((upstream-name . "LEdecomp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-numderiv r-ggplot2 r-demodecomp
+                             r-data-table))
+    (home-page "https://github.com/timriffe/LEdecomp")
+    (synopsis "Decompose Life Expectancy by Age (and Cause)")
+    (description
+     "This package provides a set of all-cause and cause-specific life expectancy
+sensitivity and decomposition methods, including Arriaga (1984)
+<doi:10.2307/2061029>, others documented by Ponnapalli (2005)
+<doi:10.4054/@code{DemRes.2005.12.7>}, lifetable, numerical, and other
+algorithmic approaches such as Horiuchi et al (2008) <doi:10.1353/dem.0.0033>,
+or Andreev et al (2002) <doi:10.4054/@code{DemRes.2002.7.14>}.")
+    (license license:gpl3)))
+
 (define-public r-leastcostpath
   (package
     (name "r-leastcostpath")

@@ -23,6 +23,7 @@
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages gtk)
@@ -731,13 +732,13 @@ Welch's t-test.")
 (define-public r-pwr4exp
   (package
     (name "r-pwr4exp")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwr4exp" version))
        (sha256
-        (base32 "01a2b1vkz9hcm7p1gp2b5sh202gkxgwz1h6dbrv79kfdl3anvjhz"))))
+        (base32 "0crxmi07l7nsf9c37yyzvlr1qsaqz1mi47rbrgdix424maaqyn64"))))
     (properties `((upstream-name . "pwr4exp")))
     (build-system r-build-system)
     (arguments
@@ -6336,13 +6337,13 @@ Proteome Discover can be easily used due to flexibility of functions.")
 (define-public r-protrackr2
   (package
     (name "r-protrackr2")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProTrackR2" version))
        (sha256
-        (base32 "0rl0qs7q4jpc90q47fvcf3j8rx6j6kbw8j2lwn4w3ll9g33gigkb"))))
+        (base32 "02c813nxx2wzx6igrpxh4ac2gbl6csr0mb7jlfxc31ajai4fpyi3"))))
     (properties `((upstream-name . "ProTrackR2")))
     (build-system r-build-system)
     (arguments
@@ -7516,6 +7517,51 @@ variables (e.g. start of a month).")
 API. Alteryx Promote is available at the URL:
 <https://www.alteryx.com/products/alteryx-promote>.")
     (license (license:fsdg-compatible "FreeBSD"))))
+
+(define-public r-promor
+  (package
+    (name "r-promor")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "promor" version))
+       (sha256
+        (base32 "028rbx2q84fyj4f42q5r9pn6ym8pbiwarckmd56hkz9j73jzn0k0"))))
+    (properties `((upstream-name . "promor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-viridis
+                             r-vim
+                             r-statmod
+                             r-reshape2
+                             r-proc
+                             r-pcamethods
+                             r-naivebayes
+                             r-missforest
+                             r-limma
+                             r-kernlab
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/caranathunge/promor")
+    (synopsis "Proteomics Data Analysis and Modeling Tools")
+    (description
+     "This package provides a comprehensive, user-friendly package for label-free
+proteomics data analysis and machine learning-based modeling.  Data generated
+from @code{MaxQuant} can be easily used to conduct differential expression
+analysis, build predictive models with top protein candidates, and assess model
+performance.  promor includes a suite of tools for quality control,
+visualization, missing data imputation (Lazar et.  al. (2016)
+<doi:10.1021/acs.jproteome.5b00981>), differential expression analysis (Ritchie
+et.  al. (2015) <doi:10.1093/nar/gkv007>), and machine learning-based modeling
+(Kuhn (2008) <doi:10.18637/jss.v028.i05>).")
+    (license license:lgpl2.1+)))
 
 (define-public r-prometheetools
   (package
@@ -13135,13 +13181,13 @@ precision-recall curves.  Saito and Rehmsmeier (2015)
 (define-public r-praznik
   (package
     (name "r-praznik")
-    (version "11.0.0")
+    (version "12.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praznik" version))
        (sha256
-        (base32 "18b5n5s5kra6fcgafxji8kznpp8gvlslrkrdshjvqzf3s25gzmn6"))))
+        (base32 "0lvq1nk5c5vq6xa8dvd0b2w3gwq2z1bm08hhnxxzqvasmzzk1zn4"))))
     (properties `((upstream-name . "praznik")))
     (build-system r-build-system)
     (arguments
@@ -14911,6 +14957,45 @@ days 8 to 14, days 15 to 21, and days 22 to 28, 29, 30, or 31, where TS=4
 corresponds to a 1-month length moving window (calculated 4 times per month) and
 TS=48 corresponds to a 12-month length moving window (calculated 4 times per
 month).")
+    (license license:expat)))
+
+(define-public r-powerprior
+  (package
+    (name "r-powerprior")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powerprior" version))
+       (sha256
+        (base32 "1pfkip3mv2g73i5wign34xab2c11hqcn9lsr58cn0q2g39dpyr5z"))))
+    (properties `((upstream-name . "powerprior")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shiny
+                             r-rlang
+                             r-mass
+                             r-laplacesdemon
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=powerprior")
+    (synopsis "Conjugate Power Priors for Bayesian Analysis of Normal Data")
+    (description
+     "This package implements conjugate power priors for efficient Bayesian analysis
+of normal data.  Power priors allow principled incorporation of historical
+information while controlling the degree of borrowing through a discounting
+parameter (Ibrahim and Chen (2000) <doi:10.1214/ss/1009212519>).  This package
+provides closed-form conjugate representations for both univariate and
+multivariate normal data using Normal-Inverse-Chi-squared and
+Normal-Inverse-Wishart distributions, eliminating the need for MCMC sampling.
+The conjugate framework builds upon standard Bayesian methods described in
+Gelman et al. (2013, ISBN:978-1439840955).")
     (license license:expat)))
 
 (define-public r-powerpls
@@ -28698,13 +28783,13 @@ sequence of binary splits).")
 (define-public r-phyr
   (package
     (name "r-phyr")
-    (version "1.1.0")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phyr" version))
        (sha256
-        (base32 "0jvjxvxx2nz9ra9vp00bmm3dxr2am4zs8cvxij8w4jjyskznxc96"))))
+        (base32 "145lqcmby5hqdhxa1admd6y3ajn5bf5wm3z1ay1q24zgjk49kg03"))))
     (properties `((upstream-name . "phyr")))
     (build-system r-build-system)
     (arguments
@@ -33369,46 +33454,6 @@ R.D.P.(2022)<doi:10.21704/rfp.v37i3.1956>.")
      "This package provides a friendly API for sequence iteration and set
 comprehension.")
     (license license:gpl2)))
-
-(define-public r-peruflorads43
-  (package
-    (name "r-peruflorads43")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "peruflorads43" version))
-       (sha256
-        (base32 "0p5x4dvy9rgzmzxlgr282lfi0yf3m78zi14ch145qqhv7sldrd0n"))))
-    (properties `((upstream-name . "peruflorads43")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-memoise
-                             r-fuzzyjoin
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PaulESantos/peruflorads43")
-    (synopsis
-     "Check Threatened Plant Species Status Against Peru's DS 043-2006-AG")
-    (description
-     "This package provides tools to match plant species names against the official
-threatened species list of Peru (Supreme Decree DS 043-2006-AG, 2006).
-Implements a hierarchical matching pipeline with exact, fuzzy, and suffix
-matching algorithms to handle nomenclatural variations and taxonomic changes.
-Supports both the original 2006 nomenclature and updated taxonomic names,
-allowing users to check protection status regardless of nomenclatural changes
-since the decree's publication.  Threat categories follow IUCN standards (CR,
-EN, VU, NT).")
-    (license license:expat)))
 
 (define-public r-peruapis
   (package
@@ -38522,29 +38567,6 @@ squares estimator.  E.J. Tchetgen Tchetgen, A. Ying, Y. Cui, X. Shi, and W.
 Miao. (2020).  An Introduction to Proximal Causal Learning. @code{arXiv}
 e-prints, @code{arXiv-2009} <@code{arXiv:2009.10982>}.")
     (license license:gpl2+)))
-
-(define-public r-pcirt
-  (package
-    (name "r-pcirt")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pcIRT" version))
-       (sha256
-        (base32 "0crll51s14nisnaxjln7bc3b1a181v358nfkh1p5iiyn98clacl6"))))
-    (properties `((upstream-name . "pcIRT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-combinat))
-    (home-page "https://github.com/christinehohensinn/pcIRT")
-    (synopsis "IRT Models for Polytomous and Continuous Item Responses")
-    (description
-     "Estimates the multidimensional polytomous Rasch model (Rasch, 1961) with
-conditional maximum likelihood estimation.")
-    (license license:gpl3)))
 
 (define-public r-pci
   (package

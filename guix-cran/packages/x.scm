@@ -547,19 +547,19 @@ described in package XR and in the book \"Extending R\".")
 (define-public r-xring
   (package
     (name "r-xring")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xRing" version))
        (sha256
-        (base32 "1k4yhqvmixnjvzbw1ymq4brwn9n71vqsqpqw33p79kn98n4fj7z0"))))
+        (base32 "0msjw3bkn4fjdjvd1kq22qv7yybg6fynvaim1b4ap6p44d6hxzrz"))))
     (properties `((upstream-name . "xRing")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tkrplotr r-tcltk2 r-imager r-dplr))
+    (propagated-inputs (list r-tkrplotr r-imager r-dplr))
     (home-page "https://cran.r-project.org/package=xRing")
     (synopsis
      "Identify and Measure Tree Rings on X-Ray Micro-Density Profiles")

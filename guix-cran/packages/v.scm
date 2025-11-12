@@ -49,6 +49,31 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-vws
+  (package
+    (name "r-vws")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vws" version))
+       (sha256
+        (base32 "0nkgz9gi8zlg48p152vi3y2zzs0w75z1lyddrqb1winr6agiyqj1"))))
+    (properties `((upstream-name . "vws")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-fntl))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/andrewraim/vws")
+    (synopsis "Vertical Weighted Strips")
+    (description
+     "This package provides a reference implementation of the Vertical Weighted Strips
+method explored by Raim, Livsey, and Irimata (2025)
+<doi:10.48550/@code{arXiv.2401.09696>} for rejection sampling.")
+    (license license:expat)))
+
 (define-public r-vwpre
   (package
     (name "r-vwpre")
@@ -8278,19 +8303,19 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 (define-public r-varoc
   (package
     (name "r-varoc")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varoc" version))
        (sha256
-        (base32 "0ndkvggr86ynrzj4xh721qmif3xd9q56ah95jpy9m3ixjbdvy0jx"))))
+        (base32 "12g4mbfdpbb5qbh0fdq15rrr49yrl7r32inbw5znlisisf358ssk"))))
     (properties `((upstream-name . "varoc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-proc r-corrplot))
+    (propagated-inputs (list r-proc r-plot3d))
     (home-page "https://cran.r-project.org/package=varoc")
     (synopsis "Value Added Receiver Operating Characteristics Curve")
     (description

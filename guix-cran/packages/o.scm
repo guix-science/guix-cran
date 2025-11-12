@@ -6,6 +6,7 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages curl)
@@ -10084,6 +10085,40 @@ Ontario between 1917 and 2018.  Counts of fewer than 5 names were suppressed for
 privacy.")
     (license license:expat)))
 
+(define-public r-onam
+  (package
+    (name "r-onam")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ONAM" version))
+       (sha256
+        (base32 "0510w0qcn73hys1z4s7hsc2aqas16gy9i6h5an68r77iiyj3qsl5"))))
+    (properties `((upstream-name . "ONAM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-reticulate
+                             r-proc
+                             r-keras3
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=ONAM")
+    (synopsis
+     "Fitting Interpretable Neural Additive Models Using Orthogonalization")
+    (description
+     "An algorithm for fitting interpretable additive neural networks for identifiable
+and visualizable feature effects using post hoc orthogonalization.  Fit custom
+neural networks intuitively using established R formula notation, including
+interaction effects of arbitrary order while preserving identifiability to
+enable a functional decomposition of the prediction function.  For more details
+see Koehler et al. (2025) <doi:10.1038/s44387-025-00033-7>.")
+    (license license:expat)))
+
 (define-public r-onage
   (package
     (name "r-onage")
@@ -10381,13 +10416,13 @@ functionality is supported.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "0bw2qy0ra21zvwck4gq6842vss0wh849xxcxaqkr40bmwvw8ac68"))))
+        (base32 "1363drawj4kmyfy55jjcnaqvrnk37yspchagv1xl4np0v6l9x0aj"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments
@@ -10727,6 +10762,32 @@ by goodness-of-fit statistics or user-designation, are used for outlier
 nomination.  Two implementations of the Cosine Similarity Outlier Detection
 algorithm are provided with flexible parameters for dataset customization.")
     (license license:gpl2)))
+
+(define-public r-omicsprepr
+  (package
+    (name "r-omicsprepr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicsPrepR" version))
+       (sha256
+        (base32 "1ymmin7xqlyllsk7vypnj90frsbkpabdk7v6rfd68mfkaxa74lg3"))))
+    (properties `((upstream-name . "OmicsPrepR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/ikemillar/OmicsPrepR")
+    (synopsis "Unified Preprocessing Toolkit for Proteomics and Metabolomics")
+    (description
+     "This package provides unified workflows for quality control, normalization, and
+visualization of proteomic and metabolomic data.  The package simplifies
+preprocessing through automated imputation, scaling, and principal component
+analysis (PCA)-based exploratory analysis, enabling researchers to prepare omics
+datasets efficiently for downstream statistical and machine learning analyses.")
+    (license license:gpl3)))
 
 (define-public r-omicspls
   (package

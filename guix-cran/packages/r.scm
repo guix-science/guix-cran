@@ -30,6 +30,7 @@
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages dotnet)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages mpi)
@@ -30311,13 +30312,13 @@ interactions and their lower order terms.")
 (define-public r-rfriend
   (package
     (name "r-rfriend")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfriend" version))
        (sha256
-        (base32 "00xfba6vmwylba328kz3qadck6pss5gy5yiyz5kj5paingwcnkfc"))))
+        (base32 "0pz50hrvimscipym8b9fqggjjx8sjp4f6xwbwfiddkcis4l3kqx8"))))
     (properties `((upstream-name . "rfriend")))
     (build-system r-build-system)
     (arguments
@@ -36790,6 +36791,38 @@ with fewer PCA factors.  References: Yuri Balasanov (2017) <https://ilykei.com>.
 importance of predictors in a linear or generalized linear model, and a couple
 of useful Tcl/Tk widgets.")
     (license license:gpl2+)))
+
+(define-public r-reliashiny
+  (package
+    (name "r-reliashiny")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReliaShiny" version))
+       (sha256
+        (base32 "097xjfvd0ilbj2lgmvsi4a59l70gzjgh2n5mm8a0wv0mcwyirna4"))))
+    (properties `((upstream-name . "ReliaShiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weibullr
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shiny
+                             r-reliaplotr
+                             r-reliagrowr
+                             r-magrittr))
+    (home-page "https://paulgovan.github.io/ReliaShiny/")
+    (synopsis "'Shiny' App for Reliability Analysis")
+    (description
+     "An interactive web application for reliability analysis using the shiny
+<https://shiny.posit.co/> framework.  The app provides an easy-to-use interface
+for performing reliability analysis using @code{WeibullR}
+<https://cran.r-project.org/package=@code{WeibullR>} and @code{ReliaGrowR}
+<https://cran.r-project.org/package=@code{ReliaGrowR>}.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-reliar
   (package

@@ -10,6 +10,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages multiprecision)
@@ -17183,13 +17184,13 @@ al. (2009) <https://pmc.ncbi.nlm.nih.gov/articles/PMC2730180/>,
 (define-public r-bimets
   (package
     (name "r-bimets")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bimets" version))
        (sha256
-        (base32 "01p8y0ickr2lx6vbmzjar21jqnvanc3m8ljfi7amz1bpbyavxxqy"))))
+        (base32 "1f4mxrj46q02yl4c9582f3m6r93wm4s2lss2ysb4s5dr7m0f4v5b"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
     (arguments
@@ -17811,6 +17812,52 @@ particular for the Sequence Kernel Association Test (SKAT) used in genomics
 <doi:10.1002/gepi.22136>.  Also provides stochastic singular value decomposition
 for dense or sparse matrices.")
     (license license:gpl2)))
+
+(define-public r-bigplscox
+  (package
+    (name "r-bigplscox")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigPLScox" version))
+       (sha256
+        (base32 "1h0f0yz06054y34vha7h6fszi71r35wxqq2msyjcx7m6d3zmfd5y"))))
+    (properties `((upstream-name . "bigPLScox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-survcomp
+                             r-survauc
+                             r-sgpls
+                             r-rms
+                             r-risksetroc
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-kernlab
+                             r-foreach
+                             r-doparallel
+                             r-caret
+                             r-bigsurvsgd
+                             r-bigmemory
+                             r-bigalgebra
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/bigPLScox/")
+    (synopsis "Partial Least Squares for Cox Models with Big Matrices")
+    (description
+     "This package provides Partial least squares Regression and various regular,
+sparse or kernel, techniques for fitting Cox models for big data.  Provides a
+Partial Least Squares (PLS) algorithm adapted to Cox proportional hazards models
+that works with bigmemory matrices without loading the entire dataset in memory.
+ Also implements a gradient-descent based solver for Cox proportional hazards
+models that works directly on bigmemory matrices.  Bertrand and Maumy (2023)
+<https://hal.science/hal-05352069>, and <https://hal.science/hal-05352061>
+highlighted fitting and cross-validating PLS-based Cox models to censored big
+data.")
+    (license license:gpl3)))
 
 (define-public r-bigpcacpp
   (package
@@ -22180,13 +22227,13 @@ Also	supports plotting and comparing data.")
 (define-public r-beeguts
   (package
     (name "r-beeguts")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeGUTS" version))
        (sha256
-        (base32 "0sdd5k10hq6winh2jhlh87ramryfkrp608nhrhm6pc871g2fmg2r"))))
+        (base32 "0g6n077fy07vy50ngggr1jxzrlfjiqrr1xcqm7jcd0a89s2azfgi"))))
     (properties `((upstream-name . "BeeGUTS")))
     (build-system r-build-system)
     (arguments
@@ -29122,13 +29169,13 @@ meta-analysis.")
 (define-public r-bayeschange
   (package
     (name "r-bayeschange")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesChange" version))
        (sha256
-        (base32 "0wi025iphbz262rc0ashsvyl86fki0fx52a8h209h4lyh0a5x2n5"))))
+        (base32 "1bdpgfs1wlzilrz086ayqpifq5yjz0649vd48lsm9vpisna84l7x"))))
     (properties `((upstream-name . "BayesChange")))
     (build-system r-build-system)
     (arguments
@@ -30767,6 +30814,41 @@ expansions in modeling functions that do not otherwise support them.  Along with
 the basis expansions, a number of kernel functions are also provided, which
 support kernel arithmetic to form new kernels.  Basic ridge regression
 functionality is included as well.")
+    (license license:expat)))
+
+(define-public r-baserater
+  (package
+    (name "r-baserater")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baserater" version))
+       (sha256
+        (base32 "0yjwzl877mbxnl2px88s95ich90cgzn2bvxc8imq85ng79adxn3p"))))
+    (properties `((upstream-name . "baserater")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-readr
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://jeremie-beucler.github.io/baserater/")
+    (synopsis
+     "Base-Rate Item Evaluation and Typicality Scoring Using Large Language Models")
+    (description
+     "Download typicality rating datasets, generate new stereotype-based typicality
+ratings using large language models via the Inference Providers API
+(<https://huggingface.co/docs/inference-providers>), and evaluate them against
+human-annotated validation data.  Also includes functions to extract stereotype
+strength and base-rate items from typicality matrices.  For more details see
+Beucler et al. (2025) <doi:10.31234/osf.io/eqrfu_v1>.")
     (license license:expat)))
 
 (define-public r-baseq

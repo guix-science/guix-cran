@@ -11,6 +11,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages base)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages web)
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
@@ -11991,6 +11992,46 @@ number and frequency of shared types in two populations) in biological or
 ecological systems.")
     (license license:gpl3+)))
 
+(define-public r-divine
+  (package
+    (name "r-divine")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DIVINE" version))
+       (sha256
+        (base32 "1sgvmglxl1fazzrpwfxcmxyq04x5k3z0daqwy4yi296a4awf50b0"))))
+    (properties `((upstream-name . "DIVINE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-openxlsx
+                             r-haven
+                             r-gtsummary
+                             r-ggplot2
+                             r-fmsb
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://bruigtp.github.io/DIVINE/")
+    (synopsis "Curated Datasets and Tools for Epidemiological Data Analysis")
+    (description
+     "Curated datasets and intuitive data management functions to streamline
+epidemiological data workflows.  It is designed to support researchers in
+quickly accessing clean, structured data and applying essential cleaning,
+summarizing, visualization, and export operations with minimal effort.  Whether
+you're preparing a cohort for analysis or creating reports, DIVINE makes the
+process more efficient, transparent, and reproducible.")
+    (license license:gpl3+)))
+
 (define-public r-divest
   (package
     (name "r-divest")
@@ -16735,13 +16776,13 @@ non-linear regression procedures based on generalized logistic regression models
 (define-public r-difm
   (package
     (name "r-difm")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIFM" version))
        (sha256
-        (base32 "126yn0kj6znpigxg7hsmpn67149mgl1nzv6zp772cwd8pdwpyklw"))))
+        (base32 "1cdjrc2gghw3c7yjzl7rpxn57blcd6kw7m7nm4kkk1dqc498ri9r"))))
     (properties `((upstream-name . "DIFM")))
     (build-system r-build-system)
     (arguments
@@ -27661,13 +27702,13 @@ under the Double Chain Ladder framework by Martinez-Miranda, Nielsen and Verrall
 (define-public r-dcifer
   (package
     (name "r-dcifer")
-    (version "1.2.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcifer" version))
        (sha256
-        (base32 "1pibkybr2v1qci2vqbz1sms01y81x0i4r2sq23c5xkgwnwccfy9r"))))
+        (base32 "11c048vai2kka6npchgqp29d90r240yz5bjxq0fs36212jy3psmd"))))
     (properties `((upstream-name . "dcifer")))
     (build-system r-build-system)
     (arguments
@@ -33433,13 +33474,13 @@ polytree structure rather than a simple path.")
 (define-public r-dagassist
   (package
     (name "r-dagassist")
-    (version "0.2.4")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAGassist" version))
        (sha256
-        (base32 "0zck6pc292imsi3njhqnfk5l4yl08hpjmmzh3f5iy9kbb3c2vkp6"))))
+        (base32 "1ss8zbzj5knw11n0pf70gnsvfqldmcvvi4g1h6k75h700pj4hhkj"))))
     (properties `((upstream-name . "DAGassist")))
     (build-system r-build-system)
     (arguments
@@ -33447,6 +33488,9 @@ polytree structure rather than a simple path.")
       #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-dotwhisker
                              r-dagitty
                              r-crayon
                              r-cli
@@ -33455,14 +33499,15 @@ polytree structure rather than a simple path.")
     (home-page "https://github.com/grahamgoff/DAGassist")
     (synopsis "Test Robustness with Directed Acyclic Graphs")
     (description
-     "This package provides robustness checks driven by directed acyclic graphs
-(DAGs).  Given a dagitty DAG object and a model specification, DAGassist
-classifies variables by causal roles, flags problematic controls, and generates
-a report comparing the original model with minimal and canonical adjustment
-sets.  Exports publication-grade reports in @code{LaTeX}', Word', Excel', or
-plain text.  DAGassist is built on dagitty', an R package that uses the DAGitty
-web tool (<https://dagitty.net/>) for creating and analyzing DAGs.  Methods draw
-on Pearl (2009) <doi:10.1017/CBO9780511803161> and Textor et al. (2016)
+     "This package provides robustness checks to align estimands with the
+identification that they require.  Given a dagitty object and a model
+specification, DAGassist classifies variables by causal roles, flags problematic
+controls, and generates a report comparing the original model with minimal and
+canonical adjustment sets.  Exports publication-grade reports in @code{LaTeX}',
+Word', Excel', dotwhisker', or plain text/'markdown'.  DAGassist is built on
+dagitty', an R package that uses the DAGitty web tool (<https://dagitty.net/>)
+for creating and analyzing DAGs.  Methods draw on Pearl (2009)
+<doi:10.1017/CBO9780511803161> and Textor et al. (2016)
 <doi:10.1093/ije/dyw341>.")
     (license license:gpl2+)))
 

@@ -19,6 +19,7 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages sqlite)
@@ -26301,13 +26302,13 @@ arbitrary text input.")
 (define-public r-acro
   (package
     (name "r-acro")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acro" version))
        (sha256
-        (base32 "08fmfz171dmfiwv5dhvjn3fy4g8qb7sfhcvjxbwwhpshp6m7r3n0"))))
+        (base32 "0r0zm7nxlfw09gyygv5nc8wk9h8wqsnhmxq3dqj0nmvf8yv2hkgc"))))
     (properties `((upstream-name . "acro")))
     (build-system r-build-system)
     (arguments

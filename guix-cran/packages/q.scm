@@ -405,13 +405,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-quollr
   (package
     (name "r-quollr")
-    (version "0.3.13")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quollr" version))
        (sha256
-        (base32 "00a48wadl3b8s9bshbww1wm5mvybk1c842b2jblgdh6hv5x3x8r9"))))
+        (base32 "171ibs6hj9s5cyh9yjpnpvjbwizqkkapj723s9hpjbh23g4f4rvm"))))
     (properties `((upstream-name . "quollr")))
     (build-system r-build-system)
     (arguments
@@ -2076,13 +2076,13 @@ quanteda package and are specially designed for sparse textual data.")
 (define-public r-quanteda-textplots
   (package
     (name "r-quanteda-textplots")
-    (version "0.96")
+    (version "0.96.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textplots" version))
        (sha256
-        (base32 "0hvjf584aaffbcj603ml3vxga1887djs9vnyirs4g5ggvdk97b6z"))))
+        (base32 "1r1a9kkwm5pj2g7h48bjpshigzjy4sjyyzip8ydg3ip0n67v2dxn"))))
     (properties `((upstream-name . "quanteda.textplots")))
     (build-system r-build-system)
     (arguments
@@ -2796,19 +2796,18 @@ more details, see DâAndrea et al. (2024) <doi:10.21105/joss.06500>.")
 (define-public r-quadform
   (package
     (name "r-quadform")
-    (version "0.0-2")
+    (version "0.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quadform" version))
        (sha256
-        (base32 "0w01v688xfb9zl7yr2prr9hwpylbx2cc8qwidxkzyzxzk21ywdn3"))))
+        (base32 "0gwibw61jnqvwifzydjkfdiws80j4gpfgr60kjz9xdxi9c418bry"))))
     (properties `((upstream-name . "quadform")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mathjaxr))
     (home-page "https://github.com/RobinHankin/quadform")
     (synopsis "Efficient Evaluation of Quadratic Forms")
     (description

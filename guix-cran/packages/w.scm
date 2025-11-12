@@ -482,6 +482,37 @@ studying community synchrony.  See, for instance, Sheppard et al (2016) <doi:
 Sheppard et al (2019) <doi: 10.1371/journal.pcbi.1006744>.")
     (license license:gpl3)))
 
+(define-public r-wstdiff
+  (package
+    (name "r-wstdiff")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wstdiff" version))
+       (sha256
+        (base32 "10ivk556vg450fp6mhsp16nnvg7fq83jiq61n43npx60s45ayvxv"))))
+    (properties `((upstream-name . "wstdiff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wstdiff")
+    (synopsis
+     "Welch-Satterthwaite Approximation for t-Distribution Differences")
+    (description
+     "This package implements the Welch-Satterthwaite approximation for differences of
+non-standardized t-distributed random variables in both univariate and
+multivariate settings.  The package provides methods for computing effective
+degrees of freedom and scale parameters, as well as distribution functions for
+the approximated difference distribution.  The methodology extends the classical
+Welch-Satterthwaite framework from variance combinations to t-distribution
+differences through careful moment matching.  Methods build on the classical
+Welch-Satterthwaite approach described in Welch (1947)
+<doi:10.1093/biomet/34.1-2.28> and Satterthwaite (1946) <doi:10.2307/3002019>.")
+    (license license:expat)))
+
 (define-public r-wsrf
   (package
     (name "r-wsrf")
@@ -8370,13 +8401,13 @@ model.")
 (define-public r-wbids
   (package
     (name "r-wbids")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbids" version))
        (sha256
-        (base32 "1hqjm08lqbfx20iwzq1909565flnk5ifis9d16sxbk9pk3c75ywy"))))
+        (base32 "0s7bhdkm1583mspg96kd4hpqmv6jf8c71bfn373wm07b85s00zmx"))))
     (properties `((upstream-name . "wbids")))
     (build-system r-build-system)
     (arguments

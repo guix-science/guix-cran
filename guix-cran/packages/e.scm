@@ -3743,6 +3743,47 @@ R.")
 <https://exampa.net/>.")
     (license license:expat)))
 
+(define-public r-examly
+  (package
+    (name "r-examly")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "examly" version))
+       (sha256
+        (base32 "0ghd5l93j0m9cx4hmjwr2h1hj1czh3ynpq79dlml2nmc6hgvp74h"))))
+    (properties `((upstream-name . "examly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shiny
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-officer
+                             r-magrittr
+                             r-jsonlite
+                             r-htmltools
+                             r-glue
+                             r-flextable
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahmetcaliskan1987/examly")
+    (synopsis "Statistical Metrics and Reporting Tool")
+    (description
+     "This package provides a Shiny'-based toolkit for item/test analysis.  It is
+designed for multiple-choice, true-false, and open-ended questions.  The toolkit
+is usable with datasets in 1-0 or other formats.  Key analyses include
+difficulty, discrimination, response-option analysis, reports.  The classical
+test theory methods used are described in Ebel & Frisbie (1991,
+ISBN:978-0132892314).")
+    (license license:expat)))
+
 (define-public r-exametrika
   (package
     (name "r-exametrika")
@@ -5667,6 +5708,31 @@ Ken Monzingo (2005) \"Hand and Suit Patterns\"
 <http://web2.acbl.org/documentlibrary/teachers/celebritylessons/handpatternsrevised.pdf>Ken
 Monzingo (2005) \"Hand and Suit Patterns\"
 <http://web2.acbl.org/documentlibrary/teachers/celebritylessons/handpatternsrevised.pdf>.")
+    (license license:gpl2+)))
+
+(define-public r-eve
+  (package
+    (name "r-eve")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eve" version))
+       (sha256
+        (base32 "1miyh27fpa0q2ban4cq7slk27bx54m6phl4jjr12z1vkj18jlpl9"))))
+    (properties `((upstream-name . "eve")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=eve")
+    (synopsis "The Eigenvalues Entropy as a Classifier Evaluation Measure")
+    (description
+     "The confusion matrix (CM) is used to get a classifier's evaluation measure in
+order to select a method among many.  A stochastic matrix and its transformation
+are computed from the CM. The eigenvalues of the transformed symmetric matrix
+are used to get an entropy which appears to be a good evaluation measure.  Many
+other measures, commonly used, are provided for comparison purpose.")
     (license license:gpl2+)))
 
 (define-public r-evdbayes
@@ -22233,19 +22299,19 @@ variables.")
 (define-public r-ecotraj
   (package
     (name "r-ecotraj")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecotraj" version))
        (sha256
-        (base32 "09y9a6vsm7g8x7bah92bdn18zc61khkzxn7jvmqyyimmgkfnwhq2"))))
+        (base32 "0rhj4sjpvy3lfg4ixgw2bm2vbg16jyvxryr58qi7wx34qhigp1rz"))))
     (properties `((upstream-name . "ecotraj")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-mass r-kendall))
+    (propagated-inputs (list r-rcpp r-mass))
     (home-page "https://emf-creaf.github.io/ecotraj/")
     (synopsis "Ecological Trajectory Analysis")
     (description

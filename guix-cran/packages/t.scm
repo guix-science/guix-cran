@@ -11,6 +11,7 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
@@ -10739,13 +10740,13 @@ for 3-dimensional trajectories. @code{McLean} & Skowron Volponi (2018)
 (define-public r-trajmsm
   (package
     (name "r-trajmsm")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajmsm" version))
        (sha256
-        (base32 "0a4sxbci46ijcmkbl92xbgvn5r9vd0s3b6ipw6qv3x2sw6f1r242"))))
+        (base32 "0zwxhya5v33h7cmpl49csdg5hdcj55zlrm0z3y0678h2lq555vr0"))))
     (properties `((upstream-name . "trajmsm")))
     (build-system r-build-system)
     (arguments
@@ -18737,6 +18738,48 @@ convenient way of visualizing terra objects with ggplot2'.")
      "This package provides a tidy interface to data.table', giving users the speed of
 data.table while using tidyverse-like syntax.")
     (license license:expat)))
+
+(define-public r-tidysynthesis
+  (package
+    (name "r-tidysynthesis")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidysynthesis" version))
+       (sha256
+        (base32 "0v2jq10nmkrpjlnnprh33v6aa0jbd49qsq1y61w9x1ngicwy3qi7"))))
+    (properties `((upstream-name . "tidysynthesis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-vctrs
+                             r-tune
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-progressr
+                             r-pillar
+                             r-parsnip
+                             r-forcats
+                             r-extdist
+                             r-dplyr
+                             r-dapper))
+    (home-page "https://ui-research.github.io/tidysynthesis-documentation/")
+    (synopsis "Common API for Synthesizing Data")
+    (description
+     "This package provides a system built on tidymodels for generating synthetic
+tabular data.  We provide tools for ordering a sequential synthesis, feature and
+target engineering, sampling, hyperparameter tuning, enforcing constraints, and
+adding extra noise during a synthesis.")
+    (license license:gpl3)))
 
 (define-public r-tidysynth
   (package

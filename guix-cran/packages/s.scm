@@ -20,6 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages java)
   #:use-module (gnu packages docker)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
   #:use-module (gnu packages geo)
@@ -39327,13 +39328,13 @@ profiles.")
 (define-public r-slope
   (package
     (name "r-slope")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLOPE" version))
        (sha256
-        (base32 "12cvbfn50mlbk829x4aj87ydi30z22kqn9dl5ijjdzzj0xppazfg"))))
+        (base32 "0ppjpvjpk7ryjcj081sjcj9phhggarbjqvmc0ir0miwa6zdxmp8v"))))
     (properties `((upstream-name . "SLOPE")))
     (build-system r-build-system)
     (arguments
@@ -39981,21 +39982,19 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "0z5336zv8mp3q8a78x77rwg7wwkk9i435qc663njz0lidiy2q45y"))))
+        (base32 "00zrjkxk8ga5agzhy90767cgd9qxri31bpgl0kxn1zb9c3b1zyrv"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-shinywidgets
-                             r-shiny
                              r-scales
                              r-reticulate
                              r-readr
@@ -51123,13 +51122,13 @@ with tailwind <https://tailwindcss.com/>.")
 (define-public r-shinymrp
   (package
     (name "r-shinymrp")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinymrp" version))
        (sha256
-        (base32 "1n88g5gi048yb1xidr4spmh4w3140cr92qhyzic23kd1ph354vd8"))))
+        (base32 "1vgdx8ha2kvdsd2vfr8ylm009zklg7x27mlkgcr2n6l2xrrxf8fj"))))
     (properties `((upstream-name . "shinymrp")))
     (build-system r-build-system)
     (arguments
@@ -51146,7 +51145,7 @@ with tailwind <https://tailwindcss.com/>.")
                              r-readr
                              r-rcolorbrewer
                              r-r6
-                             r-qs
+                             r-qs2
                              r-purrr
                              r-posterior
                              r-patchwork
@@ -61458,6 +61457,47 @@ Dabholkar (1999
 selection index method.")
     (license license:gpl3+)))
 
+(define-public r-selectboost-beta
+  (package
+    (name "r-selectboost-beta")
+    (version "0.4.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SelectBoost.beta" version))
+       (sha256
+        (base32 "10ggyr28sinzbhh3nz79s3d52pav11nvghs0zh7yaihamviw7zd6"))))
+    (properties `((upstream-name . "SelectBoost.beta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-glmnet
+                             r-gamlss-dist
+                             r-gamlss
+                             r-betareg))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/SelectBoost.beta/")
+    (synopsis
+     "Stability-Selection via Correlated Resampling for Beta-Regression Models")
+    (description
+     "Adds variable-selection functions for Beta regression models (both mean and phi
+submodels) so they can be used within the @code{SelectBoost} algorithm.
+Includes stepwise AIC, BIC, and corrected AIC on @code{betareg()} fits,
+gamlss'-based LASSO/Elastic-Net, a pure glmnet iterative re-weighted least
+squares-based selector with an optional standardization speedup, and C++ helpers
+for iterative re-weighted least squares working steps and precision updates.
+Also provides a @code{fastboost_interval()} variant for interval responses,
+comparison helpers, and a flexible simulator @code{simulation_DATA.beta()} for
+interval-valued data.  For more details see Bertrand and Maumy (2023)
+<doi:10.7490/f1000research.1119552.1>.")
+    (license license:gpl3)))
+
 (define-public r-selectboost
   (package
     (name "r-selectboost")
@@ -63911,6 +63951,42 @@ and of the original and adjusted self-determination or relative autonomy index.
 SDT was introduced by Deci and Ryan (1985) <doi:10.1007/978-1-4899-2271-7>.  See
 package?SDT for an overview.")
     (license license:gpl2+)))
+
+(define-public r-sdstudio
+  (package
+    (name "r-sdstudio")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdstudio" version))
+       (sha256
+        (base32 "1yncbanwcllv11xhvy0cdqw21jff3k3c7n6kqd3s747yrbi92wrf"))))
+    (properties `((upstream-name . "sdstudio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-surveydown
+                             r-shinyace
+                             r-shiny
+                             r-rpostgres
+                             r-pool
+                             r-later
+                             r-htmltools
+                             r-dt
+                             r-dotenv
+                             r-dbi
+                             r-bslib))
+    (home-page "https://sdstudio.surveydown.org")
+    (synopsis "Companion Application for the 'surveydown' Survey Platform")
+    (description
+     "Companion package that supports the surveydown survey platform
+(<https://surveydown.org>).  The default method for working with a surveydown
+survey is to edit the plain text survey.qmd and app.R files.  With sdstudio',
+you can create, preview and manage surveys with a shiny application as a
+graphical user interface.")
+    (license license:expat)))
 
 (define-public r-sdsfun
   (package

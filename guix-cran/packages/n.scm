@@ -17,6 +17,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -17783,13 +17784,13 @@ dataframe-friendly format.")
 (define-public r-naryn
   (package
     (name "r-naryn")
-    (version "2.6.30")
+    (version "2.6.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naryn" version))
        (sha256
-        (base32 "0d4w1y6g2dzcs98x7lqnhjadzqcrw2wvn5lbkbsrs1xkf23z6rjh"))))
+        (base32 "0q6hsa9x08rzrh545cp4m9kdsf0dr69qsxq1xr55yzbyxqwjpqkj"))))
     (properties `((upstream-name . "naryn")))
     (build-system r-build-system)
     (arguments

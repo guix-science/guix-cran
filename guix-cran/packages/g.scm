@@ -16,6 +16,7 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages web)
   #:use-module (gnu packages graphviz)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages java)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages version-control)
@@ -21778,6 +21779,37 @@ test for association/correlation between paired samples.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-ggincerta
+  (package
+    (name "r-ggincerta")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggincerta" version))
+       (sha256
+        (base32 "143hvynxwybbfvxc7wpl6cw76ns5m7wylm7arf9x1fcr0ag5k1nx"))))
+    (properties `((upstream-name . "ggincerta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-gtable
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/maggiexma/ggincerta")
+    (synopsis
+     "Extend 'ggplot2' with Layers and Scales for Spatial Uncertainty Visualization")
+    (description
+     "Provide specialized ggplot2 layers and scales for spatial uncertainty
+visualization, including bivariate choropleth maps, pixel maps, glyph maps, and
+exceedance probability maps.")
+    (license license:expat)))
+
 (define-public r-ggimg
   (package
     (name "r-ggimg")
@@ -37596,29 +37628,35 @@ data using an interactive lollipop diagram in RStudio or your web browser.")
 (define-public r-g2sd
   (package
     (name "r-g2sd")
-    (version "2.1.5")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "G2Sd" version))
        (sha256
-        (base32 "165i6x2k56vwhk5p2p5m9vjmp9flblsapjdlz7nw9b719l6xz5zk"))))
+        (base32 "18zjy0149448dkyzndrcwvjq036998myx62b8x0q8z64j0x2l1lr"))))
     (properties `((upstream-name . "G2Sd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xlsxjars
-                             r-xlsx
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-shinywidgets
                              r-shiny
-                             r-rjava
-                             r-reshape2
-                             r-ggplot2))
+                             r-scales
+                             r-plotly
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr
+                             r-bslib))
     (home-page "https://cran.r-project.org/package=G2Sd")
     (synopsis "Grain-Size Statistics and Description of Sediment")
     (description
      "Full descriptive statistics, physical description of sediment, metric or phi
-sieves.")
+sieves.  Includes a Shiny web application for interactive grain size analysis
+and visualization.")
     (license license:gpl3)))
 
 (define-public r-g-ridge

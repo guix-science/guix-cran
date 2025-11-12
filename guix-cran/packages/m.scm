@@ -21,6 +21,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages xml)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages geo)
@@ -86,13 +87,13 @@ decomposition of total effect.")
 (define-public r-mytai
   (package
     (name "r-mytai")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myTAI" version))
        (sha256
-        (base32 "03bkl7jlb7n3mcy088sw4dp16cnjc1q08axqdsqkg6z331m65vw9"))))
+        (base32 "1zdgj54h3iy88gjxknh5zhjl9qmh48fxd2p8r6kwh2r5wmybhzqh"))))
     (properties `((upstream-name . "myTAI")))
     (build-system r-build-system)
     (arguments
@@ -5855,6 +5856,53 @@ comprises ongoing work.  Currently only continuous mediators and outcomes are
 supported.  Factors for any predictors must be numerically represented.")
     (license license:gpl3)))
 
+(define-public r-multilevelcoda
+  (package
+    (name "r-multilevelcoda")
+    (version "1.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multilevelcoda" version))
+       (sha256
+        (base32 "0dghrrqng1fas1zb3lnfha48ha6zcawx6fwbgaqgywdbawidzqp3"))))
+    (properties `((upstream-name . "multilevelcoda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinystan
+                             r-shiny
+                             r-plotly
+                             r-loo
+                             r-htmltools
+                             r-ggplot2
+                             r-future
+                             r-fs
+                             r-foreach
+                             r-extraoperators
+                             r-emmeans
+                             r-dt
+                             r-dofuture
+                             r-data-table
+                             r-compositions
+                             r-bslib
+                             r-brms
+                             r-bayesplot
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://florale.github.io/multilevelcoda/")
+    (synopsis "Estimate Bayesian Multilevel Models for Compositional Data")
+    (description
+     "Implement Bayesian multilevel modelling for compositional data.  Compute
+multilevel compositional data and perform log-ratio transforms at between and
+within-person levels, fit Bayesian multilevel models for compositional
+predictors and outcomes, and run post-hoc analyses such as isotemporal
+substitution models.  References: Le, Stanford, Dumuid, and Wiley (2025)
+<doi:10.1037/met0000750>, Le, Dumuid, Stanford, and Wiley (2025)
+<doi:10.1080/00273171.2025.2565598>.")
+    (license license:gpl3+)))
+
 (define-public r-multilcirt
   (package
     (name "r-multilcirt")
@@ -10620,6 +10668,39 @@ continuous distal outcomes using a two-stage estimator by Qian (2025)
 effects (MCEE) for continuous distal outcomes, estimating natural direct and
 indirect excursion effects in the presence of time-varying mediators by Qian
 (2025) <doi:10.48550/@code{arXiv.2506.20027>}.")
+    (license license:gpl3)))
+
+(define-public r-mrstdcrt
+  (package
+    (name "r-mrstdcrt")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MRStdCRT" version))
+       (sha256
+        (base32 "1xbl8pj89y3zvlxchd7gzpcwwn2lp7r3vcjcqchjp9v5r3alg6xq"))))
+    (properties `((upstream-name . "MRStdCRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-nlme
+                             r-magrittr
+                             r-lme4
+                             r-geepack
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/deckardt98/MRStdCRT")
+    (synopsis "Model-Robust Standardization in Cluster-Randomized Trials")
+    (description
+     "This package implements model-robust standardization for cluster-randomized
+trials (CRTs).  Provides functions that standardize user-specified regression
+models to estimate marginal treatment effects.  The targets include the
+cluster-average and individual-average treatment effects, with utilities for
+variance estimation and example simulation datasets.  Methods are described in
+Li, Tong, Fang, Cheng, Kahan, and Wang (2025) <doi:10.1002/sim.70270>.")
     (license license:gpl3)))
 
 (define-public r-mrregression
@@ -20563,13 +20644,13 @@ for continuous, count, categorical, and time-to-event data.")
 (define-public r-mlwrap
   (package
     (name "r-mlwrap")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLwrap" version))
        (sha256
-        (base32 "0japh5nsggb677nwijcvdl4vl7qhpi2mzdrxxi2b202hmb2imgnw"))))
+        (base32 "0jzcchsa25hvq5s5c3v1aq8ppb8jyql0p9viiycdz3frjjhq99vn"))))
     (properties `((upstream-name . "MLwrap")))
     (build-system r-build-system)
     (arguments
@@ -20577,7 +20658,6 @@ for continuous, count, categorical, and time-to-event data.")
       #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-workflows
-                             r-vip
                              r-tune
                              r-tidyr
                              r-tibble
@@ -33275,13 +33355,13 @@ references.")
 (define-public r-mev
   (package
     (name "r-mev")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mev" version))
        (sha256
-        (base32 "09qf7x5rlzxlnp5kls40yhs3zndyxp53d7aynis17ha7cvqjrmg4"))))
+        (base32 "1hxprylkhh4ji8iyjfllikjxpjwfrvfgaih6h4zyr31hlxng8dh0"))))
     (properties `((upstream-name . "mev")))
     (build-system r-build-system)
     (arguments
@@ -52575,13 +52655,13 @@ Papamakarios, Pavlakou and Murray (2017) <doi:10.48550/@code{arXiv.1705.07057>}.
 (define-public r-mafld
   (package
     (name "r-mafld")
-    (version "3.0.0")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAFLD" version))
        (sha256
-        (base32 "1mfx3nskrxdnvh338q5lrwia0i1qbxhjc62rcghpx38gx65wf3ck"))))
+        (base32 "1dsd75lsfaapwj8nd1sg46vpslr5z7fn7lyz0ajc062mbd5z56k1"))))
     (properties `((upstream-name . "MAFLD")))
     (build-system r-build-system)
     (arguments
