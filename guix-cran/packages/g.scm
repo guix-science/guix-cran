@@ -7448,6 +7448,34 @@ structures to be considered as a confounding variable when simulating gene
 expression data to test the performance of genomic analyses.")
     (license license:gpl3)))
 
+(define-public r-graphranktest
+  (package
+    (name "r-graphranktest")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GraphRankTest" version))
+       (sha256
+        (base32 "1mi4c6vsm8qrl3mnlycpg4svn2j18i9ayy92hhyr9frid22k6903"))))
+    (properties `((upstream-name . "GraphRankTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nbpmatching r-ade4))
+    (home-page "https://proceedings.mlr.press/v195/zhou23a.html")
+    (synopsis "Rank in Similarity Graph Edge-Count Two-Sample Test (RISE)")
+    (description
+     "This package implements the Rank In Similarity Graph Edge-count two-sample test
+(RISE) for high-dimensional and non-Euclidean data.  The method constructs
+similarity-based graphs, such as k-nearest neighbor graph (k-NNG), k-minimum
+spanning tree (k-MST), and k-minimum distance non-bipartite pairing (k-MDP), and
+evaluates rank-based within-sample edge counts with asymptotic and permutation
+p-values.  For methodological details, see Zhou and Chen (2023)
+<https://proceedings.mlr.press/v195/zhou23a.html>.")
+    (license license:gpl2+)))
+
 (define-public r-graphql
   (package
     (name "r-graphql")
@@ -15858,20 +15886,20 @@ for a matrix.")
 (define-public r-glcm
   (package
     (name "r-glcm")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glcm" version))
        (sha256
-        (base32 "13my6y9jqd86cg5n74p4b8mqbdgwnanxx4qf1rrhm5jxf6sa31qm"))))
+        (base32 "1qj20glfvhbf44wf9nnsp6jq9hl5cay8rvgarxbhp2rgnq4g4pkq"))))
     (properties `((upstream-name . "glcm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-raster))
-    (home-page "http://www.azvoleff.com/glcm")
+    (home-page "https://github.com/azvoleff/glcm")
     (synopsis
      "Calculate Textures from Grey-Level Co-Occurrence Matrices (GLCMs)")
     (description
@@ -21730,13 +21758,13 @@ spaces.")
 (define-public r-gginnards
   (package
     (name "r-gginnards")
-    (version "0.2.0-1")
+    (version "0.2.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gginnards" version))
        (sha256
-        (base32 "062xdhq8pgbvwl8zy7kzfgdgzfaf4zd3bnw8l4201xcl3nq6v9l3"))))
+        (base32 "1w6qr3rqddb4azgd0qjhx1fzh0gry76znjwh055hw2j6cxqnn0wn"))))
     (properties `((upstream-name . "gginnards")))
     (build-system r-build-system)
     (arguments
@@ -25680,13 +25708,13 @@ order latent variable modeling.  For a comprehensive overview of GSCA, see Hwang
 (define-public r-gernika
   (package
     (name "r-gernika")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeRnika" version))
        (sha256
-        (base32 "15m152drikm6s0wmgzfik65rdijikn7b318vcqx2qgkc9mqfxil2"))))
+        (base32 "1bb32ch365ivqp912qiv74bn3b7awsimsldhld7kq9c3c0g6q8yf"))))
     (properties `((upstream-name . "GeRnika")))
     (build-system r-build-system)
     (arguments
@@ -25817,13 +25845,13 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
 (define-public r-gerda
   (package
     (name "r-gerda")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerda" version))
        (sha256
-        (base32 "0danifkbl083392k6x2x3dlckp2z8f0vkbwk7y4j207pyi4v2k94"))))
+        (base32 "1j5nmj6gq59amld82hqrc52rw51izb3xmp1gihkcxrnhcxqlrm8j"))))
     (properties `((upstream-name . "gerda")))
     (build-system r-build-system)
     (arguments
@@ -28095,13 +28123,13 @@ geospatial objects.")
 (define-public r-geodl
   (package
     (name "r-geodl")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodl" version))
        (sha256
-        (base32 "0fds29bsijihi47g3bh5796ni42shap8jyqrml385is6g50x9yy5"))))
+        (base32 "1w3gp40npdfvyh6hipwqh7pb9vkwhfjjk129jbck4g6kj2hmd6wc"))))
     (properties `((upstream-name . "geodl")))
     (build-system r-build-system)
     (arguments
@@ -28110,6 +28138,7 @@ geospatial objects.")
     (propagated-inputs (list r-torchvision
                              r-torch
                              r-terra
+                             r-sf
                              r-rlang
                              r-readr
                              r-r6
@@ -28118,7 +28147,6 @@ geospatial objects.")
                              r-luz
                              r-dplyr
                              r-coro))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/maxwell-geospatial/geodl")
     (synopsis "Geospatial Semantic Segmentation with Torch and Terra")
     (description

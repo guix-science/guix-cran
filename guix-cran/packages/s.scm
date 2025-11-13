@@ -13572,13 +13572,13 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "1mc553gkhgngsm6l3ary2lz97ly3s70s8gdmjfjijggqcyp7xn37"))))
+        (base32 "1003xlphg5mzd5xzh8hiyzjxyq3n74kh9fz37xznvs26zjdz4aq4"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (arguments
@@ -15903,13 +15903,13 @@ software, which can be obtained upon purchase from VSN international
 (define-public r-statgengxe
   (package
     (name "r-statgengxe")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGxE" version))
        (sha256
-        (base32 "0a69zamdwr6h9msm6rwkb7vxaxqw3x348g7w62rhra9s5rma2vzj"))))
+        (base32 "0p9kfg97ydzkm2bw7mpnx804qj4w42i6pmqfgg3lnnjkdx66lfp6"))))
     (properties `((upstream-name . "statgenGxE")))
     (build-system r-build-system)
     (arguments
@@ -18684,13 +18684,13 @@ custom functions.")
 (define-public r-sspse
   (package
     (name "r-sspse")
-    (version "1.1.0-4")
+    (version "1.1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sspse" version))
        (sha256
-        (base32 "1xykns78d145x00kdgi8inhkkn63f5q8b9l94xah7lg8q7y1868j"))))
+        (base32 "0qrb9c8hli1j1cgc1g6fyijcai8bmapayb4647jqwg29q3l484ap"))))
     (properties `((upstream-name . "sspse")))
     (build-system r-build-system)
     (arguments
@@ -71480,13 +71480,13 @@ a network.")
 (define-public r-saros-base
   (package
     (name "r-saros-base")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saros.base" version))
        (sha256
-        (base32 "11qb91mnqxzs3ywl55rq1kwmcwvrpdbbvab37cgrcqgi6p6cq2a8"))))
+        (base32 "09ddrcdi6pmx208y8nkv6aj7jmmxb0s4xdmnn9hbq3arlimjf8hb"))))
     (properties `((upstream-name . "saros.base")))
     (build-system r-build-system)
     (arguments

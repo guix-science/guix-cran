@@ -18202,6 +18202,36 @@ conditions.  For a detailed documentation please visit
 <https://dice-and-domino-plot.readthedocs.io/en/latest/>.")
     (license license:expat)))
 
+(define-public r-diceoptim
+  (package
+    (name "r-diceoptim")
+    (version "2.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiceOptim" version))
+       (sha256
+        (base32 "1xwk2gqkhmxx4c9b5pxj2yg1vmdk3y7bh0rp6vq4g6191l776gaf"))))
+    (properties `((upstream-name . "DiceOptim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgenoud
+                             r-randtoolbox
+                             r-pbivnorm
+                             r-mnormt
+                             r-dicekriging
+                             r-dicedesign))
+    (home-page "https://cran.r-project.org/package=DiceOptim")
+    (synopsis "Kriging-Based Optimization for Computer Experiments")
+    (description
+     "Efficient Global Optimization (EGO) algorithm as described in \"Roustant et al.
+(2012)\" <doi:10.18637/jss.v051.i01> and adaptations for problems with noise
+(\"Picheny and Ginsbourger, 2012\") <doi:10.1016/j.csda.2013.03.018>, parallel
+infill, and problems with constraints.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-dicem
   (package
     (name "r-dicem")
@@ -22063,13 +22093,13 @@ datasets of interest rates for the BRICS countries.")
 (define-public r-der
   (package
     (name "r-der")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DER" version))
        (sha256
-        (base32 "0dz1cd3klk00wndikddnlxq0n6djglkgkr2simqibjdcdspbnbwq"))))
+        (base32 "1hzzgb88gfvwr6y2k59rq1gww50lwpckyq7prx5cv7ywg39daa9p"))))
     (properties `((upstream-name . "DER")))
     (build-system r-build-system)
     (arguments
@@ -22079,12 +22109,12 @@ datasets of interest rates for the BRICS countries.")
     (home-page "https://cran.r-project.org/package=DER")
     (synopsis "Income Polarization Index")
     (description
-     "The DER (or @code{PaF}) income polarization index as proposed by Duclos J. Y.,
-Esteban, J. and Ray D. (2004). \"Polarization: concepts, measurement,
-estimation\".  Econometrica, 72(6): 1737--1772.
-<doi:10.1111/j.1468-0262.2004.00552.x>.  The index may be computed for a single
-or for a range of values of the alpha-parameter.  Bootstrapping is also
-available.")
+     "Extremely fast and memory efficient computation of the DER (or @code{PaF})
+income polarization index as proposed by Duclos J. Y., Esteban, J. and Ray D.
+(2004). \"Polarization: concepts, measurement, estimation\".  Econometrica, 72(6):
+1737--1772. <doi:10.1111/j.1468-0262.2004.00552.x>.  The index may be computed
+for a single or for a range of values of the alpha-parameter and bootstrapping
+is also available.")
     (license license:gpl2+)))
 
 (define-public r-depthtools
@@ -24716,6 +24746,49 @@ deeptime is to enable users to add highly customizable timescales to their
 visualizations.  Other functions are also included to assist with other areas of
 deep time visualization.")
     (license license:gpl3+)))
+
+(define-public r-deepspat
+  (package
+    (name "r-deepspat")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deepspat" version))
+       (sha256
+        (base32 "1ply3x3i3m4vjga8d5h0lggswsn8kac4i9c6vsvfdwsq5i43x90j"))))
+    (properties `((upstream-name . "deepspat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tfprobability
+                             r-tensorflow
+                             r-spatialextremes
+                             r-reticulate
+                             r-matrix
+                             r-keras
+                             r-fields
+                             r-evd
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=deepspat")
+    (synopsis "Deep Compositional Spatial Models")
+    (description
+     "Deep compositional spatial models are standard spatial covariance models coupled
+with an injective warping function of the spatial domain.  The warping function
+is constructed through a composition of multiple elemental injective functions
+in a deep-learning framework.  The package implements two cases for the
+univariate setting; first, when these warping functions are known up to some
+weights that need to be estimated, and, second, when the weights in each layer
+are random.  In the multivariate setting only the former case is available.
+Estimation and inference is done using tensorflow', which makes use of graphics
+processing units.  For more details see Zammit-Mangion et al. (2022)
+<doi:10.1080/01621459.2021.1887741>, Vu et al. (2022)
+<doi:10.5705/ss.202020.0156>, and Vu et al. (2023)
+<doi:10.1016/j.spasta.2023.100742>.")
+    (license license:asl2.0)))
 
 (define-public r-deeprstudio
   (package
@@ -29393,26 +29466,29 @@ seasonally adjust tabular data.")
 (define-public r-datetoiso
   (package
     (name "r-datetoiso")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetoiso" version))
        (sha256
-        (base32 "1fg5r7ibdgbk1vbhbv6a2p4acd1mhsyyvrjr79cy37gmn1ka72i3"))))
+        (base32 "0rmki5rlnjiscq3iw40rmk6irjnhfw9l0h0803fayf6ri3jmrvl5"))))
     (properties `((upstream-name . "datetoiso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-lubridate))
+    (propagated-inputs (list r-stringr r-lubridate r-dplyr r-data-table))
     (home-page "https://github.com/andzoluk")
     (synopsis
-     "Modify Dates to ISO Standard (\"International Organization for Standardization\")")
+     "Convert and Impute Dates to ISO Standard (\"International Organization for Standardization\")")
     (description
-     "Transfer any date type to ISO standard.  Package recognizes dates in given data
-frame and transform to ISO format.  Only one date format can be applied within
-one data frame column.")
+     "This package provides functions to convert and impute date values to the ISO
+8601 standard format.  The package automatically recognizes date patterns within
+a data frame and transforms them into consistent ISO-formatted dates.  It also
+supports imputing missing month or day components in partial date strings using
+user-defined rules.  Only one date format can be applied within a single data
+frame column.")
     (license license:expat)))
 
 (define-public r-datetimeutils
@@ -29869,13 +29945,13 @@ dplyr', data.table', arrow', and DBI ('SQL'), which do the heavy lifting.")
 (define-public r-datasum
   (package
     (name "r-datasum")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataSum" version))
        (sha256
-        (base32 "0afz60zy1fn34hf2awizv3k0da4k2rchj2z20cy8n2g1k80sspcd"))))
+        (base32 "1v0d7n0v9f5yq8bz1wjr0r34v43ahn9rs70qr8j2zqywqbwcmypa"))))
     (properties `((upstream-name . "DataSum")))
     (build-system r-build-system)
     (arguments
@@ -29885,24 +29961,9 @@ dplyr', data.table', arrow', and DBI ('SQL'), which do the heavy lifting.")
     (home-page "https://github.com/Uzairkhan11w/DataSum")
     (synopsis "Comprehensive Data Summarization for Statistical Analysis")
     (description
-     "Summarizing data frames by calculating various statistical measures, including
-measures of central tendency, dispersion, @code{skewness()}, @code{kurtosis()},
-and normality tests.  The package leverages the moments package for calculating
-statistical moments and related measures, the dplyr package for data
-manipulation, and the nortest package for normality testing. @code{DataSum}
-includes functions such as @code{getmode()} for finding the mode(s) of a data
-vector, @code{shapiro_normality_test()} for performing the Shapiro-Wilk test
-(Shapiro & Wilk 1965 <doi:10.1093/biomet/52.3-4.591>) (or the Anderson-Darling
-test when the data length is outside the valid range for the Shapiro-Wilk test)
-(Stephens 1974 <doi:10.1080/01621459.1974.10480196>), @code{Datum()} for
-generating a comprehensive summary of a data vector with various statistics
-(including data type, sample size, mean, mode, median, variance, standard
-deviation, maximum, minimum, range, @code{skewness()}, @code{kurtosis()}, and
-normality test result) (Joanes & Gill 1998 <doi:10.1111/1467-9884.00122>), and
-@code{DataSumm()} for applying the @code{Datum()} function to each column of a
-data frame.  Emphasizing the importance of normality testing, the package
-provides robust tools to validate whether data follows a normal distribution, a
-fundamental assumption in many statistical analyses and models.")
+     "Summarizes data frames by calculating various statistics including central
+tendency, dispersion, shape, and normality diagnostics.  Handles numeric,
+character, and factor columns with NA-aware computations.")
     (license license:gpl3)))
 
 (define-public r-datastudio

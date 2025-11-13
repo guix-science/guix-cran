@@ -22636,20 +22636,19 @@ without ties.  Based on Adkins and Flinger (1998)
 (define-public r-rmake
   (package
     (name "r-rmake")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmake" version))
        (sha256
-        (base32 "0808yq2rv1129dw1mb65s04n8x43mwirb5sf8jyzrhpg2a046w2p"))))
+        (base32 "18bwrqc7yprly28klf8xn303rf797r2lvn2rsww8bm9xg0wjnc6n"))))
     (properties `((upstream-name . "rmake")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-visnetwork r-rmarkdown r-pryr r-knitr
-                             r-assertthat))
+    (propagated-inputs (list r-visnetwork r-rmarkdown r-knitr r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/beerda/rmake")
     (synopsis "Makefile Generator for R Analytical Projects")
@@ -59164,13 +59163,13 @@ non-nested model.")
 (define-public r-r2resize
   (package
     (name "r-r2resize")
-    (version "1.9.2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2resize" version))
        (sha256
-        (base32 "0fckxlr3wmlz8pq52sq342c50jripc1fcb8059fa1h63nmvlx17r"))))
+        (base32 "1s8bjh3kx3bximj3ha2v79xh6rsmdw40v0awb08rwlx338p29ndh"))))
     (properties `((upstream-name . "r2resize")))
     (build-system r-build-system)
     (arguments
@@ -59182,9 +59181,22 @@ non-nested model.")
     (synopsis
      "In-Text Resize for Images, Tables and Fancy Resize Containers in 'shiny', 'rmarkdown' and 'quarto' Documents")
     (description
-     "Automatic resizing toolbar for containers, images and tables.  Various resizer
-or expandable container functionalities are also included.  Most suitable to
-include in shiny', markdown and quarto documents.")
+     "Offers a suite of tools designed to enhance the responsiveness and interactivity
+of web-based documents and applications created with R. It provides an
+automatic, configurable resizing toolbar that can be seamlessly integrated with
+HTML elements such as containers, images, and tables, allowing end-users to
+dynamically adjust their dimensions.  Beyond the toolbar, the package includes a
+rich collection of flexible, expandable, and interactive container
+functionalities, such as highly customizable split-screen layouts
+(@code{splitCard}), versatile sizeable cards (@code{sizeableCard}), dynamic
+window-like elements (@code{windowCard}), visually engaging emphasis cards
+(@code{empahsisCard}), and sophisticated flexible and elastic card layouts
+(@code{flexCard}, @code{elastiCard}).  Furthermore, it offers an elegant image
+viewer and resizer (@code{shinyExpandImage}) perfect for interactive galleries.
+r2resize is particularly well-suited for developers and data scientists looking
+to create modern, responsive, and user-friendly shiny applications, markdown
+reports, and quarto documents that adapt gracefully to different screen sizes
+and user preferences, significantly improving the user experience.")
     (license license:expat)))
 
 (define-public r-r2redux

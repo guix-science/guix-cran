@@ -3947,13 +3947,13 @@ loop enumeration tools.")
 (define-public r-loon-shiny
   (package
     (name "r-loon-shiny")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loon.shiny" version))
        (sha256
-        (base32 "1bv8a4rrrlf80r9pidjxaaql4rrm6gz13pjz1mii97q9s3xjn0id"))))
+        (base32 "1104vns8g9y3y42xac86wb396nhpvzkf6fzcrc6zgqcvhqk5ryib"))))
     (properties `((upstream-name . "loon.shiny")))
     (build-system r-build-system)
     (arguments
@@ -4860,30 +4860,6 @@ diagnostics and goodness of fit metrics are provided.  See Fellows (2018)
 <doi:10.48550/@code{arXiv.1804.04583>} for a detailed description of the
 methods.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
-
-(define-public r-lolliplot
-  (package
-    (name "r-lolliplot")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lolliplot" version))
-       (sha256
-        (base32 "1rr0j0y298dmmllck11jq36glxczcsz6z7kw9290k77z75fi3vzi"))))
-    (properties `((upstream-name . "lolliplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-iranges r-grimport r-genomicranges))
-    (home-page "https://cran.r-project.org/package=lolliplot")
-    (synopsis "Plot Variants and Somatic Mutations")
-    (description
-     "Draw lolliplot using GRanges objects.  this package was designed only for
-drawing lolliplot.  So, it's faster than @code{trackViewer}', but un-related
-functions has been derived.")
-    (license license:gpl2+)))
 
 (define-public r-lokern
   (package

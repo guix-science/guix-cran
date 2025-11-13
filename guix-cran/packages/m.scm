@@ -19725,13 +19725,13 @@ informative hypotheses evaluation models from bain'.")
 (define-public r-mmgfm
   (package
     (name "r-mmgfm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MMGFM" version))
        (sha256
-        (base32 "0a9gw29yzqd7xb0zd3hxamkpkb355gm5wvs85pfidgi7hl98ga74"))))
+        (base32 "09ihshz7bvn83mxvykm0p9prksqw2qcpb3ir7fyaxpzbnxfa896v"))))
     (properties `((upstream-name . "MMGFM")))
     (build-system r-build-system)
     (arguments
@@ -20865,13 +20865,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.7-1")
+    (version "1.7-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1wkv2hmk38r6m2pf826l896b88nmqr62kyyab6kvni74727yhx84"))))
+        (base32 "1zrkvfv5hp1aw0h62g37piycwkxkqc2bl2rvmy0qh2dg3s9irs3n"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -30894,13 +30894,13 @@ as well as being simple to run in parallel.")
 (define-public r-micer
   (package
     (name "r-micer")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micer" version))
        (sha256
-        (base32 "1pdcinfjazfwgd6lpskgqwba9hglfiz19aprlz13sq6zs9irp087"))))
+        (base32 "0z4ik7qkq83ylbip2mc75nyix2a1vz7h9n3n5vywkhr48mfy4823"))))
     (properties `((upstream-name . "micer")))
     (build-system r-build-system)
     (arguments
@@ -34109,13 +34109,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteospain" version))
        (sha256
-        (base32 "056z0v464v1rylv1r0832yvy6s6s8xs3l7mh9nqkmf2kw7sgs8wp"))))
+        (base32 "0j2ss5b9nb9i62l7m6g8rn8byfyxl5n4avnhj81y1dgviprbwpsj"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (arguments
@@ -34127,14 +34127,14 @@ Ecology (METE).")
                              r-tidyr
                              r-stringr
                              r-sf
+                             r-rvest
                              r-rlang
                              r-purrr
                              r-lubridate
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-glue
                              r-dplyr
-                             r-curl
                              r-cli
                              r-cachem
                              r-assertthat))
@@ -36558,38 +36558,6 @@ predictive models.  It significantly lowers the barrier for the practitioners to
 apply heterogeneous ensemble learning techniques in an amateur fashion to their
 everyday predictive problems.")
     (license license:gpl2+)))
-
-(define-public r-metadynminer3d
-  (package
-    (name "r-metadynminer3d")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metadynminer3d" version))
-       (sha256
-        (base32 "1y1csfp57qrv394hj96yr5v3brxw7v0a07k2pg7ypw08gshvgqjm"))))
-    (properties `((upstream-name . "metadynminer3d")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgl r-rcpp r-misc3d r-metadynminer))
-    (home-page "https://metadynamics.cz/metadynminer3d/")
-    (synopsis
-     "Tools to Read, Analyze and Visualize Metadynamics 3D HILLS Files from 'Plumed'")
-    (description
-     "Metadynamics is a state of the art biomolecular simulation technique.  Plumed
-Tribello, G.A. et al. (2014) <doi:10.1016/j.cpc.2013.09.018> program makes it
-possible to perform metadynamics using various simulation codes.  The results of
-metadynamics done in Plumed can be analyzed by metadynminer'.  The package
-metadynminer reads 1D and 2D metadynamics hills files from Plumed package.  As
-an addendum, metadynaminer3d is used to visualize 3D hills.  It uses a fast
-algorithm by Hosek, P. and Spiwok, V. (2016) <doi:10.1016/j.cpc.2015.08.037> to
-calculate a free energy surface from hills.  Minima can be located and plotted
-on the free energy surface.  Free energy surfaces and minima can be plotted to
-produce publication quality images.")
-    (license license:gpl3)))
 
 (define-public r-metadynminer
   (package

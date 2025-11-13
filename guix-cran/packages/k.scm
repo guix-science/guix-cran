@@ -5285,6 +5285,47 @@ caret or mlr3'.  It supports multi-output models, case weights, and parallel
 computations.  Visualizations can be done using the R package shapviz'.")
     (license license:gpl2+)))
 
+(define-public r-kernelphil
+  (package
+    (name "r-kernelphil")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kernelPhil" version))
+       (sha256
+        (base32 "0x5jbzrwry6v187xb36hxjk8fxkjhx2h1k2srgr056i6bgxywpkg"))))
+    (properties `((upstream-name . "kernelPhil")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordspace
+                             r-terra
+                             r-rlang
+                             r-reshape2
+                             r-pbapply
+                             r-hmisc
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-directlabels
+                             r-benchmarkme))
+    (home-page "http://www.icge.co.uk/")
+    (synopsis
+     "Kernel Smoothing Tools for Philology and Historical Dialectology")
+    (description
+     "This package contains kernel smoothing tools designed for use by historical
+dialectologists and philologists for exploring spatial and temporal patterns in
+noisy historical language data, such as that obtained from historical texts.
+The main way in which these might differ from other implementations of kernel
+smoothing is that they assume that the function (linguistic variable) being
+explored has the form of the relative frequency of a series of discrete
+possibilities (linguistic variants).  This package also offers a way of
+exploring distributions in 2-dimensional space and in time with separate
+kernels, and tools for identifying appropriate bandwidths for these.")
+    (license license:gpl3+)))
+
 (define-public r-kernelknn
   (package
     (name "r-kernelknn")

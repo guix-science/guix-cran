@@ -5256,13 +5256,13 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
 (define-public r-assumpsure
   (package
     (name "r-assumpsure")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssumpSure" version))
        (sha256
-        (base32 "0csdfqjwbziq32clfcja2qq7bdfdc21v8mw6zxb8scx1gf91d8i0"))))
+        (base32 "1kjxcrqcx4kfwmkcajd20n0avc08dqvhkgf4jzibjci06c47qykg"))))
     (properties `((upstream-name . "AssumpSure")))
     (build-system r-build-system)
     (arguments
@@ -5289,9 +5289,11 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
                              r-htmltools
                              r-glmmtmb
                              r-ggpubr
+                             r-ggplot2
                              r-fontawesome
                              r-effectsize
                              r-dt
+                             r-dplyr
                              r-dharma
                              r-correlation
                              r-compositions
@@ -25280,32 +25282,6 @@ simulation algorithm).  This package is based upon work supported by NSF
 DBI-0906041 and NIH K99-GM104158 to Philip Johnson and NIH R01-AI049334 to
 Rustom Antia.")
     (license license:gpl3+)))
-
-(define-public r-adaptivegpca
-  (package
-    (name "r-adaptivegpca")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "adaptiveGPCA" version))
-       (sha256
-        (base32 "1766b3d9ysa9axfxqwy6gzj0z8hsl34pic6l63nbidqas55vnjqa"))))
-    (properties `((upstream-name . "adaptiveGPCA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-phyloseq r-ggplot2 r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=adaptiveGPCA")
-    (synopsis "Adaptive Generalized PCA")
-    (description
-     "This package implements adaptive @code{gPCA}, as described in: Fukuyama, J.
-(2017) <@code{arXiv:1702.00501>}.  The package also includes functionality for
-applying the method to phyloseq objects so that the method can be easily applied
-to microbiome data and a shiny app for interactive visualization.")
-    (license license:agpl3)))
 
 (define-public r-adaptgauss
   (package

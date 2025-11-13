@@ -11125,13 +11125,13 @@ time-dependent exposures.  See Wang et al (2020)
 (define-public r-epizootic
   (package
     (name "r-epizootic")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epizootic" version))
        (sha256
-        (base32 "1s8j5h860wvvl3yjij0vb52nihswnb90jx1jk2d6ifvksmdg05a5"))))
+        (base32 "1v49d4wak4wgcf85lak7bw72qwyap34mnmjmm0p5gwx0s7lqnngq"))))
     (properties `((upstream-name . "epizootic")))
     (build-system r-build-system)
     (arguments
@@ -11142,7 +11142,7 @@ time-dependent exposures.  See Wang et al (2020)
                              r-rcpp
                              r-raster
                              r-r6
-                             r-qs
+                             r-qs2
                              r-purrr
                              r-poems
                              r-foreach

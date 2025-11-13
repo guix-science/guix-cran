@@ -313,13 +313,13 @@ are described in Tobler Waldo R. (1979) <doi:10.1080/01621459.1979.10481647>.")
 (define-public r-pxwebapidata
   (package
     (name "r-pxwebapidata")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PxWebApiData" version))
        (sha256
-        (base32 "1myl1lpl4axnwh1j8s6ryq3996gd3c7h1dx5imn5ap8s1jsk4212"))))
+        (base32 "0lky2vxcmsppbr84bplwk6x0qw1f3kqh0cr55bak3jhw5hpfgiik"))))
     (properties `((upstream-name . "PxWebApiData")))
     (build-system r-build-system)
     (arguments
@@ -20993,13 +20993,13 @@ principal orthogonal complements.")
 (define-public r-poems
   (package
     (name "r-poems")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poems" version))
        (sha256
-        (base32 "11f4rnx5pr6fhc2s619230y6b2ra70hjajy90pv9p8iy1kr48fgx"))))
+        (base32 "1365hi5q6schk80n6ymkmrv223zrd8fi770gvb2m9qg1r7d1jrmd"))))
     (properties `((upstream-name . "poems")))
     (build-system r-build-system)
     (arguments
@@ -21009,7 +21009,7 @@ principal orthogonal complements.")
                              r-trend
                              r-raster
                              r-r6
-                             r-qs
+                             r-qs2
                              r-metrology
                              r-lhs
                              r-gdistance
@@ -28719,6 +28719,72 @@ clades that comprise only the target taxa and/or Non- Exclusive clades that
 includes a defined portion of non-target taxa.")
     (license license:gpl3+)))
 
+(define-public r-physioindexr
+  (package
+    (name "r-physioindexr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhysioIndexR" version))
+       (sha256
+        (base32 "1l5a82n146xc3vlsj0vr30kyawc378m265yqfl04qq287czib7ql"))))
+    (properties `((upstream-name . "PhysioIndexR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=PhysioIndexR")
+    (synopsis "Physiological and Stress Indices for Crop Evaluation")
+    (description
+     "Crop production systems are increasingly challenged by climate variability,
+resource limitations, and bioticâabiotic stresses.  In this context, stress
+tolerance indices and physiological trait estimators are essential tools to
+identify stable and superior genotypes, quantify yield stability under stress
+versus non-stress conditions, and understand plant adaptive responses.  The
+@code{PhysioIndexR} package provides a unified framework to compute commonly
+used stress indices, physiological traits, and derived metrics that are critical
+in crop improvement, crop physiology, and other agricultural sciences.  The
+package includes functions to calculate classical stress tolerance indices (See
+Lamba et al., 2023; <doi:10.1038/s41598-023-37634-8>) such as Tolerance (TOL),
+Stress Tolerance Index (STI), Stress Susceptibility Percentage Index (SSPI),
+Yield Index (YI), Yield Stability Index (YSI), Relative Stress Index (RSI), Mean
+Productivity (MP), Geometric Mean Productivity (GMP), Harmonic Mean (HM), Mean
+Relative Performance (MRP), and Percent Yield Reduction (PYR), along with a
+convenience wrapper @code{all_indices()} that returns all indices
+simultaneously.  The function @code{mfvst_from_indices()} integrates these
+indices into a composite stress score using direction-aware membership values
+(0â1 scaling) and also averaging, facilitating genotype ranking and selection
+(See Vinu et al., 2025; <doi:10.1007/s12355-025-01595-1>).  The package also
+implements two novel composite functions: @code{WMFVST()}, which computes the
+Weighted Mean Membership Function Value for Stress Tolerance, and @code{WASI()},
+which computes the Weighted Average Stress Index, both derived from membership
+function values (MFV) and raw stress index values, respectively.  Beyond stress
+indices, the package provides functions for key physiological traits relevant to
+sugarcane and other crops: @code{bmap()} computes biomass accumulation and
+partitioning between leaf, cane/shoot, and root fractions. @code{chl()}
+estimates total chlorophyll content from Soil-Plant Analysis Development (SPAD)
+and Chlorophyll Content Index (CCI) values using validated quadratic models
+particularly for sugarcane (See Krishnapriya et al., 2020;
+<doi:10.37580/JSR.2019.2.9.150-163>). @code{ctd()} calculates canopy temperature
+depression (CTD) from ambient and canopy temperatures, an important indicator of
+transpiration efficiency. @code{growth()} computes key growth analysis
+parameters, including Leaf Area Index (LAI), Net Assimilation Rate (NAR), and
+Crop Growth Rate (CGR) across crop growth stages (See Watson, 1958;
+<doi:10.1093/oxfordjournals.aob.a083596>). @code{ranking()} provides flexible
+ranking utilities for genotype performance with multiple tie-handling and
+NA-placement options.  Through these tools, the package enables researchers to:
+(i) quantify crop responses to stress environments, (ii) partition physiological
+components of yield, (iii) integrate multiple indices into composite metrics for
+genotype evaluation, and (iv) facilitate informed decision making in breeding
+pipelines, and plant physiology experiments.  By combining physiology-based
+traits with quantitative stress indices, @code{PhysioIndexR} supports
+comprehensive crop evaluation and helps researchers identify
+multi-stress-resilient superior genotypes, thereby contributing to genetic
+improvement and ensuring sustainable production of food, fuel, and fibre in the
+era of limited resources and climate change.")
+    (license license:gpl3)))
+
 (define-public r-physactbedrest
   (package
     (name "r-physactbedrest")
@@ -31027,13 +31093,13 @@ projection raster, following methodologies described in John (2016)
 (define-public r-phenology
   (package
     (name "r-phenology")
-    (version "10.3")
+    (version "2025.11.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenology" version))
        (sha256
-        (base32 "1991fv37xzmhsq6vzcmd6gngw07v50rg7lp5h0fzlgfvgxbfxsgb"))))
+        (base32 "0ihdzkmi7h6baf2pzilcm1ypvngh9zla5mnw47s385ssggd89vl5"))))
     (properties `((upstream-name . "phenology")))
     (build-system r-build-system)
     (arguments

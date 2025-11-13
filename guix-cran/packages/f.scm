@@ -21074,6 +21074,33 @@ examples is available on the Webpage
 <https://sites.google.com/view/mortennielsen/software>.")
     (license license:gpl3)))
 
+(define-public r-fcusum
+  (package
+    (name "r-fcusum")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FCUSUM" version))
+       (sha256
+        (base32 "0zy9077ic8j6zfvbdivh1h71dbpf0hy9r08i3z24q2dn4wfxvxkw"))))
+    (properties `((upstream-name . "FCUSUM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=FCUSUM")
+    (synopsis "Fourier CUSUM Cointegration Test")
+    (description
+     "This package implements the Fourier cumulative sum (CUSUM) cointegration test
+for detecting cointegration relationships in time series data with structural
+breaks.  The test uses Fourier approximations to capture smooth structural
+changes and CUSUM statistics to test for cointegration stability.  Based on
+methodology described in Zaghdoudi (2025) <doi:10.46557/001c.144076>.  The
+corrected Akaike Information Criterion (AICc) is used for optimal frequency
+selection.")
+    (license license:gpl3)))
+
 (define-public r-fcuk
   (package
     (name "r-fcuk")

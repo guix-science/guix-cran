@@ -5743,13 +5743,13 @@ Causal Hypotheses in Conjoint Analysis\" <@code{arXiv:2201.08343>}.")
 (define-public r-crt2power
   (package
     (name "r-crt2power")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crt2power" version))
        (sha256
-        (base32 "0rqjwwvh9ni04zq7idpbjbrra0m82x9g301gjf0xh8bjmd8v2938"))))
+        (base32 "099gmm4z2apqi7137c3g97yx3d655f7mhnyq58c83h2zahkvb6v9"))))
     (properties `((upstream-name . "crt2power")))
     (build-system r-build-system)
     (arguments
@@ -16107,13 +16107,13 @@ apps, in part by wrapping the js-cookie @code{JavaScript} library
 (define-public r-cookiemonster
   (package
     (name "r-cookiemonster")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cookiemonster" version))
        (sha256
-        (base32 "1fs8a7i2h1v4xvcjnccnvxapiprffyz49pgrdjp67k14r6nk2fha"))))
+        (base32 "1xj3a0qzvwasmw8ica9qxxxs4483zsyhv1p5hb3y491hkimbhdgv"))))
     (properties `((upstream-name . "cookiemonster")))
     (build-system r-build-system)
     (arguments
@@ -16123,11 +16123,12 @@ apps, in part by wrapping the js-cookie @code{JavaScript} library
                              r-urltools
                              r-tibble
                              r-stringi
+                             r-rlang
                              r-rappdirs
                              r-openssl
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cookiemonster")
+    (home-page "https://github.com/JBGruber/cookiemonster")
     (synopsis "Your Friendly Solution to Managing Browser Cookies")
     (description
      "This package provides a convenient tool to store and format browser cookies and
@@ -16480,13 +16481,13 @@ modeling: Blei et al. (2003) <doi:10.1162/jmlr.2003.3.4-5.993>; Landauer et al.
 (define-public r-conversationalign
   (package
     (name "r-conversationalign")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConversationAlign" version))
        (sha256
-        (base32 "07qxk98rgal1rxa8xfwb0y0kxqm5n0y5jn4qnq42n4m37ql745f4"))))
+        (base32 "06hx9cinykch8qrvzaiiimyy4qy4mqnn156n6sjw9x1p2nq9v9iz"))))
     (properties `((upstream-name . "ConversationAlign")))
     (build-system r-build-system)
     (arguments
@@ -17010,6 +17011,43 @@ plot.")
      "Create contour lines for a non regular series of points, potentially from a
 non-regular canvas.")
     (license license:gpl2+)))
+
+(define-public r-contoso
+  (package
+    (name "r-contoso")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contoso" version))
+       (sha256
+        (base32 "13xzfd8avs1dwyghrrnx0j1rv1wyw91fkzzvgv73x8md65vbxd6b"))))
+    (properties `((upstream-name . "contoso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-duckdb r-dplyr r-dbi r-cli))
+    (home-page "https://usrbinr.github.io/contoso/")
+    (synopsis "Dataset of the 'Contoso' Company")
+    (description
+     "This package provides a collection of synthetic datasets simulating sales
+transactions from a fictional company.  The dataset includes various related
+tables that contain essential business and operational data, useful for
+analyzing sales performance and other business insights.  Key tables included in
+the package are: - \"sales\": Contains data on individual sales transactions,
+including order details, pricing, quantities, and customer information. -
+\"customer\": Stores customer-specific details such as demographics, geographic
+location, occupation, and birthday. - \"store\": Provides information about
+stores, including location, size, status, and operational dates. - \"orders\":
+Contains details about customer orders, including order and delivery dates,
+store, and customer data. - \"product\": Contains data on products, including
+attributes such as product name, category, price, cost, and weight. - \"date\": A
+time-based table that includes date-related attributes like year, month,
+quarter, day, and working day indicators.  This dataset is ideal for practicing
+data analysis, performing time-series analysis, creating reports, or simulating
+business intelligence scenarios.")
+    (license license:expat)))
 
 (define-public r-contingencytables
   (package
@@ -25367,13 +25405,13 @@ cohorts.")
 (define-public r-cohortgenerator
   (package
     (name "r-cohortgenerator")
-    (version "0.12.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortGenerator" version))
        (sha256
-        (base32 "1sg1g19kksazpgsgsx4yc19dnn8k8pkfa5qg69z3rzgpip8093nj"))))
+        (base32 "1c9man9hda0wmkilbhzyw0ghrmj2h2widk3gp92gi72985glbzv1"))))
     (properties `((upstream-name . "CohortGenerator")))
     (build-system r-build-system)
     (arguments
@@ -25388,6 +25426,7 @@ cohorts.")
                              r-r6
                              r-parallellogger
                              r-lubridate
+                             r-lifecycle
                              r-jsonlite
                              r-dplyr
                              r-digest
@@ -36321,6 +36360,39 @@ biases is based on the approach introduced in van Bergen, Ma, Pratte, & Jehee
      "Wraps the CIRCE (<https://github.com/ohdsi/circe-be>) Java library allowing
 cohort definition expressions to be edited and converted to Markdown or SQL'.")
     (license license:asl2.0)))
+
+(define-public r-circacp
+  (package
+    (name "r-circacp")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CircaCP" version))
+       (sha256
+        (base32 "014l73d8y30wkf20rh1093w6dd1bcp29whznvhzl6y0im4mrh42k"))))
+    (properties `((upstream-name . "CircaCP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-pracma r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CircaCP")
+    (synopsis "Sleep and Circadian Metrics Estimation from Actigraphy Data")
+    (description
+     "This package provides a generic sleepâwake cycle detection algorithm for
+analyzing unlabeled actigraphy data.  The algorithm has been validated against
+event markers using data from the Multi-Ethnic Study of Atherosclerosis (MESA)
+Sleep study, and its methodological details are described in Chen and Sun (2024)
+<doi:10.1098/rsos.231468>.  The package provides functions to estimate sleep
+metrics (e.g., sleep and wake onset times) and circadian rhythm metrics (e.g.,
+mesor, phasor, interdaily stability, intradaily variability), as well as tools
+for screening actigraphy quality, fitting cosinor models, and performing
+parametric change point detection.  The workflow can also be used to segment
+long actigraphy sequences into regularized structures for physical activity
+research.")
+    (license license:gpl3+)))
 
 (define-public r-circacompare
   (package

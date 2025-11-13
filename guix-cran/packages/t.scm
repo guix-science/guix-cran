@@ -7742,6 +7742,40 @@ Khandakar Y (2008) <doi:10.18637/jss.v027.i03>, Simon Jackman (2024)
 Jackman (2008) <doi:10.18637/jss.v027.i08>.")
     (license license:gpl3+)))
 
+(define-public r-trendseries
+  (package
+    (name "r-trendseries")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trendseries" version))
+       (sha256
+        (base32 "1v7p5z4f8jpgkp7snf8wshs7s37cjhfby2h93l1zck0911ch1lbd"))))
+    (properties `((upstream-name . "trendseries")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsbox
+                             r-tibble
+                             r-rcpproll
+                             r-mfilter
+                             r-lubridate
+                             r-hpfilter
+                             r-glue
+                             r-dlm
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/viniciusoike/trendseries")
+    (synopsis "Extract Trends from Time Series")
+    (description
+     "Extract trends from monthly and quarterly economic time series.  Provides two
+main functions: @code{augment_trends()} for pipe-friendly tibble workflows and
+@code{extract_trends()} for direct time series analysis.  Includes key
+econometric filters and modern parameter experimentation tools.")
+    (license license:expat)))
+
 (define-public r-trendsegmentr
   (package
     (name "r-trendsegmentr")
@@ -8120,19 +8154,23 @@ patterns.")
 (define-public r-treestats
   (package
     (name "r-treestats")
-    (version "1.70.7")
+    (version "1.70.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treestats" version))
        (sha256
-        (base32 "0s6713sn78zjyaljwkq4xxw1krvnvc8j84fhajl83b8wdnbgjn40"))))
+        (base32 "0x2psaijpll7zj2lfq2l6x7my63zf6yrr98qn5hbv3ary1nv83hw"))))
     (properties `((upstream-name . "treestats")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-treebalance r-rcpparmadillo r-rcpp r-nloptr
+    (propagated-inputs (list r-treebalance
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-nloptr
+                             r-ddd
                              r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thijsjanzen/treestats")
@@ -10104,37 +10142,32 @@ methodology is available for codifying these state transitions.")
 (define-public r-transgraph
   (package
     (name "r-transgraph")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TransGraph" version))
        (sha256
-        (base32 "0fr038zd4gg3cjlsjl6jz6a73bp0rfbxmgphnbv0ambbm62i9w3h"))))
+        (base32 "10nhqk9523h620yn9mg5zsz0dfzijxiph7w7pwjx7l8yzlzhr8yq"))))
     (properties `((upstream-name . "TransGraph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tlasso
-                             r-rtensor
-                             r-mass
+    (propagated-inputs (list r-mass
                              r-huge
                              r-heteroggm
                              r-glasso
-                             r-expm
                              r-evaluationmeasures
-                             r-doparallel
                              r-dcov
                              r-clime))
-    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=TransGraph")
     (synopsis "Transfer Graph Learning")
     (description
      "Transfer learning, aiming to use auxiliary domains to help improve learning of
 the target domain of interest when multiple heterogeneous datasets are
-available, has always been a hot topic in statistical machine learning.  The
-recent transfer learning methods with statistical guarantees mainly focus on the
+available, has been a hot topic in statistical machine learning.  The recent
+transfer learning methods with statistical guarantees mainly focus on the
 overall parameter transfer for supervised models in the ideal case with the
 informative auxiliary domains with overall similarity.  In contrast, transfer
 learning for unsupervised graph learning is in its infancy and largely follows
@@ -10151,10 +10184,15 @@ non-Gaussian learning via topological layer method are also included in this
 package.  Moreover, the aggregation of auxiliary information is an important
 issue in transfer learning, and this package provides multiple user-friendly
 aggregation methods, including sample weighting, similarity weighting, and most
-informative selection.  Reference: Ren, M., Zhen Y., and Wang J. (2022)
-<@code{arXiv:2211.09391>} \"Transfer learning for tensor graphical models\".  Ren,
-M., He X., and Wang J. (2023) <@code{arXiv:2310.10239>} \"Structural transfer
-learning of non-Gaussian DAG\".  Zhao, R., He X., and Wang J. (2022)
+informative selection. (Note: the transfer for tensor GGM has been temporarily
+removed in the current version as its dependent R package Tlasso has been
+archived.  The historical version @code{TransGraph_1.0.0.tar.gz} can be
+downloaded at
+<https://cran.r-project.org/src/contrib/Archive/@code{TransGraph/>}) Reference:
+Ren, M., Zhen Y., and Wang J. (2024) <https://jmlr.org/papers/v25/22-1313.html>
+\"Transfer learning for tensor graphical models\".  Ren, M., He X., and Wang J.
+(2023) <doi:10.48550/@code{arXiv.2310.10239>} \"Structural transfer learning of
+non-Gaussian DAG\".  Zhao, R., He X., and Wang J. (2022)
 <https://jmlr.org/papers/v23/21-1173.html> \"Learning linear non-Gaussian
 directed acyclic graph with diverging number of nodes\".")
     (license license:gpl2)))
@@ -25896,13 +25934,13 @@ on 9 hypothesis tests for dependence.")
 (define-public r-testex
   (package
     (name "r-testex")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testex" version))
        (sha256
-        (base32 "0rf7smgb7ha0wfaslxcy97xhdx4bqnj48ifxf20v2h33psqlr374"))))
+        (base32 "1y03lpnj9pzdcn3hfs4h1xy4v44c54p40qykkh4kby0n8smlc0d5"))))
     (properties `((upstream-name . "testex")))
     (build-system r-build-system)
     (arguments

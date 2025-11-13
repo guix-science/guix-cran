@@ -3246,13 +3246,13 @@ intervals.")
 (define-public r-npcirc
   (package
     (name "r-npcirc")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPCirc" version))
        (sha256
-        (base32 "0qcam9n9llsblrpa2w0yj0axh79qwinz4wwbf4gvyrajfv935i8i"))))
+        (base32 "05z0cp8nwdl6rh74vjwvv951n2kq39r8z8i6yk1jz4c1c33nmi5g"))))
     (properties `((upstream-name . "NPCirc")))
     (build-system r-build-system)
     (arguments
@@ -4982,13 +4982,13 @@ Nonparametric Bayesian statistics given at the Simons institute.")
 (define-public r-nonparaeff
   (package
     (name "r-nonparaeff")
-    (version "0.5-13")
+    (version "0.5-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonparaeff" version))
        (sha256
-        (base32 "04ya0b4nwfcyw7asby8j5npa59p8w8ri3cifpigvqmdg47v9kzmc"))))
+        (base32 "0rxn9b94wjiw2ir8zbrvws37xaqkg3marqkx29c03ln4cbqhqikb"))))
     (properties `((upstream-name . "nonparaeff")))
     (build-system r-build-system)
     (arguments

@@ -751,13 +751,13 @@ non-linear profitability estimation built upon the DEA framework.")
 (define-public r-hyper2
   (package
     (name "r-hyper2")
-    (version "3.1-0")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper2" version))
        (sha256
-        (base32 "11bn7rhadisb46ls6ph9xbixz9zygd4ivjn3hgbv6059l2f2v0i0"))))
+        (base32 "1nspnwsbpsvpq7ifpjykkh734rii7n4a9cj3wiwm8al9sdgr1xf4"))))
     (properties `((upstream-name . "hyper2")))
     (build-system r-build-system)
     (arguments
@@ -767,7 +767,6 @@ non-linear profitability estimation built upon the DEA framework.")
                              r-rcpp
                              r-partitions
                              r-magrittr
-                             r-frab
                              r-disordr
                              r-cubature
                              r-calibrator
