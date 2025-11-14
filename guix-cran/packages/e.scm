@@ -1286,6 +1286,49 @@ et al, (2017) <doi:10.3390/life7040040> are included in the extraterrestrial
 package.")
     (license license:gpl3)))
 
+(define-public r-extrasuperpower
+  (package
+    (name "r-extrasuperpower")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extraSuperpower" version))
+       (sha256
+        (base32 "04bi8k1lc2lxx8ldlq692pf5flbk03lxnf79ns4a9n1ghix0ypf2"))))
+    (properties `((upstream-name . "extraSuperpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-tmvtnorm
+                             r-sn
+                             r-scales
+                             r-rlist
+                             r-rlang
+                             r-reshape2
+                             r-plyr
+                             r-permuco
+                             r-matrix
+                             r-mass
+                             r-ggthemes
+                             r-ggplot2
+                             r-fgarch
+                             r-artool
+                             r-afex))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/luisrmacias/extraSuperpower")
+    (synopsis "Power Calculation for Two-Way Factorial Designs")
+    (description
+     "The basic use of this package is with 3 sequential functions.  One to generate
+expected cell means and standard deviations, along with correlation and
+covariance matrices in the case of repeated measurements.  This is followed by
+experiment simulation i number of times.  Finally, power is calculated from the
+simulated data.  Features that may be considered in the model are interaction,
+measure correlation and non-normal distributions.")
+    (license license:expat)))
+
 (define-public r-extrasteps
   (package
     (name "r-extrasteps")
@@ -3746,13 +3789,13 @@ R.")
 (define-public r-examly
   (package
     (name "r-examly")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "examly" version))
        (sha256
-        (base32 "0ghd5l93j0m9cx4hmjwr2h1hj1czh3ynpq79dlml2nmc6hgvp74h"))))
+        (base32 "1mpsfrp43s1qmb5h6b1mdscmjd81z5f87iwvrpwp8wvd4s75lw0q"))))
     (properties `((upstream-name . "examly")))
     (build-system r-build-system)
     (arguments
@@ -3770,6 +3813,7 @@ R.")
                              r-jsonlite
                              r-htmltools
                              r-glue
+                             r-ggplot2
                              r-flextable
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -11342,6 +11386,46 @@ levels.  The package also provides graphical tools to display the gene x gene
 interaction trend at the mean level and the variance component analysis.")
     (license license:gpl3+)))
 
+(define-public r-epitabulate
+  (package
+    (name "r-epitabulate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epitabulate" version))
+       (sha256
+        (base32 "19yprcs05ddr08wmgwzsaygpkmiq9ryx49825dfc7mj7s53m4gqn"))))
+    (properties `((upstream-name . "epitabulate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-mass
+                             r-gtsummary
+                             r-glue
+                             r-forcats
+                             r-epikit
+                             r-dplyr
+                             r-binom))
+    (home-page "https://R4EPI.github.io/epitabulate/")
+    (synopsis "Tables for Epidemiological Analysis")
+    (description
+     "This package produces tables for descriptive epidemiological analysis.  These
+tables include attack rates, case fatality ratios, and mortality rates (with
+appropriate confidence intervals), with additional functionality to calculate
+Mantel-Haenszel odds, risk, and incidence rate ratios.  The methods implemented
+follow standard epidemiological approaches described in Rothman et al. (2008,
+ISBN:978-0-19-513554-2).  This package is part of the R4EPIs project
+<https://R4EPI.github.io/sitrep/>.")
+    (license license:gpl3)))
+
 (define-public r-epitab
   (package
     (name "r-epitab")
@@ -12531,6 +12615,43 @@ modeling, genomic analysis, clinical trials, DALY, diagnostic tests, and
 survival analysis.  Methods are based on Gelman et al. (2013)
 <doi:10.1201/b16018> and Wickham et al. (2019, ISBN:9781492052040>.")
     (license license:expat)))
+
+(define-public r-epidict
+  (package
+    (name "r-epidict")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epidict" version))
+       (sha256
+        (base32 "00gxb9lcybjnm3axchq0jlsc1786f6rvg0b622kkd6d0qnivambc"))))
+    (properties `((upstream-name . "epidict")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readxl
+                             r-dplyr
+                             r-clipr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/R4EPI/epidict/")
+    (synopsis "Epidemiology Data Dictionaries and Random Data Generators")
+    (description
+     "The R4EPIs project <https://r4epi.github.io/sitrep/> seeks to provide a set of
+standardized tools for analysis of outbreak and survey data in humanitarian aid
+settings.  This package currently provides standardized data dictionaries from
+Medecins Sans Frontieres Operational Centre Amsterdam for outbreak scenarios
+(Acute Jaundice Syndrome, Cholera, Diphtheria, Measles, Meningitis) and surveys
+(Retrospective mortality and access to care, Malnutrition, Vaccination coverage
+and Event Based Surveillance) - as described in the following
+<https://scienceportal.msf.org/assets/standardised-mortality-surveys?utm_source=chatgpt.com>.
+ In addition, a data generator from these dictionaries is provided.  It is also
+possible to read in any Open Data Kit format data dictionary.")
+    (license license:gpl3)))
 
 (define-public r-epidatr
   (package
@@ -19554,13 +19675,13 @@ data sources, releases, and popular FRED tags.")
 (define-public r-efm
   (package
     (name "r-efm")
-    (version "0.5.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFM" version))
        (sha256
-        (base32 "05x9n0zid8i8dqsv687sn9nsgzfn7l7h258539sg1rk9xacfj0y9"))))
+        (base32 "0vjc88narkcjmvfjpfs7r6829v45i5x17yxr5k2gmkj6dd33xvd1"))))
     (properties `((upstream-name . "EFM")))
     (build-system r-build-system)
     (arguments

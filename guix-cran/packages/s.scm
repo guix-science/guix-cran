@@ -20126,6 +20126,29 @@ functions for hierarchical computations by sparse model matrices (Langsrud,
 2023) <doi:10.32614/RJ-2023-088>.")
     (license license:expat)))
 
+(define-public r-ssarkartrim
+  (package
+    (name "r-ssarkartrim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ssarkartrim" version))
+       (sha256
+        (base32 "1rvhhd3j5awq2jm34g95smn4nk5znv7yd5mqxb2c681784y7l5s8"))))
+    (properties `((upstream-name . "Ssarkartrim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Ssarkartrim")
+    (synopsis "Trimmed-k Mean Estimator")
+    (description
+     "Computes the trimmed-k mean by removing the k smallest and k largest values from
+a numeric vector.  Created for STAT 5400 at the University of Iowa.")
+    (license license:gpl3)))
+
 (define-public r-ssanv
   (package
     (name "r-ssanv")
@@ -45724,13 +45747,13 @@ and copula models.")
 (define-public r-siminf
   (package
     (name "r-siminf")
-    (version "9.8.1")
+    (version "10.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimInf" version))
        (sha256
-        (base32 "1lpx7749ld6h5gdlyrlxwp2zx7g9fxxb6s7r8p2pxpyvgrss2pqr"))))
+        (base32 "0l88159vx38496p5jnmhpllk3i1484yj1w52x4dfs5v2qldcndd1"))))
     (properties `((upstream-name . "SimInf")))
     (build-system r-build-system)
     (arguments
@@ -45738,7 +45761,7 @@ and copula models.")
       #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-matrix r-mass r-digest))
-    (native-inputs (list r-knitr))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/stewid/SimInf")
     (synopsis
      "Framework for Data-Driven Stochastic Disease Spread Simulations")
@@ -45758,7 +45781,9 @@ extended with user-defined models.  For more details see the paper by Widgren,
 Bauer, Eriksson and Engblom (2019) <doi:10.18637/jss.v091.i12>.  The package
 also provides functionality to fit models to time series data using the
 Approximate Bayesian Computation Sequential Monte Carlo ('ABC-SMC') algorithm of
-Toni and others (2009) <doi:10.1098/rsif.2008.0172>.")
+Toni and others (2009) <doi:10.1098/rsif.2008.0172> or the Particle Markov Chain
+Monte Carlo ('PMCMC') algorithm of Andrieu and others (2010)
+<doi:10.1111/j.1467-9868.2009.00736.x>.")
     (license license:gpl3)))
 
 (define-public r-simindep

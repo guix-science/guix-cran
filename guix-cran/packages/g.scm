@@ -2402,6 +2402,31 @@ gene expression data.  For more information on the API, see
 <https://gtexportal.org/api/v2/redoc>.")
     (license license:expat)))
 
+(define-public r-gtestspair
+  (package
+    (name "r-gtestspair")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gTestsPair" version))
+       (sha256
+        (base32 "0wdjiy8b80rivg4q4fpyxmabsn6flc1f58gaxx51n3m0mywa3gig"))))
+    (properties `((upstream-name . "gTestsPair")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ade4))
+    (home-page "https://cran.r-project.org/package=gTestsPair")
+    (synopsis
+     "New Nonparametric Tests for Multivariate Paired Data and Pair Matching")
+    (description
+     "This package implements three nonparametric two-sample tests for multivariate
+paired data and pair matching.  Methods are described in the associated
+preprint: <doi:10.48550/@code{arXiv.2007.01497>}.")
+    (license license:gpl2+)))
+
 (define-public r-gtestsmulti
   (package
     (name "r-gtestsmulti")
@@ -5718,13 +5743,13 @@ association, function, or causality.")
 (define-public r-gridify
   (package
     (name "r-gridify")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gridify" version))
        (sha256
-        (base32 "1rgwnb302g04vbf74jmjz1f8zb48vyg6kx3wq7cl29z8gis17181"))))
+        (base32 "1vkfmw00kmkrrfcp09lcwbw8fgskkjs21gwpp4wa9jdaw9as43cz"))))
     (properties `((upstream-name . "gridify")))
     (build-system r-build-system)
     (arguments
@@ -16167,6 +16192,40 @@ indices, and other bounded response data with complex distributional features
 not adequately captured by simpler models.")
     (license license:expat)))
 
+(define-public r-gkwdist
+  (package
+    (name "r-gkwdist")
+    (version "1.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gkwdist" version))
+       (sha256
+        (base32 "14d3na9rzxs7rc8ayqw4f9swkwxj1hfamxyybi0i58x3y3qh344r"))))
+    (properties `((upstream-name . "gkwdist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-magrittr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/evandeilton/gkwdist")
+    (synopsis "Generalized Kumaraswamy Distribution Family")
+    (description
+     "This package implements the five-parameter Generalized Kumaraswamy ('gkw')
+distribution proposed by Carrasco, Ferrari and Cordeiro (2010)
+<doi:10.48550/@code{arXiv.1004.0911>} and its seven nested sub-families for
+modeling bounded continuous data on the unit interval (0,1).  The gkw
+distribution extends the Kumaraswamy distribution described by Jones (2009)
+<doi:10.1016/j.stamet.2008.04.001>.  Provides density, distribution, quantile,
+and random generation functions, along with analytical log-likelihood, gradient,
+and Hessian functions implemented in C++ via @code{RcppArmadillo} for maximum
+computational efficiency.  Suitable for modeling proportions, rates,
+percentages, and indices exhibiting complex features such as asymmetry, or heavy
+tails and other shapes not adequately captured by standard distributions like
+simple Beta or Kumaraswamy.")
+    (license license:expat)))
+
 (define-public r-gkrls
   (package
     (name "r-gkrls")
@@ -17442,13 +17501,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "18kidrdxrgqcsjqp2c6fqgfykbh00v8bk1sz0rvxmib4yiwgmcmj"))))
+        (base32 "0wbpar61zca6q2m0rnd8c52lcqmrd2v6vd32wvai3ds9bljyhrd5"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (arguments
@@ -19384,6 +19443,37 @@ investigating data.  The ggsoccer package provides a set of functions for
 elegantly displaying and exploring soccer event data with ggplot2'.  Providing
 extensible layers and themes, it is designed to work smoothly with a variety of
 popular sports data providers.")
+    (license license:expat)))
+
+(define-public r-ggsmc
+  (package
+    (name "r-ggsmc")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsmc" version))
+       (sha256
+        (base32 "0wfc8qcalvi7dmvg8zsjkn0x4pl9yg61fg47agz0dvbx2bplkq9k"))))
+    (properties `((upstream-name . "ggsmc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-poorman r-ggplot2 r-gganimate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richardgeveritt/ggsmc")
+    (synopsis
+     "Visualising Output from Sequential Monte Carlo and Ensemble-Based Methods")
+    (description
+     "This package provides functions for plotting, and animating, the output of
+importance samplers, sequential Monte Carlo samplers (SMC) and ensemble-based
+methods.  The package can be used to plot and animate histograms, densities,
+scatter plots and time series, and to plot the genealogy of an SMC or
+ensemble-based algorithm.  These functions all rely on algorithm output to be
+supplied in tidy format.  A function is provided to transform algorithm output
+from matrix format (one Monte Carlo point per row) to the tidy format required
+by the plotting and animating functions.")
     (license license:expat)))
 
 (define-public r-ggshadow

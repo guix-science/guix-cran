@@ -4259,6 +4259,33 @@ incorporating the prevalence of disease.  You can also use the online version at
 <https://hcpa-unidade-bioestatistica.shinyapps.io/PSS_Health/>.")
     (license license:gpl2+)))
 
+(define-public r-psricalc
+  (package
+    (name "r-psricalc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSRICalc" version))
+       (sha256
+        (base32 "17hdg34dhc953zhwvlxv3c00b7v2k1s5i3vbn460dlb10gpax74w"))))
+    (properties `((upstream-name . "PSRICalc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=PSRICalc")
+    (synopsis "Plant Stress Response Index Calculator")
+    (description
+     "Calculate Plant Stress Response Index (PSRI) from time-series germination data
+with optional radicle vigor integration.  Built on the methodological foundation
+of the Osmotic Stress Response Index (OSRI) framework developed by Walne et al.
+(2020) <doi:10.1002/agg2.20087>.  Provides clean, direct PSRI calculations
+suitable for agricultural research and statistical analysis.  Note: This package
+implements methodology currently under peer review.  Please contact the author
+before publication using this approach.")
+    (license license:expat)))
+
 (define-public r-psqn
   (package
     (name "r-psqn")
@@ -5374,6 +5401,41 @@ composites of metabolic syndrome symptom score (@code{MetSSS}) and allostatic
 load (AL).  Provides a wrapper to calculate the @code{MetSSS} on new data using
 the Healthy Hearts formula.")
     (license license:lgpl3)))
+
+(define-public r-psc
+  (package
+    (name "r-psc")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psc" version))
+       (sha256
+        (base32 "12bc1979s0360v12kfq6mnsv83mh4603yw6680zi3kg4j6xvmsgg"))))
+    (properties `((upstream-name . "psc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-rcolorbrewer
+                             r-posterior
+                             r-mvtnorm
+                             r-lme4
+                             r-gtsummary
+                             r-ggpubr
+                             r-ggplot2
+                             r-flexsurv
+                             r-enrichwith))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richjjackson/psc/")
+    (synopsis "Personalised Synthetic Controls")
+    (description
+     "Allows the comparison of data cohorts (DC) against a Counter Factual Model (CFM)
+and measures the difference in terms of an efficacy parameter.  Allows the
+application of Personalised Synthetic Controls.")
+    (license license:gpl3)))
 
 (define-public r-psborrow2
   (package

@@ -12914,13 +12914,13 @@ is implemented.")
 (define-public r-mpathsenser
   (package
     (name "r-mpathsenser")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpathsenser" version))
        (sha256
-        (base32 "12hhcw76gn7mfd3xjsb7an7bwz95any8l89pglrk0bmj8iwhsns2"))))
+        (base32 "1rpb5xws4f025b7ihapsfxra7xlcx7lhi43v1lqyl4pf96r1bzdy"))))
     (properties `((upstream-name . "mpathsenser")))
     (build-system r-build-system)
     (arguments
@@ -12939,8 +12939,7 @@ is implemented.")
                              r-dbplyr
                              r-dbi))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://gitlab.kuleuven.be/ppw-okpiv/researchers/u0134047/mpathsenser/")
+    (home-page "https://github.com/koenniem/mpathsenser")
     (synopsis "Process and Analyse Data from m-Path Sense")
     (description
      "Overcomes one of the major challenges in mobile (passive) sensing, namely being
@@ -36559,6 +36558,38 @@ apply heterogeneous ensemble learning techniques in an amateur fashion to their
 everyday predictive problems.")
     (license license:gpl2+)))
 
+(define-public r-metadynminer3d
+  (package
+    (name "r-metadynminer3d")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metadynminer3d" version))
+       (sha256
+        (base32 "1y1csfp57qrv394hj96yr5v3brxw7v0a07k2pg7ypw08gshvgqjm"))))
+    (properties `((upstream-name . "metadynminer3d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl r-rcpp r-misc3d r-metadynminer))
+    (home-page "https://metadynamics.cz/metadynminer3d/")
+    (synopsis
+     "Tools to Read, Analyze and Visualize Metadynamics 3D HILLS Files from 'Plumed'")
+    (description
+     "Metadynamics is a state of the art biomolecular simulation technique.  Plumed
+Tribello, G.A. et al. (2014) <doi:10.1016/j.cpc.2013.09.018> program makes it
+possible to perform metadynamics using various simulation codes.  The results of
+metadynamics done in Plumed can be analyzed by metadynminer'.  The package
+metadynminer reads 1D and 2D metadynamics hills files from Plumed package.  As
+an addendum, metadynaminer3d is used to visualize 3D hills.  It uses a fast
+algorithm by Hosek, P. and Spiwok, V. (2016) <doi:10.1016/j.cpc.2015.08.037> to
+calculate a free energy surface from hills.  Minima can be located and plotted
+on the free energy surface.  Free energy surfaces and minima can be plotted to
+produce publication quality images.")
+    (license license:gpl3)))
+
 (define-public r-metadynminer
   (package
     (name "r-metadynminer")
@@ -43267,6 +43298,47 @@ package, Euro Journal On Decision Processes, Volume 5, Issue 1 - 4, pages 169 -
     (description
      "The Matthews correlation coefficient (MCC) score is calculated (Matthews BW
 (1975) <DOI:10.1016/0005-2795(75)90109-9>).")
+    (license license:expat)))
+
+(define-public r-mccount
+  (package
+    (name "r-mccount")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mccount" version))
+       (sha256
+        (base32 "0pnp6vg2scxbi0kgcr8in64ljdgiih4nszydlhzw85ffc0x5m7k9"))))
+    (properties `((upstream-name . "mccount")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-lifecycle
+                             r-glue
+                             r-dplyr
+                             r-data-table
+                             r-cmprsk
+                             r-cli
+                             r-cards))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KennethATaylor/mccount")
+    (synopsis "Estimate Recurrent Event Burden with Competing Risks")
+    (description
+     "Calculates mean cumulative count (MCC) to estimate the expected cumulative
+number of recurrent events per person over time in the presence of competing
+risks and censoring.  Implements both the Dong-Yasui equation method and sum of
+cumulative incidence method described in Dong, et al. (2015)
+<doi:10.1093/aje/kwu289>.  Supports inverse probability weighting for causal
+inference as outlined in Gaber, et al. (2023) <doi:10.1093/aje/kwad031>.
+Provides S3 methods for printing, summarizing, plotting, and extracting results.
+ Handles grouped analyses and integrates with ggplot2
+<https://ggplot2.tidyverse.org/> for visualization.")
     (license license:expat)))
 
 (define-public r-mccmeiv

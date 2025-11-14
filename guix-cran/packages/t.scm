@@ -1909,19 +1909,20 @@ turning them into other indexed data structures.")
 (define-public r-turkeyelections
   (package
     (name "r-turkeyelections")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "turkeyelections" version))
        (sha256
-        (base32 "0jngbrz147h3adlbvz6dzr8194g1n27iixpnnhllvip7jc19lb85"))))
+        (base32 "0qjmnll6a9qvvbrra2b5gq90xs3kk7clnrxh6i2qgd1b8xi10nbd"))))
     (properties `((upstream-name . "turkeyelections")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-ggpol r-ggplot2 r-dplyr r-colorramp2))
+    (propagated-inputs (list r-stringr r-ggplot2 r-ggforce r-dplyr
+                             r-colorramp2))
     (home-page "https://github.com/ozancanozdemir/turkeyelections")
     (synopsis "The Most Comprehensive R Package for Turkish Election Results")
     (description
@@ -10196,6 +10197,34 @@ non-Gaussian DAG\".  Zhao, R., He X., and Wang J. (2022)
 <https://jmlr.org/papers/v23/21-1173.html> \"Learning linear non-Gaussian
 directed acyclic graph with diverging number of nodes\".")
     (license license:gpl2)))
+
+(define-public r-transgfm
+  (package
+    (name "r-transgfm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transGFM" version))
+       (sha256
+        (base32 "09fc57llhww95j88c762gm070bwrw7zv36phpqndc238gvnmr76x"))))
+    (properties `((upstream-name . "transGFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=transGFM")
+    (synopsis "Transfer Learning for Generalized Factor Models")
+    (description
+     "Transfer learning for generalized factor models with support for continuous,
+count (Poisson), and binary data types.  The package provides functions for
+single and multiple source transfer learning, source detection to identify
+positive and negative transfer sources, factor decomposition using Maximum
+Likelihood Estimation (MLE), and information criteria ('IC1 and IC2') for rank
+selection.  The methods are particularly useful for high-dimensional data
+analysis where auxiliary information from related source datasets can improve
+estimation efficiency in the target domain.")
+    (license license:gpl3)))
 
 (define-public r-transfr
   (package
@@ -33663,24 +33692,20 @@ exchange, reporting, and automated workflows.")
 (define-public r-t4transport
   (package
     (name "r-t4transport")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "T4transport" version))
        (sha256
-        (base32 "0m2yp2j83wvhxvpf0jw1ayqy5hwf27qm7a56bwk1il3vmn5jjx5k"))))
+        (base32 "1pw0dsxk8njlf28pjwrmrnzg63a9vqzmljiga05vm8yldyrb63wc"))))
     (properties `((upstream-name . "T4transport")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-lpsolve
-                             r-cvxr
-                             r-bh))
+    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-cvxr))
+    (native-inputs (list r-knitr))
     (home-page "https://www.kisungyou.com/T4transport/")
     (synopsis "Tools for Computational Optimal Transport")
     (description

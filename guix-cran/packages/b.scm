@@ -14414,6 +14414,34 @@ ISBN:978-1-118-62561-3) Levin & Chen (1999) <doi:10.1080/00031305.1999.10474431>
 @code{McNemar} (1947) <doi:10.1007/BF02295996>.")
     (license license:expat)))
 
+(define-public r-biostats
+  (package
+    (name "r-biostats")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biostats" version))
+       (sha256
+        (base32 "1iy7xfs48sr1dg017arrsrzn3pjjv8jivm3mkfl1dil971wxagbp"))))
+    (properties `((upstream-name . "biostats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-gt r-gridextra r-ggplot2 r-car))
+    (home-page "https://github.com/sebasquirarte/biostats")
+    (synopsis "Biostatistics and Clinical Data Analysis")
+    (description
+     "Biostatistical and clinical data analysis, including descriptive statistics,
+exploratory data analysis, sample size and power calculations, statistical
+inference, and data visualization.  Normality tests are implemented following
+Mishra et al. (2019) <doi:10.4103/aca.ACA_157_18>, omnibus test procedures are
+based on Blanca et al. (2017) <doi:10.3758/s13428-017-0918-2> and Field et al.
+(2012, ISBN:9781446200469), while sample size and power calculation methods
+follow Chow et al. (2017) <doi:10.1201/9781315183084>.")
+    (license license:expat)))
+
 (define-public r-biostatr
   (package
     (name "r-biostatr")
@@ -15933,13 +15961,13 @@ power in preprocessing methodologies for datasets with missing values
 (define-public r-bioacoustics
   (package
     (name "r-bioacoustics")
-    (version "0.2.8")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioacoustics" version))
        (sha256
-        (base32 "08qhxx7xgswjamrgg82pkg1f7w50dx9ln67d50n1p3rvrxab4061"))))
+        (base32 "1cwbdy1xh6j806ysbmgqcshnh5dv34z1bs8n25znha2l4qa7zynr"))))
     (properties `((upstream-name . "bioacoustics")))
     (build-system r-build-system)
     (arguments
@@ -25676,13 +25704,13 @@ automatic tuning inspired by Pitt et al. (2012)
 (define-public r-bayessim
   (package
     (name "r-bayessim")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSIM" version))
        (sha256
-        (base32 "1bzypgi3l7rw72g1hrb20mxp887wf42lj0xi7wwbgfy6nlchvnk6"))))
+        (base32 "0khxdsfg82nmn8rassh4h4hf87k23bcihzxrichw5jvrykhgvxjh"))))
     (properties `((upstream-name . "BayesSIM")))
     (build-system r-build-system)
     (arguments
@@ -25707,8 +25735,9 @@ algorithms built on the nimble framework, allowing users to specify, extend, and
 simulate models in a unified and reproducible manner.  The following methods are
 implemented in the package: Antoniadis et al. (2004)
 <https://www.jstor.org/stable/24307224>, Wang (2009)
-<doi:10.1016/j.csda.2008.12.010>, Choi et al. (2011) <c>, Dhara et al. (2019)
-<doi:10.1214/19-BA1170>, @code{McGee} et al. (2023) <doi:10.1111/biom.13569>.")
+<doi:10.1016/j.csda.2008.12.010>, Choi et al. (2011)
+<doi:10.1080/10485251003768019>, Dhara et al. (2019) <doi:10.1214/19-BA1170>,
+@code{McGee} et al. (2023) <doi:10.1111/biom.13569>.")
     (license license:gpl2+)))
 
 (define-public r-bayessenmc

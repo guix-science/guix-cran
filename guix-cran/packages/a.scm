@@ -25283,6 +25283,32 @@ DBI-0906041 and NIH K99-GM104158 to Philip Johnson and NIH R01-AI049334 to
 Rustom Antia.")
     (license license:gpl3+)))
 
+(define-public r-adaptivegpca
+  (package
+    (name "r-adaptivegpca")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adaptiveGPCA" version))
+       (sha256
+        (base32 "1766b3d9ysa9axfxqwy6gzj0z8hsl34pic6l63nbidqas55vnjqa"))))
+    (properties `((upstream-name . "adaptiveGPCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-phyloseq r-ggplot2 r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=adaptiveGPCA")
+    (synopsis "Adaptive Generalized PCA")
+    (description
+     "This package implements adaptive @code{gPCA}, as described in: Fukuyama, J.
+(2017) <@code{arXiv:1702.00501>}.  The package also includes functionality for
+applying the method to phyloseq objects so that the method can be easily applied
+to microbiome data and a shiny app for interactive visualization.")
+    (license license:agpl3)))
+
 (define-public r-adaptgauss
   (package
     (name "r-adaptgauss")

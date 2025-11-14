@@ -29947,13 +29947,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.8.3")
+    (version "3.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgbif" version))
        (sha256
-        (base32 "1q85jwv8l1qpmdygnfgvfrgi0y54nqjhx67m901s2nl5pfbj7x5l"))))
+        (base32 "1sdbgsfihqjq8g6xira4s8fnwk53p7ya4czrb75z2gw6fpzgfxiz"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (arguments
@@ -44855,13 +44855,13 @@ then be imported to access the check functions in other packages.")
 (define-public r-rdav
   (package
     (name "r-rdav")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdav" version))
        (sha256
-        (base32 "11iskdw61vic2yfmjfkh39j06kqrz9bl6x528hcvy6c4v18y92rh"))))
+        (base32 "1fs3xlxc38qsdj9r3k05w3jahcp69ss5ylgshdvqhinkh2vk40sw"))))
     (properties `((upstream-name . "rdav")))
     (build-system r-build-system)
     (arguments

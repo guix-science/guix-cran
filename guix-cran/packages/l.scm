@@ -17288,13 +17288,13 @@ Bayesian learning: the partially CFA (Chen, Guo, Zhang, & Pan, 2020) <DOI:
 (define-public r-lavinteract
   (package
     (name "r-lavinteract")
-    (version "0.2.2")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavinteract" version))
        (sha256
-        (base32 "0zb374v0l02fj4ch2id04jci958lzcdg34p26pyrd74rclnj5wfz"))))
+        (base32 "1sib6v9k61gsz750apjjrg1ms7vx5gbckpk3c2ax8dhgvq5hwpkf"))))
     (properties `((upstream-name . "lavinteract")))
     (build-system r-build-system)
     (arguments

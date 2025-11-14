@@ -8578,6 +8578,50 @@ equation solving is by compiled C code provided in the rxode2 package (Wang,
 Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
     (license license:gpl3+)))
 
+(define-public r-nlmixr2autoinit
+  (package
+    (name "r-nlmixr2autoinit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2autoinit" version))
+       (sha256
+        (base32 "1126pa2682hiq731l09rgljakmb93p7n3c1cm45vs43k10zs7gnr"))))
+    (properties `((upstream-name . "nlmixr2autoinit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vpc
+                             r-tidyr
+                             r-tibble
+                             r-rxode2
+                             r-purrr
+                             r-progressr
+                             r-nlmixr2est
+                             r-nlmixr2data
+                             r-nlmixr2
+                             r-magrittr
+                             r-knitr
+                             r-dplyr
+                             r-crayon))
+    (home-page "https://github.com/ucl-pharmacometrics/nlmixr2autoinit")
+    (synopsis
+     "Automatic Generation of Initial Estimates for Population Pharmacokinetic Modeling")
+    (description
+     "This package provides automated methods for generating initial parameter
+estimates in population pharmacokinetic modeling.  The pipeline integrates
+adaptive single-point methods, naive pooled graphic approaches, noncompartmental
+analysis methods, and parameter sweeping across pharmacokinetic models.  It
+estimates residual unexplained variability using either data-driven or
+fixed-fraction approaches and assigns pragmatic initial values for
+inter-individual variability.  These strategies are designed to improve model
+robustness and convergence in nlmixr2 workflows.  For more details see Huang Z,
+Fidler M, Lan M, Cheng IL, Kloprogge F, Standing JF (2025)
+<doi:10.1007/s10928-025-10000-z>.")
+    (license license:gpl3+)))
+
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")

@@ -16107,13 +16107,13 @@ apps, in part by wrapping the js-cookie @code{JavaScript} library
 (define-public r-cookiemonster
   (package
     (name "r-cookiemonster")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cookiemonster" version))
        (sha256
-        (base32 "1xj3a0qzvwasmw8ica9qxxxs4483zsyhv1p5hb3y491hkimbhdgv"))))
+        (base32 "0270wcv82zaxl138rgkl0qgc185qdpgnnppmabvj5sq5gkqay1z3"))))
     (properties `((upstream-name . "cookiemonster")))
     (build-system r-build-system)
     (arguments
@@ -34193,6 +34193,36 @@ approximate proportion of the total classified text bytes (e.g. 80% English and
 a neural network model instead.")
     (license license:asl2.0)))
 
+(define-public r-cld
+  (package
+    (name "r-cld")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cld" version))
+       (sha256
+        (base32 "016761bjbpy3wdadrglbxs0w1s22s8mhw846n4c5zb79csaflpdb"))))
+    (properties `((upstream-name . "cld")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-multcompview r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://gegznav.github.io/cld/")
+    (synopsis
+     "Create Compact Letter Display (CLD) for Statistical Comparisons")
+    (description
+     "This package creates compact letter displays (CLDs) for pairwise comparisons
+from statistical post-hoc tests.  Groups sharing the same letter are not
+significantly different from each other.  Supports multiple input formats
+including results from stats pairwise tests, @code{DescTools}', PMCMRplus',
+rstatix', symmetric matrices of p-values, and data frames.  Provides a
+consistent interface for visualizing statistical groupings across different
+testing frameworks.")
+    (license license:gpl3+)))
+
 (define-public r-clc
   (package
     (name "r-clc")
@@ -41824,19 +41854,29 @@ Stanojevic et al. (2019) <doi:10.1183/13993003.00224-2019>.")
 (define-public r-cfm
   (package
     (name "r-cfm")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFM" version))
        (sha256
-        (base32 "1pb2rkhpr587pzgwx4nz74njfjx0in75s0d7r2xi0b4dnv3ph4n5"))))
+        (base32 "0vl82afkp2lra13ych6clzj80aazcbj487zx3ms86qz6ln9svqz6"))))
     (properties `((upstream-name . "CFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-psych r-matrixcalc r-mass r-crch))
+    (propagated-inputs (list r-truncnorm
+                             r-rspectra
+                             r-robustbase
+                             r-psych
+                             r-pracma
+                             r-mvtnorm
+                             r-matrixcalc
+                             r-matrix
+                             r-mass
+                             r-kernlab
+                             r-crch))
     (home-page "https://cran.r-project.org/package=CFM")
     (synopsis "Analyzing Censored Factor Models")
     (description
@@ -48058,41 +48098,6 @@ balancing are also available (Magis and Barrada (2017)
 <doi:10.18637/jss.v076.c01>).")
     (license license:gpl3+)))
 
-(define-public r-catpredi
-  (package
-    (name "r-catpredi")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CatPredi" version))
-       (sha256
-        (base32 "0plgr8yv0c6q2j4rscnqf5kz01622gm3zw1nsx9w2l9bdna4q9p3"))))
-    (properties `((upstream-name . "CatPredi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rms
-                             r-rgenoud
-                             r-mgcv
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-cpe))
-    (home-page "https://cran.r-project.org/package=CatPredi")
-    (synopsis
-     "Optimal Categorisation of Continuous Variables in Prediction Models")
-    (description
-     "Allows the user to categorise a continuous predictor variable in a logistic or a
-Cox proportional hazards regression setting, by maximising the discriminative
-ability of the model.  I Barrio, I Arostegui, MX Rodriguez-Alvarez, JM Quintana
-(2015) <doi:10.1177/0962280215601873>.  I Barrio, MX Rodriguez-Alvarez, L
-Meira-Machado, C Esteban, I Arostegui (2017)
-<https://www.idescat.cat/sort/sort411/41.1.3.barrio-etal.pdf>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-catool
   (package
     (name "r-catool")
@@ -49239,6 +49244,49 @@ engineering, and prediction in cascade networks.  Jung, N., Bertrand, F.,
 Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014)
 <doi:10.1093/bioinformatics/btt705>.")
     (license license:gpl2+)))
+
+(define-public r-carts
+  (package
+    (name "r-carts")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "carts" version))
+       (sha256
+        (base32 "18l38mn2p4zgp48mvf8jvg0l7amzxys3fi2j2kz0hvfdnbbqn968"))))
+    (properties `((upstream-name . "carts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-targeted
+                             r-survival
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-progressr
+                             r-logger
+                             r-lava
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://novonordisk-opensource.github.io/carts/")
+    (synopsis
+     "Simulation-Based Assessment of Covariate Adjustment in Randomized Trials")
+    (description
+     "Monte Carlo simulation framework for different randomized clinical trial designs
+with a special emphasis on estimators based on covariate adjustment.  The
+package implements regression-based covariate adjustment (Rosenblum & van der
+Laan (2010) <doi:10.2202/1557-4679.1138>) and a one-step estimator (Van Lancker
+et al (2024) <doi:10.48550/@code{arXiv.2404.11150>}) for trials with continuous,
+binary and count outcomes.  The estimation of the minimum sample-size required
+to reach a specified statistical power for a given estimator uses bisection to
+find an initial rough estimate, followed by stochastic approximation
+(Robbins-Monro (1951) <doi:10.1214/aoms/1177729586>) to improve the estimate,
+and finally, a grid search to refine the estimate in the neighborhood of the
+current best solution.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cartography
   (package

@@ -6,6 +6,7 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
@@ -41,6 +42,50 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
+
+(define-public r-xyomics
+  (package
+    (name "r-xyomics")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "XYomics" version))
+       (sha256
+        (base32 "0irrkg8idf304d8rjsa7rciiz88c2z2vxvpy83kag64kvg0cg4gh"))))
+    (properties `((upstream-name . "XYomics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-seuratobject
+                             r-seurat
+                             r-scales
+                             r-reactomepa
+                             r-rcpp
+                             r-org-hs-eg-db
+                             r-limma
+                             r-igraph
+                             r-ggrepel
+                             r-ggraph
+                             r-ggplot2
+                             r-edger
+                             r-dplyr
+                             r-data-table
+                             r-clusterprofiler))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=XYomics")
+    (synopsis "Analysis of Sex Differences in Omics Data for Complex Diseases")
+    (description
+     "This package provides tools to analyze sex differences in omics data for complex
+diseases.  It includes functions for differential expression analysis using the
+limma method <doi:10.1093/nar/gkv007>, interaction testing between sex and
+disease, pathway enrichment with @code{clusterProfiler}
+<doi:10.1089/omi.2011.0118>, and gene regulatory network (GRN) construction and
+analysis using igraph'.  The package enables a reproducible workflow from raw
+data processing to biological interpretation.")
+    (license license:expat)))
 
 (define-public r-xxirt
   (package

@@ -3063,6 +3063,33 @@ focuses include the creation and import of terrain data and @code{GameObjects}
 as well as scene management.")
     (license license:expat)))
 
+(define-public r-unifiedml
+  (package
+    (name "r-unifiedml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unifiedml" version))
+       (sha256
+        (base32 "16h2p3yalnibi8yrp4pvim5c6pngigdmpissrwsq2q9n5ms7yghs"))))
+    (properties `((upstream-name . "unifiedml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-r6 r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Techtonique/unifiedml")
+    (synopsis "Unified Interface for Machine Learning Models")
+    (description
+     "This package provides a unified R6-based interface for various machine learning
+models with automatic interface detection, consistent cross-validation, model
+interpretations via numerical derivatives, and visualization.  Supports both
+regression and classification tasks with any model function that follows R's
+standard modeling conventions (formula or matrix interface).")
+    (license license:expat)))
+
 (define-public r-unifieddosefinding
   (package
     (name "r-unifieddosefinding")
