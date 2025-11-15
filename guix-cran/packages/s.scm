@@ -23463,13 +23463,13 @@ compositionally-warping (Murakami et al.  2021,
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "09g6chi8f84fg3dfwa05prisfrc55gc7d66wx7c58w6b8xdwd0s0"))))
+        (base32 "09bffk0nw3j72qndc17jawmv092hc0rr5dnkzl6gdbphkzk2w4x0"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (arguments
@@ -48771,13 +48771,13 @@ the aim being to describe and compare their isotopic niche.")
 (define-public r-siatools
   (package
     (name "r-siatools")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIAtools" version))
        (sha256
-        (base32 "075v30iygsxfv5rfqbprfyaxz6kd4hq9drm9j58hvzcfvn3pdw5a"))))
+        (base32 "0jcbn2x1yxsbxa83w5bxp2qjg6xsx5kd1j9k3pb1yb5r59g7f091"))))
     (properties `((upstream-name . "SIAtools")))
     (build-system r-build-system)
     (arguments
@@ -48788,7 +48788,6 @@ the aim being to describe and compare their isotopic niche.")
                              r-shiny
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-fs
                              r-desc
                              r-cli))

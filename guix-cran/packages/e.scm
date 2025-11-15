@@ -11243,13 +11243,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.8.3.0")
+    (version "0.10.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "1js3wgy8j9n3dwm8ln3vr5as7v59pbl722s1afcjw41vd9f5jb1z"))))
+        (base32 "16am0hazvvdddw1mn9379rm6zdkqql9fcwvx687fa321bkwzx36f"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments

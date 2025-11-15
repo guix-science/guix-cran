@@ -3055,21 +3055,21 @@ Statistical Learning with Applications in R'.")
 (define-public r-islasso
   (package
     (name "r-islasso")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "islasso" version))
        (sha256
-        (base32 "185i72l1748gf06vwifgpk17rwgx811402l90fa8q2d67ip9z3fy"))))
+        (base32 "095sx03dds41g1gxqzmw1iy4v0rfd87fbz1g1jclb4rsk0pk9hsz"))))
     (properties `((upstream-name . "islasso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-gridextra r-glmnet r-ggplot2 r-cli))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=islasso")
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://gianluca-sottile.github.io/islasso/")
     (synopsis "The Induced Smoothed Lasso")
     (description
      "An implementation of the induced smoothing (IS) idea to lasso regularization

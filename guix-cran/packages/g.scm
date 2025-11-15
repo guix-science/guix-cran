@@ -4617,13 +4617,13 @@ performance.")
 (define-public r-growfunctions
   (package
     (name "r-growfunctions")
-    (version "0.16")
+    (version "0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growfunctions" version))
        (sha256
-        (base32 "1v1sawv9fbb6lw4ynjdkj02z8rv5k8pkw55wmg2ws3jisy3xrcm7"))))
+        (base32 "1bafilkma723y4vdb8daka37mshwnjb6dpvwwrds4f67nbq6ss1x"))))
     (properties `((upstream-name . "growfunctions")))
     (build-system r-build-system)
     (arguments
@@ -9675,6 +9675,41 @@ are from Guinness (2018) <doi:10.1080/00401706.2018.1437476>.  Model fitting
 employs a Fisher scoring algorithm described in Guinness (2019)
 <doi:10.48550/@code{arXiv.1905.08374>}.")
     (license license:expat)))
+
+(define-public r-gpgame
+  (package
+    (name "r-gpgame")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPGame" version))
+       (sha256
+        (base32 "1jg37i4pdzcbkvbsv6b9awicrna7jaghcan8dcan5m79fks4gq6a"))))
+    (properties `((upstream-name . "GPGame")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-mvtnorm
+                             r-mnormt
+                             r-matrixstats
+                             r-mass
+                             r-kriginv
+                             r-gpareto
+                             r-dicekriging
+                             r-dicedesign))
+    (home-page "https://github.com/vpicheny/GPGame")
+    (synopsis "Solving Complex Game Problems using Gaussian Processes")
+    (description
+     "Sequential strategies for finding a game equilibrium are proposed in a black-box
+setting (expensive pay-off evaluations, no derivatives).  The algorithm handles
+noiseless or noisy evaluations.  Two acquisition functions are available.
+Graphical outputs can be generated automatically.  V. Picheny, M. Binois, A.
+Habbal (2018) <doi:10.1007/s10898-018-0688-0>.  M. Binois, V. Picheny, P.
+Taillandier, A. Habbal (2020) <doi:10.48550/@code{arXiv.1902.06565>}.")
+    (license license:gpl3)))
 
 (define-public r-gpflexviz
   (package
@@ -19647,13 +19682,13 @@ sets.  Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
 (define-public r-ggseg
   (package
     (name "r-ggseg")
-    (version "1.6.5")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg" version))
        (sha256
-        (base32 "0495g3l71lagrmz3s3lxy4rkfr7gin8vn1m59fvcv7hmycn39i0k"))))
+        (base32 "18jn7d6q8gzdsxc0m5nvas3krchnvxbiwasvbcb016vnni2amawp"))))
     (properties `((upstream-name . "ggseg")))
     (build-system r-build-system)
     (arguments
@@ -22278,6 +22313,47 @@ moon.  As such, they work best with only one or two groups.  gggibbous extends
 ggplot2 to allow for plotting multiple moon charts in a single panel and does
 not require a square coordinate system.")
     (license license:gpl3)))
+
+(define-public r-gggenomes
+  (package
+    (name "r-gggenomes")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gggenomes" version))
+       (sha256
+        (base32 "1qkpy6d281917az6kj8xa3xf85d49z8nd22chxfii42il80hj9df"))))
+    (properties `((upstream-name . "gggenomes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-snakecase
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://thackl.github.io/gggenomes/")
+    (synopsis "Grammar of Graphics for Comparative Genomics")
+    (description
+     "An extension of ggplot2 for creating complex genomic maps.  It builds on the
+power of ggplot2 and tidyverse adding new ggplot2'-style geoms & positions and
+dplyr'-style verbs to manipulate the underlying data.  It implements a layout
+concept inspired by ggraph and introduces tracks to bring tidiness to the mess
+that is genomics data.")
+    (license license:expat)))
 
 (define-public r-gggda
   (package

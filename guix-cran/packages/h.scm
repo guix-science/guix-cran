@@ -12293,13 +12293,13 @@ Alice (2023) \"Health Data Science in R\"
 (define-public r-hdshop
   (package
     (name "r-hdshop")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDShOP" version))
        (sha256
-        (base32 "04s0p4llx90wxzfwp6d63gvs7ww16f73ih5jn7x0kq699h2605wq"))))
+        (base32 "19ginckcsa9hbb81diz2z85dvw3rfh1f08pxa2vy8q1n9aka7p85"))))
     (properties `((upstream-name . "HDShOP")))
     (build-system r-build-system)
     (arguments

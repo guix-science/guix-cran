@@ -9521,13 +9521,13 @@ information, please visit
 (define-public r-validate
   (package
     (name "r-validate")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "validate" version))
        (sha256
-        (base32 "0c7f33cm6v0rngbpgdkkqzjf3v024lzk6fjn6xd5sbnlbfrrkiqz"))))
+        (base32 "1gk7y57lql4li9yaydqxygm08vlwa955hy4lcmv4h792nw4ppycx"))))
     (properties `((upstream-name . "validate")))
     (build-system r-build-system)
     (arguments

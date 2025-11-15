@@ -19268,13 +19268,13 @@ treatment) subjects were assigned at randomization.")
 (define-public r-bhsbvar
   (package
     (name "r-bhsbvar")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BHSBVAR" version))
        (sha256
-        (base32 "0vzlfk7raq2i86ynny6xy808cpq0iga16cdrsvpxdsc1gp1lkyf2"))))
+        (base32 "1l48jyrq4ixyr0w5yn1qksn4n5sqk1mfswwq02dpdxc5zcjds32c"))))
     (properties `((upstream-name . "BHSBVAR")))
     (build-system r-build-system)
     (arguments

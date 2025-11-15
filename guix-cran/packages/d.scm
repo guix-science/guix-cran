@@ -11547,13 +11547,13 @@ use dlib through Rcpp'.")
 (define-public r-dlfm
   (package
     (name "r-dlfm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DLFM" version))
        (sha256
-        (base32 "0wq2s2xwkadk6d0am8lx0ck694kiyf3qkzkj6fdn4v226mmdq6ri"))))
+        (base32 "0y1cb4dp5jixcpr70l2h5007rcyglv8514inynxl0sv25snagj6h"))))
     (properties `((upstream-name . "DLFM")))
     (build-system r-build-system)
     (arguments
@@ -27159,13 +27159,13 @@ the paper (Ma et al (2017) <doi:10.1109/ICDMW.2017.11>).")
 (define-public r-dda
   (package
     (name "r-dda")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dda" version))
        (sha256
-        (base32 "1b7kmj5ql2ig3jj08564l5han6jcgwqwva0nfphxf7nras71pg1a"))))
+        (base32 "0yixjy4d7rqyggkx4y9b59qy887yrkhhs4in3hpab5dln37v8cqa"))))
     (properties `((upstream-name . "dda")))
     (build-system r-build-system)
     (arguments
@@ -27188,13 +27188,13 @@ see <https://www.ddaproject.com>.")
 (define-public r-dcurves
   (package
     (name "r-dcurves")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcurves" version))
        (sha256
-        (base32 "01w20d7j9f667spmg28pp6mj5f4sxdx9z6waz2yaijgyif14drak"))))
+        (base32 "0a1wcm2kvi71qgw515yzcblmgczml2mg4z3il19sxqsx9wwxcyvr"))))
     (properties `((upstream-name . "dcurves")))
     (build-system r-build-system)
     (arguments
@@ -31523,13 +31523,13 @@ directly to Excel.")
 (define-public r-datacutr
   (package
     (name "r-datacutr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datacutr" version))
        (sha256
-        (base32 "1dqqxprc4nkmgbmzljhyrgwpkfl3fnpy9d8gmmla4nhg51an84qr"))))
+        (base32 "1ld8cqzbilqj17anp7q3j590mj4ksaad7ga0j3x0cd765h3qk3hf"))))
     (properties `((upstream-name . "datacutr")))
     (build-system r-build-system)
     (arguments

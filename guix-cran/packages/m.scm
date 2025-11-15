@@ -21,7 +21,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages xml)
-  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages geo)
@@ -22543,13 +22542,13 @@ Krajnc, and Skudnik (2023), Ecological Informatics
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "3.5.1")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0svgsqw027hx4r7a9g3qqjlymcvhjkl374040q21gc6x5w1zvkbm"))))
+        (base32 "1nhlm0pqn0grlhvbnakrb31xcx32ykqjzkdvlh4xflhzhki8hihz"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -32973,38 +32972,6 @@ proposed in this package was used in Laib et al.
 (<doi:10.1016/j.chaos.2018.02.024> and <doi:10.1063/1.5022737>).  See references
 for more information.  Interested users can find a parallel version of the
 @code{MFDFA()} function on @code{GitHub}.")
-    (license license:gpl3)))
-
-(define-public r-mfdb
-  (package
-    (name "r-mfdb")
-    (version "7.3-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mfdb" version))
-       (sha256
-        (base32 "1l7bvacmvh53rq91jqdb6zqjn3974sy838zfvgfb6nam54r080y4"))))
-    (properties `((upstream-name . "mfdb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsqlite
-                             r-rpostgres
-                             r-rlang
-                             r-logging
-                             r-getpass
-                             r-duckdb
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mfdb")
-    (synopsis "MareFrame DB Querying Library")
-    (description
-     "This package creates and manages a @code{PostgreSQL} database suitable for
-storing fisheries data and aggregating ready for use within a Gadget
-<https://gadget-framework.github.io/gadget2/> model.  See
-<https://mareframe.github.io/mfdb/> for more information.")
     (license license:gpl3)))
 
 (define-public r-mfd

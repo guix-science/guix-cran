@@ -142,13 +142,13 @@ Maier & Lakens (2021) <doi:10.31234/osf.io/ts4r6>).")
 (define-public r-justifier
   (package
     (name "r-justifier")
-    (version "0.2.6")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "justifier" version))
        (sha256
-        (base32 "0zpmxcgaa0y5qpk82m4jmkljvfrsv8fm8dmzxhvblicyl28d33bs"))))
+        (base32 "1skj6dxflfv4fap62xzvidrrhgl55cc8r6gg9kp1acmq9bwzzxy8"))))
     (properties `((upstream-name . "justifier")))
     (build-system r-build-system)
     (arguments
@@ -161,12 +161,12 @@ Maier & Lakens (2021) <doi:10.31234/osf.io/ts4r6>).")
                              r-diagrammer
                              r-data-tree))
     (native-inputs (list r-knitr))
-    (home-page "https://r-packages.gitlab.io/justifier")
+    (home-page "https://justifier.opens.science")
     (synopsis
      "Human and Machine-Readable Justifications and Justified Decisions Based on 'YAML'")
     (description
      "Leverages the yum package to implement a YAML ('YAML Ain't Markup Language', a
-human friendly standard for data serialization; see <https:yaml.org>) standard
+human friendly standard for data serialization; see <https://yaml.org>) standard
 for documenting justifications, such as for decisions taken during the planning,
 execution and analysis of a study or during the development of a behavior change
 intervention as illustrated by Marques & Peters (2019)

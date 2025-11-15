@@ -6651,13 +6651,13 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
 (define-public r-arxiv
   (package
     (name "r-arxiv")
-    (version "0.12")
+    (version "0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aRxiv" version))
        (sha256
-        (base32 "0fhrdfr525hgn1ms5w096cw2mbf81qy65f5qf3757h98553qj8s7"))))
+        (base32 "07ilqssvhdw5xw8r7c5kpisxr7fivai8jy37n83lzwvn165nvzhh"))))
     (properties `((upstream-name . "aRxiv")))
     (build-system r-build-system)
     (arguments
@@ -6808,13 +6808,13 @@ NB-frequent itemsets and NB-precise rules.  Michael Hahsler (2006)
 (define-public r-arulescba
   (package
     (name "r-arulescba")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesCBA" version))
        (sha256
-        (base32 "1jx9zgzpfwg89vpxllg6s14mlaz4lyi3l5lvas79rznjhbsb7l35"))))
+        (base32 "0p6wsqlh5jldsa0nqw2vzjzdvby5j3lbiamsafmclw6cipdblwp2"))))
     (properties `((upstream-name . "arulesCBA")))
     (build-system r-build-system)
     (arguments
@@ -24979,19 +24979,20 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adas-utils
   (package
     (name "r-adas-utils")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adas.utils" version))
        (sha256
-        (base32 "0lj02asmj4xsjd1g69n705n83dvc25msv7mbmjq1b9rks4jj5pfd"))))
+        (base32 "1n67s1j1444py0rq02xam525r99wznnvvqv0g6q7vm3grbvbnanm"))))
     (properties `((upstream-name . "adas.utils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-scales

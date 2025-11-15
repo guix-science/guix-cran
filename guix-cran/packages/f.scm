@@ -4429,13 +4429,13 @@ repositories, and more.  File paths are specified with function arguments, or
 (define-public r-frogger
   (package
     (name "r-frogger")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froggeR" version))
        (sha256
-        (base32 "0vpbmdggdvqlk0x9v58g9gapmvx50v72nmp0c4hpx9aj3xwaf6sb"))))
+        (base32 "19zr51h7xyv2cczwb7cwnlk580xzrccw979r1lsawinwr23n3fhs"))))
     (properties `((upstream-name . "froggeR")))
     (build-system r-build-system)
     (arguments
@@ -4445,6 +4445,7 @@ repositories, and more.  File paths are specified with function arguments, or
                              r-usethis
                              r-stringr
                              r-rstudioapi
+                             r-rlang
                              r-readr
                              r-rappdirs
                              r-quarto

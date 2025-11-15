@@ -24543,13 +24543,13 @@ implemented here.")
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
-    (version "3.7-0")
+    (version "3.8-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJSDMX" version))
        (sha256
-        (base32 "0rfj1kpwcz2gyjc66qp8sxfq7paz1kqgbh3v2vp8l0xqmyyygj47"))))
+        (base32 "1mznyydnlkhsf6y69cipf011zipgzbfxj0m3r9vsjabrlwhhwsd3"))))
     (properties `((upstream-name . "RJSDMX")))
     (build-system r-build-system)
     (arguments
@@ -51491,13 +51491,13 @@ mean squared error minimizing bandwidths.  This package is based on Schennach
 (define-public r-rbayesianoptimization
   (package
     (name "r-rbayesianoptimization")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rBayesianOptimization" version))
        (sha256
-        (base32 "071317r3xbcvkckzvgiac786zi2cy7zbrknscj3r521kaki1rfaf"))))
+        (base32 "1mbcbahdc8f7w26896fyb3xkpi586bvmzh21sy8cpkh9jmi20i3l"))))
     (properties `((upstream-name . "rBayesianOptimization")))
     (build-system r-build-system)
     (arguments
@@ -53872,13 +53872,13 @@ designed to create, modify and run apsimx files in the APSIM Next Generation
 (define-public r-rapr
   (package
     (name "r-rapr")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapr" version))
        (sha256
-        (base32 "1xzyay1111q9v9l6z600gaq24kwvkrji44rrvhk0v96r7sczy965"))))
+        (base32 "19k312y5q9csp1v82dz7zphvjm0dmnwpwga9907fdnw07w1qwkcb"))))
     (properties `((upstream-name . "rapr")))
     (build-system r-build-system)
     (arguments

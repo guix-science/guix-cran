@@ -4130,6 +4130,66 @@ X, Meyer MC and Opsomer JD (2021)<doi:10.1016/j.jspi.2021.02.004> for more
 details.")
     (license license:gpl2+)))
 
+(define-public r-cstools
+  (package
+    (name "r-cstools")
+    (version "5.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CSTools" version))
+       (sha256
+        (base32 "1wbjw6z8hm66a17p0z8as12h8nkf4656b5xq8ldm2h28aqf42f7y"))))
+    (properties `((upstream-name . "CSTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-verification
+                             r-startr
+                             r-scales
+                             r-s2dv
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-rainfarmr
+                             r-qmap
+                             r-plyr
+                             r-ncdf4
+                             r-multiapply
+                             r-maps
+                             r-lubridate
+                             r-ggplot2
+                             r-easyverification
+                             r-easyncdf
+                             r-dplyr
+                             r-data-table
+                             r-climprojdiags
+                             r-abind))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=CSTools")
+    (synopsis
+     "Assessing Skill of Climate Forecasts on Seasonal-to-Decadal Timescales")
+    (description
+     "Exploits dynamical seasonal forecasts in order to provide information relevant
+to stakeholders at the seasonal timescale.  The package contains process-based
+methods for forecast calibration, bias correction, statistical and stochastic
+downscaling, optimal forecast combination and multivariate verification, as well
+as basic and advanced tools to obtain tailored products.  This package was
+developed in the context of the ERA4CS project MEDSCOPE and the H2020 S2S4E
+project and includes contributions from @code{ArticXchange} project founded by
+EU-@code{PolarNet} 2.  Implements methods described in PÃ©rez-ZanÃ³n et al.
+(2022) <doi:10.5194/gmd-15-6115-2022>, Doblas-Reyes et al. (2005)
+<doi:10.1111/j.1600-0870.2005.00104.x>, Mishra et al. (2018)
+<doi:10.1007/s00382-018-4404-z>, Sanchez-Garcia et al. (2019)
+<doi:10.5194/asr-16-165-2019>, Straus et al. (2007) <doi:10.1175/JCLI4070.1>,
+Terzago et al. (2018) <doi:10.5194/nhess-18-2825-2018>, Torralba et al. (2017)
+<doi:10.1175/JAMC-D-16-0204.1>, D'Onofrio et al. (2014)
+<doi:10.1175/JHM-D-13-096.1>, Verfaillie et al. (2017)
+<doi:10.5194/gmd-10-4257-2017>, Van Schaeybroeck et al. (2019)
+<doi:10.1016/B978-0-12-812372-0.00010-8>, Yiou et al. (2013)
+<doi:10.1007/s00382-012-1626-3>.")
+    (license license:gpl3)))
+
 (define-public r-cstime
   (package
     (name "r-cstime")
@@ -6255,51 +6315,6 @@ high-dimensional surrogate markers\", Biostatistics
 much of the overall treatment effect is explained by a (possibly
 high-dimensional) set of surrogate markers.")
     (license license:expat)))
-
-(define-public r-crosstalkr
-  (package
-    (name "r-crosstalkr")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crosstalkr" version))
-       (sha256
-        (base32 "1p4grkh6kripkpirs2hrqwv4bz61bcr6pqzj88j75311kjiphnl0"))))
-    (properties `((upstream-name . "crosstalkr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringdb
-                             r-rlang
-                             r-readr
-                             r-rcpp
-                             r-matrix
-                             r-magrittr
-                             r-iterators
-                             r-igraph
-                             r-ggplot2
-                             r-foreach
-                             r-ensembldb
-                             r-dplyr
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=crosstalkr")
-    (synopsis
-     "Analysis of Graph-Structured Data with a Focus on Protein-Protein Interaction Networks")
-    (description
-     "This package provides a general toolkit for drug target identification.  We
-include functionality to reduce large graphs to subgraphs and prioritize nodes.
-In addition to being optimized for use with generic graphs, we also provides
-support to analyze protein-protein interactions networks from online
-repositories.  For more details on core method, refer to Weaver et al. (2021)
-<https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008755>.")
-    (license license:gpl3+)))
 
 (define-public r-crosstabs-loglinear
   (package
@@ -12542,19 +12557,19 @@ effects and wage decompositions.")
 (define-public r-countdown
   (package
     (name "r-countdown")
-    (version "0.4.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countdown" version))
        (sha256
-        (base32 "05mnxq17z867jzi53bcvljcmpswsq9xcknddzs6k57chjl4klrwj"))))
+        (base32 "0z6vmkd1ns84816wd1p5526md20ki7zh3jvmwcqq3d8mrw5zd1rm"))))
     (properties `((upstream-name . "countdown")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-whisker r-prismatic r-htmltools))
+    (propagated-inputs (list r-prismatic r-htmltools))
     (home-page "https://pkg.garrickadenbuie.com/countdown/")
     (synopsis
      "Countdown Timer for HTML Presentations, Documents, and Web Apps")
@@ -30840,19 +30855,20 @@ Adelfio G. (2019) <doi:10.1007/s00180-018-0817-8>.")
 (define-public r-clustcurv
   (package
     (name "r-clustcurv")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustcurv" version))
        (sha256
-        (base32 "1pmh9xm37shdw74ivis6ynwd8az57nj5pk9c1m70da7ajjr6isb4"))))
+        (base32 "05cwlbv8lpkwqzgvi73hhmk6ac6km8v1ywd9wsz2xcwamkiba4ck"))))
     (properties `((upstream-name . "clustcurv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-survminer
+                             r-survival
                              r-rcolorbrewer
                              r-npregfast
                              r-gmedian
@@ -30867,10 +30883,11 @@ Adelfio G. (2019) <doi:10.1007/s00180-018-0817-8>.")
     (description
      "This package provides a method for determining groups in multiple curves with an
 automatic selection of their number based on k-means or k-medians algorithms.
-The selection of the optimal number is provided by bootstrap methods.  The
-methodology can be applied both in regression and survival framework.
-Implemented methods are: Grouping multiple survival curves described by
-Villanueva et al. (2018) <doi:10.1002/sim.8016>.")
+The selection of the optimal number is provided by bootstrap methods or other
+approaches with lower computational cost.  The methodology can be applied both
+in regression and survival framework.  Implemented methods are: Grouping
+multiple survival curves described by Villanueva et al. (2018)
+<doi:10.1002/sim.8016>.")
     (license license:expat)))
 
 (define-public r-clustcr2

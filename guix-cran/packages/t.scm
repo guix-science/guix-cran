@@ -20170,13 +20170,13 @@ Web services are available at <https://www.anthropic.com>, <https://openai.com>,
 (define-public r-tidylda
   (package
     (name "r-tidylda")
-    (version "0.0.5")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidylda" version))
        (sha256
-        (base32 "1i5nhb49g5sw5dwha7ia61yp5nnqi9bln35ij0smhrrfjwxz5djp"))))
+        (base32 "0yvad9pf4m9y0yvjs2sg890cisici3gqyx2smy05xpp5w9sivi86"))))
     (properties `((upstream-name . "tidylda")))
     (build-system r-build-system)
     (arguments
@@ -20206,8 +20206,7 @@ style conventions from the tidyverse', Wickham et al.
 (2019)<doi:10.21105/joss.01686>, and tidymodels', Kuhn et
 al.<https://tidymodels.github.io/model-implementation-principles/>.  Fitting is
 done via collapsed Gibbs sampling.  Also implements several novel features for
-LDA such as guided models and transfer learning based on ongoing and, as yet,
-unpublished research.")
+LDA such as guided models and transfer learning.")
     (license license:expat)))
 
 (define-public r-tidyklips
@@ -21277,13 +21276,13 @@ Additionally, it facilitates code classification via included lexicons.")
 (define-public r-tidycmprsk
   (package
     (name "r-tidycmprsk")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycmprsk" version))
        (sha256
-        (base32 "1w88zz5wscb25j59hx1bzlmf13mh8wqngkffnhmp6vwn1a53i8lx"))))
+        (base32 "1hwx6jw30cc3xsc9f06dbv2p3fzlg9g8ih4dc5b5hyq46gz6va8f"))))
     (properties `((upstream-name . "tidycmprsk")))
     (build-system r-build-system)
     (arguments
@@ -26144,13 +26143,13 @@ imputation (see Finch, 2008 <doi: 10.1111/j.1745-3984.2008.00062.x>).")
 (define-public r-testdat
   (package
     (name "r-testdat")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testdat" version))
        (sha256
-        (base32 "099lj7mdb1w3vswhsaddin24qdhbzp3dspch80v9ks8p3s0m57dr"))))
+        (base32 "1safg6pvcsmigbmaqj2gr9rqr5n55rav24z8m88kp0qr6iyw2qy7"))))
     (properties `((upstream-name . "testdat")))
     (build-system r-build-system)
     (arguments

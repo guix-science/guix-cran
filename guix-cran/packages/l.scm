@@ -8923,13 +8923,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.24")
+    (version "1.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "09mw2326lxw1c04w4361907yhwh5dg9ghpv38gcg4d51ci1r1vam"))))
+        (base32 "1pyf1468fsshx7gkmvcv1s9520h7nixk2y223xwi27j9rp0canpg"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -8938,7 +8938,7 @@ dependencies.")
     (propagated-inputs (list r-ggplot2 r-class))
     (native-inputs (list r-knitr))
     (home-page "https://book-data-science-r.netlify.app")
-    (synopsis "Foundations Toolkit and Datasets for Data Science")
+    (synopsis "Toolkit and Datasets for Data Science")
     (description
      "This package provides a collection of helper functions and illustrative datasets
 to support learning and teaching of data science with R. The package is designed

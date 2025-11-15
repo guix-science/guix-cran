@@ -11028,13 +11028,13 @@ repositories of the nflverse project.")
 (define-public r-nflplotr
   (package
     (name "r-nflplotr")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflplotR" version))
        (sha256
-        (base32 "1k6rh8bapkbvmpxfh3lpikgim0lqrmx84idjvasl732ygrrq5fds"))))
+        (base32 "1911y55iwa0jy3sacm959sfkrjsddhpzrri8xzhqxzx4hjclz1f1"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (arguments
@@ -16507,13 +16507,13 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "4.0.3")
+    (version "4.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NCA" version))
        (sha256
-        (base32 "0kvj9zv96wi52jgwjn6hxvs28ksyrd987d3kxp7fsv15sp1c7f2i"))))
+        (base32 "0qb36p8j8mqkhpapnnxbyq2y4cpwqsdk2f637wa1sbmc1776i9iv"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (arguments

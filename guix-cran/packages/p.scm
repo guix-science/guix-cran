@@ -9821,19 +9821,20 @@ the performance in 2007-2020.")
 (define-public r-prism
   (package
     (name "r-prism")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prism" version))
        (sha256
-        (base32 "15zi4r0kmg1p4j2jdn48vw6j1m54gan5c2w5n9gqplllbmvkmvk4"))))
+        (base32 "0hgc6nz3sn0q5hvlw36625iaajfx0b8ignp46qmydp8fa4wmnp5z"))))
     (properties `((upstream-name . "prism")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-terra
+                             r-stringr
                              r-readr
                              r-raster
                              r-magrittr
@@ -13561,13 +13562,13 @@ publication details.")
 (define-public r-pqrfe
   (package
     (name "r-pqrfe")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrfe" version))
        (sha256
-        (base32 "0apsrlgricjmv202yg1h3iz2715nmf05wcvyznnha0nil7cqg0qi"))))
+        (base32 "0bkpmdd82hm6j692bi98pqp9gqdzs9i7bh7bdhgjzv32729cwfb4"))))
     (properties `((upstream-name . "pqrfe")))
     (build-system r-build-system)
     (arguments
@@ -14927,13 +14928,13 @@ See README and NEWS for further information.")
 (define-public r-powertools
   (package
     (name "r-powertools")
-    (version "0.1.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powertools" version))
        (sha256
-        (base32 "083spfqf09h6589ms6ckwbl48c7fs6qmkmwdmh64f2i30p37i0dh"))))
+        (base32 "1r715ql1lyd1550l3bl36qdxl0i944agi71i2h4c9p6grkpiq276"))))
     (properties `((upstream-name . "powertools")))
     (build-system r-build-system)
     (arguments
@@ -39669,13 +39670,13 @@ effectively.")
 (define-public r-pbsddesolve
   (package
     (name "r-pbsddesolve")
-    (version "1.13.4")
+    (version "1.13.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PBSddesolve" version))
        (sha256
-        (base32 "0wa7h93449lr8shkrjy49h53vwzk2zy1h0c9ddkhh1axd978ms39"))))
+        (base32 "17g856fd151h15sn69d51mb5984qkbmgwmynvp3q409xrbm1ipzs"))))
     (properties `((upstream-name . "PBSddesolve")))
     (build-system r-build-system)
     (arguments
