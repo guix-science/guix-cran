@@ -20394,13 +20394,13 @@ any practical use.")
 (define-public r-devianlm
   (package
     (name "r-devianlm")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devianLM" version))
        (sha256
-        (base32 "0kfck6v4mnq8g5swbc20n284h532ljwmnhjpjajnw41cm9fqri0p"))))
+        (base32 "01b6q5rshkxl0zm32vbd0520lbp3p6xc4217ybj0z456nqv8hx0n"))))
     (properties `((upstream-name . "devianLM")))
     (build-system r-build-system)
     (arguments
@@ -32113,13 +32113,13 @@ belongs to the @code{dartRverse} suit of packages and depends on
 (define-public r-dartr-sim
   (package
     (name "r-dartr-sim")
-    (version "0.70")
+    (version "0.71")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.sim" version))
        (sha256
-        (base32 "02l18hvdd1hr9l15frvaw7nikjmr7iyq3wvg5xz8drma4v9r9lwb"))))
+        (base32 "1k34q0wk5gfh79i8dymc3xv3r6nx8hx2mylxdyb1hr4xygr04wkv"))))
     (properties `((upstream-name . "dartR.sim")))
     (build-system r-build-system)
     (arguments
@@ -32135,9 +32135,14 @@ belongs to the @code{dartRverse} suit of packages and depends on
                              r-reshape2
                              r-rcpp
                              r-hierfstat
+                             r-ggrepel
                              r-ggplot2
+                             r-foreach
                              r-fields
+                             r-dplyr
+                             r-doparallel
                              r-data-table
+                             r-dartr-popgen
                              r-dartr-data
                              r-dartr-base
                              r-adegenet))

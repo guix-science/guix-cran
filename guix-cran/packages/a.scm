@@ -4206,13 +4206,13 @@ specification.")
 (define-public r-atnr
   (package
     (name "r-atnr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ATNr" version))
        (sha256
-        (base32 "1xzslcj4wgsrk4hyvf2isacz6hrsdvsxzvhicb6lvm88cbc2c2cn"))))
+        (base32 "02gcj99wd7akrp8qx9a0if5ljjx2prqk0bkq9hhxarr9w22c9jnw"))))
     (properties `((upstream-name . "ATNr")))
     (build-system r-build-system)
     (arguments
@@ -21283,13 +21283,13 @@ reanalysis\"
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.3.2.3")
+    (version "4.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afttest" version))
        (sha256
-        (base32 "1jk8xs4mcayaij5rjl891mzg3dq9qs0lyi5gfzi6sjar6apmwsfb"))))
+        (base32 "0f6mabl3p42waa7ilqrhxvfskhj9a1hlyly7hgv2f540fj84h2sp"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (arguments
@@ -21312,7 +21312,12 @@ functional form of each covariate, a link function, and an omnibus test.  The
 p-value offered in this package is based on the Kolmogorov-type supremum test
 and the variance of the proposed test statistics is estimated through the
 re-sampling method.  Furthermore, a graphical technique to compare the shape of
-the observed residual to a number of the approximated realizations is provided.")
+the observed residual to a number of the approximated realizations is provided.
+See the following references; A general model-checking procedure for
+semiparametric accelerated failure time models, Statistics and Computing, 34
+(3), 117 <doi:10.1007/s11222-024-10431-7>; Diagnostics for semiparametric
+accelerated failure time models with R package afttest', @code{arXiv},
+<doi:10.48550/@code{arXiv.2511.09823>}.")
     (license license:gpl3+)))
 
 (define-public r-aftsem
@@ -26810,13 +26815,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
 (define-public r-accsamplingdesign
   (package
     (name "r-accsamplingdesign")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccSamplingDesign" version))
        (sha256
-        (base32 "13df3863xcix82ga3acqvf2d6wwq4sg8xhn3cc0hprlfmwyazy45"))))
+        (base32 "1rffc99yv6qzxxmjirc4lmpidz3hc612v8n1n39x3z28y7h6ib8a"))))
     (properties `((upstream-name . "AccSamplingDesign")))
     (build-system r-build-system)
     (arguments

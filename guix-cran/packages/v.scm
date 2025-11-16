@@ -5667,13 +5667,13 @@ paper <DOI:10.1103/@code{PhysRevE.73.026120>}.")
 (define-public r-versus
   (package
     (name "r-versus")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "versus" version))
        (sha256
-        (base32 "1g382ig1lw1jn50ijw4nmcy5xbcdcci2f8h4vs53f8256arj0ky7"))))
+        (base32 "1hjhmrrx2fsjvwm6zncf4h763w8s2hmriq053gbapjb7cv80qhlb"))))
     (properties `((upstream-name . "versus")))
     (build-system r-build-system)
     (arguments

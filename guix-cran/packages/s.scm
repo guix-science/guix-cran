@@ -48680,13 +48680,13 @@ execution, and monitoring of federal discretionary transfers in Brazil.")
 (define-public r-sicegar
   (package
     (name "r-sicegar")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sicegar" version))
        (sha256
-        (base32 "14xv3rir65fmrx89gjxskk32ldp5zz8m8jv5ybgh5jrwm3x1k0fb"))))
+        (base32 "1d5d4h38jk5f6xh5amq8z99yb9rv2w47ncdbhm8hfxwnq226pjxb"))))
     (properties `((upstream-name . "sicegar")))
     (build-system r-build-system)
     (arguments
@@ -48694,7 +48694,7 @@ execution, and monitoring of federal discretionary transfers in Brazil.")
       #:tests? #f))
     (propagated-inputs (list r-minpack-lm r-ggplot2 r-fbasics r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/wilkelab/sicegar")
+    (home-page "https://github.com/wilkelab/sicegar/")
     (synopsis "Analysis of Single-Cell Viral Growth Curves")
     (description
      "Aims to quantify time intensity data by using sigmoidal and double sigmoidal

@@ -6161,13 +6161,13 @@ with a condition established upon person ability and item difficulty.")
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "1h570ra7gqfi5q0p4dpq8ai6jzmyz43c364cawr6l2v46rgjs4ab"))))
+        (base32 "1wclv2vfv1zrnnmggbqw6p8a1liq025yslbjn6nmmjz33si2sjvx"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (arguments

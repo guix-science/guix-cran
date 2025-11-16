@@ -20303,6 +20303,56 @@ effect), interaction effects between a number of factors, as well as main and
 simple factor effects.")
     (license license:gpl3+)))
 
+(define-public r-fdma
+  (package
+    (name "r-fdma")
+    (version "2.2.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fDMA" version))
+       (sha256
+        (base32 "1k6096wmc9iii8wdxlwh1nis9npd686c9xzh3mqgq75zkgdwpqkm"))))
+    (properties `((upstream-name . "fDMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tseries
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-psych
+                             r-png
+                             r-itertools
+                             r-iterators
+                             r-gplots
+                             r-forecast
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://CRAN.R-project.org/package=fDMA")
+    (synopsis
+     "Dynamic Model Averaging and Dynamic Model Selection for Continuous Outcomes")
+    (description
+     "Allows to estimate dynamic model averaging, dynamic model selection and median
+probability model.  The original methods are implemented, as well as, selected
+further modifications of these methods.  In particular the user might choose
+between recursive moment estimation and exponentially moving average for
+variance updating.  Inclusion probabilities might be modified in a way using
+Google Trends'.  The code is written in a way which minimises the computational
+burden (which is quite an obstacle for dynamic model averaging if many variables
+are used).  For example, this package allows for parallel computations and
+Occam's window approach.  The package is designed in a way that is hoped to be
+especially useful in economics and finance.  Main reference: Raftery, A.E.,
+Karny, M., Ettler, P. (2010) <doi:10.1198/TECH.2009.08104>.")
+    (license license:gpl3)))
+
 (define-public r-fdm2id
   (package
     (name "r-fdm2id")
@@ -23606,13 +23656,13 @@ Records <doi:10.1017/S0003055418000783> and is available at
 (define-public r-fastkrr
   (package
     (name "r-fastkrr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastKRR" version))
        (sha256
-        (base32 "0w5s6cirjxx7qwc9d49czqh18m6cwb59pakym5d2p8bysaa5isyl"))))
+        (base32 "116cidx94x9y8nj2xv65j95bjrr3rcy60nnbardf9rpg5p7qp98q"))))
     (properties `((upstream-name . "FastKRR")))
     (build-system r-build-system)
     (arguments
@@ -23624,6 +23674,7 @@ Records <doi:10.1017/S0003055418000783> and is available at
                              r-rcpparmadillo
                              r-rcpp
                              r-parsnip
+                             r-ggplot2
                              r-generics
                              r-cvst))
     (home-page "https://github.com/kybak90/FastKRR")

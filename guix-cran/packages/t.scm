@@ -28482,13 +28482,13 @@ displays filtered and unfiltered observation counts.")
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.reporter" version))
        (sha256
-        (base32 "0mby6ib3l7fixws4s9yxsaqkv97hzc9ifxl59kfavixgksjnci88"))))
+        (base32 "0lpvnsv0l55agqymbmb6g5hfhpjibnfkkrip0car44k8hazraclm"))))
     (properties `((upstream-name . "teal.reporter")))
     (build-system r-build-system)
     (arguments
@@ -28496,6 +28496,8 @@ displays filtered and unfiltered observation counts.")
       #:tests? #f))
     (propagated-inputs (list r-zip
                              r-yaml
+                             r-teal-data
+                             r-teal-code
                              r-sortable
                              r-shinywidgets
                              r-shinyjs
@@ -28505,11 +28507,15 @@ displays filtered and unfiltered observation counts.")
                              r-rtables
                              r-rmarkdown
                              r-rlistings
+                             r-rlang
                              r-r6
                              r-lifecycle
                              r-knitr
+                             r-jsonlite
                              r-htmltools
+                             r-gtsummary
                              r-flextable
+                             r-commonmark
                              r-checkmate
                              r-bslib
                              r-bsicons))

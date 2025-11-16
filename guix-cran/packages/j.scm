@@ -3679,13 +3679,13 @@ procedures for computing the investment performance indices of Bacon (2004)
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jfa" version))
        (sha256
-        (base32 "1amp0m0czjdgj0rqxdh5flryhczq2r9hi2iy9qm1vbf9rnr3lvfv"))))
+        (base32 "0fyl2jqv6iywb1w504l1v9pbmmh7m35ba1ln1ypyhprzfagrlk03"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (arguments

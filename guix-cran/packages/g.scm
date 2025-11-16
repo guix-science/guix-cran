@@ -3045,20 +3045,19 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "4.1.4")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSODR" version))
        (sha256
-        (base32 "12wyapbxbdf4rr8adc5y9c4clpz2mm24awxdidpq18gcjmg1v8za"))))
+        (base32 "069918lyqz4cf6d4clxhnvh49w3ih5lnz94bq10k9kz57kgi15p0"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-r-utils r-data-table r-curl
-                             r-countrycode))
+    (propagated-inputs (list r-withr r-r-utils r-lifecycle r-data-table r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/GSODR/")
     (synopsis "Global Surface Summary of the Day ('GSOD') Weather Data Client")
@@ -9279,29 +9278,29 @@ et al. (2017) <doi:10.1016/S2214-109X(17)30105-5>.")
 (define-public r-gppenalty
   (package
     (name "r-gppenalty")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPpenalty" version))
        (sha256
-        (base32 "0d9gfg5c7wkq3sp7jc16p47xjhw93fvn1mhm90x4lr48rs6mdacy"))))
+        (base32 "0r7zxnanp4mmx1664c5hhxqxj56z9cb70l5ggkrmc1dvc0s9v3lv"))))
     (properties `((upstream-name . "GPpenalty")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-foreach r-doparallel))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=GPpenalty")
     (synopsis "Penalized Likelihood in Gaussian Processes")
     (description
      "This package implements maximum likelihood estimation for Gaussian processes,
 supporting both isotropic and separable models with predictive capabilities.
 Includes penalized likelihood estimation following Li and Sudjianto (2005,
-<doi:10.1198/004017004000000671>), using score-based metrics that account for
-uncertainty (See Gneiting and Raftery 2007, <doi:10.1198/016214506000001437>).
-Includes cross validation techniques for tuning parameter selection.  Designed
-specifically for small datasets.")
+<doi:10.1198/004017004000000671>), using decorrelated prediction error
+(DPE)-based metrics, motivated by Mahalanobis distance, that account for
+uncertainty.  Includes cross validation techniques for tuning parameter
+selection.  Designed specifically for small datasets.")
     (license license:expat)))
 
 (define-public r-gpp
@@ -16185,35 +16184,32 @@ fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 (define-public r-gkwreg
   (package
     (name "r-gkwreg")
-    (version "1.0.10")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkwreg" version))
        (sha256
-        (base32 "0b0xk1zim63cjcm40wfkf2k3qd22q67irndsq9hwswxqwjq38azb"))))
+        (base32 "15x6kz6pjfp3r7vkvsxvxf926c98040ck0v4il1y1vbncjqgmcff"))))
     (properties `((upstream-name . "gkwreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tmb
-                             r-tidyr
-                             r-scales
-                             r-reshape2
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-rappdirs
-                             r-patchwork
                              r-numderiv
                              r-magrittr
                              r-gridextra
+                             r-gkwdist
                              r-ggpubr
                              r-ggplot2
-                             r-formula
-                             r-fmsb))
-    (home-page "https://cran.r-project.org/package=gkwreg")
+                             r-formula))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/evandeilton/gkwreg")
     (synopsis "Generalized Kumaraswamy Regression Models for Bounded Data")
     (description
      "This package implements regression models for bounded continuous data in the
@@ -19547,13 +19543,13 @@ to get a steampunk style.")
 (define-public r-ggseqplot
   (package
     (name "r-ggseqplot")
-    (version "0.8.8")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseqplot" version))
        (sha256
-        (base32 "0n6fjxdsm2da6mp9frxap0637g8i5czw9n39mgwfw5hr0jar1fij"))))
+        (base32 "1jkm7fg408vdxvy05aaq62wlkwyngp66dask942xhv022n163v2q"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
     (arguments

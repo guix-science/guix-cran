@@ -21,6 +21,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages xml)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages geo)
@@ -32974,6 +32975,38 @@ for more information.  Interested users can find a parallel version of the
 @code{MFDFA()} function on @code{GitHub}.")
     (license license:gpl3)))
 
+(define-public r-mfdb
+  (package
+    (name "r-mfdb")
+    (version "7.3-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mfdb" version))
+       (sha256
+        (base32 "1l7bvacmvh53rq91jqdb6zqjn3974sy838zfvgfb6nam54r080y4"))))
+    (properties `((upstream-name . "mfdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsqlite
+                             r-rpostgres
+                             r-rlang
+                             r-logging
+                             r-getpass
+                             r-duckdb
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mfdb")
+    (synopsis "MareFrame DB Querying Library")
+    (description
+     "This package creates and manages a @code{PostgreSQL} database suitable for
+storing fisheries data and aggregating ready for use within a Gadget
+<https://gadget-framework.github.io/gadget2/> model.  See
+<https://mareframe.github.io/mfdb/> for more information.")
+    (license license:gpl3)))
+
 (define-public r-mfd
   (package
     (name "r-mfd")
@@ -46170,6 +46203,40 @@ method is the Similarity of Matrices Index, while various related measures like
 r1, r2, r3, r4, Yanai's GCD, RV, RV2, adjusted RV, Rozeboom's linear correlation
 and Coxhead's coefficient are included for comparison and flexibility.")
     (license license:gpl2)))
+
+(define-public r-matrixcorr
+  (package
+    (name "r-matrixcorr")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matrixCorr" version))
+       (sha256
+        (base32 "0ywa9zw0rwbq9671251qsj9a2wvzvx8kwr4x8qbc32732s32fj2x"))))
+    (properties `((upstream-name . "matrixCorr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-ggplot2 r-cpp11))
+    (home-page "https://github.com/Prof-ThiagoOliveira/matrixCorr")
+    (synopsis "Collection of Correlation and Association Estimators")
+    (description
+     "Compute correlation and other association matrices from small to
+high-dimensional datasets with relative simple functions and sensible defaults.
+Includes options for shrinkage and robustness to improve results in noisy or
+high-dimensional settings (p >= n), plus convenient print/plot methods for
+inspection.  Implemented with optimised C++ backends using BLAS/@code{OpenMP}
+and memory-aware symmetric updates.  Works with base matrices and data frames,
+returning standard R objects via a consistent S3 interface.  Useful across
+genomics, agriculture, and machine-learning workflows.  Supports Pearson,
+Spearman, Kendall, distance correlation, partial correlation, and robust
+biweight mid-correlation; BlandâAltman analyses and Lin's concordance
+correlation coefficient (including repeated-measures extensions).  Methods based
+on Ledoit and Wolf (2004) <doi:10.1016/S0047-259X(03)00096-4>; SchÃ¤fer and
+Strimmer (2005) <doi:10.2202/1544-6115.1175>; Lin (1989) <doi:10.2307/2532051>.")
+    (license license:expat)))
 
 (define-public r-matrisk
   (package

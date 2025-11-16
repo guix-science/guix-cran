@@ -32911,13 +32911,13 @@ the context of this package.")
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
-    (version "1.6.1")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimMobTools" version))
        (sha256
-        (base32 "1gqzw92q29i4ck13wmg5n4gwmr28k9bmfyvn8yv4rg2jr5nkhl22"))))
+        (base32 "14bf55rnw6xz3yzzwwx28z337adycgkfhh6ymda2g291nhkw6ncj"))))
     (properties `((upstream-name . "ClimMobTools")))
     (build-system r-build-system)
     (arguments
@@ -38994,13 +38994,13 @@ Want Children\" <doi:10.1177/10664807231198869>; A pre-print is available at
 (define-public r-childeswordfreq
   (package
     (name "r-childeswordfreq")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "childeswordfreq" version))
        (sha256
-        (base32 "1byshms0wgy7591fzjxjjw7p2qc146vhhalcq7f75k2nyi80zx37"))))
+        (base32 "03j7lnwmqdlsdrxmz9s8willpnyj43vbpbwhps3n3a8y15w4p3q8"))))
     (properties `((upstream-name . "childeswordfreq")))
     (build-system r-build-system)
     (arguments
@@ -39008,23 +39008,26 @@ Want Children\" <doi:10.1177/10664807231198869>; A pre-print is available at
       #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-tidyr
+                             r-tibble
                              r-rlang
                              r-readr
-                             r-magrittr
+                             r-rappdirs
+                             r-memoise
                              r-dplyr
-                             r-childesr))
+                             r-childesr
+                             r-cachem))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/n-albudoor/childeswordfreq")
-    (synopsis "Word Frequency Extraction and Summarization")
+    (synopsis "Word and Phrase Frequency Tools for CHILDES")
     (description
-     "This package provides tools to extract word frequencies from the CHILDES (Child
-Language Data Exchange System) corpus.  The main function allows users to input
-a list of words and receive speaker-role-specific frequency counts and a summary
-of the dataset.  The output includes Excel-formatted tables of word counts and
-metadata summaries such as number of speakers, transcripts, children, and token
-counts.  Useful for researchers studying early language acquisition, corpus
-linguistics, and speaker role variation.  The CHILDES database is maintained at
-<https://childes.talkbank.org/>.")
+     "This package provides tools for extracting word and phrase frequencies from the
+Child Language Data Exchange System (CHILDES) database via the childesr API.
+Supports type-level word counts, token-mode searches with simple wildcard
+patterns and part-of-speech filters, optional stemming, and Zipf-scaled
+frequencies.  Provides normalization per number of tokens or utterances,
+speaker-role breakdowns, dataset summaries, and export to Excel workbooks for
+reproducible child language research.  The CHILDES database is maintained at
+<https://talkbank.org/childes/>.")
     (license license:expat)))
 
 (define-public r-childesr

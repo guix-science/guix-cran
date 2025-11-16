@@ -17233,19 +17233,21 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
 (define-public r-ellmer
   (package
     (name "r-ellmer")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmer" version))
        (sha256
-        (base32 "1wnd2dpg0whqb3dh30f5x9bvks4wszsgj95jksg0v8fja0knaf67"))))
+        (base32 "1cf8b63vz0hdn7gzfbak4i4xcyxy79ya2cv97grny17pngww4y37"))))
     (properties `((upstream-name . "ellmer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-s7
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-s7
                              r-rlang
                              r-r6
                              r-promises

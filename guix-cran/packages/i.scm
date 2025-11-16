@@ -3055,13 +3055,13 @@ Statistical Learning with Applications in R'.")
 (define-public r-islasso
   (package
     (name "r-islasso")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "islasso" version))
        (sha256
-        (base32 "095sx03dds41g1gxqzmw1iy4v0rfd87fbz1g1jclb4rsk0pk9hsz"))))
+        (base32 "0igim02wy3hpvsm5bspj39kmzy92fph1fwkgwh79s0qy9qwslrv3"))))
     (properties `((upstream-name . "islasso")))
     (build-system r-build-system)
     (arguments
