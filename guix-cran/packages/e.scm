@@ -15935,13 +15935,13 @@ generalized nonlinear, generalized nonlinear mixed, and logic regression models.
 (define-public r-emissv
   (package
     (name "r-emissv")
-    (version "0.665.9.0")
+    (version "0.666.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmissV" version))
        (sha256
-        (base32 "1749i9jr395qh34pkvlw0hhlmpv9lvrhxzhxb7iryz99hyh9llap"))))
+        (base32 "1k2sgvv3f23nzjb1i2bjbngdn400kckcwwvwxdhj088abiy4dc3b"))))
     (properties `((upstream-name . "EmissV")))
     (build-system r-build-system)
     (arguments

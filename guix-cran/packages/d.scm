@@ -30367,13 +30367,13 @@ Dataset JSON schema file, as described in CDISC (2023)
 (define-public r-dataset
   (package
     (name "r-dataset")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataset" version))
        (sha256
-        (base32 "082k3magcj08z9a581ds9ry3gdfj6hqkxxf9pqrdnmp6mvz3lypj"))))
+        (base32 "0z2vx95vhk56icyh6pihs3hhp9qzn0rszrr9h7czx8prf2gcqzyq"))))
     (properties `((upstream-name . "dataset")))
     (build-system r-build-system)
     (arguments
@@ -30387,7 +30387,7 @@ Dataset JSON schema file, as described in CDISC (2023)
                              r-haven
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://dataset.dataobservatory.eu/")
+    (home-page "https://docs.ropensci.org/dataset/")
     (synopsis "Create Data Frames for Exchange and Reuse")
     (description
      "The dataset package helps create semantically rich, machine-readable, and

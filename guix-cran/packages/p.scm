@@ -5190,37 +5190,6 @@ proportional hazards mixture cure model and the bounded cumulative hazard
 assess covariate effects and embedded in the variable selection procedure.")
     (license license:gpl2+)))
 
-(define-public r-pseudobiber
-  (package
-    (name "r-pseudobiber")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pseudobibeR" version))
-       (sha256
-        (base32 "1a6n9a46n8k3ycxlqhlxi26m2yqjc97yxhz2m9vdyzfi0881x44c"))))
-    (properties `((upstream-name . "pseudobibeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-quanteda-textstats
-                             r-quanteda
-                             r-purrr
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=pseudobibeR")
-    (synopsis "Aggregate Counts of Linguistic Features")
-    (description
-     "Calculates the lexicogrammatical and functional features described by Biber
-(1985) <doi:10.1515/ling.1985.23.2.337> and widely used for text-type, register,
-and genre classification tasks.")
-    (license license:expat)))
-
 (define-public r-pseudo
   (package
     (name "r-pseudo")
@@ -15513,13 +15482,13 @@ details.")
 (define-public r-powerbrmsinla
   (package
     (name "r-powerbrmsinla")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerbrmsINLA" version))
        (sha256
-        (base32 "0s67cnji29sfzly54cfq4p1lspbclv51ywb7gm72g4fc75h9ln1w"))))
+        (base32 "02wpdp0jdw43rx08hpfrb7mcyxf4pa339yzr9j7k0l7cswf3320k"))))
     (properties `((upstream-name . "powerbrmsINLA")))
     (build-system r-build-system)
     (arguments
@@ -15529,6 +15498,7 @@ details.")
                              r-tibble
                              r-scales
                              r-rlang
+                             r-pbapply
                              r-magrittr
                              r-ggplot2
                              r-dplyr
@@ -39554,6 +39524,55 @@ Principal Component Analysis.  Implements the method described in (Luu, 2016)
     (description
      "Computes probabilities of the bivariate normal distribution in a vectorized R
 function (Drezner & Wesolowsky, 1990, <doi:10.1080/00949659008811236>).")
+    (license license:gpl2+)))
+
+(define-public r-pbtdesigns
+  (package
+    (name "r-pbtdesigns")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PBtDesigns" version))
+       (sha256
+        (base32 "0kcxqca3vgn3xz451prl42d7fwh4i4bd7divmj4p5rvrmyj023ni"))))
+    (properties `((upstream-name . "PBtDesigns")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=PBtDesigns")
+    (synopsis "Partially Balanced t-Designs (PBtDesigns)")
+    (description
+     "The t-designs represent a generalized class of balanced incomplete block designs
+in which the number of blocks in which any t-tuple of treatments (t >= 2) occur
+together is a constant.  When the focus of an experiment lies in grading and
+selecting treatment subgroups, t-designs would be preferred over the
+conventional ones, as they have the additional advantage of t-tuple balance.
+t-designs can be advantageously used in identifying the best crop-livestock
+combination for a particular location in Integrated Farming Systems that will
+help in generating maximum profit.  But as the number of components increases,
+the number of possible t-component combinations will also increase.  Most often,
+combinations derived from specific components are only practically feasible, for
+example, in a specific locality, farmers may not be interested in keeping a pig
+or goat and hence combinations involving these may not be of any use in that
+locality.  In such situations partially balanced t-designs with few selected
+combinations appearing in a constant number of blocks (while others not at all
+appearing) may be useful (Sayantani Karmakar, Cini Varghese, Seema Jaggi & Mohd
+Harun (2021)<doi:10.1080/03610918.2021.2008436>).  Further, every location may
+not have the resources to form equally sized homogeneous blocks.  Partially
+balanced t-designs with unequal block sizes (Damaraju Raghavarao & Bei Zhou
+(1998)<doi:10.1080/03610929808832657>.  Sayantani Karmakar, Cini Varghese, Seema
+Jaggi & Mohd Harun (2022).\" Partially Balanced t-designs with unequal block
+sizes\") prove to be more suitable for such situations.This package generates
+three series of partially balanced t-designs namely Series 1, Series 2 and
+Series 3.  Series 1 and Series 2 are designs having equal block sizes and with
+treatment structures 4(t + 1) and a prime number, respectively.  Series 3
+consists of designs with unequal block sizes and with treatment structure
+n(n-1)/2.  This package is based on the function named @code{PBtD()} for
+generating partially balanced t-designs along with their parameters, information
+matrices, average variance factors and canonical efficiency factors.")
     (license license:gpl2+)))
 
 (define-public r-pbsmodelling

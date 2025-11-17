@@ -8327,13 +8327,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.5.0")
+    (version "3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "1yq5fabw60xh4gl7hy6086lzv08ig06hjypia33mral31isfcxf0"))))
+        (base32 "0065fx3db186sa5asaq6sgizrbx51dldanc0746fppk6sdr1s220"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (arguments
@@ -10297,13 +10297,13 @@ more information, documentation and examples.")
 (define-public r-omopviewer
   (package
     (name "r-omopviewer")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopViewer" version))
        (sha256
-        (base32 "0vlhhrla3870ij4i0fcdap0hapl2rrf116cszpcfnfxawc8hh4vs"))))
+        (base32 "09p614f9mlqbiiayxn6c1yhh0mdsw5i50ya0y1jbvy8c81913arm"))))
     (properties `((upstream-name . "OmopViewer")))
     (build-system r-build-system)
     (arguments

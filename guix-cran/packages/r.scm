@@ -37929,33 +37929,6 @@ and maximum values, aiding in comprehending predictor-outcome interplay within
 empirical data distributions, particularly in logistic regression frameworks.")
     (license license:expat)))
 
-(define-public r-regrap
-  (package
-    (name "r-regrap")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "regrap" version))
-       (sha256
-        (base32 "0yrxhlam7jmxwk1v53kllv6ja1m938symfvqp84xb278r3wb1wv7"))))
-    (properties `((upstream-name . "regrap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=regrap")
-    (synopsis "Reverse Graphical Approaches")
-    (description
-     "The graphical approach is proposed as a general framework for clinical trial
-designs involving multiple hypotheses, where decisions are made only based on
-the observed marginal p-values.  A reverse graphical approach starts from a set
-of singleton graphs, and gradually add vertices into graphs until rejection of a
-set of hypotheses is made.  See Gou, J. (2020).  Reverse graphical approaches
-for multiple test procedures.  Technical Report.")
-    (license license:gpl3)))
-
 (define-public r-regr-easy
   (package
     (name "r-regr-easy")
@@ -49154,13 +49127,13 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.5.1.0")
+    (version "4.5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "1dvic1vkhrxlpm1nmz5218kw7n8g31iycpvgvgs73q0xiyd71x2b"))))
+        (base32 "1578gblifdmhz7360lngh4xjqxvzk875nzbzpcymmz1nj0vschxj"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (arguments
@@ -55493,34 +55466,6 @@ well the assessment of randomization procedures based on carefully selected
 criteria.  Furthermore, @code{randomizeR} provides a function for the comparison
 of randomization procedures.")
     (license license:gpl3+)))
-
-(define-public r-randomizebe
-  (package
-    (name "r-randomizebe")
-    (version "0.3-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "randomizeBE" version))
-       (sha256
-        (base32 "1pid2cgil2mjkssznd7wb08v69ipnv6k4gary19iba854sx8lzw2"))))
-    (properties `((upstream-name . "randomizeBE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=randomizeBE")
-    (synopsis "Create a Random List for Crossover Studies")
-    (description
-     "This package contains a function to randomize subjects, patients in groups of
-sequences (treatment sequences).  If a blocksize is given, the randomization
-will be done within blocks.  The randomization may be controlled by a
-Wald-Wolfowitz runs test.  Functions to obtain the p-value of that test are
-included.  The package is mainly intended for randomization of bioequivalence
-studies but may be used also for other clinical crossover studies.  Contains two
-helper functions @code{sequences()} and @code{williams()} to get the sequences
-of commonly used designs in BE studies.")
-    (license license:gpl2+)))
 
 (define-public r-randomizationinference
   (package

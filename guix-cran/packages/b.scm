@@ -25634,13 +25634,13 @@ and KomÃ¡rek (2016, Biometrics) <doi:10.1111/biom.12424>.")
 (define-public r-bayessur
   (package
     (name "r-bayessur")
-    (version "2.3-0")
+    (version "2.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSUR" version))
        (sha256
-        (base32 "1sby5q93sipvkmbhg4y7fxnfhmh41z49rddb15dshigy8qx06kkc"))))
+        (base32 "06gykbcyh1hqinxm4q5q981hyrs2pg7sij20232np8rlqg7blpnb"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
     (arguments

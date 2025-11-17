@@ -1380,13 +1380,13 @@ and accompanying documentation by @code{McKay} and Fischenich (2011,
 (define-public r-hydreng
   (package
     (name "r-hydreng")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydReng" version))
        (sha256
-        (base32 "0jzm7cxv8gbkg9xzz9cxy62il8a726faxkb2qzj7q6ikvg0fvpjr"))))
+        (base32 "1wai5aw7rii5dradkyzcisybd5ha5ldkakpanxm65427d1rw9hs9"))))
     (properties `((upstream-name . "hydReng")))
     (build-system r-build-system)
     (arguments

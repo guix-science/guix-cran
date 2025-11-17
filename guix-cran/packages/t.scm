@@ -1239,20 +1239,29 @@ replication.")
 (define-public r-twangmediation
   (package
     (name "r-twangmediation")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twangMediation" version))
        (sha256
-        (base32 "12dj98sqggcqzlkcmn2fmxv81cankp5hmswz07rwb2sn6awlq9jg"))))
+        (base32 "1vgqfbv7d4w5i6cfa3amn717h2xzkcln7fz58n1d4w24ca3pqrfv"))))
     (properties `((upstream-name . "twangMediation")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-twang r-survey r-latticeextra r-lattice r-gbm))
-    (native-inputs (list r-knitr))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-twang
+                             r-survey
+                             r-latticeextra
+                             r-lattice
+                             r-gridextra
+                             r-gbm))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=twangMediation")
     (synopsis "Twang Causal Mediation Modeling via Weighting")
     (description
@@ -6281,19 +6290,19 @@ release files.  For more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "1iq7c74mc9b1gwa8cwhrcr73g8cgp03v1wrcc3gkydjd65i96cgy"))))
+        (base32 "1pb8m7s9kg19473mzdpvkmzzdlaxjhfx228pwbrcvqyl37i4jpb7"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-data-table))
+    (propagated-inputs (list r-rlang r-rcpp r-ggplot2 r-data-table r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kaifenglu/trtswitch")
     (synopsis "Treatment Switching")

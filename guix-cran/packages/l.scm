@@ -8452,13 +8452,13 @@ changepoint.  Based on Knowles, Siegmund and Zhang (1991)
 (define-public r-lm-beta
   (package
     (name "r-lm-beta")
-    (version "1.7-2")
+    (version "1.7-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lm.beta" version))
        (sha256
-        (base32 "0r3j0y1fg6sffkab4r6pxjs6r7bysqddmk2mqbh5ym36f1g4q54i"))))
+        (base32 "1akg2j46pzr457x38nnybibx361z7rfdqb59w3vxnss70ckamc1b"))))
     (properties `((upstream-name . "lm.beta")))
     (build-system r-build-system)
     (arguments

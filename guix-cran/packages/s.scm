@@ -35595,13 +35595,13 @@ genetic risk-allele score exact distributions are also possible to be estimated.
 (define-public r-snpannotator
   (package
     (name "r-snpannotator")
-    (version "0.2.6.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNPannotator" version))
        (sha256
-        (base32 "0g2k6ijsrqnwqj6llrfvsgzk1hgf96c0pd8rg5ry633jvjngf5v2"))))
+        (base32 "0l51y2p87a5zbbbinhq2nlg1d09yxizq278frd3czanp10hslv4i"))))
     (properties `((upstream-name . "SNPannotator")))
     (build-system r-build-system)
     (arguments
@@ -35609,18 +35609,23 @@ genetic risk-allele score exact distributions are also possible to be estimated.
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-rmarkdown
+                             r-readr
                              r-progress
+                             r-png
                              r-openxlsx
                              r-kableextra
                              r-jsonlite
+                             r-ini
+                             r-igraph
                              r-httr
+                             r-ggraph
                              r-ggplot2
-                             r-foreach
-                             r-doparallel
+                             r-futile-logger
                              r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SNPannotator")
     (synopsis
-     "Investigating the Functional Characteristics of Selected SNPs and Their Vicinity Genomic Region")
+     "Investigating the Functional Characteristics of Selected Variants and Their Vicinity Genomic Region")
     (description
      "To investigate the functional characteristics of selected SNPs and their
 vicinity genomic region.  Linked SNPs in moderate to high linkage disequilibrium

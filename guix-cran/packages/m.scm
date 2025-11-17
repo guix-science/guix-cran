@@ -23747,13 +23747,13 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
 (define-public r-mizer
   (package
     (name "r-mizer")
-    (version "2.5.3")
+    (version "2.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mizer" version))
        (sha256
-        (base32 "01yb00mrp17cihms80nd5qnmmrvik9m2mvnq623fw3038ipbfkb1"))))
+        (base32 "07f03zrpj7702a450xvn0an2j9m1vnyq2jjx7ybyw08y00997rqf"))))
     (properties `((upstream-name . "mizer")))
     (build-system r-build-system)
     (arguments
@@ -36626,13 +36626,13 @@ paths can be plotted to produce publication quality images.")
 (define-public r-metadigitise
   (package
     (name "r-metadigitise")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaDigitise" version))
        (sha256
-        (base32 "1cwvb6b4a1pfixbknbjjylsmpkccgi163h0kbf7zfjaqjg2y9mzh"))))
+        (base32 "0h2ds4018143fhdalwkkqbbdrzm4jgq5b93xagadz0r7vhzs391p"))))
     (properties `((upstream-name . "metaDigitise")))
     (build-system r-build-system)
     (arguments
@@ -49415,13 +49415,13 @@ re-labeling categorical variables.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "0aj1dixz4ra71q02dj4kr4yzks6a178k9cl4ws4xg8r2vsl60vp4"))))
+        (base32 "02n7x7pnxcg3xm3yjgv13wnv45d14q6nci3fhsjsx5z3iy0d3qpc"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
