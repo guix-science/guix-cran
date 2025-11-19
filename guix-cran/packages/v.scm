@@ -9022,13 +9022,13 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vapour" version))
        (sha256
-        (base32 "0fqvzl7chbqn64j2cj0w8m9rvkqms6h5bjfhgzqk11czygfl3mpp"))))
+        (base32 "1fyx8ak100dxisg16wjgf6rlb5xs2jcfnzb0s0189dwiq0c5dv4k"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (arguments

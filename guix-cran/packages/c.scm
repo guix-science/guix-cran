@@ -21164,13 +21164,13 @@ Gordaliza Alfonso, Matran Carlos, Mayo-Iscar Agustin. (2008),
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.8")
+    (version "7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "0y517rzwjbcq6h8vrwrnj2pjywzq3kbfahi5zfz237b2b9gzjyaj"))))
+        (base32 "1fpwhad4sks9rb4jpa99m0anynmms76nx0cvl6ci40s4aqkj4zii"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -21243,7 +21243,9 @@ data with zeros\".  Statistics and Computing, 33(106).
 squares simplicial-simplicial regression\".  Statistics and Computing, 35(27).
 <doi:10.1007/s11222-024-10560-z>.  o) Sevinc V. and Tsagris.  M. (2024). \"Energy
 Based Equality of Distributions Testing for Compositional Data\".
-<doi:10.48550/@code{arXiv.2412.05199>}.")
+<doi:10.48550/@code{arXiv.2412.05199>}.  p) Tsagris M. (2025).
+\"Transformation-free linear simplicial-simplicial regression via constrained
+iterative reweighted least squares\". <doi:10.48550/@code{arXiv.2511.13296>}.")
     (license license:gpl2+)))
 
 (define-public r-compositereliabilityinnesteddesigns
@@ -25387,46 +25389,16 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 <@code{arXiv:2202.02182>}.")
     (license license:expat)))
 
-(define-public r-cohortpathways
-  (package
-    (name "r-cohortpathways")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CohortPathways" version))
-       (sha256
-        (base32 "1njpxzvwjrwdzh197g6jn6wxq83a7l6ra34mrrivwjy6mv9mqrar"))))
-    (properties `((upstream-name . "CohortPathways")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-sqlrender
-                             r-rlang
-                             r-lifecycle
-                             r-dplyr
-                             r-databaseconnector
-                             r-checkmate))
-    (home-page "https://github.com/OHDSI/CohortPathways")
-    (synopsis "Create Pathways from Target to Event Cohorts")
-    (description
-     "Software tool designed to compute the temporal relationship defined as pathways
-between any two instantiated cohorts.  The cohorts are input as Target and event
-cohorts.")
-    (license (license:fsdg-compatible "Apache License"))))
-
 (define-public r-cohortgenerator
   (package
     (name "r-cohortgenerator")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortGenerator" version))
        (sha256
-        (base32 "1c9man9hda0wmkilbhzyw0ghrmj2h2widk3gp92gi72985glbzv1"))))
+        (base32 "1nzw4kcvx26grcfinzdslc3kn8yxq4aqfprll6snqnqyk33rqk29"))))
     (properties `((upstream-name . "CohortGenerator")))
     (build-system r-build-system)
     (arguments
@@ -25441,7 +25413,6 @@ cohorts.")
                              r-r6
                              r-parallellogger
                              r-lubridate
-                             r-lifecycle
                              r-jsonlite
                              r-dplyr
                              r-digest
@@ -25455,41 +25426,6 @@ cohorts.")
 (OMOP) Common Data Model (CDM) Database.  Cohorts are defined using CIRCE
 (<https://github.com/ohdsi/circe-be>) or SQL compatible with @code{SqlRender}
 (<https://github.com/OHDSI/@code{SqlRender>}).")
-    (license (license:fsdg-compatible "Apache License"))))
-
-(define-public r-cohortexplorer
-  (package
-    (name "r-cohortexplorer")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CohortExplorer" version))
-       (sha256
-        (base32 "1jskxg72g7n5n3zg2kmkhykcrbf30q0h919273n6lm6nw0pzn44d"))))
-    (properties `((upstream-name . "CohortExplorer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-parallellogger
-                             r-lifecycle
-                             r-dplyr
-                             r-databaseconnector
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://ohdsi.github.io/CohortExplorer/")
-    (synopsis "Explorer of Profiles of Patients in a Cohort")
-    (description
-     "This software tool is designed to extract data from a randomized subset of
-individuals within a cohort and make it available for exploration in a shiny
-application environment.  It retrieves date-stamped, event-level records from
-one or more data sources that represent patient data in the Observational
-Medical Outcomes Partnership (OMOP) data model format.  This tool features a
-user-friendly interface that enables users to efficiently explore the extracted
-profiles, thereby facilitating applications, such as reviewing structured
-profiles.")
     (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-cohortconstructor
@@ -25594,38 +25530,6 @@ Observational Medical Outcomes Partnership (OMOP) common data model (CDM).")
 multiple filter types and reproducible R code.  Works standalone or with
 @code{shinyCohortBuilder} as the GUI for interactive Shiny apps.")
     (license license:expat)))
-
-(define-public r-cohortalgebra
-  (package
-    (name "r-cohortalgebra")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CohortAlgebra" version))
-       (sha256
-        (base32 "0sdmi5b2wizv0af0b5c828l7x5i07x0c3zjy2cfgf1fs9c1nqb36"))))
-    (properties `((upstream-name . "CohortAlgebra")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sqlrender
-                             r-rlang
-                             r-lifecycle
-                             r-dplyr
-                             r-databaseconnector
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://ohdsi.github.io/CohortAlgebra/")
-    (synopsis
-     "Use of Interval Algebra to Create New Cohort(s) from Existing Cohorts")
-    (description
-     "This software tool is designed to generate new cohorts utilizing data from
-previously instantiated cohorts.  It employs interval algebra operators such as
-UNION, INTERSECT, and MINUS to manipulate the data within the instantiated
-cohorts and create new cohorts.")
-    (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-cohetsurr
   (package
@@ -25936,6 +25840,48 @@ et al.  2024 <doi:10.1017/RDC.2024.56>.")
      "Generate cofeature (feature by sample) matrices.  The package utilizes
 @code{ggplot2::geom_tile()} to generate the matrix allowing for easy additions
 from the base matrix.")
+    (license license:gpl3)))
+
+(define-public r-cofast
+  (package
+    (name "r-cofast")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coFAST" version))
+       (sha256
+        (base32 "1nvh5hmqspnhp9x7nvgjpwljws8q4j5wr4g3aj6vyx32gpxsb1iv"))))
+    (properties `((upstream-name . "coFAST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seurat
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-profast
+                             r-precast
+                             r-pbapply
+                             r-matrix
+                             r-irlba
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dr-sc
+                             r-dplyr
+                             r-ade4))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/feiyoung/coFAST")
+    (synopsis
+     "Spatially-Aware Cell Clustering Algorithm with Cluster Significant Assessment")
+    (description
+     "This package provides a spatially-aware cell clustering algorithm is provided
+with cluster significance assessment.  It comprises four key modules:
+spatially-aware cell-gene co-embedding, cell clustering, signature gene
+identification, and cluster significant assessment.  More details can be
+referred to Peng Xie, et al. (2025) <doi:10.1016/j.cell.2025.05.035>.")
     (license license:gpl3)))
 
 (define-public r-cofad
@@ -40722,13 +40668,13 @@ user-friendly graphical interface for package @code{ChannelAttribution}'.")
 (define-public r-channelattribution
   (package
     (name "r-channelattribution")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChannelAttribution" version))
        (sha256
-        (base32 "0nsm353c0c5j7way4q2l8xzgb39ba3i5cgsaciby4x76wbsipssr"))))
+        (base32 "03mghh67vl1y156cj2s468sxipx309xbcv8hfwhcr7ll435dc290"))))
     (properties `((upstream-name . "ChannelAttribution")))
     (build-system r-build-system)
     (arguments
@@ -48918,6 +48864,42 @@ analyses, implementing the methods described in Llinares-LÃ³pez et al. (2017)
 machine.  Try to build your fortune before you succumb to the gambler's ruin!")
     (license license:expat)))
 
+(define-public r-casimir
+  (package
+    (name "r-casimir")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "casimir" version))
+       (sha256
+        (base32 "1c2qaf5zn82p9rha843rn01wgjkfqif0ifwqiiin8lizbgqr5j1n"))))
+    (properties `((upstream-name . "casimir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-stringr
+                             r-rsample
+                             r-rlang
+                             r-purrr
+                             r-options
+                             r-furrr
+                             r-dplyr
+                             r-collapse))
+    (home-page "https://deutsche-nationalbibliothek.github.io/casimir/")
+    (synopsis "Comparing Automated Subject Indexing Methods in R")
+    (description
+     "Perform evaluation of automatic subject indexing methods.  The main focus of the
+package is to enable efficient computation of set retrieval and ranked retrieval
+metrics across multiple dimensions of a dataset, e.g. document strata or subsets
+of the label set.  The package also provides the possibility of computing
+bootstrap confidence intervals for all major metrics, with seamless integration
+of parallel computation and propensity scored variants of standard metrics.")
+    (license license:expat)))
+
 (define-public r-cases
   (package
     (name "r-cases")
@@ -50184,13 +50166,13 @@ clinical research.")
 (define-public r-cardinalr
   (package
     (name "r-cardinalr")
-    (version "0.2.6")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardinalR" version))
        (sha256
-        (base32 "1m6qk3vhqdqbwx1m1g6n66j7f39az24c2hxh8f8fzv1a0mh1gy1z"))))
+        (base32 "1x6r4ig3nh4v2qmy7cz4wqjqd8ljkcm7kdfh8mw9ad6q7pf538hn"))))
     (properties `((upstream-name . "cardinalR")))
     (build-system r-build-system)
     (arguments

@@ -4871,19 +4871,19 @@ periods.")
 (define-public r-evola
   (package
     (name "r-evola")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evola" version))
        (sha256
-        (base32 "10pyz1n0hiswxz7z1ikvwwdrcjmg8y8gi1kbx65ccq4r3v4zgi4i"))))
+        (base32 "1cjpgvmiyhv5xbd3rjscwa647xdhz5j7vxk8fi0sm4ywa994w9xj"))))
     (properties `((upstream-name . "evola")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-crayon r-alphasimr))
+    (propagated-inputs (list r-matrix r-enhancer r-crayon r-alphasimr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=evola")
     (synopsis "Evolutionary Algorithm")
@@ -6053,13 +6053,13 @@ returned.")
 (define-public r-evaltest
   (package
     (name "r-evaltest")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvalTest" version))
        (sha256
-        (base32 "11az2j4pjg6697x5j7rfihvd3gn1g7zrx0ifhsk1r5kfgidd0jj5"))))
+        (base32 "1hah7pk6kznnx79i3b0lq1yq0q8imxx1bjx1867sn9mpvpfawph6"))))
     (properties `((upstream-name . "EvalTest")))
     (build-system r-build-system)
     (arguments
@@ -8112,13 +8112,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.11.1")
+    (version "1.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "0cb74zs29lf4zxiqirva2pm87p6rm0ql0yfpzld1dw69mglpz1jb"))))
+        (base32 "19vfmbzp6b3kxfc5bfy4q8px57v9v7l03bh8hij4a8adcq51xn7d"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (arguments
@@ -12656,13 +12656,13 @@ possible to read in any Open Data Kit format data dictionary.")
 (define-public r-epidatr
   (package
     (name "r-epidatr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidatr" version))
        (sha256
-        (base32 "1vfxl6by4p7vy36xv7bc8nwsm9xksi7sbzn5r9smn1b8cyrrd2c1"))))
+        (base32 "10sq8rfxwrajyrwf2s9mj4khisz19azik3cwg889g7iwrsvi9f44"))))
     (properties `((upstream-name . "epidatr")))
     (build-system r-build-system)
     (arguments
@@ -12672,7 +12672,6 @@ possible to read in any Open Data Kit format data dictionary.")
                              r-usethis
                              r-tibble
                              r-rlang
-                             r-readr
                              r-rappdirs
                              r-purrr
                              r-openssl
@@ -14494,6 +14493,31 @@ big for CRAN, can be found here on the package's Github Pages website:
 <https://jamiemkass.github.io/ENMeval/articles/ENMeval-2.0-vignette.html>.")
     (license license:gpl3)))
 
+(define-public r-enhancer
+  (package
+    (name "r-enhancer")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enhancer" version))
+       (sha256
+        (base32 "0l6bb0xvnkjmkci5m4ngw912k2ihvzndfxkyz49h08mg0wjzcdqs"))))
+    (properties `((upstream-name . "enhancer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-crayon))
+    (home-page "https://cran.r-project.org/package=enhancer")
+    (synopsis "Mixed-Effects Models Enhancing Functions")
+    (description
+     "Special functions that enhance other mixed effect model packages by creating
+overlayed, reduced rank, and reduced model matrices together with multiple data
+sets to practice the use of these models.  For more details see
+Covarrubias-Pazaran (2016) <doi:10.1371/journal.pone.0156744>.")
+    (license license:gpl2+)))
+
 (define-public r-engrexpt
   (package
     (name "r-engrexpt")
@@ -16064,6 +16088,42 @@ maximum likelihood method, introduced by introduced by Ozaki (1979)
 <doi:10.1007/BF02480272>, with @code{maxLik} package.")
     (license license:gpl2+)))
 
+(define-public r-emgcr
+  (package
+    (name "r-emgcr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMGCR" version))
+       (sha256
+        (base32 "0qwgajl0rh75sr3rxk767jjv1m0wrykf5334896c0v53xs3g6jbs"))))
+    (properties `((upstream-name . "EMGCR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-survival
+                             r-knitr
+                             r-ggplot2
+                             r-formula
+                             r-flexsurv
+                             r-actuar))
+    (home-page "https://cran.r-project.org/package=EMGCR")
+    (synopsis "Fit a Mixture Cure Rate Model with Custom Link Function")
+    (description
+     "This package provides tools to fit Mixture Cure Rate models via the
+Expectation-Maximization (EM) algorithm, allowing for flexible link functions in
+the cure component and various survival distributions in the latency part.  The
+package supports user-specified link functions, includes methods for parameter
+estimation and model diagnostics, and provides residual analysis tailored for
+cure models.  The classical theory methods used are described in Berkson, J. and
+Gage, R. P. (1952) <doi:10.2307/2281318>, Dempster, A. P., Laird, N. M. and
+Rubin, D. B. (1977) <https://www.jstor.org/stable/2984875>, BazÃ¡n, J.,
+Torres-AvilÃ©s, F., Suzuki, A. and Louzada, F. (2017)<doi:10.1002/asmb.2215>.")
+    (license license:gpl3)))
+
 (define-public r-emgaussian
   (package
     (name "r-emgaussian")
@@ -17228,6 +17288,29 @@ using @code{RcppArmadillo} after the @code{elmNN} package was archived.  For
 more information, see \"Extreme learning machine: Theory and applications\" by
 Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
 <doi:10.1016/j.neucom.2005.12.126>.")
+    (license license:gpl2+)))
+
+(define-public r-elmethodvar
+  (package
+    (name "r-elmethodvar")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ELmethodVar" version))
+       (sha256
+        (base32 "0h6ka9gnbmksxpval3w3ywhjcf7s2g5qjdpyhzxnqsayz9d6graz"))))
+    (properties `((upstream-name . "ELmethodVar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/jingru-zhang/ELmethod")
+    (synopsis
+     "Empirical Likelihood Inference of Variance Components in Linear Mixed-Effects Models")
+    (description
+     "This package provides empirical likelihood-based methods for the inference of
+variance components in linear mixed-effects models.")
     (license license:gpl2+)))
 
 (define-public r-ellmer

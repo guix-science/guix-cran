@@ -417,13 +417,13 @@ test and then inspect specific edge difference with partial pruning.")
 (define-public r-ivolcano
   (package
     (name "r-ivolcano")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivolcano" version))
        (sha256
-        (base32 "0jj583cnk8a7vqs86xd928zr8nhgasjb90gkixrdg780cr4bg8bn"))))
+        (base32 "17hpv6x25n8n5f9rb9zgqh8wflljykchrq75wd3w6x76hsysshmk"))))
     (properties `((upstream-name . "ivolcano")))
     (build-system r-build-system)
     (arguments
@@ -431,14 +431,14 @@ test and then inspect specific edge difference with partial pruning.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-ggrepel r-ggplot2 r-ggiraph r-dplyr))
     (native-inputs (list r-quarto))
-    (home-page "https://cran.r-project.org/package=ivolcano")
+    (home-page "https://github.com/YuLab-SMU/ivolcano")
     (synopsis "Interactive Volcano Plot")
     (description
      "Generate interactive volcano plots for exploring gene expression data.  Built
 with ggplot2', the plots are rendered interactive using ggiraph', enabling users
 to hover over points to display detailed information or click to trigger custom
 actions.")
-    (license license:gpl3+)))
+    (license license:artistic2.0)))
 
 (define-public r-ivo-table
   (package
@@ -4147,13 +4147,13 @@ Kappa, ...")
 (define-public r-ironseed
   (package
     (name "r-ironseed")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ironseed" version))
        (sha256
-        (base32 "0iqbzwxr26m5cfd0ssk1biikcha0qyfjhsv4cc6dqrv23rb794pm"))))
+        (base32 "0h7sbz1lfcwq8a5la0l0jy6p62gpp7zdria0k9hgyxi5i76ia6gf"))))
     (properties `((upstream-name . "ironseed")))
     (build-system r-build-system)
     (arguments
@@ -17373,13 +17373,13 @@ For more information on our model, see Chen et al. (2019)
 (define-public r-idmir
   (package
     (name "r-idmir")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IDMIR" version))
        (sha256
-        (base32 "0871ibdpnhqbf0ighyl9254ad8wy52gyi7i2nry19is1kr7av40s"))))
+        (base32 "1r1hjzf6p8j7pxm9cnl50q92myflv0x1v7miawvwjav933k0bjih"))))
     (properties `((upstream-name . "IDMIR")))
     (build-system r-build-system)
     (arguments

@@ -126,6 +126,33 @@ information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 clean the data once in R.")
     (license license:expat)))
 
+(define-public r-nycopendata
+  (package
+    (name "r-nycopendata")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nycOpenData" version))
+       (sha256
+        (base32 "1j5gb6ylrwrawac5v10syy9ddf24vghmgsyxx6my4088hplvmswf"))))
+    (properties `((upstream-name . "nycOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-jsonlite r-httr))
+    (home-page "https://github.com/martinezc1/nycOpenData")
+    (synopsis "Convenient Access to NYC Open Data API Endpoints")
+    (description
+     "This package provides a unified set of helper functions to access datasets from
+the NYC Open Data platform <https://opendata.cityofnewyork.us/>.  Functions
+return results as tidy tibbles and support optional filtering, sorting, and row
+limits via the Socrata API. The package includes endpoints for 311 service
+requests, DOB job applications, juvenile justice metrics, school safety,
+environmental data, event permitting, and additional citywide datasets.")
+    (license license:expat)))
+
 (define-public r-nycflights23
   (package
     (name "r-nycflights23")
@@ -14777,13 +14804,13 @@ nephrology.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "0lhlsfgibg69yl28s9ijyjgy0x713lg83j8xhd3a43d5279wndkp"))))
+        (base32 "0mm68ndsz1q0cq79py0m4h8c72ss3m2qb9wjms5ik276zgr4qrq5"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (arguments
@@ -14797,11 +14824,9 @@ nephrology.")
                              r-purrr
                              r-progress
                              r-magrittr
-                             r-lubridate
                              r-leaflet
                              r-jsonlite
                              r-httr
-                             r-gtools
                              r-geojsonsf
                              r-dplyr
                              r-digest

@@ -4944,13 +4944,13 @@ related to the Microsoft Office software suite, including Microsoft Word
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.13")
+    (version "0.6.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "1imnj3znl8g6f9hmi2vysqhl31zxbr7sjwnadg5r5d49xj6973f4"))))
+        (base32 "175cv1720lgh8hrvsq3cvf4ygsic2spjgl7jwg1pcksr6djbb9a7"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (arguments
@@ -11837,13 +11837,13 @@ models\" <doi:10.48550/@code{arXiv.2506.12771>}.")
 (define-public r-rphylopic
   (package
     (name "r-rphylopic")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rphylopic" version))
        (sha256
-        (base32 "1flfxxmrn537f9vlnynrwjsjm3gak90m69jwrl5nms06y25wvyih"))))
+        (base32 "0y8s25cbgcrlvigs51i3y9g7mlwd14yjq29jdqgag1pcl46ccnkj"))))
     (properties `((upstream-name . "rphylopic")))
     (build-system r-build-system)
     (arguments
@@ -11859,7 +11859,8 @@ models\" <doi:10.48550/@code{arXiv.2506.12771>}.")
                              r-httr
                              r-grimport2
                              r-ggplot2
-                             r-curl))
+                             r-curl
+                             r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://rphylopic.palaeoverse.org")
     (synopsis "Get Silhouettes of Organisms from PhyloPic")
@@ -12946,13 +12947,13 @@ package provides much of the infrastructure.")
 (define-public r-routr
   (package
     (name "r-routr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "routr" version))
        (sha256
-        (base32 "1v5asspq0ipflh6vbhbwpbawpd86pyrixg0ckjv104s4w1m4j335"))))
+        (base32 "1k6dc864zdi3n05gpk515mlc6spawck2mvnysapqc50dbw4bwcaf"))))
     (properties `((upstream-name . "routr")))
     (build-system r-build-system)
     (arguments
@@ -12963,6 +12964,7 @@ package provides much of the infrastructure.")
                              r-reqres
                              r-r6
                              r-promises
+                             r-otel
                              r-lifecycle
                              r-fs
                              r-cli
@@ -14330,6 +14332,33 @@ transformations of a dataset can be carried out in a flexible manner.  romic
 takes advantage of these transformations to create interactive shiny apps for
 exploratory data analysis such as an interactive heatmap.")
     (license license:expat)))
+
+(define-public r-romeb
+  (package
+    (name "r-romeb")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Romeb" version))
+       (sha256
+        (base32 "1slnijnvd9dsb8ilprw4mw971wyc23sbppdl3zjknddfvmfi4h53"))))
+    (properties `((upstream-name . "Romeb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-rjags r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DandanTang0/Romeb")
+    (synopsis "Robust Median-Based Bayesian Growth Curve Modeling")
+    (description
+     "This package implements robust median-based Bayesian growth curve models that
+handle Missing Completely at Random (MCAR), Missing At Random (MAR), and Missing
+Not At Random (MNAR) missing-data mechanisms, and allow auxiliary variables.
+Models are fitted via rjags (interface to JAGS') and summarized with coda'.")
+    (license license:gpl3)))
 
 (define-public r-romdb
   (package
@@ -18537,13 +18566,13 @@ scalar-on-function linear regression and function-on-function linear regression.
 (define-public r-robfilter
   (package
     (name "r-robfilter")
-    (version "4.1.5")
+    (version "4.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robfilter" version))
        (sha256
-        (base32 "18yqrwl60srr6r3hg6qcv8li91qz83xksvs383zs5bxa5y400azj"))))
+        (base32 "0rcpgl1ghadj2r6w98bar7nkbl2ybx0b4m8fgq6wpylc02mr0y3y"))))
     (properties `((upstream-name . "robfilter")))
     (build-system r-build-system)
     (arguments
@@ -20783,13 +20812,13 @@ Peterson and Harrell (1990) <https://www.jstor.org/stable/2347760>.")
 (define-public r-rmpw
   (package
     (name "r-rmpw")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmpw" version))
        (sha256
-        (base32 "150wvnzhwvi8vv76glrbqns1r09cx42fxjrpfvvkdjd5vsbhmibv"))))
+        (base32 "1hlzzajgpacl66hb0lpm4ab7r64rqm78d58c975ks3hbspx029xc"))))
     (properties `((upstream-name . "rmpw")))
     (build-system r-build-system)
     (arguments
@@ -27108,6 +27137,39 @@ Euclidean, Log-Cholesky (<doi:10.1137/18M1221084>), and Bures-Wasserstein
 metrics (<doi:10.1016/j.exmath.2018.01.002>).  Provides functions for computing
 logarithmic and exponential maps, vectorization, and statistical operations on
 the manifold of positive definite matrices.")
+    (license license:expat)))
+
+(define-public r-riemstats
+  (package
+    (name "r-riemstats")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "riemstats" version))
+       (sha256
+        (base32 "0xzgd5r26ylknw4dzqhyvszy78mz0rb8mnvh2karqxwlc489452l"))))
+    (properties `((upstream-name . "riemstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sva r-riemtan r-purrr r-matrix r-covtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://nicoesve.github.io/riemstats/")
+    (synopsis "Riemannian ANOVA Statistics")
+    (description
+     "This package provides statistical methods for analyzing samples of symmetric
+positive definite (SPD) matrices, particularly functional connectivity matrices
+from neuroimaging data.  Implements FrÃ©chet ANOVA (Dubey and MÃ¼ller (2019)
+<doi:10.1093/biomet/asz052>) for testing differences between groups in metric
+spaces, and Riemannian ANOVA methods that leverage tangent space geometry with
+classic multivariate test statistics including Wilks Lambda and Pillai's trace.
+Also includes harmonization techniques for removing batch effects in multi-site
+studies: @code{ComBat-based} harmonization (Honnorat et al. (2024)
+<doi:10.1016/j.media.2023.103043>) and rigid harmonization (Simeon et al. (2022)
+<doi:10.3389/fninf.2022.769274>).  Builds on riemtan package infrastructure for
+efficient computation with multiple Riemannian metrics.")
     (license license:expat)))
 
 (define-public r-riembase
@@ -37929,6 +37991,33 @@ and maximum values, aiding in comprehending predictor-outcome interplay within
 empirical data distributions, particularly in logistic regression frameworks.")
     (license license:expat)))
 
+(define-public r-regrap
+  (package
+    (name "r-regrap")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regrap" version))
+       (sha256
+        (base32 "0yrxhlam7jmxwk1v53kllv6ja1m938symfvqp84xb278r3wb1wv7"))))
+    (properties `((upstream-name . "regrap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=regrap")
+    (synopsis "Reverse Graphical Approaches")
+    (description
+     "The graphical approach is proposed as a general framework for clinical trial
+designs involving multiple hypotheses, where decisions are made only based on
+the observed marginal p-values.  A reverse graphical approach starts from a set
+of singleton graphs, and gradually add vertices into graphs until rejection of a
+set of hypotheses is made.  See Gou, J. (2020).  Reverse graphical approaches
+for multiple test procedures.  Technical Report.")
+    (license license:gpl3)))
+
 (define-public r-regr-easy
   (package
     (name "r-regr-easy")
@@ -38040,13 +38129,13 @@ methods are available for continuous and survival responses.")
 (define-public r-regmmd
   (package
     (name "r-regmmd")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regMMD" version))
        (sha256
-        (base32 "164agadr418pgg95zks4rhvmmzidyg8wdbcgy0r6pfyx7m0bk361"))))
+        (base32 "0ws9ndcpqpzn520rkbm0g2qbxk37v3rrx9m9n7xp44hxp83qr9vm"))))
     (properties `((upstream-name . "regMMD")))
     (build-system r-build-system)
     (arguments
@@ -38699,13 +38788,13 @@ object-specific set of plots based on the object class using S3.")
 (define-public r-refund
   (package
     (name "r-refund")
-    (version "0.1-37")
+    (version "0.1-38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refund" version))
        (sha256
-        (base32 "1lkdgpxnvnr9d9kmwdnk4wx656c1lhi353s64f065l6qg837kmw6"))))
+        (base32 "085l2gri0bd98vqy169hbsp9ylig5xjvjwkgx4h7w6cqa743mgqk"))))
     (properties `((upstream-name . "refund")))
     (build-system r-build-system)
     (arguments
@@ -48711,6 +48800,36 @@ Nikolaus Hansen.  CMA-ES is the Covariance Matrix Adaptation Evolution Strategy,
 see <https://www.lri.fr/~hansen/cmaes_inmatlab.html#java>.")
     (license license:gpl3+)))
 
+(define-public r-rclsp
+  (package
+    (name "r-rclsp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rclsp" version))
+       (sha256
+        (base32 "17r04pik2fcc56kvh9fpx8xkqcr9l1cpskyalxx4697qxyk5r1f0"))))
+    (properties `((upstream-name . "rclsp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-cvxr))
+    (home-page "https://github.com/econcz/rclsp")
+    (synopsis
+     "Modular Two-Step Convex Optimization Estimator for Ill-Posed Problems")
+    (description
+     "Convex Least Squares Programming (CLSP) is a two-step estimator for solving
+underdetermined, ill-posed, or structurally constrained least-squares problems.
+It combines pseudoinverse-based estimation with convex-programming correction
+methods inspired by Lasso, Ridge, and Elastic Net to ensure numerical stability,
+constraint enforcement, and interpretability.  The package also provides
+numerical stability analysis and CLSP-specific diagnostics, including partial
+R^2, normalized RMSE (NRMSE), Monte Carlo t-tests for mean NRMSE, and
+condition-number-based confidence bands.")
+    (license license:expat)))
+
 (define-public r-rclipboard
   (package
     (name "r-rclipboard")
@@ -55466,6 +55585,34 @@ well the assessment of randomization procedures based on carefully selected
 criteria.  Furthermore, @code{randomizeR} provides a function for the comparison
 of randomization procedures.")
     (license license:gpl3+)))
+
+(define-public r-randomizebe
+  (package
+    (name "r-randomizebe")
+    (version "0.3-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "randomizeBE" version))
+       (sha256
+        (base32 "1pid2cgil2mjkssznd7wb08v69ipnv6k4gary19iba854sx8lzw2"))))
+    (properties `((upstream-name . "randomizeBE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=randomizeBE")
+    (synopsis "Create a Random List for Crossover Studies")
+    (description
+     "This package contains a function to randomize subjects, patients in groups of
+sequences (treatment sequences).  If a blocksize is given, the randomization
+will be done within blocks.  The randomization may be controlled by a
+Wald-Wolfowitz runs test.  Functions to obtain the p-value of that test are
+included.  The package is mainly intended for randomization of bioequivalence
+studies but may be used also for other clinical crossover studies.  Contains two
+helper functions @code{sequences()} and @code{williams()} to get the sequences
+of commonly used designs in BE studies.")
+    (license license:gpl2+)))
 
 (define-public r-randomizationinference
   (package

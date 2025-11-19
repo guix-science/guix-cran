@@ -2517,13 +2517,13 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
 (define-public r-publicationbiasbenchmark
   (package
     (name "r-publicationbiasbenchmark")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PublicationBiasBenchmark" version))
        (sha256
-        (base32 "1pll1lh2jgfqvc0lda7wzdfkvapacwwmaaqa6qma00nw5dlpxp05"))))
+        (base32 "0lgb7p97v45phwpm518js5q6h4arwqndksv200c0ab2jh5mjpr03"))))
     (properties `((upstream-name . "PublicationBiasBenchmark")))
     (build-system r-build-system)
     (arguments
@@ -2545,7 +2545,7 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
     (description
      "This package implements a unified interface for benchmarking meta-analytic
 publication bias correction methods through simulation studies (see BartoÅ¡ et
-al., 2022, <doi:10.48550/@code{arXiv.2510.19489>}).  It provides 1) predefined
+al., 2025, <doi:10.48550/@code{arXiv.2510.19489>}).  It provides 1) predefined
 data-generating mechanisms from the literature, 2) functions for running
 meta-analytic methods on simulated data, 3) pre-simulated datasets and
 pre-computed results for reproducible benchmarks, 4) tools for visualizing and
@@ -5189,6 +5189,37 @@ proportional hazards mixture cure model and the bounded cumulative hazard
 (promotion time cure) model.  The pseudo-observations approach is utilized to
 assess covariate effects and embedded in the variable selection procedure.")
     (license license:gpl2+)))
+
+(define-public r-pseudobiber
+  (package
+    (name "r-pseudobiber")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pseudobibeR" version))
+       (sha256
+        (base32 "1a6n9a46n8k3ycxlqhlxi26m2yqjc97yxhz2m9vdyzfi0881x44c"))))
+    (properties `((upstream-name . "pseudobibeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-quanteda-textstats
+                             r-quanteda
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=pseudobibeR")
+    (synopsis "Aggregate Counts of Linguistic Features")
+    (description
+     "Calculates the lexicogrammatical and functional features described by Biber
+(1985) <doi:10.1515/ling.1985.23.2.337> and widely used for text-type, register,
+and genre classification tasks.")
+    (license license:expat)))
 
 (define-public r-pseudo
   (package
@@ -9579,6 +9610,35 @@ epsilon for any pair D, D of datasets that differ in exactly one record, any
 measurable set S, and the randomness is taken over the choices F makes.")
     (license license:gpl2+)))
 
+(define-public r-privacyr
+  (package
+    (name "r-privacyr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "privacyR" version))
+       (sha256
+        (base32 "1gncrj91y5ccfdgpjdqv17ywd4cfhwxwcj2y4nnrx1hgr03l4a8w"))))
+    (properties `((upstream-name . "privacyR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=privacyR")
+    (synopsis "Privacy-Preserving Data Anonymization")
+    (description
+     "This package provides tools for anonymizing sensitive patient and research data.
+ Helps protect privacy while keeping data useful for analysis.  Anonymizes IDs,
+names, dates, locations, and ages while maintaining referential integrity.
+Methods based on: Sweeney (2002) <doi:10.1142/S0218488502001648>, Dwork et al.
+(2006) <doi:10.1007/11681878_14>, El Emam et al. (2011)
+<doi:10.1371/journal.pone.0028071>, Fung et al. (2010)
+<doi:10.1145/1749603.1749605>.")
+    (license license:expat)))
+
 (define-public r-prithulib
   (package
     (name "r-prithulib")
@@ -11343,13 +11403,13 @@ multiple states and potential reversible transitions.")
 (define-public r-presize
   (package
     (name "r-presize")
-    (version "0.3.7")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "presize" version))
        (sha256
-        (base32 "1qabv7lsrd0rrjkg7icr7qxj4jrx78s6rh1n961s6qrw6gldq4ga"))))
+        (base32 "1s1sf66s9g5b3d8n9xd5dydvwwlixmg49kvh1mfqiw5fn3vxz965"))))
     (properties `((upstream-name . "presize")))
     (build-system r-build-system)
     (arguments
@@ -25552,13 +25612,13 @@ saving output from the website.")
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "1mvbnv02n52n139kmvjnpwivx6l3gq4h56zkkbxrd8jvs8xqmszk"))))
+        (base32 "1qvn0va5ayywqhc2pc9wj5iv3zlf1c3qyqc3ag9cxwap9k0zyysn"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
     (arguments
@@ -31474,13 +31534,13 @@ quantile estimates, mean estimates, or any statistical function of interest.")
 (define-public r-pheindicatormethods
   (package
     (name "r-pheindicatormethods")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHEindicatormethods" version))
        (sha256
-        (base32 "1kn6awnyqh9wiv3z4kk5k3iq1mw8dbjgdhs5hirgqa9cl1gawslj"))))
+        (base32 "0yp890qg98ifgl8dxl5jsfbjcr61yccvrzxk2zy58qxb0li0fr0g"))))
     (properties `((upstream-name . "PHEindicatormethods")))
     (build-system r-build-system)
     (arguments
@@ -31514,7 +31574,7 @@ the following publications.  Breslow NE, Day NE (1987)
 <doi:10.1136/jech.2003.009654>.  Silcocks PBS et al (2001)
 <doi:10.1136/jech.55.1.38>.  Low and Low (2004) <doi:10.1093/pubmed/fdh175>.
 Fingertips Public Health Technical Guide:
-<https://fingertips.phe.org.uk/static-reports/public-health-technical-guidance/>.")
+<https://fingertips.phe.org.uk/profile/guidance/supporting-information/PH-methods/>.")
     (license license:gpl3)))
 
 (define-public r-phecodemap
@@ -37682,6 +37742,39 @@ obtained by the kernel method, given a set of data with arbitrary dimensions.")
 book.")
     (license license:gpl2+)))
 
+(define-public r-pdenaivebayes
+  (package
+    (name "r-pdenaivebayes")
+    (version "0.2.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PDEnaiveBayes" version))
+       (sha256
+        (base32 "0zyv1wfm3vm9fynab5c40gfcjv0x8zf22qsx2x5kanb5yj63cdhk"))))
+    (properties `((upstream-name . "PDEnaiveBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpp
+                             r-pracma
+                             r-plotly
+                             r-memshare
+                             r-ggplot2
+                             r-databionicswarm))
+    (home-page "https://cran.r-project.org/package=PDEnaiveBayes")
+    (synopsis "Plausible Naive Bayes Classifier Using PDE")
+    (description
+     "This package provides a nonparametric, multicore-capable plausible naive Bayes
+classifier based on the Pareto density estimation (PDE) featuring a plausible
+approach to a pitfall in the Bayesian theorem covering low evidence cases.
+Stier, Q., Hoffmann, J., and Thrun, M.C.: \"Classifying with the Fine Structure
+of Distributions: Leveraging Distributional Information for Robust and Plausible
+NaÃ¯ve Bayes\" (2025).")
+    (license license:gpl3)))
+
 (define-public r-pde
   (package
     (name "r-pde")
@@ -37770,20 +37863,23 @@ of the complexity of a time series.")
 (define-public r-pda
   (package
     (name "r-pda")
-    (version "1.2.8")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pda" version))
        (sha256
-        (base32 "04720i2cbg70jmrz4jz87qfpp651y6mzb23hlvriw8mjsh1cwk7j"))))
+        (base32 "1l7bw75sbb4c0rq9h0c84vrgksm414ggpfd9xknadhynszq73r0i"))))
     (properties `((upstream-name . "pda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
                              r-rvest
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-plyr
@@ -37791,24 +37887,30 @@ of the complexity of a time series.")
                              r-numderiv
                              r-minqa
                              r-metafor
+                             r-matrix
                              r-mass
                              r-jsonlite
                              r-httr
                              r-glmnet
-                             r-data-table))
+                             r-geex
+                             r-empiricalcalibration
+                             r-dplyr
+                             r-data-tree
+                             r-data-table
+                             r-cobalt))
     (home-page "https://cran.r-project.org/package=pda")
     (synopsis "Privacy-Preserving Distributed Algorithms")
     (description
      "This package provides a collection of privacy-preserving distributed algorithms
-for conducting multi-site data analyses.  The regression analyses can be linear
-regression for continuous outcome, logistic regression for binary outcome, Cox
-proportional hazard regression for time-to event outcome, Poisson regression for
-count outcome, or multi-categorical regression for nominal or ordinal outcome.
-The PDA algorithm runs on a lead site and only requires summary statistics from
+(PDAs) for conducting federated statistical learning across multiple data sites.
+ The PDA framework includes models for various tasks such as regression, trial
+emulation, causal inference, design-specific analysis, and clustering.  The PDA
+algorithms run on a lead site and only require summary statistics from
 collaborating sites, with one or few iterations.  The package can be used
-together with the online system (<https://pda-ota.pdamethods.org/>) for safe and
-convenient collaboration.  For more information, please visit our software
-websites: <https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
+together with the online data transfer system
+(<https://pda-ota.pdamethods.org/>) for safe and convenient collaboration.  For
+more information, please visit our software websites:
+<https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
     (license license:asl2.0)))
 
 (define-public r-pcvr
@@ -39150,6 +39252,32 @@ millions of pairwise statistical tests, which dramatically increases analysis
 flexibility and reduces computational requirements.  Methods:
 <https://katlande.github.io/PCBS/articles/Differential_Methylation.html>.")
     (license license:gpl3)))
+
+(define-public r-pcbn
+  (package
+    (name "r-pcbn")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PCBN" version))
+       (sha256
+        (base32 "0lkall1bw5pbqcdbj84zwal78z8zmbvnw2kij93sy72flvcsi11k"))))
+    (properties `((upstream-name . "PCBN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vinecopula r-r2r r-igraph r-bnlearn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AlexisDerumigny/PCBN")
+    (synopsis "Inference of Pair-Copula Bayesian Networks")
+    (description
+     "Creates, fits and samples Pair-Copula Bayesian networks (PCBN) under some
+restrictions on the underlying Directed Acyclic Graph (DAG), that is, no active
+cycles nor interfering v-structures, following Derumigny, Horsman and Kurowicka
+(2025) <doi:10.48550/@code{arXiv.2510.03518>}.")
+    (license license:gpl2+)))
 
 (define-public r-pcatsapiclientr
   (package
@@ -46024,13 +46152,13 @@ Fisher's product method is included as well.")
 (define-public r-pagfl
   (package
     (name "r-pagfl")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAGFL" version))
        (sha256
-        (base32 "1k3acg3b6am95yaccrh4mk1lqa0y6sjyzb8a0bmjcy5qxbq4c2x0"))))
+        (base32 "0n5bq6shin6xxr55vd2lnxmxjap6wl0q04fasrj47rj0sfayis8d"))))
     (properties `((upstream-name . "PAGFL")))
     (build-system r-build-system)
     (arguments
@@ -46044,7 +46172,7 @@ Fisher's product method is included as well.")
                              r-ggplot2))
     (home-page "https://github.com/Paul-Haimerl/PAGFL")
     (synopsis
-     "Joint Estimation of Latent Groups and Group-Specific Coefficients in Panel Data Models")
+     "Joint Estimation of Latent Groups and Group-Specific Coefficients in (Time-Varying) Panel Data Models")
     (description
      "Latent group structures are a common challenge in panel data analysis.
 Disregarding group-level heterogeneity can introduce bias.  Conversely,
@@ -46053,8 +46181,9 @@ and may lead to high uncertainty.  This package addresses the issue of
 unobservable group structures by implementing the pairwise adaptive group fused
 Lasso (PAGFL) by Mehrabani (2023) <doi:10.1016/j.jeconom.2022.12.002>.  PAGFL
 identifies latent group structures and group-specific coefficients in a single
-step.  On top of that, we extend the PAGFL to time-varying coefficient
-functions.")
+step.  On top of that, we extend the PAGFL to time-varying coefficient functions
+(FUSE-TIME), following Haimerl et al. (2025)
+<doi:10.48550/@code{arXiv.2503.23165>}.")
     (license license:agpl3+)))
 
 (define-public r-pagenum

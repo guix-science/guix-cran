@@ -6603,13 +6603,13 @@ diagnostic plotting.")
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "1.4.4")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greeks" version))
        (sha256
-        (base32 "1fz5ra1fi2z4x4wnh34yppg33xpgl91dri7a0yj6ksl1k2gm1xf6"))))
+        (base32 "1wc4ly6ryn1ni53k22ypf9z1f1jg6x2dbzl56mf126m7hgnn2v01"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (arguments
@@ -28574,13 +28574,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "1mai94hijkh11i7rmk45q4p7p0ixrv1kpnhni84hwcdd2nalb2a1"))))
+        (base32 "1lrw5yrb8qahgb4bfpj2clq93gcrakfxfm7y46gdjnva289ylxap"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -28589,8 +28589,8 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
     (propagated-inputs (list r-sfheaders
                              r-sf
                              r-rlang
-                             r-rcpp
                              r-purrr
+                             r-parallelly
                              r-nanoarrow
                              r-httr2
                              r-h3r
@@ -30705,6 +30705,43 @@ Bevilacqua and Reinhard Furrer and Tarik Faouzi and Emilio Porcu (2019)
 <doi:10.48550/@code{arXiv.2008.02904>}.  Reinhard Furrer and Roman Flury and
 Florian Gerber (2022) <url:<https://CRAN.R-project.org/package=spam >>.")
     (license license:gpl2+)))
+
+(define-public r-generalizedumatrixgpu
+  (package
+    (name "r-generalizedumatrixgpu")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeneralizedUmatrixGPU" version))
+       (sha256
+        (base32 "0j86lbz3zj6n1n9mdf5l69sc78d6w9zy25zwczlfrr0p7vdglqay"))))
+    (properties `((upstream-name . "GeneralizedUmatrixGPU")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list pandoc))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-ggplot2
+                             r-generalizedumatrix))
+    (home-page "https://cran.r-project.org/package=GeneralizedUmatrixGPU")
+    (synopsis "Credible Visualization for Two-Dimensional Projections of Data")
+    (description
+     "Projections are common dimensionality reduction methods, which represent
+high-dimensional data in a two-dimensional space.  However, when restricting the
+output space to two dimensions, which results in a two dimensional scatter plot
+(projection) of the data, low dimensional similarities do not represent high
+dimensional distances coercively [Thrun, 2018] <DOI: 10.1007/978-3-658-20540-9>.
+ This could lead to a misleading interpretation of the underlying structures
+[Thrun, 2018].  By means of the 3D topographic map the generalized Umatrix is
+able to depict errors of these two-dimensional scatter plots.  The package is
+derived from the book of Thrun, M.C.: \"Projection Based Clustering through
+Self-Organization and Swarm Intelligence\" (2018) <DOI:10.1007/978-3-658-20540-9>
+and the main algorithm called simplified self-organizing map for dimensionality
+reduction methods is published in Thrun, M.C. and Ultsch, A.: \"Uncovering
+High-dimensional Structures of Projections from Dimensionality Reduction
+Methods\" (2020) <DOI:10.1016/j.mex.2020.101093>.")
+    (license license:gpl3)))
 
 (define-public r-generalizedumatrix
   (package

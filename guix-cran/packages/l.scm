@@ -122,13 +122,13 @@ regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
 (define-public r-lwfbrook90r
   (package
     (name "r-lwfbrook90r")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LWFBrook90R" version))
        (sha256
-        (base32 "0kndnl8pzh0ancb9skgcqnh2g30iadq2597fjbjdzi9yb4yg8lv9"))))
+        (base32 "066wy7inzbqqn9nc6k6xgz0fn7zgiwm2fjc2pfgq3ggl7q209lky"))))
     (properties `((upstream-name . "LWFBrook90R")))
     (build-system r-build-system)
     (arguments
@@ -1006,13 +1006,13 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
 (define-public r-ltfhplus
   (package
     (name "r-ltfhplus")
-    (version "2.1.4")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTFHPlus" version))
        (sha256
-        (base32 "00bwbcjs18mkxn09fz6rfg9djl90ck9rh2h21z3sf1av1kggp278"))))
+        (base32 "0lcd19fssqr6qfgh04cfgsssabb97m5kr886ffvr4p0w18wp1mz3"))))
     (properties `((upstream-name . "LTFHPlus")))
     (build-system r-build-system)
     (arguments
@@ -1028,11 +1028,12 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
                              r-rcpp
                              r-purrr
                              r-igraph
+                             r-ggplot2
                              r-future-apply
                              r-future
                              r-dplyr
                              r-batchmeans))
-    (home-page "https://github.com/EmilMiP/LTFHPlus")
+    (home-page "https://emilmip.github.io/LTFHPlus/")
     (synopsis "Implementation of LT-FH++")
     (description
      "Implementation of LT-FH++, an extension of the liability threshold family
@@ -3503,13 +3504,13 @@ functions for estimating linear and geometric morphometric data.")
 (define-public r-lorme
   (package
     (name "r-lorme")
-    (version "1.2.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorMe" version))
        (sha256
-        (base32 "1960a5d5sfbrnkw56mpm2vcccsi0438x7c7ikg8a5lj217fapq4a"))))
+        (base32 "0ndikl3x32lhr16p0i1qvsvzya91bvd9d5yglg7dnij4mv0qpw67"))))
     (properties `((upstream-name . "LorMe")))
     (build-system r-build-system)
     (arguments
@@ -3535,7 +3536,7 @@ functions for estimating linear and geometric morphometric data.")
                              r-ape
                              r-agricolae))
     (home-page "https://cran.r-project.org/package=LorMe")
-    (synopsis "Lightening One-Code Resolving Microbial Ecology Solution")
+    (synopsis "Lightweight One-Line Resolving Microbial Ecology Program")
     (description
      "This package provides a robust collection of functions tailored for microbial
 ecology analysis, encompassing both data analysis and visualization.  It
@@ -5253,13 +5254,13 @@ variety of kernels.  It follows the methods described in Jones, Nguyen and
 (define-public r-logitr
   (package
     (name "r-logitr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logitr" version))
        (sha256
-        (base32 "0ns7z0g2r0ypisb924mkzzpd0p9x0zrhnc0slk55g90d4kbi51gv"))))
+        (base32 "1p53bxm8qmfml25v39psykhfpfynlwnzjbk95lzd2q188pjxflwv"))))
     (properties `((upstream-name . "logitr")))
     (build-system r-build-system)
     (arguments
@@ -12488,13 +12489,13 @@ data.")
 (define-public r-lgspline
   (package
     (name "r-lgspline")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgspline" version))
        (sha256
-        (base32 "08yx88acfyz5faal5ic930x8jxzlm4ja44m5jn5xjqwg8202rlpf"))))
+        (base32 "1l7a04khfaiaic89f6zzq9cp3ymf8acia4z4v47kashkl51a6dm8"))))
     (properties `((upstream-name . "lgspline")))
     (build-system r-build-system)
     (arguments

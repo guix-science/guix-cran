@@ -1258,6 +1258,31 @@ potential for forest restoration as described in Axer et al (2021)
 <doi:10.1016/j.foreco.2020.118802>.")
     (license license:gpl2+)))
 
+(define-public r-quasar
+  (package
+    (name "r-quasar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quasar" version))
+       (sha256
+        (base32 "027fc68zqy5597q04rsh3iysnqs8p24219kgp8f1x0ffk07djnnh"))))
+    (properties `((upstream-name . "quasar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=quasar")
+    (synopsis "Valid Inference on Multiple Quantile Regressions")
+    (description
+     "The approach is based on the closed testing procedure to control familywise
+error rate in a strong sense.  The local tests implemented are Wald-type and
+rank-score.  The method is described in De Santis, et al., (2025),
+<doi:10.48550/@code{arXiv.2511.07999>}.")
+    (license license:gpl3+)))
+
 (define-public r-quartose
   (package
     (name "r-quartose")

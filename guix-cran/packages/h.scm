@@ -7640,13 +7640,13 @@ forecasting, not for planning your flight!")
 (define-public r-hima
   (package
     (name "r-hima")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HIMA" version))
        (sha256
-        (base32 "1ch6lcsigmhgpwj22w787pba49hw8938zbwd36j1npm1zbpzrm8v"))))
+        (base32 "1hfycb3p6bvpcj1hrldjnrrp6afailz9xngww2f4l36r4hdzcycb"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (arguments
@@ -7654,6 +7654,7 @@ forecasting, not for planning your flight!")
       #:tests? #f))
     (propagated-inputs (list r-survival
                              r-quantreg
+                             r-nlme
                              r-ncvreg
                              r-mass
                              r-iterators
@@ -7670,11 +7671,9 @@ forecasting, not for planning your flight!")
     (description
      "Allows to estimate and test high-dimensional mediation effects based on advanced
 mediator screening and penalized regression techniques.  Methods used in the
-package refer to Zhang H, Zheng Y, Zhang Z, Gao T, Joyce B, Yoon G, Zhang W,
-Schwartz J, Just A, Colicino E, Vokonas P, Zhao L, Lv J, Baccarelli A, Hou L,
-Liu L. Estimating and Testing High-dimensional Mediation Effects in Epigenetic
-Studies.  Bioinformatics. (2016) <doi:10.1093/bioinformatics/btw351>.  PMID:
-27357171.")
+package refer to Zhang H, Zheng Y, Hou L, Liu L, HIMA: An R Package for
+High-Dimensional Mediation Analysis.  Journal of Data Science. (2025).
+<doi:10.6339/25-JDS1192>.")
     (license license:gpl3)))
 
 (define-public r-hillshader

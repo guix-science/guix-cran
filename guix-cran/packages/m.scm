@@ -5718,13 +5718,13 @@ effects models based on Johnson (2014) <doi:10.1111/2041-210X.12225>.")
 (define-public r-multilevelpsa
   (package
     (name "r-multilevelpsa")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelPSA" version))
        (sha256
-        (base32 "03mvnihj6d9rlywlkhw10vmi9zl44iag5l5mmkvrxqa67wc8cxjh"))))
+        (base32 "12xsf3y2cfgcxd20qksg2ddqk94lpjqrbdbpkkv7lsvx050s5hkq"))))
     (properties `((upstream-name . "multilevelPSA")))
     (build-system r-build-system)
     (arguments
@@ -16726,13 +16726,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "0kqprwkxhh6qcrh9hdhy5ry0k15miqd1pyvkaccrhqdfb7sb8k60"))))
+        (base32 "1w1wh5pnijf001lcv60px9qz0vybwayyskga579c5r64q1kdlxvf"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -25190,13 +25190,13 @@ between random variables appeared in Genest, NeÅ¡lehovÃ¡, RÃ©millard & Mur
 (define-public r-mixedcca
   (package
     (name "r-mixedcca")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedCCA" version))
        (sha256
-        (base32 "07apl37kwj47w14jxsvwdiacnwd517zs3ff2c70fhb6ncbgp8adv"))))
+        (base32 "1v47w9g08wi69ixxwdpdqv95b53rwx7q97kfj47qm060h325im14"))))
     (properties `((upstream-name . "mixedCCA")))
     (build-system r-build-system)
     (arguments
@@ -45697,13 +45697,13 @@ package for matrix model-based clustering and parsimonious mixture modeling\",
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.4.10")
+    (version "0.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsindf" version))
        (sha256
-        (base32 "1lfwzxlmkzxdxmiicln0fl1xciqkdhjqxk70y984yxl1cnhh7r0i"))))
+        (base32 "08hwz5vvl74x8k4762d1irxqmm4b7v840nx4jrkzsfdq6s5h5kv4"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (arguments
@@ -45713,6 +45713,7 @@ package for matrix model-based clustering and parsimonious mixture modeling\",
                              r-tibble
                              r-rlang
                              r-purrr
+                             r-openxlsx2
                              r-matsbyname
                              r-magrittr
                              r-lifecycle

@@ -1918,13 +1918,13 @@ turning them into other indexed data structures.")
 (define-public r-turkeyelections
   (package
     (name "r-turkeyelections")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "turkeyelections" version))
        (sha256
-        (base32 "0qjmnll6a9qvvbrra2b5gq90xs3kk7clnrxh6i2qgd1b8xi10nbd"))))
+        (base32 "12qp41rqrivv6za4rjscw5apkpq6hpr64cx8nn0k8m5ypirsq34h"))))
     (properties `((upstream-name . "turkeyelections")))
     (build-system r-build-system)
     (arguments
@@ -1936,7 +1936,7 @@ turning them into other indexed data structures.")
     (synopsis "The Most Comprehensive R Package for Turkish Election Results")
     (description
      "Includes the results of general, local, and presidential elections held in
-Turkey between 1995 and 2023, broken down by provinces and overall national
+Turkey between 1995 and 2024, broken down by provinces and overall national
 results.  It facilitates easy processing of this data and the creation of visual
 representations based on these election results.")
     (license license:expat)))
@@ -10489,13 +10489,13 @@ covariance matrices (uncommon sigma) for the mixture components.")
 (define-public r-tramvs
   (package
     (name "r-tramvs")
-    (version "0.0-7")
+    (version "0.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramvs" version))
        (sha256
-        (base32 "1xrs7ircfvvqbynjsh7yqnik3dn7cgvkvp3hx8yc8z2xwv7amr0k"))))
+        (base32 "14yx9yna7fmx95kp8bwy15jrnz76l328z7rp97v9rnwbxc87z8g1"))))
     (properties `((upstream-name . "tramvs")))
     (build-system r-build-system)
     (arguments
@@ -10548,13 +10548,13 @@ TRFLP profiles across species.")
 (define-public r-tramnet
   (package
     (name "r-tramnet")
-    (version "0.0-9")
+    (version "0.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramnet" version))
        (sha256
-        (base32 "0v1v3xqcbsr21g1nc9ld3dicv7pim0ihd51g38v4xwvjgnq3wjm8"))))
+        (base32 "1k0kgiv4p3v79v87xb4hpwnr9f981ppik37camih1vrxi2jhrcb2"))))
     (properties `((upstream-name . "tramnet")))
     (build-system r-build-system)
     (arguments
@@ -10743,13 +10743,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.2-5")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "0a7yg6yacf4ah2fmjlzx3crngr0952d8aahfl2x25rrchgfbcqm1"))))
+        (base32 "1sbr6v5q8b7haaf6lw6yi5xracj7j8m22217rkanzd036y2knm8p"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -10777,9 +10777,11 @@ outcome logistic regression (Lohse et al., 2017,
 <DOI:10.12688/f1000research.12934.1>).  The underlying theory is described in
 Hothorn et al. (2018) <DOI:10.1111/sjos.12291>.  An extension to transformation
 models for clustered data is provided (Barbanti and Hothorn, 2022,
-<DOI:10.1093/biostatistics/kxac048>).  Multivariate conditional transformation
-models (Klein et al, 2022, <DOI:10.1111/sjos.12501>) and shift-scale
-transformation models (Siegfried et al, 2023,
+<DOI:10.1093/biostatistics/kxac048>) and a tutorial explains applications in
+survival analysis (Siegfried et al., 2025,
+<DOI:10.48550/@code{arXiv.2402.06428>}).  Multivariate conditional
+transformation models (Klein et al, 2022, <DOI:10.1111/sjos.12501>) and
+shift-scale transformation models (Siegfried et al, 2023,
 <DOI:10.1080/00031305.2023.2203177>) can be fitted as well.  The package
 contains an implementation of a doubly robust score test, described in Kook et
 al. (2024, <DOI:10.1080/01621459.2024.2395588>).")
@@ -18074,13 +18076,13 @@ be inserted into the output stream.")
 (define-public r-tikatuwq
   (package
     (name "r-tikatuwq")
-    (version "0.7.3")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tikatuwq" version))
        (sha256
-        (base32 "1m0hcjylgijayhzxxgfbpl9j1ijlrbp234mzfws0awadbq5bw2hj"))))
+        (base32 "1182lw6q6jz3xvbrs4n5xy5kbbfgkqbbfn8gc010jbzf2kkw6q9n"))))
     (properties `((upstream-name . "tikatuwq")))
     (build-system r-build-system)
     (arguments
@@ -18113,7 +18115,11 @@ and the National Sanitation Foundation Water Quality Index (NSF WQI)
 <doi:10.1007/s11157-023-09650-7>.  The package also checks compliance with
 Brazilian standard CONAMA Resolution 357/2005
 <https://conama.mma.gov.br/?id=450&option=com_sisconama&task=arquivo.download>
-and generates reproducible reports for routine monitoring workflows.")
+and generates reproducible reports for routine monitoring workflows.  The
+example dataset (`wq_demo`) is now a real subset from monitoring data (BURANHEM
+river, 2020-2024, 4 points, 20 rows, 14 columns including extra `rio`, `lat`,
+`lon`).  All core examples and vignettes use this realistic sample, improving
+reproducibility and documentation value for users.")
     (license license:expat)))
 
 (define-public r-tigris
@@ -19406,13 +19412,13 @@ Examples of applications using this package include Kwon et al. (2022)
 (define-public r-tidyrgee
   (package
     (name "r-tidyrgee")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyrgee" version))
        (sha256
-        (base32 "0sdjbl4ivjrppg215j1wpcyjlbhn0g7z9cpljvqkwq3mb1abhdfd"))))
+        (base32 "09fgi5v93scxa3wnpzacgix6yzkhwm9s8ixvnbwi6kd7ihh69k4s"))))
     (properties `((upstream-name . "tidyrgee")))
     (build-system r-build-system)
     (arguments
@@ -19423,7 +19429,6 @@ Examples of applications using this package include Kwon et al. (2022)
                              r-sf
                              r-rlang
                              r-rgee
-                             r-reticulate
                              r-readr
                              r-purrr
                              r-lubridate
@@ -22690,13 +22695,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "1d12009h7ax3yxs1kqrq5sik495426f6bnshfch2k3vjb8cphcgy"))))
+        (base32 "1ml7al9sk420c2v16wg6vrmk3gpr8ib5nwx2m0sc25nlga33mppf"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -28730,13 +28735,13 @@ reproducibility in teal applications.")
 (define-public r-teal
   (package
     (name "r-teal")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal" version))
        (sha256
-        (base32 "0257dvkvfbdk12jam4x6v1xjs4h8sh68n04zm6qb2hsrk4pp7h21"))))
+        (base32 "0rs69ry7v5aqjgazldpaajvxnk8f958wfsm46zg4g9bv3jbb9bzc"))))
     (properties `((upstream-name . "teal")))
     (build-system r-build-system)
     (arguments
@@ -30284,13 +30289,13 @@ distribution along with clinical trials based on the Bayesian distribution.")
 (define-public r-tbm
   (package
     (name "r-tbm")
-    (version "0.3-8")
+    (version "0.3-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbm" version))
        (sha256
-        (base32 "0xb4xgb073nzyj8bar5shk478av0xaz54hyxgfdm576ip6idv7l3"))))
+        (base32 "1vhdnhqlcry2l8656llj6h4z4gcmvs17473qspa7w04ckkls2jy5"))))
     (properties `((upstream-name . "tbm")))
     (build-system r-build-system)
     (arguments

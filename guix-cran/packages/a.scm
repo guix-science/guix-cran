@@ -2589,6 +2589,42 @@ user as possible.")
 data, returning clear, easy-to-read results.  Ideal for all experience levels.")
     (license license:gpl3)))
 
+(define-public r-automatedreclin
+  (package
+    (name "r-automatedreclin")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "automatedRecLin" version))
+       (sha256
+        (base32 "02fb3xbnqlaaa4qasz4x15zwh3vi37ra66aqibzkrl5ca3g17shr"))))
+    (properties `((upstream-name . "automatedRecLin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reclin2
+                             r-purrr
+                             r-nleqslv
+                             r-fixedpoint
+                             r-densityratio
+                             r-data-table))
+    (home-page "https://github.com/ncn-foreigners/automatedRecLin")
+    (synopsis "Record Linkage Based on an Entropy-Maximizing Classifier")
+    (description
+     "The goal of @code{automatedRecLin} is to perform record linkage (also known as
+entity resolution) in unsupervised or supervised settings.  It compares pairs of
+records from two datasets using selected comparison functions to estimate the
+probability or density ratio between matched and non-matched records.  Based on
+these estimates, it predicts a set of matches that maximizes entropy.  For
+details see: Lee et al. (2022)
+<https://www150.statcan.gc.ca/n1/pub/12-001-x/2022001/article/00007-eng.htm>, Vo
+et al. (2023)
+<https://ideas.repec.org/a/eee/csdana/v179y2023ics0167947322002365.html>,
+Sugiyama et al. (2008) <doi:10.1007/s10463-008-0197-x>.")
+    (license license:gpl3)))
+
 (define-public r-automagic
   (package
     (name "r-automagic")
@@ -3090,13 +3126,13 @@ rendering 2D and 3D models.")
 (define-public r-autodb
   (package
     (name "r-autodb")
-    (version "3.1.0")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autodb" version))
        (sha256
-        (base32 "1yc2ll6vy536r319ia5sbnn03q9hahfl341gi5ys8pb9g2asbkg3"))))
+        (base32 "1l83kn3dajmalp155vpvyph5fzzvld5w7qjplmnlpra04iija5n4"))))
     (properties `((upstream-name . "autodb")))
     (build-system r-build-system)
     (arguments
@@ -9707,6 +9743,40 @@ treat them as compositional data', sensu Aitchison [1986, The Statistics of
 Compositional Data, Chapman and Hall].")
     (license license:gpl2)))
 
+(define-public r-aramappings
+  (package
+    (name "r-aramappings")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aramappings" version))
+       (sha256
+        (base32 "17xcnrj5fsp4g8ng56pic9wg76cqfa1l05y80jwbwl630a3mpssz"))))
+    (properties `((upstream-name . "aramappings")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam
+                             r-rglpk
+                             r-pracma
+                             r-matrix
+                             r-glpkapi
+                             r-ggplot2
+                             r-cvxr
+                             r-clarabel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/manuelrubio/aramappings")
+    (synopsis "Computes Adaptable Radial Axes Mappings")
+    (description
+     "Computes low-dimensional point representations of high-dimensional numerical
+data according to the data visualization method Adaptable Radial Axes described
+in: Manuel Rubio-SÃ¡nchez, Alberto Sanchez, and Dirk J. Lehmann (2017)
+\"Adaptable radial axes plots for improved multivariate data visualization\"
+<doi:10.1111/cgf.13196>.")
+    (license license:expat)))
+
 (define-public r-arakno
   (package
     (name "r-arakno")
@@ -12821,13 +12891,13 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "19yq4h5n19sg40xs7axdlfnpmrg9h3gv6n4c4bw37lba5xw9nq2l"))))
+        (base32 "0kcpvi1021r3mvkfyzy6abxmb5n42xif8v92ny51mvfx05ml1la3"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (arguments
@@ -19058,13 +19128,13 @@ the Ensemble Kalman filter or the Particle filter as described in Piazzi et al.
 (define-public r-airgrdatasets
   (package
     (name "r-airgrdatasets")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRdatasets" version))
        (sha256
-        (base32 "05059ylizjlb90yqllkw7c0gm8nx1a42mw0334zkm9xpgzsis8cb"))))
+        (base32 "0g1zmcalf1l6zvw0ass26vh8svm0i7r9pbzixb4mw2vgvqm1f520"))))
     (properties `((upstream-name . "airGRdatasets")))
     (build-system r-build-system)
     (arguments
@@ -19076,10 +19146,10 @@ the Ensemble Kalman filter or the Particle filter as described in Piazzi et al.
      "Hydro-Meteorological Catchments Datasets for the 'airGR' Packages")
     (description
      "Sample of hydro-meteorological datasets extracted from the CAMELS-FR French
-database <https://hal.inrae.fr/hal-03687235>.  It provides metadata and
-catchment-scale aggregated hydro-meteorological time series on a pool of French
-catchments for use by the @code{airGR} packages.")
-    (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
+database <doi:10.57745/WH7FJR>.  It provides metadata and catchment-scale
+aggregated hydro-meteorological time series on a pool of French catchments for
+use by the @code{airGR} packages.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-airgr
   (package
@@ -22080,13 +22150,13 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
 (define-public r-aedseo
   (package
     (name "r-aedseo")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aedseo" version))
        (sha256
-        (base32 "18000ghr4wkbpxkmvnaqbg47z3nmhazwpf1rxmwn5qd1n8b84dxr"))))
+        (base32 "0slij4d0lr2rvqij4jiym96lgfwz6agm4q77ck34rvhypkvbkffm"))))
     (properties `((upstream-name . "aedseo")))
     (build-system r-build-system)
     (arguments

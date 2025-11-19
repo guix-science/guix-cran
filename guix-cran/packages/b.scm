@@ -17185,6 +17185,34 @@ portfolio management and trading:
 <https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md>.")
     (license (license:fsdg-compatible "AGPL"))))
 
+(define-public r-bin2norm
+  (package
+    (name "r-bin2norm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bin2norm" version))
+       (sha256
+        (base32 "1w1ngb82vsk8miginkrfv3wdfj6k8niwksnjs9bbqwqkwidhc9v7"))))
+    (properties `((upstream-name . "bin2norm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod r-rstan r-lme4))
+    (home-page "https://cran.r-project.org/package=bin2norm")
+    (synopsis "Hierarchical Probit Estimation for Dichotomized Data")
+    (description
+     "This package provides likelihood-based and hierarchical estimation methods for
+thresholded (binomial-probit) data.  Supports fixed-mean and random-mean models
+with maximum likelihood estimation (MLE), generalized linear mixed model (GLMM),
+and Bayesian Markov chain Monte Carlo (MCMC) implementations.  For
+methodological background, see Albert and Chib (1993)
+<doi:10.1080/01621459.1993.10476321> and @code{McCulloch} (1994)
+<doi:10.2307/2297959>.")
+    (license license:expat)))
+
 (define-public r-bimodalindex
   (package
     (name "r-bimodalindex")
@@ -17844,13 +17872,13 @@ for dense or sparse matrices.")
 (define-public r-bigplscox
   (package
     (name "r-bigplscox")
-    (version "0.6.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigPLScox" version))
        (sha256
-        (base32 "1h0f0yz06054y34vha7h6fszi71r35wxqq2msyjcx7m6d3zmfd5y"))))
+        (base32 "1liz4kqw4ad85kh1fw28mln1hsvglkylqi23q6gyl7c93v6sd8kw"))))
     (properties `((upstream-name . "bigPLScox")))
     (build-system r-build-system)
     (arguments
@@ -30848,13 +30876,13 @@ functionality is included as well.")
 (define-public r-baserater
   (package
     (name "r-baserater")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baserater" version))
        (sha256
-        (base32 "0yjwzl877mbxnl2px88s95ich90cgzn2bvxc8imq85ng79adxn3p"))))
+        (base32 "158ydx9ra5vcwgx3zf0545zi552mr933l8brlihvzwps7i27rfyj"))))
     (properties `((upstream-name . "baserater")))
     (build-system r-build-system)
     (arguments
@@ -33207,13 +33235,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.9.8")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "1bdxxvzlz2rq04654ny6hxxgmlw0wh01y4b59h2di06w8066slgl"))))
+        (base32 "0xjkqqq68cjl8pxbzzksp6881yn8fldn8shj6n7b90dwnwxr6j2c"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments

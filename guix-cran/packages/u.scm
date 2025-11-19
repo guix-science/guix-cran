@@ -3890,13 +3890,13 @@ and from one library to another without changing function or syntax.")
 (define-public r-umx
   (package
     (name "r-umx")
-    (version "4.59.0")
+    (version "4.60.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "umx" version))
        (sha256
-        (base32 "1cz7yw3my8p8n343k3bf7xkf6w28r8j6grlxs6lzm7jpjpycv2ag"))))
+        (base32 "1b13rzbky1dxpgl9vdmj0ap7i0w2yxmrx2qsbni3vhiraisxpys8"))))
     (properties `((upstream-name . "umx")))
     (build-system r-build-system)
     (arguments
@@ -5093,6 +5093,41 @@ TARGET, GTEx, CCLE, and others.")
 Uniform Crime Report codebook for the \"Offenses Known and Clearance by Arrest\"
 datasets from 1998-2014.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-ucomp
+  (package
+    (name "r-ucomp")
+    (version "5.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UComp" version))
+       (sha256
+        (base32 "1hcw6c6dva9l4zw5hvfa45srhf8pkspycz9x1cjzfw6b7kc68c5v"))))
+    (properties `((upstream-name . "UComp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsoutliers
+                             r-tsibble
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-gridextra
+                             r-ggplot2
+                             r-ggforce))
+    (home-page "https://cran.r-project.org/package=UComp")
+    (synopsis "Automatic Univariate Time Series Modelling of many Kinds")
+    (description
+     "Comprehensive analysis and forecasting of univariate time series using automatic
+time series models of many kinds.  Harvey AC (1989)
+<doi:10.1017/CBO9781107049994>.  Pedregal DJ and Young PC (2002)
+<doi:10.1002/9780470996430>.  Durbin J and Koopman SJ (2012)
+<doi:10.1093/acprof:oso/9780199641178.001.0001>.  Hyndman RJ, Koehler AB, Ord
+JK, and Snyder RD (2008) <doi:10.1007/978-3-540-71918-2>.  GÃ³mez V, Maravall A
+(2000) <doi:10.1002/9781118032978>.  Pedregal DJ, Trapero JR and Holgado E
+(2024) <doi:10.1016/j.ijforecast.2023.09.004>.")
+    (license license:gpl3)))
 
 (define-public r-uclust
   (package

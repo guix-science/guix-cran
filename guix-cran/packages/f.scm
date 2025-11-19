@@ -514,13 +514,13 @@ Spectral Clustering.  Submitted.")
 (define-public r-fuzzysimres
   (package
     (name "r-fuzzysimres")
-    (version "0.4.7")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzySimRes" version))
        (sha256
-        (base32 "1qjhas3q5080plpql8jy4nxhvkvszgvagba729xw0gkgsh6fxxyl"))))
+        (base32 "1mq29nv9g37g5vznm8cyf8asrx6sh70mjsqbsbm4krmf789zw0dm"))))
     (properties `((upstream-name . "FuzzySimRes")))
     (build-system r-build-system)
     (arguments
@@ -10784,6 +10784,43 @@ in rhythmic patterns.  Details about the mathematical formulation of FMM models
 can be found in Rueda et al. (2019) <doi:10.1038/s41598-019-54569-1>.")
     (license license:gpl2+)))
 
+(define-public r-fmi
+  (package
+    (name "r-fmi")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmi" version))
+       (sha256
+        (base32 "16b7w9431z11cz06p1mxz8ihwm0k676m1gv7i5qsn31szb2jymy5"))))
+    (properties `((upstream-name . "fmi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-refund
+                             r-purrr
+                             r-magrittr
+                             r-knitr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fmi")
+    (synopsis
+     "Hierarchical Permutation Tests for Functional Measurement Invariance")
+    (description
+     "This package provides a suite of functions to test for Functional Measurement
+Invariance (FMI) between two groups.  Implements hierarchical permutation tests
+for configural, metric, and scalar invariance, adapting concepts from
+Multi-Group Confirmatory Factor Analysis (MGCFA) to functional data.  Methods
+are based on concepts from: Meredith, W. (1993) <doi:10.1007/BF02294825>,5 Yao,
+F., MÃ¼ller, H. G., & Wang, J. L. (2005) <doi:10.1198/016214504000001745>, and
+Lee, K. Y., & Li, L. (2022) <doi:10.1111/rssb.12471>.")
+    (license license:expat)))
+
 (define-public r-fmf
   (package
     (name "r-fmf")
@@ -17464,13 +17501,13 @@ Service, Forest Inventory and Analysis (FIA) Program.")
 (define-public r-fiery
   (package
     (name "r-fiery")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fiery" version))
        (sha256
-        (base32 "1knrs5492dp7bwfhllyr400cgsflnxpdh3mgzgdqfi20hms4pi1v"))))
+        (base32 "0r44wdvs03kk83698bnbi76jhhf16zbindzq4p999lnx7lbwccas"))))
     (properties `((upstream-name . "fiery")))
     (build-system r-build-system)
     (arguments
@@ -19612,13 +19649,13 @@ package?fechner for an overview.")
 (define-public r-fec16
   (package
     (name "r-fec16")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fec16" version))
        (sha256
-        (base32 "1n3qphiaj9lf5sqaprknma43yydb7rs7gsdh9xkcr17zwhr553di"))))
+        (base32 "1xj3v77fy1c9pvhkjn3ahhp27vmnd4midhp82f0vbmwdp4jl2gd0"))))
     (properties `((upstream-name . "fec16")))
     (build-system r-build-system)
     (arguments
@@ -22563,13 +22600,13 @@ Emergency Department with concurrent local temperature.")
 (define-public r-fasttreeid
   (package
     (name "r-fasttreeid")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasttreeid" version))
        (sha256
-        (base32 "0krdm6r2185zad7mq9y8h87vzhskjhd6snvdghlr5jp5k59ra15j"))))
+        (base32 "0gpncc9wbb0qnykgwsw2fjci94dkzn6jj57j7cfz11b2vicsphpk"))))
     (properties `((upstream-name . "fasttreeid")))
     (build-system r-build-system)
     (arguments
@@ -24159,13 +24196,13 @@ guides and Python package information can be found at
 (define-public r-fasterraster
   (package
     (name "r-fasterraster")
-    (version "8.4.1.0")
+    (version "8.4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasterRaster" version))
        (sha256
-        (base32 "0d3qqkvyq7jmcskd5i95hv4ss4licjacr95qq058r90jik4gajl9"))))
+        (base32 "1azp2q9g4wf6why7gcwaszy0cpqgzv9qzf581s2pq00drh1flmab"))))
     (properties `((upstream-name . "fasterRaster")))
     (build-system r-build-system)
     (arguments
@@ -24985,13 +25022,13 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
 (define-public r-farr
   (package
     (name "r-farr")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "farr" version))
        (sha256
-        (base32 "1cn9h1sqrgg9bwqz1bb79yzag00ws16rw7fll4gngkhc1i92p7w0"))))
+        (base32 "0jx9js1lqzr20n0n2raa3kf2xxx7yg8vmf8sc7z7zn5ifkqyalmi"))))
     (properties `((upstream-name . "farr")))
     (build-system r-build-system)
     (arguments
@@ -25009,11 +25046,11 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
                              r-dbplyr
                              r-dbi))
     (home-page "https://github.com/iangow/farr")
-    (synopsis "Data and Code for Financial Accounting Research")
+    (synopsis "Data and Code for Empirical Research in Accounting")
     (description
-     "Handy functions and data to support a course book for accounting research.  Gow,
-Ian D. and Tongqing Ding (2024) Empirical Research in Accounting: Tools and
-Methods <https://iangow.github.io/far_book/>.")
+     "Handy functions and data to support the course book Empirical Research in
+Accounting: Tools and Methods (1st ed.).  Chapman and Hall/CRC.
+<doi:10.1201/9781003456230> and <https://iangow.github.io/far_book/>.")
     (license license:expat)))
 
 (define-public r-farmtest

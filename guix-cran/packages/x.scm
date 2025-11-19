@@ -286,36 +286,6 @@ Currently it only contains a very efficient function of decoding HTML entities
 in character vectors by Rcpp routine.")
     (license license:expat)))
 
-(define-public r-xtune
-  (package
-    (name "r-xtune")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xtune" version))
-       (sha256
-        (base32 "0k5cf7n84j73cdxzfr7ijjxc65h6lx6fjry81rsxa80fn0sn8qiz"))))
-    (properties `((upstream-name . "xtune")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-selectiveinference r-lbfgs r-glmnet r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JingxuanH/xtune")
-    (synopsis
-     "Regularized Regression with Feature-Specific Penalties Integrating External Information")
-    (description
-     "Extends standard penalized regression (Lasso, Ridge, and Elastic-net) to allow
-feature-specific shrinkage based on external information with the goal of
-achieving a better prediction accuracy and variable selection.  Examples of
-external information include the grouping of predictors, prior knowledge of
-biological importance, external p-values, function annotations, etc.  The choice
-of multiple tuning parameters is done using an Empirical Bayes approach.  A
-majorization-minimization algorithm is employed for implementation.")
-    (license license:expat)))
-
 (define-public r-xtsum
   (package
     (name "r-xtsum")

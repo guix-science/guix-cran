@@ -518,13 +518,13 @@ experiences.  Reference: Avanzi B, Taylor G, Wang M, Wong B (2020)
 (define-public r-synthesizer
   (package
     (name "r-synthesizer")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthesizer" version))
        (sha256
-        (base32 "1zn3m406d97i3hghji6gfvnxjh0112q5c5kxxra6km5f04p1kij5"))))
+        (base32 "1plj5vv8z4v2hpqki9cvb1wjip0bhl5lq486lsrvvdkzra7nnc37"))))
     (properties `((upstream-name . "synthesizer")))
     (build-system r-build-system)
     (arguments
@@ -710,13 +710,13 @@ classify participant data as valid or invalid.")
 (define-public r-synmicrodata
   (package
     (name "r-synmicrodata")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synMicrodata" version))
        (sha256
-        (base32 "1b9amsn1cxbcq8w3nj5i7g9w62hpfz7rl57d85k41nmmrz84khl7"))))
+        (base32 "1b916srmxaidyc0xsq80pdg38sh324sd5sy9j92il8wzq9jfk0kn"))))
     (properties `((upstream-name . "synMicrodata")))
     (build-system r-build-system)
     (arguments
@@ -19909,13 +19909,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "0fk98wp2k9cjvhj1288v755x1ibfj8x90n568wcl8yjfhhr3f7zm"))))
+        (base32 "14yc2gsabzjp2sfdsr515v0wm4p21v9nc9dihw4g45rhkv07l57x"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -19928,8 +19928,7 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
                              r-modifiedmk
                              r-metafor
                              r-mass
-                             r-mad
-                             r-kendall))
+                             r-mad))
     (home-page "https://cran.r-project.org/package=SSDforR")
     (synopsis "Functions to Analyze Single System Data")
     (description
@@ -40099,19 +40098,19 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
 (define-public r-sleev
   (package
     (name "r-sleev")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleev" version))
        (sha256
-        (base32 "0jyciag0x232pgw38gcnnn9d3h7s5m13m3j0qzy6dv1zbhvswjwk"))))
+        (base32 "1pfsa0qna8nydricfgyp3aqpwi6qj6gih0av960p58ia2hnsffk6"))))
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-data-table))
     (home-page "https://github.com/dragontaoran/sleev")
     (synopsis "Semiparametric Likelihood Estimation with Errors in Variables")
     (description
@@ -40592,13 +40591,13 @@ robustly using a template matching approach, as described by Ekstrom (2004)
 (define-public r-skylight
   (package
     (name "r-skylight")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skylight" version))
        (sha256
-        (base32 "07x9rnq4gn79bjp21m7mlp45nr5ly30zaz26n3cj3mlg7wsxrw3y"))))
+        (base32 "13ffqpk56wxbj980sna593w4yhy0z0qcq0jn6qv1ifi169wa2mf2"))))
     (properties `((upstream-name . "skylight")))
     (build-system r-build-system)
     (arguments
@@ -45752,13 +45751,13 @@ and copula models.")
 (define-public r-siminf
   (package
     (name "r-siminf")
-    (version "10.0.0")
+    (version "10.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimInf" version))
        (sha256
-        (base32 "0l88159vx38496p5jnmhpllk3i1484yj1w52x4dfs5v2qldcndd1"))))
+        (base32 "15f1i9d0c6dvi08x14b9zh8mwxc34f4djfdg0fvhkr6siavgqnfk"))))
     (properties `((upstream-name . "SimInf")))
     (build-system r-build-system)
     (arguments
@@ -54032,13 +54031,13 @@ shell carbonate) through input parameters.")
 (define-public r-shelf
   (package
     (name "r-shelf")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHELF" version))
        (sha256
-        (base32 "074av017ii88wxr2gg80wal1xyh2r1d52wgg159bh51yj6zsfrng"))))
+        (base32 "09k33id2rwlrp4ld2s9rdjc635sy4201i0v1246yl38w7j4d2n7y"))))
     (properties `((upstream-name . "SHELF")))
     (build-system r-build-system)
     (arguments
@@ -54523,13 +54522,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapr
   (package
     (name "r-shapr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapr" version))
        (sha256
-        (base32 "1kfja0m03dj1inma04d769j2gcfgvyrp2w2q9i7434r2863qdacb"))))
+        (base32 "158ncd3vpmvb91w1c5pfrl6gqhcxh61ybn6ib93m3kyzpc93qj52"))))
     (properties `((upstream-name . "shapr")))
     (build-system r-build-system)
     (arguments
@@ -55956,6 +55955,40 @@ can be modeled with auxiliary variables through a log-ratio transformation.
 Graf, M. (2017, ISBN: 978-84-947240-0-8).  See also the vignette enclosed in the
 package.")
     (license license:gpl2+)))
+
+(define-public r-sgapi
+  (package
+    (name "r-sgapi")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgapi" version))
+       (sha256
+        (base32 "0p1p6r7szac9jmp1r83qlhnczh0rphwaranb4f2zy3da5zkpqmdi"))))
+    (properties `((upstream-name . "sgapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-sf
+                             r-readr
+                             r-magrittr
+                             r-httr
+                             r-dplyr))
+    (home-page
+     "https://defra-data-science-centre-of-excellence.github.io/sgapi/")
+    (synopsis
+     "Aid Querying 'nomis' and 'Office for National Statistics Open Geography' APIs")
+    (description
+     "Facilitates extraction of geospatial data from the Office for National
+Statistics Open Geography and nomis Application Programming Interfaces (APIs).
+Simplifies process of querying nomis datasets <https://www.nomisweb.co.uk/> and
+extracting desired datasets in dataframe format.  Extracts area shapefiles at
+chosen resolution from Office for National Statistics Open Geography
+<https://geoportal.statistics.gov.uk/>.")
+    (license license:expat)))
 
 (define-public r-sg
   (package
@@ -57610,13 +57643,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "3.0.3")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sequoia" version))
        (sha256
-        (base32 "1f7imr6gfyiyky3dxkj57a0lcyiila8zh86hmcs04v5xxk4g67iy"))))
+        (base32 "0awkjiihm71psa94wp83skys53bknyvczhypprdn39dalb8q6mng"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (arguments
@@ -64201,13 +64234,13 @@ Yang, Z (2018) <doi:10.1016/j.jeconom.2017.08.019>.  Wu, J., Matsuda, Y (2021)
 (define-public r-sdpdmod
   (package
     (name "r-sdpdmod")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDPDmod" version))
        (sha256
-        (base32 "11s04pbv6cs1v6kd6vv0r64qymqvldmvz3bjg9nn7syxmy6mmkvy"))))
+        (base32 "1x7xbvprjhvv7y5d1x092j5k3n5d8x1yhipr6i8a2lsx8236lr2z"))))
     (properties `((upstream-name . "SDPDmod")))
     (build-system r-build-system)
     (arguments
@@ -66903,6 +66936,68 @@ are popular rules like the Brier (quadratic) score, logarithmic score, and
 spherical score.  For two-alternative forecasts, also includes functionality for
 plotting scores that one would obtain under specific scoring rules.")
     (license license:gpl2)))
+
+(define-public r-scores
+  (package
+    (name "r-scores")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCoRES" version))
+       (sha256
+        (base32 "1pzh2cnk1pwbk8wpqz045dk3gzsyxvag2x2jg42jsajmkfc06rrd"))))
+    (properties `((upstream-name . "SCoRES")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-reshape
+                             r-refund
+                             r-patchwork
+                             r-nlme
+                             r-metr
+                             r-matrixstats
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr esbuild))
+    (home-page "https://angelayustat.github.io/SCoRES/")
+    (synopsis "Simultaneous Confidence Region Excursion Sets")
+    (description
+     "This package provides computational tools for estimating inverse regions and
+constructing the corresponding simultaneous outer and inner confidence regions.
+Acceptable input includes both one-dimensional and two-dimensional data for
+linear, logistic, functional, and spatial generalized least squares regression
+models.  Functions are also available for constructing simultaneous confidence
+bands (SCBs) for these models.  The definition of simultaneous confidence
+regions (SCRs) follows Sommerfeld et al. (2018)
+<doi:10.1080/01621459.2017.1341838>.  Methods for estimating inverse regions,
+SCRs, and the nonparametric bootstrap are based on Ren et al. (2024)
+<doi:10.1093/jrsssc/qlae027>.  Methods for constructing SCBs are described in
+Crainiceanu et al. (2024) <doi:10.1201/9781003278726> and Telschow et al. (2022)
+<doi:10.1016/j.jspi.2021.05.008>.")
+    (license license:expat)))
 
 (define-public r-scorepeak
   (package

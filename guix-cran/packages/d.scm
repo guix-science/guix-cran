@@ -13907,20 +13907,21 @@ transitions are desired.")
 (define-public r-dispersionindicators
   (package
     (name "r-dispersionindicators")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dispersionIndicators" version))
        (sha256
-        (base32 "0rfphrf9i36hk148hqcif0vfypg27ppnxraagwsgzin8f3ixqss2"))))
+        (base32 "1vsqvmc32r09vasxi5r28ihcac8wgdmigy5kxg0zgfn1wns881r0"))))
     (properties `((upstream-name . "dispersionIndicators")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-corpcor))
-    (home-page "https://cran.r-project.org/package=dispersionIndicators")
+    (home-page
+     "https://unh-pfem-gitlab.ara.inrae.fr/packages/dispersion_indicators/")
     (synopsis
      "Indicators for the Analysis of Dispersion of Datasets with Batched and Ordered Samples")
     (description
@@ -15891,13 +15892,13 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipsaus" version))
        (sha256
-        (base32 "0k0ykgkjsmdj5wpln80xvsn4brrkpklv2dyq93dhg4szj8lxsrax"))))
+        (base32 "0vjq1li62x00ay7d0b9n5hgpqriiazbbgz9hrxklq8110q4zh8xw"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (arguments
@@ -29191,13 +29192,13 @@ your computer.  Routines for both single pixel data downloads and gridded
 (define-public r-dawar
   (package
     (name "r-dawar")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawaR" version))
        (sha256
-        (base32 "0vcn2wh5w583drwi1x6mi6lf2fmd79c5al5574w1y3z46f5zbs02"))))
+        (base32 "05hc8zvffqk177l77z5db14b5y58g14prs81irg8q254r7hqffp6"))))
     (properties `((upstream-name . "dawaR")))
     (build-system r-build-system)
     (arguments
@@ -29466,13 +29467,13 @@ seasonally adjust tabular data.")
 (define-public r-datetoiso
   (package
     (name "r-datetoiso")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetoiso" version))
        (sha256
-        (base32 "0rmki5rlnjiscq3iw40rmk6irjnhfw9l0h0803fayf6ri3jmrvl5"))))
+        (base32 "1m3nkkwip90lgl6jn97vk1ddbrpl3an7095h18a46aflq1kj3igj"))))
     (properties `((upstream-name . "datetoiso")))
     (build-system r-build-system)
     (arguments
@@ -33260,13 +33261,13 @@ al. (2015) <doi:10.1111/ele.12461>.")
 (define-public r-dair
   (package
     (name "r-dair")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daiR" version))
        (sha256
-        (base32 "1l62qlnn6xkdkqazxkx6qzv4wp3rw3pi6l6f6y6b1n2k9vz4b5za"))))
+        (base32 "0kynv9npifpd4rmxphix8f5rj21r97gh6n3ics7r9f6r9mxk5z2l"))))
     (properties `((upstream-name . "daiR")))
     (build-system r-build-system)
     (arguments
@@ -33294,7 +33295,7 @@ al. (2015) <doi:10.1111/ele.12461>.")
     (synopsis "Interface with Google Cloud Document AI API")
     (description
      "R interface for the Google Cloud Services Document AI API
-<https://cloud.google.com/document-ai/> with additional tools for output file
+<https://cloud.google.com/document-ai> with additional tools for output file
 parsing and text reconstruction.  Document AI is a powerful server-based OCR
 service that extracts text and tables from images and PDF files with high
 accuracy. @code{daiR} gives R users programmatic access to this service and
