@@ -3477,19 +3477,19 @@ team), UDS and UOS are largely interchangeable.")
 (define-public r-ctmva
   (package
     (name "r-ctmva")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctmva" version))
        (sha256
-        (base32 "0nfn6l31bsifrb1szsrig6l4023svsr81lqnq072yi6441klyf81"))))
+        (base32 "15lnnbdzz9v3zn1x3x2pk2vv4p9w57h95lpsx45q8qqdcqax5ih6"))))
     (properties `((upstream-name . "ctmva")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-polynom r-fda))
+    (propagated-inputs (list r-polynom r-mgcv r-matrix r-mass r-fda))
     (home-page "https://cran.r-project.org/package=ctmva")
     (synopsis "Continuous-Time Multivariate Analysis")
     (description
@@ -3498,9 +3498,9 @@ for several techniques of multivariate analysis in continuous-time setting.
 Specifically, we introduced continuous-time analogues of several classical
 techniques of multivariate analysis, such as principal component analysis,
 canonical correlation analysis, Fisher linear discriminant analysis, K-means
-clustering, and so on.  Details are in Biplab Paul, Philip T. Reiss and Erjia
-Cui (2023) \"Continuous-time multivariate analysis\"
-<doi:10.48550/@code{arXiv.2307.09404>}.")
+clustering, and so on.  Details are in Biplab Paul, Philip T. Reiss, Erjia Cui
+and Noemi Foa (2025) \"Continuous-time multivariate analysis\" <doi:
+10.1080/10618600.2024.2374570>.")
     (license license:gpl2+)))
 
 (define-public r-ctmm
@@ -10289,26 +10289,26 @@ R Xu, J Stare (2005) <doi:10.1002/sim.1946>].")
 (define-public r-coxplus
   (package
     (name "r-coxplus")
-    (version "1.1.1")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoxPlus" version))
        (sha256
-        (base32 "038wsz206bgc0pnzx403b5ihcwhxpkrpxmwvrvqcxf8333pb62l5"))))
+        (base32 "1vkxbmhhg2b26qysjdg84v1pbph4d5wyzdy4y65dfwbq3i8wk59k"))))
     (properties `((upstream-name . "CoxPlus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))
     (home-page "https://cran.r-project.org/package=CoxPlus")
     (synopsis
      "Cox Regression (Proportional Hazards Model) with Multiple Causes and Mixed Effects")
     (description
-     "This package provides a high performance package estimating Cox Model when an
-even has more than one causes.  It also supports random and fixed effects, tied
-events, and time-varying variables.")
+     "Extends the Cox model to events with more than one causes.  Also supports random
+and fixed effects, tied events, and time-varying variables.  Model details are
+provided in Peng et al. (2018) <doi:10.1509/jmr.14.0643>.")
     (license license:gpl3+)))
 
 (define-public r-coxphw
@@ -12717,13 +12717,13 @@ correspond to Feb 2011 preprint
 (define-public r-cotram
   (package
     (name "r-cotram")
-    (version "0.5-3")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cotram" version))
        (sha256
-        (base32 "0b7jfii7dd93z3mbfg4phyv1y92yfrl54k9qhm3b519vqzyq8yic"))))
+        (base32 "0pyk4908x368ah9jwh09kp60m269m258d82nhk2h82wz9fy15blr"))))
     (properties `((upstream-name . "cotram")))
     (build-system r-build-system)
     (arguments
@@ -12734,9 +12734,7 @@ correspond to Feb 2011 preprint
                              r-survival
                              r-qrng
                              r-mlt
-                             r-matrix
-                             r-basefun
-                             r-alabama))
+                             r-basefun))
     (native-inputs (list r-knitr))
     (home-page "http://ctm.R-forge.R-project.org")
     (synopsis "Count Transformation Models")
@@ -25463,13 +25461,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "0nn38wjq50j0ii35b5hgjzla21rhmv046h0f5fbcgszvszb36pzi"))))
+        (base32 "1zf0nvv3zq8r5310dyw0x3nck6iwsmhidjiwkp321p3rww5gmsxb"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (arguments
@@ -40668,13 +40666,13 @@ user-friendly graphical interface for package @code{ChannelAttribution}'.")
 (define-public r-channelattribution
   (package
     (name "r-channelattribution")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChannelAttribution" version))
        (sha256
-        (base32 "03mghh67vl1y156cj2s468sxipx309xbcv8hfwhcr7ll435dc290"))))
+        (base32 "1nkih0dpr6ck3ap72zj63bddvf67skgc5lq1zgsccbjcpjb98rdv"))))
     (properties `((upstream-name . "ChannelAttribution")))
     (build-system r-build-system)
     (arguments
@@ -43388,6 +43386,34 @@ locations.  It also offers graphical tools for assessing the fitted model.  More
 details can be found in Ordonez et al. (2018)
 <doi:10.1016/j.spasta.2017.12.001>.")
     (license license:gpl2+)))
+
+(define-public r-censregsmsn
+  (package
+    (name "r-censregsmsn")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CensRegSMSN" version))
+       (sha256
+        (base32 "08whqmkzh8dfkv5ky712qv0zg27cscs6js5pl0w401vmlb897h6w"))))
+    (properties `((upstream-name . "CensRegSMSN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-mnormt r-ggplot2 r-cubature))
+    (home-page "https://cran.r-project.org/package=CensRegSMSN")
+    (synopsis
+     "Censored Linear Regression Models under Heavyâtailed Distributions")
+    (description
+     "This package provides functions for fitting univariate linear regression models
+under Scale Mixtures of Skew-Normal (SMSN) distributions, considering left,
+right or interval censoring and missing responses.  Estimation is performed via
+an EM-type algorithm.  Includes selection criteria, sample generation and
+envelope.  For details, see Gil, Y.A., Garay, A.M., and Lachos, V.H. (2025)
+<doi:10.1007/s10260-025-00797-x>.")
+    (license license:gpl3)))
 
 (define-public r-censoredaids
   (package

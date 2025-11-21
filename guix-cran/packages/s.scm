@@ -741,13 +741,13 @@ work of Murray and Reiter (2016) <doi:10.1080/01621459.2016.1174132>.")
 (define-public r-synergylmm
   (package
     (name "r-synergylmm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SynergyLMM" version))
        (sha256
-        (base32 "1cl9sskvfvw915z6cya9zrc582bl8jr3bnpmn8yqjpcf5n1qsqjq"))))
+        (base32 "0laqhm0sqf9ihaam6fgsybpcli1nn187m8bc4alai8vk9lvkby2d"))))
     (properties `((upstream-name . "SynergyLMM")))
     (build-system r-build-system)
     (arguments
@@ -20888,6 +20888,42 @@ References: Evans & Jones (2002) <doi:10.1098/rspa.2002.1010>, AJ Jones (2004)
 <doi:10.1007/s10287-003-0006-1>.")
     (license license:gpl3+)))
 
+(define-public r-squire
+  (package
+    (name "r-squire")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SQUIRE" version))
+       (sha256
+        (base32 "0wj4ns8iiy6a8klwmkjk7m01rxqkkcf395m87qdkbl6vwlhj2z0r"))))
+    (properties `((upstream-name . "SQUIRE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=SQUIRE")
+    (synopsis "Statistical Quality-Assured Integrated Response Estimation")
+    (description
+     "This package implements statistically validated biological parameter
+optimization that combines automated parameter type detection with rigorous
+statistical quality assurance.  Unlike conventional optimizers that fit
+parameters to any data, SQUIRE first validates whether statistically significant
+biological effects exist before proceeding with parameter estimation.  Uses
+trust region methods from Conn et al. (2000) <doi:10.1137/S1052623497325107>,
+ANOVA-based validation following Fisher (1925)
+<doi:10.1007/978-1-4612-4380-9_6>, and effect size calculations per Cohen (1988,
+ISBN:0805802835).  Automatically distinguishes rate-based, positive-constrained,
+and unconstrained variables, applying geometry-appropriate optimization methods
+while preventing over-fitting to noise through built-in statistical validation,
+effect size assessment, and data quality requirements.  Designed for complex
+biological and environmental models including germination studies, dose-response
+curves, and survival analysis.  Enhanced successor to the GALAHAD optimization
+framework with integrated statistical gatekeeping.  Developed at the Minnesota
+Center for Prion Research and Outreach at the University of Minnesota.")
+    (license license:expat)))
+
 (define-public r-squids
   (package
     (name "r-squids")
@@ -22182,13 +22218,13 @@ Shiny apps, do not hesitate to try this package.")
 (define-public r-sps
   (package
     (name "r-sps")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sps" version))
        (sha256
-        (base32 "11pbf1r6pw22fibjdr0rsc8vma1mnbvggw7rw1j6rivbxrhqkmln"))))
+        (base32 "061zaz3wv3m06582gj0bx7w325zf9i42lislnzn8lpbnnkmfvlzx"))))
     (properties `((upstream-name . "sps")))
     (build-system r-build-system)
     (arguments
@@ -24211,13 +24247,13 @@ of response trajectories.")
 (define-public r-splineplot
   (package
     (name "r-splineplot")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splineplot" version))
        (sha256
-        (base32 "1wqsn8j4vbcnm4l0lgyfgj5xm5r55ca04ngf6ac3lz2445vwbl31"))))
+        (base32 "0q0d2d1s57h9gyw21qly5x5fc2b3dkllnwh57znclbhyk6yl9ck5"))))
     (properties `((upstream-name . "splineplot")))
     (build-system r-build-system)
     (arguments
@@ -31050,13 +31086,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.9.2")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "0z53myxg744444vkfllajh8ngx5cknjn4n658hv8sjin1d36bnwr"))))
+        (base32 "1rda2w01nxylqk1v3w2466xry9ndi5x40q2hfw8mqxf9ib9l12jj"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (arguments
@@ -31328,13 +31364,13 @@ and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "3.6.0")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "1aslyr7s2pg8jq54q4lm52k86gi16cs64phsbl61435cvzwsz21y"))))
+        (base32 "15k5shyq65km1mmqiyzqp1lwm251s3hj03vvs0c46ph32bkrww46"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -33741,6 +33777,41 @@ Ellingson LD, Schwabacher IJ, Kim Y, Welk GJ, & Cook DB (2016)
 Welk GJ (2018) <doi:10.1249/MSS.0000000000001486>.")
     (license license:gpl3)))
 
+(define-public r-sojourn
+  (package
+    (name "r-sojourn")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Sojourn" version))
+       (sha256
+        (base32 "0cfb686c5yq85d8k8sx4wyrsrzygn0ri9qmycpkmb95v20kx1q9r"))))
+    (properties `((upstream-name . "Sojourn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-svdialogs
+                             r-rlang
+                             r-pautilities
+                             r-nnet
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr))
+    (home-page "https://github.com/paulhibbing/Sojourn")
+    (synopsis
+     "Apply Sojourn Methods for Processing ActiGraph Accelerometer Data")
+    (description
+     "This package provides a simple way for utilizing Sojourn methods for
+accelerometer processing, as detailed in Lyden K, Keadle S, Staudenmayer J, &
+Freedson P (2014) <doi:10.1249/MSS.0b013e3182a42a2d>, Ellingson LD, Schwabacher
+IJ, Kim Y, Welk GJ, & Cook DB (2016) <doi:10.1249/MSS.0000000000000915>, and
+Hibbing PR, Ellingson LD, Dixon PM, & Welk GJ (2018)
+<doi:10.1249/MSS.0000000000001486>.")
+    (license license:gpl3)))
+
 (define-public r-soilwater
   (package
     (name "r-soilwater")
@@ -34603,6 +34674,32 @@ interaction effects under logistic regression and quadratic discriminant
 analysis.  We also provide an extension, S-SODA, for dealing with the variable
 selection problem for semi-parametric models with continuous responses.")
     (license license:gpl2)))
+
+(define-public r-sodar
+  (package
+    (name "r-sodar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sodaR" version))
+       (sha256
+        (base32 "0zkljw344v9izwwcmcywaiq3qni6mfwvz5kx8m5iqn9q3n1l1636"))))
+    (properties `((upstream-name . "sodaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mime r-jsonlite r-httr r-data-table))
+    (home-page "https://github.com/JordanMPDS/sodaR")
+    (synopsis "Download or Upload 'Socrata' Data Sets")
+    (description
+     "This package provides easier interaction with Socrata open data portals
+<https://dev.socrata.com>.  Users can provide a Socrata data set resource URL,
+or a Socrata Open Data API (SODA) web query, or a Socrata \"human-friendly\" URL,
+returns an R data frame.  Converts dates to POSIX format and manages throttling
+by Socrata'.  Users can upload data to Socrata portals directly from R.")
+    (license license:expat)))
 
 (define-public r-socviz
   (package
@@ -43434,13 +43531,13 @@ linked to via the URL below.")
 (define-public r-simtrial
   (package
     (name "r-simtrial")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simtrial" version))
        (sha256
-        (base32 "0l6mxq2203dphqa7gw66f3jw3q55lv42sh1f09rgvw7a7xn4jzi6"))))
+        (base32 "01mpqss3gc60fg5d7n3yvqr44zal684v80lc9ag03g1bb1gkqgnv"))))
     (properties `((upstream-name . "simtrial")))
     (build-system r-build-system)
     (arguments
@@ -44953,19 +45050,19 @@ enough for use in large-scale data analysis projects.")
 (define-public r-simple-regression
   (package
     (name "r-simple-regression")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMPLE.REGRESSION" version))
        (sha256
-        (base32 "1w735rd1ifkz47jd6l995acbamps9d0w0zbna3lx47v28nzrnmiz"))))
+        (base32 "0vc94ln2hj8qyfb0z5bilhh0jv80hl8fv1nyg0kfz69gjn7f1w0x"))))
     (properties `((upstream-name . "SIMPLE.REGRESSION")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pscl r-nlme r-mass r-bayesfactor))
+    (propagated-inputs (list r-rstanarm r-pscl r-nlme r-mass r-bayesfactor))
     (home-page "https://cran.r-project.org/package=SIMPLE.REGRESSION")
     (synopsis "OLS, Moderated, Logistic, and Count Regressions Made Simple")
     (description
@@ -52849,28 +52946,32 @@ be stored in a database or a .rds file.")
 (define-public r-shinychat
   (package
     (name "r-shinychat")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinychat" version))
        (sha256
-        (base32 "1qdwhhf717d6qb6rvz9w2czavx35rfdj3cyd2wl482vhynnxidbh"))))
+        (base32 "0h93gcad2l0nac71z00xixja8zpbc3jifhxqnbgin9nnc08r53m3"))))
     (properties `((upstream-name . "shinychat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-shiny
+                             r-s7
                              r-rlang
                              r-promises
+                             r-lifecycle
                              r-jsonlite
                              r-htmltools
                              r-fastmap
                              r-ellmer
                              r-coro
-                             r-bslib))
-    (home-page "https://github.com/posit-dev/shinychat")
+                             r-cli
+                             r-bslib
+                             r-base64enc))
+    (home-page "https://posit-dev.github.io/shinychat/r/")
     (synopsis "Chat UI Component for 'shiny'")
     (description
      "This package provides a scrolling chat interface with multiline input, suitable
@@ -64925,13 +65026,13 @@ complex hierarchical tables used for statistical disclosure control.")
 (define-public r-sdbuildr
   (package
     (name "r-sdbuildr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdbuildR" version))
        (sha256
-        (base32 "151zwzp8v0586l0i1p8p8210ri9laiqssg3r3afqcaqh7m9c3nmg"))))
+        (base32 "1infibihddvcb2b14j1pwb8rihc5kdcxs7ais16h3pwm52si5ciw"))))
     (properties `((upstream-name . "sdbuildR")))
     (build-system r-build-system)
     (arguments
@@ -66274,6 +66375,32 @@ publication ready plots for known Single-Cell transcriptomics data in a
 plots with the highest quality possible, that can be used right away or with
 minimal modifications for a research article.")
     (license license:gpl3)))
+
+(define-public r-scpropreg
+  (package
+    (name "r-scpropreg")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scpropreg" version))
+       (sha256
+        (base32 "11h12m2sdki7zilax5q9g7v2f6fny9phcv2rqzvqssk1cvwgdwi7"))))
+    (properties `((upstream-name . "scpropreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2 r-rfast r-quadprog))
+    (home-page "https://cran.r-project.org/package=scpropreg")
+    (synopsis "Simplicially Constrained Regression Models for Proportions")
+    (description
+     "Simplicially constrained regression models for proportions in both sides.  The
+constraint is always that the betas are non-negative and sum to 1.  References:
+Iverson S.J.., Field C., Bowen W.D. and Blanchard W. (2004) \"Quantitative Fatty
+Acid Signature Analysis: A New Method of Estimating Predator Diets\".  Ecological
+Monographs, 74(2): 211-235. <doi:10.1890/02-4105>.")
+    (license license:gpl2+)))
 
 (define-public r-scpoisson
   (package
@@ -68550,13 +68677,13 @@ Gaussian'.")
 (define-public r-scf
   (package
     (name "r-scf")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scf" version))
        (sha256
-        (base32 "0gc1cisji4hykvsik57666dhwyjgcvqqyyz7h7mr5mzc8m1rpl0q"))))
+        (base32 "1k70g2pvfbm8iapay411axvkdi429zazhaigm1kx7aapzwsld1b1"))))
     (properties `((upstream-name . "scf")))
     (build-system r-build-system)
     (arguments

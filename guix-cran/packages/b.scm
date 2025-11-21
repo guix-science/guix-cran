@@ -2491,13 +2491,13 @@ R. There is also an interactive shiny app for monitoring the job status.")
 (define-public r-bstzinb
   (package
     (name "r-bstzinb")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BSTZINB" version))
        (sha256
-        (base32 "0jmrm76d6qrk7kdpagamjl3nkiggym0irgdqkxfvbsr35ynv9018"))))
+        (base32 "02nf2nmrgk3qrbhvb2wgkanjy3zdvcfs67xr822z9y20nbbj4vw7"))))
     (properties `((upstream-name . "BSTZINB")))
     (build-system r-build-system)
     (arguments
@@ -17136,13 +17136,13 @@ error for a binary Classifier in determining the Probability threshold.")
 (define-public r-binarize
   (package
     (name "r-binarize")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Binarize" version))
        (sha256
-        (base32 "08xg3s30mk5q0hfvigysnfp8lsnq42j267ylpnhphw5vzlg5xivx"))))
+        (base32 "0y6scnb7d7p812sy5g8fpd0ms5byjdi9qsai9n8sf4ykjyik9951"))))
     (properties `((upstream-name . "Binarize")))
     (build-system r-build-system)
     (arguments
@@ -18607,13 +18607,13 @@ or item response models.")
 (define-public r-bidux
   (package
     (name "r-bidux")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidux" version))
        (sha256
-        (base32 "0zpv0823038w09k6n936p4fywjxvh054059b7gq9y7668141xhc2"))))
+        (base32 "1m6dc4x7vqwv4h18im6qqf63k4wgfzy268h4j5r9x9vvgn3vva4q"))))
     (properties `((upstream-name . "bidux")))
     (build-system r-build-system)
     (arguments
@@ -18625,6 +18625,7 @@ or item response models.")
                              r-rlang
                              r-readr
                              r-jsonlite
+                             r-janitor
                              r-glue
                              r-dplyr
                              r-dbi
@@ -18634,11 +18635,11 @@ or item response models.")
     (synopsis
      "Behavioral Insight Design: A Toolkit for Integrating Behavioral Science in UI/UX Design")
     (description
-     "This package provides a framework and toolkit to guide shiny developers in
+     "This package provides a framework and toolkit to guide R dashboard developers in
 implementing the Behavioral Insight Design (BID) framework.  The package offers
 functions for documenting each of the five stages (Interpret, Notice,
 Anticipate, Structure, and Validate), along with a comprehensive concept
-dictionary.")
+dictionary.  Works with both shiny applications and Quarto dashboards.")
     (license license:expat)))
 
 (define-public r-bidsr
@@ -29744,13 +29745,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "1hx63ixvhpp24p3wbnq981ca13a9dfh7lgfn3bk77kkw2kaw2z1n"))))
+        (base32 "1rsmrhq9ymz909cl2dpvrjp19mw5dwiga369fx69yhj7xa6hafzp"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments
@@ -33235,13 +33236,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.10.1")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "0xjkqqq68cjl8pxbzzksp6881yn8fldn8shj6n7b90dwnwxr6j2c"))))
+        (base32 "0z7qj0fbfndy84s8i51b4spkvpyxskm6ay79jh2bdymmn756zjr7"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments

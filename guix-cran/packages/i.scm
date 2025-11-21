@@ -4355,13 +4355,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irfcb
   (package
     (name "r-irfcb")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iRfcb" version))
        (sha256
-        (base32 "0paz2cgd4x6jrb8lnymg5fnxn6gpy8mccrzvlnzf9ki4mpydij25"))))
+        (base32 "0919xgjsq7ybfii7xcnz4y0z826jjyrbhzp2irya16k1dhzf5ma3"))))
     (properties `((upstream-name . "iRfcb")))
     (build-system r-build-system)
     (arguments
@@ -4379,6 +4379,7 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
                              r-png
                              r-lubridate
                              r-lifecycle
+                             r-jsonlite
                              r-ggplot2
                              r-dplyr
                              r-curl))
@@ -10009,30 +10010,38 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "16261m87nj3s5lzpixbqafygn6sy2xnxyis5b2v85m4n5w8i5m0z"))))
+        (base32 "11drqhaq0h4app0wd3fb07zkjysa9s7jalykfl8wxg9raml99j4d"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix))
-    (home-page "https://cran.r-project.org/package=INLAtools")
+    (propagated-inputs (list r-matrix r-inlabru))
+    (home-page "https://github.com/eliaskrainski/INLAtools")
     (synopsis "Functionalities for the 'INLA' Package")
     (description
-     "Contain code to work with latent Gaussian Markov random field (GMRF) models.
-Queries for the cgeneric interface, specified as a way to implement new GMRF
-models to be fitted as model components in the INLA package
-(<https://www.r-inla.org>).  The implemented functionalities leverage the use of
-cgeneric models and provide a way to debug the code as well to work with the
-prior for the model parameters and to sample from it.  A Kronecker product
-method is also implemented to work with the four possible combinations between a
-cgeneric and a rgeneric model.")
+     "Contain code to work with a C struct, in short cgeneric, to define a Gaussian
+Markov random (GMRF) model.  The cgeneric contain code to specify GMRF elements
+such as the graph and the precision matrix, and also the initial and prior for
+its parameters, useful for model inference.  It can be accessed from a C program
+and is the recommended way to implement new GMRF models in the INLA package
+(<https://www.r-inla.org>).  The INLAtools implement functions to evaluate each
+one of the model specifications from R. The implemented functionalities leverage
+the use of cgeneric models and provide a way to debug the code as well to work
+with the prior for the model parameters and to sample from it.  A very useful
+functionality is the Kronecker product method that creates a new model from
+multiple cgeneric models.  It also works with the rgeneric, the R version of the
+cgeneric intended to easy try implementation of new GMRF models.  The Kronecker
+between two cgeneric models was used in Sterrantino et.  al. (2024)
+<doi:10.1007/s10260-025-00788-y>, and can be used to build the spatio-temporal
+intrinsic interaction models for what the needed constraints are automatically
+set.")
     (license license:gpl2+)))
 
 (define-public r-inlaspacetime
@@ -14330,13 +14339,13 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 (define-public r-imfapi
   (package
     (name "r-imfapi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imfapi" version))
        (sha256
-        (base32 "096b64bhv958r16ma0qq707qsk5fvnhqg3v1kjx5b6vr0qh26vli"))))
+        (base32 "054gb3b4wcwxwnsi3fh64ys14v3dmfpg1i7mac12anr4j1xzpl4r"))))
     (properties `((upstream-name . "imfapi")))
     (build-system r-build-system)
     (arguments
@@ -16597,6 +16606,36 @@ References describing the methods: JefmaÅski (2020)
 <doi:10.1007/978-3-030-52348-0_4>; JefmaÅski, Roszkowska, Kusterka-JefmaÅska
 (2021) <doi:10.3390/e23121636>.")
     (license license:gpl2+)))
+
+(define-public r-ifit
+  (package
+    (name "r-ifit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ifit" version))
+       (sha256
+        (base32 "1pnzn5r64lfs5d6yf267mmd5qddi0r1dgcrx1cs8gdwzfrs1k1n1"))))
+    (properties `((upstream-name . "ifit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-lpsolve))
+    (home-page "https://cran.r-project.org/package=ifit")
+    (synopsis
+     "Simulation-Based Fitting of Parametric Models with Minimum Prior Information")
+    (description
+     "This package implements an algorithm for fitting a generative model with an
+intractable likelihood using only box constraints on the parameters.  The
+implemented algorithm consists of two phases.  The first phase (global search)
+aims to identify the region containing the best solution, while the second phase
+(local search) refines this solution using a trust-region version of the Fisher
+scoring method to solve a quasi-likelihood equation.  See Guido Masarotto (2025)
+<doi:10.48550/@code{arXiv.2511.08180>} for the details of the algorithm and
+supporting results.")
+    (license license:expat)))
 
 (define-public r-ife
   (package
@@ -20901,6 +20940,41 @@ supported by IBM'.")
 models (reproduction, mortality and movement).  The basic operations for the
 simulations are implemented in Rcpp for speed.")
     (license license:gpl2)))
+
+(define-public r-iblm
+  (package
+    (name "r-iblm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IBLM" version))
+       (sha256
+        (base32 "0nj6s74rmgj4a81z4j7558q5n47z2wlj8mjnvrks0ay1wiksly4p"))))
+    (properties `((upstream-name . "IBLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-withr
+                             r-statmod
+                             r-scales
+                             r-purrr
+                             r-ggplot2
+                             r-ggextra
+                             r-fastdummies
+                             r-dplyr
+                             r-cli))
+    (home-page "https://ifoa-adswp.github.io/IBLM/")
+    (synopsis "Interpretable Boosted Linear Models")
+    (description
+     "This package implements Interpretable Boosted Linear Models (IBLMs).  These
+combine a conventional generalized linear model (GLM) with a machine learning
+component, such as XGBoost.  The package also provides tools within for
+explaining and analyzing these models.  For more details see Gawlowski and Wang
+(2025) <https://ifoa-adswp.github.io/IBLM/reference/figures/iblm_paper.pdf>.")
+    (license license:expat)))
 
 (define-public r-ibfs
   (package

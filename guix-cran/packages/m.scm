@@ -11132,13 +11132,13 @@ jackknifing, or an unbiased method.  Smith and Hillis (2020)
 (define-public r-mriml
   (package
     (name "r-mriml")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrIML" version))
        (sha256
-        (base32 "0b7sylysr8cbqkapm2vgsm19ihq73fp1aw668j41lwg3ds15pc4g"))))
+        (base32 "0h1hsf0ik0p4b49l1pn0agwd6ixclpc3ldzrh2wzizaqmg156qgs"))))
     (properties `((upstream-name . "mrIML")))
     (build-system r-build-system)
     (arguments
@@ -21433,26 +21433,25 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2025.6.23")
+    (version "2025.11.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "1pvsmqymlxb65icvcswsnbskd5hyv4y0b6inax8cirp73hmii3s4"))))
+        (base32 "0safhyfdx1jf50ih39i4x8zpab2k15bzwn6qna3dw7w72aplgnh4"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-r6
+                             r-pbdmpi
                              r-paradox
                              r-mlr3misc
                              r-mlr3
-                             r-filelock
                              r-data-table
-                             r-checkmate
-                             r-batchtools))
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tdhock/mlr3resampling")
     (synopsis "Resampling Algorithms for 'mlr3' Framework")
@@ -29063,13 +29062,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.5.3")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "0qy8dfsngbpcv77ggyzmzfl01qx0l0kr7f799m2rscxyg1kcsyq2"))))
+        (base32 "05kljvldysvmzab8k64qnmkhf3ranbpc89k61sc8c95qhn3nh71r"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
@@ -29080,6 +29079,7 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
                              r-generics
                              r-future
                              r-furrr
+                             r-ergm
                              r-dplyr
                              r-autograph))
     (home-page "https://stocnet.github.io/migraph/")
@@ -43245,39 +43245,6 @@ Carlo EM. For a description of the algorithm see Brian S. Caffo, Wolfgang Jank
 and Galin L. Jones (2005) <DOI:10.1111/j.1467-9868.2005.00499.x>.")
     (license license:gpl2+)))
 
-(define-public r-mcda
-  (package
-    (name "r-mcda")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MCDA" version))
-       (sha256
-        (base32 "060mqk1cyxh2v68dr8533zr4k3wkz2f4k22400xgj40rwgj9a355"))))
-    (properties `((upstream-name . "MCDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-triangle
-                             r-rglpk
-                             r-rcolorbrewer
-                             r-plyr
-                             r-glpkapi
-                             r-ggplot2
-                             r-combinat))
-    (home-page "https://github.com/paterijk/MCDA")
-    (synopsis "Support for the Multicriteria Decision Aiding Process")
-    (description
-     "Support for the analyst in a Multicriteria Decision Aiding (MCDA) process with
-algorithms, preference elicitation and data visualisation functions.  SÃ©bastien
-Bigaret, Richard Hodgett, Patrick Meyer, Tatyana Mironova, Alexandru Olteanu
-(2017) Supporting the multi-criteria decision aiding process : R and the MCDA
-package, Euro Journal On Decision Processes, Volume 5, Issue 1 - 4, pages 169 -
-194 <doi:10.1007/s40070-017-0064-1>.")
-    (license (license:fsdg-compatible "EUPL (>= 1.1)"))))
-
 (define-public r-mccr
   (package
     (name "r-mccr")
@@ -48893,13 +48860,13 @@ developed in C++'.")
 (define-public r-maraca
   (package
     (name "r-maraca")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maraca" version))
        (sha256
-        (base32 "1mfj74pzi57pwp9zmjn8vxmwl61gbs75rpxnpjh7v0qbaf3h10bs"))))
+        (base32 "03m6nmsqgvmf3hrsnhzpxix5zaz4x8zh7d4w06zizdb2k1daa26h"))))
     (properties `((upstream-name . "maraca")))
     (build-system r-build-system)
     (arguments
@@ -49413,6 +49380,47 @@ and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
 re-labeling categorical variables.")
     (license license:gpl3)))
 
+(define-public r-mappestrisk
+  (package
+    (name "r-mappestrisk")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mappestRisk" version))
+       (sha256
+        (base32 "059g3ghsd90s6pk16simxx04r3lhgfm60c39nm3smr4rij58nz0d"))))
+    (properties `((upstream-name . "mappestRisk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-rtpc
+                             r-purrr
+                             r-progress
+                             r-nls-multstart
+                             r-khroma
+                             r-ggplot2
+                             r-geodata
+                             r-dplyr))
+    (home-page "https://github.com/EcologyR/mappestRisk")
+    (synopsis "Create Maps Forecasting Risk of Pest Occurrence")
+    (description
+     "There are three different modules: (1) model fitting and selection using a set
+of the most commonly used equations describing developmental responses to
+temperature helped by already existing R packages ('@code{rTPC}') and nonlinear
+regression model functions from nls.multstart (Padfield et al.  2021,
+<doi:10.1111/2041-210X.13585>), with visualization of model predictions to guide
+ecological criteria for model selection; (2) calculation of suitability thermal
+limits, which consist on a temperature interval delimiting the optimal
+performance zone or suitability; and (3) climatic data extraction and
+visualization inspired on previous research (Taylor et al.  2019,
+<doi:10.1111/1365-2664.13455>), with either exportable rasters, static map
+images or html, interactive maps.")
+    (license license:gpl3+)))
+
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
@@ -49746,13 +49754,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.4.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1hfp987hmmi59jwpgs0gr13i58kpycjnscnwx16rzz64l9ghky4b"))))
+        (base32 "1y3nbqg11v5gymlymbxn73yx6zjpq70l1023099gr9nk0z158m79"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -49777,6 +49785,8 @@ samples.")
                              r-shiny
                              r-sf
                              r-rlang
+                             r-png
+                             r-jsonlite
                              r-htmlwidgets
                              r-htmltools
                              r-geojsonsf
@@ -50404,13 +50414,13 @@ generating fictional state names.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.6.5")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "01lz53k2p14ihs54l2i28smdg271bhxdv8yicxh5l6n0k2w43yza"))))
+        (base32 "1slff499ncsyvqbn7z8c2664qwz3h9072pb7x2qrjqy3pwjnwnxd"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments

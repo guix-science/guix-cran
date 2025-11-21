@@ -21789,40 +21789,43 @@ MerecÂ´s weight vector and all intermediate matrix/vectors used to calculate i
 (define-public r-rmediation
   (package
     (name "r-rmediation")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMediation" version))
        (sha256
-        (base32 "16zw8ic8h2q1qg627ddaxmr9dvj7ckdljbzfgwq557nxc2fgk1v2"))))
+        (base32 "133s869dlvcqmrjyyy114194fw4z8z7l09sxa4mapz8yxh6p4v7n"))))
     (properties `((upstream-name . "RMediation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-openmx
+    (propagated-inputs (list r-openmx
                              r-modelr
                              r-mass
                              r-lavaan
-                             r-iterators
-                             r-foreach
+                             r-generics
                              r-e1071
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=RMediation")
+                             r-checkmate))
+    (home-page "https://data-wise.github.io/rmediation/")
     (synopsis "Mediation Analysis Confidence Intervals")
     (description
-     "We provide functions to compute confidence intervals for a well-defined
-nonlinear function of the model parameters (e.g., product of k coefficients) in
-single--level and multilevel structural equation models.  It also computes a
-chi-square test statistic for a function of indirect effects.  Tofighi', D. and
-@code{MacKinnon}', D. P. (2011).  RMediation An R package for mediation analysis
-confidence intervals.  Behavior Research Methods, 43, 692--700.
-<doi:10.3758/s13428-011-0076-x>.  Tofighi', D. (2020).  Bootstrap Model-Based
-Constrained Optimization Tests of Indirect Effects.  Frontiers in Psychology,
-10, 2989. <doi:10.3389/fpsyg.2019.02989>.")
-    (license license:gpl2)))
+     "Computes confidence intervals for nonlinear functions of model parameters (e.g.,
+product of k coefficients) in single-level and multilevel structural equation
+models.  Methods include the distribution of the product, Monte Carlo
+simulation, and bootstrap methods.  It also performs the Model-Based Constrained
+Optimization (MBCO) procedure for hypothesis testing of indirect effects.
+References: Tofighi, D., and @code{MacKinnon}, D. P. (2011).  RMediation: An R
+package for mediation analysis confidence intervals.  Behavior Research Methods,
+43, 692-700. <doi:10.3758/s13428-011-0076-x>; Tofighi, D., and Kelley, K.
+(2020).  Improved inference in mediation analysis: Introducing the model-based
+constrained optimization procedure.  Psychological Methods, 25(4), 496-515.
+<doi:10.1037/met0000259>; Tofighi, D. (2020).  Bootstrap Model-Based Constrained
+Optimization Tests of Indirect Effects.  Frontiers in Psychology, 10, 2989.
+<doi:10.3389/fpsyg.2019.02989>.")
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-rmecabko
   (package
@@ -38825,13 +38828,13 @@ Some of the functions are applicable to image data.")
 (define-public r-refugees
   (package
     (name "r-refugees")
-    (version "2024.12.0")
+    (version "2025.06.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refugees" version))
        (sha256
-        (base32 "0n24isvbqs954ig2kn5sxfbq8bn1y29bcgkpy5ar4rpf4vmzk8ks"))))
+        (base32 "1n6c6f5wmij2d8grgjvp9r2whg4dn2rhahhwm734r19s945yz1wv"))))
     (properties `((upstream-name . "refugees")))
     (build-system r-build-system)
     (arguments
@@ -39923,13 +39926,13 @@ based and day-time based approaches (Lasslop et al. (2010)
 (define-public r-reddprec
   (package
     (name "r-reddprec")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reddPrec" version))
        (sha256
-        (base32 "03skvk7p0rzinj42djk381wd1pfymv1hzv7invv98vkn7f8b64ph"))))
+        (base32 "1xqlbkm6gsxvsgam12qx0jph6878s49qvrnlav65qlpskzf2vsh9"))))
     (properties `((upstream-name . "reddPrec")))
     (build-system r-build-system)
     (arguments
@@ -39938,6 +39941,7 @@ based and day-time based approaches (Lasslop et al. (2010)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-xgboost
+                             r-trend
                              r-terra
                              r-reshape2
                              r-reshape
@@ -39946,7 +39950,6 @@ based and day-time based approaches (Lasslop et al. (2010)
                              r-pracma
                              r-neuralnet
                              r-lattice
-                             r-kendall
                              r-gridextra
                              r-geosphere
                              r-foreach
@@ -47488,13 +47491,13 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
 (define-public r-rcompanion
   (package
     (name "r-rcompanion")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcompanion" version))
        (sha256
-        (base32 "16mvpzgb3axqm2ndr4q01d8qqsf6nhq3fi4dn001wjqijbz26viw"))))
+        (base32 "1k5azhij0pnr1lxxnyg7s3x52r5n058j26c18xglgrwxjbrgr80h"))))
     (properties `((upstream-name . "rcompanion")))
     (build-system r-build-system)
     (arguments
@@ -50717,78 +50720,6 @@ download those spreadsheets and read them directly into R.")
 text files and more...")
     (license license:gpl2+)))
 
-(define-public r-rbmiutils
-  (package
-    (name "r-rbmiutils")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rbmiUtils" version))
-       (sha256
-        (base32 "0xyif01pqkb6iam8h8gbkinam1zagxwxkdgm2ak3wj2ld7idwa3d"))))
-    (properties `((upstream-name . "rbmiUtils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rbmi
-                             r-purrr
-                             r-dplyr
-                             r-beeca
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/openpharma/rbmiUtils")
-    (synopsis "Utility Functions to Support and Extend the 'rbmi' Package")
-    (description
-     "This package provides utility functions that extend the capabilities of the
-reference-based multiple imputation package rbmi'.  It supports clinical trial
-analysis workflows with functions for managing imputed datasets, applying
-analysis methods across imputations, and tidying results for reporting.")
-    (license license:gpl3+)))
-
-(define-public r-rbmi
-  (package
-    (name "r-rbmi")
-    (version "1.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rbmi" version))
-       (sha256
-        (base32 "1jcks3gdsq7mi6m9kry8sx071l0vhsv1w3717i0q86r3s07q7z6k"))))
-    (properties `((upstream-name . "rbmi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-stringr
-                             r-r6
-                             r-pkgload
-                             r-mmrm
-                             r-matrix
-                             r-jinjar
-                             r-fs
-                             r-assertthat))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://insightsengineering.github.io/rbmi/")
-    (synopsis "Reference Based Multiple Imputation")
-    (description
-     "This package implements standard and reference based multiple imputation methods
-for continuous longitudinal endpoints (Gower-Page et al. (2022)
-<doi:10.21105/joss.04251>).  In particular, this package supports deterministic
-conditional mean imputation and jackknifing as described in Wolbers et al.
-(2022) <doi:10.1002/pst.2234>, Bayesian multiple imputation as described in
-Carpenter et al. (2013) <doi:10.1080/10543406.2013.834911>, and bootstrapped
-maximum likelihood imputation as described in von Hippel and Bartlett (2021)
-<doi: 10.1214/20-STS793>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-rbmf
   (package
     (name "r-rbmf")
@@ -53286,6 +53217,45 @@ associated with these layers, and code for downloading them from their original
 sources can be found in the github repository
 <https://github.com/deankoch/rasterbc_src>.")
     (license license:expat)))
+
+(define-public r-rastarocket
+  (package
+    (name "r-rastarocket")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RastaRocket" version))
+       (sha256
+        (base32 "01xaxl49bp40804grwf6h8mx9dhzkigx6j9y98ykms7ppm2sgdv8"))))
+    (properties `((upstream-name . "RastaRocket")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-labelled
+                             r-gtsummary
+                             r-gt
+                             r-glue
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggh4x
+                             r-forcats
+                             r-dplyr
+                             r-cardx))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/biostatusmr/RastaRocket")
+    (synopsis "Rocket-Fast Clinical Research Reporting")
+    (description
+     "Description of the tables, both grouped and not grouped, with some associated
+data management actions, such as sorting the terms of the variables and deleting
+terms with zero numbers.")
+    (license license:gpl3+)))
 
 (define-public r-rassta
   (package

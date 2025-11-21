@@ -4937,13 +4937,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "02g1xrambivp50f5fiff7hwic3rpn3pq0cl116x6ama1sma21k59"))))
+        (base32 "1fqgy85ycg4hri5a88whsgwcc88j80f3pyzai4rdlxmmza6ac840"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments

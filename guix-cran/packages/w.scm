@@ -631,13 +631,13 @@ who has time to waste looking at a cluttered graph?")
 (define-public r-wscdata
   (package
     (name "r-wscdata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WSCdata" version))
        (sha256
-        (base32 "1kc5sdhq9ppgair025sllprcpbcldbflzrnr1g3zxm533xawjnjf"))))
+        (base32 "1q4hlgdqr00cr1i5sk5ywh5p8ipwix9i9p6zxf02dwnq4jndi9sf"))))
     (properties `((upstream-name . "WSCdata")))
     (build-system r-build-system)
     (arguments
@@ -8255,13 +8255,13 @@ Centre for Demography and Human Capital Data Explorer
 (define-public r-wbwdi
   (package
     (name "r-wbwdi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbwdi" version))
        (sha256
-        (base32 "1vh4aj3x028kw9vz5vq8z1hgqifrjvnp8dprdhqkj4micmy871f4"))))
+        (base32 "0x8gwczv6sqkclw7s6vacrlvc91867f6qw25j0vr7hh0ws4mqm91"))))
     (properties `((upstream-name . "wbwdi")))
     (build-system r-build-system)
     (arguments
@@ -8280,8 +8280,8 @@ Centre for Demography and Human Capital Data Explorer
     (synopsis
      "Seamless Access to World Bank World Development Indicators (WDI)")
     (description
-     "Access and analyze the World Bankâs World Development Indicators (WDI) using
-the corresponding API
+     "Access and analyze the World Bank's World Development Indicators (WDI) using the
+corresponding API
 <https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation>.
  WDI provides more than 24,000 country or region-level indicators for various
 contexts.  wbwdi enables users to download, process and work with WDI series

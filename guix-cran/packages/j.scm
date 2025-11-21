@@ -225,54 +225,6 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
 <doi:10.1111/1755-0998.13519>).")
     (license license:gpl2+)))
 
-(define-public r-junco
-  (package
-    (name "r-junco")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "junco" version))
-       (sha256
-        (base32 "1fm6jxnn1glq199kq57bknzqffmndqbx45w6q4613scax30ma63a"))))
-    (properties `((upstream-name . "junco")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidytlg
-                             r-tibble
-                             r-tern
-                             r-survival
-                             r-rtables
-                             r-rlistings
-                             r-rbmi
-                             r-mmrm
-                             r-generics
-                             r-formatters
-                             r-emmeans
-                             r-dplyr
-                             r-checkmate
-                             r-broom
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/johnsonandjohnson/junco")
-    (synopsis "Create Common Tables and Listings Used in Clinical Trials")
-    (description
-     "Structure and formatting requirements for clinical trial table and listing
-outputs vary between pharmaceutical companies.  junco provides additional
-tooling for use alongside the rtables', rlistings and tern packages when
-creating table and listing outputs.  While motivated by the specifics of Johnson
-and Johnson Clinical and Statistical Programming's table and listing shells,
-junco provides functionality that is general and reusable.  Major features
-include a) alternative and extended statistical analyses beyond what tern
-supports for use in standard safety and efficacy tables, b) a robust
-production-grade Rich Text Format (RTF) exporter for both tables and listings,
-c) structural support for spanning column headers and risk difference columns in
-tables, and d) robust font-aware automatic column width algorithms for both
-listings and tables.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-jumps
   (package
     (name "r-jumps")

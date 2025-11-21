@@ -653,13 +653,13 @@ comparisons in big datasets.")
 (define-public r-numbers
   (package
     (name "r-numbers")
-    (version "0.8-5")
+    (version "0.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "numbers" version))
        (sha256
-        (base32 "02r2mlq3jygvwi7anbrrid6693qc7iklxhc9ksmqjdlmgzdxxmbp"))))
+        (base32 "1kgzb9pqdkghkch6l4zhbngrzbnwkqgz6hgi8wkswvm12831bqq1"))))
     (properties `((upstream-name . "numbers")))
     (build-system r-build-system)
     (arguments
@@ -10526,13 +10526,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "0mrqbg2n2grfnkgljs8yxrisb9j29dzax78gb3ph04kn47bvkfm9"))))
+        (base32 "0phrp0wfhxwvqkgwijary8swclld538dzh2vaj8s6da601ahaqfp"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (arguments

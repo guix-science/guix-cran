@@ -948,42 +948,6 @@ hydrological model originally proposed by Beven and Freer (2001)
 models which can be created using the @code{dynatopGIS} package.")
     (license license:gpl2)))
 
-(define-public r-dynate
-  (package
-    (name "r-dynate")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DYNATE" version))
-       (sha256
-        (base32 "172lm5k0hz774a0d2s1hs86q7q50s6n4i4ba8jddy3l5a1gqkpd4"))))
-    (properties `((upstream-name . "DYNATE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tibble
-                             r-reshape2
-                             r-matrix
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DYNATE")
-    (synopsis "Dynamic Aggregation Testing")
-    (description
-     "This package provides a multiple testing procedure aims to find the rare-variant
-association regions.  When variants are rare, the single variant association
-test approach suffers from low power.  To improve testing power, the procedure
-dynamically and hierarchically aggregates smaller genome regions to larger ones
-and performs multiple testing for disease associations with a controlled
-node-level false discovery rate.  This method are members of the family of
-ancillary information assisted recursive testing introduced in Pura, Li, Chan
-and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
-<@code{arXiv:2103.11085v2>}.")
-    (license license:gpl3)))
-
 (define-public r-dynaspec
   (package
     (name "r-dynaspec")
@@ -4973,13 +4937,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0b9xvxf04h2fwjzncq5s04l0k9yvdk5ql0a3ywg57jndgd1sr616"))))
+        (base32 "0kjw6fs4pwm3mq3w8njj78l4bzs75z9mkgixpm730xmydyb2ngjs"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -4991,12 +4955,12 @@ to create many different drum patterns.")
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-codelistgenerator
                              r-clock
-                             r-cli
-                             r-cdmconnector))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu.github.io/DrugUtilisation/")
     (synopsis
@@ -16747,13 +16711,13 @@ Paykin (2001) <doi:10.1080/00949650108812115>, and French & Finch (2013)
 (define-public r-difnlr
   (package
     (name "r-difnlr")
-    (version "1.5.1-4")
+    (version "1.5.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "difNLR" version))
        (sha256
-        (base32 "0570c38fa4vaxj32cd86xqcjlzfv0dwk989qzm9kka37ffv2cj64"))))
+        (base32 "0yl1iq7is4k6kn9i0hzc7mzl0svbs6kh94rz2bglzsiip6qakjjk"))))
     (properties `((upstream-name . "difNLR")))
     (build-system r-build-system)
     (arguments
@@ -24710,13 +24674,13 @@ Access functions are provided in the accompanying package deeptime'.")
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeptime" version))
        (sha256
-        (base32 "02zjwc5m4qkc27x0d8amb26sg745f2a4hnnrrdd947jp9gm9qwpc"))))
+        (base32 "05lldfjv7dq2xw32w2lrscbwpdkzj6ki03gq7jqy6m8gq7mkpx01"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (arguments
@@ -32613,35 +32577,6 @@ rstan ecosystem.  For methodological details on the sampler see Ju et al. (2022)
 <doi:10.48550/@code{arXiv.2206.00710>}, and for details on the discrete Gaussian
 and discrete Laplacian distributions see Canonne et al. (2020)
 <doi:10.48550/@code{arXiv.2004.00010>}.")
-    (license license:expat)))
-
-(define-public r-danstat
-  (package
-    (name "r-danstat")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "danstat" version))
-       (sha256
-        (base32 "16b0dl41g56s6iyxndpl403wgqqj1l3g9k78y3ciq5djq3a25m97"))))
-    (properties `((upstream-name . "danstat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readr r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=danstat")
-    (synopsis "R Client for the Statistics Denmark Databank API")
-    (description
-     "The purpose of the package is to enable an R function interface into the
-Statistics Denmark Databank API mainly for research purposes.  The Statistics
-Denmark Databank API has four endpoints, see here for more information and
-testing the API in their console:
-<https://www.dst.dk/en/Statistik/brug-statistikken/muligheder-i-statistikbanken/api>.
- This package mimics the structure of the API and provides four main functions
-to match the functionality of the API endpoints.")
     (license license:expat)))
 
 (define-public r-dann

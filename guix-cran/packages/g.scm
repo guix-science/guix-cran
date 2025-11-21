@@ -2039,42 +2039,6 @@ high-quality output and generate reproducible, publication-ready tables in
 alignment with best practices in epidemiology and applied statistics.")
     (license license:expat)))
 
-(define-public r-gtreg
-  (package
-    (name "r-gtreg")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gtreg" version))
-       (sha256
-        (base32 "1awdp0dshyqw415g2621m39pr3gbrq6bvh4v2lsvl63am8w33vpm"))))
-    (properties `((upstream-name . "gtreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-gtsummary
-                             r-glue
-                             r-forcats
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/shannonpileggi/gtreg")
-    (synopsis "Regulatory Tables for Clinical Research")
-    (description
-     "This package creates tables suitable for regulatory agency submission by
-leveraging the gtsummary package as the back end.  Tables can be exported to
-HTML, Word, PDF and more.  Highly customized outputs are available by utilizing
-existing styling functions from gtsummary as well as custom options designed for
-regulatory tables.")
-    (license license:gpl3+)))
-
 (define-public r-gtranslate
   (package
     (name "r-gtranslate")
@@ -3508,13 +3472,13 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign2" version))
        (sha256
-        (base32 "07d75l34x6v2ml8z83bb31asl7yflfp7dlg821hzk1gkhrzllc7m"))))
+        (base32 "10szimpnxwz6zwyrcmdsapmd36jgy23imbgaaasl6q6061ykb1yc"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (arguments
@@ -10441,13 +10405,13 @@ rmarkdown documents and shiny apps thanks to @code{jQuery} @code{GoTop}
 (define-public r-gosset
   (package
     (name "r-gosset")
-    (version "1.4")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gosset" version))
        (sha256
-        (base32 "0gmbjlc4ywcdlxwma9acc91bb9a2lraym5hzjk3kqr1fdfalsrk0"))))
+        (base32 "00bwvhajyhm651rbh6fkgpsyqg0rk0f9ccvc1qip83gbr5mww96i"))))
     (properties `((upstream-name . "gosset")))
     (build-system r-build-system)
     (arguments
@@ -10459,6 +10423,7 @@ rmarkdown documents and shiny apps thanks to @code{jQuery} @code{GoTop}
                              r-plackettluce
                              r-patchwork
                              r-partykit
+                             r-lifecycle
                              r-ggrepel
                              r-ggplot2
                              r-ggparty
@@ -17356,13 +17321,13 @@ the decomposition of Lerman and Yitzhaki (1985) <doi:10.2307/1928447>.")
 (define-public r-ginici
   (package
     (name "r-ginici")
-    (version "0.1.0")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giniCI" version))
        (sha256
-        (base32 "195ci9xkqfhd27c9nwd7xpp9bscixjcsk5js5pq5y2clyyykh9bv"))))
+        (base32 "1hgw6sr1iq5m0kdv1s0igyrsg2hxk1c0q5nxphry1sws16vjypps"))))
     (properties `((upstream-name . "giniCI")))
     (build-system r-build-system)
     (arguments
@@ -17374,13 +17339,13 @@ the decomposition of Lerman and Yitzhaki (1985) <doi:10.2307/1928447>.")
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-ggrepel r-ggpubr r-ggplot2 r-desctools))
     (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=giniCI")
+    (home-page "https://github.com/novidu/giniCI")
     (synopsis "Gini-Based Composite Indicators")
     (description
      "An implementation of Gini-based weighting approaches in constructing composite
 indicators, providing functionalities for normalization, aggregation, and
 ranking comparison.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-gini
   (package
@@ -28796,13 +28761,13 @@ methods.")
 (define-public r-geoarrow
   (package
     (name "r-geoarrow")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoarrow" version))
        (sha256
-        (base32 "0imdmg03501zqa334z68pnl5m4a03cj8s1bja1ajmfhjzp5rn16n"))))
+        (base32 "1hgh6hkmwavrbmgkmpidkls792nsn2z8azifgdpd4r2yqgxjy6sp"))))
     (properties `((upstream-name . "geoarrow")))
     (build-system r-build-system)
     (arguments
@@ -33002,13 +32967,13 @@ kurtosis calculations we use moments.")
 (define-public r-gdpuc
   (package
     (name "r-gdpuc")
-    (version "1.0.4")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDPuc" version))
        (sha256
-        (base32 "0g3s6jhn8ndx7jy97kmfzmxcc2b40k9j47rx703g61la1mm0a4fg"))))
+        (base32 "0vhflr9qzfkxw4ginw7yzh95g8q7821w0xmd2wck3zx99kpk4q82"))))
     (properties `((upstream-name . "GDPuc")))
     (build-system r-build-system)
     (arguments
@@ -33020,7 +32985,6 @@ kurtosis calculations we use moments.")
                              r-tibble
                              r-rlang
                              r-magrittr
-                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-crayon
@@ -33438,13 +33402,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "1y2wny4snin3j1xb82qmjish1gyx74vd0975h9hyakavk5jbqyab"))))
+        (base32 "0w43px6a6k7aaql0ibm6abmv09qbny7xq38rnz4hfcn5l7zhg4iz"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (arguments
@@ -33456,7 +33420,8 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
                   openssh
                   gdal
                   curl))
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-yyjsonr
+                             r-xml2
                              r-wk
                              r-rcppint64
                              r-rcpp

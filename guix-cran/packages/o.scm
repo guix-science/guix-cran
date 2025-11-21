@@ -10343,32 +10343,29 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "0zbq5c3ai25pjmf3nh57ssmq98mqycvdxm532afc623m7gfh7vax"))))
+        (base32 "1dnagrgw3m05ikz1pbnkkrmf0pl4cxzx0vz2lcamnw65gskfn3qy"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
                              r-lifecycle
-                             r-glue
                              r-dplyr
                              r-cohortconstructor
                              r-clock
-                             r-cli
-                             r-cdmconnector))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://OHDSI.github.io/OmopSketch/")
     (synopsis "Characterise Tables of an OMOP Common Data Model Instance")

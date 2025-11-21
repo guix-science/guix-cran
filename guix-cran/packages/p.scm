@@ -1425,13 +1425,13 @@ forecast various growth model types using data cloning.")
 (define-public r-pv3rs
   (package
     (name "r-pv3rs")
-    (version "0.0.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pv3Rs" version))
        (sha256
-        (base32 "1kjd8fh7din9gacqlppmvdn8bnagnx8718f3hlr2wnd9w15fr0qj"))))
+        (base32 "1iwi0ww7amiwla79jq5c4ls1f6rj7dscdf3rw7y6sdf03mg7liqd"))))
     (properties `((upstream-name . "Pv3Rs")))
     (build-system r-build-system)
     (arguments
@@ -1456,7 +1456,7 @@ recrudescence, relapse, or reinfection (3Rs) using per-person P. vivax genetic
 data on two or more episodes and a statistical model described in Taylor, Foo
 and White (2022) <doi:10.1101/2022.11.23.22282669>.  Plot per-recurrence
 posterior probabilities.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-puzzle
   (package
@@ -11943,13 +11943,13 @@ rendered HTML doc.")
 (define-public r-pregnancy
   (package
     (name "r-pregnancy")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pregnancy" version))
        (sha256
-        (base32 "14flb8gnlgjqsl1gngjzqhc6xr6xc6ynq0qrfvgdmx79agzlff8x"))))
+        (base32 "0xm4cgcpspqynplx73505p5i2bn6nvvzzy4v5dbix7sjsvw37srm"))))
     (properties `((upstream-name . "pregnancy")))
     (build-system r-build-system)
     (arguments
@@ -37066,31 +37066,6 @@ estimation routines, see Fritsch, Pua, and Schnurbus (WP, 2024) and Han and
 Phillips (2010) <doi:10.1017/S026646660909063X>.")
     (license license:gpl2+)))
 
-(define-public r-pdxtrees
-  (package
-    (name "r-pdxtrees")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pdxTrees" version))
-       (sha256
-        (base32 "0cw1zrkawc2wnbd2pif8732kl92qvklxvx6hnikx3siz22psvbl8"))))
-    (properties `((upstream-name . "pdxTrees")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mcconvil/pdxTrees")
-    (synopsis "Data Package of Portland, Oregon Trees")
-    (description
-     "An engaging collection of datasets from Portland Parks and Recreation.  The city
-of Portland inventoried every tree in over 170 parks and along the streets in 96
-neighborhoods.")
-    (license license:gpl3)))
-
 (define-public r-pdxpower
   (package
     (name "r-pdxpower")
@@ -38264,13 +38239,13 @@ definition.")
 (define-public r-pcredux
   (package
     (name "r-pcredux")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCRedux" version))
        (sha256
-        (base32 "0hk76f1wnj2g6xl4wlznzk7zxnixv74vnmfzk482kmhnn83c3z1r"))))
+        (base32 "1nrary6m3lww05ljgpk7jxycl5gvnb4acwnrzhyll08rd4k3z7y1"))))
     (properties `((upstream-name . "PCRedux")))
     (build-system r-build-system)
     (arguments
@@ -46526,13 +46501,13 @@ defined radial scheme.  See the pacviz documentation page for more information:
 (define-public r-pacu
   (package
     (name "r-pacu")
-    (version "0.1.72")
+    (version "0.1.74")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pacu" version))
        (sha256
-        (base32 "0jg5i1s78zlf248fwhxgc193iijh7g14x76lq9dyfipbp0j82p2w"))))
+        (base32 "009bkpd7mqva9hr2phxa27293wg53dbzp1s2irn4yf0dl7amwfv8"))))
     (properties `((upstream-name . "pacu")))
     (build-system r-build-system)
     (arguments

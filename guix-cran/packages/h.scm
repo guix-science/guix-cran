@@ -4076,13 +4076,13 @@ Mammen, Nielsen and Proust-Lima (2025) <doi:10.1093/biomet/asaf008>.")
 (define-public r-hpzoneapi
   (package
     (name "r-hpzoneapi")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HPZoneAPI" version))
        (sha256
-        (base32 "16d52gj4q8fd0lbkf69lqszni27pkyc0nb8vs6p72rjf79gl7a48"))))
+        (base32 "1nmj1rqghcbhc8m49kbz6hhq1gyl04d1zky9jhwdhk89rv8pchrx"))))
     (properties `((upstream-name . "HPZoneAPI")))
     (build-system r-build-system)
     (arguments
@@ -8674,13 +8674,13 @@ variance tables and p-values from several other tests of non-additivity.")
 (define-public r-hicream
   (package
     (name "r-hicream")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicream" version))
        (sha256
-        (base32 "1q76xk98bjcghrxkf6yv79qby5yn4rzgydmia072pnadlrlnaph6"))))
+        (base32 "0vk1lrclachbdwp9rn41h0dh6bbjy83c7sqnmdriq2lql52wc2s9"))))
     (properties `((upstream-name . "hicream")))
     (build-system r-build-system)
     (arguments
@@ -8705,8 +8705,8 @@ variance tables and p-values from several other tests of non-additivity.")
                              r-auk
                              r-adjclust))
     (native-inputs (list r-knitr))
-    (home-page "https://forgemia.inra.fr/scales/hicream")
-    (synopsis "HI-C diffeREntial Analysis Method")
+    (home-page "https://forge.inrae.fr/scales/hicream")
+    (synopsis "HIC diffeREntial Analysis Method")
     (description
      "Perform Hi-C data differential analysis based on pixel-level differential
 analysis and a post hoc inference strategy to quantify signal in clusters of

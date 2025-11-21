@@ -2845,13 +2845,13 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autograph
   (package
     (name "r-autograph")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autograph" version))
        (sha256
-        (base32 "0mqb9zw6h7axnl3ka0hgld6h640ir31qfdk8wifz9zinmnabxfkr"))))
+        (base32 "00z6h398p0dnhkm3kpmygxlrpsf675aa4p911idnbf979n646dj9"))))
     (properties `((upstream-name . "autograph")))
     (build-system r-build-system)
     (arguments
@@ -9746,13 +9746,13 @@ Compositional Data, Chapman and Hall].")
 (define-public r-aramappings
   (package
     (name "r-aramappings")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aramappings" version))
        (sha256
-        (base32 "17xcnrj5fsp4g8ng56pic9wg76cqfa1l05y80jwbwl630a3mpssz"))))
+        (base32 "19rk26h56fmn33srhsbnc5wxi3dlr6j7np3836jq1rm4krvy0wxx"))))
     (properties `((upstream-name . "aramappings")))
     (build-system r-build-system)
     (arguments
@@ -11357,6 +11357,43 @@ assignment.")
 inference.  Additionally, supports \"A Progressive Introduction to Linear Models\"
 by Joshua French (<https://jfrench.github.io/@code{LinearRegression/>}).")
     (license license:gpl3)))
+
+(define-public r-aphylo
+  (package
+    (name "r-aphylo")
+    (version "0.3-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aphylo" version))
+       (sha256
+        (base32 "0nl6ndgjcby8j3mid6garqpgc37bp591fbb5y43kyczm180kcbbh"))))
+    (properties `((upstream-name . "aphylo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-fmcmc
+                             r-coda
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/USCbiostats/aphylo")
+    (synopsis
+     "Statistical Inference and Prediction of Annotations in Phylogenetic Trees")
+    (description
+     "This package implements a parsimonious evolutionary model to analyze and predict
+gene-functional annotations in phylogenetic trees as described in Vega Yon et
+al. (2021) <doi:10.1371/journal.pcbi.1007948>.  Focusing on computational
+efficiency, aphylo makes it possible to estimate pooled phylogenetic models,
+including thousands (hundreds) of annotations (trees) in the same run.  The
+package also provides the tools for visualization of annotated phylogenies,
+calculation of posterior probabilities (prediction) and goodness-of-fit
+assessment featured in Vega Yon et al. (2021).")
+    (license license:expat)))
 
 (define-public r-aphid
   (package
@@ -19472,13 +19509,13 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "0yv82pshrxspmxmjfny78bqcgkfh5rfpmv81z2y3gxg3f25p7qg0"))))
+        (base32 "0r9ajxw7zi9hamc114rhdl55fyfc1v90kmqy79rr5ypjvjwzzs6h"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments
@@ -20367,6 +20404,51 @@ Zootechnics, Food Science and related areas).  Shimizu, G. D., Marubayashi, R.
 Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
     (license license:gpl2+)))
 
+(define-public r-agrobox
+  (package
+    (name "r-agrobox")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "agrobox" version))
+       (sha256
+        (base32 "17jlck0kvrv7m4pr18f8ca8mz2qijbrw07r0bq3m9rdf7g84kl00"))))
+    (properties `((upstream-name . "agrobox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-pwr
+                             r-ggplot2
+                             r-dplyr
+                             r-agricolae))
+    (home-page "https://github.com/Joa3aquin50/agrobox")
+    (synopsis
+     "Data Visualization and Statistical Tools for Agroindustrial Experiments")
+    (description
+     "Set of functions to create clear graphics and run common statistical analyses
+for agricultural experiments (ANOVA with post-hoc tests such as Tukey HSD and
+Duncan MRR, coefficient of variation, and simple power calculations),
+streamlining exploratory analysis and reporting.  Functions build on ggplot2 and
+base stats and follow methods widely used in agronomy (field trials, plant
+breeding).  Key references include Tukey (1949) <doi:10.2307/3001913>, Duncan
+(1955) <doi:10.2307/3001478>, Cohen (1988, ISBN:9781138892899); see also
+agricolae <https://CRAN.R-project.org/package=agricolae> and Wickham (2016,
+ISBN:9783319242750) for ggplot2'.  VersiÃ³n en espaÃ±ol: Conjunto de funciones
+para generar grÃ¡ficos claros y ejecutar anÃ¡lisis habituales en ensayos
+agrÃ­colas (ANOVA con pruebas post-hoc como Tukey HSD y Duncan MRR, coeficiente
+de variaciÃ³n y cÃ¡lculos simples de potencia), facilitando el anÃ¡lisis
+exploratorio y la elaboraciÃ³n de reportes.  Los mÃ©todos implementados se basan
+en Tukey (1949) <doi:10.2307/3001913>, Duncan (1955) <doi:10.2307/3001478> y
+Cohen (1988, ISBN:9781138892899); ver tambiÃ©n agricolae
+<https://CRAN.R-project.org/package=agricolae> y Wickham (2016,
+ISBN:9783319242750) para ggplot2'.")
+    (license license:expat)))
+
 (define-public r-agrmt
   (package
     (name "r-agrmt")
@@ -20541,13 +20623,13 @@ Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
 (define-public r-agridat
   (package
     (name "r-agridat")
-    (version "1.25")
+    (version "1.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agridat" version))
        (sha256
-        (base32 "1d7pfv4b1l1m8lcx8xwq9vc4540hjd5kahxgr9bklx0103bqqkmj"))))
+        (base32 "0r7041izld4b12hypns44f96j5wjcvpasw2jl35rjy0mlp27pw75"))))
     (properties `((upstream-name . "agridat")))
     (build-system r-build-system)
     (arguments
@@ -22150,13 +22232,13 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
 (define-public r-aedseo
   (package
     (name "r-aedseo")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aedseo" version))
        (sha256
-        (base32 "0slij4d0lr2rvqij4jiym96lgfwz6agm4q77ck34rvhypkvbkffm"))))
+        (base32 "0xapxl0pkgxy3f0c41dy9xkkb4m82glbs5xlbcfghidvyn54arsq"))))
     (properties `((upstream-name . "aedseo")))
     (build-system r-build-system)
     (arguments
@@ -23840,13 +23922,13 @@ and specificity as well as AUC and AUCPR can be evaluated.")
 (define-public r-adjclust
   (package
     (name "r-adjclust")
-    (version "0.6.10")
+    (version "0.6.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjclust" version))
        (sha256
-        (base32 "1hdgkbsl0vng609rkb9n1sfp4vl6my3knaxgk6z1k08fdprayn5v"))))
+        (base32 "0b1gi94v8iwy9jhwql1a2pqml57km5x31wdrlf8zdx5vqdszm11l"))))
     (properties `((upstream-name . "adjclust")))
     (build-system r-build-system)
     (arguments
@@ -24942,13 +25024,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.20.0")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "04rivxpgarhzzl9qxkzailzgs716dgb67aggwzzvadxrsdk5gfv5"))))
+        (base32 "01j78f7pc8n25hwgvpba2g58vrmfl33lk6dpbfxy6v7asw128v9v"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (arguments
@@ -24969,13 +25051,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.20.0")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "1gl5k3vj4xq2pvk13fndwf50q31bpkm3j66aml2jcrry5j5xvq9d"))))
+        (base32 "0hcvrrvggawxm70jb818h5792f0b2icwfipb5815kw5lsvj3cnd3"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (arguments

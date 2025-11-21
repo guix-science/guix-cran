@@ -8288,19 +8288,19 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.90")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "1nsz5cb02s4pwjazhhw6fydklbiy1ylbk6slyb2y0rb44ahq95q0"))))
+        (base32 "0rf2wiyf78rrmqscjf981wvdb7643hcq3qcg1dgd8zb1gcdy3nxw"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-lme4 r-crayon))
+    (propagated-inputs (list r-matrix r-lme4 r-enhancer r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lme4breeding")
     (synopsis "Breeding-Related Mixed-Effects Models")
@@ -16389,13 +16389,13 @@ results from internal standards or known metabolites.")
 (define-public r-lcmm
   (package
     (name "r-lcmm")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcmm" version))
        (sha256
-        (base32 "04h1b7ws1q2j48i3kbfl6qpq7yzl1c6cbbm5qgjbmczvdghpz432"))))
+        (base32 "11hah8vcbhazhfkxqaqxpdmh812x342306cs2an7aiw6b1cvida3"))))
     (properties `((upstream-name . "lcmm")))
     (build-system r-build-system)
     (arguments

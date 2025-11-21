@@ -14758,13 +14758,13 @@ Distributions are fitted when overdispersion is available.")
 (define-public r-fitodbod
   (package
     (name "r-fitodbod")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitODBOD" version))
        (sha256
-        (base32 "0m4ndbs9kbwhiqw461blr7c206bqnf6kgyvnm045fiphd4f11zd2"))))
+        (base32 "1sallfj8wxfzpicf7y7bvf98s7c8m244xq914sdkpklmqa8nx6y0"))))
     (properties `((upstream-name . "fitODBOD")))
     (build-system r-build-system)
     (arguments
@@ -18943,13 +18943,13 @@ non-linear and linear models.")
 (define-public r-ferrn
   (package
     (name "r-ferrn")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ferrn" version))
        (sha256
-        (base32 "1x3vislwcjlcvgd4dinzi6skqgp4ic1mq4srqkwrk1xr90l2wywn"))))
+        (base32 "1f6x8diz8yzm6flj8ib97znpsp4d3kjwsdpx2nfbikg7kgfhpj5p"))))
     (properties `((upstream-name . "ferrn")))
     (build-system r-build-system)
     (arguments
@@ -18981,7 +18981,7 @@ by reducing the dimension using principal component analysis, and also using the
 tour to show the path on the high-dimensional space.  Several botanical colour
 palettes are included, reflecting the name of the package.  A paper describing
 the methodology can be found at
-<https://journal.r-project.org/archive/2021/RJ-2021-105/index.html>.")
+<https://journal.r-project.org/articles/RJ-2021-105/index.html>.")
     (license license:expat)))
 
 (define-public r-fermicatsr
@@ -21699,6 +21699,42 @@ one can use the implications to compute semantic closures of fuzzy sets and,
 thus, build recommendation systems.")
     (license license:gpl3)))
 
+(define-public r-fcall
+  (package
+    (name "r-fcall")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fcall" version))
+       (sha256
+        (base32 "1gjviykvrb52w5sn656756l6hbyx424asr35g51c11qza2gx1m35"))))
+    (properties `((upstream-name . "fcall")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waldo
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ketchbrookanalytics.github.io/fcall/")
+    (synopsis
+     "Parse Farm Credit Administration Call Report Data into Tidy Data Frames")
+    (description
+     "Parses financial condition and performance data (Call Reports) for institutions
+in the United States Farm Credit System.  Contains functions for downloading
+files from the Farm Credit Administration (FCA) Call Report archive website and
+reading the files into tidy data frame format.  The archive website can be found
+at <https://www.fca.gov/bank-oversight/call-report-data-for-download>.")
+    (license license:expat)))
+
 (define-public r-fca
   (package
     (name "r-fca")
@@ -21912,13 +21948,13 @@ microarray data by using the FISH probes and their corresponding copy number.")
 (define-public r-fbms
   (package
     (name "r-fbms")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FBMS" version))
        (sha256
-        (base32 "0yg33jmj6pwwmk582wg3hx2dsmqn6b4h1xpi76wwf8r57xcpsnvz"))))
+        (base32 "09b5vysmcdjjn91bhj2kr1x3ws5pzph549xmllmk2fi0qg66r746"))))
     (properties `((upstream-name . "FBMS")))
     (build-system r-build-system)
     (arguments
@@ -26203,6 +26239,46 @@ Number 2133576.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rhysholland/fairGNN")
     (synopsis "Fairness-Aware Gated Neural Networks")
+    (description
+     "This package provides tools for training and analysing fairness-aware gated
+neural networks for subgroup-aware prediction and interpretation in clinical
+datasets.  Methods draw on prior work in mixture-of-experts neural networks by
+Jordan and Jacobs (1994) <doi:10.1007/978-1-4471-2097-1_113>, fairness-aware
+learning by Hardt, Price, and Srebro (2016)
+<doi:10.48550/@code{arXiv.1610.02413>}, and personalised treatment prediction
+for depression by Iniesta, Stahl, and @code{McGuffin} (2016)
+<doi:10.1016/j.jpsychires.2016.03.016>.")
+    (license license:expat)))
+
+(define-public r-fairgate
+  (package
+    (name "r-fairgate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fairGATE" version))
+       (sha256
+        (base32 "1vg1lhrzjq9p18przzb9435ysznjzvlhp7283mqi0qrgzz7ifcvi"))))
+    (properties `((upstream-name . "fairGATE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-proc
+                             r-magrittr
+                             r-ggplot2
+                             r-ggalluvial
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rhysholland/FairGATE")
+    (synopsis "Fair Gated Algorithm for Targeted Equity")
     (description
      "This package provides tools for training and analysing fairness-aware gated
 neural networks for subgroup-aware prediction and interpretation in clinical

@@ -4787,6 +4787,32 @@ stability or various evolutionary dynamics, for teaching and academic research
 is provided.")
     (license license:gpl2)))
 
+(define-public r-evolution
+  (package
+    (name "r-evolution")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evolution" version))
+       (sha256
+        (base32 "05krncv4crhjv6317ipm6whz45wzljbw2q7pjl8xaap7g2py2xjm"))))
+    (properties `((upstream-name . "evolution")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2 r-cli r-base64enc))
+    (home-page "https://github.com/StrategicProjects/evolution/")
+    (synopsis "Client for 'Evolution Cloud API'")
+    (description
+     "This package provides an R interface to the Evolution API
+<https://evoapicloud.com>, enabling sending and receiving @code{WhatsApp}
+messages directly from R'.  Functions include sending text, images, documents,
+stickers, geographic locations, and interactive messages (lists).  Also includes
+webhook parsing utilities and channel health checks.")
+    (license license:expat)))
+
 (define-public r-evolqg
   (package
     (name "r-evolqg")
@@ -19482,13 +19508,13 @@ Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
 (define-public r-egocor
   (package
     (name "r-egocor")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EgoCor" version))
        (sha256
-        (base32 "0jfadrvdwapj5prpy2k6b90a52jb6r6vkjzw40mld69wd6xrncnv"))))
+        (base32 "1xs2y6kp1k6hxcvamcr5d05djxqhrgsx2s89a98i5s02653zx8gx"))))
     (properties `((upstream-name . "EgoCor")))
     (build-system r-build-system)
     (arguments
@@ -23942,6 +23968,45 @@ flexible data model for harmonizing ecological community surveys, in a research
 question agnostic format, from source data published across repositories, and
 with methods that keep the derived data up-to-date as the underlying sources
 change.  Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.")
+    (license license:expat)))
+
+(define-public r-ecocleanr
+  (package
+    (name "r-ecocleanr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EcoCleanR" version))
+       (sha256
+        (base32 "0rn9as9dmsnlfx750lxp6qcp781wl8hsqdy5dgrjxkrbdvpc4bwr"))))
+    (properties `((upstream-name . "EcoCleanR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-taxize
+                             r-sf
+                             r-sdmpredictors
+                             r-rlang
+                             r-patchwork
+                             r-mregions2
+                             r-ggplot2
+                             r-geosphere
+                             r-geodata
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EcoCleanR")
+    (synopsis
+     "Automated and Controlled Extraction, Cleaning, and Processing of Occurrence Data for Generating Biogeographic Ranges of Marine Organisms")
+    (description
+     "This package provides step-by-step automation for integrating biodiversity data
+from multiple online aggregators, merging and cleaning datasets while addressing
+challenges such as taxonomic inconsistencies, georeferencing issues, and spatial
+or environmental outliers.  Includes functions to extract environmental data and
+to define the biogeographic ranges in which species are most likely to occur.")
     (license license:expat)))
 
 (define-public r-ecochange

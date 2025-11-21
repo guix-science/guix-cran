@@ -627,6 +627,44 @@ weighted observations, one sample tests, etc).  We also include the permutation
 scheme to make test building simple for others.")
     (license license:gpl2+)))
 
+(define-public r-tworegression
+  (package
+    (name "r-tworegression")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TwoRegression" version))
+       (sha256
+        (base32 "0zibdd5nwbrpvva50jv6zadpcqaa3a4yqn78qgffsvlfngr89lw9"))))
+    (properties `((upstream-name . "TwoRegression")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rcpproll
+                             r-proc
+                             r-pautilities
+                             r-magrittr
+                             r-lubridate
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/paulhibbing/TwoRegression")
+    (synopsis "Develop and Apply Two-Regression Algorithms")
+    (description
+     "Facilitates development and application of two-regression algorithms for
+research-grade wearable devices.  It provides an easy way for users to access
+previously-developed algorithms, and also to develop their own.  Initial
+motivation came from Hibbing PR, @code{LaMunion} SR, Kaplan AS, & Crouter SE
+(2018) <doi:10.1249/MSS.0000000000001532>.  However, other algorithms are now
+supported.  Please see the associated references in the package documentation
+for full details of the algorithms that are supported.")
+    (license license:gpl3)))
+
 (define-public r-twophasecorr
   (package
     (name "r-twophasecorr")
@@ -7414,13 +7452,13 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.4.5")
+    (version "0.0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "0y5bqzlaj66lshvp2c2a6f0zmlm4kwk0cqmwzmba8b2kv2h1app6"))))
+        (base32 "0d7ls8vnz7pa86yb0015k4apn9nj60zd19z8hz89k04j18hqczwm"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (arguments
@@ -26640,41 +26678,6 @@ region.  Includes a Shiny user interface for point-and-click ternary plotting.
 An alternative to ggtern', which uses the ggplot2 family of plotting functions.")
     (license license:gpl2+)))
 
-(define-public r-tern-rbmi
-  (package
-    (name "r-tern-rbmi")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tern.rbmi" version))
-       (sha256
-        (base32 "1skhm6wsapy5pyq6vrnzjai2jg742g7267vqc1q4z7xqh3mjcvmm"))))
-    (properties `((upstream-name . "tern.rbmi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tern
-                             r-rtables
-                             r-rbmi
-                             r-magrittr
-                             r-lifecycle
-                             r-formatters
-                             r-checkmate
-                             r-broom))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/insightsengineering/tern.rbmi")
-    (synopsis "Create Interface for 'RBMI' and 'tern'")
-    (description
-     "RBMI implements standard and reference based multiple imputation methods for
-continuous longitudinal endpoints (Gower-Page et al. (2022)
-<doi:10.21105/joss.04251>).  This package provides an interface for RBMI uses
-the tern <https://cran.r-project.org/package=tern> framework by Zhu et al.
-(2023) and tabulate results easily using rtables
-<https://cran.r-project.org/package=rtables> by Becker et al. (2023).")
-    (license license:asl2.0)))
-
 (define-public r-tern-mmrm
   (package
     (name "r-tern-mmrm")
@@ -30073,13 +30076,13 @@ RNA-seq gene-level expression from The Cancer Genome Atlas (TCGA;
 (define-public r-tcgaretriever
   (package
     (name "r-tcgaretriever")
-    (version "1.9.1")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCGAretriever" version))
        (sha256
-        (base32 "1x97yr6z1krykvwis90z7vyk9rhz96lkvgbmb32l4h1h5lqdwxny"))))
+        (base32 "08dwmkrz58h5slnjzbpbmfwr0957xw6akwcnh1ci8iccsv24rkas"))))
     (properties `((upstream-name . "TCGAretriever")))
     (build-system r-build-system)
     (arguments
