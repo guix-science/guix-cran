@@ -2039,6 +2039,42 @@ high-quality output and generate reproducible, publication-ready tables in
 alignment with best practices in epidemiology and applied statistics.")
     (license license:expat)))
 
+(define-public r-gtreg
+  (package
+    (name "r-gtreg")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtreg" version))
+       (sha256
+        (base32 "1awdp0dshyqw415g2621m39pr3gbrq6bvh4v2lsvl63am8w33vpm"))))
+    (properties `((upstream-name . "gtreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-gtsummary
+                             r-glue
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shannonpileggi/gtreg")
+    (synopsis "Regulatory Tables for Clinical Research")
+    (description
+     "This package creates tables suitable for regulatory agency submission by
+leveraging the gtsummary package as the back end.  Tables can be exported to
+HTML, Word, PDF and more.  Highly customized outputs are available by utilizing
+existing styling functions from gtsummary as well as custom options designed for
+regulatory tables.")
+    (license license:gpl3+)))
+
 (define-public r-gtranslate
   (package
     (name "r-gtranslate")
@@ -7302,13 +7338,13 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "05pzyx0km5s0zvj62gnx0gv1cq5140c9iix0gj7an72ic5wgg472"))))
+        (base32 "1p74amd8ya7v5fg209c1zs2i1cmxab0iif0c56aca96wpmyg85s7"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
@@ -30979,41 +31015,6 @@ and retrieve candidate genes for you, while exporting the results into
 ready-to-use output.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-genenmf
-  (package
-    (name "r-genenmf")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeneNMF" version))
-       (sha256
-        (base32 "0dkap5dpwnrfkfi4qls6lfwx6aw0z6zv0ysjj0hmav90y68n6krc"))))
-    (properties `((upstream-name . "GeneNMF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-seurat
-                             r-rcppml
-                             r-pheatmap
-                             r-matrix
-                             r-lsa
-                             r-irlba
-                             r-dendextend
-                             r-colorspace
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/carmonalab/GeneNMF")
-    (synopsis "Non-Negative Matrix Factorization for Single-Cell Omics")
-    (description
-     "This package provides a collection of methods to extract gene programs from
-single-cell gene expression data using non-negative matrix factorization (NMF).
-@code{GeneNMF} contains functions to directly interact with the Seurat toolkit
-and derive interpretable gene program signatures.")
-    (license license:gpl3)))
-
 (define-public r-genemodel
   (package
     (name "r-genemodel")
@@ -31221,13 +31222,13 @@ GENEActiv device.")
 (define-public r-geneacore
   (package
     (name "r-geneacore")
-    (version "1.0.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GENEAcore" version))
        (sha256
-        (base32 "0rm2q2dnwphg3iakirrm2fq511hkiadz3qqyfiwv12bbhn6pdl69"))))
+        (base32 "0kgnfdsp82xx5lfaxlc17yc7cyigsr17ysavb2av7j1hhcf2yh39"))))
     (properties `((upstream-name . "GENEAcore")))
     (build-system r-build-system)
     (arguments
@@ -35104,13 +35105,13 @@ Existence in the journal Ecology and Evolution.")
 (define-public r-gaupro
   (package
     (name "r-gaupro")
-    (version "0.2.16")
+    (version "0.2.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GauPro" version))
        (sha256
-        (base32 "1qnvxhcv66yn6gh491v3318nc6arf4rgynqz49pr9bbh1gfsy1q8"))))
+        (base32 "0w36g4ah5mazv39p8zdd30g7j7hrfbd9lx34pyv4hq04bifjd8l0"))))
     (properties `((upstream-name . "GauPro")))
     (build-system r-build-system)
     (arguments

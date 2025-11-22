@@ -42472,6 +42472,33 @@ details see Ciria (2025)
 <https://nataliaciria.github.io/mcmodule/articles/mcmodule>.")
     (license license:gpl3+)))
 
+(define-public r-mcmiso
+  (package
+    (name "r-mcmiso")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "McMiso" version))
+       (sha256
+        (base32 "0gjz237nakfkzmsfqq7609i57cy74yidsgq16vxyxsxlwgs936cq"))))
+    (properties `((upstream-name . "McMiso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-future r-dplyr))
+    (home-page "https://cran.r-project.org/package=McMiso")
+    (synopsis "Multicore Multivariable Isotonic Regression")
+    (description
+     "The goal of @code{McMiso} is to provide functions for isotonic regression when
+there are multiple independent variables.  The functions solve the optimization
+problem using recursion and leverage parallel computing to improve speed, and
+are useful for situations with relatively large number of covariates.  The
+estimation method follows the projective Bayes solution described in Cheung and
+Diaz (2023) <doi:10.1093/jrsssb/qkad014>.")
+    (license license:gpl3)))
+
 (define-public r-mcmcvis
   (package
     (name "r-mcmcvis")
@@ -53524,13 +53551,13 @@ this package.")
 (define-public r-macleish
   (package
     (name "r-macleish")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "macleish" version))
        (sha256
-        (base32 "06r97fsasjj7qdm4p8yhvi2hfs1qy35xs0ay9i3bv5k09z5zfia7"))))
+        (base32 "1s8sv4b57x7ssgn9y07i5cfcipn60hdayc2dkws0qbkwz3rsv1g5"))))
     (properties `((upstream-name . "macleish")))
     (build-system r-build-system)
     (arguments
@@ -53554,9 +53581,9 @@ Whately, MA. The Ada and Archibald @code{MacLeish} Field Station is a 260-acre
 patchwork of forest and farmland located in West Whately, MA that provides
 opportunities for faculty and students to pursue environmental research, outdoor
 education, and low-impact recreation (see
-<https://www.smith.edu/about-smith/sustainable-smith/macleish> for more
-information).  This package contains weather data over several years, and
-spatial data on various man-made and natural structures.")
+<https://www.smith.edu/discover-smith/smith-action/sustainable-smith/macleish-field-station>
+for more information).  This package contains weather data over several years,
+and spatial data on various man-made and natural structures.")
     (license license:cc0)))
 
 (define-public r-machineshop

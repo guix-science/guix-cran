@@ -846,6 +846,34 @@ Generalised Least Squares approach.  For details see Veiga et al.(2014)
 <doi:10.1111/rssc.12020>.")
     (license license:gpl2+)))
 
+(define-public r-pwlapprox2d
+  (package
+    (name "r-pwlapprox2d")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pwlapprox2d" version))
+       (sha256
+        (base32 "0sjz4k79zp5sjqsg7ymk7nd3p765ash6fxjnni8rbrsmb9w1k22n"))))
+    (properties `((upstream-name . "pwlapprox2d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nloptr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pwlapprox2d")
+    (synopsis
+     "Approximates Univariate Continuous Functions Through Piecewise Linear Regression")
+    (description
+     "Allows users to find a piecewise linear regression approximation to a given
+continuous univariate function within a specified error tolerance.  Methods
+based on Warwicker and Rebennack (2025) \"Efficient continuous piecewise linear
+regression for linearising univariate non-linear functions\"
+<doi:10.1080/24725854.2023.2299809>.")
+    (license license:expat)))
+
 (define-public r-pwir
   (package
     (name "r-pwir")
@@ -6399,19 +6427,19 @@ Proteome Discover can be easily used due to flexibility of functions.")
 (define-public r-protrackr2
   (package
     (name "r-protrackr2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProTrackR2" version))
        (sha256
-        (base32 "02c813nxx2wzx6igrpxh4ac2gbl6csr0mb7jlfxc31ajai4fpyi3"))))
+        (base32 "0mv082rqfk7da1hqf985gggfxf3vpcqn8grvyh940fway1kf9d0k"))))
     (properties `((upstream-name . "ProTrackR2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-cpp11 r-audio))
+    (propagated-inputs (list r-lifecycle r-cpp11 r-audio))
     (native-inputs (list r-knitr))
     (home-page "https://pepijn-devries.github.io/ProTrackR2/")
     (synopsis "Manipulate and Play 'ProTracker' Modules")
@@ -7624,34 +7652,6 @@ visualization, missing data imputation (Lazar et.  al. (2016)
 et.  al. (2015) <doi:10.1093/nar/gkv007>), and machine learning-based modeling
 (Kuhn (2008) <doi:10.18637/jss.v028.i05>).")
     (license license:lgpl2.1+)))
-
-(define-public r-prometheetools
-  (package
-    (name "r-prometheetools")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PrometheeTools" version))
-       (sha256
-        (base32 "09hrpybagl58vm22bhvpwb07s542hi4j15mqwwwyhi3dw0sn9xfy"))))
-    (properties `((upstream-name . "PrometheeTools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://github.com/ifelipebj/PrometheeTools")
-    (synopsis "PROMETHEE and GLNF for Ranking and Sorting Problems")
-    (description
-     "PROMETHEE (Preference Ranking Organisation METHod for Enrichment of Evaluations)
-based method assesses alternatives to obtain partial and complete rankings.  The
-package also provides the GLNF (Global Local Net Flow) sorting algorithm to
-classify alternatives into ordered categories, as well as an index function to
-measure the classification quality.  Barrera, F., Segura, M., & Maroto, C.
-(2023) <doi:10.1111/itor.13288>.  Brans, J.P.; De Smet, Y., (2016)
-<doi:10.1007/978-1-4939-3094-4_6>.")
-    (license license:gpl3+)))
 
 (define-public r-promethee123
   (package

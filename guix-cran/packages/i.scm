@@ -6317,13 +6317,13 @@ corresponds to the correct way to perform the popular log(Y + 1) transformation.
 (define-public r-iohanalyzer
   (package
     (name "r-iohanalyzer")
-    (version "0.1.8.10")
+    (version "0.1.8.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IOHanalyzer" version))
        (sha256
-        (base32 "1a92lzq2m9yrgaajlybpib6awnf2p7qzbfanlzg86x9z4hcdiyzr"))))
+        (base32 "12850xdhnlym2lf9v4wr6asl1jcl7v51dd8x8725riqqj7fwl5r0"))))
     (properties `((upstream-name . "IOHanalyzer")))
     (build-system r-build-system)
     (arguments
@@ -6332,6 +6332,7 @@ corresponds to the correct way to perform the popular log(Y + 1) transformation.
     (propagated-inputs (list r-viridis
                              r-stringi
                              r-shiny
+                             r-rlang
                              r-rjson
                              r-reshape2
                              r-rcpp
@@ -16194,6 +16195,33 @@ of implemented metrics is summarized in Rodbard (2009)
 <doi:10.1089/dia.2009.0015>.  Additional visualization tools include time-series
 plots, lasagna plots and ambulatory glucose profile report.")
     (license license:gpl2)))
+
+(define-public r-igfetchr
+  (package
+    (name "r-igfetchr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igfetchr" version))
+       (sha256
+        (base32 "035mvl9nam8gh0pp02gh7ap512i6b0z85ws9b6isfri839zlhvs6"))))
+    (properties `((upstream-name . "igfetchr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-purrr r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sawsimeon/igfetchr")
+    (synopsis "Access the 'IG Trading REST API'")
+    (description
+     "This package provides functions to fetch market data, search historical prices,
+execute trades, and get account details from the IG Trading REST API
+<https://labs.ig.com>.  Returns tidy tibbles for easy analysis.  Trading
+contracts for difference (CFDs), options and spread bets carries a high risk of
+losing money.  This package is not financial or trading advice.")
+    (license license:gpl3)))
 
 (define-public r-igcop
   (package

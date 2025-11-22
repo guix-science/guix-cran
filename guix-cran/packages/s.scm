@@ -18790,13 +18790,13 @@ criteria proposed by Jayasankar et al.,2021
 (define-public r-ssp
   (package
     (name "r-ssp")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSP" version))
        (sha256
-        (base32 "0x1wm5mali8rhnxqhx4z9is5f65af7yvin4lgkazx4wqc19h68b6"))))
+        (base32 "1csxyyq5f8jgpa2mn4h0blpf83fqqds47hvf2fy8wmayd53dzvbg"))))
     (properties `((upstream-name . "SSP")))
     (build-system r-build-system)
     (arguments

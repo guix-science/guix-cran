@@ -6684,13 +6684,13 @@ identifying columns containing multiple or nonstandard formats.")
 (define-public r-bp
   (package
     (name "r-bp")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bp" version))
        (sha256
-        (base32 "0qdpm5nfx2jhc0s77x839jdmk07c88xf739dwf2n8hqhk24y0cdr"))))
+        (base32 "0rrndrlyc1i433p9vcg5a3byl9vli0dd3nh0dp4gxds55ll3nwxs"))))
     (properties `((upstream-name . "bp")))
     (build-system r-build-system)
     (arguments

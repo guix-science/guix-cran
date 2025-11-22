@@ -7536,13 +7536,13 @@ Cancers.  Cancer informatics, 13, CIN-S14021.")
 (define-public r-lmperm
   (package
     (name "r-lmperm")
-    (version "2.1.4")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmPerm" version))
        (sha256
-        (base32 "05hrja5q7ii41k4fg0am6rnj6k1s7cj4ns6fv2x54cnbfaznh5iv"))))
+        (base32 "1wggffyn9lr9l94y49w71hnk37vhdqgphfhh8bbj3cri47345hdc"))))
     (properties `((upstream-name . "lmPerm")))
     (build-system r-build-system)
     (arguments

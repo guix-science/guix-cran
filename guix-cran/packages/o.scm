@@ -4652,13 +4652,13 @@ healthcare provider.")
 (define-public r-orakle
   (package
     (name "r-orakle")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oRaklE" version))
        (sha256
-        (base32 "0gbvmn98jg1lf6kazdx20biar4j32qhb74fxb7n6ggqmdds1vsxv"))))
+        (base32 "00cr8qwnl6a1dp4asmz3d4k3nxc5whjy9rw06kd3901l97finjcd"))))
     (properties `((upstream-name . "oRaklE")))
     (build-system r-build-system)
     (arguments

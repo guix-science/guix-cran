@@ -18059,13 +18059,13 @@ Classical Techniques Based on Accumulated Local Effects (ALE).â @code{arXiv
 (define-public r-aldvmm
   (package
     (name "r-aldvmm")
-    (version "0.8.8")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aldvmm" version))
        (sha256
-        (base32 "1qqfhfrhqlzlmfdf84sq9v17d6jrnn4w7yilskbrg74zvbcbc3k8"))))
+        (base32 "04vz56rwsqrxgqgzw89irqqdv08h5dqhagpwg8aq0qx575lyvx3q"))))
     (properties `((upstream-name . "aldvmm")))
     (build-system r-build-system)
     (arguments
@@ -27767,6 +27767,33 @@ here are designed to be basic and clear to the reader.")
      "Multi-category angle-based large-margin classifiers.  See Zhang and Liu (2014)
 <doi:10.1093/biomet/asu017> for details.")
     (license license:gpl3+)))
+
+(define-public r-abcel
+  (package
+    (name "r-abcel")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "abcel" version))
+       (sha256
+        (base32 "00grg8xzcf6ii8lgziv0vpyzan1sc7z652kg2kjwwfgw8bxs9s77"))))
+    (properties `((upstream-name . "abcel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-fnn r-emplik r-corpcor))
+    (home-page "https://cran.r-project.org/package=abcel")
+    (synopsis "Empirical Likelihood-Based Approximate Bayesian Computation")
+    (description
+     "Empirical likelihood-based approximate Bayesian Computation.  Approximates the
+required posterior using empirical likelihood and estimated differential
+entropy.  This is achieved without requiring any specification of the likelihood
+or estimating equations that connects the observations with the underlying
+parameters.  The procedure is known to be posterior consistent.  More details
+can be found in Chaudhuri, Ghosh, and Kim (2024) <doi:10.1002/SAM.11711>.")
+    (license license:gpl2)))
 
 (define-public r-abcdscores
   (package

@@ -7444,6 +7444,32 @@ parameter IRT model with lower and upper asymptotes using Bayesian formulation
 described by Culpepper (2016) <doi:10.1007/s11336-015-9477-6>.")
     (license license:gpl2+)))
 
+(define-public r-fourinarow
+  (package
+    (name "r-fourinarow")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fourinarow" version))
+       (sha256
+        (base32 "0ap69xhi3fdnad72v8ywy8scsxk211c9fgvy5c4lps6n8xia704p"))))
+    (properties `((upstream-name . "fourinarow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=fourinarow")
+    (synopsis "Play \"Four in a Row\"")
+    (description
+     "Play or simulate games of \"Four in a Row\" in the R console.  This package is
+designed for educational purposes, encouraging users to write their own
+functions to play the game automatically.  It contains a collection of built-in
+functions that play the game at various skill levels, for users to test their
+own functions against.")
+    (license license:expat)))
+
 (define-public r-fourierin
   (package
     (name "r-fourierin")
@@ -12019,13 +12045,13 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
 (define-public r-floral
   (package
     (name "r-floral")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLORAL" version))
        (sha256
-        (base32 "1hqqjkfjpqcid37m9p9nk41dbm7pl9a0yi2qgmwxxhi17pzdkz7g"))))
+        (base32 "1gl7mp2pni5frwj41hmpxmp1f70irp01yv35qhb89fcmqmxfnfb2"))))
     (properties `((upstream-name . "FLORAL")))
     (build-system r-build-system)
     (arguments
@@ -12046,8 +12072,7 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
                              r-dplyr
                              r-dorng
                              r-doparallel
-                             r-caret
-                             r-ast2ast))
+                             r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://vdblab.github.io/FLORAL/")
     (synopsis "Fit Log-Ratio Lasso Regression for Compositional Data")
@@ -23277,13 +23302,13 @@ available from <https://github.com/randy408/libspng/>.")
 (define-public r-fastplyr
   (package
     (name "r-fastplyr")
-    (version "0.9.9")
+    (version "0.9.91")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastplyr" version))
        (sha256
-        (base32 "0jrsp7rifcpl156n39vxym9645ical187m618nyjd10k343gnach"))))
+        (base32 "1fxf7dsaidmng6j41b754hvj1wk9dj8g0n9x0ip9l5yjr8damhlp"))))
     (properties `((upstream-name . "fastplyr")))
     (build-system r-build-system)
     (arguments

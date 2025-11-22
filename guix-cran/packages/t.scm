@@ -806,6 +806,38 @@ pre-specified coefficients and loadings to new datasets but does not estimate
 spline models or principal components itself.")
     (license license:expat)))
 
+(define-public r-twocoprimary
+  (package
+    (name "r-twocoprimary")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twoCoprimary" version))
+       (sha256
+        (base32 "17f30gbzgj301yxx5v3vxbh2f5i0fr96dlj1nngg609f7i12ign9"))))
+    (properties `((upstream-name . "twoCoprimary")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pbivnorm r-mvtnorm r-fpcompare))
+    (native-inputs (list r-knitr))
+    (home-page "https://gosukehommaex.github.io/twoCoprimary/")
+    (synopsis "Sample Size and Power Calculation for Two Co-Primary Endpoints")
+    (description
+     "Comprehensive functions to calculate sample size and power for clinical trials
+with two co-primary endpoints.  The package supports five endpoint combinations:
+two continuous endpoints (Sozu et al.  2011 <doi:10.1080/10543406.2011.551329>),
+two binary endpoints using asymptotic methods (Sozu et al.  2010
+<doi:10.1002/sim.3972>) and exact methods (Homma and Yoshida 2025
+<doi:10.1177/09622802251368697>), mixed continuous and binary endpoints (Sozu et
+al.  2012 <doi:10.1002/bimj.201100221>), and mixed count and continuous
+endpoints (Homma and Yoshida 2024 <doi:10.1002/pst.2337>).  All methods
+appropriately account for correlation between endpoints and provide both sample
+size and power calculation capabilities.")
+    (license license:expat)))
+
 (define-public r-twoarmsurvsim
   (package
     (name "r-twoarmsurvsim")
@@ -21206,39 +21238,6 @@ ecosystem, making it easy to filter, arrange, and visualize country-level data
 in R.")
     (license license:expat)))
 
-(define-public r-tidyconsultant
-  (package
-    (name "r-tidyconsultant")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TidyConsultant" version))
-       (sha256
-        (base32 "00gw5h3n04nnrkrqx981rksi4liydmljj4nnnjnnh2a7ra98pcln"))))
-    (properties `((upstream-name . "TidyConsultant")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-validata
-                             r-tidybins
-                             r-presenter
-                             r-pacman
-                             r-framecleaner
-                             r-ckmeans-1d-dp
-                             r-badger
-                             r-autostats))
-    (native-inputs (list r-knitr))
-    (home-page "https://harrison4192.github.io/TidyConsultant/")
-    (synopsis "Tidy Consultant Universe")
-    (description
-     "Loads the 5 packages in the Tidy Consultant Universe.  This collection of
-packages is useful for anyone doing data science, data analysis, or quantitative
-consulting.  The functions in these packages range from data cleaning, data
-validation, data binning, statistical modeling, and file exporting.")
-    (license license:expat)))
-
 (define-public r-tidycomm
   (package
     (name "r-tidycomm")
@@ -21459,13 +21458,13 @@ packages.")
 (define-public r-tidycensuskr
   (package
     (name "r-tidycensuskr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensuskr" version))
        (sha256
-        (base32 "0hivfy64a52al1nwqj1nrgr5gfz9dc1ck8nwd1qlg0vzradw81c2"))))
+        (base32 "00gf2xzi2ix1c5dac2fid37ndkini4qgvs03lp7rbwgsb7m46zik"))))
     (properties `((upstream-name . "tidycensuskr")))
     (build-system r-build-system)
     (arguments

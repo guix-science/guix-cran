@@ -2180,6 +2180,30 @@ beautifies itself by varying the number of points and the multiplication table
 you use.")
     (license license:gpl3)))
 
+(define-public r-rupturesrcpp
+  (package
+    (name "r-rupturesrcpp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rupturesRcpp" version))
+       (sha256
+        (base32 "044rbc4xp6scglyzhhnb6x0f5l6xnflf14vfgjax9zn36gbs4z1v"))))
+    (properties `((upstream-name . "rupturesRcpp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-patchwork r-ggplot2))
+    (home-page "https://cran.r-project.org/package=rupturesRcpp")
+    (synopsis "Object-Oriented Interface for Offline Change-Point Detection")
+    (description
+     "This package provides a collection of efficient implementations of popular
+offline change-point detection algorithm, featuring a consistent,
+object-oriented interface for practical use.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-runuran
   (package
     (name "r-runuran")
@@ -3946,13 +3970,13 @@ Persian and Hebrew.")
 (define-public r-rtlknitr
   (package
     (name "r-rtlknitr")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTLknitr" version))
        (sha256
-        (base32 "0a1bxbadmwmsscmsgdq4pw5skssp6dbddyv6d4ysl6xllqx9pppy"))))
+        (base32 "1p52az4w697ss8wj2xwilcgqfi4j2may14kvapqgl27h66ifw6ap"))))
     (properties `((upstream-name . "RTLknitr")))
     (build-system r-build-system)
     (arguments
@@ -14246,13 +14270,13 @@ a symmetric positive definite matrix generator, see Mezzadri, F. (2007)
 (define-public r-ronfig
   (package
     (name "r-ronfig")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ronfig" version))
        (sha256
-        (base32 "0vmb1hha6lsj4a2idmqgg1rg1s4l6wyglq2lcfc1kdbf2g32hnhn"))))
+        (base32 "17773jiq0b0qi74nbczkds12qkiisa4b00wh5rgfkdba93p9f840"))))
     (properties `((upstream-name . "ronfig")))
     (build-system r-build-system)
     (arguments
@@ -36856,38 +36880,6 @@ importance of predictors in a linear or generalized linear model, and a couple
 of useful Tcl/Tk widgets.")
     (license license:gpl2+)))
 
-(define-public r-reliashiny
-  (package
-    (name "r-reliashiny")
-    (version "0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ReliaShiny" version))
-       (sha256
-        (base32 "097xjfvd0ilbj2lgmvsi4a59l70gzjgh2n5mm8a0wv0mcwyirna4"))))
-    (properties `((upstream-name . "ReliaShiny")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-weibullr
-                             r-shinywidgets
-                             r-shinydashboard
-                             r-shiny
-                             r-reliaplotr
-                             r-reliagrowr
-                             r-magrittr))
-    (home-page "https://paulgovan.github.io/ReliaShiny/")
-    (synopsis "'Shiny' App for Reliability Analysis")
-    (description
-     "An interactive web application for reliability analysis using the shiny
-<https://shiny.posit.co/> framework.  The app provides an easy-to-use interface
-for performing reliability analysis using @code{WeibullR}
-<https://cran.r-project.org/package=@code{WeibullR>} and @code{ReliaGrowR}
-<https://cran.r-project.org/package=@code{ReliaGrowR>}.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-reliar
   (package
     (name "r-reliar")
@@ -36924,39 +36916,16 @@ resource for teaching and research in probability theory, reliability analysis,
 and applied statistical modeling.")
     (license license:gpl2)))
 
-(define-public r-reliaplotr
-  (package
-    (name "r-reliaplotr")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ReliaPlotR" version))
-       (sha256
-        (base32 "05fvgsbpcfs1aala43gz2s9i3vn018wm71ys4c12pksl0wpjcvwp"))))
-    (properties `((upstream-name . "ReliaPlotR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-weibullr r-reliagrowr r-plotly))
-    (home-page "https://paulgovan.github.io/ReliaPlotR/")
-    (synopsis "Interactive Reliability Probability Plots")
-    (description
-     "Build interactive Reliability Probability Plots with plotly by Carson Sievert
-(2020) <https://plotly.com/r/>, an interactive web-based graphing library.")
-    (license (license:fsdg-compatible "Apache License"))))
-
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "1zzlh2609qkdbppf3jykwy54j1wcr8qxa44g6dg6chmwv2qa2m78"))))
+        (base32 "1yacim24jplv5yfxsvzs9skf1dhr1d8bk0475llimiygxwlcljnf"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (arguments
@@ -50562,6 +50531,38 @@ and \"Refining Binomial Confidence Intervals\" by George Casella (1986)
 (2019) <@code{arXiv:1910.03660>}.  Special cases of this approach fit the
 restricted LASSO, restricted RIDGE and restricted Elastic Net estimators.")
     (license license:gpl3)))
+
+(define-public r-rbranding
+  (package
+    (name "r-rbranding")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbranding" version))
+       (sha256
+        (base32 "01vg80xgwwyf68056griha7709h2yxakvvs2w0vw691vzh0pn4ir"))))
+    (properties `((upstream-name . "rbranding")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-ggplot2 r-credentials))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiforesite.github.io/rbranding/")
+    (synopsis "Manage Branding and Accessibility of R Projects")
+    (description
+     "This package provides a tool for building projects that are visually consistent,
+accessible, and easy to maintain.  It provides functions for managing branding
+assets, applying organization-wide themes using brand.yml', and setting up new
+projects with accessibility features and correct branding.  It supports quarto',
+shiny', and rmarkdown projects, and integrates with ggplot2'.  The accessibility
+features are based on the Web Content Accessibility Guidelines
+<https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1> and Accessible Rich
+Internet Applications (ARIA) specifications <https://www.w3.org/WAI/ARIA/apg/>.
+The branding framework implements the brand.yml specification
+<https://posit-dev.github.io/brand-yml/>.")
+    (license license:expat)))
 
 (define-public r-rbpcurve
   (package

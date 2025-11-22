@@ -7909,6 +7909,43 @@ vectors and matrices.  References include: Szekely G. J. and Rizzo M. L. (2014),
 official statistics of the Japanese government.")
     (license license:expat)))
 
+(define-public r-estar
+  (package
+    (name "r-estar")
+    (version "1.0-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "estar" version))
+       (sha256
+        (base32 "1g64ayg9xm83x0fgylmiimkfnpzzgx4g6fqa3drxx21z1rls41zg"))))
+    (properties `((upstream-name . "estar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-vegan r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=estar")
+    (synopsis "Ecological Stability Metrics")
+    (description
+     "Standardises and facilitates the use of eleven established stability properties
+that have been used to assess systemsâ responses to press or pulse
+disturbances at different ecological levels (e.g. population, community).  There
+are two sets of functions.  The first set corresponds to functions that measure
+stability at any level of organisation, from individual to community and can be
+applied to a time series of a systemâs state variables (e.g., body mass,
+population abundance, or species diversity).  The properties included in this
+set are: invariability, resistance, extent and rate of recovery, persistence,
+and overall ecological vulnerability.  The second set of functions can be
+applied to Jacobian matrices.  The functions in this set measure the stability
+of a community at short and long time scales.  In the short term, the
+communityâs response is measured by maximal amplification, reactivity and
+initial resilience (i.e.  initial rate of return to equilibrium).  In the long
+term, stability can be measured as asymptotic resilience and intrinsic
+stochastic invariability.  Figueiredo et al. (2025) <doi:10.32942/X2M053>.")
+    (license license:gpl3)))
+
 (define-public r-estadistica
   (package
     (name "r-estadistica")
@@ -9398,6 +9435,47 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
 <doi:10.1016/j.socnet.2023.07.001>.")
     (license license:gpl2+)))
 
+(define-public r-ergm-sign
+  (package
+    (name "r-ergm-sign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ergm.sign" version))
+       (sha256
+        (base32 "1c929k499cry30gr2890b1nbqgrq0b9ddf02xay0fl95d429pa48"))))
+    (properties `((upstream-name . "ergm.sign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tergm
+                             r-statnet-common
+                             r-rdpack
+                             r-purrr
+                             r-network
+                             r-magrittr
+                             r-intergraph
+                             r-igraph
+                             r-graphlayouts
+                             r-ergm-multi
+                             r-ergm
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ergm.sign")
+    (synopsis "Exponential-Family Models for Signed Networks")
+    (description
+     "Extends the ergm.multi packages from the Statnet suite to fit (temporal)
+exponential-family random graph models for signed networks.  The framework
+models positive and negative ties as interdependent, which allows estimation and
+testing of structural balance theory.  The package also includes options for
+descriptive summaries, visualization, and simulation of signed networks.  See
+Krivitsky, Koehly, and Marcum (2020) <doi:10.1007/s11336-020-09720-7> and Fritz,
+C., Mehrl, M., Thurner, P. W., & Kauermann, G. (2025) <doi:10.1017/pan.2024.21>.")
+    (license license:expat)))
+
 (define-public r-ergm-rank
   (package
     (name "r-ergm-rank")
@@ -10441,13 +10519,13 @@ discontinuity designs.  For reference, see Fitzgerald (2025)
 (define-public r-eqrn
   (package
     (name "r-eqrn")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EQRN" version))
        (sha256
-        (base32 "1bacd2yrl3k2nmd9ld23v3m1ik8a1l2k10p0wf1ys5jrcvg6mmfx"))))
+        (base32 "107gk2zdw2cyv57iakqmj57zwz929jxbx2vnj8sim1hpbwdsbp2v"))))
     (properties `((upstream-name . "EQRN")))
     (build-system r-build-system)
     (arguments
@@ -15866,13 +15944,13 @@ descriptions of the functions implementing these algorithms.")
 (define-public r-emld
   (package
     (name "r-emld")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emld" version))
        (sha256
-        (base32 "0cvnfvzskvpcqzs6fwrpjcqrc6yrfciliy9jj0c9h4iyag0g0b9b"))))
+        (base32 "1xhryx1hfrf8fw2590y3ins69nwjfpb07n41m71xaj20ymy6daln"))))
     (properties `((upstream-name . "emld")))
     (build-system r-build-system)
     (arguments
@@ -23460,6 +23538,32 @@ install and load multiple @code{EconDataverse} packages in a single step.  Learn
 more about the @code{EconDataverse} at <https://www.econdataverse.org>.")
     (license license:expat)))
 
+(define-public r-econdatasets
+  (package
+    (name "r-econdatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "econdatasets" version))
+       (sha256
+        (base32 "1m2svmyhax1h20lfkjmjbdf6am89xd5c62mnl81920ys7y6b1djk"))))
+    (properties `((upstream-name . "econdatasets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2 r-cli r-arrow))
+    (home-page "https://tidy-intelligence.github.io/r-econdatasets/")
+    (synopsis "Easily Download 'EconDataverse' Datasets")
+    (description
+     "The @code{EconDataverse} is a universe of open-source packages to work
+seamlessly with economic data.  This package is designed to make it easy to
+download selected datasets that are preprocessed by @code{EconDataverse}
+packages and publicly hosted on Hugging Face'.  Learn more about the
+@code{EconDataverse} at <https://www.econdataverse.org>.")
+    (license license:expat)))
+
 (define-public r-econcausal
   (package
     (name "r-econcausal")
@@ -24058,13 +24162,13 @@ Continuous Tree Cover data (Sexton et al., 2013)
 (define-public r-ecocbo
   (package
     (name "r-ecocbo")
-    (version "0.13.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecocbo" version))
        (sha256
-        (base32 "09cwy75cbkahysy93c4llzf41bdgs8vbn3v2sqnrlf75bsqb96qx"))))
+        (base32 "0jg82z7z382mjkj9rpp1d8hw3i507b677mhxg0s09i8mssklxsi0"))))
     (properties `((upstream-name . "ecocbo")))
     (build-system r-build-system)
     (arguments
@@ -24073,8 +24177,8 @@ Continuous Tree Cover data (Sexton et al., 2013)
     (propagated-inputs (list r-vegan
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-ssp
-                             r-sampling
                              r-rlang
                              r-plotly
                              r-parallelly

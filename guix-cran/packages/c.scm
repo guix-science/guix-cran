@@ -33069,13 +33069,13 @@ Bagnouls-Gaussen.")
 (define-public r-climatrends
   (package
     (name "r-climatrends")
-    (version "0.5")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climatrends" version))
        (sha256
-        (base32 "0b2afsff0yl2rcvff5mi6zz5xls9k9hzpay041mv11wc7ii8bw27"))))
+        (base32 "0cgrd8l3ww3l29xra2y6cys94rmnys6bbks175hls722hryd73lv"))))
     (properties `((upstream-name . "climatrends")))
     (build-system r-build-system)
     (arguments

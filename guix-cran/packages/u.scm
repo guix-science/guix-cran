@@ -243,13 +243,13 @@ Schneider (2017) <http://hdl.handle.net/21.11130/00-1735-0000-002E-E306-0>.")
 (define-public r-utility
   (package
     (name "r-utility")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utility" version))
        (sha256
-        (base32 "0785pyapq03kyk9lwxyqvs2fdagay1dg71fjqikr6hidbid5fqr3"))))
+        (base32 "05l6mxzp5irvdgy6djwj32vijflqv237ivwz3paqch4k3c803hiv"))))
     (properties `((upstream-name . "utility")))
     (build-system r-build-system)
     (arguments
