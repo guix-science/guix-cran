@@ -12579,13 +12579,13 @@ Hosszejni and Kastner (2021) <doi:10.18637/jss.v100.i12> and Kastner (2016)
 (define-public r-stochtree
   (package
     (name "r-stochtree")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochtree" version))
        (sha256
-        (base32 "1gjyp842w1gg9aqin9pslv43g2r6ldfd5fvrgxhz9y0rvvfv9spn"))))
+        (base32 "0473dgjjrmshl3prfgsq1zw46mlvwf100pha8yxzwva4a5gmfsyf"))))
     (properties `((upstream-name . "stochtree")))
     (build-system r-build-system)
     (arguments

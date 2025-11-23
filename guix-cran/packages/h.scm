@@ -2078,13 +2078,13 @@ Sciences Program/Public Health Program Grant (NNX09AV81G).")
 (define-public r-hurreconr
   (package
     (name "r-hurreconr")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HurreconR" version))
        (sha256
-        (base32 "1grdhvdkvp1s9x9mwpy4f38ayp5zv7mkiwz1pvjm4zlgjpzzq4l4"))))
+        (base32 "0cxadvfyzw77l2diap32iwzghahclfz9bw9kg956v8hpyhi30f3m"))))
     (properties `((upstream-name . "HurreconR")))
     (build-system r-build-system)
     (arguments

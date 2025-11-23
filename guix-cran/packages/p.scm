@@ -7653,6 +7653,34 @@ et.  al. (2015) <doi:10.1093/nar/gkv007>), and machine learning-based modeling
 (Kuhn (2008) <doi:10.18637/jss.v028.i05>).")
     (license license:lgpl2.1+)))
 
+(define-public r-prometheetools
+  (package
+    (name "r-prometheetools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PrometheeTools" version))
+       (sha256
+        (base32 "09hrpybagl58vm22bhvpwb07s542hi4j15mqwwwyhi3dw0sn9xfy"))))
+    (properties `((upstream-name . "PrometheeTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/ifelipebj/PrometheeTools")
+    (synopsis "PROMETHEE and GLNF for Ranking and Sorting Problems")
+    (description
+     "PROMETHEE (Preference Ranking Organisation METHod for Enrichment of Evaluations)
+based method assesses alternatives to obtain partial and complete rankings.  The
+package also provides the GLNF (Global Local Net Flow) sorting algorithm to
+classify alternatives into ordered categories, as well as an index function to
+measure the classification quality.  Barrera, F., Segura, M., & Maroto, C.
+(2023) <doi:10.1111/itor.13288>.  Brans, J.P.; De Smet, Y., (2016)
+<doi:10.1007/978-1-4939-3094-4_6>.")
+    (license license:gpl3+)))
+
 (define-public r-promethee123
   (package
     (name "r-promethee123")
@@ -24257,13 +24285,13 @@ implemented in nlminb.")
 (define-public r-plnr
   (package
     (name "r-plnr")
-    (version "2022.11.23")
+    (version "2025.11.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plnr" version))
        (sha256
-        (base32 "1qi24zpvclamxxfppgll7rcmq7fysxf8chk6wlkwkzmjl5c3cs4n"))))
+        (base32 "1rnf6a9ihh37j1wrgbkdam53yp5f7bcri7lkd27nby3ccf6v4lpz"))))
     (properties `((upstream-name . "plnr")))
     (build-system r-build-system)
     (arguments
@@ -24271,25 +24299,29 @@ implemented in nlminb.")
       #:tests? #f))
     (propagated-inputs (list r-uuid
                              r-usethis
+                             r-tidyr
                              r-r6
                              r-purrr
+                             r-pbmcapply
                              r-glue
                              r-fs
                              r-foreach
                              r-digest
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://www.csids.no/plnr/")
-    (synopsis "System for Planing Analyses")
+    (home-page "https://www.rwhite.no/plnr/")
+    (synopsis "Framework for Planning and Executing Analyses")
     (description
-     "This package provides a system to plan analyses within the mental model where
-you have one (or more) datasets and want to run either A) the same function
-multiple times with different arguments, or B) multiple functions.  This is
-appropriate when you have multiple strata (e.g. locations, age groups) that you
-want to apply the same function to, or you have multiple variables (e.g.
-exposures) that you want to apply the same statistical method to, or when you
-are creating the output for a report and you need multiple different tables or
-graphs.")
+     "This package provides a comprehensive framework for planning and executing
+analyses in R. It provides a structured approach to running the same function
+multiple times with different arguments, executing multiple functions on the
+same datasets, and creating systematic analyses across multiple strata or
+variables.  The framework is particularly useful for applying the same analysis
+across multiple strata (e.g., locations, age groups), running statistical
+methods on multiple variables (e.g., exposures, outcomes), generating multiple
+tables or graphs for reports, and creating systematic surveillance analyses.
+Key features include efficient data management, structured analysis planning,
+flexible execution options, built-in debugging tools, and hash-based caching.")
     (license license:expat)))
 
 (define-public r-plnmodels

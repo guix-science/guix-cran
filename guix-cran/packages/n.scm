@@ -14923,13 +14923,13 @@ that are far to big to fit into memory.")
 (define-public r-neonsoilflux
   (package
     (name "r-neonsoilflux")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonSoilFlux" version))
        (sha256
-        (base32 "1skf32fffd5mwi48ishd168m5ijh5b5k39xv3ncbwmrbhib81q25"))))
+        (base32 "17kiv6dxyncvgk6a6nlwmmhw9539yy5vwsij1l7al7nkqraxvmxd"))))
     (properties `((upstream-name . "neonSoilFlux")))
     (build-system r-build-system)
     (arguments
@@ -14939,6 +14939,7 @@ that are far to big to fit into memory.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-purrr
                              r-neonutilities
                              r-lubridate

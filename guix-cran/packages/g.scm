@@ -13136,13 +13136,13 @@ by Bayes rule.")
 (define-public r-gmmat
   (package
     (name "r-gmmat")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GMMAT" version))
        (sha256
-        (base32 "151bc1mn69kmswkn6i5czmadsnymkw4yvgph8s7z3i6xc66r8s5y"))))
+        (base32 "01cr73945l7lp1683a5vh8rqwxbkypz1fz6w9pq6lqnlx2k4bagb"))))
     (properties `((upstream-name . "GMMAT")))
     (build-system r-build-system)
     (arguments
@@ -27416,13 +27416,13 @@ performing high dimensional Bayesian variable selection.")
 (define-public r-geometa
   (package
     (name "r-geometa")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geometa" version))
        (sha256
-        (base32 "19c6j1pjzrhrymn4y95hkmyj6y9gwkyp108smh961h4kkb7n5c8i"))))
+        (base32 "1cs1420h763ajx79c85hwr6kcqy0g6dlfz5yff3xjx5qbzzs9p4b"))))
     (properties `((upstream-name . "geometa")))
     (build-system r-build-system)
     (arguments
@@ -32449,20 +32449,19 @@ implementation based fully in R.")
 (define-public r-geelite
   (package
     (name "r-geelite")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeLite" version))
        (sha256
-        (base32 "06jcvvvzk2m4pzxsnsf658qaqmdaqavpvfnlzj07yh7b77iqgxrm"))))
+        (base32 "0rq919mxbahy5pzniyi7afnrkyq8vbilxvadipqwi6vlckzkzmnx"))))
     (properties `((upstream-name . "geeLite")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyrgee
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sf
                              r-rstudioapi
@@ -32481,6 +32480,7 @@ implementation based fully in R.")
                              r-h3jsr
                              r-googledrive
                              r-geojsonio
+                             r-gargle
                              r-dplyr
                              r-data-table
                              r-crayon

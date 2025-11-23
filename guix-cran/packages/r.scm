@@ -2183,13 +2183,13 @@ you use.")
 (define-public r-rupturesrcpp
   (package
     (name "r-rupturesrcpp")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rupturesRcpp" version))
        (sha256
-        (base32 "044rbc4xp6scglyzhhnb6x0f5l6xnflf14vfgjax9zn36gbs4z1v"))))
+        (base32 "1p2raj2nacqnbz8xjg86rsqq7p3nzy8416svr4z9cvg0vrfpsjfi"))))
     (properties `((upstream-name . "rupturesRcpp")))
     (build-system r-build-system)
     (arguments
@@ -2200,7 +2200,7 @@ you use.")
     (synopsis "Object-Oriented Interface for Offline Change-Point Detection")
     (description
      "This package provides a collection of efficient implementations of popular
-offline change-point detection algorithm, featuring a consistent,
+offline change-point detection algorithms, featuring a consistent,
 object-oriented interface for practical use.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
@@ -35102,13 +35102,13 @@ Also retrieve and process result sets as either a ragged or flattened tibble'.")
 (define-public r-reporter
   (package
     (name "r-reporter")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reporter" version))
        (sha256
-        (base32 "15b0by9m0yshjq9ajwwnlbir49d7h7s7f8d4npw942l69i27r7aa"))))
+        (base32 "07w2hv910p57j458d3zckqh16c31gcpn9062pdkj42fjayk69zqj"))))
     (properties `((upstream-name . "reporter")))
     (build-system r-build-system)
     (arguments
@@ -40288,13 +40288,13 @@ obtain updated taxonomic details, and explore the dataset.")
 (define-public r-redatamx
   (package
     (name "r-redatamx")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatamx" version))
        (sha256
-        (base32 "07r1f0b371q7nfw7w87a345bp73yq4546z774gmxagxhb5cb6ghs"))))
+        (base32 "0mzr25rr5cjlbfq2ix5n3i34b5aq5rxg81nvhfd30ny048mli85v"))))
     (properties `((upstream-name . "redatamx")))
     (build-system r-build-system)
     (arguments

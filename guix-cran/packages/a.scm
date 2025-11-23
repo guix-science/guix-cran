@@ -2526,45 +2526,6 @@ and custom cost function.  A mix inspired by the common tricks on Deep Learning
 and Particle Swarm Optimization.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-automfa
-  (package
-    (name "r-automfa")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autoMFA" version))
-       (sha256
-        (base32 "1sbcl38cq7y7hln1qffk5s71xgg9hs7dlwyvynqf96z2z2421pw4"))))
-    (properties `((upstream-name . "autoMFA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-usethis
-                             r-rfast
-                             r-rdpack
-                             r-pracma
-                             r-matrix
-                             r-mass
-                             r-expm
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=autoMFA")
-    (synopsis "Algorithms for Automatically Fitting MFA Models")
-    (description
-     "This package provides methods for fitting the Mixture of Factor Analyzers (MFA)
-model automatically.  The MFA model is a mixture model where each sub-population
-is assumed to follow the Factor Analysis model.  The Factor Analysis (FA) model
-is a latent variable model which assumes that observations are normally
-distributed, but imposes constraints on their covariance matrix.  The MFA model
-contains two hyperparameters; g (the number of components in the mixture) and q
-(the number of factors in each component Factor Analysis model).  Usually, the
-Expectation-Maximisation algorithm would be used to fit the MFA model, but this
-requires g and q to be known.  This package treats g and q as unknowns and
-provides several methods which infer these values with as little input from the
-user as possible.")
-    (license license:gpl3+)))
-
 (define-public r-automatedtests
   (package
     (name "r-automatedtests")
@@ -5575,53 +5536,6 @@ demand (price sensitivity) function.  Uses elementary techniques based on
 ordinary differential equations.  Uses the package @code{deSolve} to effect the
 solution of these differential equations.")
     (license license:gpl2+)))
-
-(define-public r-assetcorr
-  (package
-    (name "r-assetcorr")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AssetCorr" version))
-       (sha256
-        (base32 "0r98li2lxhfap1hn6h0l78phpm9m1nlcqhwzpq0ahhw0b1rd4qkf"))))
-    (properties `((upstream-name . "AssetCorr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vinecopula
-                             r-rdpack
-                             r-qpdf
-                             r-numderiv
-                             r-mvtnorm
-                             r-mvquad
-                             r-knitr
-                             r-ggplot2
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AssetCorr")
-    (synopsis "Estimating Asset Correlations from Default Data")
-    (description
-     "This package provides functions for the estimation of intra- and inter-cohort
-correlations in the Vasicek credit portfolio model.  For intra-cohort
-correlations, the package covers the two method of moments estimators of Gordy
-(2000) <doi:10.1016/S0378-4266(99)00054-0>, the method of moments estimator of
-Lucas (1995) <https://jfi.pm-research.com/content/4/4/76> and a Binomial
-approximation extension of this approach.  Moreover, the maximum likelihood
-estimators of Gordy and Heitfield (2010)
-<http://elsa.berkeley.edu/~mcfadden/e242_f03/heitfield.pdf> and Duellmann and
-Gehde-Trapp (2004) <http://hdl.handle.net/10419/19729> are implemented.  For
-inter-cohort correlations, the method of moments estimator of Bluhm and Overbeck
-(2003) <doi:10.1007/978-3-642-59365-9_2>/Bams et al. (2016)
-<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2676595> is provided and
-the maximum likelihood estimators comprise the approaches of Gordy and Heitfield
-(2010)/Kalkbrener and Onwunta (2010) <ISBN: 978-1906348250> and Pfeuffer et al.
-(2020).  Bootstrap and Jackknife procedures for bias correction are included as
-well as the method of moments estimator of Frei and Wunsch (2018)
-<doi:10.21314/JCR.2017.231> for auto-correlated time series.")
-    (license license:gpl3)))
 
 (define-public r-assessor
   (package
@@ -23276,13 +23190,13 @@ complete introduction to the method.")
 (define-public r-admixr
   (package
     (name "r-admixr")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admixr" version))
        (sha256
-        (base32 "0wszpzs53cbnha13g2ldpq6z5ndw2v2xgrzadqkjm3hsp6akv4bl"))))
+        (base32 "0jdd1cp84634632f60jb9mrx1q79ci8yx5hqbrc0l1ypdspqj97s"))))
     (properties `((upstream-name . "admixr")))
     (build-system r-build-system)
     (arguments
@@ -23299,7 +23213,7 @@ complete introduction to the method.")
     (synopsis "An Interface for Running 'ADMIXTOOLS' Analyses")
     (description
      "An interface for performing all stages of ADMIXTOOLS analyses
-(<https://reich.hms.harvard.edu/software>) entirely from R. Wrapper functions
+(<https://github.com/dreichlab/admixtools>) entirely from R. Wrapper functions
 (D, f4, f3, etc.) completely automate the generation of intermediate
 configuration files, run ADMIXTOOLS programs on the command-line, and parse
 output files to extract values of interest.  This allows users to focus on the
@@ -24179,13 +24093,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-adfexplorer
   (package
     (name "r-adfexplorer")
-    (version "2.0.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adfExplorer" version))
        (sha256
-        (base32 "11pf89hwjjag26ng68hyj8p7bf9baz5n6axnscpl2j79mlwks6iy"))))
+        (base32 "0q9qn5qbak62sibkff62m0gai2dlzl475189a4fwj2ag787id4xv"))))
     (properties `((upstream-name . "adfExplorer")))
     (build-system r-build-system)
     (arguments

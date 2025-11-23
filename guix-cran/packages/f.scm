@@ -6028,19 +6028,20 @@ correlated right-censored time-to-event data.  See Beyene and Chen (2024)
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")
-    (version "3.7.1")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frailtypack" version))
        (sha256
-        (base32 "1wlfazlnj2myxfi0bfbj1qalpi57fvqz01pf0mdsl60644mlgjff"))))
+        (base32 "1g72wjrkq7n7rfl4pr0w3r24my7cj8w460i2mydrf0m0r5r8g39r"))))
     (properties `((upstream-name . "frailtypack")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-tidyr
+                             r-survival
                              r-survc1
                              r-statmod
                              r-shiny
@@ -6048,6 +6049,8 @@ correlated right-censored time-to-event data.  See Beyene and Chen (2024)
                              r-nlme
                              r-matrixcalc
                              r-mass
+                             r-marqlevalg
+                             r-dplyr
                              r-doby
                              r-boot))
     (native-inputs (list r-knitr gfortran))
@@ -6097,8 +6100,12 @@ Gamma-frailty-based designs: Shared Frailty Models, Nested Frailty Models, Joint
 Frailty Models, and General Joint Frailty Models.  Each design includes two
 primary functions: a power function, which computes power given a specified
 sample size; and a sample size function, which computes the required sample size
-to achieve a specified power.  Moreover, the package can be used with its shiny
-application, in a local mode or by following the link below.")
+to achieve a specified power.  16) Weibull Illness-Death model with or without
+shared frailty between transitions.  Left-truncated and right-censored data are
+allowed.  17) Weibull Competing risks model with or without shared frailty
+between the transitions.  Left-truncated and right-censored data are allowed.
+Moreover, the package can be used with its shiny application, in a local mode or
+by following the link below.")
     (license license:gpl2+)))
 
 (define-public r-frailtymmpen
@@ -24321,13 +24328,13 @@ written in C++ using Armadillo linear algebra library.")
 (define-public r-fastei
   (package
     (name "r-fastei")
-    (version "0.0.0.10")
+    (version "0.0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastei" version))
        (sha256
-        (base32 "1ypd3vczrvzhc5jdikppvnsxiydys7s5dxmp7j9rmjn1139kc4w0"))))
+        (base32 "1lmil3brd01vnxfk7n76fi65xrbzv54jn7l9lipi2knjvr5bkb9c"))))
     (properties `((upstream-name . "fastei")))
     (build-system r-build-system)
     (arguments

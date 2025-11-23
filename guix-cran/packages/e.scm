@@ -3831,13 +3831,13 @@ ISBN:978-0132892314).")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.6.5")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "0xvkn7vyy8swd7nbihm6wahfsckciyxyaml2qasdg4fvyyip98r4"))))
+        (base32 "0cmh0d9jb98d14a5vszhbln5bps88zmcrqki4wk937qi7l43ffvf"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -11002,13 +11002,13 @@ function call.")
 (define-public r-epoch
   (package
     (name "r-epoch")
-    (version "1.0.3")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Epoch" version))
        (sha256
-        (base32 "19r20b5yj7cv48iikwxfgns89iciyxdaja0gakcjp5nc7533z904"))))
+        (base32 "0ff74ww2nnadabdrap3s1swj2c2k5a9yskrz27mc3v8x8136d4f5"))))
     (properties `((upstream-name . "Epoch")))
     (build-system r-build-system)
     (arguments

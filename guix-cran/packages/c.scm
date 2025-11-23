@@ -17028,13 +17028,13 @@ non-regular canvas.")
 (define-public r-contoso
   (package
     (name "r-contoso")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contoso" version))
        (sha256
-        (base32 "13xzfd8avs1dwyghrrnx0j1rv1wyw91fkzzvgv73x8md65vbxd6b"))))
+        (base32 "1j2nv6dqpj0rprabmrmw1cj9fm7pk957hc3v06cng3b6jv27ih6k"))))
     (properties `((upstream-name . "contoso")))
     (build-system r-build-system)
     (arguments
@@ -22718,13 +22718,13 @@ packages, particularly vegan'.")
 (define-public r-command
   (package
     (name "r-command")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "command" version))
        (sha256
-        (base32 "0xs3lx89ll7s31039l219jqxgbz3vp0md5fy20a3lg4kxv8dgamr"))))
+        (base32 "1k0axq6y6lxa9qn2kg7l54g17pls6y1absasa2p7m8kalcil6lcc"))))
     (properties `((upstream-name . "command")))
     (build-system r-build-system)
     (arguments
@@ -22734,10 +22734,10 @@ packages, particularly vegan'.")
     (home-page "https://bayesiandemography.github.io/command/")
     (synopsis "Process Command Line Arguments")
     (description
-     "Process command line arguments, as part of a data analysis pipeline.  The
-pipeline is controlled by a Makefile or shell script.  Functions to construct
-Makefiles and shell scripts are included in a the package.  The aim is a
-pipeline that is modular, transparent, and reliable.")
+     "Process command line arguments, as part of a data analysis workflow.  command
+makes it easier to construct a workflow consisting of lots of small,
+self-contained scripts, all run from a Makefile or shell script.  The aim is a
+workflow that is modular, transparent, and reliable.")
     (license license:expat)))
 
 (define-public r-commafree
@@ -24493,13 +24493,13 @@ coloc'.")
 (define-public r-colocboost
   (package
     (name "r-colocboost")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colocboost" version))
        (sha256
-        (base32 "1lcax4p23zkdl3p052b45py6q4scqzq5irkhzm7dkdy35nansimm"))))
+        (base32 "1lmiws1l18nwjc4zzw3fafd3ybhsqci0b9sqn3wjjb2kf9cnvxw8"))))
     (properties `((upstream-name . "colocboost")))
     (build-system r-build-system)
     (arguments
@@ -27910,13 +27910,13 @@ information from the Chinese ID number.")
 (define-public r-cnd
   (package
     (name "r-cnd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnd" version))
        (sha256
-        (base32 "0f8sm06alrjc9v9va6rq1y4zahy8ljaj5l3x47844yaqxm12biwq"))))
+        (base32 "1bd7yiki8hnfryqg8lrbyz0nk4gzlyk7c4vsa9czxvhj5g55x9dr"))))
     (properties `((upstream-name . "cnd")))
     (build-system r-build-system)
     (arguments
@@ -37499,13 +37499,13 @@ from (paleo)environmental/ecological research.")
 (define-public r-chronochrt
   (package
     (name "r-chronochrt")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chronochrt" version))
        (sha256
-        (base32 "1qk380jqbddin0kxaf7dgzh658vikchx5snza1bgqbn11xx662wc"))))
+        (base32 "18jgqpdm5f73yimfjqb4gsp5bdfq5ikkmb269bgxrcw0dvprlj76"))))
     (properties `((upstream-name . "chronochrt")))
     (build-system r-build-system)
     (arguments
@@ -37521,7 +37521,7 @@ from (paleo)environmental/ecological research.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/archaeothommy/chronochrt")
+    (home-page "https://github.com/archaeothommy/chronochrt")
     (synopsis "Creating Chronological Charts")
     (description
      "Easy way to draw chronological charts from tables, aiming to include an

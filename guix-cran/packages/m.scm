@@ -12173,19 +12173,19 @@ steps executed to arrive at observable response categories (Batchelder & Riefer,
 (define-public r-mpspline2
   (package
     (name "r-mpspline2")
-    (version "0.1.6")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpspline2" version))
        (sha256
-        (base32 "1zh53lxsy895lljxlyhas5xb9ln5q772h26yil7ydq6zlh4w8vr0"))))
+        (base32 "01x2cc2qg2gn66y30wjnlcrp838wxjhbxxh72mbs8d50vbx9d1zh"))))
     (properties `((upstream-name . "mpspline2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=mpspline2")
+    (home-page "https://github.com/obrl-soil/mpspline2")
     (synopsis "Mass-Preserving Spline Functions for Soil Data")
     (description
      "This package provides a low-dependency implementation of @code{GSIF::mpspline()}
@@ -26924,13 +26924,13 @@ Association, <doi: 10.1080/01621459.2019.1635485>.")
 (define-public r-mirtest
   (package
     (name "r-mirtest")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miRtest" version))
        (sha256
-        (base32 "1qgyldf3yhny8dmix6drisrrn64s5h58yvmk5pch6irdddq3i053"))))
+        (base32 "0v5p5aiwq7zvg131v09il9lnfhydi3abqda8phq1caiv61frsxfw"))))
     (properties `((upstream-name . "miRtest")))
     (build-system r-build-system)
     (arguments
@@ -39258,21 +39258,21 @@ from existing R packages, and some data donations.")
 (define-public r-medicalcoder
   (package
     (name "r-medicalcoder")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medicalcoder" version))
        (sha256
-        (base32 "1gaiyhljlba77b72dqk7fy00r7v7vk4i7wmks4aqan1zk5iblllz"))))
+        (base32 "0ri2a3li1ld5fr6ww7vi5dm88xmzfwrdyagf7gqpylzb3bl8lwz2"))))
     (properties `((upstream-name . "medicalcoder")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=medicalcoder")
-    (synopsis "Tools for Working with ICD Codes and Comorbidity Algorithms")
+    (home-page "http://www.peteredewitt.com/medicalcoder/")
+    (synopsis "Package for Working with ICD Codes and Comorbidity Algorithms")
     (description
      "This package provides tools for working with medical coding schemas such as the
 International Classification of Diseases (ICD).  Includes functions for
@@ -48192,13 +48192,13 @@ Golding (2016) <doi:10.1093/bioinformatics/btv541> for more details.")
 (define-public r-markmyassignment
   (package
     (name "r-markmyassignment")
-    (version "0.8.8")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markmyassignment" version))
        (sha256
-        (base32 "07jhcw662ihx4ykmjsbrs6spvq0b2kdwd6slqzky3zk47dkrsv1r"))))
+        (base32 "0j0dsjll59pfjfxk119zmwfgdqi58ax5lflcy8bjv0xx91lqazsh"))))
     (properties `((upstream-name . "markmyassignment")))
     (build-system r-build-system)
     (arguments
