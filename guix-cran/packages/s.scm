@@ -34535,13 +34535,13 @@ bibliographies in PDF', Word', Rmarkdown', and @code{BibTeX} formats.")
 (define-public r-softbart
   (package
     (name "r-softbart")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoftBart" version))
        (sha256
-        (base32 "046qxa63k8w1qnpyb636fl6pjnd78aydg6cv2lxhpdd0c9m3v65b"))))
+        (base32 "1667r4mf9gzhmxp0jmjnc4w8csa28a2qggxz0hqy756fpykvgr3p"))))
     (properties `((upstream-name . "SoftBart")))
     (build-system r-build-system)
     (arguments

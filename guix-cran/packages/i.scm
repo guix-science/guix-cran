@@ -21066,13 +21066,13 @@ management.")
 (define-public r-ibdsim2
   (package
     (name "r-ibdsim2")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibdsim2" version))
        (sha256
-        (base32 "1zywhk62z462ngk3cakp33fsg1zk98r9axzqk1av0k64iwg458i1"))))
+        (base32 "12zpwpm6y5idm197akhgj3ldchrx958xwdrph6zf9hdjcppy7pmm"))))
     (properties `((upstream-name . "ibdsim2")))
     (build-system r-build-system)
     (arguments

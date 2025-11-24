@@ -14760,13 +14760,13 @@ animals.")
 (define-public r-energyr
   (package
     (name "r-energyr")
-    (version "0.1.3")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "energyr" version))
        (sha256
-        (base32 "0g4zsnpbsgyvkcvsrpwwi17zbkj51zavsps53lsny4wrlwr3fg4v"))))
+        (base32 "0cx3lmfzj6awfvn5q76j5cb4kdbqwqvwaivvawwdbxnzf4pc99hi"))))
     (properties `((upstream-name . "energyr")))
     (build-system r-build-system)
     (arguments
@@ -14780,7 +14780,7 @@ animals.")
 including electric company financial data, natural gas company financial data,
 hydropower plant data, liquified natural gas plant data, oil company financial
 data natural gas company financial data, and natural gas storage field data.")
-    (license (license:fsdg-compatible "Apache License"))))
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-energyonlinecpm
   (package

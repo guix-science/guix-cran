@@ -8119,13 +8119,13 @@ applications.")
 (define-public r-argo
   (package
     (name "r-argo")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "argo" version))
        (sha256
-        (base32 "17ys6v2n84fp38zkc43whfgbc8qq1qx41q14899qgglz7xv4axzn"))))
+        (base32 "0r4nax5l15l6vvxdwrdmm5dbb99fyn09b0xgb3s9vvviyn8dbbc1"))))
     (properties `((upstream-name . "argo")))
     (build-system r-build-system)
     (arguments

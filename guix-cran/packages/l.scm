@@ -16572,6 +16572,40 @@ shape operator of the data manifold.  This approach aims to improve
 classification performance, particularly in datasets with limited samples.")
     (license license:expat)))
 
+(define-public r-lcc
+  (package
+    (name "r-lcc")
+    (version "3.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lcc" version))
+       (sha256
+        (base32 "14yv8gkczadj291l8hijqcdwzp3my4wgpzb4f6w58p9iknp0l3mg"))))
+    (properties `((upstream-name . "lcc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlme
+                             r-hnp
+                             r-ggplot2
+                             r-foreach
+                             r-dosnow
+                             r-dorng))
+    (home-page "https://cran.r-project.org/package=lcc")
+    (synopsis
+     "Advanced Analysis of Longitudinal Data Using the Concordance Correlation Coefficient")
+    (description
+     "This package provides methods for assessing agreement between repeated
+measurements obtained by two or more methods using the longitudinal concordance
+correlation coefficient (LCC).  Polynomial mixed-effects models (via nlme')
+describe how concordance, Pearson correlation and accuracy evolve over time.
+Functions are provided for model fitting, diagnostic plots, extraction of
+summaries, and non-parametric bootstrap confidence intervals (including parallel
+computation), following Oliveira et al. (2018) <doi:10.1007/s13253-018-0321-1>.")
+    (license license:gpl2+)))
+
 (define-public r-lcars
   (package
     (name "r-lcars")

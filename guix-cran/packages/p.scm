@@ -3968,6 +3968,31 @@ dimension reduction update procedure using the principal least squares support
 vector machine (Artemiou et al. (2021) <doi:10.1016/j.patcog.2020.107768>).")
     (license license:gpl2)))
 
+(define-public r-psvd
+  (package
+    (name "r-psvd")
+    (version "1.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psvd" version))
+       (sha256
+        (base32 "1z16jzhfvx974ad8igl7c9w0zrp2zdjpkbz6kblf06zi368n3ic6"))))
+    (properties `((upstream-name . "psvd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=psvd")
+    (synopsis "Eigendecomposition, Singular-Values and the Power Method")
+    (description
+     "For a data matrix with m rows and n columns (m>=n), the power method is used to
+compute, simultaneously, the eigendecomposition of a square symmetric matrix.
+This result is used to obtain the singular value decomposition (SVD) and the
+principal component analysis (PCA) results.  Compared to the classical SVD
+method, the first r singular values can be computed.")
+    (license license:gpl2+)))
+
 (define-public r-pstrata
   (package
     (name "r-pstrata")
@@ -4237,13 +4262,13 @@ proposed by Wang, Tolos, and Wang (2010) <DOI:10.1002/cjs.10068>.")
 (define-public r-pss-health
   (package
     (name "r-pss-health")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSS.Health" version))
        (sha256
-        (base32 "062yav2kwjq0jglfjvhw7wca3405wij8v88dq0f8l1nlgkm2qz9z"))))
+        (base32 "0xb44baprriz5b7xhxi7mwa0drj8gdi67iczvii5wlwxvqc9frwy"))))
     (properties `((upstream-name . "PSS.Health")))
     (build-system r-build-system)
     (arguments
@@ -9641,19 +9666,19 @@ measurable set S, and the randomness is taken over the choices F makes.")
 (define-public r-privacyr
   (package
     (name "r-privacyr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "privacyR" version))
        (sha256
-        (base32 "1gncrj91y5ccfdgpjdqv17ywd4cfhwxwcj2y4nnrx1hgr03l4a8w"))))
+        (base32 "0r8s364achp3lbmynlnsivkrziydlmd8q1z0182maqbbldqbsrjd"))))
     (properties `((upstream-name . "privacyR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lubridate))
+    (propagated-inputs (list r-lubridate r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=privacyR")
     (synopsis "Privacy-Preserving Data Anonymization")
@@ -36206,13 +36231,13 @@ ISBN:9780128244302).")
 (define-public r-pedsuite
   (package
     (name "r-pedsuite")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedsuite" version))
        (sha256
-        (base32 "0arydd5lmwsqp0g7akd7w0w5mc7bs4dap38bnap9qh0znf94kka2"))))
+        (base32 "1j7q0ag3gfklxr1rcdgrfi53pxy1cx9j4hpm30rlj3jmvr20s95d"))))
     (properties `((upstream-name . "pedsuite")))
     (build-system r-build-system)
     (arguments
@@ -36227,7 +36252,9 @@ ISBN:9780128244302).")
                              r-pedfamilias
                              r-pedbuildr
                              r-paramlink2
+                             r-norstr
                              r-ibdsim2
+                             r-ibdfindr
                              r-forrel
                              r-dvir))
     (native-inputs (list r-knitr))

@@ -16896,13 +16896,13 @@ variable values.")
 (define-public r-contrastable
   (package
     (name "r-contrastable")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contrastable" version))
        (sha256
-        (base32 "0m14p86rhim5lbs3fdx0hwpm87z2sjjf4a1h03cw33f68adqv773"))))
+        (base32 "1m72gl6ypmylz78vavr4wdyx40j1p6d84z8hf97n6g71yy34c18g"))))
     (properties `((upstream-name . "contrastable")))
     (build-system r-build-system)
     (arguments

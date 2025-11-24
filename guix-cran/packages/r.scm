@@ -2183,13 +2183,13 @@ you use.")
 (define-public r-rupturesrcpp
   (package
     (name "r-rupturesrcpp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rupturesRcpp" version))
        (sha256
-        (base32 "1p2raj2nacqnbz8xjg86rsqq7p3nzy8416svr4z9cvg0vrfpsjfi"))))
+        (base32 "0fg8iv389jjmjzdqvmmp7nrnk12hqxpyrvpf58svi506zlnp3866"))))
     (properties `((upstream-name . "rupturesRcpp")))
     (build-system r-build-system)
     (arguments
@@ -10294,33 +10294,33 @@ URL provides a link to a work in progress vignette.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "2.3-1")
+    (version "3.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "1pdpism0apnb6yfk7a2wfbdnvkhp8nw87lgk65986mjjqkhcgqlw"))))
+        (base32 "03wp4qxw46bf4apr8651x205a3s9ci86j97jkywcl9p92rpap3qd"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sandwich r-mice r-mass))
+    (propagated-inputs (list r-sandwich r-mice r-mass r-lme4))
     (home-page "https://cran.r-project.org/package=rqlm")
     (synopsis
-     "Modified Poisson and Least-Squares Regressions for Binary Outcome and Their Generalizations")
+     "Modified Poisson, Logistic and Least-Squares Regressions for Binary Outcome and Their Generalizations")
     (description
-     "Modified Poisson and least-squares regression analyses for binary outcomes of
-Zou (2004) <doi:10.1093/aje/kwh090> and Cheung (2007) <doi:10.1093/aje/kwm223>
-have been standard multivariate analysis methods to estimate risk ratio and risk
-difference in clinical and epidemiological studies.  This R package involves an
-easy-to-handle function to implement these analyses by simple commands.  Missing
-data analysis tools (multiple imputation) are also involved.  In addition,
-recent studies have shown the ordinary robust variance estimator possibly has
-serious bias under small or moderate sample size situations for these methods.
-This package also provides computational tools to calculate alternative accurate
-confidence intervals (Noma and Gosho (2024) <Forthcoming>).")
+     "Modified Poisson, logistic and least-squares regression analyses for binary
+outcomes of Zou (2004) <doi:10.1093/aje/kwh090>, Noma (2025)<Forthcoming>, and
+Cheung (2007) <doi:10.1093/aje/kwm223> have been standard multivariate analysis
+methods to estimate risk ratio and risk difference in clinical and
+epidemiological studies.  This R package involves an easy-to-handle function to
+implement these analyses by simple commands.  Missing data analysis tools
+(multiple imputation) are also involved.  In addition, recent studies have shown
+the ordinary robust variance estimator possibly has serious bias under small or
+moderate sample size situations for these methods.  This package also provides
+computational tools to calculate alternative accurate confidence intervals.")
     (license license:gpl3)))
 
 (define-public r-rqentangle
@@ -58636,13 +58636,13 @@ that enables advertisers to display advertising to web users (see
 (define-public r-r4goodpersonalfinances
   (package
     (name "r-r4goodpersonalfinances")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R4GoodPersonalFinances" version))
        (sha256
-        (base32 "1ms27kbi0b1nfk7hx01fgfjl0g1j093bnkhsm5sc2nnz6i9vl5n4"))))
+        (base32 "10jr1xydkyx8czkcdfpwji56vk4crvsvvdij86371113sd7lkl19"))))
     (properties `((upstream-name . "R4GoodPersonalFinances")))
     (build-system r-build-system)
     (arguments
@@ -58959,6 +58959,31 @@ available from the CRAN archives, see
      "This package uses either the @code{statconnDCOM} server (via the rcom package)
 or the RDCOMClient to communicate with MS-Word via the COM interface.")
     (license license:gpl2)))
+
+(define-public r-r2ucare
+  (package
+    (name "r-r2ucare")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "R2ucare" version))
+       (sha256
+        (base32 "0ixyw0vrr3rvxlc2nwavyr4i762wi4h6k15g00l0mzvrpwf5jvpw"))))
+    (properties `((upstream-name . "R2ucare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rmark))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/oliviergimenez/R2ucare")
+    (synopsis "Goodness-of-Fit Tests for Capture-Recapture Models")
+    (description
+     "This package performs goodness-of-fit tests for capture-recapture models as
+described by Gimenez et al. (2018) <doi:10.1111/2041-210X.13014>.  Also contains
+several functions to process capture-recapture data.")
+    (license license:gpl2+)))
 
 (define-public r-r2symbols
   (package

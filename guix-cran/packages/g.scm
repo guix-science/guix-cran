@@ -13695,13 +13695,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "0qi99vfmqsg1k8qnj451pfsxraqk2fqs2hmv865pqgd4479wgcjl"))))
+        (base32 "0ma9k04bahp214k9mk36hxhadj6cbs53bl9zxdk5sk6djjvq8hml"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments
@@ -21433,13 +21433,13 @@ zoomed inset map without having to create and embed a separate plot.")
 (define-public r-ggmapcn
   (package
     (name "r-ggmapcn")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmapcn" version))
        (sha256
-        (base32 "1q5154p7y4zqn071jdx3hl90l6r8ys4isp7s0g776mlcqa4gs3rk"))))
+        (base32 "0p5vxdbph0ggzf4zv3nppm2nmq438ajny2ya7cyq8zliwyymaxv9"))))
     (properties `((upstream-name . "ggmapcn")))
     (build-system r-build-system)
     (arguments
@@ -21455,12 +21455,12 @@ zoomed inset map without having to create and embed a separate plot.")
                              r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://rimagination.github.io/ggmapcn/")
-    (synopsis "Customizable China Map Visualizations")
+    (synopsis "Customizable China and Global Map Visualizations")
     (description
-     "This package provides a ggplot2 extension for visualizing Chinaâs map,
-offering customizable projections, boundary styles, and buffer zones for
-thematic maps.  Suitable for spatial data analysis and enhancing map
-visualization with flexible styling options.")
+     "This package provides a ggplot2 extension centered on map visualization of China
+and the globe.  Provides customizable projections, boundary styles, coordinate
+grids, scale bars, and buffer zones for thematic maps, suitable for spatial data
+analysis and cartographic visualization.")
     (license license:gpl3)))
 
 (define-public r-gglyph

@@ -2330,13 +2330,13 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
 (define-public r-unnest
   (package
     (name "r-unnest")
-    (version "0.0.7")
+    (version "0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unnest" version))
        (sha256
-        (base32 "0mi0lawmlwhbmlrpvfjab3m203lgwh21lpr1llpxd8g357kbkcak"))))
+        (base32 "1jwczrh1ff02nqmy1cj73jdl1li8g9ns6x464jjvki7c1afnjm05"))))
     (properties `((upstream-name . "unnest")))
     (build-system r-build-system)
     (arguments

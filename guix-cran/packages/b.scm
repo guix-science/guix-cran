@@ -5371,32 +5371,6 @@ visualize results are also provided.  Methodological details can be found in
 Guthrie & Franck (2024) <doi:10.1080/00031305.2024.2339266>.")
     (license license:expat)))
 
-(define-public r-brbvs
-  (package
-    (name "r-brbvs")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BRBVS" version))
-       (sha256
-        (base32 "0vhwwsdbslr6craaflvllvba7s1b1jzhjqpmmh70f7k0qi61x5qc"))))
-    (properties `((upstream-name . "BRBVS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-gjrm r-ggplot2 r-copent))
-    (home-page "https://cran.r-project.org/package=BRBVS")
-    (synopsis
-     "Variable Selection and Ranking in Copula Survival Models Affected by General Censoring Scheme")
-    (description
-     "This package performs variable selection and ranking based on several measures
-for the class of copula survival model(s) in high dimensional domain.  The
-package is based on the class of copula survival model(s) implemented in the
-GJRM package.")
-    (license license:gpl3+)))
-
 (define-public r-brazilmet
   (package
     (name "r-brazilmet")
@@ -25078,13 +25052,13 @@ ci_margin and ci_level]).")
 (define-public r-baymds
   (package
     (name "r-baymds")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayMDS" version))
        (sha256
-        (base32 "1l5srpaichn598a3a9pj7pwp35jvbwb65d37l9ngvdq3rja8xm0s"))))
+        (base32 "1kd19vb0q1mcsvqacb1w9xkn0wgrqlp4sw5ws03dmicp0897lhmi"))))
     (properties `((upstream-name . "bayMDS")))
     (build-system r-build-system)
     (arguments

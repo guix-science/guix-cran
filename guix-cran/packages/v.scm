@@ -5503,13 +5503,13 @@ Research.  International Livestock Research Institute.")
 (define-public r-vetr
   (package
     (name "r-vetr")
-    (version "0.2.18")
+    (version "0.2.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vetr" version))
        (sha256
-        (base32 "0ymbv6d1xvsnpvhn6pniiwxw9fjyxy8bahkwfh56rxqlv9qx3pi0"))))
+        (base32 "14dnbg2alx3h39fml85677qc7zcgmhbck5lyhjhbilp4pkrzblav"))))
     (properties `((upstream-name . "vetr")))
     (build-system r-build-system)
     (arguments

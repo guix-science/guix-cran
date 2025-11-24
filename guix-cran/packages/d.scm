@@ -3927,19 +3927,20 @@ to find similar songs.  More information:
 (define-public r-dspline
   (package
     (name "r-dspline")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dspline" version))
        (sha256
-        (base32 "0w9wlll36g3psj9ghjfi7339848v6bh1xq3c4371pzw3whycwk43"))))
+        (base32 "1sbxg5kg5vyalaikxx46gp3ify7sd9pjjh9ncq8i9idmjsnw0jf7"))))
     (properties `((upstream-name . "dspline")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-matrix))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/glmgen/dspline")
     (synopsis "Tools for Computations with Discrete Splines")
     (description
@@ -25642,47 +25643,6 @@ absolute error (MAE).  For method details see Choudhary, K. et al. (2023).
 <https://ssca.org.in/media/14_SA44052022_R3_SA_21032023_Girish_Jha_FINAL_Finally.pdf>.")
     (license license:gpl3)))
 
-(define-public r-decompdl
-  (package
-    (name "r-decompdl")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "decompDL" version))
-       (sha256
-        (base32 "11xbxv2j8m1w4lz933jvwy20wsazqiffnn0awgv7fz6q3ma5cqkh"))))
-    (properties `((upstream-name . "decompDL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vmdecomp
-                             r-tsutils
-                             r-tsdeeplearning
-                             r-tensorflow
-                             r-rlibeemd
-                             r-reticulate
-                             r-magrittr
-                             r-keras
-                             r-biocgenerics))
-    (home-page "https://cran.r-project.org/package=decompDL")
-    (synopsis
-     "Decomposition Based Deep Learning Models for Time Series Forecasting")
-    (description
-     "Hybrid model is the most promising forecasting method by combining decomposition
-and deep learning techniques to improve the accuracy of time series forecasting.
- Each decomposition technique decomposes a time series into a set of intrinsic
-mode functions (IMFs), and the obtained IMFs are modelled and forecasted
-separately using the deep learning models.  Finally, the forecasts of all IMFs
-are combined to provide an ensemble output for the time series.  The prediction
-ability of the developed models are calculated using international monthly price
-series of maize in terms of evaluation criteria like root mean squared error,
-mean absolute percentage error and, mean absolute error.  For method details see
-Choudhary, K. et al. (2023).
-<https://ssca.org.in/media/14_SA44052022_R3_SA_21032023_Girish_Jha_FINAL_Finally.pdf>.")
-    (license license:gpl3)))
-
 (define-public r-decoder
   (package
     (name "r-decoder")
@@ -34060,13 +34020,13 @@ used as a reactive filter of structured data.")
 (define-public r-d3po
   (package
     (name "r-d3po")
-    (version "0.5.5")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "d3po" version))
        (sha256
-        (base32 "1fyk0152x9zsbf7qm02wixrk9fldl0jlrg33fnbx06jjg1s431r7"))))
+        (base32 "1fv7ibrlsg660wxw9rmi06d6mshfv96j0phi79y5zj5bpf0ch1c2"))))
     (properties `((upstream-name . "d3po")))
     (build-system r-build-system)
     (arguments
