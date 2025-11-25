@@ -3501,20 +3501,19 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "2.5.4")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "0a4h77iyrx89f497w04y9armsxij7vkbwar29nbxhbs6h4f54drp"))))
+        (base32 "0aw45s7p820y6crqx064byvgzfbgxyw5ph6jhk2zp2p8xjlwywrk"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-lhs
+    (propagated-inputs (list r-lhs
                              r-glmnet
                              r-ggplot2
                              r-gamlss-dist
@@ -3523,20 +3522,23 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
                              r-dorng
                              r-doparallel
                              r-cluster))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SVEMnet")
     (synopsis
      "Self-Validated Ensemble Models with Lasso and Relaxed Elastic Net Regression")
     (description
-     "This package implements Self-Validated Ensemble Models (SVEM; Lemkus et al.
-(2021) <doi:10.1016/j.chemolab.2021.104439>) using elastic net regression via
-glmnet (Friedman et al. (2010) <doi:10.18637/jss.v033.i01>).  SVEM averages
-predictions from multiple models fitted to fractionally weighted bootstraps of
-the data, tuned with anti-correlated validation weights.  Supports Gaussian and
-binomial responses.  Also implements the randomized permutation whole-model test
-for SVEM with Gaussian responses (Karl (2024)
-<doi:10.1016/j.chemolab.2024.105122>).  Some parts of the package code were
-drafted with assistance from generative AI tools.")
+     "This package provides tools for fitting self-validated ensemble models (SVEM;
+Lemkus et al. (2021) <doi:10.1016/j.chemolab.2021.104439>) in small-sample
+design-of-experiments and related chemometric workflows, using elastic net and
+relaxed elastic net regression via glmnet (Friedman et al. (2010)
+<doi:10.18637/jss.v033.i01>).  Fractional random-weight bootstraps with
+anti-correlated validation copies are used to tune penalty paths by
+validation-weighted AIC/BIC. Supports Gaussian and binomial responses,
+deterministic expansion helpers for shared factor spaces, prediction with
+bootstrap uncertainty, and a random-search optimizer that respects
+mixture/simplex constraints and combines multiple responses via Derringer-Suich
+desirability functions.  Also includes a permutation-based whole-model test for
+Gaussian SVEM fits (Karl (2024) <doi:10.1016/j.chemolab.2024.105122>).  Some
+parts of the package code were drafted with assistance from generative AI tools.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-svelteplots
@@ -10905,13 +10907,13 @@ to create dyadic data sets.")
 (define-public r-stratpal
   (package
     (name "r-stratpal")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratPal" version))
        (sha256
-        (base32 "19g8sbj7rajnh24dzyrh5g8q8w4caq08l8an95ljrjh219nmb40c"))))
+        (base32 "1xi8w444qwkszq2cmhcb7l7hfr337ym98yzzxr46nxapcki08sab"))))
     (properties `((upstream-name . "StratPal")))
     (build-system r-build-system)
     (arguments
@@ -18708,48 +18710,6 @@ analysis of respondent-driven sampling data.  See Handcock, Gile and Mar (2014)
 Kim and Handcock (2021) <doi:10.1093/jssam/smz055>, and @code{McLaughlin}, et.
 al. (2023) <doi:10.1214/23-AOAS1807>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
-
-(define-public r-sspm
-  (package
-    (name "r-sspm")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sspm" version))
-       (sha256
-        (base32 "0gwv9883fyj4y8c6kv8fjhi2h3nc5nn0r95csan6xphbyrpv0brq"))))
-    (properties `((upstream-name . "sspm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-mgcv
-                             r-magrittr
-                             r-dplyr
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://pedersen-fisheries-lab.github.io/sspm/")
-    (synopsis
-     "Spatial Surplus Production Model Framework for Northern Shrimp Populations")
-    (description
-     "Implement a GAM-based (Generalized Additive Models) spatial surplus production
-model (spatial SPM), aimed at modeling northern shrimp population in Atlantic
-Canada but potentially to any stock in any location.  The package is opinionated
-in its implementation of SPMs as it internally makes the choice to use penalized
-spatial gams with time lags.  However, it also aims to provide options for the
-user to customize their model.  The methods are described in Pedersen et al.
-(2022,
-<https://www.dfo-mpo.gc.ca/csas-sccs/Publications/@code{ResDocs-DocRech/2022/2022_062-eng.html>}).")
-    (license license:expat)))
 
 (define-public r-ssplots
   (package
@@ -34674,32 +34634,6 @@ interaction effects under logistic regression and quadratic discriminant
 analysis.  We also provide an extension, S-SODA, for dealing with the variable
 selection problem for semi-parametric models with continuous responses.")
     (license license:gpl2)))
-
-(define-public r-sodar
-  (package
-    (name "r-sodar")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sodaR" version))
-       (sha256
-        (base32 "0zkljw344v9izwwcmcywaiq3qni6mfwvz5kx8m5iqn9q3n1l1636"))))
-    (properties `((upstream-name . "sodaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mime r-jsonlite r-httr r-data-table))
-    (home-page "https://github.com/JordanMPDS/sodaR")
-    (synopsis "Download or Upload 'Socrata' Data Sets")
-    (description
-     "This package provides easier interaction with Socrata open data portals
-<https://dev.socrata.com>.  Users can provide a Socrata data set resource URL,
-or a Socrata Open Data API (SODA) web query, or a Socrata \"human-friendly\" URL,
-returns an R data frame.  Converts dates to POSIX format and manages throttling
-by Socrata'.  Users can upload data to Socrata portals directly from R.")
-    (license license:expat)))
 
 (define-public r-socviz
   (package
@@ -51120,13 +51054,13 @@ interactively.")
 (define-public r-shinyoauth
   (package
     (name "r-shinyoauth")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyOAuth" version))
        (sha256
-        (base32 "15rkqqlwjhjzyy0ixyqf8c796b2v9qqf37q21ndikpqqf7cfpwyd"))))
+        (base32 "0a3k36d10r0nfks1vnr9psw0zllvbnwz195xrpimss5h6xrxqpc9"))))
     (properties `((upstream-name . "shinyOAuth")))
     (build-system r-build-system)
     (arguments

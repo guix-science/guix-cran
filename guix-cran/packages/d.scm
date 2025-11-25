@@ -2777,13 +2777,13 @@ Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
 (define-public r-dtreg
   (package
     (name "r-dtreg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtreg" version))
        (sha256
-        (base32 "0naikhkzm7j8njppd0218npppfr72g8xm6vj4vkrpdsnkhn3drh1"))))
+        (base32 "165i2qz64p3dzjpql1djaniv5dzacnzy9s1hjkfsnp1g0v2v585s"))))
     (properties `((upstream-name . "dtreg")))
     (build-system r-build-system)
     (arguments
@@ -2791,7 +2791,7 @@ Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
       #:tests? #f))
     (propagated-inputs (list r-stringr r-r6 r-jsonlite r-httr2))
     (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/TIBHannover/orkg/dtreg-r")
+    (home-page "https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-r")
     (synopsis
      "Interact with Data Type Registries and Create Machine-Readable Data")
     (description
@@ -7460,13 +7460,13 @@ dataset has been analyzed.")
 (define-public r-dpi
   (package
     (name "r-dpi")
-    (version "2025.10-1")
+    (version "2025.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPI" version))
        (sha256
-        (base32 "1man2c1qiqb5qmbxs3sx49504a3hrgpyb4lyfkrlkh2fxxllkkpn"))))
+        (base32 "0j8107a7zs33rxlf5c70kmf7yxh6v57bb62dxhqm2xmasfckd6zi"))))
     (properties `((upstream-name . "DPI")))
     (build-system r-build-system)
     (arguments
@@ -7482,7 +7482,7 @@ dataset has been analyzed.")
                              r-bnlearn))
     (home-page "https://psychbruce.github.io/DPI/")
     (synopsis
-     "The Directed Prediction Index for Causal Inference from Observational Data")
+     "The Directed Prediction Index for Causal Direction Inference from Observational Data")
     (description
      "The Directed Prediction Index ('DPI') is a quasi-causal inference (causal
 discovery) method for observational data designed to quantify the relative
@@ -7490,9 +7490,9 @@ endogeneity (relative dependence) of outcome (Y) versus predictor (X) variables
 in regression models.  By comparing the proportion of variance explained
 (R-squared) between the Y-as-outcome model and the X-as-outcome model while
 controlling for a sufficient number of possible confounders, it can suggest a
-plausible (admissible) direction of influence from a more exogenous variable (X)
-to a more endogenous variable (Y).  Methodological details are provided at
-<https://psychbruce.github.io/DPI/>.  This package also provides functions for
+plausible (admissible) direction of influence from a less endogenous variable
+(X) to a more endogenous variable (Y).  Methodological details are provided at
+<https://psychbruce.github.io/DPI/>.  This package also includes functions for
 data simulation and network analysis (correlation, partial correlation, and
 Bayesian networks).")
     (license license:gpl3)))
@@ -13497,13 +13497,13 @@ distance surface.  But the workhorse is distance_to.")
 (define-public r-distances
   (package
     (name "r-distances")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distances" version))
        (sha256
-        (base32 "0wnq54smpjqixwf532yyk6fzwl5c2r76gayp2g7fhz1fl60dz0cr"))))
+        (base32 "0j5sbjnb2ykqijxhz0qxkjwiv05v1ygixfiy37lkyxkslyy3yy4x"))))
     (properties `((upstream-name . "distances")))
     (build-system r-build-system)
     (arguments
@@ -27413,6 +27413,46 @@ standard deviation methods (Edelmann, et al. (2020) <doi:10.1214/19-AOS1935>)
 and distance correlation methods for survival endpoints (Edelmann, et al. (2021)
 <doi:10.1111/biom.13470>) are also included.")
     (license license:gpl3)))
+
+(define-public r-dcmstan
+  (package
+    (name "r-dcmstan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dcmstan" version))
+       (sha256
+        (base32 "0j07aqj45m3q8fv6v5iyw78mldgq195mb8qqgw5jfy5r5fpyxrr4"))))
+    (properties `((upstream-name . "dcmstan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-s7
+                             r-rlang
+                             r-rdcmchecks
+                             r-lifecycle
+                             r-glue
+                             r-ggdag
+                             r-dplyr
+                             r-dagitty
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://dcmstan.r-dcm.org")
+    (synopsis "Generate 'Stan' Code for Diagnostic Classification Models")
+    (description
+     "Diagnostic classification models are psychometric models used to categorically
+estimate respondents mastery, or proficiency, on a set of predefined skills
+(Bradshaw, 2016, <doi:10.1002/9781118956588.ch13>).  Diagnostic models can be
+estimated with Stan'; however, the necessary scripts can be long and
+complicated.  This package automates the creation of Stan scripts for diagnostic
+classification models.  Specify different types of diagnostic models, define
+prior distributions, and automatically generate the necessary Stan code for
+estimating the model.")
+    (license license:expat)))
 
 (define-public r-dcmodify
   (package

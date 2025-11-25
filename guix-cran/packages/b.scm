@@ -20415,6 +20415,30 @@ alternative hypotheses.  Plots of BFFs versus effect size provide informative
 summaries of hypothesis tests that can be easily aggregated across studies.")
     (license license:gpl2+)))
 
+(define-public r-bfcluster
+  (package
+    (name "r-bfcluster")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bfcluster" version))
+       (sha256
+        (base32 "16f3wbjq4clss5pp0760lm7nk2qsz0j9p5g8viaq1ps25d5v114j"))))
+    (properties `((upstream-name . "bfcluster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=bfcluster")
+    (synopsis
+     "Buttler-Fickel Distance and R2 for Mixed-Scale Cluster Analysis")
+    (description
+     "This package implements the distance measure for mixed-scale variables proposed
+by Buttler and Fickel (1995), based on normalized mean pairwise distances (Gini
+mean difference), and an R2 statistic to assess clustering quality.")
+    (license license:expat)))
+
 (define-public r-bfboinet
   (package
     (name "r-bfboinet")
@@ -31924,6 +31948,40 @@ downloading and ordering the data conveniently.")
      "Create a hierarchical acoustic event species classifier out of multiple call
 type detectors as described in Rankin et al (2017) <doi:10.1111/mms.12381>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-banr
+  (package
+    (name "r-banr")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "banR" version))
+       (sha256
+        (base32 "0x99rgg7cwqm0mxy66a7grd3a3br2krayl86xwkwa1az334g2yb1"))))
+    (properties `((upstream-name . "banR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://joelgombin.github.io/banR/")
+    (synopsis "Client for the 'BAN' API")
+    (description
+     "This package provides a client for the Base Adresses Nationale ('BAN') API,
+which allows to (batch) geocode and reverse-geocode French addresses.  For more
+information about the BAN and its API, please see
+<https://adresse.data.gouv.fr/outils/api-doc/adresse>.")
+    (license license:gpl3)))
 
 (define-public r-bannercommenter
   (package

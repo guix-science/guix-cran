@@ -20061,6 +20061,32 @@ longitudinal data in R: development of a statistical package.\"
 map of Cox et al. (2009) <doi:10.1534/genetics.109.105486>.")
     (license license:gpl3)))
 
+(define-public r-mmcmcbayes
+  (package
+    (name "r-mmcmcbayes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mmcmcBayes" version))
+       (sha256
+        (base32 "0r3msf61drcc4mk7h2g9qqqy23hz8r8arlqah0h6z7c7jdhda9hy"))))
+    (properties `((upstream-name . "mmcmcBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mcmcpack))
+    (home-page "https://github.com/zyang1919/mmcmcBayes")
+    (synopsis "Multistage MCMC Method for Detecting DMRs")
+    (description
+     "This package implements a multi-stage MCMC Bayesian framework for detecting
+differentially methylated regions (DMRs) in epigenetic data.  It uses Bayesian
+inference with Alpha-Skew Generalized Normal (ASGN) model and support Bayes
+Factor or Anderson-Darling Test for region selection.  The methodology is based
+on Yang (2025) <https://www.proquest.com/docview/3218878972>.")
+    (license license:gpl3)))
+
 (define-public r-mmcm
   (package
     (name "r-mmcm")
@@ -53150,6 +53176,33 @@ optimizer with the generalization performance of stochastic gradient descent and
 at least as fast convergence as that of Adam, often faster.  A drop-in
 @code{optim_madgrad()} implementation is provided based on Defazio et al (2020)
 <arxiv:2101.11075>.")
+    (license license:expat)))
+
+(define-public r-maddisondata
+  (package
+    (name "r-maddisondata")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MaddisonData" version))
+       (sha256
+        (base32 "1wws58k723y9dknym88m4s406vvih0iga6dlv13nrazx2y1iiam0"))))
+    (properties `((upstream-name . "MaddisonData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sbgraves237/MaddisonData")
+    (synopsis "Maddison Project Data")
+    (description
+     "Relatively easy access is provided to Maddison project data, which collates all
+the credible data on population and GDP for 169 countries, with some dating back
+to the year 1. @code{MaddisonLeaders} makes it easy to find the leaders for each
+year, allowing users to delete countries like OPEC with narrow economies to
+focus on the technology leaders. @code{ggplotPath} makes it easy to plot data
+for only selected countries or years.")
     (license license:expat)))
 
 (define-public r-maddison

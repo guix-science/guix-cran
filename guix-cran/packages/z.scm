@@ -1165,13 +1165,13 @@ further details, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zen4r
   (package
     (name "r-zen4r")
-    (version "0.10.2")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zen4R" version))
        (sha256
-        (base32 "19801lcnxy8g7c2pp1f1ris943xkb1ip9kkiim6zms079d39p1mr"))))
+        (base32 "15y16r60dfaqqdrijnwq1jh9vflwxzz04ghnq8wr0acs80l47xri"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (arguments
@@ -1185,8 +1185,7 @@ further details, see <doi:10.18637/jss.v095.i04>.")
                              r-keyring
                              r-jsonlite
                              r-httr
-                             r-cli
-                             r-atom4r))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eblondel/zen4R")
     (synopsis "Interface to 'Zenodo' REST API")

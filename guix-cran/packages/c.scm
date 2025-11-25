@@ -4744,6 +4744,50 @@ insert for Oslo), allowing the user to rapidly create choropleth maps of Norway
 without any geolibraries.")
     (license license:expat)))
 
+(define-public r-csindicators
+  (package
+    (name "r-csindicators")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CSIndicators" version))
+       (sha256
+        (base32 "0d51n0y89fzrsmfyzcw1kwha40idzxr9i137ziwzpn53yh50m6x7"))))
+    (properties `((upstream-name . "CSIndicators")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-spei
+                             r-s2dv
+                             r-multiapply
+                             r-lmomco
+                             r-lmom
+                             r-cstools
+                             r-climprojdiags))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.earth.bsc.es/es/csindicators/")
+    (synopsis
+     "Climate Services' Indicators Based on Sub-Seasonal to Decadal Predictions")
+    (description
+     "Set of generalised tools for the flexible computation of climate related
+indicators defined by the user.  Each method represents a specific mathematical
+approach which is combined with the possibility to select an arbitrary time
+period to define the indicator.  This enables a wide range of possibilities to
+tailor the most suitable indicator for each particular climate service
+application (agriculture, food security, energy, water management, health...).
+This package is intended for sub-seasonal, seasonal and decadal climate
+predictions, but its methods are also applicable to other time-scales, provided
+the dimensional structure of the input is maintained.  Additionally, the outputs
+of the functions in this package are compatible with CSTools'.  This package is
+described in PÃ©rez-ZanÃ³n et al. (2023) <doi:10.1016/j.cliser.2023.100393> and
+it was developed in the context of H2020 MED-GOLD (776467) and S2S4E (776787)
+projects.  See LledÃ³ et al. (2019) <doi:10.1016/j.renene.2019.04.135> and Chou
+et al., 2023 <doi:10.1016/j.cliser.2023.100345> for details.")
+    (license license:gpl3)))
+
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
@@ -17028,13 +17072,13 @@ non-regular canvas.")
 (define-public r-contoso
   (package
     (name "r-contoso")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contoso" version))
        (sha256
-        (base32 "1j2nv6dqpj0rprabmrmw1cj9fm7pk957hc3v06cng3b6jv27ih6k"))))
+        (base32 "1jpa0zqd6xh5v3c26fq2d3lxbbw5fy69smnhxcx0j6nxgn4jxmq3"))))
     (properties `((upstream-name . "contoso")))
     (build-system r-build-system)
     (arguments
@@ -20271,13 +20315,13 @@ using CSS flexbox.")
 (define-public r-condcopulas
   (package
     (name "r-condcopulas")
-    (version "0.1.4.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CondCopulas" version))
        (sha256
-        (base32 "0ad7yapm0vv681d17wqrsvms5nma1wk6hl2ashhrpfzwlndadw0v"))))
+        (base32 "0zns3dgj7hlafx7j6jznwk5vfy922dbnbq2vwkzdcnkmlyp9s6h0"))))
     (properties `((upstream-name . "CondCopulas")))
     (build-system r-build-system)
     (arguments
@@ -20299,10 +20343,11 @@ using CSS flexbox.")
      "This package provides functions for the estimation of conditional copulas
 models, various estimators of conditional Kendall's tau (proposed in Derumigny
 and Fermanian (2019a, 2019b, 2020) <doi:10.1515/demo-2019-0016>,
-<doi:10.1016/j.csda.2019.01.013>, <doi:10.1016/j.jmva.2020.104610>), and test
+<doi:10.1016/j.csda.2019.01.013>, <doi:10.1016/j.jmva.2020.104610>), test
 procedures for the simplifying assumption (proposed in Derumigny and Fermanian
 (2017) <doi:10.1515/demo-2017-0011> and Derumigny, Fermanian and Min (2022)
-<doi:10.1002/cjs.11742>).")
+<doi:10.1002/cjs.11742>), and measures of non-simplifyingness (proposed in
+Derumigny (2025) <doi:10.48550/@code{arXiv.2504.07704>}).")
     (license license:gpl3)))
 
 (define-public r-condathis
@@ -25946,13 +25991,13 @@ complex multi-gradient interaction.")
 (define-public r-coenocliner
   (package
     (name "r-coenocliner")
-    (version "0.2-3")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coenocliner" version))
        (sha256
-        (base32 "07hik9y84nj1l83spcp1hq9lj960zsg3v0i8rk0xfv25grrakp85"))))
+        (base32 "1ap0kn1sz00i9r6s7flnscjv4ji9z97v1l98mv43nfl0m3qm50sl"))))
     (properties `((upstream-name . "coenocliner")))
     (build-system r-build-system)
     (arguments
@@ -38541,13 +38586,13 @@ Count Data based on T. Mark Beasley & Randall E. Schumacker (1995) <doi:
 (define-public r-chirps
   (package
     (name "r-chirps")
-    (version "0.1.4")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chirps" version))
        (sha256
-        (base32 "1yj91rvcsfsr2nmvk7qnxwfkbiblm4bdazs2p83g8ax4fwkrp39c"))))
+        (base32 "08w7r3mnm4ckcsfi97x255r196yxmqvk2bd8bj11hv897x87k2fs"))))
     (properties `((upstream-name . "chirps")))
     (build-system r-build-system)
     (arguments
@@ -44769,13 +44814,13 @@ as well as, controlling for dropped out observations and non-random missingness.
 (define-public r-cdgd
   (package
     (name "r-cdgd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdgd" version))
        (sha256
-        (base32 "0j0cmv1r8f0aa1sjdzw6ppxcfny1jd9s38060h6awdbmhfiygf21"))))
+        (base32 "15pnjal8h7j7hf6ryiwp7i8pdwb3kv54axzhzk0jpx7pa9y3mhm7"))))
     (properties `((upstream-name . "cdgd")))
     (build-system r-build-system)
     (arguments
@@ -44785,12 +44830,10 @@ as well as, controlling for dropped out observations and non-random missingness.
     (home-page "https://github.com/ang-yu/cdgd")
     (synopsis "Causal Decomposition of Group Disparities")
     (description
-     "The framework of causal decomposition of group disparities developed by Yu and
-Elwert (2025) <doi:10.1214/24-AOAS1990>.  This package implements the
-decomposition estimators that are based on efficient influence functions.  For
-the nuisance functions of the estimators, both parametric and nonparametric
-options are provided, as well as manual options in case the default models are
-not satisfying.")
+     "Estimates the causal decompositions of group disparities developed by Yu and
+Elwert (2025) <doi:10.1214/24-AOAS1990>.  For the nuisance functions of the
+estimators, we provide both parametric and nonparametric options, as well as
+manual options in case the default models are not satisfying.")
     (license license:expat)))
 
 (define-public r-cdft

@@ -1904,6 +1904,31 @@ of variance (Fisher 1925, <doi:10.1007/978-1-4612-4380-9_5>).  Functions are
 compatible with ggplot2 and dplyr'.")
     (license license:expat)))
 
+(define-public r-autotab
+  (package
+    (name "r-autotab")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autotab" version))
+       (sha256
+        (base32 "0swzpp0w7wfwx46z5qk3znyfly9d2hx7ng6ccxk1qcs1y7a62mik"))))
+    (properties `((upstream-name . "autotab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tensorflow r-reticulate r-r6 r-magrittr r-keras))
+    (home-page "https://github.com/SarahMilligan-hub/AutoTab")
+    (synopsis "Variational Autoencoders for Heterogeneous Tabular Data")
+    (description
+     "Build and train a variational autoencoder (VAE) for mixed-type tabular data
+(continuous, binary, categorical).  Models are implemented using
+@code{TensorFlow} and Keras via the reticulate interface, enabling reproducible
+VAE training for heterogeneous tabular datasets.")
+    (license license:expat)))
+
 (define-public r-autostsm
   (package
     (name "r-autostsm")
@@ -16242,13 +16267,13 @@ Department of Energy Alternate Fuel database as a data set.")
 (define-public r-alternativeroc
   (package
     (name "r-alternativeroc")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alternativeROC" version))
        (sha256
-        (base32 "1xn4lvxs2sd2vyj1b557c7akdr477z9337aybvl4kxk3jxb2j5al"))))
+        (base32 "1jk5ax7w3hvkljj9l0rvidpcdy52lkymfxrn9xwan8s7s0ximckk"))))
     (properties `((upstream-name . "alternativeROC")))
     (build-system r-build-system)
     (arguments

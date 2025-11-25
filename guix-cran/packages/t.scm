@@ -7846,13 +7846,13 @@ change-points are returned with the piecewise-linear estimator for signal.")
 (define-public r-trendlsw
   (package
     (name "r-trendlsw")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrendLSW" version))
        (sha256
-        (base32 "0zsl42j0yyc5llk8f0saxnpfxnm8y5n0rwhvmh3xzw21z5rln704"))))
+        (base32 "11wcn68bdvw6578dnkbc65m5ysk0jp8jnfz0d3grhdhqxjjqnkny"))))
     (properties `((upstream-name . "TrendLSW")))
     (build-system r-build-system)
     (arguments
@@ -10819,6 +10819,43 @@ shift-scale transformation models (Siegfried et al, 2023,
 contains an implementation of a doubly robust score test, described in Kook et
 al. (2024, <DOI:10.1080/01621459.2024.2395588>).")
     (license license:gpl2)))
+
+(define-public r-traktok
+  (package
+    (name "r-traktok")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "traktok" version))
+       (sha256
+        (base32 "0qr7hzmwg2v73fw69ljxf2b3hicqv1zqhv10glpr8zrjnzrw3w5l"))))
+    (properties `((upstream-name . "traktok")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-openssl
+                             r-lobstr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-curl
+                             r-cookiemonster
+                             r-cli
+                             r-askpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JBGruber/traktok")
+    (synopsis "Collecting 'TikTok' Data")
+    (description
+     "Getting @code{TikTok} data (<https://www.tiktok.com/>) through the official and
+unofficial APIsâin other words, you can track @code{TikTok}'.")
+    (license license:gpl3+)))
 
 (define-public r-trajr
   (package
@@ -17841,6 +17878,29 @@ Tak et al. (2017) <doi:10.1214/17-AOAS1027>, Tak et al. (2018)
 <@code{arXiv:2005.08049>}.")
     (license license:gpl2)))
 
+(define-public r-timechecker
+  (package
+    (name "r-timechecker")
+    (version "1.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timechecker" version))
+       (sha256
+        (base32 "0vfkyx65zd3prqls36g47p6ddkxl1x05rm8nxk26p257r5515xsk"))))
+    (properties `((upstream-name . "timechecker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=timechecker")
+    (synopsis "Visualization of Processing Time with Standard Output")
+    (description
+     "Displays processing time in a clear and structured way.  One function supports
+iterative workflows by predicting and showing the total time required, while
+another reports the time taken for individual steps within a process.")
+    (license license:gpl3)))
+
 (define-public r-timbr
   (package
     (name "r-timbr")
@@ -21421,13 +21481,13 @@ packages.")
 (define-public r-tidycensuskr
   (package
     (name "r-tidycensuskr")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensuskr" version))
        (sha256
-        (base32 "00gf2xzi2ix1c5dac2fid37ndkini4qgvs03lp7rbwgsb7m46zik"))))
+        (base32 "1qqx5f1swqq03502mwic87vprhvggwikjhwnwbikz8s9gj9dyr8v"))))
     (properties `((upstream-name . "tidycensuskr")))
     (build-system r-build-system)
     (arguments

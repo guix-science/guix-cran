@@ -10294,13 +10294,13 @@ URL provides a link to a work in progress vignette.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "3.1-1")
+    (version "3.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "03wp4qxw46bf4apr8651x205a3s9ci86j97jkywcl9p92rpap3qd"))))
+        (base32 "08lk95vadzsnrsy94fsmh2zdmrsvz89bz98ppxfskwzk4kl864zf"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (arguments
@@ -10309,7 +10309,7 @@ URL provides a link to a work in progress vignette.")
     (propagated-inputs (list r-sandwich r-mice r-mass r-lme4))
     (home-page "https://cran.r-project.org/package=rqlm")
     (synopsis
-     "Modified Poisson, Logistic and Least-Squares Regressions for Binary Outcome and Their Generalizations")
+     "Modified Poisson Regression for Binary Outcome and Related Methods")
     (description
      "Modified Poisson, logistic and least-squares regression analyses for binary
 outcomes of Zou (2004) <doi:10.1093/aje/kwh090>, Noma (2025)<Forthcoming>, and
@@ -45778,13 +45778,13 @@ and will be transformed into a R data frame.")
 (define-public r-rcrisp
   (package
     (name "r-rcrisp")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcrisp" version))
        (sha256
-        (base32 "0lmfzvzdhpk1s03jf27xzsvkv9p6912wlf4yyw96m6arz7pb7ahs"))))
+        (base32 "1ld6bhzw9bly1n88lygx3vl0v0z2xzqb473ixpf19ya788b5im2z"))))
     (properties `((upstream-name . "rcrisp")))
     (build-system r-build-system)
     (arguments
@@ -46135,13 +46135,13 @@ the rredis package.")
 (define-public r-rcppquantuccia
   (package
     (name "r-rcppquantuccia")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppQuantuccia" version))
        (sha256
-        (base32 "1nih426bcd872vyx6dyinr8nr8hqgbqfzih4v82qqi9b9xlk2mv2"))))
+        (base32 "080b7yrh9wap0dpiflhky8z4v2zzmlji3z8ixv7h5j509z1xyf3i"))))
     (properties `((upstream-name . "RcppQuantuccia")))
     (build-system r-build-system)
     (arguments
@@ -46155,7 +46155,10 @@ the rredis package.")
 the header-only Quantuccia project (put together initially by Peter Caspers)
 offering an essential subset of @code{QuantLib} (and now maintained separately
 for the calendaring subset).  See the included file AUTHORS for a full list of
-contributors to both @code{QuantLib} and Quantuccia'.")
+contributors to both @code{QuantLib} and Quantuccia'.  Note that this package
+provided an initial viability proof, current work is done (via approximately
+quarterly releases tracking @code{QuantLib}') in the smaller package qlcal which
+is generally preferred.")
     (license license:gpl2+)))
 
 (define-public r-rcppplanc
@@ -49509,13 +49512,13 @@ of time-consuming functions.")
 (define-public r-rcdo
   (package
     (name "r-rcdo")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcdo" version))
        (sha256
-        (base32 "1glbyk40lw85jv3g33skghqsp5zaymypapfbv492kdz50yfyhkvk"))))
+        (base32 "1f06jw7r7zbnxvjaxr6gsb0x84c89rdx1kxcwyzm6qw9rfm9nnmc"))))
     (properties `((upstream-name . "rcdo")))
     (build-system r-build-system)
     (arguments
@@ -53898,6 +53901,43 @@ to be used with elaborate cell output, e.g. as provided with ROXAS (von Arx &
 Carrer, 2014 <doi:10.1016/j.dendro.2013.12.001>).  The package has been
 validated for Picea abies, Larix Siberica, Pinus cembra and Pinus sylvestris.")
     (license license:gpl2+)))
+
+(define-public r-raptools
+  (package
+    (name "r-raptools")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raptools" version))
+       (sha256
+        (base32 "1w594s7siggghzk6w0spikrl11v7xfjjx9rvdqnsm6iba6xzfzd2"))))
+    (properties `((upstream-name . "raptools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rms
+                             r-proc
+                             r-pracma
+                             r-hmisc
+                             r-ggrepel
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://github.com/Researchverse/raptools")
+    (synopsis "Risk Assessment Plot and Reclassification Metrics")
+    (description
+     "Assessing the comparative performance of two logistic regression models or
+results of such models or classification models.  Discrimination metrics include
+Integrated Discrimination Improvement (IDI), Net Reclassification Improvement
+(NRI), and difference in Area Under the Curves (AUCs), Brier scores and Brier
+skill.  Plots include Risk Assessment Plots, Decision curves and Calibration
+plots.  Methods are described in Pickering and Endre (2012)
+<doi:10.1373/clinchem.2011.167965> and Pencina et al. (2008)
+<doi:10.1002/sim.2929>.")
+    (license license:gpl3)))
 
 (define-public r-rapsimng
   (package

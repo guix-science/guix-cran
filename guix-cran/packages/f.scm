@@ -14956,13 +14956,13 @@ Approximate Maximum Likelihood and the Cross-Entropy methods.  See Bee, M.
 (define-public r-fitdistcp
   (package
     (name "r-fitdistcp")
-    (version "0.1.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitdistcp" version))
        (sha256
-        (base32 "1x0gcijdjkypwbzx51sfg21l77cg0jdbn2agijwqs5qbakrvxn1s"))))
+        (base32 "0h4bvacnz3i1lqp3rfvhapf56mdc2ac4k9mvawmy5swcz5xisvvr"))))
     (properties `((upstream-name . "fitdistcp")))
     (build-system r-build-system)
     (arguments
@@ -14976,7 +14976,7 @@ Approximate Maximum Likelihood and the Cross-Entropy methods.  See Bee, M.
                              r-fdrtool
                              r-extradistr
                              r-actuar))
-    (home-page "https://fitdistcp.info")
+    (home-page "https://www.fitdistcp.info")
     (synopsis
      "Distribution Fitting with Calibrating Priors for Commonly Used Distributions")
     (description
@@ -16033,6 +16033,37 @@ of the examples.  Version 0.3-x includes R objects for all data files used in
 the text and script files to recreate most of the analyses in chapters 1-3 and 9
 plus parts of chapters 4 and 11.")
     (license license:gpl2+)))
+
+(define-public r-finto
+  (package
+    (name "r-finto")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "finto" version))
+       (sha256
+        (base32 "0wqqr7zhbk7bhsd0g2d442q1axr1d80byhkb05f978f566gh40nd"))))
+    (properties `((upstream-name . "finto")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://fennicahub.github.io/finto/")
+    (synopsis "Access the 'Finto' API")
+    (description
+     "Access and retrieve vocabulary data Finto API <https://api.finto.fi/>, which is
+a centralized service for interoperable thesauri, ontology and classification
+schemes for different subject areas.")
+    (license license:bsd-2)))
 
 (define-public r-finnts
   (package

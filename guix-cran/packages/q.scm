@@ -2303,6 +2303,32 @@ Quandl API. For more information go to <https://docs.quandl.com>.  For more help
 on the package itself go to <https://www.quandl.com/tools/r>.")
     (license license:expat)))
 
+(define-public r-quanda
+  (package
+    (name "r-quanda")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuanDA" version))
+       (sha256
+        (base32 "0q5kgfsmv6hh67nd71mlxj9x7wzd2w723rql9kks45z936lzfmir"))))
+    (properties `((upstream-name . "QuanDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proc r-hdqr))
+    (home-page "https://cran.r-project.org/package=QuanDA")
+    (synopsis
+     "Quantile-Based Discriminant Analysis for High-Dimensional Imbalanced Classification")
+    (description
+     "This package implements quantile-based discriminant analysis (@code{QuanDA}) for
+imbalanced classification in high-dimensional, low-sample-size settings.  The
+method fits penalized quantile regression directly on discrete class labels and
+tunes the quantile level to reflect class imbalance.")
+    (license license:gpl2)))
+
 (define-public r-qualypso
   (package
     (name "r-qualypso")

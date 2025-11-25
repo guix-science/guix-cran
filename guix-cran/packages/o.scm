@@ -3399,26 +3399,31 @@ well as Rmarkdown or Quarto documents with automatically assigned name prefixes.
 (define-public r-org
   (package
     (name "r-org")
-    (version "2024.6.5")
+    (version "2025.11.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "org" version))
        (sha256
-        (base32 "1kpaij3qz6amccf01kplmx6ql90qkkqmswq364jj5x2jwx7k5w26"))))
+        (base32 "17yp1hjhk9kwqf59yb95qk6ls160y2jliwl2891qs9x86wlgnxqa"))))
     (properties `((upstream-name . "org")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://www.csids.no/org/")
+    (home-page "https://www.rwhite.no/org/")
     (synopsis "Organising Projects")
     (description
-     "This package provides a system to help you organize projects.  Most analyses
-have three (or more) main sections: code, results, and data, each with different
-requirements (version control/sharing/encryption).  You provide folder locations
-and org helps you take care of the details.")
+     "This package provides a framework for organizing R projects with a standardized
+structure.  Most analyses consist of three main components: code, results, and
+data, each with different requirements such as version control, sharing, and
+encryption.  This package provides tools to set up and manage project
+directories, handle file paths consistently across operating systems, organize
+results using date-based structures, source code from specified directories,
+create and manage Quarto documents, and perform file operations safely.  It
+ensures consistency across projects while accommodating different requirements
+for various types of content.")
     (license license:expat)))
 
 (define-public r-orfid
@@ -7615,6 +7620,30 @@ and Machine Intelligence, vol.  34, num.  11, p.  2274-2282, May 2012,
 Appu Shaji, Kevin Smith, Aurelien Lucchi, Pascal Fua, and Sabine Suesstrunk,
 EPFL Technical Report no.  149300, June 2010.")
     (license license:gpl3)))
+
+(define-public r-openholidaysr
+  (package
+    (name "r-openholidaysr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openholidaysR" version))
+       (sha256
+        (base32 "1xda984yf0g7bprd77d9m0dzrg4aq28x35dj5gkq60k6mci8v4j8"))))
+    (properties `((upstream-name . "openholidaysR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2))
+    (home-page "https://github.com/jfeldhege/openholidaysR")
+    (synopsis "Provides Access to the 'OpenHolidays' API")
+    (description
+     "This package provides dates for public and school holidays for a number of
+countries and their subdivisions through the @code{OpenHolidays} API at
+<https://www.openholidaysapi.org/en/>.")
+    (license license:expat)))
 
 (define-public r-openhimr
   (package

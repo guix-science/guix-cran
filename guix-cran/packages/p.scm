@@ -4339,6 +4339,54 @@ implements methodology currently under peer review.  Please contact the author
 before publication using this approach.")
     (license license:expat)))
 
+(define-public r-psre
+  (package
+    (name "r-psre")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psre" version))
+       (sha256
+        (base32 "1zbgg9nzj00yiixmql5r0db6vpjf5dbbya32f5q8898xicdycdbx"))))
+    (properties `((upstream-name . "psre")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viztest
+                             r-tidyr
+                             r-tibble
+                             r-sm
+                             r-rlang
+                             r-nortest
+                             r-multcomp
+                             r-mgcv
+                             r-metap
+                             r-mass
+                             r-marginaleffects
+                             r-magrittr
+                             r-lawstat
+                             r-ggrepel
+                             r-ggplot2
+                             r-fancova
+                             r-dplyr
+                             r-cowplot
+                             r-car
+                             r-boot))
+    (home-page "https://cran.r-project.org/package=psre")
+    (synopsis "Presenting Statistical Results Effectively")
+    (description
+     "Includes functions and data used in the book \"Presenting Statistical Results
+Effectively\", Andersen and Armstrong (2022, ISBN: 978-1446269800).  Several
+functions aid in data visualization - creating compact letter displays for
+simple slopes, kernel density estimates with normal density overlay.  Other
+functions aid in post-model evaluation heatmap fit statistics for binary
+predictors, several variable importance measures, compact letter displays and
+simple-slope calculation.  Finally, the package makes available the example
+datasets used in the book.")
+    (license license:gpl2+)))
+
 (define-public r-psqn
   (package
     (name "r-psqn")
@@ -12354,29 +12402,6 @@ learning predictive algorithms.  It comprises of multiple functionalities for
 multivariate analyses of quantitative behavioral data based on machine learning
 models.")
     (license license:gpl3)))
-
-(define-public r-predint
-  (package
-    (name "r-predint")
-    (version "2.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "predint" version))
-       (sha256
-        (base32 "013r4mp92436g1rkicgmcqhvqaazid9208cb6ibzhikjqrr1i72b"))))
-    (properties `((upstream-name . "predint")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-lme4 r-ggplot2))
-    (home-page "https://github.com/MaxMenssen/predint")
-    (synopsis "Prediction Intervals")
-    (description
-     "An implementation of prediction intervals for overdispersed count data, for
-overdispersed binomial data and for linear random effects models.")
-    (license license:gpl2+)))
 
 (define-public r-predieval
   (package
@@ -20494,6 +20519,30 @@ models are estimated according to the EM algorithm with an efficient
 initialization scheme <doi:10.1016/j.csda.2014.07.005>.")
     (license license:gpl2)))
 
+(define-public r-poisonfrogs
+  (package
+    (name "r-poisonfrogs")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poisonfrogs" version))
+       (sha256
+        (base32 "1kg2n2h54rx89b65v9573y0zpjk7sbxiys27f9wpazz2pam22byl"))))
+    (properties `((upstream-name . "poisonfrogs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-lifecycle r-ggplot2))
+    (home-page "https://laurenoconnelllab.github.io/poisonfrogs/")
+    (synopsis "Color Palettes Inspired by Neotropical Poison Frogs")
+    (description
+     "This package provides a collection of color palettes inspired by the enormous
+diversity of skin colors in Neotropical poison frog species.  Suitable for use
+with ggplot2 and base R graphics.")
+    (license license:expat)))
+
 (define-public r-poisnor
   (package
     (name "r-poisnor")
@@ -26570,13 +26619,13 @@ For more details on generating pkgdown websites, see Wickham et al. (2025)
 (define-public r-pkgdiff
   (package
     (name "r-pkgdiff")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdiff" version))
        (sha256
-        (base32 "1m201bmn0p038hmmaxggd5cfz9jjhmb8rqch07q4zp7kddc6ixmq"))))
+        (base32 "0lkqbazl9byalcg9l7y28cc79nswddq59a44w0aafk1x434g4d8k"))))
     (properties `((upstream-name . "pkgdiff")))
     (build-system r-build-system)
     (arguments
@@ -33670,6 +33719,47 @@ R.D.P.(2022)<doi:10.21704/rfp.v37i3.1956>.")
      "This package provides a friendly API for sequence iteration and set
 comprehension.")
     (license license:gpl2)))
+
+(define-public r-peruflorads43
+  (package
+    (name "r-peruflorads43")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "peruflorads43" version))
+       (sha256
+        (base32 "0vpmyyh54ig413kdimpagyy77dkcwqrdyfng8in7lab5pnxkmhy7"))))
+    (properties `((upstream-name . "peruflorads43")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-memoise
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaulESantos/peruflorads43")
+    (synopsis
+     "Check Threatened Plant Species Status Against Peru's Supreme Decree 043-2006-AG")
+    (description
+     "This package provides tools to match plant species names against the official
+threatened species list of Peru (Supreme Decree 043-2006-AG, 2006).  Implements
+a hierarchical matching pipeline with exact, fuzzy, and suffix matching
+algorithms to handle naming variations and taxonomic changes.  Supports both the
+original 2006 nomenclature and updated taxonomic names, allowing users to check
+protection status regardless of nomenclatural changes since the decree's
+publication.  Threat categories follow International Union for Conservation of
+Nature standards (Critically Endangered, Endangered, Vulnerable, Near
+Threatened).")
+    (license license:expat)))
 
 (define-public r-peruapis
   (package

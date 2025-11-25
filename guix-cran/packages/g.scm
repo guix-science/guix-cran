@@ -20152,24 +20152,19 @@ visualizations through a web browser GUI without writing any code.")
 (define-public r-ggrain
   (package
     (name "r-ggrain")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrain" version))
        (sha256
-        (base32 "0l7042f4xh37vw9skhnagz5ncn8a0aflsz53x6rm3n1f6y2mi1gc"))))
+        (base32 "0bs7d2dkhdppgf9nh98hk8jkv7fdking1jy7zj2jp0i0d56i20x6"))))
     (properties `((upstream-name . "ggrain")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-rlang
-                             r-ggpp
-                             r-ggplot2
-                             r-gghalves
-                             r-cli))
+    (propagated-inputs (list r-vctrs r-rlang r-ggpp r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/njudd/ggrain")
     (synopsis "Rainclouds Geom for 'ggplot2'")
@@ -27279,13 +27274,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0q46pz0pg4nl2cx3qsrij1fdh7snk7m8fmyn52q9mkj9i63nxwp6"))))
+        (base32 "1ah9sf6ds8ds9g3p8dgv3ij10gdb5i8jld7mykwl97i00vzcq77s"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments

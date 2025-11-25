@@ -4115,6 +4115,28 @@ viral dynamics, transportation, population structure), alone or taken together,
 to create complex but relatively intuitive epidemiological simulations.")
     (license license:gpl3)))
 
+(define-public r-nosleepr
+  (package
+    (name "r-nosleepr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NoSleepR" version))
+       (sha256
+        (base32 "073lc84dmircic7qryy66nqfd7ml5alrm9mn9gsccq0lzcjrb52q"))))
+    (properties `((upstream-name . "NoSleepR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/hetalang/NoSleepR")
+    (synopsis "Prevent System Sleep During Long R Tasks")
+    (description
+     "This package provides a cross-platform interface to prevent the operating system
+from going to sleep while long-running R tasks are executing.")
+    (license license:expat)))
+
 (define-public r-nose
   (package
     (name "r-nose")
@@ -5554,6 +5576,42 @@ probability corresponding to the total points.")
 diagrams based on a simple syntax, see <https://www.nomnoml.com>.  Supports
 styling, R Markdown and exporting diagrams in the PNG format.  Note: you need a
 chromium based browser installed on your system.")
+    (license license:expat)))
+
+(define-public r-nomisdata
+  (package
+    (name "r-nomisdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomisdata" version))
+       (sha256
+        (base32 "1adgaa0a6p1hhcn9z4yw96x1sxg2xjzdwpb7nzwn8c184fk6yz3d"))))
+    (properties `((upstream-name . "nomisdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cherylisabella/nomisdata")
+    (synopsis "Access 'Nomis' UK Labour Market Data and Statistics")
+    (description
+     "Interface to the Nomis database (<https://www.nomisweb.co.uk>), a comprehensive
+resource of United Kingdom labour market statistics provided by the Office for
+National Statistics (ONS).  Facilitates programmatic access to census data,
+labour force surveys, benefit statistics, and socioeconomic indicators through a
+modern HTTP client with intelligent caching, automatic query pagination, and
+tidy data principles.  Includes spatial data integration, interactive helpers,
+and visualization utilities.  Independent implementation unaffiliated with ONS
+or Durham University.")
     (license license:expat)))
 
 (define-public r-nominatimlite
@@ -10099,13 +10157,13 @@ COVID-19 scale, NIAID OS.")
 (define-public r-nhstplot
   (package
     (name "r-nhstplot")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhstplot" version))
        (sha256
-        (base32 "137dl3p8dvm4d1shk4n7053jprrqbb7kf9biqjqgrp4s8jaa7z2v"))))
+        (base32 "1r8mdjimr8gzxm21j0si1g4l8k2cffq95hv0psbaxsy2nnqlj8zy"))))
     (properties `((upstream-name . "nhstplot")))
     (build-system r-build-system)
     (arguments

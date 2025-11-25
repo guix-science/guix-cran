@@ -10228,13 +10228,13 @@ Akritas (2010b) <doi:10.1016/j.jmva.2010.03.012>.")
 (define-public r-hetcorfs
   (package
     (name "r-hetcorfs")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hetcorFS" version))
        (sha256
-        (base32 "1kld8awvck7f91gdrvyz6xqf0a86cfb1183xll278yx70cl7g6kk"))))
+        (base32 "1xvcn85phl24nmpfmvr4blmj6iqhm78lad825r9yncbwyy073215"))))
     (properties `((upstream-name . "hetcorFS")))
     (build-system r-build-system)
     (arguments
@@ -10251,8 +10251,13 @@ The HCM consists of Pearson's correlations between numerical features,
 polyserial correlations between numerical and ordinal features, and polychoric
 correlations between ordinal features.  Tortora C., Madhvani S., Punzo A.
 (2025). \"Designing unsupervised mixed-type feature selection techniques using
-the heterogeneous correlation matrix.\" International Statistical Review.
-Forthcoming.")
+the heterogeneous correlation matrix.\" International Statistical Review
+<doi:10.1111/insr.70016>.  This work was supported by the National Science
+foundation NSF Grant N 2209974 (Tortora) and by the Italian Ministry of
+University and Research (MUR) under the PRIN 2022 grant number 2022XRHT8R (CUP:
+E53D23005950006), as part of âThe SMILE Project: Statistical Modelling and
+Inference to Live the Environmentâ, funded by the European Union â Next
+Generation EU (Punzo).")
     (license license:gpl2)))
 
 (define-public r-hessrna
