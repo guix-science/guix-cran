@@ -2042,13 +2042,13 @@ alignment with best practices in epidemiology and applied statistics.")
 (define-public r-gtreg
   (package
     (name "r-gtreg")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtreg" version))
        (sha256
-        (base32 "1awdp0dshyqw415g2621m39pr3gbrq6bvh4v2lsvl63am8w33vpm"))))
+        (base32 "011znkvasana9pkdkrf0412sa5wp3yjxxjnpawb502vr3l9iadw7"))))
     (properties `((upstream-name . "gtreg")))
     (build-system r-build-system)
     (arguments
@@ -5044,13 +5044,13 @@ subject-specific random effects.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0k8j5q6izf4l6bnb7i3lpg040v5pj0sjl81z18xrb64dy10c9cnw"))))
+        (base32 "0k7672dmzsxx70x68y19a0l8pbsfmd1mjii21765qwm3xl4l7lnq"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
@@ -26393,13 +26393,13 @@ bootstrap variograms.")
 (define-public r-geothinner
   (package
     (name "r-geothinner")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoThinneR" version))
        (sha256
-        (base32 "16c7g693kd9yinzqz1vyask3082xc33p6jahbznlqsy6k7khyc4x"))))
+        (base32 "1znvjg2cwc6z1g2c02idmknjcg3qc316a00bv6kpqlgfanw5ygsa"))))
     (properties `((upstream-name . "GeoThinneR")))
     (build-system r-build-system)
     (arguments
@@ -33262,13 +33262,13 @@ between different package versions and between different R versions.")
 (define-public r-gdi
   (package
     (name "r-gdi")
-    (version "1.6.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdi" version))
        (sha256
-        (base32 "0arqx98k9dkxr8fhp0x2zxmx97kk666ffhbaqh9mrzrmwkapa3vb"))))
+        (base32 "08jw6ynyczwbksj5jwil1bchkm9b707nrlwsb2dla07a6ifwmxmk"))))
     (properties `((upstream-name . "gdi")))
     (build-system r-build-system)
     (arguments
@@ -33290,10 +33290,11 @@ utilities for automatically measuring diameters from digital silhouettes
 provided as image files and calculating volume via graphic double integration
 with simple elliptical, superelliptical (following Motani 2001
 <doi:10.1666/0094-8373(2001)027%3C0735:EBMFST%3E2.0.CO;2>) or complex
-cross-sectional models.  Additionally, the package provides functions for
-estimating the center of mass position (COM), the moment of inertia (I) for 3D
-shapes and the second moment of area (Ix, Iy, Iz) of 2D cross-sections, as well
-as for visualization of results.")
+cross-sectional geometries (see also Zhao 2024 <doi:10.7717/peerj.17479>).
+Additionally, the package provides functions for estimating the center of mass
+position (COM), the moment of inertia (I) for 3D shapes and the second moment of
+area (Ix, Iy, Iz) of 2D cross-sections, as well as for the visualization of
+results.")
     (license license:gpl3+)))
 
 (define-public r-gde
@@ -33556,13 +33557,13 @@ Song (2020) <doi:10.1109/TITS.2020.3001193>, respectively.")
 (define-public r-gcxgclab
   (package
     (name "r-gcxgclab")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcxgclab" version))
        (sha256
-        (base32 "0w6l9d23wbcvj5qzxc1yz20ic58hjkswk7scyjldiv6cbzm89wr1"))))
+        (base32 "13kdysg25lziijx0d9jr73zd8k8c7jrfmrrfxm8l1rmbc5r04z96"))))
     (properties `((upstream-name . "gcxgclab")))
     (build-system r-build-system)
     (arguments

@@ -3776,13 +3776,13 @@ included.")
 (define-public r-hrtnomaly
   (package
     (name "r-hrtnomaly")
-    (version "25.2.25")
+    (version "25.11.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HRTnomaly" version))
        (sha256
-        (base32 "08ghyjcbv50n1qbf1sdy1qff97dd53fd1am1vyd7lp0jjblicrsm"))))
+        (base32 "11yggmn4nmz1ankazmg4p5hhcbwaybl2r286mffp7m19advxv4ix"))))
     (properties `((upstream-name . "HRTnomaly")))
     (build-system r-build-system)
     (arguments

@@ -25,6 +25,7 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages golang)
   #:use-module (gnu packages imagemagick)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -5547,13 +5548,13 @@ associated uncertainty.  Details are in D'Angelo, et al. (2020)
 (define-public r-multimark
   (package
     (name "r-multimark")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multimark" version))
        (sha256
-        (base32 "14zgp3pqxmfjxf78rfr92qd3gjyzfrx5sbid3gcg14bsnpyhkns4"))))
+        (base32 "08xckphfxrlc8xlfx4ynrd444vcdxhs8k6q4wmhzs1armiv0ygfg"))))
     (properties `((upstream-name . "multimark")))
     (build-system r-build-system)
     (arguments
@@ -7323,25 +7324,27 @@ not intended to be used directly.  Influx was published here: Sokol et al.
 (define-public r-multbiplotr
   (package
     (name "r-multbiplotr")
-    (version "23.11.0")
+    (version "25.11.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultBiplotR" version))
        (sha256
-        (base32 "0qcf97r9f5l572dckfvi9pjl2gvc6zw36z34pbbfwxha8bnqiyqc"))))
+        (base32 "03vcd71ccjs8pr53xh72yav7fn7lpl0xqnn7cgq6gfc3p32qsdg3"))))
     (properties `((upstream-name . "MultBiplotR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xtable
+                             r-vcd
                              r-threeway
                              r-scales
                              r-psych
                              r-polycor
                              r-mvtnorm
                              r-mirt
+                             r-matrix
                              r-mass
                              r-lattice
                              r-knitr
@@ -11875,6 +11878,31 @@ ratio-formatted hypotheses and the corresponding confidence interval are
 provided assuming homogeneous or heterogeneous group variances.")
     (license license:gpl2)))
 
+(define-public r-mrap
+  (package
+    (name "r-mrap")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mrap" version))
+       (sha256
+        (base32 "199il0rdmjkl3y2si5hdj7jm59pg707z86nrymfy997k8vmcyhp2"))))
+    (properties `((upstream-name . "mrap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-jsonlite r-dtreg))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/TIBHannover/lki/knowledge-loom/mrap-r")
+    (synopsis "Machine-Readable Data Analysis Results with Function Wrappers")
+    (description
+     "You can use the set of wrappers for analytical schemata to reduce the effort in
+writing machine-readable data.  The set of all-in-one wrappers will cover widely
+used functions from data analysis packages.")
+    (license license:expat)))
+
 (define-public r-mram
   (package
     (name "r-mram")
@@ -15069,13 +15097,13 @@ and examples are given by Koutra et al. (2024)
 (define-public r-moocore
   (package
     (name "r-moocore")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moocore" version))
        (sha256
-        (base32 "1ayp2a4i2ylfhygzz9qi80lqnj6xf4gp4xg6v0pn6sw759hx7bqn"))))
+        (base32 "159z7f838nz35i7x3h2vy1wnvgqjd2qya7jbqarb1zimbwcwvq09"))))
     (properties `((upstream-name . "moocore")))
     (build-system r-build-system)
     (arguments
@@ -15085,13 +15113,13 @@ and examples are given by Koutra et al. (2024)
     (home-page "https://multi-objective.github.io/moocore/r/")
     (synopsis "Core Mathematical Functions for Multi-Objective Optimization")
     (description
-     "Fast implementation of mathematical operations and performance metrics for
+     "Fast implementations of mathematical operations and performance metrics for
 multi-objective optimization, including filtering and ranking of dominated
-vectors according to Pareto optimality, computation of the empirical attainment
-function, V.G. da Fonseca, C.M. Fonseca, A.O. Hall (2001)
-<doi:10.1007/3-540-44719-9_15>, hypervolume metric, C.M. Fonseca, L. Paquete, M.
-LÃ³pez-IbÃ¡Ã±ez (2006) <doi:10.1109/CEC.2006.1688440>, epsilon indicator,
-inverted generational distance, and Vorob'ev threshold, expectation and
+vectors according to Pareto optimality, hypervolume metric, C.M. Fonseca, L.
+Paquete, M. LÃ³pez-IbÃ¡Ã±ez (2006) <doi:10.1109/CEC.2006.1688440>, epsilon
+indicator, inverted generational distance, computation of the empirical
+attainment function, V.G. da Fonseca, C.M. Fonseca, A.O. Hall (2001)
+<doi:10.1007/3-540-44719-9_15>, and Vorob'ev threshold, expectation and
 deviation, M. Binois, D. Ginsbourger, O. Roustant (2015)
 <doi:10.1016/j.ejor.2014.07.032>, among others.")
     (license license:lgpl2.1+)))
@@ -16020,13 +16048,13 @@ should be easy to plug in, or develop from, on top of this canvas.")
 (define-public r-momentuhmm
   (package
     (name "r-momentuhmm")
-    (version "1.5.7")
+    (version "1.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "momentuHMM" version))
        (sha256
-        (base32 "1h0h9fh97aykjk6xvqars2agcmawncj0fq1s8cq1wji08f92zv9v"))))
+        (base32 "02p2b9hd9h9yjbmiv78d086q78mqlpwfs5s321hd5ip44wah7wgd"))))
     (properties `((upstream-name . "momentuHMM")))
     (build-system r-build-system)
     (arguments
@@ -42472,13 +42500,13 @@ tree problems.")
 (define-public r-mcmodule
   (package
     (name "r-mcmodule")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmodule" version))
        (sha256
-        (base32 "0rms7zds28pxq1amcqv43njaz9pdj618rghjjfc1npq3s7cpqdjr"))))
+        (base32 "09ydbk5nzbkaqb5jfnays6lwlh63bmq4byciai2arikninpvjw28"))))
     (properties `((upstream-name . "mcmodule")))
     (build-system r-build-system)
     (arguments
@@ -51171,6 +51199,33 @@ impact variants.")
 genotype data.  You can use it to perform risk prediction for individuals, or
 for families with missing data.")
     (license license:gpl2+)))
+
+(define-public r-mangoro
+  (package
+    (name "r-mangoro")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mangoro" version))
+       (sha256
+        (base32 "096r8fzq1cnwmx8d4ajfip01gnmyvhq4x3ix9wlwz9ac23x0inbm"))))
+    (properties `((upstream-name . "mangoro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list go))
+    (propagated-inputs (list r-nanonext r-nanoarrow r-jsonlite))
+    (home-page "https://github.com/sounkou-bioinfo/mangoro")
+    (synopsis "'R'/'Go' 'IPC' using 'Nanomsg' Next Gen")
+    (description
+     "The tools provide an interface for inter-process communication ('IPC') between R
+and Go using the Nanomsg library.  It vendors on the Go side the mangos library
+<https://github.com/nanomsg/mangos> and arrow-go
+<https://github.com/apache/arrow-go> and uses nanonext and nanoarrow on the R
+side.")
+    (license license:gpl3)))
 
 (define-public r-manet
   (package

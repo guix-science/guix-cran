@@ -9894,13 +9894,13 @@ extended as introducing potential feature regularization by LASSO etc.")
 (define-public r-rrapply
   (package
     (name "r-rrapply")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrapply" version))
        (sha256
-        (base32 "04qzfkf011fvvc3ll8qcn300d63z2p2p7qri24ylrsyl5g0v1w9i"))))
+        (base32 "1q87pd0pjh68nc0ka9xd04s5aissp6mk4gn2d0xn80man1qz2fjz"))))
     (properties `((upstream-name . "rrapply")))
     (build-system r-build-system)
     (arguments
@@ -58454,6 +58454,30 @@ inference using simulation.")
     (description
      "After defining an R6 class, R62S3 is used to automatically generate optional
 S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
+    (license license:expat)))
+
+(define-public r-r5rgui
+  (package
+    (name "r-r5rgui")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r5rgui" version))
+       (sha256
+        (base32 "04kxqay0klpr2fsdplg5vnbflqq2isanrv7fdbnkdbjda6z518mj"))))
+    (properties `((upstream-name . "r5rgui")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-sf r-r5r r-mapgl r-dt))
+    (home-page "https://github.com/e-kotov/r5rgui")
+    (synopsis "Graphical User Interface for 'r5r' Router")
+    (description
+     "Interactively build and explore public transit routes with r5r package via a
+graphical user interface in a shiny app.  The underlying routing methods are
+described in Pereira et al. (2021) <doi:10.32866/001c.21262>.")
     (license license:expat)))
 
 (define-public r-r5r

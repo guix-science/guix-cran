@@ -23677,13 +23677,13 @@ available in S-PLUS'.")
 (define-public r-splustimedate
   (package
     (name "r-splustimedate")
-    (version "2.5.8")
+    (version "2.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splusTimeDate" version))
        (sha256
-        (base32 "1avas42g0bm40vzj9fag6p5wzw5cd43vv9xx2ycgc48579lfyh7v"))))
+        (base32 "1fljfda9250f1axw9k2vg5xhd0pwf5ha2f0hkihr2ipj6qgplb95"))))
     (properties `((upstream-name . "splusTimeDate")))
     (build-system r-build-system)
     (arguments
@@ -26717,6 +26717,51 @@ multiverse analyses (Steegen, Tuerlinckx, Gelman & Vanpaemel, 2016, <doi:
 10.1177/1745691616658637>) including functions to setup, run, evaluate, and plot
 all specifications.")
     (license license:gpl3)))
+
+(define-public r-specleanr
+  (package
+    (name "r-specleanr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "specleanr" version))
+       (sha256
+        (base32 "03gkjf0imk9by097hraj5k7pyl7dlxfkhmz0dc7293h06d9ir9z7"))))
+    (properties `((upstream-name . "specleanr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-usdm
+                             r-robustbase
+                             r-robust
+                             r-mgcv
+                             r-isotree
+                             r-e1071
+                             r-dbscan
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://anthonybasooma.github.io/specleanr/")
+    (synopsis "Detecting Environmental Outliers in Data Analysis Pipelines")
+    (description
+     "This package provides a framework used to detect and handle outliers during data
+analysis workflows.  Outlier detection is a statistical concept with
+applications in data analysis workflows, highlighting records that are
+suspiciously high or low.  Outlier detection in distribution models was
+initiated by Chapman (1991) (available at
+<https://www.researchgate.net/publication/332537800_Quality_control_and_validation_of_point-sourced_environmental_resource_data>),
+who developed the reverse jackknifing method.  The concept was further developed
+and incorporated into different R packages, including flexsdm (Velazco et al.,
+2022, <doi:10.1111/2041-210X.13874>) and biogeo (Robertson et al., 2016
+<doi:10.1111/ecog.02118>).  We compiled various outlier detection methods
+obtained from the literature, including those elaborated in Dastjerdy et al.
+(2023) <doi:10.3390/geotechnics3020022> and Liu et al. (2008)
+<doi:10.1109/ICDM.2008.17>.  In this package, we introduced the ensembling
+aspect, where multiple outlier detection methods are used to flag the record as
+either an absolute outlier.  The concept can also be applied in general data
+analysis, as well as during the development of species distribution models.")
+    (license license:gpl3+)))
 
 (define-public r-specklestar
   (package
@@ -37717,41 +37762,6 @@ assessing uniqueness of giving taxon.  It is possible to use @code{smirnov()}
 output as a distance measure: convert it to distance by \"as.dist(1 -
 smirnov(x))\".")
     (license license:gpl2+)))
-
-(define-public r-smile
-  (package
-    (name "r-smile")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smile" version))
-       (sha256
-        (base32 "1h03lhv481kinmz3xfphhpvwn0vwri4i6kgnxb4dd9ma0mpxdf3c"))))
-    (properties `((upstream-name . "smile")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list proj geos gdal))
-    (propagated-inputs (list r-sf
-                             r-rcppeigen
-                             r-rcpp
-                             r-numderiv
-                             r-mvtnorm
-                             r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://lcgodoy.me/smile/")
-    (synopsis "Spatial Misalignment: Interpolation, Linkage, and Estimation")
-    (description
-     "This package provides functions to estimate, predict and interpolate areal data.
- For estimation and prediction we assume areal data is an average of an
-underlying continuous spatial process as in Moraga et al. (2017)
-<doi:10.1016/j.spasta.2017.04.006>, Johnson et al. (2020)
-<doi:10.1186/s12942-020-00200-w>, and Wilson and Wakefield (2020)
-<doi:10.1093/biostatistics/kxy041>.  The interpolation methodology is (mostly)
-based on Goodchild and Lam (1980, ISSN:01652273).")
-    (license license:gpl3)))
 
 (define-public r-smidm
   (package
@@ -61553,6 +61563,38 @@ Dabholkar (1999
  In this package selection index is calculated based on the Smith (1937)
 selection index method.")
     (license license:gpl3+)))
+
+(define-public r-selectboost-gamlss
+  (package
+    (name "r-selectboost-gamlss")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SelectBoost.gamlss" version))
+       (sha256
+        (base32 "1d3053xkqnm2b91vb2c5k3rgxq3s6ks5kfbaa7n3fkjr73s06rnf"))))
+    (properties `((upstream-name . "SelectBoost.gamlss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-selectboost r-rlang r-rcpparmadillo r-rcpp
+                             r-gamlss))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/SelectBoost.gamlss/")
+    (synopsis
+     "Stability-Selection via Correlated Resampling for 'GAMLSS' Models")
+    (description
+     "Extends the @code{SelectBoost} approach to Generalized Additive Models for
+Location, Scale and Shape (GAMLSS).  Implements bootstrap stability-selection
+across parameter-specific formulas (mu, sigma, nu, tau) via
+@code{gamlss::stepGAIC()}.  Includes optional standardization of predictors and
+helper functions for corrected AIC calculation.  More details can be found in
+Bertrand and Maumy (2024) <https://hal.science/hal-05352041> that highlights
+correlation-aware resampling to improve variable selection for GAMLSS and
+quantile regression when predictors are numerous and highly correlated.")
+    (license license:gpl3)))
 
 (define-public r-selectboost-beta
   (package

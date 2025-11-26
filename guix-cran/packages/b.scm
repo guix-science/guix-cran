@@ -11041,6 +11041,54 @@ code related to the above model was retrieved from
 graphical representations or apply clustering techniques.")
     (license license:gpl2+)))
 
+(define-public r-blsloadr
+  (package
+    (name "r-blsloadr")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BLSloadR" version))
+       (sha256
+        (base32 "0qpvynkkzbxvpahhyfqa3cnxygqmp95nppv98b81fwv6ackiqmr6"))))
+    (properties `((upstream-name . "BLSloadR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tigris
+                             r-tidyselect
+                             r-stringr
+                             r-sf
+                             r-rvest
+                             r-rstudioapi
+                             r-readxl
+                             r-lubridate
+                             r-httr
+                             r-htmltools
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://schmidtdetr.github.io/BLSloadR/")
+    (synopsis
+     "Download Time Series Data from the U.S. Bureau of Labor Statistics")
+    (description
+     "These functions provide a convenient interface for downloading data from the
+U.S. Bureau of Labor Statistics <https://www.bls.gov>.  The functions in this
+package utilize flat files produced by the Bureau of Labor Statistics, which
+contain full series history.  These files include employment, unemployment,
+wages, prices, industry and occupational data at a national, state, and
+sub-state level, depending on the series.  Individual functions are included for
+those programs which have data available at the state level.  The core functions
+provide direct access to the Current Employment Statistics (CES)
+<https://www.bls.gov/ces/>, Local Area Unemployment Statistics (LAUS)
+<https://www.bls.gov/lau/>, Occupational Employment and Wage Statistics (OEWS)
+<https://www.bls.gov/oes/> and Alternative Measures of Labor Underutilization
+(SALT) <https://www.bls.gov/lau/stalt.htm> data produced by the Bureau of Labor
+Statistics.")
+    (license license:expat)))
+
 (define-public r-blscraper
   (package
     (name "r-blscraper")
@@ -27239,13 +27287,13 @@ models can be computed.")
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "2.2.5")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "01dzj7hs48ri8xsm4ffcdsvmcpfq8jhaglg2vsi2mavml9hlgnss"))))
+        (base32 "1v8g7if46qi275sfg44vyn2nljcp3ya8cs408ni5snlzcmh7wvmr"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (arguments

@@ -3455,13 +3455,13 @@ calibrations.")
 (define-public r-psyntur
   (package
     (name "r-psyntur")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psyntur" version))
        (sha256
-        (base32 "0dh7vdj3ynsxibcf0wmh5h4yknijg78azjzlma25glihpgd2nbbw"))))
+        (base32 "027ijvk29a0hwfpgvd42lwl3s0hf82ficyw13fcbh85w473dqn0g"))))
     (properties `((upstream-name . "psyntur")))
     (build-system r-build-system)
     (arguments
@@ -3479,7 +3479,6 @@ calibrations.")
                              r-ggally
                              r-formula-tools
                              r-fastdummies
-                             r-ez
                              r-effsize
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -12403,6 +12402,29 @@ multivariate analyses of quantitative behavioral data based on machine learning
 models.")
     (license license:gpl3)))
 
+(define-public r-predint
+  (package
+    (name "r-predint")
+    (version "2.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "predint" version))
+       (sha256
+        (base32 "013r4mp92436g1rkicgmcqhvqaazid9208cb6ibzhikjqrr1i72b"))))
+    (properties `((upstream-name . "predint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-lme4 r-ggplot2))
+    (home-page "https://github.com/MaxMenssen/predint")
+    (synopsis "Prediction Intervals")
+    (description
+     "An implementation of prediction intervals for overdispersed count data, for
+overdispersed binomial data and for linear random effects models.")
+    (license license:gpl2+)))
+
 (define-public r-predieval
   (package
     (name "r-predieval")
@@ -18776,13 +18798,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "6.3")
+    (version "6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "1rnk0iyxcpi6fyp5wjq801amvhc0q03qiczh415r5118m4v2nvxc"))))
+        (base32 "0mx765wvryzh8dfzmclmbpaig0f4d42l9pasi4cydggdq9sbimw7"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (arguments
@@ -24614,13 +24636,13 @@ linear genomic dependency.  See Wei Z, Sun W, Wang K, Hakonarson H (2009)
 (define-public r-plinkqc
   (package
     (name "r-plinkqc")
-    (version "0.3.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plinkQC" version))
        (sha256
-        (base32 "0l5gf7wf33fhzby0n2qzph02v7an2gj2dji1i129hxsxqnynx7dy"))))
+        (base32 "1k99rmwp4cgdn28ngijcaxx7dvf1arxxwmpfps5vk23qf02zxl2n"))))
     (properties `((upstream-name . "plinkQC")))
     (build-system r-build-system)
     (arguments
@@ -24628,13 +24650,14 @@ linear genomic dependency.  See Wei Z, Sun W, Wang K, Hakonarson H (2009)
       #:tests? #f))
     (inputs (list plink))
     (propagated-inputs (list r-upsetr
+                             r-tidyr
                              r-sys
+                             r-randomforest
                              r-r-utils
                              r-optparse
                              r-igraph
                              r-ggrepel
                              r-ggplot2
-                             r-ggforce
                              r-dplyr
                              r-data-table
                              r-cowplot))
@@ -24651,7 +24674,8 @@ relationship functions accessible from R and generates a per-individual and
 per-marker quality control report.  Individuals and markers that fail the
 quality control can subsequently be removed to generate a new, clean dataset.
 Removal of individuals based on relationship status is optimised to retain as
-many individuals as possible in the study.")
+many individuals as possible in the study.  Additionally, there is a trained
+classifier to predict genomic ancestry of human samples.")
     (license license:expat)))
 
 (define-public r-plinkfile
@@ -29556,13 +29580,13 @@ prevalence.")
 (define-public r-phylolm-hp
   (package
     (name "r-phylolm-hp")
-    (version "0.0-3")
+    (version "0.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylolm.hp" version))
        (sha256
-        (base32 "1v0l8h6c2i3wysjnx4p6mhzv7jq9p47nqpa19bjs4y997s0lfiva"))))
+        (base32 "0hj4x6dnihy01zqj30dr907k37x2k2frixsh68l5mapxr7d5q1x4"))))
     (properties `((upstream-name . "phylolm.hp")))
     (build-system r-build-system)
     (arguments

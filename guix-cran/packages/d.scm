@@ -12076,6 +12076,31 @@ author: Marvin N. Wright), which implements random forests using an efficient
 C++ implementation.")
     (license license:gpl3)))
 
+(define-public r-diversityarch
+  (package
+    (name "r-diversityarch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diversityArch" version))
+       (sha256
+        (base32 "1072v46q22zj6s6rbrs8xzgj7z1ygwmkm9djmi45pjhsjbqlkklp"))))
+    (properties `((upstream-name . "diversityArch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=diversityArch")
+    (synopsis "Computes Diversity Indices with Archaeological Data")
+    (description
+     "Companion package of Arnaud Barat, Andreu SansÃ³, Maite Arilla-Osuna, Ruth
+Blasco, IÃ±aki PÃ©rez-FernÃ¡ndez, Gabriel Cifuentes-Alcobenda, RubÃ©n Llorente,
+Daniel Vivar-RÃ­os, Ella Assaf, Ran Barkai, Avi Gopher, & Jordi Rosell-ArdÃ¨vol
+(2025), \"Quantifying Diversity through Entropy Decomposition.  Insights into
+Hominin Occupation and Carcass Processing at Qesem cave\".")
+    (license license:gpl2)))
+
 (define-public r-diversificationr
   (package
     (name "r-diversificationr")
@@ -24716,13 +24741,13 @@ deep time visualization.")
 (define-public r-deepspat
   (package
     (name "r-deepspat")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepspat" version))
        (sha256
-        (base32 "1ply3x3i3m4vjga8d5h0lggswsn8kac4i9c6vsvfdwsq5i43x90j"))))
+        (base32 "0kp2k5hw8hfa2lib1vxb28jrfpzpx2kpcqf65zxr4if5lvw72sav"))))
     (properties `((upstream-name . "deepspat")))
     (build-system r-build-system)
     (arguments
@@ -24739,7 +24764,7 @@ deep time visualization.")
                              r-evd
                              r-dplyr
                              r-data-table))
-    (home-page "https://cran.r-project.org/package=deepspat")
+    (home-page "https://github.com/andrewzm/deepspat")
     (synopsis "Deep Compositional Spatial Models")
     (description
      "Deep compositional spatial models are standard spatial covariance models coupled
@@ -24749,11 +24774,12 @@ in a deep-learning framework.  The package implements two cases for the
 univariate setting; first, when these warping functions are known up to some
 weights that need to be estimated, and, second, when the weights in each layer
 are random.  In the multivariate setting only the former case is available.
-Estimation and inference is done using tensorflow', which makes use of graphics
+Estimation and inference is done using `tensorflow`, which makes use of graphics
 processing units.  For more details see Zammit-Mangion et al. (2022)
 <doi:10.1080/01621459.2021.1887741>, Vu et al. (2022)
-<doi:10.5705/ss.202020.0156>, and Vu et al. (2023)
-<doi:10.1016/j.spasta.2023.100742>.")
+<doi:10.5705/ss.202020.0156>, Vu et al. (2023)
+<doi:10.1016/j.spasta.2023.100742>, and Shao et al. (2025)
+<doi:10.48550/@code{arXiv.2505.12548>}.")
     (license license:asl2.0)))
 
 (define-public r-deeprstudio
@@ -34060,13 +34086,13 @@ used as a reactive filter of structured data.")
 (define-public r-d3po
   (package
     (name "r-d3po")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "d3po" version))
        (sha256
-        (base32 "1fv7ibrlsg660wxw9rmi06d6mshfv96j0phi79y5zj5bpf0ch1c2"))))
+        (base32 "1arqxsg3krd2nzxjb20758gggnqh6wa5cgxv2c2z724853gn22xv"))))
     (properties `((upstream-name . "d3po")))
     (build-system r-build-system)
     (arguments

@@ -8314,19 +8314,19 @@ algebra and @code{RcppEigen} glue'.")
 (define-public r-lmdiallel
   (package
     (name "r-lmdiallel")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmDiallel" version))
        (sha256
-        (base32 "01z4lx9i7mz8wy6znwiqyygngqcf0ymbcpsshxykh1hcy4hsh4r6"))))
+        (base32 "1bsmclqb9gnwzlcwy2g7hwk29l5nxl3405yagrqzzmxyvfbk7qas"))))
     (properties `((upstream-name . "lmDiallel")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-sommer r-plyr r-multcomp))
+    (propagated-inputs (list r-tidyr r-sommer r-plyr r-multcomp r-enhancer))
     (home-page "https://www.statforbiology.com/lmDiallel/")
     (synopsis "Linear Fixed/Mixed Effects Models for Diallel Crosses")
     (description
@@ -11153,13 +11153,13 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "04qrgd3qd0imhzwfi6jibnfc6c8fjak9q0a7rl55ixgqdxpvfaq0"))))
+        (base32 "148w6vsb4016pi408kyhhz5nxjf2dadd1r8dalvjx6260x6y26i7"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
     (arguments
@@ -11167,14 +11167,14 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-gtools r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/WinzarH/LikertMakeR")
+    (home-page "https://github.com/WinzarH/LikertMakeR/")
     (synopsis
      "Synthesise and Correlate Likert Scale and Rating-Scale Data Based on Summary Statistics")
     (description
      "Generate and correlate synthetic Likert and rating-scale data with predefined
-means, standard deviations, Cronbach's Alpha, Factor Loading table, and other
-summary statistics.  Worked examples and documentation are available in the
-package articles, accessible via
+means, standard deviations, Cronbach's Alpha, Factor Loading table,
+coefficients, and other summary statistics.  Worked examples and documentation
+are available in the package articles, accessible via the package website,
 <https://winzarh.github.io/@code{LikertMakeR/>}.")
     (license license:expat)))
 
@@ -17456,13 +17456,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "0zxmzx1nhsmphq4vcixq23yc4hym5j6ddb4sc5hx6jgp4jbv3ym9"))))
+        (base32 "1g02p4yhjyxvlrklslr6myvvy4injcx0s0nm7x3cl2r7wl8x5pn1"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (arguments
@@ -17491,8 +17491,8 @@ for latent variable models from the lavaan package.  It offers two core
 functions: first, @code{lavaangui()} launches a web application that allows
 users to specify models by drawing path diagrams, fitting them, assessing model
 fit, and more; second, @code{plot_lavaan()} creates interactive path diagrams
-from models specified in lavaan'.  Karch (2024) <doi: 10.31234/osf.io/f4ary>
-contains a tutorial.")
+from models specified in lavaan'.  Karch (2024) <doi:
+10.1080/10705511.2024.2420678> contains a tutorial.")
     (license license:gpl3+)))
 
 (define-public r-lavaanextra

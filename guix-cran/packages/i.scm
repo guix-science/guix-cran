@@ -443,13 +443,13 @@ actions.")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "1wf1slijf721f1k5wy4zs3cbhdmfq106i9lf6kzclcxyb6vqiynz"))))
+        (base32 "0j3pmchcsin7wv83hr4r7lc3xrmnldfkchnpsdhgnml5mlcrmmcs"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
     (arguments
@@ -16195,6 +16195,41 @@ of implemented metrics is summarized in Rodbard (2009)
 <doi:10.1089/dia.2009.0015>.  Additional visualization tools include time-series
 plots, lasagna plots and ambulatory glucose profile report.")
     (license license:gpl2)))
+
+(define-public r-iglm
+  (package
+    (name "r-iglm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iglm" version))
+       (sha256
+        (base32 "19nb2fsq50kmyxf4m9cpfvm6krfhzfvpjnmvhq6nz113pliaw97h"))))
+    (properties `((upstream-name . "iglm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=iglm")
+    (synopsis "Regression under Network Interference")
+    (description
+     "An implementation of generalized linear models (GLMs) for studying relationships
+among attributes in connected populations, where responses of connected units
+can be dependent, as introduced by Fritz et al. (2025)
+<doi:10.1080/01621459.2025.2565851>.  igml extends GLMs for independent
+responses to dependent responses and can be used for studying spillover in
+connected populations and other network-mediated phenomena.")
+    (license license:gpl3)))
 
 (define-public r-igfetchr
   (package

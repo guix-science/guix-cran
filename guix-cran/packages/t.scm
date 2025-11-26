@@ -8568,13 +8568,13 @@ model from high resolution tree disk image.")
 (define-public r-treeplotarea
   (package
     (name "r-treeplotarea")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treePlotArea" version))
        (sha256
-        (base32 "0ln6f0hnl8xmf92d4sprvyxy8yncw3b5p6i1cpka1yqy05i745h0"))))
+        (base32 "1is8mmz2x0cyjxbbb92c5mxd1rlzy6prcijkxih98mw1pjmksm8q"))))
     (properties `((upstream-name . "treePlotArea")))
     (build-system r-build-system)
     (arguments
@@ -12852,31 +12852,6 @@ model for adsorption data and also the parameters of the related pseudo-n-order
 (PNO) model, such as the maximum adsorption capacity (qe), the adsorption rate
 constant (kn) and the order of the model (n).")
     (license license:gpl3)))
-
-(define-public r-totalcopheneticindex
-  (package
-    (name "r-totalcopheneticindex")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TotalCopheneticIndex" version))
-       (sha256
-        (base32 "0i21g7zzad973802kfp8s638d3g70c4vkrm59i9frb71apvkljk2"))))
-    (properties `((upstream-name . "TotalCopheneticIndex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-treetools))
-    (home-page "https://github.com/ms609/tci/")
-    (synopsis "Quantify the Balance of Phylogenetic Trees")
-    (description
-     "Measures the degree of balance for a given phylogenetic tree by calculating the
-Total Cophenetic Index.  Reference: A. Mir, F. Rossello, L. A. Rotger (2013).  A
-new balance index for phylogenetic trees.  Math.  Biosci.  241, 125-136
-<doi:10.1016/j.mbs.2012.10.005>.")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-totalcensus
   (package
@@ -26834,13 +26809,13 @@ trials.")
 (define-public r-terminalgraphics
   (package
     (name "r-terminalgraphics")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "terminalgraphics" version))
        (sha256
-        (base32 "1vflmfn6x12crj7yy9nhgav1rnf1p80h7yqz2yca8smp0nnkp053"))))
+        (base32 "0ldpwvsh1bd9j5q0882pznk4f8mparabcwnblry9bk8j26w4kqnw"))))
     (properties `((upstream-name . "terminalgraphics")))
     (build-system r-build-system)
     (arguments

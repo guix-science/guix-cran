@@ -3396,6 +3396,34 @@ well as Rmarkdown or Quarto documents with automatically assigned name prefixes.
  Prefixes are either file counts (e.g. \"001\") or dates (e.g. \"2022-09-26\").")
     (license license:expat)))
 
+(define-public r-organik
+  (package
+    (name "r-organik")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "organik" version))
+       (sha256
+        (base32 "03niary01alddgw9khvlgs2rzlhbnrs9qnbvikj5a3xac28v9s33"))))
+    (properties `((upstream-name . "organik")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpart r-matrix r-mass r-imputets r-glmnet))
+    (home-page "https://rpubs.com/giancarlo_vercellino/organik")
+    (synopsis
+     "Multi-Horizon Probabilistic Ensemble with Copulas for Time Series Forecasting")
+    (description
+     "Trains per-horizon probabilistic ensembles from a univariate time series.  It
+supports rpart', glmnet', and @code{kNN} engines with flexible residual
+distributions and heteroscedastic scale models, weighting variants by
+calibration-aware scores.  A Gaussian/t copula couples the marginals to simulate
+joint forecast paths, returning quantiles, means, and step increments across
+horizons.")
+    (license license:gpl3)))
+
 (define-public r-org
   (package
     (name "r-org")

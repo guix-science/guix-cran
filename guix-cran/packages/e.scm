@@ -22185,27 +22185,31 @@ Electronic Data Capture (EDC) software @code{TrialMaster}'.")
 (define-public r-edar
   (package
     (name "r-edar")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edar" version))
        (sha256
-        (base32 "1br9rldq6dlvi6csj7zzvxm98nssq6fnybnsc8hz7ff2i81gcb4a"))))
+        (base32 "1m7vbcdpbc8ss69hvxwaaak87aq32pnpx6b1kr5l0gv3nanflr9f"))))
     (properties `((upstream-name . "edar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-xgxr
+                             r-tidyr
                              r-scales
                              r-rstudioapi
                              r-rlang
                              r-patchwork
                              r-magrittr
+                             r-listr
                              r-knitr
                              r-kableextra
                              r-janitor
+                             r-ggpubr
+                             r-ggplot2
                              r-flextable
                              r-dplyr))
     (home-page "https://soutomas.github.io/edar/")
@@ -22214,8 +22218,8 @@ Electronic Data Capture (EDC) software @code{TrialMaster}'.")
      "This package provides a collection of convenient functions to facilitate common
 tasks in exploratory data analysis.  Some common tasks include generating
 summary tables of variables, displaying tables as a flextable or a kable and
-showing distributions of variables using ggplot2'.  Labels stating the source
-file with run time can be easily generated for annotation in tables and plots.")
+visualising variables using ggplot2'.  Labels stating the source file with run
+time can be easily generated for annotation in tables and plots.")
     (license license:expat)))
 
 (define-public r-eda4treer

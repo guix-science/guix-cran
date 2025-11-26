@@ -240,13 +240,13 @@ accurate.  Tests can be found in Benati et al.(2017)
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "1kcd5sn49rmpzyvk8iqdz7cbxn36z9m5007dlrvfi53cjc4j4ljs"))))
+        (base32 "0k43fam27nlmdpc233q5jwvry2a8agsn2550is8gf5zz5i85kmkj"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (arguments
@@ -257,6 +257,7 @@ accurate.  Tests can be found in Benati et al.(2017)
                              r-nloptr
                              r-matrix
                              r-mass
+                             r-gtools
                              r-glmnet
                              r-gdina))
     (home-page "https://haijiangqin.com/Qval/")

@@ -7952,13 +7952,13 @@ global minimum.")
 (define-public r-nlrx
   (package
     (name "r-nlrx")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlrx" version))
        (sha256
-        (base32 "046ivv90h0dsk5g2l7mal1cf64ff2y3wmc9h5ql3hffziqs0hd27"))))
+        (base32 "0dxg27x3j7pc6cxj1q93ky66q21zf8xlcrzbq7pyqwsal63hmw63"))))
     (properties `((upstream-name . "nlrx")))
     (build-system r-build-system)
     (arguments
@@ -7996,14 +7996,14 @@ global minimum.")
     (synopsis
      "Setup, Run and Analyze 'NetLogo' Model Simulations from 'R' via 'XML'")
     (description
-     "Setup, run and analyze @code{NetLogo} (<https://ccl.northwestern.edu/netlogo/>)
-model simulations in R'.  nlrx experiments use a similar structure as
-@code{NetLogos} Behavior Space experiments.  However, nlrx offers more
-flexibility and additional tools for running and analyzing complex simulation
-designs and sensitivity analyses.  The user defines all information that is
-needed in an intuitive framework, using class objects.  Experiments are
-submitted from R to @code{NetLogo} via XML files that are dynamically written,
-based on specifications defined by the user.  By nesting model calls in future
+     "Setup, run and analyze @code{NetLogo} (<https://www.netlogo.org>) model
+simulations in R'.  nlrx experiments use a similar structure as @code{NetLogos}
+Behavior Space experiments.  However, nlrx offers more flexibility and
+additional tools for running and analyzing complex simulation designs and
+sensitivity analyses.  The user defines all information that is needed in an
+intuitive framework, using class objects.  Experiments are submitted from R to
+@code{NetLogo} via XML files that are dynamically written, based on
+specifications defined by the user.  By nesting model calls in future
 environments, large simulation design with many runs can be executed in
 parallel.  This also enables simulating @code{NetLogo} experiments on remote
 high performance computing machines.  In order to use this package, Java and
@@ -14870,13 +14870,13 @@ nephrology.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "0mm68ndsz1q0cq79py0m4h8c72ss3m2qb9wjms5ik276zgr4qrq5"))))
+        (base32 "0mvyg4lawa8aiiglqsdz7bsi1flf59xalnawxfq9c4idch1y1ahn"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (arguments

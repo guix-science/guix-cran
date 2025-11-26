@@ -5278,13 +5278,13 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
 (define-public r-assumpsure
   (package
     (name "r-assumpsure")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssumpSure" version))
        (sha256
-        (base32 "1kjxcrqcx4kfwmkcajd20n0avc08dqvhkgf4jzibjci06c47qykg"))))
+        (base32 "1hnw85r1ja5z0wgjdjx6mvmhgksbpk1b8swmxxqvfanz14yl0d3h"))))
     (properties `((upstream-name . "AssumpSure")))
     (build-system r-build-system)
     (arguments
@@ -5311,7 +5311,6 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
                              r-htmltools
                              r-glmmtmb
                              r-ggpubr
-                             r-ggplot2
                              r-fontawesome
                              r-effectsize
                              r-dt
@@ -6735,13 +6734,13 @@ visualizations for rule exploration.  Michael Hahsler (2017)
 (define-public r-arulessequences
   (package
     (name "r-arulessequences")
-    (version "0.2-31")
+    (version "0.2-32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesSequences" version))
        (sha256
-        (base32 "03bs2l9zmjlcjmd18gm0ci2xq0b57wapp5hdiv7icdxqagb4j57n"))))
+        (base32 "052j216598gpnlzfv8l28x761ivzwgykbhw57lqx24x0i5q4if7p"))))
     (properties `((upstream-name . "arulesSequences")))
     (build-system r-build-system)
     (arguments
@@ -27737,13 +27736,13 @@ can be found in Chaudhuri, Ghosh, and Kim (2024) <doi:10.1002/SAM.11711>.")
 (define-public r-abcdscores
   (package
     (name "r-abcdscores")
-    (version "6.0.1")
+    (version "6.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ABCDscores" version))
        (sha256
-        (base32 "0p5f26wyzn9903pdkb8zjlg9by00k2d76ksw9kvnnpid2f5w1w7b"))))
+        (base32 "0lpn1wa21s88i6cdi9nazxs5spx1kpyl7w1bs150bzyil5jgjp8w"))))
     (properties `((upstream-name . "ABCDscores")))
     (build-system r-build-system)
     (arguments
@@ -27767,8 +27766,7 @@ can be found in Chaudhuri, Ghosh, and Kim (2024) <doi:10.1002/SAM.11711>.")
     (description
      "This package provides functions to compute summary scores (besides proprietary
 ones) reported in the tabulated data resource that is released by the Adolescent
-Brain Cognitive Development (ABCD) study.  Feldstein Ewing and Luciana (2018)
-<https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32>.")
+Brain Cognitive Development (ABCD) study.")
     (license license:gpl3+)))
 
 (define-public r-abasequence

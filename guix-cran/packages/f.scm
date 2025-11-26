@@ -13406,6 +13406,36 @@ Angelo Mazza, Antonio Punzo, Salvatore Ingrassia (2018)
 <doi:10.18637/jss.v086.i02>.")
     (license license:gpl2)))
 
+(define-public r-flexbcf
+  (package
+    (name "r-flexbcf")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexBCF" version))
+       (sha256
+        (base32 "14hw9bihr4xj9jw5lrhvz6mxxz1njz3asrszngqqfivf9rklr2c6"))))
+    (properties `((upstream-name . "flexBCF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/skdeshpande91/flexBCF")
+    (synopsis "Fast & Flexible Implementation of Bayesian Causal Forests")
+    (description
+     "This package provides a faster implementation of Bayesian Causal Forests (BCF;
+Hahn et al. (2020) <doi:10.1214/19-BA1195>), which uses regression tree
+ensembles to estimate the conditional average treatment effect of a binary
+treatment on a scalar output as a function of many covariates.  This
+implementation avoids many redundant computations and memory allocations present
+in the original BCF implementation, allowing the model to be fit to larger
+datasets.  The implementation was originally developed for the 2022 American
+Causal Inference Conference's Data Challenge.  See Kokandakar et al. (2023)
+<doi:10.1353/obs.2023.0024> for more details.")
+    (license license:gpl3+)))
+
 (define-public r-flex
   (package
     (name "r-flex")
@@ -17125,45 +17155,6 @@ assumptions and models.  We provide a collection of methods from multiple
 disciplines under Matrix Completion, Imputation, and Inpainting.  See Davenport
 and Romberg (2016) <doi:10.1109/JSTSP.2016.2539100> for an overview of the
 topic.")
-    (license license:expat)))
-
-(define-public r-filibustr
-  (package
-    (name "r-filibustr")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "filibustr" version))
-       (sha256
-        (base32 "1c7xpfknx1kc47v2zgai1nbaml35xcyj5lmbxmfngy2y97qhr4mp"))))
-    (properties `((upstream-name . "filibustr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lifecycle
-                             r-labelled
-                             r-httr2
-                             r-haven
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-quarto))
-    (home-page "https://feinleib.github.io/filibustr/")
-    (synopsis "Data Utilities for Congressional Research")
-    (description
-     "This package provides easy-to-understand and consistent interfaces for accessing
-data on the U.S. Congress.  The functions in filibustr streamline the process
-for importing data on Congress into R, removing the need to download and work
-from CSV files and the like.  Data sources include Voteview
-(<https://voteview.com/>), the U.S. Senate website (<https://www.senate.gov/>),
-and more.")
     (license license:expat)))
 
 (define-public r-filest
