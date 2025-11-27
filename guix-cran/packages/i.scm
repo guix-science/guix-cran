@@ -15040,13 +15040,13 @@ data set.")
 (define-public r-image-otsu
   (package
     (name "r-image-otsu")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "image.Otsu" version))
        (sha256
-        (base32 "0van4w7f3rnd2p5fsfjm7pq1j7ky90z9j0sir1mszjxjkcj6s9rz"))))
+        (base32 "005zp7dycymi03a8jrcgzdnd3mvhzslmx5vzz8xwv3cvfjimidlf"))))
     (properties `((upstream-name . "image.Otsu")))
     (build-system r-build-system)
     (arguments
@@ -15089,13 +15089,13 @@ Rafael Grompone von Gioi et al (2012).  The algorithm is explained at
 (define-public r-image-libfacedetection
   (package
     (name "r-image-libfacedetection")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "image.libfacedetection" version))
        (sha256
-        (base32 "0mr7zrqd73mhvs918615lwsf2bgg63x3wh16wdpwhb2zd7ybm87a"))))
+        (base32 "1y7rycyvdhr3i74cnamxly7fgnbzsahmb99x78lwa2qqf2fwpfdz"))))
     (properties `((upstream-name . "image.libfacedetection")))
     (build-system r-build-system)
     (arguments
@@ -15139,13 +15139,13 @@ relevant points in images which are characteristic to the digital image.")
 (define-public r-image-cornerdetectionf9
   (package
     (name "r-image-cornerdetectionf9")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "image.CornerDetectionF9" version))
        (sha256
-        (base32 "04qy2yvgjmgb8r3piw6v5g97abljqv1nw7vn2wvn1npkq9lzj94x"))))
+        (base32 "0diihgpxs331g0s9w8627sxppmq1ly83dw82g8l213wjq4216bj9"))))
     (properties `((upstream-name . "image.CornerDetectionF9")))
     (build-system r-build-system)
     (arguments
@@ -15158,8 +15158,8 @@ relevant points in images which are characteristic to the digital image.")
      "An implementation of the \"FAST-9\" corner detection algorithm explained in the
 paper FASTER and better: A machine learning approach to corner detection by
 Rosten E., Porter R. and Drummond T. (2008), available at
-<@code{arXiv:0810.2434>}.  The package allows to detect corners in digital
-images.")
+<doi:10.48550/@code{arXiv.0810.2434>}.  The package allows to detect corners in
+digital images.")
     (license license:bsd-2)))
 
 (define-public r-image-contourdetector
@@ -18505,13 +18505,13 @@ semiparametric regression models will be included in later versions.")
 (define-public r-icssmoothing
   (package
     (name "r-icssmoothing")
-    (version "1.2.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSsmoothing" version))
        (sha256
-        (base32 "15szqkp10jilnhay2yppn9rmfsd8a4s39m5gwnk14mvnyhk1fmnw"))))
+        (base32 "05xz9kkq82v8g0cgvnbm50ysd6c869yhdd53mrs4jlpbj9p9dysa"))))
     (properties `((upstream-name . "ICSsmoothing")))
     (build-system r-build-system)
     (arguments

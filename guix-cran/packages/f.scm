@@ -7790,56 +7790,6 @@ result sets and time-series analysis of island performance.  The API endpoint is
 <https://api.fortnite.com/ecosystem/v1>.")
     (license license:expat)))
 
-(define-public r-fortls
-  (package
-    (name "r-fortls")
-    (version "1.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FORTLS" version))
-       (sha256
-        (base32 "0fcmm28vbvnz35xibrcig9vw4l2vkbz43x6yb97kml5i9661686f"))))
-    (properties `((upstream-name . "FORTLS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vroom
-                             r-voxr
-                             r-tidyr
-                             r-sf
-                             r-scales
-                             r-reticulate
-                             r-rcsf
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-progress
-                             r-plotly
-                             r-moments
-                             r-lidr
-                             r-htmlwidgets
-                             r-distance
-                             r-dbscan
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://molina-valero.github.io/FORTLS/")
-    (synopsis
-     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
-    (description
-     "Process automation of point cloud data derived from terrestrial-based
-technologies such as Terrestrial Laser Scanner (TLS) or Mobile Laser Scanner.
-FORTLS enables (i) detection of trees and estimation of tree-level attributes
-(e.g. diameters and heights), (ii) estimation of stand-level variables (e.g.
-density, basal area, mean and dominant height), (iii) computation of metrics
-related to important forest attributes estimated in Forest Inventories at
-stand-level, and (iv) optimization of plot design for combining TLS data and
-field measured data.  Documentation about FORTLS is described in Molina-Valero
-et al. (2022, <doi:10.1016/j.envsoft.2022.105337>).")
-    (license license:gpl3)))
-
 (define-public r-forstringr
   (package
     (name "r-forstringr")
@@ -10421,13 +10371,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.6.9")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "06gmykz3d1mwwmvrfasv4w4gkcy38q36yw6kl141n97apyw6i8if"))))
+        (base32 "1lmdrsgfrfi6msdnx7r9ladrcmsc5dhz1jf0z3kcwgdrpv2nsmyx"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (arguments
@@ -11952,13 +11902,13 @@ used to cluster flows for applied transportation research.")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "0i5l2qw434shwrsllfxwgjd1gknv9vivwfy0cnikgx3bi349wiwk"))))
+        (base32 "0124dldgwwx5hmldjvxs4dxpasw39kxwnxx6lbf7ljwg8a84hcg3"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (arguments
@@ -13612,6 +13562,43 @@ easily analyse them! As well, you can calculate other related statistics.  All
 of this is done so in a tidy manner, so it should tie in nicely with tidyverse
 series of packages.")
     (license license:expat)))
+
+(define-public r-flassomsm
+  (package
+    (name "r-flassomsm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flassomsm" version))
+       (sha256
+        (base32 "16l8f3b3wayls6qqaqsgf4k3riwsh9gwl1wv0acqs2069x56fmay"))))
+    (properties `((upstream-name . "flassomsm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-progressr
+                             r-progress
+                             r-penalized
+                             r-numderiv
+                             r-mstate
+                             r-glmnet
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-corpcor))
+    (home-page "https://cran.r-project.org/package=flassomsm")
+    (synopsis
+     "Penalized Estimation for Multi-State Models with Lasso and Fused Penalties")
+    (description
+     "This package provides a suite of methods for detecting influential subjects in
+longitudinal datasets, particularly when observations occur at irregular time
+points.  The methods identify individuals whose response trajectories deviate
+significantly from the population pattern, enabling detection of anomalies or
+subjects exerting undue influence on model outcomes.")
+    (license license:gpl3)))
 
 (define-public r-flashr
   (package
@@ -24564,13 +24551,13 @@ categorical covariates.")
 (define-public r-fastbioclim
   (package
     (name "r-fastbioclim")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbioclim" version))
        (sha256
-        (base32 "13vfkcqh72ck3ihca9001bvrnc66nddgqs1flcahkc9z3g610plj"))))
+        (base32 "086b6aydapjmbn79hvaqhsi8llq1crzprwjmz2yizq9d5c6cvi36"))))
     (properties `((upstream-name . "fastbioclim")))
     (build-system r-build-system)
     (arguments
@@ -24578,9 +24565,8 @@ categorical covariates.")
       #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sf
-                             r-rlang
                              r-rfast
-                             r-qs
+                             r-qs2
                              r-purrr
                              r-progressr
                              r-glue
@@ -24595,7 +24581,7 @@ features a dual-backend architecture that intelligently switches between fast
 in-memory processing for smaller datasets (via the terra package) and a
 memory-safe tiled approach for massive datasets that do not fit in RAM (via
 exactextractr and Rfast').  The main functions, @code{derive_bioclim()} and
-@code{derive_statistics()}', offer a unified interface with advanced options for
+@code{derive_statistics()}, offer a unified interface with advanced options for
 custom time periods and static indices, making it suitable for a wide range of
 ecological and environmental modeling applications.  A software note is in
 preparation.  In the meantime, you can visit the package website

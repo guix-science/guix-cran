@@ -3331,20 +3331,22 @@ help user managing their complex org files.")
 (define-public r-orgheatmap
   (package
     (name "r-orgheatmap")
-    (version "0.1.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OrgHeatmap" version))
        (sha256
-        (base32 "0r7qlal34x88wr7iznbn3qfal1f157jsc5al3m2qcip582915qh9"))))
+        (base32 "1nw02s7szm9spw9y4x1kmsm788k9mb9d7q5y0v04dpgy6mwxj4vy"))))
     (properties `((upstream-name . "OrgHeatmap")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-viridis
+                             r-stringr
                              r-stringdist
+                             r-sf
                              r-rlang
                              r-rcolorbrewer
                              r-purrr
@@ -3356,14 +3358,17 @@ help user managing their complex org files.")
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OrgHeatmap")
-    (synopsis "Visualization Tool for Human Organ Data")
+    (synopsis
+     "Visualization Tool for Numerical Data on Human/Mouse Organs and Organelles")
     (description
-     "This package provides a tool for visualizing numerical data (such as gene
-expression levels) on human organ maps.  It supports custom color schemes, organ
-system filtering, and optional bar charts for quantitative comparison.  The
-package integrates organ coordinate data to plot anatomical contours and map
-data values to specific organs, facilitating intuitive visualization of
-biological data distribution.  The underlying method was described in the
+     "This package provides a tool for visualizing numerical data (e.g., gene
+expression, protein abundance) on predefined anatomical maps of human/mouse
+organs and subcellular organelles.  It supports customization of color schemes,
+filtering by organ systems (for organisms) or organelle types, and generation of
+optional bar charts for quantitative comparison.  The package integrates
+coordinate data for organs and organelles to plot anatomical/subcellular
+contours, mapping data values to specific structures for intuitive visualization
+of biological data distribution.The underlying method was described in the
 preprint by Zhou et al. (2022) <doi:10.1101/2022.09.07.506938>.")
     (license license:expat)))
 
@@ -3399,13 +3404,13 @@ well as Rmarkdown or Quarto documents with automatically assigned name prefixes.
 (define-public r-organik
   (package
     (name "r-organik")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "organik" version))
        (sha256
-        (base32 "03niary01alddgw9khvlgs2rzlhbnrs9qnbvikj5a3xac28v9s33"))))
+        (base32 "0xvskffcw653q0dslr8zcvdw1yv1nxanshcsbn9xqf45g8w1fc6a"))))
     (properties `((upstream-name . "organik")))
     (build-system r-build-system)
     (arguments
@@ -7930,6 +7935,40 @@ the JSON file.")
     (synopsis "Access the City of Toronto Open Data Portal")
     (description "Access data from the \"City of Toronto Open Data Portal\"
 (<https://open.toronto.ca>) directly from R.")
+    (license license:expat)))
+
+(define-public r-opendataformat
+  (package
+    (name "r-opendataformat")
+    (version "2.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opendataformat" version))
+       (sha256
+        (base32 "08531gaq6wyd95aaim5ac01cj8mrhij1mf904i61cvq3vbr9i08l"))))
+    (properties `((upstream-name . "opendataformat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-xml2
+                             r-tibble
+                             r-magrittr
+                             r-jsonlite
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/opendataformat/r-package-opendataformat")
+    (synopsis "Reading and Writing Open Data Format Files")
+    (description
+     "The Open Data Format (ODF) is a new, non-proprietary, multilingual, metadata
+enriched, and zip-compressed data format with metadata structured in the Data
+Documentation Initiative (DDI) Codebook standard.  This package allows reading
+and writing of data files in the Open Data Format (ODF) in R, and displaying
+metadata in different languages.  For further information on the Open Data
+Format, see <https://opendataformat.github.io/>.")
     (license license:expat)))
 
 (define-public r-opencv

@@ -6976,13 +6976,13 @@ approval.  See README for authentication process and examples.")
 (define-public r-etlutils
   (package
     (name "r-etlutils")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETLUtils" version))
        (sha256
-        (base32 "0s0q4f3wzpdd87l3pnzysa8aq7zgz29589xnm65a6xfy9znbpzs3"))))
+        (base32 "11rypsjh05z833cng41csq69gp18m2rn1cqif1wr1qmarrqfammn"))))
     (properties `((upstream-name . "ETLUtils")))
     (build-system r-build-system)
     (arguments
@@ -22527,13 +22527,13 @@ C. (2023). <doi:10.57805/revstat.v21i2.405>.")
 (define-public r-ecoval
   (package
     (name "r-ecoval")
-    (version "1.2.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoval" version))
        (sha256
-        (base32 "05a6hyjsbdp4wwhrm5fwjr7fxx4g2nffhp885q0da2jkzd0754f1"))))
+        (base32 "1hp4v3a65ljvyzqk37jgdhp4lr92hq6r84l6291a6pml4fpji33w"))))
     (properties `((upstream-name . "ecoval")))
     (build-system r-build-system)
     (arguments

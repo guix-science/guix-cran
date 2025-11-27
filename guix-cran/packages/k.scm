@@ -114,6 +114,37 @@ Transforms.")
 publication-ready tables to latex files, and running Monte Carlo experiments.")
     (license license:gpl2+)))
 
+(define-public r-kwcchangepoint
+  (package
+    (name "r-kwcchangepoint")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KWCChangepoint" version))
+       (sha256
+        (base32 "0kfdrcs2na2iqm5rhmyb5m192715d6sryi7jr45d28vc8ss6rxsx"))))
+    (properties `((upstream-name . "KWCChangepoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rcpparmadillo r-rcpp r-fda-usc
+                             r-ddalpha))
+    (home-page "https://github.com/adeeb99/KWCChangepoint")
+    (synopsis
+     "Robust Changepoint Detection for Functional and Multivariate Data")
+    (description
+     "Detect and test for changes in covariance structures of functional data, as well
+as changepoint detection for multivariate data more generally.  Method for
+detecting non-stationarity in resting state functional Magnetic Resonance
+Imaging (@code{fMRI}) scans as seen in Ramsay, K., & Chenouri, S. (2025)
+<doi:10.1080/10485252.2025.2503891> is implemented in
+@code{fmri_changepoints()}.  Also includes depth- and rank-based implementation
+of the wild binary segmentation algorithm for detecting multiple changepoints in
+multivariate data.")
+    (license license:expat)))
+
 (define-public r-kvkapir
   (package
     (name "r-kvkapir")
@@ -171,6 +202,38 @@ and machines.  It can be useful in situations where XML or alike formats seem to
 be an overkill.  We provide an ability to parse KVH files in R pretty fast due
 to Rcpp use.")
     (license license:gpl2+)))
+
+(define-public r-kuzur
+  (package
+    (name "r-kuzur")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kuzuR" version))
+       (sha256
+        (base32 "1w94bqqlnsp9jwx01r9ljgrkw3lq6jg1r4x4li5s9k5s8gbdmcnf"))))
+    (properties `((upstream-name . "kuzuR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidygraph r-tibble r-reticulate r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/WickM/kuzuR")
+    (synopsis "Interface to 'kuzu' Graph Database")
+    (description
+     "This package provides a high-performance R interface to the kuzu graph database.
+ It uses the reticulate package to wrap the official Python client ('kuzu',
+pandas', and networkx'), allowing users to interact with kuzu seamlessly from
+within R'.  Key features include managing database connections, executing Cypher
+queries, and efficiently loading data from R data frames.  It also provides
+seamless integration with the R ecosystem by converting query results directly
+into popular R data structures, including tibble', igraph', tidygraph', and g6R
+objects, making kuzu's powerful graph computation capabilities readily available
+for data analysis and visualization workflows in R'.  The kuzu documentation can
+be found at <https://kuzudb.github.io/docs/>.")
+    (license license:expat)))
 
 (define-public r-kurt
   (package

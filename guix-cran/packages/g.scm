@@ -1576,13 +1576,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "07qj5bypf00ya8msmgyd2skf6f5wixhf7lnpflrv371pzqasxbgn"))))
+        (base32 "12f1mwxvj8gnmc4lzsld9zq2hcdfwi8n9mm8ddy9qgs54mswywc4"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -9278,13 +9278,13 @@ et al. (2017) <doi:10.1016/S2214-109X(17)30105-5>.")
 (define-public r-gppenalty
   (package
     (name "r-gppenalty")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPpenalty" version))
        (sha256
-        (base32 "0r7zxnanp4mmx1664c5hhxqxj56z9cb70l5ggkrmc1dvc0s9v3lv"))))
+        (base32 "0lvgwya450kv713zcd6c446yd3h4gbns1wvhfx52kfwbfxd0a7lq"))))
     (properties `((upstream-name . "GPpenalty")))
     (build-system r-build-system)
     (arguments
@@ -9297,10 +9297,12 @@ et al. (2017) <doi:10.1016/S2214-109X(17)30105-5>.")
      "This package implements maximum likelihood estimation for Gaussian processes,
 supporting both isotropic and separable models with predictive capabilities.
 Includes penalized likelihood estimation following Li and Sudjianto (2005,
-<doi:10.1198/004017004000000671>), using decorrelated prediction error
-(DPE)-based metrics, motivated by Mahalanobis distance, that account for
-uncertainty.  Includes cross validation techniques for tuning parameter
-selection.  Designed specifically for small datasets.")
+<doi:10.1198/004017004000000671>), with cross-validation guided by decorrelated
+prediction error (DPE) metric.  DPE metric, motivated by Mahalanobis distance,
+serves as evaluation criteria that accounts for predictive uncertainty in tuning
+parameter selection (Mutoh, Booth, and Stallrich, 2025,
+<doi:10.48550/@code{arXiv.2511.18111>}).  Designed specifically for small
+datasets.")
     (license license:expat)))
 
 (define-public r-gpp
@@ -11663,13 +11665,13 @@ PavÃ­a (2015) <doi:10.18637/jss.v066.c01>.")
 (define-public r-gofigr
   (package
     (name "r-gofigr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gofigR" version))
        (sha256
-        (base32 "01qdnbvsc7204ivn0aj61fcmz6ldrrzbjk410rk74yb36g71i7qi"))))
+        (base32 "1jpz1mlqp9v63w7kwylbscv13ay2nf7m7h5zkxdbyjk1ydqfg4c3"))))
     (properties `((upstream-name . "gofigR")))
     (build-system r-build-system)
     (arguments
@@ -21686,13 +21688,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "1mnbnqyp7m8zqxhkaiymr0xib7ikn9ycgxr45xzzc9rrjw4pibva"))))
+        (base32 "0xbdqyvaw43yc1n0cx6z0dfag9qxb23jw0y53179kx73mg57nkni"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (arguments
@@ -24113,13 +24115,13 @@ Generalized Gamma proposed in Stacy, E. W. (1962) <doi:10.1214/aoms/1177704481>.
 (define-public r-ggallin
   (package
     (name "r-ggallin")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggallin" version))
        (sha256
-        (base32 "0hrxa7m07ppvnndivxcgxksdyblb6fw17aw46maqavlvcrz3fjgm"))))
+        (base32 "1byfci085w9iblvah2l8jp11hjl1c2k0a67qpc2l210la7flfs0n"))))
     (properties `((upstream-name . "ggallin")))
     (build-system r-build-system)
     (arguments
@@ -30463,13 +30465,13 @@ description.")
 (define-public r-genescorer
   (package
     (name "r-genescorer")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneScoreR" version))
        (sha256
-        (base32 "1zf1imf9q85qazn176lzgxfgim4rni4hpzbsaiaqgh70i0g74qrl"))))
+        (base32 "041iyg2rvqnrkip6q62rpw3m1v1kkjc5d5ac6kgvwz903xbm3yx9"))))
     (properties `((upstream-name . "GeneScoreR")))
     (build-system r-build-system)
     (arguments
@@ -30478,11 +30480,13 @@ description.")
     (home-page "https://cran.r-project.org/package=GeneScoreR")
     (synopsis "Gene Scoring from Count Tables")
     (description
-     "This package provides two methods for automatic calculation of gene scores from
-gene count tables: the z-score method, which requires a table of samples being
-scored and a count table with control samples, and the geometric mean method,
-which does not rely on control samples.  The mathematical methods implemented
-are described by Kim et al. (2018) <doi:10.1089/jir.2017.0127>.")
+     "This package provides methods for automatic calculation of gene scores from gene
+count tables, including a Z-score method that requires a table of samples being
+scored and a count table with control samples; a geometric mean method that does
+not rely on control samples; and a principal component-based method that
+summarizes gene expression using user-selected principal components.  The
+Z-score and geometric mean approaches are described in Kim et al. (2018)
+<doi:10.1089/jir.2017.0127>.")
     (license license:expat)))
 
 (define-public r-genescape
@@ -37195,19 +37199,20 @@ relative ease.  For details see Wieczorek and colleagues (2012)
 (define-public r-galamm
   (package
     (name "r-galamm")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galamm" version))
        (sha256
-        (base32 "0zjfb9siwn62irvjfrzk0hdbj1jqcg8f3kdr5lzgniasgqgs2bvd"))))
+        (base32 "1lharszkl83f7kibj6d1195m86iak3w6q9mcy1rwk340m3a23i18"))))
     (properties `((upstream-name . "galamm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack
+    (propagated-inputs (list r-rlang
+                             r-rdpack
                              r-rcppeigen
                              r-rcpp
                              r-nlme

@@ -20451,34 +20451,35 @@ other image processing-style operations.")
 (define-public r-mmad
   (package
     (name "r-mmad")
-    (version "1.0.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MMAD" version))
        (sha256
-        (base32 "0587fribpy44xz8dflc3rhp861lh394nmdb25nbk826hb0azzqxx"))))
+        (base32 "1s7jzh0r1fs7m0ig3xiz0bzrj1wqmpxack6ik90zdq27rgmg3krr"))))
     (properties `((upstream-name . "MMAD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=MMAD")
-    (synopsis "MM Algorithm Based on the Assembly-Decomposition Technology")
+    (synopsis
+     "An R Package of Minorization-Maximization Algorithm via the Assembly--Decomposition Technology")
     (description
-     "The Minorize-Maximization(MM) algorithm based on Assembly-Decomposition(AD)
-technology can be used for model estimation of parametric models,
-semi-parametric models and non-parametric models.  We selected parametric models
-including left truncated normal distribution, type I multivariate zero-inflated
-generalized poisson distribution and multivariate compound zero-inflated
-generalized poisson distribution; semiparametric models include Cox model and
-gamma frailty model; nonparametric model is estimated for type II
-interval-censored data.  These general methods are proposed based on the
-following papers, Tian, Huang and Xu (2019) <doi:10.5705/SS.202016.0488>, Huang,
-Xu and Tian (2019) <doi:10.5705/ss.202016.0516>, Zhang and Huang (2022)
-<doi:10.1117/12.2642737>.")
-    (license license:gpl3+)))
+     "The minorization-maximization (MM) algorithm is a powerful tool for maximizing
+nonconcave target function.  However, for most existing MM algorithms, the
+surrogate function in the minorization step is constructed in a case-specific
+manner and requires manual programming.  To address this limitation, we develop
+the R package MMAD, which systematically integrates the assembly--decomposition
+technology in the MM framework.  This new package provides a comprehensive
+computational toolkit for one-stop inference of complex target functions,
+including function construction, evaluation, minorization and optimization via
+MM algorithm.  By representing the target function through a hierarchical
+composition of assembly functions, we design a hierarchical algorithmic
+structure that supports both bottom-up operations (construction, evaluation) and
+top-down operation (minorization).")
+    (license license:gpl3)))
 
 (define-public r-mmac
   (package
@@ -42556,13 +42557,13 @@ Diaz (2023) <doi:10.1093/jrsssb/qkad014>.")
 (define-public r-mcmcvis
   (package
     (name "r-mcmcvis")
-    (version "0.16.3")
+    (version "0.16.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCMCvis" version))
        (sha256
-        (base32 "06a4dp5b33sqmrm6x64qaz6v7hn5lhqqygrx62gzpqj6v3yvcbhf"))))
+        (base32 "0m7w2gqxfy8qs3jf1y4c61w8c8c4d56n7c81h48k4awp89dy6r1j"))))
     (properties `((upstream-name . "MCMCvis")))
     (build-system r-build-system)
     (arguments
@@ -42577,7 +42578,7 @@ Diaz (2023) <doi:10.1093/jrsssb/qkad014>.")
 visualizes, manipulates, and summarizes MCMC output.  Functions support simple
 and straightforward subsetting of model parameters within the calls, and produce
 presentable and publication-ready output.  MCMC output may be derived from
-Bayesian model output fit with Stan', NIMBLE', JAGS', and other software.")
+Bayesian model output fit with Stan, NIMBLE, JAGS, and other software.")
     (license license:gpl3)))
 
 (define-public r-mcmctreer
@@ -53625,6 +53626,32 @@ models to be combined with high-resolution paleoclimate simulation datasets
 (e.g., CHELSA-@code{TraCE21k} v1.0 dataset:
 <https://chelsa-climate.org/chelsa-trace21k/>).")
     (license license:gpl3+)))
+
+(define-public r-macro
+  (package
+    (name "r-macro")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "macro" version))
+       (sha256
+        (base32 "0ps5qnm5qs1wg24vx23n5bhnyksb82f962rhjcsgi8srwxh9lxfc"))))
+    (properties `((upstream-name . "macro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fmtr r-crayon r-common))
+    (native-inputs (list r-knitr))
+    (home-page "https://macro.r-sassy.org")
+    (synopsis "Macro Language for 'R' Programs")
+    (description
+     "This package provides a macro language for R programs, which provides a macro
+facility similar to SASÂ®'.  This package contains basic macro capabilities like
+defining macro variables, executing conditional logic, and defining macro
+functions.")
+    (license license:cc0)))
 
 (define-public r-maclogp
   (package

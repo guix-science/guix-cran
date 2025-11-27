@@ -6353,13 +6353,13 @@ Arguments and data are standardized.")
 (define-public r-hmde
   (package
     (name "r-hmde")
-    (version "1.2.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmde" version))
        (sha256
-        (base32 "14s0npwrfpqfxy6na7a0pm5q8zimxkrd4nf7q109jiyh3472fc8d"))))
+        (base32 "0a3x48qb3aq2p2r6ll1pn6p6wc6gxiy60hmxpkx538l1vrisj7px"))))
     (properties `((upstream-name . "hmde")))
     (build-system r-build-system)
     (arguments
@@ -6375,6 +6375,7 @@ Arguments and data are standardized.")
                              r-purrr
                              r-ggplot2
                              r-dplyr
+                             r-cowplot
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://traitecoevo.github.io/hmde/")

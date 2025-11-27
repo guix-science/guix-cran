@@ -286,6 +286,34 @@ Currently it only contains a very efficient function of decoding HTML entities
 in character vectors by Rcpp routine.")
     (license license:expat)))
 
+(define-public r-xtvfreg
+  (package
+    (name "r-xtvfreg")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtvfreg" version))
+       (sha256
+        (base32 "0fnck71spv7b0mr5yimznab6mlpzs7rdz74ajhmvvpiwg4nh3nck"))))
+    (properties `((upstream-name . "xtvfreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang))
+    (home-page "https://cran.r-project.org/package=xtvfreg")
+    (synopsis "Variance Function Panel Regression")
+    (description
+     "This package implements an iterative mean-variance panel regression estimator
+that allows both the mean and variance of the dependent variable to be functions
+of covariates.  The method alternates between estimating a mean equation (using
+generalized linear models with Gaussian family) and a variance equation (using
+generalized linear models with Gamma family on squared within-group residuals)
+until convergence.  Based on the methodology in Mooi-Reci and Liao (2025)
+<doi:10.1093/esr/jcae052>.")
+    (license license:expat)))
+
 (define-public r-xtsum
   (package
     (name "r-xtsum")
@@ -1966,13 +1994,13 @@ ISBN:1-55860-066-3), Wickham, Hadley (2019, ISBN:978-815384571).")
 (define-public r-xegapopulation
   (package
     (name "r-xegapopulation")
-    (version "1.0.0.10")
+    (version "1.0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaPopulation" version))
        (sha256
-        (base32 "11x0c81c3af6j9pfrlx1k72j7zsc3ncggsl4jmp1wjzjprrrgjyk"))))
+        (base32 "1w5ccpfvdga5w1gn51gnnzsl1njhhn0hjaqd4qqbqsjpja3y8plg"))))
     (properties `((upstream-name . "xegaPopulation")))
     (build-system r-build-system)
     (arguments
@@ -1996,7 +2024,8 @@ and Vecchi, M. P. (1983) <doi:10.1126/science.220.4598.671>, and Aarts, E., and
 Korst, J. (1989, ISBN:0-471-92146-7) offer simulated annealing or greedy
 randomized approximate search procedure elements.  Adaptive crossover and
 mutation rates depending on population statistics generalize the approach of
-Stanhope, S. A. and Daida, J. M. (1996, ISBN:0-18-201-031-7).")
+Stanhope, S. A. and Daida, J. M. (1996, ISBN:0-18-201-031-7).  For xega's
+architecture, see Geyer-Schulz, A. (2025) <doi:10.5445/IR/1000187255>.")
     (license license:expat)))
 
 (define-public r-xegapermgene

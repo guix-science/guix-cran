@@ -4915,13 +4915,13 @@ Analysis (PCA) algorithm of Yeasin and Paul (2024)
 (define-public r-udpipe
   (package
     (name "r-udpipe")
-    (version "0.8.12")
+    (version "0.8.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "udpipe" version))
        (sha256
-        (base32 "0fqly1xsicig37qjij3jwywqy8ggnnqn2bgw0p1dbmxpq2p0xqxj"))))
+        (base32 "0sv0w655anhb07pf9silkw0mrl25sl22klydp1dz2a3lhahmpj9q"))))
     (properties `((upstream-name . "udpipe")))
     (build-system r-build-system)
     (arguments

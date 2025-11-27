@@ -7012,13 +7012,13 @@ interactive visualization of scientific data; BMC Bioinformatics 2019
 (define-public r-boutliers
   (package
     (name "r-boutliers")
-    (version "2.1-1")
+    (version "2.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boutliers" version))
        (sha256
-        (base32 "039rw0qcs5xylnp571jxsnqmxbcdwal1ryas8ggv48pn0j9i7w54"))))
+        (base32 "0v2wakr3rbrxx9inksm2lm8fgz1s6yyzmvpcsmv5wy07vpd5msc7"))))
     (properties `((upstream-name . "boutliers")))
     (build-system r-build-system)
     (arguments
@@ -14241,13 +14241,13 @@ IDs.  In SVG mode, text and numbers can be dragged and dropped.  Based on the
 (define-public r-biotrajectory
   (package
     (name "r-biotrajectory")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTrajectory" version))
        (sha256
-        (base32 "1d35p8x4ymhqcgfbqxxb72915pcikdzw26a00y9nn7cpi3c4yl86"))))
+        (base32 "0b07sr2h7pkjfxzvgidsy0l8w3vl7xlq44rwga03jk0yylif44jl"))))
     (properties `((upstream-name . "BioTrajectory")))
     (build-system r-build-system)
     (arguments
@@ -24207,13 +24207,13 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
 (define-public r-bcea
   (package
     (name "r-bcea")
-    (version "2.4.82")
+    (version "2.4.83")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCEA" version))
        (sha256
-        (base32 "1n32xlyy82qnbkm2zrxba4wiipkgkvcq89s71nbnp5qihls7pxny"))))
+        (base32 "0x4gshj1qrpa25gwmz51r8wvck65p54zaikdmcpv6fc0iwhdk8mg"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
     (arguments

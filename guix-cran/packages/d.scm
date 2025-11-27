@@ -176,13 +176,13 @@ the Bifactor Dyadic Model (latent).")
 (define-public r-dynwrap
   (package
     (name "r-dynwrap")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynwrap" version))
        (sha256
-        (base32 "1jls01flvr91vyipilaqv2n3irniq678bm6f1jlxr2apr7w0rlyx"))))
+        (base32 "0gwbihiy4x1x4xk9x5y87pdjxjzf08qy3nxjc3zcycw1y4kf482j"))))
     (properties `((upstream-name . "dynwrap")))
     (build-system r-build-system)
     (arguments
@@ -9056,13 +9056,13 @@ values returned from other functions.")
 (define-public r-dominodatar
   (package
     (name "r-dominodatar")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DominoDataR" version))
        (sha256
-        (base32 "0wn0py9nm2nd9iaxaxv9jcclz1wlz13k1gx2f0jhqf64kgvfijxg"))))
+        (base32 "05qjlha555bjc7klxh134pgcma19b4syy19cbjc6ha6hlbmb0s5j"))))
     (properties `((upstream-name . "DominoDataR")))
     (build-system r-build-system)
     (arguments
@@ -24700,13 +24700,13 @@ Access functions are provided in the accompanying package deeptime'.")
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeptime" version))
        (sha256
-        (base32 "05lldfjv7dq2xw32w2lrscbwpdkzj6ki03gq7jqy6m8gq7mkpx01"))))
+        (base32 "00vsipn4sfsh10y44d6hs3flr3bp4di471pn077z97ibs0yf7yrn"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (arguments

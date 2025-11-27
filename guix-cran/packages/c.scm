@@ -4791,13 +4791,13 @@ et al., 2023 <doi:10.1016/j.cliser.2023.100345> for details.")
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSHShydRology" version))
        (sha256
-        (base32 "1rkgmsh94z0ybvz8mf32hhj0nhzri903czfvwwz4ygfd3s9qc031"))))
+        (base32 "15slwvlgl8h2jb208yxkpjg784raza7zlw3ql2m47dg0c8fr8iyy"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (arguments
@@ -4815,7 +4815,6 @@ et al., 2023 <doi:10.1016/j.cliser.2023.100345> for details.")
                              r-mgbt
                              r-magrittr
                              r-lubridate
-                             r-kendall
                              r-httr
                              r-ggspatial
                              r-ggplot2
@@ -21559,13 +21558,13 @@ application in which the calculations can be conducted as well.")
 (define-public r-completejourney
   (package
     (name "r-completejourney")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "completejourney" version))
        (sha256
-        (base32 "0ysbpmd7rglz3diy2cpcgvmmcnysradb4ddiwix7kbhzrhvhrdrs"))))
+        (base32 "0xlkk7gxfw0miprswclgz9sylyks59l3jyh70c5m338ip7z1cdz1"))))
     (properties `((upstream-name . "completejourney")))
     (build-system r-build-system)
     (arguments
@@ -40447,19 +40446,20 @@ season Y sales\".")
 (define-public r-charlesschwabapi
   (package
     (name "r-charlesschwabapi")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "charlesschwabapi" version))
        (sha256
-        (base32 "0r3sa4fiz8d6z37wdav5434mibq5k5p6aaznawqgrncvrs1br5n3"))))
+        (base32 "0wdbh06k226wvkri2xnmsva72g7kri2alfpp63wx3064qj0pn77g"))))
     (properties `((upstream-name . "charlesschwabapi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-purrr
                              r-openssl

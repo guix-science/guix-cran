@@ -9684,13 +9684,13 @@ Compositional Data, Chapman and Hall].")
 (define-public r-aramappings
   (package
     (name "r-aramappings")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aramappings" version))
        (sha256
-        (base32 "19rk26h56fmn33srhsbnc5wxi3dlr6j7np3836jq1rm4krvy0wxx"))))
+        (base32 "02q815rk85zmdivicsqm9zkgwm241319dacicvwy1jiq0rhclqkr"))))
     (properties `((upstream-name . "aramappings")))
     (build-system r-build-system)
     (arguments
@@ -10824,13 +10824,13 @@ for binomial outcome are computed.")
 (define-public r-appeears
   (package
     (name "r-appeears")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "appeears" version))
        (sha256
-        (base32 "1igrbp6mgflgxn9f63d738zzhgsdsvlgwbgidlbqy82v4i4q326p"))))
+        (base32 "02pzp0pspnpv2ghdplm5sgfdf0h3z50785g726mph20vs9wh223x"))))
     (properties `((upstream-name . "appeears")))
     (build-system r-build-system)
     (arguments

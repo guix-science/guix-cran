@@ -12026,6 +12026,32 @@ backward elimination.  Details about the model and implementation are given in
 Han et al.  2014.  This program can run in R version 3.2.2 and above.")
     (license license:gpl3)))
 
+(define-public r-rpesto
+  (package
+    (name "r-rpesto")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RPesto" version))
+       (sha256
+        (base32 "0h4lilnk6b5h5brkxllyfxcv05fxfsjyyyic5g9zpkd8jixwyanl"))))
+    (properties `((upstream-name . "RPesto")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-treeio r-tidytree r-ape))
+    (home-page "https://cran.r-project.org/package=RPesto")
+    (synopsis "Phylogenetic Estimation of Shifts in the Tempo of Origination")
+    (description
+     "This package implements diversification analyses using the phylogenetic
+birth-death-shift model.  It leverages belief propagation techniques to
+calculate branch-specific diversification rates, see Kopperud & Hoehna (2025)
+<doi:10.1093/sysbio/syaf041>.")
+    (license license:expat)))
+
 (define-public r-rpese
   (package
     (name "r-rpese")
@@ -40122,13 +40148,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.9.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapDM" version))
        (sha256
-        (base32 "1xpl5n046cj7r8rlkffmsfdffs0q0av2c13zw5v6agr265y3d33j"))))
+        (base32 "1x9zfqm99h856ifs1xgywbvhpza83hx6rqgpdfpanj6pazzx5g8k"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (arguments
@@ -40143,7 +40169,7 @@ default reports are generated as vignettes in the resulting package.")
                              r-redcapr
                              r-purrr
                              r-openxlsx
-                             r-magrittr
+                             r-lifecycle
                              r-labelled
                              r-janitor
                              r-forcats
@@ -40153,16 +40179,16 @@ default reports are generated as vignettes in the resulting package.")
     (home-page "https://bruigtp.github.io/REDCapDM/")
     (synopsis "'REDCap' Data Management")
     (description
-     "REDCap Data Management - RED@code{CapDM} is an R package that allows users to
-manage data exported directly from REDCap or using an API connection.  This
-package includes several functions designed for pre-processing data, generating
-reports of queries such as outliers or missing values, and following up on the
-identified queries.  REDCap (Research Electronic Data CAPture;
+     "REDCap Data Management - REDCap (Research Electronic Data CAPture;
 <https://projectredcap.org>) is a web application developed at Vanderbilt
 University, designed for creating and managing online surveys and databases and
 the REDCap API is an interface that allows external applications to connect to
 REDCap remotely, and is used to programmatically retrieve or modify project data
-or settings within REDCap, such as importing or exporting data.")
+or settings within REDCap, such as importing or exporting data.  RED@code{CapDM}
+is an R package that allows users to manage data exported directly from REDCap
+or using an API connection.  This package includes several functions designed
+for pre-processing data, generating reports of queries such as outliers or
+missing values, and following up on previously identified queries.")
     (license license:expat)))
 
 (define-public r-redcapcast
@@ -48778,13 +48804,13 @@ see <https://www.lri.fr/~hansen/cmaes_inmatlab.html#java>.")
 (define-public r-rclsp
   (package
     (name "r-rclsp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rclsp" version))
        (sha256
-        (base32 "17r04pik2fcc56kvh9fpx8xkqcr9l1cpskyalxx4697qxyk5r1f0"))))
+        (base32 "10qgi1bx96qh0mzxrirk9qsmrlpaf6zpizfmg1v5fi1qfvh9q949"))))
     (properties `((upstream-name . "rclsp")))
     (build-system r-build-system)
     (arguments
@@ -56451,13 +56477,13 @@ parsers developed in Haskell.")
 (define-public r-ralsa
   (package
     (name "r-ralsa")
-    (version "1.5.5")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RALSA" version))
        (sha256
-        (base32 "0l47s3gpbp44xqn1anp3mxhzsx8kf6j5vrg2c0awj4qgc6gr3raq"))))
+        (base32 "1yf947mfl0q49qkidqlpvxjip9hjl4iq7s5sljvfq9jp4whjf2k5"))))
     (properties `((upstream-name . "RALSA")))
     (build-system r-build-system)
     (arguments
@@ -56478,7 +56504,6 @@ parsers developed in Haskell.")
                              r-hmisc
                              r-haven
                              r-ggplot2
-                             r-foreign
                              r-dt
                              r-data-table
                              r-archive))

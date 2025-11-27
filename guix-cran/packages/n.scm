@@ -5581,13 +5581,13 @@ chromium based browser installed on your system.")
 (define-public r-nomisdata
   (package
     (name "r-nomisdata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nomisdata" version))
        (sha256
-        (base32 "1adgaa0a6p1hhcn9z4yw96x1sxg2xjzdwpb7nzwn8c184fk6yz3d"))))
+        (base32 "0086ax6da3anx9j8zp94r2dhzvbdj098zh8clkg94l5pr3ayacg3"))))
     (properties `((upstream-name . "nomisdata")))
     (build-system r-build-system)
     (arguments

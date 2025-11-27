@@ -710,13 +710,13 @@ classify participant data as valid or invalid.")
 (define-public r-synmicrodata
   (package
     (name "r-synmicrodata")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synMicrodata" version))
        (sha256
-        (base32 "1b916srmxaidyc0xsq80pdg38sh324sd5sy9j92il8wzq9jfk0kn"))))
+        (base32 "0wwc2ygrn1w3nnf7h94d8aipnn43xzhdzg6m7pvrs55mn0lwxqik"))))
     (properties `((upstream-name . "synMicrodata")))
     (build-system r-build-system)
     (arguments
@@ -8185,32 +8185,6 @@ lower confidence bounds for the proportion of active voxels in different
 clusters for @code{fMRI} cluster analysis.  Details may be found in Vesely,
 Finos, and Goeman (2020) <@code{arXiv:2102.11759>}.")
     (license license:gpl2+)))
-
-(define-public r-sumr
-  (package
-    (name "r-sumr")
-    (version "0.4.15")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sumR" version))
-       (sha256
-        (base32 "1s4id6yrwib0b6l1a3pkihmqmishwjkg6pz25mr17aqmb8k400yy"))))
-    (properties `((upstream-name . "sumR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrixstats))
-    (home-page "https://cran.r-project.org/package=sumR")
-    (synopsis "Approximate Summation of Series")
-    (description
-     "Application of theoretical results which ensure that the summation of an
-infinite discrete series is within an arbitrary margin of error of its true
-value.  The C code under the hood is shared through header files to allow users
-to sum their own low level functions as well.  Based on the paper by Braden
-(1992) <doi: 10.2307/2324995>.")
-    (license license:gpl3+)))
 
 (define-public r-sumo
   (package
@@ -33216,13 +33190,13 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.4.3")
+    (version "4.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "1p3aqr9jd696s2s5v1qcpx0hahrp05p5w33bcn2bw2dbcfj7fa24"))))
+        (base32 "1xnm9z7917ar1xzsql2bswl6ljbqxxskq5mwzsiqmn74hlibvxlw"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (arguments
@@ -33233,6 +33207,7 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
                              r-rcpp
                              r-matrix
                              r-mass
+                             r-enhancer
                              r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/covaruber/sommer")
@@ -35670,13 +35645,13 @@ genetic risk-allele score exact distributions are also possible to be estimated.
 (define-public r-snpannotator
   (package
     (name "r-snpannotator")
-    (version "1.4.0")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNPannotator" version))
        (sha256
-        (base32 "0l51y2p87a5zbbbinhq2nlg1d09yxizq278frd3czanp10hslv4i"))))
+        (base32 "1wqkdkrimbwlfxylajg61dr56xg6bb3n0ads5wfnsz6dl1ykxdb3"))))
     (properties `((upstream-name . "SNPannotator")))
     (build-system r-build-system)
     (arguments
@@ -35700,12 +35675,11 @@ genetic risk-allele score exact distributions are also possible to be estimated.
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SNPannotator")
     (synopsis
-     "Investigating the Functional Characteristics of Selected Variants and Their Vicinity Genomic Region")
+     "Automated Functional Annotation of Genetic Variants and Linked Proxies")
     (description
-     "To investigate the functional characteristics of selected SNPs and their
-vicinity genomic region.  Linked SNPs in moderate to high linkage disequilibrium
-(e.g. r2>0.50) with the corresponding index SNPs will be selected for further
-analysis.")
+     "To automated functional annotation of genetic variants and linked proxies.
+Linked SNPs in moderate to high linkage disequilibrium (e.g. r2>0.50) with the
+corresponding index SNPs will be selected for further analysis.")
     (license license:gpl3)))
 
 (define-public r-snpaimer
@@ -37762,6 +37736,41 @@ assessing uniqueness of giving taxon.  It is possible to use @code{smirnov()}
 output as a distance measure: convert it to distance by \"as.dist(1 -
 smirnov(x))\".")
     (license license:gpl2+)))
+
+(define-public r-smile
+  (package
+    (name "r-smile")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smile" version))
+       (sha256
+        (base32 "1h03lhv481kinmz3xfphhpvwn0vwri4i6kgnxb4dd9ma0mpxdf3c"))))
+    (properties `((upstream-name . "smile")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list proj geos gdal))
+    (propagated-inputs (list r-sf
+                             r-rcppeigen
+                             r-rcpp
+                             r-numderiv
+                             r-mvtnorm
+                             r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://lcgodoy.me/smile/")
+    (synopsis "Spatial Misalignment: Interpolation, Linkage, and Estimation")
+    (description
+     "This package provides functions to estimate, predict and interpolate areal data.
+ For estimation and prediction we assume areal data is an average of an
+underlying continuous spatial process as in Moraga et al. (2017)
+<doi:10.1016/j.spasta.2017.04.006>, Johnson et al. (2020)
+<doi:10.1186/s12942-020-00200-w>, and Wilson and Wakefield (2020)
+<doi:10.1093/biostatistics/kxy041>.  The interpolation methodology is (mostly)
+based on Goodchild and Lam (1980, ISSN:01652273).")
+    (license license:gpl3)))
 
 (define-public r-smidm
   (package
@@ -59792,13 +59801,13 @@ object that can handle deciphering and checking versions.")
 (define-public r-semtree
   (package
     (name "r-semtree")
-    (version "0.9.22")
+    (version "0.9.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semtree" version))
        (sha256
-        (base32 "15hdikqrmjm8pmqycz102sl9v9d980dipxpi4ynbhyywp9is0q3r"))))
+        (base32 "139pgiypgvjgihyh3d66hh58jwnx18jmmvqmqb6ckmz1c40r10gj"))))
     (properties `((upstream-name . "semtree")))
     (build-system r-build-system)
     (arguments
@@ -64429,13 +64438,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.7.4")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "04r0c7l6lqgyax44r3p7xzhf85wz49i10ddw2x8k9qvl725vigs4"))))
+        (base32 "0gqaqglb041wmfjmyzm6icgbv356mi8v5wzsfgcnj77m13knsq6y"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (arguments
@@ -64453,11 +64462,12 @@ viewer pane during their execution.")
                              r-generics
                              r-fmesher
                              r-fishmod
+                             r-extradistr
                              r-cli
                              r-assertthat
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://pbs-assess.github.io/sdmTMB/")
+    (home-page "https://sdmTMB.github.io/sdmTMB/")
     (synopsis "Spatial and Spatiotemporal SPDE-Based GLMMs with 'TMB'")
     (description
      "This package implements spatial and spatiotemporal GLMMs (Generalized Linear
@@ -66823,13 +66833,13 @@ et al., (2018) <doi:10.1109/TSE.2018.2794977>].")
 (define-public r-scorpius
   (package
     (name "r-scorpius")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCORPIUS" version))
        (sha256
-        (base32 "0i464i6fbxxcrvc48ajmz7i75sqfwizjypbbmc0mmj0dgmnxgby9"))))
+        (base32 "1a3ncdx33fy98mpx79xwwkrmxyf2bgp734qpgmd3pggdkbaingij"))))
     (properties `((upstream-name . "SCORPIUS")))
     (build-system r-build-system)
     (arguments
@@ -75401,25 +75411,20 @@ and Ntzoufras (2009, ISBN-10: 1118210352).")
 (define-public r-saehb
   (package
     (name "r-saehb")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeHB" version))
        (sha256
-        (base32 "1wv9b656s93r9vnm6j0j10gd1q92vbawhy5ijjzvzsn9drzzwzsc"))))
+        (base32 "0lhyfwh477hwapgqvz0m0bah3b7ixcrhjq3v9qzvbmgyjkwzsj3i"))))
     (properties `((upstream-name . "saeHB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list jags))
-    (propagated-inputs (list r-stringr
-                             r-rjags
-                             r-nimble
-                             r-mass
-                             r-coda
-                             r-carbayesdata))
+    (propagated-inputs (list r-stringr r-rjags r-coda r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zazaperwira/saeHB")
     (synopsis "Small Area Estimation using Hierarchical Bayesian Method")

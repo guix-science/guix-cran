@@ -8924,13 +8924,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.25")
+    (version "1.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "1pyf1468fsshx7gkmvcv1s9520h7nixk2y223xwi27j9rp0canpg"))))
+        (base32 "1pyhslljlyz47j9rh7b1ygw0dd2fxaad35iajhc4qcqpkrprz0id"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -8949,8 +8949,8 @@ experience.  Functions include tools for data partitioning, performance
 evaluation, and data transformations (e.g., z-score and min-max scaling).  The
 included datasets are curated to highlight practical applications in data
 exploration, modeling, and multivariate analysis.  An early inspiration for the
-package came from an ancient Persian idiom about \"eating the liver,\" symbolizing
-deep and immersive engagement with knowledge.")
+package came from an ancient Persian idiom about \"eating the @code{liveR},\"
+symbolizing deep and immersive engagement with knowledge.")
     (license license:gpl2+)))
 
 (define-public r-live
@@ -17140,31 +17140,6 @@ simultaneously along the last dimension (partition).  The internal storage
 format is provided by fstcore package geared by LZ4 and ZSTD compressors.")
     (license license:agpl3)))
 
-(define-public r-lazy
-  (package
-    (name "r-lazy")
-    (version "1.2-18")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lazy" version))
-       (sha256
-        (base32 "02phj1l92dh5qmcl9i8scxgj4v21knbfrwwixq74bgyzwb51ni4r"))))
-    (properties `((upstream-name . "lazy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=lazy")
-    (synopsis "Lazy Learning for Local Regression")
-    (description
-     "By combining constant, linear, and quadratic local models, lazy estimates the
-value of an unknown multivariate function on the basis of a set of possibly
-noisy samples of the function itself.  This implementation of lazy learning
-automatically adjusts the bandwidth on a query-by-query basis through a
-leave-one-out cross-validation.")
-    (license license:gpl2+)))
-
 (define-public r-layer
   (package
     (name "r-layer")
@@ -18035,13 +18010,13 @@ manipulated.  Data categorization is based on Garrido, Abad, and Ponsoda (2011)
 (define-public r-latentcor
   (package
     (name "r-latentcor")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latentcor" version))
        (sha256
-        (base32 "0c8ygjdqxb9zs6b42ncqh5va80vxamdphja18x8dazygynmcgjr0"))))
+        (base32 "0pq4xlnimppy2b2h1dk884svhn2cf8xz69drxb49mzgj8fg3p8dd"))))
     (properties `((upstream-name . "latentcor")))
     (build-system r-build-system)
     (arguments
@@ -18072,12 +18047,12 @@ essentially making latent correlation estimation almost as fast as rank-based
 correlation estimation.  The estimation is based on latent copula Gaussian
 models.  For continuous/binary types, see Fan, J., Liu, H., Ning, Y., and Zou,
 H. (2017).  For ternary type, see Quan X., Booth J.G. and Wells M.T. (2018)
-<@code{arXiv:1809.06255>}.  For truncated type or zero-inflated type, see Yoon
-G., Carroll R.J. and Gaynanova I. (2020) <doi:10.1093/biomet/asaa007>.  For
-approximation method of computation, see Yoon G., MÃ¼ller C.L. and Gaynanova I.
-(2021) <doi:10.1080/10618600.2021.1882468>.  The latter method uses multi-linear
-interpolation originally implemented in the R package
-<https://cran.r-project.org/package=chebpol>.")
+<doi:10.48550/@code{arXiv.1809.06255>}.  For truncated type or zero-inflated
+type, see Yoon G., Carroll R.J. and Gaynanova I. (2020)
+<doi:10.1093/biomet/asaa007>.  For approximation method of computation, see Yoon
+G., MÃ¼ller C.L. and Gaynanova I. (2021) <doi:10.1080/10618600.2021.1882468>.
+The latter method uses multi-linear interpolation originally implemented in the
+R package <https://cran.r-project.org/package=chebpol>.")
     (license license:gpl3)))
 
 (define-public r-latentbma
@@ -19631,13 +19606,13 @@ also provided.  For details and tutorial, see Gramacy (2016
 (define-public r-lagosne
   (package
     (name "r-lagosne")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LAGOSNE" version))
        (sha256
-        (base32 "03x2ghcpl1ibpic4msb1n3n8fqbxjnv357phlb2a7y5lmy4fb1ny"))))
+        (base32 "1qv0q46574hic8qzjm63sp1jz7ql6y98zb9djizl6pj7nj05z46x"))))
     (properties `((upstream-name . "LAGOSNE")))
     (build-system r-build-system)
     (arguments
@@ -19647,19 +19622,19 @@ also provided.  For details and tutorial, see Gramacy (2016
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-xml2
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-sf
                              r-rlang
                              r-rappdirs
-                             r-qs
+                             r-qs2
                              r-purrr
                              r-progress
                              r-memoise
                              r-magrittr
                              r-lazyeval
-                             r-httr
                              r-dplyr
                              r-curl))
     (native-inputs (list r-r-rsp r-knitr))

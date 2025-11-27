@@ -2545,13 +2545,13 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
 (define-public r-publicationbiasbenchmark
   (package
     (name "r-publicationbiasbenchmark")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PublicationBiasBenchmark" version))
        (sha256
-        (base32 "0lgb7p97v45phwpm518js5q6h4arwqndksv200c0ab2jh5mjpr03"))))
+        (base32 "1bn548ih1xii595n4i2cpmpz8ffc6c6wbnys0bmbzxbi3qhif8nv"))))
     (properties `((upstream-name . "PublicationBiasBenchmark")))
     (build-system r-build-system)
     (arguments
@@ -21829,6 +21829,39 @@ Perl-speaks-NONMEM (@code{PsN}).")
 pharmacometric models.")
     (license license:gpl3)))
 
+(define-public r-pmxnode
+  (package
+    (name "r-pmxnode")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmxNODE" version))
+       (sha256
+        (base32 "1cnaab6hy8q1q0jyr3hk89dc0vpsrawmd0ny50km1bxb3l915rvm"))))
+    (properties `((upstream-name . "pmxNODE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-ggplot2 r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pmxNODE")
+    (synopsis "Application of NODEs in 'Monolix', 'NONMEM', and 'nlmixr2'")
+    (description
+     "An easy-to-use tool for implementing Neural Ordinary Differential Equations
+(NODEs) in pharmacometric software such as Monolix', NONMEM', and nlmixr2', see
+BrÃ¤m et al. (2024) <doi:10.1007/s10928-023-09886-4> and BrÃ¤m et al. (2025)
+<doi:10.1002/psp4.13265>.  The main functionality is to automatically generate
+structural model code describing computations within a neural network.
+Additionally, parameters and software settings can be initialized automatically.
+ For using these additional functionalities with Monolix', @code{pmxNODE}
+interfaces with @code{MonolixSuite} via the @code{lixoftConnectors} package.
+The @code{lixoftConnectors} package is distributed with @code{MonolixSuite}
+(<https://monolixsuite.slp-software.com/r-functions/2024R1/package-lixoftconnectors>)
+and is not available from public repositories.")
+    (license license:gpl3+)))
+
 (define-public r-pmxcv
   (package
     (name "r-pmxcv")
@@ -33220,13 +33253,13 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "7.0")
+    (version "7.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "1pm2zk6svwaqgzcka76mrnzyz1x1sj2sd9ygcgqfdnql5gcmy71k"))))
+        (base32 "1m8mcg6n5iak349pmb6kwpjscry5f40h23yxbcmhk0059s5400q1"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (arguments

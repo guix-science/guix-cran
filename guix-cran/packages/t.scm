@@ -12853,6 +12853,31 @@ model for adsorption data and also the parameters of the related pseudo-n-order
 constant (kn) and the order of the model (n).")
     (license license:gpl3)))
 
+(define-public r-totalcopheneticindex
+  (package
+    (name "r-totalcopheneticindex")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TotalCopheneticIndex" version))
+       (sha256
+        (base32 "0i21g7zzad973802kfp8s638d3g70c4vkrm59i9frb71apvkljk2"))))
+    (properties `((upstream-name . "TotalCopheneticIndex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treetools))
+    (home-page "https://github.com/ms609/tci/")
+    (synopsis "Quantify the Balance of Phylogenetic Trees")
+    (description
+     "Measures the degree of balance for a given phylogenetic tree by calculating the
+Total Cophenetic Index.  Reference: A. Mir, F. Rossello, L. A. Rotger (2013).  A
+new balance index for phylogenetic trees.  Math.  Biosci.  241, 125-136
+<doi:10.1016/j.mbs.2012.10.005>.")
+    (license (license:fsdg-compatible "Unlimited"))))
+
 (define-public r-totalcensus
   (package
     (name "r-totalcensus")
@@ -21185,13 +21210,13 @@ as HTML files or static images.")
 (define-public r-tidycpp
   (package
     (name "r-tidycpp")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyCpp" version))
        (sha256
-        (base32 "0h2h0r8v1fp3sl4caf3nkhf4f75zncadkz9axzwncig7a7qvb00z"))))
+        (base32 "1rwmjvz8vw44cnbzwlvlsw9byx2cvdkzvx60pr2m2p4xdisbrp1q"))))
     (properties `((upstream-name . "tidyCpp")))
     (build-system r-build-system)
     (arguments
@@ -25204,13 +25229,13 @@ enhanced sentiment visualization.")
 (define-public r-text-alignment
   (package
     (name "r-text-alignment")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text.alignment" version))
        (sha256
-        (base32 "1zw0hxrplpvn2w36q9cwm7s8hxixdin9yzkwj1fhxh5sgc7fq471"))))
+        (base32 "1iq2p0m1201p9a43skwqs96av396307ffvsw7rf3bc8yix70x378"))))
     (properties `((upstream-name . "text.alignment")))
     (build-system r-build-system)
     (arguments
@@ -26809,13 +26834,13 @@ trials.")
 (define-public r-terminalgraphics
   (package
     (name "r-terminalgraphics")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "terminalgraphics" version))
        (sha256
-        (base32 "0ldpwvsh1bd9j5q0882pznk4f8mparabcwnblry9bk8j26w4kqnw"))))
+        (base32 "0vjqkacg4w2qw6wqsrpb4nk776i9fbn05vk29a4fjcwmzbpzpifw"))))
     (properties `((upstream-name . "terminalgraphics")))
     (build-system r-build-system)
     (arguments

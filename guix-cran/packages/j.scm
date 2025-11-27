@@ -3802,13 +3802,13 @@ search.")
 (define-public r-jellyfisher
   (package
     (name "r-jellyfisher")
-    (version "1.0.4")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jellyfisher" version))
        (sha256
-        (base32 "0k7w94bnadn3xm4k93gyxzf0yllqi8akpq3a90fsi7vw3gs32jc1"))))
+        (base32 "010kwvb63zb6hy6vql9rai179y2kgh6z59fhanh9q78r8y1m9w55"))))
     (properties `((upstream-name . "jellyfisher")))
     (build-system r-build-system)
     (arguments
