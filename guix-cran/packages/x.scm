@@ -10,7 +10,6 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages python)
@@ -561,31 +560,6 @@ both with and without external information with the most common penalties used
 in practice (i.e.  ridge, lasso, elastic net).  Support for standard R matrices,
 sparse matrices and big.matrix objects.")
     (license license:gpl2)))
-
-(define-public r-xrjulia
-  (package
-    (name "r-xrjulia")
-    (version "0.9.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "XRJulia" version))
-       (sha256
-        (base32 "0mm9cv2nsgkrpjv0kb5vzfy1aszdyawk7mdinv4gby78bdvvl0k5"))))
-    (properties `((upstream-name . "XRJulia")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list julia))
-    (propagated-inputs (list r-xr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=XRJulia")
-    (synopsis "Structured Interface to Julia")
-    (description
-     "This package provides a Julia interface structured according to the general form
-described in package XR and in the book \"Extending R\".")
-    (license license:gpl2+)))
 
 (define-public r-xring
   (package
@@ -2248,13 +2222,13 @@ APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
 (define-public r-xega
   (package
     (name "r-xega")
-    (version "0.9.0.17")
+    (version "0.9.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xega" version))
        (sha256
-        (base32 "0gskl50nn7pbk6wndn76q37vm0d4lzc4iy3hz0p0v27jydrs72vv"))))
+        (base32 "105xkhyggcw137xlcl5vbv51llqj9q95ac3r63qnv3m8n5nbw27d"))))
     (properties `((upstream-name . "xega")))
     (build-system r-build-system)
     (arguments
@@ -2286,9 +2260,10 @@ evolution (Price, Kenneth V., Storn, Rainer M. and Lampinen, Jouni A. (2005)
 and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>), and grammatical
 differential evolution (O'Neill, M. and Brabazon, A. (2006) in Arabinia, H.
 (2006, ISBN:978-193-241596-3).  All algorithms reuse basic adaptive mechanisms
-for performance optimization.  Sequential or parallel execution (on multi-core
-machines, local clusters, and high-performance computing environments) is
-available for all algorithms.  See
+for performance optimization.  For xega's architecture, see Geyer-Schulz, A.
+(2025) <doi:10.5445/IR/1000187255>.  Sequential or parallel execution (on
+multi-core machines, local clusters, and high-performance computing
+environments) is available for all algorithms.  See
 <https://github.com/ageyerschulz/xega/tree/main/examples/@code{executionModel>}.")
     (license license:expat)))
 

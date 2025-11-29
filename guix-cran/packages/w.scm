@@ -8317,13 +8317,13 @@ model.")
 (define-public r-wbids
   (package
     (name "r-wbids")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbids" version))
        (sha256
-        (base32 "0s7bhdkm1583mspg96kd4hpqmv6jf8c71bfn373wm07b85s00zmx"))))
+        (base32 "07fcipzi4dah0qvp49w07043nqyspw15w5m0x6bd39m3hxhj6jra"))))
     (properties `((upstream-name . "wbids")))
     (build-system r-build-system)
     (arguments
@@ -8335,6 +8335,7 @@ model.")
                              r-rlang
                              r-purrr
                              r-httr2
+                             r-econdatasets
                              r-dplyr
                              r-cli))
     (native-inputs (list r-quarto))
@@ -9276,13 +9277,13 @@ Barber, S., Nason, G.P. and Silverman, B.W. (2002)
 (define-public r-wav
   (package
     (name "r-wav")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wav" version))
        (sha256
-        (base32 "1f5y53max7vliq4sq66hqjjns8s9lsx9pkdjk6rm929gk371x7by"))))
+        (base32 "0yn7fc7mlrv0pkpr707v4vbsky6pg2mask4czipc8yqniabxxc29"))))
     (properties `((upstream-name . "wav")))
     (build-system r-build-system)
     (arguments

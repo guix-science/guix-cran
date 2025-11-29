@@ -10820,43 +10820,6 @@ contains an implementation of a doubly robust score test, described in Kook et
 al. (2024, <DOI:10.1080/01621459.2024.2395588>).")
     (license license:gpl2)))
 
-(define-public r-traktok
-  (package
-    (name "r-traktok")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "traktok" version))
-       (sha256
-        (base32 "0qr7hzmwg2v73fw69ljxf2b3hicqv1zqhv10glpr8zrjnzrw3w5l"))))
-    (properties `((upstream-name . "traktok")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-openssl
-                             r-lobstr
-                             r-jsonlite
-                             r-httr2
-                             r-glue
-                             r-dplyr
-                             r-curl
-                             r-cookiemonster
-                             r-cli
-                             r-askpass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JBGruber/traktok")
-    (synopsis "Collecting 'TikTok' Data")
-    (description
-     "Getting @code{TikTok} data (<https://www.tiktok.com/>) through the official and
-unofficial APIsâin other words, you can track @code{TikTok}'.")
-    (license license:gpl3+)))
-
 (define-public r-trajr
   (package
     (name "r-trajr")
@@ -12803,13 +12766,13 @@ graphing, and analyzing how each season of Tournament of Champions played out.")
 (define-public r-touch
   (package
     (name "r-touch")
-    (version "0.1-6")
+    (version "0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "touch" version))
        (sha256
-        (base32 "0w25zxxj5qaxkx64vz55qw4k4szx85ncbcam7q600ryy1kc5xxxv"))))
+        (base32 "1qxrdkv25n4zffx9kas9q0rnl5yv5nzwwxjbkad6yiak510ajis7"))))
     (properties `((upstream-name . "touch")))
     (build-system r-build-system)
     (arguments
@@ -12820,7 +12783,7 @@ graphing, and analyzing how each season of Tournament of Champions played out.")
     (synopsis "Tools of Utilization and Cost in Healthcare")
     (description
      "R implementation of the software tools developed in the H-CUP (Healthcare Cost
-and Utilization Project) <https://www.hcup-us.ahrq.gov> and AHRQ (Agency for
+and Utilization Project) <https://hcup-us.ahrq.gov> and AHRQ (Agency for
 Healthcare Research and Quality) <https://www.ahrq.gov>.  It currently contains
 functions for mapping ICD-9 codes to the AHRQ comorbidity measures and
 translating ICD-9 (resp.  ICD-10) codes to ICD-10 (resp.  ICD-9) codes based on
@@ -13808,13 +13771,13 @@ also supports the text package.  For more information, visit
 (define-public r-topicmodels-etm
   (package
     (name "r-topicmodels-etm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topicmodels.etm" version))
        (sha256
-        (base32 "06w2n1gswv268sgzm0nz14mmrahibnsgcxh7hcks3bmq9r8d9ba4"))))
+        (base32 "1cwajn8mq3yr49bk91hc0bihlwylw14j6i39ibycbk2s92j0m0pn"))))
     (properties `((upstream-name . "topicmodels.etm")))
     (build-system r-build-system)
     (arguments
@@ -13822,7 +13785,7 @@ also supports the text package.  For more information, visit
       #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-torch r-matrix))
-    (home-page "https://cran.r-project.org/package=topicmodels.etm")
+    (home-page "https://github.com/bnosac/ETM")
     (synopsis "Topic Modelling in Embedding Spaces")
     (description
      "Find topics in texts which are semantically embedded using techniques like
@@ -13831,7 +13794,7 @@ categorical distribution whose natural parameter is the inner product between a
 word embedding and an embedding of its assigned topic.  The techniques are
 explained in detail in the paper Topic Modeling in Embedding Spaces by Adji B.
 Dieng, Francisco J. R. Ruiz, David M. Blei (2019), available at
-<@code{arXiv:1907.04907>}.")
+<doi:10.48550/@code{arXiv.1907.04907>}.")
     (license license:expat)))
 
 (define-public r-topiclabels
@@ -16843,13 +16806,13 @@ project template for Rstudio'.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "0w8k56scg534f56jvxaibkbiz2n327pan8rdzfg6dgbf6mibzd1m"))))
+        (base32 "07jsicd7dgnwga6ni6b46xd8zpalmhsw0cd7zxlnk3xwhvisrcdw"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (arguments
@@ -20961,6 +20924,35 @@ analysis-ready format.")
 visualizing high-dimensional data.  tidydr provides uniform output and is
 compatible with multiple methods, including prcomp', mds', Rtsne'.  etc.")
     (license license:artistic2.0)))
+
+(define-public r-tidydp
+  (package
+    (name "r-tidydp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidydp" version))
+       (sha256
+        (base32 "15r4k20xngbls3y5s7j5vkaqmmqmj04qf36c95h5r3rd1527jz4a"))))
+    (properties `((upstream-name . "tidydp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ttarler/tidydp")
+    (synopsis "Tidy Differential Privacy")
+    (description
+     "This package provides a tidy-style interface for applying differential privacy
+to data frames.  Provides pipe-friendly functions to add calibrated noise,
+compute private statistics, and track privacy budgets using the epsilon-delta
+differential privacy framework.  Implements the Laplace mechanism (Dwork et al.
+2006 <doi:10.1007/11681878_14>) and the Gaussian mechanism for achieving
+differential privacy as described in Dwork and Roth (2014)
+<doi:10.1561/0400000042>.")
+    (license license:expat)))
 
 (define-public r-tidydice
   (package
@@ -30233,13 +30225,13 @@ windows instead of n-lagged observations.")
 (define-public r-tbrdist
   (package
     (name "r-tbrdist")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TBRDist" version))
        (sha256
-        (base32 "0xwr91fyx3x27szkafmcs5sffgs64svky7mddrrgcfnbdl5c4iia"))))
+        (base32 "198zsw650n642l0hj25fw759l1hmpg0gs4xr9kdavhzix7ya5gks"))))
     (properties `((upstream-name . "TBRDist")))
     (build-system r-build-system)
     (arguments
@@ -30257,7 +30249,7 @@ windows instead of n-lagged observations.")
     (description
      "Fast calculation of the Subtree Prune and Regraft (SPR), Tree Bisection and
 Reconnection (TBR) and Replug distances between unrooted trees, using the
-algorithms of Whidden and Matsen (2017) <arxiv:1511.07529>.")
+algorithms of Whidden and Matsen (2017) <doi:10.48550/@code{arXiv.1511.07529>}.")
     (license license:gpl3+)))
 
 (define-public r-tbox
@@ -30690,23 +30682,19 @@ Alvarez and Luebert (2018) <doi:10.3897/bdj.6.e23635>.")
 (define-public r-taxlist
   (package
     (name "r-taxlist")
-    (version "0.3.0")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxlist" version))
        (sha256
-        (base32 "15abqk70dmz39m85aczwfvrhyvmw53r49l6ywip1i84pla991wsg"))))
+        (base32 "0wkpywykzc87qrl3yvib2gkvz5jsa97dmpp03qg50szfgl05mjjn"))))
     (properties `((upstream-name . "taxlist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vegdata
-                             r-stringr
-                             r-stringi
-                             r-stringdist
-                             r-foreign
+    (propagated-inputs (list r-stringr r-stringi r-stringdist r-foreign
                              r-biblio))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=taxlist")
@@ -31390,13 +31378,13 @@ et al. (2022) <doi:10.1111/rssb.12504>).")
 (define-public r-tardis
   (package
     (name "r-tardis")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tardis" version))
        (sha256
-        (base32 "1hfqnszhly6cfi7aii3v9nnrj3md389bflvf3igixrn4wb7mfyi5"))))
+        (base32 "062m31zz221289vlyym0s3wzbc6l3dr3hjn6vpdddkm1ncqqmzkk"))))
     (properties `((upstream-name . "tardis")))
     (build-system r-build-system)
     (arguments

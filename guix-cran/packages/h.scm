@@ -6266,13 +6266,13 @@ predict future sequences.")
 (define-public r-hmer
   (package
     (name "r-hmer")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmer" version))
        (sha256
-        (base32 "0536bdrg4cw4kqmx6czzh63b8wia6fhm02fvjv9irlmxqhmy0mxa"))))
+        (base32 "02nrrhxrymr5qgl3i095vl1lp4f9m6zsbk55lxlfjxx5yi3kk4sx"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
     (arguments
@@ -6287,9 +6287,9 @@ predict future sequences.")
                              r-mvtnorm
                              r-mass
                              r-lhs
+                             r-jsonlite
                              r-isoband
                              r-ggplot2
-                             r-ggbeeswarm
                              r-ggally
                              r-dplyr
                              r-cluster))
@@ -12727,57 +12727,6 @@ algorithm for alpha-PCA by Chen & Fan (2021)
 et al. (2022)<doi:10.1016/j.jeconom.2021.04.001>.  In addition, the methods for
 determining the pair of factor numbers are also given.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-hdmed
-  (package
-    (name "r-hdmed")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hdmed" version))
-       (sha256
-        (base32 "1vmyf9w5dwl8ayxsk7ykd13hl41j4a435771rkgmkmnm5fbcqaai"))))
-    (properties `((upstream-name . "hdmed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ncvreg
-                             r-mediation
-                             r-mass
-                             r-iterators
-                             r-hdi
-                             r-genlasso
-                             r-gcdnet
-                             r-freebird
-                             r-foreach
-                             r-bama))
-    (home-page "https://cran.r-project.org/package=hdmed")
-    (synopsis "Methods for Mediation Analysis with High-Dimensional Mediators")
-    (description
-     "This package provides a suite of functions for performing mediation analysis
-with high-dimensional mediators.  In addition to centralizing code from several
-existing packages for high-dimensional mediation analysis, we provide organized,
-well-documented functions for a handle of methods which, though programmed their
-original authors, have not previously been formalized into R packages or been
-made presentable for public use.  The methods we include cover a broad array of
-approaches and objectives, and are described in detail by both our companion
-manuscript---\"Methods for Mediation Analysis with High-Dimensional DNA
-Methylation Data: Possible Choices and Comparison\"---and the original
-publications that proposed them.  The specific methods offered by our package
-include the Bayesian sparse linear mixed model (BSLMM) by Song et al. (2019);
-high-dimensional mediation analysis (HDMA) by Gao et al. (2019);
-high-dimensional multivariate mediation (HDMM) by ChÃ©n et al. (2018);
-high-dimensional linear mediation analysis (HILMA) by Zhou et al. (2020);
-high-dimensional mediation analysis (HIMA) by Zhang et al. (2016); latent
-variable mediation analysis (LVMA) by Derkach et al. (2019); mediation by
-fixed-effect model (@code{MedFix}) by Zhang (2021); pathway LASSO by Zhao & Luo
-(2022); principal component mediation analysis (PCMA) by Huang & Pan (2016); and
-sparse principal component mediation analysis (SPCMA) by Zhao et al. (2020).
-Citations for the corresponding papers can be found in their respective
-functions.")
-    (license license:gpl3+)))
 
 (define-public r-hdme
   (package

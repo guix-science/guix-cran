@@ -11489,13 +11489,13 @@ chunks.  Rebuild the file from the tibble.")
 (define-public r-lightlogr
   (package
     (name "r-lightlogr")
-    (version "0.9.2")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LightLogR" version))
        (sha256
-        (base32 "08zdxgcykyvb0yarjbznxb88a6v42cxhriywsjrwm05ybqrk5x4n"))))
+        (base32 "0v4bvlvnn7xr1v6cz9ipp5n5d6gcdjf90548gfgrlxpp3ga9j8d6"))))
     (properties `((upstream-name . "LightLogR")))
     (build-system r-build-system)
     (arguments
@@ -11510,16 +11510,18 @@ chunks.  Rebuild the file from the tibble.")
                              r-rlang
                              r-readr
                              r-purrr
-                             r-plotly
                              r-magrittr
                              r-lubridate
-                             r-janitor
+                             r-lifecycle
                              r-hms
+                             r-gtextras
+                             r-gt
                              r-ggtext
                              r-ggsci
                              r-ggplot2
                              r-dplyr
-                             r-cowplot))
+                             r-cowplot
+                             r-circular))
     (home-page "https://github.com/tscnlab/LightLogR")
     (synopsis
      "Process Data from Wearable Light Loggers and Optical Radiation Dosimeters")
@@ -11934,13 +11936,13 @@ dataset (@code{myHouseID}) from the BHPS.")
 (define-public r-lifecontingencies
   (package
     (name "r-lifecontingencies")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lifecontingencies" version))
        (sha256
-        (base32 "085aa5m8kxvzldlz0037lvdal7bl8j3a8fw5xkf6hpba9v7smq2a"))))
+        (base32 "0xvhv6chwf4g2jwn2p8s35sbmrxa66pvhxpakvzkwxrjwlx8ys7f"))))
     (properties `((upstream-name . "lifecontingencies")))
     (build-system r-build-system)
     (arguments
@@ -13474,32 +13476,6 @@ website (<https://reptile-database.reptarium.cz/>).  Outputs include clean and
 structured data frames useful for ecological, evolutionary, and conservation
 research.")
     (license license:expat)))
-
-(define-public r-letsr
-  (package
-    (name "r-letsr")
-    (version "5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "letsR" version))
-       (sha256
-        (base32 "1snhs3m2jzb5mzkn4a3lhgfzmy385aii73aasxbayscfa10m23vb"))))
-    (properties `((upstream-name . "letsR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-sf r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12401")
-    (synopsis "Data Handling and Analysis in Macroecology")
-    (description
-     "Handling, processing, and analyzing geographic data on species distributions and
-environmental variables.  Read Vilela & Villalobos (2015)
-<doi:10.1111/2041-210X.12401> for details.")
-    (license license:gpl2)))
 
 (define-public r-letsherp
   (package
@@ -16156,38 +16132,6 @@ Y, Irving-Pease E.K, et al (2024) <doi:10.1038/s41586-023-06618-z>.")
      "Analysis of stock data ups and downs trend, the stock technical analysis
 indicators function have trend line, reversal pattern and market trend.")
     (license license:gpl3)))
-
-(define-public r-lctools
-  (package
-    (name "r-lctools")
-    (version "0.2-10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lctools" version))
-       (sha256
-        (base32 "0gv8glxwdjpmx9cvadf8ww9k79wps107h29i02mcsa43mvcb22k1"))))
-    (properties `((upstream-name . "lctools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-weights r-sp r-reshape r-pscl r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://stamatisgeoai.eu")
-    (synopsis
-     "Local Correlation, Spatial Inequalities, Geographically Weighted Regression and Other Tools")
-    (description
-     "This package provides researchers and educators with easy-to-learn user friendly
-tools for calculating key spatial statistics and to apply simple as well as
-advanced methods of spatial analysis in real data.  These include: Local Pearson
-and Geographically Weighted Pearson Correlation Coefficients, Spatial Inequality
-Measures (Gini, Spatial Gini, LQ, Focal LQ), Spatial Autocorrelation (Global and
-Local Moran's I), several Geographically Weighted Regression techniques and
-other Spatial Analysis tools (other geographically weighted statistics).  This
-package also contains functions for measuring the significance of each statistic
-calculated, mainly based on Monte Carlo simulations.")
-    (license license:gpl2+)))
 
 (define-public r-lcsm
   (package

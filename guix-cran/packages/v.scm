@@ -3293,13 +3293,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistla" version))
        (sha256
-        (base32 "1r5i5h6hq59xk19j8is2w7qr0myh3mnx0i33iq2vkqb21vg96hm8"))))
+        (base32 "1idx9bizsgpccvslhwkxlj1mjv142z0hwh4zncqlr4dxyqg29af4"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (arguments
@@ -7036,38 +7036,6 @@ minor and unique) for elucidation of the underlying inherent dynamics.  Please
 refer <https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
     (license license:expat)))
 
-(define-public r-vdg
-  (package
-    (name "r-vdg")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vdg" version))
-       (sha256
-        (base32 "00c7ayc791h0lr124a3l1cxrc5wsnbdm47jf5d7ws02xvd1p8fbq"))))
-    (properties `((upstream-name . "vdg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quantreg r-proxy r-gridextra r-ggplot2))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=vdg")
-    (synopsis "Variance Dispersion Graphs and Fraction of Design Space Plots")
-    (description
-     "Facilities for constructing variance dispersion graphs, fraction-
-of-design-space plots and similar graphics for exploring the properties of
-experimental designs.  The design region is explored via random sampling, which
-allows for more flexibility than traditional variance dispersion graphs.  A
-formula interface is leveraged to provide access to complex model formulae.
-Graphics can be constructed simultaneously for multiple experimental designs
-and/or multiple model formulae.  Instead of using pointwise optimization to find
-the minimum and maximum scaled prediction variance curves, which can be
-inaccurate and time consuming, this package uses quantile regression as an
-alternative.")
-    (license license:gpl2+)))
-
 (define-public r-vdar
   (package
     (name "r-vdar")
@@ -7754,13 +7722,13 @@ inference and is computationally efficient.")
 (define-public r-vbel
   (package
     (name "r-vbel")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VBel" version))
        (sha256
-        (base32 "17k57414ajsmafb7qgqkxd52xbi7zrfa98wi19naxipilnx2vq12"))))
+        (base32 "1nnrq2y3pr3hkkmhqqjcrx4xqry81zq8dgkyyykyvf62rd7qb8gz"))))
     (properties `((upstream-name . "VBel")))
     (build-system r-build-system)
     (arguments

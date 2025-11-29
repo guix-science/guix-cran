@@ -440,44 +440,6 @@ computer algebra system (<http://www.yacas.org/>).")
 powder diffraction, spectroscopy and other experimental methods.")
     (license (list license:gpl3 license:lgpl2.1))))
 
-(define-public r-rxshrink
-  (package
-    (name "r-rxshrink")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RXshrink" version))
-       (sha256
-        (base32 "0w4x850a8pklb3ih22h0cfkajxjpd3drvjmjk37k51vfgpdfyqvd"))))
-    (properties `((upstream-name . "RXshrink")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lars r-ellipse))
-    (home-page "https://www.R-project.org")
-    (synopsis
-     "Maximum Likelihood Shrinkage using Generalized Ridge or Least Angle Regression")
-    (description
-     "This package provides functions are provided to calculate and display ridge
-TRACE Diagnostics for a variety of alternative Shrinkage Paths.  While all
-methods focus on Maximum Likelihood estimation of unknown true effects under
-normal distribution-theory, some estimates are modified to be Unbiased or to
-have \"Correct Range\" when estimating either [1] the noncentrality of the F-ratio
-for testing that true Beta coefficients are Zeros or [2] the \"relative\" MSE Risk
-(i.e.  MSE divided by true sigma-square, where the \"relative\" variance of OLS is
-known.) The @code{eff.ridge()} function implements the \"Efficient Shrinkage
-Path\" introduced in Obenchain (2022) <Open Statistics>.  This \"p-Parameter\"
-Shrinkage-Path always passes through the vector of regression coefficient
-estimates Most-Likely to achieve the overall Optimal Variance-Bias Trade-Off and
-is the shortest Path with this property.  Functions @code{eff.aug()} and
-@code{eff.biv()} augment the calculations made by @code{eff.ridge()} to provide
-plots of the bivariate confidence ellipses corresponding to any of the p*(p-1)
-possible ordered pairs of shrunken regression coefficients.  Functions for
-plotting TRACE Diagnostics now have more options.")
-    (license license:gpl2)))
-
 (define-public r-rxseq
   (package
     (name "r-rxseq")
@@ -536,13 +498,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "4.1.1")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1g6qjj9qx56b2kl3v92ypdn4c3iqk1rw75v6fan4qjs8mrbpgv24"))))
+        (base32 "1x548r6bmxcbrpwm62np3jzk761m2ddaskajska5ppfysmwgcgbi"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -557,7 +519,7 @@ which runs the nlmixr2 models during estimation.")
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
-                             r-qs
+                             r-qs2
                              r-precisesums
                              r-memoise
                              r-magrittr
@@ -1268,50 +1230,6 @@ and @code{RiverSMART} generate data in \"rdf\", \"csv\", and \"nc\" format.  Thi
 package provides an interface to read, aggregate, and summarize data from one or
 more simulations in a dplyr pipeline.")
     (license license:cc0)))
-
-(define-public r-rwcvp
-  (package
-    (name "r-rwcvp")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rWCVP" version))
-       (sha256
-        (base32 "1qs3h66m2nw44iry5jlczwd00s79669vrk8k1crdh7vgvhnf5r4y"))))
-    (properties `((upstream-name . "rWCVP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rmarkdown
-                             r-rlang
-                             r-recordlinkage
-                             r-purrr
-                             r-phonics
-                             r-magrittr
-                             r-htmltools
-                             r-gt
-                             r-ggplot2
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/matildabrown/rWCVP")
-    (synopsis
-     "Generating Summaries, Reports and Plots from the World Checklist of Vascular Plants")
-    (description
-     "This package provides a companion to the World Checklist of Vascular Plants
-(WCVP).  It includes functions to generate maps and species lists, as well as
-match names to the WCVP. For more details and to cite the package, see: Brown
-M.J.M., Walker B.E., Black N., Govaerts R., Ondo I., Turner R., Nic Lughadha E.
-(in press). \"@code{rWCVP}: A companion R package to the World Checklist of
-Vascular Plants\".  New Phytologist.")
-    (license license:gpl3+)))
 
 (define-public r-rwc
   (package
@@ -2284,35 +2202,6 @@ code has already been run and its output has already been saved, it just reads
 the result from the stored file instead of running the code again.")
     (license license:gpl3)))
 
-(define-public r-runmcmcbtadjust
-  (package
-    (name "r-runmcmcbtadjust")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "runMCMCbtadjust" version))
-       (sha256
-        (base32 "1gplz947hschc5kwm5rd70hvs4d582cs4m7mvlsxhh536xrdf3j2"))))
-    (properties `((upstream-name . "runMCMCbtadjust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=runMCMCbtadjust")
-    (synopsis
-     "Runs Monte Carlo Markov Chain - With Either 'JAGS', 'nimble' or 'greta' - While Adjusting Burn-in and Thinning Parameters")
-    (description
-     "The function @code{runMCMC_btadjust()} returns a mcmc.list object which is the
-output of a Markov Chain Monte Carlo obtained - from either JAGS', nimble or
-greta - after adjusting burn-in and thinning parameters to meet pre-specified
-criteria in terms of convergence & effective sample size.  Used with nimble',
-@code{runMCMC_btadjust()} allows extra calculations (e.g. information criteria
-for model comparison and goodness-of-fit p-values for model diagnosis).")
-    (license (license:fsdg-compatible "CECILL-2.1"))))
-
 (define-public r-runjags
   (package
     (name "r-runjags")
@@ -3004,31 +2893,6 @@ Program Interfaces (API), which can be found at the following URL:
 @code{TickTrader} platform through Web API
 <https://ttlivewebapi.fxopen.net:8443/api/doc/index>.")
     (license license:gpl2)))
-
-(define-public r-rtsplot
-  (package
-    (name "r-rtsplot")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rtsplot" version))
-       (sha256
-        (base32 "1vryh0s1mz9h9ksf5n27vvrdbsjk8yvizd31cnj4grz71v4c1dh1"))))
-    (properties `((upstream-name . "rtsplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts r-rcolorbrewer r-quantmod))
-    (home-page "https://bitbucket.org/rtsvizteam/rtsplot")
-    (synopsis "Time Series Plot")
-    (description
-     "This package provides a fast and elegant time series visualization package.  In
-addition to the standard R plot types, this package supports candle sticks,
-open-high-low-close, and volume plots.  Useful for visualizing any time series
-data, e.g., stock prices and technical indicators.")
-    (license license:expat)))
 
 (define-public r-rtson
   (package
@@ -6507,48 +6371,6 @@ order), DCM (orthogonality, not proper, exceeded tolerance to unity determinant)
 and Euler vectors(not unity).  Also quaternion and other useful functions.
 Based on @code{SpinCalc} by John Fuller and @code{SpinConv} by Paolo de Leva.")
     (license license:gpl3+)))
-
-(define-public r-rspectral
-  (package
-    (name "r-rspectral")
-    (version "1.0.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rSpectral" version))
-       (sha256
-        (base32 "12fgyjlk4a6gm2ccjw4mh47ccln2i7iklqammmk8y20i3hd3mh6x"))))
-    (properties `((upstream-name . "rSpectral")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-igraph r-graph))
-    (home-page "https://github.com/cmclean5/rSpectral")
-    (synopsis "Spectral Modularity Clustering")
-    (description
-     "This package implements the network clustering algorithm described in Newman
-(2006) <doi:10.1103/@code{PhysRevE.74.036104>}.  The complete iterative
-algorithm comprises of two steps.  In the first step, the network is expressed
-in terms of its leading eigenvalue and eigenvector and recursively partition
-into two communities.  Partitioning occurs if the maximum positive eigenvalue is
-greater than the tolerance (10e-5) for the current partition, and if it results
-in a positive contribution to the Modularity.  Given an initial separation using
-the leading eigen step, @code{rSpectral} then continues to maximise for the
-change in Modularity using a fine-tuning step - or variate thereof.  The first
-stage here is to find the node which, when moved from one community to another,
-gives the maximum change in Modularity.  This nodeâs community is then fixed
-and we repeat the process until all nodes have been moved.  The whole process is
-repeated from this new state until the change in the Modularity, between the new
-and old state, is less than the predefined tolerance.  A slight variant of the
-fine-tuning step, which can improve speed of the calculation, is also provided.
-Instead of moving each node into each community in turn, we only consider moves
-of neighbouring nodes, found in different communities, to the community of the
-current node of interest.  The two steps process is repeatedly applied to each
-new community found, subdivided each community into two new communities, until
-we are unable to find any division that results in a positive change in
-Modularity.")
-    (license license:gpl2)))
 
 (define-public r-rspde
   (package
@@ -13558,49 +13380,6 @@ quickly and add hillshade to vector-based maps.")
 More information can be found at <https://developer.rosette.com>.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-rosetta
-  (package
-    (name "r-rosetta")
-    (version "0.3.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rosetta" version))
-       (sha256
-        (base32 "0x0hdfhrldc2k72498wzvkxwyj3rk5sxi1xabn66kwswhqgbc564"))))
-    (properties `((upstream-name . "rosetta")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ufs
-                             r-sjstats
-                             r-rmdpartials
-                             r-pwr
-                             r-psych
-                             r-plyr
-                             r-pander
-                             r-multcompview
-                             r-lmertest
-                             r-lme4
-                             r-lavaan
-                             r-knitr
-                             r-kableextra
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-car))
-    (home-page "https://r-packages.gitlab.io/rosetta/")
-    (synopsis "Parallel Use of Statistical Packages in Teaching")
-    (description
-     "When teaching statistics, it can often be desirable to uncouple the content from
-specific software packages.  To ease such efforts, the Rosetta Stats website
-(<https://rosettastats.com>) allows comparing analyses in different packages.
-This package is the companion to the Rosetta Stats website, aiming to provide
-functions that produce output that is similar to output from other statistical
-packages, thereby facilitating software-agnostic teaching of statistics.")
-    (license license:gpl3+)))
 
 (define-public r-roserf
   (package
@@ -23677,51 +23456,6 @@ Based on \"Robust Likelihood Cross-Validation for Kernel Density Estimation,\" W
 (2019) <doi:10.1080/07350015.2018.1424633>.")
     (license license:gpl3+)))
 
-(define-public r-rlc
-  (package
-    (name "r-rlc")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rlc" version))
-       (sha256
-        (base32 "1n13hlspsb118md6nh1w09gww4b58kxqf3lcp8g3zv14hr2dgwkr"))))
-    (properties `((upstream-name . "rlc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-stringr
-                             r-r6
-                             r-plyr
-                             r-jsonlite
-                             r-jrc
-                             r-hwriter))
-    (native-inputs (list esbuild))
-    (home-page "https://cran.r-project.org/package=rlc")
-    (synopsis "Create Interactive Linked Charts with Minimal Code")
-    (description
-     "An easy-to-use tool to employ interactivity in every-day exploratory analysis.
-It contains a collection of most commonly used types of charts (such as scatter
-plots, line plots, heatmaps, bar charts), which can be linked to each other or
-to other interactive elements with just few lines of code.")
-    (license license:gpl3)))
-
 (define-public r-rlas
   (package
     (name "r-rlas")
@@ -26073,13 +25807,13 @@ Begg CB, Zabor EC, Bernstein JL, Bernstein L, Press MF, Seshan VE (2013)
 (define-public r-risk-assessr
   (package
     (name "r-risk-assessr")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "risk.assessr" version))
        (sha256
-        (base32 "1sc6c9w43h0nyj04mk2n4ya6y54xd0jl8xxla7hv9y3byzy464b0"))))
+        (base32 "1n945kj3k1zf65b18fjh794ria3j98gaipybq6j4br3589s2wpph"))))
     (properties `((upstream-name . "risk.assessr")))
     (build-system r-build-system)
     (arguments
@@ -26088,28 +25822,30 @@ Begg CB, Zabor EC, Bernstein JL, Bernstein L, Press MF, Seshan VE (2013)
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-stringr
+                             r-rmarkdown
                              r-rlang
                              r-remotes
                              r-rcmdcheck
                              r-purrr
+                             r-memoise
                              r-jsonlite
-                             r-gh
                              r-fs
                              r-dplyr
-                             r-devtools
                              r-desc
                              r-curl
                              r-covr
                              r-checkmate
-                             r-callr))
+                             r-callr
+                             r-biocmanager))
     (native-inputs (list r-knitr))
     (home-page "https://sanofi-public.github.io/risk.assessr/")
     (synopsis "Assessing Package Risk Metrics")
     (description
-     "This package provides a structured approach to assess the quality and
-trustworthiness of R packages (documentation, testing, popularity,
-dependencies), supporting informed decisions in production or research by
-highlighting strengths and potential risks in adoption or development.")
+     "This package provides a reliable and validated tool that captures detailed risk
+metrics such as R CMD check, test coverage, traceability matrix, documentation,
+dependencies, reverse dependencies, suggested dependency analysis, repository
+data, and enhanced reporting for R packages that are local or stored on remote
+repositories such as @code{GitHub}, CRAN, and Bioconductor.")
     (license license:gpl2+)))
 
 (define-public r-risk
@@ -30982,6 +30718,34 @@ set taken from Spira et al. (2004) <doi:10.1165/rcmb.2004-0273OC>.")
 or sum of squares) variable importance scores, using an empirical Bayes
 approach.  See Dunne et al. (2022) <doi:10.1101/2022.04.06.487300>.")
     (license license:gpl3+)))
+
+(define-public r-rflexscan
+  (package
+    (name "r-rflexscan")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rflexscan" version))
+       (sha256
+        (base32 "0l49alrc8nxan1v9vrdhas4a526b315rw62azrxk1a33l0j1psxd"))))
+    (properties `((upstream-name . "rflexscan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-rcpp r-igraph))
+    (home-page "https://tkhrotn.github.io/rflexscan/")
+    (synopsis "The Flexible Spatial Scan Statistic")
+    (description
+     "This package provides functions for detecting spatial clusters using the
+flexible spatial scan statistic developed by Tango and Takahashi (2005)
+<doi:10.1186/1476-072X-4-11>.  This package implements a wrapper for the C
+routine used in the @code{FleXScan} 3.1.2
+<https://sites.google.com/site/flexscansoftware/home> developed by Takahashi,
+Yokoyama, and Tango.  For details, see Otani et al. (2021)
+<doi:10.18637/jss.v099.i13>.")
+    (license license:gpl3)))
 
 (define-public r-rfit
   (package
@@ -38308,49 +38072,6 @@ through a unified interface.  For details, see Gramacy & Polson (2012
 paper, Lixiong Yang and Jen-Je Su (2018) <doi:10.1016/j.jimonfin.2018.06.002>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-registr
-  (package
-    (name "r-registr")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "registr" version))
-       (sha256
-        (base32 "033kvhcx27g0vw85gi8xb035wijqb6xsg8jjskqpp4l1gw3a1v1c"))))
-    (properties `((upstream-name . "registr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-purrr
-                             r-pbs
-                             r-mgcv
-                             r-matrix
-                             r-mass
-                             r-magrittr
-                             r-lme4
-                             r-gamm4
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=registr")
-    (synopsis "Curve Registration for Exponential Family Functional Data")
-    (description
-     "This package provides a method for performing joint registration and functional
-principal component analysis for curves (functional data) that are generated
-from exponential family distributions.  This mainly implements the algorithms
-described in Wrobel et al. (2019) <doi:10.1111/biom.12963> and further adapts
-them to potentially incomplete curves where (some) curves are not observed from
-the beginning and/or until the end of the common domain.  Curve registration can
-be used to better understand patterns in functional data by separating curves
-into phase and amplitude variability.  This software handles both binary and
-continuous functional data, and is especially applicable in accelerometry and
-wearable technology.")
-    (license license:expat)))
-
 (define-public r-regions
   (package
     (name "r-regions")
@@ -42930,6 +42651,31 @@ of files contains detailed records of DNA samples (locus, organism, type of
 sequence, source of the sequence...).  An example of record can be found at
 <https://www.ncbi.nlm.nih.gov/nuccore/HE799070>.")
     (license license:gpl3)))
+
+(define-public r-read-dbc
+  (package
+    (name "r-read-dbc")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "read.dbc" version))
+       (sha256
+        (base32 "1z30zx60l3v3zka2s093jhp499ffzw0lbvllxypdg8lyvjxkywdv"))))
+    (properties `((upstream-name . "read.dbc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-foreign))
+    (home-page "https://github.com/danicat/read.dbc")
+    (synopsis "Read Data Stored in 'DBC' (Compressed 'DBF') Files")
+    (description
+     "This package provides functions for reading and decompressing the DBC
+(compressed DBF') files.  Please note that this is the file format used by the
+Brazilian Ministry of Health ('DATASUS') to publish healthcare datasets.  It is
+not related to the @code{FoxPro} or CANdb DBC file formats.")
+    (license license:agpl3)))
 
 (define-public r-read
   (package
@@ -49538,13 +49284,13 @@ of time-consuming functions.")
 (define-public r-rcdo
   (package
     (name "r-rcdo")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcdo" version))
        (sha256
-        (base32 "1f06jw7r7zbnxvjaxr6gsb0x84c89rdx1kxcwyzm6qw9rfm9nnmc"))))
+        (base32 "0vix01gi7bxw76b289l5dy64w1ww49s29729wsp9jwj4447ayn0s"))))
     (properties `((upstream-name . "rcdo")))
     (build-system r-build-system)
     (arguments

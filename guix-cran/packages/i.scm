@@ -7006,13 +7006,13 @@ the model with a more experimental version.")
 (define-public r-invacost
   (package
     (name "r-invacost")
-    (version "1.1-6")
+    (version "1.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "invacost" version))
        (sha256
-        (base32 "015w23vwwy8mn9mfk9pa0j6ca99cmyjvk6a93g06qcifjiqx7d9x"))))
+        (base32 "0qs5q72jm6vpqy3z5860h7hv1iqixibxvijs5c7xpwkm74a5ysfz"))))
     (properties `((upstream-name . "invacost")))
     (build-system r-build-system)
     (arguments
@@ -10213,13 +10213,13 @@ with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
 (define-public r-injurytools
   (package
     (name "r-injurytools")
-    (version "1.0.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "injurytools" version))
        (sha256
-        (base32 "0nk6rnyg8f2n7fki42xr8vradzkkmljrvd1ynh9p781849y77jz0"))))
+        (base32 "015006sjn03xl4vq8x9fiy2xl8y7nyzmfhainvcf6mfc4yrnf15s"))))
     (properties `((upstream-name . "injurytools")))
     (build-system r-build-system)
     (arguments
@@ -10228,7 +10228,9 @@ with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
     (propagated-inputs (list r-withr
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-stringr
+                             r-scales
                              r-rlang
                              r-purrr
                              r-metr
@@ -10239,7 +10241,7 @@ with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lzumeta/injurytools")
-    (synopsis "Toolkit for Sports Injury Data Analysis")
+    (synopsis "Toolkit for Sports Injury and Illness Data Analysis")
     (description
      "Sports Injury Data analysis aims to identify and describe the magnitude of the
 injury problem, and to gain more insights (e.g. determine potential risk
@@ -11554,13 +11556,13 @@ and functions for generating and analysing different types of dependence.")
 (define-public r-indonesiapis
   (package
     (name "r-indonesiapis")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IndonesiAPIs" version))
        (sha256
-        (base32 "0zv42rpgdhxfb0b4viry86zyxsdr0y9b30am8jyn3hxn9cv9glvh"))))
+        (base32 "04384vidmbkzb182255yc234a6da9v89za9cjr8xcs21j2x0hbr0"))))
     (properties `((upstream-name . "IndonesiAPIs")))
     (build-system r-build-system)
     (arguments
@@ -15064,13 +15066,13 @@ algorithm is explained at <doi:10.5201/ipol.2016.158>.")
 (define-public r-image-linesegmentdetector
   (package
     (name "r-image-linesegmentdetector")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "image.LineSegmentDetector" version))
        (sha256
-        (base32 "1mx6vkmm9miwqdd5vil44if0dikzn5cy3kxvb3vp0kwfm8k36ib5"))))
+        (base32 "1zsfixms3c4m6jzwmq9w1apgh1pp91lfd4xbw1mcjyl730nzw24d"))))
     (properties `((upstream-name . "image.LineSegmentDetector")))
     (build-system r-build-system)
     (arguments
@@ -15165,13 +15167,13 @@ digital images.")
 (define-public r-image-contourdetector
   (package
     (name "r-image-contourdetector")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "image.ContourDetector" version))
        (sha256
-        (base32 "0h9nq6k99rfmldw1c00k2anlpbjbpm26pp1d7jg2wz334dvlvlij"))))
+        (base32 "11j05ib58mmzpssm2vnxcqzg3ialyws9dc85yw3fsqpv8jnrzc03"))))
     (properties `((upstream-name . "image.ContourDetector")))
     (build-system r-build-system)
     (arguments
@@ -16199,13 +16201,13 @@ plots, lasagna plots and ambulatory glucose profile report.")
 (define-public r-iglm
   (package
     (name "r-iglm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglm" version))
        (sha256
-        (base32 "19nb2fsq50kmyxf4m9cpfvm6krfhzfvpjnmvhq6nz113pliaw97h"))))
+        (base32 "0c0k6kk8s3xvccwxpizdhljv1a0fy8ap64s57h956p8cvg5npcdm"))))
     (properties `((upstream-name . "iglm")))
     (build-system r-build-system)
     (arguments
@@ -16703,13 +16705,13 @@ supporting results.")
 (define-public r-ife
   (package
     (name "r-ife")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ife" version))
        (sha256
-        (base32 "08m04hzqvc7dpg8mqa5drmmzx0hgbqy2ihcknm6c6a57y0jdnadp"))))
+        (base32 "0jxkx8pl1qn0l5m1lmzijhwzxv68l5v3m7irh7n7y8dcizjh8f21"))))
     (properties `((upstream-name . "ife")))
     (build-system r-build-system)
     (arguments

@@ -1940,39 +1940,6 @@ the KOF Datenservice API. The kofdata package is able to consume public
 information as well as data that requires an API token.")
     (license license:gpl2)))
 
-(define-public r-kodama
-  (package
-    (name "r-kodama")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "KODAMA" version))
-       (sha256
-        (base32 "1g6whwljdqrkk1mksy9ifj1sfwn24131wrv6w84nbkxh6z1dfqpc"))))
-    (properties `((upstream-name . "KODAMA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-umap
-                             r-rtsne
-                             r-rnanoflann
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=KODAMA")
-    (synopsis "Knowledge Discovery by Accuracy Maximization")
-    (description
-     "This package provides a self-guided, weakly supervised learning algorithm for
-feature extraction from noisy and high-dimensional data.  It facilitates the
-identification of patterns that reflect underlying group structures across all
-samples in a dataset.  The method incorporates a novel strategy to integrate
-spatial information, improving the interpretability of results in spatially
-resolved data.")
-    (license license:gpl2+)))
-
 (define-public r-koboconnectr
   (package
     (name "r-koboconnectr")

@@ -1158,13 +1158,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.21")
+    (version "0.5.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "1rf8jbfgvggzwfqwv5fpkz6wgfmyimj4jwilmjb9ki69k1qmr88m"))))
+        (base32 "1726cqxilj636m8fvmslfvdjvnqf3vdfjxrgijb98nbzq9qdanra"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -1213,13 +1213,13 @@ addin.  The report appears in the RStudio viewer pane.")
 (define-public r-jsdne
   (package
     (name "r-jsdne")
-    (version "4.5")
+    (version "4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JSDNE" version))
        (sha256
-        (base32 "1bxk14wag1mc02flsp56ik0rjay27fm1vdvh3kiyq1vi87rdr5d0"))))
+        (base32 "142ihfs5c8mzsllxdis8ss6ygb003qabj6rw674waxz5hxppkdr5"))))
     (properties `((upstream-name . "JSDNE")))
     (build-system r-build-system)
     (arguments

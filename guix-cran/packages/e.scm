@@ -7431,32 +7431,6 @@ was originally proposed by Olley, G.S. and Pakes, A. (1996)
 <doi:10.1016/j.econlet.2009.04.026>.")
     (license license:gpl3)))
 
-(define-public r-estmix
-  (package
-    (name "r-estmix")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EstMix" version))
-       (sha256
-        (base32 "13zwhxm0qm83c8k5k4slvq2snkmbq1zz3i5cqvxxwhvkb4b8aja4"))))
-    (properties `((upstream-name . "EstMix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pscbs))
-    (home-page "https://cran.r-project.org/package=EstMix")
-    (synopsis "Tumor Clones Percentage Estimations")
-    (description
-     "Includes R functions for the estimation of tumor clones percentages for both snp
-data and (whole) genome sequencing data.  See Cheng, Y., Dai, J. Y., Paulson, T.
-G., Wang, X., Li, X., Reid, B. J., & Kooperberg, C. (2017).  Quantification of
-multiple tumor clones using gene array and sequencing data.  The Annals of
-Applied Statistics, 11(2), 967-991, <doi:10.1214/17-AOAS1026> for more details.")
-    (license license:gpl2+)))
-
 (define-public r-estmeansd
   (package
     (name "r-estmeansd")
@@ -7912,13 +7886,13 @@ official statistics of the Japanese government.")
 (define-public r-estar
   (package
     (name "r-estar")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estar" version))
        (sha256
-        (base32 "1g64ayg9xm83x0fgylmiimkfnpzzgx4g6fqa3drxx21z1rls41zg"))))
+        (base32 "1xbywrlfs3638iy44xqqcy6y009w4gfrjvvycavyfrvvzb7wkhm3"))))
     (properties `((upstream-name . "estar")))
     (build-system r-build-system)
     (arguments
@@ -9305,43 +9279,6 @@ passed by users have valid types, lengths, etc.  and for generating informative
 and well-formatted error messages in a consistent style.  Also provides tools
 for users to create their own validator functions.  The error message style used
 is adopted from <https://style.tidyverse.org/error-messages.html>.")
-    (license license:expat)))
-
-(define-public r-ergmito
-  (package
-    (name "r-ergmito")
-    (version "0.3-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ergmito" version))
-       (sha256
-        (base32 "0djcfwxr4diwfjvim6mbz1g28bzsd94s78xw5kvn5vahiwjpdd61"))))
-    (properties `((upstream-name . "ergmito")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-texreg
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-network
-                             r-mass
-                             r-ergm))
-    (native-inputs (list r-knitr))
-    (home-page "https://muriteams.github.io/ergmito/")
-    (synopsis "Exponential Random Graph Models for Small Networks")
-    (description
-     "Simulation and estimation of Exponential Random Graph Models (ERGMs) for small
-networks using exact statistics as shown in Vega Yon et al. (2020)
-<DOI:10.1016/j.socnet.2020.07.005>.  As a difference from the ergm package,
-ergmito circumvents using Markov-Chain Maximum Likelihood Estimator (MC-MLE) and
-instead uses Maximum Likelihood Estimator (MLE) to fit ERGMs for small networks.
- As exhaustive enumeration is computationally feasible for small networks, this
-R package takes advantage of this and provides tools for calculating likelihood
-functions, and other relevant functions, directly, meaning that in many cases
-both estimation and simulation of ERGMs for small networks can be faster and
-more accurate than simulation-based algorithms.")
     (license license:expat)))
 
 (define-public r-ergmharris
@@ -12498,41 +12435,6 @@ a GLM, Bayes equivalent for hypothesis testing with asymptotic Bayes factor, and
 several help functions for generalized random forest analysis using grf'.")
     (license license:expat)))
 
-(define-public r-epiflows
-  (package
-    (name "r-epiflows")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epiflows" version))
-       (sha256
-        (base32 "1d7j2w9jjscny0ax33k1wy0hcr2pn6ck491vfm327lx4jpld8pfd"))))
-    (properties `((upstream-name . "epiflows")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork
-                             r-tibble
-                             r-sp
-                             r-leaflet
-                             r-htmltools
-                             r-ggplot2
-                             r-ggmap
-                             r-geosphere
-                             r-epicontacts))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.repidemicsconsortium.org/epiflows/")
-    (synopsis "Predicting Disease Spread from Flow Data")
-    (description
-     "This package provides functions and classes designed to handle and visualise
-epidemiological flows between locations.  Also contains a statistical method for
-predicting disease spread from flow data initially described in Dorigatti et al.
-(2017) <doi:10.2807/1560-7917.ES.2017.22.28.30572>.  This package is part of the
-RECON (<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
-    (license license:expat)))
-
 (define-public r-epifitter
   (package
     (name "r-epifitter")
@@ -12999,44 +12901,6 @@ the endemic channel method (Bortman, M. (1999)
 sufficient-component cause models as introduced by Rothman (1976)
 <doi:10.1093/oxfordjournals.aje.a112335>.")
     (license license:gpl3+)))
-
-(define-public r-epicleanr
-  (package
-    (name "r-epicleanr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epiCleanr" version))
-       (sha256
-        (base32 "1m5qz7qkly9waj1w8x0hrz28cc4vzn6psqs4q39x1fhxlgip0rih"))))
-    (properties `((upstream-name . "epiCleanr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rio
-                             r-purrr
-                             r-janitor
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-crayon
-                             r-countrycode))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/truenomad/epiCleanr")
-    (synopsis "Tidy Solution for Epidemiological Data")
-    (description
-     "Offers a tidy solution for epidemiological data.  It houses a range of functions
-for epidemiologists and public health data wizards for data management and
-cleaning.")
-    (license license:expat)))
 
 (define-public r-epichains
   (package
@@ -17778,6 +17642,43 @@ This work was supported by the U.S. National Science Foundation under Grants No.
  SES-1921523 and DMS-2015552.")
     (license license:gpl3+)))
 
+(define-public r-elfgen
+  (package
+    (name "r-elfgen")
+    (version "2.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "elfgen" version))
+       (sha256
+        (base32 "1ych2xwz3d27sbkz7dbz2pkyby93v16d9v4wwb5x73qiyqgzsv1f"))))
+    (properties `((upstream-name . "elfgen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-testit
+                             r-stringr
+                             r-sqldf
+                             r-scales
+                             r-sbtools
+                             r-quantreg
+                             r-nhdplustools
+                             r-ggplot2
+                             r-curl))
+    (home-page "https://github.com/HARPgroup/elfgen")
+    (synopsis
+     "Ecological Limit Function Model Generation and Analysis Toolkit")
+    (description
+     "This package provides a toolset for generating Ecological Limit Function (ELF)
+models and evaluating potential species loss resulting from flow change, based
+on the elfgen framework.  ELFs describe the relation between aquatic species
+richness (fish or benthic macroinvertebrates) and stream size characteristics
+(streamflow or drainage area).  Journal publications are available outlining
+framework methodology (Kleiner et al. (2020) <doi:10.1111/1752-1688.12876>) and
+application (Rapp et al. (2020) <doi:10.1111/1752-1688.12877>).")
+    (license license:expat)))
+
 (define-public r-elfdistr
   (package
     (name "r-elfdistr")
@@ -19263,32 +19164,6 @@ obtained from EHR data, as outlined in Choi, Carroll, Beck, Mosley, Roden,
 Denny, and Van Driest (2018) <doi:10.1093/bioinformatics/bty306>.")
     (license license:gpl3+)))
 
-(define-public r-ehof
-  (package
-    (name "r-ehof")
-    (version "1.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eHOF" version))
-       (sha256
-        (base32 "01sashvaf6m8k60kz8bzsamahqjs2cy4mqjdrlj2n6lbir73x6bp"))))
-    (properties `((upstream-name . "eHOF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mgcv r-lattice))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=eHOF")
-    (synopsis "Extended HOF (Huisman-Olff-Fresco) Models")
-    (description
-     "Extended and enhanced hierarchical logistic regression models (called
-Huisman-Olff-Fresco in biology, see Huisman et al.  1993 Journal of Vegetation
-Science <doi:10.1111/jvs.12050>) models.  Response curves along one-dimensional
-gradients including no response, monotone, plateau, unimodal and bimodal models.")
-    (license license:gpl3+)))
-
 (define-public r-ehelp
   (package
     (name "r-ehelp")
@@ -19723,39 +19598,6 @@ Thomson (1998) <doi:10.2307/3315677>, and Rolf Turner (2008)
 assess anthelmintic efficacy.  Bayesian inference is done via MCMC sampling
 using Stan <https://mc-stan.org/>.")
     (license license:gpl3+)))
-
-(define-public r-egcm
-  (package
-    (name "r-egcm")
-    (version "1.0.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "egcm" version))
-       (sha256
-        (base32 "16mzhf7x19v9z600n29q4481dmsjfcn55365zbb9d0wrclc3053l"))))
-    (properties `((upstream-name . "egcm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-urca
-                             r-tseries
-                             r-quantmod
-                             r-pracma
-                             r-mass
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=egcm")
-    (synopsis "Engle-Granger Cointegration Models")
-    (description
-     "An easy-to-use implementation of the Engle-Granger two-step procedure for
-identifying pairs of cointegrated series.  It is geared towards the analysis of
-pairs of securities.  Summary and plot functions are provided, and the package
-is able to fetch closing prices of securities from Yahoo.  A variety of unit
-root tests are supported, and an improved unit root test is included.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-eganet
   (package
@@ -21468,13 +21310,13 @@ data, and assist other data management tasks common to repository users.")
 (define-public r-editrules
   (package
     (name "r-editrules")
-    (version "2.9.5")
+    (version "2.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "editrules" version))
        (sha256
-        (base32 "16mna3wcr81b2k5kjbz84zgvcvn9avwi4gasnbk5crxjvd74wsj1"))))
+        (base32 "0p0n2xrgn2c9x52brzlki37h74lhyvcr7wkwphfri6cnnak71y77"))))
     (properties `((upstream-name . "editrules")))
     (build-system r-build-system)
     (arguments
@@ -23512,13 +23354,13 @@ systems including Linear, Translog, CES, LES and CREMR.")
 (define-public r-econdataverse
   (package
     (name "r-econdataverse")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "econdataverse" version))
        (sha256
-        (base32 "0ci5f8phgh267vclin587anziiasxdrv8ml767cj36cvd5xvmp13"))))
+        (base32 "1q11ymhc95389mr0z64kzzwfq3ln0ijxmvpssxzbpbhqy8i7xhyc"))))
     (properties `((upstream-name . "econdataverse")))
     (build-system r-build-system)
     (arguments
@@ -23530,8 +23372,10 @@ systems including Linear, Translog, CES, LES and CREMR.")
                              r-owidapi
                              r-oecdoda
                              r-imfweo
+                             r-imfapi
                              r-econtools
                              r-econid
+                             r-econdatasets
                              r-cli))
     (home-page "https://github.com/tidy-intelligence/r-econdataverse")
     (synopsis "Easily Load and Install the 'EconDataverse'")
@@ -27451,13 +27295,13 @@ xgboost packages.")
 (define-public r-e2e
   (package
     (name "r-e2e")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "E2E" version))
        (sha256
-        (base32 "1vcbiafkdy7icq2msvawavbsvk7xha5lihvdr1bjaaahbmqz0d4r"))))
+        (base32 "1hym119hy08lqjmlbamnwriml8mszhkms52b85mrpmxxpd67w69s"))))
     (properties `((upstream-name . "E2E")))
     (build-system r-build-system)
     (arguments
@@ -27465,6 +27309,7 @@ xgboost packages.")
       #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-timeroc
+                             r-tidyr
                              r-survminer
                              r-survivalroc
                              r-survival
@@ -27475,6 +27320,7 @@ xgboost packages.")
                              r-randomforestsrc
                              r-prroc
                              r-proc
+                             r-plsrcox
                              r-patchwork
                              r-mass
                              r-magrittr
@@ -27482,6 +27328,7 @@ xgboost packages.")
                              r-ggplot2
                              r-gbm
                              r-dplyr
+                             r-cowplot
                              r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://xiaojie0519.github.io/E2E/")

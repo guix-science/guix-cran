@@ -4292,42 +4292,6 @@ categorical variable and a continuous variable.  It could be applied for
 non-parametric hypothesis testing and gene set enrichment analysis.")
     (license license:gpl2+)))
 
-(define-public r-dsld
-  (package
-    (name "r-dsld")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dsld" version))
-       (sha256
-        (base32 "0ryr7jgdaz3qndajn60gjj5za041aq92cp3ish653mhglsz6h1vv"))))
-    (properties `((upstream-name . "dsld")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich
-                             r-rmarkdown
-                             r-regtools
-                             r-ranger
-                             r-qeml
-                             r-plotly
-                             r-kendall
-                             r-gtools
-                             r-ggplot2
-                             r-freqparcoord
-                             r-fairness
-                             r-fairml))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/matloff/dsld")
-    (synopsis "Data Science Looks at Discrimination")
-    (description
-     "Statistical and graphical tools for detecting and measuring discrimination and
-bias, be it racial, gender, age or other.  Detection and remediation of bias in
-machine learning algorithms.  Python interfaces available.")
-    (license license:gpl2+)))
-
 (define-public r-dslabs
   (package
     (name "r-dslabs")
@@ -10745,31 +10709,6 @@ Mielniczuk, 2022.  Improving Lasso for model selection and prediction.
 Scandinavian Journal of Statistics, 49(2): 831â863. <doi:10.1111/sjos.12546>.")
     (license license:gpl2)))
 
-(define-public r-dmq
-  (package
-    (name "r-dmq")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DMQ" version))
-       (sha256
-        (base32 "1ygaqznvblzr3r1x7zl1l8sazh3sbs1zgagawwlwl42g8sdl57az"))))
-    (properties `((upstream-name . "DMQ")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-mass r-deoptim))
-    (home-page "https://cran.r-project.org/package=DMQ")
-    (synopsis "Dynamic Multiple Quantile (DMQ) Model")
-    (description
-     "Perform estimation, prediction, and simulations using the Dynamic Multiple
-Quantile model of Catania and Luati (2023) <doi:10.1016/j.jeconom.2022.11.002>.
-Can be used to estimate a set of conditional time-varying quantiles of a time
-series that do not cross.")
-    (license license:gpl3)))
-
 (define-public r-dmod
   (package
     (name "r-dmod")
@@ -12935,55 +12874,6 @@ special computational programs.")
      "Distribution (S4-)classes for elliptically contoured distributions (based on
 package distr').")
     (license license:lgpl3)))
-
-(define-public r-distreg-vis
-  (package
-    (name "r-distreg-vis")
-    (version "1.7.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "distreg.vis" version))
-       (sha256
-        (base32 "1phl1nj1l69l6aj9hsv0yqllvhh6msv2ss9la8zikl3m2s0f6ymw"))))
-    (properties `((upstream-name . "distreg.vis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-shiny
-                             r-rhandsontable
-                             r-magrittr
-                             r-ggplot2
-                             r-gamlss-dist
-                             r-gamlss
-                             r-formatr
-                             r-betareg
-                             r-bamlss))
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/Stan125/distreg.vis")
-    (synopsis
-     "Framework for the Visualization of Distributional Regression Models")
-    (description
-     "This package provides functions for visualizing distributional regression models
-fitted using the gamlss', bamlss or betareg R package.  The core of the package
-consists of a shiny application, where the model results can be interactively
-explored and visualized.")
-    (license license:gpl3)))
 
 (define-public r-distrdoc
   (package
@@ -22454,60 +22344,6 @@ reporting the mixture proportions from each sample.")
      "Plots dependency logos from a set of aligned input sequences.")
     (license license:gpl3)))
 
-(define-public r-depigner
-  (package
-    (name "r-depigner")
-    (version "0.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "depigner" version))
-       (sha256
-        (base32 "0vzrdw4rhrwiyc4g4ancfd43h56b72lkvabqdwdsg54hjm35c1ky"))))
-    (properties `((upstream-name . "depigner")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-usethis
-                             r-tidyr
-                             r-tibble
-                             r-telegram-bot
-                             r-stringr
-                             r-rprojroot
-                             r-rms
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-magrittr
-                             r-hmisc
-                             r-ggplot2
-                             r-fs
-                             r-dplyr
-                             r-desc))
-    (home-page "https://corradolanera.github.io/depigner/")
-    (synopsis "Utility Package to Help you Deal with \"Pignas\"")
-    (description
-     "Pigna [_pÃ¬n'n'a_] is the Italian word for pine cone.  In jargon, it is used to
-identify a task which is boring, banal, annoying, painful, frustrating and maybe
-even with a not so beautiful or rewarding result, just like the obstinate act of
-trying to challenge yourself in extracting pine nuts from a pine cone, provided
-that, in the end, you will find at least one inside it.  Here you can find a
-backpack of functions to be used to solve small everyday problems of coding or
-analyzing (clinical) data, which would be normally solved using quick-and-dirty
-patches.  You will be able to convert Hmisc and rms @code{summary()}es into
-data.frames ready to be rendered by pander and knitr'.  You can access
-easy-to-use wrappers to activate essential but useful progress bars (from
-progress') into your loops or functionals.  Easy setup and control Telegram's
-bots (from telegram.bot') to send messages or to divert error messages to a
-Telegram's chat.  You also have some utilities helping you in the development of
-packages, like the activation of the same user interface of usethis into your
-package, or call polite functions to ask a user to install other packages.
-Finally, you find a set of thematic sets of packages you may use to set up new
-environments quickly, installing them in a single call.")
-    (license license:gpl3)))
-
 (define-public r-dependentsimr
   (package
     (name "r-dependentsimr")
@@ -25905,13 +25741,13 @@ effective decision-making.")
 (define-public r-decido
   (package
     (name "r-decido")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decido" version))
        (sha256
-        (base32 "14y3z5ys5y3kffgm0dk92rx4vd1mi9jvxn7pqvwi4jhyx7wx06pw"))))
+        (base32 "041ngwlq94ahdz5533vac60c8h4g8zsc34ah68g3nmwhih4d2wm8"))))
     (properties `((upstream-name . "decido")))
     (build-system r-build-system)
     (arguments
@@ -25919,14 +25755,14 @@ effective decision-making.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://hypertidy.github.io/decido")
+    (home-page "https://hypertidy.github.io/decido/")
     (synopsis "Bindings for 'Mapbox' Ear Cutting Triangulation Library")
     (description
      "This package provides constrained triangulation of polygons.  Ear cutting (or
 ear clipping) applies constrained triangulation by successively cutting
 triangles from a polygon defined by path/s.  Holes are supported by introducing
 a bridge segment between polygon paths.  This package wraps the header-only
-library earcut.hpp <https://github.com/mapbox/earcut.hpp.git> which includes a
+library earcut.hpp <https://github.com/mapbox/earcut.hpp> which includes a
 reference to the method used by Held, M. (2001) <doi:10.1007/s00453-001-0028-4>.")
     (license license:expat)))
 
@@ -27039,13 +26875,13 @@ point.  This approach is as described by Hairer, Norsett and Wanner (1993)
 (define-public r-ddd
   (package
     (name "r-ddd")
-    (version "5.2.2")
+    (version "5.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDD" version))
        (sha256
-        (base32 "178b4j67vvn3g22s45gx9aqch24fij34yywbpvign2dkhzahnqkn"))))
+        (base32 "1gw22gcn5i5rgr58v571n3d91kpw8jin4wl2vxl89nmi27iq0qdg"))))
     (properties `((upstream-name . "DDD")))
     (build-system r-build-system)
     (arguments
@@ -27062,7 +26898,7 @@ point.  This approach is as described by Hairer, Norsett and Wanner (1993)
                              r-deoptim
                              r-bh
                              r-ape))
-    (home-page "https://cran.r-project.org/package=DDD")
+    (home-page "https://rsetienne.github.io/DDD/")
     (synopsis "Diversity-Dependent Diversification")
     (description
      "This package implements maximum likelihood and bootstrap methods based on the

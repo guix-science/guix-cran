@@ -3616,38 +3616,6 @@ inspired by and designed to integrate into Tidyverse workflows provided by
 Wickham et al (2019) <doi:10.21105/joss.01686>.")
     (license license:gpl3)))
 
-(define-public r-ordpens
-  (package
-    (name "r-ordpens")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ordPens" version))
-       (sha256
-        (base32 "1837d2rz42y71yq9rzzkc5pkywvyc4zbk7s4kg4kwrvxysg0y6p1"))))
-    (properties `((upstream-name . "ordPens")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlrsim
-                             r-quadprog
-                             r-ordinalnet
-                             r-mgcv
-                             r-grplasso
-                             r-glmpath))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ordPens")
-    (synopsis
-     "Selection, Fusion, Smoothing and Principal Components Analysis for Ordinal Variables")
-    (description
-     "Selection, fusion, and/or smoothing of ordinally scaled independent variables
-using a group lasso, fused lasso or generalized ridge penalty, as well as
-non-linear principal components analysis for ordinal variables using a
-second-order difference/smoothing penalty.")
-    (license license:gpl2)))
-
 (define-public r-ordnor
   (package
     (name "r-ordnor")

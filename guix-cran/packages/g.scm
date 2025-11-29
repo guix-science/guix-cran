@@ -1419,13 +1419,13 @@ Research, <doi:10.1029/2020WR029001>.")
 (define-public r-gumbel
   (package
     (name "r-gumbel")
-    (version "1.10-3")
+    (version "1.10-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gumbel" version))
        (sha256
-        (base32 "1ifvr284h1pwg2883qhzwi4a52l8sgdji1hk6la1h509aw2agv74"))))
+        (base32 "1w9zb4n108n3dj9gv3fb05lpiv39ymli6fxnp6py8k8a03fcjagn"))))
     (properties `((upstream-name . "gumbel")))
     (build-system r-build-system)
     (arguments
@@ -6408,13 +6408,13 @@ greenspace morphology metrics at patch and landscape levels.")
 (define-public r-greenr
   (package
     (name "r-greenr")
-    (version "0.0.1.4")
+    (version "0.0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenR" version))
        (sha256
-        (base32 "14v8yy2yvhpiapswwbsafmwjiz04vhrqsfj0lijghfwmpzsjc8mn"))))
+        (base32 "0655fg06qhq91dv677zmc1qcymhjqynl1982zha6xq5acahsjy2c"))))
     (properties `((upstream-name . "greenR")))
     (build-system r-build-system)
     (arguments
@@ -6427,11 +6427,14 @@ greenspace morphology metrics at patch and landscape levels.")
                              r-tibble
                              r-terra
                              r-superpixelimagesegmentation
+                             r-spdep
                              r-spatstat-geom
                              r-shiny
                              r-sfnetworks
                              r-sf
+                             r-scales
                              r-rstudioapi
+                             r-rstac
                              r-rcolorbrewer
                              r-purrr
                              r-progress
@@ -7389,6 +7392,41 @@ in the preferred bibliography format, ready to be pasted into reports or
 manuscripts.  Alternatively, grateful can be used directly within an R Markdown
 or Quarto document.")
     (license license:expat)))
+
+(define-public r-grasps
+  (package
+    (name "r-grasps")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "grasps" version))
+       (sha256
+        (base32 "03d00xqsh5lwd03qs3g841pcvbcwrxkxmccrhvnnihpjnmqbh8ia"))))
+    (properties `((upstream-name . "grasps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-igraph
+                             r-ggplot2
+                             r-ggforce))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/Carol-seven/grasps")
+    (synopsis "Groupwise Regularized Adaptive Sparse Precision Solution")
+    (description
+     "This package provides a unified framework for sparse-group regularization and
+precision matrix estimation in Gaussian graphical models.  It implements
+multiple sparse-group penalties, including sparse-group lasso, sparse-group
+adaptive lasso, sparse-group SCAD, and sparse-group MCP, and solves them
+efficiently using ADMM-based optimization.  The package is designed for
+high-dimensional network inference where both sparsity and group structure are
+present.")
+    (license license:gpl3+)))
 
 (define-public r-graposas
   (package
@@ -8845,32 +8883,6 @@ mixed models with teachers modeled as \"G-side\" effects and students modeled wi
 either \"G-side\" or \"R-side\" effects.")
     (license license:gpl2)))
 
-(define-public r-gpur
-  (package
-    (name "r-gpur")
-    (version "2.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gpuR" version))
-       (sha256
-        (base32 "1z9s3c4lspbm29bp1l2sixlfps04aif70rv1p1db1f1xwk6vw3bn"))))
-    (properties `((upstream-name . "gpuR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rviennacl r-rcppeigen r-rcpp r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/eborgnine/gpuR")
-    (synopsis "GPU Functions for R Objects")
-    (description
-     "This package provides GPU enabled functions for R objects in a simple and
-approachable manner.  New gpu* and vcl* classes have been provided to wrap
-typical R objects (e.g. vector, matrix), in both host and device spaces, to
-mirror typical R syntax without the need to know @code{OpenCL}'.")
-    (license license:gpl2+)))
-
 (define-public r-gpumatrix
   (package
     (name "r-gpumatrix")
@@ -9368,13 +9380,13 @@ article : Mangiarotti S. and Huc M. (2019) <doi:10.1063/1.5081448>.")
 (define-public r-gpmap
   (package
     (name "r-gpmap")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpmap" version))
        (sha256
-        (base32 "1n1r4rda9v4zw8zz4vcagmkkpgirwydhqz36pyq0assxwclnkcz0"))))
+        (base32 "0ld4bp0vzlswjw740w13yab039899vsvb68clsgzwwqhjwps6ml0"))))
     (properties `((upstream-name . "gpmap")))
     (build-system r-build-system)
     (arguments
@@ -13963,6 +13975,40 @@ outcome, where observations are divided into J populations, the function
 @code{glsm()} provides estimation for any number K of explanatory variables.")
     (license license:expat)))
 
+(define-public r-glscalibrator
+  (package
+    (name "r-glscalibrator")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glscalibrator" version))
+       (sha256
+        (base32 "04yvg0fygl5dc958dj9411k3ddjnwncchj5vgq1xk946pxiw4qyj"))))
+    (properties `((upstream-name . "glscalibrator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-maps r-magrittr r-lubridate r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fabbiologia/glscalibrator")
+    (synopsis
+     "Automated Calibration and Analysis of 'GLS' (Global Location Sensor) Data")
+    (description
+     "This package provides a fully automated workflow for calibrating and analyzing
+light-level geolocation ('GLS') data from seabirds and other wildlife.  The
+glscalibrator package auto-discovers birds from directory structures,
+automatically detects calibration periods from the first days of deployment,
+processes multiple individuals in batch mode, and generates standardized outputs
+including position estimates, diagnostic plots, and quality control metrics.
+Implements the established threshold workflow internally, following the methods
+described in SGAT (Wotherspoon et al. (2016)
+<https://github.com/SWotherspoon/SGAT>), @code{GeoLight} (Lisovski et al. (2012)
+<doi:10.1111/j.2041-210X.2012.00185.x>), and @code{TwGeos} (Lisovski et al.
+(2019) <https://github.com/slisovski/@code{TwGeos>}).")
+    (license license:expat)))
+
 (define-public r-glrth
   (package
     (name "r-glrth")
@@ -16187,13 +16233,13 @@ fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 (define-public r-gkwreg
   (package
     (name "r-gkwreg")
-    (version "2.1.1")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkwreg" version))
        (sha256
-        (base32 "15x6kz6pjfp3r7vkvsxvxf926c98040ck0v4il1y1vbncjqgmcff"))))
+        (base32 "01hnldzdhqlvfdplxv3x9xy78sskvhigf41jv4wxpjc6gqhlfpx3"))))
     (properties `((upstream-name . "gkwreg")))
     (build-system r-build-system)
     (arguments
@@ -16229,13 +16275,13 @@ not adequately captured by simpler models.")
 (define-public r-gkwdist
   (package
     (name "r-gkwdist")
-    (version "1.0.10")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkwdist" version))
        (sha256
-        (base32 "14d3na9rzxs7rc8ayqw4f9swkwxj1hfamxyybi0i58x3y3qh344r"))))
+        (base32 "0kpci56w4c28cp0g1lxij0hqdwkwh6snnj551kh9g9bskacykrkv"))))
     (properties `((upstream-name . "gkwdist")))
     (build-system r-build-system)
     (arguments
@@ -19160,13 +19206,13 @@ and hexplots of survey data.")
 (define-public r-ggsurveillance
   (package
     (name "r-ggsurveillance")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsurveillance" version))
        (sha256
-        (base32 "0j5cdw0znpqfkp3hci3w8pzyz6yqa403c8c6cx8b5wpxks1kakn9"))))
+        (base32 "1nikpkz739yhmvai96sm7w8il208kp0sbyv8zdy56r8sr0ds7v55"))))
     (properties `((upstream-name . "ggsurveillance")))
     (build-system r-build-system)
     (arguments
@@ -24792,44 +24838,6 @@ error terms and/or heteroscedastic variances, for crossed designs with an
 arbitrary number of factors and nested designs with up to three factors.
 Friedrich et al. (2017) <doi:10.18637/jss.v079.c01>.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-gfcanalysis
-  (package
-    (name "r-gfcanalysis")
-    (version "1.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gfcanalysis" version))
-       (sha256
-        (base32 "0j13y90nyd3qczrkzxwi1wpf5xlh7c0nlsyn8p7z1b4y93v63byc"))))
-    (properties `((upstream-name . "gfcanalysis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-stringr
-                             r-sf
-                             r-rcurl
-                             r-rastervis
-                             r-raster
-                             r-plyr
-                             r-ggplot2
-                             r-geosphere
-                             r-animation))
-    (home-page "https://github.com/azvoleff/gfcanalysis")
-    (synopsis
-     "Tools for Working with Hansen et al. Global Forest Change Dataset")
-    (description
-     "Supports analyses using the Global Forest Change dataset released by Hansen et
-al.  gfcanalysis was originally written for the Tropical Ecology Assessment and
-Monitoring (TEAM) Network.  For additional details on the Global Forest Change
-dataset, see: Hansen, M. et al.  2013. \"High-Resolution Global Maps of
-21st-Century Forest Cover Change.\" Science 342 (15 November): 850-53.  The
-forest change data and more information on the product is available at
-<http://earthenginepartners.appspot.com>.")
-    (license license:gpl3+)))
 
 (define-public r-gfboost
   (package
@@ -32818,13 +32826,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.5.0")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "1ms4bbhj88kd83bkzsxvf06shmgnciw4mc4px82k9qjyj8fngbn5"))))
+        (base32 "0lsss8wrpfgaa4rmcpirv40z56y4q3qh1r8axyrlfxrjnqqk53r5"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (arguments
@@ -33710,27 +33718,27 @@ methods at <https://mikeblazanin.github.io/gcplyr/>.")
 (define-public r-gcpbayes
   (package
     (name "r-gcpbayes")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCPBayes" version))
        (sha256
-        (base32 "134rqclfix1p91nb1sn3js3l8pbgsl0i22ygz2gl73jjhckk0j75"))))
+        (base32 "11pin25yp0mib1a5mpkd2v8mgnpwjdwpr7y877rgra8cibgnsawg"))))
     (properties `((upstream-name . "GCPBayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wiqid
-                             r-truncnorm
+    (propagated-inputs (list r-truncnorm
                              r-rcpparmadillo
                              r-rcpp
-                             r-postpack
+                             r-posterior
                              r-mvtnorm
                              r-mass
                              r-invgamma
-                             r-gdata))
+                             r-gdata
+                             r-abind))
     (home-page "https://github.com/tbaghfalaki/GCPBayes")
     (synopsis
      "Bayesian Meta-Analysis of Pleiotropic Effects Using Group Structure")
@@ -34120,13 +34128,13 @@ online SQL database at <http://paleofire.org>.")
 (define-public r-gccfactor
   (package
     (name "r-gccfactor")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCCfactor" version))
        (sha256
-        (base32 "16b6m1biyfmq98jlr8848wg114kblr1v7llb0165caa0jxz3cim7"))))
+        (base32 "1zwbiwm860sy9hrflmss96fk1h62vs3mxqsprs9qrps15jdlnqcy"))))
     (properties `((upstream-name . "GCCfactor")))
     (build-system r-build-system)
     (arguments
@@ -36507,40 +36515,6 @@ linear predictor for both.  The package also allows transformed or truncated
 distributions from the GAMLSS family to be used for the continuous part of the
 distribution.  Standard methods and GAMLSS diagnostics can be used with the
 resulting fitted object.")
-    (license (list license:gpl2 license:gpl3))))
-
-(define-public r-gamlss-ggplots
-  (package
-    (name "r-gamlss-ggplots")
-    (version "2.1-12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gamlss.ggplots" version))
-       (sha256
-        (base32 "0lm0nlc2rb4yl6fliv0017qpgyaaky7hws6arv36dgqqih9dmcii"))))
-    (properties `((upstream-name . "gamlss.ggplots")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaimpute
-                             r-mgcv
-                             r-ggridges
-                             r-ggplot2
-                             r-gamlss-inf
-                             r-gamlss-foreach
-                             r-gamlss-dist
-                             r-gamlss
-                             r-foreach
-                             r-ellipse))
-    (home-page "https://www.gamlss.com/")
-    (synopsis
-     "Plotting Functions for Generalized Additive Model for Location Scale and Shape")
-    (description
-     "This package provides functions for plotting Generalized Additive Models for
-Location Scale and Shape from the gamlss package, Stasinopoulos and Rigby (2007)
-<doi:10.18637/jss.v023.i07>, using the graphical methods from ggplot2'.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gamlss-foreach

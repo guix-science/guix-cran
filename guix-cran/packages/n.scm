@@ -5168,13 +5168,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "0ny82l430z9w8y0nq49cz134h315jxllgp9jsn5k1zvddzypw4zr"))))
+        (base32 "1b4gmfkagkdjv6ssps0c7pndbpqdva50a3368naiy2msd4ys0j1b"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (arguments
@@ -5183,7 +5183,7 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
     (propagated-inputs (list r-xml2
                              r-rxode2
                              r-rcpp
-                             r-qs
+                             r-qs2
                              r-magrittr
                              r-lotri
                              r-ggplot2
@@ -6411,13 +6411,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.6.2")
+    (version "11.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "0vpz391wmnfd11v46xx4n1z22irm07j4vy6i4ar61vk0l7af5wa2"))))
+        (base32 "1513psab913w5bicl0lifcdjpap3bwnk57w969dc370gjl6dfifv"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -8594,13 +8594,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "4.1.1")
+    (version "5.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "0wjmbghwfnwzal5cain7gz1hc3i0jlj5vza9529rxr91c8dmm17a"))))
+        (base32 "0i1zf60l96kkqz63frcwvcil9kdz9h7w0ybfjxnp5g66cy70vy9a"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -12717,13 +12717,13 @@ for multigraphs, hypergraphs, or loops.")
 (define-public r-networkinference
   (package
     (name "r-networkinference")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkInference" version))
        (sha256
-        (base32 "1x63szbns8wf3k89ibk2p66prngw4fr2ckfn1568mnxdwnzvhrb4"))))
+        (base32 "06msq4mgsrrj59gw4akfyyck52hl1qzf4d6inkb6ky5skhq8h1rc"))))
     (properties `((upstream-name . "NetworkInference")))
     (build-system r-build-system)
     (arguments
@@ -14162,47 +14162,6 @@ network meta-analysis model with dose-response relationships, predicted values
 of the fitted model and dose-response plots in a frequentist way.")
     (license license:gpl2+)))
 
-(define-public r-netdiffuser
-  (package
-    (name "r-netdiffuser")
-    (version "1.23.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netdiffuseR" version))
-       (sha256
-        (base32 "1bgzbhwxkpyyymd09lc1yq0bwz45lz16azx92h9fcksr3ca6psrr"))))
-    (properties `((upstream-name . "netdiffuseR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-sparsem
-                             r-sna
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-networkdynamic
-                             r-network
-                             r-matrix
-                             r-matchit
-                             r-mass
-                             r-igraph
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/USCCANA/netdiffuseR")
-    (synopsis "Analysis of Diffusion and Contagion Processes on Networks")
-    (description
-     "Empirical statistical analysis, visualization and simulation of diffusion and
-contagion processes on networks.  The package implements algorithms for
-calculating network diffusion statistics such as transmission rate, hazard
-rates, exposure models, network threshold levels, infectiousness (contagion),
-and susceptibility.  The package is inspired by work published in Valente, et
-al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
-9781881303213>, Myers (2000) <DOI:10.1086/303110>, Iyengar and others (2011)
-<DOI:10.1287/mksc.1100.0566>, Burt (1987) <DOI:10.1086/228667>; among others.")
-    (license license:expat)))
-
 (define-public r-netda
   (package
     (name "r-netda")
@@ -14291,38 +14250,6 @@ detect genes that co-occur across genomes.")
 correlated, high-dimensional variables formed as a network with an external
 variable.  The external variable may act as the dependent/response variable or
 as an independent/predictor variable to the network.")
-    (license license:expat)))
-
-(define-public r-netcontrol
-  (package
-    (name "r-netcontrol")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netcontrol" version))
-       (sha256
-        (base32 "1gskb728ycnhz9a9g9ghm0dz3ajf3dzgyv23bsk9i01wj9hrxhc0"))))
-    (properties `((upstream-name . "netcontrol")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pracma
-                             r-matrix
-                             r-mass
-                             r-expm))
-    (home-page "https://cran.r-project.org/package=netcontrol")
-    (synopsis "Control Theory Methods for Networks")
-    (description
-     "Implementations of various control theory methods for use in brain and
-psychological networks.  Contains controllability statistics from Pasqualetti,
-Zampieri & Bullo (2014) <doi:10.1109/TCNS.2014.2310254>, optimal control
-algorithms from Lewis, Vrabie & Syrmos (2012, ISBN:978-0-470-63349-6), and
-various utilities.")
     (license license:expat)))
 
 (define-public r-netcom
@@ -17953,13 +17880,13 @@ provides a set of functions for data extraction, manipulation and analysis.")
 (define-public r-narray
   (package
     (name "r-narray")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "narray" version))
        (sha256
-        (base32 "0vpx1fl24ba1c5x3bw0n8bx5yp77gsqybaxgbq6mj6by29ggq73l"))))
+        (base32 "16jrhbp6xfyspns2ikplch1rbczb4m7c2910bmp0w4kf30i8x27w"))))
     (properties `((upstream-name . "narray")))
     (build-system r-build-system)
     (arguments

@@ -4479,13 +4479,13 @@ flow estimation in the United Kingdom\", Institute of Hydrology (1992, ISBN 0
 (define-public r-ukbnmr
   (package
     (name "r-ukbnmr")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ukbnmr" version))
        (sha256
-        (base32 "0ajdnc75bqbc1i2x157h59sj7x8xwickf6llc8iwzzacs1hnj481"))))
+        (base32 "1qap07ahp15llrd2c1h5ksx73b96lfam3hmfssx0df1mr42hgrd6"))))
     (properties `((upstream-name . "ukbnmr")))
     (build-system r-build-system)
     (arguments
@@ -4915,13 +4915,13 @@ Analysis (PCA) algorithm of Yeasin and Paul (2024)
 (define-public r-udpipe
   (package
     (name "r-udpipe")
-    (version "0.8.14")
+    (version "0.8.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "udpipe" version))
        (sha256
-        (base32 "0sv0w655anhb07pf9silkw0mrl25sl22klydp1dz2a3lhahmpj9q"))))
+        (base32 "0g7jrchaxhyqaba1pdrxcz8q62m3f3hibi6bmybxi7l4rvb7g8g3"))))
     (properties `((upstream-name . "udpipe")))
     (build-system r-build-system)
     (arguments

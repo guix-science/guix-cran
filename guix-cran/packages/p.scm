@@ -3992,46 +3992,6 @@ principal component analysis (PCA) results.  Compared to the classical SVD
 method, the first r singular values can be computed.")
     (license license:gpl2+)))
 
-(define-public r-pstrata
-  (package
-    (name "r-pstrata")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PStrata" version))
-       (sha256
-        (base32 "1nzvspzihxwra0hzyc8cfnml19xz26dam23y2q09794dpg5a7pcf"))))
-    (properties `((upstream-name . "PStrata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-stringr
-                             r-rstan
-                             r-purrr
-                             r-lme4
-                             r-ggplot2
-                             r-dplyr
-                             r-abind))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=PStrata")
-    (synopsis "Principal Stratification Analysis in R")
-    (description
-     "Estimating causal effects in the presence of post-treatment confounding using
-principal stratification.  PStrata allows for customized monotonicity
-assumptions and exclusion restriction assumptions, with automatic full Bayesian
-inference supported by Stan'.  The main function to use in this package is
-@code{PStrata()}, which provides posterior estimates of principal causal effect
-with uncertainty quantification.  Visualization tools are also provided for
-diagnosis and interpretation.  See Liu and Li (2023) <@code{arXiv:2304.02740>}
-for details.")
-    (license license:gpl2+)))
-
 (define-public r-pstest
   (package
     (name "r-pstest")
@@ -4086,42 +4046,6 @@ Finally, the package proposes different transformations especially to eliminate
 any variation resulting from allometric growth (calculation of residuals from
 linear regressions, Reist standardizations or Aitchison transformation).")
     (license license:gpl2)))
-
-(define-public r-pst
-  (package
-    (name "r-pst")
-    (version "0.94.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PST" version))
-       (sha256
-        (base32 "0rd3mswcckgh5vfb1bpid9dki0yq0ph098jp2awnm21qzvx72va4"))))
-    (properties `((upstream-name . "PST")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-traminer r-rcolorbrewer))
-    (home-page "https://r-forge.r-project.org/projects/pst")
-    (synopsis "Probabilistic Suffix Trees and Variable Length Markov Chains")
-    (description
-     "This package provides a framework for analysing state sequences with
-probabilistic suffix trees (PST), the construction that stores variable length
-Markov chains (VLMC).  Besides functions for learning and optimizing VLMC
-models, the PST library includes many additional tools to analyse sequence data
-with these models: visualization tools, functions for sequence prediction and
-artificial sequences generation, as well as for context and pattern mining.  The
-package is specifically adapted to the field of social sciences by allowing to
-learn VLMC models from sets of individual sequences possibly containing missing
-values, and by accounting for case weights.  The library also allows to compute
-probabilistic divergence between two models, and to fit segmented VLMC, where
-sub-models fitted to distinct strata of the learning sample are stored in a
-single PST. This software results from research work executed within the
-framework of the Swiss National Centre of Competence in Research LIVES, which is
-financed by the Swiss National Science Foundation.  The authors are grateful to
-the Swiss National Science Foundation for its financial support.")
-    (license license:gpl2+)))
 
 (define-public r-pssubpathway
   (package
@@ -12455,19 +12379,19 @@ covariates to predict outcomes under treatment and control.")
 (define-public r-predictsr
   (package
     (name "r-predictsr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predictsr" version))
        (sha256
-        (base32 "161q2ni36hm6b1hwhbzrcp8q1qd1kqhqqysbz8vf7fz2r8ja1vqb"))))
+        (base32 "015kzi992h7sl4zq5g0p5g1ckgah866p7gcpqgv6mg5rhdd584xx"))))
     (properties `((upstream-name . "predictsr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-logger r-jsonlite r-httr2 r-glue))
+    (propagated-inputs (list r-logger r-jsonlite r-httr2 r-glue r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://biodiversity-futures-lab.github.io/predictsr/")
     (synopsis "Access the 'PREDICTS' Biodiversity Database")
@@ -14425,32 +14349,6 @@ decision and stimulate additional empirical work to arrive at more robust and
 replicable statistical inferences.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-pplasso
-  (package
-    (name "r-pplasso")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PPLasso" version))
-       (sha256
-        (base32 "11xqpq7s8j1vrsf0x31pvk861wz4d3yg7a4gcwv43s3w5dxbljls"))))
-    (properties `((upstream-name . "PPLasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-glmnet r-ggplot2 r-genlasso r-cvcovest))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PPLasso")
-    (synopsis "Prognostic Predictive Lasso for Biomarker Selection")
-    (description
-     "We provide new tools for the identification of prognostic and predictive
-biomarkers.  For further details we refer the reader to the paper: Zhu et al.
-Identification of prognostic and predictive biomarkers in high-dimensional data
-with PPLasso.  BMC Bioinformatics.  2023 Jan 23;24(1):25.")
-    (license license:gpl2)))
-
 (define-public r-ppks
   (package
     (name "r-ppks")
@@ -15898,57 +15796,6 @@ family of power and reversal power distributions.")
     (synopsis "Binary Exponentiation")
     (description "Fast exponentiation when the exponent is an integer.")
     (license license:gpl3+)))
-
-(define-public r-povmap
-  (package
-    (name "r-povmap")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "povmap" version))
-       (sha256
-        (base32 "1qr4i7ph17mzhjamssc6h4q02mw6jykl2kqc5n3i7vfp88q4frcp"))))
-    (properties `((upstream-name . "povmap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-survey
-                             r-stringr
-                             r-spdep
-                             r-sf
-                             r-saerobust
-                             r-reshape2
-                             r-readods
-                             r-parallelmap
-                             r-openxlsx
-                             r-nlme
-                             r-mumin
-                             r-moments
-                             r-mass
-                             r-hlmdiag
-                             r-gridextra
-                             r-ggplot2
-                             r-formula-tools
-                             r-boot
-                             r-bestnormalize))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/SSA-Statistical-Team-Projects/povmap")
-    (synopsis "Extension to the 'emdi' Package")
-    (description
-     "The R package povmap supports small area estimation of means and poverty
-headcount rates.  It adds several new features to the emdi package (see \"The R
-Package emdi for Estimating and Mapping Regionally Disaggregated Indicators\" by
-Kreutzmann et al. (2019) <doi:10.18637/jss.v091.i07>).  These include new
-options for incorporating survey weights, ex-post benchmarking of estimates, two
-additional transformations, several new convenient functions to assist with
-reporting results, and a wrapper function to facilitate access from Stata'.")
-    (license license:gpl2)))
 
 (define-public r-pov
   (package
@@ -18588,43 +18435,6 @@ from Heard and Rubin-Delanchy (2018) <doi:10.1093/biomet/asx076> to control the
 quotient's value.")
     (license license:gpl3+)))
 
-(define-public r-poolabc
-  (package
-    (name "r-poolabc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "poolABC" version))
-       (sha256
-        (base32 "0l1sg9w1a385g6cz82b73a13661bx716ppvabvji7b6p99i9kv99"))))
-    (properties `((upstream-name . "poolABC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scrm
-                             r-rlang
-                             r-rcolorbrewer
-                             r-poolhelper
-                             r-nnet
-                             r-metricsweighted
-                             r-locfit
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/joao-mcarvalho/poolABC")
-    (synopsis "Approximate Bayesian Computation with Pooled Sequencing Data")
-    (description
-     "This package provides functions to simulate Pool-seq data under models of
-demographic formation and to import Pool-seq data from real populations.
-Implements two ABC algorithms for performing parameter estimation and model
-selection using Pool-seq data.  Cross-validation can also be performed to assess
-the accuracy of ABC estimates and model choice.  Carvalho et al., (2022)
-<doi:10.1111/1755-0998.13834>.")
-    (license license:gpl3+)))
-
 (define-public r-pool
   (package
     (name "r-pool")
@@ -20992,13 +20802,13 @@ in the neighborhood.")
 (define-public r-pointblank
   (package
     (name "r-pointblank")
-    (version "0.12.2")
+    (version "0.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pointblank" version))
        (sha256
-        (base32 "0p02alcjbhxz5dzj7bs5ijdwyn2gl9fdhhzxs7jhck7rm3xlinf6"))))
+        (base32 "1ninii7wlyczzrd2vjcqa9agpx9bv0wikml6i068fyhyjwb4ryrs"))))
     (properties `((upstream-name . "pointblank")))
     (build-system r-build-system)
     (arguments
@@ -24142,33 +23952,29 @@ of fit.")
 (define-public r-plotcli
   (package
     (name "r-plotcli")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotcli" version))
        (sha256
-        (base32 "0qk78gagn5i6zs4srr3q2kzhi5vlyxhmxgwg2ah9c24asnfa3hyg"))))
+        (base32 "1cfm4n9qrrd8k8k164qjziwp6dik7890cvcglwk74yzls2fyrp45"))))
     (properties `((upstream-name . "plotcli")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rmarkdown
-                             r-rlang
-                             r-r6
-                             r-knitr
-                             r-ggplot2
-                             r-crayon))
+    (propagated-inputs (list r-stringr r-rlang r-r6 r-ggplot2 r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cheuerde/plotcli")
     (synopsis "Command Line Interface Plotting")
     (description
      "The plotcli package provides terminal-based plotting in R. It supports colored
-scatter plots, line plots, bar plots, and box plots.  The package allows users
-to customize plot appearance, add titles, labels, ticks, and legends, and output
-the plot as a text-based visualization.")
+scatter plots, line plots, bar plots, boxplots, histograms, density plots, and
+more.  The @code{ggplotcli()} function is a universal converter that renders any
+ggplot2 plot in the terminal using Unicode Braille characters or ASCII. Features
+include support for 15+ geom types, faceting (facet_wrap/facet_grid), automatic
+theme detection, legends, optimized color mapping, and multiple canvas types.")
     (license license:lgpl3)))
 
 (define-public r-plotbivinvgaus
@@ -27513,38 +27319,6 @@ to the first unnamed argument of a function and to dot symbol in an enclosed
 expression.  The syntax is designed to make the pipeline more readable and
 friendly to a wide range of operations.")
     (license license:expat)))
-
-(define-public r-pipenostics
-  (package
-    (name "r-pipenostics")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pipenostics" version))
-       (sha256
-        (base32 "1pqv5jz3dm5k7ldvja7h5s8zd0mbgm1dbkfmfppnxhv2nmnzm3p1"))))
-    (properties `((upstream-name . "pipenostics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-iapws r-checkmate))
-    (home-page "https://omega1x.github.io/pipenostics/")
-    (synopsis
-     "Diagnostics, Reliability and Predictive Maintenance of Pipeline Systems")
-    (description
-     "This package provides functions representing some useful empirical and
-data-driven models of heat loss, corrosion diagnostics, reliability and
-predictive maintenance of pipeline systems.  The package is an option for
-technical engineering departments of heat generating and heat transfer companies
-that use or plan to use regulatory calculations in their activities.  Methods
-are described in Timashev et al. (2016) <doi:10.1007/978-3-319-25307-7>,
-A.C.Reddy (2017) <doi:10.1016/j.matpr.2017.07.081>, Minenergo (2008)
-<https://docs.cntd.ru/document/902148459>, Minenergo (2005)
-<https://docs.cntd.ru/document/1200035568>, Xing LU. (2014)
-<doi:10.1080/23744731.2016.1258371>.")
-    (license license:gpl3)))
 
 (define-public r-pipeliner
   (package
@@ -40066,41 +39840,6 @@ parentheses or square brackets.")
 find and return the nearest location where you can get a cold one.")
     (license license:expat)))
 
-(define-public r-pbox
-  (package
-    (name "r-pbox")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pbox" version))
-       (sha256
-        (base32 "037wry356n3z5z4ggd6k5yna778134vjagaii1r4yahg15ksp7gk"))))
-    (properties `((upstream-name . "pbox")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-purrr
-                             r-gamlss-dist
-                             r-gamlss
-                             r-data-table
-                             r-copula))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.r-project.org")
-    (synopsis "Exploring Multivariate Spaces with Probability Boxes")
-    (description
-     "Advanced statistical library offering a method to encapsulate and query the
-probability space of a dataset effortlessly using Probability Boxes (p-boxes).
-Its distinctive feature lies in the ease with which users can navigate and
-analyze marginal, joint, and conditional probabilities while taking into account
-the underlying correlation structure inherent in the data using copula theory
-and models.  A comprehensive explanation is available in the paper \"pbox:
-Exploring Multivariate Spaces with Probability Boxes\" to be published in the
-Journal of Statistical Software.")
-    (license license:gpl3)))
-
 (define-public r-pbo
   (package
     (name "r-pbo")
@@ -42512,6 +42251,46 @@ on the analysis of poverty.  References, Fattore M. (2016)
 <doi:10.1007/s11205-016-1501-4> Arcagni A. (2017)
 <doi:10.1007/978-3-319-45421-4_19>.")
     (license license:gpl2+)))
+
+(define-public r-parquetize
+  (package
+    (name "r-parquetize")
+    (version "0.5.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "parquetize" version))
+       (sha256
+        (base32 "1w1pr30hnvfkm4x0x9x97y26899c6273h3ab18sb65w7m27nfmnx"))))
+    (properties `((upstream-name . "parquetize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-rsqlite
+                             r-rlang
+                             r-readr
+                             r-lifecycle
+                             r-jsonlite
+                             r-haven
+                             r-glue
+                             r-fst
+                             r-dplyr
+                             r-dbi
+                             r-curl
+                             r-cli
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://ddotta.github.io/parquetize/")
+    (synopsis "Convert Files to Parquet Format")
+    (description
+     "Collection of functions to get files in parquet format.  Parquet is a columnar
+storage file format <https://parquet.apache.org/>.  The files to convert can be
+of several formats (\"csv\", \"RData\", \"rds\", \"RSQLite\", \"json\", \"ndjson\", \"SAS\",
+\"SPSS\"...).")
+    (license license:asl2.0)))
 
 (define-public r-parqr
   (package

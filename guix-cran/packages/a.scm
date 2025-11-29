@@ -2322,34 +2322,6 @@ plots can be exported in \"HTML\", \"pdf('@code{LaTex}')\", \"docx('MS Word')\" 
 \"pptx('MS Powerpoint')\" documents.")
     (license license:gpl3)))
 
-(define-public r-autorasch
-  (package
-    (name "r-autorasch")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autoRasch" version))
-       (sha256
-        (base32 "15vgmpvcw7hi1i5kaqj9q126qmfa54h8ay9w6wa7yxjbginp9v7c"))))
-    (properties `((upstream-name . "autoRasch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lavaan r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=autoRasch")
-    (synopsis "Semi-Automated Rasch Analysis")
-    (description
-     "This package performs Rasch analysis (semi-)automatically, which has been shown
-to be comparable with the standard Rasch analysis (Feri Wijayanto et al. (2021)
-<doi:10.1111/bmsp.12218>, Feri Wijayanto et al. (2022)
-<doi:10.3758/s13428-022-01947-9>, Feri Wijayanto et al. (2022)
-<doi:10.1177/01466216221125178>).")
-    (license license:gpl2)))
-
 (define-public r-autoplots
   (package
     (name "r-autoplots")
@@ -13996,43 +13968,6 @@ and communication in animals.  It also has functions to plot the data and to
 calculate the entropy of sequences.")
     (license license:asl2.0)))
 
-(define-public r-animalhabitatnetwork
-  (package
-    (name "r-animalhabitatnetwork")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AnimalHabitatNetwork" version))
-       (sha256
-        (base32 "1bhqypkiw5v9w26jbdmhndqj5hjfmf7zwivrq2hgs0zcjxwa8gfn"))))
-    (properties `((upstream-name . "AnimalHabitatNetwork")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph r-ggplot2))
-    (home-page "https://cran.r-project.org/package=AnimalHabitatNetwork")
-    (synopsis
-     "Networks Characterising the Physical Configurations of Animal Habitats")
-    (description
-     "This package provides functions for generating and visualising networks for
-characterising the physical attributes and spatial organisations of habitat
-components (i.e.  habitat physical configurations).  The network generating
-algorithm first determines the X and Y coordinates of N nodes within a rectangle
-with a side length of L and an area of A. Then it computes the pair-wise
-Euclidean distance Dij between node i and j, and then a complete network with
-1/Dij as link weights is constructed.  Then, the algorithm removes links from
-the complete network with the probability as shown in the function
-@code{ahn_prob()}.  Such link removals can make the network disconnected whereas
-a connected network is wanted.  In such cases, the algorithm rewires one network
-component to its spatially nearest neighbouring component and repeat doing this
-until the network is connected again.  Finally, it outputs an undirected network
-(weighted or unweighted, connected or disconnected).  This package came with a
-manuscript on modelling the physical configurations of animal habitats using
-networks (in preparation).")
-    (license license:gpl3)))
-
 (define-public r-animalekf
   (package
     (name "r-animalekf")
@@ -16751,35 +16686,6 @@ based on the duality between the Voronoi diagram and Delaunay triangulation.
 The package also includes a function that returns the Delaunay mesh of a given
 sample of points and its dual Voronoi diagram in one single object.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-alphaci
-  (package
-    (name "r-alphaci")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "alphaci" version))
-       (sha256
-        (base32 "19ndi5xw3i4hpcklpxx379nnilccyz98rp9qqr8ag9xkv5jvq8si"))))
-    (properties `((upstream-name . "alphaci")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrixcalc r-future-apply))
-    (native-inputs (list r-knitr))
-    (home-page "https://jonasmoss.github.io/alphaci/")
-    (synopsis
-     "Confidence Intervals for Coefficient Alpha and Standardized Alpha")
-    (description
-     "Calculate confidence intervals for alpha and standardized alpha using asymptotic
-theory or the studentized bootstrap, with or without transformations.  Supports
-the asymptotic distribution-free method of Maydeu-Olivares, et al. (2007)
-<doi:10.1037/1082-989X.12.2.157>, the pseudo-elliptical method of Yuan & Bentler
-(2002) <doi:10.1007/BF02294845>, and the normal method of van Zyl et al. (1999)
-<doi:10.1007/BF02296146>, for both coefficient alpha and standardized alpha.")
-    (license license:expat)))
 
 (define-public r-alphabetr
   (package
@@ -19553,46 +19459,6 @@ research.")
 graphical approaches, assesses the success of the transformation via tests and
 plots, computes mean and confidence interval for back transformed data.")
     (license license:gpl2+)))
-
-(define-public r-aiccpermanova
-  (package
-    (name "r-aiccpermanova")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AICcPermanova" version))
-       (sha256
-        (base32 "0sq3lnyrja2vpl5wqq517zw32fi96x99gqxj9lh8q3b0napkb0fd"))))
-    (properties `((upstream-name . "AICcPermanova")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-tidyr
-                             r-stringr
-                             r-future
-                             r-furrr
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-data-table
-                             r-car
-                             r-broom))
-    (home-page "https://github.com/Sustainscapes/AICcPerm")
-    (synopsis "Model Selection of PERMANOVA Models Using AICc")
-    (description
-     "This package provides tools for model selection and model averaging of
-@code{PerMANOVA} models using Akaike Information Criterion corrected for small
-sample sizes (AICc) and Information Theoretic criteria principles.  The package
-is built around the PERMANOVA analysis from the vegan package and provides a
-streamlined workflow for generating and comparing models, obtaining model
-weights, and summarizing results using model averaging approaches.  The methods
-implemented in this package are based on the practical information- theoretic
-approach described by Burnham, K. P. and Anderson, D. R. (2002)
-(<doi:10.1007/b97636>).")
-    (license license:expat)))
 
 (define-public r-aiccmodavg
   (package
@@ -22766,6 +22632,37 @@ adsorption phenomena in soils, water treatment, and material sciences.
 Functions are compatible with base R and ggplot2 for visualization.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-adsiht
+  (package
+    (name "r-adsiht")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ADSIHT" version))
+       (sha256
+        (base32 "1i4pv2yvzv9dd07jxlhrn8h361nn9fxbjy0127awch4x4y9llmsg"))))
+    (properties `((upstream-name . "ADSIHT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-snowfall
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-mvnfast
+                             r-matrix))
+    (home-page "https://cran.r-project.org/package=ADSIHT")
+    (synopsis "Adaptive Double Sparse Iterative Hard Thresholding")
+    (description
+     "Solving high-dimensional double sparse linear regression via an iterative hard
+thresholding algorithm.  Furthermore, the method is extended to jointly estimate
+multiple graphical models.  For more details, please see
+<https://www.jmlr.org/papers/v25/23-0653.html> and
+<doi:10.48550/@code{arXiv.2503.18722>}.")
+    (license license:gpl3+)))
+
 (define-public r-adsdatahubr
   (package
     (name "r-adsdatahubr")
@@ -23733,6 +23630,32 @@ Xian A (2023) \"Ensemble distributional forecasting for insurance loss reserving
 neighbourhood regression, from Nunes et al. (2006)
 <doi:10.1007/s11222-006-6560-y>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-adklakedata
+  (package
+    (name "r-adklakedata")
+    (version "0.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adklakedata" version))
+       (sha256
+        (base32 "0hp0s8r489a5qbpfszqcqm1z9jnir41m6v5jp27b00qqi43wa6af"))))
+    (properties `((upstream-name . "adklakedata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rappdirs r-httr))
+    (home-page "https://github.com/jeremylfarrell/adklakedata")
+    (synopsis "Adirondack Long-Term Lake Data")
+    (description
+     "Package for the access and distribution of long-term lake datasets from lakes in
+the Adirondack Park, northern New York state.  Includes a wide variety of
+physical, chemical, and biological parameters from 28 lakes.  Data are from
+multiple collection organizations and have been harmonized in both time and
+space for ease of reuse.")
+    (license license:expat)))
 
 (define-public r-adjustedcurves
   (package

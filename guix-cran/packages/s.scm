@@ -1575,59 +1575,6 @@ C. J., Holmes, D. J. and Smith, T. M. F. (1986)
 T. (2023) <DOI:10.3389/fams.2023.1274530>.")
     (license license:gpl2+)))
 
-(define-public r-swmprextension
-  (package
-    (name "r-swmprextension")
-    (version "2.2.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SWMPrExtension" version))
-       (sha256
-        (base32 "107v5fh3h03dk9ma67hj8988hfmswrl9lfijhjv5b4ww73n2v6x7"))))
-    (properties `((upstream-name . "SWMPrExtension")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-swmpr
-                             r-sf
-                             r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-purrr
-                             r-officer
-                             r-magrittr
-                             r-lubridate
-                             r-ggthemes
-                             r-ggplot2
-                             r-ggimage
-                             r-flextable
-                             r-envstats
-                             r-dplyr
-                             r-curl
-                             r-broom))
-    (home-page "https://cran.r-project.org/package=SWMPrExtension")
-    (synopsis "Functions for Analyzing and Plotting Estuary Monitoring Data")
-    (description
-     "This package provides tools for performing routine analysis and plotting tasks
-with environmental data from the System Wide Monitoring Program of the National
-Estuarine Research Reserve System <https://cdmo.baruch.sc.edu/>.  This package
-builds on the functionality of the SWMPr package
-<https://cran.r-project.org/package=SWMPr>, which is used to retrieve and
-organize the data.  The combined set of tools address common challenges
-associated with continuous time series data for environmental decision making,
-and are intended for use in annual reporting activities.  References: Beck,
-Marcus W. (2016) <ISSN
-2073-4859><https://journal.r-project.org/archive/2016-1/beck.pdf> Rudis, Bob
-(2014)
-<https://rud.is/b/2014/11/16/moving-the-earth-well-alaska-hawaii-with-r/>.
-United States Environmental Protection Agency (2015)
-<https://cfpub.epa.gov/si/si_public_record_Report.cfm?Lab=OWOW&@code{dirEntryId=327030>}.")
-    (license license:cc0)))
-
 (define-public r-swmpr
   (package
     (name "r-swmpr")
@@ -3501,13 +3448,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "3.1.2")
+    (version "3.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "0aw45s7p820y6crqx064byvgzfbgxyw5ph6jhk2zp2p8xjlwywrk"))))
+        (base32 "14cd0448vknllwk6cgya8jbf9c3zfcvz963lq2nplj3da1ybc67j"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -3528,17 +3475,17 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
     (description
      "This package provides tools for fitting self-validated ensemble models (SVEM;
 Lemkus et al. (2021) <doi:10.1016/j.chemolab.2021.104439>) in small-sample
-design-of-experiments and related chemometric workflows, using elastic net and
-relaxed elastic net regression via glmnet (Friedman et al. (2010)
+design-of-experiments and related workflows, using elastic net and relaxed
+elastic net regression via glmnet (Friedman et al. (2010)
 <doi:10.18637/jss.v033.i01>).  Fractional random-weight bootstraps with
 anti-correlated validation copies are used to tune penalty paths by
 validation-weighted AIC/BIC. Supports Gaussian and binomial responses,
 deterministic expansion helpers for shared factor spaces, prediction with
-bootstrap uncertainty, and a random-search optimizer that respects
-mixture/simplex constraints and combines multiple responses via Derringer-Suich
-desirability functions.  Also includes a permutation-based whole-model test for
-Gaussian SVEM fits (Karl (2024) <doi:10.1016/j.chemolab.2024.105122>).  Some
-parts of the package code were drafted with assistance from generative AI tools.")
+bootstrap uncertainty, and a random-search optimizer that respects mixture
+constraints and combines multiple responses via desirability functions.  Also
+includes a permutation-based whole-model test for Gaussian SVEM fits (Karl
+(2024) <doi:10.1016/j.chemolab.2024.105122>).  Package code was drafted with
+assistance from generative AI tools.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-svelteplots
@@ -7585,39 +7532,6 @@ textbook, Data Analysis.  This includes proportional reduction in error and
 formatting to improve ease the transition between the book and R.")
     (license license:gpl3+)))
 
-(define-public r-superml
-  (package
-    (name "r-superml")
-    (version "0.5.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "superml" version))
-       (sha256
-        (base32 "0r2xp520j8w395b272681g9d7vzinmf4cl627xxcsw8575k89lpf"))))
-    (properties `((upstream-name . "superml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-metrics
-                             r-data-table
-                             r-bh
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/saraswatmks/superml")
-    (synopsis
-     "Build Machine Learning Models Like Using Python's Scikit-Learn Library in R")
-    (description
-     "The idea is to provide a standard interface to users who use both R and Python
-for building machine learning models.  This package provides a scikit-learn's
-fit, predict interface to train machine learning models in R.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-supergauss
   (package
     (name "r-supergauss")
@@ -8185,6 +8099,32 @@ lower confidence bounds for the proportion of active voxels in different
 clusters for @code{fMRI} cluster analysis.  Details may be found in Vesely,
 Finos, and Goeman (2020) <@code{arXiv:2102.11759>}.")
     (license license:gpl2+)))
+
+(define-public r-sumr
+  (package
+    (name "r-sumr")
+    (version "0.4.16")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sumR" version))
+       (sha256
+        (base32 "1dyv1k2zbyzql8kh1jszkfn8mgd6l3vwify5zsp6v0glfncxqgjd"))))
+    (properties `((upstream-name . "sumR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixstats))
+    (home-page "https://cran.r-project.org/package=sumR")
+    (synopsis "Approximate Summation of Series")
+    (description
+     "Application of theoretical results which ensure that the summation of an
+infinite discrete series is within an arbitrary margin of error of its true
+value.  The C code under the hood is shared through header files to allow users
+to sum their own low level functions as well.  Based on the paper by Braden
+(1992) <doi: 10.2307/2324995>.")
+    (license license:gpl3+)))
 
 (define-public r-sumo
   (package
@@ -20974,48 +20914,6 @@ Shiny Dashboard, which can be used to visualize experimental results and
 analyses.")
     (license license:expat)))
 
-(define-public r-squat
-  (package
-    (name "r-squat")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "squat" version))
-       (sha256
-        (base32 "0mpjv35gzxa29jbpxb3dq3d0b26vg3hzi9hnlh13d0i2cwdzrbmk"))))
-    (properties `((upstream-name . "squat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-scales
-                             r-roahd
-                             r-rlang
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-progressr
-                             r-mfpca
-                             r-ggrepel
-                             r-ggplot2
-                             r-future-apply
-                             r-fundata
-                             r-fdasrvf
-                             r-fdacluster
-                             r-dtw
-                             r-dbscan
-                             r-cli))
-    (home-page "https://github.com/LMJL-Alea/squat")
-    (synopsis "Statistics for Quaternion Temporal Data")
-    (description
-     "An implementation of statistical tools for the analysis of rotation-valued time
-series and functional data.  It relies on pre-existing quaternion data structure
-provided by the Eigen C++ library.")
-    (license license:gpl3+)))
-
 (define-public r-squash
   (package
     (name "r-squash")
@@ -22649,13 +22547,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "07rzz4prqjcawddskcr5r6pwpq4iscl14l3m9ayp90ylv012y0lp"))))
+        (base32 "0hp9qxg88l4i7782hcjpqsqqwrn2lq1cl4f7fn5b4lqr5j465c3h"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -22687,7 +22585,8 @@ support for Bayesian power analysis by way of Bayes factors or posterior
 probability evaluations.  Additional functions for building empirical power
 curves, reanalyzing simulation information, and for increasing the precision of
 the resulting power estimates are also included, each of which utilize similar
-API structures.")
+API structures.  For further details see the associated publication in Chalmers
+(2025) <doi:10.3758/s13428-025-02787-z>.")
     (license license:gpl3+)))
 
 (define-public r-spouse
@@ -28768,32 +28667,6 @@ and signed ranks.  For details, see Oja and Randles (2004)
 <doi:10.1214/088342304000000558> and Oja (2010) <doi:10.1007/978-1-4419-0468-3>.")
     (license license:gpl2)))
 
-(define-public r-spatialml
-  (package
-    (name "r-spatialml")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpatialML" version))
-       (sha256
-        (base32 "05jjv441knmqci66vgy0lsp17hv3fmkfn1ijci5phn39cx797zf5"))))
-    (properties `((upstream-name . "SpatialML")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ranger r-randomforest r-caret))
-    (home-page "https://stamatisgeoai.eu/")
-    (synopsis "Spatial Machine Learning")
-    (description
-     "This package implements a spatial extension of the random forest algorithm
-(Georganos et al. (2019) <doi:10.1080/10106049.2019.1595177>).  Allows for a
-geographically weighted random forest regression including a function to find
-the optical bandwidth. (Georganos and Kalogirou (2022)
-<https://www.mdpi.com/2220-9964/11/9/471>).")
-    (license license:gpl2+)))
-
 (define-public r-spatialkwd
   (package
     (name "r-spatialkwd")
@@ -33122,37 +32995,6 @@ analyses, parameter optimization, model validation, and hypothesis testing.")
      "Formulas for calculating sound velocity, water pressure, depth, density,
 absorption and sonar equations.")
     (license license:gpl3+)))
-
-(define-public r-somspace
-  (package
-    (name "r-somspace")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "somspace" version))
-       (sha256
-        (base32 "1268sj89cbkp2nm0i905s991a92w4aki93hxia2vqk6fdh200rdl"))))
-    (properties `((upstream-name . "somspace")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-maps r-kohonen r-ggplot2
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=somspace")
-    (synopsis "Spatial Analysis with Self-Organizing Maps")
-    (description
-     "Application of the Self-Organizing Maps technique for spatial classification of
-time series.  The package uses spatial data, point or gridded, to create
-clusters with similar characteristics.  The clusters can be further refined to a
-smaller number of regions by hierarchical clustering and their spatial
-dependencies can be presented as complex networks.  Thus, meaningful maps can be
-created, representing the regional heterogeneity of a single variable.  More
-information and an example of implementation can be found in Markonis and Strnad
-(2020, <doi:10.1177/0959683620913924>).")
-    (license license:gpl3)))
 
 (define-public r-somnmr
   (package
@@ -40759,44 +40601,6 @@ including a genetic and a fixed-point algorithm and an interface to the CLUTO
 vcluster program.")
     (license license:gpl2)))
 
-(define-public r-skm
-  (package
-    (name "r-skm")
-    (version "0.1.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "skm" version))
-       (sha256
-        (base32 "06g3bdncq2r56d8k3dr87gqnibypbsps0gj4jxkw9q1sq1yaff3v"))))
-    (properties `((upstream-name . "skm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-plyr
-                             r-magrittr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/gyang274/skm")
-    (synopsis "Selective k-Means")
-    (description
-     "Algorithms for solving selective k-means problem, which is defined as finding k
-rows in an m x n matrix such that the sum of each column minimal is minimized.
-In the scenario when m == n and each cell value in matrix is a valid distance
-metric, this is equivalent to a k-means problem.  The selective k-means extends
-the k-means problem in the sense that it is possible to have m != n, often the
-case m < n which implies the search is limited within a small subset of rows.
-Also, the selective k-means extends the k-means problem in the sense that the
-instance in row set can be instance not seen in the column set, e.g., select 2
-from 3 internet service provider (row) for 5 houses (column) such that minimize
-the overall cost (cell value) - overall cost is the sum of the column minimal of
-the selected 2 service provider.")
-    (license license:expat)))
-
 (define-public r-sklarsomega
   (package
     (name "r-sklarsomega")
@@ -47913,42 +47717,6 @@ Bertan Badur. \"Extracting the signed backbone of intrinsically dense weighted
 networks.\" Journal of Complex Networks. <@code{arXiv:2012.05216>}.")
     (license license:gpl3)))
 
-(define-public r-signaturesurvival
-  (package
-    (name "r-signaturesurvival")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "signatureSurvival" version))
-       (sha256
-        (base32 "0c3wjhpsswi1l76m4nlh9xfi27g1d18c960q31lwd7b659w0x1fp"))))
-    (properties `((upstream-name . "signatureSurvival")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-gtools
-                             r-gplots
-                             r-ggplot2
-                             r-forestplot
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=signatureSurvival")
-    (synopsis "Signature Survival Analysis")
-    (description
-     "When multiple Cox proportional hazard models are performed on clinical data
-(month or year and status) and a set of differential expressions of genes, the
-results (Hazard risks, z-scores and p-values) can be used to create
-gene-expression signatures.  Weights are calculated using the survival p-values
-of genes and are utilized to calculate expression values of the signature across
-the selected genes in all patients in a cohort.  A Single or multiple univariate
-or multivariate Cox proportional hazard survival analyses of the patients in one
-cohort can be performed by using the gene-expression signature and visualized
-using our survival plots.")
-    (license license:gpl3+)))
-
 (define-public r-signalhsmm
   (package
     (name "r-signalhsmm")
@@ -49671,38 +49439,6 @@ shifts occur, and the shift magnitudes.  It also supports the inclusion of
 measurement error.  For more details, see Zhang, Ho, and Kenney (2023)
 <doi:10.48550/@code{arXiv.2312.17480>}.")
     (license license:gpl3+)))
-
-(define-public r-shipunov
-  (package
-    (name "r-shipunov")
-    (version "1.17.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shipunov" version))
-       (sha256
-        (base32 "1kwywckhml47qi0i1xiqwkg3lv24xhk3d0brz2jpljv6v1namgk3"))))
-    (properties `((upstream-name . "shipunov")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pbsmapping))
-    (home-page "https://cran.r-project.org/package=shipunov")
-    (synopsis "Miscellaneous Functions from Alexey Shipunov")
-    (description
-     "This package provides a collection of functions for data manipulation, plotting
-and statistical computing, to use separately or with the book \"Visual
-Statistics.  Use R!\": Shipunov (2020)
-<http://ashipunov.info/shipunov/software/r/r-en.htm>.  Dr Alexey Shipunov died
-in December 2022.  Most useful functions: @code{Bclust()}, @code{Jclust()} and
-@code{BootA()} which bootstrap hierarchical clustering; @code{Recode()} which
-does multiple recoding in a fast, simple and flexible way; @code{Misclass()}
-which outputs confusion matrix even if classes are not concerted;
-@code{Overlap()} which measures group separation on any projection;
-@code{Biarrows()} which converts any scatterplot into biplot; and
-@code{Pleiad()} which is fast and flexible correlogram.")
-    (license license:gpl2+)))
 
 (define-public r-ship
   (package
@@ -55655,13 +55391,13 @@ Lai, Heyse and Chen (2010, <doi:10.1002/sim.4036>).")
 (define-public r-sglg
   (package
     (name "r-sglg")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sglg" version))
        (sha256
-        (base32 "0h1f31ksygg4cpsnqi87lknxyv39mygjj7sirwgxdha6wmzhl1dc"))))
+        (base32 "1bbi0n7gbgi2h8zsyap8qij22fk7hk5n21h2zbpsiz60msi9fihm"))))
     (properties `((upstream-name . "sglg")))
     (build-system r-build-system)
     (arguments
@@ -55685,15 +55421,15 @@ Lai, Heyse and Chen (2010, <doi:10.1002/sim.4036>).")
      "Fitting Semi-Parametric Generalized log-Gamma Regression Models")
     (description
      "Set of tools to fit a linear multiple or semi-parametric regression models with
-the possibility of non-informative random right-censoring.  Under this setup,
-the localization parameter of the response variable distribution is modeled by
-using linear multiple regression or semi-parametric functions, whose
+the possibility of non-informative random right or left censoring.  Under this
+setup, the localization parameter of the response variable distribution is
+modeled by using linear multiple regression or semi-parametric functions, whose
 non-parametric components may be approximated by natural cubic spline or
 P-splines.  The supported distribution for the model error is a generalized
 log-gamma distribution which includes the generalized extreme value and standard
 normal distributions as important special cases.  Inference is based on
-penalized likelihood and bootstrap methods.  Also, some numerical and graphical
-devices for diagnostic of the fitted models are offered.")
+likelihood, penalized likelihood and bootstrap methods.  Lastly, some numerical
+and graphical devices for diagnostic of the fitted models are offered.")
     (license license:gpl3)))
 
 (define-public r-sglasso
@@ -58928,13 +58664,13 @@ GPU acceleration is supported on Windows and Linux.")
 (define-public r-sentencepiece
   (package
     (name "r-sentencepiece")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sentencepiece" version))
        (sha256
-        (base32 "1cfk450asadp3bbv1px64kf62rdhfak2drnq4y913jjjq4radxwh"))))
+        (base32 "0969ynvx4cxiwpm31msz7lbg8qjjw9wgblgh8jh2mvrj6y1vydav"))))
     (properties `((upstream-name . "sentencepiece")))
     (build-system r-build-system)
     (arguments
@@ -68329,13 +68065,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.2.8")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "1vyz4bpqm2241lr8ialjzw62g11ws9kdx605h5gx4ny3jxsf87jm"))))
+        (base32 "1yrqnd8x693fflfhfciddff1mqg8w1hkna56m82q1cnpnmlsvww9"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (arguments
@@ -70354,31 +70090,6 @@ interpret and visualize.  Feature vectors may be a combination of continuous
 assessment, predictions, and cross-validation also included.")
     (license license:expat)))
 
-(define-public r-sbo
-  (package
-    (name "r-sbo")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sbo" version))
-       (sha256
-        (base32 "00pnvpcl6441gf8npf6b6cvzxh0kq4qbfxggjiqdny6lq2nl0d47"))))
-    (properties `((upstream-name . "sbo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-testthat r-rlang r-rcpp r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://vgherard.github.io/sbo/")
-    (synopsis "Text Prediction via Stupid Back-Off N-Gram Models")
-    (description
-     "Utilities for training and evaluating text predictors based on Stupid Back-Off
-N-gram models (Brants et al., 2007,
-<https://www.aclweb.org/anthology/D07-1090/>).")
-    (license license:gpl3)))
-
 (define-public r-sbn
   (package
     (name "r-sbn")
@@ -70795,30 +70506,6 @@ nonparametric logistic Gaussian process density prior.  Based on Tokdar et al.
      "Fitting and plotting parametric or non-parametric size-biased non-negative
 distributions, with optional covariates if parametric.  Rowcliffe, M. et al.
 (2016) <doi:10.1002/rse2.17>.")
-    (license license:gpl3)))
-
-(define-public r-sbck
-  (package
-    (name "r-sbck")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SBCK" version))
-       (sha256
-        (base32 "1z5svxa639245jmv3bsikmbch8j4j51d7rjwhj62zcaxhb3ykhcs"))))
-    (properties `((upstream-name . "SBCK")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-transport r-roopsd r-rcppeigen r-rcpp r-r6))
-    (home-page "https://github.com/yrobink/SBCK")
-    (synopsis "Statistical Bias Correction Kit")
-    (description
-     "Implementation of several recent multivariate bias correction methods with a
-unified interface to facilitate their use.  A description and comparison between
-methods can be found in <doi:10.5194/esd-11-537-2020>.")
     (license license:gpl3)))
 
 (define-public r-sbagm
@@ -71388,38 +71075,6 @@ SS. However, the results of nested and complex designs are often different from
 those of SAS. Different results does not necessarily mean incorrectness.
 However, many wants the same results to SAS. This package aims to achieve that.
 Reference: Littell RC, Stroup WW, Freund RJ (2002, ISBN:0-471-22174-0).")
-    (license license:gpl3)))
-
-(define-public r-sasfunclust
-  (package
-    (name "r-sasfunclust")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sasfunclust" version))
-       (sha256
-        (base32 "1ba7g3rxyq5h806na6bsdvh6mw6hydgcf3740qkfd4d5fx7m0mq4"))))
-    (properties `((upstream-name . "sasfunclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mclust
-                             r-matrixcalc
-                             r-matrix
-                             r-mass
-                             r-fda))
-    (home-page "https://github.com/unina-sfere/sasfunclust")
-    (synopsis "Sparse and Smooth Functional Clustering")
-    (description
-     "This package implements the sparse and smooth functional clustering
-(@code{SaS-Funclust}) method (Centofanti et al. (2021)
-<@code{arXiv:2103.15224>}) that aims to classify a sample of curves into
-homogeneous groups while jointly detecting the most informative portions of
-domain.")
     (license license:gpl3)))
 
 (define-public r-sasdates
@@ -73942,13 +73597,13 @@ active-set tricks.")
 (define-public r-salty
   (package
     (name "r-salty")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salty" version))
        (sha256
-        (base32 "05hzyicd0qc661npkxy95547lbll693zslk48dcx6icdxvf8gbix"))))
+        (base32 "0792n52i6k45i65s8p9xjmckxnv4ml95vjc54g548rsph1h70dl8"))))
     (properties `((upstream-name . "salty")))
     (build-system r-build-system)
     (arguments

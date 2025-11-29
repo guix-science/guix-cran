@@ -2258,40 +2258,6 @@ Spatio-Temporal Point Patterns, Third Edition, Diggle, pp.  83-86, (2003)
 <doi:10.1080/13658816.2014.937718>.")
     (license license:gpl2+)))
 
-(define-public r-bt
-  (package
-    (name "r-bt")
-    (version "0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BT" version))
-       (sha256
-        (base32 "1ifanv79rrbc9m6rxhnhhr5kss9idykpn672w3zxqi8fic9f0hsx"))))
-    (properties `((upstream-name . "BT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-statmod r-rpart))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/GiregWillame/BT/")
-    (synopsis "(Adaptive) Boosting Trees Algorithm")
-    (description
-     "This package performs (Adaptive) Boosting Trees for Poisson distributed response
-variables, using log-link function.  The code approach is similar to the one
-used in gbm'/'gbm3'.  Moreover, each tree in the expansion is built thanks to
-the rpart package.  This package is based on following books and articles
-Denuit, M., Hainaut, D., Trufin, J. (2019) <doi:10.1007/978-3-030-25820-7>
-Denuit, M., Hainaut, D., Trufin, J. (2019) <doi:10.1007/978-3-030-57556-4>
-Denuit, M., Hainaut, D., Trufin, J. (2019) <doi:10.1007/978-3-030-25827-6>
-Denuit, M., Hainaut, D., Trufin, J. (2022) <doi:10.1080/03461238.2022.2037016>
-Denuit, M., Huyghe, J., Trufin, J. (2022)
-<https://dial.uclouvain.be/pr/boreal/fr/object/boreal%3A244325/datastream/PDF_01/view>
-Denuit, M., Trufin, J., Verdebout, T. (2022)
-<https://dial.uclouvain.be/pr/boreal/fr/object/boreal%3A268577>.")
-    (license license:gpl3+)))
-
 (define-public r-bsynth
   (package
     (name "r-bsynth")
@@ -2465,19 +2431,25 @@ toolset.")
 (define-public r-bsub
   (package
     (name "r-bsub")
-    (version "1.1.0")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsub" version))
        (sha256
-        (base32 "112hlvg15jlzg3drfzkslaly42vnvsycn9vif0w3iaw5fzsaa954"))))
+        (base32 "12vq7wphnkgx6kfn139kmay9rwcragf7f75059c0z8vw5cz2n3wr"))))
     (properties `((upstream-name . "bsub")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-globaloptions r-getoptlong r-digest r-crayon
+    (propagated-inputs (list r-ssh
+                             r-igraph
+                             r-globaloptions
+                             r-getoptlong
+                             r-digest
+                             r-crayon
+                             r-codetools
                              r-clisymbols))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jokergoo/bsub")
@@ -2485,7 +2457,7 @@ toolset.")
     (description
      "It submits R code/R scripts/shell commands to LSF cluster
 (<https://en.wikipedia.org/wiki/Platform_LSF>, the bsub system) without leaving
-R. There is also an interactive shiny app for monitoring the job status.")
+R. There is also an interactive shiny application for monitoring job status.")
     (license license:expat)))
 
 (define-public r-bstzinb
@@ -14308,13 +14280,13 @@ variables and spatial gene diversity are implemented.")
 (define-public r-biotimer
   (package
     (name "r-biotimer")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTIMEr" version))
        (sha256
-        (base32 "0cizspp36dcaw6w3fq8926cllqrfwwbhr59lsn5624w20irimx22"))))
+        (base32 "0wn60ywj73y465qycfdqwa3p1m47q68rlq3axsqh5gvprpsgga04"))))
     (properties `((upstream-name . "BioTIMEr")))
     (build-system r-build-system)
     (arguments
@@ -14322,11 +14294,14 @@ variables and spatial gene diversity are implemented.")
       #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
+                             r-lifecycle
                              r-ggplot2
                              r-dplyr
                              r-dggridr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
+                             r-data-table
+                             r-checkmate
+                             r-broom))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/bioTIMEHub/BioTIMEr")
     (synopsis "Tools to Use and Explore the 'BioTIME' Database")
     (description
@@ -26172,13 +26147,13 @@ model ('Lee', 2007, <doi:10.1002/9780470024737>).")
 (define-public r-bayesregdtr
   (package
     (name "r-bayesregdtr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesRegDTR" version))
        (sha256
-        (base32 "0ij997yd0007fs0vk80hajdvk4q8f421naqfc5whm1p9ygd2a8d1"))))
+        (base32 "15rpms5v68aiblr7m6clxpsgiv52hjdwfp0rz9293njfyf76lkjl"))))
     (properties `((upstream-name . "BayesRegDTR")))
     (build-system r-build-system)
     (arguments
@@ -27416,31 +27391,6 @@ the variance.  Functions to estimate several kind of means (unconditional,
 conditional and conditional under a mixed model) and quantiles (unconditional
 and conditional) are provided.")
     (license license:gpl3)))
-
-(define-public r-bayeslm
-  (package
-    (name "r-bayeslm")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayeslm" version))
-       (sha256
-        (base32 "0mnzxzdz456qxfszl8vhnvb1875hxn8b57wi6dhr9g668da2zdin"))))
-    (properties `((upstream-name . "bayeslm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JingyuHe/bayeslm")
-    (synopsis
-     "Efficient Sampling for Gaussian Linear Regression with Arbitrary Priors")
-    (description
-     "Efficient sampling for Gaussian linear regression with arbitrary priors, Hahn,
-He and Lopes (2018) <@code{arXiv:1806.05738>}.")
-    (license license:lgpl2.0+)))
 
 (define-public r-bayeslist
   (package
@@ -32000,13 +31950,13 @@ type detectors as described in Rankin et al (2017) <doi:10.1111/mms.12381>.")
 (define-public r-banr
   (package
     (name "r-banr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "banR" version))
        (sha256
-        (base32 "0x99rgg7cwqm0mxy66a7grd3a3br2krayl86xwkwa1az334g2yb1"))))
+        (base32 "0kdng18fmffxradqksg2497fqha18199624v09c1n511pyml0m60"))))
     (properties `((upstream-name . "banR")))
     (build-system r-build-system)
     (arguments
@@ -33938,13 +33888,13 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "1rinm5r5s6kd57cak2zx4a1h3f08lyy7q92sap65jkgcswr358nx"))))
+        (base32 "0r9vxvidkkajyx2c0nq7lx8pz1sj0n3lgdzjp8mwbw9z0c94x3k0"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (arguments
@@ -33955,7 +33905,7 @@ Bayesian phylogenetics easily and reproducibly from R'.")
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
-                             r-qs
+                             r-qs2
                              r-nonmem2rx
                              r-nlmixr2plot
                              r-nlmixr2extra

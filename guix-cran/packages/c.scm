@@ -980,13 +980,13 @@ P., Olsen, L. R., & Wambugu M. (2019, ISBN: 9781838550134).")
 (define-public r-cvmortalitymult
   (package
     (name "r-cvmortalitymult")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CvmortalityMult" version))
        (sha256
-        (base32 "0yd27biax662rp2izw0lqz99211chz8mw5xhrml69dn5mw5cfp9j"))))
+        (base32 "1pmi067i5idmbdcnx1av3r2g9azbk9chzpvnn7n4scpjf070brmw"))))
     (properties `((upstream-name . "CvmortalityMult")))
     (build-system r-build-system)
     (arguments
@@ -1002,10 +1002,11 @@ includes several multi-population mortality models proposed through the
 actuarial and demography literature.  The package includes functions for fitting
 and forecast the mortality rates of several populations.  Additionally, we
 include functions for testing the forecasting accuracy of different
-multi-population models.  References.  Atance, D., Debon, A., and Navarro, E.
-(2020) <doi:10.3390/math8091550>.  Bergmeir, C. & Benitez, J.M. (2012)
-<doi:10.1016/j.ins.2011.12.028>.  Debon, A., Montes, F., & Martinez-Ruiz, F.
-(2011) <doi:10.1007/s13385-011-0043-z>.  Lee, R.D. & Carter, L.R. (1992)
+multi-population models.  References,
+<https://journal.r-project.org/articles/RJ-2025-018/>.  Atance, D., Debon, A.,
+and Navarro, E. (2020) <doi:10.3390/math8091550>.  Bergmeir, C. & Benitez, J.M.
+(2012) <doi:10.1016/j.ins.2011.12.028>.  Debon, A., Montes, F., & Martinez-Ruiz,
+F. (2011) <doi:10.1007/s13385-011-0043-z>.  Lee, R.D. & Carter, L.R. (1992)
 <doi:10.1080/01621459.1992.10475265>.  Russolillo, M., Giordano, G., & Haberman,
 S. (2011) <doi:10.1080/03461231003611933>.  Santolino, M. (2023)
 <doi:10.3390/risks11100170>.")
@@ -9209,13 +9210,13 @@ constrained models are implemented.  Schlosser et al. (2023)
 (define-public r-cpprouting
   (package
     (name "r-cpprouting")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cppRouting" version))
        (sha256
-        (base32 "1mhp6k2kwlhyrswlxi9f0f6ndvm5968ljp3k97c2m2sfbxaablxy"))))
+        (base32 "1q89vqjsjkbxd7rmbn228zx02m81a7brfz75sysy4wksc1gx04rv"))))
     (properties `((upstream-name . "cppRouting")))
     (build-system r-build-system)
     (arguments
@@ -9231,9 +9232,9 @@ constrained models are implemented.  Schlosser et al. (2023)
 several variants of Dijkstra algorithm.  Proposed algorithms are unidirectional
 Dijkstra (Dijkstra, E. W. (1959) <doi:10.1007/BF01386390>), bidirectional
 Dijkstra (Goldberg, Andrew & Fonseca F. Werneck, Renato (2005)
-<https://archive.siam.org/meetings/alenex05/papers/03agoldberg.pdf>), A* search
-(P. E. Hart, N. J. Nilsson et B. Raphael (1968) <doi:10.1109/TSSC.1968.300136>),
-new bidirectional A* (Pijls & Post (2009)
+<https://www.cs.princeton.edu/courses/archive/spr06/cos423/Handouts/EPP%20shortest%20path%20algorithms.pdf>),
+A* search (P. E. Hart, N. J. Nilsson et B. Raphael (1968)
+<doi:10.1109/TSSC.1968.300136>), new bidirectional A* (Pijls & Post (2009)
 <https://repub.eur.nl/pub/16100/ei2009-10.pdf>), Contraction hierarchies (R.
 Geisberger, P. Sanders, D. Schultes and D. Delling (2008)
 <doi:10.1007/978-3-540-68552-4_24>), PHAST (D. Delling, A.Goldberg, A. Nowatzyk,
@@ -11830,44 +11831,6 @@ distribution by Johnstone (2008) <DOI:10.1214/08-AOS605>.")
      "Produce forest plots to visualize covariate effects using either the command
 line or an interactive Shiny application.")
     (license license:expat)))
-
-(define-public r-covdepge
-  (package
-    (name "r-covdepge")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covdepGE" version))
-       (sha256
-        (base32 "0xlz01h6lnp7g9vi9s84l8cmgqvr4pql1fs0c1n51gsx4pkaz5l1"))))
-    (properties `((upstream-name . "covdepGE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-latex2exp
-                             r-glmnet
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://github.com/JacobHelwig/covdepGE")
-    (synopsis "Covariate Dependent Graph Estimation")
-    (description
-     "This package provides a covariate-dependent approach to Gaussian graphical
-modeling as described in Dasgupta et al. (2022).  Employs a novel weighted
-pseudo-likelihood approach to model the conditional dependence structure of data
-as a continuous function of an extraneous covariate.  The main function,
-@code{covdepGE::covdepGE()}, estimates a graphical representation of the
-conditional dependence structure via a block mean-field variational
-approximation, while several auxiliary functions @code{(inclusionCurve()},
-@code{matViz()}, and @code{plot.covdepGE()}) are included for visualizing the
-resulting estimates.")
-    (license license:gpl3+)))
 
 (define-public r-covcortest
   (package
@@ -16159,37 +16122,6 @@ use of the website.  Here we provide tools for working with cookies in shiny
 apps, in part by wrapping the js-cookie @code{JavaScript} library
 <https://github.com/js-cookie/js-cookie>.")
     (license license:expat)))
-
-(define-public r-cookiemonster
-  (package
-    (name "r-cookiemonster")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cookiemonster" version))
-       (sha256
-        (base32 "0270wcv82zaxl138rgkl0qgc185qdpgnnppmabvj5sq5gkqay1z3"))))
-    (properties `((upstream-name . "cookiemonster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-urltools
-                             r-tibble
-                             r-stringi
-                             r-rlang
-                             r-rappdirs
-                             r-openssl
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JBGruber/cookiemonster")
-    (synopsis "Your Friendly Solution to Managing Browser Cookies")
-    (description
-     "This package provides a convenient tool to store and format browser cookies and
-use them in HTTP requests (for example, through httr2', httr or curl').")
-    (license license:gpl3+)))
 
 (define-public r-cookiecutter
   (package
@@ -24109,6 +24041,33 @@ colorization API on
 black and white images.")
     (license license:expat)))
 
+(define-public r-colorize
+  (package
+    (name "r-colorize")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colorize" version))
+       (sha256
+        (base32 "1mmzzrm5j79kqf2qxligrslp2bwxvfhkpszsn433hipg5hvqbmn8"))))
+    (properties `((upstream-name . "colorize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-knitr r-colorspace))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/friendly/colorize")
+    (synopsis "Render Text in Color for Markdown/Quarto Documents")
+    (description
+     "This package provides some simple functions for printing text in color in
+markdown or Quarto documents, to be rendered as HTML or @code{LaTeX}.  This is
+useful when writing about the use of colors in graphs or tables, where you want
+to print their names in their actual color to give a direct impression of the
+color, like âredâ shown in red, or âblueâ shown in blue.")
+    (license license:expat)))
+
 (define-public r-colorist
   (package
     (name "r-colorist")
@@ -31458,35 +31417,6 @@ simulated results as well.")
 and estimation of bias\" CLSI (2014, ISBN:1-56238-966-1).")
     (license license:expat)))
 
-(define-public r-clrng
-  (package
-    (name "r-clrng")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clrng" version))
-       (sha256
-        (base32 "18brzhpivgzmvvjqkbkmrzw52ylz3d9l02l88020rb18pgr78clp"))))
-    (properties `((upstream-name . "clrng")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rviennacl r-rcppeigen r-rcpp r-gpur))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=clrng")
-    (synopsis "Parallel Random Number Generation on GPU")
-    (description
-     "Builds on @code{gpuR} and utilizes the @code{clRNG} ('@code{OpenCL}') library to
-provide efficient tools to generate independent random numbers in parallel on a
-GPU and save the results as R objects, ensuring high-quality random numbers even
-when R is used interactively or in an ad-hoc manner.  Includes Fisher's
-simulation method adapted from Patefield, William M (1981) <doi:10.2307/2346669>
-and MRG31k3p Random Number Generator from @code{clRNG} library by Advanced Micro
-Devices, Inc. (2015) <https://github.com/@code{clMathLibraries/clRNG>}.")
-    (license license:gpl3)))
-
 (define-public r-clr
   (package
     (name "r-clr")
@@ -32569,13 +32499,13 @@ Yang (2018, <doi:10.1002/sim.7676>).")
 (define-public r-clinicalsignificance
   (package
     (name "r-clinicalsignificance")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinicalsignificance" version))
        (sha256
-        (base32 "07y0rfjcyhc0c13w0727iapi4clr76nfk43r1d1fcj9n909bi8b4"))))
+        (base32 "1wi4gsypsjpnp9c9028zsq9lls7p36mzz4p3dhcfb685si51n1fz"))))
     (properties `((upstream-name . "clinicalsignificance")))
     (build-system r-build-system)
     (arguments
@@ -32583,6 +32513,7 @@ Yang (2018, <doi:10.1002/sim.7676>).")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-snakecase
                              r-rlang
                              r-purrr
                              r-lme4
@@ -32593,7 +32524,7 @@ Yang (2018, <doi:10.1002/sim.7676>).")
                              r-bayestestr
                              r-bayesfactor))
     (native-inputs (list r-knitr))
-    (home-page "https://pedscience.github.io/clinicalsignificance/")
+    (home-page "https://benediktclaus.github.io/clinicalsignificance/")
     (synopsis
      "Toolbox for Clinical Significance Analyses in Intervention Studies")
     (description
@@ -32899,13 +32830,13 @@ the context of this package.")
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
-    (version "1.8")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimMobTools" version))
        (sha256
-        (base32 "14bf55rnw6xz3yzzwwx28z337adycgkfhh6ymda2g291nhkw6ncj"))))
+        (base32 "1qkvxmqy2hzp08jwcd492zr4nbcaifihiyzyjm0lf1jp010gik7d"))))
     (properties `((upstream-name . "ClimMobTools")))
     (build-system r-build-system)
     (arguments
@@ -40146,13 +40077,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "164v45dyv5czzhh6d1vjcy1zpi2skr437h1l2k23r3d1fzcfc785"))))
+        (base32 "1si38q842bc44gprjc5d3n76zgiiwhfvgrv8ynzvqsn9p931hwz6"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments
@@ -52026,41 +51957,6 @@ is more easily searched: <https://publicaccountability.org/>.")
      "Collect marketing data from Campaign Manager using the Windsor.ai API
 <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
-
-(define-public r-camml
-  (package
-    (name "r-camml")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CAMML" version))
-       (sha256
-        (base32 "0h2wfbafgcci1rrdq6qc634nf0d1h47ccajziifg1fhk7m8s56i7"))))
-    (properties `((upstream-name . "CAMML")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vam
-                             r-seuratobject
-                             r-seurat
-                             r-org-mm-eg-db
-                             r-org-hs-eg-db
-                             r-org-dr-eg-db
-                             r-matrix
-                             r-mass
-                             r-edger
-                             r-biocmanager
-                             r-annotationdbi))
-    (home-page "https://cran.r-project.org/package=CAMML")
-    (synopsis
-     "Cell-Typing using Variance Adjusted Mahalanobis Distances with Multi-Labeling")
-    (description
-     "This package creates multi-label cell-types for single-cell RNA-sequencing data
-based on weighted VAM scoring of cell-type specific gene sets.  Schiebout, Frost
-(2022) <https://psb.stanford.edu/psb-online/proceedings/psb22/schiebout.pdf>.")
-    (license license:gpl2+)))
 
 (define-public r-camerondata
   (package

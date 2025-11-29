@@ -10804,40 +10804,6 @@ F., MÃ¼ller, H. G., & Wang, J. L. (2005) <doi:10.1198/016214504000001745>, and
 Lee, K. Y., & Li, L. (2022) <doi:10.1111/rssb.12471>.")
     (license license:expat)))
 
-(define-public r-fmf
-  (package
-    (name "r-fmf")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fmf" version))
-       (sha256
-        (base32 "0b26040a39jys1z3h9mq9k7rjr0iyiialq442ir8vgzvmrh383cs"))))
-    (properties `((upstream-name . "fmf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-solitude
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-kernlab
-                             r-ggplot2
-                             r-factominer
-                             r-factoextra
-                             r-e1071
-                             r-dplyr
-                             r-caret
-                             r-c50))
-    (home-page "https://cran.r-project.org/package=fmf")
-    (synopsis "Fast Class Noise Detector with Multi-Factor-Based Learning")
-    (description
-     "This package provides a fast class noise detector which provides noise score for
-each observations.  The package takes advantage of @code{RcppArmadillo} to speed
-up the calculation of distances between observations.")
-    (license license:expat)))
-
 (define-public r-fmerpack
   (package
     (name "r-fmerpack")
@@ -13042,34 +13008,6 @@ that make various assumptions regarding ordinality.  Using them within the
 flex-scheme allows for easy comparisons across methods.")
     (license license:gpl2)))
 
-(define-public r-flexor
-  (package
-    (name "r-flexor")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flexOR" version))
-       (sha256
-        (base32 "06cipvv3wlbk2qk61a7yhfpmd1csr86sz5gligv0bxki9vc94n29"))))
-    (properties `((upstream-name . "flexOR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mgcv r-gam))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/martaaaa/flexOR")
-    (synopsis "Flexible Odds Ratio Curves")
-    (description
-     "This package provides flexible odds ratio curves that enable modeling non-linear
-relationships between continuous predictors and binary outcomes.  This package
-facilitates a deeper understanding of the impact of each continuous predictor on
-the outcome by presenting results in terms of odds ratio (OR) curves based on
-splines.  These curves allow for comparison against a specified reference value,
-aiding in the interpretation of the predictor's effect.")
-    (license license:gpl3)))
-
 (define-public r-flexoki
   (package
     (name "r-flexoki")
@@ -14425,34 +14363,6 @@ API requires registration and some features are only available on paid accounts.
      "Distribution functions and test for over-representation of short distances in
 the Liland distribution.  Simulation functions are included for comparison.")
     (license license:gpl2+)))
-
-(define-public r-fixedpointproperty
-  (package
-    (name "r-fixedpointproperty")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fixedpointproperty" version))
-       (sha256
-        (base32 "125vfk92mhixachg2qp5ffvf8ggvrfc62970vzmc8fiq83lbzgs1"))))
-    (properties `((upstream-name . "fixedpointproperty")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-bayesfactor))
-    (home-page "https://cran.r-project.org/package=fixedpointproperty")
-    (synopsis
-     "Determine and Test the Fixed-Point Property in Binary Mixture Data")
-    (description
-     "Determine and test the fixed-point property in binary mixture data.  This
-package was originally developed in the context of detecting mixture of
-cognitive processing strategies, based on observed response time distributions.
-The method is explain in more detail by Van Maanen, De Jong, Van Rijn (2014)
-<doi:10.1371/journal.pone.0106113> and Van Maanen, Couto, Lebreton, (2016)
-<doi:10.1371/journal.pone.0167377>.")
-    (license license:gpl2)))
 
 (define-public r-fixedpoint
   (package
@@ -15900,37 +15810,6 @@ Jindal, A., Gupta, P., Jayadeva and Sengupta, D., 2018.  Discovery of rare cells
 from voluminous single cell expression data.  Nature Communications, 9(1),
 p.4719. <doi:10.1038/s41467-018-07234-6>.")
     (license license:gpl3)))
-
-(define-public r-fipp
-  (package
-    (name "r-fipp")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fipp" version))
-       (sha256
-        (base32 "0wr3czwsqwa1bpdcjk0r1739vjanxc0fv0vnl3r5lgykrbhw9v3r"))))
-    (properties `((upstream-name . "fipp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixstats))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fipp")
-    (synopsis "Induced Priors in Bayesian Mixture Models")
-    (description
-     "Computes implicitly induced quantities from prior/hyperparameter specifications
-of three Mixtures of Finite Mixtures models: Dirichlet Process Mixtures (DPMs;
-Escobar and West (1995) <doi:10.1080/01621459.1995.10476550>), Static Mixtures
-of Finite Mixtures (Static MFMs; Miller and Harrison (2018)
-<doi:10.1080/01621459.2016.1255636>), and Dynamic Mixtures of Finite Mixtures
-(Dynamic MFMs; FrÃ¼hwirth-Schnatter, Malsiner-Walli and GrÃ¼n (2020)
-<@code{arXiv:2005.09918>}).  For methodological details, please refer to Greve,
-GrÃ¼n, Malsiner-Walli and FrÃ¼hwirth-Schnatter (2020) <@code{arXiv:2012.12337>})
-as well as the package vignette.")
-    (license license:gpl2)))
 
 (define-public r-fipio
   (package
@@ -21037,54 +20916,6 @@ Wang, J.L. (2005) <doi:10.1214/009053605000000660>.  SentÃ¼rk, D., MÃ¼ller, 
 (2010) <doi:10.1198/jasa.2010.tm09228>.")
     (license license:bsd-3)))
 
-(define-public r-fdacluster
-  (package
-    (name "r-fdacluster")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fdacluster" version))
-       (sha256
-        (base32 "0dbw3i769b1r0r0cyww84ngpdca5mi2l9xkb2v8k31aa3q537aqg"))))
-    (properties `((upstream-name . "fdacluster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-progressr
-                             r-nloptr
-                             r-lpsolve
-                             r-ggplot2
-                             r-future-apply
-                             r-fdasrvf
-                             r-dbscan
-                             r-cluster
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://astamm.github.io/fdacluster/")
-    (synopsis "Joint Clustering and Alignment of Functional Data")
-    (description
-     "Implementations of the k-means, hierarchical agglomerative and DBSCAN clustering
-methods for functional data which allows for jointly aligning and clustering
-curves.  It supports functional data defined on one-dimensional domains but
-possibly evaluating in multivariate codomains.  It supports functional data
-defined in arrays but also via the fd and @code{funData} classes for functional
-data defined in the fda and @code{funData} packages respectively.  It currently
-supports shift, dilation and affine warping functions for functional data
-defined on the real line and uses the SRVF framework to handle
-boundary-preserving warping for functional data defined on a specific interval.
-Main reference for the k-means algorithm: Sangalli L.M., Secchi P., Vantini S.,
-Vitelli V. (2010) \"k-mean alignment for curve clustering\"
-<doi:10.1016/j.csda.2009.12.008>.  Main reference for the SRVF framework:
-Tucker, J. D., Wu, W., & Srivastava, A. (2013) \"Generative models for functional
-data using phase and amplitude separation\" <doi:10.1016/j.csda.2012.12.001>.")
-    (license license:gpl3+)))
-
 (define-public r-fdaacf
   (package
     (name "r-fdaacf")
@@ -21443,34 +21274,6 @@ a relative use (is a model better than another?) are provided in an exploratory
 manner.")
     (license license:gpl3+)))
 
-(define-public r-fcmapper
-  (package
-    (name "r-fcmapper")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FCMapper" version))
-       (sha256
-        (base32 "1yjh8rs65nqslvwv7x4rif469zds41s7v3vhq6pca1y17kvj2in1"))))
-    (properties `((upstream-name . "FCMapper")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph))
-    (home-page "https://cran.r-project.org/package=FCMapper")
-    (synopsis "Fuzzy Cognitive Mapping")
-    (description
-     "This package provides several functions to create and manipulate fuzzy cognitive
-maps.  It is based on FCMapper for Excel, distributed at <http://
-www.fcmappers.net/joomla/>, developed by Michael Bachhofer and Martin
-Wildenberg.  Maps are inputted as adjacency matrices.  Attributes of the maps
-and the equilibrium values of the concepts (including with user-defined
-constrained values) can be calculated.  The maps can be graphed with a function
-that calls igraph'.  Multiple maps with shared concepts can be aggregated.")
-    (license license:gpl2)))
-
 (define-public r-fcm
   (package
     (name "r-fcm")
@@ -21675,13 +21478,13 @@ p-values.")
 (define-public r-fcci
   (package
     (name "r-fcci")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcci" version))
        (sha256
-        (base32 "02q6q0q7fqdbp20fdf33jbkh0aj9nzl6dwysr0nn146ciz3vqgin"))))
+        (base32 "1jf5rgjlhiiz5ma0pm3z5sdfk5kbgxqnx58ismz2jsmj31z537fh"))))
     (properties `((upstream-name . "fcci")))
     (build-system r-build-system)
     (arguments
@@ -26048,45 +25851,6 @@ automated data generation which may not always output the same N per replicate
 or sample.")
     (license license:gpl3)))
 
-(define-public r-fairness
-  (package
-    (name "r-fairness")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fairness" version))
-       (sha256
-        (base32 "12jf2p8gmj5d6r9h9cwy208qwyqi606b54v0d99vpr171yijqvqk"))))
-    (properties `((upstream-name . "fairness")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-proc r-ggplot2 r-e1071 r-devtools r-caret))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://kozodoi.me/r/fairness/packages/2020/05/01/fairness-tutorial.html")
-    (synopsis "Algorithmic Fairness Metrics")
-    (description
-     "Offers calculation, visualization and comparison of algorithmic fairness
-metrics.  Fair machine learning is an emerging topic with the overarching aim to
-critically assess whether ML algorithms reinforce existing social biases.
-Unfair algorithms can propagate such biases and produce predictions with a
-disparate impact on various sensitive groups of individuals (defined by sex,
-gender, ethnicity, religion, income, socioeconomic status, physical or mental
-disabilities).  Fair algorithms possess the underlying foundation that these
-groups should be treated similarly or have similar prediction outcomes.  The
-fairness R package offers the calculation and comparisons of commonly and less
-commonly used fairness metrics in population subgroups.  These methods are
-described by Calders and Verwer (2010) <doi:10.1007/s10618-010-0190-x>,
-Chouldechova (2017) <doi:10.1089/big.2016.0047>, Feldman et al. (2015)
-<doi:10.1145/2783258.2783311> , Friedler et al. (2018)
-<doi:10.1145/3287560.3287589> and Zafar et al. (2017)
-<doi:10.1145/3038912.3052660>.  The package also offers convenient
-visualizations to help understand fairness metrics.")
-    (license license:expat)))
-
 (define-public r-fairmodels
   (package
     (name "r-fairmodels")
@@ -26888,6 +26652,43 @@ journal reports.  Includes helpers to export tab-separated results and compact
 tables of descriptive statistics (to APA-style reports).")
     (license license:expat)))
 
+(define-public r-factorex
+  (package
+    (name "r-factorex")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "factorEx" version))
+       (sha256
+        (base32 "0mrmkw86i3z4rjinvafcp0vclq2y2jywjw55cj2g4rpapnknjcrb"))))
+    (properties `((upstream-name . "factorEx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-sandwich
+                             r-prodlim
+                             r-pbmcapply
+                             r-pbapply
+                             r-mvtnorm
+                             r-igraph
+                             r-genlasso
+                             r-foreach
+                             r-estimatr
+                             r-doparallel
+                             r-arm))
+    (home-page "https://github.com/naoki-egami/factorEx")
+    (synopsis "Design and Analysis for Factorial Experiments")
+    (description
+     "This package provides design-based and model-based estimators for the population
+average marginal component effects in general factorial experiments, including
+conjoint analysis.  The package also implements a series of recommendations
+offered in de la Cuesta, Egami, and Imai (2022) <doi:10.1017/pan.2020.40>, and
+Egami and Imai (2019) <doi:10.1080/01621459.2018.1476246>.")
+    (license license:gpl2)))
+
 (define-public r-factorcopulamodel
   (package
     (name "r-factorcopulamodel")
@@ -27167,40 +26968,42 @@ matrix.")
 experiments with noncompliance.")
     (license license:gpl2+)))
 
-(define-public r-fact
+(define-public r-facteff
   (package
-    (name "r-fact")
-    (version "0.1.1")
+    (name "r-facteff")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "FACT" version))
+       (uri (cran-uri "FactEff" version))
        (sha256
-        (base32 "0klks2r2jf5v5z2n3gvqbssrpdd6nccbk7izvdl1cknisq8z5w4b"))))
-    (properties `((upstream-name . "FACT")))
+        (base32 "1gxb0akzkcmfgpk7ka7jjrda6632hkad5ca2a91b23crzvhki8f7"))))
+    (properties `((upstream-name . "FactEff")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6
-                             r-iml
-                             r-gridextra
-                             r-ggplot2
-                             r-data-table
-                             r-checkmate))
-    (home-page "https://cran.r-project.org/package=FACT")
-    (synopsis "Feature Attributions for ClusTering")
+    (propagated-inputs (list r-shiny r-matrix r-mass r-htmltools))
+    (home-page "https://cran.r-project.org/package=FactEff")
+    (synopsis
+     "Efficiencies of Block Designs for Factorial and Fractional Factorial Experiments")
     (description
-     "We present FACT (Feature Attributions for @code{ClusTering}), a framework for
-unsupervised interpretation methods that can be used with an arbitrary
-clustering algorithm.  The package is capable of re-assigning instances to
-clusters (algorithm agnostic), preserves the integrity of the data and does not
-introduce additional models.  FACT is inspired by the principles of
-model-agnostic interpretation in supervised learning.  Therefore, some of the
-methods presented are based on iml', a R Package for Interpretable Machine
-Learning by Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl (2018)
-<doi:10.21105/joss.00786>.")
-    (license license:lgpl3)))
+     "Opens a shiny app which supports theoretical and computational analysis of block
+designs for symmetrical and mixed level factorial experiments.  This package
+includes tools to check whether a design has orthogonal factorial structure
+(OFS) with balance or not and is able to find the orthogonality deviation value
+if not having OFS. This package includes function to evaluate efficiency factor
+of all factorial effects in two situations, in the first situation if the design
+is verified with OFS and balance then calculate the efficiencies of all
+factorial effects using a specific analytical procedure and in the second
+situation if the design is verified with non-OFS and balance then a new general
+method has been developed and used to calculate efficiencies under the condition
+that the design should be proper and equi-replicated, See Gupta, S.C. and
+Mukerjee, R. (1987): \"A Calculus for factorial arrangements\".  Lecture Notes in
+Statistics.  No.  59, Springer-Verlag, Berlin, New York,
+<doi:10.1007/978-1-4419-8730-3>.  For the easy use of package, shiny app is used
+for giving inputs and inputs validation.")
+    (license license:gpl2+)))
 
 (define-public r-facmodts
   (package
