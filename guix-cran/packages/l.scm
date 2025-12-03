@@ -1700,35 +1700,6 @@ and confidence bands; @code{lsplincom()} for estimation and inference for linear
 combinations of regression functions from different groups.")
     (license license:gpl2)))
 
-(define-public r-lsoda
-  (package
-    (name "r-lsoda")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lsoda" version))
-       (sha256
-        (base32 "1rbw66xs5xa8b2pgkdhy5acv7g250hanqhwkvxmc15al3nyjmdc5"))))
-    (properties `((upstream-name . "lsoda")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/mclements/lsoda")
-    (synopsis "'C++' Header Library for Ordinary Differential Equations")
-    (description
-     "This package provides a C++ header library for using the libsoda-cxx library
-with R. The C++ header reimplements the lsoda function from the ODEPACK library
-for solving initial value problems for first order ordinary differential
-equations (Hindmarsh, 1982;
-<https://computing.llnl.gov/sites/default/files/ODEPACK_pub1_u88007.pdf>).  The
-C++ header can be used by other R packages by linking against this package.  The
-C++ functions can be called inline using Rcpp'.  Finally, the package provides
-an ode function to call from R.")
-    (license license:expat)))
-
 (define-public r-lsmrealoptions
   (package
     (name "r-lsmrealoptions")
@@ -3221,13 +3192,13 @@ summarized in a CD-plot as described in Algeri S. (2019)
 (define-public r-lpanda
   (package
     (name "r-lpanda")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpanda" version))
        (sha256
-        (base32 "1rcpf8ax8w104wv817pj7ff27sljaadr5g64qhpb722qs61zajka"))))
+        (base32 "073fsmk3z09p2afn1w5k97y615381lw91j8vf100x18z1rmlkbvk"))))
     (properties `((upstream-name . "lpanda")))
     (build-system r-build-system)
     (arguments
@@ -3235,7 +3206,7 @@ summarized in a CD-plot as described in Algeri S. (2019)
       #:tests? #f))
     (propagated-inputs (list r-scales r-rcolorbrewer r-magrittr r-igraph
                              r-dplyr))
-    (home-page "https://github.com/localpolitics/lpanda")
+    (home-page "https://localpolitics.github.io/lpanda/")
     (synopsis "Local Political Actor Network Diachronic Analysis Tools")
     (description
      "This package provides functions to prepare, visualize, and analyse diachronic
@@ -3244,7 +3215,10 @@ development of local party systems and identification of actor groups.
 Formalizes and automates a continuity diagram method that has been previously
 applied in research on Czech local politics, e.g. Bubenicek and Kubalek (2010,
 ISSN:1803-8220), Kubalek and Bubenicek (2012, ISSN:1803-8220), and Cmejrek,
-Bubenicek, and Copik (2010, ISBN:978-80-247-3061-5).")
+Bubenicek, and Copik (2010, ISBN:978-80-247-3061-5).  The package also includes
+several example datasets derived from Czech municipal elections, compiled from
+official election results, field research, and previously published case studies
+on Czech local politics.")
     (license license:expat)))
 
 (define-public r-lpacf
@@ -5224,13 +5198,13 @@ distribution and calculate the density, distribution and quantile functions.")
 (define-public r-logkde
   (package
     (name "r-logkde")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logKDE" version))
        (sha256
-        (base32 "09gachibj0klqa9ijw572lwphbh9qj6zqray5byq1dh7zsiq516q"))))
+        (base32 "0kjxyw3rhqd3s4c3z1s4dcsk312la5i1rrybji3kmhhv3j16ldbk"))))
     (properties `((upstream-name . "logKDE")))
     (build-system r-build-system)
     (arguments
@@ -16856,6 +16830,36 @@ various discovery models including ABC', @code{AnC}', LSI', and BITOLA'.  The
 package also includes visualization tools for exploring discovered connections.")
     (license license:gpl3)))
 
+(define-public r-lbbnn
+  (package
+    (name "r-lbbnn")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LBBNN" version))
+       (sha256
+        (base32 "1jv5ffdjh8qaihf35d5wdgnzl8s6y2jyvgy7ixjqbq6shlll1v90"))))
+    (properties `((upstream-name . "LBBNN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-svglite r-igraph r-ggplot2 r-coro))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LBBNN")
+    (synopsis "Latent Binary Bayesian Neural Networks Using 'torch'")
+    (description
+     "Latent binary Bayesian neural networks (LBBNNs) are implemented using torch', an
+R interface to the @code{LibTorch} backend.  Supports mean-field variational
+inference as well as flexible variational posteriors using normalizing flows.
+The standard LBBNN implementation follows Hubin and Storvik (2024)
+<doi:10.3390/math12060788>, using the local reparametrization trick as in
+Skaaret-Lund et al. (2024) <https://openreview.net/pdf?id=d6@code{kqUKzG3V>}.
+Input-skip connections are also supported, as described in HÃ¸yheim et al.
+(2025) <doi:10.48550/@code{arXiv.2503.10496>}.")
+    (license license:expat)))
+
 (define-public r-lbamodel
   (package
     (name "r-lbamodel")
@@ -17375,13 +17379,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "1g02p4yhjyxvlrklslr6myvvy4injcx0s0nm7x3cl2r7wl8x5pn1"))))
+        (base32 "0qgrml3zrjkvcl9w3sxabkh6i8d2jmqdsd5pwz7x3zg5ygslk6mq"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (arguments

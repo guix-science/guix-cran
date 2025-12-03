@@ -1005,13 +1005,13 @@ bupaverse at the <https://bupar.net> homepage.")
 (define-public r-bupar
   (package
     (name "r-bupar")
-    (version "0.5.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bupaR" version))
        (sha256
-        (base32 "10hmminkpcss74fgl04mmw197vxz53173iz7akrnmmpb75nmckcr"))))
+        (base32 "1ikqrybmnnd6lzrhmlp7bj3ay3qpasizcyidp22af847xk8zi0z5"))))
     (properties `((upstream-name . "bupaR")))
     (build-system r-build-system)
     (arguments
@@ -7070,26 +7070,26 @@ Object Localization Based on Image Superpixelization\"
 (define-public r-boundedgeworth
   (package
     (name "r-boundedgeworth")
-    (version "0.1.2.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoundEdgeworth" version))
        (sha256
-        (base32 "03gqm9afqv7z176f9yv5vxf0r4v0bq1zs8rfwfld38mk66sfb2m1"))))
+        (base32 "1ip19y25cqflgjzmwk09l6j0lx5yjpj11wkz3b4b78awf6k8cr4b"))))
     (properties `((upstream-name . "BoundEdgeworth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mathjaxr r-expint))
-    (home-page "https://cran.r-project.org/package=BoundEdgeworth")
+    (propagated-inputs (list r-expint))
+    (home-page "https://github.com/AlexisDerumigny/BoundEdgeworth")
     (synopsis "Bound on the Error of the First-Order Edgeworth Expansion")
     (description
      "Computes uniform bounds on the distance between the cumulative distribution
 function of a standardized sum of random variables and its first-order Edgeworth
-expansion, following the article Derumigny, Girard, Guyonvarch (2021)
-<@code{arXiv:2101.05780>}.")
+expansion, following the article Derumigny, Girard, Guyonvarch (2023)
+<doi:10.1007/s13171-023-00320-y>.")
     (license license:gpl3)))
 
 (define-public r-boundarystats
@@ -12797,13 +12797,13 @@ multi-start gradient-based search.  For more details, see Zhao, Qing, and Xu
 (define-public r-bkmrhat
   (package
     (name "r-bkmrhat")
-    (version "1.1.3")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bkmrhat" version))
        (sha256
-        (base32 "0l575dav5wyia37vm5j1dyljgk0k6l1hwfwsqr2gq3sb0iim4my4"))))
+        (base32 "04v80a6d3i00v3inrgc2rvln0xrcgjsfidibj3d4pj79hbf8cgi1"))))
     (properties `((upstream-name . "bkmrhat")))
     (build-system r-build-system)
     (arguments
@@ -12811,7 +12811,7 @@ multi-start gradient-based search.  For more details, see Zhao, Qing, and Xu
       #:tests? #f))
     (propagated-inputs (list r-rstan r-future r-data-table r-coda r-bkmr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bkmrhat")
+    (home-page "https://github.com/alexpkeil1/bkmrhat/")
     (synopsis "Parallel Chain Tools for Bayesian Kernel Machine Regression")
     (description
      "Bayesian kernel machine regression (from the bkmr package) is a Bayesian
@@ -17866,6 +17866,59 @@ particular for the Sequence Kernel Association Test (SKAT) used in genomics
 for dense or sparse matrices.")
     (license license:gpl2)))
 
+(define-public r-bigplsr
+  (package
+    (name "r-bigplsr")
+    (version "0.7.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigPLSR" version))
+       (sha256
+        (base32 "1irlba0dvvwiifxfyvc33f7c9czlc4a25ca65bh88lsax7xycina"))))
+    (properties `((upstream-name . "bigPLSR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-bigmemory r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/bigPLSR/")
+    (synopsis "Partial Least Squares Regression Models with Big Matrices")
+    (description
+     "Fast partial least squares (PLS) for dense and out-of-core data.  Provides
+SIMPLS (straightforward implementation of a statistically inspired modification
+of the PLS method) and NIPALS (non-linear iterative partial least-squares)
+solvers, plus kernel-style PLS variants ('kernelpls and widekernelpls') with
+parity to pls'.  Optimized for bigmemory'-backed matrices with streamed
+cross-products and chunked BLAS (Basic Linear Algebra Subprograms)
+(@code{XtX/XtY} and XXt/YX), optional file-backed score sinks, and deterministic
+testing helpers.  Includes an auto-selection strategy that chooses between
+@code{XtX} SIMPLS, XXt (wide) SIMPLS, and NIPALS based on (n, p) and a
+configurable memory budget.  About the package, Bertrand and Maumy (2023)
+<https://hal.science/hal-05352069>, and <https://hal.science/hal-05352061>
+highlighted fitting and cross-validating PLS regression models to big data.  For
+more details about some of the techniques featured in the package, Dayal and
+@code{MacGregor} (1997)
+<doi:10.1002/(SICI)1099-128X(199701)11:1%3C73::AID-CEM435%3E3.0.CO;2-%23>,
+Rosipal & Trejo (2001) <https://www.jmlr.org/papers/v2/rosipal01a.html>,
+Tenenhaus, Viennet, and Saporta (2007) <doi:10.1016/j.csda.2007.01.004>, Rosipal
+(2004) <doi:10.1007/978-3-540-45167-9_17>, Rosipal (2019)
+<https://ieeexplore.ieee.org/document/8616346>, Song, Wang, and Bai (2024)
+<doi:10.1016/j.chemolab.2024.105238>.  Includes kernel logistic PLS with
+C++'-accelerated alternating iteratively reweighted least squares (IRLS)
+updates, streamed reproducing kernel Hilbert space (RKHS) solvers with reusable
+centering statistics, and bootstrap diagnostics with graphical summaries for
+coefficients, scores, and cross-validation workflows, alongside dedicated
+plotting utilities for individuals, variables, ellipses, and biplots.  The
+streaming backend uses far less memory and keeps memory bounded across data
+sizes.  For PLS1, streaming is often fast enough while preserving a small memory
+footprint; for PLS2 it remains competitive with a bounded footprint.  On small
+problems that fit comfortably in RAM (random-access memory), dense in-memory
+solvers are slightly faster; the crossover occurs as n or p grow and the
+Gram/cross-product cost dominates.")
+    (license license:gpl3)))
+
 (define-public r-bigplscox
   (package
     (name "r-bigplscox")
@@ -18341,6 +18394,45 @@ as described by Hollenbach JA, Mack SJ, Thomson G, Gourraud PA (2012)
 <doi:10.1007/978-1-61779-842-9_14>.")
     (license license:gpl3+)))
 
+(define-public r-bigdatastatmeth
+  (package
+    (name "r-bigdatastatmeth")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BigDataStatMeth" version))
+       (sha256
+        (base32 "1vwa5wnb5gysjwvc0d9kw25r2h4j6kqdhpi1m46x3sy13gl9i4w2"))))
+    (properties `((upstream-name . "BigDataStatMeth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-rhdf5lib
+                             r-rhdf5
+                             r-rcurl
+                             r-rcppeigen
+                             r-rcpp
+                             r-data-table
+                             r-bh))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://cran.r-project.org/package=BigDataStatMeth")
+    (synopsis
+     "Tools and Infrastructure for Developing 'Scalable' 'HDF5'-Based Methods")
+    (description
+     "This package provides a framework for scalable statistical computing on large
+on-disk matrices stored in HDF5 files.  It provides efficient block-wise
+implementations of core linear-algebra operations (matrix multiplication, SVD,
+PCA, QR decomposition, and canonical correlation analysis) written in C++ and R.
+These building blocks are designed not only for direct use, but also as
+foundational components for developing new statistical methods that must operate
+on datasets too large to fit in memory.  The package supports data provided
+either as HDF5 files or standard R objects, and is intended for high-dimensional
+applications such as omics and precision-medicine research.")
+    (license license:expat)))
+
 (define-public r-bigdatape
   (package
     (name "r-bigdatape")
@@ -18395,33 +18487,6 @@ data, and the Generalized Mahalanobis Kernel distance for high dimensional data.
 <doi:10.3233/IDA-140706>; Martos et al (2018) <doi:10.3390/e20010033>; Hernandez
 et al (2018, submitted); Martos et al (2018, submitted).")
     (license license:gpl3+)))
-
-(define-public r-bigchess
-  (package
-    (name "r-bigchess")
-    (version "1.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bigchess" version))
-       (sha256
-        (base32 "1vdzx185y1agh1xjf7qcfi2s6l7qzm1kx6b2kr3cbz2in88bws3n"))))
-    (properties `((upstream-name . "bigchess")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-processx))
-    (home-page "https://cran.r-project.org/package=bigchess")
-    (synopsis
-     "Read, Write, Manipulate, Explore Chess PGN Files and R API to UCI Chess Engines")
-    (description
-     "This package provides functions for reading *.PGN files with more than one game,
-including large files without copying it into RAM (using ff package or RSQLite
-package).  Handle chess data and chess aggregated data, count figure moves
-statistics, create player profile, plot winning chances, browse openings.  Set
-of functions of R API to communicate with UCI-protocol based chess engines.")
-    (license license:gpl3)))
 
 (define-public r-bigbits
   (package
@@ -19932,13 +19997,13 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
 (define-public r-bggm
   (package
     (name "r-bggm")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGGM" version))
        (sha256
-        (base32 "1n9dslghpaqki18v64is04zbrrlq08hg4b8s598n06019aqs5nzy"))))
+        (base32 "0gvmjsbzcrhc4qhkjipvrgx38z1hykkc6xca6w8g7l133p3mqmw3"))))
     (properties `((upstream-name . "BGGM")))
     (build-system r-build-system)
     (arguments
@@ -19959,7 +20024,7 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
                              r-ggally
                              r-bfpack))
     (native-inputs (list r-knitr))
-    (home-page "https://donaldrwilliams.github.io/BGGM/")
+    (home-page "https://rast-lab.github.io/BGGM/")
     (synopsis "Bayesian Gaussian Graphical Models")
     (description
      "Fit Bayesian Gaussian graphical models.  The methods are separated into two
@@ -31539,6 +31604,35 @@ modeling of covariates for continuous, binary, categorical and time-to-event
 outcomes.  For more information see Sparapani, Spanbauer and @code{McCulloch}
 <doi:10.18637/jss.v097.i01>.")
     (license license:gpl2+)))
+
+(define-public r-barry
+  (package
+    (name "r-barry")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "barry" version))
+       (sha256
+        (base32 "1jwd67fqpcvg33hy7ifz6j95vzqgxbryq0m0ai8d8sx236c8vklf"))))
+    (properties `((upstream-name . "barry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/USCbiostats/barryr")
+    (synopsis "Your Go-to Motif Accountant")
+    (description
+     "This package provides the C++ header-only library barry for use in R packages.
+barry is a C++ template library for counting sufficient statistics on binary
+arrays and building discrete exponential-family models.  It provides tools for
+sparse arrays, user-defined count statistics, support set constraints, power set
+generation, and includes modules for Discrete Exponential Family Models (DEFMs)
+and network statistics.  By placing these headers in this package, we offer an
+efficient distribution system for CRAN as replication of this code in the
+sources of other packages is avoided.  This package follows the same approach as
+the BH package which provides Boost headers for R packages.")
+    (license license:expat)))
 
 (define-public r-barrks
   (package

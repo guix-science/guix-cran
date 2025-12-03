@@ -697,13 +697,13 @@ objects.")
 (define-public r-xpose-xtras
   (package
     (name "r-xpose-xtras")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose.xtras" version))
        (sha256
-        (base32 "0dkrbhgb8sd23bkagxxmm40xzsrdl9wvjzh9cqwa7ag7svswgxn3"))))
+        (base32 "13igshkry35mv8nfmb0jp13farvvy00xwlxjcjajwrj6cx0fb8dj"))))
     (properties `((upstream-name . "xpose.xtras")))
     (build-system r-build-system)
     (arguments
@@ -2639,13 +2639,13 @@ packages.")
 (define-public r-x12
   (package
     (name "r-x12")
-    (version "1.10.3")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "x12" version))
        (sha256
-        (base32 "0f0bbnnv4wbrx6c90rg8s284mh8i3mfcfpbwscv0xviaa7fvlsm6"))))
+        (base32 "0k39prih4ilkgbfn4rb8bxf50jx2m34v555q1w15054yvhg1gffc"))))
     (properties `((upstream-name . "x12")))
     (build-system r-build-system)
     (arguments

@@ -2670,6 +2670,34 @@ phenotypic values and climate records.  The dataset can be imported from an
 Excel file.")
     (license license:expat)))
 
+(define-public r-expbites
+  (package
+    (name "r-expbites")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExpBites" version))
+       (sha256
+        (base32 "1f4kgmn7c7wbw7hk28qrkkxmds3vl0c4l0j760h0h7hmx4h477l5"))))
+    (properties `((upstream-name . "ExpBites")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rdpack r-ggplot2 r-dplyr))
+    (home-page "https://github.com/Nmoiroux/ExpBites")
+    (synopsis "Analyzing Human Exposure to Mosquito Biting")
+    (description
+     "This package provides tools to analyse human and mosquito behavioral
+interactions and to compute exposure to mosquito bites estimates.  Using
+behavioral data for human individuals and biting patterns for mosquitoes, you
+will be able to compute hourly exposure for bed net users and non-users, and
+summarize (e.g. proportion indoors and outdoors, proportion per time periods,
+and proportion prevented by bed nets) or visualize these dynamics across a
+24-hour cycle.")
+    (license license:gpl3)))
+
 (define-public r-exparma
   (package
     (name "r-exparma")
@@ -2943,13 +2971,13 @@ Sigma/Foveon and Sony.")
 (define-public r-exif
   (package
     (name "r-exif")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exif" version))
        (sha256
-        (base32 "12phqn5x1x0xs2xczl3064q983dalm261vqpyafhdcndm1y3gwbc"))))
+        (base32 "1pcjf96247haz66zmp9mb6gzl2wsm82jz47nbfv5wskf92gi04p4"))))
     (properties `((upstream-name . "exif")))
     (build-system r-build-system)
     (arguments
@@ -2961,7 +2989,7 @@ Sigma/Foveon and Sony.")
     (description
      "Extracts Exchangeable Image File Format (EXIF) metadata, such as camera make and
 model, ISO speed and the date-time the picture was taken on, from JPEG images.
-Incorporates the easyexif (https://github.com/mayanklahiri/easyexif) library.")
+Incorporates the easyexif <https://github.com/mayanklahiri/easyexif> library.")
     (license license:bsd-2)))
 
 (define-public r-exhaustivesearch
@@ -13914,35 +13942,6 @@ concentrated markets, based in Bresnahan and Reiss (1991)
 <https://www.jstor.org/stable/2937655>.")
     (license license:expat)))
 
-(define-public r-entropymcmc
-  (package
-    (name "r-entropymcmc")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EntropyMCMC" version))
-       (sha256
-        (base32 "065djml9dmn5ahbgaljnshvhziwg61xciq6fzh76449x3wy6bg65"))))
-    (properties `((upstream-name . "EntropyMCMC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rann r-mixtools))
-    (home-page "https://cran.r-project.org/package=EntropyMCMC")
-    (synopsis
-     "MCMC Simulation and Convergence Evaluation using Entropy and Kullback-Leibler Divergence Estimation")
-    (description
-     "This package provides tools for Markov Chain Monte Carlo (MCMC) simulation and
-performance analysis.  Simulate MCMC algorithms including adaptive MCMC,
-evaluate their convergence rate, and compare candidate MCMC algorithms for a
-same target density, based on entropy and Kullback-Leibler divergence criteria.
-MCMC algorithms can be simulated using provided functions, or imported from
-external codes.  This package is based upon work starting with Chauveau, D. and
-Vandekerkhove, P. (2013) <doi:10.1051/ps/2012004> and next articles.")
-    (license license:gpl3+)))
-
 (define-public r-entropyestimation
   (package
     (name "r-entropyestimation")
@@ -14707,6 +14706,36 @@ mean at each channel using the bootstrapped distribution of maximum energy to
 control family wise error.  The function energy_method_complex accomodates
 complex valued functional observations.")
     (license license:gpl3)))
+
+(define-public r-energygof
+  (package
+    (name "r-energygof")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "energyGOF" version))
+       (sha256
+        (base32 "08vlnwapgkm03k0f3x234a8cjwy2dyp60s3qzg7igyayjfgilc7w"))))
+    (properties `((upstream-name . "energyGOF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod r-gsl r-fitdistrplus r-energy r-boot))
+    (home-page "https://github.com/jthaman/energyGOF")
+    (synopsis "Goodness-of-Fit Tests for Univariate Data via Energy")
+    (description
+     "Conduct one- and two-sample goodness-of-fit tests for univariate data.  In the
+one-sample case, normal, uniform, exponential, Bernoulli, binomial, geometric,
+beta, Poisson, lognormal, Laplace, asymmetric Laplace, inverse Gaussian,
+half-normal, chi-squared, gamma, F, Weibull, Cauchy, and Pareto distributions
+are supported. @code{egof.test()} can also test goodness-of-fit to any
+distribution with a continuous distribution function.  A subset of the available
+distributions can be tested for the composite goodness-of-fit hypothesis, that
+is, one can test for distribution fit with unknown parameters.  P-values are
+calculated via parametric bootstrap.")
+    (license license:gpl3+)))
 
 (define-public r-endtoend
   (package
@@ -16213,32 +16242,6 @@ data and visualizing results.  Supports binary, ordinal, and continuous
 measurement methods.")
     (license license:gpl3+)))
 
-(define-public r-emend
-  (package
-    (name "r-emend")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "emend" version))
-       (sha256
-        (base32 "1h77apxp7i3vdl3grcckxsipq3zbvavplpcvlqprjickic3x72la"))))
-    (properties `((upstream-name . "emend")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-jsonlite r-ellmer r-cli))
-    (home-page "https://github.com/anuopensci/emend")
-    (synopsis "Cleaning Text Data with an AI Assistant")
-    (description
-     "This package provides functions to clean and standardize messy data, including
-textual categories and free-text addresses, using Large Language Models.  The
-package corrects typos, expands abbreviations, and maps inconsistent entries to
-standardized values.  Ideal for Bioinformatics, business, and general data
-cleaning tasks.")
-    (license license:expat)))
-
 (define-public r-emdsvrhybrid
   (package
     (name "r-emdsvrhybrid")
@@ -16438,13 +16441,13 @@ cocktails.")
 (define-public r-emc2
   (package
     (name "r-emc2")
-    (version "3.2.1")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMC2" version))
        (sha256
-        (base32 "0l7dif7ifazva8ziqkg1j0w8adfjfmnlp82dkangzq3393b9dfr1"))))
+        (base32 "0xkvshzylb1m0rcvfzfl7ldjy12bh3jj4d1hwvyr9y5gx6jkmqph"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
     (arguments
@@ -16517,13 +16520,13 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embed" version))
        (sha256
-        (base32 "113aa199m5nfm0md940n2420a8clyhh7fxhcknvpix904p48zz9c"))))
+        (base32 "07nw2jk1l3q58mv21dlhza4a7wav8kgaj9wfshbviql4hfxvav1y"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (arguments
@@ -17420,19 +17423,19 @@ linear models.")
 (define-public r-elixir
   (package
     (name "r-elixir")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elixir" version))
        (sha256
-        (base32 "18q3bpkn3a49f0cnj3r694mz32ir872mgmk2vg652pxf6yh6hssg"))))
+        (base32 "1y5vvryf7lfyxbm7i3y4mgrb6vr97fl4xl1m3p6imd9z6wpj8xq0"))))
     (properties `((upstream-name . "elixir")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rlang r-glue r-data-table))
+    (propagated-inputs (list r-stringr r-rlang r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nicholasdavies/elixir")
     (synopsis "Transmutation of Languages")
@@ -20706,54 +20709,6 @@ exploration strategy in this package is described in Salinas-GutiÃ©rrez and
 MuÃ±oz Zavala (2023) <doi:10.1016/j.asoc.2023.110230>.")
     (license license:gpl3)))
 
-(define-public r-eeaaq
-  (package
-    (name "r-eeaaq")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EEAaq" version))
-       (sha256
-        (base32 "0hcdnvwd4rgxrdvq77rqb6jm83k4vf3hz2dw7g34jah26j5s87jy"))))
-    (properties `((upstream-name . "EEAaq")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-sf
-                             r-rlang
-                             r-readr
-                             r-raster
-                             r-lubridate
-                             r-leaflet
-                             r-httr
-                             r-gstat
-                             r-ggspatial
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr
-                             r-curl
-                             r-arrow))
-    (home-page "https://github.com/PaoloMaranzano/EEAaq_R")
-    (synopsis
-     "Handle Air Quality Data from the European Environment Agency Data Portal")
-    (description
-     "This software downloads and manages air quality data from the European
-Environmental Agency (EEA) dataflow
-(<https://www.eea.europa.eu/data-and-maps/data/aqereporting-9>).  See the web
-page <https://eeadmz1-downloads-webapp.azurewebsites.net/> for details on the
-EEA's Air Quality Download Service.  The package allows dynamically mapping the
-stations, summarising and time aggregating the measurements and building spatial
-interpolation maps.  See the web page <https://www.eea.europa.eu/en> for further
-information on EEA activities and history.  Further details, as well as, an
-extended vignette of the main functions included in the package, are available
-at the @code{GitHub} web page dedicated to the project.")
-    (license license:gpl3+)))
-
 (define-public r-edwards97
   (package
     (name "r-edwards97")
@@ -21886,13 +21841,13 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
 (define-public r-edear
   (package
     (name "r-edear")
-    (version "0.9.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edeaR" version))
        (sha256
-        (base32 "11cjmgq6gsnkrd556cgvd0k75nqm6qcqi35hwp95k2yvdpqsgfka"))))
+        (base32 "11ysfj34988n2n6v7awlih1zr6qd4rd77v7hfwg98l00krr679rl"))))
     (properties `((upstream-name . "edeaR")))
     (build-system r-build-system)
     (arguments
@@ -21904,6 +21859,7 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
                              r-stringr
                              r-shinytime
                              r-shiny
+                             r-rstudioapi
                              r-rlang
                              r-purrr
                              r-miniui
@@ -21912,7 +21868,6 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
                              r-lifecycle
                              r-hms
                              r-glue
-                             r-ggthemes
                              r-ggplot2
                              r-dplyr
                              r-data-table
@@ -25891,13 +25846,13 @@ estimating technical efficiency is also included.  More details in:
 (define-public r-easyviz
   (package
     (name "r-easyviz")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyViz" version))
        (sha256
-        (base32 "0ymzi831hnn2vbpcnjvbpdhszk8z3cxq93krlkfvfgfxkzg2gbzd"))))
+        (base32 "11wa89kl44nxcs3v6q4jxjb63bfmwqf7n5v1s71sl2bawgar4vr8"))))
     (properties `((upstream-name . "easyViz")))
     (build-system r-build-system)
     (arguments

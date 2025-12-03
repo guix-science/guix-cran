@@ -21,7 +21,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
-  #:use-module (gnu packages image)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
@@ -6408,13 +6407,13 @@ greenspace morphology metrics at patch and landscape levels.")
 (define-public r-greenr
   (package
     (name "r-greenr")
-    (version "0.0.1.5")
+    (version "0.0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenR" version))
        (sha256
-        (base32 "0655fg06qhq91dv677zmc1qcymhjqynl1982zha6xq5acahsjy2c"))))
+        (base32 "04blscv11zsnfs1bf4b7izhiivjd2aia72rgks55ri8vnimr7hyb"))))
     (properties `((upstream-name . "greenR")))
     (build-system r-build-system)
     (arguments
@@ -16230,48 +16229,6 @@ fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 <doi:10.1214/ss/1177013604>.")
     (license license:expat)))
 
-(define-public r-gkwreg
-  (package
-    (name "r-gkwreg")
-    (version "2.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gkwreg" version))
-       (sha256
-        (base32 "01hnldzdhqlvfdplxv3x9xy78sskvhigf41jv4wxpjc6gqhlfpx3"))))
-    (properties `((upstream-name . "gkwreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmb
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rappdirs
-                             r-numderiv
-                             r-magrittr
-                             r-gridextra
-                             r-gkwdist
-                             r-ggpubr
-                             r-ggplot2
-                             r-formula))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/evandeilton/gkwreg")
-    (synopsis "Generalized Kumaraswamy Regression Models for Bounded Data")
-    (description
-     "This package implements regression models for bounded continuous data in the
-open interval (0,1) using the five-parameter Generalized Kumaraswamy
-distribution.  Supports modeling all distribution parameters (alpha, beta,
-gamma, delta, lambda) as functions of predictors through various link functions.
- Provides efficient maximum likelihood estimation via Template Model Builder
-('TMB'), offering comprehensive diagnostics, model comparison tools, and
-simulation methods.  Particularly useful for analyzing proportions, rates,
-indices, and other bounded response data with complex distributional features
-not adequately captured by simpler models.")
-    (license license:expat)))
-
 (define-public r-gkwdist
   (package
     (name "r-gkwdist")
@@ -16924,43 +16881,6 @@ git history book presentation helps organisms required to testify for every
 changes in their source code, in relation to features requests.")
     (license license:expat)))
 
-(define-public r-gitai
-  (package
-    (name "r-gitai")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GitAI" version))
-       (sha256
-        (base32 "13j66xa2is1i03px6b97pvb3yj94lqfyjwg9y3aicvc3yyy3mzgn"))))
-    (properties `((upstream-name . "GitAI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-s7
-                             r-rlang
-                             r-r6
-                             r-purrr
-                             r-lubridate
-                             r-httr2
-                             r-glue
-                             r-gitstats
-                             r-ellmer
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-world-devs/GitAI")
-    (synopsis "Extracts Knowledge from 'Git' Repositories")
-    (description
-     "Scan multiple Git repositories, pull specified files content and process it with
-large language models.  You can summarize the content in specific way, extract
-information and data, or find answers to your questions about the repositories.
-The output can be stored in vector database and used for semantic search or as a
-part of a RAG (Retrieval Augmented Generation) prompt.")
-    (license license:expat)))
-
 (define-public r-git4r
   (package
     (name "r-git4r")
@@ -17483,19 +17403,19 @@ sets of genetic variants.")
 (define-public r-gimms
   (package
     (name "r-gimms")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimms" version))
        (sha256
-        (base32 "1k1x47jm9fbirw12sryh7yx7q7i37q7jgms21gk3p58rnh92897m"))))
+        (base32 "03qi10hdshvxj6acq8y0byaqc940xbnw1l7yqchvk7sw7v7ir656"))))
     (properties `((upstream-name . "gimms")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zyp r-raster r-ncdf4 r-kendall r-curl))
+    (propagated-inputs (list r-raster r-ncdf4 r-curl))
     (home-page "https://github.com/environmentalinformatics-marburg/gimms")
     (synopsis "Download and Process GIMMS NDVI3g Data")
     (description
@@ -20439,35 +20359,6 @@ with a new geom for drawing a polypath applying the evenodd or winding rules.")
 point-to-point connections in a polar coordinate space.")
     (license license:gpl3+)))
 
-(define-public r-ggpol
-  (package
-    (name "r-ggpol")
-    (version "0.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggpol" version))
-       (sha256
-        (base32 "11xr26kwmkjjb51wm44ydv0vcinc6k6faqwx4s2faj4iwidlys1m"))))
-    (properties `((upstream-name . "ggpol")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-plyr
-                             r-gtable
-                             r-glue
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/erocoar/ggpol")
-    (synopsis "Visualizing Social Science Data with 'ggplot2'")
-    (description
-     "This package provides a ggplot2 extension for implementing parliament charts and
-several other useful visualizations.")
-    (license license:expat)))
-
 (define-public r-ggpointless
   (package
     (name "r-ggpointless")
@@ -20760,13 +20651,13 @@ the fly.")
 (define-public r-ggpedigree
   (package
     (name "r-ggpedigree")
-    (version "0.9.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpedigree" version))
        (sha256
-        (base32 "1m3i40lz9bc1ymy5j9yy2lcbfkv1xl71bpjarbsrcb7kww9fxi8n"))))
+        (base32 "01b7l083dj9pv45qyvq1n62hcnlmvd1qzxqyvf7ji3p8k8h0f63x"))))
     (properties `((upstream-name . "ggpedigree")))
     (build-system r-build-system)
     (arguments
@@ -20778,7 +20669,6 @@ the fly.")
                              r-rlang
                              r-reshape2
                              r-plotly
-                             r-kinship2
                              r-ggplot2
                              r-dplyr
                              r-bgmisc))
@@ -21805,40 +21695,6 @@ Primarily designed to complement R package GGIR
      "Collection of functions to enhance ggplot2 and ggiraph'.  Provides functions for
 exploratory plots.  All plot can be a static plot or an interactive plot using
 ggiraph'.")
-    (license license:gpl3)))
-
-(define-public r-ggiraph
-  (package
-    (name "r-ggiraph")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggiraph" version))
-       (sha256
-        (base32 "18mla18am3p2mpqac5zml2rz8pdns671x3jy1fr42ya0s6ck3zzg"))))
-    (properties `((upstream-name . "ggiraph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib libpng))
-    (propagated-inputs (list r-vctrs
-                             r-systemfonts
-                             r-s7
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-htmlwidgets
-                             r-htmltools
-                             r-ggplot2
-                             r-gdtools
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://davidgohel.github.io/ggiraph/")
-    (synopsis "Make 'ggplot2' Graphics Interactive")
-    (description "Create interactive ggplot2 graphics using htmlwidgets'.")
     (license license:gpl3)))
 
 (define-public r-ggir
@@ -23433,47 +23289,6 @@ System and the European System of Central Banks.")
      "It provides a custom ggplot2 geom to add day/night patterns to plots.  It
 visually distinguishes daytime and nighttime periods.  It is useful for
 visualizing data that spans multiple days and for highlighting diurnal patterns.")
-    (license license:expat)))
-
-(define-public r-ggdag
-  (package
-    (name "r-ggdag")
-    (version "0.2.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggdag" version))
-       (sha256
-        (base32 "074n9w1vgzmx677nppjfp4k3wf7rp0yfh9fbyhb3man4gl2w17df"))))
-    (properties `((upstream-name . "ggdag")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidygraph
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-pillar
-                             r-magrittr
-                             r-igraph
-                             r-ggrepel
-                             r-ggraph
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-dagitty))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-causal/ggdag")
-    (synopsis "Analyze and Create Elegant Directed Acyclic Graphs")
-    (description
-     "Tidy, analyze, and plot directed acyclic graphs (DAGs).  ggdag is built on top
-of dagitty', an R package that uses the DAGitty web tool
-(<https://dagitty.net/>) for creating and analyzing DAGs.  ggdag makes it easy
-to tidy and plot dagitty objects using ggplot2 and ggraph', as well as common
-analytic and graphical functions, such as determining adjustment sets and node
-relationships.")
     (license license:expat)))
 
 (define-public r-ggcorset
@@ -28291,13 +28106,13 @@ geospatial objects.")
 (define-public r-geodl
   (package
     (name "r-geodl")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodl" version))
        (sha256
-        (base32 "1w3gp40npdfvyh6hipwqh7pb9vkwhfjjk129jbck4g6kj2hmd6wc"))))
+        (base32 "1q85rlkdckpalj9kwll7yb69s81q7al25r6rbd1im8fan844m18q"))))
     (properties `((upstream-name . "geodl")))
     (build-system r-build-system)
     (arguments
@@ -30079,34 +29894,32 @@ datasets for analysis.")
 (define-public r-genie
   (package
     (name "r-genie")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genie" version))
        (sha256
-        (base32 "07w6rf4a3d34j7dwz9zcxshg2sk1cd5v59xs3jxph17c9gga0nlq"))))
+        (base32 "0gdvz1q0jcqm8ib9vc4mg2rvcfg0vbc5i5bq3hbmq7z9kfnbpd6x"))))
     (properties `((upstream-name . "genie")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
     (propagated-inputs (list r-rcpp r-genieclust))
-    (home-page "http://genieclust.gagolewski.com/")
+    (home-page "https://genieclust.gagolewski.com/")
     (synopsis "Fast, Robust, and Outlier Resistant Hierarchical Clustering")
     (description
-     "Includes the reference implementation of Genie - a hierarchical clustering
-algorithm that links two point groups in such a way that an inequity measure
-(namely, the Gini index) of the cluster sizes does not significantly increase
-above a given threshold.  This method most often outperforms many other data
-segmentation approaches in terms of clustering quality as tested on a wide range
-of benchmark datasets.  At the same time, Genie retains the high speed of the
-single linkage approach, therefore it is also suitable for analysing larger data
-sets.  For more details see (Gagolewski et al.  2016
-<DOI:10.1016/j.ins.2016.05.003>).  For an even faster and more feature-rich
-implementation, including, amongst others, noise point detection, see the
-genieclust package.")
+     "Includes the basic implementation of Genie - a hierarchical clustering algorithm
+that links two point groups in such a way that an inequity measure (namely, the
+Gini index) of the cluster sizes does not significantly increase above a given
+threshold.  This method most often outperforms many other data segmentation
+approaches in terms of clustering quality as tested on a wide range of benchmark
+datasets.  At the same time, Genie retains the high speed of the single linkage
+approach, therefore it is also suitable for analysing larger data sets.  For
+more details see (Gagolewski et al.  2016 <DOI:10.1016/j.ins.2016.05.003>).  For
+an even faster and more feature-rich implementation, including, amongst others,
+see the genieclust package (Gagolewski, 2021 <DOI:10.1016/j.softx.2021.100722>).")
     (license license:gpl3+)))
 
 (define-public r-genhmm1d
@@ -32327,13 +32140,13 @@ equations.")
 (define-public r-geessbin
   (package
     (name "r-geessbin")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geessbin" version))
        (sha256
-        (base32 "0vj1z29hccvwqsqj8gclmwzrqsqimzsr0sy2hh81jaznw9hghw5x"))))
+        (base32 "1xcrw53fvmwli72cawf3kv2lmj17h3yvs59i2rrnx76c90dbcj6b"))))
     (properties `((upstream-name . "geessbin")))
     (build-system r-build-system)
     (arguments
@@ -32456,13 +32269,13 @@ implementation based fully in R.")
 (define-public r-geelite
   (package
     (name "r-geelite")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeLite" version))
        (sha256
-        (base32 "0rq919mxbahy5pzniyi7afnrkyq8vbilxvadipqwi6vlckzkzmnx"))))
+        (base32 "0nwx9vx3d1nnfs143v042csgdn7b944f6fgvz6kdaf0sicng45wx"))))
     (properties `((upstream-name . "geeLite")))
     (build-system r-build-system)
     (arguments
@@ -33471,13 +33284,13 @@ scalable, low-level I/O, or prefer a direct GDAL API.")
 (define-public r-gdalcubes
   (package
     (name "r-gdalcubes")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalcubes" version))
        (sha256
-        (base32 "0amy5kc8g6gg0rkwn74ldida7cgmpzpldzn02vc366ywpbdkyy86"))))
+        (base32 "1bamhr07byn06zcwllbrzb301qkngkkzig6kq5kd9d1agjwhmnbl"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
     (arguments

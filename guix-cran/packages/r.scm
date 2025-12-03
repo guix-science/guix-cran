@@ -1200,13 +1200,13 @@ selected.")
 (define-public r-rwdataplyr
   (package
     (name "r-rwdataplyr")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RWDataPlyr" version))
        (sha256
-        (base32 "1jjra885339n6kpqz28rn9byy4md4s0k47m6ll4a6srd4hsf3ni3"))))
+        (base32 "17q6xx6vjfk6siikp6bx5m5is14i9gmlxvn3ri80bgr1k5r31b0z"))))
     (properties `((upstream-name . "RWDataPlyr")))
     (build-system r-build-system)
     (arguments
@@ -1225,7 +1225,7 @@ selected.")
     (synopsis "Read and Manipulate Data from 'RiverWare'")
     (description
      "This package provides a tool to read and manipulate data generated from
-@code{RiverWare'(TM}) <http://www.riverware.org/> simulations. @code{RiverWare}
+@code{RiverWare'(TM}) <https://www.riverware.org/> simulations. @code{RiverWare}
 and @code{RiverSMART} generate data in \"rdf\", \"csv\", and \"nc\" format.  This
 package provides an interface to read, aggregate, and summarize data from one or
 more simulations in a dplyr pipeline.")
@@ -25807,13 +25807,13 @@ Begg CB, Zabor EC, Bernstein JL, Bernstein L, Press MF, Seshan VE (2013)
 (define-public r-risk-assessr
   (package
     (name "r-risk-assessr")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "risk.assessr" version))
        (sha256
-        (base32 "1n945kj3k1zf65b18fjh794ria3j98gaipybq6j4br3589s2wpph"))))
+        (base32 "15p3ppfm8p89afrxirdpmsxy31xw2vm0zy18cw38yfab8brh7zqj"))))
     (properties `((upstream-name . "risk.assessr")))
     (build-system r-build-system)
     (arguments
@@ -26928,39 +26928,6 @@ logarithmic and exponential maps, vectorization, and statistical operations on
 the manifold of positive definite matrices.")
     (license license:expat)))
 
-(define-public r-riemstats
-  (package
-    (name "r-riemstats")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "riemstats" version))
-       (sha256
-        (base32 "0xzgd5r26ylknw4dzqhyvszy78mz0rb8mnvh2karqxwlc489452l"))))
-    (properties `((upstream-name . "riemstats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sva r-riemtan r-purrr r-matrix r-covtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://nicoesve.github.io/riemstats/")
-    (synopsis "Riemannian ANOVA Statistics")
-    (description
-     "This package provides statistical methods for analyzing samples of symmetric
-positive definite (SPD) matrices, particularly functional connectivity matrices
-from neuroimaging data.  Implements FrÃ©chet ANOVA (Dubey and MÃ¼ller (2019)
-<doi:10.1093/biomet/asz052>) for testing differences between groups in metric
-spaces, and Riemannian ANOVA methods that leverage tangent space geometry with
-classic multivariate test statistics including Wilks Lambda and Pillai's trace.
-Also includes harmonization techniques for removing batch effects in multi-site
-studies: @code{ComBat-based} harmonization (Honnorat et al. (2024)
-<doi:10.1016/j.media.2023.103043>) and rigid harmonization (Simeon et al. (2022)
-<doi:10.3389/fninf.2022.769274>).  Builds on riemtan package infrastructure for
-efficient computation with multiple Riemannian metrics.")
-    (license license:expat)))
-
 (define-public r-riembase
   (package
     (name "r-riembase")
@@ -27741,6 +27708,32 @@ uses these matrices to calculate hypergraph spectra and perform spectral
 comparison.  Functionality coming soon includes calculation of hyperpaths and
 hypergraph centrality measures.")
     (license license:gpl3+)))
+
+(define-public r-rhymer
+  (package
+    (name "r-rhymer")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rhymer" version))
+       (sha256
+        (base32 "00c83z3fpr3275qx3685863l8za1240i6jbj6vhdszdsz1g6sxz9"))))
+    (properties `((upstream-name . "rhymer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://landesbergn.github.io/rhymer/index.html")
+    (synopsis
+     "Wrapper for the 'Datamuse' API to Find Rhyming and Associated Words")
+    (description
+     "Wrapper for Datamuse API to find rhyming and other associated words.  This
+includes words of similar meaning, spelling, or other related words.  Learn more
+about the Datamuse API here <https://www.datamuse.com/api/>.")
+    (license license:expat)))
 
 (define-public r-rhybridfinder
   (package
@@ -33857,48 +33850,6 @@ distribution.  The package also allows the users to specify different model
 forms for both the recurrent event process and the terminal event.")
     (license license:gpl3+)))
 
-(define-public r-rerddapxtracto
-  (package
-    (name "r-rerddapxtracto")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rerddapXtracto" version))
-       (sha256
-        (base32 "1vfqnnyj3j453h4mf5p1jhk33827c8y9qqi6ya9k437zc82529cl"))))
-    (properties `((upstream-name . "rerddapXtracto")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-sp
-                             r-sf
-                             r-rerddap
-                             r-readr
-                             r-plotdap
-                             r-parsedate
-                             r-ncdf4
-                             r-maps
-                             r-httr
-                             r-ggplot2
-                             r-dplyr
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rmendels/rerddapXtracto")
-    (synopsis "Extracts Environmental Data from 'ERDDAPâ¢' Web Services")
-    (description
-     "This package contains three functions that access environmental data from any
-ERDDAPâ¢ data web service.  The @code{rxtracto()} function extracts data along
-a trajectory for a given \"radius\" around the point.  The @code{rxtracto_3D()}
-function extracts data in a box.  The @code{rxtractogon()} function extracts
-data in a polygon.  All of those three function use the rerddap package to
-extract the data, and should work with any ERDDAPâ¢ server.  There are also two
-functions, @code{plotBBox()} and @code{plotTrack()} that use the plotdap package
-to simplify the creation of maps of the data.")
-    (license license:cc0)))
-
 (define-public r-rerddap
   (package
     (name "r-rerddap")
@@ -36705,34 +36656,6 @@ Extended Weibull, and Weibull Extension distributions.  Serves as a valuable
 resource for teaching and research in probability theory, reliability analysis,
 and applied statistical modeling.")
     (license license:gpl2)))
-
-(define-public r-reliagrowr
-  (package
-    (name "r-reliagrowr")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ReliaGrowR" version))
-       (sha256
-        (base32 "1yacim24jplv5yfxsvzs9skf1dhr1d8bk0475llimiygxwlcljnf"))))
-    (properties `((upstream-name . "ReliaGrowR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-segmented r-plumber))
-    (native-inputs (list r-knitr))
-    (home-page "https://paulgovan.github.io/ReliaGrowR/")
-    (synopsis "Reliability Growth Analysis")
-    (description
-     "Modeling and plotting functions for Reliability Growth Analysis (RGA).  Models
-include the Duane (1962) <doi:10.1109/TA.1964.4319640>, Non-Homogeneous Poisson
-Process (NHPP) by Crow (1975) <https://apps.dtic.mil/sti/citations/ADA020296>,
-Piecewise Weibull NHPP by Guo et al. (2010) <doi:10.1109/RAMS.2010.5448029>, and
-Piecewise Weibull NHPP with Change Point Detection based on the segmented
-package by Muggeo (2024) <https://cran.r-project.org/package=segmented>.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-reliabilitytheory
   (package
@@ -42940,13 +42863,13 @@ facilitate user-friendly data exploration.")
 (define-public r-reactable
   (package
     (name "r-reactable")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reactable" version))
        (sha256
-        (base32 "1wkamzyyl3k3772n5g4rjklkkhdb07jiax064r9alnnq5nzfdaml"))))
+        (base32 "0dnd20646kr05isjch0zwvs375gd7h05bs7p00jy67an6zxp9pbb"))))
     (properties `((upstream-name . "reactable")))
     (build-system r-build-system)
     (arguments
@@ -45696,13 +45619,13 @@ functions, and does not yet add any of its own.")
 (define-public r-rcppxsimd
   (package
     (name "r-rcppxsimd")
-    (version "7.1.6")
+    (version "7.1.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppXsimd" version))
        (sha256
-        (base32 "1iwiz4964dw015cbxcanks8xkjan39hfzf8x6bhvf6dqqwkc4bh7"))))
+        (base32 "0hbr0rgmhxx1sxz9zxshccvg70shppi131r0bidhb2rrkr7z7ygj"))))
     (properties `((upstream-name . "RcppXsimd")))
     (build-system r-build-system)
     (arguments
@@ -49338,13 +49261,13 @@ sources can be obtained from <https://github.com/cdk/cdk>.")
 (define-public r-rcdk
   (package
     (name "r-rcdk")
-    (version "3.8.1")
+    (version "3.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcdk" version))
        (sha256
-        (base32 "15dwjrnw0zdkck56gs2282gw5fvzqimhhjyrryh1rdnvvqsbj9i7"))))
+        (base32 "1c9vchx4z0sn00jzp777bp4lwmdbh43cvw8zxa8a97r1xf407s3g"))))
     (properties `((upstream-name . "rcdk")))
     (build-system r-build-system)
     (arguments
@@ -49358,54 +49281,14 @@ sources can be obtained from <https://github.com/cdk/cdk>.")
                              r-iterators
                              r-fingerprint))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rcdk")
+    (home-page "https://github.com/CDK-R/cdkr")
     (synopsis "Interface to the 'CDK' Libraries")
     (description
      "Allows the user to access functionality in the CDK', a Java framework for
-chemoinformatics.  This allows the user to load molecules, evaluate
-fingerprints, calculate molecular descriptors and so on.  In addition, the CDK
-API allows the user to view structures in 2D.")
+cheminformatics.  This allows the user to load molecules, evaluate fingerprints,
+calculate molecular descriptors and so on.  In addition, the CDK API allows the
+user to view structures in 2D.")
     (license license:lgpl2.0+)))
-
-(define-public r-rcdf
-  (package
-    (name "r-rcdf")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rcdf" version))
-       (sha256
-        (base32 "1cmdsx01d9q7y8362r1gwxnki5j8wqzlsnnkpcrxzfwsjs5a5cjq"))))
-    (properties `((upstream-name . "rcdf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-uuid
-                             r-stringr
-                             r-rsqlite
-                             r-openxlsx
-                             r-openssl
-                             r-jsonlite
-                             r-haven
-                             r-glue
-                             r-fs
-                             r-duckdb
-                             r-dplyr
-                             r-dbi
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://yng-me.github.io/rcdf/")
-    (synopsis "Comprehensive Toolkit for Working with Encrypted Parquet Files")
-    (description
-     "Utilities for reading, writing, and managing RCDF files, including encryption
-and decryption support.  It offers a flexible interface for handling data stored
-in encrypted Parquet format, along with metadata extraction, key management, and
-secure operations using Advanced Encryption Standard (AES) and
-Rivest-Shamir-Adleman (RSA) encryption.")
-    (license license:expat)))
 
 (define-public r-rcdea
   (package
@@ -54744,13 +54627,13 @@ algorithm, and a brute force algorithm (for small problems).")
 (define-public r-rank
   (package
     (name "r-rank")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rank" version))
        (sha256
-        (base32 "1b2rrnwcaz10anb9fni3hxkk42iy3wkpvliidz271gfmnh2660j9"))))
+        (base32 "1yg3wg476mas0sig0zc8wkj9l309ys3xrc7rax7phcdw6qhhafws"))))
     (properties `((upstream-name . "rank")))
     (build-system r-build-system)
     (arguments
@@ -56618,13 +56501,13 @@ Buffum (2002) <doi:10.2139/ssrn.355308> and Linetsky (2006)
 (define-public r-rags2ridges
   (package
     (name "r-rags2ridges")
-    (version "2.2.8")
+    (version "2.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rags2ridges" version))
        (sha256
-        (base32 "10l93gq15w4lz0sfgcasbp40vg2l85sn5m8n047facs16hhnmk2d"))))
+        (base32 "19mbcp13wmxx47avc78wmd316dcad8slmdasfsarf5sjsfm6qvj7"))))
     (properties `((upstream-name . "rags2ridges")))
     (build-system r-build-system)
     (arguments

@@ -2702,32 +2702,6 @@ hessian functions are written in C++.  For further details see Mazucheli et.  al
 (2022) <doi:10.1016/j.cmpb.2022.106816>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-unitizer
-  (package
-    (name "r-unitizer")
-    (version "1.4.23")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "unitizer" version))
-       (sha256
-        (base32 "0ivbp4k6g8d7iir5lh4kphr7a1hsxppwdh6fapvhivq0gk461y38"))))
-    (properties `((upstream-name . "unitizer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-diffobj r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/brodieG/unitizer")
-    (synopsis "Interactive R Unit Tests")
-    (description
-     "Simplifies regression tests by comparing objects produced by test code with
-earlier versions of those same objects.  If objects are unchanged the tests
-pass, otherwise execution stops with error details.  If in interactive mode,
-tests can be reviewed through the provided interactive environment.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-unitedr
   (package
     (name "r-unitedr")
@@ -4479,13 +4453,13 @@ flow estimation in the United Kingdom\", Institute of Hydrology (1992, ISBN 0
 (define-public r-ukbnmr
   (package
     (name "r-ukbnmr")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ukbnmr" version))
        (sha256
-        (base32 "1qap07ahp15llrd2c1h5ksx73b96lfam3hmfssx0df1mr42hgrd6"))))
+        (base32 "14ynf9vbzdznxngknr8wqk6flfpmy29rnmlyqy9igvqpyhz8vylg"))))
     (properties `((upstream-name . "ukbnmr")))
     (build-system r-build-system)
     (arguments

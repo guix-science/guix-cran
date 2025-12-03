@@ -7281,36 +7281,50 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
 (define-public r-crmpack
   (package
     (name "r-crmpack")
-    (version "1.0.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmPack" version))
        (sha256
-        (base32 "1wdar6i0h184ynddvl2w6ipbdappncl0grsw7g4hnfiz1hw9x9p4"))))
+        (base32 "14sskpr3qjs6mbjissj8175sqk90609dvbfc1qh9rsza9azbyrmx"))))
     (properties `((upstream-name . "crmPack")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rjags
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-survival
+                             r-rlang
+                             r-rjags
+                             r-rdpack
+                             r-parallelly
                              r-mvtnorm
-                             r-mass
+                             r-magrittr
+                             r-lifecycle
+                             r-knitr
+                             r-kableextra
                              r-gridextra
                              r-ggplot2
-                             r-gensa))
-    (native-inputs (list r-knitr))
+                             r-gensa
+                             r-futile-logger
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://github.com/openpharma/crmPack")
-    (synopsis "Object-Oriented Implementation of CRM Designs")
+    (synopsis "Object-Oriented Implementation of Dose Escalation Designs")
     (description
-     "This package implements a wide range of model-based dose escalation designs,
-ranging from classical and modern continual reassessment methods (CRMs) based on
-dose-limiting toxicity endpoints to dual-endpoint designs taking into account a
-biomarker/efficacy outcome.  The focus is on Bayesian inference, making it very
-easy to setup a new design with its own JAGS code.  However, it is also possible
-to implement 3+3 designs for comparison or models with non-Bayesian estimation.
-The whole package is written in a modular form in the S4 class system, making it
-very flexible for adaptation to new models, escalation or stopping rules.")
+     "This package implements a wide range of dose escalation designs.  The focus is
+on model-based designs, ranging from classical and modern continual reassessment
+methods (CRMs) based on dose-limiting toxicity endpoints to dual-endpoint
+designs taking into account a biomarker/efficacy outcome.  Bayesian inference is
+performed via MCMC sampling in JAGS, and it is easy to setup a new design with
+custom JAGS code.  However, it is also possible to implement 3+3 designs for
+comparison or models with non-Bayesian estimation.  The whole package is written
+in a modular form in the S4 class system, making it very flexible for adaptation
+to new models, escalation or stopping rules.  Further details are presented in
+Sabanes Bove et al. (2019) <doi:10.18637/jss.v089.i10>.")
     (license license:gpl2+)))
 
 (define-public r-crmn
@@ -13414,13 +13428,13 @@ populations using genetic data.  Pritchard JK, Stephens M, Donnelly PJ (2000)
 (define-public r-corrselect
   (package
     (name "r-corrselect")
-    (version "2.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrselect" version))
        (sha256
-        (base32 "0bzd5gc923ywih9wwpggns5b04mq3w0hh6nlsvmkjal7x1gvgwmm"))))
+        (base32 "0h22qg6pzfl7ziiq3iagrjf9v8jnng1y65ccvx8f340pbcjh12bd"))))
     (properties `((upstream-name . "corrselect")))
     (build-system r-build-system)
     (arguments
@@ -13429,12 +13443,14 @@ populations using genetic data.  Pritchard JK, Stephens M, Donnelly PJ (2000)
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://gillescolling.com/corrselect/")
-    (synopsis "Correlation-Based Variable Subset Selection")
+    (synopsis "Correlation-Based and Model-Based Predictor Pruning")
     (description
-     "This package provides functions to extract low-correlation variable subsets
-using exact graph-theoretic algorithms (e.g., EppsteinâLÃ¶fflerâStrash,
-BronâKerbosch) as well as greedy and spectral heuristics.  Supports both
-numeric and mixed-type data using generalized association measures.")
+     "This package provides functions for predictor pruning using association-based
+and model-based approaches.  Includes @code{corrPrune()} for fast
+correlation-based pruning, @code{modelPrune()} for VIF-based regression pruning,
+and exact graph-theoretic algorithms (EppsteinâLÃ¶fflerâStrash,
+BronâKerbosch) for exhaustive subset enumeration.  Supports linear models,
+GLMs, and mixed models ('lme4', @code{glmmTMB}').")
     (license license:expat)))
 
 (define-public r-corrrf
@@ -15597,13 +15613,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "0v3v5k1r13z6vxl4aygp7xfymayd2pn6j89nq3l8grwvbj6vji6s"))))
+        (base32 "0sda3jhazwvla32g0agh6s4ar0r1kv88mfizqmjn26nz15ix2wf7"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -16123,6 +16139,37 @@ apps, in part by wrapping the js-cookie @code{JavaScript} library
 <https://github.com/js-cookie/js-cookie>.")
     (license license:expat)))
 
+(define-public r-cookiemonster
+  (package
+    (name "r-cookiemonster")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cookiemonster" version))
+       (sha256
+        (base32 "1bl5hcjgxxak1kaw54m1hnmy4pvzd8zs3p9vc6drg4n0hcy9c6az"))))
+    (properties `((upstream-name . "cookiemonster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-urltools
+                             r-tibble
+                             r-stringi
+                             r-rlang
+                             r-rappdirs
+                             r-openssl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JBGruber/cookiemonster")
+    (synopsis "Your Friendly Solution to Managing Browser Cookies")
+    (description
+     "This package provides a convenient tool to store and format browser cookies and
+use them in HTTP requests (for example, through httr2', httr or curl').")
+    (license license:gpl3+)))
+
 (define-public r-cookiecutter
   (package
     (name "r-cookiecutter")
@@ -16553,6 +16600,50 @@ indicator fiches, makes possible to produce automated reports.  The Eurofound
 report (<doi:10.2806/68012>) \"Upward convergence in the EU: Concepts,
 measurements and indicators\", 2018, is a detailed presentation of convergence.")
     (license (list license:gpl3 license:bsd-3))))
+
+(define-public r-convergencedfm
+  (package
+    (name "r-convergencedfm")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "convergenceDFM" version))
+       (sha256
+        (base32 "16dv6877fc19dzxagmpvijbl68l194jj073s2xsx2zfkss0y28pl"))))
+    (properties `((upstream-name . "convergenceDFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-vars
+                             r-urca
+                             r-tidyr
+                             r-stringr
+                             r-readxl
+                             r-pls
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=convergenceDFM")
+    (synopsis "Convergence and Dynamic Factor Models")
+    (description
+     "Tests convergence in macro-financial panels combining Dynamic Factor Models
+(DFM) and mean-reverting Ornstein-Uhlenbeck (OU) processes.  Provides: (i)
+static/approximate DFMs for large panels with VAR/VECM stability checks,
+Portmanteau tests and rolling out-of-sample R^2, following Stock and Watson
+(2002) <doi:10.1198/073500102317351921> and the Generalized Dynamic Factor Model
+of Forni, Hallin, Lippi and Reichlin (2000) <doi:10.1162/003465300559037>; (ii)
+cointegration analysis Ã  la Johansen (1988) <doi:10.1016/0165-1889(88)90041-3>;
+(iii) OU-based convergence and half-life summaries grounded in Uhlenbeck and
+Ornstein (1930) <doi:10.1103/@code{PhysRev.36.823>} and Vasicek (1977)
+<doi:10.1016/0304-405X(77)90016-2>; (iv) robust inference via sandwich HC/HAC
+estimators (Zeileis (2004) <doi:10.18637/jss.v011.i10>) and regression
+diagnostics ('lmtest'); and (v) optional PLS-based factor preselection (Mevik
+and Wehrens (2007) <doi:10.18637/jss.v018.i02>).  Functions emphasize
+reproducibility and clear, publication-ready summaries.")
+    (license license:gpl3)))
 
 (define-public r-convergenceconcepts
   (package
@@ -23639,13 +23730,13 @@ number of photoreceptor types.")
 (define-public r-colourvalues
   (package
     (name "r-colourvalues")
-    (version "0.3.9")
+    (version "0.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colourvalues" version))
        (sha256
-        (base32 "0prrvkj3xi09fbjz9sd12nvqmsm47fkpw9v9kxsrx3wgm1vi49in"))))
+        (base32 "1jbpa43d74ggraspvl6hflyh9fa2rsdqcmaswhxim30m0m25vd3s"))))
     (properties `((upstream-name . "colourvalues")))
     (build-system r-build-system)
     (arguments
@@ -32069,13 +32160,13 @@ Cannings et al. (1978) <doi:10.2307/1426718>.")
 (define-public r-cliot
   (package
     (name "r-cliot")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cliot" version))
        (sha256
-        (base32 "0gynh767vv02xn6j6mbakdsfb1s9m3pvr3idn9qy1qy6wbfya9h7"))))
+        (base32 "1gd1k80sq9rp32bzf8li2d1bqc4yq6y5i1b7c554659zi864wyc3"))))
     (properties `((upstream-name . "cliot")))
     (build-system r-build-system)
     (arguments
@@ -32084,12 +32175,13 @@ Cannings et al. (1978) <doi:10.2307/1426718>.")
     (home-page "https://cran.r-project.org/package=cliot")
     (synopsis "Clinical Indices and Outcomes Tools")
     (description
-     "Collection of indices and tools relating to cardiovascular, nephrology, and
-hepatic research that aid epidemiological chort or retrospective chart review
-with big data.  All indices and tools take commonly used lab values and patient
-demographics and measurements to compute various risk and predictive values for
-survival.  References to original literature and validation contained in each
-function documentation.")
+     "Collection of indices and tools relating to clinical research that aid
+epidemiological cohort or retrospective chart review with big data.  All indices
+and tools take commonly used lab values, patient demographics, and clinical
+measurements to compute various risk and predictive values for survival or
+further classification/stratification.  References to original literature and
+validation contained in each function documentation.  Includes all commonly
+available calculators available online.")
     (license license:gpl3)))
 
 (define-public r-clinutils
@@ -33696,31 +33788,6 @@ integration with already developed and deployed tools for missing value
 imputation and outlier detection.  It also provides a way of visualizing large
 time-series data in different resolutions.")
     (license license:gpl3+)))
-
-(define-public r-cleanrmd
-  (package
-    (name "r-cleanrmd")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cleanrmd" version))
-       (sha256
-        (base32 "120jg8kp6m6pka5nvgvwjyl4ljybv193sqvyjr8p19w3q7665nm6"))))
-    (properties `((upstream-name . "cleanrmd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-jsonlite r-htmltools))
-    (home-page "https://pkg.garrickadenbuie.com/cleanrmd/")
-    (synopsis "Clean Class-Less 'R Markdown' HTML Documents")
-    (description
-     "This package provides a collection of clean R Markdown HTML document templates
-using classy-looking classless CSS styles.  These documents use a minimal set of
-dependencies but still look great, making them suitable for use a package
-vignettes or for sharing results via email.")
-    (license license:expat)))
 
 (define-public r-cleanr
   (package
@@ -42451,19 +42518,19 @@ Execution is supported both locally or on remote machines.")
 (define-public r-certara-rdarwin
   (package
     (name "r-certara-rdarwin")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.RDarwin" version))
        (sha256
-        (base32 "15rc86zzbi244z120iharj125d4fz8jhwdgdmib54n093576xjid"))))
+        (base32 "05ynzci9laccqacqasxwqq76yfbmx9hpd3jh088f9y168wg142z4"))))
     (properties `((upstream-name . "Certara.RDarwin")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-jsonlite))
+    (propagated-inputs (list r-ssh r-magrittr r-jsonlite))
     (home-page "https://certara.github.io/R-Darwin/")
     (synopsis
      "Interface for 'pyDarwin' Machine Learning Pharmacometric Model Development")
@@ -46235,13 +46302,13 @@ Markov chain Monte Carlo methods.")
 (define-public r-cbps
   (package
     (name "r-cbps")
-    (version "0.23")
+    (version "0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CBPS" version))
        (sha256
-        (base32 "0bdkx7phi58200jgijqmv5d7v2kiksj07sxx2sjmkd1dcjdy13zd"))))
+        (base32 "07xkfhy4r8r4q0xavah44mqgw6pagbcnjwg9wkx0ma4nrv8cp22c"))))
     (properties `((upstream-name . "CBPS")))
     (build-system r-build-system)
     (arguments
@@ -46867,13 +46934,13 @@ by the gut bacteria.")
 (define-public r-causalweight
   (package
     (name "r-causalweight")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalweight" version))
        (sha256
-        (base32 "1vj8wxbplc8k02qfsdvmf20pxi1zdncdm6kpqyizllny3qr0sazg"))))
+        (base32 "0w2400pklbmf19x3d7fakvx6844k0g6mj1510mhv1dakclz97ydb"))))
     (properties `((upstream-name . "causalweight")))
     (build-system r-build-system)
     (arguments

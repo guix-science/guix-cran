@@ -4375,13 +4375,13 @@ formatting.")
 (define-public r-japanapis
   (package
     (name "r-japanapis")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JapanAPIs" version))
        (sha256
-        (base32 "1gpcn4jg48z603paps3vbp8l04gn7adlp0z2pcirkrqd7hfg3n89"))))
+        (base32 "1ins6xyxml7jwmia211bh84bzcyb1a2kcfrlsnx5slczvjdfzfih"))))
     (properties `((upstream-name . "JapanAPIs")))
     (build-system r-build-system)
     (arguments

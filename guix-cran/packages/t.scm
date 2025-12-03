@@ -5964,6 +5964,37 @@ dataset into a transaction on the decentralized blockchain (Stellar network).
 The package makes use of a free service provided by <https://stellarapi.io>.")
     (license license:agpl3)))
 
+(define-public r-trunmnt
+  (package
+    (name "r-trunmnt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trunmnt" version))
+       (sha256
+        (base32 "0ak0l5ha808mk1z5byai4c7pfzqg8mm77q5c7zar79i5i8aqr7y3"))))
+    (properties `((upstream-name . "trunmnt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-fastghquad))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=trunmnt")
+    (synopsis "Moments of Truncated Multivariate Normal Distribution")
+    (description
+     "Computes the product moments of the truncated multivariate normal distribution,
+particularly for cases involving patterned variance-covariance matrices.  It
+also has the capability to calculate these moments with arbitrary
+positive-definite matrices, although performance may degrade for
+high-dimensional variables.")
+    (license license:gpl2)))
+
 (define-public r-truncsp
   (package
     (name "r-truncsp")
@@ -6459,19 +6490,19 @@ publication by Fourer et al. (<doi:10.1287/mnsc.36.5.519>).")
 (define-public r-troubblme4solver
   (package
     (name "r-troubblme4solver")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trouBBlme4SolveR" version))
        (sha256
-        (base32 "0rcsv0nrrwvgicrwig5278rb861ynh6crgixbg2400wxc30r9g24"))))
+        (base32 "08r698iziz6zrvzps11aa4r39spw83xwnw5l8b3rwv0n46vvgk6d"))))
     (properties `((upstream-name . "trouBBlme4SolveR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lme4))
+    (propagated-inputs (list r-reformulas r-lme4))
     (home-page "https://gitlab.com/iagogv/troubblme4solver")
     (synopsis "Troubles Solver for 'lme4'")
     (description
@@ -7226,13 +7257,13 @@ Goodrich B, Gabry J, and Vehtari A (2018) <doi:10.1080/00031305.2018.1549100>)."
 (define-public r-tricolore
   (package
     (name "r-tricolore")
-    (version "1.2.4")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tricolore" version))
        (sha256
-        (base32 "1vnzw1nnnpq5w52y5dr9lygbpyys171vpxnmnd0yp1pk9mjxays7"))))
+        (base32 "0h8x5cmwbdbdfcy5vcya8vyss5sz2pv6mnyw9yqdk9mdr6bbcl92"))))
     (properties `((upstream-name . "tricolore")))
     (build-system r-build-system)
     (arguments
@@ -9890,33 +9921,6 @@ treatment effect from Rudolph and van der Laan (2017) <doi:10.1111/rssb.12213>.
 Estimators are fit using cross-fitting and nuisance parameters are estimated
 using the Super Learner algorithm.")
     (license license:gpl3+)))
-
-(define-public r-transport
-  (package
-    (name "r-transport")
-    (version "0.15-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "transport" version))
-       (sha256
-        (base32 "1kr03iqyfv2icxdalj06rfwrjj6k281wn87dvz4kkp35zpv454sf"))))
-    (properties `((upstream-name . "transport")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-data-table))
-    (home-page "https://dschuhm1.pages.gwdg.de/software")
-    (synopsis
-     "Computation of Optimal Transport Plans and Wasserstein Distances")
-    (description
-     "Solve optimal transport problems.  Compute Wasserstein distances (a.k.a.
-Kantorovitch, Fortet--Mourier, Mallows, Earth Mover's, or minimal L_p
-distances), return the corresponding transference plans, and display them
-graphically.  Objects that can be compared include grey-scale images, (weighted)
-point patterns, and mass vectors.")
-    (license license:gpl2+)))
 
 (define-public r-transplotr
   (package
@@ -13696,6 +13700,33 @@ results.  Note that RGtk2 and @code{gWidgets2RGtk2} have been archived on CRAN.
 See <https://github.com/pievos101/@code{TopKLists>} for installation
 instructions.")
     (license license:lgpl3)))
+
+(define-public r-topictestlet
+  (package
+    (name "r-topictestlet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TopicTestlet" version))
+       (sha256
+        (base32 "0cjam8858567wdk1k1m4nsriw00nd6y0a7x2wbb5v3x1vs909qin"))))
+    (properties `((upstream-name . "TopicTestlet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-topicmodels r-tm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TopicTestlet")
+    (synopsis
+     "Topic Testlet Model for Calibrating Testlet Constructed Responses")
+    (description
+     "This package implements the Topic Testlet Model (TTM) as described by Xiong et
+al. (2025) <doi:10.1111/jedm.70001>.  The package integrates Latent Dirichlet
+Allocation (LDA) with the Partial Credit Model to account for local item
+dependence in testlets using latent topics from student textual responses.")
+    (license license:gpl3+)))
 
 (define-public r-topicscore
   (package
@@ -19647,19 +19678,20 @@ documentation and examples.")
 (define-public r-tidyprompt
   (package
     (name "r-tidyprompt")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyprompt" version))
        (sha256
-        (base32 "1zcmqdyhif2r3wqi70ydzh0j3pp28d5c273mgigwm4z6ay0d06rd"))))
+        (base32 "0mb5id9qq4shv31y2j96iayzvsbh1k8gdc0s3yhcxw1xph2wdbmd"))))
     (properties `((upstream-name . "tidyprompt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringr
+                             r-s7
                              r-rlang
                              r-r6
                              r-jsonlite
@@ -28398,13 +28430,13 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
 (define-public r-teal-widgets
   (package
     (name "r-teal-widgets")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.widgets" version))
        (sha256
-        (base32 "10nqlcsp2xz5rynxdzg9kpff8xmwvm1zpd9jmdvimvf57b5j2r6r"))))
+        (base32 "0shka82rz5ci0qqhz9cbv0grs637yd5p48dsxv822kjrp86n4dkw"))))
     (properties `((upstream-name . "teal.widgets")))
     (build-system r-build-system)
     (arguments
@@ -28472,13 +28504,13 @@ facilitates dataset merging in teal framework.")
 (define-public r-teal-slice
   (package
     (name "r-teal-slice")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.slice" version))
        (sha256
-        (base32 "1c6kskzf7qd4kfdfx6fvlh72qvqlq7c9lxqx8njr60l37l48rzwz"))))
+        (base32 "0gdmva44psfdqlq9k5r003mby99k3aj2x1ykp7lpbgbdyxnx15c8"))))
     (properties `((upstream-name . "teal.slice")))
     (build-system r-build-system)
     (arguments
@@ -28679,19 +28711,19 @@ and accurate reports.")
 (define-public r-teal-logger
   (package
     (name "r-teal-logger")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.logger" version))
        (sha256
-        (base32 "1yw6ywdcwm069lv36i69gzkyg3pc8k36dnj8wgyzvbv8r6720l5n"))))
+        (base32 "10anjqw3ff6vy46l7j0z2vbhpyfc0hns9qv1dn4r3c5dx54nn4al"))))
     (properties `((upstream-name . "teal.logger")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-shiny r-logger r-lifecycle r-glue))
+    (propagated-inputs (list r-withr r-shiny r-logger r-glue))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.logger/")
     (synopsis "Logging Setup for the 'teal' Family of Packages")
@@ -30306,13 +30338,13 @@ distribution along with clinical trials based on the Bayesian distribution.")
 (define-public r-tbm
   (package
     (name "r-tbm")
-    (version "0.3-9")
+    (version "0.3-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbm" version))
        (sha256
-        (base32 "1vhdnhqlcry2l8656llj6h4z4gcmvs17473qspa7w04ckkls2jy5"))))
+        (base32 "11g8xr3ggibwcybachkfjn55wsyaw7lijfnb04h1bsgb9zliaxv7"))))
     (properties `((upstream-name . "tbm")))
     (build-system r-build-system)
     (arguments
@@ -32065,43 +32097,6 @@ these estimators and their associated confidence intervals across various
 threshold values.")
     (license license:expat)))
 
-(define-public r-tailor
-  (package
-    (name "r-tailor")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tailor" version))
-       (sha256
-        (base32 "1sh1kibw28m803f1z7wy1bz6rwyshqli89gm2jni927v3agw281s"))))
-    (properties `((upstream-name . "tailor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-hardhat
-                             r-generics
-                             r-dplyr
-                             r-cli))
-    (home-page "https://github.com/tidymodels/tailor")
-    (synopsis "Iterative Steps for Postprocessing Model Predictions")
-    (description
-     "Postprocessors refine predictions outputted from machine learning models to
-improve predictive performance or better satisfy distributional limitations.
-This package introduces tailor objects, which compose iterative adjustments to
-model predictions.  A number of pre-written adjustments are provided with the
-package, such as calibration.  See Lichtenstein, Fischhoff, and Phillips (1977)
-<doi:10.1007/978-94-010-1276-8_19>.  Other methods and utilities to compose new
-adjustments are also included.  Tailors are tightly integrated with the
-tidymodels framework.")
-    (license license:expat)))
-
 (define-public r-tailloss
   (package
     (name "r-tailloss")
@@ -33284,13 +33279,13 @@ information and examples.")
 (define-public r-tablehtml
   (package
     (name "r-tablehtml")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tableHTML" version))
        (sha256
-        (base32 "0x86q0nddkyan9yh2jaldrnc30q1n3q0fnza2fnavzbz5c2hxapw"))))
+        (base32 "15lrv9mpm0l5y6w373wl07v8ljdbjazp9hkgzhvkxrql8lf75n9g"))))
     (properties `((upstream-name . "tableHTML")))
     (build-system r-build-system)
     (arguments

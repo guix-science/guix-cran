@@ -1637,32 +1637,6 @@ simulation studies. (Toshio Honda, Ching-Kang Ing, Wei-Ying Wu, 2019,
 <DOI:10.3150/18-BEJ1091>).")
     (license license:gpl2+)))
 
-(define-public r-quantregforest
-  (package
-    (name "r-quantregforest")
-    (version "1.3-7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quantregForest" version))
-       (sha256
-        (base32 "0b1xmjcv0wrad7il1gg1gaggq19v37akp8zh31dvsnnpmrk05zsp"))))
-    (properties `((upstream-name . "quantregForest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer r-randomforest))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/lorismichel/quantregForest")
-    (synopsis "Quantile Regression Forests")
-    (description
-     "Quantile Regression Forests is a tree-based ensemble method for estimation of
-conditional quantiles.  It is particularly well suited for high-dimensional
-data.  Predictor variables of mixed classes can be handled.  The package is
-dependent on the package @code{randomForest}', written by Andy Liaw.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-quantreg-nonpar
   (package
     (name "r-quantreg-nonpar")
@@ -3842,35 +3816,6 @@ hardware <https://quantum-computing.ibm.com/>.")
     (description
      "Molecular descriptors and outcomes for several public domain data sets.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-qs2
-  (package
-    (name "r-qs2")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qs2" version))
-       (sha256
-        (base32 "1pismis1ma48yvhx0v732nx8czfnm9i8q4wnwd9y5mf8sdivgjgb"))))
-    (properties `((upstream-name . "qs2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringfish r-rcppparallel r-rcpp))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/qsbase/qs2")
-    (synopsis "Efficient Serialization of R Objects")
-    (description
-     "Streamlines and accelerates the process of saving and loading R objects,
-improving speed and compression compared to other methods.  The package provides
-two compression formats: the qs2 format, which uses R serialization via the C
-API while optimizing compression and disk I/O, and the qdata format, featuring
-custom serialization for slightly faster performance and better compression.
-Additionally, the qs2 format can be directly converted to the standard RDS
-format, ensuring long-term compatibility with future versions of R.")
-    (license license:gpl3)))
 
 (define-public r-qryflow
   (package

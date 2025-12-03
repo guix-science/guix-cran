@@ -17,11 +17,11 @@
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages xml)
-  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages geo)
@@ -7025,13 +7025,13 @@ Arah (2023) <doi:10.1093/ije/dyad001>.")
 (define-public r-multibd
   (package
     (name "r-multibd")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiBD" version))
        (sha256
-        (base32 "1qjfr8hx8sr5m8370yzi09r8jnh3i6907wzj3v4h83vmjh81db71"))))
+        (base32 "0mjf7vzlfvllx7mrrsay21wwaz57gi61zkxysg23cr2mhzrj8vx6"))))
     (properties `((upstream-name . "MultiBD")))
     (build-system r-build-system)
     (arguments
@@ -13785,6 +13785,42 @@ signatures based on co-occurrence matrices but also allows for any user-defined
 functions.  It enables spatial analysis such as search, change detection, and
 clustering to be performed on spatial patterns (Nowosad (2021)
 <doi:10.1007/s10980-020-01135-0>).")
+    (license license:expat)))
+
+(define-public r-motherduck
+  (package
+    (name "r-motherduck")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "motherduck" version))
+       (sha256
+        (base32 "0jsw34ncvd87qy95x4p2kcrivmi0frhhra04j1m7hysz0f00lbs9"))))
+    (properties `((upstream-name . "motherduck")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-janitor
+                             r-httr2
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-assertthat))
+    (home-page "https://usrbinr.github.io/motherduck/")
+    (synopsis "Utilities for Managing a 'Motherduck' Database")
+    (description
+     "This package provides helper functions, metadata utilities, and workflows for
+administering and managing databases on the Motherduck cloud platform.  Some
+features require a Motherduck account (<https://motherduck.com/>).")
     (license license:expat)))
 
 (define-public r-mote
@@ -22483,6 +22519,31 @@ provided such as Truncate, replicate, sample
 <doi:10.1016/j.compenvurbsys.2013.03.004>.")
     (license license:gpl3+)))
 
+(define-public r-mlfdr
+  (package
+    (name "r-mlfdr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLFDR" version))
+       (sha256
+        (base32 "0w75gci02rapww8y1ap1p8aph156y8gvm53pvl59ln2yl7f6ddar"))))
+    (properties `((upstream-name . "MLFDR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nmof))
+    (home-page "https://cran.r-project.org/package=MLFDR")
+    (synopsis
+     "High Dimensional Mediation Analysis using Local False Discovery Rates")
+    (description
+     "This package implements a high dimensional mediation analysis algorithm using
+Local False Discovery Rates.  The methodology is described in Roy and Zhang
+(2024) <doi:10.48550/@code{arXiv.2402.13933>}.")
+    (license license:gpl2)))
+
 (define-public r-mlf
   (package
     (name "r-mlf")
@@ -25086,13 +25147,13 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (define-public r-mixedbiastest
   (package
     (name "r-mixedbiastest")
-    (version "0.4.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedbiastest" version))
        (sha256
-        (base32 "14cbxx8ndc2yq30ypgbb0xn7zljzh7p8as7si2lh2883i8gcr8sl"))))
+        (base32 "0sfgrzsxng527m8yicr3iz45h9wb2pq71zvhrvkkmvv1gg2l1clq"))))
     (properties `((upstream-name . "mixedbiastest")))
     (build-system r-build-system)
     (arguments
@@ -28268,6 +28329,46 @@ inflated value selection.  The proposed approach provides simultaneous
 identification of important regression predictors on the target count response
 as well.  More details about the proposed method are described in Li, Y., Wu,
 M., Wu, M., & Ma, S. (2023) <@code{arXiv:2309.15585>}.")
+    (license license:gpl3)))
+
+(define-public r-min2halfffd
+  (package
+    (name "r-min2halfffd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "min2HalfFFD" version))
+       (sha256
+        (base32 "1v2kf8q45v3llmv5xsqcglbvyx4wqphck9r8pyn987pplljldw1n"))))
+    (properties `((upstream-name . "min2HalfFFD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinybusy r-shiny r-hrtlfmc))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=min2HalfFFD")
+    (synopsis "Minimally Changed Two-Level Half-Fractional Factorial Designs")
+    (description
+     "In many agricultural, engineering, industrial, post-harvest and processing
+experiments, the number of factor level changes and hence the total number of
+changes is of serious concern as such experiments may consists of hard-to-change
+factors where it is physically very difficult to change levels of some factors
+or sometime such experiments may require normalization time to obtain adequate
+operating condition.  For this reason, run orders that offer the minimum number
+of factor level changes and at the same time minimize the possible influence of
+systematic trend effects on the experimentation have been sought.  Factorial
+designs with minimum changes in factors level may be preferred for such
+situations as these minimally changed run orders will minimize the cost of the
+experiments.  This technique can be employed to any half replicate of two level
+factorial run order where the number of factors are greater than two.  For
+method details see, Bhowmik, A., Varghese, E., Jaggi, S. and Varghese, C. (2017)
+<doi:10.1080/03610926.2016.1152490>.  This package generates all possible
+minimally changed two-level half-fractional factorial designs for different
+experimental setups along with various statistical criteria to measure the
+performance of these designs through a user-friendly interface.  It consist of
+the function @code{minimal.2halfFFD()} which launches the application interface.")
     (license license:gpl3)))
 
 (define-public r-mimsy
@@ -45506,13 +45607,13 @@ distribution without the integer restriction on the degrees of freedom.")
 (define-public r-matrixprofiler
   (package
     (name "r-matrixprofiler")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixprofiler" version))
        (sha256
-        (base32 "1kqpxg0mvyc494nr2whrcwjaa51jm5n2mxjwhdcr87jqp5y3hma6"))))
+        (base32 "0jij5fb21zvga4dpf9w1cgqfa7wd43kyxg5kwqdh9y4frm897lwy"))))
     (properties `((upstream-name . "matrixprofiler")))
     (build-system r-build-system)
     (arguments
@@ -49590,13 +49691,13 @@ data.")
 (define-public r-mapdeck
   (package
     (name "r-mapdeck")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapdeck" version))
        (sha256
-        (base32 "17z3fd0k5qlmy7yzdlbi105kadak86nwmb6zw39rd10in6j3vfc2"))))
+        (base32 "0pxanhh46shsw771mygrldq5pzbj0qxmvnb5m7h1bzmxm1gwxi9k"))))
     (properties `((upstream-name . "mapdeck")))
     (build-system r-build-system)
     (arguments
@@ -50619,31 +50720,6 @@ clustering through Manly mixture models by Zhu and Melnykov (2016)
 backward model selection procedures.")
     (license license:gpl2+)))
 
-(define-public r-manipulate
-  (package
-    (name "r-manipulate")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "manipulate" version))
-       (sha256
-        (base32 "1klknqdfppi5lf6zbda3r2aqzsghabcsaxmvd3vw3cy3aa984zky"))))
-    (properties `((upstream-name . "manipulate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=manipulate")
-    (synopsis "Interactive Plots for RStudio")
-    (description
-     "Interactive plotting functions for use within RStudio.  The manipulate function
-accepts a plotting expression and a set of controls (e.g. slider, picker,
-checkbox, or button) which are used to dynamically change values within the
-expression.  When a value is changed using its corresponding control the
-expression is automatically re-executed and the plot is redrawn.")
-    (license license:gpl2)))
-
 (define-public r-manifoldoptim
   (package
     (name "r-manifoldoptim")
@@ -50673,6 +50749,31 @@ this package's examples can be obtained from either JSS
 <https://www.jstatsoft.org/index.php/jss/article/view/v061i03/2886> or from the
 CRAN archives
 <https://cran.r-project.org/src/contrib/Archive/ldr/ldr_1.3.3.tar.gz>.")
+    (license license:gpl2+)))
+
+(define-public r-manifold
+  (package
+    (name "r-manifold")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "manifold" version))
+       (sha256
+        (base32 "080n3rr6wlxhbpwxk8z9jmlz3bpr4z4af8z59zin646slxp8a41w"))))
+    (properties `((upstream-name . "manifold")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
+    (home-page "https://cran.r-project.org/package=manifold")
+    (synopsis "Operations for Riemannian Manifolds")
+    (description
+     "This package implements operations for Riemannian manifolds, e.g., geodesic
+distance, Riemannian metric, exponential and logarithm maps, etc.  Also
+incorporates random object generator on the manifolds.  See Dai, Lin, and
+MÃ¼ller (2021) <doi:10.1111/biom.13385>.")
     (license license:gpl2+)))
 
 (define-public r-manifestor

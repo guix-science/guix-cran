@@ -2768,13 +2768,13 @@ better task related brain activity models in a quick and efficient manner.")
 (define-public r-autoharp
   (package
     (name "r-autoharp")
-    (version "0.0.12")
+    (version "0.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoharp" version))
        (sha256
-        (base32 "02sh0gvvgf3y6wwrhd00pgl65zixyhmmwjx04z24swbdham48knp"))))
+        (base32 "0817a9r0cy8rdz2nfp3zfqqbh5vdggh4m4gd18alcqsjqxpkja0f"))))
     (properties `((upstream-name . "autoharp")))
     (build-system r-build-system)
     (arguments
@@ -2785,7 +2785,6 @@ better task related brain activity models in a quick and efficient manner.")
                              r-shiny
                              r-rmarkdown
                              r-rlang
-                             r-pryr
                              r-magrittr
                              r-lintr
                              r-knitr
@@ -5189,39 +5188,6 @@ graph need not be conditionally independent given their predecessor node),
 including multinomial and two-parameter normal as families.  Thus this package
 also generalizes mark-capture-recapture analysis.")
     (license license:gpl2+)))
-
-(define-public r-ast2ast
-  (package
-    (name "r-ast2ast")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ast2ast" version))
-       (sha256
-        (base32 "1vsnd7w0z0wr4185wg6k7xjd4xc8qsm08f4wfgcnyd79x56wczky"))))
-    (properties `((upstream-name . "ast2ast")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-purrr
-                             r-dfdr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Konrad1991/ast2ast")
-    (synopsis "Translates an R Function to a C++ Function")
-    (description
-     "Enable translation of a tiny subset of R to C++.  The user has to define a R
-function which gets translated.  For a full list of possible functions check the
-documentation.  After translation an R function is returned which is a shallow
-wrapper around the C++ code.  Alternatively an external pointer to the C++
-function is returned to the user.  The intention of the package is to generate
-fast functions which can be used as ode-system or during optimization.")
-    (license license:gpl2)))
 
 (define-public r-ast
   (package
@@ -12490,13 +12456,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.12")
+    (version "0.8.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "0rnv95lk0mj3zrs70rq23qqyg60fy4rd978lbpbzandbby5bnc1c"))))
+        (base32 "0q3lc7l588wq4070r3x6rarv8x4wsq6c2qam0g6jxcyjiyzk3ax9"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (arguments
@@ -12516,8 +12482,8 @@ accomplished by maximizing instead of minimizing a clustering objective
 function, such as the intra-cluster variance (used in k-means clustering) or the
 sum of pairwise distances within clusters.  The main function
 @code{anticlustering()} gives access to optimal and heuristic anticlustering
-methods described in Papenberg and Klau Klau (2021; <doi:10.1037/met0000301>),
-Brusco et al. (2020; <doi:10.1111/bmsp.12186>), Papenberg (2024;
+methods described in Papenberg and Klau (2021; <doi:10.1037/met0000301>), Brusco
+et al. (2020; <doi:10.1111/bmsp.12186>), Papenberg (2024;
 <doi:10.1111/bmsp.12315>), Papenberg, Wang, et al. (2025;
 <doi:10.1016/j.crmeth.2025.101137>), Papenberg, Breuer, et al. (2025;
 <doi:10.1017/psy.2025.10052>), and Yang et al. (2022;
@@ -14268,13 +14234,13 @@ guides the analysis from start to finish.")
 (define-public r-and
   (package
     (name "r-and")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "and" version))
        (sha256
-        (base32 "1g7zb6p24crcxg0pd5kp55r8pyj14sq053yicl6y0xw1jbrcvmqp"))))
+        (base32 "00m07n3vs3xlx8amf7vbbknxvpvwn9fwh01sb588ihgmrvncs1kf"))))
     (properties `((upstream-name . "and")))
     (build-system r-build-system)
     (arguments
@@ -17653,13 +17619,13 @@ resolving a small number ob closed equations.")
 (define-public r-algaeclassify
   (package
     (name "r-algaeclassify")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "algaeClassify" version))
        (sha256
-        (base32 "0a0rfa3j2wnpbp4vmnyx2dvsb2y90g9phhvq8n1286f6afaks9j9"))))
+        (base32 "0lwgsah5hvyikakrd1xxdy0r2gp3vc8v9zx9zpnq4pmjsa4fqnvb"))))
     (properties `((upstream-name . "algaeClassify")))
     (build-system r-build-system)
     (arguments
@@ -25805,19 +25771,20 @@ COVID-19 and actuarial data\".  Open Physics, 21(1), 20220242.
 (define-public r-actuare
   (package
     (name "r-actuare")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actuaRE" version))
        (sha256
-        (base32 "0nx2zm0f4gnbkx92lyz5wsjxq35pij7c8y6zf69wyqb6m9wlsp0a"))))
+        (base32 "1ldj668cxfd7nwx4sf97iicqcjvm88rd3yj8apz48b1s5wlm6jsq"))))
     (properties `((upstream-name . "actuaRE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-statmod
+                             r-reformulas
                              r-nlme
                              r-magrittr
                              r-lme4
@@ -26746,13 +26713,13 @@ PRISM raster.  See the examples, testing versions and more details from:
 (define-public r-acdcquery
   (package
     (name "r-acdcquery")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acdcquery" version))
        (sha256
-        (base32 "0zilw7bwblayhfs0sf11dl7kcb5azzljx93679syscvkmjn5myil"))))
+        (base32 "0k2r0913rx28bry6av8gjsi0rkqyv6bdv4hm12xrcxgx2ba0r9j0"))))
     (properties `((upstream-name . "acdcquery")))
     (build-system r-build-system)
     (arguments

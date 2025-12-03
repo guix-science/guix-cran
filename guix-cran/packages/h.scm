@@ -7250,13 +7250,13 @@ series.  An introducing paper is Irpino A. Verde R. (2015) <doi:
 (define-public r-histdata
   (package
     (name "r-histdata")
-    (version "0.9-3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HistData" version))
        (sha256
-        (base32 "0y244i2swjn8jcmr7dvlmqpxd2dr9154xv97lxwpmv8421cpji8n"))))
+        (base32 "1c9a5g75idwivaf5qi5h1rsmdhzzq096ymsi0wykccdl2wcdsmx1"))))
     (properties `((upstream-name . "HistData")))
     (build-system r-build-system)
     (arguments
@@ -11252,6 +11252,31 @@ global and local influence for four possible perturbation schema.")
 case conversion for R'.")
     (license license:expat)))
 
+(define-public r-heavytails
+  (package
+    (name "r-heavytails")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heavytails" version))
+       (sha256
+        (base32 "18c6f5kh61zla13z0js4w6z52wkbqrdxs4qw8nx7gbkgvaaf3bld"))))
+    (properties `((upstream-name . "heavytails")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/0diraf/heavytails")
+    (synopsis "Estimators and Algorithms for Heavy-Tailed Distributions")
+    (description
+     "This package implements the estimators and algorithms described in Chapters 8
+and 9 of the book \"The Fundamentals of Heavy Tails: Properties, Emergence, and
+Estimation\" by Nair et al. (2022, ISBN:9781009053730).  These include the Hill
+estimator, Moments estimator, Pickands estimator, Peaks-over-Threshold (POT)
+method, Power-law fit, and the Double Bootstrap algorithm.")
+    (license license:expat)))
+
 (define-public r-heatwaver
   (package
     (name "r-heatwaver")
@@ -13177,6 +13202,34 @@ al. (2025) <doi:10.1080/07350015.2025.2526424>.")
      "Some methods to manipulate HDF5 files, extending the hdf5r package.  Reading and
 writing R objects to HDF5 formats follow the specification of @code{AnnData}
 <https://anndata.readthedocs.io/en/latest/fileformat-prose.html>.")
+    (license license:expat)))
+
+(define-public r-hdf5lib
+  (package
+    (name "r-hdf5lib")
+    (version "2.0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdf5lib" version))
+       (sha256
+        (base32 "1hrh3r7yqb73zqfc4navgq7gf5vmgs4bpbdvwafcas9lax8is6kl"))))
+    (properties `((upstream-name . "hdf5lib")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/cmmr/hdf5lib")
+    (synopsis "Headers and Static Libraries for 'HDF5'")
+    (description
+     "HDF5 (Hierarchical Data Format 5) is a high-performance library and file format
+for storing and managing large, complex data.  This package provides the static
+libraries and headers for the HDF5 C library (release 2.0.0).  It is intended
+for R package developers to use in the @code{LinkingTo} field, which eliminates
+the need for users to install system-level HDF5 dependencies.  This build is
+compiled with thread-safety enabled and supports dynamic loading of external
+compression filters.  HDF5 is developed by The HDF Group
+<https://www.hdfgroup.org/>.")
     (license license:expat)))
 
 (define-public r-hdd
@@ -16162,13 +16215,13 @@ items in form of convenient R objects.")
 (define-public r-hac
   (package
     (name "r-hac")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HAC" version))
        (sha256
-        (base32 "041nlm48c69kv20hsvnrwljbr2yh7d7v209iqvd26x2i0fmnx3zn"))))
+        (base32 "0fpbrn2rjf1jzcwapm727im8vz005rmbnkihj43s834p6la2vfr7"))))
     (properties `((upstream-name . "HAC")))
     (build-system r-build-system)
     (arguments

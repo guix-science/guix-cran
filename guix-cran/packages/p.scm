@@ -3540,31 +3540,27 @@ polytomous and dichotomous data.")
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
-    (version "2025.8")
+    (version "2025.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PsychWordVec" version))
        (sha256
-        (base32 "06adahbkd9qp3zyf92vr99fagm8w8sgrhhn321scvavwcs3lagyp"))))
+        (base32 "1ir35fayplrndh5a4b758v24vxdk4bvrpw0whvc0b0ynfqf48y4c"))))
     (properties `((upstream-name . "PsychWordVec")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-word2vec
-                             r-vroom
-                             r-text2vec
+    (propagated-inputs (list r-vroom
                              r-stringr
                              r-rtsne
-                             r-rsparse
                              r-rgl
                              r-qgraph
                              r-purrr
                              r-psych
                              r-ggrepel
                              r-ggplot2
-                             r-fasttextr
                              r-dplyr
                              r-data-table
                              r-corrplot
@@ -4419,6 +4415,44 @@ Diekmann, B. Lisser, M. Nool, B. Sommeijer & A.M. de Roos (2001)
     (synopsis "Penalized Smoothing Splines")
     (description "Smoothing splines with penalties on order m derivatives.")
     (license (license:fsdg-compatible "Unlimited"))))
+
+(define-public r-pspi
+  (package
+    (name "r-pspi")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSPI" version))
+       (sha256
+        (base32 "1p3kjjrlqmy4mm80q7cmn0gqbj1yinwhqz5nv5h0j99blfwjyb21"))))
+    (properties `((upstream-name . "PSPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rcppprogress
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pg
+                             r-nnet
+                             r-mvtnorm
+                             r-dplyr
+                             r-arm))
+    (home-page "https://cran.r-project.org/package=PSPI")
+    (synopsis "Propensity Score Predictive Inference for Generalizability")
+    (description
+     "This package provides a suite of Propensity Score Predictive Inference (PSPI)
+methods to generalize treatment effects in trials to target populations.  The
+package includes an existing model Bayesian Causal Forest (BCF) and four PSPI
+models (BCF-PS, @code{FullBART}, @code{SplineBART}, D@code{SplineBART}).  These
+methods leverage Bayesian Additive Regression Trees (BART) to adjust for
+high-dimensional covariates and nonlinear associations, while @code{SplineBART}
+and D@code{SplineBART} further use propensity score based splines to address
+covariate shift between trial data and target population.")
+    (license license:gpl2)))
 
 (define-public r-pspearman
   (package
@@ -7883,13 +7917,13 @@ King, and Komisarchik (2025) <https://gking.harvard.edu/@code{conjointE>}.")
 (define-public r-projmgr
   (package
     (name "r-projmgr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projmgr" version))
        (sha256
-        (base32 "0wj96zvvhpnh6cn2sm3n4nv746v76ybv7blx0lsq98xwk4abqp8k"))))
+        (base32 "1511ds72m3av80hc2rpfrg2c3jmwdbi0i4pv8p0i7vm5yvai3ib3"))))
     (properties `((upstream-name . "projmgr")))
     (build-system r-build-system)
     (arguments
@@ -9340,49 +9374,6 @@ joint probability of superior performance and stability is also provided.")
 \"Probability and Bayesian Modeling\", CRC Press, (2019, ISBN: 1138492566).")
     (license license:gpl2+)))
 
-(define-public r-probably
-  (package
-    (name "r-probably")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "probably" version))
-       (sha256
-        (base32 "1xccmyapha9vil0fqy8wxpayr1f7hwacdip9ff5v1a8lar4qgk53"))))
-    (properties `((upstream-name . "probably")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-workflows
-                             r-withr
-                             r-vctrs
-                             r-tune
-                             r-tidyselect
-                             r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-pillar
-                             r-hardhat
-                             r-ggplot2
-                             r-generics
-                             r-furrr
-                             r-dplyr
-                             r-cli
-                             r-butcher))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tidymodels/probably")
-    (synopsis "Tools for Post-Processing Predicted Values")
-    (description
-     "Models can be improved by post-processing class probabilities, by:
-recalibration, conversion to hard probabilities, assessment of equivocal zones,
-and other activities.  probably contains tools for conducting these operations
-as well as calibration tools and conformal inference techniques for regression
-models.")
-    (license license:expat)))
-
 (define-public r-proae
   (package
     (name "r-proae")
@@ -9903,38 +9894,6 @@ the performance in 2007-2020.")
 downloaded in bulk and loaded into R for spatial analysis.  Some user friendly
 visualizations are also provided.")
     (license license:expat)))
-
-(define-public r-priorsense
-  (package
-    (name "r-priorsense")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "priorsense" version))
-       (sha256
-        (base32 "0rih35068kdaj68b4pg0xrl6r6gr9jiabh57kqbaja5id586rpi4"))))
-    (properties `((upstream-name . "priorsense")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-posterior
-                             r-matrixstats
-                             r-ggplot2
-                             r-ggh4x
-                             r-ggdist
-                             r-checkmate))
-    (native-inputs (list r-quarto))
-    (home-page "https://github.com/n-kall/priorsense")
-    (synopsis "Prior Diagnostics and Sensitivity Analysis")
-    (description
-     "This package provides functions for prior and likelihood sensitivity analysis in
-Bayesian models.  Currently it implements methods to determine the sensitivity
-of the posterior to power-scaling perturbations of the prior and likelihood.")
-    (license license:gpl3+)))
 
 (define-public r-prioritylasso
   (package
@@ -10629,13 +10588,13 @@ aggregation of these tabular inputs.")
 (define-public r-primarycensored
   (package
     (name "r-primarycensored")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primarycensored" version))
        (sha256
-        (base32 "1afj8rm3rmxhnxzpb5hpsfna02gkld0103fggblq715l6jpbvwzf"))))
+        (base32 "181id96yh7mgysp8ijw8dwnlsch3fsf9crl784vwyz93wdj8g73k"))))
     (properties `((upstream-name . "primarycensored")))
     (build-system r-build-system)
     (arguments
@@ -14017,13 +13976,13 @@ see Wu et al. (2022) <doi:10.1002/sim.9387>.")
 (define-public r-pprl
   (package
     (name "r-pprl")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PPRL" version))
        (sha256
-        (base32 "1m49n7kl9675hrlh6vqq69sp7bdiv4fwlncqpp58kz67jk1ypnf0"))))
+        (base32 "1cp0lzzjz52lypxm3l6ag98v6m5cb1k56m51ml539xr5vfml0law"))))
     (properties `((upstream-name . "PPRL")))
     (build-system r-build-system)
     (arguments
@@ -19619,13 +19578,13 @@ the base temperature for growing degree days (Yang et al. (1995)
 (define-public r-polle
   (package
     (name "r-polle")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polle" version))
        (sha256
-        (base32 "0rcsyj0v7dva2diqbymjdymazl1p9l6f6yvbfi87im8an7573pqr"))))
+        (base32 "0d5885jjrjb4nf48rl7yiyfl2qialcyf9fl7x7762wpfj6g3hn7a"))))
     (properties `((upstream-name . "polle")))
     (build-system r-build-system)
     (arguments
@@ -27876,13 +27835,13 @@ across each trace route.")
 (define-public r-pinference
   (package
     (name "r-pinference")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pinference" version))
        (sha256
-        (base32 "0c7m4fs7nbvp48gjgcz8n9w8c04bkkhh47aph8xgiwd1va7aigw7"))))
+        (base32 "1aik342cnn1kznm0lyx6wbckd2afkl72fnzk8ms6shsnbpy3fl29"))))
     (properties `((upstream-name . "Pinference")))
     (build-system r-build-system)
     (arguments
@@ -36666,6 +36625,53 @@ models based on censored data using inverse weighting and cross-validation.
 Most of the pec functionality has been moved to @code{riskRegression}'.")
     (license license:gpl2+)))
 
+(define-public r-peaxai
+  (package
+    (name "r-peaxai")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PEAXAI" version))
+       (sha256
+        (base32 "0c6lpq1xf2fb84n8x4bhwnb4zwcwhz8iy90zxf7dbiv417iwdc26"))))
+    (properties `((upstream-name . "PEAXAI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rminer
+                             r-prroc
+                             r-proc
+                             r-iml
+                             r-fastshap
+                             r-dplyr
+                             r-dear
+                             r-caret
+                             r-benchmarking))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rgonzalezmoyano/PEAXAI")
+    (synopsis
+     "Probabilistic Efficiency Analysis Using Explainable Artificial Intelligence")
+    (description
+     "This package provides a probabilistic framework that integrates Data Envelopment
+Analysis (DEA) (Banker et al., 1984) <doi:10.1287/mnsc.30.9.1078> with machine
+learning classifiers (Kuhn, 2008) <doi:10.18637/jss.v028.i05> to estimate both
+the (in)efficiency status and the probability of efficiency for decision-making
+units.  The approach trains predictive models on DEA-derived efficiency labels
+(Charnes et al., 1985) <doi:10.1016/0304-4076(85)90133-2>, enabling explainable
+artificial intelligence (XAI) workflows with global and local interpretability
+tools, including permutation importance (Molnar et al., 2018)
+<doi:10.21105/joss.00786>, Shapley value explanations (Strumbelj & Kononenko,
+2014) <doi:10.1007/s10115-013-0679-x>, and sensitivity analysis (Cortez, 2011)
+<https://CRAN.R-project.org/package=rminer>.  The framework also supports
+probability-threshold peer selection and counterfactual improvement
+recommendations for benchmarking and policy evaluation.  The probabilistic
+efficiency framework is detailed in GonzÃ¡lez-Moyano et al. (2025)
+\"Probability-based Technical Efficiency Analysis through Machine Learning\", in
+review for publication.")
+    (license license:gpl3)))
+
 (define-public r-pearsonica
   (package
     (name "r-pearsonica")
@@ -40377,27 +40383,31 @@ data are provided.")
 (define-public r-patternplot
   (package
     (name "r-patternplot")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patternplot" version))
        (sha256
-        (base32 "0n4y23g894amwi62lx10k15i28rsmiaw52bds8dzmvkykkp9mm8q"))))
+        (base32 "02fnv50b4nd3s3i6833dpiwn516bpx4w4953hhgqwqfxs94sy0qp"))))
     (properties `((upstream-name . "patternplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel
+    (propagated-inputs (list r-rcurl
+                             r-rcppparallel
                              r-rcpp
                              r-r6
                              r-png
+                             r-markdown
+                             r-knitr
                              r-jpeg
                              r-gtable
                              r-gridextra
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cairo))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=patternplot")
     (synopsis
@@ -45763,13 +45773,13 @@ decisions based on timely and detailed economic insights.")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "100im9syr6fdnkvviyrssgx2j4ass0wb4w3z21k1g0nrza1a3a25"))))
+        (base32 "18cwfi1s0w6409snapj1vqfaykqyfqkm7cvsgv1q4ysh5ksj494z"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (arguments

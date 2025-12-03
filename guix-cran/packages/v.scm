@@ -2728,13 +2728,13 @@ analyzing and visualizing data specific to Microsoft Viva Insights'.")
 (define-public r-vitals
   (package
     (name "r-vitals")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vitals" version))
        (sha256
-        (base32 "002ib0cxm5cc9mdf2gx0g2fif1rr9fzlqdfrazfqh8w22wfvkzhp"))))
+        (base32 "07n02ad8h8g33pgm118cv3g1mbnvg0z3xnvaxaq22j65lqy1xc51"))))
     (properties `((upstream-name . "vitals")))
     (build-system r-build-system)
     (arguments
@@ -2744,17 +2744,16 @@ analyzing and visualizing data specific to Microsoft Viva Insights'.")
                              r-tidyr
                              r-tibble
                              r-s7
-                             r-rstudioapi
                              r-rlang
                              r-r6
                              r-purrr
                              r-jsonlite
+                             r-httr2
                              r-httpuv
                              r-glue
                              r-ellmer
                              r-dplyr
                              r-cli))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/tidyverse/vitals")
     (synopsis "Large Language Model Evaluation")
     (description
@@ -4257,13 +4256,13 @@ available.")
 (define-public r-vip
   (package
     (name "r-vip")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vip" version))
        (sha256
-        (base32 "0n87g2z354az0scsf7w7n144p77yv1mk96w5vacn25p7jlldsram"))))
+        (base32 "17x5j793cqbvai37d10rx55i5j3sl4hbiihjg7anxmw83fiwrrxj"))))
     (properties `((upstream-name . "vip")))
     (build-system r-build-system)
     (arguments
@@ -4281,9 +4280,10 @@ provides model- agnostic approaches that can be applied to any supervised
 learning algorithm.  These include 1) an efficient permutation-based variable
 importance measure, 2) variable importance based on Shapley values (Strumbelj
 and Kononenko, 2014) <doi:10.1007/s10115-013-0679-x>, and 3) the variance-based
-approach described in Greenwell et al. (2018) <@code{arXiv:1805.04755>}.  A
-variance-based method for quantifying the relative strength of interaction
-effects is also included (see the previous reference for details).")
+approach described in Greenwell et al. (2018)
+<doi:10.48550/@code{arXiv.1805.04755>}.  A variance-based method for quantifying
+the relative strength of interaction effects is also included (see the previous
+reference for details).")
     (license license:gpl2+)))
 
 (define-public r-violinplotter
@@ -6267,13 +6267,13 @@ their importance in global ecosystems.  The package includes the function
 (define-public r-vegdata
   (package
     (name "r-vegdata")
-    (version "0.9.12")
+    (version "1.9.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegdata" version))
        (sha256
-        (base32 "1fgha0sxgymiqnr6gwa3pjmbvb76iwxnpxs666zifscch4fz3z99"))))
+        (base32 "13xfk9i8g3i5d8n7213x6gixxsszff8lv2ngvj8yp83n57r9knf8"))))
     (properties `((upstream-name . "vegdata")))
     (build-system r-build-system)
     (arguments
@@ -6284,23 +6284,23 @@ their importance in global ecosystems.  The package includes the function
                              r-rsqlite
                              r-plyr
                              r-magrittr
-                             r-indicspecies
-                             r-httr
                              r-hoardr
                              r-foreign
+                             r-forcats
                              r-dplyr
                              r-dbplyr
                              r-dbi
+                             r-data-table
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://germansl.infinitenature.org")
+    (home-page "https://git.loe.auf.uni-rostock.de/jansen/vegdata.git")
     (synopsis "Access Vegetation Databases and Treat Taxonomy")
     (description
      "Handling of vegetation data from different sources ( Turboveg 2.0
 <https://www.synbiosys.alterra.nl/turboveg/>; the German national repository
 <https://www.vegetweb.de> and others.  Taxonomic harmonization (given
-appropriate taxonomic lists, e.g. the German taxonomic standard list
-\"@code{GermanSL}\", <https://germansl.infinitenature.org>).")
+appropriate taxonomic lists, e.g. the Euro+Med list
+<https://eurosl.infinitenature.org>).")
     (license license:gpl2+)))
 
 (define-public r-vegclust
@@ -6696,37 +6696,31 @@ argument multiple which, when set to FALSE, reverts them to the base::sets
 (define-public r-vecmatch
   (package
     (name "r-vecmatch")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecmatch" version))
        (sha256
-        (base32 "0yx3qg5d7ls49w6amwm5i90in4n40l8bms50q47hgpq11dfnvpij"))))
+        (base32 "1xhn993s5giavda9yj6gx1n7bv841mxrpgiahzgqwqjy1vv8s53w"))))
     (properties `((upstream-name . "vecmatch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
-                             r-vgam
                              r-rstatix
                              r-rlang
+                             r-progressr
                              r-productplots
                              r-optmatch
-                             r-nnet
-                             r-mclogit
                              r-matching
-                             r-mass
                              r-ggpubr
                              r-ggpp
                              r-ggplot2
                              r-foreach
-                             r-dorng
                              r-cli
-                             r-chk
-                             r-callr
-                             r-brglm2))
+                             r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Polymerase3/vecmatch")
     (synopsis

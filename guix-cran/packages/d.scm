@@ -608,27 +608,6 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
 <doi:10.1016/j.apm.2013.05.038>; Nagy et al. (2011) <doi:10.1002/acs.1239>.")
     (license license:gpl3)))
 
-(define-public r-dynlm
-  (package
-    (name "r-dynlm")
-    (version "0.3-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynlm" version))
-       (sha256
-        (base32 "1g8qsb5m69yn35sm0shd97vbnbpqfkjkd7lbkwch1gpfxkld53zq"))))
-    (properties `((upstream-name . "dynlm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-lmtest r-car))
-    (home-page "https://cran.r-project.org/package=dynlm")
-    (synopsis "Dynamic Linear Regression")
-    (description "Dynamic linear models and time series regression.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-dynforest
   (package
     (name "r-dynforest")
@@ -1979,13 +1958,13 @@ absolute quantification under uncertainty.  See Comoglio et al. (2013)
 (define-public r-dunlin
   (package
     (name "r-dunlin")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dunlin" version))
        (sha256
-        (base32 "1w1qpjnn6fpqa7lv3asa0m8xi95xcxkjg3i147c64xp46xxsjjgz"))))
+        (base32 "1r3nmid31r8i1nlj5fylm8fi7byp2382kchcvk3ggiym1xgmfi9c"))))
     (properties `((upstream-name . "dunlin")))
     (build-system r-build-system)
     (arguments
@@ -3119,13 +3098,13 @@ upon publication.")
 (define-public r-dteassurance
   (package
     (name "r-dteassurance")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTEAssurance" version))
        (sha256
-        (base32 "1s24kanx7khpaw42a8xdssysrmhj8z3n8v5apgjk7lg06dax6qvb"))))
+        (base32 "00sf9b2i5p91va141wk9n5lwmxnyn4076fzpbhhswsxzdlbnfba0"))))
     (properties `((upstream-name . "DTEAssurance")))
     (build-system r-build-system)
     (arguments
@@ -4295,13 +4274,13 @@ non-parametric hypothesis testing and gene set enrichment analysis.")
 (define-public r-dslabs
   (package
     (name "r-dslabs")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dslabs" version))
        (sha256
-        (base32 "1jkda0z1bllgsf7i7wyzxf5qmly2w2s2pa2pgag63cq5c7h3ad8w"))))
+        (base32 "1pgak1k9p42v2swnyn5if295yy6vb9n8yl94ca4zzk50sfwlkbis"))))
     (properties `((upstream-name . "dslabs")))
     (build-system r-build-system)
     (arguments
@@ -4435,6 +4414,41 @@ remote and non-disclosive analysis of sensitive research data.  This package
 defines the API that is to be implemented by @code{DataSHIELD} compliant data
 repositories.")
     (license license:lgpl2.1+)))
+
+(define-public r-dsfm
+  (package
+    (name "r-dsfm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DSFM" version))
+       (sha256
+        (base32 "07av741n3s1pl7n5328a21nxkyky559nzm4wcbkq0403h062958v"))))
+    (properties `((upstream-name . "DSFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sopc
+                             r-sn
+                             r-psych
+                             r-matrixcalc
+                             r-mass
+                             r-elasticnet))
+    (home-page "https://cran.r-project.org/package=DSFM")
+    (synopsis "Distributed Skew Factor Model Estimation Methods")
+    (description
+     "This package provides a distributed framework for simulating and estimating skew
+factor models under various skewed and heavy-tailed distributions.  The methods
+support distributed data generation, aggregation of local estimators, and
+evaluation of estimation performance via mean squared error, relative error, and
+sparsity measures.  The distributed principal component (PC) estimators
+implemented in the package include IPC (Independent Principal Component),'PPC
+(Project Principal Component), SPC (Sparse Principal Component), and other
+related distributed PC methods.  The methodological background follows Guo G.
+(2023) <doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
 
 (define-public r-dsem
   (package
@@ -5657,13 +5671,13 @@ profiles for two models, @code{check_drift()} executes all checks against drift.
 (define-public r-driftdm
   (package
     (name "r-driftdm")
-    (version "0.2.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dRiftDM" version))
        (sha256
-        (base32 "0bimxfw2w2vmxyyksyxsfvn06zhgvw9z4303800d70c83nv98mm9"))))
+        (base32 "033b99pssfrzjfh3jvd5wk8pjpm7pv19kpw6s8vxfqrmdaslafvv"))))
     (properties `((upstream-name . "dRiftDM")))
     (build-system r-build-system)
     (arguments
@@ -5672,10 +5686,14 @@ profiles for two models, @code{check_drift()} executes all checks against drift.
     (propagated-inputs (list r-withr
                              r-rdpack
                              r-rcpp
+                             r-purrr
                              r-progress
+                             r-pbapply
+                             r-mirai
                              r-lifecycle
                              r-dfoptim
-                             r-deoptim))
+                             r-deoptim
+                             r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bucky2177/dRiftDM")
     (synopsis "Estimating (Time-Dependent) Drift Diffusion Models")
@@ -13059,6 +13077,33 @@ replacement and other utilities.  Currently, in-memory dist object backend is
 supported.")
     (license license:gpl3)))
 
+(define-public r-distionary
+  (package
+    (name "r-distionary")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distionary" version))
+       (sha256
+        (base32 "13xc6i1fvp5dfp8sv5h2b2zi545idqmmnwra73yv9n44kq1rilfr"))))
+    (properties `((upstream-name . "distionary")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang r-ellipsis r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://distionary.probaverse.com/")
+    (synopsis "Create and Evaluate Probability Distributions")
+    (description
+     "Create and evaluate probability distribution objects from a variety of families
+or define custom distributions.  Automatically compute distributional
+properties, even when they have not been specified.  This package supports
+statistical modeling and simulations, and forms the core of the probaverse suite
+of R packages.")
+    (license license:expat)))
+
 (define-public r-distinctiveness
   (package
     (name "r-distinctiveness")
@@ -14220,13 +14265,13 @@ and Boisjoly, G. (2023) <doi:10.1007/978-3-031-20719-8>.")
 (define-public r-discrim
   (package
     (name "r-discrim")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discrim" version))
        (sha256
-        (base32 "1xmj2y873z736s9gqh5b02a21wkg8y5xgfy2v2h80q93a0fmallr"))))
+        (base32 "14if3dg14dl99d25z8ymckx09zb6xhxqmdrs5zf0n8f189xi0cjq"))))
     (properties `((upstream-name . "discrim")))
     (build-system r-build-system)
     (arguments
@@ -16561,38 +16606,42 @@ DIF analysis using user-friendly interfaces.")
 (define-public r-difr
   (package
     (name "r-difr")
-    (version "6.0.0")
+    (version "6.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "difR" version))
        (sha256
-        (base32 "0a4kgy6vi0d56d5hs22vyyblqxklg629zj8i79h0afp5gjrzixbs"))))
+        (base32 "0qn64qaidmd4djmv82yg5iiwqakplcyvff444l4xmng11b3245dc"))))
     (properties `((upstream-name . "difR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vgam
+                             r-tidyr
+                             r-tibble
                              r-mirt
                              r-ltm
                              r-lme4
                              r-glmnet
+                             r-ggplot2
+                             r-dplyr
                              r-desctools
                              r-deltaplotr))
     (home-page "https://github.com/343Babou/difR")
     (synopsis
-     "Collection of Methods to Detect Dichotomous and Polytomous Differential Item Functioning (DIF)")
+     "Collection of Methods to Detect Dichotomous, Polytomous, and Continuous Differential Item Functioning (DIF)")
     (description
      "This package provides methods to detect differential item functioning (DIF) in
-dichotomous and polytomous items, using both classical and modern approaches.
-These include Mantel-Haenszel procedures, logistic regression (including ordinal
-models), and regularization-based methods such as LASSO. Uniform and non-uniform
-DIF effects can be detected, and some methods support multiple focal groups.
-The package also provides tools for anchor purification, rest score matching,
-effect size estimation, and DIF simulation.  See Magis, Beland, Tuerlinckx, and
-De Boeck (2010, Behavior Research Methods, 42, 847â862,
-<doi:10.3758/BRM.42.3.847>) for a general overview.")
+dichotomous, polytomous, and continuous items, using both classical and modern
+approaches.  These include Mantel-Haenszel procedures, logistic regression
+(including ordinal models), and regularization-based methods such as LASSO.
+Uniform and non-uniform DIF effects can be detected, and some methods support
+multiple focal groups.  The package also provides tools for anchor purification,
+rest score matching, effect size estimation, and DIF simulation.  See Magis,
+Beland, Tuerlinckx, and De Boeck (2010, Behavior Research Methods, 42,
+847â862, <doi:10.3758/BRM.42.3.847>) for a general overview.")
     (license license:gpl2+)))
 
 (define-public r-difplus
@@ -19724,30 +19773,6 @@ into binary outcomes.")
 Department, including number formatting, project templates and curated reference
 data.")
     (license license:gpl3+)))
-
-(define-public r-dfdr
-  (package
-    (name "r-dfdr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dfdr" version))
-       (sha256
-        (base32 "1s7i11sl6m80hryggxby4c0knzk6nxqnlwfpzgg4a2bnqnwygfya"))))
-    (properties `((upstream-name . "dfdr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-r6 r-purrr r-pryr))
-    (home-page "https://cran.r-project.org/package=dfdr")
-    (synopsis "Automatic Differentiation of Simple Functions")
-    (description
-     "Implementation of automatically computing derivatives of functions (see Mailund
-Thomas (2017) <doi:10.1007/978-1-4842-2881-4>).  Moreover, calculating
-gradients, Hessian and Jacobian matrices is possible.")
-    (license license:gpl3)))
 
 (define-public r-dfd
   (package
@@ -25062,13 +25087,13 @@ chosen columns and collapse it into one row.")
 (define-public r-deduped
   (package
     (name "r-deduped")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deduped" version))
        (sha256
-        (base32 "0qb9g8fpb0ggkwhvp2l5y0lp0pgkfyxzcnmaq2ln9y2z1zgmh866"))))
+        (base32 "0krlgf7xhvxkk69ah8qwv0wrpqsw72vyg64amh047c8gnlj5n6s1"))))
     (properties `((upstream-name . "deduped")))
     (build-system r-build-system)
     (arguments
@@ -33241,34 +33266,6 @@ the DAGWOOD algorithm.  Further description can be found in Haber et al (2022)
      "Draw, manipulate, and evaluate directed acyclic graphs and simulate
 corresponding data, as described in International Journal of Epidemiology
 50(6):1772-1777.")
-    (license license:gpl2)))
-
-(define-public r-dagitty
-  (package
-    (name "r-dagitty")
-    (version "0.3-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dagitty" version))
-       (sha256
-        (base32 "10iw5ldra7ih3jpp1iaac6cbfgpl62bq09zl30c0z03mzhj18vvr"))))
-    (properties `((upstream-name . "dagitty")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-v8 r-mass r-jsonlite r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.dagitty.net")
-    (synopsis "Graphical Analysis of Structural Causal Models")
-    (description
-     "This package provides a port of the web-based software DAGitty', available at
-<https://dagitty.net>, for analyzing structural causal models (also known as
-directed acyclic graphs or DAGs).  This package computes covariate adjustment
-sets for estimating causal effects, enumerates instrumental variables, derives
-testable implications (d-separation and vanishing tetrads), generates equivalent
-models, and includes a simple facility for data simulation.")
     (license license:gpl2)))
 
 (define-public r-dagirlite

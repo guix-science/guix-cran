@@ -390,13 +390,13 @@ variables for continuous data, discrete data and mixed discrete-continuous data.
 (define-public r-nutrientracker
   (package
     (name "r-nutrientracker")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NutrienTrackeR" version))
        (sha256
-        (base32 "0s7ax1aqvlph92y0pfs5ji2b4fjig2ig2zcl5vlffcilwm4ccrpp"))))
+        (base32 "0bjw8k57lqdnlawaj0ncjgpv49z29awnz0jx5l8sw248dm72yfxx"))))
     (properties `((upstream-name . "NutrienTrackeR")))
     (build-system r-build-system)
     (arguments
@@ -1531,43 +1531,6 @@ distance, tournament selection, simulated binary crossover, and polynomial
 mutation are called in the main program.  The methods are described in Deb et
 al. (2002) <doi:10.1109/4235.996017>.")
     (license license:lgpl3)))
-
-(define-public r-nser
-  (package
-    (name "r-nser")
-    (version "1.5.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nser" version))
-       (sha256
-        (base32 "0wb374ynqyy7v2x48azvaaphszc14spmbi107pr94dk07z7ah62v"))))
-    (properties `((upstream-name . "nser")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-rvest
-                             r-reticulate
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-googlevis
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nandp1/nser/")
-    (synopsis
-     "Bhavcopy and Live Market Data from National Stock Exchange (NSE) & Bombay Stock Exchange (BSE) India")
-    (description
-     "Download Current & Historical Bhavcopy.  Get Live Market data from NSE India of
-Equities and Derivatives (F&O) segment.  Data source
-<https://www.nseindia.com/>.")
-    (license license:gpl3)))
 
 (define-public r-nseq
   (package
@@ -3514,13 +3477,13 @@ along with all parameters of a given NPBBB design.")
 (define-public r-npbayesimputecat
   (package
     (name "r-npbayesimputecat")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPBayesImputeCat" version))
        (sha256
-        (base32 "05zwa7hhf8p1icgdvvla0r70fgvjm7s38gp69h7wgsq8yl6vd876"))))
+        (base32 "0lmnin9amvp8yf4inbl1sa6mzq68ai4ichraw73fsa7ipdkxjzkp"))))
     (properties `((upstream-name . "NPBayesImputeCat")))
     (build-system r-build-system)
     (arguments
@@ -3531,6 +3494,7 @@ along with all parameters of a given NPBBB design.")
                              r-rcpp
                              r-ggplot2
                              r-dplyr
+                             r-coda
                              r-bayesplot))
     (home-page "https://cran.r-project.org/package=NPBayesImputeCat")
     (synopsis
@@ -8488,13 +8452,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "3.0.3")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "1lnp346yflg516kndx4mbhx1xvijjlvh53h6syxgd76kdk4iwwwr"))))
+        (base32 "03jyvcdq9wh13kyjb1jgz7ypxyzng6f6v2bdzpqnhipicfdm5gxm"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (arguments
@@ -8549,13 +8513,13 @@ composition and modification functions to make model updates easier.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "3.0.2")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2extra" version))
        (sha256
-        (base32 "08qpcsi8zsnkyw2l8jj6x86sjx1z7c6d435nq769ikzv5m86s47r"))))
+        (base32 "07qgnnx9kqmgrqk0d79idv21lnvbv7niflzd8p12wiqmyipr7q73"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (arguments
@@ -8710,13 +8674,13 @@ Fidler M, Lan M, Cheng IL, Kloprogge F, Standing JF (2025)
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "4.0.1")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "17vk2wwvmq7i7r5bkc4j5ga1a1l26lyq29jzqcy2qy539zd3iiav"))))
+        (base32 "15wp9fi6zyapf1vdvhvzhz36b7gw67s7kfychhr0kwihipb7wc7f"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (arguments
@@ -10466,30 +10430,29 @@ transition probabilities.")
 (define-public r-nhlscraper
   (package
     (name "r-nhlscraper")
-    (version "0.2.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhlscraper" version))
        (sha256
-        (base32 "0p6462a3xns2ck96ib7nhvqf6sg66rswwzx9p80kqknsl5iy208a"))))
+        (base32 "0fld9x62jac92fxchnlng6pvrp7bhnv01jxrbiz0p3n29hdw142d"))))
     (properties `((upstream-name . "nhlscraper")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-magrittr r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-jsonlite r-httr2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/RentoSaijo/nhlscraper")
+    (home-page "https://rentosaijo.github.io/nhlscraper/")
     (synopsis "Scraper for National Hockey League Data")
     (description
-     "Scrapes data from the NHL and ESPN APIs into tibble's.  It primarily wraps
-endpoints documented by Zach Maludzinski (2023)
-<https://github.com/Zmalski/NHL-API-Reference>, Drew Hynes (2018)
-<https://gitlab.com/dword4/nhlapi/>, and Joseph Wilson (2023)
-<https://github.com/pseudo-r/Public-ESPN-API>, covering data from high-level
-multi-season summaries and award winners to low-level play-by-play logs and
-sports books odds.")
+     "Scrapes and cleans data from the NHL and ESPN APIs into data.frames and lists.
+Wraps 125+ endpoints documented in
+<https://github.com/@code{RentoSaijo/nhlscraper/wiki>} from high-level
+multi-season summaries and award winners to low-level decisecond replays and
+bookmakers odds, making them more accessible.  Features cleaning and
+visualization tools, primarily for play-by-plays.")
     (license license:expat)))
 
 (define-public r-nhldata
@@ -18082,29 +18045,6 @@ determine which samples passed or failed QC. Gene expression should first be
 normalized to housekeeping genes, before a reference-based approach is used to
 adjust for batch effects.  Raw @code{NanoString} data can be imported in the
 form of Reporter Code Count (RCC) files.")
-    (license license:expat)))
-
-(define-public r-nanoparquet
-  (package
-    (name "r-nanoparquet")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nanoparquet" version))
-       (sha256
-        (base32 "01jk8h7xkki53lyb8ja5vn5ipbaf4r0h35n14i7gm28al5hipvkq"))))
-    (properties `((upstream-name . "nanoparquet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/r-lib/nanoparquet")
-    (synopsis "Read and Write 'Parquet' Files")
-    (description
-     "Self-sufficient reader and writer for flat Parquet files.  Can read most Parquet
-data types.  Can write many R data types, including factors and temporal types.
-See docs for limitations.")
     (license license:expat)))
 
 (define-public r-nandb

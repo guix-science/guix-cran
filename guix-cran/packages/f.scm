@@ -4121,40 +4121,6 @@ Implementation is based on autoencoders with monotonicity and orthogonality
 constraints.")
     (license license:gpl2+)))
 
-(define-public r-fscache
-  (package
-    (name "r-fscache")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fscache" version))
-       (sha256
-        (base32 "0815z6a677ygiv4hlslmvbnd1pdnh2xz3sw0nzgrcr2vzj83h25x"))))
-    (properties `((upstream-name . "fscache")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-r6
-                             r-r-utils
-                             r-lifecycle
-                             r-lgr
-                             r-chk))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/cnrgh/databases/r-fscache")
-    (synopsis "File System Cache")
-    (description
-     "Manages a file system cache.  Regular files can be moved or copied to the cache
-folder.  Sub-folders can be created in order to organize the files.  Files can
-be located inside the cache using a glob function.  Text contents can be easily
-stored in and retrieved from the cache using dedicated functions.  It can be
-used for an application or a package, as a global cache, or as a per-user cache,
-in which case the standard OS user cache folder will be used (e.g.: on Linux
-$HOME/.cache/R/my_app_or_pkg_cache_folder).")
-    (license license:agpl3)))
-
 (define-public r-fsbrain
   (package
     (name "r-fsbrain")
@@ -6271,13 +6237,13 @@ usage of this package is illustrated in Lin et al. (2023
 (define-public r-fracture
   (package
     (name "r-fracture")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fracture" version))
        (sha256
-        (base32 "1pibw364dp567nf0pbj3adydapgf01cga441v3gj93frh9a412c1"))))
+        (base32 "1w45g4yb6i8cyn3cy7jzbiislbx4sj4k1wlvqsilvagjw1s59ikb"))))
     (properties `((upstream-name . "fracture")))
     (build-system r-build-system)
     (arguments
@@ -13391,13 +13357,13 @@ information about the methods, please see Williamson and Huang (2023+)
 (define-public r-fledge
   (package
     (name "r-fledge")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fledge" version))
        (sha256
-        (base32 "0x77caj2vcya4z7dc6hn1s6r0aaa0rdhs7z9c9knm593s2nlig4f"))))
+        (base32 "1dfwnxl9z7hmgxl82jlmg49v1frghsrfgcjr6rqw9mdmxg0mxyyb"))))
     (properties `((upstream-name . "fledge")))
     (build-system r-build-system)
     (arguments
@@ -22442,13 +22408,13 @@ are designed to be readable, with longer names possessing short aliases.")
 (define-public r-fastts
   (package
     (name "r-fastts")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTS" version))
        (sha256
-        (base32 "11h022367f7m5xxyqw9v2yqw4y0fv4p4i58fbjpbd9nvl5a4vyh9"))))
+        (base32 "1y14ads2kj6423yll8745j0mkmv6xg8my3jigmjwvfyfmy5n9qdy"))))
     (properties `((upstream-name . "fastTS")))
     (build-system r-build-system)
     (arguments
@@ -25854,13 +25820,13 @@ or sample.")
 (define-public r-fairmodels
   (package
     (name "r-fairmodels")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmodels" version))
        (sha256
-        (base32 "0wxk2z5xh2dc9m9z6dz8cq911n4fd4a5zl03bg32nh05zq09xhwp"))))
+        (base32 "1fj5k5agw659zfm81nhr03sjkamxg49grrh6sagxak3xbck589m0"))))
     (properties `((upstream-name . "fairmodels")))
     (build-system r-build-system)
     (arguments
@@ -25879,7 +25845,7 @@ groups.  Visualize the bias using heatmap, radar plot, biplot, bar chart (and
 more!).  There are various pre-processing and post-processing bias mitigation
 algorithms implemented.  Package also supports calculating fairness metrics for
 regression models.  Find more details in (WiÅniewski, Biecek (2021))
-<@code{arXiv:2104.00507>}.")
+<doi:10.48550/@code{arXiv.2104.00507>}.")
     (license license:gpl3)))
 
 (define-public r-fairml

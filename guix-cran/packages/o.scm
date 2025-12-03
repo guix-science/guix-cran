@@ -1709,33 +1709,6 @@ Use this package to export traces, metrics, logs from instrumented R code.  Use
 the otel package to instrument your R code for @code{OpenTelemetry}'.")
     (license license:expat)))
 
-(define-public r-otel
-  (package
-    (name "r-otel")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "otel" version))
-       (sha256
-        (base32 "05yxv2yafgp4bsigp7v2mkwa2j7kkrlk8hd8p2z4n1y83ddgx2pg"))))
-    (properties `((upstream-name . "otel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://otel.r-lib.org")
-    (synopsis "OpenTelemetry R API")
-    (description
-     "High-quality, ubiquitous, and portable telemetry to enable effective
-observability. @code{OpenTelemetry} is a collection of tools, APIs, and SDKs
-used to instrument, generate, collect, and export telemetry data (metrics, logs,
-and traces) for analysis in order to understand your software's performance and
-behavior.  This package implements the @code{OpenTelemetry} API:
-<https://opentelemetry.io/docs/specs/otel/>.  Use this package as a dependency
-if you want to instrument your R package for @code{OpenTelemetry}.")
-    (license license:expat)))
-
 (define-public r-ote
   (package
     (name "r-ote")
@@ -5782,13 +5755,13 @@ paper on this package was published in the Journal of Statistical Software
 (define-public r-optimaldesign
   (package
     (name "r-optimaldesign")
-    (version "1.0.2.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptimalDesign" version))
        (sha256
-        (base32 "1h8r3828bh3sryvxici4gfa7ckz1bqsfmg9m480scng50qy57bvl"))))
+        (base32 "18n84s7kvg9x19ymihsgm6slmbxzwlq1znkc6jjjg4064kjxrc1g"))))
     (properties `((upstream-name . "OptimalDesign")))
     (build-system r-build-system)
     (arguments
@@ -5804,10 +5777,11 @@ paper on this package was published in the Journal of Statistical Software
     (home-page "http://www.iam.fmph.uniba.sk/design/")
     (synopsis "Toolbox for Computing Efficient Designs of Experiments")
     (description
-     "Algorithms for D-, A-, I-, and c-optimal designs.  Some of the functions in this
-package require the gurobi software and its accompanying R package.  For their
-installation, please follow the instructions at <https://www.gurobi.com> and the
-file gurobi_inst.txt, respectively.")
+     "Algorithms for D-, A-, I-, and c-optimal designs.  For more details, see the
+package description.  Some of the functions in this package require the gurobi
+software and its accompanying R package.  For their installation, please follow
+the instructions at <https://www.gurobi.com> and the file gurobi_inst.txt,
+respectively.")
     (license license:gpl3)))
 
 (define-public r-optimalcutpoints
@@ -10477,13 +10451,13 @@ functionality is supported.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "1363drawj4kmyfy55jjcnaqvrnk37yspchagv1xl4np0v6l9x0aj"))))
+        (base32 "08wryr9byammlvhyd6iz738asnalyvf9hqb3lv0clmdkny09j82a"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments
@@ -10978,13 +10952,13 @@ Y to predict Y.")
 (define-public r-omicflow
   (package
     (name "r-omicflow")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicFlow" version))
        (sha256
-        (base32 "0qwv94pdaylv9lr90rpsvk5gmk5hz3mirjjlk2sxhkaw92g52qdd"))))
+        (base32 "15447kaqvdwadz7bsysanrh1zg28gsf86incb79i1nmbkls17kc0"))))
     (properties `((upstream-name . "OmicFlow")))
     (build-system r-build-system)
     (arguments
@@ -11007,7 +10981,6 @@ Y to predict Y.")
                              r-ggrepel
                              r-ggpubr
                              r-ggplot2
-                             r-gghalves
                              r-data-table
                              r-ape))
     (home-page "https://github.com/agusinac/OmicFlow")
@@ -11289,13 +11262,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "4.3.2")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "1100w8d8ji07d8i5qsmw8bb6lxkzzxki00plx4kcr0k3wdd06m0a"))))
+        (base32 "1qrgxqp5q62d9ddi7c0c8280chb888r3cfpm4253g30sn2i5kcsw"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments
@@ -12644,6 +12617,32 @@ particular domain and is suitable for any system that can be expressed primarily
 as mathematical expressions.  Additional support is provided for working with
 delays (delay differential equations, DDE), using interpolated functions during
 interpolation, and for integrating quantities that represent arrays.")
+    (license license:expat)))
+
+(define-public r-odiffr
+  (package
+    (name "r-odiffr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odiffr" version))
+       (sha256
+        (base32 "19h9m0f1vjrzldraf7h39n4myzsqimfp02dd687cyy96r26i4sqn"))))
+    (properties `((upstream-name . "odiffr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BenWolst/odiffr")
+    (synopsis "Fast Pixel-by-Pixel Image Comparison Using 'odiff'")
+    (description
+     "R bindings to odiff', a blazing-fast pixel-by-pixel image comparison tool
+<https://github.com/@code{dmtrKovalenko/odiff>}.  Supports PNG, JPEG, WEBP, and
+TIFF with configurable thresholds, antialiasing detection, and region ignoring.
+Requires system installation of odiff'.  Ideal for visual regression testing in
+automated workflows.")
     (license license:expat)))
 
 (define-public r-odetector
@@ -14554,6 +14553,42 @@ Harvesting (OAI-PMH) version 2.0 (for more information, see
      "This package provides carefully chosen color palettes as used a.o.  at
 @code{OpenAnalytics} <http://www.openanalytics.eu>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-o2plsda
+  (package
+    (name "r-o2plsda")
+    (version "0.0.26")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "o2plsda" version))
+       (sha256
+        (base32 "1pjnvwz55mcjlfcf3912g4flja9vqrcamx1x9k054vvgjp042fl5"))))
+    (properties `((upstream-name . "o2plsda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=o2plsda")
+    (synopsis "Multiomics Data Integration")
+    (description
+     "This package provides functions to do O2PLS-DA analysis for multiple omics data
+integration.  The algorithm came from \"O2-PLS, a two-block (XÂ±Y) latent
+variable regression (LVR) method with an integral OSC filter\" which published by
+Johan Trygg and Svante Wold at 2003 <doi:10.1002/cem.775>.  O2PLS is a
+bidirectional multivariate regression method that aims to separate the
+covariance between two data sets (it was recently extended to multiple data
+sets) (LÃ¶fstedt and Trygg, 2011 <doi:10.1002/cem.1388>; LÃ¶fstedt et al., 2012
+<doi:10.1016/j.aca.2013.06.026>) from the systematic sources of variance being
+specific for each data set separately.")
+    (license license:gpl3)))
 
 (define-public r-o2ools
   (package

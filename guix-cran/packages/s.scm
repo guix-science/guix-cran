@@ -1333,31 +1333,6 @@ mathematical equations using @code{LaTeX} or r2symbols'.  Built for use in
 development of Markdown and Shiny Outputs.")
     (license license:expat)))
 
-(define-public r-sym-arma
-  (package
-    (name "r-sym-arma")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sym.arma" version))
-       (sha256
-        (base32 "13fhmgzd50mwlnz9m6nnn4arr4jdqf5h7dgli5lk08da9wx6cy69"))))
-    (properties `((upstream-name . "sym.arma")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=sym.arma")
-    (synopsis "Autoregressive and Moving Average Symmetric Models")
-    (description
-     "This package provides functions for fitting the Autoregressive and Moving
-Average Symmetric Model for univariate time series introduced by Maior and
-Cysneiros (2018), <doi:10.1007/s00362-016-0753-z>.  Fitting method: conditional
-maximum likelihood estimation.  For details see: Wei (2006), Time Series
-Analysis: Univariate and Multivariate Methods, Section 7.2.")
-    (license license:gpl2)))
-
 (define-public r-sylly-en
   (package
     (name "r-sylly-en")
@@ -12246,6 +12221,45 @@ Spivak (1965, ISBN:0-8053-9021-9) \"Calculus on Manifolds\".  To cite the packag
 in publications please use Hankin (2022) <doi:10.48550/@code{arXiv.2210.17008>}.")
     (license license:gpl2)))
 
+(define-public r-stoichutilities
+  (package
+    (name "r-stoichutilities")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stoichUtilities" version))
+       (sha256
+        (base32 "0x644169hp8f4whg6xdzy644qjjnc02spa7w29bjxvf51dbp5cxp"))))
+    (properties `((upstream-name . "stoichUtilities")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/STOICH-project/STOICH-utilities")
+    (synopsis "User Tools for Accessing the STOICH Project Database")
+    (description
+     "User tools for working with The STOICH (Stoichiometric Traits of Organisms in
+their Chemical Habitats) Project database <https://snr-stoich.unl.edu/>.  This
+package is designed to aid in data discovery, filtering, pairing water samples
+with organism samples, and merging data tables to assist users in preparing data
+for analyses.  For additional examples see \"Additional Examples\" and the readme
+file at <https://github.com/STOICH-project/STOICH-utilities>.")
+    (license license:gpl3+)))
+
 (define-public r-stoichcalc
   (package
     (name "r-stoichcalc")
@@ -14501,6 +14515,32 @@ proportions of wins.  Given an observed sociomatrix, it computes hierarchy's
 steepness and estimates statistical significance by means of a randomization
 test.")
     (license license:gpl2+)))
+
+(define-public r-steallikebayes
+  (package
+    (name "r-steallikebayes")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StealLikeBayes" version))
+       (sha256
+        (base32 "1gqqk8wn8v58885l81qzx39lyh01j0wkalb6228r3j69dny9v5ly"))))
+    (properties `((upstream-name . "StealLikeBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-gigrvg))
+    (home-page "https://bsvars.org/StealLikeBayes/")
+    (synopsis "Compendium of Bayesian Statistical Routines Written in 'C++'")
+    (description
+     "This is a compendium of C++ routines useful for Bayesian statistics.  We steal
+other people's C++ code, repurpose it, and export it so developers of R packages
+can use it in their C++ code.  We actually don't steal anything, or claim that
+Thomas Bayes did, but copy code that is compatible with our GPL 3 licence, fully
+acknowledging the authorship of the original code.")
+    (license license:gpl3+)))
 
 (define-public r-steadyica
   (package
@@ -19618,13 +19658,13 @@ variations.  Based on Roerink, Su, and Menenti (2000)
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssdtools" version))
        (sha256
-        (base32 "001q18wyxxc0lykmlacaxkglpx8g8p6ignrmjr8djppy2s0limbh"))))
+        (base32 "11a67kphm0rxdph7hw5q5rfjpdqkqixcmhqifk9znqv55fkarqad"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
     (arguments
@@ -19637,6 +19677,7 @@ variations.  Based on Roerink, Su, and Menenti (2000)
                              r-ssddata
                              r-scales
                              r-rlang
+                             r-readr
                              r-rcppeigen
                              r-rcpp
                              r-purrr
@@ -19976,13 +20017,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.8.4")
+    (version "1.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "002n9v21lilafi7bcb7v8x918qhd6w3x6d1ac5r573iwy2fl0v6i"))))
+        (base32 "17h8dwggm2i1j0mg1qc2mg54fj4qx885j9qbqq733m98hv1rdcn6"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (arguments
@@ -20765,37 +20806,37 @@ References: Evans & Jones (2002) <doi:10.1098/rspa.2002.1010>, AJ Jones (2004)
 (define-public r-squire
   (package
     (name "r-squire")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQUIRE" version))
        (sha256
-        (base32 "0wj4ns8iiy6a8klwmkjk7m01rxqkkcf395m87qdkbl6vwlhj2z0r"))))
+        (base32 "08ycvhw9nf016mr55j3vwsx4k1hqs973wc10zv4jsvs2kby3yy68"))))
     (properties `((upstream-name . "SQUIRE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=SQUIRE")
+    (propagated-inputs (list r-knitr r-galahad))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RFeissIV/SQUIRE")
     (synopsis "Statistical Quality-Assured Integrated Response Estimation")
     (description
-     "This package implements statistically validated biological parameter
-optimization that combines automated parameter type detection with rigorous
-statistical quality assurance.  Unlike conventional optimizers that fit
-parameters to any data, SQUIRE first validates whether statistically significant
-biological effects exist before proceeding with parameter estimation.  Uses
-trust region methods from Conn et al. (2000) <doi:10.1137/S1052623497325107>,
+     "This package provides systematic geometry-adaptive parameter optimization with
+statistical validation for experimental biological data.  Combines ANOVA-based
+validation with systematic constraint configuration testing (log-scale, positive
+domain, Euclidean) through T,P,E testing.  Only proceeds with parameter
+optimization when statistically significant biological effects are detected,
+preventing over-fitting to noise.  Uses GALAHAD trust region methods with
+constraint projection from Conn et al. (2000) <doi:10.1137/S1052623497325107>,
 ANOVA-based validation following Fisher (1925)
 <doi:10.1007/978-1-4612-4380-9_6>, and effect size calculations per Cohen (1988,
-ISBN:0805802835).  Automatically distinguishes rate-based, positive-constrained,
-and unconstrained variables, applying geometry-appropriate optimization methods
-while preventing over-fitting to noise through built-in statistical validation,
-effect size assessment, and data quality requirements.  Designed for complex
-biological and environmental models including germination studies, dose-response
-curves, and survival analysis.  Enhanced successor to the GALAHAD optimization
-framework with integrated statistical gatekeeping.  Developed at the Minnesota
-Center for Prion Research and Outreach at the University of Minnesota.")
+ISBN:0805802835).  Designed for structured experimental data including kinetic
+curves, dose-response studies, and treatment comparisons where appropriate
+parameter constraints and statistical justification are important for meaningful
+biological interpretation.  Developed at the Minnesota Center for Prion Research
+and Outreach at the University of Minnesota.")
     (license license:expat)))
 
 (define-public r-squids
@@ -21172,35 +21213,6 @@ IBM Netezza', Google @code{BigQuery}', Microsoft PDW', Snowflake', Azure Synapse
 Analytics Dedicated', Apache Spark', SQLite', and @code{InterSystems} IRIS'.")
     (license license:asl2.0)))
 
-(define-public r-sqlq
-  (package
-    (name "r-sqlq")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sqlq" version))
-       (sha256
-        (base32 "117dryppyvshj8bb2jgp55fhgksky09wvzs573vv7jygblnwj8zh"))))
-    (properties `((upstream-name . "sqlq")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-dbi r-chk))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/cnrgh/databases/r-sqlq")
-    (synopsis "'SQL' Query Builder")
-    (description
-     "Allows to build complex SQL (Structured Query Language) queries dynamically.
-Classes and/or factory functions are used to produce a syntax tree from which
-the final character string is generated.  Strings and identifiers are
-automatically quoted using the right quotes, using either ANSI (American
-National Standards Institute) quoting or the quoting style of an existing
-database connector.  Style can be configured to set uppercase/lowercase for
-keywords, remove unnecessary spaces, or omit optional keywords.")
-    (license license:agpl3)))
-
 (define-public r-sqlparser
   (package
     (name "r-sqlparser")
@@ -21516,6 +21528,32 @@ Antonio Prohias.")
 and A.P. Robinson.  2014.  An Introduction to Scientific Programming and
 Simulation, Using R. 2nd Ed.  Chapman And Hall/CRC.")
     (license license:gpl3)))
+
+(define-public r-spuriousmemory
+  (package
+    (name "r-spuriousmemory")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpuriousMemory" version))
+       (sha256
+        (base32 "05hfczlvljgyhbs1k0mai8zaipk8k4z9vi3lw3jivz7gccff8nr7"))))
+    (properties `((upstream-name . "SpuriousMemory")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fracdiff))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SpuriousMemory")
+    (synopsis "Testing True Long Memory Against Spurious Long Memory")
+    (description
+     "This package implements a test for distinguishing between true long memory and
+spurious long memory.  Reference: Qu, Z. (2011). \"A Test Against Spurious Long
+Memory.\" Journal of Business & Economic Statistics, 29(3), 423â438.
+<doi:10.1198/jbes.2010.09153>.")
+    (license license:gpl3+)))
 
 (define-public r-spuriouscorrelations
   (package
@@ -24235,31 +24273,6 @@ air temperature, and cloudiness.  Davis et al. (2017)
 <doi:10.5194/gmd-10-689-2017>.")
     (license license:gpl3)))
 
-(define-public r-splancs
-  (package
-    (name "r-splancs")
-    (version "2.01-45")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "splancs" version))
-       (sha256
-        (base32 "1lvn9gm2n7ic4cxz255jls33kkbblrdcka87v99apskz3pbg3k4b"))))
-    (properties `((upstream-name . "splancs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp))
-    (native-inputs (list gfortran))
-    (home-page "https://www.maths.lancs.ac.uk/~rowlings/Splancs/")
-    (synopsis "Spatial and Space-Time Point Pattern Analysis")
-    (description
-     "The Splancs package was written as an enhancement to S-Plus for display and
-analysis of spatial point pattern data; it has been ported to R and is in
-\"maintenance mode\".")
-    (license license:gpl2+)))
-
 (define-public r-spiro
   (package
     (name "r-spiro")
@@ -25937,13 +25950,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "0kkdlvv9r6k43ip5v69pmwv6236cjlavyzp46d26ws8cmksyayid"))))
+        (base32 "1qj9skafszcaanl8g2sr6lny75ja7kaq3l240k7j4m73lb4fjca4"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -25965,7 +25978,8 @@ intervention of a single legislator.")
 modeling (EDM), with methodological extensions including geographical convergent
 cross mapping from Gao et al. (2023) <doi:10.1038/s41467-023-41619-6>, as well
 as the spatial causality test following the approach of Herrera et al. (2016)
-<doi:10.1111/pirs.12144>.")
+<doi:10.1111/pirs.12144>, together with geographical pattern causality proposed
+in Zhang et al. (2025) <doi:10.1080/13658816.2025.2581207>.")
     (license license:gpl3)))
 
 (define-public r-spedinstabr
@@ -28061,13 +28075,13 @@ regularly or irregularly spaced data, including 1D, 2D, and 3D (Wang and Huang,
 (define-public r-spatialwidget
   (package
     (name "r-spatialwidget")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialwidget" version))
        (sha256
-        (base32 "01w0iwwjfbb8cxfs3l1vxlay8x6694d7c7ksrfrdd003h7dxwksj"))))
+        (base32 "1p3pbbppdvxrr46sp2c8yj86nqb4f478yd80nznq6j91cfrd1mwd"))))
     (properties `((upstream-name . "spatialwidget")))
     (build-system r-build-system)
     (arguments
@@ -28272,13 +28286,13 @@ Wilson et al. <doi:10.1101/2021.04.27.21256104>.")
 (define-public r-spatialsample
   (package
     (name "r-spatialsample")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialsample" version))
        (sha256
-        (base32 "0ywcdk7fbaqbk016c3wa1f62c4h2y3s4l14g4v6vnsh1i6y32410"))))
+        (base32 "0pv7i6p4j36n04yrv7fxx0g66g3v37hlamy7j6akig435j7fd9i2"))))
     (properties `((upstream-name . "spatialsample")))
     (build-system r-build-system)
     (arguments
@@ -34890,6 +34904,37 @@ finite-sample bias.  The package is based on the paper SolÃ­s, M. (2018)
 <@code{arXiv:1803.03333>}.")
     (license license:expat)))
 
+(define-public r-sobol4r
+  (package
+    (name "r-sobol4r")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Sobol4R" version))
+       (sha256
+        (base32 "0zhsgxppjfm3zgl6an1ksj74d83g0h403lk71afbmww4mgdc7s8b"))))
+    (properties `((upstream-name . "Sobol4R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sensitivity r-rlang r-rcpp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/Sobol4R/")
+    (synopsis "Sobol Indices for Models with Fixed and Stochastic Parameters")
+    (description
+     "This package provides tools to design experiments, compute Sobol sensitivity
+indices, and summarise stochastic responses inspired by the strategy described
+by Zhu and Sudret (2021) <doi:10.1016/j.ress.2021.107815>.  Includes helpers to
+optimise toy models implemented in C++, visualise indices with uncertainty
+quantification, and derive reliability-oriented sensitivity measures based on
+failure probabilities.  It is further detailed in Logosha, Maumy and Bertrand
+(2022) <doi:10.1063/5.0246026> and (2023) <doi:10.1063/5.0246024> or in
+Bertrand, Logosha and Maumy (2024) <https://hal.science/hal-05371803>,
+<https://hal.science/hal-05371795> and <https://hal.science/hal-05371798>.")
+    (license license:gpl3)))
+
 (define-public r-soas
   (package
     (name "r-soas")
@@ -35644,37 +35689,6 @@ creates a more interesting, somewhat realistic, image.  Images of the snowflakes
 can be separately saved as svg files and used in websites as static or animated
 images.")
     (license license:gpl2+)))
-
-(define-public r-snowflakeauth
-  (package
-    (name "r-snowflakeauth")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "snowflakeauth" version))
-       (sha256
-        (base32 "023bw3a91hj5irfv8b4209890j1pp4j6ccd500w8yqy2vyk903c8"))))
-    (properties `((upstream-name . "snowflakeauth")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rcpptoml
-                             r-openssl
-                             r-jsonlite
-                             r-jose
-                             r-curl
-                             r-cli))
-    (home-page "https://posit-dev.github.io/snowflakeauth/")
-    (synopsis "Authentication Helpers for 'Snowflake'")
-    (description
-     "Authentication helpers for Snowflake'.  It provides compatibility with
-authentication approaches supported by the Snowflake Connector for Python
-<https://pypi.org/project/snowflake-connector-python> and the Snowflake CLI
-<https://pypi.org/project/snowflake-cli>.")
-    (license license:expat)))
 
 (define-public r-snowdata
   (package
@@ -40442,26 +40456,28 @@ from the current graphics device, R objects, and upload files.")
 (define-public r-skytrackr
   (package
     (name "r-skytrackr")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skytrackr" version))
        (sha256
-        (base32 "18jhdzy7v54hw897xrk1a2ncqb9y76szr0nx0f3jwp5pphiv8awa"))))
+        (base32 "1b7bjwa8wjd83460730abv9vglxbi2cb6b5xxq2iyr5f7h4scpa3"))))
     (properties `((upstream-name . "skytrackr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-zoo
+                             r-tidyterra
+                             r-tidyr
                              r-terra
                              r-skylight
+                             r-sfdep
                              r-sf
                              r-rlang
                              r-plotly
                              r-patchwork
-                             r-memoise
                              r-mapview
                              r-ggplot2
                              r-geosphere
@@ -44467,13 +44483,13 @@ Jean-Daniel Boissonnat and ClÃ©ment Maria (2014)
 (define-public r-simpleupset
   (package
     (name "r-simpleupset")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimpleUpset" version))
        (sha256
-        (base32 "00qrz012s9zq3drz7rp9q9vw0j986mdxrfwj8dyjg3n8mpwmszwl"))))
+        (base32 "165wvfgkdzv6xz6b0hnxz86926yx54b4apcfnaph0m4gd4c82yij"))))
     (properties `((upstream-name . "SimpleUpset")))
     (build-system r-build-system)
     (arguments
@@ -48209,13 +48225,13 @@ batch problems.  Details of the methods can be found in:
 (define-public r-siera
   (package
     (name "r-siera")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siera" version))
        (sha256
-        (base32 "1y0sq7dkg7b8d4wlxhk8jrb479mi37ijdqn2b8ikbkqlgf6gdf3x"))))
+        (base32 "1fw36pijhxm3k44yxf27zly3qn9dym5vj48wjsl720xwxxm2ls5f"))))
     (properties `((upstream-name . "siera")))
     (build-system r-build-system)
     (arguments
@@ -52791,13 +52807,13 @@ Mac or Android') and version, and browser dimensions.")
 (define-public r-shinybrms
   (package
     (name "r-shinybrms")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinybrms" version))
        (sha256
-        (base32 "0qsmgswkk7l7nn4sabisg4gwiqiicjdxi0g96778ad4d4prnx107"))))
+        (base32 "0xqfdvhk9jncz7hshamklm1x40db2n2gvrl89arnz72wwck04fdz"))))
     (properties `((upstream-name . "shinybrms")))
     (build-system r-build-system)
     (arguments
@@ -53624,13 +53640,13 @@ HTML tool widgets.")
 (define-public r-sherlockholmes
   (package
     (name "r-sherlockholmes")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SherlockHolmes" version))
        (sha256
-        (base32 "162iw7qzi5cb73lawfvsnbq3cxgx0si9bz0avv60rrkzdb0xlr05"))))
+        (base32 "1i63jip4ql3xjmf0ld1ahc2n8hrizs3xd5l0fywl7fhlb1h4wvqh"))))
     (properties `((upstream-name . "SherlockHolmes")))
     (build-system r-build-system)
     (arguments
@@ -53638,7 +53654,6 @@ HTML tool widgets.")
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-textboxplacement
-                             r-tablehtml
                              r-stringr
                              r-stargazer
                              r-qpdf
@@ -55749,13 +55764,13 @@ package.")
 (define-public r-sgapi
   (package
     (name "r-sgapi")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgapi" version))
        (sha256
-        (base32 "0p1p6r7szac9jmp1r83qlhnczh0rphwaranb4f2zy3da5zkpqmdi"))))
+        (base32 "1pniihbsiianm5pg8n2vng026gkj3dmcxc4783fjxvlfzxkw5z1s"))))
     (properties `((upstream-name . "sgapi")))
     (build-system r-build-system)
     (arguments
@@ -57539,13 +57554,13 @@ ratio test (Wald, A. 1945 <http://www.jstor.org/stable/2235829>).")
 (define-public r-sequential
   (package
     (name "r-sequential")
-    (version "4.5.1")
+    (version "4.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sequential" version))
        (sha256
-        (base32 "0riks6qhxqbw5pndi1jxcqw1c87jyg5v2xmj5dc61jgrrfvaksl8"))))
+        (base32 "1nwf9zisc1zmswkn4qb04zp9pnl9k80dxyr7jycy8bwxfdq57aw1"))))
     (properties `((upstream-name . "Sequential")))
     (build-system r-build-system)
     (arguments
@@ -62744,6 +62759,34 @@ concealed trait.  See Herrera-Alsina et al. (2019) <doi:10.1093/sysbio/syy057>."
 animal populations in linear habitats, extending package secr'.")
     (license license:gpl2+)))
 
+(define-public r-secrfunc
+  (package
+    (name "r-secrfunc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "secrfunc" version))
+       (sha256
+        (base32 "1pn3igh2g6p753s2qz8yp42gmmrryk9j9k9d0pr51drz8vnn6s5b"))))
+    (properties `((upstream-name . "secrfunc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcppnumerical r-rcppeigen r-rcpp
+                             r-bh))
+    (home-page "https://www.otago.ac.nz/density/")
+    (synopsis "Helper Functions for Package 'secr'")
+    (description
+     "This package provides functions are provided for internal use by the spatial
+capture-recapture package secr (from version 5.4.0).  The idea is to speed up
+the installation of secr', and possibly reduce its size.  Initially the
+functions are those for area and transect search that use numerical integration
+code from @code{RcppNumerical} and @code{RcppEigen}'.  The functions are not
+intended to be user-friendly and require considerable preprocessing of data.")
+    (license license:gpl2+)))
+
 (define-public r-secrettext
   (package
     (name "r-secrettext")
@@ -65330,13 +65373,13 @@ Scryfall card data API <https://scryfall.com/docs/api>.")
 (define-public r-scrutiny
   (package
     (name "r-scrutiny")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scrutiny" version))
        (sha256
-        (base32 "18753025dxgkcj8fp4846rnhw0vdg9a67dygiimvijpyli0d9r3f"))))
+        (base32 "0wqrbzkm4fw556ds8bzpgimy2xs1v7da54cam5bmcvp0yhglx8h6"))))
     (properties `((upstream-name . "scrutiny")))
     (build-system r-build-system)
     (arguments
@@ -66877,13 +66920,13 @@ Palshikar (2009)
 (define-public r-scorematchingad
   (package
     (name "r-scorematchingad")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scorematchingad" version))
        (sha256
-        (base32 "1ddwikl69mc3svj30xlwx91imrgc42l2lblqvygqjy3dyigjjrd5"))))
+        (base32 "1d96la5q0bicn3aq0kkmjavbabkvdqlq2vcws5h0iwkwmwg7knhg"))))
     (properties `((upstream-name . "scorematchingad")))
     (build-system r-build-system)
     (arguments
@@ -68223,40 +68266,6 @@ nullability, and more.  Schema failure messages can be tailored for
 non-technical users and are ideal for user-facing applications such as in shiny
 or plumber'.")
     (license license:expat)))
-
-(define-public r-sched
-  (package
-    (name "r-sched")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sched" version))
-       (sha256
-        (base32 "1n6r8g5cd3y6yiplhf0jlb8zm8z37cz1ds66qqpipiva4vx26xr3"))))
-    (properties `((upstream-name . "sched")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcurl
-                             r-r6
-                             r-openssl
-                             r-lgr
-                             r-fscache
-                             r-chk))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/cnrgh/databases/r-sched")
-    (synopsis "Request Scheduler")
-    (description
-     "Offers classes and functions to contact web servers while enforcing scheduling
-rules required by the sites.  The URL class makes it easy to construct a URL by
-providing parameters as a vector.  The Request class allows to describes SOAP
-(Simple Object Access Protocol) or standard requests: URL, method (POST or GET),
-header, body.  The Scheduler class controls the request frequency for each
-server address by mean of rules (Rule class).  The @code{RequestResult} class
-permits to get the request status to handle error cases and the content.")
-    (license license:agpl3)))
 
 (define-public r-scgwr
   (package

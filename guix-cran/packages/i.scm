@@ -417,19 +417,24 @@ test and then inspect specific edge difference with partial pruning.")
 (define-public r-ivolcano
   (package
     (name "r-ivolcano")
-    (version "0.0.2")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivolcano" version))
        (sha256
-        (base32 "17hpv6x25n8n5f9rb9zgqh8wflljykchrq75wd3w6x76hsysshmk"))))
+        (base32 "1fb1nwq9j50azz1f81q6kna5axqa6fdm5kl60vz051v1ni6m9a4k"))))
     (properties `((upstream-name . "ivolcano")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-ggrepel r-ggplot2 r-ggiraph r-dplyr))
+    (propagated-inputs (list r-rlang
+                             r-knitr
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggiraph
+                             r-dplyr))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/YuLab-SMU/ivolcano")
     (synopsis "Interactive Volcano Plot")
@@ -3261,41 +3266,6 @@ sparse principal component analysis.  Journal of Multivariate Analysis,
 (2021).  Integrative sparse partial least squares.  Statistics in Medicine,
 <doi:10.1002/sim.8900>.")
     (license license:gpl2+)))
-
-(define-public r-isetools
-  (package
-    (name "r-isetools")
-    (version "3.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ISEtools" version))
-       (sha256
-        (base32 "1dj8q1072j7sn7j9s2mjxm12k6kn5gcqpic8jp2k1f3f7b85dbij"))))
-    (properties `((upstream-name . "ISEtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-coda))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=ISEtools")
-    (synopsis "Ion Selective Electrodes Analysis Methods")
-    (description
-     "Characterisation and calibration of single or multiple Ion Selective Electrodes
-(ISEs); activity estimation of experimental samples.  Implements methods
-described in: Dillingham, P.W., Radu, T., Diamond, D., Radu, A. and
-@code{McGraw}, C.M. (2012) <doi:10.1002/elan.201100510>, Dillingham, P.W.,
-Alsaedi, B.S.O. and @code{McGraw}, C.M. (2017)
-<doi:10.1109/ICSENS.2017.8233898>, Dillingham, P.W., Alsaedi, B.S.O., Radu, A.,
-and @code{McGraw}, C.M. (2019) <doi:10.3390/s19204544>, and Dillingham, P.W.,
-Alsaedi, B.S.O., Granados-Focil, S., Radu, A., and @code{McGraw}, C.M. (2020)
-<doi:10.1021/acssensors.9b02133>.")
-    (license license:gpl2)))
 
 (define-public r-isdparser
   (package
@@ -8809,19 +8779,18 @@ focus on data validation and data documentation.")
 (define-public r-inteli
   (package
     (name "r-inteli")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inteli" version))
        (sha256
-        (base32 "1vfgnghlmv2c618b6n65h78ph9wmvp6jq1g195fk2qk8y2q4vjnf"))))
+        (base32 "1lbfqqr3dfcad11s8h3px98185zj9hnhyilxclcc6791kkgdc2ss"))))
     (properties `((upstream-name . "inteli")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=inteli")
     (synopsis
      "Interval Estimation by Likelihoodist (LI) Compared to Frequentist (CI)")

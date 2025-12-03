@@ -3892,19 +3892,19 @@ Chatterjee.")
 (define-public r-kimisc
   (package
     (name "r-kimisc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kimisc" version))
        (sha256
-        (base32 "0jchqhc9961br64x1x7ilg5gszvsjn1zjfas27ylnwivm8j7z51p"))))
+        (base32 "0vp5w3c84k02689gwz0kkp84izdxg3ksl2hazsvwwrs2ai1gimwd"))))
     (properties `((upstream-name . "kimisc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pryr r-plyr r-memoise))
+    (propagated-inputs (list r-plyr r-memoise))
     (home-page "https://krlmlr.github.io/kimisc/")
     (synopsis "Kirill's Miscellaneous Functions")
     (description
@@ -5258,35 +5258,6 @@ symmetric kernels.")
     (description
      "Producing kernel estimates of the unconditional and conditional hazard function
 for right-censored data including methods of bandwidth selection.")
-    (license license:gpl2+)))
-
-(define-public r-kernelshap
-  (package
-    (name "r-kernelshap")
-    (version "0.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kernelshap" version))
-       (sha256
-        (base32 "171mick8z1rry9n1i1si3ca5ax1pasm3p1a14lg7f44xz3d2ggs0"))))
-    (properties `((upstream-name . "kernelshap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-foreach r-dofuture))
-    (home-page "https://github.com/ModelOriented/kernelshap")
-    (synopsis "Kernel SHAP")
-    (description
-     "Efficient implementation of Kernel SHAP (Lundberg and Lee, 2017,
-<doi:10.48550/@code{arXiv.1705.07874>}) permutation SHAP, and additive SHAP for
-model interpretability.  For Kernel SHAP and permutation SHAP, if the number of
-features is too large for exact calculations, the algorithms iterate until the
-SHAP values are sufficiently precise in terms of their standard errors.  The
-package integrates smoothly with meta-learning packages such as tidymodels',
-caret or mlr3'.  It supports multi-output models, case weights, and parallel
-computations.  Visualizations can be done using the R package shapviz'.")
     (license license:gpl2+)))
 
 (define-public r-kernelphil

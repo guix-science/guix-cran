@@ -9448,13 +9448,13 @@ object created will need to be modified through a theme.")
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "0kw6ngrdmb8a7jvdyyw1qgvahkmf7pw0sjz1q3qjvfxs1y5bs59l"))))
+        (base32 "1rsc6gfgv248s1dc8in8zr3a4igbg2yzvnihbq957a6c6cj5h3nn"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments
@@ -9466,8 +9466,8 @@ object created will need to be modified through a theme.")
     (synopsis "Watch the File System for Changes")
     (description
      "R binding for libfswatch', a file system monitoring library.  Watch files, or
-directories recursively, for changes in the background.  Log activity, or run an
-R function every time a change event occurs.")
+directories recursively, for changes in the background.  Log activity, or call
+an R function, upon every change event.")
     (license license:expat)))
 
 (define-public r-waspr
