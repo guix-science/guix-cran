@@ -23690,13 +23690,13 @@ general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
 (define-public r-ecodive
   (package
     (name "r-ecodive")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecodive" version))
        (sha256
-        (base32 "1adh89sm0d8x45syyhclilgmmm7b0vi34avhi8id1vvaw0jxc18y"))))
+        (base32 "11fqsbvbbx36pk2pfnvgw376dyn52imrbkhp9kbiv47q597kkmyv"))))
     (properties `((upstream-name . "ecodive")))
     (build-system r-build-system)
     (arguments

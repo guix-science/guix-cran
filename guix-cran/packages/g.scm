@@ -16881,6 +16881,43 @@ git history book presentation helps organisms required to testify for every
 changes in their source code, in relation to features requests.")
     (license license:expat)))
 
+(define-public r-gitai
+  (package
+    (name "r-gitai")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GitAI" version))
+       (sha256
+        (base32 "07qdkjdlx36b38v8180phnlibbnqg260kc5awx8pb1likx9nyb9b"))))
+    (properties `((upstream-name . "GitAI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-lubridate
+                             r-httr2
+                             r-glue
+                             r-gitstats
+                             r-ellmer
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-world-devs/GitAI")
+    (synopsis "Extracts Knowledge from 'Git' Repositories")
+    (description
+     "Scan multiple Git repositories, pull specified files content and process it with
+large language models.  You can summarize the content in specific way, extract
+information and data, or find answers to your questions about the repositories.
+The output can be stored in vector database and used for semantic search or as a
+part of a RAG (Retrieval Augmented Generation) prompt.")
+    (license license:expat)))
+
 (define-public r-git4r
   (package
     (name "r-git4r")
@@ -17533,53 +17570,6 @@ used as a foundation for starting the search for person-specific (or
 individual-level) relations.  See Gates & Molenaar (2012)
 <doi:10.1016/j.neuroimage.2012.06.026>.")
     (license license:gpl2)))
-
-(define-public r-gimap
-  (package
-    (name "r-gimap")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gimap" version))
-       (sha256
-        (base32 "0db90qk1bw6i0zq63x6r7sq7ddk0akwvizh7vfmkgjy1cs1byc18"))))
-    (properties `((upstream-name . "gimap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vroom
-                             r-tidyr
-                             r-stringr
-                             r-rmarkdown
-                             r-readr
-                             r-purrr
-                             r-pheatmap
-                             r-openssl
-                             r-magrittr
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/FredHutch/gimap")
-    (synopsis "Calculate Genetic Interactions for Paired CRISPR Targets")
-    (description
-     "Helps find meaningful patterns in complex genetic experiments.  First gimap
-takes data from paired CRISPR (Clustered regularly interspaced short palindromic
-repeats) screens that has been pre-processed to counts table of paired
-@code{gRNA} (guide Ribonucleic Acid) reads.  The input data will have cell
-counts for how well cells grow (or don't grow) when different genes or pairs of
-genes are disabled.  The output of the gimap package is genetic interaction
-scores which are the distance between the observed CRISPR score and the expected
-CRISPR score.  The expected CRISPR scores are what we expect for the CRISPR
-values to be for two unrelated genes.  The further away an observed CRISPR score
-is from its expected score the more we suspect genetic interaction.  The work in
-this package is based off of original research from the Alice Berger lab at Fred
-Hutchinson Cancer Center (2021) <doi:10.1016/j.celrep.2021.109597>.")
-    (license license:gpl3)))
 
 (define-public r-gim
   (package
@@ -18816,13 +18806,13 @@ annotation.")
 (define-public r-ggtranslate
   (package
     (name "r-ggtranslate")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtranslate" version))
        (sha256
-        (base32 "0aavdwssyi9f1mciwvds3cy6pgqjmyjas0789swqbx8l2wykls3j"))))
+        (base32 "0q0gydckcpm91fgmkq4pbs55b75hh3ryyifij0clyq4m9pvxi9sw"))))
     (properties `((upstream-name . "ggtranslate")))
     (build-system r-build-system)
     (arguments
@@ -26807,6 +26797,35 @@ methods.  Software companion for Diggle and Ribeiro (2007)
 <doi:10.1007/978-0-387-48536-2>.")
     (license license:gpl2+)))
 
+(define-public r-geopsych
+  (package
+    (name "r-geopsych")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geopsych" version))
+       (sha256
+        (base32 "0plgc699zgfgdhkz1pmcllzkda2yl0dqnq0glrfcnqjg6v1cw4jw"))))
+    (properties `((upstream-name . "geopsych")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp))
+    (home-page "https://github.com/ZhangSui921/geopsych")
+    (synopsis
+     "Methods of Applied Psychology and Psychometrics in Geographical Analysis")
+    (description
+     "Integrating applied psychological and psychometric methods into geographical
+analysis.  With the emergence of geo-referenced questionnaires, spatially
+explicit psychological and psychometric methods can offer a geographically
+contextualised approach that reflects latent traits and processes at a more
+local scale, leading to more tailored research and decision-making processes.
+The implemented methods include Geographically Weighted Cronbach's alpha and its
+bandwidth selection.  See Zhang & Li (2025) <doi:10.1111/gean.70021>.")
+    (license license:gpl3+)))
+
 (define-public r-geoprofiler
   (package
     (name "r-geoprofiler")
@@ -32165,13 +32184,13 @@ covariance estimators.")
 (define-public r-geess
   (package
     (name "r-geess")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geess" version))
        (sha256
-        (base32 "1ph0sic885ajmlcmniw1c01d1di3gzkfaxafnb2npw0h8km61h1l"))))
+        (base32 "043m0s5fvhzhf2lhwd9l161awm3iajsp095206pdrjyhn176f34m"))))
     (properties `((upstream-name . "geess")))
     (build-system r-build-system)
     (arguments

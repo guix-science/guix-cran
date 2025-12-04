@@ -15518,6 +15518,33 @@ including @code{OpenAI} <https://openai.com/>, Google AI Studio
 keys are required and managed via ellmer').")
     (license license:gpl2+)))
 
+(define-public r-statisr
+  (package
+    (name "r-statisr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statisR" version))
+       (sha256
+        (base32 "136is1y4n3rw4fnp09wzkq01k62pln8s6xi3p8azysla4b148gix"))))
+    (properties `((upstream-name . "statisR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggrepel r-ggplot2 r-ggforce))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=statisR")
+    (synopsis "STATIS and STATIS DUAL Multivariate Methods")
+    (description
+     "This package provides tools for the integration and exploration of data tables
+measured on the same set of observational units.  The package includes methods
+to assess similarities among tables, extract common patterns across variable
+blocks, and create visual summaries that highlight shared structures in
+multiblock data.")
+    (license license:gpl2+)))
+
 (define-public r-statisfactory
   (package
     (name "r-statisfactory")
@@ -16273,42 +16300,6 @@ codelists are updated regularly according to the standard.  The authoritative
 version of the code lists made available in this package is
 <https://sdmx.org/?page_id=3215/>.")
     (license license:cc0)))
-
-(define-public r-statcanr
-  (package
-    (name "r-statcanr")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "statcanR" version))
-       (sha256
-        (base32 "1hnf3zjlpfp86lii9sz8m2dvzbj9bs320ffdr81q2jsla71xybaa"))))
-    (properties `((upstream-name . "statcanR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-reshape2
-                             r-readr
-                             r-qs
-                             r-qpdf
-                             r-httr
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/warint/statcanR/")
-    (synopsis "Client for Statistics Canada's Open Economic Data")
-    (description
-     "An easy connection with R to Statistics Canada's Web Data Service.  Open
-economic data (formerly known as CANSIM tables, now identified by Product IDs
-(PID)) are accessible as a data frame, directly in the user's R environment.
-Warin, Le Duc (2019) <doi:10.6084/m9.figshare.10544735>.")
-    (license license:expat)))
 
 (define-public r-statbasics
   (package
@@ -18664,6 +18655,48 @@ analysis of respondent-driven sampling data.  See Handcock, Gile and Mar (2014)
 Kim and Handcock (2021) <doi:10.1093/jssam/smz055>, and @code{McLaughlin}, et.
 al. (2023) <doi:10.1214/23-AOAS1807>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-sspm
+  (package
+    (name "r-sspm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sspm" version))
+       (sha256
+        (base32 "16s1vhwa3abgwj7s5bg93w80bihgh55w3ryjd6zrxgiiix3mlmsl"))))
+    (properties `((upstream-name . "sspm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-mgcv
+                             r-magrittr
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://pedersen-fisheries-lab.github.io/sspm/")
+    (synopsis
+     "Spatial Surplus Production Model Framework for Northern Shrimp Populations")
+    (description
+     "Implement a GAM-based (Generalized Additive Models) spatial surplus production
+model (spatial SPM), aimed at modeling northern shrimp population in Atlantic
+Canada but potentially to any stock in any location.  The package is opinionated
+in its implementation of SPMs as it internally makes the choice to use penalized
+spatial gams with time lags.  However, it also aims to provide options for the
+user to customize their model.  The methods are described in Pedersen et al.
+(2022,
+<https://www.dfo-mpo.gc.ca/csas-sccs/Publications/@code{ResDocs-DocRech/2022/2022_062-eng.html>}).")
+    (license license:expat)))
 
 (define-public r-ssplots
   (package
@@ -26765,13 +26798,13 @@ in Wang (2011)<doi:10.18637/jss.v040.i09>.")
 (define-public r-spechelpers
   (package
     (name "r-spechelpers")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpecHelpers" version))
        (sha256
-        (base32 "0v24xyj2w87izijcxln532f1gabyzlv3zm9b762rdk9bg2m2xqwv"))))
+        (base32 "1gr0678vfrx5zzk9afakc5ql0r7cs2dg1gl2fj8m1ayj7qlbl5zb"))))
     (properties `((upstream-name . "SpecHelpers")))
     (build-system r-build-system)
     (arguments
@@ -35818,6 +35851,35 @@ system <https://snirh.apambiente.pt/>.  The package validates station data,
 converts parameters and units, and generates compliant output files for data
 submission.")
     (license license:expat)))
+
+(define-public r-snic
+  (package
+    (name "r-snic")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snic" version))
+       (sha256
+        (base32 "0vkcv9f6fqr6qsj3390h97lbsp31g28crs7xjlig8w1y3rsb4jf9"))))
+    (properties `((upstream-name . "snic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rolfsimoes/snic")
+    (synopsis
+     "Superpixel Segmentation with the Simple Non-Iterative Clustering Algorithm")
+    (description
+     "This package implements the Simple Non-Iterative Clustering algorithm for
+superpixel segmentation of multi-band images, as introduced by Achanta and
+Susstrunk (2017) <doi:10.1109/CVPR.2017.520>.  Supports both standard image
+arrays and geospatial raster objects, with a design that can be extended to
+other spatial data frameworks.  The algorithm groups adjacent pixels into
+compact, coherent regions based on spectral similarity and spatial proximity.  A
+high-performance implementation supports images with arbitrary spectral bands.")
+    (license license:gpl2+)))
 
 (define-public r-snha
   (package
@@ -46195,6 +46257,30 @@ ISBN:92-5-104219-5), Teh (2006, ISBN:1-58-112-998-X), and Liu et al.(2006)
 <doi:10.1016/j.agwat.2006.01.018>.")
     (license license:gpl3+)))
 
+(define-public r-simest
+  (package
+    (name "r-simest")
+    (version "0.4-1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simest" version))
+       (sha256
+        (base32 "17i14r590l81k4xc4plzrjmaq776cphpp7772qdmhvfzidh29bs6"))))
+    (properties `((upstream-name . "simest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nnls r-cobs))
+    (home-page "https://curves-etc.r-forge.r-project.org/")
+    (synopsis "Constrained Single Index Model Estimation")
+    (description
+     "Estimation of function and index vector in single index model ('sim') with (and
+w/o) shape constraints including different smoothness conditions.  See, e.g.,
+Kuchibhotla and Patra (2020) <doi:10.3150/19-BEJ1183>.")
+    (license license:gpl2)))
+
 (define-public r-simer
   (package
     (name "r-simer")
@@ -51184,13 +51270,13 @@ has been done by Lantz (2013, ISBN:9781782162148).")
 (define-public r-shinymixr
   (package
     (name "r-shinymixr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyMixR" version))
        (sha256
-        (base32 "1kbbgp60q7yhq8hmyjxla9md3f5v9zr2gc22pz01sw8pq3pyljbw"))))
+        (base32 "0bi1mgyq4namkksyk9z7gkj06ry6hwrrzfnd1qni5wrdd3xm0529"))))
     (properties `((upstream-name . "shinyMixR")))
     (build-system r-build-system)
     (arguments
@@ -54782,6 +54868,50 @@ works include: Awad, A. M., & Alawneh, A. J. (1987).  Application of entropy to
 a life-time model.  IMA Journal of Mathematical Control and Information, 4(2),
 143-148. <doi:10.1093/imamci/4.2.143>.")
     (license license:gpl2)))
+
+(define-public r-shakti
+  (package
+    (name "r-shakti")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SHAKTI" version))
+       (sha256
+        (base32 "07kv7sl83j550nrwbmsqzjn4wjql6b3vaw7x4s3cpjwqv42gpgd5"))))
+    (properties `((upstream-name . "SHAKTI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-dplyr))
+    (home-page "https://cran.r-project.org/package=SHAKTI")
+    (synopsis
+     "Suite for Heat-Related Adsorption Knowledge and Thermodynamic Inference")
+    (description
+     "This package provides a comprehensive framework for quantifying the fundamental
+thermodynamic parameters of adsorption reactionsâchanges in the standard Gibbs
+free energy (delta G), enthalpy (delta H), and entropy (delta S)âis essential
+for understanding the spontaneity, heat effects, and molecular ordering
+associated with sorption processes.  By analysing temperature-dependent
+equilibrium data, thermodynamic interpretation expands adsorption studies beyond
+conventional isotherm fitting, offering deeper insight into underlying
+mechanisms and surfaceâsolute interactions.  Such an approach typically
+involves evaluating equilibrium coefficients across multiple temperatures and
+non-temperature treatments, deriving thermodynamic parameters using established
+thermodynamic relationships, and determining delta G as a temperature-specific
+indicator of adsorption favourability.  This analytical pathway is widely
+applicable across environmental science, soil science, chemistry, materials
+science, and engineering, where reliable assessment of sorption behaviour is
+critical for examining contaminant retention, nutrient dynamics, and the
+behaviour of natural and engineered surfaces.  By focusing specifically on
+thermodynamic inference, this framework complements existing adsorption
+isotherm-fitting packages such as â@code{AdIsMFâ}
+<https://CRAN.R-project.org/package=@code{AdIsMF>}
+<doi:10.32614/CRAN.package.@code{AdIsMF>}, and strengthens the scientific basis
+for interpreting adsorption energetics in both research and applied contexts.
+Details can be found in Roy et al. (2025) <doi:10.1007/s11270-025-07963-7>.")
+    (license license:gpl3)))
 
 (define-public r-shadowvimp
   (package
@@ -63882,13 +64012,13 @@ package?SDT for an overview.")
 (define-public r-sdstudio
   (package
     (name "r-sdstudio")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdstudio" version))
        (sha256
-        (base32 "1yncbanwcllv11xhvy0cdqw21jff3k3c7n6kqd3s747yrbi92wrf"))))
+        (base32 "0z99q0fy75a8rsps8cvi9w0cary1z2vxb0p43m87nw4fgaav2d4b"))))
     (properties `((upstream-name . "sdstudio")))
     (build-system r-build-system)
     (arguments

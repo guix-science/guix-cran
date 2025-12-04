@@ -6219,19 +6219,27 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.1037/cbs0000259>).")
 (define-public r-nntmvn
   (package
     (name "r-nntmvn")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nntmvn" version))
        (sha256
-        (base32 "050ibq3hwq1ir86rbpcyyz7nbb8hzi3hqhrxawylhb6vqdw8898v"))))
+        (base32 "0ljbcbxqib4r2bggy0bxdb5lwxr1sv51kggx1bws8cxbyi7bqa27"))))
     (properties `((upstream-name . "nntmvn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-truncatednormal r-rcpp r-rann r-gpgp))
+    (propagated-inputs (list r-truncatednormal
+                             r-tidyr
+                             r-rcpp
+                             r-rann
+                             r-r-utils
+                             r-lhs
+                             r-gpgp
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=nntmvn")
     (synopsis "Draw Samples of Truncated Multivariate Normal Distributions")
     (description
@@ -8973,30 +8981,6 @@ nonlinear equality and inequality constraints are allowed.  It accepts the input
 parameters as a constrained matrix.")
     (license license:gpl3)))
 
-(define-public r-njira
-  (package
-    (name "r-njira")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nJira" version))
-       (sha256
-        (base32 "0vh167kxljp68f0dx307wl6fp8nlp34vgrkr815z30mhx03p8j9r"))))
-    (properties `((upstream-name . "nJira")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjson r-plyr r-httr))
-    (home-page "https://cran.r-project.org/package=nJira")
-    (synopsis "SQL Like Query Interface for 'Jira'")
-    (description
-     "SQL like query interface to fetch data from any Jira installation.  The data is
-fetched using Jira REST API, which can be found at the following URL:
-<https://developer.atlassian.com/cloud/jira/platform/rest/v2>.")
-    (license license:expat)))
-
 (define-public r-nixtlar
   (package
     (name "r-nixtlar")
@@ -10917,13 +10901,13 @@ of this package is @code{nFunNNmodel()}.")
 (define-public r-nftbart
   (package
     (name "r-nftbart")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nftbart" version))
        (sha256
-        (base32 "002nzf0vh96s1fyrhl3dsl0ig3ps1pv6gpz9snjs7j8747ncfcp6"))))
+        (base32 "17g5mwfyz28fj32a9fz82d1jzsnjia9cjswwakvval5s5qrdfhmw"))))
     (properties `((upstream-name . "nftbart")))
     (build-system r-build-system)
     (arguments
@@ -12302,13 +12286,13 @@ activation function.  Furthermore, the calculation of generalized weights
 (define-public r-neuralgam
   (package
     (name "r-neuralgam")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuralGAM" version))
        (sha256
-        (base32 "10vn2wq7wxm1gf6zby7c5k4m7g1cgs5adwry9va0hv5cp38vppbz"))))
+        (base32 "1639l8hm9hhqq4zq470a5bqirssdgqq9cv24k8kzgn2asg222ra3"))))
     (properties `((upstream-name . "neuralGAM")))
     (build-system r-build-system)
     (arguments

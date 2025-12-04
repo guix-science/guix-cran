@@ -7291,40 +7291,6 @@ continuous duration recording, event counting, momentary time sampling, partial
 interval recording, whole interval recording, and augmented interval recording.")
     (license license:gpl3)))
 
-(define-public r-arplmec
-  (package
-    (name "r-arplmec")
-    (version "2.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ARpLMEC" version))
-       (sha256
-        (base32 "1d6gvgbnj19dislzjlxn7i0iq7h56zz7hm9x5l865ji790b9smqw"))))
-    (properties `((upstream-name . "ARpLMEC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncatednormal
-                             r-relliptical
-                             r-numderiv
-                             r-mnormt
-                             r-mass
-                             r-laplacesdemon
-                             r-expm))
-    (home-page "https://cran.r-project.org/package=ARpLMEC")
-    (synopsis
-     "Censored Mixed-Effects Models with Different Correlation Structures")
-    (description
-     "Left, right or interval censored mixed-effects linear model with autoregressive
-errors of order p or DEC correlation structure using the type-EM algorithm.  The
-error distribution can be Normal or t-Student.  It provides the parameter
-estimates, the standard errors and prediction of future observations (available
-only for the normal case).  Olivari et all (2021)
-<doi:10.1080/10543406.2020.1852246>.")
-    (license license:gpl2+)))
-
 (define-public r-arothron
   (package
     (name "r-arothron")
@@ -10240,13 +10206,13 @@ plot of the time-dependent AP versus time (available for event time data).")
 (define-public r-apticalc
   (package
     (name "r-apticalc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APTIcalc" version))
        (sha256
-        (base32 "0kavxdif665i9ir8a4yj21anp6s0c9y0dmn53lqw7ss73nvq6kzl"))))
+        (base32 "1iwkvi92g2flaxb74lm96sbv5x3pv77mj8ml5lj5s68yd1lbwfk9"))))
     (properties `((upstream-name . "APTIcalc")))
     (build-system r-build-system)
     (arguments
@@ -14500,13 +14466,13 @@ images.")
 (define-public r-analitica
   (package
     (name "r-analitica")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Analitica" version))
        (sha256
-        (base32 "0nhv6cwzkm1vxbp1afw86slr2jq94igyikpq6kgpmc7d2788ck7j"))))
+        (base32 "1hrf34q1bsk7q68czylll1hqac8km3mcjb8hhx88rsqrrz51x9c4"))))
     (properties `((upstream-name . "Analitica")))
     (build-system r-build-system)
     (arguments

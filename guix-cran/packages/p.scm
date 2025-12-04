@@ -264,13 +264,13 @@ report appears in the RStudio viewer pane as a formatted HTML file.")
 (define-public r-pyinit
   (package
     (name "r-pyinit")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pyinit" version))
        (sha256
-        (base32 "0cbwip549d17ysbk4lrvn6a25vfjjnimjsd5myvnbvg8c9nq5ryn"))))
+        (base32 "1q65cjcvgfhq629nh94xh1wz705kdg9mmhv7k55ql207gwnq7b0r"))))
     (properties `((upstream-name . "pyinit")))
     (build-system r-build-system)
     (arguments
@@ -10621,13 +10621,13 @@ data via optional dependencies.")
 (define-public r-primal
   (package
     (name "r-primal")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRIMAL" version))
        (sha256
-        (base32 "04fn0c10v9ai7vrrd4qr84rid3x42wq749rn5p1i6nkvmjv3dnhs"))))
+        (base32 "05cd4yr7jzr5yja0cqlzircdir2hfrpdjcsj0wycmaq1drby3pg9"))))
     (properties `((upstream-name . "PRIMAL")))
     (build-system r-build-system)
     (arguments
@@ -43431,13 +43431,13 @@ using data in tables (or spread sheets) and a simple syntax.")
 (define-public r-panstarrs
   (package
     (name "r-panstarrs")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panstarrs" version))
        (sha256
-        (base32 "0vynq6mycsirwb0kkl85xxijap0jk12k3m7lw7hljf6vwp2p2zc0"))))
+        (base32 "1wfa8jr54hrspjnl5wmyfmgglrwxf81z80pm0qag8726iy5d2x8k"))))
     (properties `((upstream-name . "panstarrs")))
     (build-system r-build-system)
     (arguments

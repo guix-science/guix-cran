@@ -4514,6 +4514,38 @@ will also calculate several measures of overlap.  See Keyel and Wiegand (2016)
 <doi:10.1111/2041-210X.12558> for more details.")
     (license license:gpl2+)))
 
+(define-public r-multirfm
+  (package
+    (name "r-multirfm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultiRFM" version))
+       (sha256
+        (base32 "02fks2bc06z1avp9h6wvdy2yv9qf15d0ji6lp1zlxy2kd791zcb3"))))
+    (properties `((upstream-name . "MultiRFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-mixtools
+                             r-mass
+                             r-laplacesdemon
+                             r-irlba))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/feiyoung/MultiRFM")
+    (synopsis "High-Dimensional Multi-Study Robust Factor Model")
+    (description
+     "We introduce a high-dimensional multi-study robust factor model, which learns
+latent features and accounts for the heterogeneity among source.  It could be
+used for analyzing heterogeneous RNA sequencing data.  More details can be
+referred to Jiang et al. (2025) <doi:10.48550/@code{arXiv.2506.18478>}.")
+    (license license:gpl3)))
+
 (define-public r-multirdpg
   (package
     (name "r-multirdpg")
@@ -6815,13 +6847,13 @@ p-values for trend in individual outcomes and power calculation is available.")
 (define-public r-multibridge
   (package
     (name "r-multibridge")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibridge" version))
        (sha256
-        (base32 "0akl9i3fhgd0pqsvgp7cv2l2l84cqc3cc4lambnjmwdyh7x4qcvd"))))
+        (base32 "12bd450sqls2hwz9q9lhp1zar1b675yyjdkc4a52sw6fc6cpg3xc"))))
     (properties `((upstream-name . "multibridge")))
     (build-system r-build-system)
     (arguments
@@ -22088,13 +22120,13 @@ model by Qu et al. (2013) <doi:10.1093/bioinformatics/btt459> and Kiihl et al.
 (define-public r-mlmi
   (package
     (name "r-mlmi")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmi" version))
        (sha256
-        (base32 "1nkg7h0r716yv9y6xnx8qcpvrqr6cxlhqrcyiihkwgwbmkgkp5sz"))))
+        (base32 "1i9f7rjvmli0r32lw4r8qavbp8fcnxh8p9hv4ifv3hir02w14wmj"))))
     (properties `((upstream-name . "mlmi")))
     (build-system r-build-system)
     (arguments
@@ -22110,12 +22142,14 @@ model by Qu et al. (2013) <doi:10.1093/bioinformatics/btt459> and Kiihl et al.
     (home-page "https://cran.r-project.org/package=mlmi")
     (synopsis "Maximum Likelihood Multiple Imputation")
     (description
-     "This package implements so called Maximum Likelihood Multiple Imputation as
-described by von Hippel and Bartlett (2021) <doi:10.1214/20-STS793>.  A number
-of different imputations are available, by utilising the norm', cat and mix
-packages.  Inferences can be performed either using combination rules similar to
-Rubin's or using a likelihood score based approach based on theory by Wang and
-Robins (1998) <doi:10.1093/biomet/85.4.935>.")
+     "This package implements proper and so-called Maximum Likelihood Multiple
+Imputation as described by von Hippel and Bartlett (2021)
+<doi:10.1214/20-STS793>.  A number of different imputation methods are
+available, by utilising the norm', cat and mix packages.  Inferences can be
+performed either using Rubin's rules (for proper imputation), or a modified
+version for maximum likelihood imputation.  For maximum likelihood imputations a
+likelihood score based approach based on theory by Wang and Robins (1998)
+<doi:10.1093/biomet/85.4.935> is also available.")
     (license license:gpl3)))
 
 (define-public r-mlmhelpr
@@ -31632,6 +31666,30 @@ Flexible and diverse applications of the function parameters make the data
 analyses powerful.")
     (license license:gpl2)))
 
+(define-public r-mhd
+  (package
+    (name "r-mhd")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MHD" version))
+       (sha256
+        (base32 "0h1m5nfs9cpb5qa99z9y62yh01nzbw25s5qlsfrwfplzadds64rb"))))
+    (properties `((upstream-name . "MHD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-plyr r-nloptr r-manifold r-distory))
+    (home-page "https://cran.r-project.org/package=MHD")
+    (synopsis "Metric Halfspace Depth")
+    (description
+     "Metric halfspace depth for object data, generalizing Tukey's depth for Euclidean
+data.  Implementing the method described in Dai and Lopez-Pintado (2022)
+<doi:10.1080/01621459.2021.2011298>.")
+    (license license:gpl2+)))
+
 (define-public r-mhctools
   (package
     (name "r-mhctools")
@@ -36826,13 +36884,13 @@ clusters.  Abdolali, Maryam & Gillis, Nicolas (2020) <doi:10.1137/20M1354982>.")
 (define-public r-metabolomicsbasics
   (package
     (name "r-metabolomicsbasics")
-    (version "1.4.5")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetabolomicsBasics" version))
        (sha256
-        (base32 "09yfakahah88sqranw56mr56jkqx6bgq52rcaj2bablr7bxswwvh"))))
+        (base32 "0r1wpnmnxkxrz5qx0ycxxs3ci4a47q6kxk7w5yn8m3rs6b1xsmb3"))))
     (properties `((upstream-name . "MetabolomicsBasics")))
     (build-system r-build-system)
     (arguments
@@ -36844,6 +36902,8 @@ clusters.  Abdolali, Maryam & Gillis, Nicolas (2020) <doi:10.1137/20M1354982>.")
                              r-plyr
                              r-pcamethods
                              r-interpretmsspectrum
+                             r-hirestec
+                             r-fs
                              r-e1071
                              r-caret
                              r-c50))
@@ -42655,13 +42715,13 @@ detailed description, see Meila, M. (2005) <doi:10.1145/1102351.1102424>.")
 (define-public r-mclustaddons
   (package
     (name "r-mclustaddons")
-    (version "0.9.2")
+    (version "0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mclustAddons" version))
        (sha256
-        (base32 "0vjymwmapi9vcl47icc2qhrnwv4fyw3m983npkk9jr5hxnngl6yf"))))
+        (base32 "0q0a6c32l72cvmqpzxp33hxk0ijfjqwma8lxm6vh69g7l4r64z5f"))))
     (properties `((upstream-name . "mclustAddons")))
     (build-system r-build-system)
     (arguments
@@ -45926,19 +45986,25 @@ and Coxhead's coefficient are included for comparison and flexibility.")
 (define-public r-matrixcorr
   (package
     (name "r-matrixcorr")
-    (version "0.6.2")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixCorr" version))
        (sha256
-        (base32 "0ywa9zw0rwbq9671251qsj9a2wvzvx8kwr4x8qbc32732s32fj2x"))))
+        (base32 "02qhkczrfs67gmwn3y0ffh83r9s8jjc3drx9qhic5pfn3dvsyh8w"))))
     (properties `((upstream-name . "matrixCorr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-ggplot2 r-cpp11))
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-ggplot2
+                             r-cpp11
+                             r-cli))
     (home-page "https://github.com/Prof-ThiagoOliveira/matrixCorr")
     (synopsis "Collection of Correlation and Association Estimators")
     (description

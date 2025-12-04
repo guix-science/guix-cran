@@ -11330,33 +11330,6 @@ documented at <https://cmu-delphi.github.io/delphi-epidata/api/covidcast.html>."
 <https://github.com/@code{MounaBelaid/covid19datatunisia>}.")
     (license license:expat)))
 
-(define-public r-covid19swiss
-  (package
-    (name "r-covid19swiss")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covid19swiss" version))
-       (sha256
-        (base32 "083j4568j7yk7l4qj6097zp0ijq70ycvwvmbfqp3dwazmibamy34"))))
-    (properties `((upstream-name . "covid19swiss")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-devtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Covid19R/covid19swiss")
-    (synopsis
-     "COVID-19 Cases in Switzerland and Principality of Liechtenstein")
-    (description
-     "This package provides a daily summary of the Coronavirus (COVID-19) cases in
-Switzerland cantons and Principality of Liechtenstein.  Data source: Specialist
-Unit for Open Government Data Canton of Zurich
-<https://www.zh.ch/de/politik-staat/opendata.html>.")
-    (license license:expat)))
-
 (define-public r-covid19srilanka
   (package
     (name "r-covid19srilanka")
@@ -16702,13 +16675,13 @@ Pizzuto (2019).")
 (define-public r-convdistr
   (package
     (name "r-convdistr")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convdistr" version))
        (sha256
-        (base32 "1mi5sa9lyn9pdmdlrah8fvxdzm1gqblh3r50y1g40902cryf5yds"))))
+        (base32 "1c95j29nl8s229jm5fcinmpy01h5f6s1bpg3bni7bdq145ahigb0"))))
     (properties `((upstream-name . "convdistr")))
     (build-system r-build-system)
     (arguments
@@ -16718,7 +16691,6 @@ Pizzuto (2019).")
                              r-shiny
                              r-shelf
                              r-rcolorbrewer
-                             r-pryr
                              r-mass
                              r-ggplot2
                              r-extradistr
@@ -36865,6 +36837,74 @@ learner.  For more details, see the paper by Hu et al.
 <doi:10.1177/0962280220921909>.")
     (license license:expat)))
 
+(define-public r-cimpleg
+  (package
+    (name "r-cimpleg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CimpleG" version))
+       (sha256
+        (base32 "1d8kay41ykcd5pkyyhijcsb30kg0ra6gkvvn6956xp3znfydpjly"))))
+    (properties `((upstream-name . "CimpleG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-vroom
+                             r-tune
+                             r-tsutils
+                             r-tidyselect
+                             r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-scales
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-patchwork
+                             r-parsnip
+                             r-oner
+                             r-nnls
+                             r-matrixstats
+                             r-magrittr
+                             r-gtools
+                             r-ggsci
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggextra
+                             r-forcats
+                             r-dplyr
+                             r-devtools
+                             r-data-table
+                             r-caret
+                             r-butcher
+                             r-broom
+                             r-assertthat
+                             r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CostaLab/CimpleG")
+    (synopsis
+     "Method to Identify Single CpG Sites for Classification and Deconvolution")
+    (description
+     "DNA methylation signatures are usually based on multivariate approaches that
+require hundreds of sites for predictions. @code{CimpleG} is a method for the
+detection of small @code{CpG} methylation signatures used for cell-type
+classification and deconvolution. @code{CimpleG} is time efficient and performs
+as well as top performing methods for cell-type classification of blood cells
+and other somatic cells, while basing its prediction on a single DNA methylation
+site per cell type (but users can also select more sites if they so wish).
+Users can train cell type classifiers ('@code{CimpleG} based, and others) and
+directly apply these in a deconvolution of cell mixes context.  Altogether,
+@code{CimpleG} provides a complete computational framework for the delineation
+of DNAm signatures and cellular deconvolution.  For more details see MaiÃ© et
+al. (2023) <doi:10.1186/s13059-023-03000-0>.")
+    (license license:gpl3+)))
+
 (define-public r-cimple
   (package
     (name "r-cimple")
@@ -41623,13 +41663,13 @@ license. <https://www.cgal.org/>.")
 (define-public r-cgaim
   (package
     (name "r-cgaim")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgaim" version))
        (sha256
-        (base32 "0az5msrznyqwcgx4n9hqc9g96wcl3zc0cqhv7g5yws3rfk3phjd3"))))
+        (base32 "1pmc2b0krixj9sbzf18v77wxi2mnz6vi120fmf9qzw0asdlnv652"))))
     (properties `((upstream-name . "cgaim")))
     (build-system r-build-system)
     (arguments
@@ -48103,13 +48143,13 @@ alternative-specific outcome models.  See also, Melamed and Doan (2024, ISBN:
 (define-public r-catreg
   (package
     (name "r-catreg")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatReg" version))
        (sha256
-        (base32 "02pxarc4v45w8ncx8hq084m69qgl9s2lkrv1biz60vrvl99dg016"))))
+        (base32 "0akrrfrdr3qigbam7z31k7pibcakd91xkgz29sa4vk28crx5j4y0"))))
     (properties `((upstream-name . "CatReg")))
     (build-system r-build-system)
     (arguments
@@ -52904,13 +52944,13 @@ estimates.")
 (define-public r-calcite
   (package
     (name "r-calcite")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calcite" version))
        (sha256
-        (base32 "1ralgay6f6dw537d70x93ia2i2zz5fklaq9gl9an12z99ms33b5f"))))
+        (base32 "00f44dj348fsp3bvl7p5jb7v2l2nid2gx0fsfidcjm3d3fb6401j"))))
     (properties `((upstream-name . "calcite")))
     (build-system r-build-system)
     (arguments

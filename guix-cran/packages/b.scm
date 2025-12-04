@@ -16118,13 +16118,13 @@ restrictions and clustering.")
 (define-public r-binspp
   (package
     (name "r-binspp")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binspp" version))
        (sha256
-        (base32 "1iqqzzad14b6qn16wx6x3p5xzzv8rkpn6qh3xil13s9jvz5pbarb"))))
+        (base32 "15mh696afd3l1k9qacjybiin0wcm799i0nygfrhmy8b3wggc0jl2"))))
     (properties `((upstream-name . "binspp")))
     (build-system r-build-system)
     (arguments

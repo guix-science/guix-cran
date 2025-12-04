@@ -1979,6 +1979,32 @@ treatment group with a fixed total sample size to maximize the power.")
 handle servers that run locally as well as the OSRM webserver.")
     (license license:gpl3)))
 
+(define-public r-osrm-backend
+  (package
+    (name "r-osrm-backend")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osrm.backend" version))
+       (sha256
+        (base32 "1vkcyjr9nazfr31jaivgngclyn8ciw2gv5x8x2x41cy3zy49scnr"))))
+    (properties `((upstream-name . "osrm.backend")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ps r-processx r-jsonlite r-httr2 r-digest))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/e-kotov/osrm.backend")
+    (synopsis "Bindings for 'Open Source Routing Machine'")
+    (description
+     "Install and control Open Source Routing Machine ('OSRM') backend executables to
+prepare routing data and run/stop a local OSRM server.  For computations with
+the running server use the osrm R package
+(<https://cran.r-project.org/package=osrm>).")
+    (license license:expat)))
+
 (define-public r-osrm
   (package
     (name "r-osrm")
@@ -7726,20 +7752,19 @@ data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
 (define-public r-openesm
   (package
     (name "r-openesm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openesm" version))
        (sha256
-        (base32 "172s416pakwcikcmlx0n043xj48k3r8q6s742xq096svq06g38zf"))))
+        (base32 "08ygxp4g7q0xhhq209p0dcr4wvb2jgra035ysrsi1mzp7s4gqpij"))))
     (properties `((upstream-name . "openesm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zen4r
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-readr
                              r-purrr
                              r-jsonlite

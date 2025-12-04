@@ -101,13 +101,13 @@ for typst-cli availability and run Typst commands.")
 (define-public r-typetracer
   (package
     (name "r-typetracer")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "typetracer" version))
        (sha256
-        (base32 "0w1faggmq0cn62kdwrdyy66kf4iqfhqgvcr2bnjgp6wvshhh2cj7"))))
+        (base32 "06prgavmgsc4918vfqqgr0mabrxa1jb9mix3xx3cij20srp12imj"))))
     (properties `((upstream-name . "typetracer")))
     (build-system r-build-system)
     (arguments
@@ -20906,6 +20906,38 @@ experience of working with Emoji as smooth as possible, as it has the tidyverse
 style.")
     (license license:gpl3+)))
 
+(define-public r-tidyedsurvey
+  (package
+    (name "r-tidyedsurvey")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyEdSurvey" version))
+       (sha256
+        (base32 "1g3sq3dqiychll0yzy59yclnvcjz3g2lkmswasm9wm72bzam45l3"))))
+    (properties `((upstream-name . "tidyEdSurvey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-edsurvey
+                             r-dplyr
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=tidyEdSurvey")
+    (synopsis "Integration of 'dplyr' and 'ggplot2' with 'EdSurvey'")
+    (description
+     "Takes objects of class edsurvey.data.frame and converts them to a data.frame
+within the calling environment of dplyr and ggplot2 functions.  Additionally,
+for plotting with ggplot2', users can map aesthetics to subject scales and all
+plausible values will be used.  This package supports student level data; to
+work with school or teacher level data, see ?@code{EdSurvey::getData}'.")
+    (license license:gpl2)))
+
 (define-public r-tidyedgar
   (package
     (name "r-tidyedgar")
@@ -28467,13 +28499,13 @@ manipulation of application layout and plot or table settings.")
 (define-public r-teal-transform
   (package
     (name "r-teal-transform")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.transform" version))
        (sha256
-        (base32 "0wwfqcgwnqdcdzzp5rdnfj11qdafwvbxxr24zyx4z7mgb37kjnya"))))
+        (base32 "188g32q4ly1zmv3x7wwy35vyx885898baj8ikms2vs5rwx3kyxj0"))))
     (properties `((upstream-name . "teal.transform")))
     (build-system r-build-system)
     (arguments
@@ -28593,13 +28625,13 @@ supporting reproducible research and analysis.")
 (define-public r-teal-modules-general
   (package
     (name "r-teal-modules-general")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.general" version))
        (sha256
-        (base32 "1iwzfysp84dvlkkqgm47k6pnw2p5q34z1rkj7yng0bblkf7sp88d"))))
+        (base32 "13ai248klsi5d9jgijvv885iggxarf3s29rz6pwkyig3k2x93xxj"))))
     (properties `((upstream-name . "teal.modules.general")))
     (build-system r-build-system)
     (arguments
@@ -28624,6 +28656,7 @@ supporting reproducible research and analysis.")
                              r-shiny
                              r-scales
                              r-rtables
+                             r-rmarkdown
                              r-mass
                              r-lifecycle
                              r-lattice
@@ -28656,13 +28689,13 @@ and analysis.")
 (define-public r-teal-modules-clinical
   (package
     (name "r-teal-modules-clinical")
-    (version "0.11.1")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.clinical" version))
        (sha256
-        (base32 "065m4irbdl4fl4fkmc55574iq4qxnphlizy3dmzkhgkg9p3h7ga3"))))
+        (base32 "1nh3rvwi8ixiknfdhz93fw4ab58785fvfja95dfnpksnyl28gnjd"))))
     (properties `((upstream-name . "teal.modules.clinical")))
     (build-system r-build-system)
     (arguments
@@ -31265,6 +31298,43 @@ templates provided.")
      "Schedule R scripts/processes with the Windows task scheduler.  This allows R
 users to automate R processes on specific time points from R itself.")
     (license license:agpl3)))
+
+(define-public r-taskqueue
+  (package
+    (name "r-taskqueue")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taskqueue" version))
+       (sha256
+        (base32 "1mizq3naqwwakc6s9csvb95j8ccxfxxprpl6a5v1cwy3yixa0hb7"))))
+    (properties `((upstream-name . "taskqueue")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-whisker
+                             r-stringr
+                             r-ssh
+                             r-shiny
+                             r-settings
+                             r-rpostgres
+                             r-rlang
+                             r-ggplot2
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://taskqueue.bangyou.me/")
+    (synopsis "Task Queue for Parallel Computing Based on PostgreSQL")
+    (description
+     "This package implements a task queue system for asynchronous parallel computing
+using @code{PostgreSQL} <https://www.postgresql.org/> as a backend.  Designed
+for embarrassingly parallel problems where tasks do not communicate with each
+other.  Dynamically distributes tasks to workers, handles uneven load balancing,
+and allows new workers to join at any time.  Particularly useful for running
+large numbers of independent tasks on high-performance computing (HPC) clusters
+with SLURM <https://slurm.schedmd.com/> job schedulers.")
+    (license license:expat)))
 
 (define-public r-tashu
   (package

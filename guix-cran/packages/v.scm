@@ -5206,13 +5206,13 @@ provide details on the variational algorithms.")
 (define-public r-vgamextra
   (package
     (name "r-vgamextra")
-    (version "0.0-8")
+    (version "0.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VGAMextra" version))
        (sha256
-        (base32 "0q6a06lzcdv02mw44sqkfngnv0571ynvqcvcapa6rjj5z29kd235"))))
+        (base32 "0q577rganc04lbd72p9n6ygjr3i3s67kfxr0lg4rx2hlmagwfcqm"))))
     (properties `((upstream-name . "VGAMextra")))
     (build-system r-build-system)
     (arguments
@@ -5596,13 +5596,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "1p6cmxacdmnafsj3nfwgkn6zh8sgw70bhp7fwz4jd4z95nlijgcm"))))
+        (base32 "0w4x7zzaz0ymk8q1lvf0zbkrm011vpjdn650bgggkxwavnhwwzfz"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -5615,6 +5615,7 @@ Factorization algorithms - Random generators of diferent types of integers.")
     (inputs (list vtk python python-numpy))
     (propagated-inputs (list r-stringr
                              r-reticulate
+                             r-rcolorbrewer
                              r-rappdirs
                              r-png
                              r-plotly
@@ -6454,13 +6455,13 @@ htmlwidget'.")
 (define-public r-veesa
   (package
     (name "r-veesa")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "veesa" version))
        (sha256
-        (base32 "07f6pcd76cy1bxbfmbkmvhrlbhwg15qj9lk4z5bfqqnsmzqb9y7b"))))
+        (base32 "08jp8qv7sh2qp92m251jyq8wh3vqyfwynhqgscgg5siyqnydv4k6"))))
     (properties `((upstream-name . "veesa")))
     (build-system r-build-system)
     (arguments
@@ -6575,13 +6576,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "1az29fv9q16280kz88gz78wzd9wdbdc3gg19x1pbxfgk62r50z6j"))))
+        (base32 "14ffvg9q54zydw7n5y2avzzxib58a9491xyq8j0l14400jh3nxgp"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments

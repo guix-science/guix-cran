@@ -199,35 +199,6 @@ search; local or English names are not allowed.  A user API key is required to
 start using the package.")
     (license license:gpl3+)))
 
-(define-public r-fwsim
-  (package
-    (name "r-fwsim")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fwsim" version))
-       (sha256
-        (base32 "0fy87c1x5hihfcppv1pvk3b0pwl6ygqpka40x55gbpkgssdigb1l"))))
-    (properties `((upstream-name . "fwsim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=fwsim")
-    (synopsis "Fisher-Wright Population Simulation")
-    (description
-     "Simulates a population under the Fisher-Wright model (fixed or stochastic
-population size) with a one-step neutral mutation process (stepwise mutation
-model, logistic mutation model and exponential mutation model supported).  The
-stochastic population sizes are random Poisson distributed and different kinds
-of population growth are supported.  For the stepwise mutation model, it is
-possible to specify locus and direction specific mutation rate (in terms of
-upwards and downwards mutation rate).  Intermediate generations can be saved in
-order to study e.g. drift.")
-    (license license:gpl2)))
-
 (define-public r-fwrgb
   (package
     (name "r-fwrgb")
@@ -9462,6 +9433,41 @@ dependency explicitly into account and searches for the most forecastable
 signal.  The measure of forecastability is based on the Shannon entropy of the
 spectral density of the transformed signal.")
     (license license:gpl2)))
+
+(define-public r-fordm
+  (package
+    (name "r-fordm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FoRDM" version))
+       (sha256
+        (base32 "1qw3asw8pxl2rp7yr6kj9xl9xiqv6gznxgv9z7jxfh2vk0xv3xqr"))))
+    (properties `((upstream-name . "FoRDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-emoa
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=FoRDM")
+    (synopsis "Forest Many-Objective Robust Decision Making ('FoRDM')")
+    (description
+     "Forest Many-Objective Robust Decision Making ('@code{FoRDM}') is a R toolkit for
+supporting robust forest management under deep uncertainty.  It provides a
+forestry-focused application of Many-Objective Robust Decision Making ('MORDM')
+to forest simulation outputs, enabling users to evaluate robustness using
+regret- and satisficing'-based measures. @code{FoRDM} identifies robust
+solutions, generates Pareto fronts, and offers interactive 2D, 3D, and
+parallel-coordinate visualizations.")
+    (license license:expat)))
 
 (define-public r-ford
   (package

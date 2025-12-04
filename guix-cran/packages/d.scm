@@ -13320,13 +13320,13 @@ integration range.  For a review of discretisation methods, see Chakraborty
 (define-public r-distcomp
   (package
     (name "r-distcomp")
-    (version "1.3-3")
+    (version "1.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distcomp" version))
        (sha256
-        (base32 "01h8cczkb0vb6560rh4czvajwa7gbgp41pl2b5xw7a68cbjizv8n"))))
+        (base32 "1w7hv7fky3s3yipajdj1c21nc9rx3psg17ixqrsy844wvqwi2zd2"))))
     (properties `((upstream-name . "distcomp")))
     (build-system r-build-system)
     (arguments
@@ -17567,13 +17567,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "11xvl8mgaz2aqy3q856y202cviwwmghsx3546202wj4v58pd7c1g"))))
+        (base32 "0nc6z5wr611d5f8g95d387fv6xyga1y6yfmgr4lvk7kbhfywhyz7"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (arguments
@@ -17584,9 +17584,12 @@ the sales information.")
                              r-plm
                              r-openxlsx
                              r-matlib
+                             r-mass
                              r-lmtest
                              r-haven
                              r-ggplot2
+                             r-fixest
+                             r-fixest
                              r-dplyr
                              r-data-table
                              r-cowplot

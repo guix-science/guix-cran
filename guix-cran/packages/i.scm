@@ -1744,51 +1744,6 @@ Craig, A., Barton, R. H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D.,
 Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
     (license license:gpl3+)))
 
-(define-public r-istat
-  (package
-    (name "r-istat")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "istat" version))
-       (sha256
-        (base32 "14ilhx3zwn8vpir2lc7lz4n6m5wkpxjzimkrwgl1ri1g4shr5kgx"))))
-    (properties `((upstream-name . "istat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-writexl
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinyhelper
-                             r-shinydashboard
-                             r-shinybs
-                             r-shiny
-                             r-rsdmx
-                             r-readxl
-                             r-reactable
-                             r-openxlsx
-                             r-magrittr
-                             r-httr
-                             r-htmltools
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-datamods))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=istat")
-    (synopsis "Download and Manipulate Data from Istat")
-    (description
-     "Download data from Istat (Italian Institute of Statistics) database, both old
-and new provider (respectively, <http://dati.istat.it/> and
-<https://esploradati.istat.it/databrowser/>).  Additional functions for
-manipulating data are provided.  Moreover, a shiny application called
-@code{shinyIstat} can be used to search, download and filter datasets in an
-easier way.")
-    (license license:gpl2+)))
-
 (define-public r-istacr
   (package
     (name "r-istacr")
@@ -7897,13 +7852,13 @@ plots for (cross-validated) @code{randomForest} and ada models.")
 (define-public r-interpretmsspectrum
   (package
     (name "r-interpretmsspectrum")
-    (version "1.4.5")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InterpretMSSpectrum" version))
        (sha256
-        (base32 "0lzgq87dybmbhip8v0m70x751sky4chyvxyznahl5f5l7nrwr5c0"))))
+        (base32 "1mnmz8rs2vqh9zz78bh11qs4f1yciz7qa9bivir4aw8b29spbkkv"))))
     (properties `((upstream-name . "InterpretMSSpectrum")))
     (build-system r-build-system)
     (arguments
@@ -9517,13 +9472,13 @@ of the output.")
 (define-public r-inshiny
   (package
     (name "r-inshiny")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inshiny" version))
        (sha256
-        (base32 "0wcva8gz7i4l2w0jfhick9anb75x5znlcsi8bf4pv8hrrag4lxhf"))))
+        (base32 "0gw5g1rvppgmvr6kqqa45p0gscva9i2j6jw0fq5k44sigav08jib"))))
     (properties `((upstream-name . "inshiny")))
     (build-system r-build-system)
     (arguments
@@ -15605,13 +15560,13 @@ origin, with the three functions of @code{iGini()}, @code{iTheiT()}, and
 (define-public r-iimi
   (package
     (name "r-iimi")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iimi" version))
        (sha256
-        (base32 "1q8kzc9b032axhjg28igbpys02ryfj89x8ksa7sr266nyk3dmz1w"))))
+        (base32 "0nrk4pa7hzlcwizbiq34xbz6nmaphzsjmm4d648cjb8lm5bifmz5"))))
     (properties `((upstream-name . "iimi")))
     (build-system r-build-system)
     (arguments
@@ -17649,13 +17604,13 @@ data, to interpolate unsampled measurements from low-resolution time series.")
 (define-public r-idiolect
   (package
     (name "r-idiolect")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idiolect" version))
        (sha256
-        (base32 "1wmigxzja5wkr7s2zp67fd2n77b67s2l4jllhrcn2zji8s6qlv2m"))))
+        (base32 "1cj330pg97ammy033570s22jkzf8760jxqpng3mzcss7rzccg7kl"))))
     (properties `((upstream-name . "idiolect")))
     (build-system r-build-system)
     (arguments
@@ -18614,13 +18569,13 @@ Hotelling's T-test, estimates of shape are implemented.")
 (define-public r-icskat
   (package
     (name "r-icskat")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSKAT" version))
        (sha256
-        (base32 "13cx2480kyzcwxp9b57p3rq4fs6x1fd4wpwm7iwiqjh17v4vb54l"))))
+        (base32 "1hh6asbpkis0rwk8yh19p3w0fv29m83ibmprjcxk05mc9ar3lfzz"))))
     (properties `((upstream-name . "ICSKAT")))
     (build-system r-build-system)
     (arguments
@@ -18650,7 +18605,10 @@ to fall between the date of their age 29 checkup and the date of the age 30
 checkup.  Interval-censored data include right- and left-censored data as
 special cases.  This package also implements the interval-censored Burden test
 and the ICSKATO test, which is the optimal combination of the ICSKAT and Burden
-tests.  Please see the vignette for a quickstart guide.")
+tests.  Please see the vignette for a quickstart guide.  The paper describing
+these methods is \" Inference for Set-Based Effects in Genetic Association
+Studies with Interval-Censored Outcomes\" by Sun R, Zhu L, Li Y, Yasui Y, &
+Robison L (Biometrics 2023, <doi:10.1111/biom.13636>).")
     (license license:gpl3)))
 
 (define-public r-icsclust

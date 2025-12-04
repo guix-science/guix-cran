@@ -1512,13 +1512,13 @@ published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyd1d" version))
        (sha256
-        (base32 "1b4zhzkgqs67gc8pgnkvfrzra0rzyni3v3a7dgifxpwadhgl1nl3"))))
+        (base32 "0rb1i95c6x9559wf2q318b32s6c60qgc9v5g3d26avzxpidh8gqk"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
     (arguments
@@ -4049,13 +4049,13 @@ stratified sample of 80 talkers of Dutch.")
 (define-public r-hqm
   (package
     (name "r-hqm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HQM" version))
        (sha256
-        (base32 "15wmh4k9wsvrr171m340irrc84ry0w2nj9pwklhqiyal3gb4wfgv"))))
+        (base32 "0r1n1icgxbkh1flsb2cf6w9h82almdyxhx1l39mafbm338bq4mv6"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
     (arguments
@@ -4066,11 +4066,12 @@ stratified sample of 80 talkers of Dutch.")
     (synopsis
      "Superefficient Estimation of Future Conditional Hazards Based on Marker Information")
     (description
-     "This package provides a nonparametric smoothed kernel estimator for the future
-conditional hazard rate function when time-dependent covariates are present, a
-bandwidth selector for the estimator's implementation and pointwise and uniform
-confidence bands.  Methods used in the package refer to Bagkavos, Isakson,
-Mammen, Nielsen and Proust-Lima (2025) <doi:10.1093/biomet/asaf008>.")
+     "This package provides univariate and indexed (multivariate) nonparametric
+smoothed kernel estimators for the future conditional hazard rate function when
+time-dependent covariates are present, a bandwidth selector for the estimator's
+implementation and pointwise and uniform confidence bands.  Methods used in the
+package refer to Bagkavos, Isakson, Mammen, Nielsen and Proust-Lima (2025)
+<doi:10.1093/biomet/asaf008>.")
     (license license:gpl2+)))
 
 (define-public r-hpzoneapi
@@ -13285,13 +13286,13 @@ a non-hierarchical setting the package produces a single derivative curve.")
 (define-public r-hdcuremodels
   (package
     (name "r-hdcuremodels")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdcuremodels" version))
        (sha256
-        (base32 "12l7g2rk2ij6hyyn73jvwi703g3czsi6lkzhmha189d4jr009drs"))))
+        (base32 "0c69qrv3n6lniqcrb5slj6qxk747k4j2d9ypb77pdn86fa5s9mh3"))))
     (properties `((upstream-name . "hdcuremodels")))
     (build-system r-build-system)
     (arguments
@@ -13310,7 +13311,7 @@ a non-hierarchical setting the package produces a single derivative curve.")
                              r-flexsurv
                              r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/kelliejarcher/hdcuremodels")
+    (home-page "https://github.com/ropensci/hdcuremodels")
     (synopsis "High-Dimensional Cure Models")
     (description
      "This package provides functions for fitting various penalized parametric and

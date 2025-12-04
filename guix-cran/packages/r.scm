@@ -397,13 +397,13 @@ computer algebra system (<http://www.yacas.org/>).")
 (define-public r-ryacas
   (package
     (name "r-ryacas")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ryacas" version))
        (sha256
-        (base32 "1g43rm492is2rkhjn7dv40qdmx70321sp2z7cigqfh6ffwcgbz9y"))))
+        (base32 "1x6s6941rhyb6jxj50mggzpilzgqkicl3xnbml040x7c505brs05"))))
     (properties `((upstream-name . "Ryacas")))
     (build-system r-build-system)
     (arguments
@@ -3707,6 +3707,36 @@ exponential RT-MPTs) or Hamiltonian-within-Gibbs sampler (for diffusion
 RT-MPTs).")
     (license license:gpl2+)))
 
+(define-public r-rtmpinv
+  (package
+    (name "r-rtmpinv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtmpinv" version))
+       (sha256
+        (base32 "1svm60s4xdm0ycjpnq4n2gk0z6qmz48g6jnd14pmawg35am33gw7"))))
+    (properties `((upstream-name . "rtmpinv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rclsp))
+    (home-page "https://github.com/econcz/rtmpinv")
+    (synopsis "Tabular Matrix Problems via Pseudoinverse Estimation")
+    (description
+     "The Tabular Matrix Problems via Pseudoinverse Estimation (TMPinv) is a two-stage
+estimation method that reformulates structured table-based systems - such as
+allocation problems, transaction matrices, and input-output tables - as
+structured least-squares problems.  Based on the Convex Least Squares
+Programming (CLSP) framework, TMPinv solves systems with row and column
+constraints, block structure, and optionally reduced dimensionality by (1)
+constructing a canonical constraint form and applying a pseudoinverse-based
+projection, followed by (2) a convex-programming refinement stage to improve
+fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
+    (license license:expat)))
+
 (define-public r-rtmbdist
   (package
     (name "r-rtmbdist")
@@ -4993,13 +5023,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "3.0.2")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "0vfq3q85lsbsyq0bjaclf78nqjaas5cwk12nwjaaz9ylwx628mwa"))))
+        (base32 "1n02wnz5xb51sjsyp8gnbrnis4wwhzf9qapvihmmpxfjij9lff7x"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -11877,13 +11907,13 @@ calculate branch-specific diversification rates, see Kopperud & Hoehna (2025)
 (define-public r-rpese
   (package
     (name "r-rpese")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPESE" version))
        (sha256
-        (base32 "157xvfa6m4vii92fac8xbhnah7np3jvd1y1y7ryw5c80yfbdhf0y"))))
+        (base32 "1kzq0llscfpxhjsc3lfjs0x7cplxjvr0v1jnpbrzmgkgl679r535"))))
     (properties `((upstream-name . "RPESE")))
     (build-system r-build-system)
     (arguments
@@ -14121,46 +14151,6 @@ and parsed accordingly.")
 brings the results into the R environment.  R on FHIR is based on the
 @code{FhirClient} of the official HL7 FHIR .NET API', also made by Firely.")
     (license (license:fsdg-compatible "BSD 3-clause License + file LICENSE"))))
-
-(define-public r-romic
-  (package
-    (name "r-romic")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "romic" version))
-       (sha256
-        (base32 "0gaiysrg6f0xriphkbkmxvwrp3hk3spg26wlprw7lmi72k81mmaj"))))
-    (properties `((upstream-name . "romic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shiny
-                             r-rlang
-                             r-reshape2
-                             r-readr
-                             r-purrr
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=romic")
-    (synopsis "R for High-Dimensional Omic Data")
-    (description
-     "Represents high-dimensional data as tables of features, samples and
-measurements, and a design list for tracking the meaning of individual
-variables.  Using this format, filtering, normalization, and other
-transformations of a dataset can be carried out in a flexible manner.  romic
-takes advantage of these transformations to create interactive shiny apps for
-exploratory data analysis such as an interactive heatmap.")
-    (license license:expat)))
 
 (define-public r-romeb
   (package
@@ -22829,6 +22819,36 @@ on Zhu, Zeng & Kosorok (2015) <doi:10.1080/01621459.2015.1036994>, subject
 weight, variable weight, tracking subjects used in each tree, etc.")
     (license license:gpl2+)))
 
+(define-public r-rlppinv
+  (package
+    (name "r-rlppinv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlppinv" version))
+       (sha256
+        (base32 "0p2fh20r7prbwiiw0b6bxc31xx0gsbnf3acik6w7hfkar650if90"))))
+    (properties `((upstream-name . "rlppinv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rclsp))
+    (home-page "https://github.com/econcz/rlppinv")
+    (synopsis "Linear Programming via Regularized Least Squares")
+    (description
+     "The Linear Programming via Regularized Least Squares (LPPinv) is a two-stage
+estimation method that reformulates linear programs as structured least-squares
+problems.  Based on the Convex Least Squares Programming (CLSP) framework,
+LPPinv solves linear inequality, equality, and bound constraints by (1)
+constructing a canonical constraint system and computing a pseudoinverse
+projection, followed by (2) a convex-programming correction stage to refine the
+solution under additional regularization (e.g., Lasso, Ridge, or Elastic Net).
+LPPinv is intended for underdetermined and ill-posed linear problems, for which
+standard solvers fail.")
+    (license license:expat)))
+
 (define-public r-rlowdb
   (package
     (name "r-rlowdb")
@@ -23920,32 +23940,6 @@ applied to stable isotope data.  Additionally, functions to determine niche
 area, polygon overlap between groups and levels (confidence contours) and
 plotting capabilities.")
     (license license:gpl3+)))
-
-(define-public r-rkhsmetamod
-  (package
-    (name "r-rkhsmetamod")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RKHSMetaMod" version))
-       (sha256
-        (base32 "1h8gqqfmlrzyj4n997yn13vqpaw2kwzl45gscy3fdhskzmyg0ss3"))))
-    (properties `((upstream-name . "RKHSMetaMod")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppgsl r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=RKHSMetaMod")
-    (synopsis
-     "Ridge Group Sparse Optimization Problem for Estimation of a Meta Model Based on Reproducing Kernel Hilbert Spaces")
-    (description
-     "Estimates the Hoeffding decomposition of an unknown function by solving ridge
-group sparse optimization problem based on reproducing kernel Hilbert spaces,
-and approximates its sensitivity indices (see Kamari, H., Huet, S. and Taupin,
-M.-L. (2019) <@code{arXiv:1905.13695>}).")
-    (license license:gpl2+)))
 
 (define-public r-rkenyaforex
   (package
@@ -33850,6 +33844,48 @@ distribution.  The package also allows the users to specify different model
 forms for both the recurrent event process and the terminal event.")
     (license license:gpl3+)))
 
+(define-public r-rerddapxtracto
+  (package
+    (name "r-rerddapxtracto")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rerddapXtracto" version))
+       (sha256
+        (base32 "1vfqnnyj3j453h4mf5p1jhk33827c8y9qqi6ya9k437zc82529cl"))))
+    (properties `((upstream-name . "rerddapXtracto")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-sp
+                             r-sf
+                             r-rerddap
+                             r-readr
+                             r-plotdap
+                             r-parsedate
+                             r-ncdf4
+                             r-maps
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rmendels/rerddapXtracto")
+    (synopsis "Extracts Environmental Data from 'ERDDAPâ¢' Web Services")
+    (description
+     "This package contains three functions that access environmental data from any
+ERDDAPâ¢ data web service.  The @code{rxtracto()} function extracts data along
+a trajectory for a given \"radius\" around the point.  The @code{rxtracto_3D()}
+function extracts data in a box.  The @code{rxtractogon()} function extracts
+data in a polygon.  All of those three function use the rerddap package to
+extract the data, and should work with any ERDDAPâ¢ server.  There are also two
+functions, @code{plotBBox()} and @code{plotTrack()} that use the plotdap package
+to simplify the creation of maps of the data.")
+    (license license:cc0)))
+
 (define-public r-rerddap
   (package
     (name "r-rerddap")
@@ -40401,13 +40437,13 @@ output that is compatible with dplyr or data.table centered processes.")
 (define-public r-reconstructkm
   (package
     (name "r-reconstructkm")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reconstructKM" version))
        (sha256
-        (base32 "0fxdmvkm68g114nx2r2r8gy2lwqc5wkfcls7fpdfdfg0aazqqxwq"))))
+        (base32 "0cwq3bbpqvpm4gskyl7idgl3cg7cncq844whjp7h4r564a5g5kbv"))))
     (properties `((upstream-name . "reconstructKM")))
     (build-system r-build-system)
     (arguments
@@ -41378,19 +41414,19 @@ and combine bibliographies from both sources.")
 (define-public r-rebayes
   (package
     (name "r-rebayes")
-    (version "2.56")
+    (version "2.59")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REBayes" version))
        (sha256
-        (base32 "0wfqibyzj3kcydsv2jr8x5pmcrig9y7183r7raqnqkss9iy60qyj"))))
+        (base32 "0kk5ji11xszj8z0dy8sx1ynizi96djvs44xvxbpzvz0skji73mii"))))
     (properties `((upstream-name . "REBayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-lattice))
+    (propagated-inputs (list r-matrix r-lattice r-deconvolver))
     (native-inputs (list r-knitr))
     (home-page "https://www.r-project.org")
     (synopsis "Empirical Bayes Estimation and Inference")
@@ -43900,13 +43936,13 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
 (define-public r-rdistance
   (package
     (name "r-rdistance")
-    (version "4.0.5")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdistance" version))
        (sha256
-        (base32 "1rbi2jnz9wsi8s6rf2mbxqbv2drwymybag47vh4n1bg0ydqfyl16"))))
+        (base32 "1qwl77dn69n01fz80ly1mayzgb3ayqgklcbfafszgwiqiwlwvsfl"))))
     (properties `((upstream-name . "Rdistance")))
     (build-system r-build-system)
     (arguments
@@ -43918,27 +43954,26 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
                              r-tidyr
                              r-tibble
                              r-progress
+                             r-expint
                              r-dplyr
+                             r-dfoptim
                              r-crayon))
-    (home-page "https://github.com/tmcd82070/Rdistance/wiki")
+    (home-page "https://mcdonalddata.science/Rdistance.html")
     (synopsis "Density and Abundance from Distance-Sampling Surveys")
     (description
-     "Distance-sampling (<doi:10.1007/978-3-319-19219-2>) estimates density and
-abundance of survey targets (e.g., animals) when detection probability declines
-with distance.  Distance-sampling is popular in ecology, especially when survey
-targets are observed from aerial platforms (e.g., airplane or drone), surface
-vessels (e.g., boat or truck), or along walking transects.  Distance-sampling
-includes line-transect studies that measure observation distances as the closest
-approach of the sample route (transect) to the target (i.e., perpendicular
-off-transect distance), and point-transect studies that measure observation
-distances from stationary observers to the target (i.e., radial distance).  The
-routines included here fit smooth (parametric) curves to histograms of
-observation distances and use those functions to compute effective sampling
-distances, density of targets in the surveyed area, and abundance of targets in
-a surrounding study area.  Curve shapes include the half-normal, hazard rate,
-and negative exponential functions.  Physical measurement units are required and
-used throughout to ensure density is reported correctly.  The help files are
-extensive and have been vetted by multiple authors.")
+     "Distance-sampling (<doi:10.1007/978-3-319-19219-2>) is a field survey and
+analytical method that estimates density and abundance of survey targets (e.g.,
+animals) when detection probability declines with observation distance.
+Distance-sampling is popular in ecology, especially when survey targets are
+observed from aerial platforms (e.g., airplane or drone), surface vessels (e.g.,
+boat or truck), or along walking transects.  Analysis involves fitting smooth
+(parametric) curves to histograms of observation distances and using those
+functions to adjust density estimates for missed targets.  Routines included
+here fit curves to observation distance histograms, estimate effective sampling
+area, density of targets in surveyed areas, and the abundance of targets in a
+surrounding study area.  Confidence interval estimation uses built-in bootstrap
+resampling.  Help files are extensive and have been vetted by multiple authors.
+Many tutorials are available on the package's website (URL below).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rdist
@@ -44584,13 +44619,13 @@ then be imported to access the check functions in other packages.")
 (define-public r-rdav
   (package
     (name "r-rdav")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdav" version))
        (sha256
-        (base32 "1fs3xlxc38qsdj9r3k05w3jahcp69ss5ylgshdvqhinkh2vk40sw"))))
+        (base32 "13sj75i33jh42gk1f0zxh1wsmmd6c93vjnm8cydzvyzwi5klfbvs"))))
     (properties `((upstream-name . "rdav")))
     (build-system r-build-system)
     (arguments
@@ -49289,6 +49324,46 @@ cheminformatics.  This allows the user to load molecules, evaluate fingerprints,
 calculate molecular descriptors and so on.  In addition, the CDK API allows the
 user to view structures in 2D.")
     (license license:lgpl2.0+)))
+
+(define-public r-rcdf
+  (package
+    (name "r-rcdf")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcdf" version))
+       (sha256
+        (base32 "1y4i6cd67ib3lk5v3kw2jfl13yxanqhrx661zv595ppmwni86c4c"))))
+    (properties `((upstream-name . "rcdf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-uuid
+                             r-stringr
+                             r-rsqlite
+                             r-openxlsx
+                             r-openssl
+                             r-jsonlite
+                             r-haven
+                             r-glue
+                             r-fs
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://yng-me.github.io/rcdf/")
+    (synopsis "Comprehensive Toolkit for Working with Encrypted Parquet Files")
+    (description
+     "Utilities for reading, writing, and managing RCDF files, including encryption
+and decryption support.  It offers a flexible interface for handling data stored
+in encrypted Parquet format, along with metadata extraction, key management, and
+secure operations using Advanced Encryption Standard (AES) and
+Rivest-Shamir-Adleman (RSA) encryption.")
+    (license license:expat)))
 
 (define-public r-rcdea
   (package
@@ -54970,13 +55045,13 @@ naive singular value decoposition (SVD) (and eigen decomposition).")
 (define-public r-randotools
   (package
     (name "r-randotools")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randotools" version))
        (sha256
-        (base32 "1mdqapkxf763bay38jabs59cy9ffvh0cknggyh0z2nc1s5mslvvi"))))
+        (base32 "15bzfjk2ffyv6jzyl88b6cb74icxgpq8sj6m3wm1c8y1mhzxr1ik"))))
     (properties `((upstream-name . "randotools")))
     (build-system r-build-system)
     (arguments
@@ -56909,13 +56984,13 @@ optimizing the parameters m', M', and n', during the process of assembling loci.
 (define-public r-radsafer
   (package
     (name "r-radsafer")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radsafer" version))
        (sha256
-        (base32 "0zw0dn8pi1yn786fcmm414dap77wdni43dma2pyjbxb15zagpmli"))))
+        (base32 "1q7746a3i6rhpdvlry0n302pz3nx8i5bygp51hycvfllm9lvp125"))))
     (properties `((upstream-name . "radsafer")))
     (build-system r-build-system)
     (arguments
