@@ -3636,38 +3636,6 @@ residual variance.  Specifically, the weight parameter to the function
 variance).")
     (license license:gpl3)))
 
-(define-public r-wiqid
-  (package
-    (name "r-wiqid")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wiqid" version))
-       (sha256
-        (base32 "1d5bckkr6cnixccxaa14n7vbsya5cc00y9mryy1j69shhsmxp5ks"))))
-    (properties `((upstream-name . "wiqid")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncnorm
-                             r-plotrix
-                             r-mcmcoutput
-                             r-mass
-                             r-hdinterval
-                             r-coda))
-    (home-page "https://mmeredith.net/R/wiqid/")
-    (synopsis "Quick and Dirty Estimates for Wildlife Populations")
-    (description
-     "This package provides simple, fast functions for maximum likelihood and Bayesian
-estimates of wildlife population parameters, suitable for use with simulated
-data or bootstraps.  Early versions were indeed quick and dirty, but optional
-error-checking routines and meaningful error messages have been added.  Includes
-single and multi-season occupancy, closed capture population estimation,
-survival, species richness and distance measures.")
-    (license license:gpl3)))
-
 (define-public r-wipf
   (package
     (name "r-wipf")

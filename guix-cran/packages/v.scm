@@ -2525,19 +2525,25 @@ based in Russia.")
 (define-public r-viztest
   (package
     (name "r-viztest")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VizTest" version))
        (sha256
-        (base32 "084fjknbsvrqxwvxh8vw51nijgsbyhgqpb28yxkfaysmczmwi9ck"))))
+        (base32 "0dpiw16iqcrbq79dm6g1kjw0issb08l84vggm89icr5zl6wwhp75"))))
     (properties `((upstream-name . "VizTest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-hdinterval r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-multcomp
+                             r-hdinterval
+                             r-ggtext
+                             r-ggplot2
+                             r-emmeans
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VizTest")
     (synopsis "Optimal Confidence Intervals for Visual Testing")
@@ -6992,45 +6998,6 @@ from MP Lefranc (2009) <doi:10.1093/nar/gkn838> and Vgenerepertoire from
 publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
     (license license:gpl2)))
 
-(define-public r-vdiver
-  (package
-    (name "r-vdiver")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vDiveR" version))
-       (sha256
-        (base32 "0bh7byhlimhm1qrg49mj5avsq307y7fz0071a3zlgff1cyj6yndv"))))
-    (properties `((upstream-name . "vDiveR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-stringdist
-                             r-scales
-                             r-rlang
-                             r-rentrez
-                             r-maps
-                             r-magrittr
-                             r-ggtext
-                             r-ggpubr
-                             r-ggplot2
-                             r-gghalves
-                             r-dplyr
-                             r-cowplot))
-    (home-page "https://cran.r-project.org/package=vDiveR")
-    (synopsis "Visualization of Viral Protein Sequence Diversity Dynamics")
-    (description
-     "To ease the visualization of outputs from Diversity Motif Analyser
-('@code{DiMA}'; <https://github.com/BVU-BILSAB/@code{DiMA>}). @code{vDiveR}
-allows visualization of the diversity motifs (index and its variants â major,
-minor and unique) for elucidation of the underlying inherent dynamics.  Please
-refer <https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
-    (license license:expat)))
-
 (define-public r-vdar
   (package
     (name "r-vdar")
@@ -8356,13 +8323,13 @@ variant information.")
 (define-public r-variskscore
   (package
     (name "r-variskscore")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaRiskScore" version))
        (sha256
-        (base32 "031k19ric26xvrva3rs9894n7ak87h96d2c4ip1lrr0lhhbk3awv"))))
+        (base32 "11cpb4y80phw6aj41mscmcf5l6idm88j63p3gkdyjn85hi87xswz"))))
     (properties `((upstream-name . "vaRiskScore")))
     (build-system r-build-system)
     (arguments
@@ -8372,12 +8339,13 @@ variant information.")
     (synopsis "VA CVD Risk Score")
     (description
      "Estimates the predicted 10-year cardiovascular (CVD) risk score (in probability)
-for women military service members and veterans by inputting patient profiles.
-The proposed women CVD risk score improves the accuracy of the existing American
-College of Cardiology/American Heart Association CVD risk assessment tool in
-predicting longâterm CVD risk for VA women, particularly in young and
-racial/ethnic minority women.  See the reference: JeonâSlaughter, H., Chen,
-X., Tsai, S., Ramanan, B., & Ebrahimi, R. (2021) <doi:10.1161/JAHA.120.019217>.")
+for civilian women, women military service members and veterans by inputting
+patient profiles.  The proposed women CVD risk score improves the accuracy of
+the existing American College of Cardiology/American Heart Association CVD risk
+assessment tool in predicting longâterm CVD risk for VA women, particularly in
+young and racial/ethnic minority women.  See the reference: JeonâSlaughter,
+H., Chen, X., Tsai, S., Ramanan, B., & Ebrahimi, R. (2021)
+<doi:10.1161/JAHA.120.019217>.")
     (license license:gpl3)))
 
 (define-public r-variosig

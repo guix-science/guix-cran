@@ -1847,19 +1847,24 @@ city codes at a specific point in time.")
 (define-public r-joyn
   (package
     (name "r-joyn")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joyn" version))
        (sha256
-        (base32 "1r1wydrgsh1zjlbgzrv9l6bcc1y5xp22a2ynsqipd55aw78gx3h5"))))
+        (base32 "147n8ql9dvnga8bbq6pvxvsm1vmpzjs4a0f8dfxznccgplv699c7"))))
     (properties `((upstream-name . "joyn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-lifecycle r-data-table r-collapse r-cli))
+    (propagated-inputs (list r-rlang
+                             r-lifecycle
+                             r-glue
+                             r-data-table
+                             r-collapse
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/randrescastaneda/joyn")
     (synopsis

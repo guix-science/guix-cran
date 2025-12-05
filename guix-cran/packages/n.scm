@@ -68,6 +68,49 @@ Originally published by the New Zealand Police at
 <http://www.police.govt.nz/about-us/publication/road-policing-driver-offence-data-january-2009-december-2017>.")
     (license license:cc0)))
 
+(define-public r-nzilbb-vowels
+  (package
+    (name "r-nzilbb-vowels")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nzilbb.vowels" version))
+       (sha256
+        (base32 "18jx5zmnw6y0411zy6l6n26cxf0dhivdj6m6k9y34wpkrvgzdsz1"))))
+    (properties `((upstream-name . "nzilbb.vowels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-smacof
+                             r-rstudioapi
+                             r-rsample
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-ggrepel
+                             r-ggplot2
+                             r-gghalves
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://nzilbb.github.io/nzilbb_vowels/")
+    (synopsis "Vowel Covariation Tools")
+    (description
+     "This package provides tools to support research on vowel covariation.  Methods
+are provided to support Principal Component Analysis workflows (as in Brand et
+al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
+<doi:10.1515/lingvan-2022-0086>).")
+    (license license:expat)))
+
 (define-public r-nzilbb-labbcat
   (package
     (name "r-nzilbb-labbcat")
@@ -1556,36 +1599,6 @@ conditions of length and magnitude.  The method is based on the Run Length
 Encoding algorithm, available with base R, inspired by A. H. Robinson and C.
 Cherry (1967) <doi:10.1109/PROC.1967.5493>.")
     (license license:expat)))
-
-(define-public r-nse
-  (package
-    (name "r-nse")
-    (version "1.21")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nse" version))
-       (sha256
-        (base32 "0mw2ijc6z0l8sa7z5fbcapp1rl87zhh5v32iw1mcjw4khwc93bk7"))))
-    (properties `((upstream-name . "nse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich
-                             r-rcpp
-                             r-np
-                             r-mcmcse
-                             r-mcmc
-                             r-coda))
-    (home-page "https://github.com/keblu/nse")
-    (synopsis "Numerical Standard Errors Computation in R")
-    (description
-     "Collection of functions designed to calculate numerical standard error (NSE) of
-univariate time series as described in Ardia et al. (2018)
-<doi:10.1515/jtse-2017-0011> and Ardia and Bluteau (2017)
-<doi:10.21105/joss.00172>.")
-    (license license:gpl2+)))
 
 (define-public r-nscluster
   (package
@@ -14630,30 +14643,6 @@ specifying ggplot2 theme parameters.  Users can easily customize color and theme
 settings before using the reset of NEST packages to ensure consistent settings
 in both static and interactive output at the downstream.")
     (license license:asl2.0)))
-
-(define-public r-nesrdata
-  (package
-    (name "r-nesrdata")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nesRdata" version))
-       (sha256
-        (base32 "1lxvg11g8nizfn8sghirq2749fs9i4w1wiaz3v1djqbkzqcqfrcj"))))
-    (properties `((upstream-name . "nesRdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readr r-rappdirs r-purrr r-dplyr r-dataone))
-    (home-page "https://github.com/jsta/nesRdata")
-    (synopsis "National Eutrophication Survey Data")
-    (description
-     "Serves data from the United States Environmental Protection Agency (USEPA)
-National Eutrophication Survey
-<https://www.epa.gov/national-aquatic-resource-surveys>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-neptune
   (package

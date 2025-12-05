@@ -2729,13 +2729,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.1.7")
+    (version "2.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "1lw7m8p1242akc57x4v1ipq834ja3l09mwrb9ydf16j1s3cxbmbw"))))
+        (base32 "0xzcxfrw4aq5jg3y8vfmh5fv6ipa9q57p1gsvm5gzc73npn50fxh"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (arguments
@@ -2743,7 +2743,6 @@ is for educational purposes only.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-testthat
                              r-stringr
                              r-rsvg
                              r-rjsonio
@@ -4261,13 +4260,13 @@ before publication using this approach.")
 (define-public r-psre
   (package
     (name "r-psre")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psre" version))
        (sha256
-        (base32 "1zbgg9nzj00yiixmql5r0db6vpjf5dbbya32f5q8898xicdycdbx"))))
+        (base32 "0nmha0m40023xfc1q57c8v7574apd0y6lbj4ym6iv1f2vd12hvjp"))))
     (properties `((upstream-name . "psre")))
     (build-system r-build-system)
     (arguments
@@ -4285,7 +4284,6 @@ before publication using this approach.")
                              r-mass
                              r-marginaleffects
                              r-magrittr
-                             r-lawstat
                              r-ggrepel
                              r-ggplot2
                              r-fancova
@@ -19578,13 +19576,13 @@ the base temperature for growing degree days (Yang et al. (1995)
 (define-public r-polle
   (package
     (name "r-polle")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polle" version))
        (sha256
-        (base32 "0d5885jjrjb4nf48rl7yiyfl2qialcyf9fl7x7762wpfj6g3hn7a"))))
+        (base32 "1jc5bkizlln6av7h6g9qsyjgkqqjpcvzvni4az8rq8q4bn1y7ags"))))
     (properties `((upstream-name . "polle")))
     (build-system r-build-system)
     (arguments

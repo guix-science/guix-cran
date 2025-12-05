@@ -11878,6 +11878,39 @@ further methodological developments.  Reference: Hornung, R. & Wright, M. N.
 data.  BMC Bioinformatics 20:358. <doi:10.1186/s12859-019-2942-y>.")
     (license license:gpl3)))
 
+(define-public r-blockedff
+  (package
+    (name "r-blockedff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockedFF" version))
+       (sha256
+        (base32 "1rp89kvh86h610qpq65wxb63i5rndgfhax694yxl7cbwbbpzy40y"))))
+    (properties `((upstream-name . "blockedFF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=blockedFF")
+    (synopsis
+     "Generation of Blocked Fractional Factorial Designs (Two-Level and Three-Level)")
+    (description
+     "This package provides computational tools to generate efficient blocked and
+unblocked fractional factorial designs for two-level and three-level factors
+using the generalized Minimum Aberration (MA) criterion and related optimization
+algorithms.  Methodological foundations include the general theory of minimum
+aberration as described by Cheng and Tang (2005)
+<doi:10.1214/009053604000001228>, and the catalogue of three-level regular
+fractional factorial designs developed by Xu (2005)
+<doi:10.1007/s00184-005-0408-x>.  The main functions @code{dol2()} and
+@code{dol3()} generate blocked two-level and three-level fractional factorial
+designs, respectively, using beam search, optimization-based ranking,
+confounding assessment, and structured output suitable for complete factorial
+situations.")
+    (license license:gpl3)))
+
 (define-public r-blockcv
   (package
     (name "r-blockcv")
@@ -15660,13 +15693,13 @@ implementation can be understood by running examples in @code{modelFrame()}, and
 (define-public r-biodosetools
   (package
     (name "r-biodosetools")
-    (version "3.7.1")
+    (version "3.7.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biodosetools" version))
        (sha256
-        (base32 "0q96k1yv177w5n2z8sgvhd986zaa7np046icx1y0qk23f1h3vhmq"))))
+        (base32 "170v58xs767a6nqx6mx6494spnx2zaafip42324f8cs142jdy5s2"))))
     (properties `((upstream-name . "biodosetools")))
     (build-system r-build-system)
     (arguments
@@ -28058,50 +28091,6 @@ methods and generate forecasts with uncertainty quantification.  Implements
 approaches described in <doi:10.48550/@code{arXiv.2411.05371>} and
 <doi:10.1002/sim.9164>.")
     (license license:cc0)))
-
-(define-public r-bayesianfactorzoo
-  (package
-    (name "r-bayesianfactorzoo")
-    (version "0.0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesianFactorZoo" version))
-       (sha256
-        (base32 "026mfyfx8dzj1y97v7gi0kx3iq2fnrlyjd3pcszz1324fi87rpa5"))))
-    (properties `((upstream-name . "BayesianFactorZoo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-timeseries
-                             r-reshape2
-                             r-rdpack
-                             r-nse
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-matrixcalc
-                             r-matrix
-                             r-mass
-                             r-ggplot2
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=BayesianFactorZoo")
-    (synopsis
-     "Bayesian Solutions for the Factor Zoo: We Just Ran Two Quadrillion Models")
-    (description
-     "This package contains the functions to use the econometric methods in the paper
-Bryzgalova, Huang, and Julliard (2023) <doi:10.1111/jofi.13197>.  In this
-package, we provide a novel Bayesian framework for analyzing linear asset
-pricing models: simple, robust, and applicable to high-dimensional problems.
-For a stand-alone model, we provide functions including @code{BayesianFM()} and
-@code{BayesianSDF()} to deliver reliable price of risk estimates for both
-tradable and nontradable factors.  For competing factors and possibly nonnested
-models, we provide functions including @code{continuous_ss_sdf()},
-@code{continuous_ss_sdf_v2()}, and @code{dirac_ss_sdf_pvalue()} to analyze
-high-dimensional models.  If you use this package, please cite the paper.  We
-are thankful to Yunan Ding and Jingtong Zhang for their research assistance.
-Any errors or omissions are the responsibility of the authors.")
-    (license license:gpl3)))
 
 (define-public r-bayesianetas
   (package

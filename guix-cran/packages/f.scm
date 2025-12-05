@@ -1531,13 +1531,13 @@ approximation to some value (e.g., 22/7 or 355/113 for pi), and so on.")
 (define-public r-funviewr
   (package
     (name "r-funviewr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funviewR" version))
        (sha256
-        (base32 "1g65xn05hvm2sgfc8zz47k3vhpd3c9hn7lwzd2ad4ryghci3jsrm"))))
+        (base32 "17a7jkz8p3dgpj7ghg5xbsxj4cijjlgqdqajxr5gng81cyyns7rs"))))
     (properties `((upstream-name . "funviewR")))
     (build-system r-build-system)
     (arguments

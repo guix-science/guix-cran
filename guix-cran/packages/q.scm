@@ -6209,13 +6209,13 @@ for use with the qdap package.")
 (define-public r-qdap
   (package
     (name "r-qdap")
-    (version "2.4.6")
+    (version "2.4.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qdap" version))
        (sha256
-        (base32 "1dr48b0187w003v98qckzi4zxb6r0yi3jh8f6krknv4c4qasfn9n"))))
+        (base32 "1ywldp5frf03d5g5zxxmb6mjgvmi02y4yhz245g576r27sg7avkk"))))
     (properties `((upstream-name . "qdap")))
     (build-system r-build-system)
     (arguments

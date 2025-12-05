@@ -1744,6 +1744,53 @@ Craig, A., Barton, R. H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D.,
 Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
     (license license:gpl3+)))
 
+(define-public r-istat
+  (package
+    (name "r-istat")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "istat" version))
+       (sha256
+        (base32 "1d66gzwy7fvmsh72f6cn0p0aaj2vrwxw8amx851r92y1lwzyzyjk"))))
+    (properties `((upstream-name . "istat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyhelper
+                             r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-rsdmx
+                             r-readxl
+                             r-reactable
+                             r-openxlsx
+                             r-magrittr
+                             r-httr
+                             r-htmltools
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-digest
+                             r-datamods
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=istat")
+    (synopsis "Download and Manipulate Data from Istat")
+    (description
+     "Download data from ISTAT (Italian Institute of Statistics) database, both old
+and new provider (respectively, <http://dati.istat.it/> and
+<https://esploradati.istat.it/databrowser/>).  Additional functions for
+manipulating data are provided.  Moreover, a shiny application called
+@code{shinyIstat} can be used to search, download and filter datasets in an
+easier way.")
+    (license license:gpl2+)))
+
 (define-public r-istacr
   (package
     (name "r-istacr")
@@ -14027,49 +14074,6 @@ of the functionality of the package.  See Wang, Su and Qiu (2014;
 <doi:10.1111/jedm.12045>) for an overview of modeling alternatives.")
     (license license:gpl2+)))
 
-(define-public r-immcp
-  (package
-    (name "r-immcp")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "immcp" version))
-       (sha256
-        (base32 "0xjk0a1dr45rnf6fzir74805winn1wppci2wk7wr2pwpmba86vzq"))))
-    (properties `((upstream-name . "immcp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork
-                             r-rlang
-                             r-purrr
-                             r-proxyc
-                             r-pbapply
-                             r-org-hs-eg-db
-                             r-openxlsx
-                             r-matrix
-                             r-magrittr
-                             r-igraph
-                             r-ggplot2
-                             r-ggheatmap
-                             r-factoextra
-                             r-dplyr
-                             r-dose
-                             r-clusterprofiler
-                             r-arules))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/YuanlongHu/immcp")
-    (synopsis
-     "Poly-Pharmacology Toolkit for Traditional Chinese Medicine Research")
-    (description
-     "Toolkit for Poly-pharmacology Research of Traditional Chinese Medicine.  Based
-on the biological descriptors and drug-disease interaction networks, it can
-analyze the potential poly-pharmacological mechanisms of Traditional Chinese
-Medicine and be used for drug-repositioning in Traditional Chinese Medicine.")
-    (license license:gpl3+)))
-
 (define-public r-immailgun
   (package
     (name "r-immailgun")
@@ -16321,42 +16325,6 @@ and more recent methods as described in Jackson et al. (2020)
 to simulate @code{IgA-Seq} data and an example experimental data set for method
 testing.")
     (license license:gpl3)))
-
-(define-public r-igapfill
-  (package
-    (name "r-igapfill")
-    (version "0.0.41")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "igapfill" version))
-       (sha256
-        (base32 "0a0cabn9dzpnr16bmpxy6h64sx060g863p23lqdriz0kdbk42hw5"))))
-    (properties `((upstream-name . "igapfill")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-raster
-                             r-numbers
-                             r-itertools
-                             r-iterators
-                             r-gtools
-                             r-geots
-                             r-gapfill
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=igapfill")
-    (synopsis "Interface for Gap-Filling Earth Observation Datasets")
-    (description
-     "This package provides functions and a user-friendly console-based interface for
-the efficient use of the main function of the R package gapfill to fill missing
-values of satellite images subsets.  In addition to the R package documentation,
-the gapfill methods are introduced in Gerber et al. (2018)
-<doi:10.1109/TGRS.2017.2785240>.")
-    (license license:gpl2+)))
 
 (define-public r-ig-vancouver-2014-topcolour
   (package
@@ -21895,34 +21863,4 @@ Locale Data Repository') are available here as a series of easy-to-parse
 datasets.  Several functions are provided for extracting key elements from the
 tabular datasets.")
     (license license:expat)))
-
-(define-public r-i14y
-  (package
-    (name "r-i14y")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "I14Y" version))
-       (sha256
-        (base32 "0mgnshi9bfq6kys675dc16ywlqq7r6jcl1kcxgzgg0w520vmayh8"))))
-    (properties `((upstream-name . "I14Y")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-readr
-                             r-httr2
-                             r-curl
-                             r-cli))
-    (home-page "https://felixluginbuhl.com/I14Y/")
-    (synopsis
-     "Search and Get Data from the I14Y Interoperability Platform of Switzerland")
-    (description
-     "Search and download Swiss data and metadata from the I14Y interoperability
-platform of Switzerland using its public APIs
-<https://www.i14y.admin.ch/api/index.html>.")
-    (license license:gpl3+)))
 

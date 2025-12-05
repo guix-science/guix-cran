@@ -624,13 +624,13 @@ submit events.")
 (define-public r-azr
   (package
     (name "r-azr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azr" version))
        (sha256
-        (base32 "1iiz4ambzqjxaszwag7fxf81r7d3wah8pqhly6j5hr26c2kc8cjn"))))
+        (base32 "13cmj7zaslfz9hvrlcg0hb6ic7v38z392nn8xazf0chvgrhq676f"))))
     (properties `((upstream-name . "azr")))
     (build-system r-build-system)
     (arguments
@@ -7563,19 +7563,20 @@ Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
 (define-public r-armadillo4r
   (package
     (name "r-armadillo4r")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "armadillo4r" version))
        (sha256
-        (base32 "12xryns1x5zqcxx1c973jsb75nwqki0v6qmkiihw0m06i5bcm1g7"))))
+        (base32 "1ny1ysrsj3qlnig5zmr9wmjvimm9n5lsqb86bxgaxwcig0qyxa51"))))
     (properties `((upstream-name . "armadillo4r")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-cpp4r))
+    (native-inputs (list pkg-config))
     (home-page "https://pacha.dev/armadillo4r/")
     (synopsis "An 'Armadillo' Interface")
     (description
@@ -15648,13 +15649,13 @@ trawl processes and weighted trawl processes.")
 (define-public r-ambiorix
   (package
     (name "r-ambiorix")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ambiorix" version))
        (sha256
-        (base32 "10x3rbqh53i61mws32x35b302q7y2zswgmwqa2ykmvd6g1q02a5h"))))
+        (base32 "0my6vc237xfggmxdg6wr5i7wa1zhf9q2lh1xkxnhqhcsyx7y8s6x"))))
     (properties `((upstream-name . "ambiorix")))
     (build-system r-build-system)
     (arguments
@@ -15678,19 +15679,19 @@ service from multi-page websites to RESTful application programming interfaces."
 (define-public r-ambient
   (package
     (name "r-ambient")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ambient" version))
        (sha256
-        (base32 "18cmn075yhcbqlrf4gsgqflqzk2d0kc3ah23k9pn47q2dvr6fqn2"))))
+        (base32 "1nc1lcnapcxhzn03nmn9yg4lsbhl1zbd1iwyyfc46x10rf8d33ac"))))
     (properties `((upstream-name . "ambient")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-cpp11))
+    (propagated-inputs (list r-rlang r-cpp11 r-cli))
     (home-page "https://ambient.data-imaginist.com")
     (synopsis "Generator of Multidimensional Noise")
     (description
@@ -18941,13 +18942,13 @@ the Ensemble Kalman filter or the Particle filter as described in Piazzi et al.
 (define-public r-airgrdatasets
   (package
     (name "r-airgrdatasets")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRdatasets" version))
        (sha256
-        (base32 "0g1zmcalf1l6zvw0ass26vh8svm0i7r9pbzixb4mw2vgvqm1f520"))))
+        (base32 "0z6dkvv5q7q64l0472fwbsdfzggv7i3zqjvmiacfd9k82wi19lyr"))))
     (properties `((upstream-name . "airGRdatasets")))
     (build-system r-build-system)
     (arguments

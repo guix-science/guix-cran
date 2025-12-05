@@ -16192,13 +16192,13 @@ A Shiny app is also available.")
 (define-public r-hackernews
   (package
     (name "r-hackernews")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hackeRnews" version))
        (sha256
-        (base32 "02fj1l0kb9jhhf2rjh3l0c0pp89y4819mv4gg1zzkdwvyks7x5wr"))))
+        (base32 "10l8s5jbfipd5mzn9m03brgrp944xn7n3qfnjsv8nxmw05fdqx0g"))))
     (properties `((upstream-name . "hackeRnews")))
     (build-system r-build-system)
     (arguments

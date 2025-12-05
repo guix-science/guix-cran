@@ -6317,13 +6317,13 @@ true/false positive rates and AUC curves from a set of censored survival data.")
 (define-public r-survah
   (package
     (name "r-survah")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survAH" version))
        (sha256
-        (base32 "1cs3h2gc7i5lpy98lq6vi70k207x42nl1swdp5qs602zfbivx56k"))))
+        (base32 "1m4wwp8d3k28q0z5lqpxr4xsycwfhsryaiyl3cbsz5himihyir41"))))
     (properties `((upstream-name . "survAH")))
     (build-system r-build-system)
     (arguments
@@ -7730,13 +7730,13 @@ number of robust (or super) biclusters with none or low overlap.")
 (define-public r-superb
   (package
     (name "r-superb")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "superb" version))
        (sha256
-        (base32 "16m7bwdr7n0fjzk7vygn4y3i5bmnqpq81c4m8zldvd8hcv618cpw"))))
+        (base32 "1sm4gs6a4bs9pqwmizkppwdqh2bcxvl5a6hg0dxj043hfdnmh0b3"))))
     (properties `((upstream-name . "superb")))
     (build-system r-build-system)
     (arguments
@@ -17374,13 +17374,13 @@ exact methods are also provided for the lognormal model.  Revised from
 (define-public r-stan4bart
   (package
     (name "r-stan4bart")
-    (version "0.0-10")
+    (version "0.0-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stan4bart" version))
        (sha256
-        (base32 "0gf89r4wj1ahkzbc6hhbsf5xmnz092y9rb6qwfysf9ix5a6g281a"))))
+        (base32 "0jplbhl19b4gmn4hbmpwxq5c1h7frr8jsmaz2qhp6m5hh3zxqm52"))))
     (properties `((upstream-name . "stan4bart")))
     (build-system r-build-system)
     (arguments
@@ -42800,13 +42800,13 @@ Bioinformatics)<https://github.com/Lujun995/@code{DiSC_Replication_Code>}.")
 (define-public r-singlecellhaystack
   (package
     (name "r-singlecellhaystack")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleCellHaystack" version))
        (sha256
-        (base32 "1kfkbfabv9j87rsy3nb3dmk6ckncvimrwax1p74vnszbz91a1zg7"))))
+        (base32 "1wgvhc2nmq7ddcx0p02zbql3lp5cbb4zxsydq88vryk0g3xkcjg9"))))
     (properties `((upstream-name . "singleCellHaystack")))
     (build-system r-build-system)
     (arguments
@@ -51038,13 +51038,13 @@ with tailwind <https://tailwindcss.com/>.")
 (define-public r-shinymrp
   (package
     (name "r-shinymrp")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinymrp" version))
        (sha256
-        (base32 "1vgdx8ha2kvdsd2vfr8ylm009zklg7x27mlkgcr2n6l2xrrxf8fj"))))
+        (base32 "0mpxyrivb1rb1xwd1zwijqcks7ypzqc19ldg90s4dpsd8sw5qzjd"))))
     (properties `((upstream-name . "shinymrp")))
     (build-system r-build-system)
     (arguments
@@ -51065,6 +51065,7 @@ with tailwind <https://tailwindcss.com/>.")
                              r-purrr
                              r-posterior
                              r-patchwork
+                             r-matrix
                              r-magrittr
                              r-lubridate
                              r-loo
@@ -54820,13 +54821,13 @@ sampling methods or experimental designs.")
 (define-public r-shapboost
   (package
     (name "r-shapboost")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHAPBoost" version))
        (sha256
-        (base32 "01b64lzr7crldjr2yqh3q5jh4r6y2fg7ac4qzasyysdir54lgjw5"))))
+        (base32 "0qdxhli7m1mqglgqivbgvivabdrn4dw6v5c8zqyq0ipq87g48asv"))))
     (properties `((upstream-name . "SHAPBoost")))
     (build-system r-build-system)
     (arguments
@@ -56091,6 +56092,36 @@ allows for the statistical modeling of multi-group rank data in combination with
 object variables.  The package also allows for the simulation of synthetic
 multi-group rank data.")
     (license license:gpl3)))
+
+(define-public r-sfocds
+  (package
+    (name "r-sfocds")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SFOCDs" version))
+       (sha256
+        (base32 "0piqrkmwqf7g70r61dy7zxcgkkzfqzkgcck6zq99crfbkgiz3zjs"))))
+    (properties `((upstream-name . "SFOCDs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=SFOCDs")
+    (synopsis "Space Filling Optimal Covariate Designs")
+    (description
+     "We have designed this package to address experimental scenarios involving
+multiple covariates.  It focuses on construction of Optimal Covariate Designs
+(OCDs), checking space filling property of the developed design.  The primary
+objective of the package is to generate OCDs using four methods viz., M array
+method, Juxtapose method, Orthogonal Integer Array and Hadamard method.  The
+package also evaluates space filling properties of both the base design and OCDs
+using the @code{MaxPro} criterion, providing a meaningful basis for comparison.
+In addition, it includes tool to visualize the spread offered by the design
+points in the form of scatterplot, which help users to assess distribution and
+coverage of design points.")
+    (license license:gpl2+)))
 
 (define-public r-sfo
   (package
@@ -64416,13 +64447,13 @@ MARSPEC <http://www.marspec.org/>.")
 (define-public r-sdmodels
   (package
     (name "r-sdmodels")
-    (version "1.0.13")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDModels" version))
        (sha256
-        (base32 "08bib80zddncr9pirhw949srkm13m1jmpiy9vl0jzdhv96ryk07d"))))
+        (base32 "0afq1r0yr7i5pv11pw2qgjh1c8xl3kp93vd23mgk51mmk568nkx5"))))
     (properties `((upstream-name . "SDModels")))
     (build-system r-build-system)
     (arguments
@@ -64432,17 +64463,15 @@ MARSPEC <http://www.marspec.org/>.")
                              r-rlang
                              r-rdpack
                              r-pbapply
-                             r-locatexec
+                             r-igraph
                              r-grplasso
                              r-gridextra
-                             r-gpumatrix
+                             r-ggraph
                              r-ggplot2
                              r-future-apply
                              r-future
                              r-fda
-                             r-doparallel
-                             r-diagrammer
-                             r-data-tree))
+                             r-diagrammer))
     (native-inputs (list r-knitr))
     (home-page "https://www.markus-ulmer.ch/SDModels/")
     (synopsis "Spectrally Deconfounded Models")
@@ -65204,39 +65233,6 @@ al. (2015) <doi:10.5220/0005595502260234>.  Their paper uses model-based
 clustering and synthetic oversampling to balance multiclass training datasets,
 although other resampling methods are provided in this package.")
     (license license:expat)))
-
-(define-public r-scutils
-  (package
-    (name "r-scutils")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scUtils" version))
-       (sha256
-        (base32 "09c4vwrjj4r0nfcwb8q0a243m0v5wa3qisdlcy7ik58gyxp02zv8"))))
-    (properties `((upstream-name . "scUtils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-viridis
-                             r-scales
-                             r-matrix
-                             r-ggplot2
-                             r-dplyr
-                             r-assertthat))
-    (home-page "https://cran.r-project.org/package=scUtils")
-    (synopsis "Utility Functions for Single-Cell RNA Sequencing Data")
-    (description
-     "Analysis of single-cell RNA sequencing data can be simple and clear with the
-right utility functions.  This package collects such functions, aiming to
-fulfill the following criteria: code clarity over performance (i.e.  plain R
-code instead of C code), most important analysis steps over completeness
-(analysis by hand', not automated integration etc.), emphasis on quantitative
-visualization (intensity-coded color scale, etc.).")
-    (license license:gpl3)))
 
 (define-public r-scuba
   (package
@@ -67743,41 +67739,6 @@ estimates the dropout values using a subspace regression model (Tran et.al.
 professional documents.  Simple interface with features to ease navigation
 across the page and sub-pages.")
     (license license:expat)))
-
-(define-public r-scipub
-  (package
-    (name "r-scipub")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scipub" version))
-       (sha256
-        (base32 "1491xdlxfqh1h178lrl01b9f4wwdgxaid3dxippyf3b1wxb1gqcf"))))
-    (properties `((upstream-name . "scipub")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-ggplot2
-                             r-gghalves
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dpagliaccio/scipub")
-    (synopsis "Summarize Data for Scientific Publication")
-    (description
-     "Create and format tables and APA statistics for scientific publication.  This
-includes making a Table 1 to summarize demographics across groups, correlation
-tables with significance indicated by stars, and extracting formatted
-statistical summarizes from simple tests for in-text notation.  The package also
-includes functions for Winsorizing data based on a Z-statistic cutoff.")
-    (license license:gpl3)))
 
 (define-public r-sciplot
   (package

@@ -4099,13 +4099,13 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 (define-public r-csurvey
   (package
     (name "r-csurvey")
-    (version "1.12")
+    (version "1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csurvey" version))
        (sha256
-        (base32 "1yvnillhdxi349wywgikjrp17z5zfrzx41c48lsp8qzkn1kml281"))))
+        (base32 "016jh748wb7jrbwbqmy88va8k84ivrbdxsznabmszcpcd8awpxga"))))
     (properties `((upstream-name . "csurvey")))
     (build-system r-build-system)
     (arguments
@@ -4123,6 +4123,7 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
                              r-data-table
                              r-coneproj
                              r-cgam))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=csurvey")
     (synopsis "Constrained Regression for Survey Data")
     (description
@@ -7281,13 +7282,13 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
 (define-public r-crmpack
   (package
     (name "r-crmpack")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmPack" version))
        (sha256
-        (base32 "14sskpr3qjs6mbjissj8175sqk90609dvbfc1qh9rsza9azbyrmx"))))
+        (base32 "03bvx52qdxrsg3rmvw6gczi28a1msiwviawc9p652fqk3agyh5m8"))))
     (properties `((upstream-name . "crmPack")))
     (build-system r-build-system)
     (arguments
@@ -9360,13 +9361,13 @@ recommendations on the code.")
 (define-public r-cpp4r
   (package
     (name "r-cpp4r")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp4r" version))
        (sha256
-        (base32 "0h9yd309kb4sri36lcfmxnszd7f0jz84pjpdll4hx2vsj0g0amnd"))))
+        (base32 "1n9hv39z7klazv8sp8alzj2iifhrkz28bm17axrpvf6xkdbrlm75"))))
     (properties `((upstream-name . "cpp4r")))
     (build-system r-build-system)
     (arguments
@@ -9377,9 +9378,7 @@ recommendations on the code.")
                              r-tibble
                              r-glue
                              r-desc
-                             r-decor
-                             r-cli
-                             r-brio))
+                             r-decor))
     (home-page "https://cpp4r.org")
     (synopsis "Header-Only 'C++' and 'R' Interface")
     (description
@@ -21201,13 +21200,13 @@ Gordaliza Alfonso, Matran Carlos, Mayo-Iscar Agustin. (2008),
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.9")
+    (version "8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "1fpwhad4sks9rb4jpa99m0anynmms76nx0cvl6ci40s4aqkj4zii"))))
+        (base32 "176c4r6nb0h9jyx638vncqfh9k1h32znw17dyrxhar66ldzy3v97"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -21215,6 +21214,7 @@ Gordaliza Alfonso, Matran Carlos, Mayo-Iscar Agustin. (2008),
       #:tests? #f))
     (propagated-inputs (list r-sn
                              r-rnanoflann
+                             r-rgl
                              r-rfast2
                              r-rfast
                              r-quantreg
@@ -21280,9 +21280,10 @@ data with zeros\".  Statistics and Computing, 33(106).
 squares simplicial-simplicial regression\".  Statistics and Computing, 35(27).
 <doi:10.1007/s11222-024-10560-z>.  o) Sevinc V. and Tsagris.  M. (2024). \"Energy
 Based Equality of Distributions Testing for Compositional Data\".
-<doi:10.48550/@code{arXiv.2412.05199>}.  p) Tsagris M. (2025).
-\"Transformation-free linear simplicial-simplicial regression via constrained
-iterative reweighted least squares\". <doi:10.48550/@code{arXiv.2511.13296>}.")
+<doi:10.48550/@code{arXiv.2412.05199>}.  p) Tsagris M. (2025). \"Scalable
+approximation of the transformation-free linear simplicial-simplicial regression
+via constrained iterative reweighted least squares\".
+<doi:10.48550/@code{arXiv.2511.13296>}.")
     (license license:gpl2+)))
 
 (define-public r-compositereliabilityinnesteddesigns
@@ -25345,13 +25346,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "00h4xb0d1lx32qskan48dfs6s0x47474yb11v05xv604f5hrxpiz"))))
+        (base32 "09zq1kw3k4mgijlfdnrx1z7khb5yh5dibq0bdgkn3i99i0plalld"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (arguments
@@ -25365,13 +25366,11 @@ Common Data Model.")
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-magrittr
                              r-glue
                              r-dplyr
                              r-dbi
                              r-clock
                              r-cli
-                             r-checkmate
                              r-cdmconnector
                              r-broom))
     (native-inputs (list r-knitr))
@@ -32159,13 +32158,13 @@ available calculators available online.")
 (define-public r-clinutils
   (package
     (name "r-clinutils")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinUtils" version))
        (sha256
-        (base32 "0sq8pz2h62nf9nrzj2r37p19px403nhn71nkb1z1fci6lwmcvqkz"))))
+        (base32 "13z0r47ympjd6cl4hxspcr2yw5sl6qh0jryj3r3rd5r0zapsbrm2"))))
     (properties `((upstream-name . "clinUtils")))
     (build-system r-build-system)
     (arguments
@@ -37066,6 +37065,51 @@ medical imaging data in the form of CIFTI files
 <https://www.nitrc.org/projects/cifti/>.")
     (license license:gpl2)))
 
+(define-public r-cifmodeling
+  (package
+    (name "r-cifmodeling")
+    (version "0.9.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cifmodeling" version))
+       (sha256
+        (base32 "0wgk4g12vpjcplx8zrgz2v31xx718gl8kcxicvzvzdi94kk3cba9"))))
+    (properties `((upstream-name . "cifmodeling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rcpp
+                             r-patchwork
+                             r-nleqslv
+                             r-lifecycle
+                             r-ggsurvfit
+                             r-ggplot2
+                             r-generics
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://gestimation.github.io/cifmodeling/")
+    (synopsis
+     "Visualization and Polytomous Modeling of Survival and Competing Risks")
+    (description
+     "This package provides a publication-ready toolkit for modern survival and
+competing risks analysis with a minimal, formula-based interface.  Both
+nonparametric estimation and direct polytomous regression of cumulative
+incidence functions (CIFs) are supported.  The main functions
+@code{cifcurve()}', @code{cifplot()}', and @code{cifpanel()} estimate survival
+and CIF curves and produce high-quality graphics with risk tables, censoring and
+competing-event marks, and multi-panel or inset layouts built on ggplot2 and
+ggsurvfit'.  The modeling function @code{polyreg()} performs direct polytomous
+regression for coherent joint modeling of all cause-specific CIFs to estimate
+risk ratios, odds ratios, or subdistribution hazard ratios at user-specified
+time points.  All core functions adopt a formula-and-data syntax and return tidy
+and extensible outputs that integrate smoothly with modelsummary', broom', and
+the broader tidyverse ecosystem.  Key numerical routines are implemented in C++
+via Rcpp'.")
+    (license license:expat)))
+
 (define-public r-ciflyr
   (package
     (name "r-ciflyr")
@@ -37819,13 +37863,13 @@ and @code{ThermoRawFileParser}
 (define-public r-christmas
   (package
     (name "r-christmas")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "christmas" version))
        (sha256
-        (base32 "0hyhdz6xamhank6z23vjmpngqz6mi6318i9rflq2414xw6bmkf7p"))))
+        (base32 "13xs6vpgn0sr8y6hkvp56x3gv3rx1vnfz68pf6s9rig223apsk1f"))))
     (properties `((upstream-name . "christmas")))
     (build-system r-build-system)
     (arguments
@@ -37838,7 +37882,7 @@ and @code{ThermoRawFileParser}
      "Generation of different Christmas cards, most of them being animated.  Most of
 the cards can be generated in three languages (English, Catalan and Spanish).
 The collection started in 2009.")
-    (license license:gpl2)))
+    (license license:gpl3+)))
 
 (define-public r-chouca
   (package
@@ -44043,43 +44087,6 @@ Andrian, Westermann, de Boer, and Beltman (2014)
 <doi:10.1371/journal.pcbi.1003752>.")
     (license license:gpl2)))
 
-(define-public r-cellpypes
-  (package
-    (name "r-cellpypes")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cellpypes" version))
-       (sha256
-        (base32 "1px7p1xly71p48w72m5fcs2krxba72slnh638wpd98a52clbgz6l"))))
-    (properties `((upstream-name . "cellpypes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-scutils
-                             r-scattermore
-                             r-scales
-                             r-rlang
-                             r-matrix
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot))
-    (home-page "https://github.com/FelixTheStudent/cellpypes")
-    (synopsis "Cell Type Pipes for Single-Cell RNA Sequencing Data")
-    (description
-     "Annotate single-cell RNA sequencing data manually based on marker gene
-thresholds.  Find cell type rules (gene+threshold) through exploration, use the
-popular piping operator %>% to reconstruct complex cell type hierarchies.
-cellpypes models technical noise to find positive and negative cells for a given
-expression threshold and returns cell type labels or pseudobulks.  Cite this
-package as Frauhammer (2022) <doi:10.5281/zenodo.6555728> and visit
-<https://github.com/@code{FelixTheStudent/cellpypes>} for tutorials and newest
-features.")
-    (license license:gpl3+)))
-
 (define-public r-cellorigins
   (package
     (name "r-cellorigins")
@@ -47894,6 +47901,32 @@ The likelihood is tractable, and is used for parameter inference and ancestral
 trait reconstruction.  See Bastide and Didier (2023)
 <doi:10.1093/sysbio/syad053>.")
     (license license:gpl3+)))
+
+(define-public r-caugi
+  (package
+    (name "r-caugi")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "caugi" version))
+       (sha256
+        (base32 "0hbsnpbhjlnlbwbzrqh0vpf1vp8h6hjpsd1w0bj46hn1ghsdqh7m"))))
+    (properties `((upstream-name . "caugi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (propagated-inputs (list r-s7 r-fastmap r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://frederikfabriciusbjerre.github.io/caugi/")
+    (synopsis "Causal Graph Interface")
+    (description
+     "Create, query, and modify causal graphs.  caugi (Causal Graph Interface) is a
+causality-first, high performance graph package that provides a simple interface
+to build, structure, and examine causal relationships.")
+    (license license:expat)))
 
 (define-public r-cauchypca
   (package

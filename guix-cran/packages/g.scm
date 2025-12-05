@@ -22056,41 +22056,6 @@ that has a fixed order and position.")
 size each hexagon.")
     (license license:gpl3+)))
 
-(define-public r-ggheatmap
-  (package
-    (name "r-ggheatmap")
-    (version "2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggheatmap" version))
-       (sha256
-        (base32 "13cf3xk5drb6dfr3gcbgfi0hk6akk9b3g9f3c2jy6hz8rz5xnyn6"))))
-    (properties `((upstream-name . "ggheatmap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-patchwork
-                             r-ggpubr
-                             r-ggplot2
-                             r-factoextra
-                             r-aplot))
-    (home-page "https://cran.r-project.org/package=ggheatmap")
-    (synopsis "Plot Heatmap")
-    (description
-     "The flexibility and excellence of ggplot2 is unquestionable, so many drawing
-tools basically need ggplot2 as the operating object.  In order to develop a
-heatmap drawing system based on ggplot2, we developed this tool, mainly to solve
-the heatmap puzzle problem and the flexible connection between the heatmap and
-the ggplot2 object.  The advantages of this tool are as follows: 1.  More
-flexible label settings; 2.  Realize the linkage of heatmap and ggplot2 drawing
-system, which is helpful for operations such as puzzles; 3.  Simple and easy to
-operate; 4.  Optimization of clustering tree visualization.")
-    (license license:gpl3)))
-
 (define-public r-gghdx
   (package
     (name "r-gghdx")
@@ -23281,39 +23246,6 @@ visually distinguishes daytime and nighttime periods.  It is useful for
 visualizing data that spans multiple days and for highlighting diurnal patterns.")
     (license license:expat)))
 
-(define-public r-ggcorset
-  (package
-    (name "r-ggcorset")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggcorset" version))
-       (sha256
-        (base32 "1vswnr15xbsl3kbd7nbd33mc9931d4lk3mpx8ri0ph37h3b0sif9"))))
-    (properties `((upstream-name . "ggcorset")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-gghalves))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggcorset")
-    (synopsis "The Corset Plot")
-    (description
-     "Corset plots are a visualization technique used strictly to visualize repeat
-measures at 2 time points (such as pre- and post- data).  The distribution of
-measurements are visualized at each time point, whilst the trajectories of
-individual change are visualized by connecting the pre- and post- values
-linearly.  These lines can be coloured to represent the magnitude of change, or
-other user-defined value.  This method of visualization is ideal for showing the
-heterogeneity of data, including differences by sub-groups.  The package relies
-on ggplot2 allowing for easy integration so that users can customize their
-visualizations as required.  Users can create corset plots using data in either
-wide or long format using the functions @code{gg_corset()} or
-@code{gg_corset_elongated()}, respectively.")
-    (license license:expat)))
-
 (define-public r-ggcorrheatmap
   (package
     (name "r-ggcorrheatmap")
@@ -23552,29 +23484,6 @@ interface to create plots using ggplot2'.")
 tools do not have the ggplot2 style.  This tool, however, combines changepoint',
 changepoint.np and ecp together, and uses ggplot2 to visualize changepoints.")
     (license license:gpl3+)))
-
-(define-public r-ggbump
-  (package
-    (name "r-ggbump")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggbump" version))
-       (sha256
-        (base32 "15cnzv2q3gylkmd1zj044cp14ldnkc4fzwmxaqpc8cagwf9i10zk"))))
-    (properties `((upstream-name . "ggbump")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-purrr r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=ggbump")
-    (synopsis "Bump Chart and Sigmoid Curves")
-    (description
-     "This package provides a geom for ggplot to create bump plots.  Can be good to
-use for showing rank over time.")
-    (license license:expat)))
 
 (define-public r-ggbuildr
   (package
@@ -35651,31 +35560,6 @@ threshold to cut the dendrogram.  Another option is to vary the size of gaps
 based on the distance between clusters.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-gapfill
-  (package
-    (name "r-gapfill")
-    (version "0.9.6-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gapfill" version))
-       (sha256
-        (base32 "15mrn44v5l4sgxwlyp1rik5mdg7m2s6xxcdigc3sjd1yhxalgw12"))))
-    (properties `((upstream-name . "gapfill")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-quantreg r-ggplot2 r-foreach r-fields))
-    (home-page "https://github.com/florafauna/gapfill")
-    (synopsis "Fill Missing Values in Satellite Data")
-    (description
-     "This package provides tools to fill missing values in satellite data and to
-develop new gap-fill algorithms.  The methods are tailored to data (images)
-observed at equally-spaced points in time.  The package is illustrated with
-MODIS NDVI data.")
-    (license license:gpl2+)))
-
 (define-public r-gapclosing
   (package
     (name "r-gapclosing")
@@ -35748,13 +35632,13 @@ evaluations.")
 (define-public r-ganttify
   (package
     (name "r-ganttify")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganttify" version))
        (sha256
-        (base32 "0bx4ph1fg8srwnpfh09qfm2qirgfgnbwqxvr935d7zp4ncmxb0fh"))))
+        (base32 "1vlg0m0q247chjgxgyvihkjm3q740zhfw6lmyqcnmixf5kpfg86s"))))
     (properties `((upstream-name . "ganttify")))
     (build-system r-build-system)
     (arguments

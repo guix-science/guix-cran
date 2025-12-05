@@ -9171,54 +9171,6 @@ elimination algorithm.  This package is designed to determine the optimal
 model(s) by leveraging all available features.")
     (license license:gpl3+)))
 
-(define-public r-msmix
-  (package
-    (name "r-msmix")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MSmix" version))
-       (sha256
-        (base32 "16qp3v37ph56mjjj2m52jwy43cjxay2rw13b3g28afn705acjrih"))))
-    (properties `((upstream-name . "MSmix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spsutil
-                             r-scales
-                             r-rlang
-                             r-reshape
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-rankcluster
-                             r-nnet
-                             r-magrittr
-                             r-gridextra
-                             r-gmp
-                             r-ggplot2
-                             r-ggbump
-                             r-foreach
-                             r-fields
-                             r-factoextra
-                             r-dplyr
-                             r-data-table
-                             r-bmixture
-                             r-bayesmallows))
-    (home-page "https://cran.r-project.org/package=MSmix")
-    (synopsis
-     "Finite Mixtures of Mallows Models with Spearman Distance for Full and Partial Rankings")
-    (description
-     "Fit and analysis of finite Mixtures of Mallows models with Spearman Distance for
-full and partial rankings with arbitrary missing positions.  Inference is
-conducted within the maximum likelihood framework via Expectation-Maximization
-algorithms.  Estimation uncertainty is tackled via diverse versions of
-bootstrapped and asymptotic confidence intervals.  The most relevant reference
-of the methods is Crispino, Mollica, Astuti and Tardella (2023)
-<doi:10.1007/s11222-023-10266-8>.")
-    (license license:gpl3+)))
-
 (define-public r-msme
   (package
     (name "r-msme")
@@ -20834,13 +20786,13 @@ many models from <DOI:10.32614/CRAN.package.tram>.")
 (define-public r-mlsurvlrnrs
   (package
     (name "r-mlsurvlrnrs")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlsurvlrnrs" version))
        (sha256
-        (base32 "18xqmw6f2k8krhsc4h2k6ngzs2yyvz14ldc95lvgzh1fkswx1p0i"))))
+        (base32 "15qrdqwq88irqvn53ppnmbvgkfa4f3kgam02819ssyafv9lpq556"))))
     (properties `((upstream-name . "mlsurvlrnrs")))
     (build-system r-build-system)
     (arguments
@@ -22242,13 +22194,13 @@ Analysis with Multilevel Additive Models\", P@code{LoS} ONE 15(10): e0241072.")
 (define-public r-mllrnrs
   (package
     (name "r-mllrnrs")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mllrnrs" version))
        (sha256
-        (base32 "1011l3zdlwr3zlyz16xawqdca8iyrkqycbfi2wxnipm9jg7zahi8"))))
+        (base32 "0cl3lx84kj7pariwb6wvdwzvwn676p7lkph9138zffki3q2s1rch"))))
     (properties `((upstream-name . "mllrnrs")))
     (build-system r-build-system)
     (arguments
@@ -24942,13 +24894,13 @@ Cox-Ingersoll-Ross, with one or two random effects in the drift function.")
 (define-public r-mixedpsy
   (package
     (name "r-mixedpsy")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixedPsy" version))
        (sha256
-        (base32 "0rdflzvpbmv7zx6snnci21x2z2z8ab3d14bikf6ly4m1ys2ixmz9"))))
+        (base32 "0b7pgff9m199grcpapk5cad22s49yv0c8jsp3vndwng686l0baqs"))))
     (properties `((upstream-name . "MixedPsy")))
     (build-system r-build-system)
     (arguments
@@ -28041,19 +27993,25 @@ only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
 (define-public r-mini007
   (package
     (name "r-mini007")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mini007" version))
        (sha256
-        (base32 "0dmc4sfijsazlrz8vfixxvrhfqmnfmsvbylq3z2q633q4vvws9gz"))))
+        (base32 "17y02hlb3f88wd3ks9kqvv86nn09hlv9n9d7v14474hkjbj4375j"))))
     (properties `((upstream-name . "mini007")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid r-r6 r-diagrammer r-cli r-checkmate))
+    (propagated-inputs (list r-uuid
+                             r-r6
+                             r-glue
+                             r-ellmer
+                             r-diagrammer
+                             r-cli
+                             r-checkmate))
     (home-page "https://cran.r-project.org/package=mini007")
     (synopsis
      "Lightweight Framework for Orchestrating Multi-Agent Large Language Models")
@@ -31293,35 +31251,27 @@ extraction for reporting purposes.")
 (define-public r-mic
   (package
     (name "r-mic")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIC" version))
        (sha256
-        (base32 "1nfwqg28684dhd8pg3qzsmcdz4m754zxl2yzbcb5xddvhn38x2ks"))))
+        (base32 "0639a3gc83kjmik4l4p6bjqj9lmrvpky4x03n48nx3795iwwaplv"))))
     (properties `((upstream-name . "MIC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
-                             r-readr
-                             r-rcpp
                              r-purrr
-                             r-progressr
-                             r-lemon
                              r-glue
                              r-ggplot2
-                             r-future-apply
+                             r-ggh4x
                              r-forcats
                              r-dplyr
-                             r-data-table
-                             r-curl
-                             r-biostrings
                              r-amr))
     (home-page "https://github.com/agerada/MIC")
     (synopsis
@@ -31331,9 +31281,7 @@ extraction for reporting purposes.")
 data.  Validate the results of an MIC experiment by comparing observed MIC
 values to a gold standard assay, in line with standards from the International
 Organization for Standardization (2021)
-<https://www.iso.org/standard/79377.html>.  Perform MIC prediction from whole
-genome sequence data stored in the Pathosystems Resource Integration Center
-(2013) <doi:10.1093/nar/gkt1099> database or locally.")
+<https://www.iso.org/standard/79377.html>.")
     (license license:gpl3+)))
 
 (define-public r-miamaxent
@@ -35875,43 +35823,6 @@ A., Beja, P. (2016) <doi:10.1016/j.envsoft.2016.03.007>; Mestre, F., Risk, B.,
 Mira, A., Beja, P., Pita, R. (2017) <doi:10.1016/j.ecolmodel.2017.06.013>;
 Mestre, F., Pita, R., Mira, A., Beja, P. (2020) <doi:10.1186/s12898-019-0273-5>.")
     (license license:gpl2+)))
-
-(define-public r-metajam
-  (package
-    (name "r-metajam")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metajam" version))
-       (sha256
-        (base32 "1sqxybxzi198a6b1za33xyb42ii3v8d5p5bx6i393r9qkniry69s"))))
-    (properties `((upstream-name . "metajam")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-xml
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-lubridate
-                             r-emld
-                             r-eml
-                             r-dplyr
-                             r-dataone))
-    (native-inputs (list r-knitr))
-    (home-page "https://nceas.github.io/metajam/")
-    (synopsis "Easily Download Data and Metadata from 'DataONE'")
-    (description
-     "This package provides a set of tools to foster the development of reproducible
-analytical workflow by simplifying the download of data and metadata from
-@code{DataONE} (<https://www.dataone.org>) and easily importing this information
-into R.")
-    (license license:asl2.0)))
 
 (define-public r-metaintegration
   (package
@@ -42482,35 +42393,6 @@ in the estimated posterior model probabilities and (b) estimate the effective
 sample size of the MCMC output.")
     (license license:gpl3)))
 
-(define-public r-mcmcoutput
-  (package
-    (name "r-mcmcoutput")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mcmcOutput" version))
-       (sha256
-        (base32 "1jw4wyppzlnxaa3iahbwx4gxs3zvppy980rc92dvy18y2sr5138v"))))
-    (properties `((upstream-name . "mcmcOutput")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-hdinterval r-coda))
-    (home-page "https://github.com/mikemeredith/mcmcOutput")
-    (synopsis
-     "Functions to Store, Manipulate and Display Markov Chain Monte Carlo (MCMC) Output")
-    (description
-     "This package implements a class ('@code{mcmcOutput}') for efficiently storing
-and handling Markov chain Monte Carlo (MCMC) output, intended as an aid for
-those writing customized MCMC samplers.  A range of constructor methods are
-provided covering common output formats.  Functions are provided to generate
-summary and diagnostic statistics and to display histograms or density plots of
-posterior distributions, for the entire output, or subsets of draws, nodes, or
-parameters.")
-    (license license:gpl3+)))
-
 (define-public r-mcmcensemble
   (package
     (name "r-mcmcensemble")
@@ -44011,13 +43893,13 @@ Lobo et al. (2021) <doi:10.1093/g3journal/jkab308>.")
 (define-public r-mbmethpred
   (package
     (name "r-mbmethpred")
-    (version "0.1.4.3")
+    (version "0.1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBMethPred" version))
        (sha256
-        (base32 "1mmzs2q3sx76xhy0vlnav3c884d4p9i2bm735x5rc9agjbd0ibff"))))
+        (base32 "0sjgjnwra0y8f0b2pj117bwsxfg8v0jl2ds9pghw4gckgsapkp39"))))
     (properties `((upstream-name . "MBMethPred")))
     (build-system r-build-system)
     (arguments
@@ -49428,13 +49310,13 @@ regions were intervention is most duly needed.")
 (define-public r-maplegend
   (package
     (name "r-maplegend")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maplegend" version))
        (sha256
-        (base32 "1papxqrpg36y0f397asx730k19qkjfgxz4097gqxy9bsg2r0wc5c"))))
+        (base32 "1hcpvy7g3yz11m124fjjjxw7bf7sjp45iy5z1sl4jaq9gr4ydg5w"))))
     (properties `((upstream-name . "maplegend")))
     (build-system r-build-system)
     (arguments

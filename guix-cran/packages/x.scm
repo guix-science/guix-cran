@@ -590,13 +590,13 @@ profiles and correct tree-ring borders.  Campelo F, Mayer K, Grabner M. (2019)
 (define-public r-xrf
   (package
     (name "r-xrf")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xrf" version))
        (sha256
-        (base32 "0917chdkl6b20fdbwwj5b6wyihn9p444anwjspd0zqxmp8ag0i5f"))))
+        (base32 "0vv1fhiidaxpnkd5nagqjsg2g36l8f8vnm8b6pdcfzr54impvdri"))))
     (properties `((upstream-name . "xrf")))
     (build-system r-build-system)
     (arguments
@@ -607,7 +607,8 @@ profiles and correct tree-ring borders.  Campelo F, Mayer K, Grabner M. (2019)
                              r-matrix
                              r-glmnet
                              r-fuzzyjoin
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/holub008/xrf")
     (synopsis "eXtreme RuleFit")
     (description

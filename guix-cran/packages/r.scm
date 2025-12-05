@@ -783,13 +783,13 @@ maintained @code{GitHub} Action.")
 (define-public r-rwofost
   (package
     (name "r-rwofost")
-    (version "0.8-3")
+    (version "0.8-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rwofost" version))
        (sha256
-        (base32 "1x6ia49xrdqcxilq12g47gd00smm5jdrq7xavndd3dcnvl1nqk1y"))))
+        (base32 "15cdwy3fsfcm3xgimmfaqwf7xw2z4a9i9pb359chsihssk7qn9ca"))))
     (properties `((upstream-name . "Rwofost")))
     (build-system r-build-system)
     (arguments
@@ -3460,13 +3460,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "035pnk6a846ck3p12jwhxx1j4279acvlzsjj2qiy2gyq4yr3g4pb"))))
+        (base32 "1s5ywwrdp0l987jyd3kc1zh5rkkly21l8sbk9dicdpb83h4zp4z3"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -6525,13 +6525,13 @@ surrounding a site, etc.  For more information, please refer to Zhang W,etc.
 (define-public r-rspacer
   (package
     (name "r-rspacer")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rspacer" version))
        (sha256
-        (base32 "01zipzxjnfn88lcg936mrhxanp3lnhgz4y2kj5bcrv7mg53ymgp9"))))
+        (base32 "1mk96y9dgkv0rkkr6w7z4g3q1j65cqmh7v3s9cracl89n9hrv6qa"))))
     (properties `((upstream-name . "rspacer")))
     (build-system r-build-system)
     (arguments
@@ -6553,7 +6553,7 @@ surrounding a site, etc.  For more information, please refer to Zhang W,etc.
                              r-dplyr
                              r-curl
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/lacdr/rspacer")
     (synopsis "'RSpace' API Wrapper")
     (description
@@ -12396,74 +12396,6 @@ parameter on a graph by animating it with a slider or a \"doublebutton\", up to
 more sophisticated control panels.  Some functions for specific graphical tasks,
 referred to as cartoons', are provided.")
     (license license:gpl2+)))
-
-(define-public r-rpanda
-  (package
-    (name "r-rpanda")
-    (version "2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RPANDA" version))
-       (sha256
-        (base32 "1g49byyn0nj11kl9iy9ix4faqvs3ww2z7xmz63p94qi1878hzxcm"))))
-    (properties `((upstream-name . "RPANDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-tess
-                             r-rmpfr
-                             r-rcolorbrewer
-                             r-raster
-                             r-r-utils
-                             r-pvclust
-                             r-pspline
-                             r-pracma
-                             r-picante
-                             r-phytools
-                             r-phangorn
-                             r-parallellogger
-                             r-mvtnorm
-                             r-mvmorph
-                             r-matrix
-                             r-igraph
-                             r-gunifrac
-                             r-glassofast
-                             r-geiger
-                             r-fpc
-                             r-fields
-                             r-desolve
-                             r-coda
-                             r-cluster
-                             r-bipartite
-                             r-bb
-                             r-ape))
-    (home-page "https://github.com/hmorlon/PANDA")
-    (synopsis "Phylogenetic ANalyses of DiversificAtion")
-    (description
-     "This package implements macroevolutionary analyses on phylogenetic trees.  See
-Morlon et al. (2010) <DOI:10.1371/journal.pbio.1000493>, Morlon et al. (2011)
-<DOI:10.1073/pnas.1102543108>, Condamine et al. (2013) <DOI:10.1111/ele.12062>,
-Morlon et al. (2014) <DOI:10.1111/ele.12251>, Manceau et al. (2015)
-<DOI:10.1111/ele.12415>, Lewitus & Morlon (2016) <DOI:10.1093/sysbio/syv116>,
-Drury et al. (2016) <DOI:10.1093/sysbio/syw020>, Manceau et al. (2016)
-<DOI:10.1093/sysbio/syw115>, Morlon et al. (2016) <DOI:10.1111/2041-210X.12526>,
-Clavel & Morlon (2017) <DOI:10.1073/pnas.1606868114>, Drury et al. (2017)
-<DOI:10.1093/sysbio/syx079>, Lewitus & Morlon (2017)
-<DOI:10.1093/sysbio/syx095>, Drury et al. (2018)
-<DOI:10.1371/journal.pbio.2003563>, Clavel et al. (2019)
-<DOI:10.1093/sysbio/syy045>, Maliet et al. (2019)
-<DOI:10.1038/s41559-019-0908-0>, Billaud et al. (2019)
-<DOI:10.1093/sysbio/syz057>, Lewitus et al. (2019) <DOI:10.1093/sysbio/syz061>,
-Aristide & Morlon (2019) <DOI:10.1111/ele.13385>, Maliet et al. (2020)
-<DOI:10.1111/ele.13592>, Drury et al. (2021) <DOI:10.1371/journal.pbio.3001270>,
-Perez-Lamarque & Morlon (2022) <DOI:10.1111/mec.16478>, Perez-Lamarque et al.
-(2022) <DOI:10.1101/2021.08.30.458192>, Mazet et al. (2023)
-<DOI:10.1111/2041-210X.14195>, Drury et al. (2024)
-<DOI:10.1016/j.cub.2023.12.055>.")
-    (license license:gpl2)))
 
 (define-public r-rpaleoclim
   (package
@@ -19484,13 +19416,13 @@ roles in networks.  It is a wrapper around the rgraph library (Guimera & Amaral,
 (define-public r-rnest
   (package
     (name "r-rnest")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rnest" version))
        (sha256
-        (base32 "1yc5a09iwdx6jqrjpg9dm6fb569kmv7cm6qgn018qfwbidahh6dj"))))
+        (base32 "1xsxny37f9a1gbzp7ckdwizqn5m54d3s6vwg07cx49bxdlc8ym2a"))))
     (properties `((upstream-name . "Rnest")))
     (build-system r-build-system)
     (arguments
@@ -19501,7 +19433,6 @@ roles in networks.  It is a wrapper around the rgraph library (Guimera & Amaral,
                              r-mass
                              r-lavaan
                              r-ggplot2
-                             r-fungible
                              r-efa-mrfa
                              r-crayon
                              r-cli))

@@ -3192,13 +3192,13 @@ summarized in a CD-plot as described in Algeri S. (2019)
 (define-public r-lpanda
   (package
     (name "r-lpanda")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpanda" version))
        (sha256
-        (base32 "073fsmk3z09p2afn1w5k97y615381lw91j8vf100x18z1rmlkbvk"))))
+        (base32 "0j9m89shasbdnvhyzp0003ys9w310dl3ki4myfi54wv9sjkdwyic"))))
     (properties `((upstream-name . "lpanda")))
     (build-system r-build-system)
     (arguments

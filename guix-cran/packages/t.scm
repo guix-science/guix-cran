@@ -3901,13 +3901,13 @@ distributions (Skew Normal, Skew t, Skew Slash or Skew Contaminated Normal).")
 (define-public r-tsmp
   (package
     (name "r-tsmp")
-    (version "0.4.15")
+    (version "0.4.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsmp" version))
        (sha256
-        (base32 "129vzazhcxynmi8nki0amm5xf57ji0fik0j6aj7r9izh4wq6lysn"))))
+        (base32 "1i7k5i11sxkaa9srwlq1psraxr04mc3b5pargbgr83idi2wc1bvr"))))
     (properties `((upstream-name . "tsmp")))
     (build-system r-build-system)
     (arguments
@@ -6490,13 +6490,13 @@ publication by Fourer et al. (<doi:10.1287/mnsc.36.5.519>).")
 (define-public r-troubblme4solver
   (package
     (name "r-troubblme4solver")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trouBBlme4SolveR" version))
        (sha256
-        (base32 "08r698iziz6zrvzps11aa4r39spw83xwnw5l8b3rwv0n46vvgk6d"))))
+        (base32 "04xgmz8cxrjx63q82h9zv63gml91sza86f45nrmh3bb5b4352svp"))))
     (properties `((upstream-name . "trouBBlme4SolveR")))
     (build-system r-build-system)
     (arguments
@@ -9761,44 +9761,6 @@ left unspecified.  The methodology is applied to survival curve estimation and
 regression analysis.")
     (license license:gpl3+)))
 
-(define-public r-transtggm
-  (package
-    (name "r-transtggm")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TransTGGM" version))
-       (sha256
-        (base32 "0c815qp0nb4c8ymq9gm9yr37vkzlb6fja9j0czl6ww7rvr8fplrn"))))
-    (properties `((upstream-name . "TransTGGM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tlasso
-                             r-rtensor
-                             r-matrix
-                             r-mass
-                             r-glasso
-                             r-expm
-                             r-doparallel))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=TransTGGM")
-    (synopsis "Transfer Learning for Tensor Graphical Models")
-    (description
-     "Tensor Gaussian graphical models (GGMs) have important applications in numerous
-areas, which can interpret conditional independence structures within tensor
-data.  Yet, the available tensor data in one single study is often limited due
-to high acquisition costs.  Although relevant studies can provide additional
-data, it remains an open question how to pool such heterogeneous data.  This
-package implements a transfer learning framework for tensor GGMs, which takes
-full advantage of informative auxiliary domains even when non-informative
-auxiliary domains are present, benefiting from the carefully designed
-data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
-\"Transfer learning for tensor graphical models\" <@code{arXiv:2211.09391>}.")
-    (license license:gpl2)))
-
 (define-public r-transreg
   (package
     (name "r-transreg")
@@ -10780,13 +10742,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.3-0")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1sbr6v5q8b7haaf6lw6yi5xracj7j8m22217rkanzd036y2knm8p"))))
+        (base32 "0cycynjywm0yfpma2pg3ywxw0d239b6fniskrm65zm73ra59vvad"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -15856,32 +15818,6 @@ Djibril, A.M. (2023) <doi:10.1007/s44199-023-00066-4> and AtchadÃ©, M.N.,
 Bogninou, M.J., and Djibril, A.M. (2024) <doi:10.1007/s44199-023-00069-1> for
 further insights.")
     (license license:gpl2)))
-
-(define-public r-tlasso
-  (package
-    (name "r-tlasso")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Tlasso" version))
-       (sha256
-        (base32 "1svjl2va3vpa1m13wmyy3bpx76xxivalwprzbaavwxf8lgk34wgr"))))
-    (properties `((upstream-name . "Tlasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rtensor r-igraph r-huge r-expm))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Tlasso")
-    (synopsis
-     "Non-Convex Optimization and Statistical Inference for Sparse Tensor Graphical Models")
-    (description
-     "An optimal alternating optimization algorithm for estimation of precision
-matrices of sparse tensor graphical models, and an efficient inference procedure
-for support recovery of the precision matrices.")
-    (license license:gpl2+)))
 
 (define-public r-tlars
   (package
@@ -23937,6 +23873,40 @@ probabilistic layers, variational inference, Markov chain Monte Carlo, and
 optimizers such as Nelder-Mead, BFGS, and SGLD.")
     (license license:asl2.0)))
 
+(define-public r-tforge
+  (package
+    (name "r-tforge")
+    (version "0.1.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TFORGE" version))
+       (sha256
+        (base32 "1j8b497wrwr91lw56y76qjza1sqpwc1i59bq085cby60gc553hfj"))))
+    (properties `((upstream-name . "TFORGE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-purrr r-mvtnorm))
+    (home-page "https://github.com/kasselhingee/TFORGE")
+    (synopsis "Tests for Geophysical Eigenvalues")
+    (description
+     "The eigenvalues of observed symmetric matrices are often of intense scientific
+interest.  This package offers single sample tests for the eigenvalues of the
+population mean or the eigenvalue-multiplicity of the population mean.  For
+k-samples, this package offers tests for equal eigenvalues between samples.
+Included is support for matrices with constraints common to geophysical tensors
+(constant trace, sum of squared eigenvalues, or both) and eigenvectors are
+usually considered nuisance parameters.  Pivotal bootstrap methods enable these
+tests to have good performance for small samples (n=15 for 3x3 matrices).  These
+methods were developed and studied by Hingee, Scealy and Wood (2026,
+\"Nonparametric bootstrap inference for the eigenvalues of geophysical tensors\",
+accepted by the Journal of American Statistical Association).  Also available is
+a 2-sample test using a Gaussian orthogonal ensemble approximation and an
+eigenvalue-multiplicity test that assumes orthogonally-invariant covariance.")
+    (license license:gpl3+)))
+
 (define-public r-tfneuralode
   (package
     (name "r-tfneuralode")
@@ -26580,36 +26550,6 @@ These packages can be used to explore and analyze common data types in
 archaeology: count data, compositional data and chronological data.  Learn more
 about tesselle at <https://www.tesselle.org>.")
     (license license:gpl3+)))
-
-(define-public r-tess
-  (package
-    (name "r-tess")
-    (version "2.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TESS" version))
-       (sha256
-        (base32 "0qhzxppgk4ihkg00d08abb7xjl82n87mm3319iv0g7n6rky2qxy8"))))
-    (properties `((upstream-name . "TESS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-desolve r-coda r-ape))
-    (home-page "https://cran.r-project.org/package=TESS")
-    (synopsis
-     "Diversification Rate Estimation and Fast Simulation of Reconstructed Phylogenetic Trees under Tree-Wide Time-Heterogeneous Birth-Death Processes Including Mass-Extinction Events")
-    (description
-     "Simulation of reconstructed phylogenetic trees under tree-wide
-time-heterogeneous birth-death processes and estimation of diversification
-parameters under the same model.  Speciation and extinction rates can be any
-function of time and mass-extinction events at specific times can be provided.
-Trees can be simulated either conditioned on the number of species, the time of
-the process, or both.  Additionally, the likelihood equations are implemented
-for convenience and can be used for Maximum Likelihood (ML) estimation and
-Bayesian inference.")
-    (license license:gpl3)))
 
 (define-public r-tesiprov
   (package

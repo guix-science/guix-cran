@@ -23798,13 +23798,13 @@ ecological community and biogeochemical cycles.")
 (define-public r-ecocopula
   (package
     (name "r-ecocopula")
-    (version "1.0.2")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoCopula" version))
        (sha256
-        (base32 "1j3n9h7rm66r8vmzzhy5mjh36gs1qnsh7rq33ymjpkkfy698gbpm"))))
+        (base32 "0a6100sg72qwk46h52b4dnnmfwbk7ncg4w0ln7ld615rh1553db9"))))
     (properties `((upstream-name . "ecoCopula")))
     (build-system r-build-system)
     (arguments
@@ -23824,7 +23824,7 @@ ecological community and biogeochemical cycles.")
                              r-doparallel
                              r-betareg))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ecoCopula")
+    (home-page "https://eco-stats.github.io/ecoCopula/")
     (synopsis "Graphical Modelling and Ordination using Copulas")
     (description
      "This package creates graphs of species associations (interactions) and
@@ -27250,13 +27250,13 @@ xgboost packages.")
 (define-public r-e2e
   (package
     (name "r-e2e")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "E2E" version))
        (sha256
-        (base32 "1hym119hy08lqjmlbamnwriml8mszhkms52b85mrpmxxpd67w69s"))))
+        (base32 "0ajja6vpqicv1dwy1q7wpqhw8s0dnxvwhwy8sr5a5wy9qmhhgrr7"))))
     (properties `((upstream-name . "E2E")))
     (build-system r-build-system)
     (arguments
@@ -27268,7 +27268,6 @@ xgboost packages.")
                              r-survminer
                              r-survivalroc
                              r-survival
-                             r-survcomp
                              r-shapviz
                              r-rsnns
                              r-readr

@@ -4586,13 +4586,13 @@ your workflow for optimal productivity.")
 (define-public r-orbital
   (package
     (name "r-orbital")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbital" version))
        (sha256
-        (base32 "03mc96hgf1x65zjq7y900bd74mls3l94zz5hyb8qpc913448cjh7"))))
+        (base32 "1l2ivd7l344lwsfqksgapipz4h67j7djkrk4c6a30vx9zcyk99w2"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
     (arguments
@@ -9697,54 +9697,6 @@ design method can be found in: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020).
 of functions that read a set of rules from a CSV or Excel file and apply them to
 a dataset.  Funded by the National Renewable Energy Laboratory and Possibility
 Lab, maintained by the Moore Institute for Plastic Pollution Research.")
-    (license license:expat)))
-
-(define-public r-oncrawlr
-  (package
-    (name "r-oncrawlr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oncrawlR" version))
-       (sha256
-        (base32 "0cm26diaf3jlzfrpgh13q0hakakmj6vy41wk9z0w81az4jcg9sn9"))))
-    (properties `((upstream-name . "oncrawlR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-webshot
-                             r-tidyr
-                             r-sparkline
-                             r-scales
-                             r-rlist
-                             r-rlang
-                             r-rjson
-                             r-readr
-                             r-rcurl
-                             r-proc
-                             r-pdp
-                             r-jsonlite
-                             r-htmltools
-                             r-ggplot2
-                             r-fs
-                             r-formattable
-                             r-e1071
-                             r-dplyr
-                             r-dalex
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=oncrawlR")
-    (synopsis "Machine Learning for S.E.O")
-    (description
-     "Measures different aspects of page content, structure and performance for SEO
-(Search Engine Optimization).  Aspects covered include HTML tags used in SEO,
-duplicate and near-duplicate content, structured data, on-site linking structure
-and popularity transfer, and many other amazing things.  This package can be
-used to generate a real, full SEO audit report, which serves to detect errors or
-inefficiencies on a page that can be corrected in order to optimise its
-performance on search engines.")
     (license license:expat)))
 
 (define-public r-oncotree

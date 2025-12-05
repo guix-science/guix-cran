@@ -1409,33 +1409,6 @@ trend over time in the (noisy) polling results.  See James A. Stimson (2018)
 <doi:10.1177/0759106318761614> and the package's vignette for more details.")
     (license license:gpl2+)))
 
-(define-public r-dyadicarma
-  (package
-    (name "r-dyadicarma")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DyadiCarma" version))
-       (sha256
-        (base32 "1b34pi8hfrxs9vd34ym8dv0rqjpgvd360np96pbcdbs8khjbh0r6"))))
-    (properties `((upstream-name . "DyadiCarma")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=DyadiCarma")
-    (synopsis
-     "Dyadic Matrices and their Algebra using 'Rcpp' and 'RcppArmadillo'")
-    (description
-     "This package provides methods for efficient algebraic operations and
-factorization of dyadic matrices using Rcpp and @code{RcppArmadillo}'.  The
-details of dyadic matrices and the corresponding methodology are described in
-Kos, M., PodgÃ³rski, K., and Wu, H. (2025)
-<doi:10.48550/@code{arXiv.2505.08144>}.")
-    (license license:gpl2+)))
-
 (define-public r-dwreg
   (package
     (name "r-dwreg")
@@ -5734,13 +5707,13 @@ MATLAB code is available upon request, see:
 (define-public r-drhutools
   (package
     (name "r-drhutools")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drhutools" version))
        (sha256
-        (base32 "1j55vig4idmx3gys1n9bmcl1h4454hkhjlsg18mx3lp1696rs24n"))))
+        (base32 "0g0xbzk50svx3q39fvicaagi6igr39kshv5mccsraz7hs42p5ip6"))))
     (properties `((upstream-name . "drhutools")))
     (build-system r-build-system)
     (arguments
@@ -5751,7 +5724,6 @@ MATLAB code is available upon request, see:
                              r-sf
                              r-purrr
                              r-png
-                             r-mapview
                              r-magick
                              r-leaflet
                              r-jsonlite
@@ -6112,13 +6084,13 @@ to the software and explicitly not to the included data.")
 (define-public r-drdid
   (package
     (name "r-drdid")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRDID" version))
        (sha256
-        (base32 "1jrlm44cn85z6cndzw2qw6ihcfx78iyhz4pafvp1mcb741iqm767"))))
+        (base32 "004k1f1qyqcjrhwcihdqx7njaxsvdplzpkbrafx7ds3wqv51b1cz"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
     (arguments
@@ -22592,6 +22564,39 @@ package provides a vignette which walks through the analysis in the publication,
 as well as a function to generate a project skeleton for such an analysis.")
     (license license:expat)))
 
+(define-public r-dentomedical
+  (package
+    (name "r-dentomedical")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dentomedical" version))
+       (sha256
+        (base32 "1bqnc5nj1cv1h0h3h2g6dn2hjpn8iy4zsvrp5073617xcjh7h6pn"))))
+    (properties `((upstream-name . "dentomedical")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-mass
+                             r-flextable
+                             r-dplyr
+                             r-broom))
+    (home-page "https://github.com/umarhussain-git/dentomedical")
+    (synopsis
+     "Publication-Ready Descriptive, Bivariate, Regression, and Diagnostic Accuracy Tools for Medical and Dental Data")
+    (description
+     "The dentomedical package provides a comprehensive suite of tools for medical and
+dental research.  It includes automated descriptive statistics, bivariate
+analysis with intelligent test selection, logistic regression, and diagnostic
+accuracy assessment.  All functions generate structured, publication-ready
+tables using flextable', ensuring reproducibility and clarity suitable for
+manuscripts, reports, and clinical research workflows.")
+    (license license:expat)))
+
 (define-public r-denstrip
   (package
     (name "r-denstrip")
@@ -29127,6 +29132,34 @@ computes several estimations of the true error rate.")
     (description "Various utilities for the Davies distribution.")
     (license license:gpl2)))
 
+(define-public r-daur
+  (package
+    (name "r-daur")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dauR" version))
+       (sha256
+        (base32 "0izfhya81s5nh940yrvg701kxfadlk14by3c2nhzr6l929i06z2p"))))
+    (properties `((upstream-name . "dauR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=dauR")
+    (synopsis
+     "Datasets for \"Sampling and Data Analysis Using R: Theory and Practice\"")
+    (description
+     "This package provides several datasets used throughout the book \"Sampling and
+Data Analysis Using R: Theory and Practice\" by Islam (2025,
+ISBN:978-984-35-8644-5).  The datasets support teaching and learning of
+statistical concepts such as sampling methods, descriptive analysis, estimation
+and basic data handling.  These curated data objects allow instructors, students
+and researchers to reproduce examples, practice data manipulation and perform
+hands-on analysis using R.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-dauphin
   (package
     (name "r-dauphin")
@@ -30735,45 +30768,6 @@ following the @code{BagIt} specification.  The @code{BagIt} specification is
 described at <https://datatracker.ietf.org/doc/html/draft-kunze-bagit-08>.")
     (license license:asl2.0)))
 
-(define-public r-dataone
-  (package
-    (name "r-dataone")
-    (version "2.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dataone" version))
-       (sha256
-        (base32 "0509dmvf3kgk15cjbz3m9fzanbdpa5r0rz921m776a4bsjsilv4i"))))
-    (properties `((upstream-name . "dataone")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-uuid
-                             r-stringr
-                             r-stringi
-                             r-plyr
-                             r-parsedate
-                             r-jsonlite
-                             r-httr
-                             r-datapack
-                             r-base64enc))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/DataONEorg/rdataone")
-    (synopsis "R Interface to the DataONE REST API")
-    (description
-     "This package provides read and write access to data and metadata from the
-@code{DataONE} network <https://www.dataone.org> of data repositories.  Each
-@code{DataONE} repository implements a consistent repository application
-programming interface.  Users call methods in R to access these remote
-repository functions, such as methods to query the metadata catalog, get access
-to metadata for particular data packages, and read the data objects from the
-data repository.  Users can also insert and update data objects on repositories
-that support these methods.")
-    (license license:asl2.0)))
-
 (define-public r-dataonderivatives
   (package
     (name "r-dataonderivatives")
@@ -30803,13 +30797,13 @@ ability to get this data from supported sources.")
 (define-public r-datanugget
   (package
     (name "r-datanugget")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datanugget" version))
        (sha256
-        (base32 "13y0plgkjnis7xmswqr5gmyygm7137kscbdkamfmahbw1qbi097i"))))
+        (base32 "0w5ghwqs9j6ip4zri5znxcj2mfmniv4vjr25r1f3j0m4c1bjdc9x"))))
     (properties `((upstream-name . "datanugget")))
     (build-system r-build-system)
     (arguments
