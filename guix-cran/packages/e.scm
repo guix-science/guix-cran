@@ -3329,13 +3329,13 @@ Qualtrics datasets.")
 (define-public r-excessmort
   (package
     (name "r-excessmort")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excessmort" version))
        (sha256
-        (base32 "09pxm60vwaxxa2n6m4zha893dwmijcj1g8d6qw2mznnlln51n4c5"))))
+        (base32 "15rlp04p93fipfkcwdbni4gbg9ypc05kcw80azc2isppbz5rkgrk"))))
     (properties `((upstream-name . "excessmort")))
     (build-system r-build-system)
     (arguments

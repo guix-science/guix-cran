@@ -7480,13 +7480,13 @@ been used since 2006.")
 (define-public r-armspp
   (package
     (name "r-armspp")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "armspp" version))
        (sha256
-        (base32 "098c59hdzr4ly8sx72xkcbjmiz5y65id1slsscwjji1yssb23lqq"))))
+        (base32 "1yrqdbvdxpvd7v7hxln9a1aj6wqfxx1z4djbsys0f4b0pv9g8jia"))))
     (properties `((upstream-name . "armspp")))
     (build-system r-build-system)
     (arguments

@@ -7762,13 +7762,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "0sz3dcha9973pcp7xdys54dh9p01fjhkyyc45z25jpdwnhqdxk3r"))))
+        (base32 "0kn5273xv25cvjad59w5amr7cshglv3a9qjari1g5jqif0y5mwz9"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (arguments
@@ -7777,11 +7777,12 @@ to covariates only or also to outcome values.")
     (propagated-inputs (list r-spam r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://biometris.github.io/LMMsolver/index.html")
-    (synopsis "Linear Mixed Model Solver")
+    (synopsis "Linear Mixed Models with Sparse Matrix Methods and Smoothing")
     (description
-     "An efficient and flexible system to solve sparse mixed model equations.
-Important applications are the use of splines to model spatial or temporal
-trends as described in Boer (2023). (<doi:10.1177/1471082X231178591>).")
+     "This package provides tools for fitting linear mixed models using sparse matrix
+methods and variance component estimation.  Applications include spline-based
+modeling of spatial and temporal trends using penalized splines (Boer, 2023)
+<doi:10.1177/1471082X231178591>.")
     (license license:gpl3)))
 
 (define-public r-lmmpar

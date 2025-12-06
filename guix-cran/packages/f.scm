@@ -1560,13 +1560,13 @@ structure, identifying dependencies, and documenting R projects.")
 (define-public r-funtimes
   (package
     (name "r-funtimes")
-    (version "9.1")
+    (version "10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funtimes" version))
        (sha256
-        (base32 "0gz26djl534d42wxspg9hl0ndhzzhkr9d4vp87afqqg9401qcgcz"))))
+        (base32 "04rj0s6bx70zkahkgr6lcap8fhpxp4is7x9a0fj0mqikaqzq6v28"))))
     (properties `((upstream-name . "funtimes")))
     (build-system r-build-system)
     (arguments
@@ -1577,7 +1577,6 @@ structure, identifying dependencies, and documenting R projects.")
                              r-rdpack
                              r-mlvar
                              r-lmtest
-                             r-kendall
                              r-dbscan))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=funtimes")
@@ -16993,6 +16992,45 @@ assumptions and models.  We provide a collection of methods from multiple
 disciplines under Matrix Completion, Imputation, and Inpainting.  See Davenport
 and Romberg (2016) <doi:10.1109/JSTSP.2016.2539100> for an overview of the
 topic.")
+    (license license:expat)))
+
+(define-public r-filibustr
+  (package
+    (name "r-filibustr")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "filibustr" version))
+       (sha256
+        (base32 "1vd859hdx5br1snd3kh47x3fh3g3gxr2hqx75gvkix3p058v92d5"))))
+    (properties `((upstream-name . "filibustr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-labelled
+                             r-httr2
+                             r-haven
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://feinleib.github.io/filibustr/")
+    (synopsis "Data Utilities for Congressional Research")
+    (description
+     "This package provides easy-to-understand and consistent interfaces for accessing
+data on the U.S. Congress.  The functions in filibustr streamline the process
+for importing data on Congress into R, removing the need to download and work
+from CSV files and the like.  Data sources include Voteview
+(<https://voteview.com/>), the U.S. Senate website (<https://www.senate.gov/>),
+and more.")
     (license license:expat)))
 
 (define-public r-filest

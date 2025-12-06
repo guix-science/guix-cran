@@ -2545,13 +2545,13 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
 (define-public r-publicationbiasbenchmark
   (package
     (name "r-publicationbiasbenchmark")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PublicationBiasBenchmark" version))
        (sha256
-        (base32 "1bn548ih1xii595n4i2cpmpz8ffc6c6wbnys0bmbzxbi3qhif8nv"))))
+        (base32 "0rii7maympljgayras3ids97frb61f095i2zx46yki9l1xlxa3kq"))))
     (properties `((upstream-name . "PublicationBiasBenchmark")))
     (build-system r-build-system)
     (arguments
@@ -41037,6 +41037,29 @@ understanding of path coefficient analysis, both in theory and practice, see a
 Minitab macro developed by Arminian, A. in the paper by Arminian et al. (2008)
 <doi:10.1080/15427520802043182>.")
     (license license:gpl3)))
+
+(define-public r-pater
+  (package
+    (name "r-pater")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pater" version))
+       (sha256
+        (base32 "0q2q9391cdsmx9lglzwxz7yppgydbp60k75pvf2spz9n63yynsb9"))))
+    (properties `((upstream-name . "pater")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/JulioCollazos64/pater")
+    (synopsis "Turn a URL Pathname into a Regular Expression")
+    (description
+     "R's implementation of the @code{JavaScript} library path-to-regexp', it aims to
+provide R web frameworks features such as parameter handling among other URL
+path utilities.")
+    (license license:expat)))
 
 (define-public r-patentsview
   (package

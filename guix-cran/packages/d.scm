@@ -1409,6 +1409,33 @@ trend over time in the (noisy) polling results.  See James A. Stimson (2018)
 <doi:10.1177/0759106318761614> and the package's vignette for more details.")
     (license license:gpl2+)))
 
+(define-public r-dyadicarma
+  (package
+    (name "r-dyadicarma")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DyadiCarma" version))
+       (sha256
+        (base32 "1b34pi8hfrxs9vd34ym8dv0rqjpgvd360np96pbcdbs8khjbh0r6"))))
+    (properties `((upstream-name . "DyadiCarma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=DyadiCarma")
+    (synopsis
+     "Dyadic Matrices and their Algebra using 'Rcpp' and 'RcppArmadillo'")
+    (description
+     "This package provides methods for efficient algebraic operations and
+factorization of dyadic matrices using Rcpp and @code{RcppArmadillo}'.  The
+details of dyadic matrices and the corresponding methodology are described in
+Kos, M., PodgÃ³rski, K., and Wu, H. (2025)
+<doi:10.48550/@code{arXiv.2505.08144>}.")
+    (license license:gpl2+)))
+
 (define-public r-dwreg
   (package
     (name "r-dwreg")
@@ -10328,13 +10355,13 @@ possible both the 2014 and 2024 versions are supported.")
 (define-public r-dnatools
   (package
     (name "r-dnatools")
-    (version "0.2-4")
+    (version "0.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DNAtools" version))
        (sha256
-        (base32 "1xcpp5jw5xq6a6ccq8jsd4d7ailv3iv8k7b1bbz531vhy9im2dzs"))))
+        (base32 "00f3pry7rcxqgmdnxdn0hbp8dgphswzpkd7yv9f22pfr288253gq"))))
     (properties `((upstream-name . "DNAtools")))
     (build-system r-build-system)
     (arguments
@@ -12299,6 +12326,37 @@ random team-data, etc.  White paper: Philippe J.S. De Brouwer (2021)
 Philippe J.S. De Brouwer (2020, ISBN:978-1-119-63272-6) and Philippe J.S. De
 Brouwer (2020) <doi:10.1002/9781119632757>.")
     (license license:agpl3+)))
+
+(define-public r-ditwah
+  (package
+    (name "r-ditwah")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ditwah" version))
+       (sha256
+        (base32 "1rg90psv804779khv05vz6j7qzzikyggpky1fdq6n9ff4lyxva5q"))))
+    (properties `((upstream-name . "Ditwah")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-dplyr))
+    (home-page "https://cran.r-project.org/package=Ditwah")
+    (synopsis
+     "Ditwah Storm Data and Tools for Storm Monitoring and Early Warning November 2025, Sri Lanka")
+    (description
+     "The Ditwah storm began impacting Sri Lanka on 25 November 2025.  Ditwah provides
+a collection of tidy, well-structured datasets to support storm data management,
+monitoring, and early warning applications in Sri Lanka.  The publicly available
+data were converted to tidy data format for easy analysis.  The package
+processes weather data, flood data and situation report data (families affected,
+etc.).  The package also includes functions for analyzing river level
+progression and load dashboard visualizations to enhance situational awareness.
+This is also developed for educational purposes to support learning in data
+wrangling, visualization, and disaster analytics.")
+    (license license:gpl3+)))
 
 (define-public r-dittoviz
   (package

@@ -54473,19 +54473,20 @@ distance, Hamming distance, Weighted-tau distance and Weighted Kendall distance.
 (define-public r-rankdifferencetest
   (package
     (name "r-rankdifferencetest")
-    (version "2025.4.21")
+    (version "2025.12.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankdifferencetest" version))
        (sha256
-        (base32 "19jfdbsrz4xm9722f8jln2m1kk4xc0gwdz5rn34q0wh6xwhp0pjl"))))
+        (base32 "07im2gqf6azx5g3xiqwqidnj60f8852cdbyv37inkla67rvj4rcs"))))
     (properties `((upstream-name . "rankdifferencetest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-modeltools r-coin))
+    (propagated-inputs (list r-rdpack r-hmisc r-generics r-exactranktests
+                             r-boot))
     (home-page "https://brettklamer.com/work/rankdifferencetest")
     (synopsis "Kornbrot's Rank Difference Test")
     (description
@@ -54493,7 +54494,7 @@ distance, Hamming distance, Weighted-tau distance and Weighted Kendall distance.
 <doi:10.1111/j.2044-8317.1990.tb00939.x>.  This method is a modified Wilcoxon
 signed-rank test which produces consistent and meaningful results for ordinal or
 monotonically-transformed data.")
-    (license license:expat)))
+    (license license:gpl3)))
 
 (define-public r-rankcorr
   (package

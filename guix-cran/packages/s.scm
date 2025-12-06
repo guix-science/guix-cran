@@ -7479,13 +7479,13 @@ by high-throughput technologies.")
 (define-public r-supernova
   (package
     (name "r-supernova")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supernova" version))
        (sha256
-        (base32 "14wnn0vmswc8drrn28385zman5rm2qq4phxfp5kd2k37q2gn9mpj"))))
+        (base32 "127qkcvjq4f1qa31hzmsvlmf97r5s28372977qz628azpd4l7x3g"))))
     (properties `((upstream-name . "supernova")))
     (build-system r-build-system)
     (arguments

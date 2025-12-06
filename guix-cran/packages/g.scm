@@ -1878,13 +1878,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "1kw0j0x8p9zckgzdd2b8pap39hv48rfjn6zykffac9zzrx4nin90"))))
+        (base32 "0y4ia58kby8gz1hy8fwjf9ayznp9r3d4g2c1fwmcr9x5jyr5pb9g"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (arguments
@@ -8697,13 +8697,13 @@ calculation, we used results from Bhat, U. and Lal, R. (1988)
 (define-public r-grab
   (package
     (name "r-grab")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GRAB" version))
        (sha256
-        (base32 "08r5axnk5wx46d7inh7gf04rqgir72fb01k5i8lc87nybrk5by7d"))))
+        (base32 "0pp11sf2995na9rhpckxkc8za54mpy5cbcvkbjb7xklyn5r4jl4c"))))
     (properties `((upstream-name . "GRAB")))
     (build-system r-build-system)
     (arguments
@@ -8727,13 +8727,19 @@ calculation, we used results from Bhat, U. and Lal, R. (1988)
     (synopsis "Genome-Wide Robust Analysis for Biobank Data (GRAB)")
     (description
      "This package provides a comprehensive suite of genome-wide association study
-(GWAS) methods specifically designed for biobank-scale data.  The package offers
-computationally efficient and robust association tests for time-to-event traits
-(e.g., Bi et al., 2020 <doi:10.1016/j.ajhg.2020.06.003>), ordinal categorical
-traits (e.g., Bi et al., 2021 <doi:10.1016/j.ajhg.2021.03.019>), and
-longitudinal traits (Xu et al., 2025 <doi:10.1038/s41467-025-56669-1>).
-Additionally, it includes functions for simulating genotype and phenotype data
-to support research and method development.")
+(GWAS) methods specifically designed for biobank-scale data, including but not
+limited to, robust approaches for time-to-event traits (Li et al., 2025
+<doi:10.1038/s43588-025-00864-z>) and ordinal categorical traits (Bi et al.,
+2021 <doi:10.1016/j.ajhg.2021.03.019>).  The package also offers general
+frameworks for GWAS of any trait type (Bi et al., 2020
+<doi:10.1016/j.ajhg.2020.06.003>), while accounting for sample relatedness (Xu
+et al., 2025 <doi:10.1038/s41467-025-56669-1>) or population structure (Ma et
+al., 2025 <doi:10.1186/s13059-025-03827-9>).  By accurately approximating score
+statistic distributions using saddlepoint approximation (SPA), these methods can
+effectively control type I error rates for rare variants and in the presence of
+unbalanced phenotype distributions.  Additionally, the package includes
+functions for simulating genotype and phenotype data to support research and
+method development.")
     (license license:gpl2+)))
 
 (define-public r-gquad
@@ -33869,19 +33875,19 @@ online SQL database at <http://paleofire.org>.")
 (define-public r-gccfactor
   (package
     (name "r-gccfactor")
-    (version "1.1.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCCfactor" version))
        (sha256
-        (base32 "1zwbiwm860sy9hrflmss96fk1h62vs3mxqsprs9qrps15jdlnqcy"))))
+        (base32 "1cx7ir2l55rq0w9lz912xa54ankcfm8pdn3g9d0cpzrgrc6l236j"))))
     (properties `((upstream-name . "GCCfactor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-sandwich r-matrix))
+    (propagated-inputs (list r-stringr r-sandwich r-reshape2 r-matrix))
     (home-page "https://cran.r-project.org/package=GCCfactor")
     (synopsis "GCC Estimation of the Multilevel Factor Model")
     (description

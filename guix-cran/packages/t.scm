@@ -23876,13 +23876,13 @@ optimizers such as Nelder-Mead, BFGS, and SGLD.")
 (define-public r-tforge
   (package
     (name "r-tforge")
-    (version "0.1.14")
+    (version "0.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TFORGE" version))
        (sha256
-        (base32 "1j8b497wrwr91lw56y76qjza1sqpwc1i59bq085cby60gc553hfj"))))
+        (base32 "17lbazp5a33h3rcky4fwb374jadgch80mjwmhj8hfrxcz00gj14r"))))
     (properties `((upstream-name . "TFORGE")))
     (build-system r-build-system)
     (arguments
@@ -26621,27 +26621,26 @@ for retrieving elevation data and base map tiles from the USGS National Map
 (define-public r-terrainmeshr
   (package
     (name "r-terrainmeshr")
-    (version "0.1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "terrainmeshr" version))
        (sha256
-        (base32 "1xab6wzq2izzdvsss1rlgp5m3cn45naxhymq6cglipj0fd792jbr"))))
+        (base32 "0syj1rb1606cdyl4zfcxcbgb0k686srqir5wipkigahd83bmx40d"))))
     (properties `((upstream-name . "terrainmeshr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://www.github.com/tylermorganwall/terrainmeshr")
+    (home-page "https://github.com/tylermorganwall/terrainmeshr")
     (synopsis "Triangulate and Simplify 3D Terrain Meshes")
     (description
      "This package provides triangulations of regular height fields, based on the
 methods described in \"Fast Polygonal Approximation of Terrains and Height
 Fields\" Michael Garland and Paul S. Heckbert (1995)
 <https://www.mgarland.org/files/papers/scape.pdf> using code from the hmm
-library written by Michael Fogleman <https://www.github.com/fogleman/hmm>.")
+library written by Michael Fogleman <https://github.com/fogleman/hmm>.")
     (license license:expat)))
 
 (define-public r-ternvis

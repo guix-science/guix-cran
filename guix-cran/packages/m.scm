@@ -38013,13 +38013,13 @@ S and S-PLUS\" (Springer, 2000).")
 (define-public r-memshare
   (package
     (name "r-memshare")
-    (version "1.0.3.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memshare" version))
        (sha256
-        (base32 "155mnfkwamqr1g4i8ic513lsdb7v2n6alimd0pnbxysqcc0ix2y0"))))
+        (base32 "1ng2847vki2mwd8sy11x6sh50ifi75lbbvir4c4dy38b2pc7hhjw"))))
     (properties `((upstream-name . "memshare")))
     (build-system r-build-system)
     (arguments

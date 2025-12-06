@@ -15652,13 +15652,13 @@ the Earth including buildings, infrastructure and vegetation.")
 (define-public r-copernicusclimate
   (package
     (name "r-copernicusclimate")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusClimate" version))
        (sha256
-        (base32 "1qgdx9bl3jaknr02km06dk4l6n6sv89wdirrg8wxms5gglyw033w"))))
+        (base32 "0wvkbi6wv2g73ryij7aiyh8y1pr4g08fqjpdvrrj6af602y8mmka"))))
     (properties `((upstream-name . "CopernicusClimate")))
     (build-system r-build-system)
     (arguments
@@ -35446,39 +35446,6 @@ predictions.  At the same time, cito is computationally efficient because it is
 based on the deep learning framework torch'.  The torch package is native to R,
 so no Python installation or other API is required for this package.")
     (license license:gpl3+)))
-
-(define-public r-citmre
-  (package
-    (name "r-citmre")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "citmre" version))
-       (sha256
-        (base32 "08n8ldfdnpizk55j9iba65b6dkqxlqmsvfgvmn7cnrzgb4achcxd"))))
-    (properties `((upstream-name . "citmre")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts
-                             r-xml2
-                             r-rvest
-                             r-plotly
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/DavRodEcon/citmre")
-    (synopsis "Colombian Index Tool Market Rate Exchange")
-    (description
-     "Downloads the Representative Market Rate Exchange (RMRE) from the
-<www.datos.gov.co> source.  Allows setting the data series in time frequencies,
-splitting the time series through start and end functions, transforming the data
-set in log returns or levels, and making a Dynamic graph.")
-    (license license:expat)))
 
 (define-public r-citmic
   (package

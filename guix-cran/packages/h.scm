@@ -14119,13 +14119,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.8.5")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "10mm60nhny26w5fxa2qkcfjszgj98xq2yhkn04cv94wj93y4wyna"))))
+        (base32 "0bfvydqy07wvfff1sycwr33gidjhirc3rm13817339lv3y424jjp"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (arguments
@@ -14147,14 +14147,18 @@ The win probability analysis is based on the Brunner-Munzel test and uses the
 @code{DeLong-DeLong-Clarke-Pearson} variance estimator, as described by Brunner
 and Konietschke (2025) in âAn unbiased rank-based estimator of the
 MannâWhitney variance including the case of tiesâ (Statistical Papers 66
-(1): 20, <doi:10.1007/s00362-024-01635-0>).  Stratification and covariate
-adjustment are performed based on the methodology presented by Koch GG et al.
-in âIssues for covariance analysis of dichotomous and ordered categorical data
-from randomized clinical trials and non-parametric strategies for addressing
-themâ (Statistics in Medicine 17 (15-16): 1863â92).  For a review, see
-Gasparyan SB et al (2021) âAdjusted win ratio with stratification: Calculation
-methods and interpretationâ (Statistical Methods in Medical Research 30 (2):
-580â611, <doi:10.1177/0962280220942558>).")
+(1): 20, <doi:10.1007/s00362-024-01635-0>).  Includes implementation of a new
+Wilson-type, compatible confidence interval for the win odds, as proposed by
+SchÃ¼Ã¼rhuis, Konietschke, Brunner (2025) in âA new approach to the
+nonparametric BehrensâFisher problem with compatible confidence intervals.â
+(Biometrical Journal 67 (6), <doi:10.1002/bimj.70096>).  Stratification and
+covariate adjustment are performed based on the methodology presented by Koch GG
+et al.  in âIssues for covariance analysis of dichotomous and ordered
+categorical data from randomized clinical trials and non-parametric strategies
+for addressing themâ (Statistics in Medicine 17 (15-16): 1863â92).  For a
+review, see Gasparyan SB et al (2021) âAdjusted win ratio with stratification:
+Calculation methods and interpretationâ (Statistical Methods in Medical
+Research 30 (2): 580â611, <doi:10.1177/0962280220942558>).")
     (license license:expat)))
 
 (define-public r-hcd

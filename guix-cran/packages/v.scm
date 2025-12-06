@@ -3440,13 +3440,13 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
 (define-public r-visor
   (package
     (name "r-visor")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visor" version))
        (sha256
-        (base32 "1f05za1p7nfiyn5av6a1iahc7hax1xjmvsx9bsqplrwjka5f8mjh"))))
+        (base32 "0yms76mks0px38k4bjqy04gmmvrayihgz27vnwzqy3yvdpkxvarh"))))
     (properties `((upstream-name . "visor")))
     (build-system r-build-system)
     (arguments
