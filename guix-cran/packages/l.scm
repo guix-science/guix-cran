@@ -318,6 +318,33 @@ Large-scale Full-information Item Factor Analysis.  British Journal of
 Mathematical and Statistical Psychology. <doi:10.1111/bmsp.12153>.")
     (license license:gpl3)))
 
+(define-public r-lvimp
+  (package
+    (name "r-lvimp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lvimp" version))
+       (sha256
+        (base32 "0n5w0167bvymmlbw5l13w8r8fjmzf8dcz7jb4ygs6acnvnxs8716"))))
+    (properties `((upstream-name . "lvimp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vimp))
+    (native-inputs (list r-knitr))
+    (home-page "https://bdwilliamson.github.io/lvimp/")
+    (synopsis
+     "Perform Inference on Summaries of Longitudinal Algorithm-Agnostic Variable Importance")
+    (description
+     "Calculate point estimates of and valid confidence intervals for longitudinal
+summaries of nonparametric, algorithm-agnostic variable importance measures.
+For more details, see Williamson et al. (2024)
+<doi:10.48550/@code{arXiv.2311.01638>}.")
+    (license license:expat)))
+
 (define-public r-lvgp
   (package
     (name "r-lvgp")
@@ -12965,23 +12992,19 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
 (define-public r-lfm
   (package
     (name "r-lfm")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LFM" version))
        (sha256
-        (base32 "0wl96b0lqwwbkyn22rhh6g76lrvgznzzhpf8kyyagx0ay8v3y7fy"))))
+        (base32 "0sy9qmh4dk6vn0h0k704izzlwd73fiid4718f1kjq0h658kv3v69"))))
     (properties `((upstream-name . "LFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-relliptical
-                             r-matrixcalc
-                             r-mass
-                             r-laplacesdemon
-                             r-farmtest
+    (propagated-inputs (list r-relliptical r-matrixcalc r-mass r-laplacesdemon
                              r-elasticnet))
     (home-page "https://cran.r-project.org/package=LFM")
     (synopsis "Laplace Factor Model Analysis and Evaluation")

@@ -190,13 +190,13 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
 (define-public r-cytoprofile
   (package
     (name "r-cytoprofile")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CytoProfile" version))
        (sha256
-        (base32 "0flnaw5y5qbpzgvq3cx8h8mrridjrlbk2zk5kvmkzb2aza269kvi"))))
+        (base32 "1ijnq97fgx0plwlml9a5nbvkhxbzqay3vcl6bnl6f456v81xa57h"))))
     (properties `((upstream-name . "CytoProfile")))
     (build-system r-build-system)
     (arguments
@@ -210,6 +210,7 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
                              r-plot3d
                              r-pheatmap
                              r-mixomics
+                             r-lifecycle
                              r-gridextra
                              r-ggrepel
                              r-ggplot2
@@ -2313,31 +2314,6 @@ times, with Weibull and piecewise exponential marginal distributions.
 Theoretical details regarding the models implemented in the package can be found
 in Schneider et al. (2022) <doi:10.1007/s10651-022-00549-0>.")
     (license license:gpl3+)))
-
-(define-public r-cureauxsp
-  (package
-    (name "r-cureauxsp")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CureAuxSP" version))
-       (sha256
-        (base32 "1aay2hhciq6f79dz5cnqsfrvw6hlfidw4gvy7hyrnbqqlnqjwyr2"))))
-    (properties `((upstream-name . "CureAuxSP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tcgabiolinks r-survival r-mvtnorm r-mass r-lars))
-    (home-page "<https://github.com/biostat-jieding/CureAuxSP>")
-    (synopsis
-     "Mixture Cure Models with Auxiliary Subgroup Survival Probabilities")
-    (description
-     "Estimate mixture cure models with subgroup survival probabilities as auxiliary
-information.  A reference of the underlying methods is Jie Ding, Jialiang Li and
-Xiaoguang Wang (2024) <doi:10.1093/jrsssc/qlad106>.")
-    (license license:gpl2+)))
 
 (define-public r-cure
   (package
@@ -8556,13 +8532,13 @@ sorting.")
 (define-public r-crane
   (package
     (name "r-crane")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crane" version))
        (sha256
-        (base32 "0fvp0p984wc32b14f1fiwv7gapmf06cmmhdvxygcy35l72x1mhdr"))))
+        (base32 "1vsvi850f7z1jssyg7b9yf25vgdwrym732llbrg1da9f8g01qcrg"))))
     (properties `((upstream-name . "crane")))
     (build-system r-build-system)
     (arguments
@@ -12252,30 +12228,29 @@ maps.")
 (define-public r-countr
   (package
     (name "r-countr")
-    (version "3.5.8")
+    (version "3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Countr" version))
        (sha256
-        (base32 "1bv19ni79f94lrn4656hsxi6nnhrn136mx5y757a4r39avsgbl06"))))
+        (base32 "0ixk2dwbdw1nmf93xv5w8rkyfdcwcr50n1mz77j5pb301kh2bby4"))))
     (properties `((upstream-name . "Countr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-vgam
+    (propagated-inputs (list r-vgam
                              r-standardize
                              r-rdpack
                              r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer
+                             r-pscl
                              r-optimx
                              r-numderiv
                              r-matrix
                              r-mass
-                             r-lmtest
                              r-lattice
                              r-formula
                              r-flexsurv
@@ -12290,9 +12265,7 @@ maps.")
 include covariates and can be specified with familiar formula syntax as in
 @code{glm()} and package flexsurv'.  The methodology is described by Kharrat et
 all (2019) <doi:10.18637/jss.v090.i13> (included as vignette Countr_guide in the
-package).  If the suggested package pscl is not available from CRAN, it can be
-installed with remotes::install_github(\"cran/pscl\")'.  It is no longer used by
-the functions in this package but is needed for some of the extended examples.")
+package).")
     (license license:gpl2+)))
 
 (define-public r-countprop
@@ -30864,13 +30837,13 @@ Adelfio G. (2019) <doi:10.1007/s00180-018-0817-8>.")
 (define-public r-clustcurv
   (package
     (name "r-clustcurv")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustcurv" version))
        (sha256
-        (base32 "05cwlbv8lpkwqzgvi73hhmk6ac6km8v1ywd9wsz2xcwamkiba4ck"))))
+        (base32 "1li8qxg4yscma4r2qy4c8sg432vw4pajkyj5jvvy5cjcnhracnh5"))))
     (properties `((upstream-name . "clustcurv")))
     (build-system r-build-system)
     (arguments
@@ -36806,13 +36779,13 @@ learner.  For more details, see the paper by Hu et al.
 (define-public r-cimpleg
   (package
     (name "r-cimpleg")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CimpleG" version))
        (sha256
-        (base32 "1d8kay41ykcd5pkyyhijcsb30kg0ra6gkvvn6956xp3znfydpjly"))))
+        (base32 "1dida3l4y0yhl2w180jc1sjzr38nfdx6hb74a76dk6nrzrhyj6cd"))))
     (properties `((upstream-name . "CimpleG")))
     (build-system r-build-system)
     (arguments
@@ -36845,7 +36818,6 @@ learner.  For more details, see the paper by Hu et al.
                              r-ggextra
                              r-forcats
                              r-dplyr
-                             r-devtools
                              r-data-table
                              r-caret
                              r-butcher

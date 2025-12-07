@@ -6984,13 +6984,13 @@ interactive visualization of scientific data; BMC Bioinformatics 2019
 (define-public r-boutliers
   (package
     (name "r-boutliers")
-    (version "2.1-2")
+    (version "2.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boutliers" version))
        (sha256
-        (base32 "0v2wakr3rbrxx9inksm2lm8fgz1s6yyzmvpcsmv5wy07vpd5msc7"))))
+        (base32 "1x2gb0xzgbdmk7fa2ckmvksyvq0gm4m036g7rxy8lx56gcjkr1rn"))))
     (properties `((upstream-name . "boutliers")))
     (build-system r-build-system)
     (arguments
@@ -7005,8 +7005,9 @@ meta-analysis (Noma et al. (2025) <doi:10.1101/2025.09.18.25336125>).  Bootstrap
 distributions of influence statistics are computed, and explicit thresholds for
 identifying outliers are provided.  These methods can also be applied to the
 analysis of influential centers or regions in multicenter or multiregional
-clinical trials (Aoki and Noma (2021) <doi:10.1080/24709360.2021.1921944>,
-Nakamura and Noma (2021) <doi:10.5691/jjb.41.117>).")
+clinical trials (Aoki, Noma and Gosho (2021)
+<doi:10.1080/24709360.2021.1921944>, Nakamura and Noma (2021)
+<doi:10.5691/jjb.41.117>).")
     (license license:gpl3)))
 
 (define-public r-boussinesq
@@ -11605,13 +11606,13 @@ file of randomization cards.")
 (define-public r-blockr-core
   (package
     (name "r-blockr-core")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blockr.core" version))
        (sha256
-        (base32 "1a8gy3i1yz7lc0m1dng0afjz5mwi5z9xh8mqsbj99gjk2rcaq54r"))))
+        (base32 "16kk18187jbwrxbpsl06ldrfiw36aqqnl5bl0xgkrpj682x17bg2"))))
     (properties `((upstream-name . "blockr.core")))
     (build-system r-build-system)
     (arguments
@@ -11623,8 +11624,12 @@ file of randomization cards.")
                              r-rlang
                              r-jsonlite
                              r-htmltools
+                             r-glue
                              r-generics
+                             r-evaluate
                              r-dt
+                             r-digest
+                             r-cli
                              r-bslib
                              r-bsicons))
     (native-inputs (list r-quarto))
@@ -14447,19 +14452,24 @@ ISBN:978-1-118-62561-3) Levin & Chen (1999) <doi:10.1080/00031305.1999.10474431>
 (define-public r-biostats
   (package
     (name "r-biostats")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biostats" version))
        (sha256
-        (base32 "1iy7xfs48sr1dg017arrsrzn3pjjv8jivm3mkfl1dil971wxagbp"))))
+        (base32 "04551l4i20r4vjpqlvmhm0vjnfd87ksvzsj231qj3ndqg8nvc8c8"))))
     (properties `((upstream-name . "biostats")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-gt r-gridextra r-ggplot2 r-car))
+    (propagated-inputs (list r-rlang
+                             r-nortest
+                             r-gt
+                             r-gridextra
+                             r-ggplot2
+                             r-car))
     (home-page "https://github.com/sebasquirarte/biostats")
     (synopsis "Biostatistics and Clinical Data Analysis")
     (description
@@ -25819,13 +25829,13 @@ effects is described in Zhao et al. (2024) <doi:10.1093/jrsssc/qlad102>.")
 (define-public r-bayesssm
   (package
     (name "r-bayesssm")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesSSM" version))
        (sha256
-        (base32 "1g1vf7fxrfsmxjwb09rzbyqqpy84fcf3m5lqglwvqk01wb9l3sca"))))
+        (base32 "05065sipgdmvyhf0w3h9za2q499jjdggg47qzf9qkr5drmaaqyc8"))))
     (properties `((upstream-name . "bayesSSM")))
     (build-system r-build-system)
     (arguments

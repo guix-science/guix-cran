@@ -4087,19 +4087,20 @@ APIs, including @code{OpenTopography}
 (define-public r-dsmolgenisarmadillo
   (package
     (name "r-dsmolgenisarmadillo")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSMolgenisArmadillo" version))
        (sha256
-        (base32 "1swll1f145j3q9cikvvadqxaz0bwv5p566n2j29wzcc2xzgqr65l"))))
+        (base32 "022clqyd3b7fl78s9wx35ki30vgrdxqxcjavk2p78kr802q1kvhc"))))
     (properties `((upstream-name . "DSMolgenisArmadillo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-urltools
+                             r-tibble
                              r-stringr
                              r-molgenisauth
                              r-lifecycle
@@ -9792,13 +9793,13 @@ rendering can be sometimes different from the original documents.")
 (define-public r-dockviewr
   (package
     (name "r-dockviewr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dockViewR" version))
        (sha256
-        (base32 "1dmb660xlsncnrr0yky6x0005npm5j0bdgwnz0bgz9f9x1q4gbqi"))))
+        (base32 "0lpwrn6pgbpnx8nhvp9fi6xllsa72i8w57rw0lalpxl0qhzm5avg"))))
     (properties `((upstream-name . "dockViewR")))
     (build-system r-build-system)
     (arguments
@@ -11468,24 +11469,20 @@ use dlib through Rcpp'.")
 (define-public r-dlfm
   (package
     (name "r-dlfm")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DLFM" version))
        (sha256
-        (base32 "0y1cb4dp5jixcpr70l2h5007rcyglv8514inynxl0sv25snagj6h"))))
+        (base32 "0w2qfs0bf2zzcfg14djw2bm25xwx6syhg6nvi7pr3rj8ywjvphxj"))))
     (properties `((upstream-name . "DLFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-relliptical
-                             r-matrixcalc
-                             r-mass
-                             r-lfm
-                             r-laplacesdemon
-                             r-farmtest))
+    (propagated-inputs (list r-relliptical r-matrixcalc r-mass r-lfm
+                             r-laplacesdemon))
     (home-page "https://cran.r-project.org/package=DLFM")
     (synopsis "Distributed Laplace Factor Model")
     (description
@@ -14995,13 +14992,13 @@ that uses an EM algorithm.")
 (define-public r-disclapmix
   (package
     (name "r-disclapmix")
-    (version "1.7.4")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disclapmix" version))
        (sha256
-        (base32 "1rc5kv4abx1hxgkp3vb3f247nv887vrh9l2y189blq0p6k258575"))))
+        (base32 "1k1j0hhfngka4yqpjviwiaap3myv7ccfmicsa8x933wnxv4psyz3"))))
     (properties `((upstream-name . "disclapmix")))
     (build-system r-build-system)
     (arguments
@@ -15009,7 +15006,7 @@ that uses an EM algorithm.")
       #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpp r-mass r-disclap r-cluster))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=disclapmix")
+    (home-page "https://doi.org/10.1016/j.jtbi.2013.03.009")
     (synopsis "Discrete Laplace Mixture Inference using the EM Algorithm")
     (description
      "Make inference in a mixture of discrete Laplace distributions using the EM

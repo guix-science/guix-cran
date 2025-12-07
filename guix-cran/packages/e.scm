@@ -19605,13 +19605,13 @@ using Stan <https://mc-stan.org/>.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "0r2v7d1f2vhab0wgrgp1f7yqsjwzyzpybjjklr7616v2igkdcbiw"))))
+        (base32 "0ylrpan34dn9nf7sgaia5dyflb2kj34qnmw8ppsywc24m6gxrvdm"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (arguments
@@ -19633,8 +19633,8 @@ using Stan <https://mc-stan.org/>.")
                              r-ggally
                              r-future-apply
                              r-future
-                             r-fungible
-                             r-dendextend))
+                             r-dendextend
+                             r-clue))
     (home-page "https://r-ega.net")
     (synopsis
      "Exploratory Graph Analysis â a Framework for Estimating the Number of Dimensions in Multivariate Data using Network Psychometrics")

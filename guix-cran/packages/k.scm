@@ -5568,13 +5568,13 @@ requiring you to change a few lines of code.")
 (define-public r-kerasnip
   (package
     (name "r-kerasnip")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerasnip" version))
        (sha256
-        (base32 "0pwmdz7k19f1ka1da2lljivachsq7zyk1v69bmdr6rmla9bk8c4l"))))
+        (base32 "0ap9b375pssh345q01a553cqkg5xwqish2zwxpy253gh3nhriqny"))))
     (properties `((upstream-name . "kerasnip")))
     (build-system r-build-system)
     (arguments

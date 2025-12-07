@@ -1369,6 +1369,32 @@ File, as well as convenience functions to translate between States, Counties and
 ZIP Code Tabulation Areas (ZCTAs).")
     (license license:expat)))
 
+(define-public r-zarr
+  (package
+    (name "r-zarr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zarr" version))
+       (sha256
+        (base32 "0h0zisl6lk91q3ljyb6d9ajfy7kh1j3zhvqdcx39m49x4pz4y4g6"))))
+    (properties `((upstream-name . "zarr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-jsonlite))
+    (home-page "https://github.com/R-CF/zarr")
+    (synopsis "Native and Extensible R Driver for 'Zarr'")
+    (description
+     "The Zarr specification is widely used to build libraries for the storage and
+retrieval of n-dimensional array data from data stores ranging from local file
+systems to the cloud.  This package is a native Zarr implementation in R with
+support for all required features of Zarr version 3.  It is designed to be
+extensible such that new stores, codecs and extensions can be added easily.")
+    (license license:expat)))
+
 (define-public r-zalpha
   (package
     (name "r-zalpha")

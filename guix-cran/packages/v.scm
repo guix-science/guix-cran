@@ -77,13 +77,13 @@ method explored by Raim, Livsey, and Irimata (2025)
 (define-public r-vwpre
   (package
     (name "r-vwpre")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VWPre" version))
        (sha256
-        (base32 "1hhpqxzh9h5dy45r04l1fa1k4a14s0m6z6fhfg22kpwpryszbc44"))))
+        (base32 "1nh8r94kf3lfilscv68mhv73xaqci70nmhpr4mwdknsg3vij5axb"))))
     (properties `((upstream-name . "VWPre")))
     (build-system r-build-system)
     (arguments

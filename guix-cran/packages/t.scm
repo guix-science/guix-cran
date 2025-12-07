@@ -10786,6 +10786,43 @@ contains an implementation of a doubly robust score test, described in Kook et
 al. (2024, <DOI:10.1080/01621459.2024.2395588>).")
     (license license:gpl2)))
 
+(define-public r-traktok
+  (package
+    (name "r-traktok")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "traktok" version))
+       (sha256
+        (base32 "0rwsp6qpcql74mcaqicx04j38hvbqglrm143xgqm2p5vi7v257cf"))))
+    (properties `((upstream-name . "traktok")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-openssl
+                             r-lobstr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-curl
+                             r-cookiemonster
+                             r-cli
+                             r-askpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JBGruber/traktok")
+    (synopsis "Collecting 'TikTok' Data")
+    (description
+     "Getting @code{TikTok} data (<https://www.tiktok.com/>) through the official and
+unofficial APIsâin other words, you can track @code{TikTok}'.")
+    (license license:gpl3+)))
+
 (define-public r-trajr
   (package
     (name "r-trajr")
@@ -14774,13 +14811,13 @@ Markussen (2021) <doi:10.48550/@code{arXiv.2108.04731>}.")
 (define-public r-tmt
   (package
     (name "r-tmt")
-    (version "0.3.6-0")
+    (version "0.3.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmt" version))
        (sha256
-        (base32 "0zawfk2njrlyffrfz1qkwhvy35470rc5s04679y45h4jspn53nm2"))))
+        (base32 "06wj3n20s56zgbk4mqikahl9j6q4478j3m7p8rgvcr80k0a4sd56"))))
     (properties `((upstream-name . "tmt")))
     (build-system r-build-system)
     (arguments
@@ -18636,13 +18673,13 @@ description of the source.")
 (define-public r-tidytreatment
   (package
     (name "r-tidytreatment")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytreatment" version))
        (sha256
-        (base32 "1kwvyzh4lv0566zc841ixbb951352v8dm9f8sw10p354h2h726dc"))))
+        (base32 "1yrswy3wccjy70rxnlmj680x8ry80zl6nx60163zb2j8pzs1pbnr"))))
     (properties `((upstream-name . "tidytreatment")))
     (build-system r-build-system)
     (arguments
@@ -18659,7 +18696,7 @@ description of the source.")
                              r-coda
                              r-bart))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bonStats/tidytreatment")
+    (home-page "https://github.com/bonstats/tidytreatment")
     (synopsis "Tidy Methods for Bayesian Treatment Effect Models")
     (description
      "This package provides functions for extracting tidy data from Bayesian treatment
@@ -31899,13 +31936,13 @@ available.")
 (define-public r-tall
   (package
     (name "r-tall")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tall" version))
        (sha256
-        (base32 "1b7vn8a3fq2j57fgzpgkd2qmx9pa3841x6xcp1ybmf101gqz9455"))))
+        (base32 "1ndw1wj6khr32mr284fb5pcfadj359j6v899gvp2lxf18fxkk920"))))
     (properties `((upstream-name . "tall")))
     (build-system r-build-system)
     (arguments
@@ -31934,6 +31971,7 @@ available.")
                              r-readtext
                              r-readr
                              r-rcpp
+                             r-ranger
                              r-purrr
                              r-promises
                              r-plotly
@@ -31944,7 +31982,9 @@ available.")
                              r-jsonlite
                              r-igraph
                              r-httr2
+                             r-ggwordcloud
                              r-ggraph
+                             r-ggplot2
                              r-fontawesome
                              r-dt
                              r-dplyr

@@ -13325,13 +13325,13 @@ testing, fit indices, and confidence interval estimation.")
 (define-public r-flevr
   (package
     (name "r-flevr")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flevr" version))
        (sha256
-        (base32 "1h1wnqd1fv6z4mfrchm5rv9x9s48vp67csf3a8gyj7gm3lppgnfm"))))
+        (base32 "1dv7ljh1p13ml9kyb3jz6q69cjf3pd7m41srvnzzqksc60i9fr69"))))
     (properties `((upstream-name . "flevr")))
     (build-system r-build-system)
     (arguments
@@ -13355,8 +13355,8 @@ testing, fit indices, and confidence interval estimation.")
 extrinsic (algorithm-specific) and intrinsic (population-level) variable
 importance.  Uses a Super Learner ensemble to estimate the underlying prediction
 functions that give rise to estimates of variable importance.  For more
-information about the methods, please see Williamson and Huang (2023+)
-<@code{arXiv:2202.12989>}.")
+information about the methods, please see Williamson and Huang (2024)
+<doi:10.1515/ijb-2023-0059>.")
     (license license:expat)))
 
 (define-public r-fledge
@@ -22739,13 +22739,13 @@ Hockey League's stats API <https://www.nhl.com/>.")
 (define-public r-fastrg
   (package
     (name "r-fastrg")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastRG" version))
        (sha256
-        (base32 "0w269x4cmcv062srvkzd781h1bm955627z7rsksbr65a3adaw4da"))))
+        (base32 "1l15np6ckk2jb9xyvnm80bkd9ywxjln6yh2p6zzq3nbbdjdxaiqm"))))
     (properties `((upstream-name . "fastRG")))
     (build-system r-build-system)
     (arguments
@@ -22761,6 +22761,7 @@ Hockey League's stats API <https://www.nhl.com/>.")
                              r-glue
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://rohelab.github.io/fastRG/")
     (synopsis "Sample Generalized Random Dot Product Graphs in Linear Time")
     (description
@@ -26167,13 +26168,13 @@ Useful when using the book.")
 (define-public r-fafa
   (package
     (name "r-fafa")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAfA" version))
        (sha256
-        (base32 "0ffmzanzmqw9fr1m1ydcldiwnxm9159v0qmddxpzvh5ysq813q5q"))))
+        (base32 "19kr7kqdsv9f599xbp27lb9lx2kb5pcc4kdp5zbkgi0ih8rvv035"))))
     (properties `((upstream-name . "FAfA")))
     (build-system r-build-system)
     (arguments
@@ -26217,8 +26218,10 @@ Analysis, Hull method, EGA), Exploratory Factor Analysis (EFA) with various
 rotation and extraction methods, Confirmatory Factor Analysis (CFA) for model
 testing, Reliability Analysis (e.g., Cronbach's Alpha, @code{McDonald's} Omega),
 Measurement Invariance testing across groups, and item weighting techniques.
-Results are presented in user-friendly tables and plots, with options for
-downloading outputs.")
+The application leverages established R packages such as lavaan and psych to
+perform these analyses, offering an accessible platform for researchers and
+students.  Results are presented in user-friendly tables and plots, with options
+for downloading outputs.")
     (license license:gpl3)))
 
 (define-public r-faersquarterlydata

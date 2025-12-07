@@ -5139,13 +5139,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.3.21")
+    (version "10.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "16naqz653hdqc8863v5vlq5x272y5hj6hnqwslzzlfi2cwlgihqz"))))
+        (base32 "1ckfhb0knkpdj64b1mw1kfv9hlcb89ixbn3c33dr1mdfc7izjid5"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -10146,13 +10146,13 @@ URL provides a link to a work in progress vignette.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "3.2-1")
+    (version "4.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "08lk95vadzsnrsy94fsmh2zdmrsvz89bz98ppxfskwzk4kl864zf"))))
+        (base32 "1wgxibcs3vzci9dyc6h23yl3d1cpsvqf2pdslb1ja9aq11yxf9nq"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (arguments
@@ -14037,13 +14037,13 @@ a symmetric positive definite matrix generator, see Mezzadri, F. (2007)
 (define-public r-ronfig
   (package
     (name "r-ronfig")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ronfig" version))
        (sha256
-        (base32 "17773jiq0b0qi74nbczkds12qkiisa4b00wh5rgfkdba93p9f840"))))
+        (base32 "18z1a7k2yw1lrf3i328h264nffi5f0pqk8jqypr39b4prfzb7cs2"))))
     (properties `((upstream-name . "ronfig")))
     (build-system r-build-system)
     (arguments
@@ -22071,30 +22071,6 @@ biological data.  M. Draminski, J. Koronacki (2018) <doi:10.18637/jss.v085.i12>.
 Shokoufeh Mirzaei (2025) RMCDA: The Comprehensive R Library for applying
 multi-criteria decision analysis methods, Volume 24, e100762
 <doi:10.1016/j.simpa.2025.100762>.")
-    (license license:expat)))
-
-(define-public r-rmcc
-  (package
-    (name "r-rmcc")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RMCC" version))
-       (sha256
-        (base32 "0nzbjnayp85541pnibal517dhc0s7mhlllshx36m44lv2x3figpl"))))
-    (properties `((upstream-name . "RMCC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://cran.r-project.org/package=RMCC")
-    (synopsis "Airborne LiDAR Filtering Method Based on Multiscale Curvature")
-    (description
-     "Multiscale Curvature Classification of ground returns in 3-D @code{LiDAR} point
-clouds, designed for forested environments.  RMCC is a porting to R of the
-MCC-lidar method by Evans and Hudak (2007) <doi:10.1109/TGRS.2006.890412>.")
     (license license:expat)))
 
 (define-public r-rmbayes
@@ -38930,19 +38906,19 @@ methods (and their reference groups) can be specified.")
 (define-public r-refa
   (package
     (name "r-refa")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REFA" version))
        (sha256
-        (base32 "1h6p8m1nyk6a1j6ffgjrx5sn39r1jaavx1ya367k6lkxjp3skf8w"))))
+        (base32 "0nmrg1igc708ilvxy0vsqay7r2k7g1fxsr4khdymvz88rixa2id0"))))
     (properties `((upstream-name . "REFA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
+    (propagated-inputs (list r-fmultivar))
     (home-page "https://cran.r-project.org/package=REFA")
     (synopsis "Robust Exponential Factor Analysis")
     (description
@@ -38953,8 +38929,10 @@ high-dimensional datasets with heavy-tailed distributions.  The algorithm
 estimates the latent factors and the loading by minimizing the exponential
 squared loss function.  To determine the appropriate number of factors, we
 propose a modified rank minimization technique, which has been shown to
-significantly enhance finite-sample performance.")
-    (license license:gpl3)))
+significantly enhance finite-sample performance.  For more detail of Robust
+Exponential Factor Analysis, please refer to Hu et al. (2026)
+<doi:10.1016/j.jmva.2025.105567>.")
+    (license license:gpl3+)))
 
 (define-public r-ref-icar
   (package
@@ -52499,13 +52477,13 @@ rater also allows the user to extract and plot key parameters of these models.")
 (define-public r-ratematrix
   (package
     (name "r-ratematrix")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ratematrix" version))
        (sha256
-        (base32 "0azn52d88m1xxckv4g02vraa9gdr5jmsxqwxwaim90p2s8jy33np"))))
+        (base32 "1fjr1fvm750vjw3q2442ycyh1p81azi36x1hml01xx1j4y3gcmbf"))))
     (properties `((upstream-name . "ratematrix")))
     (build-system r-build-system)
     (arguments

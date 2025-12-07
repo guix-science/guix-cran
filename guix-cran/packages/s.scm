@@ -8480,13 +8480,13 @@ currently under preparation and can be found on @code{GitHub} at
 (define-public r-sugarbag
   (package
     (name "r-sugarbag")
-    (version "0.1.6")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sugarbag" version))
        (sha256
-        (base32 "0xgazjr55cdjcxngpfasq17pc72lkg2p9jfzfpmwkjrpvsqw8dff"))))
+        (base32 "1h417g28m2vynadmkpfz7zjwdybdb0glm6jfs6lgq1h6s1papw60"))))
     (properties `((upstream-name . "sugarbag")))
     (build-system r-build-system)
     (arguments
@@ -8495,7 +8495,6 @@ currently under preparation and can be found on @code{GitHub} at
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sf
-                             r-rmapshaper
                              r-rlang
                              r-purrr
                              r-progress
@@ -10796,13 +10795,13 @@ to create dyadic data sets.")
 (define-public r-stratpal
   (package
     (name "r-stratpal")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratPal" version))
        (sha256
-        (base32 "1xi8w444qwkszq2cmhcb7l7hfr337ym98yzzxr46nxapcki08sab"))))
+        (base32 "12sfqq2mk0gzbv8faj1z98siqg3advd7nkha45aa06k9c97dkgcy"))))
     (properties `((upstream-name . "StratPal")))
     (build-system r-build-system)
     (arguments
@@ -23150,13 +23149,13 @@ Lachman, Droege, Royle, and Langtimm (2002)
 (define-public r-spocc
   (package
     (name "r-spocc")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spocc" version))
        (sha256
-        (base32 "0ldr7n889jch6q4b4y2ligd3z5g4z4jdf5rk1cig86x9m5wdw57f"))))
+        (base32 "16bdld4iv414hk52amxmlb50cvq4drh677g4bvh5m1k6lm86y4rd"))))
     (properties `((upstream-name . "spocc")))
     (build-system r-build-system)
     (arguments
@@ -24179,19 +24178,19 @@ models.")
 (define-public r-splinecox
   (package
     (name "r-splinecox")
-    (version "0.0.5")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splineCox" version))
        (sha256
-        (base32 "1qqzryisx1zw985j9pdy11wjam7f4iliazrq410qqb7d38rc40vr"))))
+        (base32 "1s7x2hicz4zaw0k78mkfrnxnhg4ynvjdlkrd2v6bdpfbdjdsd34y"))))
     (properties `((upstream-name . "splineCox")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-joint-cox r-ggplot2))
+    (propagated-inputs (list r-joint-cox))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=splineCox")
     (synopsis
@@ -52389,19 +52388,20 @@ simulations, animations, countdowns, or interactive visualizations.")
 (define-public r-shinydrive
   (package
     (name "r-shinydrive")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinydrive" version))
        (sha256
-        (base32 "16yfc9grmjzkpl6xzqn5rpkqd2qnlj4qdgia8img794l6j0y8dgp"))))
+        (base32 "0vna0r979zvxf1p14fydaq0zd7rkjrls6nc4bcba3dmc914yswxx"))))
     (properties `((upstream-name . "shinydrive")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
+    (propagated-inputs (list r-zip
+                             r-yaml
                              r-shiny
                              r-r-utils
                              r-knitr
@@ -60175,13 +60175,13 @@ package by Rosseel (2012) <doi:10.18637/jss.v048.i02>.")
 (define-public r-semlbci
   (package
     (name "r-semlbci")
-    (version "0.11.3")
+    (version "0.11.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semlbci" version))
        (sha256
-        (base32 "1w8440qi5mg4xk60lxbh0fw0h3ffi9j8gx15yz5c74r1drfnj08q"))))
+        (base32 "1ywzbjfdrpbv9mfpxgkvy64dja14wlz6c2sfk95xjs6frc2ynrf6"))))
     (properties `((upstream-name . "semlbci")))
     (build-system r-build-system)
     (arguments

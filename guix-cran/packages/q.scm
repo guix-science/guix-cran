@@ -729,13 +729,13 @@ Factor (VIF) level.")
 (define-public r-quickr
   (package
     (name "r-quickr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickr" version))
        (sha256
-        (base32 "0507fb47025jkg7j944fs7iw8izj1gfksxhx33hlygc5l8rhy63i"))))
+        (base32 "0xjgrm50q519irixkbslc2gqr3l790hffps6snms23wyjh7q760h"))))
     (properties `((upstream-name . "quickr")))
     (build-system r-build-system)
     (arguments

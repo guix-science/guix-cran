@@ -17750,13 +17750,13 @@ validated and demonstrated on a synthetic sample.")
 (define-public r-alfam2
   (package
     (name "r-alfam2")
-    (version "4.2")
+    (version "4.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ALFAM2" version))
        (sha256
-        (base32 "15m4lqh40ylfgxb92v1ch3m2f7m15k90416w34x68i0i0fvx81nn"))))
+        (base32 "1imvqks2hrvzg9vzi7zmzq43211wkwr9gys6s5qpaskd8j04j5k6"))))
     (properties `((upstream-name . "ALFAM2")))
     (build-system r-build-system)
     (arguments
@@ -17775,10 +17775,8 @@ useful for emission inventory calculations, fertilizer management, assessment of
 mitigation strategies, or research aimed at understanding ammonia emission.
 Default parameter sets include effects of application method, slurry
 composition, and weather.  The model structure is based on a simplified
-representation of the physical-chemical slurry-soil-atmosphere system.  See
-Hafner et al. (2018) <doi:10.1016/j.atmosenv.2018.11.034> for information on the
-model and Hafner et al. (2019) <doi:10.1016/j.agrformet.2017.11.027> for more on
-the measurement data used for parameter development.")
+representation of the physical-chemical slurry-soil-atmosphere system.  More
+information is available via citation(\"ALFAM2\").")
     (license license:gpl3)))
 
 (define-public r-ale

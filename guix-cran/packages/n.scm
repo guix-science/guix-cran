@@ -14733,13 +14733,13 @@ nephrology.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "0mvyg4lawa8aiiglqsdz7bsi1flf59xalnawxfq9c4idch1y1ahn"))))
+        (base32 "0j3b1jzfy8vrnd8jd56p0pdyav95li71h13p6crx1x9kfpai0f51"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (arguments

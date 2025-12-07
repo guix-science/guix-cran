@@ -14989,6 +14989,30 @@ more information about Moodle, visit <https://moodle.org>.")
 examples and a shiny app.")
     (license license:gpl2+)))
 
+(define-public r-moodlequiz
+  (package
+    (name "r-moodlequiz")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moodlequiz" version))
+       (sha256
+        (base32 "13idsk8cc8x2askcg9lwxw8dhr8fwf87s38jjc2x17jdyd5h2js3"))))
+    (properties `((upstream-name . "moodlequiz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-xfun r-rmarkdown r-rlang r-bookdown))
+    (home-page "https://github.com/numbats/moodlequiz")
+    (synopsis "R Markdown format for 'Moodle' XML cloze quizzes")
+    (description
+     "Enables the creation of Moodle quiz questions using literate programming with R
+Markdown.  This makes it easy to quickly create a quiz that can be randomly
+replicated with new datasets, questions, and options for answers.")
+    (license license:expat)))
+
 (define-public r-moodef
   (package
     (name "r-moodef")
@@ -16192,13 +16216,13 @@ Used by MOLGENIS packages.")
 (define-public r-molgenisarmadillo
   (package
     (name "r-molgenisarmadillo")
-    (version "2.9.1")
+    (version "2.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MolgenisArmadillo" version))
        (sha256
-        (base32 "0lw7sbv54m5lgk98x8yjzb8dw9f062hyy0521xcv82vrfv4ihq9c"))))
+        (base32 "0hfbahr596p4hfrdih5lfz0qyabk4dlzn1k5bhml7km0w79db0aq"))))
     (properties `((upstream-name . "MolgenisArmadillo")))
     (build-system r-build-system)
     (arguments
@@ -17351,13 +17375,13 @@ that text derived from a regression model.")
 (define-public r-modeltuning
   (package
     (name "r-modeltuning")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltuning" version))
        (sha256
-        (base32 "16rsdx57rr5yjm29vwrq3kxg3x17dkjwiky83xs2kdnrlw2rgkyn"))))
+        (base32 "1dps6angc8a0jbh8r0vzllpkldf7vk8ccgj0nqb3jbmmv32nvvg0"))))
     (properties `((upstream-name . "modeltuning")))
     (build-system r-build-system)
     (arguments
@@ -19753,13 +19777,13 @@ effect.  mme calculates direct and parametric bootstrap MSE estimators
 (define-public r-mmdvariance
   (package
     (name "r-mmdvariance")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MMDvariance" version))
        (sha256
-        (base32 "1yiqabifym7gdknqrhfnql6qc8p163npzrrckbyqjry3yvkqr5wi"))))
+        (base32 "0238rax5xb70dk4d22vpv522zxv4nshfz9wx23z2pccmkl2i21d3"))))
     (properties `((upstream-name . "MMDvariance")))
     (build-system r-build-system)
     (arguments

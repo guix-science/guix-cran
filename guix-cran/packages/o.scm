@@ -1982,20 +1982,20 @@ handle servers that run locally as well as the OSRM webserver.")
 (define-public r-osrm-backend
   (package
     (name "r-osrm-backend")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osrm.backend" version))
        (sha256
-        (base32 "1vkcyjr9nazfr31jaivgngclyn8ciw2gv5x8x2x41cy3zy49scnr"))))
+        (base32 "0gfl0ylymyqbqhnrn68fgsakjqhk7q5hnqzyxr96xl7sn89d8yv1"))))
     (properties `((upstream-name . "osrm.backend")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-ps r-processx r-jsonlite r-httr2 r-digest))
-    (native-inputs (list r-quarto))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/e-kotov/osrm.backend")
     (synopsis "Bindings for 'Open Source Routing Machine'")
     (description
@@ -12982,13 +12982,13 @@ stored in a MS SQL Server database.  For more details see Marcon (2021)
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "07qa07whv4bjj26rfv8qf4kpvb1xnn84kh4sy00xrcqaq7hxl7vh"))))
+        (base32 "0vrxd2b1q2any748yhyr6dcmmcsc52jl5bqgi2wyczf2drxmfyii"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (arguments

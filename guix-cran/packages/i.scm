@@ -5488,13 +5488,13 @@ finance, banking, telecommunications or operational marketing.")
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
-    (version "2.11.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEDSuploadables" version))
        (sha256
-        (base32 "12szyvcrm037xndkv90l4gfjj336d6vjp3qaky7crjkzjl71ql5q"))))
+        (base32 "0lryq8xalycmcfssimnwzcrcmr38zhmrgxszyyrfydlrr4lm99lg"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (arguments

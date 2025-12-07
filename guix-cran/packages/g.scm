@@ -1386,13 +1386,13 @@ different units: m/s, mol/m^2/s, and umol/m^2/s/Pa.")
 (define-public r-gumboot
   (package
     (name "r-gumboot")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gumboot" version))
        (sha256
-        (base32 "12lbnhgcc6l76g6s3bcj46p1s4ddqazwspmkn97ybwcydma44x7m"))))
+        (base32 "0va1l3fxq977wq0mjmcvk6jj53lv11pl9d7j6c84ahwz5ldbdwqr"))))
     (properties `((upstream-name . "gumboot")))
     (build-system r-build-system)
     (arguments
@@ -3548,13 +3548,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.7.0")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "1z2ppv0ihqzsi7w0ld6yaiyjwn8w0w50ydab5ha3414l1pfiqyz2"))))
+        (base32 "0c6hplqh0xq9fbdswdxbkni09hjl68l678vmqk8dm80qyhmwz5xh"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (arguments
@@ -5896,13 +5896,13 @@ points on curves, tangents to curves, and normals to curves.")
 (define-public r-grfa
   (package
     (name "r-grfa")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GrFA" version))
        (sha256
-        (base32 "11fwfzzq8biqrlyh4pd5gbssj52k6c1kk526zv9mmwb3vjqajr5v"))))
+        (base32 "15z3vhk1j6lrfs45754jagacx7z28n0kp8a77qzrvkfbszxkl16q"))))
     (properties `((upstream-name . "GrFA")))
     (build-system r-build-system)
     (arguments
@@ -5912,13 +5912,15 @@ points on curves, tangents to curves, and normals to curves.")
     (home-page "https://cran.r-project.org/package=GrFA")
     (synopsis "Group Factor Analysis")
     (description
-     "Several group factor analysis algorithms are implemented, including Canonical
-Correlation-based Estimation by Choi et al. (2021)
-<doi:10.1016/j.jeconom.2021.09.008> , Generalised Canonical Correlation
-Estimation by Lin and Shin (2023) <doi:10.2139/ssrn.4295429>, Circularly
-Projected Estimation by Chen (2022) <doi:10.1080/07350015.2022.2051520>, and
-Aggregated projection method.")
-    (license license:gpl3)))
+     "This package implements statistical methods for group factor analysis, focusing
+on estimating the number of global and local factors and extracting them.
+Several algorithms are implemented, including Canonical Correlation-based
+Estimation by Choi et al. (2021) <doi:10.1016/j.jeconom.2021.09.008>,
+Generalised Canonical Correlation Estimation by Lin and Shin (2023)
+<doi:10.2139/ssrn.4295429>, Circularly Projected Estimation by Chen (2022)
+<doi:10.1080/07350015.2022.2051520>, and the Aggregated Projection Method by Hu
+et al. (2025) <doi:10.1080/01621459.2025.2491154>.")
+    (license license:gpl3+)))
 
 (define-public r-grf
   (package
@@ -6830,13 +6832,13 @@ combination of greedy local search and a genetic algorithm (see
 (define-public r-grec
   (package
     (name "r-grec")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grec" version))
        (sha256
-        (base32 "1c5ci9rwkl7lcqy18f788k68s13ph3yrqcg7md2f6fn23hrxz049"))))
+        (base32 "0yyxgwmvhjisrpw5hgka81dir790pkp5jzgyy9c4rzd494kb4qp3"))))
     (properties `((upstream-name . "grec")))
     (build-system r-build-system)
     (arguments
@@ -16583,13 +16585,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.7")
+    (version "2.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "12bfqgfs93bcsxrp61vyvsdhsaayv7xdiaa4vzi12n58j27dg2w2"))))
+        (base32 "181qf82a00gh8mjrsv3vxglps6543a7gc8ai3rxgdcdagkipz9z2"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -23089,19 +23091,28 @@ allows intuitive visualization of up to 6 categorical variables simultaneously."
 (define-public r-ggdibbler
   (package
     (name "r-ggdibbler")
-    (version "0.1.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdibbler" version))
        (sha256
-        (base32 "1zpmlldc11i3x48hiksqd298yg0l2xvwq5fs7gmy3mrmpqjmb53f"))))
+        (base32 "0fs0nbbz6qgxx8857cvvshzk9r90x2q3frb4xygrmmfc00z4zgv7"))))
     (properties `((upstream-name . "ggdibbler")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-rlang r-ggplot2 r-dplyr r-distributional))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-distributional
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://harriet-mason.github.io/ggdibbler/")
     (synopsis "Add Uncertainty to Data Visualisations")
@@ -23111,7 +23122,7 @@ goal of signal suppression.  Usually, uncertainty visualisation focuses on
 expressing uncertainty as a distribution or probability, whereas ggdibbler
 differentiates itself by viewing an uncertainty visualisation as an adjustment
 to an existing graphic that incorporates the inherent uncertainty in the
-estimates.  You provide the code for an existing plot, but replace one of the
+estimates.  You provide the code for an existing plot, but replace any of the
 variables with a vector of distributions, and it will convert the visualisation
 into it's signal suppression counterpart.")
     (license license:gpl3)))
