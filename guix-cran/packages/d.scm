@@ -29409,19 +29409,25 @@ seasonally adjust tabular data.")
 (define-public r-datetoiso
   (package
     (name "r-datetoiso")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetoiso" version))
        (sha256
-        (base32 "1m3nkkwip90lgl6jn97vk1ddbrpl3an7095h18a46aflq1kj3igj"))))
+        (base32 "1f2lczhd227qi3flv44dsply4pkps72r8xffbzg6fgvnhnxsxwp1"))))
     (properties `((upstream-name . "datetoiso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-lubridate r-dplyr r-data-table))
+    (propagated-inputs (list r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-dplyr
+                             r-data-table))
     (home-page "https://github.com/andzoluk")
     (synopsis
      "Convert and Impute Dates to ISO Standard (\"International Organization for Standardization\")")
@@ -31142,13 +31148,13 @@ types ('.xlsx', .xls', .csv', .txt') from a given directory into R data frames."
 (define-public r-datagraph
   (package
     (name "r-datagraph")
-    (version "1.2.14")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataGraph" version))
        (sha256
-        (base32 "1vj008c6l1k738kp8f9vmwm6b9jnyjgix389nqgbfq8ia98qgz0k"))))
+        (base32 "0n9xvmncpypdnsrd1saz6im4x680k7jh50j0vqcqlqh2m6qgg9rb"))))
     (properties `((upstream-name . "DataGraph")))
     (build-system r-build-system)
     (arguments

@@ -15641,13 +15641,13 @@ Guarino (2022) <doi:10.48550/@code{arXiv.2208.06855>}.")
 (define-public r-nebula
   (package
     (name "r-nebula")
-    (version "1.5.3")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nebula" version))
        (sha256
-        (base32 "1al5cw4s2gsjfmrq0pgzz2y3xnvmibma01q8k6923k2wfwgnlkkn"))))
+        (base32 "0gi76673110nja3db48yk5g6b62qb5zjbcqmjh4xvyl2713rvc1p"))))
     (properties `((upstream-name . "nebula")))
     (build-system r-build-system)
     (arguments

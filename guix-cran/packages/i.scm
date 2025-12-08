@@ -18679,13 +18679,13 @@ a likelihood ratio test statistic.")
 (define-public r-icranks
   (package
     (name "r-icranks")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICRanks" version))
        (sha256
-        (base32 "1vwzqkjg7i5hm96s8frp72n6xqadlsawzr1wby1fhsxl2m5f1797"))))
+        (base32 "17wdz63d0kxy0s0dmi9jmp9ffj3x40cv3c4d9zagxgcj7xp04x3q"))))
     (properties `((upstream-name . "ICRanks")))
     (build-system r-build-system)
     (arguments

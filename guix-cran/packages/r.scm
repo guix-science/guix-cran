@@ -783,13 +783,13 @@ maintained @code{GitHub} Action.")
 (define-public r-rwofost
   (package
     (name "r-rwofost")
-    (version "0.8-6")
+    (version "0.8-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rwofost" version))
        (sha256
-        (base32 "15cdwy3fsfcm3xgimmfaqwf7xw2z4a9i9pb359chsihssk7qn9ca"))))
+        (base32 "18j9yvyy85kpjpg32vfgj85mizmd41zqavyk7yjc19c3c2h625xd"))))
     (properties `((upstream-name . "Rwofost")))
     (build-system r-build-system)
     (arguments
@@ -6402,6 +6402,48 @@ and Euler vectors(not unity).  Also quaternion and other useful functions.
 Based on @code{SpinCalc} by John Fuller and @code{SpinConv} by Paolo de Leva.")
     (license license:gpl3+)))
 
+(define-public r-rspectral
+  (package
+    (name "r-rspectral")
+    (version "1.0.0.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rSpectral" version))
+       (sha256
+        (base32 "0vywq38ql4di7i9ma7hhm8kzamq8dn0hnxnrzwh8g2xh4qnp6gvx"))))
+    (properties `((upstream-name . "rSpectral")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-igraph r-graph))
+    (home-page "https://github.com/cmclean5/rSpectral")
+    (synopsis "Spectral Modularity Clustering")
+    (description
+     "This package implements the network clustering algorithm described in Newman
+(2006) <doi:10.1103/@code{PhysRevE.74.036104>}.  The complete iterative
+algorithm comprises of two steps.  In the first step, the network is expressed
+in terms of its leading eigenvalue and eigenvector and recursively partition
+into two communities.  Partitioning occurs if the maximum positive eigenvalue is
+greater than the tolerance (10e-5) for the current partition, and if it results
+in a positive contribution to the Modularity.  Given an initial separation using
+the leading eigen step, @code{rSpectral} then continues to maximise for the
+change in Modularity using a fine-tuning step - or variate thereof.  The first
+stage here is to find the node which, when moved from one community to another,
+gives the maximum change in Modularity.  This nodeâs community is then fixed
+and we repeat the process until all nodes have been moved.  The whole process is
+repeated from this new state until the change in the Modularity, between the new
+and old state, is less than the predefined tolerance.  A slight variant of the
+fine-tuning step, which can improve speed of the calculation, is also provided.
+Instead of moving each node into each community in turn, we only consider moves
+of neighbouring nodes, found in different communities, to the community of the
+current node of interest.  The two steps process is repeatedly applied to each
+new community found, subdivided each community into two new communities, until
+we are unable to find any division that results in a positive change in
+Modularity.")
+    (license license:gpl2)))
+
 (define-public r-rspde
   (package
     (name "r-rspde")
@@ -8944,13 +8986,13 @@ morphological convergence.")
 (define-public r-rrpack
   (package
     (name "r-rrpack")
-    (version "0.1-13")
+    (version "0.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrpack" version))
        (sha256
-        (base32 "0h9m2gsi16zxdhff02fxa6r4kw32m7vs3y6ikwpczhlnxd0d0qjy"))))
+        (base32 "0hicqyxzhsm9kwbw647d3smi6x9bg6qq0pwhxb3ds91rljf31kij"))))
     (properties `((upstream-name . "rrpack")))
     (build-system r-build-system)
     (arguments
@@ -22073,6 +22115,30 @@ multi-criteria decision analysis methods, Volume 24, e100762
 <doi:10.1016/j.simpa.2025.100762>.")
     (license license:expat)))
 
+(define-public r-rmcc
+  (package
+    (name "r-rmcc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMCC" version))
+       (sha256
+        (base32 "0nzbjnayp85541pnibal517dhc0s7mhlllshx36m44lv2x3figpl"))))
+    (properties `((upstream-name . "RMCC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-bh))
+    (home-page "https://cran.r-project.org/package=RMCC")
+    (synopsis "Airborne LiDAR Filtering Method Based on Multiscale Curvature")
+    (description
+     "Multiscale Curvature Classification of ground returns in 3-D @code{LiDAR} point
+clouds, designed for forested environments.  RMCC is a porting to R of the
+MCC-lidar method by Evans and Hudak (2007) <doi:10.1109/TGRS.2006.890412>.")
+    (license license:expat)))
+
 (define-public r-rmbayes
   (package
     (name "r-rmbayes")
@@ -26132,13 +26198,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rintcal" version))
        (sha256
-        (base32 "18bkynd3b9dbqq8gdc376bfx6hbvbw7nhyadm5cy2cg9hwcm5f8g"))))
+        (base32 "0yhbkx023pdnimq80wcf77lhycrchd9s2nbnry8qdliaabhgbs98"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (arguments
@@ -26153,9 +26219,10 @@ Algorithms and Applications, for a reference.")
 <doi:10.1017/RDC.2020.68>) are provided as a data package, together with
 previous @code{IntCal} curves (@code{IntCal13}, @code{IntCal09},
 @code{IntCal04}, @code{IntCal98}), other curves (e.g., NOTCal04 [van der Plicht
-et al.  2004], Arnold & Libby 1951) and postbomb curves.  Also provided are
-functions to copy the curves into memory, and to read, query and plot the data
-underlying the @code{IntCal20} curves.")
+et al.  2004], Arnold & Libby 1951, Stuiver & Suess 1966, Pearson & Stuiver
+1986) and postbomb curves.  Also provided are functions to copy the curves into
+memory, and to read, query and plot the data underlying the @code{IntCal20}
+curves.")
     (license license:gpl2+)))
 
 (define-public r-rinsp

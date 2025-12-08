@@ -10532,13 +10532,13 @@ through comms.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.7.8")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "0a4xvajq5n3n3wi2jacy6l6xg7jy6yw41pi53myh24kndh680j6w"))))
+        (base32 "08mfll0n1k3mp02i4rqqib5334y7sjaza44riia40rizz6ypbz55"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (arguments

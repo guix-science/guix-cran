@@ -17685,13 +17685,13 @@ application (Rapp et al. (2020) <doi:10.1111/1752-1688.12877>).")
 (define-public r-elfdistr
   (package
     (name "r-elfdistr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elfDistr" version))
        (sha256
-        (base32 "11h91mwiw2pr0c8zvyzqql275falpiajv784n2rd5xs9azprqdd0"))))
+        (base32 "1c110sx6xm6cpkx37g7sbl2bbvri8mrf407lki8maal9pkq912i2"))))
     (properties `((upstream-name . "elfDistr")))
     (build-system r-build-system)
     (arguments

@@ -24755,13 +24755,13 @@ be found at <doi:10.18637/jss.v098.i03>.")
 (define-public r-mixgb
   (package
     (name "r-mixgb")
-    (version "1.5.3")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixgb" version))
        (sha256
-        (base32 "1ibx16v7jjmfic3b5s75kdjvb4acwwf6rlg0aj1zj1qmqszrqbyz"))))
+        (base32 "10carkjajpxhadj2lji5wnmakl8alfn4xb1bm34kgg9yy9wc8lpx"))))
     (properties `((upstream-name . "mixgb")))
     (build-system r-build-system)
     (arguments

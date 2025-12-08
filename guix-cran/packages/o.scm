@@ -6832,19 +6832,19 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.21")
+    (version "1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1ryckjvcxvjqd1z4lzlryaji4pxpzwlf1y2r911fsr02h8z5zlpm"))))
+        (base32 "0vfdsap0d2kkw5c5rdkgrli5i65bp5nlplx79p147nzcz5pirsk8"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zip r-stringi r-rcpp r-r6))
+    (propagated-inputs (list r-stringi r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://janmarvin.github.io/openxlsx2/")
     (synopsis "Read, Write and Edit 'xlsx' Files")

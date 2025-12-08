@@ -23757,13 +23757,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.4.3")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "1nnl44pp62z3b4d2sz1yv139c19x1c2zxridh2l3i9r2z915gys0"))))
+        (base32 "1hjy1r1p0fsarrqamb17i8i8szw8kzjg2ii2i6rad3af6qk9jqhs"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
@@ -23790,9 +23790,12 @@ custom colour palettes.")
 models can be the sum or product of terms.  Each term is the product of
 exponential/linear functions of covariates.  Additionally sub-terms can be
 defined as a sum of exponential, linear threshold, and step functions.  Cox
-Proportional hazards, Poisson, and Fine-Gray competing risks regression are
-supported.  This work was sponsored by NASA Grants 80NSSC19M0161 and
-80NSSC23M0129 through a subcontract from the National Council on Radiation
+Proportional hazards <https://en.wikipedia.org/wiki/Proportional_hazards_model>,
+Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Gray
+competing risks
+<https://www.publichealth.columbia.edu/research/population-health-methods/competing-risk-analysis>
+regression are supported.  This work was sponsored by NASA Grants 80NSSC19M0161
+and 80NSSC23M0129 through a subcontract from the National Council on Radiation
 Protection and Measurements (NCRP).  The computing for this project was
 performed on the Beocat Research Cluster at Kansas State University, which is
 funded in part by NSF grants CNS-1006860, EPS-1006860, EPS-0919443, ACI-1440548,
@@ -41884,13 +41887,13 @@ Stanojevic et al. (2019) <doi:10.1183/13993003.00224-2019>.")
 (define-public r-cfm
   (package
     (name "r-cfm")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFM" version))
        (sha256
-        (base32 "0vl82afkp2lra13ych6clzj80aazcbj487zx3ms86qz6ln9svqz6"))))
+        (base32 "1zbwh6kwfyxzhr201iy4ay0s4nnjapx1iz5zkpbhshmb3rflxx0i"))))
     (properties `((upstream-name . "CFM")))
     (build-system r-build-system)
     (arguments

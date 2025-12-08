@@ -22196,13 +22196,13 @@ www.belex.rs.")
 (define-public r-bekks
   (package
     (name "r-bekks")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BEKKs" version))
        (sha256
-        (base32 "1gcbpmdbx9mq8nssl3bv4985v68j7p1d4ly21kg4fs2yy8z51m4x"))))
+        (base32 "1nx2hgqribydajj300ji4pr33n22l1vg3hybv485iwiwl1x846gf"))))
     (properties `((upstream-name . "BEKKs")))
     (build-system r-build-system)
     (arguments
@@ -22221,7 +22221,6 @@ www.belex.rs.")
                              r-gridextra
                              r-ggplot2
                              r-ggfortify
-                             r-gas
                              r-future-apply
                              r-future))
     (home-page "https://cran.r-project.org/package=BEKKs")
