@@ -4578,13 +4578,13 @@ cooperation (PICS-6416).")
 (define-public r-rtd
   (package
     (name "r-rtd")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTD" version))
        (sha256
-        (base32 "0zsv62hx1y9q5a6rd8ri91ff64671b84jr3f88h0q4yni2mribhr"))))
+        (base32 "1m9m9ia488zxrai8hh5x41787x9g70zv59nqrhfwx9wkqsl6ay2p"))))
     (properties `((upstream-name . "RTD")))
     (build-system r-build-system)
     (arguments
@@ -23008,13 +23008,13 @@ regarding homoscedastic framework.")
 (define-public r-rlistings
   (package
     (name "r-rlistings")
-    (version "0.2.12")
+    (version "0.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlistings" version))
        (sha256
-        (base32 "12mm72h5sr48hhlap6shx940vywzgia5hknmbs4nf9lzng1n1swr"))))
+        (base32 "1pmmkw5y38g69b660q12jwiw4xn3al0fzd12pz33lym4cnpxirxr"))))
     (properties `((upstream-name . "rlistings")))
     (build-system r-build-system)
     (arguments
@@ -27851,32 +27851,6 @@ kernels, sparse matrix linear algebra kernels, and machine learning
 functionality.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-rhosp
-  (package
-    (name "r-rhosp")
-    (version "1.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rhosp" version))
-       (sha256
-        (base32 "1k0rb4fchjlzinky6ysdvyk0xjsx5986aqwn3yc6s7m3v7y9wb9m"))))
-    (properties `((upstream-name . "rhosp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=rhosp")
-    (synopsis "Side Effect Risks in Hospital : Simulation and Estimation")
-    (description
-     "Evaluating risk (that a patient arises a side effect) during hospitalization is
-the main purpose of this package.  Several methods (Parametric, non parametric
-and De Vielder estimation) to estimate the risk constant (R) are implemented in
-this package.  There are also functions to simulate the different models of this
-issue in order to quantify the previous estimators.  It is necessary to read at
-least the first six pages of the report to understand the topic.")
-    (license license:gpl2+)))
 
 (define-public r-rhosa
   (package
@@ -44538,6 +44512,29 @@ RDDs are in Thistlethwaite, D. L., Campbell, D. T. (1960) <doi:10.1037/h0044319>
 and Lee, D. S., Lemieux, T. (2010) <doi:10.1257/jel.48.2.281>.")
     (license license:gpl2+)))
 
+(define-public r-rdcor
+  (package
+    (name "r-rdcor")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdcor" version))
+       (sha256
+        (base32 "1xynymnlpxadg2vhf4gp0ik52ghjvz2dp0h3bsb9351m5cm5x8zk"))))
+    (properties `((upstream-name . "rdcor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2 r-rfast r-dcov))
+    (home-page "https://cran.r-project.org/package=rdcor")
+    (synopsis "Rank Distance Correlation Coefficient")
+    (description
+     "The rank distance correlation <doi:10.1080/01621459.2020.1782223> is computed.
+Included also is a function to perform permutation based testing.")
+    (license license:gpl2+)))
+
 (define-public r-rdcmchecks
   (package
     (name "r-rdcmchecks")
@@ -48062,13 +48059,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-ezr
   (package
     (name "r-rcmdrplugin-ezr")
-    (version "1.68")
+    (version "1.70")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.EZR" version))
        (sha256
-        (base32 "0ppdn3fz8y3ckhhzhn0bhis4i2wd0r2ll8xmvvp6vnx42q9vnh0z"))))
+        (base32 "0dlymd0wshdjlbbyxpjv2x6h348clilzwh7r6d1rkf7g607a1gww"))))
     (properties `((upstream-name . "RcmdrPlugin.EZR")))
     (build-system r-build-system)
     (arguments
@@ -48083,12 +48080,12 @@ analyses, ROC analyses, metaanalyses, sample size calculation, and so on, to the
 R commander.  EZR enables point-and-click easy access to statistical functions,
 especially for medical statistics.  EZR is platform-independent and runs on
 Windows, Mac OS X, and UNIX. Its complete manual is available only in Japanese
-(Chugai Igakusha, ISBN: 978-4-498-10918-6, Nankodo, ISBN: 978-4-524-26158-1,
+(Chugai Igakusha, ISBN: 978-4-498-10918-6, Nankodo, ISBN: 978-4-524-21861-5,
 Ohmsha, ISBN: 978-4-274-22632-8), but an report that introduced the
 investigation of EZR was published in Bone Marrow Transplantation (Nature
 Publishing Group) as an Open article.  This report can be used as a simple
 manual.  It can be freely downloaded from the journal website as shown below.
-This report has been cited in more than 10,000 scientific articles.")
+This report has been cited in more than 14,000 scientific articles.")
     (license license:gpl2+)))
 
 (define-public r-rcmdrplugin-export
@@ -50244,13 +50241,13 @@ restricted LASSO, restricted RIDGE and restricted Elastic Net estimators.")
 (define-public r-rbranding
   (package
     (name "r-rbranding")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbranding" version))
        (sha256
-        (base32 "01vg80xgwwyf68056griha7709h2yxakvvs2w0vw691vzh0pn4ir"))))
+        (base32 "12l5jk3iplk38bbh2snlclb5hn1vffrnwb4zgmv2246mnsi9343n"))))
     (properties `((upstream-name . "rbranding")))
     (build-system r-build-system)
     (arguments

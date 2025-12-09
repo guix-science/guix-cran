@@ -8160,13 +8160,13 @@ you're documenting your data analysis or creating interactive shiny apps.")
 (define-public r-highfrequency
   (package
     (name "r-highfrequency")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highfrequency" version))
        (sha256
-        (base32 "0jxkmgd3sfipz1z37w9flwy8i94q6vxwlxyaflfbprwlskmlnakd"))))
+        (base32 "0ni9id0hbg0ydxs66prbhgv4c642l0jb24rfnqrdbs6bgfc9inhm"))))
     (properties `((upstream-name . "highfrequency")))
     (build-system r-build-system)
     (arguments
@@ -9372,13 +9372,13 @@ extended for spatial modeling (Alam, Ronnegard and Shen 2015)
 (define-public r-hgdmr
   (package
     (name "r-hgdmr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HGDMr" version))
        (sha256
-        (base32 "0iidl0ga9fzszfczmgjgzy2mi8qbi4liph82j93287r15clz1abl"))))
+        (base32 "0z7g3cxzvph6nrzkjd8h15h9i1d5i0z19nnmkw4zzcyhcrdw5hhg"))))
     (properties `((upstream-name . "HGDMr")))
     (build-system r-build-system)
     (arguments

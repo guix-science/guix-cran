@@ -46194,13 +46194,13 @@ Lesaffre (2006) <doi:10.1111/j.1541-0420.2005.00396.x>.")
 (define-public r-simeucartellaw
   (package
     (name "r-simeucartellaw")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimEUCartelLaw" version))
        (sha256
-        (base32 "1n0dvhwqyirb6myc30ydvskb1k7hlx4nkqy15gpx87zl01vpn8fz"))))
+        (base32 "1grdpgm8hjyvjdgxaj3f3w1jhf0gyhvbxla3dj8y7dlw5n26sdil"))))
     (properties `((upstream-name . "SimEUCartelLaw")))
     (build-system r-build-system)
     (arguments
@@ -69853,13 +69853,13 @@ Biswas, Lester Mackey and Xiao-Li Meng, \"Scalable Spike-and-Slab\" (2022)
 (define-public r-scalelink
   (package
     (name "r-scalelink")
-    (version "1.0")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Scalelink" version))
        (sha256
-        (base32 "0likfjw5999zd0kv1ykby78bl0x3xgh0v1yjssk7fnw1ghkxgdib"))))
+        (base32 "0yp9h7w4mpvpkxcgf58zs9pl2pggswxhfkkl3s3k31mv36xkw3s9"))))
     (properties `((upstream-name . "Scalelink")))
     (build-system r-build-system)
     (arguments

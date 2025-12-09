@@ -5900,13 +5900,13 @@ necessarily both.  For more information, see Zetterqvist and SjÃ¶lander (2015)
 (define-public r-drf
   (package
     (name "r-drf")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drf" version))
        (sha256
-        (base32 "13b31rynknzirnvgygs1ar5968xdh8dhg60ibn0g359gnzadn7ad"))))
+        (base32 "08ikaj22d9jj63jnzqisw5wnl9j6xd3hm1s86y4a4n532xiv29gn"))))
     (properties `((upstream-name . "drf")))
     (build-system r-build-system)
     (arguments
@@ -5918,7 +5918,7 @@ necessarily both.  For more information, see Zetterqvist and SjÃ¶lander (2015)
     (synopsis "Distributional Random Forests")
     (description
      "An implementation of distributional random forests as introduced in Cevid &
-Michel & Meinshausen & Buhlmann (2020) <@code{arXiv:2005.14458>}.")
+Michel & Meinshausen & Buhlmann (2020) <doi:10.48550/@code{arXiv.2005.14458>}.")
     (license license:gpl3)))
 
 (define-public r-dregar
@@ -12974,6 +12974,35 @@ distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
     (synopsis "Object Oriented Implementation of Distributions")
     (description "S4-classes and methods for distributions.")
     (license license:lgpl3)))
+
+(define-public r-distplyr
+  (package
+    (name "r-distplyr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distplyr" version))
+       (sha256
+        (base32 "0ngcwpiakvv1v7hmwbml2z50ra3qb89zni92kncx29pd9cnxhb2b"))))
+    (properties `((upstream-name . "distplyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang r-ellipsis r-distionary
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://distplyr.probaverse.com/")
+    (synopsis "Manipulate and Combine Probability Distributions")
+    (description
+     "Go beyond standard probability distributions such as the Normal or Exponential
+by combining, shifting, maximizing, and otherwise transforming distributions
+with simple, verb-based functions.  Provides easy access to a broader space of
+distributions more representative of real-world systems such as river flows or
+insurance claims.  Part of the probaverse framework of packages to support
+advanced statistical modeling and simulations with an intuitive workflow.")
+    (license license:expat)))
 
 (define-public r-distplotter
   (package
@@ -25880,13 +25909,13 @@ differentials and compares the estimates obtained from two datasets.")
 (define-public r-decafs
   (package
     (name "r-decafs")
-    (version "3.3.3")
+    (version "3.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeCAFS" version))
        (sha256
-        (base32 "0dj32rck6ssyv82d8b75qgsqw319q02iqd3xxazy6251wcjn321i"))))
+        (base32 "06s6z4j1dnh5mpypc7vgnxby8ms81gqkyavpay13czyk6jbps4w6"))))
     (properties `((upstream-name . "DeCAFS")))
     (build-system r-build-system)
     (arguments
@@ -30724,13 +30753,13 @@ H.-Y., Zhang, Q., Li, Z. & He, K.-B. (2020)
 (define-public r-datapackager
   (package
     (name "r-datapackager")
-    (version "0.16.1")
+    (version "0.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataPackageR" version))
        (sha256
-        (base32 "0hq45yyfcw87p93qrivyx341hsamfx4m3bs1ii97h35mb4926k86"))))
+        (base32 "0hdjk1yr0x58f99lapif04161br79lmfx90sijj9dd4vdm1r1gbx"))))
     (properties `((upstream-name . "DataPackageR")))
     (build-system r-build-system)
     (arguments
@@ -30744,7 +30773,6 @@ H.-Y., Zhang, Q., Li, Z. & He, K.-B. (2020)
                              r-pkgload
                              r-pkgbuild
                              r-knitr
-                             r-futile-logger
                              r-digest
                              r-desc
                              r-cli))
@@ -33977,13 +34005,13 @@ used as a reactive filter of structured data.")
 (define-public r-d3po
   (package
     (name "r-d3po")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "d3po" version))
        (sha256
-        (base32 "1arqxsg3krd2nzxjb20758gggnqh6wa5cgxv2c2z724853gn22xv"))))
+        (base32 "1rmakr28wlw46v2s3kdwm9bzf6i17c3f3hx7j0kzvb5m9njg4bdz"))))
     (properties `((upstream-name . "d3po")))
     (build-system r-build-system)
     (arguments

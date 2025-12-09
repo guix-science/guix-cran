@@ -18213,20 +18213,19 @@ Valeinis, E. Cers (2011)
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eks" version))
        (sha256
-        (base32 "0biwvxv3ig2hg5hbigdcaiasfs9xwrzqmzahpr2rj2w25sc03kck"))))
+        (base32 "0zf121kaaj2vmnhh9jiyg46ki7adymz5j7lw14cqccxh9pyyxby1"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sf
-                             r-mapsf
                              r-lwgeom
                              r-ks
                              r-isoband
@@ -24013,13 +24012,13 @@ economic budget or on a desired statistical accuracy.  Lastly, (6)
 (define-public r-eco
   (package
     (name "r-eco")
-    (version "4.0-5")
+    (version "4.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eco" version))
        (sha256
-        (base32 "0njq7i9hb0hhx7icxfj0n6fb33whz0x9i3cx679pr95bbyfgd29x"))))
+        (base32 "0q1m6cq9zmvqwrmh48653ak640dwshzxrh3wx380fpakccqwyyq9"))))
     (properties `((upstream-name . "eco")))
     (build-system r-build-system)
     (arguments
@@ -26707,13 +26706,13 @@ functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
 (define-public r-easybgm
   (package
     (name "r-easybgm")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybgm" version))
        (sha256
-        (base32 "0v54vqi7hc28spfbb2mbq8hjcxp1p5dwr1476qkifvm9src6ja53"))))
+        (base32 "0jl8s57ssn1wz0b2x72h977pbl07n7zsf356blk9z27hjvv9ibrh"))))
     (properties `((upstream-name . "easybgm")))
     (build-system r-build-system)
     (arguments
@@ -26724,6 +26723,7 @@ functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
                              r-hdinterval
                              r-ggplot2
                              r-dplyr
+                             r-coda
                              r-bgms
                              r-bggm
                              r-bdgraph))
@@ -26732,11 +26732,12 @@ functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
     (description
      "Fit and visualize the results of a Bayesian analysis of networks commonly found
 in psychology.  The package supports fitting cross-sectional network models
-fitted using the packages BDgraph', bgms and BGGM'.  The package provides the
-parameter estimates, posterior inclusion probabilities, inclusion Bayes factor,
-and the posterior density of the parameters.  In addition, for BDgraph and bgms
-it allows to assess the posterior structure space.  Furthermore, the package
-comes with an extensive suite for visualizing results.")
+fitted using the packages BDgraph', bgms and BGGM', as well as network
+comparison fitted using the bgms and BBGM'.  The package provides the parameter
+estimates, posterior inclusion probabilities, inclusion Bayes factor, and the
+posterior density of the parameters.  In addition, for BDgraph and bgms it
+allows to assess the posterior structure space.  Furthermore, the package comes
+with an extensive suite for visualizing results.")
     (license license:gpl2+)))
 
 (define-public r-easyanova

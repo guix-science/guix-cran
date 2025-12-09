@@ -7080,26 +7080,28 @@ direction of the stop. @code{TriMet} has catalogued these stops, 6880 in total."
 (define-public r-trimatch
   (package
     (name "r-trimatch")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TriMatch" version))
        (sha256
-        (base32 "19s9i070r1dlvbsd601fi92h6hz6s7pi2mgii5zf4w36np3vrr4c"))))
+        (base32 "1isr5zs3qyyxbmkm0nv3sy23sc55pxps6nx23py28i8vacnb1g89"))))
     (properties `((upstream-name . "TriMatch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-stringr
+                             r-scales
                              r-reshape2
                              r-randomforest
                              r-psych
                              r-psagraphics
+                             r-plyr
                              r-gridextra
                              r-ggplot2
-                             r-ez))
+                             r-car))
     (native-inputs (list r-knitr))
     (home-page "https://jbryer.github.io/TriMatch/")
     (synopsis "Propensity Score Matching of Non-Binary Treatments")
@@ -23498,30 +23500,6 @@ posterior values via reciprocal importance sampling.  Metodiev, Perrot-DockÃ¨s
 Ouadah, Irons, Latouche, & Raftery (2024).  Bayesian Analysis.
 <doi:10.1214/24-BA1422>.")
     (license license:gpl3+)))
-
-(define-public r-tgver
-  (package
-    (name "r-tgver")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tgver" version))
-       (sha256
-        (base32 "1kw622xcjhca7k178q3wpmjyidjifvql9xpg2ai8842qhgz14bm0"))))
-    (properties `((upstream-name . "tgver")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plumber r-geojsonsf r-callr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tgve/tgver")
-    (synopsis "Turing Geovisualization Engine R package")
-    (description
-     "Turing Geovisualization Engine R package for geospatial visualization and
-analysis.")
-    (license license:expat)))
 
 (define-public r-tgst
   (package

@@ -8009,13 +8009,13 @@ react and interact as well as generate code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.11")
+    (version "0.5.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatters" version))
        (sha256
-        (base32 "1m7cqjh0gr5c1vr4wx8pg5y3yq0pla7af7851b2ifhkidy4sv2i1"))))
+        (base32 "14jrb5pz2n334r817nw1cqrpz6xyxydl9786l53rb28v856wrvkl"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (arguments
@@ -25429,6 +25429,38 @@ Works on any cost function.  For detailed information see Gabel et al. (2019)
 likelihood and Bayesian methods.")
     (license license:gpl2)))
 
+(define-public r-famish
+  (package
+    (name "r-famish")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "famish" version))
+       (sha256
+        (base32 "0bjwwhax7aipv8qprn5jwlhbprifhx8j4j1cqpaxsclmrqb9avaf"))))
+    (properties `((upstream-name . "famish")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-rlang
+                             r-lmom
+                             r-ismev
+                             r-fitdistrplus
+                             r-distionary
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://famish.probaverse.com/")
+    (synopsis "Flexibly Tune Families of Probability Distributions")
+    (description
+     "Fits probability distributions to data and plugs into the probaverse suite of R
+packages so distribution objects are ready for further manipulation and
+evaluation.  Supports methods such as maximum likelihood and L-moments, and
+provides diagnostics including empirical ranking and quantile score.")
+    (license license:expat)))
+
 (define-public r-families
   (package
     (name "r-families")
@@ -26068,13 +26100,13 @@ for depression by Iniesta, Stahl, and @code{McGuffin} (2016)
 (define-public r-fairgate
   (package
     (name "r-fairgate")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairGATE" version))
        (sha256
-        (base32 "1vg1lhrzjq9p18przzb9435ysznjzvlhp7283mqi0qrgzz7ifcvi"))))
+        (base32 "0nmaj7bkdjjzvkqjxbrjkp0glpv0vs3mfm2i0fgn4igz0apk4axr"))))
     (properties `((upstream-name . "fairGATE")))
     (build-system r-build-system)
     (arguments

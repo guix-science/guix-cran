@@ -1032,13 +1032,13 @@ random search strategies.")
 (define-public r-xoi
   (package
     (name "r-xoi")
-    (version "0.72")
+    (version "0.74")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xoi" version))
        (sha256
-        (base32 "0q1q43540qz97qad36dcwmcmgdci3sbhxk9li897gnjv9gjazdlr"))))
+        (base32 "0b5kfd1fhs4jzsyj6l5g4756k85nf46mhg5v77l2yj0f4c15n7yw"))))
     (properties `((upstream-name . "xoi")))
     (build-system r-build-system)
     (arguments

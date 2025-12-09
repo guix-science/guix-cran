@@ -4093,13 +4093,13 @@ the original data such as predictions, residuals and cluster assignments; and
 (define-public r-broman
   (package
     (name "r-broman")
-    (version "0.90")
+    (version "0.92")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broman" version))
        (sha256
-        (base32 "0r09ynspm2z6k2zmd05zzcjf1sk10k8sapy3r6xffm0x05s9ykp4"))))
+        (base32 "1599xkg540mz36nhdzi12a2h7j6ndj1mfdkj91fwpqqcyzmmnsg5"))))
     (properties `((upstream-name . "broman")))
     (build-system r-build-system)
     (arguments
@@ -25591,13 +25591,13 @@ Chipman, George, @code{McCulloch} (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.2.22")
+    (version "0.2.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTools" version))
        (sha256
-        (base32 "10n7h877hancdcgablb9c4fj1bsjsprgz5znrdvycby6kr8vn2p8"))))
+        (base32 "03wjqb8lcrbifp8l2qywanysbbnl0yd75gpbd0samywqvj1gnrrn"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
     (arguments
@@ -33723,13 +33723,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backbone" version))
        (sha256
-        (base32 "09rgia0siabjk878dd7dbfi5x03ql4lwk25dr6546yl6qszcsjxs"))))
+        (base32 "0p7i2m6gs8vy5br7450b20b4jsj6k1si3fmikrkmgcsniwchyp3s"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (arguments

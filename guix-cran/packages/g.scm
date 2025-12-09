@@ -17445,36 +17445,6 @@ designed for non-Gaussian traits.  It supports the identification of credible
 sets of genetic variants.")
     (license license:gpl3)))
 
-(define-public r-gimms
-  (package
-    (name "r-gimms")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gimms" version))
-       (sha256
-        (base32 "03qi10hdshvxj6acq8y0byaqc940xbnw1l7yqchvk7sw7v7ir656"))))
-    (properties `((upstream-name . "gimms")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-raster r-ncdf4 r-curl))
-    (home-page "https://github.com/environmentalinformatics-marburg/gimms")
-    (synopsis "Download and Process GIMMS NDVI3g Data")
-    (description
-     "This is a set of functions to retrieve information about GIMMS NDVI3g files
-currently available online; download (and re-arrange, in the case of NDVI3g.v0)
-the half-monthly data sets; import downloaded files from ENVI binary (NDVI3g.v0)
-or @code{NetCDF} format (NDVI3g.v1) directly into R based on the widespread
-raster package; conduct quality control; and generate monthly composites (e.g.,
-maximum values) from the half-monthly input data.  As a special gimmick, a
-method is included to conveniently apply the Mann-Kendall trend test upon
-Raster* images, optionally featuring trend-free pre-whitening to account for
-lag-1 autocorrelation.")
-    (license license:expat)))
-
 (define-public r-gimmemyplot
   (package
     (name "r-gimmemyplot")
@@ -23064,13 +23034,13 @@ time models, using the population-based Markov Chain Monte Carlo.")
 (define-public r-ggdiceplot
   (package
     (name "r-ggdiceplot")
-    (version "0.1.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdiceplot" version))
        (sha256
-        (base32 "0bk19cp69vzyij32jk9lnz6dpjv9iv1hp3al7n1xzxxmc1ypnaq6"))))
+        (base32 "0hhcfbc41cn4y0x974i3zcc7gmip8g58awklq437j53pp39rxcpf"))))
     (properties `((upstream-name . "ggdiceplot")))
     (build-system r-build-system)
     (arguments
@@ -23870,19 +23840,19 @@ intersecting points.")
 (define-public r-ggamma
   (package
     (name "r-ggamma")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggamma" version))
        (sha256
-        (base32 "1zc4p2bz4pxqycrzgb9wwl53lxqcikxsihna6ff8pmw1n623j85z"))))
+        (base32 "05kdswyl04x9g6z94rgpm7p4c6maa2vr96xfrxfsq21bqjqknx6b"))))
     (properties `((upstream-name . "ggamma")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://mjsaldanha.com/posts/ggamma")
+    (home-page "https://github.com/matheushjs/ggamma")
     (synopsis "Generalized Gamma Probability Distribution")
     (description
      "Density, distribution function, quantile function and random generation for the
@@ -24905,44 +24875,6 @@ structural breaks in the mean, see Pretis, Reade and Sucarrat (2018)
 the estimator and diagnostics tests can be fully user-specified, see Sucarrat
 (2021) <doi:10.32614/RJ-2021-024>.")
     (license license:gpl2+)))
-
-(define-public r-getrad
-  (package
-    (name "r-getrad")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "getRad" version))
-       (sha256
-        (base32 "1cv7406lifc8bfqc1alqxaclg8yd3c4rrlz3rfrzalnzb3bnnral"))))
-    (properties `((upstream-name . "getRad")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-withr
-                             r-vroom
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-lubridate
-                             r-httr2
-                             r-glue
-                             r-dplyr
-                             r-cli
-                             r-cachem
-                             r-biorad))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/aloftdata/getRad")
-    (synopsis "Download Radar Data for Biological Research")
-    (description
-     "Load polar volume and vertical profile data for aeroecological research directly
-into R. With @code{getRad} you can access data from several sources in Europe
-and the US and standardize it to facilitate further exploration in tools such as
-@code{bioRad}'.")
-    (license license:expat)))
 
 (define-public r-getquandldata
   (package
@@ -26489,32 +26421,6 @@ Zhu (2018) <doi:10.1080/19475683.2018.1534890>.  GOS has advantages in more
 accurate spatial prediction using fewer samples and critically reduced
 prediction uncertainty.")
     (license license:gpl3)))
-
-(define-public r-geosed
-  (package
-    (name "r-geosed")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geosed" version))
-       (sha256
-        (base32 "07j4q6sgrf83h2gi2j5qap5rifz8gimdacd3b7ld1p3b6ai6kv3r"))))
-    (properties `((upstream-name . "geosed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=geosed")
-    (synopsis "Smallest Enclosing Disc for Latitude and Longitude Points")
-    (description
-     "Find the smallest circle that contains all longitude and latitude input points.
-From the generated center and radius, variable side polygons can be created,
-navigation based on bearing and distance can be applied, and more.  Based on a
-modified version of Welzl's algorithm for smallest circle.  Distance
-calculations are based on the haversine formula.  Calculations for distance,
-midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
-    (license license:expat)))
 
 (define-public r-geoscale
   (package

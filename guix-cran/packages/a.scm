@@ -6563,13 +6563,13 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
 (define-public r-arxiv
   (package
     (name "r-arxiv")
-    (version "0.14")
+    (version "0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aRxiv" version))
        (sha256
-        (base32 "07ilqssvhdw5xw8r7c5kpisxr7fivai8jy37n83lzwvn165nvzhh"))))
+        (base32 "09i8r4ywb6c5yqbynlm9b57kl322ggi4v85a58d0nw5a8j2l29k3"))))
     (properties `((upstream-name . "aRxiv")))
     (build-system r-build-system)
     (arguments
@@ -15444,36 +15444,6 @@ from blue (left) to red (right).  This package greatly benefitted from building
 on the source code (with permission) from Ram and Wickham (2015).")
     (license license:expat)))
 
-(define-public r-amerifluxr
-  (package
-    (name "r-amerifluxr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "amerifluxr" version))
-       (sha256
-        (base32 "099vv1axgp4jfi9ic4rqsdcv8a5dz1z0zdmdx8r8h474p3jdqm7c"))))
-    (properties `((upstream-name . "amerifluxr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readxl
-                             r-rcurl
-                             r-memoise
-                             r-jsonlite
-                             r-httr
-                             r-heatmaply))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/chuhousen/amerifluxr")
-    (synopsis "Interface to 'AmeriFlux' Data Services")
-    (description
-     "Programmatic interface to the @code{AmeriFlux} database
-(<https://ameriflux.lbl.gov/>).  Provide query, download, and data summary
-tools.")
-    (license license:bsd-3)))
-
 (define-public r-amen
   (package
     (name "r-amen")
@@ -16321,13 +16291,13 @@ in the `alr3` package as well, so only one of them should be used.")
 (define-public r-alqrfe
   (package
     (name "r-alqrfe")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alqrfe" version))
        (sha256
-        (base32 "0xablian48jg3f45x8c28j5f4bjzzhf3f154f9h3v0lpygkwgswh"))))
+        (base32 "0wd5j6s2r1amfpps54hqr8lizg5gr1xpkfx2vm3lvqknywgb8gj6"))))
     (properties `((upstream-name . "alqrfe")))
     (build-system r-build-system)
     (arguments
@@ -27453,19 +27423,19 @@ original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
 (define-public r-abess
   (package
     (name "r-abess")
-    (version "0.4.10")
+    (version "0.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "abess" version))
        (sha256
-        (base32 "0bhqj744bgdhxvrz6pbkl1rn792sa8grcxl7g125plv11rq05psa"))))
+        (base32 "0753wxzsp3yv2kff3zh7wd9qf4zi03sfh57p19iligaba3vnkgs4"))))
     (properties `((upstream-name . "abess")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/abess-team/abess")
     (synopsis "Fast Best Subset Selection")
@@ -27478,10 +27448,11 @@ technique to guarantee exact support recovery and globally optimal solution in
 polynomial times for linear model.  It also supports best subset selection for
 logistic regression, Poisson regression, Cox proportional hazard model, Gamma
 regression, multiple-response regression, multinomial logistic regression,
-ordinal regression, (sequential) principal component analysis, and robust
-principal component analysis.  The other valuable features such as the best
-subset of group selection <doi:10.1287/ijoc.2022.1241> and sure independence
-screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
+ordinal regression, Ising model reconstruction
+<doi:10.1080/01621459.2025.2571245>, (sequential) principal component analysis,
+and robust principal component analysis.  The other valuable features such as
+the best subset of group selection <doi:10.1287/ijoc.2022.1241> and sure
+independence screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 

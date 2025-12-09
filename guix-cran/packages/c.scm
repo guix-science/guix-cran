@@ -22600,13 +22600,13 @@ Structured Query Language (SQL) to the other supported dialects.")
 (define-public r-common
   (package
     (name "r-common")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "common" version))
        (sha256
-        (base32 "1zl34ikbasph6dchvl2dcbrs5wj6jxlyfg8gfnbq7dcmmbjg9l2h"))))
+        (base32 "1hw7gfa698jazlvka96v2xkxgyylv5pn4y09lmhkf1qykskwrnrs"))))
     (properties `((upstream-name . "common")))
     (build-system r-build-system)
     (arguments
@@ -24729,31 +24729,40 @@ gradient-matching, generalized profiling and forwards prediction error methods."
 (define-public r-collinear
   (package
     (name "r-collinear")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collinear" version))
        (sha256
-        (base32 "1r51qsr09bgz7kwvwspkkhrql6mih7jymv7sgnkvfapyridvw7am"))))
+        (base32 "1s7xq386zdql9269pzdwcpzrahgy3j7plzkyvcrn4g5rvdn2gkmr"))))
     (properties `((upstream-name . "collinear")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rpart r-ranger r-progressr r-mgcv
+    (propagated-inputs (list r-rlang
+                             r-recipes
+                             r-ranger
+                             r-progressr
+                             r-mgcv
                              r-future-apply))
     (home-page "https://blasbenito.github.io/collinear/")
     (synopsis "Automated Multicollinearity Management")
     (description
-     "Effortless multicollinearity management in data frames with both numeric and
-categorical variables for statistical and machine learning applications.  The
-package simplifies multicollinearity analysis by combining four robust methods:
-1) target encoding for categorical variables (Micci-Barreca, D. 2001
-<doi:10.1145/507533.507538>); 2) automated feature prioritization to prevent key
-variable loss during filtering; 3) pairwise correlation for all variable
-combinations (numeric-numeric, numeric-categorical, categorical-categorical);
-and 4) fast computation of variance inflation factors.")
+     "This package provides a comprehensive and automated workflow for managing
+multicollinearity in data frames with numeric and/or categorical variables.  The
+package integrates five robust methods into a single function: (1) target
+encoding of categorical variables based on response values (Micci-Barreca, 2001
+(Micci-Barreca, D. 2001 <doi:10.1145/507533.507538>); (2) automated feature
+prioritization to preserve key predictors during filtering; (3 and 4) pairwise
+correlation and VIF filtering across all variable types (numericânumeric,
+numericâcategorical, and categoricalâcategorical); (5) adaptive correlation
+and VIF thresholds.  Together, these methods enable a reliable multicollinearity
+management in most use cases while maintaining model integrity.  The package
+also supports parallel processing and progress tracking via the packages future
+and progressr', and provides seamless integration with the tidymodels ecosystem
+through a dedicated recipe step.")
     (license license:expat)))
 
 (define-public r-collin
@@ -40525,6 +40534,51 @@ and the available API calls to streamline the process.")
 times, colors, coordinates, currencies, digital object identifiers ('DOIs'),
 jobs, phone numbers, DNA sequences, doubles and integers from distributions and
 within a range.")
+    (license license:expat)))
+
+(define-public r-charisma
+  (package
+    (name "r-charisma")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "charisma" version))
+       (sha256
+        (base32 "1fyg01hlmvh1xzj833b03fimnwkw4gg2r2h009wz2klb18lak24a"))))
+    (properties `((upstream-name . "charisma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-recolorize
+                             r-purrr
+                             r-png
+                             r-plyr
+                             r-magrittr
+                             r-jpeg
+                             r-imager
+                             r-dplyr
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shawntz/charisma")
+    (synopsis
+     "Reproducible Color Characterization of Digital Images for Biological Studies")
+    (description
+     "This package provides a standardized and reproducible framework for
+characterizing and classifying discrete color classes from digital images of
+biological organisms.  The package automatically determines the presence or
+absence of 10 human-visible color categories (black, blue, brown, green, grey,
+orange, purple, red, white, yellow) using a biologically-inspired Color Look-Up
+Table (CLUT) that partitions HSV color space.  Supports both fully automated and
+semi-automated (interactive) workflows with complete provenance tracking for
+reproducibility.  Pre-processes images using the recolorize package (Weller et
+al.  2024 <doi:10.1111/ele.14378>) for spatial-color binning, and integrates
+with pavo (Maia et al.  2019 <doi:10.1111/2041-210X.13174>) for color pattern
+geometry statistics.  Designed for high-throughput analysis and seamless
+integration with downstream evolutionary analyses.")
     (license license:expat)))
 
 (define-public r-charcuterie

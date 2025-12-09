@@ -10065,13 +10065,13 @@ delete this entity in the less sensible mode and combine both matrices.")
 (define-public r-mscmt
   (package
     (name "r-mscmt")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCMT" version))
        (sha256
-        (base32 "1mjm85pxxww6m7mfk8xfwhx65c64k4v6pjpvbasv5jhy49kfjgw4"))))
+        (base32 "0lyyzgj9vnqlxmm4jm3ayhs1ik57icrfcqr3r2agj62b75az7qd9"))))
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (arguments
@@ -11803,13 +11803,13 @@ provided assuming homogeneous or heterogeneous group variances.")
 (define-public r-mrap
   (package
     (name "r-mrap")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrap" version))
        (sha256
-        (base32 "199il0rdmjkl3y2si5hdj7jm59pg707z86nrymfy997k8vmcyhp2"))))
+        (base32 "1r3db0xjyqs7xhdjzivrrwi37gx65gmpr4i1k4ja5f4kr3hmyrzd"))))
     (properties `((upstream-name . "mrap")))
     (build-system r-build-system)
     (arguments
@@ -14901,13 +14901,13 @@ Roustant (2015) <doi:10.1016/j.ejor.2014.07.032>, among others.")
 (define-public r-moonboot
   (package
     (name "r-moonboot")
-    (version "1.0.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moonboot" version))
        (sha256
-        (base32 "0f06r0y8mngws347ix3afzzk6dxkaclgn4xgh1nlsj04zd2a9lnn"))))
+        (base32 "0xm77270n931hiffz4ykwvkjs11wnhhnwzpkcs2rdpiw9c442m3r"))))
     (properties `((upstream-name . "moonboot")))
     (build-system r-build-system)
     (arguments
@@ -14920,7 +14920,7 @@ Roustant (2015) <doi:10.1016/j.ejor.2014.07.032>, among others.")
 suggested by Politis, D.N. and Romano, J.P. (1994) <doi:10.1214/aos/1176325770>.
  Additionally there are functions to estimate the scaling factor tau and the
 subsampling size m.  For a detailed description and a full list of references,
-see Dalitz, C. and LÃ¶gler, F. (2024) <doi:10.48550/@code{arXiv.2412.05032>}.")
+see Dalitz, C. and LÃ¶gler, F. (2025) <doi:10.32614/RJ-2025-031>.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
 (define-public r-moodler
@@ -18128,13 +18128,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.13.0")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "0lvdxwbc55fj0r8mpr4k19gp0gg0n079gcrlc3fcm6zcx6lf2nbl"))))
+        (base32 "0i7qgpaq0i35knfzh13g94l6aw0ny8k2qb5azx52ggqh66z730lj"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments
@@ -20646,19 +20646,20 @@ networks and between-subjects networks.")
 (define-public r-mlts
   (package
     (name "r-mlts")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlts" version))
        (sha256
-        (base32 "017kl04f70iglrpzxc24kl4v65rf3lqi3fy0wdhnaffr0bf7qyri"))))
+        (base32 "0v497yz0hss7wh0d2m79z6b9fhzjhh4rw0xyhbbd1y6rp56vq9sf"))))
     (properties `((upstream-name . "mlts")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stanheaders
+                             r-shape
                              r-rstantools
                              r-rstan
                              r-rmarkdown
@@ -20670,6 +20671,7 @@ networks and between-subjects networks.")
                              r-mvtnorm
                              r-ggplot2
                              r-dplyr
+                             r-diagram
                              r-cowplot
                              r-bh))
     (native-inputs (list r-knitr))
@@ -20737,13 +20739,13 @@ classification evaluation metrics based on confusion matrix.")
 (define-public r-mlt-docreg
   (package
     (name "r-mlt-docreg")
-    (version "1.1-11")
+    (version "1.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt.docreg" version))
        (sha256
-        (base32 "1n0mx3l4dy25iv156zvijf38awa1pkqn4s53gky1dblvx9k4z77d"))))
+        (base32 "05hlakc0cjg498rphsscvyv6bdkdfvviad1f5wmkj0sgq6b1hpkc"))))
     (properties `((upstream-name . "mlt.docreg")))
     (build-system r-build-system)
     (arguments
@@ -29693,6 +29695,34 @@ fashion(Wathen, J. K., & Thall, P. F. (2017) <doi: 10.1177/1740774517692302>).")
 source into equivalent shiny functions.  Bootstraps the process of making new
 shiny functions by allowing us to turn HTML snippets directly into R functions.")
     (license license:gpl3)))
+
+(define-public r-micvar
+  (package
+    (name "r-micvar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "micvar" version))
+       (sha256
+        (base32 "1lg58im86b4cmij7mhybn8iqmmmrdvyybc02rnsy16apv4f83h40"))))
+    (properties `((upstream-name . "micvar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-matrixcalc r-mass))
+    (home-page "https://cran.r-project.org/package=micvar")
+    (synopsis
+     "Order Selection in Vector Autoregression by Mean Square Information Criteria")
+    (description
+     "This package implements order selection for Vector Autoregressive (VAR) models
+using the Mean Square Information Criterion (MIC).  Unlike standard methods such
+as AIC and BIC, MIC is likelihood-free.  This method consistently estimates VAR
+order and has robust performance under model misspecification.  For more
+details, see Hellstern and Shojaie (2025)
+<doi:10.48550/@code{arXiv.2511.19761>}.")
+    (license license:gpl3+)))
 
 (define-public r-micss
   (package
@@ -49056,55 +49086,6 @@ bounds; (4) map images using the Maps Static API, returned as stars objects.")
 progress bars, error handling, and result caching.")
     (license license:expat)))
 
-(define-public r-mappoly
-  (package
-    (name "r-mappoly")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mappoly" version))
-       (sha256
-        (base32 "13wifh29i3g8m3gvw058nh3ma7fici2qijnpzb9ph27y67a3b6s9"))))
-    (properties `((upstream-name . "mappoly")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-zoo
-                             r-vcfr
-                             r-smacof
-                             r-rstudioapi
-                             r-reshape2
-                             r-rcurl
-                             r-rcppparallel
-                             r-rcpp
-                             r-princurve
-                             r-plotly
-                             r-plot3d
-                             r-magrittr
-                             r-ggsci
-                             r-ggpubr
-                             r-ggplot2
-                             r-fields
-                             r-dplyr
-                             r-dendextend
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mmollina/MAPpoly")
-    (synopsis "Genetic Linkage Maps in Autopolyploids")
-    (description
-     "Construction of genetic maps in autopolyploid full-sib populations.  Uses
-pairwise recombination fraction estimation as the first source of information to
-sequentially position allelic variants in specific homologous chromosomes.  For
-situations where pairwise analysis has limited power, the algorithm relies on
-the multilocus likelihood obtained through a hidden Markov model (HMM).  For
-more detail, please see Mollinari and Garcia (2019) <doi:10.1534/g3.119.400378>
-and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
-    (license license:gpl3)))
-
 (define-public r-mappings
   (package
     (name "r-mappings")
@@ -51753,6 +51734,38 @@ Majorization-Minimization and @code{cluster_MajKm()} clusters data with
 Majorization-Minimization method.  Both of these functions calculate the sum of
 squares (SS) of clustering.")
     (license license:gpl3)))
+
+(define-public r-maive
+  (package
+    (name "r-maive")
+    (version "0.1.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAIVE" version))
+       (sha256
+        (base32 "0y1hbmhma16qhbj22rndxi061dy77ps59z6hal5q6lyz7bfx5s9y"))))
+    (properties `((upstream-name . "MAIVE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-clubsandwich))
+    (native-inputs (list r-knitr))
+    (home-page "https://meta-analysis.cz/maive/")
+    (synopsis "Meta Analysis Instrumental Variable Estimator")
+    (description
+     "Meta-analysis traditionally assigns more weight to studies with lower standard
+errors, assuming higher precision.  However, in observational research,
+precision must be estimated and is vulnerable to manipulation, such as
+p-hacking, to achieve statistical significance.  This can lead to spurious
+precision, invalidating inverse-variance weighting and bias-correction methods
+like funnel plots.  Common methods for addressing publication bias, including
+selection models, often fail or exacerbate the problem.  This package introduces
+an instrumental variable approach to limit bias caused by spurious precision in
+meta-analysis.  Methods are described in Irsova et al. (2025)
+<doi:10.1038/s41467-025-63261-0>.")
+    (license license:expat)))
 
 (define-public r-maint-data
   (package

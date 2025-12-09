@@ -7326,19 +7326,19 @@ probability.  Methodology based on Papakonstantinou et al. (2021)
 (define-public r-nmaplateplot
   (package
     (name "r-nmaplateplot")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmaplateplot" version))
        (sha256
-        (base32 "0vc9v5xvcl8k312dng7z5xaz7k9a93hsayjncpij59fcrr01n16b"))))
+        (base32 "102cxl3q0gldrp6cfm5qxq5ychrxl4kkvs3nf3nbhs7wccz4xyh5"))))
     (properties `((upstream-name . "nmaplateplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-ggtext r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=nmaplateplot")
     (synopsis "The Plate Plot for Network Meta-Analysis Results")
@@ -15447,13 +15447,13 @@ A. (2014) <doi:10.1111/bmsp.12015>.  Goertzen, J. R. & Cribbie, R. A. (2010)
 (define-public r-negenes
   (package
     (name "r-negenes")
-    (version "1.2")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "negenes" version))
        (sha256
-        (base32 "15pglhjr1d82xi36vabgfb66zfady6f2l2yjbp1k24xxvxq9qd2p"))))
+        (base32 "181ncipvci66zx66v831wfd8fndw6pbp4366i8xbkcqbkka7a9px"))))
     (properties `((upstream-name . "negenes")))
     (build-system r-build-system)
     (arguments

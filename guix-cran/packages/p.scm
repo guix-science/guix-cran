@@ -13475,13 +13475,13 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.6.2")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "0pdzwh6k0vq954hizfvp4v95llm52dj5i7ydndl3zsl3r1kv21ds"))))
+        (base32 "0m9rx13np7k0j5siwv75ivfp7v6d0xnk74wlwhac9xvqnhm0bhzm"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (arguments
@@ -13572,13 +13572,13 @@ publication details.")
 (define-public r-pqrfe
   (package
     (name "r-pqrfe")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrfe" version))
        (sha256
-        (base32 "0bkpmdd82hm6j692bi98pqp9gqdzs9i7bh7bdhgjzv32729cwfb4"))))
+        (base32 "0xplqy0pvb0zi9rby88jd4lc4jhwv5mm42i73syd9bs554dra23z"))))
     (properties `((upstream-name . "pqrfe")))
     (build-system r-build-system)
     (arguments
@@ -23515,19 +23515,20 @@ site is completed.")
 (define-public r-plotor
   (package
     (name "r-plotor")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotor" version))
        (sha256
-        (base32 "08qgzsdn6hsqw93c9c7bvv6gyzrfwbsm9mn8ivlsrigdvbrg0lnj"))))
+        (base32 "1w7ncn9camkydmvy8x6gp7c8ga50n2afvg71q269s2qm4m1bhwk5"))))
     (properties `((upstream-name . "plotor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-scales
@@ -23545,12 +23546,13 @@ site is completed.")
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/craig-parylo/plotor")
-    (synopsis "Produces an Odds Ratio Plot from a Logistic Regression Model")
+    (synopsis "Odds Ratio Tools for Logistic Regression")
     (description
-     "This package produces an Odds Ratio (OR) Plot to visualise the result of a
-logistic regression analysis.  Provide it with a binomial regression model
-produced by @code{glm()} and it will convert the estimates to odds ratios with a
-95% confidence interval and plot the results using ggplot2'.")
+     "This package produces odds ratio analyses with comprehensive reporting tools.
+Generates plots, summary tables, and diagnostic checks for logistic regression
+models fitted with @code{glm()} using binomial family.  Provides visualisation
+methods, formatted reporting tables via gt', and tools to assess logistic
+regression model assumptions.")
     (license license:expat)))
 
 (define-public r-plotnormtest
@@ -28984,34 +28986,6 @@ of phylogenetic trees.")
     (description
      "This package provides functions to read and write APE-compatible phylogenetic
 trees in NEXUS and Newick formats, while preserving annotations.")
-    (license license:expat)))
-
-(define-public r-phylospatial
-  (package
-    (name "r-phylospatial")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phylospatial" version))
-       (sha256
-        (base32 "00gmgj86609c3dbi4g0870iq1js8n5iq4vh308q7iw2mclcdvzp3"))))
-    (properties `((upstream-name . "phylospatial")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan r-terra r-sf r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://matthewkling.github.io/phylospatial/")
-    (synopsis "Spatial Phylogenetic Analysis")
-    (description
-     "Analyze spatial phylogenetic diversity patterns.  Use your data on an
-evolutionary tree and geographic distributions of the terminal taxa to compute
-diversity and endemism metrics, test significance with null model randomization,
-analyze community turnover and biotic regionalization, and perform spatial
-conservation prioritizations.  All functions support quantitative community data
-in addition to binary data.")
     (license license:expat)))
 
 (define-public r-phylosignaldb
