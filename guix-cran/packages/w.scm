@@ -2385,13 +2385,13 @@ results.")
 (define-public r-wordvector
   (package
     (name "r-wordvector")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordvector" version))
        (sha256
-        (base32 "04yiqdqvihl0s4vha6zzqirds4230gvsh88lzn8jdciigs6zrpav"))))
+        (base32 "1n1ihk5snr5vbq9d3218xdbymxz2acd4fn55bkzn5kv2aqax9p2b"))))
     (properties `((upstream-name . "wordvector")))
     (build-system r-build-system)
     (arguments

@@ -2613,13 +2613,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.7.3")
+    (version "2.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "156pknrpmrq7ps1vsmjdbp8xj5mx4836iilcw92nsapmrxhbb2dr"))))
+        (base32 "1cji9j65qaidvxh1imxgaj9v9zhrcw4w6vl3wxbf8zyrj0d1g1p1"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (arguments
@@ -2637,8 +2637,7 @@ performance.")
                              r-desolve
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://www.epa.gov/chemical-research/rapid-chemical-exposure-and-dose-research")
+    (home-page "https://cran.r-project.org/package=httk")
     (synopsis "High-Throughput Toxicokinetics")
     (description
      "Pre-made models that can be rapidly tailored to various chemicals and species
@@ -15769,13 +15768,13 @@ hand.")
 (define-public r-hamlet
   (package
     (name "r-hamlet")
-    (version "0.9.6")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hamlet" version))
        (sha256
-        (base32 "076fh28grlrv38qywshi79m84jsz1ck9k4n0rg4svvr3gqkdbcn2"))))
+        (base32 "0spn6wykchijd8y8md6yvg095pihr618fp9c4c4f2n7hsvgyhcsj"))))
     (properties `((upstream-name . "hamlet")))
     (build-system r-build-system)
     (arguments

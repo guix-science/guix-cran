@@ -3875,13 +3875,13 @@ regression as well as multilayer perceptrons.")
 (define-public r-brucer
   (package
     (name "r-brucer")
-    (version "2025.8")
+    (version "2025.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bruceR" version))
        (sha256
-        (base32 "0g2azpn64915fss96j9f2xfyjqhnb2hiqz3wadp6yq851wmsj46g"))))
+        (base32 "0lcrqlszfq5ls89396ijva9s6bxfgrgrl1xc0drv47lznn8srp4l"))))
     (properties `((upstream-name . "bruceR")))
     (build-system r-build-system)
     (arguments
@@ -6909,13 +6909,13 @@ editors.")
 (define-public r-box-linters
   (package
     (name "r-box-linters")
-    (version "0.10.6")
+    (version "0.10.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.linters" version))
        (sha256
-        (base32 "063bnjm102k0c1yjpl8rpngc2pids34k6iaqp63zlkij48yjvylm"))))
+        (base32 "1d9ync3dj06zygb4d81ywzaqrnk0lmdjk5xbib43by66l5zzjq28"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
     (arguments
@@ -22886,46 +22886,6 @@ Institute (\"Chartered Financial Analyst Program Curriculum 2020 Level I Volumes
 9780136939979).")
     (license license:gpl3)))
 
-(define-public r-beanz
-  (package
-    (name "r-beanz")
-    (version "3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "beanz" version))
-       (sha256
-        (base32 "1rv4pil8hfykp35impw980riijwgrqxv9v528w1mmq1gyy25wjhl"))))
-    (properties `((upstream-name . "beanz")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-loo
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=beanz")
-    (synopsis "Bayesian Analysis of Heterogeneous Treatment Effect")
-    (description
-     "It is vital to assess the heterogeneity of treatment effects (HTE) when making
-health care decisions for an individual patient or a group of patients.
-Nevertheless, it remains challenging to evaluate HTE based on information
-collected from clinical studies that are often designed and conducted to
-evaluate the efficacy of a treatment for the overall population.  The Bayesian
-framework offers a principled and flexible approach to estimate and compare
-treatment effects across subgroups of patients defined by their characteristics.
- This package allows users to explore a wide range of Bayesian HTE analysis
-models, and produce posterior inferences about HTE. See Wang et al. (2018)
-<DOI:10.18637/jss.v085.i07> for further details.")
-    (license license:gpl3+)))
-
 (define-public r-beans
   (package
     (name "r-beans")
@@ -29804,13 +29764,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "1rsmrhq9ymz909cl2dpvrjp19mw5dwiga369fx69yhj7xa6hafzp"))))
+        (base32 "11a53hjppcp5illx0jj8fmhbi9qf1yblmd2vsbns1h3vnvhggsjw"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments

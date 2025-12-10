@@ -22380,24 +22380,19 @@ functions.")
 (define-public r-ecotrends
   (package
     (name "r-ecotrends")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecotrends" version))
        (sha256
-        (base32 "0mc5ydk74ns5v3j9nbzxq9p6yawmbmbgafigvg6rlxn2z2296785"))))
+        (base32 "0a05qvn6i4i6w7ik03rn8107a88ym4ycqrbdsn8amn8yxkdynfl9"))))
     (properties `((upstream-name . "ecotrends")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-trend
-                             r-terra
-                             r-modeva
-                             r-maxnet
-                             r-fuzzysim
-                             r-collinear))
+    (propagated-inputs (list r-trend r-terra r-modeva r-maxnet r-fuzzysim))
     (home-page "https://github.com/AMBarbosa/ecotrends")
     (synopsis "Temporal Trends in Ecological Niche Models")
     (description

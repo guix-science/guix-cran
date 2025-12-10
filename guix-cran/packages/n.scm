@@ -14122,6 +14122,47 @@ network meta-analysis model with dose-response relationships, predicted values
 of the fitted model and dose-response plots in a frequentist way.")
     (license license:gpl2+)))
 
+(define-public r-netdiffuser
+  (package
+    (name "r-netdiffuser")
+    (version "1.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netdiffuseR" version))
+       (sha256
+        (base32 "1iv8hc16qbwc2xyafacfphzq1w0v9bqnw3796yqgx63952wy7wz4"))))
+    (properties `((upstream-name . "netdiffuseR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-sparsem
+                             r-sna
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-networkdynamic
+                             r-network
+                             r-matrix
+                             r-matchit
+                             r-mass
+                             r-igraph
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/USCCANA/netdiffuseR")
+    (synopsis "Analysis of Diffusion and Contagion Processes on Networks")
+    (description
+     "Empirical statistical analysis, visualization and simulation of diffusion and
+contagion processes on networks.  The package implements algorithms for
+calculating network diffusion statistics such as transmission rate, hazard
+rates, exposure models, network threshold levels, infectiousness (contagion),
+and susceptibility.  The package is inspired by work published in Valente, et
+al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
+9781881303213>, Myers (2000) <DOI:10.1086/303110>, Iyengar and others (2011)
+<DOI:10.1287/mksc.1100.0566>, Burt (1987) <DOI:10.1086/228667>; among others.")
+    (license license:expat)))
+
 (define-public r-netda
   (package
     (name "r-netda")

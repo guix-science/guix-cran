@@ -6695,13 +6695,13 @@ the C++ implementation of @code{cSPADE} by Mohammed J. Zaki.")
 (define-public r-arulesnbminer
   (package
     (name "r-arulesnbminer")
-    (version "0.1-8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesNBMiner" version))
        (sha256
-        (base32 "0kqvi7dzq3mrn6cq22gwxh4p54mgfn9s1sd2cfnbw1f9zp078lsn"))))
+        (base32 "13sdpks5wm4xmd0xwz7qzlxdyd7r09ak2wdwy1dy7jdmd04caf02"))))
     (properties `((upstream-name . "arulesNBMiner")))
     (build-system r-build-system)
     (arguments
@@ -6715,7 +6715,7 @@ the C++ implementation of @code{cSPADE} by Mohammed J. Zaki.")
      "NBMiner is an implementation of the model-based mining algorithm for mining
 NB-frequent itemsets and NB-precise rules.  Michael Hahsler (2006)
 <doi:10.1007/s10618-005-0026-2>.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-arulescba
   (package
@@ -14294,6 +14294,51 @@ independently from the authors of the paper.")
      "Assigns genetic ancestry to an individual and studies relationships between
 local and global populations.")
     (license license:gpl2)))
+
+(define-public r-anca
+  (package
+    (name "r-anca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aNCA" version))
+       (sha256
+        (base32 "123paqm6am1qycfza5kpmrgdjq0mvswnhban2sfx402qf3i6l2x9"))))
+    (properties `((upstream-name . "aNCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-tern
+                             r-stringr
+                             r-scales
+                             r-rlistings
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-pknca
+                             r-officer
+                             r-magrittr
+                             r-ggplot2
+                             r-formatters
+                             r-flextable
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/aNCA/")
+    (synopsis "(Pre-)Clinical NCA in a Dynamic Shiny App")
+    (description
+     "An interactive shiny application for performing non-compartmental analysis (NCA)
+on pre-clinical and clinical pharmacokinetic data.  The package builds on PKNCA
+for core estimators and provides interactive visualizations, CDISC outputs
+('ADNCA', PP', ADPP') and configurable TLGs (tables, listings, and graphs).
+Typical use cases include exploratory analysis, validation, reporting or
+teaching/demonstration of NCA methods.  Methods and core estimators are
+described in Denney, Duvvuri, and Buckeridge (2015) \"Simple, Automatic
+Noncompartmental Analysis: The PKNCA R Package\" <doi:10.1007/s10928-015-9432-2>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-ananseseurat
   (package
@@ -25228,6 +25273,34 @@ Rustom Antia.")
 applying the method to phyloseq objects so that the method can be easily applied
 to microbiome data and a shiny app for interactive visualization.")
     (license license:agpl3)))
+
+(define-public r-adaptiveboxplot
+  (package
+    (name "r-adaptiveboxplot")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AdaptiveBoxplot" version))
+       (sha256
+        (base32 "02nvdsx101ip6mihfnbjjdldck4s75s4q9gflgajhl0fx11lhv4a"))))
+    (properties `((upstream-name . "AdaptiveBoxplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=AdaptiveBoxplot")
+    (synopsis "FDR(BH) Boxplot and FWER(Holm) Boxplot")
+    (description
+     "This package implements a framework for creating boxplots where the whisker
+lengths are determined by formal multiple testing procedures, making them
+adaptive to sample size and data characteristics.  The function
+@code{bh_boxplot()} generates boxplots that control the False Discovery Rate
+(FDR) via the Benjamini-Hochberg procedure, and the function
+@code{holm_boxplot()} generates boxplots that control the Family-Wise Error Rate
+(FWER) via the Holm procedure.  The methods are based on the framework in Gang,
+Lin, and Tong (2025) <doi:10.48550/@code{arXiv.2510.20259>}.")
+    (license license:gpl3+)))
 
 (define-public r-adaptgauss
   (package

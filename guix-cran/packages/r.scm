@@ -498,13 +498,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "5.0.0")
+    (version "5.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1x548r6bmxcbrpwm62np3jzk761m2ddaskajska5ppfysmwgcgbi"))))
+        (base32 "1inzra26jl7wwqbhjr6x1rn7d51skwfqf72v7bdgwljzrz9z9y5w"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -13360,31 +13360,6 @@ of its features.")
 quickly and add hillshade to vector-based maps.")
     (license license:gpl2)))
 
-(define-public r-rosetteapi
-  (package
-    (name "r-rosetteapi")
-    (version "1.14.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rosetteApi" version))
-       (sha256
-        (base32 "166p3dvib0xpvhkb92b3imassv1b9mrblz2m05jai2nzlz0q7hzk"))))
-    (properties `((upstream-name . "rosetteApi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://developer.rosette.com")
-    (synopsis "'Rosette' API")
-    (description
-     "Rosette is an API for multilingual text analysis and information extraction.
-More information can be found at <https://developer.rosette.com>.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-roserf
   (package
     (name "r-roserf")
@@ -16705,19 +16680,20 @@ variables; test of endogeneity in high dimensions ('Guo et al. (2016)
 (define-public r-robusthd
   (package
     (name "r-robusthd")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustHD" version))
        (sha256
-        (base32 "1b3kj6qfnzxfljyhwzydi2m6jbyia16a5ga2mp12l5b4pvry7ywp"))))
+        (base32 "16az9yk1ljjdw3ri4s5kdj8b286rszi0n94msmhlh3myph90rwp0"))))
     (properties `((upstream-name . "robustHD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-robustbase
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-perry
@@ -17941,13 +17917,13 @@ various bootstrap procedures for mediation analysis on simulated data.")
 (define-public r-robmed
   (package
     (name "r-robmed")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmed" version))
        (sha256
-        (base32 "1hdjagqfcxly730fdsx80d4p7fmhpyq8yl8b281gfb0f85fiaz1x"))))
+        (base32 "0hbq5cn51kdxg2x4wv46w9cjmcy4ay0aqy07wnj1481hxjx0hjmp"))))
     (properties `((upstream-name . "robmed")))
     (build-system r-build-system)
     (arguments
@@ -17963,7 +17939,7 @@ various bootstrap procedures for mediation analysis on simulated data.")
 various other methods.  Details on the implementation and code examples can be
 found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.  Further
 discussion on robust mediation analysis can be found in Alfons & Schley (2025)
-<doi:10.31234/osf.io/2hqdy>.")
+<doi:10.1002/wics.70051>.")
     (license license:gpl2+)))
 
 (define-public r-robma
@@ -33225,6 +33201,45 @@ for making predictions.  This function is based on Jackson (2016)
 <doi:10.18637/jss.v070.i08>.")
     (license license:gpl3+)))
 
+(define-public r-resizablesplitlayout
+  (package
+    (name "r-resizablesplitlayout")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "resizableSplitLayout" version))
+       (sha256
+        (base32 "0cizx9zb8v1kmamnkawcmgjk48p8v94xchw4i6dgzp170n73i4kx"))))
+    (properties `((upstream-name . "resizableSplitLayout")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-shinyjs r-shiny))
+    (native-inputs (list esbuild))
+    (home-page "https://cran.r-project.org/package=resizableSplitLayout")
+    (synopsis "Resizable Split Layout Module for 'shiny'")
+    (description
+     "This package provides a shiny module to facilitate page layouts with resizable
+panes for page content based on split.js @code{JavaScript} library
+(<https://split.js.org>).")
+    (license license:gpl3+)))
+
 (define-public r-resistorarray
   (package
     (name "r-resistorarray")
@@ -36641,6 +36656,34 @@ resource for teaching and research in probability theory, reliability analysis,
 and applied statistical modeling.")
     (license license:gpl2)))
 
+(define-public r-reliagrowr
+  (package
+    (name "r-reliagrowr")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReliaGrowR" version))
+       (sha256
+        (base32 "1cr71ll0myb8n58w9jd1gsd0pfxqqqbyb2vba6pajn7gmrmzv5l1"))))
+    (properties `((upstream-name . "ReliaGrowR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-segmented r-plumber))
+    (native-inputs (list r-knitr))
+    (home-page "https://paulgovan.github.io/ReliaGrowR/")
+    (synopsis "Reliability Growth Analysis")
+    (description
+     "Modeling and plotting functions for Reliability Growth Analysis (RGA).  Models
+include the Duane (1962) <doi:10.1109/TA.1964.4319640>, Non-Homogeneous Poisson
+Process (NHPP) by Crow (1975) (No.  AMSAATR138), Piecewise Weibull NHPP by Guo
+et al. (2010) <doi:10.1109/RAMS.2010.5448029>, and Piecewise Weibull NHPP with
+Change Point Detection based on the segmented package by Muggeo (2024)
+<https://cran.r-project.org/package=segmented>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-reliabilitytheory
   (package
     (name "r-reliabilitytheory")
@@ -39879,13 +39922,13 @@ interoperability with external sources (Harris et al (2009)
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.11.4")
+    (version "2.11.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redcapAPI" version))
        (sha256
-        (base32 "1rf9a9wkx1qa2c4fgxw88nxnzkix891sfrrp8vb1pm0javrfk4kr"))))
+        (base32 "0akmfpln4xzj1afy8x68zyglbsa9l7zz7k4fwrwqiyk1ga11ba50"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (arguments
@@ -41649,6 +41692,36 @@ where we distinguish between expected, acceptable, current, fallback, ideal, or
 regressive behaviour.  It can also be used for monitoring third-party software
 projects for changes.")
     (license license:gpl2+)))
+
+(define-public r-realsurvsim
+  (package
+    (name "r-realsurvsim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RealSurvSim" version))
+       (sha256
+        (base32 "1d0vi8j2sq4b8izybxca7csrqxsrcsd70gn37r0f05wdkf7fb9yh"))))
+    (properties `((upstream-name . "RealSurvSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-univariateml
+                             r-survival
+                             r-kdensity
+                             r-flexsurv
+                             r-fitdistrplus
+                             r-fadist
+                             r-actuar))
+    (home-page "https://cran.r-project.org/package=RealSurvSim")
+    (synopsis "Simulate Survival Data")
+    (description
+     "This package provides tools for simulating synthetic survival data using a
+variety of methods, including kernel density estimation, parametric distribution
+fitting, and bootstrap resampling techniques for a desired sample size.")
+    (license license:expat)))
 
 (define-public r-readyomics
   (package
@@ -52110,13 +52183,13 @@ and @code{cairoDevice} have been archived on CRAN. See
 (define-public r-rattains
   (package
     (name "r-rattains")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rATTAINS" version))
        (sha256
-        (base32 "0kbpsdqyn68ya9rv01cg3xc73alvi240vay7zjg98ydd8lpmwwzl"))))
+        (base32 "072sb2gajdhi98dji52qy6841dxhf50i8pdqxr2gsy70pyj4qbwq"))))
     (properties `((upstream-name . "rATTAINS")))
     (build-system r-build-system)
     (arguments
@@ -52124,9 +52197,10 @@ and @code{cairoDevice} have been archived on CRAN. See
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
-                             r-tibblify
+                             r-tibble
                              r-rlist
                              r-rlang
+                             r-purrr
                              r-lifecycle
                              r-jsonlite
                              r-fs
@@ -53608,13 +53682,13 @@ validated for Picea abies, Larix Siberica, Pinus cembra and Pinus sylvestris.")
 (define-public r-raptools
   (package
     (name "r-raptools")
-    (version "1.22.0")
+    (version "1.23.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raptools" version))
        (sha256
-        (base32 "1w594s7siggghzk6w0spikrl11v7xfjjx9rvdqnsm6iba6xzfzd2"))))
+        (base32 "0kjvj5iqzcqqnq9hhdf4aqrnmj77wb66555jfmh0s3c4xm8d0cxb"))))
     (properties `((upstream-name . "raptools")))
     (build-system r-build-system)
     (arguments

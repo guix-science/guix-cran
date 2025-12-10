@@ -9040,6 +9040,34 @@ this package is provided below.  One can also refer to the supplemental
 information for the same.")
     (license license:gpl2+)))
 
+(define-public r-mspca
+  (package
+    (name "r-mspca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "msPCA" version))
+       (sha256
+        (base32 "05i6p3jg6lycfswqyczgib84c0w9py11b3hkgbqmi403pjwha7kr"))))
+    (properties `((upstream-name . "msPCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=msPCA")
+    (synopsis
+     "Sparse Principal Component Analysis with Multiple Principal Components")
+    (description
+     "This package implements an algorithm for computing multiple sparse principal
+components of a dataset.  The method is based on Cory-Wright and Pauphilet
+\"Sparse PCA with Multiple Principal Components\" (2022)
+<doi:10.48550/@code{arXiv.2209.14790>}.  The algorithm uses an iterative
+deflation heuristic with a truncated power method applied at each iteration to
+compute sparse principal components with controlled sparsity.")
+    (license license:expat)))
+
 (define-public r-msoutcomes
   (package
     (name "r-msoutcomes")
@@ -10132,55 +10160,49 @@ Punzo, A. & Tortora, C. (2021) <doi:10.1177/1471082X19890935>.")
 (define-public r-msclassifr
   (package
     (name "r-msclassifr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSclassifR" version))
        (sha256
-        (base32 "1ils9bnhr8rls6ysh1cicrrxasbgmii6fppdmnkhsdk288jalmqc"))))
+        (base32 "06hdw4lrki71cshmxy9wyl951c9k8vn0wy9n0sffq8fw5n5akm0n"))))
     (properties `((upstream-name . "MSclassifR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-vsurf
-                             r-vita
-                             r-statmod
+    (propagated-inputs (list r-statmod
                              r-reshape2
-                             r-randomforest
-                             r-nnet
-                             r-mltools
-                             r-mixomics
-                             r-metap
-                             r-mclust
+                             r-rcpp
+                             r-matrix
                              r-maldirppa
-                             r-maldiquantforeign
                              r-maldiquant
                              r-limma
-                             r-glmnet
                              r-ggplot2
-                             r-e1071
                              r-dplyr
                              r-cp4p
                              r-caret
-                             r-car
-                             r-boruta))
+                             r-car))
     (home-page "https://github.com/agodmer/MSclassifR_examples")
     (synopsis "Automated Classification of Mass Spectra")
     (description
-     "This package provides functions to classify mass spectra in known categories,
-and to determine discriminant mass-to-charge values.  It includes easy-to-use
-functions for preprocessing mass spectra, functions to determine discriminant
-mass-to-charge values (m/z) from a library of mass spectra corresponding to
-different categories, and functions to predict the category (species,
-phenotypes, etc.) associated to a mass spectrum from a list of selected
-mass-to-charge values.  If you use this package in your research, please cite
-the associated publication (<doi:10.1016/j.eswa.2025.128796>).  For a
-comprehensive guide, additional applications, and detailed examples of using
-this package, please visit our @code{GitHub} repository
-(<https://github.com/agodmer/M@code{SclassifR_examples>}).")
+     "This package provides functions to classify mass spectra in known categories and
+to determine discriminant mass-to-charge values (m/z).  Includes easy-to-use
+preprocessing pipelines for Matrix Assisted Laser Desorption Ionisation - Time
+Of Flight Mass Spectrometry (MALDI-TOF) mass spectra, methods to select
+discriminant m/z from labelled libraries, and tools to predict categories
+(species, phenotypes, etc.) from selected features.  Also provides utilities to
+build design matrices from peak intensities and labels.  While this package was
+developed with the aim of identifying very similar species or phenotypes of
+bacteria from MALDI-TOF MS, the functions of this package can also be used to
+classify other categories associated to mass spectra; or from mass spectra
+obtained with other mass spectrometry techniques.  Parallelized processing and
+optional C++-accelerated functions are available (notably to deal with large
+datasets) from version 0.5.0.  If you use this package in your research, please
+cite the associated publication (<doi:10.1016/j.eswa.2025.128796>).  For a
+comprehensive guide, additional applications, and detailed examples, see
+<https://github.com/agodmer/M@code{SclassifR_examples>}.")
     (license license:gpl3+)))
 
 (define-public r-mschart
@@ -19114,13 +19136,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.15")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "0c5hv0slifrwslhl5d556yqhnmyxar8dkyc0jbzlimqd83jx2b8k"))))
+        (base32 "1fcjab0kzqq9zpbj12ibs8093szjk4d631a19xzf2y61vx6x4y5m"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (arguments
@@ -19135,6 +19157,7 @@ Rosenbaum and Rubin (1985).")
                              r-rcpp
                              r-nlme
                              r-matrix
+                             r-mass
                              r-lifecycle
                              r-generics
                              r-checkmate))
@@ -20254,20 +20277,20 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
 (define-public r-mmap
   (package
     (name "r-mmap")
-    (version "0.6-22")
+    (version "0.6-23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmap" version))
        (sha256
-        (base32 "0v1qniz0jdp6fay93plv5j200s1pybyyxpfjhgcdjzm7rag8d1jd"))))
+        (base32 "1j520ipwjlfjiw1pq1crmf90agyf1ndv9y62cmc0figw6qwbldrk"))))
     (properties `((upstream-name . "mmap")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list))
-    (home-page "https://cran.r-project.org/package=mmap")
+    (home-page "https://github.com/jaryan/mmap")
     (synopsis "Map Pages of Memory")
     (description
      "R interface to POSIX mmap and Window's @code{MapViewOfFile}.")
@@ -31341,13 +31364,13 @@ Organization for Standardization (2021)
 (define-public r-miamaxent
   (package
     (name "r-miamaxent")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIAmaxent" version))
        (sha256
-        (base32 "190c64rlz1py08iml28yr1jxsi11lwzfyy2yrx152l5spap2gf9d"))))
+        (base32 "0flhrixz3h7jyalcnyqi7agcrdsinrmh8v46zhbsm3jklvw9jszc"))))
     (properties `((upstream-name . "MIAmaxent")))
     (build-system r-build-system)
     (arguments
@@ -33574,50 +33597,6 @@ generalized R-squared, see e.g. Cohen, J. et al. (2002, ISBN: 978-0805822236).
 Furthermore, dplyr chains are supported.")
     (license license:gpl2+)))
 
-(define-public r-metricminer
-  (package
-    (name "r-metricminer")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metricminer" version))
-       (sha256
-        (base32 "0pnsm2am1jps9pcp05781avmawxnsxhp3japqzkanzjimyv5wjwd"))))
-    (properties `((upstream-name . "metricminer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rprojroot
-                             r-purrr
-                             r-openssl
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-googlesheets4
-                             r-googledrive
-                             r-gh
-                             r-getpass
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/fhdsl/metricminer")
-    (synopsis "Mine Metrics from Common Places on the Web")
-    (description
-     "Mine metrics on common places on the web through the power of their APIs
-(application programming interfaces).  It also helps make the data in a format
-that is easily used for a dashboard or other purposes.  There is an associated
-dashboard template and tutorials that are underdevelopment that help you fully
-utilize metricminer'.")
-    (license license:gpl3)))
-
 (define-public r-metricgraph
   (package
     (name "r-metricgraph")
@@ -33717,13 +33696,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.18.2")
+    (version "0.18.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "1s39rx1cv3z8qklrdrwjj9p8k0g030cp33qmamfjkf6xpyzryk90"))))
+        (base32 "1va41i873hvzd2pgcnj8jj3nd6bpbi6iyr76skfwc6pzki2cn5ga"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (arguments
@@ -33849,6 +33828,48 @@ more. [1] Allen, R. G., Pereira, L. S., Raes, D., & Smith, M. (1998).  Crop
 evapotranspiration-Guidelines for computing crop water requirements-FAO
 Irrigation and drainage paper 56.  FAO, Rome, 300(9).")
     (license license:gpl2+)))
+
+(define-public r-methscope
+  (package
+    (name "r-methscope")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MethScope" version))
+       (sha256
+        (base32 "0cmsxq2jf8i2f2rhdrprw9n7zrd6zbzd3k761mw9174bkq4g2ppz"))))
+    (properties `((upstream-name . "MethScope")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-xgboost
+                             r-uwot
+                             r-tidyr
+                             r-stringr
+                             r-nnls
+                             r-magrittr
+                             r-ggplot2
+                             r-fnn
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MethScope")
+    (synopsis
+     "Ultra-Fast Analysis of Sparse DNA Methylome via Recurrent Pattern Encoding")
+    (description
+     "This package provides methods for analyzing DNA methylation data via Most
+Recurrent Methylation Patterns (MRMPs).  Supports cell-type annotation, spatial
+deconvolution, unsupervised clustering, and cancer cell-of-origin inference.
+Includes C-backed summaries for YAME â.cg/.cmâ files (overlap counts, log2
+odds ratios, beta/depth aggregation), an XGBoost classifier, NNLS deconvolution,
+and plotting utilities.  Scales to large spatial and single-cell methylomes and
+is robust to extreme sparsity.")
+    (license license:expat)))
 
 (define-public r-methodopt
   (package
@@ -36546,13 +36567,13 @@ clinical programming workflow.")
 (define-public r-metacor
   (package
     (name "r-metacor")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacor" version))
        (sha256
-        (base32 "122y1bs18j6gh22725wm0w1xzrzsga65dwaxsxm9bjgj2p0cad8h"))))
+        (base32 "1z9zv0k0aa2h46hcdqvv8kxy565ay8cki4qnp401pxaqrd8fi525"))))
     (properties `((upstream-name . "metacor")))
     (build-system r-build-system)
     (arguments
@@ -52537,13 +52558,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "1dnx7iwb88zlgs9z2i3gj8r30n4z9vz3pkd20d5wh88iclzrsfbf"))))
+        (base32 "007wxd0fz4ql13zr779ibps01gm848f681ic85yw0x3c5sbmmx0j"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

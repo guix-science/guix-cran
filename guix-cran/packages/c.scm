@@ -6167,6 +6167,38 @@ and Wallot (2018) <doi: 10.1080/00273171.2018.1512846> for further details about
 the method.")
     (license license:gpl3+)))
 
+(define-public r-crownsegmentr
+  (package
+    (name "r-crownsegmentr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crownsegmentr" version))
+       (sha256
+        (base32 "1hg6ymhvsf3vcjrd39bkjvqi6cbbjaywc2sr1l03rpsxcqd06r0v"))))
+    (properties `((upstream-name . "crownsegmentr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rcpp
+                             r-progress
+                             r-lidr
+                             r-dbscan
+                             r-data-table
+                             r-bh
+                             r-assertthat))
+    (home-page "https://github.com/Lenostatos/crownsegmentr")
+    (synopsis "Tree Crown Segmentation in Airborne LiDAR Point Clouds")
+    (description
+     "This package provides a function that performs the adaptive mean shift algorithm
+for individual tree crown delineation in 3D point clouds as proposed by Ferraz
+et al. (2016) <doi:10.1016/j.rse.2016.05.028>, as well as supporting functions.")
+    (license license:gpl3)))
+
 (define-public r-crov
   (package
     (name "r-crov")
@@ -19273,45 +19305,6 @@ calibration and uncertainty estimation.  For more details see Gartiser et al.
 <doi:10.1111/ejss.70126>.")
     (license license:gpl3+)))
 
-(define-public r-conflr
-  (package
-    (name "r-conflr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "conflr" version))
-       (sha256
-        (base32 "1bjdmvi0n8746g7dxwgzh3fi33sq4bgfr0nd3nqd2caj8ryi2gv9"))))
-    (properties `((upstream-name . "conflr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-stringi
-                             r-shiny
-                             r-rstudioapi
-                             r-rmarkdown
-                             r-rlang
-                             r-r6
-                             r-purrr
-                             r-miniui
-                             r-knitr
-                             r-httr
-                             r-glue
-                             r-curl
-                             r-commonmark
-                             r-askpass))
-    (home-page "https://line.github.io/conflr/")
-    (synopsis "Client for 'Confluence' API")
-    (description
-     "This package provides utilities for working with various Confluence API
-<https://docs.atlassian.com/@code{ConfluenceServer/rest/latest/>}, including a
-functionality to convert an R Markdown document to Confluence format and upload
-it to Confluence automatically.")
-    (license license:gpl3)))
-
 (define-public r-confintvariance
   (package
     (name "r-confintvariance")
@@ -30709,6 +30702,32 @@ clusterpath estimator of the Gaussian graphical model (CGGM) (Touw, Alfons,
 Groenen & Wilms, 2025; <doi:10.48550/@code{arXiv.2407.00644>}).")
     (license license:gpl3+)))
 
+(define-public r-clusteredmutations
+  (package
+    (name "r-clusteredmutations")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClusteredMutations" version))
+       (sha256
+        (base32 "0syjkpyikcjhaibyidm7pr70z5k5i3w0miy24x5rxci50mywcvz7"))))
+    (properties `((upstream-name . "ClusteredMutations")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seriation r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ClusteredMutations")
+    (synopsis "Location and Visualization of Clustered Somatic Mutations")
+    (description
+     "Identification and visualization of groups of closely spaced mutations in the
+DNA sequence of cancer genome.  The extremely mutated zones are searched in the
+symmetric dissimilarity matrix using the anti-Robinson matrix properties.
+Different data sets are obtained to describe and plot the clustered mutations
+information.")
+    (license license:gpl3)))
+
 (define-public r-clusterbootstrap
   (package
     (name "r-clusterbootstrap")
@@ -37944,13 +37963,13 @@ regions (e.g., provinces, prefectures, etc.).")
 (define-public r-chores
   (package
     (name "r-chores")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chores" version))
        (sha256
-        (base32 "0dprdjdll5p1q8pvk3y53kxdp8vq5747hgabqhm2gpdnfib2gkh0"))))
+        (base32 "0ql1zy8wi8hda34c93z631n6m57hjbj4vy6x4j23qlnw7b32ixd5"))))
     (properties `((upstream-name . "chores")))
     (build-system r-build-system)
     (arguments
@@ -38864,24 +38883,19 @@ ISSN:0031-9368), Jones Model (Jones et al., 2013
 (define-public r-chilemapas
   (package
     (name "r-chilemapas")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chilemapas" version))
        (sha256
-        (base32 "00v99y02fnxzn2ysbc2fbkdfirfl1276q8d7csi18kbym3vwqmq9"))))
+        (base32 "1lcsa2694a9rhcmjsxzlvjssvq9q49ddyfr79fifz31xawkfhj3q"))))
     (properties `((upstream-name . "chilemapas")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sf
-                             r-rmapshaper
-                             r-rlang
-                             r-magrittr
-                             r-dplyr))
+    (propagated-inputs (list r-stringr r-sf r-rlang r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://pacha.dev/chilemapas/")
     (synopsis
@@ -52542,33 +52556,41 @@ Bioinformatics 2019, 35(14):2458-2465.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "2.0.7")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalibrationCurves" version))
        (sha256
-        (base32 "1rl47dvf2m253dyf5rr8yx12yqldwr50awvl5dcp67x3x0amb6vq"))))
+        (base32 "0bnkagklcv0xxg5f9650z62bnxi242cqarf65fx1f0vcp77zjydc"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-timeroc
+    (propagated-inputs (list r-zoo
+                             r-timeroc
                              r-survival
                              r-rstudioapi
                              r-rms
                              r-riskregression
+                             r-metafor
+                             r-meta
+                             r-mertools
+                             r-magrittr
+                             r-lme4
                              r-hmisc
                              r-ggplot2
+                             r-dplyr
                              r-bookdown))
     (native-inputs (list r-knitr))
     (home-page "https://bavodc.github.io/websiteCalibrationCurves/")
     (synopsis "Calibration Performance")
     (description
      "Plots calibration curves and computes statistics for assessing calibration
-performance.  See De Cock Campo (2023) <doi:10.48550/@code{arXiv.2309.08559>}
-and Van Calster et al. (2016) <doi:10.1016/j.jclinepi.2015.12.005>.")
+performance.  See Lasai et al. (2025) <doi:10.48550/@code{arXiv.2503.08389>}, De
+Cock Campo (2023) <doi:10.48550/@code{arXiv.2309.08559>} and Van Calster et al.
+(2016) <doi:10.1016/j.jclinepi.2015.12.005>.")
     (license license:gpl3+)))
 
 (define-public r-calibrationband

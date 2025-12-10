@@ -23,6 +23,7 @@
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages code)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pdf)
@@ -4041,6 +4042,37 @@ Finally, the package proposes different transformations especially to eliminate
 any variation resulting from allometric growth (calculation of residuals from
 linear regressions, Reist standardizations or Aitchison transformation).")
     (license license:gpl2)))
+
+(define-public r-pssurvival
+  (package
+    (name "r-pssurvival")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSsurvival" version))
+       (sha256
+        (base32 "1bw1b8r0y2pz4xgwz4vrxhp9l92ilc6lsmjkcw4l35vbfrazyr1i"))))
+    (properties `((upstream-name . "PSsurvival")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cxinyang/PSsurvival")
+    (synopsis "Propensity Score Methods for Survival Analysis")
+    (description
+     "This package implements propensity score weighting methods for estimating
+counterfactual survival functions and marginal hazard ratios in observational
+studies with time-to-event outcomes.  Supports binary and multiple treatment
+groups with average treatment effect on the combined full population (ATE),
+average treatment effect on the treated or target group (ATT), and overlap
+weighting estimands.  Includes symmetric (Crump) and asymmetric (Sturmer)
+trimming options for extreme propensity scores.  Variance estimation via
+analytical M-estimation or bootstrap.  Methods based on Cheng et al. (2022)
+<doi:10.1093/aje/kwac043> and Li & Li (2019) <doi:10.1214/19-AOAS1282>.")
+    (license license:gpl2+)))
 
 (define-public r-pssubpathway
   (package
@@ -15383,24 +15415,21 @@ assumptions.")
 (define-public r-powerest
   (package
     (name "r-powerest")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoweREST" version))
        (sha256
-        (base32 "0dhp79j34wxxjfgkgvg1y5h300pw98836ng7ajv1fjc6k9wmbp0v"))))
+        (base32 "0fm7bc1qh3kqmz8y1vky0i4krp63lpsb1kp7a6papzi40d7qp9ab"))))
     (properties `((upstream-name . "PoweREST")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
-                             r-seurat
                              r-scam
                              r-resample
-                             r-rayshader
-                             r-plotly
                              r-magrittr
                              r-ggplot2
                              r-dplyr))
@@ -26123,6 +26152,46 @@ supply a destination directory, an indicator of whether to keep the created
 package directory, and/or a vector of verbs implement via the usethis
 <http://usethis.r-lib.org/> package.")
     (license license:cc0)))
+
+(define-public r-pkgstats
+  (package
+    (name "r-pkgstats")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pkgstats" version))
+       (sha256
+        (base32 "1cp83wjlv8y3y9h3000yvffh6i48dcqyclx8dxn8pdcdgkflbypr"))))
+    (properties `((upstream-name . "pkgstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list global))
+    (propagated-inputs (list r-withr
+                             r-sys
+                             r-roxygen2
+                             r-readr
+                             r-memoise
+                             r-igraph
+                             r-fs
+                             r-dplyr
+                             r-cpp11
+                             r-checkmate
+                             r-brio
+                             r-ami))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/pkgstats/")
+    (synopsis "Metrics of R Packages")
+    (description
+     "Static code analyses for R packages using the external code-tagging libraries
+ctags and gtags'.  Static analyses enable packages to be analysed very quickly,
+generally a couple of seconds at most.  The package also provides access to a
+database generating by applying the main function to the full CRAN archive,
+enabling the statistical properties of any package to be compared with all other
+CRAN packages.")
+    (license license:gpl3)))
 
 (define-public r-pkgsearch
   (package

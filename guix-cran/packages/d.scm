@@ -5018,39 +5018,6 @@ The methodology implemented in this package is based on Labrosse et al. (2024)
 for drug sensitivity analysis in patient-derived cancer models.")
     (license license:expat)))
 
-(define-public r-drugprepr
-  (package
-    (name "r-drugprepr")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "drugprepr" version))
-       (sha256
-        (base32 "07401dqw4krqh3rv7y13526n0xjdlaw14gcxwranksjchmqjd3ij"))))
-    (properties `((upstream-name . "drugprepr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-sqldf
-                             r-rlang
-                             r-purrr
-                             r-dplyr
-                             r-doseminer
-                             r-desctools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=drugprepr")
-    (synopsis
-     "Prepare Electronic Prescription Record Data to Estimate Drug Exposure")
-    (description
-     "Prepare prescription data (such as from the Clinical Practice Research Datalink)
-into an analysis-ready format, with start and stop dates for each patient's
-prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
-    (license license:expat)))
-
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
@@ -8525,32 +8492,6 @@ or continuous outcomes as described in Zhang, Small, Heng (2024)
 <doi:10.48550/@code{arXiv.2409.12848>}.  Two of the functions require
 installation of the Gurobi optimizer.  Please see
 <https://docs.gurobi.com/current/#refman/ins_the_r_package.html> for guidance.")
-    (license license:expat)))
-
-(define-public r-doseminer
-  (package
-    (name "r-doseminer")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "doseminer" version))
-       (sha256
-        (base32 "0y03k14adyqf0cyzqrr4rk47dabwgzzjkxbf11a5b8xlyy19mjr1"))))
-    (properties `((upstream-name . "doseminer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-magrittr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=doseminer")
-    (synopsis "Extract Drug Dosages from Free-Text Prescriptions")
-    (description
-     "Utilities for converting unstructured electronic prescribing instructions into
-structured medication data.  Extracts drug dose, units, daily dosing frequency
-and intervals from English-language prescriptions.  Based on Karystianis et al.
-(2015) <doi:10.1186/s12911-016-0255-x>.")
     (license license:expat)))
 
 (define-public r-dosefinding
@@ -12358,13 +12299,13 @@ wrangling, visualization, and disaster analytics.")
 (define-public r-dittoviz
   (package
     (name "r-dittoviz")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittoViz" version))
        (sha256
-        (base32 "013dbv1n7wpv759vqzxlal802aapig114sxq58ihxbpxfphdhmp4"))))
+        (base32 "1xjrs562czfx6lm73dw3yf3ird6xixaxirk56r8238jkrzyy13g6"))))
     (properties `((upstream-name . "dittoViz")))
     (build-system r-build-system)
     (arguments
@@ -18159,13 +18100,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "1a91zgbq27c4skngqcl0j8mcglmp541liysy1yqmqa15qwjpgzas"))))
+        (base32 "0xk1acx9cxzv8903fp8yfbkyvncnbvnwx92rzb6764dvxc9qnc20"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (arguments
@@ -18185,10 +18126,12 @@ clusters.")
     (synopsis "High Dimensional Categorical Data Visualization")
     (description
      "Easy visualization for datasets with more than two categorical variables and
-additional continuous variables.  diceplot is particularly useful for exploring
-complex categorical data in the context of pathway analysis across multiple
-conditions.  For a detailed documentation please visit
-<https://dice-and-domino-plot.readthedocs.io/en/latest/>.")
+additional continuous variables.  The package is particularly useful for
+exploring complex categorical data in the context of pathway analysis across
+multiple conditions.  This package is now in maintenance-only mode and kept for
+legacy compatibility; for new projects and active development, please use the
+successor package ggdiceplot (see <https://github.com/maflot/ggdiceplot> and
+<https://dice-and-domino-plot.readthedocs.io/en/latest/>).")
     (license license:expat)))
 
 (define-public r-diceoptim
@@ -25526,6 +25469,40 @@ Zhu, K. (2013).  Quantifying international production sharing at the bilateral
 and sector levels (No.  w19677).  National Bureau of Economic Research.")
     (license license:gpl3)))
 
+(define-public r-decompositionle
+  (package
+    (name "r-decompositionle")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "decompositionLE" version))
+       (sha256
+        (base32 "0fcqhyqnp3vkll65bv691i5mgx8asgzgvp77d848pbd4c35vp50j"))))
+    (properties `((upstream-name . "decompositionLE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/herts-phei/decompositionLE")
+    (synopsis "Provides Easy Methods to Perform Life Expectancy Decomposition")
+    (description
+     "This package provides an easy to use implementation of life expectancy
+decomposition formulas for age bands, derived from Ponnapalli, K. (2005).  A
+comparison of different methods for decomposition of changes in expectation of
+life at birth and differentials in life expectancy at birth.  Demographic
+Research, 12, pp.141â172. <doi:10.4054/demres.2005.12.7> In addition, there is
+a decomposition function for disease cause breakdown and a couple helpful plot
+functions.")
+    (license license:gpl3+)))
+
 (define-public r-decomposer
   (package
     (name "r-decomposer")
@@ -27360,13 +27337,13 @@ computing for distance covariance\".  Technometrics, 58(4): 435--447.
 (define-public r-dcortools
   (package
     (name "r-dcortools")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcortools" version))
        (sha256
-        (base32 "1qcblwcv2rwrl502hiv0l0r137sa4k0kx892k2w1chm40y5vri3b"))))
+        (base32 "0yr89c0jvlx1j5vpbz46c5l2gdadqzzxnsrwlavrr4rcr51jmrcq"))))
     (properties `((upstream-name . "dcortools")))
     (build-system r-build-system)
     (arguments
@@ -27387,10 +27364,10 @@ computing for distance covariance\".  Technometrics, 58(4): 435--447.
      "This package provides methods for distance covariance and distance correlation
 (Szekely, et al. (2007) <doi:10.1214/009053607000000505>), generalized version
 thereof (Sejdinovic, et al. (2013) <doi:10.1214/13-AOS1140>) and corresponding
-tests (Berschneider, Bottcher (2018) <@code{arXiv:1808.07280>}.  Distance
-standard deviation methods (Edelmann, et al. (2020) <doi:10.1214/19-AOS1935>)
-and distance correlation methods for survival endpoints (Edelmann, et al. (2021)
-<doi:10.1111/biom.13470>) are also included.")
+tests (Berschneider, Bottcher (2018) <doi:10.48550/@code{arXiv.1808.07280>}.
+Distance standard deviation methods (Edelmann, et al. (2020)
+<doi:10.1214/19-AOS1935>) and distance correlation methods for survival
+endpoints (Edelmann, et al. (2021) <doi:10.1111/biom.13470>) are also included.")
     (license license:gpl3)))
 
 (define-public r-dcmstan

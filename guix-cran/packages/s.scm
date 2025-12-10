@@ -10386,13 +10386,13 @@ collection of street views for various research purposes.")
 (define-public r-streamy
   (package
     (name "r-streamy")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamy" version))
        (sha256
-        (base32 "174iaalwq96hjaxsnbnyrgxy56j9kyyal4ib6lv558fz0z0qb92h"))))
+        (base32 "0n5ca1c8vwjf77bsjsa73k5sv3ams0dg706brqx2g2csmanqvp8l"))))
     (properties `((upstream-name . "streamy")))
     (build-system r-build-system)
     (arguments
@@ -17909,26 +17909,19 @@ desired level of accuracy.  The theory underlying these methods can be found in
 (define-public r-stableestim
   (package
     (name "r-stableestim")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StableEstim" version))
        (sha256
-        (base32 "133l5vnyx1sq7q6cgrwjsnl8x6k1zfzl19k3inijk9qq095pbzrd"))))
+        (base32 "03glpwx3jnm8l8963gwxgllf2s6c9mfdv9wqafvx8dq0d6s9byg0"))))
     (properties `((upstream-name . "StableEstim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-testthat
-                             r-stabledist
-                             r-rdpack
-                             r-numderiv
-                             r-matrix
-                             r-mass
-                             r-fbasics))
+    (propagated-inputs (list r-stabledist r-rdpack r-numderiv r-mass r-fbasics))
     (home-page "https://geobosh.github.io/StableEstim/")
     (synopsis
      "Estimate the Four Parameters of Stable Laws using Different Methods")
@@ -19151,6 +19144,40 @@ are defined for the computation of Sobol indices for sensitivity analysis and
 plotting the main effects using FANOVA methods.  It also implements the
 estimation of the SSM metamodel error using a GP model with a variety of defined
 correlation functions.")
+    (license license:gpl3)))
+
+(define-public r-sslfmm
+  (package
+    (name "r-sslfmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSLfmm" version))
+       (sha256
+        (base32 "1bz59v4i1iishcqjijl02127hcgzin5af9rd6kcm2syppfirfng0"))))
+    (properties `((upstream-name . "SSLfmm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-matrixstats))
+    (home-page "https://cran.r-project.org/package=SSLfmm")
+    (synopsis
+     "Semi-Supervised Learning under a Mixed-Missingness Mechanism in Finite Mixture Models")
+    (description
+     "This package implements a semi-supervised learning framework for finite mixture
+models under a mixed-missingness mechanism.  The approach models both missing
+completely at random (MCAR) and entropy-based missing at random (MAR) processes
+using a logisticâentropy formulation.  Estimation is carried out via an
+Expectationâ-Conditional Maximisation (ECM) algorithm with robust
+initialisation routines for stable convergence.  The methodology relates to the
+statistical perspective and informative missingness behaviour discussed in
+Ahfock and @code{McLachlan} (2020) <doi:10.1007/s11222-020-09971-5> and Ahfock
+and @code{McLachlan} (2023) <doi:10.1016/j.ecosta.2022.03.007>.  The package
+provides functions for data simulation, model estimation, prediction, and
+theoretical Bayes error evaluation for analysing partially labelled data under a
+mixed-missingness mechanism.")
     (license license:gpl3)))
 
 (define-public r-sslasso
@@ -32160,28 +32187,33 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
 (define-public r-sourcoise
   (package
     (name "r-sourcoise")
-    (version "0.6.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sourcoise" version))
        (sha256
-        (base32 "0ykb26d7pwg4gw92c915hy2qnrcgcpjcyvmb9nwjlzxbf68bmlvd"))))
+        (base32 "0xyfqxfhi37zgf0c6sqqgsq45ykqpsx2j9w3pyn6mwkq2fhx1x3s"))))
     (properties `((upstream-name . "sourcoise")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-scales
                              r-rprojroot
                              r-rlang
+                             r-rcppsimdjson
+                             r-quarto
                              r-qs2
                              r-purrr
+                             r-memoise
                              r-lubridate
                              r-logger
                              r-lobstr
+                             r-knitr
                              r-jsonlite
                              r-glue
                              r-fs
@@ -42645,6 +42677,39 @@ Surveys - SIPD conducted by Brazilian Institute of Geography and Statistics -
 IBGE. More information can be obtained from the official website
 <https://www.ibge.gov.br/>.")
     (license license:gpl3)))
+
+(define-public r-sip
+  (package
+    (name "r-sip")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SIP" version))
+       (sha256
+        (base32 "1jnmm6vg90hwg4p6zyn1qmjgdmrhjkmci270cpskbag8x32pgidr"))))
+    (properties `((upstream-name . "SIP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-data-table))
+    (home-page "https://github.com/acannis/SIP")
+    (synopsis "Single-Iteration Permutation for Large-Scale Biobank Data")
+    (description
+     "This package provides a single, phenome-wide permutation of large-scale biobank
+data.  When a large number of phenotypes are analyzed in parallel, a single
+permutation across all phenotypes followed by genetic association analyses of
+the permuted data enables estimation of false discovery rates (FDRs) across the
+phenome.  These FDR estimates provide a significance criterion for interpreting
+genetic associations in a biobank context.  For the basic permutation of
+unrelated samples, this package takes a sample-by-variable file with ID,
+genotypic covariates, phenotypic covariates, and phenotypes as input.  For data
+with related samples, it also takes a file with sample pair-wise
+identity-by-descent information.  The function outputs a permuted
+sample-by-variable file ready for genome-wide association analysis.  See Annis
+et al. (2021) <doi:10.21203/rs.3.rs-873449/v1> for details.")
+    (license license:expat)))
 
 (define-public r-sinrelef-ld
   (package
@@ -54378,6 +54443,57 @@ managed sustainably using size limits? Theoretically, yes.  Realistically, no\".
 Appl Ecol.  2020; 57; 1847â1860. <doi:10.1111/1365-2664.13659>.")
     (license license:gpl3+)))
 
+(define-public r-shark4r
+  (package
+    (name "r-shark4r")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SHARK4R" version))
+       (sha256
+        (base32 "0lgak9zwm3gxiyc4pgjxqq02gnhg2grr0s5abd010zv29wvx27yl"))))
+    (properties `((upstream-name . "SHARK4R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-worrms
+                             r-vroom
+                             r-tidyr
+                             r-terra
+                             r-stringi
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://sharksmhi.github.io/SHARK4R/")
+    (synopsis
+     "Accessing and Validating Marine Environmental Data from 'SHARK' and Related Databases")
+    (description
+     "This package provides functions to retrieve, process, analyze, and
+quality-control marine physical, chemical, and biological data.  The main focus
+is on Swedish monitoring data available through the SHARK database
+<https://shark.smhi.se/en/>, with additional API support for Nordic Microalgae
+<https://nordicmicroalgae.org/>, Dyntaxa <https://artfakta.se/>, World Register
+of Marine Species ('@code{WoRMS}') <https://www.marinespecies.org>,
+@code{AlgaeBase} <https://www.algaebase.org>, OBIS xylookup web service
+<https://iobis.github.io/xylookup/> and Intergovernmental Oceanographic
+Commission (IOC) - UNESCO databases on harmful algae
+<https://www.marinespecies.org/hab/> and toxins
+<https://toxins.hais.ioc-unesco.org/>.")
+    (license license:expat)))
+
 (define-public r-shar
   (package
     (name "r-shar")
@@ -55537,13 +55653,13 @@ Lai, Heyse and Chen (2010, <doi:10.1002/sim.4036>).")
 (define-public r-sglg
   (package
     (name "r-sglg")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sglg" version))
        (sha256
-        (base32 "1bbi0n7gbgi2h8zsyap8qij22fk7hk5n21h2zbpsiz60msi9fihm"))))
+        (base32 "0l2vwd5s95ww29x3s33lgkwk09mzrmfqmrgzmm9a5lwjwza9prnf"))))
     (properties `((upstream-name . "sglg")))
     (build-system r-build-system)
     (arguments
@@ -73345,13 +73461,13 @@ from classic data sets in R.")
 (define-public r-sampcompr
   (package
     (name "r-sampcompr")
-    (version "0.3.1.2")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampcompR" version))
        (sha256
-        (base32 "154wxpbnwl0fgwq0imnj123n12hjqnkzrl2y9ngv8iadrzgvlxi0"))))
+        (base32 "1vln2kk006398njsvbyca8grnk2kpr93rj34d2s5vryzg3fd4k63"))))
     (properties `((upstream-name . "sampcompR")))
     (build-system r-build-system)
     (arguments

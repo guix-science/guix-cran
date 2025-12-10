@@ -8390,13 +8390,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.5.1")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "0065fx3db186sa5asaq6sgizrbx51dldanc0746fppk6sdr1s220"))))
+        (base32 "0h2skik2pbrvvhc963iwpi0dn1i63hq97q9y3by4dhncxxibnm6i"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (arguments
@@ -12599,13 +12599,13 @@ interpolation, and for integrating quantities that represent arrays.")
 (define-public r-odiffr
   (package
     (name "r-odiffr")
-    (version "0.1.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odiffr" version))
        (sha256
-        (base32 "19h9m0f1vjrzldraf7h39n4myzsqimfp02dd687cyy96r26i4sqn"))))
+        (base32 "0r7sy6lb5pchi7ndv7bhay03hd4p1nb427zkdqm88zy86nn9d8fh"))))
     (properties `((upstream-name . "odiffr")))
     (build-system r-build-system)
     (arguments

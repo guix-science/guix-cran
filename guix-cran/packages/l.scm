@@ -1319,13 +1319,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "056rqxwp6dhjcnipzbdk6v2599d3pz7x0a48ipxr73lnvcs0m47v"))))
+        (base32 "1pnbni4g4jybzvm7r831aiizmiibpj8x8ig4x18q87vq2b0gcmlx"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (arguments

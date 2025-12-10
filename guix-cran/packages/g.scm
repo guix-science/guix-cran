@@ -1184,6 +1184,33 @@ Devane, E. H. (1953) (<doi:10.2134/agronj1953.00021962004500100005x>) and
 Allard, R.W. (2010, ISBN:8126524154).")
     (license license:gpl3)))
 
+(define-public r-gvcanalyzer
+  (package
+    (name "r-gvcanalyzer")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gvcAnalyzer" version))
+       (sha256
+        (base32 "0rdrhw2ichs3d493a92xqrkdmdifwiindhh5rmszpn8l8n95cgfg"))))
+    (properties `((upstream-name . "gvcAnalyzer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gvcAnalyzer")
+    (synopsis "Global Value Chain Decomposition for Value-Added Trade")
+    (description
+     "This package provides tools for decomposing Global Value Chain (GVC)
+participation and value-added trade.  It implements the frameworks proposed by
+Borin and Mancini (2023) 10.1080/09535314.2022.2153221> for source-based and
+sink-based decompositions, and by Borin, Mancini, and Taglioni (2025)
+10.1093/wber/lhaf017> for tripartite and output-based GVC measures.")
+    (license license:expat)))
+
 (define-public r-gvc
   (package
     (name "r-gvc")
@@ -2690,41 +2717,28 @@ that you don't often have to worry about the fine details.")
 (define-public r-gsynth
   (package
     (name "r-gsynth")
-    (version "1.2.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsynth" version))
        (sha256
-        (base32 "1a4s8ghxc5zw295ys8hp22nx93gc1vyakn7r1dcq3ghikh02nzaa"))))
+        (base32 "0kcwjdgwjfndbw95yllrm7ip8k1gnch2y9wf01vfdm2fhc1flnx1"))))
     (properties `((upstream-name . "gsynth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-mass
-                             r-lfe
-                             r-ggplot2
-                             r-ggally
-                             r-future
-                             r-foreach
-                             r-dorng
-                             r-doparallel
-                             r-abind))
-    (home-page "https://yiqingxu.org/packages/gsynth/gsynth_examples.html")
+    (propagated-inputs (list r-panelview r-ggplot2 r-fect))
+    (home-page "https://yiqingxu.org/packages/gsynth/")
     (synopsis "Generalized Synthetic Control Method")
     (description
-     "This package provides causal inference with interactive fixed-effect models.  It
-imputes counterfactuals for each treated unit using control group information
-based on a linear interactive fixed effects model that incorporates
-unit-specific intercepts interacted with time-varying coefficients.  This method
-generalizes the synthetic control method to the case of multiple treated units
-and variable treatment periods, and improves efficiency and interpretability.
-This version supports unbalanced panels and implements the matrix completion
-method.")
+     "Conducts causal inference with interactive fixed-effect models.  It imputes
+counterfactuals for each treated unit using control group information based on a
+linear interactive fixed effects model that incorporates unit-specific
+intercepts interacted with time-varying coefficients.  This method generalizes
+the synthetic control method to the case of multiple treated units and variable
+treatment periods, and improves efficiency and interpretability.")
     (license license:expat)))
 
 (define-public r-gsympoint
@@ -5208,13 +5222,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.2.3")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groundhog" version))
        (sha256
-        (base32 "09lw3klygjhv226073vkpi5passala7lmj22gc380q4gdb33dlgp"))))
+        (base32 "1ggm6zpf9vifqww452fqkz8rrk66qx9g0kkrn36gwf1xwa5aqwd0"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (arguments
@@ -17445,6 +17459,36 @@ designed for non-Gaussian traits.  It supports the identification of credible
 sets of genetic variants.")
     (license license:gpl3)))
 
+(define-public r-gimms
+  (package
+    (name "r-gimms")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gimms" version))
+       (sha256
+        (base32 "03qi10hdshvxj6acq8y0byaqc940xbnw1l7yqchvk7sw7v7ir656"))))
+    (properties `((upstream-name . "gimms")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-raster r-ncdf4 r-curl))
+    (home-page "https://github.com/environmentalinformatics-marburg/gimms")
+    (synopsis "Download and Process GIMMS NDVI3g Data")
+    (description
+     "This is a set of functions to retrieve information about GIMMS NDVI3g files
+currently available online; download (and re-arrange, in the case of NDVI3g.v0)
+the half-monthly data sets; import downloaded files from ENVI binary (NDVI3g.v0)
+or @code{NetCDF} format (NDVI3g.v1) directly into R based on the widespread
+raster package; conduct quality control; and generate monthly composites (e.g.,
+maximum values) from the half-monthly input data.  As a special gimmick, a
+method is included to conveniently apply the Mann-Kendall trend test upon
+Raster* images, optionally featuring trend-free pre-whitening to account for
+lag-1 autocorrelation.")
+    (license license:expat)))
+
 (define-public r-gimmemyplot
   (package
     (name "r-gimmemyplot")
@@ -24876,6 +24920,44 @@ the estimator and diagnostics tests can be fully user-specified, see Sucarrat
 (2021) <doi:10.32614/RJ-2021-024>.")
     (license license:gpl2+)))
 
+(define-public r-getrad
+  (package
+    (name "r-getrad")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "getRad" version))
+       (sha256
+        (base32 "1cv7406lifc8bfqc1alqxaclg8yd3c4rrlz3rfrzalnzb3bnnral"))))
+    (properties `((upstream-name . "getRad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-withr
+                             r-vroom
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-cachem
+                             r-biorad))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aloftdata/getRad")
+    (synopsis "Download Radar Data for Biological Research")
+    (description
+     "Load polar volume and vertical profile data for aeroecological research directly
+into R. With @code{getRad} you can access data from several sources in Europe
+and the US and standardize it to facilitate further exploration in tools such as
+@code{bioRad}'.")
+    (license license:expat)))
+
 (define-public r-getquandldata
   (package
     (name "r-getquandldata")
@@ -28246,13 +28328,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "1lrw5yrb8qahgb4bfpj2clq93gcrakfxfm7y46gdjnva289ylxap"))))
+        (base32 "1jm4sdhlj0qdah2cd9vliajyrnpldrrags10fr5kbjvcx4gx64zg"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -28275,6 +28357,7 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
                              r-data-table
                              r-cli
                              r-checkmate
+                             r-callr
                              r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/geocodebr")
@@ -30807,19 +30890,19 @@ regression or order restricted hypothesis testing.  Based on: Y. Lai (2011)
 (define-public r-geneexpressionfromgeo
   (package
     (name "r-geneexpressionfromgeo")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geneExpressionFromGEO" version))
        (sha256
-        (base32 "1amn6bk8i5p3bx0c2z3mgyxdl1yhq6612v16l4dpkfyysjpsqsgp"))))
+        (base32 "039sng0nvm49k2npbq89cwb5sif55rcvgxc86fx6pb196fjz9f3w"))))
     (properties `((upstream-name . "geneExpressionFromGEO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-qpdf r-geoquery r-biobase r-annotate))
+    (propagated-inputs (list r-xml2 r-geoquery r-biobase r-annotate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/davidechicco/geneExpressionFromGEO")
     (synopsis
@@ -32120,13 +32203,13 @@ implementation based fully in R.")
 (define-public r-geelite
   (package
     (name "r-geelite")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeLite" version))
        (sha256
-        (base32 "0nwx9vx3d1nnfs143v042csgdn7b944f6fgvz6kdaf0sicng45wx"))))
+        (base32 "1xwgh38axnn0aqwq5j2ra5ng2ybysbq7x1xn0vi0wa4g0s7k5lj7"))))
     (properties `((upstream-name . "geeLite")))
     (build-system r-build-system)
     (arguments
@@ -32151,7 +32234,6 @@ implementation based fully in R.")
                              r-h3jsr
                              r-googledrive
                              r-geojsonio
-                             r-gargle
                              r-dplyr
                              r-data-table
                              r-crayon
@@ -32795,13 +32877,13 @@ in other fields of geospatial analysis.")
 (define-public r-gdim
   (package
     (name "r-gdim")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdim" version))
        (sha256
-        (base32 "02q5ynd22yisl3as9hyrg18p9j74lw6p1z3szm1k2ax0r3k04r27"))))
+        (base32 "0nf0m6p2rcqcg34qg6p0c8xyvnc29a1n6k8n03xj6bwwz4s9arlg"))))
     (properties `((upstream-name . "gdim")))
     (build-system r-build-system)
     (arguments
@@ -32811,7 +32893,6 @@ in other fields of geospatial analysis.")
                              r-rlang
                              r-progress
                              r-matrix
-                             r-magrittr
                              r-irlba
                              r-ggplot2
                              r-dplyr))
@@ -32824,7 +32905,7 @@ eigenvectors, and the test graph is used to evaluate the correlation between the
 training eigenvectors and the eigenvectors of the test graph.  The correlations
 follow a simple central limit theorem that can be used to estimate graph
 dimension via hypothesis testing, see Chen et al. (2021)
-<@code{arXiv:2108.03336>} for details.")
+<doi:10.48550/@code{arXiv.2108.03336>} for details.")
     (license license:gpl3+)))
 
 (define-public r-gdilm-sir
@@ -37361,13 +37442,13 @@ creation and web applications.")
 (define-public r-g6r
   (package
     (name "r-g6r")
-    (version "0.1.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "g6R" version))
        (sha256
-        (base32 "1j5gvfqfq1am3sygskfss6v4j910cglpnkb5hxplr7wls3924mcz"))))
+        (base32 "0g46swgn49nh63y0gf6j82b8adn407s4wcwpl9dr2rrgv08xfg8l"))))
     (properties `((upstream-name . "g6R")))
     (build-system r-build-system)
     (arguments

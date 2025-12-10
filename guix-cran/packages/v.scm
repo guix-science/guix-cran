@@ -2448,13 +2448,13 @@ depends on the observed states themselves.  See Zambom, Kim, and Garcia (2022)
 (define-public r-vlmc
   (package
     (name "r-vlmc")
-    (version "1.4-4")
+    (version "1.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VLMC" version))
        (sha256
-        (base32 "1mcypnr956jfq0iyfak6bhfv99p0zzal9r0bd10py5qwzal0n6i8"))))
+        (base32 "1nd4wvl81dnwcnpw2vmh9whdrk6ab3mkakr3dmnwmn5y4qr3grxi"))))
     (properties `((upstream-name . "VLMC")))
     (build-system r-build-system)
     (arguments
@@ -7406,6 +7406,37 @@ extensively tested on simulated multivariate time series data and @code{fMRI}
 data.  For details on the VCCP methodology, please see Xiong & Cribben (2021).")
     (license license:expat)))
 
+(define-public r-vcbart
+  (package
+    (name "r-vcbart")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VCBART" version))
+       (sha256
+        (base32 "1d38426gnvr5mll5gqs5g5pvvsq8gzhwqmz8xnp1khk76hw1nl90"))))
+    (properties `((upstream-name . "VCBART")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
+    (home-page "https://github.com/skdeshpande91/VCBART")
+    (synopsis
+     "Fit Varying Coefficient Models with Bayesian Additive Regression Trees")
+    (description
+     "Fits linear varying coefficient (VC) models, which assert a linear relationship
+between an outcome and several covariates but allow that relationship (i.e., the
+coefficients or slopes in the linear regression) to change as functions of
+additional variables known as effect modifiers, by approximating the coefficient
+functions with Bayesian Additive Regression Trees.  Implements a
+Metropolis-within-Gibbs sampler to simulate draws from the posterior over
+coefficient function evaluations.  VC models with independent observations or
+repeated observations can be fit.  For more details see Deshpande et al. (2024)
+<doi:10.1214/24-BA1470>.")
+    (license license:gpl3+)))
+
 (define-public r-vca
   (package
     (name "r-vca")
@@ -9162,6 +9193,36 @@ large variable annuities.  The main valuation methodology was proposed by Gan
      "This package contains logic for cell-specific gene set scoring of single cell
 RNA sequencing data.")
     (license license:gpl2+)))
+
+(define-public r-valueprhr
+  (package
+    (name "r-valueprhr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valueprhr" version))
+       (sha256
+        (base32 "0asvrrmmfcnbji92s2yq3v4jv20bb5g12gwd5b11xa9yzv9k9ral"))))
+    (properties `((upstream-name . "valueprhr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-metrics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/isadorenabi/valueprhr")
+    (synopsis "Value-Price Analysis with Bayesian and Panel Data Methods")
+    (description
+     "This package provides tools for analyzing the relationship between direct prices
+(based on labor values) and prices of production using Bayesian generalized
+linear models, panel data methods, partial least squares regression, canonical
+correlation analysis, and panel vector autoregression.  Includes functions for
+model comparison, out-of-sample validation, and structural break detection.
+Here, methods use raw accounting data with explicit temporal structure,
+following Gomez Julian (2023) <doi:10.17605/OSF.IO/7J8KF> and standard
+econometric techniques for panel data analysis.")
+    (license license:expat)))
 
 (define-public r-valuemap
   (package

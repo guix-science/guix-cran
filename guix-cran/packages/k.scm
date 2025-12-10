@@ -6071,32 +6071,6 @@ another function to draw additional lines.  See results from package in T
 Lamont-Smith (2018), submitted J. R. Stat.  Soc.")
     (license license:gpl3)))
 
-(define-public r-kdglm
-  (package
-    (name "r-kdglm")
-    (version "1.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kDGLM" version))
-       (sha256
-        (base32 "0w3mbsnvprsn8728f6p51y1p641nldzbgmjijrn3l8ih0qcz96bw"))))
-    (properties `((upstream-name . "kDGLM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rfast r-rdpack r-generics r-extradistr))
-    (native-inputs (list r-knitr))
-    (home-page "https://silvaneojunior.github.io/kDGLM/")
-    (synopsis "Bayesian Analysis of Dynamic Generalized Linear Models")
-    (description
-     "Provide routines for filtering and smoothing, forecasting, sampling and Bayesian
-analysis of Dynamic Generalized Linear Models using the methodology described in
-Alves et al. (2024)<doi:10.48550/@code{arXiv.2201.05387>} and dos Santos Jr.  et
-al. (2024)<doi:10.48550/@code{arXiv.2403.13069>}.")
-    (license license:gpl3+)))
-
 (define-public r-kdevine
   (package
     (name "r-kdevine")

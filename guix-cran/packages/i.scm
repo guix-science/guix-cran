@@ -2120,50 +2120,6 @@ for varying between random and guided splits, and for using different splitting
 criteria.")
     (license license:bsd-2)))
 
-(define-public r-isotracer
-  (package
-    (name "r-isotracer")
-    (version "1.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "isotracer" version))
-       (sha256
-        (base32 "1ciph8mq48iapyc7hwzh0x89gapwfsqxishqjshkza5aqcjd1491"))))
-    (properties `((upstream-name . "isotracer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rlang
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-purrr
-                             r-pillar
-                             r-magrittr
-                             r-latex2exp
-                             r-dplyr
-                             r-data-table
-                             r-coda
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/matthieu-bruneaux/isotracer")
-    (synopsis "Isotopic Tracer Analysis Using MCMC")
-    (description
-     "This package implements Bayesian models to analyze data from tracer addition
-experiments.  The implemented method was originally described in the article \"A
-New Method to Reconstruct Quantitative Food Webs and Nutrient Flows from Isotope
-Tracer Addition Experiments\" by LÃ³pez-Sepulcre et al. (2020)
-<doi:10.1086/708546>.")
-    (license license:gpl3)))
-
 (define-public r-isotonic-pen
   (package
     (name "r-isotonic-pen")
