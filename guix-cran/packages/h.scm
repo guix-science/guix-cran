@@ -2610,6 +2610,39 @@ framework to facilitate the measurement of HTTP request time and cache
 performance.")
     (license license:expat)))
 
+(define-public r-httkexamples
+  (package
+    (name "r-httkexamples")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httkexamples" version))
+       (sha256
+        (base32 "0p1xapwvjlkn2m9c906dgi7fm6czrqmxa0ph4c94l4x2n5jpzrv2"))))
+    (properties `((upstream-name . "httkexamples")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmarkdown r-rdpack r-knitr r-httk))
+    (native-inputs (list r-knitr))
+    (home-page "https://chemicalinsights.ul.org/")
+    (synopsis "High-Throughput Toxicokinetics Examples")
+    (description
+     "High throughput toxicokinetics (\"HTTK\") is the combination of 1)
+chemical-specific in vitro measurements or in silico predictions and 2) generic
+mathematical models, to predict absorption, distribution, metabolism, and
+excretion by the body.  HTTK methods have been described by Pearce et al. (2017)
+(<doi:10.18637/jss.v079.i04>) and Breen et al. (2021)
+(<doi:10.1080/17425255.2021.1935867>).  Here we provide examples (vignettes)
+applying HTTK to solve various problems in bioinformatics, toxicology, and
+exposure science.  In accordance with Davidson-Fritz et al. (2025)
+(<doi:10.1371/journal.pone.0321321>), whenever a new HTTK model is developed,
+the code to generate the figures evaluating that model is added as a new
+vignettte.")
+    (license license:expat)))
+
 (define-public r-httk
   (package
     (name "r-httk")
@@ -13753,6 +13786,50 @@ four vignettes covering a range different applications.")
      "This package provides functions to perform dimensionality reduction for
 classification if the covariance matrices of the classes are unequal.")
     (license license:gpl2+)))
+
+(define-public r-hcuptools
+  (package
+    (name "r-hcuptools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCUPtools" version))
+       (sha256
+        (base32 "1zwn7y61ds7nn5nigzvc3vc6kxcqfmwcv5n7rjbcrr2a9p0fv3nc"))))
+    (properties `((upstream-name . "HCUPtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-httr2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vikrant31/HCUPtools")
+    (synopsis "Access and Work with HCUP Resources and Datasets")
+    (description
+     "This package provides a comprehensive R package for accessing and working with
+publicly available and free resources from the Agency for Healthcare Research
+and Quality (AHRQ) Healthcare Cost and Utilization Project (HCUP).  The package
+provides streamlined access to HCUP's Clinical Classifications Software Refined
+(CCSR) mapping files and Summary Trend Tables, enabling researchers and analysts
+to efficiently map ICD-10-CM diagnosis codes and ICD-10-PCS procedure codes to
+CCSR categories and access HCUP statistical reports.  Key features include:
+direct download from HCUP website, multiple output formats (long/wide/default),
+cross-classification support, version management, citation generation, and
+intelligent caching.  The package does not redistribute HCUP data files but
+facilitates direct download from the official HCUP website, ensuring users
+always have access to the latest versions and maintain compliance with HCUP data
+use policies.  This package only accesses free public tools and reports; it does
+NOT access HCUP databases (NIS, KID, SID, NEDS, etc.) that require purchase.
+For more information, see <https://hcup-us.ahrq.gov/>.")
+    (license license:expat)))
 
 (define-public r-hctrial
   (package

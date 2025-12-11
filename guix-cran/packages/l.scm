@@ -9756,13 +9756,13 @@ Wickham et.  al (2011) <doi:10.18637/jss.v040.i02> or
 (define-public r-linselect
   (package
     (name "r-linselect")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LINselect" version))
        (sha256
-        (base32 "0sd2b0wqmf51x7hxpx2mgymsgn1abzwdiaxp66708pg5nskg48ah"))))
+        (base32 "05zmninj6hqbcda23zirphkpyhldqi1iqcal799wq26gw944pimr"))))
     (properties `((upstream-name . "LINselect")))
     (build-system r-build-system)
     (arguments
@@ -16857,13 +16857,13 @@ package also includes visualization tools for exploring discovered connections."
 (define-public r-lbbnn
   (package
     (name "r-lbbnn")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBBNN" version))
        (sha256
-        (base32 "1jv5ffdjh8qaihf35d5wdgnzl8s6y2jyvgy7ixjqbq6shlll1v90"))))
+        (base32 "0gvrdds02ssqcswvh6nnn676gkymrlqyf4jfm3mjl631n80n9ak0"))))
     (properties `((upstream-name . "LBBNN")))
     (build-system r-build-system)
     (arguments

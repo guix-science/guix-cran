@@ -376,13 +376,13 @@ main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.
 (define-public r-xtdml
   (package
     (name "r-xtdml")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtdml" version))
        (sha256
-        (base32 "0h7r6x5s6k28hgjva2wj18x950yr1nh4zh689q37x8nv97mf4iym"))))
+        (base32 "1akpy5sbylkqjv3lkg5df1imbw67abrssjrl52v3n16fr0nm7gl3"))))
     (properties `((upstream-name . "xtdml")))
     (build-system r-build-system)
     (arguments

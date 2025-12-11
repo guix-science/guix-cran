@@ -16202,19 +16202,20 @@ ggplot2 plotting framework and can be extended like every other ggplot object.")
 (define-public r-dimodelsmulti
   (package
     (name "r-dimodelsmulti")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodelsMulti" version))
        (sha256
-        (base32 "0qmmqy21lcgqr715vx3jlxv3jfbqvk1jbg24aia9sk5cfwmla93w"))))
+        (base32 "0bvwzyy2qddp68j36pakhs7ig2cbighn6w8z6nwbc8lzkkl7dmma"))))
     (properties `((upstream-name . "DImodelsMulti")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2
+    (propagated-inputs (list r-shiny
+                             r-reshape2
                              r-plyr
                              r-nlme
                              r-matrix
@@ -30832,6 +30833,45 @@ standard is described at <https://www.openarchives.org/ore/>.  Data packages can
 be serialized and transported as structured files that have been created
 following the @code{BagIt} specification.  The @code{BagIt} specification is
 described at <https://datatracker.ietf.org/doc/html/draft-kunze-bagit-08>.")
+    (license license:asl2.0)))
+
+(define-public r-dataone
+  (package
+    (name "r-dataone")
+    (version "2.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dataone" version))
+       (sha256
+        (base32 "121sh1nmcn8i7g157j5jm6dwfv7gjd1r13w47si5gpgk3dri14yx"))))
+    (properties `((upstream-name . "dataone")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-uuid
+                             r-stringr
+                             r-stringi
+                             r-plyr
+                             r-parsedate
+                             r-jsonlite
+                             r-httr
+                             r-datapack
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DataONEorg/rdataone")
+    (synopsis "R Interface to the 'DataONE' REST API")
+    (description
+     "This package provides read and write access to data and metadata from the
+@code{DataONE} network <https://www.dataone.org> of data repositories.  Each
+@code{DataONE} repository implements a consistent repository application
+programming interface.  Users call methods in R to access these remote
+repository functions, such as methods to query the metadata catalog, get access
+to metadata for particular data packages, and read the data objects from the
+data repository.  Users can also insert and update data objects on repositories
+that support these methods.")
     (license license:asl2.0)))
 
 (define-public r-dataonderivatives

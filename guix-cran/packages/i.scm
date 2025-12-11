@@ -757,6 +757,38 @@ Hangartner (2020) <doi:10.1017/pan.2019.48> and Hangartner, Marbach, Henckel,
 Maathuis, Kelz and Keele (2021) <doi:10.48550/@code{arXiv.2103.06328>}.")
     (license license:gpl3)))
 
+(define-public r-ivd
+  (package
+    (name "r-ivd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivd" version))
+       (sha256
+        (base32 "1k2fydvc1xxppwa2bwmmaa9i49vam0ja26ijxdsp5hr4qh3zyd0s"))))
+    (properties `((upstream-name . "ivd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstan
+                             r-patchwork
+                             r-nimble
+                             r-ggrepel
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=ivd")
+    (synopsis "Individual Variance Detection")
+    (description
+     "Fit mixed-effects location scale models with spike-and-slab priors on the
+location random effects to identify units with unusual residual variances.  The
+method is described in detail in Carmo, Williams and Rast (2025)
+<https://osf.io/sh6ne>.")
+    (license license:gpl3+)))
+
 (define-public r-ivcor
   (package
     (name "r-ivcor")

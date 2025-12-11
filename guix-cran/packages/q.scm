@@ -3885,13 +3885,13 @@ dimensions.")
 (define-public r-qrmtools
   (package
     (name "r-qrmtools")
-    (version "0.0-18")
+    (version "0.0-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrmtools" version))
        (sha256
-        (base32 "14vmjf5mpaa93x7aiyp58h3g87v65mnnfwb1d5j8sx7hr7ad9ran"))))
+        (base32 "0q7qfsv9lvzjdfdzca264zf08yw3j62q0pdn52bgfk9xi1nna9km"))))
     (properties `((upstream-name . "qrmtools")))
     (build-system r-build-system)
     (arguments
@@ -3901,7 +3901,6 @@ dimensions.")
                              r-xts
                              r-rugarch
                              r-quantmod
-                             r-quandl
                              r-lattice
                              r-adgoftest))
     (native-inputs (list r-knitr))
@@ -6747,6 +6746,57 @@ a methodology that bridges the qualitative and quantitative divide in social
 science research.  It uses a Boolean minimization algorithm, resulting in a
 minimal causal configuration associated with a given phenomenon.")
     (license license:gpl3+)))
+
+(define-public r-qbrms
+  (package
+    (name "r-qbrms")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qbrms" version))
+       (sha256
+        (base32 "1g2wrq26la4vv3b22ifrva16xqpyfzlcvdldg7jwpx5wzx6pqazr"))))
+    (properties `((upstream-name . "qbrms")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb
+                             r-shiny
+                             r-scales
+                             r-rcppeigen
+                             r-rcpp
+                             r-posterior
+                             r-patchwork
+                             r-mvtnorm
+                             r-miniui
+                             r-loo
+                             r-lme4
+                             r-jsonlite
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Tony-Myers/qbrms")
+    (synopsis
+     "Quick Bayesian Regression Models Using 'INLA' with 'brms' Syntax")
+    (description
+     "This package provides a brms'-like interface for fitting Bayesian regression
+models using INLA (Integrated Nested Laplace Approximations) and TMB (Template
+Model Builder).  The package offers faster model fitting while maintaining
+familiar brms syntax and output formats.  Supports fixed and mixed effects
+models, multiple probability distributions, conditional effects plots, and
+posterior predictive checks with summary methods compatible with brms'.  TMB
+integration provides fast ordinal regression capabilities.  Implements methods
+adapted from emmeans for marginal means estimation and @code{bayestestR} for
+Bayesian inference assessment.  Methods are based on Rue et al. (2009)
+<doi:10.1111/j.1467-9868.2008.00700.x>, Kristensen et al. (2016)
+<doi:10.18637/jss.v070.i05>, Lenth (2016) <doi:10.18637/jss.v069.i01>, BÃ¼rkner
+(2017) <doi:10.18637/jss.v080.i01>, Makowski et al. (2019)
+<doi:10.21105/joss.01541>, and Kruschke (2014, ISBN:9780124058880).")
+    (license license:expat)))
 
 (define-public r-qbr
   (package

@@ -4262,13 +4262,13 @@ available.")
 (define-public r-vip
   (package
     (name "r-vip")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vip" version))
        (sha256
-        (base32 "17x5j793cqbvai37d10rx55i5j3sl4hbiihjg7anxmw83fiwrrxj"))))
+        (base32 "0f1jczfv1dgdgrll3p6i4l358dirqhhllyqq7r76y5i1pk7cw21d"))))
     (properties `((upstream-name . "vip")))
     (build-system r-build-system)
     (arguments
@@ -4319,13 +4319,13 @@ tool for comparing means and assessing trends of categorical factors.")
 (define-public r-vinereg
   (package
     (name "r-vinereg")
-    (version "0.11.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vinereg" version))
        (sha256
-        (base32 "0a6sh34fn9p1lnb9qwzy6iwz5mm5x25zgsj5fscc8d5l8kspxdcx"))))
+        (base32 "19q7lrv27l36sm91djkb4jc150v61l0wlf4s94m9x9bfna2p3gwh"))))
     (properties `((upstream-name . "vinereg")))
     (build-system r-build-system)
     (arguments
@@ -9513,13 +9513,13 @@ information, please visit
 (define-public r-validate
   (package
     (name "r-validate")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "validate" version))
        (sha256
-        (base32 "1gk7y57lql4li9yaydqxygm08vlwa955hy4lcmv4h792nw4ppycx"))))
+        (base32 "0gs0r6drilyzydghsg2dlbpsvr9bgzsnalvl9xw7q3bwpnv7ip9n"))))
     (properties `((upstream-name . "validate")))
     (build-system r-build-system)
     (arguments

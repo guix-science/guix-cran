@@ -1275,13 +1275,13 @@ terrestrial water cycle data across various spatio-temporal scales.")
 (define-public r-twbparser
   (package
     (name "r-twbparser")
-    (version "0.2.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twbparser" version))
        (sha256
-        (base32 "0blrvdag9gkcdq3rv84jbxd4cx05hl9gklr4pwdyqhkp27bqwp27"))))
+        (base32 "17ax3fjzgiyj4l91hlc5ynp0i338b0v89dkhbxh6rpxc9gajpxik"))))
     (properties `((upstream-name . "twbparser")))
     (build-system r-build-system)
     (arguments
@@ -8381,6 +8381,30 @@ alongside the treesitter package.  Tree-sitter builds concrete syntax trees for
 source files of any language, and can efficiently update those syntax trees as
 the source file is edited.")
     (license license:expat)))
+
+(define-public r-treesitter-c
+  (package
+    (name "r-treesitter-c")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treesitter.c" version))
+       (sha256
+        (base32 "0s0n2y53vwv0kaap14mpxmbawxjzmqflra34xd5mydikp87l10b3"))))
+    (properties `((upstream-name . "treesitter.c")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treesitter))
+    (home-page "https://sounkou-bioinfo.github.io/treesitter.c/")
+    (synopsis "'R' Bindings to the 'C' Grammar for Tree-Sitter")
+    (description
+     "This package provides bindings to a C grammar for Tree-sitter, to be used
+alongside the treesitter package.  Tree-sitter builds concrete syntax trees for
+source files and can efficiently update them as files are edited.")
+    (license license:gpl3)))
 
 (define-public r-treesitter
   (package
@@ -17688,6 +17712,31 @@ correlate two timelines of events.  A brief description is available at
 <https://barryzee.github.io/@code{timeLineGraphics_manuscript/golden_age.html>}.")
     (license license:gpl2+)))
 
+(define-public r-timefully
+  (package
+    (name "r-timefully")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timefully" version))
+       (sha256
+        (base32 "1plcf14ki88d7jzf18p1c80hylh9v5pk5858bdwpbj0f423hdw20"))))
+    (properties `((upstream-name . "timefully")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-purrr r-lubridate r-dygraphs r-dplyr))
+    (home-page "https://github.com/resourcefully-dev/timefully/")
+    (synopsis "Time-Series Management Made Easy")
+    (description
+     "Manage time-series data frames across time zones, resolutions, and date ranges,
+while filling gaps using weekday/hour patterns or simple fill helpers or
+plotting them interactively.  It is designed to work seamlessly with the
+tidyverse and dygraphs environments.")
+    (license license:gpl3)))
+
 (define-public r-timeel
   (package
     (name "r-timeel")
@@ -20597,19 +20646,20 @@ fuzzyjoin package.")
 (define-public r-tidygate
   (package
     (name "r-tidygate")
-    (version "1.0.14")
+    (version "1.0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidygate" version))
        (sha256
-        (base32 "1wfrcna9k67n23p1kyr7cc8illj6nvml2cxf0xb42i0fxlniyqb8"))))
+        (base32 "04rnxi16qydyd27vg3bzwpkilh74nawanbcsaakfr21l01higvgz"))))
     (properties `((upstream-name . "tidygate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridis
+    (propagated-inputs (list r-xfun
+                             r-viridis
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -20629,8 +20679,7 @@ fuzzyjoin package.")
     (description
      "Interactively gate points on a scatter plot.  Interactively drawn gates are
 recorded and can be applied programmatically to reproduce results exactly.
-Programmatic gating is based on the package gatepoints by Wajid Jawaid (who is
-also an author of this package).")
+Programmatic gating is based on the package gatepoints by Wajid Jawaid.")
     (license license:gpl3)))
 
 (define-public r-tidygapminder
@@ -29992,13 +30041,13 @@ and Gregg (1993) <doi:10.1007/BF01070999>; Schnider et al. (1998)
 (define-public r-tchazards
   (package
     (name "r-tchazards")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCHazaRds" version))
        (sha256
-        (base32 "1j6b9p5d2pwxnsn31ja02154fwybdnhj3h5fcl2iy8qlhy6647wp"))))
+        (base32 "19p1z60gdy590gjab25xzdhikvqdbpkp5x61bdprpw8r353vsnd0"))))
     (properties `((upstream-name . "TCHazaRds")))
     (build-system r-build-system)
     (arguments
@@ -31391,13 +31440,13 @@ implementation and the implementation available from IHME.")
 (define-public r-targeted
   (package
     (name "r-targeted")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "targeted" version))
        (sha256
-        (base32 "16mdk9g20drxyn67ypy7zp105jw7qlr0c6j06hkyf6apz2jbv0xs"))))
+        (base32 "129hkz7bn1lqh12657fna2vwaf8arvsmpl9nx1w7fbhsbk0fi29l"))))
     (properties `((upstream-name . "targeted")))
     (build-system r-build-system)
     (arguments
@@ -31410,14 +31459,12 @@ implementation and the implementation available from IHME.")
                              r-r6
                              r-quadprog
                              r-progressr
-                             r-optimx
                              r-mets
                              r-lava
                              r-future-apply
-                             r-data-table
                              r-cli
                              r-abind))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://kkholst.github.io/targeted/")
     (synopsis "Targeted Inference")
     (description

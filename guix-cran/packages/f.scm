@@ -8111,13 +8111,13 @@ K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.")
 (define-public r-forit
   (package
     (name "r-forit")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForIT" version))
        (sha256
-        (base32 "05nhaslzr3fllap8gnnzshc87zr3f5xqfgm0ir5simb01h5s267h"))))
+        (base32 "1n0q32hih0d1syixxh34bzmvr5ywf8xy3g6p6hxwdzmb0d614l3a"))))
     (properties `((upstream-name . "ForIT")))
     (build-system r-build-system)
     (arguments
@@ -21556,13 +21556,13 @@ thus, build recommendation systems.")
 (define-public r-fcall
   (package
     (name "r-fcall")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcall" version))
        (sha256
-        (base32 "1gjviykvrb52w5sn656756l6hbyx424asr35g51c11qza2gx1m35"))))
+        (base32 "1f6lmpz1ja3dncm9677fpjvl8pzxpyamzk9jm43nl7fhzmlm8ag9"))))
     (properties `((upstream-name . "fcall")))
     (build-system r-build-system)
     (arguments
@@ -26458,6 +26458,35 @@ penalized factorial regression.  Predictions are made using genotype-specific
 environmental sensitivities as in Millet et al. (2019)
 <doi:10.1038/s41588-019-0414-y>.")
     (license license:gpl3)))
+
+(define-public r-factree
+  (package
+    (name "r-factree")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "factree" version))
+       (sha256
+        (base32 "1gxksrvvsb5y78s5cb62xnppsv8136q3m0a9iigadbplk05j2bix"))))
+    (properties `((upstream-name . "factree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-irlba r-foreach r-dorng r-doparallel))
+    (home-page "https://cran.r-project.org/package=factree")
+    (synopsis "Factor-Augmented Clustering Tree")
+    (description
+     "This package implements the Factor-Augmented Clustering Tree (FACT) algorithm
+for clustering time series data.  The method constructs a classification tree
+where splits are determined by covariates, and the splitting criterion is based
+on a group factor model representation of the time series within each node.
+Both threshold-based and permutation-based tests are supported for splitting
+decisions, with an option for parallel computation.  For methodological details,
+see Hu, Li, Luo, and Wang (2025, in preparation), Factor-Augmented Clustering
+Tree for Time Series.")
+    (license license:expat)))
 
 (define-public r-factoshiny
   (package

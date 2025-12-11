@@ -1602,13 +1602,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "12f1mwxvj8gnmc4lzsld9zq2hcdfwi8n9mm8ddy9qgs54mswywc4"))))
+        (base32 "1k4wnwmc25mbdl1w13ajjdzcpvcr8ipkq1nnxv1nwlhfq8iwvh3k"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -16969,13 +16969,13 @@ on-premises remote option.")
 (define-public r-git2rdata
   (package
     (name "r-git2rdata")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "git2rdata" version))
        (sha256
-        (base32 "198pyhcs3z1mld1cavspqcw24m2jf5zq96l3nkdrp43fi8lwwhzb"))))
+        (base32 "06f0fjfv7sk3hyssjm6nll4kw32zjnjkjmav3mr0k9n9zzckwakr"))))
     (properties `((upstream-name . "git2rdata")))
     (build-system r-build-system)
     (arguments
@@ -17106,20 +17106,26 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.6.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "0xzipnhk4sfznkmbcpja2rnl2acd9lq5zlfi2g4v8inyib2bqdib"))))
+        (base32 "1859w920bw94iiiqsnh2s2y2qsn0arcp24lbxsimwk22qc85sxr1"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-rappdirs r-jsonlite r-geojsonsf
-                             r-countrycode))
+    (propagated-inputs (list r-tibble
+                             r-sf
+                             r-rappdirs
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-countrycode
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ropengov.github.io/giscoR/")
     (synopsis "Download Map Data from GISCO API - Eurostat")
@@ -24923,13 +24929,13 @@ the estimator and diagnostics tests can be fully user-specified, see Sucarrat
 (define-public r-getrad
   (package
     (name "r-getrad")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getRad" version))
        (sha256
-        (base32 "1cv7406lifc8bfqc1alqxaclg8yd3c4rrlz3rfrzalnzb3bnnral"))))
+        (base32 "0c64a2aw0pl03dj4v38b9mi0wnp12r91zybmi57f9zsgdxjzjkz8"))))
     (properties `((upstream-name . "getRad")))
     (build-system r-build-system)
     (arguments
@@ -32721,13 +32727,13 @@ kurtosis calculations we use moments.")
 (define-public r-gdpuc
   (package
     (name "r-gdpuc")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDPuc" version))
        (sha256
-        (base32 "0vhflr9qzfkxw4ginw7yzh95g8q7821w0xmd2wck3zx99kpk4q82"))))
+        (base32 "05sgx4grz5y1yv0g1nbvf164hiis04gpjd0nb8j4893kasdb0ai6"))))
     (properties `((upstream-name . "GDPuc")))
     (build-system r-build-system)
     (arguments

@@ -1074,19 +1074,19 @@ Karrison et al. (2018) <doi:10.1177/1740774518759281>.")
 (define-public r-bundle
   (package
     (name "r-bundle")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bundle" version))
        (sha256
-        (base32 "1q8wyzbgxhn0bsc5h2mr53kfk45019x6naxq591glrkv2m02m7ll"))))
+        (base32 "0xagw15dn4vfgn2n2v5ii0sn0snqz5p7f4f0h4a0cqd27df7az7i"))))
     (properties `((upstream-name . "bundle")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-rlang r-purrr r-glue))
+    (propagated-inputs (list r-withr r-rlang r-purrr r-lifecycle r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rstudio/bundle")
     (synopsis "Serialize Model Objects with a Consistent Interface")
@@ -15085,13 +15085,13 @@ networks, i.e.  data graph structured.")
 (define-public r-biomor
   (package
     (name "r-biomor")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioMoR" version))
        (sha256
-        (base32 "04h98xd4gdj1r9qyxndajisw9ycnkiksljx4yy2pz2rsgxld5b3a"))))
+        (base32 "18jkin185vrsc0rl209k1b9an8sy9bg0vr31cazkz6rpjwj0k10p"))))
     (properties `((upstream-name . "BioMoR")))
     (build-system r-build-system)
     (arguments

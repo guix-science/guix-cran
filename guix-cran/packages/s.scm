@@ -26664,51 +26664,6 @@ multiverse analyses (Steegen, Tuerlinckx, Gelman & Vanpaemel, 2016, <doi:
 all specifications.")
     (license license:gpl3)))
 
-(define-public r-specleanr
-  (package
-    (name "r-specleanr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "specleanr" version))
-       (sha256
-        (base32 "03gkjf0imk9by097hraj5k7pyl7dlxfkhmz0dc7293h06d9ir9z7"))))
-    (properties `((upstream-name . "specleanr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-usdm
-                             r-robustbase
-                             r-robust
-                             r-mgcv
-                             r-isotree
-                             r-e1071
-                             r-dbscan
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://anthonybasooma.github.io/specleanr/")
-    (synopsis "Detecting Environmental Outliers in Data Analysis Pipelines")
-    (description
-     "This package provides a framework used to detect and handle outliers during data
-analysis workflows.  Outlier detection is a statistical concept with
-applications in data analysis workflows, highlighting records that are
-suspiciously high or low.  Outlier detection in distribution models was
-initiated by Chapman (1991) (available at
-<https://www.researchgate.net/publication/332537800_Quality_control_and_validation_of_point-sourced_environmental_resource_data>),
-who developed the reverse jackknifing method.  The concept was further developed
-and incorporated into different R packages, including flexsdm (Velazco et al.,
-2022, <doi:10.1111/2041-210X.13874>) and biogeo (Robertson et al., 2016
-<doi:10.1111/ecog.02118>).  We compiled various outlier detection methods
-obtained from the literature, including those elaborated in Dastjerdy et al.
-(2023) <doi:10.3390/geotechnics3020022> and Liu et al. (2008)
-<doi:10.1109/ICDM.2008.17>.  In this package, we introduced the ensembling
-aspect, where multiple outlier detection methods are used to flag the record as
-either an absolute outlier.  The concept can also be applied in general data
-analysis, as well as during the development of species distribution models.")
-    (license license:gpl3+)))
-
 (define-public r-specklestar
   (package
     (name "r-specklestar")
@@ -29020,57 +28975,6 @@ analysis, auto-logistic modeling, sampling models, cluster optimization,
 statistical exploratory tools and raster-based metrics.")
     (license license:gpl3)))
 
-(define-public r-spatialddls
-  (package
-    (name "r-spatialddls")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpatialDDLS" version))
-       (sha256
-        (base32 "1l9rbc5k2fxr7qrv8hhki603bnmg7wbwf2vbizqkl4zk87f33rx4"))))
-    (properties `((upstream-name . "SpatialDDLS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list python))
-    (propagated-inputs (list r-zinbwave
-                             r-tensorflow
-                             r-summarizedexperiment
-                             r-spatialexperiment
-                             r-singlecellexperiment
-                             r-scuttle
-                             r-scran
-                             r-s4vectors
-                             r-rlang
-                             r-reticulate
-                             r-reshape2
-                             r-pbapply
-                             r-matrix
-                             r-keras
-                             r-gtools
-                             r-grr
-                             r-ggpubr
-                             r-ggplot2
-                             r-fnn
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://diegommcc.github.io/SpatialDDLS/")
-    (synopsis
-     "Deconvolution of Spatial Transcriptomics Data Based on Neural Networks")
-    (description
-     "Deconvolution of spatial transcriptomics data based on neural networks and
-single-cell RNA-seq data. @code{SpatialDDLS} implements a workflow to create
-neural network models able to make accurate estimates of cell composition of
-spots from spatial transcriptomics data using deep learning and the meaningful
-information provided by single-cell RNA-seq data.  See Torroja and Sanchez-Cabo
-(2019) <doi:10.3389/fgene.2019.00978> and MaÃ±anes et al. (2024)
-<doi:10.1093/bioinformatics/btae072> to get an overview of the method and see
-some examples of its performance.")
-    (license license:gpl3)))
-
 (define-public r-spatialcovariance
   (package
     (name "r-spatialcovariance")
@@ -29155,6 +29059,49 @@ simultaneous/joint diagonalization of (robust) local covariance matrices.  This
 package is an implementation of the methods described in Bachoc, Genton,
 Nordhausen, Ruiz-Gazen and Virta (2020) <doi:10.1093/biomet/asz079>.")
     (license license:gpl2+)))
+
+(define-public r-spatialatomizer
+  (package
+    (name "r-spatialatomizer")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialAtomizeR" version))
+       (sha256
+        (base32 "089zffw27sn3rhc3q4sxm59q8cg04vzg89zxvn41c6ybqwha86zv"))))
+    (properties `((upstream-name . "spatialAtomizeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-spdep
+                             r-sp
+                             r-sf
+                             r-reshape2
+                             r-raster
+                             r-nimble
+                             r-mass
+                             r-ggplot2
+                             r-dplyr
+                             r-coda
+                             r-biasedurn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bellayqian/spatialAtomizeR")
+    (synopsis
+     "Spatial Analysis with Misaligned Data Using Atom-Based Regression Models")
+    (description
+     "This package implements atom-based regression models (ABRM) for analyzing
+spatially misaligned data.  Provides functions for simulating misaligned spatial
+data, preparing NIMBLE model inputs, running MCMC diagnostics, and comparing
+different spatial analysis methods including dasymetric mapping.  All main
+functions return S3 objects with @code{print()}, @code{summary()}, and
+@code{plot()} methods for intuitive result exploration.  Methods are described
+in Nethery et al. (2023) <doi:10.1101/2023.01.10.23284410>.  Further
+methodological details and software implementation are described in Qian et al.
+(in review).")
+    (license license:expat)))
 
 (define-public r-spatialacc
   (package

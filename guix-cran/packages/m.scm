@@ -19227,13 +19227,13 @@ more easily read, understood, and serviced.")
 (define-public r-mmpca
   (package
     (name "r-mmpca")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmpca" version))
        (sha256
-        (base32 "1kzjwl0sn8cdgw3jw95lg90vgh47iw293ffn7c0fb9kgxisd6dma"))))
+        (base32 "14x9gikw2kqairijs9qks98ma9yrvz7gppvldwkjq4ix8x2jqh36"))))
     (properties `((upstream-name . "mmpca")))
     (build-system r-build-system)
     (arguments
@@ -19247,7 +19247,8 @@ more easily read, understood, and serviced.")
 integrative analysis.  The method finds principal components that describe
 single matrices or that are common to several matrices.  The solutions are
 sparse.  Rank of solutions is automatically selected using cross validation.
-The method is described in Kallus et al. (2019) <@code{arXiv:1911.04927>}.")
+The method is described in Kallus et al. (2019)
+<doi:10.48550/@code{arXiv.1911.04927>}.")
     (license license:gpl3+)))
 
 (define-public r-mmpa
@@ -20669,13 +20670,13 @@ networks and between-subjects networks.")
 (define-public r-mlts
   (package
     (name "r-mlts")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlts" version))
        (sha256
-        (base32 "0v497yz0hss7wh0d2m79z6b9fhzjhh4rw0xyhbbd1y6rp56vq9sf"))))
+        (base32 "146i7gjshrymz54aykgj1ihjww8zi7w1gyaqbib25k40ncf42v16"))))
     (properties `((upstream-name . "mlts")))
     (build-system r-build-system)
     (arguments
@@ -25141,6 +25142,39 @@ distributions.  The test statistics are based on the multilinear empirical
 copula and multipliers are used to compute P-values.  The test of independence
 between random variables appeared in Genest, NeÅ¡lehovÃ¡, RÃ©millard & Murphy
 (2019) and the test of randomness appeared in Nasri (2022).")
+    (license license:gpl3)))
+
+(define-public r-mixedfact
+  (package
+    (name "r-mixedfact")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixedfact" version))
+       (sha256
+        (base32 "0fx0y6d0xvnxyvdwmwirv6a402zhxnmfmafl6h0a0ziljxrpfw40"))))
+    (properties `((upstream-name . "mixedfact")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=mixedfact")
+    (synopsis "Generate and Analyze Mixed-Level Blocked Factorial Designs")
+    (description
+     "Generates blocked designs for mixed-level factorial experiments for a given
+block size.  Internally, it uses finite-field based, collapsed, and heuristic
+methods to construct block structures that minimize confounding between block
+effects and factorial effects.  The package creates the full treatment
+combination table, partitions runs into blocks, and computes detailed
+confounding diagnostics for main effects and two-factor interactions.  It also
+checks orthogonal factorial structure (OFS) and computes efficiencies of
+factorial effects using the methods of Nair and Rao (1948)
+<doi:10.1111/j.2517-6161.1948.tb00005.x>.  When OFS is not satisfied but the
+design has equal treatment replications and equal block sizes, a general method
+based on the C-matrix and custom contrast vectors is used to compute
+efficiencies.  The output includes the generated design, finite-field metadata,
+confounding summaries, OFS diagnostics, and efficiency results.")
     (license license:gpl3)))
 
 (define-public r-mixedcca
@@ -38228,13 +38262,13 @@ performance by eliminating unnecessary computation or data retrieval activities.
 (define-public r-memo
   (package
     (name "r-memo")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memo" version))
        (sha256
-        (base32 "1gqdb8y2khcnd1h2906kz1k7x58lw2ri48s9glfjq6whpj6bzpdk"))))
+        (base32 "0dgx79vvvxinrz1sqdba55y09qqxhic9qwn59ys0aj907cz99rl2"))))
     (properties `((upstream-name . "memo")))
     (build-system r-build-system)
     (arguments
@@ -38243,11 +38277,13 @@ performance by eliminating unnecessary computation or data retrieval activities.
     (propagated-inputs (list r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=memo")
-    (synopsis "In-Memory Caching of Repeated Computations (Memoization)")
+    (synopsis
+     "Hashmaps and Memoization (in-Memory Caching of Repeated Computations)")
     (description
      "This package provides a simple in-memory, LRU cache that can be wrapped around
 any function to memoize it.  The cache is keyed on a hash of the input data
-(using digest') or on pointer equivalence.")
+(using digest') or on pointer equivalence.  Also includes a generic hashmap
+object that can key on any object type.")
     (license license:expat)))
 
 (define-public r-memify
@@ -42931,13 +42967,13 @@ intervals for existing and new locations.")
 (define-public r-mcga
   (package
     (name "r-mcga")
-    (version "3.0.7")
+    (version "3.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcga" version))
        (sha256
-        (base32 "16vy5iy4k5i3mqchrrh8r229hyhwq4n2clvvp2mpz1iasvq7qz4f"))))
+        (base32 "1an6yq28wbfynzn2xwax8i89w9bp9f93fai3kvgbjdig33lfn6g0"))))
     (properties `((upstream-name . "mcga")))
     (build-system r-build-system)
     (arguments

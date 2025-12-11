@@ -12526,35 +12526,48 @@ found at <https://bigsem.psychstat.org>.")
 (define-public r-networkscaleup
   (package
     (name "r-networkscaleup")
-    (version "0.1-2")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkscaleup" version))
        (sha256
-        (base32 "0fvh65750iq2wsjypr35axfdb85ncflc0nmmzl7n5jcyqkfgl5j0"))))
+        (base32 "0jvwywlb9wdw2hai1dyh4wnvnx0169nlzsqvw12kxxbd6lq9rbxc"))))
     (properties `((upstream-name . "networkscaleup")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-rstantools
+    (propagated-inputs (list r-trialr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stanheaders
+                             r-scales
                              r-rstan
-                             r-rcppparallel
+                             r-rmtstat
+                             r-rlang
+                             r-readr
                              r-rcppeigen
                              r-rcpp
+                             r-purrr
                              r-laplacesdemon
+                             r-gridextra
+                             r-glmmtmb
+                             r-ggplot2
+                             r-dplyr
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=networkscaleup")
+    (home-page "https://github.com/ilaga/networkscaleup")
     (synopsis "Network Scale-Up Models for Aggregated Relational Data")
     (description
      "This package provides a variety of Network Scale-up Models for researchers to
-analyze Aggregated Relational Data, mostly through the use of Stan.  In this
-version, the package implements models from Laga, I., Bao, L., and Niu, X (2021)
-<@code{arXiv:2109.10204>}, Zheng, T., Salganik, M. J., and Gelman, A. (2006)
-<doi:10.1198/016214505000001168>, Killworth, P. D., Johnsen, E. C.,
+analyze Aggregated Relational Data, through the use of Stan and @code{glmmTMB}'.
+ Also provides tools for model checking In this version, the package implements
+models from Laga, I., Bao, L., and Niu, X (2023)
+<doi:10.1080/01621459.2023.2165929>, Zheng, T., Salganik, M. J., and Gelman, A.
+(2006) <doi:10.1198/016214505000001168>, Killworth, P. D., Johnsen, E. C.,
 @code{McCarty}, C., Shelley, G. A., and Bernard, H. R. (1998)
 <doi:10.1016/S0378-8733(96)00305-X>, and Killworth, P. D., @code{McCarty}, C.,
 Bernard, H. R., Shelley, G. A., and Johnsen, E. C. (1998)

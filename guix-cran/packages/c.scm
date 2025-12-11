@@ -27130,13 +27130,13 @@ be inserted into R Markdown documents.  This is analogous to the
 (define-public r-cocons
   (package
     (name "r-cocons")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocons" version))
        (sha256
-        (base32 "18lwz284g95kfzf8vbn9s0gp3k32f2m5liz9hf85lb1d0f6r95bw"))))
+        (base32 "0ki59rk7mk1ydw6pq85ssz07m3sw4fyall7zawsglqhq3qq0p5w8"))))
     (properties `((upstream-name . "cocons")))
     (build-system r-build-system)
     (arguments

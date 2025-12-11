@@ -2394,6 +2394,45 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
 (2011)<doi:10.18637/jss.v043.i11>.")
     (license license:gpl3+)))
 
+(define-public r-osdc
+  (package
+    (name "r-osdc")
+    (version "0.9.17")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osdc" version))
+       (sha256
+        (base32 "0mcylqdjnd4h22bxbz9wc58g7q58k3ag9qac17q572mznh67150f"))))
+    (properties `((upstream-name . "osdc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-lifecycle
+                             r-fabricatr
+                             r-duckplyr
+                             r-dplyr
+                             r-dbplyr
+                             r-codecollection
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/steno-aarhus/osdc")
+    (synopsis "Open Source Diabetes Classifier for Danish Registers")
+    (description
+     "The algorithm first identifies a population of individuals from Danish register
+data with any type of diabetes as individuals with two or more inclusion events.
+ Then, it splits this population into individuals with either type 1 diabetes or
+type 2 diabetes by identifying individuals with type 1 diabetes and classifying
+the remainder of the diabetes population as having type 2 diabetes.")
+    (license license:expat)))
+
 (define-public r-osdatahub
   (package
     (name "r-osdatahub")
@@ -10312,13 +10351,13 @@ more information, documentation and examples.")
 (define-public r-omopviewer
   (package
     (name "r-omopviewer")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopViewer" version))
        (sha256
-        (base32 "09p614f9mlqbiiayxn6c1yhh0mdsw5i50ya0y1jbvy8c81913arm"))))
+        (base32 "0flzwr2ay7siqsvhjvcr0z8wv67j6s2l8nwb9xi82gacnb4ry2zz"))))
     (properties `((upstream-name . "OmopViewer")))
     (build-system r-build-system)
     (arguments
@@ -10428,13 +10467,13 @@ functionality is supported.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "08wryr9byammlvhyd6iz738asnalyvf9hqb3lv0clmdkny09j82a"))))
+        (base32 "1msimg51jfgvzf9i22v0xi1s174cy694vz3i62r6iz4yja4bn196"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments

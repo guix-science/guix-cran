@@ -7696,13 +7696,13 @@ model for time series forecasting.For method details see Zhang, GP (2003)
 (define-public r-arima2
   (package
     (name "r-arima2")
-    (version "3.4.2")
+    (version "3.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arima2" version))
        (sha256
-        (base32 "0hmy9c6ba1v7l0zdpfrl3cryns3wdqfi4vg3bnhicwkihl278fkv"))))
+        (base32 "1s9xc8m6hnyh1pxc52khafiwamx3wmqzwzv3p5asp6n511bhhmfl"))))
     (properties `((upstream-name . "arima2")))
     (build-system r-build-system)
     (arguments
@@ -7721,7 +7721,7 @@ or equal to that of the likelihood obtained by fitting the same model using the
 optimization of model likelihoods, which is a necessary condition for performing
 likelihood ratio tests.  This package relies heavily on the source code of the
 @code{arima()} function of the stats package.  For more information, please see
-Jesse Wheeler and Edward L. Ionides (2025) <doi:10.1371/journal.pcbi.1012032>.")
+Jesse Wheeler and Edward L. Ionides (2025) <doi:10.1371/journal.pone.0333993>.")
     (license license:gpl3+)))
 
 (define-public r-arigamyannsvr
@@ -13061,13 +13061,13 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
 (define-public r-anomo
   (package
     (name "r-anomo")
-    (version "1.0.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anomo" version))
        (sha256
-        (base32 "1pf663vdv8027na4hfpz337p9fqz80x6wci0p2krpbkrll12v77q"))))
+        (base32 "1yxj9qvmg1p3q2c3ijcv8c98skh99vflsdsv677l59pipbb6ijsp"))))
     (properties `((upstream-name . "anomo")))
     (build-system r-build-system)
     (arguments
@@ -13080,7 +13080,7 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
     (description
      "Analysis of moderation (ANOMO) method conceptualizes the difference and
 equivalence tests as a moderation problem to test the difference and equivalence
-of two means (or two effects in two studies).")
+of two estimates (e.g., two means or two effects).")
     (license license:gpl3)))
 
 (define-public r-anominate

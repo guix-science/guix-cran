@@ -439,6 +439,51 @@ number of observations, etc.) as the model under consideration.")
 Cox models and return tidy result.")
     (license license:gpl3)))
 
+(define-public r-ezbakr
+  (package
+    (name "r-ezbakr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EZbakR" version))
+       (sha256
+        (base32 "0d9k68zw81sf43liw3nbq3102rgnk4fbmy54wfac1kh8pn8z81gp"))))
+    (properties `((upstream-name . "EZbakR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tximport
+                             r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://isaacvock.github.io/EZbakR/")
+    (synopsis
+     "Analyze and Integrate Any Type of Nucleotide Recoding RNA-Seq Data")
+    (description
+     "This package provides a complete rewrite and reimagining of @code{bakR} (see
+Vock et al. (2025) <doi:10.1371/journal.pcbi.1013179>).  Designed to support a
+wide array of analyses of nucleotide recoding RNA-seq (NR-seq) datasets of any
+type, including @code{TimeLapse-seq/SLAM-seq/TUC-seq},
+Start-@code{TimeLapse-seq} (STL-seq), TT-@code{TimeLapse-seq} (TT-TL-seq), and
+subcellular NR-seq.  E@code{ZbakR} extends standard NR-seq standard NR-seq
+mutational modeling to support multi-label analyses (e.g., 4@code{sU} and
+6@code{sG} dual labeling), and implements an improved hierarchical model to
+better account for transcript-to-transcript variance in metabolic label
+incorporation.  E@code{ZbakR} also generalized dynamical systems modeling of
+NR-seq data to support analyses of premature @code{mRNA} processing and flow
+between subcellular compartments.  Finally, E@code{ZbakR} implements flexible
+and well-powered comparative analyses of all estimated parameters via design
+matrix-specified generalized linear modeling.")
+    (license license:expat)))
+
 (define-public r-ez-combat
   (package
     (name "r-ez-combat")
@@ -3859,13 +3904,13 @@ ISBN:978-0132892314).")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "0cmh0d9jb98d14a5vszhbln5bps88zmcrqki4wk937qi7l43ffvf"))))
+        (base32 "0m70nhy48wv72yidsqq1qc5p9j7s8pv2nad2p7c0271lwga83x4a"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -16665,41 +16710,6 @@ this package is developed in C++'.")
     (description
      "This package provides a light, simple tool for sending emails with minimal
 dependencies.")
-    (license license:gpl3)))
-
-(define-public r-emas
-  (package
-    (name "r-emas")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EMAS" version))
-       (sha256
-        (base32 "11s6lq6s8pn7zl93idkhim58v5q5nsckjcsm85wyyl6fywqprm2a"))))
-    (properties `((upstream-name . "EMAS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-qqman
-                             r-multilevel
-                             r-minfi
-                             r-mediation
-                             r-lavaan
-                             r-illuminahumanmethylationepicanno-ilm10b4-hg19
-                             r-illuminahumanmethylation450kanno-ilmn12-hg19
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=EMAS")
-    (synopsis "Epigenome-Wide Mediation Analysis Study")
-    (description
-     "DNA methylation is essential for human, and environment can change the DNA
-methylation and affect body status.  Epigenome-Wide Mediation Analysis Study
-(EMAS) can find potential mediator @code{CpG} sites between exposure (x) and
-outcome (y) in epigenome-wide.  For more information on the methods we used,
-please see the following references: Tingley, D. (2014)
-<doi:10.18637/jss.v059.i05>, Turner, S. D. (2018) <doi:10.21105/joss.00731>,
-Rosseel, D. (2012) <doi:10.18637/jss.v048.i02>.")
     (license license:gpl3)))
 
 (define-public r-emar

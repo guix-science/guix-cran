@@ -1861,13 +1861,13 @@ MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
 (define-public r-rvec
   (package
     (name "r-rvec")
-    (version "0.0.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvec" version))
        (sha256
-        (base32 "1jv9va1xkj5wq7fr50s8qkbyapfv9ij2qbqhys460gdxk1qk67kp"))))
+        (base32 "0mips1jpcnkd295g4klfcc813p99wk45mdskxfkg27jfhjhrvkil"))))
     (properties `((upstream-name . "rvec")))
     (build-system r-build-system)
     (arguments
@@ -1878,6 +1878,8 @@ MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
                              r-tibble
                              r-rlang
                              r-matrixstats
+                             r-matrix
+                             r-lifecycle
                              r-glue
                              r-cli))
     (native-inputs (list r-knitr))
@@ -41768,13 +41770,13 @@ components for statistical modeling.")
 (define-public r-ready4
   (package
     (name "r-ready4")
-    (version "0.1.18")
+    (version "0.1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ready4" version))
        (sha256
-        (base32 "1inmxzb4lzrbxk7qzbxh2dc0s75idk1yma522n1sy6ff6g62q8dg"))))
+        (base32 "1k2cmqb5p9wm4zfnbhq280g22ppzdqn0dladb57pqs20qavfrirg"))))
     (properties `((upstream-name . "ready4")))
     (build-system r-build-system)
     (arguments
