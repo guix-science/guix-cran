@@ -2624,6 +2624,36 @@ methods.  Original data set is available at
 This package fixes incorrect annotations in the original data sets.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-ruido
+  (package
+    (name "r-ruido")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ruido" version))
+       (sha256
+        (base32 "06lk8ksvh31rqxk0x044fhj3dgj4ls1jvpw5nnan5w66z4xqv949"))))
+    (properties `((upstream-name . "Ruido")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tuner r-signal r-nortest))
+    (home-page "https://github.com/Arthurigorr/Ruido")
+    (synopsis "Soundscape Background Noise, Power, and Saturation")
+    (description
+     "Accessible and flexible implementation of three ecoacoustic indices that are
+less commonly available in existing R frameworks: Background Noise, Soundscape
+Power and Soundscape Saturation.  The functions were design to accommodate a
+variety of sampling designs.  Users can tailor calculations by specifying
+spectrogram time bin size, amplitude thresholds and normality tests.  By
+simplifying computation and standardizing reproducible methods, the package aims
+to support ecoacoustics studies.  For more details about the indices read Towsey
+(2014) <doi:10.1016/j.procs.2014.05.063> and Burivalova (2017)
+<doi:10.1111/cobi.12968>.")
+    (license license:expat)))
+
 (define-public r-rugarch
   (package
     (name "r-rugarch")
@@ -3462,13 +3492,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "1s5ywwrdp0l987jyd3kc1zh5rkkly21l8sbk9dicdpb83h4zp4z3"))))
+        (base32 "0shrkz6sgfr7s340iayc5z8sd6053j8i1q2sy3kq8lvd5bwkd4cf"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -4864,13 +4894,13 @@ related to the Microsoft Office software suite, including Microsoft Word
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.14")
+    (version "0.6.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "175cv1720lgh8hrvsq3cvf4ygsic2spjgl7jwg1pcksr6djbb9a7"))))
+        (base32 "100n5lh5bd6idvy26g3chv260kdvs2rh5ai1iq5rnr6vwx7182fv"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (arguments
@@ -7306,78 +7336,6 @@ Sample data sets lake_data & lake_RSI processed from Bush, Silman & Urrego
 (2004) <doi:10.1126/science.1090795> Sample data set January_PDO from NOAA:
 <https://www.ncei.noaa.gov/access/monitoring/pdo/>.")
     (license license:expat)))
-
-(define-public r-rshape
-  (package
-    (name "r-rshape")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rSHAPE" version))
-       (sha256
-        (base32 "0z6dizsxlkmaymbd24b1m1i8kmndcf21nxxnyfzq6gvdii7bal4h"))))
-    (properties `((upstream-name . "rSHAPE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam
-                             r-sn
-                             r-rsqlite
-                             r-foreach
-                             r-evd
-                             r-doparallel
-                             r-dbi
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=rSHAPE")
-    (synopsis "Simulated Haploid Asexual Population Evolution")
-    (description
-     "In silico experimental evolution offers a cost-and-time effective means to test
-evolutionary hypotheses.  Existing evolutionary simulation tools focus on
-simulations in a limited experimental framework, and tend to report on only the
-results presumed of interest by the tools designer.  The R-package for Simulated
-Haploid Asexual Population Evolution ('@code{rSHAPE}') addresses these concerns
-by implementing a robust simulation framework that outputs complete population
-demographic and genomic information for in silico evolving communities.
-Allowing more than 60 parameters to be specified, @code{rSHAPE'	simulates}
-evolution across discrete time-steps for an evolving community of haploid
-asexual populations with binary state genomes.  These settings are for the
-current state of @code{rSHAPE} and future steps will be to increase the breadth
-of evolutionary conditions permitted.  At present, most effort was placed into
-permitting varied growth models to be simulated (such as constant size,
-exponential growth, and logistic growth) as well as various fitness landscape
-models to reflect the evolutionary landscape (e.g.: Additive, House of Cards -
-Stuart Kauffman and Simon Levin (1987) <doi:10.1016/S0022-5193(87)80029-2>, NK -
-Stuart A. Kauffman and Edward D. Weinberger (1989)
-<doi:10.1016/S0022-5193(89)80019-0>, Rough Mount Fuji - Neidhart, Johannes and
-Szendro, Ivan G and Krug, Joachim (2014) <doi:10.1534/genetics.114.167668>).
-This package includes numerous functions though users will only need
-@code{defineSHAPE()}, @code{runSHAPE()}, @code{shapeExperiment()} and
-@code{summariseExperiment()}.  All other functions are called by these main
-functions and are likely only to be on interest for someone wishing to develop
-@code{rSHAPE}'.  Simulation results will be stored in files which are exported
-to the directory referenced by the shape_@code{workDir} option (defaults to
-@code{tempdir()} but do change this by passing a folderpath argument for
-@code{workDir} when calling @code{defineSHAPE()} if you plan to make use of your
-results beyond your current session). @code{rSHAPE} will generate numerous
-replicate simulations for your defined range of experimental parameters.  The
-experiment will be built under the experimental working directory (i.e.:
-referenced by the option shape_@code{workDir} set using @code{defineSHAPE()} )
-where individual replicate simulation results will be stored as well as
-processed results which I have made in an effort to facilitate analyses by
-automating collection and processing of the potentially thousands of files which
-will be created.  On that note, @code{rSHAPE} implements a robust and flexible
-framework with highly detailed output at the cost of computational efficiency
-and potentially requiring significant disk space (generally gigabytes but up to
-tera-bytes for very large simulation efforts).  So, while @code{rSHAPE} offers a
-single framework in which we can simulate evolution and directly compare the
-impacts of a wide range of parameters, it is not as quick to run as other in
-silico simulation tools which focus on a single scenario with limited output.
-There you have it, @code{rSHAPE} offers you a less restrictive in silico
-evolutionary playground than other tools and I hope you enjoy testing your
-hypotheses.")
-    (license license:gpl3)))
 
 (define-public r-rsghb
   (package
@@ -22096,20 +22054,20 @@ multi-criteria decision analysis methods, Volume 24, e100762
 (define-public r-rmcc
   (package
     (name "r-rmcc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMCC" version))
        (sha256
-        (base32 "0nzbjnayp85541pnibal517dhc0s7mhlllshx36m44lv2x3figpl"))))
+        (base32 "028xsvszi48kvgx4cg7v5jds1si5qgjl7f1ky7z9w5cba2mmnlyl"))))
     (properties `((upstream-name . "RMCC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://cran.r-project.org/package=RMCC")
+    (home-page "https://github.com/r-lidar/RMCC")
     (synopsis "Airborne LiDAR Filtering Method Based on Multiscale Curvature")
     (description
      "Multiscale Curvature Classification of ground returns in 3-D @code{LiDAR} point
@@ -26292,13 +26250,13 @@ is available at the RInside website as well.")
 (define-public r-ring
   (package
     (name "r-ring")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ring" version))
        (sha256
-        (base32 "0mmjlbmv46wz2ph2cmkxrn1kldih581wpfj8398vrajajkx8k35l"))))
+        (base32 "1lnl4sfkfihg14f5xp6bq13fsxbm7fgsk8pcyg2kmm3a6vxbgvdf"))))
     (properties `((upstream-name . "ring")))
     (build-system r-build-system)
     (arguments
@@ -26306,7 +26264,7 @@ is available at the RInside website as well.")
       #:tests? #f))
     (propagated-inputs (list r-r6))
     (native-inputs (list r-knitr))
-    (home-page "https://mrc-ide.gitub.io/ring")
+    (home-page "https://mrc-ide.github.io/ring/")
     (synopsis "Circular / Ring Buffers")
     (description
      "Circular / ring buffers in R and C. There are a couple of different buffers here
@@ -33338,19 +33296,19 @@ details.")
 (define-public r-resilience
   (package
     (name "r-resilience")
-    (version "2024.1.2")
+    (version "2025.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resilience" version))
        (sha256
-        (base32 "05rwyw77sws7d04gxafj41x5amih39lf63mb71vn6b16fgf6mg61"))))
+        (base32 "0gxi71r0rd8v67ax8v7kbxy0ghvlr3x47rsgjw13bhhvykihg809"))))
     (properties `((upstream-name . "resilience")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nptest r-foreach r-doparallel))
+    (propagated-inputs (list r-nptest r-mice r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=resilience")
     (synopsis "Predictors of Resilience to a Stressor in a Single-Arm Study")
     (description
@@ -33359,7 +33317,7 @@ experiences the stressor.  The simplistic approach of regressing change versus
 baseline yields biased estimates due to regression-to-the-mean.  This package
 provides a method to correct the bias.  It also allows covariates to be
 included.  The method implemented in the package is described in Varadhan, R.,
-Zhu, J., and Bandeen-Roche, K (2023), Biostatistics (To appear).")
+Zhu, J., and Bandeen-Roche, K (2024), Biostatistics 25(4): 1094-1111.")
     (license license:gpl2+)))
 
 (define-public r-residentialenergyconsumption
@@ -34050,13 +34008,13 @@ objects into R. It requires EQS 6.2 (build 98 or higher).")
 (define-public r-reqres
   (package
     (name "r-reqres")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reqres" version))
        (sha256
-        (base32 "1pmgcjxzidxx0f4b4g9hpqdlam7yky3pxyc24djzqw2137cvr9kf"))))
+        (base32 "1q8lg25vc4ksdslm579z11v5f27hdxanzdcgpjrwrsh1imasggdy"))))
     (properties `((upstream-name . "reqres")))
     (build-system r-build-system)
     (arguments
@@ -39253,45 +39211,6 @@ up-to-date information on species conservation status, supporting biodiversity
 research and conservation efforts.")
     (license license:expat)))
 
-(define-public r-redistverse
-  (package
-    (name "r-redistverse")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "redistverse" version))
-       (sha256
-        (base32 "0ddc0j3cw5fwzk29fmagik71yijpcqpfxnzyqm4gd6r2px6q2mln"))))
-    (properties `((upstream-name . "redistverse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tinytiger
-                             r-sf
-                             r-redistmetrics
-                             r-redist
-                             r-pl94171
-                             r-ggredist
-                             r-geomander
-                             r-easycensus
-                             r-cli
-                             r-censable
-                             r-birdie
-                             r-baf
-                             r-alarmdata))
-    (home-page "https://github.com/alarm-redist/redistverse")
-    (synopsis "Easily Install and Load Redistricting Software")
-    (description
-     "Easy installation, loading, and control of packages for redistricting data
-downloading, spatial data processing, simulation, analysis, and visualization.
-This package makes it easy to install and load multiple redistverse packages at
-once.  The redistverse is developed and maintained by the Algorithm-Assisted
-Redistricting Methodology (ALARM) Project.  For more details see
-<https://alarm-redist.org>.")
-    (license license:expat)))
-
 (define-public r-redistmetrics
   (package
     (name "r-redistmetrics")
@@ -42636,31 +42555,6 @@ sequence, source of the sequence...).  An example of record can be found at
 <https://www.ncbi.nlm.nih.gov/nuccore/HE799070>.")
     (license license:gpl3)))
 
-(define-public r-read-dbc
-  (package
-    (name "r-read-dbc")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "read.dbc" version))
-       (sha256
-        (base32 "1z30zx60l3v3zka2s093jhp499ffzw0lbvllxypdg8lyvjxkywdv"))))
-    (properties `((upstream-name . "read.dbc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-foreign))
-    (home-page "https://github.com/danicat/read.dbc")
-    (synopsis "Read Data Stored in 'DBC' (Compressed 'DBF') Files")
-    (description
-     "This package provides functions for reading and decompressing the DBC
-(compressed DBF') files.  Please note that this is the file format used by the
-Brazilian Ministry of Health ('DATASUS') to publish healthcare datasets.  It is
-not related to the @code{FoxPro} or CANdb DBC file formats.")
-    (license license:agpl3)))
-
 (define-public r-read
   (package
     (name "r-read")
@@ -44441,13 +44335,13 @@ environmental variables and doing returns-to-scale tests.")
 (define-public r-rde
   (package
     (name "r-rde")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rde" version))
        (sha256
-        (base32 "1zw9gdh90hl0wc5c0xwl5x7566r611wk73sbqdmpzpswjyyl9aqm"))))
+        (base32 "1gs348550arpd2lr4aklyw66bchk5agb5hq6gff4n06fq3ag8vv5"))))
     (properties `((upstream-name . "rde")))
     (build-system r-build-system)
     (arguments
@@ -53917,13 +53811,13 @@ now available in the unix package.")
 (define-public r-rapp
   (package
     (name "r-rapp")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rapp" version))
        (sha256
-        (base32 "18d62wn808673qx3qclvi119i29r8pzm634x2zyy4mx59ixka9l4"))))
+        (base32 "1yvppzhlwh1hc5k66fzixlm4qyj31mxngngavyhdj80d37jlrwas"))))
     (properties `((upstream-name . "Rapp")))
     (build-system r-build-system)
     (arguments
@@ -57204,106 +57098,6 @@ they should be named in a data frame.  See
 <https://github.com/dnychka/Radiosonde> for the package home page.")
     (license license:gpl2+)))
 
-(define-public r-radiant-multivariate
-  (package
-    (name "r-radiant-multivariate")
-    (version "1.6.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "radiant.multivariate" version))
-       (sha256
-        (base32 "173ic2cb81y5284pgm3kq7sccp033midc0p83qai7vhbmsbs4c3v"))))
-    (properties `((upstream-name . "radiant.multivariate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny
-                             r-scales
-                             r-rlang
-                             r-radiant-model
-                             r-radiant-data
-                             r-psych
-                             r-polycor
-                             r-patchwork
-                             r-mass
-                             r-magrittr
-                             r-lubridate
-                             r-import
-                             r-gparotation
-                             r-gower
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-clustmixtype
-                             r-car))
-    (home-page "https://github.com/radiant-rstats/radiant.multivariate/")
-    (synopsis
-     "Multivariate Menu for Radiant: Business Analytics using R and Shiny")
-    (description
-     "The Radiant Multivariate menu includes interfaces for perceptual mapping, factor
-analysis, cluster analysis, and conjoint analysis.  The application extends the
-functionality in radiant.data'.")
-    (license (list license:agpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-radiant-model
-  (package
-    (name "r-radiant-model")
-    (version "1.6.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "radiant.model" version))
-       (sha256
-        (base32 "07dh527a2snr9p2rd6m6bb85fx6s6180y5bjn661m6g3akbrj741"))))
-    (properties `((upstream-name . "radiant.model")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-xgboost
-                             r-vip
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-stringi
-                             r-shiny
-                             r-scales
-                             r-sandwich
-                             r-rpart
-                             r-rlang
-                             r-ranger
-                             r-radiant-data
-                             r-radiant-basics
-                             r-psych
-                             r-pdp
-                             r-patchwork
-                             r-nnet
-                             r-neuralnettools
-                             r-magrittr
-                             r-lubridate
-                             r-import
-                             r-ggrepel
-                             r-ggplot2
-                             r-e1071
-                             r-dplyr
-                             r-diagrammer
-                             r-data-tree
-                             r-car
-                             r-broom))
-    (home-page "https://github.com/radiant-rstats/radiant.model/")
-    (synopsis "Model Menu for Radiant: Business Analytics using R and Shiny")
-    (description
-     "The Radiant Model menu includes interfaces for linear and logistic regression,
-naive Bayes, neural networks, classification and regression trees, model
-evaluation, collaborative filtering, decision analysis, and simulation.  The
-application extends the functionality in radiant.data'.")
-    (license (list license:agpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-radiant-design
   (package
     (name "r-radiant-design")
@@ -57373,39 +57167,6 @@ radiant.data'.")
 limit theorem simulation, comparing means and proportions, goodness-of-fit
 testing, cross-tabs, and correlation.  The application extends the functionality
 in radiant.data'.")
-    (license (list license:agpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-radiant
-  (package
-    (name "r-radiant")
-    (version "1.6.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "radiant" version))
-       (sha256
-        (base32 "1v4vb5dpqljpk3xya26psg988v17nfcybjzw3dnp6bi77x24cq5k"))))
-    (properties `((upstream-name . "radiant")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny
-                             r-radiant-multivariate
-                             r-radiant-model
-                             r-radiant-design
-                             r-radiant-data
-                             r-radiant-basics
-                             r-import))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/radiant-rstats/radiant")
-    (synopsis "Business Analytics using R and Shiny")
-    (description
-     "This package provides a platform-independent browser-based interface for
-business analytics in R, based on the shiny package.  The application combines
-the functionality of radiant.data', radiant.design', radiant.basics',
-radiant.model', and radiant.multivariate'.")
     (license (list license:agpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -57703,6 +57464,49 @@ data analysis and visualization can be done easily.")
      "Interface for loading data from @code{ActiveCampaign} API v3
 <https://developers.activecampaign.com/reference>.  Provide functions for
 getting data by deals, contacts, accounts, campaigns and messages.")
+    (license license:expat)))
+
+(define-public r-racmemeev
+  (package
+    (name "r-racmemeev")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rACMEMEEV" version))
+       (sha256
+        (base32 "0jpjgx1ykfglq9pv3li6gjrmz5672rxyxwzcrl0icnsncpck6k2d"))))
+    (properties `((upstream-name . "rACMEMEEV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-snow
+                             r-rstan
+                             r-rjags
+                             r-reshape2
+                             r-patchwork
+                             r-parallelly
+                             r-mcmcpack
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-dosnow
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/westford14/rACME-MEEV")
+    (synopsis "Multi-Variate Measurement Error Adjustment")
+    (description
+     "This package provides a methodology to perform multivariate measurement error
+adjustment using external validation data.  Allows users to remove the
+attenuating effect of measurement error by incorporating a distribution of
+external validation data, and allows for plotting of all resultant adjustments.
+Sensitivity analyses can also be run through this package to test how different
+ranges of validity coefficients can impact the effect of the measurement error
+adjustment.  The methods implemented in this package are based on the work by
+Muoka, A., Agogo, G., Ngesa, O., Mwambi, H. (2020):
+<doi:10.12688/f1000research.27892.1>.")
     (license license:expat)))
 
 (define-public r-racmacs

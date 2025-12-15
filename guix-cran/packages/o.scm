@@ -216,13 +216,13 @@ theory (Viscarra et al. (2006) <doi:10.1016/j.geoderma.2005.07.017>).")
 (define-public r-oxcaar
   (package
     (name "r-oxcaar")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oxcAAR" version))
        (sha256
-        (base32 "1szifw978qr7v8n178jhg4ap2jwvfnwjl2izbbiydwx8q1fyj2q4"))))
+        (base32 "0gsmk0xx27x9qn3649h1v6jnmbffawg60agq6c9q4waxq6hi5vj7"))))
     (properties `((upstream-name . "oxcAAR")))
     (build-system r-build-system)
     (arguments
@@ -3369,13 +3369,13 @@ help user managing their complex org files.")
 (define-public r-orgheatmap
   (package
     (name "r-orgheatmap")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OrgHeatmap" version))
        (sha256
-        (base32 "1nw02s7szm9spw9y4x1kmsm788k9mb9d7q5y0v04dpgy6mwxj4vy"))))
+        (base32 "15b34ssn4v40cpan9yv20kkz9abwvv1g70bn153c8rlbd0i5y3gk"))))
     (properties `((upstream-name . "OrgHeatmap")))
     (build-system r-build-system)
     (arguments
@@ -4625,13 +4625,13 @@ your workflow for optimal productivity.")
 (define-public r-orbital
   (package
     (name "r-orbital")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbital" version))
        (sha256
-        (base32 "1l2ivd7l344lwsfqksgapipz4h67j7djkrk4c6a30vx9zcyk99w2"))))
+        (base32 "160l1vpj68f9k1b1nqbrh3ijnx5g96il1jn5iai9yxxkc457yd75"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
     (arguments

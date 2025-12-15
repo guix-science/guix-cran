@@ -501,44 +501,6 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
 <doi:10.3758/s13428-015-0594-z>.")
     (license license:gpl3+)))
 
-(define-public r-quincunx
-  (package
-    (name "r-quincunx")
-    (version "0.1.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quincunx" version))
-       (sha256
-        (base32 "10qnp8avx09zhzzn64g2gbp4sl3jbxz569q4fhkf8d4ia3qhihm2"))))
-    (properties `((upstream-name . "quincunx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-writexl
-                             r-vroom
-                             r-tidyr
-                             r-tidyjson
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-memoise
-                             r-lubridate
-                             r-httr
-                             r-glue
-                             r-dplyr))
-    (home-page "https://github.com/ramiromagno/quincunx")
-    (synopsis "REST API Client for the 'PGS' Catalog")
-    (description
-     "Programmatic access to the PGS Catalog.  This package provides easy access to
-PGS Catalog data by accessing the REST API <https://www.pgscatalog.org/rest/>.")
-    (license license:expat)))
-
 (define-public r-quiltr
   (package
     (name "r-quiltr")
@@ -4868,13 +4830,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "1fqgy85ycg4hri5a88whsgwcc88j80f3pyzai4rdlxmmza6ac840"))))
+        (base32 "1cq6aprvgx6ljchv9898s4i38j7dbnax1ds8gl0kvd44fngy7pik"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments

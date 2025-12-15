@@ -3327,6 +3327,31 @@ restrictions on CRAN, the full package sources are only available from the
 project homepage.")
     (license license:gpl3+)))
 
+(define-public r-klassr
+  (package
+    (name "r-klassr")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "klassR" version))
+       (sha256
+        (base32 "1i1qqv6mh36ddwbyh16mj4qxc6jmknss07gd0xgf1nnhzf7irbqq"))))
+    (properties `((upstream-name . "klassR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tm r-jsonlite r-igraph r-httr))
+    (home-page "https://statisticsnorway.github.io/ssb-klassr/")
+    (synopsis "Classifications for Statistics Norway")
+    (description
+     "This package provides functions to search, retrieve, apply and update
+classification standards and code lists using Statistics Norway's API
+<https://www.ssb.no/klass> from the system KLASS'.  Retrieves classifications by
+date with options to choose language, hierarchical level and formatting.")
+    (license license:expat)))
+
 (define-public r-klar
   (package
     (name "r-klar")
@@ -5526,45 +5551,6 @@ between two sets of high-dimensional variables are different or not across two
 conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
     (license license:gpl2+)))
 
-(define-public r-kerastuner
-  (package
-    (name "r-kerastuner")
-    (version "0.1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kerastuneR" version))
-       (sha256
-        (base32 "05hyhgbc2533az1yrjj8v8idky0xwn20mxd92dna0is6pddf75hv"))))
-    (properties `((upstream-name . "kerastuneR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyjson
-                             r-tensorflow
-                             r-rstudioapi
-                             r-rjsonio
-                             r-rjson
-                             r-reticulate
-                             r-plotly
-                             r-magick
-                             r-echarts4r
-                             r-dplyr
-                             r-data-table
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/EagerAI/kerastuneR/")
-    (synopsis "Interface to 'Keras Tuner'")
-    (description
-     "Keras Tuner <https://keras-team.github.io/keras-tuner/> is a hypertuning
-framework made for humans.  It aims at making the life of AI practitioners,
-hypertuner algorithm creators and model designers as simple as possible by
-providing them with a clean and easy to use API for hypertuning.  Keras Tuner
-makes moving from a base model to a hypertuned one quick and easy by only
-requiring you to change a few lines of code.")
-    (license license:asl2.0)))
-
 (define-public r-kerasnip
   (package
     (name "r-kerasnip")
@@ -5825,20 +5811,19 @@ information about Kendall random walks see Jasiulis-GoÅdyn (2014)
 (define-public r-kendallknight
   (package
     (name "r-kendallknight")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kendallknight" version))
        (sha256
-        (base32 "0502bp1ri2681i7i643mnyjcpv6agksw3smwbdqrm5gsg53wcvsz"))))
+        (base32 "08vn422ail801plzb05fhlzvzv8wvs8malg9nl9x5b44j70nk18j"))))
     (properties `((upstream-name . "kendallknight")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-cpp11))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-cpp4r))
     (home-page "https://pacha.dev/kendallknight/")
     (synopsis
      "Efficient Implementation of Kendall's Correlation Coefficient Computation")

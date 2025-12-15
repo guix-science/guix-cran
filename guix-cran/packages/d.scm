@@ -6778,13 +6778,13 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
 (define-public r-dr-sc
   (package
     (name "r-dr-sc")
-    (version "3.6")
+    (version "3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DR.SC" version))
        (sha256
-        (base32 "0j58zwqsk4hh85s0g7r1bx24sbfq1q1iavwjy7lr9g9kgkm7sxmi"))))
+        (base32 "1ca155vpgagcn87njcj5n579djgrfbznzx73yxss9z2mh90pqnnp"))))
     (properties `((upstream-name . "DR.SC")))
     (build-system r-build-system)
     (arguments
@@ -7739,13 +7739,13 @@ Citations: Hoehn et al (2022) <doi:10.1371/journal.pcbi.1009885>, Hoehn et al
 (define-public r-downscale
   (package
     (name "r-downscale")
-    (version "5.1.3")
+    (version "5.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "downscale" version))
        (sha256
-        (base32 "0cngqa1rg5g689ja8p7i61kbngryivl33x0y4naxs8b7kk07iyxc"))))
+        (base32 "09kn03hzf89vrma77jai8mm0z1xk2yxm1flswl9iapm84v67k8h3"))))
     (properties `((upstream-name . "downscale")))
     (build-system r-build-system)
     (arguments
@@ -9142,6 +9142,32 @@ editorial board) and the subjects they teach.  For more details see Pagliosa and
 Nascimento (2021)
 <https://repositorio.ufsc.br/bitstream/handle/123456789/231602/@code{ManualLattesGeociencias11_2021_versaobeta%20%281%29.pdf?sequence=1&isAllowed=y>}.")
     (license license:gpl3+)))
+
+(define-public r-doicreator
+  (package
+    (name "r-doicreator")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DOIcreator" version))
+       (sha256
+        (base32 "0gdnjyychafd0i0x4fpn31rwwd0pbgyjf1q3qy36chiyn5j4yxxz"))))
+    (properties `((upstream-name . "DOIcreator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-officer r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DOIcreator")
+    (synopsis "Append DOIs to References in Word Documents")
+    (description
+     "Read Word documents containing bibliographic references, search for
+corresponding DOIs using the Crossref API, and append the retrieved DOIs
+directly to the references.  Supports parallel processing for faster retrieval
+and produces a new Word document with numbered references including DOIs.")
+    (license license:expat)))
 
 (define-public r-dogoftest
   (package
@@ -11854,13 +11880,13 @@ ecological systems.")
 (define-public r-divine
   (package
     (name "r-divine")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIVINE" version))
        (sha256
-        (base32 "1sgvmglxl1fazzrpwfxcmxyq04x5k3z0daqwy4yi296a4awf50b0"))))
+        (base32 "1d7zvncz5qrkwd6qy2igmnxm58vrvkjqj8xibrdw6xiyac8x14nk"))))
     (properties `((upstream-name . "DIVINE")))
     (build-system r-build-system)
     (arguments
@@ -17472,13 +17498,13 @@ Gahegan (2018) <doi:10.1186/s12966-018-0648-6>.")
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "11y3cbh81csnmzrvwx157gyzv0cra12mdgy2zjmg20bgjf3i7xh9"))))
+        (base32 "0ij4fww4pal0dzckny6j2c1gni6p385flry0agn1dg6ic9hrgj04"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (arguments
@@ -17860,13 +17886,13 @@ stage, estimates the treatment effects.")
 (define-public r-did
   (package
     (name "r-did")
-    (version "2.1.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "did" version))
        (sha256
-        (base32 "07r4m326n2gmgmf5ym5y72xg1xin771172rcpk0xkz6v344lwf9j"))))
+        (base32 "18z8p5jrajcbb7pwxvl5j0jd7rhcidqlay2hfmzg3grhabqhmg4j"))))
     (properties `((upstream-name . "did")))
     (build-system r-build-system)
     (arguments
@@ -17875,10 +17901,12 @@ stage, estimates the treatment effects.")
     (propagated-inputs (list r-tidyr
                              r-pbapply
                              r-matrix
-                             r-ggpubr
                              r-ggplot2
                              r-generics
+                             r-fastglm
+                             r-dreamerr
                              r-drdid
+                             r-data-table
                              r-bmisc))
     (native-inputs (list r-knitr))
     (home-page "https://bcallaway11.github.io/did/")
@@ -20023,13 +20051,13 @@ column will be converted to the multi-level hierarchy.")
 (define-public r-dextergui
   (package
     (name "r-dextergui")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dextergui" version))
        (sha256
-        (base32 "0rn14dgqmfqp1pzizqj1yq0qkzc829n7k64vf3ak2q3jn47jsncc"))))
+        (base32 "0bwk8aq74rsdnls7pys5p1rq0ln67zawqg07bqdy82p30j96cjq5"))))
     (properties `((upstream-name . "dextergui")))
     (build-system r-build-system)
     (arguments
@@ -20054,7 +20082,6 @@ column will be converted to the multi-level hierarchy.")
                              r-survey
                              r-shinyjs
                              r-shinyfiles
-                             r-shinybs
                              r-shiny
                              r-rlang
                              r-readxl
@@ -21633,13 +21660,13 @@ different graphical interface.")
 (define-public r-descriptiverepresentationcalculator
   (package
     (name "r-descriptiverepresentationcalculator")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DescriptiveRepresentationCalculator" version))
        (sha256
-        (base32 "0p5z2zkrnkb0k4fsxjqjkc52n2ynhva25wg2ylxw3packnvcjx3r"))))
+        (base32 "1j0drz5yr73ycmqxg3cqy3d3q7qlgxdjc239mbhqbwnrsir1gwc0"))))
     (properties `((upstream-name . "DescriptiveRepresentationCalculator")))
     (build-system r-build-system)
     (arguments
@@ -26681,13 +26708,13 @@ see Voss, Rothermund, and Voss (2004) <doi:10.3758/BF03196893>, Voss and Voss
 (define-public r-ddml
   (package
     (name "r-ddml")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddml" version))
        (sha256
-        (base32 "1b0cl31l0zl02mxxqjqakr3q92frjy45qs41im5yb7hky29mkk70"))))
+        (base32 "12mn2hsqs0nkx2xginr4xk6bg07g1j06f8rbjksm38sh4zm70a6i"))))
     (properties `((upstream-name . "ddml")))
     (build-system r-build-system)
     (arguments
@@ -26708,8 +26735,8 @@ see Voss, Rothermund, and Voss (2004) <doi:10.3758/BF03196893>, Voss and Voss
      "Estimate common causal parameters using double/debiased machine learning as
 proposed by Chernozhukov et al. (2018) <doi:10.1111/ectj.12097>.  ddml
 simplifies estimation based on (short-)stacking as discussed in Ahrens et al.
-(2024) <doi:10.1177/1536867X241233641>, which leverages multiple base learners
-to increase robustness to the underlying data generating process.")
+(2024) <doi:10.1002/jae.3103>, which leverages multiple base learners to
+increase robustness to the underlying data generating process.")
     (license license:gpl3+)))
 
 (define-public r-ddm

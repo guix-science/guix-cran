@@ -1295,13 +1295,13 @@ of the corresponding likelihood (see Albert, C., Vogel, S. and Ashauer, R.
 (define-public r-gutenbergr
   (package
     (name "r-gutenbergr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gutenbergr" version))
        (sha256
-        (base32 "1324z8l323abvpd26983ggfd5s3ww0ydm4gj2jgi2vg4sih2x7n3"))))
+        (base32 "0zr46d6g8gqrwl5f20pjkk9lqna0p4qc1ixwcc4xi9c60hpr6sm2"))))
     (properties `((upstream-name . "gutenbergr")))
     (build-system r-build-system)
     (arguments
@@ -5721,13 +5721,13 @@ optimal transport are available.")
 (define-public r-gridonclusters
   (package
     (name "r-gridonclusters")
-    (version "0.1.0.2")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GridOnClusters" version))
        (sha256
-        (base32 "0wdirn5h8394q0gmpbh9b2yg481j2p03n6spwjcsqqkfsfc5db9s"))))
+        (base32 "0ww5b2sw7l1g2j409h5qj4wcdk5if8xhk0ybj81d5qpdyyccvl1c"))))
     (properties `((upstream-name . "GridOnClusters")))
     (build-system r-build-system)
     (arguments
@@ -5740,16 +5740,18 @@ optimal transport are available.")
                              r-fossil
                              r-dqrng
                              r-cluster
-                             r-ckmeans-1d-dp))
+                             r-ckmeans-1d-dp
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GridOnClusters")
-    (synopsis "Cluster-Preserving Multivariate Joint Grid Discretization")
+    (synopsis "Multivariate Joint Grid Discretization")
     (description
-     "Discretize multivariate continuous data using a grid that captures the joint
-distribution via preserving clusters in the original data (Wang et al 2020)
-<doi:10.1145/3388440.3412415>.  Joint grid discretization is applicable as a
-data transformation step to prepare data for model-free inference of
-association, function, or causality.")
+     "Discretize multivariate continuous data using a grid to capture the joint
+distribution that preserves clusters in original data.  It can handle both
+labeled or unlabeled data.  Both published methods (Wang et al 2020)
+<doi:10.1145/3388440.3412415> and new methods are included.  Joint grid
+discretization can prepare data for model-free inference of association,
+function, or causality.")
     (license license:lgpl3+)))
 
 (define-public r-gridify
@@ -8811,6 +8813,33 @@ for predicting other intramolecular @code{nonB} DNA structures are included.")
 Facebook for describing data requirements on complex application data models.
 Visit <http://graphql.org> to learn more about @code{GraphQL}'.")
     (license license:expat)))
+
+(define-public r-gpyramid
+  (package
+    (name "r-gpyramid")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gpyramid" version))
+       (sha256
+        (base32 "0s1hhmfs46ir8db18w65vdsf8kwy3fdc4388z9h196vm0d2921vz"))))
+    (properties `((upstream-name . "gpyramid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gpyramid")
+    (synopsis "Identify Efficient Crossing Schemes for Gene Pyramiding")
+    (description
+     "Calculates the cost of crossing in terms of the number of individuals and
+generations, which is theoretically formulated by Servin et al. (2004)
+<DOI:10.1534/genetics.103.023358>.  This package has been designed for selecting
+appropriate parental genotypes and find the most efficient crossing scheme for
+gene pyramiding, especially for plant breeding.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gpx
   (package
@@ -13672,13 +13701,13 @@ threads, drafts and labels.")
 (define-public r-gmac
   (package
     (name "r-gmac")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GMAC" version))
        (sha256
-        (base32 "1vrx6lqnm60g8nk44yhl55q2b7xqchxq3qzfrrf59sjk7whpcy5h"))))
+        (base32 "0i2rbms8znjkn9p2zckvr56csc742iavffn849hshg2vhjb2jd7q"))))
     (properties `((upstream-name . "GMAC")))
     (build-system r-build-system)
     (arguments
@@ -13689,8 +13718,8 @@ threads, drafts and labels.")
      "Genomic Mediation Analysis with Adaptive Confounding Adjustment")
     (description
      "This package performs genomic mediation analysis with adaptive confounding
-adjustment (GMAC) proposed by Yang et al. (2017) <doi:10.1101/078683>.  It
-implements large scale mediation analysis and adaptively selects potential
+adjustment (GMAC) proposed by Yang et al. (2017) <doi:10.1101/gr.216754.116>.
+It implements large scale mediation analysis and adaptively selects potential
 confounding variables to adjust for each mediation test from a pool of candidate
 confounders.  The package is tailored for but not limited to genomic mediation
 analysis (e.g., cis-gene mediating trans-gene regulation pattern where an
@@ -24110,13 +24139,13 @@ developed for analysing multiple synthetic datasets.")
 (define-public r-gformulaice
   (package
     (name "r-gformulaice")
-    (version "0.1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfoRmulaICE" version))
        (sha256
-        (base32 "0xnb5ni5h3vg8wjxqgikirgdd8jfpf9k3v3by56j5jrc0f1v35pg"))))
+        (base32 "14q4rrzlsb205lhnszhqkzd20fk5bgp8m9i15h3wx0a5yqi5ffq2"))))
     (properties `((upstream-name . "gfoRmulaICE")))
     (build-system r-build-system)
     (arguments
@@ -24138,9 +24167,9 @@ developed for analysing multiple synthetic datasets.")
     (synopsis "Parametric Iterative Conditional Expectation G-Formula")
     (description
      "This package implements iterative conditional expectation (ICE) estimators of
-the plug-in g-formula (Wen, Young, Robins, and HernÃ¡n (2020)
-<doi:10.1111/biom.13321>).  Both singly robust and doubly robust ICE estimators
-based on parametric models are available.  The package can be used to estimate
+the plug-in g-formula (Wen, Young, Robins, and HernÃ¡n (2020) <doi:
+10.1111/biom.13321>).  Both singly robust and doubly robust ICE estimators based
+on parametric models are available.  The package can be used to estimate
 survival curves under sustained treatment strategies (interventions) using
 longitudinal data with time-varying treatments, time-varying confounders,
 censoring, and competing events.  The interventions can be static or dynamic,
@@ -25662,25 +25691,28 @@ composition and the evolutionary history of tumors.")
 (define-public r-germinationmetrics
   (package
     (name "r-germinationmetrics")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "germinationmetrics" version))
        (sha256
-        (base32 "1lssjs9rp09l9draylrkslb74apizbanacgp00yyxhgxa39dk2g6"))))
+        (base32 "0xrwlrd7gvzf95x30y3zd808il68wf9cwn6d48jgxy5dyvjbghdp"))))
     (properties `((upstream-name . "germinationmetrics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack
+    (propagated-inputs (list r-rlang
+                             r-rdpack
                              r-plyr
                              r-mathjaxr
                              r-gslnls
                              r-ggrepel
                              r-ggplot2
+                             r-dplyr
                              r-data-table
+                             r-cli
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/aravind-j/germinationmetrics")
@@ -26749,13 +26781,13 @@ bandwidth selection.  See Zhang & Li (2025) <doi:10.1111/gean.70021>.")
 (define-public r-geoprofiler
   (package
     (name "r-geoprofiler")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoprofiler" version))
        (sha256
-        (base32 "1icxzrgblc5kmcbym00fq8qhdrqf19bkg07yzyr7d1w3mqi15cli"))))
+        (base32 "0pikhy4bv4djmd7767jvi230byalbyis40f6zdxzi9ai1m6fm7mh"))))
     (properties `((upstream-name . "geoprofiler")))
     (build-system r-build-system)
     (arguments
@@ -27359,13 +27391,13 @@ databases, interactive plotting and selection of focus regions.")
 (define-public r-geomander
   (package
     (name "r-geomander")
-    (version "2.5.0")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomander" version))
        (sha256
-        (base32 "1cip7rp9x1csmazwsl1j7vm13l4y4k1jh4qb1f21x65d350ikb45"))))
+        (base32 "14qh6m9441zdgg4jry11xc6pqcfw93vmn62r0qqh898lsjz8nwbf"))))
     (properties `((upstream-name . "geomander")))
     (build-system r-build-system)
     (arguments
@@ -27729,13 +27761,13 @@ to estimate the trace-variogram using Fourier Smoothing and Gaussian Quadrature.
 (define-public r-geoflow
   (package
     (name "r-geoflow")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoflow" version))
        (sha256
-        (base32 "07rg7r46n69y0lb2hivisspfcglpbp5dqm5ffv8k2pbv8c1rqd5k"))))
+        (base32 "02a5nc0d4ra2sk134fi8bglx6s48hhljmi39xllg4rh13xvpjs3r"))))
     (properties `((upstream-name . "geoflow")))
     (build-system r-build-system)
     (arguments
@@ -27755,7 +27787,6 @@ to estimate the trace-variogram using Fourier Smoothing and Gaussian Quadrature.
                              r-r6
                              r-png
                              r-ows4r
-                             r-mime
                              r-mime
                              r-jsonlite
                              r-httr
@@ -32209,13 +32240,13 @@ implementation based fully in R.")
 (define-public r-geelite
   (package
     (name "r-geelite")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeLite" version))
        (sha256
-        (base32 "1xwgh38axnn0aqwq5j2ra5ng2ybysbq7x1xn0vi0wa4g0s7k5lj7"))))
+        (base32 "1xc2im4598agx8xp02472m2hgakrl2vixyasyw75660sbin2078n"))))
     (properties `((upstream-name . "geeLite")))
     (build-system r-build-system)
     (arguments
@@ -34593,13 +34624,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "1.2.0")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "002i34z6l31z2gm5ky695rvhppwkidzqs6203a5wya0fzqzxvq23"))))
+        (base32 "00kq7ppgnxv9z3wr3drhzlz9si21d97jmphypqqd3c289nymr8gv"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments
@@ -37371,6 +37402,42 @@ the optimal solutions.  The positive point is the independence of the genetic
 algorithm on the number of data that for big data is an effective help in
 solving the problem.")
     (license license:gpl2+)))
+
+(define-public r-gace
+  (package
+    (name "r-gace")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GACE" version))
+       (sha256
+        (base32 "045bypkkfblq29silf0av848yagl1mp2ldy0pgi47vxp4b01c5pa"))))
+    (properties `((upstream-name . "GACE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vinoalles/GACE")
+    (synopsis
+     "Generalized Adaptive Capped Estimator for Time Series Forecasting")
+    (description
+     "This package provides deterministic forecasting for weekly, monthly, quarterly,
+and yearly time series using the Generalized Adaptive Capped Estimator.  The
+method includes preprocessing for missing and extreme values, extraction of
+multiple growth components (including long-term, short-term, rolling, and
+drift-based signals), volatility-aware asymmetric capping, optional seasonal
+adjustment via damped and normalized seasonal factors, and a recursive forecast
+formulation with moderated growth.  The package includes a user-facing
+forecasting interface and a plotting helper for visualization.  Related
+forecasting background is discussed in Hyndman and Athanasopoulos (2021)
+<https://otexts.com/fpp3/> and Hyndman and Khandakar (2008)
+<doi:10.18637/jss.v027.i03>.  The method extends classical extrapolative
+forecasting approaches and is suited for operational and business planning
+contexts where stability and interpretability are important.")
+    (license license:expat)))
 
 (define-public r-gabb
   (package

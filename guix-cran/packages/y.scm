@@ -129,13 +129,13 @@ functionality).")
 (define-public r-yuima
   (package
     (name "r-yuima")
-    (version "1.15.30")
+    (version "1.15.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yuima" version))
        (sha256
-        (base32 "175jyqm8lmv5rmb6md1zncb44igk0wm85ayfp9ww4nja50kcn296"))))
+        (base32 "05a6k57dxss8yp1ix0y7a9lvbgjmqdb93pl5kimw7bis921jrqpa"))))
     (properties `((upstream-name . "yuima")))
     (build-system r-build-system)
     (arguments
@@ -1145,6 +1145,34 @@ displaying, and plotting metadata coded as column attributes.  The yamlet
 dialect is valid YAML with defaults and conventions chosen to improve
 readability.  See ?yamlet, ?decorate, ?modify, ?io_csv, and ?ggplot.decorated.")
     (license license:gpl3)))
+
+(define-public r-yaml12
+  (package
+    (name "r-yaml12")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yaml12" version))
+       (sha256
+        (base32 "19cyxqgq279bflkcjngsyklapfp0iw1z9lpzm0ql4w8kcn5ncm4h"))))
+    (properties `((upstream-name . "yaml12")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (native-inputs (list r-knitr))
+    (home-page "https://posit-dev.github.io/r-yaml12/")
+    (synopsis "Fast 'YAML' 1.2 Parser and Formatter")
+    (description
+     "This package provides a fast, correct, safe, and ergonomic YAML 1.2 parser and
+generator written in Rust'.  Convert between YAML and simple R objects with full
+support for multi-document streams, tags, anchors, and aliases.  Offers opt-in
+handlers for custom tag behavior and round-trips common R data structures.
+Implements the YAML 1.2.2 specification from the YAML Language Development Team
+(2021) <https://yaml.org/spec/1.2.2/>.  Proudly supported by Posit.")
+    (license license:expat)))
 
 (define-public r-yaletoolkit
   (package

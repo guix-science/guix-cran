@@ -4570,13 +4570,13 @@ Hall/CRC, Boca Raton, FL, pp.  25-42.")
 (define-public r-csmpv
   (package
     (name "r-csmpv")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csmpv" version))
        (sha256
-        (base32 "13b7i4ri0a3cjnhn14m72rff4gxxda556h38gjwp900mnjaqrwbj"))))
+        (base32 "1sv2ls1zxnpw0cy0jhcfmy291n0hdk3bcfqcxisp0y4fqww93qm9"))))
     (properties `((upstream-name . "csmpv")))
     (build-system r-build-system)
     (arguments
@@ -4626,7 +4626,8 @@ et al. (2021) <https://CRAN.R-project.org/package=survminer>, - Friedman et al.
 <doi:10.18637/jss.v039.i05>, - Harrell (2023)
 <https://CRAN.R-project.org/package=rms>, - Harrell (2023)
 <https://CRAN.R-project.org/package=Hmisc>, - Chen and Guestrin (2016)
-<@code{arXiv:1603.02754>}, - Aoki et al. (2023) <doi:10.1200/JCO.23.01115>.")
+<doi:10.48550/@code{arXiv.1603.02754>}, - Aoki et al. (2023)
+<doi:10.1200/JCO.23.01115>.")
     (license license:expat)))
 
 (define-public r-csmgmm
@@ -6197,6 +6198,37 @@ the method.")
      "This package provides a function that performs the adaptive mean shift algorithm
 for individual tree crown delineation in 3D point clouds as proposed by Ferraz
 et al. (2016) <doi:10.1016/j.rse.2016.05.028>, as well as supporting functions.")
+    (license license:gpl3)))
+
+(define-public r-crownscorchtls
+  (package
+    (name "r-crownscorchtls")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CrownScorchTLS" version))
+       (sha256
+        (base32 "0khcyylad229yq3ycadvb3pmkdgndcdaxy8q2fq0ix2bm67jrp53"))))
+    (properties `((upstream-name . "CrownScorchTLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-randomforest
+                             r-lidr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jbcannon/CrownScorchTLS")
+    (synopsis "Estimate Crown Scorch from Terrestrial LiDAR Scans")
+    (description
+     "Estimates tree crown scorch from terrestrial lidar scans collected with a RIEGL
+vz400i.  The methods follow those described in Cannon et al. (2025, Fire Ecology
+21:71, <doi:10.1186/s42408-025-00420-0>).")
     (license license:gpl3)))
 
 (define-public r-crov
@@ -10107,31 +10139,6 @@ available from: A Majumdar, T Haldar, S Bhattacharya, JS Witte (2018)
 <doi:10.1371/journal.pgen.1007139>.")
     (license license:gpl3)))
 
-(define-public r-cpat
-  (package
-    (name "r-cpat")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CPAT" version))
-       (sha256
-        (base32 "0zygncwww3cazwmx06bhzq0g41xcqfpw307azdhygc8jmcy6qj71"))))
-    (properties `((upstream-name . "CPAT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-purrr))
-    (home-page "https://cran.r-project.org/package=CPAT")
-    (synopsis "Change Point Analysis Tests")
-    (description
-     "This package implements several statistical tests for structural change,
-specifically the tests featured in HorvÃ¡th, Rice and Miller (in press): CUSUM
-(with weighted/trimmed variants), Darling-ErdÃ¶s, Hidalgo-Seo, Andrews, and the
-new RÃ©nyi-type test.")
-    (license license:expat)))
-
 (define-public r-cpam
   (package
     (name "r-cpam")
@@ -10654,6 +10661,33 @@ proportional hazards model.  The adopted measurement error model has minimal
 assumptions on the dependence structure, and an instrumental variable is
 supposed to be available.")
     (license license:gpl2+)))
+
+(define-public r-coxboost
+  (package
+    (name "r-coxboost")
+    (version "1.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoxBoost" version))
+       (sha256
+        (base32 "0nnpnq7nirmzm0zhxwayss66wx5nkaxlilk1211c7a16cg7yjvad"))))
+    (properties `((upstream-name . "CoxBoost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-matrix))
+    (home-page "https://cran.r-project.org/package=CoxBoost")
+    (synopsis
+     "Cox Models by Likelihood Based Boosting for a Single Survival Endpoint or Competing Risks")
+    (description
+     "This package provides routines for fitting Cox models by likelihood based
+boosting for single event survival data with right censoring or in the presence
+of competing risks.  The methodology is described in Binder and Schumacher
+(2008) <doi:10.1186/1471-2105-9-14> and Binder et al. (2009)
+<doi:10.1093/bioinformatics/btp088>.")
+    (license license:expat)))
 
 (define-public r-coxbcv
   (package
@@ -12303,13 +12337,13 @@ package).")
 (define-public r-countprop
   (package
     (name "r-countprop")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countprop" version))
        (sha256
-        (base32 "0yzrh8zr95b912p3lv0fw7vv5faylwyda0cwfvyg48j98c8hx3yf"))))
+        (base32 "0ap0c5gkjpacj947qam634wngzp6h1f3sfdp8nfalq3bw2zqc8bn"))))
     (properties `((upstream-name . "countprop")))
     (build-system r-build-system)
     (arguments
@@ -17283,13 +17317,13 @@ identifiers permit the same content to be registered in many locations.")
 (define-public r-contentanalysis
   (package
     (name "r-contentanalysis")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contentanalysis" version))
        (sha256
-        (base32 "13vg0g1amkac49mdfx59gr143ip46dcmzxbw89sc8xn4mfa0j1qw"))))
+        (base32 "1xy60a904sy25jym3x6acb0vwh4gzw98sl5j5v7qdkri51p5llqv"))))
     (properties `((upstream-name . "contentanalysis")))
     (build-system r-build-system)
     (arguments
@@ -25886,13 +25920,13 @@ from the base matrix.")
 (define-public r-cofast
   (package
     (name "r-cofast")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coFAST" version))
        (sha256
-        (base32 "1nvh5hmqspnhp9x7nvgjpwljws8q4j5wr4g3aj6vyx32gpxsb1iv"))))
+        (base32 "08qqrb39gls9ghwb73l9sb33id2k2xcl9lklw8xagzh6sl3cjgkl"))))
     (properties `((upstream-name . "coFAST")))
     (build-system r-build-system)
     (arguments
@@ -26796,13 +26830,13 @@ et al (2021) <doi:10.1155/2021/9951817> and Creus-MartÃ­ et al (2022)
 (define-public r-codalm
   (package
     (name "r-codalm")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codalm" version))
        (sha256
-        (base32 "09q7i96wga55xl8wwkb4i2sisn97wd21zqpmasykpi1aamzysqki"))))
+        (base32 "1dz6f114v0i5b7agha6j0465m7x6dj5436yqz07lvn2pl3wybrz4"))))
     (properties `((upstream-name . "codalm")))
     (build-system r-build-system)
     (arguments
@@ -26815,7 +26849,7 @@ et al (2021) <doi:10.1155/2021/9951817> and Creus-MartÃ­ et al (2022)
      "Transformation-Free Linear Regression for Compositional Outcomes and Predictors")
     (description
      "This package implements the expectation-maximization (EM) algorithm as described
-in Fiksel et al. (2021) <doi:10.1111/biom.13465> for transformation-free linear
+in Fiksel et al. (2022) <doi:10.1111/biom.13465> for transformation-free linear
 regression for compositional outcomes and predictors.")
     (license license:gpl2)))
 
@@ -37038,13 +37072,13 @@ medical imaging data in the form of CIFTI files
 (define-public r-cifmodeling
   (package
     (name "r-cifmodeling")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cifmodeling" version))
        (sha256
-        (base32 "0wgk4g12vpjcplx8zrgz2v31xx718gl8kcxicvzvzdi94kk3cba9"))))
+        (base32 "0fiddavh1ydzq2mi1ncmggjw969dx52lzavdvhsjg5jpqnaf86gy"))))
     (properties `((upstream-name . "cifmodeling")))
     (build-system r-build-system)
     (arguments
@@ -37070,7 +37104,7 @@ nonparametric estimation and direct polytomous regression of cumulative
 incidence functions (CIFs) are supported.  The main functions
 @code{cifcurve()}', @code{cifplot()}', and @code{cifpanel()} estimate survival
 and CIF curves and produce high-quality graphics with risk tables, censoring and
-competing-event marks, and multi-panel or inset layouts built on ggplot2 and
+competing-risk marks, and multi-panel or inset layouts built on ggplot2 and
 ggsurvfit'.  The modeling function @code{polyreg()} performs direct polytomous
 regression for coherent joint modeling of all cause-specific CIFs to estimate
 risk ratios, odds ratios, or subdistribution hazard ratios at user-specified
@@ -38776,13 +38810,13 @@ Countries API <https://restcountries.com/>.")
 (define-public r-chillr
   (package
     (name "r-chillr")
-    (version "0.76")
+    (version "0.77")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chillR" version))
        (sha256
-        (base32 "0ywanyrcfy7gkhlim7zs5sbm145kfqd3gl9k3gv52k342rrn0psn"))))
+        (base32 "0sfvd94w87gwiznhz7jlr98as9r5zn9xh6afbsailx54pq22pj9j"))))
     (properties `((upstream-name . "chillR")))
     (build-system r-build-system)
     (arguments
@@ -38808,8 +38842,6 @@ Countries API <https://restcountries.com/>.")
                              r-metr
                              r-magrittr
                              r-lubridate
-                             r-keyring
-                             r-kendall
                              r-jsonlite
                              r-httr
                              r-ggplot2
@@ -38818,7 +38850,7 @@ Countries API <https://restcountries.com/>.")
                              r-ecmwfr
                              r-dplyr
                              r-assertthat))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=chillR")
     (synopsis
      "Statistical Methods for Phenology Analysis in Temperate Fruit Trees")
@@ -40653,6 +40685,37 @@ vector operations on strings such as reverse, sort, head, and set operations.")
 studies for a given set of target and outcome cohorts for data mapped to the
 Observational Medical Outcomes Partnership Common Data Model.")
     (license license:asl2.0)))
+
+(define-public r-chapgwas
+  (package
+    (name "r-chapgwas")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CHAPGWAS" version))
+       (sha256
+        (base32 "1n9i0w5d1il6kf1r5aik9y8s7vmxbzhpinj85hmy2r2g9dhb8gbv"))))
+    (properties `((upstream-name . "CHAPGWAS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plyr r-mass))
+    (home-page "https://cran.r-project.org/package=CHAPGWAS")
+    (synopsis
+     "CHAP-GWAS: Leveraging Chromosomal Haplotypes to Improve Genome-Wide Association Studies")
+    (description
+     "CHAP-GWAS (Chromosomal Haplotype-Integrated Genome-Wide Association Study)
+provides a dynamically adaptive framework for genome-wide association studies
+(GWAS) that integrates chromosome-scale haplotypes with single nucleotide
+polymorphism (SNP) analysis.  The method identifies and extends haplotype
+variants based on their phenotypic associations rather than predefined linkage
+blocks, enabling high-resolution detection of quantitative trait loci (QTL).  By
+leveraging long-range phased haplotype information, CHAP-GWAS improves
+statistical power and offers a more comprehensive view of the genetic
+architecture underlying complex traits.")
+    (license license:gpl3)))
 
 (define-public r-chapensk
   (package
@@ -44171,13 +44234,13 @@ which was extended and enhanced by Giessing and Tent (2019)
 (define-public r-cellgeometry
   (package
     (name "r-cellgeometry")
-    (version "0.5.4")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellGeometry" version))
        (sha256
-        (base32 "02746c19632fcmskb18if3nrmwncsbqagx8ai0r30vqklnsxq4rj"))))
+        (base32 "1zfvg1sxi8zv3qcwl091sggim5i759gyamq4fjkvfxsxm4fh7wis"))))
     (properties `((upstream-name . "cellGeometry")))
     (build-system r-build-system)
     (arguments
@@ -44197,7 +44260,7 @@ which was extended and enhanced by Giessing and Tent (2019)
                              r-complexheatmap
                              r-circlize))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cellGeometry")
+    (home-page "https://github.com/myles-lewis/cellGeometry")
     (synopsis "Geometric Single Cell Deconvolution")
     (description
      "Deconvolution of bulk RNA-Sequencing data into proportions of cells based on a
@@ -49009,37 +49072,6 @@ region-based genome-wide association studies and higher-order epistasis
 analyses, implementing the methods described in Llinares-LÃ³pez et al. (2017)
 <doi:10.1093/bioinformatics/btx071>.")
     (license license:gpl2+)))
-
-(define-public r-casino
-  (package
-    (name "r-casino")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "casino" version))
-       (sha256
-        (base32 "07fphn46718gr1zm0xr43mwv7yk697xrc40lxxin315cf3gm0cka"))))
-    (properties `((upstream-name . "casino")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-r6
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://anthonypileggi.github.io/casino")
-    (synopsis "Play Casino Games")
-    (description
-     "Play casino games in the R console, including poker, blackjack, and a slot
-machine.  Try to build your fortune before you succumb to the gambler's ruin!")
-    (license license:expat)))
 
 (define-public r-casimir
   (package

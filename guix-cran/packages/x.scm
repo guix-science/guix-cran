@@ -376,13 +376,13 @@ main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.
 (define-public r-xtdml
   (package
     (name "r-xtdml")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtdml" version))
        (sha256
-        (base32 "1akpy5sbylkqjv3lkg5df1imbw67abrssjrl52v3n16fr0nm7gl3"))))
+        (base32 "0hfrymnbzcp8q6d994yz5ixnmlk6r1qm152qwn7rifzlmv86y398"))))
     (properties `((upstream-name . "xtdml")))
     (build-system r-build-system)
     (arguments
@@ -1837,13 +1837,13 @@ Szepannek, G. and von Holt, B. (2023) <doi:10.1007/s41237-023-00205-2>.")
 (define-public r-xgb2sql
   (package
     (name "r-xgb2sql")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xgb2sql" version))
        (sha256
-        (base32 "1gw5dw0ck5hip8mv347zaswrggk395bg2hgn02bvqs0d31jhmgvi"))))
+        (base32 "0rg520n6hpsm674l38lcv7zh8iavrasrx85icigw8m7mjqgvr58d"))))
     (properties `((upstream-name . "xgb2sql")))
     (build-system r-build-system)
     (arguments
@@ -1856,11 +1856,11 @@ Szepannek, G. and von Holt, B. (2023) <doi:10.1007/s41237-023-00205-2>.")
     (description
      "This tool enables in-database scoring of XGBoost models built in R, by
 translating trained model objects into SQL query.  XGBoost
-<https://xgboost.readthedocs.io/en/latest/index.html> provides parallel tree
-boosting (also known as gradient boosting machine, or GBM) algorithms in a
-highly efficient, flexible and portable way.  GBM algorithm is introduced by
-Friedman (2001) <doi:10.1214/aos/1013203451>, and more details on XGBoost can be
-found in Chen & Guestrin (2016) <doi:10.1145/2939672.2939785>.")
+<https://github.com/dmlc/xgboost> provides parallel tree boosting (also known as
+gradient boosting machine, or GBM) algorithms in a highly efficient, flexible
+and portable way.  GBM algorithm is introduced by Friedman (2001)
+<doi:10.1214/aos/1013203451>, and more details on XGBoost can be found in Chen &
+Guestrin (2016) <doi:10.1145/2939672.2939785>.")
     (license license:expat)))
 
 (define-public r-xesreadr

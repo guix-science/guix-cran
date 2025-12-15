@@ -2305,43 +2305,37 @@ generator based on sensor and source coordinates.")
 facilitate cleaning strings in C++ code before passing them to R.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-pubtatordb
+(define-public r-pubrplot
   (package
-    (name "r-pubtatordb")
-    (version "0.1.4")
+    (name "r-pubrplot")
+    (version "0.0.1")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "pubtatordb" version))
+       (uri (cran-uri "pubrplot" version))
        (sha256
-        (base32 "0i5azbf75bwxxzpsr5fc2hh22pbwix00hz9dcdpn5jgp2957f7wx"))))
-    (properties `((upstream-name . "pubtatordb")))
+        (base32 "1lc4py184jf1dajqsrd21r9gr4v1awl1330j89lldkxdw7d9y7l6"))))
+    (properties `((upstream-name . "pubrplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsqlite
-                             r-readr
-                             r-r-utils
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rstatix
+                             r-rlang
+                             r-purrr
+                             r-ggthemes
+                             r-ggplot2
                              r-dplyr
-                             r-dbi
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pubtatordb")
-    (synopsis "Create and Query a Local 'PubTator' Database")
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=pubrplot")
+    (synopsis "Publication-Ready Plots and Statistical Visualizations")
     (description
-     "@code{PubTator}
-<https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/@code{PubTator/>} is a
-National Center for Biotechnology Information (NCBI) tool that enhances the
-annotation of articles on @code{PubMed} <https://www.ncbi.nlm.nih.gov/pubmed/>.
-It makes it possible to rapidly identify potential relationships between genes
-or proteins using text mining techniques.  In contrast, manually searching for
-and reading the annotated articles would be very time consuming. @code{PubTator}
-offers both an online interface and a RESTful API, however, neither of these
-approaches are well suited for frequent, high-throughput analyses.  The package
-pubtatordb provides a set of functions that make it easy for the average R user
-to download @code{PubTator} annotations, create, and then query a local version
-of the database.")
+     "This package provides functions to create high-quality, publication-ready plots
+for numeric and categorical data, including bar plots, violin plots, boxplots,
+line plots, error bars, correlation plots, linear model plots, odds ratio plots,
+and normality plots.")
     (license license:expat)))
 
 (define-public r-pubmedwordcloud
@@ -2769,21 +2763,23 @@ and access detailed annotations.")
 (define-public r-pubchem-bio
   (package
     (name "r-pubchem-bio")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubchem.bio" version))
        (sha256
-        (base32 "1nj3h4gari29s5g9qp0k4baxkpm00kbaycprmzm6jw33qswrk0ny"))))
+        (base32 "145j90crrhc8vmzamk9cr9xd2a04yfv7a4pw7js7v673v0s414bk"))))
     (properties `((upstream-name . "pubchem.bio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringr
+                             r-rsqlite
                              r-rcdk
                              r-r-utils
+                             r-metabocoreutils
                              r-foreach
                              r-dplyr
                              r-doparallel
@@ -2792,7 +2788,7 @@ and access detailed annotations.")
                              r-chnosz))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=pubchem.bio")
-    (synopsis "Biologically Informed Metabolomic Databases from 'PubChem'")
+    (synopsis "Biologically Informed Metabolomic Libraries from 'PubChem'")
     (description
      "All @code{PubChem} compounds are downloaded to a local computer, but for each
 compound, only partial records are used.  The data are organized into small
@@ -8579,13 +8575,13 @@ for different versions of same question list.")
 (define-public r-profast
   (package
     (name "r-profast")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProFAST" version))
        (sha256
-        (base32 "0b4fs6lb0hzbqasyiidxxbkrgckp4ymfg6kyqnpf07hb0zr93x2c"))))
+        (base32 "1505c6i7xz9wp5fzqrhymd8axin2336jcxgh4bprgdnf3c37nkxp"))))
     (properties `((upstream-name . "ProFAST")))
     (build-system r-build-system)
     (arguments
@@ -9460,6 +9456,33 @@ joint probability of superior performance and stability is also provided.")
      "This package provides functions and datasets to accompany J. Albert and J. Hu,
 \"Probability and Bayesian Modeling\", CRC Press, (2019, ISBN: 1138492566).")
     (license license:gpl2+)))
+
+(define-public r-probaverse
+  (package
+    (name "r-probaverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "probaverse" version))
+       (sha256
+        (base32 "1vrqcsrxpvjq82hqjm24h25v5h1i5n02gygsbf3xyxgf1z3s69p0"))))
+    (properties `((upstream-name . "probaverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-famish r-distplyr r-distionary))
+    (home-page "https://probaverse.probaverse.com/")
+    (synopsis "Install and Load the 'probaverse' Packages")
+    (description
+     "The probaverse is a suite of packages designed to facilitate creating advanced
+statistical models through probability distributions.  These packages work best
+when loaded together because they share a common design philosophy and focus on
+different aspects of developing statistical models.  Inspired by the tidyverse
+package, the probaverse package makes it easy to load the entire suite of
+probaverse packages together.")
+    (license license:expat)))
 
 (define-public r-proae
   (package
@@ -10873,27 +10896,25 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "04ijm2yj1xxfjcpxz8a8x80jv57yhfw923dl0ma5swmww0nbm876"))))
+        (base32 "137hxnl9a08xcyk37ixqjc32sfsg41wx75rl50afmsy2svf5pp5z"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-strex
                              r-reshape
                              r-reclin2
                              r-lubridate
                              r-ggplot2
-                             r-dplyr
-                             r-caret))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PriceIndices")
     (synopsis "Calculating Bilateral and Multilateral Price Indexes")
@@ -11152,48 +11173,6 @@ manipulate extents.  Finally, there is a function to automate the process of
 setting margins, plotting the map, scale bar, and north arrow, and resetting
 graphic parameters upon completion.")
     (license license:gpl2)))
-
-(define-public r-prettyglm
-  (package
-    (name "r-prettyglm")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prettyglm" version))
-       (sha256
-        (base32 "1pivjpnspis7zshdj7kasncb8qpy40ld9f40fwlb3x14snrvbqix"))))
-    (properties `((upstream-name . "prettyglm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vip
-                             r-tidyselect
-                             r-tidyr
-                             r-tidycat
-                             r-tibble
-                             r-stringr
-                             r-rcolorbrewer
-                             r-plotly
-                             r-knitr
-                             r-kableextra
-                             r-forcats
-                             r-dplyr
-                             r-car
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://jared-fowler.github.io/prettyglm/")
-    (synopsis "Pretty Summaries of Generalized Linear Model Coefficients")
-    (description
-     "One of the main advantages of using Generalised Linear Models is their
-interpretability.  The goal of prettyglm is to provide a set of functions which
-easily create beautiful coefficient summaries which can readily be shared and
-explained.  prettyglm helps users create coefficient summaries which include
-categorical base levels, variable importance and type III p.values.  prettyglm
-also creates beautiful relativity plots for categorical, continuous and splined
-coefficients.")
-    (license license:gpl3)))
 
 (define-public r-prettycols
   (package
@@ -14906,6 +14885,48 @@ items from an item pool / item bank with known item parameters are administered
 to a new population of test-takers and an ability estimation for every
 test-taker is needed.")
     (license license:gpl3)))
+
+(define-public r-powrpriori
+  (package
+    (name "r-powrpriori")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PowRPriori" version))
+       (sha256
+        (base32 "1nqmp2svsngsclkrmk3r6vwvjdh1plfy8c96r6fb1ij3li86rkgp"))))
+    (properties `((upstream-name . "PowRPriori")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-mass
+                             r-magrittr
+                             r-lmertest
+                             r-lme4
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-dplyr
+                             r-dofuture))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mirgll/PowRPriori")
+    (synopsis
+     "Power Analysis via Data Simulation for (Generalized) Linear Mixed Effects Models")
+    (description
+     "Conduct a priori power analyses via Monte-Carlo style data simulation for linear
+and generalized linear mixed-effects models (LMMs/GLMMs).  Provides a
+user-friendly workflow with helper functions to easily define fixed and random
+effects as well as diagnostic functions to evaluate the adequacy of the results
+of the power analysis.")
+    (license license:expat)))
 
 (define-public r-powriclpm
   (package
@@ -23405,13 +23426,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.8.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "0k9hfibh0i1270qj6l9j1raw6zc3ws24nikwns4fh8q97ydznq5h"))))
+        (base32 "1wd9jff6ifxlxlm209m6cafkbljlzqbizkp2dacn7za6ml3mqrs9"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -31242,61 +31263,6 @@ traits, such as days to heading and biomass.  Please see Taniguchi et al. (2022)
 scientific use.  Use for commercial purposes shall not be allowed.")
     (license (license:fsdg-compatible "CC BY-NC 4.0"))))
 
-(define-public r-phenofit
-  (package
-    (name "r-phenofit")
-    (version "0.3.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phenofit" version))
-       (sha256
-        (base32 "096y48gvlxdsn00gf4gn39gxd10kcdzpdbgs5lhqhcpsakxfalv6"))))
-    (properties `((upstream-name . "phenofit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-zeallot
-                             r-ucminf
-                             r-stringr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-purrr
-                             r-optimx
-                             r-numderiv
-                             r-magrittr
-                             r-lubridate
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/eco-hydro/phenofit")
-    (synopsis "Extract Remote Sensing Vegetation Phenology")
-    (description
-     "The merits of TIMESAT and phenopix are adopted.  Besides, a simple and growing
-season dividing method and a practical snow elimination method based on
-Whittaker were proposed.  7 curve fitting methods and 4 phenology extraction
-methods were provided.  Parameters boundary are considered for every curve
-fitting methods according to their ecological meaning.  And optimx is used to
-select best optimization method for different curve fitting methods.  Reference:
-Kong, D., (2020).  R package: A state-of-the-art Vegetation Phenology extraction
-package, phenofit version 0.3.1, <doi:10.5281/zenodo.5150204>; Kong, D., Zhang,
-Y., Wang, D., Chen, J., & Gu, X. (2020).  Photoperiod Explains the
-Asynchronization Between Vegetation Carbon Phenology and Vegetation Greenness
-Phenology.  Journal of Geophysical Research: Biogeosciences, 125(8),
-e2020JG005636. <doi:10.1029/2020JG005636>; Kong, D., Zhang, Y., Gu, X., & Wang,
-D. (2019).  A robust method for reconstructing global MODIS EVI time series on
-the Google Earth Engine.  ISPRS Journal of Photogrammetry and Remote Sensing,
-155, 13â24; Zhang, Q., Kong, D., Shi, P., Singh, V.P., Sun, P., 2018.
-Vegetation phenology on the Qinghai-Tibetan Plateau and its response to climate
-change (1982â2013).  Agric.  For.  Meteorol.  248, 408â417.
-<doi:10.1016/j.agrformet.2017.10.026>.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-phenocdm
   (package
     (name "r-phenocdm")
@@ -32558,13 +32524,13 @@ sequencing pseudo-time information.")
 (define-public r-pgrdup
   (package
     (name "r-pgrdup")
-    (version "0.2.3.9")
+    (version "0.2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PGRdup" version))
        (sha256
-        (base32 "0z2nnjlaazrmfnjmwhsmhp8h3ifgykmsy6znqvcl77v9565libz9"))))
+        (base32 "1wy2jpm5qzc3v8cmnr4nf3drxm1kwhml5ryjqzyjwdj15db160nl"))))
     (properties `((upstream-name . "PGRdup")))
     (build-system r-build-system)
     (arguments
@@ -36073,6 +36039,35 @@ Mehdi Mirzaie, Marc Baumann, Amir Ata Saei, Mohieddin Jafari (2025)
 <doi:10.1002/pmic.202400238>.")
     (license license:gpl3+)))
 
+(define-public r-pegs
+  (package
+    (name "r-pegs")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pegs" version))
+       (sha256
+        (base32 "1h20f1xgwvkzcf0l0p3lk62v60gmpiagp4v4k40djqyandss1whv"))))
+    (properties `((upstream-name . "pegs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=pegs")
+    (synopsis "Pseudo-Expectation Gauss-Seidel")
+    (description
+     "This package provides a lightweight, dependency-free, and simplified
+implementation of the Pseudo-Expectation Gauss-Seidel (PEGS) algorithm.  It fits
+the multivariate ridge regression model for genomic prediction Xavier and Habier
+(2022) <doi:10.1186/s12711-022-00730-w> and Xavier et al. (2025)
+<doi:10.1093/genetics/iyae179>, providing heritability estimates, genetic
+correlations, breeding values, and regression coefficient estimates for
+prediction.  This package provides an alternative to the @code{bWGR} package by
+Xavier et al. (2019) <doi:10.1093/bioinformatics/btz794> by using LAPACK for its
+algebraic operations.")
+    (license license:gpl3)))
+
 (define-public r-pegrouptesting
   (package
     (name "r-pegrouptesting")
@@ -37157,19 +37152,23 @@ Phillips (2010) <doi:10.1017/S026646660909063X>.")
 (define-public r-pdxpower
   (package
     (name "r-pdxpower")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDXpower" version))
        (sha256
-        (base32 "0frqrc8bz15x5znj7w8kzzbzkddzwq7j05m5n232qhpzpx6b7rgy"))))
+        (base32 "0mks626md8sqcvwj9pymhh4wahic0kc4nglw8ym7rv1khp790i0m"))))
     (properties `((upstream-name . "PDXpower")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-nlme r-ggpubr r-ggplot2
+    (propagated-inputs (list r-survival
+                             r-nlme
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggplot2
                              r-frailtypack))
     (home-page "https://cran.r-project.org/package=PDXpower")
     (synopsis
@@ -37179,13 +37178,13 @@ Phillips (2010) <doi:10.1017/S026646660909063X>.")
 event data in a mixed crossed/nested design, where a number of cell lines and a
 number of mice within each cell line are considered to achieve a desired
 statistical power, motivated by Eckel-Passow and colleagues (2021)
-<doi:10.1093/neuonc/noab137> and Li and colleagues (2024)
-<doi:10.48550/@code{arXiv.2404.08927>}.  This package provides two commonly used
-models for powering a design, linear mixed effects and Cox frailty model.  Both
-models account for within-subject (cell line) correlation while holding
-different distributional assumptions about the outcome.  Alternatively, the
-counterparts of fixed effects model are also available, which produces similar
-estimates of statistical power.")
+<doi:10.1093/neuonc/noab137> and Li and colleagues (2025)
+<doi:10.51387/25-NEJSDS76>.  This package provides two commonly used models for
+powering a design, linear mixed effects and Cox frailty model.  Both models
+account for within-subject (cell line) correlation while holding different
+distributional assumptions about the outcome.  Alternatively, the counterparts
+of fixed effects model are also available, which produces similar estimates of
+statistical power.")
     (license license:gpl2+)))
 
 (define-public r-pdtoolkit
@@ -44069,13 +44068,13 @@ Mechanistic Models\" <doi:10.1080/01621459.2019.1604367>.")
 (define-public r-panelmatch
   (package
     (name "r-panelmatch")
-    (version "3.1.1")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PanelMatch" version))
        (sha256
-        (base32 "1licrqx3f4vp4qnvdc7czlzqnbmga41b4k85hal02k44sk8hf8n2"))))
+        (base32 "0d25c5y3ms4rcf4hyc3cfjfvyj8dw57sy7bgvm81z78kd7rzbm9m"))))
     (properties `((upstream-name . "PanelMatch")))
     (build-system r-build-system)
     (arguments
@@ -45374,26 +45373,26 @@ mixed-effect regression from Heegaard et al (2005)
 (define-public r-pakret
   (package
     (name "r-pakret")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pakret" version))
        (sha256
-        (base32 "0gv6kjgz0zcxjqmchlp9rkj91d915wdy86lcgw1cjgzjnsjxyj46"))))
+        (base32 "1612m5niqg9p3q8shkq71fxbzjgfa9a696n6ak9ls11nh6s0lllw"))))
     (properties `((upstream-name . "pakret")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-rmarkdown r-readr r-knitr))
+    (propagated-inputs (list r-rmarkdown r-readr r-knitr))
     (home-page "https://arnaudgallou.github.io/pakret/")
     (synopsis "Cite 'R' Packages on the Fly in 'R Markdown' and 'Quarto'")
     (description
      "References and cites R and R packages on the fly in R Markdown and Quarto'.
-pakret provides a minimalistic API that generates preformatted citations of R
-and R packages, and adds their reference to a .bib file directly from within
-your document.")
+pakret provides a minimalist API that generates preformatted citations for R and
+R packages, and adds their references to a .bib file directly from within your
+document.")
     (license license:gpl3+)))
 
 (define-public r-pakpmics2018mn

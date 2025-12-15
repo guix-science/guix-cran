@@ -4262,13 +4262,13 @@ available.")
 (define-public r-vip
   (package
     (name "r-vip")
-    (version "0.4.3")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vip" version))
        (sha256
-        (base32 "0f1jczfv1dgdgrll3p6i4l358dirqhhllyqq7r76y5i1pk7cw21d"))))
+        (base32 "1g85jm7531r34aha03rdywnlhnk3wdh2hrb2pmw24833l3rqg7wq"))))
     (properties `((upstream-name . "vip")))
     (build-system r-build-system)
     (arguments
@@ -5532,13 +5532,13 @@ requirements, and auto-composing error messages when they do not.")
 (define-public r-vetiver
   (package
     (name "r-vetiver")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vetiver" version))
        (sha256
-        (base32 "01p6s5swrq8jlgfv2ypjax3sfjzlj6rwp25wyx8pwb1gldqsm5p6"))))
+        (base32 "1nqs5panpqr2ga3nz2hbmngrrklbjdqqlh8xd572yvvca57wm8ak"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
     (arguments
@@ -5552,7 +5552,6 @@ requirements, and auto-composing error messages when they do not.")
                              r-rapidoc
                              r-purrr
                              r-pins
-                             r-magrittr
                              r-lifecycle
                              r-hardhat
                              r-glue
@@ -7304,29 +7303,19 @@ manipulation.")
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.8-6")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcdExtra" version))
        (sha256
-        (base32 "031s6g7rnqxxs2hdbr6rhchwqzkzc1lgl6skci4r96idfl4a3k2i"))))
+        (base32 "1s7l4r2axh1cbw4smi4cia6kah0d7zmvsxd5v5d873q0lnm4rkn4"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vcd
-                             r-tidyr
-                             r-stringr
-                             r-readxl
-                             r-purrr
-                             r-mass
-                             r-here
-                             r-gnm
-                             r-glue
-                             r-dplyr
-                             r-ca))
+    (propagated-inputs (list r-vcd r-rgl r-mass r-gnm r-ca))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://friendly.github.io/vcdExtra/")
     (synopsis "'vcd' Extensions and Additions")
@@ -8261,6 +8250,40 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 <doi:10.1016/j.ejor.2012.03.046>.")
     (license license:gpl2)))
 
+(define-public r-varpro
+  (package
+    (name "r-varpro")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varPro" version))
+       (sha256
+        (base32 "0mm94jbjkgmciccb268q85cjy9sr8w716x6kf0ns3l6d6r37w9hb"))))
+    (properties `((upstream-name . "varPro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-umap
+                             r-survival
+                             r-randomforestsrc
+                             r-glmnet
+                             r-gbm
+                             r-foreach
+                             r-bart))
+    (home-page "https://cran.r-project.org/package=varPro")
+    (synopsis
+     "Model-Independent Variable Selection via the Rule-Based Variable Priority")
+    (description
+     "This package provides a new framework of variable selection, which instead of
+generating artificial covariates such as permutation importance and knockoffs,
+creates release rules to examine the affect on the response for each covariate
+where the conditional distribution of the response variable can be arbitrary and
+unknown.")
+    (license license:gpl3+)))
+
 (define-public r-varoc
   (package
     (name "r-varoc")
@@ -8747,13 +8770,13 @@ of variation, the margin of error, confidence interval, design effect.")
 (define-public r-vardiag
   (package
     (name "r-vardiag")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vardiag" version))
        (sha256
-        (base32 "07i0wv84sw035bpjil3cfw69fdgbcf2j8wq4k22narkrz83iyi2z"))))
+        (base32 "1rc3rsr553cpg18lbqn2zwia49f9j9mlj6xag3h742a1fnlb04kb"))))
     (properties `((upstream-name . "vardiag")))
     (build-system r-build-system)
     (arguments
@@ -9810,19 +9833,24 @@ Valection: Design Optimization for Validation and Verification Studies; Biorxiv
 (define-public r-valdr
   (package
     (name "r-valdr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valdr" version))
        (sha256
-        (base32 "0jnajwifv6irbm7vcjj50jqqg863xyv5aa61gm3snizlgm0hk4cz"))))
+        (base32 "0nlfia8nv2a8h6d5xs197bkyg9w96piqly52qwp02p69lmij7hxp"))))
     (properties `((upstream-name . "valdr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-keyring r-jsonlite r-httr r-base64enc))
+    (propagated-inputs (list r-readr
+                             r-keyring
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-base64enc))
     (home-page "https://cran.r-project.org/package=valdr")
     (synopsis "Access and Analyse 'VALD' Data via Our External 'APIs'")
     (description

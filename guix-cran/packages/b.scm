@@ -281,13 +281,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.15")
+    (version "2.2.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "14876871774mj60f32nil9spim4hwr4hadlgy4qvwwwjpccjfcb5"))))
+        (base32 "0yz4mx6myhcpnxr9wqgwqg3k4a8fd5qvpvyj2rifxbv8i80xmv3f"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (arguments
@@ -4236,13 +4236,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-broadcast
   (package
     (name "r-broadcast")
-    (version "0.1.6.1")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broadcast" version))
        (sha256
-        (base32 "13fxsibx7862b5k77asxfsqrld8g8p3sw4d0893xgn4wbdj2nq2g"))))
+        (base32 "17cxphrx6b1g77nh9gm5abz0vvp9nj1lg6mn0kar789xyhq5fkrg"))))
     (properties `((upstream-name . "broadcast")))
     (build-system r-build-system)
     (arguments
@@ -4262,7 +4262,7 @@ include, but are not limited to, the following.  1) Broadcasted element-wise
 operations on any 2 arrays; they support a large set of relational, arithmetic,
 Boolean, string, and bit-wise operations.  2) A faster, more memory efficient,
 and broadcasted abind-like function, for binding arrays along an arbitrary
-dimension.  3) Broadcasted ifelse-like, and apply-like functions.  4) Casting
+dimension.  3) Broadcasted ifelse-like and apply-like functions.  4) Casting
 functions, that cast subset-groups of an array to a new dimension, cast nested
 lists to dimensional lists, and vice-versa.  5) A few linear algebra functions
 for statistics.  The functions in the broadcast package strive to minimize
@@ -4784,13 +4784,13 @@ Gaussian.")
 (define-public r-brickster
   (package
     (name "r-brickster")
-    (version "0.2.9")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickster" version))
        (sha256
-        (base32 "0i5cyysinjwgph3wb4cibd2bq2rgff5vq5b51j0hhidcdgphxyqk"))))
+        (base32 "07dbzgpax3ssbh801ywdwdjcqfh2xjr7jq5nsbiryvmgd1c9ai0m"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
     (arguments
@@ -4805,6 +4805,7 @@ Gaussian.")
                              r-ini
                              r-httr2
                              r-glue
+                             r-fs
                              r-dplyr
                              r-dbplyr
                              r-dbi
@@ -6163,6 +6164,57 @@ output.â Journal of the American Statistical Association, 90(432):1313â�
 of the American Statistical Association, 96(453):270â281, 2001. <doi:
 10.1198/016214501750332848>.")
     (license license:gpl2+)))
+
+(define-public r-bpvars
+  (package
+    (name "r-bpvars")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bpvars" version))
+       (sha256
+        (base32 "0x0warbzbcls150j09bxkpy4kskgz1w0mnigxjaajk43ga20z7cm"))))
+    (properties `((upstream-name . "bpvars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmvtnsim
+                             r-rcpptn
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-generics
+                             r-bsvars))
+    (home-page "https://bsvars.org/bpvars/")
+    (synopsis "Forecasting with Bayesian Panel Vector Autoregressions")
+    (description
+     "This package provides Bayesian estimation and forecasting of dynamic panel data
+using Bayesian Panel Vector Autoregressions with hierarchical prior
+distributions.  The models include country-specific VARs that share a global
+prior distribution that extend the model by JarociÅski (2010)
+<doi:10.1002/jae.1082>.  Under this prior expected value, each country's system
+follows a global VAR with country-invariant parameters.  Further flexibility is
+provided by the hierarchical prior structure that retains the Minnesota prior
+interpretation for the global VAR and features estimated prior covariance
+matrices, shrinkage, and persistence levels.  Bayesian forecasting is developed
+for models including exogenous variables, allowing conditional forecasts given
+the future trajectories of some variables and restricted forecasts assuring that
+rates are forecasted to stay positive and less than 100.  The package implements
+the model specification, estimation, and forecasting routines, facilitating
+coherent workflows and reproducibility.  It also includes automated
+pseudo-out-of-sample forecasting and computation of forecasting performance
+measures.  Beautiful plots, informative summary functions, and extensive
+documentation complement all this.  An extraordinary computational speed is
+achieved thanks to employing frontier econometric and numerical techniques and
+algorithms written in C++'.  The bpvars package is aligned regarding objects,
+workflows, and code structure with the R packages bsvars by WoÅºniak (2024)
+<doi:10.32614/CRAN.package.bsvars> and @code{bsvarSIGNs} by Wang & WoÅºniak
+(2025) <doi:10.32614/CRAN.package.@code{bsvarSIGNs>}, and they constitute an
+integrated toolset.  Copyright: 2025 International Labour Organization.")
+    (license license:gpl3+)))
 
 (define-public r-bprinstrattte
   (package
@@ -8135,13 +8187,13 @@ example of combining conditional prevalences.")
 (define-public r-bootcluster
   (package
     (name "r-bootcluster")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootcluster" version))
        (sha256
-        (base32 "18k72455fhgcs1fijavlzg34bsj8qb0qkfnz2zsnfhhspbkl9f17"))))
+        (base32 "11qp78qxfjkkikny19yknyndjyzl1snrlkr54ppvy53ww5qq9kv5"))))
     (properties `((upstream-name . "bootcluster")))
     (build-system r-build-system)
     (arguments
@@ -8149,7 +8201,6 @@ example of combining conditional prevalences.")
       #:tests? #f))
     (propagated-inputs (list r-sna
                              r-progress
-                             r-plyr
                              r-network
                              r-mclust
                              r-kernlab
@@ -9158,13 +9209,13 @@ statistics.")
 (define-public r-boiwsa
   (package
     (name "r-boiwsa")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boiwsa" version))
        (sha256
-        (base32 "1x9kqpfyahrkw731n70m08ihfpg35xmw42bzbf8k32x4ja77z10i"))))
+        (base32 "0qzxbxglxpkjvpay9rc2ckpgfnsx74szgxnxkr67cwx3h76s1lr8"))))
     (properties `((upstream-name . "boiwsa")))
     (build-system r-build-system)
     (arguments
@@ -9181,12 +9232,12 @@ statistics.")
     (home-page "https://github.com/timginker/boiwsa")
     (synopsis "Seasonal Adjustment of Weekly Data")
     (description
-     "Perform seasonal adjustment of weekly data.  The package provides a
-user-friendly interface for computing seasonally adjusted estimates of weekly
-data and includes functions for the creation of country-specific prior
-adjustment variables, as well as diagnostic tools to assess the quality of the
-adjustments.  The method is described in more detail in Ginker (2023)
-<doi:10.13140/RG.2.2.12221.44000>.")
+     "Perform seasonal adjustment and forecasting of weekly data.  The package
+provides a user-friendly interface for computing seasonally adjusted estimates
+and forecasts of weekly time series and includes functions for the construction
+of country-specific prior adjustment variables, as well as diagnostic tools to
+assess the quality of the adjustments.  The methodology is described in more
+detail in Ginker (2024) <doi:10.13140/RG.2.2.12221.44000>.")
     (license license:expat)))
 
 (define-public r-boinet
@@ -11602,6 +11653,41 @@ JABES 25, 500â522 (2020) <doi:10.1007/s13253-020-00416-0>.")
      "Create randomizations for block random clinical trials.  Can also produce a pdf
 file of randomization cards.")
     (license license:gpl2)))
+
+(define-public r-blockr-dock
+  (package
+    (name "r-blockr-dock")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockr.dock" version))
+       (sha256
+        (base32 "1080fsczgqvnkgb9nhiysskzj8jk59amfrwxvsc81pkpn07v4n4m"))))
+    (properties `((upstream-name . "blockr.dock")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-jsonlite
+                             r-htmltools
+                             r-glue
+                             r-dockviewr
+                             r-cli
+                             r-bslib
+                             r-bsicons
+                             r-blockr-core))
+    (home-page "https://bristolmyerssquibb.github.io/blockr.dock/")
+    (synopsis "Docking Layout Manager for 'blockr'")
+    (description
+     "Building on the docking layout manager provided by @code{dockViewR}', this
+provides a flexible front-end to blockr.core'.  It provides an extension
+mechanism which allows for providing means to manipulate a board object via
+panel-based user interface components.")
+    (license license:gpl3+)))
 
 (define-public r-blockr-core
   (package
@@ -15801,13 +15887,13 @@ analysis is available for free download from the website.  In 2012, methods for
 (define-public r-biocro
   (package
     (name "r-biocro")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioCro" version))
        (sha256
-        (base32 "0j92xml8g8daj8c3g895rbziri897vr0ivgjhgxs09a1ggj4w2jx"))))
+        (base32 "1zgjv18yzd5nnfz47a6bv7qlnnwxc3miysgdz8z02yn5sfzl07xv"))))
     (properties `((upstream-name . "BioCro")))
     (build-system r-build-system)
     (arguments
@@ -19199,13 +19285,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "5.2.0")
+    (version "5.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "16rkbk6m7yg099hylh277idcasw8kkcqqvmmq61wlvsjkfh35bdf"))))
+        (base32 "16b9k4l6r0wrivv0ydw0jwi1fdvx54vhr5ygvxzgvx0dc8b4yfiq"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments
@@ -24086,13 +24172,13 @@ More details about this method can be found in Jiehuan Sun, et al. (2017)
 (define-public r-bchron
   (package
     (name "r-bchron")
-    (version "4.7.7")
+    (version "4.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bchron" version))
        (sha256
-        (base32 "1ypiw0cs102rljcbjkdnxbzwrg0pcwcd5d8pcf7qkk1s6nsb68dc"))))
+        (base32 "1cp0dkvxyymawg254pzh96ns0z3ibarbvfl3cc1vpg3513530snb"))))
     (properties `((upstream-name . "Bchron")))
     (build-system r-build-system)
     (arguments
@@ -24110,7 +24196,7 @@ More details about this method can be found in Jiehuan Sun, et al. (2017)
                              r-dplyr
                              r-coda
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://andrewcparnell.github.io/Bchron/")
     (synopsis "Age-Depth Radiocarbon Modelling")
     (description
@@ -25548,6 +25634,35 @@ of my master thesis (expected 2016).")
 Chipman, George, @code{McCulloch} (2010).")
     (license license:gpl2+)))
 
+(define-public r-bayestransmission
+  (package
+    (name "r-bayestransmission")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayestransmission" version))
+       (sha256
+        (base32 "02hyp769jisjxd43q2i3kx9gk1xw2lmbg8q9flaz204zzbh5q026"))))
+    (properties `((upstream-name . "bayestransmission")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list lapack))
+    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiforesite.github.io/bayestransmission/")
+    (synopsis "Bayesian Transmission Models")
+    (description
+     "This package provides Bayesian inference methods for infectious disease
+transmission models in healthcare settings.  Implements Markov Chain Monte Carlo
+(MCMC) algorithms for estimating transmission parameters from patient-level data
+including admission, discharge, and testing events as described in Thomas et al.
+(2015) <doi:10.1093/imammb/dqt021>.")
+    (license license:expat)))
+
 (define-public r-bayestools
   (package
     (name "r-bayestools")
@@ -26748,13 +26863,13 @@ hazard.  The function saves all posterior quantities to the desired path.")
 (define-public r-bayesnsgp
   (package
     (name "r-bayesnsgp")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesNSGP" version))
        (sha256
-        (base32 "0va4gvyfwfdk3yvhdyxc49qlmzxfblwlmwqh79b93zkv8239kkk1"))))
+        (base32 "1pasfv5242b9pan0agpxaa9bp1in8i297g4nln7dikdiy8pxvx1i"))))
     (properties `((upstream-name . "BayesNSGP")))
     (build-system r-build-system)
     (arguments
@@ -26772,10 +26887,10 @@ parameters; these parameter processes can be specified either deterministically
 Gaussian processes).  Stationary Gaussian processes are a special case of our
 methodology, and we furthermore implement approximate Gaussian process inference
 to account for very large spatial data sets (Finley, et al (2017)
-<@code{arXiv:1702.00434v2>}).  Bayesian inference is carried out using Markov
-chain Monte Carlo methods via the nimble package, and posterior prediction for
-the Gaussian process at unobserved locations is provided as a post-processing
-step.")
+<doi:10.48550/@code{arXiv.1702.00434>}).  Bayesian inference is carried out
+using Markov chain Monte Carlo methods via the \"nimble\" package, and posterior
+prediction for the Gaussian process at unobserved locations is provided as a
+post-processing step.")
     (license license:gpl3)))
 
 (define-public r-bayesnetbp
@@ -31516,13 +31631,13 @@ effect.  For more information, see Kim et al. (2023) <doi:10.1111/biom.13833>.")
 (define-public r-bartcause
   (package
     (name "r-bartcause")
-    (version "1.0-9")
+    (version "1.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartCause" version))
        (sha256
-        (base32 "1nvb3ljzh4l8bq1nixvphr0aww1zxi3bcv6jfa54qs4iq9mgqxsv"))))
+        (base32 "17yvnx9m8smi0qcg2xa65hcxdvrjrhcry8hdmdlqpz46j22nq4pz"))))
     (properties `((upstream-name . "bartCause")))
     (build-system r-build-system)
     (arguments
@@ -32954,6 +33069,52 @@ and result collection.  Designed for scalable workflows in interactive and
 automated settings (local or remote).  Integrates with multiple backends;
 supports flexible automation pipelines and live job tracking.  For more
 information, see <https://anirbanshaw24.github.io/bakerrr/>.")
+    (license license:expat)))
+
+(define-public r-baker
+  (package
+    (name "r-baker")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baker" version))
+       (sha256
+        (base32 "1k6hiyj8hfnjsz8b3m0nlkh34205i6qfds3xx7bp7ddqpf8zx1hg"))))
+    (properties `((upstream-name . "baker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-shinyfiles
+                             r-shinydashboard
+                             r-robcompositions
+                             r-rjags
+                             r-reshape2
+                             r-r2jags
+                             r-mvbutils
+                             r-mgcv
+                             r-lubridate
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-coda
+                             r-binom
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zhenkewu/baker")
+    (synopsis "\"Nested Partially Latent Class Models\"")
+    (description
+     "This package provides functions to specify, fit and visualize nested
+partially-latent class models ( Wu, Deloria-Knoll, Hammitt, and Zeger (2016)
+<doi:10.1111/rssc.12101>; Wu, Deloria-Knoll, and Zeger (2017)
+<doi:10.1093/biostatistics/kxw037>; Wu and Chen (2021) <doi:10.1002/sim.8804>)
+for inference of population disease etiology and individual diagnosis.  In the
+motivating Pneumonia Etiology Research for Child Health (PERCH) study, because
+both quantities of interest sum to one hundred percent, the PERCH scientists
+frequently refer to them as population etiology pie and individual etiology pie,
+hence the name of the package.")
     (license license:expat)))
 
 (define-public r-bakeoff

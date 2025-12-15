@@ -1093,13 +1093,13 @@ mapping algorithms and additional functions described in Kang et al
 (define-public r-symmoments
   (package
     (name "r-symmoments")
-    (version "1.2.1")
+    (version "1.2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symmoments" version))
        (sha256
-        (base32 "0wl68nsvydfhlbyaj54alj31dphqigyp1s4h2xdapxj4zvwf2sws"))))
+        (base32 "1i2gr7nyq7f9j05kqyn29lpn4z0i4zdf4ifcnvwiwajwb2ibrj80"))))
     (properties `((upstream-name . "symmoments")))
     (build-system r-build-system)
     (arguments
@@ -3393,6 +3393,31 @@ svg-pan-zoom.js library.  Various options to the widget can tailor the pan and
 zoom experience to nearly any user desire.")
     (license license:expat)))
 
+(define-public r-svgedit
+  (package
+    (name "r-svgedit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svgedit" version))
+       (sha256
+        (base32 "0z6rz2xvxpicj9zlwz0qfsv60yrn28nj0x08r788bv1dsf16g852"))))
+    (properties `((upstream-name . "svgedit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-rlang r-ggplot2 r-cli r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DanielThedie/svgedit")
+    (synopsis "Insert Graphs, Images and Text in SVG Files")
+    (description
+     "Edit SVG files created in Inkscape by replacing placeholders (e.g. a rectangle
+element or {} in a text box) by ggplot2 objects, images or text.  This helps
+automate the creation of figures with complex layouts.")
+    (license license:expat)))
+
 (define-public r-svenssonm
   (package
     (name "r-svenssonm")
@@ -4630,6 +4655,33 @@ hazards models with intermittently observed longitudinal covariates.  Cao H.,
 Churpek M. M., Zeng D., and Fine J. P. (2015)
 <doi:10.1080/01621459.2014.957289>.")
     (license license:gpl2)))
+
+(define-public r-survlab
+  (package
+    (name "r-survlab")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survlab" version))
+       (sha256
+        (base32 "18d2yxclf7wb99j9p0rkzvr12za1vkmddl2ni9hh1c660l0xrdk9"))))
+    (properties `((upstream-name . "survlab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm r-survival r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://lpereira-ue.github.io/survlab/")
+    (synopsis "Survival Model-Based Imputation for Laboratory Non-Detect Data")
+    (description
+     "This package implements survival-model-based imputation for censored laboratory
+measurements, including Tobit-type models with several distribution options.
+Suitable for data with values below detection or quantification limits, the
+package identifies the best-fitting distribution and produces realistic
+imputations that respect the censoring thresholds.")
+    (license license:expat)))
 
 (define-public r-survivor
   (package
@@ -11863,45 +11915,6 @@ Application Programming Interface (API), which can be found here:
 <https://github.com/janeadams/storywrangler>.")
     (license license:expat)))
 
-(define-public r-story
-  (package
-    (name "r-story")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stoRy" version))
-       (sha256
-        (base32 "05lji6gl8nzkxhygfvfm7alk5yp5gw1dkkr5r993vnj67m10pcbq"))))
-    (properties `((upstream-name . "stoRy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tidyjson
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-rappdirs
-                             r-r6
-                             r-purrr
-                             r-lifecycle
-                             r-httr
-                             r-fansi
-                             r-dplyr
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/theme-ontology/stoRy")
-    (synopsis "Download, Explore, and Analyze Literary Theme Ontology Data")
-    (description
-     "Download, explore, and analyze Literary Theme Ontology themes and thematically
-annotated story data.  To learn more about the project visit
-<https://github.com/theme-ontology/theming> and <https://www.themeontology.org>.")
-    (license license:gpl3)))
-
 (define-public r-stortingscrape
   (package
     (name "r-stortingscrape")
@@ -12508,13 +12521,13 @@ Hosszejni and Kastner (2021) <doi:10.18637/jss.v100.i12> and Kastner (2016)
 (define-public r-stochtree
   (package
     (name "r-stochtree")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochtree" version))
        (sha256
-        (base32 "0473dgjjrmshl3prfgsq1zw46mlvwf100pha8yxzwva4a5gmfsyf"))))
+        (base32 "12wwgwf2kf4871jqmxa23hhn2mcrfdi1aiwb89ifqj4bwsgmz890"))))
     (properties `((upstream-name . "stochtree")))
     (build-system r-build-system)
     (arguments
@@ -20413,20 +20426,19 @@ as well as Cint are sampled randomly without replacement.  See Beule & Karlovsky
 (define-public r-srppp
   (package
     (name "r-srppp")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srppp" version))
        (sha256
-        (base32 "02l2ay9fjrxz18jq1knjifawlkhcv1i5ndfv3rkzph8lafkbj8l6"))))
+        (base32 "00b9w1m7gss21vr14lzb7nnn9canfza38yc233ifhgsy739gpj7w"))))
     (properties `((upstream-name . "srppp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
@@ -29522,13 +29534,13 @@ R-version of the (now obsolete) standalone Windows program of the same name.")
 (define-public r-sparvaride
   (package
     (name "r-sparvaride")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparvaride" version))
        (sha256
-        (base32 "17skm44cdv540jik8lv5y0dp6yzjgy775vjzq3dv1jv58nqjvps1"))))
+        (base32 "02pwms9y75bh9x8xvvaxlg18cnr81msp5927q9jprq92ay3k51zw"))))
     (properties `((upstream-name . "sparvaride")))
     (build-system r-build-system)
     (arguments
@@ -29540,12 +29552,12 @@ R-version of the (now obsolete) standalone Windows program of the same name.")
     (synopsis "Variance Identification in Sparse Factor Analysis")
     (description
      "This is an implementation of the algorithm described in Section 3 of Hosszejni
-and FrÃ¼hwirth-Schnatter (2022) <doi:10.48550/@code{arXiv.2211.00671>}.  The
-algorithm is used to verify that the counting rule CR(r,1) holds for the
-sparsity pattern of the transpose of a factor loading matrix.  As detailed in
-Section 2 of the same paper, if CR(r,1) holds, then the idiosyncratic variances
-are generically identified.  If CR(r,1) does not hold, then we do not know
-whether the idiosyncratic variances are identified or not.")
+and FrÃ¼hwirth-Schnatter (2026) <doi:10.1016/j.jmva.2025.105536>.  The algorithm
+is used to verify that the counting rule CR(r,1) holds for the sparsity pattern
+of the transpose of a factor loading matrix.  As detailed in Section 2 of the
+same paper, if CR(r,1) holds, then the idiosyncratic variances are generically
+identified.  If CR(r,1) does not hold, then we do not know whether the
+idiosyncratic variances are identified or not.")
     (license license:gpl3+)))
 
 (define-public r-spartaas
@@ -32220,13 +32232,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.7.4")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "1j3kndcymwsvzkiaz0qz3psidb9fwh34nb3198lv8674df4rccry"))))
+        (base32 "117054mla23fvxc0rllj8p6w9ilv403vn1aqb8pb8yxgkz648y60"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (arguments
@@ -32236,7 +32248,6 @@ package).  For more information, please see Rocha and Romano (2021) and check
                              r-tuner
                              r-signal
                              r-shinyjs
-                             r-shinybs
                              r-shiny
                              r-seewave
                              r-phontools
@@ -32245,7 +32256,8 @@ package).  For more information, please see Rocha and Romano (2021) and check
                              r-foreach
                              r-dtw
                              r-doparallel
-                             r-data-table))
+                             r-data-table
+                             r-bslib))
     (home-page "http://cogsci.se/soundgen.html")
     (synopsis "Sound Synthesis and Acoustic Analysis")
     (description
@@ -32513,13 +32525,13 @@ Sotkanet open data portal <https://sotkanet.fi/sotkanet/fi/index>.")
 (define-public r-sortable
   (package
     (name "r-sortable")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sortable" version))
        (sha256
-        (base32 "1y6cljcjai2k2j7abzn07ab170gpp25zvl9gk755l4gwi7clgl2c"))))
+        (base32 "01lhicx9mwzi21ddwlpyb0bjwgg12g2cszsxs56cahwzxbmd2bly"))))
     (properties `((upstream-name . "sortable")))
     (build-system r-build-system)
     (arguments
@@ -32531,7 +32543,7 @@ Sotkanet open data portal <https://sotkanet.fi/sotkanet/fi/index>.")
                              r-jsonlite
                              r-htmlwidgets
                              r-htmltools
-                             r-ellipsis
+                             r-cli
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://rstudio.github.io/sortable/")
@@ -35833,13 +35845,13 @@ submission.")
 (define-public r-snic
   (package
     (name "r-snic")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snic" version))
        (sha256
-        (base32 "0vkcv9f6fqr6qsj3390h97lbsp31g28crs7xjlig8w1y3rsb4jf9"))))
+        (base32 "1m1dqmi7f9bzwdsbfi3m79kmk4i4mccxn9f3j3c62rl2h9azkxq6"))))
     (properties `((upstream-name . "snic")))
     (build-system r-build-system)
     (arguments
@@ -47126,13 +47138,13 @@ basis of @code{FuzzyNumbers} package.")
 (define-public r-sim-diffproc
   (package
     (name "r-sim-diffproc")
-    (version "4.9")
+    (version "5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sim.DiffProc" version))
        (sha256
-        (base32 "059dzkl0jw1hfswa4wj1wwal7svy4sb5x79l25dk9hwdvlpy77v4"))))
+        (base32 "1ccv87y9x44sdk69hwnvqk6xl75di4y7v23av5rgmzv71v9lrw8l"))))
     (properties `((upstream-name . "Sim.DiffProc")))
     (build-system r-build-system)
     (arguments
@@ -54393,13 +54405,13 @@ Appl Ecol.  2020; 57; 1847â1860. <doi:10.1111/1365-2664.13659>.")
 (define-public r-shark4r
   (package
     (name "r-shark4r")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHARK4R" version))
        (sha256
-        (base32 "0lgak9zwm3gxiyc4pgjxqq02gnhg2grr0s5abd010zv29wvx27yl"))))
+        (base32 "0k6xwb1d6dz1yanax2pnzmbglpcrj3pil3wzdmgbl0825pchcamk"))))
     (properties `((upstream-name . "SHARK4R")))
     (build-system r-build-system)
     (arguments
@@ -57542,13 +57554,13 @@ along with useful visualisation functions.")
 (define-public r-serocalculator
   (package
     (name "r-serocalculator")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serocalculator" version))
        (sha256
-        (base32 "1glj0bgmnjvw3rnaxdn1cd1aj99q6sjf187l1h9md4v3pw7gwx2f"))))
+        (base32 "1j71pqbk74af2ympav3893spa95bwj42g37s7azzkw7xmwb2ycam"))))
     (properties `((upstream-name . "serocalculator")))
     (build-system r-build-system)
     (arguments
@@ -57563,9 +57575,9 @@ along with useful visualisation functions.")
                              r-rlang
                              r-rcpp
                              r-purrr
-                             r-mixtools
                              r-magrittr
                              r-lifecycle
+                             r-labelled
                              r-glue
                              r-ggpubr
                              r-ggplot2
@@ -57574,7 +57586,7 @@ along with useful visualisation functions.")
                              r-doparallel
                              r-cli
                              r-and))
-    (home-page "https://github.com/UCD-SERG/serocalculator")
+    (home-page "https://ucd-serg.github.io/serocalculator/")
     (synopsis "Estimating Infection Rates from Serological Data")
     (description
      "Translates antibody levels measured in cross-sectional population samples into
@@ -60875,13 +60887,13 @@ technique.  Runtime examples are provided in the package function as well as at
 (define-public r-semdeep
   (package
     (name "r-semdeep")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMdeep" version))
        (sha256
-        (base32 "1019l4lm56gnh3n8bz3rd5s5sbdcq7iq6sgfdgp0gxcpnd27gv3d"))))
+        (base32 "05qvl7jnk4f736s31abpfp0rpwy7x6aq0cld068m6jr6kgkmy662"))))
     (properties `((upstream-name . "SEMdeep")))
     (build-system r-build-system)
     (arguments
@@ -60905,8 +60917,8 @@ technique.  Runtime examples are provided in the package function as well as at
      "Structural Equation Modeling with Deep Neural Network and Machine Learning Algorithms")
     (description
      "Training and validation of a custom (or data-driven) Structural Equation Models
-using layer-wise Deep Neural Networks or node-wise Machine Learning algorithms,
-which extend the fitting procedures of the	'SEMgraph R package
+using Deep Neural Networks or Machine Learning algorithms, which extend the
+fitting procedures of the SEMgraph R package
 <doi:10.32614/CRAN.package.SEMgraph>.")
     (license license:gpl3+)))
 
@@ -64510,13 +64522,13 @@ MARSPEC <http://www.marspec.org/>.")
 (define-public r-sdmodels
   (package
     (name "r-sdmodels")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDModels" version))
        (sha256
-        (base32 "0afq1r0yr7i5pv11pw2qgjh1c8xl3kp93vd23mgk51mmk568nkx5"))))
+        (base32 "1ghrhrd22lipz709szrjk2256p89a8ak1v065r3zdip9k1ygs2iv"))))
     (properties `((upstream-name . "SDModels")))
     (build-system r-build-system)
     (arguments
@@ -64525,7 +64537,7 @@ MARSPEC <http://www.marspec.org/>.")
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-rdpack
-                             r-pbapply
+                             r-progressr
                              r-igraph
                              r-grplasso
                              r-gridextra
@@ -64551,7 +64563,7 @@ than classical least squares optimization.  SDModels provides functions
 @code{SDAM()} for Spectrally Deconfounded Additive Models (Scheidegger, Guo, and
 BÃ¼hlmann (2025) <doi:10.1145/3711116>) and @code{SDForest()} for Spectrally
 Deconfounded Random Forests (Ulmer, Scheidegger, and BÃ¼hlmann (2025)
-<doi:10.48550/@code{arXiv.2502.03969>}).")
+<doi:10.1080/10618600.2025.2569602>).")
     (license license:gpl3)))
 
 (define-public r-sdm
@@ -64752,13 +64764,13 @@ format and also with data.frame objects.")
 (define-public r-sdear
   (package
     (name "r-sdear")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SdeaR" version))
        (sha256
-        (base32 "1d5fm5lbkk1nqc9q0n1nxg9wq3kw0y9wrglr80p6f4psl8zsqav8"))))
+        (base32 "0fw352shryl2cwz36v3bds44wrax2ff4xyqfxndysr843ykzhbk3"))))
     (properties `((upstream-name . "SdeaR")))
     (build-system r-build-system)
     (arguments
@@ -71350,13 +71362,13 @@ simulating POMDP problems and their solutions.")
 (define-public r-sars
   (package
     (name "r-sars")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sars" version))
        (sha256
-        (base32 "0vv9ffdm0qjksnrijbd4swr3mczgfha13fbycji9pq9chrj5xca3"))))
+        (base32 "042fk7x05wpr9bf0zx367w8ncffgm6drfg1a0cjqagdbj31vgjcn"))))
     (properties `((upstream-name . "sars")))
     (build-system r-build-system)
     (arguments

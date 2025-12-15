@@ -1898,6 +1898,34 @@ city codes at a specific point in time.")
 used with machine learning methods such as @code{AdaBoost}, random forests, etc.")
     (license license:expat)))
 
+(define-public r-journalr
+  (package
+    (name "r-journalr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "journalR" version))
+       (sha256
+        (base32 "1bavrq68b6lp1xdblvax95hb54zyi66hhrvzsf3g2a3f3qrz1q0f"))))
+    (properties `((upstream-name . "journalR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glue r-data-table r-checkmate))
+    (home-page "https://github.com/epi-sam/journalR")
+    (synopsis "Formatting Tools for Scientific Journal Writing")
+    (description
+     "Scientific journal numeric formatting policies implemented in code.  Emphasis on
+formatting mean/upper/lower sets of values.  Convert raw numeric triplet value
+vectors to formatted text for journal submission.  For example c(2e6, 1e6, 3e6)
+becomes \"2.00 million (1.00--3.00)\".  Lancet and Nature have built-in styles for
+rounding and punctuation marks.  Users may extend journal styles arbitrarily.
+Three metrics are supported; proportions, percentage points, and counts.
+Magnitudes for all metrics are discovered automatically.")
+    (license license:expat)))
+
 (define-public r-journalabbr
   (package
     (name "r-journalabbr")
@@ -2071,6 +2099,44 @@ Hankin (2023) <doi:10.48550/@code{arXiv.2303.06062>}.")
 \"Practical Smoothing.  The Joys of P-splines\" by Paul H.C. Eilers and Brian D.
 Marx (2021, ISBN:978-1108482950).")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-jollofr
+  (package
+    (name "r-jollofr")
+    (version "0.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jollofR" version))
+       (sha256
+        (base32 "1kph8rrdvribh7w2i19a2c4inawgiqkiylbv644rab1j3083hbxq"))))
+    (properties `((upstream-name . "jollofR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-sf
+                             r-reshape2
+                             r-raster
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/wpgp/jollofR/")
+    (synopsis "Small Area Population Estimation by Demographics")
+    (description
+     "Automatic disaggregation of small1area population estimates by demographic
+groups (e.g., age, sex, race, marital status, educational level, etc) along with
+the estimates of uncertainty, using advanced Bayesian statistical modelling
+approaches based on integrated nested Laplace approximation (INLA) Rue et al.
+(2009) <doi:10.1111/j.1467-9868.2008.00700.x> and stochastic partial
+differential equation (SPDE) methods Lindgren et al. (2011)
+<doi:10.1111/j.1467-9868.2011.00777.x>.  The package implements hierarchical
+Bayesian modeling frameworks for small area estimation as described in Leasure
+et al. (2020) <doi:10.1073/pnas.1913050117> and Nnanatu et al. (2025)
+<doi:10.1038/s41467-025-59862-4>.")
+    (license license:expat)))
 
 (define-public r-joker
   (package
@@ -2509,6 +2575,30 @@ Methodologies were published in Emura et al. (2017)
 <doi:10.1007/978-981-13-3516-7>.  Survival data from ovarian cancer patients are
 also available.")
     (license license:gpl2)))
+
+(define-public r-joinless
+  (package
+    (name "r-joinless")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joinless" version))
+       (sha256
+        (base32 "07gwh2mnva11yf6m9f8dcbwj78133szy6hrdx1nnslkyf8ibpnc9"))))
+    (properties `((upstream-name . "joinless")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=joinless")
+    (synopsis "Exploratory Analysis of Relationships Between Variables")
+    (description
+     "This package provides tools to explore and summarize relationship patterns
+between variables across one or multiple datasets.  The package relies on
+efficient sampling strategies to estimate pairwise associations and supports
+quick exploratory data analysis for large or heterogeneous data sources.")
+    (license license:gpl3+)))
 
 (define-public r-joinet
   (package

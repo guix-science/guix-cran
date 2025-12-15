@@ -2550,13 +2550,13 @@ data, returning clear, easy-to-read results.  Ideal for all experience levels.")
 (define-public r-automatedreclin
   (package
     (name "r-automatedreclin")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "automatedRecLin" version))
        (sha256
-        (base32 "02fb3xbnqlaaa4qasz4x15zwh3vi37ra66aqibzkrl5ca3g17shr"))))
+        (base32 "0d77bd9wgil1671ybk4ls96xzh12l9qxl11iaxf7b2vs947317zv"))))
     (properties `((upstream-name . "automatedRecLin")))
     (build-system r-build-system)
     (arguments
@@ -6563,13 +6563,13 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
 (define-public r-arxiv
   (package
     (name "r-arxiv")
-    (version "0.16")
+    (version "0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aRxiv" version))
        (sha256
-        (base32 "09i8r4ywb6c5yqbynlm9b57kl322ggi4v85a58d0nw5a8j2l29k3"))))
+        (base32 "1drf9kdvyp4v768iphh639kxhzkii5i0n0cq87mpz7hqhzdpi7mb"))))
     (properties `((upstream-name . "aRxiv")))
     (build-system r-build-system)
     (arguments
@@ -8760,13 +8760,13 @@ manipulating and converting @code{ArcGIS} objects from R are also provided.")
 (define-public r-arcpullr
   (package
     (name "r-arcpullr")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpullr" version))
        (sha256
-        (base32 "1q1ncdwnybnksqqfqbxslz6wdwlyd9sw5mcwfj8gdld3sm5hg23r"))))
+        (base32 "0z9ssdzfr7bi3354an9i1xnv86z5mac0sf6hj1lc9w6wi68y2gwq"))))
     (properties `((upstream-name . "arcpullr")))
     (build-system r-build-system)
     (arguments
@@ -12031,13 +12031,13 @@ library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aorsf" version))
        (sha256
-        (base32 "1a69kiji309c2anp0nqdb7n77zlbsl0aibiiazjw6zflwf8fff4l"))))
+        (base32 "0zw44764xxfqjpsxsb4dabgxjdl5y9spfcr1wkrxh1klp5ddfa1s"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
     (arguments
@@ -18121,13 +18121,13 @@ also available.")
 (define-public r-alarmdata
   (package
     (name "r-alarmdata")
-    (version "0.2.1")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alarmdata" version))
        (sha256
-        (base32 "1gx4s4dbhqvbj5y8qxgvm2x4a5n22llwiqm8a6iavg1yd3sqhzg0"))))
+        (base32 "0242djpx657fdzwy1c6059lhj2xw8yfm8m3sx0d0i6qgiarnqbx8"))))
     (properties `((upstream-name . "alarmdata")))
     (build-system r-build-system)
     (arguments
@@ -18158,7 +18158,9 @@ Redistricting Simulations of @code{McCartan}, Kenny, Simko, Garcia, Wang, Wu,
 Kuriwaki, and Imai (2022) <doi:10.7910/DVN/SLCD3E>.  The package extends the
 data introduced in @code{McCartan}, Kenny, Simko, Garcia, Wang, Wu, Kuriwaki,
 and Imai (2022) <doi:10.1038/s41597-022-01808-2> to also include states with
-only a single district.")
+only a single district.  The package also includes the Japanese 2022
+redistricting files from the 47-Prefecture Redistricting Simulations of
+Miyazaki, Yamada, Yatsuhashi, and Imai (2022) <doi:10.7910/DVN/Z9UKSH>.")
     (license license:expat)))
 
 (define-public r-alakazam
@@ -18981,13 +18983,13 @@ use by the @code{airGR} packages.")
 (define-public r-airgr
   (package
     (name "r-airgr")
-    (version "1.7.6")
+    (version "1.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGR" version))
        (sha256
-        (base32 "0kxa3p659sh72x54qhbxr4ni781czj4g2k6x3zs30y2zgmljrwqa"))))
+        (base32 "01g7p8738djc59qmjlskln191kcvsjci37bmy3dqq2n318gnzscj"))))
     (properties `((upstream-name . "airGR")))
     (build-system r-build-system)
     (arguments

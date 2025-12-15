@@ -506,13 +506,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "1n4v27fqhbaddncihvcxibg7ivlafr0ipdq90v6pb71dlgk2jppg"))))
+        (base32 "1nw18x2sn9pa2fjhi4rcs8sy52i577f4gbacl24m7v7ispf2ral4"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (arguments
@@ -10988,23 +10988,26 @@ securely handled via environment variables.")
 (define-public r-lime
   (package
     (name "r-lime")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lime" version))
        (sha256
-        (base32 "157ph4a1h3025nx5v8lw63bbrzk4skw2rnnw1g7h4d3qggcmlhf9"))))
+        (base32 "1anas1f8vhhwgjhrlzz2x412nn7cbwp9ihab6awavm2lspg3nq21"))))
     (properties `((upstream-name . "lime")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringi
+                             r-rlang
                              r-rcppeigen
                              r-rcpp
                              r-matrix
+                             r-lifecycle
                              r-gower
+                             r-glue
                              r-glmnet
                              r-ggplot2
                              r-assertthat))
@@ -11018,7 +11021,7 @@ cannot be used for explaining why a model made a specific prediction.  lime (a
 port of the lime Python package) is a method for explaining the outcome of black
 box models by fitting a local model around the point in question an
 perturbations of this point.  The approach is described in more detail in the
-article by Ribeiro et al. (2016) <@code{arXiv:1602.04938>}.")
+article by Ribeiro et al. (2016) <doi:10.48550/@code{arXiv.1602.04938>}.")
     (license license:expat)))
 
 (define-public r-lilrhino
@@ -13599,13 +13602,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.4.5")
+    (version "4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "0lw2v9g6569ibrbhysw0jd6kcib2p0bsh9v8vwmsdxvb1051k2n6"))))
+        (base32 "12xq9qrv5iap8aqpxcpkbiqwa2b8fk7ff8dwl83i7s9r9ch691sf"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -13615,6 +13618,7 @@ package is heavily inspired by the
                              r-xts
                              r-shiny
                              r-robustbase
+                             r-plotly
                              r-openxlsx
                              r-mass
                              r-leaps
@@ -13622,25 +13626,28 @@ package is heavily inspired by the
                              r-lattice
                              r-knitr
                              r-kableextra
+                             r-htmlwidgets
+                             r-htmltools
                              r-ellipse
+                             r-conflicted
                              r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lessR")
-    (synopsis "Less Code, More Results")
+    (synopsis "Less Code with More Comprehensive Results")
     (description
      "Each function replaces multiple standard R functions.  For example, two function
 calls, @code{Read()} and @code{CountAll()}, generate summary statistics for all
-variables in the data frame, plus histograms and bar charts as appropriate.
-Other functions provide for summary statistics via pivot tables, a comprehensive
-regression analysis, ANOVA and t-test, visualizations including the
-Violin/Box/Scatter plot for a numerical variable, bar chart, histogram, box
-plot, density curves, calibrated power curve, reading multiple data formats with
-the same function call, variable labels, time series with aggregation and
-forecasting, color themes, and Trellis (facet) graphics.  Also includes a
-confirmatory factor analysis of multiple indicator measurement models,
-pedagogical routines for data simulation such as for the Central Limit Theorem,
-generation and rendering of regression instructions for interpretative output,
-and interactive visualizations.")
+variables in the data frame, plus histograms and bar charts.  Other functions
+provide data aggregation via pivot tables; comprehensive regression, ANOVA, and
+t-test; visualizations including integrated Violin/Box/Scatter plot for a
+numerical variable, bar chart, histogram, box plot, density curves, calibrated
+power curve; reading multiple data formats with the same call; variable labels;
+time series with aggregation and forecasting; color themes; and Trellis (facet)
+graphics.  Also includes a confirmatory factor analysis of multiple-indicator
+measurement models, pedagogical routines for data simulation (e.g., Central
+Limit Theorem), generation and rendering of regression instructions for
+interpretative output, and both interactive construction of visualizations and
+interactive visualizations with plotly.")
     (license license:gpl2+)))
 
 (define-public r-less

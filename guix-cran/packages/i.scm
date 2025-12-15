@@ -639,13 +639,13 @@ regressions.  Package based on @code{DiTraglia} and Garcia-Jimeno (2020)
 (define-public r-ivdml
   (package
     (name "r-ivdml")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IVDML" version))
        (sha256
-        (base32 "1sfwnfbdbng28h65x8hv4wiy11vcyigkcjb3ir5zynjfamq8ca6x"))))
+        (base32 "17vj883mkjh5m05bc5js7jl5bd6r1ibcfj4q5hbb8k3c0qw3j35p"))))
     (properties `((upstream-name . "IVDML")))
     (build-system r-build-system)
     (arguments
@@ -2226,13 +2226,13 @@ prespecified.")
 (define-public r-isospecr
   (package
     (name "r-isospecr")
-    (version "2.1.3")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoSpecR" version))
        (sha256
-        (base32 "0cy9y3lh20xxj9sah8s2zrwnbzk39s5xmscj4mskvn897bmlksh6"))))
+        (base32 "0yksqga4icplqrfq574pi12ns90kn3wddc59v3fhccafwh0l9bhw"))))
     (properties `((upstream-name . "IsoSpecR")))
     (build-system r-build-system)
     (arguments
@@ -4195,6 +4195,32 @@ designs) can be done from the available incomplete block designs, viz., balanced
 incomplete block designs/ partially balanced incomplete block designs/
 t-designs. (Mcsorley, J.P., Phillips, N.C., Wallis, W.D. and Yucas, J.L.
 (2005).<doi:10.1007/s10623-003-6149-9>).")
+    (license license:gpl2+)))
+
+(define-public r-irls
+  (package
+    (name "r-irls")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irls" version))
+       (sha256
+        (base32 "1wglywgzk1bfpc7vxqz8iq440dnmljbpb68b958b53npmgwfmz1x"))))
+    (properties `((upstream-name . "irls")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=irls")
+    (synopsis
+     "Generalised Linear Models via Iteratively Reweighted Least Squares")
+    (description
+     "Generalised linear models via the iteratively reweighted least squares
+algorithm.  The functions perform logistic, Poisson and Gamma regression
+(ISBN:9780412317606), either for a single model or many regression models in a
+column-wise fashion.")
     (license license:gpl2+)))
 
 (define-public r-irisseismic
@@ -13470,6 +13496,39 @@ in a data set contain set-valued observations; and another to merge two already
 imprecisely imputed data.  The method is described in a technical report by
 Endres, Fink and Augustin (2018, <doi:10.5282/ubm/epub.42423>).")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-impermanentlosscalc
+  (package
+    (name "r-impermanentlosscalc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impermanentlosscalc" version))
+       (sha256
+        (base32 "0nvavx7nn2v5zgbm4y3jihh0wxbrg5z8pc2ygki6bz9agj3g2ifd"))))
+    (properties `((upstream-name . "impermanentlosscalc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=impermanentlosscalc")
+    (synopsis
+     "Calculate Impermanent Loss in Automated Market Maker (AMM) Liquidity Pools")
+    (description
+     "Computes the key metrics for assessing the performance of a liquidity provider
+(LP) position in a weighted multi-asset Automated Market Maker (AMM) pool.
+Calculates the nominal and percentage impermanent loss (IL) by comparing the
+portfolio value inside the pool (based on the weighted geometric mean of price
+ratios) against the value of simply holding the assets outside the pool (based
+on the weighted arithmetic mean).  The primary function,
+@code{`impermanent_loss()}`, incorporates the effect of earned trading fees to
+provide the LP's net profit and loss relative to a holding strategy, using a
+methodology derived from Tiruviluamala, N., Port, A., and Lewis, E. (2022)
+<doi:10.48550/@code{arXiv.2203.11352>}.")
+    (license license:gpl3)))
 
 (define-public r-impectr
   (package

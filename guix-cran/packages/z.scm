@@ -578,41 +578,6 @@ measurement error in responses, the external validation scenario, and the
 internal validation scenario.")
     (license license:gpl2+)))
 
-(define-public r-zipangu
-  (package
-    (name "r-zipangu")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "zipangu" version))
-       (sha256
-        (base32 "1m68y8r691zdvg2n1mknhz6y58spiipdi7ip3za1laq2yzbg6wqq"))))
-    (properties `((upstream-name . "zipangu")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rlang
-                             r-purrr
-                             r-memoise
-                             r-magrittr
-                             r-lubridate
-                             r-lifecycle
-                             r-dplyr
-                             r-arabic2kansuji))
-    (home-page "https://uribo.github.io/zipangu/")
-    (synopsis "Japanese Utility Functions and Data")
-    (description
-     "Some data treated by the Japanese R user require unique operations and
-processing.  These are caused by address, Kanji, and traditional year
-representations.  zipangu transforms specific to Japan into something more
-general one.")
-    (license license:expat)))
-
 (define-public r-zinarp
   (package
     (name "r-zinarp")

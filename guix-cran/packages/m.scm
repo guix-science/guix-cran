@@ -9291,40 +9291,6 @@ historical record and the year 2100.  A wide range of screen and pdf plotting
 options are available in the package.")
     (license license:gpl3+)))
 
-(define-public r-mskcc-oncotree
-  (package
-    (name "r-mskcc-oncotree")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mskcc.oncotree" version))
-       (sha256
-        (base32 "1n79k3rp84r8j6paqshvingykszsw995fm7yxf1wl1jfp4hiyl4n"))))
-    (properties `((upstream-name . "mskcc.oncotree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tidyjson
-                             r-tibble
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-memoise
-                             r-magrittr
-                             r-httr2
-                             r-glue
-                             r-dplyr))
-    (home-page "https://maialab.org/mskcc.oncotree/")
-    (synopsis "Interface to the 'OncoTree' API")
-    (description
-     "Programmatic access to @code{OncoTree} API <http://oncotree.mskcc.org/>.  Get
-access to tumor main types, identifiers and utility routines to map across to
-other tumor classification systems.")
-    (license license:expat)))
-
 (define-public r-msip
   (package
     (name "r-msip")
@@ -14733,51 +14699,6 @@ squares regressions computed with the pls package, following Tenenhaus (1998,
 ISBN:2-7108-0735-1).")
     (license license:gpl2+)))
 
-(define-public r-moreparty
-  (package
-    (name "r-moreparty")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "moreparty" version))
-       (sha256
-        (base32 "1fzc63fdpgx38scnivmkylv2f1gbg5zjr2yanz02ljg2v5lkj5di"))))
-    (properties `((upstream-name . "moreparty")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vip
-                             r-varimp
-                             r-shinywidgets
-                             r-shiny
-                             r-rlang
-                             r-rclipboard
-                             r-plyr
-                             r-phosphoricons
-                             r-pdp
-                             r-partykit
-                             r-party
-                             r-measures
-                             r-mass
-                             r-iml
-                             r-ggplot2
-                             r-foreach
-                             r-dt
-                             r-datamods))
-    (home-page "https://framagit.org/nicolas-robette/moreparty")
-    (synopsis "Toolbox for Conditional Inference Trees and Random Forests")
-    (description
-     "Additions to party and partykit packages : tools for the interpretation of
-forests (surrogate trees, prototypes, etc.), feature selection (see Gregorutti
-et al (2017) <doi:10.48550/@code{arXiv.1310.5726>}, Hapfelmeier and Ulm (2013)
-<doi:10.1016/j.csda.2012.09.020>, Altmann et al (2010)
-<doi:10.1093/bioinformatics/btq134>) and parallelized versions of conditional
-forest and variable importance functions.  Also modules and a shiny app for
-conditional inference trees.")
-    (license license:gpl2+)))
-
 (define-public r-moqa
   (package
     (name "r-moqa")
@@ -17304,6 +17225,38 @@ schools effectiveness.  The standard value-added model is also an option.")
 regression, used in \"Statistical Inference via Data Science: A @code{ModernDive}
 into R and the Tidyverse\" available at <https://moderndive.com/>.")
     (license license:gpl3)))
+
+(define-public r-modernboot
+  (package
+    (name "r-modernboot")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modernBoot" version))
+       (sha256
+        (base32 "0a6mx4fjf5wriqc8j46a6p23x8c452yq5jmw5qjcqlz6yflq0jn5"))))
+    (properties `((upstream-name . "modernBoot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-future-apply r-future r-boot))
+    (home-page "https://github.com/ikrakib/modernBoot")
+    (synopsis
+     "Modern Resampling Methods: Bootstraps, Wild, Block, Permutation, and Selection Guidance")
+    (description
+     "This package implements modern resampling and permutation methods for robust
+statistical inference without restrictive parametric assumptions.  Provides
+bias-corrected and accelerated (BCa) bootstrap (Efron and Tibshirani (1993)
+<doi:10.1201/9780429246593>), wild bootstrap for heteroscedastic regression (Liu
+(1988) <doi:10.1214/aos/1176351062>, Davidson and Flachaire (2008)
+<doi:10.1016/j.jeconom.2008.08.003>), block bootstrap for time series (Politis
+and Romano (1994) <doi:10.1080/01621459.1994.10476870>), and permutation-based
+multiple testing correction (Westfall and Young (1993) <ISBN:0-471-55761-7>).
+Methods handle non-normal data, heteroscedasticity, time series correlation, and
+multiple comparisons.")
+    (license license:expat)))
 
 (define-public r-moderate-mediation
   (package
@@ -20795,13 +20748,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.7-2")
+    (version "1.7-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1zrkvfv5hp1aw0h62g37piycwkxkqc2bl2rvmy0qh2dg3s9irs3n"))))
+        (base32 "05rkx80wswrfl21xm2804jlll163m45mwr0ncpqd1bg83fi5cm77"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -24811,6 +24764,37 @@ package supports various types of variables, offers flexible settings, and
 enables saving an imputation model to impute new data.  Data processing and
 memory usage have been optimised to speed up the imputation process.")
     (license license:gpl3+)))
+
+(define-public r-mixfrac
+  (package
+    (name "r-mixfrac")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MixFrac" version))
+       (sha256
+        (base32 "1bszf0qxkgxkh04nnasc935xkjv03qxkk6m7249p1kq9wlaks8b2"))))
+    (properties `((upstream-name . "MixFrac")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MixFrac")
+    (synopsis
+     "Fractional Factorial Designs with Alias and Trend-Free Analysis")
+    (description
+     "Constructs mixed-level and regular fractional factorial designs using
+coordinate-exchange optimization and automatic generator search.  Design quality
+is evaluated with J2 and balance (H-hat) criteria, alias structures are computed
+via correlation-based chaining, and deterministic trend-free run orders can be
+produced following Coster (1993) <doi:10.1214/aos/1176349410>.  Mixed-level
+design construction follows the NONBPA approach of Pantoja-Pacheco et al. (2021)
+<doi:10.3390/math9131455>.  Regular fraction identification follows Guo, Simpson
+and Pignatiello (2007) <doi:10.1080/00224065.2007.11917691>.  Alias structure
+computation follows Rios-Lira et al.(2021) <doi:10.3390/math9233053>.")
+    (license license:gpl3)))
 
 (define-public r-mixfmri
   (package
@@ -33631,6 +33615,50 @@ generalized R-squared, see e.g. Cohen, J. et al. (2002, ISBN: 978-0805822236).
 Furthermore, dplyr chains are supported.")
     (license license:gpl2+)))
 
+(define-public r-metricminer
+  (package
+    (name "r-metricminer")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metricminer" version))
+       (sha256
+        (base32 "10hz9jnpizampj849s4ny4d3ldra9190qd5fnjbmaccifp3v13hg"))))
+    (properties `((upstream-name . "metricminer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rprojroot
+                             r-purrr
+                             r-openssl
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-googlesheets4
+                             r-googledrive
+                             r-gh
+                             r-getpass
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ottrproject/metricminer")
+    (synopsis "Mine Metrics from Common Places on the Web")
+    (description
+     "Mine metrics on common places on the web through the power of their APIs
+(application programming interfaces).  It also helps make the data in a format
+that is easily used for a dashboard or other purposes.  There is an associated
+dashboard template and tutorials that are underdevelopment that help you fully
+utilize metricminer'.")
+    (license license:gpl3)))
+
 (define-public r-metricgraph
   (package
     (name "r-metricgraph")
@@ -34192,13 +34220,13 @@ modeling, particularly crop and crop disease modeling.")
 (define-public r-meteoland
   (package
     (name "r-meteoland")
-    (version "2.2.3")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteoland" version))
        (sha256
-        (base32 "0v4xmjgblndm12za9hwlz6hqvzg91v0lwl7xgkqg8jnq5wlddxrf"))))
+        (base32 "17jn3siy4km5w8jkbirdm37kcihw85136fnbm0ssrq6gfw3amgy0"))))
     (properties `((upstream-name . "meteoland")))
     (build-system r-build-system)
     (arguments
@@ -37612,13 +37640,13 @@ book.  See EkstrÃ¸m, C. T. (2016).  The R Primer.  2nd edition.  Chapman & Hal
 (define-public r-mesonet
   (package
     (name "r-mesonet")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mesonet" version))
        (sha256
-        (base32 "13c3cijw6g0h4dcr07xxrmkgp0ziwcxdk5hw7b3g7r5pajn7nl75"))))
+        (base32 "1ml7547c587x02jl2zwvwzy0ck97hzvl4axa2i0mr3f5fqibrv72"))))
     (properties `((upstream-name . "mesonet")))
     (build-system r-build-system)
     (arguments
@@ -48145,13 +48173,13 @@ suggested test/control market pairs and pseudo prospective power analysis
 (define-public r-markerpen
   (package
     (name "r-markerpen")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markerpen" version))
        (sha256
-        (base32 "0i9md9vbqkxibjkn37givxzq8mq0232cvv2fyz6g8cj6flxm6vzr"))))
+        (base32 "0m9q7nw4z6hfgbhkz7csg6nwsqb3s31xbsabcswwpbizdsg0293k"))))
     (properties `((upstream-name . "markerpen")))
     (build-system r-build-system)
     (arguments
@@ -48165,7 +48193,7 @@ suggested test/control market pairs and pseudo prospective power analysis
     (description
      "Implementation of the @code{MarkerPen} algorithm, short for marker gene
 detection via penalized principal component analysis, described in the paper by
-Qiu, Wang, Lei, and Roeder (2020, <doi:10.1101/2020.11.07.373043>).
+Qiu, Wang, Lei, and Roeder (2021, <doi:10.1093/bioinformatics/btab257>).
 @code{MarkerPen} is a semi-supervised algorithm for detecting marker genes by
 combining prior marker information with bulk transcriptome data.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -48863,24 +48891,19 @@ parallelization, uncomment the relevant flags in src/MAKEVARS before compiling."
 (define-public r-maptiles
   (package
     (name "r-maptiles")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maptiles" version))
        (sha256
-        (base32 "0nnzb81fhvhd922kk161y813f25w7pjajnzxqc502ld484h2ya14"))))
+        (base32 "0jhy3x8gypx32rl6w93jn55dfpj5a630dxx4l6mm3a54zdgfnimk"))))
     (properties `((upstream-name . "maptiles")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-slippymath
-                             r-sf
-                             r-png
-                             r-digest
-                             r-curl))
+    (propagated-inputs (list r-terra r-sf r-png r-digest r-curl))
     (home-page "https://github.com/riatelab/maptiles/")
     (synopsis "Download and Display Map Tiles")
     (description
@@ -50255,13 +50278,13 @@ and node and tie attributes, and describing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "1zd2dzpsz660afykd6dmnyrh6p0wfj2n5338kwz0z5vxnf8ik5mf"))))
+        (base32 "0n5k1svrpbkya23wbc7sd43nfq00a5xi9j7lpyq4r5lssakf6nll"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments

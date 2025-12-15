@@ -567,6 +567,43 @@ building models from high-dimensional data.")
 associated with multiple phenotypes.")
     (license license:gpl2)))
 
+(define-public r-wsmed
+  (package
+    (name "r-wsmed")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wsMed" version))
+       (sha256
+        (base32 "1bl6q4a4ipicf2dij02qb32jn9hk43rspadmvxlxkdlily97rn3r"))))
+    (properties `((upstream-name . "wsMed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-semmcci
+                             r-semboottools
+                             r-rlang
+                             r-mice
+                             r-mass
+                             r-lavaan
+                             r-knitr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://yangzhen1999.github.io/wsMed/")
+    (synopsis
+     "Within-Subject Mediation Analysis Using Structural Equation Modeling")
+    (description
+     "Within-subject mediation analysis using structural equation modeling.  Examine
+how changes in an outcome variable between two conditions are mediated through
+one or more variables.  Supports within-subject mediation analysis using the
+lavaan package by Rosseel (2012) <doi:10.18637/jss.v048.i02>, and extends Monte
+Carlo confidence interval estimation to missing data scenarios using the semmcci
+package by Pesigan and Cheung (2023) <doi:10.3758/s13428-023-02114-4>.")
+    (license license:gpl3+)))
+
 (define-public r-wskm
   (package
     (name "r-wskm")
@@ -6313,19 +6350,19 @@ Journal of the American Statistical Association, Volume 107, Issue 498, pages
 (define-public r-weightedgcm
   (package
     (name "r-weightedgcm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weightedGCM" version))
        (sha256
-        (base32 "04c24mxpvqdaprg6627w84ikmwxy96c1zcifn2y5n9ir7dlih5r3"))))
+        (base32 "06kdh499nlvcdiz4amambgvs6pdd5dl7zghp4y6yy4nkaivggk4c"))))
     (properties `((upstream-name . "weightedGCM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xgboost r-mgcv r-generalisedcovariancemeasure))
+    (propagated-inputs (list r-xgboost r-mgcv))
     (home-page "https://cran.r-project.org/package=weightedGCM")
     (synopsis
      "Weighted Generalised Covariance Measure Conditional Independence Test")
@@ -6334,12 +6371,12 @@ Journal of the American Statistical Association, Volume 107, Issue 498, pages
 to univariate and multivariate random variables.  The test is based on a
 weighted form of the sample covariance of the residuals after a nonlinear
 regression on the conditioning variables.  Details are described in Scheidegger,
-Hoerrmann and Buehlmann (2021) \"The Weighted Generalised Covariance Measure\"
-<@code{arXiv:2111.04361>}.  The test is a generalisation of the Generalised
-Covariance Measure (GCM) implemented in the R package
+Hoerrmann and Buehlmann (2022) \"The Weighted Generalised Covariance Measure\"
+<http://jmlr.org/papers/v23/21-1328.html>.  The test is a generalisation of the
+Generalised Covariance Measure (GCM) implemented in the R package
 @code{GeneralisedCovarianceMeasure} by Jonas Peters and Rajen D. Shah based on
 Shah and Peters (2020) \"The Hardness of Conditional Independence Testing and the
-Generalised Covariance Measure\" <@code{arXiv:1804.07203>}.")
+Generalised Covariance Measure\" <doi:10.1214/19-AOS1857>.")
     (license license:gpl2)))
 
 (define-public r-weightedensemble
@@ -8645,6 +8682,97 @@ data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
 using the Weighted AVERage of all possible Regressions using the data available.")
     (license license:gpl2)))
 
+(define-public r-waverider
+  (package
+    (name "r-waverider")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WaverideR" version))
+       (sha256
+        (base32 "1ag80sj1fn9apbxhfibfl1b9zazz0j3llk03qahjrm2gd469badd"))))
+    (properties `((upstream-name . "WaverideR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-truncnorm
+                             r-trapezoid
+                             r-rlist
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-matrixstats
+                             r-matrix
+                             r-magick
+                             r-hmisc
+                             r-foreach
+                             r-fancova
+                             r-dosnow
+                             r-desctools
+                             r-decomposer
+                             r-colorramps
+                             r-colorednoise
+                             r-astrochron))
+    (home-page "https://github.com/stratigraphy/WaverideR")
+    (synopsis "Extracting Signals from Wavelet Spectra")
+    (description
+     "The continuous wavelet transform enables the observation of
+transient/non-stationary cyclicity in time-series.  The goal of
+cyclostratigraphic studies is to define frequency/period in the depth/time
+domain.  By conducting the continuous wavelet transform on cyclostratigraphic
+data series one can observe and extract cyclic signals/signatures from signals.
+These results can then be visualized and interpreted enabling one to
+identify/interpret cyclicity in the geological record, which can be used to
+construct astrochronological age-models and identify and interpret cyclicity in
+past and present climate systems.  The @code{WaverideR} R package builds upon
+existing literature and existing codebase.  The list of articles which are
+relevant can be grouped in four subjects; cyclostratigraphic data
+analysis,example data sets,the (continuous) wavelet transform and astronomical
+solutions.  References for the cyclostratigraphic data analysis articles are:
+Stephen Meyers (2019) <doi:10.1016/j.earscirev.2018.11.015>.  Mingsong Li, Linda
+Hinnov, Lee Kump (2019) <doi:10.1016/j.cageo.2019.02.011> Stephen Meyers
+(2012)<doi:10.1029/2012PA002307> Mingsong Li, Lee R. Kump, Linda A. Hinnov,
+Michael E. Mann (2018) <doi:10.1016/j.epsl.2018.08.041>.  Wouters, S., Crucifix,
+M., Sinnesael, M., Da Silva, A.C., Zeeden, C., Zivanovic, M., Boulvain, F.,
+Devleeschouwer, X. (2022) <doi:10.1016/j.earscirev.2021.103894>.  Wouters, S.,
+Da Silva, A.-C., Boulvain, F., and Devleeschouwer, X. (2021)
+<doi:10.32614/RJ-2021-039>.  Huang, Norden E., Zhaohua Wu, Steven R. Long,
+Kenneth C. Arnold, Xianyao Chen, and Karin Blank (2009)
+<doi:10.1142/S1793536909000096>.  Cleveland, W. S.
+(1979)<doi:10.1080/01621459.1979.10481038> Hurvich, C.M., Simonoff, J.S., and
+Tsai, C.L. (1998) <doi:10.1111/1467-9868.00125>, Golub, G., Heath, M. and Wahba,
+G. (1979) <doi:10.2307/1268518>.  References for the example data articles are:
+Damien Pas, Linda Hinnov, James E. (Jed) Day, Kenneth Kodama, Matthias
+Sinnesael, Wei Liu (2018) <doi:10.1016/j.epsl.2018.02.010>.  Steinhilber,
+Friedhelm, Abreu, Jacksiel, Beer, Juerg , Brunner, Irene, Christl, Marcus,
+Fischer, Hubertus, @code{HeikkilA}, U., Kubik, Peter, Mann, Mathias, Mccracken,
+K. , Miller, Heinrich, Miyahara, Hiroko, Oerter, Hans , Wilhelms, Frank. (2012
+<doi:10.1073/pnas.1118965109>.  Christian Zeeden, Frederik Hilgen, Thomas
+Westerhold, Lucas Lourens, Ursula RÃ¶hl, Torsten Bickert (2013)
+<doi:10.1016/j.palaeo.2012.11.009>.  References for the (continuous) wavelet
+transform articles are: Morlet, Jean, Georges Arens, Eliane Fourgeau, and
+Dominique Glard (1982a) <doi:10.1190/1.1441328>.  J. Morlet, G. Arens, E.
+Fourgeau, D. Giard (1982b) <doi:10.1190/1.1441329>.  Torrence, C., and G. P.
+Compo (1998)<https://paos.colorado.edu/research/wavelets/bams_79_01_0061.pdf>,
+Gouhier TC, Grinsted A, Simko V (2021) <https://github.com/tgouhier/biwavelet>.
+Angi Roesch and Harald Schmidbauer (2018)
+<https://CRAN.R-project.org/package=@code{WaveletComp>}.  Russell, Brian, and
+Jiajun Han
+(2016)<https://www.crewes.org/Documents/@code{ResearchReports/2016/CRR201668.pdf>}.
+ Gabor, Dennis (1946) <http://genesis.eecg.toronto.edu/gabor1946.pdf>.  J.
+Laskar, P. Robutel, F. Joutel, M. Gastineau, A.C.M. Correia, and B. Levrard, B.
+(2004) <doi:10.1051/0004-6361:20041335>.  Laskar, J., Fienga, A., Gastineau, M.,
+Manche, H. (2011a) <doi:10.1051/0004-6361/201116836>.  References for the
+astronomical solutions articles are: Laskar, J., Gastineau, M., Delisle, J.-B.,
+Farres, A., Fienga, A. (2011b <doi:10.1051/0004-6361/201117504>.  J. Laskar
+(2019) <doi:10.1016/B978-0-12-824360-2.00004-8>.  Zeebe, Richard E (2017)
+<doi:10.3847/1538-3881/aa8cce>.  Zeebe, R. E. and Lourens, L. J. (2019)
+<doi:10.1016/j.epsl.2022.117595>.  Richard E. Zeebe Lucas J. Lourens (2022)
+<doi:10.1126/science.aax0612>.")
+    (license license:gpl2+)))
+
 (define-public r-waver
   (package
     (name "r-waver")
@@ -9701,13 +9829,13 @@ Georgia Institute of Technology.
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "14kss9i8j9myxnxml5xzww27r3j1r9fs1jpa4rc30npja9cr05ja"))))
+        (base32 "0m48gb2z45511wm5hwknqmpq0klk6m7vid7q3f81kfyhffryyfmj"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments

@@ -2130,13 +2130,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.3.6")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "0r1d866a69k180p3id3r0ygr3lk715y65fhl3n0qcr3dbq08x03d"))))
+        (base32 "0p6vq2iyz5085n9vdng8l8rzr03p35g0qbfslg76gb6s9vwzz2jc"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (arguments
@@ -6291,13 +6291,13 @@ al.(2021)<doi:10.2174/1567205018666210831145825>.")
 (define-public r-evabic
   (package
     (name "r-evabic")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evabic" version))
        (sha256
-        (base32 "0f34shsacf9lyb2hlp2f0nhqy2ihy1zqg52npx8ap2li0s4y0x24"))))
+        (base32 "0irc12v1rp4kjg2wbfl6j51gdcvgn17bjs0g4l728514z50f8fk2"))))
     (properties `((upstream-name . "evabic")))
     (build-system r-build-system)
     (arguments
@@ -7996,19 +7996,20 @@ stochastic invariability.  Figueiredo et al. (2025) <doi:10.32942/X2M053>.")
 (define-public r-estadistica
   (package
     (name "r-estadistica")
-    (version "1.0")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estadistica" version))
        (sha256
-        (base32 "11nhlj07wya322ks7cjd4r4xn2wjslf7njg40rmq87bl1y81zrsk"))))
+        (base32 "0g062i83yin07d3d5kdbdyfj6zlaba88h7l28k775j434cqx8xpp"))))
     (properties `((upstream-name . "estadistica")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-shinydashboard
                              r-shiny
                              r-rio
@@ -9448,13 +9449,13 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
 (define-public r-ergm-sign
   (package
     (name "r-ergm-sign")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.sign" version))
        (sha256
-        (base32 "1c929k499cry30gr2890b1nbqgrq0b9ddf02xay0fl95d429pa48"))))
+        (base32 "1wza9gwl9d969ymywbmg86pd3clhww8cdn3m8kd7yig5nr3r0qw0"))))
     (properties `((upstream-name . "ergm.sign")))
     (build-system r-build-system)
     (arguments
@@ -14426,13 +14427,13 @@ objects and coordinate reference systems.")
 (define-public r-enmpa
   (package
     (name "r-enmpa")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmpa" version))
        (sha256
-        (base32 "1p7p6a8jgs49nb0m40ahz1k7gva81m2ix2750lrjj355v7afd1c5"))))
+        (base32 "1hnbjm5nc817xgcsj0r16kvwc65rmy8g63h5g4hf0lnf3s8658sk"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
     (arguments
@@ -16710,6 +16711,41 @@ this package is developed in C++'.")
     (description
      "This package provides a light, simple tool for sending emails with minimal
 dependencies.")
+    (license license:gpl3)))
+
+(define-public r-emas
+  (package
+    (name "r-emas")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMAS" version))
+       (sha256
+        (base32 "11s6lq6s8pn7zl93idkhim58v5q5nsckjcsm85wyyl6fywqprm2a"))))
+    (properties `((upstream-name . "EMAS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qqman
+                             r-multilevel
+                             r-minfi
+                             r-mediation
+                             r-lavaan
+                             r-illuminahumanmethylationepicanno-ilm10b4-hg19
+                             r-illuminahumanmethylation450kanno-ilmn12-hg19
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=EMAS")
+    (synopsis "Epigenome-Wide Mediation Analysis Study")
+    (description
+     "DNA methylation is essential for human, and environment can change the DNA
+methylation and affect body status.  Epigenome-Wide Mediation Analysis Study
+(EMAS) can find potential mediator @code{CpG} sites between exposure (x) and
+outcome (y) in epigenome-wide.  For more information on the methods we used,
+please see the following references: Tingley, D. (2014)
+<doi:10.18637/jss.v059.i05>, Turner, S. D. (2018) <doi:10.21105/joss.00731>,
+Rosseel, D. (2012) <doi:10.18637/jss.v048.i02>.")
     (license license:gpl3)))
 
 (define-public r-emar
@@ -23694,13 +23730,13 @@ general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
 (define-public r-ecodive
   (package
     (name "r-ecodive")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecodive" version))
        (sha256
-        (base32 "11fqsbvbbx36pk2pfnvgw376dyn52imrbkhp9kbiv47q597kkmyv"))))
+        (base32 "0pb5h2iqrac6lzdp1zm10hq5wx0ks9xmhfcwn732fpb19p0w72y3"))))
     (properties `((upstream-name . "ecodive")))
     (build-system r-build-system)
     (arguments

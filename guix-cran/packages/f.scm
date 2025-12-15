@@ -2301,13 +2301,13 @@ optimization is described in <https://hal.science/hal-02532713>.")
 (define-public r-fungible
   (package
     (name "r-fungible")
-    (version "2.4.4")
+    (version "2.4.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fungible" version))
        (sha256
-        (base32 "18h4n7q130z2i86zd7gwrh3wv9h4pd4niands1p94rialrdg9vda"))))
+        (base32 "0b3n2796h05rp1ky209a6widl3n1927d73am7rv0hqf3nf93731a"))))
     (properties `((upstream-name . "fungible")))
     (build-system r-build-system)
     (arguments
@@ -2732,20 +2732,19 @@ unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcharts" version))
        (sha256
-        (base32 "1vlp05l3mpx9ija9qay8j4iqpy9qvv092lz6kfc9qacbjxcbxr1y"))))
+        (base32 "0n6c8yhny07ly8640kaf004nms1xs8jg9wmks8yjm4vhhnpwx0xh"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-stringr
                              r-spatstat-univar
                              r-scam
                              r-rspectra
@@ -2753,16 +2752,14 @@ unused packages.")
                              r-rofanova
                              r-robustbase
                              r-roahd
-                             r-rlang
                              r-rfast
                              r-rcpparmadillo
                              r-rcpp
                              r-patchwork
                              r-mgcv
-                             r-matrixstats
-                             r-matrix
                              r-mass
                              r-ggplot2
+                             r-fdapace
                              r-fda-usc
                              r-fda
                              r-dplyr))
@@ -2774,9 +2771,10 @@ unused packages.")
 monitoring of functional data, using the methods of Capezza et al. (2020)
 <doi:10.1002/asmb.2507>, Centofanti et al. (2021)
 <doi:10.1080/00401706.2020.1753581>, Capezza et al. (2024)
-<doi:10.1080/00401706.2024.2327346>, Capezza et al. (2024)
-<doi:10.1080/00224065.2024.2383674>, Centofanti et al. (2022)
-<doi:10.48550/@code{arXiv.2205.06256>}.  The package is thoroughly illustrated
+<doi:10.1080/00224065.2024.2383674>, Capezza et al. (2024)
+<doi:10.1080/00401706.2024.2327346>, Centofanti et al. (2025)
+<doi:10.1080/00224065.2024.2430978>, Capezza et al. (2025)
+<doi:10.48550/@code{arXiv.2410.20138>}.  The package is thoroughly illustrated
 in the paper of Capezza et al (2023) <doi:10.1080/00224065.2023.2219012>.")
     (license license:gpl3)))
 
@@ -5579,6 +5577,32 @@ Frobenius metric as a special case), Cholesky and log-Cholesky metrics,
 spherical data.  References: Petersen, A., & MÃ¼ller, H.-G. (2019)
 <doi:10.1214/17-AOS1624>.")
     (license license:bsd-3)))
+
+(define-public r-frci
+  (package
+    (name "r-frci")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FRCI" version))
+       (sha256
+        (base32 "1l665c507k7n63fcxdzacgivdnibd9yvq98amlbq41p6z3l2mi2k"))))
+    (properties `((upstream-name . "FRCI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zipfr r-ump r-desctools r-calculus))
+    (home-page "https://cran.r-project.org/package=FRCI")
+    (synopsis "Fuzzy & Randomized Confidence Intervals")
+    (description
+     "This package contains the methods proposed by Geyer and Meeden
+(2005)<doi:10.1214/088342305000000340> and Trigo et al. (2025)
+<doi:10.47749/T/UNICAMP.2025.1500297> to construct fuzzy confidence intervals.
+Compute and plot the fuzzy membership functions of the methods, and the expected
+length compared with the infimum.")
+    (license license:gpl3)))
 
 (define-public r-frcc
   (package
@@ -9436,13 +9460,13 @@ spectral density of the transformed signal.")
 (define-public r-fordm
   (package
     (name "r-fordm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoRDM" version))
        (sha256
-        (base32 "1qw3asw8pxl2rp7yr6kj9xl9xiqv6gznxgv9z7jxfh2vk0xv3xqr"))))
+        (base32 "1wqds1qs46mf6463rq6d3b9y38dl0q77hrpkvdi80n9p1prbzvh8"))))
     (properties `((upstream-name . "FoRDM")))
     (build-system r-build-system)
     (arguments
@@ -11635,62 +11659,6 @@ regulation by dams based on GarcÃ­a de Jalon et al.  2017
 <doi:10.1007/s11269-017-1663-0>.")
     (license license:expat)))
 
-(define-public r-flowml
-  (package
-    (name "r-flowml")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flowml" version))
-       (sha256
-        (base32 "1v26lncq6qqx7x2wnvaxwb88s7hgdwj9cv16kkzn4fnybwsmkw5g"))))
-    (properties `((upstream-name . "flowml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vip
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rsample
-                             r-rlang
-                             r-rjson
-                             r-readr
-                             r-r6
-                             r-purrr
-                             r-optparse
-                             r-magrittr
-                             r-future
-                             r-furrr
-                             r-fastshap
-                             r-dplyr
-                             r-data-table
-                             r-caret
-                             r-abcanalysis))
-    (home-page "https://github.com/Boehringer-Ingelheim/flowml")
-    (synopsis
-     "Backend for a 'nextflow' Pipeline that Performs Machine-Learning-Based Modeling of Biomedical Data")
-    (description
-     "This package provides functionality to perform machine-learning-based modeling
-in a computation pipeline.  Its functions contain the basic steps of
-machine-learning-based knowledge discovery workflows, including model training
-and optimization, model evaluation, and model testing.  To perform these tasks,
-the package builds heavily on existing machine-learning packages, such as caret
-<https://github.com/topepo/caret/> and associated packages.  The package can
-train multiple models, optimize model hyperparameters by performing a grid
-search or a random search, and evaluates model performance by different metrics.
- Models can be validated either on a test data set, or in case of a small sample
-size by k-fold cross validation or repeated bootstrapping.  It also allows for
-0-Hypotheses generation by performing permutation experiments.  Additionally, it
-offers methods of model interpretation and item categorization to identify the
-most informative features from a high dimensional data space.  The functions of
-this package can easily be integrated into computation pipelines (e.g. nextflow
-<https://www.nextflow.io/>) and hereby improve scalability, standardization, and
-re-producibility in the context of machine-learning.")
-    (license license:gpl3+)))
-
 (define-public r-flowmapper
   (package
     (name "r-flowmapper")
@@ -12149,13 +12117,13 @@ al. (2017) <doi:10.18637/jss.v076.i01>; Socolar & Mills (2023)
 (define-public r-flir
   (package
     (name "r-flir")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flir" version))
        (sha256
-        (base32 "1snin9hh4zc30qb00mw1j27zvxk32h1yn19f52cydf292kmch624"))))
+        (base32 "1n521a01amb9dicn2fsi7yjhn17i8dzkichcsy47rxzh5jw2vb2d"))))
     (properties `((upstream-name . "flir")))
     (build-system r-build-system)
     (arguments
@@ -14138,6 +14106,37 @@ System Science Data (ESSD) manuscript, Schlegel et al. (2024), provides a
 detailed explanation of the methodology.")
     (license license:expat)))
 
+(define-public r-fjoin
+  (package
+    (name "r-fjoin")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fjoin" version))
+       (sha256
+        (base32 "1phr7hg8d16psc12qqyv8xizpggav9hwczcq6r9mrjl9p24318i1"))))
+    (properties `((upstream-name . "fjoin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://trobx.github.io/fjoin/")
+    (synopsis "Data Frame Joins Leveraging 'data.table'")
+    (description
+     "Extends data.table join functionality, lets it work with any data frame class,
+and provides a familiar x'/'y'-style interface, enabling broad use across R.
+Offers NA-safe matching by default, on-the-fly column selection, multiple
+match-handling on both sides, x or y row order, and a row origin indicator.
+Performs inner, left, right, full, semi- and anti-joins with equality and
+inequality conditions, plus cross joins.  Specific support for data.table',
+(grouped) tibble, and sf'/'sfc objects and their attributes; returns a plain
+data frame otherwise.  Avoids data-copying of inputs and outputs.  Allows
+displaying the data.table code instead of (or as well as) executing it.")
+    (license license:expat)))
+
 (define-public r-fizzbuzzr
   (package
     (name "r-fizzbuzzr")
@@ -15578,13 +15577,13 @@ work as a load-balancer.")
 (define-public r-firesale
   (package
     (name "r-firesale")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "firesale" version))
        (sha256
-        (base32 "0axyr6z61c1hpcz05bpzbbd6laa793wx5631zzhbn76zh0icrcp8"))))
+        (base32 "0b1b7pqwx9qd05j2qi6fxs46y59i3lizqn16lj4f8n8wgpbm7lc9"))))
     (properties `((upstream-name . "firesale")))
     (build-system r-build-system)
     (arguments
@@ -18195,13 +18194,13 @@ features via this package.  To learn more about @code{ForestGEO} visit
 (define-public r-fgarch
   (package
     (name "r-fgarch")
-    (version "4033.92")
+    (version "4052.93")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fGarch" version))
        (sha256
-        (base32 "038lcx1sxkldqvmy9y14gmmbkqn4gqzlnff80s11fny004h6hdf8"))))
+        (base32 "1kfyvfcx48p53wc2mz67ibb94scs6q4393cs5jhanfihy9rydn7c"))))
     (properties `((upstream-name . "fGarch")))
     (build-system r-build-system)
     (arguments
@@ -19073,13 +19072,13 @@ Methods, World Scientific, Singapore.
 (define-public r-feltr
   (package
     (name "r-feltr")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "feltr" version))
        (sha256
-        (base32 "1cn6kwkvcy91ng5d67x2hs853k5dqhlap6yym1xfw741f11dx1zy"))))
+        (base32 "0rdp81x3172n9lv7qi1khb66n8cjaw47pzf241867qp03pqnl9z9"))))
     (properties `((upstream-name . "feltr")))
     (build-system r-build-system)
     (arguments
@@ -19095,17 +19094,18 @@ Methods, World Scientific, Singapore.
                              r-httr2
                              r-geojsonsf
                              r-fs
+                             r-dplyr
                              r-curl
                              r-cli))
     (home-page "https://github.com/christopherkenny/feltr")
     (synopsis "Access the Felt API")
     (description
      "Upload, download, and edit internet maps with the Felt API
-(<https://feltmaps.notion.site/Felt-Public-API-reference-c01e0e6b0d954a678c608131b894e8e1>).
- Allows users to create new maps, edit existing maps, and extract data.
-Provides tools for working with layers, which represent geographic data, and
-elements, which are interactive annotations.  Spatial data accessed from the API
-is transformed to work with sf'.")
+(<https://developers.felt.com/rest-api/getting-started>).  Allows users to
+create new maps, edit existing maps, and extract data.  Provides tools for
+working with layers, which represent geographic data, and elements, which are
+interactive annotations.  Spatial data accessed from the API is transformed to
+work with sf'.")
     (license license:expat)))
 
 (define-public r-felp
@@ -25894,6 +25894,44 @@ automated data generation which may not always output the same N per replicate
 or sample.")
     (license license:gpl3)))
 
+(define-public r-fairness
+  (package
+    (name "r-fairness")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fairness" version))
+       (sha256
+        (base32 "149pwz7j8nn2vwcz6cnfmg9zyy3fvrxqqk1vf6vdqjvd8yn9bd4r"))))
+    (properties `((upstream-name . "fairness")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proc r-ggplot2 r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.kozodoi.me/blog/algorithmic-fairness-in-r")
+    (synopsis "Algorithmic Fairness Metrics")
+    (description
+     "Offers calculation, visualization and comparison of algorithmic fairness
+metrics.  Fair machine learning is an emerging topic with the overarching aim to
+critically assess whether ML algorithms reinforce existing social biases.
+Unfair algorithms can propagate such biases and produce predictions with a
+disparate impact on various sensitive groups of individuals (defined by sex,
+gender, ethnicity, religion, income, socioeconomic status, physical or mental
+disabilities).  Fair algorithms possess the underlying foundation that these
+groups should be treated similarly or have similar prediction outcomes.  The
+fairness R package offers the calculation and comparisons of commonly and less
+commonly used fairness metrics in population subgroups.  These methods are
+described by Calders and Verwer (2010) <doi:10.1007/s10618-010-0190-x>,
+Chouldechova (2017) <doi:10.1089/big.2016.0047>, Feldman et al. (2015)
+<doi:10.1145/2783258.2783311> , Friedler et al. (2018)
+<doi:10.1145/3287560.3287589> and Zafar et al. (2017)
+<doi:10.1145/3038912.3052660>.  The package also offers convenient
+visualizations to help understand fairness metrics.")
+    (license license:expat)))
+
 (define-public r-fairmodels
   (package
     (name "r-fairmodels")
@@ -27078,6 +27116,40 @@ Statistics.  No.  59, Springer-Verlag, Berlin, New York,
 <doi:10.1007/978-1-4419-8730-3>.  For the easy use of package, shiny app is used
 for giving inputs and inputs validation.")
     (license license:gpl2+)))
+
+(define-public r-factchar
+  (package
+    (name "r-factchar")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FactChar" version))
+       (sha256
+        (base32 "196myc4isbns69sgnf0v4njahxv0jjc7f3wxs2vq2nd881jqv1gd"))))
+    (properties `((upstream-name . "FactChar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=FactChar")
+    (synopsis
+     "Characterization and Diagnostic Tools for Factorial Block Designs")
+    (description
+     "Description: Provides comprehensive tools for analysing and characterizing
+mixed-level factorial designs arranged in blocks.  Includes construction and
+validation of incidence structures, computation of C-matrices, evaluation of A-,
+D-, E-, and MV-efficiencies, checking of orthogonal factorial structure (OFS),
+diagnostics based on Hamming distance, discrepancy measures, B-criterion, Es^2
+statistics, J2-distance and J2-efficiency, Phi-p optimality, and symmetry
+conditions for universal optimality.  The methodological framework follows
+foundational work on factorial and mixed-level design assessment by Xu and Wu
+(2001) <doi:10.1214/aos/1013699993>, and Gupta (1983)
+<doi:10.1111/j.2517-6161.1983.tb01253.x>.  These methods assist in selecting,
+comparing, and studying factorial block designs across a range of experimental
+situations.")
+    (license license:gpl3)))
 
 (define-public r-facmodts
   (package

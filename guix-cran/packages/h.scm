@@ -304,6 +304,34 @@ the method described in Schad et al. (2019) <doi:10.1016/j.jml.2019.104038> and
 Rabe et al. (2020) <doi:10.21105/joss.02134>.")
     (license license:gpl3)))
 
+(define-public r-hypothesize
+  (package
+    (name "r-hypothesize")
+    (version "0.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypothesize" version))
+       (sha256
+        (base32 "0g41nyiir39xvq79kzmhiikjbl94a3hg5hiydb6hm29vl8c3qs52"))))
+    (properties `((upstream-name . "hypothesize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/hypothesize")
+    (synopsis "Consistent API for Hypothesis Testing")
+    (description
+     "This package provides a consistent API for hypothesis testing built on
+principles from Structure and Interpretation of Computer Programs': data
+abstraction, closure (combining tests yields tests), and higher-order functions
+(transforming tests).  Implements z-tests, Wald tests, likelihood ratio tests,
+Fisher's method for combining p-values, and multiple testing corrections.
+Designed for use by other packages that want to wrap their hypothesis tests in a
+consistent interface.")
+    (license license:expat)))
+
 (define-public r-hypothesisr
   (package
     (name "r-hypothesisr")
@@ -1282,13 +1310,13 @@ Piper-Hill diagrams) of water analyses for major ions.")
 (define-public r-hydroevents
   (package
     (name "r-hydroevents")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroEvents" version))
        (sha256
-        (base32 "106072lvh4dwwihnsj8lskn0x5k8nzz14lsg3dhs24jw122ngxax"))))
+        (base32 "0lsdnrfd8xfizv2yid3nc8ss8kzmm29arzdm3nn9ljyxq8b4ym05"))))
     (properties `((upstream-name . "hydroEvents")))
     (build-system r-build-system)
     (arguments
@@ -1297,12 +1325,10 @@ Piper-Hill diagrams) of water analyses for major ions.")
     (home-page "https://github.com/conradwasko/hydroEvents")
     (synopsis "Extract Event Statistics in Hydrologic Time Series")
     (description
-     "Events from individual hydrologic time series are extracted, and events from
-multiple time series can be matched to each other.  Tang, W. & Carey, S. K.
-(2017) <doi:10.1002/hyp.11185>.  Kaur, S., Horne, A., Stewardson, M.J., Nathan,
-R., Costa, A.M., Szemis, J.M., & Webb, J.A. (2017)
-<doi:10.1080/24705357.2016.1276418>.  Ladson, A., Brown, R., Neal, B., & Nathan,
-R. J. (2013) <doi:10.7158/W12-028.2013.17.1>.")
+     "Events from individual hydrologic time series are extracted, and events are
+matched across multiple time series.  The package has been applied in studies
+such as Wasko and Guo (2022) <doi:10.1002/hyp.14563> and Mohammadpour Khoie, Guo
+and Wasko (2025) <doi:10.1016/j.envsoft.2025.106521>.")
     (license license:gpl3)))
 
 (define-public r-hydrodcindex
@@ -5472,18 +5498,24 @@ application that saves results to a user-created @code{PostgreSQL} database.")
 (define-public r-hoifcar
   (package
     (name "r-hoifcar")
-    (version "0.2.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HOIFCar" version))
        (sha256
-        (base32 "02arbmfj79vcmfmrwfqc9rx0iyr14g3p986m8f4qb9lr6gg72x01"))))
+        (base32 "00dnh693bcfkvx1qqfpy4jx5v7a1hf7xfaw8608iznxpw759f6zq"))))
     (properties `((upstream-name . "HOIFCar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-mass
+                             r-glmnet
+                             r-foreach
+                             r-doparallel
+                             r-brglm2
+                             r-bb))
     (home-page "https://cran.r-project.org/package=HOIFCar")
     (synopsis
      "Covariate Adjustment in RCT by Higher-Order Influence Functions")
@@ -13240,13 +13272,13 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
 (define-public r-hdf5lib
   (package
     (name "r-hdf5lib")
-    (version "2.0.0.2")
+    (version "2.0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5lib" version))
        (sha256
-        (base32 "1hrh3r7yqb73zqfc4navgq7gf5vmgs4bpbdvwafcas9lax8is6kl"))))
+        (base32 "075xgi2nipgz1ndhybrnjj7an11jihpi85kc4xlq12kbi496w2zj"))))
     (properties `((upstream-name . "hdf5lib")))
     (build-system r-build-system)
     (arguments

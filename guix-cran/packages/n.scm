@@ -259,13 +259,13 @@ functionality.")
 (define-public r-nvctr
   (package
     (name "r-nvctr")
-    (version "0.1.4")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nvctr" version))
        (sha256
-        (base32 "1r7q9snr9ya1586fwbyvnk8rlb9yikl4yp3bn9kni0sw820npk1d"))))
+        (base32 "0jrl5252kr0g72z28sajf6d1y2y8gm56kvzzr6417z8axjm7mzrk"))))
     (properties `((upstream-name . "nvctr")))
     (build-system r-build-system)
     (arguments
@@ -273,7 +273,7 @@ functionality.")
       #:tests? #f))
     (propagated-inputs (list r-pracma r-magrittr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/euctrl-pru/nvctr")
+    (home-page "https://nvctr.ansperformance.eu")
     (synopsis
      "The n-vector Approach to Geographical Position Calculations using an Ellipsoidal Model of Earth")
     (description
@@ -6760,13 +6760,13 @@ patterns).  Ludwig & Reynolds (1988, ISBN:0471832359).")
 (define-public r-nn2poly
   (package
     (name "r-nn2poly")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nn2poly" version))
        (sha256
-        (base32 "1qcgcg9pwx6x6ffrqlmyc7wazx2zhmfq221dr5x04abrr58zx6yr"))))
+        (base32 "18x62vy9a44id351dzc9qyzqxw2mm9nxrs26kxvdzp0xygz58fsp"))))
     (properties `((upstream-name . "nn2poly")))
     (build-system r-build-system)
     (arguments
@@ -9576,13 +9576,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimble" version))
        (sha256
-        (base32 "0kn7r3l70cwqjrhy9734dx9h58niv5778434z1xj1qys6q94ja9l"))))
+        (base32 "1xj5rnqg6l7sl0j6bw0dx04ri3d15pix8xnprfpn4zclrim9fhn6"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (arguments
@@ -9597,17 +9597,17 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 largely compatible with BUGS and JAGS', writing @code{nimbleFunctions} to
 operate models and do basic R-style math, and compiling both models and
 @code{nimbleFunctions} via custom-generated C++.  NIMBLE includes default
-methods for MCMC, Laplace Approximation, Monte Carlo Expectation Maximization,
-and some other tools.  The @code{nimbleFunction} system makes it easy to do
-things like implement new MCMC samplers from R, customize the assignment of
-samplers to different parts of a model from R, and compile the new samplers
-automatically via C++ alongside the samplers NIMBLE provides.  NIMBLE extends
-the BUGS'/'JAGS language by making it extensible: New distributions and
-functions can be added, including as calls to external compiled code.  Although
-most people think of MCMC as the main goal of the BUGS'/'JAGS language for
-writing models, one can use NIMBLE for writing arbitrary other kinds of
-model-generic algorithms as well.  A full User Manual is available at
-<https://r-nimble.org>.")
+methods for MCMC, Laplace Approximation, deterministic nested approximations,
+Monte Carlo Expectation Maximization, and some other tools.  The
+@code{nimbleFunction} system makes it easy to do things like implement new MCMC
+samplers from R, customize the assignment of samplers to different parts of a
+model from R, and compile the new samplers automatically via C++ alongside the
+samplers NIMBLE provides.  NIMBLE extends the BUGS'/'JAGS language by making it
+extensible: New distributions and functions can be added, including as calls to
+external compiled code.  Although most people think of MCMC as the main goal of
+the BUGS'/'JAGS language for writing models, one can use NIMBLE for writing
+arbitrary other kinds of model-generic algorithms as well.  A full User Manual
+is available at <https://r-nimble.org>.")
     (license (list license:bsd-3 license:gpl2+))))
 
 (define-public r-nimaa
@@ -14418,13 +14418,13 @@ estimation methods.")
 (define-public r-net4pg
   (package
     (name "r-net4pg")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "net4pg" version))
        (sha256
-        (base32 "1a00bqskgl053wcwgmg7xsccybrq76bqaipdnf5zbm1dslir0jdv"))))
+        (base32 "14njxfm6fhvbqlrvf8bgb6ar5l3rbfl099kvqy0na9ik2dkgfl30"))))
     (properties `((upstream-name . "net4pg")))
     (build-system r-build-system)
     (arguments
@@ -14787,13 +14787,13 @@ nephrology.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "0j3b1jzfy8vrnd8jd56p0pdyav95li71h13p6crx1x9kfpai0f51"))))
+        (base32 "0sxqjc2r6m55i98m1j3gjpj6n4nzrj18c39ijzk12048g54s6h0y"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (arguments
@@ -14819,7 +14819,9 @@ nephrology.")
     (synopsis "Working with the Neotoma Paleoecology Database")
     (description
      "Access and manipulation of data using the Neotoma Paleoecology Database.
-<https://api.neotomadb.org/api-docs/>.")
+<https://api.neotomadb.org/api-docs/>.  Examples in functions that require API
+access are not executed during CRAN checks.  Vignettes do not execute as to
+avoid API calls during CRAN checks.")
     (license license:expat)))
 
 (define-public r-neonutilities
@@ -18607,6 +18609,36 @@ functions have been created to be used in conjunction with the R package asreml
 for the ASReml software, which can be obtained upon purchase from VSN
 international (<https://vsni.co.uk/software/asreml>).")
     (license license:gpl2+)))
+
+(define-public r-nadaverse
+  (package
+    (name "r-nadaverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nadaverse" version))
+       (sha256
+        (base32 "08bhf7ld9i245dd0c2sbxqwy0grnfws2sj5rbr90nh7j3mhl8pi6"))))
+    (properties `((upstream-name . "nadaverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2 r-cli))
+    (home-page "https://github.com/guturago/nadaverse")
+    (synopsis "Browse Microdata Catalogs Using 'NADA' REST API")
+    (description
+     "This package provides a unified, programmatic interface for searching, browsing,
+and retrieving metadata from various international organization data
+repositories that use the National Data Archive ('NADA') software, such as the
+World Bank, FAO', and the International Household Survey Network ('IHSN').
+Functions allow users to discover available data collections, country codes, and
+access types, perform complex searches using keyword and spatial/temporal
+filters, and retrieve detailed study information, including file lists and
+variable-level data dictionaries.  It simplifies access to microdata for
+researchers and policy analysts globally.")
+    (license license:expat)))
 
 (define-public r-nada2
   (package
