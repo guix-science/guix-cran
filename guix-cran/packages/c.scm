@@ -10,6 +10,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages geo)
   #:use-module (gnu packages java)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages check)
@@ -18,7 +19,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages geo)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
@@ -1382,13 +1382,13 @@ symbol.  Time-consuming tasks can be parallelized.")
 (define-public r-cvar
   (package
     (name "r-cvar")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvar" version))
        (sha256
-        (base32 "066vn8flw9j0idmpi9wzvybgihdhwg3fjslx2isbrb11ldl1lwky"))))
+        (base32 "0c23i8cpcxbvbhf2gzy8acilzzs8hhz804c5g1pf5xxhg1szaych"))))
     (properties `((upstream-name . "cvar")))
     (build-system r-build-system)
     (arguments
@@ -1400,9 +1400,9 @@ symbol.  Time-consuming tasks can be parallelized.")
      "Compute Expected Shortfall and Value at Risk for Continuous Distributions")
     (description
      "Compute expected shortfall (ES) and Value at Risk (@code{VaR}) from a quantile
-function, distribution function, random number generator or probability density
-function.  ES is also known as Conditional Value at Risk (C@code{VaR}).
-Virtually any continuous distribution can be specified.  The functions are
+function, distribution function, random number generator, probability density
+function, or data.  ES is also known as Conditional Value at Risk (C@code{VaR}).
+ Virtually any continuous distribution can be specified.  The functions are
 vectorized over the arguments.  The computations are done directly from the
 definitions, see e.g. Acerbi and Tasche (2002) <doi:10.1111/1468-0300.00091>.
 Some support for GARCH models is provided, as well.")
@@ -1691,6 +1691,31 @@ RA-CUSUM charts with focus on false signal probability.")
      "Calculate the distribution of costs for the installation of an elevator based on
 the different distribution rules.")
     (license license:gpl2+)))
+
+(define-public r-customknitrender
+  (package
+    (name "r-customknitrender")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "customknitrender" version))
+       (sha256
+        (base32 "1lqbhb5wn5fgpakikdsb7z0qvr809bdhgyf3nkvzlzljy1kdnwdn"))))
+    (properties `((upstream-name . "customknitrender")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmarkdown))
+    (home-page "https://cran.r-project.org/package=customknitrender")
+    (synopsis
+     "Easily Switch Output Format of 'Rmarkdown' Files with Shared Frontmatter")
+    (description
+     "Define the output format of rmarkdown files with shared output yaml frontmatter
+content.  Rather than modifying a shared yaml file, use integers to easily
+switch output formats for rmarkdown files.")
+    (license license:expat)))
 
 (define-public r-customizedtraining
   (package
@@ -4983,6 +5008,49 @@ postestimation procedures (e.g., verify admissibility of the estimates, assess
 the model fit, test the model fit etc.).")
     (license license:gpl3)))
 
+(define-public r-csdownscale
+  (package
+    (name "r-csdownscale")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CSDownscale" version))
+       (sha256
+        (base32 "1j9y7jxdqx5s1k7vrm3pvbx19x2m8cnv3l65q4fya2xw5ws4h75m"))))
+    (properties `((upstream-name . "CSDownscale")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cdo))
+    (propagated-inputs (list r-s2dv
+                             r-proxy
+                             r-plyr
+                             r-nnet
+                             r-multiapply
+                             r-easyverification
+                             r-cstools
+                             r-climprojdiags
+                             r-abind))
+    (home-page "https://gitlab.earth.bsc.es/es/csdownscale")
+    (synopsis "Statistical Downscaling of Climate Predictions")
+    (description
+     "Statistical downscaling and bias correction of climate predictions.  It includes
+implementations of commonly used methods such as Analogs, Linear Regression,
+Logistic Regression, and Bias Correction techniques, as well as interpolation
+functions for regridding and point-based applications.  It facilitates the
+production of high-resolution and local-scale climate information from
+coarse-scale predictions, which is essential for impact analyses.  The package
+can be applied in a wide range of sectors and studies, including agriculture,
+water management, energy, heatwaves, and other climate-sensitive applications.
+The package was developed within the framework of the European Union Horizon
+Europe projects Impetus4Change (101081555) and ASPECT (101081460), the Wellcome
+Trust supported HARMONIZE project (224694/Z/21/Z), and the Spanish national
+project BOREAS (PID2022-140673OA-I00).  Implements the methods described in
+Duzenli et al. (2024) <doi:10.5194/egusphere-egu24-19420>.")
+    (license license:gpl3)))
+
 (define-public r-csdb
   (package
     (name "r-csdb")
@@ -6795,13 +6863,13 @@ identification of outlier elements.")
 (define-public r-crosscarry
   (package
     (name "r-crosscarry")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossCarry" version))
        (sha256
-        (base32 "1sdm17crc074a9iwq945ykfmrjjdnk3wjj0fjygvfs3myfdi917q"))))
+        (base32 "0nwqv79mln81arsxcqdbhfvml42ajr2rih1sfxx8r92d1zvqlwpi"))))
     (properties `((upstream-name . "CrossCarry")))
     (build-system r-build-system)
     (arguments
@@ -9933,13 +10001,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "0a16bmn7d0v5dk37p8mr6zdc3qar6h6p0yw46bqrvgrj5cm39brp"))))
+        (base32 "0x6148ql1pnbns22548xcdbqqfscbli3rydagfy9qi7alz4wnhw8"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -9953,6 +10021,7 @@ sites.")
                              r-glmnet
                              r-foreach
                              r-e1071
+                             r-dorng
                              r-doparallel))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=cpfa")
@@ -9969,7 +10038,7 @@ support vector machine, random forest, feed-forward neural network, regularized
 discriminant analysis, and gradient boosting machine.  Supports binary and
 multiclass classification.  Predicts class labels or class probabilities and
 calculates multiple classification performance measures.  Implements parallel
-computing via the parallel and @code{doParallel} packages.")
+computing via the parallel', @code{doParallel}', and @code{doRNG} packages.")
     (license license:gpl2+)))
 
 (define-public r-cpe
@@ -13099,6 +13168,34 @@ models, methods as described in: Tran et al., (2021)
 <doi:10.48550/@code{arXiv.2103.01327>}.")
     (license license:gpl2+)))
 
+(define-public r-coscorr
+  (package
+    (name "r-coscorr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cosCorr" version))
+       (sha256
+        (base32 "1nldb265zysaa17hz1sxf0hb3sj13j671rnfyn0m426jfdqczi2q"))))
+    (properties `((upstream-name . "cosCorr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cosCorr")
+    (synopsis "Cosine-Correlation Coefficient for Vector Variables")
+    (description
+     "Computes the cosine-correlation coefficient for measuring the degree of linear
+dependence among variables in a multidimensional context.  The package
+implements the generalized cosine-correlation theorem for p-1 variables,
+providing a quantitative assessment of interrelationships within experimental
+frameworks.  This methodology extends classical correlation measures to
+higher-dimensional spaces using a dimensional exploration approach based on time
+scale calculus.")
+    (license license:expat)))
+
 (define-public r-cosa
   (package
     (name "r-cosa")
@@ -13439,13 +13536,13 @@ populations using genetic data.  Pritchard JK, Stephens M, Donnelly PJ (2000)
 (define-public r-corrselect
   (package
     (name "r-corrselect")
-    (version "3.0.2")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrselect" version))
        (sha256
-        (base32 "0h22qg6pzfl7ziiq3iagrjf9v8jnng1y65ccvx8f340pbcjh12bd"))))
+        (base32 "0yrcmc732xp9yfbww98g7cf28i6m95sz2aq6r3qngmidl08vbbsj"))))
     (properties `((upstream-name . "corrselect")))
     (build-system r-build-system)
     (arguments
@@ -15339,13 +15436,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "2.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "0fn7h7ma6kbazj5cr772zx7xwj1l732c0kd4w2a4fvabb21d6qly"))))
+        (base32 "1qbhl8sapj7w49pxxbr77bfxvm4a0c4jdsw3dsmp53br75mdbzwk"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (arguments
@@ -20729,13 +20826,13 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 (define-public r-comtradr
   (package
     (name "r-comtradr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comtradr" version))
        (sha256
-        (base32 "122j3zd2ahkrgwl08381fs460ya2bimij7gimdp49iq0vpr21l7d"))))
+        (base32 "1n0zngjbw7wr3qggch6vqc4hcd7bpb27574gahzr5ksvkzcq3wb9"))))
     (properties `((upstream-name . "comtradr")))
     (build-system r-build-system)
     (arguments
@@ -23047,32 +23144,6 @@ experiments and models.  Experiments can be viewed on the Comet online dashboard
 at <https://www.comet.com>.")
     (license license:expat)))
 
-(define-public r-cometexacttest
-  (package
-    (name "r-cometexacttest")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cometExactTest" version))
-       (sha256
-        (base32 "0ar9axm9cd1wd937xcmsmd7xqilnfyab8gsrpkiqpc3fjh86qyrp"))))
-    (properties `((upstream-name . "cometExactTest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-dplyr))
-    (home-page "http://compbio.cs.brown.edu/projects/comet")
-    (synopsis
-     "Exact Test from the Combinations of Mutually Exclusive Alterations (CoMEt) Algorithm")
-    (description
-     "An algorithm for identifying combinations of mutually exclusive alterations in
-cancer genomes. @code{CoMEt} represents the mutations in a set M of k genes with
-a 2^k dimensional contingency table, and then computes the tail probability of
-observing T(M) exclusive alterations using an exact statistical test.")
-    (license license:expat)))
-
 (define-public r-comclim
   (package
     (name "r-comclim")
@@ -23784,13 +23855,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "1hjy1r1p0fsarrqamb17i8i8szw8kzjg2ii2i6rad3af6qk9jqhs"))))
+        (base32 "0kz5gk6pfl9fczh7kypalgq0b2kry4zd3c4wicinhrgp4m63ps22"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
@@ -26534,13 +26605,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.5.0")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "0cmahczw7wixc1k7mhw25wq4s9ni3j17wmfi4pwp5c8j3qq9cx50"))))
+        (base32 "10ishi8fiwz2pp58nfvhizi11wv2f400ll7764rc77nm80q7v1k9"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (arguments
@@ -29259,46 +29330,6 @@ inference with clustered data, as described in B. Arpino and M. Cannas (2016)
 matching are implemented.  Both algorithms provide causal estimates with
 cluster-adjusted estimates of standard errors.")
     (license license:gpl2)))
-
-(define-public r-cmars
-  (package
-    (name "r-cmars")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cmaRs" version))
-       (sha256
-        (base32 "028z0x6a6aq3n0kplqg4pwqa7xilpi4s919xrqvd2lqnabhbjy8l"))))
-    (properties `((upstream-name . "cmaRs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-ryacas0
-                             r-rocr
-                             r-rmosek
-                             r-mpv
-                             r-matrix
-                             r-earth
-                             r-auc))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cmaRs")
-    (synopsis
-     "Implementation of the Conic Multivariate Adaptive Regression Splines in R")
-    (description
-     "An implementation of Conic Multivariate Adaptive Regression Splines (CMARS) in
-R. See Weber et al. (2011) CMARS: a new contribution to nonparametric regression
-with multivariate adaptive regression splines supported by continuous
-optimization, <DOI:10.1080/17415977.2011.624770>.  It constructs models by using
-the terms obtained from the forward step of MARS and then estimates parameters
-by using Tikhonov regularization and conic quadratic optimization.  It is
-possible to construct models for prediction and binary classification.  It
-provides performance measures for the model developed.  The package needs the
-optimisation software MOSEK <https://www.mosek.com/> to construct the models.
-Please follow the instructions in Rmosek for the installation.")
-    (license license:gpl2+)))
 
 (define-public r-cmapviz
   (package
@@ -43153,19 +43184,19 @@ about CE PUMD please visit <https://www.bls.gov/cex/pumd.htm>.")
 (define-public r-cepreg
   (package
     (name "r-cepreg")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CepReg" version))
        (sha256
-        (base32 "06blrydss7qq3pnym3v61ywn70nqvkz4r584mch94fb30h5rnhqy"))))
+        (base32 "1xsgwhhvv29gilf2a0f20r3g5a0v2hiw64d2s9xjnz3knhwa0hgv"))))
     (properties `((upstream-name . "CepReg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rrpack r-renvlp r-psych r-mass))
+    (propagated-inputs (list r-renvlp r-psych r-mass))
     (home-page "https://cran.r-project.org/package=CepReg")
     (synopsis "Cepstral Model for Covariate-Dependent Time Series")
     (description
@@ -44562,6 +44593,42 @@ package has been developed using concept of Shankar et al.
      "Deriving skill structures from skill assignment data for courses (sets of
 learning objects).")
     (license license:gpl3)))
+
+(define-public r-cdsim
+  (package
+    (name "r-cdsim")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDSim" version))
+       (sha256
+        (base32 "1s86ffppcdsxcgp3ghwigws787qvscp5pfrmvs18c7hapbh6xx57"))))
+    (properties `((upstream-name . "CDSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-ncdf4
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ikemillar/CDSim")
+    (synopsis "Simulating Climate Data for Research and Modelling")
+    (description
+     "Generate synthetic station-based monthly climate time-series including
+temperature and rainfall, export to Network Common Data Form (@code{NetCDF}),
+and provide visualization helpers for climate workflows.  The approach is
+inspired by statistical weather generator concepts described in Wilks (1992)
+<doi:10.1016/S0168-1923(99)00037-4> and Richardson (1981)
+<doi:10.1029/WR017i001p00182>.")
+    (license license:expat)))
 
 (define-public r-cdse
   (package
@@ -50375,13 +50442,13 @@ clinical research.")
 (define-public r-cardinalr
   (package
     (name "r-cardinalr")
-    (version "1.0.1")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardinalR" version))
        (sha256
-        (base32 "1x6r4ig3nh4v2qmy7cz4wqjqd8ljkcm7kdfh8mw9ad6q7pf538hn"))))
+        (base32 "13g7g1f0px3n9z27fvq7dy9q9qk979f01dsb99qw22aw0hmzgsfq"))))
     (properties `((upstream-name . "cardinalR")))
     (build-system r-build-system)
     (arguments

@@ -635,20 +635,20 @@ et al. (2023) <doi:10.1111/geb.13706>.")
 (define-public r-jsutils
   (package
     (name "r-jsutils")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsutils" version))
        (sha256
-        (base32 "06190lhm01yf068rcbcgmkqp5p3ahbb6dfpm2nwsp7m6dwm2vjga"))))
+        (base32 "0la268d5ysb5c668bbyi25k28nrfwjjsqhrq7xmzm9lafqx1r4zl"))))
     (properties `((upstream-name . "jsutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-quickjsr))
-    (home-page "https://andrjohns.github.io/jsutils/")
+    (home-page "https://github.com/andrjohns/QuickJSR")
     (synopsis "'JavaScript' Utilities for 'R'")
     (description
      "This package provides a collection of popular/useful @code{JavaScript}
@@ -2103,13 +2103,13 @@ Marx (2021, ISBN:978-1108482950).")
 (define-public r-jollofr
   (package
     (name "r-jollofr")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jollofR" version))
        (sha256
-        (base32 "1kph8rrdvribh7w2i19a2c4inawgiqkiylbv644rab1j3083hbxq"))))
+        (base32 "17g21cm8dl5rpzs8kbfbpjrl8hy4jaj9pwvrwn13hzz5nk0pq1km"))))
     (properties `((upstream-name . "jollofR")))
     (build-system r-build-system)
     (arguments
@@ -2126,7 +2126,7 @@ Marx (2021, ISBN:978-1108482950).")
     (home-page "https://github.com/wpgp/jollofR/")
     (synopsis "Small Area Population Estimation by Demographics")
     (description
-     "Automatic disaggregation of small1area population estimates by demographic
+     "Automatic disaggregation of small-area population estimates by demographic
 groups (e.g., age, sex, race, marital status, educational level, etc) along with
 the estimates of uncertainty, using advanced Bayesian statistical modelling
 approaches based on integrated nested Laplace approximation (INLA) Rue et al.

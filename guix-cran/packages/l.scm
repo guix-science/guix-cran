@@ -3273,54 +3273,6 @@ function for locally stationary wavelet time series from Killick, Knight, Nason,
 Eckley (2020) <doi:10.1214/20-EJS1748>.")
     (license license:gpl2)))
 
-(define-public r-lowwafomsobol
-  (package
-    (name "r-lowwafomsobol")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LowWAFOMSobol" version))
-       (sha256
-        (base32 "1ym3i2m1am356di9lcp5nfmxq0np3c4bwsv6bbmf7hg02j7dhwi4"))))
-    (properties `((upstream-name . "LowWAFOMSobol")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsqlite r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://mersennetwister-lab.github.io/LowWAFOMSobol/")
-    (synopsis "Low WAFOM Sobol Sequence")
-    (description
-     "Implementation of Low Walsh Figure of Merit (WAFOM) sequence based on Sobol
-sequence.")
-    (license license:bsd-3)))
-
-(define-public r-lowwafomnx
-  (package
-    (name "r-lowwafomnx")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LowWAFOMNX" version))
-       (sha256
-        (base32 "0f75qsv6pisgvk39yagzfxscnyfsgh63rmhp4gpybpl0pqmjp48x"))))
-    (properties `((upstream-name . "LowWAFOMNX")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsqlite r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://mersennetwister-lab.github.io/LowWAFOMNX/")
-    (synopsis "Low WAFOM Niederreiter-Xing Sequence")
-    (description
-     "Implementation of Low Walsh Figure of Merit (WAFOM) sequence based on
-Niederreiter-Xing sequence <DOI:10.1007/978-3-642-56046-0_30>.")
-    (license license:bsd-3)))
-
 (define-public r-lowrankqp
   (package
     (name "r-lowrankqp")
@@ -6674,28 +6626,29 @@ created based on local rather than global behaviour of each original feature.")
 (define-public r-localllm
   (package
     (name "r-localllm")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localLLM" version))
        (sha256
-        (base32 "1fffhaalxfpqln2ma3dlbmjlmizwr82ma2w2857w8frzpylhlbw0"))))
+        (base32 "0166vm239ashnri8jppph02zmyhp34340wqsmnrrjl3w52s394ax"))))
     (properties `((upstream-name . "localLLM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-r-utils r-jsonlite r-digest r-curl))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/EddieYang211/localLLM")
     (synopsis "Running Local LLMs with 'llama.cpp' Backend")
     (description
-     "The @code{localLLM} package provides R bindings to the llama.cpp library for
-running large language models.  The package uses a lightweight architecture
-where the C++ backend library is downloaded at runtime rather than bundled with
-the package.  Package features include text generation, reproducible generation,
-and parallel inference.")
+     "This package provides R bindings to the llama.cpp library for running large
+language models.  The package uses a lightweight architecture where the C++
+backend library is downloaded at runtime rather than bundled with the package.
+Package features include text generation, reproducible generation, and parallel
+inference.")
     (license license:expat)))
 
 (define-public r-localiv
@@ -8715,37 +8668,6 @@ by the Python package langagent'.")
 Caigny et al., (2018) <DOI:10.1016/j.ejor.2018.02.009>).")
     (license license:gpl3+)))
 
-(define-public r-llic
-  (package
-    (name "r-llic")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LLIC" version))
-       (sha256
-        (base32 "0nvzhwv4g0vicv082vp7fl63gkn3zphggzpim2rvnkps9msygqs3"))))
-    (properties `((upstream-name . "LLIC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam
-                             r-rlang
-                             r-relliptical
-                             r-laplacesdemon
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=LLIC")
-    (synopsis
-     "Likelihood Criterion (LIC) Analysis for Laplace Regression Model")
-    (description
-     "This package performs likelihood criterion analysis using the Laplace regression
-model to determine its optimal subset of variables.  The methodology is based on
-Guo et al. (2023), LIC criterion for optimal subset selection in distributed
-interval estimation <doi:10.1080/02331888.2020.1823979>.")
-    (license license:expat)))
-
 (define-public r-llbayesireg
   (package
     (name "r-llbayesireg")
@@ -9892,6 +9814,34 @@ Single or multiple doses may be specified.  Secondary (derived) PK parameters
      "This package provides a @code{LaTeX} Letter class for rmarkdown', using the
 pandoc-letter template adapted for use with markdown'.")
     (license license:gpl3)))
+
+(define-public r-linktree
+  (package
+    (name "r-linktree")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "linktree" version))
+       (sha256
+        (base32 "1w40rzvbdqxrd5k500payzy7fns7nzqqm8h4bysns4m1lbgapwis"))))
+    (properties `((upstream-name . "linktree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CyGei/linktree")
+    (synopsis "Estimate Transmission Assortativity Coefficients")
+    (description
+     "Estimates group transmission assortativity coefficients from transmission trees.
+ Group transmission assortativity coefficients measure the tendency for
+individuals to transmit within their own group (e.g. age group, vaccination
+status, or location) compared to other groups.  The package requires information
+on who infected whom, group membership for all individuals, and the relative
+sizes of each group in the population.  For more details see Geismar et al.
+(2024) <doi:10.1371/journal.pone.0313037>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-linkspotter
   (package
@@ -12992,46 +12942,16 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
 <doi:10.1111/2041-210X.12382>).")
     (license license:gpl3)))
 
-(define-public r-lfm
-  (package
-    (name "r-lfm")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LFM" version))
-       (sha256
-        (base32 "0sy9qmh4dk6vn0h0k704izzlwd73fiid4718f1kjq0h658kv3v69"))))
-    (properties `((upstream-name . "LFM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-relliptical r-matrixcalc r-mass r-laplacesdemon
-                             r-elasticnet))
-    (home-page "https://cran.r-project.org/package=LFM")
-    (synopsis "Laplace Factor Model Analysis and Evaluation")
-    (description
-     "Enables the generation of Laplace factor models across diverse Laplace
-distributions and facilitates the application of Sparse Online Principal
-Component (SOPC), Incremental Principal Component (IPC), Perturbation Principal
-Component (PPC), Stochastic Approximation Principal Component (SAPC), Sparse
-Principal Component (SPC) and other PC methods and Farm Test methods to these
-models.  Evaluates the efficacy of these methods within the context of Laplace
-factor models by scrutinizing parameter estimation accuracy, mean square error,
-and the degree of sparsity.")
-    (license license:expat)))
-
 (define-public r-lfl
   (package
     (name "r-lfl")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfl" version))
        (sha256
-        (base32 "01pdbxx7dr0r6sadlkx25h1r5i6pmsv0r1sxd49w1k39cmbvn4sv"))))
+        (base32 "1cim2dq0vhzlxawadppdq18mrnb23h3sxq0qkqzg6wlqwlv0wm28"))))
     (properties `((upstream-name . "lfl")))
     (build-system r-build-system)
     (arguments
@@ -18865,28 +18785,34 @@ in Goslee (2012) <doi:10.14358/PERS.78.9.973>.")
 (define-public r-landpred
   (package
     (name "r-landpred")
-    (version "1.2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landpred" version))
        (sha256
-        (base32 "0xbmr896fyl2gvh6vy7fy7aixa5n2ycvwm509z6ys5wh0r8p296k"))))
+        (base32 "12vw0xqrczsfl18klrxzch0wrrkf9vl96bmnf0q5aqbamcassfn7"))))
     (properties `((upstream-name . "landpred")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival))
+    (propagated-inputs (list r-survival r-sm r-quantreg r-quantreg))
     (home-page "https://cran.r-project.org/package=landpred")
     (synopsis "Landmark Prediction of a Survival Outcome")
     (description
-     "This package provides functions for landmark prediction of a survival outcome
-incorporating covariate and short-term event information.  For more information
-about landmark prediction please see: Parast, Layla, Su-Chun Cheng, and Tianxi
-Cai.  Incorporating short-term outcome information to predict long-term survival
-with discrete markers.  Biometrical Journal 53.2 (2011): 294-307,
-<doi:10.1002/bimj.201000150>.")
+     "Nonparametric methods for landmark prediction of long-term survival outcomes,
+incorporating covariate and short-term event information.  The package supports
+the construction of flexible varying-coefficient models that use discrete
+covariates, as well as multiple continuous covariates.  The goal is to improve
+prediction accuracy when censored short-term events are available as predictors,
+using robust nonparametric procedures that do not require correct model
+specification and avoid restrictive parametric assumptions found in alternative
+methods.  More information on these methods can be found in Parast et al.  2012
+<doi:10.1080/01621459.2012.721281>, Parast et al.  2011
+<doi:10.1002/bimj.201000150>, and Parast and Cai 2013 <doi:10.1002/sim.5776>.  A
+tutorial for this package is available here:
+<https://www.laylaparast.com/landpred>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-landmulti
@@ -19147,13 +19073,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "0w39j2ygr17s0s37mw8nkmv7pd1f3c0gmbs6vn9b1xxl1y87brwc"))))
+        (base32 "1x5pjfpg6lndrvmgi829dzndilnllfhabypwp5pb9knp9nj7h5g8"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments

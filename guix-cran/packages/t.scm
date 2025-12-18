@@ -1849,31 +1849,33 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tuvalues
   (package
     (name "r-tuvalues")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TUvalues" version))
        (sha256
-        (base32 "1xqg5a87n94bd7cfzhih5ki4718m5xalp3krqgd9hyg74xqbyz6n"))))
+        (base32 "0w3b89f5s1lidgh3szfyxlv6bbqf2ng28kdhizb00lpij7qccr55"))))
     (properties `((upstream-name . "TUvalues")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gtools))
+    (propagated-inputs (list r-highs r-gtools))
     (home-page "https://github.com/mariaguilleng/TUvalues")
     (synopsis
      "Tools for Calculating Allocations in Game Theory using Exact and Approximated Methods")
     (description
-     "The main objective of cooperative games is to allocate a good among the agents
-involved.  This package includes the most well-known allocation rules, i.e., the
-Shapley value, the Banzhaf value, the egalitarian rule, and the equal surplus
-division value.  In addition, it considers the point of view of a priori unions
-(situations in which agents can form coalitions).  For this purpose, the package
-includes the Owen value, the Banzhaf-Owen value, and the corresponding
-extensions of the egalitarian rules.  All these values can be calculated exactly
-or estimated by sampling.")
+     "The main objective of cooperative Transferable-Utility games (TU-games) is to
+allocate a good among the agents involved.  The package implements major
+solution concepts including the Shapley value, Banzhaf value, and egalitarian
+rules, alongside their extensions for structured games: the Owen value and
+Banzhaf-Owen value for games with a priori unions, and the Myerson value for
+communication games on networks.  To address the inherent exponential
+computational complexity of exact evaluation, the package offers both exact
+algorithms and linear approximation methods based on sampling, enabling the
+analysis of large-scale games.  Additionally, it supports core set-based
+solutions, allowing computation of the vertices and the centroid of the core.")
     (license license:agpl3+)))
 
 (define-public r-tutorial-helpers
@@ -4609,13 +4611,13 @@ and layout customization options.")
 (define-public r-tsforecast
   (package
     (name "r-tsforecast")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsforecast" version))
        (sha256
-        (base32 "1azxgyq2cbm2r4mr3s8l809g79dyxdfb1z0qil9ilfhv1k11fiqj"))))
+        (base32 "05sr0wd6pq1r86z5w0kfl2if1karliljnr9bw2304wkhrchh4yjp"))))
     (properties `((upstream-name . "tsforecast")))
     (build-system r-build-system)
     (arguments
@@ -8552,33 +8554,6 @@ birth-death species trees, and @code{sim.genetree()} simulates coalescent gene
 trees.")
     (license license:gpl2)))
 
-(define-public r-treeshap
-  (package
-    (name "r-treeshap")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "treeshap" version))
-       (sha256
-        (base32 "1ipj5k9dgrnbny0z2ydsdvdzg5ba53alyidnh90a08y2dhd4wffs"))))
-    (properties `((upstream-name . "treeshap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-ggplot2 r-data-table))
-    (home-page "https://modeloriented.github.io/treeshap/")
-    (synopsis
-     "Compute SHAP Values for Your Tree-Based Models Using the 'TreeSHAP' Algorithm")
-    (description
-     "An efficient implementation of the @code{TreeSHAP} algorithm introduced by
-Lundberg et al., (2020) <doi:10.1038/s42256-019-0138-9>.  It is capable of
-calculating SHAP (SHapley Additive @code{exPlanations}) values for tree-based
-models in polynomial time.  Currently supported models include gbm',
-@code{randomForest}', ranger', xgboost', lightgbm'.")
-    (license license:gpl3)))
-
 (define-public r-treesearch
   (package
     (name "r-treesearch")
@@ -10799,13 +10774,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.3-1")
+    (version "1.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "0cycynjywm0yfpma2pg3ywxw0d239b6fniskrm65zm73ra59vvad"))))
+        (base32 "1jwkpi032dgfh3hsyx44yrdia606yyibxm079v5zrpiilhr80rx9"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -12577,23 +12552,19 @@ clinical trials.")
 (define-public r-toxpir
   (package
     (name "r-toxpir")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxpiR" version))
        (sha256
-        (base32 "1d19zpf2i5yrnby2ypfq4q8fahjfrdagvzparkaynwipwcs1qhkm"))))
+        (base32 "0rf7bshi0fqp3jwv3m56i90ncjqbk3alc5rhihpxn148x5wgz14l"))))
     (properties `((upstream-name . "toxpiR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-s4vectors
-                             r-rlang
-                             r-pryr
-                             r-ggplot2
+    (propagated-inputs (list r-tidyr r-s4vectors r-rlang r-ggplot2
                              r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ToxPi/toxpiR")
@@ -12602,7 +12573,7 @@ clinical trials.")
      "Enables users to build @code{ToxPi} prioritization models and provides
 functionality within the grid framework for plotting @code{ToxPi} graphs.
 @code{toxpiR} allows for more customization than the @code{ToxPi} GUI
-(<https://toxpi.org>) and integration into existing workflows for greater
+(<https://toxpi.github.io/>) and integration into existing workflows for greater
 ease-of-use, reproducibility, and transparency. @code{toxpiR} package behaves
 nearly identically to the GUI; the package documentation includes notes about
 all differences.  The vignettes download example files from
@@ -20779,13 +20750,13 @@ any other data frame.  The main function is @code{predict_gam()}.")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfst" version))
        (sha256
-        (base32 "05f8nqfhq1wbgka2v86xxz3pnzqh6iyq5bgbw4j6i4xa2fnz4b5f"))))
+        (base32 "1y8ayz39i7f3lgnvig999xprh45mjznxcp97f0lb9cy13bb4zbra"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (arguments
@@ -22849,6 +22820,36 @@ computing.  Includes functions for parallel processing, and other computational
 tasks to streamline workflows.")
     (license license:expat)))
 
+(define-public r-thisplot
+  (package
+    (name "r-thisplot")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "thisplot" version))
+       (sha256
+        (base32 "1hhl38hshq96vk0c4lnsk0094xqxs7qf8d8wcalg6y43aznki6d3"))))
+    (properties `((upstream-name . "thisplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-thisutils
+                             r-patchwork
+                             r-igraph
+                             r-htmltools
+                             r-gtable
+                             r-ggplot2
+                             r-cli))
+    (home-page "https://mengxu98.github.io/thisplot/")
+    (synopsis "Utility Functions for Plotting")
+    (description
+     "This package provides utility functions for plotting.  Includes functions for
+color manipulation, plot customization, panel size control, data optimization
+for plots, and layout adjustments.")
+    (license license:expat)))
+
 (define-public r-this-path
   (package
     (name "r-this-path")
@@ -23987,42 +23988,6 @@ Neural ordinary differential equations comes from Chen et al. (2018)
 solving differential systems.")
     (license license:expat)))
 
-(define-public r-tfm
-  (package
-    (name "r-tfm")
-    (version "0.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TFM" version))
-       (sha256
-        (base32 "1sd3x1972zb83qawznawchv476nfm2l49qnx1mi9lh4x5y38is6m"))))
-    (properties `((upstream-name . "TFM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sopc
-                             r-relliptical
-                             r-mvtnorm
-                             r-matrixcalc
-                             r-mass
-                             r-ggplot2
-                             r-corrplot))
-    (home-page "https://cran.r-project.org/package=TFM")
-    (synopsis "Sparse Online Principal Component for Truncated Factor Model")
-    (description
-     "The Truncated Factor Model is a statistical model designed to handle specific
-data structures in data analysis.  This R package focuses on the Sparse Online
-Principal Component Estimation method, which is used to calculate data such as
-the loading matrix and specific variance matrix for truncated data, thereby
-better explaining the relationship between common factors and original
-variables.  Additionally, the R package also provides other equations for
-comparison with the Sparse Online Principal Component Estimation method.The
-philosophy of the package is described in thesis. (2023)
-<doi:10.1007/s00180-022-01270-z>.")
-    (license license:expat)))
-
 (define-public r-tfio
   (package
     (name "r-tfio")
@@ -24420,13 +24385,13 @@ vectors in data frames for joint analysis of functional and scalar variables.")
 (define-public r-textutils
   (package
     (name "r-textutils")
-    (version "0.4-2")
+    (version "0.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textutils" version))
        (sha256
-        (base32 "05505vxg2r71bw6iknvy9n9sks6vj4mhq9jirqmlfcw01h7rah5d"))))
+        (base32 "1bkz9qsml9r5rhh2x6vpwp90anyhgzdy12mhab0lr3h1sbxsiv71"))))
     (properties `((upstream-name . "textutils")))
     (build-system r-build-system)
     (arguments
@@ -31119,26 +31084,27 @@ performances over time.")
 (define-public r-tatooheene
   (package
     (name "r-tatooheene")
-    (version "0.19.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tatooheene" version))
        (sha256
-        (base32 "07f7jv4nq4r45bv7816d8y6br9rh27msygxyzpg4y7h1153sqxxn"))))
+        (base32 "1jw2s6pbs5qif2rqy1j21lvcqlqh8jh3yi9dlcm9lkagwppzwxhk"))))
     (properties `((upstream-name . "tatooheene")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-dplyr r-assertthat))
+    (propagated-inputs (list r-tidyr r-rlang r-dplyr r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=tatooheene")
     (synopsis
      "Technology Appraisal Toolbox for Health Economic Evaluations in the Netherlands")
     (description
      "This package provides functions to support economic modelling in R based on the
 methods of the Dutch guideline for economic evaluations in healthcare
-<https://www.zorginstituutnederland.nl/publicaties/publicatie/2024/01/16/richtlijn-voor-het-uitvoeren-van-economische-evaluaties-in-de-gezondheidszorg>,
+<https://www.zorginstituutnederland.nl/documenten/2024/01/16/richtlijn-voor-het-uitvoeren-van-economische-evaluaties-in-de-gezondheidszorg>,
 CBS data <https://www.cbs.nl/>, and OECD data <https://www.oecd.org/en.html>.")
     (license license:expat)))
 
@@ -33225,20 +33191,20 @@ options available in the package.")
 (define-public r-tables
   (package
     (name "r-tables")
-    (version "0.9.31")
+    (version "0.9.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tables" version))
        (sha256
-        (base32 "1378kj6y166p8kgd8jqq795rbd6p7y1qv23kqapmk8ih7qcwy6mq"))))
+        (base32 "0vzja9g5w8afr68q0nx8szl7zx3f8z7dwzf6zhc0lzysrsm8g4kv"))))
     (properties `((upstream-name . "tables")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-knitr r-htmltools))
-    (native-inputs (list r-rmarkdown))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://dmurdoch.github.io/tables/")
     (synopsis "Formula-Driven Table Generation")
     (description

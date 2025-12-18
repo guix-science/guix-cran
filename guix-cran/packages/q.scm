@@ -356,29 +356,6 @@ knowledge.  The package is described in further detail in Wirth et al. (2023)
 translations), formatted to be convenient for text analysis.")
     (license license:expat)))
 
-(define-public r-quotedargs
-  (package
-    (name "r-quotedargs")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quotedargs" version))
-       (sha256
-        (base32 "11cswg9bmddsl1axxcdz11flq46p1zkpv022526f2vgl4qsprwbm"))))
-    (properties `((upstream-name . "quotedargs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=quotedargs")
-    (synopsis "Way of Writing Functions that Quote their Arguments")
-    (description
-     "This package provides a facility for writing functions that quote their
-arguments, may sometimes evaluate them in the environment where they were
-quoted, and may pass them as quoted to other functions.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-quoradsr
   (package
     (name "r-quoradsr")
@@ -406,13 +383,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-quollr
   (package
     (name "r-quollr")
-    (version "1.0.1")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quollr" version))
        (sha256
-        (base32 "171ibs6hj9s5cyh9yjpnpvjbwizqkkapj723s9hpjbh23g4f4rvm"))))
+        (base32 "1qp055b9bshqmc0snq2rd5xhikji4fj7wj26gs8l9i4qkccb1ca1"))))
     (properties `((upstream-name . "quollr")))
     (build-system r-build-system)
     (arguments
@@ -2000,6 +1977,35 @@ Ruiz and Torices (2013) <doi:10.1080/10420940.2012.759115>, Scrucca et al.
 (2016) <doi:10.32614/RJ-2016-021>, Thulborn and Wade (1984)
 <https://www.museum.qld.gov.au/collections-and-research/memoirs/nature-21/mqm-n21-2-11-thulborn-wade>.")
     (license license:cc0)))
+
+(define-public r-quanteda-tidy
+  (package
+    (name "r-quanteda-tidy")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quanteda.tidy" version))
+       (sha256
+        (base32 "1p1d35nh65px4nxmfp3m08x595zg5bar896cz4pvahag23152400"))))
+    (properties `((upstream-name . "quanteda.tidy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-tibble r-rlang r-quanteda r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=quanteda.tidy")
+    (synopsis "'tidyverse' Extensions for 'quanteda'")
+    (description
+     "Enables tidyverse operations on quanteda corpus objects by extending dplyr verbs
+to work directly with corpus objects and their document-level variables
+('docvars').  Implements row operations for subsetting and reordering documents;
+column operations for managing document variables; grouped operations; and
+two-table verbs for merging external data.  For more on quanteda see Benoit et
+al. (2018) <doi:10.21105/joss.00774>.  For dplyr see Wickham et al. (2023)
+<doi:10.32614/CRAN.package.dplyr>.")
+    (license license:gpl3)))
 
 (define-public r-quanteda-textstats
   (package

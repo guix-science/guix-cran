@@ -794,13 +794,13 @@ and Lima, A. O. (2017) <doi:10.1016/j.spasta.2017.07.011>.")
 (define-public r-gwavr
   (package
     (name "r-gwavr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gwavr" version))
        (sha256
-        (base32 "1275whdsnrjn14r4ir25g6lkqsg4czaragxjalj2n65y7dps7az7"))))
+        (base32 "1yd3d96yi01ndrgsy4vfi6ppwglg1791dg4ln0s2j0bnkp18cpn5"))))
     (properties `((upstream-name . "gwavr")))
     (build-system r-build-system)
     (arguments
@@ -1469,13 +1469,13 @@ Moment Based Estimation and Canonical Maximum Likelihood).")
 (define-public r-gulfm
   (package
     (name "r-gulfm")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GulFM" version))
        (sha256
-        (base32 "18wwdvsskjfqifhyclvdz1mw5k41wf6ywg1ipn9xpgmvyxv2smvb"))))
+        (base32 "0bzhpb0s70r4gym7gw6507cnrpi1pvkdaqw1vx3wv41795mdc91d"))))
     (properties `((upstream-name . "GulFM")))
     (build-system r-build-system)
     (arguments
@@ -1702,13 +1702,13 @@ multi-label classes.")
 (define-public r-guess
   (package
     (name "r-guess")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guess" version))
        (sha256
-        (base32 "1306f95gv71dz52y7924pgkv8lprqa333lj5vmvbyyl9a5fszh2b"))))
+        (base32 "0j6xagqrf1y4y2pm5yqkdhw2ls7p5w35nymmxsqzy3qijc573kz4"))))
     (properties `((upstream-name . "guess")))
     (build-system r-build-system)
     (arguments
@@ -1719,9 +1719,13 @@ multi-label classes.")
     (home-page "https://github.com/finite-sample/guess")
     (synopsis "Adjust Estimates of Learning for Guessing")
     (description
-     "Adjust Estimates of Learning for Guessing.  The package provides standard
-guessing correction, and a latent class model that leverages informative
-pre-post transitions.  For details of the latent class model, see
+     "This package provides tools to adjust estimates of learning for guessing-related
+bias in educational and survey research.  Implements standard guessing
+correction methods and a sophisticated latent class model that leverages
+informative pre-post test transitions to account for guessing behavior.  The
+package helps researchers obtain more accurate estimates of actual learning when
+respondents may guess on closed-ended knowledge items.  For theoretical
+background and empirical validation, see Cor and Sood (2018)
 <https://gsood.com/research/papers/guess.pdf>.")
     (license license:expat)))
 
@@ -2671,13 +2675,13 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gt" version))
        (sha256
-        (base32 "0vf5nfrcciqsy4y1in4m5caqz8s5b4wv8gnr5dnlp0cp7mvdllhw"))))
+        (base32 "1asr6gkffhy8vm9sbvcv8wfw0xk9byrrq5c3x9d039g3bc6hwdav"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (arguments
@@ -5505,19 +5509,19 @@ Chris (2015) \"Bayesian A/B Testing at VWO\"
 (define-public r-gripp
   (package
     (name "r-gripp")
-    (version "0.2.20")
+    (version "0.2.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gripp" version))
        (sha256
-        (base32 "0rshipm8rdynl19a4dsvvvlhkd0n4vjfkidwnv5iilc5ini7c4qr"))))
+        (base32 "0h9lnx457d42s3dm5a2mywb7q9vgd41xph10qlrbxx7smzmf7y3g"))))
     (properties `((upstream-name . "gripp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-usethis r-gensa r-ga))
+    (propagated-inputs (list r-gensa r-ga))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gripp")
     (synopsis "General Inverse Problem Platform")
@@ -10613,6 +10617,55 @@ Optimization which arise in the subject \"Graphs and Network Optimization\" from
 first course of the EUPLA degree of Data Engineering in Industrial Processes.")
     (license license:gpl3)))
 
+(define-public r-gooser
+  (package
+    (name "r-gooser")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gooseR" version))
+       (sha256
+        (base32 "0blbvaa4qvxqggn5h023pkfb01kj0a484cvi557kyz3rmasdw1aw"))))
+    (properties `((upstream-name . "gooseR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-systemfonts
+                             r-shiny
+                             r-rstudioapi
+                             r-rappdirs
+                             r-r6
+                             r-purrr
+                             r-promises
+                             r-processx
+                             r-miniui
+                             r-magrittr
+                             r-later
+                             r-knitr
+                             r-jsonlite
+                             r-here
+                             r-glue
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-fs
+                             r-digest
+                             r-dbi
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gooseR")
+    (synopsis "R Integration for 'Goose' AI")
+    (description
+     "Seamless integration between R and Goose AI capabilities including memory
+management, visualization enhancements, and workflow automation.  Save R objects
+to Goose memory, apply Block branding to visualizations, and manage data science
+project workflows.  For more information about Goose AI, see
+<https://github.com/block/goose>.")
+    (license license:expat)))
+
 (define-public r-googleway
   (package
     (name "r-googleway")
@@ -14908,13 +14961,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.6-2")
+    (version "0.6-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "1v1vasi5gdlx6cp37g4n9cjj8w6mf7n89wph7lj7jg23lh6mcsjg"))))
+        (base32 "15w7wxaipnczja1gqidpk7fka21ls7b1jrp9dlkdn71yc9mrg9c0"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (arguments
@@ -14929,13 +14982,11 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
                              r-survival
                              r-smoof
                              r-rpart
-                             r-rgenoud
                              r-randomforestsrc
                              r-paramhelpers
                              r-mlrmbo
                              r-matrix
                              r-glmnet
-                             r-dicekriging
                              r-aorsf))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=glmnetr")
@@ -14950,15 +15001,17 @@ leave out samples (leading to nested cross validation) or bootstrap out-of-bag
 samples are used to evaluate and compare performances between these models with
 results presented in tabular or graphical means.  Calibration plots can also be
 generated, again based upon (outer nested) cross validation or bootstrap leave
-out (out of bag) samples.  For some datasets, for example when the design matrix
-is not of full rank, glmnet may have very long run times when fitting the
-relaxed lasso model, from our experience when fitting Cox models on data with
-many predictors and many patients, making it difficult to get solutions from
-either @code{glmnet()} or @code{cv.glmnet()}.  This may be remedied by using the
-path=TRUE option when calling @code{glmnet()} and @code{cv.glmnet()}.  Within
-the glmnetr package the approach of path=TRUE is taken by default.  other
-packages doing similar include nestedcv
-<https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
+out (out of bag) samples.  Note, at the time of this writing, in order to fit
+gradient boosting machine models one must install the packages
+@code{DiceKriging} and rgenoud using the @code{install.packages()} function.
+For some datasets, for example when the design matrix is not of full rank,
+glmnet may have very long run times when fitting the relaxed lasso model, from
+our experience when fitting Cox models on data with many predictors and many
+patients, making it difficult to get solutions from either @code{glmnet()} or
+@code{cv.glmnet()}.  This may be remedied by using the path=TRUE option when
+calling @code{glmnet()} and @code{cv.glmnet()}.  Within the glmnetr package the
+approach of path=TRUE is taken by default.  other packages doing similar include
+nestedcv <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
 <https://cran.r-project.org/package=@code{glmnetSE>} which may provide different
 functionality when performing a nested CV. Use of the glmnetr has many
 similarities to the glmnet package and it could be helpful for the user of
@@ -19603,37 +19656,43 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.2.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "1f26f92zzzw4pdyckgss8gzvqfirz2sr3lqjp60j5b5v76dhq1nq"))))
+        (base32 "04h0m393701yldig5bm14vn8235ggwjaa5qgkfc6j5wl8rrjvzqz"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-umap
-                             r-svglite
-                             r-smplot2
-                             r-shiny
+    (propagated-inputs (list r-xml2
+                             r-umap
+                             r-tidysem
+                             r-tidyr
+                             r-stringr
+                             r-semplot
                              r-rtsne
+                             r-rlang
+                             r-rcolorbrewer
+                             r-qgraph
+                             r-purrr
+                             r-network
                              r-lavaan
                              r-igraph
                              r-ggplot2
-                             r-dt
-                             r-colourpicker))
-    (home-page "https://smin95.github.io/ggsem/")
+                             r-dplyr
+                             r-diagrammersvg
+                             r-blavaan))
+    (home-page "https://github.com/smin95/ggsem/")
     (synopsis "Interactively Visualize Structural Equation Modeling Diagrams")
     (description
-     "It is an R package and web-based application, allowing users to perform
-interactive and reproducible visualizations of path diagrams for structural
-equation modeling (SEM) and networks using the ggplot2 engine.  Its app (built
-with shiny') provides an interface that allows extensive customization, and
-creates CSV outputs, which can then be used to recreate the figures either using
-the web app or script-based workflow.")
+     "It enables users to perform interactive and reproducible visualizations of path
+diagrams for structural equation modeling (SEM) and networks using interactive
+parameter visualization.  Meta-data of figure outputs can be either reloaded,
+replayed or reproduced as objects with figure outputs or images.")
     (license license:gpl2)))
 
 (define-public r-ggsegmentedtotalbar
@@ -19753,13 +19812,13 @@ of how to draw sectors in @code{ComplexHeatmap}'.")
 (define-public r-ggscidca
   (package
     (name "r-ggscidca")
-    (version "0.2.6")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggscidca" version))
        (sha256
-        (base32 "0r8p2j14ma2l5hni401dqp0nl0k7mfky908mcaciagbiph6h42wl"))))
+        (base32 "03j0kqsyahx0zdm8r5d8vyj0v8nyvi3h9rn5bvhi01ah42mw3svq"))))
     (properties `((upstream-name . "ggscidca")))
     (build-system r-build-system)
     (arguments
@@ -33385,6 +33444,45 @@ also several visualization methods provided for each step of the preprocessing
 and analysis.")
     (license license:gpl3+)))
 
+(define-public r-gctsc
+  (package
+    (name "r-gctsc")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gctsc" version))
+       (sha256
+        (base32 "1hpmzv3lldjzaq4z97y7635lc80zdc0p6687w7dkilghmxrqi93b"))))
+    (properties `((upstream-name . "gctsc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam
+                             r-truncnorm
+                             r-truncatednormal
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-car))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/QNNHU/gctsc")
+    (synopsis "Modeling Count Time Series Data via Gaussian Copula Models")
+    (description
+     "Gaussian copula models for count time series.  Includes simulation utilities,
+likelihood approximation, maximum-likelihood estimation, residual diagnostics,
+and predictive inference.  Implements the Time Series Minimax Exponential
+Tilting (TMET) method, an adaptation of Minimax Exponential Tilting (Botev,
+2017) <doi:10.1111/rssb.12162> and the Vecchia-based tilting framework of Cao
+and Katzfuss (2025) <doi:10.1080/01621459.2025.2546586>.  Also provides a
+linear-cost implementation of the GewekeâHajivassiliouâKeane (GHK) simulator
+inspired by Masarotto and Varin (2012) <doi:10.1214/12-EJS721>, and the
+Continuous Extension (CE) approximation of Nguyen and De Oliveira (2025)
+<doi:10.1080/02664763.2025.2498502>.  The package follows the S3 structure of
+gcmr', but all code in gctsc was developed independently.")
+    (license license:expat)))
+
 (define-public r-gctensor
   (package
     (name "r-gctensor")
@@ -35200,13 +35298,13 @@ measurements.")
 (define-public r-gaselect
   (package
     (name "r-gaselect")
-    (version "1.0.23")
+    (version "1.0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaselect" version))
        (sha256
-        (base32 "1ijk54qc2izgw285x1y3w30acgs7zykw1rhgi0jfm38g109ikka8"))))
+        (base32 "0k9wbzz2g7i7big9bixrbn1zxa4dcwaysrvanmm71ald4d66lrv5"))))
     (properties `((upstream-name . "gaselect")))
     (build-system r-build-system)
     (arguments
@@ -35747,13 +35845,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "2.1.4")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "16n8l0ysq17kwf265i3jafnwld030i9p2zlkqa0g3wv02b8x44a4"))))
+        (base32 "0ywvm1lgmb92wz5b6gjy31956zvwncphplrhb2c7682n2d8953q5"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (arguments

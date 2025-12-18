@@ -516,13 +516,13 @@ Welch-Satterthwaite approach described in Welch (1947)
 (define-public r-wsrf
   (package
     (name "r-wsrf")
-    (version "1.7.30")
+    (version "1.7.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wsrf" version))
        (sha256
-        (base32 "0myb8hyjyapiahrar4zz1b4larv9nwxlk11mz5vyqyjwm98dxlvf"))))
+        (base32 "0q1rd84lwimncz0x38i8k39hqrgnkv6ymhass0i0sf1frvpqs46p"))))
     (properties `((upstream-name . "wsrf")))
     (build-system r-build-system)
     (arguments
@@ -542,7 +542,7 @@ data with random forests built using small subspaces.  A novel variable
 weighting method is used for variable subspace selection in place of the
 traditional random variable sampling.This new approach is particularly useful in
 building models from high-dimensional data.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-wsprv
   (package
@@ -1098,13 +1098,13 @@ to create Wright Maps directly from data frames of person and item parameters.")
 (define-public r-wri
   (package
     (name "r-wri")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WRI" version))
        (sha256
-        (base32 "1hm23p0b4k03dxrbia9kq6r3n2c57glllraglxrj2vgnvwn6sl2c"))))
+        (base32 "1c1jf66bmggsvk4ivdpx7cy80qmda8p6bkfr80cfpds5vr58kfwn"))))
     (properties `((upstream-name . "WRI")))
     (build-system r-build-system)
     (arguments
@@ -1116,13 +1116,9 @@ to create Wright Maps directly from data frames of person and item parameters.")
                              r-rcpp
                              r-polynom
                              r-mvtnorm
-                             r-modeest
-                             r-locpol
-                             r-locfit
                              r-gridextra
                              r-ggplot2
                              r-fdapace
-                             r-fdadensity
                              r-expm
                              r-cvxr))
     (native-inputs (list r-knitr))
@@ -3703,13 +3699,13 @@ productos de vida') for supporting this research.")
 (define-public r-wintime
   (package
     (name "r-wintime")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wintime" version))
        (sha256
-        (base32 "1xiqy3ynk2ksnm5nynjn03xzqlf8z797i6j7bmdfv5jx9n5rn8lq"))))
+        (base32 "183aw2iq3silm4s59748gwg4hcllr9kh7605zbmiax5bz1fb1dkr"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
     (arguments
@@ -8438,6 +8434,31 @@ Gallo (2006) (<doi: 10.14358/PERS.72.7.823>), agreement metrics from Willmott
 methodology from Meyer and Pebesma (2021) (<doi:10.1111/2041-210X.13650>), and
 an implementation of multi-scale assessment as described in Riemann et al'.
 (2010) (<doi:10.1016/j.rse.2010.05.010>).")
+    (license license:expat)))
+
+(define-public r-waysign
+  (package
+    (name "r-waysign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "waysign" version))
+       (sha256
+        (base32 "1wzswl4s88hr29mn9rfibfpilz9gl72hdkpshp370msr6azi18wc"))))
+    (properties `((upstream-name . "waysign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (propagated-inputs (list r-rlang))
+    (home-page "https://github.com/thomasp85/waysign")
+    (synopsis "Multi-Purpose and High-Performance Routing")
+    (description
+     "This package provides routing based on the path-tree Rust crate.  The routing is
+general purpose in the sense that any type of R object can be associated with a
+path, not just a handler function.")
     (license license:expat)))
 
 (define-public r-waypoint

@@ -45,13 +45,13 @@
 (define-public r-xyomics
   (package
     (name "r-xyomics")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XYomics" version))
        (sha256
-        (base32 "0irrkg8idf304d8rjsa7rciiz88c2z2vxvpy83kag64kvg0cg4gh"))))
+        (base32 "0h975p6vabixkb7flwv0xybyz13b0i91w04r32af5dzyyi8niihk"))))
     (properties `((upstream-name . "XYomics")))
     (build-system r-build-system)
     (arguments
@@ -590,13 +590,13 @@ profiles and correct tree-ring borders.  Campelo F, Mayer K, Grabner M. (2019)
 (define-public r-xrf
   (package
     (name "r-xrf")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xrf" version))
        (sha256
-        (base32 "0vv1fhiidaxpnkd5nagqjsg2g36l8f8vnm8b6pdcfzr54impvdri"))))
+        (base32 "1mnzs3a0zyw3xk2757b0ks1s8mqbhvkr5sv6da37717r883j81a9"))))
     (properties `((upstream-name . "xrf")))
     (build-system r-build-system)
     (arguments
@@ -606,7 +606,6 @@ profiles and correct tree-ring borders.  Campelo F, Mayer K, Grabner M. (2019)
                              r-rlang
                              r-matrix
                              r-glmnet
-                             r-fuzzyjoin
                              r-dplyr
                              r-cli))
     (home-page "https://github.com/holub008/xrf")

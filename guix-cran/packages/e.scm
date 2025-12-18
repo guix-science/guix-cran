@@ -1334,13 +1334,13 @@ package.")
 (define-public r-extrasuperpower
   (package
     (name "r-extrasuperpower")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraSuperpower" version))
        (sha256
-        (base32 "04bi8k1lc2lxx8ldlq692pf5flbk03lxnf79ns4a9n1ghix0ypf2"))))
+        (base32 "1a7nndnrkzmamiy8mlyb5pk5ha2j6782vwhbkwc2zc1g2jlkyrkb"))))
     (properties `((upstream-name . "extraSuperpower")))
     (build-system r-build-system)
     (arguments
@@ -1366,12 +1366,12 @@ package.")
     (home-page "https://github.com/luisrmacias/extraSuperpower")
     (synopsis "Power Calculation for Two-Way Factorial Designs")
     (description
-     "The basic use of this package is with 3 sequential functions.  One to generate
-expected cell means and standard deviations, along with correlation and
-covariance matrices in the case of repeated measurements.  This is followed by
-experiment simulation i number of times.  Finally, power is calculated from the
-simulated data.  Features that may be considered in the model are interaction,
-measure correlation and non-normal distributions.")
+     "The basic use of this package is with 3 sequential functions.  First to generate
+a cell mean matrix.  In case of a repeated measurements design also generate
+correlation and covariance matrices.  This is followed by iterative experiment
+simulation.  Finally, power is calculated from the simulated data.  Features
+that may be considered in the model are interaction, measure correlation,
+non-normal and unbalanced designs distributions.")
     (license license:expat)))
 
 (define-public r-extrasteps
@@ -2890,13 +2890,13 @@ functions of this package.")
 (define-public r-expanalysis3d
   (package
     (name "r-expanalysis3d")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExpAnalysis3d" version))
        (sha256
-        (base32 "1hzl5dzayrqj1my187300bsm59w5vq2hi63z8hj768dsbdha2vpr"))))
+        (base32 "1zrahk4cwq0wkm6w387fn2dxaqlfxdl59h80x7gxqpl8aadj9vbp"))))
     (properties `((upstream-name . "ExpAnalysis3d")))
     (build-system r-build-system)
     (arguments
@@ -3247,20 +3247,21 @@ respective tuning parameters K and D are provided.")
 (define-public r-excursions
   (package
     (name "r-excursions")
-    (version "2.5.8")
+    (version "2.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excursions" version))
        (sha256
-        (base32 "0mirg44xhrb7h30blnb4hdfl5h96k5v28ll1awajrjmnrgwssx6a"))))
+        (base32 "1s0krwhymi690dwp0b4iz371fa33k81bffp2fyk5j75ppxbx1fzv"))))
     (properties `((upstream-name . "excursions")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list gsl))
-    (propagated-inputs (list r-withr r-sp r-matrix r-fmesher))
+    (propagated-inputs (list r-withr r-matrix r-lifecycle r-fmesher))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/davidbolin/excursions")
     (synopsis
      "Excursion Sets and Contour Credibility Regions for Random Fields")
@@ -3862,13 +3863,13 @@ R.")
 (define-public r-examly
   (package
     (name "r-examly")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "examly" version))
        (sha256
-        (base32 "1mpsfrp43s1qmb5h6b1mdscmjd81z5f87iwvrpwp8wvd4s75lw0q"))))
+        (base32 "1n7rz49pbqagzx8znj1pmv7zdir90kqn3h5jfvhsxl4p4v72azph"))))
     (properties `((upstream-name . "examly")))
     (build-system r-build-system)
     (arguments
@@ -11833,13 +11834,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.88")
+    (version "2.0.89")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "0rf95lsfrr4n072rx2294ivaj3bv6nvri97hnhdx6fv3c1asn2hl"))))
+        (base32 "1k89r43rvkbv8840s9hr8sz9w1plx64j0jdxgpkv5p59c31va72h"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -12935,13 +12936,13 @@ the endemic channel method (Bortman, M. (1999)
 (define-public r-epicmodel
   (package
     (name "r-epicmodel")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epicmodel" version))
        (sha256
-        (base32 "0f75yrai6f8ggf6nasxwl0j16pmg2mxpd3flijlnpv8pznw1q4zz"))))
+        (base32 "0xdal4qcfvq9035lydpjjqizlzd4x1710sbwz5igd8k53ph5k7in"))))
     (properties `((upstream-name . "epicmodel")))
     (build-system r-build-system)
     (arguments
@@ -15144,13 +15145,13 @@ management, data extraction, data preparation and data visualization facilities.
 (define-public r-emt
   (package
     (name "r-emt")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMT" version))
        (sha256
-        (base32 "0g4s99cbww9wi89acbpn8ggkfkf39nq0km0nhm5956r62sjw2wfr"))))
+        (base32 "0iyz5bld6mc1a756zc16jj1z6ghrwdqh6rpwfrmpmb7flxmv9xbi"))))
     (properties `((upstream-name . "EMT")))
     (build-system r-build-system)
     (arguments
@@ -15169,13 +15170,13 @@ high-dimensional problems.")
 (define-public r-emstreer
   (package
     (name "r-emstreer")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emstreeR" version))
        (sha256
-        (base32 "1l85pn8y463fn09cpm737kzal6k3ydiri38s90bhfw3i1gvzqggf"))))
+        (base32 "13wnpimaiaq8hi3qkscnx1rlsxx2xs3gg22mbfzv5iag2vsw86lz"))))
     (properties `((upstream-name . "emstreeR")))
     (build-system r-build-system)
     (arguments
@@ -15186,7 +15187,7 @@ high-dimensional problems.")
     (synopsis
      "Tools for Fast Computing and Visualizing Euclidean Minimum Spanning Trees")
     (description
-     "Fast and easily computes an Euclidean Minimum Spanning Tree (EMST) from data,
+     "Fast and easy computation of Euclidean Minimum Spanning Trees (EMST) from data,
 relying on the R API for mlpack - the C++ Machine Learning Library (Curtin et.
 al., 2013). @code{emstreeR} uses the Dual-Tree Boruvka (March, Ram, Gray, 2010,
 <doi:10.1145/1835804.1835882>), which is theoretically and empirically the
@@ -15331,6 +15332,31 @@ appropriate test, especially denominator for F-statistic which depends on EMS.")
      "Collection of functions related to benchmark with prediction models for data
 analysis and editing of clinical and epidemiological data.")
     (license license:gpl2+)))
+
+(define-public r-emreliability
+  (package
+    (name "r-emreliability")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emreliability" version))
+       (sha256
+        (base32 "1qqcp4s4bhn46dlj8wjri6q3irl3p85ix2jbxaij3fvsyi7x0g1n"))))
+    (properties `((upstream-name . "emreliability")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (home-page "https://cran.r-project.org/package=emreliability")
+    (synopsis "Test Reliability and CSEM in Educational Measurement")
+    (description
+     "This package provides functions for computing test reliability and conditional
+standard error of measurement (CSEM) based on the methods described in the
+Reliability in Educational Measurement chapter of the 5th edition of
+\"Educational Measurement\" by Lee and Harris (2025, ISBN:9780197654965).")
+    (license license:expat)))
 
 (define-public r-emplikauc
   (package
@@ -19091,53 +19117,6 @@ the epigraph and hypograph indices.  See Pulido et al. (2023)
 <doi:10.1007/s11222-023-10213-7> and Pulido et al. (2024)
 <doi:10.48550/@code{arXiv.2307.16720>}.")
     (license license:expat)))
-
-(define-public r-ehrtemporalvariability
-  (package
-    (name "r-ehrtemporalvariability")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EHRtemporalVariability" version))
-       (sha256
-        (base32 "12d1dzmcrp81dh54zkg9zwv11fnc4f8qzc2gngihmlrp1bzq76fi"))))
-    (properties `((upstream-name . "EHRtemporalVariability")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-viridis
-                             r-scales
-                             r-rcolorbrewer
-                             r-plotly
-                             r-mass
-                             r-lubridate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hms-dbmi/EHRtemporalVariability")
-    (synopsis
-     "Delineating Temporal Dataset Shifts in Electronic Health Records")
-    (description
-     "This package provides functions to delineate temporal dataset shifts in
-Electronic Health Records through the projection and visualization of
-dissimilarities among data temporal batches.  This is done through the
-estimation of data statistical distributions over time and their projection in
-non-parametric statistical manifolds, uncovering the patterns of the data latent
-temporal variability.  EH@code{RtemporalVariability} is particularly suitable
-for multi-modal data and categorical variables with a high number of values,
-common features of biomedical data where traditional statistical process control
-or time-series methods may not be appropriate.  EH@code{RtemporalVariability}
-allows you to explore and identify dataset shifts through visual analytics
-formats such as Data Temporal heatmaps and Information Geometric Temporal (IGT)
-plots.  An additional EH@code{RtemporalVariability} Shiny app can be used to
-load and explore the package results and even to allow the use of these
-functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
-<doi:10.1093/gigascience/giaa079>.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ehrmuse
   (package
@@ -24134,41 +24113,6 @@ data in R. Data stores covered include the Climate Data Store (CDS;
      "This package provides functions for easy building of error correction models
 (ECM) for time series regression.")
     (license license:gpl2+)))
-
-(define-public r-eclust
-  (package
-    (name "r-eclust")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eclust" version))
-       (sha256
-        (base32 "01x327w02m357lngmgv3drni2s67sass25xk9vni1z434n8i4428"))))
-    (properties `((upstream-name . "eclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wgcna
-                             r-stringr
-                             r-pander
-                             r-pacman
-                             r-magrittr
-                             r-dynamictreecut
-                             r-data-table
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sahirbhatnagar/eclust/")
-    (synopsis
-     "Environment Based Clustering for Interpretable Predictive Models in High Dimensional Data")
-    (description
-     "Companion package to the paper: An analytic approach for interpretable
-predictive models in high dimensional data, in the presence of interactions with
-exposures.  Bhatnagar, Yang, Khundrakpam, Evans, Blanchette, Bouchard, Greenwood
-(2017) <DOI:10.1101/102475>.  This package includes an algorithm for clustering
-high dimensional data that can be affected by an environmental factor.")
-    (license license:expat)))
 
 (define-public r-eclrmc
   (package

@@ -392,13 +392,13 @@ dissemination.")
 (define-public r-pxmake
   (package
     (name "r-pxmake")
-    (version "0.18.0")
+    (version "0.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pxmake" version))
        (sha256
-        (base32 "0mbczkhmqm9zrll8kabf8dybb12qdw0yxh9xdlwgkxv7rxl7bwiz"))))
+        (base32 "1f6gx6cbp2p4xk8zs5l7z1lxvdb5i0drpvmqvq9a26ask3zsah0j"))))
     (properties `((upstream-name . "pxmake")))
     (build-system r-build-system)
     (arguments
@@ -1154,13 +1154,13 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
 (define-public r-pvebayes
   (package
     (name "r-pvebayes")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvEBayes" version))
        (sha256
-        (base32 "1vf1yp7b139922vjji3n81nafh8jv1x11mi65nr9yhmbhr36mmr3"))))
+        (base32 "12js372bics7c2c80x273f28fn7qvsblcrkqx9cgwc7xl3fgbg04"))))
     (properties `((upstream-name . "pvEBayes")))
     (build-system r-build-system)
     (arguments
@@ -1168,7 +1168,6 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
       #:tests? #f))
     (propagated-inputs (list r-wacolors
                              r-sobolsequence
-                             r-rebayes
                              r-rcppeigen
                              r-rcpp
                              r-magrittr
@@ -1176,15 +1175,18 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
                              r-ggplot2
                              r-ggfittext
                              r-ggdist
-                             r-data-table))
+                             r-data-table
+                             r-cvxr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/YihaoTancn/pvEBayes")
     (synopsis "Empirical Bayes Methods for Pharmacovigilance")
     (description
      "This package provides a suite of empirical Bayes methods to use in
 pharmacovigilance.  Contains various model fitting and post-processing
 functions.  For more details see Tan et al. (2025)
-<doi:10.48550/@code{arXiv.2502.09816>}, Koenker and Mizera (2014)
-<doi:10.1080/01621459.2013.869224> and Efron (2016) <doi:10.1093/biomet/asv068>.")
+<doi:10.48550/@code{arXiv.2502.09816>}, <doi:10.48550/@code{arXiv.2512.01057>};
+Koenker and Mizera (2014) <doi:10.1080/01621459.2013.869224>; Efron (2016)
+<doi:10.1093/biomet/asv068>.")
     (license license:gpl3)))
 
 (define-public r-pvda
@@ -9397,13 +9399,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.4.6")
+    (version "1.0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "1y0px3v975inq96fslp2225cas5wa0zflkpnrx70i4s986v0fps6"))))
+        (base32 "1p9dx5d61jb92l63cmklgm4lgma41l4bfg877fw1g40510h66nr2"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (arguments
@@ -11099,33 +11101,6 @@ models and workbenches built with Prevedere for further analysis and reporting
 <https://www.prevedere.com/>.")
     (license license:expat)))
 
-(define-public r-prevalence
-  (package
-    (name "r-prevalence")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prevalence" version))
-       (sha256
-        (base32 "0llxcz7bg62l6qq4xaf2xwmc2k0y2l3zw5nb6bq0a9qnp3anj8ah"))))
-    (properties `((upstream-name . "prevalence")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list jags))
-    (propagated-inputs (list r-rjags r-coda))
-    (home-page "http://prevalence.cbra.be/")
-    (synopsis "Tools for Prevalence Assessment Studies")
-    (description
-     "The prevalence package provides Frequentist and Bayesian methods for prevalence
-assessment studies.  IMPORTANT: the @code{truePrev} functions in the prevalence
-package call on JAGS (Just Another Gibbs Sampler), which therefore has to be
-available on the user's system.  JAGS can be downloaded from
-<https://mcmc-jags.sourceforge.io/>.")
-    (license license:gpl2+)))
-
 (define-public r-prettyr
   (package
     (name "r-prettyr")
@@ -11475,6 +11450,30 @@ goal of presize is to provide functions for such precision based sample size
 calculations.  For a given sample size, the functions will return the precision
 (width of the confidence interval), and vice versa.")
     (license license:gpl3)))
+
+(define-public r-presiduals
+  (package
+    (name "r-presiduals")
+    (version "1.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PResiduals" version))
+       (sha256
+        (base32 "19xj5hzzi9gsim7xm879ynikj6c41hs4qsxifgm39q31vigqhwv8"))))
+    (properties `((upstream-name . "PResiduals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sparsem r-rms r-mass r-formula))
+    (home-page "https://cran.r-project.org/package=PResiduals")
+    (synopsis "Probability-Scale Residuals and Residual Correlations")
+    (description
+     "Computes probability-scale residuals and residual correlations for continuous,
+ordinal, binary, count, and time-to-event data Qi Liu, Bryan Shepherd, Chun Li
+(2020) <doi:10.18637/jss.v094.i12>.")
+    (license license:gpl2+)))
 
 (define-public r-presentes
   (package
@@ -13106,13 +13105,13 @@ implementation can be found in Vargas Godoy and Markonis (2023,
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRECAST" version))
        (sha256
-        (base32 "1a9vv6wx8bl4jwaj2jhm2n0xjzidzxhvllp726y0xaykz28hmvsc"))))
+        (base32 "1srcfcf5dz16987qy5f6nqkf3qkxa2ngg87vmxsw82yk99ifz86a"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (arguments
@@ -21815,13 +21814,13 @@ for various modeling and simulation software platforms.")
 (define-public r-pmwr
   (package
     (name "r-pmwr")
-    (version "1.1-0")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PMwR" version))
        (sha256
-        (base32 "153xv22vr7d6hq0km79i7ficr0cyx9fkh7y6vqld81dr1147n57w"))))
+        (base32 "1whak2qrjyfsi9xcxpxmj1p2z4z42fcxzvygnnd7250mqwiblcb9"))))
     (properties `((upstream-name . "PMwR")))
     (build-system r-build-system)
     (arguments
@@ -22011,13 +22010,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.21")
+    (version "1.0.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmparser" version))
        (sha256
-        (base32 "1xbkyy91ab1kvm0j1qsbvnfj37i57mviwxn4kylbps25j7z65wzy"))))
+        (base32 "1k66xrgrxn4hv4zckn1yx1cx87brlyfzwh8x535aw8p5pdh384ls"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (arguments
@@ -26592,13 +26591,13 @@ For more details on generating pkgdown websites, see Wickham et al. (2025)
 (define-public r-pkgdiff
   (package
     (name "r-pkgdiff")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdiff" version))
        (sha256
-        (base32 "0lkqbazl9byalcg9l7y28cc79nswddq59a44w0aafk1x434g4d8k"))))
+        (base32 "1hnfg8s1q84if1lx7fxv1h03660ccfrxwv245y6jyg7ldbbar9mf"))))
     (properties `((upstream-name . "pkgdiff")))
     (build-system r-build-system)
     (arguments
@@ -27699,22 +27698,24 @@ within the Description.")
 (define-public r-pinstimation
   (package
     (name "r-pinstimation")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PINstimation" version))
        (sha256
-        (base32 "0vys27ws0nk0bqf6pxgr689q3rnyx14ar560004g6pi0ii59mbyk"))))
+        (base32 "0rif59sfi5vvlkqmpf3ml6dp969im94wk5ns8q6jv067zdk0bg9h"))))
     (properties `((upstream-name . "PINstimation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-skellam
+    (propagated-inputs (list r-tidyr
+                             r-skellam
                              r-rmarkdown
                              r-rdpack
                              r-nloptr
+                             r-magrittr
                              r-knitr
                              r-future
                              r-furrr
@@ -28104,13 +28105,13 @@ creation directly within the R environment.")
 (define-public r-pijavski
   (package
     (name "r-pijavski")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pijavski" version))
        (sha256
-        (base32 "0jspc19fn1mqv3zjr89sy7rqbbyjk3ij3rhrg2dsw167w63lpykx"))))
+        (base32 "0lcqh0nh3syg1s2ynmqaggka05fp0xq52h74995zzljczz6asy2w"))))
     (properties `((upstream-name . "Pijavski")))
     (build-system r-build-system)
     (arguments
@@ -43246,30 +43247,6 @@ Tukey g-&-h distributions are supported, for now.")
      "Create a parallel coordinates plot, using `htmlwidgets` package and `d3.js`.")
     (license license:expat)))
 
-(define-public r-parallelpc
-  (package
-    (name "r-parallelpc")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ParallelPC" version))
-       (sha256
-        (base32 "07y7xb16865khxkvwsk1yglzyy7ja4aj2wpkipaz48i77c3x8bi2"))))
-    (properties `((upstream-name . "ParallelPC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=ParallelPC")
-    (synopsis
-     "Paralellised Versions of Constraint Based Causal Discovery Algorithms")
-    (description
-     "Parallelise constraint based causality discovery and causal inference methods.
-The parallelised algorithms in the package will generate the same results as
-that of the pcalg package but will be much more efficient.")
-    (license license:gpl2+)))
-
 (define-public r-parallelpam
   (package
     (name "r-parallelpam")
@@ -47166,13 +47143,13 @@ programs/machines can understand.")
 (define-public r-pac
   (package
     (name "r-pac")
-    (version "1.1.4")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAC" version))
        (sha256
-        (base32 "0h7381mr3jgzl7fi6v7amgmkf5agpkgy068c6ysgh3adlwsh6gs6"))))
+        (base32 "1qmpcw997zyq07pvjisdxza1nfvwfksrp8qrnhqhzzxrrim396qq"))))
     (properties `((upstream-name . "PAC")))
     (build-system r-build-system)
     (arguments

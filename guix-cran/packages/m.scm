@@ -10205,6 +10205,35 @@ underlying data is automatically saved within the Word document or
 contain any feature for Microsoft native charts production.")
     (license license:expat)))
 
+(define-public r-msce
+  (package
+    (name "r-msce")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "msce" version))
+       (sha256
+        (base32 "14x9vphwpgg08f4y1nxwph6jhblmaqbya5m918brcrji5ivc0p60"))))
+    (properties `((upstream-name . "msce")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=msce")
+    (synopsis "Hazard of Multi-Stage Clonal Expansion Models")
+    (description
+     "This package provides functions to calculate hazard and survival function of
+Multi-Stage Clonal Expansion Models used in cancer epidemiology.  For the
+Two-Stage Clonal Expansion Model an exact solution is implemented assuming
+piecewise constant parameters, see Heidenreich, Luebeck, Moolgavkar (1997)
+<doi:10.1111/j.1539-6924.1997.tb00878.x>.  Numerical solutions are provided for
+its extensions, see also Little, Vineis, Li (2008)
+<doi:10.1016/j.jtbi.2008.05.027>.")
+    (license license:gpl2+)))
+
 (define-public r-mscct
   (package
     (name "r-mscct")
@@ -13798,20 +13827,19 @@ features require a Motherduck account (<https://motherduck.com/>).")
 (define-public r-mote
   (package
     (name "r-mote")
-    (version "1.0.2")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MOTE" version))
        (sha256
-        (base32 "17y2l2rmw7fhvknyh5z09i7hd8nhamx12g00rcymp75gqkz9lzc7"))))
+        (base32 "1g917bjq98cn2zgbf9511m9j1mm327m4cqpl540d4spbid33x6h6"))))
     (properties `((upstream-name . "MOTE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape r-mbess r-ez))
-    (home-page "https://cran.r-project.org/package=MOTE")
+    (home-page "https://github.com/doomlab/MOTE")
     (synopsis "Effect Size and Confidence Interval Calculator")
     (description
      "Measure of the Effect ('MOTE') is an effect size calculator, including a wide
@@ -13829,8 +13857,7 @@ Psychological Association has long advocated for the inclusion of effect sizes
 Inference, 1999 <doi:10.1037/0003-066X.54.8.594>), the vast majority of
 peer-reviewed, published academic studies stop short of reporting effect sizes
 and confidence intervals (Cumming, 2013, <doi:10.1177/0956797613504966>).  MOTE
-simplifies the use and interpretation of effect sizes and confidence intervals.
-For more information, visit <https://www.aggieerin.com/shiny-server>.")
+simplifies the use and interpretation of effect sizes and confidence intervals.")
     (license license:lgpl3)))
 
 (define-public r-motbfs
@@ -17469,13 +17496,13 @@ stability.")
 (define-public r-modeltime
   (package
     (name "r-modeltime")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltime" version))
        (sha256
-        (base32 "0nas2k9n3c9c7yfzaziiif92214zp69zhqbrkdvzx9lvxirn254h"))))
+        (base32 "0gcr4pdk6f8swy656km6zm4dhzns50v78kzh4glwl5hvbk32hx5s"))))
     (properties `((upstream-name . "modeltime")))
     (build-system r-build-system)
     (arguments
@@ -20525,13 +20552,13 @@ for continuous, count, categorical, and time-to-event data.")
 (define-public r-mlwrap
   (package
     (name "r-mlwrap")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLwrap" version))
        (sha256
-        (base32 "0jzcchsa25hvq5s5c3v1aq8ppb8jyql0p9viiycdz3frjjhq99vn"))))
+        (base32 "0qdkqr1fzysgm2ggxjjyapykyd60s4xsgp3bzkqbkf3mr37srhxd"))))
     (properties `((upstream-name . "MLwrap")))
     (build-system r-build-system)
     (arguments
@@ -20573,16 +20600,18 @@ from data selection and preparation, through model building and tuning, to the
 interpretation and evaluation of results using Sensitivity Analysis.  The MLwrap
 workflow is organized into four core steps; @code{preprocessing()},
 @code{build_model()}, @code{fine_tuning()}, and @code{sensitivity_analysis()}.
-These steps correspond, respectively, to data preparation and transformation,
-model construction, hyperparameter optimization, and sensitivity analysis.  The
-user can access comprehensive model evaluation results including fit assessment
-metrics, plots, predictions, and performance diagnostics for ML models
-implemented through Neural Networks', Random Forest', XGBoost (Extreme Gradient
-Boosting), and Support Vector Machines (SVM) algorithms.  By streamlining these
-phases, MLwrap aims to simplify the implementation of ML techniques, allowing
-analysts and data scientists to focus on extracting actionable insights and
-meaningful patterns from large datasets, in line with the objectives of the KDD
-process.")
+It also includes global and pairwise interaction analysis based on Friedmanâs
+H-statistic to support a more detailed interpretation of complex feature
+relationships.These steps correspond, respectively, to data preparation and
+transformation, model construction, hyperparameter optimization, and sensitivity
+analysis.  The user can access comprehensive model evaluation results including
+fit assessment metrics, plots, predictions, and performance diagnostics for ML
+models implemented through Neural Networks', Random Forest', XGBoost (Extreme
+Gradient Boosting), and Support Vector Machines (SVM) algorithms.  By
+streamlining these phases, MLwrap aims to simplify the implementation of ML
+techniques, allowing analysts and data scientists to focus on extracting
+actionable insights and meaningful patterns from large datasets, in line with
+the objectives of the KDD process.")
     (license license:gpl3)))
 
 (define-public r-mlvar
@@ -23386,19 +23415,20 @@ cluster centers for the method with initial cluster centers.")
 (define-public r-mkinfer
   (package
     (name "r-mkinfer")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKinfer" version))
        (sha256
-        (base32 "10fy49b5bprbc30zrgz1y74pp480x3avrk9pig6mj9gg6fci207p"))))
+        (base32 "0cv03iyghl9v2f2qzrbbqxz171zkbycfj5dyzl8f913z836l4h9h"))))
     (properties `((upstream-name . "MKinfer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nlme
+    (propagated-inputs (list r-rlang
+                             r-nlme
                              r-mkdescr
                              r-miceadds
                              r-ggplot2
@@ -23419,9 +23449,11 @@ ISBN:978-0-511-80284-3), intersection-union (Sozu et al. (2015),
 ISBN:978-3-319-22005-5) and multiple imputation (Barnard and Rubin (1999),
 <doi:10.1093/biomet/86.4.948>) t-test; furthermore, computation of
 intersection-union z-test as well as multiple imputation Wilcoxon tests.
-Graphical visualization by volcano and Bland-Altman plots (Bland and Altman
+Graphical visualizations: volcano plot, Bland-Altman plots (Bland and Altman
 (1986), <doi:10.1016/S0140-6736(86)90837-8>; Shieh (2018),
-<doi:10.1186/s12874-018-0505-y>).")
+<doi:10.1186/s12874-018-0505-y>), mean difference plot (Boehning et al. (2008),
+<doi:10.1177/0962280207081867>), plot of test statistic for permutation and
+bootstrap tests as well as objects of class htest.")
     (license license:lgpl3)))
 
 (define-public r-mkin
@@ -25427,13 +25459,13 @@ models sing the method proposed by Basford et al. (1997)
 (define-public r-mixar
   (package
     (name "r-mixar")
-    (version "0.22.8")
+    (version "0.22.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixAR" version))
        (sha256
-        (base32 "1fr3i54yvxqvh78pgn8y5hdwp1sf00gl9shg5bc7nnmmm84ki78q"))))
+        (base32 "0fg3ryxn8igw9vp620pfppwwkq7zav4h0k5hpksa9ih88fywv362"))))
     (properties `((upstream-name . "mixAR")))
     (build-system r-build-system)
     (arguments
@@ -39941,13 +39973,13 @@ allows sending HTTP tracking events from R code.")
 (define-public r-measurementdiagnostics
   (package
     (name "r-measurementdiagnostics")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MeasurementDiagnostics" version))
        (sha256
-        (base32 "01w63mpgfgbs91jph6wqq4b29n574maj74macvddjhb3pzg04kpp"))))
+        (base32 "00wf5aa0ngcnjng2ibbp1kpmidfwn2n2191p0r19rbnbmr5qhhq3"))))
     (properties `((upstream-name . "MeasurementDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -39958,11 +39990,13 @@ allows sending HTTP tracking events from R code.")
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-magrittr
+                             r-glue
                              r-dplyr
                              r-dbi
                              r-cohortconstructor
-                             r-cli))
+                             r-clock
+                             r-cli
+                             r-cdmconnector))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/MeasurementDiagnostics/")
     (synopsis "Diagnostics for Lists of Codes Based on Measurements")
@@ -47797,6 +47831,42 @@ time-dependent covariates.  For more details see Chen IC, Bertke SJ, Curwin BD
 <doi:10.1038/s41370-025-00752-8>.")
     (license license:gpl3)))
 
+(define-public r-markstat
+  (package
+    (name "r-markstat")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "markstat" version))
+       (sha256
+        (base32 "0vhnikqvckls6hs7mw6l7r3ic2n5zcy6nazsjiv0dcai6y41z3q7"))))
+    (properties `((upstream-name . "markstat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-spatstat-utils
+                             r-spatstat-univar
+                             r-spatstat-random
+                             r-spatstat-linnet
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-patchwork
+                             r-ggplot2
+                             r-get
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=markstat")
+    (synopsis "Mark Correlation Functions for Spatial Point Patterns")
+    (description
+     "This package provides a range of functions for computing both global and local
+mark correlation functions for spatial point patterns in either Euclidean spaces
+or on linear networks, with points carrying either real-valued or
+function-valued marks.  For a review of mark correlation functions, see Eckardt
+and Moradi (2024) <doi:10.1007/s13253-024-00605-1>.")
+    (license license:gpl2+)))
+
 (define-public r-markowitzr
   (package
     (name "r-markowitzr")
@@ -53430,13 +53500,13 @@ and spatial data on various man-made and natural structures.")
 (define-public r-machineshop
   (package
     (name "r-machineshop")
-    (version "3.9.0")
+    (version "3.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MachineShop" version))
        (sha256
-        (base32 "0ppwhm5cf476k89xgwrdk0m9ww2wh443mymriwc6gp2zv1pks80k"))))
+        (base32 "01ch1kwgfvk7wb14mg71lmwz2vqilnf82q2qpf75fh3sl0jgzr8x"))))
     (properties `((upstream-name . "MachineShop")))
     (build-system r-build-system)
     (arguments

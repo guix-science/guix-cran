@@ -71,13 +71,13 @@ Originally published by the New Zealand Police at
 (define-public r-nzilbb-vowels
   (package
     (name "r-nzilbb-vowels")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nzilbb.vowels" version))
        (sha256
-        (base32 "18jx5zmnw6y0411zy6l6n26cxf0dhivdj6m6k9y34wpkrvgzdsz1"))))
+        (base32 "0cfw4pv412bxk4mji00x1w26p147klg138iw43x40zsfxi5pfrq8"))))
     (properties `((upstream-name . "nzilbb.vowels")))
     (build-system r-build-system)
     (arguments
@@ -99,7 +99,6 @@ Originally published by the New Zealand Police at
                              r-glue
                              r-ggrepel
                              r-ggplot2
-                             r-gghalves
                              r-forcats
                              r-dplyr))
     (home-page "https://nzilbb.github.io/nzilbb_vowels/")
@@ -861,43 +860,31 @@ applications.")
 (define-public r-nueton
   (package
     (name "r-nueton")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NUETON" version))
        (sha256
-        (base32 "0sqd2pcsy2c2s77aivi5s4mnb7xkzja9hnc4cgdgx4hdisdwvgdj"))))
+        (base32 "0lsdb1yqj5yywd31jnvjjybbdsywaf5cs567gbyxilv10wbzvj2q"))))
     (properties `((upstream-name . "NUETON")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=NUETON")
     (synopsis "Nitrogen Use Efficiency Toolkit on Numerics")
     (description
-     "Comprehensive R package designed to facilitate the calculation of Nitrogen Use
-Efficiency (NUE) indicators using experimentally derived data.  The package
-incorporates 23 parameters categorized into six fertilizer-based, four
-plant-based, three soil-based, three isotope-based, two ecology-based, and four
-system-based indicators, providing a versatile platform for NUE assessment.  As
-of the current version, NUETON serves as a starting point for users to compute
-NUE indicators from their experimental data.  Future updates are planned to
-enhance the package's capabilities, including robust data visualization tools
-and error margin consideration in calculations.  Additionally, statistical
-methods will be integrated to ensure the accuracy and reliability of the
-calculated indicators.  All formulae used in NUETON are thoroughly referenced
-within the source code, and the package is released as open source software.
-Users are encouraged to provide feedback and contribute to the improvement of
-this package.  It is important to note that the current version of NUETON is not
-intended for rigorous research purposes, and users are responsible for
-validating their results.  The package developers do not assume liability for
-any inaccuracies in calculations.  This package includes content from Congreves
-KA, Otchere O, Ferland D, Farzadfar S, Williams S and Arcand MM (2021) Nitrogen
-Use Efficiency Definitions of Today and Tomorrow.  Front.  Plant Sci.
-12:637108. <doi:10.3389/fpls.2021.637108>.  The article is available under the
-Creative Commons Attribution License (CC BY) C. 2021 Congreves, Otchere,
-Ferland, Farzadfar, Williams and Arcand.")
+     "This package provides a comprehensive toolkit for calculating and visualizing
+Nitrogen Use Efficiency (NUE) indicators in agricultural research.  The package
+implements 23 parameters categorized into fertilizer-based, plant-based,
+soil-based, isotope-based, ecology-based, and system-based indicators based on
+Congreves et al. (2021) <doi:10.3389/fpls.2021.637108>.  Key features include
+vectorized calculations for paired-plot experimental designs, batch processing
+capabilities for handling large datasets, and built-in visualization tools using
+ggplot2'.  Designed to streamline the workflow from raw agronomic data to
+publication-ready metrics and plots.")
     (license license:gpl3)))
 
 (define-public r-nucombog
@@ -3641,13 +3628,13 @@ See Konietschke et al. (2015) <doi:10.18637/jss.v064.i09> for details.")
 (define-public r-nparact
   (package
     (name "r-nparact")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nparACT" version))
        (sha256
-        (base32 "079qq4adx40i9v1ybd69wz47m6hzlc5nvp25pcrnjrmxdzhshbri"))))
+        (base32 "1c8gfx85vr3lmjjz0xjrkdamsiawy0r6s4ar0f5lr4nmyxmkmgg4"))))
     (properties `((upstream-name . "nparACT")))
     (build-system r-build-system)
     (arguments
@@ -8867,13 +8854,13 @@ and coda::mcmc.list objects.")
 (define-public r-nlints
   (package
     (name "r-nlints")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NlinTS" version))
        (sha256
-        (base32 "045gqsy9q64mh10swm9a1bh8jvr41rjks3024cc195lad6jhj441"))))
+        (base32 "1laxk4iz5rqxz2m0zxr2q4jl38zdw14xkpbiv0aa9fj3c5l5zrpn"))))
     (properties `((upstream-name . "NlinTS")))
     (build-system r-build-system)
     (arguments
@@ -8923,6 +8910,32 @@ number of reported COVID-19 cases and deaths in South Africa: a data driven
 approach\".  BMC medical research methodology, 21(1), 1-11.
 <doi:10.1186/s12874-020-01165-x>.")
     (license license:gpl2+)))
+
+(define-public r-nlgeocoder
+  (package
+    (name "r-nlgeocoder")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlgeocoder" version))
+       (sha256
+        (base32 "1wwcjhdi4fxrixgfkhci3ra5w7wynbpbidfgsajxayx6csj0np3w"))))
+    (properties `((upstream-name . "nlgeocoder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/uRosConf/nlgeocoder")
+    (synopsis "Geocoding for the Netherlands")
+    (description
+     "Interface to the open location server API of Publieke Diensten Op de Kaart
+(<http://www.pdok.nl>).  It offers geocoding, address suggestions and lookup of
+geographical objects.  Included is an utility function for displaying leaflet
+tiles restricted to the Netherlands.")
+    (license license:gpl2)))
 
 (define-public r-nlcv
   (package
@@ -9458,13 +9471,13 @@ generating linear modeling code using a formula-based syntax and for building
 (define-public r-nimblehmc
   (package
     (name "r-nimblehmc")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimbleHMC" version))
        (sha256
-        (base32 "0wzxiynx952a4rls08z2krn5hys4r9914jmkp87aigfxs7g3d1bl"))))
+        (base32 "1d5267r1i94hdz5gk8dss3pwvrrnr5qmhblcxz1yyqf5rdshpska"))))
     (properties `((upstream-name . "nimbleHMC")))
     (build-system r-build-system)
     (arguments
@@ -9484,7 +9497,8 @@ algorithm as described in Hoffman and Gelman (2014)
 of HMC-NUTS sampling matching the HMC sampler available in version 2.32.2 of
 Stan (Stan Development Team, 2023).  In addition, convenience functions are
 provided for generating and modifying MCMC configuration objects which employ
-HMC sampling.")
+HMC sampling.  Functionality of the @code{nimbleHMC} package is described
+further in Turek, et al (2024) <doi: 10.21105/joss.06745>.")
     (license (list license:bsd-3 license:gpl2+))))
 
 (define-public r-nimbleecology
@@ -10427,13 +10441,13 @@ transition probabilities.")
 (define-public r-nhlscraper
   (package
     (name "r-nhlscraper")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhlscraper" version))
        (sha256
-        (base32 "0fld9x62jac92fxchnlng6pvrp7bhnv01jxrbiz0p3n29hdw142d"))))
+        (base32 "0ghs87crvm66cxh1q9rzm5kgzccly71mfqg97h1s13h2qbj9q2n9"))))
     (properties `((upstream-name . "nhlscraper")))
     (build-system r-build-system)
     (arguments
@@ -15404,19 +15418,19 @@ directly based on the PMML specification for KNN.")
 (define-public r-neighbours
   (package
     (name "r-neighbours")
-    (version "0.1-3")
+    (version "0.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neighbours" version))
        (sha256
-        (base32 "0q0d8504kjvsgik7pdhsgh9n1xszxa7p4mzpxajki2ym0x7hqx9k"))))
+        (base32 "09mc1b2i6lw7q88fhqyhpzlgbfh2sy2i52sx6wkhcqr7ndlav5s5"))))
     (properties `((upstream-name . "neighbours")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://enricoschumann.net/R/packages/neighbours/")
+    (home-page "https://enricoschumann.net/R/packages/neighbours/")
     (synopsis "Neighbourhood Functions for Local-Search Algorithms")
     (description
      "Neighbourhood functions are key components of local-search algorithms such as
@@ -18395,42 +18409,6 @@ data and can take advantage of sparse data.")
      "An application for the empirical extrapolation of time features selecting and
 summarizing the most relevant patterns in time sequences.")
     (license license:gpl3)))
-
-(define-public r-nair
-  (package
-    (name "r-nair")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NAIR" version))
-       (sha256
-        (base32 "0xxps6ri53i6fw0wd58v593jqcsiwr36lgqnx7bnf1b47pqnqc64"))))
-    (properties `((upstream-name . "NAIR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-lifecycle
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://mlizhangx.github.io/Network-Analysis-for-Repertoire-Sequencing-/")
-    (synopsis "Network Analysis of Immune Repertoire")
-    (description
-     "Pipelines for studying the adaptive immune repertoire of T cells and B cells via
-network analysis based on receptor sequence similarity.  Relate clinical
-outcomes to immune repertoires based on their network properties, or to
-particular clusters and clones within a repertoire.  Yang et al. (2023)
-<doi:10.3389/fimmu.2023.1181825>.")
-    (license license:gpl3+)))
 
 (define-public r-nailer
   (package

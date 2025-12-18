@@ -904,13 +904,13 @@ output of @code{dynatopGIS}'.")
 (define-public r-dynatop
   (package
     (name "r-dynatop")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynatop" version))
        (sha256
-        (base32 "06wp8ld22k3r76imsj8wkrpplmbdlgbl71p94ddglwp8yfq1igsp"))))
+        (base32 "0wm5nnlyp1z544z38734apyrnlw940jsqjjcchdmbxmkjh1rg6jx"))))
     (properties `((upstream-name . "dynatop")))
     (build-system r-build-system)
     (arguments
@@ -1628,13 +1628,13 @@ method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
 (define-public r-dwctaxon
   (package
     (name "r-dwctaxon")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dwctaxon" version))
        (sha256
-        (base32 "0ypdfqnf70ylbrd1r8kpb531cd08izmqhsz84yxzw6xfyiqa6657"))))
+        (base32 "169qr0sx4fg0rqfzq9nxfw3acnvk8g0lc82rnqvyln9aa40qilmi"))))
     (properties `((upstream-name . "dwctaxon")))
     (build-system r-build-system)
     (arguments
@@ -3525,13 +3525,13 @@ can identify hidden factors in high-dimensional biomedical data.")
 (define-public r-dstidyverseclient
   (package
     (name "r-dstidyverseclient")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsTidyverseClient" version))
        (sha256
-        (base32 "1wj5czcb3dnfka67kgrgiqqsffb13cmakkji5spyfdvzfdb0j2qb"))))
+        (base32 "191agg3pjx51pydqv5rxxj5cgg466q5566fm7jpa5j84ivc2236s"))))
     (properties `((upstream-name . "dsTidyverseClient")))
     (build-system r-build-system)
     (arguments
@@ -3550,26 +3550,26 @@ data manipulation, including subsetting, filtering, grouping, and renaming
 variables.  This is the clientside package which should be installed locally,
 and is used in conjuncture with the serverside package @code{dsTidyverse} which
 is installed on the remote server holding the data.  For more information, see
-<https://www.tidyverse.org/>, <https://datashield.org/> and
-<https://github.com/molgenis/ds-tidyverse>.")
-    (license license:lgpl2.1+)))
+<https://tidyverse.org/> and <https://datashield.org/>.")
+    (license license:lgpl3+)))
 
 (define-public r-dstidyverse
   (package
     (name "r-dstidyverse")
-    (version "1.0.4")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsTidyverse" version))
        (sha256
-        (base32 "09c01i61gqdq3pr1nddcry0ijp9m6g2m8nmzkjyjia1d1dvwszjn"))))
+        (base32 "01pq24nk3ph3lymgvba6bps36v8md7mrjmyb00y2smq89251d6r6"))))
     (properties `((upstream-name . "dsTidyverse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dsTidyverse")
     (synopsis "'DataSHIELD' 'Tidyverse' Serverside Package")
     (description
@@ -3581,9 +3581,9 @@ data manipulation, including subsetting, filtering, grouping, and renaming
 variables.  This is the serverside package which should be installed on the
 server holding the data, and is used in conjuncture with the clientside package
 @code{dsTidyverseClient} which is installed in the local R environment of the
-analyst.  For more information, see <https://www.tidyverse.org/> and
+analyst.  For more information, see <https://tidyverse.org/> and
 <https://datashield.org/>.")
-    (license license:lgpl2.1+)))
+    (license license:lgpl3+)))
 
 (define-public r-dstem
   (package
@@ -11433,31 +11433,6 @@ large high performance computing environments.  This package allows R users to
 use dlib through Rcpp'.")
     (license (license:fsdg-compatible "BSL-1.0"))))
 
-(define-public r-dlfm
-  (package
-    (name "r-dlfm")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DLFM" version))
-       (sha256
-        (base32 "0w2qfs0bf2zzcfg14djw2bm25xwx6syhg6nvi7pr3rj8ywjvphxj"))))
-    (properties `((upstream-name . "DLFM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-relliptical r-matrixcalc r-mass r-lfm
-                             r-laplacesdemon))
-    (home-page "https://cran.r-project.org/package=DLFM")
-    (synopsis "Distributed Laplace Factor Model")
-    (description
-     "Distributed estimation method is based on a Laplace factor model to solve the
-estimates of load and specific variance.  The philosophy of the package is
-described in Guangbao Guo. (2022). <doi:10.1007/s00180-022-01270-z>.")
-    (license license:expat)))
-
 (define-public r-dlegfm
   (package
     (name "r-dlegfm")
@@ -17660,31 +17635,20 @@ D'Haultfoeuille.")
 (define-public r-didimputation
   (package
     (name "r-didimputation")
-    (version "0.3.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "didimputation" version))
        (sha256
-        (base32 "122z473jkf5jb66s2g7vdqi0q56v8chz2dpl61qkcgqhv4hbh1q3"))))
+        (base32 "1mmdac1m7f3li4ylryk34qzimv5998lfj0g4qnql06cmvxdsa0fk"))))
     (properties `((upstream-name . "didimputation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-purrr
-                             r-matrix
-                             r-magrittr
-                             r-glue
-                             r-fixest
-                             r-dplyr
-                             r-data-table
-                             r-broom))
-    (home-page "https://cran.r-project.org/package=didimputation")
+    (propagated-inputs (list r-matrix r-fixest r-data-table))
+    (home-page "https://github.com/kylebutts/didimputation")
     (synopsis "Imputation Estimator from Borusyak, Jaravel, and Spiess (2021)")
     (description
      "Estimates Two-way Fixed Effects difference-in-differences/event-study models
@@ -24411,13 +24375,13 @@ parameters of ODEs up to second order, and can also apply to multilevel systems.
 (define-public r-definer
   (package
     (name "r-definer")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "defineR" version))
        (sha256
-        (base32 "1wm6ynicwk2dlx8m0k45kc1pa8i3z8w78xk3v40szy2ys5j80m7v"))))
+        (base32 "068p9a30fmfbipbp1hil9xxx01glrlqhny777rwd82hx4y1qdi5r"))))
     (properties `((upstream-name . "defineR")))
     (build-system r-build-system)
     (arguments
@@ -24432,7 +24396,7 @@ parameters of ODEs up to second order, and can also apply to multilevel systems.
                              r-glue
                              r-common))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=defineR")
+    (home-page "https://defineR.r-sassy.org")
     (synopsis "Creates Define XML Documents")
     (description
      "This package creates define.xml documents used for regulatory submissions based
@@ -24789,44 +24753,6 @@ models which are fitted in a neural network as proposed by Ruegamer et al.
 (penalized) linear effects, structured non-linear effects or using an
 unstructured deep network model.")
     (license license:gpl3)))
-
-(define-public r-deepredeff
-  (package
-    (name "r-deepredeff")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "deepredeff" version))
-       (sha256
-        (base32 "027dsmc3wmm61qc0vybn02c5dbnz5nwf80m9sywci4nhirz978ik"))))
-    (properties `((upstream-name . "deepredeff")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorflow
-                             r-seqinr
-                             r-rlang
-                             r-reticulate
-                             r-purrr
-                             r-magrittr
-                             r-keras
-                             r-ggthemes
-                             r-ggplot2
-                             r-dplyr
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ruthkr/deepredeff/")
-    (synopsis "Deep Learning Prediction of Effectors")
-    (description
-     "This package provides a tool that contains trained deep learning models for
-predicting effector proteins.  deepredeff has been trained to identify effector
-proteins using a set of known experimentally validated effectors from either
-bacteria, fungi, or oomycetes.  Documentation is available via several
-vignettes, and the paper by Kristianingsih and @code{MacLean} (2020)
-<doi:10.1101/2020.07.08.193250>.")
-    (license license:expat)))
 
 (define-public r-deepnn
   (package
@@ -29140,13 +29066,13 @@ your computer.  Routines for both single pixel data downloads and gridded
 (define-public r-dawar
   (package
     (name "r-dawar")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawaR" version))
        (sha256
-        (base32 "05hc8zvffqk177l77z5db14b5y58g14prs81irg8q254r7hqffp6"))))
+        (base32 "1jjg84rcnyijpbhcvzpir5ys8b0nr89pd69y5hhvz1n2jy52nd7a"))))
     (properties `((upstream-name . "dawaR")))
     (build-system r-build-system)
     (arguments
@@ -29443,13 +29369,13 @@ seasonally adjust tabular data.")
 (define-public r-datetoiso
   (package
     (name "r-datetoiso")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetoiso" version))
        (sha256
-        (base32 "1f2lczhd227qi3flv44dsply4pkps72r8xffbzg6fgvnhnxsxwp1"))))
+        (base32 "1v46b23sjn0xk9d8s82rj4xcwp89n7flsgd6g9d6i94m7rhw436l"))))
     (properties `((upstream-name . "datetoiso")))
     (build-system r-build-system)
     (arguments
@@ -29464,26 +29390,28 @@ seasonally adjust tabular data.")
                              r-data-table))
     (home-page "https://github.com/andzoluk")
     (synopsis
-     "Convert and Impute Dates to ISO Standard (\"International Organization for Standardization\")")
+     "Convert and Impute Dates to ISO 8601 Format and Reconcile Data Sets")
     (description
-     "This package provides functions to convert and impute date values to the ISO
-8601 standard format.  The package automatically recognizes date patterns within
-a data frame and transforms them into consistent ISO-formatted dates.  It also
-supports imputing missing month or day components in partial date strings using
-user-defined rules.  Only one date format can be applied within a single data
-frame column.")
+     "This package provides tools for converting and imputing date values to the ISO
+8601 standard format and for reconciling differences between two versions of a
+data set.  The package automatically detects date patterns within data frame
+columns and converts them to consistent ISO-formatted dates, with optional
+imputation of missing day or month components based on user-defined rules.  It
+also includes functionality to identify inserted, deleted, and updated records,
+as well as column- and value-level changes, when comparing old and new versions
+of a data frame.  Only one date format may be applied within a single column.")
     (license license:expat)))
 
 (define-public r-datetimeutils
   (package
     (name "r-datetimeutils")
-    (version "0.6-5")
+    (version "0.6-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetimeutils" version))
        (sha256
-        (base32 "1yqp525xy6saplsk19r6zh9i3b6ryj9ssdsnkaql2my0zgvi6fmf"))))
+        (base32 "0sh9g4dl4pqbngrnzhyn90h8m7fy3a41wpv3xms77fvay8ll10x1"))))
     (properties `((upstream-name . "datetimeutils")))
     (build-system r-build-system)
     (arguments

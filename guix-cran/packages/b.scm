@@ -7,9 +7,9 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
@@ -1474,64 +1474,6 @@ identify outliers, this package examines data at the individual level
 adjustment).  Methods are outlined in further detail in Rigdon et al (to
 appear).")
     (license license:gpl3)))
-
-(define-public r-bulkanalyser
-  (package
-    (name "r-bulkanalyser")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bulkAnalyseR" version))
-       (sha256
-        (base32 "008vnkcaa26d8620i1l49mbcr7px5x16s5x2wlq1vm0jkxya4c3z"))))
-    (properties `((upstream-name . "bulkAnalyseR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork
-                             r-upsetr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shinywidgets
-                             r-shinylp
-                             r-shinyjs
-                             r-shinyjqui
-                             r-shiny
-                             r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-preprocesscore
-                             r-noisyr
-                             r-matrixstats
-                             r-magrittr
-                             r-gprofiler2
-                             r-glue
-                             r-ggvenndiagram
-                             r-ggrepel
-                             r-ggrastr
-                             r-ggplot2
-                             r-ggnewscale
-                             r-ggforce
-                             r-genie3
-                             r-edger
-                             r-dt
-                             r-dplyr
-                             r-deseq2
-                             r-complexheatmap
-                             r-circlize))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Core-Bioinformatics/bulkAnalyseR")
-    (synopsis "Interactive Shiny App for Bulk Sequencing Data")
-    (description
-     "Given an expression matrix from a bulk sequencing experiment, pre-processes it
-and creates a shiny app for interactive data analysis and visualisation.  The
-app contains quality checks, differential expression analysis, volcano and cross
-plots, enrichment analysis and gene regulatory network inference, and can be
-customised to contain more panels by the user.")
-    (license license:gpl2)))
 
 (define-public r-bujar
   (package
@@ -4927,13 +4869,13 @@ downstream analyses.")
 (define-public r-bregr
   (package
     (name "r-bregr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bregr" version))
        (sha256
-        (base32 "057y5pihqd44zd2dzxplcyz8haf3xxh95hkid3jfd6n30bryg18s"))))
+        (base32 "0b97cc4sapvzv2pdl08x5lx488j2bcvp4d7ih3qvmqnrfqgwqhrm"))))
     (properties `((upstream-name . "bregr")))
     (build-system r-build-system)
     (arguments
@@ -4961,7 +4903,7 @@ downstream analyses.")
     (description
      "Easily processes batches of univariate or multivariate regression models.
 Returns results in a tidy format and generates visualization plots for
-straightforward interpretation (Wang, Shixiang, et al. (2021)
+straightforward interpretation (Wang, Shixiang, et al. (2025)
 <DOI:10.1002/mdr2.70028>).")
     (license license:gpl3+)))
 
@@ -8009,13 +7951,13 @@ Ghashti, J.S., Andrews, J.L. Thompson, J.R.J., Epp, J. and H.S. Kochar (2025),
 (define-public r-bootimpute
   (package
     (name "r-bootimpute")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootImpute" version))
        (sha256
-        (base32 "1qzhsvjs8lclxzwaca9g9n47fg2y9gpn2dgryvp529f6d1jmy44s"))))
+        (base32 "1cgqyyif28hz0m0aj6kacn6r58gvha6ihr1hap5bqzww0vgyj2ms"))))
     (properties `((upstream-name . "bootImpute")))
     (build-system r-build-system)
     (arguments
@@ -8351,13 +8293,13 @@ and time using gradient boosting approach.")
 (define-public r-boostmath
   (package
     (name "r-boostmath")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boostmath" version))
        (sha256
-        (base32 "1vwxhkc0f3iqkb4prw08w23az7nxjckc8lsn6pc3vs9hh5mqgjnw"))))
+        (base32 "0z4554nxxd1237i39fw7hxd1kv33bim6n644sykxyg6vcz91lbqh"))))
     (properties `((upstream-name . "boostmath")))
     (build-system r-build-system)
     (arguments
@@ -14538,13 +14480,13 @@ ISBN:978-1-118-62561-3) Levin & Chen (1999) <doi:10.1080/00031305.1999.10474431>
 (define-public r-biostats
   (package
     (name "r-biostats")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biostats" version))
        (sha256
-        (base32 "04551l4i20r4vjpqlvmhm0vjnfd87ksvzsj231qj3ndqg8nvc8c8"))))
+        (base32 "1fcgx5f4hkml2cvkxg0n1h4mmxlhbmfjwz1yv6jd8vksdkawlb34"))))
     (properties `((upstream-name . "biostats")))
     (build-system r-build-system)
     (arguments
@@ -15789,13 +15731,13 @@ implementation can be understood by running examples in @code{modelFrame()}, and
 (define-public r-biodosetools
   (package
     (name "r-biodosetools")
-    (version "3.7.1.2")
+    (version "3.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biodosetools" version))
        (sha256
-        (base32 "170v58xs767a6nqx6mx6494spnx2zaafip42324f8cs142jdy5s2"))))
+        (base32 "1sk9psc3mw7frn4piwq6x7d1s8mbric0b79g1md04dr5lz3nrx4p"))))
     (properties `((upstream-name . "biodosetools")))
     (build-system r-build-system)
     (arguments
@@ -25936,13 +25878,13 @@ automatic tuning inspired by Pitt et al. (2012)
 (define-public r-bayessim
   (package
     (name "r-bayessim")
-    (version "0.1.5")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSIM" version))
        (sha256
-        (base32 "0khxdsfg82nmn8rassh4h4hf87k23bcihzxrichw5jvrykhgvxjh"))))
+        (base32 "1j56y5x9krfqyfsnhybkvlk23mai1a5xn7dxhzp8yfrqfx9s1ww4"))))
     (properties `((upstream-name . "BayesSIM")))
     (build-system r-build-system)
     (arguments
@@ -25955,6 +25897,7 @@ automatic tuning inspired by Pitt et al. (2012)
                              r-mass
                              r-magrittr
                              r-ggplot2
+                             r-dplyr
                              r-coda))
     (home-page "https://cran.r-project.org/package=BayesSIM")
     (synopsis
@@ -31350,13 +31293,13 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
 (define-public r-bas
   (package
     (name "r-bas")
-    (version "1.7.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAS" version))
        (sha256
-        (base32 "1h11lllvk9dhj63kzaibr71jvrlf944sy39grbg997r1z81g245g"))))
+        (base32 "1s18jj3glgfs0syr989mw3a0nkj7v93ln2db4vqiq7qch19zsz3c"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
     (arguments

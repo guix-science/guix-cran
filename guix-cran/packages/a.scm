@@ -3517,13 +3517,13 @@ Area Under Minimum.")
 (define-public r-auk
   (package
     (name "r-auk")
-    (version "0.8.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "auk" version))
        (sha256
-        (base32 "15ganiamcg1adppqf6gxriacm3wspqi796m0iigxzfm2q5imfmam"))))
+        (base32 "07ifpf22a6jmlnan45hcm4ykycibg8ch60vp7rpkhh10zs7g264x"))))
     (properties `((upstream-name . "auk")))
     (build-system r-build-system)
     (arguments
@@ -5324,6 +5324,37 @@ various types of errors.  Also includes existing association indices and
 functions for simulating the effects of different rates of error on estimates of
 association strength between individuals using each method.")
     (license license:gpl2)))
+
+(define-public r-associationexplorer2
+  (package
+    (name "r-associationexplorer2")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AssociationExplorer2" version))
+       (sha256
+        (base32 "1sdsw8l0rjc3y5nj12phw0blv19ivrld60h0d9qff8zqq432xcsg"))))
+    (properties `((upstream-name . "AssociationExplorer2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (home-page "https://github.com/AntoineSoetewey/AssociationExplorer2")
+    (synopsis
+     "User-Friendly 'shiny' Application for Exploring Associations and Visual Patterns")
+    (description
+     "This package provides a user-friendly shiny application to explore statistical
+associations and visual patterns in multivariate datasets.  The app provides
+interactive correlation networks, bivariate plots, and summary tables for
+different types of variables (numeric and categorical).  It also supports
+optional survey weights and range-based filters on association strengths, making
+it suitable for the exploration of survey and public data by non-technical
+users, journalists, educators, and researchers.  For background and
+methodological details, see Soetewey et al. (2025)
+<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5637359>.")
+    (license license:expat)))
 
 (define-public r-assocbin
   (package
@@ -12253,13 +12284,13 @@ between-subject, within-subject, and mixed one-way and two-way ANOVA.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "0a6xw5sasv7v12r4vwp5m2n44gay8kvf5bc9bihv5cwg2281xp14"))))
+        (base32 "0qpwwl20zhx2bwxakqa6hldqnvj5xn8zi3wx42d7fbwhw3vnvh5a"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
     (arguments
@@ -17598,6 +17629,34 @@ Countries API <https://restcountries.com/>.")
 resolving a small number ob closed equations.")
     (license license:gpl2)))
 
+(define-public r-algebraic-dist
+  (package
+    (name "r-algebraic-dist")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "algebraic.dist" version))
+       (sha256
+        (base32 "1qqbw8njqzn4c7d713mjnyigpid3nxzxb8bxi6ak112gbd7f6gis"))))
+    (properties `((upstream-name . "algebraic.dist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/algebraic.dist")
+    (synopsis "Algebra over Probability Distributions")
+    (description
+     "This package provides an algebra over probability distributions enabling
+composition, sampling, and automatic simplification to closed forms.  Supports
+normal, exponential, multivariate normal, and empirical distributions with
+operations like addition and subtraction that automatically simplify when
+mathematical identities apply (e.g., the sum of independent normal distributions
+is normal).  Uses S3 classes for distributions and R6 for support objects.")
+    (license license:gpl3+)))
+
 (define-public r-algaeclassify
   (package
     (name "r-algaeclassify")
@@ -18166,13 +18225,13 @@ Miyazaki, Yamada, Yatsuhashi, and Imai (2022) <doi:10.7910/DVN/Z9UKSH>.")
 (define-public r-alakazam
   (package
     (name "r-alakazam")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alakazam" version))
        (sha256
-        (base32 "1kgnhjqmynqkyng97m6f6kwx0k7cqjnxs303b0553gvq82qky9ha"))))
+        (base32 "1g9rxag6h2jxz8bxwmpnirwpv141ngh9r59ixnljyjqhm7fk1kwl"))))
     (properties `((upstream-name . "alakazam")))
     (build-system r-build-system)
     (arguments
@@ -18310,13 +18369,13 @@ procedure are also implemented for bandwidth selection.")
 (define-public r-akc
   (package
     (name "r-akc")
-    (version "0.9.9.1")
+    (version "0.9.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akc" version))
        (sha256
-        (base32 "1d40if8bb2v3hl8pab9n2l33zrkvyphxqan59qd9wsdzkf9x8j5c"))))
+        (base32 "0sv3zy11z574l68wl78nnapgrrzglbrkpgn89blzjcrkdd903x44"))))
     (properties `((upstream-name . "akc")))
     (build-system r-build-system)
     (arguments
@@ -21809,13 +21868,13 @@ package AFheritability Dahlqwist E et al. (2019)
 (define-public r-aerosampler
   (package
     (name "r-aerosampler")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AeroSampleR" version))
        (sha256
-        (base32 "0prdw8yjdrcyc8msk2a8ia5cjd4gm88isg8dqp9yj2aqbfz6pin7"))))
+        (base32 "166sdaqvpvyv1ml2j70n5sgc3x3s8yzn9jvnv0xmn9gbwj20x2r0"))))
     (properties `((upstream-name . "AeroSampleR")))
     (build-system r-build-system)
     (arguments

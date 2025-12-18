@@ -243,29 +243,6 @@ of bulk analysis and complex Bayesian sequential calibration.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-ox
-  (package
-    (name "r-ox")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ox" version))
-       (sha256
-        (base32 "0j0va301bmppvmk6paqaqqaw85h8yf92i3pz7i59f2j8q9im82rx"))))
-    (properties `((upstream-name . "ox")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ox")
-    (synopsis "Shorthand if-Else")
-    (description
-     "Short hand if-else function to easily switch the values depending on a logical
-condition.")
-    (license license:gpl2+)))
-
 (define-public r-ows4r
   (package
     (name "r-ows4r")
@@ -1203,13 +1180,13 @@ text files.")
 (define-public r-outbreaker2
   (package
     (name "r-outbreaker2")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outbreaker2" version))
        (sha256
-        (base32 "06wlmf51ciy7zy5nchfn2myvkwrvq44cnzzjl75vz32ixn8iy56v"))))
+        (base32 "0fvwviqjz7b993qh15q5a6brh0hrsypnvq6znjdyr29710c0b6xy"))))
     (properties `((upstream-name . "outbreaker2")))
     (build-system r-build-system)
     (arguments
@@ -2008,13 +1985,13 @@ the running server use the osrm R package
 (define-public r-osrm
   (package
     (name "r-osrm")
-    (version "4.2.0")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osrm" version))
        (sha256
-        (base32 "1256pksd8mxzxi1vnl6ghhyl8f7g2li4wabs0kllw9i54yxvc83b"))))
+        (base32 "04q8sf322bym8vlxjx4jc085v7x6f783ifs89ld9vyb04yjwga1c"))))
     (properties `((upstream-name . "osrm")))
     (build-system r-build-system)
     (arguments
@@ -3314,13 +3291,13 @@ obtained from short time-course or dose-response microarray experiments.")
 (define-public r-orgutils
   (package
     (name "r-orgutils")
-    (version "0.5-1")
+    (version "0.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orgutils" version))
        (sha256
-        (base32 "1f4n9l218brbg5jvxlx9px74r669czkd5iwrq53nwb2iaj4wcr7n"))))
+        (base32 "0qafj8ks6r3pgimkf7xi6f7908xxbhfd65s11zbiia2gasw2vy92"))))
     (properties `((upstream-name . "orgutils")))
     (build-system r-build-system)
     (arguments
@@ -4650,13 +4627,13 @@ dependency prediction locally or directly in databases.")
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OralOpioids" version))
        (sha256
-        (base32 "18hy0vhbj08zw45yn1gv4pqlpjz2hlva5fc0vqczc506jqq19dz5"))))
+        (base32 "1li95pq0ki55d2af3rdqypnabsac8n1a48v0ng7lz9d9v413fzyj"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (arguments
@@ -10464,6 +10441,39 @@ fields and creation of a single reference to the data.  Native Spark
 functionality is supported.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-omophub
+  (package
+    (name "r-omophub")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omophub" version))
+       (sha256
+        (base32 "0778s5mi131hs7awypa6ss08nqznskdl383h8sbnr1pxi8y5ahpk"))))
+    (properties `((upstream-name . "omophub")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/omopHub/omophub-R")
+    (synopsis "R Client for the 'OMOPHub' Medical Vocabulary API")
+    (description
+     "This package provides an R interface to the OMOPHub API for accessing OHDSI
+ATHENA standardized medical vocabularies.  Supports concept search, vocabulary
+exploration, hierarchy navigation, relationship queries, and concept mappings
+with automatic pagination and rate limiting.")
+    (license license:expat)))
+
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
@@ -10748,28 +10758,51 @@ cell-type-specific epigenome-wide and transcriptome association study\".")
 (define-public r-omicstools
   (package
     (name "r-omicstools")
-    (version "1.0.5")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omicsTools" version))
        (sha256
-        (base32 "0k6cpdxafz6x5360m97x8mvvi09mb36yx42slkq6nr4axpm089pf"))))
+        (base32 "051kfnwl0f6qlfrlkxq71486sp53dhp62znz6r32qbjs1lb4p180"))))
     (properties `((upstream-name . "omicsTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinywidgets
+                             r-shinycssloaders
                              r-shiny
+                             r-rlang
+                             r-readxl
                              r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-pheatmap
+                             r-outliers
+                             r-moments
+                             r-matrixstats
                              r-magrittr
+                             r-janitor
                              r-golem
+                             r-ggvenn
+                             r-ggsci
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-forcats
                              r-dt
                              r-dplyr
+                             r-dbscan
                              r-config
+                             r-cli
                              r-bs4dash))
-    (home-page "https://github.com/YaoxiangLi/omicsTools")
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=omicsTools")
     (synopsis "Omics Data Process Toolbox")
     (description
      "Processing and analyzing omics data from genomics, transcriptomics, proteomics,
@@ -10780,7 +10813,7 @@ tool for researchers working with high-throughput omics data in fields such as
 biology, bioinformatics, and medicine.The QC-RLSC (quality controlâbased
 robust LOESS signal correction) algorithm is used for normalization.  Dunn et
 al. (2011) <doi:10.1038/nprot.2011.335>.")
-    (license license:expat)))
+    (license license:agpl3+)))
 
 (define-public r-omicsqc
   (package
@@ -10906,13 +10939,13 @@ using omics data.")
 (define-public r-omicnavigator
   (package
     (name "r-omicnavigator")
-    (version "1.16.0")
+    (version "1.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicNavigator" version))
        (sha256
-        (base32 "1pc0k790y0qnsgc5baiq2ng94plw7akrrk6jm04d0b1lbxpzg4bs"))))
+        (base32 "0qd2hzwri2pbsraw81416zhv7bb89x5275hyfb2pz4rg2yn157pm"))))
     (properties `((upstream-name . "OmicNavigator")))
     (build-system r-build-system)
     (arguments
@@ -11811,13 +11844,13 @@ at <https://ohdsi.github.io/@code{OhdsiShinyAppBuilder/>}.")
 (define-public r-ohdsireportgenerator
   (package
     (name "r-ohdsireportgenerator")
-    (version "1.1.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OhdsiReportGenerator" version))
        (sha256
-        (base32 "1879fwxgv5nzn1ajy6pyvckxy7s5lmc8hngans13pp1gh4nm36k7"))))
+        (base32 "0ajc2wyai1a6g0fzwjdl0pvlg700zcm1wvsyvww20qsdcp0aqpgz"))))
     (properties `((upstream-name . "OhdsiReportGenerator")))
     (build-system r-build-system)
     (arguments
@@ -11835,6 +11868,7 @@ at <https://ohdsi.github.io/@code{OhdsiShinyAppBuilder/>}.")
                              r-gt
                              r-ggpubr
                              r-ggplot2
+                             r-fs
                              r-forestplot
                              r-dplyr
                              r-databaseconnector

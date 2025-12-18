@@ -1820,43 +1820,6 @@ of more robust safety monitoring framework like the Shiny app from the
 @code{safetyGraphics} R package.")
     (license license:expat)))
 
-(define-public r-volcano3d
-  (package
-    (name "r-volcano3d")
-    (version "2.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "volcano3D" version))
-       (sha256
-        (base32 "1k1n49pzsdkwia09mf9ra75cbnx49q99ygn5c92kyq8kqv83d1w8"))))
-    (properties `((upstream-name . "volcano3D")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rfast
-                             r-plotly
-                             r-matrixtests
-                             r-magrittr
-                             r-htmlwidgets
-                             r-ggpubr
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://katrionagoldmann.github.io/volcano3D/index.html")
-    (synopsis "3D Volcano Plots and Polar Plots for Three-Class Data")
-    (description
-     "Generates interactive plots for analysing and visualising three-class high
-dimensional data.  It is particularly suited to visualising differences in
-continuous attributes such as gene/protein/biomarker expression levels between
-three groups.  Differential gene/biomarker expression analysis between two
-classes is typically shown as a volcano plot.  However, with three groups this
-type of visualisation is particularly difficult to interpret.  This package
-generates 3D volcano plots and 3-way polar plots for easier interpretation of
-three-class data.")
-    (license license:gpl2)))
-
 (define-public r-volatilitytrader
   (package
     (name "r-volatilitytrader")
@@ -3882,27 +3845,34 @@ results of analysis in the ggplot2 style.")
 (define-public r-virustotal
   (package
     (name "r-virustotal")
-    (version "0.3.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "virustotal" version))
        (sha256
-        (base32 "0rxzjmcijy527z5ypnkqnkd97svygb7x3i8ssijzd6mxb30x0rra"))))
+        (base32 "1g5w8y4l1fb01v4wgz580lvsb1wa1g3hfqyigsk47nm6bgxyg9wl"))))
     (properties `((upstream-name . "virustotal")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr r-httr r-base64enc))
+    (propagated-inputs (list r-rlang
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-checkmate
+                             r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/themains/virustotal")
     (synopsis "R Client for the VirusTotal API")
     (description
-     "Use @code{VirusTotal}, a Google service that analyzes files and URLs for
-viruses, worms, trojans etc., provides category of the content hosted by a
-domain from a variety of prominent services, provides passive DNS information,
-among other things.  See <https://www.virustotal.com> for more information.")
+     "This package provides a comprehensive R interface to the @code{VirusTotal} API
+(v2 and v3), a Google service that analyzes files and URLs for viruses, worms,
+trojans and other malware.  Features include file/URL scanning, domain
+categorization, passive DNS information, IP reputation analysis, and
+comment/voting systems.  Implements rate limiting, error handling, and response
+validation for robust security analysis workflows.")
     (license license:expat)))
 
 (define-public r-virusparies
@@ -5601,13 +5571,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "0w4x7zzaz0ymk8q1lvf0zbkrm011vpjdn650bgggkxwavnhwwzfz"))))
+        (base32 "1n4h3dni929ycwgsqh8xa20cpkqg226v07yzcclsv7rpzpqdbqbb"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -7577,13 +7547,13 @@ estimated variance of the random noise.")
 (define-public r-vbphenor
   (package
     (name "r-vbphenor")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VBphenoR" version))
        (sha256
-        (base32 "1idh2yicywxsjq4wsb58qwb962866jw8wgsksh1yr4vly3wz345r"))))
+        (base32 "1g2a9f6bn5d2amrkqxkjh608qgdccyc1wcxaz11ggsavaq17kl6p"))))
     (properties `((upstream-name . "VBphenoR")))
     (build-system r-build-system)
     (arguments
@@ -7604,7 +7574,8 @@ and Variational Bayes regression for Biomarker level shifts, both implemented by
 Coordinate Ascent Variational Inference algorithms.  Variational methods are
 used to enable Bayesian analysis of very large Electronic Health Records data.
 For VB GMM details see Bishop (2006,ISBN:9780-387-31073-2).  For Logistic VB see
-Jaakkola and Jordan (2000) <doi:10.1023/A:1008932416310>.")
+Jaakkola and Jordan (2000) <doi:10.1023/A:1008932416310>.  Please see preprint
+of JSS-submitted paper <doi:10.48550/@code{arXiv.2512.14272>}.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
 (define-public r-vbms

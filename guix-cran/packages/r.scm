@@ -370,30 +370,6 @@ Yandex Direct account.  Also you can load statistic from API Reports Service
 bids management.")
     (license license:gpl2)))
 
-(define-public r-ryacas0
-  (package
-    (name "r-ryacas0")
-    (version "0.4.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Ryacas0" version))
-       (sha256
-        (base32 "0mr7mxnn1vm6nmry4zhwpkgfd4zh626fk0cx00c6vpcsajr35f3q"))))
-    (properties `((upstream-name . "Ryacas0")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2 r-settings r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-cas/ryacas0")
-    (synopsis "Legacy 'Ryacas' (Interface to 'Yacas' Computer Algebra System)")
-    (description
-     "This package provides a legacy version of Ryacas', an interface to the yacas
-computer algebra system (<http://www.yacas.org/>).")
-    (license license:gpl2)))
-
 (define-public r-ryacas
   (package
     (name "r-ryacas")
@@ -5718,13 +5694,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstantva
   (package
     (name "r-rstantva")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RStanTVA" version))
        (sha256
-        (base32 "1clk1m06sn8njw522k5b64spy2cdbnnpxcqmr11q2qh9x4sxdv65"))))
+        (base32 "1k2jam1n5aj1lwc65nb80d3glc4lw8r3r1b1b8i0sf0ar4cb5cra"))))
     (properties `((upstream-name . "RStanTVA")))
     (build-system r-build-system)
     (arguments
@@ -5739,6 +5715,7 @@ Stata commands (both inline and from a .do file) from R.")
                              r-dplyr
                              r-cli
                              r-brms))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mmrabe/RStanTVA")
     (synopsis "TVA Models in 'Stan' using 'R' and 'StanTVA'")
     (description
@@ -10148,19 +10125,19 @@ URL provides a link to a work in progress vignette.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "4.1-1")
+    (version "4.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "1wgxibcs3vzci9dyc6h23yl3d1cpsvqf2pdslb1ja9aq11yxf9nq"))))
+        (base32 "0pm5ywifc0qp07z5brndki8qj1n7pwgrxp7x7g7gw0h9p1wf19j7"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sandwich r-mice r-mass r-lme4))
+    (propagated-inputs (list r-sandwich r-nnet r-mice r-mass r-lme4))
     (home-page "https://cran.r-project.org/package=rqlm")
     (synopsis
      "Modified Poisson Regression for Binary Outcome and Related Methods")
@@ -10944,13 +10921,13 @@ preferences (see KieÃling (2002) <doi:10.1016/B978-155860869-6/50035-4>).")
 (define-public r-rpql
   (package
     (name "r-rpql")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpql" version))
        (sha256
-        (base32 "0ggw20rn4fw4nk8lnz1lmfgv6x86fi7v4l2jp1jpd5fqd81cn1lc"))))
+        (base32 "04yis3cqdmrx4rbvn8q9y3b7gngnbaa3gfpgssj25rw5h59fwm29"))))
     (properties `((upstream-name . "rpql")))
     (build-system r-build-system)
     (arguments
@@ -10973,7 +10950,7 @@ augmented to perform simultaneous fixed and random effects selection.
 Regularized PQL avoids the need for integration (or approximations such as the
 Laplace's method) during the estimation process, and so the full solution path
 for model selection can be constructed relatively quickly.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-rppaspace
   (package
@@ -11906,40 +11883,6 @@ calculate branch-specific diversification rates, see Kopperud & Hoehna (2025)
 <doi:10.1093/sysbio/syaf041>.")
     (license license:expat)))
 
-(define-public r-rpese
-  (package
-    (name "r-rpese")
-    (version "1.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RPESE" version))
-       (sha256
-        (base32 "1kzq0llscfpxhjsc3lfjs0x7cplxjvr0v1jnpbrzmgkgl679r535"))))
-    (properties `((upstream-name . "RPESE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-rpeif
-                             r-rpeglmen
-                             r-robstattm
-                             r-boot))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=RPESE")
-    (synopsis "Estimates of Standard Errors for Risk and Performance Measures")
-    (description
-     "Estimates of standard errors of popular risk and performance measures for asset
-or portfolio returns using methods as described in Chen and Martin (2021)
-<doi:10.21314/JOR.2020.446>.")
-    (license license:gpl2+)))
-
 (define-public r-rpensemble
   (package
     (name "r-rpensemble")
@@ -11975,13 +11918,13 @@ voting threshold to determine the final assignment.")
 (define-public r-rpeif
   (package
     (name "r-rpeif")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPEIF" version))
        (sha256
-        (base32 "002f8753gfqx1ddcb60hz7xy6l19zvp3d3arackkqjh26zcw1paj"))))
+        (base32 "0cg48drgzg9zh577vqsdqrg5vqipih24npclfs1vb4vs4vzpcr73"))))
     (properties `((upstream-name . "RPEIF")))
     (build-system r-build-system)
     (arguments
@@ -12003,39 +11946,6 @@ performance measures as mentioned in Chen and Martin (2018)
 <https://www.ssrn.com/abstract=3415903>.  Also evaluates estimators influence
 functions at a set of parameter values and plots them to display the shapes of
 the influence functions.")
-    (license license:gpl2+)))
-
-(define-public r-rpeglmen
-  (package
-    (name "r-rpeglmen")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RPEGLMEN" version))
-       (sha256
-        (base32 "0870zz1grr4kk5p3lafmsff8670ad516f37p0nzlhwp3x4202awa"))))
-    (properties `((upstream-name . "RPEGLMEN")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rpeif r-rcppeigen r-rcpp))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=RPEGLMEN")
-    (synopsis
-     "Gamma and Exponential Generalized Linear Models with Elastic Net Penalty")
-    (description
-     "This package implements the fast iterative shrinkage-thresholding algorithm
-(FISTA) algorithm to fit a Gamma distribution with an elastic net penalty as
-described in Chen, Arakvin and Martin (2018)
-<doi:10.48550/@code{arXiv.1804.07780>}.  An implementation for the case of the
-exponential distribution is also available, with details available in Chen and
-Martin (2018) <doi:10.2139/ssrn.3085672>.")
     (license license:gpl2+)))
 
 (define-public r-rpeakchrom
@@ -12506,13 +12416,13 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "4.2.1")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpact" version))
        (sha256
-        (base32 "0lff42fh00933lklzq4fhp5m57jgklqpm6i3ki6mbsj2y8y838gm"))))
+        (base32 "0s47ny48k1gvjqc46a50zhnvyfhna2dmhdfnsxp2jmn0xanj3swp"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (arguments
@@ -12525,7 +12435,7 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
     (description
      "Design and analysis of confirmatory adaptive clinical trials with continuous,
 binary, and survival endpoints according to the methods described in the
-monograph by Wassmer and Brannath (2016) <doi:10.1007/978-3-319-32562-0>.  This
+monograph by Wassmer and Brannath (2025) <doi:10.1007/978-3-031-89669-9>.  This
 includes classical group sequential as well as multi-stage adaptive hypotheses
 tests that are based on the combination testing principle.")
     (license license:lgpl3)))
@@ -15313,13 +15223,13 @@ allows R to connect to any DBMS that has a ODBC driver.")
 (define-public r-rodbc
   (package
     (name "r-rodbc")
-    (version "1.3-26")
+    (version "1.3-26.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RODBC" version))
        (sha256
-        (base32 "0qawr81jzii33n39397c7m2m1z50qg4m0xfwvswfvfiv0grh1rps"))))
+        (base32 "03wkgk27l9dlvnbwmxq75p4dfqw09x5rx0r197nbb6s8c49vbf0x"))))
     (properties `((upstream-name . "RODBC")))
     (build-system r-build-system)
     (arguments
@@ -17905,13 +17815,13 @@ discussion on robust mediation analysis can be found in Alfons & Schley (2025)
 (define-public r-robma
   (package
     (name "r-robma")
-    (version "3.6.0")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoBMA" version))
        (sha256
-        (base32 "19fris9m50bfdqwclcjy22ghrixac34icshf2hwqw7b4pci1ylhg"))))
+        (base32 "1qgbpqc94vi3rzb0g7mcmfz3m13s8xfqvv22i4mpl9sasp23g11q"))))
     (properties `((upstream-name . "RoBMA")))
     (build-system r-build-system)
     (arguments
@@ -20292,13 +20202,13 @@ panels.  The full documentation and tutorials are at
 (define-public r-rmss
   (package
     (name "r-rmss")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMSS" version))
        (sha256
-        (base32 "02zp5jmw39pzzjkn5vnj8bd0d9iw9ricg4dbsk8xrlalp95p7prp"))))
+        (base32 "0wd3jiaaskrrq1r2k2x96v2hi85bpaj16cmwv2l3qzdiwn2kjy0j"))))
     (properties `((upstream-name . "RMSS")))
     (build-system r-build-system)
     (arguments
@@ -24467,6 +24377,29 @@ leading seasonal adjustment methods TRAMO/SEATS+ and X-12ARIMA/X-13ARIMA-SEATS."
 back-end.  This allows R to connect to any DBMS that has a JDBC driver.")
     (license license:expat)))
 
+(define-public r-rjd3jars
+  (package
+    (name "r-rjd3jars")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3jars" version))
+       (sha256
+        (base32 "10xcqfxns0nw00fqlj88d3m276v1implwmf829gkssp2zsikrcsq"))))
+    (properties `((upstream-name . "rjd3jars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rjava))
+    (home-page "https://cran.r-project.org/package=rjd3jars")
+    (synopsis "External jars for 'rjdverse' R Packages")
+    (description
+     "It provides external jars required for the rjdverse (as rjd3toolkit', rjd3x13
+and rjd3tramoseats').")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-rjavaenv
   (package
     (name "r-rjavaenv")
@@ -27270,13 +27203,13 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "0br9853m8s5wpnybyxfh0h66nav7ap15fdpq5ppadw5flhnpf51d"))))
+        (base32 "1r0wgxi0alkp1qcwm7nlal32ph5b3m4mrlx957yvbdc91p8ckjig"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (arguments
@@ -27288,10 +27221,11 @@ position type and the chromosome number.")
     (synopsis "Radiocarbon Equations")
     (description
      "This package provides functions for the calibration of radiocarbon dates, as
-well as options to calculate different radiocarbon timescales (C14 age, F14C,
-@code{pMC}, D14C) and estimating the effects of contamination or local reservoir
-offsets (Reimer and Reimer 2001 <doi:10.1017/S0033822200038339>).  The methods
-follow long-established recommendations such as Stuiver and Polach (1977)
+well as options to calculate different radiocarbon-related timescales (cal BP,
+cal BC/AD, C14 age, F14C, @code{pMC}, D14C) and estimating the effects of
+contamination or local reservoir offsets (Reimer and Reimer 2001
+<doi:10.1017/S0033822200038339>).  The methods follow long-established
+recommendations such as Stuiver and Polach (1977)
 <doi:10.1017/S0033822200003672> and Reimer et al. (2004)
 <doi:10.1017/S0033822200033154>.  This package uses the calibration curves from
 the data package rintcal'.")
@@ -30726,25 +30660,24 @@ now out-dated @code{fishBC} software
 (define-public r-rfishbase
   (package
     (name "r-rfishbase")
-    (version "5.0.1")
+    (version "5.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfishbase" version))
        (sha256
-        (base32 "1bicv4hy5vmyvzqvjwl45j2vy2c1339w9h1b2cmmzm6qgz9s0zyl"))))
+        (base32 "081d1d4khz8jgpbsmgaxqm4iyz1y16wq0863gddywvkfw26gy7ny"))))
     (properties `((upstream-name . "rfishbase")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-xml2
+                             r-stringr
                              r-rlang
                              r-purrr
                              r-memoise
                              r-magrittr
-                             r-jsonlite
-                             r-httr
                              r-glue
                              r-duckdbfs
                              r-dplyr))
@@ -31614,37 +31547,36 @@ documentation, and examples.")
 (define-public r-revert
   (package
     (name "r-revert")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "revert" version))
        (sha256
-        (base32 "1x3ykqlyhy9z1rizp4y1p90mkl2wv56k87z2qcz69dznys34z5xy"))))
+        (base32 "135dygi98y42bz15138cqn4afb1yagsvb061xwcvwaym3ynhwcqj"))))
     (properties `((upstream-name . "revert")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsamtools
+    (propagated-inputs (list r-s4vectors
+                             r-rsamtools
+                             r-pwalign
                              r-iranges
                              r-genomicranges
-                             r-bsgenome-hsapiens-ucsc-hg38
+                             r-genomeinfodb
+                             r-ensembldb
                              r-bsgenome
-                             r-biostrings))
+                             r-biostrings
+                             r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=revert")
-    (synopsis "Reversion Mutation Identifier for Sequencing Data")
+    (synopsis "Reversion Mutation Detector for DNA Sequencing Data")
     (description
-     "This package provides a tool for detecting reversions for a given pathogenic
-mutation from next-generation DNA sequencing data.  It analyses reads aligned to
-the locus of the pathogenic mutation and reports reversion events where
-secondary mutations have restored or undone the deleterious effect of the
-original pathogenic mutation, e.g., secondary indels complement to a frameshift
-pathogenic mutation converting the orignal frameshift mutation into inframe
-mutaions, deletions or SNVs that replaced the original pathogenic mutation
-restoring the open reading frame, SNVs changing the stop codon caused by the
-original nonsense SNV into an amino acid, etc.")
+     "Reversion mutations are secondary mutations that reverse the deleterious effects
+of an original pathogenic mutation, partially or fully restoring the gene's
+function.  The revert package detects reversion mutations for a specific
+pathogenic mutation from DNA-seq bam files.")
     (license license:gpl2)))
 
 (define-public r-reverser
@@ -33016,13 +32948,13 @@ spectral density.")
 (define-public r-resourcecode
   (package
     (name "r-resourcecode")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resourcecode" version))
        (sha256
-        (base32 "1wp1ymr92whjznk1dyqaafnzb7b6301vjlyraj8s9ccdw7145jkb"))))
+        (base32 "0nl2k5v3jckyai4bmfw949k4r2sq11snkb16r5rkfc6fswq9mddq"))))
     (properties `((upstream-name . "resourcecode")))
     (build-system r-build-system)
     (arguments
@@ -33039,7 +32971,6 @@ spectral density.")
                              r-patchwork
                              r-ncdf4
                              r-lubridate
-                             r-latex2exp
                              r-jsonlite
                              r-gridtext
                              r-ggplot2
@@ -33296,13 +33227,13 @@ details.")
 (define-public r-resilience
   (package
     (name "r-resilience")
-    (version "2025.1.0")
+    (version "2025.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resilience" version))
        (sha256
-        (base32 "0gxi71r0rd8v67ax8v7kbxy0ghvlr3x47rsgjw13bhhvykihg809"))))
+        (base32 "1wy8is1jxglczc65r2n7fm11xg54xhk5ssm8bz8h7gwwqwdkv8wl"))))
     (properties `((upstream-name . "resilience")))
     (build-system r-build-system)
     (arguments
@@ -36476,48 +36407,6 @@ al. (2019) <doi:10.1016/j.fsigss.2019.09.085> and Kaur et al. (2016)
 <doi:10.1007/s00414-015-1276-1>.")
     (license license:gpl2+)))
 
-(define-public r-relliptical
-  (package
-    (name "r-relliptical")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "relliptical" version))
-       (sha256
-        (base32 "1d978ig1k6drb4imz04j28l1xbb04vl8l5iirhmlm096i7bn3psx"))))
-    (properties `((upstream-name . "relliptical")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ryacas0
-                             r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrixcalc
-                             r-fuzzynumbers-ext-2))
-    (home-page "https://cran.r-project.org/package=relliptical")
-    (synopsis "The Truncated Elliptical Family of Distributions")
-    (description
-     "It offers random numbers generation from members of the truncated multivariate
-elliptical family of distribution such as the truncated versions of the Normal,
-Student-t, Laplace, Pearson VII, Slash, Logistic, among others.  Particular
-distributions can be provided by specifying the density generating function.  It
-also computes the first two moments (covariance matrix as well) for some
-particular distributions.  References used for this package: Galarza, C. E.,
-Matos, L. A., Castro, L. M., and Lachos, V. H. (2022).  Moments of the doubly
-truncated selection elliptical distributions with emphasis on the unified
-multivariate skew-t distribution.  Journal of Multivariate Analysis, 189, 104944
-<doi:10.1016/j.jmva.2021.104944>; Ho, H. J., Lin, T. I., Chen, H. Y., and Wang,
-W. L. (2012).  Some results on the truncated multivariate t distribution.
-Journal of Statistical Planning and Inference, 142(1), 25-40
-<doi:10.1016/j.jspi.2011.06.006>; Valeriano, K. A., Galarza, C. E., and Matos,
-L. A. (2021).  Moments and random number generation for the truncated elliptical
-family of distributions.  Statistics and Computing, 33(1), 32
-<doi:10.1007/s11222-022-10200-4>.")
-    (license license:gpl2+)))
-
 (define-public r-relimppcr
   (package
     (name "r-relimppcr")
@@ -39211,16 +39100,55 @@ up-to-date information on species conservation status, supporting biodiversity
 research and conservation efforts.")
     (license license:expat)))
 
+(define-public r-redistverse
+  (package
+    (name "r-redistverse")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redistverse" version))
+       (sha256
+        (base32 "1k05cdsy8lqciqa9py5c397vwx4ca4lmwd696rvrabnq0n0wqyc7"))))
+    (properties `((upstream-name . "redistverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tinytiger
+                             r-sf
+                             r-redistmetrics
+                             r-redist
+                             r-pl94171
+                             r-ggredist
+                             r-geomander
+                             r-easycensus
+                             r-cli
+                             r-censable
+                             r-birdie
+                             r-baf
+                             r-alarmdata))
+    (home-page "https://github.com/alarm-redist/redistverse")
+    (synopsis "Easily Install and Load Redistricting Software")
+    (description
+     "Easy installation, loading, and control of packages for redistricting data
+downloading, spatial data processing, simulation, analysis, and visualization.
+This package makes it easy to install and load multiple redistverse packages at
+once.  The redistverse is developed and maintained by the Algorithm-Assisted
+Redistricting Methodology (ALARM) Project.  For more details see
+<https://alarm-redist.org>.")
+    (license license:expat)))
+
 (define-public r-redistmetrics
   (package
     (name "r-redistmetrics")
-    (version "1.0.9")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redistmetrics" version))
        (sha256
-        (base32 "1kfi399v87zh54qdbgzm5c6sk14hdxlj6604zx8dh7i5w5kvm13m"))))
+        (base32 "1rrz5hpyvzh6a3y9qzjxw1jck33gvmmlssx0fbvdn1fly8ms9wav"))))
     (properties `((upstream-name . "redistmetrics")))
     (build-system r-build-system)
     (arguments
@@ -39234,6 +39162,7 @@ research and conservation efforts.")
                              r-rcpparmadillo
                              r-rcpp
                              r-magrittr
+                             r-libgeos
                              r-geos
                              r-foreach
                              r-dplyr
@@ -39303,43 +39232,6 @@ Merge-split/Recombination algorithms of Carter et al. (2019)
 <doi:10.1162/99608f92.eb30390f>, and the Short-burst optimization algorithm of
 Cannon et al. (2020) <doi:10.48550/@code{arXiv.2011.02288>}.")
     (license license:gpl2+)))
-
-(define-public r-rediscover
-  (package
-    (name "r-rediscover")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rediscover" version))
-       (sha256
-        (base32 "0g36j5xdc86422jc1njlab4kvlsq3z6bxigxgzsl31bf1k7kc1ra"))))
-    (properties `((upstream-name . "Rediscover")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiftconvolvepoibin
-                             r-rcolorbrewer
-                             r-poissonbinomial
-                             r-matrixstats
-                             r-matrix
-                             r-maftools
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Rediscover")
-    (synopsis "Identify Mutually Exclusive Mutations")
-    (description
-     "An optimized method for identifying mutually exclusive genomic events.  Its main
-contribution is a statistical analysis based on the Poisson-Binomial
-distribution that takes into account that some samples are more mutated than
-others.  See [Canisius, Sander, John WM Martens, and Lodewyk FA Wessels. (2016)
-\"A novel independence test for somatic alterations in cancer shows that biology
-drives mutual exclusivity but chance explains most co-occurrence.\" Genome
-biology 17.1 : 1-17. <doi:10.1186/s13059-016-1114-x>].  The mutations matrices
-are sparse matrices.  The method developed takes advantage of the advantages of
-this type of matrix to save time and computing resources.")
-    (license license:artistic2.0)))
 
 (define-public r-redisbasecontainer
   (package
@@ -40322,6 +40214,35 @@ variables in the original training data for the predictive model and (2) use
 these data to run a set of basic validation tests on the new set of
 observations.")
     (license license:expat)))
+
+(define-public r-recor
+  (package
+    (name "r-recor")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "recor" version))
+       (sha256
+        (base32 "00jkiaxmv42aazxqfqrz2zl825li1rf6d40xx1yq2p4zcmmwf9sr"))))
+    (properties `((upstream-name . "recor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/byaxb/recor")
+    (synopsis "Rearrangement Correlation Coefficient")
+    (description
+     "The Rearrangement Correlation Coefficient is an adjusted version of Pearson's
+correlation coefficient that accurately measures monotonic dependence
+relationships, including both linear and nonlinear associations.  This method
+addresses the underestimation problem of classical correlation coefficients in
+nonlinear monotonic scenarios through improved statistical bounds derived from
+rearrangement inequalities.  For more details, see Ai (2024)
+<doi:10.52202/079017-1180>.")
+    (license license:gpl3)))
 
 (define-public r-reconstructr
   (package
@@ -46087,20 +46008,21 @@ Expectation-Maximization approach.")
 (define-public r-rcppgreedysetcover
   (package
     (name "r-rcppgreedysetcover")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppGreedySetCover" version))
        (sha256
-        (base32 "1v84i9gsmvpkmgd4niqnzp58nhrgn2j4rggsrnlh391ikdfrl51x"))))
+        (base32 "1wh3z0zrkzy2ihvh6i5jl7jrkiziz37sj9xhicvzvfwnq2dlisdh"))))
     (properties `((upstream-name . "RcppGreedySetCover")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-data-table r-bh))
-    (home-page "http://github.com/matthiaskaeding/RcppGreedySetCover")
+    (home-page
+     "https://github.com/matthiaskaeding/setcover/tree/main/rcpp_greedy_set_cover/")
     (synopsis "Greedy Set Cover")
     (description
      "This package provides a fast implementation of the greedy algorithm for the set
@@ -46570,50 +46492,6 @@ neighbors, and convex hull algorithms.  For more information about how to use
 the header files, see the CGAL documentation at <https://www.cgal.org>.
 Currently downloads version 6.1 of the CGAL header files.")
     (license license:gpl3)))
-
-(define-public r-rcppcensspatial
-  (package
-    (name "r-rcppcensspatial")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppCensSpatial" version))
-       (sha256
-        (base32 "0ghywbg2zrhd72y3hf99niqlw04gvfzfa02pa581lvvd67z19gjp"))))
-    (properties `((upstream-name . "RcppCensSpatial")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stempcens
-                             r-roptim
-                             r-relliptical
-                             r-rdpack
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-momtrunc
-                             r-gridextra
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=RcppCensSpatial")
-    (synopsis
-     "Spatial Estimation and Prediction for Censored/Missing Responses")
-    (description
-     "It provides functions to estimate parameters in linear spatial models with
-censored/missing responses via the Expectation-Maximization (EM), the Stochastic
-Approximation EM (SAEM), or the Monte Carlo EM (MCEM) algorithm.  These
-algorithms are widely used to compute the maximum likelihood (ML) estimates in
-problems with incomplete data.  The EM algorithm computes the ML estimates when
-a closed expression for the conditional expectation of the complete-data
-log-likelihood function is available.  In the MCEM algorithm, the conditional
-expectation is substituted by a Monte Carlo approximation based on many
-independent simulations of the missing data.  In contrast, the SAEM algorithm
-splits the E-step into simulation and integration steps.  This package also
-approximates the standard error of the estimates using the Louis method.
-Moreover, it has a function that performs spatial prediction in new locations.")
-    (license license:gpl2+)))
 
 (define-public r-rcppblaze
   (package
@@ -49864,13 +49742,13 @@ loglinear models.")
 (define-public r-rcan
   (package
     (name "r-rcan")
-    (version "1.3.91")
+    (version "1.3.92")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcan" version))
        (sha256
-        (base32 "1himszrwppswwi7ghjs9v4yim55ia4qgi9lphdibgnz8x9bwk2li"))))
+        (base32 "1mj4ddf6gspxqgcrr4sicsgpscc7xrn6vs16bvm32awkhirh5zkk"))))
     (properties `((upstream-name . "Rcan")))
     (build-system r-build-system)
     (arguments
@@ -54672,13 +54550,13 @@ numerical and categorical data.")
 (define-public r-rangr
   (package
     (name "r-rangr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rangr" version))
        (sha256
-        (base32 "0zjgmfffmch8v6acfa7zyqcz1scwxr3nzg99sl4q19dqp2a9gvhy"))))
+        (base32 "0d8pdjv47vs5l6bji3mlajp8k12icdakjdyr852g00lx4rm6s0ib"))))
     (properties `((upstream-name . "rangr")))
     (build-system r-build-system)
     (arguments
@@ -59028,29 +58906,6 @@ generating Microsoft @code{PowerPoint} presentations.  Warning:this package is
 soon to be archived from CRAN.")
     (license license:gpl3)))
 
-(define-public r-r2pmml
-  (package
-    (name "r-r2pmml")
-    (version "0.30.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "r2pmml" version))
-       (sha256
-        (base32 "0lk11884z5a336z6j9xp7qch8lzj4xyd5h75zapcpcxrcx4n43mq"))))
-    (properties `((upstream-name . "r2pmml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (home-page "https://github.com/jpmml/r2pmml")
-    (synopsis "Convert R Models to PMML")
-    (description
-     "R wrapper for the JPMML-R library <https://github.com/jpmml/jpmml-r>, which
-converts R models to Predictive Model Markup Language (PMML).")
-    (license license:agpl3)))
-
 (define-public r-r2openbugs
   (package
     (name "r-r2openbugs")
@@ -59446,13 +59301,13 @@ based htmlwidgets in R packages.")
 (define-public r-r2d2ordinal
   (package
     (name "r-r2d2ordinal")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2D2ordinal" version))
        (sha256
-        (base32 "0q0kb5yr9d7l7k3w020zvp8ad1xnz79pi96wvaf8wx18zbasshhs"))))
+        (base32 "1g8v6192n3a2rm5qj9cqz4fbashf6zwqyqxnw8kmvvjscn0chl52"))))
     (properties `((upstream-name . "R2D2ordinal")))
     (build-system r-build-system)
     (arguments
@@ -59473,10 +59328,10 @@ based htmlwidgets in R packages.")
     (synopsis "Implements Pseudo-R2D2 Prior for Ordinal Regression")
     (description
      "This package implements the pseudo-R2D2 prior for ordinal regression from the
-paper \"Psuedo-R2D2 prior for high-dimensional ordinal regression\" by Yanchenko
-(2025) <doi:10.48550/@code{arXiv.2502.17491>}.  In particular, it provides code
-to evaluate the probability distribution function for the cut-points, compute
-the log-likelihood, calculate the hyper-parameters for the global variance
+paper \"Pseudo-R2D2 prior for high-dimensional ordinal regression\" by Yanchenko
+(2025) <doi:10.1007/s11222-025-10667-x>.  In particular, it provides code to
+evaluate the probability distribution function for the cut-points, compute the
+log-likelihood, calculate the hyper-parameters for the global variance
 parameter, find the distribution of @code{McFadden's}
 coefficient-of-determination, and fit the model in rstan'.  Please cite the
 paper if you use these codes.")

@@ -9589,13 +9589,13 @@ polynomial fits to describe and analyze force curve shapes.")
 (define-public r-forceplate
   (package
     (name "r-forceplate")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forceplate" version))
        (sha256
-        (base32 "0agr4w6qy1sdnn0aa5xpm4dy2zpcjyi6w3hcqf4yfgim0a2gb930"))))
+        (base32 "1c544rrgv3jic8xq9mvjmpzb0l6w38l87cp7acb4f8py2pww3fqg"))))
     (properties `((upstream-name . "forceplate")))
     (build-system r-build-system)
     (arguments
@@ -11015,13 +11015,13 @@ as asymmetrical factorial designs.")
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2025.8")
+    (version "2025.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "1ya9fgqig5h8ysrqn81zazm1lv6gmqg5z8875pk5m15xnr09zsp7"))))
+        (base32 "19gd4hans5jpw1p7fhwl707zhy8cklff6n7m3cd3dcsxmjafsimf"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (arguments
@@ -15623,6 +15623,44 @@ and even though these plugins will raise the security of your server you should
 not build critical infrastructure without the aid of a security expert.")
     (license license:expat)))
 
+(define-public r-fireproof
+  (package
+    (name "r-fireproof")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fireproof" version))
+       (sha256
+        (base32 "1vi6138lnckvp5cs1a5pnwvjrafwhdbkwi5sia42dqhvzhhnqbpz"))))
+    (properties `((upstream-name . "fireproof")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-urltools
+                             r-sodium
+                             r-routr
+                             r-rlang
+                             r-reqres
+                             r-r6
+                             r-jsonlite
+                             r-jose
+                             r-firesale
+                             r-fiery
+                             r-curl
+                             r-cli
+                             r-base64enc))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/thomasp85/fireproof")
+    (synopsis "Authentication and Authorization for 'fiery' Servers")
+    (description
+     "This package provides a plugin for fiery that supports various forms of
+authorization and authentication schemes.  Schemes can be required in various
+combinations or by themselves and can be combined with scopes to provide
+fine-grained access control to the server.")
+    (license license:expat)))
+
 (define-public r-fireexposur
   (package
     (name "r-fireexposur")
@@ -16577,6 +16615,36 @@ genomes and offers various options for customizing the estimation process.  The
 basic method @code{findGSE} is detailed in Sun, Hequan, et al. (2018)
 <doi:10.1093/bioinformatics/btx637>.")
     (license license:gpl2+)))
+
+(define-public r-find
+  (package
+    (name "r-find")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FIND" version))
+       (sha256
+        (base32 "0zr9k702hk934anh1pqnw1a0pi9j6z27lg4m5j79hhvf7ip5gdm9"))))
+    (properties `((upstream-name . "FIND")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-gtable r-gridextra r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FIND")
+    (synopsis "Objective Comparison of Phase I Dose-Finding Designs")
+    (description
+     "Generate decision tables and simulate operating characteristics for phase I
+dose-finding designs to enable objective comparison across methods.  Supported
+designs include the traditional 3+3, Bayesian Optimal Interval (BOIN) (Liu and
+Yuan (2015) <doi:10.1158/1078-0432.CCR-14-1526>), modified Toxicity Probability
+Interval-2 (@code{mTPI-2}) (Guo et al. (2017) <doi:10.1002/sim.7185>), interval
+3+3 (i3+3) (Liu et al. (2020) <doi:10.1177/0962280220939123>), and Generalized
+3+3 (G3).  Provides visualization tools for comparing decision rules and
+operating characteristics across multiple designs simultaneously.")
+    (license license:expat)))
 
 (define-public r-fincovregularization
   (package
@@ -18189,6 +18257,50 @@ relevant documentation.  Most commonly, you should not worry about the
 individual packages that make up the package-collection as you can access all
 features via this package.  To learn more about @code{ForestGEO} visit
 <http://www.forestgeo.si.edu/>.")
+    (license license:gpl3)))
+
+(define-public r-fgdir
+  (package
+    (name "r-fgdir")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fgdiR" version))
+       (sha256
+        (base32 "0srp39mkjqfqdyh5gy30yjzd5cmsqfjrg1jcis09dih6xygpr8wl"))))
+    (properties `((upstream-name . "fgdiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-refund
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fgdiR")
+    (synopsis "Functional Gait Deviation Index")
+    (description
+     "This package provides a typical gait analysis requires the examination of the
+motion of nine joint angles on the left-hand side and six joint angles on the
+right-hand side across multiple subjects.  Due to the quantity and complexity of
+the data, it is useful to calculate the amount by which a subjectâs gait
+deviates from an average normal profile and to represent this deviation as a
+single number.  Such a measure can quantify the overall severity of a condition
+affecting walking, monitor progress, or evaluate the outcome of an intervention
+prescribed to improve the gait pattern.  This R package provides tools for
+computing the Functional Gait Deviation Index, a novel index for quantifying
+gait pathology using multivariate functional principal component analysis.  The
+package supports analysis at the level of both legs combined, individual legs,
+and individual joints/planes.  It includes functions for functional data
+preprocessing, multivariate functional principal component decomposition, FGDI
+computation, and visualisation of gait abnormality scores.  Further details can
+be found in Minhas, S. K., Sangeux, M., Polak, J., & Carey, M. (2025).  The
+Functional Gait Deviation Index.  Journal of Applied Statistics
+<doi:10.1080/02664763.2025.2514150>.")
     (license license:gpl3)))
 
 (define-public r-fgarch
@@ -22006,6 +22118,31 @@ Analysis <doi:10.1038/nbt.1614>.")
 with R\".")
     (license license:gpl3)))
 
+(define-public r-favr
+  (package
+    (name "r-favr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "favr" version))
+       (sha256
+        (base32 "1bigr6y7vlvhb5nl2ravh4d5qkxhkm5k00c399ghwklaafb52a9n"))))
+    (properties `((upstream-name . "favr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-tidyselect r-rlang r-cli))
+    (home-page "https://lj-jenkins.github.io/favr/")
+    (synopsis "Function Argument Validation")
+    (description
+     "Validate function arguments succinctly with informative error messages and
+optional automatic type casting and size recycling.  Enable schema-based
+assertions by attaching reusable rules to data.frame and list objects for use
+throughout workflows.")
+    (license license:expat)))
+
 (define-public r-favnums
   (package
     (name "r-favnums")
@@ -22779,36 +22916,34 @@ n is the number of nodes.")
 (define-public r-fastret
   (package
     (name "r-fastret")
-    (version "1.1.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastRet" version))
        (sha256
-        (base32 "09q0pcc54dzjgbx27w9qvwzqca1hp526x254wv75hxs74whbysci"))))
+        (base32 "1v8f58klb01bdf2048hncc2z6daxl66wgi0xvylzdv53vm3dkdmb"))))
     (properties `((upstream-name . "FastRet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xlsx
-                             r-xgboost
+    (propagated-inputs (list r-xgboost
+                             r-withr
                              r-shinyjs
                              r-shinyhelper
-                             r-shinybusy
                              r-shiny
-                             r-readxl
+                             r-rlang
                              r-rcdk
                              r-promises
+                             r-openxlsx
                              r-htmltools
                              r-glmnet
                              r-ggplot2
                              r-future
                              r-dt
-                             r-digest
                              r-data-table
                              r-cluster
-                             r-caret
                              r-bslib))
     (home-page "https://github.com/spang-lab/FastRet/")
     (synopsis "Retention Time Prediction in Liquid Chromatography")
@@ -25200,13 +25335,13 @@ FAO Irrigation and drainage paper 56\".")
 (define-public r-fanyi
   (package
     (name "r-fanyi")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fanyi" version))
        (sha256
-        (base32 "15f6ffl0m11clsy2rkvy2psljnwgsyif1ghmny7ki9wnp2jkin57"))))
+        (base32 "0v0dfqfwlp3q5nbasli3abki5j437c75mvkgwg7mp99pikvs0482"))))
     (properties `((upstream-name . "fanyi")))
     (build-system r-build-system)
     (arguments
@@ -25314,34 +25449,6 @@ Estimation of Feature Allocations\" <doi:10.1080/10618600.2023.2204136>.")
 except you can mix left open and right open intervals with point values,
 intervals that are closed on both ends and intervals that are open on both ends.")
     (license license:cc0)))
-
-(define-public r-fanc
-  (package
-    (name "r-fanc")
-    (version "2.3.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fanc" version))
-       (sha256
-        (base32 "0lvzp18r5facwbbvjf00zgrlzhr4dp8f6f87fmy04dgqwj7pzwhh"))))
-    (properties `((upstream-name . "fanc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-ellipse))
-    (home-page "https://doi.org/10.1007/s11222-014-9458-0")
-    (synopsis "Penalized Likelihood Factor Analysis via Nonconvex Penalty")
-    (description
-     "Computes the penalized maximum likelihood estimates of factor loadings and
-unique variances for various tuning parameters.  The pathwise coordinate descent
-along with EM algorithm is used.  This package also includes a new graphical
-tool which outputs path diagram, goodness-of-fit indices and model selection
-criteria for each regularization parameter.  The user can change the
-regularization parameter by manipulating scrollbars, which is helpful to find a
-suitable value of regularization parameter.")
-    (license license:gpl2+)))
 
 (define-public r-famskatrc
   (package
@@ -26238,20 +26345,19 @@ Useful when using the book.")
 (define-public r-fafa
   (package
     (name "r-fafa")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAfA" version))
        (sha256
-        (base32 "19kr7kqdsv9f599xbp27lb9lx2kb5pcc4kdp5zbkgi0ih8rvv035"))))
+        (base32 "0d7i53ai2a599g2l4zj1cs36k6f4q8qpzihgmvq1wvjk2xssja60"))))
     (properties `((upstream-name . "FAfA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sirt
-                             r-shinydashboard
                              r-shinycssloaders
                              r-shiny
                              r-semtools
@@ -26260,14 +26366,19 @@ Useful when using the book.")
                              r-psychometric
                              r-psych
                              r-pastecs
+                             r-naniar
                              r-mvnormaltest
                              r-moments
+                             r-missforest
+                             r-mice
                              r-mctest
                              r-mbess
                              r-magrittr
                              r-lavaan
+                             r-itemrest
                              r-haven
                              r-golem
+                             r-ggplot2
                              r-ggcorrplot
                              r-energy
                              r-eganet
@@ -26275,8 +26386,11 @@ Useful when using the book.")
                              r-efa-mrfa
                              r-efa-dimensions
                              r-dplyr
-                             r-config))
-    (home-page "https://cran.r-project.org/package=FAfA")
+                             r-config
+                             r-bslib
+                             r-bsicons
+                             r-amelia))
+    (home-page "https://github.com/AFarukKILIC/FAfA")
     (synopsis "Factor Analysis for All")
     (description
      "This package provides a comprehensive Shiny-based graphical user interface for
@@ -26292,7 +26406,7 @@ The application leverages established R packages such as lavaan and psych to
 perform these analyses, offering an accessible platform for researchers and
 students.  Results are presented in user-friendly tables and plots, with options
 for downloading outputs.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-faersquarterlydata
   (package

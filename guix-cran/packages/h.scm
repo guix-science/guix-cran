@@ -3148,13 +3148,13 @@ obsolete are not included.")
 (define-public r-htlr
   (package
     (name "r-htlr")
-    (version "0.4-4")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HTLR" version))
        (sha256
-        (base32 "0mi03r9izipvmla5pm0s42vm85ishr3bb8pjdw906s4q7lkxjivz"))))
+        (base32 "0c4jxxvsa614w5f9fvqd4b8lcs4ncfwqlwsbiyhrj3mnq07pcn4b"))))
     (properties `((upstream-name . "HTLR")))
     (build-system r-build-system)
     (arguments
@@ -3172,7 +3172,7 @@ hyper-parameters is sampled with restricted Gibbs sampling for leveraging the
 high-dimensionality and Hamiltonian Monte Carlo for handling the
 high-correlation among coefficients.  A detailed description of the method: Li
 and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
-2827-2851, <@code{arXiv:1405.3319>}.")
+2827-2851, <doi:10.48550/@code{arXiv.1405.3319>}.")
     (license license:gpl3)))
 
 (define-public r-htgm3d
@@ -5926,13 +5926,13 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
 (define-public r-hmr
   (package
     (name "r-hmr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMR" version))
        (sha256
-        (base32 "14hhdk8l3kx0388ixa2facrw8h5blry1sxch6sci60g4iwwcwi8v"))))
+        (base32 "1xfhjxa9gmk57ldv81ffgpgsmywdbhcf34hyjifa5rl0jr7x30i4"))))
     (properties `((upstream-name . "HMR")))
     (build-system r-build-system)
     (arguments
@@ -11554,89 +11554,6 @@ files, while automatically slowing down requests, letting you know where it is
 up to, and adjusting for files that have already been downloaded.")
     (license license:expat)))
 
-(define-public r-healthyverse
-  (package
-    (name "r-healthyverse")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "healthyverse" version))
-       (sha256
-        (base32 "0l7fwlfr1kzrwmb8g9vln0bhdig9sqi27sdxx8ydpl9pgqwqv1vx"))))
-    (properties `((upstream-name . "healthyverse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidydensity
-                             r-tidyaml
-                             r-tibble
-                             r-rstudioapi
-                             r-rlang
-                             r-randomwalker
-                             r-purrr
-                             r-magrittr
-                             r-healthyr-ts
-                             r-healthyr-data
-                             r-healthyr-ai
-                             r-healthyr
-                             r-dplyr
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.spsanderson.com/healthyverse/")
-    (synopsis "Easily Install and Load the 'healthyverse'")
-    (description
-     "The healthyverse is a set of packages that work in harmony because they share
-common data representations and API design.  This package is designed to make it
-easy to install and load multiple healthyverse packages in a single step.")
-    (license license:expat)))
-
-(define-public r-healthyr-ts
-  (package
-    (name "r-healthyr-ts")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "healthyR.ts" version))
-       (sha256
-        (base32 "139y1xjnb2803gk191mhi1ib8m9ivaf64zqcqxs3dnd7blbdxvj6"))))
-    (properties `((upstream-name . "healthyR.ts")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-workflowsets
-                             r-timetk
-                             r-tidyr
-                             r-tibble
-                             r-stringi
-                             r-rlang
-                             r-recipes
-                             r-purrr
-                             r-plotly
-                             r-parsnip
-                             r-modeltime
-                             r-magrittr
-                             r-lubridate
-                             r-hardhat
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.spsanderson.com/healthyR.ts/")
-    (synopsis "The Time Series Modeling Companion to 'healthyR'")
-    (description
-     "Hospital time series data analysis workflow tools, modeling, and automations.
-This library provides many useful tools to review common administrative time
-series hospital data.  Some of these include average length of stay, and
-readmission rates.  The aim is to provide a simple and consistent verb framework
-that takes the guesswork out of everything.")
-    (license license:expat)))
-
 (define-public r-healthyr-data
   (package
     (name "r-healthyr-data")
@@ -12364,13 +12281,13 @@ FrÃ©vent et al. (2023) <doi:10.1093/jrsssc/qlad017>, Smida et al. (2022)
 (define-public r-hdsinrdata
   (package
     (name "r-hdsinrdata")
-    (version "0.1.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDSinRdata" version))
        (sha256
-        (base32 "1fvvzmqnqwxql6ny5zq0hv8w8sv5k0canzww9bc8w8vaxdpv47x7"))))
+        (base32 "120900mgw55i15507x5whg7g7kmzqi3cd5z5s87l47mcqz2f43n7"))))
     (properties `((upstream-name . "HDSinRdata")))
     (build-system r-build-system)
     (arguments

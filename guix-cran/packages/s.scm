@@ -4844,13 +4844,13 @@ the package can be found at
 (define-public r-survivalsl
   (package
     (name "r-survivalsl")
-    (version "0.98")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalSL" version))
        (sha256
-        (base32 "02kq1rcz0yi4dix6zakp4w0b0wqzng45l62vbc40i5ghjfi3xgq4"))))
+        (base32 "0ar778jv5dhkza4nm69bkkd2nja35kym8lkvmzgv6xni9c2cs4xk"))))
     (properties `((upstream-name . "survivalSL")))
     (build-system r-build-system)
     (arguments
@@ -7704,20 +7704,19 @@ dissimilarity measures.")
 (define-public r-supercell
   (package
     (name "r-supercell")
-    (version "1.0.1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuperCell" version))
        (sha256
-        (base32 "0y0mqg1vzlcll9wd5wq0fiimlzbdhwwfcyr6zpwz45nq8r8wizvq"))))
+        (base32 "1wrjy6cb1271l1jspvr1s139mqnbpx90a01af1d2jiqnw4yavnzl"))))
     (properties `((upstream-name . "SuperCell")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-weights
-                             r-weightedcluster
                              r-umap
                              r-scales
                              r-rtsne
@@ -7744,7 +7743,10 @@ dissimilarity measures.")
      "Aggregates large single-cell data into metacell dataset by merging together gene
 expression of very similar cells. @code{SuperCell} uses velocyto.R
 <doi:10.1038/s41586-018-0414-6> <https://github.com/velocyto-team/velocyto.R>
-for RNA velocity.  We also recommend installing scater Bioconductor package
+for RNA velocity and @code{WeightedCluster}
+<doi:10.12682/lives.2296-1658.2013.24>
+<https://mephisto.unige.ch/weightedcluster/> for weighted clustering on
+metacells.  We also recommend installing scater Bioconductor package
 <doi:10.18129/B9.bioc.scater>
 <https://bioconductor.org/packages/release/bioc/html/scater.html>.")
     (license license:gpl3)))
@@ -20301,57 +20303,6 @@ read as a vector into R, and can be write into srt file after modified using
 this package.")
     (license license:gpl2+)))
 
-(define-public r-srtsim
-  (package
-    (name "r-srtsim")
-    (version "0.99.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SRTsim" version))
-       (sha256
-        (base32 "0gfi3dng3pl2ki4g6nbwjxhq4zbj3j4yq95j4dyfzbqj8k4ah7lv"))))
-    (properties `((upstream-name . "SRTsim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-spatstat-random
-                             r-spatstat-geom
-                             r-sp
-                             r-shinydashboard
-                             r-shinybs
-                             r-shiny
-                             r-sf
-                             r-s4vectors
-                             r-plotly
-                             r-pdist
-                             r-morpho
-                             r-matrixstats
-                             r-matrix
-                             r-mass
-                             r-magrittr
-                             r-magick
-                             r-ggpubr
-                             r-ggplot2
-                             r-fnn
-                             r-dt
-                             r-dplyr
-                             r-dashboardthemes
-                             r-concaveman))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SRTsim")
-    (synopsis "Simulator for Spatially Resolved Transcriptomics")
-    (description
-     "An independent, reproducible, and flexible Spatially Resolved Transcriptomics
-(SRT) simulation framework that can be used to facilitate the development of SRT
-analytical methods for a wide variety of SRT-specific analyses.  It utilizes
-spatial localization information to simulate SRT expression count data in a
-reproducible and scalable fashion.  Two major simulation schemes are implemented
-in SRTsim': reference-based and reference-free.")
-    (license license:gpl3+)))
-
 (define-public r-srt
   (package
     (name "r-srt")
@@ -29075,13 +29026,13 @@ Nordhausen, Ruiz-Gazen and Virta (2020) <doi:10.1093/biomet/asz079>.")
 (define-public r-spatialatomizer
   (package
     (name "r-spatialatomizer")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialAtomizeR" version))
        (sha256
-        (base32 "089zffw27sn3rhc3q4sxm59q8cg04vzg89zxvn41c6ybqwha86zv"))))
+        (base32 "1260x12w4sxg41vq79m80737yk4ac3s1lbjq4whkq819aaykrsba"))))
     (properties `((upstream-name . "spatialAtomizeR")))
     (build-system r-build-system)
     (arguments
@@ -31248,13 +31199,13 @@ and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "3.7.0")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "15k5shyq65km1mmqiyzqp1lwm251s3hj03vvs0c46ph32bkrww46"))))
+        (base32 "18ygx5dr467djwila5q8jgd4lcxaqk7zq7vkhjfnzy1qx1rfrjdy"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -36007,28 +35958,29 @@ same files.")
 (define-public r-snazzier
   (package
     (name "r-snazzier")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snazzieR" version))
        (sha256
-        (base32 "1ccm0414ydrk405hg0bjvd9v70yz1xl0mbj6l945qbjskaxy2w32"))))
+        (base32 "1wkf5m6j9lww7p8fyk5jg2gmwq07h8x9sa2mr8c9xspa4gm898k8"))))
     (properties `((upstream-name . "snazzieR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-knitr r-kableextra r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=snazzieR")
+    (native-inputs (list r-knitr))
+    (home-page "https://detectivefierce.github.io/snazzieR/")
     (synopsis "Chic and Sleek Functions for Beautiful Statisticians")
     (description
      "Because your linear models deserve better than console output.  A sleek color
 palette and kable styling to make your regression results look sharper than they
 are.  Includes support for Partial Least Squares (PLS) regression via both the
 SVD and NIPALS algorithms, along with a unified interface for model fitting and
-fabulous @code{LaTeX} and console output formatting.  See the package manual at
-<https://github.com/@code{JesusButForGayPeople/snazzieR/releases/download/v0.1.1/snazzieR_0.1.1.pdf>}.")
+fabulous @code{LaTeX} and console output formatting.  See the package website at
+<https://finitesample.space/snazzier>.")
     (license license:expat)))
 
 (define-public r-snapshot
@@ -38203,6 +38155,32 @@ common axis, amongst several samples.  See Warton et al.  2012
 <doi:10.1111/j.2041-210X.2011.00153.x> for methods description.")
     (license license:gpl2)))
 
+(define-public r-smashr
+  (package
+    (name "r-smashr")
+    (version "1.3-12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smashr" version))
+       (sha256
+        (base32 "0zxvk7mszpdxa53qrrf6a5gwms41lnsq1rj0bh8x1mryhli86pfb"))))
+    (properties `((upstream-name . "smashr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavethresh r-rcpp r-data-table r-catools r-ashr))
+    (home-page "https://github.com/stephenslab/smashr")
+    (synopsis "Smoothing by Adaptive Shrinkage")
+    (description
+     "Fast, wavelet-based Empirical Bayes shrinkage methods for signal denoising,
+including smoothing Poisson-distributed data and Gaussian-distributed data with
+possibly heteroskedastic error.  The algorithms implement the methods described
+Z. Xing, P. Carbonetto & M. Stephens (2021)
+<https://jmlr.org/papers/v22/19-042.html>.")
+    (license license:gpl3+)))
+
 (define-public r-smash
   (package
     (name "r-smash")
@@ -39479,13 +39457,13 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
 (define-public r-slimr
   (package
     (name "r-slimr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SlimR" version))
        (sha256
-        (base32 "1ipn1qwizqi57mxgqcg8rj6adm10ys4x4v407l1zh948i0s7mazc"))))
+        (base32 "1b44b02zkzgwl4cnhgfpwr2w45k5x60fqxrcy2hf5sckmsph2dj5"))))
     (properties `((upstream-name . "SlimR")))
     (build-system r-build-system)
     (arguments
@@ -39508,15 +39486,15 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
      "Annotates single-cell and spatial-transcriptomic (ST) data using marker
 datasets.  Supports unified markers list ('Markers_list') creation from built-in
 databases (e.g., Cellmarker2', @code{PanglaoDB}', @code{scIBD}',
-T@code{CellSI}'), Seurat objects, or user-supplied Excel files. @code{SlimR} can
-predict calculate parameters by machine learning algorithms (e.g., Random
-Forest', Gradient Boosting', Support Vector Machine', Ensemble Learning'), and
-based on Markers_list, calculate gene expression of different cell types and
-predict annotation information and calculate corresponding AUC and annotate it,
-then verify it.  At the same time, it can calculate gene expression
-corresponding to the cell type to generate a reference map for manual annotation
-(e.g., Heat Map', Feature Plots', Combined Plots').  For more details see
-Kabacoff (2020, ISBN:9787115420572).")
+T@code{CellSI}', PCTIT', PCTAM'), Seurat objects, or user-supplied Excel files.
+@code{SlimR} can predict calculation parameters by machine learning algorithms
+(e.g., Random Forest', Gradient Boosting', Support Vector Machine', Ensemble
+Learning'), and based on Markers_list, calculate gene expression of different
+cell types and predict annotation information, and calculate corresponding AUC
+and annotate it, then verify it.  At the same time, it can calculate gene
+expression corresponding to the cell type to generate a reference map for manual
+annotation (e.g., Heat Map', Feature Plots', Combined Plots').  For more
+details, see Kabacoff (2020, ISBN:9787115420572).")
     (license license:expat)))
 
 (define-public r-slim
@@ -41017,47 +40995,6 @@ normal presented in Louredo, Zeller and Ferreira (2021)
 skew-normal-Cauchy presented in Kahrari et al. (2020)
 <doi:10.1080/03610918.2020.1804582>.")
     (license license:gpl2+)))
-
-(define-public r-skewlmm
-  (package
-    (name "r-skewlmm")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "skewlmm" version))
-       (sha256
-        (base32 "0n3hhg2hwgmfqjys88c6hgblc48914f7k6y1p6n051k7pbypnmfk"))))
-    (properties `((upstream-name . "skewlmm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncatednormal
-                             r-relliptical
-                             r-purrr
-                             r-optimparallel
-                             r-numderiv
-                             r-nlme
-                             r-mvtnorm
-                             r-momtrunc
-                             r-moments
-                             r-matrixcalc
-                             r-haven
-                             r-ggrepel
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-dplyr))
-    (home-page "https://github.com/fernandalschumacher/skewlmm")
-    (synopsis "Scale Mixture of Skew-Normal Linear Mixed Models")
-    (description
-     "It fits scale mixture of skew-normal linear mixed models using either an
-expectationâmaximization (EM) type algorithm or its accelerated version
-(Damped Anderson Acceleration with Epsilon Monotonicity, DAAREM), including some
-possibilities for modeling the within-subject dependence.  Details can be found
-in Schumacher, Lachos and Matos (2021) <doi:10.1002/sim.8870>.")
-    (license license:expat)))
 
 (define-public r-skewhyperbolic
   (package
@@ -43715,13 +43652,13 @@ Lambert (2013) <doi:10.1002/sim.5823>).")
 (define-public r-simstudy
   (package
     (name "r-simstudy")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simstudy" version))
        (sha256
-        (base32 "0nncwmlwgzkd16b0v1p5k0w816ma64ambvh9b7f58ph6avdmlqmv"))))
+        (base32 "0p462wilbj1fh1hq18ajqzjavwvf3js714h0s6a7rqjhjgkh3cz7"))))
     (properties `((upstream-name . "simstudy")))
     (build-system r-build-system)
     (arguments
@@ -46100,6 +46037,42 @@ matches the original data to determine model fit.")
 obtain an @code{SimFin} API key (and thus to use this package), you need to
 register at <https://app.simfin.com/login>.")
     (license license:gpl3)))
+
+(define-public r-simfastboin
+  (package
+    (name "r-simfastboin")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simFastBOIN" version))
+       (sha256
+        (base32 "1py6s1wpdjks1nn597ga2x2xfskm456dlpazndnvcxg51zpdpl28"))))
+    (properties `((upstream-name . "simFastBOIN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-knitr r-kableextra r-iso))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gosukehommaEX/simFastBOIN")
+    (synopsis
+     "Fast Bayesian Optimal Interval Design for Phase I Dose-Finding Trials")
+    (description
+     "Conducting Bayesian Optimal Interval (BOIN) design for phase I dose-finding
+trials. @code{simFastBOIN} provides functions for pre-computing decision tables,
+conducting trial simulations, and evaluating operating characteristics.  The
+package uses vectorized operations and the @code{Iso::pava()} function for
+isotonic regression to achieve efficient performance while maintaining full
+compatibility with BOIN methodology.  Version 1.3.2 adds p_saf and p_tox
+parameters for customizable safety and toxicity thresholds.  Version 1.3.1 fixes
+Date field.  Version 1.2.1 adds comprehensive roxygen2 documentation and
+enhanced print formatting with flexible table output options.  Version 1.2.0
+integrated C-based PAVA for isotonic regression.  Version 1.1.0 introduced
+conservative MTD selection (@code{boundMTD}) and flexible early stopping rules
+(n_earlystop_rule).  Methods are described in Liu and Yuan (2015)
+<doi:10.1111/rssc.12089>.")
+    (license license:expat)))
 
 (define-public r-simfam
   (package
@@ -51676,40 +51649,35 @@ hosted by a static web server.")
 (define-public r-shinylink
   (package
     (name "r-shinylink")
-    (version "0.2.2")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShinyLink" version))
        (sha256
-        (base32 "1idb95hdjllrhzm4fx1lrx3d2palbwjshm6ppjw916p7wg7y7wqn"))))
+        (base32 "0i3mnr7dajdpp24dyp0ipq6bpxm1hwjcdvgjvfxps8iacmh2970r"))))
     (properties `((upstream-name . "ShinyLink")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vroom
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-shinywidgets
                              r-shinydashboardplus
                              r-shinydashboard
                              r-shiny
-                             r-readxl
                              r-magrittr
-                             r-lubridate
                              r-jsonlite
                              r-htmlwidgets
-                             r-haven
                              r-golem
-                             r-ggvenn
-                             r-ggplot2
-                             r-gender
                              r-fastlink
                              r-dt
+                             r-dplyr
                              r-config))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ShinyLink")
+    (home-page "https://shinylink.org/")
     (synopsis "'Shiny' Based Record Linkage Tool")
     (description
      "This package provides a bridge is created between existing robust open-source
@@ -52205,6 +52173,31 @@ issues.")
      "In Shiny apps, it is sometimes useful to see a plot or a table in full screen.
 Using Shinyfullscreen', you can easily designate the HTML elements that can be
 displayed on fullscreen and use buttons to trigger the fullscreen view.")
+    (license license:expat)))
+
+(define-public r-shinyfilters
+  (package
+    (name "r-shinyfilters")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyfilters" version))
+       (sha256
+        (base32 "16f65d2aqi8vf6aryz803wim3id0zcdc0dm3mkps72309r31zi8v"))))
+    (properties `((upstream-name . "shinyfilters")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-s7))
+    (native-inputs (list r-knitr))
+    (home-page "https://joshwlivingston.github.io/shinyfilters/")
+    (synopsis "Use 'shiny' to Filter Data")
+    (description
+     "This package provides an interface to shiny inputs used for filtering vectors,
+data.frames, and other objects.  S7'-based implementation allows for seamless
+extensibility.")
     (license license:expat)))
 
 (define-public r-shinyfilter
@@ -54485,43 +54478,6 @@ habitat associations, one of the two components is randomized.  Methods are
 mainly based on Plotkin et al. (2000) <doi:10.1006/jtbi.2000.2158> and Harms et
 al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
     (license license:gpl3+)))
-
-(define-public r-shapr
-  (package
-    (name "r-shapr")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shapr" version))
-       (sha256
-        (base32 "158ncd3vpmvb91w1c5pfrl6gqhcxh61ybn6ib93m3kyzpc93qj52"))))
-    (properties `((upstream-name . "shapr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-future-apply
-                             r-data-table
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://norskregnesentral.github.io/shapr/")
-    (synopsis "Prediction Explanation with Dependence-Aware Shapley Values")
-    (description
-     "Complex machine learning models are often hard to interpret.  However, in many
-situations it is crucial to understand and explain why a model made a specific
-prediction.  Shapley values is the only method for such prediction explanation
-framework with a solid theoretical foundation.  Previously known methods for
-estimating the Shapley values do, however, assume feature independence.  This
-package implements methods which accounts for any feature dependence, and
-thereby produces more accurate estimates of the true Shapley values.  An
-accompanying Python wrapper ('shaprpy') is available through the @code{GitHub}
-repository.")
-    (license license:expat)))
 
 (define-public r-shapper
   (package
@@ -60663,13 +60619,13 @@ with as few dependencies as possible.")
 (define-public r-semgraph
   (package
     (name "r-semgraph")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMgraph" version))
        (sha256
-        (base32 "12qrkdm7yndfszplwnfgr7ab74xmva293y5sy8yvvggsnpljfhal"))))
+        (base32 "16kk8z8fv8ylymmcx2g7mz7fq2ynrkc484cdf20cy3y5i3cnb6y3"))))
     (properties `((upstream-name . "SEMgraph")))
     (build-system r-build-system)
     (arguments
@@ -60683,6 +60639,7 @@ with as few dependencies as possible.")
                              r-mgcv
                              r-lavaan
                              r-igraph
+                             r-graphite
                              r-graph
                              r-glmnet
                              r-glasso
@@ -60692,7 +60649,9 @@ with as few dependencies as possible.")
                              r-dagitty
                              r-corpcor
                              r-boot
-                             r-aspect))
+                             r-aspect
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/fernandoPalluzzi/SEMgraph")
     (synopsis
      "Network Analysis and Causal Inference Through Structural Equation Modeling")
@@ -63380,6 +63339,34 @@ CODAR Ocean Sensors (2016c)
 <http://support.codar.com/Technicians_Information_Page_for_@code{SeaSondes/Manuals_Documentation_Release_8/Application_Guides/Guide_SpectraPlotterMap.pdf>};
 Bushnell and Worthington (2022) <doi:10.25923/4c5x-g538>.")
     (license license:gpl3+)))
+
+(define-public r-seasonalytics
+  (package
+    (name "r-seasonalytics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seasonalytics" version))
+       (sha256
+        (base32 "0px3wn9ijdvkmmhxfsprqd5qvqbl5d3rrw6ndff3skiahj2b1jq7"))))
+    (properties `((upstream-name . "seasonalytics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seastests))
+    (home-page "https://cran.r-project.org/package=seasonalytics")
+    (synopsis
+     "Compute Seasonality Index, Seasonalized and Deseaonalised the Time Series Data")
+    (description
+     "The computation of a seasonal index is a fundamental step in time-series
+forecasting when the data exhibits seasonality.  Specifically, a seasonal index
+quantifies â for each season (e.g. month, quarter, week) â the relative
+magnitude of the seasonal effect compared to the overall average level of the
+series.  This package has been developed to compute seasonal index for time
+series data and it also seasonalise and desesaonalise the time series data.")
+    (license license:gpl3)))
 
 (define-public r-seasonalview
   (package
@@ -68274,13 +68261,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.2.10")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "1yrqnd8x693fflfhfciddff1mqg8w1hkna56m82q1cnpnmlsvww9"))))
+        (base32 "1hbc1ngp0qj6s51b83x6k6zj3qj0xfjlpfclpm2kzak2dxv46yl0"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (arguments
@@ -68293,7 +68280,6 @@ focus is set to prime-calculation.")
                              r-rvest
                              r-rlang
                              r-readr
-                             r-mapview
                              r-magrittr
                              r-leafpop
                              r-httr
@@ -71638,13 +71624,13 @@ research.")
 (define-public r-sarima
   (package
     (name "r-sarima")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarima" version))
        (sha256
-        (base32 "0gp3sd14aj14v8arxgci1ndwsqpg2qhz8v3h07kpwnk4m36m3r8d"))))
+        (base32 "040rbrygp37rrw331p3d92hyav7zss9632ldr620c4czzy662grr"))))
     (properties `((upstream-name . "sarima")))
     (build-system r-build-system)
     (arguments
@@ -73173,13 +73159,13 @@ reference value, testing a correlation coefficient with a specified value, etc.
 (define-public r-samplesizediagnostics
   (package
     (name "r-samplesizediagnostics")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SampleSizeDiagnostics" version))
        (sha256
-        (base32 "1h4scywysya36sc6qvfn5csdghb38wicr96xgwhba289zrd9j2az"))))
+        (base32 "1z8lv53azd0gkdrrhydwzx5j81wkk7wkllvx2w8y96kicb4pl4xx"))))
     (properties `((upstream-name . "SampleSizeDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -75523,56 +75509,6 @@ using modified approach proposed by Haris F and Ubaidillah A
 <doi:10.4108/eai.2-8-2019.2290339>.")
     (license license:gpl3)))
 
-(define-public r-sae-projection
-  (package
-    (name "r-sae-projection")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sae.projection" version))
-       (sha256
-        (base32 "02s1ngqfcxrwddxcmqpj9gazj1qb9m8x3ahgh5vywckx9d12772w"))))
-    (properties `((upstream-name . "sae.projection")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-xgboost
-                             r-workflows
-                             r-tune
-                             r-tidymodels
-                             r-themis
-                             r-survey
-                             r-rsample
-                             r-rlang
-                             r-recipes
-                             r-ranger
-                             r-randomforest
-                             r-parsnip
-                             r-lightgbm
-                             r-glmnet
-                             r-fselector
-                             r-dplyr
-                             r-doparallel
-                             r-cli
-                             r-caret
-                             r-bonsai))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Alfrzlp/sae.projection")
-    (synopsis "Small Area Estimation Using Model-Assisted Projection Method")
-    (description
-     "Combines information from two independent surveys using a model-assisted
-projection method.  Designed for survey sampling scenarios where a large sample
-collects only auxiliary information (Survey 1) and a smaller sample provides
-data on both variables of interest and auxiliary variables (Survey 2).
-Implements a working model to generate synthetic values of the variable of
-interest by fitting the model to Survey 2 data and predicting values for Survey
-1 based on its auxiliary variables (Kim & Rao, 2012)
-<doi:10.1093/biomet/asr063>.")
-    (license license:expat)))
-
 (define-public r-sae
   (package
     (name "r-sae")
@@ -76139,13 +76075,13 @@ methods described in Wilks (2011) <doi:10.1016/B978-0-12-385022-5.00008-7>,
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.1-40")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s20x" version))
        (sha256
-        (base32 "1b2bbkbkmr4d4bfihd87c3vwdfxb21hzaxhd6zqnwz1n0xg2zhb5"))))
+        (base32 "12n4165pwa86247kaq08nk7mzqdhdgxn6k7pskigsrv99i6mdgz6"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (arguments

@@ -7237,13 +7237,13 @@ dimensions are provided.")
 (define-public r-intrinsic
   (package
     (name "r-intrinsic")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intRinsic" version))
        (sha256
-        (base32 "1xsb68ngiax7h6s907h1a03cvr2bp19m7l44x6j0xw0j39dz43p7"))))
+        (base32 "1sv7zvx3pimsjqh43qywdl6xkn49zjfcyhnhg6nxfc3sc7hm97df"))))
     (properties `((upstream-name . "intRinsic")))
     (build-system r-build-system)
     (arguments
@@ -7254,7 +7254,6 @@ dimensions are provided.")
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
-                             r-latex2exp
                              r-knitr
                              r-ggplot2
                              r-fnn
@@ -8226,13 +8225,13 @@ can be assessed.")
 (define-public r-interflex
   (package
     (name "r-interflex")
-    (version "1.2.6")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interflex" version))
        (sha256
-        (base32 "0crijwb076b3hprjnji52l8qnd5pp3w7pxy214sfqrg2g3y4gcfl"))))
+        (base32 "0f02r8r1lmh82s8kjplccb2v5j7w1g9wk47wgspbq48r7d92l3f2"))))
     (properties `((upstream-name . "interflex")))
     (build-system r-build-system)
     (arguments
@@ -8259,7 +8258,7 @@ can be assessed.")
                              r-foreach
                              r-doparallel
                              r-aer))
-    (home-page "http://yiqingxu.org/software/interaction/RGuide.html")
+    (home-page "https://yiqingxu.org/packages/interflex/")
     (synopsis
      "Multiplicative Interaction Models Diagnostics and Visualization")
     (description
@@ -8271,13 +8270,13 @@ values of a moderator.")
 (define-public r-interfacer
   (package
     (name "r-interfacer")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interfacer" version))
        (sha256
-        (base32 "0mx8x22af4l7ac0a90wpy5dc9iw52bdi4bzgdgrjnrj3fnfmvjm8"))))
+        (base32 "1ys0x4brn5lci149zfh40yq0z630jgfff41293n65myyhdzzx71m"))))
     (properties `((upstream-name . "interfacer")))
     (build-system r-build-system)
     (arguments
@@ -8290,11 +8289,12 @@ values of a moderator.")
                              r-rlang
                              r-purrr
                              r-magrittr
+                             r-lobstr
+                             r-lifecycle
                              r-knitr
                              r-glue
                              r-forcats
-                             r-dplyr
-                             r-digest))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://ai4ci.github.io/interfacer/")
     (synopsis
@@ -13533,13 +13533,13 @@ methodology derived from Tiruviluamala, N., Port, A., and Lewis, E. (2022)
 (define-public r-impectr
   (package
     (name "r-impectr")
-    (version "2.5.2")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impectR" version))
        (sha256
-        (base32 "0h4dnbvg6b179kg74dk28lsb9spd2hgk0briv0v6lanlvdq666g9"))))
+        (base32 "1zgw4gbbwk15gbbr64lf89zd7zcy8rqby3af0nw4cwp0im1lsqqa"))))
     (properties `((upstream-name . "impectR")))
     (build-system r-build-system)
     (arguments
@@ -19054,46 +19054,6 @@ Kan Ling and Chaoyu Yuan (2024, <doi:10.48550/@code{arXiv.2411.19878>}).")
 financial-economic time series data.")
     (license license:gpl2+)))
 
-(define-public r-ichimoku
-  (package
-    (name "r-ichimoku")
-    (version "1.5.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ichimoku" version))
-       (sha256
-        (base32 "1pppkxk49b6mppvl75248jg1ixrrxxkmx69b4gxhy3zwx2zs0h6x"))))
-    (properties `((upstream-name . "ichimoku")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-shiny
-                             r-secretbase
-                             r-rcppsimdjson
-                             r-nanonext
-                             r-mirai
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://shikokuchuo.net/ichimoku/")
-    (synopsis "Visualization and Tools for Ichimoku Kinko Hyo Strategies")
-    (description
-     "An implementation of Ichimoku Kinko Hyo', also commonly known as cloud charts'.
-Static and interactive visualizations with tools for creating, backtesting and
-development of quantitative ichimoku strategies.  As described in Sasaki (1996,
-ISBN:4925152009), the technique is a refinement on candlestick charting,
-originating from Japan and now in widespread use in technical analysis
-worldwide.  Translating as one-glance equilibrium chart', it allows the price
-action and market structure of financial securities to be determined
-at-a-glance'.  Incorporates an interface with the OANDA @code{fxTrade} API
-<https://developer.oanda.com/> for retrieving historical and live streaming
-price data for major currencies, metals, commodities, government bonds and stock
-indices.")
-    (license license:gpl3+)))
-
 (define-public r-icgor
   (package
     (name "r-icgor")
@@ -20093,6 +20053,40 @@ The statistical methodology used to estimate the ICC with count data can be
 found in Carrasco (2010) <doi:10.1111/j.1541-0420.2009.01335.x>.")
     (license license:gpl2+)))
 
+(define-public r-icccompare
+  (package
+    (name "r-icccompare")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iccCompare" version))
+       (sha256
+        (base32 "05jdx5z8l0rdywy43jrz2xk8xnfizfvrv4zagqf3kjmyil887p05"))))
+    (properties `((upstream-name . "iccCompare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-progressr
+                             r-parallelly
+                             r-nlme
+                             r-mvtnorm
+                             r-mass
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-deriv
+                             r-bbmle))
+    (home-page "https://cran.r-project.org/package=iccCompare")
+    (synopsis "Comparison of Dependent Intraclass Correlation Coefficients")
+    (description
+     "This package provides methods for testing the equality of dependent intraclass
+correlation coefficients (ICCs) estimated using linear mixed-effects models.
+Several of the implemented approaches are based on the work of Donner and Zou
+(2002) <doi:10.1111/1467-9884.00324>.")
+    (license license:gpl2+)))
+
 (define-public r-iccbin
   (package
     (name "r-iccbin")
@@ -20908,13 +20902,13 @@ simulations are implemented in Rcpp for speed.")
 (define-public r-iblm
   (package
     (name "r-iblm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IBLM" version))
        (sha256
-        (base32 "0nj6s74rmgj4a81z4j7558q5n47z2wlj8mjnvrks0ay1wiksly4p"))))
+        (base32 "09764ykpvajw0njyqraaqcwgvka1rxjwiv9rd10vjk4jwan28kcf"))))
     (properties `((upstream-name . "IBLM")))
     (build-system r-build-system)
     (arguments
@@ -20930,6 +20924,7 @@ simulations are implemented in Rcpp for speed.")
                              r-fastdummies
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://ifoa-adswp.github.io/IBLM/")
     (synopsis "Interpretable Boosted Linear Models")
     (description
