@@ -9714,13 +9714,13 @@ von der Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
 (define-public r-gpgp
   (package
     (name "r-gpgp")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GpGp" version))
        (sha256
-        (base32 "13hkni4w39rkb6ki03i9nfz2cgz8yr7kxcha3n8ivz834gsfzj77"))))
+        (base32 "1ffc3x4q7raz4x9b88zrf55v8pp8264y32qp5h4b7zbp2hsnx6mw"))))
     (properties `((upstream-name . "GpGp")))
     (build-system r-build-system)
     (arguments
@@ -11726,13 +11726,13 @@ corresponding p-values are approximated using a parametric bootstrap method.")
 (define-public r-gofkmt
   (package
     (name "r-gofkmt")
-    (version "2.2.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GofKmt" version))
        (sha256
-        (base32 "1v9n1hfracincgaip7pym2l9h54azajw4fmsld0ff2rsd5np362z"))))
+        (base32 "1nx00rlld70s1nmwcq2vsys6x71npdx9kicvk4sjnwyc8dcc679j"))))
     (properties `((upstream-name . "GofKmt")))
     (build-system r-build-system)
     (arguments
@@ -11744,14 +11744,13 @@ corresponding p-values are approximated using a parametric bootstrap method.")
     (description
      "Consider a goodness-of-fit (GOF) problem of testing whether a random sample
 comes from one sample location-scale model where location and scale parameters
-are unknown.  It is well known that Khmaladze martingale transformation method -
-which was proposed by Khmaladze (1981) <DOI:10.1137/1126027> - provides
-asymptotic distribution free test for the GOF problem.  This package contains
-one function: @code{KhmaladzeTrans()}.  In this version, @code{KhmaladzeTrans()}
-provides test statistic and critical value of GOF test for normal, Cauchy, and
-logistic distributions.  This package used the main algorithm proposed by Kim
-(2020) <DOI:10.1007/s00180-020-00971-7> and tests for other distributions will
-be available at the later version.")
+are unknown.  It is well known that Khmaladze martingale transformation method
+proposed by Khmaladze (1981) <doi:10.1137/1126027> provides asymptotic
+distribution free test for the GOF problem.  This package provides test
+statistic and critical value of GOF test for normal, Cauchy, and logistic
+distributions.  This package used the main algorithm proposed by Kim (2020)
+<doi:10.1007/s00180-020-00971-7> and tests for other distributions will be
+available at the later version.")
     (license license:gpl2)))
 
 (define-public r-gofkernel
@@ -20141,6 +20140,32 @@ scales for red to blue color mapping and for discrete maps.  Implements tools
 for easy label generation and placement, automatic map coloring, and themes.")
     (license license:expat)))
 
+(define-public r-ggrecipes
+  (package
+    (name "r-ggrecipes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggrecipes" version))
+       (sha256
+        (base32 "0ar3v4vr24pqwxcrrw916p3kygbmdi98fwhki1i55ylzhmzhc3l9"))))
+    (properties `((upstream-name . "ggrecipes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-patchwork r-lifecycle r-ggrepel
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ignophi/ggrecipes")
+    (synopsis "Recipes for Data Visualization")
+    (description
+     "This package provides a collection of custom ggplot2'-based visualizations for
+data exploration and analysis.  Each function handles data preprocessing and
+returns a object that can be further customized using standard ggplot2 syntax.")
+    (license license:expat)))
+
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
@@ -20277,13 +20302,13 @@ faceting variables.")
 (define-public r-ggquiver
   (package
     (name "r-ggquiver")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggquiver" version))
        (sha256
-        (base32 "1ywpcbm6rg2f44iiw2j07p7zwfgjrnli6wscrfx93wsqaa55xyfi"))))
+        (base32 "1fcxszlg8ivc99r777z1bk8jw04k8rlvdln8xlpl9613gsafv7jg"))))
     (properties `((upstream-name . "ggquiver")))
     (build-system r-build-system)
     (arguments
@@ -33252,13 +33277,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "0w43px6a6k7aaql0ibm6abmv09qbny7xq38rnz4hfcn5l7zhg4iz"))))
+        (base32 "0cannqa7j5kjild75mc47r3qjlnky9jx3fcqnmg3879zb3g2v1dn"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (arguments
@@ -33278,7 +33303,7 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
                              r-nanoarrow
                              r-bit64))
     (native-inputs (list pkg-config r-knitr))
-    (home-page "https://usdaforestservice.github.io/gdalraster/")
+    (home-page "https://firelab.github.io/gdalraster/")
     (synopsis "Bindings to 'GDAL'")
     (description
      "API bindings to the Geospatial Data Abstraction Library ('GDAL',
@@ -34160,20 +34185,20 @@ user-friendly format for use by both beginners and seasoned R users.")
 (define-public r-gbutils
   (package
     (name "r-gbutils")
-    (version "0.5")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gbutils" version))
        (sha256
-        (base32 "1gn6cmif5ixhgjcp29psfjsm3mk1y38mvv36vmxr77839rmkalxf"))))
+        (base32 "0ysirlh6c5rypvbazyjjqcx81gidwpgsfxd62pkx4a08frwi8yq9"))))
     (properties `((upstream-name . "gbutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rdpack))
-    (home-page "https://github.com/GeoBosh/gbutils")
+    (home-page "https://geobosh.github.io/gbutils/")
     (synopsis
      "Utilities for Simulation, Plots, Quantile Functions and Programming")
     (description

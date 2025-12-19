@@ -23928,13 +23928,13 @@ Cauchy, Student's t and von Mises mixtures.  For more details see Merkys (2018)
 (define-public r-mixture
   (package
     (name "r-mixture")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixture" version))
        (sha256
-        (base32 "0pbaj71vdl2gxng8d75yxl5ppivyqhsvxbhjzawzrir7i4psx9v8"))))
+        (base32 "1706g9aabpz9pvf2j9d6crrny97405kbwxs7bcgz68jvdaks6c89"))))
     (properties `((upstream-name . "mixture")))
     (build-system r-build-system)
     (arguments
@@ -51888,13 +51888,13 @@ squares (SS) of clustering.")
 (define-public r-maive
   (package
     (name "r-maive")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAIVE" version))
        (sha256
-        (base32 "0y1hbmhma16qhbj22rndxi061dy77ps59z6hal5q6lyz7bfx5s9y"))))
+        (base32 "0y6x6m915hygcvzgy9ls13vz1s2jb0dxx7jy00j1rxl7bnz8iz9v"))))
     (properties `((upstream-name . "MAIVE")))
     (build-system r-build-system)
     (arguments

@@ -2603,13 +2603,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-ruido
   (package
     (name "r-ruido")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ruido" version))
        (sha256
-        (base32 "06lk8ksvh31rqxk0x044fhj3dgj4ls1jvpw5nnan5w66z4xqv949"))))
+        (base32 "15ci5mrhl82b3m1j9z2ffv4yna6y13wgbkw0baydgwj48vm7dvb0"))))
     (properties `((upstream-name . "Ruido")))
     (build-system r-build-system)
     (arguments
@@ -4127,13 +4127,13 @@ tide heights from the harmonics is based on XTide'.")
 (define-public r-rtiddlywiki
   (package
     (name "r-rtiddlywiki")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtiddlywiki" version))
        (sha256
-        (base32 "1zw6p7xg6dhldn1v25x0x81lgfbr3xwnwhbg7m447c36crvqcvyp"))))
+        (base32 "0h6bk28dg42yi5h789g8k56v8sq2lm810fr5p6y4ilvhpgs95yj1"))))
     (properties `((upstream-name . "rtiddlywiki")))
     (build-system r-build-system)
     (arguments
@@ -4160,8 +4160,8 @@ tide heights from the harmonics is based on XTide'.")
     (description
      "@code{TiddlyWiki} is a unique non-linear notebook for capturing, organising and
 sharing complex information.  rtiddlywiki is a R interface of @code{TiddlyWiki}
-<https://tiddlywiki.com> to create new tiddler from Rmarkdown file, and then put
-into a local @code{TiddlyWiki} node.js server if it is available.")
+<https://tiddlywiki.com> to create new tiddler from R Markdown file, and then
+put into a local @code{TiddlyWiki} server if it is available.")
     (license license:expat)))
 
 (define-public r-rticulate
@@ -10088,13 +10088,13 @@ Partial Least Squares (PLS), and Random Forest algorithms.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "4.1.3")
+    (version "4.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqPen" version))
        (sha256
-        (base32 "1mgxjys8hvaz6wjxzcz546bg7lyvnh57zvx0aaz731yfqbcflh5p"))))
+        (base32 "1pxzcpjwf5w7dd8sjzmcm69fprh9hb1c7f3bl3lak51kxwz7ypz8"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (arguments
@@ -12693,25 +12693,27 @@ package provides much of the infrastructure.")
 (define-public r-routr
   (package
     (name "r-routr")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "routr" version))
        (sha256
-        (base32 "1k6dc864zdi3n05gpk515mlc6spawck2mvnysapqc50dbw4bwcaf"))))
+        (base32 "1in546k62ss4y8wxy3pbvv4i39hv3yqww7lqa1kxg933356qq3g7"))))
     (properties `((upstream-name . "routr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
+    (propagated-inputs (list r-waysign
+                             r-stringi
                              r-rlang
                              r-reqres
                              r-r6
                              r-promises
                              r-otel
                              r-lifecycle
+                             r-glue
                              r-fs
                              r-cli
                              r-brio))
@@ -27109,6 +27111,41 @@ data.  Methods are described by Dylan S Small et al., (2012)
 <doi:10.1198/016214507000000897>.")
     (license license:expat)))
 
+(define-public r-richcluster
+  (package
+    (name "r-richcluster")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "richCluster" version))
+       (sha256
+        (base32 "0vw6qdwhmpsgyf164b3ldg1k49wli39a0q8pp07x6h8v4rrksy02"))))
+    (properties `((upstream-name . "richCluster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-rcpp
+                             r-plotly
+                             r-networkd3
+                             r-magrittr
+                             r-iheatmapr
+                             r-igraph
+                             r-heatmaply
+                             r-fields
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hurlab/richCluster")
+    (synopsis "Fast, Robust Clustering Algorithms for Gene Enrichment Data")
+    (description
+     "Fast C++ agglomerative hierarchical clustering algorithm packaged into easily
+callable R functions, designed to help cluster biological terms based on how
+similar of genes are expressed in their activation.")
+    (license license:gpl3)))
+
 (define-public r-riceware
   (package
     (name "r-riceware")
@@ -36505,6 +36542,29 @@ resource for teaching and research in probability theory, reliability analysis,
 and applied statistical modeling.")
     (license license:gpl2)))
 
+(define-public r-reliaplotr
+  (package
+    (name "r-reliaplotr")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReliaPlotR" version))
+       (sha256
+        (base32 "0c42jfiqx71filw49ppgh4n2h61m6ydy8csbd4wx845qws4zhh2b"))))
+    (properties `((upstream-name . "ReliaPlotR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weibullr r-reliagrowr r-plotly))
+    (home-page "https://paulgovan.github.io/ReliaPlotR/")
+    (synopsis "Interactive Reliability Probability Plots")
+    (description
+     "Build interactive Reliability Probability Plots with plotly by Carson Sievert
+(2020) <https://plotly.com/r/>, an interactive web-based graphing library.")
+    (license (license:fsdg-compatible "Apache License"))))
+
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
@@ -41407,13 +41467,13 @@ Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 (define-public r-ream
   (package
     (name "r-ream")
-    (version "1.0-5")
+    (version "1.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ream" version))
        (sha256
-        (base32 "11m1n8hqx1sszbrcw87kaahzyyrq10vmfbi9fhwkzkw5b316y9bi"))))
+        (base32 "12sz20r0b3h6mdk7qcij9xf2zmq2s1974qbm0hdg78dpx7228jkg"))))
     (properties `((upstream-name . "ream")))
     (build-system r-build-system)
     (arguments
@@ -49144,46 +49204,6 @@ cheminformatics.  This allows the user to load molecules, evaluate fingerprints,
 calculate molecular descriptors and so on.  In addition, the CDK API allows the
 user to view structures in 2D.")
     (license license:lgpl2.0+)))
-
-(define-public r-rcdf
-  (package
-    (name "r-rcdf")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rcdf" version))
-       (sha256
-        (base32 "1y4i6cd67ib3lk5v3kw2jfl13yxanqhrx661zv595ppmwni86c4c"))))
-    (properties `((upstream-name . "rcdf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-uuid
-                             r-stringr
-                             r-rsqlite
-                             r-openxlsx
-                             r-openssl
-                             r-jsonlite
-                             r-haven
-                             r-glue
-                             r-fs
-                             r-duckdb
-                             r-dplyr
-                             r-dbi
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://yng-me.github.io/rcdf/")
-    (synopsis "Comprehensive Toolkit for Working with Encrypted Parquet Files")
-    (description
-     "Utilities for reading, writing, and managing RCDF files, including encryption
-and decryption support.  It offers a flexible interface for handling data stored
-in encrypted Parquet format, along with metadata extraction, key management, and
-secure operations using Advanced Encryption Standard (AES) and
-Rivest-Shamir-Adleman (RSA) encryption.")
-    (license license:expat)))
 
 (define-public r-rcdea
   (package
@@ -58905,6 +58925,29 @@ customizable behaviour upon queries of missing keys.")
 generating Microsoft @code{PowerPoint} presentations.  Warning:this package is
 soon to be archived from CRAN.")
     (license license:gpl3)))
+
+(define-public r-r2pmml
+  (package
+    (name "r-r2pmml")
+    (version "0.31.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r2pmml" version))
+       (sha256
+        (base32 "0iaiwvsxjarchkbk0r6xbv2rvpvbxlsdbf0ggxi1ann4vn7kzjph"))))
+    (properties `((upstream-name . "r2pmml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (home-page "https://github.com/jpmml/r2pmml")
+    (synopsis "Convert R Models to 'PMML'")
+    (description
+     "R wrapper for the JPMML-R library <https://github.com/jpmml/jpmml-r>, which
+converts R models to Predictive Model Markup Language ('PMML').")
+    (license license:agpl3)))
 
 (define-public r-r2openbugs
   (package

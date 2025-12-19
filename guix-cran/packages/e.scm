@@ -3691,13 +3691,13 @@ format required by @code{MyLearn}'.")
 (define-public r-exams-forge-data
   (package
     (name "r-exams-forge-data")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams.forge.data" version))
        (sha256
-        (base32 "1j1y0xkkmkc7mq2pysmpdwk0a3cwj25plyjp6r86afzwkxcccxnw"))))
+        (base32 "0mfhgm306fl2a18lsx1irfnbqpvz1sc97vzpg7njk5hfi45dlhrk"))))
     (properties `((upstream-name . "exams.forge.data")))
     (build-system r-build-system)
     (arguments
@@ -3713,8 +3713,8 @@ correlation and linear regression analysis.  It includes the precomputed dataset
 sos100', with integer values summing to zero and squared sum equal to 100.  For
 other values of n and user-defined parameters, the @code{sos()} function from
 the exams.forge package can be used to generate datasets on the fly.  In
-addition, the package contains around 500 R Markdown exercises that illustrate
-the usage of exams.forge commands.")
+addition, the package contains around 500 german R Markdown exercises that
+illustrate the usage of exams.forge commands.")
     (license license:gpl3)))
 
 (define-public r-exams-forge
@@ -6149,6 +6149,48 @@ evaluating a model.  Just by giving the real and predicted class, measures such
 as accuracy, sensitivity, specificity, ppv, npv, fmeasure, mcc and ...  will be
 returned.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-evaluatecore
+  (package
+    (name "r-evaluatecore")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EvaluateCore" version))
+       (sha256
+        (base32 "1l5v95zy185b1qnwdd19zcql8mhk8gclzv4p9a8mmng35ywy4rl1"))))
+    (properties `((upstream-name . "EvaluateCore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-reshape2
+                             r-rdpack
+                             r-psych
+                             r-missmda
+                             r-mathjaxr
+                             r-ksamples
+                             r-gridextra
+                             r-ggtext
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-entropy
+                             r-dplyr
+                             r-cluster
+                             r-car
+                             r-boot
+                             r-agricolae))
+    (home-page "https://cran.r-project.org/package=EvaluateCore")
+    (synopsis "Quality Evaluation of Core Collections")
+    (description
+     "This package implements various quality evaluation statistics to assess the
+value of plant germplasm core collections using qualitative and quantitative
+phenotypic trait data according to Odong et al. (2015)
+<doi:10.1007/s00122-012-1971-y>.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-evaltest
   (package
@@ -26826,25 +26868,27 @@ conducted easily.")
 (define-public r-easyabc
   (package
     (name "r-easyabc")
-    (version "1.5.2")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EasyABC" version))
        (sha256
-        (base32 "173830655knpmc9qb7i2n4332rn3d3qp6566kmr2hrw60gh94v1j"))))
+        (base32 "141549w7dimk8kclz8a7lx48la0d05am2kxdv6lacm3wrp9xflkc"))))
     (properties `((upstream-name . "EasyABC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tensora
+                             r-rcpp
                              r-pls
                              r-mnormt
                              r-mass
                              r-lhs
                              r-abc))
-    (home-page "http://easyabc.r-forge.r-project.org/")
+    (native-inputs (list r-knitr))
+    (home-page "https://lisc.pages-forge.inrae.fr/easyabc/")
     (synopsis "Efficient Approximate Bayesian Computation Sampling Schemes")
     (description
      "Enables launching a series of simulations of a computer code from the R session,

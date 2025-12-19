@@ -9511,6 +9511,34 @@ of the output.")
 less space and can appear inline with surrounding text.")
     (license license:expat)))
 
+(define-public r-insetplot
+  (package
+    (name "r-insetplot")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insetplot" version))
+       (sha256
+        (base32 "1w9bwrhya53vj87s5sqkkk73r53wqahmpcr2pkkh959w7wzx9dnc"))))
+    (properties `((upstream-name . "insetplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-patchwork r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://fncokg.github.io/insetplot/")
+    (synopsis "Inset Plots for Spatial Data Visualization")
+    (description
+     "This package provides tools for easily and flexibly creating ggplot2 maps with
+inset maps.  One crucial feature of maps is that they have fixed coordinate
+ratios, i.e., they cannot be distorted, which makes it difficult to manually
+place inset maps.  This package provides functions to automatically position
+inset maps based on user-defined parameters, making it extremely easy to create
+maps with inset maps with minimal code.")
+    (license license:gpl2+)))
+
 (define-public r-insee
   (package
     (name "r-insee")

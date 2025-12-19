@@ -1922,13 +1922,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "25.2.7")
+    (version "25.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "1qw6rjilz1y0ckb1jmh48qy7qjnjiwdggpqgg00bpfx3fnbiq7hh"))))
+        (base32 "1f0ss5670fk4slkf6hkq1mhl35g0394g17kfz1vaps54v4whlgv3"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments
@@ -2586,19 +2586,19 @@ servers in a standard way.")
 (define-public r-httping
   (package
     (name "r-httping")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httping" version))
        (sha256
-        (base32 "0hdcf51yak8yagy4xj9cyck934lgmvpkd08jvlql33ir5mqvvv3i"))))
+        (base32 "1ys0k3kq2762n90d927ba0mfawcirlcmacc2in3z8s7z1z8vgc02"))))
     (properties `((upstream-name . "httping")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pryr r-magrittr r-jsonlite r-httr r-httpcode))
+    (propagated-inputs (list r-magrittr r-lobstr r-jsonlite r-httr r-httpcode))
     (home-page "https://github.com/sckott/httping")
     (synopsis "'Ping' 'URLs' to Time 'Requests'")
     (description
@@ -6172,6 +6172,43 @@ tables proposed by Lang (2004) <doi:10.1214/aos/1079120140> and Lang (2005)
 <doi:10.1198/016214504000001042>.  Inequality constraints on the parameters are
 allowed and can be tested.")
     (license license:gpl2+)))
+
+(define-public r-hmmhsmm
+  (package
+    (name "r-hmmhsmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMHSMM" version))
+       (sha256
+        (base32 "002lpdrsjk5wz5dcc5a8qfbvxnk0k01gmjw951lhpj0ivgxcdl7c"))))
+    (properties `((upstream-name . "HMMHSMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-mnormt r-mass r-extremes r-evd))
+    (home-page "https://cran.r-project.org/package=HMMHSMM")
+    (synopsis
+     "Inference and Estimation of Hidden Markov Models and Hidden Semi-Markov Models")
+    (description
+     "This package provides flexible maximum likelihood estimation and inference for
+Hidden Markov Models (HMMs) and Hidden Semi-Markov Models (HSMMs), as well as
+the underlying systems in which they operate.  The package supports a wide range
+of observation and dwell-time distributions, offering a flexible modelling
+framework suitable for diverse practical data.  Efficient implementations of the
+forward-backward and Viterbi algorithms are provided via Rcpp for enhanced
+computational performance.  Additional functionality includes model simulation,
+residual analysis, non-initialised estimation, local and global decoding,
+calculation of diverse information criteria, computation of confidence intervals
+using parametric bootstrap methods, numerical covariance matrix estimation, and
+comprehensive visualisation functions for interpreting the data-generating
+processes inferred from the models.  Methods follow standard approaches
+described by GuÃ©don (2003) <doi:10.1198/1061860032030>, Zucchini and
+@code{MacDonald} (2009, ISBN:9781584885733), and O'Connell and HÃ¸jsgaard (2011)
+<doi:10.18637/jss.v039.i04>.")
+    (license license:gpl3)))
 
 (define-public r-hmmextra0s
   (package
@@ -12630,13 +12667,13 @@ calibration, and comparison for high-dimensional data.")
 (define-public r-hdmtd
   (package
     (name "r-hdmtd")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdMTD" version))
        (sha256
-        (base32 "143gdpnmmmb3z7ai3nwbr0nwbg3dqy4hy01r9adpyhfplsaqrx18"))))
+        (base32 "1phd8lvm0b2zjmf2wpgk1yjhf2y1zvdrwvx15y787cglw24r8a8b"))))
     (properties `((upstream-name . "hdMTD")))
     (build-system r-build-system)
     (arguments
@@ -14713,6 +14750,39 @@ multivariate settings.  It gives functions to compute different moments of the
 number of jumps of the process on a given interval, such as mean, variance or
 autocorrelation of process jumps on time intervals separated by a lag.")
     (license license:gpl2+)))
+
+(define-public r-havel
+  (package
+    (name "r-havel")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "havel" version))
+       (sha256
+        (base32 "138qlggx0cch8vpi2hq3mbq938k9pp2mkf516l37dqbdcr0cp1lx"))))
+    (properties `((upstream-name . "havel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rcpp
+                             r-pak
+                             r-data-table
+                             r-cpprouting
+                             r-collapse
+                             r-cli))
+    (home-page "https://github.com/andrewGhazi/havel")
+    (synopsis "Visualize and Tabulate 'R' Package Dependencies")
+    (description
+     "Plot an R package's recursive dependency graph and tabulate the number of unique
+downstream dependencies added by top-level dependencies.  This helps R package
+developers identify which of their declared dependencies add the most downstream
+dependencies in order to prioritize them for removal if needed.  Uses graph
+stress minimization adapted from Schoch (2023) <doi:10.21105/joss.05238> and
+originally reported in Gansner et al. (2004) <doi:10.1007/978-3-540-31843-9_25>.")
+    (license license:gpl3+)))
 
 (define-public r-hatchr
   (package

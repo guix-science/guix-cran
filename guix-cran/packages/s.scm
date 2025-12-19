@@ -24101,6 +24101,38 @@ oriented R is used. <doi:10.48550/@code{arXiv.2102.00733>},
 <doi:10.1016/j.cam.2022.114444>, <doi:10.48550/@code{arXiv.2302.07552>}.")
     (license license:gpl2+)))
 
+(define-public r-splinetrials
+  (package
+    (name "r-splinetrials")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "splinetrials" version))
+       (sha256
+        (base32 "15v7yw6lxabjqfxjj503xf88wghg11nybqlyl1disnrm7b5sxcv3"))))
+    (properties `((upstream-name . "splinetrials")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-mmrm
+                             r-emmeans
+                             r-dplyr
+                             r-cli
+                             r-car))
+    (home-page "https://github.com/NikKrieger/splinetrials")
+    (synopsis
+     "Facilitate Clinical Trials Analysis Using Natural Cubic Splines")
+    (description
+     "Create mixed models with repeated measures using natural cubic splines applied
+to an observed continuous time variable, as described by Donohue et al. (2023)
+<doi:10.1002/pst.2285>.  Iterate through multiple covariance structure types
+until one converges.  Categorize observed time according to scheduled visits.
+Perform subgroup analyses.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-splinetree
   (package
     (name "r-splinetree")
@@ -31860,6 +31892,40 @@ spatial models are fit using a spatial factor modeling approach with NNGPs for
 computational efficiency.")
     (license license:gpl3+)))
 
+(define-public r-spaalign
+  (package
+    (name "r-spaalign")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spaAlign" version))
+       (sha256
+        (base32 "1aqgb4wp0hwbgyn1qrj0kg2i5fldmhqf1nfrmj309sfnfg1yzda3"))))
+    (properties `((upstream-name . "spaAlign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=spaAlign")
+    (synopsis
+     "Stratigraphic Plug Alignment for Integrating Plug-Based and XRF Data")
+    (description
+     "This package implements the Stratigraphic Plug Alignment (SPA) procedure for
+integrating sparsely sampled plug-based measurements (e.g., total organic
+carbon, porosity, mineralogy) with high-resolution X-ray fluorescence (XRF)
+geochemical data.  SPA uses linear interpolation via the base @code{approx()}
+function with constrained extrapolation (rule = 1) to preserve stratigraphic
+order and avoid estimation beyond observed depths.  The method aligns all
+datasets to a common depth grid, enabling high-resolution multivariate analysis
+and stratigraphic interpretation of core-based datasets such as those from the
+Utica and Point Pleasant formations.  See R Core Team (2025)
+<https://stat.ethz.ch/R-manual/R-devel/library/stats/html/stats-package.html>
+and Omodolor (2025)
+<http://rave.ohiolink.edu/etdc/view?acc_num=case175262671767524> for
+methodological background and geological context.")
+    (license license:expat)))
+
 (define-public r-spaa
   (package
     (name "r-spaa")
@@ -34831,13 +34897,13 @@ easily interpretable results in near publication ready quality.")
 (define-public r-sobolsequence
   (package
     (name "r-sobolsequence")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SobolSequence" version))
        (sha256
-        (base32 "1vmp5jix3zvasvdirv8m88jc0cd8f34b4m1jvhs8g3v9lk8pxrrr"))))
+        (base32 "1wwn70gaccp27hpfwnc385jc9g9gdhnknvikyc3kp77hvrlkxjic"))))
     (properties `((upstream-name . "SobolSequence")))
     (build-system r-build-system)
     (arguments
@@ -34848,7 +34914,7 @@ easily interpretable results in near publication ready quality.")
     (home-page "http://web.maths.unsw.edu.au/~fkuo/sobol/")
     (synopsis "Sobol Sequences with Better Two-Dimensional Projections")
     (description
-     "R implementation of S. Joe and F. Y. Kuo(2008) <DOI:10.1137/070709359>.  The
+     "R implementation of S. Joe and F. Y. Kuo (2008) <DOI:10.1137/070709359>.  The
 implementation is based on the data file new-joe-kuo-6.21201
 <http://web.maths.unsw.edu.au/~fkuo/sobol/>.")
     (license license:bsd-3)))
@@ -55568,13 +55634,13 @@ Lai, Heyse and Chen (2010, <doi:10.1002/sim.4036>).")
 (define-public r-sglg
   (package
     (name "r-sglg")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sglg" version))
        (sha256
-        (base32 "0l2vwd5s95ww29x3s33lgkwk09mzrmfqmrgzmm9a5lwjwza9prnf"))))
+        (base32 "1jbq0z3i2xjlnvhy98ahr1z19aprkm2s86y7hdqs6f4a2z6xk4dj"))))
     (properties `((upstream-name . "sglg")))
     (build-system r-build-system)
     (arguments

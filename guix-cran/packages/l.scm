@@ -3878,13 +3878,13 @@ loop enumeration tools.")
 (define-public r-loon-tourr
   (package
     (name "r-loon-tourr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loon.tourr" version))
        (sha256
-        (base32 "1ggy3kkz86lk332pnlihc1i2bki3nks7r2bvl6bprcmds9lg689i"))))
+        (base32 "0wd0mn6f38dl6mb3dxvz6z9bqqn9n2y1480rinnsrdrqdxkfw90l"))))
     (properties `((upstream-name . "loon.tourr")))
     (build-system r-build-system)
     (arguments
@@ -9591,13 +9591,13 @@ the visualizations are based on rigorous statistical models.")
 (define-public r-lipidms
   (package
     (name "r-lipidms")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LipidMS" version))
        (sha256
-        (base32 "074ix4zzf610w7brl0isilhnb647dbj16f11nijac6kcwlw9klkm"))))
+        (base32 "1clwpz0rh36hm2a0arabq31537ydccv20y26jq0w7nglkxa5l2mi"))))
     (properties `((upstream-name . "LipidMS")))
     (build-system r-build-system)
     (arguments
@@ -17009,35 +17009,6 @@ startup messages as well.  See argument @code{reallyQuitely}'.")
 Multiple forecast methods and user defined forecast method for the remaining
 time are supported.")
     (license license:gpl3)))
-
-(define-public r-lazyarray
-  (package
-    (name "r-lazyarray")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lazyarray" version))
-       (sha256
-        (base32 "1bj1a8ab2479cl3d15h9f1fr1hh5d1p3sxpq8y84yzw0rrsxcldd"))))
-    (properties `((upstream-name . "lazyarray")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml r-rcpp r-r6 r-fstcore))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dipterix/lazyarray")
-    (synopsis "Persistent Large Data Array with Lazy-Loading on Demand")
-    (description
-     "Multi-threaded serialization of compressed array that fully utilizes modern
-solid state drives.  It allows to store and load extremely large data on demand
-within seconds without occupying too much memories.  With data stored on hard
-drive, a lazy-array data can be loaded, shared across multiple R sessions.  For
-arrays with partition mode on, multiple R sessions can write to a same array
-simultaneously along the last dimension (partition).  The internal storage
-format is provided by fstcore package geared by LZ4 and ZSTD compressors.")
-    (license license:agpl3)))
 
 (define-public r-layer
   (package

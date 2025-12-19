@@ -7489,36 +7489,6 @@ standard process metrics, as well as define custom counter, gauge, and histogram
 metrics of their own.")
     (license license:expat)))
 
-(define-public r-openmeteo
-  (package
-    (name "r-openmeteo")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "openmeteo" version))
-       (sha256
-        (base32 "147zc2mn9ma6rkdz5czkmq8pp9slkvz44vf00mi64jkq2gp9kfpx"))))
-    (properties `((upstream-name . "openmeteo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-tidyr
-                             r-tibblify
-                             r-tibble
-                             r-testthat
-                             r-httr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=openmeteo")
-    (synopsis "Retrieve Weather Data from the Open-Meteo API")
-    (description
-     "This package provides a client for the Open-Meteo API that retrieves Open-Meteo
-weather data in a tidy format.  No API key is required.  The API specification
-is located at <https://open-meteo.com/en/docs>.")
-    (license license:gpl3+)))
-
 (define-public r-openland
   (package
     (name "r-openland")
@@ -9879,13 +9849,13 @@ outcomes.")
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")
-    (version "0.9-3")
+    (version "0.9-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OncoBayes2" version))
        (sha256
-        (base32 "014w5j1b01nfysxnx2sibc9hs08dp68y9yyqd6b50gqw8r4zpmbx"))))
+        (base32 "1xh020kh90qfwwwa8qk1fr7p87ng90657nqpb4mc80lgcfwxxsav"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
     (arguments
@@ -9917,7 +9887,7 @@ outcomes.")
                              r-assertthat
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=OncoBayes2")
+    (home-page "https://opensource.nibr.com/OncoBayes2/")
     (synopsis
      "Bayesian Logistic Regression for Oncology Dose-Escalation Trials")
     (description

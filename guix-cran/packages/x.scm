@@ -537,13 +537,13 @@ form described in package XR and in the book \"Extending R\".")
 (define-public r-xrnet
   (package
     (name "r-xrnet")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xrnet" version))
        (sha256
-        (base32 "04zcpxzam4avsc8qxvd5ssjxzg07xf2wjx90y6df4df2dpm7sr6i"))))
+        (base32 "0sn1i4s0bxgab2gihmh8bmnfldygmvxh8v30189bznrv5qwz27bf"))))
     (properties `((upstream-name . "xrnet")))
     (build-system r-build-system)
     (arguments

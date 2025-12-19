@@ -383,13 +383,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-quollr
   (package
     (name "r-quollr")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quollr" version))
        (sha256
-        (base32 "1qp055b9bshqmc0snq2rd5xhikji4fj7wj26gs8l9i4qkccb1ca1"))))
+        (base32 "0s7w4vy79xq89i8vld6hv7qckcyy7d5bfvilk2slm6nfvmf9glzf"))))
     (properties `((upstream-name . "quollr")))
     (build-system r-build-system)
     (arguments
@@ -2219,6 +2219,34 @@ The valuation and calibration techniques presented here are consistent with
 industry standards and incorporates author's own calculations.  Tuckman, B.,
 Serrat, A. (2022, ISBN: 978-1-119-83555-4).")
     (license license:gpl3+)))
+
+(define-public r-quantbayes
+  (package
+    (name "r-quantbayes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantbayes" version))
+       (sha256
+        (base32 "0z7h1qc1vwv444llrz7s27c98l0irsqflq8d0yffjpwvb2kiympz"))))
+    (properties `((upstream-name . "quantbayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-purrr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=quantbayes")
+    (synopsis "Bayesian Quantification of Evidence Sufficiency")
+    (description
+     "This package implements the Quantification Evidence Standard algorithm for
+computing Bayesian evidence sufficiency from binary evidence matrices.  It
+provides posterior estimates, credible intervals, percentiles, and optional
+visual summaries.  The method is universal, reproducible, and independent of any
+specific clinical or rule based framework.  For details see The Quantitative
+Omics Epidemiology Group et al. (2025) <doi:10.64898/2025.12.02.25341503>.")
+    (license license:expat)))
 
 (define-public r-quandl
   (package

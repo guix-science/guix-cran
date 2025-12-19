@@ -48288,13 +48288,13 @@ characteristics of the designs are calculated.")
 (define-public r-catregs
   (package
     (name "r-catregs")
-    (version "1.2.4")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catregs" version))
        (sha256
-        (base32 "077cgr23138y7h62ss5wv8dmm1ypjh0d6pfq9idpbpnrwnz5dw2a"))))
+        (base32 "0r9nyyl6rxd753ia20br7r2pvlslqh6cdgja5yf5fwh224awd1rk"))))
     (properties `((upstream-name . "catregs")))
     (build-system r-build-system)
     (arguments
@@ -50442,13 +50442,13 @@ clinical research.")
 (define-public r-cardinalr
   (package
     (name "r-cardinalr")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardinalR" version))
        (sha256
-        (base32 "13g7g1f0px3n9z27fvq7dy9q9qk979f01dsb99qw22aw0hmzgsfq"))))
+        (base32 "1n9304zsj8bhyxy3bdr9xfckk1sf90kgvpdb0aq4c04z7vcf12li"))))
     (properties `((upstream-name . "cardinalR")))
     (build-system r-build-system)
     (arguments
@@ -53143,6 +53143,34 @@ ed., Cambridge University Press, 2018) <doi:10.1017/9781107415058>, allowing
 conversion between many different calendar systems.  Cultural and religious
 holidays from several calendars can be calculated.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-calba
+  (package
+    (name "r-calba")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "calba" version))
+       (sha256
+        (base32 "18rsh1v2wsq5fdf1wlrz1m5ijvwzff9wxvks58mb6dn2w56y0n57"))))
+    (properties `((upstream-name . "calba")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=calba")
+    (synopsis "Efficient Neighborhood Basal Area Metrics for Trees")
+    (description
+     "Fast C++'-backed tools for computing conspecific and total neighborhood basal
+area in mapped forest plots.  Includes unweighted and distance-weighted
+neighborhoods, multiple radii, decay kernels, and basic edge correction.
+Outputs are model-ready covariates for forest competition, growth, and survival
+models, following neighborhood modeling workflows commonly used in spatial
+ecology (e.g., HÃ¼lsmann et al.  2024 <doi:10.1038/s41586-024-07118-4>).")
+    (license license:gpl3)))
 
 (define-public r-calango
   (package

@@ -6961,6 +6961,35 @@ implemented in the R package DQAstats'.  Publication: Mang et al. (2021)
 <doi:10.1186/s12911-022-01961-z>.")
     (license license:gpl3)))
 
+(define-public r-dqa
+  (package
+    (name "r-dqa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DQA" version))
+       (sha256
+        (base32 "0lx26b8j04ddnnrqpf91rh4yxrpc8yn6q8ckrgh6s4a5q1cs7485"))))
+    (properties `((upstream-name . "DQA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-data-table))
+    (home-page "https://cran.r-project.org/package=DQA")
+    (synopsis "Data Quality Assessment Tools")
+    (description
+     "In the context of data quality assessment, this package provides a number of
+functions for evaluating data quality across various dimensions, including
+completeness, plausibility, concordance, conformance, currency, timeliness, and
+correctness.  It has been developed based on two well-known frameworksâMichael
+G. Kahn (2016) <doi: 10.13063/2327-9214.1244> and Nicole G. Weiskopf (2017)
+<doi: 10.5334/egems.218>âfor data quality assessment.  Using this package,
+users can evaluate the quality of their datasets, provided that corresponding
+metadata are available.")
+    (license license:expat)))
+
 (define-public r-dptree
   (package
     (name "r-dptree")
@@ -14510,13 +14539,13 @@ procedures directly to data is also provided.")
 (define-public r-discretefit
   (package
     (name "r-discretefit")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discretefit" version))
        (sha256
-        (base32 "0xyv3lff6xmz9q1k2lprll68fw9ckqhgl1z87pd9rm0ldy969m9p"))))
+        (base32 "1vfnawsagn4ipbqfrr46wm6li9ajmv5lgbbaj1z9741c19f8xb86"))))
     (properties `((upstream-name . "discretefit")))
     (build-system r-build-system)
     (arguments
@@ -16267,6 +16296,38 @@ interactions (the @code{DI_data()} function), can perform an automated model
 selection process (the @code{autoDI()} function) and has the flexibility to fit
 a wide range of user-defined DI models (the @code{DI()} function).")
     (license license:gpl2+)))
+
+(define-public r-dimodal
+  (package
+    (name "r-dimodal")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Dimodal" version))
+       (sha256
+        (base32 "07pxiv9vhd1dnphlnn3fg4zqigj2pglfwpyfhpgz9rb4c234ahvi"))))
+    (properties `((upstream-name . "Dimodal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod))
+    (home-page "https://cran.r-project.org/package=Dimodal")
+    (synopsis "Spacing Tests for Multi-Modality")
+    (description
+     "Tests for modality of data using its spacing.  The main approach evaluates
+features (peaks, flats) using a combination of parametric models and
+non-parametric tests, either after smoothing the spacing by a low-pass filter or
+by looking over larger intervals.  The library can also use any changepoint
+detectors available to look for transitions between features in the spacing.
+The Suggested list of libraries is misnamed.  It contains all supported
+changepoint detectors, and all are considered optional.  A good minimal set
+would be the first three entries.  Some of the suggestions may no longer be
+current on CRAN, with the last source tarball found in its archives or at the
+additional repository.  These packages will be used if they are already
+installed on older installations, but will not be available to newer.")
+    (license license:bsd-3)))
 
 (define-public r-dimensionsr
   (package
@@ -32610,13 +32671,13 @@ methods described in Quartagno et al. (2019) <@code{arXiv:1905.00241>}.")
 (define-public r-dang
   (package
     (name "r-dang")
-    (version "0.0.16")
+    (version "0.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dang" version))
        (sha256
-        (base32 "1h0j2pxwp8dnaw2vrclj069xmd6adwah8ld4vmmh3zm7kwflvcx8"))))
+        (base32 "1vw93h992aglpb1v0n4685gh0yy5gwj568miijv8ykdpf2n9ma95"))))
     (properties `((upstream-name . "dang")))
     (build-system r-build-system)
     (arguments

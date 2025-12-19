@@ -766,6 +766,32 @@ related according to a provided pedigree.")
 written in English, French, or Spanish.")
     (license license:expat)))
 
+(define-public r-nullcat
+  (package
+    (name "r-nullcat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nullcat" version))
+       (sha256
+        (base32 "1bcb7pg16bk4545jdimwsf7xk5wwhys61ans4ayz1pk455kxxz71"))))
+    (properties `((upstream-name . "nullcat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matthewkling/nullcat")
+    (synopsis "Null Models for Categorical and Continuous Community Matrices")
+    (description
+     "This package provides null model algorithms for categorical and quantitative
+community ecology data.  Extends classic binary null models (e.g., curveball',
+swap') to work with categorical data.  Provides a stratified randomization
+framework for continuous data.")
+    (license license:expat)))
+
 (define-public r-nullabor
   (package
     (name "r-nullabor")

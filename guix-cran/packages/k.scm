@@ -405,13 +405,13 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "2.1-0")
+    (version "2.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "1gd98g9vbirkqb8msbjwvi58vb9zx8dzsf0spjf54phdzxlisyim"))))
+        (base32 "0pb6v4ndc85lplqx60phzhlg1301wkll6hab5phamvm6d5qx9bgp"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments

@@ -12417,13 +12417,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "1vrmc5dcw9an5p10c19jd89pimzxdc24s3kmqn96mjnydvx6h21p"))))
+        (base32 "1imk0w8m0pzxfrsnlzjcp07z9iiriqmcj3svixj3xl8nhzw4485s"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments
@@ -16874,21 +16874,20 @@ Explore models and export directly to PDF and Word using RMarkdown'.")
 (define-public r-fimport
   (package
     (name "r-fimport")
-    (version "4041.88")
+    (version "4052.89")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fImport" version))
        (sha256
-        (base32 "0bgnk8s3mlgm90bz40zkv4hfcndv1ym1wwxqs86bs2fbc35h6pdh"))))
+        (base32 "1cyv6lp8mhsixn99xzm035xshb1zbam2967d7vdsqg86a2klvwc9"))))
     (properties `((upstream-name . "fImport")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-timeseries r-timedate))
-    (home-page
-     "https://r-forge.r-project.org/scm/viewvc.php/pkg/fImport/?root=rmetrics")
+    (home-page "https://geobosh.github.io/fImportDoc/")
     (synopsis "Rmetrics - Importing Economic and Financial Data")
     (description
      "This package provides a collection of utility functions to download and manage

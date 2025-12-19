@@ -11126,13 +11126,13 @@ on their analyses.  For more details visit
 (define-public r-trainer
   (package
     (name "r-trainer")
-    (version "2.2.2")
+    (version "2.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traineR" version))
        (sha256
-        (base32 "1w5ri6cgps6yb9krqirvl97avm8kccahj4i85f5rdhyyqxf4n1h4"))))
+        (base32 "1jk8ynafyxyr0znppam6ry9ar7zr9xl5yq8r04qnb4365fvfzs0d"))))
     (properties `((upstream-name . "traineR")))
     (build-system r-build-system)
     (arguments
@@ -15630,6 +15630,33 @@ the format used by the Alceste application (i.e.  a single text file with inline
 meta-data).  It is able to import both text contents and meta-data (starred)
 variables.")
     (license license:gpl2+)))
+
+(define-public r-tlsr
+  (package
+    (name "r-tlsr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tlsR" version))
+       (sha256
+        (base32 "1qh4bm2xgjarjiljxba3dw46pl756z592knpgag1dvjcc9kiz35i"))))
+    (properties `((upstream-name . "tlsR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-geom r-spatstat-explore r-rann
+                             r-fastica r-dbscan))
+    (home-page "https://cran.r-project.org/package=tlsR")
+    (synopsis "Detection and Spatial Analysis of Tertiary Lymphoid Structures")
+    (description
+     "Fast, reproducible detection and quantitative analysis of tertiary lymphoid
+structures (TLS) in multiplexed tissue imaging.  Implements Independent
+Component Analysis Trace (ICAT) index, local Ripley's K scanning, automated K
+Nearest Neighbor (KNN)-based TLS detection, and T-cell clusters identification
+as described in Amiryousefi et al. (2025) <doi:10.1101/2025.09.21.677465>.")
+    (license license:expat)))
 
 (define-public r-tls
   (package
@@ -22061,40 +22088,6 @@ be installed.")
 area under the curve, wash in rate and wash out rate are calculated.")
     (license license:expat)))
 
-(define-public r-tibblify
-  (package
-    (name "r-tibblify")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tibblify" version))
-       (sha256
-        (base32 "165ygq6wf35siiml6dsm4hxqg5lndqhwh82cdwyfwnl829nbz9a7"))))
-    (properties `((upstream-name . "tibblify")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-lifecycle
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mgirlich/tibblify")
-    (synopsis "Rectangle Nested Lists")
-    (description
-     "This package provides a tool to rectangle a nested list, that is to convert it
-into a tibble.  This is done automatically or according to a given
-specification.  A common use case is for nested lists coming from parsing JSON
-files or the JSON response of REST APIs.  It is supported by the vctrs package
-and therefore offers a wide support of vector types.")
-    (license license:gpl3)))
-
 (define-public r-tibbletime
   (package
     (name "r-tibbletime")
@@ -26800,13 +26793,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.9")
+    (version "0.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "0bsfh4b68j67y54h7pivlrrwd1xain8aj7f660p82qw27l6xvl8k"))))
+        (base32 "0q6shjand0a90i6vgdmbvl6yjcnja9bgzal96drg0n6nkzcmjlrc"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (arguments
@@ -32262,13 +32255,13 @@ genome.  The methodology is described in dos Reis, Wernisch and Savva (2003)
 (define-public r-tagtools
   (package
     (name "r-tagtools")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tagtools" version))
        (sha256
-        (base32 "03vmvbhwrk105dzyfz1cjw6ar37rgacmc85fvcx85qh4rp0kbi53"))))
+        (base32 "1mcidn8vv1yi4gh9d0pq9yfc1zc6b3dpja3n21klmknhcwwr7wn7"))))
     (properties `((upstream-name . "tagtools")))
     (build-system r-build-system)
     (arguments
@@ -32277,19 +32270,19 @@ genome.  The methodology is described in dos Reis, Wernisch and Savva (2003)
     (propagated-inputs (list r-zoom
                              r-zoo
                              r-stringr
-                             r-signal
                              r-readr
+                             r-rcpparmadillo
+                             r-rcpp
                              r-pracma
                              r-plotly
                              r-ncdf4
-                             r-matlab
                              r-lubridate
-                             r-latex2exp
+                             r-gsignal
                              r-ggplot2
                              r-dplyr
                              r-cowplot
                              r-circstats))
-    (home-page "<https://animaltags.org>")
+    (home-page "https://animaltags.org")
     (synopsis "Work with Data from High-Resolution Biologging Tags")
     (description
      "High-resolution movement-sensor tags typically include accelerometers to measure

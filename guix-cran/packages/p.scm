@@ -4290,13 +4290,13 @@ before publication using this approach.")
 (define-public r-psre
   (package
     (name "r-psre")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psre" version))
        (sha256
-        (base32 "0nmha0m40023xfc1q57c8v7574apd0y6lbj4ym6iv1f2vd12hvjp"))))
+        (base32 "1gwvk51fmgjnadb9hyb4i0942nqsy0xy9mh34v588x91jvky5rq3"))))
     (properties `((upstream-name . "psre")))
     (build-system r-build-system)
     (arguments
@@ -4310,7 +4310,6 @@ before publication using this approach.")
                              r-nortest
                              r-multcomp
                              r-mgcv
-                             r-metap
                              r-mass
                              r-marginaleffects
                              r-magrittr
@@ -8423,6 +8422,41 @@ known as a run-off triangle, implemented in three nonparametric algorithms
 for completed run-off triangles are also provided.")
     (license license:gpl2+)))
 
+(define-public r-profileglmm
+  (package
+    (name "r-profileglmm")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProfileGLMM" version))
+       (sha256
+        (base32 "0n9hx08cnb29c9swclk18v1bb3l36dpawxv3nfpi8j00vymvhh1p"))))
+    (properties `((upstream-name . "ProfileGLMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spectrum
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-mcmcpack
+                             r-matrix
+                             r-laplacesdemon))
+    (home-page "https://github.com/MatteoAmestoy/ProfileGLMM-package")
+    (synopsis
+     "Bayesian Profile Regression using Generalised Linear Mixed Models")
+    (description
+     "This package implements a Bayesian profile regression using a generalized linear
+mixed model as output model.  The package allows for binary (probit mixed model)
+and continuous (linear mixed model) outcomes and both continuous and categorical
+clustering variables.  The package utilizes @code{RcppArmadillo} and
+@code{RcppDist} for high-performance statistical computing in C++.  For more
+details see Amestoy & al. (2025) <doi:10.48550/@code{arXiv.2510.08304>}.")
+    (license license:gpl2)))
+
 (define-public r-profileci
   (package
     (name "r-profileci")
@@ -11100,6 +11134,33 @@ insights and predictive analytics company.  Query and download indicators,
 models and workbenches built with Prevedere for further analysis and reporting
 <https://www.prevedere.com/>.")
     (license license:expat)))
+
+(define-public r-prevalence
+  (package
+    (name "r-prevalence")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prevalence" version))
+       (sha256
+        (base32 "0llxcz7bg62l6qq4xaf2xwmc2k0y2l3zw5nb6bq0a9qnp3anj8ah"))))
+    (properties `((upstream-name . "prevalence")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-rjags r-coda))
+    (home-page "http://prevalence.cbra.be/")
+    (synopsis "Tools for Prevalence Assessment Studies")
+    (description
+     "The prevalence package provides Frequentist and Bayesian methods for prevalence
+assessment studies.  IMPORTANT: the @code{truePrev} functions in the prevalence
+package call on JAGS (Just Another Gibbs Sampler), which therefore has to be
+available on the user's system.  JAGS can be downloaded from
+<https://mcmc-jags.sourceforge.io/>.")
+    (license license:gpl2+)))
 
 (define-public r-prettyr
   (package
@@ -22803,13 +22864,13 @@ so that R code can be used to power Tableau workbooks.")
 (define-public r-plumber2
   (package
     (name "r-plumber2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plumber2" version))
        (sha256
-        (base32 "0z4297lq26ikjqz4r9r6w6iadwmq25ym0dyj9gz1aik37ggcg3ap"))))
+        (base32 "1cdky56h008hqq58plqwc0xnqvy0g0m1bax148lg0jd85q7ad6rk"))))
     (properties `((upstream-name . "plumber2")))
     (build-system r-build-system)
     (arguments
@@ -22837,12 +22898,12 @@ so that R code can be used to power Tableau workbooks.")
                              r-cli
                              r-base64enc))
     (native-inputs (list r-quarto))
-    (home-page "http://plumber2.posit.co/")
-    (synopsis "Easy and Powerful Web Servers")
+    (home-page "https://plumber2.posit.co/")
+    (synopsis "Easy and Powerful Webservers")
     (description
-     "Automatically create a web server from annotated R files or by building it up
+     "Automatically create a webserver from annotated R files or by building it up
 programmatically.  Provides automatic @code{OpenAPI} documentation, input
-handling, asynchronous evaluation, and plugin support.")
+handling, async support, and middleware support.")
     (license license:expat)))
 
 (define-public r-plugdensity

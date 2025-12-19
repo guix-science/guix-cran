@@ -1037,13 +1037,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.6.15")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "00xzvwhqlx1kfxc0mkdx5wnafhyzv3cr81zyg12bl2wirci8lawr"))))
+        (base32 "196qapyvx6ma7klqkbx1nvy19xdirrsjxbbgw8dyfbinw2sa9h1w"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (arguments
@@ -1056,6 +1056,7 @@ available at the following URL:
                              r-shinywidgets
                              r-shinyjs
                              r-shinycustomloader
+                             r-shinyace
                              r-shiny
                              r-see
                              r-scales
@@ -1067,15 +1068,19 @@ available at the following URL:
                              r-r6
                              r-purrr
                              r-proc
+                             r-openxlsx
                              r-officer
                              r-maxstat
                              r-matchit
                              r-labelled
                              r-jstable
+                             r-jsonlite
                              r-jskm
+                             r-httr
                              r-htmltools
                              r-hmisc
                              r-haven
+                             r-gridextra
                              r-ggrepel
                              r-ggpubr
                              r-ggplot2
@@ -1714,13 +1719,13 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpinfect
   (package
     (name "r-jpinfect")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpinfect" version))
        (sha256
-        (base32 "1q4mm6r2dh683d5xny6my22gkaiy1d5ysmkhn5h3bndjwilizx1n"))))
+        (base32 "0i6xbbp45bh4nxl9kf08vgjqi14fgbvqx7yi7mbmr5kc3gwnsqw3"))))
     (properties `((upstream-name . "jpinfect")))
     (build-system r-build-system)
     (arguments

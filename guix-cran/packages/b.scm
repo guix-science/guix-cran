@@ -11596,6 +11596,78 @@ JABES 25, 500â522 (2020) <doi:10.1007/s13253-020-00416-0>.")
 file of randomization cards.")
     (license license:gpl2)))
 
+(define-public r-blockr-ggplot
+  (package
+    (name "r-blockr-ggplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockr.ggplot" version))
+       (sha256
+        (base32 "1085nl6i36f0vp7gm4l9mxc3rn2g69b89k3wc3595vykpp5k4jy5"))))
+    (properties `((upstream-name . "blockr.ggplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-patchwork
+                             r-glue
+                             r-ggplot2
+                             r-colourpicker
+                             r-blockr-core))
+    (native-inputs (list r-knitr))
+    (home-page "https://bristolmyerssquibb.github.io/blockr.ggplot/")
+    (synopsis "Interactive 'ggplot2' Visualization Blocks")
+    (description
+     "Extends blockr.core with interactive blocks for data visualization using
+ggplot2'.  Users can build charts through a graphical interface without writing
+code directly.  Includes common chart types (bar charts, line charts, pie
+charts, scatter plots) as well as statistical plots (boxplots, histograms,
+density plots, violin plots) with rich customization options and intuitive user
+interfaces.")
+    (license license:gpl3+)))
+
+(define-public r-blockr-dplyr
+  (package
+    (name "r-blockr-dplyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockr.dplyr" version))
+       (sha256
+        (base32 "17qz6k3lg866r67h30njzrnbldv42d6lhbzw3zbqrdh8w6pw59k2"))))
+    (properties `((upstream-name . "blockr.dplyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shinyjs
+                             r-shinyace
+                             r-shiny
+                             r-jsonlite
+                             r-htmltools
+                             r-glue
+                             r-dplyr
+                             r-bslib
+                             r-blockr-core))
+    (native-inputs (list r-knitr))
+    (home-page "https://bristolmyerssquibb.github.io/blockr.dplyr/")
+    (synopsis "Interactive 'dplyr' Data Transformation Blocks")
+    (description
+     "Extends blockr.core with interactive blocks for visual data wrangling using
+dplyr and tidyr operations.  Users can build data transformation pipelines
+through a graphical interface without writing code directly.  Includes blocks
+for filtering, selecting, mutating, summarizing, joining, and arranging data,
+with support for complex expressions, grouping operations, and real-time
+validation.")
+    (license license:gpl3+)))
+
 (define-public r-blockr-dock
   (package
     (name "r-blockr-dock")
@@ -11629,6 +11701,36 @@ file of randomization cards.")
 provides a flexible front-end to blockr.core'.  It provides an extension
 mechanism which allows for providing means to manipulate a board object via
 panel-based user interface components.")
+    (license license:gpl3+)))
+
+(define-public r-blockr-dag
+  (package
+    (name "r-blockr-dag")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockr.dag" version))
+       (sha256
+        (base32 "0ac4wjqf6r1jcxnb9zyyfx4fjw1vw56kxl9hjxjf8kv9r03hb634"))))
+    (properties `((upstream-name . "blockr.dag")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-jsonlite
+                             r-htmltools
+                             r-g6r
+                             r-blockr-dock
+                             r-blockr-core))
+    (native-inputs (list r-quarto))
+    (home-page "https://bristolmyerssquibb.github.io/blockr.dag/")
+    (synopsis "Directed Acyclic Graph Extension for 'blockr'")
+    (description
+     "Building on the docking layout manager provided by blockr.dock', this provides
+an extension that allows for visualizing and manipulating a blockr board using a
+DAG-based user interface powered by the g6R graph visualisation HTML widget.")
     (license license:gpl3+)))
 
 (define-public r-blockr-core
@@ -15559,13 +15661,13 @@ component analyses are limited to 3 or fewer dimensions.")
 (define-public r-biogrowth
   (package
     (name "r-biogrowth")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogrowth" version))
        (sha256
-        (base32 "1nrj2423nkw7y1nmgcm6yhyxkkzgmlmm52rqp8b4rr3lkdlby749"))))
+        (base32 "1pc3py3idgga749v0ia721bwszfy7zwznn547lz4nr0r13cdzkhb"))))
     (properties `((upstream-name . "biogrowth")))
     (build-system r-build-system)
     (arguments
@@ -15575,6 +15677,7 @@ component analyses are limited to 3 or fewer dimensions.")
                              r-tibble
                              r-rlang
                              r-purrr
+                             r-mvtnorm
                              r-mass
                              r-lifecycle
                              r-lamw
@@ -25878,13 +25981,13 @@ automatic tuning inspired by Pitt et al. (2012)
 (define-public r-bayessim
   (package
     (name "r-bayessim")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSIM" version))
        (sha256
-        (base32 "1j56y5x9krfqyfsnhybkvlk23mai1a5xn7dxhzp8yfrqfx9s1ww4"))))
+        (base32 "0ar9dj3w082ma4r00lizaz48kggqsw3l0kd248pr5hs011pch6pz"))))
     (properties `((upstream-name . "BayesSIM")))
     (build-system r-build-system)
     (arguments

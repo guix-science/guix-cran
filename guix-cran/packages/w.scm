@@ -1220,13 +1220,13 @@ desired number/specific colors.")
 (define-public r-wrassp
   (package
     (name "r-wrassp")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrassp" version))
        (sha256
-        (base32 "1c9yh1xfgj1rd011qfw7mmmr3j1x0kzz8is93gw9wg6rf28d9lzj"))))
+        (base32 "05laij1bmv4vschakpnjapqjjzb70xmp5idab97l3fr9kvblqj19"))))
     (properties `((upstream-name . "wrassp")))
     (build-system r-build-system)
     (arguments
