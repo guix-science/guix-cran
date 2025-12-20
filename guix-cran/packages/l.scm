@@ -1794,6 +1794,37 @@ Brownian motion, and calculate prices of European options with Black & Scholes
 analytical solution.")
     (license license:gpl3)))
 
+(define-public r-lsmjml
+  (package
+    (name "r-lsmjml")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSMjml" version))
+       (sha256
+        (base32 "0yv20wwbz5iyl54f9dx7bnkzgz0lp0h95ihd6i3253zsl38dgjms"))))
+    (properties `((upstream-name . "LSMjml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-psych r-proc r-lavaan))
+    (home-page "https://cran.r-project.org/package=LSMjml")
+    (synopsis
+     "Fitting Latent Space Item Response Models using Joint Maximum Likelihood Estimation")
+    (description
+     "In Latent Space Item Response Models, subjects and items are embedded in a
+multidimensional Euclidean latent space.  As such, interactions among persons,
+items, and person-item combinations can be revealed that are unmodelled in more
+conventional item response theory models.  This package implements the methods
+from Molenaar & Jeon (in press) and can be used to fit Latent Space Item
+Response Models to data using joint maximum likelihood estimation.  The package
+can handle binary data, ordinal data, and data with mixed scales.  The package
+incorporates facilities for data simulation, rotation of the latent space, and
+K-fold cross-validation to select the number of dimensions of the latent space.")
+    (license license:gpl3)))
+
 (define-public r-lsmeans
   (package
     (name "r-lsmeans")

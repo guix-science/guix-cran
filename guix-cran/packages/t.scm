@@ -4611,13 +4611,13 @@ and layout customization options.")
 (define-public r-tsforecast
   (package
     (name "r-tsforecast")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsforecast" version))
        (sha256
-        (base32 "05sr0wd6pq1r86z5w0kfl2if1karliljnr9bw2304wkhrchh4yjp"))))
+        (base32 "0amwyivw6qhzivjrf7a4swj6628bdp7dbbqp1hdjp0phvrmfk9jq"))))
     (properties `((upstream-name . "tsforecast")))
     (build-system r-build-system)
     (arguments
@@ -7425,13 +7425,13 @@ Clinical Research.")
 (define-public r-trialsimulator
   (package
     (name "r-trialsimulator")
-    (version "1.3.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialSimulator" version))
        (sha256
-        (base32 "1h91cr67ls7rgi12sy4vrn2qy925s8szg5jzc1355nc1z2bvyk36"))))
+        (base32 "0asnv1w7fbgiyw1rv55injzkwikmsaahaw95jyq8vjk62hkkhv7z"))))
     (properties `((upstream-name . "TrialSimulator")))
     (build-system r-build-system)
     (arguments
@@ -12227,13 +12227,13 @@ manipulation necessary to create clinical summaries.")
 (define-public r-tplsr
   (package
     (name "r-tplsr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPLSr" version))
        (sha256
-        (base32 "0y5m8w82d949zsm576nbqllw2h87wa9fvk65br7w2f74h2rrwz5v"))))
+        (base32 "13xj9zi0j0mp64dpflws44nb97zngcxp8v56ymp8cvp80k72qjki"))))
     (properties `((upstream-name . "TPLSr")))
     (build-system r-build-system)
     (arguments
@@ -16297,6 +16297,40 @@ Relevant references include Baker and King (2010)
 <doi:10.1899/09-144.1>, and Baker and King (2013) <doi:10.1899/12-142.1>.")
     (license license:gpl2)))
 
+(define-public r-tipse
+  (package
+    (name "r-tipse")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tipse" version))
+       (sha256
+        (base32 "1gg0mmy20dagxpd2603nyym7zwcahp5l794g0npwkp7rawz8r4x2"))))
+    (properties `((upstream-name . "tipse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rmarkdown
+                             r-purrr
+                             r-mass
+                             r-knitr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tipse")
+    (synopsis "Tipping Point Analysis for Survival Endpoints")
+    (description
+     "This package implements tipping point sensitivity analysis for time-to-event
+endpoints under different missing data scenarios, as described in Oodally et al.
+(2025) <doi:10.48550/@code{arXiv.2506.19988>}.  Supports both model-based and
+model-free imputation, multiple imputation workflows, plausibility assessment
+and visualizations.  Enables robust assessment for regulatory and exploratory
+analyses.")
+    (license license:gpl3+)))
+
 (define-public r-tipsae
   (package
     (name "r-tipsae")
@@ -18824,13 +18858,13 @@ documentation here for more detail: <https://gtfs.org/>.")
 (define-public r-tidytlg
   (package
     (name "r-tidytlg")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytlg" version))
        (sha256
-        (base32 "14s8s5gxvgrirphjs4fjxbpjqzcasxiy64gj804l1m7c59qpb41x"))))
+        (base32 "04sdcqdwhifxb9d37i6zsmh70sjks1dh5f37wcyhy0p89p6qnaky"))))
     (properties `((upstream-name . "tidytlg")))
     (build-system r-build-system)
     (arguments
@@ -18858,7 +18892,7 @@ documentation here for more detail: <https://gtfs.org/>.")
     (home-page "https://pharmaverse.github.io/tidytlg/main/")
     (synopsis "Create TLGs using the 'tidyverse'")
     (description
-     "Generate tables, listings, and graphs (TLG) using tidyverse.  Tables can be
+     "Generate tables, listings, and graphs (TLG) using tidyverse'.  Tables can be
 created functionally, using a standard TLG process, or by specifying table and
 column metadata to create generic analysis summaries.  The envsetup package can
 also be leveraged to create environments for table creation.")
@@ -25080,45 +25114,6 @@ the vertical and horizontal dimensions, respectively.  It exports tables in the
 @code{LaTeX} tabular environment using .tex code.  It can compile .tex code to
 PDF automatically.")
     (license license:expat)))
-
-(define-public r-text2speech
-  (package
-    (name "r-text2speech")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "text2speech" version))
-       (sha256
-        (base32 "0xgdwwzfbc1l8bj3xvrj67xnhhq6si7n1cq3fgznqhw4ycxkgih7"))))
-    (properties `((upstream-name . "text2speech")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tuner
-                             r-tidyr
-                             r-magrittr
-                             r-knitr
-                             r-googlelanguager
-                             r-googleauthr
-                             r-dplyr
-                             r-conrad
-                             r-cli
-                             r-aws-signature))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jhudsl/text2speech")
-    (synopsis "Text to Speech Conversion")
-    (description
-     "Converts text into speech using various text-to-speech (TTS) engines and
-provides an unified interface for accessing their functionality.  With this
-package, users can easily generate audio files of spoken words, phrases, or
-sentences from plain text data.  The package supports multiple TTS engines,
-including Google's Cloud Text-to-Speech API', Amazon Polly', Microsoft's
-Cognitive Services Text to Speech REST API', and a free TTS engine called Coqui
-TTS'.")
-    (license license:gpl3)))
 
 (define-public r-text2sdgdata
   (package

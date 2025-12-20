@@ -914,35 +914,6 @@ package and allows for easy use of WGCNA to split features into distinct blocks.
 for further details.")
     (license license:gpl3)))
 
-(define-public r-fuzzydbscan
-  (package
-    (name "r-fuzzydbscan")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FuzzyDBScan" version))
-       (sha256
-        (base32 "1a974s5j03caifcypk1c7la96754gh6n20xak7qaf9hrbm5i7vr9"))))
-    (properties `((upstream-name . "FuzzyDBScan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-ggplot2 r-dbscan r-data-table r-checkmate))
-    (home-page "https://cran.r-project.org/package=FuzzyDBScan")
-    (synopsis "Run and Predict a Fuzzy DBScan")
-    (description
-     "An interface for training Fuzzy DBScan with both Fuzzy Core and Fuzzy Border.
-Therefore, the package provides a method to initialize and run the algorithm and
-a function to predict new data w.t.h.  of R6'.  The package is build upon the
-paper \"Fuzzy Extensions of the DBScan algorithm\" from Ienco and Bordogna (2018)
-<doi:10.1007/s00500-016-2435-0>.  A predict function assigns new data according
-to the same criteria as the algorithm itself.  However, the prediction function
-freezes the algorithm to preserve the trained cluster structure and treats each
-new prediction object individually.")
-    (license license:lgpl3)))
-
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
@@ -2211,13 +2182,13 @@ described in @code{VanderDoes} et al., (2023) <doi:10.1101/2023.07.18.549619>.")
 (define-public r-funitroots
   (package
     (name "r-funitroots")
-    (version "4040.81")
+    (version "4052.82")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fUnitRoots" version))
        (sha256
-        (base32 "0p8hjzqqkqzfainj5m48k73axwp0q7j7m9zg18smwx7zpcsicgsl"))))
+        (base32 "0dbkwx3qbxhnpz2ipxnvy3ca47nhxsp9ijszwc858z9j89cn15ik"))))
     (properties `((upstream-name . "fUnitRoots")))
     (build-system r-build-system)
     (arguments
@@ -2225,8 +2196,7 @@ described in @code{VanderDoes} et al., (2023) <doi:10.1101/2023.07.18.549619>.")
       #:tests? #f))
     (propagated-inputs (list r-urca r-timeseries r-fbasics))
     (native-inputs (list gfortran))
-    (home-page
-     "https://r-forge.r-project.org/scm/viewvc.php/pkg/fUnitRoots/?root=rmetrics")
+    (home-page "https://geobosh.github.io/fUnitRootsDoc/")
     (synopsis "Rmetrics - Modelling Trends and Unit Roots")
     (description
      "This package provides four addons for analyzing trends and unit roots in
@@ -12417,13 +12387,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "1imk0w8m0pzxfrsnlzjcp07z9iiriqmcj3svixj3xl8nhzw4485s"))))
+        (base32 "0mi5l8dzrw2raqfmm35l9xsvzxmmgx0gqvx7961qrl2sfpvh5ssz"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments
@@ -14628,6 +14598,30 @@ colors, checking against expected F1 segregation patterns, comparing results
 from two different assays (probes) for the same SNP, recovery from a
 @code{saveMarkerModels()} crash.")
     (license license:gpl2)))
+
+(define-public r-fitplotr
+  (package
+    (name "r-fitplotr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fitPlotR" version))
+       (sha256
+        (base32 "0sngj9p67bm8hmj0mh3wjgg9mj310pwadwg0js7h8yha2hipfk3q"))))
+    (properties `((upstream-name . "fitPlotR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=fitPlotR")
+    (synopsis "Plotting Probability Distributions")
+    (description
+     "This package provides functions for plotting probability density functions,
+distribution functions, survival functions, hazard functions and computing
+distribution moments.  The implementation is inspired by Delignette-Muller and
+Dutang (2015) <doi:10.18637/jss.v064.i04>.")
+    (license license:gpl3)))
 
 (define-public r-fitplc
   (package
@@ -28072,6 +28066,37 @@ Supported @code{FaaS} platforms: Apache @code{OpenWhisk}
 <https://aws.amazon.com/lambda/> Supported cloud data storage for persistent
 storage: Amazon Web Services (AWS) Simple Storage Service (S3)
 <https://aws.amazon.com/s3/>.")
+    (license license:expat)))
+
+(define-public r-f1pits
+  (package
+    (name "r-f1pits")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "f1pits" version))
+       (sha256
+        (base32 "1l8pnipjzvm9snlsskvibf7jvwkw1bzvrzgbqgdzad6nl24kvi6q"))))
+    (properties `((upstream-name . "f1pits")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-readr
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-f1datar
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=f1pits")
+    (synopsis "F1 Pit Stop Datasets")
+    (description
+     "Formula 1 pit stop data.  The package provides information on teams and drivers
+across seasons (2025 or higher).  It also includes a function to visualize pit
+stop performance.")
     (license license:expat)))
 
 (define-public r-f1datar

@@ -3326,6 +3326,32 @@ continuous outcome (Mollan, Trumble, Reifeis et.  al., Mar.  2020)
 with controlled Type I error regardless of the values of missing data.")
     (license license:expat)))
 
+(define-public r-wmwauc
+  (package
+    (name "r-wmwauc")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wmwAUC" version))
+       (sha256
+        (base32 "1hvhxxnr4f75yfa6dnzbcxcv74nkq3lcfwwvaan1j6046jb15s5h"))))
+    (properties `((upstream-name . "wmwAUC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/grendar/wmwAUC")
+    (synopsis "Wilcoxon-Mann-Whitney Test of No Group Discrimination")
+    (description
+     "This package provides inference for the Wilcoxon-Mann-Whitney test under the
+null hypothesis H0: AUC = 0.5 for continuous, discrete or mixed random
+variables.  Traditional implementations test H0: F = G, which is inappropriately
+broad and leads to erroneous inferences.  Methods are described in M. Grendar
+(2025) \"Wilcoxon-Mann-Whitney Test of No Group Discrimination\"
+<doi:10.48550/@code{arXiv.2511.20308>}.")
+    (license license:expat)))
+
 (define-public r-wmm
   (package
     (name "r-wmm")
@@ -9474,6 +9500,58 @@ package contains a single function (waterfall) that simply draws a waterfall
 chart in a ggplot2 object.  Some flexibility is provided, though often the
 object created will need to be modified through a theme.")
     (license license:expat)))
+
+(define-public r-waterbalancer
+  (package
+    (name "r-waterbalancer")
+    (version "0.1.19")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WaterBalanceR" version))
+       (sha256
+        (base32 "0a4d2vila5dv6gilgwnv9y6zz9vw8sbnpaa0gi7zcsricx5kdili"))))
+    (properties `((upstream-name . "WaterBalanceR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-stringr
+                             r-stars
+                             r-sp
+                             r-sf
+                             r-scales
+                             r-rvest
+                             r-rselenium
+                             r-rlang
+                             r-readxl
+                             r-rdwd
+                             r-rcurl
+                             r-raster
+                             r-openeo
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-gridextra
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://doi.org/10.5281/zenodo.15046338")
+    (synopsis "Calculate High Resolution Water Balance of Starch Potatoes")
+    (description
+     "Calculates the water balance of starch potatoes from Normalized Distance
+Vegetation Index (NDVI) images, German Weather Service (DWD) reference
+evapotranspiration, German Weather Service RADOLAN precipitation data and
+irrigation information.  For more details see Piernicke et al. (2025)
+<doi:10.3390/rs17183227>.")
+    (license license:agpl3)))
 
 (define-public r-watcher
   (package

@@ -24246,6 +24246,48 @@ creating quick sketches.")
 @code{chunlian()}.  Unleash your creativity and turn data into exciting visuals!")
     (license license:gpl3)))
 
+(define-public r-plot3logit
+  (package
+    (name "r-plot3logit")
+    (version "3.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plot3logit" version))
+       (sha256
+        (base32 "1545dyhpxs857vpqam00zf2i2nkrs982bczzmjv6ki7v6l7jcyg9"))))
+    (properties `((upstream-name . "plot3logit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-ternary
+                             r-stringr
+                             r-rdpack
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-ggtern
+                             r-ggplot2
+                             r-generics
+                             r-forcats
+                             r-ellipse
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.flaviosanti.it/software/plot3logit/")
+    (synopsis "Ternary Plots for Trinomial Regression Models")
+    (description
+     "An implementation of the ternary plot for interpreting regression coefficients
+of trinomial regression models, as proposed in Santi, Dickson and Espa (2019)
+<doi:10.1080/00031305.2018.1442368>.  Ternary plots can be drawn using either
+ggtern package (based on ggplot2') or Ternary package (based on standard
+graphics).  The package and its features are illustrated in Santi, Dickson, Espa
+and Giuliani (2022) <doi:10.18637/jss.v103.c01>.")
+    (license license:gpl2+)))
+
 (define-public r-plot3drgl
   (package
     (name "r-plot3drgl")

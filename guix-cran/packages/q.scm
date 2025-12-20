@@ -768,6 +768,33 @@ independent sources that may be independent of one another (i.e., different
 function or modules the create the visualizations).")
     (license license:gpl3)))
 
+(define-public r-quickoutlier
+  (package
+    (name "r-quickoutlier")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickOutlier" version))
+       (sha256
+        (base32 "0c8c5jj8w80svaxcvhivnzfg8alhrbzjsfs8f7xsfsj9zl0b5k9b"))))
+    (properties `((upstream-name . "quickOutlier")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-dbscan))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/daniellop1/quickOutlier")
+    (synopsis "Detect and Treat Outliers in Data Mining")
+    (description
+     "This package implements a suite of tools for outlier detection and treatment in
+data mining.  It includes univariate methods (Z-score, Interquartile Range),
+multivariate detection using Mahalanobis distance, and density-based detection
+(Local Outlier Factor) via the dbscan package.  It also provides functions for
+visualization using ggplot2 and data cleaning via Winsorization.")
+    (license license:expat)))
+
 (define-public r-quicknmix
   (package
     (name "r-quicknmix")

@@ -1416,71 +1416,6 @@ time.")
 variables.")
     (license license:gpl2+)))
 
-(define-public r-koulmde
-  (package
-    (name "r-koulmde")
-    (version "3.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "KoulMde" version))
-       (sha256
-        (base32 "0yx04my2vwjpi4l35h1i5xwqckca8b72divww39y1frcvia33g08"))))
-    (properties `((upstream-name . "KoulMde")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-expm))
-    (home-page "https://cran.r-project.org/package=KoulMde")
-    (synopsis
-     "Koul's Minimum Distance Estimation in Regression and Image Segmentation Problems")
-    (description
-     "Many methods are developed to deal with two major statistical problems: image
-segmentation and nonparametric estimation in various regression models.  Image
-segmentation is nowadays gaining a lot of attention from various scientific
-subfields.  Especially, image segmentation has been popular in medical research
-such as magnetic resonance imaging (MRI) analysis.  When a patient suffers from
-some brain diseases such as dementia and Parkinson's disease, those diseases can
-be easily diagnosed in brain MRI: the area affected by those diseases is
-brightly expressed in MRI, which is called a white lesion.  For the purpose of
-medical research, locating and segment those white lesions in MRI is a critical
-issue; it can be done manually.  However, manual segmentation is very expensive
-in that it is error-prone and demands a huge amount of time.  Therefore,
-supervised machine learning has emerged as an alternative solution.  Despite its
-powerful performance in a classification problem such as hand-written digits,
-supervised machine learning has not shown the same satisfactory result in MRI
-analysis.  Setting aside all issues of the supervised machine learning, it
-exposed a critical problem when employed for MRI analysis: it requires
-time-consuming data labeling.  Thus, there is a strong demand for an
-unsupervised approach, and this package - based on Hira L. Koul (1986)
-<DOI:10.1214/aos/1176350059> - proposes an efficient method for simple image
-segmentation - here, \"simple\" means that an image is black-and-white - which can
-easily be applied to MRI analysis.  This package includes a function
-@code{GetSegImage()}: when a black-and-white image is given as an input,
-@code{GetSegImage()} separates an area of white pixels - which corresponds to a
-white lesion in MRI - from the given image.  For the second problem, consider
-linear regression model and autoregressive model of order q where errors in the
-linear regression model and innovations in the autoregression model are
-independent and symmetrically distributed.  Hira L. Koul (1986)
-<DOI:10.1214/aos/1176350059> proposed a nonparametric minimum distance
-estimation method by minimizing L2-type distance between certain weighted
-residual empirical processes.  He also proposed a simpler version of the loss
-function by using symmetry of the integrating measure in the distance.  Kim
-(2018) <DOI:10.1080/00949655.2017.1392527> proposed a fast computational method
-which enables practitioners to compute the minimum distance estimator of the
-vector of general multiple regression parameters for several integrating
-measures.  This package contains three functions: @code{KoulLrMde()},
-@code{KoulArMde()}, and @code{Koul2StageMde()}.  The former two provide minimum
-distance estimators for linear regression model and autoregression model,
-respectively, where both are based on Koul's method.  These two functions take
-much less time for the computation than those based on parametric minimum
-distance estimation methods. @code{Koul2StageMde()} provides estimators for
-regression and autoregressive coefficients of linear regression model with
-autoregressive errors through minimum distant method of two stages.  The new
-version is written in Rcpp and dramatically reduces computational time.")
-    (license license:gpl2)))
-
 (define-public r-kosis
   (package
     (name "r-kosis")
@@ -2410,6 +2345,30 @@ out to a variety of locations, including @code{stdout()}, @code{stderr()}, or
 from @code{file()}.  Useful when using knitr or rmarkdown', and you still want
 to see progress of calculations in the terminal.")
     (license license:expat)))
+
+(define-public r-knitrdata
+  (package
+    (name "r-knitrdata")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "knitrdata" version))
+       (sha256
+        (base32 "1lf9cz0rxc3la8a5sm8fkm6rcp3mjr1mqnq2k4kmqkx155lmklsq"))))
+    (properties `((upstream-name . "knitrdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xfun r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dmkaplan2000/knitrdata")
+    (synopsis "Data Language Engine for 'knitr' / 'rmarkdown'")
+    (description
+     "This package implements a data language engine for incorporating data directly
+in rmarkdown documents so that they can be made completely standalone.")
+    (license license:gpl3)))
 
 (define-public r-knitlatex
   (package
@@ -3664,13 +3623,13 @@ be used in ranking results from other packs.")
 (define-public r-kinsimu
   (package
     (name "r-kinsimu")
-    (version "0.1.2-2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KINSIMU" version))
        (sha256
-        (base32 "1skhrrlskasysfvr1dmrsyji1zb897vx1zcb07hwzm8lrzda7fd7"))))
+        (base32 "01p0fg00323s1v6b2j04xay5j75wydl8l1sjigdc969zy13byf4z"))))
     (properties `((upstream-name . "KINSIMU")))
     (build-system r-build-system)
     (arguments

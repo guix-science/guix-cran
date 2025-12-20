@@ -1906,13 +1906,13 @@ used with machine learning methods such as @code{AdaBoost}, random forests, etc.
 (define-public r-journalr
   (package
     (name "r-journalr")
-    (version "0.2.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "journalR" version))
        (sha256
-        (base32 "1bavrq68b6lp1xdblvax95hb54zyi66hhrvzsf3g2a3f3qrz1q0f"))))
+        (base32 "1jgf19ggh9wp46b9k5vwh46g2cjar524lk1yv0q5hfh9nm2aq8rs"))))
     (properties `((upstream-name . "journalR")))
     (build-system r-build-system)
     (arguments
@@ -1923,12 +1923,12 @@ used with machine learning methods such as @code{AdaBoost}, random forests, etc.
     (synopsis "Formatting Tools for Scientific Journal Writing")
     (description
      "Scientific journal numeric formatting policies implemented in code.  Emphasis on
-formatting mean/upper/lower sets of values.  Convert raw numeric triplet value
-vectors to formatted text for journal submission.  For example c(2e6, 1e6, 3e6)
-becomes \"2.00 million (1.00--3.00)\".  Lancet and Nature have built-in styles for
-rounding and punctuation marks.  Users may extend journal styles arbitrarily.
-Three metrics are supported; proportions, percentage points, and counts.
-Magnitudes for all metrics are discovered automatically.")
+formatting mean/upper/lower sets of values to pasteable text for journal
+submission.  For example c(2e6, 1e6, 3e6) becomes \"2.00 million (1.00--3.00)\".
+Lancet and Nature have built-in styles for rounding and punctuation marks.
+Users may extend journal styles arbitrarily.  Four metrics are supported;
+proportions, percentage points, counts and rates.  Magnitudes for all metrics
+are discovered automatically.")
     (license license:expat)))
 
 (define-public r-journalabbr

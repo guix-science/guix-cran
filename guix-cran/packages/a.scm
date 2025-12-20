@@ -13,7 +13,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages video)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages tls)
@@ -7816,43 +7815,6 @@ proportion of active voxels in a set of clusters as, for example, given by a
 cluster-wise analysis.  The method is described in Rosenblatt, Finos, Weeda,
 Solari, Goeman (2018) <doi:10.1016/j.neuroimage.2018.07.060>.")
     (license license:gpl2+)))
-
-(define-public r-ari
-  (package
-    (name "r-ari")
-    (version "0.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ari" version))
-       (sha256
-        (base32 "03w99c918jp23d0kl26vx4m7xjicpgwl5rhn9d0fsm4kvv7j87li"))))
-    (properties `((upstream-name . "ari")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list ffmpeg))
-    (propagated-inputs (list r-xml2
-                             r-webshot
-                             r-tuner
-                             r-text2speech
-                             r-rvest
-                             r-rmarkdown
-                             r-purrr
-                             r-progress
-                             r-hms))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/seankross/ari")
-    (synopsis "Automated R Instructor")
-    (description
-     "Create videos from R Markdown documents, or images and audio files.  These
-images can come from image files or HTML slides, and the audio files can be
-provided by the user or computer voice narration can be created using Amazon
-Polly'.  The purpose of this package is to allow users to create accessible,
-translatable, and reproducible lecture videos.  See
-<https://aws.amazon.com/polly/> for more information.")
-    (license license:expat)))
 
 (define-public r-arht
   (package
@@ -15692,6 +15654,37 @@ end-of-chapter exercises.  Information about the book is available at
 trawl processes and weighted trawl processes.")
     (license license:gpl3)))
 
+(define-public r-ambir
+  (package
+    (name "r-ambir")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ambiR" version))
+       (sha256
+        (base32 "0yp5c4i3m70h3j1fja163pshkbnwa7shsnc3gchr1h0nl0454brd"))))
+    (properties `((upstream-name . "ambiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-magrittr r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://niva-denmark.github.io/ambiR/")
+    (synopsis "Calculate AZTIâs Marine Biotic Index")
+    (description
+     "Calculate AZTIâs Marine Biotic Index - AMBI. The included list of benthic
+fauna species according to their sensitivity to pollution.  Matching species in
+sample data to the list allows the calculation of fractions of individuals in
+the different sensitivity categories and thereafter the AMBI index.  The Shannon
+Diversity Index H and the Danish benthic fauna quality index DKI (Dansk
+Kvalitetsindeks) can also be calculated, as well as the multivariate M-AMBI
+index.  Borja, A., Franco, J. ,PÃ©rez, V. (2000) \"A marine biotic index to
+establish the ecological quality of soft bottom benthos within European
+estuarine and coastal environments\" <doi:10.1016/S0025-326X(00)00061-8>.")
+    (license license:expat)))
+
 (define-public r-ambiorix
   (package
     (name "r-ambiorix")
@@ -22692,32 +22685,6 @@ multiple graphical models.  For more details, please see
      "Interact with Google Ads Data Hub API
 <https://developers.google.com/ads-data-hub/reference/rest>.  The functionality
 allows to fetch customer details, submit queries to ADH.")
-    (license license:gpl2)))
-
-(define-public r-ads
-  (package
-    (name "r-ads")
-    (version "1.5-11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ads" version))
-       (sha256
-        (base32 "162c31rpg04nlyqbngyp66kjsjx779vkd0lni9zmxr1mqgbd24sk"))))
-    (properties `((upstream-name . "ads")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spatstat-geom r-ade4))
-    (home-page "https://forge.ird.fr/amap/ads")
-    (synopsis "Spatial Point Patterns Analysis")
-    (description
-     "Perform first- and second-order multi-scale analyses derived from Ripley
-K-function (Ripley B. D. (1977) <doi:10.1111/j.2517-6161.1977.tb01615.x>), for
-univariate, multivariate and marked mapped data in rectangular, circular or
-irregular shaped sampling windows, with tests of statistical significance based
-on Monte Carlo simulations.")
     (license license:gpl2)))
 
 (define-public r-adpss

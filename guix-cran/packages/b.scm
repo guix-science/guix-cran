@@ -1337,39 +1337,6 @@ Kakushadze, Juan A. Serur (â151 Trading Strategiesâ, 2018, ISBN:
 ed.)â, 2022, ISBN: 9780136939979).")
     (license license:gpl3)))
 
-(define-public r-bulletr
-  (package
-    (name "r-bulletr")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bulletr" version))
-       (sha256
-        (base32 "181rnrp62almf08gr41qnrnq8qnbqraqdvj4zixdh8fachsq2imp"))))
-    (properties `((upstream-name . "bulletr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xml2
-                             r-smoother
-                             r-robustbase
-                             r-reshape2
-                             r-plyr
-                             r-plotly
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/erichare/bulletr")
-    (synopsis "Algorithms for Matching Bullet Lands")
-    (description
-     "Analyze bullet lands using nonparametric methods.  We provide a reading routine
-for x3p files (see <http://www.openfmc.org> for more information) and a host of
-analysis functions designed to assess the probability that two bullets were
-fired from the same gun barrel.")
-    (license license:gpl3)))
-
 (define-public r-bulletcp
   (package
     (name "r-bulletcp")
@@ -1651,13 +1618,13 @@ literature.  For further methodological details, please refer to Penn et al.
 (define-public r-buddle
   (package
     (name "r-buddle")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Buddle" version))
        (sha256
-        (base32 "0hi516cbl93z00jpdgyp3j5hz0xf594vn65p6ahpffwzh1l8s1cf"))))
+        (base32 "1ddzpzm26087x8v9b8rax4jj81a3042aqc1dxry91lwxkl4m8x82"))))
     (properties `((upstream-name . "Buddle")))
     (build-system r-build-system)
     (arguments
@@ -13460,6 +13427,45 @@ prediction functions, can be referenced in the works of Marc Kery (2003)
 <doi:10.1002/sim.7273>.")
     (license license:gpl3+)))
 
+(define-public r-bivarhr
+  (package
+    (name "r-bivarhr")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bivarhr" version))
+       (sha256
+        (base32 "1vqy8lcf3gjxlnmnhrpnxmq33y6c6cxfr6cyyh0xxnvl4010rzdi"))))
+    (properties `((upstream-name . "bivarhr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-progressr
+                             r-posterior
+                             r-loo
+                             r-future-apply
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-data-table
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=bivarhr")
+    (synopsis "Bivariate Hurdle Regression with Bayesian Model Averaging")
+    (description
+     "This package provides tools for fitting bivariate hurdle negative binomial
+models with horseshoe priors, Bayesian Model Averaging (BMA) via stacking, and
+comprehensive causal inference methods including G-computation, transfer
+entropy, Threshold Vector Autoregressive (TVAR) and Smooth Transition
+Autoregressive (STAR) models, Dynamic Bayesian Networks (DBN), Hidden Markov
+Models (HMM), and sensitivity analysis.")
+    (license license:expat)))
+
 (define-public r-bittermelon
   (package
     (name "r-bittermelon")
@@ -19408,41 +19414,6 @@ scientific collaboration and co-word analysis.")
     (description
      "Reading and writing @code{BibTeX} files using data frames in R sessions.")
     (license license:gpl2+)))
-
-(define-public r-bibitr
-  (package
-    (name "r-bibitr")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BiBitR" version))
-       (sha256
-        (base32 "0wfwph6nw12hb43j14i9ycj8m2zn0m5ynp7afq9cray8rbgvxfv6"))))
-    (properties `((upstream-name . "BiBitR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (propagated-inputs (list r-viridis
-                             r-randomcolor
-                             r-lattice
-                             r-foreign
-                             r-dendextend
-                             r-cluster
-                             r-biclust))
-    (home-page "https://cran.r-project.org/package=BiBitR")
-    (synopsis "R Wrapper for Java Implementation of BiBit")
-    (description
-     "This package provides a simple R wrapper for the Java @code{BiBit} algorithm
-from \"A biclustering algorithm for extracting bit-patterns from binary datasets\"
-from Domingo et al. (2011) <DOI:10.1093/bioinformatics/btr464>.  An simple
-adaption for the @code{BiBit} algorithm which allows noise in the biclusters is
-also introduced as well as a function to guide the algorithm towards given
-(sub)patterns.  Further, a workflow to derive noisy biclusters from discoverd
-larger column patterns is included as well.")
-    (license license:gpl3)))
 
 (define-public r-bib2df
   (package
@@ -27961,6 +27932,34 @@ Zhao W <doi:10.1016/j.cct.2015.06.008>.  The analysis methods of time trend
 effect in platform trial are described in: Saville et al. (2022)
 <doi:10.1177/17407745221112013> and Bofill Roig et al. (2022)
 <doi:10.1186/s12874-022-01683-w>.")
+    (license license:expat)))
+
+(define-public r-bayesianou
+  (package
+    (name "r-bayesianou")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesianOU" version))
+       (sha256
+        (base32 "0ib674ymylrmy1309jl048aclnxlkhgqp9yjxvs5r451n0anx78c"))))
+    (properties `((upstream-name . "bayesianOU")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/isadorenabi/bayesianOU")
+    (synopsis
+     "Bayesian Nonlinear Ornstein-Uhlenbeck Models with Stochastic Volatility")
+    (description
+     "Fits Bayesian nonlinear Ornstein-Uhlenbeck models with cubic drift, stochastic
+volatility, and Student-t innovations.  The package implements hierarchical
+priors for sector-specific parameters and supports parallel MCMC sampling via
+Stan'.  Model comparison is performed using Pareto Smoothed Importance Sampling
+Leave-One-Out (PSIS-LOO) cross-validation following Vehtari, Gelman, and Gabry
+(2017) <doi:10.1007/s11222-016-9696-4>.  Prior specifications follow
+recommendations from Gelman (2006) <doi:10.1214/06-BA117A> for scale parameters.")
     (license license:expat)))
 
 (define-public r-bayesiannetwork

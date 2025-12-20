@@ -17201,19 +17201,24 @@ non-regular canvas.")
 (define-public r-contoso
   (package
     (name "r-contoso")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contoso" version))
        (sha256
-        (base32 "1jpa0zqd6xh5v3c26fq2d3lxbbw5fy69smnhxcx0j6nxgn4jxmq3"))))
+        (base32 "0wg5kkr2jqhpbrnd81vbszpd5jd2mwxhgcvi94j3yk01wk3pfqcw"))))
     (properties `((upstream-name . "contoso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-duckdb r-dplyr r-dbi r-cli))
+    (propagated-inputs (list r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-cli
+                             r-assertthat))
     (home-page "https://usrbinr.github.io/contoso/")
     (synopsis "Dataset of the 'Contoso' Company")
     (description
@@ -21502,49 +21507,6 @@ added over time.  For function suggestions, please do contact the author of the
 package.")
     (license license:gpl2)))
 
-(define-public r-compmix
-  (package
-    (name "r-compmix")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CompMix" version))
-       (sha256
-        (base32 "1b7vmkyqh8m2p72wr469anwqwghiw6m9f1p8q3mr6l1pgx7nqhsn"))))
-    (properties `((upstream-name . "CompMix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-superlearner
-                             r-randomforest
-                             r-qgcomp
-                             r-proc
-                             r-mvtnorm
-                             r-matrix
-                             r-higlasso
-                             r-hiernet
-                             r-gwqs
-                             r-glmnet
-                             r-gglasso
-                             r-devtools
-                             r-bkmr))
-    (home-page "https://cran.r-project.org/package=CompMix")
-    (synopsis
-     "Comprehensive Toolkit for Environmental Mixtures Analysis ('CompMix')")
-    (description
-     "Quantitative characterization of the health impacts associated with exposure to
-chemical mixtures has received considerable attention in current environmental
-and epidemiological studies. @code{CompMix} package allows practitioners to
-estimate the health impacts from exposure to chemical mixtures data through
-various statistical approaches, including Lasso, Elastic net, Bayeisan kernel
-machine regression (BKMR), @code{hierNet}, Quantile g-computation, Weighted
-quantile sum (WQS) and Random forest.  Hao W, Cathey A, Aung M, Boss J, Meeker
-J, Mukherjee B. (2024) \"Statistical methods for chemical mixtures: a
-practitioners guide\". <DOI:10.1101/2024.03.03.24303677>.")
-    (license license:gpl3)))
-
 (define-public r-complmrob
   (package
     (name "r-complmrob")
@@ -24917,6 +24879,55 @@ Basagana and Barrera-Gomez (2021) <doi:10.1093/ije/dyab179>.")
     (description
      "Check for namespace collisions between a string input (your function or package
 name) and half a million packages and functions on CRAN.")
+    (license license:expat)))
+
+(define-public r-colleyrstats
+  (package
+    (name "r-colleyrstats")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colleyRstats" version))
+       (sha256
+        (base32 "1984jc90xpxs1lrxqf52za32h9ngjpk0w3gqg9gy7q0z6mz7d4pa"))))
+    (properties `((upstream-name . "colleyRstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable
+                             r-writexl
+                             r-tidyr
+                             r-stringr
+                             r-see
+                             r-rstatix
+                             r-rlang
+                             r-report
+                             r-readxl
+                             r-purrr
+                             r-ggtext
+                             r-ggstatsplot
+                             r-ggsignif
+                             r-ggpmisc
+                             r-ggplot2
+                             r-fsa
+                             r-effectsize
+                             r-dplyr
+                             r-conflicted
+                             r-clipr
+                             r-car
+                             r-artool))
+    (home-page "https://cran.r-project.org/package=colleyRstats")
+    (synopsis "Functions to Streamline Statistical Analysis and Reporting")
+    (description
+     "Built upon popular R packages such as ggstatsplot and ARTool', this collection
+offers a wide array of tools for simplifying reproducible analyses, generating
+high-quality visualizations, and producing APA'-compliant outputs.  The primary
+goal of this package is to significantly reduce repetitive coding efforts,
+allowing you to focus on interpreting results.  Whether you're dealing with
+ANOVA assumptions, reporting effect sizes, or creating publication-ready
+visualizations, this package makes these tasks easier.")
     (license license:expat)))
 
 (define-public r-collett
@@ -32452,13 +32463,13 @@ number needed to treat, number needed to diagnose, and predictive summary index.
 (define-public r-clinpubr
   (package
     (name "r-clinpubr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinpubr" version))
        (sha256
-        (base32 "0dx6zx4qgv3ijg6dgmbaahzbkg9a836qv983hq404n1yqlbkiyx6"))))
+        (base32 "0ckfa152p90zn1af7i4pw5ddm4jsm9ppr88xprzwgqmf8r4l6kqi"))))
     (properties `((upstream-name . "clinpubr")))
     (build-system r-build-system)
     (arguments
@@ -35641,13 +35652,13 @@ Central, @code{CrossRef}, Microsoft Academic Graph and CORE;
 (define-public r-citation
   (package
     (name "r-citation")
-    (version "0.8.2")
+    (version "0.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "citation" version))
        (sha256
-        (base32 "0s6hsxfa72apslp4prfl2b9n1ybvsynlh69772rh9x0niysgm43g"))))
+        (base32 "12kp25rhphw6c4fbdcl34sjx4lnj3nwz3j4mnsvb2j4jycbwimi1"))))
     (properties `((upstream-name . "citation")))
     (build-system r-build-system)
     (arguments
@@ -37278,19 +37289,21 @@ implemented for comparison.")
 (define-public r-cici
   (package
     (name "r-cici")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICI" version))
        (sha256
-        (base32 "0yad8v8sml6d5vl8wsl6p8v82ryp37g1ig9cn6s1b3f1r0i75g8n"))))
+        (base32 "0a8w773kd9d1x4x40jd32ckbk5kh1d6bj3ph4b7dpckjrxqlf417"))))
     (properties `((upstream-name . "CICI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rngtools
+    (propagated-inputs (list r-survival
+                             r-superlearner
+                             r-rngtools
                              r-mgcv
                              r-glmnet
                              r-ggplot2

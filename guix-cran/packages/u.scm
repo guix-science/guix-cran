@@ -1286,13 +1286,13 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.11.4")
+    (version "3.11.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ursa" version))
        (sha256
-        (base32 "14wkf41k4ws79qc0w92ixh56dk1d5pdiipcgk3n61s6bg7yq7wry"))))
+        (base32 "11fw7whixa33fw3m6m5rw6jwvy6xp1qbp7sy7q8iczjzzyn2rxpm"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (arguments
@@ -4479,6 +4479,30 @@ flow estimation in the United Kingdom\", Institute of Hydrology (1992, ISBN 0
 (<https://nrfa.ceh.ac.uk/>, terms and conditions:
 <https://nrfa.ceh.ac.uk/help/costs-terms-and-conditions>).")
     (license license:gpl3)))
+
+(define-public r-ukc19
+  (package
+    (name "r-ukc19")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukc19" version))
+       (sha256
+        (base32 "0fpya34zdzb1f8v28s8m4dv9f23cb61hdi12nfjzpmcdxqbhp7gm"))))
+    (properties `((upstream-name . "ukc19")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://ai4ci.github.io/ukc19/")
+    (synopsis "Datasets from the UK COVID-19 Outbreak")
+    (description
+     "This package provides easy access to a curated selection of pre-processed data
+sets relevant to the COVID-19 outbreak in the UK for teaching and demonstration
+purposes.")
+    (license license:expat)))
 
 (define-public r-ukbnmr
   (package

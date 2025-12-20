@@ -4566,13 +4566,13 @@ estimators are implemented.")
 (define-public r-evsim
   (package
     (name "r-evsim")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evsim" version))
        (sha256
-        (base32 "1v74hsq1a7xpnpssiryv4x15iwwrvl8vs5a5krml6mszmfk5dsfg"))))
+        (base32 "0rczj8x19wwg6f7rvkk3b5m5gn1ypynwm2frkidrnbzhay1hjd23"))))
     (properties `((upstream-name . "evsim")))
     (build-system r-build-system)
     (arguments
@@ -4585,7 +4585,6 @@ estimators are implemented.")
                              r-lubridate
                              r-jsonlite
                              r-ggplot2
-                             r-dygraphs
                              r-dplyr))
     (home-page "https://github.com/resourcefully-dev/evsim/")
     (synopsis "Electric Vehicle Charging Sessions Simulation")
@@ -5985,6 +5984,32 @@ the EV to that state of charge r.  The details of the algorithm are described in
 GonzÃ¡lez-RodrÃ­guez et at (2023) <https://inria.hal.science/hal-04362876v1>.")
     (license license:gpl3)))
 
+(define-public r-evcgsampler
+  (package
+    (name "r-evcgsampler")
+    (version "0.9.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eVCGsampler" version))
+       (sha256
+        (base32 "1sa70i9ykr5v8qayn61dkksclcdjqbkkb900y0c40zjqh5bkk676"))))
+    (properties `((upstream-name . "eVCGsampler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork r-osqp r-ggplot2 r-ggforce))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=eVCGsampler")
+    (synopsis "VCG Sampling using Energy-Based Covariate Balancing")
+    (description
+     "This package provides a principled framework for sampling Virtual Control Group
+(VCG) using energy distance-based covariate balancing.  The package offers
+visualization tools to assess covariate balance and includes a permutation test
+to evaluate the statistical significance of observed deviations.")
+    (license license:expat)))
+
 (define-public r-evapotranspiration
   (package
     (name "r-evapotranspiration")
@@ -7227,19 +7252,19 @@ Economic Botany, 62(1), 24-39. <doi:10.1007/s12231-007-9004-5>.")
 (define-public r-ethiodate
   (package
     (name "r-ethiodate")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ethiodate" version))
        (sha256
-        (base32 "1h2kyvwgwb3grvgrsdzdz89kwm3agpwh5w5zb0zkyc7cih9bkm35"))))
+        (base32 "1g6969zzgzvkm0vmcw2dbbrm7ms55ljhx2grc4ql6p9j66apinxd"))))
     (properties `((upstream-name . "ethiodate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-stringr r-rcpp))
+    (propagated-inputs (list r-vctrs r-stringr r-rcpp r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://guturago.github.io/ethiodate/")
     (synopsis "Working with Ethiopian Dates")
@@ -9396,6 +9421,43 @@ passed by users have valid types, lengths, etc.  and for generating informative
 and well-formatted error messages in a consistent style.  Also provides tools
 for users to create their own validator functions.  The error message style used
 is adopted from <https://style.tidyverse.org/error-messages.html>.")
+    (license license:expat)))
+
+(define-public r-ergmito
+  (package
+    (name "r-ergmito")
+    (version "0.3-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ergmito" version))
+       (sha256
+        (base32 "1x5zzzsn0b32mahbkly4mxdd3gbhbagkgcfgbpdfkabr5pmfnn88"))))
+    (properties `((upstream-name . "ergmito")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-texreg
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-network
+                             r-mass
+                             r-ergm))
+    (native-inputs (list r-knitr))
+    (home-page "https://muriteams.github.io/ergmito/")
+    (synopsis "Exponential Random Graph Models for Small Networks")
+    (description
+     "Simulation and estimation of Exponential Random Graph Models (ERGMs) for small
+networks using exact statistics as shown in Vega Yon et al. (2020)
+<DOI:10.1016/j.socnet.2020.07.005>.  As a difference from the ergm package,
+ergmito circumvents using Markov-Chain Maximum Likelihood Estimator (MC-MLE) and
+instead uses Maximum Likelihood Estimator (MLE) to fit ERGMs for small networks.
+ As exhaustive enumeration is computationally feasible for small networks, this
+R package takes advantage of this and provides tools for calculating likelihood
+functions, and other relevant functions, directly, meaning that in many cases
+both estimation and simulation of ERGMs for small networks can be faster and
+more accurate than simulation-based algorithms.")
     (license license:expat)))
 
 (define-public r-ergmharris
@@ -24728,6 +24790,32 @@ report and backup data recorded during CRM production and facilitates following
 the recommended procedures.  It is described in Lisec et al (2023)
 <doi:10.1007/s00216-023-05099-3> and can also be accessed online
 <https://apps.bam.de/shn00/@code{eCerto/>} without package installation.")
+    (license license:expat)))
+
+(define-public r-ecdfniche
+  (package
+    (name "r-ecdfniche")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ECDFniche" version))
+       (sha256
+        (base32 "0559c32mhlfng6cr9mkj30321fq7mzds2j8aycf70dd8xqmgafm6"))))
+    (properties `((upstream-name . "ECDFniche")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-lemon r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ECDFniche")
+    (synopsis
+     "Empirical Cumulative Distribution Function Niche Modeling Tools")
+    (description
+     "Simulate ecological niche models using Mahalanobis distance, transform distances
+to suitability with 1 - empirical cumulative distribution function and 1 -
+chi-squared, and generate comparison figures.")
     (license license:expat)))
 
 (define-public r-ecdfht

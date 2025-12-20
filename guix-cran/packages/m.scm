@@ -28333,6 +28333,50 @@ information on Citrus, please see: Bruggner et al. (2014)
 <https://github.com/nolanlab/citrus>.")
     (license license:gpl2)))
 
+(define-public r-mindr
+  (package
+    (name "r-mindr")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mindr" version))
+       (sha256
+        (base32 "0gdvhqv362n2vxg1z9bi5z4jmsb8rf5jd0qli6kaj76ii7pg7g9p"))))
+    (properties `((upstream-name . "mindr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-rmarkdown r-rdpack r-pdftools r-knitr
+                             r-htmlwidgets))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/pzhaonet/mindr")
+    (synopsis "Generate Mind Maps")
+    (description
+     "Convert Markdown ('.md') or R Markdown ('.Rmd') texts, R scripts, directory
+structures, and other hierarchical structured documents into mind map widgets or
+Freemind codes or Mermaid mind map codes, and vice versa.  Freemind mind map
+('.mm') files can be opened by or imported to common mind map software such as
+Freemind (<https://freemind.sourceforge.io/wiki/index.php/Main_Page>).  Mermaid
+mind map codes (<https://mermaid.js.org/>) can be directly embedded in
+documents.")
+    (license license:gpl3)))
+
 (define-public r-mindonstats
   (package
     (name "r-mindonstats")
@@ -34992,6 +35036,45 @@ Sandberg, K., & Bibby, B. M. (2020).  Regression methods for metacognitive
 sensitivity.  Journal of Mathematical Psychology, 94.
 <doi:10.1016/j.jmp.2019.102297>.")
     (license license:gpl3)))
+
+(define-public r-metarvm
+  (package
+    (name "r-metarvm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetaRVM" version))
+       (sha256
+        (base32 "07fan440h62mdi708dx8scrw1nzbr84p2gxlqkpxv2ila8pdj5ws"))))
+    (properties `((upstream-name . "MetaRVM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-r6
+                             r-purrr
+                             r-odin
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://RESUME-Epi.github.io/MetaRVM/")
+    (synopsis
+     "Meta-Population Compartmental Model for Respiratory Virus Diseases")
+    (description
+     "Simulates respiratory virus epidemics using meta-population compartmental models
+following Fadikar et.  al. (2025) <doi:10.1101/2025.05.05.25327021>.
+@code{MetaRVM} implements a stochastic SEIRD
+(Susceptible-Exposed-Infected-Recovered-Dead) framework with demographic
+stratification by age, race, and geographic zones.  It supports complex
+epidemiological scenarios including asymptomatic and presymptomatic
+transmission, hospitalization dynamics, vaccination schedules, and time-varying
+contact patterns via mixing matrices.")
+    (license license:expat)))
 
 (define-public r-metarnaseq
   (package
@@ -46116,13 +46199,13 @@ private practitioners, scholars as well as policymakers.")
 (define-public r-matriks
   (package
     (name "r-matriks")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matRiks" version))
        (sha256
-        (base32 "0npl1dkjc4q4rgfhqd80xg7v751dkxbfc3rnj93rw3z2mdwkk50i"))))
+        (base32 "0p89q9nwawv7bx1x03xrrxdnscmj53i159l5z66r2v8qvllhip53"))))
     (properties `((upstream-name . "matRiks")))
     (build-system r-build-system)
     (arguments
@@ -48891,6 +48974,36 @@ autoregressive models.")
      "Policy evaluation using generalized Qini curves: Evaluate data-driven treatment
 targeting rules for one or more treatment arms over different budget constraints
 in experimental or observational settings under unconfoundedness.")
+    (license license:expat)))
+
+(define-public r-mapycusmaximus
+  (package
+    (name "r-mapycusmaximus")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapycusmaximus" version))
+       (sha256
+        (base32 "0vy4vb5yfhmqk744c5aalz1b7f1ddl3yzczlkzyxzzv1l6dhkfyq"))))
+    (properties `((upstream-name . "mapycusmaximus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-lwgeom r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://alex-nguyen-vn.github.io/mapycusmaximus/")
+    (synopsis
+     "Focus-Glue-Context Fisheye Transformations for Spatial Visualization")
+    (description
+     "Focus-glue-context (FGC) fisheye transformations to two-dimensional coordinates
+and spatial vector geometries.  Implements a smooth radial distortion that
+enlarges a focal region, transitions through a glue ring, and preserves outside
+context.  Methods build on generalized fisheye views and focus+context mapping.
+For more details see Furnas (1986) <doi:10.1145/22339.22342>, Furnas (2006)
+<doi:10.1145/1124772.1124921> and Yamamoto et al. (2009)
+<doi:10.1145/1653771.1653788>.")
     (license license:expat)))
 
 (define-public r-mapview

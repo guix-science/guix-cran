@@ -8520,13 +8520,13 @@ regression context.")
 (define-public r-interactionrcs
   (package
     (name "r-interactionrcs")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interactionRCS" version))
        (sha256
-        (base32 "0j9wyhbcj0w0w553k6ba27rx757f4pdxs3qzlzm97hh5xfcffya1"))))
+        (base32 "1gxzxrgryryp0m24qk5835wlgdhqwdbr94mick3wrfcnji6aw3wy"))))
     (properties `((upstream-name . "interactionRCS")))
     (build-system r-build-system)
     (arguments
@@ -8535,8 +8535,8 @@ regression context.")
     (propagated-inputs (list r-survival
                              r-stringr
                              r-rms
+                             r-rlang
                              r-pspline
-                             r-pryr
                              r-msm
                              r-boot))
     (native-inputs (list r-knitr))
@@ -9981,13 +9981,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "11drqhaq0h4app0wd3fb07zkjysa9s7jalykfl8wxg9raml99j4d"))))
+        (base32 "0g1mkahfd70m9z9r1q6lvnmdsa714wb2zsr481pig8kb7cqmm0pn"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments

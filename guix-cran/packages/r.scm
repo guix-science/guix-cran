@@ -3468,13 +3468,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.0.5")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "0shrkz6sgfr7s340iayc5z8sd6053j8i1q2sy3kq8lvd5bwkd4cf"))))
+        (base32 "1nk5ca2mjw11qd8symaya9f5n4kc7gfhqnhibh90rxqdjd987npz"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -3493,25 +3493,19 @@ centered on an approach using machine learning for path classification.")
     (home-page "https://github.com/mirzaghaderi/rtpcr")
     (synopsis "qPCR Data Analysis")
     (description
-     "Various methods are employed for statistical analysis and graphical presentation
-of real-time PCR (quantitative PCR or @code{qPCR}) data.  rtpcr handles
-amplification efficiency calculation, statistical analysis and graphical
-representation of real-time PCR data based on up to two reference genes.  By
-accounting for amplification efficiency values, rtpcr was developed using a
-general calculation method described by Ganger et al. (2017)
-<doi:10.1186/s12859-017-1949-5> and Taylor et al. (2019)
-<doi:10.1016/j.tibtech.2018.12.002>, covering both the Livak and Pfaffl methods.
- Based on the experimental conditions, the functions of the rtpcr package use
-t-test (for experiments with a two-level factor), analysis of variance (ANOVA),
-analysis of covariance (ANCOVA) or analysis of repeated measure data to
-calculate the fold change (FC, Delta Delta Ct method) or relative expression
-(RE, Delta Ct method).  The functions further provide standard errors and
+     "Amplification efficiency estimation, statistical analysis, and graphical
+representation of quantitative real-time PCR (@code{qPCR}) data using one or
+more specified reference genes is handled by rtpcr package.  By accounting for
+amplification efficiency values, rtpcr was developed using a general calculation
+method described by Ganger et al. (2017) <doi:10.1186/s12859-017-1949-5> and
+Taylor et al. (2019) <doi:10.1016/j.tibtech.2018.12.002>, covering both the
+Livak and Pfaffl methods.  Based on the experimental conditions, the functions
+of the rtpcr package use t-test (for experiments with a two-level factor),
+analysis of variance (ANOVA), analysis of covariance (ANCOVA) or analysis of
+repeated measure data to analyse the relative expression (Delta Delta Ct method
+or Delta Ct method).  The functions further provide standard errors and
 confidence intervals for means, apply statistical mean comparisons and present
-significance.  To facilitate function application, different data sets were used
-as examples and the outputs were explained.  ârtpcrâ package also provides
-bar plots using various controlling arguments.  The rtpcr package is
-user-friendly and easy to work with and provides an applicable resource for
-analyzing real-time PCR data.")
+significance.")
     (license license:gpl3)))
 
 (define-public r-rtpc
@@ -11946,6 +11940,39 @@ performance measures as mentioned in Chen and Martin (2018)
 <https://www.ssrn.com/abstract=3415903>.  Also evaluates estimators influence
 functions at a set of parameter values and plots them to display the shapes of
 the influence functions.")
+    (license license:gpl2+)))
+
+(define-public r-rpeglmen
+  (package
+    (name "r-rpeglmen")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RPEGLMEN" version))
+       (sha256
+        (base32 "01pk1yv1izz3as8nn1hhj65fda13g535yyfar25hba01qjl15vhi"))))
+    (properties `((upstream-name . "RPEGLMEN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-rpeif r-rcppeigen r-rcpp))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=RPEGLMEN")
+    (synopsis
+     "Gamma and Exponential Generalized Linear Models with Elastic Net Penalty")
+    (description
+     "This package implements the fast iterative shrinkage-thresholding algorithm
+(FISTA) algorithm to fit a Gamma distribution with an elastic net penalty as
+described in Chen, Arakvin and Martin (2018)
+<doi:10.48550/@code{arXiv.1804.07780>}.  An implementation for the case of the
+exponential distribution is also available, with details available in Chen and
+Martin (2018) <doi:10.2139/ssrn.3085672>.")
     (license license:gpl2+)))
 
 (define-public r-rpeakchrom
@@ -22332,35 +22359,6 @@ update results accordingly to given dependencies on changed data or updated
 source files.")
     (license license:gpl3+)))
 
-(define-public r-rmaczek
-  (package
-    (name "r-rmaczek")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RMaCzek" version))
-       (sha256
-        (base32 "17vnan5c4yxzbx95x4mk9j7ff0nz26rzdpxydv7dnsqygpcf58a5"))))
-    (properties `((upstream-name . "RMaCzek")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seriation
-                             r-rcolorbrewer
-                             r-ga
-                             r-fuzzydbscan
-                             r-ecp
-                             r-e1071))
-    (home-page "https://cran.r-project.org/package=RMaCzek")
-    (synopsis "Czekanowski's Diagrams")
-    (description
-     "Allows for production of Czekanowski's Diagrams with clusters.  See K.
-Bartoszek, A. Vasterlund (2020) <doi:10.2478/bile-2020-0008> and K. Bartoszek,
-Y. Luo (2023) <doi:10.14708/ma.v51i2.7259>.")
-    (license license:gpl3)))
-
 (define-public r-rmacrostrat
   (package
     (name "r-rmacrostrat")
@@ -22483,13 +22481,13 @@ routines implement the algorithm described in Michael, Thronton, Xie, and Tian
 (define-public r-rlumshiny
   (package
     (name "r-rlumshiny")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLumShiny" version))
        (sha256
-        (base32 "1kgzrhi6bm1rk3s22k17wp9ylrl204kasd2gy7g13d58r748v95g"))))
+        (base32 "01prbj8xhy5dg191pav00qigmwqanq8malljijpaf1w9kwv85q10"))))
     (properties `((upstream-name . "RLumShiny")))
     (build-system r-build-system)
     (arguments
@@ -31794,6 +31792,34 @@ that deal appropriately with cases where the shape parameter is very close to
 zero.")
     (license license:gpl2+)))
 
+(define-public r-revamp
+  (package
+    (name "r-revamp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReVAMP" version))
+       (sha256
+        (base32 "1bp3l1zkscc6gzrcxvq65wgw13g54nbyj683882hasyg3ivf6nmx"))))
+    (properties `((upstream-name . "ReVAMP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://revamp.ebaker.me.uk/")
+    (synopsis "Interface to 'Vamp' Audio Analysis Plugins")
+    (description
+     "This package provides an interface to the Vamp audio analysis plugin system
+<https://www.vamp-plugins.org/> developed by Queen Mary University of London's
+Centre for Digital Music.  Enables loading and running Vamp plugins for various
+audio analysis tasks including tempo detection, onset detection, spectral
+analysis, and audio feature extraction.  Supports mono and stereo audio with
+automatic channel adaptation and domain conversion.")
+    (license license:gpl2+)))
+
 (define-public r-reval
   (package
     (name "r-reval")
@@ -36506,6 +36532,38 @@ importance of predictors in a linear or generalized linear model, and a couple
 of useful Tcl/Tk widgets.")
     (license license:gpl2+)))
 
+(define-public r-reliashiny
+  (package
+    (name "r-reliashiny")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReliaShiny" version))
+       (sha256
+        (base32 "08jqzz5jkqzwfbz63308bqw3gw59vlw9m1x2plvgl17rp2qms3w8"))))
+    (properties `((upstream-name . "ReliaShiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weibullr
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shiny
+                             r-reliaplotr
+                             r-reliagrowr
+                             r-magrittr))
+    (home-page "https://paulgovan.github.io/ReliaShiny/")
+    (synopsis "'Shiny' App for Reliability Analysis")
+    (description
+     "An interactive web application for reliability analysis using the shiny
+<https://shiny.posit.co/> framework.  The app provides an easy-to-use interface
+for performing reliability analysis using @code{WeibullR}
+<https://cran.r-project.org/package=@code{WeibullR>} and @code{ReliaGrowR}
+<https://cran.r-project.org/package=@code{ReliaGrowR>}.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-reliar
   (package
     (name "r-reliar")
@@ -38859,6 +38917,50 @@ that allow subsets of any object to be referenced or expressions containing
 references to multiple objects.")
     (license license:expat)))
 
+(define-public r-refdb
+  (package
+    (name "r-refdb")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "refdb" version))
+       (sha256
+        (base32 "0j1zlbdvdr45xmnf0619im50zf47sikmg36l0y8fdrlvadjiijmz"))))
+    (properties `((upstream-name . "refdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-taxize
+                             r-stringr
+                             r-rmarkdown
+                             r-rlang
+                             r-rentrez
+                             r-readr
+                             r-leaflet
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr
+                             r-bioseq
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://fkeck.github.io/refdb/")
+    (synopsis "DNA Reference Library Manager")
+    (description
+     "Reference database manager offering a set of functions to import, organize,
+clean, filter, audit and export reference genetic data.  Provide functions to
+download sequence data from NCBI @code{GenBank}
+<https://www.ncbi.nlm.nih.gov/genbank/>.  Designed as an environment for
+semi-automatic and assisted construction of reference databases and to improve
+standardization and repeatability in barcoding and metabarcoding studies.")
+    (license license:gpl3)))
+
 (define-public r-refbasedmi
   (package
     (name "r-refbasedmi")
@@ -39292,6 +39394,43 @@ Merge-split/Recombination algorithms of Carter et al. (2019)
 <doi:10.1162/99608f92.eb30390f>, and the Short-burst optimization algorithm of
 Cannon et al. (2020) <doi:10.48550/@code{arXiv.2011.02288>}.")
     (license license:gpl2+)))
+
+(define-public r-rediscover
+  (package
+    (name "r-rediscover")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rediscover" version))
+       (sha256
+        (base32 "0skzrhgcrs5205yd5rdpcvcbss82bl7ggzzcwkxcsg13qr8xq6ky"))))
+    (properties `((upstream-name . "Rediscover")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiftconvolvepoibin
+                             r-rcolorbrewer
+                             r-poissonbinomial
+                             r-matrixstats
+                             r-matrix
+                             r-maftools
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Rediscover")
+    (synopsis "Identify Mutually Exclusive Mutations")
+    (description
+     "An optimized method for identifying mutually exclusive genomic events.  Its main
+contribution is a statistical analysis based on the Poisson-Binomial
+distribution that takes into account that some samples are more mutated than
+others.  See [Canisius, Sander, John WM Martens, and Lodewyk FA Wessels. (2016)
+\"A novel independence test for somatic alterations in cancer shows that biology
+drives mutual exclusivity but chance explains most co-occurrence.\" Genome
+biology 17.1 : 1-17. <doi:10.1186/s13059-016-1114-x>].  The mutations matrices
+are sparse matrices.  The method developed takes advantage of the advantages of
+this type of matrix to save time and computing resources.")
+    (license license:artistic2.0)))
 
 (define-public r-redisbasecontainer
   (package
@@ -41467,13 +41606,13 @@ Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 (define-public r-ream
   (package
     (name "r-ream")
-    (version "1.0-9")
+    (version "1.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ream" version))
        (sha256
-        (base32 "12sz20r0b3h6mdk7qcij9xf2zmq2s1974qbm0hdg78dpx7228jkg"))))
+        (base32 "1csjzckabksy72m1k9yzcb7xvl2yf4w6wj2qhcyp0d1i04rapxd0"))))
     (properties `((upstream-name . "ream")))
     (build-system r-build-system)
     (arguments
@@ -42074,6 +42213,39 @@ several data sets in their original form, for example if they are downloaded
 from UCI Machine Learning Repository.  The data are not part of the package and
 have to be downloaded separately.")
     (license license:gpl3)))
+
+(define-public r-readmit
+  (package
+    (name "r-readmit")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readmit" version))
+       (sha256
+        (base32 "080plpgpn6zd3n60bhwl3filz9q5s14hsb4svhipvhj5kfmpmsh6"))))
+    (properties `((upstream-name . "readmit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-httr
+                             r-dplyr))
+    (home-page "https://centralstatz.github.io/readmit/")
+    (synopsis "Tools for Working with Hospital Readmissions Data")
+    (description
+     "This package contains tools for working with and analyzing hospital readmissions
+data.  The package provides utilities for components of the Hospital
+Readmissions Reduction Program (HRRP), including program timeline functions,
+Hospital-Specific Report (HSR) helpers, and general importing tools for the
+Provider Data Catalog (PDC).")
+    (license license:expat)))
 
 (define-public r-readmission
   (package
@@ -50853,13 +51025,13 @@ Supports the analysis and management of these worlds and game saves.")
 (define-public r-rbeast
   (package
     (name "r-rbeast")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rbeast" version))
        (sha256
-        (base32 "0mwa4gqv3m9rvdja4spsh3bzyp9xyw2hlqs76pxyby581vaqa33j"))))
+        (base32 "123ffcpq3z2g3rqd51w8kq78b2ppg6rc3p4rpfjlhimclhg7wbjy"))))
     (properties `((upstream-name . "Rbeast")))
     (build-system r-build-system)
     (arguments
@@ -50868,25 +51040,24 @@ Supports the analysis and management of these worlds and game saves.")
     (home-page "https://github.com/zhaokg/Rbeast")
     (synopsis "Bayesian Change-Point Detection and Time Series Decomposition")
     (description
-     "Interpretation of time series data is affected by model choices.  Different
-models can give different or even contradicting estimates of patterns, trends,
-and mechanisms for the same data--a limitation alleviated by the Bayesian
-estimator of abrupt change,seasonality, and trend (BEAST) of this package.
-BEAST seeks to improve time series decomposition by forgoing the
-\"single-best-model\" concept and embracing all competing models into the
-inference via a Bayesian model averaging scheme.  It is a flexible tool to
-uncover abrupt changes (i.e., change-points, breakpoints, structural breaks, or
-join-points), cyclic variations (e.g., seasonality), and nonlinear trends in
-time-series observations.  BEAST not just tells when changes occur but also
-quantifies how likely the detected changes are true.  It detects not just
-piecewise linear trends but also arbitrary nonlinear trends.  BEAST is
-applicable to real-valued time series data of all kinds, be it for remote
-sensing, economics, climate sciences, ecology, and hydrology.  Example
-applications include its use to identify regime shifts in ecological data, map
-forest disturbance and land degradation from satellite imagery, detect market
-trends in economic data, pinpoint anomaly and extreme events in climate data,
-and unravel system dynamics in biological data.  Details on BEAST are reported
-in Zhao et al. (2019) <doi:10.1016/j.rse.2019.04.034>.")
+     "BEAST is a Bayesian estimator of abrupt change, seasonality, and trend for
+decomposing univariate time series and 1D sequential data.  Interpretation of
+time series depends on model choice; different models can yield contrasting or
+contradicting estimates of patterns, trends, and mechanisms.  BEAST alleviates
+this by abandoning the single-best-model paradigm and instead using Bayesian
+model averaging over many competing decompositions.  It detects and
+characterizes abrupt changes (changepoints, breakpoints, structural breaks,
+joinpoints), cyclic or seasonal variation, and nonlinear trends.  BEAST not only
+detects when changes occur but also quantifies how likely the changes are true.
+It estimates not just piecewise linear trends but also arbitrary nonlinear
+trends.  BEAST is generically applicable to any real-valued time series, such as
+those from remote sensing, economics, climate science, ecology, hydrology, and
+other environmental and biological systems.  Example applications include
+identifying regime shifts in ecological data, mapping forest disturbance and
+land degradation from satellite image time series, detecting market trends in
+economic indicators, pinpointing anomalies and extreme events in climate
+records, and analyzing system dynamics in biological time series.  Details are
+given in Zhao et al. (2019) <doi:10.1016/j.rse.2019.04.034>.")
     (license license:gpl2+)))
 
 (define-public r-rbe3

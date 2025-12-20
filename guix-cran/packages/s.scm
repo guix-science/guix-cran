@@ -5614,13 +5614,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.14.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "1lv8lrszagq5ipg0imbm5s6j8bdzvqxkf8nbla25d8xmikgbggm9"))))
+        (base32 "13y7ahdnisb7wi19ml8knx9pxfv8qrsvr0xcd6a0gxbzdwxyld0r"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -5634,6 +5634,7 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
                              r-rvest
                              r-rstudioapi
                              r-rpostgres
+                             r-rmarkdown
                              r-quarto
                              r-pool
                              r-miniui
@@ -7750,36 +7751,6 @@ metacells.  We also recommend installing scater Bioconductor package
 <doi:10.18129/B9.bioc.scater>
 <https://bioconductor.org/packages/release/bioc/html/scater.html>.")
     (license license:gpl3)))
-
-(define-public r-superbiclust
-  (package
-    (name "r-superbiclust")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "superbiclust" version))
-       (sha256
-        (base32 "0mk3d820skp99hl8ilwic2fz90yb9dwy2jq3vfjb726gj1qich3b"))))
-    (properties `((upstream-name . "superbiclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-biclust))
-    (home-page "https://cran.r-project.org/package=superbiclust")
-    (synopsis
-     "Generating Robust Biclusters from a Bicluster Set (Ensemble Biclustering)")
-    (description
-     "Biclusters are submatrices in the data matrix which satisfy certain conditions
-of homogeneity.  Package contains functions for generating robust biclusters
-with respect to the initialization parameters for a given bicluster solution
-contained in a bicluster set in data, the procedure is also known as ensemble
-biclustering.  The set of biclusters is evaluated based on the similarity of its
-elements (the overlap), and afterwards the hierarchical tree is constructed to
-obtain cut-off points for the classes of robust biclusters.  The result is a
-number of robust (or super) biclusters with none or low overlap.")
-    (license license:gpl2+)))
 
 (define-public r-superb
   (package
@@ -28404,13 +28375,13 @@ described by Church (1974) <doi:10.1007/BF01942293>.")
 (define-public r-spatialrf
   (package
     (name "r-spatialrf")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialRF" version))
        (sha256
-        (base32 "1lbwk7ziv292kxkz6rpr44jij3q13ljmqaccq56x6c2l8wkxl583"))))
+        (base32 "1nmixr8dkzd7jamz5yhwa42xlzyqgq0rdzz8hk4cn7ki3vdqy49c"))))
     (properties `((upstream-name . "spatialRF")))
     (build-system r-build-system)
     (arguments
@@ -28432,23 +28403,19 @@ described by Church (1974) <doi:10.1007/BF01942293>.")
     (home-page "https://blasbenito.github.io/spatialRF/")
     (synopsis "Easy Spatial Modeling with Random Forest")
     (description
-     "Automatic generation and selection of spatial predictors for spatial regression
-with Random Forest.  Spatial predictors are surrogates of variables driving the
-spatial structure of a response variable.  The package offers two methods to
-generate spatial predictors from a distance matrix among training cases: 1)
-Moran's Eigenvector Maps (MEMs; Dray, Legendre, and Peres-Neto 2006
-<DOI:10.1016/j.ecolmodel.2006.02.015>): computed as the eigenvectors of a
-weighted matrix of distances; 2) RFsp (Hengl et al. <DOI:10.7717/peerj.5518>):
-columns of the distance matrix used as spatial predictors.  Spatial predictors
-help minimize the spatial autocorrelation of the model residuals and facilitate
-an honest assessment of the importance scores of the non-spatial predictors.
-Additionally, functions to reduce multicollinearity, identify relevant variable
-interactions, tune random forest hyperparameters, assess model transferability
-via spatial cross-validation, and explore model results via partial dependence
-curves and interaction surfaces are included in the package.  The modelling
-functions are built around the highly efficient ranger package (Wright and
-Ziegler 2017 <DOI:10.18637/jss.v077.i01>).")
-    (license license:gpl3)))
+     "Automatic generation and selection of spatial predictors for Random Forest
+models fitted to spatially structured data.  Spatial predictors are constructed
+from a distance matrix among training samples using Moran's Eigenvector Maps
+(MEMs; Dray, Legendre, and Peres-Neto 2006
+<DOI:10.1016/j.ecolmodel.2006.02.015>) or the RFsp approach (Hengl et al.
+<DOI:10.7717/peerj.5518>).  These predictors are used alongside user-supplied
+explanatory variables in Random Forest models.  The package provides functions
+for model fitting, multicollinearity reduction, interaction identification,
+hyperparameter tuning, evaluation via spatial cross-validation, and result
+visualization using partial dependence and interaction plots.  Model fitting
+relies on the ranger package (Wright and Ziegler 2017
+<DOI:10.18637/jss.v077.i01>).")
+    (license license:expat)))
 
 (define-public r-spatialregimes
   (package
@@ -28689,38 +28656,6 @@ several estimates of shape all based on spatial signs, symmetrized signs, ranks
 and signed ranks.  For details, see Oja and Randles (2004)
 <doi:10.1214/088342304000000558> and Oja (2010) <doi:10.1007/978-1-4419-0468-3>.")
     (license license:gpl2)))
-
-(define-public r-spatialkwd
-  (package
-    (name "r-spatialkwd")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpatialKWD" version))
-       (sha256
-        (base32 "0b5vfsmpl3zxcwsg7bj85kfbyv8a2bgfq72b3rk4r6ms7ngc5i16"))))
-    (properties `((upstream-name . "SpatialKWD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=SpatialKWD")
-    (synopsis "Spatial KWD for Large Spatial Maps")
-    (description
-     "This package contains efficient implementations of Discrete Optimal Transport
-algorithms for the computation of Kantorovich-Wasserstein distances between
-pairs of large spatial maps (Bassetti, Gualandi, Veneroni (2020),
-<doi:10.1137/19M1261195>).  All the algorithms are based on an ad-hoc
-implementation of the Network Simplex algorithm.  The package has four main
-helper functions: @code{compareOneToOne()} (to compare two spatial maps),
-@code{compareOneToMany()} (to compare a reference map with a list of other
-maps), @code{compareAll()} (to compute a matrix of distances between a list of
-maps), and @code{focusArea()} (to compute the KWD distance within a focus area).
- In non-convex maps, the helper functions first build the convex-hull of the
-input bins and pad the weights with zeros.")
-    (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
 
 (define-public r-spatialkde
   (package
@@ -41273,13 +41208,13 @@ using other hosted services for building and test automation.")
 (define-public r-skeletalvis
   (package
     (name "r-skeletalvis")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SkeletalVis" version))
        (sha256
-        (base32 "05g9fb7415xlah4vlpbng7y7ks37zdbj7v2x7q51vsjcnadnm5y6"))))
+        (base32 "07kfzi943l139pzvyry4llii5a2ddhi3484nc9iq6dlw0wnph4xx"))))
     (properties `((upstream-name . "SkeletalVis")))
     (build-system r-build-system)
     (arguments
@@ -47652,46 +47587,6 @@ tests (F-test, Chi-Sq-test, Fisher-test, T-test, and rank-significance).  This
 package also includes empirical tests, such as Monte Carlo and bootstrap
 distribution estimates.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-sigqc
-  (package
-    (name "r-sigqc")
-    (version "0.1.24")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sigQC" version))
-       (sha256
-        (base32 "0z728hsicnx6j95y9q4gs9drv568bjqxckvgp08g3ahk5iymcym2"))))
-    (properties `((upstream-name . "sigQC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nnet
-                             r-moments
-                             r-mclust
-                             r-mass
-                             r-lattice
-                             r-kernsmooth
-                             r-gsva
-                             r-gridgraphics
-                             r-gplots
-                             r-fmsb
-                             r-complexheatmap
-                             r-cluster
-                             r-class
-                             r-circlize
-                             r-biclust))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sigQC")
-    (synopsis "Quality Control Metrics for Gene Signatures")
-    (description
-     "This package provides gene signature quality control metrics in publication
-ready plots.  Namely, enables the visualization of properties such as
-expression, variability, correlation, and comparison of methods of
-standardisation and scoring metrics.")
-    (license license:gpl3+)))
 
 (define-public r-sigora
   (package
@@ -66424,13 +66319,13 @@ Monographs, 74(2): 211-235. <doi:10.1890/02-4105>.")
 (define-public r-scpoisson
   (package
     (name "r-scpoisson")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scpoisson" version))
        (sha256
-        (base32 "0v8is1y9mqbvcvhqay1a0ycbhfxwxqkxifmbxb0sjzxg02mla65x"))))
+        (base32 "1hbhzijiaqhsvxhd3dx3xyrbynmbyk8gmy05c9qmgikabqlyj8v9"))))
     (properties `((upstream-name . "scpoisson")))
     (build-system r-build-system)
     (arguments

@@ -1602,13 +1602,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "1k4wnwmc25mbdl1w13ajjdzcpvcr8ipkq1nnxv1nwlhfq8iwvh3k"))))
+        (base32 "0b47djdap9p1ryzslnvj1mz4cw94hh24hzjx0af1dq0npi200b6x"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -7362,13 +7362,13 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "1p74amd8ya7v5fg209c1zs2i1cmxab0iif0c56aca96wpmyg85s7"))))
+        (base32 "15v52gl87jm6kxg3ppzdn1rxdbawv18zrnlwhgy44vb1619bs1jb"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
@@ -8936,44 +8936,6 @@ al. (2010) <doi:10.3102/1076998609346967>.  These are multiple-membership linear
 mixed models with teachers modeled as \"G-side\" effects and students modeled with
 either \"G-side\" or \"R-side\" effects.")
     (license license:gpl2)))
-
-(define-public r-gpumatrix
-  (package
-    (name "r-gpumatrix")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPUmatrix" version))
-       (sha256
-        (base32 "07s5p6miidc8sldnjmn11zwg4rahx43skwjzw4bhwdvbd5fssd20"))))
-    (properties `((upstream-name . "GPUmatrix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GPUmatrix")
-    (synopsis "Basic Linear Algebra with GPU")
-    (description
-     "GPUs are great resources for data analysis, especially in statistics and linear
-algebra.  Unfortunately, very few packages connect R to the GPU, and none of
-them are transparent enough to run the computations on the GPU without
-substantial changes to the code.  The maintenance of these packages is
-cumbersome: several of the earlier attempts have been removed from their
-respective repositories.  It would be desirable to have a properly maintained R
-package that takes advantage of the GPU with minimal changes to the existing
-code.  We have developed the GPUmatrix package (available on CRAN).  GPUmatrix
-mimics the behavior of the Matrix package and extends R to use the GPU for
-computations.  It includes single(FP32) and double(FP64) precision data types,
-and provides support for sparse matrices.  It is easy to learn, and requires
-very few code changes to perform the operations on the GPU. GPUmatrix relies on
-either the Torch or Tensorflow R packages to perform the GPU operations.  We
-have demonstrated its usefulness for several statistical applications and
-machine learning applications: non-negative matrix factorization, logistic
-regression and general linear models.  We have also included a comparison of GPU
-and CPU performance on different matrix operations.")
-    (license license:artistic2.0)))
 
 (define-public r-gptzeror
   (package
@@ -35384,36 +35346,6 @@ sensitivity of their results to different assumptions used in the calculations.
 See also Tholen (2024) <doi:10.1093/aobpla/plae035>.")
     (license license:gpl3)))
 
-(define-public r-gas
-  (package
-    (name "r-gas")
-    (version "0.3.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GAS" version))
-       (sha256
-        (base32 "16348wz41silrrp7vb5qscydf9di8zrbydyvhpkv7dl003c9x0rp"))))
-    (properties `((upstream-name . "GAS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-rsolnp
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-numderiv
-                             r-mass
-                             r-cubature))
-    (home-page "https://github.com/LeopoldoCatania/GAS")
-    (synopsis "Generalized Autoregressive Score Models")
-    (description
-     "Simulate, estimate and forecast using univariate and multivariate GAS models as
-described in Ardia et al. (2019) <doi:10.18637/jss.v088.i06>.")
-    (license license:gpl3)))
-
 (define-public r-garray
   (package
     (name "r-garray")
@@ -35796,13 +35728,13 @@ evaluations.")
 (define-public r-ganttify
   (package
     (name "r-ganttify")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganttify" version))
        (sha256
-        (base32 "1vlg0m0q247chjgxgyvihkjm3q740zhfw6lmyqcnmixf5kpfg86s"))))
+        (base32 "1nrxmy6rfk89fikq5b2smrrrcpkg6z6rj8l6jyzrk69259r6j1v2"))))
     (properties `((upstream-name . "ganttify")))
     (build-system r-build-system)
     (arguments
@@ -35938,13 +35870,13 @@ documents.")
 (define-public r-gandatamodel
   (package
     (name "r-gandatamodel")
-    (version "1.1.7")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganDataModel" version))
        (sha256
-        (base32 "0zp6nx43qza572nl7wibxamw5ca56b3955z6zfjxq77kwlc8jcl7"))))
+        (base32 "1k6436rrrs7vv72vynhjmfcmvfpblva6dn1hz1w3qc0i84bxvyfg"))))
     (properties `((upstream-name . "ganDataModel")))
     (build-system r-build-system)
     (arguments

@@ -7575,6 +7575,39 @@ vignette.")
 penalties.")
     (license license:gpl2+)))
 
+(define-public r-dpcd
+  (package
+    (name "r-dpcd")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DPCD" version))
+       (sha256
+        (base32 "1sy6fy57wxwkrc5v068laawn4xa5g74sp2w6zb69y0b9f4rxpfd8"))))
+    (properties `((upstream-name . "DPCD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-nimble
+                             r-mcclust
+                             r-ggplot2
+                             r-cluster
+                             r-bayesplot))
+    (home-page "https://github.com/SamMorrissette/DPCD")
+    (synopsis "Dirichlet Process Clustering with Dissimilarities")
+    (description
+     "This package provides a Bayesian hierarchical model for clustering dissimilarity
+data using the Dirichlet process.  The latent configuration of objects and the
+number of clusters are automatically inferred during the fitting process.  The
+package supports multiple models which are available to detect clusters of
+various shapes and sizes using different covariance structures.  Additional
+functions are included to ensure adequate model fits through prior and posterior
+predictive checks.")
+    (license license:expat)))
+
 (define-public r-dpcc
   (package
     (name "r-dpcc")
@@ -23953,6 +23986,48 @@ species delimitation methods.  For full functionality, please install suggested
 software at <https://legallab.github.io/delimtools/articles/install.html>.")
     (license license:expat)))
 
+(define-public r-deliberr
+  (package
+    (name "r-deliberr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deliberr" version))
+       (sha256
+        (base32 "0gggyhfc0a7fq0az6g4yfkkii1pvzcz1bx4f386q02lar9cnmaav"))))
+    (properties `((upstream-name . "deliberr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-tidyr
+                             r-tibble
+                             r-shiny
+                             r-rstatix
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-psych
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/gumbelino/deliberr")
+    (synopsis "Methods for Deliberation Analysis")
+    (description
+     "An implementation of deliberative reasoning index (DRI) and related tools for
+analysis of deliberation survey data.  Calculation of DRI, plot of
+intersubjective correlations (IC), generation of large-language model (LLM)
+survey data, and permutation tests are supported.  Example datasets and a
+graphical user interface (GUI) are also available to support analysis.  For more
+information, see Niemeyer and Veri (2022)
+<doi:10.1093/oso/9780192848925.003.0007>.")
+    (license license:expat)))
+
 (define-public r-delayedeffect-design
   (package
     (name "r-delayedeffect-design")
@@ -30524,19 +30599,20 @@ documentation see
 (define-public r-datareportr
   (package
     (name "r-datareportr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datareportR" version))
        (sha256
-        (base32 "12sip0pxvv7cjljf3vfjnrdp6lv0is3vpfq46d6kidlvmksc0w70"))))
+        (base32 "1gipnv3bg9zfn1s8wl9nfryjr3vjrs4kdq2rcswrhqpzm4xkw9q4"))))
     (properties `((upstream-name . "datareportR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-skimr r-rmarkdown r-diffdf))
+    (propagated-inputs (list r-skimr r-rmarkdown r-rlang r-diffdf))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=datareportR")
     (synopsis "Fast Data Summary Reports")
     (description

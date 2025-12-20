@@ -44,6 +44,45 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-hzip
+  (package
+    (name "r-hzip")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HZIP" version))
+       (sha256
+        (base32 "0d65b69ak15vyfniq01633ygjpavhj1dgakqpmsifg1m86dhmi77"))))
+    (properties `((upstream-name . "HZIP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam
+                             r-tibble
+                             r-statmod
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pscl
+                             r-ggplot2
+                             r-formula
+                             r-dplyr
+                             r-cubature))
+    (home-page "https://github.com/carrascojalmar/HZIP")
+    (synopsis
+     "Likelihood-Based Inference for Joint Modeling of Correlated Count and Binary Outcomes with Extra Variability and Zeros")
+    (description
+     "Inference approach for jointly modeling correlated count and binary outcomes.
+This formulation allows simultaneous modeling of zero inflation via the
+Bernoulli component while providing a more accurate assessment of the
+Hierarchical Zero-Inflated Poisson's parsimony (Lizandra C. Fabio, Jalmar M. F.
+Carrasco, Victor H. Lachos and Ming-Hui Chen, Likelihood-based inference for
+joint modeling of correlated count and binary outcomes with extra variability
+and zeros, 2025, under submission).")
+    (license license:gpl3)))
+
 (define-public r-hytest
   (package
     (name "r-hytest")
@@ -249,33 +288,33 @@ Springer, <doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
 (define-public r-hyreg2
   (package
     (name "r-hyreg2")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyreg2" version))
        (sha256
-        (base32 "1nnm1350zfi5s6rwn2v4sw3mjz98bgv7b4fwb88andfs3ka51s8r"))))
+        (base32 "0n1p4fh5iyk8lrad11q48bz7s111c39a3vgziirjaydp22sjdzmi"))))
     (properties `((upstream-name . "hyreg2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-flexmix r-bbmle))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hyreg2")
     (synopsis
      "Estimate Latent Classes on a Mixture of Continuous and Dichotomous Data")
     (description
      "EQ-5D value set estimation can be done using the hybrid model likelihood as
 described by Oppe and van Hout (2010) <doi:10.1002/hec.3560> and Ramos-GoÃ±i et
-al. (2017) <doi:10.1097/MLR.0000000000000283 >.  The package is based on
-@code{`flexmix()}` and among others contains an M-step-driver as described by
-Leisch (2004) <doi:10.18637/jss.v011.i08>.  Users can estimate latent classes
-and address preference heterogeneity.  Both uncensored and censored data are
-supported.  Furthermore, heteroscedasticity can be taken into account.  It is
-possible to control for different covariates on the continuous and dichotomous
-parts of the data and start values can differ between the expected latent
-classes.")
+al. (2017) <doi:10.1097/MLR.0000000000000283>.  The package is based on flexmix
+and among others contains an M-step-driver as described by Leisch (2004)
+<doi:10.18637/jss.v011.i08>.  Users can estimate latent classes and address
+preference heterogeneity.  Both uncensored and censored data are supported.
+Furthermore, heteroscedasticity can be taken into account.  It is possible to
+control for different covariates on the continuous and dichotomous parts of the
+data and start values can differ between the expected latent classes.")
     (license license:expat)))
 
 (define-public r-hypr
@@ -1708,6 +1747,42 @@ install.packages(\"@code{microViz}\", repos = c(davidbarnett =
 install.packages(\"devtools\") followed by
 devtools::install_github(\"david-barnett/@code{microViz}\").")
     (license license:gpl2)))
+
+(define-public r-hybridehr
+  (package
+    (name "r-hybridehr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hybridEHR" version))
+       (sha256
+        (base32 "1dl39n5w0y8ypv3saa7p8dd30p1dwi6yn0ynd2qqrcd2srx5nvqs"))))
+    (properties `((upstream-name . "hybridEHR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rsqlite
+                             r-openxlsx
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-dplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hybridEHR")
+    (synopsis
+     "Synthetic Hybrid Electronic Health Records Dataset Generator with COVID/CT Research Views")
+    (description
+     "This package provides tools to generate synthetic electronic health records
+including patients, encounters, vitals, labs, medications, procedures, and
+allergies, with optional COVID-19-focused and computed tomography (CT)-research
+views, and export them to comma separated values ('CSV'), SQLite', and Excel
+formats for researchers and developers.")
+    (license license:expat)))
 
 (define-public r-hybriddesign
   (package
@@ -7939,37 +8014,6 @@ a function in online learning just like stochastic gradient descent (SGD).  In
 addition, this method attaches a confidence interval to assess the uncertainty
 of its predictions.  See Su and Zhu (2018) <@code{arXiv:1802.04876>} for
 details.")
-    (license license:gpl3)))
-
-(define-public r-higlasso
-  (package
-    (name "r-higlasso")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "higlasso" version))
-       (sha256
-        (base32 "09d500jsxlrv658i90xnb2wj1ad89v1iwb6y7vascyvg3cff104h"))))
-    (properties `((upstream-name . "higlasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-purrr r-gglasso r-gcdnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=higlasso")
-    (synopsis "Hierarchical Integrative Group LASSO")
-    (description
-     "Environmental health studies are increasingly measuring multiple pollutants to
-characterize the joint health effects attributable to exposure mixtures.
-However, the underlying dose-response relationship between toxicants and health
-outcomes of interest may be highly nonlinear, with possible nonlinear
-interaction effects.  Hierarchical integrative group least absolute shrinkage
-and selection operator (@code{HiGLASSO}), developed by Boss et al (2020)
-<@code{arXiv:2003.12844>}, is a general framework to identify noteworthy
-nonlinear main and interaction effects in the presence of group structures among
-a set of exposures.")
     (license license:gpl3)))
 
 (define-public r-highttest
