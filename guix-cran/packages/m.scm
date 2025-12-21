@@ -19946,13 +19946,13 @@ map of Cox et al. (2009) <doi:10.1534/genetics.109.105486>.")
 (define-public r-mmcmcbayes
   (package
     (name "r-mmcmcbayes")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmcmcBayes" version))
        (sha256
-        (base32 "0r3msf61drcc4mk7h2g9qqqy23hz8r8arlqah0h6z7c7jdhda9hy"))))
+        (base32 "02djrazzm1lc498y2gglrydqiczrsanvrsaag9py33v4np5df4nm"))))
     (properties `((upstream-name . "mmcmcBayes")))
     (build-system r-build-system)
     (arguments
@@ -19962,11 +19962,13 @@ map of Cox et al. (2009) <doi:10.1534/genetics.109.105486>.")
     (home-page "https://github.com/zyang1919/mmcmcBayes")
     (synopsis "Multistage MCMC Method for Detecting DMRs")
     (description
-     "This package implements a multi-stage MCMC Bayesian framework for detecting
-differentially methylated regions (DMRs) in epigenetic data.  It uses Bayesian
-inference with Alpha-Skew Generalized Normal (ASGN) model and support Bayes
-Factor or Anderson-Darling Test for region selection.  The methodology is based
-on Yang (2025) <https://www.proquest.com/docview/3218878972>.")
+     "This package implements differential methylation region (DMR) detection using a
+multistage Markov chain Monte Carlo (MCMC) algorithm based on the alpha-skew
+generalized normal (ASGN) distribution.  Version 0.2.0 removes the
+Anderson-Darling test stage, improves computational efficiency of the core ASGN
+and multistage MCMC routines, and adds convenience functions for summarizing and
+visualizing detected DMRs.  The methodology is based on Yang (2025)
+<https://www.proquest.com/docview/3218878972>.")
     (license license:gpl3)))
 
 (define-public r-mmcm
@@ -25260,13 +25262,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "11dcqr7gg60fm3alcfikilv4gns474w5imhw28j3phiwaimkqfg0"))))
+        (base32 "0a46xfw35jmcb3y34011nymxh1vksrdn67h9mgl2vdxg7q0kkrkv"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -46522,32 +46524,6 @@ that image, and pastes it into a (e.g. an rmarkdown') document.  See
 <https://docs.mathpix.com/> for full details.  Mathpix is an external service
 and use of the API is subject to their terms and conditions.")
     (license license:gpl3+)))
-
-(define-public r-mathml
-  (package
-    (name "r-mathml")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mathml" version))
-       (sha256
-        (base32 "14zgavhnyy4hb0pzkbp29g9fddcj4i3igr00kwacgbynpzis18fn"))))
-    (properties `((upstream-name . "mathml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xfun r-rolog r-knitr))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/mgondan/mathml")
-    (synopsis "Translate R Expressions to 'MathML' and 'LaTeX'/'MathJax'")
-    (description
-     "Translate R expressions to @code{MathML} or @code{MathJax'/'LaTeX} so that they
-can be rendered in R markdown documents and shiny apps.  This package depends on
-R package rolog', which requires an installation of the SWI'-'Prolog runtime
-either from swi-prolog.org or from R package rswipl'.")
-    (license (license:fsdg-compatible "FreeBSD"))))
 
 (define-public r-materialmodifier
   (package

@@ -8348,13 +8348,13 @@ model.")
 (define-public r-wbids
   (package
     (name "r-wbids")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbids" version))
        (sha256
-        (base32 "07fcipzi4dah0qvp49w07043nqyspw15w5m0x6bd39m3hxhj6jra"))))
+        (base32 "0h66351m4brfvglagkdys075w949dlgkjjavmqxh9vg9df7gglq2"))))
     (properties `((upstream-name . "wbids")))
     (build-system r-build-system)
     (arguments
@@ -8369,7 +8369,7 @@ model.")
                              r-econdatasets
                              r-dplyr
                              r-cli))
-    (native-inputs (list r-quarto))
+    (native-inputs (list r-knitr))
     (home-page "https://teal-insights.github.io/r-wbids/")
     (synopsis
      "Seamless Access to World Bank International Debt Statistics (IDS)")

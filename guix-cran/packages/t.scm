@@ -16639,13 +16639,13 @@ tensors.")
 (define-public r-tinyvast
   (package
     (name "r-tinyvast")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyVAST" version))
        (sha256
-        (base32 "1jfmvwhqb136wljacpfsymz0f843wcl7j8r33j3a2101yd6mjcf5"))))
+        (base32 "05asf6k6wnri2r89n0ysiq2xfslh2af9f3a9f5n1z5pj6lh0cjvl"))))
     (properties `((upstream-name . "tinyVAST")))
     (build-system r-build-system)
     (arguments
@@ -19806,13 +19806,13 @@ with any LLM provider that offers chat completion.")
 (define-public r-tidypopgen
   (package
     (name "r-tidypopgen")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidypopgen" version))
        (sha256
-        (base32 "10c6mayb6qf3yl710nlyq7lnyl5yn5lmf3skz7lax76770qf2y9x"))))
+        (base32 "1gg2hxcdm5q4bv798clfrjcj8bixhj1adkq8649rdkcy8jky95pc"))))
     (properties `((upstream-name . "tidypopgen")))
     (build-system r-build-system)
     (arguments
@@ -19848,7 +19848,7 @@ and analysis of data on biallelic single nucleotide polymorphisms (SNPs).
 tidypopgen scales to very large genetic datasets by storing genotypes on disk,
 and performing operations on them in chunks, without ever loading all data in
 memory.  The full functionalities of the package are described in Carter et al.
-(2025) <doi:10.1101/2025.06.06.658325>.")
+(2025) <doi:10.1111/2041-210x.70204>.")
     (license license:gpl3+)))
 
 (define-public r-tidypmc

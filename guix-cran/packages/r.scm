@@ -15,20 +15,17 @@
   #:use-module (gnu packages image)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages cmake)
-  #:use-module (gnu packages backup)
-  #:use-module (gnu packages xml)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages prolog)
+  #:use-module (gnu packages cmake)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages python-science)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages dotnet)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages documentation)
@@ -5138,55 +5135,6 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
      "An R interface to the SYMPHONY solver for mixed-integer linear programs.")
     (license (license:fsdg-compatible "EPL"))))
 
-(define-public r-rswipl
-  (package
-    (name "r-rswipl")
-    (version "10.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rswipl" version))
-       (sha256
-        (base32 "1ckfhb0knkpdj64b1mw1kfv9hlcb89ixbn3c33dr1mdfc7izjid5"))))
-    (properties `((upstream-name . "rswipl")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (inputs (list zlib
-                  pandoc
-                  zstd
-                  zlib
-                  xz
-                  lz4
-                  expat
-                  libarchive
-                  cmake))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config esbuild))
-    (home-page "https://github.com/mgondan/rswipl")
-    (synopsis "Embed 'SWI'-'Prolog'")
-    (description
-     "Interface to SWI'-'Prolog', <https://www.swi-prolog.org/>.  This package is
-normally not loaded directly, please refer to package rolog instead.  The
-purpose of this package is to provide the Prolog runtime on systems that do not
-have a software installation of SWI'-'Prolog'.")
-    (license (license:fsdg-compatible "FreeBSD"))))
-
 (define-public r-rsvddpd
   (package
     (name "r-rsvddpd")
@@ -6640,13 +6588,13 @@ matrices.")
 (define-public r-rsomoclu
   (package
     (name "r-rsomoclu")
-    (version "1.7.6")
+    (version "1.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rsomoclu" version))
        (sha256
-        (base32 "1jbi4nib0a749k7vkqzhdb5l2jipxq9k8vi5x7i06qns8sb3ajil"))))
+        (base32 "03p53yfwdmhzgc8id03rzrbqqd92js2v8ghczrjx3fm8csy7ighk"))))
     (properties `((upstream-name . "Rsomoclu")))
     (build-system r-build-system)
     (arguments
@@ -6661,7 +6609,7 @@ exploits multicore CPUs and it can be accelerated by CUDA. The topology of the
 map can be planar or toroid and the grid of neurons can be rectangular or
 hexagonal .  Details refer to (Peter Wittek, et al (2017))
 <doi:10.18637/jss.v078.i09>.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-rsolr
   (package
@@ -14189,32 +14137,6 @@ analysis of continuous outcomes introduced by Tan et al. (2017)
 residuals and estimates in linear scales are available from the package, and
 outcomes with ties are supported.")
     (license license:lgpl3)))
-
-(define-public r-rolog
-  (package
-    (name "r-rolog")
-    (version "0.9.23")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rolog" version))
-       (sha256
-        (base32 "1n7fiad3014bg330blfz22vdjca8bh9lkz7nfblg704k56nvs36z"))))
-    (properties `((upstream-name . "rolog")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list swi-prolog))
-    (propagated-inputs (list r-rswipl r-rcpp))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/mgondan/rolog")
-    (synopsis "Query 'SWI'-'Prolog' from R")
-    (description
-     "This R package connects to SWI-Prolog, <https://www.swi-prolog.org/>, so that R
-can send deterministic and non-deterministic queries to prolog (consult,
-query/submit, once, findall).")
-    (license (license:fsdg-compatible "FreeBSD"))))
 
 (define-public r-rolocisccnbs
   (package

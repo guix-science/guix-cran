@@ -37049,13 +37049,13 @@ technical details.")
 (define-public r-ciftitools
   (package
     (name "r-ciftitools")
-    (version "0.17.4")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciftiTools" version))
        (sha256
-        (base32 "0sqqhh10nz9bn0k819j0m3dcmajpzgdqm0jjzhyjz985q0fsj2q6"))))
+        (base32 "0zmn0nb1pn562xr787krjhq8pcywb5012w5kzkzggm438kwdr5mr"))))
     (properties `((upstream-name . "ciftiTools")))
     (build-system r-build-system)
     (arguments

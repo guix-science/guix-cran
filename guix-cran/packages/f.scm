@@ -1043,13 +1043,13 @@ summarizing messages, warnings, errors, and returned values.")
 (define-public r-futureverse
   (package
     (name "r-futureverse")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "futureverse" version))
        (sha256
-        (base32 "1c720ynsxg18xz1xr1gx6vydhvmskwwlxf9jrglrni1rfrf6h4f7"))))
+        (base32 "01fmmz0vwsaw6dkbkf8nadq1rm60cybg10dj08k96i6pqbcxi0vr"))))
     (properties `((upstream-name . "futureverse")))
     (build-system r-build-system)
     (arguments
@@ -1058,14 +1058,14 @@ summarizing messages, warnings, errors, and returned values.")
     (propagated-inputs (list r-progressr r-future-apply r-future r-furrr
                              r-dofuture))
     (home-page "https://www.futureverse.org")
-    (synopsis "Easily Install and Load the 'Futureverse'")
+    (synopsis "Install 'Futureverse' in One Go")
     (description
      "The Futureverse is a set of packages for parallel and distributed process with
 the future package at its core, cf.  Bengtsson (2021)
 <doi:10.32614/RJ-2021-048>.  This package is designed to make it easy to install
-and load multiple Futureverse packages in a single step.  This package is
-intended for end-users, interactive use, and R scripts.  Packages must not list
-it as a dependency - instead, explicitly declare each Futureverse package as a
+common Futureverse packages in a single step.  This package is intended for
+end-users, interactive use, and R scripts.  Packages must not list it as a
+dependency - instead, explicitly declare each Futureverse package as a
 dependency as needed.")
     (license license:expat)))
 

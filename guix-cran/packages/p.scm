@@ -1923,6 +1923,46 @@ ISBN:9780851980263) and its associated fungal pigments.  This package will
 assist mycologists in identifying color during morphological analysis.")
     (license license:gpl2)))
 
+(define-public r-pupilpre
+  (package
+    (name "r-pupilpre")
+    (version "0.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PupilPre" version))
+       (sha256
+        (base32 "05pv2b0l5jhnnis8xrmdci1c44m0m9hr7na0s8kxhx0ayinwn4a1"))))
+    (properties `((upstream-name . "PupilPre")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-vwpre
+                             r-tidyr
+                             r-signal
+                             r-shiny
+                             r-robustbase
+                             r-rlang
+                             r-mgcv
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PupilPre")
+    (synopsis "Preprocessing Pupil Size Data")
+    (description
+     "Pupillometric data collected using SR Research Eyelink eye trackers requires
+significant preprocessing.  This package contains functions for preparing pupil
+dilation data for visualization and statistical analysis.  Specifically, it
+provides a pipeline of functions which aid in data validation, the removal of
+blinks/artifacts, downsampling, and baselining, among others.  Additionally,
+plotting functions for creating grand average and conditional average plots are
+provided.  See the vignette for samples of the functionality.  The package is
+designed for handling data collected with SR Research Eyelink eye trackers using
+Sample Reports created in SR Research Data Viewer.")
+    (license license:gpl3)))
+
 (define-public r-pupak
   (package
     (name "r-pupak")
@@ -29237,6 +29277,34 @@ of phylogenetic trees.")
     (description
      "This package provides functions to read and write APE-compatible phylogenetic
 trees in NEXUS and Newick formats, while preserving annotations.")
+    (license license:expat)))
+
+(define-public r-phylospatial
+  (package
+    (name "r-phylospatial")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylospatial" version))
+       (sha256
+        (base32 "13c3l8jcl3p6vm0v0gkgm4d99ng3lwj3bbyiks9vm97q8m45xzl8"))))
+    (properties `((upstream-name . "phylospatial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-terra r-sf r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://matthewkling.github.io/phylospatial/")
+    (synopsis "Spatial Phylogenetic Analysis")
+    (description
+     "Analyze spatial phylogenetic diversity patterns.  Use your data on an
+evolutionary tree and geographic distributions of the terminal taxa to compute
+diversity and endemism metrics, test significance with null model randomization,
+analyze community turnover and biotic regionalization, and perform spatial
+conservation prioritizations.  All functions support quantitative community data
+in addition to binary data.")
     (license license:expat)))
 
 (define-public r-phylosignaldb

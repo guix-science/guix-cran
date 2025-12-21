@@ -2383,13 +2383,13 @@ soil texture charts, ceramic phase diagram).")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "3.2")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopam" version))
        (sha256
-        (base32 "03az31npwlmc10xd6s14nb2w05gyf08ybypvkqw4xq93m904bqnx"))))
+        (base32 "1xydbzc94fsgsy36c077bidpszz8nnvymg8ndkfdmdzr0jkhzfra"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (arguments

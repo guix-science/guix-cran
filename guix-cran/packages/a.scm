@@ -547,13 +547,13 @@ translation, and so on.  Part of the @code{AzureR} family of packages.")
 (define-public r-azureauth
   (package
     (name "r-azureauth")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AzureAuth" version))
        (sha256
-        (base32 "1arr7vbcj9ibrx826md487hcmlch46b2h3r03a14wxq6ssxj4x0z"))))
+        (base32 "0pn2w0lg3nddiv3148xln0nhqycn9nmv1hilkxc1r4441gzd2w92"))))
     (properties `((upstream-name . "AzureAuth")))
     (build-system r-build-system)
     (arguments
@@ -570,8 +570,8 @@ translation, and so on.  Part of the @code{AzureR} family of packages.")
     (synopsis "Authentication Services for Azure Active Directory")
     (description
      "This package provides Azure Active Directory (AAD) authentication functionality
-for R users of Microsoft's Azure cloud <https://azure.microsoft.com/>.  Use this
-package to obtain OAuth 2.0 tokens for services including Azure Resource
+for R users of Microsoft's Azure cloud <https://azure.microsoft.com/en-us>.  Use
+this package to obtain OAuth 2.0 tokens for services including Azure Resource
 Manager, Azure Storage and others.  It supports both AAD v1.0 and v2.0, as well
 as multiple authentication methods, including device code and resource owner
 grant.  Tokens are cached in a user-specific directory obtained using the

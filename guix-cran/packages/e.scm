@@ -15204,13 +15204,13 @@ Survey and other surveys from the National Institute for Statistics (INEI).).")
 (define-public r-emur
   (package
     (name "r-emur")
-    (version "2.5.2")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emuR" version))
        (sha256
-        (base32 "0ynp35dfzqpbk2phm9pglqn7xws85l070agnl66h62gl6chbx9mn"))))
+        (base32 "045850m89xx3zjija04jvzh0csy8g53b3lkfk4f9hq81bp43gwm0"))))
     (properties `((upstream-name . "emuR")))
     (build-system r-build-system)
     (arguments

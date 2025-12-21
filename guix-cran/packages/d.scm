@@ -7895,13 +7895,13 @@ methods.")
 (define-public r-dove
   (package
     (name "r-dove")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DOVE" version))
        (sha256
-        (base32 "1n37f0mb95d5r2vszfwwysnvn0xv9m85j3mpz7qzz5cp9fb9k38c"))))
+        (base32 "1dnrxvw07qjsli9ni64bwcpdij9li5j9d3wcaxfk1ncqp4dsgpg1"))))
     (properties `((upstream-name . "DOVE")))
     (build-system r-build-system)
     (arguments

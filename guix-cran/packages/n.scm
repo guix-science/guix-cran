@@ -3690,19 +3690,19 @@ reliable results, actigraphy data should cover a reasonable number of days.")
 (define-public r-npancova
   (package
     (name "r-npancova")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npANCOVA" version))
        (sha256
-        (base32 "1r2d8nx4zz06gazq0z1759rdafsds45vc6629sjm4l1cz6f80lg0"))))
+        (base32 "199pild2wr8pzfhprp51a3m313rbrak6f9x9h0rr68cwd21wq2r1"))))
     (properties `((upstream-name . "npANCOVA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/Mina7Jahangiri7/npANCOVA")
+    (home-page "https://github.com/MinaJahangiri/npANCOVA")
     (synopsis "Nonparametric ANCOVA Methods")
     (description
      "Nonparametric methods for analysis of covariance (ANCOVA) are distribution-free
@@ -3712,7 +3712,9 @@ ordinal.  This package implements several well-known nonparametric ANCOVA
 procedures, including Quade, Puri and Sen, @code{McSweeney} and Porter, Burnett
 and Barr, Hettmansperger and @code{McKean}, Shirley, and
 Puri-Sen-Harwell-Serlin.  The package provides user-friendly functions to apply
-these methods in practice.")
+these methods in practice.  These methods are described in Olejnik et al. (1985)
+<doi:10.1177/0193841X8500900104> and Harwell et al. (1988)
+<doi:10.1037/0033-2909.104.2.268>.")
     (license license:gpl3)))
 
 (define-public r-noweb
