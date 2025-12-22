@@ -38805,19 +38805,19 @@ P@code{LoS} Comput Biol 11(11): e1004574. <doi: 10.1371/journal.pcbi.1004574>.")
 (define-public r-megb
   (package
     (name "r-megb")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MEGB" version))
        (sha256
-        (base32 "0dz0wb6mifv9zz643njwy3ll93djq04qw0mgsi4pd6wphl28sa26"))))
+        (base32 "03r5vc9ilcnsczjq0fwz4aljiqy6m1y75yn70nda4hqcbwd14lh4"))))
     (properties `((upstream-name . "MEGB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-latex2exp r-gbm))
+    (propagated-inputs (list r-mass r-gbm))
     (home-page "https://cran.r-project.org/package=MEGB")
     (synopsis "Gradient Boosting for Longitudinal Data")
     (description

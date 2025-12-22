@@ -16768,13 +16768,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.15.1")
+    (version "0.15.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "0g44sfckfhka3sgbw4vj2kkym66fqh0cf4iq01zal3lavh4mpgzz"))))
+        (base32 "1i1k3wcg6l6hxv4dgy7fr8ak3w9k03pp6zg84na77b1yx760vg5x"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments

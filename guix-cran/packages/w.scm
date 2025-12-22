@@ -7908,13 +7908,13 @@ indicators.")
 (define-public r-wdata
   (package
     (name "r-wdata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WData" version))
        (sha256
-        (base32 "01gr1sgga65rdm90jcp6bcppis0jx7p6y58r9va9bfhck2fb596a"))))
+        (base32 "0h1xsif6pyy9aam4w1pdh9v4qa1p8mhpc9rfg9b6y248dm9zkf1x"))))
     (properties `((upstream-name . "WData")))
     (build-system r-build-system)
     (arguments
@@ -7923,7 +7923,6 @@ indicators.")
     (propagated-inputs (list r-rdpack
                              r-rcpp
                              r-progress
-                             r-latex2exp
                              r-kscorrect
                              r-evmix
                              r-bayesmeta))

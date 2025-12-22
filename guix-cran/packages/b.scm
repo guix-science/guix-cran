@@ -4762,13 +4762,13 @@ all LEGO since through the end of 2023.")
 (define-public r-brfinance
   (package
     (name "r-brfinance")
-    (version "0.2.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brfinance" version))
        (sha256
-        (base32 "1d7r6l5zvlghnmaskdy2hb1140r9sq4brzmarh56pgs5qpyag2mg"))))
+        (base32 "0gbv5ifq6ygmpyjjs04xsycbhy4japwamxj4y00zcpg11p6m0in6"))))
     (properties `((upstream-name . "brfinance")))
     (build-system r-build-system)
     (arguments
@@ -4778,10 +4778,12 @@ all LEGO since through the end of 2023.")
                              r-sidrar
                              r-scales
                              r-lubridate
+                             r-labelled
                              r-janitor
                              r-httr2
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/efram2/brfinance")
     (synopsis
      "Simplified Access to Brazilian Financial and Macroeconomic Data")
@@ -23867,43 +23869,6 @@ about Bi-cross-validation, see Owen & Perry's 2009 @code{AoAS} article (at
 <@code{arXiv:0909.3052>}).")
     (license license:bsd-3)))
 
-(define-public r-bct
-  (package
-    (name "r-bct")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BCT" version))
-       (sha256
-        (base32 "0fs6wh59njgj7ybnkf5ki4g8phmzrchvml0f8jyhhxdarkj5vr5d"))))
-    (properties `((upstream-name . "BCT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rcpp r-igraph))
-    (home-page "https://cran.r-project.org/package=BCT")
-    (synopsis "Bayesian Context Trees for Discrete Time Series")
-    (description
-     "An implementation of a collection of tools for exact Bayesian inference with
-discrete times series.  This package contains functions that can be used for
-prediction, model selection, estimation, segmentation/change-point detection and
-other statistical tasks.  Specifically, the functions provided can be used for
-the exact computation of the prior predictive likelihood of the data, for the
-identification of the a posteriori most likely (MAP) variable-memory Markov
-models, for calculating the exact posterior probabilities and the AIC and BIC
-scores of these models, for prediction with respect to log-loss and 0-1 loss and
-segmentation/change-point detection.  Example data sets from finance, genetics,
-animal communication and meteorology are also provided.  Detailed descriptions
-of the underlying theory and algorithms can be found in [Kontoyiannis et al.
-Bayesian Context Trees: Modelling and exact inference for discrete time series.
-Journal of the Royal Statistical Society: Series B (Statistical Methodology),
-April 2022.  Available at: <@code{arXiv:2007.14900>} [stat.ME], July 2020] and
-[Lungu et al.  Change-point Detection and Segmentation of Discrete Data using
-Bayesian Context Trees <@code{arXiv:2203.04341>} [stat.ME], March 2022].")
-    (license license:gpl2+)))
-
 (define-public r-bcrypt
   (package
     (name "r-bcrypt")
@@ -31479,13 +31444,13 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
 (define-public r-bartxviz
   (package
     (name "r-bartxviz")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartXViz" version))
        (sha256
-        (base32 "0vrwpxjc06nxlj0ahi8vnf4n6jsjarrqi6x1498658d5kvys6fjb"))))
+        (base32 "1lf2hzsn5ajhya5r8aimhl21zxw81kv42h3x6dbxybwd4hwkzrc1"))))
     (properties `((upstream-name . "bartXViz")))
     (build-system r-build-system)
     (arguments
@@ -31512,7 +31477,7 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
                              r-bartmachine
                              r-bart
                              r-abind))
-    (home-page "https://cran.r-project.org/package=bartXViz")
+    (home-page "https://github.com/ldongeunl/bartXViz")
     (synopsis "Visualization of BART and BARP using SHAP")
     (description
      "Complex machine learning models are often difficult to interpret.  Shapley

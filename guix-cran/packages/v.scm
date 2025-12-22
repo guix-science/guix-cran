@@ -6090,13 +6090,13 @@ values, infinities, blank characters, or names attribute; or having length 1).")
 (define-public r-vein
   (package
     (name "r-vein")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vein" version))
        (sha256
-        (base32 "0196kz30a108ayjgck9fxfdphx1y1xjdcyx6ap6hsx0yxmgnkqfj"))))
+        (base32 "0jp0cl6bsgp0zza5hhvvq94ba5b46qnza5q9bdvhnb1141g3sr3h"))))
     (properties `((upstream-name . "vein")))
     (build-system r-build-system)
     (arguments
@@ -8978,13 +8978,13 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.13.0")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vapour" version))
        (sha256
-        (base32 "1fyx8ak100dxisg16wjgf6rlb5xs2jcfnzb0s0189dwiq0c5dv4k"))))
+        (base32 "0h0gbffhivsc7603sabm26sv81ll39fzj0dil0qlarbynhms6qxx"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (arguments

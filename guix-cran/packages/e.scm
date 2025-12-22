@@ -8,12 +8,12 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages geo)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages geo)
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1275,33 +1275,6 @@ see Forcina (2019) <@code{arXiv:1910.13848>}.  These parameters are defined by
 choosing the logit type for the row and column variables among four different
 options and a transformation derived from suitable divergence measures.")
     (license license:gpl2+)))
-
-(define-public r-extratum
-  (package
-    (name "r-extratum")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "extRatum" version))
-       (sha256
-        (base32 "1w4xfr7ps565xczmn6pr7g4551rj28df1j0y9vckvxdbb4dk1p11"))))
-    (properties `((upstream-name . "extRatum")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list proj geos gdal))
-    (propagated-inputs (list r-tidyr r-sf r-dplyr))
-    (home-page "https://cran.r-project.org/package=extRatum")
-    (synopsis "Summary Statistics for Geospatial Features")
-    (description
-     "This package provides summary statistics of local geospatial features within a
-given geographic area.  It does so by calculating the area covered by a target
-geospatial feature (i.e.  buildings, parks, lakes, etc.).  The geospatial
-features can be of any type of geospatial data, including point, polygon or line
-data.")
-    (license license:expat)))
 
 (define-public r-extraterrestrial
   (package
@@ -16846,26 +16819,19 @@ dependencies.")
 (define-public r-emas
   (package
     (name "r-emas")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMAS" version))
        (sha256
-        (base32 "11s6lq6s8pn7zl93idkhim58v5q5nsckjcsm85wyyl6fywqprm2a"))))
+        (base32 "0ihrsqlb5vxzjmyjzp947lg18nk3av95lvqq19y09693r2hiyv3k"))))
     (properties `((upstream-name . "EMAS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-qqman
-                             r-multilevel
-                             r-minfi
-                             r-mediation
-                             r-lavaan
-                             r-illuminahumanmethylationepicanno-ilm10b4-hg19
-                             r-illuminahumanmethylation450kanno-ilmn12-hg19
-                             r-ggplot2))
+    (propagated-inputs (list r-multilevel r-mediation r-lavaan r-ggplot2))
     (home-page "https://cran.r-project.org/package=EMAS")
     (synopsis "Epigenome-Wide Mediation Analysis Study")
     (description
@@ -21532,13 +21498,13 @@ storage, with relational databases ('dbplyr') being the main use case.")
 (define-public r-edison
   (package
     (name "r-edison")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDISON" version))
        (sha256
-        (base32 "12cc13ng5fc4nm0nvqxqplpb2ycz4cln73xqkk85dka2fnpykjc7"))))
+        (base32 "0sl5sg0sr1kggk3kb5r9ly1c1m6k2aqf5lxhrf7pnvcwfk59s5cq"))))
     (properties `((upstream-name . "EDISON")))
     (build-system r-build-system)
     (arguments

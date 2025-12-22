@@ -7150,13 +7150,13 @@ frame management, including how to handle missing data.")
 (define-public r-supportr
   (package
     (name "r-supportr")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supportR" version))
        (sha256
-        (base32 "1sc34q56y0s8dg5vnna64pg6zmwv4j0q9zcm7s5wpv4m1k35qsk2"))))
+        (base32 "14xvs9jbkikhmc8q43w7w218vm9z4w7vmbkrkzadhd5xdp8zkv98"))))
     (properties `((upstream-name . "supportR")))
     (build-system r-build-system)
     (arguments
@@ -24872,13 +24872,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "0fh90zj3p2sfyydw7sb5njhvnw02rkpz37gn279xn1yrcfhjpkv3"))))
+        (base32 "1x1gnrqkwhh51nm1akh4zh92y351g97ai3v73g6gdryxbam0ydyc"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments
@@ -24893,6 +24893,7 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
                              r-haven
                              r-dt
                              r-dplyr
+                             r-crayon
                              r-collapse
                              r-clipr
                              r-cli))

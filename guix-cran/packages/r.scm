@@ -43062,13 +43062,13 @@ IDW-PLUS.")
 (define-public r-rdwd
   (package
     (name "r-rdwd")
-    (version "1.9.3")
+    (version "1.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdwd" version))
        (sha256
-        (base32 "04krkn5j5rgralncfmbwq943sm5s66c0xl5rzkimqm5b3hbxz0j6"))))
+        (base32 "1qkinfvvzx8mc1c2njd24s1y98a0by5grqrfqxqr6lr25xx09f2s"))))
     (properties `((upstream-name . "rdwd")))
     (build-system r-build-system)
     (arguments
@@ -43076,7 +43076,7 @@ IDW-PLUS.")
       #:tests? #f))
     (propagated-inputs (list r-pbapply r-berryfunctions))
     (native-inputs (list r-knitr))
-    (home-page "https://bookdown.org/brry/rdwd/")
+    (home-page "https://brry.github.io/rdwd/")
     (synopsis
      "Select and Download Climate Data from 'DWD' (German Weather Service)")
     (description
@@ -43084,7 +43084,7 @@ IDW-PLUS.")
 <https://www.dwd.de/EN/climate_environment/cdc/cdc_node_en.html> for more
 information).  Choose observational time series from meteorological stations
 with @code{selectDWD()}'.  Find raster data from radar and interpolation
-according to <https://bookdown.org/brry/rdwd/raster-data.html>.  Download
+according to <https://brry.github.io/rdwd/raster-data.html>.  Download
 (multiple) data sets with progress bars and no re-downloads through
 @code{dataDWD()}'.  Read both tabular observational data and binary gridded
 datasets with @code{readDWD()}'.")

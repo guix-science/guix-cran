@@ -47252,13 +47252,13 @@ generalized linear model conditional on its causal parents.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "0ykcc7k8a1agcwcnwxw1l4nykkd233awbdb72japfprjaxvm3brr"))))
+        (base32 "0fdf3vxfmgf56gs0ihaq5wnriqapqs9vvkkjyzgw6ix2p1yd93r8"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (arguments
@@ -47273,13 +47273,11 @@ generalized linear model conditional on its causal parents.")
                              r-rcpparmadillo
                              r-rcpp
                              r-lifecycle
-                             r-latex2exp
                              r-knitr
                              r-ggraph
                              r-ggplot2
                              r-dplyr
-                             r-dirmult
-                             r-bh))
+                             r-dirmult))
     (native-inputs (list r-knitr))
     (home-page "https://integrated-inferences.github.io/CausalQueries/")
     (synopsis "Make, Update, and Query Binary Causal Models")

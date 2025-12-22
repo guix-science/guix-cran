@@ -1050,24 +1050,26 @@ sample size optimization.  Technical Report.")
 (define-public r-itraxr
   (package
     (name "r-itraxr")
-    (version "1.12.2")
+    (version "1.13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itraxR" version))
        (sha256
-        (base32 "0wp0kdzh8wlh3g2gxjz8lbylpwq3hzv5b6hwpvv2wabr1zhg1ya9"))))
+        (base32 "18m4jjgmnhyq1znkzshh0az03ni9zclfjsbyh0p9qr799fqddrbi"))))
     (properties `((upstream-name . "itraxR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tiff
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
                              r-readr
+                             r-plyr
                              r-munsellinterpol
                              r-janitor
                              r-ggplot2
@@ -10018,19 +10020,24 @@ set.")
 (define-public r-inlaspacetime
   (package
     (name "r-inlaspacetime")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAspacetime" version))
        (sha256
-        (base32 "157bwkbfaff09r1idcr4lqzw64aqha6s12ad61vvn4s7lal4zym6"))))
+        (base32 "03kzhnrvb7jqr27vvi5sp9ld4czjj7vi3zhs5hz4qq4k45794mjm"))))
     (properties `((upstream-name . "INLAspacetime")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-sp r-sf r-matrix r-fmesher))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-matrix
+                             r-inlatools
+                             r-fmesher))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eliaskrainski/INLAspacetime")
     (synopsis "Spatial and Spatio-Temporal Models using 'INLA'")
@@ -10040,9 +10047,9 @@ INLA package (<https://www.r-inla.org>).  These objects contain data to for the
 cgeneric interface in INLA', enabling fast parallel computations.  We
 implemented the spatial barrier model, see Bakka et.  al. (2019)
 <doi:10.1016/j.spasta.2019.01.002>, and some of the spatio-temporal models
-proposed in Lindgren et.  al. (2023)
-<https://www.idescat.cat/sort/sort481/48.1.1.Lindgren-etal.pdf>.  Details are
-provided in the available vignettes and from the URL bellow.")
+proposed in Lindgren et.  al. (2024)
+<https://raco.cat/index.php/SORT/article/view/428665>.  Details are provided in
+the available vignettes and from the URL bellow.")
     (license license:gpl2+)))
 
 (define-public r-inlamemi

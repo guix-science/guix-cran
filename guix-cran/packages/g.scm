@@ -36985,19 +36985,19 @@ relative ease.  For details see Wieczorek and colleagues (2012)
 (define-public r-galamm
   (package
     (name "r-galamm")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galamm" version))
        (sha256
-        (base32 "1lharszkl83f7kibj6d1195m86iak3w6q9mcy1rwk340m3a23i18"))))
+        (base32 "12yy6pw9f26n6icd314by25300hsaq2fxg3y9dk2fcnpyam04fi4"))))
     (properties `((upstream-name . "galamm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-reformulas
                              r-rdpack
                              r-rcppeigen
                              r-rcpp
@@ -37005,7 +37005,9 @@ relative ease.  For details see Wieczorek and colleagues (2012)
                              r-mgcv
                              r-memoise
                              r-matrix
-                             r-lme4))
+                             r-lme4
+                             r-lattice
+                             r-gratia))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/LCBC-UiO/galamm")
     (synopsis "Generalized Additive Latent and Mixed Models")

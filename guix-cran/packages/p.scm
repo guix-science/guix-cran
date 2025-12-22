@@ -6909,13 +6909,13 @@ more details, see Jolliffe (2001) <doi:10.1007/b98835>, Gabriel (1971)
 (define-public r-protein8k
   (package
     (name "r-protein8k")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protein8k" version))
        (sha256
-        (base32 "11qj4sadhcsp1kk5kjmvzj2jnd3srsm5mp0q9h9khp1ps6dk35yw"))))
+        (base32 "06q59ac20kmqwrvfdiszff80z7l9b8v1q6nysaz65yqmdyzsg7ax"))))
     (properties `((upstream-name . "protein8k")))
     (build-system r-build-system)
     (arguments
@@ -6924,7 +6924,6 @@ more details, see Jolliffe (2001) <doi:10.1007/b98835>, Gabriel (1971)
     (propagated-inputs (list r-shiny
                              r-rlang
                              r-rjson
-                             r-pryr
                              r-magick
                              r-lattice
                              r-gridextra

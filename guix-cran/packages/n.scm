@@ -16560,13 +16560,13 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "4.0.4")
+    (version "4.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NCA" version))
        (sha256
-        (base32 "0qb36p8j8mqkhpapnnxbyq2y4cpwqsdk2f637wa1sbmc1776i9iv"))))
+        (base32 "127pyaqxr30yavszq2bx3v77z634d26dh19di3i6liiah35d4zkb"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (arguments

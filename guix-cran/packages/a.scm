@@ -3622,13 +3622,13 @@ data visualization and report generation functions.")
 (define-public r-audubon
   (package
     (name "r-audubon")
-    (version "0.5.2")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "audubon" version))
        (sha256
-        (base32 "1j6v05qal9f6ci1awb5c1vdl59sdp0472kdm5azvjsibic6bi2m8"))))
+        (base32 "1y9cy4l6m1yyh5cvfpdp7985g1jxjdl7r7f3xsrb67bz0r3x2zfg"))))
     (properties `((upstream-name . "audubon")))
     (build-system r-build-system)
     (arguments
@@ -3639,8 +3639,6 @@ data visualization and report generation functions.")
                              r-rlang
                              r-readr
                              r-purrr
-                             r-memoise
-                             r-matrix
                              r-magrittr
                              r-dplyr))
     (home-page "https://github.com/paithiov909/audubon")
@@ -10281,13 +10279,13 @@ about APSIM see (<https://www.apsim.info/>) and for APSIM next generation
 (define-public r-aprscenario
   (package
     (name "r-aprscenario")
-    (version "0.0.3.0")
+    (version "0.0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APRScenario" version))
        (sha256
-        (base32 "1vwp04gh33wg0jwl0a7ri09pq2yzv6px3sga1465j8x524vgm33p"))))
+        (base32 "0g2s626n5z5j5ssbkjmqwfbjg6bq91f1lxmfvsc1gksf5l1zs0wd"))))
     (properties `((upstream-name . "APRScenario")))
     (build-system r-build-system)
     (arguments
@@ -11509,13 +11507,13 @@ describing and investigating inter-cohort differences and life course dynamics."
 (define-public r-apcf
   (package
     (name "r-apcf")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apcf" version))
        (sha256
-        (base32 "062370z53348xicqwmyk5s4bb0img9xyvvrc5hgfcdwkiix3c3mp"))))
+        (base32 "1j6kg6gqxjc3yqlf6840cn3gj5d8fzdia6jafb05wqigc7qpi3jd"))))
     (properties `((upstream-name . "apcf")))
     (build-system r-build-system)
     (arguments
@@ -11523,7 +11521,7 @@ describing and investigating inter-cohort differences and life course dynamics."
       #:tests? #f))
     (inputs (list geos))
     (propagated-inputs (list r-wk r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://rnuske.github.io/apcf/")
     (synopsis "Adapted Pair Correlation Function")
     (description
@@ -11532,7 +11530,8 @@ correlation function from point patterns to patterns of objects of finite size
 and irregular shape (e.g. lakes within a country).  The pair correlation
 function describes the spatial distribution of objects, e.g. random, aggregated
 or regularly spaced.  This is a reimplementation of the method suggested by
-Nuske et al. (2009) <doi:10.1016/j.foreco.2009.09.050> using the library GEOS'.")
+Nuske et al. (2009) <doi:10.1016/j.foreco.2009.09.050> using the library GEOS
+<doi:10.5281/zenodo.11396894>.")
     (license license:gpl3+)))
 
 (define-public r-apcanalysis
