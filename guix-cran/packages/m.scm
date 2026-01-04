@@ -3886,40 +3886,6 @@ Visualization Using the Unifying Concept of Distance Multivariance.  Open
 Statistics, Vol.  1, No.  1 (2020), <doi:10.1515/stat-2020-0001>.")
     (license license:gpl3)))
 
-(define-public r-multivar
-  (package
-    (name "r-multivar")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multivar" version))
-       (sha256
-        (base32 "1jyz921m16g24gjmscsz2mi78ng3c5hzhbcankdq9x1i7kdcqawi"))))
-    (properties `((upstream-name . "multivar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vars
-                             r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-glmnet
-                             r-ggplot2))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=multivar")
-    (synopsis
-     "Penalized Estimation of Multiple-Subject Vector Autoregressive (multi-VAR) Models")
-    (description
-     "This package provides functions for simulating, estimating and forecasting
-stationary Vector Autoregressive (VAR) models for multiple subject data using
-the penalized multi-VAR framework in Fisher, Kim and Pipiras (2020)
-<@code{arXiv:2007.05052>}.")
-    (license license:gpl2+)))
-
 (define-public r-multius
   (package
     (name "r-multius")
@@ -8349,13 +8315,13 @@ reliability of scenarios with equal or different probabilities of occurrence
 (define-public r-mtdesign
   (package
     (name "r-mtdesign")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtdesign" version))
        (sha256
-        (base32 "192niqw43szcdn83riib73wx1i3lr3rm1x4d7s17khhdbgai0i8y"))))
+        (base32 "0snrs4r131yi65fn708pgnh34inqlg6nkqhnigfbqs2zwksbr2dh"))))
     (properties `((upstream-name . "mtdesign")))
     (build-system r-build-system)
     (arguments
@@ -8367,7 +8333,6 @@ reliability of scenarios with equal or different probabilities of occurrence
                              r-rcpp
                              r-magrittr
                              r-ggplot2
-                             r-futile-logger
                              r-dplyr
                              r-bh))
     (home-page "https://github.com/openpharma/mtdesign")
@@ -13652,37 +13617,6 @@ synchronization into simple functions.  See Nordstrom, Fuglevand, and Enoka
 (1992) <doi:10.1113/jphysiol.1992.sp019244> for a more thorough introduction.")
     (license license:gpl2)))
 
-(define-public r-motmot
-  (package
-    (name "r-motmot")
-    (version "2.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "motmot" version))
-       (sha256
-        (base32 "09qsyc4ifdl316kjqqkarmflpjcd0ivkhx5fzi3502anj6dxpjnq"))))
-    (properties `((upstream-name . "motmot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-mvtnorm
-                             r-ks
-                             r-coda
-                             r-caper
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://puttickbiology.wordpress.com/motmot/")
-    (synopsis "Models of Trait Macroevolution on Trees")
-    (description
-     "This package provides functions for fitting models of trait evolution on
-phylogenies for continuous traits.  The majority of functions described in
-Thomas and Freckleton (2012) <doi:10.1111/j.2041-210X.2011.00132.x> 	and include
-functions that allow for tests of variation in the rates of trait evolution.")
-    (license license:gpl2+)))
-
 (define-public r-motifr
   (package
     (name "r-motifr")
@@ -13791,13 +13725,13 @@ clustering to be performed on spatial patterns (Nowosad (2021)
 (define-public r-motherduck
   (package
     (name "r-motherduck")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "motherduck" version))
        (sha256
-        (base32 "0jsw34ncvd87qy95x4p2kcrivmi0frhhra04j1m7hysz0f00lbs9"))))
+        (base32 "1l5vr335hrajn55x8fpd49w8hflldsxb42xq1029zqv9xayl4jrr"))))
     (properties `((upstream-name . "motherduck")))
     (build-system r-build-system)
     (arguments
@@ -16404,43 +16338,6 @@ is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
 <https://www.nsf.gov/awardsearch/@code{showAward?AWD_ID=1921646>}.")
     (license license:gpl2+)))
 
-(define-public r-moexer
-  (package
-    (name "r-moexer")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "moexer" version))
-       (sha256
-        (base32 "09jr2vhj00k1cv1a0ki68mkd3mhky3smxwkaxw2m2d0h8w34jsyi"))))
-    (properties `((upstream-name . "moexer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-cli
-                             r-assertthat))
-    (home-page "https://github.com/x1o/moexer")
-    (synopsis
-     "Interact with Moscow Exchange Informational and Statistical Server ('ISS')")
-    (description
-     "This is a thin wrapper around the MOEX ISS REST interface, see
-<https://iss.moex.com>.  It allows to quickly fetch price candles for a
-particular security, obtain its profile information and so on.")
-    (license license:gpl3)))
-
 (define-public r-moeclust
   (package
     (name "r-moeclust")
@@ -16664,13 +16561,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.14")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1w1wh5pnijf001lcv60px9qz0vybwayyskga579c5r64q1kdlxvf"))))
+        (base32 "1hlm67fmc37b7wzhb6zq598h97kndzip6cdwga88xg1vjzam02va"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -23318,30 +23215,6 @@ global (Needleman-Wunsch) and local (Smith-Waterman) alignments with constant
 gap penalties (Merkl and Waack (2009), ISBN:978-3-527-32594-8).")
     (license license:lgpl3)))
 
-(define-public r-mknapsack
-  (package
-    (name "r-mknapsack")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mknapsack" version))
-       (sha256
-        (base32 "1kzmx7d512681a4hjirfgcd7a8rvndb4da66p16gms5nnxzsby9c"))))
-    (properties `((upstream-name . "mknapsack")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lpsolve r-data-table r-assertthat))
-    (home-page "https://github.com/madedotcom/mknapsack")
-    (synopsis "Multiple Knapsack Problem Solver")
-    (description
-     "Package solves multiple knapsack optimisation problem.  Given a set of items,
-each with volume and value, it will allocate them to knapsacks of a given size
-in a way that value of top N knapsacks is as large as possible.")
-    (license license:gpl2)))
-
 (define-public r-mkmisc
   (package
     (name "r-mkmisc")
@@ -26868,68 +26741,6 @@ EM-type algorithms.  Jiang W., Josse J., Lavielle M., @code{TraumaBase} Group
 (2020) <doi:10.1016/j.csda.2019.106907>.")
     (license license:gpl3)))
 
-(define-public r-mirtsvd
-  (package
-    (name "r-mirtsvd")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mirtsvd" version))
-       (sha256
-        (base32 "1byckqgj3zz8f305ldp82w2ihv6w9fnl3x4xcgmx940bnlaibxik"))))
-    (properties `((upstream-name . "mirtsvd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mirtjml r-gparotation))
-    (home-page "https://cran.r-project.org/package=mirtsvd")
-    (synopsis "SVD-Based Estimation for Exploratory Item Factor Analysis")
-    (description
-     "This package provides singular value decomposition based estimation algorithms
-for exploratory item factor analysis (IFA) based on multidimensional item
-response theory models.  For more information, please refer to: Zhang, H., Chen,
-Y., & Li, X. (2020).  A note on exploratory item factor analysis by singular
-value decomposition.  Psychometrika, 1-15, <DOI:10.1007/s11336-020-09704-7>.")
-    (license license:gpl3)))
-
-(define-public r-mirtjml
-  (package
-    (name "r-mirtjml")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mirtjml" version))
-       (sha256
-        (base32 "1zvm8acywpzi87lz0hpxmr8c9kyqkbx0490q3vlwxd90ffcdp9ml"))))
-    (properties `((upstream-name . "mirtjml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gparotation))
-    (home-page "https://github.com/slzhang-fd/mirtjml")
-    (synopsis
-     "Joint Maximum Likelihood Estimation for High-Dimensional Item Factor Analysis")
-    (description
-     "This package provides constrained joint maximum likelihood estimation algorithms
-for item factor analysis (IFA) based on multidimensional item response theory
-models.  So far, we provide functions for exploratory and confirmatory IFA based
-on the multidimensional two parameter logistic (M2PL) model for binary response
-data.  Comparing with traditional estimation methods for IFA, the methods
-implemented in this package scale better to data with large numbers of
-respondents, items, and latent factors.  The computation is facilitated by
-multiprocessing @code{OpenMP} API. For more information, please refer to: 1.
-Chen, Y., Li, X., & Zhang, S. (2018).  Joint Maximum Likelihood Estimation for
-High-Dimensional Exploratory Item Factor Analysis.  Psychometrika, 1-23.
-<doi:10.1007/s11336-018-9646-5>; 2.  Chen, Y., Li, X., & Zhang, S. (2019).
-Structured Latent Factor Analysis for Large-scale Data: Identifiability,
-Estimability, and Their Implications.  Journal of the American Statistical
-Association, <doi: 10.1080/01621459.2019.1635485>.")
-    (license license:gpl3)))
-
 (define-public r-mirtest
   (package
     (name "r-mirtest")
@@ -27796,13 +27607,13 @@ minimax approximation.")
 (define-public r-minimaxalt
   (package
     (name "r-minimaxalt")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxALT" version))
        (sha256
-        (base32 "1irqa1bcmssyr2yagj0h5a4cyip8simfh9s8xmj5f4wnil3wf6vx"))))
+        (base32 "1ijfxxqxary17l88sncgl9rjb4wywdp7qn7gj5hfq5cp11qs0syq"))))
     (properties `((upstream-name . "minimaxALT")))
     (build-system r-build-system)
     (arguments
@@ -27820,10 +27631,9 @@ Particle Swarm Optimization (PSO)-based hybrid algorithm, the package identifies
 optimal test plans that minimize estimation variance under specified failure
 models and stress profiles.  For more detailed, see Lee et al. (2025), Optimal
 Robust Strategies for Accelerated Life Tests and Fatigue Testing of Polymer
-Composite Materials, submitted to Annals of Applied Statistics,
-<https://imstat.org/journals-and-publications/annals-of-applied-statistics/annals-of-applied-statistics-next-issues/>,
-and Hoang (2025), Model-Robust Minimax Design of Accelerated Life Tests via
-PSO-based Hybrid Algorithm, Master Thesis, Unpublished.")
+Composite Materials <doi:10.1214/25-AOAS2075>, and Hoang (2025), Model-Robust
+Minimax Design of Accelerated Life Tests via PSO-based Hybrid Algorithm, Master
+Thesis, Unpublished.")
     (license license:gpl3+)))
 
 (define-public r-minimax
@@ -28271,38 +28081,6 @@ testing a new drug, which is to effectively treat patients and minimize the
 chance of exposing them to subtherapeutic or overly toxic doses.  It is used to
 design single-agent trials.")
     (license license:gpl2)))
-
-(define-public r-mined
-  (package
-    (name "r-mined")
-    (version "1.0-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mined" version))
-       (sha256
-        (base32 "1ilfwm42r2mkcdxphqkz7b4szfr4m9gpfi9qid3625sq3rjk622r"))))
-    (properties `((upstream-name . "mined")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=mined")
-    (synopsis "Minimum Energy Designs")
-    (description
-     "This is a method (@code{MinED}) for mining probability distributions using
-deterministic sampling which is proposed by Joseph, Wang, Gu, Lv, and Tuo (2019)
-<DOI:10.1080/00401706.2018.1552203>.  The @code{MinED} samples can be used for
-approximating the target distribution.  They can be generated from a density
-function that is known only up to a proportionality constant and thus, it might
-find applications in Bayesian computation.  Moreover, the @code{MinED} samples
-are generated with much fewer evaluations of the density function compared to
-random sampling-based methods such as MCMC and therefore, this method will be
-especially useful when the unnormalized posterior is expensive or time consuming
-to evaluate.  This research is supported by a U.S. National Science Foundation
-grant DMS-1712642.")
-    (license license:lgpl2.1)))
 
 (define-public r-minecitrus
   (package
@@ -36843,37 +36621,6 @@ variables well.  metaconfoundr is a toolkit to facilitate this process and
 visualize the results as heat maps, traffic light plots, and more.")
     (license license:expat)))
 
-(define-public r-metacomp
-  (package
-    (name "r-metacomp")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MetaComp" version))
-       (sha256
-        (base32 "1yb115qdmf5rxmjl4y7qr0i6668n46scs4yjpfq9bmy3w9i4ji1x"))))
-    (properties `((upstream-name . "MetaComp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-plyr
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-cairo))
-    (home-page "https://github.com/seninp-bioinfo/MetaComp")
-    (synopsis "EDGE Taxonomy Assignments Visualization")
-    (description
-     "This package implements routines for metagenome sample taxonomy assignments
-collection, aggregation, and visualization.  Accepts the EDGE-formatted output
-from GOTTCHA/GOTTCHA2, BWA, Kraken, @code{MetaPhlAn}, DIAMOND, and Pangia.
-Produces SVG and PDF heatmap-like plots comparing taxa abundances across
-projects.")
-    (license license:gpl2)))
-
 (define-public r-metacom
   (package
     (name "r-metacom")
@@ -38914,6 +38661,47 @@ analyses.  Methods are provided for extraction, aggregation, conversion,
 plotting, summary and reporting of `mefa objects.  Reports can be generated in
 plain text or @code{LaTeX} format.  Vignette contains worked examples.")
     (license license:gpl2)))
+
+(define-public r-meetupr
+  (package
+    (name "r-meetupr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "meetupr" version))
+       (sha256
+        (base32 "1paxgz27r5y3ncv25q8z03by7mhvqdn2b6rnmzbxj180vlvb7rj6"))))
+    (properties `((upstream-name . "meetupr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-s7
+                             r-rstudioapi
+                             r-rlist
+                             r-rlang
+                             r-purrr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-countrycode
+                             r-clipr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://rladies.org/meetupr/")
+    (synopsis "Access Meetup Data")
+    (description
+     "This package provides programmatic access to the Meetup @code{GraphQL} API
+(<https://www.meetup.com/graphql/>), enabling users to retrieve information
+about groups, events, and members from Meetup (<https://www.meetup.com/>).
+Supports authentication via OAuth2 and includes functions for common queries and
+data manipulation tasks.")
+    (license license:expat)))
 
 (define-public r-meerva
   (package
@@ -43883,6 +43671,35 @@ in a regression context.  It is designed for regression with a multivariate
 response variable, but also provides an implementation for univariate response.")
     (license license:gpl2+)))
 
+(define-public r-mbrm
+  (package
+    (name "r-mbrm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MBRM" version))
+       (sha256
+        (base32 "1028gb3zs1shflcajrkwxpniywv90sgrycj3gqsxv1c5k7s0pspj"))))
+    (properties `((upstream-name . "MBRM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rcpp r-ggplot2 r-formula r-dplyr))
+    (home-page "https://cran.r-project.org/package=MBRM")
+    (synopsis
+     "Mixed Regression Models with Generalized Log-Gamma Random Effects")
+    (description
+     "Multivariate distribution derived from a Bernoulli mixed model under a marginal
+approach, incorporating a non-normal random intercept whose distribution is
+assumed to follow a generalized log-gamma (GLG) specification under a particular
+parameter setting.  Estimation is performed by maximizing the log-likelihood
+using numerical optimization techniques (Lizandra C. Fabio, Vanessa Barros,
+Cristian Lobos, Jalmar M. F. Carrasco, Marginal multivariate approach: A novel
+strategy for handling correlated binary outcomes, 2025, under submission).")
+    (license license:gpl3)))
+
 (define-public r-mbrglm
   (package
     (name "r-mbrglm")
@@ -44494,49 +44311,6 @@ in particular to price reinsurance contracts.  The vignette shows code snippets
 to fit the distribution to empirical data.  See, e.g., Bernegger (1997)
 <doi:10.2143/AST.27.1.563208> freely available on-line.")
     (license license:gpl2)))
-
-(define-public r-mbbe
-  (package
-    (name "r-mbbe")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mbbe" version))
-       (sha256
-        (base32 "0m6nn4vv7lxr5y3bbpqjab8ahal9qbl7v6fxr848s1ida3zvkkxm"))))
-    (properties `((upstream-name . "mbbe")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tictoc
-                             r-stringr
-                             r-ps
-                             r-processx
-                             r-pknca
-                             r-nlme
-                             r-magrittr
-                             r-jsonlite
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-emmeans
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/certara/mbbe")
-    (synopsis "Model Based Bio-Equivalence")
-    (description
-     "Uses several Nonlinear Mixed effect (NONMEM) models (as NONMEM control files) to
-perform bootstrap model averaging and Monte Carlo Simulation for Model Based
-Bio-Equivalence (MBBE).  Power is returned as the fraction of the simulations
-with successful bioequivalence (BE) test, for maximum concentration (Cmax), Area
-under the curve to the last observed value (AUClast) and Area under the curve
-extrapolate to infinity (AUCinf).  See Hooker, A. (2020) Improved bioequivalence
-assessment through model-informed and model-based strategies
-<https://www.fda.gov/media/138035/download>.")
-    (license license:lgpl3)))
 
 (define-public r-mbanalysis
   (package
@@ -46126,13 +45900,13 @@ and Coxhead's coefficient are included for comparison and flexibility.")
 (define-public r-matrixcorr
   (package
     (name "r-matrixcorr")
-    (version "0.7.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixCorr" version))
        (sha256
-        (base32 "02qhkczrfs67gmwn3y0ffh83r9s8jjc3drx9qhic5pfn3dvsyh8w"))))
+        (base32 "05m1rgqck8jp7b0kv49l7510lir2azagqvxm4pmfmhj2blj7jicx"))))
     (properties `((upstream-name . "matrixCorr")))
     (build-system r-build-system)
     (arguments
@@ -46834,13 +46608,13 @@ algorithm for the indivisible goods trading problem.")
 (define-public r-matchingmarkets
   (package
     (name "r-matchingmarkets")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matchingMarkets" version))
        (sha256
-        (base32 "0rrwzbzb8nmqriw0kvk07ypmvbxg429xfv79a60s79qqffc1vryd"))))
+        (base32 "0xlkvqa016pzral92szcb5klk5cdys5l5dqz8mvaxzln28xzcqv5"))))
     (properties `((upstream-name . "matchingMarkets")))
     (build-system r-build-system)
     (arguments
@@ -46858,12 +46632,11 @@ algorithm for the indivisible goods trading problem.")
     (home-page "https://matchingMarkets.org")
     (synopsis "Analysis of Stable Matchings")
     (description
-     "This package implements structural estimators to correct for the sample
-selection bias from observed outcomes in matching markets.  This includes
-one-sided matching of agents into groups (Klein, 2015)
-<https://www.econ.cam.ac.uk/research-files/repec/cam/pdf/cwpe1521.pdf> as well
-as two-sided matching of students to schools (Aue et al., 2020)
-<https://ftp.zew.de/pub/zew-docs/dp/dp20032.pdf>.  The package also contains
+     "This package implements structural estimators to estimate preferences and
+correct for the sample selection bias of observed outcomes in matching markets.
+This includes one-sided matching of agents into groups (Klein, 2015)
+<doi:10.17863/CAM.5812> as well as two-sided matching of students to schools
+(Klein et al., 2024) <doi:10.1016/j.geb.2024.07.003>.  The package also contains
 algorithms to find stable matchings in the three most common matching problems:
 the stable roommates problem (Irving, 1985) <doi:10.1016/0196-6774(85)90033-1>,
 the college admissions problem (Gale and Shapley, 1962) <doi:10.2307/2312726>,
@@ -50639,6 +50412,64 @@ mixed data.  Methods based on van de Velden et al. (2024)
 includes functions to help researchers access, work across, and maintain
 ensembles of datasets on global governance called datacubes.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-manureshed
+  (package
+    (name "r-manureshed")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "manureshed" version))
+       (sha256
+        (base32 "1qhh3h4k412ybrg192g2xqfq2971jdyw7z1j90ns5pa0qy152wa4"))))
+    (properties `((upstream-name . "manureshed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list proj geos gdal))
+    (propagated-inputs (list r-tigris
+                             r-tidyr
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-magrittr
+                             r-jsonlite
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://osf.io/g39xa/")
+    (synopsis
+     "Spatiotemporal Nutrient Balance Analysis Across Agricultural and Municipal Systems")
+    (description
+     "This package provides a comprehensive framework for analyzing agricultural
+nutrient balances across multiple spatial scales (county, HUC8', HUC2') with
+integration of wastewater treatment plant ('WWTP') effluent loads for both
+nitrogen and phosphorus.  Supports classification of spatial units as nutrient
+sources, sinks, or balanced areas based on agricultural surplus and deficit
+calculations.  Includes visualization tools, spatial transition probability
+analysis, and nutrient flow network mapping.  Built-in datasets include
+agricultural nutrient balance data from the Nutrient Use Geographic Information
+System ('@code{NuGIS}'; The Fertilizer Institute and Plant Nutrition Canada,
+1987-2016) <https://nugis.tfi.org/tabular_data/> and U.S. Environmental
+Protection Agency ('EPA') wastewater discharge data from the ECHO Discharge
+Monitoring Report ('DMR') Loading Tool (2007-2016)
+<https://echo.epa.gov/trends/loading-tool/water-pollution-search>.  Data are
+downloaded on demand from the Open Science Framework ('OSF') repository to
+minimize package size while maintaining full functionality.  The integrated
+manureshed framework methodology is described in Akanbi et al. (2025)
+<doi:10.1016/j.resconrec.2025.108697>.  Designed for nutrient management
+planning, environmental analysis, and circular economy research at
+watershed/administrative to national scales.  This material is based upon
+financial support by the National Science Foundation, EEC Division of
+Engineering Education and Centers, NSF Engineering Research Center for Advancing
+Sustainable and Distributed Fertilizer Production (CASFER), NSF 20-553 Gen-4
+Engineering Research Centers award 2133576.  We thank Dr. Robert D. Sabo (U.S.
+Environmental Protection Agency) for his valuable contributions to the
+conceptual development and review of this work.")
+    (license license:expat)))
 
 (define-public r-mantis
   (package

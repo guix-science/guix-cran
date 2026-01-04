@@ -3047,13 +3047,13 @@ triangular distributions.  Performs power calculations for the binomial test.")
 (define-public r-jmotif
   (package
     (name "r-jmotif")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmotif" version))
        (sha256
-        (base32 "02xgnmc8a3pzdlp22nml21a7r83ymbgv1jp443kikcf11arw230n"))))
+        (base32 "17l92hf32n2cjwf09blzibz3v8xzfx8i6jwb1cvsb7g0j9v6b8hp"))))
     (properties `((upstream-name . "jmotif")))
     (build-system r-build-system)
     (arguments
@@ -3728,35 +3728,6 @@ by grosse Schlarmann (2010-2024) <https://www.produnis.de/R/>.")
 for R. For full functionality on Windows and Mac OS X JGR requires a start
 application which depends on your OS.")
     (license license:gpl2)))
-
-(define-public r-jfm
-  (package
-    (name "r-jfm")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "JFM" version))
-       (sha256
-        (base32 "08655vgfb2ll8hwjsj5lsw4849rahn3blisdqn8bwfhclrwd24xn"))))
-    (properties `((upstream-name . "JFM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rvcg
-                             r-rockfab
-                             r-rgl
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-randomcolor
-                             r-mass))
-    (home-page "https://cran.r-project.org/package=JFM")
-    (synopsis "Rock Mass Structural Analysis from 3D Mesh of Point Cloud")
-    (description
-     "This package provides functions to extract joint planes from 3D triangular mesh
-derived from point cloud and makes data available for structural analysis.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-jfe
   (package

@@ -860,30 +860,6 @@ other engines that produce @code{TeX}.  The package can be used to plot vectors,
 matrices, data frames, time series (in ts or zoo format).")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-ltsspca
-  (package
-    (name "r-ltsspca")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ltsspca" version))
-       (sha256
-        (base32 "0hgl2zd8y01z8mhnqg1hlv1l7klpwhwk7q8b99pw9vgnh1f2gnfs"))))
-    (properties `((upstream-name . "ltsspca")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ltsspca")
-    (synopsis "Sparse Principal Component Based on Least Trimmed Squares")
-    (description
-     "Implementation of robust and sparse PCA algorithm of Wang and Van Aelst (2019)
-<DOI:10.1080/00401706.2019.1671234>.")
-    (license license:gpl2+)))
-
 (define-public r-ltsk
   (package
     (name "r-ltsk")
@@ -4727,13 +4703,13 @@ and unequally spaced time-series.  Biological Rhythm Research, 30(2), 178-201.")
 (define-public r-lomar
   (package
     (name "r-lomar")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOMAR" version))
        (sha256
-        (base32 "18hj7f5gmkikahb7v120n79qg01zk9a58isdz4z8gr1ba1y31zlj"))))
+        (base32 "0mibg2zn7agbwbjk5iprhjv0gnqz5pyx4pns7d0rk1g5dkw0hkgg"))))
     (properties `((upstream-name . "LOMAR")))
     (build-system r-build-system)
     (arguments
@@ -4758,7 +4734,7 @@ and unequally spaced time-series.  Biological Rhythm Research, 30(2), 178-201.")
                              r-bh
                              r-alphashape3d
                              r-abind))
-    (home-page "https://git.embl.de/heriche/lomar")
+    (home-page "https://git.embl.org/heriche/lomar")
     (synopsis "Localization Microscopy Data Analysis")
     (description
      "Read, register and compare point sets from single molecule localization
@@ -10102,21 +10078,19 @@ allows to visualize the clustering results returned by the server.")
 (define-public r-link2gi
   (package
     (name "r-link2gi")
-    (version "0.6-2")
+    (version "0.7-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "link2GI" version))
        (sha256
-        (base32 "01k15a88x574vcmgclglfrm5lm1jb97hgjwy13w388y4r45x27wk"))))
+        (base32 "02ljvlx70yr2ijbrb2csak7f6ps7rszw0xfwhp8ma4833gh5djcc"))))
     (properties `((upstream-name . "link2GI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-xfun
                              r-terra
                              r-sf
                              r-rstudioapi
@@ -14761,31 +14735,6 @@ and Apley (2015 <doi:10.1080/10618600.2014.914442>).  Details are given in
 Rumsey et al. (2023 <doi:10.1002/sta4.576>).")
     (license license:gpl3+)))
 
-(define-public r-leanpubr
-  (package
-    (name "r-leanpubr")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leanpubr" version))
-       (sha256
-        (base32 "0shx5mg7m38zn46ra6v8bxkg72kkzcfcc7srw2xzs90j2sqz4bqz"))))
-    (properties `((upstream-name . "leanpubr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2 r-jsonlite r-httr r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/muschellij2/leanpubr")
-    (synopsis "'Leanpub' API Interface")
-    (description
-     "This package provides access to the Leanpub API <https://leanpub.com/help/api>
-for gathering information about publications and submissions to the Leanpub
-platform.")
-    (license license:gpl3)))
-
 (define-public r-leakyiv
   (package
     (name "r-leakyiv")
@@ -15432,33 +15381,6 @@ VARMA (for time-series forecasting) are implemented.  Evaluations are both
 in-sample and out-of-sample.  It is designed to be efficient in terms of CPU
 usage and memory consumption.")
     (license license:gpl3+)))
-
-(define-public r-ldsr
-  (package
-    (name "r-ldsr")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ldsr" version))
-       (sha256
-        (base32 "0wmxpglad1mk2c1gi9kxmh149r8ad0l8i2xlfs1hdjb6a4wxsklr"))))
-    (properties `((upstream-name . "ldsr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-foreach
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ntthung/ldsr")
-    (synopsis "Linear Dynamical System Reconstruction")
-    (description
-     "Streamflow (and climate) reconstruction using Linear Dynamical Systems.  The
-advantage of this method is the additional state trajectory which can reveal
-more information about the catchment or climate system.  For details of the
-method please refer to Nguyen and Galelli (2018) <doi:10.1002/2017WR022114>.")
-    (license license:gpl2+)))
 
 (define-public r-ldsep
   (package
@@ -17844,32 +17766,6 @@ See Krivitsky and Handcock (2008) <doi:10.18637/jss.v024.i05> and Krivitsky,
 Handcock, Raftery, and Hoff (2009) <doi:10.1016/j.socnet.2009.04.001>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
-(define-public r-latentgraph
-  (package
-    (name "r-latentgraph")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "latentgraph" version))
-       (sha256
-        (base32 "11h7nrd81licvdikiwwfkz4x9i7drz09w5ns672b7fw0pj4qqgsr"))))
-    (properties `((upstream-name . "latentgraph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma r-mass r-glmnet))
-    (home-page "https://cran.r-project.org/package=latentgraph")
-    (synopsis "Graphical Models with Latent Variables")
-    (description
-     "Three methods are provided to estimate graphical models with latent variables:
-(1) Jin, Y., Ning, Y., and Tan, K. M. (2020) (preprint available); (2)
-Chandrasekaran, V., Parrilo, P. A. & Willsky, A. S. (2012)
-<doi:10.1214/11-AOS949>; (3) Tan, K. M., Ning, Y., Witten, D. M. & Liu, H.
-(2016) <doi:10.1093/biomet/asw050>.")
-    (license license:gpl3)))
-
 (define-public r-latentfactor
   (package
     (name "r-latentfactor")
@@ -18237,36 +18133,6 @@ index models.")
      "This package contains functions to estimate a penalized regression model using
 3@code{CoSE} algorithm, see Weber, Striaukas, Schumacher Binder (2018)
 <doi:10.2139/ssrn.3211163>.")
-    (license license:gpl2+)))
-
-(define-public r-lassogee
-  (package
-    (name "r-lassogee")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LassoGEE" version))
-       (sha256
-        (base32 "1zascnl9hihw0gx2ssmdiv8gcp2672kz9vmsp5vrc2wr9cdcdjz3"))))
-    (properties `((upstream-name . "LassoGEE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-simcormultres
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pgee
-                             r-mvtnorm
-                             r-mass
-                             r-caret))
-    (home-page "<https://github.com/liygCR/LassoGEE>")
-    (synopsis "High-Dimensional Lasso Generalized Estimating Equations")
-    (description
-     "Fits generalized estimating equations with L1 regularization to longitudinal
-data with high dimensional covariates.  Use a efficient iterative composite
-gradient descent algorithm.")
     (license license:gpl2+)))
 
 (define-public r-lassobacktracking

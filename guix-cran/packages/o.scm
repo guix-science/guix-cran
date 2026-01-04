@@ -282,39 +282,6 @@ Service (WCPS), the Sensor Observation Service (SOS), or even new standard
 services emerging such OGC API or @code{SensorThings}.")
     (license license:expat)))
 
-(define-public r-owmr
-  (package
-    (name "r-owmr")
-    (version "0.8.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "owmr" version))
-       (sha256
-        (base32 "0qlb5aw6n06yf8y2gd2fjp8kp3w0xgqh3fka7rxqndgvaqmin1a6"))))
-    (properties `((upstream-name . "owmr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-plyr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr))
-    (home-page "https://github.com/crazycapivara/owmr/")
-    (synopsis "OpenWeatherMap API Wrapper")
-    (description
-     "Accesses @code{OpenWeatherMap's} (owm) <https://openweathermap.org/> API. owm
-itself is a service providing weather data in the past, in the future and now.
-Furthermore, owm serves weather map layers usable in frameworks like leaflet'.
-In order to access the API, you need to sign up for an API key.  There are free
-and paid plans.  Beside functions for fetching weather data from owm', owmr
-supplies tools to tidy up fetched data (for fast and simple access) and to show
-it on leaflet maps.")
-    (license license:expat)))
-
 (define-public r-owidr
   (package
     (name "r-owidr")
@@ -3291,13 +3258,13 @@ obtained from short time-course or dose-response microarray experiments.")
 (define-public r-orgutils
   (package
     (name "r-orgutils")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orgutils" version))
        (sha256
-        (base32 "0qafj8ks6r3pgimkf7xi6f7908xxbhfd65s11zbiia2gasw2vy92"))))
+        (base32 "1r3bq46bd21kqnw8vvpgb3bvj3m65hfm6yc6zav0pj2rdf1hb8ww"))))
     (properties `((upstream-name . "orgutils")))
     (build-system r-build-system)
     (arguments
@@ -5873,32 +5840,6 @@ Numerical and graphical output for all methods is easily obtained.")
      "This package provides a set of standard benchmark optimization functions for R
 and a common interface to sample them.")
     (license license:expat)))
-
-(define-public r-optigrab
-  (package
-    (name "r-optigrab")
-    (version "0.9.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optigrab" version))
-       (sha256
-        (base32 "1c3q4kx8rkgpjsy0hy2w2dd9kv51avnw1ab82hzmjgngfnvaig0n"))))
-    (properties `((upstream-name . "optigrab")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi r-magrittr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/decisionpatterns/optigrab")
-    (synopsis "Command-Line Parsing for an R World")
-    (description
-     "Parse options from the command-line using a simple, clean syntax.  It requires
-little or no specification and supports short and long options, GNU-, Java- or
-Microsoft- style syntaxes, verb commands and more.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-optifunset
   (package
@@ -9440,46 +9381,6 @@ merge the data themselves.  This package is best suited for users who would like
 to perform analyses with Singapore's spatial data without having to perform
 excessive data cleaning.")
     (license license:expat)))
-
-(define-public r-onemap
-  (package
-    (name "r-onemap")
-    (version "3.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "onemap" version))
-       (sha256
-        (base32 "1km8fc9a34ddprmqa3bq9yvsjmjirh5hy67b39r98l72y8z33v0p"))))
-    (properties `((upstream-name . "onemap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vcfr
-                             r-tidyr
-                             r-smacof
-                             r-reshape2
-                             r-rebus
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-princurve
-                             r-plotly
-                             r-htmlwidgets
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr
-                             r-dendextend))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cristianetaniguti/onemap")
-    (synopsis "Construction of Genetic Maps in Experimental Crosses")
-    (description
-     "Analysis of molecular marker data from model and non-model systems.  For the
-later, it allows statistical analysis by simultaneously estimating linkage and
-linkage phases (genetic map construction) according to Wu and colleagues (2002)
-<doi:10.1006/tpbi.2002.1577>.  All analysis are based on multi-point approaches
-using hidden Markov models.")
-    (license license:gpl3)))
 
 (define-public r-onelogin
   (package
@@ -13025,13 +12926,13 @@ stored in a MS SQL Server database.  For more details see Marcon (2021)
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.6.4")
+    (version "1.6.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "0vrxd2b1q2any748yhyr6dcmmcsc52jl5bqgi2wyczf2drxmfyii"))))
+        (base32 "1zkkfbaf295jm7kc03nmqcsncm8kwqmyl0cpyfw9897h6a8yldbi"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (arguments
@@ -13432,6 +13333,34 @@ and standard errors can be obtained by leveraging the weight-based
 representation of the random forest predictions.  Please reference the use as Di
 Francesco (2025) <doi:10.1080/07474938.2024.2429596>.")
     (license license:gpl3)))
+
+(define-public r-ocelloc
+  (package
+    (name "r-ocelloc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oCELLoc" version))
+       (sha256
+        (base32 "1671rmk6cpj1gdlf4bbbd52jdjib8scagn1fd1i03xbarycylnqs"))))
+    (properties `((upstream-name . "oCELLoc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-reshape2 r-glmnet r-ggplot2))
+    (home-page "https://doi.org/10.64898/2025.12.11.693812")
+    (synopsis
+     "Predicts Suitable Cell Types in Spatial Transcriptomics and scRNA-seq Data")
+    (description
+     "Picks the suitable cell types in spatial and @code{scRNA-seq} data using
+shrinkage methods.  The package includes curated reference gene expression
+profiles for human and mouse cell types, facilitating immediate application to
+common spatial transcriptomics or @code{scRNA} datasets.  Additionally, users
+can input custom reference data to support tissue- or experiment-specific
+analyses.")
+    (license license:expat)))
 
 (define-public r-ocedata
   (package

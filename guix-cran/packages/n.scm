@@ -5992,36 +5992,6 @@ declaration, in order to support tidyverse-style quasiquotation of a function's
 arguments and body.")
     (license license:expat)))
 
-(define-public r-nodiv
-  (package
-    (name "r-nodiv")
-    (version "1.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nodiv" version))
-       (sha256
-        (base32 "0smddvslinb950l22bgbzd7y23gyhyw5rmil3rdk85id76h4nd47"))))
-    (properties `((upstream-name . "nodiv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan r-sp r-raster r-picante r-ape))
-    (home-page "https://github.com/mkborregaard/nodiv")
-    (synopsis "Compares the Distribution of Sister Clades Through a Phylogeny")
-    (description
-     "An implementation of the nodiv algorithm, see Borregaard, M.K., Rahbek, C.,
-Fjeldsaa, J., Parra, J.L., Whittaker, R.J. & Graham, C.H. 2014.  Node-based
-analysis of species distributions.  Methods in Ecology and Evolution 5(11):
-1225-1235. <DOI:10.1111/2041-210X.12283>.  Package for phylogenetic analysis of
-species distributions.  The main function goes through each node in the
-phylogeny, compares the distributions of the two descendant nodes, and compares
-the result to a null model.  This highlights nodes where major distributional
-divergence have occurred.  The distributional divergence for these nodes is
-mapped.")
-    (license license:expat)))
-
 (define-public r-nodesub
   (package
     (name "r-nodesub")
@@ -7308,13 +7278,13 @@ would result in a change of decision.")
 (define-public r-nmarank
   (package
     (name "r-nmarank")
-    (version "0.3-0")
+    (version "0.3-0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmarank" version))
        (sha256
-        (base32 "1i2vagjq96q2vhr2lxbm3hqspddfq9qkqjcr8smni6ikmw32akil"))))
+        (base32 "07k6wqd31xm1qlb0b1dmdmvni2wgdjkfkm1ijq65pgigfns498vj"))))
     (properties `((upstream-name . "nmarank")))
     (build-system r-build-system)
     (arguments
@@ -10514,32 +10484,6 @@ visualization tools, primarily for play-by-plays.")
     (description
      "Each dataset contains scores for every game during a specific season of the NHL.")
     (license license:cc0)))
-
-(define-public r-nhlapi
-  (package
-    (name "r-nhlapi")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nhlapi" version))
-       (sha256
-        (base32 "1c5s7fd9agzk20xi8v38dk8ih6lmn8c90mxncyr996bhipgr7vl3"))))
-    (properties `((upstream-name . "nhlapi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jozefhajnala/nhlapi")
-    (synopsis "Minimum-Dependency 'R' Interface to the 'NHL' API")
-    (description
-     "Retrieves and processes the data exposed by the open NHL API. This includes
-information on players, teams, games, tournaments, drafts, standings, schedules
-and other endpoints.  A lower-level interface to access the data via URLs
-directly is also provided.")
-    (license license:agpl3)))
 
 (define-public r-nhdr
   (package
@@ -14685,33 +14629,6 @@ model which compares response categories to a reference level.  See: J. Fox
 ISBN 1452205663.")
     (license license:gpl2+)))
 
-(define-public r-nestedcategbayesimpute
-  (package
-    (name "r-nestedcategbayesimpute")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NestedCategBayesImpute" version))
-       (sha256
-        (base32 "15j54whvhqy26v1iikpk8ys75d7m5b188ggdzrlgzhjg0f9j45fl"))))
-    (properties `((upstream-name . "NestedCategBayesImpute")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpp r-dplyr r-coda))
-    (home-page "https://cran.r-project.org/package=NestedCategBayesImpute")
-    (synopsis
-     "Modeling, Imputing and Generating Synthetic Versions of Nested Categorical Data in the Presence of Impossible Combinations")
-    (description
-     "This tool set provides a set of functions to fit the nested Dirichlet process
-mixture of products of multinomial distributions (NDPMPM) model for nested
-categorical household data in the presence of impossible combinations.  It has
-direct applications in imputing missing values for and generating synthetic
-versions of nested household data.")
-    (license license:gpl3+)))
-
 (define-public r-nestcolor
   (package
     (name "r-nestcolor")
@@ -17706,33 +17623,6 @@ with nature inspired optimisation algorithm was firstly developed by Arie Wahyu
 Wijayanto and Ayu Purwarianti (2014) <doi:10.1109/CITSM.2014.7042178> using
 Artificial Bee Colony algorithm.")
     (license license:gpl3)))
-
-(define-public r-nasdaqdatalink
-  (package
-    (name "r-nasdaqdatalink")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NasdaqDataLink" version))
-       (sha256
-        (base32 "1dxsp8dq0r7zvl5rlx8x068lx30v06zzyapzq2zv207shhwgd9lq"))))
-    (properties `((upstream-name . "NasdaqDataLink")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts r-jsonlite r-httr))
-    (home-page "https://github.com/nasdaq/data-link-r")
-    (synopsis "API Wrapper for Nasdaq Data Link")
-    (description
-     "This package provides functions for interacting directly with the Nasdaq Data
-Link API to offer data in a number of formats usable in R, downloading a zip
-with all data from a Nasdaq Data Link database, and the ability to search.  This
-R package uses the Nasdaq Data Link API. For more information go to
-<https://docs.data.nasdaq.com/>.  For more help on the package itself go to
-<https://data.nasdaq.com/tools/r>.")
-    (license license:expat)))
 
 (define-public r-nascar-data
   (package

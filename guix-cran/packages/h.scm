@@ -195,13 +195,13 @@ series data from the @code{HysTAR} model.  For details, see Li, Guan, Li and Yu
 (define-public r-hyspc-testthat
   (package
     (name "r-hyspc-testthat")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hySpc.testthat" version))
        (sha256
-        (base32 "12za828sw2al3aa236ksmnwxpy2sqw8gl8b3p3vvrjk1l31l1qcm"))))
+        (base32 "17q9iajw49qvwassslp0xsgqfy806yw1gf19mdl81wpayalpvdmc"))))
     (properties `((upstream-name . "hySpc.testthat")))
     (build-system r-build-system)
     (arguments
@@ -209,7 +209,7 @@ series data from the @code{HysTAR} model.  For details, see Li, Guan, Li and Yu
       #:tests? #f))
     (propagated-inputs (list r-testthat))
     (home-page "https://cran.r-project.org/package=hySpc.testthat")
-    (synopsis "'testthat' Unit Test Enhancements")
+    (synopsis "Unit Test Add-on for 'testthat'")
     (description
      "Enhance package testthat by allowing tests to be attached to the function/object
 they test.  This allows to keep functional and unit test code together.")
@@ -4423,28 +4423,6 @@ based on Hermite polynomial approximation which was proposed and described by A.
 Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
     (license license:gpl3)))
 
-(define-public r-howzatr
-  (package
-    (name "r-howzatr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "howzatR" version))
-       (sha256
-        (base32 "00mv9qkn4ndp74jwqkjwqmy7j8ywhpl4ycg81yw3xlabbnqb292j"))))
-    (properties `((upstream-name . "howzatR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-magrittr))
-    (home-page "https://github.com/lukelockley/howzatR")
-    (synopsis "Useful Functions for Cricket Analysis")
-    (description
-     "Helping to calculate cricket specific problems in a tidy & simple manner.")
-    (license license:expat)))
-
 (define-public r-howmanyimputations
   (package
     (name "r-howmanyimputations")
@@ -6192,32 +6170,6 @@ cut-off point method.  Witowski V, Foraita R, Pitsiladis Y, Pigeot I, Wirsik N
 (2014). <doi:10.1371/journal.pone.0114089>.")
     (license license:gpl2+)))
 
-(define-public r-hmmmlselect
-  (package
-    (name "r-hmmmlselect")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HMMmlselect" version))
-       (sha256
-        (base32 "0kvw9nihbmvp19hbz5h8sz9jps5ik2di969jxdbp4ymj735c0fc9"))))
-    (properties `((upstream-name . "HMMmlselect")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-mvtnorm r-mcmcpack r-mclust
-                             r-hiddenmarkov))
-    (home-page "https://cran.r-project.org/package=HMMmlselect")
-    (synopsis
-     "Determine the Number of States in Hidden Markov Models via Marginal Likelihood")
-    (description
-     "Provide functions to make estimate the number of states for a hidden Markov
-model (HMM) using marginal likelihood method proposed by the authors.  See the
-Manual.pdf file a detail description of all functions, and a detail tutorial.")
-    (license license:gpl2+)))
-
 (define-public r-hmmm
   (package
     (name "r-hmmm")
@@ -6323,33 +6275,6 @@ This updated version has included an example dataset and R code examples to show
 how to transform the data into the objects needed in the main functions.  We
 have also made changes to increase the speed of some of the functions.")
     (license license:gpl2+)))
-
-(define-public r-hmmesolver
-  (package
-    (name "r-hmmesolver")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HMMEsolver" version))
-       (sha256
-        (base32 "0msin7rq3npz221mvrw3zcs6bwz439six99iblx5p3hkp1n1ljf3"))))
-    (properties `((upstream-name . "HMMEsolver")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=HMMEsolver")
-    (synopsis
-     "Fast Solver for Henderson Mixed Model Equation via Row Operations")
-    (description
-     "Consider the linear mixed model with normal random effects.  A typical method to
-solve Henderson's Mixed Model Equations (HMME) is recursive estimation of the
-fixed effects and random effects.  We provide a fast, stable, and scalable
-solver to the HMME without computing matrix inverse.  See Kim (2017)
-<@code{arXiv:1710.09663>} for more details.")
-    (license license:gpl3+)))
 
 (define-public r-hmmcopula
   (package
@@ -6530,13 +6455,13 @@ Arguments and data are standardized.")
 (define-public r-hmde
   (package
     (name "r-hmde")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmde" version))
        (sha256
-        (base32 "0a3x48qb3aq2p2r6ll1pn6p6wc6gxiy60hmxpkx538l1vrisj7px"))))
+        (base32 "0z9924x8xiw7c5hablnr966msd01drbyy2y9sp3hacjsg1nclv8c"))))
     (properties `((upstream-name . "hmde")))
     (build-system r-build-system)
     (arguments
@@ -7932,61 +7857,6 @@ Numbers proposed by Chao, Chiu and Jost (2014)
 and Labour Dynamics in Australia) survey maintained by the Melbourne Institute
 <https://melbourneinstitute.unimelb.edu.au/hilda>.")
     (license license:gpl2)))
-
-(define-public r-hilbertsimilarity
-  (package
-    (name "r-hilbertsimilarity")
-    (version "0.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hilbertSimilarity" version))
-       (sha256
-        (base32 "1251df3q7c7c69f8q9y9bxj210bk2dh80c8ca4s58isf0hr2x7zp"))))
-    (properties `((upstream-name . "hilbertSimilarity")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-entropy))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/yannabraham/hilbertSimilarity")
-    (synopsis "Hilbert Similarity Index for High Dimensional Data")
-    (description
-     "Quantifying similarity between high-dimensional single cell samples is
-challenging, and usually requires some simplifying hypothesis to be made.  By
-transforming the high dimensional space into a high dimensional grid, the number
-of cells in each sub-space of the grid is characteristic of a given sample.
-Using a Hilbert curve each sample can be visualized as a simple density plot,
-and the distance between samples can be calculated from the distribution of
-cells using the Jensen-Shannon distance.  Bins that correspond to significant
-differences between samples can identified using a simple bootstrap procedure.")
-    (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
-
-(define-public r-hilbert
-  (package
-    (name "r-hilbert")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hilbert" version))
-       (sha256
-        (base32 "1vw1rn5adnqi99v5w47jmqx35rqv0slas3ldw7g34il1krz9xhms"))))
-    (properties `((upstream-name . "hilbert")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cpp11))
-    (native-inputs (list r-knitr))
-    (home-page "https://hilbert.justinsingh.me")
-    (synopsis "Coordinate Indexing on Hilbert Curves")
-    (description
-     "This package provides utilities for encoding and decoding coordinates to/from
-Hilbert curves based on the iterative encoding implementation described in Chen
-et al. (2006) <doi:10.1002/spe.793>.")
-    (license license:expat)))
 
 (define-public r-higrad
   (package
@@ -9783,49 +9653,6 @@ J. (2010) <doi:10.1201/9781420072884>.  Hill, B. (2017)
 <doi:10.1007/BF00147776>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-heuristicsminer
-  (package
-    (name "r-heuristicsminer")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "heuristicsmineR" version))
-       (sha256
-        (base32 "0w4f7xpz2342k38b5a7fs6fq50045hh2836390zg36nqdapg8vlv"))))
-    (properties `((upstream-name . "heuristicsmineR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-processmapr
-                             r-petrinetr
-                             r-magrittr
-                             r-ggthemes
-                             r-ggplot2
-                             r-dplyr
-                             r-diagrammer
-                             r-data-table
-                             r-bupar
-                             r-bh))
-    (home-page "https://github.com/bupaverse/heuristicsmineR")
-    (synopsis "Discovery of Process Models with the Heuristics Miner")
-    (description
-     "This package provides the heuristics miner algorithm for process discovery as
-proposed by Weijters et al. (2011) <doi:10.1109/CIDM.2011.5949453>.  The
-algorithm builds a causal net from an event log created with the @code{bupaR}
-package.  Event logs are a set of ordered sequences of events for which
-@code{bupaR} provides the S3 class @code{eventlog()}.  The discovered causal
-nets can be visualised as htmlwidgets and it is possible to annotate them with
-the occurrence frequency or processing and waiting time of process activities.")
-    (license license:expat)))
-
 (define-public r-heuristica
   (package
     (name "r-heuristica")
@@ -10782,48 +10609,6 @@ information is provided in the study by Chianucci F., Macek M. (2023)
 <doi:10.1016/j.agrformet.2023.109470>.")
     (license license:expat)))
 
-(define-public r-hemdag
-  (package
-    (name "r-hemdag")
-    (version "2.7.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HEMDAG" version))
-       (sha256
-        (base32 "1dmfy5bbnjmjb4d7430i38z9hvpcrwafj6hw46118hwzcl4b6ldv"))))
-    (properties `((upstream-name . "HEMDAG")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rbgl
-                             r-preprocesscore
-                             r-precrec
-                             r-plyr
-                             r-graph
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=HEMDAG")
-    (synopsis "Hierarchical Ensemble Methods for Directed Acyclic Graphs")
-    (description
-     "An implementation of several Hierarchical Ensemble Methods (HEMs) for Directed
-Acyclic Graphs (DAGs).  HEMDAG package: 1) reconciles flat predictions with the
-topology of the ontology; 2) can enhance the predictions of virtually any flat
-learning methods by taking into account the hierarchical relationships between
-ontology classes; 3) provides biologically meaningful predictions that always
-obey the true-path-rule, the biological and logical rule that governs the
-internal coherence of biomedical ontologies; 4) is specifically designed for
-exploiting the hierarchical relationships of DAG-structured taxonomies, such as
-the Human Phenotype Ontology (HPO) or the Gene Ontology (GO), but can be safely
-applied to tree-structured taxonomies as well (as @code{FunCat}), since trees
-are DAGs; 5) scales nicely both in terms of the complexity of the taxonomy and
-in the cardinality of the examples; 6) provides several utility functions to
-process and analyze graphs; 7) provides several performance metrics to evaluate
-HEMs algorithms. (Marco Notaro, Max Schubach, Peter N. Robinson and Giorgio
-Valentini (2017) <doi:10.1186/s12859-017-1854-y>).")
-    (license license:gpl3+)))
-
 (define-public r-helsinki
   (package
     (name "r-helsinki")
@@ -10858,13 +10643,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "6.6")
+    (version "2025.12.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "1kfsiw8hpyhl9fvhy4wm183y8qrs4h1h9qwlcz8wgxpc613s1pd2"))))
+        (base32 "053p9hg7lvb1926kxv851fl76rjnwd58d0f9mpaa8irbm5b4arkd"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (arguments
@@ -10872,8 +10657,7 @@ Events API, and Helsinki Region Infoshare statistics API.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))
     (home-page "https://cran.r-project.org/package=HelpersMG")
-    (synopsis
-     "Tools for Environmental Analyses, Ecotoxicology and Various R Functions")
+    (synopsis "Tools for Various R Functions Helpers")
     (description
      "This package contains miscellaneous functions useful for managing @code{NetCDF}
 files (see <https://en.wikipedia.org/wiki/@code{NetCDF>}), get moon phase and
@@ -13270,13 +13054,13 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
 (define-public r-hdf5lib
   (package
     (name "r-hdf5lib")
-    (version "2.0.0.3")
+    (version "2.0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5lib" version))
        (sha256
-        (base32 "075xgi2nipgz1ndhybrnjj7an11jihpi85kc4xlq12kbi496w2zj"))))
+        (base32 "04g01frl64agi8ihfxfr209gg7y9ghmppsdsja3rdiwqvp5aw9jj"))))
     (properties `((upstream-name . "hdf5lib")))
     (build-system r-build-system)
     (arguments
@@ -14569,38 +14353,6 @@ Uses Hill models for each component which are combined under Bliss independence.
 Discrete Choice Experiment.  For more details see the article by Mukhopadhyay et
 al. (2019) <DOI:10.1080/19466315.2018.1527248>.")
     (license license:gpl2)))
-
-(define-public r-hbayesdm
-  (package
-    (name "r-hbayesdm")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hBayesDM" version))
-       (sha256
-        (base32 "1vy1kaffviidhil39n7k2fr5rjgzkhkaj1r2nhmp908snq8nhf2m"))))
-    (properties `((upstream-name . "hBayesDM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-rstan
-                             r-rcppeigen
-                             r-rcpp
-                             r-loo
-                             r-ggplot2
-                             r-data-table
-                             r-bh))
-    (home-page "https://github.com/CCS-Lab/hBayesDM")
-    (synopsis "Hierarchical Bayesian Modeling of Decision-Making Tasks")
-    (description
-     "Fit an array of decision-making tasks with computational models in a
-hierarchical Bayesian framework.  Can perform hierarchical Bayesian analysis of
-various computational models with a single line of coding (Ahn et al., 2017)
-<doi:10.1162/CPSY_a_00002>.")
-    (license license:gpl3)))
 
 (define-public r-hbamr
   (package

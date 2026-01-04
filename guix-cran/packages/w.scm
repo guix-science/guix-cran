@@ -5537,45 +5537,6 @@ The methods used in simulation were inspired by Offer-Westort et al. (2021)
 <doi:10.1111/ajps.12597>.")
     (license license:gpl3+)))
 
-(define-public r-whatif
-  (package
-    (name "r-whatif")
-    (version "1.5-10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WhatIf" version))
-       (sha256
-        (base32 "19w5qw123iahrx96379lrx8i7v3x2ck5dhklf58iw0dmj4pfy2kg"))))
-    (properties `((upstream-name . "WhatIf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pbmcapply r-lpsolve))
-    (home-page "https://gking.harvard.edu/whatif")
-    (synopsis "Software for Evaluating Counterfactuals")
-    (description
-     "Inferences about counterfactuals are essential for prediction, answering what if
-questions, and estimating causal effects.  However, when the counterfactuals
-posed are too far from the data at hand, conclusions drawn from well-specified
-statistical analyses become based largely on speculation hidden in convenient
-modeling assumptions that few would be willing to defend.  Unfortunately,
-standard statistical approaches assume the veracity of the model rather than
-revealing the degree of model-dependence, which makes this problem hard to
-detect. @code{WhatIf} offers easy-to-apply methods to evaluate counterfactuals
-that do not require sensitivity testing over specified classes of models.  If an
-analysis fails the tests offered here, then we know that substantive inferences
-will be sensitive to at least some modeling choices that are not based on
-empirical evidence, no matter what method of inference one chooses to use.
-@code{WhatIf} implements the methods for evaluating counterfactuals discussed in
-Gary King and Langche Zeng, 2006, \"The Dangers of Extreme Counterfactuals,\"
-Political Analysis 14 (2) <DOI:10.1093/pan/mpj004>; and Gary King and Langche
-Zeng, 2007, \"When Can History Be Our Guide? The Pitfalls of Counterfactual
-Inference,\" International Studies Quarterly 51 (March)
-<DOI:10.1111/j.1468-2478.2007.00445.x>.")
-    (license license:gpl3+)))
-
 (define-public r-whapi
   (package
     (name "r-whapi")
@@ -6268,6 +6229,37 @@ generates circle sectors that are sized according to predefined weights.  The
 Voronoi tesselation is based on functions from Paul Murrell (2012)
 <https://www.stat.auckland.ac.nz/~paul/Reports/@code{VoronoiTreemap/voronoiTreeMap.html>}.")
     (license license:gpl3)))
+
+(define-public r-weightedsurv
+  (package
+    (name "r-weightedsurv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weightedsurv" version))
+       (sha256
+        (base32 "1iqi7c8f3iv7rmcgp8q7fr0jzmg4bb6f035fpxv00c9p23b0c3fq"))))
+    (properties `((upstream-name . "weightedsurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/larry-leon/weightedsurv")
+    (synopsis
+     "Survival Analysis with Subject-Specific (Case Weights) and Time-Dependent Weighting")
+    (description
+     "This package provides survival analysis functions with support for
+time-dependent and subject-specific (e.g., propensity score) weighting.
+Implements weighted estimation for Cox models, Kaplan-Meier survival curves, and
+treatment differences with point-wise and simultaneous confidence bands.
+Includes restricted mean survival time (RMST) comparisons evaluated across all
+potential truncation times with both point-wise and simultaneous confidence
+bands.  See Cole, S. R. & HernÃ¡n, M. A. (2004) <doi:10.1016/j.cmpb.2003.10.004>
+for methodological background.")
+    (license license:expat)))
 
 (define-public r-weightedscores
   (package

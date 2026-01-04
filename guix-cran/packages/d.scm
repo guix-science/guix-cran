@@ -4,13 +4,13 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages gcc)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages base)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages web)
   #:use-module (gnu packages libreoffice)
@@ -50,41 +50,6 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
-
-(define-public r-dyss
-  (package
-    (name "r-dyss")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DySS" version))
-       (sha256
-        (base32 "1aa67m224bhzzg089rhxwqgbmwwq5py8ikix8khwraz5cnjz2f83"))))
-    (properties `((upstream-name . "DySS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gridextra r-ggplot2))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=DySS")
-    (synopsis "Dynamic Screening Systems")
-    (description
-     "In practice, we will encounter problems where the longitudinal performance of
-processes needs to be monitored over time.  Dynamic screening systems
-(@code{DySS}) are methods that aim to identify and give signals to processes
-with poor performance as early as possible.  This package is designed to
-implement dynamic screening systems and the related methods.  References: Qiu,
-P. and Xiang, D. (2014) <doi:10.1080/00401706.2013.822423>; Qiu, P. and Xiang,
-D. (2015) <doi:10.1002/sim.6477>; Li, J. and Qiu, P. (2016)
-<doi:10.1080/0740817X.2016.1146423>; Li, J. and Qiu, P. (2017)
-<doi:10.1002/qre.2160>; You, L. and Qiu, P. (2019)
-<doi:10.1080/00949655.2018.1552273>; Qiu, P., Xia, Z., and You, L. (2020)
-<doi:10.1080/00401706.2019.1604434>; You, L., Qiu, A., Huang, B., and Qiu, P.
-(2020) <doi:10.1002/bimj.201900127>; You, L. and Qiu, P. (2021)
-<doi:10.1080/00224065.2020.1767006>.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-dyspiadata
   (package
@@ -140,13 +105,13 @@ in package @code{DysPIAData} is needed.")
 (define-public r-dysem
   (package
     (name "r-dysem")
-    (version "1.1.1")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dySEM" version))
        (sha256
-        (base32 "1znq6wszmcshchyjp7n7qnsp4x861spff6p2wy44iw3wnk81paaf"))))
+        (base32 "075n4m6fysd7ygvmb3066w3nzk2rx8nvp3h23m2yhgmrjn0g6x9n"))))
     (properties `((upstream-name . "dySEM")))
     (build-system r-build-system)
     (arguments
@@ -160,17 +125,16 @@ in package @code{DysPIAData} is needed.")
                              r-lifecycle
                              r-lavaan
                              r-gt
-                             r-dplyr))
+                             r-eganet
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jsakaluk/dySEM")
     (synopsis "Dyadic Structural Equation Modeling")
     (description
      "Scripting of structural equation models via lavaan for Dyadic Data Analysis, and
 helper functions for supplemental calculations, tabling, and model
-visualization.  Current models supported include Dyadic Confirmatory Factor
-Analysis, the ActorâPartner Interdependence Model (observed and latent), the
-Common Fate Model (observed and latent), Mutual Influence Model (latent), and
-the Bifactor Dyadic Model (latent).")
+visualization.")
     (license license:gpl3)))
 
 (define-public r-dynwrap
@@ -3210,31 +3174,6 @@ empirical cumulative distributions and also kernel density and hazard functions
 using different bandwidth selectors.  Several real data sets are included.")
     (license license:gpl2)))
 
-(define-public r-dtd
-  (package
-    (name "r-dtd")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DtD" version))
-       (sha256
-        (base32 "1czspjdxjhbfk2df7wk0x3d1ilwrjqw4s4gdc4hq0gjcjqyx0c39"))))
-    (properties `((upstream-name . "DtD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DtD")
-    (synopsis "Distance to Default")
-    (description
-     "This package provides fast methods to work with Merton's distance to default
-model introduced in Merton (1974) <doi:10.1111/j.1540-6261.1974.tb03058.x>.  The
-methods includes simulation and estimation of the parameters.")
-    (license license:gpl2)))
-
 (define-public r-dtcompair
   (package
     (name "r-dtcompair")
@@ -3754,37 +3693,6 @@ account situations where information cannot be satisfactorily described by
 probability distributions.")
     (license license:gpl2+)))
 
-(define-public r-dssp
-  (package
-    (name "r-dssp")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DSSP" version))
-       (sha256
-        (base32 "1z4sfqlgqwhxhm8aryv5c3vlzamn9nx2c49dyi1axq4qpy7dg3pr"))))
-    (properties `((upstream-name . "DSSP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-rust
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-posterior
-                             r-mcmcse))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gentrywhite/DSSP")
-    (synopsis "Implementation of the Direct Sampling Spatial Prior")
-    (description
-     "Draw samples from the direct sampling spatial prior model as described in G.
-White, D. Sun, P. Speckman (2019) <@code{arXiv:1906.05575>}.  The basic model
-assumes a Gaussian likelihood and derives a spatial prior based on thin-plate
-splines.")
-    (license license:gpl3+)))
-
 (define-public r-dssd
   (package
     (name "r-dssd")
@@ -4159,35 +4067,6 @@ Union with the European Regional Development fund (ERDF) and by the Normandy
 Region) and the HSMM-INCA Project (financed by the French Agence Nationale de la
 Recherche (ANR) under grant ANR-21-CE40-0005).")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-dsmisc
-  (package
-    (name "r-dsmisc")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dsmisc" version))
-       (sha256
-        (base32 "19760hcb5154rayhj72r48r7glh2qyaf178zkxplywmsw338kws4"))))
-    (properties `((upstream-name . "dsmisc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rcpp))
-    (home-page "https://cran.r-project.org/package=dsmisc")
-    (synopsis "Data Science Box of Pandora Miscellaneous")
-    (description
-     "Tool collection for common and not so common data science use cases.  This
-includes custom made algorithms for data management as well as value
-calculations that are hard to find elsewhere because of their specificity but
-would be a waste to get lost nonetheless.  Currently available functionality:
-find sub-graphs in an edge list data.frame, find mode or modes in a vector of
-values, extract (a) specific regular expression group(s), generate ISO time
-stamps that play well with file names, or generate URL parameter lists by
-expanding value combinations.")
-    (license license:gpl2+)))
 
 (define-public r-dsm
   (package
@@ -5142,6 +5021,50 @@ linear or linear mixed-effects models (@code{McCulloch} & Searle (2001,
 ISBN:0-471-19364-X)).")
     (license license:gpl2+)))
 
+(define-public r-drsurvcrt
+  (package
+    (name "r-drsurvcrt")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DRsurvCRT" version))
+       (sha256
+        (base32 "0sssniiplnl1iyiwb9jrc1jxkns7cr8bjl3qna04dmwp6mnl5y75"))))
+    (properties `((upstream-name . "DRsurvCRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-ggplot2
+                             r-frailtyem
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=DRsurvCRT")
+    (synopsis
+     "Doubly-Robust Estimation for Survival Outcomes in Cluster-Randomized Trials")
+    (description
+     "Cluster-randomized trials (CRTs) assign treatment to groups rather than
+individuals, so valid analyses must distinguish cluster-level and
+individual-level effects and define estimands within a potential-outcomes
+framework.  This package supports right-censored survival outcomes for both
+single-state (binary) and multi-state settings.  For single-state outcomes, it
+provides estimands based on stage-specific survival contrasts (SPCE) and
+restricted mean survival time (RMST).  For multi-state outcomes, it provides
+SPCE as well as a generalized win-based restricted mean time-in-favor estimand
+(RMT-IF).  The package implements doubly robust estimators that accommodate
+covariate-dependent censoring and remain consistent if either the outcome model
+or the censoring model is correctly specified.  Users can choose marginal Cox or
+gamma-frailty Cox working models for nuisance estimation, and inference is
+supported via leave-one-cluster-out jackknife variance and confidence interval
+estimation.  Methods are described in Fang et al. (2025) \"Estimands and doubly
+robust estimation for cluster-randomized trials with survival outcomes\"
+<doi:10.48550/@code{arXiv.2510.08438>}.")
+    (license license:expat)))
+
 (define-public r-drquality
   (package
     (name "r-drquality")
@@ -5463,24 +5386,21 @@ calculating success probabilities, and plotting outcome distributions.")
 (define-public r-driver
   (package
     (name "r-driver")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "driveR" version))
        (sha256
-        (base32 "00cwzy097wbl1k3sw3nfn0kzb6af7hyzwaznvlckf77g7kw86bmi"))))
+        (base32 "19ijnhjli4mmssccnv6jhl8gf5g5jjqd7cglwdq1zyfpmvjqa2qn"))))
     (properties `((upstream-name . "driveR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
-                             r-txdb-hsapiens-ucsc-hg19-knowngene
-                             r-s4vectors
+    (propagated-inputs (list r-s4vectors
                              r-rlang
                              r-randomforest
-                             r-org-hs-eg-db
                              r-genomicranges
                              r-genomicfeatures
                              r-genomeinfodb
@@ -5673,31 +5593,6 @@ create your own, and the package takes care of model predictions and parameter
 estimation.  Model predictions are derived via the numerical solutions provided
 by Richter, Ulrich, and Janczyk (2023, <doi:10.1016/j.jmp.2023.102756>).")
     (license license:expat)))
-
-(define-public r-driftbursthypothesis
-  (package
-    (name "r-driftbursthypothesis")
-    (version "0.4.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DriftBurstHypothesis" version))
-       (sha256
-        (base32 "1pmsbv1rl79s520nxj536m8gf7xyfjskj8r88rxmxscbgp8c1xz2"))))
-    (properties `((upstream-name . "DriftBurstHypothesis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/emilsjoerup/DriftBurstHypothesis")
-    (synopsis "Calculates the Test-Statistic for the Drift Burst Hypothesis")
-    (description
-     "Calculates the T-Statistic for the drift burst hypothesis from the working paper
-Christensen, Oomen and Reno (2018) <DOI:10.2139/ssrn.2842535>.  The authors
-MATLAB code is available upon request, see:
-<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2842535>.")
-    (license license:gpl3)))
 
 (define-public r-drhutools
   (package
@@ -10844,42 +10739,6 @@ of dispersion mean model described by Searle et al. (1992) \"Variance
 Components\", Wiley, NY. @code{Dmm()} can do MINQUE', bias-corrected-ML', and
 REML variance and covariance component estimates.")
     (license (list license:gpl2 license:gpl2+ license:gpl3))))
-
-(define-public r-dmlalg
-  (package
-    (name "r-dmlalg")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dmlalg" version))
-       (sha256
-        (base32 "1ixjpalg3q0wnddrli6v66kky3pxf90sjgiia8jhk4nds0h58a72"))))
-    (properties `((upstream-name . "dmlalg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforest r-matrixcalc r-lme4 r-glmnet))
-    (home-page "https://gitlab.math.ethz.ch/ecorinne/dmlalg.git")
-    (synopsis "Double Machine Learning Algorithms")
-    (description
-     "Implementation of double machine learning (DML) algorithms in R, based on
-Emmenegger and Buehlmann (2021) \"Regularizing Double Machine Learning in
-Partially Linear Endogenous Models\" <@code{arXiv:2101.12525>} and Emmenegger and
-Buehlmann (2021) <@code{arXiv:2108.13657>} \"Double Machine Learning for
-Partially Linear Mixed-Effects Models with Repeated Measurements\".  First part:
-our goal is to perform inference for the linear parameter in partially linear
-models with confounding variables.  The standard DML estimator of the linear
-parameter has a two-stage least squares interpretation, which can lead to a
-large variance and overwide confidence intervals.  We apply regularization to
-reduce the variance of the estimator, which produces narrower confidence
-intervals that are approximately valid.  Nuisance terms can be flexibly
-estimated with machine learning algorithms.  Second part: our goal is to
-estimate and perform inference for the linear coefficient in a partially linear
-mixed-effects model with DML. Machine learning algorithms allows us to
-incorporate more complex interaction structures and high-dimensional variables.")
-    (license license:gpl3+)))
 
 (define-public r-dml
   (package
@@ -16529,30 +16388,6 @@ extracting digits at various locations in a number, tests for repeated values,
 and (Bayesian) tests of digit distributions.")
     (license license:gpl3+)))
 
-(define-public r-digitize
-  (package
-    (name "r-digitize")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "digitize" version))
-       (sha256
-        (base32 "1qw4x4z9vrs79sd9b2daw668nc6nvjl4qhayfqmd87yxa2ydv6x0"))))
-    (properties `((upstream-name . "digitize")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readbitmap))
-    (home-page "https://github.com/tpoisot/digitize/")
-    (synopsis "Use Data from Published Plots in R")
-    (description
-     "Import data from a digital image; it requires user input for calibration and to
-locate the data points.  The end result is similar to @code{DataThief} and other
-other programs that digitize published plots or graphs.")
-    (license license:gpl2+)))
-
 (define-public r-digitalpcr
   (package
     (name "r-digitalpcr")
@@ -18468,13 +18303,13 @@ frame with many numeric columns and a factor column.")
 (define-public r-dialrjars
   (package
     (name "r-dialrjars")
-    (version "9.0.14")
+    (version "9.0.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dialrjars" version))
        (sha256
-        (base32 "16ljgcrngz9bd0hyiyy4ml7shpz8gw80s55g2p540dglyryybfgg"))))
+        (base32 "02yd2291mrk6zs8gilf0bww4sgcgkfkim1pl7jdrhnqr97sk8g9k"))))
     (properties `((upstream-name . "dialrjars")))
     (build-system r-build-system)
     (arguments
@@ -19007,38 +18842,6 @@ comparison across District Health Boards or Regional Councils.  The preprint
 Lumley (2019) <@code{arXiv:1912.04435>} is based on the methods in this package.")
     (license license:gpl3)))
 
-(define-public r-dgumbel
-  (package
-    (name "r-dgumbel")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dgumbel" version))
-       (sha256
-        (base32 "1qlc81rh6fcrai9ls27j83bjac26qhpfnchf9pdjz86dyclfjx43"))))
-    (properties `((upstream-name . "dgumbel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
-    (home-page "https://github.com/blunde1/dgumbel")
-    (synopsis "The Gumbel Distribution Functions and Gradients")
-    (description
-     "Gumbel distribution functions (De Haan L. (2007) <doi:10.1007/0-387-34471-3>)
-implemented with the techniques of automatic differentiation (Griewank A. (2008)
-<isbn:978-0-89871-659-7>).  With this tool, a user should be able to quickly
-model extreme events for which the Gumbel distribution is the domain of
-attraction.  The package makes available the density function, the distribution
-function the quantile function and a random generating function.  In addition,
-it supports gradient functions.  The package combines Adept (C++ templated
-automatic differentiation) (Hogan R. (2017) <doi:10.5281/zenodo.1004730>) and
-Eigen (templated matrix-vector library) for fast computations of both objective
-functions and exact gradients.  It relies on @code{RcppEigen} for easy access to
-Eigen and bindings to R.")
-    (license license:gpl2+)))
-
 (define-public r-dgpsi
   (package
     (name "r-dgpsi")
@@ -19145,35 +18948,6 @@ doing one-sample tests with hypothesized discrete distributions.  The package
 also contains @code{cvm.test()}, for doing one-sample Cramer-von Mises
 goodness-of-fit tests.")
     (license license:gpl2+)))
-
-(define-public r-dgm
-  (package
-    (name "r-dgm")
-    (version "1.7.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DGM" version))
-       (sha256
-        (base32 "1f59spd4bwx4d1gbjaizjxccaslw1fvf8pxa9nrxi07j6kq9mg0h"))))
-    (properties `((upstream-name . "DGM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ggplot2
-                             r-data-table
-                             r-coin))
-    (home-page "https://github.com/schw4b/DGM")
-    (synopsis "Dynamic Graphical Models")
-    (description
-     "Dynamic graphical models for multivariate time series data to estimate directed
-dynamic networks in functional magnetic resonance imaging (@code{fMRI}), see
-Schwab et al. (2017) <doi:10.1016/j.neuroimage.2018.03.074>.")
-    (license license:gpl3)))
 
 (define-public r-dglmextpois
   (package
@@ -19866,13 +19640,13 @@ data.")
 (define-public r-dfd
   (package
     (name "r-dfd")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DFD" version))
        (sha256
-        (base32 "05jvmvd3980k6zxq30llxr9ahd2x7l0qsv283x67j668jkx8h89z"))))
+        (base32 "0fs635qyiphj6ww6k5k4h9davwgmjs971s6l8rjrwpjq01airpwf"))))
     (properties `((upstream-name . "DFD")))
     (build-system r-build-system)
     (arguments
@@ -27197,46 +26971,6 @@ references for details on the methods: Vickers (2006)
 Pfeiffer (2020) <doi:10.1002/bimj.201800240>.")
     (license license:expat)))
 
-(define-public r-dcur
-  (package
-    (name "r-dcur")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dCUR" version))
-       (sha256
-        (base32 "1v9gzvb7hz75q19pywkwl58q5sb3am9i54m7s6hvryqacm3miz4s"))))
-    (properties `((upstream-name . "dCUR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-ppcor
-                             r-mclust
-                             r-mass
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://www.cesargamboasanabria.com")
-    (synopsis "Dimension Reduction with Dynamic CUR")
-    (description
-     "Dynamic CUR (@code{dCUR}) boosts the CUR decomposition (Mahoney MW., Drineas P.
-(2009) <doi:10.1073/pnas.0803205106>) varying the k, the number of columns and
-rows used, and its final purposes to help find the stage, which minimizes the
-relative error to reduce matrix dimension.  The goal of CUR Decomposition is to
-give a better interpretation of the matrix decomposition employing proper
-variable selection in the data matrix, in a way that yields a simplified
-structure.  Its origins come from analysis in genetics.  The goal of this
-package is to show an alternative to variable selection (columns) or individuals
-(rows).  The idea proposed consists of adjusting the probability distributions
-to the leverage scores and selecting the best columns and rows that minimize the
-reconstruction error of the matrix approximation ||A-CUR||.  It also includes a
-method that recalibrates the relative importance of the leverage scores
-according to an external variable of the user's interest.")
-    (license license:gpl3)))
-
 (define-public r-dctensor
   (package
     (name "r-dctensor")
@@ -30686,13 +30420,13 @@ information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "2.5.1")
+    (version "2.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataquieR" version))
        (sha256
-        (base32 "111vxpmnmpywnzdr9sj08y355a1fn36h9ig5zamsb2n0lcxgvzpi"))))
+        (base32 "0iykk77v0q87b2s0xv2ij7vbsl8331scyfbki3ikdbyi96r6kjlw"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
     (arguments
@@ -30728,6 +30462,7 @@ information.")
                              r-lubridate
                              r-lme4
                              r-lifecycle
+                             r-hms
                              r-ggplot2
                              r-emmeans
                              r-dplyr))
@@ -31120,35 +30855,6 @@ data manipulation challenges.")
      "Shiny modules to import data into an application or addin from various sources,
 and to manipulate them after that.")
     (license license:gpl3)))
-
-(define-public r-datametprocess
-  (package
-    (name "r-datametprocess")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DataMetProcess" version))
-       (sha256
-        (base32 "043qr1b800kr0v3p1xav9i0jqvx612r3v53qsd80q1jadyarfx00"))))
-    (properties `((upstream-name . "DataMetProcess")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-shiny
-                             r-rlang
-                             r-lubridate
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/wagnnerms97/DataMetProcess")
-    (synopsis "Meteorological Data Processing")
-    (description
-     "Set of tools aimed at processing meteorological data, converting hourly recorded
-data to daily, monthly and annual data.")
-    (license license:gpl3+)))
 
 (define-public r-datameta
   (package

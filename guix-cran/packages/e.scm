@@ -3741,13 +3741,13 @@ files for Moodle'.")
 (define-public r-exams
   (package
     (name "r-exams")
-    (version "2.4-2")
+    (version "2.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams" version))
        (sha256
-        (base32 "1373vpfclvh40b9libjdqgflzwqpc8ggbblll14ib2glsfmf75vy"))))
+        (base32 "0d4ywca2d8iicvzz2nhdvjap9khycfm01npj2lpdgy206gks34xb"))))
     (properties `((upstream-name . "exams")))
     (build-system r-build-system)
     (arguments
@@ -4569,13 +4569,13 @@ together with time-series power demand calculations.")
 (define-public r-evprof
   (package
     (name "r-evprof")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evprof" version))
        (sha256
-        (base32 "1nkgvx76cvy78pcnrfh8md2j3b9vmsissmq2s2nbb2rral272gnr"))))
+        (base32 "08yk9jppl4bjas01r4hwl3fbb39hpbby6lnnck2y1ypq8v14nycm"))))
     (properties `((upstream-name . "evprof")))
     (build-system r-build-system)
     (arguments
@@ -4595,7 +4595,7 @@ together with time-series power demand calculations.")
                              r-dbscan
                              r-cowplot))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mcanigueral/evprof/")
+    (home-page "https://github.com/resourcefully-dev/evprof/")
     (synopsis "Electric Vehicle Charging Sessions Profiling and Modelling")
     (description
      "This package provides tools for modelling electric vehicle charging sessions
@@ -9693,13 +9693,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.10.1")
+    (version "4.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "0g99nkyh22qsyb4pmkycxp8afavqqw5zvs5jqapip76ivzq0xwwk"))))
+        (base32 "1lb1gznwxbfajvdmy3ifhdv7r938wjrlm9m89ccqdvr7hynzaxh0"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (arguments
@@ -9717,6 +9717,7 @@ networks whose edge weights are counts.  See Krivitsky (2012)
                              r-network
                              r-memoise
                              r-matrix
+                             r-mass
                              r-magrittr
                              r-lpsolveapi
                              r-knitr
@@ -11436,13 +11437,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.10.0.0")
+    (version "0.11.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "16am0hazvvdddw1mn9379rm6zdkqql9fcwvx687fa321bkwzx36f"))))
+        (base32 "1ka2mz8j4cm7wb7mvlk6gppwsh0rps96r8m7mnparfn49gwxp7v0"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -14340,6 +14341,34 @@ Amiri, S., Clarke, B., and Clarke, J. (2015).  Clustering categorical data via
 ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
     (license license:gpl2+)))
 
+(define-public r-enrichit
+  (package
+    (name "r-enrichit")
+    (version "0.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enrichit" version))
+       (sha256
+        (base32 "1g3lxrc7x2kfl77z3yf3dhjg7bfj2srxachnk0wv2pq8fji3m4zy"))))
+    (properties `((upstream-name . "enrichit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yulab-utils r-rcpp))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=enrichit")
+    (synopsis "'C++' Implementations of Functional Enrichment Analysis")
+    (description
+     "Fast implementations of functional enrichment analysis methods using C++ via
+Rcpp'.  Currently provides Over-Representation Analysis (ORA) and Gene Set
+Enrichment Analysis (GSEA).  The multilevel GSEA algorithm is derived from the
+fgsea package.  Methods are described in Subramanian et al. (2005)
+<doi:10.1073/pnas.0506580102> and Korotkevich et al. (2021)
+<doi:10.1101/060012>.")
+    (license license:artistic2.0)))
+
 (define-public r-enrichintersect
   (package
     (name "r-enrichintersect")
@@ -16640,13 +16669,13 @@ al. (2024) <doi:10.31234/osf.io/2e4dq>.")
 (define-public r-embryogrowth
   (package
     (name "r-embryogrowth")
-    (version "10.4")
+    (version "2025.12.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embryogrowth" version))
        (sha256
-        (base32 "1f3cp3j0yipkgli9fn801p0jyxcpfsdnpzkdp891ynsb0wxv90qz"))))
+        (base32 "1kkcy2d2yzk2l5gay97cyv2qcg9r0h8sk5f59qjy1gl8yva9f53f"))))
     (properties `((upstream-name . "embryogrowth")))
     (build-system r-build-system)
     (arguments
@@ -16964,50 +16993,16 @@ defined as the conditional probability of the fuzzy data; for more details and
 formulas see Denoeux (2011) <doi:10.1016/j.fss.2011.05.022>.")
     (license license:lgpl3+)))
 
-(define-public r-em
-  (package
-    (name "r-em")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "em" version))
-       (sha256
-        (base32 "16xmksz1zdr61gxycsbia28kj16nrrcdvjcdd3nk6n6zjiy3ca3v"))))
-    (properties `((upstream-name . "em")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-plm
-                             r-numderiv
-                             r-nnet
-                             r-mclust
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://github.com/wudongjie/em")
-    (synopsis "Generic EM Algorithm")
-    (description
-     "This package provides a generic function for running the
-Expectation-Maximization (EM) algorithm within a maximum likelihood framework,
-based on Dempster, Laird, and Rubin (1977)
-<doi:10.1111/j.2517-6161.1977.tb01600.x> is implemented.  It can be applied
-after a model fitting using R's existing functions and packages.")
-    (license license:gpl3+)))
-
 (define-public r-elyp
   (package
     (name "r-elyp")
-    (version "0.7-5")
+    (version "0.7-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ELYP" version))
        (sha256
-        (base32 "1j2vwcs443x3pf4zypyvbkn8fb5if9b9hf1s821jjjpgach573sc"))))
+        (base32 "11s0n0r58glwck0m9r1mji2ycrrfxnm5vnbdkzv20y29r122kkdv"))))
     (properties `((upstream-name . "ELYP")))
     (build-system r-build-system)
     (arguments
@@ -17019,7 +17014,7 @@ after a model fitting using R's existing functions and packages.")
      "Empirical Likelihood Analysis for the Cox Model and Yang-Prentice (2005) Model")
     (description
      "Empirical likelihood ratio tests for the Yang and Prentice (short/long term
-hazards ratio) models.  Empirical likelihood tests within a Cox model, for
+hazards ratio) model.  Empirical likelihood tests within a Cox model, for
 parameters defined via both baseline hazard function and regression parameters.")
     (license license:gpl2+)))
 

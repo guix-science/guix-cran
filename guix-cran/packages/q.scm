@@ -3046,34 +3046,6 @@ inference of causal network and genetic architecture for correlated phenotypes.
 Annals of Applied Statistics 4: 320-339. <doi:10.1214/09-AOAS288>.")
     (license license:gpl2+)))
 
-(define-public r-qtlhot
-  (package
-    (name "r-qtlhot")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qtlhot" version))
-       (sha256
-        (base32 "0gf0fsq91g830vqg5kz01zznm40qpjncy964ccvmms3i6d3hxd9m"))))
-    (properties `((upstream-name . "qtlhot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-qtl r-mnormt r-corpcor))
-    (home-page "http://www.stat.wisc.edu/~yandell/statgen")
-    (synopsis "Inference for QTL Hotspots")
-    (description
-     "This package provides functions to infer co-mapping trait hotspots and causal
-models.  Chaibub Neto E, Keller MP, Broman AF, Attie AD, Jansen RC, Broman KW,
-Yandell BS (2012) Quantile-based permutation thresholds for QTL hotspots.
-Genetics 191 : 1355-1365. <doi:10.1534/genetics.112.139451>.  Chaibub Neto E,
-Broman AT, Keller MP, Attie AD, Zhang B, Zhu J, Yandell BS (2013) Modeling
-causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
-<doi:10.1534/genetics.112.147124>.")
-    (license license:gpl2+)))
-
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
@@ -4136,45 +4108,6 @@ published open-sourced free risk prediction algorithm QRISK3-2017
 <https://qrisk.org/src.php>.")
     (license license:gpl3)))
 
-(define-public r-qris
-  (package
-    (name "r-qris")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qris" version))
-       (sha256
-        (base32 "0nx4x4ywgwg55fpv9cr30r09in4rzm6070fm0g88qpvgvrihs9a6"))))
-    (properties `((upstream-name . "qris")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-stringr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quantreg
-                             r-nleqslv
-                             r-ggplot2))
-    (home-page "https://github.com/Kyuhyun07/qris")
-    (synopsis
-     "Quantile Regression Model for Residual Lifetime Using an Induced Smoothing Approach")
-    (description
-     "This package provides a collection of functions is provided by this package to
-fit quantiles regression models for censored residual lifetimes.  It provides
-various options for regression parameters estimation: the induced smoothing
-approach (smooth), and L1-minimization (non-smooth).  It also implements the
-estimation methods for standard errors of the regression parameters estimates
-based on an efficient partial multiplier bootstrap method and robust sandwich
-estimator.  Furthermore, a simultaneous procedure of estimating regression
-parameters and their standard errors via an iterative updating procedure is
-implemented (iterative).  For more details, see Kim, K. H., Caplan, D. J., &
-Kang, S. (2022), \"Smoothed quantile regression for censored residual life\",
-Computational Statistics, 1-22 <doi:10.1007/s00180-022-01262-z>.")
-    (license license:gpl3+)))
-
 (define-public r-qripkg
   (package
     (name "r-qripkg")
@@ -4705,30 +4638,6 @@ of drug administration.  See ?@code{qpNCA} and vignettes.  Methodology follows
 Rowland and Tozer (2011, ISBN:978-0-683-07404-8), Gabrielsson and Weiner (1997,
 ISBN:978-91-9765-100-4), and Gibaldi and Perrier (1982, ISBN:978-0824710422).")
     (license license:gpl3)))
-
-(define-public r-qpmadr
-  (package
-    (name "r-qpmadr")
-    (version "1.1.0-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qpmadr" version))
-       (sha256
-        (base32 "0krv3zhr42z2mkkbn2bkglzfxbf06dmd9vnnc3rcyhm1r85n4fbq"))))
-    (properties `((upstream-name . "qpmadr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-checkmate))
-    (home-page "https://github.com/anderic1/qpmadr")
-    (synopsis "Interface to the 'qpmad' Quadratic Programming Solver")
-    (description
-     "Efficiently solve quadratic problems with linear inequality, equality and box
-constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
-<doi:10.1007/BF02591962>.")
-    (license license:gpl3+)))
 
 (define-public r-qploidy
   (package

@@ -5,9 +5,9 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages python)
   #:use-module (gnu packages gcc)
@@ -80,33 +80,6 @@ details on @code{OpenAI} Gym, please see here: <https://github.com/openai/gym>.
 For more details on the @code{OpenAI} Gym API specification, please see here:
 <https://github.com/openai/gym-http-api>.")
     (license license:expat)))
-
-(define-public r-gxescanr
-  (package
-    (name "r-gxescanr")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GxEScanR" version))
-       (sha256
-        (base32 "0k3avad4b2x4sqv8iilx5a8gkybjlipx50mj0la4kl9xv0azshkd"))))
-    (properties `((upstream-name . "GxEScanR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-prodlim))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GxEScanR")
-    (synopsis "Run GWAS/GWEIS Scans Using Binary Dosage Files")
-    (description
-     "This package provides tools to run genome-wide association study (GWAS) and
-genome-wide by environment interaction study (GWEIS) scans using the genetic
-data stored in a binary dosage file.  The user provides a data frame with the
-subject's covariate data and the information about the binary dosage file
-returned by the @code{BinaryDosage::getbdinfo()} routine.")
-    (license license:gpl3)))
 
 (define-public r-gxeprs
   (package
@@ -7670,31 +7643,6 @@ techniques, see the paper by Orbanz, P. and Roy, D.M.(2014)
 for generating sample networks using various network models and graphons.")
     (license license:expat)))
 
-(define-public r-graphkernels
-  (package
-    (name "r-graphkernels")
-    (version "1.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graphkernels" version))
-       (sha256
-        (base32 "1fwl5a13mdmia374zas0vvd4dlfnp4in9gj42c0iq01icy1wq0la"))))
-    (properties `((upstream-name . "graphkernels")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-igraph))
-    (home-page "https://cran.r-project.org/package=graphkernels")
-    (synopsis "Graph Kernels")
-    (description
-     "This package provides a fast C++ implementation for computing various graph
-kernels including (1) simple kernels between vertex and/or edge label
-histograms, (2) graphlet kernels, (3) random walk kernels (popular baselines),
-and (4) the Weisfeiler-Lehman graph kernel (state-of-the-art).")
-    (license license:gpl2+)))
-
 (define-public r-graphicalvar
   (package
     (name "r-graphicalvar")
@@ -7821,36 +7769,6 @@ which expects a prior name and prior specific parameters.  Both functions also
 expect the number of burn-in iterations and the number of sampling iterations
 for the underlying MCMC sampler.")
     (license license:gpl3)))
-
-(define-public r-graphhopper
-  (package
-    (name "r-graphhopper")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graphhopper" version))
-       (sha256
-        (base32 "1zrnwh86jv37z07b6l1i94dgjn8k3b3a3f76gfjsyyxvlc64i76x"))))
-    (properties `((upstream-name . "graphhopper")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-googlepolylines
-                             r-dplyr))
-    (home-page "https://github.com/crazycapivara/graphhopper-r")
-    (synopsis "An R Interface to the 'GraphHopper' Directions API")
-    (description
-     "This package provides a quick and easy access to the @code{GraphHopper}
-Directions API. @code{GraphHopper} <https://www.graphhopper.com/> itself is a
-routing engine based on @code{OpenStreetMap} data.  API responses can be
-converted to simple feature (sf) objects in a convenient way.")
-    (license license:expat)))
 
 (define-public r-graphframes
   (package
@@ -9421,43 +9339,6 @@ key feature of genotype-phenotype maps.  Frontier in Genetics 4:216
 <doi:10.3389/fgene.2013.00216>.")
     (license license:gpl3)))
 
-(define-public r-gpm
-  (package
-    (name "r-gpm")
-    (version "3.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPM" version))
-       (sha256
-        (base32 "01vd68w5pnwhng83x5i0k9c5fhsn9siyzzndkvkmpis4mjm42sgv"))))
-    (properties `((upstream-name . "GPM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-randtoolbox
-                             r-pracma
-                             r-lhs
-                             r-lattice
-                             r-iterators
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=GPM")
-    (synopsis
-     "Gaussian Process Modeling of Multi-Response and Possibly Noisy Datasets")
-    (description
-     "This package provides a general and efficient tool for fitting a response
-surface to a dataset via Gaussian processes.  The dataset can have multiple
-responses and be noisy (with stationary variance).  The fitted GP model can
-predict the gradient as well.  The package is based on the work of Bostanabad,
-R., Kearney, T., Tao, S. Y., Apley, D. W. & Chen, W. (2018) Leveraging the
-nugget parameter for efficient Gaussian process modeling.  International Journal
-for Numerical Methods in Engineering, 114, 501-516.")
-    (license license:gpl2)))
-
 (define-public r-gpltr
   (package
     (name "r-gpltr")
@@ -10582,13 +10463,13 @@ first course of the EUPLA degree of Data Engineering in Industrial Processes.")
 (define-public r-gooser
   (package
     (name "r-gooser")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gooseR" version))
        (sha256
-        (base32 "0blbvaa4qvxqggn5h023pkfb01kj0a484cvi557kyz3rmasdw1aw"))))
+        (base32 "1pcrkg86fw75gkm6yhvv196p9i79a15spwhzihn7lrngkxfflij0"))))
     (properties `((upstream-name . "gooseR")))
     (build-system r-build-system)
     (arguments
@@ -13249,40 +13130,6 @@ the variant Set Mixed Model Association Tests (SMMAT) as proposed in Chen et al.
 kernel association test (SKAT), SKAT-O and an efficient hybrid test of the
 burden test and SKAT, based on user-defined variant sets.")
     (license license:gpl3+)))
-
-(define-public r-gmkmcharlie
-  (package
-    (name "r-gmkmcharlie")
-    (version "1.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GMKMcharlie" version))
-       (sha256
-        (base32 "1c7zb83p4r46h42xsjaj3c8zrnhrrhvggz4nqmasp52fh6gdarz6"))))
-    (properties `((upstream-name . "GMKMcharlie")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=GMKMcharlie")
-    (synopsis
-     "Unsupervised Gaussian Mixture and Minkowski and Spherical K-Means with Constraints")
-    (description
-     "High performance trainers for parameterizing and clustering weighted data.  The
-Gaussian mixture (GM) module includes the conventional EM (expectation
-maximization) trainer, the component-wise EM trainer, the minimum-message-length
-EM trainer by Figueiredo and Jain (2002) <doi:10.1109/34.990138>.  These
-trainers accept additional constraints on mixture weights, covariance eigen
-ratios and on which mixture components are subject to update.  The K-means (KM)
-module offers clustering with the options of (i) deterministic and stochastic
-K-means++ initializations, (ii) upper bounds on cluster weights (sizes), (iii)
-Minkowski distances, (iv) cosine dissimilarity, (v) dense and sparse
-representation of data input.  The package improved the typical implementations
-of GM and KM algorithms in various aspects.  It is carefully crafted in
-multithreaded C++ for modeling large data for industry use.")
-    (license license:gpl3)))
 
 (define-public r-gmgm
   (package
@@ -16230,37 +16077,6 @@ including model fits, autocorrelation functions and probability integral
 transform residuals are included in the package.  Several standard data sets are
 included in the package.")
     (license license:gpl2+)))
-
-(define-public r-glamlasso
-  (package
-    (name "r-glamlasso")
-    (version "3.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glamlasso" version))
-       (sha256
-        (base32 "0vzkszam7nz40v8pxq06jn3fgwa1nd3s485hgfkcv7r8pg2rp56q"))))
-    (properties `((upstream-name . "glamlasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=glamlasso")
-    (synopsis "Penalization in Large Scale Generalized Linear Array Models")
-    (description
-     "Efficient design matrix free lasso penalized estimation in large scale 2 and
-3-dimensional generalized linear array model framework.  The procedure is based
-on the gdpg algorithm from Lund et al. (2017)
-<doi:10.1080/10618600.2017.1279548>.  Currently Lasso or Smoothly Clipped
-Absolute Deviation (SCAD) penalized estimation is possible for the following
-models: The Gaussian model with identity link, the Binomial model with logit
-link, the Poisson model with log link and the Gamma model with log link.  It is
-also possible to include a component in the model with non-tensor design e.g an
-intercept.  Also provided are functions, @code{glamlassoRR()} and
-@code{glamlassoS()}, fitting special cases of GLAMs.")
-    (license license:gpl3)))
 
 (define-public r-glam
   (package
@@ -19714,13 +19530,13 @@ sets.  Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
 (define-public r-ggseg
   (package
     (name "r-ggseg")
-    (version "1.6.7")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg" version))
        (sha256
-        (base32 "18jn7d6q8gzdsxc0m5nvas3krchnvxbiwasvbcb016vnni2amawp"))))
+        (base32 "1zzy6g4j2vaim8cmawmfn7a2fa40kvnkj46r6pxrryjilg56wnlh"))))
     (properties `((upstream-name . "ggseg")))
     (build-system r-build-system)
     (arguments
@@ -22095,40 +21911,6 @@ building horizon plots in the ggplot2 environment.")
 numeric vector.  This is especially useful, since @code{qplot()} was deprecated
 in ggplot2 3.4.0.")
     (license license:gpl3+)))
-
-(define-public r-gghilbertstrings
-  (package
-    (name "r-gghilbertstrings")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gghilbertstrings" version))
-       (sha256
-        (base32 "0b3xp1w6fkkmjh7gihhfkp4npx553a75bvsal3w4j57xa34l8rap"))))
-    (properties `((upstream-name . "gghilbertstrings")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-rcpp
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/Sumidu/gghilbertstrings")
-    (synopsis "Fast 'ggplot2'-Based Implementation of Hilbert Curves")
-    (description
-     "This package provides a set of functions that help to create plots based on
-Hilbert curves.  Hilbert curves are used to map one dimensional data into the 2D
-plane.  The package provides a function that generate a 2D coordinate from an
-integer position.  As a specific use case the package provides a function that
-allows mapping a character column in a data frame into 2D space using ggplot2'.
-This allows visually comparing long lists of URLs, words, genes or other data
-that has a fixed order and position.")
-    (license license:expat)))
 
 (define-public r-gghexsize
   (package
@@ -25546,39 +25328,6 @@ objects.  In conjunction with %>>>%, a compact function constructor,
 provided; both support quasiquotation.")
     (license license:expat)))
 
-(define-public r-gesso
-  (package
-    (name "r-gesso")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gesso" version))
-       (sha256
-        (base32 "0i7a927mbll8mlisxb0ic62fvq1wp5v0m69n7zkhcjabkxr7gbn3"))))
-    (properties `((upstream-name . "gesso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppthread
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-dplyr
-                             r-bigmemory
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=gesso")
-    (synopsis
-     "Hierarchical GxE Interactions in a Regularized Regression Model")
-    (description
-     "The method focuses on a single environmental exposure and induces a
-main-effect-before-interaction hierarchical structure for the joint selection of
-interaction terms in a regularized regression model.  For details see
-Zemlianskaia et al. (2021) <arxiv:2103.13510>.")
-    (license license:expat)))
-
 (define-public r-geslar
   (package
     (name "r-geslar")
@@ -27779,31 +27528,6 @@ A test data set of a soil mapping case study in Berne (Switzerland) is provided.
 <doi:10.5194/soil-3-191-2017>.")
     (license license:gpl2+)))
 
-(define-public r-geofourierfda
-  (package
-    (name "r-geofourierfda")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geoFourierFDA" version))
-       (sha256
-        (base32 "1a5ggjyfj5ic9h7fqvy3r7s0i6bmbwk95bf7y3vrmmmj0sxdm1mf"))))
-    (properties `((upstream-name . "geoFourierFDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-orthopolynom r-magrittr))
-    (home-page "https://cran.r-project.org/package=geoFourierFDA")
-    (synopsis
-     "Ordinary Functional Kriging Using Fourier Smoothing and Gaussian Quadrature")
-    (description
-     "Implementation of the ordinary functional kriging method proposed by Giraldo
-(2011) <doi:10.1007/s10651-010-0143-y>.  This implements an alternative method
-to estimate the trace-variogram using Fourier Smoothing and Gaussian Quadrature.")
-    (license license:expat)))
-
 (define-public r-geoflow
   (package
     (name "r-geoflow")
@@ -27885,33 +27609,6 @@ or vice versa reference @code{GeoNetwork'/'GeoServer} links in Zenodo or EML
 metadata).  The use of standardized configuration files ('JSON or YAML formats)
 allow fully reproducible workflows to facilitate the work of data and
 information managers.")
-    (license license:expat)))
-
-(define-public r-geofkf
-  (package
-    (name "r-geofkf")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geoFKF" version))
-       (sha256
-        (base32 "1fwzc32dq3ip0crxlmnqfxqky1jbadvdyfaprsbcxpmyrcs4f3qj"))))
-    (properties `((upstream-name . "geoFKF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv))
-    (home-page "https://github.com/gilberto-sassi/geoFKF")
-    (synopsis "Kriging Method for Spatial Functional Data")
-    (description
-     "This package provides a Kriging method for functional datasets with spatial
-dependency.  This functional Kriging method avoids the need to estimate the
-trace-variogram, and the curve is estimated by minimizing a quadratic form.  The
-curves in the functional dataset are smoothed using Fourier series.  The
-functional Kriging of this package is a modification of the method proposed by
-Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
     (license license:expat)))
 
 (define-public r-geofis
@@ -30615,36 +30312,6 @@ Self-Organization and Swarm Intelligence\" (2018) <DOI:10.1007/978-3-658-20540-9
 and the main algorithm called simplified self-organizing map for dimensionality
 reduction methods is published in <DOI: 10.1016/j.mex.2020.101093>.")
     (license license:gpl3)))
-
-(define-public r-generalisedcovariancemeasure
-  (package
-    (name "r-generalisedcovariancemeasure")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeneralisedCovarianceMeasure" version))
-       (sha256
-        (base32 "0xgxmfcpx3mnmp5hxdy5wiihj693qlksv6jxfb9ba4dy2glzdacf"))))
-    (properties `((upstream-name . "GeneralisedCovarianceMeasure")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost r-mgcv r-kernlab r-cvst))
-    (home-page
-     "https://cran.r-project.org/package=GeneralisedCovarianceMeasure")
-    (synopsis
-     "Test for Conditional Independence Based on the Generalized Covariance Measure (GCM)")
-    (description
-     "This package provides a statistical hypothesis test for conditional
-independence.  It performs nonlinear regressions on the conditioning variable
-and then tests for a vanishing covariance between the resulting residuals.  It
-can be applied to both univariate random variables and multivariate random
-vectors.  Details of the method can be found in Rajen D. Shah and Jonas Peters:
-The Hardness of Conditional Independence Testing and the Generalised Covariance
-Measure, Annals of Statistics 48(3), 1514--1538, 2020.")
-    (license license:gpl2)))
 
 (define-public r-generalhoslem
   (package
@@ -34225,52 +33892,16 @@ Boosted Trees constructed via the method of ensemble selection.")
 ratios and allelic proportions in a Bayesian framework.")
     (license license:gpl3)))
 
-(define-public r-gbp
-  (package
-    (name "r-gbp")
-    (version "0.1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gbp" version))
-       (sha256
-        (base32 "0awg724gsfwlb0fjcvw0450qdsk4m8x8is16pj5c8fx6nc8rn8bv"))))
-    (properties `((upstream-name . "gbp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgl r-rcpparmadillo r-rcpp r-magrittr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gyang274/gbp")
-    (synopsis "Bin Packing Problem Solver")
-    (description
-     "Basic infrastructure and several algorithms for 1d-4d bin packing problem.  This
-package provides a set of c-level classes and solvers for 1d-4d bin packing
-problem, and an r-level solver for 4d bin packing problem, which is a wrapper
-over the c-level 4d bin packing problem solver.  The 4d bin packing problem
-solver aims to solve bin packing problem, a.k.a container loading problem, with
-an additional constraint on weight.  Given a set of rectangular-shaped items,
-and a set of rectangular-shaped bins with weight limit, the solver looks for an
-orthogonal packing solution such that minimizes the number of bins and maximize
-volume utilization.  Each rectangular-shaped item i = 1, .. , n is characterized
-by length l_i, depth d_i, height h_i, and weight w_i, and each
-rectangular-shaped bin j = 1, .. , m is specified similarly by length l_j, depth
-d_j, height h_j, and weight limit w_j.  The item can be rotated into any
-orthogonal direction, and no further restrictions implied.")
-    (license license:expat)))
-
 (define-public r-gbop2
   (package
     (name "r-gbop2")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GBOP2" version))
        (sha256
-        (base32 "049s7d52mf0vadh07hy5ww64bkkj0zwilvphyf1xhfn4y2axwpyg"))))
+        (base32 "1pkkcby3s363iavvbjhwq5msch9fgiqcdd87cjfzfjmq8lflzx9j"))))
     (properties `((upstream-name . "GBOP2")))
     (build-system r-build-system)
     (arguments
@@ -34281,7 +33912,6 @@ orthogonal direction, and no further restrictions implied.")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyr
-                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-r6

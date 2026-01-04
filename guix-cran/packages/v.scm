@@ -452,30 +452,6 @@ checks to data analysis workflows and to aid in identifying and correcting any
 errors or inconsistencies in data.")
     (license license:expat)))
 
-(define-public r-vurocs
-  (package
-    (name "r-vurocs")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VUROCS" version))
-       (sha256
-        (base32 "1r4hq7az50v7lbyx5w6b4zs2kwi5cypqn9k6ac4kr8jr3jlyanr3"))))
-    (properties `((upstream-name . "VUROCS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=VUROCS")
-    (synopsis "Volume under the ROC Surface for Multi-Class ROC Analysis")
-    (description
-     "Calculates the volume under the ROC surface and its (co)variance for ordered
-multi-class ROC analysis as well as certain bivariate ordinal measures of
-association.")
-    (license license:gpl3)))
-
 (define-public r-vulntoolkit
   (package
     (name "r-vulntoolkit")

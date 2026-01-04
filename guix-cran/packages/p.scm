@@ -5527,41 +5527,6 @@ load (AL).  Provides a wrapper to calculate the @code{MetSSS} on new data using
 the Healthy Hearts formula.")
     (license license:lgpl3)))
 
-(define-public r-psc
-  (package
-    (name "r-psc")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psc" version))
-       (sha256
-        (base32 "12bc1979s0360v12kfq6mnsv83mh4603yw6680zi3kg4j6xvmsgg"))))
-    (properties `((upstream-name . "psc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-rcolorbrewer
-                             r-posterior
-                             r-mvtnorm
-                             r-lme4
-                             r-gtsummary
-                             r-ggpubr
-                             r-ggplot2
-                             r-flexsurv
-                             r-enrichwith))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/richjjackson/psc/")
-    (synopsis "Personalised Synthetic Controls")
-    (description
-     "Allows the comparison of data cohorts (DC) against a Counter Factual Model (CFM)
-and measures the difference in terms of an efficacy parameter.  Allows the
-application of Personalised Synthetic Controls.")
-    (license license:gpl3)))
-
 (define-public r-psborrow2
   (package
     (name "r-psborrow2")
@@ -12605,13 +12570,13 @@ given in Gonzalo and Pitarakis (2023) <doi:10.1016/j.ijforecast.2023.10.005>.")
 (define-public r-predictor
   (package
     (name "r-predictor")
-    (version "4.1.5")
+    (version "4.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predictoR" version))
        (sha256
-        (base32 "12f003yhdg6hw7nx943licws4z0w4ak44mz1wryy50r3221rdrjz"))))
+        (base32 "102q3rl9ra18r30phvn83r9a9dpw075zsdlfns6p1vk86wahvfjv"))))
     (properties `((upstream-name . "predictoR")))
     (build-system r-build-system)
     (arguments
@@ -13799,36 +13764,6 @@ inference results under heavy-tailed model errors(Fan et al.(2025)
 <doi:10.48550/@code{arXiv.2507.10975>}).  The Markov chain Monte Carlo (MCMC)
 algorithms of the proposed and alternative models are implemented in C++.")
     (license license:gpl2)))
-
-(define-public r-pqlseq
-  (package
-    (name "r-pqlseq")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PQLseq" version))
-       (sha256
-        (base32 "0lyynzvv7n1igzfrw52021bnxprqcm2hjxmlrsxkx4898ca46g60"))))
-    (properties `((upstream-name . "PQLseq")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=PQLseq")
-    (synopsis
-     "Efficient Mixed Model Analysis of Count Data in Large-Scale Genomic Sequencing Studies")
-    (description
-     "An efficient tool designed for differential analysis of large-scale RNA
-sequencing (RNAseq) data and Bisulfite sequencing (BSseq) data in the presence
-of individual relatedness and population structure.  PQLseq first fits a
-Generalized Linear Mixed Model (GLMM) with adjusted covariates, predictor of
-interest and random effects to account for population structure and individual
-relatedness, and then performs Wald tests for each gene in RNAseq or site in
-BSseq.")
-    (license license:gpl2+)))
 
 (define-public r-pql
   (package
@@ -21409,38 +21344,6 @@ the response residuals.  POCRE can also construct common components for multiple
 responses and thus build up latent-variable models.")
     (license license:gpl2)))
 
-(define-public r-pocketapi
-  (package
-    (name "r-pocketapi")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pocketapi" version))
-       (sha256
-        (base32 "0n4fyx4ldm14zy3pz7gygwhahi3p25misvxlmy8l9kqqr51fg26a"))))
-    (properties `((upstream-name . "pocketapi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-usethis
-                             r-tibble
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CorrelAid/pocketapi/")
-    (synopsis "Wrapper Around the 'Pocket' API")
-    (description
-     "This package provides functions that interface with the Pocket API
-(<https://getpocket.com/developer/>).  Allows the user to get, add, and modify
-items in their own Pocket account.")
-    (license license:expat)))
-
 (define-public r-poa
   (package
     (name "r-poa")
@@ -23274,30 +23177,6 @@ offers flexibility in choosing between various information criteria for model
 selection.  Post-selection inference is carried out using a debiasing method,
 while inference on the nonlinear functions employs a bootstrap approach.")
     (license license:gpl3+)))
-
-(define-public r-plsimcpp
-  (package
-    (name "r-plsimcpp")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PLSiMCpp" version))
-       (sha256
-        (base32 "05pldxlszz4kcdqmzli31jgjd9v6sb3r89yaijc1i83c36ximarx"))))
-    (properties `((upstream-name . "PLSiMCpp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-purrr r-crayon))
-    (home-page "https://cran.r-project.org/package=PLSiMCpp")
-    (synopsis "Methods for Partial Linear Single Index Model")
-    (description
-     "Estimation, hypothesis tests, and variable selection in partially linear
-single-index models.  Please see H. (2010) at <doi:10.1214/10-AOS835> for more
-details.")
-    (license license:gpl2+)))
 
 (define-public r-plsgenomics
   (package
@@ -25347,6 +25226,31 @@ which gets data from FBref <https://fbref.com/en>, Transfermarkt
 <https://www.fotmob.com/>.")
     (license license:expat)))
 
+(define-public r-plavaan
+  (package
+    (name "r-plavaan")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plavaan" version))
+       (sha256
+        (base32 "09a8fcfjmai3vvbsv4956ywax9vasc0bk6zz9l2k6ilm4wxcrafc"))))
+    (properties `((upstream-name . "plavaan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://marklhc.github.io/plavaan/")
+    (synopsis "Penalized Estimation for Latent Variable Models with 'lavaan'")
+    (description
+     "Extends the popular lavaan package by adding penalized estimation capabilities.
+It supports penalty on individual parameters as well as the difference between
+parameters.")
+    (license license:expat)))
+
 (define-public r-platypus
   (package
     (name "r-platypus")
@@ -25476,6 +25380,35 @@ platform design with new experimental arms added during the trial\".  Manuscript
 submitted for publication.  For additional references: Dunnett, C. W. (1955)
 <doi:10.2307/2281208>.")
     (license license:gpl3+)))
+
+(define-public r-platevision
+  (package
+    (name "r-platevision")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PlateVision" version))
+       (sha256
+        (base32 "0i1n2j1fzch243cvwk20dvw1vczkx7hxfjfrvli6x6rvjapbkx44"))))
+    (properties `((upstream-name . "PlateVision")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-readxl r-plotly r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=PlateVision")
+    (synopsis "Automated qPCR Analysis and Visual Quality Control")
+    (description
+     "Directly pipes raw quantitative PCR (@code{qPCR}) machine outputs into
+downstream analyses using the comparative Ct (Delta-Delta Ct) method described
+by Livak and Schmittgen (2001) <doi:10.1006/meth.2001.1262>.  Streamlines the
+workflow from Excel export to publication-ready plots.  Integrates unique visual
+quality control by reconstructing 96-well plate heatmaps, allowing users to
+instantly detect pipetting errors, edge effects, and outliers.  Key features
+include automated error propagation, laboratory master mix calculations, and
+generation of bar charts and volcano plots.")
+    (license license:gpl3)))
 
 (define-public r-platetools
   (package
@@ -27522,6 +27455,40 @@ exploited more efficiently.  Allocation free problem updates and re-solves are
 also provided.")
     (license license:bsd-2)))
 
+(define-public r-pipr
+  (package
+    (name "r-pipr")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pipr" version))
+       (sha256
+        (base32 "02z7wvd94byz0pp3ndji3dhw17hfadz432r5ahbxpn0bck1yj5q1"))))
+    (properties `((upstream-name . "pipr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-curl
+                             r-cli
+                             r-attempt
+                             r-arrow))
+    (home-page "https://worldbank.github.io/pipr/")
+    (synopsis "Client for the Poverty and Inequality Platform ('PIP') API")
+    (description
+     "An interface to compute poverty and inequality indicators for more than 160
+countries and regions from the World Bank's database of household surveys,
+through the Poverty and Inequality Portal (PIP).")
+    (license license:expat)))
+
 (define-public r-pipetime
   (package
     (name "r-pipetime")
@@ -29281,13 +29248,13 @@ trees in NEXUS and Newick formats, while preserving annotations.")
 (define-public r-phylospatial
   (package
     (name "r-phylospatial")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylospatial" version))
        (sha256
-        (base32 "13c3l8jcl3p6vm0v0gkgm4d99ng3lwj3bbyiks9vm97q8m45xzl8"))))
+        (base32 "0h8iqa2165msh5kchjaa6wxv3dd980paymay1w7nl0krfrgmhqmh"))))
     (properties `((upstream-name . "phylospatial")))
     (build-system r-build-system)
     (arguments
@@ -29506,35 +29473,6 @@ efficient functions to compute more standard conservation measures such as
 phylogenetic diversity, phylogenetic endemism, evolutionary distinctiveness and
 global endangerment, as well as compositional turnover (e.g., beta diversity).")
     (license license:agpl3)))
-
-(define-public r-phyloraster
-  (package
-    (name "r-phyloraster")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phyloraster" version))
-       (sha256
-        (base32 "1issa723yfvg8rrp5nx443c9r7c02iyzrnsknxh8wq3d06qq62dj"))))
-    (properties `((upstream-name . "phyloraster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-sesraster r-purrr r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://CRAN.R-project.org/package=phyloraster")
-    (synopsis "Evolutionary Diversity Metrics for Raster Data")
-    (description
-     "Phylogenetic Diversity (PD, Faith 1992), Evolutionary Distinctiveness (ED, Isaac
-et al.  2007), Phylogenetic Endemism (PE, Rosauer et al.  2009; Laffan et al.
-2016), and Weighted Endemism (WE, Laffan et al.  2016) for presence-absence
-raster.  Faith, D. P. (1992) <doi:10.1016/0006-3207(92)91201-3> Isaac, N. J. et
-al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
-<doi:10.1111/2041-210X.12513> Rosauer, D. et al. (2009)
-<doi:10.1111/j.1365-294X.2009.04311.x>.")
-    (license license:gpl3+)))
 
 (define-public r-phylopath
   (package
@@ -31127,55 +31065,6 @@ Baden-Wuerttemberg, Germany and at BOKU - University of Natural Ressources and
 Life Sciences, Vienna, Austria.")
     (license license:expat)))
 
-(define-public r-phenotypesimulator
-  (package
-    (name "r-phenotypesimulator")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PhenotypeSimulator" version))
-       (sha256
-        (base32 "19c79kls6i1qpsk41lp8whva5in47m2wlr0v3ggw5bblp4fkd43m"))))
-    (properties `((upstream-name . "PhenotypeSimulator")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-snpstats
-                             r-reshape2
-                             r-rcpp
-                             r-r-utils
-                             r-optparse
-                             r-mvtnorm
-                             r-hmisc
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/HannahVMeyer/PhenotypeSimulator")
-    (synopsis
-     "Flexible Phenotype Simulation from Different Genetic and Noise Models")
-    (description
-     "Simulation is a critical part of method development and assessment in
-quantitative genetics. @code{PhenotypeSimulator} allows for the flexible
-simulation of phenotypes under different models, including genetic variant and
-infinitesimal genetic effects (reflecting population structure) as well as
-non-genetic covariate effects, observational noise and additional correlation
-effects.  The different phenotype components are combined into a final phenotype
-while controlling for the proportion of variance explained by each of the
-components.  For each effect component, the number of variables, their
-distribution and the design of their effect across traits can be customised.
-For the simulation of the genetic effects, external genotype data from a number
-of standard software ('plink', hapgen2'/ impute2', genome', bimbam', simple text
-files) can be imported.  The final simulated phenotypes and its components can
-be automatically saved into .rds or .csv files.  In addition, they can be saved
-in formats compatible with commonly used genetic association software ('gemma',
-bimbam', plink', snptest', @code{LiMMBo}').")
-    (license license:expat)))
-
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
@@ -32631,30 +32520,6 @@ option is available at this time.  SQL output is intended to be compliant with
 @code{PostgreSQL} syntax specifications. @code{PostgreSQL} documentation is
 available here <https://www.postgresql.org/docs/current/index.html>.")
     (license license:gpl3+)))
-
-(define-public r-pgsc
-  (package
-    (name "r-pgsc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pgsc" version))
-       (sha256
-        (base32 "1y4szqn1jhp3yn8q738dpbhnqcqk45vgbmczamai154w3wb0qai7"))))
-    (properties `((upstream-name . "pgsc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-rcpparmadillo r-rcpp r-nloptr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/philipbarrett/pgsc")
-    (synopsis "Computes Powell's Generalized Synthetic Control Estimator")
-    (description
-     "Computes the generalized synthetic control estimator described in Powell (2017)
-<doi:10.7249/WR1142>.  Provides both point estimates, and hypothesis testing.")
-    (license license:gpl2)))
 
 (define-public r-pgrn
   (package
@@ -35505,37 +35370,6 @@ able to carry out cross-validation and to implement the plugin lasso of Belloni,
 Chernozhukov, Hansen and Kozbur (2016) <doi:10.1080/07350015.2015.1102733>.")
     (license license:expat)))
 
-(define-public r-penphcure
-  (package
-    (name "r-penphcure")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "penPHcure" version))
-       (sha256
-        (base32 "1c90d6f78npvzsvcy9vh8s6izfgbcxzly37lpwhqgdl5daww03l1"))))
-    (properties `((upstream-name . "penPHcure")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-rdpack r-rcpparmadillo r-rcpp r-mass))
-    (home-page "https://github.com/a-beretta/penPHcure")
-    (synopsis
-     "Variable Selection in PH Cure Model with Time-Varying Covariates")
-    (description
-     "Implementation of the semi-parametric proportional-hazards (PH) of Sy and Taylor
-(2000) <doi:10.1111/j.0006-341X.2000.00227.x> extended to time-varying
-covariates.  Estimation and variable selection are based on the methodology
-described in Beretta and Heuchenne (2019) <doi:10.1080/02664763.2018.1554627>;
-confidence intervals of the parameter estimates may be computed using a
-bootstrap approach.  Moreover, data following the PH cure model may be simulated
-using a method similar to Hendry (2014) <doi:10.1002/sim.5945>, where the
-event-times are generated on a continuous scale from a piecewise exponential
-distribution conditional on time-varying covariates.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-penmsm
   (package
     (name "r-penmsm")
@@ -35697,13 +35531,13 @@ automatic selection of optimal smoothing parameter.")
 (define-public r-pencoxfrail
   (package
     (name "r-pencoxfrail")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PenCoxFrail" version))
        (sha256
-        (base32 "1g5qggazvfj38436kj144q46aa59s4idnqnr5yv9c3svjikmw1r7"))))
+        (base32 "1hl5ys5xr7k80zl5xykhxa0maysgh6nqvdb08ljwqb3n3h6xc6pg"))))
     (properties `((upstream-name . "PenCoxFrail")))
     (build-system r-build-system)
     (arguments
@@ -35715,7 +35549,9 @@ automatic selection of optimal smoothing parameter.")
     (synopsis "Regularization in Cox Frailty Models")
     (description
      "Different regularization approaches for Cox Frailty Models by penalization
-methods are provided.")
+methods are provided.  see Groll et al. (2017) <doi:10.1111/biom.12637> for
+effects selection.  See also Groll and Hohberg (2024)
+<doi:10.1002/bimj.202300020> for classical LASSO approach.")
     (license license:gpl2+)))
 
 (define-public r-pencopulacond
@@ -41049,13 +40885,13 @@ functions that use subject position to estimate perception of visual stimuli.")
 (define-public r-paths
   (package
     (name "r-paths")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paths" version))
        (sha256
-        (base32 "19fl54r2myb9ky8ffnx71xw23a8dlg15sj9v36xcpv79z61ryws9"))))
+        (base32 "1a1lyprpwv2fh8mzqxxz0xwy1rg97cnw6f4n4gkbjg3xpb0bmnks"))))
     (properties `((upstream-name . "paths")))
     (build-system r-build-system)
     (arguments
@@ -41063,7 +40899,6 @@ functions that use subject position to estimate perception of visual stimuli.")
       #:tests? #f))
     (propagated-inputs (list r-twang
                              r-tidyr
-                             r-pryr
                              r-metr
                              r-ggplot2
                              r-gbm
@@ -41188,13 +41023,13 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.6.0")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathfindR" version))
        (sha256
-        (base32 "0haxhp5qmqm7x0m95cwvn6a359gm5gpv3dpps1clxps2w0bqhxsz"))))
+        (base32 "16y294xx129yln9y1543nq6lqpbjzw5w5ybpwf98m0ig1zwpwjbw"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (arguments
@@ -41204,7 +41039,6 @@ data related to gene sets and example input/output data.")
     (propagated-inputs (list r-rmarkdown
                              r-r-utils
                              r-pathfindr-data
-                             r-org-hs-eg-db
                              r-msigdbr
                              r-knitr
                              r-igraph
@@ -44503,19 +44337,19 @@ function.")
 (define-public r-panacea
   (package
     (name "r-panacea")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PANACEA" version))
        (sha256
-        (base32 "0pq5kq0i87yrdfs6id2lc6gg4dqsa07fsas13yc8jw6bd9lcf6rh"))))
+        (base32 "144sv8y5gmcjlpyx6wyswzjr6lkafixi2ql1714vsdnhd06g4x3v"))))
     (properties `((upstream-name . "PANACEA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-org-hs-eg-db r-igraph r-dbi))
+    (propagated-inputs (list r-reshape2 r-igraph r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/egeulgen/PANACEA")
     (synopsis "Personalized Network-Based Anti-Cancer Therapy Evaluation")
@@ -46044,13 +45878,13 @@ decisions based on timely and detailed economic insights.")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "18cwfi1s0w6409snapj1vqfaykqyfqkm7cvsgv1q4ysh5ksj494z"))))
+        (base32 "0jx14dkdnry9r5pp7lfn8acpq64jv9sn08il672h8x3qad45lcb7"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (arguments
@@ -46109,6 +45943,47 @@ H3 spatial index.  It is useful for ecological modeling, biodiversity studies,
 and spatial data processing in landscape ecology.  Fick and Hijmans (2017)
 <doi:10.1002/joc.5086>.  Zanaga et al. (2022) <doi:10.5281/zenodo.7254221>.
 Uber Technologies Inc. (2022) \"H3: Hexagonal hierarchical spatial index\".")
+    (license license:expat)))
+
+(define-public r-pairwisellm
+  (package
+    (name "r-pairwisellm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pairwiseLLM" version))
+       (sha256
+        (base32 "1xh5vx06s67cf3mqallbbf2n8ka3371907dfas15zn78fqxz96lk"))))
+    (properties `((upstream-name . "pairwiseLLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shmercer/pairwiseLLM")
+    (synopsis
+     "Pairwise Comparison Tools for Large Language Model-Based Writing Evaluation")
+    (description
+     "This package provides a unified framework for generating, submitting, and
+analyzing pairwise comparisons of writing quality using large language models
+(LLMs).  The package supports live and/or batch evaluation workflows across
+multiple providers ('@code{OpenAI}', Anthropic', Google Gemini', Together AI',
+and locally-hosted Ollama models), includes bias-tested prompt templates and a
+flexible template registry, and offers tools for constructing forward and
+reversed comparison sets to analyze consistency and positional bias.  Results
+can be modeled using BradleyâTerry (1952) <doi:10.2307/2334029> or Elo rating
+methods to derive writing quality scores.  For information on the method of
+pairwise comparisons, see Thurstone (1927) <doi:10.1037/h0070288> and Heldsinger
+& Humphry (2010) <doi:10.1007/BF03216919>.  For information on Elo ratings, see
+Clark et al. (2018) <doi:10.1371/journal.pone.0190393>.")
     (license license:expat)))
 
 (define-public r-pairwiseci

@@ -1377,13 +1377,13 @@ continuous treatments.  Journal of Causal Inference, 3(1), 25-40.
 (define-public r-twang
   (package
     (name "r-twang")
-    (version "2.6.1")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twang" version))
        (sha256
-        (base32 "0yci9qp9pvp4a8py2rb18kmxy8k2mblnbdahdkcjh1lviz6pvf0b"))))
+        (base32 "0sl8506xj8m18nnk8wyddlzvayr28x8ciygf1zl80lhwnx7yrz8f"))))
     (properties `((upstream-name . "twang")))
     (build-system r-build-system)
     (arguments
@@ -1881,13 +1881,13 @@ solutions, allowing computation of the vertices and the centroid of the core.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tutorial.helpers" version))
        (sha256
-        (base32 "0m7r5nfs5xpjh9vhfxig4lkpscrlzy4dca6md4kqvfxwlhd7fsxg"))))
+        (base32 "0vw2niibm9snxh903x7ckrdng7znmckmizffzz6aw15ck77sy32c"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (arguments
@@ -7321,33 +7321,6 @@ surfaces of unbalanced three-part compositions\"
 <doi:10.1016/S0140-6736(18)31194-2>.")
     (license license:gpl3)))
 
-(define-public r-triangulr
-  (package
-    (name "r-triangulr")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "triangulr" version))
-       (sha256
-        (base32 "1fjibp1rhgj363z3gn2iia5iv1hahdabwpxd7q3lxqzxwzs4nfd5"))))
-    (properties `((upstream-name . "triangulr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs r-rlang r-cpp11))
-    (home-page "https://cran.r-project.org/package=triangulr")
-    (synopsis "High-Performance Triangular Distribution Functions")
-    (description
-     "This package provides a collection of high-performance functions for the
-triangular distribution that consists of the probability density function,
-cumulative distribution function, quantile function, random variate generator,
-moment generating function, characteristic function, and expected shortfall
-function.  References: Samuel Kotz, Johan Ren Van Dorp (2004) <doi:10.1142/5720>
-and Acerbi, Carlo and Tasche, Dirk. (2002) <doi:10.1111/1468-0300.00091>.")
-    (license license:expat)))
-
 (define-public r-triangulation
   (package
     (name "r-triangulation")
@@ -11881,19 +11854,20 @@ sign series for trace regression (ASSIST) algorithm.")
 (define-public r-trace
   (package
     (name "r-trace")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trace" version))
        (sha256
-        (base32 "0scbmjmqp4rr85riwv15ifdi1635gllbm6pkmp40iiwd3w11ggk0"))))
+        (base32 "1maa8zm91p7kq0z89p2q73rbqsmam9pn0d8p0mizr84miyck952n"))))
     (properties `((upstream-name . "trace")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-yaml
+                             r-shiny
                              r-seqinr
                              r-pracma
                              r-plotly
@@ -15686,13 +15660,13 @@ squares method.  See Golub and Van Loan (1980) <doi:10.1137/0717073>, Gleser
 (define-public r-tlrmvnmvt
   (package
     (name "r-tlrmvnmvt")
-    (version "1.1.2")
+    (version "1.1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tlrmvnmvt" version))
        (sha256
-        (base32 "0zcf4pz7dz49hz8srr49rvksx7jfjss1sp4zlipbx89aq0l2l94p"))))
+        (base32 "1dnz57ij7i9nqrf7bivp4xnkp7bp8942wxckzzvwipvnml7m70ws"))))
     (properties `((upstream-name . "tlrmvnmvt")))
     (build-system r-build-system)
     (arguments
@@ -16517,30 +16491,6 @@ use is the planning, analysis and interpretation of extrapolation studies in
 pediatric drug development, but applicability is generally wider.")
     (license license:asl2.0)))
 
-(define-public r-tipitaka
-  (package
-    (name "r-tipitaka")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tipitaka" version))
-       (sha256
-        (base32 "0xf64bpzwywwjm0135c7zjn4ha0h1zj36rj2d4h8dskiq9z90xqi"))))
-    (properties `((upstream-name . "tipitaka")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-stringi r-magrittr r-dplyr r-cpp11))
-    (home-page "https://cran.r-project.org/package=tipitaka")
-    (synopsis "Data and Tools for Analyzing the Pali Canon")
-    (description
-     "This package provides access to the complete Pali Canon, or Tipitaka, the
-canonical scripture for Theravadin Buddhists worldwide.  Based on the Chattha
-Sangayana Tipitaka version 4 (Vipassana Research Institute, 1990).")
-    (license license:cc0)))
-
 (define-public r-tipdatingbeast
   (package
     (name "r-tipdatingbeast")
@@ -16872,30 +16822,6 @@ expectations to test base R and ggplot2 plots as well as console output from
 web API and show it in table or figure format.")
     (license license:expat)))
 
-(define-public r-tinyproject
-  (package
-    (name "r-tinyproject")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tinyProject" version))
-       (sha256
-        (base32 "0cflnfp5mib3j1y3n5yvi867h5a7z6xr6163gq9y9b6nrl2skxfk"))))
-    (properties `((upstream-name . "tinyProject")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r-utils r-brew))
-    (home-page "https://cran.r-project.org/package=tinyProject")
-    (synopsis "Lightweight Template for Data Analysis Projects")
-    (description
-     "This package creates useful files and folders for data analysis projects and
-provides functions to manage data, scripts and output files.  Also provides a
-project template for Rstudio'.")
-    (license license:gpl2+)))
-
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
@@ -17173,6 +17099,38 @@ that you can tinker to your hearts content.")
      "This package provides a universal non-uniform random number generator for quite
 arbitrary distributions with piecewise twice differentiable densities.")
     (license license:gpl2+)))
+
+(define-public r-tind
+  (package
+    (name "r-tind")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tind" version))
+       (sha256
+        (base32 "10481kk0w1qrwiz6648y43v49jglbmylvya0hk86p81fg9i930cc"))))
+    (properties `((upstream-name . "tind")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dever-pl/tind")
+    (synopsis "Common Representation of Time Indices of Different Types")
+    (description
+     "This package provides an easy-to-use tind class representing time indices of
+different types (years, quarters, months, ISO 8601 weeks, dates, time of day,
+date-time, and arbitrary integer/numeric indices).  Includes an extensive
+collection of functions for calendrical computations (including business
+applications), index conversions, index parsing, and other operations.
+Auxiliary classes representing time differences and time intervals (with set
+operations and index matching functionality) are also provided.  All routines
+have been optimised for speed in order to facilitate computations on large
+datasets.  More details regarding calendars in general and calendrical
+algorithms can be found in \"Calendar FAQ\" by Claus TÃ¸ndering
+<https://www.tondering.dk/claus/calendar.html>.")
+    (license license:gpl3)))
 
 (define-public r-timsac
   (package
@@ -23460,28 +23418,6 @@ Braun, N., Neuffer, J., and Kempa-Liehr A.W. (2018)
 (2021) <https://facebookresearch.github.io/Kats/>.")
     (license license:expat)))
 
-(define-public r-thankyoustars
-  (package
-    (name "r-thankyoustars")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ThankYouStars" version))
-       (sha256
-        (base32 "0r77ns3102wj1wvrfsa06l427imxyfhigpbs36cdxl2j87qrjzl6"))))
-    (properties `((upstream-name . "ThankYouStars")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
-    (home-page "https://github.com/ksmzn/ThankYouStars")
-    (synopsis "Give your Dependencies Stars on GitHub!")
-    (description
-     "This package provides a tool for starring @code{GitHub} repositories.")
-    (license license:expat)))
-
 (define-public r-thankr
   (package
     (name "r-thankr")
@@ -25339,13 +25275,13 @@ according to various dimensions etc.  For more information see
 (define-public r-texreg
   (package
     (name "r-texreg")
-    (version "1.39.4")
+    (version "1.39.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texreg" version))
        (sha256
-        (base32 "1h4377j18rja8mb72779zpj0ls5fxk15qdc92frx2av5c8wxvciy"))))
+        (base32 "1h5p7awwvnrnp1bxrra9ccxvqr30zbgl20l292cmh7yrysxjlbc6"))))
     (properties `((upstream-name . "texreg")))
     (build-system r-build-system)
     (arguments
@@ -27720,6 +27656,37 @@ deployed in the following publications (2021, Heliyon)
 <doi:10.1016/j.heliyon.2021.e07466> and (2016, Journal of Theoretical Biology)
 <doi:10.1016/j.jtbi.2016.07.002>.")
     (license license:gpl3)))
+
+(define-public r-temporalforest
+  (package
+    (name "r-temporalforest")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TemporalForest" version))
+       (sha256
+        (base32 "10cphz9iy1n9kdbc5yla51d9bvmdwrjkskpw92db5v3mw1cjgygj"))))
+    (properties `((upstream-name . "TemporalForest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wgcna r-partykit r-glmertree r-flashclust
+                             r-dynamictreecut))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SisiShao/TemporalForest")
+    (synopsis
+     "Network-Guided Temporal Forests for Feature Selection in High-Dimensional Longitudinal Data")
+    (description
+     "This package implements the Temporal Forest algorithm for feature selection in
+high-dimensional longitudinal data.  The method combines time-aware network
+construction via weighted gene co-expression network analysis (WGCNA),
+module-based feature screening, and stability selection using tree-based models.
+ This package provides tools for reproducible longitudinal analysis, closely
+following the methodology described in Shao, Moore, and Ramirez (2025)
+<https://github.com/@code{SisiShao/TemporalForest>}.")
+    (license license:expat)))
 
 (define-public r-temporal
   (package
@@ -32342,42 +32309,6 @@ useful for organizing and managing large collections of objects in R.")
     (description "Generating Tag and Word Clouds.")
     (license license:gpl2+)))
 
-(define-public r-tag
-  (package
-    (name "r-tag")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TAG" version))
-       (sha256
-        (base32 "1hni3ay1pg4gy3gm3sn3bcr8m3z2vlc5ivg7bmkzpxqdkl0w01h2"))))
-    (properties `((upstream-name . "TAG")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-randtoolbox
-                             r-mlegp
-                             r-mgcv
-                             r-matrix
-                             r-foreach
-                             r-fastgp
-                             r-dicekriging))
-    (home-page "https://cran.r-project.org/package=TAG")
-    (synopsis "Transformed Additive Gaussian Processes")
-    (description
-     "Implement the transformed additive Gaussian (TAG) process and the transformed
-approximately additive Gaussian (TAAG) process proposed in Lin and Joseph (2020)
-<DOI:10.1080/00401706.2019.1665592>.  These functions can be used to model
-deterministic computer experiments, obtain predictions at new inputs, and
-quantify the uncertainty of the predictions.  This research is supported by a
-U.S. National Science Foundation grant DMS-1712642 and a U.S. Army Research
-Office grant W911NF-17-1-0007.")
-    (license license:gpl2)))
-
 (define-public r-taf
   (package
     (name "r-taf")
@@ -33736,19 +33667,19 @@ exchange, reporting, and automated workflows.")
 (define-public r-t4transport
   (package
     (name "r-t4transport")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "T4transport" version))
        (sha256
-        (base32 "1pw0dsxk8njlf28pjwrmrnzg63a9vqzmljiga05vm8yldyrb63wc"))))
+        (base32 "1hsdkavhv0794ay065rsfqfxg09s48pfy5wvms0l8pnlhfbrl99v"))))
     (properties `((upstream-name . "T4transport")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-cvxr))
+    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://www.kisungyou.com/T4transport/")
     (synopsis "Tools for Computational Optimal Transport")

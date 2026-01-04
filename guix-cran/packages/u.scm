@@ -2870,35 +2870,6 @@ information, For detailed information kindly read the publication
 <doi:10.1016/j.jprot.2019.103613>.")
     (license license:gpl3)))
 
-(define-public r-unine
-  (package
-    (name "r-unine")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "unine" version))
-       (sha256
-        (base32 "051dk8fss19h4d9815a7994krr1s3n5q0pxq9gir6zns0vvn05pw"))))
-    (properties `((upstream-name . "unine")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/pommedeterresautee/unine")
-    (synopsis "Unine Light Stemmer")
-    (description
-     "Implementation of \"light\" stemmers for French, German, Italian, Spanish,
-Portuguese, Finnish, Swedish.  They are based on the same work as the \"light\"
-stemmers found in @code{SolR} <https://lucene.apache.org/solr/> or
-@code{ElasticSearch} <https://www.elastic.co/fr/products/elasticsearch>.  A
-\"light\" stemmer consists in removing inflections only for noun and adjectives.
-Indexing verbs for these languages is not of primary importance compared to
-nouns and adjectives.  The stemming procedure for French is described in (Savoy,
-1999) <doi:10.1002/(SICI)1097-4571(1999)50:10%3C944::AID-ASI9%3E3.3.CO;2-H>.")
-    (license license:expat)))
-
 (define-public r-unikn
   (package
     (name "r-unikn")

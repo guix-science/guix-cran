@@ -660,34 +660,6 @@ framework.  This method was originally described by Fan, Sun, and Li in Genetic
 Epidemiology 46(1):73-86 <doi:10.1002/gepi.22438>.")
     (license license:gpl3)))
 
-(define-public r-zillowr
-  (package
-    (name "r-zillowr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ZillowR" version))
-       (sha256
-        (base32 "1q0hdm654p6vkmajwrhx18ifm9sc4czdfd7cabhkqdky4p07c89r"))))
-    (properties `((upstream-name . "ZillowR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml r-rcurl))
-    (home-page "https://fascinatingfingers.gitlab.io/zillowr")
-    (synopsis "R Interface to Zillow Real Estate and Mortgage Data API")
-    (description
-     "Zillow, an online real estate company, provides real estate and mortgage data
-for the United States through a REST API. The @code{ZillowR} package provides an
-R function for each API service, making it easy to make API calls and process
-the response into convenient, R-friendly data structures.  See
-<https://www.zillow.com/howto/api/APIOverview.htm> for the Zillow API
-Documentation.  NOTE: Zillow deprecated their API on 2021-09-30, and this
-package is now deprecated as a result.")
-    (license license:gpl3+)))
-
 (define-public r-zihinar1
   (package
     (name "r-zihinar1")

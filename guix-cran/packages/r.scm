@@ -5167,13 +5167,13 @@ of different algorithms.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurveycto" version))
        (sha256
-        (base32 "1gc32b9c6wgcvsrpjz96r9vnd5w9y71x30cla2gmqg4hva1x29a7"))))
+        (base32 "0vsjbhmv97ykhvagpqwca1ykwgqc0whv7pphlidf6vhklmgxnx6j"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (arguments
@@ -10067,13 +10067,13 @@ URL provides a link to a work in progress vignette.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "4.2-1")
+    (version "4.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "0pm5ywifc0qp07z5brndki8qj1n7pwgrxp7x7g7gw0h9p1wf19j7"))))
+        (base32 "0cs7i4an80s610q20rhx7jvnpmi9j9w2r1siyk7jhhdqf59yjqli"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (arguments
@@ -10082,7 +10082,7 @@ URL provides a link to a work in progress vignette.")
     (propagated-inputs (list r-sandwich r-nnet r-mice r-mass r-lme4))
     (home-page "https://cran.r-project.org/package=rqlm")
     (synopsis
-     "Modified Poisson Regression for Binary Outcome and Related Methods")
+     "Modified Poisson Regression for Binary Outcome and Related Methods Involving Target Trial Emulations")
     (description
      "Modified Poisson, logistic and least-squares regression analyses for binary
 outcomes of Zou (2004) <doi:10.1093/aje/kwh090>, Noma (2025)<Forthcoming>, and
@@ -10093,7 +10093,8 @@ implement these analyses by simple commands.  Missing data analysis tools
 (multiple imputation) are also involved.  In addition, recent studies have shown
 the ordinary robust variance estimator possibly has serious bias under small or
 moderate sample size situations for these methods.  This package also provides
-computational tools to calculate alternative accurate confidence intervals.")
+computational tools to calculate alternative accurate confidence intervals.
+Also, standard computational tools for target trial emulation are included.")
     (license license:gpl3)))
 
 (define-public r-rqentangle
@@ -11097,38 +11098,6 @@ performance.  For more information see, Markowitz, H.M. (1952),
      "PDF tools based on the Poppler PDF rendering library.  See
 <http://poppler.freedesktop.org/> for more information on Poppler.")
     (license license:gpl2)))
-
-(define-public r-rpolyhedra
-  (package
-    (name "r-rpolyhedra")
-    (version "0.5.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rpolyhedra" version))
-       (sha256
-        (base32 "1izbhp54zkczk8ibl80r9qir8q6p4y3md2cdngigdb6j022l9j8b"))))
-    (properties `((upstream-name . "Rpolyhedra")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-stringr
-                             r-rgl
-                             r-r6
-                             r-lgr
-                             r-jsonlite
-                             r-geometry
-                             r-dplyr
-                             r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/Rpolyhedra/")
-    (synopsis "Polyhedra Database")
-    (description
-     "This package provides a polyhedra database scraped from various sources as R6
-objects and rgl visualizing capabilities.")
-    (license license:expat)))
 
 (define-public r-rpointcloud
   (package
@@ -15039,32 +15008,6 @@ system for computer programming projects based on Unix shell scripts; see
 <https://gitlab.com/roger-project>.  The package also provides an R interface to
 the shell scripts.  Inspired by the lintr package.")
     (license license:gpl2+)))
-
-(define-public r-rofanova
-  (package
-    (name "r-rofanova")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rofanova" version))
-       (sha256
-        (base32 "0w8c5c5q0s2qv1b4nxgf8y1z3g0l9c6jr6i0280b5mp9in9wn8a6"))))
-    (properties `((upstream-name . "rofanova")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-robustbase r-rcpparmadillo r-rcpp r-fda-usc
-                             r-abind))
-    (home-page "https://github.com/unina-sfere/rofanova")
-    (synopsis "Robust Functional Analysis of Variance")
-    (description
-     "This package implements the robust functional analysis of variance
-(@code{RoFANOVA}), described in Centofanti et al. (2021)
-<@code{arXiv:2112.10643>}.  It allows testing mean differences among groups of
-functional data by being robust against the presence of outliers.")
-    (license license:gpl3)))
 
 (define-public r-rodeo
   (package
@@ -21550,50 +21493,6 @@ figures, tables, text, and HTML widgets.  Unlike HTML widgets, the output is
 Markdown and can hence be turn into other output formats than HTML.")
     (license license:expat)))
 
-(define-public r-rmdl
-  (package
-    (name "r-rmdl")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rmdl" version))
-       (sha256
-        (base32 "10kx3bwwb5v2k37mn1wwqrbqj6nhgz649l4fzg12l8g6mpk5m1w1"))))
-    (properties `((upstream-name . "rmdl")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-pillar
-                             r-janitor
-                             r-generics
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/shah-in-boots/rmdl")
-    (synopsis "Language to Manage Many Models")
-    (description
-     "This package provides a system for describing and manipulating the many models
-that are generated in causal inference and data analysis projects, as based on
-the causal theory and criteria of Austin Bradford Hill (1965)
-<doi:10.1177/003591576505800503>.  This system includes the addition of formal
-attributes that modify base `R` objects, including terms and formulas, with a
-focus on variable roles in the \"do-calculus\" of modeling, as described in Pearl
-(2010) <doi:10.2202/1557-4679.1203>.  For example, the definition of exposure,
-outcome, and interaction are implicit in the roles variables take in a formula.
-These premises allow for a more fluent modeling approach focusing on variable
-relationships, and assessing effect modification, as described by
-@code{VanderWeele} and Robins (2007) <doi:10.1097/EDE.0b013e318127181b>.  The
-essential goal is to help contextualize formulas and models in
-causality-oriented workflows.")
-    (license license:expat)))
-
 (define-public r-rmdhelpers
   (package
     (name "r-rmdhelpers")
@@ -22280,6 +22179,33 @@ drives the build process by (in parallel) executing build commands in order to
 update results accordingly to given dependencies on changed data or updated
 source files.")
     (license license:gpl3+)))
+
+(define-public r-rmaczek
+  (package
+    (name "r-rmaczek")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMaCzek" version))
+       (sha256
+        (base32 "0h0f2a4px2s3in4lykvaalm7qg008xzbz4vffc8q8rw5fz1jy0m1"))))
+    (properties `((upstream-name . "RMaCzek")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seriation r-rcolorbrewer r-ga r-ecp r-e1071))
+    (home-page "https://cran.r-project.org/package=RMaCzek")
+    (synopsis "Czekanowski's Diagrams")
+    (description
+     "Allows for production of Czekanowski's Diagrams with clusters.  See K.
+Bartoszek, A. Vasterlund (2020) <doi:10.2478/bile-2020-0008> and K. Bartoszek,
+Y. Luo (2023) <doi:10.14708/ma.v51i2.7259>.  The suggested @code{FuzzyDBScan}
+package (which allows for fuzzy clustering) can be obtained from
+<https://github.com/henrifnk/@code{FuzzyDBScan/>} (or from CRAN's Archive
+<https://cran.r-project.org/src/contrib/Archive/@code{FuzzyDBScan/>}).")
+    (license license:gpl3)))
 
 (define-public r-rmacrostrat
   (package
@@ -31065,33 +30991,6 @@ get rexpokit archived on CRAN, see archived binaries at @code{GitHub} in:
 nmatzke/Matzke_R_binaries (binaries install without compilation of source code).")
     (license license:gpl2+)))
 
-(define-public r-rexperigen
-  (package
-    (name "r-rexperigen")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rexperigen" version))
-       (sha256
-        (base32 "158ksnd1gvzq7ii0ys2v0wrfnr001hni0i8m77p1fn1arixgmqdw"))))
-    (properties `((upstream-name . "Rexperigen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcurl r-jsonlite r-digest))
-    (home-page "https://github.com/aquincum/Rexperigen")
-    (synopsis "R Interface to Experigen")
-    (description
-     "This package provides convenience functions to communicate with an Experigen
-server: Experigen (<http://github.com/aquincum/experigen>) is an online
-framework for creating linguistic experiments, and it stores the results on a
-dedicated server.  This package can be used to retrieve the results from the
-server, and it is especially helpful with registered experiments, as
-authentication with the server has to happen.")
-    (license license:gpl3)))
-
 (define-public r-rexoplanets
   (package
     (name "r-rexoplanets")
@@ -31717,13 +31616,13 @@ zero.")
 (define-public r-revamp
   (package
     (name "r-revamp")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReVAMP" version))
        (sha256
-        (base32 "1bp3l1zkscc6gzrcxvq65wgw13g54nbyj683882hasyg3ivf6nmx"))))
+        (base32 "0bdl1wknmffq6f6386a79aws98pbfv86y5ivrim5ayimkawhd2d6"))))
     (properties `((upstream-name . "ReVAMP")))
     (build-system r-build-system)
     (arguments
@@ -37342,13 +37241,13 @@ becomes stronger/weaker as Z increases).")
 (define-public r-regressor
   (package
     (name "r-regressor")
-    (version "4.0.4")
+    (version "4.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regressoR" version))
        (sha256
-        (base32 "0mr2mpvn1i5zkj6wigadkmnwcjqswz4gsnwra89sfnbrh8g9j9ln"))))
+        (base32 "0pfl4d095paxf16raljg6dvfc6j8r00ia4zw1i16pyrwvjkzjzy1"))))
     (properties `((upstream-name . "regressoR")))
     (build-system r-build-system)
     (arguments
@@ -37789,45 +37688,6 @@ Additionally, it provides an implementation for fitting HMMs without
 regularization, referencing Zucchini et al. (2017, ISBN:9781315372488).")
     (license license:gpl3+)))
 
-(define-public r-regmedint
-  (package
-    (name "r-regmedint")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "regmedint" version))
-       (sha256
-        (base32 "1f8p19a1m6qyypjfv8yr1gcqx6djjjkly3xxkp5fy5pldm7ik2sk"))))
-    (properties `((upstream-name . "regmedint")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-sandwich
-                             r-matrix
-                             r-mass
-                             r-deriv
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://kaz-yos.github.io/regmedint/")
-    (synopsis
-     "Regression-Based Causal Mediation Analysis with Interaction and Effect Modification Terms")
-    (description
-     "This is an extension of the regression-based causal mediation analysis first
-proposed by Valeri and @code{VanderWeele} (2013) <doi:10.1037/a0031034> and
-Valeri and @code{VanderWeele} (2015) <doi:10.1097/EDE.0000000000000253>).  It
-supports including effect measure modification by covariates(treatment-covariate
-and mediator-covariate product terms in mediator and outcome regression models)
-as proposed by Li et al (2023) <doi:10.1097/EDE.0000000000001643>.  It also
-accommodates the original SAS macro and PROC CAUSALMED procedure in SAS when
-there is no effect measure modification.  Linear and logistic models are
-supported for the mediator model.  Linear, logistic, loglinear, Poisson,
-negative binomial, Cox, and accelerated failure time (exponential and Weibull)
-models are supported for the outcome model.")
-    (license license:gpl2)))
-
 (define-public r-regmed
   (package
     (name "r-regmed")
@@ -38098,6 +37958,30 @@ to use regular expressions with magrittr or other pipe operators.")
      "This package produces population distribution of disease risk and statistical
 risk categories, and predicts risks for individuals with genotype information.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-regenrf
+  (package
+    (name "r-regenrf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RegEnRF" version))
+       (sha256
+        (base32 "1fvjw196pq2nn1kbldqymq41qf7yiq3zrpsngzykm80kfcmyxcwj"))))
+    (properties `((upstream-name . "RegEnRF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest r-glmnet))
+    (home-page "https://github.com/umbe1987/regenrf")
+    (synopsis "Regression-Enhanced Random Forests")
+    (description
+     "This package provides a novel generalized Random Forest method, that can improve
+on RFs by borrowing the strength of penalized parametric regression.  Based on
+Zhang et al. (2019) <doi:10.48550/@code{arXiv.1904.10416>}.")
+    (license license:expat)))
 
 (define-public r-regdif
   (package
@@ -41220,13 +41104,13 @@ used by package developers.")
 (define-public r-rebus-datetimes
   (package
     (name "r-rebus-datetimes")
-    (version "0.0-2")
+    (version "0.0-2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rebus.datetimes" version))
        (sha256
-        (base32 "1hq5mr1v8ziikmkncb9ix11877rmzbjhz54nigwbkswbjwj7vhdf"))))
+        (base32 "1mdjzl5vidv7dxplsyyykgsrv55js2x7696az9ycgakmpsm10ybp"))))
     (properties `((upstream-name . "rebus.datetimes")))
     (build-system r-build-system)
     (arguments
@@ -46813,28 +46697,6 @@ offers access directly from R. This can only work on a system with a suitable
 libapt-pkg-dev installation so functionality is curtailed if such a library is
 not found.")
     (license license:gpl2+)))
-
-(define-public r-rcpp11
-  (package
-    (name "r-rcpp11")
-    (version "3.1.2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rcpp11" version))
-       (sha256
-        (base32 "0vw41plcl7hbi0af3la0sb4x8zqnhxjpjslx8r8cllfamy9dixki"))))
-    (properties `((upstream-name . "Rcpp11")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=Rcpp11")
-    (synopsis "R and C++11")
-    (description
-     "Rcpp11 includes a header only C++11 library that facilitates integration between
-R and modern C++.")
-    (license license:expat)))
 
 (define-public r-rcplex
   (package

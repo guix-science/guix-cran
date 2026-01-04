@@ -958,31 +958,6 @@ can be found at
      "Retrieve Amazon EC2 instance metadata from within the running instance.")
     (license license:gpl2+)))
 
-(define-public r-aws-comprehend
-  (package
-    (name "r-aws-comprehend")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aws.comprehend" version))
-       (sha256
-        (base32 "0qn4mkdd17c8kmrm4ml7l1x3rzaw3gbykhrj3m0ga53crcqdhqri"))))
-    (properties `((upstream-name . "aws.comprehend")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-aws-signature))
-    (home-page "https://github.com/cloudyr/aws.comprehend")
-    (synopsis "Client for 'AWS Comprehend'")
-    (description
-     "Client for AWS Comprehend <https://aws.amazon.com/comprehend>, a cloud natural
-language processing service that can perform a number of quantitative text
-analyses, including language detection, sentiment analysis, and feature
-extraction.")
-    (license license:gpl2+)))
-
 (define-public r-aws-alexa
   (package
     (name "r-aws-alexa")
@@ -2912,53 +2887,6 @@ by entering just a dataset and the name of the outcome column as inputs,
 @code{AutoGAM} tries to automate the procedure of configuring a highly accurate
 GAM which performs at reasonably high speed, even for large datasets.")
     (license license:expat)))
-
-(define-public r-autofrk
-  (package
-    (name "r-autofrk")
-    (version "1.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autoFRK" version))
-       (sha256
-        (base32 "1k3h2gsck06dnvrifg9rhxi6b3fwfjrkvg0q2wzb9kdnnzgiwcln"))))
-    (properties `((upstream-name . "autoFRK")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spam
-                             r-rspectra
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-mgcv
-                             r-mass
-                             r-latticekrig
-                             r-fnn
-                             r-filematrix
-                             r-filehashsqlite
-                             r-filehash
-                             r-fields))
-    (home-page "https://cran.r-project.org/package=autoFRK")
-    (synopsis "Automatic Fixed Rank Kriging")
-    (description
-     "Automatic fixed rank kriging for (irregularly located) spatial data using a
-class of basis functions with multi-resolution features and ordered in terms of
-their resolutions.  The model parameters are estimated by maximum likelihood
-(ML) and the number of basis functions is determined by Akaike's information
-criterion (AIC).  For spatial data with either one realization or independent
-replicates, the ML estimates and AIC are efficiently computed using their
-closed-form expressions when no missing value occurs.  Details regarding the
-basis function construction, parameter estimation, and AIC calculation can be
-found in Tzeng and Huang (2018) <doi:10.1080/00401706.2017.1345701>.  For data
-with missing values, the ML estimates are obtained using the expectation-
-maximization algorithm.  Apart from the number of basis functions, there are no
-other tuning parameters, making the method fully automatic.  Users can also
-include a stationary structure in the spatial covariance, which utilizes
-@code{LatticeKrig} package.")
-    (license license:gpl2+)))
 
 (define-public r-autofc
   (package
@@ -6175,6 +6103,35 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 @code{OpenAI} (<https://platform.openai.com/>) to answer questions (about R).")
     (license license:gpl3+)))
 
+(define-public r-asianoption
+  (package
+    (name "r-asianoption")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AsianOption" version))
+       (sha256
+        (base32 "1nn711lfrd1mwdwx19phai7jzvryc1726a9rd7si4ib1zjb8bcyn"))))
+    (properties `((upstream-name . "AsianOption")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/plato-12/AsianOption")
+    (synopsis "Asian Option Pricing with Price Impact")
+    (description
+     "This package implements binomial tree pricing for geometric and arithmetic Asian
+options incorporating market price impact from hedging activities.  Uses the
+Cox-Ross-Rubinstein (CRR) model with the replicating portfolio method.  Provides
+exact pricing for geometric Asian options and bounds for arithmetic Asian
+options based on Jensen's inequality.  The price impact mechanism models how
+hedging volumes affect stock prices, leading to modified risk-neutral
+probabilities.  Based on the methodology described in Tiwari and Majumdar (2025)
+<doi:10.48550/@code{arXiv.2512.07154>}.")
+    (license license:gpl3+)))
+
 (define-public r-asht
   (package
     (name "r-asht")
@@ -8808,43 +8765,6 @@ queries.  This package was neither produced nor is maintained by Esri.")
 It is designed to work seamlessly with httr2 and integrates with sf'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-arcokrig
-  (package
-    (name "r-arcokrig")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ARCokrig" version))
-       (sha256
-        (base32 "0pk0y0gsw681py0vwizxvh1jqjnapzqfr0mbdpli1sray55xbjr2"))))
-    (properties `((upstream-name . "ARCokrig")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-mvtnorm
-                             r-ggplot2))
-    (home-page "https://CRAN.R-project.org/package=ARCokrig")
-    (synopsis "Autoregressive Cokriging Models for Multifidelity Codes")
-    (description
-     "For emulating multifidelity computer models.  The major methods include
-univariate autoregressive cokriging and multivariate autoregressive cokriging.
-The autoregressive cokriging methods are implemented for both hierarchically
-nested design and non-nested design.  For hierarchically nested design, the
-model parameters are estimated via standard optimization algorithms; For
-non-nested design, the model parameters are estimated via Monte Carlo
-expectation-maximization (MCEM) algorithms.  In both cases, the priors are
-chosen such that the posterior distributions are proper.  Notice that the
-uniform priors on range parameters in the correlation function lead to improper
-posteriors.  This should be avoided when Bayesian analysis is adopted.  The
-development of objective priors for autoregressive cokriging models can be found
-in Pulong Ma (2020) <DOI:10.1137/19M1289893>.  The development of the
-multivariate autoregressive cokriging models with possibly non-nested design can
-be found in Pulong Ma, Georgios Karagiannis, Bledar A Konomi, Taylor G Asher,
-Gabriel R Toro, and Andrew T Cox (2019) <@code{arXiv:1909.01836>}.")
-    (license license:gpl2+)))
-
 (define-public r-arco
   (package
     (name "r-arco")
@@ -8908,13 +8828,13 @@ which can be then easily used for further analysis.")
 (define-public r-archive
   (package
     (name "r-archive")
-    (version "1.1.12")
+    (version "1.1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archive" version))
        (sha256
-        (base32 "0f6ivl0s7v08lbgm38h8xl9li21zil02l0phc6r04yl6hxd2xfvh"))))
+        (base32 "11gsmybnjpwlpgwqwfr62w1kg93yqvmdb11qwx4mblj7vxhmz6bl"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
     (arguments
@@ -18361,13 +18281,13 @@ procedure are also implemented for bandwidth selection.")
 (define-public r-akc
   (package
     (name "r-akc")
-    (version "0.9.9.2")
+    (version "0.9.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akc" version))
        (sha256
-        (base32 "0sv3zy11z574l68wl78nnapgrrzglbrkpgn89blzjcrkdd903x44"))))
+        (base32 "0d0j0l96qydld9054wiw472vxprhfb50nsnb2cj8f4bkf94zfjr9"))))
     (properties `((upstream-name . "akc")))
     (build-system r-build-system)
     (arguments
@@ -19796,33 +19716,6 @@ sequences use at most 26 distinct characters and usually only 20.  UTF-8
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-ahmle
-  (package
-    (name "r-ahmle")
-    (version "1.20.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ahMLE" version))
-       (sha256
-        (base32 "1phfzl0kynrq1if12h736jdxrfqc3i4kd32hp7sy2k2z7hkj1dkm"))))
-    (properties `((upstream-name . "ahMLE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-matrix
-                             r-invgauss))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ahMLE")
-    (synopsis "Methods for the Additive Hazard Model")
-    (description
-     "This package provides methods for fitting additive hazards model.  Perform the
-maximum likelihood method as well as the traditional Aalen's method for
-estimating the additive hazards model.  For details see Chengyuan Lu(2021)
-<@code{arXiv:2004.06156>}.")
-    (license license:gpl2+)))
-
 (define-public r-ahmbook
   (package
     (name "r-ahmbook")
@@ -19992,33 +19885,6 @@ on <http://agvgd.hci.utah.edu/>.")
      "Create and evaluate models using tidymodels and h2o <https://h2o.ai/>.  The
 package enables users to specify h2o as an engine for several modeling methods.")
     (license license:expat)))
-
-(define-public r-agtboost
-  (package
-    (name "r-agtboost")
-    (version "0.9.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "agtboost" version))
-       (sha256
-        (base32 "1z2ys4cn859vas3q1if50k46cryn7wwy1pjqbc8n9dhdn5zxn3sk"))))
-    (properties `((upstream-name . "agtboost")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=agtboost")
-    (synopsis "Adaptive and Automatic Gradient Boosting Computations")
-    (description
-     "Fast and automatic gradient tree boosting designed to avoid manual tuning and
-cross-validation by utilizing an information theoretic approach.  This makes the
-algorithm adaptive to the dataset at hand; it is completely automatic, and with
-minimal worries of overfitting.  Consequently, the speed-ups relative to
-state-of-the-art implementations can be in the thousands while mathematical and
-technical knowledge required on the user are minimized.")
-    (license license:gpl3)))
 
 (define-public r-ags
   (package
@@ -25547,30 +25413,6 @@ colony optimization, particle swarm optimization etc.  The package adana
 includes a rich working environment with its many functions that make possible
 to build and work regular GA, adaptive GA, hybrid GA and hybrid adaptive GA for
 any kind of optimization problems.  Cebeci, Z. (2021, ISBN: 9786254397448).")
-    (license license:gpl3)))
-
-(define-public r-adahuber
-  (package
-    (name "r-adahuber")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "adaHuber" version))
-       (sha256
-        (base32 "0giypz04m9anssa2r3hlf95lnj74i3ir48p5j898i2z1gmf8m14w"))))
-    (properties `((upstream-name . "adaHuber")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/XiaoouPan/adaHuber")
-    (synopsis "Adaptive Huber Estimation and Regression")
-    (description
-     "Huber-type estimation for mean, covariance and (regularized) regression.  For
-all the methods, the robustification parameter tau is chosen by a tuning-free
-principle.")
     (license license:gpl3)))
 
 (define-public r-adace

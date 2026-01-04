@@ -295,32 +295,6 @@ Balke, A. and Pearl, J. (1997) <doi:10.2307/2965583>, Vansteelandt S., Bowden
 J., Babanezhad M., Goetghebeur E. (2011) <doi:10.1214/11-STS360>.")
     (license license:lgpl3+)))
 
-(define-public r-ivsacim
-  (package
-    (name "r-ivsacim")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ivsacim" version))
-       (sha256
-        (base32 "0pldg086kaaqc2wab1m61anabqaf0mffv1hsb8plz1qn2f8gdcp3"))))
-    (properties `((upstream-name . "ivsacim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=ivsacim")
-    (synopsis "Structural Additive Cumulative Intensity Models with IV")
-    (description
-     "An instrumental variable estimator under structural cumulative additive
-intensity model is fitted, that leverages initial randomization as the IV. The
-estimator can be used to fit an additive hazards model under time to event data
-which handles treatment switching (treatment crossover) correctly.  We also
-provide a consistent variance estimate.")
-    (license license:gpl2+)))
-
 (define-public r-ivs
   (package
     (name "r-ivs")
@@ -8882,37 +8856,6 @@ accurately inferred.  See Tong and Coombes (2012)
 <doi:10.1093/bioinformatics/bts561>.")
     (license license:asl2.0)))
 
-(define-public r-intcensroc
-  (package
-    (name "r-intcensroc")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "intcensROC" version))
-       (sha256
-        (base32 "1raqjc3g9fgyd01iax7hrmkk3nzzfi34a1ywhjrkwv1n9gsc58ns"))))
-    (properties `((upstream-name . "intcensROC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-pracma))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.oit.duke.edu/dcibioinformatics/soft/intcensroc")
-    (synopsis "AUC Estimation of Interval Censored Survival Data")
-    (description
-     "The kernel of this Rcpp based package is an efficient implementation of the
-generalized gradient projection method for spline function based constrained
-maximum likelihood estimator for interval censored survival data (Wu, Yuan;
-Zhang, Ying.  Partially monotone tensor spline estimation of the joint
-distribution function with bivariate current status data.  Ann.  Statist.  40,
-2012, 1609-1636 <doi:10.1214/12-AOS1016>).  The key function computes the
-density function of the joint distribution of event time and the marker and
-returns the receiver operating characteristic (ROC) curve for the interval
-censored survival data as well as area under the curve (AUC).")
-    (license license:gpl2+)))
-
 (define-public r-intccr
   (package
     (name "r-intccr")
@@ -10905,38 +10848,6 @@ estimating and accounting for tumor purity based on DNA methylation Infinium
 450k array data. @code{InfiniumPurify} provides functionalities for tumor purity
 estimation.  In addition, it can perform differential methylation detection and
 tumor sample clustering with the consideration of tumor purities.")
-    (license license:gpl2)))
-
-(define-public r-infinitefactor
-  (package
-    (name "r-infinitefactor")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "infinitefactor" version))
-       (sha256
-        (base32 "0j6f9q8z81znwakyx4h0l8ypz0y4yv11d7l3rwljmn4rgspyjl5c"))))
-    (properties `((upstream-name . "infinitefactor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-rcpparmadillo r-rcpp r-ggplot2))
-    (home-page "https://cran.r-project.org/package=infinitefactor")
-    (synopsis "Bayesian Infinite Factor Models")
-    (description
-     "Sampler and post-processing functions for semi-parametric Bayesian infinite
-factor models, motivated by the Multiplicative Gamma Shrinkage Prior of
-Bhattacharya and Dunson (2011)
-<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3419391/>.  Contains component C++
-functions for building samplers for linear and 2-way interaction factor models
-using the multiplicative gamma and Dirichlet-Laplace shrinkage priors.  The
-package also contains post processing functions to return matrices that display
-rotational ambiguity to identifiability through successive application of
-orthogonalization procedures and resolution of column label and sign switching.
-This package was developed with the support of the National Institute of
-Environmental Health Sciences grant 1R01ES028804-01.")
     (license license:gpl2)))
 
 (define-public r-infiltrodiscr
@@ -13127,34 +13038,6 @@ Stochastic EM. IEEE Trans.  on Signal Processing, vol.  67, no.  8, pp.
 2159-2172. <doi:10.1109/TSP.2019.2899816>.")
     (license license:gpl3)))
 
-(define-public r-imptree
-  (package
-    (name "r-imptree")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "imptree" version))
-       (sha256
-        (base32 "0f087000092ydnpj3ch4mbip8wp32scn8xw4vlkq5lf6130gfs1b"))))
-    (properties `((upstream-name . "imptree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=imptree")
-    (synopsis "Classification Trees with Imprecise Probabilities")
-    (description
-     "Creation of imprecise classification trees.  They rely on probability estimation
-within each node by means of either the imprecise Dirichlet model or the
-nonparametric predictive inference approach.  The splitting variable is selected
-by the strategy presented in Fink and Crossman (2013)
-<http://www.sipta.org/isipta13/index.php?id=paper&paper=014.html>, but also the
-original imprecise information gain of Abellan and Moral (2003)
-<doi:10.1002/int.10143> is covered.")
-    (license license:gpl2+)))
-
 (define-public r-impshrinkage
   (package
     (name "r-impshrinkage")
@@ -14388,37 +14271,6 @@ response errors.")
      "This package implements likelihood based methods for mediation analysis.")
     (license license:gpl2+)))
 
-(define-public r-imec
-  (package
-    (name "r-imec")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IMEC" version))
-       (sha256
-        (base32 "1k85pr6s6lysn53n59i8rcdhyg7r3il5avbckvvz43p6lh0fgxpy"))))
-    (properties `((upstream-name . "IMEC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-qgraph r-isingsampler r-igraph))
-    (home-page "https://cran.r-project.org/package=IMEC")
-    (synopsis "Ising Model of Explanatory Coherence")
-    (description
-     "Theories are one of the most important tools of science.  Although psychologists
-discussed problems of theory in their discipline for a long time, weak theories
-are still widespread in most subfields.  One possible reason for this is that
-psychologists lack the tools to systematically assess the quality of their
-theories.  Previously a computational model for formal theory evaluation based
-on the concept of explanatory coherence was developed (Thagard, 1989,
-<doi:10.1017/S0140525X00057046>).  However, there are possible improvements to
-this model and it is not available in software that psychologists typically use.
- Therefore, a new implementation of explanatory coherence based on the Ising
-model is available in this R-package.")
-    (license license:expat)))
-
 (define-public r-imdbapi
   (package
     (name "r-imdbapi")
@@ -14578,45 +14430,6 @@ determined by pure and proper class cover catch digraphs (PCCCD).  It prevents
 any data to be generated in class overlapping area.  For more details, see the
 corresponding publication: F. SaÄlam (2025) <doi:10.1007/s10994-025-06755-8>.")
     (license license:expat)))
-
-(define-public r-imbalance
-  (package
-    (name "r-imbalance")
-    (version "1.0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "imbalance" version))
-       (sha256
-        (base32 "14f7p3x8818b1asfynp3w4sxdacsd14dzs7r166s1jdadwwfwi1s"))))
-    (properties `((upstream-name . "imbalance")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-smotefamily
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-kernelknn
-                             r-ggplot2
-                             r-fnn
-                             r-c50
-                             r-bnlearn))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/ncordon/imbalance")
-    (synopsis "Preprocessing Algorithms for Imbalanced Datasets")
-    (description
-     "Class imbalance usually damages the performance of classifiers.  Thus, it is
-important to treat data before applying a classifier algorithm.  This package
-includes recent resampling algorithms in the literature: (Barua et al.  2014)
-<doi:10.1109/tkde.2012.232>; (Das et al.  2015) <doi:10.1109/tkde.2014.2324567>,
-(Zhang et al.  2014) <doi:10.1016/j.inffus.2013.12.003>; (Gao et al.  2014)
-<doi:10.1016/j.neucom.2014.02.006>; (Almogahed et al.  2014)
-<doi:10.1007/s00500-014-1484-5>.  It also includes an useful interface to
-perform oversampling.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-imanr
   (package
@@ -20144,32 +19957,6 @@ Several of the implemented approaches are based on the work of Donner and Zou
      "Assists in generating binary clustered data, estimates of Intracluster
 Correlation coefficient (ICC) for binary response in 16 different methods, and 5
 different types of confidence intervals.")
-    (license license:gpl2+)))
-
-(define-public r-iccbeta
-  (package
-    (name "r-iccbeta")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iccbeta" version))
-       (sha256
-        (base32 "03ms1c8qpbgxabj3hh4n0gwcazw6cd0cvixck5rz8fkvj04xzjak"))))
-    (properties `((upstream-name . "iccbeta")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lme4))
-    (home-page "https://github.com/tmsalab/iccbeta")
-    (synopsis
-     "Multilevel Model Intraclass Correlation for Slope Heterogeneity")
-    (description
-     "This package provides a function and vignettes for computing an intraclass
-correlation described in Aguinis & Culpepper (2015)
-<doi:10.1177/1094428114563618>.  This package quantifies the share of variance
-in a dependent variable that is attributed to group heterogeneity in slopes.")
     (license license:gpl2+)))
 
 (define-public r-iccalib

@@ -1645,31 +1645,6 @@ create single or faceted CUSUM control charts, with or without control limits.
 Accepts vector, dataframe, tibble or data.table inputs.")
     (license license:gpl3+)))
 
-(define-public r-cusum
-  (package
-    (name "r-cusum")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cusum" version))
-       (sha256
-        (base32 "0vjq3slkjdgls41xm637xkrg8jhv6y75xiyfcgpwrp32ixmakpcd"))))
-    (properties `((upstream-name . "cusum")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-data-table r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cusum")
-    (synopsis
-     "Cumulative Sum (CUSUM) Charts for Monitoring of Hospital Performance")
-    (description
-     "This package provides functions for constructing and evaluating CUSUM charts and
-RA-CUSUM charts with focus on false signal probability.")
-    (license license:gpl2)))
-
 (define-public r-custosascensor
   (package
     (name "r-custosascensor")
@@ -6665,13 +6640,13 @@ the number of cross-matches and a p-value.  See Rosenbaum (2005)
 (define-public r-crossmap
   (package
     (name "r-crossmap")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossmap" version))
        (sha256
-        (base32 "1jya9rfpai6irzx01j1fi8nafpf68hlf3mh11c7gyn7v7im40r9h"))))
+        (base32 "19g9m22mw586m33m547gzk0xmccadxgsi1i16cqywih9r93n1apc"))))
     (properties `((upstream-name . "crossmap")))
     (build-system r-build-system)
     (arguments
@@ -6680,12 +6655,13 @@ the number of cross-matches and a p-value.  See Rosenbaum (2005)
     (propagated-inputs (list r-vctrs
                              r-rlang
                              r-purrr
+                             r-parallelly
                              r-lifecycle
                              r-generics
                              r-dplyr
                              r-cli
                              r-backports))
-    (home-page "https://crossmap.rossellhayes.com")
+    (home-page "https://pkg.rossellhayes.com/crossmap/")
     (synopsis "Apply Functions to All Combinations of List Elements")
     (description
      "This package provides an extension to the purrr family of mapping functions to
@@ -10095,33 +10071,6 @@ Pearson (CBP) distributions developed by Rodriguez-Avi et al (2003)
 maximum-likelihood fitting functions for these models.")
     (license license:gpl2+)))
 
-(define-public r-cpcg
-  (package
-    (name "r-cpcg")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cPCG" version))
-       (sha256
-        (base32 "1pfbsv2rcjsryn6nr56a7i4yb7k0m3gdfn4q9l1kpzhmv9lic7m1"))))
-    (properties `((upstream-name . "cPCG")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cPCG")
-    (synopsis
-     "Efficient and Customized Preconditioned Conjugate Gradient Method for Solving System of Linear Equations")
-    (description
-     "Solves system of linear equations using (preconditioned) conjugate gradient
-algorithm, with improved efficiency using Armadillo templated C++ linear algebra
-library, and flexibility for user-specified preconditioning method.  Please
-check <https://github.com/styvon/@code{cPCG>} for latest updates.")
-    (license license:gpl2+)))
-
 (define-public r-cpcat
   (package
     (name "r-cpcat")
@@ -10344,36 +10293,6 @@ with two different treatments to be compared and survival as an endpoint.")
     (description
      "Fit a @code{CoxSEI} (Cox type Self-Exciting Intensity) model to right-censored
 counting process data.")
-    (license license:gpl2+)))
-
-(define-public r-coxrt
-  (package
-    (name "r-coxrt")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coxrt" version))
-       (sha256
-        (base32 "1xggczjx5psl4m4m83vh4y6swnh3pf9rngnzx3268iznfz1g43h2"))))
-    (properties `((upstream-name . "coxrt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-inline
-                             r-gss
-                             r-ggplot2
-                             r-bb))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Bella2001/coxrt")
-    (synopsis "Cox Proportional Hazards Regression for Right-Truncated Data")
-    (description
-     "Fits Cox regression based on retrospectively ascertained times-to-event.  The
-method uses Inverse-Probability-Weighting estimating equations.")
     (license license:gpl2+)))
 
 (define-public r-coxrobust
@@ -10977,33 +10896,6 @@ and two-sample cases, and covariance estimation.  For an introduction to
 covariance in multivariate statistical analysis, see Schervish (1987)
 <doi:10.1214/ss/1177013111>.")
     (license license:gpl3+)))
-
-(define-public r-covtestr
-  (package
-    (name "r-covtestr")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covTestR" version))
-       (sha256
-        (base32 "0j9kay8lwkhpdyg0fbfars1m58v0i58v1v5sm7m72s7kz8qh2yfs"))))
-    (properties `((upstream-name . "covTestR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-purrr))
-    (home-page "https://covtestr.bearstatistics.com")
-    (synopsis "Covariance Matrix Tests")
-    (description
-     "Testing functions for Covariance Matrices.  These tests include high-dimension
-homogeneity of covariance matrix testing described by Schott (2007)
-<doi:10.1016/j.csda.2007.03.004> and high-dimensional one-sample tests of
-covariance matrix structure described by Fisher, et al. (2010)
-<doi:10.1016/j.jmva.2010.07.004>.  Covariance matrix tests use C++ to speed
-performance and allow larger data sets.")
-    (license license:gpl2)))
 
 (define-public r-covsim
   (package
@@ -16161,42 +16053,6 @@ Pages 4551â4569).  These routines include special color scales, projection
 functions, and bitmap handling routines.")
     (license license:gpl3)))
 
-(define-public r-cool
-  (package
-    (name "r-cool")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CoOL" version))
-       (sha256
-        (base32 "18z7s8bvnym4xj0hh5m6bwm86ddmsgivqv4g5zbd9m87l7khl9pn"))))
-    (properties `((upstream-name . "CoOL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wesanderson
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-proc
-                             r-plyr
-                             r-mltools
-                             r-ggplot2
-                             r-data-table
-                             r-clustgeo))
-    (home-page "https://bioconductor.org")
-    (synopsis "Causes of Outcome Learning")
-    (description
-     "Implementing the computational phase of the Causes of Outcome Learning approach
-as described in Rieckmann, Dworzynski, Arras, Lapuschkin, Samek, Arah, Rod,
-Ekstrom.  2022.  Causes of outcome learning: A causal inference-inspired machine
-learning approach to disentangling common combinations of potential causes of a
-health outcome.  International Journal of Epidemiology
-<doi:10.1093/ije/dyac078>.  The optional ggtree package can be obtained through
-Bioconductor.")
-    (license license:gpl2)))
-
 (define-public r-cookies
   (package
     (name "r-cookies")
@@ -17174,6 +17030,31 @@ be created from grid data, a function, or a data set.  If non-grid data is
 given, then a Gaussian process is fit to the data and used to create the contour
 plot.")
     (license license:gpl3)))
+
+(define-public r-contourforest
+  (package
+    (name "r-contourforest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contourforest" version))
+       (sha256
+        (base32 "1njk96yvv8dqrgz7lbx15v3khlcq35pq5ras2n1mfardqf9jvlxs"))))
+    (properties `((upstream-name . "contourforest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-metafor r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=contourforest")
+    (synopsis "Contour-Enhanced Forest Plots for Meta-Analysis")
+    (description
+     "This package provides functions to create contour-enhanced forest plots for
+continuous and binary outcomes in meta-analysis, including options for
+prediction intervals, customized colors, and study labeling.  Based on metafor
+and ggplot2'.")
+    (license license:expat)))
 
 (define-public r-contourer
   (package
@@ -20693,32 +20574,6 @@ Functions work by default for Garmin Connect TCX exports but may require
 additional data preparation for heart rate, time, and speed data from other
 sources.")
     (license license:gpl3+)))
-
-(define-public r-concom
-  (package
-    (name "r-concom")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "concom" version))
-       (sha256
-        (base32 "1rqb04kv4ygx1rpnj4dqa3jnx3iy9a3c9d8x3bci969zd9lk7kzb"))))
-    (properties `((upstream-name . "concom")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rvcg r-rgl r-rcpp r-english r-bh))
-    (home-page "https://github.com/stla/concom")
-    (synopsis "Connected Components of an Undirected Graph")
-    (description
-     "This package provides a function for fast computation of the connected
-components of an undirected graph (though not faster than the
-@code{components()} function of the igraph package) from the edges or the
-adjacency matrix of the graph.  Based on this one, a function to compute the
-connected components of a triangle rgl mesh is also provided.")
-    (license license:gpl3)))
 
 (define-public r-concaveman
   (package
@@ -25588,13 +25443,13 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "1lrrgm44dnp3q175rrjjhpb82w7w7f9cgibj6c4dzsvkngq79lk4"))))
+        (base32 "0alk12lkrj8zads8s23h4sw83pdw9x75m4x54dgi8a5cskh1nicl"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (arguments
@@ -25607,6 +25462,7 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
                              r-omopgenerics
                              r-glue
                              r-dplyr
+                             r-codelistgenerator
                              r-clock
                              r-cli))
     (native-inputs (list r-knitr))
@@ -29233,40 +29089,6 @@ al. (2012) <http://proceedings.mlr.press/v22/virtanen12.html> for details on
 Bayesian CCA and GFA, respectively.")
     (license license:gpl2+)))
 
-(define-public r-cmenet
-  (package
-    (name "r-cmenet")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cmenet" version))
-       (sha256
-        (base32 "0v3fassl21wdyx7s4shsib936fr41qr9hxjgcjc2f8az0ljd1p70"))))
-    (properties `((upstream-name . "cmenet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsenet
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-hiernet
-                             r-glmnet))
-    (home-page "https://cran.r-project.org/package=cmenet")
-    (synopsis "Bi-Level Selection of Conditional Main Effects")
-    (description
-     "This package provides functions for implementing cmenet - a bi-level variable
-selection method for conditional main effects (see Mak and Wu (2018)
-<doi:10.1080/01621459.2018.1448828>).  CMEs are reparametrized interaction
-effects which capture the conditional impact of a factor at a fixed level of
-another factor.  Compared to traditional two-factor interactions, CMEs can
-quantify more interpretable interaction effects in many problems.  The current
-implementation performs variable selection on only binary CMEs; we are working
-on an extension for the continuous setting.")
-    (license license:gpl2+)))
-
 (define-public r-cmce
   (package
     (name "r-cmce")
@@ -30659,31 +30481,6 @@ GarcÃ­a-Vico, Ã.M., GonzÃ¡lez, P. et al. \"A Multiclustering Evolutionary
 Hyperrectangle-Based Algorithm\" <doi:10.1007/s44196-023-00341-3> and L.A.P.,
 GarcÃ­a-Vico, Ã.M., GonzÃ¡lez, P. et al. \"An Evolutionary Fuzzy System for
 Multiclustering in Data Streaming\" <doi:10.1016/j.procs.2023.12.058>.")
-    (license license:gpl2+)))
-
-(define-public r-clusterhd
-  (package
-    (name "r-clusterhd")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clusterHD" version))
-       (sha256
-        (base32 "16mk0bgvahxpjfawxkpjlfh9j1n5dldl6lhi7d1ssf5zaha35jkm"))))
-    (properties `((upstream-name . "clusterHD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mclust r-cluster
-                             r-ckmeans-1d-dp))
-    (home-page "https://arxiv.org/abs/2010.00950")
-    (synopsis "Tools for Clustering High-Dimensional Data")
-    (description
-     "This package provides tools for clustering high-dimensional data.  In
-particular, it contains the methods described in
-<doi:10.1093/bioinformatics/btaa243>, <@code{arXiv:2010.00950>}.")
     (license license:gpl2+)))
 
 (define-public r-clusterhap
@@ -35409,6 +35206,40 @@ Explainable AI (XAI).  A description of CIU can be found in e.g. FrÃ¤mling
 (2020) <doi:10.1007/978-3-030-51924-7_4>.")
     (license license:expat)))
 
+(define-public r-citsr
+  (package
+    (name "r-citsr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "citsr" version))
+       (sha256
+        (base32 "06zl0nfv02jzkxbny58jmi899fdw40byxmvvscdc7swa0ixs4ca8"))))
+    (properties `((upstream-name . "citsr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlme r-ggplot2 r-dplyr r-clubsandwich
+                             r-aiccmodavg))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=citsr")
+    (synopsis "Controlled Interrupted Time Series Analysis and Visualization")
+    (description
+     "This package implements controlled interrupted time series (CITS) analysis for
+evaluating interventions in comparative time-series data.  The package provides
+tools for preparing panel time-series datasets, fitting models using generalized
+least squares (GLS) with optional autoregressiveâmoving-average (ARMA) error
+structures, and computing fitted values and robust standard errors using
+cluster-robust variance estimators (CR2).  Visualization functions enable clear
+presentation of estimated effects and counterfactual trajectories following
+interventions.  Background on methods for causal inference in interrupted time
+series can be found in Linden and Adams (2011)
+<doi:10.1111/j.1365-2753.2010.01504.x> and Lopez Bernal, Cummins, and Gasparrini
+(2018) <doi:10.1093/ije/dyy135>.")
+    (license license:expat)))
+
 (define-public r-citrus
   (package
     (name "r-citrus")
@@ -35966,37 +35797,6 @@ e2667.")
     (synopsis "Circular Drift-Diffusion Model")
     (description "Circular drift-diffusion model for continuous reports.")
     (license license:gpl2)))
-
-(define-public r-circspacetime
-  (package
-    (name "r-circspacetime")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CircSpaceTime" version))
-       (sha256
-        (base32 "0dplgm5x4c1xxnv6062n643mn5zh0najw3f41pv2qafc1lil4wx8"))))
-    (properties `((upstream-name . "CircSpaceTime")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rinside
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ggplot2
-                             r-coda
-                             r-circular))
-    (home-page "https://github.com/santoroma/CircSpaceTime")
-    (synopsis "Spatial and Spatio-Temporal Bayesian Model for Circular Data")
-    (description
-     "Implementation of Bayesian models for spatial and spatio-temporal interpolation
-of circular data using Gaussian Wrapped and Gaussian Projected distributions.
-We developed the methods described in Jona Lasinio G. et al. (2012) <doi:
-10.1214/12-aoas576>, Wang F. et al. (2014) <doi: 10.1080/01621459.2014.934454>
-and Mastrantonio G. et al. (2016) <doi: 10.1007/s11749-015-0458-y>.")
-    (license license:gpl3)))
 
 (define-public r-circoutlier
   (package
@@ -37572,28 +37372,6 @@ distribution of how many items are in the overlap of all samples when samples of
 arbitrary size are each taken without replacement from populations of arbitrary
 size.")
     (license license:expat)))
-
-(define-public r-chunkr
-  (package
-    (name "r-chunkr")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "chunkR" version))
-       (sha256
-        (base32 "1kw3hsx5k4cdicx0hc1v0mf2nzvqg95shx2xv05vb2pass48qw48"))))
-    (properties `((upstream-name . "chunkR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=chunkR")
-    (synopsis "Read Tables in Chunks")
-    (description
-     "Read tables chunk by chunk using a C++ backend and a simple R interface.")
-    (license license:gpl2+)))
 
 (define-public r-chunkhooks
   (package
@@ -43457,13 +43235,13 @@ functions.")
 (define-public r-centerline
   (package
     (name "r-centerline")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "centerline" version))
        (sha256
-        (base32 "1af63n6d3pkgpg7pvc6543jd9inkvcanif3x9d1rxakdhrrvr66y"))))
+        (base32 "1iqxz5hrxqw1g45s3ryb6wqh2fzhg3lhnfkz8bhzbf3csfic21fg"))))
     (properties `((upstream-name . "centerline")))
     (build-system r-build-system)
     (arguments
@@ -49124,33 +48902,6 @@ measurement method, Shi, J., Zhang, J., & Ge, Y. (2019)
 updates.")
     (license license:gpl3)))
 
-(define-public r-casmap
-  (package
-    (name "r-casmap")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CASMAP" version))
-       (sha256
-        (base32 "1447d4gflan2093fb68inb2ysx5svb9vhnjc7lnkgpjsiam4p8yy"))))
-    (properties `((upstream-name . "CASMAP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CASMAP")
-    (synopsis
-     "Detection of Statistically Significant Combinations of SNPs in Association Mapping")
-    (description
-     "This package provides a significant pattern mining-based toolbox for
-region-based genome-wide association studies and higher-order epistasis
-analyses, implementing the methods described in Llinares-LÃ³pez et al. (2017)
-<doi:10.1093/bioinformatics/btx071>.")
-    (license license:gpl2+)))
-
 (define-public r-casimir
   (package
     (name "r-casimir")
@@ -53384,13 +53135,13 @@ described in Lee, Kim, Perera, @code{McLachlan} and Bae (2015)
 (define-public r-caesar-suite
   (package
     (name "r-caesar-suite")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAESAR.Suite" version))
        (sha256
-        (base32 "1lgy79jyr03fj4p73x7h5idwvxwq81n066ii0dkv4ki0hbb1rfzb"))))
+        (base32 "1vyjb4ldc3ia7wrn8y7zn8mwj7zrflwhg8x1hxza2n1f8cmmlir8"))))
     (properties `((upstream-name . "CAESAR.Suite")))
     (build-system r-build-system)
     (arguments

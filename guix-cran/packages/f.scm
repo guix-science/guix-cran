@@ -2699,55 +2699,6 @@ accurate tool for measuring fractional years between two dates.
 unused packages.")
     (license license:expat)))
 
-(define-public r-funcharts
-  (package
-    (name "r-funcharts")
-    (version "1.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "funcharts" version))
-       (sha256
-        (base32 "0n6c8yhny07ly8640kaf004nms1xs8jg9wmks8yjm4vhhnpwx0xh"))))
-    (properties `((upstream-name . "funcharts")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-spatstat-univar
-                             r-scam
-                             r-rspectra
-                             r-rrcov
-                             r-rofanova
-                             r-robustbase
-                             r-roahd
-                             r-rfast
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-patchwork
-                             r-mgcv
-                             r-mass
-                             r-ggplot2
-                             r-fdapace
-                             r-fda-usc
-                             r-fda
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/unina-sfere/funcharts")
-    (synopsis "Functional Control Charts")
-    (description
-     "This package provides functional control charts for statistical process
-monitoring of functional data, using the methods of Capezza et al. (2020)
-<doi:10.1002/asmb.2507>, Centofanti et al. (2021)
-<doi:10.1080/00401706.2020.1753581>, Capezza et al. (2024)
-<doi:10.1080/00224065.2024.2383674>, Capezza et al. (2024)
-<doi:10.1080/00401706.2024.2327346>, Centofanti et al. (2025)
-<doi:10.1080/00224065.2024.2430978>, Capezza et al. (2025)
-<doi:10.48550/@code{arXiv.2410.20138>}.  The package is thoroughly illustrated
-in the paper of Capezza et al (2023) <doi:10.1080/00224065.2023.2219012>.")
-    (license license:gpl3)))
-
 (define-public r-funcdiv
   (package
     (name "r-funcdiv")
@@ -3519,41 +3470,6 @@ One method targets the maximum hole size criterion and uses a heuristic to
 generate what is closer to a minimax design.")
     (license license:gpl2)))
 
-(define-public r-fssemr
-  (package
-    (name "r-fssemr")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fssemR" version))
-       (sha256
-        (base32 "1rja69b6x5vc302nksh5m6ssp2lx8drv9gjnkv6j9xr3hd2407xi"))))
-    (properties `((upstream-name . "fssemR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rcppeigen
-                             r-rcpp
-                             r-qtl
-                             r-qpdf
-                             r-mvtnorm
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Ivis4ml/fssemR")
-    (synopsis
-     "Fused Sparse Structural Equation Models to Jointly Infer Gene Regulatory Network")
-    (description
-     "An optimizer of Fused-Sparse Structural Equation Models, which is the state of
-the art jointly fused sparse maximum likelihood function for structural equation
-models proposed by Xin Zhou and Xiaodong Cai (2018 <doi:10.1101/466623>).")
-    (license license:gpl3+)))
-
 (define-public r-fsrm
   (package
     (name "r-fsrm")
@@ -3803,36 +3719,6 @@ FSK files
 using the R programming environment.  Furthermore, it enables users to run
 simulations contained in the FSK files and visualize the results.")
     (license license:gpl3)))
-
-(define-public r-fsinteract
-  (package
-    (name "r-fsinteract")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FSInteract" version))
-       (sha256
-        (base32 "1aci1398aaz0nrl5jy6yh7xik355wf7pwngrsak4qsi94vdj05iy"))))
-    (properties `((upstream-name . "FSInteract")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-matrix))
-    (home-page "http://www.jmlr.org/papers/v15/shah14a.html")
-    (synopsis "Fast Searches for Interactions")
-    (description
-     "This package performs fast detection of interactions in large-scale data using
-the method of random intersection trees introduced in Shah, R. D. and
-Meinshausen, N. (2014) <http://www.jmlr.org/papers/v15/shah14a.html>.  The
-algorithm finds potentially high-order interactions in high-dimensional binary
-two-class classification data, without requiring lower order interactions to be
-informative.  The search is particularly fast when the matrices of predictors
-are sparse.  It can also be used to perform market basket analysis when supplied
-with a single binary data matrix.  Here it will find collections of columns
-which for many rows contain all 1's.")
-    (license license:gpl2)))
 
 (define-public r-fsinr
   (package
@@ -4689,33 +4575,6 @@ than with the built-in function alias).")
      "This package provides a simple way to unload none-base packages and remove all
 global variables.")
     (license license:expat)))
-
-(define-public r-freshd
-  (package
-    (name "r-freshd")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FRESHD" version))
-       (sha256
-        (base32 "0lpggf59dd3kwp2y9p4acvhdmc6i47bwa5lk6d6cp8q0g7sr44rm"))))
-    (properties `((upstream-name . "FRESHD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-glamlasso))
-    (home-page "https://cran.r-project.org/package=FRESHD")
-    (synopsis "Fast Robust Estimation of Signals in Heterogeneous Data")
-    (description
-     "Procedure for solving the maximin problem for identical design across
-heterogeneous data groups.  Particularly efficient when the design matrix is
-either orthogonal or has tensor structure.  Orthogonal wavelets can be specified
-for 1d, 2d or 3d data simply by name.  For tensor structured design the tensor
-components (two or three) may be supplied.  The package also provides an
-efficient implementation of the generic magging estimator.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-fresa-cad
   (package
@@ -7356,30 +7215,6 @@ the eigen-decomposition of the covariance matrices of the emission distribution.
 (horizontal, vertical or diagonal) wins.  As board game published by Milton
 Bradley, designed by Howard Wexler and Ned Strongin.")
     (license license:gpl3)))
-
-(define-public r-fourpno
-  (package
-    (name "r-fourpno")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fourPNO" version))
-       (sha256
-        (base32 "0a0z2403kdh3fjb0ypjjk3m6fg77bg6m7hwb5jhlymcy2rwkay7w"))))
-    (properties `((upstream-name . "fourPNO")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/tmsalab/fourPNO")
-    (synopsis "Bayesian 4 Parameter Item Response Model")
-    (description
-     "Estimate Barton & Lord's (1981) <doi:10.1002/j.2333-8504.1981.tb01255.x> four
-parameter IRT model with lower and upper asymptotes using Bayesian formulation
-described by Culpepper (2016) <doi:10.1007/s11336-015-9477-6>.")
-    (license license:gpl2+)))
 
 (define-public r-fourinarow
   (package
@@ -10443,13 +10278,13 @@ of Skew Heavy-Tailed Errors.")
 (define-public r-fmritools
   (package
     (name "r-fmritools")
-    (version "0.6.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRItools" version))
        (sha256
-        (base32 "1dki25cc3pznkp0wwkwg8l5h8qch7r7v20ha7mpn79s2ygx9a4r5"))))
+        (base32 "11lcsq7y242ldj485bs1sl5f52710y07igiv40pjk9xgl5lwf98a"))))
     (properties `((upstream-name . "fMRItools")))
     (build-system r-build-system)
     (arguments
@@ -10769,36 +10604,6 @@ F., MÃ¼ller, H. G., & Wang, J. L. (2005) <doi:10.1198/016214504000001745>, and
 Lee, K. Y., & Li, L. (2022) <doi:10.1111/rssb.12471>.")
     (license license:expat)))
 
-(define-public r-fmerpack
-  (package
-    (name "r-fmerpack")
-    (version "0.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fmerPack" version))
-       (sha256
-        (base32 "0p9jfgkzs97r6ya1x8ax7bza17b03grqxa22ja13s12vj0cdkv78"))))
-    (properties `((upstream-name . "fmerPack")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-glmnet
-                             r-flexmix
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=fmerPack")
-    (synopsis
-     "Tools of Heterogeneity Pursuit via Finite Mixture Effects Model")
-    (description
-     "Heterogeneity pursuit methodologies for regularized finite mixture regression by
-effects-model formulation proposed by Li et al. (2021)
-<@code{arXiv:2003.04787>}.")
-    (license license:gpl3+)))
-
 (define-public r-fmeffects
   (package
     (name "r-fmeffects")
@@ -10957,6 +10762,43 @@ ISBN 9781420079425).  Among the methods included, we have: Haario (2001)
 <doi:10.1007/s11222-011-9269-5> Adaptive Metropolis, Vihola (2012)
 <doi:10.1007/s11222-011-9269-5> Robust Adaptive Metropolis, and Thawornwattana
 et al. (2018) <doi:10.1214/17-BA1084> Mirror transition kernels.")
+    (license license:expat)))
+
+(define-public r-fmcensskewreg
+  (package
+    (name "r-fmcensskewreg")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FMCensSkewReg" version))
+       (sha256
+        (base32 "0s3jp65j94b05jxihhsxai8irmp11yp81p6igqgsmbb8m7qbpi26"))))
+    (properties `((upstream-name . "FMCensSkewReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncdist
+                             r-sn
+                             r-mvtnorm
+                             r-momtrunc
+                             r-mnormt
+                             r-mixsmsn))
+    (home-page "https://github.com/JiwonPark41/FMCensSkewReg")
+    (synopsis
+     "Finite Mixture of Censored Regression Models with Skewed Distributions")
+    (description
+     "This package provides an implementation of finite mixture regression models for
+censored data under four distributional families: Normal (FM-NCR), Student t
+(FM-TCR), skew-Normal (FM-SNCR), and skew-t (FM-STCR).  The package enables
+flexible modeling of skewness and heavy tails often observed in real-world data,
+while explicitly accounting for censoring.  Functions are included for parameter
+estimation via the Expectation-Maximization (EM) algorithm, computation of
+standard errors, and model comparison criteria such as the Akaike Information
+Criterion (AIC), the Bayesian Information Criterion (BIC), and the Efficient
+Determination Criterion (EDC).  The underlying methodology is described in Park
+et al. (2024) <doi:10.1007/s00180-024-01459-4>.")
     (license license:expat)))
 
 (define-public r-fmc
@@ -13681,47 +13523,6 @@ Main reference is A. Mazoyer, R. Drouilhet, S. Despreaux and B. Ycart (2017)
 <doi:10.32614/RJ-2017-029>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-flamingos
-  (package
-    (name "r-flamingos")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flamingos" version))
-       (sha256
-        (base32 "0gic6y8wpxffpyi3zy0wh7apy4z6argxbz284n80k2mzh6lh029k"))))
-    (properties `((upstream-name . "flamingos")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/fchamroukhi/FLaMingos")
-    (synopsis
-     "Functional Latent Data Models for Clustering Heterogeneous Curves ('FLaMingos')")
-    (description
-     "This package provides a variety of original and flexible user-friendly
-statistical latent variable models for the simultaneous clustering and
-segmentation of heterogeneous functional data (i.e time series, or more
-generally longitudinal data, fitted by unsupervised algorithms, including EM
-algorithms.  Functional Latent Data Models for Clustering heterogeneous curves
-('F@code{LaMingos}') are originally introduced and written in Matlab by Faicel
-Chamroukhi
-<https://github.com/fchamroukhi?utf8=?&tab=repositories&q=mix&type=public&language=matlab>.
- The references are mainly the following ones.  Chamroukhi F. (2010)
-<https://chamroukhi.com/FChamroukhi-@code{PhD.pdf>}.  Chamroukhi F., Same A.,
-Govaert, G. and Aknin P. (2010) <doi:10.1016/j.neucom.2009.12.023>.  Chamroukhi
-F., Same A., Aknin P. and Govaert G. (2011). <doi:10.1109/IJCNN.2011.6033590>.
-Same A., Chamroukhi F., Govaert G. and Aknin, P. (2011)
-<doi:10.1007/s11634-011-0096-5>.  Chamroukhi F., and Glotin H. (2012)
-<doi:10.1109/IJCNN.2012.6252818>.  Chamroukhi F., Glotin H. and Same A. (2013)
-<doi:10.1016/j.neucom.2012.10.030>.  Chamroukhi F. (2015)
-<https://chamroukhi.com/FChamroukhi-HDR.pdf>.  Chamroukhi F. and Nguyen H-D.
-(2019) <doi:10.1002/widm.1298>.")
-    (license license:gpl3+)))
-
 (define-public r-flametree
   (package
     (name "r-flametree")
@@ -15042,36 +14843,6 @@ likely to grow in the future as the package gains more traction and more
 requests for new methods to be implemented come in.  You can find details on the
 Fitbit API at <https://dev.fitbit.com/build/reference/web-api/>.")
     (license license:gpl3+)))
-
-(define-public r-fit
-  (package
-    (name "r-fit")
-    (version "0.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FIT" version))
-       (sha256
-        (base32 "1nkjms9cvigc9sjha1krzhd3nmwsfh8pi0f1plf5k8zpb773zzb2"))))
-    (properties `((upstream-name . "FIT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml r-rcppeigen r-rcpp r-mass r-gglasso))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FIT")
-    (synopsis "Transcriptomic Dynamics Models in Field Conditions")
-    (description
-     "This package provides functionality for constructing statistical models of
-transcriptomic dynamics in field conditions.  It further offers the function to
-predict expression of a gene given the attributes of samples and meteorological
-data.  Nagano, A. J., Sato, Y., Mihara, M., Antonio, B. A., Motoyama, R., Itoh,
-H., Naganuma, Y., and Izawa, T. (2012). <doi:10.1016/j.cell.2012.10.048>.
-Iwayama, K., Aisaka, Y., Kutsuna, N., and Nagano, A. J. (2017).
-<doi:10.1093/bioinformatics/btx049>.")
-    (license (list (license:fsdg-compatible "MPL (>= 2)")
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-fispro
   (package
@@ -18037,13 +17808,13 @@ dependence.")
 (define-public r-fglmtrunc
   (package
     (name "r-fglmtrunc")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FGLMtrunc" version))
        (sha256
-        (base32 "15pj2dmgbjbx4xi585rqggnp05xzpg9pn2iy76ibgkdvjqknkwii"))))
+        (base32 "0fnv6d72rlks19wskkg26qz7w00cr5wmwxlp13fz7dpqfanm3mxk"))))
     (properties `((upstream-name . "FGLMtrunc")))
     (build-system r-build-system)
     (arguments
@@ -22644,6 +22415,60 @@ unidentifiable, 1-identifiable or 2-identifiable (other cases cannot occur),
 using a randomized algorithm with provable running time O(n^3 log^2 n).")
     (license license:expat)))
 
+(define-public r-fasttopics
+  (package
+    (name "r-fasttopics")
+    (version "0.7-37")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastTopics" version))
+       (sha256
+        (base32 "0slw5jbcsnfibiv5bxzk5sl18mlrbhsfcgk3yskk9nh4yjwwqmip"))))
+    (properties `((upstream-name . "fastTopics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uwot
+                             r-rtsne
+                             r-rlang
+                             r-rhpcblasctl
+                             r-reshape2
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quadprog
+                             r-progress
+                             r-plotly
+                             r-pbapply
+                             r-matrix
+                             r-irlba
+                             r-htmlwidgets
+                             r-gtools
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-ashr))
+    (native-inputs (list r-knitr))
+    (home-page "https://stephenslab.github.io/fastTopics/")
+    (synopsis
+     "Fast Algorithms for Fitting Topic Models and Non-Negative Matrix Factorizations to Count Data")
+    (description
+     "This package implements fast, scalable optimization algorithms for fitting topic
+models (\"grade of membership\" models) and non-negative matrix factorizations to
+count data.  The methods exploit the special relationship between the
+multinomial topic model (also, \"probabilistic latent semantic indexing\") and
+Poisson non-negative matrix factorization.  The package provides tools to
+compare, annotate and visualize model fits, including functions to efficiently
+create \"structure plots\" and identify key features in topics.  The
+@code{fastTopics} package is a successor to the @code{CountClust} package.  For
+more information, see <doi:10.48550/@code{arXiv.2105.13440>} and
+<doi:10.1186/s13059-023-03067-9>.  Please also see the @code{GitHub} repository
+for additional vignettes not included in the package on CRAN.")
+    (license license:bsd-2)))
+
 (define-public r-fasttime
   (package
     (name "r-fasttime")
@@ -22953,13 +22778,13 @@ interface.  Related work: Bonini et al. (2020)
 (define-public r-fastrerandomize
   (package
     (name "r-fastrerandomize")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastrerandomize" version))
        (sha256
-        (base32 "181m2163a4ss7i46cqwnwldqb2a71x528fg65razd9sln5223gcb"))))
+        (base32 "175sf0g33v97yh67a7p18xjwr69lpdg02myyv0dbprjvvc24f9v0"))))
     (properties `((upstream-name . "fastrerandomize")))
     (build-system r-build-system)
     (arguments
@@ -23424,13 +23249,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.7.0")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "19mkqj69mjlyvp6cq6qfysah2nx1d8c78l1w33dz2wqkdgvvp588"))))
+        (base32 "1zl7davddi72iykar67ynrwq7y6kakbrphyzyc6vjq6vz2rm7zc3"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -23440,20 +23265,14 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-xgboost
                              r-workflows
                              r-viridislite
-                             r-vim
-                             r-upsetr
                              r-tune
-                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-survrm2
                              r-survival
                              r-stringr
-                             r-skimr
-                             r-scales
                              r-rstpm2
                              r-rsample
-                             r-rmarkdown
                              r-rlang
                              r-reshape2
                              r-recipes
@@ -23462,44 +23281,39 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-proc
                              r-probably
                              r-plsmod
-                             r-plotly
+                             r-pdp
                              r-parsnip
-                             r-naniar
-                             r-moments
-                             r-missforest
-                             r-mice
+                             r-modelstudio
                              r-magrittr
                              r-lime
-                             r-knitr
-                             r-kableextra
                              r-janitor
                              r-iml
-                             r-htmlwidgets
-                             r-gridextra
-                             r-ggpubr
+                             r-ibreakdown
                              r-ggplot2
                              r-future
                              r-flexsurv
                              r-finetune
-                             r-dt
+                             r-fairmodels
                              r-dplyr
                              r-dofuture
                              r-discrim
                              r-dials
-                             r-dbscan
                              r-dalex
-                             r-ceterisparibus
                              r-broom
-                             r-bonsai
                              r-baguette))
-    (home-page "https://selcukorkmaz.github.io/fastml-tutorial/")
-    (synopsis "Fast Machine Learning Model Training and Evaluation")
+    (home-page "https://github.com/selcukorkmaz/fastml")
+    (synopsis
+     "Guarded Resampling Workflows for Safe and Automated Machine Learning in R")
     (description
-     "Streamlines the training, evaluation, and comparison of multiple machine
-learning models with minimal code by providing comprehensive data preprocessing
-and support for a wide range of algorithms with hyperparameter tuning.  It
-offers performance metrics and visualization tools to facilitate efficient and
-effective machine learning workflows.")
+     "This package provides a guarded resampling workflow for training and evaluating
+machineâlearning models.  When the guarded resampling path is used,
+preprocessing and model fitting are reâestimated within each resampling split
+to reduce leakage risk.  Supports multiple resampling schemes, integrates with
+established engines in the tidymodels ecosystem, and aims to improve evaluation
+reliability by coordinating preprocessing, fitting, and evaluation within
+supported workflows.  Offers a lightweight @code{AutoMLâstyle} workflow by
+automating model training, resampling, and tuning across multiple algorithms,
+while keeping evaluation design explicit and userâcontrolled.")
     (license license:expat)))
 
 (define-public r-fastmit
@@ -24248,34 +24062,6 @@ use most of the functions, you must have the stand-alone version (not the
 OS@code{GeoW4} installer version) of GRASS 8.0 or higher.")
     (license license:gpl3+)))
 
-(define-public r-fasterelasticnet
-  (package
-    (name "r-fasterelasticnet")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fasterElasticNet" version))
-       (sha256
-        (base32 "1hr0wc6s6zpq1hkfgshf0dqjxb7s2849bb8lb04nmi6p42r3628g"))))
-    (properties `((upstream-name . "fasterElasticNet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/CUFESAM/Elastic-Net")
-    (synopsis "An Amazing Fast Way to Fit Elastic Net")
-    (description
-     "Fit Elastic Net, Lasso, and Ridge regression and do cross-validation in a fast
-way.  We build the algorithm based on Least Angle Regression by Bradley Efron,
-Trevor Hastie, Iain Johnstone, etc. (2004)(<doi:10.1214/009053604000000067 >)
-and some algorithms like Givens rotation and Forward/Back Substitution.  In this
-way, many matrices to be computed are retained as triangular matrices which can
-eventually speed up the computation.  The fitting algorithm for Elastic Net is
-written in C++ using Armadillo linear algebra library.")
-    (license license:gpl2+)))
-
 (define-public r-fastei
   (package
     (name "r-fastei")
@@ -24464,31 +24250,6 @@ Penalties include Ridge, Lease Absolute Shrinkage and Selection Operator
 (LASSO), Smoothly Clipped Absolute Deviation (SCAD), Minimax Concave Plus (MCP),
 and elastic net <doi: 10.32614/RJ-2021-010>.")
     (license license:gpl3)))
-
-(define-public r-fastcmh
-  (package
-    (name "r-fastcmh")
-    (version "0.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastcmh" version))
-       (sha256
-        (base32 "0hib3r3pkfdi67bdy4pf1pw6869vq4b3pg1pq1zwpyy76nbnq9vl"))))
-    (properties `((upstream-name . "fastcmh")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-bindata))
-    (home-page "https://cran.r-project.org/package=fastcmh")
-    (synopsis "Significant Interval Discovery with Categorical Covariates")
-    (description
-     "This package provides a method which uses the Cochran-Mantel-Haenszel test with
-significant pattern mining to detect intervals in binary genotype data which are
-significantly associated with a particular phenotype, while accounting for
-categorical covariates.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-fastbioclim
   (package
@@ -25070,39 +24831,6 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
 Accounting: Tools and Methods (1st ed.).  Chapman and Hall/CRC.
 <doi:10.1201/9781003456230> and <https://iangow.github.io/far_book/>.")
     (license license:expat)))
-
-(define-public r-farmtest
-  (package
-    (name "r-farmtest")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FarmTest" version))
-       (sha256
-        (base32 "1mr2cscz3ywyq280ifaj4gypxanvvl9s7w33ysmwn952camra2md"))))
-    (properties `((upstream-name . "FarmTest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/XiaoouPan/FarmTest")
-    (synopsis "Factor-Adjusted Robust Multiple Testing")
-    (description
-     "This package performs robust multiple testing for means in the presence of known
-and unknown latent factors presented in Fan et al.(2019) \"@code{FarmTest}:
-Factor-Adjusted Robust Multiple Testing With Approximate False Discovery
-Control\" <doi:10.1080/01621459.2018.1527700>.  Implements a series of adaptive
-Huber methods combined with fast data-drive tuning schemes proposed in Ke et
-al.(2019) \"User-Friendly Covariance Estimation for Heavy-Tailed Distributions\"
-<doi:10.1214/19-STS711> to estimate model parameters and construct test
-statistics that are robust against heavy-tailed and/or asymmetric error
-distributions.  Extensions to two-sample simultaneous mean comparison problems
-are also included.  As by-products, this package contains functions that compute
-adaptive Huber mean, covariance and regression estimators that are of
-independent interest.")
-    (license license:gpl3)))
 
 (define-public r-farff
   (package
@@ -27079,13 +26807,13 @@ microarray experiments.")
 (define-public r-factoinvestigate
   (package
     (name "r-factoinvestigate")
-    (version "1.9")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FactoInvestigate" version))
        (sha256
-        (base32 "0kzm57hd2j43kp84x2saz1nj575dw14sx3l9pmqqkr6871jrgjlw"))))
+        (base32 "0h1n0337hvvwa7knnh3yvskpkg3qghhc90zgss56h1vn4646xbd4"))))
     (properties `((upstream-name . "FactoInvestigate")))
     (build-system r-build-system)
     (arguments
