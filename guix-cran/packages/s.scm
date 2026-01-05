@@ -35835,6 +35835,43 @@ plotting of the game played.")
 <https://en.wikipedia.org/wiki/Snake_(video_game_genre)>.")
     (license license:gpl3)))
 
+(define-public r-snahelper
+  (package
+    (name "r-snahelper")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snahelper" version))
+       (sha256
+        (base32 "04l6ad4rj45kr7p98nbpsqbqppv2bgp71n6zph0aqm6b13hp0jyy"))))
+    (properties `((upstream-name . "snahelper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-rstudioapi
+                             r-miniui
+                             r-igraph
+                             r-graphlayouts
+                             r-ggraph
+                             r-ggplot2
+                             r-formatr
+                             r-dt
+                             r-colourpicker))
+    (home-page "https://github.com/schochastics/snahelper")
+    (synopsis "'RStudio' Addin for Network Analysis and Visualization")
+    (description
+     "RStudio addin which provides a GUI to visualize and analyse networks.  After
+finishing a session, the code to produce the plot is inserted in the current
+script.  Alternatively, the function @code{SNAhelperGadget()} can be used
+directly from the console.  Additional addins include the @code{Netreader()} for
+reading network files, @code{Netbuilder()} to create small networks via point
+and click, and the @code{Componentlayouter()} to layout networks with many
+components manually.")
+    (license license:expat)))
+
 (define-public r-smvr
   (package
     (name "r-smvr")

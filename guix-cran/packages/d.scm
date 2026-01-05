@@ -26971,6 +26971,46 @@ references for details on the methods: Vickers (2006)
 Pfeiffer (2020) <doi:10.1002/bimj.201800240>.")
     (license license:expat)))
 
+(define-public r-dcur
+  (package
+    (name "r-dcur")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dCUR" version))
+       (sha256
+        (base32 "1v9gzvb7hz75q19pywkwl58q5sb3am9i54m7s6hvryqacm3miz4s"))))
+    (properties `((upstream-name . "dCUR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack
+                             r-ppcor
+                             r-mclust
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://www.cesargamboasanabria.com")
+    (synopsis "Dimension Reduction with Dynamic CUR")
+    (description
+     "Dynamic CUR (@code{dCUR}) boosts the CUR decomposition (Mahoney MW., Drineas P.
+(2009) <doi:10.1073/pnas.0803205106>) varying the k, the number of columns and
+rows used, and its final purposes to help find the stage, which minimizes the
+relative error to reduce matrix dimension.  The goal of CUR Decomposition is to
+give a better interpretation of the matrix decomposition employing proper
+variable selection in the data matrix, in a way that yields a simplified
+structure.  Its origins come from analysis in genetics.  The goal of this
+package is to show an alternative to variable selection (columns) or individuals
+(rows).  The idea proposed consists of adjusting the probability distributions
+to the leverage scores and selecting the best columns and rows that minimize the
+reconstruction error of the matrix approximation ||A-CUR||.  It also includes a
+method that recalibrates the relative importance of the leverage scores
+according to an external variable of the user's interest.")
+    (license license:gpl3)))
+
 (define-public r-dctensor
   (package
     (name "r-dctensor")
