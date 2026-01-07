@@ -1638,6 +1638,41 @@ template, startr', along with utilities for day-to-day data journalism tasks,
 such as reading and writing files, producing graphics and cleaning up datasets.")
     (license license:expat)))
 
+(define-public r-upsilon
+  (package
+    (name "r-upsilon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Upsilon" version))
+       (sha256
+        (base32 "1vr3k9rf9vpyiafyx9wmhbfbj8xz3xymwzxf4s2jl6cqa8ckb7gy"))))
+    (properties `((upstream-name . "Upsilon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-reshape2 r-rdpack r-rcpp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Upsilon")
+    (synopsis "Another Test of Association for Count Data")
+    (description
+     "The Upsilon test assesses association among categorical variables against the
+null hypothesis of independence (Luo 2021 MS thesis; @code{ProQuest} Publication
+No.  28649813).  While promoting dominant function patterns, it demotes
+non-dominant function patterns.  It is robust to low expected count---continuity
+correction like Yates's seems unnecessary.  Using a common null population
+following a uniform distribution, contingency tables are comparable by
+statistical significance---not the case for most association tests defining a
+varying null population by tensor product of observed marginals.  Although
+Pearson's chi-squared test, Fisher's exact test, and Woolf's G-test (related to
+mutual information) are useful in some contexts, the Upsilon test appeals to
+ranking association patterns not necessarily following same marginal
+distributions, such as in count data from DNA sequencing---an important modern
+scientific domain.")
+    (license license:lgpl3+)))
+
 (define-public r-upsetjs
   (package
     (name "r-upsetjs")
@@ -3369,38 +3404,6 @@ in spreadsheet files.")
      "This package provides a ggplot2 theme and color palettes following the United
 Nations High Commissioner for Refugees (UNHCR) Data Visualization Guidelines
 recommendations.")
-    (license license:expat)))
-
-(define-public r-unhcrdown
-  (package
-    (name "r-unhcrdown")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "unhcrdown" version))
-       (sha256
-        (base32 "0hb1a7fsxqfdvvy4hrmazp0f3c5g4db48rvdw3a2pz4yf0askn6d"))))
-    (properties `((upstream-name . "unhcrdown")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xaringan
-                             r-rmarkdown
-                             r-pagedown
-                             r-officedown
-                             r-magick
-                             r-bslib))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/unhcr-dataviz/unhcrdown")
-    (synopsis "UNHCR Branded Templates for R Markdown Documents")
-    (description
-     "Create United Nations High Commissioner for Refugees (UNHCR) branded documents,
-presentations, and reports using R Markdown templates.  This package provides
-customized formats that align with UNHCR's official brand guidelines for
-creating professional PDF reports, Word documents, @code{PowerPoint}
-presentations, and HTML outputs.")
     (license license:expat)))
 
 (define-public r-ungroup

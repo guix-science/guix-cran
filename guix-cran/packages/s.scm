@@ -33213,26 +33213,6 @@ culminates.  Provides functions for computing sun position and times of sunrise
 and sunset.")
     (license license:gpl3)))
 
-(define-public r-solarpos
-  (package
-    (name "r-solarpos")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "solarPos" version))
-       (sha256
-        (base32 "0004da7vqpq14q5lhs8vyvjl99j8gzxd5wrlw5d1vwfns3ica0q5"))))
-    (properties `((upstream-name . "solarPos")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=solarPos")
-    (synopsis "Solar Position Algorithm for Solar Radiation Applications")
-    (description "Calculation of solar zenith and azimuth angles.")
-    (license license:gpl2)))
-
 (define-public r-solar
   (package
     (name "r-solar")
@@ -67868,6 +67848,34 @@ nullability, and more.  Schema failure messages can be tailored for
 non-technical users and are ideal for user-facing applications such as in shiny
 or plumber'.")
     (license license:expat)))
+
+(define-public r-schangeblock
+  (package
+    (name "r-schangeblock")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SChangeBlock" version))
+       (sha256
+        (base32 "1lg5fdddjh8wj0kbchviw721s5scs60w2ga072si4xyl2sqcprvx"))))
+    (properties `((upstream-name . "SChangeBlock")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robcp r-rcpp r-nortest r-ggplot2 r-expm))
+    (home-page "https://cran.r-project.org/package=SChangeBlock")
+    (synopsis
+     "Spatial Structural Change Detection by an Analysis of Variability Between Blocks of Observations")
+    (description
+     "This package provides methods to detect structural changes in time series or
+random fields (spatial data).  Focus is on the detection of abrupt changes or
+trends in independent data, but the package also provides a function to
+de-correlate data with dependence.  The functions are based on the test
+suggested in Schmidt (2024) <DOI:10.3150/23-BEJ1686> and the work in GÃ¶rz and
+Fried (2025) <DOI:10.48550/@code{arXiv.2512.11599>}.")
+    (license license:gpl3+)))
 
 (define-public r-scgwr
   (package

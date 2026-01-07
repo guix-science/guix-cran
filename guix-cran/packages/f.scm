@@ -11043,6 +11043,51 @@ R script for reproducibility.  Reference: Key (2025)
 <DOI:10.5281/zenodo.15597159>.")
     (license license:gpl3)))
 
+(define-public r-fluxpoint
+  (package
+    (name "r-fluxpoint")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FluxPoint" version))
+       (sha256
+        (base32 "1vxk7wfx1iar7wmbvyyd4r43hi2lh5l3v0yfxj2sx0z10f2mmc1y"))))
+    (properties `((upstream-name . "FluxPoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-simdesign
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-nnls
+                             r-matrix
+                             r-mass
+                             r-glmnet
+                             r-ggplot2
+                             r-doparallel
+                             r-corpcor
+                             r-blockmatrix))
+    (home-page "https://cran.r-project.org/package=FluxPoint")
+    (synopsis
+     "Change Point Detection for Non-Stationary and Cross-Correlated Time Series")
+    (description
+     "This package implements methods for multiple change point detection in
+multivariate time series with non-stationary dynamics and cross-correlations.
+The methodology is based on a model in which each component has a fluctuating
+mean represented by a random walk with occasional abrupt shifts, combined with a
+stationary vector autoregressive structure to capture temporal and
+cross-sectional dependence.  The framework is broadly applicable to correlated
+multivariate sequences in which large, sudden shifts occur in all or subsets of
+components and are the primary targets of interest, whereas small, smooth
+fluctuations are not.  Although random walks are used as a modeling device, they
+provide a flexible approximation for a wide class of slowly varying or locally
+smooth dynamics, enabling robust performance beyond the strict random walk
+setting.")
+    (license license:gpl2)))
+
 (define-public r-fluxible
   (package
     (name "r-fluxible")

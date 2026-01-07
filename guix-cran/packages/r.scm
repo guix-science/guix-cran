@@ -35174,6 +35174,34 @@ Lindsey's text books, JK Lindsey (2001) <isbn:10-0198508123> and JK Lindsey
 (1999) <isbn:10-0198505590>.")
     (license license:gpl2+)))
 
+(define-public r-repeatabel
+  (package
+    (name "r-repeatabel")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RepeatABEL" version))
+       (sha256
+        (base32 "0i1n37daq1pwv8fzdyw22wmp294y1w3v248ky9xcsb9gzyaa1fbl"))))
+    (properties `((upstream-name . "RepeatABEL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-hglm))
+    (home-page "https://cran.r-project.org/package=RepeatABEL")
+    (synopsis "GWAS for Multiple Observations on Related Individuals")
+    (description
+     "This package performs genome-wide association studies (GWAS) on individuals that
+are both related and have repeated measurements.  For each Single Nucleotide
+Polymorphism (SNP), it computes score statistic based p-values for a linear
+mixed model including random polygenic effects and a random effect for repeated
+measurements.  The computed p-values can be visualized in a Manhattan plot.  For
+more details see Ronnegard et al. (2016) <doi:10.1111/2041-210X.12535> and for
+more examples see <https://github.com/larsronn/@code{RepeatABEL_Tutorials>}.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-repaymentplan
   (package
     (name "r-repaymentplan")
@@ -36443,6 +36471,31 @@ and applied statistical modeling.")
      "Build interactive Reliability Probability Plots with plotly by Carson Sievert
 (2020) <https://plotly.com/r/>, an interactive web-based graphing library.")
     (license (license:fsdg-compatible "Apache License"))))
+
+(define-public r-relialearnr
+  (package
+    (name "r-relialearnr")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReliaLearnR" version))
+       (sha256
+        (base32 "0s9zcj1n4yg13bc2sa5vqajvrh1smqp0i07hr0wibaa95cwcyr29"))))
+    (properties `((upstream-name . "ReliaLearnR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weibullr-alt r-weibullr r-reliagrowr r-learnr))
+    (native-inputs (list r-knitr))
+    (home-page "https://paulgovan.github.io/ReliaLearnR/")
+    (synopsis "Learning Modules for Reliability Analysis")
+    (description
+     "Learning modules for reliability analysis including modules for Reliability,
+Availability, and Maintainability (RAM) Analysis, Life Data Analysis, and
+Reliability Testing.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-reliagrowr
   (package
@@ -50036,6 +50089,35 @@ interval.  The implementation follows the @code{StatXact} 9 manual (Cytel 2010)
 and \"Refining Binomial Confidence Intervals\" by George Casella (1986)
 <doi:10.2307/3314658>.")
     (license license:gpl3+)))
+
+(define-public r-rbrsa
+  (package
+    (name "r-rbrsa")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbrsa" version))
+       (sha256
+        (base32 "1hpvwa17a98q0d4x969vbnhrjswajxmmq549f6lhmcqmn4wm6gni"))))
+    (properties `((upstream-name . "rbrsa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl r-rlang r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/obakis/rbrsa")
+    (synopsis
+     "Fetch Turkish Banking Sector Data from the Turkish Banking Regulation and Supervision Agency")
+    (description
+     "The goal of the rbrsa package is to provide automated access to banking sector
+data from the Turkish Banking Regulation and Supervision Agency (BRSA, known as
+BDDK in Turkish).  The package retrieves tables from two distinct publication
+portals maintained by the BRSA: The Monthly Bulletin Portal
+<https://www.bddk.org.tr/bultenaylik> and The @code{FinTurk} Data System
+<https://www.bddk.org.tr/@code{BultenFinturk>}.")
+    (license license:expat)))
 
 (define-public r-rbridge
   (package

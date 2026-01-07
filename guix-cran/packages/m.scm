@@ -131,6 +131,38 @@ transcriptome analysis environment to quantify the average evolutionary age of
 genes contributing to a transcriptome of interest.")
     (license license:gpl2)))
 
+(define-public r-myrror
+  (package
+    (name "r-myrror")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "myrror" version))
+       (sha256
+        (base32 "1kxkahps4p251ziaan6yddm2i8rkvi8x0lv1akrmdbmk5zh1fmwg"))))
+    (properties `((upstream-name . "myrror")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-joyn
+                             r-digest
+                             r-data-table
+                             r-collapse
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://pip-technical-team.github.io/myrror/")
+    (synopsis "Compare Two Data Frames and Summarize Differences")
+    (description
+     "This package provides tools for systematic comparison of data frames, offering
+functionality to identify, quantify, and extract differences.  Provides
+functions with user-friendly and interactive console output for immediate
+analysis, while also offering options to export differences as structured data
+frames that can be easily integrated into existing workflows.")
+    (license license:expat)))
+
 (define-public r-myownrobs
   (package
     (name "r-myownrobs")

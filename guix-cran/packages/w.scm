@@ -3816,46 +3816,6 @@ of outcomes can be analyzed: survival \"failure-time\" events, repeated survival
 are captured at specific time-points in the study.")
     (license license:gpl2+)))
 
-(define-public r-winr
-  (package
-    (name "r-winr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "winr" version))
-       (sha256
-        (base32 "1iw7xmqa03zqba9qvs1hdxmig5fgj7hz1ydj8cbcm2dscz4686sr"))))
-    (properties `((upstream-name . "winr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-rdpack r-dplyr))
-    (home-page "https://cran.r-project.org/package=winr")
-    (synopsis "Randomization-Based Covariance Adjustment of Win Statistics")
-    (description
-     "This package provides a multi-visit clinical trial may collect participant
-responses on an ordinal scale and may utilize a stratified design, such as
-randomization within centers, to assess treatment efficacy across multiple
-visits.  Baseline characteristics may be strongly associated with the outcome,
-and adjustment for them can improve power.  The win ratio (ignores ties) and the
-win odds (accounts for ties) can be useful when analyzing these types of data
-from randomized controlled trials.  This package provides straightforward
-functions for adjustment of the win ratio and win odds for stratification and
-baseline covariates, facilitating the comparison of test and control treatments
-in multi-visit clinical trials.  For additional information concerning the
-methodologies and applied examples within this package, please refer to the
-following publications: 1.  Weideman, A.M.K., Kowalewski, E.K., & Koch, G.G.
-(2024).  âRandomization-based covariance adjustment of win ratios and win odds
-for 	randomized multi-visit studies with ordinal outcomes.â Journal of
-Statistical Research, 58(1), 33â48. <doi:10.3329/jsr.v58i1.75411>.  2.
-Kowalewski, E.K., Weideman, A.M.K., & Koch, G.G. (2023).  âSAS macro for
-randomization-based methods for covariance and stratified adjustment 	of win
-ratios and win odds for ordinal outcomes.â SESUG 2023 Proceedings, Paper
-139-2023.")
-    (license license:expat)))
-
 (define-public r-winputall
   (package
     (name "r-winputall")

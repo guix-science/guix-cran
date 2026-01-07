@@ -16787,6 +16787,43 @@ expectations to test base R and ggplot2 plots as well as console output from
 @code{print()}.")
     (license license:gpl3+)))
 
+(define-public r-tinyshinyserver
+  (package
+    (name "r-tinyshinyserver")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyshinyserver" version))
+       (sha256
+        (base32 "1qppmlvyyp1pki374q419kwvr34y8zzvmnc6f14pypmygab8y0kz"))))
+    (properties `((upstream-name . "tinyshinyserver")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-websocket
+                             r-shiny
+                             r-rmarkdown
+                             r-quarto
+                             r-openssl
+                             r-logger
+                             r-later
+                             r-jsonlite
+                             r-httr
+                             r-httpuv
+                             r-future
+                             r-digest
+                             r-callr))
+    (home-page "https://github.com/lab1702/tinyshinyserver")
+    (synopsis "Tiny 'shiny' Server - Lightweight Multi-App 'shiny' Proxy")
+    (description
+     "This package provides a lightweight, @code{WebSocket'-enabled} proxy server for
+hosting multiple shiny applications with automatic health monitoring, session
+management, and resource cleanup.  Provides a simple entry point to run the
+server using a JSON configuration file.")
+    (license license:expat)))
+
 (define-public r-tinyscholar
   (package
     (name "r-tinyscholar")

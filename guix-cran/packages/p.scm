@@ -33614,6 +33614,47 @@ R.D.P.(2022)<doi:10.21704/rfp.v37i3.1956>.")
 comprehension.")
     (license license:gpl2)))
 
+(define-public r-perumammals
+  (package
+    (name "r-perumammals")
+    (version "0.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "perumammals" version))
+       (sha256
+        (base32 "0zc24ng9nb4qyw1yxgpygig3cck7f212ipvdv2xrzfbxh4r1c9fi"))))
+    (properties `((upstream-name . "perumammals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-memoise
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaulESantos/perumammals")
+    (synopsis
+     "Taxonomic Backbone and Name Validation Tools for Mammals of Peru")
+    (description
+     "This package provides a curated taxonomic backbone of mammal species from Peru
+based on Pacheco et al. (2021) \"Lista actualizada de la diversidad de los
+mamÃ­feros del PerÃº y una propuesta para su actualizaciÃ³n\"
+<doi:10.15381/rpb.v28i4.21019>.  The package includes standardized species data,
+occurrence by ecoregions, endemism status, and tools for validating and matching
+scientific names through exact and fuzzy procedures.  It is designed as a
+lightweight and dependable reference for ecological, environmental,
+biogeographic, and conservation workflows that require reliable species
+information for Peruvian mammals.")
+    (license license:expat)))
+
 (define-public r-peruflorads43
   (package
     (name "r-peruflorads43")
