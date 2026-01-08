@@ -16439,13 +16439,13 @@ using NCA metrics.  The methods are described in Acharya et al. (2016)
 (define-public r-ncaavolleyballr
   (package
     (name "r-ncaavolleyballr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncaavolleyballr" version))
        (sha256
-        (base32 "0czb8ig88k0s4hx8w90d5dbklcb888h2qfwwqci7pkhpakg3gdcx"))))
+        (base32 "0g15zchdjyx6sbg7xs1gnjj9mi5xhmmnk53nhgl6hgi3gfrhfyxc"))))
     (properties `((upstream-name . "ncaavolleyballr")))
     (build-system r-build-system)
     (arguments

@@ -7193,13 +7193,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vchartr
   (package
     (name "r-vchartr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vchartr" version))
        (sha256
-        (base32 "0v1py0qib4gsn5cr6002p6r9j2sbh8k7wzyszac6f4njpp7yl6ks"))))
+        (base32 "15pavbbsbs3qd6sr75b9ky6ja2k6cgskdl67y8lrvaw1f3bcfbxl"))))
     (properties `((upstream-name . "vchartr")))
     (build-system r-build-system)
     (arguments
@@ -7519,6 +7519,33 @@ the main function, @code{VBsparsePCA()}, include the mean and covariance of the
 loadings matrix, the score functions, the variable selection results, and the
 estimated variance of the random noise.")
     (license license:gpl3)))
+
+(define-public r-vbracket
+  (package
+    (name "r-vbracket")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vbracket" version))
+       (sha256
+        (base32 "0vb3pml2q5yzy8jqzyh61k6rryrj9a600fb8izqkr2pmbcm6gjdm"))))
+    (properties `((upstream-name . "vbracket")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/h20gg702/vbracket")
+    (synopsis "Custom Legends with Statistical Comparison Brackets")
+    (description
+     "Add publication-quality custom legends with vertical brackets.  Designed for
+displaying statistical comparisons between groups, commonly used in scientific
+publications for showing significance levels.  Features include adaptive
+positioning, automatic bracket spacing for overlapping comparisons, font family
+inheritance, and support for asterisks, p-values, or custom labels.  Compatible
+with ggplot2 graphics.")
+    (license license:expat)))
 
 (define-public r-vbphenor
   (package

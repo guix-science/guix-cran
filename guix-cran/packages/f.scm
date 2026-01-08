@@ -19139,13 +19139,13 @@ version of the Hausman test.")
 (define-public r-fegarch
   (package
     (name "r-fegarch")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fEGarch" version))
        (sha256
-        (base32 "0s7iy7wp5q30vx1441y6ndd833innd24qkwr9qh3448jpn34zn3m"))))
+        (base32 "1331h86waxjrqs06xc3dcgsaiim0kkd2mr0wnif05ya4svm94hbd"))))
     (properties `((upstream-name . "fEGarch")))
     (build-system r-build-system)
     (arguments

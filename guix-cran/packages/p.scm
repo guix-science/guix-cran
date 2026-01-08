@@ -36773,21 +36773,23 @@ Most of the pec functionality has been moved to @code{riskRegression}'.")
 (define-public r-peaxai
   (package
     (name "r-peaxai")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEAXAI" version))
        (sha256
-        (base32 "0c6lpq1xf2fb84n8x4bhwnb4zwcwhz8iy90zxf7dbiv417iwdc26"))))
+        (base32 "06zq69v51h2gsq4vs1g4h2axawdsagvmh2ivp5a98lj56h4ym6a5"))))
     (properties `((upstream-name . "PEAXAI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rminer
+    (propagated-inputs (list r-rms
+                             r-rminer
                              r-prroc
                              r-proc
+                             r-isotone
                              r-iml
                              r-fastshap
                              r-dplyr
@@ -45947,13 +45949,13 @@ Bioconductor and @code{GitHub} packages as well.")
 (define-public r-paisaje
   (package
     (name "r-paisaje")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paisaje" version))
        (sha256
-        (base32 "17cnh901arxlvvhqaskpvaawkn460p8z81h1svxqcbv9j0wzb55j"))))
+        (base32 "1zqv98i468ligw6y1ia0yjgaa5dvxdx0xdf13ga86wv6z21h8csh"))))
     (properties `((upstream-name . "paisaje")))
     (build-system r-build-system)
     (arguments
@@ -45964,7 +45966,6 @@ Bioconductor and @code{GitHub} packages as well.")
                              r-spocc
                              r-sf
                              r-rvest
-                             r-rlang
                              r-progress
                              r-magrittr
                              r-landscapemetrics
@@ -46572,13 +46573,13 @@ imputing records where observations were absent (pad).")
 (define-public r-pade
   (package
     (name "r-pade")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pade" version))
        (sha256
-        (base32 "0bx6ngz1kiifw2jkzvx7ajgqndf2m8z04n6lfpccbaxhlqhp7njs"))))
+        (base32 "0a80m225xskrv5xfjn5sninr9qgrmv9g2y2iinh2rnkjskbhcd8r"))))
     (properties `((upstream-name . "Pade")))
     (build-system r-build-system)
     (arguments

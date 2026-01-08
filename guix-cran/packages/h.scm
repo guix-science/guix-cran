@@ -4182,13 +4182,13 @@ stratified sample of 80 talkers of Dutch.")
 (define-public r-hqm
   (package
     (name "r-hqm")
-    (version "1.1")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HQM" version))
        (sha256
-        (base32 "0r1n1icgxbkh1flsb2cf6w9h82almdyxhx1l39mafbm338bq4mv6"))))
+        (base32 "1z9fvd1nchkblva8lrg28qbc6qk0r87ssplwbzrk28j04n34c41a"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
     (arguments
@@ -11600,13 +11600,13 @@ rehabilitation.")
 (define-public r-healthiar
   (package
     (name "r-healthiar")
-    (version "0.2.1")
+    (version "0.2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthiar" version))
        (sha256
-        (base32 "0m517wsb3lf8f5dk7dk0cj8qmwjlcivbp6fzafprffv7fp2dm3am"))))
+        (base32 "1nzqjnys2zljnn8mbxp5081rikb10yk66gw5h9j80pb2lly586sz"))))
     (properties `((upstream-name . "healthiar")))
     (build-system r-build-system)
     (arguments
@@ -11726,13 +11726,13 @@ Absolute Concentration Index) also accept individual and survey data.")
 (define-public r-healthdb
   (package
     (name "r-healthdb")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthdb" version))
        (sha256
-        (base32 "0i575r1jfxfddsx684m70c2dpz463jx2apqc2x2qic6lkv4fdc79"))))
+        (base32 "1wyhbv545xcn79mvavchmjcy3wac2qpwa6h4340jbd0yzkx2qnqw"))))
     (properties `((upstream-name . "healthdb")))
     (build-system r-build-system)
     (arguments

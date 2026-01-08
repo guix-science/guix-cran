@@ -305,13 +305,13 @@ of this package.")
 (define-public r-myclim
   (package
     (name "r-myclim")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myClim" version))
        (sha256
-        (base32 "059300d621nybk9xl2y3b7bkiyn9lkhg16wr2r9xfmf471hk04z9"))))
+        (base32 "1p1kf7cy1ny87swb8ay79r1lgghzfzrd7fzx7nc7wqw4zb15akbj"))))
     (properties `((upstream-name . "myClim")))
     (build-system r-build-system)
     (arguments
@@ -810,6 +810,35 @@ in spatiotemporal event data, introduced by Schutte and Donnay (2014)
      "Rudimentary functions for sampling and calculating density from the
 matrix-variate variance-gamma distribution.")
     (license license:expat)))
+
+(define-public r-mvtweedie
+  (package
+    (name "r-mvtweedie")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvtweedie" version))
+       (sha256
+        (base32 "0gdxfy55fgjqj5yh078h80g90z18nnwfdc2s4iyj218k21z96cp5"))))
+    (properties `((upstream-name . "mvtweedie")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble))
+    (native-inputs (list r-knitr))
+    (home-page "https://james-thorson-noaa.github.io/mvtweedie/")
+    (synopsis "Estimate Diet Proportions Using Multivariate Tweedie Model")
+    (description
+     "Defines predict function that transforms output from a Tweedie Generalized
+Linear Mixed Model (using @code{glmmTMB}'), Generalized Additive Model (using
+mgcv'), or spatio-temporal Generalized Linear Mixed Model (using package
+@code{tinyVAST}'), and returns predicted proportions (and standard errors)
+across a grouping variable from an equivalent multivariate-logit Tweedie model.
+These predicted proportions can then be used for standard plotting and
+diagnostics.  See Thorson et al.  2022 <doi:10.1002/ecy.3637>.")
+    (license license:gpl3)))
 
 (define-public r-mvtsplot
   (package
@@ -11272,13 +11301,13 @@ parallel using @code{mclapply()} or @code{future_lapply()}
 (define-public r-mrg
   (package
     (name "r-mrg")
-    (version "0.3.21")
+    (version "0.3.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRG" version))
        (sha256
-        (base32 "1pirlj9jjzhk3lmdya304ql3qvygr11cc8nd737g4rvs6ifzmmhf"))))
+        (base32 "0ifjlsj7avmdrasq36zay59w6ncm0jiaamjzwgwrri90g9rs318g"))))
     (properties `((upstream-name . "MRG")))
     (build-system r-build-system)
     (arguments
@@ -11842,13 +11871,13 @@ used functions from data analysis packages.")
 (define-public r-mram
   (package
     (name "r-mram")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRAM" version))
        (sha256
-        (base32 "1ffn5cni3jb1kikbbsx0cr8jmwr840n5zzasmzgnh7xf9wzihb6c"))))
+        (base32 "01p8g1bqm652aa5mbcm6732v7wjb8ydd6w46lxhrgj9r28hkh8aa"))))
     (properties `((upstream-name . "MRAM")))
     (build-system r-build-system)
     (arguments
@@ -11859,18 +11888,19 @@ used functions from data analysis packages.")
     (synopsis "Multivariate Regression Association Measure")
     (description
      "Implementations of an estimator for the multivariate regression association
-measure (MRAM) proposed in Shih and Chen (2025) <in revision> and its associated
-variable selection algorithm.  The MRAM quantifies the predictability of a
-random vector Y from a random vector X given a random vector Z. It takes the
-maximum value 1 if and only if Y is almost surely a measurable function of X and
-Z, and the minimum value of 0 if Y is conditionally independent of X given Z.
-The MRAM generalizes the Kendall's tau copula correlation ratio proposed in Shih
-and Emura (2021) <doi:10.1016/j.jmva.2020.104708> by employing the spatial sign
-function.  The estimator is based on the nearest neighbor method, and the
-associated variable selection algorithm is adapted from the feature ordering by
-conditional independence (FOCI) algorithm of Azadkia and Chatterjee (2021)
+measure (MRAM) proposed in Shih and Chen (2026) <doi:10.1016/j.csda.2025.108288>
+and its associated variable selection algorithm.  The MRAM quantifies the
+predictability of a random vector Y from a random vector X given a random vector
+Z. It takes the maximum value 1 if and only if Y is almost surely a measurable
+function of X and Z, and the minimum value of 0 if Y is conditionally
+independent of X given Z. The MRAM generalizes the Kendall's tau copula
+correlation ratio proposed in Shih and Emura (2021)
+<doi:10.1016/j.jmva.2020.104708> by employing the spatial sign function.  The
+estimator is based on the nearest neighbor method, and the associated variable
+selection algorithm is adapted from the feature ordering by conditional
+independence (FOCI) algorithm of Azadkia and Chatterjee (2021)
 <doi:10.1214/21-AOS2073>.  For further details, see the paper Shih and Chen
-(2025) <in revision>.")
+(2026) <doi:10.1016/j.csda.2025.108288>.")
     (license license:gpl2)))
 
 (define-public r-mr-rgm
@@ -11937,6 +11967,39 @@ estimator accounts for weak instruments and balanced horizontal pleiotropy
 simultaneously.  See Xu S., Wang P., Fung W.K. and Liu Z. (2022)
 <doi:10.1111/biom.13732>.")
     (license license:gpl2)))
+
+(define-public r-mr-mashr
+  (package
+    (name "r-mr-mashr")
+    (version "0.3.44")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mr.mashr" version))
+       (sha256
+        (base32 "1k0pkdc5schf456ycfjs8xajvwqc10j6ca1rz8q3lvk321kc9dib"))))
+    (properties `((upstream-name . "mr.mashr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-matrixstats
+                             r-matrix
+                             r-mashr
+                             r-flashier
+                             r-ebnm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stephenslab/mr.mashr")
+    (synopsis "Multiple Regression with Multivariate Adaptive Shrinkage")
+    (description
+     "This package provides an implementation of methods for multivariate multiple
+regression with adaptive shrinkage priors as described in F. Morgante et al
+(2023) <doi:10.1371/journal.pgen.1010539>.")
+    (license license:expat)))
 
 (define-public r-mqrcm
   (package
@@ -20817,13 +20880,13 @@ side.  The user must have adequate credentials.  Please see
 (define-public r-mlspatial
   (package
     (name "r-mlspatial")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlspatial" version))
        (sha256
-        (base32 "15j0fs7rgn5nq85drl050r2bsingd06fl7ydilqj7s8c2g13sf3p"))))
+        (base32 "1j7k2p3362n5kqz0w2fd54j89jq2fbpsp6xwpn3jcqhzd6w3sc1f"))))
     (properties `((upstream-name . "mlspatial")))
     (build-system r-build-system)
     (arguments

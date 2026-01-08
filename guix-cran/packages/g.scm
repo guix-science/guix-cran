@@ -4205,13 +4205,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 (define-public r-grpnet
   (package
     (name "r-grpnet")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpnet" version))
        (sha256
-        (base32 "14zanvaxsr04w3giczrn4qjr2lg1kbmg5hjwdmw865f4c107dr99"))))
+        (base32 "1wd92skmm8ci7mscc4yh069rn7wrgrkv64xa2fzkhi6ykzsf5gwf"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
     (arguments
@@ -4227,12 +4227,13 @@ group elastic net penalties as described in Helwig (2025)
 group SCAD with an optional group ridge penalty.  Computes the regularization
 path for linear regression (gaussian), multivariate regression (multigaussian),
 smoothed support vector machines (svm1), squared support vector machines (svm2),
-logistic regression (binomial), multinomial logistic regression (multinomial),
-log-linear count regression (poisson and negative.binomial), and log-linear
-continuous regression (gamma and inverse gaussian).  Supports default and
-formula methods for model specification, k-fold cross-validation for tuning the
-regularization parameters, and nonparametric regression via tensor product
-reproducing kernel (smoothing spline) basis function expansion.")
+logistic regression (binomial), proportional odds logistic regression (ordinal),
+multinomial logistic regression (multinomial), log-linear count regression
+(poisson and negative.binomial), and log-linear continuous regression (gamma and
+inverse gaussian).  Supports default and formula methods for model
+specification, k-fold cross-validation for tuning the regularization parameters,
+and nonparametric regression via tensor product reproducing kernel (smoothing
+spline) basis function expansion.")
     (license license:gpl2+)))
 
 (define-public r-grplasso
@@ -12504,13 +12505,13 @@ diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
 (define-public r-gmwmx2
   (package
     (name "r-gmwmx2")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmwmx2" version))
        (sha256
-        (base32 "0rvjp2k8iw1pijnn2q3r8ls87rrc5p0fvwj2b71km6mm2l9p00km"))))
+        (base32 "0pcyc5mq3an1ysssgvszsgdxl7006zd26nx8nb3f6shnhdxchrxi"))))
     (properties `((upstream-name . "gmwmx2")))
     (build-system r-build-system)
     (arguments
@@ -34915,13 +34916,13 @@ measurements.")
 (define-public r-gaselect
   (package
     (name "r-gaselect")
-    (version "1.0.24")
+    (version "1.0.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaselect" version))
        (sha256
-        (base32 "0k9wbzz2g7i7big9bixrbn1zxa4dcwaysrvanmm71ald4d66lrv5"))))
+        (base32 "0h0cyg5rwwwz34s2phmwijlh7hkyxylb29lmwvpqrjwmwqrrpfjr"))))
     (properties `((upstream-name . "gaselect")))
     (build-system r-build-system)
     (arguments

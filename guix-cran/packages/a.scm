@@ -623,13 +623,13 @@ submit events.")
 (define-public r-azr
   (package
     (name "r-azr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azr" version))
        (sha256
-        (base32 "13cmj7zaslfz9hvrlcg0hb6ic7v38z392nn8xazf0chvgrhq676f"))))
+        (base32 "1fkg0hjkd6ml1ks9nwj9w1ki8n0rla7dsy21yfarh2mai1bwi357"))))
     (properties `((upstream-name . "azr")))
     (build-system r-build-system)
     (arguments
@@ -3583,33 +3583,19 @@ morphological analyzer and the NEologd (Neologism dictionary for @code{MeCab}').
 (define-public r-audrex
   (package
     (name "r-audrex")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "audrex" version))
        (sha256
-        (base32 "1ifijkbqvdjp1si14p80mbqhq7sby8qgzr181agm3da1nkmic3vp"))))
+        (base32 "06ymzq3a0iqkq3zpm9n53mfp34fr3yb8pycnvkcqizgb2h00ygz2"))))
     (properties `((upstream-name . "audrex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-tictoc
-                             r-stringr
-                             r-scales
-                             r-readr
-                             r-rbayesianoptimization
-                             r-purrr
-                             r-narray
-                             r-moments
-                             r-modeest
-                             r-metrics
-                             r-lubridate
-                             r-imputets
-                             r-ggplot2
-                             r-fancova))
+    (propagated-inputs (list r-xgboost r-imputets))
     (home-page "https://rpubs.com/giancarlo_vercellino/audrex")
     (synopsis "Automatic Dynamic Regression using Extreme Gradient Boosting")
     (description
@@ -11211,13 +11197,13 @@ methods can be found in Quatto P, Margaritella N, et al. (2019)
 (define-public r-apexcharter
   (package
     (name "r-apexcharter")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apexcharter" version))
        (sha256
-        (base32 "1pw36j2b9ypi8gwkc5vgknsbz88ich5d71cpq7rj9xrrkdwh04jn"))))
+        (base32 "10zl3cgnxvm6496xir86rl2n65sz49bgz3cvhh1zw9b8h6qx92ah"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
     (arguments

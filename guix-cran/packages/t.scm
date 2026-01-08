@@ -3631,6 +3631,40 @@ M-estimator of the long-memory parameter d based on the robustification of the
 GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.")
     (license license:gpl2+)))
 
+(define-public r-tsqca
+  (package
+    (name "r-tsqca")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TSQCA" version))
+       (sha256
+        (base32 "0gzy202lra5bcdi7f2fzavsa6spnrg2qrb2q2bigmbki0539ryij"))))
+    (properties `((upstream-name . "TSQCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qca))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/im-research-yt/TSQCA")
+    (synopsis
+     "Threshold Sweep Extensions for Qualitative Comparative Analysis")
+    (description
+     "This package provides threshold sweep methods for Qualitative Comparative
+Analysis (QCA).  Implements Condition Threshold Sweep-Single (CTS-S), Condition
+Threshold Sweep-Multiple (CTS-M), Outcome Threshold Sweep (OTS), and Dual
+Threshold Sweep (DTS) for systematic exploration of threshold calibration
+effects on crisp-set QCA results.  These methods extend traditional robustness
+approaches by treating threshold variation as an exploratory tool for
+discovering causal structures.  Built on top of the QCA package by Dusa (2019)
+<doi:10.1007/978-3-319-75668-4>, with function arguments following QCA
+conventions.  Based on set-theoretic methods by Ragin (2008)
+<doi:10.7208/chicago/9780226702797.001.0001> and established robustness
+protocols by Rubinson et al. (2019) <doi:10.1177/00491241211036158>.")
+    (license license:expat)))
+
 (define-public r-tspredit
   (package
     (name "r-tspredit")
@@ -9578,13 +9612,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traumar
   (package
     (name "r-traumar")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traumar" version))
        (sha256
-        (base32 "036q0n6qavjjk04c2xirfnvj46b3lxcq1cbkg5qqxcvd8bjrmnjh"))))
+        (base32 "1z4lbsh76vrqm64g3wqj7qhq0mwzyz4jn99mc7fs6j86c325dbi6"))))
     (properties `((upstream-name . "traumar")))
     (build-system r-build-system)
     (arguments
@@ -20274,38 +20308,6 @@ MPlus software via the @code{MplusAutomation} package.")
     (synopsis "Logging for 'dplyr' and 'tidyr' Functions")
     (description
      "This package provides feedback about dplyr and tidyr operations.")
-    (license license:expat)))
-
-(define-public r-tidylo
-  (package
-    (name "r-tidylo")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidylo" version))
-       (sha256
-        (base32 "07xnbycwrqg3cmbxx76drbjd0mx4s23vf3kihlc9rj4ajjx48z8r"))))
-    (properties `((upstream-name . "tidylo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://juliasilge.github.io/tidylo/")
-    (synopsis "Weighted Tidy Log Odds Ratio")
-    (description
-     "How can we measure how the usage or frequency of some feature, such as words,
-differs across some group or set, such as documents? One option is to use the
-log odds ratio, but the log odds ratio alone does not account for sampling
-variability; we haven't counted every feature the same number of times so how do
-we know which differences are meaningful? Enter the weighted log odds, which
-tidylo provides an implementation for, using tidy data principles.  In
-particular, here we use the method outlined in Monroe, Colaresi, and Quinn
-(2008) <doi:10.1093/pan/mpn018> to weight the log odds ratio by a prior.  By
-default, the prior is estimated from the data itself, an empirical Bayes
-approach, but an uninformative prior is also available.")
     (license license:expat)))
 
 (define-public r-tidyllm

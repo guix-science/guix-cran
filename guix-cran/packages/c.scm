@@ -15680,13 +15680,13 @@ the Earth including buildings, infrastructure and vegetation.")
 (define-public r-copernicusclimate
   (package
     (name "r-copernicusclimate")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusClimate" version))
        (sha256
-        (base32 "0wvkbi6wv2g73ryij7aiyh8y1pr4g08fqjpdvrrj6af602y8mmka"))))
+        (base32 "0plcw755l48yh01s3n077wscrgsvi2gnbsi2cd6ys43l363ndc5w"))))
     (properties `((upstream-name . "CopernicusClimate")))
     (build-system r-build-system)
     (arguments
@@ -18636,13 +18636,13 @@ The application uses the lavaan package (Rosseel, 2012) to run CFAs.")
 (define-public r-conleyreg
   (package
     (name "r-conleyreg")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conleyreg" version))
        (sha256
-        (base32 "115zzzxfrs9jm2cnx883qfjx0p81r6qjb9rx4z5wsxjiyhb46jvw"))))
+        (base32 "1ai7i7m8f1mbj3hskbj9vk9ywid3c96939qlr0cfyvk0f71zj2vc"))))
     (properties `((upstream-name . "conleyreg")))
     (build-system r-build-system)
     (arguments
@@ -22065,13 +22065,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.10.1")
+    (version "4.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareGroups" version))
        (sha256
-        (base32 "0mcri02lwwv1wgh5vjl2gn64qsh5c4d8gkm074al1x2c89sbbxy8"))))
+        (base32 "00aabrb3n4jvxg9n45smkfdhmwwq3nqmk5p037r4nipfiysb5va2"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (arguments
@@ -29164,6 +29164,46 @@ matching are implemented.  Both algorithms provide causal estimates with
 cluster-adjusted estimates of standard errors.")
     (license license:gpl2)))
 
+(define-public r-cmars
+  (package
+    (name "r-cmars")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cmaRs" version))
+       (sha256
+        (base32 "0krmqh1yj0kg8hz5h40chhwma7p6m65xff35qx2zlnmq99f21wqb"))))
+    (properties `((upstream-name . "cmaRs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-ryacas
+                             r-rocr
+                             r-rmosek
+                             r-mpv
+                             r-matrix
+                             r-earth
+                             r-auc))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cmaRs")
+    (synopsis
+     "Implementation of the Conic Multivariate Adaptive Regression Splines in R")
+    (description
+     "An implementation of Conic Multivariate Adaptive Regression Splines (CMARS) in
+R. See Weber et al. (2011) CMARS: a new contribution to nonparametric regression
+with multivariate adaptive regression splines supported by continuous
+optimization, <DOI:10.1080/17415977.2011.624770>.  It constructs models by using
+the terms obtained from the forward step of MARS and then estimates parameters
+by using Tikhonov regularization and conic quadratic optimization.  It is
+possible to construct models for prediction and binary classification.  It
+provides performance measures for the model developed.  The package needs the
+optimisation software MOSEK <https://www.mosek.com/> to construct the models.
+Please follow the instructions in Rmosek for the installation.")
+    (license license:gpl2+)))
+
 (define-public r-cmapviz
   (package
     (name "r-cmapviz")
@@ -35745,6 +35785,35 @@ circular silhouette can be maximized to find the optimal number of circular
 clusters; it can also be used to estimate the period of noisy periodical data.")
     (license license:lgpl3+)))
 
+(define-public r-circularkde
+  (package
+    (name "r-circularkde")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "circularKDE" version))
+       (sha256
+        (base32 "1s6bh7v8r080vkzgm18qpmrk16nqvsq2fq1wxi73jcjb0gg32mik"))))
+    (properties `((upstream-name . "circularKDE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli r-circular))
+    (home-page "https://github.com/stazam/circularKDE")
+    (synopsis "Recent Methods for Kernel Density Estimation of Circular Data")
+    (description
+     "This package provides recent kernel density estimation methods for circular
+data, including adaptive and higher-order techniques.  The implementation is
+based on recent advances in bandwidth selection and circular smoothing.  Key
+methods include adaptive bandwidth selection methods by ZÃ¡meÄnÃ­k et al.
+(2024) <doi:10.1007/s00180-023-01401-0>, complete cross-validation by HasilovÃ¡
+et al. (2024) <doi:10.59170/stattrans-2024-024>, Fourier-based plug-in rules by
+Tenreiro (2022) <doi:10.1080/10485252.2022.2057974>, and higher-order kernels by
+Tsuruta & Sagae (2017) <doi:10.1016/j.spl.2017.08.003>.")
+    (license license:gpl2)))
+
 (define-public r-circularev
   (package
     (name "r-circularev")
@@ -37089,13 +37158,13 @@ implemented for comparison.")
 (define-public r-cici
   (package
     (name "r-cici")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICI" version))
        (sha256
-        (base32 "0a8w773kd9d1x4x40jd32ckbk5kh1d6bj3ph4b7dpckjrxqlf417"))))
+        (base32 "1dvlixky04mm0cv59vb88m9fz5kq36k51fr0gg7rlg9nr52lqwv7"))))
     (properties `((upstream-name . "CICI")))
     (build-system r-build-system)
     (arguments
@@ -37183,13 +37252,13 @@ standard errors (Pawel et al., 2022) <doi:10.48550/@code{arXiv.2206.12290>}.")
 (define-public r-cicalc
   (package
     (name "r-cicalc")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cicalc" version))
        (sha256
-        (base32 "1sv3rg89ycqkm3y8ci3xmnhcwzpa3cw5jzfhfa1qyjbisk1wbqfa"))))
+        (base32 "1r7yszw563jzn8whj8szpl39p9xrc2x05k8835rfgr5b3lpazfyp"))))
     (properties `((upstream-name . "cicalc")))
     (build-system r-build-system)
     (arguments
@@ -37208,7 +37277,7 @@ standard errors (Pawel et al., 2022) <doi:10.48550/@code{arXiv.2206.12290>}.")
     (description
      "This calculates a variety of different CIs for proportions and difference of
 proportions that are commonly used in the pharmaceutical industry including
-Wald, Wilson, Clopper-Pearson, Agresti-Coull and Jeffreys for proprotions.  And
+Wald, Wilson, Clopper-Pearson, Agresti-Coull and Jeffreys for proportions.  And
 Miettinen-Nurminen (1985) <doi:10.1002/sim.4780040211>, Wald, Haldane, and Mee
 <https://www.lexjansen.com/wuss/2016/127_Final_Paper_PDF.pdf> for difference in
 proportions.")

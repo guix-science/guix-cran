@@ -4317,13 +4317,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irfcb
   (package
     (name "r-irfcb")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iRfcb" version))
        (sha256
-        (base32 "0919xgjsq7ybfii7xcnz4y0z826jjyrbhzp2irya16k1dhzf5ma3"))))
+        (base32 "1bwzzv9mbhj1ca9jxyp76a40y0pq96qw3h1yb3ykh307f0rpd9y7"))))
     (properties `((upstream-name . "iRfcb")))
     (build-system r-build-system)
     (arguments
@@ -4353,7 +4353,7 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 and analyzing data from the IFCB. I R @code{FlowCytobot} ('@code{iRfcb}')
 supports quality control, geospatial analysis, and preparation of IFCB data for
 publication in databases like <https://www.gbif.org>, <https://www.obis.org>,
-<https://emodnet.ec.europa.eu/en>, <https://shark.smhi.se/>, and
+<https://emodnet.ec.europa.eu/en>, <https://shark.smhi.se/en/>, and
 <https://www.ecotaxa.org>.  The package integrates with the MATLAB ifcb-analysis
 tool, which is described in Sosik and Olson (2007) <doi:10.4319/lom.2007.5.204>,
 and provides features for working with raw, manually classified, and machine
@@ -8728,26 +8728,29 @@ focus on data validation and data documentation.")
 (define-public r-inteli
   (package
     (name "r-inteli")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inteli" version))
        (sha256
-        (base32 "1lbfqqr3dfcad11s8h3px98185zj9hnhyilxclcc6791kkgdc2ss"))))
+        (base32 "0ag3ibps50zqydq9h0xlnnh8i1c9k941681d9zhq7cq6h6i1x9mn"))))
     (properties `((upstream-name . "inteli")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=inteli")
-    (synopsis
-     "Interval Estimation by Likelihoodist (LI) Compared to Frequentist (CI)")
+    (synopsis "Interval Estimation by Likelihood Method")
     (description
-     "Parameter estimation via likelihood interval (LI) compared to traditional method
-(CI).  This is the expanded version for LBI'- and wnl'-package, formulated by
-Kyun-Seop Bae <k@@acr.kr>.")
-    (license license:expat)))
+     "Currently used CI method has its limitation when the test statistics are
+asymmetrical (chi-square test, F-test) or the model functions are non-linear.
+It can be overcome by using the likelihood functions for the interval
+estimation.  inteli package now supports interval estimation for the mean,
+variance, variance ratio, binomial distribution, Poisson distribution, odds
+ratio, risk difference, relative risk and their likelihood function plots.
+Testing functions are also provided.")
+    (license license:gpl3+)))
 
 (define-public r-integratedjm
   (package

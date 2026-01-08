@@ -4385,13 +4385,13 @@ Simple AWT and Swing implementations are included.")
 (define-public r-jatsdecoder
   (package
     (name "r-jatsdecoder")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JATSdecoder" version))
        (sha256
-        (base32 "13cxqbxi83j2hblncv3s8vg7jp1a8cyw20yaa3s5x0a9fx8m6s3p"))))
+        (base32 "1glc8jr65255qgb2p60zz4fcy8v9xrj9cwrazz8a7kpgg0l128x8"))))
     (properties `((upstream-name . "JATSdecoder")))
     (build-system r-build-system)
     (arguments

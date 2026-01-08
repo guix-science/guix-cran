@@ -2312,19 +2312,19 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "0x11ad2dl6wm2frkzxs52mv1s1qfrg2jwqmff71hfw066n78x2lc"))))
+        (base32 "03j91glr35fhy386pshd1sxnzmdcs80p12xms5gdas5sxblvpd3k"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spdep r-sf r-lubridate))
+    (propagated-inputs (list r-zoo r-strucchange r-spdep r-sf r-lubridate))
     (home-page "https://cran.r-project.org/package=swash")
     (synopsis "Swash-Backwash Model for the Single Epidemic Wave")
     (description
@@ -2332,8 +2332,10 @@ formats as well as other swatch file formats can be found at
 Haggett (2006) <doi:10.1007/s10109-006-0027-8> to model the velocity of spread
 of infectious diseases across space.  This package enables the calculation of
 the Swash-Backwash Model for user-supplied panel data on regional infections.
-The package also provides additional functions for bootstrap confidence
-intervals, country comparison, visualization of results, and data management.")
+The package provides additional functions for bootstrap confidence intervals,
+country comparison, visualization of results, and data management.  Furthermore,
+it contains several functions for analysis and visualization of (spatial)
+infection data.")
     (license license:gpl2+)))
 
 (define-public r-swarmverse
@@ -6042,13 +6044,13 @@ Development Team (2021) <https://mc-stan.org>; Theil (1972, ISBN:0-444-10378-3).
 (define-public r-survdnn
   (package
     (name "r-survdnn")
-    (version "0.7.0")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survdnn" version))
        (sha256
-        (base32 "1zcabz2pavx5cnakspippa5jzi1zcx0viwxfib82s424sh4dz7wn"))))
+        (base32 "0kwd4np37fhh3a7hnq33zvf6ljc5fyk43si3jfp0z5i6aihy618k"))))
     (properties `((upstream-name . "survdnn")))
     (build-system r-build-system)
     (arguments
@@ -6065,7 +6067,7 @@ Development Team (2021) <https://mc-stan.org>; Theil (1972, ISBN:0-444-10378-3).
                              r-dplyr
                              r-cli))
     (home-page "https://github.com/ielbadisy/survdnn")
-    (synopsis "Deep Neural Networks for Survival Analysis using 'torch'")
+    (synopsis "Deep Neural Networks for Survival Analysis with R 'torch'")
     (description
      "This package provides deep learning models for right-censored survival data
 using the torch backend.  Supports multiple loss functions, including Cox
@@ -6529,13 +6531,13 @@ Effect\" Biometrics, 75(4):1253-1263. <doi:10.1111/biom.13067>.")
 (define-public r-surrogateseq
   (package
     (name "r-surrogateseq")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateSeq" version))
        (sha256
-        (base32 "0s5wh40fxa9y6nq1valarr97bgwabviwsj4jl02rsgibd3v7aj47"))))
+        (base32 "08qnb1wvdf9a496vljfcfaqf3y1g0i0l4qfycbf2vzgjcixqxg4g"))))
     (properties `((upstream-name . "SurrogateSeq")))
     (build-system r-build-system)
     (arguments
@@ -6550,7 +6552,9 @@ Effect\" Biometrics, 75(4):1253-1263. <doi:10.1111/biom.13067>.")
 allow for early stopping to declare efficacy using a surrogate marker and the
 possibility of futility stopping.  More details are available in: Parast, L. and
 Bartroff, J (2024) <doi:10.1093/biomtc/ujae108>.  A tutorial for this package
-can be found at <https://laylaparast.com/home/@code{SurrogateSeq.html>}.")
+can be found at <https://www.laylaparast.com/surrogateseq>.  A Shiny App
+implementing the methods can be found at
+<https://parastlab.shinyapps.io/@code{SurrogateSeqApp/>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-surrogateregression
@@ -6788,13 +6792,13 @@ diagnostics.")
 (define-public r-surprisalanalysis
   (package
     (name "r-surprisalanalysis")
-    (version "0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurprisalAnalysis" version))
        (sha256
-        (base32 "0cnw9lrbn40h040qnxblcniswhhy3a49zwv0ab9i08lynwjkh9g3"))))
+        (base32 "1i9kpljzzfic4mchw5y77i598qffqrnjn4h3n1jq18i8q8aphm7g"))))
     (properties `((upstream-name . "SurprisalAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -6808,10 +6812,7 @@ diagnostics.")
                              r-shinycssloaders
                              r-shiny
                              r-patchwork
-                             r-org-mm-eg-db
-                             r-org-hs-eg-db
                              r-matlib
-                             r-latex2exp
                              r-httpuv
                              r-ggplot2
                              r-dt
@@ -14504,13 +14505,13 @@ shared frailty gamma-Weibull models.  Sjolander, A. (2016)
 (define-public r-stdmod
   (package
     (name "r-stdmod")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stdmod" version))
        (sha256
-        (base32 "1vr4r62hyikpj0kg4rzhbj3jp2aaqxk7khj0v1afwz28lsdxjp9k"))))
+        (base32 "109nhjf49yqxphfnxqkrppldmyy96bfrdxg2pa778l9v8dxahc9y"))))
     (properties `((upstream-name . "stdmod")))
     (build-system r-build-system)
     (arguments
@@ -19736,13 +19737,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "14yc2gsabzjp2sfdsr515v0wm4p21v9nc9dihw4g45rhkv07l57x"))))
+        (base32 "18pprbh600igc219nvi53w3cg48zxk636804iyg1wryy5zdsj7s6"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -27344,13 +27345,13 @@ demanding scenarios.")
 (define-public r-spbfa
   (package
     (name "r-spbfa")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spBFA" version))
        (sha256
-        (base32 "1zv3xi1qh9fkjws7dyak8j856daiqlrymx304gbggmrlxi0khv2s"))))
+        (base32 "0ks6jdh25y369mahgyvhcnmj7kyysk2amwqy0z8d73vbkg36asd5"))))
     (properties `((upstream-name . "spBFA")))
     (build-system r-build-system)
     (arguments
@@ -31815,13 +31816,13 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
 (define-public r-sourcoise
   (package
     (name "r-sourcoise")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sourcoise" version))
        (sha256
-        (base32 "0xyfqxfhi37zgf0c6sqqgsq45ykqpsx2j9w3pyn6mwkq2fhx1x3s"))))
+        (base32 "0n4zr2hyihaks6hzk9vbv3g3zb17kzjrwsv32dm141zxm920m403"))))
     (properties `((upstream-name . "sourcoise")))
     (build-system r-build-system)
     (arguments
@@ -31830,11 +31831,9 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-scales
                              r-rprojroot
                              r-rlang
                              r-rcppsimdjson
-                             r-quarto
                              r-qs2
                              r-purrr
                              r-memoise
@@ -33212,6 +33211,26 @@ based Anomaly Detection (Liu, Ting and Zhou <doi:10.1145/2133360.2133363>).")
 culminates.  Provides functions for computing sun position and times of sunrise
 and sunset.")
     (license license:gpl3)))
+
+(define-public r-solarpos
+  (package
+    (name "r-solarpos")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "solarPos" version))
+       (sha256
+        (base32 "0004da7vqpq14q5lhs8vyvjl99j8gzxd5wrlw5d1vwfns3ica0q5"))))
+    (properties `((upstream-name . "solarPos")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=solarPos")
+    (synopsis "Solar Position Algorithm for Solar Radiation Applications")
+    (description "Calculation of solar zenith and azimuth angles.")
+    (license license:gpl2)))
 
 (define-public r-solar
   (package
@@ -39162,6 +39181,50 @@ switch between regions of the images.  This can be especially useful for image
 comparison of the same region at different time stamps.")
     (license license:expat)))
 
+(define-public r-slideimp
+  (package
+    (name "r-slideimp")
+    (version "0.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "slideimp" version))
+       (sha256
+        (base32 "1mi7racfaf9l97qd5kd3wrwlfx25wr1p1m22d865hs1y1pmnxvps"))))
+    (properties `((upstream-name . "slideimp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rcppensmallen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-mlpack
+                             r-mirai
+                             r-collapse
+                             r-checkmate
+                             r-bigmemory))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hhp94/slideimp")
+    (synopsis "Numeric Matrices K-NN and PCA Imputation")
+    (description
+     "Fast k-nearest neighbors (K-NN) and principal component analysis (PCA)
+imputation algorithms for missing values in high-dimensional numeric matrices,
+i.e., epigenetic data.  For extremely high-dimensional data with ordered
+features, a sliding window approach for K-NN or PCA imputation is provided.
+Additional features include group-wise imputation (e.g., by chromosome),
+hyperparameter tuning with repeated cross-validation, multi-core
+parallelization, and optional subset imputation.  The K-NN algorithm is
+described in: Hastie, T., Tibshirani, R., Sherlock, G., Eisen, M., Brown, P. and
+Botstein, D. (1999) \"Imputing Missing Data for Gene Expression Arrays\".  The PCA
+imputation is an optimized version of the @code{imputePCA()} function from the
+@code{missMDA} package described in: Josse, J. and Husson, F. (2016)
+<doi:10.18637/jss.v070.i01> \"@code{missMDA}: A Package for Handling Missing
+Values in Multivariate Data Analysis\".")
+    (license license:gpl2+)))
+
 (define-public r-slidecna
   (package
     (name "r-slidecna")
@@ -42775,23 +42838,19 @@ details on choice experiments see Mariel et al. (2021)
 (define-public r-simulariatools
   (package
     (name "r-simulariatools")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simulariatools" version))
        (sha256
-        (base32 "0f4dv8rpny9lad6818vbln8d02d8asqip4ddwm7wfpdldzkb3m6g"))))
+        (base32 "1fkj9d5rcar5s2nm2wf442n45kk0pimqq6bihvymjqplfkl2hwig"))))
     (properties `((upstream-name . "simulariatools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-scales
-                             r-reticulate
-                             r-reshape2
-                             r-lubridate
+    (propagated-inputs (list r-terra r-scales r-reticulate r-lubridate
                              r-ggplot2))
     (home-page "https://www.simularia.it/simulariatools/")
     (synopsis "Simularia Tools for the Analysis of Air Pollution Data")
@@ -70806,13 +70865,13 @@ simulating POMDP problems and their solutions.")
 (define-public r-sars
   (package
     (name "r-sars")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sars" version))
        (sha256
-        (base32 "042fk7x05wpr9bf0zx367w8ncffgm6drfg1a0cjqagdbj31vgjcn"))))
+        (base32 "06fzfi2vqm7z7rv297jwi38r11b2fj4fk5mxsb63vav5g6qwpdi9"))))
     (properties `((upstream-name . "sars")))
     (build-system r-build-system)
     (arguments

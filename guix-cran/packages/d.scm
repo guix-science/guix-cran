@@ -4476,6 +4476,41 @@ trials.  For details of the methodology, please refer to D.O. Dixon and R. Simon
 (1991), Biometrics, 47: 871-881.")
     (license license:gpl2+)))
 
+(define-public r-dsbaseclient
+  (package
+    (name "r-dsbaseclient")
+    (version "6.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsBaseClient" version))
+       (sha256
+        (base32 "198kbxfajcf1jny3ja9fld7s9jbh8jlmxx515ism65jjls78bv7c"))))
+    (properties `((upstream-name . "dsBaseClient")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-metafor
+                             r-meta
+                             r-gridextra
+                             r-ggplot2
+                             r-fields
+                             r-dsi
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=dsBaseClient")
+    (synopsis "'DataSHIELD' Client Side Base Functions")
+    (description
+     "Base @code{DataSHIELD} functions for the client side. @code{DataSHIELD} is a
+software package which allows you to do non-disclosive federated analysis on
+sensitive data. @code{DataSHIELD} analytic functions have been designed to only
+share non disclosive summary statistics, with built in automated output checking
+based on statistical disclosure control.  With data sites setting the threshold
+values for the automated output checks.  For more details, see
+citation('@code{dsBaseClient}').")
+    (license license:gpl3)))
+
 (define-public r-dsbase
   (package
     (name "r-dsbase")
@@ -25121,6 +25156,46 @@ editing.  Deducer works best when used with the Java based R GUI JGR, but the
 dialogs can be called from the command line.  Dialogs have also been integrated
 into the Windows Rgui.")
     (license license:gpl2)))
+
+(define-public r-dedooser
+  (package
+    (name "r-dedooser")
+    (version "2.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DedooseR" version))
+       (sha256
+        (base32 "1s4v3dx7hzisxnz7nrvrbis3f2qcms1sf1liwhkmka1klq9461yc"))))
+    (properties `((upstream-name . "DedooseR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordcloud2
+                             r-tidytext
+                             r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-openxlsx
+                             r-labelled
+                             r-knitr
+                             r-kableextra
+                             r-igraph
+                             r-haven
+                             r-ggraph
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DedooseR")
+    (synopsis "Monitoring and Analyzing Dedoose Qualitative Data Exports")
+    (description
+     "Streamlines analysis of qualitative data exported from Dedoose.  Supports
+monitoring thematic saturation, calculating code frequencies, organizing
+excerpts, generating dynamic codebooks, and producing code network maps within
+R.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-decp
   (package

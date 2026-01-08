@@ -1378,13 +1378,13 @@ performance.")
 (define-public r-rvolleydata
   (package
     (name "r-rvolleydata")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvolleydata" version))
        (sha256
-        (base32 "0ial32a92j0srakxmdhfcpy404vcj5lpd6qbhpyymnlwf4h15ajx"))))
+        (base32 "16l9nld7dagmxmj4yrp7kk6gk8lb827yx13lnw17gghslcxjb2y1"))))
     (properties `((upstream-name . "rvolleydata")))
     (build-system r-build-system)
     (arguments
@@ -1397,8 +1397,8 @@ performance.")
      "Extract Data from Professional Volleyball Leagues in North America")
     (description
      "Gather boxscore, play-by-play, and auxiliary data from Major League Volleyball
-(MLV) <https://provolleyball.com>, League One Volleyball Pro (LOVB Pro)
-<https://www.lovb.com/pro-league>, and Athletes Unlimited Pro Volleyball
+(MLV) <https://provolleyball.com>, League One Volleyball Pro (LOVB)
+<https://www.lovb.com/pro-league>, and Athletes Unlimited Pro Volleyball (AU)
 <https://auprosports.com/volleyball/> to create a repository of basic and
 advanced statistics for teams and players.")
     (license license:expat)))
@@ -9098,13 +9098,13 @@ errors, e.g., clustered errors, or doubly-clustered errors.")
 (define-public r-rrgeo
   (package
     (name "r-rrgeo")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRgeo" version))
        (sha256
-        (base32 "1dnj5pp09lyfvcc1s2wmz5armdh68k6flhnvn29irnn5fwr9kfsl"))))
+        (base32 "0dr1hpb47yqqnnl7z53l0ya9vd8mdpp4jfw132yn0jchfan4740p"))))
     (properties `((upstream-name . "RRgeo")))
     (build-system r-build-system)
     (arguments
@@ -9171,13 +9171,13 @@ supported by National Institutes of Health grants R37 GM-046255.")
 (define-public r-rrepest
   (package
     (name "r-rrepest")
-    (version "1.5.4")
+    (version "1.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrepest" version))
        (sha256
-        (base32 "0p4iki9xhk8skal1hdpm2756vkd5gaslipi8ig6ycx6bmnmbv41h"))))
+        (base32 "0nmp2bhp37zpljlw6ja42fypy3c1f48lqz1fkrkq71fqhfaymnyv"))))
     (properties `((upstream-name . "Rrepest")))
     (build-system r-build-system)
     (arguments
@@ -9186,6 +9186,7 @@ supported by National Institutes of Health grants R37 GM-046255.")
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-purrr
                              r-officer
                              r-magrittr
@@ -11793,6 +11794,40 @@ birth-death-shift model.  It leverages belief propagation techniques to
 calculate branch-specific diversification rates, see Kopperud & Hoehna (2025)
 <doi:10.1093/sysbio/syaf041>.")
     (license license:expat)))
+
+(define-public r-rpese
+  (package
+    (name "r-rpese")
+    (version "1.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RPESE" version))
+       (sha256
+        (base32 "1npp0p4h92iy9dzyl442iln99hb8b2hj63fp5129pv9y6n42jfxv"))))
+    (properties `((upstream-name . "RPESE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-rpeif
+                             r-rpeglmen
+                             r-robstattm
+                             r-boot))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=RPESE")
+    (synopsis "Estimates of Standard Errors for Risk and Performance Measures")
+    (description
+     "Estimates of standard errors of popular risk and performance measures for asset
+or portfolio returns using methods as described in Chen and Martin (2021)
+<doi:10.21314/JOR.2020.446>.")
+    (license license:gpl2+)))
 
 (define-public r-rpensemble
   (package
@@ -42458,13 +42493,13 @@ desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
 (define-public r-readabs
   (package
     (name "r-readabs")
-    (version "0.4.19")
+    (version "0.4.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readabs" version))
        (sha256
-        (base32 "10y10wxycjs4a665sjl87yrq1ijv3kk8lhh75fgf31dls7a87khc"))))
+        (base32 "0qw58hdxp54klnh07bnfdg0mrwzml8wpb4hf0rrb9dla92gb2a7i"))))
     (properties `((upstream-name . "readabs")))
     (build-system r-build-system)
     (arguments
@@ -55324,6 +55359,35 @@ alternative of randomizing the GO database rather than the gene list.")
 (GLMs) is implemented.  The method is published in Song, Langfelder and Horvath
 (2013) <doi:10.1186/1471-2105-14-5>.")
     (license license:gpl2+)))
+
+(define-public r-randomgaussiannb
+  (package
+    (name "r-randomgaussiannb")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RandomGaussianNB" version))
+       (sha256
+        (base32 "1r7ggj6bd6pnqg99sw2ak4pg4h4dxvmg7r24hmar6dblz9hn683y"))))
+    (properties `((upstream-name . "RandomGaussianNB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=RandomGaussianNB")
+    (synopsis
+     "Randomized Feature and Bootstrap-Enhanced Gaussian Naive Bayes Classifier")
+    (description
+     "This package provides an accessible and efficient implementation of a randomized
+feature and bootstrap-enhanced Gaussian naive Bayes classifier.  The method
+combines stratified bootstrap resampling with random feature subsampling and
+aggregates predictions via posterior averaging.  Support is provided for
+mixed-type predictors and parallel computation.  Methods are described in
+Srisuradetchai (2025) <doi:10.3389/fdata.2025.1706417> \"Posterior averaging with
+Gaussian naive Bayes and the R package @code{RandomGaussianNB} for big-data
+classification\".")
+    (license license:expat)))
 
 (define-public r-randomforestvip
   (package

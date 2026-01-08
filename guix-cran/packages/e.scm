@@ -14665,13 +14665,13 @@ Engineering Experimentation\" (Elsevier, 2003) with sample code.")
 (define-public r-engression
   (package
     (name "r-engression")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "engression" version))
        (sha256
-        (base32 "030fcjh7cwjqiydyxjhaa7rsc2wq50ywdyp4wd2cr7glpy1fl346"))))
+        (base32 "174sv5l05wfjgccsrhzl20sqvb5xmisr5lhj1ad99v3hb7kmhd1x"))))
     (properties `((upstream-name . "engression")))
     (build-system r-build-system)
     (arguments
@@ -14686,8 +14686,9 @@ targets can be univariate or multivariate.  Functionality includes estimation of
 conditional mean, estimation of conditional quantiles, or sampling from the
 fitted distribution.  Training is done full-batch on CPU (the python version
 offers GPU-accelerated stochastic gradient descent).  Based on \"Engression:
-Extrapolation for nonlinear regression?\" by Xinwei Shen and Nicolai Meinshausen
-(2023).  Also supports classification (experimental). <arxiv:2307.00835>.")
+Extrapolation through the lens of distributional regression\" by Xinwei Shen and
+Nicolai Meinshausen (2024) in JRSSB. Also supports classification
+(experimental). <doi:10.1093/jrsssb/qkae108>.")
     (license license:expat)))
 
 (define-public r-engrecon
@@ -16665,6 +16666,42 @@ functions that plot posterior predictions or using relative model comparison
 metrics such as information criteria or Bayes factors.  References: Stevenson et
 al. (2024) <doi:10.31234/osf.io/2e4dq>.")
     (license license:gpl3+)))
+
+(define-public r-emburden
+  (package
+    (name "r-emburden")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emburden" version))
+       (sha256
+        (base32 "0c63fhvihspqzkdawzr61hv2d7mvrl2y1q31gczhq6ds6r2yhdvh"))))
+    (properties `((upstream-name . "emburden")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-spatstat-univar
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-rappdirs
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ericscheier/emburden")
+    (synopsis "Energy Burden Analysis Using Net Energy Return Methodology")
+    (description
+     "Calculate and analyze household energy burden using the Net Energy Return
+aggregation methodology.  Functions support weighted statistical calculations
+across geographic and demographic cohorts, with utilities for formatting results
+into publication-ready tables.  Methods are based on Scheier & Kittner (2022)
+<doi:10.1038/s41467-021-27673-y>.")
+    (license license:agpl3+)))
 
 (define-public r-embryogrowth
   (package

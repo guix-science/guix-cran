@@ -16737,13 +16737,13 @@ package also includes visualization tools for exploring discovered connections."
 (define-public r-lbbnn
   (package
     (name "r-lbbnn")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBBNN" version))
        (sha256
-        (base32 "0gvrdds02ssqcswvh6nnn676gkymrlqyf4jfm3mjl631n80n9ak0"))))
+        (base32 "1x5f3x0yx5n049n6j6fszyp3g40cki8k2kacfv6bi2m37ghqdwdh"))))
     (properties `((upstream-name . "LBBNN")))
     (build-system r-build-system)
     (arguments
@@ -18517,13 +18517,13 @@ appear in the help pane.")
 (define-public r-landsepi
   (package
     (name "r-landsepi")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landsepi" version))
        (sha256
-        (base32 "0j76g1lv7l9kf2b8vj3yhc346sf1k38q8b1ajpzjckh7rn0slmys"))))
+        (base32 "1p7870a919phrl7l93shqqnmx4plvmxp83591grjx0xqww2yrzq3"))))
     (properties `((upstream-name . "landsepi")))
     (build-system r-build-system)
     (arguments

@@ -3698,13 +3698,13 @@ variance).")
 (define-public r-wipf
   (package
     (name "r-wipf")
-    (version "0.1.0-1")
+    (version "0.1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WIPF" version))
        (sha256
-        (base32 "18lkp3bd17f9i3bi9w9pxmk35zvvpb5bw5fd7lqsjs9hhw3nipdg"))))
+        (base32 "0ax43vrlksgd001dyp7h49qhzw6p8d4685vayphxzs5d90vb11h8"))))
     (properties `((upstream-name . "WIPF")))
     (build-system r-build-system)
     (arguments
@@ -3714,12 +3714,13 @@ variance).")
     (synopsis "Weighted Iterative Proportional Fitting")
     (description
      "Implementation of the weighted iterative proportional fitting (WIPF) procedure
-for updating/adjusting a N-dimensional array (currently N<=3) given a weight
-structure and some target marginals.  Acknowledgements: The author wish to thank
-Ministerio de Ciencia, InnovaciÃ³n y Universidades (grant PID2021-128228NB-I00)
-and FundaciÃ³n Mapfre (grant ModelizaciÃ³n espacial e intra-anual de la
-mortalidad en EspaÃ±a.  Una herramienta automÃ¡tica para el cÃ¡lculo de
-productos de vida') for supporting this research.")
+for updating/adjusting a N-dimensional array given a weight structure and some
+target marginals.  Acknowledgements: The author wish to thank Conselleria de
+EducaciÃ³n, Cultura, Universidades y Empleo (grant CIAICO/2023/031), Ministerio
+de Ciencia, InnovaciÃ³n y Universidades (grant PID2021-128228NB-I00) and
+FundaciÃ³n Mapfre (grant ModelizaciÃ³n espacial e intra-anual de la mortalidad
+en EspaÃ±a.  Una herramienta automÃ¡tica para el cÃ¡lculo de productos de vida')
+for supporting this research.")
     (license license:gpl2+)))
 
 (define-public r-wintime
@@ -3815,6 +3816,46 @@ of outcomes can be analyzed: survival \"failure-time\" events, repeated survival
 \"failure-time\" events and continuous or ordinal \"non-failure time\" events that
 are captured at specific time-points in the study.")
     (license license:gpl2+)))
+
+(define-public r-winr
+  (package
+    (name "r-winr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "winr" version))
+       (sha256
+        (base32 "1iw7xmqa03zqba9qvs1hdxmig5fgj7hz1ydj8cbcm2dscz4686sr"))))
+    (properties `((upstream-name . "winr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rdpack r-dplyr))
+    (home-page "https://cran.r-project.org/package=winr")
+    (synopsis "Randomization-Based Covariance Adjustment of Win Statistics")
+    (description
+     "This package provides a multi-visit clinical trial may collect participant
+responses on an ordinal scale and may utilize a stratified design, such as
+randomization within centers, to assess treatment efficacy across multiple
+visits.  Baseline characteristics may be strongly associated with the outcome,
+and adjustment for them can improve power.  The win ratio (ignores ties) and the
+win odds (accounts for ties) can be useful when analyzing these types of data
+from randomized controlled trials.  This package provides straightforward
+functions for adjustment of the win ratio and win odds for stratification and
+baseline covariates, facilitating the comparison of test and control treatments
+in multi-visit clinical trials.  For additional information concerning the
+methodologies and applied examples within this package, please refer to the
+following publications: 1.  Weideman, A.M.K., Kowalewski, E.K., & Koch, G.G.
+(2024).  âRandomization-based covariance adjustment of win ratios and win odds
+for 	randomized multi-visit studies with ordinal outcomes.â Journal of
+Statistical Research, 58(1), 33â48. <doi:10.3329/jsr.v58i1.75411>.  2.
+Kowalewski, E.K., Weideman, A.M.K., & Koch, G.G. (2023).  âSAS macro for
+randomization-based methods for covariance and stratified adjustment 	of win
+ratios and win odds for ordinal outcomes.â SESUG 2023 Proceedings, Paper
+139-2023.")
+    (license license:expat)))
 
 (define-public r-winputall
   (package

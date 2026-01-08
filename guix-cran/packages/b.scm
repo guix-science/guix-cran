@@ -11493,6 +11493,43 @@ JABES 25, 500â522 (2020) <doi:10.1007/s13253-020-00416-0>.")
 file of randomization cards.")
     (license license:gpl2)))
 
+(define-public r-blockr-io
+  (package
+    (name "r-blockr-io")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockr.io" version))
+       (sha256
+        (base32 "02s24b629chafhyvw6qpqrlhdcvjl3v8xvf3pw0bmr9dd34xiqbp"))))
+    (properties `((upstream-name . "blockr.io")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-writexl
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shiny
+                             r-rio
+                             r-readxl
+                             r-readr
+                             r-rappdirs
+                             r-bslib
+                             r-blockr-core
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://bristolmyerssquibb.github.io/blockr.io/")
+    (synopsis "Interactive File Import and Export Blocks")
+    (description
+     "Extends blockr.core with interactive blocks for reading and writing data files.
+Supports CSV, Excel, Parquet, RDS, and other formats through a graphical
+interface without writing code directly.  Includes file browser integration and
+configurable import/export options.")
+    (license license:gpl3+)))
+
 (define-public r-blockr-ggplot
   (package
     (name "r-blockr-ggplot")
