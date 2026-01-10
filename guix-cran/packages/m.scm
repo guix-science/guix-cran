@@ -8751,13 +8751,13 @@ thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
 (define-public r-mstest
   (package
     (name "r-mstest")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSTest" version))
        (sha256
-        (base32 "0vhxzwdflsv9fwbgq79vh86qacndndjyki0qsnm73l1g8kjzdz3s"))))
+        (base32 "1cc89yl8m1fainblh3rmfl0l3vnljgsspsisz3zi44hsdzg2bd6r"))))
     (properties `((upstream-name . "MSTest")))
     (build-system r-build-system)
     (arguments
@@ -17068,13 +17068,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.40")
+    (version "3.41")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "040i4cmnfy1b2w80n8cpv9d46ia8arqy9km92b13i21gr9vanffw"))))
+        (base32 "1lk5hzm4zvlfkanw2m5ihdwy3pdmjva1yk4d0lz0mjjkjnwfnla5"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
@@ -17545,13 +17545,13 @@ forecasting at scale\"
 (define-public r-modeltests
   (package
     (name "r-modeltests")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltests" version))
        (sha256
-        (base32 "0fmsn2cbfx05mzrg2j2j756vapvf26p9qvqj3bywny59nv7p9jbm"))))
+        (base32 "0xv93g89kfgrh5ghlybp3r13g22d8fkg0zy1wq45z0ln24cz82n3"))))
     (properties `((upstream-name . "modeltests")))
     (build-system r-build-system)
     (arguments
@@ -19108,13 +19108,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.16")
+    (version "0.3.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "1fcjab0kzqq9zpbj12ibs8093szjk4d631a19xzf2y61vx6x4y5m"))))
+        (base32 "0j9f728cm4b9cz4rcvmyd7867f38l11yn4cm7a1fiphasvalvy47"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (arguments
@@ -26571,40 +26571,41 @@ For more details see Zahid and Heumann (2018) <doi:10.1177/0962280218755574>.")
 (define-public r-mispitools
   (package
     (name "r-mispitools")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mispitools" version))
        (sha256
-        (base32 "09sgs6s005s8lqxb7v21k4vjwkw5kz0dg4b44k11fvgvb8l1i3ba"))))
+        (base32 "19mxghzf7diaj8zvzcynx2j9jfakhd1vsqdj70jp2hgwsncdrxyh"))))
     (properties `((upstream-name . "mispitools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
+                             r-shinythemes
                              r-shiny
                              r-reshape2
-                             r-purrr
+                             r-proc
                              r-pedtools
                              r-patchwork
                              r-ggplot2
                              r-forrel
                              r-dplyr
                              r-dirichletreg))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/MarsicoFL/mispitools")
     (synopsis "Missing Person Identification Tools")
     (description
-     "An open source software package written in R statistical language.  It consist
-in a set of decision making tools to conduct missing person searches.
-Particularly, it allows computing optimal LR threshold for declaring potential
-matches in DNA-based database search.  More recently mispitools incorporates
-preliminary investigation data based LRs.  Statistical weight of different
-traces of evidence such as biological sex, age and hair color are presented.
-For citing mispitools please use the following references: Marsico and Caridi,
-2023 <doi:10.1016/j.fsigen.2023.102891> and Marsico, Vigeland et al.  2021
+     "This package provides a comprehensive toolkit for missing person identification
+combining genetic and non-genetic evidence within a Bayesian framework.
+Computes likelihood ratios (LRs) for DNA profiles, biological sex, age, hair
+color, and birthdate evidence.  Provides decision analysis tools including
+optimal LR thresholds, error rate calculations, and ROC curve visualization.
+Includes interactive Shiny applications for exploring evidence combinations.
+For methodological details see Marsico et al. (2023)
+<doi:10.1016/j.fsigen.2023.102891> and Marsico, Vigeland et al. (2021)
 <doi:10.1016/j.fsigen.2021.102519>.")
     (license license:gpl3+)))
 
@@ -27678,13 +27679,13 @@ results inside R, in case more specific analyses are needed.")
 (define-public r-minimaxapprox
   (package
     (name "r-minimaxapprox")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxApprox" version))
        (sha256
-        (base32 "1gk7rh17g3xdsr42a1f6lp23ny9vkzig8srfwscd0v5hxx2cbqr9"))))
+        (base32 "1bs094mdybzgbqvx78j57jsvbaynfzampc992lahcdwn2nza00y6"))))
     (properties `((upstream-name . "minimaxApprox")))
     (build-system r-build-system)
     (arguments
@@ -34107,13 +34108,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteospain" version))
        (sha256
-        (base32 "0j2ss5b9nb9i62l7m6g8rn8byfyxl5n4avnhj81y1dgviprbwpsj"))))
+        (base32 "1b3qq04p4xy6lh2nan1shcjn2y5jn9n8ncj7gim6bsai0q4wws03"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (arguments
@@ -34915,13 +34916,13 @@ sensitivity.  Journal of Mathematical Psychology, 94.
 (define-public r-metarvm
   (package
     (name "r-metarvm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaRVM" version))
        (sha256
-        (base32 "07fan440h62mdi708dx8scrw1nzbr84p2gxlqkpxv2ila8pdj5ws"))))
+        (base32 "0h7zl914zadl4hx329yngddxivd7m8ld8r9c53ndlsrii8pfc6vc"))))
     (properties `((upstream-name . "MetaRVM")))
     (build-system r-build-system)
     (arguments
@@ -39727,13 +39728,13 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
 (define-public r-meconetcomp
   (package
     (name "r-meconetcomp")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meconetcomp" version))
        (sha256
-        (base32 "1f1rmn9xvlrx55q8msi7zbxdcgq2j4ihzzg77pprp69fmrjcpmcc"))))
+        (base32 "06v3qrw3fi5myzf8wd7gwmdg9wpf0m919bp3gzacb6n3l9zg9d67"))))
     (properties `((upstream-name . "meconetcomp")))
     (build-system r-build-system)
     (arguments
@@ -42937,6 +42938,44 @@ probability ratio test boundary (Fay, Kim and Hachey, 2007
 intervals on p-values.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-mcglm
+  (package
+    (name "r-mcglm")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcglm" version))
+       (sha256
+        (base32 "04zyczflj68h0ha0qi8hi64dy0wx12crfpm93964slpzqzigf5vm"))))
+    (properties `((upstream-name . "mcglm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bonatwagner/mcglm")
+    (synopsis "Multivariate Covariance Generalized Linear Models")
+    (description
+     "Fitting multivariate covariance generalized linear models (@code{McGLMs}) to
+data. @code{McGLM} is a general framework for non-normal multivariate data
+analysis, designed to handle multivariate response variables, along with a wide
+range of temporal and spatial correlation structures defined in terms of a
+covariance link function combined with a matrix linear predictor involving known
+matrices.  The models take non-normality into account in the conventional way by
+means of a variance function, and the mean structure is modelled by means of a
+link function and a linear predictor.  The models are fitted using an efficient
+Newton scoring algorithm based on quasi-likelihood and Pearson estimating
+functions, using only second-moment assumptions.  This provides a unified
+approach to a wide variety of different types of response variables and
+covariance structures, including multivariate extensions of repeated measures,
+time series, longitudinal, spatial and spatio-temporal structures.  The package
+offers a user-friendly interface for fitting @code{McGLMs} similar to the
+@code{glm()} R function.  See Bonat (2018) <doi:10.18637/jss.v084.i04>, for more
+information and examples.")
+    (license license:gpl3)))
+
 (define-public r-mcgibbsit
   (package
     (name "r-mcgibbsit")
@@ -44353,13 +44392,13 @@ transform (MBCn) â as is the Rank Resampling for Distributions and Dependen
 (define-public r-mbbefdlite
   (package
     (name "r-mbbefdlite")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBBEFDLite" version))
        (sha256
-        (base32 "0jm9az9qbj2bg5rbhs1ly58hfviff3lcxrabhlvs3h9qamyp8nnk"))))
+        (base32 "11q1akarh3ai5cyz0h5jdfzl2s219r2vc1c1lz4g2m5mzjvbky5g"))))
     (properties `((upstream-name . "MBBEFDLite")))
     (build-system r-build-system)
     (arguments
@@ -45610,13 +45649,13 @@ Segal, et al. (2019) <doi:10.1007/s11336-018-9647-4> for more information.")
 (define-public r-matrixset
   (package
     (name "r-matrixset")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixset" version))
        (sha256
-        (base32 "1i6l8gbw3ki6p72ii0k4mnprwn1wbhvcy85cmqghj3c0g60ng61q"))))
+        (base32 "0hc2k6wr1gh07idbrnk9ddgyj1wnszwfdhbvbphr7v40q27wr4qv"))))
     (properties `((upstream-name . "matrixset")))
     (build-system r-build-system)
     (arguments
@@ -49259,13 +49298,13 @@ images or html, interactive maps.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "02n7x7pnxcg3xm3yjgv13wnv45d14q6nci3fhsjsx5z3iy0d3qpc"))))
+        (base32 "03ijxgfvhrbcgil7hyfzkf6n50ajn1wrlcg2jrkiw86k97nn0lav"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
@@ -49273,13 +49312,11 @@ images or html, interactive maps.")
       #:tests? #f))
     (propagated-inputs (list r-webshot2
                              r-viridislite
-                             r-tidygraph
                              r-rlang
                              r-networkd3
                              r-jsonlite
                              r-igraph
                              r-htmlwidgets
-                             r-ggraph
                              r-ggplot2
                              r-foreach
                              r-doparallel))
@@ -50305,13 +50342,13 @@ and node and tie attributes, and describing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "0n5k1svrpbkya23wbc7sd43nfq00a5xi9j7lpyq4r5lssakf6nll"))))
+        (base32 "1s2h1hxbca0x1nz4vp9rg20hqb7al86ghaby3acf71i5vxd1p6gn"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments
@@ -51935,13 +51972,13 @@ meta-analysis.  Methods are described in Irsova et al. (2025)
 (define-public r-maint-data
   (package
     (name "r-maint-data")
-    (version "2.7.2")
+    (version "2.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAINT.Data" version))
        (sha256
-        (base32 "04c3aphxbxbxaa2f9fnm6xg6q0m9k6x2vilkyxr1ixg14f94a985"))))
+        (base32 "0hmwpymcr5nx838xlvrx7yvdh869qr88nrvcsq80mh8dsm4i28c1"))))
     (properties `((upstream-name . "MAINT.Data")))
     (build-system r-build-system)
     (arguments
@@ -53028,13 +53065,13 @@ at least as fast convergence as that of Adam, often faster.  A drop-in
 (define-public r-maddisondata
   (package
     (name "r-maddisondata")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MaddisonData" version))
        (sha256
-        (base32 "1wws58k723y9dknym88m4s406vvih0iga6dlv13nrazx2y1iiam0"))))
+        (base32 "1vgjnp7fgk5qnanx02yh270xxnnmrcmcf6c3d7x28kxwfywn24c6"))))
     (properties `((upstream-name . "MaddisonData")))
     (build-system r-build-system)
     (arguments
@@ -53044,12 +53081,15 @@ at least as fast convergence as that of Adam, often faster.  A drop-in
     (home-page "https://github.com/sbgraves237/MaddisonData")
     (synopsis "Maddison Project Data")
     (description
-     "Relatively easy access is provided to Maddison project data, which collates all
-the credible data on population and GDP for 169 countries, with some dating back
-to the year 1. @code{MaddisonLeaders} makes it easy to find the leaders for each
-year, allowing users to delete countries like OPEC with narrow economies to
-focus on the technology leaders. @code{ggplotPath} makes it easy to plot data
-for only selected countries or years.")
+     "Relatively easy access is provided to 2023 version of the Maddison project data
+downloaded 2025-08-28.  This project collates all the credible data on
+population and GDP for 169 countries, with some dating back to the year 1 of the
+current era.  One function makes it easy to find the leaders for each year,
+allowing users to delete countries like OPEC with narrow economies to focus on
+technology leaders.  Another function makes it easy to plot data for only
+selected countries or years.  Another function makes it relatively easy to
+obtain references to the original sources, which must be cited per the copyright
+rules of the Maddison Project for different uses of their data.")
     (license license:expat)))
 
 (define-public r-maddison

@@ -524,13 +524,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.38")
+    (version "4.46")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1a8qjdlpp07yxi5nwadcdivfhqw591scckyghbppr4pgqrwkbbi8"))))
+        (base32 "1qpxjzbw500qg5h8l0hxhfhv0xrah13mh1phz31lmwh4lhv42x60"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -2227,6 +2227,39 @@ Pfaff's unit root test suite.")
     (description
      "Similar to base's unique function, only optimized for working with data frames,
 especially those that contain date-time columns.")
+    (license license:expat)))
+
+(define-public r-funihc
+  (package
+    (name "r-funihc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funIHC" version))
+       (sha256
+        (base32 "01475fw3sbw50jxsdwjaksjnhcxvy1ii9n1kky2ryzs7f4qy8d95"))))
+    (properties `((upstream-name . "funIHC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mclust r-fda r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=funIHC")
+    (synopsis "Functional Iterative Hierarchical Clustering")
+    (description
+     "Functional clustering aims to group curves exhibiting similar temporal behaviour
+and to obtain representative curves summarising the typical dynamics within each
+cluster.  A key challenge in this setting is class imbalance, where some
+clusters contain substantially more curves than others, which can adversely
+affect clustering performance.  While class imbalance has been extensively
+studied in supervised classification, it has received comparatively little
+attention in unsupervised clustering.  This package implements functional
+iterative hierarchical clustering ('@code{funIHC}'), an adaptation of the
+iterative hierarchical clustering method originally developed for multivariate
+data, to the functional data setting.  For further details, please see Higgins
+and Carey (2024) <doi:10.1007/s11634-024-00611-8>.")
     (license license:expat)))
 
 (define-public r-fungp
@@ -22565,19 +22598,18 @@ for text classification and to learn word vectors.  An example how to use
 (define-public r-fasttext
   (package
     (name "r-fasttext")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastText" version))
        (sha256
-        (base32 "1mrdiqj8pplyygsga1plx8b731i915lzjxhzslkbz6qk2jrj7632"))))
+        (base32 "0lj5kf1zfnqql8kpnd85ri0pcnfz9i5hmfzmczzd90bc0r6q414i"))))
     (properties `((upstream-name . "fastText")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
     (propagated-inputs (list r-rcpp r-glue r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlampros/fastText")
@@ -22594,7 +22626,7 @@ Text Classification\", Armand Joulin, Edouard Grave, Piotr Bojanowski, Tomas
 Mikolov, 2017, <doi:10.18653/v1/e17-2068>; (iii) \"@code{FastText.zip}:
 Compressing text classification models\", Armand Joulin, Edouard Grave, Piotr
 Bojanowski, Matthijs Douze, Herve Jegou, Tomas Mikolov, 2016,
-<@code{arXiv:1612.03651>}.")
+<doi:10.48550/@code{arXiv.1612.03651>}.")
     (license license:expat)))
 
 (define-public r-faststepgraph
@@ -24032,13 +24064,13 @@ handling consistent with terra via na.rm and na.policy'.  Operates on
 (define-public r-fastfmm
   (package
     (name "r-fastfmm")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastFMM" version))
        (sha256
-        (base32 "0zmlq19mgim97zqsk78p8nkbvb967d9cnc55svnhirp65zcgaxz2"))))
+        (base32 "1zcdx9pfis0fphvc8wsgkfl40hc1b0rrwwj23d5lwxn6is99gqb0"))))
     (properties `((upstream-name . "fastFMM")))
     (build-system r-build-system)
     (arguments
@@ -24066,8 +24098,8 @@ handling consistent with terra via na.rm and na.policy'.  Operates on
     (description
      "Implementation of the fast univariate inference approach (Cui et al. (2022)
 <doi:10.1080/10618600.2021.1950006>, Loewinger et al. (2024)
-<doi:10.7554/@code{eLife.95802.2>}) for fitting functional mixed models.  User
-guides and Python package information can be found at
+<doi:10.7554/@code{eLife.95802.2>}, Xin et al. (2025)) for fitting functional
+mixed models.  User guides and Python package information can be found at
 <https://github.com/gloewing/photometry_FLMM>.")
     (license license:gpl3+)))
 
@@ -24110,13 +24142,13 @@ OS@code{GeoW4} installer version) of GRASS 8.0 or higher.")
 (define-public r-fastei
   (package
     (name "r-fastei")
-    (version "0.0.0.11")
+    (version "0.0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastei" version))
        (sha256
-        (base32 "1lmil3brd01vnxfk7n76fi65xrbzv54jn7l9lipi2knjvr5bkb9c"))))
+        (base32 "0pflwd5bm4g6jqmr4116cxnf2nrcf03pykhmm7zqaa6ryvaf9n26"))))
     (properties `((upstream-name . "fastei")))
     (build-system r-build-system)
     (arguments

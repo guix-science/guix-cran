@@ -265,13 +265,13 @@ report appears in the RStudio viewer pane as a formatted HTML file.")
 (define-public r-pyinit
   (package
     (name "r-pyinit")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pyinit" version))
        (sha256
-        (base32 "1q65cjcvgfhq629nh94xh1wz705kdg9mmhv7k55ql207gwnq7b0r"))))
+        (base32 "07lxcvd5bymr6jvlnhxhzkkj97lp0bbmzaj679rlr6jh4jn4f1f6"))))
     (properties `((upstream-name . "pyinit")))
     (build-system r-build-system)
     (arguments
@@ -8072,13 +8072,13 @@ observing the project already carried out.")
 (define-public r-projectlsa
   (package
     (name "r-projectlsa")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projectLSA" version))
        (sha256
-        (base32 "0vcmif1rj6cn3xbnrb09nwlfzh79dmg184v1gb2vrlfw66fl0c0q"))))
+        (base32 "13qvac1g9j8dsvgvnp2q2j2xlx3aw8xis7ilw1i6hm1ix5ggs833"))))
     (properties `((upstream-name . "projectLSA")))
     (build-system r-build-system)
     (arguments
@@ -8102,6 +8102,7 @@ observing the project already carried out.")
                              r-polca
                              r-plotly
                              r-mirt
+                             r-mclust
                              r-lavaan
                              r-ggplot2
                              r-ggiraph
@@ -8110,7 +8111,8 @@ observing the project already carried out.")
                              r-colourpicker))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hasandjidu/projectLSA")
-    (synopsis "Latent Structure Analysis Toolkit")
+    (synopsis
+     "R Shiny Application for Latent Structure Analysis with a Graphical User Interface")
     (description
      "This package provides an interactive Shiny-based toolkit for conducting latent
 structure analyses, including Latent Profile Analysis (LPA), Latent Class
@@ -9527,13 +9529,13 @@ probaverse packages together.")
 (define-public r-proae
   (package
     (name "r-proae")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProAE" version))
        (sha256
-        (base32 "1gm71m536chp7gp3c08vwccfrp073bd74jwnf9706kx7kn200p3a"))))
+        (base32 "1xar2wna56ny9s5s7gjvjwz3jgszaql23w3pz3mqrcyfspiv0lz9"))))
     (properties `((upstream-name . "ProAE")))
     (build-system r-build-system)
     (arguments
@@ -13798,13 +13800,13 @@ weights.  The philosophy of the package is described in Guo G. (2020)
 (define-public r-ppwdeming
   (package
     (name "r-ppwdeming")
-    (version "1.0.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppwdeming" version))
        (sha256
-        (base32 "070bzm978irsxljq9fy9cjmx907n0cwz61jx23gv4bas6xa7az8c"))))
+        (base32 "0m0s4688fib1bs8fj8zb7yvbml8sziwcmi5qr36z7l5f1h837sgv"))))
     (properties `((upstream-name . "ppwdeming")))
     (build-system r-build-system)
     (arguments
@@ -13813,20 +13815,21 @@ weights.  The philosophy of the package is described in Guo G. (2020)
     (home-page "https://cran.r-project.org/package=ppwdeming")
     (synopsis "Precision Profile Weighted Deming Regression")
     (description
-     "Weighted Deming regression, also known as \"errors-in-variable\" regression, is
+     "Weighted Deming regression, also known as errors-in-variable regression, is
 applied with suitable weights.  Weights are modeled via a precision profile;
-functions are provided for implementing it in both known and unknown precision
-profile situations.  The package provides tools for precision profile weighted
-Deming (PWD) regression.  It covers two settings â one where the precision
-profiles are known either from external studies or from adequate replication of
-the X and Y readings, and one in which there is a plausible functional form for
-the precision profiles but the exact function must be estimated from the
-(generally singlicate) readings.  The function set includes tools for: estimated
-standard errors (via jackknifing); standardized-residual analysis function with
-regression diagnostic tools for normality, linearity and constant variance; and
-an outlier analysis identifying significant outliers for closer investigation.
-Further information on mathematical derivations and applications can be found on
-@code{arXiv}: Hawkins and Kraker (2025) <doi:10.48550/@code{arXiv.2508.02888>}.")
+thus the methods implemented here are referred to as precision profile weighted
+Deming (PWD) regression.  The package covers two settings â one where the
+precision profiles are known either from external studies or from adequate
+replication of the X and Y readings, and one in which there is a plausible
+functional form for the precision profiles but the exact (unknown) function must
+be estimated from the (generally singlicate) readings.  The function set
+includes tools for: estimated standard errors (via jackknifing);
+standardized-residual analysis function with regression diagnostic tools for
+normality, linearity and constant variance; and an outlier analysis identifying
+significant outliers for closer investigation.  The following reference provides
+further information on mathematical derivations and applications.  Hawkins,
+D.M., and J.J. Kraker.  Precision Profile Weighted Deming Regression for Methods
+Comparison', (in press) <doi:10.1093/jalm/jfaf183>.")
     (license license:gpl3+)))
 
 (define-public r-pptreeviz
@@ -14805,13 +14808,13 @@ philosophy of the package is described in Guo G. (2020)
 (define-public r-ppcc
   (package
     (name "r-ppcc")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppcc" version))
        (sha256
-        (base32 "17kf97rh0b1zxh7r12rxc2qd1zlrcvlljk69k8w2jchdxiw398sb"))))
+        (base32 "1zgnw4zg6qs9yqz77djv80v8ji88p12q2qcwqay9qzrvrpxhc7l5"))))
     (properties `((upstream-name . "ppcc")))
     (build-system r-build-system)
     (arguments
@@ -17856,13 +17859,13 @@ ISBN:9780198829546).")
 (define-public r-popgenhelpr
   (package
     (name "r-popgenhelpr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopGenHelpR" version))
        (sha256
-        (base32 "1zmzfq5fczrizvw4h7q95mxrik9mfq927nvhfbfwxcmlnwr4nijs"))))
+        (base32 "1vvycnp8v31pn2lzs3gd0k9w33ngwv5jv99avmy5hh0dwgylnn1k"))))
     (properties `((upstream-name . "PopGenHelpR")))
     (build-system r-build-system)
     (arguments
@@ -21642,49 +21645,6 @@ downloaded from the official website <https://www.ibge.gov.br/>.  Further
 analysis must be made using package survey'.")
     (license license:gpl3)))
 
-(define-public r-pmxtools
-  (package
-    (name "r-pmxtools")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pmxTools" version))
-       (sha256
-        (base32 "1vxjjkzi95hl7hmacw96dhczbi8lakd8kdymcq4nps7qbrfyh7xg"))))
-    (properties `((upstream-name . "pmxTools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-pknca
-                             r-patchwork
-                             r-mass
-                             r-magrittr
-                             r-ggplot2
-                             r-ggdist
-                             r-dplyr
-                             r-data-tree
-                             r-chron))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kestrel99/pmxTools")
-    (synopsis "Pharmacometric and Pharmacokinetic Toolkit")
-    (description
-     "Pharmacometric tools for common data analytical tasks; closed-form solutions for
-calculating concentrations at given times after dosing based on compartmental PK
-models (1-compartment, 2-compartment and 3-compartment, covering infusions,
-zero- and first-order absorption, and lag times, after single doses and at
-steady state, per Bertrand & Mentre (2008)
-<https://www.facm.ucl.ac.be/cooperation/Vietnam/WBI-Vietnam-October-2011/Modelling/Monolix32_PKPD_library.pdf>);
-parametric simulation from NONMEM-generated parameter estimates and other
-output; and parsing, tabulating and plotting results generated by
-Perl-speaks-NONMEM (@code{PsN}).")
-    (license license:gpl2)))
-
 (define-public r-pmxpartab
   (package
     (name "r-pmxpartab")
@@ -23404,13 +23364,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.9.0")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "1wd9jff6ifxlxlm209m6cafkbljlzqbizkp2dacn7za6ml3mqrs9"))))
+        (base32 "07wc3qkjvnph8wnxah9898jg9q2dzrblw9q307m2cn2nc2zi08sp"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -25620,6 +25580,34 @@ linear additive quantile regression.  Intuitive functions for fitting and
 plotting partially linear additive quantile regression models.  Uses and works
 with functions from the quantreg package.")
     (license license:gpl2+)))
+
+(define-public r-planttracker
+  (package
+    (name "r-planttracker")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plantTracker" version))
+       (sha256
+        (base32 "0mv83kcvwd9cwgw8gnpg0bprs26wcczmr315n561zd5lbca1g4q7"))))
+    (properties `((upstream-name . "plantTracker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units r-sf r-matrix r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aestears/plantTracker")
+    (synopsis "Extract Demographic and Competition Data from Fine-Scale Maps")
+    (description
+     "Extracts growth, survival, and local neighborhood density information from
+repeated, fine-scale maps of organism occurrence.  Further information about
+this package can be found in our journal article, \"@code{plantTracker}: An R
+package to translate maps of plant occurrence into demographic data\" published
+in 2022 in Methods in Ecology and Evolution (Stears, et al., 2022)
+<doi:10.1111/2041-210X.13950>.")
+    (license license:expat)))
 
 (define-public r-plantphysior
   (package
@@ -33960,13 +33948,13 @@ the coefficients in the two models to have the same sign.")
 (define-public r-personalized
   (package
     (name "r-personalized")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "personalized" version))
        (sha256
-        (base32 "0dx8qy89s2za4v17k02gi4ybkpahbgkyizsb42s4ckx5gjvw1ck7"))))
+        (base32 "13cldy199h81jlqbb72bw4z8ya61bypg8ib4gri6gshqc7g79ipb"))))
     (properties `((upstream-name . "personalized")))
     (build-system r-build-system)
     (arguments
@@ -33979,7 +33967,8 @@ the coefficients in the two models to have the same sign.")
                              r-kernlab
                              r-glmnet
                              r-ggplot2
-                             r-foreach))
+                             r-foreach
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://jaredhuling.org/personalized/")
     (synopsis
@@ -39996,6 +39985,38 @@ parentheses or square brackets.")
      "In short, this package is a locator for cool, refreshing beverages.  It will
 find and return the nearest location where you can get a cold one.")
     (license license:expat)))
+
+(define-public r-pboost
+  (package
+    (name "r-pboost")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pboost" version))
+       (sha256
+        (base32 "13jxha4d0shmafkyfkmnwwdlgjg2pcvsfw65cr4caf8j9yc5ix3y"))))
+    (properties `((upstream-name . "pboost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-quantreg
+                             r-matrix
+                             r-mass
+                             r-formula
+                             r-betareg))
+    (home-page "https://github.com/paradoxical-rhapsody/pboost")
+    (synopsis "Profile Boosting Framework for Parametric Models")
+    (description
+     "This package provides a profile boosting framework for feature selection in
+parametric models.  It offers a unified interface @code{pboost()} and several
+wrapped models, including linear model, generalized linear models, quantile
+regression, Cox proportional hazards model, beta regression.  An S3 interface
+@code{EBIC()} is provided as the stopping rule for the profile boosting by
+default.")
+    (license license:gpl3+)))
 
 (define-public r-pbo
   (package

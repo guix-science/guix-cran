@@ -2565,6 +2565,37 @@ and categorical.  For quality control it provides functions to subset a
 representative sample.")
     (license license:expat)))
 
+(define-public r-expectreg
+  (package
+    (name "r-expectreg")
+    (version "0.54")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "expectreg" version))
+       (sha256
+        (base32 "0ybzpm1lq6bfiq1l8jgdriaxpcapc7hzicm8p0vqx62rkji018an"))))
+    (properties `((upstream-name . "expectreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-quadprog
+                             r-mboost
+                             r-matrix
+                             r-fields
+                             r-colorspace
+                             r-bayesx))
+    (home-page "https://cran.r-project.org/package=expectreg")
+    (synopsis "Expectile and Quantile Regression")
+    (description
+     "Expectile and quantile regression of models with nonlinear effects e.g. spatial,
+random, ridge using least asymmetric weighed squares / absolutes as well as
+boosting; also supplies expectiles for common distributions.")
+    (license license:gpl2)))
+
 (define-public r-expdes-pt
   (package
     (name "r-expdes-pt")
@@ -4990,6 +5021,37 @@ phylogenetic tree, and statistical distribution Shiny interactive simulations
 for use in teaching.")
     (license license:gpl2+)))
 
+(define-public r-evmissing
+  (package
+    (name "r-evmissing")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evmissing" version))
+       (sha256
+        (base32 "0722nvyn5mgip262hbfvqngnndws5p154gpxzj96p5gzsxgh2z6h"))))
+    (properties `((upstream-name . "evmissing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rust r-revdbayes r-nieve r-itp r-gamlssx))
+    (home-page "https://paulnorthrop.github.io/evmissing/")
+    (synopsis "Extreme Value Analyses with Missing Data")
+    (description
+     "This package performs likelihood-based extreme value inferences with adjustment
+for the presence of missing values based on Simpson and Northrop (2025)
+<doi:10.48550/@code{arXiv.2512.15429>}.  A Generalised Extreme Value
+distribution is fitted to block maxima using maximum likelihood estimation, with
+the location and scale parameters reflecting the numbers of non-missing raw
+values in each block.  A Bayesian version is also provided.  For the purposes of
+comparison, there are options to make no adjustment for missing values or to
+discard any block maximum for which greater than a percentage of the underlying
+raw values are missing.  Example datasets containing missing values are
+provided.")
+    (license license:gpl3+)))
+
 (define-public r-evitaicossa
   (package
     (name "r-evitaicossa")
@@ -6724,13 +6786,13 @@ plots.  The App is called using @code{eufmdis.adapt::run_adapt()}.")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudract" version))
        (sha256
-        (base32 "0p2mhrachyhy8g0vcwflvjpl3g8kb3vr60d8zyaj1z5wmf43264k"))))
+        (base32 "0sv9x908l0k78jkpfy8v3rvn8rg16hi66vbfby1xg7bd564nr9zm"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (arguments
@@ -7459,6 +7521,59 @@ deriving the site index and for interpolating between age and site indices and
 extrapolating beyond age and site index ranges.  The inter-/extrapolations are
 performed traditionally by the rule of proportion or with a functional approach.")
     (license license:expat)))
+
+(define-public r-esviz
+  (package
+    (name "r-esviz")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "esviz" version))
+       (sha256
+        (base32 "0fmyy6i905pz7q4kscrjfka6cq3r4n792jg7nf86zwjxxgghdzlj"))))
+    (properties `((upstream-name . "esviz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list proj geos gdal))
+    (propagated-inputs (list r-webshot2
+                             r-variancepartition
+                             r-sf
+                             r-scales
+                             r-s2dv
+                             r-rnaturalearth
+                             r-rlang
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-plyr
+                             r-maps
+                             r-mapproj
+                             r-kableextra
+                             r-jsonlite
+                             r-gtable
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-easyncdf
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-cstools
+                             r-cowplot
+                             r-climprojdiags))
+    (home-page "https://gitlab.earth.bsc.es/es/esviz/")
+    (synopsis "Plotting Functions for Climate Science and Services")
+    (description
+     "This package provides a plotting package for climate science and services.
+Provides a set of functions for visualizing climate data, including maps, time
+series, scorecards and other diagnostics.  Some functions are adapted and
+extended from the s2dv and CSTools packages (Manubens et al. (2018)
+<doi:10.1016/j.envsoft.2018.01.018>; PÃ©rez-ZanÃ³n et al. (2022)
+<doi:10.5194/gmd-15-6115-2022>), with more consistent and integrated
+functionalities.")
+    (license license:gpl3)))
 
 (define-public r-esvis
   (package
@@ -16362,13 +16477,13 @@ Gaussian and exponential distribution.")
 (define-public r-emf
   (package
     (name "r-emf")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emf" version))
        (sha256
-        (base32 "195cjpvfq39vqr4mhgiyxhc4ix7ckw783z5ys70glsp9isq9zsgf"))))
+        (base32 "1cf0layhr2ip78w80bd6hsyh7hrnb84h396jjsxziamgnfllyv91"))))
     (properties `((upstream-name . "emf")))
     (build-system r-build-system)
     (arguments
@@ -21360,13 +21475,13 @@ pyndl <https://pyndl.readthedocs.io/en/latest/> for that purpose.).")
 (define-public r-ediutils
   (package
     (name "r-ediutils")
-    (version "1.0.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDIutils" version))
        (sha256
-        (base32 "1rgk2bpfb98nd0zv4kabskm0zk9dz52swwf95h46vc2yb0kwapkw"))))
+        (base32 "17a0pfya513sln67k30y7mzd92d5z5xbjil64g10glagbii06sji"))))
     (properties `((upstream-name . "EDIutils")))
     (build-system r-build-system)
     (arguments
@@ -23227,13 +23342,13 @@ these methods and its evolution in literature.")
 (define-public r-econid
   (package
     (name "r-econid")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "econid" version))
        (sha256
-        (base32 "0ahxvka6xadrzsig0x1ls2g0rhn92prqnn229cmffmgppqnnl53j"))))
+        (base32 "0qj6dg6f0g7jdiz2ccnj2z8szi2fsz01sac4dd14nhxhq8k1f8yw"))))
     (properties `((upstream-name . "econid")))
     (build-system r-build-system)
     (arguments
@@ -23253,8 +23368,8 @@ these methods and its evolution in literature.")
 (economy, aggregate, institution, etc.) name and id in economic datasets such as
 those published by the International Monetary Fund and World Bank.  Aims to
 facilitate consistent data analysis, reporting, and joining across datasets.
-Used as a foundational building block in the econdataverse family of packages
-(<https://www.econdataverse.org>).")
+Used as a foundational building block in the @code{EconDataverse} family of
+packages (<https://www.econdataverse.org>).")
     (license license:expat)))
 
 (define-public r-econgeo
@@ -24555,13 +24670,13 @@ using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarty" version))
        (sha256
-        (base32 "10z772ggs36ckb4c9f70yhwvnbzgppjs3bz705wanahvsk0aqhw0"))))
+        (base32 "04119fqc6a7n9qrxxj5734b6llqm4ijrgghmkym28p2gdsnvxi4q"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (arguments
@@ -25958,13 +26073,13 @@ estimating technical efficiency is also included.  More details in:
 (define-public r-easyviz
   (package
     (name "r-easyviz")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyViz" version))
        (sha256
-        (base32 "11wa89kl44nxcs3v6q4jxjb63bfmwqf7n5v1s71sl2bawgar4vr8"))))
+        (base32 "06qx7dsfq2mjs1q55m5g6i1qr0fr56cjvyn9vs47wm6k73m0w729"))))
     (properties `((upstream-name . "easyViz")))
     (build-system r-build-system)
     (arguments
@@ -25977,18 +26092,21 @@ estimating technical efficiency is also included.  More details in:
      "Offers a flexible and user-friendly interface for visualizing conditional
 effects from a broad range of regression models, including mixed-effects and
 generalized additive (mixed) models.  Compatible model types include
-@code{lm()}, @code{rlm()}, @code{glm()}, @code{glm.nb()}, and @code{gam()} (from
-mgcv'); nonlinear models via @code{nls()}; and generalized least squares via
-@code{gls()}.  Mixed-effects models with random intercepts and/or slopes can be
+@code{lm()}, @code{rlm()}, @code{glm()}, @code{glm.nb()}, @code{betareg()}, and
+@code{gam()} (from mgcv'); nonlinear models via @code{nls()}; generalized least
+squares via @code{gls()}; and survival models via @code{coxph()} (from
+survival').  Mixed-effects models with random intercepts and/or slopes can be
 fitted using @code{lmer()}, @code{glmer()}, @code{glmer.nb()}, @code{glmmTMB()},
 or @code{gam()} (from mgcv', via smooth terms).  Plots are rendered using base R
 graphics with extensive customization options.  Approximate confidence intervals
-for @code{nls()} models are computed using the delta method.  Robust standard
-errors for @code{rlm()} are computed using the sandwich estimator (Zeileis 2004)
-<doi:10.18637/jss.v011.i10>.  Methods for generalized additive models follow
-Wood (2017) <doi:10.1201/9781315370279>.  For linear mixed-effects models with
-lme4', see Bates et al. (2015) <doi:10.18637/jss.v067.i01>.  For mixed models
-using @code{glmmTMB}', see Brooks et al. (2017) <doi:10.32614/RJ-2017-066>.")
+for @code{nls()} and @code{betareg()} models are computed using the delta
+method.  Robust standard errors for @code{rlm()} are computed using the sandwich
+estimator (Zeileis 2004) <doi:10.18637/jss.v011.i10>.  For beta regression using
+betareg', see Cribari-Neto and Zeileis (2010) <doi:10.18637/jss.v034.i02>.  For
+mixed-effects models with lme4', see Bates et al. (2015)
+<doi:10.18637/jss.v067.i01>.  For models using @code{glmmTMB}', see Brooks et
+al. (2017) <doi:10.32614/RJ-2017-066>.  Methods for generalized additive models
+using mgcv follow Wood (2017) <doi:10.1201/9781315370279>.")
     (license license:gpl3)))
 
 (define-public r-easyverification

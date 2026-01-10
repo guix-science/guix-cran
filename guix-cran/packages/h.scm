@@ -16,8 +16,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages geo)
-  #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -8175,13 +8173,13 @@ you're documenting your data analysis or creating interactive shiny apps.")
 (define-public r-highfrequency
   (package
     (name "r-highfrequency")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highfrequency" version))
        (sha256
-        (base32 "0ni9id0hbg0ydxs66prbhgv4c642l0jb24rfnqrdbs6bgfc9inhm"))))
+        (base32 "1idh3xp33ycaih3v3lgdgq1mgmiw85nw6y0h1h2aki7lpwqcm6gr"))))
     (properties `((upstream-name . "highfrequency")))
     (build-system r-build-system)
     (arguments
@@ -8212,13 +8210,13 @@ Kleen, and Sjoerup (2022, <doi:10.18637/jss.v104.i08>).")
 (define-public r-highfive
   (package
     (name "r-highfive")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HighFive" version))
        (sha256
-        (base32 "0bvbs5jbwhfimimj9gkkd4g4q8izsb1gxkkq872vfln3rdn5dgib"))))
+        (base32 "1nzshjh5kizjiq93jy1cjsy5shcmk5z3qz0n4dcxf9wcg2rw7f0m"))))
     (properties `((upstream-name . "HighFive")))
     (build-system r-build-system)
     (arguments
@@ -10401,6 +10399,34 @@ estimators.\" Journal of Multivariate Analysis (2021)
 distribution.")
     (license license:gpl2+)))
 
+(define-public r-heritable
+  (package
+    (name "r-heritable")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heritable" version))
+       (sha256
+        (base32 "0767mi0fcs8npj0f9izgi55ivcclrs7p3idirki2jfin0a64xc86"))))
+    (properties `((upstream-name . "heritable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-vctrs r-stringr r-matrix r-emmeans r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://anu-aagi.github.io/heritable/")
+    (synopsis "Heritability Estimation from Mixed Models")
+    (description
+     "Reporting heritability estimates is an important to quantitative genetics
+studies and breeding experiments.  Here we provide functions to calculate
+various broad-sense heritabilities from asreml and lme4 model objects.  All
+methods we have implemented in this package have extensively discussed in the
+article by Schmidt et al. (2019) <doi:10.1534/genetics.119.302134>.")
+    (license license:gpl3+)))
+
 (define-public r-heritability
   (package
     (name "r-heritability")
@@ -11600,13 +11626,13 @@ rehabilitation.")
 (define-public r-healthiar
   (package
     (name "r-healthiar")
-    (version "0.2.1.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthiar" version))
        (sha256
-        (base32 "1nzqjnys2zljnn8mbxp5081rikb10yk66gw5h9j80pb2lly586sz"))))
+        (base32 "1g48dhz075i8ffak5lbcrb0dp69k1yaks8473yw74a63ddl1i6iv"))))
     (properties `((upstream-name . "healthiar")))
     (build-system r-build-system)
     (arguments
@@ -11614,9 +11640,9 @@ rehabilitation.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble r-purrr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=healthiar")
+    (home-page "https://swisstph.github.io/healthiar/")
     (synopsis
-     "Quantify and Monetize the Burden of Disease Attributable to Exposure")
+     "Quantifying and Monetizing Health Impacts Attributable to Exposure")
     (description
      "This R package has been developed with a focus on air pollution and noise but
 can applied to other exposures.  The initial development has been funded by the
@@ -15079,25 +15105,19 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "1l7zamh26qq06hb3f0g3d5dpv0vysmrbdifc9srskvsgzsviywyz"))))
+        (base32 "1mqkf5749gqx505f0g7g9wm2n4hy22pwyxa66lrz5v9jg8adlvk2"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list sqlite proj geos gdal))
-    (propagated-inputs (list r-xml2
-                             r-terra
-                             r-sf
-                             r-jsonlite
-                             r-httr2
-                             r-dplyr))
+    (propagated-inputs (list r-xml2 r-terra r-sf r-jsonlite r-httr2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/paul-carteron")
     (synopsis "R Interface to 'IGN' Web Services")

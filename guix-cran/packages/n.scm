@@ -6479,6 +6479,44 @@ and Hsu and Yu (2018) <doi: 10.1177/0962280218772592>.  Note that the current
 version can only impute for a situation with one missing covariate.")
     (license license:lgpl2.0+)))
 
+(define-public r-nnmf
+  (package
+    (name "r-nnmf")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnmf" version))
+       (sha256
+        (base32 "01dxwx4wfwg5c7c52pr1x70387vbz5qmkl83gr38ms06rikcdxz6"))))
+    (properties `((upstream-name . "nnmf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sparcl
+                             r-rglpk
+                             r-rfast2
+                             r-rfast
+                             r-quadprog
+                             r-osqp
+                             r-matrix
+                             r-clusterr))
+    (home-page "https://cran.r-project.org/package=nnmf")
+    (synopsis "Nonnegative Matrix Factorization")
+    (description
+     "Nonnegative matrix factorization (NMF) is a technique to factorize a matrix with
+nonnegative values into the product of two matrices.  Parallel computing is an
+option to enhance the speed and high-dimensional and large scale (and/or sparse)
+data are allowed.  Relevant papers include: Wang Y. X. and Zhang Y. J. (2012).
+Nonnegative matrix factorization: A comprehensive review.  IEEE Transactions on
+Knowledge and Data Engineering, 25(6), 1336-1353 <doi:10.1109/TKDE.2012.51> and
+Kim H. and Park H. (2008).  Nonnegative matrix factorization based on
+alternating nonnegativity constrained least squares and active set method.  SIAM
+Journal on Matrix Analysis and Applications, 30(2), 713-730
+<doi:10.1137/07069239X>.")
+    (license license:gpl2+)))
+
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
@@ -15417,13 +15455,13 @@ uncertainty.")
 (define-public r-negligible
   (package
     (name "r-negligible")
-    (version "0.1.9")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "negligible" version))
        (sha256
-        (base32 "085pv5nh7v6mwyvhdr2nqnh0z6729lq86nwb6klhzhqi376i1r6q"))))
+        (base32 "1par28c7x9jsrwdy561kx79qd09pkkhy97gxb01miiixpmglnavm"))))
     (properties `((upstream-name . "negligible")))
     (build-system r-build-system)
     (arguments
@@ -15435,8 +15473,7 @@ uncertainty.")
                              r-mbess
                              r-lavaan
                              r-ggplot2
-                             r-fungible
-                             r-ez
+                             r-effectsize
                              r-e1071
                              r-dplyr
                              r-desctools))

@@ -869,6 +869,37 @@ rare.  Full procedure is described in Cortes (2020)
 <https://www.rulequest.com/gritbot-info.html> software.")
     (license license:gpl3+)))
 
+(define-public r-outlierspinner
+  (package
+    (name "r-outlierspinner")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outlierspinner" version))
+       (sha256
+        (base32 "1x3hjj6xhynp3dzqw25mf6i7apgl59cw7knkd937bncmzyhqslcp"))))
+    (properties `((upstream-name . "outlierspinner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-mass r-ggplot2))
+    (home-page "https://cran.r-project.org/package=outlierspinner")
+    (synopsis
+     "Geometric Multivariate Outlier Detection via Random Directional Probing")
+    (description
+     "This package provides tools for multivariate outlier detection based on
+geometric properties of multivariate data using random directional projections.
+Observation-level outlier scores are computed by jointly probing radial
+magnitude and angular alignment through repeated projections onto random
+directions, with optional robust centering and covariance adjustment.  In
+addition to global outlier scoring, the method produces dimension-level
+contribution measures to support interpretation of detected anomalies.
+Visualization utilities are included to summarize directional contributions for
+extreme observations.")
+    (license license:expat)))
+
 (define-public r-outlierso3
   (package
     (name "r-outlierso3")
@@ -7945,6 +7976,42 @@ camera device.")
 computing power of GPUs and other HPC accelerator devices.")
     (license license:bsd-3)))
 
+(define-public r-opencast
+  (package
+    (name "r-opencast")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpEnCAST" version))
+       (sha256
+        (base32 "1nbwd94vsi1x74hdy8gd3lf7fbjf8k7z489b0gs1j2pqf7ncxzh6"))))
+    (properties `((upstream-name . "OpEnCAST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-seqinr
+                             r-ftrcool
+                             r-entropy
+                             r-biostrings))
+    (home-page "https://cran.r-project.org/package=OpEnCAST")
+    (synopsis
+     "Optimized Ensemble Model for C and A Methylation Search in Plant")
+    (description
+     "DNA methylation is an important epigenetic process that regulates gene activity
+through chemical modifications of DNA without changing its sequence.
+@code{OpEnCAST} is a plant-specific ensemble-based prediction package that
+identifies 4@code{mC}, 5@code{mC} and 6@code{mA} methylation sites directly from
+DNA sequences.  It combines multiple machine learning algorithms trained on
+monocot (Oryza sp.) and dicot (Arabidopsis sp.) reference models to deliver
+accurate predictions.  This methodology is being inspired by the ensemble
+algorithm for methylation prediction developed by Wang et al. (2022)
+<doi:10.1186/s12859-022-04756-1>.")
+    (license license:gpl3)))
+
 (define-public r-opencage
   (package
     (name "r-opencage")
@@ -10315,13 +10382,13 @@ functionality is supported.")
 (define-public r-omophub
   (package
     (name "r-omophub")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omophub" version))
        (sha256
-        (base32 "0778s5mi131hs7awypa6ss08nqznskdl383h8sbnr1pxi8y5ahpk"))))
+        (base32 "0a3g07zfbkq2r2w6ybfffgx10mp9cnci63m93n89ksmh9gm7r9nf"))))
     (properties `((upstream-name . "omophub")))
     (build-system r-build-system)
     (arguments
@@ -10806,6 +10873,36 @@ degree of sparsity.")
  This package provides functions to construct the quantitative prediction model
 using omics data.")
     (license license:gpl3+)))
+
+(define-public r-omicnetr
+  (package
+    (name "r-omicnetr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicNetR" version))
+       (sha256
+        (base32 "1b2i8r1cdcjmpzkqwy6g33ny0v41fi3j2jb4c5srwk3p88jp46n6"))))
+    (properties `((upstream-name . "OmicNetR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OmicNetR")
+    (synopsis "Network-Based Integration of Multi-Omics Data Using Sparse CCA")
+    (description
+     "This package provides an end-to-end workflow for integrative analysis of two
+omics layers using sparse canonical correlation analysis (@code{sCCA}),
+including sample alignment, feature selection, network edge construction, and
+visualization of gene-metabolite relationships.  The underlying methods are
+based on penalized matrix decomposition and sparse CCA (Witten, Tibshirani and
+Hastie (2009) <doi:10.1093/biostatistics/kxp008>), with design principles
+inspired by multivariate integrative frameworks such as @code{mixOmics} (Rohart
+et al. (2017) <doi:10.1371/journal.pcbi.1005752>).")
+    (license license:expat)))
 
 (define-public r-omicnavigator
   (package
@@ -12275,6 +12372,31 @@ contributions (Multisystem).")
 Development (OECD).")
     (license license:cc0)))
 
+(define-public r-odyssey
+  (package
+    (name "r-odyssey")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odyssey" version))
+       (sha256
+        (base32 "1q7q2g0p5shhr0x02mbcq87ydvfvjqs55ww50rz9hxwkxqbj9wq2"))))
+    (properties `((upstream-name . "odyssey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-httr2))
+    (home-page "https://codeberg.org/nfrerebeau/odyssey")
+    (synopsis "Interface to the HAL Open Archive API")
+    (description
+     "An interface to the search API of HAL <https://hal.science/>, the French open
+archive for scholarly documents from all academic fields.  This package provides
+programmatic access to the API <https://api.archives-ouvertes.fr/docs> and
+allows to search for records and download documents.")
+    (license license:gpl3+)))
+
 (define-public r-odt
   (package
     (name "r-odt")
@@ -13736,13 +13858,13 @@ distributions are implemented as described in OâNeill (2019)
 (define-public r-occumb
   (package
     (name "r-occumb")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occumb" version))
        (sha256
-        (base32 "1grn6k7mv2imcrxs9q1w697kwzd991bk5v8mdvm58nhvn9v9dr2z"))))
+        (base32 "12rp9ysn24g1p9vjf9f70qf9q2lqv3b2bnsa1g5xkq1xzg0hs7cr"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
     (arguments

@@ -2096,13 +2096,13 @@ workers parameter.")
 (define-public r-curricularcomplexity
   (package
     (name "r-curricularcomplexity")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CurricularComplexity" version))
        (sha256
-        (base32 "04mrcv40zgb9nsms0wpkp61ygg2fisvin2mzcqac02pvh3k5rww9"))))
+        (base32 "0w6kxlwrzbrysgxdp42ldayw20hhxjx4lsj12zsq95v50csfc2mm"))))
     (properties `((upstream-name . "CurricularComplexity")))
     (build-system r-build-system)
     (arguments
@@ -5096,13 +5096,13 @@ and how different municipalities have merged/redistricted over time from 2006 to
 (define-public r-cscnet
   (package
     (name "r-cscnet")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSCNet" version))
        (sha256
-        (base32 "0amsrjzpfga66mh6x589whz70xpl0sg10f80x87apxz312rb4r8m"))))
+        (base32 "0bndx3d42lm31kly46k1k6d0w0xsca586xpixwins20yx6w1z4xh"))))
     (properties `((upstream-name . "CSCNet")))
     (build-system r-build-system)
     (arguments
@@ -5113,17 +5113,18 @@ and how different municipalities have merged/redistricted over time from 2006 to
                              r-survival
                              r-stringr
                              r-riskregression
-                             r-recipes
                              r-purrr
                              r-prodlim
+                             r-parallelly
                              r-magrittr
                              r-glmnet
                              r-future
                              r-furrr
                              r-dplyr
+                             r-collinear
                              r-caret))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CSCNet")
+    (home-page "https://shahin-roshani.github.io/CSCNet/")
     (synopsis
      "Fitting and Tuning Regularized Cause-Specific Cox Models with Elastic-Net Penalty")
     (description
@@ -7366,13 +7367,13 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
 (define-public r-crmpack
   (package
     (name "r-crmpack")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmPack" version))
        (sha256
-        (base32 "03bvx52qdxrsg3rmvw6gczi28a1msiwviawc9p652fqk3agyh5m8"))))
+        (base32 "17wdlbrrcl7z1wjl0xsmyz2fir332bv9vz5chdkkblscjcrlwddd"))))
     (properties `((upstream-name . "crmPack")))
     (build-system r-build-system)
     (arguments
@@ -9248,13 +9249,13 @@ continuous outcome\", BMC Medical Research Methodology.")
 (define-public r-cpr
   (package
     (name "r-cpr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpr" version))
        (sha256
-        (base32 "1vv7cmjf08accdpp5qjw9rad8yb9izc6bw440366ckh4q87306q4"))))
+        (base32 "1dljnbakwgpqhzdbiixqr13hhfmp1mvqa3yv97ql27qw5wkwamiq"))))
     (properties `((upstream-name . "cpr")))
     (build-system r-build-system)
     (arguments
@@ -13428,13 +13429,13 @@ populations using genetic data.  Pritchard JK, Stephens M, Donnelly PJ (2000)
 (define-public r-corrselect
   (package
     (name "r-corrselect")
-    (version "3.0.5")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrselect" version))
        (sha256
-        (base32 "0yrcmc732xp9yfbww98g7cf28i6m95sz2aq6r3qngmidl08vbbsj"))))
+        (base32 "1lp36bbw0z5k04d0y62q8nqhbgqsvx9r3ml7vi27h2ynsmn3kkqa"))))
     (properties `((upstream-name . "corrselect")))
     (build-system r-build-system)
     (arguments
@@ -16350,13 +16351,13 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.1.10")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "1s4mr6cz9dsgwwcd83gvx295infrh6hcymrdw53h5z01x5hhdi20"))))
+        (base32 "0pj4z2bbankfrav1ws4qf6y56azjc74c9cc4i60ji15ma093lpac"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (arguments
@@ -16366,8 +16367,6 @@ regression trees.")
                              r-stringr
                              r-rappdirs
                              r-plyr
-                             r-org-mm-eg-db
-                             r-org-hs-eg-db
                              r-httr
                              r-biomart
                              r-biocfilecache
@@ -19768,13 +19767,13 @@ contribution to the actual coverage function.")
 (define-public r-coneproj
   (package
     (name "r-coneproj")
-    (version "1.22")
+    (version "1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coneproj" version))
        (sha256
-        (base32 "12r8pv9zvd1gqqrb79mpcxks99xsijzblgwhy70hazwndlz1hpi3"))))
+        (base32 "16bdhv2khqm14001fbggjzvqm1m20ldir2xfyl6jxnvxah8pa5an"))))
     (properties `((upstream-name . "coneproj")))
     (build-system r-build-system)
     (arguments
@@ -24739,13 +24738,13 @@ name) and half a million packages and functions on CRAN.")
 (define-public r-colleyrstats
   (package
     (name "r-colleyrstats")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colleyRstats" version))
        (sha256
-        (base32 "1984jc90xpxs1lrxqf52za32h9ngjpk0w3gqg9gy7q0z6mz7d4pa"))))
+        (base32 "1z5m3kc8c4x4mkq5qjr4k9nm4x8qcmmlryz2sa6yz0lbrry92dn9"))))
     (properties `((upstream-name . "colleyRstats")))
     (build-system r-build-system)
     (arguments
@@ -24773,7 +24772,7 @@ name) and half a million packages and functions on CRAN.")
                              r-clipr
                              r-car
                              r-artool))
-    (home-page "https://cran.r-project.org/package=colleyRstats")
+    (home-page "https://github.com/M-Colley/colleyRstats")
     (synopsis "Functions to Streamline Statistical Analysis and Reporting")
     (description
      "Built upon popular R packages such as ggstatsplot and ARTool', this collection
@@ -26472,13 +26471,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "10ishi8fiwz2pp58nfvhizi11wv2f400ll7764rc77nm80q7v1k9"))))
+        (base32 "0433kh7bz2k83b2dq62d33klkjanz30zjb0nr5byzcmpcr5msdxi"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (arguments
@@ -27717,6 +27716,45 @@ Units in Our Country\" The State Council of the People's Republic of China (1984
 \"Names, Definitions and Symbols of the Legal Units of Measurement and the
 Decimal Multiples and Submultiples\" Ministry of Economic Affairs (2019)
 <https://gazette.nat.gov.tw/@code{egFront/detail.do?metaid=108965>}.")
+    (license license:expat)))
+
+(define-public r-cnsigs
+  (package
+    (name "r-cnsigs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CNSigs" version))
+       (sha256
+        (base32 "0dc0a3cx3xqrzgf0zcmizp3r15m4f0s0856mv0540xdms877lwyx"))))
+    (properties `((upstream-name . "CNSigs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-snow
+                             r-rcolorbrewer
+                             r-pheatmap
+                             r-nmf
+                             r-limsolve
+                             r-ggplot2
+                             r-foreach
+                             r-flexmix
+                             r-doparallel
+                             r-cowplot
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CNSigs")
+    (synopsis "Analysis of Copy Number Signatures")
+    (description
+     "This package provides a workflow to generate and analyze signatures based on
+copy number data using non-negative matrix factorization (NMF) in an approach
+similar to that used in mutational signatures.  It can be used to extract
+features from Copy number segment data and use that to find a subset of copy
+number signatures which can be further used to correlate with other relevant
+data.  For more on NMF see Gaujoux (2013) <doi:10.1186/1471-2105-11-367>.")
     (license license:expat)))
 
 (define-public r-cnps
@@ -29504,13 +29542,13 @@ sparse latent variables can also be defined.")
 (define-public r-clustur
   (package
     (name "r-clustur")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustur" version))
        (sha256
-        (base32 "12r78457iq0j1cbxlw1ppqypmmi8wz12bhywyl583wgpg4jiwv4y"))))
+        (base32 "1f03xzc1ja3br3ss3b587zngrc2hcf1vryywq3icca97fp132iij"))))
     (properties `((upstream-name . "clustur")))
     (build-system r-build-system)
     (arguments
@@ -29894,13 +29932,13 @@ Gaussian variable models.")
 (define-public r-clustmc
   (package
     (name "r-clustmc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClustMC" version))
        (sha256
-        (base32 "1b7l5b9h93qyfh8bbk70a0cyrv4d37vm2d141y743d3vyr711l8y"))))
+        (base32 "1gy0ll6v0wlvxm8k8bykm672ml48byan9093qymf5gqjp5ay86ld"))))
     (properties `((upstream-name . "ClustMC")))
     (build-system r-build-system)
     (arguments
@@ -29909,7 +29947,6 @@ Gaussian variable models.")
     (propagated-inputs (list r-usedist
                              r-psych
                              r-procs
-                             r-magrittr
                              r-lifecycle
                              r-dplyr
                              r-cli))
@@ -31868,13 +31905,13 @@ and pattern analysis across multiple time frames.")
 (define-public r-clockify
   (package
     (name "r-clockify")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clockify" version))
        (sha256
-        (base32 "0yancrksqpsjgrf5rhq25yl4hnc4vjq57bv5kqqpd0h1fw3xxr37"))))
+        (base32 "068bzia2jpgw29c0l730qcglpy88qg69zq68ma8x6wd466clc6wv"))))
     (properties `((upstream-name . "clockify")))
     (build-system r-build-system)
     (arguments
@@ -32300,13 +32337,13 @@ number needed to treat, number needed to diagnose, and predictive summary index.
 (define-public r-clinpubr
   (package
     (name "r-clinpubr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinpubr" version))
        (sha256
-        (base32 "0ckfa152p90zn1af7i4pw5ddm4jsm9ppr88xprzwgqmf8r4l6kqi"))))
+        (base32 "04jzpm2hgzgclw5aj47m2jz4mdxvnns6nc77kgx6py663wi9fw5d"))))
     (properties `((upstream-name . "clinpubr")))
     (build-system r-build-system)
     (arguments
@@ -32319,6 +32356,7 @@ number needed to treat, number needed to diagnose, and predictive summary index.
                              r-stringi
                              r-rms
                              r-rlang
+                             r-hmisc
                              r-ggplot2
                              r-forestploter
                              r-fbasics
@@ -32738,13 +32776,13 @@ de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (define-public r-climprojdiags
   (package
     (name "r-climprojdiags")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimProjDiags" version))
        (sha256
-        (base32 "190fh3mpwmzby16lp4hychj311lzfp29blxcw4yk2ni68s0wsxqj"))))
+        (base32 "0k89r2533wz1wgfn2i8m34wv2h02wf0nw43vji0pv7wf92nw64ak"))))
     (properties `((upstream-name . "ClimProjDiags")))
     (build-system r-build-system)
     (arguments
@@ -32752,7 +32790,7 @@ de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
       #:tests? #f))
     (propagated-inputs (list r-multiapply))
     (native-inputs (list r-knitr))
-    (home-page "https://earth.bsc.es/gitlab/es/ClimProjDiags")
+    (home-page "https://gitlab.earth.bsc.es/es/ClimProjDiags")
     (synopsis "Set of Tools to Compute Various Climate Indices")
     (description
      "Set of tools to compute metrics and indices for climate analysis.  The package
@@ -38138,13 +38176,13 @@ Press.")
 (define-public r-choosegcm
   (package
     (name "r-choosegcm")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chooseGCM" version))
        (sha256
-        (base32 "1cafqrr18ka1lr91acl9iaifvq2a360nbzww4fhmsvczq7kk8g04"))))
+        (base32 "0m6dncbhl5ign427hnv5xs8i48cyr0d08h74xyzig8fnccpq85qk"))))
     (properties `((upstream-name . "chooseGCM")))
     (build-system r-build-system)
     (arguments
@@ -38153,12 +38191,13 @@ Press.")
     (propagated-inputs (list r-usedist
                              r-terra
                              r-reshape2
-                             r-httr
+                             r-httr2
                              r-ggplot2
                              r-ggcorrplot
                              r-factoextra
                              r-cowplot
                              r-cluster
+                             r-cli
                              r-checkmate))
     (home-page "https://luizesser.github.io/chooseGCM/")
     (synopsis
@@ -40116,13 +40155,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "1si38q842bc44gprjc5d3n76zgiiwhfvgrv8ynzvqsn9p931hwz6"))))
+        (base32 "03ig0qkbrl5qkvs90jbqj7m10sx2cv8srk6lij3nsvpf7laiqayy"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments
@@ -40580,13 +40619,13 @@ Observational Medical Outcomes Partnership Common Data Model.")
 (define-public r-chapgwas
   (package
     (name "r-chapgwas")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CHAPGWAS" version))
        (sha256
-        (base32 "1n9i0w5d1il6kf1r5aik9y8s7vmxbzhpinj85hmy2r2g9dhb8gbv"))))
+        (base32 "11qan1kmagcamfl34xv3sl9dc525kmdpfhv750lq7xixgjh7i7gj"))))
     (properties `((upstream-name . "CHAPGWAS")))
     (build-system r-build-system)
     (arguments
@@ -41285,13 +41324,13 @@ CGP, print.CGP, summary.CGP, predict.CGP and @code{plotCGP}.")
 (define-public r-cgnm
   (package
     (name "r-cgnm")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CGNM" version))
        (sha256
-        (base32 "1gpl6ajl5ppjngsj5159invjfc2gklkdz0zahqfhihyh5mbh2ygf"))))
+        (base32 "1zhavqzi67isa664yjvxxr4slmpvqg0jh3hnqmcz6s9q9hyd63f6"))))
     (properties `((upstream-name . "CGNM")))
     (build-system r-build-system)
     (arguments
@@ -43941,13 +43980,13 @@ Iacus, King, Porro (2012) <DOI:10.1093/pan/mpr013> and Iacus, King, Porro (2019)
 (define-public r-cellwise
   (package
     (name "r-cellwise")
-    (version "2.5.4")
+    (version "2.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellWise" version))
        (sha256
-        (base32 "0kbivb2g4l7k46h6n4pmvz7jav2682m6v8j26d5as1zcdm4y9c4h"))))
+        (base32 "17m8hzdkqky4ir7ma1ilqgb0mrbr268i3bwjnyrkc8db8ify1sqi"))))
     (properties `((upstream-name . "cellWise")))
     (build-system r-build-system)
     (arguments
@@ -45495,13 +45534,13 @@ asymptotic tests and a Monte Carlo method.")
 (define-public r-ccostr
   (package
     (name "r-ccostr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ccostr" version))
        (sha256
-        (base32 "0yfmj8v7ip595v87w9dmlzl5rih2j0lsapswh9b9vvc20wnk48ld"))))
+        (base32 "1vf4c198n5r8c2zapghnyxa2cqm6brmp017x6gy4by8vaq276x9a"))))
     (properties `((upstream-name . "ccostr")))
     (build-system r-build-system)
     (arguments
@@ -45518,7 +45557,7 @@ asymptotic tests and a Monte Carlo method.")
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ccostr")
+    (home-page "https://github.com/CLINDA-AAU/ccostr")
     (synopsis "Estimation of Mean Costs in Censored Data")
     (description
      "Implementation of estimators for inferring the mean of censored cost data.
@@ -49944,13 +49983,13 @@ H, q) process given the model parameters and observation times.")
 (define-public r-caretsdm
   (package
     (name "r-caretsdm")
-    (version "1.2.3")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caretSDM" version))
        (sha256
-        (base32 "1immnd2b05kj91amhy0zwvw4h5i61nl319ly3ih4xxxz0wr28iy9"))))
+        (base32 "124zyq7gs14q8i3g9p1pkp628dkkc6369v4b92h4d13m385l1vsc"))))
     (properties `((upstream-name . "caretSDM")))
     (build-system r-build-system)
     (arguments
@@ -49974,7 +50013,7 @@ H, q) process given the model parameters and observation times.")
                              r-maxnet
                              r-mapview
                              r-lwgeom
-                             r-httr
+                             r-httr2
                              r-gtools
                              r-glue
                              r-ggspatial
@@ -50835,33 +50874,6 @@ estimated fixed-effects coefficients is based on Stammann (2018)
 <https://ideas.repec.org/p/luc/wpaper/18-13.html>, and Correia et al. (2020)
 <doi: 10.1177/1536867X20909691>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-captr
-  (package
-    (name "r-captr")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "captr" version))
-       (sha256
-        (base32 "13j2nq9hm37g4h5fjdpz7kix0sqajdd7zssjfgil06ixfmnsijkx"))))
-    (properties `((upstream-name . "captr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/soodoku/captR")
-    (synopsis "Client for the Captricity API")
-    (description
-     "Get text from images of text using Captricity Optical Character Recognition
-(OCR) API. Captricity allows you to get text from handwritten forms --- think
-surveys --- and other structured paper documents.  And it can output data in
-form a delimited file keeping field information intact.  For more information,
-read <https://shreddr.captricity.com/developer/overview/>.")
-    (license license:expat)))
 
 (define-public r-captain
   (package
@@ -52952,13 +52964,13 @@ web applications.  Learn more about the Calcite Design System at
 (define-public r-calcal
   (package
     (name "r-calcal")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calcal" version))
        (sha256
-        (base32 "1ffqpq7r2pqf1534flx9yqlah7xich846kb4l6nyyrzar1kx1549"))))
+        (base32 "17xqk312p3za4p18fp35hk93szn7a9lc8x59dmj1mv8nirks7r1p"))))
     (properties `((upstream-name . "calcal")))
     (build-system r-build-system)
     (arguments

@@ -45,13 +45,13 @@
 (define-public r-xyomics
   (package
     (name "r-xyomics")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XYomics" version))
        (sha256
-        (base32 "0h975p6vabixkb7flwv0xybyz13b0i91w04r32af5dzyyi8niihk"))))
+        (base32 "14958x25kx8rz1kbyznmi0hx3vl6764zyvjfnb4lhgbi1chszw2s"))))
     (properties `((upstream-name . "XYomics")))
     (build-system r-build-system)
     (arguments
@@ -61,11 +61,10 @@
                              r-seuratobject
                              r-seurat
                              r-scales
-                             r-reactomepa
                              r-rcpp
-                             r-org-hs-eg-db
                              r-limma
                              r-igraph
+                             r-gprofiler2
                              r-ggrepel
                              r-ggraph
                              r-ggplot2

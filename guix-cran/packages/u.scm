@@ -1538,24 +1538,19 @@ which includes various kind of ping, keep-alive and speed tests.  See
 (define-public r-uptasticsearch
   (package
     (name "r-uptasticsearch")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uptasticsearch" version))
        (sha256
-        (base32 "0qi75s0c7ngwgqhkyyrmnd0krr5din90f2xpa1w2s6rf7nz6z4sd"))))
+        (base32 "18vrjzy680l44shsv1a3i5jaycz657p71v5s7q4w8p38c20757da"))))
     (properties `((upstream-name . "uptasticsearch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-purrr
-                             r-jsonlite
-                             r-futile-logger
-                             r-data-table
-                             r-curl))
+    (propagated-inputs (list r-stringr r-purrr r-jsonlite r-data-table r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/uptake/uptasticsearch")
     (synopsis "Get Data Frame Representations of 'Elasticsearch' Results")

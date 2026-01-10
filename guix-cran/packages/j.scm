@@ -362,13 +362,13 @@ where possible (or a modified string, if not a valid formula in R).")
 (define-public r-juliaconnector
   (package
     (name "r-juliaconnector")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JuliaConnectoR" version))
        (sha256
-        (base32 "1f1bh6acf88gxlkx3mzv0lrxz1ys4a55lbjw8aivqx8yvgk9ymb9"))))
+        (base32 "0ql1qwkcc7gyaj0knmsyzr1lnxsk7n2wdfpam56fwmpaidkv1drv"))))
     (properties `((upstream-name . "JuliaConnectoR")))
     (build-system r-build-system)
     (arguments
@@ -4295,35 +4295,6 @@ browser can also be launched from an interactive R console.  The browser can be
 loaded with a variety of common genomics data types, and can be used with a
 custom theme.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-jaya
-  (package
-    (name "r-jaya")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Jaya" version))
-       (sha256
-        (base32 "0qyszpw9bvz29dgf3wqx61h4rzpp0v7y63k214dz53jbrcd2wak0"))))
-    (properties `((upstream-name . "Jaya")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/neerajdhanraj/Jaya")
-    (synopsis
-     "Gradient-Free Optimization Algorithm for Single and Multi-Objective Problems")
-    (description
-     "An implementation of the Jaya optimization algorithm for both single-objective
-and multi-objective problems.  Jaya is a population-based, gradient-free
-optimization algorithm capable of solving constrained and unconstrained
-optimization problems without hyperparameters.  This package includes features
-such as multi-objective Pareto optimization, adaptive population adjustment, and
-early stopping.  For further details, see R.V. Rao (2016)
-<doi:10.5267/j.ijiec.2015.8.004>.")
-    (license license:expat)))
 
 (define-public r-javateak
   (package

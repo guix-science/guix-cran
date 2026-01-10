@@ -276,6 +276,50 @@ ensemble model in sl3', available for download from @code{GitHub} using
 remotes::install_github(\"tlverse/sl3\")'.")
     (license license:expat)))
 
+(define-public r-txeffectssurvival
+  (package
+    (name "r-txeffectssurvival")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TxEffectsSurvival" version))
+       (sha256
+        (base32 "00xn57yx3rxffw0w4gk9mafd5rcq9haqw7vvkfdv38l1h5rnndac"))))
+    (properties `((upstream-name . "TxEffectsSurvival")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=TxEffectsSurvival")
+    (synopsis
+     "Treatment Effect Inference for Terminal and Non-Terminal Events under Competing Risks")
+    (description
+     "This package provides several confidence interval and testing procedures, based
+on either semiparametric (using event-specific win ratios) or nonparametric
+measures, including the ratio of integrated cumulative hazard (RICH) and the
+ratio of integrated transformed cumulative hazard (RITCH), for treatment effect
+inference with terminal and non-terminal events under competing risks.  The
+semiparametric results were developed in Yang et al. (2022
+<doi:10.1002/sim.9266>), and the nonparametric results were developed in Yang
+(2025 <doi:10.1002/sim.70205>).  For comparison, results for the win ratio
+(Finkelstein and Schoenfeld 1999
+<doi:10.1002/(SICI)1097-0258(19990615)18:11%3C1341::AID-SIM129%3E3.0.CO;2-7>),
+Pocock et al.  2012 <doi:10.1093/eurheartj/ehr352>, and Bebu and Lachin 2016
+<doi:10.1093/biostatistics/kxv032>) are included.  The package also supports
+univariate survival analysis with a single event.  In this package, effect size
+estimates and confidence intervals are obtained for each event type, and several
+testing procedures are implemented for the global null hypothesis of no
+treatment effect on either terminal or non-terminal events.  Furthermore, a test
+of proportional hazards assumptions, under which the event-specific win ratios
+converge to hazard ratios, and a test of equal hazard ratios, are provided.  For
+summarizing the treatment effect across all events, confidence intervals for
+linear combinations of the event-specific win ratios, RICH, or RITCH are
+available using pre-determined or data-driven weights.  Asymptotic properties of
+these inference procedures are discussed in Yang et al. (2022
+<doi:10.1002/sim.9266>) and Yang (2025 <doi:10.1002/sim.70205>).")
+    (license license:gpl3+)))
+
 (define-public r-tww
   (package
     (name "r-tww")
@@ -4851,25 +4895,26 @@ ISBN:9781119041672); etc.")
 (define-public r-tsetools
   (package
     (name "r-tsetools")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSEtools" version))
        (sha256
-        (base32 "09pyq0bqs14qah71j6v8cky6vzgj1pi90q60b0zydj7bcrm4lx9w"))))
+        (base32 "008diyawpllk9ma3nh1b3664ndpx6dznl8w17lc2zpfplfiaz673"))))
     (properties `((upstream-name . "TSEtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xts r-quantmod r-quadprog))
+    (propagated-inputs (list r-xts r-rjson r-quantmod r-quadprog r-httr))
     (home-page "https://cran.r-project.org/package=TSEtools")
-    (synopsis "Manage Data from Stock Exchange Markets")
+    (synopsis "Manage Data from the Finance Markets")
     (description
-     "This package provides tools to perform some descriptive data analysis for
-assets.  Manage the portfolio and capital of assets.  It also downloads and
-organizes data from the Tehran Stock Exchange (TSE).")
+     "This package provides a set of tools designed to perform descriptive data
+analysis on assets, manage asset portfolios and capital allocation, and
+download, organize, and maintain data from the \"Tehran Stock Exchange\" and
+\"NOBITEX\" platforms.")
     (license license:bsd-2)))
 
 (define-public r-tseriestarma
@@ -7895,13 +7940,13 @@ econometric filters and modern parameter experimentation tools.")
 (define-public r-trendsegmentr
   (package
     (name "r-trendsegmentr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trendsegmentR" version))
        (sha256
-        (base32 "0mq2h50n2lszbva1wh2cfxgvy9snnrd1819kxvif7yfqzny7drqj"))))
+        (base32 "082g12v175v673y1di6m35s1kh5v6jp1fva5qaw1k8ply3bs6cjg"))))
     (properties `((upstream-name . "trendsegmentR")))
     (build-system r-build-system)
     (arguments
@@ -10248,19 +10293,19 @@ directed acyclic graph with diverging number of nodes\".")
 (define-public r-transgfm
   (package
     (name "r-transgfm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transGFM" version))
        (sha256
-        (base32 "09fc57llhww95j88c762gm070bwrw7zv36phpqndc238gvnmr76x"))))
+        (base32 "11xwxspzx7xzsl5lsw7mmiyp5fy56azbnmmbqlv256j0y2hlq7al"))))
     (properties `((upstream-name . "transGFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=transGFM")
+    (home-page "https://github.com/zjwangATsu/transGFM")
     (synopsis "Transfer Learning for Generalized Factor Models")
     (description
      "Transfer learning for generalized factor models with support for continuous,
@@ -10461,25 +10506,29 @@ plots.")
 (define-public r-transforemotion
   (package
     (name "r-transforemotion")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transforEmotion" version))
        (sha256
-        (base32 "065pp0ckd507v3xsd1galig7jisii46jkal40j0pjf47lf4224hi"))))
+        (base32 "0w9f9khc7rkjk6ik06hf8g9y2b5mfgm34rymmrkrpxazfm4733yz"))))
     (properties `((upstream-name . "transforEmotion")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reticulate
+    (propagated-inputs (list r-textdata
+                             r-reticulate
+                             r-reshape2
                              r-remotes
-                             r-progress
                              r-pbapply
                              r-matrix
                              r-lsafun
+                             r-jsonlite
+                             r-httr
                              r-googledrive
+                             r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=transforEmotion")
@@ -19947,13 +19996,13 @@ behaviors such as @code{if_else2()} and @code{str_detect2()}.")
 (define-public r-tidyplots
   (package
     (name "r-tidyplots")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplots" version))
        (sha256
-        (base32 "1n1mh5g5ww9qbam3y5rcvvpf4f63mgj141g3xsnaic1v1zkzpvqx"))))
+        (base32 "1k4aq804ax9l2d7y18xc7w7kwqqhp4rirmh2jvc8ycbdhk5gh0dc"))))
     (properties `((upstream-name . "tidyplots")))
     (build-system r-build-system)
     (arguments
@@ -19965,10 +20014,10 @@ behaviors such as @code{if_else2()} and @code{str_detect2()}.")
                              r-scales
                              r-rlang
                              r-purrr
-                             r-patchwork
                              r-lifecycle
                              r-htmltools
                              r-hmisc
+                             r-gtable
                              r-glue
                              r-ggrepel
                              r-ggrastr
@@ -20148,6 +20197,31 @@ is read until explicitly requested, as a data frame or list of arrays via
 @code{hyper_tibble()} or @code{hyper_array()}.")
     (license license:gpl3)))
 
+(define-public r-tidyna
+  (package
+    (name "r-tidyna")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyna" version))
+       (sha256
+        (base32 "1rsjavppmpr0kf1ahz0dnc2h6h7wkbiad53lzddbkn14058dvj7x"))))
+    (properties `((upstream-name . "tidyna")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/statzhero/tidyna")
+    (synopsis "NA-Aware Defaults for Common R Functions")
+    (description
+     "This package provides drop-in replacements for common R functions
+@code{(mean()}, @code{sum()}, @code{sd()}, @code{min()}, etc.) that default to
+na.rm = TRUE and issue warnings when missing values are removed.  It handles
+some special cases.  The @code{table()} default is set to @code{useNA} = ifany'.")
+    (license license:expat)))
+
 (define-public r-tidymultiqc
   (package
     (name "r-tidymultiqc")
@@ -20308,6 +20382,38 @@ MPlus software via the @code{MplusAutomation} package.")
     (synopsis "Logging for 'dplyr' and 'tidyr' Functions")
     (description
      "This package provides feedback about dplyr and tidyr operations.")
+    (license license:expat)))
+
+(define-public r-tidylo
+  (package
+    (name "r-tidylo")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidylo" version))
+       (sha256
+        (base32 "07xnbycwrqg3cmbxx76drbjd0mx4s23vf3kihlc9rj4ajjx48z8r"))))
+    (properties `((upstream-name . "tidylo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://juliasilge.github.io/tidylo/")
+    (synopsis "Weighted Tidy Log Odds Ratio")
+    (description
+     "How can we measure how the usage or frequency of some feature, such as words,
+differs across some group or set, such as documents? One option is to use the
+log odds ratio, but the log odds ratio alone does not account for sampling
+variability; we haven't counted every feature the same number of times so how do
+we know which differences are meaningful? Enter the weighted log odds, which
+tidylo provides an implementation for, using tidy data principles.  In
+particular, here we use the method outlined in Monroe, Colaresi, and Quinn
+(2008) <doi:10.1093/pan/mpn018> to weight the log odds ratio by a prior.  By
+default, the prior is estimated from the data itself, an empirical Bayes
+approach, but an uninformative prior is also available.")
     (license license:expat)))
 
 (define-public r-tidyllm
@@ -20876,13 +20982,13 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "1b1yhmqg5dg9x458iva9s0riwg3cgqw8lfv99m4y3sd4k2gk19ns"))))
+        (base32 "0am3z3flxxhv478qb1wsh1g46kzkav2k74f91yn9wqkk7lw097bb"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (arguments
@@ -21621,13 +21727,13 @@ packages.")
 (define-public r-tidycensuskr
   (package
     (name "r-tidycensuskr")
-    (version "0.2.5")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensuskr" version))
        (sha256
-        (base32 "1qqx5f1swqq03502mwic87vprhvggwikjhwnwbikz8s9gj9dyr8v"))))
+        (base32 "0ckqxk55a08jzl32r8g9r1m6pnfps9q6ldvsndq8ps29qcyafz61"))))
     (properties `((upstream-name . "tidycensuskr")))
     (build-system r-build-system)
     (arguments
@@ -22817,13 +22923,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.3.1")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "1ml7al9sk420c2v16wg6vrmk3gpr8ib5nwx2m0sc25nlga33mppf"))))
+        (base32 "0ly304pskng6xcffi0h9wbknd82pdsyjqw1y07wbgsl28f6mavis"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -22840,8 +22946,8 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
      "Collection of Utility Functions for Data Analysis and Computing")
     (description
      "This package provides utility functions for data analysis and scientific
-computing.  Includes functions for parallel processing, and other computational
-tasks to streamline workflows.")
+computing.  Includes functions for logging, parallel processing, and other
+computational tasks to streamline workflows.")
     (license license:expat)))
 
 (define-public r-thisplot
@@ -25264,13 +25370,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "1kgrfhd29m93m7nzaa7bn94hf9yqa41wnyc6c28i6s3ybzndnsj2"))))
+        (base32 "12bfcmr9rxli6yb0fa2fdms941sglrlf4mni4b2xb6ph4a7jhnmk"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (arguments
@@ -32876,13 +32982,13 @@ Groeve et al. (2025) <doi:10.3897/arphapreprints.e151900>.")
 (define-public r-tabr
   (package
     (name "r-tabr")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabr" version))
        (sha256
-        (base32 "1jfhq5npxgxyhgwqsv1j5263my0hvarhcms8766vqyj5inkx7lrm"))))
+        (base32 "0ndjvcrf1mbr57s1ys7m9qqsid1aivbxzmp404mfmg95hn39glmf"))))
     (properties `((upstream-name . "tabr")))
     (build-system r-build-system)
     (arguments
@@ -33045,13 +33151,13 @@ data into machine-readable @code{LongForm} Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.6.12")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablet" version))
        (sha256
-        (base32 "18szlxhmxflskab60n4hdjl8w5pqmc54ipadckd4xmjyz67y9xxp"))))
+        (base32 "0ijj978h87c38w3g8ijf4z1s7jhiyivc345k03czg9wz80n5w5pm"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (arguments

@@ -1437,18 +1437,19 @@ Ye, C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
 (define-public r-avesperu
   (package
     (name "r-avesperu")
-    (version "0.0.6")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avesperu" version))
        (sha256
-        (base32 "080p3g515gx9qh1anmr6xiq0imxxywzymc0ik5wb499ws6ydr5lp"))))
+        (base32 "1q7hzxhszhd76y2qsyaabi74s8bacfx7dx16y8z9w2xh2k9n89hp"))))
     (properties `((upstream-name . "avesperu")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-cli))
     (home-page "https://github.com/PaulESantos/avesperu")
     (synopsis "Access to the List of Birds Species of Peru")
     (description
@@ -3550,13 +3551,13 @@ data visualization and report generation functions.")
 (define-public r-audubon
   (package
     (name "r-audubon")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "audubon" version))
        (sha256
-        (base32 "1y9cy4l6m1yyh5cvfpdp7985g1jxjdl7r7f3xsrb67bz0r3x2zfg"))))
+        (base32 "0p4sc904wbmq30gkqsm5qj64s6mh1ha499c36n7y12sy02d7cvxs"))))
     (properties `((upstream-name . "audubon")))
     (build-system r-build-system)
     (arguments
@@ -5239,13 +5240,13 @@ association strength between individuals using each method.")
 (define-public r-associationexplorer2
   (package
     (name "r-associationexplorer2")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssociationExplorer2" version))
        (sha256
-        (base32 "1sdsw8l0rjc3y5nj12phw0blv19ivrld60h0d9qff8zqq432xcsg"))))
+        (base32 "1j1rv7q7qfbp91vcbf6v84s90xhhilgxngh3cpasz5rbjgmjjhg8"))))
     (properties `((upstream-name . "AssociationExplorer2")))
     (build-system r-build-system)
     (arguments
@@ -5264,7 +5265,7 @@ optional survey weights and range-based filters on association strengths, making
 it suitable for the exploration of survey and public data by non-technical
 users, journalists, educators, and researchers.  For background and
 methodological details, see Soetewey et al. (2025)
-<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5637359>.")
+<doi:10.1016/j.softx.2025.102483>.")
     (license license:expat)))
 
 (define-public r-assocbin
@@ -6477,13 +6478,13 @@ with the book.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.12-1")
+    (version "1.12-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asbio" version))
        (sha256
-        (base32 "18fk2rgqzd2mssl03n0zhmcm9hi68fs9zqaq9ybj4s7qhzhlwdfa"))))
+        (base32 "1pbplgy96qjl85536pqwbq17w6yg5n3zn7i82pay03m6afixhwap"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (arguments
@@ -11101,13 +11102,13 @@ by Joshua French (<https://jfrench.github.io/@code{LinearRegression/>}).")
 (define-public r-aphylo
   (package
     (name "r-aphylo")
-    (version "0.3-5")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aphylo" version))
        (sha256
-        (base32 "0nl6ndgjcby8j3mid6garqpgc37bp591fbb5y43kyczm180kcbbh"))))
+        (base32 "1mgzjnfckyx2waph0dcdax1c9lsxd19snahq1a58ip9l68zcgm0j"))))
     (properties `((upstream-name . "aphylo")))
     (build-system r-build-system)
     (arguments
@@ -11698,13 +11699,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apache.sedona" version))
        (sha256
-        (base32 "172cgn9pgydlmwr8l191pyx3qklmxhsmiqhgzcv0s3dbva3gjrvi"))))
+        (base32 "0c2jkgzfgd0nl06ajmsixhy9mi4fv380flfcp3sgfy47s0w755kf"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (arguments
@@ -12045,19 +12046,24 @@ through integer programming.  Communications in Statistics - Theory and Methods
 (define-public r-aopdata
   (package
     (name "r-aopdata")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aopdata" version))
        (sha256
-        (base32 "1g9lz8b7ilmr7xybnapkg4nvpzkkphazr7irb1qs3vqbws8gxf8x"))))
+        (base32 "08pm4nispnqi4didd92hh9ibjbm4qdal1lzkdv439f4cwcnm75i5"))))
     (properties `((upstream-name . "aopdata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-data-table r-curl r-checkmate))
+    (propagated-inputs (list r-sf
+                             r-rlang
+                             r-data-table
+                             r-curl
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://ipeagit.github.io/aopdata/")
     (synopsis "Data from the 'Access to Opportunities Project (AOP)'")
@@ -16677,13 +16683,13 @@ samples.")
 (define-public r-alookr
   (package
     (name "r-alookr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alookr" version))
        (sha256
-        (base32 "1lwqrihz806y6d5wjvngpr2vihsw54aga98cl4z5qs4qcrdaf983"))))
+        (base32 "1pvqii2bn7c23s7mff1airypd5f0kndl21wk7qxk8mx9vs76mq76"))))
     (properties `((upstream-name . "alookr")))
     (build-system r-build-system)
     (arguments
@@ -17526,6 +17532,34 @@ Countries API <https://restcountries.com/>.")
      "Two unordered pairs of data of two different snips positions is haplotyped by
 resolving a small number ob closed equations.")
     (license license:gpl2)))
+
+(define-public r-algebraic-mle
+  (package
+    (name "r-algebraic-mle")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "algebraic.mle" version))
+       (sha256
+        (base32 "0zmy624xy3dr027807m6bf7zlnsvcdm4a6mkcfr0cx8myk5llyvd"))))
+    (properties `((upstream-name . "algebraic.mle")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-mvtnorm r-mass r-boot
+                             r-algebraic-dist))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/algebraic.mle")
+    (synopsis "Algebraic Maximum Likelihood Estimators")
+    (description
+     "Defines an algebra over maximum likelihood estimators (MLEs) by providing
+operators that are closed over MLEs, along with various statistical functions
+for inference.  For background on maximum likelihood estimation, see Casella and
+Berger (2002, ISBN:978-0534243128).  For the delta method and variance
+estimation, see Lehmann and Casella (1998, ISBN:978-0387985022).")
+    (license license:gpl3+)))
 
 (define-public r-algebraic-dist
   (package
@@ -20062,22 +20096,26 @@ Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
 (define-public r-agrobox
   (package
     (name "r-agrobox")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agrobox" version))
        (sha256
-        (base32 "17jlck0kvrv7m4pr18f8ca8mz2qijbrw07r0bq3m9rdf7g84kl00"))))
+        (base32 "1bfyij2fqrzmhrvvjqjd5zj59igpvlx61rzh452d2lps6ikbqh6z"))))
     (properties `((upstream-name . "agrobox")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tinytex
+                             r-tidyr
                              r-stringr
                              r-rlang
                              r-pwr
+                             r-openxlsx
+                             r-magick
+                             r-kableextra
                              r-ggplot2
                              r-dplyr
                              r-agricolae))
@@ -20085,23 +20123,24 @@ Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
     (synopsis
      "Data Visualization and Statistical Tools for Agroindustrial Experiments")
     (description
-     "Set of functions to create clear graphics and run common statistical analyses
-for agricultural experiments (ANOVA with post-hoc tests such as Tukey HSD and
-Duncan MRR, coefficient of variation, and simple power calculations),
-streamlining exploratory analysis and reporting.  Functions build on ggplot2 and
-base stats and follow methods widely used in agronomy (field trials, plant
-breeding).  Key references include Tukey (1949) <doi:10.2307/3001913>, Duncan
-(1955) <doi:10.2307/3001478>, Cohen (1988, ISBN:9781138892899); see also
-agricolae <https://CRAN.R-project.org/package=agricolae> and Wickham (2016,
-ISBN:9783319242750) for ggplot2'.  VersiÃ³n en espaÃ±ol: Conjunto de funciones
-para generar grÃ¡ficos claros y ejecutar anÃ¡lisis habituales en ensayos
-agrÃ­colas (ANOVA con pruebas post-hoc como Tukey HSD y Duncan MRR, coeficiente
-de variaciÃ³n y cÃ¡lculos simples de potencia), facilitando el anÃ¡lisis
-exploratorio y la elaboraciÃ³n de reportes.  Los mÃ©todos implementados se basan
-en Tukey (1949) <doi:10.2307/3001913>, Duncan (1955) <doi:10.2307/3001478> y
-Cohen (1988, ISBN:9781138892899); ver tambiÃ©n agricolae
-<https://CRAN.R-project.org/package=agricolae> y Wickham (2016,
-ISBN:9783319242750) para ggplot2'.")
+     "Set of tools for statistical analysis, visualization, and reporting of
+agroindustrial and agricultural experiments.  The package provides functions to
+perform ANOVA with post-hoc tests (e.g. Tukey HSD and Duncan MRR), compute
+coefficients of variation, and generate publication-ready summaries.  High-level
+wrappers allow automated multi-variable analysis with optional clustering by
+experimental factors, as well as direct export of results to Excel spreadsheets
+and high-resolution image tables for reporting.  Functions build on ggplot2',
+stats', and related packages and follow methods widely used in agronomy (field
+trials and plant breeding).  Key references include Tukey (1949)
+<doi:10.2307/3001913>, Duncan (1955) <doi:10.2307/3001478>, and Cohen (1988,
+ISBN:9781138892899); see also agricolae
+<https://CRAN.R-project.org/package=agricolae> and Wickham (2016,
+ISBN:9783319242750> for ggplot2'.  VersiÃ³n en espaÃ±ol: Conjunto de
+herramientas para el anÃ¡lisis estadÃ­stico, visualizaciÃ³n y generaciÃ³n de
+reportes en ensayos agroindustriales y agrÃ­colas.  Incluye funciones para ANOVA
+con pruebas post-hoc, resÃºmenes automÃ¡ticos multivariables con o sin
+agrupamiento por factores, y exportaciÃ³n directa de resultados a Excel e
+imÃ¡genes de alta resoluciÃ³n para informes tÃ©cnicos.")
     (license license:expat)))
 
 (define-public r-agrmt
@@ -21743,6 +21782,32 @@ Transport of Radioactive Aerosols through Sampling Systems\" Health Phys 106, 5,
 S78-S87, <doi:10.1097/HP.0000000000000092>.")
     (license license:gpl3)))
 
+(define-public r-aeroevapr
+  (package
+    (name "r-aeroevapr")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AeroEvapR" version))
+       (sha256
+        (base32 "1ncn7dj0bmg0r8mml2qhp142zif5jqnkja98vcl2rzb17194650q"))))
+    (properties `((upstream-name . "AeroEvapR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-openxlsx r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AeroEvapR")
+    (synopsis "Estimating Reservoir Evaporation via Aerodynamic Approach")
+    (description
+     "Developed as an R alternative to the @code{AeroEvap} model developed by the
+Desert Research Institute (DRI) in python
+<https://github.com/WSWUP/@code{AeroEvap/blob/master/README.rst>} which
+estimates open water evaporation using the aerodynamic mass transfer approach.")
+    (license license:cc0)))
+
 (define-public r-aerobiology
   (package
     (name "r-aerobiology")
@@ -22971,13 +23036,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "01gp3lpswkzdnmkm9v1yzdmc6kds6c2f03w1cqv5lc3zn7f0s287"))))
+        (base32 "0rlnbd3kd9bbvabcqj9cm7i7k7l20wgvyd0szwsm9ygi5b53a17w"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (arguments

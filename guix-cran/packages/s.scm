@@ -6598,13 +6598,13 @@ surrogate outcome to improve inference on a partially missing target outcome\"
 (define-public r-surrogaterank
   (package
     (name "r-surrogaterank")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateRank" version))
        (sha256
-        (base32 "0f4i4n41s7jc2gvz28clml4jl9036h4h7kkz4lwmk9icvzk53785"))))
+        (base32 "0i4b7mvad8vvlc5fbqq6xsc62n99imzklwh75zf3cjq097isiv19"))))
     (properties `((upstream-name . "SurrogateRank")))
     (build-system r-build-system)
     (arguments
@@ -20166,6 +20166,39 @@ timings and export subtitles back into valid @code{SubRip} timestamp format to
 sync subtitles and audio.")
     (license license:gpl3)))
 
+(define-public r-srscore
+  (package
+    (name "r-srscore")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SRscore" version))
+       (sha256
+        (base32 "0fll4v7zivhghi3prb39vgzsjh9cv0fbc7i2gyswggpqd88jdnka"))))
+    (properties `((upstream-name . "SRscore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SRscore")
+    (synopsis
+     "Simple Transcriptome Meta-Analysis for Identifying Stress-Responsive Genes")
+    (description
+     "Stress Response score (SRscore) is a stress responsiveness measure for
+transcriptome datasets and is based on the vote-counting method.  The SRscore is
+determined to evaluate and score genes on the basis of the consistency of the
+direction of their regulation (Up-regulation, Down-regulation, or No change)
+under stress conditions across multiple analyzed research projects.  This
+package is based on the HN-score (score based on the ratio of gene expression
+between hypoxic and normoxic conditions) proposed by Tamura and Bono (2022)
+<doi:10.3390/life12071079>, and can calculate both the original method and an
+extended calculation method described in Fukuda et al. (2025)
+<doi:10.1093/plphys/kiaf105>.")
+    (license license:expat)))
+
 (define-public r-srs
   (package
     (name "r-srs")
@@ -25223,13 +25256,13 @@ and accuracy rate (for classification problems).")
 (define-public r-spfilter
   (package
     (name "r-spfilter")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spfilteR" version))
        (sha256
-        (base32 "0xp0icysf4xqp3wjrckhccnianfy1h6namgg0ciz7g28jqq43vz1"))))
+        (base32 "1528vxf5kdirkaah41mwxxyxdxypy7j07m87h42pdbq90xg7zy18"))))
     (properties `((upstream-name . "spfilteR")))
     (build-system r-build-system)
     (arguments
@@ -29439,6 +29472,36 @@ Botond Szabo (JASA 2020) and Kolyan Ray, Botond Szabo, and Gabriel Clara
 (@code{NeurIPS} 2020).")
     (license license:gpl3+)))
 
+(define-public r-sparsetscgm
+  (package
+    (name "r-sparsetscgm")
+    (version "4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SparseTSCGM" version))
+       (sha256
+        (base32 "1fqh7pcvgzpfw91nkhkrr5cf1fqhghggs2i4vb5lxgwz4x8z2ahn"))))
+    (properties `((upstream-name . "SparseTSCGM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-network
+                             r-mvtnorm
+                             r-mass
+                             r-longitudinal
+                             r-huge
+                             r-glasso
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=SparseTSCGM")
+    (synopsis "Sparse Time Series Chain Graphical Models")
+    (description
+     "Computes sparse vector autoregressive coefficients and sparse precision matrices
+for time series chain graphical models.  Methods are described in Abegaz and Wit
+(2013) <doi:10.1093/biostatistics/kxt005>.")
+    (license license:gpl3+)))
+
 (define-public r-sparsesvm
   (package
     (name "r-sparsesvm")
@@ -31548,13 +31611,13 @@ computational efficiency.")
 (define-public r-spaalign
   (package
     (name "r-spaalign")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaAlign" version))
        (sha256
-        (base32 "1aqgb4wp0hwbgyn1qrj0kg2i5fldmhqf1nfrmj309sfnfg1yzda3"))))
+        (base32 "11b6y73qb7pnli6dcj7qrbjhgiqd7d6vn9h11f13rj2b9xclsw44"))))
     (properties `((upstream-name . "spaAlign")))
     (build-system r-build-system)
     (arguments
@@ -35196,13 +35259,13 @@ genetic risk-allele score exact distributions are also possible to be estimated.
 (define-public r-snpannotator
   (package
     (name "r-snpannotator")
-    (version "1.4.3")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNPannotator" version))
        (sha256
-        (base32 "1wqkdkrimbwlfxylajg61dr56xg6bb3n0ads5wfnsz6dl1ykxdb3"))))
+        (base32 "14432zabx16046yfixc3wwkgnakmh7zvjy6n97kml7kgfyw2qnzs"))))
     (properties `((upstream-name . "SNPannotator")))
     (build-system r-build-system)
     (arguments
@@ -35214,6 +35277,7 @@ genetic risk-allele score exact distributions are also possible to be estimated.
                              r-progress
                              r-png
                              r-openxlsx
+                             r-logger
                              r-kableextra
                              r-jsonlite
                              r-ini
@@ -35221,7 +35285,6 @@ genetic risk-allele score exact distributions are also possible to be estimated.
                              r-httr
                              r-ggraph
                              r-ggplot2
-                             r-futile-logger
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SNPannotator")
@@ -36721,6 +36784,37 @@ smoothing approach is provided which iteratively smoothes the objective
 function, resulting in more stable regression estimates.  A function to perform
 cross validation for selection of the regularization parameter is provided.")
     (license license:gpl2+)))
+
+(define-public r-smoothedipw
+  (package
+    (name "r-smoothedipw")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smoothedIPW" version))
+       (sha256
+        (base32 "14baf1krp9cjp7kxf85m7vfd5i416rqxg21x93kcjvmpxyj32wad"))))
+    (properties `((upstream-name . "smoothedIPW")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-progress r-data-table))
+    (home-page "https://cran.r-project.org/package=smoothedIPW")
+    (synopsis
+     "Time-Smoothed Inverse Probability Weighting for Repeatedly Measured Outcomes")
+    (description
+     "This package implements several methods to estimate effects of generalized
+time-varying treatment strategies on the mean of an outcome at one or more
+selected follow-up times of interest.  Specifically, the package implements the
+time-smoothed inverse probability weighted estimators described in
+@code{McGrath} et al. (2025) <doi:10.48550/@code{arXiv.2509.13971>}.  Outcomes
+may be repeatedly, non-monotonically, informatively, and sparsely measured in
+the data source.  The package also supports settings where outcomes are
+truncated by death, i.e.  some individuals die during follow-up which renders
+the outcome of interest undefined at the follow-up time of interest.")
+    (license license:gpl3+)))
 
 (define-public r-smooth
   (package
@@ -46181,31 +46275,37 @@ facilitate communicating the simulation setup.")
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "0cy1nc0c3jwzgaj1nkvzil1d8hr7hjy9dda1m1zy9rnhnp2yvsn7"))))
+        (base32 "08wniwvm1znf0qlvjbxyz4x8wdgd6avf8sgirw4cv81d5bijkd7m"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rfast r-igraph r-data-table r-dagitty))
+    (propagated-inputs (list r-rlang
+                             r-rfast
+                             r-igraph
+                             r-ggdag
+                             r-data-table
+                             r-dagitty))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinDenz1/simDAG")
-    (synopsis "Simulate Data from a DAG and Associated Node Information")
+    (synopsis "Simulate Data from a (Time-Dependent) Causal DAG")
     (description
      "Simulate complex data from a given directed acyclic graph and information about
 each individual node.  Root nodes are simply sampled from the specified
 distribution.  Child Nodes are simulated according to one of many implemented
 regressions, such as logistic regression, linear regression, poisson regression
 or any other function.  Also includes a comprehensive framework for
-discrete-time simulation, and networks-based simulation which can generate even
-more complex longitudinal and dependent data.  For more details, see Robin Denz,
-Nina Timmesfeld (2025) <doi:10.48550/@code{arXiv.2506.01498>}.")
+discrete-time simulation, discrete-event simulation, and networks-based
+simulation which can generate even more complex longitudinal and dependent data.
+ For more details, see Robin Denz, Nina Timmesfeld (2025)
+<doi:10.48550/@code{arXiv.2506.01498>}.")
     (license license:gpl3+)))
 
 (define-public r-simctest
@@ -48490,13 +48590,13 @@ FrÃ¼hwirth-Schnatter (2023) <doi:10.48550/@code{arXiv.2312.10487>}.")
 (define-public r-shrinktvp
   (package
     (name "r-shrinktvp")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrinkTVP" version))
        (sha256
-        (base32 "13mbcrvsx94lfykzlwkdiy5n5hh4rrmarpq8i9ql3i2cy1139wd5"))))
+        (base32 "1r6x0cjh74kkk2wc5l3nk7cn3fd5mz4f0yj5ik20i8m1vji7hfqr"))))
     (properties `((upstream-name . "shrinkTVP")))
     (build-system r-build-system)
     (arguments
@@ -49484,13 +49584,13 @@ hoc structure of the shiny App.")
 (define-public r-shinytest2
   (package
     (name "r-shinytest2")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinytest2" version))
        (sha256
-        (base32 "1r2lg6hdnl1vip984d7ck4rdicl95kwlmn9m39lqg072ya839izl"))))
+        (base32 "0l4jf2nbzgjb3ja9y7qjgb5rlhl56x59n9i0ma80j3xmmvzj9z5n"))))
     (properties `((upstream-name . "shinytest2")))
     (build-system r-build-system)
     (arguments
@@ -49502,10 +49602,11 @@ hoc structure of the shiny App.")
                              r-rmarkdown
                              r-rlang
                              r-r6
+                             r-pkgload
                              r-pingr
                              r-lifecycle
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-globals
                              r-fs
                              r-cpp11
@@ -49902,13 +50003,13 @@ package website.")
 (define-public r-shinysbm
   (package
     (name "r-shinysbm")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinySbm" version))
        (sha256
-        (base32 "0r6zq235krg4rikpypwp9a2hwblgygl7mmc1phxrpxr8xppgq2da"))))
+        (base32 "10chhsxi8yfcigva5m6xsw0v5j0hy1am8mgvlw0m5xavhgl0m0dm"))))
     (properties `((upstream-name . "shinySbm")))
     (build-system r-build-system)
     (arguments
@@ -49934,7 +50035,8 @@ package website.")
                              r-config
                              r-colourpicker))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=shinySbm")
+    (home-page
+     "https://shinysbm-theodore-vanrenterghem-b12616c23cfbfb3f0fe520178bcb95a.pages-forge.inrae.fr/")
     (synopsis "'shiny' Application to Use the Stochastic Block Model")
     (description
      "This package provides a shiny interface for a simpler use of the sbm R package.
@@ -51560,13 +51662,13 @@ developers.")
 (define-public r-shinygovstyle
   (package
     (name "r-shinygovstyle")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyGovstyle" version))
        (sha256
-        (base32 "1irhcyj4ixlfz4qilz2vwls6a6sc0zzzixgvizh7cwnkjf962cg9"))))
+        (base32 "02n2m3g9r06ck1cqwrk9wqbsbqan3ghzqpk4mp3gx2hrxl7807c1"))))
     (properties `((upstream-name . "shinyGovstyle")))
     (build-system r-build-system)
     (arguments
@@ -51594,7 +51696,7 @@ developers.")
                              r-jsonlite
                              r-htmltools))
     (native-inputs (list esbuild))
-    (home-page "https://github.com/moj-analytical-services/shinyGovstyle")
+    (home-page "https://github.com/dfe-analytical-services/shinyGovstyle")
     (synopsis "Custom Gov Style Inputs for Shiny")
     (description
      "Collection of shiny application styling that are the based on the GOV.UK Design
@@ -53515,13 +53617,13 @@ employing multiple threads to achieve significant runtime reduction.  Uses
 (define-public r-shazam
   (package
     (name "r-shazam")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shazam" version))
        (sha256
-        (base32 "01g82n1b5gkw9gpinm4zp6wx6zbpxp6xds15k2fvp38i3vl2zqg0"))))
+        (base32 "1jq4hxzj2lzcrqn4mny3xaj12zwvjwqr18mrf8s26lk8crjjqqvr"))))
     (properties `((upstream-name . "shazam")))
     (build-system r-build-system)
     (arguments
@@ -57145,13 +57247,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "3.1.3")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sequoia" version))
        (sha256
-        (base32 "0awkjiihm71psa94wp83skys53bknyvczhypprdn39dalb8q6mng"))))
+        (base32 "0ssh0ghmz9jirgxdmd0xj0qq0md8z13062mh3rk4wjiddhwg0as4"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (arguments
@@ -57393,13 +57495,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "0v965x5k6bm3ybdcz9nrr5ikfx46b3lm2iwasgiv0hhnr4dhmdab"))))
+        (base32 "00ajdakrrgs22gmz5iif0lf9l4jc6nvhkzvdqhik414zri8ibhlk"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -62449,13 +62551,13 @@ concealed trait.  See Herrera-Alsina et al. (2019) <doi:10.1093/sysbio/syy057>."
 (define-public r-secrlinear
   (package
     (name "r-secrlinear")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secrlinear" version))
        (sha256
-        (base32 "15hmykib4lvm0js4lnv4akvfxis8s1042y6m4h9yyjr70zckdcfd"))))
+        (base32 "03qwmzqmr6sfx5rpc0f2dsp0il13mwgz0724fdfbpq9vk6q51ms0"))))
     (properties `((upstream-name . "secrlinear")))
     (build-system r-build-system)
     (arguments
@@ -62581,13 +62683,13 @@ packages, using public key cryptography.")
 (define-public r-secrdesign
   (package
     (name "r-secrdesign")
-    (version "2.10.0")
+    (version "2.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secrdesign" version))
        (sha256
-        (base32 "18ndbw28vp4rkrnhzf3agp9l24yrcqwayawar3f5l3qyg0sxzmf0"))))
+        (base32 "0f07m31hq82zqy3s47q9wvv6nwbnd3if9yqa7h1lpmhblfybi5mw"))))
     (properties `((upstream-name . "secrdesign")))
     (build-system r-build-system)
     (arguments
@@ -63927,13 +64029,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "0gqaqglb041wmfjmyzm6icgbv356mi8v5wzsfgcnj77m13knsq6y"))))
+        (base32 "18a9jbbg3hhzd6ki64hhpqg8qhxk4vgzyzw0ir5prjh79gg6fphf"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (arguments
@@ -63941,17 +64043,16 @@ viewer pane during their execution.")
       #:tests? #f))
     (propagated-inputs (list r-tmb
                              r-rlang
+                             r-reformulas
                              r-rcppeigen
                              r-nlme
                              r-mvtnorm
                              r-mgcv
                              r-matrix
-                             r-lme4
                              r-lifecycle
                              r-generics
                              r-fmesher
                              r-fishmod
-                             r-extradistr
                              r-cli
                              r-assertthat
                              r-abind))
@@ -64386,13 +64487,13 @@ measures and the loglinear model approach.")
 (define-public r-sdcmicro
   (package
     (name "r-sdcmicro")
-    (version "5.7.9")
+    (version "5.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcMicro" version))
        (sha256
-        (base32 "1skqmvljspxaz687syc2hpg03dfv4hghwp0h3wywwcypdjycs3xh"))))
+        (base32 "0ls2scr743inc7idd575hgh3drhmd81mkzj8vchsmjzi03ri9b40"))))
     (properties `((upstream-name . "sdcMicro")))
     (build-system r-build-system)
     (arguments
@@ -64400,7 +64501,6 @@ measures and the loglinear model approach.")
       #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-vim
-                             r-shinybs
                              r-shiny
                              r-robustbase
                              r-rmarkdown
@@ -64409,6 +64509,8 @@ measures and the loglinear model approach.")
                              r-prettydoc
                              r-mass
                              r-knitr
+                             r-jsonlite
+                             r-httr
                              r-haven
                              r-ggplot2
                              r-e1071
@@ -65794,13 +65896,13 @@ assumptions.  Methods developed in Hazlett (2019) <doi:10.1002/sim.8717>.")
 (define-public r-scpubr
   (package
     (name "r-scpubr")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCpubr" version))
        (sha256
-        (base32 "0lmx9wz39y7f9l67wwbwfxq925q2ihi51vxhgznh9d6ay37lb3qr"))))
+        (base32 "0991lhfln6yd0y11xvj1vn5g7bfy1mzzx12235b8v4dmn99lqvhj"))))
     (properties `((upstream-name . "SCpubr")))
     (build-system r-build-system)
     (arguments
@@ -66879,13 +66981,13 @@ speed.  This package is part of the rethomics framework
 (define-public r-scoper
   (package
     (name "r-scoper")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoper" version))
        (sha256
-        (base32 "0y0bqdxr4g929paddrgs8qqxzp0pwsc62kxl6lbzp4l2xmg3j2j2"))))
+        (base32 "0hqig4dm18hs8zr7y9wz9b7sgiijvs76qkgbjrffq3sbib2psz6d"))))
     (properties `((upstream-name . "scoper")))
     (build-system r-build-system)
     (arguments
@@ -66899,6 +67001,7 @@ speed.  This package is part of the rethomics framework
                              r-rcpp
                              r-ggplot2
                              r-foreach
+                             r-fastcluster
                              r-dplyr
                              r-doparallel
                              r-data-table
@@ -66948,6 +67051,31 @@ matching and mapping descendants to ancestors.  Various functions for plotting
 cell type trees and manipulating ontology terms are also provided.  In the
 Single Cell Expression Atlas hosted at EBI, a compendium of datasets with
 curated ontology labels are great inputs to this package.")
+    (license license:expat)))
+
+(define-public r-scmspillover
+  (package
+    (name "r-scmspillover")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scmSpillover" version))
+       (sha256
+        (base32 "1g0r7k854mqhlm6qsvmhji3sjdal185dgnji20ci7assnf1bk4sv"))))
+    (properties `((upstream-name . "scmSpillover")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-limsolve r-ggplot2))
+    (home-page "https://cran.r-project.org/package=scmSpillover")
+    (synopsis "Synthetic Control Method with Spillover Effects")
+    (description
+     "This package provides a general-purpose implementation of synthetic control
+methods that accounts for potential spillover effects between units.  Based on
+the methodology of Cao and Dowd (2019) <doi:10.48550/@code{arXiv.1902.07343>}
+\"Estimation and Inference for Synthetic Control Methods with Spillover Effects\".")
     (license license:expat)))
 
 (define-public r-scmodels
@@ -67911,13 +68039,13 @@ or plumber'.")
 (define-public r-schangeblock
   (package
     (name "r-schangeblock")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SChangeBlock" version))
        (sha256
-        (base32 "1lg5fdddjh8wj0kbchviw721s5scs60w2ga072si4xyl2sqcprvx"))))
+        (base32 "101la1fmixbmyqz8fzxyf20vlm4wkh9dgq1yh3qm9i34np82zlzx"))))
     (properties `((upstream-name . "SChangeBlock")))
     (build-system r-build-system)
     (arguments
@@ -68535,13 +68663,13 @@ Ho (2022) <doi:10.1111/biom.13457>.")
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "186pl21p22fqprd155n73849j4fpk5zclps3n0irdfmvqd4b4gp8"))))
+        (base32 "0vvpq72kx932w9vqyw1v6rpj0n85095ayvl1jgqg4fil42bp95y3"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (arguments
@@ -68556,6 +68684,7 @@ Ho (2022) <doi:10.1111/biom.13457>.")
                              r-parallelly
                              r-openssl
                              r-magrittr
+                             r-lubridate
                              r-glue
                              r-dplyr
                              r-dbplyr

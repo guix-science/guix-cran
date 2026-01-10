@@ -15,17 +15,19 @@
   #:use-module (gnu packages image)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages cmake)
+  #:use-module (gnu packages backup)
+  #:use-module (gnu packages xml)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages cmake)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages python-science)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages dotnet)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages documentation)
@@ -719,13 +721,13 @@ be plotted in rworldmap.")
 (define-public r-rworkflows
   (package
     (name "r-rworkflows")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rworkflows" version))
        (sha256
-        (base32 "1q7bm0kf9ni6l59pvw9iyhwk0hcdxc7qgqnbs48my1zgq4ih4rli"))))
+        (base32 "0xqz1b02mrnrckb3py1lfy25g4b8rj4g2czcy8cqgj40ixdl8gn0"))))
     (properties `((upstream-name . "rworkflows")))
     (build-system r-build-system)
     (arguments
@@ -3465,13 +3467,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "1nk5ca2mjw11qd8symaya9f5n4kc7gfhqnhibh90rxqdjd987npz"))))
+        (base32 "1094ibscs5qf4lc027ar7y7kr045w9jx9yw612av97gl36f7g926"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -3480,29 +3482,22 @@ centered on an approach using machine learning for path classification.")
     (propagated-inputs (list r-tidyr
                              r-reshape2
                              r-purrr
-                             r-multcompview
                              r-multcomp
                              r-lmertest
                              r-ggplot2
                              r-emmeans
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mirzaghaderi/rtpcr")
+    (home-page "https://mirzaghaderi.github.io/rtpcr/")
     (synopsis "qPCR Data Analysis")
     (description
-     "Amplification efficiency estimation, statistical analysis, and graphical
-representation of quantitative real-time PCR (@code{qPCR}) data using one or
-more specified reference genes is handled by rtpcr package.  By accounting for
-amplification efficiency values, rtpcr was developed using a general calculation
-method described by Ganger et al. (2017) <doi:10.1186/s12859-017-1949-5> and
-Taylor et al. (2019) <doi:10.1016/j.tibtech.2018.12.002>, covering both the
-Livak and Pfaffl methods.  Based on the experimental conditions, the functions
-of the rtpcr package use t-test (for experiments with a two-level factor),
-analysis of variance (ANOVA), analysis of covariance (ANCOVA) or analysis of
-repeated measure data to analyse the relative expression (Delta Delta Ct method
-or Delta Ct method).  The functions further provide standard errors and
-confidence intervals for means, apply statistical mean comparisons and present
-significance.")
+     "This package provides tools for @code{qPCR} data analysis using Delta Ct and
+Delta Delta Ct methods, including t-tests, ANOVA, ANCOVA, repeated-measures
+models, and publication-ready visualizations.  The package supports multiple
+target, and multiple reference genes, and uses a calculation framework adopted
+from Ganger et al. (2017) <doi:10.1186/s12859-017-1949-5> and Taylor et al.
+(2019) <doi:10.1016/j.tibtech.2018.12.002>, covering both the Livak and Pfaffl
+methods.")
     (license license:gpl3)))
 
 (define-public r-rtpc
@@ -4825,23 +4820,23 @@ more.")
 (define-public r-rtables-officer
   (package
     (name "r-rtables-officer")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables.officer" version))
        (sha256
-        (base32 "1h8gvwhi5z9q312xv0j78ixf6qsqwqwpcngqf5wq4qkqliclcjvw"))))
+        (base32 "1zb3ymikwzgz80b358brshxvsn4gr4m020v9q9jqcw8m1ah8rr1y"))))
     (properties `((upstream-name . "rtables.officer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
+    (propagated-inputs (list r-systemfonts
+                             r-stringi
                              r-rtables
                              r-rlistings
                              r-officer
-                             r-magrittr
                              r-lifecycle
                              r-formatters
                              r-flextable
@@ -5134,6 +5129,55 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
     (description
      "An R interface to the SYMPHONY solver for mixed-integer linear programs.")
     (license (license:fsdg-compatible "EPL"))))
+
+(define-public r-rswipl
+  (package
+    (name "r-rswipl")
+    (version "10.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rswipl" version))
+       (sha256
+        (base32 "0cfym77vpdg1b9mf95sknfrhqy8ycn38vyy3kx996fk0l469780y"))))
+    (properties `((upstream-name . "rswipl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (inputs (list zlib
+                  pandoc
+                  zstd
+                  zlib
+                  xz
+                  lz4
+                  expat
+                  libarchive
+                  cmake))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list pkg-config esbuild))
+    (home-page "https://github.com/mgondan/rswipl")
+    (synopsis "Embed 'SWI'-'Prolog'")
+    (description
+     "Interface to SWI'-'Prolog', <https://www.swi-prolog.org/>.  This package is
+normally not loaded directly, please refer to package rolog instead.  The
+purpose of this package is to provide the Prolog runtime on systems that do not
+have a software installation of SWI'-'Prolog'.")
+    (license (license:fsdg-compatible "FreeBSD"))))
 
 (define-public r-rsvddpd
   (package
@@ -8963,13 +9007,13 @@ al. (2021) <doi:10.1007/s00285-021-01685-0>, and Collienne (2021)
 (define-public r-rrmorph
   (package
     (name "r-rrmorph")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRmorph" version))
        (sha256
-        (base32 "0w0xx5fzxlf86lpbv519n0ars8mg9knr4mpk78aacr4ks0si5hl0"))))
+        (base32 "13r7vhyr7i29m3lsh23vf0r6fj9n1hf2i65nakz8lbkq716d45dm"))))
     (properties `((upstream-name . "RRmorph")))
     (build-system r-build-system)
     (arguments
@@ -12192,13 +12236,13 @@ misclassification cost.")
 (define-public r-rpart-plot
   (package
     (name "r-rpart-plot")
-    (version "3.1.3")
+    (version "3.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpart.plot" version))
        (sha256
-        (base32 "01jap75v6n5s9mxmvc9f76pmzxyj0wdbvlx2f8xvy0n1xahayqbk"))))
+        (base32 "0gnggpdwba5argvymwcn69a9bcljwzmn9rj3nsyazlhqq4rgsnid"))))
     (properties `((upstream-name . "rpart.plot")))
     (build-system r-build-system)
     (arguments
@@ -17951,13 +17995,13 @@ Nicole Mayer-Hamblett, Patrick J. Heagerty, Ting Ye (2025)
 (define-public r-robincar2
   (package
     (name "r-robincar2")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobinCar2" version))
        (sha256
-        (base32 "1bdx3i1ll7k4cs2lb9i3dwavggf2zw6ri6m87kwjk1nb08pqv2pd"))))
+        (base32 "1cq17glcw49sd911l7f85wlyhjd99by09rq7vwq0q9vrk6yi0yc2"))))
     (properties `((upstream-name . "RobinCar2")))
     (build-system r-build-system)
     (arguments
@@ -22191,13 +22235,13 @@ without ties.  Based on Adkins and Flinger (1998)
 (define-public r-rmake
   (package
     (name "r-rmake")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmake" version))
        (sha256
-        (base32 "18bwrqc7yprly28klf8xn303rf797r2lvn2rsww8bm9xg0wjnc6n"))))
+        (base32 "02m9kazlqmv90kzclwxjrvv7k73djwmgs2lmvqdmanlpnrp943b3"))))
     (properties `((upstream-name . "rmake")))
     (build-system r-build-system)
     (arguments
@@ -27121,13 +27165,13 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "1r0wgxi0alkp1qcwm7nlal32ph5b3m4mrlx957yvbdc91p8ckjig"))))
+        (base32 "04hnczzpicnvv95fnxclb8afkmcrk2xdscsslfhchg5wsvsfbcqq"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (arguments
@@ -32867,13 +32911,13 @@ spectral density.")
 (define-public r-resourcecode
   (package
     (name "r-resourcecode")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resourcecode" version))
        (sha256
-        (base32 "0nl2k5v3jckyai4bmfw949k4r2sq11snkb16r5rkfc6fswq9mddq"))))
+        (base32 "12j05f890v4hrxlji9qsb7w1mvdi14ync3qwrsz5mv0issawjhxc"))))
     (properties `((upstream-name . "resourcecode")))
     (build-system r-build-system)
     (arguments
@@ -33959,19 +34003,19 @@ ecologists, and biodiversity researchers.")
 (define-public r-reptiledb-data
   (package
     (name "r-reptiledb-data")
-    (version "0.0.0.1")
+    (version "0.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reptiledb.data" version))
        (sha256
-        (base32 "0mg2514rsfa1632skdk7ap7q9s8iij92bmxydqxxvx03pvcbw4rh"))))
+        (base32 "0b0gwfc83hawrs8dxggz864364vcxr17dn34sdfagsq44isgn7sg"))))
     (properties `((upstream-name . "reptiledb.data")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-stringr r-rvest r-httr))
+    (propagated-inputs (list r-stringr r-rvest r-httr r-cli))
     (home-page "https://github.com/PaulESantos/reptiledb.data")
     (synopsis "Reptile Database Data")
     (description
@@ -34164,13 +34208,13 @@ the package is available as preprint by Brandmaier & Peikert (2024,
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.1.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducible" version))
        (sha256
-        (base32 "1b9q0dbsl1vazm3hxjqvkacq3bd9zkln9mnz58x8cz1njz3f2cf0"))))
+        (base32 "0i9vpbhqy67bghhiwf0psq14683a7bbh8sk274magnmzk81m8drv"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (arguments
@@ -34189,7 +34233,7 @@ the package is available as preprint by Brandmaier & Peikert (2024,
     (description
      "This package provides a collection of high-level, machine- and OS-independent
 tools for making reproducible and reusable content in R. The two workhorse
-functions are @code{Cache()} and @code{prepInputs()}. @code{Cache()} allows for
+functions are @code{Cache()} and @code{prepInputs()}'. @code{Cache()} allows for
 nested caching, is robust to environments and objects with environments (like
 functions), and deals with some classes of file-backed R objects e.g., from
 terra and raster packages.  Both functions have been developed to be
@@ -34199,7 +34243,7 @@ subsequent calls of functions have the same result, but faster at subsequent
 times by way of checksums and digesting.  Several features are still under
 development, including cloud storage of cached objects allowing for sharing
 between users.  Several advanced options are available, see
-@code{?reproducibleOptions()}.")
+@code{?reproducibleOptions()}'.")
     (license license:gpl3)))
 
 (define-public r-reproducer
@@ -34690,13 +34734,13 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 (define-public r-report
   (package
     (name "r-report")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "report" version))
        (sha256
-        (base32 "1xvws1j9y3lp9id3aixnvp9bjkqdm8pbcqv52wzmvj24ksz15ihx"))))
+        (base32 "1v643vvgqqzjdzknsvm1g98x5l6dba39s1l9w8v9hd35l88nid0g"))))
     (properties `((upstream-name . "report")))
     (build-system r-build-system)
     (arguments
@@ -43902,13 +43946,13 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
 (define-public r-rdistance
   (package
     (name "r-rdistance")
-    (version "4.1.1")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdistance" version))
        (sha256
-        (base32 "1qwl77dn69n01fz80ly1mayzgb3ayqgklcbfafszgwiqiwlwvsfl"))))
+        (base32 "0y0sjl3zxly3bn8rk6vdpx821wl6gpbgsrkj6x2wg210xa6bb71q"))))
     (properties `((upstream-name . "Rdistance")))
     (build-system r-build-system)
     (arguments
@@ -43920,6 +43964,7 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
                              r-tidyr
                              r-tibble
                              r-progress
+                             r-multidplyr
                              r-expint
                              r-dplyr
                              r-dfoptim
@@ -48345,13 +48390,13 @@ effect sizes and post hoc analysis for @code{multiWayAnova()}.")
 (define-public r-rcmdrmisc
   (package
     (name "r-rcmdrmisc")
-    (version "2.9-2")
+    (version "2.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrMisc" version))
        (sha256
-        (base32 "07apdqwrr3bkhg53cpq7sxlx74x455754dihhn1s4jqys3437g68"))))
+        (base32 "0zsbkh3jrk18ba580aq3646mln17z0p5zfd6wzdr25fcy1am0fx8"))))
     (properties `((upstream-name . "RcmdrMisc")))
     (build-system r-build-system)
     (arguments
@@ -48375,7 +48420,7 @@ effect sizes and post hoc analysis for @code{multiWayAnova()}.")
     (description
      "Various statistical, graphics, and data-management functions used by the Rcmdr
 package in the R Commander GUI for R.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-rcmdr
   (package
@@ -51218,13 +51263,13 @@ provides functionalities to create, manipulate and query on XML-data.")
 (define-public r-rbam
   (package
     (name "r-rbam")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBaM" version))
        (sha256
-        (base32 "1yj1g0jp2yw8yzr9gvppnhp2r6c8a45r0fyhslr8jq870rjqf6sk"))))
+        (base32 "11k50c9dphmncxd4i3nvy2kb94qa2gbjajg6y4bpsy8cz4zqrajh"))))
     (properties `((upstream-name . "RBaM")))
     (build-system r-build-system)
     (arguments
@@ -56343,13 +56388,13 @@ knowledge of the large-scale precipitation field.")
 (define-public r-rainette
   (package
     (name "r-rainette")
-    (version "0.3.1.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rainette" version))
        (sha256
-        (base32 "1x6929rsav80x7ihy7572pqbvdf2hhnb0wp28mvyfvzj9ivqcx8w"))))
+        (base32 "037scwlm8pbcyh3yaw46736skv01b0fyfns17wcnw4b0dxsa2kvk"))))
     (properties `((upstream-name . "rainette")))
     (build-system r-build-system)
     (arguments
@@ -57096,6 +57141,61 @@ is being able add several profiles to the same plot for comparison.  Use
 they should be named in a data frame.  See
 <https://github.com/dnychka/Radiosonde> for the package home page.")
     (license license:gpl2+)))
+
+(define-public r-radiant-model
+  (package
+    (name "r-radiant-model")
+    (version "1.6.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "radiant.model" version))
+       (sha256
+        (base32 "0as8m3q778a50q18bldvdlaa898g0n0fq2rkn3fvhgh46addv41h"))))
+    (properties `((upstream-name . "radiant.model")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xgboost
+                             r-vip
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-shiny
+                             r-scales
+                             r-sandwich
+                             r-rpart
+                             r-rlang
+                             r-ranger
+                             r-radiant-data
+                             r-radiant-basics
+                             r-psych
+                             r-patchwork
+                             r-nnet
+                             r-neuralnettools
+                             r-magrittr
+                             r-lubridate
+                             r-import
+                             r-ggrepel
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-diagrammer
+                             r-data-tree
+                             r-car
+                             r-broom))
+    (home-page "https://github.com/radiant-rstats/radiant.model/")
+    (synopsis "Model Menu for Radiant: Business Analytics using R and Shiny")
+    (description
+     "The Radiant Model menu includes interfaces for linear and logistic regression,
+naive Bayes, neural networks, classification and regression trees, model
+evaluation, collaborative filtering, decision analysis, and simulation.  The
+application extends the functionality in radiant.data'.")
+    (license (list license:agpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-radiant-design
   (package
@@ -58849,13 +58949,13 @@ of a new method and how it compares to some of the standard ones.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2rtf" version))
        (sha256
-        (base32 "117a9v0mn8l9h6z87idgx68lmh10pf0f381lb0jfyxkb0szmvhgh"))))
+        (base32 "0z5hpdn662c7fxjm4pbx1x7fh6cwsqqfr7xgl02l5vjdw84676dv"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (arguments

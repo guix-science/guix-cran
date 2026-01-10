@@ -8509,25 +8509,19 @@ datasets.")
 (define-public r-wayfindr
   (package
     (name "r-wayfindr")
-    (version "0.5.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WayFindR" version))
        (sha256
-        (base32 "197l08ppgl874cpchjd28ji7anc3k86simm5pgbc2hjxdd0v2df3"))))
+        (base32 "1ipydfw34pw3jmndz61vfqv77vfvss33i7g16kyn34lrc4h8pvdm"))))
     (properties `((upstream-name . "WayFindR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-rgraphviz
-                             r-org-hs-eg-db
-                             r-keggrest
-                             r-igraph
-                             r-desctools
-                             r-annotationdbi))
+    (propagated-inputs (list r-xml r-rgraphviz r-keggrest r-igraph r-desctools))
     (native-inputs (list r-knitr))
     (home-page "http://oompa.r-forge.r-project.org/")
     (synopsis "Computing Graph Structures on WikiPathways")

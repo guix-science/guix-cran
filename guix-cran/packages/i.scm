@@ -3233,6 +3233,41 @@ sparse principal component analysis.  Journal of Multivariate Analysis,
 <doi:10.1002/sim.8900>.")
     (license license:gpl2+)))
 
+(define-public r-isetools
+  (package
+    (name "r-isetools")
+    (version "3.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISEtools" version))
+       (sha256
+        (base32 "1ya6748zrh59yqrl6ihjhy0ddrla579jpfv0hrlppnnfgjngpvqw"))))
+    (properties `((upstream-name . "ISEtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-coda))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=ISEtools")
+    (synopsis "Ion Selective Electrodes Analysis Methods")
+    (description
+     "Characterisation and calibration of single or multiple Ion Selective Electrodes
+(ISEs); activity estimation of experimental samples.  Implements methods
+described in: Dillingham, P.W., Radu, T., Diamond, D., Radu, A. and
+@code{McGraw}, C.M. (2012) <doi:10.1002/elan.201100510>, Dillingham, P.W.,
+Alsaedi, B.S.O. and @code{McGraw}, C.M. (2017)
+<doi:10.1109/ICSENS.2017.8233898>, Dillingham, P.W., Alsaedi, B.S.O., Radu, A.,
+and @code{McGraw}, C.M. (2019) <doi:10.3390/s19204544>, and Dillingham, P.W.,
+Alsaedi, B.S.O., Granados-Focil, S., Radu, A., and @code{McGraw}, C.M. (2020)
+<doi:10.1021/acssensors.9b02133>.")
+    (license license:gpl2)))
+
 (define-public r-isdparser
   (package
     (name "r-isdparser")
@@ -12372,13 +12407,13 @@ counts from scratch for each time point.")
 (define-public r-incdtw
   (package
     (name "r-incdtw")
-    (version "1.1.4.5")
+    (version "1.1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncDTW" version))
        (sha256
-        (base32 "0yz1gx6xxnih8mmyqjbqq72isqln79xyfj1i0bsdx6051j546jxn"))))
+        (base32 "06mjg4q9kq1ndyjcjfhg2hmj0l8ks650ixr7jzl1vw6zapky66dy"))))
     (properties `((upstream-name . "IncDTW")))
     (build-system r-build-system)
     (arguments

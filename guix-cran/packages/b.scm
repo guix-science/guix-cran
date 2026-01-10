@@ -17098,13 +17098,13 @@ prefers Fira', and IQSS requires Libertinus'.")
 (define-public r-binaryrl
   (package
     (name "r-binaryrl")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binaryRL" version))
        (sha256
-        (base32 "09ma2r6haacnp6sy0b2bqg35yv0fb9jzl4d261ga2mqvskys0cfj"))))
+        (base32 "1fi677d4rldwp5hgq93z7mdqj86in5m5p02fpv9sqpkcdp0vwx5d"))))
     (properties `((upstream-name . "binaryRL")))
     (build-system r-build-system)
     (arguments
@@ -17125,8 +17125,8 @@ Two-Alternative Forced Choice tasks, commonly employed in psychological
 research.  Most concepts and ideas within this R package are referenced from
 Sutton and Barto (2018) <ISBN:9780262039246>.  The package allows for the
 intuitive definition of RL models using simple if-else statements and three
-basic models built into this R package are referenced from Niv et al.
-(2012)<doi:10.1523/JNEUROSCI.5498-10.2012>.  Our approach to constructing and
+basic models built into this R package are referenced from Niv et al. (2012)
+<doi:10.1523/JNEUROSCI.5498-10.2012>.  Our approach to constructing and
 evaluating these computational models is informed by the guidelines proposed in
 Wilson & Collins (2019) <doi:10.7554/@code{eLife.49547>}.  Example datasets
 included with the package are sourced from the work of Mason et al. (2024)
@@ -25725,13 +25725,13 @@ automatic tuning inspired by Pitt et al. (2012)
 (define-public r-bayessim
   (package
     (name "r-bayessim")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSIM" version))
        (sha256
-        (base32 "0ar9dj3w082ma4r00lizaz48kggqsw3l0kd248pr5hs011pch6pz"))))
+        (base32 "14czgz3yjvlpbz6gxjlvzg4fv1flrjrnnj7krjqlcbr8mv35a3dn"))))
     (properties `((upstream-name . "BayesSIM")))
     (build-system r-build-system)
     (arguments
@@ -26872,13 +26872,13 @@ Sampler) to generate Markov chain Monte Carlo samples of parameters.")
 (define-public r-bayesmove
   (package
     (name "r-bayesmove")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesmove" version))
        (sha256
-        (base32 "03zqc8hv6sx11020bz2501dxd485cq02rxzp494409x7yqdjkkgk"))))
+        (base32 "1pz1ilcx8d8f2ibyl5pihj2js2ykl8ra04v1ijblx3f8wk5k40px"))))
     (properties `((upstream-name . "bayesmove")))
     (build-system r-build-system)
     (arguments
@@ -28795,6 +28795,35 @@ This design is motivated by cancer clinical trials with immunotherapy and
 molecularly targeted therapy, in which time-to-event endpoint is often a desired
 endpoint.")
     (license license:gpl2)))
+
+(define-public r-bayesdecon
+  (package
+    (name "r-bayesdecon")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesDecon" version))
+       (sha256
+        (base32 "0myphxk0dzgs4pa1xzvrfsrbs4v3vsdyjxkkbiz44862fzphcaf2"))))
+    (properties `((upstream-name . "BayesDecon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-msm
+                             r-ks
+                             r-corpcor))
+    (home-page "https://cran.r-project.org/package=BayesDecon")
+    (synopsis "Density Deconvolution Using Bayesian Semiparametric Methods")
+    (description
+     "Estimates the density of a variable in a measurement error setup, potentially
+with an excess of zero values.  For more details see Sarkar (2022)
+<doi:10.1080/10618600.2022.2060239>.")
+    (license license:gpl2+)))
 
 (define-public r-bayesdccgarch
   (package

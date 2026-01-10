@@ -3438,13 +3438,13 @@ the Observational Medical Outcomes Partnership (OMOP) Common Data Model.")
 (define-public r-vismeteor
   (package
     (name "r-vismeteor")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vismeteor" version))
        (sha256
-        (base32 "15cj4iary8bw4zgd88i713gdvhrfq9y0ibwx1yiavvrwwd82vgxj"))))
+        (base32 "17l5a9ndnvc6b09jbv89rz9wh0468pry9mxd3r0abd2z7xi1psfr"))))
     (properties `((upstream-name . "vismeteor")))
     (build-system r-build-system)
     (arguments
@@ -5735,13 +5735,13 @@ series x 3 replicates + no template controls (NTC) x 3 replicates).")
 (define-public r-verifyr2
   (package
     (name "r-verifyr2")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verifyr2" version))
        (sha256
-        (base32 "0w3xvaqs0avb9ndki72m0r816vm9fz46hbvfgjia09rj2dwa490s"))))
+        (base32 "09sd9cj699knznqifm3x3zly817s3nhk16s3rbsz4n604lkndrkv"))))
     (properties `((upstream-name . "verifyr2")))
     (build-system r-build-system)
     (arguments
@@ -8031,13 +8031,13 @@ variance homogeneity.")
 (define-public r-varshrink
   (package
     (name "r-varshrink")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VARshrink" version))
        (sha256
-        (base32 "09hysmxxawcbyfx6bia546aqydryl2r5p3ai7bvl6ghdckw5mnpl"))))
+        (base32 "0izdy68lck0v9gp0n5syd0qsgahmr2ffbw13n40dw52zxfr1wprp"))))
     (properties `((upstream-name . "VARshrink")))
     (build-system r-build-system)
     (arguments
@@ -8065,7 +8065,7 @@ Opgen-Rhein and Strimmer (2007) <doi:10.1186/1471-2105-8-S2-S3>, and Bayesian
 estimation methods using noninformative and informative priors in Lee, Choi, and
 S.-H. Kim (2016) <doi:10.1016/j.csda.2016.03.007> and Ni and Sun (2005)
 <doi:10.1198/073500104000000622>.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-varsellcm
   (package
@@ -9016,13 +9016,13 @@ only what GDAL does, to enable developing further tools.")
 (define-public r-vannstats
   (package
     (name "r-vannstats")
-    (version "1.5.4.07")
+    (version "1.6.1.08")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vannstats" version))
        (sha256
-        (base32 "1gzmigzg39m03njahyxvvlvc8wljra4qgfw21f20pxnqa91rh4bx"))))
+        (base32 "1arsd845rc4lf2d699k7jjgzlnhl8b04yalv3ahcmjr47z9v8pyp"))))
     (properties `((upstream-name . "vannstats")))
     (build-system r-build-system)
     (arguments
@@ -9031,6 +9031,7 @@ only what GDAL does, to enable developing further tools.")
     (propagated-inputs (list r-stringr
                              r-rstatix
                              r-rlang
+                             r-reshape2
                              r-purrr
                              r-plm
                              r-gplots
@@ -9081,13 +9082,13 @@ accessibility.")
 (define-public r-vandalico
   (package
     (name "r-vandalico")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vandalico" version))
        (sha256
-        (base32 "1zakbhg2b3qimysvqc4gy6i94flla43fciqxhnkrg58vly936izc"))))
+        (base32 "1as7r8cp6d0gcdlln11mkj0wqrzdyi17z1ylxggyrjv3z298v9k2"))))
     (properties `((upstream-name . "vandalico")))
     (build-system r-build-system)
     (arguments

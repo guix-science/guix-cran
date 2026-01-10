@@ -2370,36 +2370,6 @@ to see progress of calculations in the terminal.")
 in rmarkdown documents so that they can be made completely standalone.")
     (license license:gpl3)))
 
-(define-public r-knitlatex
-  (package
-    (name "r-knitlatex")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "knitLatex" version))
-       (sha256
-        (base32 "1igacc2sx8897wmnhh8kngd0fq6zqbi30chy5c8jw60zc38mi3wi"))))
-    (properties `((upstream-name . "knitLatex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-knitr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=knitLatex")
-    (synopsis "'Knitr' Helpers - Mostly Tables")
-    (description
-     "This package provides several helper functions for working with knitr and
-@code{LaTeX}'.  It includes @code{xTab} for creating traditional @code{LaTeX}
-tables, @code{lTab} for generating longtable environments, and @code{sTab} for
-generating a supertabular environment.  Additionally, this package contains a
-@code{knitr_setup()} function which fixes a well-known bug in knitr', which
-distorts the results=\"asis\" command when used in conjunction with user-defined
-commands; and a com command (<<com=TRUE>>=) which renders the output from knitr
-as a @code{LaTeX} command.")
-    (license license:gpl3)))
-
 (define-public r-knitcitations
   (package
     (name "r-knitcitations")

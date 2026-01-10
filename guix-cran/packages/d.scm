@@ -9657,13 +9657,13 @@ handing functions and I/O support routines.")
 (define-public r-docorator
   (package
     (name "r-docorator")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "docorator" version))
        (sha256
-        (base32 "1wylssf6n3cc6v1pf75z5zz5cxvymlx49iiz3agvarjnxxqlw4by"))))
+        (base32 "0d7qc5gcs0q465y0d1yhd12vgdrikibj8j6vj5i1d7jlssg4bxir"))))
     (properties `((upstream-name . "docorator")))
     (build-system r-build-system)
     (arguments
@@ -15046,13 +15046,13 @@ truncation, zero inflation, and zero inflated truncation.")
 (define-public r-discbio
   (package
     (name "r-discbio")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIscBIO" version))
        (sha256
-        (base32 "0zr1lpfqn8q3xhh27aa59j5xq70fxhzkwqaqfi34zfsiqzb7cy6a"))))
+        (base32 "1y1m932bd7xki8z1y85g24w0wy722s1lbikfpld8qiyg4k5lc20k"))))
     (properties `((upstream-name . "DIscBIO")))
     (build-system r-build-system)
     (arguments
@@ -15068,7 +15068,6 @@ truncation, zero inflation, and zero inflated truncation.")
                              r-rpart
                              r-rcolorbrewer
                              r-png
-                             r-org-hs-eg-db
                              r-netindices
                              r-mclust
                              r-impute
@@ -15076,8 +15075,7 @@ truncation, zero inflation, and zero inflated truncation.")
                              r-httr
                              r-ggplot2
                              r-fpc
-                             r-cluster
-                             r-annotationdbi))
+                             r-cluster))
     (home-page "https://github.com/ocbe-uio/DIscBIO")
     (synopsis
      "User-Friendly Pipeline for Biomarker Discovery in Single-Cell Transcriptomics")
@@ -15771,13 +15769,13 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipsaus" version))
        (sha256
-        (base32 "0vjq1li62x00ay7d0b9n5hgpqriiazbbgz9hrxklq8110q4zh8xw"))))
+        (base32 "1s2qw52iahimki4klkqyramz4ys27xgjjsj7380b5a6hqd6qxhcm"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (arguments
@@ -20694,19 +20692,19 @@ maximum.")
 (define-public r-detect
   (package
     (name "r-detect")
-    (version "0.5-0")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "detect" version))
        (sha256
-        (base32 "08kab9a8r4qflp74ib9ym85h7fzy3z1p312al48i0cpgl37mf2i8"))))
+        (base32 "1y9hpmgk8a2zfj3ddvx04s7xfhsc53p1kk86vblykja7qq7lbkwr"))))
     (properties `((upstream-name . "detect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pbapply r-matrix r-formula r-extradistr))
+    (propagated-inputs (list r-pbapply r-matrix r-formula))
     (home-page "https://github.com/psolymos/detect")
     (synopsis "Analyzing Wildlife Data with Detection Error")
     (description
@@ -20717,8 +20715,9 @@ Moreno et al.  2010 <doi:10.1890/09-1073.1>, Solymos et al.  2012
 conditional distance sampling and time-removal models (QPAD) (Solymos et al.
 2013 <doi:10.1111/2041-210X.12106>, Solymos et al.  2018
 <doi:10.1650/CONDOR-18-32.1>), and single bin QPAD (SQPAD) models (Lele &
-Solymos 2025).  Package development was supported by the Alberta Biodiversity
-Monitoring Institute and the Boreal Avian Modelling Project.")
+Solymos 2025 <doi:10.1093/ornithapp/duaf078>).  Package development was
+supported by the Alberta Biodiversity Monitoring Institute and the Boreal Avian
+Modelling Project.")
     (license license:gpl2)))
 
 (define-public r-details
@@ -22014,13 +22013,13 @@ multivariate generalization of QQ-plots).")
 (define-public r-deps
   (package
     (name "r-deps")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deps" version))
        (sha256
-        (base32 "147lb9dibn8ayj6znld64sk1qn6lzpp5pamxkagmqcbxl78r1g6h"))))
+        (base32 "0adl92536nrkzjaz3fy8cizdfj1sg33qyp0al7i6s4lm9gac0daz"))))
     (properties `((upstream-name . "deps")))
     (build-system r-build-system)
     (arguments
@@ -24862,13 +24861,13 @@ ensemble learning via the super learner approach and R neural networks.")
 (define-public r-deepgp
   (package
     (name "r-deepgp")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepgp" version))
        (sha256
-        (base32 "1vdqsf0gn55j15dsfmbj76c5bb4799rkiwiq57n2rhl7sprvpdyr"))))
+        (base32 "0mqpypdq4d9ip34vazavfam3dhc1h5yii0ybkb06wbfbdcyiqpr5"))))
     (properties `((upstream-name . "deepgp")))
     (build-system r-build-system)
     (arguments
@@ -24881,7 +24880,9 @@ ensemble learning via the super learner approach and R neural networks.")
                              r-gpgp
                              r-foreach
                              r-fnn
-                             r-doparallel))
+                             r-fields
+                             r-doparallel
+                             r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=deepgp")
     (synopsis "Bayesian Deep Gaussian Processes using MCMC")
@@ -24893,15 +24894,16 @@ following Sauer, Gramacy, and Higdon (2023,
 and <https://bitbucket.org/gramacylab/deepgp-ex/> for a variety of coding
 examples.  Models are trained through MCMC including elliptical slice sampling
 of latent Gaussian layers and Metropolis-Hastings sampling of kernel
-hyperparameters.  Vecchia-approximation for faster computation is implemented
-following Sauer, Cooper, and Gramacy (2023,
-<doi:10.48550/@code{arXiv.2204.02904>}).  Optional monotonic warpings are
-implemented following Barnett et al. (2024,
+hyperparameters.  Gradient-enhancement and gradient predictions are offered
+following Booth (2025, <doi:10.48550/@code{arXiv.2512.18066>}).  Vecchia
+approximation for faster computation is implemented following Sauer, Cooper, and
+Gramacy (2023, <doi:10.48550/@code{arXiv.2204.02904>}).  Optional monotonic
+warpings are implemented following Barnett et al. (2025,
 <doi:10.48550/@code{arXiv.2408.01540>}).  Downstream tasks include sequential
 design through active learning Cohn/integrated mean squared error (ALC/IMSE;
 Sauer, Gramacy, and Higdon, 2023), optimization through expected improvement
-(EI; Gramacy, Sauer, and Wycoff, 2022 <doi:10.48550/@code{arXiv.2112.07457>}),
-and contour location through entropy (Booth, Renganathan, and Gramacy, 2024
+(EI; Gramacy, Sauer, and Wycoff, 2022, <doi:10.48550/@code{arXiv.2112.07457>}),
+and contour location through entropy (Booth, Renganathan, and Gramacy, 2025,
 <doi:10.48550/@code{arXiv.2308.04420>}).  Models extend up to three layers deep;
 a one layer model is equivalent to typical Gaussian process regression.
 Incorporates @code{OpenMP} and SNOW parallelization and utilizes C/C++ under the
@@ -25160,13 +25162,13 @@ into the Windows Rgui.")
 (define-public r-dedooser
   (package
     (name "r-dedooser")
-    (version "2.0.0.1")
+    (version "2.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DedooseR" version))
        (sha256
-        (base32 "1s4v3dx7hzisxnz7nrvrbis3f2qcms1sf1liwhkmka1klq9461yc"))))
+        (base32 "0gaqf8sdc7y0m274ayxjpzlwdffwk1q5gf0mvbija2b7vglalhdl"))))
     (properties `((upstream-name . "DedooseR")))
     (build-system r-build-system)
     (arguments
@@ -25191,10 +25193,10 @@ into the Windows Rgui.")
     (home-page "https://cran.r-project.org/package=DedooseR")
     (synopsis "Monitoring and Analyzing Dedoose Qualitative Data Exports")
     (description
-     "Streamlines analysis of qualitative data exported from Dedoose.  Supports
-monitoring thematic saturation, calculating code frequencies, organizing
-excerpts, generating dynamic codebooks, and producing code network maps within
-R.")
+     "Streamlines analysis of qualitative data exported from Dedoose
+<https://www.dedoose.com>.  Supports monitoring thematic saturation, calculating
+code frequencies, organizing excerpts, generating dynamic codebooks, and
+producing code network maps within R'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-decp
@@ -28289,19 +28291,24 @@ calculate bins.")
 (define-public r-dbparser
   (package
     (name "r-dbparser")
-    (version "2.0.3")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbparser" version))
        (sha256
-        (base32 "1v0yp81bgq9ihgjrx336zyscrhk84sc8rpmbj35sphyc0c0isncs"))))
+        (base32 "0nc6l35axj5k6hf59ixvj81fbx5gvah651z2nf4mbidfkpqava99"))))
     (properties `((upstream-name . "dbparser")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml r-tibble r-purrr r-progress r-dplyr))
+    (propagated-inputs (list r-xml
+                             r-tibble
+                             r-purrr
+                             r-progress
+                             r-dplyr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/dbparser/")
     (synopsis "Drugs Databases Parser")
@@ -30535,13 +30542,13 @@ information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "2.8.2")
+    (version "2.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataquieR" version))
        (sha256
-        (base32 "0iykk77v0q87b2s0xv2ij7vbsl8331scyfbki3ikdbyi96r6kjlw"))))
+        (base32 "101jf39kl297dnw7nhagc9rlv7xyb6xrq6k9vjw5ap1pa16rm9kw"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
     (arguments
@@ -31672,13 +31679,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "7.0.0")
+    (version "7.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "01izyhdplbfg56072bpjbxq8ifnbfmwbv1dbv3fp9xqynrj802i3"))))
+        (base32 "1irggxdibdnkq5xvi0dw9plidhcd80aigi1lpc4j7n2862274b41"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (arguments

@@ -11,6 +11,8 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages pkg-config)
@@ -4989,19 +4991,20 @@ who'd rather use a wordâforâword modern English translation.")
 (define-public r-logolink
   (package
     (name "r-logolink")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logolink" version))
        (sha256
-        (base32 "0aiw1cd8pdfsak9d8gpwmrr1lfbrmyhgfq3p158x690sws9r2c1j"))))
+        (base32 "0700wcgk17dpqzn12hra6mh3p0sx5nfpl3fcb3zgfnajyq38n7gw"))))
     (properties `((upstream-name . "logolink")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-tidyr
                              r-stringr
                              r-readr
                              r-purrr
@@ -5012,6 +5015,7 @@ who'd rather use a wordâforâword modern English translation.")
                              r-dplyr
                              r-cli
                              r-checkmate))
+    (native-inputs (list r-quarto))
     (home-page "https://danielvartan.github.io/logolink/")
     (synopsis "An Interface for Running 'NetLogo' Simulations")
     (description
@@ -6320,13 +6324,13 @@ asynchronous longitudinal data by kernel-weighted estimating equation.")
 (define-public r-lock5data
   (package
     (name "r-lock5data")
-    (version "3.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Lock5Data" version))
        (sha256
-        (base32 "1407vkcdphy5pb4sgy2ms36vjffiwg2l2753gbszm9wv2m0wrnv4"))))
+        (base32 "10p4c7h12d6v8a0jn37p4j69kl193p9ba4l4dgvxx4l0in27nbv1"))))
     (properties `((upstream-name . "Lock5Data")))
     (build-system r-build-system)
     (arguments
@@ -6335,8 +6339,8 @@ asynchronous longitudinal data by kernel-weighted estimating equation.")
     (home-page "https://cran.r-project.org/package=Lock5Data")
     (synopsis "Datasets for \"Statistics: UnLocking the Power of Data\"")
     (description
-     "Datasets for the third edition of \"Statistics: Unlocking the Power of Data\" by
-Lock^5 Includes version of datasets from earlier editions.")
+     "Datasets for the fourth edition of \"Statistics: Unlocking the Power of Data\" by
+Lock^5 Includes versions of datasets from earlier editions.")
     (license license:gpl2)))
 
 (define-public r-locits
@@ -8568,18 +8572,19 @@ chat session, consistent error handling, and parallel batch tools.")
 (define-public r-llming
   (package
     (name "r-llming")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMing" version))
        (sha256
-        (base32 "19vyj4h2dsja46zwphaqlbrmxgapl222xag1604vsbsjmzaz0i30"))))
+        (base32 "0w1haxgy5482vscgykrh780hq0rmfh4nfmkgnkfk0133a3s53k5v"))))
     (properties `((upstream-name . "LLMing")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list python-pandas python-numpy))
     (propagated-inputs (list r-text
                              r-stringi
                              r-stopwords
@@ -8587,6 +8592,7 @@ chat session, consistent error handling, and parallel batch tools.")
                              r-rdpack
                              r-quanteda
                              r-pracma
+                             r-jsonlite
                              r-dbscan))
     (home-page "https://github.com/sliplr19/LLMing")
     (synopsis
@@ -8595,8 +8601,8 @@ chat session, consistent error handling, and parallel batch tools.")
      "This package provides a collection of large language model (LLM) text analysis
 methods designed with psychological data in mind.  Currently, LLMing (aka
 \"lemming\") includes a text anomaly detection method based on the angle-based
-subspace approach described by Zhang, Lin, and Karim (2015)
-<doi:10.1016/j.ress.2015.05.025>.")
+subspace approach described by Zhang, Lin, and Karim (2015) and a text
+generation method. <doi:10.1016/j.ress.2015.05.025>.")
     (license license:expat)))
 
 (define-public r-llmagentr
@@ -11955,13 +11961,13 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.2.2")
+    (version "4.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "1lhd35gdyz5k833s2alyj334p7rg7112qhg7jwim66rpfakiap02"))))
+        (base32 "0nd7ripvzildrgqba57x1pr7nsddjb5q16v4z3qm194av2qki8d0"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (arguments
@@ -11975,6 +11981,7 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
                              r-rgl
                              r-rcpparmadillo
                              r-rcpp
+                             r-parallelly
                              r-lazyeval
                              r-glue
                              r-data-table
@@ -15476,13 +15483,13 @@ with the rest of the inputs.")
 (define-public r-ldmppr
   (package
     (name "r-ldmppr")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldmppr" version))
        (sha256
-        (base32 "0pwyvfxlm4i97y15wj1k8ppm2pk2b9bbb6j37hq9zh765zjm73b5"))))
+        (base32 "0q4yyfdy5698vs339jhcpxjywwvk4wbj4xfdifr3y1apabn1kq5s"))))
     (properties `((upstream-name . "ldmppr")))
     (build-system r-build-system)
     (arguments
@@ -15509,7 +15516,7 @@ with the rest of the inputs.")
                              r-get
                              r-future
                              r-furrr
-                             r-dplyr
+                             r-foreach
                              r-doparallel
                              r-dials
                              r-bundle))
