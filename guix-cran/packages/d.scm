@@ -2075,25 +2075,39 @@ on human communication dynamics.")
 (define-public r-duckspatial
   (package
     (name "r-duckspatial")
-    (version "0.2.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckspatial" version))
        (sha256
-        (base32 "112gyx8nvgaiq3mggnn99n613p6733s9rhjxyx1rw8d27i0a349k"))))
+        (base32 "1dw1mxq3b6qj69023jd1k5rcwbgkrfryag96x6dbjd2m0aigc8in"))))
     (properties `((upstream-name . "duckspatial")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-glue r-dbi r-cli))
+    (propagated-inputs (list r-wk
+                             r-uuid
+                             r-sf
+                             r-rlang
+                             r-lifecycle
+                             r-glue
+                             r-geoarrow
+                             r-duckdb
+                             r-dbi
+                             r-cli
+                             r-arrow))
+    (native-inputs (list r-knitr))
     (home-page "https://cidree.github.io/duckspatial/")
     (synopsis "R Interface to 'DuckDB' Database with Spatial Extension")
     (description
-     "This package provides an interface between R and the @code{DuckDB} (see
-<https://duckdb.org>) database with spatial extensions.  It supports reading,
-writing, and performing some geometric operations.")
+     "Fast & memory-efficient functions to analyze and manipulate large spatial data
+data sets.  It leverages the fast analytical capabilities of @code{DuckDB} and
+its spatial extension (see
+<https://duckdb.org/docs/stable/core_extensions/spatial/overview>) while
+maintaining compatibility with Râs spatial data ecosystem to work with spatial
+vector data.")
     (license license:gpl3+)))
 
 (define-public r-duckplyr
@@ -29753,13 +29767,13 @@ Self-Organization and Swarm Intelligence\" (2018)
 (define-public r-dataviewr
   (package
     (name "r-dataviewr")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataviewR" version))
        (sha256
-        (base32 "13bnajf3j5yv6ahhin5yhk7p5nyw7y9qixwndk9vq98jwfdkmj9f"))))
+        (base32 "1j3k4d2hmawjl57p6bwyk5aq58janpv1sck7l5v1d184yp5ghkdj"))))
     (properties `((upstream-name . "dataviewR")))
     (build-system r-build-system)
     (arguments
@@ -29769,13 +29783,15 @@ Self-Organization and Swarm Intelligence\" (2018)
                              r-stringr
                              r-shinyjs
                              r-shiny
+                             r-rstudioapi
                              r-purrr
                              r-labelled
                              r-htmlwidgets
                              r-forcats
                              r-dt
                              r-dplyr
-                             r-datamods))
+                             r-datamods
+                             r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/madhankumarnagaraji/dataviewR")
     (synopsis "An Interactive and Feature-Rich Data Viewer")

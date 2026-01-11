@@ -1395,13 +1395,13 @@ and the other is relying on an artificial neural network.")
 (define-public r-quarks
   (package
     (name "r-quarks")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quarks" version))
        (sha256
-        (base32 "0kvcag9slxjsz4yfgvm0d8fcfmmks1r150w6pc22ji2x4gw5fxy2"))))
+        (base32 "0zzw9j6pkrrbvqv9j6ysds3pav09sv73p59k5g4i3kfzb6h6cvfc"))))
     (properties `((upstream-name . "quarks")))
     (build-system r-build-system)
     (arguments

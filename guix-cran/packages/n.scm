@@ -171,13 +171,13 @@ clean the data once in R.")
 (define-public r-nycopendata
   (package
     (name "r-nycopendata")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nycOpenData" version))
        (sha256
-        (base32 "1j5gb6ylrwrawac5v10syy9ddf24vghmgsyxx6my4088hplvmswf"))))
+        (base32 "1vwx2x03a1q86zhn11wlzvfkj1mk1s6qrafa909a16i5fpcj574i"))))
     (properties `((upstream-name . "nycOpenData")))
     (build-system r-build-system)
     (arguments
@@ -1587,6 +1587,43 @@ distance, tournament selection, simulated binary crossover, and polynomial
 mutation are called in the main program.  The methods are described in Deb et
 al. (2002) <doi:10.1109/4235.996017>.")
     (license license:lgpl3)))
+
+(define-public r-nser
+  (package
+    (name "r-nser")
+    (version "1.5.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nser" version))
+       (sha256
+        (base32 "190jv0ba8h7dssvb1ybmny85rx8b1788m49bqwh0kn587p8l7l6y"))))
+    (properties `((upstream-name . "nser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rvest
+                             r-reticulate
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-googlevis
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nandp1/nser/")
+    (synopsis
+     "Bhavcopy and Live Market Data from National Stock Exchange (NSE) & Bombay Stock Exchange (BSE) India")
+    (description
+     "Download Current & Historical Bhavcopy.  Get Live Market data from NSE India of
+Equities and Derivatives (F&O) segment.  Data source
+<https://www.nseindia.com/>.")
+    (license license:gpl3)))
 
 (define-public r-nseq
   (package
@@ -6381,13 +6418,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.6.3")
+    (version "11.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "1513psab913w5bicl0lifcdjpap3bwnk57w969dc370gjl6dfifv"))))
+        (base32 "0k9jfn4y6mddiisbb5y4jmrgx4s18g1vdy6j10b41h781hkc6k3j"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -14340,13 +14377,13 @@ interventions.  They have been developed and applied in Langendorf and Burgess
 (define-public r-netcoin
   (package
     (name "r-netcoin")
-    (version "2.1.9")
+    (version "2.1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netCoin" version))
        (sha256
-        (base32 "1vj3c4knaxspqz6aczdirp5qi2b1z2fks8jpvzxs9ik6k10mpbib"))))
+        (base32 "16smgm59brzmpw68pbnmjcrxjss2r7zvvn213qdpw98gqjgkym9z"))))
     (properties `((upstream-name . "netCoin")))
     (build-system r-build-system)
     (arguments
@@ -16285,31 +16322,6 @@ data: large document collections, logfiles, and other text data.")
 (cross-)covariance function , the spline correlogram, the nonparametric phase
 coherence function, local indicators of spatial association (LISA), (Mantel)
 correlogram, (Partial) Mantel test.")
-    (license license:gpl3)))
-
-(define-public r-ncdump
-  (package
-    (name "r-ncdump")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ncdump" version))
-       (sha256
-        (base32 "13j02y9kcwrx8a9fx1wi0d14xp7gbkcijz9xgq9ah8gz00939cx9"))))
-    (properties `((upstream-name . "ncdump")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-ncdf4 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hypertidy/ncdump")
-    (synopsis "Extract Metadata from 'NetCDF' Files as Data Frames")
-    (description
-     "This package provides tools for handling @code{NetCDF} metadata in data frames.
-The metadata is provided as relations in tabular form, to avoid having to scan
-printed header output or to navigate nested lists of raw metadata.")
     (license license:gpl3)))
 
 (define-public r-ncdfgeom

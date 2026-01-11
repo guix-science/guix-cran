@@ -9691,13 +9691,13 @@ of the Aquo Standard and use them in R.")
 (define-public r-aquaticlifehistory
   (package
     (name "r-aquaticlifehistory")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AquaticLifeHistory" version))
        (sha256
-        (base32 "0h6q0ajw2k2f1p0k8j6772p7i78a13amwxzj4ffrykqgwi3pr22v"))))
+        (base32 "1v1lax83gbyf5rh1k4zmhwk6b85yyss1g0rb1k5g9i31k3k5zfhg"))))
     (properties `((upstream-name . "AquaticLifeHistory")))
     (build-system r-build-system)
     (arguments
@@ -18005,13 +18005,13 @@ age-structured population dynamics models described in Erguler and others (2016)
 (define-public r-albi
   (package
     (name "r-albi")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aLBI" version))
        (sha256
-        (base32 "1rf8a8d4df9i4nzcb6mcmcypsl7k9s8hbablfhwynss6c8m2a9vm"))))
+        (base32 "1cym2j8whggf0s4ncivp96namp9adbrxp68rv44b9rvfswgizg9w"))))
     (properties `((upstream-name . "aLBI")))
     (build-system r-build-system)
     (arguments
@@ -18031,23 +18031,28 @@ indicators.  Key functions include: @code{FrequencyTable()}: Calculate the
 frequency table from the collected and also the extract the length frequency
 data from the frequency table with the upper length_range.  A numeric value
 specifying the bin width for class intervals.  If not provided, the bin width is
-automatically calculated using Sturges (1926)
-<doi:10.1080/01621459.1926.10502161> formula. @code{CalPar()}: Calculates
-various lengths used in fish stock assessment as biological length indicators
-such as asymptotic length (Linf), maximum length (Lmax), length at sexual
-maturity (Lm), and optimal length (Lopt). @code{FishPar()}: Calculates
-length-based indicators (LBIs) proposed by Froese (2004)
-<doi:10.1111/j.1467-2979.2004.00144.x> such as the percentage of mature fish
-(Pmat), percentage of optimal length fish (Popt), percentage of mega spawners
-(Pmega), and the sum of these as Pobj.  This function also estimates confidence
-intervals for different lengths, visualizes length frequency distributions, and
-provides data frames containing calculated values. @code{FishSS()}: Makes
-decisions based on input from Cope and Punt (2009) <doi:10.1577/C08-025.1> and
-parameters calculated by @code{FishPar()} (e.g., Pobj, Pmat, Popt, LM_ratio) to
-determine stock status as target spawning biomass (TSB40) and limit spawning
-biomass (LSB25). @code{LWR()}: Fits and visualizes length-weight relationships
-using linear regression, with options for log-transformation and customizable
-plotting.")
+automatically calculated using Wang (2020) <doi:10.1016/j.fishres.2019.105474>
+formula. @code{FreqTM()}: Creates a frequency distribution table for fish length
+data across multiple months using a consistent length class structure.  The bin
+width is determined by either a custom value or Wang's formula, applied
+uniformly across all months.  The function dynamically detects and renames
+columns to Month and Length from the input dataframe.  The maximum observed
+length is included as part of the last class, with the upper bound set to the
+smallest multiple of the bin width greater than or equal to the maximum length.
+Months can be converted to dates using a configurable day and year, with dates
+assigned sequentially in day.month.year format (e.g., 15.01.26).
+@code{FishPar()}: Calculates length-based indicators (LBIs) proposed by Froese
+(2004) <doi:10.1111/j.1467-2979.2004.00144.x> such as the percentage of mature
+fish (Pmat), percentage of optimal length fish (Popt), percentage of mega
+spawners (Pmega), and the sum of these as Pobj.  This function also estimates
+confidence intervals for different lengths, visualizes length frequency
+distributions, and provides data frames containing calculated values.
+@code{FishSS()}: Makes decisions based on input from Cope and Punt (2009)
+<doi:10.1577/C08-025.1> and parameters calculated by @code{FishPar()} (e.g.,
+Pobj, Pmat, Popt, LM_ratio) to determine stock status as target spawning biomass
+(TSB40) and limit spawning biomass (LSB25), and selectivity. @code{LWR()}: Fits
+and visualizes length-weight relationships using linear regression, with options
+for log-transformation and customizable plotting.")
     (license license:gpl3)))
 
 (define-public r-albatross
@@ -20096,26 +20101,23 @@ Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
 (define-public r-agrobox
   (package
     (name "r-agrobox")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agrobox" version))
        (sha256
-        (base32 "1bfyij2fqrzmhrvvjqjd5zj59igpvlx61rzh452d2lps6ikbqh6z"))))
+        (base32 "1xm8lqpd73kk4q3vzdc23gl5ddhw5hb5mrgcn9rgxgkcrgjni6sf"))))
     (properties `((upstream-name . "agrobox")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tinytex
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
                              r-pwr
                              r-openxlsx
-                             r-magick
-                             r-kableextra
                              r-ggplot2
                              r-dplyr
                              r-agricolae))

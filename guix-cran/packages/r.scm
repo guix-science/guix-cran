@@ -8881,13 +8881,13 @@ and evolutionary biology, but certainly other fields, as well.")
 (define-public r-rrphylo
   (package
     (name "r-rrphylo")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRphylo" version))
        (sha256
-        (base32 "1j49860shz9dz6alrf7i331b00xz09ln8sxmvh8l3a2nfzms81qz"))))
+        (base32 "1anbcghyd25gls2izx72lcf82fbd1m3jvq72dz0skr85bax9am94"))))
     (properties `((upstream-name . "RRphylo")))
     (build-system r-build-system)
     (arguments
@@ -18286,13 +18286,13 @@ alternative methods are efficiently implemented in C++.")
 (define-public r-robcp
   (package
     (name "r-robcp")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robcp" version))
        (sha256
-        (base32 "1wb3wafvbbapw2y8mwwf39ikz1hlkp2xwx66z3pidj70z19d1fgx"))))
+        (base32 "1fb2dsdhgwmj71kl1x7mx36al8q9qk6286jzf8pyicwiv44rck8i"))))
     (properties `((upstream-name . "robcp")))
     (build-system r-build-system)
     (arguments
@@ -25840,13 +25840,13 @@ pipelines.")
 (define-public r-ripc
   (package
     (name "r-ripc")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ripc" version))
        (sha256
-        (base32 "0pb19jx682xabfymyc97hnw4w5im285gkjmsa6pa5y5gd4gc8ikb"))))
+        (base32 "16adk1vdbs870c5rwifa8gr4m2m924sz3y00r5qbbh2qahrmddr6"))))
     (properties `((upstream-name . "ripc")))
     (build-system r-build-system)
     (arguments
@@ -44847,13 +44847,13 @@ Evolution,13: 782-788 <DOI:10.1111/2041-210X.13800>.")
 (define-public r-rd3plot
   (package
     (name "r-rd3plot")
-    (version "1.1.37")
+    (version "1.1.45")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rD3plot" version))
        (sha256
-        (base32 "1yz3wqj5rrmbjw43xb1zb8b4j4d241qlb9a58bqan6k8x84rhp5l"))))
+        (base32 "1mng1z0jyn8fmi0rl28ldj3a7xy4jxwbq6g7wm4nm3ifa4msffjm"))))
     (properties `((upstream-name . "rD3plot")))
     (build-system r-build-system)
     (arguments
@@ -44874,7 +44874,7 @@ Evolution,13: 782-788 <DOI:10.1111/2041-210X.13800>.")
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-igraph))
-    (native-inputs (list esbuild))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=rD3plot")
     (synopsis
      "Interactive Networks, Timelines, Barplots, Galleries with 'D3.js'")
@@ -55346,19 +55346,19 @@ test multiple test statistics simultaneously.")
 (define-public r-randomgodb
   (package
     (name "r-randomgodb")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randomGODB" version))
        (sha256
-        (base32 "1mfmhsyv2x1v8r77c0igwy7600sqm8ld9g0f1ylrzfak4hfc4lw5"))))
+        (base32 "1zbqc1dazvhm79y8kq0rqhlrklas12m9bihhsz839hd4f649960p"))))
     (properties `((upstream-name . "randomGODB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-minimalistgodb r-go-db))
+    (propagated-inputs (list r-minimalistgodb))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=randomGODB")
     (synopsis "Random GO Database")
@@ -57141,6 +57141,50 @@ is being able add several profiles to the same plot for comparison.  Use
 they should be named in a data frame.  See
 <https://github.com/dnychka/Radiosonde> for the package home page.")
     (license license:gpl2+)))
+
+(define-public r-radiant-multivariate
+  (package
+    (name "r-radiant-multivariate")
+    (version "1.6.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "radiant.multivariate" version))
+       (sha256
+        (base32 "0h2krvh8zrb26y8jcsh71f3ci73q8b0mkncnmckrzvi9x1rm5mkj"))))
+    (properties `((upstream-name . "radiant.multivariate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-scales
+                             r-rlang
+                             r-radiant-model
+                             r-radiant-data
+                             r-psych
+                             r-polycor
+                             r-patchwork
+                             r-mass
+                             r-magrittr
+                             r-lubridate
+                             r-import
+                             r-gparotation
+                             r-gower
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-clustmixtype
+                             r-car))
+    (home-page "https://github.com/radiant-rstats/radiant.multivariate/")
+    (synopsis
+     "Multivariate Menu for Radiant: Business Analytics using R and Shiny")
+    (description
+     "The Radiant Multivariate menu includes interfaces for perceptual mapping, factor
+analysis, cluster analysis, and conjoint analysis.  The application extends the
+functionality in radiant.data'.")
+    (license (list license:agpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-radiant-model
   (package

@@ -3041,13 +3041,13 @@ as well as scene management.")
 (define-public r-unifiedml
   (package
     (name "r-unifiedml")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unifiedml" version))
        (sha256
-        (base32 "16h2p3yalnibi8yrp4pvim5c6pngigdmpissrwsq2q9n5ms7yghs"))))
+        (base32 "0j2rp7ylm4cmkny2i7w2vc7rajpm06hslxg8iihc2l1rw2fh5c11"))))
     (properties `((upstream-name . "unifiedml")))
     (build-system r-build-system)
     (arguments

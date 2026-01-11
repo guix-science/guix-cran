@@ -5201,13 +5201,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.3.0")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groundhog" version))
        (sha256
-        (base32 "1ggm6zpf9vifqww452fqkz8rrk66qx9g0kkrn36gwf1xwa5aqwd0"))))
+        (base32 "0gnyljnm1b4fcrcw2ja0ww1khbzmnnh5g5i6432ryv21z51jmz0v"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (arguments
@@ -26867,13 +26867,13 @@ supplementary cartography for spatial representation.")
 (define-public r-geonapi
   (package
     (name "r-geonapi")
-    (version "0.8")
+    (version "0.8-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geonapi" version))
        (sha256
-        (base32 "0pic50g4k6rjqqhj83kz0qqh1hcs4x4fh0amj9ynbv40mcn4rl98"))))
+        (base32 "1927ncc6ybjvmvhg2yrwnnlx94v384da7i414d5wfa64dzj3yam8"))))
     (properties `((upstream-name . "geonapi")))
     (build-system r-build-system)
     (arguments

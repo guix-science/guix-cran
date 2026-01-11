@@ -1066,13 +1066,13 @@ transformation.")
 (define-public r-itp
   (package
     (name "r-itp")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itp" version))
        (sha256
-        (base32 "0nj497zmdgh6y5npf7727gqn9f9pm5rv9bm0xfn8419lb9n3ann3"))))
+        (base32 "0bbrj030kcms5qc9z5kc959kga1nvbqig96jm58wfacglp4bddbw"))))
     (properties `((upstream-name . "itp")))
     (build-system r-build-system)
     (arguments

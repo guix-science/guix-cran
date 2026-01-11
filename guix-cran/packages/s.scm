@@ -34317,13 +34317,13 @@ types, including spatial data returned as sf objects.")
 (define-public r-sociome
   (package
     (name "r-sociome")
-    (version "2.2.5")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sociome" version))
        (sha256
-        (base32 "1fyimv1i83ck7hwb7nnbdk46fiasi4kb8h944dni73536mnhc57g"))))
+        (base32 "1gw5h6cpi0a6qnjcjaxlcpdlka5ggl64mdsv6xqjinc5ayz8j186"))))
     (properties `((upstream-name . "sociome")))
     (build-system r-build-system)
     (arguments
@@ -34331,6 +34331,7 @@ types, including spatial data returned as sf objects.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tidycensus
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
@@ -40429,13 +40430,13 @@ be outlined in a forthcoming paper, with alternative models from Li et al.
 (define-public r-skimr
   (package
     (name "r-skimr")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skimr" version))
        (sha256
-        (base32 "030vfh2lpfvhaa32mx9bb0bhkji6f3b00mjh6vp21v6fvnc18im3"))))
+        (base32 "1x2h5c9gv94vwkbhz6rp75xhi9x5p7jvgi9j433q11r4ficrz7i1"))))
     (properties `((upstream-name . "skimr")))
     (build-system r-build-system)
     (arguments
@@ -43413,13 +43414,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.12")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "1hsqbqcz1ykrnyz288bv6kzq7shbqkrxk4kjd7rh0baxv8kxvawb"))))
+        (base32 "1nrcdh87vwjd0yq529har3h17h4wp22xz6v4wkg5x4dilwg5k6sn"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (arguments
@@ -67418,6 +67419,41 @@ estimates the dropout values using a subspace regression model (Tran et.al.
 professional documents.  Simple interface with features to ease navigation
 across the page and sub-pages.")
     (license license:expat)))
+
+(define-public r-scipub
+  (package
+    (name "r-scipub")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scipub" version))
+       (sha256
+        (base32 "18j93gnxrpqwasz9iagl9dji8cpjd6y38y49251wzhhy72igpdyd"))))
+    (properties `((upstream-name . "scipub")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-ggplot2
+                             r-ggdist
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dpagliaccio/scipub")
+    (synopsis "Summarize Data for Scientific Publication")
+    (description
+     "Create and format tables and APA statistics for scientific publication.  This
+includes making a Table 1 to summarize demographics across groups, correlation
+tables with significance indicated by stars, and extracting formatted
+statistical summarizes from simple tests for in-text notation.  The package also
+includes functions for Winsorizing data based on a Z-statistic cutoff.")
+    (license license:gpl3)))
 
 (define-public r-sciplot
   (package

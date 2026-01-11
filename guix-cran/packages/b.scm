@@ -14290,13 +14290,13 @@ testing, and prototyping analyses.")
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioVizSeq" version))
        (sha256
-        (base32 "1y7bn5xh18v7kq57bs11cq8ivkjzwh2bz0nhcg4x8zrd99rsnprz"))))
+        (base32 "1f0xhjbkfzskdzh5mrdv7x42sawpzs24mi1f9yq4dkalzxyiw1dr"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
     (arguments
@@ -18700,20 +18700,20 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
 (define-public r-bifiesurvey
   (package
     (name "r-bifiesurvey")
-    (version "3.6-6")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIFIEsurvey" version))
        (sha256
-        (base32 "0g0v7sahh7kg84yi0gj7q21i2wld76vs8c0vzynyna3jal5a2ij7"))))
+        (base32 "0asvj935yhkz9nymy0yxj3zj632wv7fmiidlh6jz6azl8djwa7bw"))))
     (properties `((upstream-name . "BIFIEsurvey")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-miceadds))
-    (home-page "https://github.com/alexanderrobitzsch/BIFIEsurvey")
+    (home-page "https://github.com/konradoberwimmer/BIFIEsurvey")
     (synopsis "Tools for Survey Statistics in Educational Assessment")
     (description
      "This package contains tools for survey statistics (especially in educational
@@ -20383,13 +20383,13 @@ power and sample size calculations as described in Pawel and Held (2025)
 (define-public r-bfpack
   (package
     (name "r-bfpack")
-    (version "1.5.0")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFpack" version))
        (sha256
-        (base32 "1bwnwddwv8h4v5ikjdbqrh0vixif3ljsv3qis224wg742mq0bg95"))))
+        (base32 "08b5aps3180m1adxn4wsprzcnf4wpp4bl3355dvgvlix2av0c8jn"))))
     (properties `((upstream-name . "BFpack")))
     (build-system r-build-system)
     (arguments
@@ -20402,7 +20402,6 @@ power and sample size calculations as described in Pawel and Held (2025)
                              r-metabma
                              r-mass
                              r-lme4
-                             r-extradistr
                              r-ergm
                              r-coda
                              r-berryfunctions
@@ -24062,6 +24061,27 @@ about the bias formula used are in Lunardon, N., Scharfstein, D. (2017)
 <doi:10.1002/sim.7366>.")
     (license license:gpl2)))
 
+(define-public r-bcfrailph
+  (package
+    (name "r-bcfrailph")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bcfrailph" version))
+       (sha256
+        (base32 "0zha5xq89kg6483902w4a1jwnnnj3vr8kgdzxadsrsirccld145m"))))
+    (properties `((upstream-name . "bcfrailph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=bcfrailph")
+    (synopsis "Semiparametric Bivariate Correlated Frailty Models Fit")
+    (description "Fit semiparametric bivariate correlated frailty models.")
+    (license license:gpl2+)))
+
 (define-public r-bcf
   (package
     (name "r-bcf")
@@ -25189,13 +25209,13 @@ MoriÃ±a D, Puig P, Navarro A. (2021) <doi:10.1186/s12874-021-01427-2>.")
 (define-public r-bayesxsrc
   (package
     (name "r-bayesxsrc")
-    (version "3.0-6")
+    (version "3.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesXsrc" version))
        (sha256
-        (base32 "0lmmiaaf81i12a2r6wh8qjg1v0b4cvhil86l5aphwzyrsmlv4p3p"))))
+        (base32 "0ffmzs1010il3hfd3hq8hdal7k7n8fm5fx99814rcb5gj5jf87zs"))))
     (properties `((upstream-name . "BayesXsrc")))
     (build-system r-build-system)
     (arguments
@@ -28799,13 +28819,13 @@ endpoint.")
 (define-public r-bayesdecon
   (package
     (name "r-bayesdecon")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesDecon" version))
        (sha256
-        (base32 "0myphxk0dzgs4pa1xzvrfsrbs4v3vsdyjxkkbiz44862fzphcaf2"))))
+        (base32 "0znzv3s89b4y4hfj1mkb5642iw74cy72s2gsz5pf11hh9gmks2vd"))))
     (properties `((upstream-name . "BayesDecon")))
     (build-system r-build-system)
     (arguments
@@ -28822,7 +28842,7 @@ endpoint.")
     (description
      "Estimates the density of a variable in a measurement error setup, potentially
 with an excess of zero values.  For more details see Sarkar (2022)
-<doi:10.1080/10618600.2022.2060239>.")
+<doi:10.1080/01621459.2020.1782220>.")
     (license license:gpl2+)))
 
 (define-public r-bayesdccgarch

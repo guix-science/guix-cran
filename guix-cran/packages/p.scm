@@ -4084,32 +4084,33 @@ linear regressions, Reist standardizations or Aitchison transformation).")
 (define-public r-pssurvival
   (package
     (name "r-pssurvival")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSsurvival" version))
        (sha256
-        (base32 "1bw1b8r0y2pz4xgwz4vrxhp9l92ilc6lsmjkcw4l35vbfrazyr1i"))))
+        (base32 "194pjip777r9lw5y1dm8ghvcfgm34cn1jpygqz0d90hdvwqsmkmk"))))
     (properties `((upstream-name . "PSsurvival")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival))
+    (propagated-inputs (list r-survival r-ggplot2 r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cxinyang/PSsurvival")
     (synopsis "Propensity Score Methods for Survival Analysis")
     (description
      "This package implements propensity score weighting methods for estimating
-counterfactual survival functions and marginal hazard ratios in observational
-studies with time-to-event outcomes.  Supports binary and multiple treatment
-groups with average treatment effect on the combined full population (ATE),
-average treatment effect on the treated or target group (ATT), and overlap
-weighting estimands.  Includes symmetric (Crump) and asymmetric (Sturmer)
-trimming options for extreme propensity scores.  Variance estimation via
-analytical M-estimation or bootstrap.  Methods based on Cheng et al. (2022)
-<doi:10.1093/aje/kwac043> and Li & Li (2019) <doi:10.1214/19-AOAS1282>.")
+counterfactual survival functions, marginal hazard ratios, and weighted
+Kaplan-Meier and cumulative risk curves in observational studies with
+time-to-event outcomes.  Supports binary and multiple treatment groups with
+inverse probability of treatment weighting (IPW), overlap weighting (OW), and
+average treatment effect on the treated (ATT).  Includes symmetric trimming
+(Crump extension) for extreme propensity scores.  Variance estimation via
+analytical M-estimation or bootstrap.  Methods based on Li et al. (2018)
+<doi:10.1080/01621459.2016.1260466>, Li & Li (2019) <doi:10.1214/19-AOAS1282>,
+and Cheng et al. (2022) <doi:10.1093/aje/kwac043>.")
     (license license:gpl2+)))
 
 (define-public r-pssubpathway
@@ -8405,20 +8406,21 @@ maximum profile likelihood estimates and the kth likelihood support intervals.")
 (define-public r-profileladder
   (package
     (name "r-profileladder")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProfileLadder" version))
        (sha256
-        (base32 "14iq0ivv8pgvyinx6hqzppd8prxpl6ssl38lsqw37h0iwaah43yv"))))
+        (base32 "0180x1apfxfjlzj6cn3vsx6bn289xbgi3cpbbqdjvkwqqzl3wlgi"))))
     (properties `((upstream-name . "ProfileLadder")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-raw r-crayon r-chainladder))
-    (home-page "https://cran.r-project.org/package=ProfileLadder")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/42463863/ProfileLadder")
     (synopsis "Functional-Based Chain Ladder for Claims Reserving")
     (description
      "Functional claims reserving methods based on aggregated chain-ladder data, also
@@ -21645,6 +21647,49 @@ downloaded from the official website <https://www.ibge.gov.br/>.  Further
 analysis must be made using package survey'.")
     (license license:gpl3)))
 
+(define-public r-pmxtools
+  (package
+    (name "r-pmxtools")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmxTools" version))
+       (sha256
+        (base32 "1vxjjkzi95hl7hmacw96dhczbi8lakd8kdymcq4nps7qbrfyh7xg"))))
+    (properties `((upstream-name . "pmxTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-pknca
+                             r-patchwork
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-ggdist
+                             r-dplyr
+                             r-data-tree
+                             r-chron))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kestrel99/pmxTools")
+    (synopsis "Pharmacometric and Pharmacokinetic Toolkit")
+    (description
+     "Pharmacometric tools for common data analytical tasks; closed-form solutions for
+calculating concentrations at given times after dosing based on compartmental PK
+models (1-compartment, 2-compartment and 3-compartment, covering infusions,
+zero- and first-order absorption, and lag times, after single doses and at
+steady state, per Bertrand & Mentre (2008)
+<https://www.facm.ucl.ac.be/cooperation/Vietnam/WBI-Vietnam-October-2011/Modelling/Monolix32_PKPD_library.pdf>);
+parametric simulation from NONMEM-generated parameter estimates and other
+output; and parsing, tabulating and plotting results generated by
+Perl-speaks-NONMEM (@code{PsN}).")
+    (license license:gpl2)))
+
 (define-public r-pmxpartab
   (package
     (name "r-pmxpartab")
@@ -23893,13 +23938,13 @@ par les fonctions ggplot2'.")
 (define-public r-plotdap
   (package
     (name "r-plotdap")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotdap" version))
        (sha256
-        (base32 "10r0wn9s73x71mamhkp3f8g9k7559x8x5s8qrnr6540x2r5l92cx"))))
+        (base32 "10zykrg71qnpd941ywbzfl58nk7mbldcj2bgnzxnlryn29qqk78c"))))
     (properties `((upstream-name . "plotdap")))
     (build-system r-build-system)
     (arguments
@@ -25972,13 +26017,13 @@ times.")
 (define-public r-pl94171
   (package
     (name "r-pl94171")
-    (version "1.1.3")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PL94171" version))
        (sha256
-        (base32 "0krs7vnvwvfyyxn7z43m7fr153bwdl75sx50s1fmrn65czi76bzk"))))
+        (base32 "0i5z055glqhf1ihr0gah4ah1b6m93livlirbqpm4cxndlv2q6rrf"))))
     (properties `((upstream-name . "PL94171")))
     (build-system r-build-system)
     (arguments
@@ -25989,8 +26034,9 @@ times.")
                              r-stringr
                              r-sf
                              r-readr
-                             r-httr
+                             r-foreign
                              r-dplyr
+                             r-curl
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://corymccartan.com/PL94171/")
@@ -28553,25 +28599,25 @@ paper, Wang, Yang, Li, and Wang (2021) <doi:10.48550/@code{arXiv.2105.02410>}.")
 (define-public r-pid
   (package
     (name "r-pid")
-    (version "0.50")
+    (version "0.65")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pid" version))
        (sha256
-        (base32 "05s3xqf95d4avh7gkr49jsm8jzacbv694c3wgppkkc40zip6vkc7"))))
+        (base32 "0x6plx2nbwvjch8jgghrhkw75nqzdajqlz5k1lplfl5i8cv5r6my"))))
     (properties `((upstream-name . "pid")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-png r-ggplot2 r-frf2-catlg128 r-frf2 r-doe-base))
-    (home-page "https://learnche.org/pid")
+    (home-page "https://learnche.org/pid/")
     (synopsis "Process Improvement using Data")
     (description
      "This package provides a collection of scripts and data files for the statistics
-text: \"Process Improvement using Data\" <https://learnche.org/pid> and the online
-course \"Experimentation for Improvement\" found on Coursera.  The package
+text: \"Process Improvement using Data\" <https://learnche.org/pid/> and the
+online course \"Experimentation for Improvement\" found on Coursera.  The package
 contains code for designed experiments, data sets and other convenience
 functions used in the book.")
     (license license:bsd-2)))
@@ -30427,13 +30473,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.14.0")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "1k1gp3kfxbhgxpi12zcv328ns4spp9q26d2gxgrp45hkykwh5gin"))))
+        (base32 "0w9sx8yw4pyly1p981mw4q7mcqqmxky59mxrixcz6i1awbk0hv16"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (arguments
@@ -32092,13 +32138,13 @@ Medicine's standard data structure for Clinical and Statistical Programming.")
 (define-public r-pharmaversesdtm
   (package
     (name "r-pharmaversesdtm")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaversesdtm" version))
        (sha256
-        (base32 "11xhqrv05lplagnj6g9sfwxfgszx2i1qqk6ln4rkbyw0dkr3qs3g"))))
+        (base32 "0c1hs1bm3mz3iz7anjlz7sja8jra3yz5fvjmb9ndgx7slaimgaxr"))))
     (properties `((upstream-name . "pharmaversesdtm")))
     (build-system r-build-system)
     (arguments
@@ -37846,13 +37892,13 @@ book.")
 (define-public r-pdenaivebayes
   (package
     (name "r-pdenaivebayes")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDEnaiveBayes" version))
        (sha256
-        (base32 "0zyv1wfm3vm9fynab5c40gfcjv0x8zf22qsx2x5kanb5yj63cdhk"))))
+        (base32 "1zdsixd5mmvcs8yr431wal7wbq3s1xlyjy62d8w6d9qyx4pmcssp"))))
     (properties `((upstream-name . "PDEnaiveBayes")))
     (build-system r-build-system)
     (arguments
@@ -37865,6 +37911,7 @@ book.")
                              r-memshare
                              r-ggplot2
                              r-databionicswarm))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PDEnaiveBayes")
     (synopsis "Plausible Naive Bayes Classifier Using PDE")
     (description
@@ -37873,7 +37920,8 @@ classifier based on the Pareto density estimation (PDE) featuring a plausible
 approach to a pitfall in the Bayesian theorem covering low evidence cases.
 Stier, Q., Hoffmann, J., and Thrun, M.C.: \"Classifying with the Fine Structure
 of Distributions: Leveraging Distributional Information for Robust and Plausible
-NaÃ¯ve Bayes\" (2025).")
+Naive Bayes\" (2026), Machine Learning and Knowledge Extraction (MAKE),
+<DOI:10.3390/make8010013>.")
     (license license:gpl3)))
 
 (define-public r-pde

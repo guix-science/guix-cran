@@ -39836,13 +39836,13 @@ error bias correction methods, see Luan et al. (2023)
 (define-public r-meboot
   (package
     (name "r-meboot")
-    (version "1.4-9.4")
+    (version "1.4-9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meboot" version))
        (sha256
-        (base32 "0akap3dl6nsfvh2f6d96ij6dvbblyrdnbqqh23ay8ah0r51zx9fs"))))
+        (base32 "07m532659b1j3q5z9256iaqv3y23p8skzgw8zbpigx87hn957rar"))))
     (properties `((upstream-name . "meboot")))
     (build-system r-build-system)
     (arguments
@@ -39854,9 +39854,9 @@ error bias correction methods, see Luan et al. (2023)
     (description
      "Maximum entropy density based dependent data bootstrap.  An algorithm is
 provided to create a population of time series (ensemble) without assuming
-stationarity.  The reference paper (Vinod, H.D., 2004 <DOI:
-10.1016/j.jempfin.2003.06.002>) explains how the algorithm satisfies the ergodic
-theorem and the central limit theorem.")
+stationarity.  The reference paper (Vinod, H.D., 2004
+<DOI:10.1016/j.jempfin.2003.06.002>) explains how the algorithm satisfies the
+ergodic theorem and the central limit theorem.")
     (license license:gpl2+)))
 
 (define-public r-measuring
@@ -49106,13 +49106,13 @@ plugin and the ability of downloading and processing static tiles.")
 (define-public r-mapsf
   (package
     (name "r-mapsf")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapsf" version))
        (sha256
-        (base32 "0nkvnjlyg0d1ij9l63jwqlayca6ki837ikrisii8pdfxjmyq8yyw"))))
+        (base32 "0gazdilagzhy80vmk92fxxxfwrmpakq21dkf7qajw34qgv8vmjc2"))))
     (properties `((upstream-name . "mapsf")))
     (build-system r-build-system)
     (arguments
@@ -49459,13 +49459,13 @@ regions were intervention is most duly needed.")
 (define-public r-maplegend
   (package
     (name "r-maplegend")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maplegend" version))
        (sha256
-        (base32 "1hcpvy7g3yz11m124fjjjxw7bf7sjp45iy5z1sl4jaq9gr4ydg5w"))))
+        (base32 "138cp6fqxk9qf7bad75kxk387ikyj1hrplvk3mjai8rkl875aaq0"))))
     (properties `((upstream-name . "maplegend")))
     (build-system r-build-system)
     (arguments

@@ -4296,6 +4296,35 @@ loaded with a variety of common genomics data types, and can be used with a
 custom theme.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-jaya
+  (package
+    (name "r-jaya")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Jaya" version))
+       (sha256
+        (base32 "0qyszpw9bvz29dgf3wqx61h4rzpp0v7y63k214dz53jbrcd2wak0"))))
+    (properties `((upstream-name . "Jaya")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neerajdhanraj/Jaya")
+    (synopsis
+     "Gradient-Free Optimization Algorithm for Single and Multi-Objective Problems")
+    (description
+     "An implementation of the Jaya optimization algorithm for both single-objective
+and multi-objective problems.  Jaya is a population-based, gradient-free
+optimization algorithm capable of solving constrained and unconstrained
+optimization problems without hyperparameters.  This package includes features
+such as multi-objective Pareto optimization, adaptive population adjustment, and
+early stopping.  For further details, see R.V. Rao (2016)
+<doi:10.5267/j.ijiec.2015.8.004>.")
+    (license license:expat)))
+
 (define-public r-javateak
   (package
     (name "r-javateak")
@@ -4672,13 +4701,13 @@ time.")
 (define-public r-jagsui
   (package
     (name "r-jagsui")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagsUI" version))
        (sha256
-        (base32 "012s8dcfaxvswwyjjff0x5c7cpvqqqx0zav0wjqm8gzq9pyv0lsn"))))
+        (base32 "1xacfj580s5p3q03z079zvmpbjccl5pd25dsz6blg145yk1f9xqp"))))
     (properties `((upstream-name . "jagsUI")))
     (build-system r-build-system)
     (arguments

@@ -6466,19 +6466,26 @@ release files.  For more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "1pb8m7s9kg19473mzdpvkmzzdlaxjhfx228pwbrcvqyl37i4jpb7"))))
+        (base32 "07vy7i4mgpcaywgldp30w5k7045h9mqx985hdi3lfkiznvds3cqf"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcpp r-ggplot2 r-data-table r-cowplot))
+    (propagated-inputs (list r-rlang
+                             r-rcppthread
+                             r-rcppparallel
+                             r-rcpp
+                             r-ggplot2
+                             r-data-table
+                             r-cowplot
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kaifenglu/trtswitch")
     (synopsis "Treatment Switching")
@@ -18484,13 +18491,13 @@ package.")
 (define-public r-tigger
   (package
     (name "r-tigger")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigger" version))
        (sha256
-        (base32 "02q5ggyl4iy4xx07v0mikf9hkbac0iwbd02rkzafrgjbxfm8mvfa"))))
+        (base32 "03anybabxvd8xr0x0sx07gxf579mdx93xs7f6ygbn2d273qsplyv"))))
     (properties `((upstream-name . "tigger")))
     (build-system r-build-system)
     (arguments
@@ -33812,18 +33819,19 @@ exchange, reporting, and automated workflows.")
 (define-public r-t4transport
   (package
     (name "r-t4transport")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "T4transport" version))
        (sha256
-        (base32 "1hsdkavhv0794ay065rsfqfxg09s48pfy5wvms0l8pnlhfbrl99v"))))
+        (base32 "10l48n1va590ra0934g0rk91xq2nnhridaxp48v7qfhfq3xkhhch"))))
     (properties `((upstream-name . "T4transport")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list))
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://www.kisungyou.com/T4transport/")

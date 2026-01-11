@@ -11079,21 +11079,19 @@ R script for reproducibility.  Reference: Key (2025)
 (define-public r-fluxpoint
   (package
     (name "r-fluxpoint")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FluxPoint" version))
        (sha256
-        (base32 "1vxk7wfx1iar7wmbvyyd4r43hi2lh5l3v0yfxj2sx0z10f2mmc1y"))))
+        (base32 "0n65dcmdaxizcd25y6spa32lra6ssd144jf9lrzzfllwdj76qj8b"))))
     (properties `((upstream-name . "FluxPoint")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-simdesign
-                             r-rcpparmadillo
-                             r-rcpp
                              r-pracma
                              r-nnls
                              r-matrix
@@ -23326,13 +23324,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "1zl7davddi72iykar67ynrwq7y6kakbrphyzyc6vjq6vz2rm7zc3"))))
+        (base32 "13phjb91xjnqy7ajrdaydqgs3x1808xvdbx8bl0gzvrnzqjbj12d"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -23378,7 +23376,7 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-dalex
                              r-broom
                              r-baguette))
-    (home-page "https://github.com/selcukorkmaz/fastml")
+    (home-page "https://selcukorkmaz.github.io/fastml-tutorial/")
     (synopsis
      "Guarded Resampling Workflows for Safe and Automated Machine Learning in R")
     (description

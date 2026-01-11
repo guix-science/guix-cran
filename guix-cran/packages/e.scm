@@ -15,6 +15,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages compression)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -1019,13 +1020,13 @@ confidence bands for the extremograms.")
 (define-public r-extremestat
   (package
     (name "r-extremestat")
-    (version "1.5.11")
+    (version "1.5.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extremeStat" version))
        (sha256
-        (base32 "0cv91x6ncyddbmw79hpb845plwbk00kw41466a4g1qp3kh2ixddw"))))
+        (base32 "1jd8g8flzwclyfm4dcz0cv0qrgyq9mar0v2hv423hpi848gzaqy3"))))
     (properties `((upstream-name . "extremeStat")))
     (build-system r-build-system)
     (arguments
@@ -8277,13 +8278,13 @@ numbers (numeric and complex alike).")
 (define-public r-ess
   (package
     (name "r-ess")
-    (version "1.1.2")
+    (version "1.1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ess" version))
        (sha256
-        (base32 "1cmw20nn39ssyqiyn50w0ws28mq4cd26yhzr7mv97haaqjjjkv5h"))))
+        (base32 "03jpghrw4cd3pa1pimn60rk769cmimrwqqqr5ywl24i9zk16nzj5"))))
     (properties `((upstream-name . "ess")))
     (build-system r-build-system)
     (arguments
@@ -8294,8 +8295,8 @@ numbers (numeric and complex alike).")
     (synopsis "Efficient Stepwise Selection in Decomposable Models")
     (description
      "An implementation of the ESS algorithm following Amol Deshpande, Minos
-Garofalakis, Michael I Jordan (2013) <@code{arXiv:1301.2267>}.  The ESS
-algorithm is used for model selection in decomposable graphical models.")
+Garofalakis, Michael I Jordan (2013) <doi:10.48550/@code{arXiv.1301.2267>}.  The
+ESS algorithm is used for model selection in decomposable graphical models.")
     (license license:gpl3)))
 
 (define-public r-esreg
@@ -14459,13 +14460,13 @@ ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
 (define-public r-enrichit
   (package
     (name "r-enrichit")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enrichit" version))
        (sha256
-        (base32 "1g3lxrc7x2kfl77z3yf3dhjg7bfj2srxachnk0wv2pq8fji3m4zy"))))
+        (base32 "0lyjaqnp91wak4xblgllqh83k1a431b0xlzz3vzg48qh5ap8fyfz"))))
     (properties `((upstream-name . "enrichit")))
     (build-system r-build-system)
     (arguments
@@ -15125,21 +15126,21 @@ the models are discussed in Peng (2023) <doi:10.1287/isre.2022.1113>.")
 (define-public r-enderecobr
   (package
     (name "r-enderecobr")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enderecobr" version))
        (sha256
-        (base32 "1w95kb1z9b6dzm2sx427dncqxd7h272lf17cmznrcbdgflfnd735"))))
+        (base32 "01ah9mrc8rpd2kg9w28c1508gnb1qa26cb6cwb8rzabibs9iqp3f"))))
     (properties `((upstream-name . "enderecobr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list xz))
     (propagated-inputs (list r-tibble
                              r-stringr
-                             r-stringi
                              r-rlang
                              r-data-table
                              r-cli
@@ -22183,13 +22184,13 @@ Collection and Processing\" course.")
 (define-public r-edcimport
   (package
     (name "r-edcimport")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDCimport" version))
        (sha256
-        (base32 "0z4xc22fry8r4422l1hlmxhvi3yz6dzkw41hhdidw38wvrl7vaim"))))
+        (base32 "16l43c9g9qzlv5sq6n51p1b3qh0fgiia08g85bnpyaicqjpqv2c6"))))
     (properties `((upstream-name . "EDCimport")))
     (build-system r-build-system)
     (arguments

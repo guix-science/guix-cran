@@ -8167,19 +8167,19 @@ into R.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openalexR" version))
        (sha256
-        (base32 "1zflw1597qnafwn4b2dw39ynmgkbqm4bcwrffb0r4lwb0fb79bxf"))))
+        (base32 "1v8gxkq08cdj7b02fhvv9097dca53fn17nvv1qsa20nqqzg95s81"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-progress r-jsonlite r-httr))
+    (propagated-inputs (list r-tibble r-rlang r-jsonlite r-httr r-cli))
     (home-page "https://github.com/ropensci/openalexR")
     (synopsis
      "Getting Bibliographic Records from 'OpenAlex' Database Using 'DSL' API")

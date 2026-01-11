@@ -910,19 +910,21 @@ compared based on their prediction errors.")
 (define-public r-cvrisk
   (package
     (name "r-cvrisk")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CVrisk" version))
        (sha256
-        (base32 "1krqg3w2yqbpisivyym98p6yvhw1dw6qga8xm1sqxdd75g982fhq"))))
+        (base32 "0c76f4skpqfnzvl5bj4q5qb52axdvg4qp74k0zdq38kqb65s1nyd"))))
     (properties `((upstream-name . "CVrisk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/vcastro/CVrisk")
+    (propagated-inputs (list r-preventr))
+    (native-inputs (list r-knitr))
+    (home-page "https://vcastro.github.io/CVrisk/")
     (synopsis "Compute Risk Scores for Cardiovascular Diseases")
     (description
      "Calculate various cardiovascular disease risk scores from the Framingham Heart
@@ -930,7 +932,8 @@ Study (FHS), the American College of Cardiology (ACC), and the American Heart
 Association (AHA) as described in Dâagostino, et al (2008)
 <doi:10.1161/circulationaha.107.699579>, Goff, et al (2013)
 <doi:10.1161/01.cir.0000437741.48606.98>, and Mclelland, et al (2015)
-<doi:10.1016/j.jacc.2015.08.035>.")
+<doi:10.1016/j.jacc.2015.08.035>, and Khan, et al (2024)
+<doi:10.1161/CIRCULATIONAHA.123.067626>.")
     (license license:gpl3)))
 
 (define-public r-cvms
@@ -6807,13 +6810,13 @@ balance.")
 (define-public r-crossclustering
   (package
     (name "r-crossclustering")
-    (version "4.1.2")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossClustering" version))
        (sha256
-        (base32 "0by2kwykbm5il3smfi52vzzy18niqjgjflbza66dm5rlbny9dgpb"))))
+        (base32 "1vdiqp6n5vf5gml6xs8cblvavnf6nv5al1f8n27k9dl52z29ry4x"))))
     (properties `((upstream-name . "CrossClustering")))
     (build-system r-build-system)
     (arguments
@@ -37021,13 +37024,13 @@ medical imaging data in the form of CIFTI files
 (define-public r-cifmodeling
   (package
     (name "r-cifmodeling")
-    (version "0.9.6")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cifmodeling" version))
        (sha256
-        (base32 "0fiddavh1ydzq2mi1ncmggjw969dx52lzavdvhsjg5jpqnaf86gy"))))
+        (base32 "18ddgvjkjjb1nvdh24cfi2wd1xhah7pvjjgzgz4m9f71m2ycyiar"))))
     (properties `((upstream-name . "cifmodeling")))
     (build-system r-build-system)
     (arguments
@@ -40358,25 +40361,23 @@ developer in tedious coding tasks.")
 (define-public r-chatai4r
   (package
     (name "r-chatai4r")
-    (version "0.3.6")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatAI4R" version))
        (sha256
-        (base32 "165vvphjx69rs94gkx006b2fi6z2pgh9lwfsifqv2m9bakv758zg"))))
+        (base32 "091ls1ga6d24k94dk5g760jvl6hvxik773ny4fbhp1dkyg1jh618"))))
     (properties `((upstream-name . "chatAI4R")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-rvest
-                             r-rstudioapi
-                             r-pdftools
+    (propagated-inputs (list r-rstudioapi
                              r-jsonlite
                              r-igraph
                              r-httr
+                             r-glue
                              r-future
                              r-deeprstudio
                              r-curl
@@ -40391,8 +40392,7 @@ developer in tedious coding tasks.")
 science and programming, and also allows us to extend the world of R. A seamless
 interface for integrating the @code{OpenAI} Web APIs into R is provided in this
 package.  This package leverages LLM-based AI techniques, enabling efficient
-knowledge discovery and data analysis (see @code{OpenAI} Web APIs details
-<https://openai.com/blog/openai-api>).  The previous functions such as seamless
+knowledge discovery and data analysis.  The previous functions such as seamless
 translation and image generation have been moved to other packages
 @code{deepRstudio} and @code{stableDiffusion4R}'.")
     (license license:artistic2.0)))
@@ -44729,13 +44729,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "1l4sd7phnmmfv13jj4x9ma20lv13lff8aqvnamlsnylwfbp0941i"))))
+        (base32 "0zxqspanabyix7dvb40f94gbf7x3asgr3klnr7iscpswzr293wzl"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments

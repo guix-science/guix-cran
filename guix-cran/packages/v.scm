@@ -1688,13 +1688,13 @@ after the initial release of this package.")
 (define-public r-volker
   (package
     (name "r-volker")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volker" version))
        (sha256
-        (base32 "1pzqfzrf326gm5r46z55cycwi76vd1w647qnawvy1w5j9v8m47lk"))))
+        (base32 "0b8hvh6kj8syk8kk4y8w16wlkndci6vjwv7znfmjiidm4gg3whba"))))
     (properties `((upstream-name . "volker")))
     (build-system r-build-system)
     (arguments
@@ -1703,7 +1703,6 @@ after the initial release of this package.")
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-skimr
                              r-scales
                              r-rmarkdown
                              r-rlang
