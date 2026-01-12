@@ -16581,13 +16581,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.3.8")
+    (version "2.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "181qf82a00gh8mjrsv3vxglps6543a7gc8ai3rxgdcdagkipz9z2"))))
+        (base32 "05zgz89d64z4x4lv9lkrc8xh4j4brak9fr7v5y9rh1nn9cnfra65"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -20688,13 +20688,13 @@ the fly.")
 (define-public r-ggpedigree
   (package
     (name "r-ggpedigree")
-    (version "1.0.0.1")
+    (version "1.1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpedigree" version))
        (sha256
-        (base32 "01b7l083dj9pv45qyvq1n62hcnlmvd1qzxqyvf7ji3p8k8h0f63x"))))
+        (base32 "1yj3pmf0h8vll4m4xl66yrz32lzfjksf2bhszs1xh1k745p0jf7h"))))
     (properties `((upstream-name . "ggpedigree")))
     (build-system r-build-system)
     (arguments
@@ -20704,7 +20704,6 @@ the fly.")
                              r-stringr
                              r-scales
                              r-rlang
-                             r-reshape2
                              r-plotly
                              r-ggplot2
                              r-dplyr
@@ -20713,14 +20712,17 @@ the fly.")
     (home-page "https://github.com/R-Computing-Lab/ggpedigree/")
     (synopsis "Visualizing Pedigrees with 'ggplot2' and 'plotly'")
     (description
-     "This package provides plotting functions for visualizing pedigrees in behavior
-genetics and kinship research.  The package complements BGmisc [Garrison et al.
-(2024) <doi:10.21105/joss.06203>] by rendering pedigrees using the ggplot2
-framework and offers a modern alternative to the base-graphics pedigree plot in
-kinship2 [Sinnwell et al. (2014) <doi:10.1159/000363105>].  Features include
-support for duplicated individuals, complex mating structures, integration with
-simulated pedigrees, and layout customization.")
-    (license license:gpl3)))
+     "This package provides plotting functions for visualizing pedigrees and family
+trees.  The package complements a behavior genetics package BGmisc [Garrison et
+al. (2024) <doi:10.21105/joss.06203>] by rendering pedigrees using the ggplot2
+framework.  Features include support for duplicated individuals, complex mating
+structures, integration with simulated pedigrees, and layout customization.  Due
+to the impending deprecation of kinship2, version 1.0 incorporates the layout
+helper functions from kinship2.  The pedigree alignment algorithms are adapted
+from kinship2 [Sinnwell et al. (2014) <doi:10.1159/000363105>].  We gratefully
+acknowledge the original authors: Jason Sinnwell, Terry Therneau, Daniel Schaid,
+and Elizabeth Atkinson for their foundational work.")
+    (license license:gpl3+)))
 
 (define-public r-ggpcp
   (package

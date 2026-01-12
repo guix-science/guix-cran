@@ -9963,13 +9963,13 @@ data with a single line of code.")
 (define-public r-onbrand
   (package
     (name "r-onbrand")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onbrand" version))
        (sha256
-        (base32 "1yhis24g5yjdjc5kzc7kdxxbblk4fhsnqpnz35g4gl5y8qd0aazp"))))
+        (base32 "1brczmli80c13ngch7bvj0gd7l0zvv74pxsjwb74ms03i6l9v2b9"))))
     (properties `((upstream-name . "onbrand")))
     (build-system r-build-system)
     (arguments

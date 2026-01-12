@@ -9024,13 +9024,13 @@ or with a static data set.  Example is provided at
 (define-public r-archeofrag-gui
   (package
     (name "r-archeofrag-gui")
-    (version "1.1.0")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag.gui" version))
        (sha256
-        (base32 "1f3kqdch312la3mlklxfc4nig1h5r7y1qca4j60i2nh9jrl528ks"))))
+        (base32 "10cwfgns75jjvsfa4djz54x7scay4rjwckjl5r657b96djbnw2fm"))))
     (properties `((upstream-name . "archeofrag.gui")))
     (build-system r-build-system)
     (arguments
@@ -9053,8 +9053,9 @@ or with a static data set.  Example is provided at
 datasets of the archeofrag package for spatial analysis in archaeology from
 refitting data.  Quick and seamless exploration of archaeological refitting
 datasets, focusing on physical refits only.  Features include: built-in
-documentation and convenient workflow, plot generation and exports, exploration
-of spatial units merging solutions, simulation of archaeological site formation
+documentation and convenient workflow, plot generation and exports, anomaly
+detection in the spatial distribution of refitting connection, exploration of
+spatial units merging solutions, simulation of archaeological site formation
 processes, support for parallel computing, R code generation to re-execute
 simulations and ensure reproducibility, code generation for the @code{openMOLE}
 model exploration software.  A demonstration of the app is available at
@@ -16683,13 +16684,13 @@ samples.")
 (define-public r-alookr
   (package
     (name "r-alookr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alookr" version))
        (sha256
-        (base32 "1pvqii2bn7c23s7mff1airypd5f0kndl21wk7qxk8mx9vs76mq76"))))
+        (base32 "1880j5wnmhjgla4yb04y8mdab9wmc9ciyb883m1dfd5nqy9qlq7v"))))
     (properties `((upstream-name . "alookr")))
     (build-system r-build-system)
     (arguments
@@ -27507,13 +27508,13 @@ here are designed to be basic and clear to the reader.")
 (define-public r-abclass
   (package
     (name "r-abclass")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "abclass" version))
        (sha256
-        (base32 "0wi0mcycfrk2afy1rb6jilq88lmm85m5yyq3m6ki0x54r603nkh2"))))
+        (base32 "1hj2gcb68ycbqljl7wbg20dw7f8cfjr16sy2yrqs5gi37xiix7zi"))))
     (properties `((upstream-name . "abclass")))
     (build-system r-build-system)
     (arguments

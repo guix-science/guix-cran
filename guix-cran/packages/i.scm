@@ -7490,13 +7490,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.9")
+    (version "0.6.91")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "15q0irvc42kdv6jnj7jsif3jr2w23wijll3xkbn06p867n0zxpif"))))
+        (base32 "1vbbh19yxzq2mwrw7hqa1lhni0ns7rqpn8hikcsa71r2m1qg0wh1"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (arguments
@@ -7515,6 +7515,7 @@ wrappers to functions in the gstat and sp packages.")
                              r-emmeans
                              r-dt
                              r-dplyr
+                             r-cli
                              r-agricolae))
     (native-inputs (list r-quarto r-knitr))
     (home-page "https://inkaverse.com/")
@@ -9286,53 +9287,6 @@ easypackages', pacman', pak', @code{anyLib}', and/or librarian'.")
 <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
-(define-public r-inspectumours
-  (package
-    (name "r-inspectumours")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "INSPECTumours" version))
-       (sha256
-        (base32 "1jh6p3bgnrjixqzvjl0z3nv6lh01fx3x925h3na2pi3scqx5gx0s"))))
-    (properties `((upstream-name . "INSPECTumours")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-waiter
-                             r-vroom
-                             r-tippy
-                             r-tidyr
-                             r-tidybayes
-                             r-shinyvalidate
-                             r-shinytoastr
-                             r-shinyjs
-                             r-shinyfeedback
-                             r-shinyalert
-                             r-shiny
-                             r-rmarkdown
-                             r-rlang
-                             r-readxl
-                             r-purrr
-                             r-plotly
-                             r-pander
-                             r-modelr
-                             r-lme4
-                             r-knitr
-                             r-ggplot2
-                             r-ggeffects
-                             r-dt
-                             r-dplyr
-                             r-brms))
-    (home-page "https://cran.r-project.org/package=INSPECTumours")
-    (synopsis "IN-vivo reSPonsE Classification of Tumours")
-    (description
-     "This is a shiny app used for the statistical classifying and analysing
-pre-clinical tumour responses.")
-    (license (license:fsdg-compatible "Apache License (== 2)"))))
-
 (define-public r-inspector
   (package
     (name "r-inspector")
@@ -10504,35 +10458,6 @@ value (IV).  In order to make the package as efficient as possible, aggregations
 are done in data.table and creation of WOE vectors can be distributed across
 multiple cores.  The package also supports exploration for uplift models (NWOE
 and NIV).")
-    (license license:gpl3+)))
-
-(define-public r-infodecompute
-  (package
-    (name "r-infodecompute")
-    (version "0.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "infoDecompuTE" version))
-       (sha256
-        (base32 "0r1capiv4zr31dsy0sqly9zb00i86zq2ihbgsmb5g4cy0f04xlqz"))))
-    (properties `((upstream-name . "infoDecompuTE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://github.com/kcha193/infoDecompuTE")
-    (synopsis "Information Decomposition of Two-Phase Experiments")
-    (description
-     "The main purpose of this package is to generate the structure of the analysis of
-variance (ANOVA) table of the two-phase experiments.  The user only need to
-input the design and the relationships of the random and fixed factors using the
-Wilkinson-Rogers syntax, this package can then quickly generate the structure of
-the ANOVA table with the coefficients of the variance components for the
-expected mean squares.  Thus, the balanced incomplete block design and provides
-the efficiency factors of the fixed effects can also be studied and compared
-much easily.")
     (license license:gpl3+)))
 
 (define-public r-infocausality
@@ -16754,13 +16679,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.0.6")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "12ylwih3sk7z3aqd1vybhgpizlaf5a48wjpc2kkjhm0kv5apw2rd"))))
+        (base32 "1fnlyf0pcq7h7s14zr3qd81k7bw7p6immi54fa5bwkaqpj22qrga"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments

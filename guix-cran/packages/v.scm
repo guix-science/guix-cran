@@ -1460,32 +1460,6 @@ media data using @code{vosonSML}'.")
      "Collects tweets and metadata for threaded conversations and generates networks.")
     (license license:gpl3+)))
 
-(define-public r-vortexrdata
-  (package
-    (name "r-vortexrdata")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vortexRdata" version))
-       (sha256
-        (base32 "0b47q3aslz4110a1bfaa103i098y2ngzrjh01rwasq3gd6xbif9n"))))
-    (properties `((upstream-name . "vortexRdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/carlopacioni/vortexRdata/")
-    (synopsis "Example Data for R Package 'vortexR'")
-    (description
-     "This package contains selected data from two publications, Campbell et al'.
-(2016) <DOI:10.1080/14486563.2015.1028486> and Pacioni et al'. (2017)
-<DOI:10.1071/PC17002>.  The data is provided both as raw outputs from the
-population viability analysis software Vortex and packaged as R objects.  The R
-package @code{vortexR} uses the raw data provided here to illustrate its
-functionality of parsing raw Vortex output into R objects.")
-    (license license:gpl3)))
-
 (define-public r-vorteksexport
   (package
     (name "r-vorteksexport")
@@ -8226,21 +8200,20 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 (define-public r-varpro
   (package
     (name "r-varpro")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varPro" version))
        (sha256
-        (base32 "0mm94jbjkgmciccb268q85cjy9sr8w716x6kf0ns3l6d6r37w9hb"))))
+        (base32 "063jpd9k60dw6zbynvjyhfb64587smwlkahhya3jgrxg8qysd4w4"))))
     (properties `((upstream-name . "varPro")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-umap
-                             r-survival
+    (propagated-inputs (list r-survival
                              r-randomforestsrc
                              r-glmnet
                              r-gbm

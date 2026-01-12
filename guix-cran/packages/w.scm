@@ -6315,27 +6315,29 @@ example-specific cost values).")
 (define-public r-weightedrank
   (package
     (name "r-weightedrank")
-    (version "0.5.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weightedRank" version))
        (sha256
-        (base32 "1765iccxaz55ib9svb31fcbsmw809mn1ybsbcxgl9w97kxlsbl8n"))))
+        (base32 "1iyyc3rb91f5xqrr7rr0bzrw3fq9ldfys6hcj9dc6npdbg4j9vih"))))
     (properties `((upstream-name . "weightedRank")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-senstrat r-sensitivitymv r-mvtnorm))
+    (propagated-inputs (list r-senstrat r-sensitivitymv r-mvtnorm r-biasedurn))
     (home-page "https://cran.r-project.org/package=weightedRank")
     (synopsis "Sensitivity Analysis Using Weighted Rank Statistics")
     (description
      "This package performs a sensitivity analysis using weighted rank tests in
 observational studies with I blocks of size J; see Rosenbaum (2024)
 <doi:10.1080/01621459.2023.2221402>.  The package can perform adaptive inference
-in block designs; see Rosenbaum (2012) <doi:10.1093/biomet/ass032>.  The main
-functions are @code{wgtRank()}, @code{wgtRankCI()} and @code{wgtRanktt()}.")
+in block designs; see Rosenbaum (2012) <doi:10.1093/biomet/ass032>.  The package
+can increase design sensitivity using the conditioning tactic in Rosenbaum
+(2025) <doi:10.1093/jrsssb/qkaf007>.  The main functions are @code{wgtRank()},
+@code{wgtRankCI()}, @code{wgtRanktt()} and @code{wgtRankC()}.")
     (license license:gpl2)))
 
 (define-public r-weightedporttest

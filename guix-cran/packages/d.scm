@@ -11769,19 +11769,19 @@ data frames with a tidyselect based workflow.")
 (define-public r-divraster
   (package
     (name "r-divraster")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divraster" version))
        (sha256
-        (base32 "1c9snm0ldy3jni6ibsly114shzpjaavsv00q71967y6vm92nq6wl"))))
+        (base32 "0qf03nv3mpskbn21lzmmh1k8sz13z3maq0wk5mi3q9xs8pbgdn1f"))))
     (properties `((upstream-name . "divraster")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-sesraster r-bat))
+    (propagated-inputs (list r-terra r-sf r-sesraster r-dplyr r-bat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/flaviomoc/divraster")
     (synopsis "Diversity Metrics Calculations for Rasterized Data")
@@ -12301,13 +12301,13 @@ in addition to the carefully selected @code{dittoColors()}.")
 (define-public r-dittodb
   (package
     (name "r-dittodb")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittodb" version))
        (sha256
-        (base32 "0957zwcpr1w3awjk3amwd1ixqvhcw5i68a8hr95fsj2bvlrsiqky"))))
+        (base32 "0zhg9ihrdp50v0j0lxamhf6gjqrhlk4mxxp59bl27hgda4cbyn9d"))))
     (properties `((upstream-name . "dittodb")))
     (build-system r-build-system)
     (arguments
@@ -28639,13 +28639,13 @@ be slow.")
 (define-public r-dbi-table
   (package
     (name "r-dbi-table")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbi.table" version))
        (sha256
-        (base32 "1j7lpwywgm40z6vpkhpzmhfr03wvnhi7k9zvg5rfr8wzmlgq1v70"))))
+        (base32 "0qi9113aazhskikh4cxzj5ykp1v2g1damhiibgrdf3mki8z6l7dc"))))
     (properties `((upstream-name . "dbi.table")))
     (build-system r-build-system)
     (arguments

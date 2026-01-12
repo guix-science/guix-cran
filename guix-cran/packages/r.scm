@@ -1433,39 +1433,6 @@ Mises-Fisher random vector and its mean direction are also provided.  Details
 are in Kang and Oh (2024) <doi:10.1007/s11222-024-10419-3>.")
     (license license:gpl3+)))
 
-(define-public r-rvmethod
-  (package
-    (name "r-rvmethod")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rvmethod" version))
-       (sha256
-        (base32 "1g2d5pvz5s1sj2kalxaz7nb8874m4113ly809zbimngi1lhg8zi1"))))
-    (properties `((upstream-name . "rvmethod")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-locfit r-assertthat))
-    (home-page "https://cran.r-project.org/package=rvmethod")
-    (synopsis "Radial Velocity Method for Detecting Exoplanets")
-    (description
-     "Has various functions designed to implement the Hermite-Gaussian Radial Velocity
-(HGRV) estimation approach of Holzer et al. (2020) <@code{arXiv:2005.14083>},
-which is a particular application of the radial velocity method for detecting
-exoplanets.  The overall approach consists of four sequential steps, each of
-which has a function in this package: (1) estimate the template spectrum with
-the function @code{estimate_template()}, (2) find absorption features in the
-estimated template with the function @code{findabsorptionfeatures()}, (3) fit
-Gaussians to the absorption features with the function @code{Gaussfit()}, (4)
-apply the HGRV with simple linear regression by calling the function
-@code{hgrv()}.  This package is meant to be open source.  But please cite the
-paper Holzer et al. (2020) <@code{arXiv:2005.14083>} when publishing results
-that use this package.")
-    (license license:gpl3)))
-
 (define-public r-rvkstat
   (package
     (name "r-rvkstat")
@@ -2012,13 +1979,13 @@ different formats a RUT can have.")
 (define-public r-rust
   (package
     (name "r-rust")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rust" version))
        (sha256
-        (base32 "069zybqgmf1mnhw9g6kr7ypm0r9ghlw9kndqigvwgzqwfmqj62c9"))))
+        (base32 "0bj8x88mxaz9akv8jxqy4m9bpw6qv2rwwpyvyc4cp1ns9vds4xqw"))))
     (properties `((upstream-name . "rust")))
     (build-system r-build-system)
     (arguments
@@ -10368,13 +10335,13 @@ package.")
 (define-public r-rpyants
   (package
     (name "r-rpyants")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpyANTs" version))
        (sha256
-        (base32 "0ikq4j666vl87ywmhq5jymxdxs1vxa2fnldsj8nwjjf9n78l77mm"))))
+        (base32 "0ii2n3mjv1wr1wdxm3cdgfp4svnc8kifrl8wpm5v6wz14s52m7v2"))))
     (properties `((upstream-name . "rpyANTs")))
     (build-system r-build-system)
     (arguments
@@ -10547,20 +10514,20 @@ Lindy Hop and West Coast Swing dance contests.")
 (define-public r-rprotobuf
   (package
     (name "r-rprotobuf")
-    (version "0.4.24")
+    (version "0.4.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RProtoBuf" version))
        (sha256
-        (base32 "0s31i4rmvyslfl6zr4h0fkdk8r26jbh4r1dv15ddzglc7l0icb7j"))))
+        (base32 "1baw8qrk30n37pyfm41qmb3h9670c4w5w3zh3kp5bx0zlgkfzwv9"))))
     (properties `((upstream-name . "RProtoBuf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config))
+    (native-inputs (list r-rcpp pkg-config))
     (home-page "https://github.com/eddelbuettel/rprotobuf")
     (synopsis "R Interface to the 'Protocol Buffers' 'API' (Version 2 or 3)")
     (description
@@ -31660,13 +31627,13 @@ follow Crawford and Pendakur (2012) <doi:10.1111/j.1468-0297.2012.02545.x>.")
 (define-public r-revdbayes
   (package
     (name "r-revdbayes")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "revdbayes" version))
        (sha256
-        (base32 "1s8hnc2izd2117njidgw4jj5qpwgn28nmghg69i0dhbw6vb5mhk0"))))
+        (base32 "0x9zb0jrdl08spl2ym74s791mmj93kzzia65mshwmw4ncm6mha2a"))))
     (properties `((upstream-name . "revdbayes")))
     (build-system r-build-system)
     (arguments
@@ -47162,13 +47129,13 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
 (define-public r-rcompanion
   (package
     (name "r-rcompanion")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcompanion" version))
        (sha256
-        (base32 "1k5azhij0pnr1lxxnyg7s3x52r5n058j26c18xglgrwxjbrgr80h"))))
+        (base32 "1jvmp3xzj5l7f8lb6lyxv96ndknjlrghznnd6w21jpw4kxmspj95"))))
     (properties `((upstream-name . "rcompanion")))
     (build-system r-build-system)
     (arguments
@@ -54043,13 +54010,13 @@ matching and text analysis.")
 (define-public r-rapidatetime
   (package
     (name "r-rapidatetime")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RApiDatetime" version))
        (sha256
-        (base32 "1s8dmv8phzr635z7l1af39jn5i3zs3hbnfij4m0rjs3mrq4fckpy"))))
+        (base32 "07gixbx8k3nzpybwxsqw22nldw2w5isl7yy63k3z36j5sjchxzjw"))))
     (properties `((upstream-name . "RApiDatetime")))
     (build-system r-build-system)
     (arguments

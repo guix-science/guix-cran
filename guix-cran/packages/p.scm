@@ -1154,20 +1154,19 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
 (define-public r-pvebayes
   (package
     (name "r-pvebayes")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvEBayes" version))
        (sha256
-        (base32 "12js372bics7c2c80x273f28fn7qvsblcrkqx9cgwc7xl3fgbg04"))))
+        (base32 "1h0rwr93c4jwxdbi09snwvdy9nv3xs4szcwvdv6gjf1k63hkf7gv"))))
     (properties `((upstream-name . "pvEBayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wacolors
-                             r-sobolsequence
                              r-rcppeigen
                              r-rcpp
                              r-magrittr
@@ -19472,13 +19471,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "1bwvynfgmsz8avz9f3frr21rr8wram284l3cslsqblnfq64dmksr"))))
+        (base32 "1kr2zh766rrmfkvq0r2cvz32za56lnfd338x0z0kbv40x5pq322v"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (arguments
@@ -20128,13 +20127,13 @@ variables.  Also known as latent structure analysis.")
 (define-public r-polarzonoid
   (package
     (name "r-polarzonoid")
-    (version "0.2-0")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polarzonoid" version))
        (sha256
-        (base32 "0v0hfsv6nc4l59vyp5vc2kkf1p3qrphq0ib4q66vwr5i08pax0gm"))))
+        (base32 "1rq77s24svmvrc9wnjixqk4d64y8g5ip55kgh3l5db42k5bdb19z"))))
     (properties `((upstream-name . "polarzonoid")))
     (build-system r-build-system)
     (arguments
@@ -27787,19 +27786,30 @@ codes.")
 (define-public r-pintervals
   (package
     (name "r-pintervals")
-    (version "0.7.7")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pintervals" version))
        (sha256
-        (base32 "05lw7phnyx7iwk258grc233qzh8a2cm3737g7p05y4ay6hxqz41m"))))
+        (base32 "1vfqc3h88gxw60fvysy42kv5plhf080b4dh0w6xmrsx2rhz8brmc"))))
     (properties `((upstream-name . "pintervals")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-foreach r-dplyr))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-tibble
+                             r-rcpp
+                             r-purrr
+                             r-mass
+                             r-hmisc
+                             r-foreach
+                             r-dplyr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=pintervals")
     (synopsis "Model Agnostic Prediction Intervals")
     (description
@@ -27811,7 +27821,7 @@ estimation with diagnostic checks.  Currently only working for continuous
 predictions.  For details on the conformal and bin-conditional conformal
 prediction methods, see Randahl, Williams, and Hegre (2024)
 <DOI:10.48550/@code{arXiv.2410.14507>}.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-pinterestadsr
   (package

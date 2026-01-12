@@ -16991,13 +16991,13 @@ districts, counties, and states.")
 (define-public r-bindata
   (package
     (name "r-bindata")
-    (version "0.9-22")
+    (version "0.9-23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bindata" version))
        (sha256
-        (base32 "00s5hzfryzzb2dngfsklrs89117mmw4w4jm7lg9fw9fik1nbibzw"))))
+        (base32 "1f5vvkjyipq6dpknqzj0qsvgrwagkqlpggbqxrv93ywcmca2f375"))))
     (properties `((upstream-name . "bindata")))
     (build-system r-build-system)
     (arguments
@@ -19920,13 +19920,13 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.5.0")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "0d6nmd7zm5f7hms1gr1ij3amjxg256ibrmps2nmgb9lxp69nysh4"))))
+        (base32 "039lq9bhyjlsacpdz1r4c3az70zpyvsykb2yxbfz41yvnigw5m3h"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (arguments
@@ -21491,13 +21491,13 @@ use with the caret package.")
 (define-public r-bessel
   (package
     (name "r-bessel")
-    (version "0.6-1")
+    (version "0.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bessel" version))
        (sha256
-        (base32 "0n2k33n4r1hx20qr2hh5i6a2rcyikd6iwihhknzz8nvx8f2ms9yh"))))
+        (base32 "0fyv5w953f0w14cnhnmjzxwbnr4f43cjr9vh1cwi2zcn61aiyklf"))))
     (properties `((upstream-name . "Bessel")))
     (build-system r-build-system)
     (arguments
@@ -28656,37 +28656,6 @@ parallel computation when the analysis is performed for the entire brain as well
 as analysis at specific voxels when it is required.  References:
 Cardona-JimÃ©nez (2021) <doi:10.1016/j.csda.2021.107297>; Cardona-JimÃ©nez
 (2021) <@code{arXiv:2111.01318>}.")
-    (license license:gpl2)))
-
-(define-public r-bayesdistreg
-  (package
-    (name "r-bayesdistreg")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesdistreg" version))
-       (sha256
-        (base32 "04slvxzbqdi2ak3dlw4lfx55rhw28js8yjmvjpy8vvgq39vcx3dq"))))
-    (properties `((upstream-name . "bayesdistreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich r-mass))
-    (home-page "https://cran.r-project.org/package=bayesdistreg")
-    (synopsis "Bayesian Distribution Regression")
-    (description
-     "This package implements Bayesian Distribution Regression methods.  This package
-contains functions for three estimators (non-asymptotic, semi-asymptotic and
-asymptotic) and related routines for Bayesian Distribution Regression in Huang
-and Tsyawo (2018) <doi:10.2139/ssrn.3048658> which is also the recommended
-reference to cite for this package.  The functions can be grouped into three (3)
-categories.  The first computes the logit likelihood function and posterior
-densities under uniform and normal priors.  The second contains Independence and
-Random Walk Metropolis-Hastings Markov Chain Monte Carlo (MCMC) algorithms as
-functions and the third category of functions are useful for semi-asymptotic and
-asymptotic Bayesian distribution regression inference.")
     (license license:gpl2)))
 
 (define-public r-bayesdissolution

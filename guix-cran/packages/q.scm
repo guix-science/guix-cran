@@ -237,48 +237,6 @@ accurate.  Tests can be found in Benati et al.(2017)
 <doi:10.1080/01605682.2017.1398206>.")
     (license license:gpl2+)))
 
-(define-public r-qval
-  (package
-    (name "r-qval")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Qval" version))
-       (sha256
-        (base32 "0k43fam27nlmdpc233q5jwvry2a8agsn2550is8gf5zz5i85kmkj"))))
-    (properties `((upstream-name . "Qval")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-plyr
-                             r-nloptr
-                             r-matrix
-                             r-mass
-                             r-gtools
-                             r-glmnet
-                             r-gdina))
-    (home-page "https://haijiangqin.com/Qval/")
-    (synopsis "The Q-Matrix Validation Methods Framework")
-    (description
-     "Provide a variety of Q-matrix validation methods for the generalized cognitive
-diagnosis models, including the method based on the generalized deterministic
-input, noisy, and gate model (G-DINA) by de la Torre (2011)
-<DOI:10.1007/s11336-011-9207-7> discrimination index (the GDI method) by de la
-Torre and Chiu (2016) <DOI:10.1007/s11336-015-9467-8>, the Hull method by Najera
-et al. (2021) <DOI:10.1111/bmsp.12228>, the stepwise Wald test method (the Wald
-method) by Ma and de la Torre (2020) <DOI:10.1111/bmsp.12156>, the multiple
-logistic regressionâbased Qâmatrix validation method (the MLR-B method) by
-Tu et al. (2022) <DOI:10.3758/s13428-022-01880-x>, the beta method based on
-signal detection theory by Li and Chen (2024) <DOI:10.1111/bmsp.12371> and
-Q-matrix validation based on relative fit index by Chen et al. (2013)
-<DOI:10.1111/j.1745-3984.2012.00185.x>.  Different research methods and
-iterative procedures during Q-matrix validating are available
-<DOI:10.3758/s13428-024-02547-5>.")
-    (license license:gpl3)))
-
 (define-public r-qurve
   (package
     (name "r-qurve")

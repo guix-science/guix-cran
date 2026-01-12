@@ -5646,13 +5646,13 @@ or Durham University.")
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nominatimlite" version))
        (sha256
-        (base32 "0n0q5g4r5m8rq0m94ddbrsv91c67jvca9ca02f9id1qyha7pbkvz"))))
+        (base32 "19279y51s7k4yd4i1vkahjmwhaa3440ghi38i5ysq8j94j3hs0n3"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
     (arguments
@@ -5945,36 +5945,6 @@ classification datasets.  This package contains the noise models described in
 Saez (2022) <doi:10.3390/math10203736> that allow corrupting class labels,
 attributes and both simultaneously.")
     (license license:gpl3+)))
-
-(define-public r-noise
-  (package
-    (name "r-noise")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "noise" version))
-       (sha256
-        (base32 "0b3djn63l3ygll1j5n5l71inysbb8xyvfxk8fgszga0y8ldqzh6g"))))
-    (properties `((upstream-name . "noise")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-preprocesscore))
-    (home-page "https://cran.r-project.org/package=noise")
-    (synopsis
-     "Estimation of Intrinsic and Extrinsic Noise from Single-Cell Data")
-    (description
-     "This package provides functions to calculate estimates of intrinsic and
-extrinsic noise from the two-reporter single-cell experiment, as in Elowitz, M.
-B., A. J. Levine, E. D. Siggia, and P. S. Swain (2002) Stochastic gene
-expression in a single cell.  Science, 297, 1183-1186.  Functions implement
-multiple estimators developed for unbiasedness or min Mean Squared Error (MSE)
-in Fu, A. Q. and Pachter, L. (2016).  Estimating intrinsic and extrinsic noise
-from single-cell gene expression measurements.  Statistical Applications in
-Genetics and Molecular Biology, 15(6), 447-471.")
-    (license license:gpl2+)))
 
 (define-public r-noia
   (package
@@ -7276,13 +7246,13 @@ the updating process.  See e.g. TomÃ© et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "14g0zs3q5r17452j3fkd6g9pkbvc8mr3f0ldnmr0z1h3f2hxxqfl"))))
+        (base32 "136lzlnpx09j28xxs9392s3fabsj2dasydfd4zm6fbg4398xlrmi"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (arguments
@@ -7546,13 +7516,13 @@ Operating Characteristic Model for Network Meta-Analysis of Diagnostic Tests
 (define-public r-nma
   (package
     (name "r-nma")
-    (version "2.1-1")
+    (version "2.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMA" version))
        (sha256
-        (base32 "1s0r4hy6cpm2740klbbva36xhvnk0amzan5s4yvmz7rz8y5idd2j"))))
+        (base32 "07f6g4iyl4d6nzzjmg5zdwx7fjlariaq6a5gg58np51nni6p1gys"))))
     (properties `((upstream-name . "NMA")))
     (build-system r-build-system)
     (arguments

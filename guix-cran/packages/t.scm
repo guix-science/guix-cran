@@ -19437,13 +19437,13 @@ interact seamlessly with the tidyverse.")
 (define-public r-tidysem
   (package
     (name "r-tidysem")
-    (version "0.2.9")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidySEM" version))
        (sha256
-        (base32 "11a3mahkl4s97j4am2b7087fggrylxcz4sbvs69x8f8wwfns0m5k"))))
+        (base32 "0sqd4p56j4ndnlswsbcsa1g4yhscpajlsdisc5fk7qk7mas956f4"))))
     (properties `((upstream-name . "tidySEM")))
     (build-system r-build-system)
     (arguments
@@ -19452,6 +19452,7 @@ interact seamlessly with the tidyverse.")
     (propagated-inputs (list r-rann
                              r-psych
                              r-progressr
+                             r-progress
                              r-nonnest2
                              r-mplusautomation
                              r-matrix
@@ -22960,13 +22961,13 @@ computational tasks to streamline workflows.")
 (define-public r-thisplot
   (package
     (name "r-thisplot")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisplot" version))
        (sha256
-        (base32 "1hhl38hshq96vk0c4lnsk0094xqxs7qf8d8wcalg6y43aznki6d3"))))
+        (base32 "03wy66w094ff7582kpdhr27infihi49f6cv03m121hgb9sqrxfa6"))))
     (properties `((upstream-name . "thisplot")))
     (build-system r-build-system)
     (arguments

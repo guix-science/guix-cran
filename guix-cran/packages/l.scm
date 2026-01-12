@@ -2021,13 +2021,13 @@ quaternions.")
 (define-public r-lsdsensitivity
   (package
     (name "r-lsdsensitivity")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSDsensitivity" version))
        (sha256
-        (base32 "0r308ja0nd239bwfz537qz6q4a1y8iirb0fmg9qq6s6hdfzwhz80"))))
+        (base32 "1j3lap6bqdyrxj1g9fz4rfcrhas3jinxza5k3swdwni1d9sdwqwh"))))
     (properties `((upstream-name . "LSDsensitivity")))
     (build-system r-build-system)
     (arguments

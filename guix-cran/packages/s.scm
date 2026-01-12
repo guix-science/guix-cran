@@ -4688,13 +4688,13 @@ imputations that respect the censoring thresholds.")
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.8")
+    (version "2.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "0vhc9l74yp5jvnsnx5rllzwq2jxsa6gqznj5k3cr25gwg4ahjfyp"))))
+        (base32 "1m54xnqcc02nd5f80qmzrkpir0im5g0w03v3k1a3q2dfyrwdhpgg"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (arguments
@@ -6765,19 +6765,19 @@ BOF2OCPO3), @code{GlaxoSmithKline} Biologicals, Baekeland Mandaat
 (define-public r-surreal
   (package
     (name "r-surreal")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surreal" version))
        (sha256
-        (base32 "1d1hymkb8asqrhjz7c1shf3mm3c2y0d9pbjapfq5xz52vp01sawb"))))
+        (base32 "1dzhj01r3v4kk0ha3jd34yfdcy185bpmmf740pvz1zcpnm87rg9v"))))
     (properties `((upstream-name . "surreal")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-png))
+    (propagated-inputs (list r-png r-cli))
     (home-page "https://github.com/coatless-rpkg/surreal")
     (synopsis "Create Datasets with Hidden Images in Residual Plots")
     (description
@@ -13596,13 +13596,13 @@ the ability to export results in common formats.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "10cfbikz9zm6mq5rzz51fylmxih1sy9b0r0qlpb393rqyp7cv2sv"))))
+        (base32 "1gqa5d11hxkmqlj44n11pi39bf3162fa3zn8y84h0gxr75p9qij3"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
@@ -31199,13 +31199,13 @@ example.")
 (define-public r-spades-tools
   (package
     (name "r-spades-tools")
-    (version "2.0.9")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.tools" version))
        (sha256
-        (base32 "0zknws6h1ya59wyybvhr0467yw99sflr1mp2zd1lh5wysdg506wd"))))
+        (base32 "02qc1kj83zl2fv2gwv412x66f3gfmmm90nzy5dq8licckgdllydx"))))
     (properties `((upstream-name . "SpaDES.tools")))
     (build-system r-build-system)
     (arguments
@@ -31234,13 +31234,13 @@ suggested package NLMR can be installed from the following repository:
 (define-public r-spades-core
   (package
     (name "r-spades-core")
-    (version "2.1.8")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.core" version))
        (sha256
-        (base32 "0glv5g4s0qs94b8q4bxncg418b1gqiangf0af43jzz6q3dpaa4ih"))))
+        (base32 "0qhnqqd1gia9qla7k01b58623pnm0rn3wfxadzwljcyx7nb4lvcj"))))
     (properties `((upstream-name . "SpaDES.core")))
     (build-system r-build-system)
     (arguments
@@ -31251,7 +31251,7 @@ suggested package NLMR can be installed from the following repository:
                              r-require
                              r-reproducible
                              r-quickplot
-                             r-qs
+                             r-qs2
                              r-lobstr
                              r-igraph
                              r-fs
@@ -36438,33 +36438,6 @@ Validation Study.\" JMIR medical informatics, 10(11), e37976.
 <doi:10.2196/37976>.")
     (license license:gpl3+)))
 
-(define-public r-smoothtensor
-  (package
-    (name "r-smoothtensor")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SmoothTensor" version))
-       (sha256
-        (base32 "19mbxsbp656i4qdkr2wplil542pxxb3xfznh3vv2nxi23phr01gy"))))
-    (properties `((upstream-name . "SmoothTensor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rtensor r-matrix))
-    (home-page "https://arxiv.org/abs/2111.04681")
-    (synopsis "Collection of Smooth Tensor Estimation Methods")
-    (description
-     "This package provides a list of methods for estimating a smooth tensor with an
-unknown permutation.  It also contains several multi-variate functions for
-generating permuted signal tensors and corresponding observed tensors.  For a
-detailed introduction for the model and estimation techniques, see the paper by
-Chanwoo Lee and Miaoyan Wang (2021) \"Smooth tensor estimation with unknown
-permutations\" <@code{arXiv:2111.04681>}.")
-    (license license:gpl3)))
-
 (define-public r-smoothtail
   (package
     (name "r-smoothtail")
@@ -41442,13 +41415,13 @@ Minimum recommended requirements: 16 GB RAM and 4 CPU dual-core.")
 (define-public r-sitrep
   (package
     (name "r-sitrep")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sitrep" version))
        (sha256
-        (base32 "1kcw66bzr8x0yf1qiwgi30r5krm7vp0hsdrfrykmjazy6k984ryh"))))
+        (base32 "1zvhvxr5ihlabnfvx3dwrfw4bshp3d3cb70d74fx8i5vv9vbba2z"))))
     (properties `((upstream-name . "sitrep")))
     (build-system r-build-system)
     (arguments
@@ -62715,13 +62688,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "5.3.0")
+    (version "5.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "0vda699zf68v276gc0fcx2r2z7a6jxlqbbiq316impzqy9g14hra"))))
+        (base32 "014wzf5ywbf0y808yjgmwf4zryhdhvpmhapngbad3zpvkkcp8in5"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (arguments
@@ -62730,9 +62703,8 @@ detector spacing.")
     (propagated-inputs (list r-terra
                              r-stringr
                              r-sf
+                             r-secrfunc
                              r-rcppparallel
-                             r-rcppnumerical
-                             r-rcppeigen
                              r-rcpp
                              r-raster
                              r-nlme
@@ -69954,36 +69926,6 @@ assessment, predictions, and cross-validation also included.")
     (description
      "Generate Stochastic Branching Networks ('SBNs').  Used to model the branching
 structure of rivers.")
-    (license license:expat)))
-
-(define-public r-sbmsplitmerge
-  (package
-    (name "r-sbmsplitmerge")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SBMSplitMerge" version))
-       (sha256
-        (base32 "1h44qwz9gkwwgkac25h4vn0kq3mjvjsyq99yfd8v8g6g8fkkclaq"))))
-    (properties `((upstream-name . "SBMSplitMerge")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-reshape2 r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SBMSplitMerge")
-    (synopsis "Inference for a Generalised SBM with a Split Merge Sampler")
-    (description
-     "Inference in a Bayesian framework for a generalised stochastic block model.  The
-generalised stochastic block model (SBM) can capture group structure in network
-data without requiring conjugate priors on the edge-states.  Two sampling
-methods are provided to perform inference on edge parameters and block
-structure: a split-merge Markov chain Monte Carlo algorithm and a Dirichlet
-process sampler.  Green, Richardson (2001) <doi:10.1111/1467-9469.00242>; Neal
-(2000) <doi:10.1080/10618600.2000.10474879>; Ludkin (2019)
-<@code{arXiv:1909.09421>}.")
     (license license:expat)))
 
 (define-public r-sbmsdp

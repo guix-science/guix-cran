@@ -3211,13 +3211,13 @@ al (2020) <doi:10.1214/21-AOAS1497>.")
 (define-public r-exdex
   (package
     (name "r-exdex")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exdex" version))
        (sha256
-        (base32 "1vmbk52gxay0604jqmiqgm5zffnx1x5f5x3k0dajyxn3qlvqqrp6"))))
+        (base32 "0s3rgg8hqdn6z3j18m9bg102691h62qmj3wmslikiyihbzbcayip"))))
     (properties `((upstream-name . "exdex")))
     (build-system r-build-system)
     (arguments
@@ -12894,13 +12894,13 @@ survival analysis.  Methods are based on Gelman et al. (2013)
 (define-public r-epidict
   (package
     (name "r-epidict")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidict" version))
        (sha256
-        (base32 "00gxb9lcybjnm3axchq0jlsc1786f6rvg0b622kkd6d0qnivambc"))))
+        (base32 "018qcvy1xjngal9avnbb82lmwcjx1qgdn1bsl4jjd98ccaijnnqz"))))
     (properties `((upstream-name . "epidict")))
     (build-system r-build-system)
     (arguments
@@ -18890,25 +18890,25 @@ highly computational advantage by truncated singular-value decomposition.")
 (define-public r-eikosograms
   (package
     (name "r-eikosograms")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eikosograms" version))
        (sha256
-        (base32 "13s5wqcc8iwnhn3msrh9dfrvq9bwlby93p9v5wcnrm8m9iskax1s"))))
+        (base32 "17xggl0lqfyb9halpnlzs8hnvi7w4zp11ym27pnrvzy3ajl9xprf"))))
     (properties `((upstream-name . "eikosograms")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/rwoldford/eikosograms")
-    (synopsis "The Picture of Probability")
+    (synopsis
+     "Visualizing Probabilities, Frequencies, and Conditional Independence for Categorical Variates")
     (description
      "An eikosogram (ancient Greek for probability picture) divides the unit square
-into rectangular regions whose areas, sides, and widths, represent various
+into rectangular regions whose areas, sides, and widths represent various
 probabilities associated with the values of one or more categorical variates.
 Rectangle areas are joint probabilities, widths are always marginal (though
 possibly joint margins, i.e.  marginal joint distributions of two or more
@@ -18916,27 +18916,22 @@ variates), and heights of rectangles are always conditional probabilities.
 Eikosograms embed the rules of probability and are useful for introducing
 elementary probability theory, including axioms, marginal, conditional, and
 joint probabilities, and their relationships (including Bayes theorem as a
-completely trivial consequence).  They are markedly superior to Venn diagrams
-for this purpose, especially in distinguishing probabilistic independence,
+completely trivial consequence).  They provide advantages over Venn diagrams for
+this purpose, particularly in distinguishing probabilistic independence,
 mutually exclusive events, coincident events, and associations.  They also are
-useful for identifying and understanding conditional independence structure.  As
-data analysis tools, eikosograms display categorical data in a manner similar to
-Mosaic plots, especially when only two variates are involved (the only case in
-which they are essentially identical, though eikosograms purposely disallow
-spacing between rectangles).  Unlike Mosaic plots, eikosograms do not alternate
-axes as each new categorical variate (beyond two) is introduced.  Instead, only
-one categorical variate, designated the \"response\", presents on the vertical
-axis and all others, designated the \"conditioning\" variates, appear on the
-horizontal.  In this way, conditional probability appears only as height and
-marginal probabilities as widths.  The eikosogram is therefore much better
-suited to a response model analysis (e.g. logistic model) than is a Mosaic plot.
- Mosaic plots are better suited to log-linear style modelling as in discrete
-multivariate analysis.  Of course, eikosograms are also suited to discrete
-multivariate analysis with each variate in turn appearing as the response.  This
-makes it better suited than Mosaic plots to discrete graphical models based on
-conditional independence graphs (i.e. \"Bayesian Networks\" or
-\"@code{BayesNets}\").  The eikosogram and its superiority to Venn diagrams in
-teaching probability is described in W.H. Cherry and R.W. Oldford (2003)
+useful for identifying and understanding conditional independence structure.
+Eikosograms can be thought of as mosaic plots when only two categorical variates
+are involved; the layout is quite different when there are more than two
+variates.  Only one categorical variate, designated the \"response\", presents on
+the vertical axis and all others, designated the \"conditioning\" variates, appear
+on the horizontal.  In this way, conditional probability appears only as height
+and marginal probabilities as widths.  The eikosogram is ideal for response
+models (e.g. logistic models) but equally useful when no variate is
+distinguished as the response.  In such cases, each variate can appear in turn
+as the response, which is handy for assessing conditional independence in
+discrete graphical models (i.e. \"Bayesian networks\" or \"@code{BayesNets}\").  The
+eikosogram and its value over Venn diagrams in teaching probability is described
+in W.H. Cherry and R.W. Oldford (2003)
 <https://math.uwaterloo.ca/~rwoldfor/papers/eikosograms/paper.pdf>, its value in
 exploring conditional independence structure and relation to graphical and
 log-linear models is described in R.W. Oldford (2003)
@@ -19702,38 +19697,6 @@ formats of @code{EgoNet}', @code{EgoWeb} 2.0 and openeddi'.  An interactive
 provided.  Also included are procedures for creating and visualizing Clustered
 Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
     (license license:agpl3)))
-
-(define-public r-egocor
-  (package
-    (name "r-egocor")
-    (version "1.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EgoCor" version))
-       (sha256
-        (base32 "1xs2y6kp1k6hxcvamcr5d05djxqhrgsx2s89a98i5s02653zx8gx"))))
-    (properties `((upstream-name . "EgoCor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spatialtools r-sp r-shiny r-rdpack r-gstat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/julia-dyck/EgoCor")
-    (synopsis "Simple Presentation of Estimated Exponential Semi-Variograms")
-    (description
-     "User friendly interface based on the R package gstat to fit exponential
-parametric models to empirical semi-variograms in order to model the spatial
-correlation structure of health data.  Geo-located health outcomes of survey
-participants may be used to model spatial effects on health in an ego-centred
-approach.  The package contains a range of functions to help explore the spatial
-structure of the data as well as visualize the fit of exponential models for
-various metaparameter combinations with respect to the number of lag intervals
-and maximal distance.  Furthermore, the outcome of interest can be adjusted for
-covariates by fitting a linear regression in a preliminary step before the
-semi-variogram fitting process.")
-    (license license:expat)))
 
 (define-public r-egm
   (package

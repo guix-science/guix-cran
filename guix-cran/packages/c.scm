@@ -23223,30 +23223,6 @@ events set forth by the International Association of Athletics Federation
 BÃ³na,MiklÃ³s(2017,ISBN 9789813148840).")
     (license license:gpl3)))
 
-(define-public r-combinationpvalues
-  (package
-    (name "r-combinationpvalues")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "combinationpvalues" version))
-       (sha256
-        (base32 "0n5dhgss8mrxshfixpc10g1p7l06hcn3fbk7l9sp92ap64kalz6c"))))
-    (properties `((upstream-name . "combinationpvalues")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spatstat-utils r-dplyr r-chi))
-    (home-page "https://github.com/StatsGirl/Master2021/tree/main/R")
-    (synopsis "Combination of Independent P-Values")
-    (description
-     "This package provides access to six fundamental statistics that can be used for
-the purpose of combination p-values.  All methods used can referenced here:
-Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
-    (license license:expat)))
-
 (define-public r-combcoint
   (package
     (name "r-combcoint")
@@ -31226,31 +31202,6 @@ to the present.  See the URL for the papers associated with this package, as for
 instance, Morales-OÃ±ate and Morales-OÃ±ate (2024)
 <doi:10.1016/j.softx.2024.101921>.")
     (license license:gpl3+)))
-
-(define-public r-cluscov
-  (package
-    (name "r-cluscov")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cluscov" version))
-       (sha256
-        (base32 "0345v5r6b53243h5bir29v0w77pmwjqjkqfrjnk5j5r1wbh98q1w"))))
-    (properties `((upstream-name . "cluscov")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quantreg r-mass))
-    (home-page "https://cran.r-project.org/package=cluscov")
-    (synopsis "Clustered Covariate Regression")
-    (description
-     "Clustered covariate regression enables estimation and inference in both linear
-and non-linear models with linear predictor functions even when the design
-matrix is column rank deficient.  Routines in this package implement algorithms
-in Soale and Tsyawo (2019) <doi:10.13140/RG.2.2.32355.81441>.")
-    (license license:gpl2)))
 
 (define-public r-clusboot
   (package
@@ -47518,13 +47469,13 @@ methods such as Coincidence Analysis (CNA) or Qualitative Comparative Analysis
 (define-public r-causalgps
   (package
     (name "r-causalgps")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalGPS" version))
        (sha256
-        (base32 "0hb010hsqn3ahsp3kqmn4r1qa3y3znz7kc7j8pv9zdx2cpyrnmi4"))))
+        (base32 "07x89yf8pqm8vqd4qbqb2pichrc21kf1x93f0iyddmz4nb75p9ba"))))
     (properties `((upstream-name . "CausalGPS")))
     (build-system r-build-system)
     (arguments

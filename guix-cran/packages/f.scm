@@ -12538,13 +12538,13 @@ Tzourio, Woodward, Barbieri, Jacqmin-Gadda (2023) <@code{arXiv:2306.16785>}).")
 (define-public r-flexurba
   (package
     (name "r-flexurba")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexurba" version))
        (sha256
-        (base32 "13lbjx9lfgqf0xj8y1cphydcyy8vqghppiq4jw210sz1xkc16bvz"))))
+        (base32 "1vr8vajkrz13n0ka2y90q83fyfa70gfs8irfzphll63iwg35fk2j"))))
     (properties `((upstream-name . "flexurba")))
     (build-system r-build-system)
     (arguments

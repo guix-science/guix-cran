@@ -6357,13 +6357,13 @@ January 2022.")
 (define-public r-multifear
   (package
     (name "r-multifear")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multifear" version))
        (sha256
-        (base32 "0q9ajx6j50f34jl9awwm3fz2zjlb6i5hwi5alnw9b5g0kfasi337"))))
+        (base32 "0grag7c2nm5vs8s42c0dixkgjwcfy5g179hz1vhx1yv0f32gh0pn"))))
     (properties `((upstream-name . "multifear")))
     (build-system r-build-system)
     (arguments
@@ -6374,15 +6374,17 @@ January 2022.")
                              r-rlang
                              r-reshape2
                              r-purrr
+                             r-plyr
                              r-nlme
+                             r-maditr
                              r-ggplot2
                              r-forestplot
                              r-fastdummies
-                             r-ez
                              r-esc
                              r-effsize
                              r-effectsize
                              r-dplyr
+                             r-car
                              r-broom
                              r-bootstrap
                              r-bayestestr
@@ -6397,7 +6399,10 @@ data, the functions are able to perform t-tests, analyses of variance, and mixed
 models for the provided data and return summary statistics and plots.  The
 function is also able to return for all those tests p-values, confidence
 intervals, and Bayes factors.  The methods are described in Lonsdorf, Gerlicher,
-Klingelhofer-Jens, & Krypotos (2022) <doi:10.1016/j.brat.2022.104072>.")
+Klingelhofer-Jens, & Krypotos (2022) <doi:10.1016/j.brat.2022.104072>.  Since
+November 2025, this package contains code from the ez R package (Copyright (c)
+2016-11-01, Michael A. Lawrence <mike.lwrnc@@gmail.com>), originally distributed
+under the GPL (equal and above 2) license.")
     (license license:gpl3)))
 
 (define-public r-multifanova
@@ -8439,20 +8444,26 @@ output) and Shiny file editing.")
 (define-public r-mtarm
   (package
     (name "r-mtarm")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtarm" version))
        (sha256
-        (base32 "12yh2a9rl6hx0h7pbq4dgss699h8icmsd0k3m5p9amsqwfbwdpz4"))))
+        (base32 "1db3mfksp7v5msr89ccilagz6q742glmm1nw9l0x8nw31xzvyc9y"))))
     (properties `((upstream-name . "mtarm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-gigrvg r-formula r-coda))
-    (home-page "https://cran.r-project.org/package=mtarm")
+    (propagated-inputs (list r-progressr
+                             r-mvtnorm
+                             r-gigrvg
+                             r-future-apply
+                             r-future
+                             r-formula
+                             r-coda))
+    (home-page "https://github.com/lhvanegasp/mtarm")
     (synopsis
      "Bayesian Estimation of Multivariate Threshold Autoregressive Models")
     (description
@@ -15078,13 +15089,13 @@ and examples are given by Koutra et al. (2024)
 (define-public r-moocore
   (package
     (name "r-moocore")
-    (version "0.1.10")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moocore" version))
        (sha256
-        (base32 "159z7f838nz35i7x3h2vy1wnvgqjd2qya7jbqarb1zimbwcwvq09"))))
+        (base32 "0blbrmcc8sdc4kvpy7p74jr3f1bmxjz9dcgvq7x3ak4irwbqbwnj"))))
     (properties `((upstream-name . "moocore")))
     (build-system r-build-system)
     (arguments
@@ -24638,34 +24649,6 @@ as funtions to display) important variables is also provided
 <doi:10.1093/nargab/lqac014>.")
     (license license:gpl2+)))
 
-(define-public r-mixindependr
-  (package
-    (name "r-mixindependr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixIndependR" version))
-       (sha256
-        (base32 "0wjzs56axdjas2a9ynw3gd78h0fgcfjpx3bk7nm895lmadyzih6y"))))
-    (properties `((upstream-name . "mixIndependR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ice4prince/mixIndependR")
-    (synopsis "Genetics and Independence Testing of Mixed Genetic Panels")
-    (description
-     "Developed to deal with multi-locus genotype data, this package is especially
-designed for those panel which include different type of markers.  Basic genetic
-parameters like allele frequency, genotype frequency, heterozygosity and
-Hardy-Weinberg test of mixed genetic data can be obtained.  In addition, a new
-test for mutual independence which is compatible for mixed genetic data is
-developed in this package.")
-    (license license:gpl2+)))
-
 (define-public r-mixhvg
   (package
     (name "r-mixhvg")
@@ -29002,13 +28985,13 @@ migration.")
 (define-public r-migrate
   (package
     (name "r-migrate")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migrate" version))
        (sha256
-        (base32 "04whq58zm83s9y66bzb390q6cwj006gv4abv0b63fx1rkvfh9drw"))))
+        (base32 "0s861ylggqy516ir7yh3yk6xf2c8c31d5z1wbwkvkvz8h846whcn"))))
     (properties `((upstream-name . "migrate")))
     (build-system r-build-system)
     (arguments
@@ -33406,13 +33389,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mets" version))
        (sha256
-        (base32 "149mrcwxq2dl5d2ypl58i4kflfrw466ib9vszsq8500l8fby6g3k"))))
+        (base32 "0albfa5njy20iv59s5a90csm2sgrhbjl58mjhmf4c1mr476r9w02"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (arguments
@@ -33435,7 +33418,7 @@ models <doi:10.1002/sim.6016>, and bivariate random effects probit models
 (Liability models) <doi:10.1016/j.csda.2015.01.014>.  Modern methods for
 survival analysis, including regression modelling (Cox, Fine-Gray, Ghosh-Lin,
 Binomial regression) with fast computation of influence functions.")
-    (license license:gpl2+)))
+    (license license:asl2.0)))
 
 (define-public r-metropolis
   (package
