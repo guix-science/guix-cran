@@ -1395,13 +1395,13 @@ subscribe to the @code{koRpus-dev} mailing list (<http://korpusml.reaktanz.de>).
 (define-public r-syllogi
   (package
     (name "r-syllogi")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syllogi" version))
        (sha256
-        (base32 "08svvf4gm18bw67pnpaf1csa2ia4js2cg704yns4f18g1ins4fzk"))))
+        (base32 "09bx5mawxynkc3ayxy15q04x7ac1hyvk4cllmr2kl6l37i5wx0iy"))))
     (properties `((upstream-name . "syllogi")))
     (build-system r-build-system)
     (arguments
@@ -9261,6 +9261,37 @@ treatment effect.  And, a sample size calculation procedure for the subgroup
 detection test.")
     (license license:gpl3)))
 
+(define-public r-styperidge-reg
+  (package
+    (name "r-styperidge-reg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Styperidge.reg" version))
+       (sha256
+        (base32 "0vsg27ymypbl9jbzbkfyi5ims8nj6ccm5aaf428m7942cn4px767"))))
+    (properties `((upstream-name . "Styperidge.reg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stype-est r-ridgregextra r-mctest r-isdals))
+    (home-page "https://github.com/filizkrdg/Styperidge.reg")
+    (synopsis "S-Type Ridge Regression")
+    (description
+     "This package implements S-type ridge regression, a robust and
+multicollinearity-aware linear regression estimator that combines S-type robust
+weighting (via the Stype.est package) with ridge penalization; automatically
+selects the ridge parameter using the ridgregextra approach targeting a close to
+1 variance inflation factor (VIF), and returns comprehensive outputs
+(coefficients, fitted values, residuals, mean squared error (MSE), etc.) with an
+easy x/y interface and optional user-supplied weights.  See Sazak and Mutlu
+(2021) <doi:10.1080/03610918.2021.1928196>, Karadag et al. (2023)
+<https://CRAN.R-project.org/package=ridgregextra> and Sazak et al. (2025)
+<https://CRAN.R-project.org/package=Stype.est>.")
+    (license license:expat)))
+
 (define-public r-stype-est
   (package
     (name "r-stype-est")
@@ -13030,6 +13061,35 @@ empirical coverage), and to produce contour plots over 2D slices in model
 parameter space.")
     (license license:gpl3)))
 
+(define-public r-stihc
+  (package
+    (name "r-stihc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stIHC" version))
+       (sha256
+        (base32 "04wqz8j4g2hyz3i3dfqf52j6cayqaj7cl3mi5wsb8mzvb7kw0jh0"))))
+    (properties `((upstream-name . "stIHC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mclust r-fdapde r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=stIHC")
+    (synopsis "Spatial Transcriptomics Iterative Hierarchical Clustering")
+    (description
+     "Spatial transcriptomics iterative hierarchical clustering ('@code{stIHC}'), is a
+method for identifying spatial gene co-expression modules, defined as groups of
+genes with shared spatial expression patterns.  The method is applicable across
+spatial transcriptomics technologies with differing spatial resolution, and
+provides a framework for investigating the spatial organisation of gene
+expression in tissues.  For further details, see Higgins C., Li J.J., Carey M.
+<doi:10.1002/qub2.70011>.")
+    (license license:expat)))
+
 (define-public r-sticsrfiles
   (package
     (name "r-sticsrfiles")
@@ -15127,13 +15187,13 @@ designed to be suitable for use at the console, in Rmarkdown and @code{LaTeX}.")
 (define-public r-statpsych
   (package
     (name "r-statpsych")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statpsych" version))
        (sha256
-        (base32 "1x0gcipa0hc58rnwyxn3jwqfnzwaxq1kacvrwq4fhjlvkq4cb7nh"))))
+        (base32 "1hswv90jy9af1q96rnmhf6arllqvf5wkskpki6r63psz32sr0zgb"))))
     (properties `((upstream-name . "statpsych")))
     (build-system r-build-system)
     (arguments

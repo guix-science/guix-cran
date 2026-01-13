@@ -1755,13 +1755,13 @@ Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
 (define-public r-istat
   (package
     (name "r-istat")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "istat" version))
        (sha256
-        (base32 "1d66gzwy7fvmsh72f6cn0p0aaj2vrwxw8amx851r92y1lwzyzyjk"))))
+        (base32 "080llnzi0mi1qlnmjizgplf8fjrsjp2dwmf7dx8znarfmwh3ls4f"))))
     (properties `((upstream-name . "istat")))
     (build-system r-build-system)
     (arguments
@@ -1795,8 +1795,8 @@ Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
 and new provider (respectively, <http://dati.istat.it/> and
 <https://esploradati.istat.it/databrowser/>).  Additional functions for
 manipulating data are provided.  Moreover, a shiny application called
-@code{shinyIstat} can be used to search, download and filter datasets in an
-easier way.")
+@code{shinyIstat} can be used to search, download and filter datasets more
+easily.")
     (license license:gpl2+)))
 
 (define-public r-istacr
@@ -6122,13 +6122,13 @@ as well as internationalized ('IDN') domain lookup with and whois query.")
 (define-public r-iotarelr
   (package
     (name "r-iotarelr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iotarelr" version))
        (sha256
-        (base32 "1lzl0py3yv0r8hjs1ipm3iysxd0h0b3yp4mfac63b7qwcv05lgmj"))))
+        (base32 "0rdnkk8zwzak1bpzlm2b75hh4h2vqd2sy5z55pvfah5hqx8vh47h"))))
     (properties `((upstream-name . "iotarelr")))
     (build-system r-build-system)
     (arguments
@@ -19485,20 +19485,20 @@ output can be toggled globally without modifying code.")
 (define-public r-icebox
   (package
     (name "r-icebox")
-    (version "1.1.5")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICEbox" version))
        (sha256
-        (base32 "08rzbdd0qbhr6a5pjb6346j3zhyb2xl5wmrh3qivwpl19binjiza"))))
+        (base32 "1csmcp1hq11rsx3r8pk14shd7sv4222ax9g24k0rc6vp19p6qyfz"))))
     (properties `((upstream-name . "ICEbox")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sfsmisc))
-    (home-page "https://cran.r-project.org/package=ICEbox")
+    (propagated-inputs (list r-rcpp r-ggplot2 r-data-table r-checkmate))
+    (home-page "https://github.com/kapelner/ICEbox")
     (synopsis "Individual Conditional Expectation Plot Toolbox")
     (description
      "This package implements Individual Conditional Expectation (ICE) plots, a tool

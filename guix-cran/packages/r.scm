@@ -1175,13 +1175,13 @@ selected.")
 (define-public r-rwdataplyr
   (package
     (name "r-rwdataplyr")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RWDataPlyr" version))
        (sha256
-        (base32 "17q6xx6vjfk6siikp6bx5m5is14i9gmlxvn3ri80bgr1k5r31b0z"))))
+        (base32 "01g1fm96xj659b2rvvfvpfh2mfwkgvs7k9b1q7rsvijq9g91j72j"))))
     (properties `((upstream-name . "RWDataPlyr")))
     (build-system r-build-system)
     (arguments
@@ -5469,13 +5469,13 @@ numbers from different sources.")
 (define-public r-rstrava
   (package
     (name "r-rstrava")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rStrava" version))
        (sha256
-        (base32 "1yr9s06m7ixj6gkrnqnxf3hg3nzf84yghd7v7lbzyy49v2rpmk00"))))
+        (base32 "02ppqqzggkx108crlvpxivf1sbggzjcpi08szn1x5d1k0ydvkhz5"))))
     (properties `((upstream-name . "rStrava")))
     (build-system r-build-system)
     (arguments
@@ -13916,13 +13916,13 @@ a symmetric positive definite matrix generator, see Mezzadri, F. (2007)
 (define-public r-ronfig
   (package
     (name "r-ronfig")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ronfig" version))
        (sha256
-        (base32 "18z1a7k2yw1lrf3i328h264nffi5f0pqk8jqypr39b4prfzb7cs2"))))
+        (base32 "0wy4dyd1gvky7j7mvldgq1rr7d7bcfkvylqil4p90hcwfq7ndm2k"))))
     (properties `((upstream-name . "ronfig")))
     (build-system r-build-system)
     (arguments
@@ -21069,13 +21069,13 @@ classification with mixture modelling <doi: 10.18637/jss.v067.i06>.")
 (define-public r-rminqa
   (package
     (name "r-rminqa")
-    (version "0.2.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rminqa" version))
        (sha256
-        (base32 "1wq4cz9m8xqzii64rmdg42fv8khs1ybw3bax4s44aapcg56vj1i3"))))
+        (base32 "0qpijmma4lx8qb7z3ax6bnisd9b2386xavkaix8p0jlyhbkla2ai"))))
     (properties `((upstream-name . "rminqa")))
     (build-system r-build-system)
     (arguments
@@ -26351,38 +26351,6 @@ table of contents.")
      "Functionality to download stock prices, cryptocurrency data, and more from the
 Tiingo API <https://api.tiingo.com/>.")
     (license license:expat)))
-
-(define-public r-riim
-  (package
-    (name "r-riim")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RIIM" version))
-       (sha256
-        (base32 "0ik0p855hfhmmmd5xqi6mdx1p3j87c1gc5a1zxd468p7waq3aq90"))))
-    (properties `((upstream-name . "RIIM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost r-optmatch r-mass))
-    (home-page "https://cran.r-project.org/package=RIIM")
-    (synopsis "Randomization-Based Inference Under Inexact Matching")
-    (description
-     "Randomization-based inference for average treatment effects in potentially
-inexactly matched observational studies.  It implements the inverse
-post-matching probability weighting framework proposed by the authors.  The
-post-matching probability calculation follows the approach of Pimentel and Huang
-(2024) <doi:10.1093/jrsssb/qkae033>.  The optimal full matching method is based
-on Hansen (2004) <doi:10.1198/106186006X137047>.  The variance estimator extends
-the method proposed in Fogarty (2018) <doi:10.1111/rssb.12290> from the perfect
-randomization settings to the potentially inexact matching case.  Comparisons
-are made with conventional methods, as described in Rosenbaum (2002)
-<doi:10.1007/978-1-4757-3692-2>, Fogarty (2018) <doi:10.1111/rssb.12290>, and
-Kang et al. (2016) <doi:10.1214/15-aoas894>.")
-    (license license:gpl3)))
 
 (define-public r-rigr
   (package
@@ -32396,13 +32364,13 @@ techniques (<https://choco-solver.org/>).")
 (define-public r-restk
   (package
     (name "r-restk")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RESTK" version))
        (sha256
-        (base32 "0vvwhhch6qlp7cjz9vfrciqpz4zm9nfhfj2frspwdbhydfcqc6zs"))))
+        (base32 "0jl05rfyir92rqjj47abv5zjggjkvq9k1kc961pv10mk9sbhdfs0"))))
     (properties `((upstream-name . "RESTK")))
     (build-system r-build-system)
     (arguments
@@ -32922,13 +32890,13 @@ elevation variance spectral density.")
 (define-public r-resmush
   (package
     (name "r-resmush")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resmush" version))
        (sha256
-        (base32 "0g1z0scy49a6av77x907h1khl2ppvmlgy5myc30jgm8k11pakf58"))))
+        (base32 "0xcbk371x8y81m35gr0ybf1qd01vd7mq4wipzd09sgli9v510d1r"))))
     (properties `((upstream-name . "resmush")))
     (build-system r-build-system)
     (arguments
@@ -57280,6 +57248,39 @@ in radiant.data'.")
     (license (list license:agpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-radiant
+  (package
+    (name "r-radiant")
+    (version "1.6.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "radiant" version))
+       (sha256
+        (base32 "14ksi8369jm5m9k010ar7n6kh637ik07v87ij8s5rrri1l9nz916"))))
+    (properties `((upstream-name . "radiant")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-radiant-multivariate
+                             r-radiant-model
+                             r-radiant-design
+                             r-radiant-data
+                             r-radiant-basics
+                             r-import))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/radiant-rstats/radiant")
+    (synopsis "Business Analytics using R and Shiny")
+    (description
+     "This package provides a platform-independent browser-based interface for
+business analytics in R, based on the shiny package.  The application combines
+the functionality of radiant.data', radiant.design', radiant.basics',
+radiant.model', and radiant.multivariate'.")
+    (license (list license:agpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-radialvisgadgets
   (package
     (name "r-radialvisgadgets")
@@ -59450,13 +59451,13 @@ development and use of PACTA in R.")
 (define-public r-r2dii-analysis
   (package
     (name "r-r2dii-analysis")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.analysis" version))
        (sha256
-        (base32 "1fgih4i0rrdl2z9j4mms43nfp8wf4zgkjk3an9hs7rp3iy04m1l4"))))
+        (base32 "1xmcdqw2di4x05mi7rdmcr68v27nzp7k5qyirmwbznrh8w67cr5g"))))
     (properties `((upstream-name . "r2dii.analysis")))
     (build-system r-build-system)
     (arguments

@@ -3176,13 +3176,13 @@ R and shiny on their system.")
 (define-public r-exdqlm
   (package
     (name "r-exdqlm")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exdqlm" version))
        (sha256
-        (base32 "1cl29271zyw72yh5k6x49iyaj4zagl3k4j24vp523rdgr7p35lih"))))
+        (base32 "1qjr6r9mq3z589w1p7vckkf4saccbf2d9bh8l6z8cvr66vn2lcl8"))))
     (properties `((upstream-name . "exdqlm")))
     (build-system r-build-system)
     (arguments
@@ -3190,15 +3190,17 @@ R and shiny on their system.")
       #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-tictoc
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrixstats
                              r-magic
                              r-laplacesdemon
                              r-hyperbolicdist
                              r-generalizedhyperbolic
                              r-fnn
-                             r-dlm
                              r-crch
                              r-coda
-                             r-brms))
+                             r-bh))
     (home-page "https://cran.r-project.org/package=exdqlm")
     (synopsis "Extended Dynamic Quantile Linear Models")
     (description
@@ -8251,29 +8253,6 @@ situations, including continuous distributions, discrete distributions, and
 mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
 <@code{arXiv:1612.07216>}.")
     (license license:gpl3)))
-
-(define-public r-essentials
-  (package
-    (name "r-essentials")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "essentials" version))
-       (sha256
-        (base32 "163wv4szfanbpiw5f6lhw1dnns5prql43iz27zgcp5z2rsxlb894"))))
-    (properties `((upstream-name . "essentials")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=essentials")
-    (synopsis "Essential Functions not Included in Base R")
-    (description
-     "This package provides functions for converting objects to scalars (vectors of
-length 1) and a more inclusive definition of data that can be interpreted as
-numbers (numeric and complex alike).")
-    (license license:expat)))
 
 (define-public r-ess
   (package
@@ -16736,13 +16715,13 @@ cocktails.")
 (define-public r-emc2
   (package
     (name "r-emc2")
-    (version "3.3.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMC2" version))
        (sha256
-        (base32 "0xkvshzylb1m0rcvfzfl7ldjy12bh3jj4d1hwvyr9y5gx6jkmqph"))))
+        (base32 "0aq0k5hh4bslx3hm02596klh7agapqanpyv7hzcv5b4rh2qqn02z"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
     (arguments
@@ -18590,13 +18569,13 @@ and examples.  More details in Ibarra-Espinosa et al (2018)
 (define-public r-eix
   (package
     (name "r-eix")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EIX" version))
        (sha256
-        (base32 "02ry0aqqnd0zh6zbvx1dbq3sdahyqcgabhkvbbw4ig0qk70w62aj"))))
+        (base32 "1c9mp7wjf1ry7f8csnk2l5cjrrxfkkq16i8z8dny35smgjqviish"))))
     (properties `((upstream-name . "EIX")))
     (build-system r-build-system)
     (arguments
@@ -19697,6 +19676,38 @@ formats of @code{EgoNet}', @code{EgoWeb} 2.0 and openeddi'.  An interactive
 provided.  Also included are procedures for creating and visualizing Clustered
 Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
     (license license:agpl3)))
+
+(define-public r-egocor
+  (package
+    (name "r-egocor")
+    (version "1.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EgoCor" version))
+       (sha256
+        (base32 "1xs2y6kp1k6hxcvamcr5d05djxqhrgsx2s89a98i5s02653zx8gx"))))
+    (properties `((upstream-name . "EgoCor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatialtools r-sp r-shiny r-rdpack r-gstat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/julia-dyck/EgoCor")
+    (synopsis "Simple Presentation of Estimated Exponential Semi-Variograms")
+    (description
+     "User friendly interface based on the R package gstat to fit exponential
+parametric models to empirical semi-variograms in order to model the spatial
+correlation structure of health data.  Geo-located health outcomes of survey
+participants may be used to model spatial effects on health in an ego-centred
+approach.  The package contains a range of functions to help explore the spatial
+structure of the data as well as visualize the fit of exponential models for
+various metaparameter combinations with respect to the number of lag intervals
+and maximal distance.  Furthermore, the outcome of interest can be adjusted for
+covariates by fitting a linear regression in a preliminary step before the
+semi-variogram fitting process.")
+    (license license:expat)))
 
 (define-public r-egm
   (package
@@ -23509,13 +23520,13 @@ systems including Linear, Translog, CES, LES and CREMR.")
 (define-public r-econdataverse
   (package
     (name "r-econdataverse")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "econdataverse" version))
        (sha256
-        (base32 "1q11ymhc95389mr0z64kzzwfq3ln0ijxmvpssxzbpbhqy8i7xhyc"))))
+        (base32 "1lg8hgy5bsxjrrrkagrshq8s9hk8fjvrziixx14fwhp0y7b06ddw"))))
     (properties `((upstream-name . "econdataverse")))
     (build-system r-build-system)
     (arguments

@@ -142,13 +142,13 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
 (define-public r-xxdi
   (package
     (name "r-xxdi")
-    (version "1.2.4")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xxdi" version))
        (sha256
-        (base32 "1z332i1cyicbwargimma5m6rz1hb3zc2rpzgxcci3z7szjyxn5f8"))))
+        (base32 "0s7a7q53g1fps5aaxn6pvj0ds6x5l95fncn1z12i0d32xg2z4q58"))))
     (properties `((upstream-name . "xxdi")))
     (build-system r-build-system)
     (arguments
@@ -156,7 +156,8 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr r-matrix r-ggplot2 r-dplyr r-agop))
     (home-page "https://cran.r-project.org/package=xxdi")
-    (synopsis "Calculate Expertise Indices")
+    (synopsis
+     "An R Package for Evaluating Scholarly Expertise Indices for Institutional Research Assessment")
     (description
      "Institutional performance assessment remains a key challenge to a multitude of
 stakeholders.  Existing indicators such as h-type indicators, g-type indicators,
@@ -170,9 +171,9 @@ thematic areas.  These indices offer a nuanced understanding of institutional
 research capabilities, aiding stakeholders in research management and resource
 allocation decisions.  Lathabai, H.H., Nandy, A., and Singh, V.K. (2021)
 <doi:10.1007/s11192-021-04188-3>.  Nandy, A., Lathabai, H.H., and Singh, V.K.
-(2023) <doi:10.5281/zenodo.8305585>.  This package provides the h, g, x, and xd
-indices for use with standard format of Web of Science (@code{WoS}) scrapped
-datasets.")
+(2023) <doi:10.5281/zenodo.8305585>.  This package provides the h-, g-, x-,
+xd-indices, and their variants for use with standard format of Web of Science
+(@code{WoS}) scrapped datasets.")
     (license license:gpl3)))
 
 (define-public r-xwf

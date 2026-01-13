@@ -3900,13 +3900,13 @@ Approaches with Applications\"
 (define-public r-kim
   (package
     (name "r-kim")
-    (version "0.6.1")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kim" version))
        (sha256
-        (base32 "07vpy66j4hxrxcvm4had8x15r4ywsfmrp80grcx7a1swr9c1airz"))))
+        (base32 "1ajsw5wsci37jbqxzq6zzrnkmp4fdvkw498i4i6qdgplp94f6cmk"))))
     (properties `((upstream-name . "kim")))
     (build-system r-build-system)
     (arguments

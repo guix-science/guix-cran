@@ -9080,13 +9080,13 @@ information for the same.")
 (define-public r-mspca
   (package
     (name "r-mspca")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msPCA" version))
        (sha256
-        (base32 "05i6p3jg6lycfswqyczgib84c0w9py11b3hkgbqmi403pjwha7kr"))))
+        (base32 "0ymsmm747zwa7m1fmypmp88zw6yb8f9s46jlvfs2nqw2gb9hdk61"))))
     (properties `((upstream-name . "msPCA")))
     (build-system r-build-system)
     (arguments
@@ -14485,6 +14485,31 @@ corn grown continuously and in rotation with other crops, in treated and
 untreated soil.")
     (license license:expat)))
 
+(define-public r-morphsim
+  (package
+    (name "r-morphsim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MorphSim" version))
+       (sha256
+        (base32 "0h22hpa8yx7wvinr2l4vlav3ivbfhjlqxzipnm9028ir93r69wvk"))))
+    (properties `((upstream-name . "MorphSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-phangorn r-fossilsim r-ape))
+    (home-page "https://cran.r-project.org/package=MorphSim")
+    (synopsis "Simulate Discrete Character Data along Phylogenetic Trees")
+    (description
+     "This package provides tools to simulate morphological traits along phylogenetic
+trees with branch lengths representing evolutionary distance or time.  Includes
+functions for visualizing evolutionary processes along trees and within
+morphological character matrices.")
+    (license license:gpl3)))
+
 (define-public r-morphotools2
   (package
     (name "r-morphotools2")
@@ -15994,6 +16019,52 @@ unified skew-normal (SUN), extended skew-normal (ESN), skew-normal (SN), and
 symmetric normal (N) are also included.  Density, probabilities and random
 deviates are also offered for these members.")
     (license license:gpl2+)))
+
+(define-public r-momocs
+  (package
+    (name "r-momocs")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Momocs" version))
+       (sha256
+        (base32 "16cibdrxyayhm8lhf2jiq38pmazp7gii9bjsmsvxgq4bnc2xsj6g"))))
+    (properties `((upstream-name . "Momocs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-sp
+                             r-sf
+                             r-rcolorbrewer
+                             r-progress
+                             r-mass
+                             r-magrittr
+                             r-jpeg
+                             r-ggplot2
+                             r-geomorph
+                             r-geometry
+                             r-dplyr
+                             r-dendextend
+                             r-cluster))
+    (home-page "https://github.com/MomX/Momocs/")
+    (synopsis "Morphometrics using R")
+    (description
+     "The goal of Momocs is to provide a complete, convenient, reproducible and
+open-source toolkit for 2D morphometrics.  It includes most common 2D
+morphometrics approaches on outlines, open outlines, configurations of
+landmarks, traditional morphometrics, and facilities for data preparation,
+manipulation and visualization with a consistent grammar throughout.  It allows
+reproducible, complex morphometrics analyses and other morphometrics approaches
+should be easy to plug in, or develop from, on top of this canvas.  Companion
+paper is published in JSS Bonhomme V, Picq S, Gaucherel C and Claude J (2014)
+<doi:10.18637/jss.v056.i13>.  Now superseded by Momocs2 and the @code{MomX}
+ecosystem.  Momocs should be considered retired and will no longer be supported
+someday.")
+    (license license:gpl3+)))
 
 (define-public r-momentuhmm
   (package
@@ -27983,19 +28054,20 @@ only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
 (define-public r-mini007
   (package
     (name "r-mini007")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mini007" version))
        (sha256
-        (base32 "17y02hlb3f88wd3ks9kqvv86nn09hlv9n9d7v14474hkjbj4375j"))))
+        (base32 "1qzmvc0swk4f4fbi0frfg8i4dvhnpwggwmgznn1hwi18xnml0sfd"))))
     (properties `((upstream-name . "mini007")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-uuid
+                             r-rlang
                              r-r6
                              r-glue
                              r-ellmer
@@ -34707,13 +34779,13 @@ treatment effect parameter which are described in Guenhan, Roever, and Friede
 (define-public r-metasplines
   (package
     (name "r-metasplines")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metasplines" version))
        (sha256
-        (base32 "1055bw8g4gkhba5pql69sqgli5k2avhs8g0gggb91809f98mlqpb"))))
+        (base32 "1l08n4hp5lw86q4vpn5i7vvzany89c0w4f9b14xnpfdd0y2h1yp4"))))
     (properties `((upstream-name . "metasplines")))
     (build-system r-build-system)
     (arguments
@@ -34737,10 +34809,9 @@ details of the LB nonlinear function estimate are not usually reported.  This
 package pools the nonlinear IPD dose-response estimates based on a natural cubic
 spline from lm or glm with the pointwise LB estimates and their estimated
 variances.  Details will be presented in HÃ¤rkÃ¤nen, Tapanainen, Sares-JÃ¤ske,
-MÃ¤nnistÃ¶, Kaartinen and Paalanen (2025) \"Novel pooling method for nonlinear
+MÃ¤nnistÃ¶, Kaartinen and Paalanen (2026) \"Novel pooling method for nonlinear
 cohort analysis and meta-analysis estimates: Predicting health outcomes based on
-climate-friendly diets\" (under revision)
-<https://journals.lww.com/epidem/pages/default.aspx>.")
+climate-friendly diets\" Epidemiology <doi:10.1097/EDE.0000000000001932>.")
     (license license:gpl3+)))
 
 (define-public r-metasnf
@@ -36506,6 +36577,33 @@ can be analyzed by Nudged Elastic Band method by Henkelman, G. and Jonsson, H.
 (2000) <doi:10.1063/1.1323224>.  Free energy surfaces, minima and transition
 paths can be plotted to produce publication quality images.")
     (license license:gpl3)))
+
+(define-public r-metadose
+  (package
+    (name "r-metadose")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetaDose" version))
+       (sha256
+        (base32 "07fp4pxyimg7hh5is70php844j8b6msjzhsfj5yh86wg8dj868ff"))))
+    (properties `((upstream-name . "MetaDose")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rms r-rlang r-metafor r-ggplot2))
+    (home-page "https://github.com/asmpro7/MetaDose/")
+    (synopsis "Dose-Response Meta-Regression for Meta-Analysis")
+    (description
+     "Conducting linear and nonlinear dose-response meta-regression using study-level
+summary data.  It supports both continuous and binary outcomes and allows
+modeling of dose-effect relationships using linear trends or nonlinear
+restricted cubic splines.  The package is designed to facilitate transparent,
+flexible, and reproducible dose-response meta-analyses, with built-in
+visualization of fitted dose-response curves.")
+    (license license:gpl3+)))
 
 (define-public r-metadigitise
   (package
@@ -40177,13 +40275,13 @@ in stable isotope analyses, can be calculated by using this package.")
 (define-public r-mdsr
   (package
     (name "r-mdsr")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdsr" version))
        (sha256
-        (base32 "171c79kl32qam0fm9hxikbfimfvccazmnlz08kg10dkv8l67b423"))))
+        (base32 "0cbimp1y9l79jqwjcnpfyp21zsvginlg4jfyk55v4difhbzkxw05"))))
     (properties `((upstream-name . "mdsr")))
     (build-system r-build-system)
     (arguments
@@ -44785,13 +44883,13 @@ at stationary sites.")
 (define-public r-mazamacoreutils
   (package
     (name "r-mazamacoreutils")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaCoreUtils" version))
        (sha256
-        (base32 "1zpcxwggb18l0mbzh5m9kz37g8gnhvk090d25xqv6rps4p3zb8qd"))))
+        (base32 "18sxrz0fxihm3sjjgkpk2dkhh91w9r1mfhnydzl40xhdqx8sj8r1"))))
     (properties `((upstream-name . "MazamaCoreUtils")))
     (build-system r-build-system)
     (arguments
@@ -44805,8 +44903,8 @@ at stationary sites.")
                              r-purrr
                              r-magrittr
                              r-lubridate
+                             r-logger
                              r-geohashtools
-                             r-futile-logger
                              r-dplyr
                              r-digest
                              r-devtools))
@@ -47327,6 +47425,44 @@ variance estimator is presented in Mashreghi et al. (2016)
 <doi:10.1214/16-SS113>.")
     (license license:gpl2)))
 
+(define-public r-mascarade
+  (package
+    (name "r-mascarade")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mascarade" version))
+       (sha256
+        (base32 "0i9j421nlwznng3kx870by765dyha6zrby4zqrwlyjjs79vcyyah"))))
+    (properties `((upstream-name . "mascarade")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-systemfonts
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-scales
+                             r-rlang
+                             r-polyclip
+                             r-lifecycle
+                             r-ggplot2
+                             r-ggforce
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://alserglab.github.io/mascarade/")
+    (synopsis
+     "Generating Cluster Masks for Single-Cell Dimensional Reduction Plots")
+    (description
+     "This package implements a procedure to automatically generate 2D masks for
+clusters on dimensional reduction plots from methods like t-SNE (t-distributed
+stochastic neighbor embedding) or UMAP (uniform manifold approximation and
+projection), with a focus on single-cell RNA-sequencing data.")
+    (license license:expat)))
+
 (define-public r-masae
   (package
     (name "r-masae")
@@ -49215,6 +49351,54 @@ bounds; (4) map images using the Maps Static API, returned as stars objects.")
 progress bars, error handling, and result caching.")
     (license license:expat)))
 
+(define-public r-mappoly
+  (package
+    (name "r-mappoly")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mappoly" version))
+       (sha256
+        (base32 "11r7vk2zaxi3px0bh2mgzwcyc612vd6alylm6namraag0rc3f74s"))))
+    (properties `((upstream-name . "mappoly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-zoo
+                             r-vcfr
+                             r-smacof
+                             r-rstudioapi
+                             r-reshape2
+                             r-rcurl
+                             r-rcppparallel
+                             r-rcpp
+                             r-princurve
+                             r-plotly
+                             r-magrittr
+                             r-ggsci
+                             r-ggpubr
+                             r-ggplot2
+                             r-fields
+                             r-dplyr
+                             r-dendextend
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mmollina/MAPpoly")
+    (synopsis "Genetic Linkage Maps in Autopolyploids")
+    (description
+     "Constructs genetic linkage maps in autopolyploid full-sib populations.  Uses
+pairwise recombination fraction estimation as the first source of information to
+sequentially position allelic variants in specific homologous chromosomes.  For
+situations where pairwise analysis has limited power, the algorithm relies on
+the multilocus likelihood obtained through a hidden Markov model (HMM).  Methods
+are described in Mollinari and Garcia (2019) <doi:10.1534/g3.119.400378> and
+Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
+    (license license:gpl3)))
+
 (define-public r-mappings
   (package
     (name "r-mappings")
@@ -49373,13 +49557,13 @@ interactively.  Jenkins TL (2024) <doi:10.1111/1755-0998.13943>.")
 (define-public r-mapmisc
   (package
     (name "r-mapmisc")
-    (version "2.1.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapmisc" version))
        (sha256
-        (base32 "1syznp0kh4alv8p4sc6zmphkpqpk9si3sddfizqlprp3ypm5gi85"))))
+        (base32 "0p5bv8jv7darvrxmf9fiqdzs3adlgp7cnkj0hkxrl0bgfbd660pw"))))
     (properties `((upstream-name . "mapmisc")))
     (build-system r-build-system)
     (arguments
@@ -49609,13 +49793,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1y3nbqg11v5gymlymbxn73yx6zjpq70l1023099gr9nk0z158m79"))))
+        (base32 "0fg8yq8m8g1kzr4i33fa17xz2gfncyryxz6nc713nb1jqwwnv6qq"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -53812,24 +53996,29 @@ Wang R, Tian B (2021) <doi:10.1186/s13059-021-02429-5>.")
 (define-public r-m61r
   (package
     (name "r-m61r")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "m61r" version))
        (sha256
-        (base32 "0mhi70rvqgzrgmp261shlq5jdxxhjawdxfsfr0cyfyyils7xs7ln"))))
+        (base32 "1jssy2vfyh1hhj6hflpq9gjfd8jv15qvp1fbzcnd7kvi7b2gz4wp"))))
     (properties `((upstream-name . "m61r")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/pv71u98h1/m61r/")
     (synopsis "Package About Data Manipulation in Pure Base R")
     (description
-     "Data manipulation in one package and in base R. Minimal.  No dependencies.
-dplyr and tidyr'-like in one place.  Nothing else than base R to build the
-package.")
+     "This package provides a lightweight, dependency-free data engine for R that
+provides a grammar for tabular and time-series manipulation.  Built entirely on
+Base R, m61r offers a fluent, chainable API inspired by modern data tools while
+prioritizing memory efficiency and speed.  It includes optimized versions of
+common data verbs such as filtering, mutation, grouped aggregation, and
+approximate temporal joins, making it an ideal choice for environments where
+external dependencies are restricted or where performance in pure R is required.")
     (license license:expat)))
 
 (define-public r-m3jf

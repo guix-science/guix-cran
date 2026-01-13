@@ -2915,13 +2915,13 @@ aggregated at the country, Admin 1 (states, provinces, or equivalent), and Admin
 (define-public r-dtlg
   (package
     (name "r-dtlg")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtlg" version))
        (sha256
-        (base32 "04jzifssysfb1yjz81faf5p5503zk3f4w86kxldjzz48cwmbp81g"))))
+        (base32 "07yzm9dr1k29gz5mf16ylfz33jrv1lg87w4cn8kx3qc1x6xqx3s7"))))
     (properties `((upstream-name . "dtlg")))
     (build-system r-build-system)
     (arguments
@@ -7207,42 +7207,6 @@ normal distributions from a mixture of normals can be inferred.  Following the
 method described in Escobar (1994) <doi:10.2307/2291223> we use a Dirichlet
 Process Prior (DPP) to describe stochastically our prior assumptions about the
 dimensionality of the data.")
-    (license license:expat)))
-
-(define-public r-dpm
-  (package
-    (name "r-dpm")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dpm" version))
-       (sha256
-        (base32 "1wg492r19rd1hplq6ccngwr0z615m4yx5jln0v01gbz4pm47dpmi"))))
-    (properties `((upstream-name . "dpm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-panelr
-                             r-lavaan
-                             r-jtools
-                             r-formula
-                             r-dplyr
-                             r-crayon))
-    (home-page "https://github.com/jacob-long/dpm")
-    (synopsis "Dynamic Panel Models Fit with Maximum Likelihood")
-    (description
-     "This package implements the dynamic panel models described by Allison, Williams,
-and Moral-Benito (2017 <doi:10.1177/2378023117710578>) in R. This class of
-models uses structural equation modeling to specify dynamic (lagged dependent
-variable) models with fixed effects for panel data.  Additionally, models may
-have predictors that are only weakly exogenous, i.e., are affected by prior
-values of the dependent variable.  Options also allow for random effects,
-dropping the lagged dependent variable, and a number of other specification
-choices.")
     (license license:expat)))
 
 (define-public r-dplyrassist
@@ -12239,13 +12203,13 @@ Brouwer (2020) <doi:10.1002/9781119632757>.")
 (define-public r-ditwah
   (package
     (name "r-ditwah")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ditwah" version))
        (sha256
-        (base32 "1rg90psv804779khv05vz6j7qzzikyggpky1fdq6n9ff4lyxva5q"))))
+        (base32 "073qd7fwgymjkqh5crz3vjmkd9n2zawcjf65jzzib8imcr16j9aw"))))
     (properties `((upstream-name . "Ditwah")))
     (build-system r-build-system)
     (arguments
@@ -28547,38 +28511,6 @@ relationships, create a map of all possible joins, and generate executable plans
 to merge data based on a structured metadata framework.")
     (license license:expat)))
 
-(define-public r-dblr
-  (package
-    (name "r-dblr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dblr" version))
-       (sha256
-        (base32 "0wzmhmp706mw0pkh81nsb7qzclwyhm6f2mjvpvz043ng5xrxwvvw"))))
-    (properties `((upstream-name . "dblr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost r-metrics r-data-table r-catencoders))
-    (home-page "https://cran.r-project.org/package=dblr")
-    (synopsis "Discrete Boosting Logistic Regression")
-    (description
-     "Trains logistic regression model by discretizing continuous variables via
-gradient boosting approach.  The proposed method tries to achieve a tradeoff
-between interpretation and prediction accuracy for logistic regression by
-discretizing the continuous variables.  The variable binning is accomplished in
-a supervised fashion.  The model trained by this package is still a single
-logistic regression model, but not a sequence of logistic regression models.
-The fitted model object returned from the model training consists of two tables.
- One table is used to give the boundaries of bins for each continuous variable
-as well as the corresponding coefficients, and the other one is used for
-discrete variables.  This package can also be used for binning continuous
-variables for other statistical analysis.")
-    (license license:gpl3)))
-
 (define-public r-dblockmodeling
   (package
     (name "r-dblockmodeling")
@@ -28849,13 +28781,13 @@ competitor to the db distribution.")
 (define-public r-dbcvindex
   (package
     (name "r-dbcvindex")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DBCVindex" version))
        (sha256
-        (base32 "1fx6p406rcpp9r2jklla8vzxfaif21cpdvqshnb022fglhqcqb9f"))))
+        (base32 "0qf20nkgmiq802s6ipjjf1qsrwg2azg14rdqprvajm7r7lzhipfc"))))
     (properties `((upstream-name . "DBCVindex")))
     (build-system r-build-system)
     (arguments

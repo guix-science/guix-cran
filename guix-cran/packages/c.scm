@@ -8267,6 +8267,43 @@ filters the COREs with lowest order which does not pass the threshold considered
 in the approach.")
     (license license:gpl3+)))
 
+(define-public r-cre-dcf
+  (package
+    (name "r-cre-dcf")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cre.dcf" version))
+       (sha256
+        (base32 "1b6bb7rj3j6ypr781nsglkn7daa6qd6nk1n3mqjim21gbigzn68f"))))
+    (properties `((upstream-name . "cre.dcf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tibble
+                             r-purrr
+                             r-magrittr
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cre.dcf")
+    (synopsis "Discounted Cash Flow Tools for Commercial Real Estate")
+    (description
+     "This package provides R utilities to build unlevered and levered discounted cash
+flow (DCF) tables for commercial real estate (CRE) assets.  Functions generate
+bullet and amortising debt schedules, compute credit metrics such as debt
+coverage ratios (DCR), debt service coverage ratios (DSCR), interest coverage
+ratios, debt yield ratios, and forward loan-to-value ratios (LTV) based on net
+operating income (NOI).  The toolkit evaluates refinancing feasibility under
+alternative market scenarios and supports end-to-end scenario execution from a
+YAML (YAML Ain't Markup Language) configuration file parsed with yaml'.
+Includes helpers for sensitivity analysis, covenant diagnostics, and
+reproducible vignettes.")
+    (license license:expat)))
+
 (define-public r-cre
   (package
     (name "r-cre")
@@ -13837,6 +13874,36 @@ package may benefit some people in understanding and critically evaluating what
 Pearson's correlation coefficient summarizes in a single number, i.e., to what
 degree and why Pearson's correlation coefficient may (or may not) be warranted
 as a measure of association.")
+    (license license:expat)))
+
+(define-public r-correctref
+  (package
+    (name "r-correctref")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "correctref" version))
+       (sha256
+        (base32 "19rk4c2xbdilrqkxfgdgbmjizb7bl059dxnfbc406xj246qkr854"))))
+    (properties `((upstream-name . "correctref")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-officer r-jsonlite r-httr))
+    (home-page "https://cran.r-project.org/package=correctref")
+    (synopsis "Correct and Standardize References for Scientific Manuscripts")
+    (description
+     "Reads Word documents containing incomplete bibliographic references and produces
+an updated file with standardized and complete references.  The package provides
+functions to retrieve missing authors, titles, journal details, volume, issue,
+and page numbers.  Digital object identifiers (DOIs) are retrieved using the
+@code{CrossRef} application programming interface (API)
+<https://api.crossref.org>, and references are formatted following DOI-based
+citation standards as described by Paskin (2010) <doi:10.1000/182> and the
+citation.doi.org service <https://citation.doi.org>.  The package is intended to
+simplify reference preparation for scientific journal submissions.")
     (license license:expat)))
 
 (define-public r-correctr
@@ -30684,13 +30751,13 @@ cluster bootstrap.")
 (define-public r-clusterability
   (package
     (name "r-clusterability")
-    (version "0.2.1.0")
+    (version "0.2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterability" version))
        (sha256
-        (base32 "07sf6y3zkvalyi7g71q9mp0vi9wn41fg2bi5yf64f5vhxhhp7jvd"))))
+        (base32 "0w4dbhqbxzfg0ywcjip270yls6hysrc6jm12z0wf2qgp4c525l9y"))))
     (properties `((upstream-name . "clusterability")))
     (build-system r-build-system)
     (arguments
@@ -41985,13 +42052,13 @@ based on the counterfactual query and the causal diagram.  See Tikka, S. (2023)
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffr" version))
        (sha256
-        (base32 "15dgv56v024rvnfa3xrb6wcmilc4rv363z7fb52jm04n7b8r2npj"))))
+        (base32 "1axcqd2f5ra3yjdfv9k6y69pa22r4a8qn57x66dmihkfgx9swf31"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (arguments

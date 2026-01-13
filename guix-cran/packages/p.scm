@@ -5527,6 +5527,41 @@ load (AL).  Provides a wrapper to calculate the @code{MetSSS} on new data using
 the Healthy Hearts formula.")
     (license license:lgpl3)))
 
+(define-public r-psc
+  (package
+    (name "r-psc")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psc" version))
+       (sha256
+        (base32 "0xvby0clmyv8yjrvmz6s29rrbna09xlvrnmabz763106sj4qkdg1"))))
+    (properties `((upstream-name . "psc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-rcolorbrewer
+                             r-posterior
+                             r-mvtnorm
+                             r-lme4
+                             r-gtsummary
+                             r-ggpubr
+                             r-ggplot2
+                             r-flexsurv
+                             r-enrichwith))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richjjackson/psc/")
+    (synopsis "Personalised Synthetic Controls")
+    (description
+     "Allows the comparison of data cohorts (DC) against a Counter Factual Model (CFM)
+and measures the difference in terms of an efficacy parameter.  Allows the
+application of Personalised Synthetic Controls.")
+    (license license:gpl3)))
+
 (define-public r-psborrow2
   (package
     (name "r-psborrow2")
@@ -14615,13 +14650,13 @@ classification.")
 (define-public r-ppendemic
   (package
     (name "r-ppendemic")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppendemic" version))
        (sha256
-        (base32 "1j04rrwsnw3slb3nzfrw52ixz0kjyvlf39mwhwzyd0c6vsia2lss"))))
+        (base32 "1681ln8sl306iy6jsig7lllpg0cfggdmzxc7xfrknzmx5cz0mvck"))))
     (properties `((upstream-name . "ppendemic")))
     (build-system r-build-system)
     (arguments
@@ -14636,6 +14671,7 @@ classification.")
                              r-memoise
                              r-fuzzyjoin
                              r-dplyr
+                             r-cli
                              r-assertthat))
     (home-page "https://github.com/PaulESantos/ppendemic/")
     (synopsis "Glimpse at the Diversity of Peru's Endemic Plants")
@@ -17334,13 +17370,13 @@ included for reference and examples.")
 (define-public r-poputils
   (package
     (name "r-poputils")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poputils" version))
        (sha256
-        (base32 "0c7gxsx2wb3pvf582ik33y1sjyzba7g17l8iy5zybsk56ghyn4fk"))))
+        (base32 "1hr5pb4rsa3adawv4pf7jl3q0ygzb8jldmz9dj9raaakmqh0xk6h"))))
     (properties `((upstream-name . "poputils")))
     (build-system r-build-system)
     (arguments
@@ -17663,6 +17699,45 @@ mortality rates and net international migration flows, at the national level.")
      "This package provides functions that facilitate the elaboration of population
 pyramids.")
     (license license:gpl3)))
+
+(define-public r-poppsiseqr
+  (package
+    (name "r-poppsiseqr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PopPsiSeqR" version))
+       (sha256
+        (base32 "0f4f28l2i1l4mzkgjxfs7g24k0apvksl854hddzrg9b2qv00il8k"))))
+    (properties `((upstream-name . "PopPsiSeqR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rlang
+                             r-patchwork
+                             r-magrittr
+                             r-ggplot2
+                             r-ggbio
+                             r-genomicranges
+                             r-dplyr
+                             r-devtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/csoeder/PopPsiSeq")
+    (synopsis "Process and Visualize Evolve & Resequence Experiments")
+    (description
+     "Handle data from evolve and resequence experiments.  Measured allele frequencies
+(e.g., from variants called from high-throughput sequencing data) are compared
+using an update of the @code{PsiSeq} algorithm (Earley, Eric and Corbin Jones
+(2011) <doi:10.1534/genetics.111.129445>).  Functions for saving and loading
+important files are also included, as well as functions for basic data
+visualization.")
+    (license license:expat)))
 
 (define-public r-poppr
   (package
@@ -31112,13 +31187,13 @@ Life Sciences, Vienna, Austria.")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1bw0hz0d76yygsrgir7cdgys3mgvcddaznl8pygc2rw3jq0n8klw"))))
+        (base32 "1dwrx2am8b17v9nyfs5xg3jw9v7gblg54ip6ixrzavh70fhjhyyp"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
@@ -42976,40 +43051,6 @@ information.  The plotly.js dependency is quite heavy and therefore is
 outsourced into a separate package.")
     (license license:expat)))
 
-(define-public r-parbayesianoptimization
-  (package
-    (name "r-parbayesianoptimization")
-    (version "1.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ParBayesianOptimization" version))
-       (sha256
-        (base32 "0g5i4908fl2j1a4jfsg1xs4q92mc29zp8dyf52a370ki2512w6h1"))))
-    (properties `((upstream-name . "ParBayesianOptimization")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lhs
-                             r-ggpubr
-                             r-ggplot2
-                             r-foreach
-                             r-dicekriging
-                             r-dbscan
-                             r-data-table
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AnotherSamWilson/ParBayesianOptimization")
-    (synopsis "Parallel Bayesian Optimization of Hyperparameters")
-    (description
-     "Fast, flexible framework for implementing Bayesian optimization of model
-hyperparameters according to the methods described in Snoek et al.
-<@code{arXiv:1206.2944>}.  The package allows the user to run scoring function
-in parallel, save intermediary results, and tweak other aspects of the process
-to fully utilize the computing resources available to the user.")
-    (license license:gpl2)))
-
 (define-public r-paran
   (package
     (name "r-paran")
@@ -44090,54 +44131,6 @@ log-normal form.  Model details are provided in Bailey and Peng (2025)
 <doi:10.2139/ssrn.5475626> and Peng and Van den Bulte (2024)
 <doi:10.1287/mnsc.2019.01897>.")
     (license license:gpl3+)))
-
-(define-public r-panelr
-  (package
-    (name "r-panelr")
-    (version "0.7.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "panelr" version))
-       (sha256
-        (base32 "0vq7f91lqpd0n507lswgj7zpp56dzps3zcvbgsp2ivaj3c9vy0s5"))))
-    (properties `((upstream-name . "panelr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lmertest
-                             r-lme4
-                             r-jtools
-                             r-ggplot2
-                             r-formula
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://panelr.jacob-long.com")
-    (synopsis
-     "Regression Models and Utilities for Repeated Measures and Panel Data")
-    (description
-     "This package provides an object type and associated tools for storing and
-wrangling panel data.  Implements several methods for creating regression models
-that take advantage of the unique aspects of panel data.  Among other
-capabilities, automates the \"within-between\" (also known as \"between-within\" and
-\"hybrid\") panel regression specification that combines the desirable aspects of
-both fixed effects and random effects econometric models and fits them as
-multilevel models (Allison, 2009 <doi:10.4135/9781412993869.d33>; Bell & Jones,
-2015 <doi:10.1017/psrm.2014.7>).  These models can also be estimated via
-generalized estimating equations (GEE; @code{McNeish}, 2019
-<doi:10.1080/00273171.2019.1602504>) and Bayesian estimation is (optionally)
-supported via Stan'.  Supports estimation of asymmetric effects models via first
-differences (Allison, 2019 <doi:10.1177/2378023119826441>) as well as a
-generalized linear model extension thereof using GEE.")
-    (license license:expat)))
 
 (define-public r-panelpomp
   (package

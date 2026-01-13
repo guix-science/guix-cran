@@ -3661,41 +3661,6 @@ a \"collinearity biplot\" of the smallest dimensions of predictor space, where
 collinearity is most apparent.")
     (license license:gpl3+)))
 
-(define-public r-visaotr
-  (package
-    (name "r-visaotr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "visaOTR" version))
-       (sha256
-        (base32 "12ix8ljbykwf493hw6npli2ad665jip2mzb8p25j5v10f8ij88qm"))))
-    (properties `((upstream-name . "visaOTR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-rglpk
-                             r-randomforest
-                             r-mboost
-                             r-matrix
-                             r-kernlab
-                             r-e1071))
-    (home-page "https://cran.r-project.org/package=visaOTR")
-    (synopsis
-     "Valid Improved Sparsity A-Learning for Optimal Treatment Decision")
-    (description
-     "Valid Improved Sparsity A-Learning (VISA) provides a new method for selecting
-important variables involved in optimal treatment regime from a multiply robust
-perspective.  The VISA estimator achieves its success by borrowing the strengths
-of both model averaging (ARM, Yuhong Yang, 2001)
-<doi:10.1198/016214501753168262> and variable selection (PAL, Chengchun Shi,
-Ailin Fan, Rui Song and Wenbin Lu, 2018) <doi:10.1214/17-AOS1570>.  The package
-is an implementation of Zishu Zhan and Jingxiao Zhang. (2022+).")
-    (license license:gpl3)))
-
 (define-public r-visae
   (package
     (name "r-visae")
@@ -4414,6 +4379,40 @@ algorithm-agnostic variable importance measures in high and low dimensions,
 using flexible estimators of the underlying regression functions.  For more
 information about the methods, please see Williamson et al. (Biometrics, 2020),
 Williamson et al. (JASA, 2021), and Williamson and Feng (ICML, 2020).")
+    (license license:expat)))
+
+(define-public r-vimixr
+  (package
+    (name "r-vimixr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vimixr" version))
+       (sha256
+        (base32 "1m680phqpyrziv5gnznb4a4vmx5w5hql033z8njr337bvmqx3cyr"))))
+    (properties `((upstream-name . "vimixr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rfast
+                             r-rcppeigen
+                             r-rcpp
+                             r-patchwork
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/annesh07/vimixr")
+    (synopsis
+     "Collapsed Variational Inference for Dirichlet Process (DP) Mixture Model")
+    (description
+     "Collapsed Variational Inference for a Dirichlet Process (DP) mixture model with
+unknown covariance matrix structure and DP concentration parameter.  It enables
+efficient clustering of high-dimensional data with significantly improved
+computational speed than traditional MCMC methods.  The package incorporates 8
+parameterisations and corresponding prior choices for the unknown covariance
+matrix, from which the user can choose and apply accordingly.")
     (license license:expat)))
 
 (define-public r-vimean
@@ -7820,13 +7819,13 @@ subscription.  You can find the full API documentation at
 (define-public r-vasicekreg
   (package
     (name "r-vasicekreg")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vasicekreg" version))
        (sha256
-        (base32 "0hlac3p6mm7x88wdlqc93byx1s2a287kvhwzhz01pz4anap30683"))))
+        (base32 "0p70qlhdx628cp2419jk0pachda2npcij3av3asyh46jg1s3jy2w"))))
     (properties `((upstream-name . "vasicekreg")))
     (build-system r-build-system)
     (arguments
@@ -7836,12 +7835,13 @@ subscription.  You can find the full API documentation at
     (home-page "https://cran.r-project.org/package=vasicekreg")
     (synopsis "Regression Modeling Using Vasicek Distribution")
     (description
-     "Vasicek density, cumulative distribution, quantile functions and random deviate
-generation of Vasicek distribution.  In addition, there are two functions for
-fitting the Generalized Additive Models for Location Scale and Shape introduced
-by Rigby and Stasinopoulos (2005, <doi:10.1111/j.1467-9876.2005.00510.x>).  Some
-functions are written in C++ using Rcpp', developed by Eddelbuettel and Francois
-(2011, <doi:10.18637/jss.v040.i08>).")
+     "This package provides probability density, cumulative distribution, quantile,
+and random number generation functions for the Vasicek distribution.  In
+addition, two functions are available for fitting Generalized Additive Models
+for Location, Scale and Shape introduced by Rigby and Stasinopoulos (2005,
+<doi:10.1111/j.1467-9876.2005.00510.x>).  Some functions are written in C++
+using Rcpp', developed by Eddelbuettel and Francois (2011,
+<doi:10.18637/jss.v040.i08>).")
     (license license:expat)))
 
 (define-public r-vasicek

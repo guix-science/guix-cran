@@ -1268,13 +1268,13 @@ of the corresponding likelihood (see Albert, C., Vogel, S. and Ashauer, R.
 (define-public r-gutenbergr
   (package
     (name "r-gutenbergr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gutenbergr" version))
        (sha256
-        (base32 "0zr46d6g8gqrwl5f20pjkk9lqna0p4qc1ixwcc4xi9c60hpr6sm2"))))
+        (base32 "16xlvxbz0qac7d7jbraqqwgik68rlmhf9k9dga51r7svy172c00c"))))
     (properties `((upstream-name . "gutenbergr")))
     (build-system r-build-system)
     (arguments
@@ -7158,13 +7158,13 @@ without access to Hugin to use code written to use RHugin'.")
 (define-public r-grattaninflators
   (package
     (name "r-grattaninflators")
-    (version "0.5.4")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattanInflators" version))
        (sha256
-        (base32 "1mls2pnnds5c2ys5wsiki0xrwcn9l4bfpl785817cbfw61rwwi3h"))))
+        (base32 "0vl8k6zl4c5zxv76s6kw2jv0qlafpwvrsk48m753gy0y7sd994lw"))))
     (properties `((upstream-name . "grattanInflators")))
     (build-system r-build-system)
     (arguments
@@ -7182,13 +7182,13 @@ about date input quality, performance, or the ABS catalogue.")
 (define-public r-grattan
   (package
     (name "r-grattan")
-    (version "2025.5.0")
+    (version "2026.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattan" version))
        (sha256
-        (base32 "1wdg4cakg6qxhc7dgnny37nq0dbisk4w9pgms6l9hx7am7h1w3a8"))))
+        (base32 "0g9i4zabsc42f6477qai8c3c82vj167zm48mkz34l3brc31spr26"))))
     (properties `((upstream-name . "grattan")))
     (build-system r-build-system)
     (arguments
@@ -8194,6 +8194,33 @@ methods should be quite generally helpful for work-a-day applications of all
 kinds, as they can help to identify outliers, clusters or patterns, as well as
 highlight the role of non-linear transformations of data.")
     (license license:gpl2+)))
+
+(define-public r-grangersearch
+  (package
+    (name "r-grangersearch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "grangersearch" version))
+       (sha256
+        (base32 "07xbig66h9ldz4iqjng296wmp54s627s3309gsxbqhp45khrswnj"))))
+    (properties `((upstream-name . "grangersearch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vars r-tibble r-rlang r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nkorf/grangersearch")
+    (synopsis "Granger Causality Testing for Time Series")
+    (description
+     "This package performs Granger causality tests on pairs of time series to
+determine causal relationships.  Uses Vector Autoregressive (VAR) models to test
+whether one time series helps predict another beyond what the series own past
+values provide.  Returns structured results including p-values, test statistics,
+and causality conclusions for both directions.")
+    (license license:expat)))
 
 (define-public r-grangers
   (package
@@ -9859,47 +9886,6 @@ likelihood estimation is used for parameter selection.  The big advantage of the
 method called GPCMlasso is that several variables can be treated simultaneously
 and that both continuous and categorical variables can be used to detect DIF.")
     (license license:gpl2+)))
-
-(define-public r-gpcerf
-  (package
-    (name "r-gpcerf")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPCERF" version))
-       (sha256
-        (base32 "0nzfd0sz73sb4903vpgix9m767np1prcmi3m1y3pq6dzmxmqzh6a"))))
-    (properties `((upstream-name . "GPCERF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-wcorr
-                             r-superlearner
-                             r-spatstat-geom
-                             r-rlang
-                             r-rfast
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-logger
-                             r-ggplot2
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/NSAPH-Software/GPCERF")
-    (synopsis
-     "Gaussian Processes for Estimating Causal Exposure Response Curves")
-    (description
-     "This package provides a non-parametric Bayesian framework based on Gaussian
-process priors for estimating causal effects of a continuous exposure and
-detecting change points in the causal exposure response curves using
-observational data.  Ren, B., Wu, X., Braun, D., Pillai, N., & Dominici,
-F.(2021). \"Bayesian modeling for exposure response curve via gaussian processes:
-Causal effects of exposure to air pollution on health outcomes.\" @code{arXiv}
-preprint <doi:10.48550/@code{arXiv.2105.03454>}.")
-    (license license:gpl3+)))
 
 (define-public r-gpbstat
   (package
@@ -19476,6 +19462,35 @@ from matrix format (one Monte Carlo point per row) to the tidy format required
 by the plotting and animating functions.")
     (license license:expat)))
 
+(define-public r-ggskewboxplots
+  (package
+    (name "r-ggskewboxplots")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggskewboxplots" version))
+       (sha256
+        (base32 "1nk3pli5ldcvd7ld7nd7m3c7h7pf2rfdgynnr12vs7gid8clir6p"))))
+    (properties `((upstream-name . "ggskewboxplots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggskewboxplots")
+    (synopsis "Skew Boxplot Geoms for 'ggplot2'")
+    (description
+     "This package provides ggplot2 extensions for creating skewed boxplots using
+several statistical methods (Kimber, 1990 <doi:10.2307/2347808>; Hubert and
+Vandervieren, 2008 <doi:10.1016/j.csda.2007.11.008>; Adil et al., 2015
+<doi:10.18187/pjsor.v11i1.500>; Babura et al., 2017 <doi:10.1063/1.4982872>;
+Walker et al., 2018 <doi:10.1080/00031305.2018.1448891>).  The package
+implements custom statistical transformations and geometries to visualize data
+distributions with an emphasis on skewness.")
+    (license license:gpl3+)))
+
 (define-public r-ggshadow
   (package
     (name "r-ggshadow")
@@ -26518,13 +26533,13 @@ prediction uncertainty.")
 (define-public r-geosapi
   (package
     (name "r-geosapi")
-    (version "0.7-2")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosapi" version))
        (sha256
-        (base32 "13n4b73y2b89204441ww28l3magiwsjmrxnb7kg6x8z5clf8hpji"))))
+        (base32 "1g5s6pclxawa1x4csfsb6ipzv8vqdj86f1i570h9yb0q7kbmirbg"))))
     (properties `((upstream-name . "geosapi")))
     (build-system r-build-system)
     (arguments
@@ -31205,13 +31220,13 @@ which low, medium, and high thresholds are user-defined.")
 (define-public r-gencodymo2
   (package
     (name "r-gencodymo2")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GencoDymo2" version))
        (sha256
-        (base32 "08f6jmx6yjczw2i2gg0z1m88p9wwbbpyi457a3vsa5fddpma35mw"))))
+        (base32 "09q6fd9dgg3xc1wwbriz1i2kvp7bvl2py80dd6nmj32d03abq9wz"))))
     (properties `((upstream-name . "GencoDymo2")))
     (build-system r-build-system)
     (arguments
@@ -37105,31 +37120,6 @@ for the nonorthogonal cases and generalized linear models.  These works are in
 part supported by the National Natural Foundation of China (No.12171076).")
     (license license:gpl2)))
 
-(define-public r-gafit
-  (package
-    (name "r-gafit")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gafit" version))
-       (sha256
-        (base32 "160z3cv22prf7118447dla9g1gimwkfad8zdil3fg8n4l22rk51a"))))
-    (properties `((upstream-name . "gafit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://lnx-bsp.net/")
-    (synopsis "Genetic Algorithm for Curve Fitting")
-    (description
-     "This package provides a group of sample points are evaluated against a
-user-defined expression, the sample points are lists of parameters with values
-that may be substituted into that expression.  The genetic algorithm attempts to
-make the result of the expression as low as possible (usually this would be the
-sum of residuals squared).")
-    (license license:gpl2)))
-
 (define-public r-gadjid
   (package
     (name "r-gadjid")
@@ -37160,13 +37150,13 @@ Weichwald (2024) <doi:10.48550/@code{arXiv.2402.08616>}.")
 (define-public r-gadget3
   (package
     (name "r-gadget3")
-    (version "0.14-0")
+    (version "0.15-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gadget3" version))
        (sha256
-        (base32 "0ap3dki2vpvypjbsapm4311ghjbh164q20jbqn63wr044lrxzkx8"))))
+        (base32 "0y1s882a14jgb8d656a45xchvhqgbcy1zi2as54xz03zv6vh0mzb"))))
     (properties `((upstream-name . "gadget3")))
     (build-system r-build-system)
     (arguments
@@ -37185,8 +37175,8 @@ in TMB', but can be extended beyond gadget2's capabilities.  Kasper Kristensen,
 Anders Nielsen, Casper W. Berg, Hans Skaug, Bradley M. Bell (2016)
 <doi:10.18637/jss.v070.i05> \"TMB: Automatic Differentiation and Laplace
 Approximation.\".  Begley, J., & Howell, D. (2004)
-<https://core.ac.uk/download/pdf/225936648.pdf> \"An overview of Gadget, the
-globally applicable area-disaggregated general ecosystem toolbox.  ICES.\".")
+<https://files01.core.ac.uk/download/pdf/225936648.pdf> \"An overview of Gadget,
+the globally applicable area-disaggregated general ecosystem toolbox.  ICES.\".")
     (license license:gpl2)))
 
 (define-public r-gadag

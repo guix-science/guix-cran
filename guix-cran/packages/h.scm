@@ -8689,13 +8689,13 @@ variance tables and p-values from several other tests of non-additivity.")
 (define-public r-hicream
   (package
     (name "r-hicream")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicream" version))
        (sha256
-        (base32 "0vk1lrclachbdwp9rn41h0dh6bbjy83c7sqnmdriq2lql52wc2s9"))))
+        (base32 "17z9bqqvldvryj3zf06mpk1pk14f7d5k67y784xlcvany4zlks0j"))))
     (properties `((upstream-name . "hicream")))
     (build-system r-build-system)
     (arguments
@@ -10266,13 +10266,13 @@ size estimation.")
 (define-public r-hesim
   (package
     (name "r-hesim")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hesim" version))
        (sha256
-        (base32 "1gyzjzz3sldcx7s0dh39xvng9vsm5his9lzjmrvk0yv6s94y815n"))))
+        (base32 "1sczk79kqcc2nlqddpbamnf44cnx81jz7p40yy5rhfl80n9izz1w"))))
     (properties `((upstream-name . "hesim")))
     (build-system r-build-system)
     (arguments

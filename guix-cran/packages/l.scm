@@ -3466,13 +3466,13 @@ functions for estimating linear and geometric morphometric data.")
 (define-public r-lorme
   (package
     (name "r-lorme")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorMe" version))
        (sha256
-        (base32 "0ndikl3x32lhr16p0i1qvsvzya91bvd9d5yglg7dnij4mv0qpw67"))))
+        (base32 "1wgrgyca57f776rvpg9wiscwv73gl5azdydcibi627f12zdxsb4a"))))
     (properties `((upstream-name . "LorMe")))
     (build-system r-build-system)
     (arguments
@@ -7400,13 +7400,13 @@ based on the robust bounded-influence test by Heritier and Ronchetti (1994)
 (define-public r-lmsubsets
   (package
     (name "r-lmsubsets")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmSubsets" version))
        (sha256
-        (base32 "1afdpcp3qiiprzc47cbckf49jd3f8ip81441ghgx0kfx54d1m305"))))
+        (base32 "1v0lprzhibbcsxagbhaf09j51kkz89xjmicmnf6kix5p9x5p8psv"))))
     (properties `((upstream-name . "lmSubsets")))
     (build-system r-build-system)
     (arguments
@@ -8503,13 +8503,13 @@ median of the distribution.")
 (define-public r-llmtranslate
   (package
     (name "r-llmtranslate")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMTranslate" version))
        (sha256
-        (base32 "1ymq7fapn6v5k1q35liaiv6dp4jiags21r3y21dgsj255nxb0kad"))))
+        (base32 "1bh9hy77ig2lba2qlyki1djgzqwmi7p9sn3jsrpap6dfzklnb21n"))))
     (properties `((upstream-name . "LLMTranslate")))
     (build-system r-build-system)
     (arguments
@@ -8521,12 +8521,13 @@ median of the distribution.")
     (description
      "This package provides a shiny application to automate forward and back survey
 translation with optional reconciliation using large language models (LLMs).
-Supports @code{OpenAI} (GPT), Google Gemini, and Anthropic Claude models.  It
-follows the TRAPD (Translation, Review, Adjudication, Pretesting, Documentation)
-framework and ISPOR (International Society for Pharmacoeconomics and Outcomes
-Research) recommendations.  See Harkness et al. (2010)
-<doi:10.1002/9780470609927.ch7> and Wild et al. (2005)
-<doi:10.1111/j.1524-4733.2005.04054.x>.")
+Supports both item-by-item and batch translation modes for optimal performance
+and context-aware translations.  Handles multi-sheet Excel files and supports
+@code{OpenAI} (GPT), Google Gemini, and Anthropic Claude models.  Follows the
+TRAPD (Translation, Review, Adjudication, Pretesting, Documentation) framework
+and ISPOR (International Society for Pharmacoeconomics and Outcomes Research)
+recommendations.  See Harkness et al. (2010) <doi:10.1002/9780470609927.ch7> and
+Wild et al. (2005) <doi:10.1111/j.1524-4733.2005.04054.x>.")
     (license license:expat)))
 
 (define-public r-llmr
@@ -16744,13 +16745,13 @@ package also includes visualization tools for exploring discovered connections."
 (define-public r-lbbnn
   (package
     (name "r-lbbnn")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBBNN" version))
        (sha256
-        (base32 "1x5f3x0yx5n049n6j6fszyp3g40cki8k2kacfv6bi2m37ghqdwdh"))))
+        (base32 "18i0703b4smgz7clgn3zkkri539pcxddar2b4ljv4cqkyf76vnrv"))))
     (properties `((upstream-name . "LBBNN")))
     (build-system r-build-system)
     (arguments
@@ -18948,13 +18949,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "1x5pjfpg6lndrvmgi829dzndilnllfhabypwp5pb9knp9nj7h5g8"))))
+        (base32 "1bijix075978mj72nis04z56814v39rxirfi094fahjqh35jjfnj"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments

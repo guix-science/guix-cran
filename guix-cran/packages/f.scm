@@ -1258,13 +1258,13 @@ Mukherjee, G. (2017) <doi:10.1111/rssb.12226> and T.Banerjee et al. (2017)
 (define-public r-fusionchartsr
   (package
     (name "r-fusionchartsr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusionchartsR" version))
        (sha256
-        (base32 "1sis1wl4dpag9q4f206jcc478x5995y0wglzpfy8i0k1sy3yjw1c"))))
+        (base32 "0ki387jm10aysvyhvdssdqjs73cv0kabf7bb7767yj1pnrlvfzi9"))))
     (properties `((upstream-name . "fusionchartsR")))
     (build-system r-build-system)
     (arguments
@@ -9037,46 +9037,6 @@ functions to compute autocovariances for AR(p) processes, to simulate
 <@code{arXiv:1611.04460>}.")
     (license license:gpl2+)))
 
-(define-public r-forecastml
-  (package
-    (name "r-forecastml")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forecastML" version))
-       (sha256
-        (base32 "01lqbmdmd6sk5xka19i9d466bzihxgp652v0kr13r82b591f67vq"))))
-    (properties `((upstream-name . "forecastML")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-ggplot2
-                             r-future-apply
-                             r-dtplyr
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nredell/forecastML/")
-    (synopsis "Time Series Forecasting with Machine Learning Methods")
-    (description
-     "The purpose of @code{forecastML} is to simplify the process of multi-step-ahead
-forecasting with standard machine learning algorithms. @code{forecastML}
-supports lagged, dynamic, static, and grouping features for modeling single and
-grouped numeric or factor/sequence time series.  In addition, simple wrapper
-functions are used to support model-building with most R packages.  This
-approach to forecasting is inspired by Bergmeir, Hyndman, and Koo's (2018) paper
-\"A note on the validity of cross-validation for evaluating autoregressive time
-series prediction\" <doi:10.1016/j.csda.2017.11.003>.")
-    (license license:expat)))
-
 (define-public r-forecastlsw
   (package
     (name "r-forecastlsw")
@@ -10860,13 +10820,13 @@ as asymmetrical factorial designs.")
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2025.12")
+    (version "2026.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "19gd4hans5jpw1p7fhwl707zhy8cklff6n7m3cd3dcsxmjafsimf"))))
+        (base32 "0nsiwfggj350zvfh5bx3ym51rlaik6s7frmwdacqqlspkss8anak"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (arguments
@@ -10891,12 +10851,13 @@ as asymmetrical factorial designs.")
     (synopsis "The Fill-Mask Association Test")
     (description
      "The Fill-Mask Association Test ('FMAT') <doi:10.1037/pspa0000396> is an
-integrative and probability-based method using Masked Language Models to measure
-conceptual associations (e.g., attitudes, biases, stereotypes, social norms,
-cultural values) as propositions in natural language.  Supported language models
-include BERT <doi:10.48550/@code{arXiv.1810.04805>} and its variants available
-at Hugging Face <https://huggingface.co/models?pipeline_tag=fill-mask>.
-Methodological references and installation guidance are provided at
+integrative, probability-based social computing method using Masked Language
+Models to measure conceptual associations (e.g., attitudes, biases, stereotypes,
+social norms, cultural values) as propositional semantic representations in
+natural language.  Supported language models include BERT
+<doi:10.48550/@code{arXiv.1810.04805>} and its variants available at Hugging
+Face <https://huggingface.co/models?pipeline_tag=fill-mask>.  Methodological
+references and installation guidance are provided at
 <https://psychbruce.github.io/FMAT/>.")
     (license license:gpl3)))
 
@@ -17338,13 +17299,13 @@ Service, Forest Inventory and Analysis (FIA) Program.")
 (define-public r-fiery
   (package
     (name "r-fiery")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fiery" version))
        (sha256
-        (base32 "0r44wdvs03kk83698bnbi76jhhf16zbindzq4p999lnx7lbwccas"))))
+        (base32 "0hah8r1jxdc8dbdy3am7simh2xr2cni3r4azw1s5lmp67iky81pi"))))
     (properties `((upstream-name . "fiery")))
     (build-system r-build-system)
     (arguments
@@ -21463,36 +21424,39 @@ p-values.")
 (define-public r-fcar
   (package
     (name "r-fcar")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcaR" version))
        (sha256
-        (base32 "1vrysvdjqs62hx14kq31jmi2r093k5pcjjbrzvvpdmnllcv1s673"))))
+        (base32 "1wdi82s9hhnhsavbia1xa2rvy64mx2dgj5a8fm2xdxdj5dd6jqwh"))))
     (properties `((upstream-name . "fcaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tikzdevice
+    (propagated-inputs (list r-yaml
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-settings
+                             r-rstudioapi
                              r-rlang
                              r-registry
                              r-rcpp
                              r-r6
                              r-purrr
-                             r-posetr
                              r-matrix
                              r-magrittr
+                             r-igraph
                              r-glue
+                             r-ggraph
                              r-ggplot2
-                             r-fractional
                              r-forcats
-                             r-dplyr))
+                             r-dplyr
+                             r-cli
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Malaga-FCA-group/fcaR")
     (synopsis "Formal Concept Analysis")
@@ -21502,7 +21466,9 @@ in Wille (1982) <doi:10.1007/978-3-642-01815-2_23> and in Ganter and Obiedkov
 (2016) <doi:10.1007/978-3-662-49291-8>.  It provides functions to load and save
 a formal context, extract its concept lattice and implications.  In addition,
 one can use the implications to compute semantic closures of fuzzy sets and,
-thus, build recommendation systems.")
+thus, build recommendation systems.  Matrix factorization is provided by the
+@code{GreConD+} algorithm (Belohlavek and Trneckova, 2024
+<doi:10.1109/TFUZZ.2023.3330760>).")
     (license license:gpl3)))
 
 (define-public r-fcall

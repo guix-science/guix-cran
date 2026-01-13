@@ -11706,6 +11706,38 @@ a web-based point and click user interface where analysis pipelines are
 decomposed into re-usable and parameterizable blocks.")
     (license license:gpl3+)))
 
+(define-public r-blockr
+  (package
+    (name "r-blockr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockr" version))
+       (sha256
+        (base32 "09ddjv6dyickxdlyn1r36lgnrwvrzc2hzrgdr7pbyrlqashipxwr"))))
+    (properties `((upstream-name . "blockr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-cli
+                             r-blockr-io
+                             r-blockr-ggplot
+                             r-blockr-dplyr
+                             r-blockr-dock
+                             r-blockr-dag
+                             r-blockr-core))
+    (native-inputs (list r-quarto))
+    (home-page "https://bristolmyerssquibb.github.io/blockr/")
+    (synopsis "Block-Based Framework for Data Manipulation and Visualization")
+    (description
+     "This package provides a framework for building interactive dashboards and
+document-based reports.  Underlying data manipulation and visualization is
+possible using a web-based point and click user interface.")
+    (license license:gpl3+)))
+
 (define-public r-blockmodels
   (package
     (name "r-blockmodels")
@@ -16443,13 +16475,13 @@ generation of features used in machine learning algorithms.")
 (define-public r-binpackr
   (package
     (name "r-binpackr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binpackr" version))
        (sha256
-        (base32 "1kc5cm8apijgxwncpj3vflpm2alxlyz7nj2ifa09rh4n36c17hzm"))))
+        (base32 "0sdwhkbkkp34b3s3iwxrjcrh63g5nc67nv9ys8f7yl045w2aykz7"))))
     (properties `((upstream-name . "binpackr")))
     (build-system r-build-system)
     (arguments
@@ -23712,6 +23744,35 @@ about Bi-cross-validation, see Owen & Perry's 2009 @code{AoAS} article (at
 <@code{arXiv:0909.3052>}).")
     (license license:bsd-3)))
 
+(define-public r-bcsreg
+  (package
+    (name "r-bcsreg")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BCSreg" version))
+       (sha256
+        (base32 "1kp2xrpmlgbqq4nvg2pzdr2b5391mhr0cvjx69c4bbv1cfkp0sgq"))))
+    (properties `((upstream-name . "BCSreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-generalizedhyperbolic r-gamlss-dist r-formula
+                             r-envstats r-distr))
+    (home-page "https://github.com/ffqueiroz/BCSreg")
+    (synopsis "Box-Cox Symmetric Regression for Non-Negative Data")
+    (description
+     "This package provides a collection of tools for regression analysis of
+non-negative data, including strictly positive and zero-inflated observations,
+based on the class of the Box-Cox symmetric (BCS) distributions and its
+zero-adjusted extension.  The BCS distributions are a class of flexible
+probability models capable of describing different levels of skewness and
+tail-heaviness.  The package offers a comprehensive regression modeling
+framework, including estimation and tools for evaluating goodness-of-fit.")
+    (license license:gpl3+)))
+
 (define-public r-bcrypt
   (package
     (name "r-bcrypt")
@@ -24060,6 +24121,37 @@ of a marginal model estimated with generalized estimating equations.  Details
 about the bias formula used are in Lunardon, N., Scharfstein, D. (2017)
 <doi:10.1002/sim.7366>.")
     (license license:gpl2)))
+
+(define-public r-bcfrailphdv
+  (package
+    (name "r-bcfrailphdv")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bcfrailphdv" version))
+       (sha256
+        (base32 "0kailmym9mqrw5csyr3mkjafgqvdl6vcmc79j40r5rbpd0j1scnj"))))
+    (properties `((upstream-name . "bcfrailphdv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-bcfrailph))
+    (home-page "https://cran.r-project.org/package=bcfrailphdv")
+    (synopsis "Bivariate Correlated Frailty Models with Varied Variances")
+    (description
+     "Fit and simulate bivariate correlated frailty models with proportional hazard
+structure.  Frailty distributions, such as gamma and lognormal models are
+supported semiparametric procedures.  Frailty variances of the two subjects can
+be varied or equal.  Details on the models are available in book of Wienke
+(2011,ISBN:978-1-4200-7388-1).  Bivariate gamma fit is obtained using the
+approach given in Kifle et al (2023) <DOI: 10.4310/22-SII738> with
+modifications.  Lognormal fit is based on the approach by Ripatti and Palmgren
+(2000) <doi:10.1111/j.0006-341X.2000.01016.x>.  Frailty distributions, such as
+gamma, inverse gaussian and power variance frailty models are supported for
+parametric approach.")
+    (license license:gpl2+)))
 
 (define-public r-bcfrailph
   (package

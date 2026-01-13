@@ -946,13 +946,13 @@ model can downloaded from <https://github.com/jeroenpullens/NUCOMBog>.")
 (define-public r-nucim
   (package
     (name "r-nucim")
-    (version "1.0.11")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nucim" version))
        (sha256
-        (base32 "12qfs4xd8lnkjhb0gkvxym07rndrwh5idvppj16v78amrk96rj5z"))))
+        (base32 "081z65l1bqsa33aav1in6b1dd7zl6h2ir9g80fl4w5n0m4fgnkyf"))))
     (properties `((upstream-name . "nucim")))
     (build-system r-build-system)
     (arguments
@@ -5946,6 +5946,36 @@ Saez (2022) <doi:10.3390/math10203736> that allow corrupting class labels,
 attributes and both simultaneously.")
     (license license:gpl3+)))
 
+(define-public r-noise
+  (package
+    (name "r-noise")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noise" version))
+       (sha256
+        (base32 "0b3djn63l3ygll1j5n5l71inysbb8xyvfxk8fgszga0y8ldqzh6g"))))
+    (properties `((upstream-name . "noise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-preprocesscore))
+    (home-page "https://cran.r-project.org/package=noise")
+    (synopsis
+     "Estimation of Intrinsic and Extrinsic Noise from Single-Cell Data")
+    (description
+     "This package provides functions to calculate estimates of intrinsic and
+extrinsic noise from the two-reporter single-cell experiment, as in Elowitz, M.
+B., A. J. Levine, E. D. Siggia, and P. S. Swain (2002) Stochastic gene
+expression in a single cell.  Science, 297, 1183-1186.  Functions implement
+multiple estimators developed for unbiasedness or min Mean Squared Error (MSE)
+in Fu, A. Q. and Pachter, L. (2016).  Estimating intrinsic and extrinsic noise
+from single-cell gene expression measurements.  Statistical Applications in
+Genetics and Molecular Biology, 15(6), 447-471.")
+    (license license:gpl2+)))
+
 (define-public r-noia
   (package
     (name "r-noia")
@@ -8201,42 +8231,6 @@ manifested groups, and (4) longitudinal mixture models for scenarios (1) and
 methods implemented are introduced in Jin Liu (2023)
 <@code{arXiv:2302.03237v2>}.")
     (license license:gpl3+)))
-
-(define-public r-nlpred
-  (package
-    (name "r-nlpred")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nlpred" version))
-       (sha256
-        (base32 "05jna8hzd5v36a0dwag6zr8ms1pkryas3qarwb946bkxlslffp27"))))
-    (properties `((upstream-name . "nlpred")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-superlearner
-                             r-rocr
-                             r-rdpack
-                             r-np
-                             r-data-table
-                             r-cvauc
-                             r-bde
-                             r-assertthat))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=nlpred")
-    (synopsis
-     "Estimators of Non-Linear Cross-Validated Risks Optimized for Small Samples")
-    (description
-     "This package provides methods for obtaining improved estimates of non-linear
-cross-validated risks are obtained using targeted minimum loss-based estimation,
-estimating equations, and one-step estimation (Benkeser, Petersen, van der Laan
-(2019), <doi:10.1080/01621459.2019.1668794>).  Cross-validated area under the
-receiver operating characteristics curve (@code{LeDell}, Petersen, van der Laan
-(2015), <doi:10.1214/15-EJS1035>) and other metrics are included.")
-    (license license:expat)))
 
 (define-public r-nlpembeds
   (package

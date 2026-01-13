@@ -2372,20 +2372,19 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
 (define-public r-osdc
   (package
     (name "r-osdc")
-    (version "0.9.17")
+    (version "0.9.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osdc" version))
        (sha256
-        (base32 "0mcylqdjnd4h22bxbz9wc58g7q58k3ag9qac17q572mznh67150f"))))
+        (base32 "1yz6zpq2bdsh36g2cxld195gkr2734s4wbi8kywqp6ya573c41sr"))))
     (properties `((upstream-name . "osdc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
-                             r-rvest
                              r-rlang
                              r-purrr
                              r-lubridate
@@ -9448,6 +9447,45 @@ merge the data themselves.  This package is best suited for users who would like
 to perform analyses with Singapore's spatial data without having to perform
 excessive data cleaning.")
     (license license:expat)))
+
+(define-public r-onemap
+  (package
+    (name "r-onemap")
+    (version "3.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onemap" version))
+       (sha256
+        (base32 "1cwx032lzfd9x2rvmyk2mxw6fw9ws3yfx3kha81f4y6mb60i59sl"))))
+    (properties `((upstream-name . "onemap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr
+                             r-tidyr
+                             r-smacof
+                             r-reshape2
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-princurve
+                             r-plotly
+                             r-htmlwidgets
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-dendextend))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cristianetaniguti/onemap")
+    (synopsis "Construction of Genetic Maps in Experimental Crosses")
+    (description
+     "Analysis of molecular marker data from model and non-model systems.  For the
+later, it allows statistical analysis by simultaneously estimating linkage and
+linkage phases (genetic map construction) according to Wu and colleagues (2002)
+<doi:10.1006/tpbi.2002.1577>.  All analysis are based on multi-point approaches
+using hidden Markov models.")
+    (license license:gpl3)))
 
 (define-public r-onelogin
   (package

@@ -18332,55 +18332,6 @@ be inserted into the output stream.")
 <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
-(define-public r-tikatuwq
-  (package
-    (name "r-tikatuwq")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tikatuwq" version))
-       (sha256
-        (base32 "1182lw6q6jz3xvbrs4n5xy5kbbfgkqbbfn8gc010jbzf2kkw6q9n"))))
-    (properties `((upstream-name . "tikatuwq")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lubridate
-                             r-leaflet
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tikatuwq/tikatuwq")
-    (synopsis
-     "Water Quality Assessment and Environmental Compliance in Brazil")
-    (description
-     "This package provides tools to import, clean, validate, and analyze freshwater
-quality data in Brazil.  Implements water quality indices including the Water
-Quality Index (WQI/IQA), the Trophic State Index (TSI/IET) after Carlson (1977)
-<doi:10.4319/lo.1977.22.2.0361> and Lamparelli (2004)
-<https://www.teses.usp.br/teses/disponiveis/41/41134/tde-20032006-075813/publico/@code{TeseLamparelli2004.pdf>},
-and the National Sanitation Foundation Water Quality Index (NSF WQI)
-<doi:10.1007/s11157-023-09650-7>.  The package also checks compliance with
-Brazilian standard CONAMA Resolution 357/2005
-<https://conama.mma.gov.br/?id=450&option=com_sisconama&task=arquivo.download>
-and generates reproducible reports for routine monitoring workflows.  The
-example dataset (`wq_demo`) is now a real subset from monitoring data (BURANHEM
-river, 2020-2024, 4 points, 20 rows, 14 columns including extra `rio`, `lat`,
-`lon`).  All core examples and vignettes use this realistic sample, improving
-reproducibility and documentation value for users.")
-    (license license:expat)))
-
 (define-public r-tigris
   (package
     (name "r-tigris")
@@ -19707,13 +19658,13 @@ filtering, joining and summarising Earth Engine image collections.")
 (define-public r-tidyredcap
   (package
     (name "r-tidyredcap")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyREDCap" version))
        (sha256
-        (base32 "12h1z0cs2lbni48y3bwgfj3z7wlkl1iid8ayni295fyz5lxa7bgq"))))
+        (base32 "0z9vjrm7rnqp322w1l6pby233rnbfp5b8cg8ywybsh9113r209gf"))))
     (properties `((upstream-name . "tidyREDCap")))
     (build-system r-build-system)
     (arguments
@@ -19733,7 +19684,7 @@ filtering, joining and summarising Earth Engine image collections.")
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://raymondbalise.github.io/tidyREDCap/index.html")
+    (home-page "https://raymondbalise.github.io/tidyREDCap/")
     (synopsis "Helper Functions for Working with 'REDCap' Data")
     (description
      "Helper functions for processing REDCap data in R. REDCap is a web-enabled
@@ -21684,13 +21635,13 @@ knitr'/'markdown'.")
 (define-public r-tidychangepoint
   (package
     (name "r-tidychangepoint")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidychangepoint" version))
        (sha256
-        (base32 "1r7ahkkfwbgsxagyg67bx4b7cfsa94bhcakyygq8mpj0mm2fim4l"))))
+        (base32 "0ncsj9k6lqrf1grh58mcbq03r5n36483g7aqkcmqm8rz1d1sxx59"))))
     (properties `((upstream-name . "tidychangepoint")))
     (build-system r-build-system)
     (arguments
@@ -21703,23 +21654,23 @@ knitr'/'markdown'.")
                              r-tsibble
                              r-tidyr
                              r-tibble
+                             r-strucchange
                              r-stringr
                              r-segmented
                              r-scales
                              r-rlang
                              r-purrr
                              r-prettyunits
-                             r-patchwork
                              r-memoise
                              r-lubridate
                              r-lifecycle
                              r-ggplot2
+                             r-generics
                              r-ga
                              r-dplyr
                              r-cli
                              r-changepointga
-                             r-changepoint
-                             r-broom))
+                             r-changepoint))
     (native-inputs (list r-knitr))
     (home-page "https://beanumber.github.io/tidychangepoint/")
     (synopsis "Tidy Framework for Changepoint Detection Analysis")
@@ -27375,6 +27326,34 @@ serves as an alternative resort to handle tensor only as array class.  Some
 functionalities related to missingness are also supported.")
     (license license:gpl3)))
 
+(define-public r-tensormcmc
+  (package
+    (name "r-tensormcmc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TensorMCMC" version))
+       (sha256
+        (base32 "0avnxcj5cgzncygvlls96i82yqk4vldlg9p4lm5kw2bf3jpwbl0p"))))
+    (properties `((upstream-name . "TensorMCMC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TensorMCMC")
+    (synopsis "Tensor Regression with Stochastic Low-Rank Updates")
+    (description
+     "This package provides methods for low-rank tensor regression with tensor-valued
+predictors and scalar covariates.  Model estimation is performed using
+stochastic optimization with random-walk updates for low-rank factor matrices.
+Computationally intensive components for coefficient estimation and prediction
+are implemented in C++ via Rcpp'.  The package also includes tools for
+cross-validation and prediction error assessment.")
+    (license license:expat)))
+
 (define-public r-tensorflow
   (package
     (name "r-tensorflow")
@@ -27873,13 +27852,13 @@ include the exponential, gamma, generalized gamma, log-normal, and Weibull.")
 (define-public r-templr
   (package
     (name "r-templr")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templr" version))
        (sha256
-        (base32 "01y0shzwskw27kr9jsv4zxxcvczckm36fki55vr4pmif9s8xwyl8"))))
+        (base32 "1ssggyp80fwb9lwrg0v3szxnglyg8ma2cgv758pgjj6gq20dahjv"))))
     (properties `((upstream-name . "templr")))
     (build-system r-build-system)
     (arguments
@@ -31503,13 +31482,13 @@ implementation and the implementation available from IHME.")
 (define-public r-targeted
   (package
     (name "r-targeted")
-    (version "0.7")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "targeted" version))
        (sha256
-        (base32 "129hkz7bn1lqh12657fna2vwaf8arvsmpl9nx1w7fbhsbk0fi29l"))))
+        (base32 "04jdm33anz59rr3vlx24d7awx82g0pms8cka7drlazfn77kqzrb2"))))
     (properties `((upstream-name . "targeted")))
     (build-system r-build-system)
     (arguments
@@ -31984,13 +31963,13 @@ contours represent shaded topography.  See Tanaka (1950) <doi:10.2307/211219>.")
 (define-public r-tame
   (package
     (name "r-tame")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tame" version))
        (sha256
-        (base32 "077vnr8jb6qzxdy4vszlpx8327z7bsyva401c5xwj3kd213qfpak"))))
+        (base32 "1m05hjm3288cf4vs5iwrm3jbi9lgzqbc51mzps7bb9gkrqfh8h42"))))
     (properties `((upstream-name . "tame")))
     (build-system r-build-system)
     (arguments
@@ -32005,9 +31984,7 @@ contours represent shaded topography.  See Tanaka (1950) <doi:10.2307/211219>.")
                              r-rfast
                              r-rcpp
                              r-purrr
-                             r-magrittr
                              r-ggplot2
-                             r-fuzzyjoin
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=tame")
     (synopsis

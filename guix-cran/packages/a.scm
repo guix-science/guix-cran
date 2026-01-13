@@ -1981,76 +1981,16 @@ prefers one or more metrics to the others, Field, A. (2013,
 ISBN:978-1-4462-4918-5).")
     (license license:expat)))
 
-(define-public r-autostats
-  (package
-    (name "r-autostats")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autostats" version))
-       (sha256
-        (base32 "1283m1b5bllzfsilsjkk0sj8l1wsjpvnq1vk7r20gnd8nf6kybmn"))))
-    (properties `((upstream-name . "autostats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-xgboost
-                             r-workflows
-                             r-tune
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rsample
-                             r-rlist
-                             r-rlang
-                             r-recosystem
-                             r-recipes
-                             r-purrr
-                             r-presenter
-                             r-patchwork
-                             r-party
-                             r-parsnip
-                             r-nnet
-                             r-magrittr
-                             r-jtools
-                             r-janitor
-                             r-igraph
-                             r-gtools
-                             r-ggthemes
-                             r-ggplot2
-                             r-ggeasy
-                             r-framecleaner
-                             r-dplyr
-                             r-dials
-                             r-data-table
-                             r-ckmeans-1d-dp
-                             r-broom-mixed
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://harrison4192.github.io/autostats/")
-    (synopsis "Auto Stats")
-    (description
-     "Automatically do statistical exploration.  Create formulas using tidyselect
-syntax, and then determine cross-validated model accuracy and variable
-contributions using glm and xgboost'.  Contains additional helper functions to
-create and modify formulas.  Has a flagship function to quickly determine
-relationships between categorical and continuous variables in the data set.")
-    (license license:expat)))
-
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "0gc868xjw5zaz2yd0973pi7cai0zyhjd1zx22yr1rsmpfx5ll1rx"))))
+        (base32 "12mqmm1dbjy2arz1h4ilyy1ddy4n7ppdirv6k8lhphz702farwy3"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -2070,6 +2010,7 @@ relationships between categorical and continuous variables in the data set.")
                              r-gridextra
                              r-ggpubr
                              r-ggplot2
+                             r-formatters
                              r-forcats
                              r-flextable
                              r-dplyr
@@ -20211,13 +20152,13 @@ method).  Silva, Teixeira, and Manzione (2019)
 (define-public r-agriutilities
   (package
     (name "r-agriutilities")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agriutilities" version))
        (sha256
-        (base32 "19csnz4xl1lvs4df9mnsaal3cvqap3mz29slz3idz6sz1nzdhfmq"))))
+        (base32 "165zsq6lsvq3r7xdvpfv5ymqnnhn4kyhdq16n6rznylhk2whizla"))))
     (properties `((upstream-name . "agriutilities")))
     (build-system r-build-system)
     (arguments
@@ -22604,6 +22545,32 @@ multiple graphical models.  For more details, please see
      "Interact with Google Ads Data Hub API
 <https://developers.google.com/ads-data-hub/reference/rest>.  The functionality
 allows to fetch customer details, submit queries to ADH.")
+    (license license:gpl2)))
+
+(define-public r-ads
+  (package
+    (name "r-ads")
+    (version "1.5-12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ads" version))
+       (sha256
+        (base32 "107hsdsi3fkn0rqv30rflpp3gw8028spkfdcjpb6ychnak99jj4h"))))
+    (properties `((upstream-name . "ads")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-geom r-ade4))
+    (home-page "https://forge.ird.fr/amap/ads")
+    (synopsis "Spatial Point Patterns Analysis")
+    (description
+     "Perform first- and second-order multi-scale analyses derived from Ripley
+K-function (Ripley B. D. (1977) <doi:10.1111/j.2517-6161.1977.tb01615.x>), for
+univariate, multivariate and marked mapped data in rectangular, circular or
+irregular shaped sampling windows, with tests of statistical significance based
+on Monte Carlo simulations.")
     (license license:gpl2)))
 
 (define-public r-adpss
@@ -26088,13 +26055,13 @@ results from different studies.  CJS calculations are based on Perry et al.
 (define-public r-actcr
   (package
     (name "r-actcr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ActCR" version))
        (sha256
-        (base32 "1w3xkq3wanpa2j3rfzzdvad2r3vzzvp76kp56mh2s07p3xql6rv0"))))
+        (base32 "1vamn1hqrk9q77yhj2crkws39f45b6s0v4dlxkv8b6iia2pwy380"))))
     (properties `((upstream-name . "ActCR")))
     (build-system r-build-system)
     (arguments
