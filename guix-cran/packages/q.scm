@@ -2314,32 +2314,6 @@ specific clinical or rule based framework.  For details see The Quantitative
 Omics Epidemiology Group et al. (2025) <doi:10.64898/2025.12.02.25341503>.")
     (license license:expat)))
 
-(define-public r-quandl
-  (package
-    (name "r-quandl")
-    (version "2.11.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Quandl" version))
-       (sha256
-        (base32 "1bsba6blbcq0my8wm0qcy0qabbgx344gjljnjwaqfrqkjcphf5xs"))))
-    (properties `((upstream-name . "Quandl")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts r-jsonlite r-httr))
-    (home-page "https://github.com/quandl/quandl-r")
-    (synopsis "API Wrapper for Quandl.com")
-    (description
-     "This package provides functions for interacting directly with the Quandl API to
-offer data in a number of formats usable in R, downloading a zip with all data
-from a Quandl database, and the ability to search.  This R package uses the
-Quandl API. For more information go to <https://docs.quandl.com>.  For more help
-on the package itself go to <https://www.quandl.com/tools/r>.")
-    (license license:expat)))
-
 (define-public r-quanda
   (package
     (name "r-quanda")
@@ -4839,13 +4813,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "1cq6aprvgx6ljchv9898s4i38j7dbnax1ds8gl0kvd44fngy7pik"))))
+        (base32 "0jqipmhrxz7zpa14gy5yi0rb8gwwwyp5d4323n1609ll3bd3mhiz"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments

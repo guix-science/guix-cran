@@ -9971,13 +9971,13 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, SoberÃ³n and Peterson (2005)
 (define-public r-nichetools
   (package
     (name "r-nichetools")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nichetools" version))
        (sha256
-        (base32 "1fis4vp5kjid2b9qv0wvi9m5y1d9ij7z9n5j2lhlsb6r3jn37l56"))))
+        (base32 "1q4wsm31yhwxf1i6ghzc6aj99kp7qsk3z8m0v7nq7jrh508kzl4w"))))
     (properties `((upstream-name . "nichetools")))
     (build-system r-build-system)
     (arguments
@@ -10001,8 +10001,8 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, SoberÃ³n and Peterson (2005)
 SIBER allowing the user to extract Bayesian estimates from data objects created
 by the packages @code{nicheROVER} and SIBER'.  Please see the following
 publications for detailed methods on @code{nicheROVER} and SIBER Hansen et al.
-(2015) <doi:10.1890/14-0235.1>, Jackson et al. (2011)
-<doi:10.1111/j.1365-2656.2011.01806.x>, and Layman et al. (2007)
+(2015) <doi:10.1890/14-0235.1>, Jackson et al. (2011) <do
+i:10.1111/j.1365-2656.2011.01806.x>, and Layman et al. (2007)
 <doi:10.1890/0012-9658(2007)88[42:CSIRPF]2.0.CO;2>, respectfully.")
     (license license:cc0)))
 
@@ -14131,13 +14131,13 @@ exportation.")
 (define-public r-netdose
   (package
     (name "r-netdose")
-    (version "0.7-2")
+    (version "0.7-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netdose" version))
        (sha256
-        (base32 "01p3wl93mzpbq34kviz7hfp74qk8q41jj5qsj37pmshnwj5ra9ci"))))
+        (base32 "0b4kh82zphcp86gg829rafs85mqscznc9apysc3qc3a792mfd3p7"))))
     (properties `((upstream-name . "netdose")))
     (build-system r-build-system)
     (arguments

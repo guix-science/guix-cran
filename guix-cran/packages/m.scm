@@ -1757,13 +1757,13 @@ arbitrary Markov multistate models <ISBN:978-0-387-68560-1>.")
 (define-public r-mvn
   (package
     (name "r-mvn")
-    (version "6.2")
+    (version "6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVN" version))
        (sha256
-        (base32 "1bxd7s5y8b5caakaak2vm00rxmac4j249g6km725waxqng5s0gc8"))))
+        (base32 "1jjq2rjagscpz8h77824qxp53w61mqp4brgjbjrvljjxf8s9fghv"))))
     (properties `((upstream-name . "MVN")))
     (build-system r-build-system)
     (arguments
@@ -1785,7 +1785,7 @@ arbitrary Markov multistate models <ISBN:978-0-387-68560-1>.")
                              r-cli
                              r-car
                              r-boot))
-    (home-page "https://selcukorkmaz.github.io/mvn-tutorial/")
+    (home-page "https://biosoft.shinyapps.io/mvn-shiny-app/")
     (synopsis "Multivariate Normality Tests")
     (description
      "This package provides a comprehensive suite for assessing multivariate normality
@@ -1796,8 +1796,7 @@ BoxâCox, YeoâJohnson), and imputation strategies (\"mean\", \"median\"
 for handling missing data.  Bootstrap resampling is supported for selected tests
 to improve p-value accuracy in small samples.  Diagnostic plots are available
 via both ggplot2 and interactive plotly visualizations.  See Korkmaz et al.
-(2014)
-<https://journal.r-project.org/archive/2014-2/korkmaz-goksuluk-zararsiz.pdf>.")
+(2014) <https://journal.r-project.org/articles/RJ-2014-031/RJ-2014-031.pdf>.")
     (license license:expat)))
 
 (define-public r-mvmorph
@@ -13541,13 +13540,13 @@ units where possible.  Data import directly from movebank
 (define-public r-move
   (package
     (name "r-move")
-    (version "4.2.6")
+    (version "4.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move" version))
        (sha256
-        (base32 "1s6zzfrr7c28fikqnzikvd8m234vvawq64jhjzn1ngx69pfdn9na"))))
+        (base32 "1j9sm7x683f8sxi0shynhv6md3k0658gkahjbbr9rb3h4gigzg4b"))))
     (properties `((upstream-name . "move")))
     (build-system r-build-system)
     (arguments
@@ -25284,13 +25283,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.12")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "0a46xfw35jmcb3y34011nymxh1vksrdn67h9mgl2vdxg7q0kkrkv"))))
+        (base32 "1i79fj1i10k6j11r24lxfm7ssa6a1brlq4bjg8qd83m6kwicfpyf"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -32911,13 +32910,13 @@ in the package.")
 (define-public r-mfgarch
   (package
     (name "r-mfgarch")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfGARCH" version))
        (sha256
-        (base32 "1pcabijwhdxhdlrdjvi2zl8la939igsdy3j1yv0ic8wvkpw1sh4x"))))
+        (base32 "1jy8lbzjzpa61x7ld7pqf2w4f4ss8p2xlwas4bvyrhyxlq48fn66"))))
     (properties `((upstream-name . "mfGARCH")))
     (build-system r-build-system)
     (arguments
@@ -50322,20 +50321,19 @@ et al. (2019) <doi:10.1093/jamia/ocz066>.).")
 (define-public r-maotai
   (package
     (name "r-maotai")
-    (version "0.2.7")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maotai" version))
        (sha256
-        (base32 "1p250smrgw49d3nq6a0gicdi7wh69z1j8cq8h60pxh4nx8vjx0b0"))))
+        (base32 "177m51d2qxc5cy7lx4dnigbjcmr56yzln4dhk38nr9wyc89kfxba"))))
     (properties `((upstream-name . "maotai")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shapes
-                             r-rtsne
+    (propagated-inputs (list r-rtsne
                              r-rspectra
                              r-rdpack
                              r-rcppdist
@@ -50773,13 +50771,13 @@ conceptual development and review of this work.")
 (define-public r-mantis
   (package
     (name "r-mantis")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mantis" version))
        (sha256
-        (base32 "034i72f5w44chw6gd1r9vfnpyazmpnlazxswwb10aziajpsg77z2"))))
+        (base32 "1a7b4l556bhcqcalzs3ghz12j87rfvh4qn811liy93ibz6j2blp2"))))
     (properties `((upstream-name . "mantis")))
     (build-system r-build-system)
     (arguments
@@ -50798,7 +50796,7 @@ conceptual development and review of this work.")
                              r-dygraphs
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/phuongquan/mantis")
+    (home-page "https://github.com/ropensci/mantis")
     (synopsis "Multiple Time Series Scanner")
     (description
      "Generate interactive html reports that enable quick visual review of multiple

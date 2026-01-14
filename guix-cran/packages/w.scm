@@ -8459,13 +8459,13 @@ an implementation of multi-scale assessment as described in Riemann et al'.
 (define-public r-waysign
   (package
     (name "r-waysign")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waysign" version))
        (sha256
-        (base32 "1wzswl4s88hr29mn9rfibfpilz9gl72hdkpshp370msr6azi18wc"))))
+        (base32 "0jqspg1xdyi16vm8l9cvvs1pmxq644qbjmb9qfxgazq1fr36nayj"))))
     (properties `((upstream-name . "waysign")))
     (build-system r-build-system)
     (arguments

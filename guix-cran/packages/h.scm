@@ -286,13 +286,13 @@ Springer, <doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
 (define-public r-hyreg2
   (package
     (name "r-hyreg2")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyreg2" version))
        (sha256
-        (base32 "0n1p4fh5iyk8lrad11q48bz7s111c39a3vgziirjaydp22sjdzmi"))))
+        (base32 "0a777na847c6843mi5gx86kylcw0k2cljs1519h1i5rmzgv81y1l"))))
     (properties `((upstream-name . "hyreg2")))
     (build-system r-build-system)
     (arguments
@@ -2515,13 +2515,13 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
 (define-public r-hubutils
   (package
     (name "r-hubutils")
-    (version "0.1.7")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubUtils" version))
        (sha256
-        (base32 "125smlfffs9mrpms8pxvri6fyww7ybawf7s3b7gf1vapji0z3mc6"))))
+        (base32 "08canfqgcx0fi0xhpc5zh0nh1y5ab6v0088qc7ajkm7jpzgl7xas"))))
     (properties `((upstream-name . "hubUtils")))
     (build-system r-build-system)
     (arguments
@@ -11236,13 +11236,13 @@ method, Power-law fit, and the Double Bootstrap algorithm.")
 (define-public r-heatwaver
   (package
     (name "r-heatwaver")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heatwaveR" version))
        (sha256
-        (base32 "1piss45bhm8r6h3x72w7l0s2hg42sb84l08bfwbxb3jvnx47k5iq"))))
+        (base32 "1chrbnwpliqhyaama5s1k211dgm43dcqzxfl8k2f351bv7qm5bsa"))))
     (properties `((upstream-name . "heatwaveR")))
     (build-system r-build-system)
     (arguments
@@ -11262,8 +11262,8 @@ method, Power-law fit, and the Double Bootstrap algorithm.")
 events known as heatwaves or cold-spells, as first proposed in Hobday et al.
 (2016) <doi: 10.1016/j.pocean.2015.12.014> and Hobday et al. (2018)
 <https://www.jstor.org/stable/26542662>.  The functions in this package work on
-both air and water temperature data.  These detection algorithms may be used on
-non-temperature data as well.")
+both air and water temperature data of hourly and daily temporal resolution.
+These detection algorithms may be used on non-temperature data as well.")
     (license license:expat)))
 
 (define-public r-heatmapflex

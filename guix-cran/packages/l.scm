@@ -6933,6 +6933,40 @@ metabolomics') using generalized spline mixed effect models.  Including
 automated filtering of noise parameters and determination of breakpoints.")
     (license license:gpl3)))
 
+(define-public r-lobbyr
+  (package
+    (name "r-lobbyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lobbyR" version))
+       (sha256
+        (base32 "0d5ygn26xqnrkppjyy43wjd949bhcc1jyz5wlzg29w94hpwnajiy"))))
+    (properties `((upstream-name . "lobbyR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-keyring
+                             r-httr2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=lobbyR")
+    (synopsis "Get Federal Lobbying Disclosures")
+    (description
+     "Gives users seeking federal lobbying disclosures an easier way to query the API
+maintained by the Senate federal lobbying disclosures database
+<https://lda.senate.gov/api/redoc/v1/> to find out how much companies and other
+entities are spending to lobby Congress and the federal government.  It allows
+for search terms such as keywords, time periods and entity names.  It then
+attempts to clean, or at least flag, filings that could provide incorrect
+results when seeking to answer the question: How much is being spent on lobbying
+our Congress and the administration and what issues do they care about?")
+    (license license:lgpl3+)))
+
 (define-public r-loadshaper
   (package
     (name "r-loadshaper")
@@ -15484,13 +15518,13 @@ with the rest of the inputs.")
 (define-public r-ldmppr
   (package
     (name "r-ldmppr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldmppr" version))
        (sha256
-        (base32 "0q4yyfdy5698vs339jhcpxjywwvk4wbj4xfdifr3y1apabn1kq5s"))))
+        (base32 "0yzxjmjxmpfs613ww12mfs7x56k9fqslc19y3z9z9l6wxidy3gwq"))))
     (properties `((upstream-name . "ldmppr")))
     (build-system r-build-system)
     (arguments

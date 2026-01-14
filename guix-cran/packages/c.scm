@@ -10815,13 +10815,13 @@ animals, including cats, cows, frogs, chickens, ghosts, and more.")
 (define-public r-cowfootr
   (package
     (name "r-cowfootr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cowfootR" version))
        (sha256
-        (base32 "1qd4qzjs4j6hzh6lsmavns3w2qz5lrp5mhlgc0vny7gc8c6n4528"))))
+        (base32 "1qikbkzi9b9v4cvqr65a45y8ih6rqj7lhim32nqhfq6a56lja9zs"))))
     (properties `((upstream-name . "cowfootR")))
     (build-system r-build-system)
     (arguments
@@ -20904,19 +20904,19 @@ the race was run.")
 (define-public r-compute-es
   (package
     (name "r-compute-es")
-    (version "0.2-5")
+    (version "0.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compute.es" version))
        (sha256
-        (base32 "00133s3l3g70xrfnxgxhvbjr8izvaj9h0c73iaiyjmlgj84x69m8"))))
+        (base32 "1g7dbwa3vxscprl3x34hzmwjmaqbfl8jq5mq0iz442r3n6qyvkln"))))
     (properties `((upstream-name . "compute.es")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://acdelre.com")
+    (home-page "https://acdelre.github.io/apps/compute_es/")
     (synopsis "Compute Effect Sizes")
     (description
      "Several functions are available for calculating the most widely used effect
@@ -20926,7 +20926,8 @@ output includes ES's of d (mean difference), g (unbiased estimate of d), r
 ratio).  In addition, NNT (number needed to treat), U3, CLES (Common Language
 Effect Size) and Cliff's Delta are computed.  This package uses recommended
 formulas as described in The Handbook of Research Synthesis and Meta-Analysis
-(Cooper, Hedges, & Valentine, 2009).")
+(Cooper, Hedges, & Valentine, 2009).  A free web application is available at
+<https://acdelre.github.io/apps/compute_es/>.")
     (license license:gpl2)))
 
 (define-public r-comprehenr
@@ -37016,13 +37017,13 @@ static or interactive visualizations and smoothing.")
 (define-public r-cifti
   (package
     (name "r-cifti")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cifti" version))
        (sha256
-        (base32 "092334lcpkzv52bg53hzx64dnrwq67f3p9fzwchmafx1l46xrqx9"))))
+        (base32 "0m3br5c750y2qamd1ipr2m57zcp5b2v9qa8rlv6vi9jfn12l6n1c"))))
     (properties `((upstream-name . "cifti")))
     (build-system r-build-system)
     (arguments
@@ -45324,13 +45325,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "06lsfkp0k4b2l1632y2n6lal00kgran1bviwp3a4hkf3iwzn0mpj"))))
+        (base32 "1mwgvm6rxywj4lv6wbyxrbs99ls7c08qrc1difzaf61g1im8x2ca"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments

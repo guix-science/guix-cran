@@ -2937,42 +2937,6 @@ contains multiple plotting functions displaying different aspects of the
 non-stationarity of extremes.")
     (license license:gpl3+)))
 
-(define-public r-rtsdata
-  (package
-    (name "r-rtsdata")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rtsdata" version))
-       (sha256
-        (base32 "0djw6qp6jdkz4r0j5dzjql2rhap4syl7psdglgd9razv5vzqmn6c"))))
-    (properties `((upstream-name . "rtsdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-quantmod
-                             r-quandl
-                             r-mongolite
-                             r-data-table
-                             r-curl
-                             r-brotli
-                             r-anytime))
-    (home-page "https://bitbucket.org/rtsvizteam/rtsdata")
-    (synopsis "R Time Series Intelligent Data Storage")
-    (description
-     "This package provides a tool that allows to download and save historical time
-series data for future use offline.  The intelligent updating functionality will
-only download the new available information; thus, saving you time and Internet
-bandwidth.  It will only re-download the full data-set if any inconsistencies
-are detected.  This package supports following data provides: Yahoo
-(finance.yahoo.com), FRED (fred.stlouisfed.org), Quandl (data.nasdaq.com),
-@code{AlphaVantage} (www.alphavantage.co), Tiingo (www.tiingo.com).")
-    (license license:expat)))
-
 (define-public r-rtsa
   (package
     (name "r-rtsa")
@@ -3701,13 +3665,13 @@ fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
 (define-public r-rtmbdist
   (package
     (name "r-rtmbdist")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMBdist" version))
        (sha256
-        (base32 "0fli63vn8w91ndp57hwlz1siw7ka5285hv86w8srsdrq4h6lyc92"))))
+        (base32 "1dkkcrj0vb6m48mrk5wx9zl0nkmh2kismv87my1idrjiaj8xcfzb"))))
     (properties `((upstream-name . "RTMBdist")))
     (build-system r-build-system)
     (arguments
@@ -14265,6 +14229,46 @@ functions, please refer to \"Enhanced Aggregation, Cube, Grouping and Rollup\"
 <https://cwiki.apache.org/confluence/display/Hive/Enhanced+Aggregation%2C+Cube%2C+Grouping+and+Rollup>.")
     (license license:expat)))
 
+(define-public r-rollout
+  (package
+    (name "r-rollout")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rollout" version))
+       (sha256
+        (base32 "151vxadm45mj361arraps8v5d5nc61x3ilnifp8h7wgm1v6bif4a"))))
+    (properties `((upstream-name . "rollout")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-pbapply
+                             r-lifecycle
+                             r-glue
+                             r-dplyr
+                             r-broom-mixed))
+    (home-page "https://github.com/iancero/rollout")
+    (synopsis
+     "Tools for Designing, Simulating, and Analyzing Implementation Rollout Trials")
+    (description
+     "This package provides a unified framework for designing, simulating, and
+analyzing implementation rollout trials, including stepped wedge, sequential
+rollout, head-to-head, multi-condition, and rollout implementation optimization
+designs.  The package enables users to flexibly specify rollout schedules,
+incorporate site-level and nested data structures, generate outcomes under rich
+hierarchical models, and evaluate analytic strategies through simulation-based
+power analysis.  By separating data generation from model fitting, the tools
+support assessment of bias, Type I error, and robustness to model
+misspecification.  The workflow integrates with standard mixed-effects modeling
+approaches and the tidyverse ecosystem, offering transparent and reproducible
+tools for implementation scientists and applied statisticians.")
+    (license license:expat)))
+
 (define-public r-rollmatch
   (package
     (name "r-rollmatch")
@@ -18918,13 +18922,13 @@ package @code{PyNNDescent} <https://github.com/lmcinnes/pynndescent>.")
 (define-public r-rnn
   (package
     (name "r-rnn")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnn" version))
        (sha256
-        (base32 "12js613gmmcpniq5adbmb3anqsza67m0jxk69486jv3am2vyqi5p"))))
+        (base32 "16mydqd3sg64kfl0slpnnjlgbqxwmybg1qixyhjy2cfahsbqfw94"))))
     (properties `((upstream-name . "rnn")))
     (build-system r-build-system)
     (arguments
@@ -18932,13 +18936,13 @@ package @code{PyNNDescent} <https://github.com/lmcinnes/pynndescent>.")
       #:tests? #f))
     (propagated-inputs (list r-sigmoid r-attention))
     (native-inputs (list r-knitr))
-    (home-page "https://qua.st/rnn/")
+    (home-page "https://bastiaanquast.com/rnn/")
     (synopsis "Recurrent Neural Network")
     (description
      "Implementation of a Recurrent Neural Network architectures in native R,
 including Long Short-Term Memory (Hochreiter and Schmidhuber,
-<doi:10.1162/neco.1997.9.8.1735>), Gated Recurrent Unit (Chung et al.,
-<@code{arXiv:1412.3555>}) and vanilla RNN.")
+<doi:10.1162/neco.1997.9.8.1735>), Gated Recurrent Unit (Chung et al.) and
+vanilla RNN.")
     (license license:gpl3)))
 
 (define-public r-rnmr1d
@@ -24271,6 +24275,34 @@ leading seasonal adjustment methods TRAMO/SEATS+ and X-12ARIMA/X-13ARIMA-SEATS."
 back-end.  This allows R to connect to any DBMS that has a JDBC driver.")
     (license license:expat)))
 
+(define-public r-rjd3toolkit
+  (package
+    (name "r-rjd3toolkit")
+    (version "3.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3toolkit" version))
+       (sha256
+        (base32 "0zwzs1pllmj955za5gnavw3hq3ckm4hk8y8rrnlbxirfm8lh8pz1"))))
+    (properties `((upstream-name . "rjd3toolkit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rprotobuf r-rjd3jars r-rjava r-checkmate))
+    (home-page "https://github.com/rjdverse/rjd3toolkit")
+    (synopsis "Utility Functions Around 'JDemetra+ 3.0'")
+    (description
+     "R Interface to JDemetra+ 3.x (<https://github.com/jdemetra>) time series
+analysis software.  It provides functions allowing to model time series (create
+outlier regressors, user-defined calendar regressors, Unobserved Components
+@code{AutoRegressive} Integrated Moving Average (UCARIMA) models...), to test
+the presence of trading days or seasonal effects and also to set specifications
+in pre-adjustment and benchmarking when using rjd3x13 or rjd3tramoseats'.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-rjd3jars
   (package
     (name "r-rjd3jars")
@@ -25350,13 +25382,13 @@ F. Spinu (2013), An Algorithm for Computing Risk Parity Weights.
 (define-public r-riskmetric
   (package
     (name "r-riskmetric")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskmetric" version))
        (sha256
-        (base32 "1pfcflh2ypwdn5al23n6hga2v5fr2kbcpiqcsjgrma9w5drwcnss"))))
+        (base32 "1s9chdzl85m2gpim1hc33jbfkg7ghkar5rbzn1q4ww0mg1765xhh"))))
     (properties `((upstream-name . "riskmetric")))
     (build-system r-build-system)
     (arguments
@@ -35113,13 +35145,13 @@ following page: <https://ideas.repec.org/api.html>.")
 (define-public r-repeatedhighdim
   (package
     (name "r-repeatedhighdim")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RepeatedHighDim" version))
        (sha256
-        (base32 "0ww3x65nflhfy4p2k5vgbiqnnxbzszrqsnn3ikpcbyfd298v5bm5"))))
+        (base32 "0pl9j9dqc33yckiw30hzqaqimyp90qcljb8k7iaxh4yypc4fnrwr"))))
     (properties `((upstream-name . "RepeatedHighDim")))
     (build-system r-build-system)
     (arguments
@@ -35139,6 +35171,8 @@ following page: <https://ideas.repec.org/api.html>.")
                              r-mass
                              r-ggplot2
                              r-geometry
+                             r-fnn
+                             r-dplyr
                              r-ddalpha
                              r-complexheatmap
                              r-circlize
@@ -40885,13 +40919,13 @@ humid climates.  Model algorithms are based on the research of Dubois, E. et al.
 (define-public r-recforest
   (package
     (name "r-recforest")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recforest" version))
        (sha256
-        (base32 "0vzx37aayp92q4g2dwsgfzkvl99k7ms47a81cqzpk60s8cx3lxja"))))
+        (base32 "105x2fp74h4msgy9zbhq4igwgj8c3w7ad9i3xkmhsk55rkyy4xpf"))))
     (properties `((upstream-name . "recforest")))
     (build-system r-build-system)
     (arguments
@@ -40912,12 +40946,13 @@ humid climates.  Model algorithms are based on the research of Dubois, E. et al.
     (home-page "https://cran.r-project.org/package=recforest")
     (synopsis "Random Survival Forest for Recurrent Events")
     (description
-     "Analyze recurrent events with right-censored data and the potential presence of
-a terminal event (that prevents further occurrences, like death).  recofest
-extends the random survival forest algorithm, adapting splitting rules and node
-estimators to handle complexities of recurrent events.  The methodology is fully
-described in Murris, J., Bouaziz, O., Jakubczak, M., Katsahian, S., & Lavenu, A.
-(2024) (<https://hal.science/hal-04612431v1/document>).")
+     "This package provides a tool designed to analyze recurrent events when dealing
+with right-censored data and the potential presence of a terminal event (that
+prevents further occurrences, like death).  It extends the random survival
+forest algorithm, adapting splitting rules and node estimators to handle
+complexities of recurrent events.  The methodology is fully described in Murris,
+J., Bouaziz, O., Jakubczak, M., Katsahian, S., & Lavenu, A. (2024)
+(<https://hal.science/hal-04612431v1/document>).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-recexcavaar

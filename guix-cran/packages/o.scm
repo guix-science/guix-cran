@@ -2232,33 +2232,6 @@ non-portable ones.  Supports Keychain on @code{macOS}', and Credential Manager
 on Windows'.  See the keyring package if you need a portable API'.")
     (license license:expat)))
 
-(define-public r-oshka
-  (package
-    (name "r-oshka")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oshka" version))
-       (sha256
-        (base32 "02hglpq5lknq93zbcf219lhnhppzgygkhxqixb15f89rxf9fczgs"))))
-    (properties `((upstream-name . "oshka")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/brodieG/oshka")
-    (synopsis "Recursive Quoted Language Expansion")
-    (description
-     "Expands quoted language by recursively replacing any symbol that points to
-quoted language with the language it points to.  The recursive process continues
-until only symbols that point to non-language objects remain.  The resulting
-quoted language can then be evaluated normally.  This differs from the
-traditional quote'/'eval pattern because it resolves intermediate language
-objects that would interfere with evaluation.")
-    (license license:gpl2+)))
-
 (define-public r-osfr
   (package
     (name "r-osfr")

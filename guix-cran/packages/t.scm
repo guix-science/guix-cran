@@ -1031,13 +1031,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-twinning
   (package
     (name "r-twinning")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twinning" version))
        (sha256
-        (base32 "02sa631np01cizzqqh25riqcw31qvszrfbws5h6xs31f7l9wlxdy"))))
+        (base32 "0cf77b22ylvhmsj0g0gi6857l2p27fgych2lp3ph1np5z30j1pns"))))
     (properties `((upstream-name . "twinning")))
     (build-system r-build-system)
     (arguments
@@ -6003,13 +6003,13 @@ depending on the log level.")
 (define-public r-trustoptim
   (package
     (name "r-trustoptim")
-    (version "0.8.7.3")
+    (version "0.8.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trustOptim" version))
        (sha256
-        (base32 "11cx90zq9987i7kc86kxbip6c75bmw51shlwq2x9ywhybzk8vxl8"))))
+        (base32 "1lwgy79d3dlk7acc06r3y8bv6qaxhhzq8jn9rv0d7jp22qz5642d"))))
     (properties `((upstream-name . "trustOptim")))
     (build-system r-build-system)
     (arguments
@@ -8501,13 +8501,13 @@ source files and can efficiently update them as files are edited.")
 (define-public r-treesitter
   (package
     (name "r-treesitter")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesitter" version))
        (sha256
-        (base32 "0bljyh7glvhvxb9x258pg67dk2fkyx1jkl3kxma8k12kr6znqc08"))))
+        (base32 "0mwsrjrrm78jqayhn6cnz51cvv45rrxaacm1k42b7xj2hnhlpc7r"))))
     (properties `((upstream-name . "treesitter")))
     (build-system r-build-system)
     (arguments
@@ -20487,35 +20487,6 @@ appropriate path.  Afterwards, users can easily convert the data into a data
 frame using this package.")
     (license license:expat)))
 
-(define-public r-tidyjson
-  (package
-    (name "r-tidyjson")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyjson" version))
-       (sha256
-        (base32 "0znm590kpvkh8zl08saasnsi77x459640mqv0pq15gmsjnycldp6"))))
-    (properties `((upstream-name . "tidyjson")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/colearendt/tidyjson")
-    (synopsis "Tidy Complex 'JSON'")
-    (description "Turn complex JSON data into tidy data frames.")
-    (license license:expat)))
-
 (define-public r-tidyindex
   (package
     (name "r-tidyindex")
@@ -21872,13 +21843,13 @@ frames.")
 (define-public r-tidybde
   (package
     (name "r-tidybde")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyBdE" version))
        (sha256
-        (base32 "1z3887n9sc8j3mhvz1p0918vbjcc3inx2rksrszwkjvisa3vsv2l"))))
+        (base32 "1yb687dh6wf5s1ix5qr00fqjdbvnm3b432jpiqy46a8xcvn2lq23"))))
     (properties `((upstream-name . "tidyBdE")))
     (build-system r-build-system)
     (arguments
@@ -27852,13 +27823,13 @@ include the exponential, gamma, generalized gamma, log-normal, and Weibull.")
 (define-public r-templr
   (package
     (name "r-templr")
-    (version "0.2-2")
+    (version "0.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templr" version))
        (sha256
-        (base32 "1ssggyp80fwb9lwrg0v3szxnglyg8ma2cgv758pgjj6gq20dahjv"))))
+        (base32 "14vlp02pfvavaq6m1pg3wji045ndnf10jm9smknf294jgnyha73x"))))
     (properties `((upstream-name . "templr")))
     (build-system r-build-system)
     (arguments

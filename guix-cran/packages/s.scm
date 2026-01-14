@@ -5788,13 +5788,13 @@ Rao and Wu (1988) <doi:10.1080/01621459.1988.10478591>.")
 (define-public r-survextrap
   (package
     (name "r-survextrap")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survextrap" version))
        (sha256
-        (base32 "10hi8x7676bmb2sackibzc8awykqs4kyvj7i2van8ndp8l0dj0kp"))))
+        (base32 "1wi28gny2flzhjrgwyldqqw41knfmmkknlh43sd0r3nwk7j5d4f1"))))
     (properties `((upstream-name . "survextrap")))
     (build-system r-build-system)
     (arguments
@@ -20399,6 +20399,43 @@ In terms of two classification methods, one is the calculation of the additive
 by comparing the total expression of the small RNA in progeny with the
 expression level in the parent species.")
     (license license:gpl3+)))
+
+(define-public r-srmers
+  (package
+    (name "r-srmers")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SRMERS" version))
+       (sha256
+        (base32 "1nnc8cjzpw40njlrh1si4rq1dv8gpvi5gkmq8y41wzg1mfr02abx"))))
+    (properties `((upstream-name . "SRMERS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splines2
+                             r-nloptr
+                             r-matrix
+                             r-mass
+                             r-lme4
+                             r-dplyr
+                             r-coneproj))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SRMERS")
+    (synopsis
+     "Semi-Parametric Shape-Restricted Fixed/Mixed Effect(s) Regression Spline")
+    (description
+     "Select the most suitable shape to describe the relationship between the exposure
+and the outcome among increasing, decreasing, convex, and concave shapes (Yin et
+al. (2021) <DOI:10.1007/s13571-020-00246-7>); estimate the direct and indirect
+effects with prior knowledge on the relationship between the mediator and the
+outcome with binary exposure (Yin et al. (2024)
+<DOI:10.1007/s13571-024-00336-w>); estimate the direct and indirect effects
+using linear regression-based approach (@code{VanderWeele} (2015,
+ISBN:9780199325870)).")
+    (license license:gpl3)))
 
 (define-public r-srmdata
   (package
@@ -50579,13 +50616,13 @@ interactively.")
 (define-public r-shinyoauth
   (package
     (name "r-shinyoauth")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyOAuth" version))
        (sha256
-        (base32 "0a3k36d10r0nfks1vnr9psw0zllvbnwz195xrpimss5h6xrxqpc9"))))
+        (base32 "076lyqwxmpdlw3gd5241h93k2k9xn6xxr5msm5wiw9fvq5kr2yda"))))
     (properties `((upstream-name . "shinyOAuth")))
     (build-system r-build-system)
     (arguments
@@ -54528,13 +54565,13 @@ sampling methods or experimental designs.")
 (define-public r-shapboost
   (package
     (name "r-shapboost")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHAPBoost" version))
        (sha256
-        (base32 "0qdxhli7m1mqglgqivbgvivabdrn4dw6v5c8zqyq0ipq87g48asv"))))
+        (base32 "1xqpk4vaj1sw4dp42fvz2l7sq80a2pqr7g5jybdhlkwgza1ym1i7"))))
     (properties `((upstream-name . "SHAPBoost")))
     (build-system r-build-system)
     (arguments
@@ -54984,21 +55021,20 @@ also provided.")
 (define-public r-sgplot
   (package
     (name "r-sgplot")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgplot" version))
        (sha256
-        (base32 "1vaaaddfj142h3xpdxin0g2pqp3kd2k301sa4ssawwa9l8yanajs"))))
+        (base32 "1ifn01fa14jka3avibri0zq605yx6c1961z948fxsk633rcjz7y7"))))
     (properties `((upstream-name . "sgplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-rlang r-lifecycle r-ggplot2 r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ScotGovAnalysis/sgplot/")
+    (home-page "https://ScotGovAnalysis.github.io/sgplot/")
     (synopsis "Graphic Styles and Colours for Scottish Government Plots")
     (description
      "This package provides a ggplot2 theme and colour palettes to create accessible
@@ -70789,13 +70825,13 @@ empirical graphical methods to visualize tail dependence.")
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.2.9")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sassy" version))
        (sha256
-        (base32 "0jrqijp0is2cd1g7vrv84psx35rd2g776yhcfw2nqw6myvic1bj1"))))
+        (base32 "08ricyi41kmk30l5pvwfi9dmcwrmizci89bi2dm5nmpvxqp5z9xf"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
     (arguments
@@ -70803,6 +70839,7 @@ empirical graphical methods to visualize tail dependence.")
       #:tests? #f))
     (propagated-inputs (list r-reporter
                              r-procs
+                             r-macro
                              r-logr
                              r-libr
                              r-fmtr
@@ -75557,6 +75594,41 @@ More details on the currently implemented methodologies can be found in Drake
 and Richards (2018) <doi:10.1002/ecs2.2373>, Drake (2015)
 <doi:10.1098/rsif.2015.0086>, and Drake (2014) <doi:10.1890/ES13-00202.1>.")
     (license license:expat)))
+
+(define-public r-s3vs
+  (package
+    (name "r-s3vs")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "S3VS" version))
+       (sha256
+        (base32 "0arzyn6wsqdfzww8zy60d1491mr6a8l18mq7blycr0b9j11fzz02"))))
+    (properties `((upstream-name . "S3VS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-pec
+                             r-ncvreg
+                             r-mombf
+                             r-glmnet
+                             r-future-apply
+                             r-eha
+                             r-afthd
+                             r-aftgee))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=S3VS")
+    (synopsis
+     "Structured Screen-and-Select Variable Selection in Linear, Generalized Linear, and Survival Models")
+    (description
+     "This package performs variable selection using the structured screen-and-select
+(S3VS) framework in linear models, generalized linear models with binary data,
+and survival models such as the Cox model and accelerated failure time (AFT)
+model.")
+    (license license:gpl2+)))
 
 (define-public r-s3fs
   (package

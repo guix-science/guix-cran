@@ -12094,13 +12094,13 @@ rendered HTML doc.")
 (define-public r-pregnancy
   (package
     (name "r-pregnancy")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pregnancy" version))
        (sha256
-        (base32 "0xm4cgcpspqynplx73505p5i2bn6nvvzzy4v5dbix7sjsvw37srm"))))
+        (base32 "15jrfv3zwvqf47nsh4n7px09h6srij45yx8fq2i3fynvn7xx2k1g"))))
     (properties `((upstream-name . "pregnancy")))
     (build-system r-build-system)
     (arguments
@@ -22257,34 +22257,6 @@ Steyerberg et al. (2001) <doi:10.1016/s0895-4356(01)00341-9>; Harrell (2015)
 <doi:10.1002/bimj.202200302>.")
     (license license:gpl3)))
 
-(define-public r-pmhtutorial
-  (package
-    (name "r-pmhtutorial")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pmhtutorial" version))
-       (sha256
-        (base32 "1hcw8hwpsivbhz86lnzy08q9n8vahnq8f7rmi4xkmg6b44582cqx"))))
-    (properties `((upstream-name . "pmhtutorial")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quandl r-mvtnorm))
-    (home-page "https://github.com/compops/pmh-tutorial-rpkg")
-    (synopsis "Minimal Working Examples for Particle Metropolis-Hastings")
-    (description
-     "Routines for state estimate in a linear Gaussian state space model and a simple
-stochastic volatility model using particle filtering.  Parameter inference is
-also carried out in these models using the particle Metropolis-Hastings
-algorithm that includes the particle filter to provided an unbiased estimator of
-the likelihood.  This package is a collection of minimal working examples of
-these algorithms and is only meant for educational use and as a start for
-learning to them on your own.")
-    (license license:gpl2)))
-
 (define-public r-pmevapotranspiration
   (package
     (name "r-pmevapotranspiration")
@@ -32377,13 +32349,13 @@ and controlling properties such as margins.")
 (define-public r-phantsem
   (package
     (name "r-phantsem")
-    (version "1.0.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phantSEM" version))
        (sha256
-        (base32 "099kflbj66wfkl7b6f1l68763b7qkpjihp4r1xih5lvjwc8ap0b9"))))
+        (base32 "0bihd6m1mi1cyg9nzchpsprmlp0pnky8wsbam2b3v3jylz7adz1c"))))
     (properties `((upstream-name . "phantSEM")))
     (build-system r-build-system)
     (arguments
@@ -34048,13 +34020,13 @@ given libraries and exports personal helper functions.")
 (define-public r-personalized2part
   (package
     (name "r-personalized2part")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "personalized2part" version))
        (sha256
-        (base32 "104flqjyf0x0619msyc0vlkg61znvhf0v86fsdpksdxkgwb7wv7j"))))
+        (base32 "0ijv01dq1snxpydqz7piz0kxmk51pid63j9v3jsk4k0jm5maq3xb"))))
     (properties `((upstream-name . "personalized2part")))
     (build-system r-build-system)
     (arguments
@@ -35463,13 +35435,13 @@ Elastic Net.")
 (define-public r-pense
   (package
     (name "r-pense")
-    (version "2.2.2")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pense" version))
        (sha256
-        (base32 "00z4safn8p0k7ib3jks60lz5cdbm5384cpf95p6js8a8an8p8lb6"))))
+        (base32 "0gfmmpb5k7j4fgv5y97f9d55skav4fkvfrls6v4d90vmmyw4pr3p"))))
     (properties `((upstream-name . "pense")))
     (build-system r-build-system)
     (arguments

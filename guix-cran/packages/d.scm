@@ -980,13 +980,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.5.6")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamite" version))
        (sha256
-        (base32 "1isjj2aviw3r4ky0m3kczxjd32z3nbqjm16c7x18sqbvgp0pzsxs"))))
+        (base32 "1wpqlac2w3gs6ai5d3q28hqq7cmz819kcpns2mj5v97f223xlvld"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (arguments
@@ -1015,8 +1015,8 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 multiple measurements per individual, time-varying and time-invariant effects,
 and a wide range of discrete and continuous distributions.  Estimation of these
 dynamic multivariate panel models is carried out via Stan'.  For an in-depth
-tutorial of the package, see (Tikka and Helske, 2024)
-<doi:10.48550/@code{arXiv.2302.01607>}.")
+tutorial of the package, see (Tikka and Helske, 2025)
+<doi:10.18637/jss.v115.i05>.")
     (license license:gpl3+)))
 
 (define-public r-dynamicsdm
@@ -17413,13 +17413,13 @@ Gahegan (2018) <doi:10.1186/s12966-018-0648-6>.")
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "0ij4fww4pal0dzckny6j2c1gni6p385flry0agn1dg6ic9hrgj04"))))
+        (base32 "09klkj1ksyzbnnh3lcpamsf3cws3bwqym1x3k5pdjwsks4djapx0"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (arguments
@@ -28299,13 +28299,13 @@ proper R object called dvobject'.")
 (define-public r-dbnr
   (package
     (name "r-dbnr")
-    (version "0.7.9")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbnR" version))
        (sha256
-        (base32 "14jdmld8d1laj7xcad5694inxb8qglhnzghab64h3n0r2x35z6lw"))))
+        (base32 "1961sclirx315pfa4pbwnkm6x23541wxc7dzlzg46fyxm3w34dnz"))))
     (properties `((upstream-name . "dbnR")))
     (build-system r-build-system)
     (arguments
@@ -28328,7 +28328,10 @@ structure learning algorithms for dynamic Bayesian networks: Trabelsi G. (2013)
 <doi:10.1109/BRC.2014.6880957>, Quesada D., Bielza C. and LarraÃ±aga P. (2021)
 <doi:10.1007/978-3-030-86271-8_14>.  It also offers the possibility to perform
 forecasts of arbitrary length.  A tool for visualizing the structure of the net
-is also provided via the @code{visNetwork} package.")
+is also provided via the @code{visNetwork} package.  Further detailed
+information and examples can be found in our Journal of Statistical Software
+paper Quesada D., LarraÃ±aga P. and Bielza C. (2025)
+<doi:10.18637/jss.v115.i06>.")
     (license license:gpl3)))
 
 (define-public r-dbnmfrank

@@ -281,13 +281,13 @@ Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
 (define-public r-ezfragility
   (package
     (name "r-ezfragility")
-    (version "2.0.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EZFragility" version))
        (sha256
-        (base32 "0x919pndmxa139pm5xc9hnrkavxghcp1h64mcia1m5hcai3gdwc2"))))
+        (base32 "1bsjk20dkpz00im65nblpgb5s7bh6idi5rss68bqc9la4c87dnkc"))))
     (properties `((upstream-name . "EZFragility")))
     (build-system r-build-system)
     (arguments

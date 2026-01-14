@@ -3386,13 +3386,13 @@ Area Under Minimum.")
 (define-public r-auk
   (package
     (name "r-auk")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "auk" version))
        (sha256
-        (base32 "07ifpf22a6jmlnan45hcm4ykycibg8ch60vp7rpkhh10zs7g264x"))))
+        (base32 "0ch05s5jh6r8da6crs5i0r3shwbj4dh7vfk74dvkd8zf2r1isqqp"))))
     (properties `((upstream-name . "auk")))
     (build-system r-build-system)
     (arguments
@@ -5181,13 +5181,13 @@ association strength between individuals using each method.")
 (define-public r-associationexplorer2
   (package
     (name "r-associationexplorer2")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssociationExplorer2" version))
        (sha256
-        (base32 "1j1rv7q7qfbp91vcbf6v84s90xhhilgxngh3cpasz5rbjgmjjhg8"))))
+        (base32 "0691lbhcs7h8amay6r86cibmcz9q21jhwa920dwxymxrcdlvp667"))))
     (properties `((upstream-name . "AssociationExplorer2")))
     (build-system r-build-system)
     (arguments
@@ -9732,13 +9732,13 @@ contains functions to calculate the buffer factors.")
 (define-public r-aquadtree
   (package
     (name "r-aquadtree")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQuadtree" version))
        (sha256
-        (base32 "0i1qp1xr51l3gfvgnyyka06g4khj62hzxxkbsnlkv235i2bwnpzd"))))
+        (base32 "1976mg76lpgvxg2zrg86r4zmrgspzj6h3zx6s6qpdd8nzy6f320i"))))
     (properties `((upstream-name . "AQuadtree")))
     (build-system r-build-system)
     (arguments
@@ -15594,30 +15594,6 @@ generation of perlin, simplex, worley, cubic, value, and white noise with
 optional perturbation in either 2, 3, or 4 (in case of simplex and white noise)
 dimensions.")
     (license license:expat)))
-
-(define-public r-amberr
-  (package
-    (name "r-amberr")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "amberr" version))
-       (sha256
-        (base32 "0wdnnfclyvakb7als3m0v17r0qclrvj6118mr32fkfbn4scrr02c"))))
-    (properties `((upstream-name . "amberr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyjson r-jsonlite r-httr r-dplyr))
-    (home-page "https://github.com/obiba/amberr/")
-    (synopsis "'Amber' Electronic Data Capture Client")
-    (description
-     "Amber is a server application for capturing electronic data records.  Rich forms
-are used to collect data.  This Amber client allows to perform data extraction
-for reporting or data transfer at persistent location purposes.")
-    (license license:gpl3)))
 
 (define-public r-amazonspr
   (package
@@ -24441,6 +24417,38 @@ details can be found in Jin et al. (2017).")
 discrete data, using EM-type algorithms with more stable convergence properties
 than standard methods.")
     (license license:gpl2+)))
+
+(define-public r-addivortes
+  (package
+    (name "r-addivortes")
+    (version "0.4.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AddiVortes" version))
+       (sha256
+        (base32 "0k8h547vs3fbqksx1k6ay8znnz44ln3x4id1q5dzf6cvrbfn699j"))))
+    (properties `((upstream-name . "AddiVortes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pbapply))
+    (native-inputs (list r-knitr))
+    (home-page "https://johnpaulgosling.github.io/AddiVortes/")
+    (synopsis "(Bayesian) Additive Voronoi Tessellations")
+    (description
+     "This package implements the Bayesian Additive Voronoi Tessellation model for
+non-parametric regression and machine learning as introduced in Stone and
+Gosling (2025) <doi:10.1080/10618600.2024.2414104>.  This package provides a
+flexible alternative to BART (Bayesian Additive Regression Trees) using Voronoi
+tessellations instead of trees.  Users can fit Bayesian regression models,
+estimate posterior distributions, and visualise the resulting tessellations.  It
+is particularly useful for spatial data analysis, machine learning regression,
+complex function approximation and Bayesian modeling where the underlying
+structure is unknown.  The method is well-suited to capturing spatial patterns
+and non-linear relationships.")
+    (license license:gpl3+)))
 
 (define-public r-additive
   (package

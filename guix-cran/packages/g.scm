@@ -426,13 +426,13 @@ calculated following (Percival and Tsutsumida,
 (define-public r-gwpcor
   (package
     (name "r-gwpcor")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWpcor" version))
        (sha256
-        (base32 "0q43673pmm2c6kss688fpz10b39y3jn1kblv13p8ky0bk82hmcvi"))))
+        (base32 "0p0q19hpmwxc6ack7lz5qyyy9lf47jkygqpmm71x0nc6348b4lk8"))))
     (properties `((upstream-name . "GWpcor")))
     (build-system r-build-system)
     (arguments
@@ -447,7 +447,7 @@ calculated following (Percival and Tsutsumida,
                              r-dplyr
                              r-doparallel
                              r-corpcor))
-    (home-page "https://cran.r-project.org/package=GWpcor")
+    (home-page "https://github.com/gwpcor/GWpcor")
     (synopsis "Geographically Weighted Partial Correlation Coefficient")
     (description
      "This package implements a geographically weighted partial correlation which is
@@ -458,13 +458,13 @@ Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
 (define-public r-gwnnegpca
   (package
     (name "r-gwnnegpca")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWnnegPCA" version))
        (sha256
-        (base32 "12f532fk9fwd9wwvxjkf3pw27g14rqspvrasw3gjlg7ykymg03zl"))))
+        (base32 "1n36hwny1hhzjcp879gkrcvgq0jk4a1nxm5vlhcdbi8bzn70iblz"))))
     (properties `((upstream-name . "GWnnegPCA")))
     (build-system r-build-system)
     (arguments
@@ -36549,37 +36549,6 @@ predictor towards adjusted R2 and explained deviance for generalized additive
 models based on output of @code{gam()} and @code{bam()} in mgcv package,
 applying the algorithm in this paper: Lai(2024) <doi:10.1016/j.pld.2024.06.002>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-galvanizer
-  (package
-    (name "r-galvanizer")
-    (version "0.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "galvanizer" version))
-       (sha256
-        (base32 "1b9431mmgpqyd49b8nlsrlxjq9j9fyj73226bi9jic1p867533kk"))))
-    (properties `((upstream-name . "galvanizer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tidyjson
-                             r-tibble
-                             r-rlang
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://jonlinca.github.io/galvanizer/")
-    (synopsis "Interface to Galvanize 'Highbond' Internal Audit Software")
-    (description
-     "An R interface to the Galvanize Highbond API <https://docs-apis.highbond.com>.")
-    (license license:gpl3)))
 
 (define-public r-galts
   (package

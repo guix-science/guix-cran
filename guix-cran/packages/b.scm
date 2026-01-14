@@ -27981,6 +27981,34 @@ ratio.  Designed for sparse linear models and suitable for high-dimensional
 regression problems.")
     (license license:gpl3)))
 
+(define-public r-bayesianinference
+  (package
+    (name "r-bayesianinference")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianInference" version))
+       (sha256
+        (base32 "18x1lg5w0cjbmgnhdr8lirsnchdkydldhkjnirq5n3jbz2qckncn"))))
+    (properties `((upstream-name . "BayesianInference")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://cran.r-project.org/package=BayesianInference")
+    (synopsis "Bayesian Inference")
+    (description
+     "Beta version of Bayesian Inference (BI) using python and BI. It aims to unify
+the modeling experience by providing an intuitive model-building syntax together
+with the flexibility of low-level abstraction coding.  It also includes
+pre-built functions for high-level abstraction and supports hardware-accelerated
+computation for improved scalability, including parallelization, vectorization,
+and execution on CPU, GPU, or TPU.")
+    (license license:gpl3+)))
+
 (define-public r-bayesianglasso
   (package
     (name "r-bayesianglasso")
@@ -31347,13 +31375,13 @@ Kapelner and Justin Bleich 2016) <doi:10.18637/jss.v070.i04>.")
 (define-public r-bartmachinejars
   (package
     (name "r-bartmachinejars")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartMachineJARs" version))
        (sha256
-        (base32 "1h71ikmj217wjd1w52qvxf6p3alnqxg1zn43dzhlkhmfyjn20ylz"))))
+        (base32 "125fg3vn8zphki1w63byj8yjmrh7kkh0cf35syfgzrsj4l4y3ky3"))))
     (properties `((upstream-name . "bartMachineJARs")))
     (build-system r-build-system)
     (arguments
