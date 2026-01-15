@@ -4694,13 +4694,13 @@ life functions to make Databricks simpler to use.")
 (define-public r-brickset
   (package
     (name "r-brickset")
-    (version "2025.0.0")
+    (version "2026.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickset" version))
        (sha256
-        (base32 "1767d31ml2gwpzz57fwnz6pqgk225rcsaikknv1mn031c1daiyld"))))
+        (base32 "1f0bnm0phzr1s4fg7i9jn8j6hxwvb89djhzrg86w3v6ibiyq6clz"))))
     (properties `((upstream-name . "brickset")))
     (build-system r-build-system)
     (arguments
@@ -4716,7 +4716,7 @@ life functions to make Databricks simpler to use.")
 <https://brickset.com/article/52664/api-version-3-documentation> for getting
 data about LEGO sets.  Data sets that can be used for teaching and learning
 without the need of a Brickset account and API key are also included.  Includes
-all LEGO since through the end of 2023.")
+all LEGO since through the end of 2025.")
     (license license:gpl3+)))
 
 (define-public r-brfinance
@@ -10749,6 +10749,32 @@ Analysis with Bayesian Additive Regression Trees\", submitted for publication.")
 refining procedure proposed by George Casella (1986) <doi:10.2307/3314658>.")
     (license license:gpl3)))
 
+(define-public r-blvim
+  (package
+    (name "r-blvim")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blvim" version))
+       (sha256
+        (base32 "1rqizf4j5gmq53j1yn0cwyvwnjjlp3m0g16nsnhdhzm3qgxs6xla"))))
+    (properties `((upstream-name . "blvim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-collapse r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=blvim")
+    (synopsis "BoltzmannâLotkaâVolterra Interaction Model")
+    (description
+     "Estimates BoltzmannâLotkaâVolterra (BLV) interaction model efficiently.
+Enables programmatic and graphical exploration of the solution space of BLV
+models when parameters are varied.  See Wilson, A. (2008)
+<dx.doi.org/10.1098/rsif.2007.1288>.")
+    (license license:gpl3+)))
+
 (define-public r-bluecarbon
   (package
     (name "r-bluecarbon")
@@ -11942,13 +11968,13 @@ Goussanou (2022) <doi:10.1007/s42081-022-00153-3>.")
 (define-public r-blockforest
   (package
     (name "r-blockforest")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blockForest" version))
        (sha256
-        (base32 "1i5vqs0hh3yc82hl8bsa647plcv0c4c95b1wzdzyslxz2m5khw0l"))))
+        (base32 "02zn6mp1zy3zsp64mcv43kljn6g99lbmwlywacpcmdjb9iyy3wwg"))))
     (properties `((upstream-name . "blockForest")))
     (build-system r-build-system)
     (arguments
@@ -12616,6 +12642,34 @@ service, or through the Mailgun API service <https://www.mailgun.com/>.")
 in C++11 and using native R datatypes.  Blaster is based on nsearch - Schmid et
 al (2018) <doi:10.1101/399782>.")
     (license license:bsd-3)))
+
+(define-public r-blastar
+  (package
+    (name "r-blastar")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blastar" version))
+       (sha256
+        (base32 "1qdqklprrnrfavcrvcfiq3lsxzbm06093hnl85c2sr0qrpdjqyxp"))))
+    (properties `((upstream-name . "blastar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rentrez r-dplyr r-biostrings r-ape))
+    (home-page "https://github.com/loukesio/blastar")
+    (synopsis "BLAST and Sequence Analysis Tools")
+    (description
+     "Description: Provides streamlined tools for retrieving sequences from NCBI,
+performing sequence alignments (pairwise and multiple), and building
+phylogenetic trees.  Implements the Needleman-Wunsch algorithm for global
+alignment (Needleman & Wunsch (1970) <doi:10.1016/0022-2836(70)90057-4>),
+Smith-Waterman for local alignment (Smith & Waterman (1981)
+<doi:10.1016/0022-2836(81)90087-5>), and Neighbor-Joining for tree construction
+(Saitou & Nei (1987) <doi:10.1093/oxfordjournals.molbev.a040454>).")
+    (license license:expat)))
 
 (define-public r-blapsr
   (package
@@ -28838,6 +28892,45 @@ trials.  See Wang C and Sabo RT (2022) <doi:10.18203/2349-3259.ijct20221110>;
 Sabo RT (2014) <doi:10.1080/10543406.2014.888441>.")
     (license license:gpl2+)))
 
+(define-public r-bayesdiagnostics
+  (package
+    (name "r-bayesdiagnostics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesDiagnostics" version))
+       (sha256
+        (base32 "0rvz4f16pcngpfpb38jq2kgbx98y30fc3ksamz25wgimwrr25dk6"))))
+    (properties `((upstream-name . "bayesDiagnostics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rstan
+                             r-posterior
+                             r-matrixstats
+                             r-loo
+                             r-gridextra
+                             r-ggplot2
+                             r-checkmate
+                             r-brms
+                             r-bridgesampling))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ikrakib/bayesDiagnostics")
+    (synopsis "Comprehensive Bayesian Model Diagnostics and Comparison Tools")
+    (description
+     "This package provides comprehensive tools for Bayesian model diagnostics and
+comparison.  Includes prior sensitivity analysis, posterior predictive checks
+(Gelman et al. (2013) <doi:10.1201/b16018>), advanced model comparison using
+Pareto-smoothed importance sampling leave-one-out cross-validation (Vehtari et
+al. (2017) <doi:10.1007/s11222-016-9696-4>), convergence diagnostics, and prior
+elicitation tools.  Integrates with brms (Burkner (2017)
+<doi:10.18637/jss.v080.i01>), rstan', and rstanarm packages for comprehensive
+Bayesian workflow diagnostics.")
+    (license license:expat)))
+
 (define-public r-bayesdfa
   (package
     (name "r-bayesdfa")
@@ -29226,13 +29319,13 @@ meta-analysis.")
 (define-public r-bayeschange
   (package
     (name "r-bayeschange")
-    (version "2.1.3")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesChange" version))
        (sha256
-        (base32 "1bdpgfs1wlzilrz086ayqpifq5yjz0649vd48lsm9vpisna84l7x"))))
+        (base32 "0cd79g0l98gwnvxrz5rnnp4svalz9nryv2hgds1p3imnzqah9wjy"))))
     (properties `((upstream-name . "BayesChange")))
     (build-system r-build-system)
     (arguments
@@ -29240,24 +29333,24 @@ meta-analysis.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-salso
+                             r-rlang
+                             r-reshape2
                              r-rcppgsl
                              r-rcpparmadillo
                              r-rcpp
                              r-ggpubr
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lucadanese/BayesChange")
-    (synopsis "Bayesian Methods for Change Points Analysis")
+    (synopsis "Bayesian Methods for Change Point Analysis")
     (description
-     "Perform change points detection on univariate and multivariate time series
-according to the methods presented by Asael Fabian MartÃ­nez and RamsÃ©s H. Mena
-(2014) <doi:10.1214/14-BA878> and Corradin, Danese and Ongaro (2022)
-<doi:10.1016/j.ijar.2021.12.019>.  It also clusters different types of time
-dependent data with common change points, see \"Model-based clustering of
-time-dependent observations with common structural changes\"
-(Corradin,Danese,@code{KhudaBukhsh} and Ongaro, 2024)
-<doi:10.48550/@code{arXiv.2410.09552>} for details.")
+     "This package performs change point detection on univariate and multivariate time
+series (MartÃ­nez & Mena, 2014, <doi:10.1214/14-BA878> ; Corradin, Danese &
+Ongaro, 2022, <doi:10.1016/j.ijar.2021.12.019>) and clusters time-dependent data
+with common change points (Corradin, Danese, @code{KhudaBukhsh} & Ongaro, 2026,
+<doi:10.1007/s11222-025-10756-x>).")
     (license license:gpl3+)))
 
 (define-public r-bayescace

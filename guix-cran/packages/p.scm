@@ -6478,13 +6478,13 @@ Prisonniere\", \"Albertine disparue\", and \"Le Temps retrouve\".")
 (define-public r-protti
   (package
     (name "r-protti")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protti" version))
        (sha256
-        (base32 "15ww485y1dn7cx7w3ffjpvmd3xfwzw0qi1jlls95rb62p06bnc95"))))
+        (base32 "014cg4v2d65aslg0wv6nl6fhq2z9dx65fxh41ih5yci8wglz3jfw"))))
     (properties `((upstream-name . "protti")))
     (build-system r-build-system)
     (arguments
@@ -16491,13 +16491,13 @@ randomized objective functions\" <@code{arXiv:1806.11544>}.")
 (define-public r-postdoc
   (package
     (name "r-postdoc")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "postdoc" version))
        (sha256
-        (base32 "1605yy7rh5vn1sydwawjb2p586i1zh6j4ibj3srb2rjij0pn4xil"))))
+        (base32 "14dqzgabc6vc9mia2f58pflmr4cc0knrhffyxhdmcp2rak4wqn9w"))))
     (properties `((upstream-name . "postdoc")))
     (build-system r-build-system)
     (arguments
@@ -26947,38 +26947,64 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
 (define-public r-pkbioanalysis
   (package
     (name "r-pkbioanalysis")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKbioanalysis" version))
        (sha256
-        (base32 "01sfgirv64rqnpyc78yyfy9hb5lrsxahgi14vs3fa96nixfmgzry"))))
+        (base32 "0vi5vkgmf6phnjwn1srcq43zi6p601qdnzhj6i80xyw4fbfmkfgr"))))
     (properties `((upstream-name . "PKbioanalysis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list python))
     (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-uuid
                              r-units
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-stringr
+                             r-sortable
                              r-shinywidgets
                              r-shinyjs
+                             r-shinychat
                              r-shinyalert
                              r-shiny
+                             r-scales
+                             r-rtmb
                              r-rlang
                              r-rhandsontable
+                             r-reticulate
+                             r-reactable
+                             r-rams
+                             r-pracma
+                             r-pmxtools
+                             r-plotly
+                             r-nloptr
+                             r-nlme
+                             r-jsonlite
+                             r-janitor
+                             r-htmlwidgets
                              r-htmltools
+                             r-gtools
+                             r-gt
                              r-glue
                              r-ggplot2
+                             r-ggiraph
                              r-ggforce
+                             r-forcats
+                             r-ellmer
                              r-duckdb
                              r-dt
                              r-dplyr
                              r-diagrammer
                              r-dbi
+                             r-data-tree
+                             r-cli
                              r-checkmate
                              r-bslib
                              r-bsicons))

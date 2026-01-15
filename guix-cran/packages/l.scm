@@ -8093,13 +8093,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.2.7")
+    (version "3.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMest" version))
        (sha256
-        (base32 "0p2im3cj81cyi3i6a7wkdbkrgg79dfz94d4z5y0xcnibz7r5xypw"))))
+        (base32 "1vbhpx0kga23q02rcv29gixxsyf1j1hw13gb5inp3airfr392nf6"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (arguments

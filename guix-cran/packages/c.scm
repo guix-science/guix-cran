@@ -6098,27 +6098,29 @@ extending the splines beyond their endpoints.")
 (define-public r-crrstep
   (package
     (name "r-crrstep")
-    (version "2024.1.1")
+    (version "2025.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crrstep" version))
        (sha256
-        (base32 "16pgsqgj1cx3iw4p1rrk7fwvi3jh2m80xs6ysyl1kj451xdzrkrc"))))
+        (base32 "0j1f6cxzn662993s4icq0y2xkpvafjrvi6dnn6wv2w2nmc2ygjg1"))))
     (properties `((upstream-name . "crrstep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-cmprsk))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=crrstep")
     (synopsis
      "Stepwise Covariate Selection for the Fine & Gray Competing Risks Regression Model")
     (description
-     "This package performs forward and backwards stepwise regression for the
-Proportional subdistribution hazards model in competing risks (Fine & Gray
+     "This package performs forward and backward stepwise regression for the
+proportional subdistribution hazards model in competing risks (Fine & Gray
 1999).  Procedure uses AIC, BIC and BICcr as selection criteria.  BICcr has a
-penalty of k = log(n*), where n* is the number of primary events.")
+penalty of k = log(n*), where n* is the number of primary events.  This version
+includes improved handling of factors, interactions, and polynomial terms.")
     (license license:gpl2+)))
 
 (define-public r-crrsc
@@ -10015,49 +10017,6 @@ create QQ plots, manhattan plots, and scatterplots for individual @code{CpG}
 sites.")
     (license license:gpl2+)))
 
-(define-public r-cpfa
-  (package
-    (name "r-cpfa")
-    (version "1.2-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cpfa" version))
-       (sha256
-        (base32 "0x6148ql1pnbns22548xcdbqqfscbli3rydagfy9qi7alz4wnhw8"))))
-    (properties `((upstream-name . "cpfa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-rda
-                             r-randomforest
-                             r-nnet
-                             r-multiway
-                             r-glmnet
-                             r-foreach
-                             r-e1071
-                             r-dorng
-                             r-doparallel))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=cpfa")
-    (synopsis "Classification with Parallel Factor Analysis")
-    (description
-     "Classification using Richard A. Harshman's Parallel Factor Analysis-1 (Parafac)
-model or Parallel Factor Analysis-2 (Parafac2) model fit to a three-way or
-four-way data array.  See Harshman and Lundy (1994):
-<doi:10.1016/0167-9473(94)90132-5>.  Uses component weights from one mode of a
-Parafac or Parafac2 model as features to tune parameters for one or more
-classification methods via a k-fold cross-validation procedure.  Allows for
-constraints on different tensor modes.  Supports penalized logistic regression,
-support vector machine, random forest, feed-forward neural network, regularized
-discriminant analysis, and gradient boosting machine.  Supports binary and
-multiclass classification.  Predicts class labels or class probabilities and
-calculates multiple classification performance measures.  Implements parallel
-computing via the parallel', @code{doParallel}', and @code{doRNG} packages.")
-    (license license:gpl2+)))
-
 (define-public r-cpe
   (package
     (name "r-cpe")
@@ -12516,13 +12475,13 @@ their own methods for randomization.  Rosenthal and Rubin (1994)
 (define-public r-counterfactuals
   (package
     (name "r-counterfactuals")
-    (version "0.1.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "counterfactuals" version))
        (sha256
-        (base32 "0qa6a2kp8w1na35i0qcyxpk99b4qw6si1pfvjamjz1qvr2xa8rhz"))))
+        (base32 "0a503axjmk8dpf2p86ajpxqak9n8jd6b9x62qn2rcv6rcgxdr2xr"))))
     (properties `((upstream-name . "counterfactuals")))
     (build-system r-build-system)
     (arguments
@@ -12550,7 +12509,9 @@ The following methods are currently implemented: Burghmans et al. (2022)
 <doi:10.1007/978-3-030-58112-1_31> and Wexler et al. (2019)
 <doi:10.1109/TVCG.2019.2934619>.  Optional extensions allow these methods to be
 applied to a variety of models and use cases.  Once generated, the
-counterfactuals can be analyzed and visualized by provided functionalities.")
+counterfactuals can be analyzed and visualized by provided functionalities.  The
+package is described in detail in Dandl et al. (2025)
+<doi:10.18637/jss.v115.i09>.")
     (license license:lgpl3)))
 
 (define-public r-counterfactual
@@ -40508,13 +40469,13 @@ and the available API calls to streamline the process.")
 (define-public r-charlatan
   (package
     (name "r-charlatan")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "charlatan" version))
        (sha256
-        (base32 "19vrav1yhbfag2j2fc9hbrjhv79w0gxfzaml66b374q76cjji1nz"))))
+        (base32 "0pzg32qz18hphih4lyrd3ik5y38bg66iry3szg6vw28q07q19y1i"))))
     (properties `((upstream-name . "charlatan")))
     (build-system r-build-system)
     (arguments
@@ -51217,13 +51178,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.58.7")
+    (version "1.59.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "00r0brixkxzc9ipxgpjb4msiaqh56aqwca7axvvycgf13y22x8p4"))))
+        (base32 "0w1r6h7mnzq5mksq685r11m5wd53rd0cbv8n4wxzmccigjkdgz8j"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (arguments
@@ -51856,13 +51817,13 @@ reproducibility while maintaining flexibility for different study designs.")
 (define-public r-camtrapdp
   (package
     (name "r-camtrapdp")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapdp" version))
        (sha256
-        (base32 "0sh2bshx7faicaq1pn14yx2ivy8mqcvbk75lrmbacsfwzri7z4rp"))))
+        (base32 "1vfd258k7dmdkms3vn2f2vdi96r2cfshlaa0x5hlywpbbr0rhvqg"))))
     (properties `((upstream-name . "camtrapdp")))
     (build-system r-build-system)
     (arguments

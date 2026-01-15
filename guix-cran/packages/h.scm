@@ -6571,13 +6571,13 @@ Bates, D. (2006) \"Mixed-effects Models in S and S-Plus\" ISBN: 978-1441903174."
 (define-public r-hmcdm
   (package
     (name "r-hmcdm")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmcdm" version))
        (sha256
-        (base32 "02rhrk7fsaawmg9345gq9a3dnvkh8nxzhy4v5xa51y53jz9ifmrq"))))
+        (base32 "1hga6rvf980hawrw8dc8ynx7jhh3i7hqz913ggx32i5q537cvb8y"))))
     (properties `((upstream-name . "hmcdm")))
     (build-system r-build-system)
     (arguments
@@ -7855,6 +7855,36 @@ Numbers proposed by Chao, Chiu and Jost (2014)
 and Labour Dynamics in Australia) survey maintained by the Melbourne Institute
 <https://melbourneinstitute.unimelb.edu.au/hilda>.")
     (license license:gpl2)))
+
+(define-public r-hilbertsimilarity
+  (package
+    (name "r-hilbertsimilarity")
+    (version "0.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hilbertSimilarity" version))
+       (sha256
+        (base32 "0w17p9rn4ic04rq7sl1dgqakxi4vkaiah0a3bhc9bgmggwj3iar3"))))
+    (properties `((upstream-name . "hilbertSimilarity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-entropy))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yannabraham/hilbertSimilarity")
+    (synopsis "Hilbert Similarity Index for High Dimensional Data")
+    (description
+     "Quantifying similarity between high-dimensional single cell samples is
+challenging, and usually requires some simplifying hypothesis to be made.  By
+transforming the high dimensional space into a high dimensional grid, the number
+of cells in each sub-space of the grid is characteristic of a given sample.
+Using a Hilbert curve each sample can be visualized as a simple density plot,
+and the distance between samples can be calculated from the distribution of
+cells using the Jensen-Shannon distance.  Bins that correspond to significant
+differences between samples can identified using a simple bootstrap procedure.")
+    (license license:gpl3+)))
 
 (define-public r-higrad
   (package
@@ -13080,13 +13110,13 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
 (define-public r-hdf5lib
   (package
     (name "r-hdf5lib")
-    (version "2.0.0.4")
+    (version "2.0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5lib" version))
        (sha256
-        (base32 "04g01frl64agi8ihfxfr209gg7y9ghmppsdsja3rdiwqvp5aw9jj"))))
+        (base32 "0jgq62vzwn4prycry5z0q8r3cakyzq4dvcdksa7g2875skj22rjr"))))
     (properties `((upstream-name . "hdf5lib")))
     (build-system r-build-system)
     (arguments

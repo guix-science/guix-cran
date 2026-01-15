@@ -5700,33 +5700,3 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
 <doi:10.1002/widm.19>.")
     (license license:expat)))
 
-(define-public r-u5mr
-  (package
-    (name "r-u5mr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "u5mr" version))
-       (sha256
-        (base32 "16znlmxanhg1m6fq28z62jv033fxgr4njzz50hgskprvgvx8svkj"))))
-    (properties `((upstream-name . "u5mr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lifecycle))
-    (home-page "https://github.com/myominnoo/u5mr")
-    (synopsis "Under-Five Child Mortality Estimation")
-    (description
-     "This package contains functions for calculating under-five child mortality
-estimates using the Trussell version of the Brass method (United Nations (1990)
-<https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf>
-and United Nations (1983)
-<https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf>)
-as well as applying the cohort-derived methods by Rajaratnam and colleagues
-(Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) \"Measuring Under-Five
-Mortality: Validation of New Low-Cost Methods\"
-<doi:10.1371/journal.pmed.1000253>).")
-    (license license:gpl2+)))
-

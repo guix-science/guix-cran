@@ -4137,6 +4137,32 @@ are distributed under the Norwegian License for Open Data 2.0 (NLOD)
 <https://creativecommons.org/licenses/by/4.0/>.")
     (license license:expat)))
 
+(define-public r-frontmatter
+  (package
+    (name "r-frontmatter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "frontmatter" version))
+       (sha256
+        (base32 "0wr2alf509m9bhh9igdrw3m8g6pl3zx7hb3bn70cjakd9j8fx6fa"))))
+    (properties `((upstream-name . "frontmatter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml12 r-tomledit r-rlang r-cpp11))
+    (home-page "https://github.com/posit-dev/frontmatter")
+    (synopsis "Parse Front Matter from Documents")
+    (description
+     "Extracts and parses structured metadata ('YAML or TOML') from the beginning of
+text documents.  Front matter is a common pattern in Quarto documents, R
+Markdown documents, static site generators, documentation systems, content
+management tools and even Python and R scripts where metadata is placed at the
+top of a document, separated from the main content by delimiter fences.")
+    (license license:expat)))
+
 (define-public r-frontiles
   (package
     (name "r-frontiles")
@@ -20839,6 +20865,54 @@ Wang, J.L. (2005) <doi:10.1214/009053605000000660>.  SentÃ¼rk, D., MÃ¼ller, 
 (2010) <doi:10.1198/jasa.2010.tm09228>.")
     (license license:bsd-3)))
 
+(define-public r-fdacluster
+  (package
+    (name "r-fdacluster")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdacluster" version))
+       (sha256
+        (base32 "0zfa8ng3p1kbd36h74dn7zbw714q6v68rqnizxgr6dbkpv6zkfjf"))))
+    (properties `((upstream-name . "fdacluster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-nloptr
+                             r-lpsolve
+                             r-ggplot2
+                             r-future-apply
+                             r-fdasrvf
+                             r-dbscan
+                             r-cluster
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://astamm.github.io/fdacluster/")
+    (synopsis "Joint Clustering and Alignment of Functional Data")
+    (description
+     "Implementations of the k-means, hierarchical agglomerative and DBSCAN clustering
+methods for functional data which allows for jointly aligning and clustering
+curves.  It supports functional data defined on one-dimensional domains but
+possibly evaluating in multivariate codomains.  It supports functional data
+defined in arrays but also via the fd and @code{funData} classes for functional
+data defined in the fda and @code{funData} packages respectively.  It currently
+supports shift, dilation and affine warping functions for functional data
+defined on the real line and uses the SRVF framework to handle
+boundary-preserving warping for functional data defined on a specific interval.
+Main reference for the k-means algorithm: Sangalli L.M., Secchi P., Vantini S.,
+Vitelli V. (2010) \"k-mean alignment for curve clustering\"
+<doi:10.1016/j.csda.2009.12.008>.  Main reference for the SRVF framework:
+Tucker, J. D., Wu, W., & Srivastava, A. (2013) \"Generative models for functional
+data using phase and amplitude separation\" <doi:10.1016/j.csda.2012.12.001>.")
+    (license license:gpl3+)))
+
 (define-public r-fdaacf
   (package
     (name "r-fdaacf")
@@ -21975,13 +22049,13 @@ poll of over 30,000 people by Alex Bellos
 (define-public r-faviconplease
   (package
     (name "r-faviconplease")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faviconPlease" version))
        (sha256
-        (base32 "0b8zq8j7a3q7llw3gf82bdhfdk6i5fw6nh48c21dl04mbnx7z5n1"))))
+        (base32 "13qkc14ay59c9fpdz9ag2f2js4cqa65fm985xlkvs2lig1cqs43x"))))
     (properties `((upstream-name . "faviconPlease")))
     (build-system r-build-system)
     (arguments
@@ -23389,13 +23463,13 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.6-4")
+    (version "0.6-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "1nsdv8zl2snv5y69mr8y47y50sv5x7rlvjlmvqjldh55jvynnwy2"))))
+        (base32 "1wqn8hahn6vrip10fa3g6c7zi06345mcmmaq4393g1f45afy3629"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (arguments
@@ -24141,20 +24215,19 @@ case <doi:10.2139/ssrn.4832834>.")
 (define-public r-fastdid
   (package
     (name "r-fastdid")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastdid" version))
        (sha256
-        (base32 "00rnsqpmfs5kbbxjyrlnjm3hz095yvbzfw1svk1811hbbvn2kycl"))))
+        (base32 "00ifgfc3gjipbk2cl41nyph3jfysk1g9kaj2a4wyiw56z87y23sw"))))
     (properties `((upstream-name . "fastdid")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringr
-                             r-parglm
                              r-ggplot2
                              r-dreamerr
                              r-data-table

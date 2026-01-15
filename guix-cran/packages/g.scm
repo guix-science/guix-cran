@@ -1330,13 +1330,13 @@ estimation) are handled in a consistent and transparent way.")
 (define-public r-gunsales
   (package
     (name "r-gunsales")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gunsales" version))
        (sha256
-        (base32 "02vz16lhym72vvf48yai1g371wygdlmi63a6ylc147l0b69jgw31"))))
+        (base32 "1yq32g23b65k2fwvh9mc27d3qq7sfzhqgyacdi4550v40jcwlwg2"))))
     (properties `((upstream-name . "gunsales")))
     (build-system r-build-system)
     (arguments
@@ -1345,18 +1345,19 @@ estimation) are handled in a consistent and transparent way.")
     (propagated-inputs (list r-zoo
                              r-x13binary
                              r-seasonal
+                             r-rlang
                              r-ggplot2
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=gunsales")
+    (home-page "https://github.com/eddelbuettel/gunsales")
     (synopsis
      "Statistical Analysis of Monthly Background Checks of Gun Purchases")
     (description
      "Statistical analysis of monthly background checks of gun purchases for the New
 York Times story \"What Drives Gun Sales: Terrorism, Obama and Calls for
 Restrictions\" at
-<http://www.nytimes.com/interactive/2015/12/10/us/gun-sales-terrorism-obama-restrictions.html?>
+<https://www.nytimes.com/interactive/2015/12/10/us/gun-sales-terrorism-obama-restrictions.html>
 is provided.")
     (license (license:fsdg-compatible "Apache License (== 2)"))))
 
@@ -5415,6 +5416,44 @@ traditionally.")
     (description
      "The program GRNN implements the algorithm proposed by Specht (1991).")
     (license (license:fsdg-compatible "AGPL"))))
+
+(define-public r-grmtree
+  (package
+    (name "r-grmtree")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "grmtree" version))
+       (sha256
+        (base32 "14zbjcfl6d1h3raf93njlyzhz4iih1brqzx3nqgibr7ijj7cgpwa"))))
+    (properties `((upstream-name . "grmtree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-strucchange
+                             r-rlang
+                             r-partykit
+                             r-mirt
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Predicare1/grmtree")
+    (synopsis "Recursive Partitioning for Graded Response Models")
+    (description
+     "This package provides methods for recursive partitioning based on the Graded
+Response Model ('GRM'), extending the MOB algorithm from the partykit package.
+The package allows for fitting GRM trees that partition the population into
+homogeneous subgroups based on item response patterns and covariates.  Includes
+specialized plotting functions for visualizing GRM trees with different terminal
+node displays (threshold regions, parameter profiles, and factor score
+distributions).  For more details on the methods, see Samejima (1969)
+<doi:10.1002/J.2333-8504.1968.TB00153.X>, Komboz et al. (2018)
+<doi:10.1177/0013164416664394> and Arimoro et al. (2025)
+<doi:10.1007/s11136-025-04018-6>.")
+    (license license:gpl3)))
 
 (define-public r-grmsem
   (package
@@ -30445,13 +30484,13 @@ Florian Gerber (2022) <url:<https://CRAN.R-project.org/package=spam >>.")
 (define-public r-generalizedumatrixgpu
   (package
     (name "r-generalizedumatrixgpu")
-    (version "0.1.8")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneralizedUmatrixGPU" version))
        (sha256
-        (base32 "0j86lbz3zj6n1n9mdf5l69sc78d6w9zy25zwczlfrr0p7vdglqay"))))
+        (base32 "0ickp7d3ds7acv1agnaayz24bz2vr5nbcycyarnszlrwjq1glml1"))))
     (properties `((upstream-name . "GeneralizedUmatrixGPU")))
     (build-system r-build-system)
     (arguments

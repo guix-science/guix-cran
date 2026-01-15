@@ -14419,13 +14419,13 @@ first step to tailor new models for more specific situations.")
 (define-public r-morse
   (package
     (name "r-morse")
-    (version "3.3.4")
+    (version "3.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morse" version))
        (sha256
-        (base32 "1cq1xmabx4glgkxh6vn33ma1mb97079p5mmlydrm07h7r542k4vz"))))
+        (base32 "1wv8flpq6bs4vj88ba1lj4xnaf8w78zgz8mcncawg0s03qc5ybrr"))))
     (properties `((upstream-name . "morse")))
     (build-system r-build-system)
     (arguments
@@ -16952,24 +16952,19 @@ from Stata.")
 (define-public r-modistools
   (package
     (name "r-modistools")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MODISTools" version))
        (sha256
-        (base32 "1qxkipbrxqfs6wmg8q9ycwzwmp5qg3g2iv55w6cy492lhri3fsqa"))))
+        (base32 "1yfglaqg3mqk6p2wfmjish1afb0ix0xivp572hllf4yhj2jfp3pc"))))
     (properties `((upstream-name . "MODISTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-sp
-                             r-sf
-                             r-memoise
-                             r-jsonlite
-                             r-httr))
+    (propagated-inputs (list r-terra r-sf r-memoise r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/MODISTools")
     (synopsis "Interface to the 'MODIS Land Products Subsets' Web Services")
@@ -20598,32 +20593,6 @@ models ('GSE36594').  Deena Gendoo et al. (2015)
 estimators based on Gedamke and Hoenig (2006) <doi:10.1577/T05-153.1>.")
     (license license:gpl2)))
 
-(define-public r-mlxr
-  (package
-    (name "r-mlxr")
-    (version "4.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlxR" version))
-       (sha256
-        (base32 "0pr564376q7pn0wbbw5q9mjfzdc0bpq1g4xj0bcdmb64binqllvb"))))
-    (properties `((upstream-name . "mlxR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "http://simulx.webpopix.org")
-    (synopsis "Simulation of Longitudinal Data")
-    (description
-     "Simulation and visualization of complex models for longitudinal data.  The
-models are encoded using the model coding language Mlxtran and automatically
-converted into C++ codes.  That allows one to implement very easily complex
-ODE-based models and complex statistical models, including mixed effects models,
-for continuous, count, categorical, and time-to-event data.")
-    (license license:bsd-2)))
-
 (define-public r-mlwrap
   (package
     (name "r-mlwrap")
@@ -23914,13 +23883,13 @@ separately on two latent parameters.  It reports local false discovery rates
 (define-public r-mixturemissing
   (package
     (name "r-mixturemissing")
-    (version "3.0.5")
+    (version "3.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixtureMissing" version))
        (sha256
-        (base32 "07igdm0msab45qysh9ijhkrck02wjbala5qiagbpcvj051bnnnh9"))))
+        (base32 "07m33axyl6g0n7wkbvzv1nknb1i3icj1h9vjs3sgw0ypllsrmpb9"))))
     (properties `((upstream-name . "MixtureMissing")))
     (build-system r-build-system)
     (arguments
@@ -23939,16 +23908,17 @@ separately on two latent parameters.  It reports local false discovery rates
      "Robust and Flexible Model-Based Clustering for Data Sets with Missing Values at Random")
     (description
      "Implementations of various robust and flexible model-based clustering methods
-for data sets with missing values at random.  Two main models are: Multivariate
-Contaminated Normal Mixture (MCNM, Tong and Tortora, 2022,
-<doi:10.1007/s11634-021-00476-1>) and Multivariate Generalized Hyperbolic
-Mixture (MGHM, Wei et al., 2019, <doi:10.1016/j.csda.2018.08.016>).  Mixtures
-via some special or limiting cases of the multivariate generalized hyperbolic
-distribution are also included: Normal-Inverse Gaussian, Symmetric
-Normal-Inverse Gaussian, Skew-Cauchy, Cauchy, Skew-t, Student's t, Normal,
-Symmetric Generalized Hyperbolic, Hyperbolic Univariate Marginals, Hyperbolic,
-and Symmetric Hyperbolic.  Funding: This work was partially supported by the
-National Science foundation NSF Grant NO. 2209974.")
+for data sets with missing values at random (Tong and Tortora, 2025,
+<doi:10.18637/jss.v115.i03>).  Two main models are: Multivariate Contaminated
+Normal Mixture (MCNM, Tong and Tortora, 2022, <doi:10.1007/s11634-021-00476-1>)
+and Multivariate Generalized Hyperbolic Mixture (MGHM, Wei et al., 2019,
+<doi:10.1016/j.csda.2018.08.016>).  Mixtures via some special or limiting cases
+of the multivariate generalized hyperbolic distribution are also included:
+Normal-Inverse Gaussian, Symmetric Normal-Inverse Gaussian, Skew-Cauchy, Cauchy,
+Skew-t, Student's t, Normal, Symmetric Generalized Hyperbolic, Hyperbolic
+Univariate Marginals, Hyperbolic, and Symmetric Hyperbolic.  Funding: This work
+was partially supported by the National Science foundation NSF Grant NO.
+2209974.")
     (license license:gpl2+)))
 
 (define-public r-mixturefitting
@@ -38982,13 +38952,13 @@ methodological details are available in our recent preprint by Ahn S and Li Z
 (define-public r-medxr
   (package
     (name "r-medxr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MedxR" version))
        (sha256
-        (base32 "10zfbjr0xzr6bbfrhmg3jr2vf4lkqiq9fl654azn4glbkjjdp56z"))))
+        (base32 "0mjrk90ysk6pgp46c5izd9vazaxjz9mnkx8gv4ij51basrcc9x1i"))))
     (properties `((upstream-name . "MedxR")))
     (build-system r-build-system)
     (arguments
@@ -40058,13 +40028,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-measr
   (package
     (name "r-measr")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "measr" version))
        (sha256
-        (base32 "1w2b1g7zivilc4pip09yi5fyx052g835vax5ja6bl36725h8giwk"))))
+        (base32 "0ah0j9rbbc6dbii422md94mz2v2d2a5hafm1hlv1iaiqclzjgb84"))))
     (properties `((upstream-name . "measr")))
     (build-system r-build-system)
     (arguments
@@ -40073,23 +40043,29 @@ Outcomes Partnership Common Data Model.")
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stanheaders
+                             r-s7
                              r-rstantools
                              r-rstan
                              r-rlang
+                             r-rdcmchecks
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-psych
                              r-posterior
-                             r-magrittr
                              r-loo
+                             r-lifecycle
                              r-glue
                              r-fs
+                             r-dtplyr
                              r-dplyr
+                             r-dcmstan
                              r-dcm2
+                             r-cli
+                             r-bridgesampling
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://measr.info")
+    (home-page "https://measr.r-dcm.org")
     (synopsis "Bayesian Psychometric Measurement Using 'Stan'")
     (description
      "Estimate diagnostic classification models (also called cognitive diagnostic
@@ -52137,13 +52113,13 @@ meta-analysis.  Methods are described in Irsova et al. (2025)
 (define-public r-maint-data
   (package
     (name "r-maint-data")
-    (version "2.7.3")
+    (version "2.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAINT.Data" version))
        (sha256
-        (base32 "0hmwpymcr5nx838xlvrx7yvdh869qr88nrvcsq80mh8dsm4i28c1"))))
+        (base32 "1xy9qn7v79g2bzyjilli34mzdhzskbcmcgjp5n5b5qk7zx62rbgf"))))
     (properties `((upstream-name . "MAINT.Data")))
     (build-system r-build-system)
     (arguments

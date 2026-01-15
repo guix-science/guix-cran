@@ -3119,13 +3119,13 @@ essentially the same cost as a single SVM fit.")
 (define-public r-svmmaj
   (package
     (name "r-svmmaj")
-    (version "0.2.9.3")
+    (version "0.2.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVMMaj" version))
        (sha256
-        (base32 "1qr9hs857w5lv1601ksnb3z1g3ysjpp7idny2j4r4hi3nlh6pd55"))))
+        (base32 "0ankni19lr0i91985qnnfifmh9grjj3pwqcmssqss9dlvxhv5dz1"))))
     (properties `((upstream-name . "SVMMaj")))
     (build-system r-build-system)
     (arguments
@@ -4122,13 +4122,13 @@ competing risks outcomes.  Huang, R., Xu, R. and Dulai, P.S.(2020)
 (define-public r-survsakk
   (package
     (name "r-survsakk")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survSAKK" version))
        (sha256
-        (base32 "1ivi2p93rcyrrrwc93affx5bp5pshi6lwrz34ls9q6ibm462rar4"))))
+        (base32 "0184vfkbq8ncksss4fvymv634r5vnvbjsc3mhpfrw4vfhs58gcnn"))))
     (properties `((upstream-name . "survSAKK")))
     (build-system r-build-system)
     (arguments
@@ -17406,6 +17406,36 @@ municipality, drawing on stakeholder classifications (Mitchell, Agle, & Wood,
 B.R., & Wood D.J. <doi:10.2307/259247> Hester, P.T., & Adams, K.M. (2013)
 <doi:10.1016/j.procs.2013.09.282>.")
     (license license:gpl2+)))
+
+(define-public r-staggr
+  (package
+    (name "r-staggr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "staggR" version))
+       (sha256
+        (base32 "1xm5cnzvffhx91a52bc8smyc0dbwy1l3lw6m0mf4d6b2vv0lz85s"))))
+    (properties `((upstream-name . "staggR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chse-ohsu/staggR")
+    (synopsis
+     "Fit Difference-in-Differences Models with Staggered Interventions")
+    (description
+     "Fits linear difference-in-differences models in scenarios where intervention
+roll-outs are staggered over time.  The package implements a version of an
+approach proposed by Sun and Abraham (2021) <doi:10.1016/j.jeconom.2020.09.006>
+to estimate cohort- and time-since-treatment specific difference-in-differences
+parameters, and it provides convenience functions both for specifying the model
+and for flexibly aggregating coefficients to answer a variety of research
+questions.")
+    (license license:gpl3)))
 
 (define-public r-staggered
   (package
@@ -41457,13 +41487,13 @@ the feature space into a small and yet robust set.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.5.3-2")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sits" version))
        (sha256
-        (base32 "1cf2kivnr92l6bkh113q9kz08pnzhky1h25wm3ss6h9wff5myk6m"))))
+        (base32 "0csb13g171mps7wr8jd9gbq64kcsj2xik9a68wiwjz5926vzdl77"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (arguments
@@ -41540,13 +41570,13 @@ sitrep to access all functions from the ecosystem.")
 (define-public r-sitreee
   (package
     (name "r-sitreee")
-    (version "0.0-9")
+    (version "0.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sitreeE" version))
        (sha256
-        (base32 "1b5haiji7i26798xh226qzxcpd9xb48a9na6nzpi1v897li1zdfr"))))
+        (base32 "026cl7hn7lgqjlgki18z07kgv9i92v511ylrgxj61n5ix7i648r5"))))
     (properties `((upstream-name . "sitreeE")))
     (build-system r-build-system)
     (arguments
@@ -54075,13 +54105,13 @@ Appl Ecol.  2020; 57; 1847â1860. <doi:10.1111/1365-2664.13659>.")
 (define-public r-shark4r
   (package
     (name "r-shark4r")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHARK4R" version))
        (sha256
-        (base32 "0k6xwb1d6dz1yanax2pnzmbglpcrj3pil3wzdmgbl0825pchcamk"))))
+        (base32 "0rxk4vqagfjvvk68k96v25f1kyi438gha95bc8wwgk29iqnpfq5x"))))
     (properties `((upstream-name . "SHARK4R")))
     (build-system r-build-system)
     (arguments
@@ -55280,13 +55310,13 @@ Lai, Heyse and Chen (2010, <doi:10.1002/sim.4036>).")
 (define-public r-sglg
   (package
     (name "r-sglg")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sglg" version))
        (sha256
-        (base32 "1jbq0z3i2xjlnvhy98ahr1z19aprkm2s86y7hdqs6f4a2z6xk4dj"))))
+        (base32 "02flq52bslzb07kwmxp4ycqyg9p8hd798m5lbq48kcsdklj7ckw4"))))
     (properties `((upstream-name . "sglg")))
     (build-system r-build-system)
     (arguments
@@ -71173,13 +71203,13 @@ Haegeli (2022) <doi:10.5194/tc-16-3149-2022>, and Horton, Herla, and Haegeli
 (define-public r-sarp-snowprofile
   (package
     (name "r-sarp-snowprofile")
-    (version "1.3.2")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarp.snowprofile" version))
        (sha256
-        (base32 "1nrkifs6kq8kr3jmwi76d6jjbps1ijrnjxrslsyrpyvr2rj4p82h"))))
+        (base32 "114zaarbmadjjig68v5nzzzggxrvmhlsyv3pfs8dhdjngkfqc6zd"))))
     (properties `((upstream-name . "sarp.snowprofile")))
     (build-system r-build-system)
     (arguments
@@ -73638,6 +73668,33 @@ paths of the sparse and coupled sparse asymmetric least squares, including the
 (adaptive) elastic net and Lasso penalized SALES and COSALES regressions.")
     (license license:gpl2+)))
 
+(define-public r-salem
+  (package
+    (name "r-salem")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "salem" version))
+       (sha256
+        (base32 "1ci2gmn0p47848ja8plsi5dvzv2wprrycrx50z3b22pwgl8vhs66"))))
+    (properties `((upstream-name . "salem")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://elinw.github.io/salem/")
+    (synopsis "Provides Access to Salem Witchcraft Data")
+    (description
+     "Data related to the Salem Witch Trials Datasets and tutorials documenting the
+witch accusations and trials centered around Salem, Massachusetts in 1692.
+Originally assembled by Richard B. Latner of Tulane University for his website
+<https://www2.tulane.edu/~salem/index.html>.  The data sets include information
+on 152 accused witches, members of the Salem Village Committee, signatories of
+petitions related to the events, and tax data for Salem Village.")
+    (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
+
 (define-public r-salad
   (package
     (name "r-salad")
@@ -75799,13 +75856,13 @@ methods described in Wilks (2011) <doi:10.1016/B978-0-12-385022-5.00008-7>,
 (define-public r-s20x
   (package
     (name "r-s20x")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s20x" version))
        (sha256
-        (base32 "12n4165pwa86247kaq08nk7mzqdhdgxn6k7pskigsrv99i6mdgz6"))))
+        (base32 "1yyywj92hd29j1ppgnpz1gs5knwa4yn8mxgnrfck454jynlz03ww"))))
     (properties `((upstream-name . "s20x")))
     (build-system r-build-system)
     (arguments

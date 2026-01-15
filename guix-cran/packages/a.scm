@@ -8023,13 +8023,13 @@ these services, see <https://www.ogc.org/publications/standard/wfs/> and
 (define-public r-argentinapi
   (package
     (name "r-argentinapi")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ArgentinAPI" version))
        (sha256
-        (base32 "1wh9bvxkcw0fpi8pjzk68szizf7v9h3g02w2c788r31pn2srpmmq"))))
+        (base32 "0ssv7l9q1zal9ddg48w307p7b6njnhqq06dybf3nc8vzav11qg1b"))))
     (properties `((upstream-name . "ArgentinAPI")))
     (build-system r-build-system)
     (arguments
@@ -23297,13 +23297,13 @@ area.")
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiraldev" version))
        (sha256
-        (base32 "0c6z16fv9i1rsq3syjgz5w2yjlxyghyyq5y7nblph82kg0qd1lsd"))))
+        (base32 "0jazm86hkg56cz7mznvcmiqcw4rrs87fvkjqlpck9n91vfsiwhpz"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (arguments
@@ -24421,13 +24421,13 @@ than standard methods.")
 (define-public r-addivortes
   (package
     (name "r-addivortes")
-    (version "0.4.7")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AddiVortes" version))
        (sha256
-        (base32 "0k8h547vs3fbqksx1k6ay8znnz44ln3x4id1q5dzf6cvrbfn699j"))))
+        (base32 "1isxi0pbbdzhn0i5fzswr26h9kc7gxpn8bgysnbshw0mmwb762v8"))))
     (properties `((upstream-name . "AddiVortes")))
     (build-system r-build-system)
     (arguments

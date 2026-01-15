@@ -6904,13 +6904,13 @@ gurobi R package can then be installed following the instructions at
 (define-public r-tripler
   (package
     (name "r-tripler")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TripleR" version))
        (sha256
-        (base32 "1al8cihrjz931gjn3bf94h0nd7a9hc1cmf50bkikj35vwy5kaxij"))))
+        (base32 "118s3jbcm2zzsn3pvk76gd70if2fahwq0dqhsvvn5maiin258pmm"))))
     (properties `((upstream-name . "TripleR")))
     (build-system r-build-system)
     (arguments
@@ -7572,13 +7572,13 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.4.8")
+    (version "0.0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "0d7ls8vnz7pa86yb0015k4apn9nj60zd19z8hz89k04j18hqczwm"))))
+        (base32 "0a35hh51n17pmvmwnla8gjn0njczcar3h04x8i6v4x102nlc0ilf"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (arguments
@@ -7586,7 +7586,6 @@ a method you would like implemented, please get in touch.")
       #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-rcpp
-                             r-parglm
                              r-mvtnorm
                              r-lmtest
                              r-lifecycle
@@ -12688,6 +12687,40 @@ technique to predict potential for biological influence from chemicals that
 ultimately need to be validated with direct biological assays.  A description of
 the analysis can be found in Blackwell (2017) <doi:10.1021/acs.est.7b01613>.")
     (license license:cc0)))
+
+(define-public r-toxdrc
+  (package
+    (name "r-toxdrc")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toxdrc" version))
+       (sha256
+        (base32 "1zs6m6fjk91172ax8nnrx4h1bskwgrrbx0njiy5ip1101zwc15av"))))
+    (properties `((upstream-name . "toxdrc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-outliers
+                             r-magrittr
+                             r-drc
+                             r-dplyr))
+    (home-page "https://github.com/jsalole/toxdrc")
+    (synopsis "Pipeline for Dose-Response Curve Analysis")
+    (description
+     "This package provides a variety of tools for assessing dose response curves,
+with an emphasis on toxicity test data.  The main feature of this package are
+modular functions which can be combined through the namesake pipeline,
+runtoxdrc', to automate the analysis for large and complex datasets.  This
+includes optional data preprocessing steps, like outlier detection, solvent
+effects, blank correction, averaging technical replicates, and much more.
+Additionally, this pipeline is adaptable to any long form dataset, and does not
+require specific column or group naming to work.")
+    (license license:expat)))
 
 (define-public r-toxcrit
   (package
@@ -25944,13 +25977,13 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
 (define-public r-testgenerator
   (package
     (name "r-testgenerator")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGenerator" version))
        (sha256
-        (base32 "0dxkgvdfaw1gbklrad5ia122byglgkwscbc8n00z3j2qp3bxrwfn"))))
+        (base32 "0v0m82s36vlrp9mhi7g7mamh5k6aqiclhz6iiw7y3m3jvrjyy5q1"))))
     (properties `((upstream-name . "TestGenerator")))
     (build-system r-build-system)
     (arguments
@@ -28311,13 +28344,13 @@ proposed in Wolf et al. (2022) <doi:10.1177/17407745221095855>.")
 (define-public r-tedm
   (package
     (name "r-tedm")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tEDM" version))
        (sha256
-        (base32 "1mh57w0xq7q0d0xc5dn8acsjps6k928nlfysnfw7ck1v0gsdxmv8"))))
+        (base32 "1pg8irmy2yb8spjsji7ifyn5dlcwpi7fz463cc29irxpvl2rlhzf"))))
     (properties `((upstream-name . "tEDM")))
     (build-system r-build-system)
     (arguments

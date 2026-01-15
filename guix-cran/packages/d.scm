@@ -18603,6 +18603,33 @@ and quantile computation, and weight diagnostic plot for generic importance
 sampling type or other probability weighted samples.")
     (license license:gpl2+)))
 
+(define-public r-diagcounts
+  (package
+    (name "r-diagcounts")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diagcounts" version))
+       (sha256
+        (base32 "0s5wvp2im2wh2srni2yvrya0mpfy7bg4yczjc0y6y9k2rdmjhbx5"))))
+    (properties `((upstream-name . "diagcounts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=diagcounts")
+    (synopsis
+     "Recover Diagnostic Test Accuracy Counts from Reported Accuracy Measures")
+    (description
+     "This package implements a system of linear equations to recover unreported
+diagnostic test accuracy cell counts from commonly reported measures such as
+sensitivity, specificity, predictive values, prevalence, and sample size.  The
+package is intended for applied researchers who require complete 2x2 table
+counts for downstream analyses.")
+    (license license:expat)))
+
 (define-public r-di
   (package
     (name "r-di")
@@ -22793,13 +22820,13 @@ binomial distribution.")
 (define-public r-denim
   (package
     (name "r-denim")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denim" version))
        (sha256
-        (base32 "0qvyqhjydkg48fiqw3vd6zbqk6a9xmhcgw3ffjp0lwdl258s9773"))))
+        (base32 "0xhvl502gmgffxwi9114vnsglqvfy6l03mr2901wrdkg4jp1vwn0"))))
     (properties `((upstream-name . "denim")))
     (build-system r-build-system)
     (arguments
@@ -26469,13 +26496,13 @@ straightforward R API. The package relies on the r2d3 R package and the D3
 (define-public r-ddpcr
   (package
     (name "r-ddpcr")
-    (version "1.15.2")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddpcr" version))
        (sha256
-        (base32 "1as25yc23n6jj87nccp7g2jrpvz6yxa7f6ba65g6ynvkzk57531b"))))
+        (base32 "1lid37pbgkgrk8cvl2cg12iz5apkj3ynivv3s1azk5clz2qy72k9"))))
     (properties `((upstream-name . "ddpcr")))
     (build-system r-build-system)
     (arguments
@@ -26485,11 +26512,11 @@ straightforward R API. The package relies on the r2d3 R package and the D3
                              r-shinyjs
                              r-shinydisconnect
                              r-shiny
+                             r-rlang
                              r-readr
                              r-plyr
                              r-mixtools
                              r-magrittr
-                             r-lazyeval
                              r-ggplot2
                              r-dt
                              r-dplyr))
@@ -29947,32 +29974,6 @@ based on Rattanalertnusorn, A. (2024)
 <https://www.researchgate.net/publication/371944275_porkaermxarlaeakarprayuktchingan_R_and_its_applications>.")
     (license license:cc0)))
 
-(define-public r-datassim
-  (package
-    (name "r-datassim")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DatAssim" version))
-       (sha256
-        (base32 "120gazyyxda9faydv2lyqgvflhqi2fhih1szq0sy5v1gh4xb0hhy"))))
-    (properties `((upstream-name . "DatAssim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=DatAssim")
-    (synopsis "Data Assimilation")
-    (description
-     "For estimation of a variable of interest using Kalman filter by incorporating
-results from previous assessments, i.e.  through development weighted estimates
-where weights are assigned inversely proportional to the variance of existing
-and new estimates.  For reference see Ehlers et al. (2017)
-<doi:10.20944/preprints201710.0098.v1>.")
-    (license license:gpl2+)))
-
 (define-public r-dataspice
   (package
     (name "r-dataspice")
@@ -32928,13 +32929,13 @@ distribution in the location-scale model, are estimated using Laplace P-splines.
 (define-public r-dalextra
   (package
     (name "r-dalextra")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DALEXtra" version))
        (sha256
-        (base32 "1yxsk6cmqrhc7aw62vx5pr2g18lh32j5x73jbfxv4k0ia66mmwqf"))))
+        (base32 "0daamlw41lk3qv7ysd9k3i61zqk5km9w985abxbwmw04j89i3kcy"))))
     (properties `((upstream-name . "DALEXtra")))
     (build-system r-build-system)
     (arguments
@@ -32949,11 +32950,11 @@ machine learning, there is a strong belief that we need to strike a balance
 between interpretability and accuracy.  However, in field of the interpretable
 machine learning, there are more and more new ideas for explaining black-box
 models, that are implemented in R'.  DALEXtra creates DALEX Biecek (2018)
-<@code{arXiv:1806.08915>} explainer for many type of models including those
-created using python scikit-learn and keras libraries, and java h2o library.
-Important part of the package is Champion-Challenger analysis and innovative
-approach to model performance across subsets of test data presented in Funnel
-Plot.")
+<doi:10.48550/@code{arXiv.1806.08915>} explainer for many type of models
+including those created using python scikit-learn and keras libraries, and java
+h2o library.  Important part of the package is Champion-Challenger analysis and
+innovative approach to model performance across subsets of test data presented
+in Funnel Plot.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-daks

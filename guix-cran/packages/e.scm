@@ -11532,13 +11532,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.11.0.0")
+    (version "0.11.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "1ka2mz8j4cm7wb7mvlk6gppwsh0rps96r8m7mnparfn49gwxp7v0"))))
+        (base32 "07k4shgi4hgdfhy232kz9gi5bah7ahm6ifp1r58nrvy302k13pds"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -18272,34 +18272,6 @@ of statistical election audits.  There are also functions to generate simulated
 voting data, including methods to simulation different types of voting errors
 which allow for simulations for checking the characteristics of these methods.")
     (license license:gpl2+)))
-
-(define-public r-elastic
-  (package
-    (name "r-elastic")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "elastic" version))
-       (sha256
-        (base32 "0k98ziacyxl1pyhyynmswcncqwl0a05sawypncdpdd9xr77nvgi6"))))
-    (properties `((upstream-name . "elastic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-jsonlite r-curl r-crul))
-    (home-page "https://docs.ropensci.org/elastic/")
-    (synopsis "General Purpose Interface to 'Elasticsearch'")
-    (description
-     "Connect to Elasticsearch', a @code{NoSQL} database built on the Java Virtual
-Machine.  Interacts with the Elasticsearch HTTP API
-(<https://www.elastic.co/elasticsearch/>), including functions for setting
-connection details to Elasticsearch instances, loading bulk data, searching for
-documents with both HTTP query variables and JSON based body requests.  In
-addition, elastic provides functions for interacting with API's for indices',
-documents, nodes, clusters, an interface to the cat API, and more.")
-    (license license:expat)))
 
 (define-public r-elastes
   (package

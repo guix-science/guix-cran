@@ -24,6 +24,7 @@
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages prolog)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
@@ -3567,6 +3568,34 @@ URL: <https://docs.joinmastodon.org/>.")
      "Truncated Newton function minimization with bounds constraints based on the
 Matlab'/'Octave codes of Stephen Nash.")
     (license license:gpl2+)))
+
+(define-public r-rtmsecho
+  (package
+    (name "r-rtmsecho")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtmsEcho" version))
+       (sha256
+        (base32 "0bpvph4k1sa79zdnfrjvjywq5cqh4ncamyfmqp9cacrqkjpvlklm"))))
+    (properties `((upstream-name . "rtmsEcho")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rtms))
+    (home-page "https://cran.r-project.org/package=rtmsEcho")
+    (synopsis "Extract and Analyze EchoMS Data from Sciex Wiff Files")
+    (description
+     "Read raw and processed data from acoustic ejection mass spectrometry (AEMS)
+files produced by the Sciex @code{EchoMS} instrument.  Includes functions to
+create interactive reader objects, extract raw intensity measurements, mass
+spectra, and fully-processed mass-transition intensity areas.  Methods for data
+processing and analysis are described in Rimmer et al. (2025)
+<doi:10.1021/acs.analchem.5c03730>.  Supports both multiple reaction monitoring
+(MRM) and full-scan (neutral loss and precursor ion) data formats.")
+    (license license:gpl3+)))
 
 (define-public r-rtms
   (package
@@ -14117,6 +14146,32 @@ residuals and estimates in linear scales are available from the package, and
 outcomes with ties are supported.")
     (license license:lgpl3)))
 
+(define-public r-rolog
+  (package
+    (name "r-rolog")
+    (version "0.9.24")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rolog" version))
+       (sha256
+        (base32 "0v7lckf9n4sjs4y56lgf8x20ngq6kvsrl7pyfwg5sh2kf8ji3lzj"))))
+    (properties `((upstream-name . "rolog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list swi-prolog))
+    (propagated-inputs (list r-rswipl r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/mgondan/rolog")
+    (synopsis "Query 'SWI'-'Prolog' from R")
+    (description
+     "This R package connects to SWI-Prolog, <https://www.swi-prolog.org/>, so that R
+can send deterministic and non-deterministic queries to prolog (consult,
+query/submit, once, findall).")
+    (license (license:fsdg-compatible "FreeBSD"))))
+
 (define-public r-rolocisccnbs
   (package
     (name "r-rolocisccnbs")
@@ -22031,13 +22086,13 @@ scientific paper: Donald Hedeker, Robert D. Gibbons, Christine Waternaux (1999)
 (define-public r-rmark
   (package
     (name "r-rmark")
-    (version "3.0.0")
+    (version "3.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMark" version))
        (sha256
-        (base32 "0nrh55rmfkrncpc58hranjww37dp8qrngkcazs5nmznw8r10z8h8"))))
+        (base32 "1fhqv1l65ssd67lsn0hsrz5yddllvc58p6yvljcpb56q66k0qzkn"))))
     (properties `((upstream-name . "RMark")))
     (build-system r-build-system)
     (arguments
@@ -22357,19 +22412,19 @@ routines implement the algorithm described in Michael, Thronton, Xie, and Tian
 (define-public r-rly
   (package
     (name "r-rly")
-    (version "1.7.7")
+    (version "1.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rly" version))
        (sha256
-        (base32 "1ijpbqh9bcc7xaj1fb3pysg43bshff8hbzjrb5cl34wa0xw5ghzv"))))
+        (base32 "0dbjf9p9zj2p26s5y3aqy9nsrld5k94dwlvv3hn7hzkg1pd0dld2"))))
     (properties `((upstream-name . "rly")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-futile-logger))
+    (propagated-inputs (list r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/systemincloud/rly")
     (synopsis "Tools to Create Formal Language Parser")
@@ -31801,13 +31856,13 @@ structure to use for sabermetric or other analyses.")
 (define-public r-retroharmonize
   (package
     (name "r-retroharmonize")
-    (version "0.2.0")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "retroharmonize" version))
        (sha256
-        (base32 "10fwmm91p3dgad99a7imkg9cjlk0gy2bkpmzgfr6s9bp07splj6i"))))
+        (base32 "09q8p7dgg632s6r6jlqnhda3g5i82ynpgk1ri4l9jwphv5ng3hqf"))))
     (properties `((upstream-name . "retroharmonize")))
     (build-system r-build-system)
     (arguments
@@ -31821,7 +31876,6 @@ structure to use for sabermetric or other analyses.")
                              r-snakecase
                              r-rlang
                              r-purrr
-                             r-pillar
                              r-magrittr
                              r-labelled
                              r-here
@@ -31829,6 +31883,8 @@ structure to use for sabermetric or other analyses.")
                              r-glue
                              r-fs
                              r-dplyr
+                             r-dataset
+                             r-cli
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://retroharmonize.dataobservatory.eu/")
@@ -45814,13 +45870,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.14")
+    (version "0.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSimdJson" version))
        (sha256
-        (base32 "192cfvgnh60qwjvc2ip21ryizcpqgazkqbjnwv5isacgylhbk70m"))))
+        (base32 "0wkhj1wqpkv25l6fgdzgm6lpbjsp6l3vbpnaa9ily86yqh8whbdq"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (arguments
@@ -52637,13 +52693,13 @@ in research.  Trends in Ecology and Evolution, 37: 725-728.")
 (define-public r-rasterpic
   (package
     (name "r-rasterpic")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterpic" version))
        (sha256
-        (base32 "0q4a6cnpp8n60v9vmcc7nc2wrfgwgn9mbinac3af7w6k8qdqrmvn"))))
+        (base32 "0na1vmffnpsrr7b2qljfxis2r4065d2q227zgn7nyj4hh5hzj6c0"))))
     (properties `((upstream-name . "rasterpic")))
     (build-system r-build-system)
     (arguments
@@ -57753,13 +57809,13 @@ permission.")
 (define-public r-raceland
   (package
     (name "r-raceland")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raceland" version))
        (sha256
-        (base32 "0kkl12amzaff6y4bj1c62p1clkvxlfm8d20i6d09x35hkkxblnjk"))))
+        (base32 "02i5k1950d8332dkr25jkvqwa9z1pxr08x9k530sqrgk7q09pjdg"))))
     (properties `((upstream-name . "raceland")))
     (build-system r-build-system)
     (arguments

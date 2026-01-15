@@ -6698,13 +6698,13 @@ Journal of Pain (in minor revision).")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "3.0.5")
+    (version "3.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "12v0w3z3b4p1j9114dnwl6zcr5gc4h8aaxfhb5v5k8pg5pjxv3ih"))))
+        (base32 "1q8i5k63kdw9cj9jvz690xm4y92kkaxw071js2kjr9qsjx67bcah"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
     (arguments
@@ -8139,13 +8139,13 @@ into R.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openalexR" version))
        (sha256
-        (base32 "1v8gxkq08cdj7b02fhvv9097dca53fn17nvv1qsa20nqqzg95s81"))))
+        (base32 "0j9ynx8rzq8yc8ivm5fwq0vcciqfqlkc5h4vfcdi7i3nwlwf7s7k"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (arguments

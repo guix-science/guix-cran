@@ -7510,13 +7510,13 @@ evidence flow decomposition.")
 (define-public r-nmadta
   (package
     (name "r-nmadta")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMADTA" version))
        (sha256
-        (base32 "1sq05bswmhmzqjg0g2v6j1nf55c0ib413lz4vc3zk638m361pfi4"))))
+        (base32 "02cw9gypqbb07vcjg4s3awdjxvbsqjk3vs9nm7zhngfjhw7a1kkj"))))
     (properties `((upstream-name . "NMADTA")))
     (build-system r-build-system)
     (arguments
@@ -9453,6 +9453,35 @@ those discussed in Turek et al.  2021 <doi:10.1002/ecs2.3385>; among others.
 For a recent application of @code{nimbleSCR}, see Milleret et al. (2021)
 <doi:10.1098/rsbl.2021.0128>.")
     (license license:gpl3)))
+
+(define-public r-nimblequad
+  (package
+    (name "r-nimblequad")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleQuad" version))
+       (sha256
+        (base32 "1d49z6gizdc3r0l98idc01xr1q8dmb48r0higsj74my3c4s6k0qf"))))
+    (properties `((upstream-name . "nimbleQuad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-pracma r-polynom r-nimble))
+    (home-page "https://cran.r-project.org/package=nimbleQuad")
+    (synopsis
+     "Laplace Approximation, Quadrature, and Nested Deterministic Approximation Methods for 'nimble'")
+    (description
+     "This package provides deterministic approximation methods for use with the
+nimble package.  These include Laplace approximation and higher-order extension
+of Laplace approximation using adaptive Gauss-Hermite quadrature (AGHQ), plus
+nested deterministic approximation methods related to the INLA approach.
+Additional information is available in the NIMBLE User Manual and a
+@code{nimbleQuad} tutorial, both available at
+<https://r-nimble.org/documentation.html>.")
+    (license (list license:bsd-3 license:gpl2+))))
 
 (define-public r-nimblenobounds
   (package
@@ -11994,13 +12023,13 @@ visualizations of regional brain measures.  Mowinckel (2020).")
 (define-public r-neuroim2
   (package
     (name "r-neuroim2")
-    (version "0.8.1")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuroim2" version))
        (sha256
-        (base32 "1zq2pgj9p8dc5386yx6rmch2yx34xcp24gm29bmhp2nl02ns7zm0"))))
+        (base32 "1rhbxa0ri42va83ryx39h7v60cs4q93ws9aw5hgpms75vgc87j2m"))))
     (properties `((upstream-name . "neuroim2")))
     (build-system r-build-system)
     (arguments
@@ -12021,7 +12050,6 @@ visualizations of regional brain measures.  Mowinckel (2020).")
                              r-deflist
                              r-dbscan
                              r-crayon
-                             r-colorplane
                              r-bigstatsr
                              r-assertthat))
     (native-inputs (list r-rmarkdown r-knitr))
