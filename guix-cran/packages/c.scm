@@ -9147,45 +9147,6 @@ exponential and Weibull.  Inverse CDF method draws on the work of Rainer Walke
 exact binomial tests.")
     (license license:gpl2)))
 
-(define-public r-cpss
-  (package
-    (name "r-cpss")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cpss" version))
-       (sha256
-        (base32 "1j8hyhfkjwyq6nmfynlzl8q7n5irlzrqdqh83v7pfpizzjdhhfxq"))))
-    (properties `((upstream-name . "cpss")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-rfast
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/ghwang-nk/cpss")
-    (synopsis "Change-Point Detection by Sample-Splitting Methods")
-    (description
-     "This package implements multiple change searching algorithms for a variety of
-frequently considered parametric change-point models.  In particular, it
-integrates a criterion proposed by Zou, Wang and Li (2020)
-<doi:10.1214/19-AOS1814> to select the number of change-points in a data-driven
-fashion.  Moreover, it also provides interfaces for user-customized change-point
-models with one's own cost function and parameter estimation routine.  It is
-easy to get started with the cpss.* set of functions by accessing their
-documentation pages (e.g., ?cpss).")
-    (license license:gpl3+)))
-
 (define-public r-cpsr
   (package
     (name "r-cpsr")
@@ -10015,6 +9976,49 @@ models with chip or batch entering the model as a random intercept.  Also
 includes tools to apply quality control filters, perform permutation tests, and
 create QQ plots, manhattan plots, and scatterplots for individual @code{CpG}
 sites.")
+    (license license:gpl2+)))
+
+(define-public r-cpfa
+  (package
+    (name "r-cpfa")
+    (version "1.2-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpfa" version))
+       (sha256
+        (base32 "0na9y69f0f0cxppimkfsxii7wp7277qw3wy1v955sh8vwmbk3kwb"))))
+    (properties `((upstream-name . "cpfa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-rda
+                             r-randomforest
+                             r-nnet
+                             r-multiway
+                             r-glmnet
+                             r-foreach
+                             r-e1071
+                             r-dorng
+                             r-doparallel))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=cpfa")
+    (synopsis "Classification with Parallel Factor Analysis")
+    (description
+     "Classification using Richard A. Harshman's Parallel Factor Analysis-1 (Parafac)
+model or Parallel Factor Analysis-2 (Parafac2) model fit to a three-way or
+four-way data array.  See Harshman and Lundy (1994):
+<doi:10.1016/0167-9473(94)90132-5>.  Uses component weights from one mode of a
+Parafac or Parafac2 model as features to tune parameters for one or more
+classification methods via a k-fold cross-validation procedure.  Allows for
+constraints on different tensor modes.  Supports penalized logistic regression,
+support vector machine, random forest, feed-forward neural network, regularized
+discriminant analysis, and gradient boosting machine.  Supports binary and
+multiclass classification.  Predicts class labels or class probabilities and
+calculates multiple classification performance measures.  Implements parallel
+computing via the parallel', @code{doParallel}', and @code{doRNG} packages.")
     (license license:gpl2+)))
 
 (define-public r-cpe
@@ -19197,13 +19201,13 @@ references for the code are: Diquigiovanni, Fontana, and Vantini (2021)
 (define-public r-conformalforecast
   (package
     (name "r-conformalforecast")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conformalForecast" version))
        (sha256
-        (base32 "0hhzy9pmg4a622d9iklmjlmdf652v28kcgz9ysmq1lr6w50f8zpr"))))
+        (base32 "0ivz3hdf5hcmwdg4qw1s2c65sblaf3sji2ls05kli1jg617iwq3h"))))
     (properties `((upstream-name . "conformalForecast")))
     (build-system r-build-system)
     (arguments
@@ -22414,54 +22418,6 @@ of the Charlson Comorbidity Index are available as well (Sundararajan, 2004
 <doi:10.2147/CLEP.S282475>), together with different weighting algorithms for
 both the Charlson and Elixhauser comorbidity scores.")
     (license license:gpl3+)))
-
-(define-public r-communication
-  (package
-    (name "r-communication")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "communication" version))
-       (sha256
-        (base32 "08fkllwwcw2llpg5ivxhqghc88qfg1vdy0ciif3xazhhymb8wavb"))))
-    (properties `((upstream-name . "communication")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wrassp
-                             r-useful
-                             r-tuner
-                             r-signal
-                             r-scales
-                             r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-purrr
-                             r-plyr
-                             r-magrittr
-                             r-igraph
-                             r-gtools
-                             r-gtable
-                             r-ggplot2
-                             r-ggally
-                             r-diagram
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=communication")
-    (synopsis
-     "Feature Extraction and Model Estimation for Audio of Human Speech")
-    (description
-     "This package provides fast, easy feature extraction of human speech and model
-estimation with hidden Markov models.  Flexible extraction of phonetic features
-and their derivatives, with necessary preprocessing options like feature
-standardization.  Communication can estimate supervised and unsupervised hidden
-Markov models with these features, with cross validation and corrections for
-auto-correlation in features.  Methods developed in Knox and Lucas (2021)
-<doi:10.7910/DVN.8BTOHQ>.")
-    (license license:gpl2+)))
 
 (define-public r-commonsmath
   (package
@@ -26297,13 +26253,13 @@ tasks.")
 (define-public r-codestral
   (package
     (name "r-codestral")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codestral" version))
        (sha256
-        (base32 "15jy57fwbz7yrd0qbwy68hrmkhlflxb43l9qhxqn9al7dii2fgp5"))))
+        (base32 "04khl0n8p5xpmabw4sl1hr473hq4fchc24a8jyhcpxv2jd0kjqdm"))))
     (properties `((upstream-name . "codestral")))
     (build-system r-build-system)
     (arguments
@@ -26315,6 +26271,7 @@ tasks.")
                              r-jsonlite
                              r-httr
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://urbs-dev.github.io/codestral/")
     (synopsis "Chat and FIM with 'Codestral'")
     (description
@@ -44312,31 +44269,6 @@ different levels of gene expression.  Multi-component normal mixture models and
 EM algorithms are used for modeling.")
     (license license:asl2.0)))
 
-(define-public r-cec
-  (package
-    (name "r-cec")
-    (version "0.11.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CEC" version))
-       (sha256
-        (base32 "17s3npc7bm18f95rcly6sp15f8bjvf5zsjcms6wdrlcybx7pn42v"))))
-    (properties `((upstream-name . "CEC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/swarm-lab/cec")
-    (synopsis "Cross-Entropy Clustering")
-    (description
-     "Splits data into Gaussian type clusters using the Cross-Entropy Clustering
-('CEC') method.  This method allows for the simultaneous use of various types of
-Gaussian mixture models, for performing the reduction of unnecessary clusters,
-and for discovering new clusters by splitting them.  CEC is based on the work of
-Spurek, P. and Tabor, J. (2014) <doi:10.1016/j.patcog.2014.03.006>.")
-    (license license:gpl3)))
-
 (define-public r-ceblr
   (package
     (name "r-ceblr")
@@ -49641,13 +49573,13 @@ available.  Methods are described in Peduzzi et al. (1996)
 (define-public r-carpenter
   (package
     (name "r-carpenter")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "carpenter" version))
        (sha256
-        (base32 "13ahhdc6f5ngrhb7slqbxzfs3wswixh0argyr6l46cv4fdkaa80s"))))
+        (base32 "0a3dhadfbwkina2f4lwpiwc5wk018pkhn2cm6j8xkm8kf3nmf52j"))))
     (properties `((upstream-name . "carpenter")))
     (build-system r-build-system)
     (arguments
@@ -49655,9 +49587,9 @@ available.  Methods are described in Peduzzi et al. (1996)
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-rlang
                              r-pander
                              r-magrittr
-                             r-lazyeval
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lwjohnst86/carpenter")

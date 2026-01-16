@@ -9135,13 +9135,13 @@ women's time for the 2024 London Marathon.")
 (define-public r-forecasthybrid
   (package
     (name "r-forecasthybrid")
-    (version "5.1.20")
+    (version "5.1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forecastHybrid" version))
        (sha256
-        (base32 "1dc78dy728bk4ny2w6yrjcfjl2h65d2hxdnrfvjyqsqx8wh48xni"))))
+        (base32 "1x6jqivjgdw32c651hq0d69dz4cindgdlxkrnhml4h3lsd4cb2yl"))))
     (properties `((upstream-name . "forecastHybrid")))
     (build-system r-build-system)
     (arguments
@@ -22693,29 +22693,6 @@ from high-dimensional data.  Zamar, R., Ruiz, M., Lafit, G. and Nogales, J.
 (2021) <doi:10.52933/jdssv.v1i2.11>.")
     (license license:expat)))
 
-(define-public r-fastsom
-  (package
-    (name "r-fastsom")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastSOM" version))
-       (sha256
-        (base32 "1fzy7lfx1fn9993h0qh6vbwq0w4gfgbdrprmzb1z3aqq6nqvmngm"))))
-    (properties `((upstream-name . "fastSOM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=fastSOM")
-    (synopsis "Fast Calculation of Spillover Measures")
-    (description
-     "This package provides functions for computing spillover measures, especially
-spillover tables and spillover indices, as well as their average, minimal, and
-maximal values.")
-    (license license:gpl2+)))
-
 (define-public r-fastrweb
   (package
     (name "r-fastrweb")
@@ -24336,34 +24313,6 @@ solution paths of the elastic net penalized Cox's proportional hazards model.
 The package is an implementation of Yang, Y. and Zou, H. (2013)
 <doi:10.4310/SII.2013.v6.n2.a1>.")
     (license license:gpl2)))
-
-(define-public r-fastcmprsk
-  (package
-    (name "r-fastcmprsk")
-    (version "1.24.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastcmprsk" version))
-       (sha256
-        (base32 "0vjlfjjgnnbg1apsvsfdv0qm0qg4sl9ihz2ngqhxklw6cy38annm"))))
-    (properties `((upstream-name . "fastcmprsk")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-matrix r-foreach r-dynpred))
-    (home-page "https://cran.r-project.org/package=fastcmprsk")
-    (synopsis "Fine-Gray Regression via Forward-Backward Scan")
-    (description
-     "In competing risks regression, the proportional subdistribution hazards (PSH)
-model is popular for its direct assessment of covariate effects on the
-cumulative incidence function.  This package allows for both penalized and
-unpenalized PSH regression in linear time using a novel forward-backward scan.
-Penalties include Ridge, Lease Absolute Shrinkage and Selection Operator
-(LASSO), Smoothly Clipped Absolute Deviation (SCAD), Minimax Concave Plus (MCP),
-and elastic net <doi: 10.32614/RJ-2021-010>.")
-    (license license:gpl3)))
 
 (define-public r-fastbioclim
   (package

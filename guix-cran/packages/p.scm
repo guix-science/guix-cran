@@ -4300,6 +4300,53 @@ incorporating the prevalence of disease.  You can also use the online version at
 <https://hcpa-unidade-bioestatistica.shinyapps.io/PSS_Health/>.")
     (license license:gpl2+)))
 
+(define-public r-psrwe
+  (package
+    (name "r-psrwe")
+    (version "3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psrwe" version))
+       (sha256
+        (base32 "0wrlbc05zakyvjrphqks8nvblhb6jj5npp9fms02gkzmx264nz39"))))
+    (properties `((upstream-name . "psrwe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-randomforest
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/olssol/psrwe")
+    (synopsis
+     "PS-Integrated Methods for Incorporating Real-World Evidence in Clinical Studies")
+    (description
+     "High-quality real-world data can be transformed into scientific real-world
+evidence for regulatory and healthcare decision-making using proven analytical
+methods and techniques.  For example, propensity score (PS) methodology can be
+applied to select a subset of real-world data containing patients that are
+similar to those in the current clinical study in terms of baseline covariates,
+and to stratify the selected patients together with those in the current study
+into more homogeneous strata.  Then, statistical methods such as the power prior
+approach or composite likelihood approach can be applied in each stratum to draw
+inference for the parameters of interest.  This package provides functions that
+implement the PS-integrated real-world evidence analysis methods such as Wang et
+al. (2019) <doi:10.1080/10543406.2019.1657133>, Wang et al. (2020)
+<doi:10.1080/10543406.2019.1684309>, and Chen et al. (2020)
+<doi:10.1080/10543406.2020.1730877>.")
+    (license license:gpl3+)))
+
 (define-public r-psricalc
   (package
     (name "r-psricalc")
@@ -4594,13 +4641,13 @@ Durban, M. (2020) <doi:10.1007/s10260-019-00492-8>.")
 (define-public r-psp
   (package
     (name "r-psp")
-    (version "1.0.2")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psp" version))
        (sha256
-        (base32 "10b93c3x39304j9wz2fqlmx1x417vpzdi9b11bjil8brdg5qipk6"))))
+        (base32 "07c3fb32qx1cx8ry6bwk192dbfhsifhicbfq462zjhwncykjg74s"))))
     (properties `((upstream-name . "psp")))
     (build-system r-build-system)
     (arguments
@@ -15846,13 +15893,13 @@ bioequivalence studies in Two-Stage Designs (TSD) via simulations.")
 (define-public r-power-transform
   (package
     (name "r-power-transform")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "power.transform" version))
        (sha256
-        (base32 "15a0xpq9hrimpyzd71pl9ixbgvg5nj5v4j63zp3hw4hp12vijh75"))))
+        (base32 "0mny92zbrr5jffl5p23v90lgamhm77illb93v3cd3jjpffm2rq8s"))))
     (properties `((upstream-name . "power.transform")))
     (build-system r-build-system)
     (arguments
@@ -22324,13 +22371,13 @@ Project Management Institute, Newtown Square, PA, ISBN 9781628256673 (pdf)).")
 (define-public r-pmetar
   (package
     (name "r-pmetar")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmetar" version))
        (sha256
-        (base32 "1ycx0617aq9w4pfsy2izpn9fsz0rafr4p3hz085w7c2p1a4basjh"))))
+        (base32 "1qd6qxjzdx3h1firibs86ajl0jzw47vqkhlbd3dw39f2494sif4r"))))
     (properties `((upstream-name . "pmetar")))
     (build-system r-build-system)
     (arguments
@@ -22355,37 +22402,6 @@ are downloaded from Aviation Weather Center
 Environmental Mesonet web page of Iowa State University ASOS-AWOS-METAR
 <http://mesonet.agron.iastate.edu/AWOS/>.")
     (license license:gpl3+)))
-
-(define-public r-pmem
-  (package
-    (name "r-pmem")
-    (version "0.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pMEM" version))
-       (sha256
-        (base32 "0y18s0y3mh1jx43gpx32awysgxbh9gyyb5mp7kpj5asi98bwmzjj"))))
-    (properties `((upstream-name . "pMEM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pMEM")
-    (synopsis "Predictive Moran's Eigenvector Maps")
-    (description
-     "Calculation of Predictive Moran's eigenvector maps (@code{pMEM}), as defined by
-GuÃ©nard and Legendre (In Press) \"Spatially-explicit predictions using spatial
-eigenvector maps\" <doi:10.5281/zenodo.13356457>.  Methods in Ecology and
-Evolution.  This method enables scientists to predict the values of
-spatially-structured environmental variables.  Multiple types of @code{pMEM} are
-defined, each one implemented on the basis of spatial weighting function taking
-a range parameter, and sometimes also a shape parameter.  The code's modular
-nature enables programers to implement new @code{pMEM} by defining new spatial
-weighting functions.")
-    (license license:gpl3)))
 
 (define-public r-pmd
   (package
@@ -24104,20 +24120,20 @@ given non negative random variables.")
 (define-public r-plotbb
   (package
     (name "r-plotbb")
-    (version "0.0.6")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotbb" version))
        (sha256
-        (base32 "0vyp558i0gvr9r3xldkd4ldkd6wx95w7xkkas8cyw0s7i13qqq60"))))
+        (base32 "1kkn8mw9ndbvnaby9s2zm5c5gys4vmcmdyj8q7cqqp23axva0s4p"))))
     (properties `((upstream-name . "plotbb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-rlang r-magrittr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=plotbb")
     (synopsis "Grammar of Graphics for 'base' Plot")
     (description
@@ -24994,31 +25010,6 @@ graphical models and uni-dimensional and multi-dimensional item response theory
 models.  More details about the models and estimation can be found in the
 vignette.")
     (license license:gpl3+)))
-
-(define-public r-pleiotest
-  (package
-    (name "r-pleiotest")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pleiotest" version))
-       (sha256
-        (base32 "05mgz42wn1y7q8ffgvak22r3k40q9rv1qvpal8yycp83p7hdzg7v"))))
-    (properties `((upstream-name . "pleiotest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-rcolorbrewer))
-    (home-page "https://github.com/FerAguate/pleiotest")
-    (synopsis "Fast Sequential Pleiotropy Test")
-    (description
-     "It performs a fast multi-trait genome-wide association analysis based on
-seemingly unrelated regressions.  It tests for pleiotropic effects based on a
-series of Intersection-Union Wald tests.  The package can handle large and
-unbalanced data and plot results.")
-    (license license:expat)))
 
 (define-public r-pleioh2g
   (package
@@ -37710,6 +37701,35 @@ point in the graphical scale, the name of the measure, and starting and and
 finishing point of the measures.  After, ask the user for a new measure.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-pdindex
+  (package
+    (name "r-pdindex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PDIndex" version))
+       (sha256
+        (base32 "0anxh98jhs2p7q503d5y79izrphp71j7yf5fqi4x4f0mdlyj3z4n"))))
+    (properties `((upstream-name . "PDIndex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=PDIndex")
+    (synopsis
+     "Disease Intensity and Progress Curve Indices for Plant Pathology")
+    (description
+     "This package provides standardised functions for quantifying plant disease
+intensity and disease development over time.  The package implements Percent
+Disease Index (PDI) for assessing overall disease severity based on categorical
+ratings, Area Under the Disease Progress Curve (AUDPC) for summarizing disease
+progression using trapezoidal integration, and Relative AUDPC (@code{rAUDPC})
+for expressing disease development relative to the maximum possible severity
+over the observation period.  These indices are widely used in plant pathology
+and epidemiology for comparing treatments, cultivars, and environments.")
+    (license license:gpl3)))
+
 (define-public r-pdi
   (package
     (name "r-pdi")
@@ -41883,13 +41903,13 @@ completely re-written.")
 (define-public r-parttree
   (package
     (name "r-parttree")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parttree" version))
        (sha256
-        (base32 "10b75l1kvz7x3i11jgx0xxnfv217njkxahkdlhsx2v064y61q3i7"))))
+        (base32 "0xxdivwschcbqppw5ipqz9bih4fs780kjv65h5snmj0m2y5l3wdb"))))
     (properties `((upstream-name . "parttree")))
     (build-system r-build-system)
     (arguments

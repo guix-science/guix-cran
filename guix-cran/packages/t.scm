@@ -6940,24 +6940,19 @@ enhanced standard errors based on Lashley and Bond (1997)
 (define-public r-triplediff
   (package
     (name "r-triplediff")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "triplediff" version))
        (sha256
-        (base32 "1y403b80pfq41l3fhglc6nddcqdj6lbcxfvx45zd5qbw3pynkq2j"))))
+        (base32 "0bys8wg8cbsa630fsmh0vq02zj8dcvh6a5yld1z4qylr9z73lvwn"))))
     (properties `((upstream-name . "triplediff")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-speedglm
-                             r-rcpp
-                             r-parglm
-                             r-matrix
-                             r-data-table
-                             r-bmisc))
+    (propagated-inputs (list r-rcpp r-matrix r-fastglm r-data-table r-bmisc))
     (home-page "http://marcelortiz.com/triplediff/")
     (synopsis "Triple-Difference Estimators")
     (description
@@ -32638,25 +32633,25 @@ colors to Excel', plot and html.")
 (define-public r-tabusearch
   (package
     (name "r-tabusearch")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabuSearch" version))
        (sha256
-        (base32 "0396a8hla508na1hmyyhfbl8w10dbg810cln2xyhhvxi7rr223dj"))))
+        (base32 "1zdlb64j5jx1y0zpqs86jp2jk3p1w3shhzg8dvl871zhm57lvjdc"))))
     (properties `((upstream-name . "tabuSearch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=tabuSearch")
+    (home-page "https://github.com/domijan/tabuSearch")
     (synopsis "Tabu Search Algorithm for Binary Configurations")
     (description
      "Tabu search algorithm for binary configurations.  A basic version of the
 algorithm as described by Fouskakis and Draper (2007)
 <doi:10.1111/j.1751-5823.2002.tb00174.x>.")
-    (license license:gpl2)))
+    (license license:gpl2+)))
 
 (define-public r-tabulog
   (package

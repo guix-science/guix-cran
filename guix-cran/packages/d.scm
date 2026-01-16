@@ -1060,6 +1060,38 @@ Google Drive to minimise the computing power and storage demands associated with
 species distribution modelling at high spatio-temporal resolution.")
     (license license:gpl3+)))
 
+(define-public r-dynamicpv
+  (package
+    (name "r-dynamicpv")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dynamicpv" version))
+       (sha256
+        (base32 "0glgajrmlpgb6azmn0n91mksqmyx7mncm4lgk1nj423s8w6ncprp"))))
+    (properties `((upstream-name . "dynamicpv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-readr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://MSDLLCpapers.github.io/dynamicpv/")
+    (synopsis
+     "Evaluates Present Values and Health Economic Models with Dynamic Pricing and Uptake")
+    (description
+     "The goal of dynamicpv is to provide a simple way to calculate (net) present
+values and outputs from health economic models (especially cost-effectiveness
+and budget impact) in discrete time that reflect dynamic pricing and dynamic
+uptake.  Dynamic pricing is also known as life cycle pricing; dynamic uptake is
+also known as multiple or stacked cohorts, or dynamic disease prevalence.
+Shafrin (2024) <doi:10.1515/fhep-2024-0014> provides an explanation of dynamic
+value elements, in the context of Generalized Cost Effectiveness Analysis, and
+Puls (2024) <doi:10.1016/j.jval.2024.03.006> reviews challenges of incorporating
+such dynamic value elements.  This package aims to reduce those challenges.")
+    (license license:gpl3+)))
+
 (define-public r-dynamaedes
   (package
     (name "r-dynamaedes")
@@ -5479,13 +5511,13 @@ genes using somatic genomics data.  BMC Bioinformatics
 (define-public r-drip
   (package
     (name "r-drip")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRIP" version))
        (sha256
-        (base32 "0g1qx77zwazg2109nmxm12bsma9nvacydxl5g8rq23dvl2khpkx3"))))
+        (base32 "04afkvfcyz0aifpf80h7aycgdjrsl7gq303x4fyyv2dawsy8743m"))))
     (properties `((upstream-name . "DRIP")))
     (build-system r-build-system)
     (arguments
@@ -7381,6 +7413,39 @@ plausible (admissible) direction of influence from a less endogenous variable
 <https://psychbruce.github.io/DPI/>.  This package also includes functions for
 data simulation and network analysis (correlation, partial correlation, and
 Bayesian networks).")
+    (license license:gpl3)))
+
+(define-public r-dpgmm
+  (package
+    (name "r-dpgmm")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dpGMM" version))
+       (sha256
+        (base32 "0wxnb7q794ri8vqzlydlndm97d4fmd6fp9b82gkxmbs3c31mnfir"))))
+    (properties `((upstream-name . "dpGMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2
+                             r-rcolorbrewer
+                             r-pracma
+                             r-mvtnorm
+                             r-matrix
+                             r-ggpubr
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=dpGMM")
+    (synopsis
+     "Dynamic Programming Based Gaussian Mixture Modelling Tool for 1D and 2D Data")
+    (description
+     "Gaussian mixture modeling of one- and two-dimensional data, provided in original
+or binned form, with an option to estimate the number of model components.  The
+method uses Gaussian Mixture Models (GMM) with initial parameters determined by
+a dynamic programming algorithm, leading to stable and reproducible model
+fitting.")
     (license license:gpl3)))
 
 (define-public r-dpcr
@@ -22330,37 +22395,6 @@ data for Japanese male centenarians are given by Emura & Murotani
 (2015)<doi:10.1007/s11749-015-0432-8>.")
     (license license:gpl2)))
 
-(define-public r-depcoeff
-  (package
-    (name "r-depcoeff")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "depcoeff" version))
-       (sha256
-        (base32 "08vs0yzfvd4ahcs5rz4i4spp8l6fg45bm0m22gn5rzxc4759mzac"))))
-    (properties `((upstream-name . "depcoeff")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-copula))
-    (home-page "https://cran.r-project.org/package=depcoeff")
-    (synopsis "Dependency Coefficients")
-    (description
-     "This package provides functions to compute coefficients measuring the dependence
-of two or more than two variables.  The functions can be deployed to gain
-information about functional dependencies of the variables with emphasis on
-monotone functions.  The statistics describe how well one response variable can
-be approximated by a monotone function of other variables.  In regression
-analysis the variable selection is an important issue.  In this framework the
-functions could be useful tools in modeling the regression function.  Detailed
-explanations on the subject can be found in papers Liebscher (2014)
-<doi:10.2478/demo-2014-0004>; Liebscher (2017) <doi:10.1515/demo-2017-0012>;
-Liebscher (2019, submitted).")
-    (license license:gpl2)))
-
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
@@ -23423,13 +23457,13 @@ into document file.")
 (define-public r-demodelr
   (package
     (name "r-demodelr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "demodelr" version))
        (sha256
-        (base32 "0zkbgvybpjl0bbvas8dsj6iyds4wxh68c4jqal0psyyhrr3j4gmg"))))
+        (base32 "0zyz5fyj54p6fsyfab5c0d28wazbwd0jy705k0ar71r4w90dhy0f"))))
     (properties `((upstream-name . "demodelr")))
     (build-system r-build-system)
     (arguments
@@ -23444,7 +23478,7 @@ into document file.")
                              r-ggally
                              r-formula-tools
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=demodelr")
+    (home-page "https://github.com/jmzobitz/demodelr")
     (synopsis "Simulating Differential Equations with Data")
     (description
      "Designed to support the visualization, numerical computation, qualitative
@@ -23722,48 +23756,6 @@ issue with delta is that can not be computed by hand contrary to kappa.  The
 current algorithm is based on the Version 5 of the delta windows program that
 can be found on
 <https://www.ugr.es/~bioest/software/delta/cmd.php?seccion=downloads>.")
-    (license license:gpl3)))
-
-(define-public r-delma
-  (package
-    (name "r-delma")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "delma" version))
-       (sha256
-        (base32 "0510m66jjmc9xvhva5digxcc609skqna29hwazw7xgkhsnaij638"))))
-    (properties `((upstream-name . "delma")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-xfun
-                             r-withr
-                             r-tibble
-                             r-stringr
-                             r-snakecase
-                             r-rmarkdown
-                             r-rlang
-                             r-quarto
-                             r-purrr
-                             r-lightparser
-                             r-glue
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://delma.ala.org.au")
-    (synopsis
-     "Convert 'R Markdown' and 'Quarto' Documents to Ecological Metadata Language")
-    (description
-     "Ecological Metadata Language or EML is a long-established format for describing
-ecological datasets to facilitate sharing and re-use.  Because EML is
-effectively a modified xml schema, however, it is challenging to write and
-manipulate for non-expert users.  delma supports users to write metadata
-statements in R Markdown or Quarto markdown format, and parse them to EML and
-(optionally) back again.")
     (license license:gpl3)))
 
 (define-public r-delimtools

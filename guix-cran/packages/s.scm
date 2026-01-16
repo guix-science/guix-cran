@@ -12,9 +12,9 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
@@ -1194,45 +1194,6 @@ and code generation.")
 partitioned into file-backed blocks.")
     (license license:expat)))
 
-(define-public r-symbolicqspray
-  (package
-    (name "r-symbolicqspray")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "symbolicQspray" version))
-       (sha256
-        (base32 "0l7lhpxnbbfgwypyqy3sy13vcjv63fv707i5d4r9gh2almk373s7"))))
-    (properties `((upstream-name . "symbolicQspray")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rcppcgal
-                             r-rcpp
-                             r-ratioofqsprays
-                             r-qspray
-                             r-gmp
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/symbolicQspray")
-    (synopsis
-     "Multivariate Polynomials with Symbolic Parameters in their Coefficients")
-    (description
-     "Introduces the @code{symbolicQspray} objects.  Such an object represents a
-multivariate polynomial whose coefficients are fractions of multivariate
-polynomials with rational coefficients.  The package allows arithmetic on such
-polynomials.  It is based on the qspray and @code{ratioOfQsprays} packages.
-Some functions for qspray polynomials have their counterpart for
-@code{symbolicQspray} polynomials.  A @code{symbolicQspray} polynomial should
-not be seen as a polynomial on the field of fractions of rational polynomials,
-but should rather be seen as a polynomial with rational coefficients depending
-on some parameters, symbolically represented, with a dependence given by
-fractions of rational polynomials.")
-    (license license:gpl3)))
-
 (define-public r-symbolicdeterminants
   (package
     (name "r-symbolicdeterminants")
@@ -2312,13 +2273,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "03j91glr35fhy386pshd1sxnzmdcs80p12xms5gdas5sxblvpd3k"))))
+        (base32 "1y25mwy3df0di7yph7wsmvfm9qsdzw4xm0j14r7xi67mljvckj66"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -5198,13 +5159,13 @@ reclassification index (NRI).")
 (define-public r-survhe
   (package
     (name "r-survhe")
-    (version "2.0.5")
+    (version "2.0.51")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survHE" version))
        (sha256
-        (base32 "12sy80vxpw8bamw7p1akq1gv4ysmhc2612vrz2jiyfkw9lkf3ssz"))))
+        (base32 "1qaib5vjmr8z2191lqaa1j1k8zbz3yj4sc4s7896j2ilqw7k9c4y"))))
     (properties `((upstream-name . "survHE")))
     (build-system r-build-system)
     (arguments
@@ -11644,42 +11605,6 @@ to get static and dynamic display of spatio-temporal point patterns.  See
 Gabriel et al (2013) <doi:10.18637/jss.v053.i02>.")
     (license license:gpl3)))
 
-(define-public r-stpm
-  (package
-    (name "r-stpm")
-    (version "1.7.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stpm" version))
-       (sha256
-        (base32 "16kp69356bj1s26iwwysxdyr87kd3jqhj2gmmz4vc003ai63ga6y"))))
-    (properties `((upstream-name . "stpm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-sas7bdat
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-nloptr
-                             r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=stpm")
-    (synopsis
-     "Stochastic Process Model for Analysis of Longitudinal and Time-to-Event Outcomes")
-    (description
-     "Utilities to estimate parameters of the models with survival functions induced
-by stochastic covariates.  Miscellaneous functions for data preparation and
-simulation are also provided.  For more information, see: (i)\"Stochastic model
-for analysis of longitudinal data on aging and mortality\" by Yashin A. et al.
-(2007), Mathematical Biosciences, 208(2), 538-551,
-<DOI:10.1016/j.mbs.2006.11.006>; (ii) \"Health decline, aging and mortality: how
-are they related?\" by Yashin A. et al. (2007), Biogerontology 8(3), 291(302),
-<DOI:10.1007/s10522-006-9073-3>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-stplanr
   (package
     (name "r-stplanr")
@@ -13547,36 +13472,6 @@ applied to each model.  The weights of the models in the ensemble are determined
 based on a criterion selected by the user.")
     (license license:gpl2+)))
 
-(define-public r-steps
-  (package
-    (name "r-steps")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "steps" version))
-       (sha256
-        (base32 "0yvqz5jhzwqkm3gphb2mmlq1ip6sr8g6c09hirs827j12dj63ixf"))))
-    (properties `((upstream-name . "steps")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-rcpp
-                             r-rastervis
-                             r-raster
-                             r-memuse
-                             r-future-apply
-                             r-future))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/steps-dev/steps")
-    (synopsis "Spatially- and Temporally-Explicit Population Simulator")
-    (description
-     "Software to simulate population change across space and time.  Visintin et al.
-(2020) <doi:10.1111/2041-210X.13354>.")
-    (license license:gpl2+)))
-
 (define-public r-steprf
   (package
     (name "r-steprf")
@@ -14621,6 +14516,33 @@ package calculates nearest neighbor distances between specified cell types and
 provides visualization tools to explore spatial patterns.  Applications include
 studying cell-cell interactions, immune microenvironment characterization, and
 spatial organization of tissues.")
+    (license license:gpl3+)))
+
+(define-public r-stddiff-spark
+  (package
+    (name "r-stddiff-spark")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stddiff.spark" version))
+       (sha256
+        (base32 "0lfsna33qx2kjxv6pai98qgmmnhiwc6xrk0ic3h0cq0avhdf8g55"))))
+    (properties `((upstream-name . "stddiff.spark")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-sparklyr r-dplyr))
+    (home-page "https://github.com/alicja-januszkiewicz/stddiff.spark")
+    (synopsis
+     "Calculate the Standardized Difference for Numeric, Binary and Category Variables in Apache Spark")
+    (description
+     "This package provides functions to compute standardized differences for numeric,
+binary, and categorical variables on Apache Spark @code{DataFrames} using
+sparklyr'.  The implementation mirrors the methods used in the stddiff package
+but operates on distributed data.  See Zhicheng Du, Yuantao Hao (2022)
+<doi:10.32614/CRAN.package.stddiff> for reference.")
     (license license:gpl3+)))
 
 (define-public r-stcyp
@@ -16406,53 +16328,6 @@ function as well as at
 relational tables or as a complete @code{DuckDB} database.  All data was
 collected from the open source Star Wars API.")
     (license license:expat)))
-
-(define-public r-starvz
-  (package
-    (name "r-starvz")
-    (version "0.8.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "starvz" version))
-       (sha256
-        (base32 "14zmp8aj93nzhx4m5nih6j1p30kss5llgj37v7wazdml3jfxyb61"))))
-    (properties `((upstream-name . "starvz")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-zoo
-                             r-yaml
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-purrr
-                             r-patchwork
-                             r-magrittr
-                             r-lpsolve
-                             r-gtools
-                             r-ggplot2
-                             r-dplyr
-                             r-data-tree
-                             r-bh))
-    (home-page "https://github.com/schnorr/starvz")
-    (synopsis "R-Based Visualization Techniques for Task-Based Applications")
-    (description
-     "Performance analysis workflow that combines the power of the R language (and the
-tidyverse realm) and many auxiliary tools to provide a consistent, flexible,
-extensible, fast, and versatile framework for the performance analysis of
-task-based applications that run on top of the @code{StarPU} runtime (with its
-MPI (Message Passing Interface) layer for multi-node support).  Its goal is to
-provide a fruitful prototypical environment to conduct performance analysis
-hypothesis-checking for task-based applications that run on heterogeneous
-(multi-GPU, multi-core) multi-node HPC (High-performance computing) platforms.")
-    (license license:gpl3)))
 
 (define-public r-starvars
   (package
@@ -20976,6 +20851,48 @@ Shiny Dashboard, which can be used to visualize experimental results and
 analyses.")
     (license license:expat)))
 
+(define-public r-squat
+  (package
+    (name "r-squat")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "squat" version))
+       (sha256
+        (base32 "0lwhwm2h052bh4b8b9bx2kaar11kfwa8rxcldcx1ssl11rv58ymj"))))
+    (properties `((upstream-name . "squat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-roahd
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-mfpca
+                             r-ggrepel
+                             r-ggplot2
+                             r-future-apply
+                             r-fundata
+                             r-fdasrvf
+                             r-fdacluster
+                             r-dtw
+                             r-dbscan
+                             r-cli))
+    (home-page "https://github.com/LMJL-Alea/squat")
+    (synopsis "Statistics for Quaternion Temporal Data")
+    (description
+     "An implementation of statistical tools for the analysis of rotation-valued time
+series and functional data.  It relies on pre-existing quaternion data structure
+provided by the Eigen C++ library.")
+    (license license:gpl3+)))
+
 (define-public r-squash
   (package
     (name "r-squash")
@@ -24615,40 +24532,6 @@ equilibrium hormone concentrations.  Methods and equations have been described
 in Dietrich et al. (2012) <doi:10.1155/2012/351864> and Dietrich et al. (2016)
 <doi:10.3389/fendo.2016.00057>.")
     (license license:bsd-3)))
-
-(define-public r-spillover
-  (package
-    (name "r-spillover")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Spillover" version))
-       (sha256
-        (base32 "1f1x8d6cpgp797l65kp4rqzi2yxjmlhqih8vbj89q2g4rmvyrbaf"))))
-    (properties `((upstream-name . "Spillover")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-vars
-                             r-tidyr
-                             r-ggplot2
-                             r-fastsom
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Spillover")
-    (synopsis "Spillover/Connectedness Index Based on VAR Modelling")
-    (description
-     "This package provides a user-friendly tool for estimating both total and
-directional connectedness spillovers based on Diebold and Yilmaz (2009, 2012).
-It also provides the user with rolling estimation for total and net indices.
-User can find both orthogonalized and generalized versions for each kind of
-measures.  See Diebold and Yilmaz (2009, 2012) find them at
-<doi:10.1111/j.1468-0297.2008.02208.x> and
-<doi:10.1016/j.ijforecast.2011.02.006>.")
-    (license license:gpl2)))
 
 (define-public r-spikeslabgam
   (package
@@ -42029,44 +41912,6 @@ generalized linear models (Fan and Song (2009)<doi:10.1214/10-AOS798>) and the
 Cox proportional hazards model (Fan, Feng and Wu
 (2010)<doi:10.1214/10-IMSCOLL606>).")
     (license license:gpl2)))
-
-(define-public r-sirus
-  (package
-    (name "r-sirus")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sirus" version))
-       (sha256
-        (base32 "0whjshqwy3dhim22rj358811s3h872d861j93zlhh32ivvwj2434"))))
-    (properties `((upstream-name . "sirus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rocr
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-glmnet
-                             r-ggplot2))
-    (home-page "https://gitlab.com/drti/sirus")
-    (synopsis "Stable and Interpretable RUle Set")
-    (description
-     "This package provides a regression and classification algorithm based on random
-forests, which takes the form of a short list of rules.  SIRUS combines the
-simplicity of decision trees with a predictivity close to random forests.  The
-core aggregation principle of random forests is kept, but instead of aggregating
-predictions, SIRUS aggregates the forest structure: the most frequent nodes of
-the forest are selected to form a stable rule ensemble model.  The algorithm is
-fully described in the following articles: Benard C., Biau G., da Veiga S.,
-Scornet E. (2021), Electron.  J. Statist., 15:427-505 <DOI:10.1214/20-EJS1792>
-for classification, and Benard C., Biau G., da Veiga S., Scornet E. (2021),
-AISTATS, PMLR 130:937-945 <http://proceedings.mlr.press/v130/benard21a>, for
-regression.  This R package is a fork from the project ranger
-(<https://github.com/imbs-hl/ranger>).")
-    (license license:gpl3)))
 
 (define-public r-sirthresholded
   (package
@@ -72286,13 +72131,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "031h9l5cwm20mpcgdbrj1qcf46c7lmpvb47x7m1qpcdnfc9lwh21"))))
+        (base32 "19dpzl7msm4jrv3c4zf6hz2msw9n7k50idqrgkzy9prxfjcickfd"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (arguments

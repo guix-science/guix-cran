@@ -14418,29 +14418,6 @@ libraries of @code{JavaScript} in one package.")
      "Facilitates network clustering and evaluation of cluster configurations.")
     (license license:gpl2)))
 
-(define-public r-netclust
-  (package
-    (name "r-netclust")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netClust" version))
-       (sha256
-        (base32 "1h58ispdx8ddsnqrrmcxn2rbqb0hb89gpjg4p14mr7vhxw5c9zva"))))
-    (properties `((upstream-name . "netClust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=netClust")
-    (synopsis "Model-Based Clustering of Network Data")
-    (description
-     "Clustering unilayer and multilayer network data by means of finite mixtures is
-the main utility of @code{netClust}'.")
-    (license license:gpl2+)))
-
 (define-public r-netassoc
   (package
     (name "r-netassoc")

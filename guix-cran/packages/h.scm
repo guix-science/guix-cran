@@ -614,32 +614,6 @@ detection in morphological, resource or environmental dimensions.  More details
 can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
     (license license:gpl3)))
 
-(define-public r-hypergeomat
-  (package
-    (name "r-hypergeomat")
-    (version "4.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HypergeoMat" version))
-       (sha256
-        (base32 "0yc9kvi8y5ikf9db5r1wx3a00ykhv4ngl1jq0q1bzn4zl5y5y7pf"))))
-    (properties `((upstream-name . "HypergeoMat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-juliaconnector r-gsl
-                             r-eigenr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/HypergeoMat")
-    (synopsis "Hypergeometric Function of a Matrix Argument")
-    (description
-     "Evaluates the hypergeometric functions of a matrix argument, which appear in
-random matrix theory.  This is an implementation of Koev & Edelman's algorithm
-(2006) <doi:10.1090/S0025-5718-06-01824-2>.")
-    (license license:gpl3)))
-
 (define-public r-hypergeo2
   (package
     (name "r-hypergeo2")
@@ -10078,13 +10052,13 @@ The package implements the methodological developments found in Hermes et al.
 (define-public r-heterometa
   (package
     (name "r-heterometa")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heterometa" version))
        (sha256
-        (base32 "1z295l3kzz0c3q6qx5qhf0nr73db13vjvn1lnis05509mga9i28w"))))
+        (base32 "06hr0n8ill13096kk1fx2ww5099d2mnj83k6fddarkdxwc4lyzvq"))))
     (properties `((upstream-name . "heterometa")))
     (build-system r-build-system)
     (arguments
@@ -12794,38 +12768,6 @@ Ghosh (2021) <doi:10.1016/j.jmva.2021.104897>; Soham Sarkar and Anil K Ghosh
 Sture Holm (1979) <doi:10.2307/4615733>; Yoav Benjamini and Yosef Hochberg
 (1995) <doi: 10.2307/2346101>.")
     (license license:gpl2+)))
-
-(define-public r-hdjm
-  (package
-    (name "r-hdjm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDJM" version))
-       (sha256
-        (base32 "1vv1q7hdq12wh5nbr8zh1f8fzx5caaq4b39wqy99mxpx8cnsb87n"))))
-    (properties `((upstream-name . "HDJM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-statmod r-rcppensmallen
-                             r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=HDJM")
-    (synopsis "Penalized High-Dimensional Joint Model")
-    (description
-     "Joint models have been widely used to study the associations between
-longitudinal biomarkers and a survival outcome.  However, existing joint models
-only consider one or a few longitudinal biomarkers and cannot deal with
-high-dimensional longitudinal biomarkers.  This package can be used to fit our
-recently developed penalized joint model that can handle high-dimensional
-longitudinal biomarkers.  Specifically, an adaptive lasso penalty is imposed on
-the parameters for the effects of the longitudinal biomarkers on the survival
-outcome, which allows for variable selection.  Also, our algorithm is
-computationally efficient, which is based on the Gaussian variational
-approximation method.")
-    (license license:gpl2)))
 
 (define-public r-hdivar
   (package

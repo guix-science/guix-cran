@@ -12,8 +12,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages cmake)
-  #:use-module (gnu packages version-control)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -6561,13 +6559,13 @@ many repositories with a single command.")
 (define-public r-multideggs
   (package
     (name "r-multideggs")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiDEGGs" version))
        (sha256
-        (base32 "1paminw0gi5j7pn165dznmglp9hlvsk6ar621rbjz71l6salh0x7"))))
+        (base32 "0ih29366jmzcj555nr2d4krrx2958whmghw1nx6pza6rlhsmh1yb"))))
     (properties `((upstream-name . "multiDEGGs")))
     (build-system r-build-system)
     (arguments
@@ -10648,6 +10646,47 @@ indirect excursion effects in the presence of time-varying mediators by Qian
 (2025) <doi:10.48550/@code{arXiv.2506.20027>}.")
     (license license:gpl3)))
 
+(define-public r-mrstdlcrt
+  (package
+    (name "r-mrstdlcrt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MRStdLCRT" version))
+       (sha256
+        (base32 "0glqf5613i4h28f1fcimzgs8nbmr53s7s1dmlalad9pmn8h65941"))))
+    (properties `((upstream-name . "MRStdLCRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-reformulas
+                             r-lme4
+                             r-ggplot2
+                             r-gee
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=MRStdLCRT")
+    (synopsis
+     "Model-Robust Standardization for Longitudinal Cluster-Randomized Trials")
+    (description
+     "This package provides estimation and leave-one-cluster-out jackknife standard
+errors for four longitudinal cluster-randomized trial estimands: horizontal
+individual average treatment effect (h-@code{iATE}), horizontal cluster average
+treatment effect (h-@code{cATE}), vertical individual average treatment effect
+(v-@code{iATE}), and vertical cluster-period average treatment effect
+(v-@code{cATE}), using unadjusted and augmented (model-robust standardization)
+estimators.  The working model may be fit using linear mixed models for
+continuous outcomes or generalized estimating equations and generalized linear
+mixed models for binary outcomes.  Period inclusion for aggregation is
+determined automatically: only periods with both treated and control clusters
+are included in the construction of the marginal means and treatment effect
+contrasts.  See Fang et al. (2025) <doi:10.48550/@code{arXiv.2507.17190>}.")
+    (license license:expat)))
+
 (define-public r-mrstdcrt
   (package
     (name "r-mrstdcrt")
@@ -12856,45 +12895,6 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
     (description
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
-
-(define-public r-mpcr
-  (package
-    (name "r-mpcr")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MPCR" version))
-       (sha256
-        (base32 "1p9iaw89sl9ap7g48vyfl9g6ss59cdvjvwjsvl5vxl951lc01ra9"))))
-    (properties `((upstream-name . "MPCR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list git cmake))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/stsds/MPCR")
-    (synopsis "Multi- And Mixed-Precision Computations")
-    (description
-     "Designed for multi- and mixed-precision computations, accommodating 64-bit and
-32-bit data structures.  This flexibility enables fast execution across various
-applications.  The package enhances performance by optimizing operations in both
-precision levels, which is achieved by integrating with high-speed BLAS and
-LAPACK libraries like MKL and @code{OpenBLAS}'.  Including a 32-bit option
-caters to applications where high precision is unnecessary, accelerating
-computational processes whenever feasible.  The package also provides support
-for tile-based algorithms in three linear algebra operations: @code{CHOL()},
-@code{TRSM()}, and @code{GEMM()}.  The tile-based algorithm splits the matrix
-into smaller tiles, facilitating parallelization through a predefined Directed
-Acyclic Graph (DAG) for each operation.  Enabling @code{OpenMP} enhances the
-efficiency of these operations, leveraging multi-core parallelism.  In this
-case, MPCR facilitates mixed-precision execution by permitting varying precision
-levels for different tiles.  This approach is advantageous in numerous
-applications, as it maintains the accuracy of the application while accelerating
-execution in scenarios where single-precision alone does not significantly
-affect the accuracy of the application.")
-    (license license:gpl3+)))
 
 (define-public r-mpci
   (package
@@ -43677,6 +43677,36 @@ of the MCAR hypothesis based on the theory of Frechet classes and compatibility.
  Also gives functions for computing halfspace representations of the marginal
 polytope and related geometric objects.")
     (license license:expat)))
+
+(define-public r-mcanalysis
+  (package
+    (name "r-mcanalysis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcanalysis" version))
+       (sha256
+        (base32 "03pz5ab0r0nlz9v24q3g5l18il44mq2zwg4j3jfq7ziwvdbg89j2"))))
+    (properties `((upstream-name . "mcanalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=mcanalysis")
+    (synopsis "Markov Chain Analysis for Structural Behaviour and Stability")
+    (description
+     "Analyses the stability and structural behaviour of export and import patterns
+across multiple countries using a Markov chain modelling framework.  Constructs
+transition probability matrices to quantify changes in trade shares between
+successive periods, thereby capturing persistence, structural shifts, and
+inter-country interdependence in trade performance.  By iteratively generating
+expected trade distributions over time, the approach facilitates assessment of
+stability, long-run equilibrium tendencies, and comparative dynamics in
+longitudinal trade data, providing a rigorous tool for empirical analysis of
+exportâimport behaviour.  Methodological foundations follow standard Markov
+chain theory as described in Gagniuc (2017) <Doi:10.1002/9781119387596>.")
+    (license license:gpl3)))
 
 (define-public r-mc-heterogeneity
   (package

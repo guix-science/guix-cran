@@ -12946,13 +12946,13 @@ sketchy, hand-drawn-like networks.")
 (define-public r-rotl
   (package
     (name "r-rotl")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rotl" version))
        (sha256
-        (base32 "0p33nm57bdqc2hjh7v7p0a9bh29x7n50bkw49l5d4df8jzwfxfhj"))))
+        (base32 "10fmi72j49v6lj77dca8w4k7kp1m6gx77v1hb16wrngmx9z77mb0"))))
     (properties `((upstream-name . "rotl")))
     (build-system r-build-system)
     (arguments
@@ -15935,13 +15935,13 @@ problems.")
 (define-public r-rocbc
   (package
     (name "r-rocbc")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rocbc" version))
        (sha256
-        (base32 "1c2lbh3zmgzi87irbrxx8bdvvnz9ck24839nci00ylh8dvwq8893"))))
+        (base32 "16h1y9ids61d623yd8dkhiq30hl7013b2l4mmdpkifk6a3nl7356"))))
     (properties `((upstream-name . "rocbc")))
     (build-system r-build-system)
     (arguments
@@ -33729,13 +33729,13 @@ to simplify the creation of maps of the data.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddap" version))
        (sha256
-        (base32 "047x8wi2gwnkg2qv2s6r8jgh1wqw74bicf0lr9qxvy477ksf9jrq"))))
+        (base32 "04gdz5dlff650cv5wvv8fyfyczfq09azv1vjyqqvinj5r6z5ialp"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (arguments
@@ -50225,30 +50225,6 @@ portals maintained by the BRSA: The Monthly Bulletin Portal
 <https://www.bddk.org.tr/@code{BultenFinturk>}.")
     (license license:expat)))
 
-(define-public r-rbridge
-  (package
-    (name "r-rbridge")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rbridge" version))
-       (sha256
-        (base32 "0m4c61rdrhq1jw3rwq2ld29g5dchbk4sfpnq0wmwbvzhdjq76plc"))))
-    (properties `((upstream-name . "rbridge")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-dplyr))
-    (home-page "https://cran.r-project.org/package=rbridge")
-    (synopsis "Restricted Bridge Estimation")
-    (description
-     "Bridge Regression estimation with linear restrictions defined in Yuzbasi et al.
-(2019) <@code{arXiv:1910.03660>}.  Special cases of this approach fit the
-restricted LASSO, restricted RIDGE and restricted Elastic Net estimators.")
-    (license license:gpl3)))
-
 (define-public r-rbranding
   (package
     (name "r-rbranding")
@@ -50356,34 +50332,6 @@ estimators, Wilcoxon sum rank test, and for data with multiple matched controls.
 by Breiman (2001), <DOI:10.1023/A:1010933404324>.")
     (license (list (license:fsdg-compatible "MPL (>= 2)") license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-rbooster
-  (package
-    (name "r-rbooster")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rbooster" version))
-       (sha256
-        (base32 "0v524hjp3im94hbf6kbmi4xhqnak135mmpmq1sni1c97dqal2hqy"))))
-    (properties `((upstream-name . "rbooster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpart r-hmisc r-earth))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rbooster")
-    (synopsis "AdaBoost Framework for Any Classifier")
-    (description
-     "This is a simple package which provides a function that boosts pre-ready or
-custom-made classifiers.  Package uses Discrete @code{AdaBoost}
-(<doi:10.1006/jcss.1997.1504>) and Real @code{AdaBoost}
-(<doi:10.1214/aos/1016218223>) for two class, SAMME
-(<doi:10.4310/SII.2009.v2.n3.a8>) and SAMME.R (<doi:10.4310/SII.2009.v2.n3.a8>)
-for multiclass classification.")
-    (license license:expat)))
 
 (define-public r-rbnz
   (package
@@ -52204,70 +52152,6 @@ Created as a classroom project.")
      "Calculation of ratios between two data sets containing environmental data like
 element concentrations by different methods.  Additionally plant element
 concentrations can be corrected for adhering particles (soil, airborne dust).")
-    (license license:gpl3)))
-
-(define-public r-ratioofqsprays
-  (package
-    (name "r-ratioofqsprays")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ratioOfQsprays" version))
-       (sha256
-        (base32 "1g5xpjqwp8rplz85vrjmy9fjg1vf4gs793immljac8c8pcvxixds"))))
-    (properties `((upstream-name . "ratioOfQsprays")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-ryacas
-                             r-rcppcgal
-                             r-rcpp
-                             r-qspray
-                             r-gmp
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/ratioOfQsprays")
-    (synopsis
-     "Fractions of Multivariate Polynomials with Rational Coefficients")
-    (description
-     "Based on the qspray package, this package introduces the new type
-@code{ratioOfQsprays}'.  An object of type qspray represents a multivariate
-polynomial with rational coefficients while an object of type
-@code{ratioOfQsprays}', defined by two qspray objects, represents a fraction of
-two multivariate polynomials with rational coefficients.  Arithmetic operations
-for these objects are available, and they always return irreducible fractions.
-Other features include: differentiation, evaluation, conversion to a function,
-and fine control of the way to print a @code{ratioOfQsprays} object.  The C++
-library CGAL is used to make the fractions irreducible.")
-    (license license:gpl3)))
-
-(define-public r-rationalmatrix
-  (package
-    (name "r-rationalmatrix")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RationalMatrix" version))
-       (sha256
-        (base32 "1nzhfmvckb9hp53lyw6gyv5r492n4xii8l1xkr38p5i07r52zq2c"))))
-    (properties `((upstream-name . "RationalMatrix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gmp))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-gmp r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/RationalMatrix")
-    (synopsis "Exact Matrix Algebra for Rational Matrices")
-    (description
-     "This package provides functions to deal with matrix algebra for matrices with
-rational entries: determinant, rank, image and kernel, inverse, Cholesky
-decomposition.  All computations are exact.")
     (license license:gpl3)))
 
 (define-public r-rationalfun

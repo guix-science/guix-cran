@@ -802,13 +802,13 @@ mass-spectrometry data.")
 (define-public r-wrtdstidal
   (package
     (name "r-wrtdstidal")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WRTDStidal" version))
        (sha256
-        (base32 "1clv6gd0qlkykllki5jkmhd1znrccyg1mv6w69wz8fj65b2466zd"))))
+        (base32 "03gxc79d46v1aczrllf769b2mkz727505cdsgblls56j8pvkb0ff"))))
     (properties `((upstream-name . "WRTDStidal")))
     (build-system r-build-system)
     (arguments
@@ -7625,13 +7625,13 @@ using Statistical and Machine Learning Technique\",Environment and Ecology,
 (define-public r-wearables
   (package
     (name "r-wearables")
-    (version "0.8.1")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wearables" version))
        (sha256
-        (base32 "0fjf43cgna1mg4mgg98kqhhl88yfhrr57rln2z6xm6d6bj73q5zn"))))
+        (base32 "06yhg1q8k38cwsp1xdi5fvbmxzsrpasfnbqyvlbq30m0njdqgg39"))))
     (properties `((upstream-name . "wearables")))
     (build-system r-build-system)
     (arguments
@@ -7640,21 +7640,25 @@ using Statistical and Machine Learning Technique\",Environment and Ecology,
     (propagated-inputs (list r-xts
                              r-waveslim
                              r-varian
+                             r-sparklyr
                              r-signal
+                             r-rlang
                              r-rhrv
                              r-r-utils
                              r-padr
                              r-magrittr
                              r-lubridate
                              r-kernlab
+                             r-jsonlite
                              r-ggplot2
-                             r-futile-logger
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://cran.r-project.org/package=wearables")
     (synopsis "Tools to Read and Convert Wearables Data")
     (description
-     "Package to read Empatica E4 data, perform several transformations, perform
-signal processing and analyses, including batch analyses.")
+     "Package to read Empatica E4, Embrace Plus, and Nowatch data, perform several
+transformations, perform signal processing and analyses, including batch
+analyses.")
     (license license:gpl2)))
 
 (define-public r-weakarma

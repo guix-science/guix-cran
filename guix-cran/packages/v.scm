@@ -7648,42 +7648,6 @@ fast Variational Bayes approximation developed in Salter-Townshend and Murphy
 (2013) <doi:10.1016/j.csda.2012.08.004>.")
     (license license:gpl2+)))
 
-(define-public r-vbjm
-  (package
-    (name "r-vbjm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VBJM" version))
-       (sha256
-        (base32 "0g7mmjba8pyfz92p7fgp9shpm9pclymacm45y3h6hlmsbpc7sh3p"))))
-    (properties `((upstream-name . "VBJM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-statmod
-                             r-rcppensmallen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pracma
-                             r-matrix))
-    (home-page "https://cran.r-project.org/package=VBJM")
-    (synopsis "Variational Inference for Joint Model")
-    (description
-     "The shared random effects joint model is one of the most widely used approaches
-to study the associations between longitudinal biomarkers and a survival outcome
-and make dynamic risk predictions using the longitudinally measured biomarkers.
-One major limitation of joint models is that they could be computationally
-expensive for complex models where the number of the shared random effects is
-large.  This package can be used to fit complex multivariate joint models using
-our newly developed algorithm Jieqi Tu and Jiehuan Sun (2023)
-<doi:10.1002/sim.9619>, which is based on Gaussian variational approximate
-inference and is computationally efficient.")
-    (license license:gpl2)))
-
 (define-public r-vbel
   (package
     (name "r-vbel")

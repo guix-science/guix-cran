@@ -4242,13 +4242,13 @@ for the degree of ordering. `ordering` provides a numeric indication of ordering
 (define-public r-orderanalyzer
   (package
     (name "r-orderanalyzer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orderanalyzer" version))
        (sha256
-        (base32 "1r680i3a9c55d86m4kzav92kcmbalyp9yjnqr7qq3y44g43nw9qi"))))
+        (base32 "1cjbbvscgv9jcvybkbkf8gkg5blkx1113lxq93wdm9r152pd0502"))))
     (properties `((upstream-name . "orderanalyzer")))
     (build-system r-build-system)
     (arguments
@@ -4491,6 +4491,34 @@ course) profiles.  It implements the method described by Lin et al. (2012).")
      "This package provides functions to perform subspace clustering and
 classification.")
     (license license:gpl2+)))
+
+(define-public r-orcidtr
+  (package
+    (name "r-orcidtr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orcidtr" version))
+       (sha256
+        (base32 "1v384ky06lcdrkirlgcns1v3yhn4vdmzcck27cqcd15nx6a3wz43"))))
+    (properties `((upstream-name . "orcidtr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lorenzoFabbri/orcidtr")
+    (synopsis "Retrieve Data from the ORCID Public API")
+    (description
+     "This package provides functions to retrieve public data from ORCID (Open
+Researcher and Contributor ID) records via the ORCID public API. Fetches
+employment history, education, works (publications, datasets, preprints),
+funding, peer review activities, and other public information.  Returns data as
+structured data.table objects for easy analysis and manipulation.  Replaces the
+discontinued rorcid package with a modern, CRAN-compliant implementation.")
+    (license license:expat)))
 
 (define-public r-orcamentobr
   (package

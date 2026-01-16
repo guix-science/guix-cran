@@ -9680,42 +9680,6 @@ values with arbitrary dependencies, based on the Dirichlet process prior
 distribution.")
     (license license:gpl2+)))
 
-(define-public r-bnpmix
-  (package
-    (name "r-bnpmix")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BNPmix" version))
-       (sha256
-        (base32 "054i1nl1hbc9r3zlrdplf2rz0kpvc1xy79irczkz5bsrm6wp6xg4"))))
-    (properties `((upstream-name . "BNPmix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rcppdist
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ggpubr
-                             r-ggplot2
-                             r-coda))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=BNPmix")
-    (synopsis "Bayesian Nonparametric Mixture Models")
-    (description
-     "This package provides functions to perform Bayesian nonparametric univariate and
-multivariate density estimation and clustering, by means of Pitman-Yor mixtures,
-and dependent Dirichlet process mixtures for partially exchangeable data.  See
-Corradin et al. (2021) <doi:10.18637/jss.v100.i15> for more details.")
-    (license (list license:lgpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-bnpdensity
   (package
     (name "r-bnpdensity")
@@ -12618,30 +12582,6 @@ embedded images, web link buttons, and ggplot2 plot objects into the message
 body.  Messages can be sent through an SMTP server, through the Posit Connect
 service, or through the Mailgun API service <https://www.mailgun.com/>.")
     (license license:expat)))
-
-(define-public r-blaster
-  (package
-    (name "r-blaster")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blaster" version))
-       (sha256
-        (base32 "1p0d76dzn3kkdk6r4lp3kjh06iy3r2l4zhqwr3p888gxibzfwyb0"))))
-    (properties `((upstream-name . "blaster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/tamminenlab/blaster")
-    (synopsis "Native R Implementation of an Efficient BLAST-Like Algorithm")
-    (description
-     "Implementation of an efficient BLAST-like sequence comparison algorithm, written
-in C++11 and using native R datatypes.  Blaster is based on nsearch - Schmid et
-al (2018) <doi:10.1101/399782>.")
-    (license license:bsd-3)))
 
 (define-public r-blastar
   (package
@@ -22445,13 +22385,13 @@ Also	supports plotting and comparing data.")
 (define-public r-beeguts
   (package
     (name "r-beeguts")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeGUTS" version))
        (sha256
-        (base32 "0g6n077fy07vy50ngggr1jxzrlfjiqrr1xcqm7jcd0a89s2azfgi"))))
+        (base32 "0cqd1y219fhbpjx2z7j9m240a61fwrdkajzriig7zxgkdl1qp9f5"))))
     (properties `((upstream-name . "BeeGUTS")))
     (build-system r-build-system)
     (arguments
@@ -22475,7 +22415,7 @@ Also	supports plotting and comparing data.")
                              r-cowplot
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bgoussen/BeeGUTS")
+    (home-page "https://github.com/ibacon-GmbH-Modelling/BeeGUTS")
     (synopsis
      "General Unified Threshold Model of Survival for Bees using Bayesian Inference")
     (description
@@ -24323,34 +24263,6 @@ of cost and effectiveness / utility for two or more interventions, e.g. from a
 Bayesian model in the form of MCMC simulations.  This package computes the most
 cost-effective alternative and produces graphical summaries and probabilistic
 sensitivity analysis, see Baio et al (2017) <doi:10.1007/978-3-319-55718-2>.")
-    (license license:gpl3)))
-
-(define-public r-bcdiag
-  (package
-    (name "r-bcdiag")
-    (version "1.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BcDiag" version))
-       (sha256
-        (base32 "1gyinmx5wn2kk70hiy28ghilkhfirfjbfqdrqq5h3wfb4khnq6pz"))))
-    (properties `((upstream-name . "BcDiag")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list))
-    (home-page "https://cran.r-project.org/package=BcDiag")
-    (synopsis "Diagnostics Plots for Bicluster Data")
-    (description
-     "Diagnostic tools based on two-way anova and median-polish residual plots for
-Bicluster output obtained from packages; \"biclust\" by Kaiser et al.(2008),\"isa2\"
-by Csardi et al. (2010) and \"fabia\" by Hochreiter et al. (2010).  Moreover, It
-provides visualization tools for bicluster output and corresponding
-non-bicluster rows- or columns outcomes.  It has also extended the idea of
-Kaiser et al.(2008) which is, extracting bicluster output in a text format, by
-adding two bicluster methods from the fabia and isa2 R packages.")
     (license license:gpl3)))
 
 (define-public r-bcdating

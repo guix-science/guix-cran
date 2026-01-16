@@ -7595,35 +7595,37 @@ p-values.  For methodological details, see Zhou and Chen (2023)
 (define-public r-graphpcor
   (package
     (name "r-graphpcor")
-    (version "0.1.12")
+    (version "0.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphpcor" version))
        (sha256
-        (base32 "0nwfb6n5jynd96wjaf04kb9s17fk7agr36c8c3a3rrp10i0xz7v1"))))
+        (base32 "04c8sl15xzk5i8r8r7hj56kljirgrjpprx6krml5pa073si37qc9"))))
     (properties `((upstream-name . "graphpcor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rgraphviz r-numderiv r-matrix r-graph))
+    (propagated-inputs (list r-rgraphviz r-numderiv r-matrix r-inlatools
+                             r-graph))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=graphpcor")
     (synopsis "Models for Correlation Matrices Based on Graphs")
     (description
      "Implement some models for correlation/covariance matrices including two
 approaches to model correlation matrices from a graphical structure.  One use
 latent parent variables as proposed in Sterrantino et.  al. (2024)
-<doi:10.48550/@code{arXiv.2312.06289>}.  The other uses a graph to specify
-conditional relations between the variables.  The graphical structure makes
-correlation matrices interpretable and avoids the quadratic increase of
-parameters as a function of the dimension.  In the first approach a natural
-sequence of simpler models along with a complexity penalization is used.  The
-second penalizes deviations from a base model.  These can be used as prior for
-model parameters, considering C code through the cgeneric interface for the INLA
-package (<https://www.r-inla.org>).  This allows one to use these models as
-building blocks combined and to other latent Gaussian models in order to build
-complex data models.")
+<doi:10.1007/s10260-025-00788-y>.  The other uses a graph to specify conditional
+relations between the variables.  The graphical structure makes correlation
+matrices interpretable and avoids the quadratic increase of parameters as a
+function of the dimension.  In the first approach a natural sequence of simpler
+models along with a complexity penalization is used.  The second penalizes
+deviations from a base model.  These can be used as prior for model parameters,
+considering C code through the cgeneric interface for the INLA package
+(<https://www.r-inla.org>).  This allows one to use these models as building
+blocks combined and to other latent Gaussian models in order to build complex
+data models.")
     (license license:gpl2+)))
 
 (define-public r-graphonmix
@@ -11632,36 +11634,6 @@ Bierens & Wang (2012) <doi:10.1017/S0266466611000168>, Dikta & Scheer (2021)
 <doi:10.48550/@code{arXiv.2409.20262>}.  As proposed in these papers, the
 corresponding p-values are approximated using a parametric bootstrap method.")
     (license license:expat)))
-
-(define-public r-gofkmt
-  (package
-    (name "r-gofkmt")
-    (version "2.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GofKmt" version))
-       (sha256
-        (base32 "1nx00rlld70s1nmwcq2vsys6x71npdx9kicvk4sjnwyc8dcc679j"))))
-    (properties `((upstream-name . "GofKmt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-ggplot2))
-    (home-page "https://cran.r-project.org/package=GofKmt")
-    (synopsis "Khmaladze Martingale Transformation Goodness-of-Fit Test")
-    (description
-     "Consider a goodness-of-fit (GOF) problem of testing whether a random sample
-comes from one sample location-scale model where location and scale parameters
-are unknown.  It is well known that Khmaladze martingale transformation method
-proposed by Khmaladze (1981) <doi:10.1137/1126027> provides asymptotic
-distribution free test for the GOF problem.  This package provides test
-statistic and critical value of GOF test for normal, Cauchy, and logistic
-distributions.  This package used the main algorithm proposed by Kim (2020)
-<doi:10.1007/s00180-020-00971-7> and tests for other distributions will be
-available at the later version.")
-    (license license:gpl2)))
 
 (define-public r-gofkernel
   (package
@@ -18090,31 +18062,6 @@ uncertainty of gene sets, Schmid et al. (2016)
 <doi:10.1093/bioinformatics/btw030>.")
     (license license:artistic2.0)))
 
-(define-public r-giacr
-  (package
-    (name "r-giacr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "giacR" version))
-       (sha256
-        (base32 "0y7vcca2im6q70jxsjnf4a7jg66y66g941ad0d7iykw3c2cwx6g4"))))
-    (properties `((upstream-name . "giacR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-processx r-pingr r-jsonlite r-chromote))
-    (home-page "https://github.com/stla/giacR")
-    (synopsis "Interface to the Computer Algebra System 'Giac'")
-    (description
-     "Giac
-<https://www-fourier.ujf-grenoble.fr/~parisse/giac/doc/en/cascmd_en/cascmd_en.html>
-is a general purpose symbolic algebra software.  It powers the graphical
-interface Xcas'.  This package allows to execute Giac commands in R'.")
-    (license license:gpl3)))
-
 (define-public r-ghypernet
   (package
     (name "r-ghypernet")
@@ -21161,21 +21108,21 @@ for scatter plot) to visualize high dimensional data.")
 (define-public r-ggmuller
   (package
     (name "r-ggmuller")
-    (version "0.5.6")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmuller" version))
        (sha256
-        (base32 "069y6wf9lbkz32kmkrc61vjc0p9fpr5191103dvaz0nj6gpd686a"))))
+        (base32 "0hhrkis2mkj9hcqdvwzir34yl75hdaz3ykwp0r2dxgljv70hj95c"))))
     (properties `((upstream-name . "ggmuller")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-dplyr r-ape))
+    (propagated-inputs (list r-rlang r-ggplot2 r-dplyr r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggmuller")
+    (home-page "https://github.com/robjohnnoble/ggmuller")
     (synopsis "Create Muller Plots of Evolutionary Dynamics")
     (description
      "Create plots that combine a phylogeny and frequency dynamics.  Phylogenetic
@@ -22426,47 +22373,6 @@ the exact pixel dimensions needed.")
 colourable & fillable shapes.  New shapes may be feature requested via a Github
 issue.")
     (license license:expat)))
-
-(define-public r-ggfootball
-  (package
-    (name "r-ggfootball")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggfootball" version))
-       (sha256
-        (base32 "18y28lai4dpkxy4x43ja3ng6zbq6mjbz3gvdxwsdwn8hm9j5z7c6"))))
-    (properties `((upstream-name . "ggfootball")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rvest
-                             r-readr
-                             r-jsonlite
-                             r-highcharter
-                             r-glue
-                             r-ggsoccer
-                             r-ggplot2
-                             r-ggiraph
-                             r-gfonts
-                             r-gdtools
-                             r-dplyr
-                             r-base64enc))
-    (home-page "http://aymennasri.me/ggfootball/")
-    (synopsis
-     "Plotting Football Matches Expected Goals (xG) Stats with 'Understat' Data")
-    (description
-     "Scrapes football match shots data from Understat <https://understat.com/> and
-visualizes it using interactive plots: - A detailed shot map displaying the
-location, type, and @code{xG} value of shots taken by both teams. - An @code{xG}
-timeline chart showing the cumulative @code{xG} for each team over time,
-annotated with the details of scored goals.")
-    (license license:gpl3+)))
 
 (define-public r-ggfocus
   (package
@@ -24344,38 +24250,6 @@ moment-ratio matching and joint-distribution approximation.  The technical
 details can be found in Hong Zhang and Zheyang Wu (2020)
 <@code{arXiv:2003.01286>}.")
     (license license:gpl2)))
-
-(define-public r-gfiextremes
-  (package
-    (name "r-gfiextremes")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gfiExtremes" version))
-       (sha256
-        (base32 "0iljf63pwwxzj0syvj7p13m6q82y7nf1kq5xpgyczkbrrbb59p7n"))))
-    (properties `((upstream-name . "gfiExtremes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-foreach
-                             r-doparallel
-                             r-coda
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/gfiExtremes")
-    (synopsis "Generalized Fiducial Inference for Extremes")
-    (description
-     "Fiducial framework to perform inference on the quantiles for a generalized
-Pareto distribution model and on the parameters of the Pareto exceedance
-distribution, assuming the exceedance threshold is a known or unknown parameter.
- Reference: Damian V. Wandler & Jan Hannig (2012)
-<doi:10.1007/s10687-011-0127-9>.")
-    (license license:gpl2+)))
 
 (define-public r-gfgm-copula
   (package
@@ -31103,30 +30977,24 @@ when self-reported gender is unavailable.")
 (define-public r-genderbr
   (package
     (name "r-genderbr")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genderBR" version))
        (sha256
-        (base32 "19n3d6ps0wswq1bxgfqifq26svqf8q696im14wfglrl731mr0qbm"))))
+        (base32 "02myxcdpvdd86gingibm1ddbppvqa7gnxyf7sfyh3drgkmppbzvf"))))
     (properties `((upstream-name . "genderBR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
+    (propagated-inputs (list r-purrr r-jsonlite r-httr r-data-table))
     (home-page "https://github.com/meirelesff/genderBR")
     (synopsis "Predict Gender from Brazilian First Names")
     (description
      "This package provides a method to predict and report gender from Brazilian first
-names using the Brazilian Institute of Geography and Statistics Census data
-(<https://censo2010.ibge.gov.br/nomes/>).")
+names using the Brazilian Institute of Geography and Statistics Census data.")
     (license license:gpl2+)))
 
 (define-public r-genderapi
@@ -36777,49 +36645,6 @@ function @code{delta_t()} returns the value of delta-T in units of seconds.")
  This packages allows you loading data from ads account and manage your ads
 materials.")
     (license license:expat)))
-
-(define-public r-galaxias
-  (package
-    (name "r-galaxias")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "galaxias" version))
-       (sha256
-        (base32 "0y5fiz92ajqig640qc92xsiqr5873pzjl7jih3pjz1f9ch21r8pl"))))
-    (properties `((upstream-name . "galaxias")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-withr
-                             r-usethis
-                             r-tibble
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-jsonlite
-                             r-httr2
-                             r-glue
-                             r-fs
-                             r-dplyr
-                             r-delma
-                             r-corella
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://galaxias.ala.org.au/R/")
-    (synopsis "Describe, Package, and Share Biodiversity Data")
-    (description
-     "The Darwin Core data standard is widely used to share biodiversity information,
-most notably by the Global Biodiversity Information Facility and its partner
-nodes; but converting data to this standard can be tricky.  galaxias is
-functionally similar to devtools', but with a focus on building Darwin Core
-Archives rather than R packages, enabling data to be shared and re-used with
-relative ease.  For details see Wieczorek and colleagues (2012)
-<doi:10.1371/journal.pone.0029715>.")
-    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-galamm
   (package

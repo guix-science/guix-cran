@@ -13,8 +13,6 @@
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -228,13 +226,13 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
 (define-public r-junco
   (package
     (name "r-junco")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "junco" version))
        (sha256
-        (base32 "0ff5d6y3nwb3bjpmv4pr9akgf8dr5hq34n6pi2xw407y20sz64cl"))))
+        (base32 "0zjpxrq3zphdw85g0m8llwg9z6ncylj7i3ngych402wf3b5cq4hs"))))
     (properties `((upstream-name . "junco")))
     (build-system r-build-system)
     (arguments
@@ -5147,52 +5145,6 @@ based on @code{SimLoRD} by StÃ¶cker et al. (2016)
 <doi:10.1093/bioinformatics/btw286>.  All outputs can be written to standard
 file formats.")
     (license license:expat)))
-
-(define-public r-jack
-  (package
-    (name "r-jack")
-    (version "6.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jack" version))
-       (sha256
-        (base32 "03kfvd43b3skx3x4ky3qxg80m3w1cj2vln018qq7fj7b47ddfiqy"))))
-    (properties `((upstream-name . "jack")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-syt
-                             r-symbolicqspray
-                             r-spray
-                             r-rcppcgal
-                             r-rcpp
-                             r-ratioofqsprays
-                             r-rationalmatrix
-                             r-qspray
-                             r-partitions
-                             r-mvp
-                             r-multicool
-                             r-gmp
-                             r-desctools
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/jackR")
-    (synopsis "Jack, Zonal, Schur, and Other Symmetric Polynomials")
-    (description
-     "Schur polynomials appear in combinatorics and zonal polynomials appear in random
-matrix theory.  They are particular cases of Jack polynomials.  This package
-allows to compute these polynomials and other symmetric multivariate
-polynomials: flagged Schur polynomials, factorial Schur polynomials, t-Schur
-polynomials, Hall-Littlewood polynomials, Macdonald polynomials, and modified
-Macdonald polynomials.  In addition, it can compute the Kostka-Jack numbers, the
-Kostka-Foulkes polynomials, the Kostka-Macdonald polynomials, and the Hall
-polynomials.  Mainly based on Demmel & Koev's paper (2006)
-<doi:10.1090/S0025-5718-05-01780-1> and Macdonald's book (1995)
-<doi:10.1093/oso/9780198534891.003.0001>.")
-    (license license:gpl3)))
 
 (define-public r-jaccard
   (package

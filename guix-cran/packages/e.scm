@@ -10336,13 +10336,13 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateMultiple" version))
        (sha256
-        (base32 "09swklnvjrhq7x2h1g2wvd34c0544h06ak9vgccp6h9izwk63swj"))))
+        (base32 "0xmr43wgp8xi5ikh1w0lpaf0l7bigc0bhyasy43yik0d2s1jirj3"))))
     (properties `((upstream-name . "equateMultiple")))
     (build-system r-build-system)
     (arguments
@@ -10361,10 +10361,12 @@ corresponding @code{LaTeX} code for the model.")
     (home-page "https://cran.r-project.org/package=equateMultiple")
     (synopsis "Equating of Multiple Forms")
     (description
-     "Equating of multiple forms using Item Response Theory (IRT) methods (Battauz M.
-(2017) <doi:10.1007/s11336-016-9517-x>, Battauz and Leoncio (2023)
-<doi:10.1177/01466216231151702>, Haberman S. J. (2009)
-<doi:10.1002/j.2333-8504.2009.tb02197.x>).")
+     "Equating of multiple forms using Item Response Theory (IRT) methods.  See
+Battauz (2025) <doi:10.18637/jss.v115.i11> for a detailed description of the
+package.  See Battauz M. (2017) <doi:10.1007/s11336-016-9517-x>, Battauz and
+Leoncio (2023) <doi:10.1177/01466216231151702> and Haberman S. J. (2009)
+<doi:10.1002/j.2333-8504.2009.tb02197.x>) for the methods to link multiple test
+forms.")
     (license license:gpl3)))
 
 (define-public r-equateirt
@@ -18890,32 +18892,6 @@ log-linear models is described in R.W. Oldford (2003)
 and a number of problems, puzzles, and paradoxes that are easily explained with
 eikosograms are given in R.W. Oldford (2003)
 <https://math.uwaterloo.ca/~rwoldfor/papers/eikosograms/examples/paper.pdf>.")
-    (license license:gpl3)))
-
-(define-public r-eigenr
-  (package
-    (name "r-eigenr")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EigenR" version))
-       (sha256
-        (base32 "07223lp4x9zlcj0s5pjcw2475qwv8a0njdz1ac8v0wiw0bkxa6wl"))))
-    (properties `((upstream-name . "EigenR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
-    (home-page "https://github.com/stla/EigenR")
-    (synopsis "Complex Matrix Algebra with 'Eigen'")
-    (description
-     "Matrix algebra using the Eigen C++ library: determinant, rank, inverse,
-pseudo-inverse, kernel and image, QR decomposition, Cholesky decomposition,
-Schur decomposition, Hessenberg decomposition, linear least-squares problems.
-Also provides matrix functions such as exponential, logarithm, power, sine and
-cosine.  Complex matrices are supported.")
     (license license:gpl3)))
 
 (define-public r-eigenmodel

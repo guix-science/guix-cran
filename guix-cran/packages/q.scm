@@ -10,9 +10,8 @@
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -3625,44 +3624,6 @@ pronounced as *Quest*).  For data.frames containing the supported data types it
 is intended to work as a drop-in replacement for the @code{write_*()} and
 @code{read_*()} functions provided by similar packages.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
-
-(define-public r-qspray
-  (package
-    (name "r-qspray")
-    (version "3.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qspray" version))
-       (sha256
-        (base32 "0i5sq29zdcvdrmzsd0xxrw200q6nhg8b00n2jwya8hq4al9xq2z6"))))
-    (properties `((upstream-name . "qspray")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gmp))
-    (propagated-inputs (list r-ryacas
-                             r-rcpp
-                             r-rationalmatrix
-                             r-purrr
-                             r-partitions
-                             r-gmp
-                             r-desctools
-                             r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/qspray")
-    (synopsis "Multivariate Polynomials with Rational Coefficients")
-    (description
-     "Symbolic calculation and evaluation of multivariate polynomials with rational
-coefficients.  This package is strongly inspired by the spray package.  It
-provides a function to compute GrÃ¶bner bases (reference
-<doi:10.1007/978-3-319-16721-3>).  It also includes some features for symmetric
-polynomials, such as the Hall inner product.  The header file of the C++ code
-can be used by other packages.  It provides the templated class Qspray that can
-be used to represent and to deal with multivariate polynomials with another type
-of coefficients.")
-    (license license:gpl3)))
 
 (define-public r-qsplines
   (package

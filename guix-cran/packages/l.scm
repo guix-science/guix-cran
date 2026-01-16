@@ -10,7 +10,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
@@ -19,6 +18,7 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages linux)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -287,38 +287,6 @@ including statistical model diagnostic plots, methods for computing statistical
 models quality measures (such as AIC, BIC, r squared, root mean squared error)
 and general utilities.")
     (license license:expat)))
-
-(define-public r-lvmcomp
-  (package
-    (name "r-lvmcomp")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lvmcomp" version))
-       (sha256
-        (base32 "08hs97bdz4n0bdhvqqq5xywfy140s69c750rn38criq4cw4gm3z7"))))
-    (properties `((upstream-name . "lvmcomp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-coda))
-    (home-page "https://github.com/slzhang-fd/lvmcomp")
-    (synopsis
-     "Stochastic EM Algorithms for Latent Variable Models with a High-Dimensional Latent Space")
-    (description
-     "This package provides stochastic EM algorithms for latent variable models with a
-high-dimensional latent space.  So far, we provide functions for confirmatory
-item factor analysis based on the multidimensional two parameter logistic (M2PL)
-model and the generalized multidimensional partial credit model.  These
-functions scale well for problems with many latent traits (e.g., thirty or even
-more) and are virtually tuning-free.  The computation is facilitated by
-multiprocessing @code{OpenMP} API. For more information, please refer to: Zhang,
-S., Chen, Y., & Liu, Y. (2018).  An Improved Stochastic EM Algorithm for
-Large-scale Full-information Item Factor Analysis.  British Journal of
-Mathematical and Statistical Psychology. <doi:10.1111/bmsp.12153>.")
-    (license license:gpl3)))
 
 (define-public r-lvimp
   (package
@@ -7133,52 +7101,6 @@ lognormal and Pareto tail is also implemented.  See Bee, M. (2022)
 <doi:10.1007/s11634-022-00497-4>.")
     (license license:expat)))
 
-(define-public r-lnmixsurv
-  (package
-    (name "r-lnmixsurv")
-    (version "3.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lnmixsurv" version))
-       (sha256
-        (base32 "0ddjsnl8r5sk1jnf2kg6yh80qankfdjkfcwx9fjm2mm4yk8cf5bv"))))
-    (properties `((upstream-name . "lnmixsurv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gsl))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-survival
-                             r-rlang
-                             r-readr
-                             r-rcppparallel
-                             r-rcppgsl
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-purrr
-                             r-posterior
-                             r-parsnip
-                             r-hardhat
-                             r-ggplot2
-                             r-generics
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://vivianalobo.github.io/lnmixsurv/")
-    (synopsis "Bayesian Mixture Log-Normal Survival Model")
-    (description
-     "Bayesian Survival models via the mixture of Log-Normal distribution extends the
-well-known survival models and accommodates different behaviour over time and
-considers higher censored survival times.  The proposal combines mixture
-distributions Fruhwirth-Schnatter(2006) <doi:10.1007/s11336-009-9121-4>, and
-data augmentation techniques Tanner and Wong (1987)
-<doi:10.1080/01621459.1987.10478458>.")
-    (license license:expat)))
-
 (define-public r-lnmcluster
   (package
     (name "r-lnmcluster")
@@ -7434,13 +7356,13 @@ based on the robust bounded-influence test by Heritier and Ronchetti (1994)
 (define-public r-lmsubsets
   (package
     (name "r-lmsubsets")
-    (version "0.5-3")
+    (version "0.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmSubsets" version))
        (sha256
-        (base32 "1v0lprzhibbcsxagbhaf09j51kkz89xjmicmnf6kix5p9x5p8psv"))))
+        (base32 "1mjjz82bd2i7377r42l99h84gz04050lhwbxzqdbbs65qj81v5aj"))))
     (properties `((upstream-name . "lmSubsets")))
     (build-system r-build-system)
     (arguments
@@ -20405,13 +20327,13 @@ for the presence of local factors with main function @code{local_factors()}.")
 (define-public r-l1pack
   (package
     (name "r-l1pack")
-    (version "0.60")
+    (version "0.62")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1pack" version))
        (sha256
-        (base32 "0hvhxg0d1y9ryfahyqm9m55hx379d6k0vfrylm48rsh22rcinqfq"))))
+        (base32 "127xzsymcdhh1p2cf0ccghdw238agai59k2v3zms0ygl8jakbr17"))))
     (properties `((upstream-name . "L1pack")))
     (build-system r-build-system)
     (arguments

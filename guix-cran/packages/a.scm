@@ -2830,6 +2830,42 @@ by entering just a dataset and the name of the outcome column as inputs,
 GAM which performs at reasonably high speed, even for large datasets.")
     (license license:expat)))
 
+(define-public r-autoflagr
+  (package
+    (name "r-autoflagr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autoFlagR" version))
+       (sha256
+        (base32 "1z8b6ydsy72n6zv4h9fyndh0vnmisw7dh6apkzpr84lz37s8kwjn"))))
+    (properties `((upstream-name . "autoFlagR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rmarkdown
+                             r-prroc
+                             r-proc
+                             r-knitr
+                             r-isotree
+                             r-gt
+                             r-ggplot2
+                             r-dplyr
+                             r-dbscan))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vikrant31/autoFlagR")
+    (synopsis "AI-Driven Anomaly Detection for Data Quality")
+    (description
+     "Automated data quality auditing using unsupervised machine learning.  Provides
+AI-driven anomaly detection for data quality assessment, primarily designed for
+Electronic Health Records (EHR) data, with benchmarking capabilities for
+validation and publication.  Methods based on: Liu et al. (2008)
+<doi:10.1109/ICDM.2008.17>, Breunig et al. (2000) <doi:10.1145/342009.335388>.")
+    (license license:expat)))
+
 (define-public r-autofc
   (package
     (name "r-autofc")
@@ -3094,6 +3130,37 @@ Pinto, F., Cerqueira, V., Soares, C., Mendes-Moreira, J. (2017):
 \"@code{autoBagging}: Learning to Rank Bagging Workflows with Metalearning\"
 @code{arXiv} preprint @code{arXiv:1706.09367}.")
     (license license:gpl2+)))
+
+(define-public r-autoann
+  (package
+    (name "r-autoann")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autoann" version))
+       (sha256
+        (base32 "1s5c6n9kizmbqsazmr5njpndwpnp61gr74pp3faryakraxy5bwnk"))))
+    (properties `((upstream-name . "autoann")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nnet))
+    (home-page "https://cran.r-project.org/package=autoann")
+    (synopsis "Neural NetworkâBased Model Selection and Forecasting")
+    (description
+     "This package provides a systematic framework for neural networkâbased model
+selection and forecasting using single hidden layer feed-forward networks.  It
+evaluates all possible combinations of predictor variables and hidden layer
+configurations, selecting the optimal model based on predictive accuracy
+criteria such as root mean squared error (RMSE) and mean absolute percentage
+error (MAPE).  Predictors are automatically standardized, and model performance
+is assessed using out-of-sample validation.  The package is designed for
+empirical modelling and forecasting in economics, agriculture, trade, climate,
+and related applied research domains where nonlinear relationships and robust
+predictive performance are of primary interest.")
+    (license license:gpl3)))
 
 (define-public r-autoads
   (package
@@ -9291,13 +9358,13 @@ Platform'.  Learn more about the arcgis meta-package at
 (define-public r-arcgeocoder
   (package
     (name "r-arcgeocoder")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgeocoder" version))
        (sha256
-        (base32 "1lann7gbvx4sy5jaynlclh8j4ysmx3kjx00rd9rn825hmp5ia6km"))))
+        (base32 "04ld0yd0qlcxicrg4drjxrzr1ax530021885xlmy3385s7wqcbaa"))))
     (properties `((upstream-name . "arcgeocoder")))
     (build-system r-build-system)
     (arguments
@@ -21265,50 +21332,6 @@ through a fast API and a web-based platform at
 Institute for the World Economy <https://www.ifw-kiel.de/>.")
     (license license:gpl3)))
 
-(define-public r-afr
-  (package
-    (name "r-afr")
-    (version "0.3.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AFR" version))
-       (sha256
-        (base32 "06bvi44hfwsyslp6dn9imdl2b6kxb1n2fpn3j2y639xs95g6hvap"))))
-    (properties `((upstream-name . "AFR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-writexl
-                             r-tseries
-                             r-rlang
-                             r-regclass
-                             r-olsrr
-                             r-nortest
-                             r-nlme
-                             r-mfilter
-                             r-lmtest
-                             r-gridextra
-                             r-goftest
-                             r-ggplot2
-                             r-forecast
-                             r-cli
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AFR")
-    (synopsis
-     "Toolkit for Regression Analysis of Kazakhstan Banking Sector Data")
-    (description
-     "Tool is created for regression, prediction and forecast analysis of
-macroeconomic and credit data.  The package includes functions from existing R
-packages adapted for banking sector of Kazakhstan.  The purpose of the package
-is to optimize statistical functions for easier interpretation for bank analysts
-and non-statisticians.")
-    (license license:gpl2)))
-
 (define-public r-afmtoolkit
   (package
     (name "r-afmtoolkit")
@@ -23359,13 +23382,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "07ahbilcsvf1gdzi7mah0k8915cakzypf5r0450vx4hj9wgvpsq2"))))
+        (base32 "1wxwgnhv20is9yx03k7sai68nhrdp7b0y2dq5i5pqfkz0rdp2mwq"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (arguments
@@ -23725,13 +23748,13 @@ and Giles (1973) <doi:10.1111/j.1478-4408.1973.tb03158.x>.")
 (define-public r-adhererviz
   (package
     (name "r-adhererviz")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdhereRViz" version))
        (sha256
-        (base32 "1jc5mfdydw9s515zi7lsmns79919vrdhh6lvh9z2bq0lrn9g1yci"))))
+        (base32 "1lrkf2fdqfajlg6ch37p3jxlyhwnx5vgc70vgrb66xig28davinx"))))
     (properties `((upstream-name . "AdhereRViz")))
     (build-system r-build-system)
     (arguments
@@ -23769,13 +23792,13 @@ It is implemented using Shiny and HTML/CSS/@code{JavaScript}.")
 (define-public r-adherer
   (package
     (name "r-adherer")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdhereR" version))
        (sha256
-        (base32 "0b98yz2msg30ch3n85yzi42rlnyj5ggkz1fsysh95gd5qk4c8vg2"))))
+        (base32 "1r7ybvhyzpx060rngsi1ffg79dc2887dym5m8ihx6zx1k5m3v8cn"))))
     (properties `((upstream-name . "AdhereR")))
     (build-system r-build-system)
     (arguments
@@ -25776,40 +25799,6 @@ decide whether to request labels in real time.  The methodology is particularly
 suited for statistical process monitoring in industrial applications where
 labeling is costly.")
     (license license:gpl3)))
-
-(define-public r-activegp
-  (package
-    (name "r-activegp")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "activegp" version))
-       (sha256
-        (base32 "1b64k0k6l9dgvyqhd6j9plabaibjayfm5maa4bpwxxgwkp122r3c"))))
-    (properties `((upstream-name . "activegp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-numderiv
-                             r-mass
-                             r-lhs
-                             r-hetgp))
-    (home-page "https://cran.r-project.org/package=activegp")
-    (synopsis
-     "Gaussian Process Based Design and Analysis for the Active Subspace Method")
-    (description
-     "The active subspace method is a sensitivity analysis technique that finds
-important linear combinations of input variables for a simulator.  This package
-provides functions allowing estimation of the active subspace without gradient
-information using Gaussian processes as well as sequential experimental design
-tools to minimize the amount of data required to do so.  Implements Wycoff et
-al. (JCGS, 2021) <doi:10.48550/@code{arXiv.1907.11572>}.")
-    (license license:bsd-3)))
 
 (define-public r-activatr
   (package
