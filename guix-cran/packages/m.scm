@@ -4365,47 +4365,6 @@ digital terrain models using a variable focal windows size (Ilich et al. (2023)
 <doi:10.1111/tgis.13067>).")
     (license license:gpl3+)))
 
-(define-public r-multis
-  (package
-    (name "r-multis")
-    (version "0.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MultIS" version))
-       (sha256
-        (base32 "02ca1r8qfsl1b8rfawdn4xrlwhg5yab260rrsx8ckyv3v75knk8f"))))
-    (properties `((upstream-name . "MultIS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmutil
-                             r-rlang
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-powerlaw
-                             r-plyr
-                             r-ltm
-                             r-igraph
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-clvalid
-                             r-clv
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MultIS")
-    (synopsis
-     "Reconstruction of Clones from Integration Site Readouts and Visualization")
-    (description
-     "This package provides tools necessary to reconstruct clonal affiliations from
-temporally and/or spatially separated measurements of viral integration sites.
-For this means it utilizes correlations present in the relative readouts of the
-integration sites.  Furthermore, facilities for filtering of the data and
-visualization of different steps in the pipeline are provided with the package.")
-    (license license:lgpl2.0+)))
-
 (define-public r-multiroc
   (package
     (name "r-multiroc")
@@ -21836,70 +21795,6 @@ is included as well as a function for checking for level-one homoskedasticity
 (Raudenbush & Bryk, 2002, ISBN:076191904X).")
     (license license:gpl2)))
 
-(define-public r-mlmts
-  (package
-    (name "r-mlmts")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlmts" version))
-       (sha256
-        (base32 "0268zypg99yhizh5ashdwivckaqzfw60fb01f2lryz8c9hpa21mr"))))
-    (properties `((upstream-name . "mlmts")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-waveslim
-                             r-tsfeatures
-                             r-tserieschaos
-                             r-tseries
-                             r-tsdist
-                             r-tsclust
-                             r-tsa
-                             r-rfast
-                             r-rdpack
-                             r-ranger
-                             r-randomforest
-                             r-quantspec
-                             r-psych
-                             r-pspline
-                             r-pracma
-                             r-multiwave
-                             r-mts
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-ggplot2
-                             r-geigen
-                             r-freqdom
-                             r-forecast
-                             r-fda-usc
-                             r-e1071
-                             r-dtw
-                             r-desctools
-                             r-complexplus
-                             r-clusterr
-                             r-caret
-                             r-aid))
-    (home-page "https://cran.r-project.org/package=mlmts")
-    (synopsis "Machine Learning Algorithms for Multivariate Time Series")
-    (description
-     "An implementation of several machine learning algorithms for multivariate time
-series.  The package includes functions allowing the execution of clustering,
-classification or outlier detection methods, among others.  It also incorporates
-a collection of multivariate time series datasets which can be used to analyse
-the performance of new proposed algorithms.  Some of these datasets are stored
-in @code{GitHub} data packages ueadata1 to ueadata8'.  To access these data
-packages, run install.packages(c('ueadata1', ueadata2', ueadata3', ueadata4',
-ueadata5', ueadata6', ueadata7', ueadata8'),
-repos='<https://anloor7.github.io/drat/>')'.  The installation takes a couple of
-minutes but we strongly encourage the users to do it if they want to have
-available all datasets of mlmts.  Practitioners from a broad variety of fields
-could benefit from the general framework provided by mlmts'.")
-    (license license:gpl2)))
-
 (define-public r-mlmtools
   (package
     (name "r-mlmtools")
@@ -22636,13 +22531,13 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
 (define-public r-mlexperiments
   (package
     (name "r-mlexperiments")
-    (version "0.0.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlexperiments" version))
        (sha256
-        (base32 "1fv8yr771hvxpb37i874r92vg2n15gz6cbr41xx3inmnhc5g8pwf"))))
+        (base32 "1lqnfa2x27x065wcswbs7s5drb8v9681r327rkksb8psyb0x8pp6"))))
     (properties `((upstream-name . "mlexperiments")))
     (build-system r-build-system)
     (arguments
@@ -22655,8 +22550,8 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
     (description
      "This package provides R6 objects to perform parallelized hyperparameter
 optimization and cross-validation.  Hyperparameter optimization can be performed
-with Bayesian optimization (via @code{ParBayesianOptimization}
-<https://cran.r-project.org/package=@code{ParBayesianOptimization>}) and grid
+with Bayesian optimization (via @code{rBayesianOptimization}
+<https://cran.r-project.org/package=@code{rBayesianOptimization>}) and grid
 search.  The optimized hyperparameters can be validated using k-fold
 cross-validation.  Alternatively, hyperparameter optimization and validation can
 be performed with nested cross-validation.  While mlexperiments focuses on core
@@ -28539,42 +28434,6 @@ low-rank model.  GeneviÃ¨ve Robin, Olga Klopp, Julie Josse, Ãric Moulines,
 Robert Tibshirani (2018) <@code{arXiv:1806.09734>}.")
     (license license:gpl3)))
 
-(define-public r-mimer
-  (package
-    (name "r-mimer")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MIMER" version))
-       (sha256
-        (base32 "1zpna27xcparwx81fjr97qhkwd8834dw8gd9548baa688g7iniby"))))
-    (properties `((upstream-name . "MIMER")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-testthat
-                             r-stringr
-                             r-rlang
-                             r-reshape2
-                             r-fuzzyjoin
-                             r-dplyr
-                             r-data-table
-                             r-amr))
-    (home-page "https://cran.r-project.org/package=MIMER")
-    (synopsis "Data Wrangling for Antimicrobial Resistance Studies")
-    (description
-     "Designed for analyzing the Medical Information Mart for Intensive Care(MIMIC)
-dataset, a repository of freely accessible electronic health records.
-MIMER(MIMIC-enabled Research) package, offers a suite of data wrangling
-functions tailored specifically for preparing the dataset for research purposes,
-particularly in antimicrobial resistance(AMR) studies.  It simplifies complex
-data manipulation tasks, allowing researchers to focus on their primary
-inquiries without being bogged down by wrangling complexities.")
-    (license license:gpl3+)))
-
 (define-public r-mimdo
   (package
     (name "r-mimdo")
@@ -29365,13 +29224,13 @@ Batista and Ferreira (2023) <doi:10.28951/bjb.v41i4.640>.")
 (define-public r-midr
   (package
     (name "r-midr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midr" version))
        (sha256
-        (base32 "07ynnib64zzzxy69z80gz8rrqi9j03pjmczwrh1gxbp3v5j79nm7"))))
+        (base32 "0q03gkafh3z4fwfb5q2jzn5ks96i94y32jpnwh3v2dr8xywlrmcy"))))
     (properties `((upstream-name . "midr")))
     (build-system r-build-system)
     (arguments

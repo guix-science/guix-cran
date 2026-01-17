@@ -18600,6 +18600,32 @@ This tool helps create high-quality visual representations of data using the
 ggplot2 framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
     (license license:expat)))
 
+(define-public r-ggvolc
+  (package
+    (name "r-ggvolc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggvolc" version))
+       (sha256
+        (base32 "0kzb1x9dlpvqr37nbahvcbc27xd1v5pfrjrq5v6kkqliknff419k"))))
+    (properties `((upstream-name . "ggvolc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gridextra r-ggtext r-ggrepel r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=ggvolc")
+    (synopsis "Create Volcano Plots for Differential Gene Expression Data")
+    (description
+     "This package provides functionality to create customizable volcano plots for
+visualizing differential gene expression analysis results.  The package offers
+options to highlight genes of interest, adjust significance thresholds,
+customize colors, and add informative labels.  Designed specifically for RNA-seq
+data analysis workflows.")
+    (license license:expat)))
+
 (define-public r-ggview
   (package
     (name "r-ggview")
@@ -19681,39 +19707,6 @@ sets.  Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
 features.  The largest component of the package is the data for the two built-in
 atlases.  Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
     (license license:expat)))
-
-(define-public r-ggsector
-  (package
-    (name "r-ggsector")
-    (version "1.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggsector" version))
-       (sha256
-        (base32 "0gcmk9gh51gli6dhdczjgj3sblr3ybdr2xm0byq23f8a3znscilj"))))
-    (properties `((upstream-name . "ggsector")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-seurat
-                             r-rlang
-                             r-prettydoc
-                             r-matrix
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggsector")
-    (synopsis "Draw Sectors")
-    (description
-     "Some useful functions that can use grid and ggplot2 to plot sectors and interact
-with Seurat to plot gene expression percentages.  Also, there are some examples
-of how to draw sectors in @code{ComplexHeatmap}'.")
-    (license license:artistic2.0)))
 
 (define-public r-ggscidca
   (package
@@ -25955,13 +25948,13 @@ regression model is based on G. Roerink, M. Menenti and W. Verhoef (2000)
 (define-public r-geotox
   (package
     (name "r-geotox")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoTox" version))
        (sha256
-        (base32 "0q4jkcj7zmh1hsn9izv09p0wzb4amsxfqc22lr28jw2df17r0ym6"))))
+        (base32 "0901dx423imx22rgmw5vcz0zkspgks7zgmw108axjm43zhq5nj88"))))
     (properties `((upstream-name . "GeoTox")))
     (build-system r-build-system)
     (arguments
@@ -25974,6 +25967,7 @@ regression model is based on G. Roerink, M. Menenti and W. Verhoef (2000)
                              r-stringr
                              r-sf
                              r-rlang
+                             r-purrr
                              r-ggridges
                              r-ggplot2
                              r-dplyr))
@@ -25983,8 +25977,8 @@ regression model is based on G. Roerink, M. Menenti and W. Verhoef (2000)
     (description
      "Connecting spatiotemporal exposure to individual and population-level risk via
 source-to-outcome continuum modeling.  The package, methods, and case-studies
-are described in Messier, Reif, and Marvel (2024)
-<doi:10.1101/2024.09.23.24314096> and Eccles et al. (2023)
+are described in Messier, Reif, and Marvel (2025)
+<doi:10.1186/s40246-024-00711-8> and Eccles et al. (2023)
 <doi:10.1016/j.scitotenv.2022.158905>.")
     (license license:expat)))
 
@@ -32430,13 +32424,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "0lsss8wrpfgaa4rmcpirv40z56y4q3qh1r8axyrlfxrjnqqk53r5"))))
+        (base32 "09mq5n6ijw0afw4xq7q6dlmlc5ax5waka9pr4hvrblwzniagxq4c"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (arguments

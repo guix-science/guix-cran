@@ -1883,13 +1883,13 @@ gain insights into genetic relationships within wild animal populations.")
 (define-public r-wpa
   (package
     (name "r-wpa")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wpa" version))
        (sha256
-        (base32 "1na7s9r31sf74h8xmc5j3hrw0dggwlsnarhyhrni4wbidpdf13cj"))))
+        (base32 "1ng9s1ppq0sdvb7m9f5zkzazrrxf5fh45bhfadnawlcga0cp8hg7"))))
     (properties `((upstream-name . "wpa")))
     (build-system r-build-system)
     (arguments

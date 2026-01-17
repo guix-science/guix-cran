@@ -1196,6 +1196,30 @@ Liang et al. (in press; annotated R code and data utilized in this example are
 available in Mendeley data) <doi:10.17632/kpjp3gnwbt.1>.")
     (license license:gpl3)))
 
+(define-public r-ltc
+  (package
+    (name "r-ltc")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ltc" version))
+       (sha256
+        (base32 "0j9kp5m3fjv6zr0gplpvpaxamdcb5di1r72mw0jhi1f03hm9vqn6"))))
+    (properties `((upstream-name . "ltc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-ggforce r-dplyr r-crayon r-colorspace))
+    (home-page "https://github.com/loukesio/ltc-color-palettes")
+    (synopsis "Collection of Artistic and Nature-Inspired Color Palettes")
+    (description
+     "Offers a variety of color palettes inspired by art, nature, and personal
+inspirations.  Each palette is accompanied by a unique backstory, enriching the
+understanding and significance of the colors.")
+    (license license:expat)))
+
 (define-public r-ltasr
   (package
     (name "r-ltasr")
@@ -1986,47 +2010,6 @@ factorization.  Finally some codes for the solution of LSE applied in
 quaternions.")
     (license license:gpl3)))
 
-(define-public r-lsdsensitivity
-  (package
-    (name "r-lsdsensitivity")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LSDsensitivity" version))
-       (sha256
-        (base32 "1j3lap6bqdyrxj1g9fz4rfcrhas3jinxza5k3swdwni1d9sdwqwh"))))
-    (properties `((upstream-name . "LSDsensitivity")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-tseries
-                             r-sensitivity
-                             r-rgenoud
-                             r-randtoolbox
-                             r-lsdinterface
-                             r-lawstat
-                             r-ksamples
-                             r-diptest
-                             r-dicekriging
-                             r-car
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=LSDsensitivity")
-    (synopsis "Sensitivity Analysis Tools for LSD Simulations")
-    (description
-     "This package provides tools for sensitivity analysis of LSD simulation models.
-Reads object-oriented data produced by LSD simulation models and performs
-screening and global sensitivity analysis (Sobol decomposition method, Saltelli
-et al. (2008) ISBN:9780470725177).  A Kriging or polynomial meta-model (Kleijnen
-(2009) <doi:10.1016/j.ejor.2007.10.013>) is estimated using the simulation data
-to provide the data required by the Sobol decomposition.  LSD (Laboratory for
-Simulation Development) is free software developed by Marco Valente and Marcelo
-C. Pereira (documentation and downloads available at
-<https://www.labsimdev.org/>).")
-    (license license:gpl3)))
-
 (define-public r-lsdirf
   (package
     (name "r-lsdirf")
@@ -2061,34 +2044,6 @@ CMC proposes retrieving the causal effect of shocks by exploiting the
 opportunity to directly observe the counterfactual in a fully controlled
 experimental setup.  LSD (Laboratory for Simulation Development) is free
 software available at <https://www.labsimdev.org/>).")
-    (license license:gpl3)))
-
-(define-public r-lsdinterface
-  (package
-    (name "r-lsdinterface")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LSDinterface" version))
-       (sha256
-        (base32 "10g7hlqg99hjachjsfa7bx1s7h4f7avf3jway7zdmagv0kh54rxs"))))
-    (properties `((upstream-name . "LSDinterface")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsdist r-boot r-abind))
-    (home-page "https://cran.r-project.org/package=LSDinterface")
-    (synopsis "Interface Tools for LSD Simulation Results Files")
-    (description
-     "Interfaces R with LSD simulation models.  Reads object-oriented data in results
-files (.res[.gz]) produced by LSD and creates appropriate multi-dimensional
-arrays in R. Supports multiple core parallel threads of multi-file data reading
-for increased performance.  Also provides functions to extract basic information
-and statistics from data files.  LSD (Laboratory for Simulation Development) is
-free software developed by Marco Valente and Marcelo C. Pereira (documentation
-and downloads available at <https://www.labsimdev.org/>).")
     (license license:gpl3)))
 
 (define-public r-lsdbc
@@ -4379,29 +4334,6 @@ method is fully detailled in Capitaine et.al. (2020)
 <doi:10.1177/0962280220946080> Random forests for high-dimensional longitudinal
 data.")
     (license license:gpl2)))
-
-(define-public r-longitudinaldata
-  (package
-    (name "r-longitudinaldata")
-    (version "2.4.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "longitudinalData" version))
-       (sha256
-        (base32 "12saa9ycmh2ysap0k36fgwcf2skjkrhdf3pk67xsh6qpw1h65dhc"))))
-    (properties `((upstream-name . "longitudinalData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgl r-misc3d r-clv r-class))
-    (home-page "https://cran.r-project.org/package=longitudinalData")
-    (synopsis "Longitudinal Data")
-    (description
-     "This package provides tools for longitudinal data and joint longitudinal data
-(used by packages kml and kml3d).")
-    (license license:gpl2+)))
 
 (define-public r-longitudinalcascade
   (package

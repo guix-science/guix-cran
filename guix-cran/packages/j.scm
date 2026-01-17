@@ -592,13 +592,13 @@ cycles, optimal interest rate, and recession forecasts.")
 (define-public r-jtools
   (package
     (name "r-jtools")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jtools" version))
        (sha256
-        (base32 "04g9r8pfvzkx7x1gjwlc93wrbpcwhk8cc7y0niqk3gg0z8q6vz7y"))))
+        (base32 "05bh9rjqnvqczxi35lsyjy4j6caw7s0yjafc2nl19rz89z1hpfzc"))))
     (properties `((upstream-name . "jtools")))
     (build-system r-build-system)
     (arguments
@@ -1772,13 +1772,13 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpinfect
   (package
     (name "r-jpinfect")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpinfect" version))
        (sha256
-        (base32 "0i6xbbp45bh4nxl9kf08vgjqi14fgbvqx7yi7mbmr5kc3gwnsqw3"))))
+        (base32 "1yxph0wyyjh82hvx8mz6mirn9x115hbgxiv21f3wxm41c80g73l4"))))
     (properties `((upstream-name . "jpinfect")))
     (build-system r-build-system)
     (arguments
@@ -3726,6 +3726,35 @@ by grosse Schlarmann (2010-2024) <https://www.produnis.de/R/>.")
 for R. For full functionality on Windows and Mac OS X JGR requires a start
 application which depends on your OS.")
     (license license:gpl2)))
+
+(define-public r-jfm
+  (package
+    (name "r-jfm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JFM" version))
+       (sha256
+        (base32 "0z34xf62hjyn6ipmw7xv8zrf9jvv7k817dj6x721w7wsvj68g6pq"))))
+    (properties `((upstream-name . "JFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvcg
+                             r-rockfab
+                             r-rgl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-randomcolor
+                             r-mass))
+    (home-page "https://cran.r-project.org/package=JFM")
+    (synopsis "Rock Mass Structural Analysis from 3D Mesh of Point Cloud")
+    (description
+     "This package provides functions to extract joint planes from 3D triangular mesh
+derived from point cloud and makes data available for structural analysis.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-jfe
   (package

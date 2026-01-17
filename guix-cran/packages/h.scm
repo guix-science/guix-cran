@@ -2995,53 +2995,6 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
 (2024) <doi:10.1038/s41586-023-06618-z>.")
     (license license:gpl3)))
 
-(define-public r-htrspranalysis
-  (package
-    (name "r-htrspranalysis")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "htrSPRanalysis" version))
-       (sha256
-        (base32 "1r8vyi6r0k6cm1mv10vr0xd9jqvg491z70rmwkhw7dfq4dpkhd90"))))
-    (properties `((upstream-name . "htrSPRanalysis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-purrr
-                             r-openxlsx
-                             r-minpack-lm
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=htrSPRanalysis")
-    (synopsis "Analysis of Surface Plasmon Resonance Data")
-    (description
-     "Analysis of Surface Plasmon Resonance (SPR) and Biolayer Interferometry data,
-with automations for high-throughput SPR. This version of the package fits the
-1: 1 binding model, with and without bulkshift.  It offers optional local or
-global Rmax fitting.  The user must provide a sample sheet and a Carterra output
-file in Carterra's current format.  There is a utility function to convert from
-Carterra's old output format.  The user may run a custom pipeline or use the
-provided Runscript', which will produce a pdf file containing fitted Rmax, ka,
-kd and standard errors, a plot of the sensorgram and fits, and a plot of
-residuals.  The script will also produce a .csv file with all of the relevant
-parameters for each spot on the SPR chip.")
-    (license license:gpl3+)))
-
 (define-public r-htmlutils
   (package
     (name "r-htmlutils")
@@ -7679,13 +7632,13 @@ al. (2019) <@code{arXiv:1905.11052>}.")
 (define-public r-himach
   (package
     (name "r-himach")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "himach" version))
        (sha256
-        (base32 "04xp50yrs2gcybip9m2ns0dq7gkij370x8hq70cx3c228rcmjlxm"))))
+        (base32 "1d6vr0n8828pavznzaqxi9fdcng0d5kpp4ylzszr9ndxx6c41aa1"))))
     (properties `((upstream-name . "himach")))
     (build-system r-build-system)
     (arguments

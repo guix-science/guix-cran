@@ -2562,13 +2562,13 @@ base weighting functionality in survey.'.")
 (define-public r-svyvgam
   (package
     (name "r-svyvgam")
-    (version "1.2-17")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svyVGAM" version))
        (sha256
-        (base32 "19phvz525m18gf5g2yx6ks55gaga1jb1a4ypgj93svny9x9jlf18"))))
+        (base32 "0lzpd9rp9laj67c1663mc84f86cnpv2l277mv1lgkh6dg63yh9ps"))))
     (properties `((upstream-name . "svyVGAM")))
     (build-system r-build-system)
     (arguments
@@ -20583,19 +20583,19 @@ Studies in Computational Intelligence 433, Springer, Berlin/Heidelberg, 2012.")
 (define-public r-srcr
   (package
     (name "r-srcr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srcr" version))
        (sha256
-        (base32 "0hmlvq8rwhdv8hh7i517ml46p1hvd2idby4xx7firin8ca1829n5"))))
+        (base32 "00lfqkrjm8r9cr7kc4bhrpp1y1bclng9q8jpwr1abv4c61923ap9"))))
     (properties `((upstream-name . "srcr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-dplyr r-dbi))
+    (propagated-inputs (list r-lifecycle r-jsonlite r-dplyr r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/baileych/srcr")
     (synopsis "Simplify Connections to Database Sources")
@@ -39666,13 +39666,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "00zrjkxk8ga5agzhy90767cgd9qxri31bpgl0kxn1zb9c3b1zyrv"))))
+        (base32 "0ci7a2hilri8gdcds88187knfr2slm61r6nf21j3rrsdxasx39qy"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (arguments
@@ -40035,47 +40035,6 @@ Profile Analysis (LCPA; Hwan Chung et al., 2010)
 Saebom Jeon et al., 2017) <doi:10.1080/10705511.2017.1340844>, and any other
 extended models involving multiple latent class variables.")
     (license license:gpl3+)))
-
-(define-public r-slbdd
-  (package
-    (name "r-slbdd")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SLBDD" version))
-       (sha256
-        (base32 "06v2id6rqdn9gcjmnpixdfxgh7wvqx9xpna6lnciqz974k8lblsb"))))
-    (properties `((upstream-name . "SLBDD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsoutliers
-                             r-tsclust
-                             r-rnn
-                             r-mts
-                             r-matrixcalc
-                             r-matrix
-                             r-mass
-                             r-imputets
-                             r-gsarima
-                             r-glmnet
-                             r-forecast
-                             r-fgarch
-                             r-corpcor
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=SLBDD")
-    (synopsis "Statistical Learning for Big Dependent Data")
-    (description
-     "Programs for analyzing large-scale time series data.  They include functions for
-automatic specification and estimation of univariate time series, for clustering
-time series, for multivariate outlier detections, for quantile plotting of many
-time series, for dynamic factor models and for creating input data for deep
-learning programs.  Examples of using the package can be found in the Wiley book
-Statistical Learning with Big Dependent Data by Daniel PeÃ±a and Ruey S. Tsay
-(2021).  ISBN 9781119417385.")
-    (license license:gpl3)))
 
 (define-public r-slash
   (package
@@ -57059,49 +57018,6 @@ rate, as well as methods to assess model convergence and comparison criteria
 along with useful visualisation functions.")
     (license license:expat)))
 
-(define-public r-serocalculator
-  (package
-    (name "r-serocalculator")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "serocalculator" version))
-       (sha256
-        (base32 "1j71pqbk74af2ympav3893spa95bwj42g37s7azzkw7xmwb2ycam"))))
-    (properties `((upstream-name . "serocalculator")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rngtools
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-labelled
-                             r-glue
-                             r-ggpubr
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-cli
-                             r-and))
-    (home-page "https://ucd-serg.github.io/serocalculator/")
-    (synopsis "Estimating Infection Rates from Serological Data")
-    (description
-     "Translates antibody levels measured in cross-sectional population samples into
-estimates of the frequency with which seroconversions (infections) occur in the
-sampled populations.  Replaces the previous `seroincidence` package.")
-    (license license:gpl3)))
-
 (define-public r-serieslcb
   (package
     (name "r-serieslcb")
@@ -58255,42 +58171,6 @@ derive time series of topical sentiment.")
 challenge that sentiment can be computed and pooled across texts and time in
 various ways.  See Ardia et al. (2021) <doi:10.18637/jss.v099.i02>.")
     (license license:gpl2+)))
-
-(define-public r-sentinmixt
-  (package
-    (name "r-sentinmixt")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SenTinMixt" version))
-       (sha256
-        (base32 "1yja63087nhb5c0wlql7yynjkhkrjw69amvz4w55xqvp605rh46f"))))
-    (properties `((upstream-name . "SenTinMixt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zipfr
-                             r-withr
-                             r-tsdist
-                             r-tidyr
-                             r-snow
-                             r-rlist
-                             r-mclust
-                             r-foreach
-                             r-expint
-                             r-dosnow
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=SenTinMixt")
-    (synopsis "Parsimonious Mixtures of MSEN and MTIN Distributions")
-    (description
-     "This package implements parsimonious mixtures of MSEN and MTIN distributions via
-expectation- maximization based algorithms for model-based clustering.  For each
-mixture component, parsimony is reached via the eigen-decomposition of the scale
-matrices and by imposing a constraint on the tailedness parameter.  This
-produces a family of 28 parsimonious mixture models for each distribution.")
-    (license license:gpl3+)))
 
 (define-public r-sentimentr
   (package

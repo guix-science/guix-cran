@@ -2343,19 +2343,19 @@ which are the clusters most defining genes.")
 (define-public r-autonewsmd
   (package
     (name "r-autonewsmd")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autonewsmd" version))
        (sha256
-        (base32 "0pf6z420rdl7w1f8pp75qds4cnsyrc6py99h8xl39c7rcgg1lcn3"))))
+        (base32 "0p470a2n1vf6ka05gcwdil8mjb2lxzfdvrnnmwv1ihp45x32nr42"))))
     (properties `((upstream-name . "autonewsmd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-quarto r-magrittr r-data-table))
+    (propagated-inputs (list r-r6 r-quarto r-git2r r-data-table))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/autonewsmd")
     (synopsis "Auto-Generate Changelog using Conventional Commits")
@@ -8288,54 +8288,6 @@ existing plots.  A variety of input formats are supported, including vectors,
 matrices, data frames, formulas, etc.")
     (license license:gpl3)))
 
-(define-public r-arealdb
-  (package
-    (name "r-arealdb")
-    (version "0.9.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arealDB" version))
-       (sha256
-        (base32 "16anvjgwvpyciib01wga7b1zbl8x0wiy6ibqfibj6i5qyv7jikyw"))))
-    (properties `((upstream-name . "arealDB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-tabshiftr
-                             r-stringr
-                             r-sf
-                             r-rmapshaper
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-ontologics
-                             r-magrittr
-                             r-fuzzyjoin
-                             r-dplyr
-                             r-checkmate
-                             r-beepr
-                             r-archive))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/luckinet/arealDB")
-    (synopsis "Harmonise and Integrate Heterogeneous Areal Data")
-    (description
-     "Many relevant applications in the environmental and socioeconomic sciences use
-areal data, such as biodiversity checklists, agricultural statistics, or
-socioeconomic surveys.  For applications that surpass the spatial, temporal or
-thematic scope of any single data source, data must be integrated from several
-heterogeneous sources.  Inconsistent concepts, definitions, or messy data tables
-make this a tedious and error-prone process. @code{arealDB} tackles those
-problems and helps the user to integrate a harmonised databases of areal data.
-Read the paper at Ehrmann, Seppelt & Meyer (2020)
-<doi:10.1016/j.envsoft.2020.104799>.")
-    (license license:gpl3)))
-
 (define-public r-areal
   (package
     (name "r-areal")
@@ -13507,6 +13459,30 @@ implementation that facilitates fast training through mini-batch learning.")
 high-dimensional Gaussian vectors.  Further implements a function to compute
 conservative estimates of excursion sets under Gaussian random field priors.")
     (license license:gpl3)))
+
+(define-public r-ankir
+  (package
+    (name "r-ankir")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ankiR" version))
+       (sha256
+        (base32 "1n63qcz4xv3g9s9v4grzxm4nmvlc9swaxn5kphyk73y7zc8w20qn"))))
+    (properties `((upstream-name . "ankiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rsqlite r-dbi))
+    (home-page "https://github.com/chrislongros/ankiR")
+    (synopsis "Read Anki Flashcard Databases")
+    (description
+     "Read and analyze Anki flashcard collection databases.  Provides functions to
+access notes, cards, and review logs from Anki's SQLite database with a tidy
+interface.")
+    (license license:expat)))
 
 (define-public r-aniview
   (package
@@ -22186,13 +22162,13 @@ are downloadable.")
 (define-public r-adverbial
   (package
     (name "r-adverbial")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adverbial" version))
        (sha256
-        (base32 "1zi7vacah3y1jjhp29q0dxgkmsd5w7i39f0kc4m144fxsn2sbq6h"))))
+        (base32 "18cqki3kdkdlz5152v9rphhhdhq129bss47011yihffi08dc480c"))))
     (properties `((upstream-name . "adverbial")))
     (build-system r-build-system)
     (arguments
@@ -23159,13 +23135,13 @@ extension package of the admiral package for pediatric clinical trials.")
 (define-public r-admiralophtha
   (package
     (name "r-admiralophtha")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralophtha" version))
        (sha256
-        (base32 "01pkd56ql0ldfna64p1jv4j1d0ql84g07nbf5ybyldb1vs5l1c2a"))))
+        (base32 "0bbzl1bb9934pjxjy9ll7g7vb0xgi6cg7cq4b6h7vs81sbw30m40"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
     (arguments

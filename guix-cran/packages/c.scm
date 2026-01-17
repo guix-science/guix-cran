@@ -18514,13 +18514,13 @@ correctly, OAuth token caching, and refresh behaviour.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "18bjx7228psdqhb2q8h6kk7lanq13cqj3d19akvgav5x5yxs9kfi"))))
+        (base32 "036wbqmb1bvnxv1wznfxgf7jwky7rxa9108vddmr0s46i0pnab24"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (arguments
@@ -26034,6 +26034,41 @@ References: Shafer (2005) <doi:10.1037/1040-3590.17.3.324>; Shafer (2006)
 <doi:10.1002/jclp.20213>; Loeber and Schmaling (1985) <doi:10.1007/BF00910652>.")
     (license license:gpl3+)))
 
+(define-public r-codyna
+  (package
+    (name "r-codyna")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "codyna" version))
+       (sha256
+        (base32 "0il2ylzqkx65z0fgpnva2jcn6h2v6120ss0w4f7k2lr6av9i8ba9"))))
+    (properties `((upstream-name . "codyna")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/santikka/codyna/")
+    (synopsis "Complex Dynamic Systems")
+    (description
+     "This package performs analysis of complex dynamic systems with a focus on the
+temporal unfolding of patterns, changes, and state transitions in behavioral
+data.  Supports both time series and sequence data and provides tools for the
+analysis and visualization of complexity, pattern identification, trends,
+regimes, sequence typology as well as early warning signals.")
+    (license license:expat)))
+
 (define-public r-codyn
   (package
     (name "r-codyn")
@@ -29414,33 +29449,6 @@ BG/NBD model (Beta-Gamma/Negative-Binomial-Distribution) and the [4] GGom/NBD
 implementation of the Gamma/Gamma model to model the spending process of
 individuals.")
     (license license:gpl3)))
-
-(define-public r-clv
-  (package
-    (name "r-clv")
-    (version "0.3-2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clv" version))
-       (sha256
-        (base32 "1py99g430lgn8x383jzhjipb48gxv0rg62x84y8dpbv4gsv25rnq"))))
-    (properties `((upstream-name . "clv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cluster r-class))
-    (home-page "https://cran.r-project.org/package=clv")
-    (synopsis "Cluster Validation Techniques")
-    (description
-     "This package contains most of the popular internal and external cluster
-validation methods ready to use for the most of the outputs produced by
-functions coming from package \"cluster\".  Package contains also functions and
-examples of usage for cluster stability approach that might be applied to
-algorithms implemented in \"cluster\" package as well as user defined clustering
-algorithms.")
-    (license license:gpl2+)))
 
 (define-public r-clustvarsel
   (package
@@ -41574,13 +41582,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.29")
+    (version "1.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "12197wd8vqb62k9wsxi8kqv24blkyi46llnzw38r4lvradnni4bk"))))
+        (base32 "1rs07x6aqhsiz4d4ja8bfly1rjmga5cd5mhw5nyp0m7zka8x0vjq"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments

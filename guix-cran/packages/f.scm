@@ -4347,13 +4347,13 @@ blog Lijun Wang (2017)
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRK" version))
        (sha256
-        (base32 "1zlghqkljvajsab3xdq564r289cd9b85h4002rnyg23jj32ga6dl"))))
+        (base32 "088kghr3fw1j7x17clq1asjyinm93rjwppf056hgvbnfxs0c4jnk"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (arguments

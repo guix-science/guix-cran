@@ -16,6 +16,7 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages julia)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -847,13 +848,13 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 (define-public r-exvatools
   (package
     (name "r-exvatools")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exvatools" version))
        (sha256
-        (base32 "1k3jsaczzzvs9h72i6ldinv0byjs5wvqzy3qc0mn66lyq9gwrxg7"))))
+        (base32 "114rrhsdig4ygn7sflzlk5k41jc4vkqza3ggzrv8cc824wbswdlp"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
     (arguments
@@ -8834,13 +8835,13 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
 (define-public r-esci
   (package
     (name "r-esci")
-    (version "1.0.7")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esci" version))
        (sha256
-        (base32 "15zj5jlnbgylfj9vbv3n8828zy0llwxkb0mlmnc44ks1lh4p4a2a"))))
+        (base32 "0bvljrjfydhkp470idzsdy8v1j1yf6f6hxl0v9kdwzzs6xgrx3wk"))))
     (properties `((upstream-name . "esci")))
     (build-system r-build-system)
     (arguments
@@ -15614,6 +15615,47 @@ likelihood, as described in
 data.")
     (license license:gpl2+)))
 
+(define-public r-empiricaldynamics
+  (package
+    (name "r-empiricaldynamics")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EmpiricalDynamics" version))
+       (sha256
+        (base32 "0kgimv6bv1wg157mkzizb06qnc2yvx6bmkfrby0p150yii6l0dm2"))))
+    (properties `((upstream-name . "EmpiricalDynamics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list julia))
+    (propagated-inputs (list r-tseries
+                             r-signal
+                             r-minpack-lm
+                             r-lmtest
+                             r-juliacall
+                             r-gridextra
+                             r-ggplot2
+                             r-cvxr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/IsadoreNabi/EmpiricalDynamics")
+    (synopsis
+     "Empirical Discovery of Differential Equations from Time Series Data")
+    (description
+     "This package provides a comprehensive toolkit for discovering differential and
+difference equations from empirical time series data using symbolic regression.
+The package implements a complete workflow from data preprocessing (including
+Total Variation Regularized differentiation for noisy economic data), visual
+exploration of dynamical structure, and symbolic equation discovery via genetic
+algorithms.  It leverages a high-performance Julia backend
+('@code{SymbolicRegression.jl}') to provide industrial-grade robustness,
+physics-informed constraints, and rigorous out-of-sample validation.  Designed
+for economists, physicists, and researchers studying dynamical systems from
+observational data.")
+    (license license:expat)))
+
 (define-public r-empiricalcalibration
   (package
     (name "r-empiricalcalibration")
@@ -16113,13 +16155,13 @@ descriptions of the functions implementing these algorithms.")
 (define-public r-emld
   (package
     (name "r-emld")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emld" version))
        (sha256
-        (base32 "1xhryx1hfrf8fw2590y3ins69nwjfpb07n41m71xaj20ymy6daln"))))
+        (base32 "0nkvbyz0g7zb77r41sqwjpv89if6ipchbnwv4vvkh2mjf3zk86vz"))))
     (properties `((upstream-name . "emld")))
     (build-system r-build-system)
     (arguments
@@ -23849,13 +23891,13 @@ general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
 (define-public r-ecodive
   (package
     (name "r-ecodive")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecodive" version))
        (sha256
-        (base32 "0pb5h2iqrac6lzdp1zm10hq5wx0ks9xmhfcwn732fpb19p0w72y3"))))
+        (base32 "1mgciydwzjnd7xrzqlbc417f263gn7286z9xsqfbbanwiadf5r0i"))))
     (properties `((upstream-name . "ecodive")))
     (build-system r-build-system)
     (arguments

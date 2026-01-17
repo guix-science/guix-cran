@@ -1232,6 +1232,30 @@ data are especially considered.  This provides core code to conduct analyses
 similar to that in Hanks and Hooten (2013) <doi:10.1080/01621459.2012.724647>.")
     (license license:gpl2)))
 
+(define-public r-rwbo
+  (package
+    (name "r-rwbo")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rwbo" version))
+       (sha256
+        (base32 "02vinhqppchj04p5ki39x4d9mn7x25xzsxhvhqn9074ah8z89s7j"))))
+    (properties `((upstream-name . "Rwbo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=Rwbo")
+    (synopsis "Run the 'Open-WBO' MaxSAT Solver")
+    (description
+     "This package provides a wrapper for running the bundled Open-WBO Maximum
+Satisfiability (@code{MaxSAT}) solver (<https://github.com/sat-group/open-wbo>).
+ Users can pass command-line arguments to the solver and capture its output as a
+character string or file.")
+    (license license:gpl3+)))
+
 (define-public r-rwavelet
   (package
     (name "r-rwavelet")
@@ -2214,13 +2238,13 @@ potential of individual players.  Manuscript forthcoming.  See Bukiet & Harold
 (define-public r-runexampleswrapper
   (package
     (name "r-runexampleswrapper")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runExamplesWrapper" version))
        (sha256
-        (base32 "0kyxvq8d6mrcr4zgrbhsqxzf3zvn2j6i6h7m38jnddznj9hpa33m"))))
+        (base32 "19fbmmvy2f9m00mhvqmlcdyw8h7hr25bn4dvbikp72rfbcdw0v9w"))))
     (properties `((upstream-name . "runExamplesWrapper")))
     (build-system r-build-system)
     (arguments
@@ -15114,6 +15138,32 @@ system for computer programming projects based on Unix shell scripts; see
 the shell scripts.  Inspired by the lintr package.")
     (license license:gpl2+)))
 
+(define-public r-rofanova
+  (package
+    (name "r-rofanova")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rofanova" version))
+       (sha256
+        (base32 "0jwscagijxllp1l13hh5iv9brihca2z6s8p8cv0w0vc000l148hk"))))
+    (properties `((upstream-name . "rofanova")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robustbase r-rcpparmadillo r-rcpp r-fda-usc
+                             r-abind))
+    (home-page "https://github.com/fabiocentofanti/rofanova")
+    (synopsis "Robust Functional Analysis of Variance")
+    (description
+     "This package implements the robust functional analysis of variance
+(@code{RoFANOVA}), described in Centofanti et al. (2023)
+<doi:10.1093/jrsssc/qlad074>.  It allows testing mean differences among groups
+of functional data by being robust against the presence of outliers.")
+    (license license:gpl3)))
+
 (define-public r-rodeo
   (package
     (name "r-rodeo")
@@ -18636,13 +18686,13 @@ an in-depth presentation of the roahd package.  See Aleman-Gomez et al. (2021)
 (define-public r-roads
   (package
     (name "r-roads")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roads" version))
        (sha256
-        (base32 "1hpa74mqihf90nv2q1bcmkc2xq0ay5i2jl4vq484nxgaicms69ws"))))
+        (base32 "1syyg2dsyj47m45gsb04gyk40dr1z3azniwl9as9r756ai52ryzy"))))
     (properties `((upstream-name . "roads")))
     (build-system r-build-system)
     (arguments
@@ -24652,13 +24702,13 @@ targets package.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.17.2")
+    (version "0.17.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "1m5jdjyf1gk4n60vq7aqivpm4dk73yr7pbwvpqd5yvv50dg2q2hv"))))
+        (base32 "03hvpkhqi3dbjrvhkhswxxw9gsa7zswg29q0jilw6v3jdiciw0q2"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (arguments
@@ -25931,13 +25981,13 @@ advanced endpoints to easily download the data in a clean and tidy format.")
 (define-public r-rioplot
   (package
     (name "r-rioplot")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rioplot" version))
        (sha256
-        (base32 "02la6a8rbj7ksjb4yzywp96hlblkv2vww7s5qizs78r5r5z13hwb"))))
+        (base32 "16s8kp3qp115v3vvwsrxsw2gq4kih8f2mk65a70c62sk3bl31s91"))))
     (properties `((upstream-name . "rioplot")))
     (build-system r-build-system)
     (arguments
@@ -33988,41 +34038,6 @@ Star Wars universe.  Data from the gapminder package is also included, as a
 simple data frame and in nested and split forms.")
     (license license:cc0)))
 
-(define-public r-reptiledbr
-  (package
-    (name "r-reptiledbr")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "reptiledbr" version))
-       (sha256
-        (base32 "0lw59x8asbvmdyk5kjd1rfid35lvv0k38r8aispyp51pd3iddp2n"))))
-    (properties `((upstream-name . "reptiledbr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-lifecycle
-                             r-fuzzyjoin
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PaulESantos/reptiledbr")
-    (synopsis
-     "Interface to the Reptile Database for Querying and Retrieving Taxonomic Data")
-    (description
-     "This package provides tools to search, access, and format taxonomic information
-from the Reptile Database (<http://reptile-database.org>) directly within R.
-Users can retrieve species-level data, distribution, etymology, synonyms, common
-names, and other relevant information for reptiles.  Designed for taxonomists,
-ecologists, and biodiversity researchers.")
-    (license license:expat)))
-
 (define-public r-reptiledb-data
   (package
     (name "r-reptiledb-data")
@@ -35935,6 +35950,30 @@ both space and time, EOT analysis produces patterns that are orthogonal in
 either space or time.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-remode
+  (package
+    (name "r-remode")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "remode" version))
+       (sha256
+        (base32 "03fswwpawz5wlkrkl3hy565d4ggjz624nq4nn725894c7dis3g9h"))))
+    (properties `((upstream-name . "remode")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=remode")
+    (synopsis "Recursive Mode Detection for Distributions of Ordinal Data")
+    (description
+     "This package provides the function @code{remode()} for recursive modality
+detection in ordinal data.  remode is an algorithm specifically designed to
+estimate the number and location of modes in ordinal data while being robust to
+large sample sizes.")
+    (license license:expat)))
 
 (define-public r-remmy
   (package
@@ -49702,19 +49741,19 @@ and continuous treatment settings.  A description of the methods is given in Liu
 (define-public r-rcauctile
   (package
     (name "r-rcauctile")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCaucTile" version))
        (sha256
-        (base32 "0d3yckwpwz6b7y5jyr1n6bb2s5nmrj8i1x0gawi25a58gfz2rsjb"))))
+        (base32 "0i3n7piwj9s3gbsccvkxnzi09z6cg5nkaqgcgxfcwa9x4n8s4jxc"))))
     (properties `((upstream-name . "RCaucTile")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-scales r-ggplot2))
     (home-page "https://cran.r-project.org/package=RCaucTile")
     (synopsis "Tile Grid Maps for East Caucasian Languages")
     (description

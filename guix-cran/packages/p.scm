@@ -59,13 +59,13 @@
 (define-public r-pzfx
   (package
     (name "r-pzfx")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pzfx" version))
        (sha256
-        (base32 "0f8bvwnk44wq8j58rw80b9bclknrh4a3iqdl3p4y26q100cpisgr"))))
+        (base32 "1hs7wx3lbhnjl9lcf5yb02k8f722gvddrnqfkjynw1p0i8g8gncx"))))
     (properties `((upstream-name . "pzfx")))
     (build-system r-build-system)
     (arguments
@@ -8154,13 +8154,13 @@ observing the project already carried out.")
 (define-public r-projectlsa
   (package
     (name "r-projectlsa")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projectLSA" version))
        (sha256
-        (base32 "13qvac1g9j8dsvgvnp2q2j2xlx3aw8xis7ilw1i6hm1ix5ggs833"))))
+        (base32 "05mbb9h912gr10gwhdmvmr1lqpb9zpkcksk203cvl70fpiv1hbv5"))))
     (properties `((upstream-name . "projectLSA")))
     (build-system r-build-system)
     (arguments
@@ -8186,10 +8186,13 @@ observing the project already carried out.")
                              r-mirt
                              r-mclust
                              r-lavaan
+                             r-haven
+                             r-glca
                              r-ggplot2
                              r-ggiraph
                              r-dt
                              r-dplyr
+                             r-data-table
                              r-colourpicker))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hasandjidu/projectLSA")
@@ -8202,12 +8205,14 @@ Analysis (LCA), Latent Trait Analysis (LTA/IRT), Exploratory Factor Analysis
 (EFA), Confirmatory Factor Analysis (CFA), and Structural Equation Modeling
 (SEM).  The implementation is grounded in established methodological frameworks:
 LPA is supported through @code{tidyLPA} (Rosenberg et al., 2018)
-<doi:10.21105/joss.00978>, LCA through @code{poLCA} (Linzer & Lewis, 2011),
-LTA/IRT via mirt (Chalmers, 2012) <doi:10.18637/jss.v048.i06>, and EFA via psych
-(Revelle, 2025).  SEM and CFA functionalities build upon the lavaan framework
-(Rosseel, 2012) <doi:10.18637/jss.v048.i02>.  Users can upload datasets or use
-built-in examples, fit models, compare fit indices, visualize results, and
-export outputs without programming.")
+<doi:10.21105/joss.00978>, LCA through @code{poLCA} (Linzer & Lewis, 2011)
+<doi:10.32614/CRAN.package.@code{poLCA>} & glca (Kim & Kim, 2024)
+<doi:10.32614/CRAN.package.glca>, LTA/IRT via mirt (Chalmers, 2012)
+<doi:10.18637/jss.v048.i06>, and EFA via psych (Revelle, 2025).  SEM and CFA
+functionalities build upon the lavaan framework (Rosseel, 2012)
+<doi:10.18637/jss.v048.i02>.  Users can upload datasets or use built-in
+examples, fit models, compare fit indices, visualize results, and export outputs
+without programming.")
     (license license:expat)))
 
 (define-public r-projections
@@ -8781,13 +8786,13 @@ are implemented using lp_solve'.")
 (define-public r-producer
   (package
     (name "r-producer")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProduceR" version))
        (sha256
-        (base32 "1vq24mdx3m9s23zqx8fn5palx0siziqqa8i9m6y9mrz677j626fb"))))
+        (base32 "0x5dn9q0qqizrd9md3fwmmnds484l8c4lgg0hcsgvbz3kjvacpk8"))))
     (properties `((upstream-name . "ProduceR")))
     (build-system r-build-system)
     (arguments
@@ -14693,44 +14698,6 @@ see Wood, S.N., Pya, N. & Safken, B. (2016) <doi:10.1080/01621459.2016.1180986>.
      "This package implements projection pursuit forest algorithm for supervised
 classification.")
     (license license:gpl2+)))
-
-(define-public r-ppendemic
-  (package
-    (name "r-ppendemic")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ppendemic" version))
-       (sha256
-        (base32 "1681ln8sl306iy6jsig7lllpg0cfggdmzxc7xfrknzmx5cz0mvck"))))
-    (properties `((upstream-name . "ppendemic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-memoise
-                             r-fuzzyjoin
-                             r-dplyr
-                             r-cli
-                             r-assertthat))
-    (home-page "https://github.com/PaulESantos/ppendemic/")
-    (synopsis "Glimpse at the Diversity of Peru's Endemic Plants")
-    (description
-     "Introducing a novel and updated database showcasing Peru's endemic plants.  This
-meticulously compiled and revised botanical collection encompasses a remarkable
-assemblage of over 7,898 distinct species.  The data for this resource was
-sourced from the work of Govaerts, R., Nic Lughadha, E., Black, N. et al.,
-titled The World Checklist of Vascular Plants: A continuously updated resource
-for exploring global plant diversity', published in Sci Data 8, 215 (2021)
-<doi:10.1038/s41597-021-00997-6>.")
-    (license license:expat)))
 
 (define-public r-ppdiag
   (package
@@ -21325,40 +21292,6 @@ education, socio-culture, transportation in the village.  Information related to
 challenges includes natural disasters, public health, environmental pollution,
 social problems and security disturbances that occur in the village.")
     (license license:gpl3)))
-
-(define-public r-podcleaner
-  (package
-    (name "r-podcleaner")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "podcleaner" version))
-       (sha256
-        (base32 "1r8mvf8bw329n3ifi2dyy4220nbij2rgkvq1xlqzynxf8qadxbrl"))))
-    (properties `((upstream-name . "podcleaner")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-magrittr
-                             r-fuzzyjoin
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=podcleaner")
-    (synopsis "Legacy Scottish Post Office Directories Cleaner")
-    (description
-     "Attempts to clean optical character recognition (OCR) errors in legacy Scottish
-Post Office Directories.  Further attempts to match records from trades and
-general directories.")
-    (license license:gpl3+)))
 
 (define-public r-podbay
   (package
@@ -33722,88 +33655,6 @@ R.D.P.(2022)<doi:10.21704/rfp.v37i3.1956>.")
 comprehension.")
     (license license:gpl2)))
 
-(define-public r-perumammals
-  (package
-    (name "r-perumammals")
-    (version "0.0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "perumammals" version))
-       (sha256
-        (base32 "0zc24ng9nb4qyw1yxgpygig3cck7f212ipvdv2xrzfbxh4r1c9fi"))))
-    (properties `((upstream-name . "perumammals")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-memoise
-                             r-fuzzyjoin
-                             r-dplyr
-                             r-cli
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PaulESantos/perumammals")
-    (synopsis
-     "Taxonomic Backbone and Name Validation Tools for Mammals of Peru")
-    (description
-     "This package provides a curated taxonomic backbone of mammal species from Peru
-based on Pacheco et al. (2021) \"Lista actualizada de la diversidad de los
-mamÃ­feros del PerÃº y una propuesta para su actualizaciÃ³n\"
-<doi:10.15381/rpb.v28i4.21019>.  The package includes standardized species data,
-occurrence by ecoregions, endemism status, and tools for validating and matching
-scientific names through exact and fuzzy procedures.  It is designed as a
-lightweight and dependable reference for ecological, environmental,
-biogeographic, and conservation workflows that require reliable species
-information for Peruvian mammals.")
-    (license license:expat)))
-
-(define-public r-peruflorads43
-  (package
-    (name "r-peruflorads43")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "peruflorads43" version))
-       (sha256
-        (base32 "0vpmyyh54ig413kdimpagyy77dkcwqrdyfng8in7lab5pnxkmhy7"))))
-    (properties `((upstream-name . "peruflorads43")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-memoise
-                             r-fuzzyjoin
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PaulESantos/peruflorads43")
-    (synopsis
-     "Check Threatened Plant Species Status Against Peru's Supreme Decree 043-2006-AG")
-    (description
-     "This package provides tools to match plant species names against the official
-threatened species list of Peru (Supreme Decree 043-2006-AG, 2006).  Implements
-a hierarchical matching pipeline with exact, fuzzy, and suffix matching
-algorithms to handle naming variations and taxonomic changes.  Supports both the
-original 2006 nomenclature and updated taxonomic names, allowing users to check
-protection status regardless of nomenclatural changes since the decree's
-publication.  Threat categories follow International Union for Conservation of
-Nature standards (Critically Endangered, Endangered, Vulnerable, Near
-Threatened).")
-    (license license:expat)))
-
 (define-public r-peruapis
   (package
     (name "r-peruapis")
@@ -37307,6 +37158,31 @@ Schnurbus (2021) <doi:10.32614/RJ-2021-035>.  For more details on the IV-based
 estimation routines, see Fritsch, Pua, and Schnurbus (WP, 2024) and Han and
 Phillips (2010) <doi:10.1017/S026646660909063X>.")
     (license license:gpl2+)))
+
+(define-public r-pdxtrees
+  (package
+    (name "r-pdxtrees")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pdxTrees" version))
+       (sha256
+        (base32 "0vzsvz66gxwvgcb9vqzadi3n2r09sv8b930gv3lpwlxvxxjahcad"))))
+    (properties `((upstream-name . "pdxTrees")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mcconvil/pdxTrees")
+    (synopsis "Data Package of Portland, Oregon Trees")
+    (description
+     "An engaging collection of datasets from Portland Parks and Recreation.  The city
+of Portland inventoried every tree in over 170 parks and along the streets in 96
+neighborhoods.")
+    (license license:gpl3)))
 
 (define-public r-pdxpower
   (package

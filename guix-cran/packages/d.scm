@@ -5812,13 +5812,13 @@ Karim, M.R., Islam, M.A. (2019) <doi:10.1007/978-981-13-9776-9>.")
 (define-public r-drgee
   (package
     (name "r-drgee")
-    (version "1.1.10-3")
+    (version "1.1.10-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drgee" version))
        (sha256
-        (base32 "0w50zvjx6278ixxd498si0k52wxkqpzqyi89bcrhczhjlgh43rgy"))))
+        (base32 "0xwyfn6m0l2h3n9585flrbni75syrnfdhs5kzbgjk7b770ijwy0h"))))
     (properties `((upstream-name . "drgee")))
     (build-system r-build-system)
     (arguments
@@ -5829,15 +5829,14 @@ Karim, M.R., Islam, M.A. (2019) <doi:10.1007/978-981-13-9776-9>.")
     (home-page "https://cran.r-project.org/package=drgee")
     (synopsis "Doubly Robust Generalized Estimating Equations")
     (description
-     "Fit restricted mean models for the conditional association between an exposure
-and an outcome, given covariates.  Three methods are implemented: O-estimation,
+     "Estimates the conditional association between an exposure and an outcome given
+covariates.  Three methods are implemented: O-estimation, where a nuisance model
+for the association between the covariates and the outcome is used; E-estimation
 where a nuisance model for the association between the covariates and the
-outcome is used; E-estimation where a nuisance model for the association between
-the covariates and the exposure is used, and doubly robust (DR) estimation where
-both nuisance models are used.  In DR-estimation, the estimates will be
-consistent when at least one of the nuisance models is correctly specified, not
-necessarily both.  For more information, see Zetterqvist and SjÃ¶lander (2015)
-<doi:10.1515/em-2014-0021>.")
+exposure is used, and doubly robust (DR) estimation where both nuisance models
+are used.  In DR-estimation, the estimates will be consistent when at least one
+of the nuisance models is correctly specified, not necessarily both.  For more
+information, see Zetterqvist and SjÃ¶lander (2015) <doi:10.1515/em-2014-0021>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-drf
@@ -10000,53 +9999,6 @@ for the feedback and plan-making domains.")
 (Year: 2018, ISBN:9781138741515) by Dobson and Barnett.")
     (license license:gpl2)))
 
-(define-public r-doblin
-  (package
-    (name "r-doblin")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "doblin" version))
-       (sha256
-        (base32 "0v3iqhvin8c32pfi55wmikd2gfhd22gy64gyb20v0jkgz1xpcfd9"))))
-    (properties `((upstream-name . "doblin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsdist
-                             r-tidyr
-                             r-reshape2
-                             r-readr
-                             r-purrr
-                             r-proxy
-                             r-magrittr
-                             r-lazyeval
-                             r-imputets
-                             r-gplots
-                             r-ggthemes
-                             r-ggplot2
-                             r-ggnewscale
-                             r-entropy
-                             r-dtwclust
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=doblin")
-    (synopsis
-     "'doblin': Inferring Dominant Clonal Lineages from DNA Barcoding Time-Series")
-    (description
-     "This package provides functions to quantify dominant clonal lineages from DNA
-barcoding time-series data.  The package implements clustering of barcode
-lineage trajectories, based on the assumption that similar temporal dynamics
-indicate comparable relative fitness.  It also identifies persistent clonal
-lineages across time points.  Input data can include lineage frequency tables
-derived from chromosomal barcoding, mutational libraries, or CRISPR/Cas screens.
- For more details, see GagnÃ©-Leroux et al. (2024)
-<doi:10.1101/2024.09.08.611892>.")
-    (license license:gpl3)))
-
 (define-public r-dobin
   (package
     (name "r-dobin")
@@ -10535,19 +10487,19 @@ corner designated by the actual base.  For more details see Jeffrey (1990)
 (define-public r-dmutate
   (package
     (name "r-dmutate")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmutate" version))
        (sha256
-        (base32 "1dxx4v9fg0cd2m5lwk3j6n9g6n9zqr7rs75yiz3m3q8cpw1pjqpk"))))
+        (base32 "1h0j0s17w05q36qjvi2h9g6548iy672kw7jpxx6a8c33sgdb37bv"))))
     (properties `((upstream-name . "dmutate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-dplyr))
+    (propagated-inputs (list r-tibble r-rlang r-mass r-dplyr))
     (home-page "https://github.com/kylebaron/dmutate")
     (synopsis "Mutate Data Frames with Random Variates")
     (description
@@ -16265,38 +16217,6 @@ selection process (the @code{autoDI()} function) and has the flexibility to fit
 a wide range of user-defined DI models (the @code{DI()} function).")
     (license license:gpl2+)))
 
-(define-public r-dimodal
-  (package
-    (name "r-dimodal")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Dimodal" version))
-       (sha256
-        (base32 "07pxiv9vhd1dnphlnn3fg4zqigj2pglfwpyfhpgz9rb4c234ahvi"))))
-    (properties `((upstream-name . "Dimodal")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-statmod))
-    (home-page "https://cran.r-project.org/package=Dimodal")
-    (synopsis "Spacing Tests for Multi-Modality")
-    (description
-     "Tests for modality of data using its spacing.  The main approach evaluates
-features (peaks, flats) using a combination of parametric models and
-non-parametric tests, either after smoothing the spacing by a low-pass filter or
-by looking over larger intervals.  The library can also use any changepoint
-detectors available to look for transitions between features in the spacing.
-The Suggested list of libraries is misnamed.  It contains all supported
-changepoint detectors, and all are considered optional.  A good minimal set
-would be the first three entries.  Some of the suggestions may no longer be
-current on CRAN, with the last source tarball found in its archives or at the
-additional repository.  These packages will be used if they are already
-installed on older installations, but will not be available to newer.")
-    (license license:bsd-3)))
-
 (define-public r-dimensionsr
   (package
     (name "r-dimensionsr")
@@ -18246,13 +18166,13 @@ dice.")
 (define-public r-dibble
   (package
     (name "r-dibble")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dibble" version))
        (sha256
-        (base32 "08mzgjhbcdha9f2nmryjv3mw19aahh6xkbz7mmylr6mzm0fj7nfi"))))
+        (base32 "17rskclyviafyic28nh0pby9s88w6jkdb7b34kxk89l8c3pbya7h"))))
     (properties `((upstream-name . "dibble")))
     (build-system r-build-system)
     (arguments
@@ -28835,46 +28755,6 @@ clustering internal assessment of concave-shaped and density-based clusters\",
 @code{PeerJ} Computer Science 11:e3095 (pp.  1-), <doi:10.7717/peerj-cs.3095>.")
     (license license:gpl3)))
 
-(define-public r-dbcsp
-  (package
-    (name "r-dbcsp")
-    (version "0.0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dbcsp" version))
-       (sha256
-        (base32 "14qd7h9q0r6l73j3wnq9vmwcza50hnns0afgikkqmma10d7my9xz"))))
-    (properties `((upstream-name . "dbcsp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tsdist
-                             r-plyr
-                             r-paralleldist
-                             r-matrix
-                             r-mass
-                             r-ggplot2
-                             r-geigen
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=dbcsp")
-    (synopsis "Distance-Based Common Spatial Patterns")
-    (description
-     "This package provides a way to apply Distance-Based Common Spatial Patterns
-(DB-CSP) techniques in different fields, both classical Common Spatial Patterns
-(CSP) as well as DB-CSP. The method is composed of two phases: applying the
-DB-CSP algorithm and performing a classification.  The main idea behind the CSP
-is to use a linear transform to project data into low-dimensional subspace with
-a projection matrix, in such a way that each row consists of weights for
-signals.  This transformation maximizes the variance of two-class signal
-matrices.The dbcsp object is created to compute the projection vectors.  For
-exploratory and descriptive purpose, plot and boxplot functions can be used.
-Functions train, predict and @code{selectQ} are implemented for the
-classification step.")
-    (license license:gpl2+)))
-
 (define-public r-dbarts
   (package
     (name "r-dbarts")
@@ -29721,13 +29601,13 @@ Self-Organization and Swarm Intelligence\" (2018)
 (define-public r-dataviewr
   (package
     (name "r-dataviewr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataviewR" version))
        (sha256
-        (base32 "1j3k4d2hmawjl57p6bwyk5aq58janpv1sck7l5v1d184yp5ghkdj"))))
+        (base32 "0p685rn2arwmm7vk7b5z4mi3pwx8j3mps8zacd71dv1mlmwcybdh"))))
     (properties `((upstream-name . "dataviewR")))
     (build-system r-build-system)
     (arguments

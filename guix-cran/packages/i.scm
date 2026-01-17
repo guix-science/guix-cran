@@ -5870,6 +5870,32 @@ comfortable way.  Heavily inspired by limer
 me.")
     (license license:expat)))
 
+(define-public r-ipag
+  (package
+    (name "r-ipag")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IPAG" version))
+       (sha256
+        (base32 "060l0ljnxvc44mm746ddv89v4jwfwz8k59rlpcfm6z7gwi14qb17"))))
+    (properties `((upstream-name . "IPAG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gpiaser/IPAG")
+    (synopsis "Tools for IPAG Courses")
+    (description
+     "This package provides a collection of intuitive and user-friendly functions for
+computing confidence intervals for common statistical tasks, including means,
+differences in means, proportions, and odds ratios.  The package also includes
+tools for linear regression analysis and several real-world datasets intended
+for teaching and applied statistical inference.")
+    (license license:expat)))
+
 (define-public r-ipadmixture
   (package
     (name "r-ipadmixture")
@@ -6368,13 +6394,13 @@ structure creation.")
 (define-public r-inzightts
   (package
     (name "r-inzightts")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightTS" version))
        (sha256
-        (base32 "1as2vhrki55r1bjwpjgkad5rc8brfgwash8h9i4cm30b8kixx8ki"))))
+        (base32 "0i4z4721w0mjblywvr23mqbm7yjgnmqp52v9sc86k3wn341vqs1i"))))
     (properties `((upstream-name . "iNZightTS")))
     (build-system r-build-system)
     (arguments
@@ -15783,66 +15809,6 @@ supported, as are datasets with mixed precision.  Conversion to sf polygons is
 precision-aware.")
     (license license:gpl3+)))
 
-(define-public r-igorrr
-  (package
-    (name "r-igorrr")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IGoRRR" version))
-       (sha256
-        (base32 "1p3dakv9xv835pkixa4smp3bhnrydrfskh8b92kkp8vb8sahjyzd"))))
-    (properties `((upstream-name . "IGoRRR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-tibble
-                             r-tables
-                             r-stringr
-                             r-sortable
-                             r-skimr
-                             r-shinywidgets
-                             r-shinyfiles
-                             r-shinydashboard
-                             r-shiny
-                             r-rio
-                             r-rhandsontable
-                             r-readxl
-                             r-readods
-                             r-purrr
-                             r-mapsf
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-htmltools
-                             r-hmisc
-                             r-haven
-                             r-glue
-                             r-ggformula
-                             r-fuzzyjoin
-                             r-fst
-                             r-feather
-                             r-dplyr
-                             r-clipr
-                             r-arrow))
-    (home-page "https://cran.r-project.org/package=IGoRRR")
-    (synopsis "Shiny Interface for Simple Data Management")
-    (description
-     "Launches a shiny application generating code to view tables in several ways,
-import/export tables, modify tables, make some basic graphics.  I@code{GoR} is a
-graphic user interface designed to help beginners using simple functions around
-table management and exploration.  Inspired by Rcmdr', I@code{GoR} is a code
-generator that, with simple inputs under a Shiny application, provides R code
-mainly built around the tidyverse or some packages in the direct line of the
-Mosaic project: the rio and ggformula packages.  The generated code doesn't
-depend on I@code{GoR} and can be manually modified by the user or copied
-elsewhere.")
-    (license license:gpl2+)))
-
 (define-public r-igorr
   (package
     (name "r-igorr")
@@ -18491,30 +18457,6 @@ algorithm is modified by the introduction of a new splitting criterion based on
 a likelihood ratio test statistic.")
     (license license:gpl2+)))
 
-(define-public r-icranks
-  (package
-    (name "r-icranks")
-    (version "3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ICRanks" version))
-       (sha256
-        (base32 "17wdz63d0kxy0s0dmi9jmp9ffj3x40cv3c4d9zagxgcj7xp04x3q"))))
-    (properties `((upstream-name . "ICRanks")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-multcomp r-gmp))
-    (home-page "https://cran.r-project.org/package=ICRanks")
-    (synopsis "Simultaneous Confidence Intervals for Ranks")
-    (description
-     "Algorithms to construct simultaneous confidence intervals for the ranks of means
-mu_1,...,mu_n based on an independent Gaussian sample using multiple testing
-techniques.")
-    (license license:gpl2+)))
-
 (define-public r-icr
   (package
     (name "r-icr")
@@ -20149,53 +20091,6 @@ parameters.")
      "Running Focused Identification of the Germplasm Strategy (FIGS) to make best
 subsets from Genebank Collection.")
     (license license:expat)))
-
-(define-public r-icams
-  (package
-    (name "r-icams")
-    (version "3.0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ICAMS" version))
-       (sha256
-        (base32 "073cn5c77mgdjcb3dlyb0rwb6x7696z39iil6r4z3w39szhxs9rw"))))
-    (properties `((upstream-name . "ICAMS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-stringi
-                             r-rcolorbrewer
-                             r-lifecycle
-                             r-iranges
-                             r-genomicranges
-                             r-genomeinfodb
-                             r-fuzzyjoin
-                             r-dplyr
-                             r-data-table
-                             r-bsgenome
-                             r-biostrings))
-    (home-page "https://github.com/steverozen/ICAMS")
-    (synopsis
-     "In-Depth Characterization and Analysis of Mutational Signatures ('ICAMS')")
-    (description
-     "Analysis and visualization of experimentally elucidated mutational signatures --
-the kind of analysis and visualization in Boot et al., \"In-depth
-characterization of the cisplatin mutational signature in human cell lines and
-in esophageal and liver tumors\", Genome Research 2018,
-<doi:10.1101/gr.230219.117> and \"Characterization of colibactin-associated
-mutational signature in an Asian oral squamous cell carcinoma and in other
-mucosal tumor types\", Genome Research 2020 <doi:10.1101/gr.255620.119>.  ICAMS
-stands for In-depth Characterization and Analysis of Mutational Signatures.
-ICAMS has functions to read in variant call files (VCFs) and to collate the
-corresponding catalogs of mutational spectra and to analyze and plot catalogs of
-mutational spectra and signatures.  Handles both \"counts-based\" and
-\"density-based\" (i.e.  representation as mutations per megabase) mutational
-spectra or signatures.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-icamp
   (package

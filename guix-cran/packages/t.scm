@@ -5405,42 +5405,6 @@ Generalized Hyperbolic.  Also included is the semi-parametric piece wise
 distribution ('spd') with Pareto tails and kernel interior.")
     (license license:gpl2)))
 
-(define-public r-tsdist
-  (package
-    (name "r-tsdist")
-    (version "3.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TSdist" version))
-       (sha256
-        (base32 "0qbsmaifwx4279w0rg111l8jdid12ljcy25ailn2d8gk47r4pv9z"))))
-    (properties `((upstream-name . "TSdist")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-tsclust
-                             r-proxy
-                             r-pdc
-                             r-longitudinaldata
-                             r-locpol
-                             r-kernsmooth
-                             r-dtw
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=TSdist")
-    (synopsis "Distance Measures for Time Series Data")
-    (description
-     "This package provides a set of commonly used distance measures and some
-additional functions which, although initially not designed for this purpose,
-can be used to measure the dissimilarity between time series.  These measures
-can be used to perform clustering, classification or other data mining tasks
-which require the definition of a distance measure between time series.  U.
-Mori, A. Mendiburu and J.A. Lozano (2016), <doi:10.32614/RJ-2016-058>.")
-    (license license:gpl2+)))
-
 (define-public r-tsdisaggregation
   (package
     (name "r-tsdisaggregation")
@@ -5734,38 +5698,6 @@ references. @code{McNeil}, A.J. (2021) <doi:10.3390/risks9010014>, Bladt, M., &
 @code{McNeil}, A.J. (2021) <doi:10.1016/j.ecosta.2021.07.004>, Bladt, M., &
 @code{McNeil}, A.J. (2022) <doi:10.1515/demo-2022-0105>.")
     (license license:gpl3)))
-
-(define-public r-tsclust
-  (package
-    (name "r-tsclust")
-    (version "1.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TSclust" version))
-       (sha256
-        (base32 "0cbjk7q3yv97x1rpdlmy2kq2i6qpwj9r0lf11pqs93xgks9m9b7p"))))
-    (properties `((upstream-name . "TSclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pdc
-                             r-longitudinaldata
-                             r-locpol
-                             r-kernsmooth
-                             r-forecast
-                             r-dtw
-                             r-cluster))
-    (home-page "https://doi.org/10.18637/jss.v062.i01")
-    (synopsis "Time Series Clustering Utilities")
-    (description
-     "This package provides a set of measures of dissimilarity between time series to
-perform time series clustering.  Metrics based on raw data, on generating models
-and on the forecast behavior are implemented.  Some additional utilities related
-to time series clustering are also provided, such as clustering algorithms and
-cluster evaluation metrics.")
-    (license license:gpl2)))
 
 (define-public r-tsci
   (package
@@ -7941,13 +7873,13 @@ econometric filters and modern parameter experimentation tools.")
 (define-public r-trendsegmentr
   (package
     (name "r-trendsegmentr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trendsegmentR" version))
        (sha256
-        (base32 "082g12v175v673y1di6m35s1kh5v6jp1fva5qaw1k8ply3bs6cjg"))))
+        (base32 "11356lsz86q02ispbgnjgbvsy4pk0lnnhb8fxlj5r50dzldj9ps2"))))
     (properties `((upstream-name . "trendsegmentR")))
     (build-system r-build-system)
     (arguments
@@ -16392,13 +16324,13 @@ Relevant references include Baker and King (2010)
 (define-public r-tipse
   (package
     (name "r-tipse")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tipse" version))
        (sha256
-        (base32 "1gg0mmy20dagxpd2603nyym7zwcahp5l794g0npwkp7rawz8r4x2"))))
+        (base32 "0f7d9w2rx32fmcfl0v3gffarvmhr259jpirz4bnazcr85ybxa7h6"))))
     (properties `((upstream-name . "tipse")))
     (build-system r-build-system)
     (arguments
@@ -18360,6 +18292,54 @@ be inserted into the output stream.")
 <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
+(define-public r-tikatuwq
+  (package
+    (name "r-tikatuwq")
+    (version "0.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tikatuwq" version))
+       (sha256
+        (base32 "1ki5yckprnsqyy19xkbsc9q702zsmdbdkgvixyl0inn8nh58isf2"))))
+    (properties `((upstream-name . "tikatuwq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tikatuwq/tikatuwq")
+    (synopsis
+     "Water Quality Assessment and Environmental Compliance in Brazil")
+    (description
+     "This package provides tools to import, clean, validate, and analyze freshwater
+quality data in Brazil.  Implements water quality indices including the Water
+Quality Index (WQI/IQA), the Trophic State Index (TSI/IET) after Carlson (1977)
+<doi:10.4319/lo.1977.22.2.0361> and Lamparelli (2004)
+<https://www.teses.usp.br/teses/disponiveis/41/41134/tde-20032006-075813/publico/@code{TeseLamparelli2004.pdf>},
+and the National Sanitation Foundation Water Quality Index (NSF WQI)
+<doi:10.1007/s11157-023-09650-7>.  The package also checks compliance with
+Brazilian standard CONAMA Resolution 357/2005
+<https://conama.mma.gov.br/?id=450&option=com_sisconama&task=arquivo.download>
+and generates reproducible reports for routine monitoring workflows.  The
+example dataset (`wq_demo`) is now a real subset from monitoring data (BURANHEM
+river, 2020-2024, 4 points, 20 rows, 14 columns including extra `rio`, `lat`,
+`lon`).  All core examples and vignettes use this realistic sample, improving
+reproducibility and documentation value for users.")
+    (license license:expat)))
+
 (define-public r-tigris
   (package
     (name "r-tigris")
@@ -18773,41 +18753,6 @@ National Income and Product Accounts tables, then return consistent, tidy data
 frames ready for modeling and graphics.  The package includes helpers for date
 alignment, log-linear projections, and common macro diagnostics, along with
 convenience plot builders for quick publication-quality charts.")
-    (license license:expat)))
-
-(define-public r-tidyusda
-  (package
-    (name "r-tidyusda")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyUSDA" version))
-       (sha256
-        (base32 "1llqz8xs6zkg0vqz6hks6jghxsfyp35k3n4882qg3w6lr080ir8b"))))
-    (properties `((upstream-name . "tidyUSDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tigris
-                             r-sf
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-fuzzyjoin
-                             r-dplyr
-                             r-crayon
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://bradlindblad.github.io/tidyUSDA/")
-    (synopsis
-     "Minimal Tool Set for Gathering USDA Quick Stat Data for Analysis and Visualization")
-    (description
-     "This package provides a consistent API to pull United States Department of
-Agriculture census and survey data from the National Agricultural Statistics
-Service (NASS) @code{QuickStats} service.")
     (license license:expat)))
 
 (define-public r-tidytuesdayr
@@ -20733,39 +20678,6 @@ palettes.")
      "In order to easily integrate @code{geoRSS} data into analysis, @code{tidygeoRSS}
 parses geo feeds and returns tidy simple features data frames.")
     (license license:expat)))
-
-(define-public r-tidygenomics
-  (package
-    (name "r-tidygenomics")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidygenomics" version))
-       (sha256
-        (base32 "1cnwmmmzp9kg4k7iy2kgb22bdllpnz257pv1ahy3l11zy6bl48fc"))))
-    (properties `((upstream-name . "tidygenomics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-iranges
-                             r-fuzzyjoin
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/const-ae/tidygenomics")
-    (synopsis "Tidy Verbs for Dealing with Genomic Data Frames")
-    (description
-     "Handle genomic data within data frames just as you would with GRanges'.  This
-packages provides method to deal with genomic intervals the \"tidy-way\" which
-makes it simpler to integrate in the the general data munging process.  The API
-is inspired by the popular bedtools and the @code{genome_join()} method from the
-fuzzyjoin package.")
-    (license license:gpl3)))
 
 (define-public r-tidygate
   (package

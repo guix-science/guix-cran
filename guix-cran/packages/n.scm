@@ -7383,6 +7383,36 @@ probability.  Methodology based on Papakonstantinou et al. (2021)
 <DOI:10.21203/rs.3.rs-858140/v1>.")
     (license license:gpl3)))
 
+(define-public r-nmar
+  (package
+    (name "r-nmar")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NMAR" version))
+       (sha256
+        (base32 "1nbw7kvdv3w7pgndnpagi51ydpfghma07ks7yc1z6sacanl7qp24"))))
+    (properties `((upstream-name . "NMAR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nleqslv r-generics r-formula))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ncn-foreigners/NMAR")
+    (synopsis "Estimation under not Missing at Random Nonresponse")
+    (description
+     "This package provides methods to estimate finite-population parameters under
+nonresponse that is not missing at random (NMAR, nonignorable).  Incorporates
+auxiliary information and user-specified response models, and supports
+independent samples and complex survey designs via objects from the survey
+package.  Provides diagnostics and optional variance estimates.  For
+methodological background see Qin, Leung and Shao (2002)
+<doi:10.1198/016214502753479338> and Riddles, Kim and Im (2016)
+<doi:10.1093/jssam/smv047>.")
+    (license license:expat)))
+
 (define-public r-nmaplateplot
   (package
     (name "r-nmaplateplot")
@@ -12427,6 +12457,33 @@ accommodates any model for which simulation is feasible by allowing users to
 define models implicitly through simulated data.")
     (license license:gpl2+)))
 
+(define-public r-neudist
+  (package
+    (name "r-neudist")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeuDist" version))
+       (sha256
+        (base32 "17mlm2z24jn6f23j47846izp3sbcmhyi706phsmdsl8fzwjmnxi3"))))
+    (properties `((upstream-name . "NeuDist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-goftest))
+    (home-page "https://cran.r-project.org/package=NeuDist")
+    (synopsis "Univariate Continuous Distributions with Model Diagnostics")
+    (description
+     "This package implements univariate continuous probability distributions and
+associated model diagnostics based on the Lindley, Logistic, Half-Cauchy,
+Half-Logistic, and Poisson families.  Provides functions for probability
+density, cumulative distribution, quantile, and hazard evaluation, random
+variate generation, and diagnostic procedures including Q-Q and P-P plots,
+goodness-of-fit tests, and model selection criteria.")
+    (license license:gpl3)))
+
 (define-public r-networktree
   (package
     (name "r-networktree")
@@ -16272,13 +16329,13 @@ data: large document collections, logfiles, and other text data.")
 (define-public r-ncf
   (package
     (name "r-ncf")
-    (version "1.3-2")
+    (version "1.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncf" version))
        (sha256
-        (base32 "1lqswih19g76aswnf6xygficzf7ri3yayqicifj8cqx8iwvrk91y"))))
+        (base32 "0kb10ajnl4xbamcp57vri7n8ypqk242v3r74bpy2b1ikixb2fwx4"))))
     (properties `((upstream-name . "ncf")))
     (build-system r-build-system)
     (arguments

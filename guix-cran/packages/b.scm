@@ -10479,46 +10479,6 @@ criteria outlined in Pourmohamad and Lee (2023) <doi:10.1002/sta4.645>, but more
 models and equivalence testing features may be added over time.")
     (license license:expat)))
 
-(define-public r-bmemlavaan
-  (package
-    (name "r-bmemlavaan")
-    (version "0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bmemLavaan" version))
-       (sha256
-        (base32 "0676y0dpjggmbssmamxjazlknwr26ciqwk957bbfb4fg1nn3j5mx"))))
-    (properties `((upstream-name . "bmemLavaan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-snowfall
-                             r-sem
-                             r-rsem
-                             r-mass
-                             r-lavaan
-                             r-amelia))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://bigdatalab.nd.edu")
-    (synopsis "Mediation Analysis with Missing Data and Non-Normal Data")
-    (description
-     "This package provides methods for mediation analysis with missing data and
-non-normal data are implemented.  For missing data, four methods are available:
-Listwise deletion, Pairwise deletion, Multiple imputation, and Two Stage Maximum
-Likelihood algorithm.  For MI and TS-ML, auxiliary variables can be included to
-handle missing data.  For handling non-normal data, bootstrap and two-stage
-robust methods can be used.  Technical details of the methods can be found in
-Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
-<doi:10.3758/s13428-013-0424-0>), and Yuan and Zhang (2012,
-<doi:10.1007/s11336-012-9282-4>).")
-    (license license:gpl2)))
-
 (define-public r-bmemapping
   (package
     (name "r-bmemapping")
@@ -22460,13 +22420,13 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "134bc65iw3ljslhbmlz86w0y8ngdsza0rva4bkjm141d3h9f3fg1"))))
+        (base32 "1jc7v20h3jc2yc0y1xgzs0c63cdrji41aswga5gggcm858kq9wb4"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (arguments
@@ -23794,13 +23754,13 @@ framework, including estimation and tools for evaluating goodness-of-fit.")
 (define-public r-bcrp
   (package
     (name "r-bcrp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcRP" version))
        (sha256
-        (base32 "1a3hs1kkrsc3ip5a10cgw8mm0zng7kpmpiyj914fpr6f61hfcv00"))))
+        (base32 "03mv3nfia5qicwwawi2s0akyg0bfxycwl1r0y0laf16qlhsfsdpc"))))
     (properties `((upstream-name . "bcRP")))
     (build-system r-build-system)
     (arguments
@@ -25500,35 +25460,6 @@ of my master thesis (expected 2016).")
      "This is an implementation of BART:Bayesian Additive Regression Trees, by
 Chipman, George, @code{McCulloch} (2010).")
     (license license:gpl2+)))
-
-(define-public r-bayestransmission
-  (package
-    (name "r-bayestransmission")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayestransmission" version))
-       (sha256
-        (base32 "02hyp769jisjxd43q2i3kx9gk1xw2lmbg8q9flaz204zzbh5q026"))))
-    (properties `((upstream-name . "bayestransmission")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list lapack))
-    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://epiforesite.github.io/bayestransmission/")
-    (synopsis "Bayesian Transmission Models")
-    (description
-     "This package provides Bayesian inference methods for infectious disease
-transmission models in healthcare settings.  Implements Markov Chain Monte Carlo
-(MCMC) algorithms for estimating transmission parameters from patient-level data
-including admission, discharge, and testing events as described in Thomas et al.
-(2015) <doi:10.1093/imammb/dqt021>.")
-    (license license:expat)))
 
 (define-public r-bayestools
   (package

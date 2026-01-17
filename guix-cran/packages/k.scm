@@ -2609,59 +2609,6 @@ conversion process and empowers users to seamlessly work with geospatial
 datasets.")
     (license license:gpl2+)))
 
-(define-public r-kml3d
-  (package
-    (name "r-kml3d")
-    (version "2.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kml3d" version))
-       (sha256
-        (base32 "1y265nkz2fpwrvvljnl75qgrm0nl1kck7912cgm6y2vw2b46s4l4"))))
-    (properties `((upstream-name . "kml3d")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgl r-misc3d r-longitudinaldata r-kml r-clv))
-    (home-page "https://cran.r-project.org/package=kml3d")
-    (synopsis "K-Means for Joint Longitudinal Data")
-    (description
-     "An implementation of k-means specifically design to cluster joint trajectories
-(longitudinal data on several variable-trajectories).  Like kml', it provides
-facilities to deal with missing value, compute several quality criterion
-(Calinski and Harabatz, Ray and Turie, Davies and Bouldin, BIC,...) and propose
-a graphical interface for choosing the best number of clusters.  In addition,
-the 3D graph representing the mean joint-trajectories of each cluster can be
-exported through @code{LaTeX} in a 3D dynamic rotating PDF graph.")
-    (license license:gpl2+)))
-
-(define-public r-kml
-  (package
-    (name "r-kml")
-    (version "2.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kml" version))
-       (sha256
-        (base32 "1qaiffqcfgqaygvxvp980q8kcag4bddckmbsllj7dyy72l87566g"))))
-    (properties `((upstream-name . "kml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-longitudinaldata r-clv))
-    (home-page "https://cran.r-project.org/package=kml")
-    (synopsis "K-Means for Longitudinal Data")
-    (description
-     "An implementation of k-means specifically design to cluster longitudinal data.
-It provides facilities to deal with missing value, compute several quality
-criterion (Calinski and Harabatz, Ray and Turie, Davies and Bouldin, BIC, ...)
-and propose a graphical interface for choosing the best number of clusters.")
-    (license license:gpl2+)))
-
 (define-public r-kmi
   (package
     (name "r-kmi")
