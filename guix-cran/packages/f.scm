@@ -1449,21 +1449,21 @@ visualization.  For details, please refer to Park and Won (2022)
 (define-public r-furniture
   (package
     (name "r-furniture")
-    (version "1.9.14")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "furniture" version))
        (sha256
-        (base32 "07ds1vk1bvv6027g2z93161g3pkdp9vj3prbkjbwkj392sc9rg04"))))
+        (base32 "0mvs6szkpg221wpwdgi0gg924nc6gkiw952jd66z4b8h3ain10sy"))))
     (properties `((upstream-name . "furniture")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-knitr r-dplyr))
+    (propagated-inputs (list r-knitr r-gt r-flextable r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=furniture")
+    (home-page "https://tysonbarrett.com/furniture/")
     (synopsis "Furniture for Quantitative Scientists")
     (description
      "This package contains four main functions (i.e., four pieces of furniture):
@@ -2732,6 +2732,55 @@ accurate tool for measuring fractional years between two dates.
 unused packages.")
     (license license:expat)))
 
+(define-public r-funcharts
+  (package
+    (name "r-funcharts")
+    (version "1.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funcharts" version))
+       (sha256
+        (base32 "1i2fx0rx53488yi0d28w4yrjwmqx03gh9zgk5gpanma0chfhch2g"))))
+    (properties `((upstream-name . "funcharts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-spatstat-univar
+                             r-scam
+                             r-rspectra
+                             r-rrcov
+                             r-rofanova
+                             r-robustbase
+                             r-roahd
+                             r-rfast
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-patchwork
+                             r-mgcv
+                             r-mass
+                             r-ggplot2
+                             r-fdapace
+                             r-fda-usc
+                             r-fda
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/unina-sfere/funcharts")
+    (synopsis "Functional Control Charts")
+    (description
+     "This package provides functional control charts for statistical process
+monitoring of functional data, using the methods of Capezza et al. (2020)
+<doi:10.1002/asmb.2507>, Centofanti et al. (2021)
+<doi:10.1080/00401706.2020.1753581>, Capezza et al. (2024)
+<doi:10.1080/00224065.2024.2383674>, Capezza et al. (2024)
+<doi:10.1080/00401706.2024.2327346>, Centofanti et al. (2025)
+<doi:10.1080/00224065.2024.2430978>, Capezza et al. (2025)
+<doi:10.48550/@code{arXiv.2410.20138>}.  The package is thoroughly illustrated
+in the paper of Capezza et al (2023) <doi:10.1080/00224065.2023.2219012>.")
+    (license license:gpl3)))
+
 (define-public r-funcdiv
   (package
     (name "r-funcdiv")
@@ -3097,32 +3146,6 @@ criterion (summing to 1), the comparative priority (Phi) values, the
 mathematical transitivity condition (w) value, and the minimum deviation from
 full consistency (DFC).")
     (license license:gpl3+)))
-
-(define-public r-ftsspec
-  (package
-    (name "r-ftsspec")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ftsspec" version))
-       (sha256
-        (base32 "12f9yws1r26i240ijq0xqprl3pgbw50wv68jsm75ycplbs2jsyhs"))))
-    (properties `((upstream-name . "ftsspec")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sna))
-    (home-page "https://cran.r-project.org/package=ftsspec")
-    (synopsis
-     "Spectral Density Estimation and Comparison for Functional Time Series")
-    (description
-     "This package provides functions for estimating spectral density operator of
-functional time series (FTS) and comparing the spectral density operator of two
-functional time series, in a way that allows detection of differences of the
-spectral density operator in frequencies and along the curve length.")
-    (license license:gpl2)))
 
 (define-public r-ftsgof
   (package
@@ -19444,13 +19467,13 @@ USGS).")
 (define-public r-fect
   (package
     (name "r-fect")
-    (version "2.0.5")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fect" version))
        (sha256
-        (base32 "07hz80bs6w209857szbwx03z0hj6z6j05rqzs0cdpc9jbznlqnyp"))))
+        (base32 "0w3l87j3n95dm8ifzn2fk3qhvz14nx1p3rj9hyrjvphf4y8cmscg"))))
     (properties `((upstream-name . "fect")))
     (build-system r-build-system)
     (arguments
@@ -19461,6 +19484,7 @@ USGS).")
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
+                             r-parallelly
                              r-mvtnorm
                              r-mass
                              r-gridextra
@@ -19473,6 +19497,7 @@ USGS).")
                              r-dplyr
                              r-dorng
                              r-doparallel
+                             r-dofuture
                              r-abind))
     (home-page "https://yiqingxu.org/packages/fect/")
     (synopsis "Fixed Effects Counterfactual Estimators")
@@ -25119,13 +25144,13 @@ FAO Irrigation and drainage paper 56\".")
 (define-public r-fanyi
   (package
     (name "r-fanyi")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fanyi" version))
        (sha256
-        (base32 "0v0dfqfwlp3q5nbasli3abki5j437c75mvkgwg7mp99pikvs0482"))))
+        (base32 "0fyxwvxb1738w31vz0004k0ayvjwnr147n1cw3pkls7g83w9fdzh"))))
     (properties `((upstream-name . "fanyi")))
     (build-system r-build-system)
     (arguments
@@ -25732,19 +25757,19 @@ Bommasani et al. (2021) <doi:10.48550/@code{arXiv.2108.07258>}.")
 (define-public r-fake
   (package
     (name "r-fake")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fake" version))
        (sha256
-        (base32 "1w852a5ywybsdyvlll2dvrj17isjmiwjwhi43vml7j1k0lv9m86v"))))
+        (base32 "1ndrym5c10xd34klkdwrdy0w53yhwhd22kd1xr5j8j51gk2yb3rr"))))
     (properties `((upstream-name . "fake")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-rdpack r-mass r-igraph r-huge))
+    (propagated-inputs (list r-withr r-rdpack r-mass r-igraph))
     (home-page "https://cran.r-project.org/package=fake")
     (synopsis
      "Flexible Data Simulation Using the Multivariate Normal Distribution")
@@ -25755,7 +25780,7 @@ and/or observations.  Each observation is drawn from a multivariate Normal
 distribution where the mean vector and covariance matrix reflect the desired
 relationships.  Outputs can be used to evaluate the performances of variable
 selection, graphical modelling, or clustering approaches by comparing the true
-and estimated structures (B Bodinier et al (2021) <@code{arXiv:2106.02521>}).")
+and estimated structures (B Bodinier et al (2021) <doi:10.1093/jrsssc/qlad058>).")
     (license license:gpl3+)))
 
 (define-public r-fairsubset
@@ -27788,13 +27813,13 @@ intervals with constant coverage\".")
 (define-public r-fabci
   (package
     (name "r-fabci")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabCI" version))
        (sha256
-        (base32 "1vga322xpqzsh40n74v8vqiq8zbzrabvg58mp50bcx2ml0dikgnm"))))
+        (base32 "1k6g64z6q2dp60c8470id0fjcp75as03mxjkk4q9qgi4xf5gmsqi"))))
     (properties `((upstream-name . "fabCI")))
     (build-system r-build-system)
     (arguments

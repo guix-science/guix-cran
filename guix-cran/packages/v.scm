@@ -2744,13 +2744,13 @@ of mortality models.")
 (define-public r-vital
   (package
     (name "r-vital")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vital" version))
        (sha256
-        (base32 "0avvnzmgzmjii70j78z01pvlzjskgkygkc1fmi2hnklfqlkwvk41"))))
+        (base32 "16idsdflxcb4v0y9x9nqmx45wk3fp1vpxcqfnzh81xvy1wbrnyhr"))))
     (properties `((upstream-name . "vital")))
     (build-system r-build-system)
     (arguments
@@ -9777,6 +9777,47 @@ required to use this package and can be downloaded from:
 Valection: Design Optimization for Validation and Verification Studies; Biorxiv
 2018; <doi:10.1101/254839>.")
     (license license:gpl3)))
+
+(define-public r-valdrviz
+  (package
+    (name "r-valdrviz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valdrViz" version))
+       (sha256
+        (base32 "0fqxl87n4csd6bv1j4ivlvwpiz3imzrlw0wr68j9ww5l3gwbbpr5"))))
+    (properties `((upstream-name . "valdrViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-webshot2
+                             r-tidyr
+                             r-tibble
+                             r-shinycssloaders
+                             r-shiny
+                             r-rlang
+                             r-readr
+                             r-rcolorbrewer
+                             r-plotly
+                             r-pagedown
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=valdrViz")
+    (synopsis "Visualise and Report 'VALD ForceDecks' Test Results")
+    (description
+     "This package provides a shiny dashboard and plotting utilities to explore and
+report VALD @code{ForceDecks} testing data.  Includes interactive modules for
+metric exploration, radar charts, longitudinal comparisons, quadrant plots, and
+athlete reports.")
+    (license license:expat)))
 
 (define-public r-valdr
   (package

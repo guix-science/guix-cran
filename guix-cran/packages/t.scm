@@ -3678,13 +3678,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tsqca
   (package
     (name "r-tsqca")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSQCA" version))
        (sha256
-        (base32 "0gzy202lra5bcdi7f2fzavsa6spnrg2qrb2q2bigmbki0539ryij"))))
+        (base32 "1cfvkdzvq7ki4g5i985bssafhm7c6s4swncirildizi38gr6djgp"))))
     (properties `((upstream-name . "TSQCA")))
     (build-system r-build-system)
     (arguments
@@ -11115,13 +11115,13 @@ on their analyses.  For more details visit
 (define-public r-trainer
   (package
     (name "r-trainer")
-    (version "2.2.9")
+    (version "2.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traineR" version))
        (sha256
-        (base32 "1jk8ynafyxyr0znppam6ry9ar7zr9xl5yq8r04qnb4365fvfzs0d"))))
+        (base32 "1bpkdbpgzfa6j7xjzz5rkb86f8qrw50mnnbjgg4aldn4j8sx8ba0"))))
     (properties `((upstream-name . "traineR")))
     (build-system r-build-system)
     (arguments
@@ -18634,6 +18634,32 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
     (description
      "Query Wikidata API <https://www.wikidata.org/wiki/Wikidata:Main_Page> with ease,
 get tidy data frames in response, and cache data in a local database.")
+    (license license:expat)))
+
+(define-public r-tidyweather
+  (package
+    (name "r-tidyweather")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyweather" version))
+       (sha256
+        (base32 "1gbi2vvpwmlbh5r6hzm61fxwbq5qm8b3656vpcw8rbs72qwxjq0k"))))
+    (properties `((upstream-name . "tidyweather")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-stringr r-settings r-dplyr))
+    (home-page "https://tidyweather.bangyou.me/")
+    (synopsis "Analysis the Weather Data for Agriculture")
+    (description
+     "This package provides functions are collected to analyse weather data for
+agriculture purposes including to read weather records in multiple formats,
+calculate extreme climate index.  Demonstration data are included the SILO daily
+climate data (licensed under CC BY 4.0,
+<https://www.longpaddock.qld.gov.au/silo/>).")
     (license license:expat)))
 
 (define-public r-tidywater

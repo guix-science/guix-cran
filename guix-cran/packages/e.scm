@@ -7968,44 +7968,6 @@ estimation of genetic parameters for selection based on balanced experiments
 (Yadav et al., 2024) <doi:10.1155/2024/9946332>.")
     (license license:gpl3+)))
 
-(define-public r-ester
-  (package
-    (name "r-ester")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ESTER" version))
-       (sha256
-        (base32 "1jiyqq5hgqc754r434sik9jnlpw66xz56cjdf5ig95qkffzsg224"))))
-    (properties `((upstream-name . "ESTER")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-magrittr
-                             r-lme4
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-cowplot
-                             r-brms))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lnalborczyk/ESTER")
-    (synopsis "Efficient Sequential Testing with Evidence Ratios")
-    (description
-     "An implementation of sequential testing that uses evidence ratios computed from
-the weights of a set of models.  These weights correspond either to Akaike
-weights computed from the Akaike Information Criterion (AIC) or the Bayesian
-Information Criterion (BIC) and following Burnham & Anderson (2004,
-<doi:10.1177/0049124104268644>) recommendations, or to pseudo-BMA weights
-computed from the WAIC or the LOO-IC of models fitted with brms and following
-Yao et al. (2017, <@code{arXiv:1704.02030v3>}).")
-    (license license:expat)))
-
 (define-public r-estempmm
   (package
     (name "r-estempmm")
@@ -12513,35 +12475,6 @@ short time forecast of the trend incidence curve as described in Morel et al.
 (2022) <doi:10.1101/2022.11.05.22281904>.")
     (license license:gpl2+)))
 
-(define-public r-epiilmct
-  (package
-    (name "r-epiilmct")
-    (version "1.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EpiILMCT" version))
-       (sha256
-        (base32 "0cndqd0j5zsi31vm80c29a7rj3mqz981qfmdwn1rcbdl5q2f4r7a"))))
-    (properties `((upstream-name . "EpiILMCT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph r-coda))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/waleedalmutiry/EpiILMCT/")
-    (synopsis
-     "Continuous Time Distance-Based and Network-Based Individual Level Models for Epidemics")
-    (description
-     "This package provides tools for simulating from continuous-time individual level
-models of disease transmission, and carrying out infectious disease data
-analyses with the same models.  The epidemic models considered are
-distance-based and/or contact network-based models within
-Susceptible-Infectious-Removed (SIR) or Susceptible-Infectious-Notified-Removed
-(SINR) compartmental frameworks. <doi:10.18637/jss.v098.i10>.")
-    (license license:gpl2+)))
-
 (define-public r-epiilm
   (package
     (name "r-epiilm")
@@ -14249,6 +14182,30 @@ phylogenetic and functional diversity.  Estimation-bias corrections are
 available.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-entrainer
+  (package
+    (name "r-entrainer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EnTraineR" version))
+       (sha256
+        (base32 "0klk1f6cgkl31vh49gnyccpvd7cjdd1fbcdf48cy6vi2l3gjih84"))))
+    (properties `((upstream-name . "EnTraineR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list pandoc))
+    (propagated-inputs (list r-ollamar r-httr2))
+    (home-page "https://github.com/Sebastien-Le/EnTraineR")
+    (synopsis "Enhanced Teaching Assistant (AI) for Statistical Analysis")
+    (description
+     "An assistant built on large language models that helps interpret statistical
+model outputs in R by generating concise, audience-specific explanations.")
+    (license license:expat)))
+
 (define-public r-ensr
   (package
     (name "r-ensr")
@@ -14442,13 +14399,13 @@ ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
 (define-public r-enrichit
   (package
     (name "r-enrichit")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enrichit" version))
        (sha256
-        (base32 "0lyjaqnp91wak4xblgllqh83k1a431b0xlzz3vzg48qh5ap8fyfz"))))
+        (base32 "1352f0n27q2v0x7rrd1mgkawafhf12gbk7crwnbm1mfs4iz115wh"))))
     (properties `((upstream-name . "enrichit")))
     (build-system r-build-system)
     (arguments
@@ -18939,13 +18896,13 @@ eikosograms are given in R.W. Oldford (2003)
 (define-public r-eigenmodel
   (package
     (name "r-eigenmodel")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eigenmodel" version))
        (sha256
-        (base32 "1l3n0z736xf3x6cyxzmmq1jb2glxi2b75z7v39y4471knh6nbb4d"))))
+        (base32 "12dvjgijlv7yvd66p2aibn9i2xspq2sd0qr9h3m2nhpc66nd253p"))))
     (properties `((upstream-name . "eigenmodel")))
     (build-system r-build-system)
     (arguments
@@ -18961,7 +18918,7 @@ decomposition and regression.  Missing data is accommodated, and a posterior
 mean for missing data is calculated under the assumption that the data are
 missing at random.  The marginal distribution of the relational data can be
 arbitrary, and is fit with an ordered probit specification.  See Hoff (2007)
-<@code{arXiv:0711.1146>} for details on the model.")
+<doi:10.48550/@code{arXiv.0711.1146>}.  for details on the model.")
     (license license:gpl2)))
 
 (define-public r-eiexpand
@@ -23248,13 +23205,13 @@ Methods in Ecology & Evolution, <doi:10.1111/2041-210X.12907>.")
 (define-public r-econtools
   (package
     (name "r-econtools")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "econtools" version))
        (sha256
-        (base32 "142y1k9kbnjcs5w43zhnyzw60zz0byh6dcf5c6irk2s9fygjrka4"))))
+        (base32 "0zzqsg34khi5h40pfp7g7x57avb671ak07v7k4wwr0ig8mzk9699"))))
     (properties `((upstream-name . "econtools")))
     (build-system r-build-system)
     (arguments
@@ -27334,6 +27291,62 @@ size.  These might aid in deciding what design to use for the early phase trial.
 Take an overview of the industry, measure Key Performance Indicators, identify
 changes in the industry over time, and discover new relationships in the data.")
     (license (license:fsdg-compatible "Apache License"))))
+
+(define-public r-eam
+  (package
+    (name "r-eam")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eam" version))
+       (sha256
+        (base32 "08r8a1w7invrcxszfw74xj2q9l4y323kgac2m43vc9v9wfag7kha"))))
+    (properties `((upstream-name . "eam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-distributional
+                             r-data-table
+                             r-codetools
+                             r-arrow))
+    (home-page "https://github.com/y-guang/eam")
+    (synopsis "Evidence Accumulation Models")
+    (description
+     "Simulation-based evidence accumulation models for analyzing responses and
+reaction times in single- and multi-response tasks.  The package includes
+simulation engines for five representative models: the Diffusion Decision Model
+(DDM), Leaky Competing Accumulator (LCA), Linear Ballistic Accumulator (LBA),
+Racing Diffusion Model (RDM), and Levy Flight Model (LFM), and extends these
+frameworks to multi-response settings.  The package supports user-defined
+functions for item-level parameterization and the incorporation of covariates,
+enabling flexible customization and the development of new model variants based
+on existing architectures.  Inference is performed using simulation-based
+methods, including Approximate Bayesian Computation (ABC) and Amortized Bayesian
+Inference (ABI), which allow parameter estimation without requiring tractable
+likelihood functions.  In addition to core inference tools, the package provides
+modules for parameter recovery, posterior predictive checks, and model
+comparison, facilitating the study of a wide range of cognitive processes in
+tasks involving perceptual decision making, memory retrieval, and value-based
+decision making.  Key methods implemented in the package are described in
+Ratcliff (1978) <doi:10.1037/0033-295X.85.2.59>, Usher and @code{McClelland}
+(2001) <doi:10.1037/0033-295X.108.3.550>, Brown and Heathcote (2008)
+<doi:10.1016/j.cogpsych.2007.12.002>, Tillman, Van Zandt and Logan (2020)
+<doi:10.3758/s13423-020-01719-6>, Wieschen, Voss and Radev (2020)
+<doi:10.20982/tqmp.16.2.p120>, CsillÃ©ry, FranÃ§ois and Blum (2012)
+<doi:10.1111/j.2041-210X.2011.00179.x>, Beaumont (2019)
+<doi:10.1146/annurev-statistics-030718-105212>, and Sainsbury-Dale,
+Zammit-Mangion and Huser (2024) <doi:10.1080/00031305.2023.2249522>.")
+    (license license:expat)))
 
 (define-public r-eagle
   (package

@@ -1988,61 +1988,6 @@ data.  It supports the Carlson-Parkin method, the regression approach, the
 balance approach and the conditional expectations method.")
     (license license:gpl3)))
 
-(define-public r-quantetrack
-  (package
-    (name "r-quantetrack")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QuAnTeTrack" version))
-       (sha256
-        (base32 "0hgj99ylxfiqp12q5xwlqb9bm3p96wgsv6s8ijwhgnq1bl60l17g"))))
-    (properties `((upstream-name . "QuAnTeTrack")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-trajr
-                             r-stringr
-                             r-splancs
-                             r-similaritymeasures
-                             r-shotgroups
-                             r-schoolmath
-                             r-nistunits
-                             r-mclust
-                             r-magrittr
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-geomorph
-                             r-emmeans
-                             r-dunn-test
-                             r-dtw
-                             r-dplyr
-                             r-car
-                             r-berryfunctions))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MacroFunUV/QuAnTeTrack")
-    (synopsis "Quantitative Analysis of Tetrapod Trackways")
-    (description
-     "This package provides a quantitative and automated tool to extract
-(palaeo)biological information (i.e., measurements, velocities, similarity
-metrics, etc.) from the analysis of tetrapod trackways.  Methods implemented in
-the package draw from several sources, including Alexander (1976)
-<doi:10.1038/261129a0>, Batschelet (1981, ISBN:9780120810505), Benhamou (2004)
-<doi:10.1016/j.jtbi.2004.03.016>, Bovet and Benhamou (1988)
-<doi:10.1016/S0022-5193(88)80038-9>, Cheung et al. (2007)
-<doi:10.1007/s00422-007-0158-0>, Cheung et al. (2008)
-<doi:10.1007/s00422-008-0251-z>, Cleasby et al. (2019)
-<doi:10.1007/s00265-019-2761-1>, Farlow et al. (1981) <doi:10.1038/294747a0>,
-Ostrom (1972) <doi:10.1016/0031-0182(72)90049-1>, Rohlf (2008)
-<https://sbmorphometrics.org/>, Rohlf (2009) <https://sbmorphometrics.org/>,
-Ruiz and Torices (2013) <doi:10.1080/10420940.2012.759115>, Scrucca et al.
-(2016) <doi:10.32614/RJ-2016-021>, Thulborn and Wade (1984)
-<https://www.museum.qld.gov.au/collections-and-research/memoirs/nature-21/mqm-n21-2-11-thulborn-wade>.")
-    (license license:cc0)))
-
 (define-public r-quanteda-tidy
   (package
     (name "r-quanteda-tidy")

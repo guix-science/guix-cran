@@ -6329,6 +6329,40 @@ described in <https://github.com/End-to-end-provenance/@code{ExtendedProvJson>}.
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-provolleyballr
+  (package
+    (name "r-provolleyballr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "provolleyballr" version))
+       (sha256
+        (base32 "1nb7827wavinmmcipbzka4k94r93n4pab1g8pjcvbkvhvg1y0br2"))))
+    (properties `((upstream-name . "provolleyballr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-selenider
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-lifecycle
+                             r-janitor
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (home-page "https://github.com/JeffreyRStevens/provolleyballr")
+    (synopsis "Extract Data from US Women's Professional Volleyball Websites")
+    (description
+     "This package provides tools for scraping match statistics and player data from
+the Athletes Unlimited (UA) website <https://auprosports.com/volleyball/>, the
+League One Volleyball website <https://lovb.com>, and the Major League (MLV)
+website <https://provolleyball.com>.")
+    (license license:expat)))
+
 (define-public r-provgraphr
   (package
     (name "r-provgraphr")
@@ -13562,13 +13596,13 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.7")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PracTools" version))
        (sha256
-        (base32 "1jsmfcgig75f7zqmnlnq754dbvm28j3yr1z1ii9ha1qrlfzj5xac"))))
+        (base32 "10r24pnmh6swax0h67hbnwzskpj23sd6h0421qjv5mkcwvy12jpq"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (arguments
@@ -30196,13 +30230,13 @@ used for the final data analysis.")
 (define-public r-photon
   (package
     (name "r-photon")
-    (version "0.7.4")
+    (version "0.7.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photon" version))
        (sha256
-        (base32 "1fgq96bws239frdz22z61y89n6xwnqk6d56x3kbf5zs7d6rks16r"))))
+        (base32 "1kjbvvz96gzqwxqpkkspwjpyxpfwlswhgzjbkqfvqv0n24rf21dc"))))
     (properties `((upstream-name . "photon")))
     (build-system r-build-system)
     (arguments
@@ -32866,13 +32900,13 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
 (define-public r-pgenlibr
   (package
     (name "r-pgenlibr")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgenlibr" version))
        (sha256
-        (base32 "0ahg557hxn4kwbmppmaflcwxywhxjpnaqwdmkd9g8ffg69j36p6l"))))
+        (base32 "1pdwr92xcgfw9cg09d1x4pacb8b9ynzl60pbsdwbpa7c3scjwzs5"))))
     (properties `((upstream-name . "pgenlibr")))
     (build-system r-build-system)
     (arguments
@@ -40855,23 +40889,20 @@ algorithms.  This is further described in Reps (2017)
 (define-public r-pathwayvote
   (package
     (name "r-pathwayvote")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwayVote" version))
        (sha256
-        (base32 "07isaqcp2svnnkkgn9p3khfmjc3q9a3yf4qdw0bk1snh33fhmvpk"))))
+        (base32 "044z85m2xg90r6591pzw26fjq686nlgqnrw9jng8d9kqwrjzhg87"))))
     (properties `((upstream-name . "PathwayVote")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reactome-db
-                             r-parallelly
-                             r-org-hs-eg-db
+    (propagated-inputs (list r-parallelly
                              r-harmonicmeanp
-                             r-go-db
                              r-future
                              r-furrr
                              r-clusterprofiler
@@ -47192,6 +47223,51 @@ diff file viewable in a browser.")
      "This package provides functions to easily convert data to binary formats other
 programs/machines can understand.")
     (license license:gpl3)))
+
+(define-public r-pacheck
+  (package
+    (name "r-pacheck")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pacheck" version))
+       (sha256
+        (base32 "0l7jh614g2qhwy09d3h6bic5i1mvnklcv4vvqvfgb3nd5lc7ddvn"))))
+    (properties `((upstream-name . "pacheck")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-testthat
+                             r-survival
+                             r-stringi
+                             r-simsurv
+                             r-signal
+                             r-scales
+                             r-reshape2
+                             r-randomforestsrc
+                             r-moments
+                             r-interp
+                             r-gtools
+                             r-glue
+                             r-glmnet
+                             r-ggplot2
+                             r-flexsurv
+                             r-fitdistrplus
+                             r-dplyr
+                             r-boot
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://xa4p.github.io/pacheck/")
+    (synopsis "Probabilistic Analysis Check Package")
+    (description
+     "Investigate (analytically or visually) the inputs and outputs of probabilistic
+analyses of health economic models using standard health economic visualisation
+and metamodelling methods.")
+    (license license:gpl3+)))
 
 (define-public r-pac
   (package

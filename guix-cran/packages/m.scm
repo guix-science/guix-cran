@@ -15761,6 +15761,45 @@ the database.")
     (description "Translate R code into @code{MongoDB} aggregation pipelines.")
     (license license:expat)))
 
+(define-public r-mongolstats
+  (package
+    (name "r-mongolstats")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mongolstats" version))
+       (sha256
+        (base32 "1hvmarz84anz10s0aphhkv9vf29jfymk4biyqpqqm58gn7q6rgdw"))))
+    (properties `((upstream-name . "mongolstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-sf
+                             r-rappdirs
+                             r-purrr
+                             r-memoise
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-curl
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://temuulene.github.io/mongolstats/")
+    (synopsis "Mongolian 'NSO' 'PXWeb' Data and Boundaries (Tidy Client)")
+    (description
+     "This package provides a tidyverse'-friendly client for the National Statistics
+Office of Mongolia PXWeb API <https://data.1212.mn/> with helpers to discover
+tables, variables, and fetch statistical data.  Also includes utilities to
+retrieve Mongolia administrative boundaries (ADM0-ADM2) as sf objects from open
+sources for mapping and spatial analysis.")
+    (license license:expat)))
+
 (define-public r-mongolite
   (package
     (name "r-mongolite")
@@ -20821,13 +20860,13 @@ many models from <DOI:10.32614/CRAN.package.tram>.")
 (define-public r-mlsurvlrnrs
   (package
     (name "r-mlsurvlrnrs")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlsurvlrnrs" version))
        (sha256
-        (base32 "15qrdqwq88irqvn53ppnmbvgkfa4f3kgam02819ssyafv9lpq556"))))
+        (base32 "12n94ffslhj4vnl29x2mylsc5wsdijzyvj19v4k9xq8dipfasbxc"))))
     (properties `((upstream-name . "mlsurvlrnrs")))
     (build-system r-build-system)
     (arguments
@@ -22165,13 +22204,13 @@ Analysis with Multilevel Additive Models\", P@code{LoS} ONE 15(10): e0241072.")
 (define-public r-mllrnrs
   (package
     (name "r-mllrnrs")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mllrnrs" version))
        (sha256
-        (base32 "0cl3lx84kj7pariwb6wvdwzvwn676p7lkph9138zffki3q2s1rch"))))
+        (base32 "1nkl8kylqbd29dic37ncc3668pvlw2z745fliwg6cvvv37zvrqv4"))))
     (properties `((upstream-name . "mllrnrs")))
     (build-system r-build-system)
     (arguments
@@ -24654,13 +24693,13 @@ be found at <doi:10.18637/jss.v098.i03>.")
 (define-public r-mixgb
   (package
     (name "r-mixgb")
-    (version "2.0.3")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixgb" version))
        (sha256
-        (base32 "10carkjajpxhadj2lji5wnmakl8alfn4xb1bm34kgg9yy9wc8lpx"))))
+        (base32 "0j7b949n1nc3flgvdddm5diabvr59f6xwibdafh2m2zfqlsf7i7a"))))
     (properties `((upstream-name . "mixgb")))
     (build-system r-build-system)
     (arguments
@@ -24672,14 +24711,14 @@ be found at <doi:10.18637/jss.v098.i03>.")
                              r-rcpp
                              r-mice
                              r-matrix
-                             r-magrittr
-                             r-data-table))
+                             r-data-table
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agnesdeng/mixgb")
     (synopsis "Multiple Imputation Through 'XGBoost'")
     (description
      "Multiple imputation using XGBoost', subsampling, and predictive mean matching as
-described in Deng and Lumley (2023) <doi:10.1080/10618600.2023.2252501>.  The
+described in Deng and Lumley (2024) <doi:10.1080/10618600.2023.2252501>.  The
 package supports various types of variables, offers flexible settings, and
 enables saving an imputation model to impute new data.  Data processing and
 memory usage have been optimised to speed up the imputation process.")
@@ -25604,13 +25643,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.7.6")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0iqczygp4i2541k8x2knfba6nmz2havd1hrd529jpm48s6zy6xlk"))))
+        (base32 "1gz9znb45nka6q1jjv35c7sqkxfi7w0izgi3bhdn2xdy6zjwqi2s"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
@@ -37993,29 +38032,6 @@ with the outcome can be obtained from large consortia.  These data can be used
 for obtaining causal estimates using instrumental variable methods.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-memss
-  (package
-    (name "r-memss")
-    (version "0.9-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MEMSS" version))
-       (sha256
-        (base32 "0fq85jrajfwavq2fvsw2x9hknc57wc253zw2vw970f04khfbragd"))))
-    (properties `((upstream-name . "MEMSS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lme4))
-    (home-page "https://cran.r-project.org/package=MEMSS")
-    (synopsis "Data Sets from Mixed-Effects Models in S")
-    (description
-     "Data sets and sample analyses from Pinheiro and Bates, \"Mixed-effects Models in
-S and S-PLUS\" (Springer, 2000).")
-    (license license:gpl2+)))
-
 (define-public r-memshare
   (package
     (name "r-memshare")
@@ -41090,13 +41106,13 @@ abstract syntax trees as well as translating and displaying the documents.")
 (define-public r-md2sample
   (package
     (name "r-md2sample")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MD2sample" version))
        (sha256
-        (base32 "0x9s8d04kgclprhbqyry2ycp4wk9lg86c6q1zvj7ywzigpiq1y5p"))))
+        (base32 "12zd4ywxpmmdk5y7qbik3qqiyihxvcdz5s410xzw2dnqpxk936sm"))))
     (properties `((upstream-name . "MD2sample")))
     (build-system r-build-system)
     (arguments
@@ -41333,13 +41349,13 @@ Merrow (2003, <doi:10.1177/0748730402239679>).")
 (define-public r-mctest
   (package
     (name "r-mctest")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mctest" version))
        (sha256
-        (base32 "1d248r9ifwl1xhvka6z69l943rvbq7s7ag6vqp9lljkcybvg75f2"))))
+        (base32 "0ydp54afqd00yfcz3mid6a64ls0rr2k1pj45s66c2fak2585nfbv"))))
     (properties `((upstream-name . "mctest")))
     (build-system r-build-system)
     (arguments
@@ -41349,7 +41365,7 @@ Merrow (2003, <doi:10.1177/0748730402239679>).")
     (synopsis "Multicollinearity Diagnostic Measures")
     (description
      "Package computes popular and widely used multicollinearity diagnostic measures
-<doi:10.17576/jsm-2019-4809-26> and <doi:10.32614/RJ-2016-062> .  Package also
+\\doi{10.17576/jsm-2019-4809-26} and \\doi{10.32614/RJ-2016-062}.  Package also
 indicates which regressors may be the reason of collinearity among regressors.")
     (license license:gpl2+)))
 
@@ -46378,6 +46394,32 @@ that image, and pastes it into a (e.g. an rmarkdown') document.  See
 and use of the API is subject to their terms and conditions.")
     (license license:gpl3+)))
 
+(define-public r-mathml
+  (package
+    (name "r-mathml")
+    (version "1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mathml" version))
+       (sha256
+        (base32 "0mw801lnah0d6ayldfi4m7xnffd6mm60ii7wp1kmf5mpgsa8az0y"))))
+    (properties `((upstream-name . "mathml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xfun r-rolog r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/mgondan/mathml")
+    (synopsis "Translate R Expressions to 'MathML' and 'LaTeX'/'MathJax'")
+    (description
+     "Translate R expressions to @code{MathML} or @code{MathJax'/'LaTeX} so that they
+can be rendered in R markdown documents and shiny apps.  This package depends on
+R package rolog', which requires an installation of the SWI'-'Prolog runtime
+either from swi-prolog.org or from R package rswipl'.")
+    (license (license:fsdg-compatible "FreeBSD"))))
+
 (define-public r-materialmodifier
   (package
     (name "r-materialmodifier")
@@ -48407,13 +48449,13 @@ using Markov Chain Monte Carlo.")
 (define-public r-marginalmediation
   (package
     (name "r-marginalmediation")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MarginalMediation" version))
        (sha256
-        (base32 "0a19ww8i04z8a4a6hia4myssfam57fdx59mc4n9dzrbyy293ckx2"))))
+        (base32 "1r6xd45s17w08hv70wps2cw1qv3jhwrjrwgj20m8jfb068z4iv87"))))
     (properties `((upstream-name . "MarginalMediation")))
     (build-system r-build-system)
     (arguments
@@ -48441,7 +48483,7 @@ the \"margins\" package.  This framework allows the use of categorical mediators
 and outcomes with little change in interpretation from the continuous
 mediators/outcomes.  See <doi:10.13140/RG.2.2.18465.92001> for more details on
 the method.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-marginalmaxtest
   (package
@@ -49042,19 +49084,27 @@ departments, provinces and districts of Peru.")
 (define-public r-mapspain
   (package
     (name "r-mapspain")
-    (version "0.10.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapSpain" version))
        (sha256
-        (base32 "0ylaca6vnyazfna17ybf41sncj57qwpfgv5xb2i8fw4c8jxn8f4s"))))
+        (base32 "0rz3v3wax6l720iqhvf4y17mbq10nzg900zl1337v7l4skgx9rps"))))
     (properties `((upstream-name . "mapSpain")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-rappdirs r-giscor r-countrycode))
+    (propagated-inputs (list r-tibble
+                             r-sf
+                             r-rappdirs
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-giscor
+                             r-countrycode
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ropenspain.github.io/mapSpain/")
     (synopsis "Administrative Boundaries of Spain")
@@ -50675,28 +50725,31 @@ action.  The reports are self-contained and shareable without a web server.")
 (define-public r-mantar
   (package
     (name "r-mantar")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mantar" version))
        (sha256
-        (base32 "1200wwy9ijmp3jll19m239swbgpmwlqg685ykgjg1b6368sdwk1v"))))
+        (base32 "1sla73qydyd7bm7c5gldb6hpbmjc6f39yp2fcfqh6xilhk874cd2"))))
     (properties `((upstream-name . "mantar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=mantar")
+    (propagated-inputs (list r-rdpack r-matrix r-mathjaxr r-glassofast))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kai-nehler/mantar")
     (synopsis "Missingness Alleviation for Network Analysis")
     (description
      "This package provides functionality for estimating cross-sectional network
-structures representing partial correlations in R, while accounting for missing
-values in the data.  Networks are estimated via neighborhood selection, i.e.,
-node-wise multiple regression, with model selection guided by information
-criteria.  Missing data can be handled primarily via multiple imputation or a
-maximum likelihood-based approach; deletion techniques are available but
-secondary <doi:10.31234/osf.io/qpj35>.")
+structures representing partial correlations while accounting for missing data.
+Networks are estimated via neighborhood selection or regularization, with model
+selection guided by information criteria.  Missing data can be handled primarily
+via multiple imputation or a maximum likelihood-based approach, as demonstrated
+by Nehler and Schultze (2025a) <doi:10.31234/osf.io/qpj35> and Nehler and
+Schultze (2025b) <doi:10.1080/00273171.2025.2503833>.  Deletion-based approaches
+are also available but play a secondary role.")
     (license license:gpl3+)))
 
 (define-public r-mantaid

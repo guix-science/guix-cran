@@ -2153,43 +2153,6 @@ R-Hilfe-Seiten fÃ¼r den Herausgeberband Breit, S. und Schreiner, C. (Hrsg.).
 zur VerfÃ¼gung.")
     (license license:gpl3+)))
 
-(define-public r-lsamba
-  (package
-    (name "r-lsamba")
-    (version "2024.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LSAMBA" version))
-       (sha256
-        (base32 "0hal52c4diaakli002h85v0hdjysx28wqfahrl2ymqajajk9m8cx"))))
-    (properties `((upstream-name . "LSAMBA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-stringr
-                             r-sharp
-                             r-rsmlx
-                             r-mass
-                             r-latex2exp
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=LSAMBA")
-    (synopsis "Lasso-SAMBA Algorithm")
-    (description
-     "This package provides a lasso-based method for building mechanistic models using
-the SAMBA algorithm (Stochastic Approximation for Model Building Algorithm) (M
-Prague, M Lavielle (2022) <doi:10.1002/psp4.12742>).  The package extends the
-Rsmlx package (version 2024.1.0) to better handle high-dimensional data.  It
-relies on the Monolix software (version 2024R1; see
-(<https://monolixsuite.slp-software.com/monolix/2024R1/>), which must be
-installed beforehand.")
-    (license license:gpl3+)))
-
 (define-public r-lsafun
   (package
     (name "r-lsafun")
@@ -17039,6 +17002,63 @@ object using its estimates and covariance, and refits auxiliary models when
 needed.  The package relies on lavaan (Rosseel, 2012)
 <doi:10.18637/jss.v048.i02>.")
     (license license:gpl3)))
+
+(define-public r-lavdiag
+  (package
+    (name "r-lavdiag")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lavDiag" version))
+       (sha256
+        (base32 "00dbaayf60xh8pq0bnzh7j184z45fwvr14jmcri4qc82l8df99s0"))))
+    (properties `((upstream-name . "lavDiag")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-visnetwork
+                             r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-mgcv
+                             r-lavaan
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-corrplot))
+    (home-page "https://github.com/reckak/lavDiag")
+    (synopsis "Latent Variable Models Diagnostics")
+    (description
+     "Diagnostics and visualization tools for latent variable models fitted with
+lavaan (Rosseel, 2012 <doi:10.18637/jss.v048.i02>).  The package provides fast,
+parallel-safe factor-score prediction @code{(lavPredict_parallel()}), data
+augmentation with model predictions, residuals, delta-method standard errors and
+confidence intervals @code{(augment()}), and model-based latent grids for
+continuous, ordinal, or mixed indicators @code{(prepare()}).  It offers
+item-level empirical versus model curve comparison using generalized additive
+models for both continuous and ordinal indicators @code{(item_data()},
+@code{item_plot()}) via mgcv (Wood, 2017, ISBN:9781498728331), residual
+diagnostics including residual correlation tables and plots @code{(resid_cor()},
+@code{resid_corrplot()}) using corrplot (Wei and Simko, 2021
+<https://github.com/taiyun/corrplot>), and QâQ checks of residual z-statistics
+@code{(resid_qq()}), optionally with non-overlapping labels from ggrepel
+(Slowikowski, 2024 <https://CRAN.R-project.org/package=ggrepel>).  Heavy
+computations are parallelized via future'/'furrr (Bengtsson, 2021
+<doi:10.32614/RJ-2021-048>; Vaughan and Dancho, 2018
+<https://CRAN.R-project.org/package=furrr>).  Methods build on established
+literature and packages listed above.")
+    (license license:expat)))
 
 (define-public r-lavasearch2
   (package

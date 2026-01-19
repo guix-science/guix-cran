@@ -2080,13 +2080,13 @@ speeds.  The name is a portmanteau of the author and Rcpp'.")
 (define-public r-hutils
   (package
     (name "r-hutils")
-    (version "1.8.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hutils" version))
        (sha256
-        (base32 "0pdya5gdyab5pwpgiw9yfa95m5ynqk154sydsfg56dxq1ihzfr74"))))
+        (base32 "06zm61da9j6hp2lw6k7v5m0z9zgpiv4gg5i372k6ypys23xi5q1w"))))
     (properties `((upstream-name . "hutils")))
     (build-system r-build-system)
     (arguments
@@ -10095,38 +10095,6 @@ associated with characterizing and understanding complex spatial patterns in
 environmental and climate-related data.")
     (license license:gpl3+)))
 
-(define-public r-heterocop
-  (package
-    (name "r-heterocop")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "heterocop" version))
-       (sha256
-        (base32 "1059hw5wfn60wqvrn0nqlf2ms5b0v6nccba40z202saghh8mn9wk"))))
-    (properties `((upstream-name . "heterocop")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-mvtnorm
-                             r-matrixcalc
-                             r-igraph
-                             r-huge
-                             r-foreach
-                             r-dosnow))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=heterocop")
-    (synopsis "Semi-Parametric Estimation with Gaussian Copula")
-    (description
-     "This package provides a method for estimating the correlation matrix of the
-Gaussian copula from the observed data.  This package also contains a penalized
-estimation of the corresponding precision matrix, and enables to generate random
-vectors that are distributed according to a Gaussian copula.")
-    (license license:gpl3+)))
-
 (define-public r-heterfunctionaldata
   (package
     (name "r-heterfunctionaldata")
@@ -14566,13 +14534,13 @@ flexibility to incorporate custom parameterizations using external datasets.")
 (define-public r-hassediagrams
   (package
     (name "r-hassediagrams")
-    (version "1.1")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hassediagrams" version))
        (sha256
-        (base32 "1d5p0yb24b1p88x2q8d6zzy3dgc3ch93sajnfs6brbr8a13j7mkk"))))
+        (base32 "1py8islqhcjbcyr6fzw1hrz71iizyv8csv52dpp2zjvfqmmli8f5"))))
     (properties `((upstream-name . "hassediagrams")))
     (build-system r-build-system)
     (arguments

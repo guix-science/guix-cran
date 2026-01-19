@@ -4798,13 +4798,13 @@ downstream analyses.")
 (define-public r-bregr
   (package
     (name "r-bregr")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bregr" version))
        (sha256
-        (base32 "0b97cc4sapvzv2pdl08x5lx488j2bcvp4d7ih3qvmqnrfqgwqhrm"))))
+        (base32 "0gwbq3n826cinxdqvf9j1bf4vsyk41q3l9cz52gpyziz9p765crk"))))
     (properties `((upstream-name . "bregr")))
     (build-system r-build-system)
     (arguments
@@ -11259,13 +11259,13 @@ Research. <doi:10.1080/19466315.2019.1701546>.")
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.22")
+    (version "1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blogdown" version))
        (sha256
-        (base32 "0q4h73y2sgr8svxm8r0hp1yf3idspjybaga1ffflkn333vik3rvc"))))
+        (base32 "019cb5jxy082ivkp9jaihwqn4q3wlb6wa3hw7qwk5kcksrvjj35l"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (arguments
@@ -12413,40 +12413,6 @@ intervals on both parametric and nonparametric effects can be validated on
 finite samples.  The Markov chain Monte Carlo algorithms of the proposed and
 alternative models are efficiently implemented in C++'.")
     (license license:gpl2)))
-
-(define-public r-blcop
-  (package
-    (name "r-blcop")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BLCOP" version))
-       (sha256
-        (base32 "08y9vmx3cknjvk6ngfwxlfnc03cqpj97i1ijrs1cw5sahjc0vmhc"))))
-    (properties `((upstream-name . "BLCOP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-timeseries
-                             r-runit
-                             r-rmarkdown
-                             r-quadprog
-                             r-mass
-                             r-knitr
-                             r-fportfolio
-                             r-fmultivar
-                             r-fbasics))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mangothecat/BLCOP")
-    (synopsis "Black-Litterman and Copula Opinion Pooling Frameworks")
-    (description
-     "An implementation of the Black-Litterman Model and Attilio Meucci's copula
-opinion pooling framework as described in Meucci, Attilio (2005)
-<doi:10.2139/ssrn.848407>, Meucci, Attilio (2006) <doi:10.2139/ssrn.872577> and
-Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
-    (license license:expat)))
 
 (define-public r-blatr
   (package
@@ -23569,61 +23535,6 @@ also enables you to save it as an Excel file.  It is a R implementation of the
 Python package <https://pypi.org/project/bddkdata/>.")
     (license license:expat)))
 
-(define-public r-bdc
-  (package
-    (name "r-bdc")
-    (version "1.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bdc" version))
-       (sha256
-        (base32 "1v88dz54sqb878rb2c0fg97qd01hgzf7lgwsmwsrkmak361kcsdi"))))
-    (properties `((upstream-name . "bdc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-taxadb
-                             r-stringr
-                             r-stringi
-                             r-stringdist
-                             r-sf
-                             r-rnaturalearth
-                             r-rgnparser
-                             r-readr
-                             r-qs
-                             r-purrr
-                             r-magrittr
-                             r-here
-                             r-ggplot2
-                             r-fs
-                             r-foreach
-                             r-dt
-                             r-dplyr
-                             r-doparallel
-                             r-coordinatecleaner))
-    (home-page
-     "https://brunobrr.github.io/bdc/https://github.com/brunobrr/bdc")
-    (synopsis "Biodiversity Data Cleaning")
-    (description
-     "It brings together several aspects of biodiversity data-cleaning in one place.
-bdc is organized in thematic modules related to different biodiversity
-dimensions, including 1) Merge datasets: standardization and integration of
-different datasets; 2) Pre-filter: flagging and removal of invalid or
-non-interpretable information, followed by data amendments; 3) Taxonomy:
-cleaning, parsing, and harmonization of scientific names from several taxonomic
-groups against taxonomic databases locally stored through the application of
-exact and partial matching algorithms; 4) Space: flagging of erroneous, suspect,
-and low-precision geographic coordinates; and 5) Time: flagging and, whenever
-possible, correction of inconsistent collection date.  In addition, it contains
-features to visualize, document, and report data quality â which is essential
-for making data quality assessment transparent and reproducible.  The reference
-for the methodology is Bruno et al. (2022) <doi:10.1111/2041-210X.13868>.")
-    (license license:gpl3+)))
-
 (define-public r-bdalgo
   (package
     (name "r-bdalgo")
@@ -27340,13 +27251,13 @@ and conditional) are provided.")
 (define-public r-bayeslist
   (package
     (name "r-bayeslist")
-    (version "0.0.1.5")
+    (version "0.0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayeslist" version))
        (sha256
-        (base32 "0nxms57r6q0i1ikdc4d2wsmxyghccs9svzy3z561xym4alkcqhac"))))
+        (base32 "0n712smhiszdbnhz505qhjsycl73i7655fxdzkc5cgxwn2a4jhvb"))))
     (properties `((upstream-name . "bayeslist")))
     (build-system r-build-system)
     (arguments
@@ -27366,8 +27277,8 @@ and conditional) are provided.")
     (description
      "Estimates Bayesian models of list experiments with informative priors.  It
 includes functionalities to estimate different types of list experiment models
-with varying prior information.  See Lu and TraunmÃ¼ller (2021)
-<doi:10.2139/ssrn.3871089> for examples and details of estimation.")
+with varying prior information.  See Lu and TraunmÃ¼ller (2026)
+<doi:10.1017/psrm.2025.10084> for examples and details of estimation.")
     (license license:expat)))
 
 (define-public r-bayeslife
@@ -29620,36 +29531,6 @@ comparisons of means: understanding changes in gene expression at the
 single-cell level Vallejos et al. (2016) <doi:10.1186/s13059-016-0930-3>.")
     (license license:gpl3)))
 
-(define-public r-baycn
-  (package
-    (name "r-baycn")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "baycn" version))
-       (sha256
-        (base32 "1ykz1brs3mz94n86d5qaq25vf24j5adyzpddxqmn7qklbxxr6fh5"))))
-    (properties `((upstream-name . "baycn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-igraph r-gtools r-ggplot2 r-egg))
-    (home-page "https://cran.r-project.org/package=baycn")
-    (synopsis "Bayesian Inference for Causal Networks")
-    (description
-     "This package provides a Bayesian hybrid approach for inferring Directed Acyclic
-Graphs (DAGs) for continuous, discrete, and mixed data.  The algorithm can use
-the graph inferred by another more efficient graph inference method as input;
-the input graph may contain false edges or undirected edges but can help reduce
-the search space to a more manageable size.  A Bayesian Markov chain Monte Carlo
-algorithm is then used to infer the probability of direction and absence for the
-edges in the network.  References: Martin and Fu (2019)
-<@code{arXiv:1909.10678>}.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-bayclumpr
   (package
     (name "r-bayclumpr")
@@ -31336,20 +31217,25 @@ package without @code{bartMachine}.")
 (define-public r-bartmachine
   (package
     (name "r-bartmachine")
-    (version "1.3.4.1")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartMachine" version))
        (sha256
-        (base32 "12abi19nd07lvclxpa73ba21sbrll67bbp0a8vz8wnj2ym8542iv"))))
+        (base32 "1w367sbmjas2pw9ax7fzxczma0ykg3bbn4zvfmipckyh0agm6nc0"))))
     (properties `((upstream-name . "bartMachine")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list openjdk))
-    (propagated-inputs (list r-rjava r-randomforest r-missforest
+    (propagated-inputs (list r-rjava
+                             r-randomforest
+                             r-missforest
+                             r-matrixstats
+                             r-ggplot2
+                             r-checkmate
                              r-bartmachinejars))
     (home-page "https://cran.r-project.org/package=bartMachine")
     (synopsis "Bayesian Additive Regression Trees")
@@ -31743,6 +31629,31 @@ not recommended for use, their purpose are purely for comparison.")
      "Bayesian adaptive randomization is also called outcome adaptive randomization,
 which is increasingly used in clinical trials.")
     (license license:gpl2)))
+
+(define-public r-baqm
+  (package
+    (name "r-baqm")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BAQM" version))
+       (sha256
+        (base32 "12hg3g0q9m7qvx70gphyim2xbws33b3zmmh62iynzgzddx9nv034"))))
+    (properties `((upstream-name . "BAQM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lmtest r-ggrepel r-ggplot2 r-cowplot))
+    (home-page "https://github.com/CPA-wrk/BAQM")
+    (synopsis "Babson Analytics and Quantitative Methods Tools")
+    (description
+     "Instructor-developed tools for Analytics and Quantitative Methods (AQM) courses
+at Babson College.  Included are compact descriptive statistics for data frames
+and lists, expanded reporting and graphics for linear regressions, and formatted
+reports for best subsets analyses.")
+    (license license:gpl2+)))
 
 (define-public r-bapred
   (package

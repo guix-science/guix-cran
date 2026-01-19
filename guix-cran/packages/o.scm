@@ -3123,13 +3123,13 @@ filter, organize and further analyze those ordinal relations.")
 (define-public r-origin
   (package
     (name "r-origin")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "origin" version))
        (sha256
-        (base32 "0cdr9lizkw09z0lnn07v8jjwyxz1z9277sn7ib0bhyjzxwc9h48c"))))
+        (base32 "1c1gczc82lf3kmr95hw5sl7fp8acbrfn4wxrhzi8ci9xqgjabpq1"))))
     (properties `((upstream-name . "origin")))
     (build-system r-build-system)
     (arguments
@@ -6995,6 +6995,48 @@ identified in batch using an onboard reference library (Cowger et al.  2020,
 available via @code{run_app()} or online at
 <https://www.openanalysis.org/openspecy/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-opensourceap-downloadr
+  (package
+    (name "r-opensourceap-downloadr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenSourceAP.DownloadR" version))
+       (sha256
+        (base32 "1fflwhq0jfk3m8qqnlgllfdfvgbczgn6akjhd37628ccbrx8p3by"))))
+    (properties `((upstream-name . "OpenSourceAP.DownloadR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-stringr
+                             r-rvest
+                             r-rpostgres
+                             r-r6
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-getpass
+                             r-dplyr
+                             r-dbi
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=OpenSourceAP.DownloadR")
+    (synopsis "Download Open Source Asset Pricing (OpenAP) Data Directly")
+    (description
+     "Convenient download functions enabling access Open Source Asset Pricing
+(@code{OpenAP}) data.  This package enables users to download predictor
+portfolio returns (over 200 cross-sectional predictors with multiple portfolio
+construction methods) and firm characteristics (over 200 characteristics
+replicated from the academic asset pricing literature).  Center for Research in
+Security Prices (CRSP)-based variables such as Price, Size, and Short-term
+Reversal can be downloaded with a Wharton Research Data Services (WRDS,
+<https://wrds-www.wharton.upenn.edu/>) subscription.  For a full list of what is
+available, see <https://www.openassetpricing.com/>.")
+    (license license:expat)))
 
 (define-public r-openskies
   (package

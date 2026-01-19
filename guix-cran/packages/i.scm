@@ -15841,13 +15841,13 @@ recording and analysing neuronal data.  See
 (define-public r-igor
   (package
     (name "r-igor")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igoR" version))
        (sha256
-        (base32 "10kjnik4s1kq13ff0lskr6f05gd6d559zc5f1aza8d33z2wci215"))))
+        (base32 "1ycxwhz2i2l8nx8lclsnqnpc0i2bm6n63gl9g3rahxxr71q1jksp"))))
     (properties `((upstream-name . "igoR")))
     (build-system r-build-system)
     (arguments
@@ -15858,9 +15858,9 @@ recording and analysing neuronal data.  See
     (synopsis "Intergovernmental Organizations Database")
     (description
      "This package provides tools to extract information from the Intergovernmental
-Organizations ('IGO') Database , version 3, provided by the Correlates of War
-Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
-(2020).  Version 3 includes information from 1815 to 2014.")
+Organizations ('IGO') Database (v3), provided by the Correlates of War Project
+<https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al. (2020)
+<doi:10.1177/0022343319881175>.")
     (license license:gpl3+)))
 
 (define-public r-iglu

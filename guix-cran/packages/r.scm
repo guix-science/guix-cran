@@ -5192,6 +5192,48 @@ provides utility functions to simulate various scenarios to compare performances
 of different algorithms.")
     (license license:expat)))
 
+(define-public r-rsurvstat
+  (package
+    (name "r-rsurvstat")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsurvstat" version))
+       (sha256
+        (base32 "02bjhzcqhbrirjnrawfxf2cr61i93wh4ifjq9h2sf60dsyya7ni2"))))
+    (properties `((upstream-name . "rsurvstat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-whisker
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-locfit
+                             r-httr
+                             r-fs
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://bristol-vaccine-centre.github.io/rsurvstat/index.html")
+    (synopsis
+     "Download Infectious Disease Data from 'SurvStat' (Robert Koch Institute)")
+    (description
+     "This package provides an interface to the @code{SurvStat} web service from the
+Robert Koch Institute
+(<https://tools.rki.de/@code{SurvStat/SurvStatWebService.svc>}) allowing
+downloads of disease time series stratified by pathogen type and subtype, age,
+and geography from notifiable disease reports in Germany.")
+    (license license:expat)))
+
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
@@ -5520,6 +5562,41 @@ numbers from different sources.")
      "This package provides functions to access data from the Strava v3 API
 <https://developers.strava.com/>.")
     (license license:cc0)))
+
+(define-public r-rstr
+  (package
+    (name "r-rstr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSTr" version))
+       (sha256
+        (base32 "0cjxk3083zllylvahs218nxx5mqwlkvmblhm67jza4mdmbv5xqn8"))))
+    (properties `((upstream-name . "RSTr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep r-rcppdist r-rcpparmadillo r-rcpp r-abind))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cehi-code-repos.github.io/RSTr/")
+    (synopsis "Gibbs Samplers for Discrete Bayesian Spatiotemporal Models")
+    (description
+     "Takes Poisson or Binomial discrete spatial data and runs a Gibbs sampler for a
+variety of Spatiotemporal Conditional Autoregressive (CAR) models.  Includes
+measures to prevent estimate over-smoothing through a restriction of model
+informativeness for select models.  Also provides tools to load output and get
+median estimates.  Implements methods from Besag, York, and MolliÃ© (1991)
+\"Bayesian image restoration, with two applications in spatial statistics\"
+<doi:10.1007/BF00116466>, Gelfand and Vounatsou (2003) \"Proper multivariate
+conditional autoregressive models for spatial data analysis\"
+<doi:10.1093/biostatistics/4.1.11>, Quick et al. (2017) \"Multivariate
+spatiotemporal modeling of age-specific stroke mortality\"
+<doi:10.1214/17-AOAS1068>, and Quick et al. (2021) \"Evaluating the
+informativeness of the Besag-York-MolliÃ© CAR model\"
+<doi:10.1016/j.sste.2021.100420>.")
+    (license license:gpl3+)))
 
 (define-public r-rstoolbox
   (package
@@ -26571,13 +26648,13 @@ documents.")
 (define-public r-rifttable
   (package
     (name "r-rifttable")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rifttable" version))
        (sha256
-        (base32 "0jarzxm1i9qvw4vba7n0zrcjiz3vxkdkxgv67g3vybxg9lhz2jw2"))))
+        (base32 "0kkngbprbqdz5c1yr1434ckjcnh1448asdldlyp0z1hk2pkz7ynp"))))
     (properties `((upstream-name . "rifttable")))
     (build-system r-build-system)
     (arguments
@@ -30984,6 +31061,48 @@ limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 Safety Administration.")
     (license license:cc0)))
 
+(define-public r-rfae
+  (package
+    (name "r-rfae")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RFAE" version))
+       (sha256
+        (base32 "04pbcaq4i6br8m91h4frkafddjlcxic9ivnsdvwxnbqnh3qphcbj"))))
+    (properties `((upstream-name . "RFAE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rspectra
+                             r-rann
+                             r-ranger
+                             r-mgcv
+                             r-matrix
+                             r-foreach
+                             r-data-table
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bips-hb/RFAE")
+    (synopsis "Autoencoding Random Forests")
+    (description
+     "Autoencoding Random Forests ('RFAE') provide a method to autoencode mixed-type
+tabular data using Random Forests ('RF'), which involves projecting the data to
+a latent feature space of user-chosen dimensionality (usually a lower
+dimension), and then decoding the latent representations back into the input
+space.  The encoding stage is useful for feature engineering and data
+visualisation tasks, akin to how principal component analysis ('PCA') is used,
+and the decoding stage is useful for compression and denoising tasks.  At its
+core, RFAE is a post-processing pipeline on a trained random forest model.  This
+means that it can accept any trained RF of ranger object type: RF', URF or ARF'.
+ Because of this, it inherits Random Forests robust performance and capacity to
+seamlessly handle mixed-type tabular data.  For more details, see Vu et al.
+(2025) <doi:10.48550/@code{arXiv.2505.21441>}.")
+    (license license:gpl3+)))
+
 (define-public r-rfacts
   (package
     (name "r-rfacts")
@@ -31235,38 +31354,6 @@ Hausman, Jeffrey (1978) <doi:10.2307/1913827>.  Allison, Paul (2009)
 <doi:10.4135/9781412993869>.  Neuhaus, J.M., and J. D. Kalbfleisch (1998)
 <doi:10.2307/3109770>.")
     (license license:gpl2+)))
-
-(define-public r-revulyticsr
-  (package
-    (name "r-revulyticsr")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "revulyticsR" version))
-       (sha256
-        (base32 "0dz9c26qwasgpp6a5fqh1rgq0hp9dhsrcm1h2hbp0cisri8iwsjf"))))
-    (properties `((upstream-name . "revulyticsR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://github.com/chrisumphlett/revulyticsR")
-    (synopsis "Connect to Your 'Revulytics' Data")
-    (description
-     "Facilitates making a connection to the Revulytics API and executing various
-queries.  You can use it to get event data and metadata.  The Revulytics
-documentation is available at <https://docs.revenera.com/ui560/report/>.  This
-package is not supported by Flexera (owner of the software).")
-    (license license:cc0)))
 
 (define-public r-revtools
   (package
@@ -44954,20 +45041,20 @@ embedded in a web page ready for its interactive analysis and exploration.")
 (define-public r-rd2roxygen
   (package
     (name "r-rd2roxygen")
-    (version "1.17")
+    (version "1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rd2roxygen" version))
        (sha256
-        (base32 "0q3xx6sidc21mmw5jzpr14vak8rkcchaahjh3vi29ws02n9j0ssl"))))
+        (base32 "0b95x4165a1jkhk684za42z2ddx53fcax7sg5qld8xgl9azi1cig"))))
     (properties `((upstream-name . "Rd2roxygen")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xfun r-roxygen2 r-formatr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://github.com/yihui/Rd2roxygen")
     (synopsis "Convert Rd to 'Roxygen' Documentation")
     (description
@@ -45964,13 +46051,13 @@ the rredis package.")
 (define-public r-rcppquantuccia
   (package
     (name "r-rcppquantuccia")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppQuantuccia" version))
        (sha256
-        (base32 "080b7yrh9wap0dpiflhky8z4v2zzmlji3z8ixv7h5j509z1xyf3i"))))
+        (base32 "0hhyc1nkls6yn7bhzrilf11a9snsyih6y41z8j47ra3pxww5rmrh"))))
     (properties `((upstream-name . "RcppQuantuccia")))
     (build-system r-build-system)
     (arguments
@@ -60007,46 +60094,4 @@ structure optimization - Mauro Scanagatta (2016)
 (4) structure learning on incomplete data sets - Mauro Scanagatta (2018)
 <doi:10.1016/j.ijar.2018.02.004>.  Distributed under the LGPL-3 by IDSIA.")
     (license license:lgpl3)))
-
-(define-public r-r-alpha-home
-  (package
-    (name "r-r-alpha-home")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "R.AlphA.Home" version))
-       (sha256
-        (base32 "1xgqwhv0xl6mk9wlfbl7cg5sn25jwznsph5pqpk32i4x0dpfn59d"))))
-    (properties `((upstream-name . "R.AlphA.Home")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-shinywidgets
-                             r-shiny
-                             r-rstudioapi
-                             r-r6
-                             r-r-utils
-                             r-qs
-                             r-openxlsx
-                             r-magrittr
-                             r-lubridate
-                             r-ggplot2
-                             r-dplyr
-                             r-diffr
-                             r-data-table
-                             r-arrow))
-    (home-page "https://github.com/R-alpha-act/R.AlphA.Home")
-    (synopsis
-     "Feel at Home using R, Thanks to Shortcuts Functions Making it Simple")
-    (description
-     "This package provides a collection of personal functions designed to simplify
-and streamline common R programming tasks.  This package provides reusable tools
-and shortcuts for frequently used calculations and workflows.")
-    (license license:gpl3)))
 

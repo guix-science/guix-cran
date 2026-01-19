@@ -862,32 +862,6 @@ the algorithm of Efraimidis and Spirakis (2006) <doi:10.1016/j.ipl.2005.11.003>
 and Wong and Easton (1980) <doi:10.1137/0209009>.")
     (license license:gpl3)))
 
-(define-public r-wrss
-  (package
-    (name "r-wrss")
-    (version "3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WRSS" version))
-       (sha256
-        (base32 "0fhmdnkk94m1bqm1i69szv3ycbkzr08xy30mwpqvbij9nh2sqj0w"))))
-    (properties `((upstream-name . "WRSS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nloptr r-network r-hmisc r-ggplot2 r-ggally))
-    (home-page "https://cran.r-project.org/package=WRSS")
-    (synopsis "Water Resources System Simulator")
-    (description
-     "Water resources system simulator is a tool for simulation and analysis of
-large-scale water resources systems.  WRSS proposes functions and methods for
-construction, simulation and analysis of primary storage and hydropower water
-resources features (e.g. reservoirs, aquifers, and etc.) based on Standard
-Operating Policy (SOP).")
-    (license license:gpl3)))
-
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
@@ -5878,6 +5852,37 @@ risk stratifier, the quantiles of the distributions of weight of evidence in
 cases and controls can be calculated and plotted.")
     (license license:gpl3)))
 
+(define-public r-westerlund
+  (package
+    (name "r-westerlund")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Westerlund" version))
+       (sha256
+        (base32 "1fjkqdrmw4ymhzl9c007ja9rlwksyb16glxcwm2j8pwfargr9n6r"))))
+    (properties `((upstream-name . "Westerlund")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-scales r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bosco-hung/WesterlundTest")
+    (synopsis "Panel Cointegration Tests Based on Westerlund (2007)")
+    (description
+     "This package implements a functional approximation of the four panel
+cointegration tests developed by Westerlund (2007)
+<doi:10.1111/j.1468-0084.2007.00477.x>.  The tests are based on structural
+rather than residual dynamics and allow for heterogeneity in both the long-run
+cointegrating relationship and the short-run dynamics.  The package includes
+logic for automated lag and lead selection via AIC, Bartlett kernel long-run
+variance estimation, and a bootstrap procedure to handle cross-sectional
+dependence.  It also includes a bootstrapping distribution visualization
+function for diagnostic purposes.")
+    (license license:expat)))
+
 (define-public r-wemix
   (package
     (name "r-wemix")
@@ -9349,13 +9354,13 @@ modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
 (define-public r-watson
   (package
     (name "r-watson")
-    (version "0.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watson" version))
        (sha256
-        (base32 "0wpkdqpayc87h6s2dsndsl8v5hww69y7mdsvq58b8jg0sk5axhsl"))))
+        (base32 "154sq86ghabc90bf64402gf84f3wjcakn39djl0ix2gwh5awlcqi"))))
     (properties `((upstream-name . "watson")))
     (build-system r-build-system)
     (arguments
@@ -9366,18 +9371,19 @@ modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
     (synopsis "Fitting and Simulating Mixtures of Watson Distributions")
     (description
      "This package provides tools for fitting and simulating mixtures of Watson
-distributions.  The random sampling scheme of the package offers two sampling
-algorithms that are based of the results of Sablica, Hornik and Leydold (2022)
-<doi:10.1080/10618600.2024.2416521>.  What is more, the package offers a smart
-tool to combine these two methods, and based on the selected parameters, it
-approximates the relative sampling speed for both methods and picks the faster
-one.  In addition, the package offers a fitting function for the mixtures of
-Watson distribution, that uses the expectation-maximization (EM) algorithm.
-Special features are the possibility to use multiple variants of the E-step and
-M-step, sparse matrices for the data representation and state of the art methods
-for numerical evaluation of needed special functions using the results of
-Sablica and Hornik (2022) <doi:10.1090/mcom/3690> and Sablica and Hornik (2024)
-<doi:10.1016/j.jmaa.2024.128262>.")
+distributions.  The package is described in Sablica, Hornik and Leydold (2026)
+<doi:10.18637/jss.v115.i04>.  The random sampling scheme of the package offers
+two sampling algorithms that are based of the results of Sablica, Hornik and
+Leydold (2022) <doi:10.1080/10618600.2024.2416521>.  What is more, the package
+offers a smart tool to combine these two methods, and based on the selected
+parameters, it approximates the relative sampling speed for both methods and
+picks the faster one.  In addition, the package offers a fitting function for
+the mixtures of Watson distribution, that uses the expectation-maximization (EM)
+algorithm.  Special features are the possibility to use multiple variants of the
+E-step and M-step, sparse matrices for the data representation and state of the
+art methods for numerical evaluation of needed special functions using the
+results of Sablica and Hornik (2022) <doi:10.1090/mcom/3690> and Sablica and
+Hornik (2024) <doi:10.1016/j.jmaa.2024.128262>.")
     (license license:gpl3)))
 
 (define-public r-wats

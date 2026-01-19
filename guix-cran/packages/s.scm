@@ -5625,13 +5625,13 @@ available at <https://surveydefense.org>.")
 (define-public r-surveydata
   (package
     (name "r-surveydata")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydata" version))
        (sha256
-        (base32 "0wrp92j50a19is4xvh5s82zkp3rvn46gi2344pxinppfax0kjf2h"))))
+        (base32 "1wgfb8yq5vpaccsvi2rqakxad3hx1k64y21g19vxp57qrrwrl6y3"))))
     (properties `((upstream-name . "surveydata")))
     (build-system r-build-system)
     (arguments
@@ -22768,6 +22768,54 @@ Time Series (BSTS) model based on @code{CausalImpact}', as described in
 Brodersen et al. (2015) <doi:10.1214/14-AOAS788>.")
     (license license:gpl2)))
 
+(define-public r-sportminer
+  (package
+    (name "r-sportminer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SportMiner" version))
+       (sha256
+        (base32 "1jp9dq4ndsxxyy98r98icr34m1ynhz13xqyda3aklhrs8ki6q51b"))))
+    (properties `((upstream-name . "SportMiner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-widyr
+                             r-topicmodels
+                             r-tidytext
+                             r-tidyr
+                             r-textminer
+                             r-stm
+                             r-snowballc
+                             r-slam
+                             r-scales
+                             r-rscopus
+                             r-rlang
+                             r-matrix
+                             r-magrittr
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/praveenmaths89/SportMiner")
+    (synopsis "Text Mining and Topic Modeling for Sport Science Literature")
+    (description
+     "This package provides a comprehensive toolkit for mining, analyzing, and
+visualizing scientific literature in sport science domains.  Provides functions
+for retrieving abstracts from Scopus', preprocessing text data, performing
+advanced topic modeling using Latent Dirichlet Allocation ('LDA'), Structural
+Topic Models ('STM'), and Correlated Topic Models ('CTM'), and creating
+publication-ready visualizations including keyword co-occurrence networks and
+topic trends.  For methodological details see Blei et al. (2003)
+<doi:10.1162/jmlr.2003.3.4-5.993> for LDA', Roberts et al. (2014)
+<doi:10.1111/ajps.12103> for STM', and Blei and Lafferty (2007)
+<doi:10.1214/07-AOAS114> for CTM'.")
+    (license license:expat)))
+
 (define-public r-sport
   (package
     (name "r-sport")
@@ -23928,6 +23976,32 @@ splits (hence splitfngr') them so the results can be accessed separately.  The
 functions provided allow this to be done with any number of functions/values,
 not just for functions and gradients.")
     (license license:gpl3)))
+
+(define-public r-split
+  (package
+    (name "r-split")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SPlit" version))
+       (sha256
+        (base32 "0rb9pd4kvf0j7x8rz0flhpy0x2ygw8xglcfgm6sw2zxral0nxbq4"))))
+    (properties `((upstream-name . "SPlit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=SPlit")
+    (synopsis "Split a Dataset for Training and Testing")
+    (description
+     "Procedure to optimally split a dataset for training and testing.  SPlit is based
+on the method of support points, which is independent of modeling methods.
+Please see Joseph and Vakayil (2021) <doi:10.1080/00401706.2021.1921037> for
+details.  This work is supported by U.S. National Science Foundation grant
+DMREF-1921873.")
+    (license license:gpl2+)))
 
 (define-public r-splinets
   (package
@@ -34619,31 +34693,6 @@ data.  Soc.ca is optimized to the needs of the social scientist and presents
 easily interpretable results in near publication ready quality.")
     (license license:gpl3)))
 
-(define-public r-sobolsequence
-  (package
-    (name "r-sobolsequence")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SobolSequence" version))
-       (sha256
-        (base32 "1wwn70gaccp27hpfwnc385jc9g9gdhnknvikyc3kp77hvrlkxjic"))))
-    (properties `((upstream-name . "SobolSequence")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "http://web.maths.unsw.edu.au/~fkuo/sobol/")
-    (synopsis "Sobol Sequences with Better Two-Dimensional Projections")
-    (description
-     "R implementation of S. Joe and F. Y. Kuo (2008) <DOI:10.1137/070709359>.  The
-implementation is based on the data file new-joe-kuo-6.21201
-<http://web.maths.unsw.edu.au/~fkuo/sobol/>.")
-    (license license:bsd-3)))
-
 (define-public r-sobolnp
   (package
     (name "r-sobolnp")
@@ -37170,13 +37219,13 @@ residuals.")
 (define-public r-smle
   (package
     (name "r-smle")
-    (version "2.2-2")
+    (version "2.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMLE" version))
        (sha256
-        (base32 "1z2517wglbkqd1f9xqx2hnf70qg5rbvknyfgzwcrdvrp4dwi5d6b"))))
+        (base32 "0bnnifhcx0h3s2q4jdp6rs99d7inpj5icy9hjwc67nrsd3p1d6d1"))))
     (properties `((upstream-name . "SMLE")))
     (build-system r-build-system)
     (arguments
@@ -37195,7 +37244,8 @@ joint effects among features in the screening process.  This package provides an
 efficient implementation of SMLE-screening for high-dimensional linear,
 logistic, and Poisson models.  The package also provides a function for
 conducting accurate post-screening feature selection based on an iterative
-hard-thresholding procedure and a user-specified selection criterion.")
+hard-thresholding procedure and a user-specified selection criterion.  Zang, Xu,
+and Burkett (2025)<doi:10.18637/jss.v115.i08>.")
     (license license:gpl3)))
 
 (define-public r-smitidstruct
@@ -40642,6 +40692,46 @@ skew-normal-Cauchy presented in Kahrari et al. (2020)
 <doi:10.1080/03610918.2020.1804582>.")
     (license license:gpl2+)))
 
+(define-public r-skewlmm
+  (package
+    (name "r-skewlmm")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "skewlmm" version))
+       (sha256
+        (base32 "00f59krywrvnkjii91kms6f7a9nal4kdk53vjwvhhyvc7dgm1sfk"))))
+    (properties `((upstream-name . "skewlmm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncatednormal
+                             r-purrr
+                             r-optimparallel
+                             r-numderiv
+                             r-nlme
+                             r-mvtnorm
+                             r-momtrunc
+                             r-moments
+                             r-matrixcalc
+                             r-haven
+                             r-ggrepel
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dplyr))
+    (home-page "https://github.com/fernandalschumacher/skewlmm")
+    (synopsis "Scale Mixture of Skew-Normal Linear Mixed Models")
+    (description
+     "It fits scale mixture of skew-normal linear mixed models using either an
+expectationâmaximization (EM) type algorithm or its accelerated version
+(Damped Anderson Acceleration with Epsilon Monotonicity, DAAREM), including some
+possibilities for modeling the within-subject dependence
+<doi:10.18637/jss.v115.i07>.")
+    (license license:expat)))
+
 (define-public r-skewhyperbolic
   (package
     (name "r-skewhyperbolic")
@@ -41069,24 +41159,19 @@ measurements from forensic glass evidence\", Science & Justice, 37(4), 241--244)
 (define-public r-sjtable2df
   (package
     (name "r-sjtable2df")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sjtable2df" version))
        (sha256
-        (base32 "1nw2mpkgglrw9al63ffnf2zw6clip5jci1cwjy6k546cxlq0f96v"))))
+        (base32 "0r5l2kvcqii6qc65fcjr7i8rw28bkyck090f80qayddvsdhnq9xy"))))
     (properties `((upstream-name . "sjtable2df")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-rvest
-                             r-rlang
-                             r-magrittr
-                             r-kableextra
-                             r-data-table))
+    (propagated-inputs (list r-xml2 r-rvest r-rlang r-kableextra r-data-table))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/sjtable2df")
     (synopsis "Convert 'sjPlot' HTML-Tables to R 'data.frame'")
@@ -42784,55 +42869,6 @@ package are described in greater depth in Bien, J. (2016) \"The simulator: An
 Engine to Streamline Simulations,\" which is available at
 <@code{arXiv:1607.00021>}.")
     (license license:gpl3)))
-
-(define-public r-simulatedce
-  (package
-    (name "r-simulatedce")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simulateDCE" version))
-       (sha256
-        (base32 "1558l8iydh86451hy076cgwgs2gpfg855hq05b81pqqfqammnkdq"))))
-    (properties `((upstream-name . "simulateDCE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tictoc
-                             r-tibble
-                             r-stringr
-                             r-rmarkdown
-                             r-readr
-                             r-qs
-                             r-purrr
-                             r-psych
-                             r-mixl
-                             r-magrittr
-                             r-kableextra
-                             r-glue
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-formula-tools
-                             r-evd
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=simulateDCE")
-    (synopsis "Simulate Data for Discrete Choice Experiments")
-    (description
-     "Supports simulating choice experiment data for given designs.  It helps to
-quickly test different designs against each other and compare the performance of
-new models.  The goal of @code{simulateDCE} is to make it easy to simulate
-choice experiment datasets using designs from NGENE', idefix or spdesign'.  You
-have to store the design file(s) in a sub-directory and need to specify certain
-parameters and the utility functions for the data generating process.  For more
-details on choice experiments see Mariel et al. (2021)
-<doi:10.1007/978-3-030-62669-3>.")
-    (license license:expat)))
 
 (define-public r-simulariatools
   (package
@@ -51721,13 +51757,13 @@ displayed on fullscreen and use buttons to trigger the fullscreen view.")
 (define-public r-shinyfilters
   (package
     (name "r-shinyfilters")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyfilters" version))
        (sha256
-        (base32 "16f65d2aqi8vf6aryz803wim3id0zcdc0dm3mkps72309r31zi8v"))))
+        (base32 "068mrn03z2aaanv6d6x253ad7cqzvzw9c6wxm6lwgwxaj0kdswrx"))))
     (properties `((upstream-name . "shinyfilters")))
     (build-system r-build-system)
     (arguments
@@ -51736,7 +51772,8 @@ displayed on fullscreen and use buttons to trigger the fullscreen view.")
     (propagated-inputs (list r-shiny r-s7))
     (native-inputs (list r-knitr))
     (home-page "https://joshwlivingston.github.io/shinyfilters/")
-    (synopsis "Use 'shiny' to Filter Data")
+    (synopsis
+     "Create 'shiny' Inputs from Vectors, 'data.frames', or any R Object")
     (description
      "This package provides an interface to shiny inputs used for filtering vectors,
 data.frames, and other objects.  S7'-based implementation allows for seamless
@@ -64577,37 +64614,6 @@ group based at the Department of History and Classical Studies at Aarhus
 University.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-sdafilter
-  (package
-    (name "r-sdafilter")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sdafilter" version))
-       (sha256
-        (base32 "0y692j25pln46dp6xvaq17fkym0461yqfa6rv5avfw2b240k8jiq"))))
-    (properties `((upstream-name . "sdafilter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-poet r-huge r-glmnet r-glasso))
-    (home-page "https://cran.r-project.org/package=sdafilter")
-    (synopsis "Symmetrized Data Aggregation")
-    (description
-     "We develop a new class of distribution free multiple testing rules for false
-discovery rate (FDR) control under general dependence.  A key element in our
-proposal is a symmetrized data aggregation (SDA) approach to incorporating the
-dependence structure via sample splitting, data screening and information
-pooling.  The proposed SDA filter first constructs a sequence of ranking
-statistics that fulfill global symmetry properties, and then chooses a data
-driven threshold along the ranking to control the FDR. For more information, see
-the website below and the accompanying paper: Du et al. (2020), \"False Discovery
-Rate Control Under General Dependence By Symmetrized Data Aggregation\",
-<@code{arXiv:2002.11992>}.")
-    (license license:gpl2+)))
-
 (define-public r-sdaa
   (package
     (name "r-sdaa")
@@ -75252,29 +75258,6 @@ but can be extended via custom functions.  It also uses a modular approach to
 compute velocity and acceleration from noisy samples.  Finally, you can obtain
 methods votes per gaze sample instead of saccades.")
     (license license:gpl3+)))
-
-(define-public r-sac
-  (package
-    (name "r-sac")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sac" version))
-       (sha256
-        (base32 "1yg133zm0db2lv0m62ij7c27bs4k3kbjic15dwrak534lk885sj2"))))
-    (properties `((upstream-name . "sac")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=sac")
-    (synopsis "Semiparametric Analysis of Change-Point")
-    (description
-     "Semiparametric empirical likelihood ratio based tests of change-point with
-one-change or epidemic alternatives with data-based model diagnostic are
-contained.")
-    (license license:gpl2+)))
 
 (define-public r-sabre
   (package

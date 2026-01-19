@@ -6252,13 +6252,13 @@ et al. (2016) <doi:10.1016/j.rse.2016.05.028>, as well as supporting functions."
 (define-public r-crownscorchtls
   (package
     (name "r-crownscorchtls")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrownScorchTLS" version))
        (sha256
-        (base32 "0khcyylad229yq3ycadvb3pmkdgndcdaxy8q2fq0ix2bm67jrp53"))))
+        (base32 "06lb9kky28crwmc1rjv1320ppbdyblf55bylc5h4hr5l8q9s7lak"))))
     (properties `((upstream-name . "CrownScorchTLS")))
     (build-system r-build-system)
     (arguments
@@ -12259,13 +12259,13 @@ maps.")
 (define-public r-countr
   (package
     (name "r-countr")
-    (version "3.6")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Countr" version))
        (sha256
-        (base32 "0ixk2dwbdw1nmf93xv5w8rkyfdcwcr50n1mz77j5pb301kh2bby4"))))
+        (base32 "1jrpwk18hmgs32y5izvmgscb2yxy3agawmw39vq0gva0iz6jyfa4"))))
     (properties `((upstream-name . "Countr")))
     (build-system r-build-system)
     (arguments
@@ -12276,13 +12276,11 @@ maps.")
                              r-rdpack
                              r-rcpparmadillo
                              r-rcpp
-                             r-rcolorbrewer
                              r-pscl
                              r-optimx
                              r-numderiv
                              r-matrix
                              r-mass
-                             r-lattice
                              r-formula
                              r-flexsurv
                              r-dplyr
@@ -12981,20 +12979,20 @@ fine-scale space-time simulation of storms (or even cyclone-mimicking fields).")
 (define-public r-cosmofns
   (package
     (name "r-cosmofns")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cosmoFns" version))
        (sha256
-        (base32 "0py0wmdpxk8ldq1wbwg4x1hxkjblar83x3ya30n4377d4lbc3xb7"))))
+        (base32 "19q9xp93ng11dxrlbms40v3pv3jzmy7g7mjg74yb31z0cla0amr7"))))
     (properties `((upstream-name . "cosmoFns")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=cosmoFns")
-    (synopsis "Functions for Cosmological Distances, Times, Luminosities, Etc")
+    (synopsis "Cosmological Distances, Times, Luminosities, Etc")
     (description
      "Package encapsulates standard expressions for distances, times, luminosities,
 and other quantities useful in observational cosmology, including molecular line
@@ -21882,13 +21880,13 @@ such a compilation database.")
 (define-public r-compclassmetrics
   (package
     (name "r-compclassmetrics")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompClassMetrics" version))
        (sha256
-        (base32 "1wzql34j3a58ixxcdkqwxvhfgwqcxpmpkcx53gsvm5gwp0w2l5gc"))))
+        (base32 "1sxa7rzbj5z6ny6jxzgq4kvnr10zdaax9fh41drgsc41ahwjkxjx"))))
     (properties `((upstream-name . "CompClassMetrics")))
     (build-system r-build-system)
     (arguments
@@ -21903,9 +21901,9 @@ diagnostic tests or biomarkers.  Among them, metrics based on the ROC framework
 are particularly popular.  When classification involves subclasses, the package
 @code{CompClassMetrics} includes functions that can provide the point estimate,
 confidence interval as well as true values if a parametric setting is known.
-For more details see Nan and Tian (2025) <doi:10.1177/09622802251343600> and Nan
-and Tian (2023) <doi:10.1002/sim.9908> and Feng and Tian (2020)
-<doi:10.1177/0962280220938077>.")
+For more details see Nan and Tian (2025) <doi:10.1177/09622802251343600>, Nan
+and Tian (2023) <doi:10.1002/sim.9908>, Feng and Tian (2020)
+<doi:10.1177/0962280220938077> and Wang et al (2016) <doi:10.1002/sim.6843>.")
     (license license:expat)))
 
 (define-public r-compas
@@ -29870,37 +29868,6 @@ qualitative or a mixture of both.")
      "Network-based clustering using a Bayesian network mixture model with optional
 covariate adjustment.")
     (license license:gpl3)))
-
-(define-public r-clustmd
-  (package
-    (name "r-clustmd")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clustMD" version))
-       (sha256
-        (base32 "0w4s9dab2mm5x0xibyl6s101c64if945a2cmwin9psd95p76mcny"))))
-    (properties `((upstream-name . "clustMD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-truncnorm
-                             r-reshape2
-                             r-mvtnorm
-                             r-msm
-                             r-mclust
-                             r-mass
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=clustMD")
-    (synopsis "Model Based Clustering for Mixed Data")
-    (description
-     "Model-based clustering of mixed data (i.e.  data which consist of continuous,
-binary, ordinal or nominal variables) using a parsimonious mixture of latent
-Gaussian variable models.")
-    (license license:gpl2)))
 
 (define-public r-clustmc
   (package
@@ -40046,6 +40013,30 @@ learnr package, the checkdown package works serverlessly without shiny'.")
 transcribed accurately.  The functions provided by this package help to
 calculate and verify check digits according to various algorithms.")
     (license license:gpl3+)))
+
+(define-public r-checkcli
+  (package
+    (name "r-checkcli")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "checkCLI" version))
+       (sha256
+        (base32 "1dl242b3m3gf4wsn1czs7cmbgajyarxjbjl12g154p72i97vsmbj"))))
+    (properties `((upstream-name . "checkCLI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-purrr r-glue r-cli r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=checkCLI")
+    (synopsis "'CLI' Messages for Checkmate Assertions and Checks")
+    (description
+     "Providing more beautiful and more meaningful return messages for checkmate
+assertions and checks helping users to better understand errors.")
+    (license license:expat)))
 
 (define-public r-checkarg
   (package

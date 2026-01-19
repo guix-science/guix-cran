@@ -9136,47 +9136,6 @@ philosophy of Domean is described in Guo G.(2025)
 <doi:10.1016/j.physa.2024.130308>.")
     (license license:expat)))
 
-(define-public r-dola
-  (package
-    (name "r-dola")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DoLa" version))
-       (sha256
-        (base32 "00zc8d050mfz06rfzja58l2baffp7kkwg3zxnvp39cwwdgw1kxzh"))))
-    (properties `((upstream-name . "DoLa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-stringr
-                             r-rmarkdown
-                             r-reshape2
-                             r-openxlsx
-                             r-knitr
-                             r-dplyr))
-    (home-page "https://github.com/ppagliosa/DoLa")
-    (synopsis "Do CurrÃ­culo Lattes Para o Programa de PÃ³s-GraduaÃ§Ã£o")
-    (description
-     "Managing postgraduate programmes involves extracting information from Lattes
-CVs.  This information can be used for strategic planning and self-evaluation,
-as well as for producing reports on the Sucupira Platform.  Summary reports are
-produced for each period and course (specialisation, master's and doctorate),
-showing bibliographic production with and without student participation, as well
-as papers at events, technical or technological production, ongoing and
-completed supervision, research projects, exchanges (visiting professor,
-postdoctoral or short-term leave), awards and general activity indicators.
-Based on this information, a detailed report is then drawn up for each lecturer,
-taking into account their participation in exam boards, their research project
-contributions, their technical collaborations (e.g. advisory committee,
-editorial board) and the subjects they teach.  For more details see Pagliosa and
-Nascimento (2021)
-<https://repositorio.ufsc.br/bitstream/handle/123456789/231602/@code{ManualLattesGeociencias11_2021_versaobeta%20%281%29.pdf?sequence=1&isAllowed=y>}.")
-    (license license:gpl3+)))
-
 (define-public r-doicreator
   (package
     (name "r-doicreator")
@@ -14787,13 +14746,13 @@ out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
 (define-public r-discord
   (package
     (name "r-discord")
-    (version "1.2.4.1")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discord" version))
        (sha256
-        (base32 "0z2n71vfs66zyrdnq4mib1i7m4f7qj77m13m15hlqjri1r1cpvvj"))))
+        (base32 "1ai8m1krbk331bwbhdn676vf9zvplz7p2n9bbvmbwqaq5j6zcl2y"))))
     (properties `((upstream-name . "discord")))
     (build-system r-build-system)
     (arguments
@@ -14808,8 +14767,8 @@ sibling-based quasi-experimental designs).  Contains data restructuring
 functions and functions for generating biometrically informed data for kin
 pairs.  See [Garrison and Rodgers, 2016 <doi:10.1016/j.intell.2016.08.008>],
 [Sims, Trattner, and Garrison, 2024 <doi:10.3389/fpsyg.2024.1430978>] for
-empirical examples, and Garrison and colleagues for theoretical work
-<https://osf.io/zpdwt/>.")
+empirical examples, and [Garrison and colleagues for theoretical work
+<doi:10.1101/2025.08.25.25334395>].")
     (license license:gpl3)))
 
 (define-public r-discnorm
@@ -17639,37 +17598,6 @@ difference-in-differences estimator for staggered (and non-staggered) treatment
 contexts.")
     (license license:expat)))
 
-(define-public r-diderot
-  (package
-    (name "r-diderot")
-    (version "0.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Diderot" version))
-       (sha256
-        (base32 "04d1drxn99r0fqq3zym7yyip9c8rfqhghq20q4zyb42l3hfgv9ai"))))
-    (properties `((upstream-name . "Diderot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-splitstackshape
-                             r-rcurl
-                             r-igraph
-                             r-foreach
-                             r-doparallel
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=Diderot")
-    (synopsis "Bibliographic Network Analysis")
-    (description
-     "Enables the user to build a citation network/graph from bibliographic data and,
-based on modularity and heterocitation metrics, assess the degree of
-awareness/cross-fertilization between two corpora/communities.  This toolset is
-optimized for Scopus data.")
-    (license license:gpl2+)))
-
 (define-public r-didec
   (package
     (name "r-didec")
@@ -19508,13 +19436,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfms" version))
        (sha256
-        (base32 "1rvxl1i7pznyicz85irmnmlkhpfhk46xgzgr8hlczipfqbp3hc5d"))))
+        (base32 "0h6ps0zd3qj1kbcki2af5pyck02qffkg9zssl3r0snz7dxvgbfh6"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (arguments

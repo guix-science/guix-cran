@@ -3060,13 +3060,13 @@ normalized demand across those time periods.")
 (define-public r-npdoseresponse
   (package
     (name "r-npdoseresponse")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npDoseResponse" version))
        (sha256
-        (base32 "0gfr210xxq1lq4c60a1fzwjcqcs9m9jixlqlzy0mblbcab3br6h1"))))
+        (base32 "14zj4gwyy1hk95y2cgii9g8m6ccmp2jzw90sl08hdypy0lyfk39q"))))
     (properties `((upstream-name . "npDoseResponse")))
     (build-system r-build-system)
     (arguments
@@ -8561,13 +8561,13 @@ nlmixr2 objects.")
 (define-public r-nlmixr2lib
   (package
     (name "r-nlmixr2lib")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2lib" version))
        (sha256
-        (base32 "0qaikvpkfbd5i4ilznx6znm1x1qfqmdxbi4l4bx6dx8426l2324v"))))
+        (base32 "16jbza6s3r6ki8n6m22fjx3csq946hlpp1bv8v2kgpzrwn9xfy59"))))
     (properties `((upstream-name . "nlmixr2lib")))
     (build-system r-build-system)
     (arguments
@@ -17846,13 +17846,13 @@ dataframe-friendly format.")
 (define-public r-naryn
   (package
     (name "r-naryn")
-    (version "2.6.31")
+    (version "2.6.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naryn" version))
        (sha256
-        (base32 "0q6hsa9x08rzrh545cp4m9kdsf0dr69qsxq1xr55yzbyxqwjpqkj"))))
+        (base32 "10m0xnk2xk2yhcd4pkm35jvrpshh62p8nmpy1s9lk8bkw5msx16p"))))
     (properties `((upstream-name . "naryn")))
     (build-system r-build-system)
     (arguments

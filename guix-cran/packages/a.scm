@@ -908,13 +908,13 @@ Identity and Access Management ('IAM') API <https://aws.amazon.com/iam/>.")
 (define-public r-aws-ecx
   (package
     (name "r-aws-ecx")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aws.ecx" version))
        (sha256
-        (base32 "1yz20h2k5rf13jsgpk8aj6d27a1zj602g916pngq525m08cmbvka"))))
+        (base32 "1mkbg8a0p25f880c0wijv8xj27ibr7wic6la774ggvgh25jsn8j9"))))
     (properties `((upstream-name . "aws.ecx")))
     (build-system r-build-system)
     (arguments
@@ -2829,6 +2829,53 @@ by entering just a dataset and the name of the outcome column as inputs,
 @code{AutoGAM} tries to automate the procedure of configuring a highly accurate
 GAM which performs at reasonably high speed, even for large datasets.")
     (license license:expat)))
+
+(define-public r-autofrk
+  (package
+    (name "r-autofrk")
+    (version "1.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autoFRK" version))
+       (sha256
+        (base32 "08mq60ki0ryfg6iznxrrhys7lhdjw87ly6r98hwprr46ib71dp6j"))))
+    (properties `((upstream-name . "autoFRK")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spam
+                             r-rspectra
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-mgcv
+                             r-mass
+                             r-latticekrig
+                             r-fnn
+                             r-filematrix
+                             r-filehashsqlite
+                             r-filehash
+                             r-fields))
+    (home-page "https://cran.r-project.org/package=autoFRK")
+    (synopsis "Automatic Fixed Rank Kriging")
+    (description
+     "Automatic fixed rank kriging for (irregularly located) spatial data using a
+class of basis functions with multi-resolution features and ordered in terms of
+their resolutions.  The model parameters are estimated by maximum likelihood
+(ML) and the number of basis functions is determined by Akaike's information
+criterion (AIC).  For spatial data with either one realization or independent
+replicates, the ML estimates and AIC are efficiently computed using their
+closed-form expressions when no missing value occurs.  Details regarding the
+basis function construction, parameter estimation, and AIC calculation can be
+found in Tzeng and Huang (2018) <doi:10.1080/00401706.2017.1345701>.  For data
+with missing values, the ML estimates are obtained using the expectation-
+maximization algorithm.  Apart from the number of basis functions, there are no
+other tuning parameters, making the method fully automatic.  Users can also
+include a stationary structure in the spatial covariance, which utilizes
+@code{LatticeKrig} package.")
+    (license license:gpl2+)))
 
 (define-public r-autoflagr
   (package
@@ -6458,31 +6505,6 @@ Rmarkdown documents.")
 or pandoc syntax.  Package comes with a set of drivers for Sweave'.")
     (license license:gpl2+)))
 
-(define-public r-ascenttraining
-  (package
-    (name "r-ascenttraining")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ascentTraining" version))
-       (sha256
-        (base32 "1dwmr33jc2fp9x51kzlqa4vib7xmzvz9a7qlfgvhxhld2bxlrrgi"))))
-    (properties `((upstream-name . "ascentTraining")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://www.ascent.io/")
-    (synopsis "Ascent Training Datasets")
-    (description
-     "Datasets to be used primarily in conjunction with Ascent training materials but
-also for the book SAMS Teach Yourself R in 24 Hours (ISBN: 978-0-672-33848-9).
-Version 1.0-7 is largely for use with the book; however, version 1.1 has a much
-greater focus on use with training materials, whilst retaining compatibility
-with the book.")
-    (license license:gpl2)))
-
 (define-public r-asbio
   (package
     (name "r-asbio")
@@ -9851,20 +9873,19 @@ APHA(2017,ISBN:9780875532875).")
 (define-public r-aqp
   (package
     (name "r-aqp")
-    (version "2.2-1")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aqp" version))
        (sha256
-        (base32 "1gfcjyf9q4xx0zpmk75w2br3ccq9rmccaqiy5086ijwwld4j3pvs"))))
+        (base32 "0jwialhc60rczpw6qjazb7k0z1m0bn1q2x8vws9m5b0qvxiasadw"))))
     (properties `((upstream-name . "aqp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-lattice
+    (propagated-inputs (list r-lattice
                              r-farver
                              r-digest
                              r-data-table
@@ -14160,30 +14181,6 @@ explicit error control for false discovery, at least asymptotically.")
 independently from the authors of the paper.")
     (license license:expat)))
 
-(define-public r-ancestrymapper
-  (package
-    (name "r-ancestrymapper")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AncestryMapper" version))
-       (sha256
-        (base32 "1fr2y1a5rn7rq8aly94f618kywix32jwysi70nfhaqx8hf4zzprb"))))
-    (properties `((upstream-name . "AncestryMapper")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-svd))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AncestryMapper")
-    (synopsis "Assigning Ancestry Based on Population References")
-    (description
-     "Assigns genetic ancestry to an individual and studies relationships between
-local and global populations.")
-    (license license:gpl2)))
-
 (define-public r-anca
   (package
     (name "r-anca")
@@ -16208,25 +16205,25 @@ set of symmetric positive definite matrices.")
 (define-public r-alr4
   (package
     (name "r-alr4")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alr4" version))
        (sha256
-        (base32 "0v98yzi0fcjxq0ak0w05001h8m9nfa9l0ann9bqvz8bwcmb3jlr2"))))
+        (base32 "06q5sz3a577sr3hkqzkbya6pw3wpqyk9mg7rvrhl0rrq0x6n6ywm"))))
     (properties `((upstream-name . "alr4")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-effects r-car))
-    (home-page "http://www.z.umn.edu/alr4ed")
+    (home-page "http://z.umn.edu/alr4ed")
     (synopsis "Data to Accompany Applied Linear Regression 4th Edition")
     (description
-     "Datasets to Accompany S. Weisberg (2014, ISBN: 978-1-118-38608-8), \"Applied
-Linear Regression,\" 4th edition.  Many data files in this package are included
-in the `alr3` package as well, so only one of them should be used.")
+     "Datasets to Accompany S. Weisberg (2014), \"Applied Linear Regression,\" 4th
+edition.  Many data files in this package are included in the alr3 package as
+well, so only one of them should be used.")
     (license license:gpl2+)))
 
 (define-public r-alqrfe
@@ -22582,13 +22579,13 @@ Predetermination of adaptation rule is not required.")
 (define-public r-adproclus
   (package
     (name "r-adproclus")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adproclus" version))
        (sha256
-        (base32 "00n7nc11c47vcjz8zlx855dw9lq9d12qghx42hz1xy0ah0iqjh3q"))))
+        (base32 "00fdfxafgqjsvdi3yhdfln20fqwgadi3r8n6a8056zasqgp60mwy"))))
     (properties `((upstream-name . "adproclus")))
     (build-system r-build-system)
     (arguments

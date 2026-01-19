@@ -2338,13 +2338,13 @@ mathematical oncology can be found at Rockne et al. (2019)
 (define-public r-gtextras
   (package
     (name "r-gtextras")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtExtras" version))
        (sha256
-        (base32 "0iww95jvjdlm5a28fvnima2rf9rdhzb9wszmq3z5k2dd67v387qb"))))
+        (base32 "1g3pq2h5l75mgf5k2fdzjjkcdpmiivi4q8d04drp90ipx3b5ixmq"))))
     (properties `((upstream-name . "gtExtras")))
     (build-system r-build-system)
     (arguments
@@ -2620,6 +2620,37 @@ flexible export options (e.g., Text, CSV, Stata', or Excel formats).  This
 facilitates efficient post-simulation analysis for economic research and policy
 reporting.  Includes helper functions to filter, format, and customize outputs
 with reproducible styling.")
+    (license license:expat)))
+
+(define-public r-gtakeout
+  (package
+    (name "r-gtakeout")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtakeout" version))
+       (sha256
+        (base32 "0awh8bppi8r5wbmz68fqdgrn9h0536x8cfkqcdb09w7195mzv8vl"))))
+    (properties `((upstream-name . "gtakeout")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-here
+                             r-fs
+                             r-dplyr))
+    (home-page "https://github.com/jrosell/gtakeout")
+    (synopsis "Extract Data from Google Takeout")
+    (description
+     "This package provides functions to analyze data exported from Google Takeout'.
+The package supports unzipping archives and extracting user review data from
+Google Business Profile exports into tidy data frames for further analysis.")
     (license license:expat)))
 
 (define-public r-gt4ireval
@@ -3936,31 +3967,6 @@ rain, thaw and spring (seasonal thaw).  High-performance C++17 computation,
 annually aggregated variables, statistical testing and numerous plotting
 functions for high-quality visualization.")
     (license license:expat)))
-
-(define-public r-grto
-  (package
-    (name "r-grto")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GRTo" version))
-       (sha256
-        (base32 "1xkcx2agvrpfnmplgaqx70vz303v8rhwnxdyr4hmdlf4h92lbv8i"))))
-    (properties `((upstream-name . "GRTo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-bootstrap))
-    (home-page "https://cran.r-project.org/package=GRTo")
-    (synopsis
-     "Tools for the Analysis of Gutenberg-Richter Distributions of Earthquake Magnitudes")
-    (description
-     "Offers functions for the comparison of Gutenberg-Richter b-values.  Several
-functions in GRTo are helpful for the assessment of the quality of seismicity
-catalogs.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-grt
   (package
@@ -15566,31 +15572,6 @@ Journal of Statistical Software, Volume 114, Issue 9 (see
 <doi:10.18637/jss.v114.i09>).")
     (license license:gpl3)))
 
-(define-public r-glmc
-  (package
-    (name "r-glmc")
-    (version "0.3-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glmc" version))
-       (sha256
-        (base32 "0x6jk2l5rpjkp5x815gpiwv8maa7mhmy6m8gaxbv1cbn3zyccynn"))))
-    (properties `((upstream-name . "glmc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-emplik))
-    (home-page "https://cran.r-project.org/package=glmc")
-    (synopsis "Fitting Generalized Linear Models Subject to Constraints")
-    (description
-     "Fits generalized linear models where the parameters are subject to linear
-constraints.  The model is specified by giving a symbolic description of the
-linear predictor, a description of the error distribution, and a matrix of
-constraints on the parameters.")
-    (license license:gpl2+)))
-
 (define-public r-glmbb
   (package
     (name "r-glmbb")
@@ -19583,13 +19564,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "0iy0c1d04yllxiiavcc86jsrph1nl1wzmrr8fhsahwjwbaywr0zl"))))
+        (base32 "1szimnrf5b45jmal9kpy4h4qmiyr9nga609gkd23klc6hcnbpqmq"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -21464,6 +21445,38 @@ Abu-Akel et al. (2021) <doi:10.1371/journal.pone.0245100>.  Code is released
 under the MIT License; included datasets are licensed under the Creative Commons
 Attribution 4.0 International (CC BY 4.0).")
     (license license:expat)))
+
+(define-public r-gglycan
+  (package
+    (name "r-gglycan")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gglycan" version))
+       (sha256
+        (base32 "0z3p0z9d8f9rg4lvxlhwzl6l71s5d7f9wzl86396sizy5ziy2c9v"))))
+    (properties `((upstream-name . "gglycan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yulab-utils
+                             r-rlang
+                             r-igraph
+                             r-ggtangle
+                             r-ggstar
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=gglycan")
+    (synopsis "Plot Glycans using 'ggplot2'")
+    (description
+     "Plot glycans following the Symbol Nomenclature for Glycans (SNFG) using
+ggplot2'.  SNFG provides a standardized visual representation of glycan
+structures.")
+    (license license:artistic2.0)))
 
 (define-public r-gglorenz
   (package
@@ -24162,13 +24175,13 @@ joint interventions on multiple treatments.  See @code{McGrath} et al. (2020)
 (define-public r-gfm
   (package
     (name "r-gfm")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GFM" version))
        (sha256
-        (base32 "13v8gsn1zsxcji52n3mv1bik5xjqzg8n01rak1bvffm9qwakg571"))))
+        (base32 "0q887ag4z34avacnbnfkspcs396m5p419q0q15h484mw9knahp7z"))))
     (properties `((upstream-name . "GFM")))
     (build-system r-build-system)
     (arguments
@@ -24186,7 +24199,7 @@ respectively.  The factor matrix and loading matrix together with the number of
 factors can be well estimated.  This model can be employed in social and
 behavioral sciences, economy and finance, and genomics, to extract interpretable
 nonlinear factors.  More details can be referred to Wei Liu, Huazhen Lin,
-Shurong Zheng and Jin Liu. (2021) <doi:10.1080/01621459.2021.1999818>.")
+Shurong Zheng and Jin Liu. (2023) <doi:10.1080/01621459.2021.1999818>.")
     (license license:gpl3)))
 
 (define-public r-gfiultra
@@ -26973,19 +26986,20 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1ah9sf6ds8ds9g3p8dgv3ij10gdb5i8jld7mykwl97i00vzcq77s"))))
+        (base32 "19570wirf75fdgdli0z5klriv793r0djvgi5cxmmwrqcq4iqsw79"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vgam
+    (propagated-inputs (list r-withr
+                             r-vgam
                              r-spam
                              r-sp
                              r-sn
@@ -33068,13 +33082,13 @@ scalable, low-level I/O, or prefer a direct GDAL API.")
 (define-public r-gdalcubes
   (package
     (name "r-gdalcubes")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalcubes" version))
        (sha256
-        (base32 "1bamhr07byn06zcwllbrzb301qkngkkzig6kq5kd9d1agjwhmnbl"))))
+        (base32 "0rpmb6mxdkyb7c61f068bgd92m6krxkba74wl5awdvgsrjv7fw5b"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
     (arguments
@@ -34385,30 +34399,6 @@ incorporate the use of auxiliary information.  In this new version of the
 package, the mixture case is complemented with new functions for variance
 estimation by linearization and comparative density plots.")
     (license license:gpl2+)))
-
-(define-public r-gb
-  (package
-    (name "r-gb")
-    (version "2.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gb" version))
-       (sha256
-        (base32 "0gkdkbwr168vi7lgccla49l43rkmjcfrwlqdr65mg5syzcxrh7nh"))))
-    (properties `((upstream-name . "gb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-kernsmooth r-boot))
-    (home-page "https://cran.r-project.org/package=gb")
-    (synopsis "Generalize Lambda Distribution and Generalized Bootstrapping")
-    (description
-     "This package provides a collection of algorithms and functions for fitting data
-to a generalized lambda distribution via moment matching methods, and
-generalized bootstrapping.")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-gawdis
   (package

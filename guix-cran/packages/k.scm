@@ -4832,13 +4832,13 @@ publication.")
 (define-public r-keyatm
   (package
     (name "r-keyatm")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keyATM" version))
        (sha256
-        (base32 "09mk832ws42v0pf65p90cggwmz087dkfsksp3xg0l2fj3f0l0bdf"))))
+        (base32 "12lpwmb36dfph7ja4028bbb361ffqp9c738qlpknyd7pgyq2pf0i"))))
     (properties `((upstream-name . "keyATM")))
     (build-system r-build-system)
     (arguments
@@ -5820,13 +5820,13 @@ Guidoum (2020) <@code{arXiv:2012.06102>} [stat.CO]).")
 (define-public r-kdry
   (package
     (name "r-kdry")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdry" version))
        (sha256
-        (base32 "0svmm8ycl3gk0z9w2rps4hdqyrc6k3nl024fbmq3dwa3vlv56rs0"))))
+        (base32 "083qvk1520d04w66hlwwxar9vxh4ng5y73lkawqk2sfzcxvcrcc7"))))
     (properties `((upstream-name . "kdry")))
     (build-system r-build-system)
     (arguments
