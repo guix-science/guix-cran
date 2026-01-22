@@ -678,13 +678,13 @@ citation(\"@code{pwrFDR}\").")
 (define-public r-pwranova
   (package
     (name "r-pwranova")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwranova" version))
        (sha256
-        (base32 "1c215igw75iwsrrvfwj9h0gr9nrqv11mlk6f00x3704fdfwphlhf"))))
+        (base32 "0gwy00q9z2sp4w92ln249dcvmrznfbvgz0qcm9j8c4j1k288rdn2"))))
     (properties `((upstream-name . "pwranova")))
     (build-system r-build-system)
     (arguments
@@ -824,13 +824,13 @@ be easily visualized by statisticians and clinical researchers.")
 (define-public r-pwlmm
   (package
     (name "r-pwlmm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwlmm" version))
        (sha256
-        (base32 "0mqf26mx6bamnasknxj3fwsn60nkwh4h74wbr2950qwz1s320hmz"))))
+        (base32 "10xjx04d7w3l5q3xlbrgz4kyqfm6kmfxic4xw88lmjyh9g21g71w"))))
     (properties `((upstream-name . "pwlmm")))
     (build-system r-build-system)
     (arguments
@@ -2804,13 +2804,13 @@ and access detailed annotations.")
 (define-public r-pubchem-bio
   (package
     (name "r-pubchem-bio")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubchem.bio" version))
        (sha256
-        (base32 "145j90crrhc8vmzamk9cr9xd2a04yfv7a4pw7js7v673v0s414bk"))))
+        (base32 "0v77srz5nr9m8mk3h684fq00d3742nq5kfw0biy8nf44qydl47li"))))
     (properties `((upstream-name . "pubchem.bio")))
     (build-system r-build-system)
     (arguments
@@ -2821,6 +2821,7 @@ and access detailed annotations.")
                              r-rcdk
                              r-r-utils
                              r-metabocoreutils
+                             r-magrittr
                              r-foreach
                              r-dplyr
                              r-doparallel
@@ -11060,13 +11061,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "137hxnl9a08xcyk37ixqjc32sfsg41wx75rl50afmsy2svf5pp5z"))))
+        (base32 "1qim78skxhwfsswlkws2l6s0x3wv5rbd4l65ayw9kqd794xck3hf"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (arguments
@@ -14564,13 +14565,13 @@ proposed by Wang W.S., Amsler C. and Schmidt, P. (2025)
 (define-public r-ppitables
   (package
     (name "r-ppitables")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppitables" version))
        (sha256
-        (base32 "19an5nw35w4jr99fws6hi7dzm99czvif37rkgmvlyg11k93mz9v1"))))
+        (base32 "1brqx5j24xm1c2kj7kp60r6mq6v3spkxkxmq2jdkhpvnmxvzayap"))))
     (properties `((upstream-name . "ppitables")))
     (build-system r-build-system)
     (arguments
@@ -22840,13 +22841,13 @@ so that R code can be used to power Tableau workbooks.")
 (define-public r-plumber2
   (package
     (name "r-plumber2")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plumber2" version))
        (sha256
-        (base32 "1cdky56h008hqq58plqwc0xnqvy0g0m1bax148lg0jd85q7ad6rk"))))
+        (base32 "0dl2lrd32lvd798l3f4xykwb1qzmb94hysngcbqajfvgp9q0qvy1"))))
     (properties `((upstream-name . "plumber2")))
     (build-system r-build-system)
     (arguments
@@ -22870,16 +22871,17 @@ so that R code can be used to power Tableau workbooks.")
                              r-firestorm
                              r-firesale
                              r-firesafety
+                             r-fireproof
                              r-fiery
                              r-cli
                              r-base64enc))
     (native-inputs (list r-quarto))
     (home-page "https://plumber2.posit.co/")
-    (synopsis "Easy and Powerful Webservers")
+    (synopsis "Easy and Powerful Web Servers")
     (description
-     "Automatically create a webserver from annotated R files or by building it up
+     "Automatically create a web server from annotated R files or by building it up
 programmatically.  Provides automatic @code{OpenAPI} documentation, input
-handling, async support, and middleware support.")
+handling, asynchronous evaluation, and plugin support.")
     (license license:expat)))
 
 (define-public r-plugdensity
@@ -24458,13 +24460,13 @@ response theory (IRT) models.")
 (define-public r-plmmr
   (package
     (name "r-plmmr")
-    (version "4.2.1")
+    (version "4.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plmmr" version))
        (sha256
-        (base32 "1h071f5awp9qdp2lv0iips3cw2xadyfjszz6dx6hpy68k06q0zsf"))))
+        (base32 "1cdfz6lb4401a8hmfd9aagd89l5gvn2kdk9zqfkjzn8zbp747bv3"))))
     (properties `((upstream-name . "plmmr")))
     (build-system r-build-system)
     (arguments
@@ -24795,13 +24797,13 @@ diagnostics for many models.")
 (define-public r-plgp
   (package
     (name "r-plgp")
-    (version "1.1-12")
+    (version "1.1-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plgp" version))
        (sha256
-        (base32 "06sk9i6fn66w0lrzkj5b95m3xb66d9b602kwh6nkxyh9bjryd70l"))))
+        (base32 "1rwgkzr27n78b85k9v684hd0m0qqklrcf0dwjjs4zzs7hiw1wppr"))))
     (properties `((upstream-name . "plgp")))
     (build-system r-build-system)
     (arguments
@@ -24813,16 +24815,17 @@ diagnostics for many models.")
     (description
      "Sequential Monte Carlo (SMC) inference for fully Bayesian Gaussian process (GP)
 regression and classification models by particle learning (PL) following Gramacy
-& Polson (2011) <@code{arXiv:0909.5262>}.  The sequential nature of inference
-and the active learning (AL) hooks provided facilitate thrifty sequential design
-(by entropy) and optimization (by improvement) for classification and regression
-models, respectively.  This package essentially provides a generic PL interface,
-and functions (arguments to the interface) which implement the GP models and AL
-heuristics.  Functions for a special, linked, regression/classification GP model
-and an integrated expected conditional improvement (IECI) statistic provide for
-optimization in the presence of unknown constraints.  Separable and isotropic
-Gaussian, and single-index correlation functions are supported.  See the
-examples section of ?plgp and demo(package=\"plgp\") for an index of demos.")
+& Polson (2011) <doi:10.48550/@code{arXiv.0909.5262>}.  The sequential nature of
+inference and the active learning (AL) hooks provided facilitate thrifty
+sequential design (by entropy) and optimization (by improvement) for
+classification and regression models, respectively.  This package essentially
+provides a generic PL interface, and functions (arguments to the interface)
+which implement the GP models and AL heuristics.  Functions for a special,
+linked, regression/classification GP model and an integrated expected
+conditional improvement (IECI) statistic provide for optimization in the
+presence of unknown constraints.  Separable and isotropic Gaussian, and
+single-index correlation functions are supported.  See the examples section of
+?plgp and demo(package=\"plgp\") for an index of demos.")
     (license license:lgpl2.0+)))
 
 (define-public r-plfma
@@ -25258,6 +25261,38 @@ which gets data from FBref <https://fbref.com/en>, Transfermarkt
      "Extends the popular lavaan package by adding penalized estimation capabilities.
 It supports penalty on individual parameters as well as the difference between
 parameters.")
+    (license license:expat)))
+
+(define-public r-plausibounds
+  (package
+    (name "r-plausibounds")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plausibounds" version))
+       (sha256
+        (base32 "1ma26vdmszgjqgh5y4mnff209cm0bp4k8qxcdmsr08gz4icls2x5"))))
+    (properties `((upstream-name . "plausibounds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SimonFreyaldenhoven/plausibounds")
+    (synopsis "Plausible Bounds for Treatment Path Estimates")
+    (description
+     "Enhances dynamic effect plots as suggested in Freyaldenhoven and Hansen (2026)
+<https://simonfreyaldenhoven.github.io/papers/Plausible_bounds.pdf>.
+Data-driven smoothing delivers a smooth estimated path with potentially improved
+point estimation properties and confidence regions covering a surrogate that can
+be substantially tighter than conventional pointwise or uniform bands.")
     (license license:expat)))
 
 (define-public r-platypus
@@ -33522,19 +33557,20 @@ presented.")
 (define-public r-pestr
   (package
     (name "r-pestr")
-    (version "0.8.2")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pestr" version))
        (sha256
-        (base32 "15w89cipky9di4csbp0cbw7s3qslr5mk94wivps77i3k0j9ys74g"))))
+        (base32 "045s9pjv9crbpf77kaz78ccgkl53r3w4gmhb9qa5lslsh35zvx4m"))))
     (properties `((upstream-name . "pestr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-rsqlite
                              r-rlang
                              r-readr
@@ -40814,13 +40850,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0gpgm143v2s60vkd30n2yqyycbd4hrslaf2j4nncdmpbp51a5vxl"))))
+        (base32 "1awx5pjsh022bs45xzhhppp17rskbjgsksqby6zrw6700x07if7r"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments
@@ -41097,13 +41133,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "9.0.0")
+    (version "9.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "1dxmmazbsibji5dikfzz4zx0rfrxckn2dsgawicbiqrih31lq0k4"))))
+        (base32 "052wdy0z2kwcgb20pdw4h31rv71n34img3q5cd51npc635225l8y"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments
@@ -44056,6 +44092,56 @@ log-normal form.  Model details are provided in Bailey and Peng (2025)
 <doi:10.2139/ssrn.5475626> and Peng and Van den Bulte (2024)
 <doi:10.1287/mnsc.2019.01897>.")
     (license license:gpl3+)))
+
+(define-public r-panelr
+  (package
+    (name "r-panelr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "panelr" version))
+       (sha256
+        (base32 "1jlq298brfqc22w89nndfigv2al7zc28liz1ai952vx5935zzd1a"))))
+    (properties `((upstream-name . "panelr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-reformulas
+                             r-purrr
+                             r-magrittr
+                             r-lmertest
+                             r-lme4
+                             r-jtools
+                             r-ggplot2
+                             r-formula
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://panelr.jacob-long.com")
+    (synopsis
+     "Regression Models and Utilities for Repeated Measures and Panel Data")
+    (description
+     "This package provides an object type and associated tools for storing and
+wrangling panel data.  Implements several methods for creating regression models
+that take advantage of the unique aspects of panel data.  Among other
+capabilities, automates the \"within-between\" (also known as \"between-within\" and
+\"hybrid\") panel regression specification that combines the desirable aspects of
+both fixed effects and random effects econometric models and fits them as
+multilevel models (Allison, 2009 <doi:10.4135/9781412993869.d33>; Bell & Jones,
+2015 <doi:10.1017/psrm.2014.7>).  These models can also be estimated via
+generalized estimating equations (GEE; @code{McNeish}, 2019
+<doi:10.1080/00273171.2019.1602504>) and Bayesian estimation is (optionally)
+supported via Stan'.  Supports estimation of asymmetric effects models via first
+differences (Allison, 2019 <doi:10.1177/2378023119826441>) as well as a
+generalized linear model extension thereof using GEE.")
+    (license license:expat)))
 
 (define-public r-panelpomp
   (package

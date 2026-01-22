@@ -3265,13 +3265,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.10.4")
+    (version "3.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsem" version))
        (sha256
-        (base32 "0j4cg4j9whhy6gkqmj7aa5yr3ym4433k4vm27s8fl2c8i1i4b55d"))))
+        (base32 "1gmz24kjkfg38prdxzjbwmpmy1al34xwp247w44ygnqd2600nf37"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (arguments
@@ -3284,6 +3284,7 @@ the number of individuals is large.  For the main ctsem package, see
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
+                             r-png
                              r-plyr
                              r-parallelly
                              r-mvtnorm
@@ -3294,6 +3295,7 @@ the number of individuals is large.  For the main ctsem package, see
                              r-expm
                              r-deriv
                              r-data-table
+                             r-corpcor
                              r-code
                              r-bh))
     (native-inputs (list r-knitr))
@@ -5099,13 +5101,13 @@ and how different municipalities have merged/redistricted over time from 2006 to
 (define-public r-cscnet
   (package
     (name "r-cscnet")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSCNet" version))
        (sha256
-        (base32 "0bndx3d42lm31kly46k1k6d0w0xsca586xpixwins20yx6w1z4xh"))))
+        (base32 "1dxv17h5cjyc3l66p024w4acy9wd2hz8q7nzgwf5kr0bjc2lvw83"))))
     (properties `((upstream-name . "CSCNet")))
     (build-system r-build-system)
     (arguments
@@ -5116,6 +5118,7 @@ and how different municipalities have merged/redistricted over time from 2006 to
                              r-survival
                              r-stringr
                              r-riskregression
+                             r-recipes
                              r-purrr
                              r-prodlim
                              r-parallelly
@@ -5124,7 +5127,6 @@ and how different municipalities have merged/redistricted over time from 2006 to
                              r-future
                              r-furrr
                              r-dplyr
-                             r-collinear
                              r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://shahin-roshani.github.io/CSCNet/")
@@ -5759,13 +5761,13 @@ learning.")
 (define-public r-crtspat
   (package
     (name "r-crtspat")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRTspat" version))
        (sha256
-        (base32 "0rh7drmxvd88185fw6lrah80r59sgamq27cwkp62qs9rpspq3lfr"))))
+        (base32 "0pvl0c24nrbjn8pkxdnqcq0s4y4kdl9yjwgzhf314bnyfg3jicjg"))))
     (properties `((upstream-name . "CRTspat")))
     (build-system r-build-system)
     (arguments
@@ -5777,12 +5779,13 @@ learning.")
                              r-spatstat-geom
                              r-sp
                              r-sf
+                             r-rstan
                              r-oor
                              r-matrix
                              r-mass
                              r-magrittr
+                             r-loo
                              r-lme4
-                             r-jagsui
                              r-ggplot2
                              r-gee
                              r-dplyr))
@@ -8683,13 +8686,13 @@ sorting.")
 (define-public r-crane
   (package
     (name "r-crane")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crane" version))
        (sha256
-        (base32 "1vsvi850f7z1jssyg7b9yf25vgdwrym732llbrg1da9f8g01qcrg"))))
+        (base32 "0785zk4rxdzgmw2ljad8jcig40kjnnap83gf9aabk7xhnrwq2jcv"))))
     (properties `((upstream-name . "crane")))
     (build-system r-build-system)
     (arguments
@@ -8698,15 +8701,20 @@ sorting.")
     (propagated-inputs (list r-tidyr
                              r-survival
                              r-rlang
+                             r-patchwork
                              r-lifecycle
+                             r-labeling
                              r-gtsummary
                              r-gt
                              r-glue
+                             r-ggplot2
                              r-flextable
                              r-dplyr
+                             r-cowplot
                              r-cli
                              r-cardx
                              r-cards
+                             r-broom-helpers
                              r-broom))
     (home-page "https://github.com/insightsengineering/crane")
     (synopsis
@@ -8984,13 +8992,13 @@ from Krailo M. D., & Pike M. C. (1984, Journal of the Royal Statistical Society.
 (define-public r-cptnonpar
   (package
     (name "r-cptnonpar")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CptNonPar" version))
        (sha256
-        (base32 "0n1kipmprqsafrg65734i6bn5bkskvzarzkvk384z9ml0a9za58f"))))
+        (base32 "0rm0fphw7bzblwj505wxksagc48b3c3av5isdls3m2hqkk566c3q"))))
     (properties `((upstream-name . "CptNonPar")))
     (build-system r-build-system)
     (arguments
@@ -10603,6 +10611,31 @@ called a \"frailty\" model.  The approach is based on Ripatti and Palmgren,
 Biometrics 2002.")
     (license license:lgpl2.0)))
 
+(define-public r-coxlikelihood
+  (package
+    (name "r-coxlikelihood")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoxLikelihood" version))
+       (sha256
+        (base32 "0facbm86agph1d6y71x1kdy9hzd7a0mfpm764bzhg1nwpq3mg127"))))
+    (properties `((upstream-name . "CoxLikelihood")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=CoxLikelihood")
+    (synopsis
+     "Robust Likelihood Ratio Test and Confidence Intervals for the Cox Model")
+    (description
+     "Calculate the likelihood ratio test p-value and likelihood confidence intervals
+for misspecified Cox models, as described in Shao and Guo (2025)
+<doi:10.48550/@code{arXiv.2508.11851>}.")
+    (license license:gpl3)))
+
 (define-public r-coxicpen
   (package
     (name "r-coxicpen")
@@ -12049,6 +12082,51 @@ courses.  Aid teaching with helper functions and augment generic functions to
 provide cohesion between the network of packages.  Learn more about
 @code{CourseKata} at <https://www.coursekata.org>.")
     (license license:agpl3+)))
+
+(define-public r-couplr
+  (package
+    (name "r-couplr")
+    (version "1.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "couplr" version))
+       (sha256
+        (base32 "0sqd3x0nl57jvpspcqf00nla21dswfcpl2sickliz2nwlfdwr4ml"))))
+    (properties `((upstream-name . "couplr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-testthat
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/couplr/")
+    (synopsis "Optimal Pairing and Matching via Linear Assignment")
+    (description
+     "Solves optimal pairing and matching problems using linear assignment algorithms.
+ Provides implementations of the Hungarian method (Kuhn 1955)
+<doi:10.1002/nav.3800020109>, Jonker-Volgenant shortest path algorithm (Jonker
+and Volgenant 1987) <doi:10.1007/BF02278710>, Auction algorithm (Bertsekas 1988)
+<doi:10.1007/BF02186476>, cost-scaling (Goldberg and Kennedy 1995)
+<doi:10.1007/BF01585996>, scaling algorithms (Gabow and Tarjan 1989)
+<doi:10.1137/0218069>, push-relabel (Goldberg and Tarjan 1988)
+<doi:10.1145/48014.61051>, and Sinkhorn entropy-regularized transport (Cuturi
+2013) <doi:10.48550/arxiv.1306.0895>.  Designed for matching plots, sites,
+samples, or any pairwise optimization problem.  Supports rectangular matrices,
+forbidden assignments, data frame inputs, batch solving, k-best solutions, and
+pixel-level image morphing for visualization.  Includes automatic preprocessing
+with variable health checks, multiple scaling methods (standardized, range,
+robust), greedy matching algorithms, and comprehensive balance diagnostics for
+assessing match quality using standardized differences and distribution
+comparisons.")
+    (license license:expat)))
 
 (define-public r-countts
   (package
@@ -17066,13 +17144,13 @@ plot.")
 (define-public r-contourforest
   (package
     (name "r-contourforest")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contourforest" version))
        (sha256
-        (base32 "1njk96yvv8dqrgz7lbx15v3khlcq35pq5ras2n1mfardqf9jvlxs"))))
+        (base32 "0g1gn2bdv1z3lpkgflfr0zh1l13r6zqjal7wxnkjpnwnzj4z7ha9"))))
     (properties `((upstream-name . "contourforest")))
     (build-system r-build-system)
     (arguments
@@ -17083,9 +17161,11 @@ plot.")
     (synopsis "Contour-Enhanced Forest Plots for Meta-Analysis")
     (description
      "This package provides functions to create contour-enhanced forest plots for
-continuous and binary outcomes in meta-analysis, including options for
-prediction intervals, customized colors, and study labeling.  Based on metafor
-and ggplot2'.")
+meta-analysis, supporting binary outcomes (e.g., odds ratios, risk ratios),
+continuous outcomes (e.g., correlations), and prevalence estimates.  Includes
+options for prediction intervals, customized colors, study labeling, and contour
+shading to highlight regions of statistical significance.  Based on metafor and
+ggplot2'.")
     (license license:expat)))
 
 (define-public r-contourer
@@ -24749,18 +24829,19 @@ visualizations, this package makes these tasks easier.")
 (define-public r-collett
   (package
     (name "r-collett")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collett" version))
        (sha256
-        (base32 "1bjx47dlpkjxyczaayhzh6zc01qlka9q8cx6d4p7rfnxgw6wn8fz"))))
+        (base32 "1nyfiak33v88kqr86dszbdkypyy7x0af9b11k1ix871168hgfxyh"))))
     (properties `((upstream-name . "collett")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-tinyplot r-survival))
     (home-page "https://github.com/mclements/collett")
     (synopsis
      "Datasets from \"Modelling Survival Data in Medical Research\" by Collett")
@@ -24931,6 +25012,31 @@ accompanying scientific papers: Goncalves & Cabral (2021, Journal of Statistical
 Software, <doi:10.18637/jss.v099.i03>) and Goncalves et al. (2007, Computational
 Statistics & Data Analysis, <doi:10.1016/j.csda.2007.03.002>).")
     (license license:gpl2+)))
+
+(define-public r-col2hex2col
+  (package
+    (name "r-col2hex2col")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "col2hex2col" version))
+       (sha256
+        (base32 "0df6791irm80avnwyyzz3g9ldyhdn89a8d4zljy3mhf5r86p3rn1"))))
+    (properties `((upstream-name . "col2hex2col")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/AnttiRask/col2hex2col")
+    (synopsis "Convert Between Color Names and Hex Codes")
+    (description
+     "This package provides simple functions to convert between color names and
+hexadecimal color codes using an extensive database of over 32,000 colors.
+Includes all 657 R built-in colors plus the comprehensive color-names database.
+The package supports bidirectional conversion with backward compatibility,
+prioritizing R colors when available.")
+    (license license:expat)))
 
 (define-public r-cointreg
   (package
@@ -25611,19 +25717,19 @@ the Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
 (define-public r-coglyphr
   (package
     (name "r-coglyphr")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coglyphr" version))
        (sha256
-        (base32 "1hw6n3dlbbs12ljf9gap95rdx1jby9sl6x71inpy6cdrp8f4dq9k"))))
+        (base32 "0mlk1hqxfd04ikq91yhpnf72n77l4lawcy1nihn51ysnq35f3kip"))))
     (properties `((upstream-name . "coglyphr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp r-imager r-dplyr))
+    (propagated-inputs (list r-sp r-dplyr))
     (home-page "https://github.com/mutopsy/coglyphr")
     (synopsis "Compute Glyph Centers of Gravity from Image Data")
     (description
@@ -26469,13 +26575,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "0433kh7bz2k83b2dq62d33klkjanz30zjb0nr5byzcmpcr5msdxi"))))
+        (base32 "0vhyjlkp9dpm51ikv9q3853jf26z0fyyi9ljckkdwlbl2kwnam3z"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (arguments
@@ -30154,13 +30260,13 @@ partitioning algorithms.")
 (define-public r-clustersim
   (package
     (name "r-clustersim")
-    (version "0.51-5")
+    (version "0.51-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterSim" version))
        (sha256
-        (base32 "1lkq2dylimigfpvl4981a6xnn9bi462g0bbfkjz90sak9azzlnwx"))))
+        (base32 "0ik78fv4yxydh45rdfb6p6rv21yd3a3x4lf3wpk09frvrbj4x3g5"))))
     (properties `((upstream-name . "clusterSim")))
     (build-system r-build-system)
     (arguments
@@ -43961,13 +44067,13 @@ in the vignettes: \"DDC_examples\", \"@code{MacroPCA_examples}\", \"wrap_example
 (define-public r-cellvolumedist
   (package
     (name "r-cellvolumedist")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellVolumeDist" version))
        (sha256
-        (base32 "1pbssq8zf1cmihs3fg5zgb3k876magxl84jld6vcfvvp76sxhr7l"))))
+        (base32 "0b7fx14133pscr7y91svj2snilzs0fclc4f2m52vijxx2h2iabxj"))))
     (properties `((upstream-name . "cellVolumeDist")))
     (build-system r-build-system)
     (arguments
@@ -43979,12 +44085,12 @@ in the vignettes: \"DDC_examples\", \"@code{MacroPCA_examples}\", \"wrap_example
      "Functions to Fit Cell Volume Distributions and Thereby Estimate Cell Growth Rates and Division Times")
     (description
      "This package implements a methodology for using cell volume distributions to
-estimate cell growth rates and division times that is described in the paper
-entitled, \"Cell Volume Distributions Reveal Cell Growth Rates and Division
-Times\", by Michael Halter, John T. Elliott, Joseph B. Hubbard, Alessandro Tona
-and Anne L. Plant, which is in press in the Journal of Theoretical Biology.  In
-order to reproduce the analysis used to obtain Table 1 in the paper, execute the
-command \"example(@code{fitVolDist})\".")
+estimate cell growth rates and division times that is described in the paper,
+\"Cell Volume Distributions Reveal Cell Growth Rates and Division Times\", by
+Michael Halter, John T. Elliott, Joseph B. Hubbard, Alessandro Tona and Anne L.
+Plant, which appeared in the Journal of Theoretical Biology.  In order to
+reproduce the analysis used to obtain Table 1 in the paper, execute the command
+\"example(@code{fitVolDist})\".")
     (license license:gpl2+)))
 
 (define-public r-celltrackr
@@ -45701,13 +45807,13 @@ dynamic functional connectivity.  Medical Image Analysis, Volume 75.")
 (define-public r-cci
   (package
     (name "r-cci")
-    (version "0.3.4")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCI" version))
        (sha256
-        (base32 "0vxssb4adja4vvl3nijx43sza4cc4fy8agjwca2xnn8ravxza4kk"))))
+        (base32 "0sfd8aspplah9gbz9ps1a4a3207q0dxdjwhk3a6hlr7hyfjdmvnf"))))
     (properties `((upstream-name . "CCI")))
     (build-system r-build-system)
     (arguments
@@ -45717,11 +45823,13 @@ dynamic functional connectivity.  Medical Image Analysis, Volume 75.")
                              r-rlang
                              r-ranger
                              r-progress
+                             r-kknn
                              r-ggplot2
                              r-e1071
                              r-dplyr
                              r-data-table
                              r-caret))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/khliland/CCI")
     (synopsis "Computational Test for Conditional Independence")
     (description
@@ -47609,25 +47717,29 @@ methods is given in Galagate (2016)
 (define-public r-causaldisco
   (package
     (name "r-causaldisco")
-    (version "0.9.1")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalDisco" version))
        (sha256
-        (base32 "1lni0y76prhvw60m0awwgmfadwlv1ciywlr85sr8ig2vaxf1smh9"))))
+        (base32 "0dg204gv6bi5jb873k336gcw48yx5bnzsyvvgc6f5yyfjk50609q"))))
     (properties `((upstream-name . "causalDisco")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales
+                             r-rmarkdown
+                             r-rgraphviz
                              r-rcolorbrewer
                              r-pcalg
+                             r-magick
                              r-igraph
                              r-gtools
+                             r-graph
                              r-clipr))
-    (home-page "https://github.com/annennenne/causalDisco")
+    (home-page "https://github.com/disco-coders/causalDisco")
     (synopsis "Tools for Causal Discovery on Observational Data")
     (description
      "Various tools for inferring causal models from observational data.  The package

@@ -1021,13 +1021,13 @@ genetic information.")
 (define-public r-questionr
   (package
     (name "r-questionr")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "questionr" version))
        (sha256
-        (base32 "1mw7jwx8lvzs5cjqimdicidzi93i3k1z9pxn2axrs4w8z9ahxnx6"))))
+        (base32 "06mfxd0k2k2z9n1zasib27vi6ccxlfqs3hwzlwfbpa5s6m33dmip"))))
     (properties `((upstream-name . "questionr")))
     (build-system r-build-system)
     (arguments
@@ -1311,6 +1311,44 @@ rank-score.  The method is described in De Santis, et al., (2026),
 document.  It allows the user to create section headers, tabsets, divs, and
 spans, and formats these objects into quarto syntax when printed into a
 document.")
+    (license license:expat)))
+
+(define-public r-quartify
+  (package
+    (name "r-quartify")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quartify" version))
+       (sha256
+        (base32 "0gk6kdw4qpanlzvjg2g6qr93klcyvkpsa35pbiy22vg2wyr7pym0"))))
+    (properties `((upstream-name . "quartify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-styler
+                             r-shinyfiles
+                             r-shiny
+                             r-rstudioapi
+                             r-quarto
+                             r-miniui
+                             r-lintr
+                             r-later
+                             r-cli
+                             r-base64enc))
+    (home-page "https://ddotta.github.io/quartify/")
+    (synopsis "Convert R Scripts to 'Quarto' Markdown Documents")
+    (description
+     "Converts R scripts (.R) into Quarto markdown documents (.qmd) with automatic
+formatting.  Recognizes RStudio code sections, preserves comments as narrative
+text, extracts metadata from special comments, and provides both programmatic
+functions and an interactive RStudio add-in for easy conversion.")
     (license license:expat)))
 
 (define-public r-quartets
@@ -3001,6 +3039,35 @@ genetic loci (QTL).  Chaibub Neto E, Keller MP, Attie AD, Yandell BS (2010)
 Causal Graphical Models in Systems Genetics: a unified framework for joint
 inference of causal network and genetic architecture for correlated phenotypes.
 Annals of Applied Statistics 4: 320-339. <doi:10.1214/09-AOAS288>.")
+    (license license:gpl2+)))
+
+(define-public r-qtlhot
+  (package
+    (name "r-qtlhot")
+    (version "1.2.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlhot" version))
+       (sha256
+        (base32 "0mgd3a8nmvpsgbkf600ir6plx7ncn2vzqr083997gj3sf84jphxk"))))
+    (properties `((upstream-name . "qtlhot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qtl r-mnormt r-corpcor r-broman))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/byandell-sysgen/qtlhot")
+    (synopsis "Inference for QTL Hotspots")
+    (description
+     "This package provides functions to infer co-mapping trait hotspots and causal
+models.  Chaibub Neto E, Keller MP, Broman AF, Attie AD, Jansen RC, Broman KW,
+Yandell BS (2012) Quantile-based permutation thresholds for QTL hotspots.
+Genetics 191 : 1355-1365. <doi:10.1534/genetics.112.139451>.  Chaibub Neto E,
+Broman AT, Keller MP, Attie AD, Zhang B, Zhu J, Yandell BS (2013) Modeling
+causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
+<doi:10.1534/genetics.112.147124>.")
     (license license:gpl2+)))
 
 (define-public r-qtlemm

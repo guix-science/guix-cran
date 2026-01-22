@@ -150,13 +150,13 @@ over-dispersed count data with extra zeros\", Biometrical Journal,
 (define-public r-gwsignif
   (package
     (name "r-gwsignif")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWsignif" version))
        (sha256
-        (base32 "0bss5s3ijnlckz44p7jj49bn2r8nwqckpzwzcv0vci915q8jfsj2"))))
+        (base32 "0zsysiqiizh0vlwik9ji6w7cmiysx4rr8z8dswbygaw8yvhldbds"))))
     (properties `((upstream-name . "GWsignif")))
     (build-system r-build-system)
     (arguments
@@ -1268,13 +1268,13 @@ of the corresponding likelihood (see Albert, C., Vogel, S. and Ashauer, R.
 (define-public r-gutenbergr
   (package
     (name "r-gutenbergr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gutenbergr" version))
        (sha256
-        (base32 "16xlvxbz0qac7d7jbraqqwgik68rlmhf9k9dga51r7svy172c00c"))))
+        (base32 "1s37sjh2spbb1w83ia4sv3lz6n6h9dsf0llfb19683w3v2qf3q5i"))))
     (properties `((upstream-name . "gutenbergr")))
     (build-system r-build-system)
     (arguments
@@ -5043,19 +5043,20 @@ subject-specific random effects.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0k7672dmzsxx70x68y19a0l8pbsfmd1mjii21765qwm3xl4l7lnq"))))
+        (base32 "0qz28gy4spsnvv0rmrbka67cdgar3yynrjcc56ksm4gd6hlijcx1"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spatstat-random
+    (propagated-inputs (list r-survival
+                             r-spatstat-random
                              r-spatstat-geom
                              r-spatstat-explore
                              r-spatialpack
@@ -5072,11 +5073,10 @@ subject-specific random effects.")
                              r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/tingtingzhan/groupedHyperframe")
-    (synopsis "Grouped Hyper Data Frame: An Extension of Hyper Data Frame")
+    (synopsis "Grouped Hyper Data Frame")
     (description
      "An S3 class @code{groupedHyperframe} that inherits from hyper data frame.  Batch
-processes on point-pattern hyper column.  Aggregation of function-value-table
-hyper column(s) and numeric hyper column(s) over a nested grouping structure.")
+processes and aggregation of hyper column(s) over a nested grouping structure.")
     (license license:gpl2)))
 
 (define-public r-groupdata2
@@ -6111,13 +6111,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "0q5yn3gfhdhsk0p0ikjkw8xqh0bkr3v8ydqps0wynid3kzqk12b9"))))
+        (base32 "1vvb25y40kifqss2qc7h9jq2c1y6sl9is5p7r98hffgxnv8h22k9"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (arguments
@@ -8609,13 +8609,13 @@ package can run SQG-DE in parallel and sequentially.")
 (define-public r-grader
   (package
     (name "r-grader")
-    (version "1.0.10")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gradeR" version))
        (sha256
-        (base32 "1ngfrminhsk3155da0vjmvrk66nbnak8p1ns20cw32qayq6wyrr2"))))
+        (base32 "1pzffh1w5q5vxzlckcnxxkn46qj63vmnikcd7q3dfgwfchnkr2dc"))))
     (properties `((upstream-name . "gradeR")))
     (build-system r-build-system)
     (arguments
@@ -8624,12 +8624,13 @@ package can run SQG-DE in parallel and sequentially.")
     (propagated-inputs (list r-testthat r-jsonlite r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gradeR")
-    (synopsis "Helps Grade Assignment Submissions that are R Scripts")
+    (synopsis "Helps Grade Assignment Submissions in Common R Formats")
     (description
      "After being given the location of your students submissions and a test file, the
-function runs each .R file, and evaluates the results from all the given tests.
-Results are neatly returned in a data frame that has a row for each student, and
-a column for each test.")
+function runs each file that is an R script, R Markdown file, or Quarto
+document, and evaluates the results from all the given tests.  Results are
+neatly returned in a data frame that has a row for each student, and a column
+for each test.")
     (license license:expat)))
 
 (define-public r-grade
@@ -15074,20 +15075,19 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1ggcxbjvdml7cwiwswc6gj2sc35p3k8nm2j039fhkpg2q4hzhalk"))))
+        (base32 "1vf85ppxjvg9lvf91mfcncxj8gmddgfqhij1zhn457yjf3nvdbwx"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stanheaders
-                             r-sparsechol
                              r-rstantools
                              r-rstan
                              r-rcppparallel
@@ -15100,12 +15100,11 @@ this package can be found in Watson, Hemming, and Girling (2023)
     (synopsis "Generalised Linear Mixed Models in R")
     (description
      "Specification, analysis, simulation, and fitting of generalised linear mixed
-models.  Includes Markov Chain Monte Carlo Maximum likelihood and Laplace
-approximation model fitting for a range of models, non-linear fixed effect
-specifications, a wide range of flexible covariance functions that can be
-combined arbitrarily, robust and bias-corrected standard error estimation, power
-calculation, data simulation, and more.  See
-<https://samuel-watson.github.io/glmmr-web/> for a detailed manual.")
+models.  Includes Markov Chain Monte Carlo Maximum likelihood model fitting for
+a range of models, non-linear fixed effect specifications, a wide range of
+flexible covariance functions that can be combined arbitrarily, robust and
+bias-corrected standard error estimation, power calculation, data simulation,
+and more.")
     (license license:gpl2+)))
 
 (define-public r-glmmpen
@@ -19724,6 +19723,38 @@ and aesthetics.  This method was described by Balachandran VP (2015)
 <doi:10.1016/S1470-2045(14)71116-7>.")
     (license license:gpl3)))
 
+(define-public r-ggsced
+  (package
+    (name "r-ggsced")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsced" version))
+       (sha256
+        (base32 "0h5bq9kl85ajzc6lgqqfdc2l32qmjn0pmjl4ndy9yqhfyvglc384"))))
+    (properties `((upstream-name . "ggsced")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gtable r-ggplot2 r-ggh4x r-assert))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggsced")
+    (synopsis
+     "Utilities and Helpers for Single Case Experimental Design (SCED) using 'ggplot2'")
+    (description
+     "This package provides specialized visualization tools for Single-Case
+Experimental Design (SCED) research using ggplot2'.  SCED studies are a crucial
+methodology in behavioral and educational research where individual participants
+serve as their own controls through carefully designed experimental phases.
+This package extends ggplot2 to create publication-ready graphics with
+professional phase change lines, support for multiple baseline designs, and
+styling functions that follow SCED visualization conventions.  Key functions
+include adding phase change demarcation lines to existing plots and formatting
+axes with broken axis appearance commonly used in single-case research.")
+    (license license:gpl2+)))
+
 (define-public r-ggscatridges
   (package
     (name "r-ggscatridges")
@@ -20132,13 +20163,13 @@ visualizations through a web browser GUI without writing any code.")
 (define-public r-ggrain
   (package
     (name "r-ggrain")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrain" version))
        (sha256
-        (base32 "0bs7d2dkhdppgf9nh98hk8jkv7fdking1jy7zj2jp0i0d56i20x6"))))
+        (base32 "1qra5yx26s3977f96pzikkbrd2j1ackqlh6n3njpd1m979amqd8q"))))
     (properties `((upstream-name . "ggrain")))
     (build-system r-build-system)
     (arguments
@@ -33213,6 +33244,44 @@ Standards and Technology Mass Spectral Library or with the mass data.  There are
 also several visualization methods provided for each step of the preprocessing
 and analysis.")
     (license license:gpl3+)))
+
+(define-public r-gcuber
+  (package
+    (name "r-gcuber")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GCubeR" version))
+       (sha256
+        (base32 "16g1qyrl7m55jzvih84gdcfyhn4ln3k5bqcbvlxa97wdsy4zvqk6"))))
+    (properties `((upstream-name . "GCubeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-readr r-magrittr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GCubeR")
+    (synopsis "Estimation of Forest Volume, Biomass, and Carbon")
+    (description
+     "This package provides tools for estimating forest metrics such as stem volume,
+biomass, and carbon using regional allometric equations.  The package implements
+widely used models including Dagnelie P., Rondeux J. & Palm R. (2013,
+ISBN:9782870161258) \"Cubage des arbres et des peuplements forestiers - Tables et
+equations\" <https://orbi.uliege.be/handle/2268/155356>, Vallet P., Dhote J.-F.,
+Le Moguedec G., Ravart M. & Pignard G. (2006) \"Development of total aboveground
+volume equations for seven important forest tree species in France\"
+<doi:10.1016/j.foreco.2006.03.013>, Pauwels D. & Rondeux J. (1999,
+ISSN:07779992) \"Tarifs de cubage pour les petits bois de meleze (Larix sp.) en
+Ardenne\" <https://orbi.uliege.be/handle/2268/96128>, Massenet J.-Y. (2006)
+\"Chapitre IV: Estimation du volume\"
+<https://jymassenet-foret.fr/cours/dendrometrie/Coursdendrometriepdf/Dendro4-2009.pdf>,
+France Valley (2025) \"Bilan Carbone Forestier - Methodologie\"
+<https://www.france-valley.com/hubfs/Bilan%20Carbone%20Forestier.pdf>.  Its
+modular structure allows transparent integration of bibliographic or
+user-defined allometric relationships.")
+    (license license:expat)))
 
 (define-public r-gctsc
   (package

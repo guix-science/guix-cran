@@ -585,13 +585,13 @@ as a vector of absorbance values for discrete wavelengths is suitable.")
 (define-public r-hyperoverlap
   (package
     (name "r-hyperoverlap")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyperoverlap" version))
        (sha256
-        (base32 "02lz68a5gp4cnpsny6xvrhfp6qgx70b02j6ddjghzvk7rcaspv82"))))
+        (base32 "1dd8n5mgza8czlnswznqgvjygx3i0b3qnm2a2gjjlp6i2xhrhaad"))))
     (properties `((upstream-name . "hyperoverlap")))
     (build-system r-build-system)
     (arguments
@@ -8689,13 +8689,13 @@ two-dimensional hierarchical clustering.")
 (define-public r-hicp
   (package
     (name "r-hicp")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicp" version))
        (sha256
-        (base32 "04q6j4y69x0pk4bkwisvsy91l9mdhi84wgppp8jg4vrpwzg6qa9q"))))
+        (base32 "1a0zbam0zcwm2rdfaiwmfnq9y43iz424fmzzdcnf2qg4d2i5j62f"))))
     (properties `((upstream-name . "hicp")))
     (build-system r-build-system)
     (arguments
@@ -9526,13 +9526,13 @@ lost nor inappropriately cut.")
 (define-public r-hexsticker
   (package
     (name "r-hexsticker")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexSticker" version))
        (sha256
-        (base32 "1bldh78znjp97f8qylvdf2y6p0nj2h1c89l82c8g1xla895vb8rx"))))
+        (base32 "1sml65dlvwqj0jmmswbigh7xp2d9i4pvpg65q39cv61g7f41nmcj"))))
     (properties `((upstream-name . "hexSticker")))
     (build-system r-build-system)
     (arguments
@@ -9549,6 +9549,35 @@ lost nor inappropriately cut.")
     (description
      "Helper functions for creating reproducible hexagon sticker purely in R.")
     (license license:artistic2.0)))
+
+(define-public r-hexify
+  (package
+    (name "r-hexify")
+    (version "0.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hexify" version))
+       (sha256
+        (base32 "0i0x17yk395bv7824miajfr5isrdy0cfkr2kfkq7fbhh1y4pgxz8"))))
+    (properties `((upstream-name . "hexify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-rlang r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/hexify/")
+    (synopsis "Equal-Area Hex Grids on the 'Snyder' 'ISEA' 'Icosahedron'")
+    (description
+     "This package provides functions to build and use equal-area hexagonal discrete
+global grids using the Snyder ISEA projection ('Snyder 1992
+<doi:10.3138/27H7-8K88-4882-1752>).  Implements the ISEA discrete global grid
+system ('Sahr', White and Kimerling 2003 <doi:10.1559/152304003100011090>).
+Includes a fast C++ core for projection and aperture quantization, and
+sf'/'terra'-compatible R wrappers for grid generation and coordinate assignment.
+ Output is compatible with @code{dggridR} for interoperability.")
+    (license license:expat)))
 
 (define-public r-hexfont
   (package
@@ -10672,6 +10701,28 @@ use-case, see the gifski package on CRAN'.")
      "This package provides a dummy package to demonstrate how to interface to a jar
 file that resides inside an R package.")
     (license license:gpl3)))
+
+(define-public r-hellodatascience
+  (package
+    (name "r-hellodatascience")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hellodatascience" version))
+       (sha256
+        (base32 "0f46n9y958yh4i97b4gf1479rzwpapk3d9cwckvg6brlrbcr9p4f"))))
+    (properties `((upstream-name . "hellodatascience")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://hellodata-science.github.io/hellodatascience/")
+    (synopsis "Datasets from the Hello Data Science Book")
+    (description
+     "This package provides datasets used for analysis and visualizations in the
+open-access Hello Data Science book.")
+    (license license:gpl3+)))
 
 (define-public r-hellno
   (package

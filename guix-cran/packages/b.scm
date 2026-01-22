@@ -1005,6 +1005,38 @@ and visualization of process maps.  See also packages
 @code{edeaR','processmapR}', @code{eventdataR} and @code{processmonitR}'.")
     (license license:expat)))
 
+(define-public r-buoyant
+  (package
+    (name "r-buoyant")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "buoyant" version))
+       (sha256
+        (base32 "1w61il76ppm5nqrcgpsbbdrxf643is8kskvr26q9z8lhpsx3s5db"))))
+    (properties `((upstream-name . "buoyant")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-ssh
+                             r-renv
+                             r-jsonlite
+                             r-analogsea))
+    (native-inputs (list r-quarto))
+    (home-page "https://posit-dev.github.io/buoyant/")
+    (synopsis "Deploy '_server.yml' Compliant Applications to 'DigitalOcean'")
+    (description
+     "This package provides tools to deploy R web server applications that follow the
+_server.yml standard.  This standard allows different R server frameworks
+('plumber2', fiery', etc.) to be deployed using a common interface.  The package
+supports deployment to @code{DigitalOcean} and includes validation tools to
+ensure _server.yml files are correctly formatted.")
+    (license license:expat)))
+
 (define-public r-bunsen
   (package
     (name "r-bunsen")
@@ -2084,13 +2116,13 @@ the Augmented Lagrangian Method described by Masarotto and Varin (2012)
 (define-public r-btb
   (package
     (name "r-btb")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "btb" version))
        (sha256
-        (base32 "09g8nzvqcmjvgy9mzrw3vr247ca422mvrgvyd67hlpk916gvgvqs"))))
+        (base32 "1s9cpmi1isg1g771wxz1iyjgsg978k2wa7vn8bnz4dv998bgkpdh"))))
     (properties `((upstream-name . "btb")))
     (build-system r-build-system)
     (arguments
@@ -14434,6 +14466,40 @@ and meta data, the full versions of which are freely available on the
 Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
     (license license:gpl3)))
 
+(define-public r-biothermr
+  (package
+    (name "r-biothermr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioThermR" version))
+       (sha256
+        (base32 "0h2qa4svwwwgjqb8vb006w8dkrww86fybp4gws7l8c2fa0x8dimj"))))
+    (properties `((upstream-name . "BioThermR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-thermimage
+                             r-shiny
+                             r-plotly
+                             r-ggsci
+                             r-ggrepel
+                             r-ggplot2
+                             r-ebimage))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RightSZ/BioThermR")
+    (synopsis
+     "Standardized Processing and Analysis of Thermal Imaging Data in Animal Studies")
+    (description
+     "This package provides a modular framework for standardized analysis of thermal
+imaging data in animal experimentation.  The package integrates thermographic
+data import (FLIR, raw, CSV), automated region of interest (ROI) segmentation
+based on EBImage (Pau et al., 2010 <doi:10.1093/bioinformatics/btq046>),
+interactive ROI refinement, and high-throughput batch processing.")
+    (license license:gpl3+)))
+
 (define-public r-biostatsuhnplus
   (package
     (name "r-biostatsuhnplus")
@@ -18649,6 +18715,47 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
 <doi:10.6339/23-JDS1092>.")
     (license license:agpl3+)))
 
+(define-public r-bifrost
+  (package
+    (name "r-bifrost")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bifrost" version))
+       (sha256
+        (base32 "172w0xvyzx3723kp9ji84875a5rwxq2xys6sk9xvs5zj7nqpb129"))))
+    (properties `((upstream-name . "bifrost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-txtplot
+                             r-phytools
+                             r-mvmorph
+                             r-future-apply
+                             r-future
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://jakeberv.com/bifrost/")
+    (synopsis
+     "Branch-Level Inference Framework for Recognizing Optimal Shifts in Traits")
+    (description
+     "This package provides methods for detecting and visualizing cladogenic shifts in
+multivariate trait data on phylogenies.  Implements penalized-likelihood
+multivariate generalized least squares models, enabling analyses of
+high-dimensional trait datasets and large trees via
+@code{searchOptimalConfiguration()}.  Includes a greedy step-wise shift-search
+algorithm following approaches developed in Smith et al. (2023)
+<doi:10.1111/nph.19099> and Berv et al. (2024) <doi:10.1126/sciadv.adp0114>.
+Methods build on multivariate GLS approaches described in Clavel et al. (2019)
+<doi:10.1093/sysbio/syy045> and implemented in the @code{mvgls()} function from
+the @code{mvMORPH} package.  Documentation and vignettes are available at
+<https://jakeberv.com/bifrost/>, including the introductory vignette at
+<https://jakeberv.com/bifrost/articles/jaw-shape-vignette.html>.")
+    (license license:gpl2+)))
+
 (define-public r-bifiesurvey
   (package
     (name "r-bifiesurvey")
@@ -19810,13 +19917,13 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.6.1")
+    (version "0.1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "0sk0nvp51kr237945k29znfz8n1p0xw7m4xgscw8ryf4gpz70g6m"))))
+        (base32 "0ns23fgajgrzg0y4cxw31n8ajvfw54b370hbdwjxahfgjm3fi5hx"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (arguments
@@ -24512,13 +24619,13 @@ Large-Scale Gene Expression Data, P@code{LoS} ONE 7(3): e33624,
 (define-public r-bbw
   (package
     (name "r-bbw")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbw" version))
        (sha256
-        (base32 "0a4sj2bmp6kwi99k7p7sb1fl8pd7wfk9kzacf3rs8ny5ag4a1g53"))))
+        (base32 "1k2l8pjs161v3kvi57j1k29v0h6wkwlfhwga5qklw3903bq2q5sg"))))
     (properties `((upstream-name . "bbw")))
     (build-system r-build-system)
     (arguments
@@ -25815,13 +25922,13 @@ C. P. (2014) <doi:10.1007/978-1-4614-8687-9>.")
 (define-public r-bayesrules
   (package
     (name "r-bayesrules")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesrules" version))
        (sha256
-        (base32 "0a1a1aq91ary985xd0qqc1sgjlyfcrjh7ngzcy4f7j09a7ch3j4b"))))
+        (base32 "1f53zaaj7iswws9zp911z8049iiww43kzgqb8b79pddgv1p80hss"))))
     (properties `((upstream-name . "bayesrules")))
     (build-system r-build-system)
     (arguments
@@ -27118,13 +27225,13 @@ models can be computed.")
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "2.2.6")
+    (version "2.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "1v8g7if46qi275sfg44vyn2nljcp3ya8cs408ni5snlzcmh7wvmr"))))
+        (base32 "0avqj5wz9cpprk7jyq62i75s6ljbp540nl8c8f12jl6mj2lcl9jk"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (arguments
@@ -28868,13 +28975,13 @@ WI or WP as the underlying CVI.")
 (define-public r-bayescureratemodel
   (package
     (name "r-bayescureratemodel")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesCureRateModel" version))
        (sha256
-        (base32 "007h0z5vm57min9b205rhwhrbfqk28jqkzw7dd3k2q4vv86sqw84"))))
+        (base32 "1k5y0b47j1zbb04hwg3bz3kp3bdrylfggdqh60kfk93xd19p7s52"))))
     (properties `((upstream-name . "bayesCureRateModel")))
     (build-system r-build-system)
     (arguments
@@ -31217,13 +31324,13 @@ package without @code{bartMachine}.")
 (define-public r-bartmachine
   (package
     (name "r-bartmachine")
-    (version "1.4")
+    (version "1.4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartMachine" version))
        (sha256
-        (base32 "1w367sbmjas2pw9ax7fzxczma0ykg3bbn4zvfmipckyh0agm6nc0"))))
+        (base32 "17ccvhiqfxlzvmvm14dpgdljf2dw1mn4p4m52x6h0hr2rq37hn4z"))))
     (properties `((upstream-name . "bartMachine")))
     (build-system r-build-system)
     (arguments
@@ -32949,13 +33056,13 @@ Reactive Global Minimum Variance Portfolios with k-BAHC covariance cleaning
 (define-public r-bagyo
   (package
     (name "r-bagyo")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bagyo" version))
        (sha256
-        (base32 "0j3aiqqn1y9hw3ik2jlza3rwsi8rn32i218dd0fffz56k5d5hcdp"))))
+        (base32 "0wc5swrbxqsr5586891nnx1gz5gs0hw4mpsbqgwb30cz554fdmri"))))
     (properties `((upstream-name . "bagyo")))
     (build-system r-build-system)
     (arguments

@@ -1235,13 +1235,13 @@ similar to that in Hanks and Hooten (2013) <doi:10.1080/01621459.2012.724647>.")
 (define-public r-rwbo
   (package
     (name "r-rwbo")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rwbo" version))
        (sha256
-        (base32 "02vinhqppchj04p5ki39x4d9mn7x25xzsxhvhqn9074ah8z89s7j"))))
+        (base32 "1zvcgcgpl91d4zl95m3dfgcd74h3rl383whzpgimmjvb5z82d0qh"))))
     (properties `((upstream-name . "Rwbo")))
     (build-system r-build-system)
     (arguments
@@ -1369,13 +1369,13 @@ and interactive way.")
 (define-public r-rwa
   (package
     (name "r-rwa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwa" version))
        (sha256
-        (base32 "0qdw88w3zgnfzi2k8a8m64pix4vb2v0y99063w01jvncvd1jibg3"))))
+        (base32 "1aihj7kgiyz7m7bn6bjlk0jbp2hgm7lswdjsxjm4zyzn453vvbhm"))))
     (properties `((upstream-name . "rwa")))
     (build-system r-build-system)
     (arguments
@@ -2999,13 +2999,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.9.1")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "1hcf313w8y6i3hs0jrnn407crsc4y8n4dazsqgm148z8mla2a1zk"))))
+        (base32 "13gn5nsa79aiqd3zln24ww9zi7av3z52kxsh2iibdqqpayck5ggv"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (arguments
@@ -3013,6 +3013,7 @@ ISBN:9780849303166).")
       #:tests? #f))
     (propagated-inputs (list r-stars
                              r-stanheaders
+                             r-spdep
                              r-sparsechol
                              r-sf
                              r-rstantools
@@ -3022,6 +3023,7 @@ ISBN:9780849303166).")
                              r-rcpp
                              r-raster
                              r-r6
+                             r-quadprog
                              r-lubridate
                              r-glmmrbase
                              r-bh))
@@ -3038,8 +3040,7 @@ Diggle et al. (2013) <doi:10.1214/13-STS441> and we provide both the low-rank
 approximation for Gaussian processes described by Solin and SÃ¤rkkÃ¤ (2020)
 <doi:10.1007/s11222-019-09886-w> and Riutort-Mayol et al (2023)
 <doi:10.1007/s11222-022-10167-2> and the nearest neighbour Gaussian process
-described by Datta et al (2016) <doi:10.1080/01621459.2015.1044091>.  cmdstanr
-can be downloaded at <https://mc-stan.org/cmdstanr/>.")
+described by Datta et al (2016) <doi:10.1080/01621459.2015.1044091>.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-rts
@@ -3813,6 +3814,47 @@ severity classification at the individual tree level usingÂ deepÂ Learning.
 Further details were published in Klauberg et al. (2023)
 <doi:10.3390/rs15041165>.")
     (license license:gpl3)))
+
+(define-public r-rtls
+  (package
+    (name "r-rtls")
+    (version "0.2.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rTLS" version))
+       (sha256
+        (base32 "09krq33jw83dix2w7x917drv3kvprmwks7gqcm15m2i4s87hg9c7"))))
+    (properties `((upstream-name . "rTLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-rgl
+                             r-rcppprogress
+                             r-rcpphnsw
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-foreach
+                             r-dosnow
+                             r-data-table
+                             r-boot
+                             r-alphashape3d))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Antguz/rTLS")
+    (synopsis
+     "Tools to Process Point Clouds Derived from Terrestrial Laser Scanning")
+    (description
+     "This package provides a set of tools to process and calculate metrics on point
+clouds derived from terrestrial @code{LiDAR} (Light Detection and Ranging; TLS).
+ Its creation is based on key aspects of the TLS application in forestry and
+ecology.  Currently, the main routines are based on filtering, neighboring
+features of points, voxelization, canopy structure, and the creation of
+artificial stands.  It is written using data.table and C++ language and in most
+of the functions it is possible to use parallel processing to speed-up the
+routines.")
+    (license license:gpl3+)))
 
 (define-public r-rtlr
   (package
@@ -5117,13 +5159,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "10.1.1")
+    (version "10.1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "0cfym77vpdg1b9mf95sknfrhqy8ycn38vyy3kx996fk0l469780y"))))
+        (base32 "0mv90sf9xy4by40hjfdyiw9rxi6b5pxsfqhdx1ybxb7s645li7xg"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -6690,6 +6732,64 @@ basic interface and access to a version of the algorithm that works with sparse
 matrices.")
     (license license:gpl3)))
 
+(define-public r-rsp
+  (package
+    (name "r-rsp")
+    (version "0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSP" version))
+       (sha256
+        (base32 "1sfn6rqbqgd62alvd1j2hd8b615g8j01qaaf8wknj7g79ay4bpg5"))))
+    (properties `((upstream-name . "RSP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xlsx
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinyitemanalysis
+                             r-shinycustomloader
+                             r-shinybs
+                             r-shiny
+                             r-semplot
+                             r-scales
+                             r-rstudioapi
+                             r-rjava
+                             r-psych
+                             r-polycor
+                             r-plyr
+                             r-mvn
+                             r-mirt
+                             r-metrics
+                             r-ltm
+                             r-lavaan
+                             r-igraph
+                             r-hornpa
+                             r-gt
+                             r-gparotation
+                             r-ggplot2
+                             r-foreign
+                             r-dt
+                             r-catr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RSP")
+    (synopsis "'shiny' Applications for Statistical and Psychometric Analysis")
+    (description
+     "Toolbox with shiny applications for widely used psychometric methods.  Those
+methods include following analysis: Item analysis, item response theory
+calibration, principal component analysis, confirmatory factor analysis -
+structural equation modeling, generating simulated data.  References: Chalmers
+(2012, <doi:10.18637/jss.v048.i06>); Revelle (2022,
+<https://CRAN.R-project.org/package=psych Version = 2.2.9.>); Rosseel (2012,
+<doi:10.18637/jss.v048.i02>); Magis & Raiche (2012,
+<doi:10.18637/jss.v048.i08>); Magis & Barrada (2017,
+<doi:10.18637/jss.v076.c01>).")
+    (license license:gpl3)))
+
 (define-public r-rsomoclu
   (package
     (name "r-rsomoclu")
@@ -7165,6 +7265,31 @@ clustering algorithm.")
      "This package provides functions and examples for testing hypothesis about the
 population mean and variance on samples drawn by r-size biased sampling schemes.")
     (license license:gpl2+)))
+
+(define-public r-rsixel
+  (package
+    (name "r-rsixel")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsixel" version))
+       (sha256
+        (base32 "1bx6p8s3fpgaiy5i7w3sygj0i5z50k6vv23m1kjjf3bz96vi7nzx"))))
+    (properties `((upstream-name . "rsixel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-png))
+    (home-page "https://cran.r-project.org/package=rsixel")
+    (synopsis "Encoding and Decoding Sixel Images")
+    (description
+     "This package provides a native R implementation for encoding and decoding sixel
+graphics (<https://vt100.net/docs/vt3xx-gp/chapter14.html>), and a dedicated
+sixel graphics device that allows plots to be rendered directly within
+compatible terminal emulators.")
+    (license license:expat)))
 
 (define-public r-rsinaica
   (package
@@ -8091,13 +8216,13 @@ for deployment.")
 (define-public r-rsclient
   (package
     (name "r-rsclient")
-    (version "0.7-11")
+    (version "0.7-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSclient" version))
        (sha256
-        (base32 "15swd0dcpp5j3klxn3f3vnr4sa660s1zgbmq5hb20j2n7r1iwhzr"))))
+        (base32 "1bb4cmn6fha002xvcqkwq90pyzhsi17c4zhmi55djhaylapskmp4"))))
     (properties `((upstream-name . "RSclient")))
     (build-system r-build-system)
     (arguments
@@ -11474,13 +11599,13 @@ highly efficient robust PLS estimator.")
 (define-public r-rplotterpkg
   (package
     (name "r-rplotterpkg")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RplotterPkg" version))
        (sha256
-        (base32 "04lcpvhy2cs8qgvlwa4qjk8hsabkxz2lxm4dnw30j331ck4qb5x6"))))
+        (base32 "1mrprsml43sqgamkyj6rnsvyp7vlr3vid4q2l25pfybfzms28yqf"))))
     (properties `((upstream-name . "RplotterPkg")))
     (build-system r-build-system)
     (arguments
@@ -13289,13 +13414,13 @@ of its features.")
 (define-public r-rosm
   (package
     (name "r-rosm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rosm" version))
        (sha256
-        (base32 "022f564d0qh3rivp6sxak4amib7c17m383vlfvac0vi0y4x49hf3"))))
+        (base32 "1diqwshsa5llgrbp4v7ibm3rlsxnxlb8581gbmcr53ri5m6l0bcq"))))
     (properties `((upstream-name . "rosm")))
     (build-system r-build-system)
     (arguments
@@ -16676,13 +16801,13 @@ variables; test of endogeneity in high dimensions ('Guo et al. (2016)
 (define-public r-robusthd
   (package
     (name "r-robusthd")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustHD" version))
        (sha256
-        (base32 "16az9yk1ljjdw3ri4s5kdj8b286rszi0n94msmhlh3myph90rwp0"))))
+        (base32 "1ai43hwfnp9ildc90y4kc074kv57wl9zy1rh4dxjpli19vfppmg6"))))
     (properties `((upstream-name . "robustHD")))
     (build-system r-build-system)
     (arguments
@@ -22332,6 +22457,31 @@ Mapzen has gone out of business, but rmapzen can be set up to work with any
 provider who implements the Mapzen API.")
     (license license:expat)))
 
+(define-public r-rmangal
+  (package
+    (name "r-rmangal")
+    (version "2.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmangal" version))
+       (sha256
+        (base32 "1lk3djjs166a3gg1hqqvdv6grwlin04v0p1wk3557raacnz26fvp"))))
+    (properties `((upstream-name . "rmangal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-jsonlite r-igraph r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/rmangal/")
+    (synopsis "'Mangal' Client")
+    (description
+     "An interface to the Mangal database - a collection of ecological networks.  This
+package includes functions to work with the Mangal RESTful API methods
+(<https://mangal-interactions.github.io/mangal-api/>).")
+    (license license:expat)))
+
 (define-public r-rmalschains
   (package
     (name "r-rmalschains")
@@ -22561,13 +22711,13 @@ routines implement the algorithm described in Michael, Thronton, Xie, and Tian
 (define-public r-rlumshiny
   (package
     (name "r-rlumshiny")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLumShiny" version))
        (sha256
-        (base32 "01prbj8xhy5dg191pav00qigmwqanq8malljijpaf1w9kwv85q10"))))
+        (base32 "0h69pvd8d3925hc255w9wai62yd31r9hfi22pqianbmnc3aqdg1h"))))
     (properties `((upstream-name . "RLumShiny")))
     (build-system r-build-system)
     (arguments
@@ -33824,13 +33974,13 @@ forms for both the recurrent event process and the terminal event.")
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddapXtracto" version))
        (sha256
-        (base32 "1vfqnnyj3j453h4mf5p1jhk33827c8y9qqi6ya9k437zc82529cl"))))
+        (base32 "1rq17h1zp5q3mrs1b1rzzmhjy774fzrph5p75gj2s5msccgnabwh"))))
     (properties `((upstream-name . "rerddapXtracto")))
     (build-system r-build-system)
     (arguments
@@ -34967,13 +35117,13 @@ chunks, and easily searched and retrieved.  See Napolitano (2017)
 (define-public r-repmod
   (package
     (name "r-repmod")
-    (version "0.1.7")
+    (version "0.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repmod" version))
        (sha256
-        (base32 "1rpmvxfw2m3bisi5g90sdfm8wmwg2gv9rzblq9kl70kvrs8pj1qs"))))
+        (base32 "132f392cphi78qjgjcc14310p9f8yfsb1cvkfnb6rs272ksisknk"))))
     (properties `((upstream-name . "repmod")))
     (build-system r-build-system)
     (arguments
@@ -34984,7 +35134,8 @@ chunks, and easily searched and retrieved.  See Napolitano (2017)
                              r-lmertest
                              r-lme4
                              r-flextable
-                             r-boot))
+                             r-boot
+                             r-bayestestr))
     (home-page "https://cran.r-project.org/package=repmod")
     (synopsis "Create Report Table from Different Objects")
     (description
@@ -36157,13 +36308,13 @@ data are generated by the assumed data generating model.")
 (define-public r-remixed
   (package
     (name "r-remixed")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REMixed" version))
        (sha256
-        (base32 "1zm6909icp2ygy34jinz2qxi0py3rwa1kk19c1sl2xvjrciwhvra"))))
+        (base32 "1dcsadg40w5wv9r1qfm679yzfc69pjr9wqgdks2sajlvc4hvrf8v"))))
     (properties `((upstream-name . "REMixed")))
     (build-system r-build-system)
     (arguments
@@ -48603,29 +48754,6 @@ package in the R Commander GUI for R.")
 user interface) for R, based on the tcltk package.")
     (license license:gpl2+)))
 
-(define-public r-rcma
-  (package
-    (name "r-rcma")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rCMA" version))
-       (sha256
-        (base32 "1y7n127lxswkgkz8wsxkvlps7f02i7495zlr4d4ixac57av6chs6"))))
-    (properties `((upstream-name . "rCMA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=rCMA")
-    (synopsis "R-to-Java Interface for 'CMA-ES'")
-    (description
-     "Tool for providing access to the Java version CMA@code{EvolutionStrategy} of
-Nikolaus Hansen.  CMA-ES is the Covariance Matrix Adaptation Evolution Strategy,
-see <https://www.lri.fr/~hansen/cmaes_inmatlab.html#java>.")
-    (license license:gpl3+)))
-
 (define-public r-rclsp
   (package
     (name "r-rclsp")
@@ -51249,13 +51377,13 @@ functions and can be obtained in different data structures common to R
 (define-public r-rbc
   (package
     (name "r-rbc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbc" version))
        (sha256
-        (base32 "1szzfwbbysnifiymj3mnrcjd6n5wqc53smh8dk8nx2av4hgpl1ia"))))
+        (base32 "0c0nqcv6x6pyzslcklyvxi1gi8p7b6ksdp1n8yfh32n4fv24ypqz"))))
     (properties `((upstream-name . "rbc")))
     (build-system r-build-system)
     (arguments
@@ -52949,13 +53077,13 @@ sources can be found in the github repository
 (define-public r-rastarocket
   (package
     (name "r-rastarocket")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RastaRocket" version))
        (sha256
-        (base32 "01xaxl49bp40804grwf6h8mx9dhzkigx6j9y98ykms7ppm2sgdv8"))))
+        (base32 "185zrs70f3aqn5q8h14zkyrvgpjgm5k0mb7bqnahk58l47pama5v"))))
     (properties `((upstream-name . "RastaRocket")))
     (build-system r-build-system)
     (arguments
@@ -54079,13 +54207,13 @@ matching and text analysis.")
 (define-public r-rapidatetime
   (package
     (name "r-rapidatetime")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RApiDatetime" version))
        (sha256
-        (base32 "07gixbx8k3nzpybwxsqw22nldw2w5isl7yy63k3z36j5sjchxzjw"))))
+        (base32 "05pnkw8d25a4v8y5g8zj0c3l20bmzzfygawmibslqhifqh4k58zl"))))
     (properties `((upstream-name . "RApiDatetime")))
     (build-system r-build-system)
     (arguments

@@ -171,19 +171,19 @@ clean the data once in R.")
 (define-public r-nycopendata
   (package
     (name "r-nycopendata")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nycOpenData" version))
        (sha256
-        (base32 "1vwx2x03a1q86zhn11wlzvfkj1mk1s6qrafa909a16i5fpcj574i"))))
+        (base32 "0gcdhprv66m8yjxdv5wk34y75sim13sgkgmhi2g28qgprsxxryrk"))))
     (properties `((upstream-name . "nycOpenData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-jsonlite r-httr))
+    (propagated-inputs (list r-tibble r-jsonlite r-httr r-curl))
     (home-page "https://github.com/martinezc1/nycOpenData")
     (synopsis "Convenient Access to NYC Open Data API Endpoints")
     (description
@@ -1232,13 +1232,13 @@ the number of vowel sequences for words not found.")
 (define-public r-nswgeo
   (package
     (name "r-nswgeo")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nswgeo" version))
        (sha256
-        (base32 "1czb617hhf7ghirfkdaywzazgdjys4ybhkjphklvqbyjdi26g61n"))))
+        (base32 "0r9ldmcnqxkb5vkhzavjn7kl3jck248fd47p5dga0g6x5sc5dbsz"))))
     (properties `((upstream-name . "nswgeo")))
     (build-system r-build-system)
     (arguments
@@ -9147,6 +9147,34 @@ diverse at-site parameters.  The methods are described in Winkler et al. (2021)
 <doi:10.1175/2010JHM1202.1>.")
     (license license:gpl3)))
 
+(define-public r-nivo-bubblechart
+  (package
+    (name "r-nivo-bubblechart")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nivo.bubblechart" version))
+       (sha256
+        (base32 "1653akchwfhfhgjpi45fbk43kkwj0idphzrsjkscmd5vzdnzflri"))))
+    (properties `((upstream-name . "nivo.bubblechart")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reactr r-jsonlite r-htmlwidgets r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DataRacerEdu/nivo.bubblechart")
+    (synopsis "Interactive Bubble Charts for 'Shiny' Using 'Nivo'")
+    (description
+     "This package creates interactive bubble chart visualizations for Shiny
+applications using the Nivo circle packing library.  Provides an htmlwidgets
+wrapper around the Nivo circle packing chart, enabling hierarchical data
+visualization with customizable colors, labels, and interactive features
+including click and hover events.  For more information about Nivo', see
+<https://nivo.rocks/>.")
+    (license license:expat)))
+
 (define-public r-nivm
   (package
     (name "r-nivm")
@@ -10628,13 +10656,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "0mlaf0rpm7hzj5y6j7j2y77zfpchqzvq8dmqmhpc85m6kj2b4pgi"))))
+        (base32 "1c5d1g3rj1qlddg1yybshn1394kibw9af0fk79q8vyqvbf485xz5"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (arguments
@@ -13046,42 +13074,43 @@ available from <doi:10.1037/met0000476>.")
 (define-public r-networkchange
   (package
     (name "r-networkchange")
-    (version "0.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkChange" version))
        (sha256
-        (base32 "03rzyfiwbqpr4jj3wdg3s1gnfizz39j07yk0q2fkq3a8pfx4w306"))))
+        (base32 "1n3zayziqrnyr52nx33w9mmpj0kvfp0w1d1d2461ghbn3hsj4p9v"))))
     (properties `((upstream-name . "NetworkChange")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-viridis
+                             r-tidyr
                              r-rmpfr
                              r-rlang
-                             r-reshape
                              r-rcolorbrewer
                              r-qgraph
+                             r-patchwork
                              r-network
                              r-mvtnorm
                              r-mcmcpack
                              r-mass
                              r-igraph
-                             r-gridextra
-                             r-ggvis
                              r-ggrepel
                              r-ggplot2
                              r-ggally
                              r-abind))
-    (home-page "https://github.com/jongheepark/NetworkChange")
+    (home-page "https://cran.r-project.org/package=NetworkChange")
     (synopsis "Bayesian Package for Network Changepoint Analysis")
     (description
      "Network changepoint analysis for undirected network data.  The package
 implements a hidden Markov network change point model (Park and Sohn (2020)).
 Functions for break number detection using the approximate marginal likelihood
-and WAIC are also provided.")
+and WAIC are also provided.  This version includes performance optimizations
+with vectorized MCMC operations and modern ggplot2-based visualizations with
+colorblind-friendly palettes.")
     (license license:gpl3)))
 
 (define-public r-networkabc
@@ -14478,19 +14507,19 @@ libraries of @code{JavaScript} in one package.")
 (define-public r-netassoc
   (package
     (name "r-netassoc")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netassoc" version))
        (sha256
-        (base32 "1m1p8bs64gxrran4aicq1s2ddq6sz6hflv1a5icbb9miz294dc15"))))
+        (base32 "0gkzyv12n6h1qvpw3mq7gb0zsspwzlsbzsbqcy1p6lk61dfm9m41"))))
     (properties `((upstream-name . "netassoc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vegan r-infotheo r-igraph r-huge r-corpcor))
+    (propagated-inputs (list r-vegan r-infotheo r-igraph r-corpcor))
     (home-page "https://cran.r-project.org/package=netassoc")
     (synopsis "Inference of Species Associations from Co-Occurrence Data")
     (description
@@ -17345,6 +17374,32 @@ realizations, provides reasonable estimates of the expected performances of the
 system in real-world conditions.")
     (license license:agpl3)))
 
+(define-public r-navaeci
+  (package
+    (name "r-navaeci")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NAVAECI" version))
+       (sha256
+        (base32 "126klif5ml6qp3cvg6fxzks4bskbmys8d3n18ndyb18gihyfg8sq"))))
+    (properties `((upstream-name . "NAVAECI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-expm r-boundedgeworth))
+    (home-page "https://cran.r-project.org/package=NAVAECI")
+    (synopsis
+     "Non-Asymptotically Valid and Asymptotically Exact (NAVAE) Confidence Intervals")
+    (description
+     "This package implements the non-asymptotically valid and asymptotically exact
+confidence intervals in two cases: estimation of the mean, and estimation of (a
+linear combination of) the coefficients in a linear regression model, following
+(Derumigny, Girard and Guyonvarch, 2025) <doi:10.48550/@code{arXiv.2507.16776>}.")
+    (license license:gpl3)))
+
 (define-public r-naturesounds
   (package
     (name "r-naturesounds")
@@ -18012,6 +18067,42 @@ can silence/prevent typical sources of error.")
 (<https://www.api.gov.uk/dft/national-public-transport-access-nodes-naptan-api/#national-public-transport-access-nodes-naptan-api>).
  This allows users to download @code{NaPTAN} transport information, for the full
 dataset, by ATCO region code, or by name of region.")
+    (license license:expat)))
+
+(define-public r-naprior
+  (package
+    (name "r-naprior")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NAPrior" version))
+       (sha256
+        (base32 "112bx1hvvckmrmg8ld4nciimvwlza1b32i2k75iwknr9bypgpqmk"))))
+    (properties `((upstream-name . "NAPrior")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-survival
+                             r-r2jags
+                             r-purrr
+                             r-metafor
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NAPrior")
+    (synopsis
+     "Network Meta-Analytic Predictive Prior for Mid-Trial SoC Changes")
+    (description
+     "This package implements the Network meta-Analytic Predictive (NAP) prior
+framework to accommodate changes in the standard of care (@code{SoC}) during
+ongoing randomized controlled trials (RCTs).  The method synthesizes pre- and
+post-change in-trial data by leveraging external evidence, particularly
+head-to-head trials comparing the original and new standards of care, to bridge
+the two evidence periods and enable principled borrowing.  The package provides
+utilities to construct NAP-based priors and perform Bayesian inference for
+time-to-event endpoints using summarized trial evidence.")
     (license license:expat)))
 
 (define-public r-nap

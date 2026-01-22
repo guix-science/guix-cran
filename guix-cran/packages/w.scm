@@ -8,6 +8,7 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
@@ -1189,6 +1190,39 @@ methodologies implemented see Yu, R. X. and Ganju, J. (2022)
 various books on my sons(Wren) bookshelf.  Also included are a number of
 functions and wrappers to utilize them, as well as to subset the palettes to
 desired number/specific colors.")
+    (license license:expat)))
+
+(define-public r-wrds
+  (package
+    (name "r-wrds")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wrds" version))
+       (sha256
+        (base32 "0av31ikwbg0vz94wi4fp61cl48b47zfpgcyfvsbqyp2zzqvwkcrn"))))
+    (properties `((upstream-name . "wrds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidylog
+                             r-rpostgres
+                             r-rlang
+                             r-keyring
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli))
+    (home-page "https://github.com/statzhero/wrds")
+    (synopsis "Access 'Wharton Research Data Services' ('WRDS')")
+    (description
+     "This package provides simple functions for accessing data from Wharton Research
+Data Services ('WRDS'), a widely used financial database in academic research.
+Includes credential management via the system keyring, database tools, and
+functions for downloading generic tables, Compustat fundamentals, and linking
+tables.")
     (license license:expat)))
 
 (define-public r-wrassp
@@ -3474,6 +3508,30 @@ between the predictors and in applying the generalized Lasso criterion.")
 formats: ISO week, epidemiology week (epi week) and calendar date.")
     (license license:gpl2)))
 
+(define-public r-wklsr
+  (package
+    (name "r-wklsr")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wklsr" version))
+       (sha256
+        (base32 "1vi9fcymaa6gyf71850q4j5k5dvbxnasm20a3pm55ay58x8igq3l"))))
+    (properties `((upstream-name . "wklsr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-duckdb r-dbi))
+    (home-page "https://cran.r-project.org/package=wklsr")
+    (synopsis "Well-Known Locations in R")
+    (description
+     "Makes it easy to find global administrative boundaries from countries to cities
+using readable, chainable R syntax.  Fetches geometries from Overture Maps
+Foundation data.  Ported from <https://github.com/wherobots/wkls>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-wkb
   (package
     (name "r-wkb")
@@ -5173,13 +5231,13 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
 (define-public r-whirl
   (package
     (name "r-whirl")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whirl" version))
        (sha256
-        (base32 "05sk9qhh3ll1hw2flzsdah88i8043yhzlwcn184fr8sny2w5x3yw"))))
+        (base32 "0rciy67dkx8mqi0qrxr55g8as9gxgqvbsj7wv2czw7jjmm9i7rzz"))))
     (properties `((upstream-name . "whirl")))
     (build-system r-build-system)
     (arguments
@@ -5194,6 +5252,7 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
                              r-sessioninfo
                              r-rlang
                              r-reticulate
+                             r-renv
                              r-r6
                              r-quarto
                              r-purrr
@@ -9771,13 +9830,13 @@ explanation look at R-bloggers on web.")
 (define-public r-washdata
   (package
     (name "r-washdata")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "washdata" version))
        (sha256
-        (base32 "17hmhcnh53fivxaywa0hvjl9y527ms2pqlapd1wvyx3gjqkggwyg"))))
+        (base32 "02n0hmdxh3apl5aapp1rb5m5dcb66bj7vjfz27vkzajwvf3fpkq5"))))
     (properties `((upstream-name . "washdata")))
     (build-system r-build-system)
     (arguments

@@ -2372,13 +2372,13 @@ expression analysis of RNA-seq data, it is only applicable to hybrid offspring
 (define-public r-expertsurv
   (package
     (name "r-expertsurv")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expertsurv" version))
        (sha256
-        (base32 "1r1280i2j8ncncw29sa20w5yp439rfm6q4jjwikczmiciasnyxsa"))))
+        (base32 "0i2s1xi80f2nxcybc6dh6cvayfl0fjws3jcc6925w836g3hqv1m8"))))
     (properties `((upstream-name . "expertsurv")))
     (build-system r-build-system)
     (arguments
@@ -5271,6 +5271,35 @@ Allows for normal and non-normal approximations of the data-site likelihood of
 the effect parameter.")
     (license license:asl2.0)))
 
+(define-public r-evidenceratio
+  (package
+    (name "r-evidenceratio")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evidenceratio" version))
+       (sha256
+        (base32 "1zdxnvrmgni65bfqk6bfh6lqwi35rylfidqxdy46xjd08i4yqxvh"))))
+    (properties `((upstream-name . "evidenceratio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=evidenceratio")
+    (synopsis
+     "Likelihood-Based Evidence Ratios for Classical Statistical Tests")
+    (description
+     "This package implements likelihood-based evidence ratios for unified reporting
+in classical statistical testing.  The package reports effect estimates,
+uncertainty intervals, and likelihood ratios on the log 10 scale derived from a
+single statistical model.  It applies to standard normal mean tests, contingency
+tables, and regression coefficients, and provides a direct evidential measure
+while retaining classical error guarantees.  For the Evidence Ratio Reporting
+Standard see Lawless (2026) <doi:10.5281/zenodo.18261076>.")
+    (license license:expat)))
+
 (define-public r-evidencefactors
   (package
     (name "r-evidencefactors")
@@ -6790,13 +6819,13 @@ plots.  The App is called using @code{eufmdis.adapt::run_adapt()}.")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudract" version))
        (sha256
-        (base32 "0sv9x908l0k78jkpfy8v3rvn8rg16hi66vbfby1xg7bd564nr9zm"))))
+        (base32 "0jxibv5r30chqccx86njgmfkl3c2sqrqx23nrgls9bfllcg3byrh"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (arguments
@@ -6812,7 +6841,7 @@ plots.  The App is called using @code{eufmdis.adapt::run_adapt()}.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://shug0131.github.io/eudraCT/")
+    (home-page "https://eudract-tool.medschl.cam.ac.uk/")
     (synopsis
      "Creates Safety Results Summary in XML to Upload to EudraCT, or ClinicalTrials.gov")
     (description
@@ -7291,13 +7320,13 @@ Economic Botany, 62(1), 24-39. <doi:10.1007/s12231-007-9004-5>.")
 (define-public r-ethiodate
   (package
     (name "r-ethiodate")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ethiodate" version))
        (sha256
-        (base32 "1g6969zzgzvkm0vmcw2dbbrm7ms55ljhx2grc4ql6p9j66apinxd"))))
+        (base32 "1bwxgvhqa8kwrngfr6hygksgb9b26jfp3a2lgwkl9g02ddrl652y"))))
     (properties `((upstream-name . "ethiodate")))
     (build-system r-build-system)
     (arguments
@@ -12809,13 +12838,13 @@ survival analysis.  Methods are based on Gelman et al. (2013)
 (define-public r-epidict
   (package
     (name "r-epidict")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidict" version))
        (sha256
-        (base32 "018qcvy1xjngal9avnbb82lmwcjx1qgdn1bsl4jjd98ccaijnnqz"))))
+        (base32 "0ycpbf2c9xg77p5a13zcwyc8nlzv2vi57dxr79sn0q75qhvd5y6d"))))
     (properties `((upstream-name . "epidict")))
     (build-system r-build-system)
     (arguments
@@ -14237,6 +14266,30 @@ selecting lambda via cross validation but no automated methods for selection of
 alpha.  Elastic Net @code{SearcheR} automates the simultaneous selection of both
 lambda and alpha.  Developed, in part, with support by NICHD R03 HD094912.")
     (license license:gpl2)))
+
+(define-public r-ensmodelvis
+  (package
+    (name "r-ensmodelvis")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ensModelVis" version))
+       (sha256
+        (base32 "1yjldkcb8s877jyijha4lv61yh9lsazdhryhylf6i7x4b3ziyn28"))))
+    (properties `((upstream-name . "ensModelVis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-forcats r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/domijan/ensModelVis")
+    (synopsis "Visualisations for Model Ensembles")
+    (description
+     "Displays for model fits of multiple models and their ensembles.  For
+classification models, the plots are heatmaps, for regression, scatterplots.")
+    (license license:expat)))
 
 (define-public r-enshuman
   (package
@@ -20871,6 +20924,56 @@ optimization problems in continuous domains.  The implemented explicit
 exploration strategy in this package is described in Salinas-GutiÃ©rrez and
 MuÃ±oz Zavala (2023) <doi:10.1016/j.asoc.2023.110230>.")
     (license license:gpl3)))
+
+(define-public r-eeaaq
+  (package
+    (name "r-eeaaq")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EEAaq" version))
+       (sha256
+        (base32 "03mgrc56dwjx3yr9drslcwmn8ydx5pzp4y1ami7jhd1k6dxms389"))))
+    (properties `((upstream-name . "EEAaq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-sf
+                             r-readr
+                             r-raster
+                             r-lubridate
+                             r-leaflet
+                             r-httr
+                             r-htmlwidgets
+                             r-gstat
+                             r-gifski
+                             r-ggspatial
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaoloMaranzano/EEAaq_R")
+    (synopsis
+     "Handle Air Quality Data from the European Environment Agency Data Portal")
+    (description
+     "This software downloads and manages air quality data from the European
+Environmental Agency (EEA) dataflow
+(<https://www.eea.europa.eu/data-and-maps/data/aqereporting-9>).  See the web
+page <https://eeadmz1-downloads-webapp.azurewebsites.net/> for details on the
+EEA's Air Quality Download Service.  The package allows dynamically mapping the
+stations, summarising and time aggregating the measurements and building spatial
+interpolation maps.  See the web page <https://www.eea.europa.eu/en> for further
+information on EEA activities and history.  Further details, as well as, an
+extended vignette of the main functions included in the package, are available
+at the @code{GitHub} web page dedicated to the project.")
+    (license license:gpl3+)))
 
 (define-public r-edwards97
   (package

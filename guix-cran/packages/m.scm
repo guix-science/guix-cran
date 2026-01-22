@@ -2277,13 +2277,13 @@ sampling positive stable variates not chi/sqrt(nu).")
 (define-public r-mvgam
   (package
     (name "r-mvgam")
-    (version "1.1.593")
+    (version "1.1.594")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgam" version))
        (sha256
-        (base32 "0x29z4i08qqiaizf6kk9l215j5cfc0km915w3yqy1y56iwisq7ys"))))
+        (base32 "19gv4v2mppmvmkzllck4b6h0n90lxd9g1x30qyvb3vab3vrgvi4w"))))
     (properties `((upstream-name . "mvgam")))
     (build-system r-build-system)
     (arguments
@@ -3214,6 +3214,35 @@ peak error curation, ploidy and genome size calculations, and easy results
 export.")
     (license license:gpl3+)))
 
+(define-public r-mupet
+  (package
+    (name "r-mupet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mupet" version))
+       (sha256
+        (base32 "0xq1fjifigzdd25bxq2gxkq3l7c43py35hky1jwpm7krmzb0663m"))))
+    (properties `((upstream-name . "mupet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick r-rlang))
+    (home-page "https://github.com/astamm/mupet")
+    (synopsis "Multiclass Performance Evaluation Toolkit")
+    (description
+     "Implementation of custom tidymodels metrics for multi-class prediction models
+with a single negative class.  Currently are implemented macro-average
+sensitivity and specificity as in Mortaz, Ebrahim (2020) \"Imbalance accuracy
+metric for model selection in multi-class imbalance classification problemsâ
+<doi:10.1016/j.knosys.2020.106490> and a generalized weighted Youden index as in
+Li, D.L., Shen F., Yin Y., Peng J.X and Chen P.Y. (2013) âWeighted Youden
+index and its two-independent-sample comparison based on weighted sensitivity
+and specificityâ <doi:10.3760/cma.j.issn.0366-6999.20123102>.")
+    (license license:expat)))
+
 (define-public r-munsellinterpol
   (package
     (name "r-munsellinterpol")
@@ -3777,32 +3806,45 @@ data of different variable types as seen in Demirtas, H. (2017)
 (define-public r-multivarious
   (package
     (name "r-multivarious")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multivarious" version))
        (sha256
-        (base32 "1lgb7agfdq4fiwg2c2f6an2bx7krl84n79d7744rc514rgl0klp0"))))
+        (base32 "1jn364hm7hj802lvxyspkxm7sm7prc6v5ps8yfqdpj6g0ncl3amh"))))
     (properties `((upstream-name . "multivarious")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-svd
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-svd
                              r-rsvd
                              r-rspectra
                              r-rlang
-                             r-purrr
                              r-proxy
+                             r-primme
                              r-pls
                              r-matrixstats
                              r-matrix
+                             r-mass
+                             r-lifecycle
                              r-irlba
+                             r-gparotation
                              r-glmnet
-                             r-fitdistrplus
+                             r-ggrepel
+                             r-ggplot2
+                             r-geigen
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-crayon
                              r-corpcor
-                             r-chk))
+                             r-cli
+                             r-chk
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://bbuchsbaum.github.io/multivarious/")
     (synopsis "Extensible Data Structures for Multivariate Analysis")
@@ -11876,6 +11918,42 @@ writing machine-readable data.  The set of all-in-one wrappers will cover widely
 used functions from data analysis packages.")
     (license license:expat)))
 
+(define-public r-mrangr
+  (package
+    (name "r-mrangr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mrangr" version))
+       (sha256
+        (base32 "11p3ybgs82kb5pr0aawqxkbslf7zc5z8f3j29s9bzkc260wp3c0w"))))
+    (properties `((upstream-name . "mrangr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-rcolorbrewer
+                             r-rangr
+                             r-mgcv
+                             r-gstat
+                             r-fieldsimr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mrangr")
+    (synopsis "Mechanistic Metacommunity Simulator")
+    (description
+     "Flexible, mechanistic, and spatially explicit simulator of metacommunities.  It
+extends our previous package - rangr (see <https://github.com/ropensci/rangr>),
+which implemented a mechanistic virtual species simulator integrating population
+dynamics and dispersal.  The mrangr package adds the ability to simulate
+multiple species interacting through an asymmetric matrix of pairwise
+relationships, allowing users to model all types of biotic interactions â
+competitive, facilitative, or neutral â within spatially explicit virtual
+environments.")
+    (license license:expat)))
+
 (define-public r-mram
   (package
     (name "r-mram")
@@ -17765,13 +17843,13 @@ number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
 (define-public r-modelselection
   (package
     (name "r-modelselection")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelSelection" version))
        (sha256
-        (base32 "0d5i0g7849k6pxfifg2zcc3405lcf5bl5wsf8wz98bylfdwdp76i"))))
+        (base32 "06sm3azn435q0j3rpcf3qnikawiils196n821lfsasg181chz68m"))))
     (properties `((upstream-name . "modelSelection")))
     (build-system r-build-system)
     (arguments
@@ -17779,6 +17857,7 @@ number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
       #:tests? #f))
     (propagated-inputs (list r-survival
                              r-sparsematrixstats
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-pracma
@@ -17789,7 +17868,6 @@ number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
                              r-matrix
                              r-l0learn
                              r-intervals
-                             r-huge
                              r-glmnet
                              r-dplyr))
     (home-page "https://github.com/davidrusi/modelSelection")
@@ -22700,19 +22778,19 @@ The article with the details was submitted to JSS and can be currently seen on
 (define-public r-mlegp
   (package
     (name "r-mlegp")
-    (version "3.1.9")
+    (version "3.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlegp" version))
        (sha256
-        (base32 "1cs0l04axp6f6f6m4h4kw8z4pasxgp5la3xib04wxzb2l4bnsab3"))))
+        (base32 "1pay0jbhxg6056gzxzrv4g7yzkf9x6g3r4l0glrgjr23hbh4r2as"))))
     (properties `((upstream-name . "mlegp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=mlegp")
+    (home-page "https://github.com/gdancik/mlegp/")
     (synopsis "Maximum Likelihood Estimates of Gaussian Processes")
     (description
      "Maximum likelihood Gaussian process modeling for univariate and
@@ -24081,13 +24159,13 @@ parameter estimation.  See @code{citation()} for how to cite.")
 (define-public r-mixsmsn
   (package
     (name "r-mixsmsn")
-    (version "1.1-11")
+    (version "1.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixsmsn" version))
        (sha256
-        (base32 "1i13aj7pv4ac0p45r4v4da9rakgqd8cz0lb0yag40k1bxz068y7k"))))
+        (base32 "14583sr0pllxlc201b5sfp7n32hiyihw9q9kfqhhd4iz6ms3nsl0"))))
     (properties `((upstream-name . "mixsmsn")))
     (build-system r-build-system)
     (arguments
@@ -31733,51 +31811,52 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
 (define-public r-mgwrsar
   (package
     (name "r-mgwrsar")
-    (version "1.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgwrsar" version))
        (sha256
-        (base32 "1jvdv7y0clkiv8g09rsppi09w33d87in2mn4cs5id2y6r7apsshg"))))
+        (base32 "0iw72vibw3zfarnlx777hycsrfbbv6r5lr607ncd8pxg0b586ji3"))))
     (properties `((upstream-name . "mgwrsar")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sp
                              r-smut
                              r-sf
                              r-rlang
+                             r-rhpcblasctl
                              r-rcppeigen
+                             r-rcpparmadillo
                              r-rcpp
+                             r-plotly
                              r-nabor
-                             r-microbenchmark
                              r-mgcv
                              r-mboost
                              r-matrix
                              r-mapview
-                             r-leaflet
+                             r-magrittr
+                             r-lifecycle
                              r-knitr
-                             r-htmltools
                              r-gridextra
                              r-ggplot2
                              r-foreach
                              r-dplyr
                              r-doparallel
                              r-caret))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mgwrsar")
-    (synopsis "GWR, Mixed GWR and Multiscale GWR with Spatial Autocorrelation")
+    (synopsis
+     "GWR, Mixed GWR with Spatial Autocorrelation and Multiscale GWR (Top-Down Scale Approaches)")
     (description
-     "This package provides functions for computing (Mixed and Multiscale)
-Geographically Weighted Regression with spatial autocorrelation, Geniaux and
-Martinetti (2017) <doi:10.1016/j.regsciurbeco.2017.04.001>.")
+     "This package provides methods for Geographically Weighted Regression with
+spatial autocorrelation (Geniaux and Martinetti 2017)
+<doi:10.1016/j.regsciurbeco.2017.04.001>.  Implements Multiscale Geographically
+Weighted Regression with Top-Down Scale approaches (Geniaux 2026)
+<doi:10.1007/s10109-025-00481-4>.")
     (license license:gpl2+)))
 
 (define-public r-mgwrhw
@@ -32550,13 +32629,13 @@ including SIS (Fan and Lv (2008) <doi:10.1111/j.1467-9868.2008.00674.x>), SIRS
 (define-public r-mfpp
   (package
     (name "r-mfpp")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfpp" version))
        (sha256
-        (base32 "0gji3qsh6938f5sxii4x6f9hjn45rij81cv6lxaxshlg54qvjj13"))))
+        (base32 "0mhj74m611cgy46niixay676gqavdhhvxl9vc5s0bxf54w07vikw"))))
     (properties `((upstream-name . "mfpp")))
     (build-system r-build-system)
     (arguments
@@ -32986,13 +33065,13 @@ by Li, Xiao, and Luo (2020) <doi: 10.1002/sta4.245>.")
 (define-public r-mf-beta4
   (package
     (name "r-mf-beta4")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MF.beta4" version))
        (sha256
-        (base32 "10cnkb4a32cdm8xfbkyvp4p8pwx2xpnk6j545vaj1g07snphs3gd"))))
+        (base32 "19q0rgzbdj663hky30zraqv4jw94hdy58xnw2410f41lvln9z6lq"))))
     (properties `((upstream-name . "MF.beta4")))
     (build-system r-build-system)
     (arguments
@@ -39761,19 +39840,19 @@ error bias correction methods, see Luan et al. (2023)
 (define-public r-meboot
   (package
     (name "r-meboot")
-    (version "1.4-9.5")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meboot" version))
        (sha256
-        (base32 "07m532659b1j3q5z9256iaqv3y23p8skzgw8zbpigx87hn957rar"))))
+        (base32 "0inlzhkpg7qs0dzyvxlly6zfk4h695hg3b77xg7gkg28zjzzg90a"))))
     (properties `((upstream-name . "meboot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tdigest r-nlme r-hdrcde r-dynlm))
+    (propagated-inputs (list r-nlme r-hdrcde r-dynlm))
     (home-page "https://cran.r-project.org/package=meboot")
     (synopsis "Maximum Entropy Bootstrap for Time Series")
     (description
@@ -44378,24 +44457,19 @@ distributions used in insurance modeling as described in Bernegger (1997)
 (define-public r-mbbefd
   (package
     (name "r-mbbefd")
-    (version "0.8.13")
+    (version "0.8.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mbbefd" version))
        (sha256
-        (base32 "1q1726x9gi3qvdvggm39yvpnfcm679s4fhisv0sl4amq2s23g6zf"))))
+        (base32 "19gz3z6nk7f6zd28fig91dchvm96nvramsr3rss13mwawl8ig533"))))
     (properties `((upstream-name . "mbbefd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-mass
-                             r-gsl
-                             r-fitdistrplus
-                             r-alabama
-                             r-actuar))
+    (propagated-inputs (list r-rcpp r-mass r-fitdistrplus r-alabama r-actuar))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/spedygiorgio/mbbefd")
     (synopsis
@@ -46190,13 +46264,13 @@ parallel.")
 (define-public r-matman
   (package
     (name "r-matman")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matman" version))
        (sha256
-        (base32 "0mwxxqqlg6yydc06hrjqk5ly686s21w5i5z40axxwkmpzyz84sqv"))))
+        (base32 "00cg6q795lsxqd9ps1cl7iiic4197jqr1w8dx7qvp7l5zqdhvsw2"))))
     (properties `((upstream-name . "matman")))
     (build-system r-build-system)
     (arguments
@@ -53091,13 +53165,13 @@ based on the methodology presented on Quachie Asenso, T., & Zucknick, M. (2023)
 (define-public r-maditr
   (package
     (name "r-maditr")
-    (version "0.8.6")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maditr" version))
        (sha256
-        (base32 "0wl2lkgpwsakpnaraj11bn0w1k8ylvm771h94m4xi1p6wkrbbc3p"))))
+        (base32 "1rlp3qa1hxymhd51f7k8qqdw641lny0jszlxibzaimb8adfz0hk1"))))
     (properties `((upstream-name . "maditr")))
     (build-system r-build-system)
     (arguments

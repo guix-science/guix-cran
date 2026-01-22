@@ -12087,19 +12087,19 @@ to work with lists as objects.")
 (define-public r-aods3
   (package
     (name "r-aods3")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aods3" version))
        (sha256
-        (base32 "0vpnn36qqmkna3rdm88fgxbrbhf529p1qpfm0phig9jpj232a9rj"))))
+        (base32 "1nxiqw1p37vh94xpa3g4qafwyyfxsqpyzvl335dacwhhjp6x7ihz"))))
     (properties `((upstream-name . "aods3")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=aods3")
+    (home-page "https://github.com/lbbe-software/aods3")
     (synopsis "Analysis of Overdispersed Data using S3 Methods")
     (description
      "This package provides functions to analyse overdispersed counts or proportions.
@@ -13484,24 +13484,24 @@ conservative estimates of excursion sets under Gaussian random field priors.")
 (define-public r-ankir
   (package
     (name "r-ankir")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ankiR" version))
        (sha256
-        (base32 "1n63qcz4xv3g9s9v4grzxm4nmvlc9swaxn5kphyk73y7zc8w20qn"))))
+        (base32 "0c7jrk9qlnw68q34hglzmpk059p7g9h0n930j150jspi2131yrsh"))))
     (properties `((upstream-name . "ankiR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rsqlite r-dbi))
+    (propagated-inputs (list r-tibble r-rsqlite r-jsonlite r-dbi))
     (home-page "https://github.com/chrislongros/ankiR")
-    (synopsis "Read Anki Flashcard Databases")
+    (synopsis "Read 'Anki' Flashcard Databases")
     (description
      "Read and analyze Anki flashcard collection databases.  Provides functions to
-access notes, cards, and review logs from Anki's SQLite database with a tidy
+access notes, cards, and review logs from Anki SQLite database with a tidy
 interface.")
     (license license:expat)))
 
@@ -15769,27 +15769,27 @@ functionality with minimal overhead.")
 (define-public r-amapgeocode
   (package
     (name "r-amapgeocode")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amapGeocode" version))
        (sha256
-        (base32 "0j04hg2ks7578fiaymj295yll77xm6x5svmxx6m4n0djky8j10n1"))))
+        (base32 "12mnlislslpbdml6brim1mp3f14q6nwprvpkwnfk0riix6s576dj"))))
     (properties `((upstream-name . "amapGeocode")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-sjmisc
-                             r-magrittr
+                             r-tibble
+                             r-rlang
                              r-jsonlite
-                             r-httr
-                             r-furrr
-                             r-data-table))
+                             r-httr2
+                             r-dplyr
+                             r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/womeimingzi11/amapGeocode")
+    (home-page "https://womeimingzi11.github.io/amapGeocode/")
     (synopsis "An Interface to the 'AutoNavi Maps' API Geocoding Services")
     (description
      "Getting and parsing data of location geocode/reverse-geocode and administrative
@@ -24749,13 +24749,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.21.0")
+    (version "0.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "01j78f7pc8n25hwgvpba2g58vrmfl33lk6dpbfxy6v7asw128v9v"))))
+        (base32 "1vglghrnz1yv73ll6fyjf1icbawqiz3panbv9bkgpkkwircylxh3"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (arguments
@@ -24776,13 +24776,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.21.0")
+    (version "0.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "0hcvrrvggawxm70jb818h5792f0b2icwfipb5815kw5lsvj3cnd3"))))
+        (base32 "075ihd73bzz25m2c8sy4jy574z87qb09zqgv6msdrhhlfs0cs74p"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (arguments

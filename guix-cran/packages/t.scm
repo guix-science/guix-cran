@@ -2344,13 +2344,13 @@ players.")
 (define-public r-tugboat
   (package
     (name "r-tugboat")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tugboat" version))
        (sha256
-        (base32 "0nklxhw19ggh7bdjp7im1ww55cv39pmxnv6raj1ifnqvzfcdbiwb"))))
+        (base32 "0k67xhm5707grlq54gd5dzrnkwqq43k30w19c3zsfbdlf70kr2lb"))))
     (properties `((upstream-name . "tugboat")))
     (build-system r-build-system)
     (arguments
@@ -3678,13 +3678,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tsqca
   (package
     (name "r-tsqca")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSQCA" version))
        (sha256
-        (base32 "1cfvkdzvq7ki4g5i985bssafhm7c6s4swncirildizi38gr6djgp"))))
+        (base32 "170vi0pgn8r90ysvd83aspng5apkrlsyajrfs78j5gzzn8bnb492"))))
     (properties `((upstream-name . "TSQCA")))
     (build-system r-build-system)
     (arguments
@@ -4689,13 +4689,13 @@ and layout customization options.")
 (define-public r-tsforecast
   (package
     (name "r-tsforecast")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsforecast" version))
        (sha256
-        (base32 "0amwyivw6qhzivjrf7a4swj6628bdp7dbbqp1hdjp0phvrmfk9jq"))))
+        (base32 "0gknr4rymdccm93gsc4gaxwf0agr5wrpqskx379fln6fbqzcrawv"))))
     (properties `((upstream-name . "tsforecast")))
     (build-system r-build-system)
     (arguments
@@ -7897,13 +7897,13 @@ change-points are returned with the piecewise-linear estimator for signal.")
 (define-public r-trendlsw
   (package
     (name "r-trendlsw")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrendLSW" version))
        (sha256
-        (base32 "11wcn68bdvw6578dnkbc65m5ysk0jp8jnfz0d3grhdhqxjjqnkny"))))
+        (base32 "0n9zdw9kqk8rf5x2g6wq29994r2xmrnvchqq9kf8fqggi82wkcsd"))))
     (properties `((upstream-name . "TrendLSW")))
     (build-system r-build-system)
     (arguments
@@ -7917,8 +7917,10 @@ change-points are returned with the piecewise-linear estimator for signal.")
 time series models, which take account of time-varying trend and dependence
 structure in a univariate time series.  The TLSW model, and its estimation, is
 described in @code{McGonigle}, Killick and Nunes (2022a)
-<doi:10.1111/jtsa.12643>, (2022b) <doi:10.1214/22-EJS2044>.  New users will
-likely want to start with the TLSW function.")
+<doi:10.1111/jtsa.12643>, (2022b) <doi:10.1214/22-EJS2044>.  Further information
+regarding the use of the package, along with detailed examples, can be found in
+@code{McGonigle}, Killick and Nunes (2025) <doi:10.18637/jss.v115.i10>.  New
+users will likely want to start with the TLSW function.")
     (license license:gpl3+)))
 
 (define-public r-trendintrend
@@ -20486,6 +20488,35 @@ appropriate path.  Afterwards, users can easily convert the data into a data
 frame using this package.")
     (license license:expat)))
 
+(define-public r-tidyjson
+  (package
+    (name "r-tidyjson")
+    (version "0.3.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyjson" version))
+       (sha256
+        (base32 "069bkk30gx43v4n7x13bn5ywccs7ni9i2a43fmm0rdyyg0b85pm0"))))
+    (properties `((upstream-name . "tidyjson")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/colearendt/tidyjson")
+    (synopsis "Tidy Complex 'JSON'")
+    (description "Turn complex JSON data into tidy data frames.")
+    (license license:expat)))
+
 (define-public r-tidyindex
   (package
     (name "r-tidyindex")
@@ -28774,13 +28805,13 @@ applications focusing on reproducibility and relational data.")
 (define-public r-teal-code
   (package
     (name "r-teal-code")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.code" version))
        (sha256
-        (base32 "02v5qllyykldrvnqhvyh2axp2g6f42xd1d6771myqb4rridmy7bp"))))
+        (base32 "01jbxnsjp478wmvb46dhc0kwwpqz7ypchsc0jcxr52abd4rnxpvr"))))
     (properties `((upstream-name . "teal.code")))
     (build-system r-build-system)
     (arguments
@@ -31582,13 +31613,13 @@ raw data from WRDS (Wharton Research Data Service,
 (define-public r-tapnet
   (package
     (name "r-tapnet")
-    (version "0.3")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tapnet" version))
        (sha256
-        (base32 "1fjg98m19iwbzijs5b5l4ssrbx1shv1hmgn1166cbni9y76m44sh"))))
+        (base32 "105c7m99vd60h2hpy9wfwmmdzi2rjg2zv6hqv1m2h3vn852lfzgs"))))
     (properties `((upstream-name . "tapnet")))
     (build-system r-build-system)
     (arguments

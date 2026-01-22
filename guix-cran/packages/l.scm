@@ -2153,6 +2153,43 @@ R-Hilfe-Seiten fÃ¼r den Herausgeberband Breit, S. und Schreiner, C. (Hrsg.).
 zur VerfÃ¼gung.")
     (license license:gpl3+)))
 
+(define-public r-lsamba
+  (package
+    (name "r-lsamba")
+    (version "2024.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSAMBA" version))
+       (sha256
+        (base32 "10nj54g745h7fq4sf6lng75gxfgj688xib5whsiawmakircpkvsa"))))
+    (properties `((upstream-name . "LSAMBA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-stringr
+                             r-sharp
+                             r-rsmlx
+                             r-mass
+                             r-latex2exp
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=LSAMBA")
+    (synopsis "Lasso-SAMBA Algorithm")
+    (description
+     "This package provides a lasso-based method for building mechanistic models using
+the SAMBA algorithm (Stochastic Approximation for Model Building Algorithm) (M
+Prague, M Lavielle (2022) <doi:10.1002/psp4.12742>).  The package extends the
+Rsmlx package (version 2024.1.0) to better handle high-dimensional data.  It
+relies on the Monolix software (version 2024R1; see
+(<https://monolixsuite.slp-software.com/monolix/2024R1/>), which must be
+installed beforehand.")
+    (license license:gpl3+)))
+
 (define-public r-lsafun
   (package
     (name "r-lsafun")
@@ -3956,19 +3993,24 @@ represented using the S4 class @code{lookupTable}.")
 (define-public r-lookout
   (package
     (name "r-lookout")
-    (version "0.1.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lookout" version))
        (sha256
-        (base32 "0d08804h61dal80sd6z34ls1g5i0qly1zdxankw8gfrb60b41lnx"))))
+        (base32 "0g0ivi9qbc0rpbbglq92kj1vwpiyfrdvykhq1jlmyhbvg9vrx6yl"))))
     (properties `((upstream-name . "lookout")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tdastats r-rann r-ggplot2 r-evd))
+    (propagated-inputs (list r-tidyr
+                             r-tdastats
+                             r-robustbase
+                             r-rann
+                             r-ggplot2
+                             r-evd))
     (home-page "https://sevvandi.github.io/lookout/")
     (synopsis "Leave One Out Kernel Density Estimates for Outlier Detection")
     (description
@@ -6973,13 +7015,13 @@ and panel-to-key synchronization/management.")
 (define-public r-lnpar
   (package
     (name "r-lnpar")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LNPar" version))
        (sha256
-        (base32 "18i07k4g1i3yi81pjhalcdakgc391bizicv98f49s7w636liicqb"))))
+        (base32 "0j10b7mf6dxfhk2zkmdn378rl988vnbjs28l85f3810bgr9c1fsx"))))
     (properties `((upstream-name . "LNPar")))
     (build-system r-build-system)
     (arguments
@@ -10661,13 +10703,13 @@ higher order polynomial models.  Jhang et al. (2004)
 (define-public r-limorhyde2
   (package
     (name "r-limorhyde2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "limorhyde2" version))
        (sha256
-        (base32 "0icwh7vvid7xxlk5jmqqkl6507b4vc0fmpp0wm10lsh0wxibmvwf"))))
+        (base32 "0yxk5gn7sxg9pl6bl8l02lfdsav8cbfqrzynpcq7zsds3waddasc"))))
     (properties `((upstream-name . "limorhyde2")))
     (build-system r-build-system)
     (arguments
@@ -10698,13 +10740,13 @@ curves.")
 (define-public r-limorhyde
   (package
     (name "r-limorhyde")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "limorhyde" version))
        (sha256
-        (base32 "0ksz8chs5v7qss5yf24zcpszi6v0ylbn98zaxy7mz62qfx5i441g"))))
+        (base32 "16m1v0yq2fkz29y8nj1rkm64fla1p8cv3286vr8bavy9f90k6l5a"))))
     (properties `((upstream-name . "limorhyde")))
     (build-system r-build-system)
     (arguments
@@ -16980,13 +17022,13 @@ Bayesian learning: the partially CFA (Chen, Guo, Zhang, & Pan, 2020) <DOI:
 (define-public r-lavinteract
   (package
     (name "r-lavinteract")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavinteract" version))
        (sha256
-        (base32 "1sib6v9k61gsz750apjjrg1ms7vx5gbckpk3c2ax8dhgvq5hwpkf"))))
+        (base32 "0p96m6kc5l7ac01ax8c2x3x9cmbv3bmy99h9il05a32fxfz7rz2s"))))
     (properties `((upstream-name . "lavinteract")))
     (build-system r-build-system)
     (arguments

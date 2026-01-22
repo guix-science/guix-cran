@@ -3686,19 +3686,25 @@ for UNC men's basketball team.")
 (define-public r-uncertainucdp
   (package
     (name "r-uncertainucdp")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uncertainUCDP" version))
        (sha256
-        (base32 "1426cxapg8yrsdj32l40labhxh1xpky0m84xwnzyj2wdpz15alvg"))))
+        (base32 "1h56265xikx6yxc3myim28b096f7wr6f1x8q5zrpj8q6lm6vv48h"))))
     (properties `((upstream-name . "uncertainUCDP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-mistr r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-sandwich
+                             r-rlang
+                             r-mistr
+                             r-lmtest
+                             r-foreach
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=uncertainUCDP")
     (synopsis
      "Parametric Mixture Models for Uncertainty Estimation of Fatalities in UCDP Conflict Data")
@@ -3713,7 +3719,7 @@ functions for making random draws of fatalities from the mixture distribution,
 as well as to estimate percentiles, quantiles, means, and other statistics of
 the distribution.  Full details on the survey and estimation procedure can be
 found in Vesco et al (2024).")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-uncertainty
   (package

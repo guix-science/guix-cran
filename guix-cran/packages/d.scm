@@ -5842,13 +5842,13 @@ information, see Zetterqvist and SjÃ¶lander (2015) <doi:10.1515/em-2014-0021>.
 (define-public r-drf
   (package
     (name "r-drf")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drf" version))
        (sha256
-        (base32 "08ikaj22d9jj63jnzqisw5wnl9j6xd3hm1s86y4a4n532xiv29gn"))))
+        (base32 "1x3mizghx94xm7zf0hkr7cafkibj6shi044n937byh3abd2va549"))))
     (properties `((upstream-name . "drf")))
     (build-system r-build-system)
     (arguments
@@ -5860,7 +5860,8 @@ information, see Zetterqvist and SjÃ¶lander (2015) <doi:10.1515/em-2014-0021>.
     (synopsis "Distributional Random Forests")
     (description
      "An implementation of distributional random forests as introduced in Cevid &
-Michel & Meinshausen & Buhlmann (2020) <doi:10.48550/@code{arXiv.2005.14458>}.")
+Michel & Naf & Meinshausen & Buhlmann (2022)
+<doi:10.48550/@code{arXiv.2005.14458>}.")
     (license license:gpl3)))
 
 (define-public r-dregar
@@ -5931,26 +5932,27 @@ Company (2019).")
 (define-public r-dream
   (package
     (name "r-dream")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dream" version))
        (sha256
-        (base32 "1bs4s8vwdxfqvdj19l327m3mv778992h85px6568y4gf65gahhrd"))))
+        (base32 "0v2c8g36981brpf48g5qbdj2agciiw4yyvwccs2yd9kjjh7qcb41"))))
     (properties `((upstream-name . "dream")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp
+                             r-lifecycle
                              r-foreach
                              r-fastmatch
                              r-dqrng
                              r-doparallel
                              r-data-table
                              r-collapse))
-    (home-page "https://cran.r-project.org/package=dream")
+    (home-page "https://github.com/kevinCarson/dream")
     (synopsis "Dynamic Relational Event Analysis and Modeling")
     (description
      "This package provides a set of tools for relational and event analysis,
@@ -6357,13 +6359,13 @@ multivariate Rayleigh PDFs with applications to antenna array geometrics\", <DOI
 (define-public r-drawsample
   (package
     (name "r-drawsample")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drawsample" version))
        (sha256
-        (base32 "018v4amapfwxx6k4s9drcv2vwil7cplnkwlrhy9djc0a02jxx2l5"))))
+        (base32 "0say6x4kalf8w28m2zlf1hxnjlxqgmnbzzddyawgr09s2jixbhnq"))))
     (properties `((upstream-name . "drawsample")))
     (build-system r-build-system)
     (arguments
@@ -12210,13 +12212,13 @@ wrangling, visualization, and disaster analytics.")
 (define-public r-dittoviz
   (package
     (name "r-dittoviz")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittoViz" version))
        (sha256
-        (base32 "1xjrs562czfx6lm73dw3yf3ird6xixaxirk56r8238jkrzyy13g6"))))
+        (base32 "1lsh3bxmq5gqiwlq449szxjqw18yd9cl1li7ws3i2vzh3w9kjk56"))))
     (properties `((upstream-name . "dittoViz")))
     (build-system r-build-system)
     (arguments
@@ -18982,13 +18984,13 @@ the paper linked to via the URL below.")
 (define-public r-dggridr
   (package
     (name "r-dggridr")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dggridR" version))
        (sha256
-        (base32 "1vwmf5m1k40kk68vil280gnzh028y04wi5q3xjacyhaw8di0w9d5"))))
+        (base32 "1njp66y71x2ilifchfkc654by9d99p555fbcc4v9wn9x6lr8wr0a"))))
     (properties `((upstream-name . "dggridR")))
     (build-system r-build-system)
     (arguments
@@ -19889,20 +19891,19 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.7.0")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "0vibhm9jakn854vwvvppgf4hqy2faigcmlg8c9jpfzrcjqwjzh2x"))))
+        (base32 "0rvnbayrfjsb82y111z18g3dk65pssjpj3kjfzx8rq6c6z9anxxa"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-sitmo
                              r-rsqlite
                              r-rlang
                              r-rcpparmadillo
@@ -22243,6 +22244,40 @@ data for Japanese male centenarians are given by Emura & Murotani
 (2015)<doi:10.1007/s11749-015-0432-8>.")
     (license license:gpl2)))
 
+(define-public r-depcoeff
+  (package
+    (name "r-depcoeff")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "depcoeff" version))
+       (sha256
+        (base32 "0xiv0rpkpd7lr3jjzkf8jbamjfxcq4209w9cm1d7csf98ic1l8vi"))))
+    (properties `((upstream-name . "depcoeff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-copula))
+    (home-page "https://cran.r-project.org/package=depcoeff")
+    (synopsis "Dependency Coefficients")
+    (description
+     "This package provides functions to compute coefficients measuring the dependence
+of two or more than two variables.  The functions can be deployed to gain
+information about functional dependencies of the variables with emphasis on
+monotone functions.  The statistics describe how well one response variable can
+be approximated by a monotone function of other variables.  In regression
+analysis the variable selection is an important issue.  In this framework the
+functions could be useful tools in modeling the regression function.  Detailed
+explanations on the subject can be found in papers Liebscher (2014)
+<doi:10.2478/demo-2014-0004>; Liebscher (2017) <doi:10.1515/demo-2017-0012>;
+Liebscher (2021):
+<https://arfjournals.com/image/catalog/Journals%20Papers/AJSS/No%202%20(2021)/4-AJSS_123-150.pdf>;
+Liebscher (2021): Kendall regression coefficient.  Computational Statistics and
+Data Analysis 157.  107140.")
+    (license license:gpl2)))
+
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
@@ -22375,13 +22410,13 @@ as well as a function to generate a project skeleton for such an analysis.")
 (define-public r-dentomedical
   (package
     (name "r-dentomedical")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dentomedical" version))
        (sha256
-        (base32 "1bqnc5nj1cv1h0h3h2g6dn2hjpn8iy4zsvrp5073617xcjh7h6pn"))))
+        (base32 "06k4np7kfywh0vcn4r6p0l4lwadbrwg86w1i2gbh51q14kwbl227"))))
     (properties `((upstream-name . "dentomedical")))
     (build-system r-build-system)
     (arguments
@@ -22389,20 +22424,22 @@ as well as a function to generate a project skeleton for such an analysis.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-mass
+                             r-rlang
+                             r-purrr
+                             r-fsa
                              r-flextable
                              r-dplyr
                              r-broom))
-    (home-page "https://github.com/umarhussain-git/dentomedical")
+    (home-page "https://github.com/umarhussain-git/dentomedical1")
     (synopsis
-     "Publication-Ready Descriptive, Bivariate, Regression, and Diagnostic Accuracy Tools for Medical and Dental Data")
+     "Publication-Ready Descriptive, Bivariate, Regression, Correlation and Diagnostic Accuracy Tools for Medical and Dental Data")
     (description
      "The dentomedical package provides a comprehensive suite of tools for medical and
 dental research.  It includes automated descriptive statistics, bivariate
 analysis with intelligent test selection, logistic regression, and diagnostic
-accuracy assessment.  All functions generate structured, publication-ready
-tables using flextable', ensuring reproducibility and clarity suitable for
-manuscripts, reports, and clinical research workflows.")
+accuracy assessment.  All functions generate publication-ready tables using
+flextable', ensuring reproducibility and clarity suitable for manuscripts,
+reports, and clinical research workflows.")
     (license license:expat)))
 
 (define-public r-denstrip
@@ -23081,37 +23118,6 @@ demulticoder R package see Sudermann et al. (2025)
 <doi:10.1094/PHYTO-02-25-0043-FI>.")
     (license license:expat)))
 
-(define-public r-demova
-  (package
-    (name "r-demova")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DEMOVA" version))
-       (sha256
-        (base32 "09dqhhhihphhdnplmhdq4q5zwc0qvqhirdrxa9x6fr43vwa5zfp4"))))
-    (properties `((upstream-name . "DEMOVA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-leaps))
-    (home-page "https://cran.r-project.org/package=DEMOVA")
-    (synopsis
-     "DEvelopment (of Multi-Linear QSPR/QSAR) MOdels VAlidated using Test Set")
-    (description
-     "Tool for the development of multi-linear QSPR/QSAR models (Quantitative
-structure-property/activity relationship).  Theses models are used in chemistry,
-biology and pharmacy to find a relationship between the structure of a molecule
-and its property (such as activity, toxicology but also physical properties).
-The various functions of this package allows: selection of descriptors based of
-variances, intercorrelation and user expertise; selection of the best
-multi-linear regression in terms of correlation and robustness; methods of
-internal validation (Leave-One-Out, Leave-Many-Out, Y-scrambling) and external
-using test sets.")
-    (license license:gpl2+)))
-
 (define-public r-demoshiny
   (package
     (name "r-demoshiny")
@@ -23604,6 +23610,48 @@ issue with delta is that can not be computed by hand contrary to kappa.  The
 current algorithm is based on the Version 5 of the delta windows program that
 can be found on
 <https://www.ugr.es/~bioest/software/delta/cmd.php?seccion=downloads>.")
+    (license license:gpl3)))
+
+(define-public r-delma
+  (package
+    (name "r-delma")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "delma" version))
+       (sha256
+        (base32 "105ydl360wnr8m31yzjzkhmbiyrr0yk7ddwwaj7pprvsw58kx4r0"))))
+    (properties `((upstream-name . "delma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-xfun
+                             r-withr
+                             r-tibble
+                             r-stringr
+                             r-snakecase
+                             r-rmarkdown
+                             r-rlang
+                             r-quarto
+                             r-purrr
+                             r-lightparser
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://delma.ala.org.au/R/")
+    (synopsis
+     "Convert 'R Markdown' and 'Quarto' Documents to Ecological Metadata Language")
+    (description
+     "Ecological Metadata Language or EML is a long-established format for describing
+ecological datasets to facilitate sharing and re-use.  Because EML is
+effectively a modified xml schema, however, it is challenging to write and
+manipulate for non-expert users.  delma supports users to write metadata
+statements in R Markdown or Quarto markdown format, and parse them to EML and
+(optionally) back again.")
     (license license:gpl3)))
 
 (define-public r-delimtools
@@ -24414,6 +24462,49 @@ deeptime is to enable users to add highly customizable timescales to their
 visualizations.  Other functions are also included to assist with other areas of
 deep time visualization.")
     (license license:gpl3+)))
+
+(define-public r-deepstrapp
+  (package
+    (name "r-deepstrapp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deepSTRAPP" version))
+       (sha256
+        (base32 "0lhyhw3f850nqbnlf4djdm59adxjp2snbp2h88625wqjddd94rmg"))))
+    (properties `((upstream-name . "deepSTRAPP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-qpdf
+                             r-purrr
+                             r-plyr
+                             r-phytools
+                             r-ggplot2
+                             r-geiger
+                             r-dunn-test
+                             r-dplyr
+                             r-cowplot
+                             r-coda
+                             r-cladorcpp
+                             r-bammtools
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MaelDore/deepSTRAPP")
+    (synopsis "Test for Differences in Diversification Rates over Time")
+    (description
+     "Employ time-calibrated phylogenies and trait/range data to test for differences
+in diversification rates over evolutionary time.  Extend the STRAPP test from
+@code{BAMMtools::traitDependentBAMM()} to any time step along phylogenies.  See
+inst/COPYRIGHTS for details on third-party code.")
+    (license license:expat)))
 
 (define-public r-deepspat
   (package
@@ -30729,6 +30820,35 @@ data manipulation challenges.")
      "Shiny modules to import data into an application or addin from various sources,
 and to manipulate them after that.")
     (license license:gpl3)))
+
+(define-public r-datametprocess
+  (package
+    (name "r-datametprocess")
+    (version "1.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataMetProcess" version))
+       (sha256
+        (base32 "0ykim3ma8xj98ds173iccidjslh01j9vfx1saqzyf74rzglalzsg"))))
+    (properties `((upstream-name . "DataMetProcess")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-shiny
+                             r-rlang
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wagnnerms97/DataMetProcess")
+    (synopsis "Meteorological Data Processing")
+    (description
+     "Set of tools aimed at processing meteorological data, converting hourly recorded
+data to daily, monthly and annual data.")
+    (license license:gpl3+)))
 
 (define-public r-datameta
   (package

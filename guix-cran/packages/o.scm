@@ -788,6 +788,49 @@ of the pull and stochastic motion to vary across selective regimes.  Beaulieu et
 al (2012).")
     (license license:gpl2+)))
 
+(define-public r-outstandr
+  (package
+    (name "r-outstandr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outstandR" version))
+       (sha256
+        (base32 "0v4hk4j0j4bm5gmhwaqyhwnx5hrfmwzdpd1bfrh79qnj95i7jfch"))))
+    (properties `((upstream-name . "outstandR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rstanarm
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-pillar
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-crayon
+                             r-copula
+                             r-cli
+                             r-boot))
+    (home-page "https://StatisticsHealthEconomics.github.io/outstandR/")
+    (synopsis
+     "Model-Based Standardisation for Indirect Treatment Comparison with Limited Subject-Level Data")
+    (description
+     "For the problem of indirect treatment comparison with limited subject-level
+data, this package provides tools for model-based standardisation with several
+different computation approaches.  See RemiroâAzÃ³car A, Heath A, Baio G
+(2022) \"Parametric Gâcomputation for compatible indirect treatment comparisons
+with limited individual patient data\", Res.  Synth.  Methods, 1â31.  ISSN
+1759-2879, <doi:10.1002/jrsm.1565>.")
+    (license license:gpl3+)))
+
 (define-public r-outseekr
   (package
     (name "r-outseekr")
@@ -6816,13 +6859,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.23")
+    (version "1.23.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "15lglfiyz7hzdhb0c7g3j4gzpy8yjjby7apnz8s32043p56fnqgn"))))
+        (base32 "0qw4i6rb1ni7ad5vvnx4li4lz4ycsbkp2kpxj5rink4f1jk0xab1"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -7041,13 +7084,13 @@ available, see <https://www.openassetpricing.com/>.")
 (define-public r-openskies
   (package
     (name "r-openskies")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openSkies" version))
        (sha256
-        (base32 "11hmra9qas6ng2bzbgi3mqvqshz8aa2q29p62pm2v8c2qvvnnnmh"))))
+        (base32 "16rvkc1gmdyb0694rn81bz31zzj7v9plyqglbb4pl7gx6y04ci96"))))
     (properties `((upstream-name . "openSkies")))
     (build-system r-build-system)
     (arguments
@@ -7995,19 +8038,19 @@ camera device.")
 (define-public r-opencl
   (package
     (name "r-opencl")
-    (version "0.2-10")
+    (version "0.2-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenCL" version))
        (sha256
-        (base32 "0nkf1rfplzpwf722xiswvvjqla0aysaga5g6r1whx6ksy21xbhpi"))))
+        (base32 "0ar1x70diwcc9a8p3mncii8drnnr8vsdmsh486y55wxkc13zbl7j"))))
     (properties `((upstream-name . "OpenCL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://www.rforge.net/OpenCL/")
+    (home-page "https://www.rforge.net/OpenCL/")
     (synopsis "Interface allowing R to use OpenCL")
     (description
      "This package provides an interface to @code{OpenCL}, allowing R to leverage
@@ -8310,6 +8353,34 @@ meteorological data and dispersion model output can be analysed.  The package is
 described in Carslaw and Ropkins (2012, <doi:10.1016/j.envsoft.2011.09.008>) and
 subsequent papers.")
     (license license:expat)))
+
+(define-public r-open-visualization-academy
+  (package
+    (name "r-open-visualization-academy")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Open.Visualization.Academy" version))
+       (sha256
+        (base32 "1hlswvzxkydrgn4797nh656clixj3x0xrmss0qd833d4g4mh6r8y"))))
+    (properties `((upstream-name . "Open.Visualization.Academy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rlang r-knitr r-hms r-clipr r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=Open.Visualization.Academy")
+    (synopsis
+     "Content to Support Classes Taught Through the Open Visualization Academy")
+    (description
+     "This contains functions and data used by the Open Visualization Academy classes
+on data processing and visualization.  The tutorial included with this package
+requires the gradethis package which can be installed using
+\"remotes::install_github('rstudio/gradethis')\".")
+    (license license:agpl3+)))
 
 (define-public r-opdoe
   (package
@@ -11364,13 +11435,13 @@ data run on the Olink platform.")
 (define-public r-oldr
   (package
     (name "r-oldr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oldr" version))
        (sha256
-        (base32 "1bb3cdcfla6sa82j2dfjlffy0b4s9v1s4g1fxr030wgvbxzsn5x5"))))
+        (base32 "1g7hb25bv78yscs39y75jxvyflmfmhwslds5kl6fxyixql5yvy4q"))))
     (properties `((upstream-name . "oldr")))
     (build-system r-build-system)
     (arguments

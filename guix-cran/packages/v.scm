@@ -166,13 +166,13 @@ for details.")
 (define-public r-vvtableau
   (package
     (name "r-vvtableau")
-    (version "0.7.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvtableau" version))
        (sha256
-        (base32 "1d2d8zd6zp9dsmmzjrslhjkm41312g7dl0a333yrs57cwzxarc5l"))))
+        (base32 "1sj6g48mxkgyymch1gmyp528hmlhfhci4lfi2ngd27hd00i1xq3s"))))
     (properties `((upstream-name . "vvtableau")))
     (build-system r-build-system)
     (arguments
@@ -323,13 +323,13 @@ R scripts.")
 (define-public r-vvconverter
   (package
     (name "r-vvconverter")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvconverter" version))
        (sha256
-        (base32 "0brb108ygha6v12w9h0b8302qv1yd63bgwkmrwma0crabsdsx9c0"))))
+        (base32 "0np9f75ir3djqvb2gppbxjyxh35fwp295f23q1fkpdcnka2iinqp"))))
     (properties `((upstream-name . "vvconverter")))
     (build-system r-build-system)
     (arguments
@@ -353,13 +353,13 @@ academic year.")
 (define-public r-vvcanvas
   (package
     (name "r-vvcanvas")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvcanvas" version))
        (sha256
-        (base32 "172ab2ad51rd4byp1b4wdmj182dry2czr4qxvmxjizhqr5j1wq3f"))))
+        (base32 "0pyw0l9d969cqrglzw8asx3n1p3ijpvbf33pawcwrqn1f9j64gfl"))))
     (properties `((upstream-name . "vvcanvas")))
     (build-system r-build-system)
     (arguments
@@ -415,13 +415,13 @@ visit <https://bitwarden.com/products/secrets-manager/>.")
 (define-public r-vvauditor
   (package
     (name "r-vvauditor")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvauditor" version))
        (sha256
-        (base32 "164vjd9rf0hxx3r8wjf3vyqdfm3fp3zzq2pqvirykpxjrr7j1bic"))))
+        (base32 "00rdcyygc27kzqzkik5ky440fsf0n7pzzampxzwd3n1bfrwjdg9x"))))
     (properties `((upstream-name . "vvauditor")))
     (build-system r-build-system)
     (arguments
@@ -3386,6 +3386,38 @@ the fit of regression models arising from a wide variety of models in R ('lm',
 glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
     (license license:gpl3)))
 
+(define-public r-vispedigree
+  (package
+    (name "r-vispedigree")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visPedigree" version))
+       (sha256
+        (base32 "1ha6bzf7053n931v61xfq6ri2jk17h35w0bbbi5rk139kf1wgvkj"))))
+    (properties `((upstream-name . "visPedigree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nadiv r-igraph r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/luansheng/visPedigree")
+    (synopsis "Tidying and Visualizing Animal Pedigrees")
+    (description
+     "Built on graph theory and the high-performance data.table framework, this
+package provides a comprehensive suite of tools for tidying, pruning, and
+visualizing animal pedigrees.  By modeling pedigrees as directed acyclic graphs
+using igraph', it ensures robust loop detection, efficient generation
+assignment, and sophisticated hierarchical layouts.  Key features include
+standardizing pedigree formats, flexible ancestry tracing, and generating
+legible vector-based PDF graphs.  A unique compaction algorithm enables the
+visualization of massive pedigrees (e.g., in aquaculture selective breeding
+population) by grouping full-sib families, maintaining structural clarity
+without overcrowding.")
+    (license license:expat)))
+
 (define-public r-visor
   (package
     (name "r-visor")
@@ -5972,6 +6004,29 @@ managing capitalisations in tidy data.")
     (description "Calculate and plot Venn diagrams in 2D and 3D.")
     (license license:gpl3+)))
 
+(define-public r-vennitem
+  (package
+    (name "r-vennitem")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VennItem" version))
+       (sha256
+        (base32 "04dqn7dmb35wffj745bjcf9wjjjw88j8pbsw2iw904zjp6k3cwqk"))))
+    (properties `((upstream-name . "VennItem")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-scales r-ggplot2 r-ggforce))
+    (home-page "https://github.com/microbialman/VennItem")
+    (synopsis "Generate Venn Diagrams with Items Listed in the Sections")
+    (description
+     "Generate Venn diagrams with the items listed in appropriate sections, supporting
+multiple columns for long lists.")
+    (license license:expat)))
+
 (define-public r-venneuler
   (package
     (name "r-venneuler")
@@ -6571,6 +6626,39 @@ analyses.")
 data through the @code{VectorSurv} API <https://api.vectorsurv.org/>.
 Additionally provides functions for analysis and visualization.")
     (license license:gpl3)))
+
+(define-public r-vectorialcalculus
+  (package
+    (name "r-vectorialcalculus")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vectorialcalculus" version))
+       (sha256
+        (base32 "1crdc0yg96097nzrgkmr83v26sc20pbfbsags3zk8ngd256m46dh"))))
+    (properties `((upstream-name . "vectorialcalculus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble))
+    (home-page "https://github.com/JulianFajardo1908/vectorialcalculus")
+    (synopsis "Vector Calculus Tools for Visualization and Analysis")
+    (description
+     "This package provides pedagogical tools for visualization and numerical
+computation in vector calculus.  Includes functions for parametric curves,
+scalar and vector fields, gradients, divergences, curls, line and surface
+integrals, and dynamic 2D/3D graphical analysis to support teaching and
+learning.  The implemented methods follow standard treatments in vector calculus
+and multivariable analysis as presented in Marsden and Tromba (2011)
+<ISBN:9781429215084>, Stewart (2015) <ISBN:9781285741550>, Thomas, Weir and Hass
+(2018) <ISBN:9780134438986>, Larson and Edwards (2016) <ISBN:9781285255869>,
+Apostol (1969) <ISBN:9780471000051>, Spivak (1971) <ISBN:9780805390216>, Schey
+(2005) <ISBN:9780071369080>, Colley (2019) <ISBN:9780321982384>, Lizarazo Osorio
+(2020) <ISBN:9789585450103>, Sievert (2020) <ISBN:9780367180165>, and Borowko
+(2013) <ISBN:9781439870791>.")
+    (license license:expat)))
 
 (define-public r-vectorcoder
   (package
@@ -7258,13 +7346,13 @@ manipulation.")
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.8.7")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcdExtra" version))
        (sha256
-        (base32 "1s7l4r2axh1cbw4smi4cia6kah0d7zmvsxd5v5d873q0lnm4rkn4"))))
+        (base32 "1hckq2sxrwhdhwdi6jw8l8n48igcin95maz990m9hmlf3hqjqd9n"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (arguments
@@ -9781,13 +9869,13 @@ Valection: Design Optimization for Validation and Verification Studies; Biorxiv
 (define-public r-valdrviz
   (package
     (name "r-valdrviz")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valdrViz" version))
        (sha256
-        (base32 "0fqxl87n4csd6bv1j4ivlvwpiz3imzrlw0wr68j9ww5l3gwbbpr5"))))
+        (base32 "1bny7igmv5c13zaj6bpwh1j9i6b0haypi2y0wxpi6n8z7j365lx4"))))
     (properties `((upstream-name . "valdrViz")))
     (build-system r-build-system)
     (arguments

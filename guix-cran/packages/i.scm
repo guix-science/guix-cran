@@ -10243,31 +10243,6 @@ code (the injector) the responsibility of providing its dependencies.  This
 separates the responsibilities of use and construction.")
     (license license:lgpl3+)))
 
-(define-public r-infrafdtd-assist
-  (package
-    (name "r-infrafdtd-assist")
-    (version "0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "infraFDTD.assist" version))
-       (sha256
-        (base32 "04j5nl5vxk79iciz6s9bpiyn319c2dbh7fdahgwira2r30w2fxv9"))))
-    (properties `((upstream-name . "infraFDTD.assist")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-fields))
-    (home-page "https://cran.r-project.org/package=infraFDTD.assist")
-    (synopsis "IO Help for infraFDTD Model")
-    (description
-     "Facilitates the generation of input files for @code{infraFDTD} and processes
-snapshot output. @code{infraFDTD} is a finite-difference model written by
-Keehoon Kim for simulating infrasound that considers topography and a 1-D
-atmosphere (see Kim et al., 2015 <doi:10.1002/2015GL064466>).")
-    (license license:gpl2+)))
-
 (define-public r-infotrad
   (package
     (name "r-infotrad")

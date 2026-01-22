@@ -137,13 +137,13 @@ dating, and monitoring (de facto) exchange rate regimes.")
 (define-public r-fxl
   (package
     (name "r-fxl")
-    (version "1.7.2")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fxl" version))
        (sha256
-        (base32 "10wypbkh7ypsrf2598ia81ldadz6gn9a40x9b1zvq77gjz3934vk"))))
+        (base32 "0df5646cz1rsm2ic744ljxy8ls9s9ly70wjssfai2s36cx9mm7ry"))))
     (properties `((upstream-name . "fxl")))
     (build-system r-build-system)
     (arguments
@@ -6787,13 +6787,13 @@ loaded.  Additional data sets not used in the book are also included.")
 (define-public r-fpp2
   (package
     (name "r-fpp2")
-    (version "2.5")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fpp2" version))
        (sha256
-        (base32 "1ml4jf7r1q555k7qnr3fky5axl0x66h3g1m61nmdrckgf6idkn0f"))))
+        (base32 "0bslr2qkzrp1b913ijm5bm33y71x6kc6lfnjkgs4g1akiy5bnscc"))))
     (properties `((upstream-name . "fpp2")))
     (build-system r-build-system)
     (arguments
@@ -6808,7 +6808,7 @@ loaded.  Additional data sets not used in the book are also included.")
                              r-expsmooth
                              r-crayon
                              r-cli))
-    (home-page "https://pkg.robjhyndman.com/fpp2-package/")
+    (home-page "https://pkg.robjhyndman.com/fpp2/")
     (synopsis
               "Data for \"Forecasting: Principles and Practice\" (2nd Edition)")
     (description
@@ -7117,13 +7117,13 @@ with a set tolerance.")
 (define-public r-fpcdpca
   (package
     (name "r-fpcdpca")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FPCdpca" version))
        (sha256
-        (base32 "1dhkng7k9122cmxfrwgpix2wg856q4hviscf4551q1lia9b998h8"))))
+        (base32 "137rbcvcyqa45r8m2rhizl7bdj44hyd3h9d1q4bxwfk2iwfya33s"))))
     (properties `((upstream-name . "FPCdpca")))
     (build-system r-build-system)
     (arguments
@@ -7636,6 +7636,56 @@ such as daily active users and play duration.  It supports pagination for large
 result sets and time-series analysis of island performance.  The API endpoint is
 <https://api.fortnite.com/ecosystem/v1>.")
     (license license:expat)))
+
+(define-public r-fortls
+  (package
+    (name "r-fortls")
+    (version "1.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FORTLS" version))
+       (sha256
+        (base32 "0qyjhmmw8bn0bmqjqmjkfik8fzbyn7q3pwwwigfs111ixihmqsv0"))))
+    (properties `((upstream-name . "FORTLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-voxr
+                             r-tidyr
+                             r-sf
+                             r-scales
+                             r-reticulate
+                             r-rcsf
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-raster
+                             r-progress
+                             r-plotly
+                             r-moments
+                             r-lidr
+                             r-htmlwidgets
+                             r-distance
+                             r-dbscan
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://molina-valero.github.io/FORTLS/")
+    (synopsis
+     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
+    (description
+     "Process automation of point cloud data derived from terrestrial-based
+technologies such as Terrestrial Laser Scanner (TLS) or Mobile Laser Scanner.
+FORTLS enables (i) detection of trees and estimation of tree-level attributes
+(e.g. diameters and heights), (ii) estimation of stand-level variables (e.g.
+density, basal area, mean and dominant height), (iii) computation of metrics
+related to important forest attributes estimated in Forest Inventories at
+stand-level, and (iv) optimization of plot design for combining TLS data and
+field measured data.  Documentation about FORTLS is described in Molina-Valero
+et al. (2022, <doi:10.1016/j.envsoft.2022.105337>).")
+    (license license:gpl3)))
 
 (define-public r-forstringr
   (package
@@ -10213,13 +10263,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "1lmdrsgfrfi6msdnx7r9ladrcmsc5dhz1jf0z3kcwgdrpv2nsmyx"))))
+        (base32 "0dzhr2nmfhw1acqdy35cjqnlpb1d4dcgz4jyi1hvv8vd9lwxyvim"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (arguments
@@ -13131,6 +13181,59 @@ Angelo Mazza, Antonio Punzo, Salvatore Ingrassia (2018)
 <doi:10.18637/jss.v086.i02>.")
     (license license:gpl2)))
 
+(define-public r-flexcountreg
+  (package
+    (name "r-flexcountreg")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexCountReg" version))
+       (sha256
+        (base32 "1hp2sairr9v4brp64jnmx0dkqw1myyhx2mdkxgvskr3gi9iwjp9b"))))
+    (properties `((upstream-name . "flexCountReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sandwich
+                             r-rlang
+                             r-rcpp
+                             r-randtoolbox
+                             r-purrr
+                             r-modelr
+                             r-maxlik
+                             r-mass
+                             r-knitr
+                             r-gt
+                             r-gsl
+                             r-dplyr
+                             r-cureplots
+                             r-broom))
+    (home-page "https://jwood-iastate.github.io/flexCountReg/")
+    (synopsis "Estimation of a Variety of Count Regression Models")
+    (description
+     "An implementation of multiple regression models for count data.  These include
+various forms of the negative binomial (NB-1, NB-2, NB-P, generalized negative
+binomial, etc.), Poisson-Lognormal, other compound Poisson distributions, the
+Generalized Waring model, etc.  Information on the different forms of the
+negative binomial are described by Greene (2008)
+<doi:10.1016/j.econlet.2007.10.015>.  For treatises on count models, see Cameron
+and Trivedi (2013) <doi:10.1017/CBO9781139013567> and Hilbe (2012)
+<doi:10.1017/CBO9780511973420>.  For the implementation of under-reporting in
+count models, see Wood et al. (2016) <doi:10.1016/j.aap.2016.06.013>.  For
+prediction methods in random parameter models, see Wood and Gayah (2025)
+<doi:10.1016/j.aap.2025.108147>.  For estimating random parameters using maximum
+simulated likelihood, see Greene and Hill (2010)
+<doi:10.1108/S0731-9053(2010)26>; Gourieroux and Monfort (1996)
+<doi:10.1093/0198774753.001.0001>; or Hensher et al. (2015)
+<doi:10.1017/CBO9781316136232>.")
+    (license license:expat)))
+
 (define-public r-flexbcf
   (package
     (name "r-flexbcf")
@@ -14710,13 +14813,13 @@ Sun, Babu, and Palomar (2014); Sun, Babu, and Palomar (2015); Liu and Rubin
 (define-public r-fitdynmix
   (package
     (name "r-fitdynmix")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FitDynMix" version))
        (sha256
-        (base32 "1dmzijqj2345z33c1bpldhx5v5jpiag9mybvhfpgbry2a9rc8bq7"))))
+        (base32 "1b6fg8bhbk3isv6vdf6i16xdbra5nz5ksgvkzwh8qkz3cp8qax7b"))))
     (properties `((upstream-name . "FitDynMix")))
     (build-system r-build-system)
     (arguments
@@ -24036,6 +24139,33 @@ Takahiro, Zini Simone, Sagi Kazutoshi, Kaneko Eiji, Tsukada Masato, Schettini
 Raimondo (2019), IEEE International Conference on Image Processing (ICIP), pp.
 3596-3600, <doi:10.1109/ICIP.2019.8803652>.")
     (license license:gpl3)))
+
+(define-public r-fastgeojson
+  (package
+    (name "r-fastgeojson")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastgeojson" version))
+       (sha256
+        (base32 "0zbnjzvja10s2d39dmfmq65gddanvawimpj58pbb3ym5ckm77ris"))))
+    (properties `((upstream-name . "fastgeojson")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/firstzeroenergy/fastgeojson")
+    (synopsis "High-Performance 'GeoJSON' and 'JSON' Serialization")
+    (description
+     "Converts R data frames and sf spatial objects into JSON and @code{GeoJSON}
+strings.  The core encoders are implemented in Rust using the extendr framework
+and are designed to efficiently serialize large tabular and spatial datasets.
+Returns serialized JSON text, allowing applications such as shiny or web APIs to
+transfer data to client-side @code{JavaScript} libraries without additional
+encoding overhead.")
+    (license license:expat)))
 
 (define-public r-fastgasp
   (package
