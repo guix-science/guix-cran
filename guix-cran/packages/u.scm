@@ -3686,13 +3686,13 @@ for UNC men's basketball team.")
 (define-public r-uncertainucdp
   (package
     (name "r-uncertainucdp")
-    (version "0.7.0")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uncertainUCDP" version))
        (sha256
-        (base32 "1h56265xikx6yxc3myim28b096f7wr6f1x8q5zrpj8q6lm6vv48h"))))
+        (base32 "0bzk34sg1qqpbr28fwcjsl1w9ag0b0n3x3vszcvgqw59xviidd3m"))))
     (properties `((upstream-name . "uncertainUCDP")))
     (build-system r-build-system)
     (arguments
@@ -3701,7 +3701,6 @@ for UNC men's basketball team.")
     (propagated-inputs (list r-tibble
                              r-sandwich
                              r-rlang
-                             r-mistr
                              r-lmtest
                              r-foreach
                              r-dplyr))

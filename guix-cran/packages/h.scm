@@ -1969,13 +1969,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "25.2.8")
+    (version "26.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "1f0ss5670fk4slkf6hkq1mhl35g0394g17kfz1vaps54v4whlgv3"))))
+        (base32 "0lj3lzyvzkq92yzyk27i9zdnr2mjidr3qhriag270i7a5j08lsr9"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments
@@ -3806,13 +3806,13 @@ Methods Network: Phase II, grant number ES/K006460/1.")
 (define-public r-hrw
   (package
     (name "r-hrw")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HRW" version))
        (sha256
-        (base32 "08fh9504cck1ffrwim27nkrm9y1in6jl1s7zs8h8x3ik54p9jb0k"))))
+        (base32 "1kdd1zz28nq7lzmhi9l1yfqx8r4kd901facwsgfscs0s72zlgv5i"))))
     (properties `((upstream-name . "HRW")))
     (build-system r-build-system)
     (arguments
@@ -4742,6 +4742,36 @@ between locations derived from fictitious data, the maps package, and from
 research by Mubarak, Aslanargun, and Siklar (2022)
 <doi:10.29244/ijsa.v6i1p90-100>.")
     (license license:gpl3)))
+
+(define-public r-horsey
+  (package
+    (name "r-horsey")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "horsey" version))
+       (sha256
+        (base32 "1v22c17n74ihcjsbwwf3mrihj6bcxhz5ik5jzx6fcmk2whbqgs7l"))))
+    (properties `((upstream-name . "horsey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/kylehamilton/horsey")
+    (synopsis "Access to the 'Lichess' API")
+    (description
+     "Package that accesses the Lichess API (<https://lichess.org/api>).  Supports
+both authenticated and unauthenticated requests.  Basic functionality for game
+and player analysis.")
+    (license license:expat)))
 
 (define-public r-horseshoenlm
   (package
@@ -11419,6 +11449,50 @@ scientific community (<https://electricblue.eu>).")
      "Makes it easy to download a large number of files such as PDF files and CSV
 files, while automatically slowing down requests, letting you know where it is
 up to, and adjusting for files that have already been downloaded.")
+    (license license:expat)))
+
+(define-public r-healthyr-ts
+  (package
+    (name "r-healthyr-ts")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthyR.ts" version))
+       (sha256
+        (base32 "1z501wag9ail1bx6rn6dw8fn6g5vaixv5nd7r2cfkj8g28ncq68j"))))
+    (properties `((upstream-name . "healthyR.ts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-workflowsets
+                             r-timetk
+                             r-tidyr
+                             r-tibble
+                             r-stringi
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-plotly
+                             r-parsnip
+                             r-modeltime
+                             r-magrittr
+                             r-lubridate
+                             r-hardhat
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.spsanderson.com/healthyR.ts/")
+    (synopsis "The Time Series Modeling Companion to 'healthyR'")
+    (description
+     "Hospital time series data analysis workflow tools, modeling, and automations.
+This library provides many useful tools to review common administrative time
+series hospital data.  Some of these include average length of stay, and
+readmission rates.  The aim is to provide a simple and consistent verb framework
+that takes the guesswork out of everything.")
     (license license:expat)))
 
 (define-public r-healthyr-data

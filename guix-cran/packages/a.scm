@@ -4497,13 +4497,13 @@ Effects by Pooling Limited Information across Observations,\"
 (define-public r-atakrig
   (package
     (name "r-atakrig")
-    (version "0.9.8.1")
+    (version "0.9.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atakrig" version))
        (sha256
-        (base32 "0dzqghs2358hqyklvfblil5ww9d5nmx406invlx5fgqy4k0zcyzf"))))
+        (base32 "06ds8hp3nrzgcx5d3kmjks6pab7s74hnb9fa7zs5cy9zs0rswckb"))))
     (properties `((upstream-name . "atakrig")))
     (build-system r-build-system)
     (arguments
@@ -10467,13 +10467,13 @@ published sequences with experimental, in vitro, evidence of amyloid formation."
 (define-public r-applypolygenicscore
   (package
     (name "r-applypolygenicscore")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ApplyPolygenicScore" version))
        (sha256
-        (base32 "04nqcvgwc6xkyh3wz4bqkx2q0mphpmanfja9by38785zz83zdgbd"))))
+        (base32 "1998bwsd92bq8hxpw2v9kvk950lcdzxq3bpyzqa9bam668m55gbw"))))
     (properties `((upstream-name . "ApplyPolygenicScore")))
     (build-system r-build-system)
     (arguments
@@ -11121,19 +11121,19 @@ assessment featured in Vega Yon et al. (2021).")
 (define-public r-aphid
   (package
     (name "r-aphid")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aphid" version))
        (sha256
-        (base32 "1pwr1i3wxh0l24cqp59q6n59p21v81fmgxkb4jmf50a3ggb1lcdj"))))
+        (base32 "1r70g4yrdsh095ci8l9hxmvdpsmp4sdllz9skcrfnqgyx8mbs8z8"))))
     (properties `((upstream-name . "aphid")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-openssl r-kmer))
+    (propagated-inputs (list r-rcpp r-qpdf r-openssl r-kmer))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shaunpwilkinson/aphid")
     (synopsis "Analysis with Profile Hidden Markov Models")
@@ -16312,6 +16312,42 @@ estimation for the alpha-mixture methodology introduced in Asadi et al. (2019)
 get a free API key at <https://www.alphavantage.co>.  Then you can use the R
 interface to retrieve free equity information.  Refer to the Alpha Vantage
 website for more information.")
+    (license license:gpl3+)))
+
+(define-public r-alphavantagepf
+  (package
+    (name "r-alphavantagepf")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alphavantagepf" version))
+       (sha256
+        (base32 "1pazqjpj0hj7x504fmckly3c7kdaxwcww01x16rljkr1d74z2cmw"))))
+    (properties `((upstream-name . "alphavantagepf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timedate
+                             r-tidyr
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/derekholmes0/alphavantagepf")
+    (synopsis "Comprehensive R Wrapper for 'Alphavantage Financial Data' API")
+    (description
+     "Download Alphavantage financial data
+<https://www.alphavantage.co/documentation/> to reduced data.table objects.
+Includes support functions to extract and simplify complex data returned from
+API calls.")
     (license license:gpl3+)))
 
 (define-public r-alphastable
@@ -21832,13 +21868,13 @@ dissolved oxygen data logger using the method described in Staehr et al. (2010).
 (define-public r-aeenrich
   (package
     (name "r-aeenrich")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AEenrich" version))
        (sha256
-        (base32 "049z696mkwha90w84l60r11q12r3jlam6kyh8abiy0zk2k425san"))))
+        (base32 "06z79sv0dlwsky6n76b34d52imw0c5mzic64yyf9001vjy6a5gz1"))))
     (properties `((upstream-name . "AEenrich")))
     (build-system r-build-system)
     (arguments
@@ -21862,25 +21898,26 @@ enrichment tests.  One is a modified Fisher's exact test based on pre-selected
 significant adverse events, while the other is based on a modified
 Kolmogorov-Smirnov statistic.  We add Covariate adjustment to improve the
 analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
-(2020) <@code{arXiv:2007.02266>}.")
+(2020) <doi:10.48550/@code{arXiv.2007.02266>}.")
     (license license:gpl2)))
 
 (define-public r-aedseo
   (package
     (name "r-aedseo")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aedseo" version))
        (sha256
-        (base32 "0xapxl0pkgxy3f0c41dy9xkkb4m82glbs5xlbcfghidvyn54arsq"))))
+        (base32 "1pbbi674sskvln8izb2afii8d215b9qf3wlma1b4hb6c0d6kjxx3"))))
     (properties `((upstream-name . "aedseo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-scales
                              r-rlang
@@ -23050,13 +23087,13 @@ quantities of interest for the target density itself.")
 (define-public r-admiralvaccine
   (package
     (name "r-admiralvaccine")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralvaccine" version))
        (sha256
-        (base32 "1afisaarcric376cpfgmmgyxx5ygzi9ap03x1kcj8dz6gzh4is55"))))
+        (base32 "0ycjy4dx9f4qcylr2yigjc299nqvllgkvb06jq3jknv6lfws3642"))))
     (properties `((upstream-name . "admiralvaccine")))
     (build-system r-build-system)
     (arguments
@@ -23072,6 +23109,7 @@ quantities of interest for the target density itself.")
                              r-lifecycle
                              r-hms
                              r-dplyr
+                             r-cli
                              r-assertthat
                              r-admiraldev
                              r-admiral))
@@ -23094,13 +23132,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiralpeds
   (package
     (name "r-admiralpeds")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralpeds" version))
        (sha256
-        (base32 "1gf0ndr7r7khbyn9yl2c223lkl8p73nhkdnn9i15xxajyv3w0mgk"))))
+        (base32 "1na3pw3dpdzj9lg4nr1b81f9817hd71cpranr2cgm9zjmxma9nqq"))))
     (properties `((upstream-name . "admiralpeds")))
     (build-system r-build-system)
     (arguments

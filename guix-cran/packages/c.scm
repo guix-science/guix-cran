@@ -670,6 +670,47 @@ cycloids here) with different scaling and positioning options.  The cycloids can
 be visualised with any appropriate graphics function in R.")
     (license license:gpl3)))
 
+(define-public r-cycletrendr
+  (package
+    (name "r-cycletrendr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cycleTrendR" version))
+       (sha256
+        (base32 "0967hzjppw434djfv3ls6c4b2wllixpbdnvlzdk2n9hmfw1jk98y"))))
+    (properties `((upstream-name . "cycleTrendR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tseries
+                             r-nortest
+                             r-nlme
+                             r-mgcv
+                             r-magrittr
+                             r-lomb
+                             r-gridextra
+                             r-ggplot2
+                             r-fancova
+                             r-dplyr
+                             r-changepoint
+                             r-blocklength))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PietroPiu-labstats/cycleTrendR")
+    (synopsis "Adaptive Cycle and Trend Analysis for Irregular Time Series")
+    (description
+     "This package provides adaptive trend estimation, cycle detection, Fourier
+harmonic selection, bootstrap confidence intervals, change-point detection, and
+rolling-origin forecasting.  Supports LOESS (Locally Estimated Scatterplot
+Smoothing), GAM (Generalized Additive Model), and GAMM (Generalized Additive
+Mixed Model), and automatically handles irregular sampling using the
+LombâScargle periodogram.  Methods implemented in this package are described
+in Cleveland et al. (1990) <doi:10.2307/2289548>, Wood (2017)
+<doi:10.1201/9781315370279>, and Scargle (1982) <doi:10.1086/160554>.")
+    (license license:gpl3)))
+
 (define-public r-cyclestreets
   (package
     (name "r-cyclestreets")
@@ -3836,6 +3877,34 @@ specialized binary formats.  CTF is faster than row oriented formats like CSV
 when loading a subset of the columns in a table.  This package provides
 functions to read and write CTF data from R.")
     (license license:expat)))
+
+(define-public r-cte
+  (package
+    (name "r-cte")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CTE" version))
+       (sha256
+        (base32 "12igmjcfkmplnqn0cxiqdq8zcih8hg82mrazp4fqwamh0xq4q4lf"))))
+    (properties `((upstream-name . "CTE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CTE")
+    (synopsis "Constant Temperature Equivalent")
+    (description
+     "Under natural conditions, nest temperatures fluctuate daily around a mean value,
+whereas in captivity they are often held constant.  The Constant Temperature
+Equivalent is designed to bridge the gap between the two by calculating a single
+temperature value for wild nests that corresponds with the amount of development
+that would occur in an incubator set to the same temperature.  The theory and
+formulas behind this method were developed by Professor Author Georges and are
+implemented here as a single function.")
+    (license license:gpl3+)))
 
 (define-public r-ctd
   (package
@@ -23713,13 +23782,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.4.6")
+    (version "1.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "0kz5gk6pfl9fczh7kypalgq0b2kry4zd3c4wicinhrgp4m63ps22"))))
+        (base32 "1p2agpbzcxl8ag9m64s5781j1wlxzz777r0j6p1v9gpxil43k5hh"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
@@ -33133,13 +33202,13 @@ Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.2.5")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "0b538sdicvx6nrb584c53nhipfmd3rrgmab19s852r2ndfz5m5dp"))))
+        (base32 "1020zpzw5gd505z1k3vrh3lmsy8q9kmbl4j2lc7gz3wkkzdckdnm"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
@@ -36251,13 +36320,13 @@ to transform a dataframe of radii and points to plot-able paths.")
 (define-public r-circle
   (package
     (name "r-circle")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circle" version))
        (sha256
-        (base32 "1179gh3psicj5pcaqdhn4cfvj9dwwflwk0jz3lwd9yvgmbhcp2zs"))))
+        (base32 "0x4qv3ia9h3b4z8kgw3scajnskbb8323xbcknn5dlnh0whhjgb70"))))
     (properties `((upstream-name . "circle")))
     (build-system r-build-system)
     (arguments
@@ -47965,13 +48034,13 @@ trait reconstruction.  See Bastide and Didier (2023)
 (define-public r-caugi
   (package
     (name "r-caugi")
-    (version "0.3.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caugi" version))
        (sha256
-        (base32 "0hbsnpbhjlnlbwbzrqh0vpf1vp8h6hjpsd1w0bj46hn1ghsdqh7m"))))
+        (base32 "0j6469gi1fr6si1p3c0ldj44wlf97bxrzfikdjjyxfbq5jm4izj9"))))
     (properties `((upstream-name . "caugi")))
     (build-system r-build-system)
     (arguments
@@ -47980,7 +48049,7 @@ trait reconstruction.  See Bastide and Didier (2023)
     (inputs (list xz))
     (propagated-inputs (list r-s7 r-fastmap r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://frederikfabriciusbjerre.github.io/caugi/")
+    (home-page "https://caugi.org/")
     (synopsis "Causal Graph Interface")
     (description
      "Create, query, and modify causal graphs.  caugi (Causal Graph Interface) is a
@@ -50542,13 +50611,13 @@ applications and community-driven extensions.")
 (define-public r-carbonpredict
   (package
     (name "r-carbonpredict")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "carbonpredict" version))
        (sha256
-        (base32 "1iyrda8hj7kvr9yc5c11n0vpzpdvjisqc9q891rrzkqb79qhm9v6"))))
+        (base32 "1w3n38hknck8448v0mpdz2bfr6ia436bg4vzag31p4nv9h4bl64n"))))
     (properties `((upstream-name . "carbonpredict")))
     (build-system r-build-system)
     (arguments
@@ -50575,10 +50644,13 @@ emissions hotspots.  It also provides Scope 1 carbon emissions predictions for
 UK farms of types: Cereals ex.  rice, Dairy, Mixed farming, Sheep and goats,
 Cattle & buffaloes, Poultry, Animal production and Support for crop production.
 The methodology used to produce the estimates in this package is fully detailed
-in the following peer-reviewed publication in the Journal of Industrial Ecology:
-Phillpotts, A., Owen.  A., Norman, J., Trendl, A., Gathergood, J., Jobst,
-Norbert., Leake, D. (2025) <doi:10.1111/jiec.70106> \"Bridging the SME Reporting
-Gap: A New Model for Predicting Scope 1 and 2 Emissions\".")
+in the following peer-reviewed publications: Phillpotts, A., Owen.  A., Norman,
+J., Trendl, A., Gathergood, J., Jobst, Norbert., Leake, D. (2025)
+<doi:10.1111/jiec.70106> \"Bridging the SME Reporting Gap: A New Model for
+Predicting Scope 1 and 2 Emissions\" and Wells, J., Trendl, A., Owen, A.,
+Barrett, J., Gridley, J., Jobst, N., Leake, D. (2025)
+<doi:10.1088/1748-9326/ae20ab> \"A Scalable Tool for Farm-Level Carbon
+Accounting: Evidence from UK Agriculture\".")
     (license license:expat)))
 
 (define-public r-carbondate
@@ -50993,36 +51065,6 @@ case studies for in-depth exploration of the topic, thereby seeking to foster
 student engagement and an integrative understanding of Ca-Pi regulation.")
     (license license:gpl3)))
 
-(define-public r-capn
-  (package
-    (name "r-capn")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "capn" version))
-       (sha256
-        (base32 "14vfk00xyx0az3whmxjpcv1785lf0gx81w7qc54i3wcfp3i22kcr"))))
-    (properties `((upstream-name . "capn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=capn")
-    (synopsis "Capital Asset Pricing for Nature")
-    (description
-     "This package implements approximation methods for natural capital asset prices
-suggested by Fenichel and Abbott (2014) <doi:10.1086/676034> in Journal of the
-Associations of Environmental and Resource Economists (JAERE), Fenichel et al.
-(2016) <doi:10.1073/pnas.1513779113> in Proceedings of the National Academy of
-Sciences (PNAS), and Yun et al. (2017) in PNAS (accepted), and their extensions:
-creating Chebyshev polynomial nodes and grids, calculating basis of Chebyshev
-polynomials, approximation and their simulations for: V-approximation (single
-and multiple stocks, PNAS), P-approximation (single stock, PNAS), and
-Pdot-approximation (single stock, JAERE).  Development of this package was
-generously supported by the Knobloch Family Foundation.")
-    (license license:gpl2+)))
-
 (define-public r-caplot
   (package
     (name "r-caplot")
@@ -51331,40 +51373,6 @@ volume (V0), and metabolic costs (Akashi and Gojobori, 2002
 al., 2018 <doi:10.1038/s41467-018-06461-1>).  A database of amino acid
 compositions of human proteins derived from @code{UniProt} is provided.")
     (license license:gpl3)))
-
-(define-public r-canopy
-  (package
-    (name "r-canopy")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Canopy" version))
-       (sha256
-        (base32 "0979hpphzhf4v71jx0shh3l8nffmpsn9l6f8ip2wxzcyx571i1wd"))))
-    (properties `((upstream-name . "Canopy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scatterplot3d r-pheatmap r-fields r-ape))
-    (home-page "https://github.com/yuchaojiang/Canopy")
-    (synopsis
-     "Accessing Intra-Tumor Heterogeneity and Tracking Longitudinal and Spatial Clonal Evolutionary History by Next-Generation Sequencing")
-    (description
-     "This package provides a statistical framework and computational procedure for
-identifying the sub-populations within a tumor, determining the mutation
-profiles of each subpopulation, and inferring the tumor's phylogenetic history.
-The input are variant allele frequencies (VAFs) of somatic single nucleotide
-alterations (SNAs) along with allele-specific coverage ratios between the tumor
-and matched normal sample for somatic copy number alterations (CNAs).  These
-quantities can be directly taken from the output of existing software.  Canopy
-provides a general mathematical framework for pooling data across samples and
-sites to infer the underlying parameters.  For SNAs that fall within CNA
-regions, Canopy infers their temporal ordering and resolves their phase.  When
-there are multiple evolutionary configurations consistent with the data, Canopy
-outputs all configurations along with their confidence assessment.")
-    (license license:gpl2)))
 
 (define-public r-canek
   (package

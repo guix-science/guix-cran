@@ -12575,13 +12575,13 @@ all differences.  The vignettes download example files from
 (define-public r-toxeval
   (package
     (name "r-toxeval")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxEval" version))
        (sha256
-        (base32 "0sg4cijkdfbcwxkpljfkp567d8i4bxcvd70705x8p88z4pgns0wv"))))
+        (base32 "1l19fylg1iw7y6r278qdnddyymkkv6xmc72rcn30730jk3g6cn3z"))))
     (properties `((upstream-name . "toxEval")))
     (build-system r-build-system)
     (arguments
@@ -13605,13 +13605,13 @@ Euclidean embedding details are in Arhami and Rohani (2025b)
 (define-public r-topologyr
   (package
     (name "r-topologyr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topologyR" version))
        (sha256
-        (base32 "106fci8ps2679jvxrrvkqjd64pmdjd75xwh8c8bigijy5myyfkxy"))))
+        (base32 "1y9dx06aqpfyqrvi3kanx0hlqg9jhrc7gbyfsc7s8xb2j3f3dv97"))))
     (properties `((upstream-name . "topologyR")))
     (build-system r-build-system)
     (arguments
@@ -13624,7 +13624,7 @@ Euclidean embedding details are in Arhami and Rohani (2025b)
      "Description: Implementation of topological data analysis methods based on
 graph-theoretic approaches for discovering topological structures in data.  The
 core algorithm constructs topological spaces from graphs following Nada et al.
-(2018) <doi:10.1002/mma.5096> \"New types of topological structures via graphs\".")
+(2018) <doi:10.1002/mma.4726> \"New types of topological structures via graphs\".")
     (license license:expat)))
 
 (define-public r-topologygsa
@@ -18970,13 +18970,13 @@ cases.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.7.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "0pwbyza90izmd283lawkn9v0ic5yqs9h4610n50navk8fa29gz54"))))
+        (base32 "0k8h48pjdhhspghyhslsx5zdh78a3a8z0ccq78hq3j12pb8qgp4j"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (arguments
@@ -18990,6 +18990,7 @@ cases.")
                              r-rlang
                              r-magrittr
                              r-ggplot2
+                             r-generics
                              r-dplyr
                              r-data-table
                              r-cli))
@@ -19844,13 +19845,13 @@ with any LLM provider that offers chat completion.")
 (define-public r-tidypopgen
   (package
     (name "r-tidypopgen")
-    (version "0.4.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidypopgen" version))
        (sha256
-        (base32 "1gg2hxcdm5q4bv798clfrjcj8bixhj1adkq8649rdkcy8jky95pc"))))
+        (base32 "17lg22fnq8k918kn6gmb1v8d64n15jv3dy3ciinydf8z2n4867yd"))))
     (properties `((upstream-name . "tidypopgen")))
     (build-system r-build-system)
     (arguments
@@ -20515,43 +20516,6 @@ frame using this package.")
     (home-page "https://github.com/colearendt/tidyjson")
     (synopsis "Tidy Complex 'JSON'")
     (description "Turn complex JSON data into tidy data frames.")
-    (license license:expat)))
-
-(define-public r-tidyindex
-  (package
-    (name "r-tidyindex")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyindex" version))
-       (sha256
-        (base32 "1ziiycfldcy94bsl65mf9c6iav7xn2wamncdkz41d76bsxrjzbnx"))))
-    (properties `((upstream-name . "tidyindex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tsibble
-                             r-tidyselect
-                             r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-glue
-                             r-ggplot2
-                             r-generics
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/huizezhang-sherry/tidyindex")
-    (synopsis "Tidy Data Pipeline to Construct, Compare, and Analyse Indexes")
-    (description
-     "Construct and analyse indexes in a pipeline tidy workflow.  tidyindex contains
-modules for transforming variables, aggregating variables across time, reducing
-data dimension through weighting, and fitting distributions.  A manuscript
-describing the methodology can be found at
-<https://github.com/huizezhang-sherry/paper-tidyindex>.")
     (license license:expat)))
 
 (define-public r-tidyhydat
@@ -23663,13 +23627,13 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
 (define-public r-tgml
   (package
     (name "r-tgml")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tgml" version))
        (sha256
-        (base32 "15q8c8d63q2zpgwxsnd696ppay7c4hibib8nvql2x0srv1rhvnl7"))))
+        (base32 "0brlvnpdqpncayabc72vba1mzil6c7jc1fxpxv9mqbzz2v4cx96a"))))
     (properties `((upstream-name . "tgml")))
     (build-system r-build-system)
     (arguments

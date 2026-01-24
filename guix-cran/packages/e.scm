@@ -21791,6 +21791,33 @@ experimental components like units, treatments, and their relation.  The system
 aids in experimental planning, management and workflow.")
     (license license:expat)))
 
+(define-public r-edgemodelr
+  (package
+    (name "r-edgemodelr")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "edgemodelr" version))
+       (sha256
+        (base32 "1kicprxkmkvxrzi11wxxjs1gavwsxx3vxxnwdj7ycym9gv2m64jw"))))
+    (properties `((upstream-name . "edgemodelr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/PawanRamaMali/edgemodelr")
+    (synopsis "Local Large Language Model Inference Engine")
+    (description
+     "Enables R users to run large language models locally using GGUF model files and
+the llama.cpp inference engine.  Provides a complete R interface for loading
+models, generating text completions, and streaming responses in real-time.
+Supports local inference without requiring cloud APIs or internet connectivity,
+ensuring complete data privacy and control.  Based on the llama.cpp project by
+Georgi Gerganov (2023) <https://github.com/ggml-org/llama.cpp>.")
+    (license license:expat)))
+
 (define-public r-edgedata
   (package
     (name "r-edgedata")
@@ -23001,13 +23028,13 @@ priors for parameters.")
 (define-public r-ecospat
   (package
     (name "r-ecospat")
-    (version "4.1.2")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecospat" version))
        (sha256
-        (base32 "0amxyf8bb2r51c2clwp8ymf2p3rn94wnqwj2nc9rr8zdy58dlgz7"))))
+        (base32 "04kyc30wa99gybv6py56w3cmyj7bsbiq7k9nv39f6hcg2mpcphyy"))))
     (properties `((upstream-name . "ecospat")))
     (build-system r-build-system)
     (arguments
@@ -23033,7 +23060,7 @@ priors for parameters.")
                              r-ade4))
     (native-inputs (list r-knitr))
     (home-page
-     "https://www.unil.ch/ecospat/home/menuguid/ecospat-resources/tools.html")
+     "https://www.unil.ch/ecospat/home/menuguid/ecospat-resources.html")
     (synopsis "Spatial Ecology Miscellaneous Methods")
     (description
      "Collection of R functions and data sets for the support of spatial ecology

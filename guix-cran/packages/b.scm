@@ -17,6 +17,7 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages tls)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
   #:use-module (gnu packages maths)
@@ -1879,13 +1880,13 @@ number of factors.")
 (define-public r-btsr
   (package
     (name "r-btsr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTSR" version))
        (sha256
-        (base32 "0sfjvz7jagjw5bbrs7gyjxzsnnk9z61655cfrp1x9s8cizan9r0r"))))
+        (base32 "0y1q6axnhndykfdjd22rd896amvsxp56grn54ksnx73xwagdc01b"))))
     (properties `((upstream-name . "BTSR")))
     (build-system r-build-system)
     (arguments
@@ -6898,13 +6899,13 @@ ensure consistent coding standards.")
 (define-public r-boutroslab-plotting-general
   (package
     (name "r-boutroslab-plotting-general")
-    (version "7.1.2")
+    (version "7.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoutrosLab.plotting.general" version))
        (sha256
-        (base32 "0q5l0w0nlclz3k13mxwqd2j4q8hqy9lhywz6d7jx5lk3jq72gf5i"))))
+        (base32 "0v3bd3y74qlqikdawzrlbv1n2jpikj9yv7x4mfa4ipsyadxygdna"))))
     (properties `((upstream-name . "BoutrosLab.plotting.general")))
     (build-system r-build-system)
     (arguments
@@ -14946,13 +14947,13 @@ bioassays for one or several strains/lines/populations.")
 (define-public r-bioregion
   (package
     (name "r-bioregion")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioregion" version))
        (sha256
-        (base32 "1y62r4qm0i6jfc0jpc4sjn34iakgjnnjb3jh8fvmvvd0cp06pba8"))))
+        (base32 "19valgx1q41a0bkkx8v2gw00yfnn5xcx325g503q0158f4mv6zqa"))))
     (properties `((upstream-name . "bioregion")))
     (build-system r-build-system)
     (arguments
@@ -14965,6 +14966,7 @@ bioassays for one or several strains/lines/populations.")
                              r-rlang
                              r-rdpack
                              r-rcpp
+                             r-rcartocolor
                              r-phangorn
                              r-matrix
                              r-mathjaxr
@@ -14982,10 +14984,10 @@ bioassays for one or several strains/lines/populations.")
                              r-apcluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bioRgeo/bioregion")
-    (synopsis "Comparison of Bioregionalisation Methods")
+    (synopsis "Comparison of Bioregionalization Methods")
     (description
      "The main purpose of this package is to propose a transparent methodological
-framework to compare bioregionalisation methods based on hierarchical and
+framework to compare bioregionalization methods based on hierarchical and
 non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 <doi:10.1111/j.1365-2699.2010.02375.x>) and network algorithms (Lenormand et al.
 (2019) <doi:10.1002/ece3.4718> and Leroy et al. (2019) <doi:10.1111/jbi.13674>).")
@@ -17150,6 +17152,42 @@ Wilson & Collins (2019) <doi:10.7554/@code{eLife.49547>}.  Example datasets
 included with the package are sourced from the work of Mason et al. (2024)
 <doi:10.3758/s13423-023-02415-x>.")
     (license license:gpl3)))
+
+(define-public r-binaryreplicates
+  (package
+    (name "r-binaryreplicates")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BinaryReplicates" version))
+       (sha256
+        (base32 "09yh0bxd6mp1ckmbaalcj1598sy9gksjivcjs4sqlb7l52vlqfwa"))))
+    (properties `((upstream-name . "BinaryReplicates")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-magrittr
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pierrepudlo/BinaryReplicates")
+    (synopsis "Dealing with Binary Replicates")
+    (description
+     "Statistical methods for analyzing binary replicates, which are noisy binary
+measurements of latent binary states.  Provides scoring functions (average,
+median, likelihood-based, and Bayesian) to estimate the probability that an
+individual is in the positive state.  Includes maximum a posteriori estimation
+via the EM algorithm and full Bayesian inference via Stan.  Supports
+classification with inconclusive decisions and prevalence estimation.")
+    (license license:gpl3+)))
 
 (define-public r-binarygp
   (package
@@ -21631,6 +21669,40 @@ and Zhang for landscape mosaics (Zhao and Zhang (2019)
 <doi:10.1007/s10980-019-00876-x>); and by Gao et al.  for landscape gradients
 (Gao et al. (2018) <doi:10.1111/tgis.12315>; Gao and Li (2019)
 <doi:10.1007/s10980-019-00854-3>).")
+    (license license:expat)))
+
+(define-public r-bertopicr
+  (package
+    (name "r-bertopicr")
+    (version "0.3.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bertopicr" version))
+       (sha256
+        (base32 "1jzn79inrghi7lsyqfi9759f2qv6ngrkykc6sxckcddk1dvg40s7"))))
+    (properties `((upstream-name . "bertopicr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python-scikit-learn))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-reticulate
+                             r-readr
+                             r-purrr
+                             r-htmltools
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://tpetric7.github.io/bertopicr/")
+    (synopsis "Topic Modeling with 'BERTopic'")
+    (description
+     "This package provides topic modeling and visualization by interfacing with the
+BERTopic library for Python via reticulate'.  See Grootendorst (2022)
+<doi:10.48550/@code{arXiv.2203.05794>}.")
     (license license:expat)))
 
 (define-public r-berryfunctions
@@ -33976,5 +34048,28 @@ Common base 64 alphabets are supported out of the box including the standard,
 URL-safe, bcrypt, crypt, @code{BinHex}', and IMAP-modified UTF-7 alphabets.
 Custom engines can be created to support unique base 64 encoding and decoding
 needs.")
+    (license license:expat)))
+
+(define-public r-b32
+  (package
+    (name "r-b32")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "b32" version))
+       (sha256
+        (base32 "059cpp954q9sc26110cfwqkl5ykxi7zbcyhzkgis6z2r5h598yyv"))))
+    (properties `((upstream-name . "b32")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (home-page "https://github.com/extendr/b32")
+    (synopsis "Fast and Vectorized Base32 Encoding")
+    (description
+     "Fast, dependency free, and vectorized base32 encoding and decoding.  b32
+supports the Crockford, Z, RFC 4648 lower, hex, and lower hex alphabets.")
     (license license:expat)))
 

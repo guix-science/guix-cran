@@ -1928,13 +1928,13 @@ incorrectly detecting a change point in a sequence which does not contain any.")
 (define-public r-nptest
   (package
     (name "r-nptest")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nptest" version))
        (sha256
-        (base32 "1yfxpw3xlscv0maqgvadxj93qgs25w027lk2br1zlckll8dvdakz"))))
+        (base32 "1j5nqg1xxw54993iibgmn7i56c6zxn10bmwncazqrld4sf5r0f0g"))))
     (properties `((upstream-name . "nptest")))
     (build-system r-build-system)
     (arguments
@@ -1943,13 +1943,13 @@ incorrectly detecting a change point in a sequence which does not contain any.")
     (home-page "https://cran.r-project.org/package=nptest")
     (synopsis "Nonparametric Bootstrap and Permutation Tests")
     (description
-     "Robust nonparametric bootstrap and permutation tests for location, correlation,
-and regression problems, as described in Helwig (2019a) <doi:10.1002/wics.1457>
-and Helwig (2019b) <doi:10.1016/j.neuroimage.2019.116030>.  Univariate and
-multivariate tests are supported.  For each problem, exact tests and Monte Carlo
-approximations are available.  Five different nonparametric bootstrap confidence
-intervals are implemented.  Parallel computing is implemented via the parallel
-package.")
+     "Robust nonparametric bootstrap and permutation tests for goodness of fit,
+distribution equivalence, location, correlation, and regression problems, as
+described in Helwig (2019a) <doi:10.1002/wics.1457> and Helwig (2019b)
+<doi:10.1016/j.neuroimage.2019.116030>.  Univariate and multivariate tests are
+supported.  For each problem, exact tests and Monte Carlo approximations are
+available.  Five different nonparametric bootstrap confidence intervals are
+implemented.  Parallel computing is implemented via the parallel package.")
     (license license:gpl2+)))
 
 (define-public r-npsurvss
@@ -1988,6 +1988,31 @@ and variance.  The default option has been shown to provide substantial
 improvement over the conventional sample size and power equations based on
 Schoenfeld (1981) <doi:10.1093/biomet/68.1.316>.")
     (license license:gpl2)))
+
+(define-public r-npstability
+  (package
+    (name "r-npstability")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPStability" version))
+       (sha256
+        (base32 "1airarq46i0z3ll8k1hb1k96rnsm9shm331hgr6yblsghvkya54d"))))
+    (properties `((upstream-name . "NPStability")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=NPStability")
+    (synopsis
+     "Rank-Based Stability Index (RSI) for Genotype by Environment Studies")
+    (description
+     "This package provides functions to compute the Rank-Based Stability Index (RSI)
+for genotype by environment interaction data, along with a genotype plus
+genotype-by-environment (GGE) style biplot visualization of stability.")
+    (license license:gpl3)))
 
 (define-public r-npsp
   (package
@@ -12856,29 +12881,6 @@ spread between a set of nodes the algorithm infers the most likely stable
 diffusion network that is underlying the diffusion process.")
     (license license:expat)))
 
-(define-public r-networkgen
-  (package
-    (name "r-networkgen")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "networkGen" version))
-       (sha256
-        (base32 "1vnh5dajiaf47kx1sxyp744mlk3yvl4sxj380i3b3ic1wlgyd2h1"))))
-    (properties `((upstream-name . "networkGen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mgcv r-igraph))
-    (home-page "https://cran.r-project.org/package=networkGen")
-    (synopsis "Network Maze Generator")
-    (description
-     "This package provides a network Maze generator that creates different types of
-network mazes.")
-    (license license:gpl3)))
-
 (define-public r-networkextinction
   (package
     (name "r-networkextinction")
@@ -14245,13 +14247,13 @@ exportation.")
 (define-public r-netdose
   (package
     (name "r-netdose")
-    (version "0.7-3")
+    (version "0.7-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netdose" version))
        (sha256
-        (base32 "0b4kh82zphcp86gg829rafs85mqscznc9apysc3qc3a792mfd3p7"))))
+        (base32 "1h5cr0q88c3gm84i6gk6bzfzb3hdiyyh7dmnhch1k521kdid4m0w"))))
     (properties `((upstream-name . "netdose")))
     (build-system r-build-system)
     (arguments
@@ -14503,6 +14505,29 @@ libraries of @code{JavaScript} in one package.")
     (description
      "Facilitates network clustering and evaluation of cluster configurations.")
     (license license:gpl2)))
+
+(define-public r-netclust
+  (package
+    (name "r-netclust")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netClust" version))
+       (sha256
+        (base32 "0s0xjgbwfasbzzf6p2hsx3j67lphzhn9qlmlpp5k5fn7dk34aqav"))))
+    (properties `((upstream-name . "netClust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=netClust")
+    (synopsis "Model-Based Clustering of Network Data")
+    (description
+     "Clustering unilayer and multilayer network data by means of finite mixtures is
+the main utility of @code{netClust}.")
+    (license license:gpl2+)))
 
 (define-public r-netassoc
   (package
@@ -14916,13 +14941,13 @@ avoid API calls during CRAN checks.")
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonUtilities" version))
        (sha256
-        (base32 "180rw46ph28pkv874w86h7d99mm5bpj1jn6q0cmydp78ac2psxb3"))))
+        (base32 "1mna62sn0620ab9jnnpkpmc3mj43ymq0w7s5gci033y11dxcjwp4"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (arguments

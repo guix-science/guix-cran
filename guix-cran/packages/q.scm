@@ -3844,13 +3844,13 @@ convergence and fitting results.")
 (define-public r-qrng
   (package
     (name "r-qrng")
-    (version "0.0-10")
+    (version "0.0-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrng" version))
        (sha256
-        (base32 "0j46rlxyfahz271hckcr42i437n0vc77bvg5p1fi5zb6pywlxvji"))))
+        (base32 "1ccb1aicf1p1ygwsipxsns6f2i3553w4h1f7bn6rfg893048sbp7"))))
     (properties `((upstream-name . "qrng")))
     (build-system r-build-system)
     (arguments

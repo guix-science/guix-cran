@@ -3424,13 +3424,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "1094ibscs5qf4lc027ar7y7kr045w9jx9yw612av97gl36f7g926"))))
+        (base32 "0jqqawagkgqswpk4xr2njjskbibkcjxgxppsgaamy7j4bkbwadcl"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -3445,7 +3445,7 @@ centered on an approach using machine learning for path classification.")
                              r-emmeans
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://mirzaghaderi.github.io/rtpcr/")
+    (home-page "https://github.com/mirzaghaderi/rtpcr")
     (synopsis "qPCR Data Analysis")
     (description
      "This package provides tools for @code{qPCR} data analysis using Delta Ct and
@@ -3544,21 +3544,24 @@ URL: <https://docs.joinmastodon.org/>.")
 (define-public r-rtodoist
   (package
     (name "r-rtodoist")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtodoist" version))
        (sha256
-        (base32 "12lh14ps4snlyykhc65nvn8ipic8is8ssmgcx73snmifhrzxgdyb"))))
+        (base32 "02j5vnd132bvl14cq7dkqjpygv05v6gxhg6s5zg4a0r89pcjxxxl"))))
     (properties `((upstream-name . "rtodoist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-purrr
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-purrr
                              r-magrittr
                              r-keyring
+                             r-httr2
                              r-httr
                              r-glue
                              r-getpass
@@ -3569,7 +3572,7 @@ URL: <https://docs.joinmastodon.org/>.")
     (synopsis "Create and Manage Todolist using 'Todoist.com' API")
     (description
      "Allows you to interact with the API of the \"Todoist\" platform.  Todoist
-<https://todoist.com/> provides an online task manager service for teams.")
+<https://www.todoist.com/> provides an online task manager service for teams.")
     (license license:expat)))
 
 (define-public r-rtnmin
@@ -5237,13 +5240,13 @@ of different algorithms.")
 (define-public r-rsurvstat
   (package
     (name "r-rsurvstat")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurvstat" version))
        (sha256
-        (base32 "02bjhzcqhbrirjnrawfxf2cr61i93wh4ifjq9h2sf60dsyya7ni2"))))
+        (base32 "1cblfbgvr4q0032mhx1pk6mbf1i14lbxcsgmpf2zabxghhmz5ni2"))))
     (properties `((upstream-name . "rsurvstat")))
     (build-system r-build-system)
     (arguments
@@ -26171,13 +26174,13 @@ pipelines.")
 (define-public r-ripc
   (package
     (name "r-ripc")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ripc" version))
        (sha256
-        (base32 "16adk1vdbs870c5rwifa8gr4m2m924sz3y00r5qbbh2qahrmddr6"))))
+        (base32 "1mxis6r8gsczbjzsg0sgrkfjnbsin2w2bmwf57bw1g144g0d46fm"))))
     (properties `((upstream-name . "ripc")))
     (build-system r-build-system)
     (arguments
@@ -27464,13 +27467,13 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "04hnczzpicnvv95fnxclb8afkmcrk2xdscsslfhchg5wsvsfbcqq"))))
+        (base32 "1gjashkzzwas1p25qlq6mldbjdgfk2zdhmp0lcrj2ijkxm2fjj2v"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (arguments
@@ -42949,6 +42952,54 @@ sequence, source of the sequence...).  An example of record can be found at
 <https://www.ncbi.nlm.nih.gov/nuccore/HE799070>.")
     (license license:gpl3)))
 
+(define-public r-read-abares
+  (package
+    (name "r-read-abares")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "read.abares" version))
+       (sha256
+        (base32 "0m62h32g1id11qp6fvjsmzyrwfyw11kdflhc42i52y9cb6fp9mhh"))))
+    (properties `((upstream-name . "read.abares")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-whoami
+                             r-tidync
+                             r-terra
+                             r-stringr
+                             r-stars
+                             r-sf
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-lubridate
+                             r-httr2
+                             r-htm2txt
+                             r-fs
+                             r-data-table
+                             r-cli
+                             r-brio))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/read.abares")
+    (synopsis
+     "Read Data from the Australian Bureau of Agricultural and Resource Economics and Sciences (ABARES) and Australian Bureau of Statistics (ABS)")
+    (description
+     "Download and import agricultural data from the Australian Bureau of Agricultural
+and Resource Economics and Sciences (ABARES)
+<https://www.agriculture.gov.au/abares> and Australian Bureau of Statistics
+(ABS) <https://www.abs.gov.au>.  Data types serviced include spreadsheets, comma
+separated value (CSV) files, geospatial data including shape files and geotiffs
+covering topics including broadacre crops, livestock, soil data, commodities and
+more.  Unifies field names and formats for data interoperability making analysis
+easier by standardising names between data formats.  Also simplifies importing
+geospatial data as well as correcting issues in the geospatial data upon import.")
+    (license license:expat)))
+
 (define-public r-read
   (package
     (name "r-read")
@@ -45991,13 +46042,13 @@ functions, and does not yet add any of its own.")
 (define-public r-rcppxsimd
   (package
     (name "r-rcppxsimd")
-    (version "7.1.6-1")
+    (version "7.1.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppXsimd" version))
        (sha256
-        (base32 "0hbr0rgmhxx1sxz9zxshccvg70shppi131r0bidhb2rrkr7z7ygj"))))
+        (base32 "0jy090f8h5slz10kdqp09xkr3pxkzwm4irky6sc0z69cj9vnidcm"))))
     (properties `((upstream-name . "RcppXsimd")))
     (build-system r-build-system)
     (arguments
@@ -48982,6 +49033,37 @@ respected.")
 <https://api.speciesplus.net/>.")
     (license license:expat)))
 
+(define-public r-rcissvae
+  (package
+    (name "r-rcissvae")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rCISSVAE" version))
+       (sha256
+        (base32 "1p1zai0xqchcyjsxfn7pp0q1y0awklnvfsnlxand3sk8njw48gda"))))
+    (properties `((upstream-name . "rCISSVAE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-reticulate r-purrr r-gtsummary
+                             r-complexheatmap))
+    (native-inputs (list r-knitr))
+    (home-page "https://ciss-vae.github.io/rCISS-VAE/")
+    (synopsis "Clustering-Informed Shared-Structure VAE for Imputation")
+    (description
+     "This package implements the Clustering-Informed Shared-Structure Variational
+Autoencoder ('CISS-VAE'), a deep learning framework for missing data imputation
+introduced in Khadem Charvadeh et al. (2025) <doi:10.1002/sim.70335>.  The model
+accommodates all three types of missing data mechanisms: Missing Completely At
+Random (MCAR), Missing At Random (MAR), and Missing Not At Random (MNAR).  While
+it is particularly well-suited to MNAR scenarios, where missingness patterns
+carry informative signals, CISS-VAE also functions effectively under MAR
+assumptions.")
+    (license license:expat)))
+
 (define-public r-rciplot
   (package
     (name "r-rciplot")
@@ -50639,6 +50721,47 @@ download those spreadsheets and read them directly into R.")
      "Creation, manipulation, simulation of linear Gaussian Bayesian networks from
 text files and more...")
     (license license:gpl2+)))
+
+(define-public r-rbmi
+  (package
+    (name "r-rbmi")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbmi" version))
+       (sha256
+        (base32 "1b0vlsnv4q28zx7namiy2wjx1kjiw868xb8w62sb6pg96kawms15"))))
+    (properties `((upstream-name . "rbmi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-stringr
+                             r-r6
+                             r-pkgload
+                             r-mmrm
+                             r-matrix
+                             r-jinjar
+                             r-fs
+                             r-assertthat))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://openpharma.github.io/rbmi/")
+    (synopsis "Reference Based Multiple Imputation")
+    (description
+     "This package implements standard and reference based multiple imputation methods
+for continuous longitudinal endpoints (Gower-Page et al. (2022)
+<doi:10.21105/joss.04251>).  In particular, this package supports deterministic
+conditional mean imputation and jackknifing as described in Wolbers et al.
+(2022) <doi:10.1002/pst.2234>, Bayesian multiple imputation as described in
+Carpenter et al. (2013) <doi:10.1080/10543406.2013.834911>, and bootstrapped
+maximum likelihood imputation as described in von Hippel and Bartlett (2021)
+<doi: 10.1214/20-STS793>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rbmf
   (package
@@ -54851,13 +54974,13 @@ numerical and categorical data.")
 (define-public r-rangr
   (package
     (name "r-rangr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rangr" version))
        (sha256
-        (base32 "0d8pdjv47vs5l6bji3mlajp8k12icdakjdyr852g00lx4rm6s0ib"))))
+        (base32 "1alqny41fbkgf5b1fpq1ibv5wz89wx77175h8hizzjk5hms8mjw1"))))
     (properties `((upstream-name . "rangr")))
     (build-system r-build-system)
     (arguments
@@ -54874,7 +54997,9 @@ on population growth and range shifts.  It allows for simple and straightforward
 definition of population dynamics (including positive density dependence),
 extensive possibilities for defining dispersal kernels, and the ability to
 generate virtual ecologist data.  Learn more about the rangr at
-<https://docs.ropensci.org/rangr/>.")
+<https://docs.ropensci.org/rangr/>.  This work was supported by the National
+Science Centre, Poland, grant no.  2018/29/B/NZ8/00066 and the PoznaÅ
+Supercomputing and Networking Centre (grant no.  pl0090-01).")
     (license license:expat)))
 
 (define-public r-ranglapunjab
@@ -56768,13 +56893,13 @@ supporting functions to employ these estimators in a graphical modeling setting.
 (define-public r-ragnar
   (package
     (name "r-ragnar")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ragnar" version))
        (sha256
-        (base32 "0r0485h0ay2n0qnnvsav80j8hhaxrqsyl70nj51lawz0vlkyym14"))))
+        (base32 "0712hg9hlpdzsbih3czs4ff5z78djwb9zrgqjrnw5a8n2agql9qr"))))
     (properties `((upstream-name . "ragnar")))
     (build-system r-build-system)
     (arguments
@@ -56789,6 +56914,8 @@ supporting functions to employ these estimators in a graphical modeling setting.
                              r-rvest
                              r-rlang
                              r-reticulate
+                             r-mirai
+                             r-jsonlite
                              r-httr2
                              r-glue
                              r-duckdb
@@ -59000,13 +59127,13 @@ by incorporating HTML hex codes.")
 (define-public r-r2sundials
   (package
     (name "r-r2sundials")
-    (version "7.2.1-3")
+    (version "7.2.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2sundials" version))
        (sha256
-        (base32 "1y05lr0ghadl584s8j99did5br0q22rgw64lxa9fgs5sp4mwllyz"))))
+        (base32 "1lj1n8mjdxl6d68x6n8mvj4cw560cxx27a8kabzv9gdxnwqhq4im"))))
     (properties `((upstream-name . "r2sundials")))
     (build-system r-build-system)
     (arguments

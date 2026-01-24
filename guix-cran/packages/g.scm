@@ -2681,13 +2681,13 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gt" version))
        (sha256
-        (base32 "1asr6gkffhy8vm9sbvcv8wfw0xk9byrrq5c3x9d039g3bc6hwdav"))))
+        (base32 "0p1z6ba9044bpg9jdzm97h83g00wrnmwhzndgqa43zfizykk1rqh"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (arguments
@@ -3496,6 +3496,34 @@ own gene set enrichment analysis plot.")
     (description
      "R-interface to C++ implementation of the rank/score permutation based GSEA test
 (Subramanian et al 2005 <doi: 10.1073/pnas.0506580102>).")
+    (license license:gpl2+)))
+
+(define-public r-gsearly
+  (package
+    (name "r-gsearly")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gsearly" version))
+       (sha256
+        (base32 "0y8giy4ybk6cb5kdk10s10d5rp0bci9frn2ci6xac7n62mcxlfa5"))))
+    (properties `((upstream-name . "gsearly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlme r-mvtnorm r-gsdesign))
+    (home-page "https://cran.r-project.org/package=gsearly")
+    (synopsis
+     "Creates Group Sequential Trial Designs when Early Outcomes are Available")
+    (description
+     "This package provides methods to construct and power group sequential clinical
+trial designs for outcomes at multiple times.  Outcomes at earlier times provide
+information on the final (primary) outcome.  A range of recruitment and
+correlation models are available as are methods to simulate data in order to
+explore design operating characteristics.  For more details see Parsons (2024)
+<doi:10.1186/s12874-024-02174-w>.")
     (license license:gpl2+)))
 
 (define-public r-gse
@@ -6230,6 +6258,34 @@ primitive adjacency sociomatrices.  Novel methods are described in Buch (2019)
 traditional methods are also implemented, as described in Yang, Knoke (2001)
 <doi:10.1016/S0378-8733(01)00043-0>.")
     (license license:gpl3)))
+
+(define-public r-grepreaper
+  (package
+    (name "r-grepreaper")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "grepreaper" version))
+       (sha256
+        (base32 "1swvq7cqqr40sssnkm277vbhd8nrns0f0vibv2046lqpy94fzndx"))))
+    (properties `((upstream-name . "grepreaper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=grepreaper")
+    (synopsis "Efficient Data Filtering and Aggregation Using Grep")
+    (description
+     "This package provides an interface to the system-level grep utility for
+efficiently reading, filtering, and aggregating data from multiple flat files.
+By pre-filtering data at the command line before it enters the R environment,
+the package reduces memory overhead and improves ingestion speed.  Includes
+functions for counting records across large file systems and supports recursive
+directory searching.")
+    (license license:expat)))
 
 (define-public r-greport
   (package
@@ -17065,13 +17121,13 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "1859w920bw94iiiqsnh2s2y2qsn0arcp24lbxsimwk22qc85sxr1"))))
+        (base32 "1fg78qsmi7vam1737qhba455w7i9x5f6a80cj6s444kd85693a01"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (arguments
@@ -17453,6 +17509,42 @@ method is included to conveniently apply the Mann-Kendall trend test upon
 Raster* images, optionally featuring trend-free pre-whitening to account for
 lag-1 autocorrelation.")
     (license license:expat)))
+
+(define-public r-gimmemystats
+  (package
+    (name "r-gimmemystats")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GimmeMyStats" version))
+       (sha256
+        (base32 "1l30bhg712fzjkinh3ddsljkcc66gm1rwm2rns8is8m6b9sl3g6r"))))
+    (properties `((upstream-name . "GimmeMyStats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-rstatix
+                             r-magrittr
+                             r-lmertest
+                             r-lme4
+                             r-forcats
+                             r-e1071
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ecamenen/GimmeMyStats")
+    (synopsis "Statistics Utilities")
+    (description
+     "Facilitate reporting for regression and correlation modeling, hypothesis
+testing, variance analysis, outlier detection, and detailed descriptive
+statistics.")
+    (license license:gpl3)))
 
 (define-public r-gimmemyplot
   (package
@@ -20163,13 +20255,13 @@ visualizations through a web browser GUI without writing any code.")
 (define-public r-ggrain
   (package
     (name "r-ggrain")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrain" version))
        (sha256
-        (base32 "1qra5yx26s3977f96pzikkbrd2j1ackqlh6n3njpd1m979amqd8q"))))
+        (base32 "0zb56r6ahd1z4d55g7q4h704k4cssr43vn2mif8542p8la5sp8wb"))))
     (properties `((upstream-name . "ggrain")))
     (build-system r-build-system)
     (arguments
@@ -22410,6 +22502,44 @@ the exact pixel dimensions needed.")
 colourable & fillable shapes.  New shapes may be feature requested via a Github
 issue.")
     (license license:expat)))
+
+(define-public r-ggfootball
+  (package
+    (name "r-ggfootball")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggfootball" version))
+       (sha256
+        (base32 "1b1w2yqycnpk9zgflrhzch7n8a0y2k8y1mnkp61rmjinn53b3v07"))))
+    (properties `((upstream-name . "ggfootball")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-jsonlite
+                             r-httr
+                             r-highcharter
+                             r-glue
+                             r-ggsoccer
+                             r-ggplot2
+                             r-ggiraph
+                             r-gfonts
+                             r-gdtools
+                             r-dplyr
+                             r-base64enc))
+    (home-page "https://aymennasri.github.io/ggfootball/")
+    (synopsis
+     "Plotting Football Matches Expected Goals (xG) Stats with 'Understat' Data")
+    (description
+     "Scrapes football match shots data from Understat <https://understat.com/> and
+visualizes it using interactive plots: - A detailed shot map displaying the
+location, type, and @code{xG} value of shots taken by both teams. - An @code{xG}
+timeline chart showing the cumulative @code{xG} for each team over time,
+annotated with the details of scored goals.")
+    (license license:gpl3+)))
 
 (define-public r-ggfocus
   (package
@@ -28261,13 +28391,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "1jm4sdhlj0qdah2cd9vliajyrnpldrrags10fr5kbjvcx4gx64zg"))))
+        (base32 "0yykh32fh6yjg8br2n11ipjdycm2xsf9aclanm9l0dqpy1j0wps8"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -30570,13 +30700,13 @@ using the concept of \"Kern\" and \"Schrider\" (2018)<doi:10.1534/g3.118.200262>
 (define-public r-genepop
   (package
     (name "r-genepop")
-    (version "1.2.11")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genepop" version))
        (sha256
-        (base32 "189bgc0h3mqf95pcc7p5ndsvmvpiqvpxqjrnlzrzmw8n92slq2g0"))))
+        (base32 "1yfqj5zsyq46fkh389l8918cr0fy94p9scn927ah0zxn4916206a"))))
     (properties `((upstream-name . "genepop")))
     (build-system r-build-system)
     (arguments
@@ -35519,13 +35649,13 @@ evaluations.")
 (define-public r-ganttify
   (package
     (name "r-ganttify")
-    (version "0.1.8")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganttify" version))
        (sha256
-        (base32 "1nrxmy6rfk89fikq5b2smrrrcpkg6z6rj8l6jyzrk69259r6j1v2"))))
+        (base32 "17mwn63zhpdh8qmpk1p98r40jdkpxjvhb1dk6n5nqims7am7i0ws"))))
     (properties `((upstream-name . "ganttify")))
     (build-system r-build-system)
     (arguments
@@ -36698,6 +36828,49 @@ function @code{delta_t()} returns the value of delta-T in units of seconds.")
  This packages allows you loading data from ads account and manage your ads
 materials.")
     (license license:expat)))
+
+(define-public r-galaxias
+  (package
+    (name "r-galaxias")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "galaxias" version))
+       (sha256
+        (base32 "06skkmfp9cdycpa3r5lbxdpab1i31bswf4h4yb6l6s3h04q3m87m"))))
+    (properties `((upstream-name . "galaxias")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-withr
+                             r-usethis
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-delma
+                             r-corella
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://galaxias.ala.org.au/R/")
+    (synopsis "Describe, Package, and Share Biodiversity Data")
+    (description
+     "The Darwin Core data standard is widely used to share biodiversity information,
+most notably by the Global Biodiversity Information Facility and its partner
+nodes; but converting data to this standard can be tricky.  galaxias is
+functionally similar to devtools', but with a focus on building Darwin Core
+Archives rather than R packages, enabling data to be shared and re-used with
+relative ease.  For details see Wieczorek and colleagues (2012)
+<doi:10.1371/journal.pone.0029715>.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-galamm
   (package

@@ -164,13 +164,13 @@ frames that can be easily integrated into existing workflows.")
 (define-public r-myownrobs
   (package
     (name "r-myownrobs")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myownrobs" version))
        (sha256
-        (base32 "1m6k0vqyy9jf8q8q6bkxcsiridclzamf27v6jh0fzjy8ljppmclz"))))
+        (base32 "1qqxiqmlcqgkwh4ya18hby0fgqv6f19lfq9fj5vz7adxkdyni5fs"))))
     (properties `((upstream-name . "myownrobs")))
     (build-system r-build-system)
     (arguments
@@ -181,12 +181,11 @@ frames that can be easily integrated into existing workflows.")
                              r-shiny
                              r-rstudioapi
                              r-rstudio-prefs
-                             r-mirai
+                             r-promises
                              r-jsonlite
-                             r-httr2
-                             r-glue
-                             r-gargle
-                             r-fs))
+                             r-httr
+                             r-fs
+                             r-ellmer))
     (home-page "https://myownrobs.github.io/myownrobs/")
     (synopsis "AI Coding Agent for 'RStudio'")
     (description
@@ -764,13 +763,13 @@ annealing.")
 (define-public r-mwa
   (package
     (name "r-mwa")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mwa" version))
        (sha256
-        (base32 "1a6qdvbgn77ichgzcngb28cdp9xkz0jhikkdd19shm65xy33b8ya"))))
+        (base32 "0xs7pcmlrz06d5yi9kyxx93352y0ny63ibmgbslw6zz1b4wbsw6n"))))
     (properties `((upstream-name . "mwa")))
     (build-system r-build-system)
     (arguments
@@ -11251,13 +11250,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.6.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsolve" version))
        (sha256
-        (base32 "0qrbcv8k77kbf5n59d76srqfnksabdykfv5xvp3y4nr6fcbrpjjx"))))
+        (base32 "1z4yi3bhzwnyxwnv71ga1kkya060wnlsg69b2qhiwyk543baymcw"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (arguments
@@ -11992,21 +11991,23 @@ independence (FOCI) algorithm of Azadkia and Chatterjee (2021)
 (define-public r-mr-rgm
   (package
     (name "r-mr-rgm")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MR.RGM" version))
        (sha256
-        (base32 "16d7y32vbrqrkmnpxwl415m2g8s613b6y3iyq70wa2y8y0lzhiqd"))))
+        (base32 "0hba77zqdk5lxbq5r3x8bxziqls947np2dmpz4h77iq8nn1bhd4a"))))
     (properties `((upstream-name . "MR.RGM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
+    (propagated-inputs (list r-rcppdist r-rcpparmadillo r-rcpp r-igraph
+                             r-gigrvg))
     (home-page "https://github.com/bitansa/MR.RGM")
-    (synopsis "Multivariate Bidirectional Mendelian Randomization Networks")
+    (synopsis
+     "Fitting Multivariate Bidirectional Mendelian Randomization Networks Using Bayesian Directed Cyclic Graphical Models")
     (description
      "Addressing a central challenge encountered in Mendelian randomization (MR)
 studies, where MR primarily focuses on discerning the effects of individual
@@ -12020,11 +12021,15 @@ variables and consequently between responses and instrument variables.  The
 resulting Graph visually represents these causal connections, showing directed
 edges with effect sizes labeled.  MR.RGM facilitates the navigation of various
 data availability scenarios effectively by accommodating three input formats,
-i.e., individual-level data and two types of summary-level data.  In the
-process, causal effects, adjacency matrices, and other essential parameters of
-the complex biological networks, are estimated.  Besides, MR.RGM provides
-uncertainty quantification for specific network structures among response
-variables.")
+i.e., individual-level data and two types of summary-level data.  The method
+also optionally incorporates measured covariates (when available) and allows
+flexible modeling of the error variance structure, including correlated errors
+that may reflect unmeasured confounding among responses.  In the process, causal
+effects, adjacency matrices, and other essential parameters of the complex
+biological networks, are estimated.  Besides, MR.RGM provides uncertainty
+quantification for specific network structures among response variables.  Parts
+of the Inverse Wishart sampler are adapted from the econ722 repository by
+@code{DiTraglia} (GPL-2.0).")
     (license license:gpl3+)))
 
 (define-public r-mr-pivw
@@ -16813,13 +16818,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.15")
+    (version "1.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1hlm67fmc37b7wzhb6zq598h97kndzip6cdwga88xg1vjzam02va"))))
+        (base32 "14h3pk07bwc544lx0b5qlf9l7mj8cn2pnsv61c8gc594272am145"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -21327,13 +21332,13 @@ Polley, and Hubbard (2007) <doi:10.2202/1544-6115.1309 using the mlr3 framework.
 (define-public r-mlr3summary
   (package
     (name "r-mlr3summary")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3summary" version))
        (sha256
-        (base32 "16r9sjjjy3f3aqjw1npibqk0pwhdajh6r3rkrypjfl80mhk9fpi4"))))
+        (base32 "1z5kngqvvrm00m5k8w6xva5q131y703v6z605v4zqvj5x6ldhr5d"))))
     (properties `((upstream-name . "mlr3summary")))
     (build-system r-build-system)
     (arguments
@@ -33014,6 +33019,39 @@ see: Chao et al. (2018) <doi:10.1002/ecm.1343>, Maire et al. (2015)
 @code{mFD} website for more information, documentation and examples.")
     (license license:gpl2)))
 
+(define-public r-mfcurve
+  (package
+    (name "r-mfcurve")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mfcurve" version))
+       (sha256
+        (base32 "1if74rcvfmql27ckffdn91iic854xf604753h9l30w317ayqlg9a"))))
+    (properties `((upstream-name . "mfcurve")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-plotly
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/XAM12/mfcurve_R")
+    (synopsis "Multi-Factor Curve Analysis for Grouped Data in 'R'")
+    (description
+     "This package implements multi-factor curve analysis for grouped data in R',
+replicating and extending the functionality of the the Stata ado mfcurve
+(KrÃ¤hmer, 2023) <https://ideas.repec.org/c/boc/bocode/s459224.html>.  Related
+to the idea of specification curve analysis (Simonsohn, Simmons, and Nelson,
+2020) <doi:10.1038/s41562-020-0912-z>.  Includes data preprocessing, statistical
+testing, and visualization of results with confidence intervals.")
+    (license license:gpl3+)))
+
 (define-public r-mfag
   (package
     (name "r-mfag")
@@ -37653,13 +37691,13 @@ into soil matric potential and volumetric soil moisture.")
 (define-public r-mertools
   (package
     (name "r-mertools")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "merTools" version))
        (sha256
-        (base32 "1mmr1r6dbwfxm8sigk5jbi5cbq840isi32d4bikbcf1gp2g9v7c5"))))
+        (base32 "0paj046hb6l3fcq4h30jp3i82x8diw0a68n7bwyis4nyaw12hwsc"))))
     (properties `((upstream-name . "merTools")))
     (build-system r-build-system)
     (arguments
@@ -41511,13 +41549,13 @@ distribution.  Initially 	created for statistics at Middlebury College.")
 (define-public r-mcsimmod
   (package
     (name "r-mcsimmod")
-    (version "1.0")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCSimMod" version))
        (sha256
-        (base32 "0yr6qm0p71h5h8pjfmk1hffyzid06aba0kf1wzs9vrxg5pbxhbfx"))))
+        (base32 "10qyx796s1rdq3l8k21shgmymrb0dnjiy6b7mm99likbdxy64wwn"))))
     (properties `((upstream-name . "MCSimMod")))
     (build-system r-build-system)
     (arguments
@@ -46493,6 +46531,37 @@ can be rendered in R markdown documents and shiny apps.  This package depends on
 R package rolog', which requires an installation of the SWI'-'Prolog runtime
 either from swi-prolog.org or from R package rswipl'.")
     (license (license:fsdg-compatible "FreeBSD"))))
+
+(define-public r-mates
+  (package
+    (name "r-mates")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MATES" version))
+       (sha256
+        (base32 "1vb85qpnxg2mqdkdjfqdn5azfimr578xysp0g9kimpgnv4xddq9f"))))
+    (properties `((upstream-name . "MATES")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-mass r-magrittr r-ade4))
+    (home-page "https://github.com/ZexiCAI/MATES")
+    (synopsis "Multi-View Aggregated Two Sample Tests")
+    (description
+     "This package implements the Multi-view Aggregated Two-Sample (MATES) test, a
+powerful nonparametric method for testing equality of two multivariate
+distributions.  The method constructs multiple graph-based statistics from
+various perspectives (views) including different distance metrics, graph types
+(nearest neighbor graphs, minimum spanning trees, and robust nearest neighbor
+graphs), and weighting schemes.  These statistics are then aggregated through a
+quadratic form to achieve improved statistical power.  The package provides both
+asymptotic closed-form inference and permutation-based testing procedures.  For
+methodological details, see Cai and others (2026+)
+<doi:10.48550/@code{arXiv.2412.16684>}.")
+    (license license:gpl3+)))
 
 (define-public r-materialmodifier
   (package

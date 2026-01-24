@@ -7318,13 +7318,13 @@ dating.  Read and write standard file formats used in dendrochronology.")
 (define-public r-dpkg
   (package
     (name "r-dpkg")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dpkg" version))
        (sha256
-        (base32 "0cjdl53r569cc3hcjb7nn3dbnfmpjfz7vjwmz5r81bp97rg5ci9y"))))
+        (base32 "1gpzwi28v29sa5zd9c41is9pzlmi3kfl90zw30pqcf7b752pw2hh"))))
     (properties `((upstream-name . "dpkg")))
     (build-system r-build-system)
     (arguments
@@ -9660,13 +9660,13 @@ handing functions and I/O support routines.")
 (define-public r-docorator
   (package
     (name "r-docorator")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "docorator" version))
        (sha256
-        (base32 "0d7qc5gcs0q465y0d1yhd12vgdrikibj8j6vj5i1d7jlssg4bxir"))))
+        (base32 "1z8mk9d65ljbj7z506gr1i96l0dyz57gbg2dzmf2xkl130yplq65"))))
     (properties `((upstream-name . "docorator")))
     (build-system r-build-system)
     (arguments
@@ -15600,6 +15600,32 @@ networks: a new perspective\", Clemente, G.P., Grassi, R. (2017),
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-directagestd
+  (package
+    (name "r-directagestd")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "directAgeStd" version))
+       (sha256
+        (base32 "1wpjgv6j07iisvrdvd3904h0bzmxbwbbw613zi3wn88k8bxsr47b"))))
+    (properties `((upstream-name . "directAgeStd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (home-page "https://github.com/JoeBlackford/directAgeStd/")
+    (synopsis "Direct Age Standardisation with Confidence Intervals")
+    (description
+     "This package provides tools to compute directly age-standardised rates using the
+2013 European Standard Population.  Includes variance estimation and 95%
+confidence intervals for population health applications.  Functions are flexible
+to handle any grouping variable and age bands, allowing reproducible and
+automated analyses.")
+    (license license:expat)))
+
 (define-public r-direct
   (package
     (name "r-direct")
@@ -20748,13 +20774,13 @@ character seed to ensure reproducible results.")
 (define-public r-desla
   (package
     (name "r-desla")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "desla" version))
        (sha256
-        (base32 "18q1rw8p69p5jcqxb4hryyn2bak6pjmx91g203xrilx7k1za4p23"))))
+        (base32 "0if6li2j7pn203c9bxnhrbdfsq1rkia0aaii5nch005gqkhak5ad"))))
     (properties `((upstream-name . "desla")))
     (build-system r-build-system)
     (arguments
@@ -20772,9 +20798,9 @@ character seed to ensure reproducible results.")
      "Calculates the desparsified lasso as originally introduced in van de Geer et al.
 (2014) <doi:10.1214/14-AOS1221>, and provides inference suitable for
 high-dimensional time series, based on the long run covariance estimator in
-Adamek et al. (2020) <@code{arXiv:2007.10952>}.  Also estimates high-dimensional
-local projections by the desparsified lasso, as described in Adamek et al.
-(2022) <@code{arXiv:2209.03218>}.")
+Adamek et al. (2020) <doi:10.48550/@code{arXiv.2007.10952>}.  Also estimates
+high-dimensional local projections by the desparsified lasso, as described in
+Adamek et al. (2022) <doi:10.48550/@code{arXiv.2209.03218>}.")
     (license license:gpl2+)))
 
 (define-public r-desk
@@ -30239,13 +30265,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.21")
+    (version "2.7.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "1y71k6hsrf481n6s5pw7qykp4449j7bsn2hw5f52v2dvvdckdzmn"))))
+        (base32 "1d00r1chhal3jl6qygx7ficsw1yj597wqc1q2nnqyndjd0s18fnf"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (arguments

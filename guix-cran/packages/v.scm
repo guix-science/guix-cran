@@ -5496,13 +5496,13 @@ Research.  International Livestock Research Institute.")
 (define-public r-vetr
   (package
     (name "r-vetr")
-    (version "0.2.19")
+    (version "0.2.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vetr" version))
        (sha256
-        (base32 "14dnbg2alx3h39fml85677qc7zcgmhbck5lyhjhbilp4pkrzblav"))))
+        (base32 "02f1bidaikjz7jc2b55ikswhygpf4yllqdlbwgip68aak0syzlx7"))))
     (properties `((upstream-name . "vetr")))
     (build-system r-build-system)
     (arguments
@@ -7620,13 +7620,13 @@ estimated variance of the random noise.")
 (define-public r-vbracket
   (package
     (name "r-vbracket")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vbracket" version))
        (sha256
-        (base32 "0vb3pml2q5yzy8jqzyh61k6rryrj9a600fb8izqkr2pmbcm6gjdm"))))
+        (base32 "1k4h57adrza6hyrm5z55764axpynb6h6dwdgy24c9chhhyr5bfk0"))))
     (properties `((upstream-name . "vbracket")))
     (build-system r-build-system)
     (arguments
@@ -9253,6 +9253,41 @@ large variable annuities.  The main valuation methodology was proposed by Gan
 RNA sequencing data.")
     (license license:gpl2+)))
 
+(define-public r-valytics
+  (package
+    (name "r-valytics")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valytics" version))
+       (sha256
+        (base32 "0fp8k1whx6fjdpzfb83cvlzv523abprrzdrlfmhk83b4jmfckd36"))))
+    (properties `((upstream-name . "valytics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robslopes r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/marcellogr/valytics")
+    (synopsis
+     "Statistical Methods for Analytical Method Comparison and Validation")
+    (description
+     "This package provides statistical methods for analytical method comparison and
+validation studies.  Implements Bland-Altman analysis for assessing agreement
+between measurement methods (Bland & Altman (1986)
+<doi:10.1016/S0140-6736(86)90837-8>), Passing-Bablok regression for
+non-parametric method comparison (Passing & Bablok (1983)
+<doi:10.1515/cclm.1983.21.11.709>), and Deming regression accounting for
+measurement error in both variables (Linnet (1993)
+<doi:10.1093/clinchem/39.3.424>).  Also includes tools for setting quality goals
+based on biological variation (Fraser & Petersen (1993)
+<doi:10.1093/clinchem/39.7.1447>) and calculating Six Sigma metrics.  Commonly
+used in clinical laboratory method validation.  Provides publication-ready plots
+and comprehensive statistical summaries.")
+    (license license:gpl3)))
+
 (define-public r-valueprhr
   (package
     (name "r-valueprhr")
@@ -9641,31 +9676,6 @@ primary key? What are the properties of the numeric or categorical columns? What
 kind of overlap or mapping exists between 2 columns?")
     (license license:expat)))
 
-(define-public r-validann
-  (package
-    (name "r-validann")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "validann" version))
-       (sha256
-        (base32 "00c0hkjiv8n7mksx6sknb4xkkivxr1ml31k697csv4imwrk09dy5"))))
-    (properties `((upstream-name . "validann")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-moments))
-    (home-page "http://github.com/gbhumphrey1/validann")
-    (synopsis "Validation Tools for Artificial Neural Networks")
-    (description
-     "This package provides methods and tools for analysing and validating the outputs
-and modelled functions of artificial neural networks (ANNs) in terms of
-predictive, replicative and structural validity.  Also provides a method for
-fitting feed-forward ANNs with a single hidden layer.")
-    (license license:gpl2+)))
-
 (define-public r-valhallr
   (package
     (name "r-valhallr")
@@ -9938,6 +9948,45 @@ APIs'.  For further documentation on integrating with VALD APIs', see:
 <https://support.vald.com/hc/en-au/articles/23415335574553-How-to-integrate-with-VALD-APIs>.
  For a step-by-step guide to using this package, see:
 <https://support.vald.com/hc/en-au/articles/48730811824281-A-guide-to-using-the-valdr-R-package>.")
+    (license license:expat)))
+
+(define-public r-vald-extractor
+  (package
+    (name "r-vald-extractor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vald.extractor" version))
+       (sha256
+        (base32 "1lkhwvcp3bv9ldssygji1c63iagi6fcdqglg52lbcacn4shra2vc"))))
+    (properties `((upstream-name . "vald.extractor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-valdr
+                             r-tidyr
+                             r-stringr
+                             r-readxl
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/praveenmaths89/vald.extractor")
+    (synopsis
+     "Robust Pipeline for 'VALD' 'ForceDecks' Data Extraction and Analysis")
+    (description
+     "This package provides a robust and reproducible pipeline for extracting,
+cleaning, and analyzing athlete performance data generated by VALD
+@code{ForceDecks} systems.  The package supports batch-oriented data processing
+for large datasets, standardized data transformation workflows, and
+visualization utilities for sports science research and performance monitoring.
+It is designed to facilitate reproducible analysis across multiple sports with
+comprehensive documentation and error handling.")
     (license license:expat)))
 
 (define-public r-valaddin

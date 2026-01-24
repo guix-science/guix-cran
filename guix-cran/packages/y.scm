@@ -686,27 +686,6 @@ and Li, C. (2006) <doi: 10.1016/j.jeconom.2005.03.005> and Svensson, L.E. (1994)
 of interest rate of Federal Reserve Bank and European Central Bank.")
     (license license:gpl2+)))
 
-(define-public r-yhatr
-  (package
-    (name "r-yhatr")
-    (version "0.15.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "yhatr" version))
-       (sha256
-        (base32 "18g2cr1kjxnfw6cwzl62ynppfv1zz732kbx18zq8918l85kx6wbw"))))
-    (properties `((upstream-name . "yhatr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-jsonlite r-httr))
-    (home-page "https://github.com/yhat/yhatr")
-    (synopsis "R Binder for the Yhat API")
-    (description "Deploy, maintain, and invoke models via the Yhat REST API.")
-    (license (license:fsdg-compatible "FreeBSD"))))
-
 (define-public r-yhat
   (package
     (name "r-yhat")
@@ -844,6 +823,41 @@ support for parallel computation.")
      "Download financial market data, company information, financial statements,
 options data, and more from the unofficial Yahoo Finance API.")
     (license license:expat)))
+
+(define-public r-yfhist
+  (package
+    (name "r-yfhist")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yfhist" version))
+       (sha256
+        (base32 "1wbi1zc4dz3aqvs2l9308zpmkyzy7d84f7qs71l95r97hihm63cy"))))
+    (properties `((upstream-name . "yfhist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://github.com/jasonjfoster/hist")
+    (synopsis "Yahoo Finance 'history' API")
+    (description
+     "Simple and efficient access to Yahoo Finance's historical data API
+<https://finance.yahoo.com/> for querying and retrieval of financial data.  The
+core functionality of the yfhist package abstracts the complexities of
+interacting with Yahoo Finance APIs, such as session management, crumb and
+cookie handling, query construction, date validation, and interval management.
+This abstraction allows users to focus on retrieving data rather than managing
+API details.  Use cases include historical data across a range of security types
+including equities & ETFs, indices, and other tickers.  The package supports
+flexible query capabilities, including customizable date ranges, multiple time
+intervals, and automatic data validation.  It automatically manages
+interval-specific limitations, such as lookback periods for intraday data and
+maximum date ranges for minute-level intervals.  The implementation leverages
+standard HTTP libraries to handle API interactions efficiently and provides
+support for both R and Python to ensure accessibility for a broad audience.")
+    (license license:gpl2+)))
 
 (define-public r-yesno
   (package

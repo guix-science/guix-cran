@@ -13428,13 +13428,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.5")
+    (version "4.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "12xq9qrv5iap8aqpxcpkbiqwa2b8fk7ff8dwl83i7s9r9ch691sf"))))
+        (base32 "0pji77yiw6ilvhw5l1al6c5s1ryx38klfkk4m2bgs130m18szmlc"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -16013,6 +16013,57 @@ are determined using constrained optimization.  This implementation accounts for
 the implicit constraints on the parameter space.  Other features such as
 standard errors, z tests and p-values use standard methods adapted from the
 results based on constrained optimization.")
+    (license license:gpl3)))
+
+(define-public r-lcpa
+  (package
+    (name "r-lcpa")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LCPA" version))
+       (sha256
+        (base32 "12991akcqacmjhg8gl9jf2d3z540yii917y97l43376zpqq4c5zr"))))
+    (properties `((upstream-name . "LCPA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-reticulate
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-nloptr
+                             r-mvtnorm
+                             r-mplusautomation
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-dplyr
+                             r-clue))
+    (home-page "https://cran.r-project.org/package=LCPA")
+    (synopsis "General Framework for Latent Classify and Profile Analysis")
+    (description
+     "This package provides a unified latent class modeling framework that encompasses
+both latent class analysis (LCA) and latent profile analysis (LPA), offering a
+one-stop solution for latent class modeling.  It implements state-of-the-art
+parameter estimation methods, including the expectationâmaximization (EM)
+algorithm, neural network estimation (NNE; requires users to have Python and its
+dependent libraries installed on their computer), and integration with Mplus
+(requires users to have Mplus installed on their computer).  In addition, it
+provides commonly used model fit indices such as the Akaike information
+criterion (AIC) and Bayesian information criterion (BIC), as well as
+classification accuracy measures such as entropy.  The package also includes
+fully functional likelihood ratio tests (LRT) and bootstrap likelihood ratio
+tests (BLRT) to facilitate model comparison, along with bootstrap-based and
+observed information matrix-based standard error estimation.  Furthermore, it
+supports the standard three-step approach for LCA, LPA, and latent transition
+analysis (LTA) with covariates, enabling detailed covariate analysis.  Finally,
+it includes several user-friendly auxiliary functions to enhance interactive
+usability.")
     (license license:gpl3)))
 
 (define-public r-lcopula
@@ -19281,13 +19332,13 @@ Quera (2011) <doi:10.1017/CBO9781139017343>, O'Connor (1999)
 (define-public r-lagsarlmtree
   (package
     (name "r-lagsarlmtree")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lagsarlmtree" version))
        (sha256
-        (base32 "1v3a580scxb1v5na3ab3ax9qlzbnay7nhm3ln5l8f9zgsqrg5lyh"))))
+        (base32 "1lil463p0qz64zvh7yxls393qar63fijx1rl1f5yvvninxkykmrw"))))
     (properties `((upstream-name . "lagsarlmtree")))
     (build-system r-build-system)
     (arguments

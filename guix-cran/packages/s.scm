@@ -3411,13 +3411,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "3.1.4")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "14cd0448vknllwk6cgya8jbf9c3zfcvz963lq2nplj3da1ybc67j"))))
+        (base32 "155yzdz5qkx3hdpplah355khjhc0dm48s4n1habrf7blbn86bkn1"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -3429,10 +3429,9 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
                              r-gamlss-dist
                              r-gamlss
                              r-foreach
-                             r-dorng
                              r-doparallel
                              r-cluster))
-    (home-page "https://cran.r-project.org/package=SVEMnet")
+    (home-page "https://arxiv.org/abs/2511.20968")
     (synopsis
      "Self-Validated Ensemble Models with Lasso and Relaxed Elastic Net Regression")
     (description
@@ -5324,6 +5323,32 @@ Statistics (NCHS) presentation standards (Parker et al. (2017)
 <https://www.cdc.gov/nchs/data/series/sr_02/sr02_175.pdf>, Parker et al. (2023)
 <doi:10.15620/cdc:124368>).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-surveystat
+  (package
+    (name "r-surveystat")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurveyStat" version))
+       (sha256
+        (base32 "0fb6i6cymvksznpmr3waip2cihm6af9mivn9lhsxr5bihp8nf32k"))))
+    (properties `((upstream-name . "SurveyStat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SurveyStat")
+    (synopsis "Survey Data Cleaning, Weighting and Analysis")
+    (description
+     "This package provides utilities for cleaning survey data, computing weights, and
+performing descriptive statistical analysis.  Methods follow Lohr (2019,
+ISBN:978-0367272454) \"Sampling: Design and Analysis\" and Lumley (2010)
+<doi:10.1002/9780470580066>.")
+    (license license:gpl3)))
 
 (define-public r-surveysimr
   (package
@@ -8250,13 +8275,13 @@ statistics.  PLOS Comp Biol.")
 (define-public r-sumextras
   (package
     (name "r-sumextras")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumExtras" version))
        (sha256
-        (base32 "18bpjc0n4f4v8qw3848i576xj7cy0cv4k71flah5n9hmswaq00mm"))))
+        (base32 "08al93kiv2d94qip54yn5xx2m8il8abnlxc5xyn3akdlr7hj8rsf"))))
     (properties `((upstream-name . "sumExtras")))
     (build-system r-build-system)
     (arguments
@@ -8272,6 +8297,32 @@ al. (2021) <doi:10.32614/RJ-2021-053>) & gt tables, including automatic variable
 labeling from dictionaries, standardized missing value display, and consistent
 formatting helpers for streamlined table styling workflows.")
     (license license:expat)))
+
+(define-public r-sumer
+  (package
+    (name "r-sumer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sumer" version))
+       (sha256
+        (base32 "08iv5i075w56jw4yzl6rjgj95g7c3mkx58w9k1h2g3g50pnd46zs"))))
+    (properties `((upstream-name . "sumer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-stringr r-officer r-dplyr r-cli))
+    (home-page "https://cran.r-project.org/package=sumer")
+    (synopsis "Sumerian Cuneiform Text Analysis")
+    (description
+     "This package provides functions for converting transliterated Sumerian texts to
+sign names and cuneiform characters, creating and querying dictionaries, and
+analyzing the structure of Sumerian words.  Includes a built-in dictionary and
+supports both forward lookup (Sumerian to English) and reverse lookup (English
+to Sumerian).")
+    (license license:gpl3)))
 
 (define-public r-sumcaver1
   (package
@@ -8416,13 +8467,13 @@ currently under preparation and can be found on @code{GitHub} at
 (define-public r-sugarbag
   (package
     (name "r-sugarbag")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sugarbag" version))
        (sha256
-        (base32 "1h417g28m2vynadmkpfz7zjwdybdb0glm6jfs6lgq1h6s1papw60"))))
+        (base32 "1z96gvhaiyicz8wbi4vcv0wpndzm5g7wh3bs6csm1s29vfvplcll"))))
     (properties `((upstream-name . "sugarbag")))
     (build-system r-build-system)
     (arguments
@@ -9053,6 +9104,31 @@ minimizing the variance of coefficient estimates or reducing prediction error.")
 method is that simulation studies show a low sensitivity to dimension, on
 realistic cases.")
     (license license:gpl3+)))
+
+(define-public r-subniche
+  (package
+    (name "r-subniche")
+    (version "1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "subniche" version))
+       (sha256
+        (base32 "0hb5i762qc3brra9lsgmany66k96a8ccsv25wdz4p4hw4wjsiazs"))))
+    (properties `((upstream-name . "subniche")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordcloud r-polyclip r-ade4))
+    (home-page "https://cran.r-project.org/package=subniche")
+    (synopsis "Within Outlying Mean Indexes: Refining the 'OMI' Analysis")
+    (description
+     "Complementary indexes calculation to the Outlying Mean Index analysis to explore
+niche shift of a community and biological constraint within an Euclidean space,
+with graphical displays.  For details see Karasiewicz et al. (2017)
+<doi:10.7717/peerj.3364>.")
+    (license license:gpl2+)))
 
 (define-public r-submax
   (package
@@ -27516,41 +27592,6 @@ Designed for scalability, it allows seamless application in computationally
 demanding scenarios.")
     (license license:gpl3+)))
 
-(define-public r-spbfa
-  (package
-    (name "r-spbfa")
-    (version "1.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spBFA" version))
-       (sha256
-        (base32 "0ks6jdh25y369mahgyvhcnmj7kyysk2amwqy0z8d73vbkg36asd5"))))
-    (properties `((upstream-name . "spBFA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pgdraw r-mvtnorm r-msm))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=spBFA")
-    (synopsis "Spatial Bayesian Factor Analysis")
-    (description
-     "This package implements a spatial Bayesian non-parametric factor analysis model
-with inference in a Bayesian setting using Markov chain Monte Carlo (MCMC).
-Spatial correlation is introduced in the columns of the factor loadings matrix
-using a Bayesian non-parametric prior, the probit stick-breaking process.  Areal
-spatial data is modeled using a conditional autoregressive (CAR) prior and
-point-referenced spatial data is treated using a Gaussian process.  The response
-variable can be modeled as Gaussian, probit, Tobit, or Binomial (using
-Polya-Gamma augmentation).  Temporal correlation is introduced for the latent
-factors through a hierarchical structure and can be specified as exponential or
-first-order autoregressive.  Full details of the package can be found in the
-accompanying vignette.  Furthermore, the details of the package can be found in
-\"Bayesian Non-Parametric Factor Analysis for Longitudinal Spatial Surfaces\", by
-Berchuck et al (2019), <doi:10.1214/20-BA1253> in Bayesian Analysis.")
-    (license license:gpl2+)))
-
 (define-public r-spbayessurv
   (package
     (name "r-spbayessurv")
@@ -34891,20 +34932,20 @@ when collapsing levels to coarser strata.  Details are described in Groemping
 (define-public r-soar
   (package
     (name "r-soar")
-    (version "0.99-11")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SOAR" version))
        (sha256
-        (base32 "1n38gx5sxpkqfkk4y6vpp6g19b8bs5bisni9wn6311s0csizp86m"))))
+        (base32 "05k21v51pvhmp34dp7fb6kij3sqswc91va5drvkwjrgsz6iz81v5"))))
     (properties `((upstream-name . "SOAR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=SOAR")
-    (synopsis "Memory management in R by delayed assignments")
+    (synopsis "Memory Management in R by Delayed Assignments")
     (description
      "Allows objects to be stored on disc and automatically recalled into memory, as
 required, by delayed assignment.")
@@ -43444,13 +43485,13 @@ the population parameters of the known population. (See Regular et al. (2020)
 (define-public r-simsurv
   (package
     (name "r-simsurv")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simsurv" version))
        (sha256
-        (base32 "16b2a3br107hy2fc0vann9wf5h9kb5j76baa37g1sfc0h19kg6kr"))))
+        (base32 "1c8hnrqmi7xl4b0f18sw3hv0692ks5h3a414driaw17i816w3sbf"))))
     (properties `((upstream-name . "simsurv")))
     (build-system r-build-system)
     (arguments
@@ -57603,13 +57644,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "00ajdakrrgs22gmz5iif0lf9l4jc6nvhkzvdqhik414zri8ibhlk"))))
+        (base32 "191dxqf9y6arqz8p0jzysa2b06a5rahdzgr9zl0jk8pgn98igc9d"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -57743,13 +57784,13 @@ RNA-Seq.")
 (define-public r-seqkat
   (package
     (name "r-seqkat")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeqKat" version))
        (sha256
-        (base32 "09b5zrp41241ha5q8bxll9n12sn11hsbv46g2ld1lqsy2razivr4"))))
+        (base32 "14r9a395sa5vaivs8xylbb01gd83kfiw0l1b24p8402hcj7ww03g"))))
     (properties `((upstream-name . "SeqKat")))
     (build-system r-build-system)
     (arguments
@@ -57757,7 +57798,7 @@ RNA-Seq.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-foreach r-doparallel))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=SeqKat")
+    (home-page "https://github.com/TheBoutrosLab/package-SeqKat")
     (synopsis "Detection of Kataegis")
     (description
      "Kataegis is a localized hypermutation occurring when a region is enriched in
@@ -57767,7 +57808,7 @@ kataegis from SNVs in BED format.  This package reports two scores per kataegic
 event, a hypermutation score and an APOBEC mediated kataegic score.  Yousif, F.
 et al.; The Origins and Consequences of Localized and Global Somatic
 Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
-    (license license:gpl2)))
+    (license license:gpl2+)))
 
 (define-public r-seqimpute
   (package
@@ -67878,13 +67919,13 @@ authentication process and examples.")
 (define-public r-schumaker
   (package
     (name "r-schumaker")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schumaker" version))
        (sha256
-        (base32 "15i39lzkd1qggd35sp39vy922y3y1n9drjkidz7asniv1miali6j"))))
+        (base32 "0628nz1ziyrb5mn7z5qwwnqdilgd079c8y5nk1i31gdvmp7zspmx"))))
     (properties `((upstream-name . "schumaker")))
     (build-system r-build-system)
     (arguments
@@ -68769,13 +68810,13 @@ Ho (2022) <doi:10.1111/biom.13457>.")
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "0vvpq72kx932w9vqyw1v6rpj0n85095ayvl1jgqg4fil42bp95y3"))))
+        (base32 "0i08pc598q0pxdr1kj18hgdkb3fh27ikkhrbanp6zpbdfp2xyvx8"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (arguments
@@ -69589,13 +69630,13 @@ and scan', Juergen Wilbert (2025) <https://jazznbass.github.io/scan-Book/>.")
 (define-public r-scam
   (package
     (name "r-scam")
-    (version "1.2-20")
+    (version "1.2-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scam" version))
        (sha256
-        (base32 "1xcrqfncxg3gcwga97m8c0xbws5g6cdckjqczx2l8m7f7akpr771"))))
+        (base32 "1cyx6hzjwzxjd4id8cimk4xbw28j1bvlnscap0ciwlnv49wc6fgz"))))
     (properties `((upstream-name . "scam")))
     (build-system r-build-system)
     (arguments

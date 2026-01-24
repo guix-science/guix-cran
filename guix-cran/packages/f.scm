@@ -817,13 +817,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzylink
   (package
     (name "r-fuzzylink")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzylink" version))
        (sha256
-        (base32 "0jsif8nnq0mx83c0dvi0zd9czi3pwrns83aprgvjrmnpi7f6ap3m"))))
+        (base32 "1fqwcxsjj747423imny6ayfbbn2dzi185kl4gppa3zs92ygn11pi"))))
     (properties `((upstream-name . "fuzzylink")))
     (build-system r-build-system)
     (arguments
@@ -837,6 +837,7 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
                              r-jsonlite
                              r-httr2
                              r-httr
+                             r-ellmer
                              r-dplyr))
     (home-page "https://github.com/joeornstein/fuzzylink")
     (synopsis "Probabilistic Record Linkage Using Pretrained Text Embeddings")
@@ -1039,6 +1040,39 @@ ranking method in this package.")
      "Test function arguments with a wide array of inputs, and produce reports
 summarizing messages, warnings, errors, and returned values.")
     (license license:expat)))
+
+(define-public r-futurize
+  (package
+    (name "r-futurize")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "futurize" version))
+       (sha256
+        (base32 "12z8dxn3k3i2dgfwpnbxnk1w6nb59b08f32fjr3zp7lxzjpldfkl"))))
+    (properties `((upstream-name . "futurize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-future))
+    (home-page "https://www.futureverse.org")
+    (synopsis "Parallelize Common Functions via One Magic Function")
+    (description
+     "The @code{futurize()} function transpiles calls to sequential map-reduce
+functions such as @code{base::lapply()}, @code{purrr::map()},
+@code{foreach::foreach()} %do% { ... } into concurrent alternatives, providing
+you with a simple, straightforward path to scalable parallel computing via the
+future ecosystem <doi:10.32614/RJ-2021-048>.  By combining this function with
+R's native pipe operator, you have an convenient way for speeding up iterative
+computations with minimal refactoring, e.g. lapply(xs, fcn) |>
+@code{futurize()}', purrr::map(xs, fcn) |> @code{futurize()}', and
+foreach::foreach(x = xs) %do% { fcn(x) } |> @code{futurize()}'.  Other
+map-reduce packages that be \"futurized\" are @code{BiocParallel}', plyr',
+crossmap packages.  There is also support for growing set of domain-specific
+packages, including boot', glmnet', mgcv', lme4', and tm'.")
+    (license license:gpl3+)))
 
 (define-public r-futureverse
   (package
@@ -15799,13 +15833,13 @@ information about 5-digit or 2-digit US FIPS codes.")
 (define-public r-fiora
   (package
     (name "r-fiora")
-    (version "0.3.4")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fioRa" version))
        (sha256
-        (base32 "1jzbcl1pksans8qliq0v9cn05jnswv6q6qzbm2bxb2i3ijm8v9qb"))))
+        (base32 "1m98p6ddq4313l4xwd6amz6zg8cb8fdqxkaj2w4hyln6na3zhvik"))))
     (properties `((upstream-name . "fioRa")))
     (build-system r-build-system)
     (arguments
@@ -24143,13 +24177,13 @@ Raimondo (2019), IEEE International Conference on Image Processing (ICIP), pp.
 (define-public r-fastgeojson
   (package
     (name "r-fastgeojson")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastgeojson" version))
        (sha256
-        (base32 "0zbnjzvja10s2d39dmfmq65gddanvawimpj58pbb3ym5ckm77ris"))))
+        (base32 "08jw9vkkxf67w3xf31gphizj3kakbhgab95qmjx9xbnw5ssw3607"))))
     (properties `((upstream-name . "fastgeojson")))
     (build-system r-build-system)
     (arguments
@@ -25315,13 +25349,13 @@ exceeding the free quota.")
 (define-public r-fanplot
   (package
     (name "r-fanplot")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fanplot" version))
        (sha256
-        (base32 "08zd2af26ah1rdkzxi1sv4c4l06jpxd6m38q3xy657k2jm90rkkc"))))
+        (base32 "1pdjqic4vrz8yn7k1jw9lw5a7rxps75bpaxhharifj4yna3qbrq4"))))
     (properties `((upstream-name . "fanplot")))
     (build-system r-build-system)
     (arguments
@@ -25338,7 +25372,7 @@ fan function.  Users can choose from four different styles, including fan chart
 type plots, where a set of coloured polygon, with shadings corresponding to the
 percentile values are layered to represent different uncertainty levels.  Full
 details in R Journal article; Abel (2015) <doi:10.32614/RJ-2015-002>.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-fangs
   (package
@@ -27831,13 +27865,13 @@ components (remainder, level, trend and seasonal).")
 (define-public r-fable
   (package
     (name "r-fable")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fable" version))
        (sha256
-        (base32 "04z47b8cfyr1pbbh3djn6z11vhpzfd7pm6vrhhdw3scliqd3d73m"))))
+        (base32 "11immjb9rd31bsrh9z1lprz1j18hhf5s4jirsy112jfh1ndy7wd1"))))
     (properties `((upstream-name . "fable")))
     (build-system r-build-system)
     (arguments
@@ -27850,7 +27884,8 @@ components (remainder, level, trend and seasonal).")
                              r-rcpp
                              r-fabletools
                              r-dplyr
-                             r-distributional))
+                             r-distributional
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://fable.tidyverts.org")
     (synopsis "Forecasting Models for Tidy Time Series")

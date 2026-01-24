@@ -2293,13 +2293,13 @@ supporting in other packages maintained by Shichen Xie'.")
 (define-public r-xdvir
   (package
     (name "r-xdvir")
-    (version "0.1-3")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xdvir" version))
        (sha256
-        (base32 "1j9db94kr4ywgj8ja380xbdl1ll9bql47j2zpcnxpmz3xm0n71wm"))))
+        (base32 "16cql3qffckm8fd3wdim8v0km2s2s5fzj16lmvgz1zj5jcvk2rhk"))))
     (properties `((upstream-name . "xdvir")))
     (build-system r-build-system)
     (arguments

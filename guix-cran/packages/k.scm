@@ -405,13 +405,13 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "2.2-0")
+    (version "2.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "0pb6v4ndc85lplqx60phzhlg1301wkll6hab5phamvm6d5qx9bgp"))))
+        (base32 "1vqxq66y7bvhcjbij089cl6sr3lrlhli9hky1l0s36fh85ywsyay"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments
@@ -2401,13 +2401,13 @@ DOI', URL, or bibtex file key.  See the package URL for details.")
 (define-public r-knfi
   (package
     (name "r-knfi")
-    (version "1.0.1.9")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "knfi" version))
        (sha256
-        (base32 "1snshy9mh34l3iimwr4jz4ja9xv88plhlsn2h9g2nmgpp90nqx8d"))))
+        (base32 "08a10kqz7yp6ny4dlfgmp366qc5z9z0i507zw4k2qzw9mw38ak2x"))))
     (properties `((upstream-name . "knfi")))
     (build-system r-build-system)
     (arguments

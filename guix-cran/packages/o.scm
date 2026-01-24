@@ -494,22 +494,21 @@ package, ov_sim.  The method is demonstrated in Griffin et al. (2020)
 (define-public r-ovl-ci
   (package
     (name "r-ovl-ci")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OVL.CI" version))
        (sha256
-        (base32 "17ksnsj68snxwm5ibjq3zchmybs7a3zq9ack0blhi4cbsx7xd5ds"))))
+        (base32 "1i6x1kd0rwqblpgfqypx7vn7v8x4r9bsnw70sff5lbfrfram61hr"))))
     (properties `((upstream-name . "OVL.CI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ks))
+    (propagated-inputs (list r-mixtools r-matrix r-ks))
     (home-page "https://cran.r-project.org/package=OVL.CI")
-    (synopsis
-     "Inference on the Overlap Coefficient: The Binormal Approach and Alternatives")
+    (synopsis "Inference on the Overlap Coefficient")
     (description
      "This package provides functions to construct confidence intervals for the
 Overlap Coefficient (OVL).  OVL measures the similarity between two
@@ -520,7 +519,9 @@ histograms based on samples of measurements from each one of the two
 distributions, the development of accurate methods for confidence interval
 construction can be useful for applied researchers.  Implements methods based on
 the work of Franco-Pereira, A.M., Nakas, C.T., Reiser, B., and Pardo, M.C.
-(2021) <doi:10.1177/09622802211046386>.")
+(2021) <doi:10.1177/09622802211046386> as well as extensions for multimodal
+distributions proposed by Alcaraz-PeÃ±alba, A., Franco-Pereira, A., and Pardo,
+M.C. (2025) <doi:10.1007/s10182-025-00545-2>.")
     (license license:gpl2)))
 
 (define-public r-overviewr
@@ -881,6 +882,30 @@ data.")
     (description
      "Create regression tables for publication.  Currently supports lm', glm',
 survreg', and ivreg outputs.")
+    (license license:expat)))
+
+(define-public r-outlying
+  (package
+    (name "r-outlying")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outlying" version))
+       (sha256
+        (base32 "15lp91p5sd9g6z2v62jckig1xa28jyxh80y5y26drngm0i8m3lnw"))))
+    (properties `((upstream-name . "outlying")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=outlying")
+    (synopsis "Outliers Detection")
+    (description
+     "This package provides functions for detecting outliers in datasets using
+statistical methods.  The package supports identification of anomalous
+observations in numerical data and is intended for use in data cleaning,
+exploratory data analysis, and preprocessing workflows.")
     (license license:expat)))
 
 (define-public r-outliertree
@@ -3937,13 +3962,13 @@ block model (OLBM), as described in Corneli, Bouveyron and Latouche (2019).")
 (define-public r-ordinalgmifs
   (package
     (name "r-ordinalgmifs")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalgmifs" version))
        (sha256
-        (base32 "0c97c3zss34x9n8szr95z51qx8ix55mlrbqvg8dz128xpd3684rj"))))
+        (base32 "0gjkqp2wsha1lw356ckjdk3cgbk9kmfwf52ig38lc0z69iiynj83"))))
     (properties `((upstream-name . "ordinalgmifs")))
     (build-system r-build-system)
     (arguments
@@ -4215,13 +4240,13 @@ distributions.")
 (define-public r-orderly
   (package
     (name "r-orderly")
-    (version "2.0.0")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orderly" version))
        (sha256
-        (base32 "04vnimir60xmjaa76c30v4lx3z91hl7yxznv8xz5yazlpy6hsygh"))))
+        (base32 "0npp2dz7qyh5f79z6n47gkpn7ihn2ly5srbgifs32a9rf9swkqxv"))))
     (properties `((upstream-name . "orderly")))
     (build-system r-build-system)
     (arguments
@@ -4233,6 +4258,7 @@ distributions.")
                              r-rstudioapi
                              r-rlang
                              r-r6
+                             r-pkgload
                              r-openssl
                              r-jsonlite
                              r-httr2
@@ -4789,19 +4815,25 @@ information in relation to the OPUS Miner algorithm.")
 (define-public r-optweight
   (package
     (name "r-optweight")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optweight" version))
        (sha256
-        (base32 "0yyaxp00qnvl1igq7qqcbazckfpbw5snjymy0qxfkcvgx9wj682b"))))
+        (base32 "1kmf4035909gr0fbc5dvnn1j2pbs69sh60bpvfgsfb9glwakp8hw"))))
     (properties `((upstream-name . "optweight")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-osqp r-matrix r-ggplot2 r-chk))
+    (propagated-inputs (list r-rlang
+                             r-osqp
+                             r-matrix
+                             r-ggplot2
+                             r-collapse
+                             r-cli
+                             r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/optweight/")
     (synopsis "Optimization-Based Stable Balancing Weights")
@@ -4811,7 +4843,8 @@ multi-category, continuous, and multivariate treatments in the spirit of
 Zubizarreta (2015) <doi:10.1080/01621459.2015.1023805>.  The degree of balance
 can be specified for each covariate.  In addition, sampling weights can be
 estimated that allow a sample to generalize to a population specified with given
-target moments of covariates.")
+target moments of covariates, as in matching-adjusted indirect comparison
+(MAIC).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-opttesting
@@ -5887,6 +5920,44 @@ methods based on cost-benefit analysis and diagnostic test accuracy measures
 (Sensitivity/Specificity, Predictive Values and Diagnostic Likelihood Ratios).
 Numerical and graphical output for all methods is easily obtained.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-optimalbinningwoe
+  (package
+    (name "r-optimalbinningwoe")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimalBinningWoE" version))
+       (sha256
+        (base32 "00l0dc2h0bcl67psx9aaacrkf53bvx5xk89hgsxljixvmqmdvkl5"))))
+    (properties `((upstream-name . "OptimalBinningWoE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-recipes
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpp
+                             r-dials))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/evandeilton/OptimalBinningWoE")
+    (synopsis "Optimal Binning and Weight of Evidence Framework for Modeling")
+    (description
+     "High-performance implementation of 36 optimal binning algorithms (16
+categorical, 20 numerical) for Weight of Evidence ('@code{WoE}') transformation,
+credit scoring, and risk modeling.  Includes advanced methods such as Mixed
+Integer Linear Programming ('MILP'), Genetic Algorithms, Simulated Annealing,
+and Monotonic Regression.  Features automatic method selection based on
+Information Value ('IV') maximization, strict monotonicity enforcement, and
+efficient handling of large datasets via Rcpp'.  Fully integrated with the
+tidymodels ecosystem for building robust machine learning pipelines.  Based on
+methods described in Siddiqi (2006) <doi:10.1002/9781119201731> and
+Navas-Palencia (2020) <doi:10.48550/@code{arXiv.2001.08025>}.")
+    (license license:expat)))
 
 (define-public r-optim-functions
   (package
@@ -10864,13 +10935,13 @@ al. (2011) <doi:10.1038/nprot.2011.335>.")
 (define-public r-omicsqc
   (package
     (name "r-omicsqc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicsQC" version))
        (sha256
-        (base32 "1hfdv3cv1ws03x93vah3alpv619dwq40sbl35b2nra3wsix8zcan"))))
+        (base32 "18kssb3xja70fsnjp48wpwqd0hy6izswkf4wrnin1dk1yygpdh6s"))))
     (properties `((upstream-name . "OmicsQC")))
     (build-system r-build-system)
     (arguments

@@ -2634,6 +2634,34 @@ Methodologies were published in Emura et al. (2017)
 also available.")
     (license license:gpl2)))
 
+(define-public r-joinspy
+  (package
+    (name "r-joinspy")
+    (version "0.7.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joinspy" version))
+       (sha256
+        (base32 "1yw730r9gs4519dlxffcw3kvph6cwysh4h3c4n5wc6xz31zkwdrs"))))
+    (properties `((upstream-name . "joinspy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/joinspy/")
+    (synopsis "Diagnostic Tools for Data Frame Joins")
+    (description
+     "This package provides diagnostic tools for understanding and debugging data
+frame joins.  Analyzes key columns before joining to detect duplicates,
+mismatches, encoding issues, and other common problems.  Explains unexpected row
+count changes and provides safe join wrappers with cardinality enforcement.
+Concepts and diagnostics build on tidy data principles as described in Wickham
+(2014) <doi:10.18637/jss.v059.i10>.")
+    (license license:expat)))
+
 (define-public r-joinless
   (package
     (name "r-joinless")
@@ -4022,13 +4050,13 @@ Related Sparse Gaussian Graphical Models\" (ICML 2018) <@code{arXiv:1806.00548>}
 (define-public r-jds-rmd
   (package
     (name "r-jds-rmd")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jds.rmd" version))
        (sha256
-        (base32 "1ylpq3b6vqi8gj2q2vfkl9zshkwcn08mqms9rpvlwc34wrp09ian"))))
+        (base32 "0xhwcm9iphlcq4zbm16212r4gxjjq0ii4cgzz98265vj0zq7ysc1"))))
     (properties `((upstream-name . "jds.rmd")))
     (build-system r-build-system)
     (arguments

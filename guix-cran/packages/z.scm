@@ -1359,13 +1359,13 @@ under selective pressure.  See Jacobs, Sluckin and Kivisild (2016)
 (define-public r-z22
   (package
     (name "r-z22")
-    (version "1.1.0")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "z22" version))
        (sha256
-        (base32 "1scdqhfcinarixihpvga33wglpps64rb5fbmq0vdhm2ixff4k4ax"))))
+        (base32 "1p3zz00npa45zllpm47v0lzz1r31y2jz7nc3y1qc7pf79dnyjbph"))))
     (properties `((upstream-name . "z22")))
     (build-system r-build-system)
     (arguments

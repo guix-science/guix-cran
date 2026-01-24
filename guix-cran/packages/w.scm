@@ -6945,13 +6945,13 @@ named datasets from Stata's online collection.")
 (define-public r-webtrackr
   (package
     (name "r-webtrackr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webtrackR" version))
        (sha256
-        (base32 "18lch5l2i6pkwsba32mlnw13m2drqn1mqj9ivdihz8d1jmq4ikz0"))))
+        (base32 "1a4n50xmxq5i8qadjyigj6bqz7hgkmaz3gh4ma2qr92s3d6b0mgr"))))
     (properties `((upstream-name . "webtrackR")))
     (build-system r-build-system)
     (arguments
@@ -6959,7 +6959,7 @@ named datasets from Stata's online collection.")
       #:tests? #f))
     (propagated-inputs (list r-httr r-fastmatch r-data-table r-adar))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/schochastics/webtrackR")
+    (home-page "https://github.com/gesistsa/webtrackR")
     (synopsis "Preprocessing and Analyzing Web Tracking Data")
     (description
      "Data structures and methods to work with web tracking data.  The functions cover
@@ -9706,13 +9706,13 @@ possible value (e.g. price).")
 (define-public r-wasp
   (package
     (name "r-wasp")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WASP" version))
        (sha256
-        (base32 "1jjas0qklb3dyax4x26c327l59biyym5m2x6mv8z7dnkyfrw3vfq"))))
+        (base32 "16xa9axd8nwlf1n94yd47sma2ymlagd6gvjii32a2a95b04fp3ry"))))
     (properties `((upstream-name . "WASP")))
     (build-system r-build-system)
     (arguments
