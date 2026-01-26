@@ -825,27 +825,32 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "0hkn330c1a7p8kikz0jf6qmdnb0qi67m7j8gc73mhmjdvzk3izl4"))))
+        (base32 "081apn21jhi2kq3ldkahmj7d5k91zfrqylgdqf5s96ixky2mh8ni"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plotly r-nlme r-mgcv r-cli r-caret))
+    (propagated-inputs (list r-plotly
+                             r-nlme
+                             r-mgcv
+                             r-groupedhyperframe
+                             r-cli
+                             r-caret))
     (native-inputs (list r-quarto r-knitr))
-    (home-page "https://github.com/tingtingzhan/hyper.gam")
+    (home-page
+     "https://tingtingzhan.quarto.pub/groupedhyperframe/bioinformatics_btaf430.html")
     (synopsis "Generalized Additive Models with Hyper Column")
     (description
-     "Generalized additive models with a numeric hyper column tabulated on a common
-grid.  Sign-adjustment based on the correlation of model prediction and a
-selected slice of the hyper column.  Visualization of the integrand surface over
-the hyper column.")
+     "Generalized additive models with a numeric hyper column.  Sign-adjustment based
+on the correlation of model prediction and a selected slice of the hyper column.
+ Visualization of the integrand surface over the hyper column.")
     (license license:gpl2)))
 
 (define-public r-hyper-fit

@@ -663,13 +663,13 @@ Epidemiology 46(1):73-86 <doi:10.1002/gepi.22438>.")
 (define-public r-zihinar1
   (package
     (name "r-zihinar1")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZIHINAR1" version))
        (sha256
-        (base32 "0x5kma0dwdrhnxf7z1l90dd5qssh6rhhjj2sjc7ywkqk5imqvrww"))))
+        (base32 "1qsf0b57xrzv6ddr6g8andv1mps3b317095kinfiaybflq3k2f9r"))))
     (properties `((upstream-name . "ZIHINAR1")))
     (build-system r-build-system)
     (arguments
@@ -679,6 +679,7 @@ Epidemiology 46(1):73-86 <doi:10.1002/gepi.22438>.")
                              r-rstan
                              r-matrixstats
                              r-knitr
+                             r-hmmpa
                              r-gridextra
                              r-ggplot2
                              r-coda

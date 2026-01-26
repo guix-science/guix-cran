@@ -17037,37 +17037,6 @@ Wang, 2022, Journal of Uncertainty Quantification; Mengyang Gu, Kyle Anderson
 and Erika @code{McPhillips}, 2023, Technometrics.")
     (license license:gpl2+)))
 
-(define-public r-robustblme
-  (package
-    (name "r-robustblme")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robustBLME" version))
-       (sha256
-        (base32 "18wx116l1riy4wn4083kxl637mkyyi9wbwnmvhkgqw3vb36s4vxd"))))
-    (properties `((upstream-name . "robustBLME")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-numderiv
-                             r-mvtnorm
-                             r-lme4
-                             r-iterators
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://github.com/erlisR/robustBLME")
-    (synopsis "Robust Bayesian Linear Mixed-Effects Models using ABC")
-    (description
-     "Bayesian robust fitting of linear mixed effects models through weighted
-likelihood equations and approximate Bayesian computation as proposed by Ruli et
-al. (2017) <@code{arXiv:1706.01752>}.")
-    (license license:gpl2)))
-
 (define-public r-robustbf
   (package
     (name "r-robustbf")
@@ -19589,13 +19558,13 @@ The main function, @code{nest()}, returns the solution and the
 (define-public r-rneos
   (package
     (name "r-rneos")
-    (version "0.4-0")
+    (version "0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rneos" version))
        (sha256
-        (base32 "07b3vb0h36ilwb8iylgppl8wpi84f583frmscpj236s1aihqwrmx"))))
+        (base32 "0xzjnvdackf4i3qw310lgm4m1vwpi4mr6qr0q0skvsfj9jxpgira"))))
     (properties `((upstream-name . "rneos")))
     (build-system r-build-system)
     (arguments
@@ -40076,13 +40045,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapDM" version))
        (sha256
-        (base32 "1x9zfqm99h856ifs1xgywbvhpza83hx6rqgpdfpanj6pazzx5g8k"))))
+        (base32 "0yjl4jg7ccrxl6v9id3k6h7vs0rmvshmg4sx2hziwgq4q1s8difk"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (arguments
@@ -40097,6 +40066,7 @@ default reports are generated as vignettes in the resulting package.")
                              r-redcapr
                              r-purrr
                              r-openxlsx
+                             r-magrittr
                              r-lifecycle
                              r-labelled
                              r-janitor
@@ -40594,13 +40564,13 @@ times.")
 (define-public r-recordlinkage
   (package
     (name "r-recordlinkage")
-    (version "0.4-12.5")
+    (version "0.4-12.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RecordLinkage" version))
        (sha256
-        (base32 "14dpwnkymkzs2j714vxj0nsi2yqglcgdqr80772lr8y6v0pkxc1x"))))
+        (base32 "0y64gzmw3pmriggkcgivnhl5z076jb9yi35ki6gswda79qyhnmyn"))))
     (properties `((upstream-name . "RecordLinkage")))
     (build-system r-build-system)
     (arguments
@@ -40615,8 +40585,7 @@ times.")
                              r-evd
                              r-e1071
                              r-dbi
-                             r-data-table
-                             r-ada))
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RecordLinkage")
     (synopsis
@@ -41119,25 +41088,28 @@ vignette documents recmap algorithm usage.")
 (define-public r-recluster
   (package
     (name "r-recluster")
-    (version "2.9")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recluster" version))
        (sha256
-        (base32 "1nz5w4v5hhb3qjwxixc526gqsmr1imw582l9gj2acwar4z9mixjp"))))
+        (base32 "10rcgq7n725d3l25zpjvkj3qpnydcrmp47cjb01b706bswk9z3mb"))))
     (properties `((upstream-name . "recluster")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vegan
+                             r-sp
+                             r-sf
                              r-plotrix
                              r-picante
                              r-phytools
                              r-phangorn
                              r-cluster
-                             r-ape))
+                             r-ape
+                             r-alphahull))
     (home-page "https://github.com/leondap/recluster")
     (synopsis "Ordination Methods for the Analysis of Beta-Diversity Indices")
     (description
@@ -41149,9 +41121,7 @@ affected by the order of rows in the original matrix.  Moreover, visualisation
 of biogeographical regionalisation can be facilitated by a combination of
 hierarchical clustering and multi-dimensional scaling.  The recluster package
 provides robust techniques to visualise and analyse pattern of biodiversity and
-to improve occurrence data for cryptic taxa.  Other functions 	related to
-recluster (e.g. the biodecrypt family) are currently available in @code{GitHub}
-at <https://github.com/leondap/recluster>.")
+to improve occurrence data for cryptic taxa.")
     (license license:gpl2+)))
 
 (define-public r-reclin2
@@ -50721,6 +50691,38 @@ download those spreadsheets and read them directly into R.")
      "Creation, manipulation, simulation of linear Gaussian Bayesian networks from
 text files and more...")
     (license license:gpl2+)))
+
+(define-public r-rbmiutils
+  (package
+    (name "r-rbmiutils")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbmiUtils" version))
+       (sha256
+        (base32 "0jdi3pvh447v5danz25fd0sp5cr8hmjf0kpdr7by5j0j6yn2x8n6"))))
+    (properties `((upstream-name . "rbmiUtils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rbmi
+                             r-purrr
+                             r-dplyr
+                             r-beeca
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/openpharma/rbmiUtils")
+    (synopsis "Utility Functions to Support and Extend the 'rbmi' Package")
+    (description
+     "This package provides utility functions that extend the capabilities of the
+reference-based multiple imputation package rbmi'.  It supports clinical trial
+analysis workflows with functions for managing imputed datasets, applying
+analysis methods across imputations, and tidying results for reporting.")
+    (license license:gpl3+)))
 
 (define-public r-rbmi
   (package

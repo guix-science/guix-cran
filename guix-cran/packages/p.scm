@@ -2065,40 +2065,6 @@ including a detailed technical appendix, see <doi:10.18637/jss.v108.i06>.")
 (http://ljvillanueva.github.io/pumilio/).")
     (license license:gpl3)))
 
-(define-public r-pumbayes
-  (package
-    (name "r-pumbayes")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pumBayes" version))
-       (sha256
-        (base32 "15pnc762jcb982c7nn7c03a55q52x4pirmvgh571f93grwqx5xrk"))))
-    (properties `((upstream-name . "pumBayes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpptn r-rcppdist r-rcpparmadillo r-rcpp
-                             r-mvtnorm))
-    (home-page "https://github.com/SkylarShiHub/pumBayes")
-    (synopsis
-     "Bayesian Estimation of Probit Unfolding Models for Binary Preference Data")
-    (description
-     "Bayesian estimation and analysis methods for Probit Unfolding Models (PUMs), a
-novel class of scaling models designed for binary preference data.  These models
-allow for both monotonic and non-monotonic response functions.  The package
-supports Bayesian inference for both static and dynamic PUMs using Markov chain
-Monte Carlo (MCMC) algorithms with minimal or no tuning.  Key functionalities
-include posterior sampling, hyperparameter selection, data preprocessing, model
-fit evaluation, and visualization.  The methods are particularly suited to
-analyzing voting data, such as from the U.S. Congress or Supreme Court, but can
-also be applied in other contexts where non-monotonic responses are expected.
-For methodological details, see Shi et al. (2025)
-<doi:10.48550/@code{arXiv.2504.00423>}.")
-    (license license:gpl3)))
-
 (define-public r-pulsar
   (package
     (name "r-pulsar")

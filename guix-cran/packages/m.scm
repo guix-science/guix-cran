@@ -4099,19 +4099,19 @@ the results.")
 (define-public r-multistatm
   (package
     (name "r-multistatm")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiStatM" version))
        (sha256
-        (base32 "1d2dzchg6xmaazr6sajxq7f5bkx24m70w593wbmn49xxq8fbf1hp"))))
+        (base32 "07xqwav5197g94mwmggxgiz9ymk1f0fmra13lp0ggbdip7y8h5p7"))))
     (properties `((upstream-name . "MultiStatM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrix r-mass r-arrangements))
+    (propagated-inputs (list r-rcpp r-mvtnorm r-matrix r-eql r-arrangements))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MultiStatM")
     (synopsis "Multivariate Statistical Methods")
@@ -10609,13 +10609,13 @@ methodology developed in Sample Size Calculations for Micro-randomized Trials in
 (define-public r-mrtanalysis
   (package
     (name "r-mrtanalysis")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRTAnalysis" version))
        (sha256
-        (base32 "0j7v37zxprcagnxjgg4cmm713chdd0phpy0q77qvqkqcpl2xc200"))))
+        (base32 "1nl6wlpkyvh6ky9i00lm18naiilkp2vbfja6xg5i5v7chraiq8za"))))
     (properties `((upstream-name . "MRTAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -10626,24 +10626,28 @@ methodology developed in Sample Size Calculations for Micro-randomized Trials in
                              r-ranger
                              r-randomforest
                              r-mgcv
-                             r-geepack))
+                             r-geepack
+                             r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MRTAnalysis")
     (synopsis
      "Assessing Proximal, Distal, and Mediated Causal Excursion Effects for Micro-Randomized Trials")
     (description
      "This package provides methods to analyze micro-randomized trials (MRTs) with
-binary treatment options.  Supports three types of analyses: (1) proximal causal
+binary treatment options.  Supports four types of analyses: (1) proximal causal
 excursion effects, including weighted and centered least squares (WCLS) for
 continuous proximal outcomes by Boruvka et al. (2018)
 <doi:10.1080/01621459.2017.1305274> and the estimator for marginal excursion
 effect (EMEE) for binary proximal outcomes by Qian et al. (2021)
 <doi:10.1093/biomet/asaa070>; (2) distal causal excursion effects (DCEE) for
 continuous distal outcomes using a two-stage estimator by Qian (2025)
-<doi:10.48550/@code{arXiv.2502.13500>}; and (3) mediated causal excursion
-effects (MCEE) for continuous distal outcomes, estimating natural direct and
-indirect excursion effects in the presence of time-varying mediators by Qian
-(2025) <doi:10.48550/@code{arXiv.2506.20027>}.")
+<doi:10.1093/biomtc/ujaf134>; (3) mediated causal excursion effects (MCEE) for
+continuous distal outcomes, estimating natural direct and indirect excursion
+effects in the presence of time-varying mediators by Qian (2025)
+<doi:10.48550/@code{arXiv.2506.20027>}; and (4) standardized proximal effect
+size estimation for continuous proximal outcomes, generalizing the approach in
+Luers et al. (2019) <doi:10.1007/s11121-017-0862-5> to allow adjustment for
+baseline and time-varying covariates for improved efficiency.")
     (license license:gpl3)))
 
 (define-public r-mrstdlcrt
@@ -11920,13 +11924,13 @@ used functions from data analysis packages.")
 (define-public r-mrangr
   (package
     (name "r-mrangr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrangr" version))
        (sha256
-        (base32 "11p3ybgs82kb5pr0aawqxkbslf7zc5z8f3j29s9bzkc260wp3c0w"))))
+        (base32 "1bjn4lis5qycpfmnrc8cwidvfklbh3zw28hj8xbrfk3rsi6dxpd4"))))
     (properties `((upstream-name . "mrangr")))
     (build-system r-build-system)
     (arguments
@@ -11950,7 +11954,9 @@ dynamics and dispersal.  The mrangr package adds the ability to simulate
 multiple species interacting through an asymmetric matrix of pairwise
 relationships, allowing users to model all types of biotic interactions â
 competitive, facilitative, or neutral â within spatially explicit virtual
-environments.")
+environments.  This work was supported by the National Science Centre, Poland,
+grant no.  2018/29/B/NZ8/00066 and the PoznaÅ Supercomputing and Networking
+Centre (grant no.  pl0090-01).")
     (license license:expat)))
 
 (define-public r-mram
@@ -25972,13 +25978,13 @@ A.M.Gun,M.K.Gupta and B.Dasgupta(2019,ISBN:81-87567-81-3).")
 (define-public r-misspi
   (package
     (name "r-misspi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misspi" version))
        (sha256
-        (base32 "0rbkwfq3b7gvq3qwn3acbrdv4npvm5ixz6y7877alraqd0qjg1c8"))))
+        (base32 "0xs3hz10y18bwlf3ischx448ijnbvrxgrklf6ycs6xxva3d34kdb"))))
     (properties `((upstream-name . "misspi")))
     (build-system r-build-system)
     (arguments
@@ -25992,7 +25998,7 @@ A.M.Gun,M.K.Gupta and B.Dasgupta(2019,ISBN:81-87567-81-3).")
                              r-foreach
                              r-dosnow
                              r-doparallel))
-    (home-page "https://cran.r-project.org/package=misspi")
+    (home-page "https://github.com/catstats/misspi")
     (synopsis "Missing Value Imputation in Parallel")
     (description
      "This package provides a framework that boosts the imputation of
@@ -32942,25 +32948,19 @@ for more information.  Interested users can find a parallel version of the
 (define-public r-mfdb
   (package
     (name "r-mfdb")
-    (version "7.3-1")
+    (version "7.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfdb" version))
        (sha256
-        (base32 "1l7bvacmvh53rq91jqdb6zqjn3974sy838zfvgfb6nam54r080y4"))))
+        (base32 "0wx5f70d3fz95ji6xsh27294zyd8zv29n8yc877kxk0fh9nnlfh2"))))
     (properties `((upstream-name . "mfdb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsqlite
-                             r-rpostgres
-                             r-rlang
-                             r-logging
-                             r-getpass
-                             r-duckdb
-                             r-dbi))
+    (propagated-inputs (list r-rlang r-logging r-getpass r-duckdb r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mfdb")
     (synopsis "MareFrame DB Querying Library")
@@ -38148,6 +38148,29 @@ summarized data.  Summarized data on genetic associations with the exposure and
 with the outcome can be obtained from large consortia.  These data can be used
 for obtaining causal estimates using instrumental variable methods.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-memss
+  (package
+    (name "r-memss")
+    (version "0.9-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MEMSS" version))
+       (sha256
+        (base32 "0r8x3a950d7vyxbm5i82vva7iw75576456dvkp4xhyz08wy3y2bv"))))
+    (properties `((upstream-name . "MEMSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lme4))
+    (home-page "https://github.com/bbolker/MEMSS")
+    (synopsis "Data Sets from Mixed-Effects Models in S")
+    (description
+     "Data sets and sample analyses from Pinheiro and Bates, \"Mixed-effects Models in
+S and S-PLUS\" (Springer, 2000).")
+    (license license:gpl2+)))
 
 (define-public r-memshare
   (package
@@ -43448,13 +43471,13 @@ majority population while ignoring or under-fitting minority populations.")
 (define-public r-mcbiopi
   (package
     (name "r-mcbiopi")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcbiopi" version))
        (sha256
-        (base32 "1caw2sy15hw2zw0bdynwnsa7hn4rly34hlxp06nwm5lssz8l2597"))))
+        (base32 "1gkgrivasyxc06vwf2cafqwgslsfl7yd4clnhj2r83sygc879faw"))))
     (properties `((upstream-name . "mcbiopi")))
     (build-system r-build-system)
     (arguments
@@ -45295,13 +45318,13 @@ A., Zuraw, K. (in press)
 (define-public r-maxeff
   (package
     (name "r-maxeff")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maxEff" version))
        (sha256
-        (base32 "1zz22cg3ncbd99zz4l78blsiyd2svwvb9f7g0psrd83shczhcc3j"))))
+        (base32 "13q0dhgghzq718d5x75rzr8v5m42zfm5wah4qrnshqvvb4cyafi9"))))
     (properties `((upstream-name . "maxEff")))
     (build-system r-build-system)
     (arguments
@@ -45314,7 +45337,7 @@ A., Zuraw, K. (in press)
                              r-doparallel
                              r-caret))
     (native-inputs (list r-quarto))
-    (home-page "https://github.com/tingtingzhan/maxEff")
+    (home-page "https://tingtingzhan.quarto.pub/groupedhyperframe/maxEff.html")
     (synopsis "Additional Predictor with Maximum Effect Size")
     (description
      "This package provides methods of selecting one from many numeric predictors for

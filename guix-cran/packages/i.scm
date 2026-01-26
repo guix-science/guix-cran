@@ -1658,13 +1658,13 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 (define-public r-isubgen
   (package
     (name "r-isubgen")
-    (version "1.0.1")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iSubGen" version))
        (sha256
-        (base32 "0kfrgh4399x71mwa5j36nfszd65ybp61fwpc7qj3j9ypmgidwbaj"))))
+        (base32 "0b19g7qhj62f9qb6x5zczrr5d1n7waiaqr410snlrcs9agcww63k"))))
     (properties `((upstream-name . "iSubGen")))
     (build-system r-build-system)
     (arguments
@@ -1673,12 +1673,13 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
     (propagated-inputs (list r-tensorflow r-philentropy r-keras
                              r-consensusclusterplus r-cluster))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=iSubGen")
+    (home-page "https://github.com/uclahs-cds/package-iSubGen")
     (synopsis "Integrative Subtype Generation")
     (description
      "Multi-data type subtyping, which is data type agnostic and accepts missing data.
  Subtyping is performed using intermediary assessments created with autoencoders
-and similarity calculations.")
+and similarity calculations.  See Fox et al. (2024)
+<doi:10.1016/j.crmeth.2024.100884> for details.")
     (license license:gpl2)))
 
 (define-public r-istay

@@ -4615,6 +4615,35 @@ modified generalized weights is computed.  Ibrahim et al. (2022)
 <doi:10.1134/S1064229322080051>.")
     (license license:expat)))
 
+(define-public r-frheritage
+  (package
+    (name "r-frheritage")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "frheritage" version))
+       (sha256
+        (base32 "0cqin009v5nxa28y3xskqkm6irjlbm687wy8q17g94bq9vsns4vs"))))
+    (properties `((upstream-name . "frheritage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-sf r-jsonlite r-httr2 r-happign))
+    (home-page "https://cran.r-project.org/package=frheritage")
+    (synopsis "R Interface to Get French Heritage Data")
+    (description
+     "Get spatial vector data from the Atlas du Patrimoine
+(<http://atlas.patrimoines.culture.fr/atlas/trunk/>), the official national
+platform of the French Ministry of Culture, and facilitate its use within R
+geospatial workflows.  The package provides functions to list available heritage
+datasets, query and retrieve heritage data using spatial queries based on
+user-provided sf objects, perform spatial filtering operations, and return
+results as sf objects suitable for spatial analysis, mapping, and integration
+into heritage management and landscape studies.")
+    (license license:gpl3+)))
+
 (define-public r-frf2-catlg128
   (package
     (name "r-frf2-catlg128")
@@ -5732,13 +5761,13 @@ et al. (2025) <doi:10.1038/s41598-025-87154-w>.")
 (define-public r-frapo
   (package
     (name "r-frapo")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRAPO" version))
        (sha256
-        (base32 "0mjcrplxr0cyybp5hzzwbq5j03w0f3iiiv1yk7mdqr5gb368dchq"))))
+        (base32 "1gvi16np2lkmn2ca33hr36z0lsbdf25nzcixdjcwz5vvnv12m6vg"))))
     (properties `((upstream-name . "FRAPO")))
     (build-system r-build-system)
     (arguments
@@ -10297,13 +10326,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "0dzhr2nmfhw1acqdy35cjqnlpb1d4dcgz4jyi1hvv8vd9lwxyvim"))))
+        (base32 "0lwvb894ix8akghrac41nhkf2d9zfjpqn9gnsydvrwd0dj1y8p5i"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (arguments
@@ -10536,13 +10565,13 @@ Jezzard et al. (2001, ISBN:9780192630711).")
 (define-public r-fmriar
   (package
     (name "r-fmriar")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmriAR" version))
        (sha256
-        (base32 "09596bsvmhxmpmf6hnfwvff5qwj8zxa8771lk9b9169rigrg921s"))))
+        (base32 "00hy1161wryqppp1633j1nni9vmd2ncw7hv7x5dxjwyqif5s53h7"))))
     (properties `((upstream-name . "fmriAR")))
     (build-system r-build-system)
     (arguments

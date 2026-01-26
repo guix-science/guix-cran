@@ -21045,31 +21045,6 @@ Analysis, and Retrieval system ('EDGAR') API
 analysis-ready format.")
     (license license:expat)))
 
-(define-public r-tidydr
-  (package
-    (name "r-tidydr")
-    (version "0.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidydr" version))
-       (sha256
-        (base32 "00f6cskln8739xjfgnn1166n49798xmigw6kf65yl85kw37l9bqz"))))
-    (properties `((upstream-name . "tidydr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-ggplot2 r-ggfun r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/YuLab-SMU/tidydr/")
-    (synopsis "Unify Dimensionality Reduction Results")
-    (description
-     "Dimensionality reduction (DR) is widely used in many domain for analyzing and
-visualizing high-dimensional data.  tidydr provides uniform output and is
-compatible with multiple methods, including prcomp', mds', Rtsne'.  etc.")
-    (license license:artistic2.0)))
-
 (define-public r-tidydp
   (package
     (name "r-tidydp")
@@ -23796,13 +23771,13 @@ import, modify, and export tables and templates with little to no code.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmt" version))
        (sha256
-        (base32 "05b4zdd16k1793yym26md3hbqwrrcd0x5mivkmrsyf8gvzi87drr"))))
+        (base32 "0bhhj2ijldl3ijdfm8s456dlxsyw0m1n4233yk4y8bh75i8nmqij"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (arguments
@@ -29890,13 +29865,13 @@ C., & Alexandrowicz, R. W. (2015), <doi:10.1007/s11336-015-9472-y>.")
 (define-public r-tciu
   (package
     (name "r-tciu")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCIU" version))
        (sha256
-        (base32 "1l4n0h4vvhwr10pb8g042ss92ka99zdzy3z4h0n397v5n68cnlc3"))))
+        (base32 "03dm4ad0n1wmynqfd8ifpvc28nqa14dkgrihsp7pb74slrdw75cy"))))
     (properties `((upstream-name . "TCIU")))
     (build-system r-build-system)
     (arguments

@@ -3534,13 +3534,13 @@ vectorized manner, preserve non-serial values, and support both the 1900 and
 (define-public r-undidr
   (package
     (name "r-undidr")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "undidR" version))
        (sha256
-        (base32 "0z4fsa22nbb5kv76ldbars6q6003bm484nl7d806war75x5hc7c4"))))
+        (base32 "0kfad1x8gz7mzg53flxx6wb0c6yxfanm2crv91hlqsv74iw7zp1f"))))
     (properties `((upstream-name . "undidR")))
     (build-system r-build-system)
     (arguments
@@ -3551,7 +3551,7 @@ vectorized manner, preserve non-serial values, and support both the 1900 and
     (synopsis "Difference-in-Differences with Unpoolable Data")
     (description
      "This package provides a framework for estimating difference-in-differences with
-unpoolable data, based on Karim, Webb, Austin, and Strumpf (2024)
+unpoolable data, based on Karim, Webb, Austin, and Strumpf (2025)
 <doi:10.48550/@code{arXiv.2403.15910>}.  Supports common or staggered adoption,
 multiple groups, and the inclusion of covariates.  Also computes p-values for
 the aggregate average treatment effect on the treated via the randomization

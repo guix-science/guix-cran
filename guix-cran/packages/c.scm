@@ -6718,13 +6718,13 @@ the number of cross-matches and a p-value.  See Rosenbaum (2005)
 (define-public r-crossmap
   (package
     (name "r-crossmap")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossmap" version))
        (sha256
-        (base32 "19g9m22mw586m33m547gzk0xmccadxgsi1i16cqywih9r93n1apc"))))
+        (base32 "0lgl8lwkgkfpsy4df4mllin9mjrhpc1q9lc47rw4pxrzczxaf6w7"))))
     (properties `((upstream-name . "crossmap")))
     (build-system r-build-system)
     (arguments
@@ -10151,35 +10151,6 @@ Pearson (CBP) distributions developed by Rodriguez-Avi et al (2003)
 <doi:10.1080/00949655.2018.1482897>.  The package also contains
 maximum-likelihood fitting functions for these models.")
     (license license:gpl2+)))
-
-(define-public r-cpcat
-  (package
-    (name "r-cpcat")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CPCAT" version))
-       (sha256
-        (base32 "0vi98pxpmrrkz15rn1b4kcs7x1fbkili10qw2p4ins7lrjvqjvdp"))))
-    (properties `((upstream-name . "CPCAT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CPCAT")
-    (synopsis "The Closure Principle Computational Approach Test")
-    (description
-     "P-values and no/lowest observed (adverse) effect concentration values derived
-from the closure principle computational approach test (Lehmann, R. et al.
-(2015) <doi:10.1007/s00477-015-1079-4>) are provided.  The package contains
-functions to generate intersection hypotheses according to the closure principle
-(Bretz, F., Hothorn, T., Westfall, P. (2010) <doi:10.1201/9781420010909>), an
-implementation of the computational approach test (Ching-Hui, C., Nabendu, P.,
-Jyh-Jiuan, L. (2010) <doi:10.1080/03610918.2010.508860>) and the combination of
-both, that is, the closure principle computational approach test.")
-    (license license:gpl3+)))
 
 (define-public r-cpc
   (package
@@ -29196,13 +29167,13 @@ maintaining high computational efficiency.")
 (define-public r-cmfsurrogate
   (package
     (name "r-cmfsurrogate")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CMFsurrogate" version))
        (sha256
-        (base32 "1n0kf6mby71zccymdl75yw8rafkl9y7kn9j2pipqf15zvbqdl33j"))))
+        (base32 "0cm8fxy41fmx253zmx8pq9h337590r6i3f44g3sr3k18hz6khqal"))))
     (properties `((upstream-name . "CMFsurrogate")))
     (build-system r-build-system)
     (arguments
@@ -29220,7 +29191,9 @@ score and optimality with respect to the proportion of treatment effect
 explained (PTE) by the final combined score.  The primary function,
 @code{pte.estimate.multiple()}, estimates the PTE of the identified combination
 of multiple surrogate markers.  Details are described in Wang et al (2022)
-<doi:10.1111/biom.13677>.")
+<doi:10.1111/biom.13677>.  A tutorial for the package is available at
+<https://www.laylaparast.com/cmfsurrogate> and a Shiny App is available at
+<https://parastlab.shinyapps.io/CM@code{FsurrogateApp/>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-cmfrec
@@ -51026,6 +50999,32 @@ Singularity', and renv configurations.  Integrates with workflow managers
 computational research workflows.")
     (license license:expat)))
 
+(define-public r-capr
+  (package
+    (name "r-capr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "capr" version))
+       (sha256
+        (base32 "1mq1j6cc6yar9rcndcgpsrpm3fyi02mvvmjj7yw9cjs6kw1j82hr"))))
+    (properties `((upstream-name . "capr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
+    (home-page "https://github.com/rluo/capr")
+    (synopsis "Covariate Assisted Principal Regression")
+    (description
+     "Covariate Assisted Principal Regression (CAPR) for multiple covariance-matrix
+outcomes.  The method identifies (principal) projection directions that maximize
+the log-likelihood of a log-linear regression model of the covariates.  See Zhao
+et al. (2021), \"Covariate Assisted Principal Regression for Covariance Matrix
+Outcomes\" <doi:10.1093/biostatistics/kxz057>.")
+    (license license:gpl3)))
+
 (define-public r-capo4sim
   (package
     (name "r-capo4sim")
@@ -51819,13 +51818,13 @@ Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
 (define-public r-camtrapr
   (package
     (name "r-camtrapr")
-    (version "3.0.0")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapR" version))
        (sha256
-        (base32 "1kdy1wh55fxdkqqshkwiv7ahqrkp3a6z5z94jfbgdwdj57sqg1ly"))))
+        (base32 "1s2f13y9i4xbgzkam3dv0zav31sj7ia8sffvwfn13fki89iinjpv"))))
     (properties `((upstream-name . "camtrapR")))
     (build-system r-build-system)
     (arguments

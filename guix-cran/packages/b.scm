@@ -23714,6 +23714,62 @@ also enables you to save it as an Excel file.  It is a R implementation of the
 Python package <https://pypi.org/project/bddkdata/>.")
     (license license:expat)))
 
+(define-public r-bdc
+  (package
+    (name "r-bdc")
+    (version "1.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bdc" version))
+       (sha256
+        (base32 "0zdw0z3jrxjayw2qwvscpy4p5y3cn6rd0pvamk1nhhfgdimah99v"))))
+    (properties `((upstream-name . "bdc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-taxadb
+                             r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-sf
+                             r-rnaturalearth
+                             r-rgnparser
+                             r-readr
+                             r-qs2
+                             r-purrr
+                             r-magrittr
+                             r-here
+                             r-ggplot2
+                             r-fs
+                             r-foreach
+                             r-dt
+                             r-dplyr
+                             r-doparallel
+                             r-coordinatecleaner))
+    (home-page
+     "https://brunobrr.github.io/bdc/https://github.com/brunobrr/bdc")
+    (synopsis "Biodiversity Data Cleaning")
+    (description
+     "It brings together several aspects of biodiversity data-cleaning in one place.
+bdc is organized in thematic modules related to different biodiversity
+dimensions, including 1) Merge datasets: standardization and integration of
+different datasets; 2) pre-filter: flagging and removal of invalid or
+non-interpretable information, followed by data amendments; 3) taxonomy:
+cleaning, parsing, and harmonization of scientific names from several taxonomic
+groups against taxonomic databases locally stored through the application of
+exact and partial matching algorithms; 4) space: flagging of erroneous, suspect,
+and low-precision geographic coordinates; and 5) time: flagging and, whenever
+possible, correction of inconsistent collection date.  In addition, it contains
+features to visualize, document, and report data quality â which is essential
+for making data quality assessment transparent and reproducible.  The reference
+for the methodology is Ribeiro and colleagues (2022)
+<doi:10.1111/2041-210X.13868>.")
+    (license license:gpl3+)))
+
 (define-public r-bdalgo
   (package
     (name "r-bdalgo")
@@ -31482,13 +31538,13 @@ regression model (Hill (2012) <doi:10.1198/jcgs.2010.08162>).")
 (define-public r-bart
   (package
     (name "r-bart")
-    (version "2.9.9")
+    (version "2.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BART" version))
        (sha256
-        (base32 "1jm17n2p6n0knbjzy3sqxaljbq9qfm7mn1swb6zpgw172hr7l22v"))))
+        (base32 "110y6xzx79s1f7an2ly5yi19dlqlpslrq9p1czrad7sy8vpn82x7"))))
     (properties `((upstream-name . "BART")))
     (build-system r-build-system)
     (arguments

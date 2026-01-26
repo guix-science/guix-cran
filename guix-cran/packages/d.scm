@@ -17416,13 +17416,13 @@ Baird et al. (2023) <doi:10.1111/2041-210X.14010>.")
 (define-public r-diegr
   (package
     (name "r-diegr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diegr" version))
        (sha256
-        (base32 "1s332v08xlmfydxq2ncm7kwgbsz9wbr8k395ldmh3xm58f06qb26"))))
+        (base32 "0v5i378y74gbcy8brm31dmdk1iy17sh28wipgkwc1qxgdfkvy1an"))))
     (properties `((upstream-name . "diegr")))
     (build-system r-build-system)
     (arguments

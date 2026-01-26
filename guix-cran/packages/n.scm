@@ -171,20 +171,21 @@ clean the data once in R.")
 (define-public r-nycopendata
   (package
     (name "r-nycopendata")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nycOpenData" version))
        (sha256
-        (base32 "0gcdhprv66m8yjxdv5wk34y75sim13sgkgmhi2g28qgprsxxryrk"))))
+        (base32 "00ifmlval2g7bbw4g1hqapv4qap8kspczwidrazf8c1ayqd9kmxp"))))
     (properties `((upstream-name . "nycOpenData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble r-jsonlite r-httr r-curl))
-    (home-page "https://github.com/martinezc1/nycOpenData")
+    (native-inputs (list r-knitr))
+    (home-page "https://martinezc1.github.io/nycOpenData/")
     (synopsis "Convenient Access to NYC Open Data API Endpoints")
     (description
      "This package provides a unified set of helper functions to access datasets from
@@ -192,7 +193,9 @@ the NYC Open Data platform <https://opendata.cityofnewyork.us/>.  Functions
 return results as tidy tibbles and support optional filtering, sorting, and row
 limits via the Socrata API. The package includes endpoints for 311 service
 requests, DOB job applications, juvenile justice metrics, school safety,
-environmental data, event permitting, and additional citywide datasets.")
+environmental data, event permitting, and additional citywide datasets.  The
+package is utilized as a primary pedagogical tool for teaching data acquisition
+in Reproducible Research Using R'.")
     (license license:expat)))
 
 (define-public r-nycflights23
@@ -7787,29 +7790,6 @@ research using the National Longitudinal Survey of Youth (NLSY;
 <https://www.nlsinfo.org/>).")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-nlstools
-  (package
-    (name "r-nlstools")
-    (version "2.1-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nlstools" version))
-       (sha256
-        (base32 "1b6v30cn6a92slca3vrq116snir144ymdz9vxby33x51p6jniiiv"))))
-    (properties `((upstream-name . "nlstools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lbbe-software/nlstools")
-    (synopsis "Tools for Nonlinear Regression Analysis")
-    (description
-     "Several tools for assessing the quality of fit of a gaussian nonlinear model are
-provided.")
-    (license license:gpl3)))
-
 (define-public r-nlstac
   (package
     (name "r-nlstac")
@@ -13216,13 +13196,13 @@ model via heatmaps.")
 (define-public r-netutils
   (package
     (name "r-netutils")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netUtils" version))
        (sha256
-        (base32 "1wqy57s2frnylbk9fw58cmx1734zrfc85x7wdz69bsfiyb4rgj7h"))))
+        (base32 "0wirgfcdvc93710g8s30yb8kyaawafdq7q8xvjwkjdscpp5fhgfm"))))
     (properties `((upstream-name . "netUtils")))
     (build-system r-build-system)
     (arguments
@@ -18365,13 +18345,13 @@ scientific presentation slides and conference posters.")
 (define-public r-nam
   (package
     (name "r-nam")
-    (version "1.7.3")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NAM" version))
        (sha256
-        (base32 "12d2yjl0af2ailvwk30fswalx1wzyj500qbrhiczsg1vr4rcqhkh"))))
+        (base32 "1rnaisd5n76a2n4f8lw3n5qq9x8n56mdc16br195mpblb1l4qnlg"))))
     (properties `((upstream-name . "NAM")))
     (build-system r-build-system)
     (arguments

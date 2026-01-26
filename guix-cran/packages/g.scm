@@ -4350,6 +4350,52 @@ active set, and warm-start.  Different tuning regularization parameter methods
 are provided.")
     (license license:gpl2+)))
 
+(define-public r-growthtrendr
+  (package
+    (name "r-growthtrendr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "growthTrendR" version))
+       (sha256
+        (base32 "1hb6650vcb5fjwb53vyb1765cvxybqqwqgyx9akq3l91m97hwfl6"))))
+    (properties `((upstream-name . "growthTrendR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stringr
+                             r-raster
+                             r-pryr
+                             r-patchwork
+                             r-nlme
+                             r-mgcv
+                             r-htmltools
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-data-table
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=growthTrendR")
+    (synopsis "Toolkit for Data Processing, Quality, and Statistical Models")
+    (description
+     "Offers tools for data formatting, anomaly detection, and classification of
+tree-ring data using spatial comparisons and cross-correlation.  Supports
+flexible detrending and climateâgrowth modeling via generalized additive mixed
+models (Wood 2017, ISBN:978-1498728331) and the mgcv package
+(<https://CRAN.R-project.org/package=mgcv>), enabling robust analysis of
+non-linear trends and autocorrelated data.  Provides standardized visual
+reporting, including summaries, diagnostics, and model performance.  Compatible
+with .rwl files and tailored for the Canadian Forest Service Tree-Ring Data
+(CFS-T@code{RenD}) repository (Girardin et al. (2021)
+<doi:10.1139/er-2020-0099>), offering a comprehensive and adaptable framework
+for dendrochronologists working with large and complex datasets.")
+    (license license:gpl3)))
+
 (define-public r-growthrates
   (package
     (name "r-growthrates")
@@ -5044,13 +5090,13 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
 (define-public r-groupedhyperframe-random
   (package
     (name "r-groupedhyperframe-random")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe.random" version))
        (sha256
-        (base32 "05cl2kyc2fsiyrdmqy6fl03i8gpccnnj05p2xmq98hpb4v1zyacv"))))
+        (base32 "1vwjswjanz23dz4fi7r0m3fdj2cxpvvz14y281cjxp5yzp6ylg53"))))
     (properties `((upstream-name . "groupedHyperframe.random")))
     (build-system r-build-system)
     (arguments
@@ -5059,7 +5105,7 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
     (propagated-inputs (list r-spatstat-random r-spatstat-geom r-mass
                              r-groupedhyperframe r-cli))
     (native-inputs (list r-quarto))
-    (home-page "https://github.com/tingtingzhan/groupedHyperframe.random")
+    (home-page "https://tingtingzhan.quarto.pub/groupedhyperframe/random")
     (synopsis "Simulated Grouped Hyper Data Frame")
     (description
      "An intuitive interface to simulate (1) superimposed (marked) point patterns with
@@ -11597,13 +11643,13 @@ Block (2017a) <doi:10.1177/0081175017709295>, Stadtfeld, Hollway, and Block
 (define-public r-gogarch
   (package
     (name "r-gogarch")
-    (version "0.7-5")
+    (version "0.7-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gogarch" version))
        (sha256
-        (base32 "01ikd7ngzgyrgkr637cxnj5xqmdmsj6szcr9f8wmrxvly0b3qf1i"))))
+        (base32 "0v9lml9bib95y2683k526ywm4syqjwa39dablwczs9ijw9d9zifk"))))
     (properties `((upstream-name . "gogarch")))
     (build-system r-build-system)
     (arguments
@@ -12132,13 +12178,13 @@ weighted graphs.  Methods are described in Sosa et al. (2023)
 (define-public r-goat
   (package
     (name "r-goat")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goat" version))
        (sha256
-        (base32 "1hk3jb3qydrp41z2napzr4as4590c815vnzcr9nrshgssmdpajbk"))))
+        (base32 "1rrjsczykvgpaz4xklvzqh283lk6j3rmimnk6nxy15gc4v5xq8ai"))))
     (properties `((upstream-name . "goat")))
     (build-system r-build-system)
     (arguments
@@ -13172,6 +13218,37 @@ provides more information for determining the optimal classifier, as specified
 by Bayes rule.")
     (license license:gpl3)))
 
+(define-public r-gmminit
+  (package
+    (name "r-gmminit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GMMinit" version))
+       (sha256
+        (base32 "1bfp9jr51lkybqjhyh7bbwa0nkcxaqsr88pfcffwwfhizkhhb3s3"))))
+    (properties `((upstream-name . "GMMinit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-mvnfast r-mclust))
+    (home-page "https://cran.r-project.org/package=GMMinit")
+    (synopsis "Optimal Initial Value for Gaussian Mixture Model")
+    (description
+     "Generating, evaluating, and selecting initialization strategies for Gaussian
+Mixture Models (GMMs), along with functions to run the Expectation-Maximization
+(EM) algorithm.  Initialization methods are compared using log-likelihood, and
+the best-fitting model can be selected using BIC. Methods build on
+initialization strategies for finite mixture models described in Michael and
+Melnykov (2016) <doi:10.1007/s11634-016-0264-8> and Biernacki et al. (2003)
+<doi:10.1016/S0167-9473(02)00163-9>, and on the EM algorithm of Dempster et al.
+(1977) <doi:10.1111/j.2517-6161.1977.tb01600.x>.  Background on model-based
+clustering includes Fraley and Raftery (2002) <doi:10.1198/016214502760047131>
+and @code{McLachlan} and Peel (2000, ISBN:9780471006268).")
+    (license license:gpl2+)))
+
 (define-public r-gmmboost
   (package
     (name "r-gmmboost")
@@ -13722,13 +13799,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "0ma9k04bahp214k9mk36hxhadj6cbs53bl9zxdk5sk6djjvq8hml"))))
+        (base32 "1ksk1rgi7madicrznyw5lqpxy9pgraizhdx98p1bhbbib2g0jhhg"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments

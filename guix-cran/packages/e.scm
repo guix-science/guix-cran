@@ -18327,6 +18327,36 @@ voting data, including methods to simulation different types of voting errors
 which allow for simulations for checking the characteristics of these methods.")
     (license license:gpl2+)))
 
+(define-public r-elastic
+  (package
+    (name "r-elastic")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "elastic" version))
+       (sha256
+        (base32 "0j9hz9cj37wqwi32rqg4g9dl8yfdkn36a1ds70r4mgr93w0d8znz"))))
+    (properties `((upstream-name . "elastic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-jsonlite r-curl r-crul))
+    (home-page "https://rfhb.github.io/elastic/")
+    (synopsis "Database Interface to 'Elasticsearch' and 'OpenSearch'")
+    (description
+     "Connect to Elasticsearch and @code{OpenSearch}', @code{NoSQL} databases built on
+the Java Virtual Machine and using the Apache Lucene library.  Interacts with
+the Elasticsearch HTTP API (<https://www.elastic.co/elasticsearch/>) and the
+@code{OpenSearch} HTTP API (<https://opensearch.org/>).  Includes functions for
+setting connection details to Elasticsearch and @code{OpenSearch} instances,
+loading bulk data, searching for documents with both HTTP query variables and
+JSON based body requests.  In addition, elastic provides functions for
+interacting with APIs for indices', documents, nodes, clusters, an interface to
+the cat API, and more.")
+    (license license:expat)))
+
 (define-public r-elastes
   (package
     (name "r-elastes")
@@ -26125,13 +26155,13 @@ estimating technical efficiency is also included.  More details in:
 (define-public r-easyviz
   (package
     (name "r-easyviz")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyViz" version))
        (sha256
-        (base32 "06qx7dsfq2mjs1q55m5g6i1qr0fr56cjvyn9vs47wm6k73m0w729"))))
+        (base32 "16kfwnlhg5khcasl56vya037lgsynsxk5cav0zc06l18z87i0ck9"))))
     (properties `((upstream-name . "easyViz")))
     (build-system r-build-system)
     (arguments

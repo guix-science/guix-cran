@@ -13164,13 +13164,13 @@ transformation.")
 (define-public r-sticr
   (package
     (name "r-sticr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STICr" version))
        (sha256
-        (base32 "1n59mzmirxz2jqr0fmacjrcn55l8vggjhy3lypb8lkvskliln9an"))))
+        (base32 "0ifawi685ig9zyv66yga42x6cgd5fk369gm48dl8gzn63f9r31b3"))))
     (properties `((upstream-name . "STICr")))
     (build-system r-build-system)
     (arguments
@@ -23430,13 +23430,13 @@ compositionally-warping (Murakami et al.  2021,
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.11.1")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "09bffk0nw3j72qndc17jawmv092hc0rr5dnkzl6gdbphkzk2w4x0"))))
+        (base32 "1rfmc7hafflwhmypli1k088dgq0w63jnqx7l3ipjk81vrmr5r4lj"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (arguments
@@ -36325,19 +36325,24 @@ Diaz-Coto et al. (2020) <doi:10.1080/00949655.2020.1736071>).")
 (define-public r-smsets
   (package
     (name "r-smsets")
-    (version "1.2.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smsets" version))
        (sha256
-        (base32 "0ff9n5iv8pn92449afj9yj6dpkbg690ipdjcla257xmija9pcpgh"))))
+        (base32 "104smgkzxb3pfss1fhhmf221in0bywvxp6lprlpxaimzyx3q8m30"))))
     (properties `((upstream-name . "smsets")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-hotelling r-data-table r-biotools))
+    (propagated-inputs (list r-stringr
+                             r-hotelling
+                             r-effectsize
+                             r-data-table
+                             r-crayon
+                             r-biotools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ganava4/smsets")
     (synopsis "Simple Multivariate Statistical Estimation and Tests")
@@ -43303,13 +43308,13 @@ guide users through implementation and interpretation of results.")
 (define-public r-simtool
   (package
     (name "r-simtool")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simTool" version))
        (sha256
-        (base32 "1cpz43nx98ybzvvdfqbf4gp4w4cr6mvc06sxla5gzrqa32z8accl"))))
+        (base32 "0r5pjlgjpas46xmkjrs9l3yfcvmc5l0s4ndj6cqf9mbmgh8gz7z3"))))
     (properties `((upstream-name . "simTool")))
     (build-system r-build-system)
     (arguments
@@ -64141,13 +64146,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.8.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "18a9jbbg3hhzd6ki64hhpqg8qhxk4vgzyzw0ir5prjh79gg6fphf"))))
+        (base32 "14rs86lx18a652lv3p4hm2fy5q8kyi3zyp70kksqd4mshmb2mzdc"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (arguments
@@ -64176,8 +64181,8 @@ viewer pane during their execution.")
 Mixed Effect Models) using TMB', fmesher', and the SPDE (Stochastic Partial
 Differential Equation) Gaussian Markov random field approximation to Gaussian
 random fields.  One common application is for spatially explicit species
-distribution models (SDMs).  See Anderson et al. (2024)
-<doi:10.1101/2022.03.24.485545>.")
+distribution models (SDMs).  See Anderson et al. (2025)
+<doi:10.18637/jss.v115.i02>.")
     (license license:gpl3)))
 
 (define-public r-sdmpredictors
@@ -65091,20 +65096,26 @@ See <doi:10.1016/j.patter.2020.100139> for more details.")
 (define-public r-sctenifoldknk
   (package
     (name "r-sctenifoldknk")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scTenifoldKnk" version))
        (sha256
-        (base32 "0d6gcr0qrm7mc36n2lihl7bq9vj40dblqswznbwvxichv8kc5svz"))))
+        (base32 "1whwb9ya8q24rll1hq0fc5q9gsk40xjh9azqjv3x325a6l12pja9"))))
     (properties `((upstream-name . "scTenifoldKnk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sctenifoldnet r-rspectra r-pbapply r-matrix
-                             r-mass))
+    (propagated-inputs (list r-sctenifoldnet
+                             r-reshape2
+                             r-pbapply
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-enrichr
+                             r-cli))
     (home-page "https://github.com/cailab-tamu/scTenifoldKnk")
     (synopsis
      "In-Silico Knockout Experiments from Single-Cell Gene Regulatory Networks")
@@ -69347,13 +69358,13 @@ Wickham.")
 (define-public r-scarabee
   (package
     (name "r-scarabee")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scaRabee" version))
        (sha256
-        (base32 "1p9828ymdm79b91z2fc2r5wy6i4hr1mx8fva6lr154c82ba3569z"))))
+        (base32 "15mb3yivjp1gm320mvcqif20wihrjy8fiidnkr2bgxp3jl1pcni7"))))
     (properties `((upstream-name . "scaRabee")))
     (build-system r-build-system)
     (arguments

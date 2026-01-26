@@ -1785,13 +1785,13 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 (define-public r-otbsegm
   (package
     (name "r-otbsegm")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OTBsegm" version))
        (sha256
-        (base32 "1fign060h2w33bp8n3nrcaqvw3k2q28sp796xccp086r7zdhpvbb"))))
+        (base32 "0y52gc5jwvvsmr2rwirar90qqwh5id98yxxaiiy0y8w026rccs0l"))))
     (properties `((upstream-name . "OTBsegm")))
     (build-system r-build-system)
     (arguments
