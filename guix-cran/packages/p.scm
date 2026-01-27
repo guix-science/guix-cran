@@ -125,35 +125,36 @@ information about the Google Trends API - pytrends', visit
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "12rg6n1avy1sz73r891xf1kfha7lqac7052h8rcmlrhhdrhar7kh"))))
+        (base32 "1sidk84va9rzivj2m74h056siyvqf2ngnaqhscycni8hjnw5sw4d"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs
+    (propagated-inputs (list r-withr
+                             r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-sparklyr
                              r-rstudioapi
-                             r-rsconnect
                              r-rlang
                              r-reticulate
                              r-purrr
                              r-processx
-                             r-magrittr
+                             r-lifecycle
                              r-httr2
                              r-glue
                              r-fs
                              r-dplyr
                              r-dbplyr
                              r-dbi
+                             r-connectcreds
                              r-cli
                              r-arrow))
     (home-page "https://github.com/mlverse/pysparklyr")
@@ -1837,13 +1838,13 @@ the topology of a membrane protein.  This package allows one to use
 (define-public r-puremoe
   (package
     (name "r-puremoe")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "puremoe" version))
        (sha256
-        (base32 "119pndm7s343vmgac3jx64f66ax1gk4831svc9b8f54bgk2gqvdx"))))
+        (base32 "1h48rqvsy1d3nb5y2mjkidn7lj4f13r561av5jim68j2lla2xx5v"))))
     (properties `((upstream-name . "puremoe")))
     (build-system r-build-system)
     (arguments
@@ -1861,10 +1862,8 @@ the topology of a membrane protein.  This package allows one to use
     (synopsis "Pubmed Unified REtrieval for Multi-Output Exploration")
     (description
      "Access a variety of @code{PubMed} data through a single, user-friendly
-interface, including abstracts <https://pubmed.ncbi.nlm.nih.gov/>, bibliometrics
-from @code{iCite} <https://icite.od.nih.gov/>, pubtations from @code{PubTator3}
-<https://www.ncbi.nlm.nih.gov/research/pubtator3/>, and full-text records from
-PMC <https://www.ncbi.nlm.nih.gov/pmc/>.")
+interface, including abstracts, bibliometrics from @code{iCite}', pubtations
+from @code{PubTator3}', and full-text records from PMC'.")
     (license license:expat)))
 
 (define-public r-pupmsi
@@ -8555,13 +8554,13 @@ details see Amestoy & al. (2025) <doi:10.48550/@code{arXiv.2510.08304>}.")
 (define-public r-profileci
   (package
     (name "r-profileci")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "profileCI" version))
        (sha256
-        (base32 "1v5ysx8b0kn9mq4w392hyhy138g4cjh0gp77w3nam01pcv856jwc"))))
+        (base32 "0p61yas0g508ilybx3rc8rcjywd14fqybkprvhpkd8c9shkjh9nq"))))
     (properties `((upstream-name . "profileCI")))
     (build-system r-build-system)
     (arguments
@@ -24453,13 +24452,13 @@ response theory (IRT) models.")
 (define-public r-plmmr
   (package
     (name "r-plmmr")
-    (version "4.2.2")
+    (version "4.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plmmr" version))
        (sha256
-        (base32 "1cdfz6lb4401a8hmfd9aagd89l5gvn2kdk9zqfkjzn8zbp747bv3"))))
+        (base32 "1c4zl174q753jw96gcjz9125qpmw5yma4j16ddji9ga0ba11ph9f"))))
     (properties `((upstream-name . "plmmr")))
     (build-system r-build-system)
     (arguments

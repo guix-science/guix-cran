@@ -235,6 +235,43 @@ for data analysis and visualization workflows in R'.  The kuzu documentation can
 be found at <https://kuzudb.github.io/docs/>.")
     (license license:expat)))
 
+(define-public r-kuzco
+  (package
+    (name "r-kuzco")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kuzco" version))
+       (sha256
+        (base32 "1azjd4gc7gyzs0dgvsq7z8d122gkxkk1bv0gg0mcyyiyn48a3ldl"))))
+    (properties `((upstream-name . "kuzco")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-ollamar
+                             r-magick
+                             r-jsonlite
+                             r-imager
+                             r-gtextras
+                             r-gt
+                             r-ellmer
+                             r-dplyr))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://frankiethull.github.io/kuzco/")
+    (synopsis "Computer Vision with Large Language Models")
+    (description
+     "Make computer vision tasks approachable in R by leveraging Large Language
+Models.  Providing fine-tuned prompts, boilerplate functions, and input/output
+helpers for common computer vision workflows, such as classifying and describing
+images.  Functions are designed to take images as input and return structured
+data, helping users build practical applications with minimal code.")
+    (license license:expat)))
+
 (define-public r-kurt
   (package
     (name "r-kurt")

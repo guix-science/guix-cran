@@ -6661,13 +6661,13 @@ described in detail in \"Informatics for Toxicokinetics\" (2025).")
 (define-public r-invitrotkstats
   (package
     (name "r-invitrotkstats")
-    (version "0.0.13")
+    (version "0.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "invitroTKstats" version))
        (sha256
-        (base32 "0kmm6a59nwihydsyk1jylwsa58mj7771jpkp6pnszwjhsg3lbb3w"))))
+        (base32 "1rn5c70kgdppysp9yf9wm029rqvizjg6b7xhdr056kipkm09v7ww"))))
     (properties `((upstream-name . "invitroTKstats")))
     (build-system r-build-system)
     (arguments
@@ -9149,13 +9149,13 @@ Polish National Science Center.")
 (define-public r-insulin-secretion
   (package
     (name "r-insulin-secretion")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insulin.secretion" version))
        (sha256
-        (base32 "0vf0qwn1fvyxdfm076b8y5zk11l88jswrhhz4c31znqicph78byi"))))
+        (base32 "0nkf5pandw0rfxph7ywy10zm75rcdb7rxcidd49yfcn0vpz5m62m"))))
     (properties `((upstream-name . "insulin.secretion")))
     (build-system r-build-system)
     (arguments
@@ -10152,13 +10152,13 @@ with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
 (define-public r-injurytools
   (package
     (name "r-injurytools")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "injurytools" version))
        (sha256
-        (base32 "015006sjn03xl4vq8x9fiy2xl8y7nyzmfhainvcf6mfc4yrnf15s"))))
+        (base32 "1bz86q4ra96gm9ykxv6qlxv94qpcq3rclji2bwzb1g8pp990p5np"))))
     (properties `((upstream-name . "injurytools")))
     (build-system r-build-system)
     (arguments
@@ -15189,13 +15189,13 @@ and recoding data.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "3.1.3")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ijtiff" version))
        (sha256
-        (base32 "0m7fz4mpwkha2bgfbvc6x7kk5xarvnv14gfy62kdjkcnmf5awsq0"))))
+        (base32 "1cgprnc54f91jhgdfnwb0fg1q0m42a1j1zfaic3nqskf2rcjl4p8"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (arguments

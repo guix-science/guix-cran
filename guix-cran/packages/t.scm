@@ -18860,20 +18860,19 @@ common support calculations, and plotting useful summaries of these.")
 (define-public r-tidytransit
   (package
     (name "r-tidytransit")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytransit" version))
        (sha256
-        (base32 "16i7jg6dz7vz2nvc8h1d6y8jkkpg67d42j0ii4y8dcnmrhklczds"))))
+        (base32 "1r8bs4qk2b079wv2hachgmhd8dri454zpqqida8zdc271pfd76d0"))))
     (properties `((upstream-name . "tidytransit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sf
-                             r-rlang
                              r-jsonlite
                              r-hms
                              r-gtfsio

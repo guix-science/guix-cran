@@ -12,13 +12,13 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
@@ -4484,6 +4484,47 @@ Dirichlet-Multinomial, Laplace, Wishart, and Inverted Wishart.  The details of
 the method are explained in Demirtas (2004) <DOI:10.22237/jmasm/1099268340>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-multirl
+  (package
+    (name "r-multirl")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiRL" version))
+       (sha256
+        (base32 "11xd7nyxiimsqby4swf15hf0bd6s805nwapvx68cv9svss0wa4i8"))))
+    (properties `((upstream-name . "multiRL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rcpp
+                             r-progressr
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-dorng
+                             r-dofuture))
+    (home-page "https://yuki-961004.github.io/multiRL/")
+    (synopsis "Reinforcement Learning Tools for Multi-Armed Bandit")
+    (description
+     "This package provides a flexible general-purpose toolbox for implementing
+Rescorla-Wagner models in multi-armed bandit tasks.  As the successor and
+functional extension of the @code{binaryRL} package, @code{multiRL} modularizes
+the Markov Decision Process (MDP) into six core components.  This framework
+enables users to construct custom models via intuitive if-else syntax and define
+latent learning rules for agents.  For parameter estimation, it provides both
+likelihood-based inference (MLE and MAP) and simulation-based inference (ABC and
+RNN), with full support for parallel processing across subjects.  The workflow
+is highly standardized, featuring four main functions that strictly follow the
+four-step protocol (and ten rules) proposed by Wilson & Collins (2019)
+<doi:10.7554/@code{eLife.49547>}.  Beyond the three built-in models (TD, RSTD,
+and Utility), users can easily derive new variants by declaring which variables
+are treated as free parameters.")
+    (license license:gpl3)))
+
 (define-public r-multiridge
   (package
     (name "r-multiridge")
@@ -7709,6 +7750,30 @@ of ontologies.  Overall, mulea fosters the exploration of diverse biological
 questions across various model organisms.")
     (license license:gpl2)))
 
+(define-public r-muitreeview
+  (package
+    (name "r-muitreeview")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "muiTreeView" version))
+       (sha256
+        (base32 "1d9lbazxx95xjz4l2bphkqszsn2j4dhmxwmb1gq12l23v0fnsld5"))))
+    (properties `((upstream-name . "muiTreeView")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny-react r-htmltools))
+    (home-page "https://felixluginbuhl.com/muiTreeView/")
+    (synopsis "'MUI X Tree View' for 'shiny' Apps and 'Quarto'")
+    (description
+     "Give access to MUI X Tree View components, which lets users navigate
+hierarchical lists of data with nested levels that can be expanded and
+collapsed.")
+    (license license:expat)))
+
 (define-public r-muir
   (package
     (name "r-muir")
@@ -7731,6 +7796,46 @@ questions across various model organisms.")
      "This package provides a simple tool allowing users to easily and dynamically
 explore or document a data set using a tree structure.")
     (license license:gpl2+)))
+
+(define-public r-muimaterial
+  (package
+    (name "r-muimaterial")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "muiMaterial" version))
+       (sha256
+        (base32 "1zc71lh170irpg05dkkra728664byp5a87769rvv2q6l6mml47rk"))))
+    (properties `((upstream-name . "muiMaterial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-shiny-react r-shiny r-htmltools r-checkmate))
+    (native-inputs (list esbuild))
+    (home-page "https://felixluginbuhl.com/muiMaterial/")
+    (synopsis "'Material UI' for 'shiny' Apps and 'Quarto'")
+    (description
+     "This package provides a set of user interface components for building shiny
+applications and quarto documents, including inputs, layouts, navigation,
+surfaces, and various utilities.  All components Material UI from the company
+MUI <https://mui.com/> are available and all inputs have usage examples in R.")
+    (license license:expat)))
 
 (define-public r-mugs
   (package
@@ -15853,13 +15958,13 @@ the database.")
 (define-public r-mongolstats
   (package
     (name "r-mongolstats")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolstats" version))
        (sha256
-        (base32 "1hvmarz84anz10s0aphhkv9vf29jfymk4biyqpqqm58gn7q6rgdw"))))
+        (base32 "0wl3anhkxrcsmp7ryv0g26p4kyjhvi14mj5dpvq1i0l9w5b430pr"))))
     (properties `((upstream-name . "mongolstats")))
     (build-system r-build-system)
     (arguments
@@ -50794,13 +50899,13 @@ ensembles of datasets on global governance called datacubes.")
 (define-public r-manureshed
   (package
     (name "r-manureshed")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manureshed" version))
        (sha256
-        (base32 "1qhh3h4k412ybrg192g2xqfq2971jdyw7z1j90ns5pa0qy152wa4"))))
+        (base32 "1c1n3f4prigbi46x9sl8azr52vx89fjrg228vk1rxiig8qq1hj9h"))))
     (properties `((upstream-name . "manureshed")))
     (build-system r-build-system)
     (arguments

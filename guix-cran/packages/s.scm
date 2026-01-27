@@ -7972,13 +7972,13 @@ ease and simplicity of the \"sum\" and \"tab\" functions from stata'.")
 (define-public r-sumup
   (package
     (name "r-sumup")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumup" version))
        (sha256
-        (base32 "03k9r7rdg158g8icrl7v14rqxx1w0im482x1jask4hv1j0gpchxi"))))
+        (base32 "1qshym8fwx0q8823l2vnpqg74g1cv0fgpf0nmc213cgl4si8qssb"))))
     (properties `((upstream-name . "sumup")))
     (build-system r-build-system)
     (arguments
@@ -8004,7 +8004,8 @@ ease and simplicity of the \"sum\" and \"tab\" functions from stata'.")
      "Combine topic modeling and sentiment analysis to identify individual students
 gaps, and highlight their strengths and weaknesses across predefined competency
 domains and professional activities.")
-    (license license:gpl3+)))
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-sumsome
   (package
@@ -16434,13 +16435,13 @@ collected from the open source Star Wars API.")
 (define-public r-starvars
   (package
     (name "r-starvars")
-    (version "1.1.10")
+    (version "1.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starvars" version))
        (sha256
-        (base32 "1mq31g05ahpsmda2zrmkg1dlaqqk4c9hm9fjzhgrsxlg4j3klbbf"))))
+        (base32 "1879qv242azwssgy9cpzhhg6bxmm5zilhs5kvkw9ax6vqhsk96pv"))))
     (properties `((upstream-name . "starvars")))
     (build-system r-build-system)
     (arguments
@@ -16848,6 +16849,55 @@ spatio-temporal autologistic regression model.  Application to local spread of
 plant diseases.\" 2019. <@code{arXiv:1811.06782>}, using a grid of binary
 variables to estimate the spread of a disease on the grid over the years.")
     (license license:gpl3)))
+
+(define-public r-starling
+  (package
+    (name "r-starling")
+    (version "0.6.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "starling" version))
+       (sha256
+        (base32 "0kcficp5qr75vjdxd2y7b4dkvx8p0samnjx6i97vz14c7z62dny4"))))
+    (properties `((upstream-name . "starling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-reclin2
+                             r-magrittr
+                             r-lubridate
+                             r-janitor
+                             r-dplyr
+                             r-digest
+                             r-datawizard))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=starling")
+    (synopsis
+     "Link Infectious Disease Cases to Vaccination and Hospitalization Records")
+    (description
+     "Facilitates probabilistic record linkage between infectious disease surveillance
+datasets (notifiable disease registers, outbreak line-lists), vaccination
+registries, and hospitalization records using methods based on Fellegi and
+Sunter (1969) <doi:10.1080/01621459.1969.10501049> and Sayers et al. (2016)
+<doi:10.1093/ije/dyv322>.  The package provides core functions for data
+preparation, linkage, and analysis: @code{clean_the_nest()} standardizes
+variable names and formats across heterogeneous datasets; @code{murmuration()}
+performs machine learning-based record linkage using blocking variables and
+similarity metrics; @code{molting()} deidentifies datasets for secure sharing;
+@code{homing()} re-identifies previously deidentified datasets; @code{plumage()}
+identifies and categorizes comorbidities; and @code{preening()} creates
+analysis-ready variables including age categories and temporal groupings.
+Designed for epidemiological research linking acute and post-acute disease
+outcomes to vaccination status and healthcare utilization.  Supports multiple
+linkage scenarios including case-to-vaccination, case-to-hospitalization, and
+event-based vaccination status determination (e.g., outbreak attendees, flight
+passengers, exposure site visitors).")
+    (license license:gpl3+)))
 
 (define-public r-stargazer
   (package
@@ -18244,13 +18294,13 @@ Bechhofer, Santner, and Goldsman (1995, ISBN:978-0-471-57427-9).")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "05l1pn3dc7n5d0wk05q68dd1lkhj0br2p3pfv18qg9npwspq7liw"))))
+        (base32 "1hqyq5x7qa3gmj2qcb2ixjvygyd6w2b7mylcz1gb8z52gf0zs5g0"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -24239,13 +24289,13 @@ models.")
 (define-public r-splinecox
   (package
     (name "r-splinecox")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splineCox" version))
        (sha256
-        (base32 "1s7x2hicz4zaw0k78mkfrnxnhg4ynvjdlkrd2v6bdpfbdjdsd34y"))))
+        (base32 "13a7y8icj2vpyhr5mk5cdrvl70hgjsga31nw0rj0aaph841bdryx"))))
     (properties `((upstream-name . "splineCox")))
     (build-system r-build-system)
     (arguments
@@ -26385,13 +26435,13 @@ interpret the results.")
 (define-public r-spectrakit
   (package
     (name "r-spectrakit")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spectrakit" version))
        (sha256
-        (base32 "1bc5lfyypnwcpx929a7jsbbqaypf8bbm6xjyb0zxn1r3aqq2m59q"))))
+        (base32 "13in16i7f9mk6lg0wcmqd8c8zszi3y9ivcldjb7rd15fl3h0jh8v"))))
     (properties `((upstream-name . "spectrakit")))
     (build-system r-build-system)
     (arguments
@@ -26403,6 +26453,7 @@ interpret the results.")
                              r-purrr
                              r-magick
                              r-glue
+                             r-ggrepel
                              r-ggplot2
                              r-dplyr
                              r-data-table))
@@ -26410,8 +26461,8 @@ interpret the results.")
     (synopsis "Spectral Data Handling and Visualization")
     (description
      "This package provides functions to combine, normalize and visualize spectral
-data, and for assembling customizable image grids suitable for
-publication-quality scientific figures.")
+data, perform principal component analysis (PCA), and assemble customizable
+image grids suitable for publication-quality scientific figures.")
     (license license:expat)))
 
 (define-public r-spectr
@@ -28911,6 +28962,43 @@ density, spatial smoothing, multivariate separability, point process model for
 creating pseudo- absences and sub-sampling, Quadrant-based sampling and
 analysis, auto-logistic modeling, sampling models, cluster optimization,
 statistical exploratory tools and raster-based metrics.")
+    (license license:gpl3)))
+
+(define-public r-spatialdownscaling
+  (package
+    (name "r-spatialdownscaling")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpatialDownscaling" version))
+       (sha256
+        (base32 "0fb109rx88zm58qf2s5xk8rlqmgwy8qi360lbq703sad21bx1dn7"))))
+    (properties `((upstream-name . "SpatialDownscaling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-tensorflow
+                             r-rdpack
+                             r-raster
+                             r-magrittr
+                             r-keras3
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=SpatialDownscaling")
+    (synopsis "Methods for Spatial Downscaling Using Deep Learning")
+    (description
+     "The aim of the spatial downscaling is to increase the spatial resolution of the
+gridded geospatial input data.  This package contains two deep learning based
+spatial downscaling methods, super-resolution deep residual network (SRDRN)
+(Wang et al., 2021 <doi:10.1029/2020WR029308>) and UNet (Ronneberger et al.,
+2015 <doi:10.1007/978-3-319-24574-4_28>), along with a statistical baseline
+method bias correction and spatial disaggregation (Wood et al., 2004
+<doi:10.1023/B:CLIM.0000013685.99609.9e>).  The SRDRN and UNet methods are
+implemented to optionally account for cyclical temporal patterns in case of
+spatio-temporal data.  For more details of the methods, see SipilÃ¤ et al.
+(2025) <doi:10.48550/@code{arXiv.2512.13753>}.")
     (license license:gpl3)))
 
 (define-public r-spatialcovariance
@@ -61220,13 +61308,13 @@ and Waernbaum (2022) <doi:10.1515/em-2022-0108>, and Zetterstrom (2024)
 (define-public r-selection-index
   (package
     (name "r-selection-index")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selection.index" version))
        (sha256
-        (base32 "0yqg0j0sifpc25qpndrmnam64qy1qbzazqqs8rz99lynkwn3z1fh"))))
+        (base32 "09bdm2nq16b5cws4919mks6rnmykmabqkk1pyrwmkixnscnmzyw9"))))
     (properties `((upstream-name . "selection.index")))
     (build-system r-build-system)
     (arguments
@@ -74441,20 +74529,19 @@ of the package and the methods used see the corresponding vignette.")
 (define-public r-saesim
   (package
     (name "r-saesim")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeSim" version))
        (sha256
-        (base32 "00gm4l7kwnc3y6irr7qxzdsaxzk23czschhih3mzwqqisa5sbdf9"))))
+        (base32 "1wbgi5bxp0zm53yc6k7izpqp3lhbnmb1a0skvz3dgq5f6vviq2df"))))
     (properties `((upstream-name . "saeSim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-spdep
+    (propagated-inputs (list r-spdep
                              r-parallelmap
                              r-mass
                              r-ggplot2

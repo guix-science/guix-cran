@@ -9801,6 +9801,35 @@ are created following the guidelines for grid datasets from the European Forum
 for Geography and Statistics.")
     (license license:expat)))
 
+(define-public r-aquacultur
+  (package
+    (name "r-aquacultur")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aquacultuR" version))
+       (sha256
+        (base32 "0nafzfximhnywv6kj2griwq92zqrv8hys21g2p6xndp2160qf9zk"))))
+    (properties `((upstream-name . "aquacultuR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TellAnAx/aquacultuR")
+    (synopsis "Comprehensive R Tool for Zootechnical Metrics")
+    (description
+     "This package provides a collection of functions to compute frequently used
+metrics for nutrition trials in aquaculture.  Implementations include metrics to
+calculate growth, feed conversion, nutrient use efficiency, and feed
+digestibility.  The package supports reproducible workflows for summarising
+experimental results and reduces manual calculation errors.  For additional
+information see Machado e Silva, Karthikeyan and TellbÃ¼scher (2025)
+<doi:10.13140/RG.2.2.27322.04808>.")
+    (license license:gpl3+)))
+
 (define-public r-aquabeher
   (package
     (name "r-aquabeher")
@@ -15870,13 +15899,13 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
 (define-public r-amadeus
   (package
     (name "r-amadeus")
-    (version "1.2.4.9")
+    (version "1.3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amadeus" version))
        (sha256
-        (base32 "1szpd6cds10r3dgm0mvqlbk6pm8j48jxlvlzd0x18njaq1zv0nry"))))
+        (base32 "1sh5w6lsvq9k86y2v7hiy14xsq31sk8g8flvdb95j3rpkjddpqx9"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
     (arguments
@@ -15893,7 +15922,8 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
                              r-rlang
                              r-rdpack
                              r-nhdplustools
-                             r-httr
+                             r-jsonlite
+                             r-httr2
                              r-exactextractr
                              r-dplyr
                              r-data-table

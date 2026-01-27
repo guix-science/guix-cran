@@ -7794,13 +7794,13 @@ climate data (licensed under CC BY 4.0,
 (define-public r-wdpar
   (package
     (name "r-wdpar")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdpar" version))
        (sha256
-        (base32 "0mn05wg755xkj3pw6qv0g50p4h5v6n0if31gr9a2i04zjza5nr86"))))
+        (base32 "0j4s3y8y7b77siq6f37kmm3wan522qbhv6x3f0gkcr57q54dvr6j"))))
     (properties `((upstream-name . "wdpar")))
     (build-system r-build-system)
     (arguments
@@ -7819,7 +7819,8 @@ climate data (licensed under CC BY 4.0,
                              r-countrycode
                              r-cli
                              r-chromote
-                             r-assertthat))
+                             r-assertthat
+                             r-archive))
     (native-inputs (list r-knitr))
     (home-page "https://prioritizr.github.io/wdpar/")
     (synopsis "Interface to the World Database on Protected Areas")

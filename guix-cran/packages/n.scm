@@ -4063,13 +4063,13 @@ R. Designed to be used with long running scripts.")
 (define-public r-notebookutils
   (package
     (name "r-notebookutils")
-    (version "1.5.3")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "notebookutils" version))
        (sha256
-        (base32 "09jqh44jfbbqq34xkr6bznwc7swwjawfjpacikxpg3009i847pbl"))))
+        (base32 "04h7aqj0wi7kx6328b70zydj2aiinidlgsw4j602z6xi1inksil4"))))
     (properties `((upstream-name . "notebookutils")))
     (build-system r-build-system)
     (arguments
@@ -10516,13 +10516,13 @@ acceptance-rejection scheme (Lewis PAW, Shedler, GS (1979)
 (define-public r-nhpoisson
   (package
     (name "r-nhpoisson")
-    (version "3.3")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NHPoisson" version))
        (sha256
-        (base32 "1i6n59ckcxk1hwyz97jmnv4yb96ianjma6ka8lpz79ivs41jniad"))))
+        (base32 "0gf2a6pi48sdpvh9lah80cqsxv4wg66lpw8mdw3vs4pavwnxprrm"))))
     (properties `((upstream-name . "NHPoisson")))
     (build-system r-build-system)
     (arguments
@@ -15440,13 +15440,13 @@ bioindicators.")
 (define-public r-neldermead
   (package
     (name "r-neldermead")
-    (version "1.0-12")
+    (version "1.0-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neldermead" version))
        (sha256
-        (base32 "0ws2knrq3b3icv6fzimypzwvzvqf0sayi2ndhacn6lk4snms5pm3"))))
+        (base32 "15mzykb3xwrs72i26sifbi833v7x98j4miy55lkpyjmfzw1906g7"))))
     (properties `((upstream-name . "neldermead")))
     (build-system r-build-system)
     (arguments

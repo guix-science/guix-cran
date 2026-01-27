@@ -14746,6 +14746,30 @@ which was mainly based on R. New core algorithms are developed and are now
 written in C++ and highly optimized.")
     (license license:gpl3)))
 
+(define-public r-glmstarma
+  (package
+    (name "r-glmstarma")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmSTARMA" version))
+       (sha256
+        (base32 "1dz5i3q9xrab3hwy0sd0pxh0x1dazqlww7dqb02zw69cphk7r32k"))))
+    (properties `((upstream-name . "glmSTARMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-roptim r-rcpparmadillo r-rcpp r-nloptr r-copula))
+    (home-page "https://github.com/stmaletz/glmSTARMA")
+    (synopsis "(Double) Generalized Linear Models for Spatio-Temporal Data")
+    (description
+     "Fit spatio-temporal models within a (double) generalized linear modelling
+framework.  The package includes functions for estimation, simulation and
+inference.")
+    (license license:gpl3+)))
+
 (define-public r-glmsimulator
   (package
     (name "r-glmsimulator")
@@ -28663,13 +28687,13 @@ topology.")
 (define-public r-geobayes
   (package
     (name "r-geobayes")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoBayes" version))
        (sha256
-        (base32 "1d32c9f9wk1x3s89v957f8pb98m6qq5j084p35skbppkmc60y5lp"))))
+        (base32 "1x9sjaldx8abzk8zdxxn83g165bwkc30fbsvj6d4p369zc1skbv6"))))
     (properties `((upstream-name . "geoBayes")))
     (build-system r-build-system)
     (arguments
@@ -33034,35 +33058,6 @@ dimension via hypothesis testing, see Chen et al. (2021)
      "Model and estimate the model parameters for the spatial model of
 individual-level infectious disease transmission in
 Susceptible-Infected-Recovered (SIR) framework.")
-    (license license:expat)))
-
-(define-public r-gdilm-seirs
-  (package
-    (name "r-gdilm-seirs")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GDILM.SEIRS" version))
-       (sha256
-        (base32 "1wkmpykp1bmr1g7my6nlanz0hjngdjbp10qlxbz5zh66wv6k18r3"))))
-    (properties `((upstream-name . "GDILM.SEIRS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ngspatial r-mvtnorm r-mass))
-    (home-page "https://cran.r-project.org/package=GDILM.SEIRS")
-    (synopsis "Spatial Modeling of Infectious Disease with Reinfection")
-    (description
-     "Geographically Dependent Individual Level Models (GDILMs) within the
-Susceptible-Exposed-Infectious-Recovered-Susceptible (SEIRS) framework are
-applied to model infectious disease transmission, incorporating reinfection
-dynamics.  This package employs a likelihood based Monte Carlo Expectation
-Conditional Maximization (MCECM) algorithm for estimating model parameters.  It
-also provides tools for GDILM fitting, parameter estimation, AIC calculation on
-real pandemic data, and simulation studies customized to user-defined model
-settings.")
     (license license:expat)))
 
 (define-public r-gdilm-me

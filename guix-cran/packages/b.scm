@@ -1121,13 +1121,13 @@ so as to avoid repeated downloads of the same series.")
 (define-public r-bunchr
   (package
     (name "r-bunchr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bunchr" version))
        (sha256
-        (base32 "1b8hdg2x26k0ahx4gxdpzr36hy056939r4496q3vbgyd4bbk2fbd"))))
+        (base32 "0v4ixj020h0qjqcv1827i1f895kdhp9xljvsidgm7846gjgg0k0j"))))
     (properties `((upstream-name . "bunchr")))
     (build-system r-build-system)
     (arguments
@@ -1135,7 +1135,7 @@ so as to avoid repeated downloads of the same series.")
       #:tests? #f))
     (propagated-inputs (list r-shiny))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/trilnick/bunchr")
+    (home-page "https://github.com/trilnick/bunchr")
     (synopsis "Analyze Bunching in a Kink or Notch Setting")
     (description
      "View and analyze data where bunching is expected.  Estimate counter- factual
@@ -15276,13 +15276,13 @@ Rapid Bioassessment Protocols (Barbour et al.  1999)
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "4.3-4-3")
+    (version "4.3-4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biomod2" version))
        (sha256
-        (base32 "0zvcvyyw5x5zmbi8ncsznjqcs3yaj6j78lgkv6dbawl1y08vpbz6"))))
+        (base32 "1bdyq2i6xg25d9vnws8jm96w31rd3jwsx2sjxag4mmkha13lw9l3"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
     (arguments
@@ -21703,6 +21703,33 @@ and Zhang for landscape mosaics (Zhao and Zhang (2019)
      "This package provides topic modeling and visualization by interfacing with the
 BERTopic library for Python via reticulate'.  See Grootendorst (2022)
 <doi:10.48550/@code{arXiv.2203.05794>}.")
+    (license license:expat)))
+
+(define-public r-bertopic
+  (package
+    (name "r-bertopic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BERTopic" version))
+       (sha256
+        (base32 "1c3dm9wcz0afi5ap13xa5x9fs3lah859nicywkhxwrn7a2h2kyb8"))))
+    (properties `((upstream-name . "BERTopic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-reticulate))
+    (home-page "https://github.com/Feng-Ji-Lab/BERTopic")
+    (synopsis "Topic Modeling with 'BERTopic'")
+    (description
+     "Interface to the Python package BERTopic
+<https://maartengr.github.io/BERTopic/index.html> for transformer-based topic
+modeling.  Provides R wrappers to fit BERTopic models, transform new documents,
+update and reduce topics, extract topic- and document-level information, and
+generate interactive visualizations.  Python backends and dependencies are
+managed via the reticulate package.")
     (license license:expat)))
 
 (define-public r-berryfunctions
@@ -31312,13 +31339,13 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
 (define-public r-bartxviz
   (package
     (name "r-bartxviz")
-    (version "1.0.9")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartXViz" version))
        (sha256
-        (base32 "1lf2hzsn5ajhya5r8aimhl21zxw81kv42h3x6dbxybwd4hwkzrc1"))))
+        (base32 "0axa6wc18db7sby4sa7abk90rg5z88gdn359wgjlx9zcv7ib8yi9"))))
     (properties `((upstream-name . "bartXViz")))
     (build-system r-build-system)
     (arguments

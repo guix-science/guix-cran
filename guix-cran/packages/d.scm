@@ -4,13 +4,13 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages base)
   #:use-module (gnu packages video)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages web)
   #:use-module (gnu packages libreoffice)
@@ -50,6 +50,41 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
+
+(define-public r-dyss
+  (package
+    (name "r-dyss")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DySS" version))
+       (sha256
+        (base32 "1qgwfrb9b7bi9rjh1wh42ll4q9jxhg0gcac472d04b6bnjcv48fv"))))
+    (properties `((upstream-name . "DySS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gridextra r-ggplot2))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=DySS")
+    (synopsis "Dynamic Screening Systems")
+    (description
+     "In practice, we will encounter problems where the longitudinal performance of
+processes needs to be monitored over time.  Dynamic screening systems
+(@code{DySS}) are methods that aim to identify and give signals to processes
+with poor performance as early as possible.  This package is designed to
+implement dynamic screening systems and the related methods.  References: Qiu,
+P. and Xiang, D. (2014) <doi:10.1080/00401706.2013.822423>; Qiu, P. and Xiang,
+D. (2015) <doi:10.1002/sim.6477>; Li, J. and Qiu, P. (2016)
+<doi:10.1080/0740817X.2016.1146423>; Li, J. and Qiu, P. (2017)
+<doi:10.1002/qre.2160>; You, L. and Qiu, P. (2019)
+<doi:10.1080/00949655.2018.1552273>; Qiu, P., Xia, Z., and You, L. (2020)
+<doi:10.1080/00401706.2019.1604434>; You, L., Qiu, A., Huang, B., and Qiu, P.
+(2020) <doi:10.1002/bimj.201900127>; You, L. and Qiu, P. (2021)
+<doi:10.1080/00224065.2020.1767006>.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-dyspiadata
   (package
@@ -11345,6 +11380,30 @@ large high performance computing environments.  This package allows R users to
 use dlib through Rcpp'.")
     (license (license:fsdg-compatible "BSL-1.0"))))
 
+(define-public r-dlfm
+  (package
+    (name "r-dlfm")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DLFM" version))
+       (sha256
+        (base32 "1h2ja710x4hzgsmhhgnlp4lgs04fznpbgxps6a7wnawi0g5phhd3"))))
+    (properties `((upstream-name . "DLFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixcalc r-mass r-laplacesdemon))
+    (home-page "https://cran.r-project.org/package=DLFM")
+    (synopsis "Distributed Laplace Factor Model")
+    (description
+     "Distributed estimation method is based on a Laplace factor model to solve the
+estimates of load and specific variance.  The philosophy of the package is
+described in Guangbao Guo. (2022). <doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
+
 (define-public r-dlegfm
   (package
     (name "r-dlegfm")
@@ -12177,6 +12236,36 @@ random team-data, etc.  White paper: Philippe J.S. De Brouwer (2021)
 Philippe J.S. De Brouwer (2020, ISBN:978-1-119-63272-6) and Philippe J.S. De
 Brouwer (2020) <doi:10.1002/9781119632757>.")
     (license license:agpl3+)))
+
+(define-public r-ditwahlandslide
+  (package
+    (name "r-ditwahlandslide")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ditwahLandslide" version))
+       (sha256
+        (base32 "0i20xi9ics0mvky0ghi81qa98yyfnn4xncdfymislvrlp30y41vk"))))
+    (properties `((upstream-name . "ditwahLandslide")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-shiny
+                             r-plotly
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=ditwahLandslide")
+    (synopsis
+     "Early Warning Information on Landslides in Sri Lanka During the Ditwah Storm")
+    (description
+     "This package provides curated early warning data on landslides in Sri Lanka
+during the Ditwah storm.  It includes structured, machine-readable tidy dataset.
+ This is developed for education and research purposes.")
+    (license license:gpl3+)))
 
 (define-public r-ditwah
   (package
@@ -19464,13 +19553,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfms" version))
        (sha256
-        (base32 "0h6ps0zd3qj1kbcki2af5pyck02qffkg9zssl3r0snz7dxvgbfh6"))))
+        (base32 "163x5p9iw3djm853vymflrv5p2izf883rq28m0wzjjjikzlbl544"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (arguments
@@ -19478,24 +19567,25 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-collapse))
     (native-inputs (list r-knitr))
-    (home-page "https://sebkrantz.github.io/dfms/")
+    (home-page "https://docs.ropensci.org/dfms/")
     (synopsis "Dynamic Factor Models")
     (description
      "Efficient estimation of Dynamic Factor Models using the Expectation Maximization
 (EM) algorithm or Two-Step (2S) estimation, supporting datasets with missing
-data.  Factors are assumed to follow a stationary VAR process of order p.  The
-estimation options follow advances in the econometric literature: either running
-the Kalman Filter and Smoother once with initial values from PCA - 2S estimation
-as in Doz, Giannone and Reichlin (2011) <doi:10.1016/j.jeconom.2011.02.012> - or
-via iterated Kalman Filtering and Smoothing until EM convergence - following
-Doz, Giannone and Reichlin (2012) <doi:10.1162/REST_a_00225> - or using the
-adapted EM algorithm of Banbura and Modugno (2014) <doi:10.1002/jae.2306>,
-allowing arbitrary patterns of missing data.  The implementation makes heavy use
-of the Armadillo C++ library and the collapse package, providing for
-particularly speedy estimation.  A comprehensive set of methods supports
-interpretation and visualization of the model as well as forecasting.
-Information criteria to choose the number of factors are also provided -
-following Bai and Ng (2002) <doi:10.1111/1468-0262.00273>.")
+data and mixed-frequency nowcasting applications.  Factors follow a stationary
+VAR process of order p.  Estimation options include: running the Kalman Filter
+and Smoother once with PCA initial values (2S) as in Doz, Giannone and Reichlin
+(2011) <doi:10.1016/j.jeconom.2011.02.012>; iterated Kalman Filtering and
+Smoothing until EM convergence as in Doz, Giannone and Reichlin (2012)
+<doi:10.1162/REST_a_00225>; or the adapted EM algorithm of Banbura and Modugno
+(2014) <doi:10.1002/jae.2306>, allowing arbitrary missing-data patterns and
+monthly-quarterly mixed-frequency datasets.  The implementation uses the
+Armadillo C++ library and the collapse package for fast estimation.  A
+comprehensive set of methods supports interpretation and visualization,
+forecasting, and decomposition of the news content of macroeconomic data
+releases following Banbura and Modugno (2014).  Information criteria to choose
+the number of factors are also provided, following Bai and Ng (2002)
+<doi:10.1111/1468-0262.00273>.")
     (license license:gpl3)))
 
 (define-public r-dfmirror
@@ -28984,24 +29074,19 @@ API.")
 (define-public r-dawai
   (package
     (name "r-dawai")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawai" version))
        (sha256
-        (base32 "0n6wb88i5p84afy2zq52pizmmgxiicm0dmfxcmmdaiq7a0p3gv3y"))))
+        (base32 "04r7hrccm662ifmqyg5l7qjdqw7bkw7xy0mbbl4akxvkhky33ibp"))))
     (properties `((upstream-name . "dawai")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-boot))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=dawai")
     (synopsis "Discriminant Analysis with Additional Information")
     (description

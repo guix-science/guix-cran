@@ -12086,13 +12086,13 @@ on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
 (define-public r-hdtg
   (package
     (name "r-hdtg")
-    (version "0.2.3")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdtg" version))
        (sha256
-        (base32 "1h5h0wpy599mbdwc7s76hzx4gpblj10xa0vz3m6bxfs47kipmnb4"))))
+        (base32 "1cn4j29833fzk879q6187lc0cgbfwbgmgsbnyrh3sdmqmq6krcy4"))))
     (properties `((upstream-name . "hdtg")))
     (build-system r-build-system)
     (arguments
@@ -12106,8 +12106,8 @@ on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
      "Efficient sampling from high-dimensional truncated Gaussian distributions, or
 multivariate truncated normal (MTN).  Techniques include zigzag Hamiltonian
 Monte Carlo as in Akihiko Nishimura, Zhenyu Zhang and Marc A. Suchard (2024)
-<doi:10.1080/01621459.2024.2395587>, and harmonic Monte in Ari Pakman and Liam
-Paninski (2014) <doi:10.1080/10618600.2013.788448>.")
+<doi:10.1080/01621459.2024.2395587>, and harmonic Monte Carlo in Ari Pakman and
+Liam Paninski (2014) <doi:10.1080/10618600.2013.788448>.")
     (license license:expat)))
 
 (define-public r-hdsvm
@@ -15463,13 +15463,13 @@ calculation see Joseph de Mendoza y RÃ­os (1795)
 (define-public r-hann
   (package
     (name "r-hann")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hann" version))
        (sha256
-        (base32 "10cl8adcib98qjwkbin2plsrjdzgsnj5p8r94hrkg48yxbw80ziy"))))
+        (base32 "106k3zsk2hknszw5pfca5p3viahr307jwsz9bd99mx60wv5pdayq"))))
     (properties `((upstream-name . "hann")))
     (build-system r-build-system)
     (arguments

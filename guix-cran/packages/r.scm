@@ -2427,13 +2427,13 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
 (define-public r-rum
   (package
     (name "r-rum")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rUM" version))
        (sha256
-        (base32 "167v9mdg9hs3y7i9vjczq8wf8wzrcwwqngdw0abfxpm8847hl1fa"))))
+        (base32 "07m75jfdl5wf4nb8s3h3nsmgx83ysnq46n31f47k6gd5rjb9yzhz"))))
     (properties `((upstream-name . "rUM")))
     (build-system r-build-system)
     (arguments
@@ -6548,13 +6548,13 @@ Modularity.")
 (define-public r-rspde
   (package
     (name "r-rspde")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rSPDE" version))
        (sha256
-        (base32 "04l1fl8f42kmq3ipcmkwfm51f1q7fmmx3wdnrmvlyqk7icpzjzqf"))))
+        (base32 "0jmkrj17an8ychk8shqbidifh5chkqbc5g6ajlf88cdbfm8zrjc7"))))
     (properties `((upstream-name . "rSPDE")))
     (build-system r-build-system)
     (arguments
@@ -8410,13 +8410,13 @@ of length one) containing the JSON file passed through by the client.")
 (define-public r-rsatscan
   (package
     (name "r-rsatscan")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsatscan" version))
        (sha256
-        (base32 "03s48fhzdz6hd0829sxl75rqdnhfana4ygrz9s7mj8853qaqapzr"))))
+        (base32 "1xafzvabyp4n9srcmxb7jynh3508f7hifbbvywi77sdra85jk5i9"))))
     (properties `((upstream-name . "rsatscan")))
     (build-system r-build-system)
     (arguments
@@ -8426,15 +8426,13 @@ of length one) containing the JSON file passed through by the client.")
     (native-inputs (list r-knitr))
     (home-page "https://www.satscan.org")
     (synopsis
-     "Tools, Classes, and Methods for Interfacing with 'SaTScan' Stand-Alone Software")
+     "Tools for Running the External 'SaTScan' Software using R Classes and Methods")
     (description
-     "@code{SaTScan'(TM}) <https://www.satscan.org> is software for finding regions in
-Time, Space, or Time-Space that have excess risk, based on scan statistics, and
-uses Monte Carlo hypothesis testing to generate P-values for these regions.  The
-rsatscan package provides functions for writing R data frames in
-@code{SaTScan'-readable} formats, for setting @code{SaTScan} parameters, for
-running @code{SaTScan} in the OS, and for reading the files that @code{SaTScan}
-creates.")
+     "The @code{SaTScan'(TM}) <https://www.satscan.org> software uses spatial and
+space-time scan statistics to detect and evaluate spatial and space-time
+clusters.  With the rsatscan package, you can run the external @code{SaTScan}
+software from within R using R data formats.  To successfully select appropriate
+parameter settings within rsatscan', you must first learn @code{SaTScan}'.")
     (license license:gpl3)))
 
 (define-public r-rsatools
@@ -35311,6 +35309,48 @@ Scala REPL'.")
 format lookup file.  Based on data.table package.")
     (license license:gpl3)))
 
+(define-public r-repfun
+  (package
+    (name "r-repfun")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "repfun" version))
+       (sha256
+        (base32 "07cbbg8wn5py9adpkndvfny645f4hsk6i4ikdnsc7s3qkvf27qfy"))))
+    (properties `((upstream-name . "repfun")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xportr
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-r2rtf
+                             r-magrittr
+                             r-jsonlite
+                             r-hmisc
+                             r-haven
+                             r-glue
+                             r-dplyr
+                             r-data-table
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://gsk-biostatistics.github.io/repfun/")
+    (synopsis
+     "Create Tables, Listings and Figures using Functions Styled after SASâ¢ Macros")
+    (description
+     "Mimic the style of traditional reporting macros for clinical trials.  The
+purpose is to generate tables, listings and figures that support clinical
+research.  This package is well suited for firms or individuals who wish to
+incorporate R without changing their ways of working as it follows a traditional
+clinical research workflow.  Invoke functions (instead of macros) to summarize
+data and produce formatted reports.  This package differs from others in that it
+includes tools (wrappers) for both analyzing and reporting data.")
+    (license license:asl2.0)))
+
 (define-public r-repfdr
   (package
     (name "r-repfdr")
@@ -41088,13 +41128,13 @@ vignette documents recmap algorithm usage.")
 (define-public r-recluster
   (package
     (name "r-recluster")
-    (version "3.4")
+    (version "3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recluster" version))
        (sha256
-        (base32 "10rcgq7n725d3l25zpjvkj3qpnydcrmp47cjb01b706bswk9z3mb"))))
+        (base32 "0y5ry4d2czjfs8p62alaqbsgnp1wnbxrnbpz5w3jn8z1x6vg66zg"))))
     (properties `((upstream-name . "recluster")))
     (build-system r-build-system)
     (arguments
@@ -41120,7 +41160,7 @@ hierarchical cluster dendrograms whose topology and bootstrap supports are
 affected by the order of rows in the original matrix.  Moreover, visualisation
 of biogeographical regionalisation can be facilitated by a combination of
 hierarchical clustering and multi-dimensional scaling.  The recluster package
-provides robust techniques to visualise and analyse pattern of biodiversity and
+provides robust techniques to visualise and analyse patterns of biodiversity and
 to improve occurrence data for cryptic taxa.")
     (license license:gpl2+)))
 

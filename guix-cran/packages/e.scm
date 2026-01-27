@@ -5177,20 +5177,20 @@ magnitude of win/loss) are presented as well.")
 (define-public r-eviewsr
   (package
     (name "r-eviewsr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EviewsR" version))
        (sha256
-        (base32 "1sdhv9gra2rmp63fil61lq61a2jlfhajxd4nicvag11cnar880js"))))
+        (base32 "0nb699mycx1108dx2hmb4wjrfkjr7gcsxqp4nvip46j8wxmsgqcr"))))
     (properties `((upstream-name . "EviewsR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-zoo r-xts r-magrittr r-knitr))
+    (propagated-inputs (list r-zoo r-xts r-rdpack r-magrittr r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=EviewsR")
     (synopsis "Seamless Integration of 'EViews' and R")
@@ -13371,13 +13371,13 @@ sparse principal component analysis and sparse matrix approximation.")
 (define-public r-epanetreader
   (package
     (name "r-epanetreader")
-    (version "0.7.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epanetReader" version))
        (sha256
-        (base32 "05pwa6z03qsjwr9pxpbxycsd21p7mf5j5ajyg4yaas5g100s1k8c"))))
+        (base32 "1wp4gngvmv90pilngf1fkxnypy3kbq6ziqln6q31y2sjiyms50zm"))))
     (properties `((upstream-name . "epanetReader")))
     (build-system r-build-system)
     (arguments
@@ -13389,7 +13389,7 @@ sparse principal component analysis and sparse matrix approximation.")
      "Reads water network simulation data in Epanet text-based .inp and .rpt formats
 into R. Also reads results from Epanet-msx'.  Provides basic summary information
 and plots.  The README file has a quick introduction.  See
-<http://www2.epa.gov/water-research/epanet> for more information on the Epanet
+<https://www.epa.gov/water-research/epanet> for more information on the Epanet
 software for modeling hydraulic and water quality behavior of water piping
 systems.")
     (license license:expat)))
@@ -14642,13 +14642,13 @@ objects and coordinate reference systems.")
 (define-public r-enmpa
   (package
     (name "r-enmpa")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmpa" version))
        (sha256
-        (base32 "1hnbjm5nc817xgcsj0r16kvwc65rmy8g63h5g4hf0lnf3s8658sk"))))
+        (base32 "0l569kn9xv0636avd35wv02vhycnjq8a8q0fizjslrbsw6n8cq7s"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
     (arguments

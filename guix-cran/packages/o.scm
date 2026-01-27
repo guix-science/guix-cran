@@ -10236,13 +10236,13 @@ privacy.")
 (define-public r-onam
   (package
     (name "r-onam")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ONAM" version))
        (sha256
-        (base32 "0510w0qcn73hys1z4s7hsc2aqas16gy9i6h5an68r77iiyj3qsl5"))))
+        (base32 "1kryxpxnsx3fqg95a9mkb2g07chwljdgnccp7n0is5h9zar128rn"))))
     (properties `((upstream-name . "ONAM")))
     (build-system r-build-system)
     (arguments
@@ -11148,13 +11148,13 @@ Y to predict Y.")
 (define-public r-omicflow
   (package
     (name "r-omicflow")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicFlow" version))
        (sha256
-        (base32 "15447kaqvdwadz7bsysanrh1zg28gsf86incb79i1nmbkls17kc0"))))
+        (base32 "1kxhaipaxhfibghvbjv0vxhwmq0zl0w7g3fg4xaqyqbx35y3lj4f"))))
     (properties `((upstream-name . "OmicFlow")))
     (build-system r-build-system)
     (arguments
@@ -11178,6 +11178,7 @@ Y to predict Y.")
                              r-ggpubr
                              r-ggplot2
                              r-data-table
+                             r-cli
                              r-ape))
     (home-page "https://github.com/agusinac/OmicFlow")
     (synopsis "Fast and Efficient (Automated) Analysis of Sparse Omics Data")

@@ -6007,13 +6007,13 @@ managing capitalisations in tidy data.")
 (define-public r-vennitem
   (package
     (name "r-vennitem")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VennItem" version))
        (sha256
-        (base32 "04dqn7dmb35wffj745bjcf9wjjjw88j8pbsw2iw904zjp6k3cwqk"))))
+        (base32 "1w22i6cj16l1wbwm1ibh995khx2hnmyxavnrc06qdky288p4qlmf"))))
     (properties `((upstream-name . "VennItem")))
     (build-system r-build-system)
     (arguments
@@ -6023,8 +6023,10 @@ managing capitalisations in tidy data.")
     (home-page "https://github.com/microbialman/VennItem")
     (synopsis "Generate Venn Diagrams with Items Listed in the Sections")
     (description
-     "Generate Venn diagrams with the items listed in appropriate sections, supporting
-multiple columns for long lists.")
+     "Generate Venn diagrams from two or three sets, displaying the overlapping items
+as lists in the appropriate sections.  The lists can be split into columns or
+shortened for large sets and the plot is generated using ggplot2 allowing
+further customisations.")
     (license license:expat)))
 
 (define-public r-venneuler

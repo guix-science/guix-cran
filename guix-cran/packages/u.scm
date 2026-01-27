@@ -2900,6 +2900,33 @@ information, For detailed information kindly read the publication
 <doi:10.1016/j.jprot.2019.103613>.")
     (license license:gpl3)))
 
+(define-public r-unilasso
+  (package
+    (name "r-unilasso")
+    (version "2.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uniLasso" version))
+       (sha256
+        (base32 "0jb1v4mm7nxjzdw26jdvkk73bqya7dcs5zaanmsrgckcj73x2bif"))))
+    (properties `((upstream-name . "uniLasso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-glmnet))
+    (home-page "https://cran.r-project.org/package=uniLasso")
+    (synopsis "Univariate-Guided Sparse Regression")
+    (description
+     "Fit a univariate-guided sparse regression (lasso), by a two-stage procedure.
+The first stage fits p separate univariate models to the response.  The second
+stage gives more weight to the more important univariate features, and preserves
+their signs.  Conveniently, it returns an objects that inherits from class
+glmnet', so that all of the methods for glmnet are available.  See Chatterjee,
+Hastie and Tibshirani (2025) <doi:10.1162/99608f92.c79ff6db> for details.")
+    (license license:gpl2)))
+
 (define-public r-unikn
   (package
     (name "r-unikn")

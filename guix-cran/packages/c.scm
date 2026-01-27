@@ -673,13 +673,13 @@ be visualised with any appropriate graphics function in R.")
 (define-public r-cycletrendr
   (package
     (name "r-cycletrendr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cycleTrendR" version))
        (sha256
-        (base32 "0967hzjppw434djfv3ls6c4b2wllixpbdnvlzdk2n9hmfw1jk98y"))))
+        (base32 "0qf8dykiz2nxx2inpvsbzril6m1gmhakg5zfcw8g1cxc1y84hql2"))))
     (properties `((upstream-name . "cycleTrendR")))
     (build-system r-build-system)
     (arguments
@@ -689,12 +689,9 @@ be visualised with any appropriate graphics function in R.")
                              r-nortest
                              r-nlme
                              r-mgcv
-                             r-magrittr
                              r-lomb
-                             r-gridextra
                              r-ggplot2
                              r-fancova
-                             r-dplyr
                              r-changepoint
                              r-blocklength))
     (native-inputs (list r-knitr))
@@ -706,8 +703,8 @@ harmonic selection, bootstrap confidence intervals, change-point detection, and
 rolling-origin forecasting.  Supports LOESS (Locally Estimated Scatterplot
 Smoothing), GAM (Generalized Additive Model), and GAMM (Generalized Additive
 Mixed Model), and automatically handles irregular sampling using the
-LombâScargle periodogram.  Methods implemented in this package are described
-in Cleveland et al. (1990) <doi:10.2307/2289548>, Wood (2017)
+Lomb-Scargle periodogram.  Methods implemented in this package are described in
+Cleveland et al. (1990) <doi:10.2307/2289548>, Wood (2017)
 <doi:10.1201/9781315370279>, and Scargle (1982) <doi:10.1086/160554>.")
     (license license:gpl3)))
 
@@ -10152,6 +10149,35 @@ Pearson (CBP) distributions developed by Rodriguez-Avi et al (2003)
 maximum-likelihood fitting functions for these models.")
     (license license:gpl2+)))
 
+(define-public r-cpcat
+  (package
+    (name "r-cpcat")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CPCAT" version))
+       (sha256
+        (base32 "0vi98pxpmrrkz15rn1b4kcs7x1fbkili10qw2p4ins7lrjvqjvdp"))))
+    (properties `((upstream-name . "CPCAT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CPCAT")
+    (synopsis "The Closure Principle Computational Approach Test")
+    (description
+     "P-values and no/lowest observed (adverse) effect concentration values derived
+from the closure principle computational approach test (Lehmann, R. et al.
+(2015) <doi:10.1007/s00477-015-1079-4>) are provided.  The package contains
+functions to generate intersection hypotheses according to the closure principle
+(Bretz, F., Hothorn, T., Westfall, P. (2010) <doi:10.1201/9781420010909>), an
+implementation of the computational approach test (Ching-Hui, C., Nabendu, P.,
+Jyh-Jiuan, L. (2010) <doi:10.1080/03610918.2010.508860>) and the combination of
+both, that is, the closure principle computational approach test.")
+    (license license:gpl3+)))
+
 (define-public r-cpc
   (package
     (name "r-cpc")
@@ -11717,13 +11743,13 @@ descent algorithm of Wang (2014) <doi:10.1007/s11222-013-9385-5>.")
 (define-public r-covfefe
   (package
     (name "r-covfefe")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "covfefe" version))
        (sha256
-        (base32 "178qc77y4bn04qad3g70wr8y4v0ggyg807w67m8wvhbcxqr8yq7c"))))
+        (base32 "17v3rnnhzlxg8khz837l679zjmkblx2pa88sf7q1jdi448d8n899"))))
     (properties `((upstream-name . "covfefe")))
     (build-system r-build-system)
     (arguments
@@ -11731,14 +11757,15 @@ descent algorithm of Wang (2014) <doi:10.1007/s11222-013-9385-5>.")
       #:tests? #f))
     (propagated-inputs (list r-tokenizers))
     (home-page "https://github.com/mkirch/covfefe")
-    (synopsis "Covfefy Any Word, Sentence or Speech")
+    (synopsis
+     "Political Linguistics Toolkit - Gaffes, Phonetics, and Text Transformation")
     (description
-     "Converts any word, sentence or speech into Trump's infamous \"covfefe\" format.
-Reference:
-<https://www.nytimes.com/2017/05/31/us/politics/covfefe-trump-twitter.html>.
-Inspiration thanks to:
-<https://codegolf.stackexchange.com/questions/123685/covfefify-a-string>.")
-    (license license:gpl3)))
+     "This package provides a comprehensive toolkit for political linguistics
+featuring a museum of famous digital gaffes, phonetic transformation algorithms
+(Soundex, consonant shifts), QWERTY keyboard geometry for typo simulation,
+syllable parsing, word blending (portmanteau creation), and text corruption
+analysis.  Originally inspired by the infamous \"covfefe\" tweet of 2017.")
+    (license license:gpl3+)))
 
 (define-public r-covests
   (package
@@ -25721,13 +25748,13 @@ Meta-Learners.\" A tutorial for this package can be found at
 (define-public r-cogmapr
   (package
     (name "r-cogmapr")
-    (version "0.9.3")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cogmapr" version))
        (sha256
-        (base32 "0aqlk6248m3pad0fwarvxvxfn4qfazhdbdplg8haw3aj165szq43"))))
+        (base32 "12w50cj931inrm6njjm6dqnzlndlbhz604l73p5k7406l7lpnwqz"))))
     (properties `((upstream-name . "cogmapr")))
     (build-system r-build-system)
     (arguments
@@ -48923,13 +48950,13 @@ more details, see Sandercock et al. (2024) <doi:10.1073/pnas.2403505121>.")
 (define-public r-cast
   (package
     (name "r-cast")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAST" version))
        (sha256
-        (base32 "17qqlx73aiyqd0w9948hm304b6jqhhd2bv5q4w0dwpfcc1hbg9rh"))))
+        (base32 "1xsbf81bm9h37sx8643qsv6h2bmiglqdy0y489q968l3p1vj8p9p"))))
     (properties `((upstream-name . "CAST")))
     (build-system r-build-system)
     (arguments
@@ -48963,10 +48990,10 @@ Meyer et al. (2018) <doi:10.1016/j.envsoft.2017.12.001>; Meyer et al. (2019)
 <doi:10.1016/j.ecolmodel.2019.108815>; Meyer and Pebesma (2021)
 <doi:10.1111/2041-210X.13650>; MilÃ  et al. (2022)
 <doi:10.1111/2041-210X.13851>; Meyer and Pebesma (2022)
-<doi:10.1038/s41467-022-29838-9>; Linnenbrink et al. (2023)
-<doi:10.5194/egusphere-2023-1308>; Schumacher et al. (2024)
-<doi:10.5194/egusphere-2024-2730>.  The package is described in detail in Meyer
-et al. (2024) <doi:10.48550/@code{arXiv.2404.06978>}.")
+<doi:10.1038/s41467-022-29838-9>; Linnenbrink et al. (2024)
+<doi:10.5194/gmd-17-5897-2024>; Schumacher et al. (2025)
+<doi:10.5194/gmd-18-10185-2025>.  The package is described in detail in Meyer et
+al. (2026) <doi:10.1007/978-3-031-99665-8_11>.")
     (license license:gpl2+)))
 
 (define-public r-cassowaryr

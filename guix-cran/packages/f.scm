@@ -15438,6 +15438,58 @@ low-dimensional representation of the clustered data.  A sparse version of
 Fisher-EM algorithm is also provided.")
     (license license:gpl2)))
 
+(define-public r-fishdiver
+  (package
+    (name "r-fishdiver")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FishDiveR" version))
+       (sha256
+        (base32 "1s1y86cxs5xiy6v2dki31nf5bhnk7b366vd9armcz19hk4vfp7am"))))
+    (properties `((upstream-name . "FishDiveR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waveletcomp
+                             r-tidyr
+                             r-suncalc
+                             r-scales
+                             r-rlang
+                             r-rgl
+                             r-rfast
+                             r-patchwork
+                             r-moments
+                             r-lubridate
+                             r-gridextra
+                             r-ggplot2
+                             r-geometry
+                             r-factominer
+                             r-dplyr
+                             r-data-table
+                             r-cowplot
+                             r-colorspace
+                             r-cluster))
+    (home-page "https://github.com/calvinsbeale/FishDiveR")
+    (synopsis "Classify Aquatic Animal Behaviours from Vertical Movement Data")
+    (description
+     "Quantitatively analyse depth time-series data from pop-up satellite archival
+tags (PSATs) through the application of continuous wavelet transformation (CWT)
+combined with Principal Component Analysis (PCA), and k-means clustering.
+Import, crop, and plot depth time-depth records (TDRs).  Using CWT to detect
+important signals within the non-stationary data, we create daily wavelet
+statistics to summarise vertical movements on different wavelet periods and
+combine with daily and diel depth statistics.  Classify depth time-series with
+unsupervised k-means clustering into 24-hour periods of vertical movement
+behaviour with distinct patterns of vertical movement.  Plot example days from
+each behaviour cluster, and plot the TDR coloured by cluster.  Based on
+principals of combining CWT with k-means first developed by Sakamoto (2009)
+<doi:10.1371/journal.pone.0005379> and redeveloped by Beale (2026)
+<doi:10.21203/rs.3.rs-6907076/v1>.")
+    (license license:gpl3+)))
+
 (define-public r-fishdata
   (package
     (name "r-fishdata")
