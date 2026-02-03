@@ -4912,13 +4912,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0kjw6fs4pwm3mq3w8njj78l4bzs75z9mkgixpm730xmydyb2ngjs"))))
+        (base32 "0adyajcv345hll3fghhlqk52psnfipf76wmgmqxa5rrgb1sc5ki2"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -6478,7 +6478,8 @@ random walk with restarts, performed on the above subnetwork.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -6646,7 +6647,8 @@ and more, is available at the reference website
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -10420,13 +10422,13 @@ DNAmixtures package.  For details on implementation and methodology see
 (define-public r-dnamf
   (package
     (name "r-dnamf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DNAmf" version))
        (sha256
-        (base32 "0n1y3is60fkvpg1fmnd23ny4wzf94rcf68r4n7ajwi7lin6wcxv2"))))
+        (base32 "0vxyb07szz51n1pgicx34064rk842jv0fn9j6gs577w2rw418wfq"))))
     (properties `((upstream-name . "DNAmf")))
     (build-system r-build-system)
     (arguments
@@ -10962,7 +10964,8 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -12197,46 +12200,6 @@ found in: Kocsis, A.T.; Reddin, C.J.; Alroy, J. and Kiessling, W. (2019)
 <doi:10.1101/423780>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-div
-  (package
-    (name "r-div")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "div" version))
-       (sha256
-        (base32 "1k4c34wpwfj7yqnk1x9sjzn3dc2vdzhpy8g4c00aqs3nbgcknyn8"))))
-    (properties `((upstream-name . "div")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rpart
-                             r-rlang
-                             r-pryr
-                             r-plotly
-                             r-magrittr
-                             r-kableextra
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "http://www.de-brouwer.com/div/")
-    (synopsis "Report on Diversity and Inclusion in a Corporate Setting")
-    (description
-     "Facilitate the analysis of teams in a corporate setting: assess the diversity
-per grade and job, present the results, search for bias (in hiring and/or
-promoting processes).  It also provides methods to simulate the effect of bias,
-random team-data, etc.  White paper: Philippe J.S. De Brouwer (2021)
-<http://www.de-brouwer.com/assets/div/div-white-paper.pdf>.  Book (chapter 36):
-Philippe J.S. De Brouwer (2020, ISBN:978-1-119-63272-6) and Philippe J.S. De
-Brouwer (2020) <doi:10.1002/9781119632757>.")
-    (license license:agpl3+)))
-
 (define-public r-ditwahlandslide
   (package
     (name "r-ditwahlandslide")
@@ -13143,7 +13106,8 @@ descriptions, see Fronzetti Colladon and Naldi (2020)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -13941,49 +13905,6 @@ idiom that is ill-defined (implementation-specific) and returns an informative
 error, rather than returning a possibly incorrect result.  To cite the package
 in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.03856>.")
     (license license:gpl2+)))
-
-(define-public r-disk-frame
-  (package
-    (name "r-disk-frame")
-    (version "0.8.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "disk.frame" version))
-       (sha256
-        (base32 "0mkzvxbjr9iw2bmnw4s5s7glly1nnf4j83y6yzw5vg1gwqghynky"))))
-    (properties `((upstream-name . "disk.frame")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-pryr
-                             r-jsonlite
-                             r-glue
-                             r-globals
-                             r-future-apply
-                             r-future
-                             r-fst
-                             r-fs
-                             r-dplyr
-                             r-data-table
-                             r-crayon
-                             r-bit64
-                             r-bigreadr
-                             r-benchmarkme
-                             r-arrow))
-    (home-page "https://diskframe.com")
-    (synopsis "Larger-than-RAM Disk-Based Data Manipulation Framework")
-    (description
-     "This package provides a disk-based data manipulation tool for working with
-large-than-RAM datasets.  Aims to lower the barrier-to-entry for manipulating
-large datasets by adhering closely to popular and familiar data manipulation
-paradigms like dplyr verbs and data.table syntax.")
-    (license license:expat)))
 
 (define-public r-disimpact
   (package
@@ -15284,6 +15205,39 @@ providing a multifaceted view of societal responses under duress.  Interactive
 geographic maps and temporal charts illustrate the evolution and spatial
 dispersion of emotional reactions and impact indicators.")
     (license license:gpl3)))
+
+(define-public r-disagmethod
+  (package
+    (name "r-disagmethod")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "disagmethod" version))
+       (sha256
+        (base32 "1jj3p6p6d4qqazkjg8il2b804l5w5g43an3si1rnpznfa55jg0fm"))))
+    (properties `((upstream-name . "disagmethod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tswge
+                             r-tsbox
+                             r-polynom
+                             r-ltsa))
+    (home-page "https://cran.r-project.org/package=disagmethod")
+    (synopsis
+     "Autoregressive Integrated Moving Average (ARIMA) Based Disaggregation Methods")
+    (description
+     "We have the code for disaggregation as found in Wei and Stram (1990,
+<doi:10.1111/j.2517-6161.1990.tb01799.x>), and Hodgess and Wei (1996, \"Temporal
+Disaggregation of Time Series\" in Statistical Science I, Nova Publishing).  The
+disaggregation models have different orders of the moving average component.
+These are based on ARIMA models rather than differencing or using similar time
+series.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-disaggregation
   (package
@@ -16821,7 +16775,8 @@ changes than first-order differences across heterogeneous patterns.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16914,7 +16869,8 @@ and Islam (2006) <doi:10.1016/j.ijforecast.2006.01.005>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16994,6 +16950,31 @@ allows users to uncover the importance of nodes based on a customized
 perspective, making it particularly useful in fields like bioinformatics, social
 network analysis, and more.")
     (license license:gpl3+)))
+
+(define-public r-diffmeshgp
+  (package
+    (name "r-diffmeshgp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diffMeshGP" version))
+       (sha256
+        (base32 "1kndmnq8k0inx255n0gl5gz1fvz1s55ykp8k8h05w6xyb92vy75y"))))
+    (properties `((upstream-name . "diffMeshGP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=diffMeshGP")
+    (synopsis "Multi-Fidelity Computer Experiments Using the Tuo-Wu-Yu Model")
+    (description
+     "This R function implements the nonstationary Kriging model proposed by Tuo, Wu
+and Yu (2014) <DOI:10.1080/00401706.2013.842935> for analyzing multi-fidelity
+computer outputs.  This function computes the maximum likelihood estimates for
+the model parameters as well as the predictive means and variances of the exact
+solution.")
+    (license license:gpl2+)))
 
 (define-public r-diffmatchpatch
   (package
@@ -17718,35 +17699,36 @@ contexts.")
 (define-public r-didec
   (package
     (name "r-didec")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "didec" version))
        (sha256
-        (base32 "0x1ib0jnp1y7d5rpkf1m485bzyamfzx2i64my5ldwvr738sl2bdk"))))
+        (base32 "16ch498f79c8cbpkq72dg1v2kbshrl2n0349sp247k2vc99x7jrr"))))
     (properties `((upstream-name . "didec")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang
+                             r-rann
                              r-phylogram
+                             r-pcapp
                              r-gtools
                              r-ggplot2
                              r-foci
-                             r-factoextra
                              r-dendextend
                              r-cowplot
                              r-copbasic))
     (home-page "https://cran.r-project.org/package=didec")
     (synopsis "Directed Dependence Coefficient")
     (description
-     "Directed Dependence Coefficient (didec) is a measure of directed dependence.
+     "Directed Dependence Coefficient (didec) is a measure of functional dependence.
 Multivariate Feature Ordering by Conditional Independence (MFOCI) is a variable
 selection algorithm based on didec.  Hierarchical Variable Clustering
 (@code{VarClustPartition}) is a variable clustering method based on didec.  For
-more information, see the paper by Ansari and Fuchs (2024,
+more information, see the paper by Ansari and Fuchs (2025,
 <doi:10.48550/@code{arXiv.2212.01621>}), and the paper by Fuchs and Wang (2024,
 <doi:10.1016/j.ijar.2024.109185>).")
     (license license:expat)))
@@ -18432,7 +18414,8 @@ approach.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -18469,7 +18452,8 @@ approach.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -19965,7 +19949,8 @@ column will be converted to the multi-level hierarchy.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -21131,7 +21116,8 @@ other functionality, we provide an implementation for OSAT score by Yan et al.
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -22111,13 +22097,13 @@ visualization.")
 (define-public r-depower
   (package
     (name "r-depower")
-    (version "2025.10.21")
+    (version "2026.1.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depower" version))
        (sha256
-        (base32 "1azs62d00nawdzlblb3bgzc6h6d6pj7kk8sb4v1d551c36ksivk1"))))
+        (base32 "13q897yzsvj3pcz5w83sfsq589xmihmgm14zgqn0af4adkh2f57d"))))
     (properties `((upstream-name . "depower")))
     (build-system r-build-system)
     (arguments
@@ -24065,48 +24051,6 @@ packages for network analysis.  See Jones and Handcock
 <doi:10.1098/rspb.2003.2369>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
-(define-public r-degre
-  (package
-    (name "r-degre")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DEGRE" version))
-       (sha256
-        (base32 "040hfpvqwl8r0iazwpnq7fmkydsxqc7mck7wbjqf6c19cw3zziz7"))))
-    (properties `((upstream-name . "DEGRE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-parglm
-                             r-glmmtmb
-                             r-ggrepel
-                             r-ggpubr
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-car))
-    (home-page "https://cran.r-project.org/package=DEGRE")
-    (synopsis
-     "Inferring Differentially Expressed Genes using Generalized Linear Mixed Models")
-    (description
-     "Genes that are differentially expressed between two or more experimental
-conditions can be detected in RNA-Seq.  A high biological variability may impact
-the discovery of these genes once it may be divergent between the fixed effects.
- However, this variability can be covered by the random effects.  DEGRE was
-designed to identify the differentially expressed genes considering fixed and
-random effects on individuals.  These effects are identified earlier in the
-experimental design matrix.  DEGRE has the implementation of preprocessing
-procedures to clean the near zero gene reads in the count matrix, normalize by
-RLE published in the DESeq2 package, Love et al. (2014)
-<doi:10.1186/s13059-014-0550-8> and it fits a regression for each gene using the
-Generalized Linear Mixed Model with the negative binomial distribution, followed
-by a Wald test to assess the regression coefficients.")
-    (license license:artistic2.0)))
-
 (define-public r-degradr
   (package
     (name "r-degradr")
@@ -24475,47 +24419,6 @@ review.  Sokolowski, Dustin J., et al. \"Differential Expression Enrichment Tool
 Acids Research Genomics and Bioinformatics (2023).")
     (license license:gpl3)))
 
-(define-public r-deeptrafo
-  (package
-    (name "r-deeptrafo")
-    (version "1.0-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "deeptrafo" version))
-       (sha256
-        (base32 "1iq36jmz31z53b8ckin4kkd63ai27qjssq5v8iqqbs97zjcgk8zb"))))
-    (properties `((upstream-name . "deeptrafo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-variables
-                             r-tfprobability
-                             r-tensorflow
-                             r-survival
-                             r-reticulate
-                             r-r6
-                             r-purrr
-                             r-mlt
-                             r-keras
-                             r-formula
-                             r-deepregression
-                             r-data-table))
-    (home-page
-     "https://github.com/neural-structured-additive-learning/deeptrafo")
-    (synopsis "Fitting Deep Conditional Transformation Models")
-    (description
-     "Allows for the specification of deep conditional transformation models (DCTMs)
-and ordinal neural network transformation models, as described in Baumann et al
-(2021) <doi:10.1007/978-3-030-86523-8_1> and Kook et al (2022)
-<doi:10.1016/j.patcog.2021.108263>.  Extensions such as autoregressive DCTMs
-(Ruegamer et al, 2023, <doi:10.1007/s11222-023-10212-8>) and transformation
-ensembles (Kook et al, 2022, <doi:10.48550/@code{arXiv.2205.12729>}) are
-implemented.  The software package is described in Kook et al (2024,
-<doi:10.18637/jss.v111.i10>).")
-    (license license:gpl3)))
-
 (define-public r-deeptimedata
   (package
     (name "r-deeptimedata")
@@ -24710,45 +24613,6 @@ supported languages, promoting better collaboration and expanding the global
 reach of work.  The functionality of this package works only on RStudio using
 rstudioapi'.")
     (license license:artistic2.0)))
-
-(define-public r-deepregression
-  (package
-    (name "r-deepregression")
-    (version "2.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "deepregression" version))
-       (sha256
-        (base32 "0ghq91b0nwwpw08xfzhd9pc35j6pdxmqwyv042qs967bds08vzrx"))))
-    (properties `((upstream-name . "deepregression")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-torchvision
-                             r-torch
-                             r-tfruns
-                             r-tfprobability
-                             r-tensorflow
-                             r-reticulate
-                             r-r6
-                             r-mgcv
-                             r-matrix
-                             r-magrittr
-                             r-luz
-                             r-keras
-                             r-dplyr
-                             r-coro))
-    (home-page "https://cran.r-project.org/package=deepregression")
-    (synopsis "Fitting Deep Distributional Regression")
-    (description
-     "Allows for the specification of semi-structured deep distributional regression
-models which are fitted in a neural network as proposed by Ruegamer et al.
-(2023) <doi:10.18637/jss.v105.i02>.  Predictors can be modeled using structured
-(penalized) linear effects, structured non-linear effects or using an
-unstructured deep network model.")
-    (license license:gpl3)))
 
 (define-public r-deepnn
   (package
@@ -25718,7 +25582,8 @@ alternative in the objects of class \"declared\".")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -29497,7 +29362,8 @@ nominal durations such as seconds, hours, days, and weeks.  See ?datetime and
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -29577,6 +29443,44 @@ downloads and installs tar.gz files with dependencies, all of which were
 available on a specific day.")
     (license license:expat)))
 
+(define-public r-date4ts
+  (package
+    (name "r-date4ts")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "date4ts" version))
+       (sha256
+        (base32 "0mg3kcah793hd5hxdh753x815h3wiqxxilvl5l2yh9b8zzsz5rrs"))))
+    (properties `((upstream-name . "date4ts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://github.com/TractorTom/date4ts")
+    (synopsis
+     "Wrangle and Modify Ts Object with Classic Frequencies and Exact Dates")
+    (description
+     "The ts objects in R are managed using a very specific date format (in the form
+c(2022, 9) for September 2022 or c(2021, 2) for the second quarter of 2021,
+depending on the frequency, for example).  We focus solely on monthly and
+quarterly series to manage the dates of ts objects.  The general idea is to
+offer a set of functions to manage this date format without it being too
+restrictive or too imprecise depending on the rounding.  This is a compromise
+between simplicity, precision and use of the basic stats functions for creating
+and managing time series @code{(ts()}, @code{window()}).  Les objets ts en R
+sont gÃ©rÃ©s par un format de date trÃ¨s particulier (sous la forme c(2022, 9)
+pour septembre 2022 ou c(2021, 2) pour le deuxiÃ¨me trimestre 2021 selon la
+frÃ©quence par exemple).  On se concentre uniquement sur les sÃ©ries mensuelles
+et trimestrielles pour gÃ©rer les dates des objets ts.  LidÃ©e gÃ©nÃ©rale est de
+proposer un ensemble de fonctions pour gÃ©rer ce format de date sans que ce soit
+trop contraignant ou trop imprÃ©cis selon les arrondis.  Cest un compromis entre
+simplicitÃ©, prÃ©cision et utilisation des fonctions du package stats de
+crÃ©ation et de gestion des sÃ©ries temporelles @code{(ts()}, @code{window()}).")
+    (license license:gpl3+)))
+
 (define-public r-date
   (package
     (name "r-date")
@@ -29652,7 +29556,8 @@ Brazilian Amazon region from a variety of official sources.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -30221,38 +30126,6 @@ Dataset JSON schema file, as described in CDISC (2023)
 <https://www.cdisc.org/standards/data-exchange/dataset-json>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-dataset
-  (package
-    (name "r-dataset")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dataset" version))
-       (sha256
-        (base32 "0z2vx95vhk56icyh6pihs3hhp9qzn0rszrr9h7czx8prf2gcqzyq"))))
-    (properties `((upstream-name . "dataset")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tibble
-                             r-pillar
-                             r-labelled
-                             r-isocodes
-                             r-haven
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/dataset/")
-    (synopsis "Create Data Frames for Exchange and Reuse")
-    (description
-     "The dataset package helps create semantically rich, machine-readable, and
-interoperable datasets in R. It extends tidy data frames with metadata that
-preserves meaning, improves interoperability, and makes datasets easier to
-publish, exchange, and reuse in line with ISO and W3C standards.")
-    (license license:gpl3+)))
-
 (define-public r-dataseries
   (package
     (name "r-dataseries")
@@ -30509,7 +30382,8 @@ information.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -30556,6 +30430,57 @@ into the specification of corresponding metadata, please refer to the package
 website
 <https://dataquality.qihs.uni-greifswald.de/VIN_Annotation_of_Metadata.html>.")
     (license license:bsd-2)))
+
+(define-public r-dataqualitydashboard
+  (package
+    (name "r-dataqualitydashboard")
+    (version "2.8.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataQualityDashboard" version))
+       (sha256
+        (base32 "0a1y9nzn9dw192lj1h8c5gb9240ag5sv0xff1bkm5v00cwmqy8sp"))))
+    (properties `((upstream-name . "DataQualityDashboard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-tidyselect
+                             r-stringr
+                             r-sqlrender
+                             r-rlang
+                             r-rjava
+                             r-readr
+                             r-plyr
+                             r-parallellogger
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr
+                             r-databaseconnector))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/OHDSI/DataQualityDashboard")
+    (synopsis "Execute and View Data Quality Checks on OMOP CDM Database")
+    (description
+     "Assesses data quality in Observational Medical Outcomes Partnership Common Data
+Model (OMOP CDM) databases.  Executes data quality checks and provides an R
+`shiny` application to view the results.")
+    (license license:asl2.0)))
 
 (define-public r-datapreparation
   (package
@@ -31413,6 +31338,39 @@ of investigation into clinical trials.  The functions support different
 approaches of cutting to the different domains of SDTM normally observed.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-datacult
+  (package
+    (name "r-datacult")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datacult" version))
+       (sha256
+        (base32 "0xg6d47m33gwpkb1f39ib7d7v97lgfd1pv1gd41i6r5bi37g4rj5"))))
+    (properties `((upstream-name . "datacult")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-janitor
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=datacult")
+    (synopsis "Exploratory Data Analysis for Public Policy Applied to Culture")
+    (description
+     "Implementation of frequency tables and bar charts for qualitative variables and
+checkbox fields.  This package implements tables and charts used in reports at
+Funarte (National Arts Foundation) and OBEC (Culture and Creative Economy
+Observatory) in Brazil, and its main purpose is to simplify the use of R for
+people with a background in the humanities and arts.  Examples and details can
+be viewed in this presentation from 2026:
+<https://formacao2026.netlify.app/assets/modulo_3/modulo3#/title-slide>.")
+    (license license:expat)))
+
 (define-public r-datacomparer
   (package
     (name "r-datacomparer")
@@ -31789,13 +31747,13 @@ routines that support parallel processing.")
 (define-public r-dat
   (package
     (name "r-dat")
-    (version "0.5.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dat" version))
        (sha256
-        (base32 "1d3q4bang6pm06rfzh6h947xy3wwqn3l6ri0h4hzklg5pzwpsajd"))))
+        (base32 "1wwl74hpbx7d2xjiq5h4kg5dh5333wd827bvdpl9plwij0b7bxxf"))))
     (properties `((upstream-name . "dat")))
     (build-system r-build-system)
     (arguments
@@ -32436,13 +32394,13 @@ outliers,...), or focus on the relation amongst several activity log entries
 (define-public r-dapper
   (package
     (name "r-dapper")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dapper" version))
        (sha256
-        (base32 "0hlmndwd80s8a5y7l8c92n57xzbgy56gsv6ziwxya28ba9lf7ncx"))))
+        (base32 "1n59f358svkkrnd8m2kp5pmdqn9k97wjjl2wxpk2xhcrb3m06pzd"))))
     (properties `((upstream-name . "dapper")))
     (build-system r-build-system)
     (arguments
@@ -33896,7 +33854,8 @@ management (upload/update/deletion/sharing), and listing of stored resources.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -33938,7 +33897,8 @@ used as a reactive filter of structured data.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -33982,7 +33942,8 @@ fast and beautiful interactive visualization for Markdown and Shiny'.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -34021,7 +33982,8 @@ examples provided here are taken from the official D3Plus website
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -34099,7 +34061,8 @@ item-level analysis as well as test development.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

@@ -407,31 +407,6 @@ Calculators for the Basal Metabolic Rate are based on Mifflin et al. (1990)
 L. (2010, ISBN:9780812109917).")
     (license license:gpl3+)))
 
-(define-public r-nutrinetwork
-  (package
-    (name "r-nutrinetwork")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nutriNetwork" version))
-       (sha256
-        (base32 "1g2knmdqrsnir3rvmrl9l5kmj022vlv4xgqs62mi7cx6b0a87csn"))))
-    (properties `((upstream-name . "nutriNetwork")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmvtnorm r-matrix r-igraph r-huge r-glasso))
-    (home-page "https://cran.r-project.org/package=nutriNetwork")
-    (synopsis "Structure Learning with Copula Graphical Model")
-    (description
-     "Statistical tool for learning the structure of direct associations among
-variables for continuous data, discrete data and mixed discrete-continuous data.
- The package is based on the copula graphical model in Behrouzi and Wit (2017)
-<doi:10.1111/rssc.12287>.")
-    (license license:gpl3)))
-
 (define-public r-nutrientracker
   (package
     (name "r-nutrientracker")
@@ -1594,13 +1569,13 @@ al. (2002) <doi:10.1109/4235.996017>.")
 (define-public r-nser
   (package
     (name "r-nser")
-    (version "1.5.8")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nser" version))
        (sha256
-        (base32 "190jv0ba8h7dssvb1ybmny85rx8b1788m49bqwh0kn587p8l7l6y"))))
+        (base32 "0vazdvj79h8l1gvv0cm5fki6rdmvf2pswcm5fgm4n3q9y10fl2dr"))))
     (properties `((upstream-name . "nser")))
     (build-system r-build-system)
     (arguments
@@ -2741,34 +2716,6 @@ two groups with and without terminated tails, selecting the best group,
 selecting the subset of best groups, selecting the subset including the best
 group.")
     (license license:gpl3)))
-
-(define-public r-npintfactrep
-  (package
-    (name "r-npintfactrep")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "npIntFactRep" version))
-       (sha256
-        (base32 "14ms66ppzb4jjsa3fparic6gdn913f6wv2ccjyb02j1ahs4iaa4g"))))
-    (properties `((upstream-name . "npIntFactRep")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-ez))
-    (home-page "https://cran.r-project.org/package=npIntFactRep")
-    (synopsis
-     "Nonparametric Interaction Tests for Factorial Designs with Repeated Measures")
-    (description
-     "Returns nonparametric aligned rank tests for the interaction in two-way
-factorial designs, on R data sets with repeated measures in wide format.  Five
-ANOVAs tables are reported.  A PARAMETRIC one on the original data, one for a
-CHECK upon the interaction alignments, and three aligned rank tests: one on the
-aligned REGULAR, one on the FRIEDMAN, and one on the KOCH ranks.  In these rank
-tests, only the resulting values for the interaction are relevant.")
-    (license license:gpl2+)))
 
 (define-public r-npi
   (package
@@ -5810,41 +5757,6 @@ queries.  This facilitates reading from databases in scenarios where
 non-blocking reads are preferable, such as in high-transaction environments.")
     (license license:gpl3)))
 
-(define-public r-noisysbmggm
-  (package
-    (name "r-noisysbmggm")
-    (version "0.1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "noisysbmGGM" version))
-       (sha256
-        (base32 "0mq0rczxkrmfax8i08f60ymia3i6f7q1y96bwk6igf3sismdnx3j"))))
-    (properties `((upstream-name . "noisysbmGGM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-silggm
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-ppcor
-                             r-mass
-                             r-igraph
-                             r-huge))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=noisysbmGGM")
-    (synopsis "Noisy Stochastic Block Model for GGM Inference")
-    (description
-     "Greedy Bayesian algorithm to fit the noisy stochastic block model to an observed
-sparse graph.  Moreover, a graph inference procedure to recover Gaussian
-Graphical Model (GGM) from real data.  This procedure comes with a control of
-the false discovery rate.  The method is described in the article \"Enhancing the
-Power of Gaussian Graphical Model Inference by Modeling the Graph Structure\" by
-Kilian, Rebafka, and Villers (2024) <@code{arXiv:2402.19021>}.")
-    (license license:gpl2)))
-
 (define-public r-noisysbm
   (package
     (name "r-noisysbm")
@@ -7604,13 +7516,13 @@ Operating Characteristic Model for Network Meta-Analysis of Diagnostic Tests
 (define-public r-nma
   (package
     (name "r-nma")
-    (version "2.1-2")
+    (version "3.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMA" version))
        (sha256
-        (base32 "07f6g4iyl4d6nzzjmg5zdwx7fjlariaq6a5gg58np51nni6p1gys"))))
+        (base32 "0g0pxxbs4vjqbnr330cpblp42cccd2h62nzfbg7mjh6w8kb7bchh"))))
     (properties `((upstream-name . "NMA")))
     (build-system r-build-system)
     (arguments
@@ -7622,7 +7534,7 @@ Operating Characteristic Model for Network Meta-Analysis of Diagnostic Tests
                              r-mass
                              r-ggplot2
                              r-forestplot))
-    (home-page "https://doi.org/10.1101/2025.09.15.25335823")
+    (home-page "https://github.com/nomahi/NMA")
     (synopsis
      "Network Meta-Analysis Based on Multivariate Meta-Analysis and Meta-Regression Models")
     (description
@@ -7895,19 +7807,19 @@ details in Garay, Lachos and Abanto-Valle (2011)
 (define-public r-nlsic
   (package
     (name "r-nlsic")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlsic" version))
        (sha256
-        (base32 "1rca8f4p35bkhpgrqnakx3z1igvzvf3b37qkib4j6kl9cv1kvgw9"))))
+        (base32 "02dqs773m2w7k14b6k644qzbjvqhgfycn005knaz1xvinxgv72nq"))))
     (properties `((upstream-name . "nlsic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nnls r-dotty))
+    (propagated-inputs (list r-nnls r-glue r-dotty))
     (home-page "https://github.com/MathsCell/nlsic")
     (synopsis "Non Linear Least Squares with Inequality Constraints")
     (description
@@ -9369,13 +9281,13 @@ al (2018) <doi:10.1177/0962280218786302> for further details.")
 (define-public r-nipntk
   (package
     (name "r-nipntk")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nipnTK" version))
        (sha256
-        (base32 "0y20nik6jrypywqr809891amf9aq6bwf1p0vskr43p0scblbbv0b"))))
+        (base32 "0da56j2b45dw8fk95qyyalbh92zmdix97irqyr3x8zq3bn3m9gay"))))
     (properties `((upstream-name . "nipnTK")))
     (build-system r-build-system)
     (arguments
@@ -10570,13 +10482,13 @@ transition probabilities.")
 (define-public r-nhlscraper
   (package
     (name "r-nhlscraper")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhlscraper" version))
        (sha256
-        (base32 "0ghs87crvm66cxh1q9rzm5kgzccly71mfqg97h1s13h2qbj9q2n9"))))
+        (base32 "01wy8f3yg484md2x9c3fdv4jgfsds9jbmj37x2dsvvn44vp01k1y"))))
     (properties `((upstream-name . "nhlscraper")))
     (build-system r-build-system)
     (arguments
@@ -13361,60 +13273,6 @@ to excess by Yiannis Parizas (2019)
 <https://www.theactuary.com/features/2019/03/2019/03/06/taken-excess>.")
     (license license:gpl3)))
 
-(define-public r-netshiny
-  (package
-    (name "r-netshiny")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netShiny" version))
-       (sha256
-        (base32 "1k6dmhkjf29ww31c15jms0yxwyiqq1z7a9115zwbg620cjd3m6fm"))))
-    (properties `((upstream-name . "netShiny")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork
-                             r-shinywidgets
-                             r-shinyscreenshot
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shinybs
-                             r-shiny
-                             r-readxl
-                             r-promises
-                             r-plotly
-                             r-netgwas
-                             r-matrix
-                             r-magrittr
-                             r-ipc
-                             r-igraph
-                             r-ggvenndiagram
-                             r-ggplot2
-                             r-future-callr
-                             r-future
-                             r-dt
-                             r-colourpicker))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=netShiny")
-    (synopsis "Tool for Comparison and Visualization of Multiple Networks")
-    (description
-     "We developed a comprehensive tool that helps with visualization and analysis of
-networks with the same variables across multiple factor levels.  The
-@code{netShiny} contains most of the popular network features such as centrality
-measures, modularity, and other summary statistics (e.g. clustering
-coefficient).  It also contains known tools to look at the (dis)similarities
-between two networks, such as pairwise distance measures between networks, set
-operations on the nodes of the networks, distribution of the weights of the
-edges and a network representing the difference between two correlation
-matrices.  The package @code{netShiny} also contains tools to perform
-bootstrapping and find clusters in networks.  See the @code{netShiny} manual for
-more information, documentation and examples.")
-    (license license:gpl3+)))
-
 (define-public r-netsem
   (package
     (name "r-netsem")
@@ -13828,13 +13686,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "3.2-0")
+    (version "3.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "0w7l7k4996jx6iy6idqmasv6xrc7ak4qcp5vfx5yw3pqkyr3pd22"))))
+        (base32 "1qd19j2cs51izy5achcs8p7na4rfcnxapl2djih9m71pnaspwsvr"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -13855,7 +13713,7 @@ call @code{NetMHCIIpan} from R.")
                              r-ggplot2
                              r-dplyr
                              r-colorspace))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/guido-s/netmeta")
     (synopsis "Network Meta-Analysis using Frequentist Methods")
     (description
@@ -13894,13 +13752,13 @@ binary covariate; - subgroup network meta-analysis.")
 (define-public r-netmediate
   (package
     (name "r-netmediate")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmediate" version))
        (sha256
-        (base32 "0fv2ynakjp8phc08sgz03r0kqmqka2ww86x9797dzdzv81438g56"))))
+        (base32 "1mdqvs75ly2vlki4vgfpwk3mzbxsq9hfh5bsjap8nh2wafhpwrr6"))))
     (properties `((upstream-name . "netmediate")))
     (build-system r-build-system)
     (arguments
@@ -14116,74 +13974,6 @@ clones.The model is based on the estimation result from Andrew Roth (2014)
 <doi:10.1038/nmeth.2883>.")
     (license (license:fsdg-compatible "Apache License"))))
 
-(define-public r-netgwas
-  (package
-    (name "r-netgwas")
-    (version "1.14.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netgwas" version))
-       (sha256
-        (base32 "112514b467fmrpzxjb7vmch9f0bmsd4zjya7ilkiarrkn5gl89v1"))))
-    (properties `((upstream-name . "netgwas")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmvtnorm
-                             r-qtl
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-huge
-                             r-glasso))
-    (home-page "https://cran.r-project.org/package=netgwas")
-    (synopsis "Network-Based Genome Wide Association Studies")
-    (description
-     "This package provides a multi-core R package that contains a set of tools based
-on copula graphical models for accomplishing the three interrelated goals in
-genetics and genomics in an unified way: (1) linkage map construction, (2)
-constructing linkage disequilibrium networks, and (3) exploring high-dimensional
-genotype-phenotype network and genotype- phenotype-environment interactions
-networks.  The netgwas package can deal with biparental inbreeding and
-outbreeding species with any ploidy level, namely diploid (2 sets of
-chromosomes), triploid (3 sets of chromosomes), tetraploid (4 sets of
-chromosomes) and so on.  We target on high-dimensional data where number of
-variables p is considerably larger than number of sample sizes (p >> n).  The
-computations is memory-optimized using the sparse matrix output.  The netgwas
-implements the methodological developments in Behrouzi and Wit (2017)
-<doi:10.1111/rssc.12287> and Behrouzi and Wit (2017)
-<doi:10.1093/bioinformatics/bty777>.")
-    (license license:gpl3)))
-
-(define-public r-netgreg
-  (package
-    (name "r-netgreg")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NetGreg" version))
-       (sha256
-        (base32 "1d0w6vqkzrmrngksp9gy49i5kjmc61sakwm1psws2gz14hf18424"))))
-    (properties `((upstream-name . "NetGreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plsgenomics r-huge r-glmnet r-dplyr))
-    (home-page "https://cran.r-project.org/package=NetGreg")
-    (synopsis "Network-Guided Penalized Regression (NetGreg)")
-    (description
-     "This package provides a network-guided penalized regression framework that
-integrates network characteristics from Gaussian graphical models with partial
-penalization, accounting for both network structure (hubs and non-hubs) and
-clinical covariates in high-dimensional omics data, including transcriptomics
-and proteomics.  The full methodological details can be found in our recent
-preprint by Ahn S and Oh EJ (2025) <doi:10.48550/@code{arXiv.2505.22986>}.")
-    (license license:gpl3)))
-
 (define-public r-netexplorer
   (package
     (name "r-netexplorer")
@@ -14200,7 +13990,8 @@ preprint by Ahn S and Oh EJ (2025) <doi:10.48550/@code{arXiv.2505.22986>}.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14705,7 +14496,8 @@ frame.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14731,13 +14523,13 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
 (define-public r-nestedlogit
   (package
     (name "r-nestedlogit")
-    (version "0.3.2")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nestedLogit" version))
        (sha256
-        (base32 "0lyqqxvh85zpvbcq4qp3cywr70312lw4xgas47hzybcrzqz9r63r"))))
+        (base32 "01bszi8my6hlx98mcr0i9l0562z552vryj8x6r0nryb3nmbalkp5"))))
     (properties `((upstream-name . "nestedLogit")))
     (build-system r-build-system)
     (arguments
@@ -15828,44 +15620,6 @@ structure in multi-subject single-cell data.  See He et al. (2021)
 <doi:10.1038/s42003-021-02146-6>.")
     (license license:gpl3)))
 
-(define-public r-neatstats
-  (package
-    (name "r-neatstats")
-    (version "1.13.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neatStats" version))
-       (sha256
-        (base32 "0wd4qa642b3hp4vlfhc1002l6j5ahvvxp3i30c5sw5ynvqz371y8"))))
-    (properties `((upstream-name . "neatStats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-proc
-                             r-mbess
-                             r-logspline
-                             r-ggpubr
-                             r-ggplot2
-                             r-fbasics
-                             r-ez
-                             r-exact
-                             r-data-table
-                             r-car
-                             r-bayestestr
-                             r-bayesfactor))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gasparl/neatstats")
-    (synopsis "Neat and Painless Statistical Reporting")
-    (description
-     "User-friendly, clear and simple statistics, primarily for publication in
-psychological science.  The main functions are wrappers for other packages, but
-there are various additions as well.  Every relevant step from data aggregation
-to reportable printed statistics is covered for basic experimental designs.")
-    (license license:bsd-2)))
-
 (define-public r-neatranges
   (package
     (name "r-neatranges")
@@ -15891,13 +15645,13 @@ to reportable printed statistics is covered for basic experimental designs.")
 (define-public r-neatr
   (package
     (name "r-neatr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neatR" version))
        (sha256
-        (base32 "1c5vciqlw0lm770r8pmsj17zhsdz33r7dzjiphp68dl48r6imzi3"))))
+        (base32 "0hmbfq4hss32rpiqj73xw4nzsl9q9c22bxc7qkh1lsaw9pwphrpd"))))
     (properties `((upstream-name . "neatR")))
     (build-system r-build-system)
     (arguments
@@ -16008,7 +15762,8 @@ outlined in further detail in Rigdon, Baiocchi, and Basu (2018)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -18226,13 +17981,13 @@ technique was published in 2017 <doi:10.1016/j.ymeth.2017.12.001>.")
 (define-public r-nametagger
   (package
     (name "r-nametagger")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nametagger" version))
        (sha256
-        (base32 "14i0l4r0xx8j8g6ygfbkp3rqix167v9m14ians89dg0gj5q7zdds"))))
+        (base32 "167bs9ricw9xz682s4gcjw8q21qdvhc5gbmrsa09fw75ky2w7cv5"))))
     (properties `((upstream-name . "nametagger")))
     (build-system r-build-system)
     (arguments

@@ -1229,7 +1229,8 @@ during the current session.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -2653,13 +2654,13 @@ tidyseurat'.")
 (define-public r-ttscreening
   (package
     (name "r-ttscreening")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ttScreening" version))
        (sha256
-        (base32 "08azvpw54a4snkikq48n40hgxd7hym6yn8qjaglc9hhrs6ghwfrp"))))
+        (base32 "1q6rhibiiz1psa2rnrbf80wdrrxkpcps0pgvrv9ws5ss2133h2np"))))
     (properties `((upstream-name . "ttScreening")))
     (build-system r-build-system)
     (arguments
@@ -2670,7 +2671,8 @@ tidyseurat'.")
                              r-matrixstats
                              r-mass
                              r-limma
-                             r-corpcor))
+                             r-corpcor
+                             r-brglm2))
     (home-page "https://cran.r-project.org/package=ttScreening")
     (synopsis
      "Genome-Wide DNA Methylation Sites Screening by Use of Training and Testing Samples")
@@ -2678,7 +2680,13 @@ tidyseurat'.")
      "This package provides a screening process utilizing training and testing samples
 to filter out uninformative DNA methylation sites.  Surrogate variables (SVs) of
 DNA methylation are included in the filtering process to explain unknown factor
-effects.")
+effects.  This package also provides two screening functions for screening
+high-dimensional predictors when the events are rare.  The firth method is
+called Rare-Screening which employs a repeated random sampling with replacement
+and using linear modeling with Bayes adjustment.  The Second method is called
+Firth-@code{ttScreening} which uses @code{ttScreening} method with additional
+Firth correction term in the maximum likelihood for the logistic regression
+model.  These methods handle the high-dimensionality and low event rates.")
     (license license:artistic2.0)))
 
 (define-public r-tts
@@ -2759,7 +2767,8 @@ plant growth model.  Methods in Ecology and Evolution.  in press.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -2809,13 +2818,13 @@ translators.")
 (define-public r-tteice
   (package
     (name "r-tteice")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tteICE" version))
        (sha256
-        (base32 "1j0pz18nkapx7wdrcvvicrq17wmmw6al3slq26pbpilvqnhfkv9f"))))
+        (base32 "0gkgcfik5if7fjgcplvaiw6s0kszby1g047q5l3h8wjadc51qafg"))))
     (properties `((upstream-name . "tteICE")))
     (build-system r-build-system)
     (arguments
@@ -2827,25 +2836,26 @@ translators.")
                              r-shiny
                              r-psych
                              r-mass
+                             r-lifecycle
                              r-dt
                              r-cmprsk))
     (home-page "https://github.com/mephas/tteICE")
     (synopsis
      "Treatment Effect Estimation for Time-to-Event Data with Intercurrent Events")
     (description
-     "Analyzing treatment effects in clinical trials with time-to-event outcomes is
+     "Analysis of treatment effects in clinical trials with time-to-event outcomes is
 complicated by intercurrent events.  This package implements methods for
 estimating and inferring the cumulative incidence functions for time-to-event
-(TTE) outcomes with intercurrent events (ICEs) under the five strategies
-outlined in the ICH E9 (R1) addendum, see Deng (2025)<doi:10.1002/sim.70091>.
-This package can be used for analyzing data from both randomized controlled
-trials and observational studies.  In general, we have a primary outcome event
-and possibly an intercurrent event.  Two data structures are allowed: competing
-risks, where only the time to the first event is recorded, and semicompeting
-risks, where the times to both the primary outcome event and intercurrent event
-(or censoring) are recorded.  For estimation methods, users can choose
-nonparametric estimation (which does not use covariates) and semiparametrically
-efficient estimation.")
+(TTE) outcomes with intercurrent events (ICE) under the five strategies outlined
+in the ICH E9 (R1) addendum, see Deng (2025) <doi:10.1002/sim.70091>.  This
+package can be used for analyzing data from both randomized controlled trials
+and observational studies.  In general, the data involve a primary outcome event
+and, potentially, an intercurrent event.  Two data structures are allowed:
+competing risks, where only the time to the first event is recorded, and
+semicompeting risks, where the times to both the primary outcome event and
+intercurrent event (or censoring) are recorded.  For estimation methods, users
+can choose nonparametric estimation (which does not use covariates) and
+semiparametrically efficient estimation.")
     (license license:gpl3)))
 
 (define-public r-ttdo
@@ -5230,46 +5240,6 @@ models, traditional time series quantities of interest (short- and long-run
 effects), and dynamic conditional relationships.")
     (license license:gpl2+)))
 
-(define-public r-tseal
-  (package
-    (name "r-tseal")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TSEAL" version))
-       (sha256
-        (base32 "1h0h5m19sp3g8nyj1hd7k4wbgal0ydvfw7f1kn6isfpk031bz5yb"))))
-    (properties `((upstream-name . "TSEAL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wdm
-                             r-waveslim
-                             r-synchronicity
-                             r-statcomp
-                             r-pryr
-                             r-parallelly
-                             r-mass
-                             r-magrittr
-                             r-checkmate
-                             r-caret
-                             r-bigmemory))
-    (home-page "https://github.com/vg-lab/TSEAL")
-    (synopsis "Time Series Analysis Library")
-    (description
-     "The library allows to perform a multivariate time series classification based on
-the use of Discrete Wavelet Transform for feature extraction, a step wise
-discriminant to select the most relevant features and finally, the use of a
-linear or quadratic discriminant for classification.  Note that all these steps
-can be done separately which allows to implement new steps.  Velasco, I.,
-Sipols, A., de Blas, C. S., Pastor, L., & Bayona, S. (2023)
-<doi:10.1186/S12938-023-01079-X>.  Percival, D. B., & Walden, A. T.
-(2000,ISBN:0521640687).  Maharaj, E. A., & Alonso, A. M. (2014)
-<doi:10.1016/j.csda.2013.09.006>.")
-    (license license:artistic2.0)))
-
 (define-public r-tse
   (package
     (name "r-tse")
@@ -7070,35 +7040,6 @@ Jolicoeur (1994).  By passing trimming functions raw data files, the package
 will return trimmed data ready for inferential testing.")
     (license license:gpl3)))
 
-(define-public r-trimmer
-  (package
-    (name "r-trimmer")
-    (version "0.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trimmer" version))
-       (sha256
-        (base32 "0hn5pignj5clg7wb3xd0mh9jqc480wqxxymzaas68lxzi6p5mng9"))))
-    (properties `((upstream-name . "trimmer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pryr r-data-table r-crayon r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=trimmer")
-    (synopsis "Trim an Object")
-    (description
-     "This package provides a lightweight toolkit to reduce the size of a list object.
- The object is minimized by recursively removing elements from the object
-one-by-one.  The process is constrained by a reference function call specified
-by the user, where the target object is given as an argument.  The procedure
-will not allow elements to be removed from the object, that will cause results
-from the function call to diverge from the function call with the original
-object.")
-    (license license:expat)))
-
 (define-public r-trimetstops
   (package
     (name "r-trimetstops")
@@ -8725,13 +8666,13 @@ across the space of a hierarchical tree.")
 (define-public r-treeheatr
   (package
     (name "r-treeheatr")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treeheatr" version))
        (sha256
-        (base32 "0618j5rlq0xik9vl2l8ircnh98wzdzf9bxnfgmiqrpywgmc8r5nk"))))
+        (base32 "1gyi1wjwamkl8v7cx5xrbzj1i4lahkdkac7sgqig37iabsdyq6v4"))))
     (properties `((upstream-name . "treeheatr")))
     (build-system r-build-system)
     (arguments
@@ -8748,7 +8689,7 @@ across the space of a hierarchical tree.")
                              r-dplyr
                              r-cluster))
     (native-inputs (list r-knitr))
-    (home-page "https://trang1618.github.io/treeheatr/index.html")
+    (home-page "https://trangdata.github.io/treeheatr/index.html")
     (synopsis "Heatmap-Integrated Decision Tree Visualizations")
     (description
      "This package creates interpretable decision tree visualizations with the data
@@ -8866,13 +8807,13 @@ dynamics and pathway expression specificity.")
 (define-public r-treediff
   (package
     (name "r-treediff")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treediff" version))
        (sha256
-        (base32 "00yhqbxgz35fnz940zkqr0kylzqb55l1yhilphw1yzks3wmsd4id"))))
+        (base32 "13gdhi1jsjym53c26mv25b5b0nqkf29p4b8xx0a82cjrr2d9hz2d"))))
     (properties `((upstream-name . "treediff")))
     (build-system r-build-system)
     (arguments
@@ -8890,7 +8831,7 @@ dynamics and pathway expression specificity.")
                              r-csaw
                              r-biocgenerics
                              r-adjclust))
-    (home-page "https://forgemia.inra.fr/scales/treediff")
+    (home-page "https://scales.pages-forge.inrae.fr/treediff")
     (synopsis "Testing Differences Between Families of Trees")
     (description
      "Perform test to detect differences in structure between families of trees.  The
@@ -10167,64 +10108,6 @@ performance C++ code to enable rapid processing of large datasets.  A flexible
 methodology is available for codifying these state transitions.")
     (license license:expat)))
 
-(define-public r-transgraph
-  (package
-    (name "r-transgraph")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TransGraph" version))
-       (sha256
-        (base32 "10nhqk9523h620yn9mg5zsz0dfzijxiph7w7pwjx7l8yzlzhr8yq"))))
-    (properties `((upstream-name . "TransGraph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass
-                             r-huge
-                             r-heteroggm
-                             r-glasso
-                             r-evaluationmeasures
-                             r-dcov
-                             r-clime))
-    (home-page "https://cran.r-project.org/package=TransGraph")
-    (synopsis "Transfer Graph Learning")
-    (description
-     "Transfer learning, aiming to use auxiliary domains to help improve learning of
-the target domain of interest when multiple heterogeneous datasets are
-available, has been a hot topic in statistical machine learning.  The recent
-transfer learning methods with statistical guarantees mainly focus on the
-overall parameter transfer for supervised models in the ideal case with the
-informative auxiliary domains with overall similarity.  In contrast, transfer
-learning for unsupervised graph learning is in its infancy and largely follows
-the idea of overall parameter transfer as for supervised learning.  In this
-package, the transfer learning for several complex graphical models is
-implemented, including Tensor Gaussian graphical models, non-Gaussian directed
-acyclic graph (DAG), and Gaussian graphical mixture models.  Notably, this
-package promotes local transfer at node-level and subgroup-level in DAG
-structural learning and Gaussian graphical mixture models, respectively, which
-are more flexible and robust than the existing overall parameter transfer.  As
-by-products, transfer learning for undirected graphical model (precision matrix)
-via D-trace loss, transfer learning for mean vector estimation, and single
-non-Gaussian learning via topological layer method are also included in this
-package.  Moreover, the aggregation of auxiliary information is an important
-issue in transfer learning, and this package provides multiple user-friendly
-aggregation methods, including sample weighting, similarity weighting, and most
-informative selection. (Note: the transfer for tensor GGM has been temporarily
-removed in the current version as its dependent R package Tlasso has been
-archived.  The historical version @code{TransGraph_1.0.0.tar.gz} can be
-downloaded at
-<https://cran.r-project.org/src/contrib/Archive/@code{TransGraph/>}) Reference:
-Ren, M., Zhen Y., and Wang J. (2024) <https://jmlr.org/papers/v25/22-1313.html>
-\"Transfer learning for tensor graphical models\".  Ren, M., He X., and Wang J.
-(2023) <doi:10.48550/@code{arXiv.2310.10239>} \"Structural transfer learning of
-non-Gaussian DAG\".  Zhao, R., He X., and Wang J. (2022)
-<https://jmlr.org/papers/v23/21-1173.html> \"Learning linear non-Gaussian
-directed acyclic graph with diverging number of nodes\".")
-    (license license:gpl2)))
-
 (define-public r-transgfm
   (package
     (name "r-transgfm")
@@ -10966,29 +10849,27 @@ generalization, aggregation, intersection, simulation, and plotting.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "2.2.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traj" version))
        (sha256
-        (base32 "06rc68v5n0wr488l45lq7ifa3xgwsrn3yvyx8469azr5gj5yai41"))))
+        (base32 "019qjx3pb1w4c4651ds3m36awsykyjhfciyammdzdrdk2nj1fkj0"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-psych r-cluster))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-igraph r-fclust r-e1071 r-clustercrit r-cluster))
     (home-page "https://CRAN.R-project.org/package=traj")
-    (synopsis "Clustering of Functional Data Based on Measures of Change")
+    (synopsis "Feature-Based Clustering of Longitudinal Trajectories")
     (description
-     "This package implements a three-step procedure in the spirit of Leffondre et al.
-(2004) to identify clusters of individual longitudinal trajectories.  The
-procedure involves (1) computing a number of \"measures of change\" capturing
-various features of the trajectories; (2) using a Principal Component Analysis
-based dimension reduction algorithm to select a subset of measures and (3) using
-the k-medoids or k-means algorithm to identify clusters of trajectories.")
+     "Identifies clusters of individual longitudinal trajectories.  In the spirit of
+Leffondre et al. (2004), the procedure involves identifying each trajectory to a
+point in the space of measures.  In this context, a measure is a quantity meant
+to capture a certain characteristic feature of the trajectory.  The points in
+the space of measures are then clustered using a version of spectral clustering.")
     (license license:expat)))
 
 (define-public r-traitstrap
@@ -11117,13 +10998,13 @@ on their analyses.  For more details visit
 (define-public r-trainer
   (package
     (name "r-trainer")
-    (version "2.2.10")
+    (version "2.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traineR" version))
        (sha256
-        (base32 "1bpkdbpgzfa6j7xjzz5rkb86f8qrw50mnnbjgg4aldn4j8sx8ba0"))))
+        (base32 "1j4xp6pzpwqm96yh0ji76nx967a1dmizz713y540sir13khq52nb"))))
     (properties `((upstream-name . "traineR")))
     (build-system r-build-system)
     (arguments
@@ -11143,8 +11024,7 @@ on their analyses.  For more details visit
                              r-gbm
                              r-e1071
                              r-dplyr
-                             r-adabag
-                             r-ada))
+                             r-adabag))
     (home-page "https://promidat.website/")
     (synopsis "Predictive (Classification and Regression) Models Homologator")
     (description
@@ -11168,45 +11048,38 @@ Friedman, J. H., Hastie, T., & Tibshirani, R. (2010)
 <doi:10.18637/jss.v033.i01>.")
     (license license:gpl2+)))
 
-(define-public r-trafo
+(define-public r-trafficcar
   (package
-    (name "r-trafo")
-    (version "1.0.1")
+    (name "r-trafficcar")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "trafo" version))
+       (uri (cran-uri "trafficCAR" version))
        (sha256
-        (base32 "0gq3snjpkw0ncny7pkfi686qkgdhd8id73jxjk3chhqf5mzrrsbc"))))
-    (properties `((upstream-name . "trafo")))
+        (base32 "1lna79vd1adr2n32w27qrz6bgl6l2wyy8xsh47xcdcbl20vnka2f"))))
+    (properties `((upstream-name . "trafficCAR")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-pryr r-moments r-lmtest r-fnn))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=trafo")
-    (synopsis "Estimation, Comparison and Selection of Transformations")
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-sf
+                             r-rlang
+                             r-posterior
+                             r-matrix
+                             r-igraph
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=trafficCAR")
+    (synopsis "Bayesian CAR Models for Road-Segment Traffic")
     (description
-     "Estimation, selection and comparison of several families of transformations.
-The families of transformations included in the package are the following:
-Bickel-Doksum (Bickel and Doksum 1981 <doi:10.2307/2287831>), Box-Cox, Dual
-(Yang 2006 <doi:10.1016/j.econlet.2006.01.011>), Glog (Durbin et al.  2002
-<doi:10.1093/bioinformatics/18.suppl_1.S105>), gpower (Kelmansky et al.  2013
-<doi:10.1515/sagmb-2012-0030>), Log, Log-shift opt (Feng et al.  2016
-<doi:10.1002/sta4.104>), Manly, modulus (John and Draper 1980
-<doi:10.2307/2986305>), Neglog (Whittaker et al.  2005
-<doi:10.1111/j.1467-9876.2005.00520.x>), Reciprocal and Yeo-Johnson.  The
-package simplifies to compare linear models with untransformed and transformed
-dependent variable as well as linear models where the dependent variable is
-transformed with different transformations.  Furthermore, the package employs
-maximum likelihood approaches, moments optimization and divergence minimization
-to estimate the optimal transformation parameter.")
-    (license license:gpl2)))
+     "This package provides tools for simulating and modeling traffic flow on road
+networks using spatial conditional autoregressive (CAR) models.  The package
+represents road systems as graphs derived from @code{OpenStreetMap} data
+<https://www.openstreetmap.org/> and supports network-based spatial dependence,
+basic preprocessing, and visualization for spatial traffic analysis.")
+    (license license:expat)))
 
 (define-public r-trafficbde
   (package
@@ -11499,7 +11372,8 @@ studying convergence behavior.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -12499,7 +12373,8 @@ Robert (2023) \"Tissue-adjusted pathway analysis of cancer (TPAC)\"
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16487,7 +16362,8 @@ unmeasured confounder may tip our result to insignificance.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -17192,13 +17068,13 @@ arbitrary distributions with piecewise twice differentiable densities.")
 (define-public r-tind
   (package
     (name "r-tind")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tind" version))
        (sha256
-        (base32 "10481kk0w1qrwiz6648y43v49jglbmylvya0hk86p81fg9i930cc"))))
+        (base32 "06q70hn7bxj14q8i3k5l9c38hpmnpsxbmr8pv5y212r5wx3sygvv"))))
     (properties `((upstream-name . "tind")))
     (build-system r-build-system)
     (arguments
@@ -17369,7 +17245,8 @@ with our user-friendly tool.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -20160,13 +20037,13 @@ is read until explicitly requested, as a data frame or list of arrays via
 (define-public r-tidyna
   (package
     (name "r-tidyna")
-    (version "0.1.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyna" version))
        (sha256
-        (base32 "1rsjavppmpr0kf1ahz0dnc2h6h7wkbiad53lzddbkn14058dvj7x"))))
+        (base32 "00xzb584w9albcaflkhmvchn4r2pv3yqspnzgy3iv3yzkfiwslxz"))))
     (properties `((upstream-name . "tidyna")))
     (build-system r-build-system)
     (arguments
@@ -21428,36 +21305,6 @@ mean pairwise percent agreement, Krippendorff's Alpha (Krippendorff 2004, ISBN:
 Fleiss 1971 <doi: 10.1037/h0031619>).")
     (license license:gpl3)))
 
-(define-public r-tidycode
-  (package
-    (name "r-tidycode")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidycode" version))
-       (sha256
-        (base32 "0ahjhn1ar93xnd1snxnivdl43d1b6ica0pc30rgh8jpha87zbsay"))))
-    (properties `((upstream-name . "tidycode")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-purrr
-                             r-pryr
-                             r-matahari
-                             r-glue))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/LucyMcGowan/tidycode")
-    (synopsis "Analyze Lines of R Code the Tidy Way")
-    (description
-     "Analyze lines of R code using tidy principles.  This allows you to input lines
-of R code and output a data frame with one row per function included.
-Additionally, it facilitates code classification via included lexicons.")
-    (license license:expat)))
-
 (define-public r-tidycmprsk
   (package
     (name "r-tidycmprsk")
@@ -22590,7 +22437,8 @@ Gerber, Green, Kaplan, and Kern (2010).")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -22705,7 +22553,8 @@ the input data and the estimated heights for any missing values.  Ogana et al.
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -26834,13 +26683,13 @@ for the test of independence.")
 (define-public r-term
   (package
     (name "r-term")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "term" version))
        (sha256
-        (base32 "1k0f99hsp7yg4ff63rq79ynchssn6y2zxab2lhisr7ymhjqyd9mb"))))
+        (base32 "1f9vspbd4av7nm4qrhdzqvv4b8kw5c5wlrw2akp8sqcd40rc4na7"))))
     (properties `((upstream-name . "term")))
     (build-system r-build-system)
     (arguments
@@ -26986,13 +26835,13 @@ de-escalated only if an unacceptable level of toxicity is experienced.")
 (define-public r-tepr
   (package
     (name "r-tepr")
-    (version "1.1.13")
+    (version "1.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tepr" version))
        (sha256
-        (base32 "0vc054csv933pgfcz14dxgh13rwjqsfhpqajq2h60dpwwaiacdyp"))))
+        (base32 "0j08bab5qylifbzvn023dsva9k3lfmcpns4vj0hm1qckqhh4l4kl"))))
     (properties `((upstream-name . "tepr")))
     (build-system r-build-system)
     (arguments
@@ -32946,13 +32795,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-tabnet
   (package
     (name "r-tabnet")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabnet" version))
        (sha256
-        (base32 "08nz6crxw95fs1dhjb5w2gy38in0lsyd34z7p9vx1xfwm0xjla9s"))))
+        (base32 "1ds4aybbgk0g0y6dlswp5flnziga7mzq0xmmyk5b2xn5i5haf2i1"))))
     (properties `((upstream-name . "tabnet")))
     (build-system r-build-system)
     (arguments
@@ -33183,7 +33032,8 @@ options available in the package.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -33209,6 +33059,43 @@ CSS3'.  The underlying Tabler (<https://github.com/tabler/tabler>) and Tabler
 Icons (<https://github.com/tabler/tabler-icons>) were pre-built from source to
 eliminate the need for Node.js and NPM on package installation.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-tableparser
+  (package
+    (name "r-tableparser")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tableParser" version))
+       (sha256
+        (base32 "1warh12lsr2a22qaal3f6l1rrh5ym0wvh47i0vb02vzy7id8ni5j"))))
+    (properties `((upstream-name . "tableParser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tabulapdf r-jatsdecoder))
+    (home-page "https://github.com/ingmarboeschen/tableParser")
+    (synopsis
+     "Parse Tabled Content to Text Vector and Extract Statistical Standard Results")
+    (description
+     "Features include the ability to extract tabled content from NISO-JATS-coded XML,
+any native HTML or HML file, DOCX, and PDF documents, and then collapse it into
+a text format that is readable by humans by mimicking the actions of a screen
+reader.  As tables within PDF documents are extracted with the tabulapdf
+package, and the table captions and footnotes cannot be extracted, the results
+on tables within PDF documents have to be considered less precise.  The function
+@code{table2matrix()} returns a list of the tables within a document as
+character matrices. @code{table2text()} collapses the matrix content into a list
+of character strings by imitating the behavior of a screen reader.  The textual
+representation of characters and numbers can be unified with
+@code{unifyMatrix()} before parsing.  The function @code{table2stats()} extracts
+the tabled statistical test results from the collapsed text with the function
+@code{standardStats()} from the JATSdecoder package and, if activated, checks
+the reported and coded p-values for consistency.  Due to the great variability
+and potential complexity of table structures, parsing accuracy may vary.")
+    (license license:gpl3)))
 
 (define-public r-tablemonster
   (package

@@ -673,13 +673,13 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
 (define-public r-overlapping
   (package
     (name "r-overlapping")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overlapping" version))
        (sha256
-        (base32 "0dy96ija3lkywv3v0mzmc2lwsjz8hrqbzzzcvx1sk34mhabp4r8r"))))
+        (base32 "0k0q2zcq47w2wlj6r9lir63qqqp06b98aahd3h4zx79zqjai9hxp"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
     (arguments
@@ -1037,6 +1037,40 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
 <doi:10.1016/j.cosrev.2020.100306>, and Xiaogang Su, Chih-Ling Tsai (2011)
 <doi:10.1002/widm.19>.")
     (license license:expat)))
+
+(define-public r-outliers-ts-oga
+  (package
+    (name "r-outliers-ts-oga")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outliers.ts.oga" version))
+       (sha256
+        (base32 "13y1smbq3f48kg69n0f75wh32km124vci1hzavbq8x83wga3frg9"))))
+    (properties `((upstream-name . "outliers.ts.oga")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robust
+                             r-parallelly
+                             r-gsarima
+                             r-future-apply
+                             r-future
+                             r-forecast
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=outliers.ts.oga")
+    (synopsis "Efficient Outlier Detection for Large Time Series Databases")
+    (description
+     "Programs for detecting and cleaning outliers in single time series and in time
+series from homogeneous and heterogeneous databases using an Orthogonal Greedy
+Algorithm (OGA) for saturated linear regression models.  The programs implement
+the procedures presented in the paper entitled \"Efficient Outlier Detection for
+Large Time Series Databases\" by Pedro Galeano, Daniel PeÃ±a and Ruey S. Tsay
+(2026), working paper, Universidad Carlos III de Madrid.  Version 1.1.2 fixes
+one bug.")
+    (license license:gpl3)))
 
 (define-public r-outliermbc
   (package
@@ -5836,13 +5870,13 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
 (define-public r-optimall
   (package
     (name "r-optimall")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimall" version))
        (sha256
-        (base32 "1afwykc5anwj50djw8fh0qcmkblq1dbardys40y6nynib482n1m7"))))
+        (base32 "09hskpzd83hb7cxq8gl582dnfh33wgihwqin58jy5r2f5c035j4h"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (arguments
@@ -5924,13 +5958,13 @@ Numerical and graphical output for all methods is easily obtained.")
 (define-public r-optimalbinningwoe
   (package
     (name "r-optimalbinningwoe")
-    (version "1.0.3")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptimalBinningWoE" version))
        (sha256
-        (base32 "00l0dc2h0bcl67psx9aaacrkf53bvx5xk89hgsxljixvmqmdvkl5"))))
+        (base32 "13x9bfr1jwx7i1zh6kpahk8bkcagahvrcsx7rrmxwhli7lff2gsm"))))
     (properties `((upstream-name . "OptimalBinningWoE")))
     (build-system r-build-system)
     (arguments
@@ -8851,13 +8885,13 @@ interest.")
 (define-public r-ontologysimilarity
   (package
     (name "r-ontologysimilarity")
-    (version "2.7")
+    (version "2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ontologySimilarity" version))
        (sha256
-        (base32 "03fga6xqvxpa3hwf5pb0dzyz4scz2szvbgm8bsj1wl35gl477cjp"))))
+        (base32 "10501k6rcv15wgg30i6x7yc92hw8s620a09p5c6msfjv3yvygv7q"))))
     (properties `((upstream-name . "ontologySimilarity")))
     (build-system r-build-system)
     (arguments
@@ -10107,38 +10141,6 @@ periods into two daily adherence values -- Dose Taken and Correct Dose Taken.")
 the resulting object to disk.")
     (license license:expat)))
 
-(define-public r-onc-api
-  (package
-    (name "r-onc-api")
-    (version "2.0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "onc.api" version))
-       (sha256
-        (base32 "10scbhg6aniqzrbkblhfhz9ni710xzppbzfrr4wrhsy1z5y2nfwc"))))
-    (properties `((upstream-name . "onc.api")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tictoc
-                             r-testthat
-                             r-stringi
-                             r-lubridate
-                             r-humanize
-                             r-httr
-                             r-crayon
-                             r-anytime))
-    (home-page "https://wiki.oceannetworks.ca/display/O2A/Oceans+2.0+API+Home")
-    (synopsis "Oceans 2.0 API Client Library")
-    (description
-     "Allows users to discover and retrieve Ocean Networks Canada's oceanographic data
-in raw, text, image, audio, video or any other format available.  Provides a
-class that wraps web service calls and business logic so that users can download
-data with a single line of code.")
-    (license license:expat)))
-
 (define-public r-onbrand
   (package
     (name "r-onbrand")
@@ -10594,13 +10596,13 @@ with automatic pagination and rate limiting.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "1msimg51jfgvzf9i22v0xi1s174cy694vz3i62r6iz4yja4bn196"))))
+        (base32 "1qvq9c2idrqs1x2k6ww3ykm2zc076dzrm434lvf7r28bwz0l4g8r"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments
@@ -11459,13 +11461,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "4.4.0")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "1qrgxqp5q62d9ddi7c0c8280chb888r3cfpm4253g30sn2i5kcsw"))))
+        (base32 "1b70v3l35yab727ql697w4rjpm9rxi0bl959v29lh02pm3ddjpxk"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments
@@ -14328,13 +14330,13 @@ combinations of input variables.")
 (define-public r-oblicubes
   (package
     (name "r-oblicubes")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oblicubes" version))
        (sha256
-        (base32 "15fig4s6zi6g4ldbvbkwdjcm5j86gis9l5999ba91mqc1x89jsyz"))))
+        (base32 "0rp7y0jrbj2sgzdf325nqqknyyf3jz3j9lpjwam8znrmrzmgvh7v"))))
     (properties `((upstream-name . "oblicubes")))
     (build-system r-build-system)
     (arguments
@@ -14457,13 +14459,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "4.0.0")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "1iaxxfl9xjf7pmpa3lj7bcmlglg1d6fzrqzdjyz4qshvy9zw2a34"))))
+        (base32 "07r6irm0rikgn4cdq56mm4ad7pqqczzjz1d97bv3g06frfl34zk4"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (arguments

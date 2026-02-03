@@ -3382,13 +3382,13 @@ Chapman and Hall/CRC Press 2009.")
 (define-public r-multvardiv
   (package
     (name "r-multvardiv")
-    (version "1.0.11")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multvardiv" version))
        (sha256
-        (base32 "0zrap2ma9lfz3s1ahfzpx9fz0qnc50ia9gmcpaipyrg7m7k8s3dc"))))
+        (base32 "1qz2bkdslcx0p148mkb2bkd2as878sddm0r7a7rjknajr86szk1c"))))
     (properties `((upstream-name . "multvardiv")))
     (build-system r-build-system)
     (arguments
@@ -3403,7 +3403,8 @@ distribution, Multivariate t distribution.  Distance between two distributions
 (see N. Bouhlel and A. Dziri (2019): <doi:10.1109/LSP.2019.2915000>, N. Bouhlel
 and D. Rousseau (2022): <doi:10.3390/e24060838>, N. Bouhlel and D. Rousseau
 (2023): <doi:10.1109/LSP.2023.3324594>).  Manipulation of these multivariate
-probability distributions.")
+probability distributions.  This package replaces mggd', mcauchyd and
+mstudentd'.")
     (license license:gpl3+)))
 
 (define-public r-multsurvtests
@@ -6600,13 +6601,13 @@ many repositories with a single command.")
 (define-public r-multideggs
   (package
     (name "r-multideggs")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiDEGGs" version))
        (sha256
-        (base32 "0ih29366jmzcj555nr2d4krrx2958whmghw1nx6pza6rlhsmh1yb"))))
+        (base32 "1sppsl57mkad1bgxjqb1s5i626fwpzk5d58s2mg7kbqxdr8v8jdm"))))
     (properties `((upstream-name . "multiDEGGs")))
     (build-system r-build-system)
     (arguments
@@ -7813,7 +7814,8 @@ explore or document a data set using a tree structure.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14237,6 +14239,41 @@ and noise injection.  Stability measures for the estimate of clustering
 solutions and statistical tests to assess their significance are provided.")
     (license license:gpl2+)))
 
+(define-public r-mosalloc
+  (package
+    (name "r-mosalloc")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MOSAlloc" version))
+       (sha256
+        (base32 "1f9fw5r3zrl2a8psx3ybabzwn3qpv0vb54dix328aj86f7vvh5zm"))))
+    (properties `((upstream-name . "MOSAlloc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-ecosolver))
+    (home-page "https://cran.r-project.org/package=MOSAlloc")
+    (synopsis "Constraint Multiobjective Sample Allocation")
+    (description
+     "This package provides a framework for multipurpose optimal resource allocation
+in survey sampling, extending the classical optimal allocation principles
+introduced by Tschuprow (1923) and Neyman (1934) to multidomain and multivariate
+allocation problems.  The primary method @code{mosalloc()} allows for the
+consideration of precision and cost constraints at the subpopulation level while
+minimizing either a vector of sampling errors or survey costs across a broad
+range of optimal sample allocation problems.  The approach supports both single-
+and multistage designs.  For single-stage stratified random sampling, the
+@code{mosallocSTRS()} function offers a user- friendly interface.  Sensitivity
+analysis is supported through the problem's dual variables, which are naturally
+obtained via the internal use of the Embedded Conic Solver from the
+ECO@code{SolveR} package.  See Willems (2025,
+<doi:10.25353/ubtr-9200-484c-5c89>) for a detailed description of the theory
+behind MOSAlloc'.")
+    (license license:gpl3+)))
+
 (define-public r-mosaiccalc
   (package
     (name "r-mosaiccalc")
@@ -15296,13 +15333,13 @@ deviation, M. Binois, D. Ginsbourger, O. Roustant (2015)
 (define-public r-montecarlosem
   (package
     (name "r-montecarlosem")
-    (version "0.0.8")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MonteCarloSEM" version))
        (sha256
-        (base32 "0l9c6a8yxjd2n1fvsswx3csgz18g7d33ybbmpxlx6csl5f299ljd"))))
+        (base32 "0xms1frwbkl7k352gsih1is3lr6m1k4bz7dzqlqkj0mf14q7gaqk"))))
     (properties `((upstream-name . "MonteCarloSEM")))
     (build-system r-build-system)
     (arguments
@@ -15310,18 +15347,18 @@ deviation, M. Binois, D. Ginsbourger, O. Roustant (2015)
       #:tests? #f))
     (propagated-inputs (list r-matrix r-lavaan))
     (home-page "https://cran.r-project.org/package=MonteCarloSEM")
-    (synopsis "Monte Carlo Data Simulation Package")
+    (synopsis "Monte Carlo Simulation for Structural Equation Modeling")
     (description
-     "Monte Carlo simulation allows testing different conditions given to the correct
-structural equation models.  This package runs Monte Carlo simulations under
-different conditions (such as sample size or normality of data).  Within the
-package data sets can be simulated and run based on the given model.  First,
-continuous and normal data sets are generated based on the given model.  Later
-Fleishman's power method (1978) <DOI:10.1007/BF02293811> is used to add
-non-normality if exists.  When data generation is completed (or when generated
-data sets are given) model test can also be run.  Please cite as \"OrÃ§an, F.
-(2021). @code{MonteCarloSEM}: An R Package to Simulate Data for SEM.
-International Journal of Assessment Tools in Education, 8 (3), 704-713.\".")
+     "This package provides tools to conduct Monte Carlo simulations under different
+conditions (e.g., varying sample size, data normality) for structural equation
+models (SEMs).  Data can be simulated based on user-defined factor loadings and
+correlations, with optional non-normality added via Fleishman's power method
+(1978) <doi:10.1007/BF02293811>.  Once generated, models can be estimated using
+lavaan'.  This package facilitates testing model performance across multiple
+simulation scenarios.  When data generation is completed (or when generated data
+sets are given) model tests can also be run.  Please cite as \"OrÃ§an, F. (2021).
+@code{MonteCarloSEM} An R Package to Simulate Data for SEM. International
+Journal of Assessment Tools in Education, 8 (3), 704-713.\".")
     (license license:gpl3)))
 
 (define-public r-montecarlo
@@ -16154,7 +16191,8 @@ adapted for idiomatic use in R.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -17756,13 +17794,13 @@ stability.")
 (define-public r-modeltime
   (package
     (name "r-modeltime")
-    (version "1.3.3")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltime" version))
        (sha256
-        (base32 "0gcr4pdk6f8swy656km6zm4dhzns50v78kzh4glwl5hvbk32hx5s"))))
+        (base32 "1ymk5gpk31z4fmwbyq45r75l48yyv9jc4x2k6bfnib6v633zgzvp"))))
     (properties `((upstream-name . "modeltime")))
     (build-system r-build-system)
     (arguments
@@ -17889,7 +17927,8 @@ Details can be found in Arel-Bundock (2022) <doi:10.18637/jss.v103.i01>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -19310,6 +19349,39 @@ Public Release; Distribution Unlimited.")
     (license (list (license:fsdg-compatible "FreeBSD")
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-mmtdiff
+  (package
+    (name "r-mmtdiff")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mmtdiff" version))
+       (sha256
+        (base32 "1px3s12g0hhw5nb1wcly7cly3518ybpgmm9v293zx8rvr45cl66d"))))
+    (properties `((upstream-name . "mmtdiff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mmtdiff")
+    (synopsis "Moment-Matching Approximation for t-Distribution Differences")
+    (description
+     "This package implements the moment-matching approximation for differences of
+non-standardized t-distributed random variables in both univariate and
+multivariate settings.  The package provides density, distribution function,
+quantile function, and random generation for the approximated distributions of
+t-differences.  The methodology establishes the univariate approximated
+distributions through the systematic matching of the first, second, and fourth
+moments, and extends it to multivariate cases, considering both scenarios of
+independent components and the more general multivariate t-distributions with
+arbitrary dependence structures.  Methods build on the classical moment-matching
+approximation method (e.g., Casella and Berger (2024)
+<doi:10.1201/9781003456285>).")
+    (license license:expat)))
+
 (define-public r-mmstat4
   (package
     (name "r-mmstat4")
@@ -20520,13 +20592,13 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
 (define-public r-mmap
   (package
     (name "r-mmap")
-    (version "0.6-23")
+    (version "0.6-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmap" version))
        (sha256
-        (base32 "1j520ipwjlfjiw1pq1crmf90agyf1ndv9y62cmc0figw6qwbldrk"))))
+        (base32 "1433p03nxjni5m3jir0hn2i541k4jhsjhfd5lskp7lhkdg0byccv"))))
     (properties `((upstream-name . "mmap")))
     (build-system r-build-system)
     (arguments
@@ -21377,13 +21449,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "1jyjz7ra2snirc91dyn0168j5s8pbang93lpbd01h8k74lcnd4sd"))))
+        (base32 "1d4wrfsx6bi713c4biiwl2z8mz3ilz4xn2jnls3z97r0w7zyr625"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (arguments
@@ -21622,13 +21694,13 @@ predictions on a test set.")
 (define-public r-mlr3oml
   (package
     (name "r-mlr3oml")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3oml" version))
        (sha256
-        (base32 "1xg49nqidcb3igmg0wkhjkgag2yprdcgpbvr9s0kjsnh22miqylk"))))
+        (base32 "1h1wsihq8cwaa7asxa3d0ilx35lvsdgcyb9a1i09c9hv45yc1vhk"))))
     (properties `((upstream-name . "mlr3oml")))
     (build-system r-build-system)
     (arguments
@@ -28377,7 +28449,8 @@ information on Citrus, please see: Bruggner et al. (2014)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -30265,7 +30338,8 @@ Proportional Overlap.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -30499,13 +30573,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.16.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "0rd90y4khh0w55c8b81sd9667lf2jv9qpa4nwwz8nd9q5wcy5kmz"))))
+        (base32 "1zgbi757z0k0wp38sfv69w93p75cbcms2xglakfnpa7frrqknjj5"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -35118,6 +35192,37 @@ methods).  A vignette is provided to explain how to perform a meta-analysis from
 two independent RNA-seq experiments.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-metarep
+  (package
+    (name "r-metarep")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metarep" version))
+       (sha256
+        (base32 "0p3nsrr3snzyl7ippw896lq16iqb6dds1wnjf60bh9hf1df1sd0j"))))
+    (properties `((upstream-name . "metarep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-meta))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/IJaljuli/metarep")
+    (synopsis "Replicability-Analysis Tools for Meta-Analysis")
+    (description
+     "User-friendly package for reporting replicability-analysis methods, affixed to
+meta-analyses summary.  The replicability-analysis output provides an assessment
+of the investigated intervention, where it offers quantification of effect
+replicability and assessment of the consistency of findings. -
+Replicability-analysis for fixed-effects and random-effect meta analysis: -
+r(u)-value; - lower bounds on the number of studies with replicated positive
+and\\or negative effect; - Allows detecting inconsistency of signals; - forest
+plots with the summary of replicability analysis results; - Allows
+Replicability-analysis with or without the common-effect assumption.")
+    (license license:gpl2+)))
+
 (define-public r-metarange
   (package
     (name "r-metarange")
@@ -36723,13 +36828,13 @@ automatically calculate summary statistics for users from box plots, bar plots
 (define-public r-metacycle
   (package
     (name "r-metacycle")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaCycle" version))
        (sha256
-        (base32 "1lh1msrcz70p5jixz5j83pqa3cid21y7m1zvlk872k16awmif00k"))))
+        (base32 "00v90xlr2pgdljb4yqj3rik6qdfpaa55j4sbhjcdysmvhggsw2n5"))))
     (properties `((upstream-name . "MetaCycle")))
     (build-system r-build-system)
     (arguments
@@ -37470,7 +37575,8 @@ framework, though can be run locally and with the user's own data.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -38008,7 +38114,8 @@ being the number of trees to aggregate.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -41351,13 +41458,13 @@ abstract syntax trees as well as translating and displaying the documents.")
 (define-public r-md2sample
   (package
     (name "r-md2sample")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MD2sample" version))
        (sha256
-        (base32 "12zd4ywxpmmdk5y7qbik3qqiyihxvcdz5s410xzw2dnqpxk936sm"))))
+        (base32 "111lxxskqyllf0iz5nbn2qy5qvn2qviz9g9j6vf9q5wh551az1il"))))
     (properties `((upstream-name . "MD2sample")))
     (build-system r-build-system)
     (arguments
@@ -45423,13 +45530,13 @@ A., Zuraw, K. (in press)
 (define-public r-maxeff
   (package
     (name "r-maxeff")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maxEff" version))
        (sha256
-        (base32 "13q0dhgghzq718d5x75rzr8v5m42zfm5wah4qrnshqvvb4cyafi9"))))
+        (base32 "0n1lrm3mpfz0vnjg9sdmd2ngjivvriggpvx9ckylb23rsg2l5d7y"))))
     (properties `((upstream-name . "maxEff")))
     (build-system r-build-system)
     (arguments
@@ -45442,7 +45549,7 @@ A., Zuraw, K. (in press)
                              r-doparallel
                              r-caret))
     (native-inputs (list r-quarto))
-    (home-page "https://tingtingzhan.quarto.pub/groupedhyperframe/maxEff.html")
+    (home-page "https://github.com/tingtingzhan/maxEff")
     (synopsis "Additional Predictor with Maximum Effect Size")
     (description
      "This package provides methods of selecting one from many numeric predictors for
@@ -45757,13 +45864,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.13")
+    (version "0.6.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "13czgchnqrvwnc5dz6lzqmlrm232y17in97k2f9l2ill9p8pj7zx"))))
+        (base32 "0cq318mlmi0lnz8wf6vbqjnqqwdr492l64wwjd21sf8jh0w3jgma"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (arguments
@@ -47337,13 +47444,13 @@ estimation.")
 (define-public r-massprops
   (package
     (name "r-massprops")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "massProps" version))
        (sha256
-        (base32 "13pvpi9ifbmb1m52mfyk41jdmwy8csf9rbs5i6bl05j6sv53cjw5"))))
+        (base32 "1vigl56kczf53hpvaj4s41v7ry272mdw90ixqramdk03mqfs1j5z"))))
     (properties `((upstream-name . "massProps")))
     (build-system r-build-system)
     (arguments
@@ -48290,13 +48397,13 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 (define-public r-markovchain
   (package
     (name "r-markovchain")
-    (version "0.10.0")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markovchain" version))
        (sha256
-        (base32 "0lrvyd9m2i3bva6m7r2x905jrjkxd9xsaqin2v2w55a7ndr4zm7v"))))
+        (base32 "00d7rm77hz9crm6d659apsgs46wbgkxa1xq03p1rajaxl21r91yr"))))
     (properties `((upstream-name . "markovchain")))
     (build-system r-build-system)
     (arguments
@@ -49650,13 +49757,13 @@ images or html, interactive maps.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "03ijxgfvhrbcgil7hyfzkf6n50ajn1wrlcg2jrkiw86k97nn0lav"))))
+        (base32 "021f1yzvk7dl847a8prwlpzm06xyizcynmjbrc4ld83plxd5y1zx"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
@@ -49665,8 +49772,10 @@ images or html, interactive maps.")
     (propagated-inputs (list r-webshot2
                              r-viridislite
                              r-rlang
+                             r-ppclust
                              r-networkd3
                              r-jsonlite
+                             r-inaparc
                              r-igraph
                              r-htmlwidgets
                              r-ggplot2
@@ -49683,13 +49792,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "1bg62yap2xgwdjw0l0zv3ackmnwglpajkz1mbsr5wqcg870y9p20"))))
+        (base32 "1931pmhh703zf7c7awn99kmjjc8bnili18skjiq81sjg8ji229qa"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (arguments
@@ -49697,7 +49806,8 @@ each level set.  3.  Generate a complex from the clustering results.")
       #:tests? #f))
     (propagated-inputs (list r-fastcluster))
     (home-page "https://github.com/Uiowa-Applied-Topology/mappeR")
-    (synopsis "Construct and Visualize TDA Mapper Graphs")
+    (synopsis
+     "Construct Mapper Graphs for Topological and Exploratory Data Analysis")
     (description
      "Topological data analysis (TDA) is a method of data analysis that uses
 techniques from topology to analyze high-dimensional data.  Here we implement
@@ -49991,7 +50101,8 @@ samples.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50153,7 +50264,8 @@ data.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50358,13 +50470,13 @@ in R; and Mapbox Tiling Service and tippecanoe for generating map tiles.  See
 (define-public r-mapbayr
   (package
     (name "r-mapbayr")
-    (version "0.10.1")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapbayr" version))
        (sha256
-        (base32 "1kbrg30wyplkvrzdxmr8ch4na5z8qxgn3dbs9b6nsfp0arf3px9r"))))
+        (base32 "0y7rjfnd6vqsjnvb9qcnggrf6f6w99z1zz0q8xnqym1mwiylzrk3"))))
     (properties `((upstream-name . "mapbayr")))
     (build-system r-build-system)
     (arguments
@@ -50899,13 +51011,13 @@ ensembles of datasets on global governance called datacubes.")
 (define-public r-manureshed
   (package
     (name "r-manureshed")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manureshed" version))
        (sha256
-        (base32 "1c1n3f4prigbi46x9sl8azr52vx89fjrg228vk1rxiig8qq1hj9h"))))
+        (base32 "06ckxn5cvws7n6j82df7xwdfhgnlr72zcsz6v0ak5gr73ka8bm0w"))))
     (properties `((upstream-name . "manureshed")))
     (build-system r-build-system)
     (arguments
@@ -51288,13 +51400,13 @@ MÃ¼ller (2021) <doi:10.1111/biom.13385>.")
 (define-public r-manifestor
   (package
     (name "r-manifestor")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manifestoR" version))
        (sha256
-        (base32 "1i6vadlmncp84jnhfnf7nf6qxwkl4qlb0xvxf2ir8ffxby4v0xq0"))))
+        (base32 "0bkr6k20xi4zq9vshv84k43ah2sagj76y9hk33rcphrs07pap2wh"))))
     (properties `((upstream-name . "manifestoR")))
     (build-system r-build-system)
     (arguments
@@ -53093,13 +53205,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.7.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "007wxd0fz4ql13zr779ibps01gm848f681ic85yw0x3c5sbmmx0j"))))
+        (base32 "0hhcmn1q2n69wm133niav4f9765g1d0k69wnmiv13m76mbrivw19"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments
@@ -53909,13 +54021,13 @@ and spatial data on various man-made and natural structures.")
 (define-public r-machineshop
   (package
     (name "r-machineshop")
-    (version "3.9.1")
+    (version "3.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MachineShop" version))
        (sha256
-        (base32 "01ch1kwgfvk7wb14mg71lmwz2vqilnf82q2qpf75fh3sl0jgzr8x"))))
+        (base32 "1dpf0v5n0xaz1szhpa6ccadnf1il8sjqw0aprxz6j50r2qik94rp"))))
     (properties `((upstream-name . "MachineShop")))
     (build-system r-build-system)
     (arguments

@@ -853,13 +853,13 @@ GWAS Catalog data by accessing the REST API
 (define-public r-gwasinspector
   (package
     (name "r-gwasinspector")
-    (version "1.7.3")
+    (version "1.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWASinspector" version))
        (sha256
-        (base32 "04xfp1njikvcfmcagb4lgpv7aqj6rj0j58gxkny4cy3b1pd3wswd"))))
+        (base32 "1dai1572xrmmfrzdhayn5m7hsk3rb5s0ck0p59ywm5zmflmykkyi"))))
     (properties `((upstream-name . "GWASinspector")))
     (build-system r-build-system)
     (arguments
@@ -869,16 +869,16 @@ GWAS Catalog data by accessing the REST API
                              r-rmarkdown
                              r-r-utils
                              r-openxlsx
+                             r-logger
                              r-knitr
                              r-kableextra
                              r-ini
                              r-hash
                              r-gridextra
                              r-ggplot2
-                             r-futile-logger
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://GWASinspector.com")
+    (home-page "https://cran.r-project.org/package=GWASinspector")
     (synopsis "Comprehensive and Easy to Use Quality Control of GWAS Results")
     (description
      "When evaluating the results of a genome-wide association study (GWAS), it is
@@ -2221,13 +2221,13 @@ objects.")
 (define-public r-gtfs2gps
   (package
     (name "r-gtfs2gps")
-    (version "2.1-3")
+    (version "2.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfs2gps" version))
        (sha256
-        (base32 "1bymdnlslpi667hdnz11qz4sgx5lbr6q8pvclr7ifbd17ix6ca03"))))
+        (base32 "0i37022azkz4lq01j9jhvqw9b3ynm9pdpqmdk0ndbzi254324pd9"))))
     (properties `((upstream-name . "gtfs2gps")))
     (build-system r-build-system)
     (arguments
@@ -2239,6 +2239,7 @@ objects.")
                              r-sf
                              r-rcpp
                              r-progressr
+                             r-parallelly
                              r-lwgeom
                              r-gtfstools
                              r-future
@@ -4350,52 +4351,6 @@ active set, and warm-start.  Different tuning regularization parameter methods
 are provided.")
     (license license:gpl2+)))
 
-(define-public r-growthtrendr
-  (package
-    (name "r-growthtrendr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "growthTrendR" version))
-       (sha256
-        (base32 "1hb6650vcb5fjwb53vyb1765cvxybqqwqgyx9akq3l91m97hwfl6"))))
-    (properties `((upstream-name . "growthTrendR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-stringr
-                             r-raster
-                             r-pryr
-                             r-patchwork
-                             r-nlme
-                             r-mgcv
-                             r-htmltools
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-dplyr
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=growthTrendR")
-    (synopsis "Toolkit for Data Processing, Quality, and Statistical Models")
-    (description
-     "Offers tools for data formatting, anomaly detection, and classification of
-tree-ring data using spatial comparisons and cross-correlation.  Supports
-flexible detrending and climateâgrowth modeling via generalized additive mixed
-models (Wood 2017, ISBN:978-1498728331) and the mgcv package
-(<https://CRAN.R-project.org/package=mgcv>), enabling robust analysis of
-non-linear trends and autocorrelated data.  Provides standardized visual
-reporting, including summaries, diagnostics, and model performance.  Compatible
-with .rwl files and tailored for the Canadian Forest Service Tree-Ring Data
-(CFS-T@code{RenD}) repository (Girardin et al. (2021)
-<doi:10.1139/er-2020-0099>), offering a comprehensive and adaptable framework
-for dendrochronologists working with large and complex datasets.")
-    (license license:gpl3)))
-
 (define-public r-growthrates
   (package
     (name "r-growthrates")
@@ -5090,13 +5045,13 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
 (define-public r-groupedhyperframe-random
   (package
     (name "r-groupedhyperframe-random")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe.random" version))
        (sha256
-        (base32 "1vwjswjanz23dz4fi7r0m3fdj2cxpvvz14y281cjxp5yzp6ylg53"))))
+        (base32 "1iy0gi0zbm6pp8mvgs05r6gd29cqscfmivdv72jq4ss8d9g7sxs9"))))
     (properties `((upstream-name . "groupedHyperframe.random")))
     (build-system r-build-system)
     (arguments
@@ -5105,7 +5060,7 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
     (propagated-inputs (list r-spatstat-random r-spatstat-geom r-mass
                              r-groupedhyperframe r-cli))
     (native-inputs (list r-quarto))
-    (home-page "https://tingtingzhan.quarto.pub/groupedhyperframe/random")
+    (home-page "https://github.com/tingtingzhan/groupedHyperframe.random")
     (synopsis "Simulated Grouped Hyper Data Frame")
     (description
      "An intuitive interface to simulate (1) superimposed (marked) point patterns with
@@ -5117,13 +5072,13 @@ subject-specific random effects.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0qz28gy4spsnvv0rmrbka67cdgar3yynrjcc56ksm4gd6hlijcx1"))))
+        (base32 "0adwmnnc3a6j02j6lhwn7qcmrw49m5zlci1wsbhhaphmysp7g29f"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
@@ -5682,7 +5637,8 @@ Stan, et al. (2013) <DOI:10.1093/bioinformatics/btt372>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5758,7 +5714,8 @@ functionalities <https://github.com/gridstack/gridstack.js>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -7611,7 +7568,8 @@ multiplicity adjustment, Technical Report.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -7699,42 +7657,6 @@ p-values.  For methodological details, see Zhou and Chen (2023)
      "Bindings to the libgraphqlparser C++ library.  Parses @code{GraphQL}
 <https://graphql.org> syntax and exports the AST in JSON format.")
     (license license:expat)))
-
-(define-public r-graphpcor
-  (package
-    (name "r-graphpcor")
-    (version "0.1.15")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graphpcor" version))
-       (sha256
-        (base32 "04c8sl15xzk5i8r8r7hj56kljirgrjpprx6krml5pa073si37qc9"))))
-    (properties `((upstream-name . "graphpcor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgraphviz r-numderiv r-matrix r-inlatools
-                             r-graph))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=graphpcor")
-    (synopsis "Models for Correlation Matrices Based on Graphs")
-    (description
-     "Implement some models for correlation/covariance matrices including two
-approaches to model correlation matrices from a graphical structure.  One use
-latent parent variables as proposed in Sterrantino et.  al. (2024)
-<doi:10.1007/s10260-025-00788-y>.  The other uses a graph to specify conditional
-relations between the variables.  The graphical structure makes correlation
-matrices interpretable and avoids the quadratic increase of parameters as a
-function of the dimension.  In the first approach a natural sequence of simpler
-models along with a complexity penalization is used.  The second penalizes
-deviations from a base model.  These can be used as prior for model parameters,
-considering C code through the cgeneric interface for the INLA package
-(<https://www.r-inla.org>).  This allows one to use these models as building
-blocks combined and to other latent Gaussian models in order to build complex
-data models.")
-    (license license:gpl2+)))
 
 (define-public r-graphonmix
   (package
@@ -8101,7 +8023,8 @@ genetics to create graphs, described by Dyer et Nason (2004)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -8931,7 +8854,8 @@ for predicting other intramolecular @code{nonB} DNA structures are included.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -9008,13 +8932,13 @@ R.")
 (define-public r-gpvecchia
   (package
     (name "r-gpvecchia")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPvecchia" version))
        (sha256
-        (base32 "1dvixffrn3vz98n8p7vqqr9l77m8n1gij5za8z2hfpg78pipa0mi"))))
+        (base32 "0zc0nivqp8xlwcvx5i4y5l8zkmxz9spflr9h6pvlvy903dg2ciby"))))
     (properties `((upstream-name . "GPvecchia")))
     (build-system r-build-system)
     (arguments
@@ -9034,10 +8958,11 @@ R.")
     (description
      "Fast scalable Gaussian process approximations, particularly well suited to
 spatial (aerial, remote-sensed) and environmental data, described in more detail
-in Katzfuss and Guinness (2017) <@code{arXiv:1708.06302>}.  Package also
-contains a fast implementation of the incomplete Cholesky decomposition (IC0),
-based on Schaefer et al. (2019) <@code{arXiv:1706.02205>} and @code{MaxMin}
-ordering proposed in Guinness (2018) <@code{arXiv:1609.05372>}.")
+in Katzfuss and Guinness (2017) <doi:10.48550/@code{arXiv.1708.06302>}.  Package
+also contains a fast implementation of the incomplete Cholesky decomposition
+(IC0), based on Schaefer et al. (2019) <doi:10.48550/@code{arXiv.1706.02205>}
+and @code{MaxMin} ordering proposed in Guinness (2018)
+<doi:10.48550/@code{arXiv.1609.05372>}.")
     (license license:gpl2+)))
 
 (define-public r-gpvam
@@ -10360,6 +10285,42 @@ the methods explicitly in the following article
 <doi:10.1038/s41598-020-73326-3>.")
     (license license:gpl2)))
 
+(define-public r-gowersom
+  (package
+    (name "r-gowersom")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GowerSom" version))
+       (sha256
+        (base32 "1q6giznbz3kx9q9g4k0j5mngb3hmil645spkway2b3f2fbiwhxdf"))))
+    (properties `((upstream-name . "GowerSom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmatch
+                             r-reshape2
+                             r-gower
+                             r-ggplot2
+                             r-dplyr
+                             r-cluster
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=GowerSom")
+    (synopsis
+     "Self-Organizing Maps for Mixed-Attribute Data Using Gower Distance")
+    (description
+     "This package implements a variant of the Self-Organizing Map (SOM) algorithm
+designed for mixed-attribute datasets.  Similarity between observations is
+computed using the Gower distance, and categorical prototypes are updated via
+heuristic strategies (weighted mode and multinomial sampling).  Provides
+functions for model fitting, mapping, visualization (U-Matrix and component
+planes), and evaluation, making SOM applicable to heterogeneous real-world data.
+ For methodological details see SÃ¡ez and Salas (2026)
+<doi:10.1007/s41060-025-00941-6>.")
+    (license license:gpl2)))
+
 (define-public r-goweragreement
   (package
     (name "r-goweragreement")
@@ -10481,7 +10442,8 @@ processing overhead.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -13706,13 +13668,13 @@ modes of transportation (bicycling, walking, driving and public transportation).
 (define-public r-gmailr
   (package
     (name "r-gmailr")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmailr" version))
        (sha256
-        (base32 "0bn4605mjirhw1kmdnaa14rqqzrvxckfgi1ys597zwrclw601x59"))))
+        (base32 "0zg9bghjlwm6s6kv8z5dygg1200f0b088jx1akpx6y2g92zmfpzs"))))
     (properties `((upstream-name . "gmailr")))
     (build-system r-build-system)
     (arguments
@@ -13842,13 +13804,13 @@ glycoproteomics analysis workflows.")
 (define-public r-glyparse
   (package
     (name "r-glyparse")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyparse" version))
        (sha256
-        (base32 "15y483v085ka8fqzcch8qdw60249lslgzlj4k3lhb0cjpfkgn9zg"))))
+        (base32 "1xb1sww3ad65pwnmjkn42m43vngivw7pyndrzy79smyhf4y0n7ig"))))
     (properties `((upstream-name . "glyparse")))
     (build-system r-build-system)
     (arguments
@@ -14184,7 +14146,8 @@ analysis under heterogeneity.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -15232,13 +15195,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1vf85ppxjvg9lvf91mfcncxj8gmddgfqhij1zhn457yjf3nvdbwx"))))
+        (base32 "0hinlri8kdzmn21cm0jzq3l6svhwfcjcmm1hi3ffvrw6isbhlbjd"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (arguments
@@ -15320,13 +15283,13 @@ LASSO penalties.")
 (define-public r-glmmlasso
   (package
     (name "r-glmmlasso")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmLasso" version))
        (sha256
-        (base32 "1b2wkmsmnhmkql0kin56faf64abc6hijrs6dlz8qvwcbqpgbpcig"))))
+        (base32 "0fm4k356xcg2y5339qyv2y1hgys1405qj50rjfmw6v1iwmks0z29"))))
     (properties `((upstream-name . "glmmLasso")))
     (build-system r-build-system)
     (arguments
@@ -15943,13 +15906,13 @@ approach.")
 (define-public r-glioblastomaehrsdata
   (package
     (name "r-glioblastomaehrsdata")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glioblastomaEHRsData" version))
        (sha256
-        (base32 "123mzzalaa09s49sqkvsvjpc8n00ghhyv0rwairwla92p0lz51bq"))))
+        (base32 "1zrvl42sby2ssaigsbh583pd9yk7z2w6wggw892bgqcscyd5graa"))))
     (properties `((upstream-name . "glioblastomaEHRsData")))
     (build-system r-build-system)
     (arguments
@@ -15963,8 +15926,8 @@ approach.")
                              r-ggplot2
                              r-flextable
                              r-dataexplorer))
-    (home-page "https://cran.r-project.org/package=glioblastomaEHRsData")
-    (synopsis "Descriptive Analysis on 3 EHRs Datasets")
+    (home-page "https://github.com/Samumar4321/glioblastomaEHRsData")
+    (synopsis "Descriptive Analysis on Three Glioblastoma EHRs Datasets")
     (description
      "This package provides functions to load and analyze three open Electronic Health
 Records (EHRs) datasets of patients diagnosed with glioblastoma, previously
@@ -18442,40 +18405,6 @@ constructing queries, including fragments and parameterized queries.  Queries
 are checked with the libgraphqlparser C++ parser via the graphql package.")
     (license license:expat)))
 
-(define-public r-ghostknockoff
-  (package
-    (name "r-ghostknockoff")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GhostKnockoff" version))
-       (sha256
-        (base32 "0vp9f8k31yclxvmcjgzkg6xl3rdv49anjmwdhcrhcxv8x9f3bdrj"))))
-    (properties `((upstream-name . "GhostKnockoff")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seqminer
-                             r-rspectra
-                             r-rdsdp
-                             r-matrix
-                             r-gtools
-                             r-cvxr
-                             r-corpcor))
-    (home-page "https://cran.r-project.org/package=GhostKnockoff")
-    (synopsis "The Knockoff Inference Using Summary Statistics")
-    (description
-     "This package provides functions for multiple knockoff inference using summary
-statistics, e.g. Z-scores.  The knockoff inference is a general procedure for
-controlling the false discovery rate (FDR) when performing variable selection.
-This package provides a procedure which performs knockoff inference without ever
-constructing individual knockoffs (@code{GhostKnockoff}).  It additionally
-supports multiple knockoff inference for improved stability and reproducibility.
- Moreover, it supports meta-analysis of multiple overlapping studies.")
-    (license license:gpl3)))
-
 (define-public r-ghost
   (package
     (name "r-ghost")
@@ -19756,13 +19685,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "1szimnrf5b45jmal9kpy4h4qmiyr9nga609gkd23klc6hcnbpqmq"))))
+        (base32 "0k1fiv0si2zf1nvig6c6rvxf882r868xwai6n2xapfqnxl1x2jky"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -20432,13 +20361,13 @@ visualisation of mapped data.")
 (define-public r-ggquickeda
   (package
     (name "r-ggquickeda")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggquickeda" version))
        (sha256
-        (base32 "0326fg3f8zfwn8y5xh6mjl8axmg0wzln2hlqzx8q9wdvq82bsj45"))))
+        (base32 "160l23b8m55kjj76fd9ayhr13pcav7n1zfa7q5c6w8rfkmdzcgk0"))))
     (properties `((upstream-name . "ggquickeda")))
     (build-system r-build-system)
     (arguments
@@ -21970,13 +21899,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.3-0")
+    (version "3.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "1pgdf05ykmgj6qkjjyqs4nnswcp43ij5hhqvpz338mx4n7wcwbc4"))))
+        (base32 "0w65rh1xq6yl9jipdjclhh9k2yahbh5cqsfxv08bk4rvp6is0fvx"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (arguments
@@ -22782,7 +22711,8 @@ tidyverse collection of packages.  The package contains references to
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -23560,13 +23490,13 @@ correlations.")
 (define-public r-ggcompare
   (package
     (name "r-ggcompare")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggcompare" version))
        (sha256
-        (base32 "090q4biyivwz1vc1i8f0gmikr0qps0j8w1vp6ragfpd6wpvf3hgz"))))
+        (base32 "0n56p13i9m4659vcnv3svcxbvd03z3w0crn6rnf4lyn9adjgff3i"))))
     (properties `((upstream-name . "ggcompare")))
     (build-system r-build-system)
     (arguments
@@ -25513,20 +25443,20 @@ possible concurrence of treatment pairs.")
 (define-public r-getbcbdata
   (package
     (name "r-getbcbdata")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetBCBData" version))
        (sha256
-        (base32 "1m4bqx584q9alqbic6vsd9w52vgm89biws9nj0crd2lcs712wd5b"))))
+        (base32 "1j6qdfp6ln0ifs04sx1p8rqzad10i4gwfmdzwnmhxd01qfc7cf3z"))))
     (properties `((upstream-name . "GetBCBData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-purrr
+    (propagated-inputs (list r-purrr
+                             r-parallelly
                              r-memoise
                              r-jsonlite
                              r-future
@@ -25944,13 +25874,13 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
 (define-public r-gerda
   (package
     (name "r-gerda")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerda" version))
        (sha256
-        (base32 "1j5nmj6gq59amld82hqrc52rw51izb3xmp1gihkcxrnhcxqlrm8j"))))
+        (base32 "0835jdff23kywk4s7vk3zz9r4xdmgljr7kmlg8wfj2pk3lnj2fz4"))))
     (properties `((upstream-name . "gerda")))
     (build-system r-build-system)
     (arguments
@@ -25967,9 +25897,10 @@ facilitates access to data on turnout, vote shares for major parties, and
 demographic information across different levels of government (municipal, state,
 and federal).  It offers access to geographically harmonized datasets that
 account for changes in municipal boundaries over time and incorporate mail-in
-voting districts.  Users can easily retrieve, clean, and standardize German
-electoral data, making it ready for analysis.  Data is sourced from
-<https://github.com/awiedem/german_election_data>.")
+voting districts.  Includes bundled county-level covariates from INKAR and
+municipality-level Census 2022 data.  Users can easily retrieve, clean, and
+standardize German electoral data, making it ready for analysis.  Data is
+sourced from <https://github.com/awiedem/german_election_data>.")
     (license license:expat)))
 
 (define-public r-gerbil
@@ -27383,6 +27314,40 @@ contains a function implementing a specific geometric MH algorithm for
 performing high dimensional Bayesian variable selection.")
     (license license:gpl3+)))
 
+(define-public r-geometricmorphometricsmix
+  (package
+    (name "r-geometricmorphometricsmix")
+    (version "0.6.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeometricMorphometricsMix" version))
+       (sha256
+        (base32 "1az0pvfy3026zcwgabmr0ig6hjyxn5vj8sj9xdrmnnhrmmjyqh7s"))))
+    (properties `((upstream-name . "GeometricMorphometricsMix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mclust r-corpcor r-ape))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=GeometricMorphometricsMix")
+    (synopsis
+     "Heterogeneous Methods for Shape and Other Multidimensional Data")
+    (description
+     "This package provides tools for geometric morphometric analyses and
+multidimensional data.  Implements methods for morphological disparity analysis
+using bootstrap and rarefaction, as reviewed in Foote (1997)
+<doi:10.1146/annurev.ecolsys.28.1.129>.  Includes integration and modularity
+testing, following Fruciano et al. (2013) <doi:10.1371/journal.pone.0069376>,
+using Escoufier's RV coefficient as test statistic as well as two-block partial
+least squares - PLS, Rohlf and Corti (2000) <doi:10.1080/106351500750049806>.
+Also includes vector angle comparisons, orthogonal projection for data
+correction (Burnaby (1966) <doi:10.2307/2528217>; Fruciano (2016)
+<doi:10.1007/s00427-016-0537-4>), and parallel analysis for dimensionality
+reduction (Buja and Eyuboglu (1992) <doi:10.1207/s15327906mbr2704_2>).")
+    (license license:expat)))
+
 (define-public r-geometa
   (package
     (name "r-geometa")
@@ -27915,13 +27880,13 @@ A test data set of a soil mapping case study in Berne (Switzerland) is provided.
 (define-public r-geoflow
   (package
     (name "r-geoflow")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoflow" version))
        (sha256
-        (base32 "02a5nc0d4ra2sk134fi8bglx6s48hhljmi39xllg4rh13xvpjs3r"))))
+        (base32 "058wp1r7lz7baxdgk2yxgi8fih6jpl0yahfra4phwizcax0ad570"))))
     (properties `((upstream-name . "geoflow")))
     (build-system r-build-system)
     (arguments
@@ -27934,6 +27899,7 @@ A test data set of a soil mapping case study in Berne (Switzerland) is provided.
                              r-whisker
                              r-uuid
                              r-terra
+                             r-smoothr
                              r-sfarrow
                              r-sf
                              r-readr
@@ -27942,6 +27908,7 @@ A test data set of a soil mapping case study in Berne (Switzerland) is provided.
                              r-png
                              r-ows4r
                              r-mime
+                             r-lwgeom
                              r-jsonlite
                              r-httr
                              r-geosapi
@@ -28310,7 +28277,8 @@ continuous analysis of landscape features.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -28492,13 +28460,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "0yykh32fh6yjg8br2n11ipjdycm2xsf9aclanm9l0dqpy1j0wps8"))))
+        (base32 "1kv80b3g7yazw92sqn6f1jdqd7ldxb20v9nlrfwv51xlvj2rddr1"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -29297,30 +29265,6 @@ regroups individuals with a same genotype based on proximity and
 interface use: @code{launch_GenoShiny()}.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-genoscan
-  (package
-    (name "r-genoscan")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GenoScan" version))
-       (sha256
-        (base32 "0p98imfvvz7l94kim3pxypyjs2pbxng4a2nagbafbady82ylr2vi"))))
-    (properties `((upstream-name . "GenoScan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-skat r-seqminer r-matrix r-mass r-data-table))
-    (home-page "https://cran.r-project.org/package=GenoScan")
-    (synopsis
-     "Genome-Wide Scan Statistic Framework for Whole-Genome Sequence Data Analysis")
-    (description
-     "This package provides functions for whole-genome sequencing studies, including
-genome-wide scan, candidate region scan and single window test.")
-    (license license:gpl3)))
-
 (define-public r-genord
   (package
     (name "r-genord")
@@ -30108,7 +30052,8 @@ on the possibility theory.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -30628,13 +30573,13 @@ Florian Gerber (2022) <url:<https://CRAN.R-project.org/package=spam >>.")
 (define-public r-generalizedumatrixgpu
   (package
     (name "r-generalizedumatrixgpu")
-    (version "0.1.10")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneralizedUmatrixGPU" version))
        (sha256
-        (base32 "0ickp7d3ds7acv1agnaayz24bz2vr5nbcycyarnszlrwjq1glml1"))))
+        (base32 "019j5j686lyr0bsyhrkxxbpi1zcm33ndb1iy3j3cmcmch4aiaxyx"))))
     (properties `((upstream-name . "GeneralizedUmatrixGPU")))
     (build-system r-build-system)
     (arguments
@@ -30814,7 +30759,8 @@ using the concept of \"Kern\" and \"Schrider\" (2018)<doi:10.1534/g3.118.200262>
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -31938,13 +31884,13 @@ Understanding Statistical Methods Through Elliptical Geometry
 (define-public r-gek
   (package
     (name "r-gek")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gek" version))
        (sha256
-        (base32 "180mqakjc03g77m537v3mg0fiipw46767z5b69yg633y82din0jc"))))
+        (base32 "07idabc82pg1idkm3f25mmcvgb9g04h0f0h0p3iad2k765wnssi8"))))
     (properties `((upstream-name . "gek")))
     (build-system r-build-system)
     (arguments
@@ -35561,13 +35507,13 @@ Discovery Rate p-value corrections to select the exogenous variables.")
 (define-public r-gapr
   (package
     (name "r-gapr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GAPR" version))
        (sha256
-        (base32 "076ijbv734ip2lgl02kk62jwwxdzspma98rfppk3ln4hz24nfklz"))))
+        (base32 "1qbhvfrpgrmxfrf0qaac16mx1k5yhxvhviwpv5xrfdmqpabhqda0"))))
     (properties `((upstream-name . "GAPR")))
     (build-system r-build-system)
     (arguments
@@ -36616,19 +36562,19 @@ Forests.")
 (define-public r-gamboostlss
   (package
     (name "r-gamboostlss")
-    (version "2.1-0")
+    (version "2.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamboostLSS" version))
        (sha256
-        (base32 "1sk4fq0p2vmd1cbw7s0ncmjnbcpv1n1va51hj4s7c7w1dr3z2lgc"))))
+        (base32 "10xgd518z4swvyq1xx05giykcmhkp540gwqxf0mj11s1p6a5j5z6"))))
     (properties `((upstream-name . "gamboostLSS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stabs r-mboost))
+    (propagated-inputs (list r-stabs r-mboost r-gamlss-dist))
     (home-page "https://github.com/boost-R/gamboostLSS")
     (synopsis "Boosting Methods for 'GAMLSS'")
     (description
@@ -37475,13 +37421,13 @@ graphic parameters.")
 (define-public r-gaawr2
   (package
     (name "r-gaawr2")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaawr2" version))
        (sha256
-        (base32 "1sg09v0nc0q0da74c2a665q6yjsyg1iv6gzdfpqzq9y6d9fvpf66"))))
+        (base32 "09gblz3pwdv7as5mrzm20ia6xwsjqpn13khbpjdjk0jnlv336v0d"))))
     (properties `((upstream-name . "gaawr2")))
     (build-system r-build-system)
     (arguments
@@ -37497,13 +37443,15 @@ graphic parameters.")
     (home-page "https://jinghuazhao.github.io/gaawr2/")
     (synopsis "Genetic Association Analysis")
     (description
-     "It gathers information, meta-data and scripts in a two-part Henry-Stewart talk
-by Zhao (2009, <doi:10.69645/DCRY5578>), which showcases analysis in aspects
-such as testing of polymorphic variant(s) for Hardy-Weinberg equilibrium,
-association with trait using genetic and statistical models as well as Bayesian
-implementation, power calculation in study design and genetic annotation.  It
-also covers R integration with the Linux environment, @code{GitHub}, package
-creation and web applications.")
+     "This is a companion to Henry-Stewart talk by Zhao (2026,
+<doi:10.69645/FRFQ9519>), which gathers information, metadata and scripts to
+showcase modern genetic analysis -- ranging from testing of polymorphic
+variant(s) for Hardy-Weinberg equilibrium, association with traits using genetic
+and statistical models, Bayesian implementation, power calculation in study
+design, and genetic annotation.  It also covers R integration with the Linux
+environment, @code{GitHub}, package creation and web applications.  The earlier
+version by Zhao (2009, <doi:10.69645/DCRY5578>) provides an brief introduction
+to these topics.")
     (license license:expat)))
 
 (define-public r-g6r
@@ -37552,7 +37500,8 @@ comprehensive options for nodes, edges and more.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

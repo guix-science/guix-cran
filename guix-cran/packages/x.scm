@@ -923,6 +923,41 @@ distributions, inferential statistics, linear regression, logistic regression
 and RFM analysis.")
     (license license:expat)))
 
+(define-public r-xplainfi
+  (package
+    (name "r-xplainfi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xplainfi" version))
+       (sha256
+        (base32 "00zfc8fcw97g8s1yws4knmz66vnr0pq35ls847vpggnxq4yl8cdf"))))
+    (properties `((upstream-name . "xplainfi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6
+                             r-paradox
+                             r-mvtnorm
+                             r-mlr3
+                             r-mirai
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://mlr-org.github.io/xplainfi/")
+    (synopsis "Feature Importance Methods for Global Explanations")
+    (description
+     "This package provides a consistent interface for common feature importance
+methods as described in Ewald et al. (2024) <doi:10.1007/978-3-031-63797-1_22>,
+including permutation feature importance (PFI), conditional and relative feature
+importance (CFI, RFI), leave one covariate out (LOCO), and Shapley additive
+global importance (SAGE), as well as feature sampling mechanisms to support
+conditional importance methods.")
+    (license license:lgpl3+)))
+
 (define-public r-xplain
   (package
     (name "r-xplain")
@@ -1716,13 +1751,13 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 (define-public r-xhaz
   (package
     (name "r-xhaz")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xhaz" version))
        (sha256
-        (base32 "0d91afvjrwgwf5h1p2z6q15psf3n9hvshb75jyxvyxnhq8c5darw"))))
+        (base32 "0irmcix4nvzgn4wwf4swsv8n1qmcir8mb01z3hmlgkz08p1lwlc8"))))
     (properties `((upstream-name . "xhaz")))
     (build-system r-build-system)
     (arguments
@@ -2457,7 +2492,8 @@ script.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

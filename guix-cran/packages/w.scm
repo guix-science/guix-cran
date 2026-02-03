@@ -2151,34 +2151,36 @@ calculated distance matrices from figshare <https://figshare.com>.")
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "0.10.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldmet" version))
        (sha256
-        (base32 "00y46cx3wmamcqyfzvmgbbhbw4cjhdxlsbgq0m1i1ipw5klr15wz"))))
+        (base32 "0bfn23511ff194vkyzj9ilbkcpr260hspnf6240fzdkcx74y1r6q"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-sf
                              r-rlang
                              r-readr
                              r-purrr
-                             r-leaflet
+                             r-mirai
+                             r-lifecycle
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-carrier))
     (home-page "https://openair-project.github.io/worldmet/")
-    (synopsis
-     "Import Surface Meteorological Data from NOAA Integrated Surface Database (ISD)")
+    (synopsis "Import Surface Meteorological Data from NOAA")
     (description
      "This package provides functions to import data from more than 30,000 surface
 meteorological sites around the world managed by the National Oceanic and
-Atmospheric Administration (NOAA) Integrated Surface Database (ISD, see
-<https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database>).")
+Atmospheric Administration (NOAA) Global Historical Climate Network (GHCN) and
+Integrated Surface Database (ISD).")
     (license license:expat)))
 
 (define-public r-worldmapr
@@ -3511,13 +3513,13 @@ formats: ISO week, epidemiology week (epi week) and calendar date.")
 (define-public r-wklsr
   (package
     (name "r-wklsr")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wklsr" version))
        (sha256
-        (base32 "1vi9fcymaa6gyf71850q4j5k5dvbxnasm20a3pm55ay58x8igq3l"))))
+        (base32 "06r8fzh4hvbdqqiy0i2w3256jmi34prbh72g7vpmkii9672iv1a2"))))
     (properties `((upstream-name . "wklsr")))
     (build-system r-build-system)
     (arguments
@@ -3758,13 +3760,13 @@ for supporting this research.")
 (define-public r-wintime
   (package
     (name "r-wintime")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wintime" version))
        (sha256
-        (base32 "183aw2iq3silm4s59748gwg4hcllr9kh7605zbmiax5bz1fb1dkr"))))
+        (base32 "1h4ihqhpi2763rc6n9nlayjvi9kkw5svs4fi8z2n6gymiksndr8p"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
     (arguments
@@ -4797,7 +4799,8 @@ mathematically convenient on wide matrices.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5663,32 +5666,6 @@ root design effect (DEFT), effective sample size (ESS), and/or weighted margin
 of error.")
     (license license:gpl2+)))
 
-(define-public r-wgscan
-  (package
-    (name "r-wgscan")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WGScan" version))
-       (sha256
-        (base32 "0jma6di9hbdimswdfm58568vahcjy46hbhb78idjsdz4bl9apvq3"))))
-    (properties `((upstream-name . "WGScan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-skat r-seqminer r-matrix r-mass r-data-table))
-    (home-page "https://cran.r-project.org/package=WGScan")
-    (synopsis
-     "Genome-Wide Scan Statistic Framework for Whole-Genome Sequence Data Analysis")
-    (description
-     "This package provides functions for the analysis of whole-genome sequencing
-studies to simultaneously detect the existence, and estimate the locations of
-association signals at genome-wide scale.  The functions allow genome-wide
-association scan, candidate region scan and single window test.")
-    (license license:gpl3)))
-
 (define-public r-wget
   (package
     (name "r-wget")
@@ -6069,39 +6046,42 @@ broad- and sharp-crested weirs.")
 (define-public r-weird
   (package
     (name "r-weird")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weird" version))
        (sha256
-        (base32 "1xn1a7ssdwjvqynh5crr9dqf81smm1ldix1xlgfm42mpc478wplb"))))
+        (base32 "1mygq0amyijnqb226b3z0hv24hca845ac0p81v07rjlrgrr2la92"))))
     (properties `((upstream-name . "weird")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-vctrs
                              r-stray
                              r-rstudioapi
                              r-robustbase
                              r-rlang
+                             r-rann
                              r-purrr
+                             r-mvtnorm
+                             r-lookout
                              r-ks
-                             r-interpolation
                              r-ggplot2
                              r-evd
                              r-dplyr
+                             r-distributional
                              r-dbscan
                              r-crayon
                              r-cli
                              r-broom
                              r-aplpack))
-    (home-page "https://pkg.robjhyndman.com/weird-package/")
+    (home-page "https://pkg.robjhyndman.com/weird/")
     (synopsis
      "Functions and Data Sets for \"That's Weird: Anomaly Detection Using R\" by Rob J Hyndman")
     (description
-     "All functions and data sets required for the examples in the book Hyndman (2024)
+     "All functions and data sets required for the examples in the book Hyndman (2026)
 \"That's Weird: Anomaly Detection Using R\" <https://OTexts.com/weird/>.  All
 packages needed to run the examples are also loaded.")
     (license license:gpl3)))
@@ -7223,7 +7203,8 @@ the jpeg and png packages.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -7358,7 +7339,8 @@ R Markdown that students can use in self-guided learning.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -7652,6 +7634,33 @@ conversions for metrics of temperature, air moisture, wind speed, and
 precipitation.  This package also includes functions to calculate the heat index
 from air temperature and air moisture.")
     (license license:gpl2)))
+
+(define-public r-weatherjoin
+  (package
+    (name "r-weatherjoin")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weatherjoin" version))
+       (sha256
+        (base32 "0ifxvdm2c8nai03k07385z03v01c1ab85bx0y8dz2d50w7pwxwfs"))))
+    (properties `((upstream-name . "weatherjoin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hauae/weatherjoin")
+    (synopsis "Join Gridded Weather Data to Event Tables")
+    (description
+     "High-level tools to attach gridded weather data from the NASA POWER Project to
+event-based datasets.  The package plans efficient spatio-temporal API calls via
+the nasapower R package, caches downloaded segments locally, and joins weather
+variables back to the input table using exact or rolling joins.  This package is
+not affiliated with or endorsed by NASA.")
+    (license license:expat)))
 
 (define-public r-weatherindices
   (package

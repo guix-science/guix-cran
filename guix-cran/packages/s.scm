@@ -233,13 +233,13 @@ and TCP network port.")
 (define-public r-sysid
   (package
     (name "r-sysid")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sysid" version))
        (sha256
-        (base32 "0fr9gf5yjin3zvz850z4r4pqc1r4mwx8d46sl64i4csdm9qnqagy"))))
+        (base32 "1m2hp4b2rqk7rzbw7rn9ah7hflaf8408r1afysda22ph3j8g5bm1"))))
     (properties `((upstream-name . "sysid")))
     (build-system r-build-system)
     (arguments
@@ -949,6 +949,41 @@ bivariate and multivariate variograms; fitting variogram models; phase locking
 and synchrony analysis; generating autocorrelated and cross-correlated matrices.")
     (license license:gpl2+)))
 
+(define-public r-syncdr
+  (package
+    (name "r-syncdr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "syncdr" version))
+       (sha256
+        (base32 "1jxaz60dkvclnbfqci0wwijpva9n67p3sxhng4dg910qwnbhfyk3"))))
+    (properties `((upstream-name . "syncdr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-secretbase
+                             r-rstudioapi
+                             r-knitr
+                             r-joyn
+                             r-fs
+                             r-dt
+                             r-digest
+                             r-data-table
+                             r-collapse
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://rossanatat.github.io/syncdr/")
+    (synopsis
+     "Facilitate File Handling, Directory Comparison & Synchronization")
+    (description
+     "Compare directories flexibly (by date, content, or both) and synchronize files
+efficiently, with asymmetric and symmetric modes, helper tools, and
+visualization support for file management.")
+    (license license:expat)))
+
 (define-public r-syn
   (package
     (name "r-syn")
@@ -1323,13 +1358,13 @@ the @code{koRpus-dev} mailing list (<http://korpusml.reaktanz.de>).")
 (define-public r-sylly
   (package
     (name "r-sylly")
-    (version "0.1-6")
+    (version "0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sylly" version))
        (sha256
-        (base32 "0f03k9d15fkym14y94jb7rkh228blc76jlm7pk229b44hcbh3mmm"))))
+        (base32 "0hkfdv99xk2ijnzqv410n5fy705mn58g9r5dkldgg73pgqrq8cpn"))))
     (properties `((upstream-name . "sylly")))
     (build-system r-build-system)
     (arguments
@@ -1769,7 +1804,8 @@ and R programming.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3262,7 +3298,8 @@ copula models for time series, see Nagler et al. (2022)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3332,7 +3369,8 @@ graphics.  This is done by @code{stackedBar()} for bar charts, by
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3379,6 +3417,41 @@ zoom experience to nearly any user desire.")
      "Edit SVG files created in Inkscape by replacing placeholders (e.g. a rectangle
 element or {} in a text box) by ggplot2 objects, images or text.  This helps
 automate the creation of figures with complex layouts.")
+    (license license:expat)))
+
+(define-public r-svg
+  (package
+    (name "r-svg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SVG" version))
+       (sha256
+        (base32 "0g82pbywr1kmmfr0xflacr1bzhpjnj9g1inaq78qnfh9963z976s"))))
+    (properties `((upstream-name . "SVG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Zaoqu-Liu/SVG")
+    (synopsis
+     "Spatially Variable Genes Detection Methods for Spatial Transcriptomics")
+    (description
+     "This package provides a unified framework for detecting spatially variable genes
+(SVGs) in spatial transcriptomics data.  This package integrates multiple
+state-of-the-art SVG detection methods including MERINGUE (Moran's I based
+spatial autocorrelation), Giotto @code{binSpect} (binary spatial enrichment
+test), SPARK-X (non-parametric kernel-based test), and @code{nnSVG}
+(nearest-neighbor Gaussian processes).  Each method is implemented with
+optimized performance through vectorization, parallelization, and C++
+acceleration where applicable.  Methods are described in Miller et al. (2021)
+<doi:10.1101/gr.271288.120>, Dries et al. (2021)
+<doi:10.1186/s13059-021-02286-2>, Zhu et al. (2021)
+<doi:10.1186/s13059-021-02404-0>, and Weber et al. (2023)
+<doi:10.1038/s41467-023-39748-z>.")
     (license license:expat)))
 
 (define-public r-svenssonm
@@ -3466,7 +3539,8 @@ assistance from generative AI tools.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5480,33 +5554,6 @@ calculation, estimation of expected precision for the estimates of totals, and
 calculation of optimal sample size allocation.")
     (license license:gpl2+)))
 
-(define-public r-surveynnet
-  (package
-    (name "r-surveynnet")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "surveynnet" version))
-       (sha256
-        (base32 "17qzac2zi2mx90k0r8v05bwmh6bchg64whvaw06g3n53l9kqrr6b"))))
-    (properties `((upstream-name . "surveynnet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-survey r-practools r-nnet r-dplyr))
-    (home-page "https://github.com/237triangle/surveynnet")
-    (synopsis "Neural Network for Complex Survey Data")
-    (description
-     "The goal of surveynnet is to extend the functionality of nnet', which already
-supports survey weights, by enabling it to handle clustered and stratified data.
- It achieves this by incorporating design effects through the use of effective
-sample sizes as outlined by Chen and Rust (2017), <doi:10.1093/jssam/smw036>,
-and performed by @code{deffCR} in the package @code{PracTools} (Valliant, Dever,
-and Kreuter (2018), <doi:10.1007/978-3-319-93632-1>).")
-    (license license:expat)))
-
 (define-public r-surveygraph
   (package
     (name "r-surveygraph")
@@ -6823,13 +6870,13 @@ S. et al. (2014) <doi:10.1073/pnas.1414714111>.  Su Y. et al. (2019)
 (define-public r-surfrough
   (package
     (name "r-surfrough")
-    (version "0.0.1.1")
+    (version "0.0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurfRough" version))
        (sha256
-        (base32 "0kdiqsn7hyydh4l24j7j07d4crfshfa30ajhvyrv1bwz7lm5cy7n"))))
+        (base32 "1jji6s9mlv2cxf5yp61gs20yblxbf5aa2rf2y5l0hv2g6qaj4cm4"))))
     (properties `((upstream-name . "SurfRough")))
     (build-system r-build-system)
     (arguments
@@ -6841,15 +6888,16 @@ S. et al. (2014) <doi:10.1073/pnas.1414714111>.  Su Y. et al. (2019)
     (description
      "This package provides methods for the computation of surface/image texture
 indices using a geostatistical based approach (Trevisani et al. (2023)
-<doi:10.1016/j.geomorph.2023.108838>).  It provides various functions for the
-computation of surface texture indices (e.g., omnidirectional roughness and
-roughness anisotropy), including the ones based on the robust MAD estimator.
-The kernels included in the software permit also to calculate the surface/image
-texture indices directly from the input surface (i.e., without de-trending)
-using increments of order 2.  It also provides the new radial roughness index
-(RRI), representing the improvement of the popular topographic roughness index
-(TRI).  The framework can be easily extended with ad-hoc surface/image texture
-indices.")
+<doi:10.1016/j.catena.2023.106927> and Trevisani and Guth (2025)
+<doi:10.3390/rs17233864>).  It provides various functions for the computation of
+surface texture indices (e.g., omnidirectional roughness and roughness
+anisotropy), including the ones based on the robust MAD estimator.  The kernels
+included in the software permit also to calculate the surface/image texture
+indices directly from the input surface (i.e., without de-trending) using
+increments of order 2 and of order 4.  It also provides the new radial roughness
+index (RRI), representing the improvement of the popular topographic roughness
+index (TRI).  The framework can be easily extended with ad-hoc surface/image
+texture indices.")
     (license license:expat)))
 
 (define-public r-surfacetortoise
@@ -7913,7 +7961,8 @@ sun and the planets : <https://www.aa.quae.nl/en/reken/zonpositie.html>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -8241,36 +8290,6 @@ gtsummary'; Sjoberg DD et al. (2021) <doi:10.32614/RJ-2021-053>.")
      "This package provides functions to speed up the exploratory analysis of simple
 datasets using dplyr'.  Functions are provided to do the common tasks of
 calculating confidence intervals.")
-    (license license:gpl3)))
-
-(define-public r-sumfregat
-  (package
-    (name "r-sumfregat")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sumFREGAT" version))
-       (sha256
-        (base32 "10clll3c0ws2mccdp9grz3qw75kv7ydffak2vv9ijky8n1b39qa7"))))
-    (properties `((upstream-name . "sumFREGAT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seqminer r-matrix r-gbj))
-    (home-page "https://cran.r-project.org/package=sumFREGAT")
-    (synopsis "Fast Region-Based Association Tests on Summary Statistics")
-    (description
-     "An adaptation of classical region/gene-based association analysis techniques to
-the use of summary statistics (P values and effect sizes) and correlations
-between genetic variants as input.  It is a tool to perform the most popular and
-efficient gene-based tests using the results of genome-wide association
-(meta-)analyses without having the original genotypes and phenotypes at hand.
-See for details: Svishcheva et al (2019) Gene-based association tests using GWAS
-summary statistics.  Bioinformatics.  Belonogova et al (2022) @code{SumSTAAR}: A
-flexible framework for gene-based association studies using GWAS summary
-statistics.  PLOS Comp Biol.")
     (license license:gpl3)))
 
 (define-public r-sumextras
@@ -10562,19 +10581,28 @@ package vignette.")
 (define-public r-streamcattools
   (package
     (name "r-streamcattools")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StreamCatTools" version))
        (sha256
-        (base32 "0rbxzq38vkwksq19w6a9ahwl69sx2nkrsdarzy5fm9fzyinz2s5w"))))
+        (base32 "0ql578jn70zshfcvvyqhpq4p4f5i39x0vv9pr48y8ga1h371hfl8"))))
     (properties `((upstream-name . "StreamCatTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-nhdplustools r-jsonlite r-httr2 r-curl))
+    (propagated-inputs (list r-tigris
+                             r-sf
+                             r-patchwork
+                             r-nhdplustools
+                             r-jsonlite
+                             r-httr2
+                             r-ggplot2
+                             r-ggpattern
+                             r-curl
+                             r-cowplot))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://usepa.github.io/StreamCatTools/")
     (synopsis "'StreamCatTools'")
@@ -11464,13 +11492,13 @@ translated messages.")
 (define-public r-strand
   (package
     (name "r-strand")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strand" version))
        (sha256
-        (base32 "04g8jpiax2c0m9pfrrf0jnhg4n049v7gj6mc4dnrp4z58cwj16s3"))))
+        (base32 "108x5api65qz4700ky5mz4abrfrp4if8nc21flgrf6f4ql99qms9"))))
     (properties `((upstream-name . "strand")))
     (build-system r-build-system)
     (arguments
@@ -12447,13 +12475,13 @@ Hosszejni and Kastner (2021) <doi:10.18637/jss.v100.i12> and Kastner (2016)
 (define-public r-stochtree
   (package
     (name "r-stochtree")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochtree" version))
        (sha256
-        (base32 "12wwgwf2kf4871jqmxa23hhn2mcrfdi1aiwb89ifqj4bwsgmz890"))))
+        (base32 "0k8m8haak2sk41vxln77knzb2bkwx6h17cx8j3g131l2ha5mlj50"))))
     (properties `((upstream-name . "stochtree")))
     (build-system r-build-system)
     (arguments
@@ -12751,49 +12779,6 @@ actuarial and demographic literature including the Lee-Carter (1992)
 fitting mortality models, analysing their goodness-of-fit and performing
 mortality projections and simulations.")
     (license license:gpl2+)))
-
-(define-public r-stminsights
-  (package
-    (name "r-stminsights")
-    (version "0.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stminsights" version))
-       (sha256
-        (base32 "1yx87ia1i0p7cavxikz4dvy2j0ymnqpwqmdhci5x7yzsb0arl4kf"))))
-    (properties `((upstream-name . "stminsights")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidygraph
-                             r-tibble
-                             r-stringr
-                             r-stm
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinybs
-                             r-shiny
-                             r-scales
-                             r-readr
-                             r-purrr
-                             r-igraph
-                             r-huge
-                             r-ggrepel
-                             r-ggraph
-                             r-ggplot2
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cschwem2er/stminsights")
-    (synopsis "'Shiny' Application for Inspecting Structural Topic Models")
-    (description
-     "This app enables interactive validation, interpretation and visualization of
-structural topic models from the stm package by Roberts and others (2014)
-<doi:10.1111/ajps.12103>.  It also includes helper functions for model
-diagnostics and extracting data from effect estimates.")
-    (license license:expat)))
 
 (define-public r-stmgui
   (package
@@ -13251,40 +13236,48 @@ objects.")
 (define-public r-stgam
   (package
     (name "r-stgam")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stgam" version))
        (sha256
-        (base32 "0n8xkmq03vsafr9m7mk66v8kxnj6ha4sbffpmnhyfrgiwm2pg4v2"))))
+        (base32 "156gsd672m1zb024cxixrx0fkqm2m5c1s1fmk80ykc9l4kr08n4v"))))
     (properties `((upstream-name . "stgam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mgcv r-glue r-foreach r-dplyr r-doparallel))
+    (propagated-inputs (list r-stringr
+                             r-purrr
+                             r-mgcv
+                             r-magrittr
+                             r-glue
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lexcomber/stgam")
     (synopsis
      "Spatially and Temporally Varying Coefficient Models Using Generalized Additive Models")
     (description
-     "This package provides a framework for specifying spatially, temporally and
-spatially-and-temporally varying coefficient models using Generalized Additive
-Models with smooths.  The smooths are parameterised with location, time and
-predictor variables.  The framework supports the investigation of the presence
-and nature of any space-time dependencies in the data by evaluating multiple
-model forms (specifications) using a Generalized Cross-Validation score.  The
-workflow sequence is to: i) Prepare the data by lengthening it to have a single
-location and time variables for each observation.  ii) Evaluate all possible
-spatial and/or temporal models in which each predictor is specified in different
-ways.  iii) Evaluate each model and pick the best one.  iv) Create the final
-model.  v) Calculate the varying coefficient estimates to quantify how the
-relationships between the target and predictor variables vary over space, time
-or space-time.  vi) Create maps, time series plots etc.  For more details see:
-Comber et al (2023) <doi:10.4230/LIPIcs.GIScience.2023.22>, Comber et al (2024)
-<doi:10.1080/13658816.2023.2270285> and Comber et al (2004)
-<doi:10.3390/ijgi13120459>.")
+     "This package provides a framework for undertaking space and time varying
+coefficient models (varying parameter models) using a Generalized Additive Model
+(GAM) with smooths approach.  The framework suggests the need to investigate for
+the presence and nature of any space-time dependencies in the data.  It proposes
+a workflow that creates and refines an initial space-time GAM and includes tools
+to create and evaluate multiple model forms.  The workflow sequence is to: i)
+Prepare the data by lengthening it to have a single location and time variables
+for each observation.  ii) Create all possible space and/or time models in which
+each predictor is specified in different ways in smooths.  iii) Evaluate each
+model via their AIC value and pick the best one.  iv) Create the final model.
+v) Calculate the varying coefficient estimates to quantify how the relationships
+between the target and predictor variables vary over space, time or space-time.
+vi) Create maps, time series plots etc.  The number of knots used in each smooth
+can be specified directly or iteratively increased.  This is illustrated with a
+climate point dataset of the dry rain forest in South America.  This builds on
+work in Comber et al (2024) <doi:10.1080/13658816.2023.2270285> and Comber et al
+(2004) <doi:10.3390/ijgi13120459>.")
     (license license:expat)))
 
 (define-public r-stfts
@@ -14648,6 +14641,32 @@ but operates on distributed data.  See Zhicheng Du, Yuantao Hao (2022)
 <doi:10.32614/CRAN.package.stddiff> for reference.")
     (license license:gpl3+)))
 
+(define-public r-stdbscan
+  (package
+    (name "r-stdbscan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stdbscan" version))
+       (sha256
+        (base32 "1a1ji8523fdnk793dz2hlqjxdm38m095qpcs398l96m50w4drjhc"))))
+    (properties `((upstream-name . "stdbscan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MiboraMinima/stdbscan/")
+    (synopsis "Spatio-Temporal DBSCAN Clustering")
+    (description
+     "This package implements the ST-DBSCAN (spatio-temporal density-based spatial
+clustering of applications with noise) clustering algorithm for detecting
+spatially and temporally dense regions in point data, with a fast C++ backend
+via Rcpp'.  Birant and Kut (2007) <doi:10.1016/j.datak.2006.01.013>.")
+    (license license:gpl3+)))
+
 (define-public r-stcyp
   (package
     (name "r-stcyp")
@@ -14983,6 +15002,45 @@ and check the suitability of the resulting data for statistical analyses.")
 write their own loops when parsing data from the @code{StatsWales} API. Provides
 functions for datasets (<http://open.statswales.gov.wales/en-gb/dataset>) and
 metadata (<http://open.statswales.gov.wales/en-gb/discover/metadata>) endpoints.")
+    (license license:expat)))
+
+(define-public r-statstflvalr
+  (package
+    (name "r-statstflvalr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StatsTFLValR" version))
+       (sha256
+        (base32 "1kvk1mwrkcim7aa6plhixayszwsq4sjxq5wrzxbqnngirrv65akf"))))
+    (properties `((upstream-name . "StatsTFLValR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-haven
+                             r-dplyr
+                             r-data-table
+                             r-arsenal))
+    (home-page "https://github.com/kalsem/StatsTFLValR")
+    (synopsis
+     "Utilities for Validation of Clinical Trial 'SDTM', 'ADaM' and 'TFL' Outputs")
+    (description
+     "This package provides utility functions for validation and quality control of
+clinical trial datasets and outputs across SDTM', A@code{DaM} and TFL workflows.
+ The package supports dataset loading, metadata inspection, frequency and
+summary calculations, table-ready aggregations, and compare-style dataset review
+similar to SAS PROC COMPARE'.  Functions are designed to support reproducible
+execution, transparent review, and independent verification of statistical
+programming results.  Dataset comparisons may leverage arsenal
+<https://cran.r-project.org/package=arsenal>.")
     (license license:expat)))
 
 (define-public r-statsr
@@ -17178,7 +17236,8 @@ recompile the same model multiple times.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -19247,20 +19306,20 @@ at different sample sizes.")
 (define-public r-ssimparser
   (package
     (name "r-ssimparser")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssimparser" version))
        (sha256
-        (base32 "01c9kbvdrkchf4rad9hysyflpkgdj294lbk94fc5pkc49fqznmrx"))))
+        (base32 "0852xa0cwfxh2rjpk8ch800pl7alwg3cl13c38mbq0xn359x5khq"))))
     (properties `((upstream-name . "ssimparser")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-stringr r-magrittr r-dplyr r-airportr))
-    (home-page "https://cran.r-project.org/package=ssimparser")
+    (propagated-inputs (list r-tidyr r-stringr r-dplyr r-airportr))
+    (home-page "https://github.com/sthonnard/ssimparser")
     (synopsis "Standard Schedules Information Parser")
     (description
      "Parse Standard Schedules Information file (types 2 and 3) into a Data Frame.
@@ -20204,13 +20263,13 @@ Stock Synthesis (SS) as described in Anderson et al. (2014)
 (define-public r-srvyr
   (package
     (name "r-srvyr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srvyr" version))
        (sha256
-        (base32 "0576jgvnyfxks1r6nc53npgmljvm3i1v389zvar25pyq9n77sdpc"))))
+        (base32 "0spq32ccm4khpdmxn98h6pb6026zxnhlv76vnj8m0gzr3k3l4fzd"))))
     (properties `((upstream-name . "srvyr")))
     (build-system r-build-system)
     (arguments
@@ -23157,7 +23216,8 @@ Firmicutes based on the presence/absence of sporulation-associated genes.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -26037,13 +26097,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "1qj9skafszcaanl8g2sr6lny75ja7kaq3l240k7j4m73lb4fjca4"))))
+        (base32 "1dy6hjlzmagfx327jf9mqj5m4hw5rl9ljccg7c2r5nvfniaba889"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -29742,36 +29802,6 @@ Botond Szabo (JASA 2020) and Kolyan Ray, Botond Szabo, and Gabriel Clara
 (@code{NeurIPS} 2020).")
     (license license:gpl3+)))
 
-(define-public r-sparsetscgm
-  (package
-    (name "r-sparsetscgm")
-    (version "4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SparseTSCGM" version))
-       (sha256
-        (base32 "1fqh7pcvgzpfw91nkhkrr5cf1fqhghggs2i4vb5lxgwz4x8z2ahn"))))
-    (properties `((upstream-name . "SparseTSCGM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-network
-                             r-mvtnorm
-                             r-mass
-                             r-longitudinal
-                             r-huge
-                             r-glasso
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=SparseTSCGM")
-    (synopsis "Sparse Time Series Chain Graphical Models")
-    (description
-     "Computes sparse vector autoregressive coefficients and sparse precision matrices
-for time series chain graphical models.  Methods are described in Abegaz and Wit
-(2013) <doi:10.1093/biostatistics/kxt005>.")
-    (license license:gpl3+)))
-
 (define-public r-sparsesvm
   (package
     (name "r-sparsesvm")
@@ -31021,7 +31051,8 @@ an interface to Spark's built-in machine learning algorithms.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -32819,7 +32850,8 @@ Based on the work described in Rodriguez-Alvarez et al. (2015)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -34664,13 +34696,13 @@ sf-compatible data frames.")
 (define-public r-socialsim
   (package
     (name "r-socialsim")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socialSim" version))
        (sha256
-        (base32 "0sd3mvmxc6dbxjbj14spxclbhwhsy2kg7rnfbwp1b05zvrwz7ffc"))))
+        (base32 "0r83nnbm8x0hrxjhv32g9dv7lb5crigvr1jfpzjl1f0bz3abwlg1"))))
     (properties `((upstream-name . "socialSim")))
     (build-system r-build-system)
     (arguments
@@ -34683,21 +34715,19 @@ sf-compatible data frames.")
     (description
      "This package provides tools to simulate and analyse datasets of social
 interactions between individuals using hierarchical Bayesian models implemented
-in Stan.  The package interacts with Stan via cmdstanr (available from
-<https://mc-stan.org/r-packages/>) or rstan', depending on user setup.  Users
-can generate realistic interaction data where individual phenotypes influence
-and respond to those of their partners, with control over sampling design
-parameters such as the number of individuals, partners, and repeated dyads.  The
-simulation framework allows flexible control over variation and correlation in
-mean trait values, social responsiveness, and social impact, making it suitable
-for research on interacting phenotypes and on direct and indirect genetic
-effects ('DGEs and IGEs').  The package also includes functions to fit and
-compare alternative models of social effects, including impactâresponsiveness,
+in Stan.  Model fitting is performed via the rstan package.  Users can generate
+realistic interaction data where individual phenotypes influence and respond to
+those of their partners, with control over sampling design parameters such as
+the number of individuals, partners, and repeated dyads.  The simulation
+framework allows flexible control over variation and correlation in mean trait
+values, social responsiveness, and social impact, making it suitable for
+research on interacting phenotypes and on direct and indirect genetic effects
+('DGEs and IGEs').  The package also includes functions to fit and compare
+alternative models of social effects, including impactâresponsiveness,
 varianceâpartitioning, and trait-based models, and to summarise model
-performance in terms of bias and dispersion.  For more details on the study of
-social interactions and impact-responsiveness, see Moore et al. (1997)
-<doi:10.1111/j.1558-5646.1997.tb01458.x> and de Groot et al. (2022)
-<doi:10.1016/j.neubiorev.2022.104996>.")
+performance in terms of bias and dispersion.  For a more detailed description of
+the available models and impactâresponsiveness, see the accompanying preprint
+Wijnhorst et al. (2025) <doi:10.32942/X2F65M>.")
     (license license:expat)))
 
 (define-public r-socialrisk
@@ -38599,35 +38629,6 @@ Process with Embedded Brownian Motion (Pozdnyakov et al., 2020,
 Embedded Brownian Motions.")
     (license license:gpl3+)))
 
-(define-public r-smallstuff
-  (package
-    (name "r-smallstuff")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smallstuff" version))
-       (sha256
-        (base32 "1yacxji5hm7g8c2y9jq4d3wb53k025rinx9fvmxls2vfjadf0x7w"))))
-    (properties `((upstream-name . "smallstuff")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rocr
-                             r-pryr
-                             r-matrix
-                             r-matlib
-                             r-igraph
-                             r-data-table
-                             r-class))
-    (home-page "https://cran.r-project.org/package=smallstuff")
-    (synopsis "Dr. Small's Functions")
-    (description
-     "This package provides functions used in courses taught by Dr. Small at Drew
-University.")
-    (license license:gpl3)))
-
 (define-public r-smallsets
   (package
     (name "r-smallsets")
@@ -39281,13 +39282,13 @@ profiles.")
 (define-public r-slope
   (package
     (name "r-slope")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLOPE" version))
        (sha256
-        (base32 "0ppjpvjpk7ryjcj081sjcj9phhggarbjqvmc0ir0miwa6zdxmp8v"))))
+        (base32 "048yv0pwyhgzhndin4r98r8lrkgmg852fdpisq4ifxfdgzs7bsmc"))))
     (properties `((upstream-name . "SLOPE")))
     (build-system r-build-system)
     (arguments
@@ -40103,7 +40104,8 @@ includes error-prone data and Phase II contains validated data on a subset.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -44441,32 +44443,6 @@ related to biclustering frameworks as reviewed by Madeira and Oliveira (2004)
 <doi:10.1109/TCBB.2004.2>.")
     (license license:gpl3)))
 
-(define-public r-simplextree
-  (package
-    (name "r-simplextree")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simplextree" version))
-       (sha256
-        (base32 "18jvzcz4fdsi17j7qdqpjvx6zygvlcvpziikb8qxskaib5180l08"))))
-    (properties `((upstream-name . "simplextree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-magrittr))
-    (home-page "https://github.com/peekxc/simplextree")
-    (synopsis "Provides Tools for Working with General Simplicial Complexes")
-    (description
-     "This package provides an interface to a Simplex Tree data structure, which is a
-data structure aimed at enabling efficient manipulation of simplicial complexes
-of any dimension.  The Simplex Tree data structure was originally introduced by
-Jean-Daniel Boissonnat and ClÃ©ment Maria (2014)
-<doi:10.1007/s00453-014-9887-3>.")
-    (license license:expat)))
-
 (define-public r-simpleupset
   (package
     (name "r-simpleupset")
@@ -47746,6 +47722,42 @@ Bertan Badur. \"Extracting the signed backbone of intrinsically dense weighted
 networks.\" Journal of Complex Networks. <@code{arXiv:2012.05216>}.")
     (license license:gpl3)))
 
+(define-public r-signaly
+  (package
+    (name "r-signaly")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SignalY" version))
+       (sha256
+        (base32 "0kqmdclk0fp8nawx83sdgxqnbck0cg9xicg00qp1ai8wqagmm3xy"))))
+    (properties `((upstream-name . "SignalY")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waveslim r-urca r-emd))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/IsadoreNabi/SignalY")
+    (synopsis
+     "Signal Extraction from Panel Data via Bayesian Sparse Regression and Spectral Decomposition")
+    (description
+     "This package provides a comprehensive toolkit for extracting latent signals from
+panel data through multivariate time series analysis.  Implements spectral
+decomposition methods including wavelet multiresolution analysis via maximal
+overlap discrete wavelet transform, Percival and Walden (2000)
+<doi:10.1017/CBO9780511841040>, empirical mode decomposition for non-stationary
+signals, Huang et al. (1998) <doi:10.1098/rspa.1998.0193>, and Bayesian trend
+extraction via the Grant-Chan embedded Hodrick-Prescott filter, Grant and Chan
+(2017) <doi:10.1016/j.jedc.2016.12.007>.  Features Bayesian variable selection
+through regularized Horseshoe priors, Piironen and Vehtari (2017)
+<doi:10.1214/17-EJS1337SI>, for identifying structurally relevant predictors
+from high-dimensional candidate sets.  Includes dynamic factor model estimation,
+principal component analysis with bootstrap significance testing, and automated
+technical interpretation of signal morphology and variance topology.")
+    (license license:expat)))
+
 (define-public r-signalhsmm
   (package
     (name "r-signalhsmm")
@@ -47914,7 +47926,8 @@ providing new insight into cancer study.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -49212,41 +49225,38 @@ force and simulated annealing combinatorial search algorithms.")
 (define-public r-shortirt
   (package
     (name "r-shortirt")
-    (version "0.1.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shortIRT" version))
        (sha256
-        (base32 "0h7isjnva1jfalfzarhqkdgxm0f8rqd3qcvpac0a8cnyqh0p4pfd"))))
+        (base32 "1mhp7sw8ama1sgc8cvbdrl2pa0r87kk5gh6zrnnrcpvd40wf9vsr"))))
     (properties `((upstream-name . "shortIRT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tam r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=shortIRT")
     (synopsis
      "Procedures Based on Item Response Theory Models for the Development of Short Test Forms")
     (description
      "Implement different Item Response Theory (IRT) based procedures for the
 development of static short test forms (STFs) from a test.  Two main procedures
-are considered, specifically the typical IRT-based procedure for the development
-of STF, and a recently introduced procedure (Epifania, Anselmi & Robusto, 2022
+are considered (Epifania, Anselmi & Robusto, 2022
 <doi:10.1007/978-3-031-27781-8_7>).  The procedures differ in how the most
 informative items are selected for the inclusion in the STF, either by
-considering their item information functions without considering any specific
-level of the latent trait (typical procedure) or by considering their
-informativeness with respect to specific levels of the latent trait, denoted as
-theta targets (the newly introduced procedure).  Regarding the latter procedure,
-three methods are implemented for the definition of the theta targets: (i) theta
-targets are defined by segmenting the latent trait in equal intervals and
-considering the midpoint of each interval (equal interval procedure, eip), (ii)
-by clustering the latent trait to obtain unequal intervals and considering the
-centroids of the clusters as the theta targets (unequal intervals procedure,
-uip), and (iii) by letting the user set the specific theta targets of interest
-(user-defined procedure, udp).  For further details on the procedure, please
-refer to Epifania, Anselmi & Robusto (2022) <doi:10.1007/978-3-031-27781-8_7>.")
+considering their item information functions without any reference to any
+specific latent trait level (benchmark procedure) or by considering their
+information with respect to specific latent trait levels, denoted as theta
+targets (theta target procedure).  Three methods are implemented for the
+definition of the theta targets: (i) as the midpoints of equal intervals on the
+latent trait, (ii) as the centroids of the clusters obtained by clustering the
+latent trait, and (iii) as user-defined values.  Importantly, the number of
+theta targets defines the number of items included in the STF. For further
+details on the procedure, please refer to Epifania, Anselmi & Robusto (2022)
+<doi:10.1007/978-3-031-27781-8_7>.")
     (license license:expat)))
 
 (define-public r-shortform
@@ -49527,7 +49537,8 @@ applicability.  And deploy as a part of a package or an independent app.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -49570,7 +49581,8 @@ applications.  Give your applications a unique and colorful style !")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -49638,7 +49650,8 @@ accessible to researchers and bioinformaticians of all levels.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -49875,7 +49888,8 @@ browser.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50088,7 +50102,8 @@ Stripe framework.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50127,7 +50142,8 @@ mathematics.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50171,7 +50187,8 @@ is structured as a Bootstrap 3 input group.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50481,7 +50498,8 @@ to assess responses interactively in a small form factor.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50543,7 +50561,8 @@ be used throughout the entire app development process.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50686,7 +50705,8 @@ payload as a reactive and provide helpers for query parameters.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -50782,13 +50802,13 @@ interactively.")
 (define-public r-shinyoauth
   (package
     (name "r-shinyoauth")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyOAuth" version))
        (sha256
-        (base32 "076lyqwxmpdlw3gd5241h93k2k9xn6xxr5msm5wiw9fvq5kr2yda"))))
+        (base32 "1cyjbs68macq1989jn9p224snkw0chffl1qkf5dfwhrnan4fswhv"))))
     (properties `((upstream-name . "shinyOAuth")))
     (build-system r-build-system)
     (arguments
@@ -50982,7 +51002,8 @@ and Si (2025) <doi:10.1214/24-STS932>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51064,7 +51085,8 @@ poorly predicted points.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51240,7 +51262,8 @@ dissemination.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51278,7 +51301,8 @@ syntax highlighting for several coding languages.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51314,7 +51338,8 @@ syntax highlighting for several coding languages.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51439,7 +51464,8 @@ generated, as well as the errors displayed in the interface.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51579,7 +51605,8 @@ algorithms are used for matching.  Ted Enamorado et al. (2019)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51912,7 +51939,8 @@ developers.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51980,7 +52008,8 @@ assistant-like user interfaces.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52027,7 +52056,8 @@ issues.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52119,7 +52149,8 @@ popovers or tooltips.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52183,7 +52214,8 @@ chains.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52404,7 +52436,8 @@ datetime picker is an input field for selecting both a date and a time.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52444,7 +52477,8 @@ build Graph model like node or edge with customized attributes for R.
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52513,7 +52547,8 @@ visualization and presentation of predicted survival curves.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52736,7 +52771,8 @@ colors and size).")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52873,7 +52909,8 @@ element in shiny app using the elements id.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52912,7 +52949,8 @@ many more customizable options.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -52981,7 +53019,8 @@ facilitates the setup of CI/CD pipelines for building Docker images on both
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -53135,7 +53174,8 @@ from and write to relational databases.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -53370,7 +53410,8 @@ created in dynamically created modules.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -53551,7 +53592,8 @@ and arithmetic.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -55035,7 +55077,8 @@ available with strong screening rules (Feser and Evangelou (2024)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -57502,7 +57545,8 @@ images/containers.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -57826,13 +57870,13 @@ modifying the design and tracking the design update history.")
 (define-public r-seqmagick
   (package
     (name "r-seqmagick")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqmagick" version))
        (sha256
-        (base32 "1rdq24192yl7w0jsnw1zhj7qzi8qb08dw95iyxyf0rm2q34q1kwm"))))
+        (base32 "1f47ydfir6gx1i5rfwj1201c0vqzz474z91mw53xjqfwkr4r3595"))))
     (properties `((upstream-name . "seqmagick")))
     (build-system r-build-system)
     (arguments
@@ -57843,10 +57887,12 @@ modifying the design and tracking the design update history.")
     (home-page "https://github.com/YuLab-SMU/seqmagick")
     (synopsis "Sequence Manipulation Utilities")
     (description
-     "Supports reading and writing sequences for different formats (currently
-interleaved and sequential formats for FASTA and PHYLIP'), file conversion, and
-manipulation (e.g. filter sequences that contain specify pattern, export
-consensus sequence from an alignment).")
+     "This package provides tools for reading and writing biological sequences in
+multiple formats, including FASTA', PHYLIP', CLUSTAL', STOCKHOLM', MEGA and
+@code{GenBank}'.  Supports interleaved and sequential layouts where applicable,
+converts between formats, and manipulates sequence sets (e.g., filtering by
+patterns and computing consensus sequences from alignments).  Also includes
+functions to download nucleotide records from NCBI by accession.")
     (license license:artistic2.0)))
 
 (define-public r-seqmade
@@ -58306,47 +58352,6 @@ fossil marine animal genera.  Bulletins of American Paleontology, 363, pp.
 1â560 (ISBN 0-87710-450-6).  Access:
 <https://www.biodiversitylibrary.org/item/40634#page/5/mode/1up>.")
     (license license:gpl3+)))
-
-(define-public r-sephora
-  (package
-    (name "r-sephora")
-    (version "0.1.31")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sephora" version))
-       (sha256
-        (base32 "1axh5qd8mp55d45k34935sm0wc6ib4b309a92d1vaxz3hzgvbygi"))))
-    (properties `((upstream-name . "sephora")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spiralize
-                             r-rootsolve
-                             r-nlme
-                             r-mass
-                             r-ggplot2
-                             r-ggnewscale
-                             r-geots
-                             r-foreach
-                             r-ebsc
-                             r-dtwclust
-                             r-dplyr
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=sephora")
-    (synopsis "Statistical Estimation of Phenological Parameters")
-    (description
-     "This package provides functions and methods for estimating phenological dates
-(green up, start of a season, maturity, senescence, end of a season and
-dormancy) from (nearly) periodic Earth Observation time series.  These dates are
-critical points of some derivatives of an idealized curve which, in turn, is
-obtained through a functional principal component analysis-based regression
-model.  Some of the methods implemented here are based on T. Krivobokova, P.
-Serra and F. Rosales (2022)
-<https://www.sciencedirect.com/science/article/pii/S0167947322000998>.  Methods
-for handling and plotting Earth observation time series are also provided.")
-    (license license:gpl2+)))
 
 (define-public r-separationplot
   (package
@@ -60099,13 +60104,13 @@ and Van Keilegom (2024) <doi:10.1080/01621459.2022.2161387>.")
 (define-public r-seminrextras
   (package
     (name "r-seminrextras")
-    (version "0.2.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminrExtras" version))
        (sha256
-        (base32 "17jyy10c62ynws7fqapx27lhsb09d9lcjq62zls6dy3c7pqdkjr4"))))
+        (base32 "105627014svjj86wxjhx5w8fv4nil4gkca9xzh455x9rs8pjw8pb"))))
     (properties `((upstream-name . "seminrExtras")))
     (build-system r-build-system)
     (arguments
@@ -60124,13 +60129,13 @@ including Cross Validated Prediction and Testing (CVPAT, Liengaard et al., 2021
 (define-public r-seminr
   (package
     (name "r-seminr")
-    (version "2.3.7")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminr" version))
        (sha256
-        (base32 "0hkinkl9zq9p6kakycyg4al5ikj4awm44j39ilp6jaqs4jilc64g"))))
+        (base32 "0fyqf7skiwa5cygfids760m7klga888pipyl9wsqg5xw886r04wc"))))
     (properties `((upstream-name . "seminr")))
     (build-system r-build-system)
     (arguments
@@ -60246,26 +60251,24 @@ see Zhong et al. (2023) <doi:10.1080/01621459.2023.2284988>; Cui and Zhong
 (define-public r-semid
   (package
     (name "r-semid")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMID" version))
        (sha256
-        (base32 "08m0vwr7a6zby7wn9dff1gf03gmqgq9ccwpyzgln2n24l4zv91x6"))))
+        (base32 "1z3l9i923b1kc4k7k9xkipn1bnm9y7nax0c5lsjdsimr2wlcxzsx"))))
     (properties `((upstream-name . "SEMID")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r-utils r-r-oo r-r-methodss3 r-igraph))
+    (propagated-inputs (list r-rje r-r-utils r-r-oo r-r-methodss3 r-igraph))
     (home-page "https://github.com/Lucaweihs/SEMID")
     (synopsis "Identifiability of Linear Structural Equation Models")
     (description
-     "This package provides routines to check identifiability or non-identifiability
-of linear structural equation models as described in Drton, Foygel, and
-Sullivant (2011) <doi:10.1214/10-AOS859>, Foygel, Draisma, and Drton (2012)
-<doi:10.1214/12-AOS1012>, and other works.  The routines are based on the
+     "This package provides routines to check identifiability of linear structural
+equation models and factor analysis models.  The routines are based on the
 graphical representation of structural equation models.")
     (license license:gpl2+)))
 
@@ -60865,7 +60868,8 @@ undirected graph network).")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -60903,7 +60907,8 @@ undirected graph network).")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -62584,13 +62589,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "0i2a25330zfwygq4palyhwx2n0x231qpvy1h5k149vhcwpp5wg22"))))
+        (base32 "1icsg5fyjy885jhhp9z1sj1dnvqi7fy4ybbnsisgva3cb0glmym0"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (arguments
@@ -63928,13 +63933,13 @@ package?SDT for an overview.")
 (define-public r-sdstudio
   (package
     (name "r-sdstudio")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdstudio" version))
        (sha256
-        (base32 "0z99q0fy75a8rsps8cvi9w0cary1z2vxb0p43m87nw4fgaav2d4b"))))
+        (base32 "086r54kr7cn2m7zbya8vhk5yql7gq3g9b7cp3law6jmnf6f01m7b"))))
     (properties `((upstream-name . "sdstudio")))
     (build-system r-build-system)
     (arguments
@@ -64191,7 +64196,8 @@ occur.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -65469,7 +65475,8 @@ The Tumor Profiler Consortium, Stekhoven, and Singer (2022)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -66835,7 +66842,8 @@ plotting scores that one would obtain under specific scoring rules.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -67327,6 +67335,39 @@ binomial distribution of single-cell @code{mRNA} counts\" by Lisa Amrhein, Kumar
 Harsha and Christiane Fuchs (2019) <doi:10.1101/657619> available on
 @code{bioRxiv}.")
     (license license:gpl3)))
+
+(define-public r-scmetatraj
+  (package
+    (name "r-scmetatraj")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scMetaTraj" version))
+       (sha256
+        (base32 "091vgwm8xjjjk9niacm7a9mrk36x704kywhag88x94zlrzn9kmhj"))))
+    (properties `((upstream-name . "scMetaTraj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uwot
+                             r-tidyr
+                             r-seurat
+                             r-rann
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=scMetaTraj")
+    (synopsis
+     "Metabolic State Space and Trajectory Analysis for Single-Cell Data")
+    (description
+     "This package provides a framework for modeling cellular metabolic states and
+continuous metabolic trajectories from single-cell RNA-seq data using
+pathway-level scoring.  Enables lineage-restricted metabolic analysis, metabolic
+pseudotime inference, module-level trend analysis, and visualization of
+metabolic state transitions.")
+    (license license:expat)))
 
 (define-public r-scmappr
   (package
@@ -67846,7 +67887,8 @@ data are obtained from mainly Web of Science and Scopus.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -71273,45 +71315,6 @@ Rotach, and Van Herwijnen (2019) <doi:10.5194/tc-13-3353-2019>, and Mayer, Van
 Herwijnen, Techel, and Schweizer (2022) <doi:10.5194/tc-2022-34>.")
     (license license:cc-by-sa4.0)))
 
-(define-public r-sarp-snowprofile-alignment
-  (package
-    (name "r-sarp-snowprofile-alignment")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sarp.snowprofile.alignment" version))
-       (sha256
-        (base32 "00i8j267zbv8ln52cr25drj06n3qhkgvbh184aq3rvvrpwrg846x"))))
-    (properties `((upstream-name . "sarp.snowprofile.alignment")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sarp-snowprofile r-dtw r-data-table r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://avalancheresearch.ca/")
-    (synopsis "Snow Profile Alignment, Aggregation, and Clustering")
-    (description
-     "Snow profiles describe the vertical (1D) stratigraphy of layered snow with
-different layer characteristics, such as grain type, hardness, deposition date,
-and many more.  Hence, they represent a data format similar to multivariate time
-series containing categorical, ordinal, and numerical data types.  Use this
-package to align snow profiles by matching their individual layers based on
-Dynamic Time Warping (DTW).  The aligned profiles can then be assessed with an
-independent, global similarity measure that is geared towards avalanche hazard
-assessment.  Finally, through exploiting data aggregation and clustering
-methods, the similarity measure provides the foundation for grouping and
-summarizing snow profiles according to similar hazard conditions.  In
-particular, this package allows for averaging large numbers of snow profiles
-with DTW Barycenter Averaging and thereby facilitates the computation of
-individual layer distributions and summary statistics that are relevant for
-avalanche forecasting purposes.  For more background information refer to Herla,
-Horton, Mair, and Haegeli (2021) <doi:10.5194/gmd-14-239-2021>, Herla, Mair, and
-Haegeli (2022) <doi:10.5194/tc-16-3149-2022>, and Horton, Herla, and Haegeli
-(2024) <doi:10.5194/egusphere-2024-1609>.")
-    (license license:gpl3+)))
-
 (define-public r-sarp-snowprofile
   (package
     (name "r-sarp-snowprofile")
@@ -71440,13 +71443,13 @@ drafted reports.")
 (define-public r-saros
   (package
     (name "r-saros")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saros" version))
        (sha256
-        (base32 "1mv3dy12777bwhwak13wxkh4macasy55ynp880q7panf9xmjrvav"))))
+        (base32 "18wzxi4zr59l138jbfwaw316sgg33sdgbrzw38nqz8sxmfyffvlw"))))
     (properties `((upstream-name . "saros")))
     (build-system r-build-system)
     (arguments
@@ -73392,6 +73395,33 @@ missing data pattern the data exhibit intermittent missing values (see the
 predict phenotype event times using Electronic Health Record (EHR) data.")
     (license license:gpl3)))
 
+(define-public r-sameplot
+  (package
+    (name "r-sameplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sameplot" version))
+       (sha256
+        (base32 "100h4whsv8q0kanx33z0z66ab09pa7mqzpjniis17hxv2i76kv9z"))))
+    (properties `((upstream-name . "sameplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ragg r-knitr))
+    (home-page "https://github.com/TomNaber/sameplot")
+    (synopsis
+     "Consistent Plot Rendering and Saving Across Interactive Sessions and Reports")
+    (description
+     "Renders plots to a temporary image using the ragg graphics device and returns
+@code{knitr::include_graphics()} output.  Optionally saves the image to a
+specified path.  This helps ensure consistent appearance across interactive
+sessions, saved files, and knitted documents.  For more details see Pedersen and
+Shemanarev (2025) <doi: 10.32614/CRAN.package.ragg>.")
+    (license license:expat)))
+
 (define-public r-same
   (package
     (name "r-same")
@@ -74205,7 +74235,8 @@ Users can interactively explore their data using the included Shiny application.
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -74335,6 +74366,37 @@ coefficients across the frequency and severity components.  This enhancement not
 only increases model accuracy but also enhances its interpretability, making it
 more suitable for practical applications in risk assessment.")
     (license license:gpl2)))
+
+(define-public r-safemapper
+  (package
+    (name "r-safemapper")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SafeMapper" version))
+       (sha256
+        (base32 "1jh5sx1gkwn0v6q8j7nw2wqx1mma8l3p4333902kkn5245fnhs2q"))))
+    (properties `((upstream-name . "SafeMapper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Zaoqu-Liu/SafeMapper")
+    (synopsis
+     "Fault-Tolerant Functional Programming with Automatic Checkpointing")
+    (description
+     "This package provides drop-in replacements for purrr and furrr mapping functions
+with built-in fault tolerance, automatic checkpointing, and seamless recovery
+capabilities.  When long-running computations are interrupted due to errors,
+system crashes, or other failures, simply re-run the same code to automatically
+resume from the last checkpoint.  Ideal for large-scale data processing, API
+calls, web scraping, and other time-intensive operations where reliability is
+critical.  For purrr methodology, see Wickham and Henry (2023)
+<https://purrr.tidyverse.org/>.")
+    (license license:expat)))
 
 (define-public r-safejoin
   (package

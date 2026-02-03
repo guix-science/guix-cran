@@ -596,7 +596,8 @@ family of packages.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1074,7 +1075,8 @@ API <https://windsor.ai/api-fields/>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -2438,6 +2440,37 @@ with gradient descent or metaheuristic, using automatic hyper parameters tuning
 and custom cost function.  A mix inspired by the common tricks on Deep Learning
 and Particle Swarm Optimization.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-automerge
+  (package
+    (name "r-automerge")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "automerge" version))
+       (sha256
+        (base32 "0bziqsxn84cx6dc1bljjg8ka1cwy5dv9qqr2g2556dg5mjjaz754"))))
+    (properties `((upstream-name . "automerge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/posit-dev/automerge-r")
+    (synopsis "R Bindings for 'Automerge' 'CRDT' Library")
+    (description
+     "This package provides R bindings to the Automerge Conflict-free Replicated Data
+Type ('CRDT') library.  Automerge enables automatic merging of concurrent
+changes without conflicts, making it ideal for distributed systems,
+collaborative applications, and offline-first architectures.  The approach of
+local-first software was proposed in Kleppmann, M., Wiggins, A., van Hardenberg,
+P., @code{McGranaghan}, M. (2019) <doi:10.1145/3359591.3359737>.  This package
+supports all Automerge data types (maps, lists, text, counters) and provides
+both low-level and high-level synchronization protocols for seamless
+interoperability with @code{JavaScript} and other Automerge implementations.")
+    (license license:expat)))
 
 (define-public r-automatedtests
   (package
@@ -6451,7 +6484,8 @@ Kroitor.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -7922,7 +7956,8 @@ for system behavior analysis.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -7959,7 +7994,8 @@ for system behavior analysis.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -9470,13 +9506,13 @@ Compositional Data, Chapman and Hall].")
 (define-public r-aramappings
   (package
     (name "r-aramappings")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aramappings" version))
        (sha256
-        (base32 "02q815rk85zmdivicsqm9zkgwm241319dacicvwy1jiq0rhclqkr"))))
+        (base32 "0g74v7lcz0k7yjwy7w216bxjmh34682s7j3nzdvxlgs64lxym0jg"))))
     (properties `((upstream-name . "aramappings")))
     (build-system r-build-system)
     (arguments
@@ -10550,41 +10586,6 @@ Collister, Liu, and Clifton (2022) <doi:10.3389/fgene.2022.818574>.")
      "This package provides a few functions and several data set for the Springer book
 Applied Predictive Modeling'.")
     (license license:gpl2)))
-
-(define-public r-applicable
-  (package
-    (name "r-applicable")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "applicable" version))
-       (sha256
-        (base32 "0n459qg3lv088f9yjym33nqi6ahq8whdbc2f0p5m1srvzbqka3mq"))))
-    (properties `((upstream-name . "applicable")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-proxyc
-                             r-matrix
-                             r-hardhat
-                             r-glue
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/tidymodels/applicable")
-    (synopsis "Compilation of Applicability Domain Methods")
-    (description
-     "This package provides a modeling package compiling applicability domain methods
-in R. It combines different methods to measure the amount of extrapolation new
-samples can have from the training set.  See Gadaleta et al (2016)
-<doi:10.4018/IJQSPR.2016010102> for an overview of applicability domains.")
-    (license license:expat)))
 
 (define-public r-appleadsr
   (package
@@ -12528,20 +12529,20 @@ designs.  More information on the methods is available online:
 (define-public r-anthro
   (package
     (name "r-anthro")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anthro" version))
        (sha256
-        (base32 "0vp55q0f9d4gljwzfzr07f80q5ip59imvklfw8gg1rjw83yaqpxr"))))
+        (base32 "1rycm225rqbwv0822k5rlm95pncdimy86hd2xf4h1vhmzb2745hr"))))
     (properties `((upstream-name . "anthro")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survey))
-    (home-page "https://github.com/worldhealthorganization/anthro")
+    (home-page "https://github.com/WorldHealthOrganization/anthro")
     (synopsis "Computation of the WHO Child Growth Standards")
     (description
      "This package provides WHO Child Growth Standards (z-scores) with confidence
@@ -12566,7 +12567,8 @@ online: <https://www.who.int/tools/child-growth-standards>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -12614,13 +12616,13 @@ visually explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.9.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresRead" version))
        (sha256
-        (base32 "12h6b8n6rak634zqsmqiwhbi7fckyz2qy9k5kh6h24wlpk86bg20"))))
+        (base32 "07a03vv43qx41zvk5436i3g7svyhbg1nm8c6m8zs43sxswfy64cx"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (arguments
@@ -13302,7 +13304,8 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -13384,6 +13387,47 @@ where gene names may vary among accessions.  Borstein & O'Meara (2018)
      "This package provides non-invasive annotation of package load calls such as
 @code{\\code{library()}}, @code{\\code{p_load()}}, and @code{\\code{require()}} so
 that we can have an idea of what the packages we are loading are meant for.")
+    (license license:expat)))
+
+(define-public r-annotar
+  (package
+    (name "r-annotar")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "annotaR" version))
+       (sha256
+        (base32 "1kwpjqvaqnr9d2phrp8s0jxnw5f048v04ix6lmw07xi2qyha6aj1"))))
+    (properties `((upstream-name . "annotaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-testthat
+                             r-rmarkdown
+                             r-purrr
+                             r-magrittr
+                             r-later
+                             r-knitr
+                             r-jsonlite
+                             r-httr
+                             r-gprofiler2
+                             r-ggplot2
+                             r-dplyr
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=annotaR")
+    (synopsis "Tidy, Integrated Gene Annotation")
+    (description
+     "This package provides a framework for intuitive, multi-source gene and protein
+annotation, with a focus on integrating functional genomics with disease and
+drug data for translational insights.  Methods used include g:Profiler (Raudvere
+et al. (2019) <doi:10.1093/nar/gkz369>), @code{biomaRt} (Durinck et al. (2009)
+<doi:10.1038/nprot.2009.97>), and the Open Targets Platform (Koscielny et al.
+(2017) <doi:10.1093/nar/gkw1055>).")
     (license license:expat)))
 
 (define-public r-annoprobe
@@ -13682,7 +13726,8 @@ a second model trained on the classes of interest.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -13767,7 +13812,8 @@ Krisanat Anukarnsakulchularp (2023)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14551,41 +14597,6 @@ ii) taxonomy_@code{RepSeq.tsv}, iii) ASV.tsv and iv)
 @code{SampleSheet_comparison.txt} (the latter being created by you).")
     (license license:gpl2+)))
 
-(define-public r-anacoda
-  (package
-    (name "r-anacoda")
-    (version "0.1.4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AnaCoDa" version))
-       (sha256
-        (base32 "1b03bxysvw9v4j3bzsmrjf5ci06v6s83ix89qxy73ba5akf2gb7h"))))
-    (properties `((upstream-name . "AnaCoDa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam r-rcpp r-mvtnorm))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/clandere/AnaCoDa")
-    (synopsis
-     "Analysis of Codon Data under Stationarity using a Bayesian Framework")
-    (description
-     "Is a collection of models to analyze genome scale codon data using a Bayesian
-framework.  Provides visualization routines and checkpointing for model
-fittings.  Currently published models to analyze gene data for selection on
-codon usage based on Ribosome Overhead Cost (ROC) are: ROC (Gilchrist et al.
-(2015) <doi:10.1093/gbe/evv087>), and ROC with phi (Wallace & Drummond (2013)
-<doi:10.1093/molbev/mst051>).  In addition @code{AnaCoDa} contains three
-currently unpublished models.  The FONSE (First order approximation On
-@code{NonSense} Error) model analyzes gene data for selection on codon usage
-against of nonsense error rates.  The PA (PAusing time) and PANSE (PAusing time
-+ @code{NonSense} Error) models use ribosome footprinting data to analyze
-estimate ribosome pausing times with and without nonsense error rate from
-ribosome footprinting data.")
-    (license license:gpl2+)))
-
 (define-public r-anabel
   (package
     (name "r-anabel")
@@ -14677,13 +14688,13 @@ from RStudio', in shiny applications, and in rmarkdown documents.")
 (define-public r-amt
   (package
     (name "r-amt")
-    (version "0.3.0.0")
+    (version "0.3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amt" version))
        (sha256
-        (base32 "0x4diq570dvyd52l6199ybsnf2lmvfq4s8b53zpmy6vrhqyp9kyz"))))
+        (base32 "08b2pg82gaiispvc1iz5jmqbylhdnnlz5a754xjxd7nldfzwaxd9"))))
     (properties `((upstream-name . "amt")))
     (build-system r-build-system)
     (arguments
@@ -15772,13 +15783,13 @@ theoretical/numerical approaches.  See more in the article Vincent et al. (2017)
 (define-public r-amapro
   (package
     (name "r-amapro")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amapro" version))
        (sha256
-        (base32 "1cq65kcsr2yxhrnm98n4fzaj6xljjln92kkn96d758n2lk65lwlg"))))
+        (base32 "1kbly71pac4ksn33lbi24yr0fx0vld9bwp0346v2ns783k02c3y0"))))
     (properties `((upstream-name . "amapro")))
     (build-system r-build-system)
     (arguments
@@ -15787,7 +15798,7 @@ theoretical/numerical approaches.  See more in the article Vincent et al. (2017)
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/helgasoft/amapro/")
-    (synopsis "Thin Wrapper for Mapping Library 'AMap'")
+    (synopsis "Thin Wrapper for Mapping Library 'AMap'('Gaode')")
     (description
      "Build and control interactive 2D and 3D maps with R/Shiny'.  Lean set of
 powerful commands wrapping native calls to AMap
@@ -17918,6 +17929,42 @@ multinomial logit model of probabilities of component membership.")
      "EM algorithm for estimation of parameters and other methods in a quantile
 regression.")
     (license license:gpl3+)))
+
+(define-public r-aldex3
+  (package
+    (name "r-aldex3")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ALDEx3" version))
+       (sha256
+        (base32 "04i3v4vkgc8g6kwf2h8qsrcrp4sxx60xxlhff3qvn20g2rmpjx8q"))))
+    (properties `((upstream-name . "ALDEx3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr
+                             r-nlme
+                             r-matrixstats
+                             r-mass
+                             r-lmertest
+                             r-lme4
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ALDEx3")
+    (synopsis "Linear Models for Sequence Count Data")
+    (description
+     "This package provides scalable generalized linear and mixed effects models
+tailored for sequence count data analysis (e.g., analysis of 16S or RNA-seq
+data).  Uses Dirichlet-multinomial sampling to quantify uncertainty in relative
+abundance or relative expression conditioned on observed count data.  Implements
+scale models as a generalization of normalizations which account for uncertainty
+in scale (e.g., total abundances) as described in Nixon et al. (2025)
+<doi:10.1186/s13059-025-03609-3> and @code{McGovern} et al. (2025)
+<doi:10.1101/2025.08.05.668734>.")
+    (license license:expat)))
 
 (define-public r-ald
   (package
@@ -21543,13 +21590,13 @@ to use for simple georeferencing of images.  Methods used are available from
 (define-public r-affiner
   (package
     (name "r-affiner")
-    (version "0.1.3")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "affiner" version))
        (sha256
-        (base32 "1qi2zi4cvhrmycxviwcm74p8vcwj7vzbncq5g974ashym4c2v6i8"))))
+        (base32 "06bg9wqz0z9wxsd0ahpy37zizxx8r93p9fb1d4xwrg52c5063hxg"))))
     (properties `((upstream-name . "affiner")))
     (build-system r-build-system)
     (arguments
@@ -22586,6 +22633,37 @@ multiple graphical models.  For more details, please see
 allows to fetch customer details, submit queries to ADH.")
     (license license:gpl2)))
 
+(define-public r-adsasi
+  (package
+    (name "r-adsasi")
+    (version "0.9.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adsasi" version))
+       (sha256
+        (base32 "1zvs239lyzsrq5y1m462cq2nx7q73iqpk2rx6710wmd8n2bvjpwb"))))
+    (properties `((upstream-name . "adsasi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-abind))
+    (home-page "https://cran.r-project.org/package=adsasi")
+    (synopsis "Adaptive Sample Size Simulator")
+    (description
+     "This package provides a simulations-first sample size determination package that
+aims at making sample size formulae obsolete for most easily computable
+statistical experiments ; the main envisioned use case is clinical trials.  The
+proposed clinical trial must be written by the user in the form of a function
+that takes as argument a sample size and returns a boolean (for whether or not
+the trial is a success).  The adsasi functions will then use it to find the
+correct sample size empirically.  The unavoidable mis-specification is obviated
+by trying sample size values close to the right value, the latter being
+understood as the value that gives the probability of success the user wants
+(usually 80 or 90% in biostatistics, corresponding to 20 or 10% type II error).")
+    (license license:gpl3+)))
+
 (define-public r-ads
   (package
     (name "r-ads")
@@ -23240,13 +23318,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralonco" version))
        (sha256
-        (base32 "15226bw62mndgrp56a7xfb437yxr92zqjhgxrsbbzfpj1ilcbi80"))))
+        (base32 "0vmafmv7nmsx901jxqrd1h5jhrsbmwyab7mmv3fl0dra9dqs16y3"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (arguments
@@ -23258,6 +23336,7 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
                              r-lubridate
                              r-lifecycle
                              r-dplyr
+                             r-cli
                              r-admiraldev
                              r-admiral))
     (native-inputs (list r-knitr))
@@ -23320,13 +23399,13 @@ admiral package.")
 (define-public r-admiralmetabolic
   (package
     (name "r-admiralmetabolic")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralmetabolic" version))
        (sha256
-        (base32 "1j0w4mniqwpdw9haqnnxgkxx568gvklv8kp8pm39qic4i6ndwf2l"))))
+        (base32 "1bfi680czmvlwa5r5z2ldjclav38zhf2j31fj2gmy19w2f7bfwhx"))))
     (properties `((upstream-name . "admiralmetabolic")))
     (build-system r-build-system)
     (arguments
@@ -24601,7 +24680,8 @@ allows you to customize additional searches.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -26226,13 +26306,13 @@ arbitrary text input.")
 (define-public r-acro
   (package
     (name "r-acro")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acro" version))
        (sha256
-        (base32 "0r0zm7nxlfw09gyygv5nc8wk9h8wqsnhmxq3dqj0nmvf8yv2hkgc"))))
+        (base32 "13vpy36jzqwgp4y1sqc08x637vqnc1wwfykmq8f9zm4m29mzgss4"))))
     (properties `((upstream-name . "acro")))
     (build-system r-build-system)
     (arguments
@@ -26240,6 +26320,7 @@ arbitrary text input.")
       #:tests? #f))
     (inputs (list python))
     (propagated-inputs (list r-reticulate r-png r-admiraldev))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/AI-SDC/ACRO-R")
     (synopsis
      "Tool for Semi-Automating the Statistical Disclosure Control of Research Outputs")
@@ -26573,7 +26654,8 @@ brings together dictionaries from different sources.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -26835,7 +26917,8 @@ for screen reader users.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -27652,13 +27735,13 @@ intervals for individual participant scores.")
 (define-public r-aamatch
   (package
     (name "r-aamatch")
-    (version "0.3.7")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aamatch" version))
        (sha256
-        (base32 "1wrhxh61drmcixp895miglhxvhipwnixx0w42cr6m1mbn69xbd75"))))
+        (base32 "0579ipa6yq8fxd18x73r455dx53n49igzxf34mcz0kxgnrhp2bs8"))))
     (properties `((upstream-name . "aamatch")))
     (build-system r-build-system)
     (arguments
@@ -27667,7 +27750,7 @@ intervals for individual participant scores.")
     (propagated-inputs (list r-itos))
     (home-page "https://cran.r-project.org/package=aamatch")
     (synopsis
-     "Artless Automatic Multivariate Matching for Observational Studies")
+     "Artless Automatic or Artful Multivariate Matching for Observational Studies")
     (description
      "This package implements a simple version of multivariate matching using a
 propensity score, near-exact matching, near-fine balance, and robust Mahalanobis
@@ -27698,4 +27781,36 @@ the program does everything else.")
      "This package provides the conditional Nelson-Aalen and Aalen-Johansen
 estimators.  The methods are based on Bladt & Furrer (2023), in preparation.")
     (license license:gpl2+)))
+
+(define-public r-aae-pop
+  (package
+    (name "r-aae-pop")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aae.pop" version))
+       (sha256
+        (base32 "1b8n6z8i01vgya8mlgvai5xryqd58j0ybm2iaypcyvrlydlqy9mr"))))
+    (properties `((upstream-name . "aae.pop")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-nleqslv
+                             r-mc2d
+                             r-future-apply
+                             r-cubature
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://aae-stats.github.io/aae.pop/")
+    (synopsis "Flexible Population Dynamics Simulations")
+    (description
+     "Simulate population dynamics from realistically complex matrix population models
+in a plug-and-play fashion.  Supports aspatial and spatially implicit models
+with one or more species and time-varying covariates, stochasticity, density
+dependence, additions or removals of individuals, interspecific interactions,
+and metapopulations.")
+    (license license:asl2.0)))
 

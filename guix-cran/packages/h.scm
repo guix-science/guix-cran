@@ -2303,30 +2303,6 @@ provides an implementation of the Iterative Proportional Fitting (IPF) algorithm
 (Zaloznik (2011) <doi:10.13140/2.1.2480.9923>).")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
-(define-public r-humanize
-  (package
-    (name "r-humanize")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "humanize" version))
-       (sha256
-        (base32 "0hhhd640n77s8xaa2gbd9fckdk2yjg68gdb7wjy56a2khzqfssxr"))))
-    (properties `((upstream-name . "humanize")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lubridate r-glue r-assertthat))
-    (home-page "https://newtux.github.io/humanize/index.html")
-    (synopsis "Create Values for Human Consumption")
-    (description
-     "An almost direct port of the python humanize package
-<https://github.com/jmoiron/humanize>.  This package contains utilities to
-convert values into human readable forms.")
-    (license license:expat)))
-
 (define-public r-humaniformat
   (package
     (name "r-humaniformat")
@@ -3039,7 +3015,8 @@ dynamically sortable tables.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3106,7 +3083,8 @@ obsolete are not included.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3179,86 +3157,6 @@ high-correlation among coefficients.  A detailed description of the method: Li
 and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 2827-2851, <doi:10.48550/@code{arXiv.1405.3319>}.")
     (license license:gpl3)))
-
-(define-public r-htgm3d
-  (package
-    (name "r-htgm3d")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HTGM3D" version))
-       (sha256
-        (base32 "0r7b7k6w2lqbvl5jvg9rg34236jk8w5xw52qdlcjnwz7l8zfmzam"))))
-    (properties `((upstream-name . "HTGM3D")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vprint
-                             r-stringr
-                             r-rgl
-                             r-randomgodb
-                             r-r2html
-                             r-minimalistgodb
-                             r-htgm2d
-                             r-htgm
-                             r-gominer))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=HTGM3D")
-    (synopsis "Three Dimensional High Throughput 'GoMiner'")
-    (description
-     "The Gene Ontology (GO) Consortium <https://geneontology.org/> organizes genes
-into hierarchical categories based on biological process (BP), molecular
-function (MF) and cellular component (CC, i.e., subcellular localization).
-Tools such as @code{GoMiner} (see Zeeberg, B.R., Feng, W., Wang, G. et al.
-(2003) <doi:10.1186/gb-2003-4-4-r28>) can leverage GO to perform ontological
-analysis of microarray and proteomics studies, typically generating a list of
-significant functional categories.  To capture the benefit of all three
-ontologies, I developed HTGM3D', a three-dimensional version of @code{GoMiner}'.")
-    (license license:gpl2+)))
-
-(define-public r-htgm2d
-  (package
-    (name "r-htgm2d")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HTGM2D" version))
-       (sha256
-        (base32 "0y0185p13yx2lq0ppl197hi6d7xdby57c3yjfcbsm3wdmgahcawx"))))
-    (properties `((upstream-name . "HTGM2D")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vprint
-                             r-randomgodb
-                             r-minimalistgodb
-                             r-jaccard
-                             r-htgm
-                             r-hgnchelper
-                             r-gplots
-                             r-gominer))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=HTGM2D")
-    (synopsis "Two Dimensional High Throughput 'GoMiner'")
-    (description
-     "The Gene Ontology (GO) Consortium <https://geneontology.org/> organizes genes
-into hierarchical categories based on biological process (BP), molecular
-function (MF) and cellular component (CC, i.e., subcellular localization).
-Tools such as @code{GoMiner} (see Zeeberg, B.R., Feng, W., Wang, G. et al.
-(2003) <doi:10.1186/gb-2003-4-4-r28>) can leverage GO to perform ontological
-analysis of microarray and proteomics studies, typically generating a list of
-significant functional categories.  Microarray studies are usually analyzed with
-BP, whereas proteomics researchers often prefer CC. To capture the benefit of
-both of those ontologies, I developed a two-dimensional version of
-High-Throughput @code{GoMiner} ('HTGM2D').  I generate a 2D heat map whose axes
-are any two of BP, MF, or CC, and the value within a picture element of the heat
-map reflects the Jaccard metric p-value for the number of genes in common for
-the corresponding pair.")
-    (license license:gpl2+)))
 
 (define-public r-htgm
   (package
@@ -4396,7 +4294,8 @@ imputations are needed, following the work of von Hippel (2020)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5511,13 +5410,13 @@ application that saves results to a user-created @code{PostgreSQL} database.")
 (define-public r-hoifcar
   (package
     (name "r-hoifcar")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HOIFCar" version))
        (sha256
-        (base32 "00dnh693bcfkvx1qqfpy4jx5v7a1hf7xfaw8608iznxpw759f6zq"))))
+        (base32 "1qh9ghb1ipzhc4h52lh3y4lgrswm7fifknsv97znndj7y93admhs"))))
     (properties `((upstream-name . "HOIFCar")))
     (build-system r-build-system)
     (arguments
@@ -5537,7 +5436,8 @@ application that saves results to a user-created @code{PostgreSQL} database.")
 Clinical Trials (RCT) motivated by higher-order influence functions (HOIF).
 Provides point estimates, oracle bias, variance, and approximate variance for
 HOIF-adjusted estimators.  For methodology details, see Zhao et al. (2024)
-<doi:10.48550/@code{arXiv.2411.08491>}.")
+<doi:10.48550/@code{arXiv.2411.08491>} and Gu et al. (2025)
+<doi:10.48550/@code{arXiv.2512.20046>}.")
     (license license:expat)))
 
 (define-public r-hodgestools
@@ -7402,34 +7302,6 @@ dependent rates of diversification.  Beaulieu and O'Meara (2016)
 <doi:10.1093/sysbio/syw022>.")
     (license license:gpl2+)))
 
-(define-public r-hirt
-  (package
-    (name "r-hirt")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hIRT" version))
-       (sha256
-        (base32 "0s0i6p9iv0yv0l15dnwkpcmc91751jyjs1y1nz671lz6jpb8rz5c"))))
-    (properties `((upstream-name . "hIRT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rms r-pryr r-matrix r-ltm))
-    (home-page "http://github.com/xiangzhou09/hIRT")
-    (synopsis "Hierarchical Item Response Theory Models")
-    (description
-     "Implementation of a class of hierarchical item response theory (IRT) models
-where both the mean and the variance of latent preferences (ability parameters)
-may depend on observed covariates.  The current implementation includes both the
-two-parameter latent trait model for binary data and the graded response model
-for ordinal data.  Both are fitted via the Expectation-Maximization (EM)
-algorithm.  Asymptotic standard errors are derived from the observed information
-matrix.")
-    (license license:gpl3+)))
-
 (define-public r-hirisplexr
   (package
     (name "r-hirisplexr")
@@ -8322,7 +8194,8 @@ test.  Some references are: Chen S.X. and Qin Y.L. (2010).
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -8681,13 +8554,13 @@ variance tables and p-values from several other tests of non-additivity.")
 (define-public r-hicream
   (package
     (name "r-hicream")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicream" version))
        (sha256
-        (base32 "17z9bqqvldvryj3zf06mpk1pk14f7d5k67y784xlcvany4zlks0j"))))
+        (base32 "14dfjbsmnc9dqk8afnjbw2i3k47g1402lxsdwhgq3wm9h44glpp7"))))
     (properties `((upstream-name . "hicream")))
     (build-system r-build-system)
     (arguments
@@ -8712,7 +8585,7 @@ variance tables and p-values from several other tests of non-additivity.")
                              r-auk
                              r-adjclust))
     (native-inputs (list r-knitr))
-    (home-page "https://forge.inrae.fr/scales/hicream")
+    (home-page "https://scales.pages-forge.inrae.fr/hicream/")
     (synopsis "HIC diffeREntial Analysis Method")
     (description
      "Perform Hi-C data differential analysis based on pixel-level differential
@@ -10089,42 +9962,6 @@ The package implements the methodological developments found in Hermes et al.
 introduced in Higgins and Thompson (2002) <doi:10.1002/sim.1186>.  For
 critiquing articles it is often better to convert to another of those measures.
 Some conversions are provided here and confidence intervals are also available.")
-    (license license:gpl2)))
-
-(define-public r-heteroggm
-  (package
-    (name "r-heteroggm")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HeteroGGM" version))
-       (sha256
-        (base32 "1yz4rwlfhq0lk9zpc1p7yc35d1n1gr0pfdfhlm57kcsi5a8pzlk1"))))
-    (properties `((upstream-name . "HeteroGGM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass r-igraph r-huge))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=HeteroGGM")
-    (synopsis "Gaussian Graphical Model-Based Heterogeneity Analysis")
-    (description
-     "The goal of this package is to user-friendly realizing Gaussian graphical
-model-based heterogeneity analysis.  Recently, several Gaussian graphical
-model-based heterogeneity analysis techniques have been developed.  A common
-methodological limitation is that the number of subgroups is assumed to be known
-a priori, which is not realistic.  In a very recent study (Ren et al., 2022), a
-novel approach based on the penalized fusion technique is developed to fully
-data-dependently determine the number and structure of subgroups in Gaussian
-graphical model-based heterogeneity analysis.  It opens the door for utilizing
-the Gaussian graphical model technique in more practical settings.  Beyond Ren
-et al. (2022), more estimations and functions are added, so that the package is
-self-contained and more comprehensive and can provide ``more direct insights to
-practitioners (with the visualization function).  Reference: Ren, M., Zhang S.,
-Zhang Q. and Ma S. (2022).  Gaussian Graphical Model-based Heterogeneity
-Analysis via Penalized Fusion.  Biometrics, 78 (2), 524-535.")
     (license license:gpl2)))
 
 (define-public r-heterogen
@@ -13876,6 +13713,35 @@ Zhenjie Zhang and Zhifeng Hao (2018)
 description of some of our methods.")
     (license license:gpl2+)))
 
+(define-public r-hcpclust
+  (package
+    (name "r-hcpclust")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCPclust" version))
+       (sha256
+        (base32 "0ym5hzb92vi5zlyarb9rvc4z4a5spd3jldcddigwn7l2qv8flyxk"))))
+    (properties `((upstream-name . "HCPclust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost r-quantregforest r-quantreg r-grf))
+    (home-page "https://github.com/judywangstat/HCP")
+    (synopsis
+     "Hierarchical Conformal Prediction for Clustered Data with Missing Responses")
+    (description
+     "This package implements hierarchical conformal prediction for clustered data
+with missing responses.  The method uses repeated cluster-level splitting and
+within-cluster subsampling to accommodate dependence, and inverse-probability
+weighting to correct distribution shift induced by missingness.  Conditional
+densities are estimated by inverting fitted conditional quantiles (linear
+quantile regression or quantile regression forests), and p-values are aggregated
+across resampling and splitting steps using the Cauchy combination test.")
+    (license license:expat)))
+
 (define-public r-hcmodelsets
   (package
     (name "r-hcmodelsets")
@@ -14030,7 +13896,8 @@ Larsen et al. (2019) <doi:10.1145/3338286.3340115>; Lilija et al. (2019)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14058,13 +13925,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.8.8")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "0bfvydqy07wvfff1sycwr33gidjhirc3rm13817339lv3y424jjp"))))
+        (base32 "0g072b8qv5vbjwx8sbm4qaqvh250ansnv7acnwmsmnjj65cajwyp"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (arguments
@@ -16262,6 +16129,35 @@ out cycle-spinning.  Main reference: Fryzlewicz, P. and Nason, G.P. (2004) \"A
 Haar-Fisz algorithm for Poisson intensity estimation.\" Journal of Computational
 and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
     (license license:gpl2+)))
+
+(define-public r-h5lite
+  (package
+    (name "r-h5lite")
+    (version "2.0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h5lite" version))
+       (sha256
+        (base32 "0n8wnziixr3mksm1dkihrg5dcn8mlqf190bgvkrz29knww61l7fv"))))
+    (properties `((upstream-name . "h5lite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-hdf5lib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cmmr/h5lite")
+    (synopsis "Simplified 'HDF5' Interface")
+    (description
+     "This package provides a user-friendly interface for the Hierarchical Data Format
+5 ('HDF5') library designed to \"just work.\" It bundles the necessary system
+libraries to ensure easy installation on all platforms.  Features smart defaults
+that automatically map R objects (vectors, matrices, data frames) to efficient
+HDF5 types, removing the need to manage low-level details like dataspaces or
+property lists.  Uses the HDF5 library developed by The HDF Group
+<https://www.hdfgroup.org/>.")
+    (license license:expat)))
 
 (define-public r-h3r
   (package

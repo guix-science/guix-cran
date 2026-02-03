@@ -315,13 +315,13 @@ are described in Tobler Waldo R. (1979) <doi:10.1080/01621459.1979.10481647>.")
 (define-public r-pxwebapidata
   (package
     (name "r-pxwebapidata")
-    (version "1.1.1")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PxWebApiData" version))
        (sha256
-        (base32 "0lky2vxcmsppbr84bplwk6x0qw1f3kqh0cr55bak3jhw5hpfgiik"))))
+        (base32 "0m2a7z0nl7hyb07avh854wznb1js49sg4w6iqgpgvry8jdmypssg"))))
     (properties `((upstream-name . "PxWebApiData")))
     (build-system r-build-system)
     (arguments
@@ -760,13 +760,13 @@ flexibility to accommodate a variety of other complex study designs.")
 (define-public r-pwr2ppl
   (package
     (name "r-pwr2ppl")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwr2ppl" version))
        (sha256
-        (base32 "0vq7xw6nlaf3vi3415640752988vjj0cdrpjmpl7fjh0z2m5w758"))))
+        (base32 "0zsvp3ay8nk7w2x8pqjsfavqscazzj0vla2pj167zva8gmnmak4b"))))
     (properties `((upstream-name . "pwr2ppl")))
     (build-system r-build-system)
     (arguments
@@ -783,7 +783,6 @@ flexibility to accommodate a variety of other complex study designs.")
                              r-lmtest
                              r-lmperm
                              r-lavaan
-                             r-ez
                              r-dplyr
                              r-car
                              r-broom
@@ -2657,13 +2656,13 @@ use disorder.  This current version is built from public.ctn0094data v.  1.0.6."
 (define-public r-public-ctn0094data
   (package
     (name "r-public-ctn0094data")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "public.ctn0094data" version))
        (sha256
-        (base32 "105v4if9fqbqfrgkvcc6ws2cggn67fp3nh9y41absd7jvmzsb49h"))))
+        (base32 "1yl5gjxm7gpxmvb6vc352jxflb63hiiqz02g8f5bila08xi8gaw6"))))
     (properties `((upstream-name . "public.ctn0094data")))
     (build-system r-build-system)
     (arguments
@@ -3046,32 +3045,6 @@ Taufemback, C.G. and Carlos, J.H. (2025). \"Positive time series regression
 models: theoretical and computational aspects\".  Computational Statistics 40,
 1185â1215. <doi:10.1007/s00180-024-01531-z>.")
     (license license:gpl3+)))
-
-(define-public r-ptspotter
-  (package
-    (name "r-ptspotter")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ptspotter" version))
-       (sha256
-        (base32 "0mw9s2h6bhyjrcw9f0ayzcwg30inwyr7dqfk43qc24ppkclh85wh"))))
-    (properties `((upstream-name . "ptspotter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-this-path r-stringr r-pryr r-log4r r-beepr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-leyshon/ptspotter")
-    (synopsis "Helper Functions for Use with \"ProjectTemplate\"")
-    (description
-     "Utility functions produced specifically for (but not limited to) working with
-@code{ProjectTemplate} data pipelines.  This package helps to quickly create and
-manage sequentially numbered scripts, quickly set up logging with log4r and
-functions to help debug and monitor procedures.")
-    (license license:expat)))
 
 (define-public r-ptprocess
   (package
@@ -3636,30 +3609,6 @@ For more information, see the <https://personality-project.org/r/> web page.")
 to enable the calculation properties of moist and dry air in both metric (SI)
 and imperial (IP) systems of units.  References: Meyer, D. and Thevenard, D
 (2019) <doi:10.21105/joss.01137>.")
-    (license license:expat)))
-
-(define-public r-psychreport
-  (package
-    (name "r-psychreport")
-    (version "3.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psychReport" version))
-       (sha256
-        (base32 "193y07hmx630wn83ss47i2rssl1pswgc87z2ygpkaw8y8vv46wk9"))))
-    (properties `((upstream-name . "psychReport")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable r-ez r-dplyr r-cli r-broom))
-    (home-page "https://cran.r-project.org/package=psychReport")
-    (synopsis "Reproducible Reports in Psychology")
-    (description
-     "Helper functions for producing reports in Psychology (Reproducible Research).
-Provides required formatted strings (APA style) for use in Knitr'/'Latex
-integration within *.Rnw files.")
     (license license:expat)))
 
 (define-public r-psychonetrics
@@ -5540,6 +5489,31 @@ load (AL).  Provides a wrapper to calculate the @code{MetSSS} on new data using
 the Healthy Hearts formula.")
     (license license:lgpl3)))
 
+(define-public r-pscdesign
+  (package
+    (name "r-pscdesign")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pscDesign" version))
+       (sha256
+        (base32 "1ij67c1j2qqa7ha90c0ffwvk02imn0cxp407j7fnx02s3jkb1z9b"))))
+    (properties `((upstream-name . "pscDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-s7 r-psc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richJJackson/pscDesign")
+    (synopsis "Study Design for Personalised Synthetic Controls")
+    (description
+     "This package provides tools for the design of prospective studies using
+Personalised Synthetic Controls.  Can be used in either single arm or randomised
+studies.")
+    (license license:gpl3)))
+
 (define-public r-psc
   (package
     (name "r-psc")
@@ -6700,7 +6674,8 @@ distributions.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -8154,19 +8129,20 @@ observing the project already carried out.")
 (define-public r-projectlsa
   (package
     (name "r-projectlsa")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projectLSA" version))
        (sha256
-        (base32 "05mbb9h912gr10gwhdmvmr1lqpb9zpkcksk203cvl70fpiv1hbv5"))))
+        (base32 "1fwvara4xvdlc260bmyv6r1y27f1b4w64x5ngn29akia6p9inflw"))))
     (properties `((upstream-name . "projectLSA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-viridislite
+                             r-tidyverse
                              r-tidyr
                              r-tidylpa
                              r-tibble
@@ -8195,9 +8171,9 @@ observing the project already carried out.")
                              r-data-table
                              r-colourpicker))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/hasandjidu/projectLSA")
+    (home-page "https://github.com/hdmeasure/projectLSA")
     (synopsis
-     "R Shiny Application for Latent Structure Analysis with a Graphical User Interface")
+     "Shiny Application for Latent Structure Analysis with a Graphical User Interface")
     (description
      "This package provides an interactive Shiny-based toolkit for conducting latent
 structure analyses, including Latent Profile Analysis (LPA), Latent Class
@@ -9083,66 +9059,6 @@ monitoring.  Building on the event log objects class from package @code{bupaR}'.
  Allows the use to assemble custom shiny dashboards based on process data.")
     (license license:expat)))
 
-(define-public r-processmapr
-  (package
-    (name "r-processmapr")
-    (version "0.5.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "processmapR" version))
-       (sha256
-        (base32 "0qcq07ayvd0i7jidm0ad6sgkzl5d6zzdkvm3fbdcsh4lbbiz3x1j"))))
-    (properties `((upstream-name . "processmapR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-shiny
-                             r-scales
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-plotly
-                             r-miniui
-                             r-lifecycle
-                             r-htmlwidgets
-                             r-htmltools
-                             r-hms
-                             r-glue
-                             r-ggplot2
-                             r-forcats
-                             r-edear
-                             r-dplyr
-                             r-diagrammer
-                             r-data-table
-                             r-cli
-                             r-bupar
-                             r-bh))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://bupar.net/")
-    (synopsis "Construct Process Maps Using Event Data")
-    (description
-     "Visualize event logs using directed graphs, i.e.  process maps.  Part of the
-@code{bupaR} framework.")
-    (license license:expat)))
-
 (define-public r-processcheckr
   (package
     (name "r-processcheckr")
@@ -9918,40 +9834,6 @@ game of Rock, Paper, Scissors.  4.  Choose n number of card(s) from a pack of 52
 playing cards (Joker optional).")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-prisonbrief
-  (package
-    (name "r-prisonbrief")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prisonbrief" version))
-       (sha256
-        (base32 "06550fnnffpcnv4q2nicrm7p573313lvnj6hkdrf7979ygrsmmfi"))))
-    (properties `((upstream-name . "prisonbrief")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rvest
-                             r-rnaturalearthdata
-                             r-rnaturalearth
-                             r-passport
-                             r-magrittr
-                             r-httr
-                             r-dplyr))
-    (home-page "https://danilofreire.github.io/prisonbrief/")
-    (synopsis "Downloads and Parses World Prison Brief Data")
-    (description
-     "Download, parses and tidies information from the World Prison Brief project
-<http://www.prisonstudies.org/>.")
-    (license license:expat)))
-
 (define-public r-prismjs
   (package
     (name "r-prismjs")
@@ -10490,6 +10372,35 @@ nodes and edges based on functional information.")
 set.  See Bauer JO (2021) <doi:10.1145/3475827.3475832> and Bauer JO, Drabant B
 (2021) <doi:10.1016/j.jmva.2021.104754> for more information on principal
 loading analysis.")
+    (license license:expat)))
+
+(define-public r-printtree
+  (package
+    (name "r-printtree")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "printtree" version))
+       (sha256
+        (base32 "1bnzs3kxchnknbijk3zjmjkfivkp1fff6ksypad8yv3ff4lvz3p3"))))
+    (properties `((upstream-name . "printtree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PrigasG/printtree")
+    (synopsis "Print Directory Trees for R Projects and Folders")
+    (description
+     "This package provides tools to print a compact, readable directory tree for a
+folder or project.  The package can automatically detect common project roots
+(e.g., RStudio .Rproj files) and formats output for quick inspection of code and
+data organization.  It supports typical tree customizations such as limiting
+depth, excluding files using ignore patterns, and producing clean, aligned text
+output suitable for console use, reports, and reproducible documentation.  A
+snapshot helper can also render the tree output to a PNG image for sharing in
+issues, teaching material, or project documentation.")
     (license license:expat)))
 
 (define-public r-printr
@@ -15004,13 +14915,13 @@ test-taker is needed.")
 (define-public r-powrpriori
   (package
     (name "r-powrpriori")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PowRPriori" version))
        (sha256
-        (base32 "1nqmp2svsngsclkrmk3r6vwvjdh1plfy8c96r6fb1ij3li86rkgp"))))
+        (base32 "1q77fg3917ckc8xpbbnqaavi9vipvyf3brs81h01a8iyhwdrhimb"))))
     (properties `((upstream-name . "PowRPriori")))
     (build-system r-build-system)
     (arguments
@@ -17232,13 +17143,13 @@ multivariate seasonal time series models.")
 (define-public r-portalr
   (package
     (name "r-portalr")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "portalr" version))
        (sha256
-        (base32 "0aabz00gg2nfdc4jswlkhk5wxsccckpvnavfk444by7dvgcpq4lz"))))
+        (base32 "196vnf3m4ahlc8f1aqzgkkd0mlza4abf1f09sgk8i46m3i18lmzq"))))
     (properties `((upstream-name . "portalr")))
     (build-system r-build-system)
     (arguments
@@ -19810,6 +19721,42 @@ implementing advanced statistical procedures.  Respective data structures
 on the indexed corpora.")
     (license license:gpl3)))
 
+(define-public r-pollster
+  (package
+    (name "r-pollster")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pollster" version))
+       (sha256
+        (base32 "0phr2y4brw5myjvb17m51xnywlfkxqh3am5bk94man4xf3qdw870"))))
+    (properties `((upstream-name . "pollster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-labelled
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pollster")
+    (synopsis "Calculate Crosstab and Topline Tables of Weighted Survey Data")
+    (description
+     "Calculate common types of tables for weighted survey data.  Options include
+topline and (2-way and 3-way) crosstab tables of categorical or ordinal data as
+well as summary tables of weighted numeric variables.  Optionally, include the
+margin of error at selected confidence intervals including the design effect.
+The design effect is calculated as described by Kish (1965)
+<doi:10.1002/bimj.19680100122> beginning on page 257.  Output takes the form of
+tibbles (simple data frames).  This package conveniently handles labelled data,
+such as that commonly used by Stata and SPSS. Complex survey design is not
+supported at this time.")
+    (license license:cc0)))
+
 (define-public r-pollen
   (package
     (name "r-pollen")
@@ -21037,7 +20984,8 @@ in the neighborhood.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -22070,6 +22018,47 @@ overfitting and to ensure precise estimation of key parameters in the prediction
 model.")
     (license license:gpl3+)))
 
+(define-public r-pmrm
+  (package
+    (name "r-pmrm")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmrm" version))
+       (sha256
+        (base32 "1dzyaz88ihjcx2hl7bc9djqgw9mzflf4mwd3a1dlcb4r7p87mvra"))))
+    (properties `((upstream-name . "pmrm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tibble
+                             r-rtmb
+                             r-rlang
+                             r-nlme
+                             r-matrix
+                             r-ggplot2
+                             r-generics
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/openpharma/pmrm")
+    (synopsis "Progression Models for Repeated Measures")
+    (description
+     "This package provides a progression model for repeated measures (PMRM) is a
+continuous-time nonlinear mixed-effects model for longitudinal clinical trials
+in progressive diseases.  Unlike mixed models for repeated measures (MMRMs),
+which estimate treatment effects as linear combinations of additive effects on
+the outcome scale, PMRMs characterize treatment effects in terms of the
+underlying disease trajectory.  This framing yields clinically interpretable
+quantities such as average time saved and percent reduction in decline due to
+treatment.  This package implements frequentist PMRMs by Raket (2022)
+<doi:10.1002/sim.9581> using RTMB by Kristensen (2016)
+<doi:10.18637/jss.v070.i05>.")
+    (license license:expat)))
+
 (define-public r-pmr
   (package
     (name "r-pmr")
@@ -22167,6 +22156,40 @@ Hadoop in conjunction with Hive, Spark or Storm, as well as allow predictive
 analytics to be executed for IBM z Systems mainframe applications and real-time,
 streaming analytics platforms.")
     (license (license:fsdg-compatible "GPL (>= 2.1)"))))
+
+(define-public r-pmlsp
+  (package
+    (name "r-pmlsp")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmlsp" version))
+       (sha256
+        (base32 "03drbcxc95m0274q7gx5rkwjsgivf2mpfvvcrq3dkwzsa20fd6q8"))))
+    (properties `((upstream-name . "pmlsp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep
+                             r-spatialreg
+                             r-qrng
+                             r-numderiv
+                             r-mvtnorm
+                             r-minqa
+                             r-maxlik
+                             r-matrixcalc
+                             r-matrix
+                             r-abind))
+    (home-page "https://github.com/d-spinelli/pmlsp")
+    (synopsis "Partial Maximum Likelihood Estimation of Spatial Probit Models")
+    (description
+     "Estimate spatial autoregressive nonlinear probit models with and without
+autoregressive disturbances using partial maximum likelihood estimation.
+Estimation and inference regarding marginal effects is also possible.  For more
+details see Bille and Leorato (2020) <doi:10.1080/07474938.2019.1682314>.")
+    (license license:gpl3+)))
 
 (define-public r-pmledecon
   (package
@@ -23410,23 +23433,25 @@ color space based tools to modify colors or palettes.")
 (define-public r-plottools
   (package
     (name "r-plottools")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PlotTools" version))
        (sha256
-        (base32 "1pf04nci0kz2f2d8xxkw72zmfypz80zq86fii3pnqhsv6d1pk800"))))
+        (base32 "13753wml0yadq7m8czs1vqdbnkpblyhrh7i4m98ng5lvywlgsrhy"))))
     (properties `((upstream-name . "PlotTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://ms609.github.io/PlotTools/")
-    (synopsis "Add Continuous Legends to Plots")
+    (synopsis
+     "Extended Tools for Continuous Legends, Polygon Manipulation, and Visual Display of Categorical Data")
     (description
      "Annotate plots with legends for continuous variables and colour spectra using
-the base graphics plotting tools; and manipulate irregular polygons.")
+the base graphics plotting tools; and manipulate irregular polygons.  Includes
+palettes for colour-blind viewers.")
     (license license:gpl2+)))
 
 (define-public r-plotthis
@@ -24081,13 +24106,13 @@ given non negative random variables.")
 (define-public r-plotbb
   (package
     (name "r-plotbb")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotbb" version))
        (sha256
-        (base32 "1kkn8mw9ndbvnaby9s2zm5c5gys4vmcmdyj8q7cqqp23axva0s4p"))))
+        (base32 "1f0g5yqjm49bly36advf47j3z2c7acry795s8zdnn0j2y06rz1n0"))))
     (properties `((upstream-name . "plotbb")))
     (build-system r-build-system)
     (arguments
@@ -24098,10 +24123,12 @@ given non negative random variables.")
     (home-page "https://cran.r-project.org/package=plotbb")
     (synopsis "Grammar of Graphics for 'base' Plot")
     (description
-     "Proof of concept for implementing grammar of graphics using base plot.  The
-@code{bbplot()} function initializes a bbplot object to store input data,
-aesthetic mapping, a list of layers and theme elements.  The object will be
-rendered as a graphic using base plot command if it is printed.")
+     "This package provides a grammar of graphics framework built on base graphics.
+It provides a bbplot object and a + operator to incrementally compose plots from
+data, aesthetic mappings and layers, then render them using the base plotting
+system.  The package includes common geometric layers (points, lines, segments,
+bars, histograms, boxplots and tiles), scales for color and other aesthetics,
+legends, faceting, themes, and significance annotations.")
     (license license:artistic2.0)))
 
 (define-public r-plotbart
@@ -25195,41 +25222,6 @@ chart title.")
 magic 8 ball, poker, rock paper scissors, shut the box, spelling bee, and 2048.")
     (license license:expat)))
 
-(define-public r-play
-  (package
-    (name "r-play")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "play" version))
-       (sha256
-        (base32 "0ys8z84ap4v37ifz84q18dms5b0rqin6dvb6av0vl5rjpbgpvbhd"))))
-    (properties `((upstream-name . "play")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-worldfootballr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (home-page "https://joe-chelladurai.github.io/play/")
-    (synopsis "Visualize Sports Data")
-    (description
-     "This package provides functions to visualise sports data.  Converts data into a
-format suitable for plotting charts.  Helps to ease the process of working with
-messy sports data to a more user friendly format.  Football data is accessed
-through @code{worldfootballR} <https://github.com/@code{JaseZiv/worldfootballR>}
-which gets data from FBref <https://fbref.com/en>, Transfermarkt
-<https://www.transfermarkt.com/>, Understat <https://understat.com/>, and fotmob
-<https://www.fotmob.com/>.")
-    (license license:expat)))
-
 (define-public r-plavaan
   (package
     (name "r-plavaan")
@@ -25286,57 +25278,6 @@ Data-driven smoothing delivers a smooth estimated path with potentially improved
 point estimation properties and confidence regions covering a surrogate that can
 be substantially tighter than conventional pointwise or uniform bands.")
     (license license:expat)))
-
-(define-public r-platypus
-  (package
-    (name "r-platypus")
-    (version "3.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Platypus" version))
-       (sha256
-        (base32 "03sws767aih5yihqr9vfnixp0njgzfgflvajf3sbhrzpj29dpkgg"))))
-    (properties `((upstream-name . "Platypus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-useful
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringdist
-                             r-seuratobject
-                             r-seurat
-                             r-seqinr
-                             r-reshape2
-                             r-plyr
-                             r-matrix
-                             r-magrittr
-                             r-knitr
-                             r-jsonlite
-                             r-ggtree
-                             r-ggseqlogo
-                             r-ggplot2
-                             r-ggalluvial
-                             r-dplyr
-                             r-cowplot
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Platypus")
-    (synopsis "Single-Cell Immune Repertoire and Gene Expression Analysis")
-    (description
-     "We present Platypus', an open-source software platform providing a user-friendly
-interface to investigate B-cell receptor and T-cell receptor repertoires from
-@code{scSeq} experiments.  Platypus provides a framework to automate and ease
-the analysis of single-cell immune repertoires while also incorporating
-transcriptional information involving unsupervised clustering, gene expression
-and gene ontology.  This R version of Platypus is part of the @code{ePlatypus}
-ecosystem for computational analysis of immunogenomics data: Yermanos et al.
-(2021) <doi:10.1093/nargab/lqab023>, Cotet et al. (2023)
-<doi:10.1093/bioinformatics/btad553>.")
-    (license license:gpl2)))
 
 (define-public r-plattice
   (package
@@ -26258,6 +26199,44 @@ Neumeyer N (2010) <doi:10.1186/1471-2210-10-6>, and Burnham KP, Anderson DR
 (2004) <doi:10.1177/0049124104268644>.")
     (license license:gpl3+)))
 
+(define-public r-pkpd-release
+  (package
+    (name "r-pkpd-release")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pkpd.Release" version))
+       (sha256
+        (base32 "0kyi9vyvjdk03f3fh33s5y1ws2i488vcy57aycdl12mjn809zycn"))))
+    (properties `((upstream-name . "pkpd.Release")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-minpack-lm r-gridextra r-ggplot2))
+    (home-page "https://cran.r-project.org/package=pkpd.Release")
+    (synopsis
+     "Model Fitting and Simulation for Drug Release Kinetics and PK/PD")
+    (description
+     "This package provides a comprehensive framework for model fitting and simulation
+of drug release kinetics, pharmacokinetics (PK), and pharmacodynamics (PD).  The
+package implements widely used mechanistic and empirical models for in vitro
+drug release, including zero-order, first-order, Higuchi, Korsmeyer-Peppas,
+Hixson-Crowell, and Weibull models.  Pharmacokinetic functionality includes
+linear and nonlinear functions for one- and two-compartment models for
+intravenous bolus and oral administration, Michaelis-Menten kinetics, and
+non-compartmental analysis (NCA).  Pharmacodynamic and dose-response modeling is
+supported through Emax-based models, including stimulatory (sigmoid Emax) and
+inhibitory (sigmoid Imax) Hill models, four- and five-parameter logistic models,
+as well as median toxic dose (TD50) and lethal dose (LD50) models.  The package
+is intended to support parameter estimation, simulation, and model comparison in
+pharmaceutical research, drug development, and pharmacometrics education.  For
+more details, see Gabrielsson & Weiner (2000) <ISBN:9186274929>, Holford &
+Sheiner (1981) <doi:10.2165/00003088-198106060-00002>, and Manlapaz (2025)
+<doi:10.32614/CRAN.package.@code{adsoRptionCMF>}.")
+    (license license:gpl3)))
+
 (define-public r-pknca
   (package
     (name "r-pknca")
@@ -26461,13 +26440,13 @@ installed.")
 (define-public r-pkgnet
   (package
     (name "r-pkgnet")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgnet" version))
        (sha256
-        (base32 "10sjvd3mwwlbj71zmdmczyrx5s95zax0w7m07nr6413c96ahny14"))))
+        (base32 "0vjc99pzp5p3g0rmfgvqi1znzg048cflhrr5dgg6x4pkm0vckz39"))))
     (properties `((upstream-name . "pkgnet")))
     (build-system r-build-system)
     (arguments
@@ -26481,7 +26460,6 @@ installed.")
                              r-knitr
                              r-igraph
                              r-glue
-                             r-futile-logger
                              r-dt
                              r-data-table
                              r-covr
@@ -26513,7 +26491,8 @@ information.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -27148,6 +27127,39 @@ coefficients to new datasets; it does not itself estimate spline models or
 principal components.")
     (license license:expat)))
 
+(define-public r-pixr
+  (package
+    (name "r-pixr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pixr" version))
+       (sha256
+        (base32 "0a73pkrnk3xmgl37h7sc56pwkdn2dqhsgmljcj6jwdpvqkdx1ssr"))))
+    (properties `((upstream-name . "pixr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/pixr")
+    (synopsis "Access Brazilian Central Bank 'PIX' Open Data 'API'")
+    (description
+     "This package provides a tidyverse'-style interface to the Brazilian Central Bank
+(<https://www.bcb.gov.br>) PIX Open Data API
+<https://olinda.bcb.gov.br/olinda/servico/Pix_@code{DadosAbertos/versao/v1/aplicacao#!/recursos>}.
+ Retrieve statistics on PIX keys, transactions by municipality, and monthly
+transaction summaries.  All functions return tibbles and support OData query
+parameters for filtering, selecting, and ordering data.")
+    (license license:expat)))
+
 (define-public r-pixiedust
   (package
     (name "r-pixiedust")
@@ -27772,7 +27784,8 @@ AP, Sweeting MJ (2015) <DOI:10.1002/sim.6434>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -28798,7 +28811,8 @@ inconsistencies.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -29013,13 +29027,13 @@ parameters\" <doi:10.22533/at.ed.3552009033>.")
 (define-public r-phytoclass
   (package
     (name "r-phytoclass")
-    (version "2.0.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phytoclass" version))
        (sha256
-        (base32 "17yd1ns6mvk8kr60jp818hnfivfag6qmgf9jkgvp37fya4k2x287"))))
+        (base32 "0mfkvr0kbxdfbs43zy7w92q88q6wry3xbcwc3c5ycahsfgm67nbx"))))
     (properties `((upstream-name . "phytoclass")))
     (build-system r-build-system)
     (arguments
@@ -29027,10 +29041,9 @@ parameters\" <doi:10.22533/at.ed.3552009033>.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rcppml
-                             r-metrics
+                             r-progress
                              r-ggplot2
                              r-dynamictreecut
-                             r-dplyr
                              r-bestnormalize))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/phytoclass/phytoclass/")
@@ -29378,13 +29391,13 @@ in addition to binary data.")
 (define-public r-phylosignaldb
   (package
     (name "r-phylosignaldb")
-    (version "0.2.2")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylosignalDB" version))
        (sha256
-        (base32 "08wibnqnrqx1z2g32hyp2w7kyx9brq275r1bkkhpm90wiv92a5np"))))
+        (base32 "1rbqs3j214x0sjq7dfgbinhkrljyagp3c1fbdkdbkg5kz66lx6wh"))))
     (properties `((upstream-name . "phylosignalDB")))
     (build-system r-build-system)
     (arguments
@@ -29405,8 +29418,10 @@ phylogenetic signal, formulating an index and developing a method of testing in
 strict accordance with the definition, instead of relying on correlation
 analysis or evolutionary models.  The novel method equivalently expressed the
 textual definition of the phylogenetic signal as an inequality equation of the
-phylogenetic and trait distances and constructed the M statistic.  Also, there
-are more distance-based methods under development.")
+phylogenetic and trait distances and constructed the M statistic.  The M
+statistic implemented in this package is based on the methodology described in
+Yao and Yuan (2025) <doi:10.1002/ece3.71106>.  If you use this method in your
+research, please cite the paper.")
     (license license:gpl3+)))
 
 (define-public r-phylosignal
@@ -29705,13 +29720,13 @@ linear regression models.")
 (define-public r-phylogr
   (package
     (name "r-phylogr")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHYLOGR" version))
        (sha256
-        (base32 "1fq2ny093b4881nwgj6wr8qd5g4dcxb51sdx40ndyxxpq6jj16n9"))))
+        (base32 "08fj0gi2ik6rkfa86amr4v394kh501w58kp7qjkrq4vjb13xa9ix"))))
     (properties `((upstream-name . "PHYLOGR")))
     (build-system r-build-system)
     (arguments
@@ -29971,13 +29986,13 @@ population of European Brown Hares settled in central Italy.")
 (define-public r-phsopendata
   (package
     (name "r-phsopendata")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phsopendata" version))
        (sha256
-        (base32 "0nls7ib12dg6z1nyn0a5wk52i8dq327b83ims811qc453vm96jjf"))))
+        (base32 "1k1jh6nymkq3187m33ayc3nkf6x2arjb39s3zpdcmiqzawj6jp5n"))))
     (properties `((upstream-name . "phsopendata")))
     (build-system r-build-system)
     (arguments
@@ -30850,40 +30865,6 @@ on a Principal Component Analysis step and on a linear mixed model.  Automatic
 query of metabolic pathways is also implemented.")
     (license license:gpl3)))
 
-(define-public r-phm
-  (package
-    (name "r-phm")
-    (version "2.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phm" version))
-       (sha256
-        (base32 "1bm9lvcq7mp4lall6ybgb1z7i4qs7k891px93a0smf7grzbw1ykz"))))
-    (properties `((upstream-name . "phm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tm
-                             r-smallstuff
-                             r-rcpp
-                             r-nlp
-                             r-matrix
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://doi.org/10.1080/1206212X.2024.2448494")
-    (synopsis "Phrase Mining")
-    (description
-     "This package provides functions to extract and handle commonly occurring
-principal phrases obtained from collections of texts.  Major speed improvements
-- core functions rewritten in C++ for faster phrase-document parsing,
-clustering, and text distance computations.  Based on, Small, E., & Cabrera, J.
-(2025).  Principal phrase mining, an automated method for extracting meaningful
-phrases from text.  International Journal of Computers and Applications, 47(1),
-84â92.")
-    (license license:gpl3)))
-
 (define-public r-phitestr
   (package
     (name "r-phitestr")
@@ -31109,35 +31090,6 @@ the evaluation of the goodness-of-fit and the predictive capacity of the
 proportional hazards model.")
     (license license:gpl2+)))
 
-(define-public r-phers
-  (package
-    (name "r-phers")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phers" version))
-       (sha256
-        (base32 "00w84l5p9rwq3hgjx792fk2yhrnal143ph29ybcqrha40hglbbas"))))
-    (properties `((upstream-name . "phers")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-iterators
-                             r-foreach
-                             r-data-table
-                             r-checkmate
-                             r-bedmatrix))
-    (home-page "https://phers.hugheylab.org")
-    (synopsis "Calculate Phenotype Risk Scores")
-    (description
-     "Use phenotype risk scores based on linked clinical and genetic data to study
-Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
-<doi:10.1126/science.aal4043>.")
-    (license license:gpl2)))
-
 (define-public r-phenthauproc
   (package
     (name "r-phenthauproc")
@@ -31170,13 +31122,13 @@ Life Sciences, Vienna, Austria.")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1dwrx2am8b17v9nyfs5xg3jw9v7gblg54ip6ixrzavh70fhjhyyp"))))
+        (base32 "1yjvq0khx28spnp06g8mh3wnhzh8naw3g6a6m36mkwb2cdx8vqrq"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
@@ -33247,13 +33199,13 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "7.0.1")
+    (version "7.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "1m8mcg6n5iak349pmb6kwpjscry5f40h23yxbcmhk0059s5400q1"))))
+        (base32 "10a7xphi38ksyfsc4nx48l28lnjz4rd3rmn71k4cy42whh6q40wp"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (arguments
@@ -35100,34 +35052,6 @@ prioritize these remaining compounds for those most likely contributing to each
 bioactivity data set.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
-(define-public r-pepr
-  (package
-    (name "r-pepr")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pepr" version))
-       (sha256
-        (base32 "0q2pfsch6g3zhaj6cffg6rzmlrmzwpvny84nls6x5jjljhan4nzz"))))
-    (properties `((upstream-name . "pepr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml r-stringr r-rcurl r-pryr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pepr")
-    (synopsis "Reading Portable Encapsulated Projects")
-    (description
-     "This package provides a PEP, or Portable Encapsulated Project, is a dataset that
-subscribes to the PEP structure for organizing metadata.  It is written using a
-simple YAML + CSV format, it is your one-stop solution to metadata management
-across data analysis environments.  This package reads this standardized project
-configuration structure into R. Described in Sheffield et al. (2021)
-<doi:10.1093/gigascience/giab077>.")
-    (license license:bsd-2)))
-
 (define-public r-peppm
   (package
     (name "r-peppm")
@@ -35420,30 +35344,31 @@ Elastic Net.")
 (define-public r-pense
   (package
     (name "r-pense")
-    (version "2.5.0")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pense" version))
        (sha256
-        (base32 "0gfmmpb5k7j4fgv5y97f9d55skav4fkvfrls6v4d90vmmyw4pr3p"))))
+        (base32 "0ja72qsf61d2p2i7cs040kz53c4kgw1xrlvdv2l9rzfcnv6yr1q9"))))
     (properties `((upstream-name . "pense")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-matrix
-                             r-lifecycle))
+    (propagated-inputs (list r-testthat r-rlang r-rcpparmadillo r-rcpp
+                             r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://dakep.github.io/pense-rpkg/")
     (synopsis "Penalized Elastic Net S/MM-Estimator of Regression")
     (description
      "Robust penalized (adaptive) elastic net S and M estimators for linear
-regression.  The methods are proposed in Cohen Freue, G. V., Kepplinger, D.,
-SalibiÃ¡n-Barrera, M., and Smucler, E. (2019)
-<https://projecteuclid.org/euclid.aoas/1574910036>.  The package implements the
-extensions and algorithms described in Kepplinger, D. (2020)
-<doi:10.14288/1.0392915>.")
+regression.  The adaptive methods are proposed in Kepplinger, D. (2023)
+<doi:10.1016/j.csda.2023.107730> and the non-adaptive methods in Cohen Freue, G.
+V., Kepplinger, D., SalibiÃ¡n-Barrera, M., and Smucler, E. (2019)
+<doi:10.1214/19-AOAS1269>.  The package implements robust hyper-parameter
+selection with robust information sharing cross-validation according to
+Kepplinger & Wei (2025) <doi:10.1080/00401706.2025.2540970>.")
     (license license:expat)))
 
 (define-public r-penppml
@@ -36301,13 +36226,13 @@ from wild populations, and for visualizing pedigrees.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.9.0")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "18xw6cijg8cjwb7iwimchsy9cr0vn181klm1dh466whd0ysnqh0y"))))
+        (base32 "08x8bmcii902mpasdcn06zx90bl8ixl1c5xb0ffnanzri7nyl7dq"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (arguments
@@ -41708,33 +41633,6 @@ provides an easy way to run simulations, which can then be compared with
 empirical data in human judgments of frequency and duration.")
     (license license:gpl3)))
 
-(define-public r-passport
-  (package
-    (name "r-passport")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "passport" version))
-       (sha256
-        (base32 "176pkc7x76339bawdwywdcmiynzzlrwr91fgf5q0rq7asd9nc7d1"))))
-    (properties `((upstream-name . "passport")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/alistaire47/passport")
-    (synopsis "Travel Smoothly Between Country Name and Code Formats")
-    (description
-     "Smooths the process of working with country names and codes via powerful
-parsing, standardization, and conversion utilities arranged in a simple,
-consistent API. Country name formats include multiple sources including the
-Unicode Common Locale Data Repository (CLDR, <http://cldr.unicode.org/>)
-common-sense standardized names in hundreds of languages.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-passed
   (package
     (name "r-passed")
@@ -41889,6 +41787,42 @@ minutes, or seconds; add and subtract degrees, minutes, and seconds.  C++ code
 herein originally inspired from code written by Jeffrey D. Bogan, but then
 completely re-written.")
     (license license:expat)))
+
+(define-public r-partycolor
+  (package
+    (name "r-partycolor")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "partycoloR" version))
+       (sha256
+        (base32 "1mb5yjrzhqfrmg2wb0dgb7qfgnsdjlakbqj2lxc6p4gpfqjf999q"))))
+    (properties `((upstream-name . "partycoloR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-httr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lwarode/partycoloR")
+    (synopsis "Extract Party Colors and Logos from Wikipedia")
+    (description
+     "Extract political party colors and logos from English Wikipedia party pages.
+Provides functions to scrape party infoboxes for color codes (HEX or HTML color
+names) and logo images.  Includes integration with the Party Facts database for
+easy party lookups.  Designed for political scientists and party researchers
+working with electoral and party data.  For Party Facts, see DÃ¶ring and Regel
+(2019) <doi:10.1177/1354068818820671> and Bederke, DÃ¶ring, and Regel (2023)
+<doi:10.7910/DVN/TJINLQ>.")
+    (license license:gpl3)))
 
 (define-public r-parttree
   (package
@@ -42774,34 +42708,6 @@ simultaneous lower confidence bounds for the number of true discoveries.
 <doi:10.1002/sim.9725>.")
     (license license:gpl2+)))
 
-(define-public r-parglm
-  (package
-    (name "r-parglm")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "parglm" version))
-       (sha256
-        (base32 "11knspjg0s7x8c5dqrkdkr33af39rhyggs0s0dxv726zfmg1ldy3"))))
-    (properties `((upstream-name . "parglm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/boennecd/parglm")
-    (synopsis "Parallel GLM")
-    (description
-     "This package provides a parallel estimation method for generalized linear models
-without compiling with a multithreaded LAPACK or BLAS.")
-    (license license:gpl2)))
-
 (define-public r-pargasite
   (package
     (name "r-pargasite")
@@ -43024,7 +42930,8 @@ instruments.  Based on a paper by Hutton (1992) <doi:10.1017/S0956796800000411>.
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -44845,13 +44752,13 @@ Michael Oswald.")
 (define-public r-pam
   (package
     (name "r-pam")
-    (version "1.0.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pam" version))
        (sha256
-        (base32 "0xncsmn6gbvqb8pjv21k3fad3i0011sjg8i47hv13wazmx265qc7"))))
+        (base32 "0wiilrb3zswjzi0gxyz1l17isqcjaql9qa7anm3lkxs0gaywmlsh"))))
     (properties `((upstream-name . "pam")))
     (build-system r-build-system)
     (arguments
@@ -44859,21 +44766,20 @@ Michael Oswald.")
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-minpack-lm
+                             r-metrics
                              r-gridextra
                              r-ggthemes
                              r-ggplot2
-                             r-dplyr
                              r-data-table
                              r-cowplot))
     (home-page "https://github.com/biotoolbox/pam")
     (synopsis "Fast and Efficient Processing of PAM Data")
     (description
-     "Processing Chlorophyll Fluorescence & P700 Absorbance data generated by WALZ
-hardware.  Four models are provided for the regression of Pi curves, which can
-be compared with each other in order to select the most suitable model for the
-data set.  Control plots ensure the successful verification of each regression.
-Bundled output of alpha, ETRmax, Ik etc.  enables fast and reliable further
-processing of the data.")
+     "Processing Chlorophyll Fluorescence & P700 Absorbance data.  Four models are
+provided for the regression of Pi curves, which can be compared with each other
+in order to select the most suitable model for the data set.  Control plots
+ensure the successful verification of each regression.  Bundled output of alpha,
+ETRmax, Ik etc.  enables fast and reliable further processing of the data.")
     (license license:gpl3)))
 
 (define-public r-palr
@@ -46252,7 +46158,8 @@ Hurley and R.W. Oldford (2011) <doi:10.1007/s00180-011-0229-5>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -46513,7 +46420,8 @@ graphics.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

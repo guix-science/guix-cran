@@ -2398,13 +2398,13 @@ community-maintained and is not officially supported by Qualtrics'.")
 (define-public r-qualpalr
   (package
     (name "r-qualpalr")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qualpalr" version))
        (sha256
-        (base32 "0a5b480awwwghy0p86zdi0biam96cfnq4j65pd3l4zazw4sxqhg8"))))
+        (base32 "1819idq4jsd7vgg6if47n8yvai13g9804biyv8py9lhw7qh0dibd"))))
     (properties `((upstream-name . "qualpalr")))
     (build-system r-build-system)
     (arguments
@@ -2416,9 +2416,11 @@ community-maintained and is not officially supported by Qualtrics'.")
     (synopsis "Automatic Generation of Qualitative Color Palettes")
     (description
      "Automatic generation of maximally distinct qualitative color palettes,
-optionally tailored to color deficiency.  A list of colors or a subspace of a
-color space is used as input and then projected to the DIN99d color space, where
-colors that are maximally distinct are chosen algorithmically.")
+optionally tailored to color deficiency.  A set of colors or a subspace of a
+color space is used as input and a final palette of specified size is generated
+by picking colors that maximize the minimum pairwise difference among the chosen
+colors.  Adaptations to color vision deficiency, background colors, and white
+points are supported.")
     (license license:gpl3)))
 
 (define-public r-qualmap
@@ -3137,7 +3139,8 @@ provides tools to help make such choices.  Sen and others (2007)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3631,7 +3634,8 @@ is intended to work as a drop-in replacement for the @code{write_*()} and
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -6617,7 +6621,8 @@ introducing power estimation for QCA is: Rohlfing, Ingo (2018)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

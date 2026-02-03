@@ -94,20 +94,20 @@ package is not supported by Zoom (owner of the software).")
 (define-public r-zoomerjoin
   (package
     (name "r-zoomerjoin")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zoomerjoin" version))
        (sha256
-        (base32 "0z5nvpxmmawbjbw2iiah74h9pwn3p6s7lfn4apkz2ay0f9ynkwf8"))))
+        (base32 "1jsypf63gzdc145y8l4l5kkx6bpz5z3csyqyxpb7mw0mwwdi09zj"))))
     (properties `((upstream-name . "zoomerjoin")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list zlib))
-    (propagated-inputs (list r-tidyr r-tibble r-dplyr r-collapse))
+    (propagated-inputs (list r-tidyr r-tibble r-rlang r-dplyr r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://beniamino.org/zoomerjoin/")
     (synopsis "Superlatively Fast Fuzzy Joins")
@@ -118,7 +118,7 @@ hashing algorithms developed by Datar, Immorlica, Indyk and Mirrokni (2004)
 <doi:10.1145/997817.997857>, and Broder (1998) <doi:10.1109/SEQUEN.1997.666900>
 to avoid having to compare every pair of records in each dataset, resulting in
 fuzzy-merges that finish in linear time.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-zooid
   (package

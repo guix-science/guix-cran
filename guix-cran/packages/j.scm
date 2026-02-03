@@ -397,7 +397,8 @@ corresponding article <doi:10.18637/jss.v101.i06>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -753,7 +754,8 @@ the Golden Section Search Method for Numerical Optimization\",
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -807,7 +809,8 @@ server side file system.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -864,13 +867,13 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.3.19")
+    (version "1.3.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "13nqvfvbjv9fwynqpvw4xcciv0v8y288zi3qqnr1b9vgnffavw9k"))))
+        (base32 "05rw8zpv42k24nmpf4913gm6az13yd43qz7pwr1l48kxmx3sbhqh"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (arguments
@@ -992,7 +995,8 @@ provides RStudio addins for the same purpose.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1216,13 +1220,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.22")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "1726cqxilj636m8fvmslfvdjvnqf3vdfjxrgijb98nbzq9qdanra"))))
+        (base32 "15x9cp245wcl8w60p4hx3xx6vi5v0zysbkb7ajjlkyx79fj30rgm"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -1230,7 +1234,6 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
       #:tests? #f))
     (propagated-inputs (list r-survival
                              r-survey
-                             r-scales
                              r-patchwork
                              r-ggsci
                              r-ggpubr
@@ -1402,7 +1405,8 @@ selected lines.  This is useful to test the code.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1648,7 +1652,8 @@ Bootstrap.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1772,13 +1777,13 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpinfect
   (package
     (name "r-jpinfect")
-    (version "0.1.10")
+    (version "2023.2026.02")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpinfect" version))
        (sha256
-        (base32 "1yxph0wyyjh82hvx8mz6mirn9x115hbgxiv21f3wxm41c80g73l4"))))
+        (base32 "13q3igrqafd7d6fykj3wbmc5dw23f678fkp4a76g3ybzy0fnc7nq"))))
     (properties `((upstream-name . "jpinfect")))
     (build-system r-build-system)
     (arguments
@@ -2561,13 +2566,13 @@ be used.  See the paper by BerÄsewicz and Szymkowiak (2023) for details
 (define-public r-jointai
   (package
     (name "r-jointai")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JointAI" version))
        (sha256
-        (base32 "1vckbn4y27bdc6176nnjpwa2wm6kyzxkvndf128jw4871964szp5"))))
+        (base32 "1mlnfynn5nm0znh99y5pnjxi7ks4vxnvchlhf8cv82g2vmpback4"))))
     (properties `((upstream-name . "JointAI")))
     (build-system r-build-system)
     (arguments
@@ -3365,24 +3370,26 @@ and longitudinal data in clinical research.")
 (define-public r-jmbayes2
   (package
     (name "r-jmbayes2")
-    (version "0.5-7")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMbayes2" version))
        (sha256
-        (base32 "0djd6r3b48rjywyrkcm7mmkih83p3xi6fgh9dx1xihw1p6g0kbbf"))))
+        (base32 "16098dh35ngaic0clc709isjdyhfcchqkiimwri3rg84r2h4lm1m"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
+                             r-survc1
                              r-rcpparmadillo
                              r-rcpp
                              r-parallelly
                              r-nlme
                              r-matrixstats
+                             r-mass
                              r-gridextra
                              r-glmmadaptive
                              r-ggplot2
@@ -5202,30 +5209,6 @@ based on @code{SimLoRD} by StÃ¶cker et al. (2016)
 <doi:10.1093/bioinformatics/btw286>.  All outputs can be written to standard
 file formats.")
     (license license:expat)))
-
-(define-public r-jaccard
-  (package
-    (name "r-jaccard")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jaccard" version))
-       (sha256
-        (base32 "1dmla6qc1k8iw2d7zfjqhf13gqd2lpsrj09yh47ljf994fpab936"))))
-    (properties `((upstream-name . "jaccard")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-qvalue r-magrittr r-dplyr))
-    (home-page "https://cran.r-project.org/package=jaccard")
-    (synopsis
-     "Test Similarity Between Binary Data using Jaccard/Tanimoto Coefficients")
-    (description
-     "Calculate statistical significance of Jaccard/Tanimoto similarity coefficients
-for binary data.")
-    (license license:gpl2)))
 
 (define-public r-jab-adverse-reactions
   (package

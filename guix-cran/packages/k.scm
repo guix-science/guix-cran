@@ -353,19 +353,19 @@ Archer Yi Yang, Boxiang Wang, Peng Shi & Robert William Platt (2023)
 (define-public r-ktsolve
   (package
     (name "r-ktsolve")
-    (version "1.3.1")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ktsolve" version))
        (sha256
-        (base32 "11ps4y7i8llb2v5d91zh9kmsnh6rxb4g6lwyzdalyixnzsy343m1"))))
+        (base32 "1bkf46yjzij0n6b9a1df12jhxn9qwkf4fjvk0y82vr6sxwxfkifp"))))
     (properties `((upstream-name . "ktsolve")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nleqslv r-bb))
+    (propagated-inputs (list r-rootsolve r-nleqslv r-bb))
     (home-page "https://cran.r-project.org/package=ktsolve")
     (synopsis
      "Configurable Function for Solving Families of Nonlinear Equations")
@@ -840,33 +840,6 @@ k in k-means clustering''.")
     (description
      "This package infers relative kinase activity from phosphoproteomics data using
 the method described by Casado et al. (2013) <doi:10.1126/scisignal.2003573>.")
-    (license license:expat)))
-
-(define-public r-ksd
-  (package
-    (name "r-ksd")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "KSD" version))
-       (sha256
-        (base32 "1g7fkk399mgnz0h4nhbxf295d3ph9ssv345c26j6sanqbbd9d7g3"))))
-    (properties `((upstream-name . "KSD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pryr))
-    (home-page "https://cran.r-project.org/package=KSD")
-    (synopsis "Goodness-of-Fit Tests using Kernelized Stein Discrepancy")
-    (description
-     "An adaptation of Kernelized Stein Discrepancy, this package provides a
-goodness-of-fit test of whether a given i.i.d.  sample is drawn from a given
-distribution.  It works for any distribution once its score function (the
-derivative of log-density) can be provided.  This method is based on \"A
-Kernelized Stein Discrepancy for Goodness-of-fit Tests and Model Evaluation\" by
-Liu, Lee, and Jordan, available at <@code{arXiv:1602.03253>}.")
     (license license:expat)))
 
 (define-public r-kscorrect
@@ -1864,13 +1837,13 @@ values may optionally be evaluated in parallel.")
 (define-public r-kofm
   (package
     (name "r-kofm")
-    (version "0.1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KOFM" version))
        (sha256
-        (base32 "1f2z067wpqhdwc3adgc0x25l2b28ybqgwfc744h0h9fmxkyhdd62"))))
+        (base32 "1gdq7vvjf34r779d7x6m2gzqjzrlg4020w7v1iivri35li03q7l6"))))
     (properties `((upstream-name . "KOFM")))
     (build-system r-build-system)
     (arguments
@@ -2058,36 +2031,6 @@ methods in the paper: \"Yang, Y., Wang, C., Liu, L., Buxbaum, J., He, Z., &
 Ionita-Laza, I. (2022). @code{KnockoffTrio}: A knockoff framework for the
 identification of putative causal variants in genome-wide association studies
 with trio design.  The American Journal of Human Genetics, 109(10), 1761-1776.\".")
-    (license license:gpl3)))
-
-(define-public r-knockoffscreen
-  (package
-    (name "r-knockoffscreen")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "KnockoffScreen" version))
-       (sha256
-        (base32 "01r04d9ha9l5pkz3lwdcb5x5qqwk8vil9avnbnfn76wg63mdfhbk"))))
-    (properties `((upstream-name . "KnockoffScreen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spatest
-                             r-seqminer
-                             r-matrix
-                             r-irlba
-                             r-data-table
-                             r-compquadform
-                             r-bigmemory))
-    (home-page "https://cran.r-project.org/package=KnockoffScreen")
-    (synopsis "Whole-Genome Sequencing Data Analysis via Knockoff Statistics")
-    (description
-     "This package provides functions for identification of putative causal loci in
-whole-genome sequencing data.  The functions allow genome-wide association scan.
- It also includes an efficient knockoff generator for genetic data.")
     (license license:gpl3)))
 
 (define-public r-knockoffhybrid
@@ -2964,7 +2907,8 @@ co-authorship networks).")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3323,6 +3267,33 @@ approximation.  For more information, see the accompanying paper: Dai, X., Lyu,
 X., & Li, L. (2021).  âKernel Knockoffs Selection for Nonparametric Additive
 Modelsâ. @code{arXiv} preprint <@code{arXiv:2105.11659>}.")
     (license license:gpl2+)))
+
+(define-public r-kkmeans
+  (package
+    (name "r-kkmeans")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kkmeans" version))
+       (sha256
+        (base32 "124a3invi48bpchh86gd3q4xisv0q6433ql0wd08i3mwf422rpwb"))))
+    (properties `((upstream-name . "kkmeans")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=kkmeans")
+    (synopsis "Fast Implementations of Kernel K-Means")
+    (description
+     "Implementations several algorithms for kernel k-means.  The default OTQT
+algorithm is a fast alternative to standard implementations of kernel k-means,
+particularly in cases with many clusters.  For a small number of clusters, the
+implemented @code{MacQueen} method typically performs the fastest.  For more
+details and performance evaluations, see Berlinski and Maitra (2025)
+<doi:10.1002/sam.70032>.")
+    (license license:gpl3)))
 
 (define-public r-kiwisr
   (package
@@ -3751,6 +3722,51 @@ compositional data analysis).")
 a data frame with a time (t), horizontal (x) and vertical (y) coordinate as
 columns, and returns several dynamical properties such as speed, acceleration or
 curvature.")
+    (license license:expat)))
+
+(define-public r-kindling
+  (package
+    (name "r-kindling")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kindling" version))
+       (sha256
+        (base32 "06zpi9hmzvhvgvvyn856skmzy5ib9700smw9nj5rfik69acz60is"))))
+    (properties `((upstream-name . "kindling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vip
+                             r-vctrs
+                             r-tune
+                             r-torch
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-parsnip
+                             r-neuralnettools
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-dials
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://kindling.joshuamarie.com")
+    (synopsis
+     "Higher-Level Interface of 'torch' Package to Auto-Train Neural Networks")
+    (description
+     "This package provides a higher-level interface to the torch package for
+defining, training, and tuning neural networks.  This package supports
+feedforward (multi-layer perceptron) and recurrent neural networks (RNN
+(Recurrent Neural Networks), LSTM (Long Short-Term Memory), GRU (Gated Recurrent
+Unit)), and also reduces boilerplate code while enabling seamless integration
+with torch'.  The methods to train neural networks from this package also
+bridges to titanic ML frameworks in R namely tidymodels ecosystem, enabling the
+parsnip model specifications, workflows, recipes, and tuning tools.")
     (license license:expat)))
 
 (define-public r-kindisperse
@@ -4636,7 +4652,8 @@ build lists of words.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5013,13 +5030,13 @@ particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
 (define-public r-kerntools
   (package
     (name "r-kerntools")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerntools" version))
        (sha256
-        (base32 "12vcmy6vkn78vkk8va2cq39plmw053fld7xs7gm57wl5lfwzy7xr"))))
+        (base32 "1gank4p8spv6f7c2nkizkbzncnj1f9rwjwiay9ll0wrs85flvds7"))))
     (properties `((upstream-name . "kerntools")))
     (build-system r-build-system)
     (arguments
@@ -6410,7 +6427,8 @@ energy supply.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

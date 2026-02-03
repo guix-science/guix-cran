@@ -8499,6 +8499,71 @@ subspace approach described by Zhang, Lin, and Karim (2015) and a text
 generation method. <doi:10.1016/j.ress.2015.05.025>.")
     (license license:expat)))
 
+(define-public r-llmhelper
+  (package
+    (name "r-llmhelper")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llmhelper" version))
+       (sha256
+        (base32 "1735xqajbv915kz2dwl6ivqb5cz8sms9yhfp8bn9wj536ls8bk7j"))))
+    (properties `((upstream-name . "llmhelper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyprompt
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/Zaoqu-Liu/llmhelper")
+    (synopsis "Unified Interface for Large Language Model Interactions")
+    (description
+     "This package provides a unified interface for interacting with Large Language
+Models (LLMs) through various providers including @code{OpenAI}
+<https://platform.openai.com/docs/api-reference>, Ollama <https://ollama.com/>,
+and other @code{OpenAI-compatible} APIs.  Features include automatic connection
+testing, max_tokens limit auto-adjustment, structured JSON responses with schema
+validation, interactive JSON schema generation, prompt templating, and
+comprehensive diagnostics.")
+    (license license:gpl3+)))
+
+(define-public r-llmflow
+  (package
+    (name "r-llmflow")
+    (version "3.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llmflow" version))
+       (sha256
+        (base32 "1hjypmwq2lbl0nrvav32y2m2388wq2r3xrbx8n0lag8pmr7jiisr"))))
+    (properties `((upstream-name . "llmflow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonvalidate r-jsonlite r-glue r-cli r-callr))
+    (home-page "https://github.com/Zaoqu-Liu/llmflow")
+    (synopsis "Reasoning and Acting Workflow for Automated Data Analysis")
+    (description
+     "This package provides a framework for integrating Large Language Models (LLMs)
+with R programming through workflow automation.  Built on the @code{ReAct}
+(Reasoning and Acting) architecture, enables bi-directional communication
+between LLMs and R environments.  Features include automated code generation and
+execution, intelligent error handling with retry mechanisms, persistent session
+management, structured JSON output validation, and context-aware conversation
+management.")
+    (license license:gpl3+)))
+
 (define-public r-llmagentr
   (package
     (name "r-llmagentr")
@@ -9104,7 +9169,8 @@ default values to be inherited from another list.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -10210,7 +10276,8 @@ package.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14023,13 +14090,13 @@ colour displays.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.6.0")
+    (version "6.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "1z0w7yjw280wi4b6qm6iqcj1g01xcgz1phqif9p9mmisr0q7w8ik"))))
+        (base32 "1pcwi3kg77wa6srz256mfx9cpi8jzymm1vh4driq9nnw7ydc3pkr"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (arguments
@@ -14554,7 +14621,8 @@ explains non expert users how hierarchical clustering algorithms work.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14870,7 +14938,8 @@ htmlwidgets'.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14954,7 +15023,8 @@ facilitate geographical data visualization in China.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -14994,7 +15064,8 @@ single map.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -15109,7 +15180,8 @@ browser using @code{WebGl}'.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16273,19 +16345,20 @@ plotting data generated from a linear mixed-effects model.")
 (define-public r-lcda
   (package
     (name "r-lcda")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcda" version))
        (sha256
-        (base32 "19s9rn7wg8acr74hsias81rz9yg8s35l1awr6jmw7ldjpfl22sj5"))))
+        (base32 "0lb19b8g9s6b0by9brvh24xldnrp0j9dr3pcja7qq1qn0dnlcbkc"))))
     (properties `((upstream-name . "lcda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-polca))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lcda")
     (synopsis "Latent Class Discriminant Analysis")
     (description
@@ -17670,7 +17743,8 @@ installation of pdflatex', e.g. <https://miktex.org/>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -18144,6 +18218,35 @@ index models.")
 <doi:10.2139/ssrn.3211163>.")
     (license license:gpl2+)))
 
+(define-public r-lassohidfastgibbs
+  (package
+    (name "r-lassohidfastgibbs")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LassoHiDFastGibbs" version))
+       (sha256
+        (base32 "1lc7ci3jhysm1rsvsgi29j5y4b1w89jkbiadkmnlg3f95x9k3n04"))))
+    (properties `((upstream-name . "LassoHiDFastGibbs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcppclock
+                             r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/MJDavoudabadi/LassoHiDFastGibbs")
+    (synopsis
+     "Fast High-Dimensional Gibbs Samplers for Bayesian Lasso Regression")
+    (description
+     "This package provides fast and scalable Gibbs sampling algorithms for Bayesian
+Lasso regression model in high-dimensional settings.  The package implements
+efficient partially collapsed and nested Gibbs samplers for Bayesian Lasso, with
+a focus on computational efficiency when the number of predictors is large
+relative to the sample size.  Methods are described at Davoudabadi and Ormerod
+(2026) <https://github.com/MJDavoudabadi/@code{LassoHiDFastGibbs>}.")
+    (license license:gpl3)))
+
 (define-public r-lassobacktracking
   (package
     (name "r-lassobacktracking")
@@ -18416,7 +18519,8 @@ statistics using R'', Cambridge University Press, 2008.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

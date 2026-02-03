@@ -12,7 +12,6 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages xml)
@@ -1753,6 +1752,40 @@ Craig, A., Barton, R. H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D.,
 Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
     (license license:gpl3+)))
 
+(define-public r-istatr
+  (package
+    (name "r-istatr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "istatR" version))
+       (sha256
+        (base32 "1lbnrnx0jyphby3qlhrpx226fpjj0j36hppnbs74h557w9j1pi03"))))
+    (properties `((upstream-name . "istatR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-httr2
+                             r-dplyr))
+    (home-page "https://github.com/jfulponi/istatR")
+    (synopsis
+     "Interface to the Italian National Institute of Statistics ('ISTAT') API")
+    (description
+     "This package provides an interface to the ISTAT SDMX RESTful API
+<https://esploradati.istat.it/SDMXWS>.  Allows users to discover available
+datasets, explore their structure and dimensions, and retrieve statistical data
+from the Italian National Institute of Statistics.  Based on the Python istatapi
+package by Jacopo Attolini.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-istat
   (package
     (name "r-istat")
@@ -2273,7 +2306,8 @@ normal profiles.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -2748,13 +2782,13 @@ University Press, Cambridge <doi:10.1017/CBO9780511622960>.")
 (define-public r-isoboost
   (package
     (name "r-isoboost")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isoboost" version))
        (sha256
-        (base32 "1c239l9rfjr8scpfq5c9rl55jabk64jchcdndjsb9s5qyx2x0qdr"))))
+        (base32 "0g937rxzwff7kdgf4433ha3w96x4w18s77c48mjpckqjg6zxp4la"))))
     (properties `((upstream-name . "isoboost")))
     (build-system r-build-system)
     (arguments
@@ -4013,19 +4047,19 @@ Advanced Analytics, LLC.")
 (define-public r-irreglong
   (package
     (name "r-irreglong")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IrregLong" version))
        (sha256
-        (base32 "1ppvdan5dm5sv7p2afmlc8nm3lgn29ssvabv5ask0ilh36rbrmn7"))))
+        (base32 "089kfnigpd3mcmx93536xch71kfgfwjrpy6h1hvr5y4r5sgk909c"))))
     (properties `((upstream-name . "IrregLong")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-geem r-data-table))
+    (propagated-inputs (list r-survival r-geepack r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://epullenayegum.github.io/IrregLong/")
     (synopsis "Analysis of Longitudinal Data with Irregular Observation Times")
@@ -4816,20 +4850,20 @@ marginal quantiles based on the Inverse Probability Weighting method.")
 (define-public r-ipw
   (package
     (name "r-ipw")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipw" version))
        (sha256
-        (base32 "1sn71q9hz47xk5gv243691qak0qnj166vag942pwkmm16wz2fmk1"))))
+        (base32 "1bj08rbi7l2dav0zgk4bwq48qd1bhwp5vdc7m84xxpja9asqjc32"))))
     (properties `((upstream-name . "ipw")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival r-nnet r-mass r-geepack))
-    (home-page "https://cran.r-project.org/package=ipw")
+    (home-page "https://github.com/TranHung93/ipw")
     (synopsis "Estimate Inverse Probability Weights")
     (description
      "This package provides functions to estimate the probability to receive the
@@ -4838,7 +4872,7 @@ probabilities can be used as weights when estimating causal effects from
 observational data via marginal structural models.  Both point treatment
 situations and longitudinal studies can be analysed.  The same functions can be
 used to correct for informative censoring.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-ipv
   (package
@@ -5514,13 +5548,13 @@ finance, banking, telecommunications or operational marketing.")
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEDSuploadables" version))
        (sha256
-        (base32 "0lryq8xalycmcfssimnwzcrcmr38zhmrgxszyyrfydlrr4lm99lg"))))
+        (base32 "03xpqsh41ysvlm8rpfmbp2c3zrwkzh97f0bmzpxcpyfx8181k1d9"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (arguments
@@ -7996,33 +8030,6 @@ interpolation, modified Akima interpolation, PCHIP (piecewise cubic Hermite
 interpolating polynomial) interpolation, and Catmull-Rom splines.")
     (license license:gpl3)))
 
-(define-public r-interpolation
-  (package
-    (name "r-interpolation")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "interpolation" version))
-       (sha256
-        (base32 "02g8iv0qm9bw22qfszln42jxkv4ybrq5gvfw04j2v1zj9z2k3mn9"))))
-    (properties `((upstream-name . "interpolation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gmp))
-    (propagated-inputs (list r-rcppcgal r-rcpp r-bh))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/interpolation")
-    (synopsis "Interpolation of Bivariate Functions")
-    (description
-     "This package provides two different methods, linear and nonlinear, to
-interpolate a bivariate function, scalar-valued or vector-valued.  The
-interpolated data are not necessarily gridded.  The algorithms are performed by
-the C++ library CGAL (<https://www.cgal.org/>).")
-    (license license:gpl3)))
-
 (define-public r-interpolater
   (package
     (name "r-interpolater")
@@ -8084,39 +8091,6 @@ of values in unobserved locations.")
      "Plots the conditional coefficients (\"marginal effects\") of variables included in
 multiplicative interaction terms.")
     (license license:expat)))
-
-(define-public r-interplex
-  (package
-    (name "r-interplex")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "interplex" version))
-       (sha256
-        (base32 "0gb6q40s3q2h7400zvyz87666snrn9m4r0hz3ddygprcaf9wdvaa"))))
-    (properties `((upstream-name . "interplex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-simplextree r-reticulate r-network r-intergraph
-                             r-igraph))
-    (home-page "https://github.com/tdaverse/interplex")
-    (synopsis "Coercion Methods for Simplicial Complex Data Structures")
-    (description
-     "Computational topology, which enables topological data analysis (TDA), makes
-pervasive use of abstract mathematical objects called simplicial complexes; see
-Edelsbrunner and Harer (2010) <doi:10.1090/mbk/069>.  Several R packages and
-other software libraries used through an R interface construct and use data
-structures that represent simplicial complexes, including mathematical graphs
-viewed as 1-dimensional complexes.  This package provides coercers (converters)
-between these data structures.  Currently supported structures are complete
-lists of simplices as used by TDA'; the simplex trees of Boissonnat and Maria
-(2014) <doi:10.1007/s00453-014-9887-3> as implemented in simplextree and in
-Python GUDHI (by way of reticulate'); and the graph classes of igraph and
-network', by way of the intergraph package.")
-    (license license:gpl3+)))
 
 (define-public r-internl
   (package
@@ -9478,13 +9452,13 @@ less space and can appear inline with surrounding text.")
 (define-public r-insetplot
   (package
     (name "r-insetplot")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insetplot" version))
        (sha256
-        (base32 "1w9bwrhya53vj87s5sqkkk73r53wqahmpcr2pkkh959w7wzx9dnc"))))
+        (base32 "1hl8xqyqmsv5zjrljrzm484d1vh8miqffsgp5mzby7jhzxjbb593"))))
     (properties `((upstream-name . "insetplot")))
     (build-system r-build-system)
     (arguments
@@ -9942,22 +9916,63 @@ Used to support packages and scripts written by researchers at the United States
 Geological Survey (USGS) Idaho National Laboratory Project Office.")
     (license license:cc0)))
 
+(define-public r-inlavaan
+  (package
+    (name "r-inlavaan")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INLAvaan" version))
+       (sha256
+        (base32 "1yg7iglzslgnb6wallc8x04z6r9mfh4q7smvbyy54sqmjckma53h"))))
+    (properties `((upstream-name . "INLAvaan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ucminf
+                             r-tidyr
+                             r-statmod
+                             r-scales
+                             r-qrng
+                             r-numderiv
+                             r-mvtnorm
+                             r-modeest
+                             r-lavaan
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-cli
+                             r-blavaan))
+    (native-inputs (list r-quarto))
+    (home-page "https://inlavaan.haziqj.ml/")
+    (synopsis "Approximate Bayesian Latent Variable Analysis")
+    (description
+     "This package implements approximate Bayesian inference for Structural Equation
+Models (SEM) using a custom adaptation of the Integrated Nested Laplace
+Approximation as described in Rue et al. (2009)
+<doi:10.1111/j.1467-9868.2008.00700.x>.  Provides a computationally efficient
+alternative to Markov Chain Monte Carlo (MCMC) for Bayesian estimation, allowing
+users to fit latent variable models using the lavaan syntax.")
+    (license license:gpl3+)))
+
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "135mmhfgsf1rqn5vvpidixl5yh6jmgm6ghv0j3q4raw0ag5y7s8d"))))
+        (base32 "03cqxkxx95gi2y861nr50kf4sf038c7xh8665klxfpzw3y9fcrvc"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-inlabru))
+    (propagated-inputs (list r-matrix))
     (home-page "https://github.com/eliaskrainski/INLAtools")
     (synopsis "Functionalities for the 'INLA' Package")
     (description
@@ -14540,7 +14555,8 @@ distributions for claim amounts.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16478,7 +16494,8 @@ for a list of copyright holders and authors.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16621,13 +16638,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "1fnlyf0pcq7h7s14zr3qd81k7bw7p6immi54fa5bwkaqpj22qrga"))))
+        (base32 "08kwwig2mfbm0h3ksfhbcvgw53cadhmj1fjs836q7s3yp1vzb957"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments
@@ -17383,7 +17400,8 @@ performance and to calibrate their outputs into Log-Likelihood Ratios.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -17793,7 +17811,8 @@ freely delivered under formal request through the official web page
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -19748,13 +19767,13 @@ correlation (@code{McCrae}, 2008).  See Furr (2010)
 (define-public r-icccounts
   (package
     (name "r-icccounts")
-    (version "1.1.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccCounts" version))
        (sha256
-        (base32 "1g9fb42pdfa4jwwp789v22xzr9y69vf4ff06g2avxcv5s792i84w"))))
+        (base32 "082gij9yzr8vqxyky1dmbgv5l7i0jnlz76hwg5jmvlnjznvzdimv"))))
     (properties `((upstream-name . "iccCounts")))
     (build-system r-build-system)
     (arguments
@@ -20375,7 +20394,8 @@ splines, Duchon splines or low rank splines.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -20924,35 +20944,6 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
      "This package provides a collection of useful functions and datasets for the Data
 Science Course at IBAW.")
     (license license:expat)))
-
-(define-public r-ibart
-  (package
-    (name "r-ibart")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iBART" version))
-       (sha256
-        (base32 "05vwwdlm78s7qa5lv717yvw48alk7k8wapcs9b1rcrhpam0kr1y3"))))
-    (properties `((upstream-name . "iBART")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (propagated-inputs (list r-glmnet r-foreach r-bartmachine))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mattsheng/iBART")
-    (synopsis
-     "Iterative Bayesian Additive Regression Trees Descriptor Selection Method")
-    (description
-     "This package provides a statistical method based on Bayesian Additive Regression
-Trees with Global Standard Error Permutation Test (BART-G.SE) for descriptor
-selection and symbolic regression.  It finds the symbolic formula of the
-regression function y=f(x) as described in Ye, Senftle, and Li (2023)
-<@code{arXiv:2110.10195>}.")
-    (license license:gpl3+)))
 
 (define-public r-ib
   (package

@@ -507,7 +507,8 @@ movement data and copulas.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1244,13 +1245,13 @@ vignette for more, including full details of citations.")
 (define-public r-cvdprevent
   (package
     (name "r-cvdprevent")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvdprevent" version))
        (sha256
-        (base32 "0j5kbhph4y0a3xx63n296gzsh6xn31skqpz5wrw10mp21w1zy22l"))))
+        (base32 "16bsabkn4x672q3wpdmr8fg6xsnxr5yplib5m1il49lm39y76905"))))
     (properties `((upstream-name . "cvdprevent")))
     (build-system r-build-system)
     (arguments
@@ -2744,7 +2745,8 @@ is tested with yeast genome and gene expression data of Yassour, et al. (2009)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3303,13 +3305,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.10.5")
+    (version "3.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsem" version))
        (sha256
-        (base32 "1gmz24kjkfg38prdxzjbwmpmy1al34xwp247w44ygnqd2600nf37"))))
+        (base32 "0cqjv0wlgzpjkw8kv2f3h0j0ja21d6a81qdffbv0d3bjl13kckhb"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (arguments
@@ -3497,19 +3499,27 @@ team), UDS and UOS are largely interchangeable.")
 (define-public r-ctmva
   (package
     (name "r-ctmva")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctmva" version))
        (sha256
-        (base32 "15lnnbdzz9v3zn1x3x2pk2vv4p9w57h95lpsx45q8qqdcqax5ih6"))))
+        (base32 "16qaxa6w7jkk2s0nr01s0zz3xzl6ibr5gaf2b9xi8dpy7z3k53c9"))))
     (properties `((upstream-name . "ctmva")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-polynom r-mgcv r-matrix r-mass r-fda))
+    (propagated-inputs (list r-viridislite
+                             r-vegan
+                             r-rlang
+                             r-polynom
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-fda))
     (home-page "https://cran.r-project.org/package=ctmva")
     (synopsis "Continuous-Time Multivariate Analysis")
     (description
@@ -6135,13 +6145,13 @@ correlation, autocorrelation, and volatility clustering without power loss.")
 (define-public r-crs
   (package
     (name "r-crs")
-    (version "0.15-38")
+    (version "0.15-39")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crs" version))
        (sha256
-        (base32 "1wcjqpz17rcpxqixjz5a505yzp6wjnxy4mlmbxwyrfzaganpid4x"))))
+        (base32 "077hll3wc2vjjdhj7mrd52mbmhwxyh13c95ckbgf8p75vc1k2cbr"))))
     (properties `((upstream-name . "crs")))
     (build-system r-build-system)
     (arguments
@@ -7441,13 +7451,13 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
 (define-public r-crmpack
   (package
     (name "r-crmpack")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmPack" version))
        (sha256
-        (base32 "17wdlbrrcl7z1wjl0xsmyz2fir332bv9vz5chdkkblscjcrlwddd"))))
+        (base32 "0574j15mg5q5pfb8hqw5xw3mpj7izh1dgy86si5k0sh5i1hphhis"))))
     (properties `((upstream-name . "crmPack")))
     (build-system r-build-system)
     (arguments
@@ -7484,7 +7494,7 @@ custom JAGS code.  However, it is also possible to implement 3+3 designs for
 comparison or models with non-Bayesian estimation.  The whole package is written
 in a modular form in the S4 class system, making it very flexible for adaptation
 to new models, escalation or stopping rules.  Further details are presented in
-Sabanes Bove et al. (2019) <doi:10.18637/jss.v089.i10>.")
+SabanÃ©s BovÃ© et al. (2019) <doi:10.18637/jss.v089.i10>.")
     (license license:gpl2+)))
 
 (define-public r-crmn
@@ -9489,7 +9499,8 @@ lists, and lists.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -10938,13 +10949,13 @@ case when those values are derived from Likert scales.")
 (define-public r-covtracer
   (package
     (name "r-covtracer")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "covtracer" version))
        (sha256
-        (base32 "1ndps8hmj8qpd4wl9p14ahr8n62rlgb2psvncfjmxs26p8dx90r3"))))
+        (base32 "0by15cgnfjww7lww0m8s1dnp9fqaxrl9lgadssbh04baq740spvd"))))
     (properties `((upstream-name . "covtracer")))
     (build-system r-build-system)
     (arguments
@@ -13082,13 +13093,13 @@ regression, logistic regression and the Cox regression models.")
 (define-public r-cosmos
   (package
     (name "r-cosmos")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoSMoS" version))
        (sha256
-        (base32 "01vamg2y41d2h5dl7n3jblbgbj4mphkrvd9j1ivhwjgshqk87cch"))))
+        (base32 "095gqn3akm9v5zfgjr6djdvkspyin57yav6l38jvb5377b4jv8dq"))))
     (properties `((upstream-name . "CoSMoS")))
     (build-system r-build-system)
     (arguments
@@ -14438,7 +14449,8 @@ assumption from the proportional odds model.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16248,7 +16260,8 @@ functions, and bitmap handling routines.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16904,13 +16917,13 @@ Cools (2019) <doi:10.1111/biom.12845>.")
 (define-public r-contsurvplot
   (package
     (name "r-contsurvplot")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contsurvplot" version))
        (sha256
-        (base32 "0wq7n3zlk706kz9m1ksqip46xjc6ih5k2vhh3vybskpp0w1ck0sv"))))
+        (base32 "1j16awdvijj3fzr8ayrphmqjcxw662aw0rwmb9h0q612jhj7b41d"))))
     (properties `((upstream-name . "contsurvplot")))
     (build-system r-build-system)
     (arguments
@@ -17634,6 +17647,44 @@ structures deque', set', dict', and dict.table', the latter to extend the
 data.table package.")
     (license license:gpl3)))
 
+(define-public r-contactsurveys
+  (package
+    (name "r-contactsurveys")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contactsurveys" version))
+       (sha256
+        (base32 "1i5rsm9zrq0fr349f3p24wp119724sw2bmdlp2wsqzabdvgp3fyh"))))
+    (properties `((upstream-name . "contactsurveys")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zen4r
+                             r-yesno
+                             r-rlang
+                             r-purrr
+                             r-oai
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiforecasts/contactsurveys")
+    (synopsis
+     "Download Contact Surveys for Use in Infectious Disease Modelling")
+    (description
+     "Download, cache, and manage social contact survey data from the social contact
+data community on Zenodo (<https://zenodo.org/communities/social_contact_data>)
+for use in infectious disease modelling.  Provides functions to list available
+surveys, download survey files with automatic caching, and retrieve citations.
+Contact survey data describe who contacts whom in a population and are used to
+parameterise age-structured transmission models, for example via the socialmixr
+package.  The surveys available include those from the POLYMOD study (Mossong et
+al. (2008) <doi:10.1371/journal.pmed.0050074>) and other social contact data
+shared on Zenodo.")
+    (license license:expat)))
+
 (define-public r-contactdata
   (package
     (name "r-contactdata")
@@ -18356,7 +18407,8 @@ the methods are general and useful for terrestrial systems as well.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -19537,13 +19589,13 @@ of unbiased estimation of variances of U-statistics.")
 (define-public r-confintrob
   (package
     (name "r-confintrob")
-    (version "1.0-2")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "confintROB" version))
        (sha256
-        (base32 "1krp73kh3zjijm6rgp5ly7vrcqn1z4z46zzvs0dw0dkwmm40z3yh"))))
+        (base32 "0f88kgv0wr19j10m7cjzbd4p4rky71syqzmvjq6iajpwyl2iq597"))))
     (properties `((upstream-name . "confintROB")))
     (build-system r-build-system)
     (arguments
@@ -21825,6 +21877,31 @@ Mazziotta <doi:10.1007/s11205-014-0710-y>, Mazziotta and Pareto (2016)
 <doi:10.1016/j.ejor.2016.07.038> and other authors.")
     (license license:gpl3)))
 
+(define-public r-comphy
+  (package
+    (name "r-comphy")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "comphy" version))
+       (sha256
+        (base32 "1wfrh0kmm5hgwvbkz6vaw2qxdklnrpz2rg0vw92bm7079pnmv1sw"))))
+    (properties `((upstream-name . "comphy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/jfoadi/comphy")
+    (synopsis "Functions Used in the Book \"Computational Physics with R\"")
+    (description
+     "This package provides a collection of functions described and used in the book
+Foadi (2026, ISBN:9780750326308) \"Computational Physics with R\".  These include
+routines for numerical differentiation, integration, differential equations,
+eigenvalue problems, Monte Carlo methods, and other algorithms relevant to
+computational physics.")
+    (license license:gpl2+)))
+
 (define-public r-compgr
   (package
     (name "r-compgr")
@@ -23999,13 +24076,13 @@ certain color space.  The functions were part of the circlize package
 (define-public r-colorplane
   (package
     (name "r-colorplane")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorplane" version))
        (sha256
-        (base32 "00jicdyrw6pl2x83qf9x22is21rmi011zziy3hvjw2vqvclxb38i"))))
+        (base32 "1qnk898b9kjx7dj1n7gp6bbsqs5w7pcgrf6vkakdi8dyb0glxkwv"))))
     (properties `((upstream-name . "colorplane")))
     (build-system r-build-system)
     (arguments
@@ -25050,6 +25127,29 @@ objective function.  It contains a number of algorithms to choose from and
 offers a formula syntax similar to @code{lm()}.")
     (license license:expat)))
 
+(define-public r-coldrift
+  (package
+    (name "r-coldrift")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coldrift" version))
+       (sha256
+        (base32 "1rqy4c2mf29njs548yi7rg3xpr5mf9rw2jhfmy5yggfm88rypa57"))))
+    (properties `((upstream-name . "coldrift")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=coldrift")
+    (synopsis "Lightweight Column Drift Detection for Tabular Data")
+    (description
+     "This package provides simple and efficient methods to detect column-level data
+drift between reference and target datasets.  Designed for monitoring tabular
+data pipelines and machine learning inputs using statistical distance measures.")
+    (license license:expat)))
+
 (define-public r-cold
   (package
     (name "r-cold")
@@ -25610,13 +25710,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "1zf0nvv3zq8r5310dyw0x3nck6iwsmhidjiwkp321p3rww5gmsxb"))))
+        (base32 "1nbq0mqlk5z20p94x91rhqnzrvklnmfak6n2v2n1b1gr9673ib3f"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (arguments
@@ -25905,6 +26005,36 @@ Moschopoulos(1984)<doi:10.1007/BF02481123>,
 Barnabani(2017)<doi:10.1080/03610918.2014.963612>, Hu et
 al.(2020)<doi:10.1007/s00180-019-00924-9>.")
     (license license:gpl3+)))
+
+(define-public r-cofm
+  (package
+    (name "r-cofm")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoFM" version))
+       (sha256
+        (base32 "0my613yi4cgg397rxxdyi0vrs12z0gldkg820rri313j1yg0959k"))))
+    (properties `((upstream-name . "CoFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-matrixcalc r-mass r-copula))
+    (home-page "https://cran.r-project.org/package=CoFM")
+    (synopsis "Copula Factor Models")
+    (description
+     "This package provides tools for factor analysis in high-dimensional settings
+under copula-based factor models.  It includes functions to simulate
+factor-model data with copula-distributed idiosyncratic errors (e.g., Clayton,
+Gumbel, Frank, Student t and Gaussian copulas) and to perform diagnostic tests
+such as the Kaiser-Meyer-Olkin measure and Bartlett's test of sphericity.
+Estimation routines include principal component based factor analysis, projected
+principal component analysis, and principal orthogonal complement thresholding
+for large covariance matrix estimation.  The philosophy of the package is
+described in Guo G. (2023) <doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
 
 (define-public r-cofid
   (package
@@ -27523,13 +27653,13 @@ patient enrichment in two-stage clinical designs.  Technical Report.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.6.1")
+    (version "4.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobalt" version))
        (sha256
-        (base32 "16p82mmdjyl11s3ahykifdiwlsgawfdrjpsn3wmhdm01ii5jiahv"))))
+        (base32 "1y9wa2r0plhvkx3nz2rhfqa31jwn25s08lyjjzi14vkvsg1a49hm"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (arguments
@@ -27539,7 +27669,7 @@ patient enrichment in two-stage clinical designs.  Technical Report.")
                              r-gtable
                              r-gridextra
                              r-ggplot2
-                             r-crayon
+                             r-cli
                              r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/cobalt/")
@@ -30044,6 +30174,37 @@ qualitative or a mixture of both.")
 covariate adjustment.")
     (license license:gpl3)))
 
+(define-public r-clustmd
+  (package
+    (name "r-clustmd")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clustMD" version))
+       (sha256
+        (base32 "1ckix3gz51mygdvah5h9ignsvxr3nfbcrxs54k80cjz0b5a8s2a5"))))
+    (properties `((upstream-name . "clustMD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-truncnorm
+                             r-reshape2
+                             r-mvtnorm
+                             r-msm
+                             r-mclust
+                             r-mass
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=clustMD")
+    (synopsis "Model Based Clustering for Mixed Data")
+    (description
+     "Model-based clustering of mixed data (i.e.  data which consist of continuous,
+binary, ordinal or nominal variables) using a parsimonious mixture of latent
+Gaussian variable models.")
+    (license license:gpl2)))
+
 (define-public r-clustmc
   (package
     (name "r-clustmc")
@@ -31523,6 +31684,45 @@ simulated results as well.")
 and estimation of bias\" CLSI (2014, ISBN:1-56238-966-1).")
     (license license:expat)))
 
+(define-public r-clrtools
+  (package
+    (name "r-clrtools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CLRtools" version))
+       (sha256
+        (base32 "06zjidlf0bmp061sr08034mim64d9mqw4496crra6025avnhif8b"))))
+    (properties `((upstream-name . "CLRtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-rstan
+                             r-rlang
+                             r-rcolorbrewer
+                             r-patchwork
+                             r-loo
+                             r-lmtest
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-caret
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CLRtools")
+    (synopsis
+     "Diagnostic Tools for Logistic and Conditional Logistic Regression")
+    (description
+     "This package provides tools for fitting, assessing, and comparing logistic and
+conditional logistic regression models.  Includes residual diagnostics and
+goodness of fit measures for model development and evaluation in matched case
+control studies.")
+    (license license:gpl3)))
+
 (define-public r-clr
   (package
     (name "r-clr")
@@ -32780,7 +32980,8 @@ posterior predictive distributions derived from these references.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -33380,13 +33581,13 @@ cleaner interface than @code{processx::run()}.")
 (define-public r-clidamonger
   (package
     (name "r-clidamonger")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clidamonger" version))
        (sha256
-        (base32 "1pmj3nif59mrr69a7b6p7q59jv42nflg8i04cv8cbn9g84mcxggc"))))
+        (base32 "052cd2frb4y6m3vqjc2mskilz9yamrnnlcvfhchn01n7x5j5ny1s"))))
     (properties `((upstream-name . "clidamonger")))
     (build-system r-build-system)
     (arguments
@@ -36224,7 +36425,8 @@ described in Zhang Z, Cao T, Huang Y and Xia Y (2025)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -37283,6 +37485,42 @@ regression of residuals, and the structural equation modeling approach are
 implemented for comparison.")
     (license license:gpl2)))
 
+(define-public r-ciecl
+  (package
+    (name "r-ciecl")
+    (version "0.9.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ciecl" version))
+       (sha256
+        (base32 "0yphqr9fc1qjr96r1nf19gj46n8vlsc0vq8g2k4nlp7i3p0faljz"))))
+    (properties `((upstream-name . "ciecl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-rsqlite
+                             r-gt
+                             r-dplyr
+                             r-dbi
+                             r-comorbidity))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Rodotasso/ciecl")
+    (synopsis
+     "International Classification of Diseases 'ICD-10'/'ICD-11' for Chile")
+    (description
+     "This package provides tools for working with the International Classification of
+Diseases ('ICD-10 Chile official MINSAL'/'DEIS v2018).  Includes optimized SQL
+search with SQLite', fuzzy matching of medical terms (Jaro-Winkler), Charlson
+and Elixhauser comorbidity calculation, WHO ICD-11 API integration, and
+hierarchical code validation.  Data from Centro FIC Chile DEIS
+<https://deis.minsal.cl/centrofic/>.")
+    (license license:expat)))
+
 (define-public r-cici
   (package
     (name "r-cici")
@@ -37333,7 +37571,8 @@ curves.  Details are given in Schomaker, @code{McIlleron}, Denti, Diaz (2024)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -37644,6 +37883,31 @@ these items via files deposited in public repositories.  The purpose of the
 project is to increase reproducibility and establish version tracking of results
 from (paleo)environmental/ecological research.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-chronometre
+  (package
+    (name "r-chronometre")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chronometre" version))
+       (sha256
+        (base32 "0gcd2x1x1mv7zm8gw93bm0569n310d6x7c7d080fhp29dx0n3n58"))))
+    (properties `((upstream-name . "chronometre")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/eddelbuettel/chronometre-r")
+    (synopsis "'chronomÃ¨tre' is a 'stopwatch'")
+    (description
+     "As a chronomÃ¨tre is a stopwatch', this package offers a simple stopwatch, and
+in particular one that can be shared with Python (using the corresponding
+package of the same name available via @code{PyPi}') such that both interpreters
+operate on the same object instance and shown in the demo file, as well as in
+the unit tests.")
+    (license license:gpl2+)))
 
 (define-public r-chronochrt
   (package
@@ -43328,7 +43592,8 @@ The reference article for these datasets is Mayer and Zignago (2011)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -46059,13 +46324,13 @@ Journal of Statistical Theory Practice, 16(3): 47.
 (define-public r-cccrm
   (package
     (name "r-cccrm")
-    (version "3.0.5")
+    (version "3.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccrm" version))
        (sha256
-        (base32 "05fx8z1bn4vlapyb5qlfp4gzhim010jdni9xn25qmyw8bcbaqa9v"))))
+        (base32 "1spyhx4asfhr30j11s2qxka3d60n0wjbxp36c3yg08spq0p04a1w"))))
     (properties `((upstream-name . "cccrm")))
     (build-system r-build-system)
     (arguments
@@ -46905,13 +47170,13 @@ functions for efficient computation of cross distances and data manipulation.")
 (define-public r-cb2
   (package
     (name "r-cb2")
-    (version "1.3.6")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CB2" version))
        (sha256
-        (base32 "16dnjqcs4y1msafv9n4008lga2b680xfgmrnlrrba2g0szf5lar1"))))
+        (base32 "1ldk8xh3dygl3j84kg1cswr0724qi6vr2624v2244wvjfvi5hxp9"))))
     (properties `((upstream-name . "CB2")))
     (build-system r-build-system)
     (arguments
@@ -47226,13 +47491,13 @@ generalized linear model conditional on its causal parents.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "0fdf3vxfmgf56gs0ihaq5wnriqapqs9vvkkjyzgw6ix2p1yd93r8"))))
+        (base32 "0zb55pnxng8ywj51llzh2li96pbzca5f70zlw4r2v3x3dnxj60c3"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (arguments
@@ -47251,7 +47516,8 @@ generalized linear model conditional on its causal parents.")
                              r-ggraph
                              r-ggplot2
                              r-dplyr
-                             r-dirmult))
+                             r-dirmult
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://integrated-inferences.github.io/CausalQueries/")
     (synopsis "Make, Update, and Query Binary Causal Models")
@@ -47398,7 +47664,8 @@ the help files.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -49223,51 +49490,6 @@ Etievant, L., Gail, M.H. (Lifetime Data Analysis, 2024)
 <doi:10.1007/s10985-024-09621-2>.")
     (license license:gpl2)))
 
-(define-public r-casebasedreasoning
-  (package
-    (name "r-casebasedreasoning")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CaseBasedReasoning" version))
-       (sha256
-        (base32 "0ayckjq53lmdm429bvb4fjsbyy7cp3jgds30swmzq9qf75bnaa55"))))
-    (properties `((upstream-name . "CaseBasedReasoning")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-survival
-                             r-rms
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ranger
-                             r-r6
-                             r-purrr
-                             r-pryr
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sipemu/case-based-reasoning")
-    (synopsis "Case Based Reasoning")
-    (description
-     "Case-based reasoning is a problem-solving methodology that involves solving a
-new problem by referring to the solution of a similar problem in a large set of
-previously solved problems.  The key aspect of Case Based Reasoning is to
-determine the problem that \"most closely\" matches the new problem at hand.  This
-is achieved by defining a family of distance functions and using these distance
-functions as parameters for local averaging regression estimates of the final
-result.  The optimal distance function is chosen based on a specific error
-measure used in regression estimation.  This approach allows for efficient
-problem-solving by leveraging past experiences and adapting solutions from
-similar cases.  The underlying concept is inspired by the work of Dippon J.
-(2002) <doi:10.1016/S0167-9473(02)00058-0>.")
-    (license license:expat)))
-
 (define-public r-casebase
   (package
     (name "r-casebase")
@@ -50132,20 +50354,20 @@ to build Species Distribution Modeling in a extensible and modern fashion.")
 (define-public r-caretforecast
   (package
     (name "r-caretforecast")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caretForecast" version))
        (sha256
-        (base32 "0z8r64cb3w0m5a7khysvfmnf1ywa7svi5lvxiwx1a6j6868zbxlr"))))
+        (base32 "110ci3pm1zbbw1h7661jmdlsiyr8dda55lch562hix39a1s45ipf"))))
     (properties `((upstream-name . "caretForecast")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-magrittr r-generics r-forecast r-dplyr r-caret))
-    (home-page "https://github.com/Akai01/caretForecast")
+    (home-page "https://taf-society.github.io/caretForecast/")
     (synopsis
      "Conformal Time Series Forecasting Using State of Art Machine Learning Algorithms")
     (description
@@ -50458,6 +50680,32 @@ clustering, machine learning, and visualization.")
 developments) in ecological time series using fitted Weibull functions.")
     (license license:gpl2+)))
 
+(define-public r-cardargus
+  (package
+    (name "r-cardargus")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cardargus" version))
+       (sha256
+        (base32 "08rnjxw8glrmhril6q73vw8gq5af83q5gr3128p5k6ywl9nfhzk1"))))
+    (properties `((upstream-name . "cardargus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsvg r-magick r-gdtools r-digest r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/cardargus")
+    (synopsis "Generate SVG Information Cards with Embedded Fonts and Badges")
+    (description
+     "Create self-contained SVG information cards with embedded Google Fonts',
+shields-style badges, and custom logos.  Cards are fully portable SVG files
+ideal for dashboards, reports, and web applications.  Includes functions to
+export cards to PNG format and display them in R Markdown and Quarto documents.")
+    (license license:expat)))
+
 (define-public r-card-pro
   (package
     (name "r-card-pro")
@@ -50474,7 +50722,8 @@ developments) in ecological time series using fitted Weibull functions.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51302,7 +51551,8 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -51959,13 +52209,13 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "1jzyznk1cr25pjwsnrxlh9c4pka4wzydgvs4ajy7456hc64h7895"))))
+        (base32 "0zfqrc7smpv9x6glj7c0x4yb7kjyy8mcq6iq0yl9jzn806hn9mhh"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (arguments
@@ -51979,6 +52229,8 @@ and to create an account, please see
                              r-mass
                              r-magrittr
                              r-laplacesdemon
+                             r-jsonvalidate
+                             r-jsonlite
                              r-ggplot2
                              r-dplyr
                              r-assertthat))
@@ -51988,27 +52240,31 @@ and to create an account, please see
     (description
      "This package provides a generic, easy-to-use and expandable implementation of a
 pharmacokinetic (PK) / pharmacodynamic (PD) model based on the S4 class system.
-This package allows the user to read/write a pharmacometric model from/to files
-and adapt it further on the fly in the R environment.  For this purpose, this
-package provides an intuitive API to add, modify or delete equations, ordinary
-differential equations (ODE's), model parameters or compartment properties (like
-infusion duration or rate, bioavailability and initial values).  Finally, this
-package also provides a useful export of the model for use with simulation
-packages rxode2 and mrgsolve'.  This package is designed and intended to be used
-with package campsis', a PK/PD simulation platform built on top of rxode2 and
-mrgsolve'.")
+This package allows the user to read and write pharmacometric models from and to
+files, including a JSON-based interface to import Campsis models defined using a
+formal JSON schema distributed with the package.  Models can be adapted further
+on the fly in the R environment using an intuitive API to add, modify or delete
+equations, ordinary differential equations (ODEs), model parameters or
+compartment properties (such as infusion duration or rate, bioavailability and
+initial values).  The package also provides export facilities for use with the
+simulation packages ârxode2â and âmrgsolveâ.  The package itself is
+licensed under the GPL (>= 3); the JSON schema file shipped in inst/extdata is
+licensed separately under the Creative Commons Attribution 4.0 International (CC
+BY 4.0).  This package is designed and intended to be used with the package
+âcampsisâ, a PK/PD simulation platform built on top of ârxode2â and
+âmrgsolveâ.")
     (license license:gpl3+)))
 
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.7.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "0hz44hzdh9qd2k3bpvkxb2y4g9dp38p932vd26yf6pc66chf6kjk"))))
+        (base32 "0vx5qw5azaq75gk7gijgmcqnm5c72fr01yhgam47j7c7pa8y0h62"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (arguments
@@ -52020,6 +52276,8 @@ mrgsolve'.")
                              r-purrr
                              r-progressr
                              r-mass
+                             r-jsonvalidate
+                             r-jsonlite
                              r-ggplot2
                              r-future
                              r-furrr
@@ -52029,19 +52287,23 @@ mrgsolve'.")
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Calvagone/campsis")
-    (synopsis "Generic PK/PD Simulation Platform CAMPSIS")
+    (synopsis "Generic PK/PD Simulation Platform Campsis")
     (description
      "This package provides a generic, easy-to-use and intuitive
-pharmacokinetic/pharmacodynamic (PK/PD) simulation platform based on R packages
-rxode2 and mrgsolve'.  CAMPSIS provides an abstraction layer over the underlying
-processes of writing a PK/PD model, assembling a custom dataset and running a
-simulation.  CAMPSIS has a strong dependency to the R package campsismod', which
-allows to read/write a model from/to files and adapt it further on the fly in
-the R environment.  Package campsis allows the user to assemble a dataset in an
-intuitive manner.  Once the userâs dataset is ready, the package is in charge
-of preparing the simulation, calling rxode2 or mrgsolve (at the user's choice)
-and returning the results, for the given model, dataset and desired simulation
-settings.")
+pharmacokinetic/pharmacodynamic (PK/PD) simulation platform based on the R
+packages rxode2 and mrgsolve'.  Campsis provides an abstraction layer over the
+underlying processes of defining a PK/PD model, assembling a custom dataset and
+running a simulation.  The package has a strong dependency on the R package
+campsismod', which allows models to be read from and written to files, including
+through a JSON-based interface, and to be adapted further on the fly in the R
+environment.  In addition, campsis allows users to assemble datasets in an
+intuitive manner, including via a JSON-based interface to import Campsis
+datasets defined using formal JSON schemas distributed with the package.  Once
+the dataset is ready, the package prepares the simulation, calls rxode2 or
+mrgsolve (at the user's choice), and returns the results for the given model,
+dataset and desired simulation settings.  The package itself is licensed under
+the GPL (>= 3); the JSON schema files shipped in inst/extdata are licensed
+separately under the Creative Commons Attribution 4.0 International (CC BY 4.0).")
     (license license:gpl3+)))
 
 (define-public r-campfin
@@ -53454,40 +53716,6 @@ total score nonparametric methods in Lathrop & Cheng (2014).  For dichotomous
 and polytomous tests.")
     (license license:gpl2+)))
 
-(define-public r-cacimar
-  (package
-    (name "r-cacimar")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CACIMAR" version))
-       (sha256
-        (base32 "0fdi2ls0j10fky3jygqx93h8m1957cdbn1vxdi69bq08xf2c5n5h"))))
-    (properties `((upstream-name . "CACIMAR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-seurat
-                             r-rocr
-                             r-reshape2
-                             r-psych
-                             r-pheatmap
-                             r-pbapply
-                             r-dplyr))
-    (home-page "https://github.com/jiang-junyao/CACIMAR")
-    (synopsis
-     "Cross-Species Analysis of Cell Identities, Markers and Regulations")
-    (description
-     "This package provides a toolkit to perform cross-species analysis based on
-@code{scRNA-seq} data.  This package contains 5 main features. (1) identify
-Markers in each cluster. (2) Cell type annotation (3) identify conserved
-markers. (4) identify conserved cell types. (5) identify conserved modules of
-regulatory networks.")
-    (license license:expat)))
-
 (define-public r-cache
   (package
     (name "r-cache")
@@ -53758,7 +53986,8 @@ capture data.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

@@ -1077,25 +1077,29 @@ packages, including boot', glmnet', mgcv', lme4', and tm'.")
 (define-public r-futureverse
   (package
     (name "r-futureverse")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "futureverse" version))
        (sha256
-        (base32 "01fmmz0vwsaw6dkbkf8nadq1rm60cybg10dj08k96i6pqbcxi0vr"))))
+        (base32 "03wjfn8j5ad51v1h4xm6q6mvcbsw1y8hvh9960sq3czvisibpnfl"))))
     (properties `((upstream-name . "futureverse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-progressr r-future-apply r-future r-furrr
+    (propagated-inputs (list r-progressr
+                             r-futurize
+                             r-future-apply
+                             r-future
+                             r-furrr
                              r-dofuture))
     (home-page "https://www.futureverse.org")
     (synopsis "Install 'Futureverse' in One Go")
     (description
-     "The Futureverse is a set of packages for parallel and distributed process with
-the future package at its core, cf.  Bengtsson (2021)
+     "The Futureverse is a set of packages for parallel and distributed processing
+with the future package at its core, cf.  Bengtsson (2021)
 <doi:10.32614/RJ-2021-048>.  This package is designed to make it easy to install
 common Futureverse packages in a single step.  This package is intended for
 end-users, interactive use, and R scripts.  Packages must not list it as a
@@ -1691,13 +1695,13 @@ procedures to run test result comparisons and power analysis using simulations."
 (define-public r-funspotr
   (package
     (name "r-funspotr")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funspotr" version))
        (sha256
-        (base32 "0n437kkv1dnpna32rbyr0r5kl6qhmbygf2kmng7w5ni8p1xjwmh2"))))
+        (base32 "077wla3ab5izmnpl2yw8fdfw667znkh9326dil785r613cxy8ify"))))
     (properties `((upstream-name . "funspotr")))
     (build-system r-build-system)
     (arguments
@@ -9320,7 +9324,8 @@ supported to evaluate model accuracy.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -9945,7 +9950,8 @@ fonts will be available for PDF or Postscript output files; however, this will
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -11295,6 +11301,43 @@ gross primary production and transpiration rate calculation, and light response
 curves.")
     (license license:gpl3+)))
 
+(define-public r-fluxfixer
+  (package
+    (name "r-fluxfixer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fluxfixer" version))
+       (sha256
+        (base32 "0yakbsxswcsxzzqavn49c3sfag9ian3h4c1wdhpywf16sndirszz"))))
+    (properties `((upstream-name . "fluxfixer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-ranger
+                             r-magrittr
+                             r-lubridate
+                             r-gsignal
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yhata86/fluxfixer")
+    (synopsis "Advanced Framework for Sap Flow Data Post-Process")
+    (description
+     "This package provides a flexible framework for post-processing thermal
+dissipation sap flow data using statistical methods and machine learning.  This
+framework includes anomaly correction, outlier removal, gap-filling, trend
+removal, signal damping correction, and sap flux density calculation.  The
+functions in this package can also apply to other time series with various
+artifacts.")
+    (license license:expat)))
+
 (define-public r-fluxfinder
   (package
     (name "r-fluxfinder")
@@ -11670,6 +11713,45 @@ regulation by dams based on GarcÃ­a de Jalon et al.  2017
 <doi:10.1007/s11269-017-1663-0>.")
     (license license:expat)))
 
+(define-public r-flownet
+  (package
+    (name "r-flownet")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flownet" version))
+       (sha256
+        (base32 "0rbdhjd31xzm732qr7a9s1vljfd0xg672s6rsnjywhjwv1w5l469"))))
+    (properties `((upstream-name . "flownet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-progress
+                             r-mirai
+                             r-leadercluster
+                             r-kit
+                             r-igraph
+                             r-geodist
+                             r-collapse))
+    (native-inputs (list r-knitr))
+    (home-page "https://sebkrantz.github.io/flownet/")
+    (synopsis
+     "Transport Modeling: Network Processing, Route Enumeration, and Traffic Assignment")
+    (description
+     "High-performance tools for transport modeling - network processing, route
+enumeration, and traffic assignment in R. The package implements the Path-Sized
+Logit model for traffic assignment - Ben-Akiva and Bierlaire (1999)
+<doi:10.1007/978-1-4615-5203-1_2> - an efficient route enumeration algorithm,
+and provides powerful utility functions for (multimodal) network generation,
+consolidation/contraction, and/or simplification.  The user is expected to
+provide a transport network (either a graph or collection of linestrings) and an
+origin-destination (OD) matrix of trade/traffic flows.  Maintained by transport
+consultants at CPCS (cpcs.ca).")
+    (license license:gpl3)))
+
 (define-public r-flowmapper
   (package
     (name "r-flowmapper")
@@ -11719,7 +11801,8 @@ bidirectional half-arrows.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -12302,7 +12385,8 @@ with the convenience of htmlwidgets'.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -13155,13 +13239,13 @@ Fisher-Scoring algorithm.  Overall the estimation relies on the mgcv'-package.")
 (define-public r-flexfitr
   (package
     (name "r-flexfitr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexFitR" version))
        (sha256
-        (base32 "08s31lj45pfqkgpwgwgpcsbnffij5710zn2qvan9n0rcp5hnzqh4"))))
+        (base32 "0m2vqijbp53wnw0n14qm939z0z30kjv34pwsyl9v01gpwb6n74pw"))))
     (properties `((upstream-name . "flexFitR")))
     (build-system r-build-system)
     (arguments
@@ -14793,13 +14877,13 @@ by k-means clustering.")
 (define-public r-fitlandr
   (package
     (name "r-fitlandr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitlandr" version))
        (sha256
-        (base32 "077b97gwlzxmd4i4rsxrgqzlnwn7zf0y0wgcbihck1wvh7gjiara"))))
+        (base32 "0i7n44iap9yg5q08c7sh41hwh80vm9y3xf1gqq5gmi7v6da5azas"))))
     (properties `((upstream-name . "fitlandr")))
     (build-system r-build-system)
     (arguments
@@ -14812,6 +14896,7 @@ by k-means clustering.")
                              r-rlang
                              r-rfast
                              r-r-utils
+                             r-purrr
                              r-plotly
                              r-numderiv
                              r-mass
@@ -15514,36 +15599,6 @@ dynamics of migratory fish.  Datasets contain both basic size information on a
 per fish basis, as well as otolith data that contains a per day record of fish
 growth history.  All data in this package was collected by the author, from
 2015-2016, in the Wellington region of New Zealand.")
-    (license license:gpl3)))
-
-(define-public r-fishboot
-  (package
-    (name "r-fishboot")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fishboot" version))
-       (sha256
-        (base32 "0ay53vdkgckim4n7cxdsh12gqbsbbja43lc7lpa12spjb6myznyv"))))
-    (properties `((upstream-name . "fishboot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tropfishr r-ks r-foreach r-fishmethods
-                             r-doparallel))
-    (home-page "https://github.com/rschwamborn/fishboot")
-    (synopsis
-     "Bootstrap-Based Methods for the Study of Fish Stocks and Aquatic Populations")
-    (description
-     "This package provides a suite of bootstrap-based models and tools for analyzing
-fish stocks and aquatic populations.  Designed for ecologists and fisheries
-scientists, it supports data from length-frequency distributions,
-tag-and-recapture studies, and hard structure readings (e.g., otoliths).  See
-Schwamborn et al., 2019 <doi:10.1016/j.ecolmodel.2018.12.001> for background.
-The package includes functions for bootstrapped fitting of growth curves and
-plotting.")
     (license license:gpl3)))
 
 (define-public r-fishbc
@@ -16795,13 +16850,13 @@ computational finance.")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.11")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "0jsvnxdmwp2qb47qw050cvadj6aqrzqxf7mnck1jjhpd571frs93"))))
+        (base32 "0as2pb9ly5rqpil04ivbb8kjvaw0y1nhl6hhs1mwwzyksdj17zk3"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (arguments
@@ -17733,7 +17788,8 @@ in C++ for scalability.  fido replaces the previous package stray'.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -18631,13 +18687,13 @@ scale changes and that common pitfalls are avoided.")
 (define-public r-ffm
   (package
     (name "r-ffm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ffm" version))
        (sha256
-        (base32 "1l177dph20kcm6x09svn0jqsjzp6q9kjyn0p03qkb69ih1vqn7kz"))))
+        (base32 "0wbhxk4581pl90i50m91pnhlhs5dfjdz2ax33lhpw1iijirgd1cm"))))
     (properties `((upstream-name . "ffm")))
     (build-system r-build-system)
     (arguments
@@ -18650,7 +18706,7 @@ scale changes and that common pitfalls are avoided.")
                              r-httr2
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ffm")
+    (home-page "https://github.com/jslth/ffm/")
     (synopsis "Download Official Spatial Data from Germany")
     (description
      "This package provides quick and easy access to official spatial data from
@@ -19398,13 +19454,13 @@ version of the Hausman test.")
 (define-public r-fegarch
   (package
     (name "r-fegarch")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fEGarch" version))
        (sha256
-        (base32 "1331h86waxjrqs06xc3dcgsaiim0kkd2mr0wnif05ya4svm94hbd"))))
+        (base32 "1iv7w0ml5saw6r3b4kjflv2d0mzxavkda0909wln7spvjk0nv6ch"))))
     (properties `((upstream-name . "fEGarch")))
     (build-system r-build-system)
     (arguments
@@ -21353,13 +21409,13 @@ easier to work with factors in a flexible and efficient manner.")
 (define-public r-fcros
   (package
     (name "r-fcros")
-    (version "1.6.1")
+    (version "1.6-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcros" version))
        (sha256
-        (base32 "04yr6lqs38lczsmdvdm78qn63836qj7xwspgh3h3n3gh8cssd83x"))))
+        (base32 "1kynyqv5lbw87sdc46yic9548fcxha8d6b82wk5dlx4ww44r0rz0"))))
     (properties `((upstream-name . "fcros")))
     (build-system r-build-system)
     (arguments
@@ -23584,13 +23640,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "13phjb91xjnqy7ajrdaydqgs3x1808xvdbx8bl0gzvrnzqjbj12d"))))
+        (base32 "16wpyqzpwh0f5ny27d1bn0k98z64mx9fainfafzpvvsj3mjia2z4"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -23626,6 +23682,7 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-ibreakdown
                              r-ggplot2
                              r-future
+                             r-foreach
                              r-flexsurv
                              r-finetune
                              r-fairmodels
@@ -23641,14 +23698,14 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
      "Guarded Resampling Workflows for Safe and Automated Machine Learning in R")
     (description
      "This package provides a guarded resampling workflow for training and evaluating
-machineâlearning models.  When the guarded resampling path is used,
-preprocessing and model fitting are reâestimated within each resampling split
-to reduce leakage risk.  Supports multiple resampling schemes, integrates with
+machine-learning models.  When the guarded resampling path is used,
+preprocessing and model fitting are re-estimated within each resampling split to
+reduce leakage risk.  Supports multiple resampling schemes, integrates with
 established engines in the tidymodels ecosystem, and aims to improve evaluation
 reliability by coordinating preprocessing, fitting, and evaluation within
-supported workflows.  Offers a lightweight @code{AutoMLâstyle} workflow by
+supported workflows.  Offers a lightweight @code{AutoML-style} workflow by
 automating model training, resampling, and tuning across multiple algorithms,
-while keeping evaluation design explicit and userâcontrolled.")
+while keeping evaluation design explicit and user-controlled.")
     (license license:expat)))
 
 (define-public r-fastmit
@@ -24900,6 +24957,42 @@ filtering of and handling dates, customizing data and metrics, and the ability
 to pull daily data directly from the Water Survey of Canada hydrometric database
 (<https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/>).")
     (license license:asl2.0)))
+
+(define-public r-fasster
+  (package
+    (name "r-fasster")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fasster" version))
+       (sha256
+        (base32 "0g4nylrw8b9dwafhyrwvz2xp90pwpqcxximhnwyj0nyvx3pnmgd4"))))
+    (properties `((upstream-name . "fasster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tsibble
+                             r-rlang
+                             r-purrr
+                             r-fabletools
+                             r-dplyr
+                             r-dlm
+                             r-distributional))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tidyverts/fasster")
+    (synopsis
+     "Fast Additive Switching of Seasonality, Trend, and Exogenous Regressors")
+    (description
+     "Implementation of the FASSTER (Forecasting with Additive Switching of
+Seasonality, Trend, and Exogenous Regressors) model for forecasting time series
+with multiple seasonal patterns.  The model combines state space methodology
+with a switching component in the observation equation to allow flexible
+modeling of complex seasonal patterns, including time-varying effects and
+multiple seasonalities.")
+    (license license:gpl3)))
 
 (define-public r-fassets
   (package
@@ -27617,7 +27710,8 @@ Data Lake Storage Gen2'); and execute Spark code via the Livy API'.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

@@ -1192,6 +1192,37 @@ file according to the format from the U.S. Copyright Office SR Audit Data online
 database.")
     (license license:gpl2+)))
 
+(define-public r-usaboundaries
+  (package
+    (name "r-usaboundaries")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "USAboundaries" version))
+       (sha256
+        (base32 "0nvd5mgavrs9gynw2sjv20hfii8ina1qc3np1sykdj9vwvxjwjv1"))))
+    (properties `((upstream-name . "USAboundaries")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/USAboundaries/")
+    (synopsis
+     "Historical and Contemporary Boundaries of the United States of America")
+    (description
+     "The boundaries for geographical units in the United States of America contained
+in this package include state, county, congressional district, and zip code
+tabulation area.  Contemporary boundaries are provided by the U.S. Census Bureau
+(public domain).  Historical boundaries for the years from 1629 to 2000 are
+provided form the Newberry Library's Atlas of Historical County Boundaries
+(licensed CC BY-NC-SA).  Additional data is provided in the
+US@code{AboundariesData} package; this package provides an interface to access
+that data.")
+    (license license:expat)))
+
 (define-public r-usa-state-boundaries
   (package
     (name "r-usa-state-boundaries")
@@ -1917,13 +1948,13 @@ a message is shown in the console indicating whether the package is out of date.
 (define-public r-upcm
   (package
     (name "r-upcm")
-    (version "0.0-4")
+    (version "0.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UPCM" version))
        (sha256
-        (base32 "1c6fc1yrbhsia33qxjq29fgwa1hynpd006jvvb79dx1klwmmn4kk"))))
+        (base32 "0j8rqbklblq852a4qzyv7kibir4fpb8ws23n5p9ifwn74hqharvi"))))
     (properties `((upstream-name . "UPCM")))
     (build-system r-build-system)
     (arguments
@@ -2027,13 +2058,13 @@ information.")
 (define-public r-unvs-med
   (package
     (name "r-unvs-med")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unvs.med" version))
        (sha256
-        (base32 "0lr7dyzfp3j6znyiawzjvg9bfwh0b8nh60ld4wjq2awj9mcmh0sw"))))
+        (base32 "148brfwc42ahvbnnpmndq9ryrxsx1k2i8j3rklyl9lsrhs476v2d"))))
     (properties `((upstream-name . "unvs.med")))
     (build-system r-build-system)
     (arguments
@@ -2330,19 +2361,19 @@ for data frames and HTML tables are provided.")
 (define-public r-unpac
   (package
     (name "r-unpac")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UNPaC" version))
        (sha256
-        (base32 "1dqli7fanh0gk2bfbcykrrswyjrl9g4rbplxjxgjri7kkmf03cd0"))))
+        (base32 "0s7jm3hsxzgg22p3ziwaaf5zfz8q13j5yydhn690k8qwz3wik730"))))
     (properties `((upstream-name . "UNPaC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pdsce r-huge))
+    (propagated-inputs (list r-pdsce r-glasso))
     (home-page "https://cran.r-project.org/package=UNPaC")
     (synopsis
      "Non-Parametric Cluster Significance Testing with Reference to a Unimodal Null Distribution")
@@ -2355,7 +2386,7 @@ distribution is generated using kernel density estimation and a Gaussian copula
 framework.  A dimension reduction strategy and sparse covariance estimation
 optimize this method for the high-dimensional, low-sample size setting.  This
 method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-unnest
   (package
@@ -2642,6 +2673,50 @@ procedure proposed by Ferrando & Lorenzo-Seva (2019)
 <doi:10.1177/0013164418824755>.  Provides two indices for assessing differential
 and incremental validity, both based on a second-order modelling schema for the
 general factor.")
+    (license license:gpl3)))
+
+(define-public r-unityforest
+  (package
+    (name "r-unityforest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unityForest" version))
+       (sha256
+        (base32 "01b17y0iinaxk4fnw2inr8xd6v92552l6fzysp43y8gvx0ph7wqa"))))
+    (properties `((upstream-name . "unityForest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=unityForest")
+    (synopsis
+     "Improving Interaction Modelling and Interpretability in Random Forests")
+    (description
+     "Implementation of the unity forest (UFO) framework (Hornung & Hapfelmeier, 2026,
+<doi:10.48550/@code{arXiv.2601.07003>}).  UFOs are a random forest variant
+designed to better take covariates with purely interaction-based effects into
+account, including interactions for which none of the involved covariates
+exhibits a marginal effect.  While this framework tends to improve
+discrimination and predictive accuracy compared to standard random forests, it
+also facilitates the identification and interpretation of (marginal or
+interactive) effects: In addition to the UFO algorithm for tree construction,
+the package includes the unity variable importance measure (unity VIM), which
+quantifies covariate effects under the conditions in which they are strongest -
+either marginally or within subgroups defined by interactions - as well as
+covariate-representative tree roots (CRTRs) that provide interpretable
+visualizations of these conditions.  Currently, only classification is
+supported.  This package is a fork of the R package ranger (main author: Marvin
+N. Wright), which implements random forests using an efficient C++ backend.")
     (license license:gpl3)))
 
 (define-public r-unittest
@@ -4976,13 +5051,13 @@ Analysis (PCA) algorithm of Yeasin and Paul (2024)
 (define-public r-udpipe
   (package
     (name "r-udpipe")
-    (version "0.8.15")
+    (version "0.8.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "udpipe" version))
        (sha256
-        (base32 "0g7jrchaxhyqaba1pdrxcz8q62m3f3hibi6bmybxi7l4rvb7g8g3"))))
+        (base32 "1l1v7n35gwhdf72r2j7xvkggz5wg9hrybg8dwl5k4kkdjb44ksbn"))))
     (properties `((upstream-name . "udpipe")))
     (build-system r-build-system)
     (arguments
@@ -5091,7 +5166,8 @@ explored and downloaded.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5545,7 +5621,8 @@ approaches, featuring methods for data preparation, modeling, and visualization.
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

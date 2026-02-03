@@ -640,7 +640,8 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1812,7 +1813,8 @@ Extended Batch Data\" of Cowen et al. (2017) <doi:10.1111/biom.12701>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -4710,13 +4712,13 @@ SimÃµes and Pierce (2021) <doi:10.1038/s41559-021-01532-x>.")
 (define-public r-evoper
   (package
     (name "r-evoper")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evoper" version))
        (sha256
-        (base32 "064fcpd04ws8v6sl0bakiw34jmmfpg1w5pkq94y2gh1c576x4vwz"))))
+        (base32 "1krk5jhv5vk1cb8j2bl9k1kjqq53nz2wzrh0y6wb2pjazqiyb51c"))))
     (properties `((upstream-name . "evoper")))
     (build-system r-build-system)
     (arguments
@@ -4727,8 +4729,8 @@ SimÃµes and Pierce (2021) <doi:10.1038/s41559-021-01532-x>.")
                              r-reshape
                              r-plyr
                              r-plot3d
+                             r-logging
                              r-ggplot2
-                             r-futile-logger
                              r-desolve
                              r-data-table
                              r-boot))
@@ -4744,8 +4746,8 @@ efficient and require, in some cases, fewer model evaluations than alternatives
 relying on experimental design.  Currently there are built in support for models
 developed with Repast Simphony Agent-Based framework
 (<https://repast.github.io/>) and with @code{NetLogo}
-(<https://ccl.northwestern.edu/netlogo/>) which are the most used frameworks for
-Agent-based modeling.")
+(<https://www.netlogo.org/>) which are the most used frameworks for Agent-based
+modeling.")
     (license license:expat)))
 
 (define-public r-evomorph
@@ -4949,7 +4951,8 @@ quantitative genetics tools.  Melo D, Garcia G, Hubbe A, Assis A P, Marroig G.
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5028,13 +5031,13 @@ for use in teaching.")
 (define-public r-evmissing
   (package
     (name "r-evmissing")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evmissing" version))
        (sha256
-        (base32 "0722nvyn5mgip262hbfvqngnndws5p154gpxzj96p5gzsxgh2z6h"))))
+        (base32 "1585jqjr95pid55pfvdgkpn96wscnxwhn6x31arf4gag9hq3df09"))))
     (properties `((upstream-name . "evmissing")))
     (build-system r-build-system)
     (arguments
@@ -5045,15 +5048,14 @@ for use in teaching.")
     (synopsis "Extreme Value Analyses with Missing Data")
     (description
      "This package performs likelihood-based extreme value inferences with adjustment
-for the presence of missing values based on Simpson and Northrop (2025)
-<doi:10.48550/@code{arXiv.2512.15429>}.  A Generalised Extreme Value
-distribution is fitted to block maxima using maximum likelihood estimation, with
-the location and scale parameters reflecting the numbers of non-missing raw
-values in each block.  A Bayesian version is also provided.  For the purposes of
-comparison, there are options to make no adjustment for missing values or to
-discard any block maximum for which greater than a percentage of the underlying
-raw values are missing.  Example datasets containing missing values are
-provided.")
+for the presence of missing values based on Simpson and Northrop (2026).  A
+Generalised Extreme Value distribution is fitted to block maxima using maximum
+likelihood estimation, with the location and scale parameters reflecting the
+numbers of non-missing raw values in each block.  A Bayesian version is also
+provided.  For the purposes of comparison, there are options to make no
+adjustment for missing values or to discard any block maximum for which greater
+than a percentage of the underlying raw values are missing.  Example datasets
+containing missing values are provided.")
     (license license:gpl3+)))
 
 (define-public r-evitaicossa
@@ -6398,6 +6400,51 @@ Prescription Effect Curve (AUPEC).  It also provides the tools to analyze
 Individualized Treatment Rules under budget constraints.  Detailed reference in
 Imai and Li (2019) <@code{arXiv:1905.05389>}.")
     (license license:gpl2+)))
+
+(define-public r-evalhte
+  (package
+    (name "r-evalhte")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evalHTE" version))
+       (sha256
+        (base32 "00fbz9s4i4m0faw3rgwbph8ai7gnbrqrjfl3wby1znbclrvak1h0"))))
+    (properties `((upstream-name . "evalHTE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-quadprog
+                             r-purrr
+                             r-matrix
+                             r-mass
+                             r-ggthemes
+                             r-ggplot2
+                             r-ggdist
+                             r-furrr
+                             r-evalitr
+                             r-dplyr
+                             r-cli
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=evalHTE")
+    (synopsis "Evaluating Heterogeneous Treatment Effects")
+    (description
+     "This package provides various statistical methods for evaluating heterogeneous
+treatment effects (HTE) in randomized experiments.  The package includes tools
+to estimate uniform confidence bands for estimation of the group average
+treatment effect sorted by generic machine learning algorithms (GATES).  It also
+provides the tools to identify a subgroup of individuals who are likely to
+benefit from a treatment the most \"exceptional responders\" or those who are
+harmed by it.  Detailed reference in Imai and Li (2023)
+<doi:10.48550/@code{arXiv.2310.07973>}.")
+    (license license:expat)))
 
 (define-public r-evacluster
   (package
@@ -8310,7 +8357,8 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -10445,38 +10493,6 @@ Microsoft Word documents or Microsoft @code{PowerPoint} presentations by using a
 Markdown document or the R package officer'.")
     (license license:expat)))
 
-(define-public r-equaltestmi
-  (package
-    (name "r-equaltestmi")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "equaltestMI" version))
-       (sha256
-        (base32 "09wh4907vf54z3g2a1i1j4m5vkaz97jp3qyrmxbg0bbbq0c68ffg"))))
-    (properties `((upstream-name . "equaltestMI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lavaan))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=equaltestMI")
-    (synopsis
-     "Examine Measurement Invariance via Equivalence Testing and Projection Method")
-    (description
-     "This package provides functions for examining measurement invariance via
-equivalence testing are included in this package.  The traditionally used RMSEA
-(Root Mean Square Error of Approximation) cutoff values are adjusted based on
-simulation results.  In addition, a projection-based method is implemented to
-test the equality of latent factor means across groups without assuming the
-equality of intercepts.  For more information, see Yuan, K. H., & Chan, W.
-(2016) <doi:10.1037/met0000080>, Deng, L., & Yuan, K. H. (2016)
-<doi:10.1007/s11336-015-9491-8>, and Jiang, G., Mai, Y., & Yuan, K. H. (2017)
-<doi:10.3389/fpsyg.2017.01823>.")
-    (license license:gpl3)))
-
 (define-public r-equalstats
   (package
     (name "r-equalstats")
@@ -10558,6 +10574,40 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
 classifies the data and performs appropriate statistical tests.  EQUAL-STATS
 software is a shiny application with an user-friendly interface to perform
 complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
+    (license license:gpl3+)))
+
+(define-public r-equalprognosis
+  (package
+    (name "r-equalprognosis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EQUALPrognosis" version))
+       (sha256
+        (base32 "02f627pvjfh55yzagvhwxn0wwq3m98qkzcx2518k5aqv1sxs4a1g"))))
+    (properties `((upstream-name . "EQUALPrognosis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-stringr
+                             r-proc
+                             r-predtools
+                             r-mime
+                             r-ggplot2
+                             r-calibrationcurves
+                             r-base64enc))
+    (home-page "https://sites.google.com/view/equal-group/home")
+    (synopsis "Analysing Prognostic Studies")
+    (description
+     "This package provides functions that help with analysis of prognostic study
+data.  This allows users with little experience of developing models to develop
+models and assess the performance of the prognostic models.  This also
+summarises the information, so the performance of multiple models can be
+displayed simultaneously.  Gurusamy, K
+(2026)<https://github.com/kurinchi2k/EQUALPrognosis>.")
     (license license:gpl3+)))
 
 (define-public r-equalencrypt
@@ -11080,7 +11130,8 @@ quantitative treatments.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -13892,19 +13943,19 @@ functions pair to provide a robust alternative to @code{base::library()} and
 (define-public r-envipat
   (package
     (name "r-envipat")
-    (version "2.6")
+    (version "2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enviPat" version))
        (sha256
-        (base32 "17qrly8fb6d7gk1xcg3273mykpwc9i7ghnvipp63fwx4cp25crzw"))))
+        (base32 "10h4hrk848d2xqy2whqakvxwjbkawsllifzwzpcqi885y11mb57c"))))
     (properties `((upstream-name . "enviPat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://www.envipat.eawag.ch/")
+    (home-page "https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5b00941")
     (synopsis
      "Isotope Pattern, Profile and Centroid Calculation for Mass Spectrometry")
     (description
@@ -14452,13 +14503,13 @@ ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
 (define-public r-enrichit
   (package
     (name "r-enrichit")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enrichit" version))
        (sha256
-        (base32 "1352f0n27q2v0x7rrd1mgkawafhf12gbk7crwnbm1mfs4iz115wh"))))
+        (base32 "0fqmx449cpdb05bf2pkf5zn1jmnksj4hkm5lrn4wk5icmlm3wc6z"))))
     (properties `((upstream-name . "enrichit")))
     (build-system r-build-system)
     (arguments
@@ -15573,6 +15624,31 @@ Reliability in Educational Measurement chapter of the 5th edition of
 \"Educational Measurement\" by Lee and Harris (2025, ISBN:9780197654965).")
     (license license:expat)))
 
+(define-public r-emplikcs
+  (package
+    (name "r-emplikcs")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emplikCS" version))
+       (sha256
+        (base32 "0y1a9kq23l0q6brbv4vlmlvpkfs8rmvgfs1vmf9fv8s5psmhj1hk"))))
+    (properties `((upstream-name . "emplikCS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog r-monotone))
+    (home-page "https://cran.r-project.org/package=emplikCS")
+    (synopsis
+     "Empirical Likelihood with Current Status Data for Mean, Probability, Hazard")
+    (description
+     "Compute the empirical likelihood ratio, -2@code{LogLikRatio} (Wilks) statistics,
+based on current status data for the hypothesis about the parameters of mean or
+probability or weighted cumulative hazard.")
+    (license license:gpl2+)))
+
 (define-public r-emplikauc
   (package
     (name "r-emplikauc")
@@ -15834,13 +15910,13 @@ implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg
 (define-public r-emotions
   (package
     (name "r-emotions")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMOTIONS" version))
        (sha256
-        (base32 "1ngjzyn840vm9z9nyj154z3x1qvf6wa3rv4nk93jmlgi13slj86v"))))
+        (base32 "189glbz1lyijfwzbx62wh44d8d5xlad47n32fhc4jaikffb3g6nq"))))
     (properties `((upstream-name . "EMOTIONS")))
     (build-system r-build-system)
     (arguments
@@ -15848,6 +15924,7 @@ implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-rlang
                              r-quantreg
                              r-parameters
@@ -15858,18 +15935,22 @@ implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EMOTIONS")
-    (synopsis "'EMOTIONS: Ensemble Models for Lactation Curves'")
+    (synopsis "Ensemble Models for Lactation Curves")
     (description
-     "Lactation curve modeling plays a central role in dairy production, supporting
-management decisions and the selection of animals with superior productivity and
-resilience.  The package EMOTIONS fits 47 models for lactation curves and
-creates ensemble models using model averaging based on Akaike information
-criterion, Bayesian information criterion, root mean square percentage error,
-and mean squared error, variance of the predictions, cosine similarity for each
-model's predictions, and Bayesian Model Average.  The daily production values
-predicted through the ensemble models can be used to estimate resilience
-indicators in the package.  Additionally, the package allows the graphical
-visualization of the model ranks and the predicted lactation curves.")
+     "Lactation curves describe temporal changes in milk yield and are key to breeding
+and managing dairy animals more efficiently.  The use of ensemble modeling,
+which consists of combining predictions from multiple models, has the potential
+to yields more accurate and robust estimates of lactation patterns than relying
+solely on single model estimates.  The package EMOTIONS fits 47 models for
+lactation curves and creates ensemble models using model averaging based on
+Akaike information criterion (AIC), Bayesian information criterion (BIC), root
+mean square percentage error (RMSPE) and mean squared error (MAE), variance of
+the predictions, cosine similarity for each model's predictions, and Bayesian
+Model Average (BMA).  The daily production values predicted through the ensemble
+models can be used to estimate resilience indicators in the package.  The
+package allows the graphical visualization of the model ranks and the predicted
+lactation curves.  Additionally, the packages allows the user to detect milk
+loss events and estimate residual-based resilience indicators.")
     (license license:gpl3)))
 
 (define-public r-emon
@@ -16211,7 +16292,8 @@ serializations such as RDF and SPARQL queries.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -16884,13 +16966,13 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embed" version))
        (sha256
-        (base32 "07nw2jk1l3q58mv21dlhza4a7wav8kgaj9wfshbviql4hfxvav1y"))))
+        (base32 "0qnblnr9az2bhk3d0i39n774zks9bjks00ldibcn6n13wrc9lchn"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (arguments
@@ -21824,13 +21906,13 @@ aids in experimental planning, management and workflow.")
 (define-public r-edgemodelr
   (package
     (name "r-edgemodelr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgemodelr" version))
        (sha256
-        (base32 "1kicprxkmkvxrzi11wxxjs1gavwsxx3vxxnwdj7ycym9gv2m64jw"))))
+        (base32 "1ris8j8z1767kvc653h3g77bdmnh5jin7yjsn2ri4zknhqq77aqy"))))
     (properties `((upstream-name . "edgemodelr")))
     (build-system r-build-system)
     (arguments
@@ -21919,7 +22001,8 @@ risk adjustment and the HHS-HCC model can be found here:
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -24765,7 +24848,8 @@ using echelon scan method proposed by Kurihara (2003)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -24803,7 +24887,8 @@ build R lists for ECharts API. Lean set of powerful commands.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -24942,13 +25027,13 @@ Olano et al. (2009) <doi:10.1051/forest:2008074>.")
 (define-public r-ecerto
   (package
     (name "r-ecerto")
-    (version "0.8.5")
+    (version "0.8.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eCerto" version))
        (sha256
-        (base32 "0vllvvq88zwag65hcfirfh4i3vb1zmpfclqyrlky6p8d6fml2d68"))))
+        (base32 "16wkxxa2rj7yhdaf6nxws3cc3v0nbmhd5ph7xm55m2ixk98jcakh"))))
     (properties `((upstream-name . "eCerto")))
     (build-system r-build-system)
     (arguments
@@ -24962,15 +25047,12 @@ Olano et al. (2009) <doi:10.1051/forest:2008074>.")
                              r-rmarkdown
                              r-r6
                              r-purrr
-                             r-plyr
                              r-openxlsx
                              r-moments
                              r-markdown
-                             r-magick
                              r-knitr
                              r-golem
                              r-dt
-                             r-dplyr
                              r-config
                              r-bslib))
     (home-page "https://github.com/janlisec/eCerto")
@@ -25948,13 +26030,13 @@ to Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
 (define-public r-eatrep
   (package
     (name "r-eatrep")
-    (version "0.15.2")
+    (version "0.15.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatRep" version))
        (sha256
-        (base32 "12q6z92sxl3vil053a7hjkjfagy5jvi738b32f1fcy1xlmjdhvcq"))))
+        (base32 "185d5j9p2v847r7gm8ychdh9kjc03v8kmqnjmxn2lywssc1jy6f0"))))
     (properties `((upstream-name . "eatRep")))
     (build-system r-build-system)
     (arguments
@@ -25962,13 +26044,14 @@ to Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survey
+                             r-stringr
                              r-reshape2
+                             r-reformulas
                              r-progress
                              r-plyr
                              r-msm
                              r-miceadds
                              r-mice
-                             r-lme4
                              r-lifecycle
                              r-lavaan
                              r-janitor
@@ -27205,37 +27288,6 @@ coupled-to-MCMC schemes are implemented.")
      "Some utility functions for validation and data manipulation.  These functions
 can be helpful to reduce internal codes everywhere in package development.")
     (license license:expat)))
-
-(define-public r-easy-glmnet
-  (package
-    (name "r-easy-glmnet")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "easy.glmnet" version))
-       (sha256
-        (base32 "0yxfydyi6q5qx157gf1sdambfbq33zvldsydsjbkzn5fqv03g7h5"))))
-    (properties `((upstream-name . "easy.glmnet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-glmnet r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=easy.glmnet")
-    (synopsis "Functions to Simplify the Use of 'glmnet' for Machine Learning")
-    (description
-     "This package provides several functions to simplify using the glmnet package:
-converting data frames into matrices ready for glmnet'; b) imputing missing
-variables multiple times; c) fitting and applying prediction models
-straightforwardly; d) assigning observations to folds in a balanced way; e)
-cross-validate the models; f) selecting the most representative model across
-imputations and folds; and g) getting the relevance of the model regressors; as
-described in several publications: Solanes et al. (2022)
-<doi:10.1038/s41537-022-00309-w>, Palau et al. (2023)
-<doi:10.1016/j.rpsm.2023.01.001>, Sobregrau et al. (2024)
-<doi:10.1016/j.jpsychores.2024.111656>.")
-    (license license:gpl3)))
 
 (define-public r-ease
   (package

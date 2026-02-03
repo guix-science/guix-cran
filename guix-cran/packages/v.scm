@@ -497,7 +497,8 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1501,7 +1502,8 @@ Requires installation of Vorteks software.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -2518,7 +2520,8 @@ pairwise tests as suggested by Armstrong and Poirier (2025)
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -3446,20 +3449,19 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "0sfpjlww430j8x514hvm3wqrxnj2wyx09a80ipfbdnhq3918nh1n"))))
+        (base32 "0i9pikrx3429lj7rh4vk5awcj36xlj4mi3zjkn7pj9isbd38rdwl"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
                              r-purrr
@@ -3467,7 +3469,8 @@ as both viewpoints and occluders.")
                              r-glue
                              r-generics
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-brand-yml))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu.github.io/visOmopResults/")
     (synopsis "Graphs and Tables for OMOP Results")
@@ -4092,94 +4095,6 @@ reproducible research in biostatistics and computational biology for the benefit
 of understanding HIV dynamics.")
     (license license:expat)))
 
-(define-public r-viralmodels
-  (package
-    (name "r-viralmodels")
-    (version "1.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "viralmodels" version))
-       (sha256
-        (base32 "1xkgbf4l0ca8dgpzcsb94fxnv8vwz8rhs99i33zdwy14nqcjxcj5"))))
-    (properties `((upstream-name . "viralmodels")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-workflowsets
-                             r-workflows
-                             r-viraldomain
-                             r-tune
-                             r-tidyselect
-                             r-rules
-                             r-rsample
-                             r-recipes
-                             r-ranger
-                             r-purrr
-                             r-parsnip
-                             r-magrittr
-                             r-kknn
-                             r-kernlab
-                             r-hardhat
-                             r-glmnet
-                             r-dplyr
-                             r-dials
-                             r-cubist
-                             r-baguette))
-    (home-page "https://cran.r-project.org/package=viralmodels")
-    (synopsis "Viral Load and CD4 Lymphocytes Regression Models")
-    (description
-     "This package provides a comprehensive framework for building, evaluating, and
-visualizing regression models for analyzing viral load and CD4 (Cluster of
-Differentiation 4) lymphocytes data.  It leverages the principles of the
-tidymodels ecosystem of Max Kuhn and Hadley Wickham (2020)
-<https://www.tidymodels.org> to offer a user-friendly experience in model
-development.  This package includes functions for data preprocessing, feature
-engineering, model training, tuning, and evaluation, along with visualization
-tools to enhance the interpretation of model results.  It is specifically
-designed for researchers in biostatistics, computational biology, and HIV
-research who aim to perform reproducible and rigorous analyses to gain insights
-into disease dynamics.  The main focus is on improving the understanding of the
-relationships between viral load, CD4 lymphocytes, and other relevant covariates
-to contribute to HIV research and the visibility of vulnerable seropositive
-populations.")
-    (license license:expat)))
-
-(define-public r-viraldomain
-  (package
-    (name "r-viraldomain")
-    (version "0.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "viraldomain" version))
-       (sha256
-        (base32 "1jjyaxvamw054vzcfwb05admm9facbrsnscbxwxpqc9pdarkxw4m"))))
-    (properties `((upstream-name . "viraldomain")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-workflows
-                             r-tidyselect
-                             r-recipes
-                             r-ranger
-                             r-parsnip
-                             r-magrittr
-                             r-kknn
-                             r-earth
-                             r-dplyr
-                             r-applicable))
-    (home-page "https://cran.r-project.org/package=viraldomain")
-    (synopsis "Applicability Domain Methods of Viral Load and CD4 Lymphocytes")
-    (description
-     "This package provides methods for assessing the applicability domain of models
-that predict viral load and CD4 (Cluster of Differentiation 4) lymphocyte
-counts.  These methods help determine the extent of extrapolation when making
-predictions.")
-    (license license:expat)))
-
 (define-public r-viprodesign
   (package
     (name "r-viprodesign")
@@ -4802,7 +4717,8 @@ diacritics and different spellings.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5386,7 +5302,8 @@ test-results are used for defining follow-up treatment of patients.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -6363,7 +6280,8 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -6434,7 +6352,8 @@ analysis, especially with the vegan package.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -7763,6 +7682,34 @@ likelihood posterior.  This is an implementation of the function found in Yu,
 W., & Bondell, H. D. (2023) <doi:10.1080/01621459.2023.2169701>.")
     (license license:gpl3+)))
 
+(define-public r-vazul
+  (package
+    (name "r-vazul")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vazul" version))
+       (sha256
+        (base32 "0dxcz18wsbh0nmsl8mn9gjaf3pv1jg5aa1m32b61blq7gb78gpcy"))))
+    (properties `((upstream-name . "vazul")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rlang r-lifecycle r-dplyr))
+    (native-inputs (list r-quarto))
+    (home-page "https://nthun.github.io/vazul/")
+    (synopsis "Analysis Blinding Tools")
+    (description
+     "This package provides tools for analysis blinding in confirmatory research
+contexts by masking and scrambling test-relevant aspects of data.  Vector-, data
+frame-, and row-wise operations support blinding for hierarchical and
+repeated-measures designs.  For more details see @code{MacCoun} and Perlmutter
+(2015) <doi:10.1038/526187a> and Dutilh, Sarafoglou, and Wagenmakers (2019)
+<doi:10.1007/s11229-019-02456-7>.")
+    (license license:expat)))
+
 (define-public r-vayr
   (package
     (name "r-vayr")
@@ -8765,13 +8712,13 @@ difference-based estimation functions.")
 (define-public r-vardpoor
   (package
     (name "r-vardpoor")
-    (version "0.20.1")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vardpoor" version))
        (sha256
-        (base32 "0jqls76xhhxc5hppy3pq5wkj9gjx3g3pzfbhnis7k10ysn76a1qj"))))
+        (base32 "1d9j3i2x6z3v9bcfsl5zqsd2bc7q61ann7hdxzgkj7is3m8mm3zs"))))
     (properties `((upstream-name . "vardpoor")))
     (build-system r-build-system)
     (arguments
@@ -8801,8 +8748,7 @@ cross-sectional measures and measures of change for single and multistage stage
 cluster sampling designs (Berger, Y. G., 2015, <doi:10.1111/rssa.12116>).
 Several other precision measures are derived - standard error, the coefficient
 of variation, the margin of error, confidence interval, design effect.")
-    (license (list (license:fsdg-compatible "EUPL")
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-vardiag
   (package
@@ -9955,13 +9901,13 @@ APIs'.  For further documentation on integrating with VALD APIs', see:
 (define-public r-vald-extractor
   (package
     (name "r-vald-extractor")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vald.extractor" version))
        (sha256
-        (base32 "1lkhwvcp3bv9ldssygji1c63iagi6fcdqglg52lbcacn4shra2vc"))))
+        (base32 "02afb8wa8y5qny3si5j9d53v0qc97k0jk3wzma2mi9lkl6d0rwyf"))))
     (properties `((upstream-name . "vald.extractor")))
     (build-system r-build-system)
     (arguments
