@@ -1845,13 +1845,13 @@ number of factors.")
 (define-public r-btsr
   (package
     (name "r-btsr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTSR" version))
        (sha256
-        (base32 "0y1q6axnhndykfdjd22rd896amvsxp56grn54ksnx73xwagdc01b"))))
+        (base32 "1whnyvj8wkd0gpnd3z4v4il53g10w81qvapc0bwfhlw0lrk2vyca"))))
     (properties `((upstream-name . "BTSR")))
     (build-system r-build-system)
     (arguments
@@ -10417,6 +10417,46 @@ criteria outlined in Pourmohamad and Lee (2023) <doi:10.1002/sta4.645>, but more
 models and equivalence testing features may be added over time.")
     (license license:expat)))
 
+(define-public r-bmemlavaan
+  (package
+    (name "r-bmemlavaan")
+    (version "0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bmemLavaan" version))
+       (sha256
+        (base32 "11hg34blvfz4ihm3q5gpg0linm1gyrfdc7926g5kpqhq78d89mba"))))
+    (properties `((upstream-name . "bmemLavaan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-snowfall
+                             r-sem
+                             r-rsem
+                             r-mass
+                             r-lavaan
+                             r-amelia))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://bigdatalab.nd.edu")
+    (synopsis "Mediation Analysis with Missing Data and Non-Normal Data")
+    (description
+     "This package provides methods for mediation analysis with missing data and
+non-normal data are implemented.  For missing data, four methods are available:
+Listwise deletion, Pairwise deletion, Multiple imputation, and Two Stage Maximum
+Likelihood algorithm.  For MI and TS-ML, auxiliary variables can be included to
+handle missing data.  For handling non-normal data, bootstrap and two-stage
+robust methods can be used.  Technical details of the methods can be found in
+Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
+<doi:10.3758/s13428-013-0424-0>), and Yuan and Zhang (2012,
+<doi:10.1007/s11336-012-9282-4>).")
+    (license license:gpl2)))
+
 (define-public r-bmemapping
   (package
     (name "r-bmemapping")
@@ -15248,13 +15288,13 @@ visualisation tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "191b0j0y4cwb4927c6j58ngzad762as3s7hril7i1sdlb50ifrvn"))))
+        (base32 "1x05z69cbzrz9rxkmifqgvjy6dj9in7k1vvdbb9q1xf1vmd07484"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (arguments
@@ -15265,12 +15305,12 @@ visualisation tools are also available within the package.")
                              r-scales
                              r-rlang
                              r-pracma
+                             r-patchwork
                              r-multcompview
                              r-lattice
                              r-ggplot2
                              r-emmeans
                              r-curl
-                             r-cowplot
                              r-askpass
                              r-agricolae))
     (native-inputs (list r-knitr))
@@ -27309,6 +27349,34 @@ marginal effects of the count probabilities for Poisson and negative binomial
 models can be computed.")
     (license license:gpl3+)))
 
+(define-public r-bayesmallowssmc2
+  (package
+    (name "r-bayesmallowssmc2")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesMallowsSMC2" version))
+       (sha256
+        (base32 "0vmbax3i8124w3lszxhm5dwlmwwc7a77sa72352032w78j9zcvay"))))
+    (properties `((upstream-name . "BayesMallowsSMC2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-ggplot2))
+    (home-page "https://cran.r-project.org/package=BayesMallowsSMC2")
+    (synopsis "Nested Sequential Monte Carlo for the Bayesian Mallows Model")
+    (description
+     "This package provides nested sequential Monte Carlo algorithms for performing
+sequential inference in the Bayesian Mallows model, which is a widely used
+probability model for rank and preference data.  The package implements the SMC2
+(Sequential Monte Carlo Squared) algorithm for handling sequentially arriving
+rankings and pairwise preferences, including support for complete rankings,
+partial rankings, and pairwise comparisons.  The methods are based on Sorensen
+(2025) <doi:10.1214/25-BA1564>.")
+    (license license:gpl3)))
+
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
@@ -29344,13 +29412,13 @@ Analgesia.")
 (define-public r-bayesbrainmap
   (package
     (name "r-bayesbrainmap")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesBrainMap" version))
        (sha256
-        (base32 "0mxsx8rpqs06791xaqmxs0arvl1hishkfwmi7vz2434h22cl1rw3"))))
+        (base32 "1dzh2v2la2ajpva85s74jrc6icchk3gqb7gqkfxcrs4xymqnsra3"))))
     (properties `((upstream-name . "BayesBrainMap")))
     (build-system r-build-system)
     (arguments
@@ -29368,15 +29436,17 @@ Analgesia.")
     (synopsis
      "Estimate Brain Networks and Connectivity with Population-Derived Priors")
     (description
-     "This package implements Bayesian brain mapping models, including the prior ICA
-(independent components analysis) model proposed in Mejia et al. (2020)
-<doi:10.1080/01621459.2019.1679638> and the spatial prior ICA model proposed in
-proposed in Mejia et al. (2022) <doi:10.1080/10618600.2022.2104289>.  Both
-models estimate subject-level brain as deviations from known population-level
-networks, which are estimated using standard ICA algorithms.  Both models employ
-an expectation-maximization algorithm for estimation of the latent brain
-networks and unknown model parameters.  Includes direct support for CIFTI',
-GIFTI', and NIFTI neuroimaging file formats.")
+     "This package implements Bayesian brain mapping with population-derived priors,
+including the original model described in Mejia et al. (2020)
+<doi:10.1080/01621459.2019.1679638>, the model with spatial priors described in
+Mejia et al. (2022) <doi:10.1080/10618600.2022.2104289>, and the model with
+population-derived priors on functional connectivity described in Mejia et al.
+(2025) <doi:10.1093/biostatistics/kxaf022>.  Population-derived priors are based
+on templates representing established brain network maps, for example derived
+from independent component analysis (ICA), parcellations, or other methods.Â 
+Model estimation is based on expectation-maximization or variational Bayes
+algorithms.  Includes direct support for CIFTI', GIFTI', and NIFTI neuroimaging
+file formats.")
     (license license:gpl3)))
 
 (define-public r-bayesbp
@@ -30994,6 +31064,44 @@ that can be used within the caret package pipeline.")
 sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
     (license license:gpl3)))
 
+(define-public r-baselinenowcast
+  (package
+    (name "r-baselinenowcast")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baselinenowcast" version))
+       (sha256
+        (base32 "00xvhwn34ya9rxfzfxw6ifni4gjb0wppb88mwnkladk5f9vksn05"))))
+    (properties `((upstream-name . "baselinenowcast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-purrr r-cli r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epinowcast/baselinenowcast")
+    (synopsis "Baseline Nowcasting for Right-Truncated Epidemiological Data")
+    (description
+     "Nowcasting right-truncated epidemiological data is critical for timely public
+health decision-making, as reporting delays can create misleading impressions of
+declining trends in recent data.  This package provides nowcasting methods based
+on using empirical delay distributions and uncertainty from past performance.
+It is also designed to be used as a baseline method for developers of new
+nowcasting methods.  For more details on the performance of the method(s) in
+this package applied to case studies of COVID-19 and norovirus, see our recent
+paper at <https://wellcomeopenresearch.org/articles/10-614>.  The package
+supports standard data frame inputs with reference date, report date, and count
+columns, as well as the direct use of reporting triangles, and is compatible
+with epinowcast objects.  Alongside an opinionated default workflow, it has a
+low-level pipe-friendly modular interface, allowing context-specific workflows.
+It can accommodate a wide spectrum of reporting schedules, including mixed
+patterns of reference and reporting (daily-weekly, weekly-daily).  It also
+supports sharing delay distributions and uncertainty estimates between strata,
+as well as custom uncertainty models and delay estimation methods.")
+    (license license:expat)))
+
 (define-public r-basefun
   (package
     (name "r-basefun")
@@ -32391,13 +32499,13 @@ models using Bayes factors, and more.")
 (define-public r-bamm
   (package
     (name "r-bamm")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamm" version))
        (sha256
-        (base32 "1m48bszhqhzsjnr70pv5lmx19x13gm9nfg1idcr2jrn87xcm8mlb"))))
+        (base32 "0mbdsiiazwpwaak793mjsf75d4q3mbw5kgvcxwdxrwr8s6h49szh"))))
     (properties `((upstream-name . "bamm")))
     (build-system r-build-system)
     (arguments
@@ -32418,6 +32526,7 @@ models using Bayes factors, and more.")
                              r-igraph
                              r-future
                              r-furrr
+                             r-exactextractr
                              r-dplyr
                              r-crosstalk
                              r-animation))

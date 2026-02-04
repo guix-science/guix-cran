@@ -3567,13 +3567,13 @@ Spotfire'.")
 (define-public r-wizardry
   (package
     (name "r-wizardry")
-    (version "0.5.0")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wizaRdry" version))
        (sha256
-        (base32 "081hwswpic50y2lbqvqpcxxwk46k5qa0jasm1n5kfh1kspap8w23"))))
+        (base32 "1x10dr4sx3wpwpzamydn3hraqxdz42l5zxh8k7yz6jvhdajpqn92"))))
     (properties `((upstream-name . "wizaRdry")))
     (build-system r-build-system)
     (arguments
@@ -3608,14 +3608,13 @@ Spotfire'.")
      "Magical Framework for Collaborative & Reproducible Data Analysis")
     (description
      "This package provides a comprehensive data analysis framework for NIH-funded
-research that streamlines workflows for both data cleaning and preparing and
-modifying NIH Data Archive ('NDA') data structures and submission templates.
-Provides unified access to multiple data sources ('REDCap', @code{MongoDB}',
-Qualtrics', SQL', ORACLE') through interfaces to their APIs, with specialized
-functions for data cleaning, filtering, merging, and parsing.  Features
-automatic validation, field harmonization, and memory-aware processing to
-enhance reproducibility in multi-site collaborative research as described in
-Mittal et al. (2021) <doi:10.20900/jpbs.20210011>.")
+research that streamlines workflows for both data cleaning and preparing NIH
+Data Archive ('NDA') submission templates.  Provides unified access to multiple
+data sources ('REDCap', @code{MongoDB}', Qualtrics') through interfaces to their
+APIs, with specialized functions for data cleaning, filtering, merging, and
+parsing.  Features automatic validation, field harmonization, and memory-aware
+processing to enhance reproducibility in multi-site collaborative research as
+described in Mittal et al. (2021) <doi:10.20900/jpbs.20210011>.")
     (license license:expat)))
 
 (define-public r-wither
@@ -5013,13 +5012,13 @@ and Thierry Gosselin.")
 (define-public r-whitewater
   (package
     (name "r-whitewater")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whitewater" version))
        (sha256
-        (base32 "0313rsph166qwmxb96lkzc8rzc1afm6is57v9fxlm6wzwr0cv4d0"))))
+        (base32 "0rmb23ymf4g6h3cjhxcs3xm2x6j3z4sd6vncssl6vl5gjb1lrfdh"))))
     (properties `((upstream-name . "whitewater")))
     (build-system r-build-system)
     (arguments

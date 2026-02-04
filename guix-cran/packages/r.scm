@@ -3422,13 +3422,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "0jqqawagkgqswpk4xr2njjskbibkcjxgxppsgaamy7j4bkbwadcl"))))
+        (base32 "0v31rlc40w34w3dfvbzkllsx2165ppkycbpjybycqr0qlr9rzn3q"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -3439,20 +3439,20 @@ centered on an approach using machine learning for path classification.")
                              r-purrr
                              r-multcomp
                              r-lmertest
+                             r-lme4
                              r-ggplot2
                              r-emmeans
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mirzaghaderi/rtpcr")
+    (home-page "https://mirzaghaderi.github.io/rtpcr/")
     (synopsis "qPCR Data Analysis")
     (description
      "This package provides tools for @code{qPCR} data analysis using Delta Ct and
-Delta Delta Ct methods, including t-tests, ANOVA, ANCOVA, repeated-measures
-models, and publication-ready visualizations.  The package supports multiple
-target, and multiple reference genes, and uses a calculation framework adopted
-from Ganger et al. (2017) <doi:10.1186/s12859-017-1949-5> and Taylor et al.
-(2019) <doi:10.1016/j.tibtech.2018.12.002>, covering both the Livak and Pfaffl
-methods.")
+Delta Delta Ct methods, including t-test, wilcox.test, ANOVA models, and
+publication-ready visualizations.  The package supports multiple target, and
+multiple reference genes, and uses a calculation framework adopted from Ganger
+et al. (2017) <doi:10.1186/s12859-017-1949-5> and Taylor et al. (2019)
+<doi:10.1016/j.tibtech.2018.12.002>, covering both the Livak and Pfaffl methods.")
     (license license:gpl3)))
 
 (define-public r-rtpc
@@ -9407,13 +9407,13 @@ supported by National Institutes of Health grants R37 GM-046255.")
 (define-public r-rrepest
   (package
     (name "r-rrepest")
-    (version "1.6.9")
+    (version "1.6.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrepest" version))
        (sha256
-        (base32 "0nmp2bhp37zpljlw6ja42fypy3c1f48lqz1fkrkq71fqhfaymnyv"))))
+        (base32 "1iwp8wylppxifp86vqr5vnpnw15wzhs37m5y3rnsar6g8kkk3vzf"))))
     (properties `((upstream-name . "Rrepest")))
     (build-system r-build-system)
     (arguments
@@ -27676,6 +27676,31 @@ well as Ricci tensors are provided.  The covariant derivative of tensor fields
 with respect to any metric tensor can be evaluated.  An effort was made to
 provide the user with useful error messages.")
     (license license:gpl3+)))
+
+(define-public r-ribiosutils
+  (package
+    (name "r-ribiosutils")
+    (version "1.7.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ribiosUtils" version))
+       (sha256
+        (base32 "1s3iplnz9qalnrbhr2gnmmw2njaxfvf81qf686i6r71avqg17985"))))
+    (properties `((upstream-name . "ribiosUtils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/bedapub/ribiosUtils")
+    (synopsis
+     "Utilities from and Interface to the 'Bioinfo-C' ('BIOS') Library")
+    (description
+     "This package provides interface to the Bioinfo-C (internal name: BIOS') library
+and utilities. @code{ribiosUtils} is a Swiss-knife for computational biology in
+drug discovery, providing functions and utilities with minimal external
+dependency and maximal efficiency.")
+    (license license:gpl3)))
 
 (define-public r-ribench
   (package
@@ -50154,6 +50179,48 @@ with external data tables containing language information and features, offering
 a tool for visualizing the geographic distribution and linguistic
 characteristics of East Caucasian languages.")
     (license license:gpl3+)))
+
+(define-public r-rcatfish
+  (package
+    (name "r-rcatfish")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcatfish" version))
+       (sha256
+        (base32 "1h0zka6dx73vjprdrvhmz3fzbb67jvary4fc8hgx8m1ln155lg57"))))
+    (properties `((upstream-name . "rcatfish")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rfishbase
+                             r-rcurl
+                             r-qdapregex
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rcatfish")
+    (synopsis
+     "An R Interface to the California Academy of Sciences Eschmeyer's Catalog of Fishes")
+    (description
+     "Accesses the California Academy of Sciences Eschmeyer's Catalog of Fishes in R
+using web requests.  The Catalog of fishes is the leading authority in fish
+taxonomy.  Functions in the package allow users to search for fish taxa and
+valid names, retrieve taxonomic references, retrieve monthly taxonomic changes,
+obtain natural history collection information, and see the number of species by
+taxonomic group.  For more information on the Catalog: Fricke, R., Eschmeyer, W.
+N. & R. van der Laan (eds) 2025.  ESCHMEYER'S CATALOG OF FISHES
+<https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>.")
+    (license license:gpl2+)))
 
 (define-public r-rcatch22
   (package

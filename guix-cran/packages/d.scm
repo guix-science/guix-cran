@@ -5877,20 +5877,19 @@ information, see Zetterqvist and SjÃ¶lander (2015) <doi:10.1515/em-2014-0021>.
 (define-public r-drf
   (package
     (name "r-drf")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drf" version))
        (sha256
-        (base32 "1x3mizghx94xm7zf0hkr7cafkibj6shi044n937byh3abd2va549"))))
+        (base32 "1797ala2acsasvjva6dyqwz828v74cz8h0i606zajvv3ipr9ngkb"))))
     (properties `((upstream-name . "drf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-transport r-rcppeigen r-rcpp r-matrix
-                             r-fastdummies))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-fastdummies))
     (home-page "https://github.com/lorismichel/drf")
     (synopsis "Distributional Random Forests")
     (description
@@ -11206,13 +11205,13 @@ manuscript is published.")
 (define-public r-dlmtree
   (package
     (name "r-dlmtree")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dlmtree" version))
        (sha256
-        (base32 "1yjzbg8pnw75ynnbb83vdww7rn557q5pgi27amb9pmjaplxv3y6a"))))
+        (base32 "13cpslfg69cfvp2qd93m66977i164lpl9ai5pq29pvz7ljldqkh4"))))
     (properties `((upstream-name . "dlmtree")))
     (build-system r-build-system)
     (arguments
@@ -17548,13 +17547,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0nc6z5wr611d5f8g95d387fv6xyga1y6yfmgr4lvk7kbhfywhyz7"))))
+        (base32 "15zyp68pc0qxmxk82kwzzr6d7lbnlgp886scbwj517rnvhmgkhai"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (arguments
@@ -17562,7 +17561,7 @@ the sales information.")
       #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-rnames
-                             r-plm
+                             r-rcpp
                              r-openxlsx
                              r-matlib
                              r-mass
@@ -17570,12 +17569,11 @@ the sales information.")
                              r-haven
                              r-ggplot2
                              r-fixest
-                             r-fixest
                              r-dplyr
                              r-data-table
                              r-cowplot
                              r-car))
-    (home-page "https://github.com/chaisemartinPackages/did_multiplegt_dyn")
+    (home-page "https://github.com/Credible-Answers/did_multiplegt_dyn")
     (synopsis
      "Estimation in Difference-in-Difference Designs with Multiple Groups and Periods")
     (description
@@ -26104,13 +26102,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deaR" version))
        (sha256
-        (base32 "1lc949mx5jaf5jngja4yaqkmizvs151lpay1nb4a7n09j4y78pdr"))))
+        (base32 "1jgj4py7x3x08hnbyj0ybjag59qqc7ph12qhxqm1ynmy5q6vswqb"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (arguments

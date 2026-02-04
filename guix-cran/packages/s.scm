@@ -26097,13 +26097,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "1dy6hjlzmagfx327jf9mqj5m4hw5rl9ljccg7c2r5nvfniaba889"))))
+        (base32 "19rk8fvz95nrv4y9ld1kbkc0xcgvm3705sx58gwbpgnm10qgd4iw"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -31358,6 +31358,57 @@ autoregressive models (see Rossoni, D. F., & Lima, R. R. (2019)
 M. S. D. (2004) <doi:10.1590/S1413-70542004000100018>).  For both methods, there
 are three multicomparison procedure available: Tukey, multivariate T, and
 Scott-Knott.")
+    (license license:gpl3)))
+
+(define-public r-spanner
+  (package
+    (name "r-spanner")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spanner" version))
+       (sha256
+        (base32 "01c861pwa9wfhmnp4pfvfhm21divvbkw7d2i1hgv42mab3822x9h"))))
+    (properties `((upstream-name . "spanner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sfheaders
+                             r-sf
+                             r-rfast
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rann
+                             r-mathjaxr
+                             r-lidr
+                             r-geometry
+                             r-fnn
+                             r-dplyr
+                             r-data-table
+                             r-cpprouting
+                             r-conicfit
+                             r-bh))
+    (home-page "https://github.com/bi0m3trics/spanner")
+    (synopsis
+     "Utilities to Support Lidar Applications at the Landscape, Forest, and Tree Scale")
+    (description
+     "This package implements algorithms for terrestrial, mobile, and airborne lidar
+processing, tree detection, segmentation, and attribute estimation (Donager et
+al., 2021) <doi:10.3390/rs13122297>, and a hierarchical patch delineation
+algorithm @code{PatchMorph} (Girvetz & Greco, 2007)
+<doi:10.1007/s10980-007-9104-8>.  Tree detection uses rasterized point cloud
+metrics (relative neighborhood density and verticality) combined with RANSAC
+cylinder fitting to locate tree boles and estimate diameter at breast height.
+Tree segmentation applies graph-theory approaches inspired by Tao et al. (2015)
+<doi:10.1016/j.isprsjprs.2015.08.007> with cylinder fitting methods from de
+Conto et al. (2017) <doi:10.1016/j.compag.2017.07.019>. @code{PatchMorph}
+delineates habitat patches across spatial scales using organism-specific
+thresholds.  Built on @code{lidR} (Roussel et al., 2020)
+<doi:10.1016/j.rse.2020.112061>.")
     (license license:gpl3)))
 
 (define-public r-spanishoddata
@@ -40207,6 +40258,41 @@ in Blume & Cajochen (2021) <doi:10.1016/j.mex.2021.101318>.")
     (description
      "Compute Time series Resistant Smooth 4253H, twice smoothing method.")
     (license license:gpl3)))
+
+(define-public r-sleacr
+  (package
+    (name "r-sleacr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sleacr" version))
+       (sha256
+        (base32 "1cv1wiqgspzkksg60cz5v2s5rn443sakmayhk7k5g98xxhnnwjz4"))))
+    (properties `((upstream-name . "sleacr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-parallelly r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://nutriverse.io/sleacr/")
+    (synopsis
+     "Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools")
+    (description
+     "In the recent past, measurement of coverage has been mainly through two-stage
+cluster sampled surveys either as part of a nutrition assessment or through a
+specific coverage survey known as Centric Systematic Area Sampling (CSAS).
+However, such methods are resource intensive and often only used for final
+programme evaluation meaning results arrive too late for programme adaptation.
+SLEAC, which stands for Simplified Lot Quality Assurance Sampling Evaluation of
+Access and Coverage, is a low resource method designed specifically to address
+this limitation and is used regularly for monitoring, planning and importantly,
+timely improvement to programme quality, both for agency and Ministry of Health
+(@code{MoH}) led programmes.  SLEAC is designed to complement the
+Semi-quantitative Evaluation of Access and Coverage (SQUEAC) method.  This
+package provides functions for use in conducting a SLEAC assessment.")
+    (license license:gpl3+)))
 
 (define-public r-sldassay
   (package
@@ -58324,6 +58410,52 @@ estimating confidence intervals and speed computational techniques (binning
 techniques) have been implemented in seq2R'.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-septest
+  (package
+    (name "r-septest")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SepTest" version))
+       (sha256
+        (base32 "06vwcylgjkmb73ialbk0ayglcqkpnrhim1wlybpsgiw4ynkkd9ml"))))
+    (properties `((upstream-name . "SepTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splancs
+                             r-spatstat-model
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-scatterplot3d
+                             r-reshape2
+                             r-patchwork
+                             r-mass
+                             r-ggplot2
+                             r-get
+                             r-fields
+                             r-dhsic
+                             r-combinat))
+    (home-page "https://github.com/mghorbani01/SepTest")
+    (synopsis
+     "Tests for First-Order Separability in Spatio-Temporal Point Processes")
+    (description
+     "This package provides statistical tools for testing first-order separability in
+spatio-temporal point processes, that is, assessing whether the spatio-temporal
+intensity function can be expressed as the product of spatial and temporal
+components.  The package implements several hypothesis tests, including exact
+and asymptotic methods for Poisson and non-Poisson processes.  Methods include
+global envelope tests, chi-squared type statistics, and a novel Hilbert-Schmidt
+independence criterion (HSIC) test, all with both block and pure permutation
+procedures.  Simulation studies and real world examples, including the 2001 UK
+foot and mouth disease outbreak data, illustrate the utility of the proposed
+methods.  The package contains all simulation studies and applications presented
+in Ghorbani et al. (2021) <doi:10.1016/j.csda.2021.107245> and Ghorbani et al.
+(2025) <doi:10.1007/s11749-025-00972-y>.")
+    (license license:gpl3)))
+
 (define-public r-sepkoski
   (package
     (name "r-sepkoski")
@@ -60066,6 +60198,35 @@ equation modeling, introduced in Cheung and Pesigan (2023)
 illustrated by Pek and Wu (2018) <doi:10.1037/met0000163>, and supports the
 robust LBCI proposed by Falk (2018) <doi:10.1080/10705511.2017.1367254>.")
     (license license:gpl3)))
+
+(define-public r-semiparmf
+  (package
+    (name "r-semiparmf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SemiparMF" version))
+       (sha256
+        (base32 "1rk8d815p0c0fbn4v48arqzah9ww1wii0s9w3qsgbldiarss0nv7"))))
+    (properties `((upstream-name . "SemiparMF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep r-sf))
+    (home-page "https://github.com/jzeuzs/SemiparMF")
+    (synopsis "Semiparametric Spatiotemporal Model with Mixed Frequencies")
+    (description
+     "Fits a semiparametric spatiotemporal model for data with mixed frequencies,
+specifically where the response variable is observed at a lower frequency than
+some covariates.  The estimation uses an iterative backfitting algorithm that
+combines a non-parametric smoothing spline for high-frequency data, parametric
+estimation for low-frequency and spatial neighborhood effects, and an
+autoregressive error structure.  Methodology based on Malabanan, Lansangan, and
+Barrios (2022)
+<https://scienggj.org/2022/@code{SciEnggJ%202022-vol15-no02-p90-107-Malabanan%20et%20al.pdf>}.")
+    (license license:expat)))
 
 (define-public r-semipar-depcens
   (package
@@ -68571,6 +68732,48 @@ over a grid of pre-computed stellar models, as described in Valle et al. (2014)
 <doi:10.1051/0004-6361/201322210>.")
     (license license:gpl2+)))
 
+(define-public r-scenfire
+  (package
+    (name "r-scenfire")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scenfire" version))
+       (sha256
+        (base32 "1v4pyzgjlz7b5z6kwdpnndgvyq1zi0kzxdpykk1nkmbzykkzsi9w"))))
+    (properties `((upstream-name . "scenfire")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scenfire")
+    (synopsis "Post-Processing Algorithm for Integrating Wildfire Simulations")
+    (description
+     "This package provides a specialized selection algorithm designed to align
+simulated fire perimeters with specific fire size distribution scenarios.  The
+foundation of this approach lies in generating a vast collection of plausible
+simulated fires across a wide range of conditions, assuming a random pattern of
+ignition.  The algorithm then assembles individual fire perimeters based on
+their specific probabilities of occurrence, e.g., determined by (i) the
+likelihood of ignition and (ii) the probability of particular fire-weather
+scenarios, including wind speed and direction.  Implements the method presented
+in Rodrigues (2025a) <doi:10.5194/egusphere-egu25-8974>.  Demo data and code
+examples can be found in Rodrigues (2025b) <doi:10.5281/zenodo.15282605>.")
+    (license license:expat)))
+
 (define-public r-scenes
   (package
     (name "r-scenes")
@@ -71142,6 +71345,34 @@ those of SAS. Different results does not necessarily mean incorrectness.
 However, many wants the same results to SAS. This package aims to achieve that.
 Reference: Littell RC, Stroup WW, Freund RJ (2002, ISBN:0-471-22174-0).")
     (license license:gpl3)))
+
+(define-public r-sasif
+  (package
+    (name "r-sasif")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sasif" version))
+       (sha256
+        (base32 "0kgq87z36d2nd255cfr38l82irp30mh6gmvsx69gg52ignccn1zc"))))
+    (properties `((upstream-name . "sasif")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (home-page "https://cran.r-project.org/package=sasif")
+    (synopsis "'SAS' IF Style Data Step Logic for Data Tables")
+    (description
+     "This package provides SAS'-style IF/ELSE chains, independent IF rules, and
+DELETE logic for data.table', enabling clinical programmers to express Study
+Data Tabulation Model (SDTM) and Analysis Data Model (A@code{DaM)-style}
+derivations in familiar SAS-like syntax.  Methods are informed by clinical data
+standards described in CDISC SDTM and A@code{DaM} implementation guides.  See
+<https://www.cdisc.org/standards/foundational/sdtm> and
+<https://www.cdisc.org/standards/foundational/adam>.")
+    (license license:expat)))
 
 (define-public r-sasdates
   (package

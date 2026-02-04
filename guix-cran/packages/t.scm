@@ -20397,13 +20397,13 @@ frame using this package.")
 (define-public r-tidyhydat
   (package
     (name "r-tidyhydat")
-    (version "0.7.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyhydat" version))
        (sha256
-        (base32 "0ya3xfq1akc8lyd0ylzhzp4vd50nv9b2hvq8sgd6d4yb6hp5grq8"))))
+        (base32 "0g9n2azac9clwqpggz74bam0r4f85xfwz9cyx76p1hkamx6fkald"))))
     (properties `((upstream-name . "tidyhydat")))
     (build-system r-build-system)
     (arguments
@@ -26471,19 +26471,19 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ternary" version))
        (sha256
-        (base32 "1vhgp7j9h7p9s0jc9p6pkpq5wrbp8s43m8lkg0xcprdj88ixl6fx"))))
+        (base32 "1hj3kmydax7x39xzb7c7h36nd6ff8w5r6056xqm222iiiv5kk3xr"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp r-shiny r-rcpphungarian r-plottools))
+    (propagated-inputs (list r-treedist r-sp r-shiny r-plottools))
     (native-inputs (list r-knitr))
     (home-page "https://ms609.github.io/Ternary/")
     (synopsis "Create Ternary and Holdridge Plots")

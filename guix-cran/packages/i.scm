@@ -4675,13 +4675,13 @@ with user-provided data.")
 (define-public r-ir
   (package
     (name "r-ir")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ir" version))
        (sha256
-        (base32 "0mmn8pyg1lr2q7jrmlm7q8yq57xz87sliafbz1g9z1b8gaykgpmh"))))
+        (base32 "0mcy4z253dvhkv5a8p19qvjyknccc4534maphjm84fnyvn92cv3l"))))
     (properties `((upstream-name . "ir")))
     (build-system r-build-system)
     (arguments
@@ -20086,6 +20086,38 @@ parameters.")
      "Running Focused Identification of the Germplasm Strategy (FIGS) to make best
 subsets from Genebank Collection.")
     (license license:expat)))
+
+(define-public r-icaod
+  (package
+    (name "r-icaod")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICAOD" version))
+       (sha256
+        (base32 "15kxfj0q2yvasnslphp6i89sdhiqd4k6pk92pyqs3cdirrjdvw33"))))
+    (properties `((upstream-name . "ICAOD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sn
+                             r-rcppeigen
+                             r-rcpp
+                             r-nloptr
+                             r-mvquad
+                             r-mnormt
+                             r-cubature))
+    (home-page "https://cran.r-project.org/package=ICAOD")
+    (synopsis "Optimal Designs for Nonlinear Models via ICA")
+    (description
+     "Finds optimal designs for nonlinear models using a metaheuristic algorithm
+called Imperialist Competitive Algorithm (ICA).  See, for details, Masoudi et
+al. (2022) <doi:10.32614/RJ-2022-043>, Masoudi et al. (2017)
+<doi:10.1016/j.csda.2016.06.014> and Masoudi et al. (2019)
+<doi:10.1080/10618600.2019.1601097>.")
+    (license license:gpl2+)))
 
 (define-public r-icamp
   (package

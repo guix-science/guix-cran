@@ -8495,13 +8495,13 @@ for completed run-off triangles are also provided.")
 (define-public r-profileglmm
   (package
     (name "r-profileglmm")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProfileGLMM" version))
        (sha256
-        (base32 "0n9hx08cnb29c9swclk18v1bb3l36dpawxv3nfpi8j00vymvhh1p"))))
+        (base32 "1j95lzhi3xcwqvfjgcbcrqxzij4f6hvx0mkb0qy2fmyb63lr44yc"))))
     (properties `((upstream-name . "ProfileGLMM")))
     (build-system r-build-system)
     (arguments
@@ -8515,6 +8515,7 @@ for completed run-off triangles are also provided.")
                              r-mcmcpack
                              r-matrix
                              r-laplacesdemon))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/MatteoAmestoy/ProfileGLMM-package")
     (synopsis
      "Bayesian Profile Regression using Generalised Linear Mixed Models")
@@ -30890,6 +30891,39 @@ heterogeneity of single-cell populations.  Phitest provides an objective and
 automatic method to evaluate the performance of clustering and quality of cell
 clusters.")
     (license license:gpl3)))
+
+(define-public r-phinterval
+  (package
+    (name "r-phinterval")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phinterval" version))
+       (sha256
+        (base32 "1hg6x0zg7iczgadwxx3iz4qnbn82454b6v6mihhgzg6v2la42llm"))))
+    (properties `((upstream-name . "phinterval")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tzdb
+                             r-tibble
+                             r-rlang
+                             r-rcpp
+                             r-pillar
+                             r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EthanSansom/phinterval")
+    (synopsis "Set Operations on Time Intervals")
+    (description
+     "This package implements the phinterval vector class for representing time spans
+that may contain gaps (disjoint intervals) or be empty.  This class generalizes
+the lubridate package's interval class to support vectorized set operations
+(intersection, union, difference, complement) that always return a valid time
+span, even when disjoint or empty intervals are created.")
+    (license license:expat)))
 
 (define-public r-phinfiniteestimates
   (package

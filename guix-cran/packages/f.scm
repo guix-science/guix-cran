@@ -11716,13 +11716,13 @@ regulation by dams based on GarcÃ­a de Jalon et al.  2017
 (define-public r-flownet
   (package
     (name "r-flownet")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flownet" version))
        (sha256
-        (base32 "0rbdhjd31xzm732qr7a9s1vljfd0xg672s6rsnjywhjwv1w5l469"))))
+        (base32 "1x031z9ipj48x1qk8ly1ziiim3mbd0xp3mfm2n1l42w0jhkb5l7w"))))
     (properties `((upstream-name . "flownet")))
     (build-system r-build-system)
     (arguments
@@ -16604,6 +16604,30 @@ character string or as a regular expression and will help users to locate CRAN
 packages matching their specified requirement. @code{findPackage(<string>})
 returns a data frame of packages with description containing the input string.")
     (license license:gpl3)))
+
+(define-public r-findn
+  (package
+    (name "r-findn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "findn" version))
+       (sha256
+        (base32 "0wz3lrj054bsnfvf4csdfqfsgsk0iwcgfjbkgjwlljgcpis1xkyw"))))
+    (properties `((upstream-name . "findn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rlang r-ggplot2))
+    (home-page "https://cran.r-project.org/package=findn")
+    (synopsis "Simulation Based Sample Size Estimation")
+    (description
+     "Estimates the sample size for a test or a trial based on repeated simulation
+using a model based approach.  Implements a method by Maruo et al. (2018)
+<doi:10.1080/19466315.2017.1349689> and an extension.")
+    (license license:gpl3+)))
 
 (define-public r-findit
   (package

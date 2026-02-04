@@ -4818,6 +4818,39 @@ ability to be adapted to individual needs. @code{oRaklE} tries to help
 facilitating robust decision-making in energy management and planning.")
     (license license:expat)))
 
+(define-public r-opusreader2
+  (package
+    (name "r-opusreader2")
+    (version "0.6.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opusreader2" version))
+       (sha256
+        (base32 "0wvq46dcd1d9614k0p0g17sdnzwb7g8ia4gqzwrv49vcj33gxgi2"))))
+    (properties `((upstream-name . "opusreader2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://opusreader2.spectral-cockpit.codefloe.page/")
+    (synopsis "Read Spectroscopic Data from Bruker OPUS Binary Files")
+    (description
+     "Reads data from Bruker OPUS binary files of Fourier-Transform infrared
+spectrometers of the company Bruker Optics @code{GmbH} & Co.  This package is
+released independently from Bruker, and Bruker and OPUS are registered
+trademarks of Bruker Optics @code{GmbH} & Co.  KG.
+<https://www.bruker.com/en/products-and-solutions/infrared-and-raman/opus-spectroscopy-software/latest-release.html>.
+ It lets you import both measurement data and parameters from OPUS files.  The
+main method is @code{`read_opus()}`, which reads one or multiple OPUS files into
+a standardized list class.  Behind the scenes, the reader parses the file header
+for assigning spectral blocks and reading binary data from the respective byte
+positions, using a reverse engineering approach.  Infrared spectroscopy combined
+with chemometrics and machine learning is an established method to scale up
+chemical diagnostics in various industries and scientific fields.")
+    (license license:expat)))
+
 (define-public r-opusminer
   (package
     (name "r-opusminer")
@@ -5016,13 +5049,13 @@ trees.")
 (define-public r-optrefine
   (package
     (name "r-optrefine")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optrefine" version))
        (sha256
-        (base32 "1ijahjraiaax0xyr1y4s3aq1b4xk8h7ablrvy2m2fr879q3xfi9i"))))
+        (base32 "1kmn91yxbincrq27jj0zyjpqhbw7pqygkdyxkxkjyg08sa59mm9q"))))
     (properties `((upstream-name . "optrefine")))
     (build-system r-build-system)
     (arguments
@@ -5033,11 +5066,13 @@ trees.")
     (synopsis "Optimally Refine Strata")
     (description
      "Splits initial strata into refined strata that optimize covariate balance.  For
-more information, please email the author for a copy of the accompanying
-manuscript.  To solve the linear program, the Gurobi commercial optimization
-software is recommended, but not required.  The gurobi R package can be
-installed following the instructions at
-<https://www.gurobi.com/documentation/9.1/refman/ins_the_r_package.html>.")
+more information, please see Brumberg, Small, and Rosenbaum (2024)
+<doi:10.1093/biomtc/ujae061>.  To solve the linear program, the Gurobi
+commercial optimization software is recommended, but not required.  The gurobi R
+package can be installed following the instructions at
+<https://docs.gurobi.com/projects/optimizer/en/current/reference/r/setup.html>
+after claiming your free academic license at
+<https://www.gurobi.com/academia/academic-program-and-licenses/>.")
     (license license:gpl3+)))
 
 (define-public r-optrcdmaeat
@@ -10667,13 +10702,13 @@ as observation period and drug era, among others.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "1pmwq9pa19pqlbmswj2i99y6mwhaw7d3wqdx6g88hjp66nm8icp1"))))
+        (base32 "0l30aqgj3qx2h2c6qb3wdvxgm51m4qqks6s9ngafa3d90knv7gg8"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
     (arguments

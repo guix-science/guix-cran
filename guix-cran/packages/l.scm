@@ -4431,13 +4431,13 @@ Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 (define-public r-longevity
   (package
     (name "r-longevity")
-    (version "1.2.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longevity" version))
        (sha256
-        (base32 "0y3kaxydjnwlcjg9fr3j8qvsmj2q60i09i381kp6wkq0xdmj48ac"))))
+        (base32 "12i6wyv5b0zihsqv1ylcijjrdwapfssdqj2zwb5ffx9ik4an3vr0"))))
     (properties `((upstream-name . "longevity")))
     (build-system r-build-system)
     (arguments
@@ -16991,13 +16991,13 @@ time are supported.")
 (define-public r-layer
   (package
     (name "r-layer")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "layer" version))
        (sha256
-        (base32 "06px61dffy95p7f09fpm5islibppv41hrb38wfg8rjvjqhgdk2yq"))))
+        (base32 "19zb0wscz0ic6wgv5vrcdif9lg6sma0r3qransvf1a6zin3w76vb"))))
     (properties `((upstream-name . "layer")))
     (build-system r-build-system)
     (arguments
@@ -17007,6 +17007,7 @@ time are supported.")
                              r-stars
                              r-sf
                              r-scico
+                             r-rlang
                              r-raster
                              r-magrittr
                              r-ggplot2

@@ -6404,13 +6404,13 @@ Imai and Li (2019) <@code{arXiv:1905.05389>}.")
 (define-public r-evalhte
   (package
     (name "r-evalhte")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evalHTE" version))
        (sha256
-        (base32 "00fbz9s4i4m0faw3rgwbph8ai7gnbrqrjfl3wby1znbclrvak1h0"))))
+        (base32 "03vdqvpqv7dk63zzkr6233g7rf4z7c665pk4zl803a50js2bsvsv"))))
     (properties `((upstream-name . "evalHTE")))
     (build-system r-build-system)
     (arguments
@@ -9662,13 +9662,13 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
 (define-public r-ergm-sign
   (package
     (name "r-ergm-sign")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.sign" version))
        (sha256
-        (base32 "1wza9gwl9d969ymywbmg86pd3clhww8cdn3m8kd7yig5nr3r0qw0"))))
+        (base32 "0018szikhiy81skw1kppvsqqvahdnmwbdxrl38z57rs1pwgvgyw0"))))
     (properties `((upstream-name . "ergm.sign")))
     (build-system r-build-system)
     (arguments
@@ -11577,13 +11577,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.11.0.1")
+    (version "0.11.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "07k4shgi4hgdfhy232kz9gi5bah7ahm6ifp1r58nrvy302k13pds"))))
+        (base32 "0jmgghv0gz7nkw60kk812019p71x5k30qhr8pmq37dkamvlihjfj"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -21201,6 +21201,42 @@ explore and analyze data in the field of education.")
     (description
      "Allows R users to retrieve and parse data from the Urban Institute's Education
 Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
+    (license license:expat)))
+
+(define-public r-educabr
+  (package
+    (name "r-educabr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "educabR" version))
+       (sha256
+        (base32 "0xsvs95h6kkwa73yz4bzyd22jhrq3ishk2l5695q1r67jj3g5a9l"))))
+    (properties `((upstream-name . "educabR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SidneyBissoli/educabR")
+    (synopsis "Download and Process Brazilian Education Data from INEP")
+    (description
+     "Download and process public education data from INEP (Instituto Nacional de
+Estudos e Pesquisas Educacionais AnÃ­sio Teixeira).  Provides functions to
+access microdata from the School Census (Censo Escolar), ENEM (Exame Nacional do
+Ensino MÃ©dio), IDEB (Ãndice de Desenvolvimento da EducaÃ§Ã£o BÃ¡sica), and
+other educational datasets.  Returns data in tidy format ready for analysis.
+Data source: INEP Open Data Portal
+<https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos>.")
     (license license:expat)))
 
 (define-public r-edsurvey

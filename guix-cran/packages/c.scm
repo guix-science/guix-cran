@@ -1139,28 +1139,30 @@ criterion.  More details can be referred to @code{arXiv} e-Prints via
 (define-public r-cvlm
   (package
     (name "r-cvlm")
-    (version "1.0.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvLM" version))
        (sha256
-        (base32 "1mbafa75l1y757nvcqlamr98vd5qnaxakx3bsvjwrknyq29z27fs"))))
+        (base32 "0dn1079x5qpfrklqfvnb5q84k98aln9y81x26w81yj3qkndgg5cz"))))
     (properties `((upstream-name . "cvLM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=cvLM")
-    (synopsis "Cross-Validation for Linear & Ridge Regression Models")
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/phipnye/CV-LM")
+    (synopsis "Cross-Validation for Linear and Ridge Regression Models")
     (description
-     "Efficient implementations of cross-validation techniques for linear and ridge
-regression models, leveraging C++ code with Rcpp', @code{RcppParallel}', and
-Eigen libraries.  It supports leave-one-out, generalized, and K-fold
-cross-validation methods, utilizing Eigen matrices for high performance.
-Methodology references: Hastie, Tibshirani, and Friedman (2009)
-<doi:10.1007/978-0-387-84858-7>.")
+     "This package implements cross-validation methods for linear and ridge regression
+models.  The package provides grid-based selection of the ridge penalty
+parameter using Singular Value Decomposition (SVD) and supports K-fold
+cross-validation, Leave-One-Out Cross-Validation (LOOCV), and Generalized
+Cross-Validation (GCV).  Computations are implemented in C++ via
+@code{RcppArmadillo} with optional parallelization using @code{RcppParallel}'.
+The methods are suitable for high-dimensional settings where the number of
+predictors exceeds the number of observations.")
     (license license:expat)))
 
 (define-public r-cvglasso
@@ -7574,13 +7576,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "09mxq41yvrh8r63834pkf13x62lc5c5sdfnrgxklq1w4q30hi9rq"))))
+        (base32 "1gdibz7hmc0y3d67za5b5z26bcqsxi6aaici21qidjsqab7glkds"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (arguments
@@ -16542,13 +16544,13 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.1.12")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "0pj4z2bbankfrav1ws4qf6y56azjc74c9cc4i60ji15ma093lpac"))))
+        (base32 "1f4psvipm5qf63l9318jr503z3yx8x00r357s2d7ny3dc5blshl9"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (arguments
@@ -33403,13 +33405,13 @@ Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.2.7")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "1020zpzw5gd505z1k3vrh3lmsy8q9kmbl4j2lc7gz3wkkzdckdnm"))))
+        (base32 "18hwgxl0mkx59m80w62ysy9m7szn6ad6n099p15l4jm5kimbh0bp"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
@@ -41767,6 +41769,37 @@ American Diabetes Association (2020)
 Tamborlane W V., Beck RW, Bode BW, et al. (2008) <doi:10.1056/NEJMoa0805017>
 Umpierrez GE, P. Kovatchev B (2018) <doi:10.1016/j.amjms.2018.09.010>.")
     (license (license:fsdg-compatible "MIT License + file LICENSE"))))
+
+(define-public r-cgmissingdatar
+  (package
+    (name "r-cgmissingdatar")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CGMissingDataR" version))
+       (sha256
+        (base32 "19ksbribacchnfc2dkd9m2rhgk61q1dj0pbrbdrbrq5dq0zg3dgm"))))
+    (properties `((upstream-name . "CGMissingDataR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ranger r-mice r-metrics r-fnn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/saraswatsh/CGMissingDataR")
+    (synopsis "Missingness Benchmark for Continuous Glucose Monitoring Data")
+    (description
+     "Evaluates predictive performance under feature-level missingness in
+repeated-measures continuous glucose monitoring-like data.  The benchmark
+injects missing values at user-specified rates, imputes incomplete feature
+matrices using an iterative chained-equations approach inspired by multivariate
+imputation by chained equations (MICE; Azur et al. (2011)
+<doi:10.1002/mpr.329>), fits Random Forest regression models (Breiman (2001)
+<doi:10.1023/A:1010933404324>) and k-nearest-neighbor regression models (Zhang
+(2016) <doi:10.21037/atm.2016.03.37>), and reports mean absolute percentage
+error and R-squared across missingness rates.")
+    (license license:gpl2+)))
 
 (define-public r-cgmguru
   (package

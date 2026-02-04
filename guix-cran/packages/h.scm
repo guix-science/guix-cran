@@ -3158,6 +3158,48 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 2827-2851, <doi:10.48550/@code{arXiv.1405.3319>}.")
     (license license:gpl3)))
 
+(define-public r-htgm2d
+  (package
+    (name "r-htgm2d")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTGM2D" version))
+       (sha256
+        (base32 "1lgkqshsf2k27pzpp4adxvxwk860qxzclhl6kdazj0wy7skhskvw"))))
+    (properties `((upstream-name . "HTGM2D")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vprint
+                             r-randomgodb
+                             r-minimalistgodb
+                             r-jaccard
+                             r-htgm
+                             r-hgnchelper
+                             r-gplots
+                             r-gominer))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HTGM2D")
+    (synopsis "Two Dimensional High Throughput 'GoMiner'")
+    (description
+     "The Gene Ontology (GO) Consortium <https://geneontology.org/> organizes genes
+into hierarchical categories based on biological process (BP), molecular
+function (MF) and cellular component (CC, i.e., subcellular localization).
+Tools such as @code{GoMiner} (see Zeeberg, B.R., Feng, W., Wang, G. et al.
+(2003) <doi:10.1186/gb-2003-4-4-r28>) can leverage GO to perform ontological
+analysis of microarray and proteomics studies, typically generating a list of
+significant functional categories.  Microarray studies are usually analyzed with
+BP, whereas proteomics researchers often prefer CC. To capture the benefit of
+both of those ontologies, I developed a two-dimensional version of
+High-Throughput @code{GoMiner} ('HTGM2D').  I generate a 2D heat map whose axes
+are any two of BP, MF, or CC, and the value within a picture element of the heat
+map reflects the Jaccard metric p-value for the number of genes in common for
+the corresponding pair.")
+    (license license:gpl2+)))
+
 (define-public r-htgm
   (package
     (name "r-htgm")
@@ -8597,13 +8639,13 @@ two-dimensional hierarchical clustering.")
 (define-public r-hicp
   (package
     (name "r-hicp")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicp" version))
        (sha256
-        (base32 "1a0zbam0zcwm2rdfaiwmfnq9y43iz424fmzzdcnf2qg4d2i5j62f"))))
+        (base32 "0m9g3lzm0956kbvf16bggylw3hrzfjh63cdca2hc26i0p15jbj9v"))))
     (properties `((upstream-name . "hicp")))
     (build-system r-build-system)
     (arguments
@@ -11725,6 +11767,44 @@ Mergers\" <doi:10.1111/ecin.12454>.")
     (description
      "Health Calculator helps to find different parameters like basal metabolic rate,
 body mass index etc.  related to fitness and health of a person.")
+    (license license:expat)))
+
+(define-public r-healthbr
+  (package
+    (name "r-healthbr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthbR" version))
+       (sha256
+        (base32 "0z8lmg32hdwnbnm2s0ws5xw4svnidq8m86bm53q9sh3xr4b2lhrl"))))
+    (properties `((upstream-name . "healthbR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-janitor
+                             r-dplyr
+                             r-curl
+                             r-cli
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SidneyBissoli/healthbR")
+    (synopsis "Access Brazilian Public Health Data")
+    (description
+     "This package provides easy access to Brazilian public health data from multiple
+sources including VIGITEL (Surveillance of Risk Factors for Chronic Diseases by
+Telephone Survey), PNS (National Health Survey), SIM (Mortality Information
+System), SINASC (Live Birth Information System), and other health information
+systems.  Data is downloaded from the Brazilian Ministry of Health VIGITEL
+repository <https://svs.aids.gov.br/download/Vigitel/>.  Data is returned in
+tidy format following tidyverse conventions.")
     (license license:expat)))
 
 (define-public r-healthatlas

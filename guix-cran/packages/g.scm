@@ -17244,6 +17244,49 @@ for small enough rectangular lattices or approximate sample from the likelihood
 using MCMC samplers for large lattices.")
     (license license:gpl2+)))
 
+(define-public r-gipsda
+  (package
+    (name "r-gipsda")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gipsDA" version))
+       (sha256
+        (base32 "0v3w65c95ajx2lk3ll80n7017rcyfcfgzpfgbxfzigrjvi318b0a"))))
+    (properties `((upstream-name . "gipsDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringi
+                             r-rlang
+                             r-permutations
+                             r-patchwork
+                             r-numbers
+                             r-mass
+                             r-lattice
+                             r-jsonlite
+                             r-gips
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://AntoniKingston.github.io/gipsDA/")
+    (synopsis "Training DA Models Utilizing 'gips'")
+    (description
+     "Extends classical linear and quadratic discriminant analysis by incorporating
+permutation group symmetries into covariance matrix estimation.  The package
+leverages methodology from the gips framework to identify and impose permutation
+structures that act as a form of regularization, improving stability and
+interpretability in settings with symmetric or exchangeable features.  Several
+discriminant analysis variants are provided, including pooled and class-specific
+covariance models, as well as multi-class extensions with shared or independent
+symmetry structures.  For more details about gips methodology see and Graczyk et
+al. (2022) <doi:10.1214/22-AOS2174> and Chojecki, Morgen, KoÅodziejek (2025,
+<doi:10.18637/jss.v112.i07>).")
+    (license license:gpl3)))
+
 (define-public r-gips
   (package
     (name "r-gips")

@@ -1507,13 +1507,13 @@ mailing list (<https://korpusml.reaktanz.de>).")
 (define-public r-korpus
   (package
     (name "r-korpus")
-    (version "0.13-8")
+    (version "0.13-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "koRpus" version))
        (sha256
-        (base32 "0r9a2fzi3w53kixcjzbij8qmmkjl2p53dazys34s0czb5qrlm6hf"))))
+        (base32 "1f2yc4rs7ybgn6991b6dl67mni257d91yq5iay435xrfzjhw9kmw"))))
     (properties `((upstream-name . "koRpus")))
     (build-system r-build-system)
     (arguments

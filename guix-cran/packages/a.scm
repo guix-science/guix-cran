@@ -12688,13 +12688,13 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.9.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "0kcpvi1021r3mvkfyzy6abxmb5n42xif8v92ny51mvfx05ml1la3"))))
+        (base32 "1yjhz2cyw7wvz9mp0f15xl7mxi26ggwbagfzzfn7dsnwfq1hg3sq"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (arguments
@@ -13681,26 +13681,19 @@ exploratory data analysis, and perhaps for preparation of presentations.")
 (define-public r-animl
   (package
     (name "r-animl")
-    (version "2.0.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animl" version))
        (sha256
-        (base32 "1x3xxgxnx993hnkm0ljkkql0jx25h4rjyi1h9jml5za886pvwjnz"))))
+        (base32 "0shymjnf7rks03h936mbvidd4nra5ijbli544ln93rip6apnk2vl"))))
     (properties `((upstream-name . "animl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-reticulate
-                             r-pbapply
-                             r-magrittr
-                             r-jpeg
-                             r-exifr
-                             r-dplyr
-                             r-av))
+    (propagated-inputs (list r-reticulate r-pbapply))
     (home-page "https://cran.r-project.org/package=animl")
     (synopsis "Collection of ML Tools for Conservation Research")
     (description
@@ -17003,13 +16996,13 @@ sizes when designing stratified samples.  These methods are discussed in Wright
 (define-public r-allmt
   (package
     (name "r-allmt")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allMT" version))
        (sha256
-        (base32 "0d34w0gl369mq512x3h2nsrvd13ahy36p5hdyvz5gnpdlaql64c6"))))
+        (base32 "0zz3p8caj5z42dy5463p8n6xnl8s6figfclnwv1i6ha3kirwjq5b"))))
     (properties `((upstream-name . "allMT")))
     (build-system r-build-system)
     (arguments
@@ -17933,13 +17926,13 @@ regression.")
 (define-public r-aldex3
   (package
     (name "r-aldex3")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ALDEx3" version))
        (sha256
-        (base32 "04i3v4vkgc8g6kwf2h8qsrcrp4sxx60xxlhff3qvn20g2rmpjx8q"))))
+        (base32 "0d9yghvmmq7y6hmcw8k463mafys9ranym499ypbz1w0g71slzp75"))))
     (properties `((upstream-name . "ALDEx3")))
     (build-system r-build-system)
     (arguments
@@ -22226,13 +22219,13 @@ into account variable selection.")
 (define-public r-adverseevents
   (package
     (name "r-adverseevents")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdverseEvents" version))
        (sha256
-        (base32 "0qmwjrl57r6l7424x5nhncm4gc9xi87czp64d0yb7l7qzr571q7s"))))
+        (base32 "0k4r7shk8wgx2n2fgr6v9p9mc5c02hw0czhlw6mgby7x1vgkk14l"))))
     (properties `((upstream-name . "AdverseEvents")))
     (build-system r-build-system)
     (arguments
@@ -23502,13 +23495,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "1wxwgnhv20is9yx03k7sai68nhrdp7b0y2dq5i5pqfkz0rdp2mwq"))))
+        (base32 "09xig98c5nr4xb4xiilzml35vz5ms5aps48d3zqcdwa8rp1iw0q5"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (arguments

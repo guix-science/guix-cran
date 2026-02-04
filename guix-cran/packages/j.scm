@@ -5210,6 +5210,29 @@ based on @code{SimLoRD} by StÃ¶cker et al. (2016)
 file formats.")
     (license license:expat)))
 
+(define-public r-jaccard
+  (package
+    (name "r-jaccard")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jaccard" version))
+       (sha256
+        (base32 "10fjm3fpil4mb8jis9h4jhwhd5myh9l2646jf3xw1y7rmjjghyk7"))))
+    (properties `((upstream-name . "jaccard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-rcpp r-qvalue))
+    (home-page "https://cran.r-project.org/package=jaccard")
+    (synopsis
+     "Testing Similarity Between Binary Datasets using Jaccard/Tanimoto Coefficients")
+    (description
+     "Calculate statistical significance of Jaccard/Tanimoto similarity coefficients.")
+    (license license:gpl2)))
+
 (define-public r-jab-adverse-reactions
   (package
     (name "r-jab-adverse-reactions")

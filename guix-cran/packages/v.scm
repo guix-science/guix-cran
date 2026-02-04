@@ -3480,6 +3480,47 @@ tables and figures, facilitating the visualisation of study results working with
 the Observational Medical Outcomes Partnership (OMOP) Common Data Model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-vismi
+  (package
+    (name "r-vismi")
+    (version "0.9.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vismi" version))
+       (sha256
+        (base32 "1awy1f8708m33j25igpcimjw1gbidwbm8l40nrchxin2v8li1vx0"))))
+    (properties `((upstream-name . "vismi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trelliscopejs
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-patchwork
+                             r-mixgb
+                             r-gridextra
+                             r-ggtext
+                             r-ggridges
+                             r-ggplot2
+                             r-ggally
+                             r-dplyr
+                             r-data-table
+                             r-cli))
+    (home-page "https://agnesdeng.github.io/vismi/")
+    (synopsis "Visual Diagnostics for Multiple Imputation")
+    (description
+     "This package provides a comprehensive suite of static and interactive visual
+diagnostics for assessing the quality of multiply-imputed data obtained from
+packages such as mixgb and mice'.  The package supports inspection of
+distributional characteristics, diagnostics based on masking observed values and
+comparing them with re-imputed values, and convergence diagnostics.")
+    (license license:gpl3+)))
+
 (define-public r-vismeteor
   (package
     (name "r-vismeteor")
@@ -5780,13 +5821,13 @@ input number.")
 (define-public r-verdata
   (package
     (name "r-verdata")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verdata" version))
        (sha256
-        (base32 "1c9lrmm927sa9yk5z2jvq3r4lyl4kkihp3xmdzccjrn7p7621gp3"))))
+        (base32 "0k8g5g0p9ylip20kd106x5glgj6dnddfh2ywn0ahf7mrr9mnb85j"))))
     (properties `((upstream-name . "verdata")))
     (build-system r-build-system)
     (arguments
@@ -6748,13 +6789,13 @@ Keyser & Gijbels (2024) <doi:10.1016/j.jmva.2024.105336>, De Keyser & Gijbels
 (define-public r-vecctmvn
   (package
     (name "r-vecctmvn")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VeccTMVN" version))
        (sha256
-        (base32 "1lsdclv8538blcxhhy6hzp7i4ysgc76fpf7c1jaydb18v227rni3"))))
+        (base32 "1wmyzzahfbinbksz07sjmf2wpal755gpgd50vcyk9llvyym99m7j"))))
     (properties `((upstream-name . "VeccTMVN")))
     (build-system r-build-system)
     (arguments

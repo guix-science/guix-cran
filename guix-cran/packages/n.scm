@@ -806,13 +806,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "1j2q12zx7wnh05372vk4c77j0mhmda80qd48s5f99vg6rxp7qqjs"))))
+        (base32 "13f0rj0qs99p28pppv00z94jk3hyl1b6ldbl61dz8dbwbkd993b6"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (arguments
@@ -823,25 +823,16 @@ lineup, and examine the distributions of metrics.")
                              r-tibble
                              r-testthat
                              r-stringr
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shiny
                              r-rlang
-                             r-rcppthread
                              r-rcpp
                              r-purrr
                              r-lifecycle
-                             r-jsonlite
-                             r-htmlwidgets
-                             r-htmltools
                              r-ggplot2
                              r-generics
                              r-fastmatch
-                             r-dt
                              r-dplyr
                              r-cli
-                             r-classint
-                             r-bh))
+                             r-classint))
     (native-inputs (list r-knitr))
     (home-page "https://beerda.github.io/nuggets/")
     (synopsis "Extensible Framework for Data Pattern Exploration")
@@ -5582,6 +5573,38 @@ styling, R Markdown and exporting diagrams in the PNG format.  Note: you need a
 chromium based browser installed on your system.")
     (license license:expat)))
 
+(define-public r-nomishape
+  (package
+    (name "r-nomishape")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomiShape" version))
+       (sha256
+        (base32 "0q7hvrby5cp6fzvbazmq4advgwr8hf94lwi0rmq15p9nd6xp8ghw"))))
+    (properties `((upstream-name . "nomiShape")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=nomiShape")
+    (synopsis "Visualization and Analysis of Nominal Variable Distributions")
+    (description
+     "This package provides tools for visualizing and analyzing the shape of discrete
+nominal frequency distributions.  The package introduces centered frequency
+plots, in which nominal categories are ordered from the most frequent category
+at the center toward less frequent categories on both sides, facilitating the
+detection of distributional patterns such as uniformity, dominance, symmetry,
+skewness, and long-tail behavior.  In addition, the package supports Pareto
+charts for the study of dominance and cumulative frequency structure in nominal
+data.  The package is designed for exploratory data analysis and statistical
+teaching, offering visualizations that emphasize distributional form rather than
+arbitrary category ordering.")
+    (license license:expat)))
+
 (define-public r-nomisdata
   (package
     (name "r-nomisdata")
@@ -6459,13 +6482,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnmf
   (package
     (name "r-nnmf")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnmf" version))
        (sha256
-        (base32 "01dxwx4wfwg5c7c52pr1x70387vbz5qmkl83gr38ms06rikcdxz6"))))
+        (base32 "071wwpbjmhrb5b0rqjb2pg8xcpsv75ihf9xxfjgcbwilgix2hw4n"))))
     (properties `((upstream-name . "nnmf")))
     (build-system r-build-system)
     (arguments
@@ -6483,15 +6506,15 @@ version can only impute for a situation with one missing covariate.")
     (synopsis "Nonnegative Matrix Factorization")
     (description
      "Nonnegative matrix factorization (NMF) is a technique to factorize a matrix with
-nonnegative values into the product of two matrices.  Parallel computing is an
-option to enhance the speed and high-dimensional and large scale (and/or sparse)
-data are allowed.  Relevant papers include: Wang Y. X. and Zhang Y. J. (2012).
-Nonnegative matrix factorization: A comprehensive review.  IEEE Transactions on
-Knowledge and Data Engineering, 25(6), 1336-1353 <doi:10.1109/TKDE.2012.51> and
-Kim H. and Park H. (2008).  Nonnegative matrix factorization based on
-alternating nonnegativity constrained least squares and active set method.  SIAM
-Journal on Matrix Analysis and Applications, 30(2), 713-730
-<doi:10.1137/07069239X>.")
+nonnegative values into the product of two matrices.  Covariates are also
+allowed.  Parallel computing is an option to enhance the speed and
+high-dimensional and large scale (and/or sparse) data are allowed.  Relevant
+papers include: Wang Y. X. and Zhang Y. J. (2012).  Nonnegative matrix
+factorization: A comprehensive review.  IEEE Transactions on Knowledge and Data
+Engineering, 25(6), 1336-1353 <doi:10.1109/TKDE.2012.51> and Kim H. and Park H.
+(2008).  Nonnegative matrix factorization based on alternating nonnegativity
+constrained least squares and active set method.  SIAM Journal on Matrix
+Analysis and Applications, 30(2), 713-730 <doi:10.1137/07069239X>.")
     (license license:gpl2+)))
 
 (define-public r-nnlib2rcpp
@@ -17251,6 +17274,49 @@ application.")
 linear models of Yu, Bien (2017) <@code{arXiv:1712.02412>}.")
     (license license:gpl3)))
 
+(define-public r-natstrat
+  (package
+    (name "r-natstrat")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "natstrat" version))
+       (sha256
+        (base32 "0l4s5zgaf5k8ny6qin5z03ajyc7kzwfwg6qs1w120l53598iw7vr"))))
+    (properties `((upstream-name . "natstrat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam
+                             r-sampling
+                             r-rlang
+                             r-rglpk
+                             r-ramify
+                             r-pps
+                             r-plyr
+                             r-ggplot2
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kkbrum/natstrat")
+    (synopsis "Obtain Unweighted Natural Strata that Balance Many Covariates")
+    (description
+     "Natural strata can be used in observational studies to balance the distributions
+of many covariates across any number of treatment groups and any number of
+comparisons.  These strata have proportional amounts of units within each
+stratum across the treatments, allowing for simple interpretation and
+aggregation across strata.  Within each stratum, the units are chosen using
+randomized rounding of a linear program that balances many covariates.  For more
+details, see Brumberg et al. (2022) <doi:10.1111/rssa.12848> and Brumberg et
+al.(2023) <doi:10.1093/jrsssc/qlad010>.  To solve the linear program, the Gurobi
+commercial optimization software is recommended, but not required.  The gurobi R
+package can be installed by following the instructions at
+<https://docs.gurobi.com/projects/optimizer/en/current/reference/r/setup.html>
+after claiming your free academic license at
+<https://www.gurobi.com/academia/academic-program-and-licenses/>.")
+    (license license:gpl3)))
+
 (define-public r-natserv
   (package
     (name "r-natserv")
@@ -17415,13 +17481,13 @@ functions for handling template brains.")
 (define-public r-nat-nblast
   (package
     (name "r-nat-nblast")
-    (version "1.6.8")
+    (version "1.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nat.nblast" version))
        (sha256
-        (base32 "1whmis8r1wwhg744sihs8qd5nj2v5nazid1hp5qd21a51i0vb6w6"))))
+        (base32 "1bbddw5qv6clz2vl51zi3plk68pr7aib1395ps2ibyzhhdjzbx2n"))))
     (properties `((upstream-name . "nat.nblast")))
     (build-system r-build-system)
     (arguments

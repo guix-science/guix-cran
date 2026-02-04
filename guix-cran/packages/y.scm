@@ -751,13 +751,13 @@ support for both R and Python to ensure accessibility for a broad audience.")
 (define-public r-yfr
   (package
     (name "r-yfr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yfR" version))
        (sha256
-        (base32 "0iwk1cfc3s3yrxjm22192jd9904s798c246w011rl7kl9lczxz0x"))))
+        (base32 "1qsdbk6fm60rylcm694gi8a3sk6c1d5nrqr7vai0xplbb7v80bsz"))))
     (properties `((upstream-name . "yfR")))
     (build-system r-build-system)
     (arguments
@@ -773,6 +773,7 @@ support for both R and Python to ensure accessibility for a broad audience.")
                              r-quantmod
                              r-purrr
                              r-pingr
+                             r-parallelly
                              r-magrittr
                              r-lubridate
                              r-jsonlite

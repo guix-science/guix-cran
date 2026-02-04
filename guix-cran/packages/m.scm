@@ -4407,6 +4407,41 @@ digital terrain models using a variable focal windows size (Ilich et al. (2023)
 <doi:10.1111/tgis.13067>).")
     (license license:gpl3+)))
 
+(define-public r-multisa
+  (package
+    (name "r-multisa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiSA" version))
+       (sha256
+        (base32 "15qxnha97l3ywzbkijwdf7qmf591afdpvfvxlm3zcaw2x0w77h52"))))
+    (properties `((upstream-name . "multiSA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb
+                             r-tinyplot
+                             r-snowfall
+                             r-rtmb
+                             r-rmarkdown
+                             r-reshape2
+                             r-pbapply
+                             r-gplots
+                             r-dplyr))
+    (home-page "https://blue-matter.github.io/multiSA/")
+    (synopsis "Multi-Stock Assessment")
+    (description
+     "Implementation of a next-generation, multi-stock age-structured fisheries
+assessment model. @code{multiSA} is intended for use in mixed fisheries where
+stock composition can not be readily identified in fishery data alone, e.g.,
+from catch and age/length composition.  Models can be fitted to genetic data,
+e.g., stock composition of catches and close-kin pairs, with seasonal stock
+availability and movement.")
+    (license license:gpl3+)))
+
 (define-public r-multiroc
   (package
     (name "r-multiroc")
@@ -4611,6 +4646,33 @@ latent features and accounts for the heterogeneity among source.  It could be
 used for analyzing heterogeneous RNA sequencing data.  More details can be
 referred to Jiang et al. (2025) <doi:10.48550/@code{arXiv.2506.18478>}.")
     (license license:gpl3)))
+
+(define-public r-multirec
+  (package
+    (name "r-multirec")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiRec" version))
+       (sha256
+        (base32 "0289v3m9yw4r58arpv9qyxc16li64ia707id19fdiq6f92xli0vl"))))
+    (properties `((upstream-name . "multiRec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rfast r-numderiv r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=multiRec")
+    (synopsis "Analysis of Multi-Type Recurrent Events")
+    (description
+     "This package implements likelihood-based estimation and diagnostics for
+multi-type recurrent event data with dynamic risk that depends on prior events
+and accommodates terminating events.  Methods are described in Ghosh, Chan,
+Younes and Davis (2023) \"A Dynamic Risk Model for Multitype Recurrent Events\"
+<doi:10.1093/aje/kwac213>.")
+    (license license:gpl2)))
 
 (define-public r-multirdpg
   (package
@@ -22701,13 +22763,13 @@ Krajnc, and Skudnik (2023), Ecological Informatics
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "3.6.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "1nhlm0pqn0grlhvbnakrb31xcx32ykqjzkdvlh4xflhzhki8hihz"))))
+        (base32 "1wn7pn0gxhmc35ykswf1hdyk7skkcbsv3ji0sldc02hd3bkwhi15"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -53237,6 +53299,31 @@ sensitivity analyses, scenario analyses, etc.")
      "Framework for creating and orchestrating data pipelines.  Organize, orchestrate,
 and monitor multiple pipelines in a single project.  Use tags to decorate
 functions with scheduling parameters and configuration.")
+    (license license:expat)))
+
+(define-public r-madtests
+  (package
+    (name "r-madtests")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MADtests" version))
+       (sha256
+        (base32 "069z3csp8wzxxkcy9fhjrw4k4ml8qar1jyh6lw9j7yv9qc0w7acq"))))
+    (properties `((upstream-name . "MADtests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gld))
+    (home-page "https://cran.r-project.org/package=MADtests")
+    (synopsis
+     "Hypothesis Tests and Confidence Intervals for Median Absolute Deviations")
+    (description
+     "Conducts one- and two-sample hypothesis tests for median absolute deviations
+(mads) for robust inference of dispersion.  Comparisons between two samples uses
+the ratio of mads.  Confidence intervals are also computed.")
     (license license:expat)))
 
 (define-public r-madsim
