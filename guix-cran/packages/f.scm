@@ -4115,6 +4115,31 @@ incidence of weather-related disorders in fruits (e.g. Snyder and de Melo-Abreu
 al (1998, ISBN:92-5-104219-5)).")
     (license license:gpl3+)))
 
+(define-public r-fru
+  (package
+    (name "r-fru")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fru" version))
+       (sha256
+        (base32 "1r5vnd7qmva4nrh3gc6spw7ap17drsirf3qy51xx0x1j8hsaf9cf"))))
+    (properties `((upstream-name . "fru")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://gitlab.com/mbq/fru")
+    (synopsis "Blazing Fast Implementation of Random Forest")
+    (description
+     "Yet another implementation of the Random Forest method by Breiman (2001)
+<doi:10.1023/A:1010933404324>, written in Rust and tailored towards stability,
+correctness, efficiency and scalability on modern multi-core machines.  Handles
+both classification and regression, as well as provides permutation feature
+importance via a novel, highly optimised algorithm.")
+    (license license:gpl3)))
+
 (define-public r-frscore
   (package
     (name "r-frscore")
@@ -12940,13 +12965,13 @@ registration).  Low memory footprint.")
 (define-public r-flexreg
   (package
     (name "r-flexreg")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexReg" version))
        (sha256
-        (base32 "1adlinchjvmkghamph6z64dh6dfrlfhv7zn5y6byk5i4mfk7369n"))))
+        (base32 "05hhly1qvcnhsavkwly6kjrhqmqvzs6558xa1cxvwa0lsmzgmdmc"))))
     (properties `((upstream-name . "FlexReg")))
     (build-system r-build-system)
     (arguments
@@ -25506,13 +25531,13 @@ FAO Irrigation and drainage paper 56\".")
 (define-public r-fanyi
   (package
     (name "r-fanyi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fanyi" version))
        (sha256
-        (base32 "0fyxwvxb1738w31vz0004k0ayvjwnr147n1cw3pkls7g83w9fdzh"))))
+        (base32 "058hb8i3p6if9wdy5c3rf2dm23nv1l7i7fdwvgalmw61x7z0bn4a"))))
     (properties `((upstream-name . "fanyi")))
     (build-system r-build-system)
     (arguments

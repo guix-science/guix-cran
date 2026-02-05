@@ -150,6 +150,30 @@ packages to use the type information to provide error checking, automatic
 documentation or optimizations.")
     (license license:expat)))
 
+(define-public r-typer
+  (package
+    (name "r-typer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "typeR" version))
+       (sha256
+        (base32 "0m5r7aqbqayq5g4zcdbr0wr8q4xq3zanpjahpdsnd9mcjkl1pmmq"))))
+    (properties `((upstream-name . "typeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://Fgazzelloni.github.io/typeR/")
+    (synopsis "Simulate Typing Script")
+    (description
+     "Simulates typing of R script files for presentations and demonstrations.
+Provides character-by-character animation with optional live code execution.
+Supports R scripts (.R), R Markdown (.Rmd), and Quarto (.qmd) documents.")
+    (license license:expat)))
+
 (define-public r-typehint
   (package
     (name "r-typehint")
@@ -881,34 +905,6 @@ endpoints (Homma and Yoshida 2024 <doi:10.1002/pst.2337>).  All methods
 appropriately account for correlation between endpoints and provide both sample
 size and power calculation capabilities.")
     (license license:expat)))
-
-(define-public r-twoarmsurvsim
-  (package
-    (name "r-twoarmsurvsim")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TwoArmSurvSim" version))
-       (sha256
-        (base32 "0isb1nmm6hxwn6p52an1axj30ilkr5c8xi86zx2b8acivdz2xr12"))))
-    (properties `((upstream-name . "TwoArmSurvSim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-simsurv r-dplyr r-blockrand))
-    (home-page "https://cran.r-project.org/package=TwoArmSurvSim")
-    (synopsis "Simulate Survival Data for Randomized Clinical Trials")
-    (description
-     "This package provides a system to simulate clinical trials with time to event
-endpoints.  Event simulation is based on Cox models allowing for covariates in
-addition to the treatment or group factor.  Specific drop-out rates (separate
-from administrative censoring) can be controlled in the simulation.  Other
-features include stratified randomization, non-proportional hazards, different
-accrual patterns, and event projection (timing to reach the target event) based
-on interim data.")
-    (license license:gpl2+)))
 
 (define-public r-twn
   (package
@@ -1656,35 +1652,6 @@ Mathematics with Canadian Applications,â 2020, ISBN: 9780135285015).")
     (synopsis "Time Value of Money Functions")
     (description
      "This package provides functions for managing cashflows and interest rate curves.")
-    (license license:expat)))
-
-(define-public r-tvgeom
-  (package
-    (name "r-tvgeom")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tvgeom" version))
-       (sha256
-        (base32 "1lr2vqgj5jfhzavwd43wcchhbicmf4dqjvyf66rvnjkw3jaig8dm"))))
-    (properties `((upstream-name . "tvgeom")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tvgeom")
-    (synopsis "The Time-Varying (Right-Truncated) Geometric Distribution")
-    (description
-     "Probability mass (d), distribution (p), quantile (q), and random number
-generating (r and rt) functions for the time-varying right-truncated geometric
-(tvgeom) distribution.  Also provided are functions to calculate the first and
-second central moments of the distribution.  The tvgeom distribution is similar
-to the geometric distribution, but the probability of success is allowed to vary
-at each time step, and there are a limited number of trials.  This distribution
-is essentially a Markov chain, and it is useful for modeling Markov chain
-systems with a set number of time steps.")
     (license license:expat)))
 
 (define-public r-tvgarchkf
@@ -2818,13 +2785,13 @@ translators.")
 (define-public r-tteice
   (package
     (name "r-tteice")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tteICE" version))
        (sha256
-        (base32 "0gkgcfik5if7fjgcplvaiw6s0kszby1g047q5l3h8wjadc51qafg"))))
+        (base32 "1bsyci1fsg7gf1wx17qavfyxsnjk0lmlhxhgc4w2jryl3mm9ancb"))))
     (properties `((upstream-name . "tteICE")))
     (build-system r-build-system)
     (arguments
@@ -10995,59 +10962,6 @@ on their analyses.  For more details visit
 <https://www.nationalrail.co.uk/46391.aspx>.")
     (license license:expat)))
 
-(define-public r-trainer
-  (package
-    (name "r-trainer")
-    (version "2.2.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "traineR" version))
-       (sha256
-        (base32 "1j4xp6pzpwqm96yh0ji76nx967a1dmizz713y540sir13khq52nb"))))
-    (properties `((upstream-name . "traineR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-stringr
-                             r-rpart
-                             r-rocr
-                             r-randomforest
-                             r-nnet
-                             r-neuralnet
-                             r-mass
-                             r-kknn
-                             r-glmnet
-                             r-ggplot2
-                             r-gbm
-                             r-e1071
-                             r-dplyr
-                             r-adabag))
-    (home-page "https://promidat.website/")
-    (synopsis "Predictive (Classification and Regression) Models Homologator")
-    (description
-     "This package provides methods to unify the different ways of creating predictive
-models and their different predictive formats for classification and regression.
- It includes methods such as K-Nearest Neighbors Schliep, K. P. (2004)
-<doi:10.5282/ubm/epub.1769>, Decision Trees Leo Breiman, Jerome H. Friedman,
-Richard A. Olshen, Charles J. Stone (2017) <doi:10.1201/9781315139470>, ADA
-Boosting Esteban Alfaro, Matias Gamez, Noelia GarcÃ­a (2013)
-<doi:10.18637/jss.v054.i02>, Extreme Gradient Boosting Chen & Guestrin (2016)
-<doi:10.1145/2939672.2939785>, Random Forest Breiman (2001)
-<doi:10.1023/A:1010933404324>, Neural Networks Venables, W. N., & Ripley, B. D.
-(2002) <ISBN:0-387-95457-0>, Support Vector Machines Bennett, K. P. & Campbell,
-C. (2000) <doi:10.1145/380995.380999>, Bayesian Methods Gelman, A., Carlin, J.
-B., Stern, H. S., & Rubin, D. B. (1995) <doi:10.1201/9780429258411>, Linear
-Discriminant Analysis Venables, W. N., & Ripley, B. D. (2002)
-<ISBN:0-387-95457-0>, Quadratic Discriminant Analysis Venables, W. N., & Ripley,
-B. D. (2002) <ISBN:0-387-95457-0>, Logistic Regression Dobson, A. J., & Barnett,
-A. G. (2018) <doi:10.1201/9781315182780> and Penalized Logistic Regression
-Friedman, J. H., Hastie, T., & Tibshirani, R. (2010)
-<doi:10.18637/jss.v033.i01>.")
-    (license license:gpl2+)))
-
 (define-public r-trafficcar
   (package
     (name "r-trafficcar")
@@ -18476,20 +18390,19 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
 (define-public r-tidywikidatar
   (package
     (name "r-tidywikidatar")
-    (version "0.5.9")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidywikidatar" version))
        (sha256
-        (base32 "1ff5qlz4h99d7x1pcjcji5li2421mlr55yfv6b32165f1yrkm8qw"))))
+        (base32 "11d1f3n4djxqqmd5vkb0lqbfk591xd7r02yar0f5dfgnifgwcps1"))))
     (properties `((upstream-name . "tidywikidatar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wikidatar
-                             r-wikidataqueryservicer
                              r-vctrs
                              r-tidyr
                              r-tibble
@@ -20804,6 +20717,37 @@ concepts.  For more information and resources related to the book, visit
      "Tidying functions built on data.table to provide quick and efficient data
 manipulation with minimal overhead.")
     (license license:gpl3)))
+
+(define-public r-tidyextreme
+  (package
+    (name "r-tidyextreme")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyextreme" version))
+       (sha256
+        (base32 "1fgwlhdjl5z3qvxiw0sxh7j5gj0996hzb4lif5a2gcncm11zwg36"))))
+    (properties `((upstream-name . "tidyextreme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-rlang
+                             r-lubridate
+                             r-dplyr
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Mauritia-flexuosa/tidyextreme")
+    (synopsis "Tidy Toolbox for Climate Extreme Indices")
+    (description
+     "Calculate Expert Team on Climate Change Detection and Indices (ETCCDI) <--
+(acronym) climate indices from daily or hourly temperature and precipitation
+data.  Provides flexible data handling.")
+    (license license:expat)))
 
 (define-public r-tidyestimate
   (package

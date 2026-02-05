@@ -3727,13 +3727,13 @@ curvature.")
 (define-public r-kindling
   (package
     (name "r-kindling")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kindling" version))
        (sha256
-        (base32 "06zpi9hmzvhvgvvyn856skmzy5ib9700smw9nj5rfik69acz60is"))))
+        (base32 "1mvwlbrjfdy3zlwyblqg6dav7dmg361mh4c21f54n7d69zx62i5r"))))
     (properties `((upstream-name . "kindling")))
     (build-system r-build-system)
     (arguments
@@ -3749,6 +3749,7 @@ curvature.")
                              r-purrr
                              r-parsnip
                              r-neuralnettools
+                             r-hardhat
                              r-glue
                              r-ggplot2
                              r-dplyr
@@ -3760,13 +3761,15 @@ curvature.")
      "Higher-Level Interface of 'torch' Package to Auto-Train Neural Networks")
     (description
      "This package provides a higher-level interface to the torch package for
-defining, training, and tuning neural networks.  This package supports
-feedforward (multi-layer perceptron) and recurrent neural networks (RNN
-(Recurrent Neural Networks), LSTM (Long Short-Term Memory), GRU (Gated Recurrent
-Unit)), and also reduces boilerplate code while enabling seamless integration
-with torch'.  The methods to train neural networks from this package also
-bridges to titanic ML frameworks in R namely tidymodels ecosystem, enabling the
-parsnip model specifications, workflows, recipes, and tuning tools.")
+defining, training, and fine-tuning neural networks, including its depth,
+powered by code generation.  This package currently supports few to several
+architectures, namely feedforward (multi-layer perceptron) and recurrent neural
+networks (Recurrent Neural Networks (RNN), Long Short-Term Memory (LSTM), Gated
+Recurrent Unit (GRU)), while also reduces boilerplate torch code while enabling
+seamless integration with torch'.  The model methods to train neural networks
+from this package also bridges to titanic ML frameworks in R, namely tidymodels
+ecosystem, which enables the parsnip model specifications, workflows, recipes,
+and tuning tools.")
     (license license:expat)))
 
 (define-public r-kindisperse
@@ -5985,6 +5988,32 @@ K-distribution.  A plotting function that plots data on Weibull paper and
 another function to draw additional lines.  See results from package in T
 Lamont-Smith (2018), submitted J. R. Stat.  Soc.")
     (license license:gpl3)))
+
+(define-public r-kdglm
+  (package
+    (name "r-kdglm")
+    (version "1.2.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kDGLM" version))
+       (sha256
+        (base32 "0851vh8v0jn6mj7dh8hwbq6kvsd3bmaqdss3v6ina0ywc68x37vn"))))
+    (properties `((upstream-name . "kDGLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-rdpack r-generics r-extradistr))
+    (native-inputs (list r-knitr))
+    (home-page "https://silvaneojunior.github.io/kDGLM/")
+    (synopsis "Bayesian Analysis of Dynamic Generalized Linear Models")
+    (description
+     "Provide routines for filtering and smoothing, forecasting, sampling and Bayesian
+analysis of Dynamic Generalized Linear Models using the methodology described in
+Alves et al. (2024)<doi:10.48550/@code{arXiv.2201.05387>} and dos Santos Jr.  et
+al. (2024)<doi:10.48550/@code{arXiv.2403.13069>}.")
+    (license license:gpl3+)))
 
 (define-public r-kdevine
   (package

@@ -10295,13 +10295,13 @@ Partial Least Squares (PLS), and Random Forest algorithms.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "4.1.4")
+    (version "4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqPen" version))
        (sha256
-        (base32 "1pxzcpjwf5w7dd8sjzmcm69fprh9hb1c7f3bl3lak51kxwz7ypz8"))))
+        (base32 "04fygl6lvn2vrphlmh9sc1p9i4qnnah7l957j8vxm3b8mw8adsjl"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (arguments
@@ -10317,8 +10317,7 @@ Partial Least Squares (PLS), and Random Forest algorithms.")
                              r-hrqglas
                              r-hqreg
                              r-data-table))
-    (home-page
-     "https://github.com/bssherwood/rqpen/blob/master/ignore/rqPenArticle.pdf")
+    (home-page "https://journal.r-project.org/articles/RJ-2025-017/")
     (synopsis "Penalized Quantile Regression")
     (description
      "This package performs penalized quantile regression with LASSO, elastic net,
@@ -10326,7 +10325,7 @@ SCAD and MCP penalty functions including group penalties.  In addition, offers a
 group penalty that provides consistent variable selection across quantiles.
 Provides a function that automatically generates lambdas and evaluates different
 models with cross validation or BIC, including a large p version of BIC. Below
-URL provides a link to a work in progress vignette.")
+URL provides a link to article in the R Journal.")
     (license license:expat)))
 
 (define-public r-rqlm
@@ -30735,13 +30734,13 @@ and source type maps are included for statistical analysis of moment tensors.")
 (define-public r-rfoaas
   (package
     (name "r-rfoaas")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfoaas" version))
        (sha256
-        (base32 "03rz1cas0anmfpnax66nr3bsiqgkq02wbvslvqc0q9ayl6p02avh"))))
+        (base32 "11ym0a9f5svjzcxkgan64x5xardnj4vd4vajljlrnn93jcvz9fd6"))))
     (properties `((upstream-name . "rfoaas")))
     (build-system r-build-system)
     (arguments
@@ -32986,13 +32985,13 @@ background jobs for large datasets.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.24.2")
+    (version "0.24.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatapi" version))
        (sha256
-        (base32 "1kg8ia33dsbmh0yph8vfrhyrqly5zvnyqsiapn8nhyghxbyq0i1p"))))
+        (base32 "16cww1jycgcdb2qlrim1c92jycqpjxjxmb62f9ya8nxs9ynbind7"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (arguments
@@ -33007,8 +33006,8 @@ quality statistics for Europe.  Large set of the data is disseminated through
 the Eurostat database (<https://ec.europa.eu/eurostat/web/main/data/database>).
 The tools are using the REST API with the Statistical Data and Metadata
 @code{eXchange} (SDMX) Web Services
-(<https://wikis.ec.europa.eu/pages/viewpage.action?@code{pageId=44165555>}) to
-search and download data from the Eurostat database using the SDMX standard.")
+(<https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/sdmx2-1>)
+to search and download data from the Eurostat database using the SDMX standard.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-ress
@@ -37811,65 +37810,6 @@ based on validation set or Generalized Information Criterion.")
 hypothesis testing, and plotting moderating effects (the effect of X on Y
 becomes stronger/weaker as Z increases).")
     (license license:gpl3)))
-
-(define-public r-regressor
-  (package
-    (name "r-regressor")
-    (version "4.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "regressoR" version))
-       (sha256
-        (base32 "0pfl4d095paxf16raljg6dvfc6j8r00ia4zw1i16pyrwvjkzjzy1"))))
-    (properties `((upstream-name . "regressoR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  ((guix build minify-build-system)
-                   #:select (minify))
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-trainer
-                             r-shinyjs
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinycustomloader
-                             r-shinyace
-                             r-shiny
-                             r-rpart-plot
-                             r-rlang
-                             r-psych
-                             r-pls
-                             r-loader
-                             r-htmltools
-                             r-golem
-                             r-glmnet
-                             r-gbm
-                             r-echarts4r
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list esbuild))
-    (home-page "https://promidat.website/")
-    (synopsis "Regression Data Analysis System")
-    (description
-     "Perform a supervised data analysis on a database through a shiny graphical
-interface.  It includes methods such as linear regression, penalized regression,
-k-nearest neighbors, decision trees, ada boosting, extreme gradient boosting,
-random forest, neural networks, deep learning and support vector machines.")
-    (license license:gpl2+)))
 
 (define-public r-regressionfactory
   (package

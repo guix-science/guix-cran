@@ -3557,6 +3557,43 @@ explore design operating characteristics.  For more details see Parsons (2024)
 Cellwise and Casewise Contamination and Missing Data.")
     (license license:gpl2+)))
 
+(define-public r-gsdesigntune
+  (package
+    (name "r-gsdesigntune")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gsDesignTune" version))
+       (sha256
+        (base32 "149bc02mwhajp4xxlnyza7p0n49r8s9jdcfyjapj077459n800di"))))
+    (properties `((upstream-name . "gsDesignTune")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-r6
+                             r-progressr
+                             r-gsdesign
+                             r-ggplot2
+                             r-future-apply
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://nanx.me/gsDesignTune/")
+    (synopsis
+     "Dependency-Aware Scenario Exploration for Group Sequential Designs")
+    (description
+     "This package provides systematic, dependency-aware exploration of group
+sequential designs created with @code{gsDesign}'.  Supports reproducible grid
+and random search over user-defined candidate sets, parallel evaluation via the
+future framework, standardized metric extraction, and auditable reporting for
+design-space evaluation and trade-off analysis.  Methods for group sequential
+design are described in Anderson (2025)
+<doi:10.32614/CRAN.package.@code{gsDesign>}.  The future framework for parallel
+processing is described in Bengtsson (2021) <doi:10.32614/RJ-2021-048>.")
+    (license license:expat)))
+
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
@@ -12140,13 +12177,13 @@ weighted graphs.  Methods are described in Sosa et al. (2023)
 (define-public r-goat
   (package
     (name "r-goat")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goat" version))
        (sha256
-        (base32 "1rrjsczykvgpaz4xklvzqh283lk6j3rmimnk6nxy15gc4v5xq8ai"))))
+        (base32 "0603v35hpc0kv5qvgv0h65nljx7g0m5b5mas1w24xj84wk2bvwrf"))))
     (properties `((upstream-name . "goat")))
     (build-system r-build-system)
     (arguments
@@ -13804,13 +13841,13 @@ glycoproteomics analysis workflows.")
 (define-public r-glyparse
   (package
     (name "r-glyparse")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyparse" version))
        (sha256
-        (base32 "1xb1sww3ad65pwnmjkn42m43vngivw7pyndrzy79smyhf4y0n7ig"))))
+        (base32 "1n212gylc5qmi5aj1h6ririagqlqhzvxq9xi56bmk9khqbdnh3yn"))))
     (properties `((upstream-name . "glyparse")))
     (build-system r-build-system)
     (arguments
@@ -18244,13 +18281,13 @@ uncertainty of gene sets, Schmid et al. (2016)
 (define-public r-ghypernet
   (package
     (name "r-ghypernet")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ghypernet" version))
        (sha256
-        (base32 "0k4w37vnhpanpa80la8rscgimnnzzid5v59109xfbbz1xxx1bb49"))))
+        (base32 "1pq76dyr075bv5iafx6lvk81wi5hr9d30jimxy26lghinja4rw2q"))))
     (properties `((upstream-name . "ghypernet")))
     (build-system r-build-system)
     (arguments
@@ -18264,7 +18301,6 @@ uncertainty of gene sets, Schmid et al. (2016)
                              r-plyr
                              r-pbmcapply
                              r-numbers
-                             r-extradistr
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://ghyper.net")
@@ -18277,13 +18313,13 @@ it, check the vignettes for a quick tutorial.  Please reference its use as
 Casiraghi, G., Nanumyan, V. (2019) <doi:10.5281/zenodo.2555300> together with
 those relevant references from the one listed below.  The package is based on
 the research developed at the Chair of Systems Design, ETH Zurich.  Casiraghi,
-G., Nanumyan, V., Scholtes, I., Schweitzer, F. (2016) <@code{arXiv:1607.02441>}.
- Casiraghi, G., Nanumyan, V., Scholtes, I., Schweitzer, F. (2017)
-<doi:10.1007/978-3-319-67256-4_11>.  Casiraghi, G., (2017)
-<@code{arXiv:1702.02048>} Brandenberger, L., Casiraghi, G., Nanumyan, V.,
-Schweitzer, F. (2019) <doi:10.1145/3341161.3342926> Casiraghi, G. (2019)
-<doi:10.1007/s41109-019-0241-1>.  Casiraghi, G., Nanumyan, V. (2021)
-<doi:10.1038/s41598-021-92519-y>.  Casiraghi, G. (2021)
+G., Nanumyan, V., Scholtes, I., Schweitzer, F. (2016)
+<doi:10.48550/@code{arXiv.1607.02441>}.  Casiraghi, G., Nanumyan, V., Scholtes,
+I., Schweitzer, F. (2017) <doi:10.1007/978-3-319-67256-4_11>.  Casiraghi, G.,
+(2017) <doi:10.48550/@code{arXiv.1702.02048>}.  Brandenberger, L., Casiraghi,
+G., Nanumyan, V., Schweitzer, F. (2019) <doi:10.1145/3341161.3342926>.
+Casiraghi, G. (2019) <doi:10.1007/s41109-019-0241-1>.  Casiraghi, G., Nanumyan,
+V. (2021) <doi:10.1038/s41598-021-92519-y>.  Casiraghi, G. (2021)
 <doi:10.1088/2632-072X/ac0493>.")
     (license license:agpl3)))
 
@@ -18955,29 +18991,6 @@ the methods used in this package, see Ritz and Streibig (2008)
 bar segment.  Also provides geometries for subgroup bordering and text
 annotation.")
     (license license:gpl3+)))
-
-(define-public r-ggtranslate
-  (package
-    (name "r-ggtranslate")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggtranslate" version))
-       (sha256
-        (base32 "0q0gydckcpm91fgmkq4pbs55b75hh3ryyifij0clyq4m9pvxi9sw"))))
-    (properties `((upstream-name . "ggtranslate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-ggplot2))
-    (home-page "https://github.com/mathiasleroy/ggtranslate")
-    (synopsis "'ggplot2' Extension for Translating Plot Text")
-    (description
-     "This package provides a simple way to translate text elements in ggplot2 plots
-using a dictionary-based approach.")
-    (license license:expat)))
 
 (define-public r-ggtrace
   (package
@@ -29552,47 +29565,6 @@ ancestry along the genome change after admixture.  Full description can be found
 in Janzen (2021) <doi:10.1111/2041-210X.13612>.")
     (license license:gpl2+)))
 
-(define-public r-genogeographer
-  (package
-    (name "r-genogeographer")
-    (version "0.1.19")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "genogeographer" version))
-       (sha256
-        (base32 "0q56ysv5333i27iv1gmd9ilbgn3rw8sb9yq7z76gmn1fak5aqci8"))))
-    (properties `((upstream-name . "genogeographer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinycssloaders
-                             r-shiny
-                             r-rmarkdown
-                             r-rlang
-                             r-rio
-                             r-readr
-                             r-purrr
-                             r-maps
-                             r-magrittr
-                             r-leaflet
-                             r-knitr
-                             r-ggplot2
-                             r-forcats
-                             r-dt
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=genogeographer")
-    (synopsis "Methods for Analysing Forensic Ancestry Informative Markers")
-    (description
-     "Evaluates likelihood ratio tests for alleged ancestry.  Implements the methods
-of Tvedebrink et al (2018) <doi:10.1016/j.tpb.2017.12.004>.")
-    (license license:gpl2+)))
-
 (define-public r-genodds
   (package
     (name "r-genodds")
@@ -36890,6 +36862,32 @@ function @code{delta_t()} returns the value of delta-T in units of seconds.")
 materials.")
     (license license:expat)))
 
+(define-public r-galaxyr
+  (package
+    (name "r-galaxyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GalaxyR" version))
+       (sha256
+        (base32 "0ckdbz77d2f29fmzdkfsbvq4nqvmrjx6qc82ykfkmqdy2hg9a9dc"))))
+    (properties `((upstream-name . "GalaxyR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/JulFrey/GalaxyR")
+    (synopsis "'Galaxy' API Implementation")
+    (description
+     "On Galaxy platforms like Galaxy Europe <https://usegalaxy.eu>, many tools and
+workflows can run directly on a high-performance computer. @code{GalaxyR}
+connects R with Galaxy platforms API <https://usegalaxy.eu/api/docs> and allows
+credential management, uploading data, invoking workflows or tools, checking
+their status, and downloading results.")
+    (license license:gpl3)))
+
 (define-public r-galaxias
   (package
     (name "r-galaxias")
@@ -37127,36 +37125,6 @@ Chapter 11.")
 the gain of passive device installation on wind turbine generators.  H. Hwangbo,
 Y. Ding, and D. Cabezon (2019) <@code{arXiv:1906.05776>}.")
     (license license:gpl3)))
-
-(define-public r-gaiah
-  (package
-    (name "r-gaiah")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gaiah" version))
-       (sha256
-        (base32 "1s2chr3zjgvmmic178c1fixbvf501q7jvxdg8204jalh9iii14vb"))))
-    (properties `((upstream-name . "gaiah")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-rlang
-                             r-raster
-                             r-magrittr
-                             r-geosphere
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=gaiah")
-    (synopsis
-     "Genetic and Isotopic Assignment Accounting for Habitat Suitability")
-    (description
-     "This package provides tools for using genetic markers, stable isotope data, and
-habitat suitability data to calculate posterior probabilities of breeding origin
-of migrating birds.")
-    (license license:cc0)))
 
 (define-public r-gagerr
   (package

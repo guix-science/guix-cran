@@ -2137,6 +2137,33 @@ are running in a background job.  Parallel computing is also easier with the
 workers parameter.")
     (license license:expat)))
 
+(define-public r-curricularcomplexitydata
+  (package
+    (name "r-curricularcomplexitydata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CurricularComplexityData" version))
+       (sha256
+        (base32 "1b9z22lav84ii845xjhq5nyc89nkbn8bmjpz002dx2ml2aw8qbfv"))))
+    (properties `((upstream-name . "CurricularComplexityData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=CurricularComplexityData")
+    (synopsis "Data for Exploring Curricular Complexity")
+    (description
+     "This package provides igraph objects representing engineering plans of study
+across multiple disciplines and institutions.  The data are intended for use
+with the @code{CurricularComplexity} package (Reeping, 2026)
+<https://CRAN.R-project.org/package=@code{CurricularComplexity>} to support
+analyses of curricular structure.  The package leverages network analysis
+approaches implemented in igraph (CsÃ¡rdi et al., 2025)
+<doi:10.5281/zenodo.7682609>.")
+    (license license:expat)))
+
 (define-public r-curricularcomplexity
   (package
     (name "r-curricularcomplexity")
@@ -4853,13 +4880,13 @@ et al., 2023 <doi:10.1016/j.cliser.2023.100345> for details.")
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.4.4")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSHShydRology" version))
        (sha256
-        (base32 "15slwvlgl8h2jb208yxkpjg784raza7zlw3ql2m47dg0c8fr8iyy"))))
+        (base32 "1zqkcw6x1jdq8f59zczkphj54hnhqv4iga67prh19rvs6q0hssw2"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (arguments
@@ -4877,7 +4904,8 @@ et al., 2023 <doi:10.1016/j.cliser.2023.100345> for details.")
                              r-mgbt
                              r-magrittr
                              r-lubridate
-                             r-httr
+                             r-kendall
+                             r-httr2
                              r-ggspatial
                              r-ggplot2
                              r-fields
@@ -17276,24 +17304,19 @@ non-regular canvas.")
 (define-public r-contoso
   (package
     (name "r-contoso")
-    (version "1.2.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contoso" version))
        (sha256
-        (base32 "0wg5kkr2jqhpbrnd81vbszpd5jd2mwxhgcvi94j3yk01wk3pfqcw"))))
+        (base32 "1858zdpd89zx2h76ygaj13sldi6lw7rds6xx0hq2x744n1d4sg1j"))))
     (properties `((upstream-name . "contoso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-duckdb
-                             r-dplyr
-                             r-dbi
-                             r-cli
-                             r-cli
-                             r-assertthat))
+    (propagated-inputs (list r-duckdb r-dplyr r-dbi r-cli r-assertthat))
     (home-page "https://usrbinr.github.io/contoso/")
     (synopsis "Dataset of the 'Contoso' Company")
     (description
@@ -17308,11 +17331,11 @@ location, occupation, and birthday. - \"store\": Provides information about
 stores, including location, size, status, and operational dates. - \"orders\":
 Contains details about customer orders, including order and delivery dates,
 store, and customer data. - \"product\": Contains data on products, including
-attributes such as product name, category, price, cost, and weight. - \"date\": A
-time-based table that includes date-related attributes like year, month,
-quarter, day, and working day indicators.  This dataset is ideal for practicing
-data analysis, performing time-series analysis, creating reports, or simulating
-business intelligence scenarios.")
+attributes such as product name, category, price, cost, and weight. -
+\"calendar\": A time-based table that includes date-related attributes like year,
+month, quarter, day, and working day indicators.  This dataset is ideal for
+practicing data analysis, performing time-series analysis, creating reports, or
+simulating business intelligence scenarios.")
     (license license:expat)))
 
 (define-public r-contingencytables
@@ -21698,6 +21721,36 @@ and complex methods for oft used generics.  Originally adapted from the
 space in line with the hypothesis by chance.  The package comes with a Shiny
 application in which the calculations can be conducted as well.")
     (license license:gpl2+)))
+
+(define-public r-complex
+  (package
+    (name "r-complex")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "complex" version))
+       (sha256
+        (base32 "0421vyg5wjbjvymsvjvmhydpvb41fs1ap4h2swrmj08srccrjd0d"))))
+    (properties `((upstream-name . "complex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-nloptr
+                             r-mvtnorm
+                             r-legion
+                             r-greybox))
+    (home-page "https://github.com/config-i1/complex")
+    (synopsis "Time Series Analysis and Forecasting Using Complex Variables")
+    (description
+     "This package implements the instruments for complex-valued modelling, including
+time series analysis and forecasting.  This is based on the monograph by
+Svetunkov & Svetunkov (2024) <doi: 10.1007/978-3-031-62608-1>.")
+    (license license:lgpl2.1)))
 
 (define-public r-completejourney
   (package
@@ -37000,22 +37053,19 @@ CINE(Classification International Normalized of Education) for Peru.")
 (define-public r-cinar
   (package
     (name "r-cinar")
-    (version "0.2.3")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cinaR" version))
        (sha256
-        (base32 "0kdf3xbhg7yhpr67fqbbwqm16fvv3dj9f7bvfqliy3xhpxpg23qi"))))
+        (base32 "1c94wsndxlppl3xqzi3niinjmgr813h49jbfyjmvf9g7d30nnl60"))))
     (properties `((upstream-name . "cinaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-writexl
-                             r-txdb-mmusculus-ucsc-mm10-knowngene
-                             r-txdb-hsapiens-ucsc-hg38-knowngene
-                             r-txdb-hsapiens-ucsc-hg19-knowngene
                              r-sva
                              r-rcolorbrewer
                              r-preprocesscore
@@ -37028,8 +37078,8 @@ CINE(Classification International Normalized of Education) for Peru.")
                              r-edger
                              r-dplyr
                              r-deseq2
-                             r-chipseeker))
-    (native-inputs (list r-knitr))
+                             r-biocmanager))
+    (native-inputs (list r-rmarkdown r-markdown r-knitr))
     (home-page "https://github.com/eonurk/cinaR/")
     (synopsis "Computational Pipeline for Bulk 'ATAC-Seq' Profiles")
     (description
@@ -37149,41 +37199,6 @@ directly apply these in a deconvolution of cell mixes context.  Altogether,
 @code{CimpleG} provides a complete computational framework for the delineation
 of DNAm signatures and cellular deconvolution.  For more details see MaiÃ© et
 al. (2023) <doi:10.1186/s13059-023-03000-0>.")
-    (license license:gpl3+)))
-
-(define-public r-cimple
-  (package
-    (name "r-cimple")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CIMPLE" version))
-       (sha256
-        (base32 "0dd3p7p8zqyxvrwdy8yb15fgixi84k89wxbfcnjygcxws3a8kvjj"))))
-    (properties `((upstream-name . "CIMPLE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-statmod
-                             r-nlme
-                             r-nleqslv
-                             r-mice
-                             r-lme4
-                             r-jmbayes2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=CIMPLE")
-    (synopsis
-     "Analysis of Longitudinal Electronic Health Record (EHR) Data with Possibly Informative Observational Time")
-    (description
-     "Analyzes longitudinal Electronic Health Record (EHR) data with possibly
-informative observational time.  These methods are grouped into two classes
-depending on the inferential task.  One group focuses on estimating the effect
-of an exposure on a longitudinal biomarker while the other group assesses the
-impact of a longitudinal biomarker on time-to-diagnosis outcomes.  The
-accompanying paper is Du et al (2024) <doi:10.48550/@code{arXiv.2410.13113>}.")
     (license license:gpl3+)))
 
 (define-public r-cimir
@@ -44740,6 +44755,31 @@ time series forecasting.  More information may be obtained from Garai and Paul
 different levels of gene expression.  Multi-component normal mixture models and
 EM algorithms are used for modeling.")
     (license license:asl2.0)))
+
+(define-public r-cec
+  (package
+    (name "r-cec")
+    (version "0.11.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CEC" version))
+       (sha256
+        (base32 "06ynzfhr2ka95dqclj6yc61nklvzvvbmhlcwfj2cp9hqb9a9aw3x"))))
+    (properties `((upstream-name . "CEC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/swarm-lab/cec")
+    (synopsis "Cross-Entropy Clustering")
+    (description
+     "Splits data into Gaussian type clusters using the Cross-Entropy Clustering
+('CEC') method.  This method allows for the simultaneous use of various types of
+Gaussian mixture models, for performing the reduction of unnecessary clusters,
+and for discovering new clusters by splitting them.  CEC is based on the work of
+Spurek, P. and Tabor, J. (2014) <doi:10.1016/j.patcog.2014.03.006>.")
+    (license license:gpl3)))
 
 (define-public r-ceblr
   (package

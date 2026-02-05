@@ -12596,49 +12596,6 @@ of sample predictability based on out of sample mean squared error comparisons
 given in Gonzalo and Pitarakis (2023) <doi:10.1016/j.ijforecast.2023.10.005>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-predictor
-  (package
-    (name "r-predictor")
-    (version "4.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "predictoR" version))
-       (sha256
-        (base32 "102q3rl9ra18r30phvn83r9a9dpw075zsdlfns6p1vk86wahvfjv"))))
-    (properties `((upstream-name . "predictoR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-trainer
-                             r-shinyjs
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinycustomloader
-                             r-shinyace
-                             r-shiny
-                             r-rpart-plot
-                             r-rlang
-                             r-loader
-                             r-htmltools
-                             r-golem
-                             r-glmnet
-                             r-echarts4r
-                             r-dt
-                             r-dplyr
-                             r-config
-                             r-colourpicker))
-    (home-page "https://promidat.website/")
-    (synopsis "Predictive Data Analysis System")
-    (description
-     "Perform a supervised data analysis on a database through a shiny graphical
-interface.  It includes methods such as K-Nearest Neighbors, Decision Trees, ADA
-Boosting, Extreme Gradient Boosting, Random Forest, Neural Networks, Deep
-Learning, Support Vector Machines and Bayesian Methods.")
-    (license license:gpl2+)))
-
 (define-public r-predictnmb
   (package
     (name "r-predictnmb")
@@ -13823,6 +13780,32 @@ from projection subsets of data and later combined by suitably-chosen unknown
 weights.  The philosophy of the package is described in Guo G. (2020)
 <doi:10.1007/s00180-020-00974-4>.")
     (license license:expat)))
+
+(define-public r-ppweibull
+  (package
+    (name "r-ppweibull")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ppweibull" version))
+       (sha256
+        (base32 "1rjhh8pgy2na5l8q4sxsfvc2l8111wjqr38kc703z85p1q8lr2vw"))))
+    (properties `((upstream-name . "ppweibull")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-segmented r-pracma r-nloptr r-msm))
+    (home-page "https://cran.r-project.org/package=ppweibull")
+    (synopsis "Piecewise Lifetime Models")
+    (description
+     "This package provides functions for estimation and data generation for several
+piecewise lifetime distributions.  The package implements the power piecewise
+Weibull model, which includes the piecewise Rayleigh and piecewise exponential
+models as special cases.  See Feigl and Zelen (1965) <doi:10.2307/2528247> for
+methodological details.")
+    (license license:gpl2+)))
 
 (define-public r-ppwdeming
   (package
@@ -17031,13 +17014,13 @@ plotted in a number of ways with nice barplots and boxplots.")
 (define-public r-portfolioanalytics
   (package
     (name "r-portfolioanalytics")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PortfolioAnalytics" version))
        (sha256
-        (base32 "0r8h5va6pkq98ap0m8j7gh1lpwdwy0l9sfnc826nz8hhv6jfaybv"))))
+        (base32 "07870r08av9srb4spzhd0iyv6i21kzmcijdhxca74npyb0qjah18"))))
     (properties `((upstream-name . "PortfolioAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -25932,35 +25915,6 @@ estimation is used when priors are set.  Methods are provided to estimate
 standard errors or quasi-standard errors for inference as well as to fit
 Plackett-Luce trees.  See the package website or vignette for further details.")
     (license license:gpl3)))
-
-(define-public r-placer
-  (package
-    (name "r-placer")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "placer" version))
-       (sha256
-        (base32 "0d7b6mkyyrcjn1pqxlj9mjis6vzks986i7vhc8ffkp8hz8sc7271"))))
-    (properties `((upstream-name . "placer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=placer")
-    (synopsis "PLastic ACcumulation Estimate using R (PLACER)")
-    (description
-     "Assessment of the prevalence of plastic debris in bird nests based on bootstrap
-replicates.  The package allows for calculating bootstrapped 95% confidence
-intervals for the estimated prevalence of debris.  Combined with a Bayesian
-approach, the resampling simulations can be also used to define appropriate
-sample sizes to detect prevalence of plastics.  The method has wide application,
-and can also be applied to estimate confidence intervals and define sample sizes
-for the prevalence of plastics ingested by any other organisms.  The method is
-described in Tavares et al. (Submitted).")
-    (license license:expat)))
 
 (define-public r-plac
   (package
@@ -42861,13 +42815,13 @@ described in Ulrich Riegel (2018) <doi:10.1007/s13385-018-0177-3>.")
 (define-public r-pare
   (package
     (name "r-pare")
-    (version "0.1.15")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PaRe" version))
        (sha256
-        (base32 "123g1bh503dk5q5a497ibhnl1hrk380d61h5r08dci04db0frrsy"))))
+        (base32 "1jsw5mzka67yq98dr1y89l5brklmsvg0hvfjkq1596gs7lpzhbl7"))))
     (properties `((upstream-name . "PaRe")))
     (build-system r-build-system)
     (arguments
@@ -43955,19 +43909,19 @@ error variance decompositions.")
 (define-public r-paneltm
   (package
     (name "r-paneltm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PanelTM" version))
        (sha256
-        (base32 "1x9zzs88cprwjlwwgnfvv7fmx12p57s5wwxsgjch8i11fzyjkw48"))))
+        (base32 "0wajbkmnx8c17blbiwnp2vw2aciqsjnl25dlljgb7hs4shjspja0"))))
     (properties `((upstream-name . "PanelTM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma))
+    (propagated-inputs (list r-pracma r-mass))
     (home-page "https://cran.r-project.org/package=PanelTM")
     (synopsis
      "Two- And Three-Way Dynamic Panel Threshold Regression Model for Change Point Detection")
@@ -44484,13 +44438,13 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
 (define-public r-pamscapes
   (package
     (name "r-pamscapes")
-    (version "0.14.5")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMscapes" version))
        (sha256
-        (base32 "0whaz5dgxi22hb3sz8ynilnirmzj0ny18ipy1560vssnng7fl2gy"))))
+        (base32 "1kji9d2s2iby3q9q2z1gynn0gfqqm9nkxyjqla3wm11v1nimxwjp"))))
     (properties `((upstream-name . "PAMscapes")))
     (build-system r-build-system)
     (arguments
@@ -44498,7 +44452,6 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
       #:tests? #f))
     (propagated-inputs (list r-tuner
                              r-tidyr
-                             r-tdigest
                              r-signal
                              r-shiny
                              r-sf
@@ -44524,7 +44477,7 @@ system) data from Marine Cadastre <https://hub.marinecadastre.gov>, connecting
 AIS data to GPS coordinates, plotting summaries of various soundscape
 measurements, and downloading relevant environmental variables (wind, swell
 height) from the National Center for Atmospheric Research data server
-<https://rda.ucar.edu/datasets/ds084.1/>.  Most tools were developed to work
+<https://gdex.ucar.edu/datasets/d084001/>.  Most tools were developed to work
 well with output from Triton software, but can be adapted to work with any
 similar measurements.")
     (license (list license:gpl2+ license:gpl3+))))

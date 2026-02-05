@@ -1905,13 +1905,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.3.9")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "17dmkyri2xfmajw8xak76xk9kkiwh01jbbii5xkdl0xdbdz70vbg"))))
+        (base32 "0xskz90ynkfg82llsm9rh6r8n6i7cbh1qz5z4wzbwd5vqiph98jv"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (arguments
@@ -1939,14 +1939,16 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
     (home-page "https://cran.r-project.org/package=lsirm12pl")
     (synopsis "Latent Space Item Response Model")
     (description
-     "Analysis of dichotomous and continuous response data using latent factor by both
-1PL LSIRM and 2PL LSIRM as described in Jeon et al. (2021)
-<doi:10.1007/s11336-021-09762-5>.  It includes original 1PL LSIRM and 2PL LSIRM
-provided for binary response data and its extension for continuous response
-data.  Bayesian model selection with spike-and-slab prior and method for dealing
-data with missing value under missing at random, missing completely at random
-are also supported.  Various diagnostic plots are available to inspect the
-latent space and summary of estimated parameters.")
+     "Analysis of dichotomous, ordinal, and continuous response data using latent
+space item response models (LSIRMs).  Provides 1PL and 2PL LSIRMs for binary
+response data as described in Jeon et al. (2021)
+<doi:10.1007/s11336-021-09762-5>, extensions for continuous response data, and
+graded response models (GRM) for Likert-scale ordinal data as described in De
+Carolis et al. (2025) <doi:10.1080/00273171.2025.2605678>.  Supports Bayesian
+model selection with spike-and-slab priors, adaptive MCMC algorithms, and
+methods for handling missing data under missing at random (MAR) and missing
+completely at random (MCAR) assumptions.  Provides various diagnostic plots to
+inspect the latent space and summaries of estimated parameters.")
     (license license:gpl3)))
 
 (define-public r-lsebootls

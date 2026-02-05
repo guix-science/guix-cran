@@ -4653,13 +4653,13 @@ Gaussian.")
 (define-public r-brickster
   (package
     (name "r-brickster")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickster" version))
        (sha256
-        (base32 "07dbzgpax3ssbh801ywdwdjcqfh2xjr7jq5nsbiryvmgd1c9ai0m"))))
+        (base32 "0iwmn80wm42krj1iazkgcckxsng086mqcj0fp2vgsq8jh0zah791"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
     (arguments
@@ -19758,13 +19758,13 @@ be visualized with various plotting functions and exported into tables.")
 (define-public r-bgw
   (package
     (name "r-bgw")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgw" version))
        (sha256
-        (base32 "0iw36qifawm5jlsjzv4y4kl228hz4clbgzf02dpxv7579nlnibm7"))))
+        (base32 "1m98cns15ff47878l2gzxxxl7rw63arj3xkxs984g0lql4hd0sf2"))))
     (properties `((upstream-name . "bgw")))
     (build-system r-build-system)
     (arguments
@@ -19792,7 +19792,7 @@ implements a function ('bgw_mle.R') that performs maximum likelihood estimation
 probability densities).  The original motivation for producing this package was
 to provide fast, efficient, and reliable MLE for discrete choice models that can
 be called from the Apollo choice modelling R package ( see
-<http://www.apollochoicemodelling.com>).  Starting with the release of Apollo
+<https://www.apollochoicemodelling.com>).  Starting with the release of Apollo
 3.0, BGW is the default estimation package.  However, estimation can also be
 performed using BGW in a stand-alone fashion without using Apollo (as shown in
 simple examples included in the package).  Note also that BGW capabilities are
@@ -22936,13 +22936,13 @@ This package provides a way to call BEAST2 from an R function call.")
 (define-public r-beast
   (package
     (name "r-beast")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beast" version))
        (sha256
-        (base32 "0ikbnzdzp2lv1nh5mxxanra81v4dl6svg3ywqcqd6wgzri70a4ry"))))
+        (base32 "1hhnvxmgix48n1h2c0a2xlny4jljrlpb8bl1ci77k8nlf3n5nlhb"))))
     (properties `((upstream-name . "beast")))
     (build-system r-build-system)
     (arguments
@@ -22964,8 +22964,8 @@ parameters but, conditionally on a set of change-points, only a subset of them
 influences the likelihood.  An exponentially decreasing prior distribution on
 the number of change-points gives rise to a posterior distribution concentrating
 on sparse representations of the underlying sequence, but also available is the
-Poisson distribution.  See Papastamoulis et al (2017) <@code{arXiv:1709.06111>}
-for a detailed presentation of the method.")
+Poisson distribution.  See Papastamoulis et al (2019)
+<doi:10.1515/ijb-2018-0052> for a detailed presentation of the method.")
     (license license:gpl2)))
 
 (define-public r-bearishtrader
@@ -27352,13 +27352,13 @@ models can be computed.")
 (define-public r-bayesmallowssmc2
   (package
     (name "r-bayesmallowssmc2")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallowsSMC2" version))
        (sha256
-        (base32 "0vmbax3i8124w3lszxhm5dwlmwwc7a77sa72352032w78j9zcvay"))))
+        (base32 "08yxwyv4chmr62b5zg8jhg63kzpvbvncri0nr87sfmqh3cgzll3w"))))
     (properties `((upstream-name . "BayesMallowsSMC2")))
     (build-system r-build-system)
     (arguments

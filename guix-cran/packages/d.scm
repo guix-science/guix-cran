@@ -8053,53 +8053,6 @@ version has a @code{predict()} function.  For details see ter Braak et al.  2018
 piping operators of different precedence, and flexible syntaxes.")
     (license license:gpl3)))
 
-(define-public r-doublin
-  (package
-    (name "r-doublin")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "doublIn" version))
-       (sha256
-        (base32 "0x22q6i07f49cjyhy9i2b9h818sgadxbhb6zwym2qilgf3mxj57g"))))
-    (properties `((upstream-name . "doublIn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-visnetwork
-                             r-tidyverse
-                             r-shinywidgets
-                             r-shinythemes
-                             r-shinydashboard
-                             r-shiny
-                             r-rjags
-                             r-plotly
-                             r-mstats
-                             r-magrittr
-                             r-lubridate
-                             r-ggplot2
-                             r-flexsurv
-                             r-epicontacts
-                             r-dt
-                             r-dplyr
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=doublIn")
-    (synopsis
-     "Estimate Incubation or Latency Time using Doubly Interval Censored Observations")
-    (description
-     "Visualize contact tracing data using a shiny app and estimate the incubation or
-latency time of an infectious disease respecting the following characteristics
-in the analysis; (i) doubly interval censoring with (partly) overlapping or
-distinct windows; (ii) an infection risk corresponding to exponential growth;
-(iii) right truncation allowing for individual truncation times; (iv) different
-choices concerning the family of the distribution.  For our earlier work, we
-refer to Arntzen et al. (2023) <doi:10.1002/sim.9726>.  A paper describing our
-approach in detail will follow.")
-    (license license:gpl3+)))
-
 (define-public r-doubleml
   (package
     (name "r-doubleml")
@@ -14754,6 +14707,47 @@ and subgroup information for each group.  Based on the analytical framework laid
 out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
     (license license:expat)))
 
+(define-public r-discos
+  (package
+    (name "r-discos")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiSCos" version))
+       (sha256
+        (base32 "1fpx16m85j41l0xy3lmnnmx0nnjq6776w6pg77wb864ffaq877xg"))))
+    (properties `((upstream-name . "DiSCos")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack
+                             r-pracma
+                             r-mass
+                             r-ggplot2
+                             r-extremestat
+                             r-evmix
+                             r-data-table
+                             r-cvxr))
+    (native-inputs (list r-knitr))
+    (home-page "http://www.davidvandijcke.com/DiSCos/")
+    (synopsis "Distributional Synthetic Controls Estimation")
+    (description
+     "The method of synthetic controls is a widely-adopted tool for evaluating causal
+effects of policy changes in settings with observational data.  In many settings
+where it is applicable, researchers want to identify causal effects of policy
+changes on a treated unit at an aggregate level while having access to data at a
+finer granularity.  This package implements a simple extension of the synthetic
+controls estimator, developed in Gunsilius (2023) <doi:10.3982/ECTA18260>, that
+takes advantage of this additional structure and provides nonparametric
+estimates of the heterogeneity within the aggregate unit.  The idea is to
+replicate the quantile function associated with the treated unit by a weighted
+average of quantile functions of the control units.  The package contains tools
+for aggregating and plotting the resulting distributional estimates, as well as
+for carrying out inference on them.")
+    (license license:expat)))
+
 (define-public r-discord
   (package
     (name "r-discord")
@@ -15666,6 +15660,31 @@ networks: a new perspective\", Clemente, G.P., Grassi, R. (2017),
 confidence intervals for population health applications.  Functions are flexible
 to handle any grouping variable and age bands, allowing reproducible and
 automated analyses.")
+    (license license:expat)))
+
+(define-public r-directadjusting
+  (package
+    (name "r-directadjusting")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "directadjusting" version))
+       (sha256
+        (base32 "0r5h1dil0h2mymyc3c7fac2s368cr75dg0dhkwypnqgz2f5av2bp"))))
+    (properties `((upstream-name . "directadjusting")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (home-page "https://github.com/FinnishCancerRegistry/directadjusting/")
+    (synopsis "Directly Adjusted Estimates")
+    (description
+     "Compute estimates and confidence intervals of weighted averages quickly and
+easily.  Weighted averages are computed using data.table for speed.  Confidence
+intervals are approximated using the delta method with either using known
+formulae or via algorithmic or numerical integration.")
     (license license:expat)))
 
 (define-public r-direct
@@ -31368,35 +31387,6 @@ people with a background in the humanities and arts.  Examples and details can
 be viewed in this presentation from 2026:
 <https://formacao2026.netlify.app/assets/modulo_3/modulo3#/title-slide>.")
     (license license:expat)))
-
-(define-public r-datacomparer
-  (package
-    (name "r-datacomparer")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dataCompareR" version))
-       (sha256
-        (base32 "1rapnlbi43z4sx4rq3fp8kpqhdj4g02fi3xglldbdp0c59f9vacg"))))
-    (properties `((upstream-name . "dataCompareR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi r-markdown r-knitr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/capitalone/dataCompareR")
-    (synopsis "Compare Two Data Frames and Summarise the Difference")
-    (description
-     "Easy comparison of two tabular data objects in R. Specifically designed to show
-differences between two sets of data in a useful way that should make it easier
-to understand the differences, and if necessary, help you work out how to remedy
-them.  Aims to offer a more useful output than @code{all.equal()} when your two
-data sets do not match, but isn't intended to replace @code{all.equal()} as a
-way to test for equality.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-datacompare
   (package

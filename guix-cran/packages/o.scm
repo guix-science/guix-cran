@@ -2682,42 +2682,6 @@ merge them by taking the mean, max, or min value of these probes.  Or we can
 keep multiple probes by appending sequence numbers to duplicate the RAP-DB ID.")
     (license license:gpl3)))
 
-(define-public r-orus
-  (package
-    (name "r-orus")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oRus" version))
-       (sha256
-        (base32 "0q6hgiidcpm95pyisndihxjg78v6k1zycdqd72309aankdk0g5h4"))))
-    (properties `((upstream-name . "oRus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xlsx
-                             r-topicmodels
-                             r-tm
-                             r-tidytext
-                             r-tibble
-                             r-stringr
-                             r-rmarkdown
-                             r-knitr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/melvidoni/oRus")
-    (synopsis "Operational Research User Stories")
-    (description
-     "This package provides a first implementation of automated parsing of user
-stories, when used to defined functional requirements for operational research
-mathematical models.  It allows reading user stories, splitting them on the
-who-what-why template, and classifying them according to the parts of the
-mathematical model that they represent.  Also provides semantic grouping of
-stories, for project management purposes.")
-    (license license:gpl3)))
-
 (define-public r-ortsc
   (package
     (name "r-ortsc")
@@ -4719,6 +4683,42 @@ your workflow for optimal productivity.")
      "Turn tidymodels workflows into objects containing the sufficient sequential
 equations to perform predictions.  These smaller objects allow for low
 dependency prediction locally or directly in databases.")
+    (license license:expat)))
+
+(define-public r-orangutan
+  (package
+    (name "r-orangutan")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Orangutan" version))
+       (sha256
+        (base32 "0hqvc5794rn7gwmq4gnx4f7p5qhb6fvybdvwd55hxi0l6pyr4kyv"))))
+    (properties `((upstream-name . "Orangutan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-vegan
+                             r-tidyr
+                             r-rlang
+                             r-rcolorbrewer
+                             r-multcompview
+                             r-ggplot2
+                             r-dunn-test
+                             r-dplyr
+                             r-adegenet))
+    (home-page "https://cran.r-project.org/package=Orangutan")
+    (synopsis "Automated Analysis of Phenotypic Data")
+    (description
+     "This package provides functions to analyze and visualize meristic and mensural
+phenotypic data in a comparative framework.  The package implements an automated
+pipeline that summarizes traits, identifies diagnostic variables among groups,
+performs multivariate and univariate statistical analyses, and produces
+publication-ready graphics.  An earlier implementation (v1.0.0) is described in
+Torres (2025) <doi:10.64898/2025.12.18.695244>.")
     (license license:expat)))
 
 (define-public r-oralopioids
@@ -9958,50 +9958,6 @@ A. and Boucher, K (2002) <doi:10.1016/S0025-5564(02)00086-X>.")
      "Provide functionality for cancer subtyping using nearest centroids or machine
 learning methods based on TCGA data.")
     (license license:gpl3)))
-
-(define-public r-oncomsm
-  (package
-    (name "r-oncomsm")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oncomsm" version))
-       (sha256
-        (base32 "1crjpfa7yxcafnhsxs2sbf153lsr9ffaqdxjxp0zkd7hiash0mfm"))))
-    (properties `((upstream-name . "oncomsm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rlang
-                             r-rcppparallel
-                             r-rcppnumerical
-                             r-rcppeigen
-                             r-rcpp
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-furrr
-                             r-dplyr
-                             r-checkmate
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://boehringer-ingelheim.github.io/oncomsm/")
-    (synopsis "Bayesian Multi-State Models for Early Oncology")
-    (description
-     "This package implements methods to fit a parametric Bayesian multi-state model
-to tumor response data.  The model can be used to sample from the predictive
-distribution to impute missing data and calculate probability of success for
-custom decision criteria in early clinical trials during an ongoing trial.  The
-inference is implemented using stan'.")
-    (license license:asl2.0)))
 
 (define-public r-oncofilterfast
   (package

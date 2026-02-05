@@ -48557,13 +48557,13 @@ test suites.")
 (define-public r-markets
   (package
     (name "r-markets")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markets" version))
        (sha256
-        (base32 "05w9zfgb09987sw7872nmy766ax64jily5dc0nr9526wjzr4zj1n"))))
+        (base32 "1pi3j4wk449pivk3px32crq2x7g26f5ydldy2jgsvrvby6k66ixk"))))
     (properties `((upstream-name . "markets")))
     (build-system r-build-system)
     (arguments
@@ -48814,6 +48814,33 @@ networks.  The package is designed for researchers in clinical and biomedical
 fields who need to model longitudinal data and explore relationships between
 variables For more details see Bates et al. (2015) <doi:10.18637/jss.v067.i01>.")
     (license license:gpl3)))
+
+(define-public r-marinepredator
+  (package
+    (name "r-marinepredator")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "marinepredator" version))
+       (sha256
+        (base32 "0jf7khis7asp94q2wawlrd1fy9nmayx6jgjncs91m2gccmwx81nh"))))
+    (properties `((upstream-name . "marinepredator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/urbs-dev/marinepredator")
+    (synopsis "Marine Predators Algorithm")
+    (description
+     "Implementation of the Marine Predators Algorithm (MPA) in R. MPA is a
+nature-inspired optimization algorithm that follows the rules governing optimal
+foraging strategy and encounter rate policy between predator and prey in marine
+ecosystems.  Based on the paper by Faramarzi et al. (2020)
+<doi:10.1016/j.eswa.2020.113377>.")
+    (license license:expat)))
 
 (define-public r-marima
   (package
@@ -50982,13 +51009,13 @@ instrument tests by Stock and Yogo (2005) <doi:10.1017/CBO9780511614491.006>.")
 (define-public r-manydist
   (package
     (name "r-manydist")
-    (version "0.4.8")
+    (version "0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydist" version))
        (sha256
-        (base32 "1j12sc1x5615pb6aar5y76g3lpcq5gf41399x1w7jlxkymgrjkx6"))))
+        (base32 "1zqn03vdvckq8l9c4hp67vh2a9fn5127yppz8phmy52va6xc7id4"))))
     (properties `((upstream-name . "manydist")))
     (build-system r-build-system)
     (arguments
@@ -52468,19 +52495,19 @@ squares (SS) of clustering.")
 (define-public r-maive
   (package
     (name "r-maive")
-    (version "0.1.11")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAIVE" version))
        (sha256
-        (base32 "0y6x6m915hygcvzgy9ls13vz1s2jb0dxx7jy00j1rxl7bnz8iz9v"))))
+        (base32 "06g2vq0ydx59y4qbjqbmcal3d7bfrxn99h3j1x73qzv5f11f6xla"))))
     (properties `((upstream-name . "MAIVE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-clubsandwich))
+    (propagated-inputs (list r-clubsandwich r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://meta-analysis.cz/maive/")
     (synopsis "Meta Analysis Instrumental Variable Estimator")

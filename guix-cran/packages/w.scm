@@ -3429,6 +3429,31 @@ by Guha and Li (2024) <doi:10.1093/biomtc/ujae070>, which includes an extension
 of inverse probability weights for data integration settings.")
     (license license:gpl3)))
 
+(define-public r-wlsd
+  (package
+    (name "r-wlsd")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wlsd" version))
+       (sha256
+        (base32 "19f652vpzq7bj1h4jdmkdddpqy9zajcsgg7mhpa4jpyln4ivb4pj"))))
+    (properties `((upstream-name . "wlsd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ci2131a/wlsd")
+    (synopsis "Wrangling Longitudinal Survival Data")
+    (description
+     "Streamlines the process of transitioning between data formats commonly used in
+survival analysis.  Functions convert longitudinal data between formats used as
+input for survival models as well as support overall preparation.  Users are
+able to focus on model building rather than data wrangling.")
+    (license license:gpl3)))
+
 (define-public r-wlreg
   (package
     (name "r-wlreg")
@@ -7637,13 +7662,13 @@ from air temperature and air moisture.")
 (define-public r-weatherjoin
   (package
     (name "r-weatherjoin")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weatherjoin" version))
        (sha256
-        (base32 "0ifxvdm2c8nai03k07385z03v01c1ab85bx0y8dz2d50w7pwxwfs"))))
+        (base32 "0d5sqp7cv14dy1z98v3n81z0ldmn083wywi1217h5fs6rjqm8vfq"))))
     (properties `((upstream-name . "weatherjoin")))
     (build-system r-build-system)
     (arguments

@@ -9503,13 +9503,13 @@ lost nor inappropriately cut.")
 (define-public r-hexify
   (package
     (name "r-hexify")
-    (version "0.3.8")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexify" version))
        (sha256
-        (base32 "0i0x17yk395bv7824miajfr5isrdy0cfkr2kfkq7fbhh1y4pgxz8"))))
+        (base32 "0b9f3k1lzhzws4gvvsggbh4zanhbd35iclmz6hhf9hp0kpsy7vzw"))))
     (properties `((upstream-name . "hexify")))
     (build-system r-build-system)
     (arguments
@@ -11772,13 +11772,13 @@ body mass index etc.  related to fitness and health of a person.")
 (define-public r-healthbr
   (package
     (name "r-healthbr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthbR" version))
        (sha256
-        (base32 "0z8lmg32hdwnbnm2s0ws5xw4svnidq8m86bm53q9sh3xr4b2lhrl"))))
+        (base32 "1d0gkb8im9f4x8ljd1arzyhd4gayshwjlfkrmx5f2dlzfz23s7yw"))))
     (properties `((upstream-name . "healthbR")))
     (build-system r-build-system)
     (arguments
@@ -11792,8 +11792,7 @@ body mass index etc.  related to fitness and health of a person.")
                              r-janitor
                              r-dplyr
                              r-curl
-                             r-cli
-                             r-arrow))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SidneyBissoli/healthbR")
     (synopsis "Access Brazilian Public Health Data")

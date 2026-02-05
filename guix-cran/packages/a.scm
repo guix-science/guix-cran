@@ -1174,6 +1174,42 @@ nested JSON responses.  The AWDB can be found at
 <https://wcc.sc.egov.usda.gov/@code{awdbRestApi/swagger-ui/index.html>}.")
     (license license:expat)))
 
+(define-public r-avstrat
+  (package
+    (name "r-avstrat")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "avstrat" version))
+       (sha256
+        (base32 "0y7braqhz7iyrbblxq5p53b508sxqva1vd5acrd4njpihxd7y390"))))
+    (properties `((upstream-name . "avstrat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shiny
+                             r-rlang
+                             r-patchwork
+                             r-leaflet
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=avstrat")
+    (synopsis "Stratigraphic Data Processing and Section Plots")
+    (description
+     "Data processing and generating stratigraphic sections for volcanic deposits and
+tephrastratigraphy.  Package was developed for studies on Alaska volcanoes
+(\"av\") where stratigraphic (\"strat\") figures are needed for interpreting
+eruptive histories, but the methods are applicable to any sediment stratigraphy
+project.  Plotting styles inspired by \"@code{SedLog}\" (Zervas et al.  2009)
+<doi:10.1016/j.cageo.2009.02.009> but with more customizable outputs and
+flexible data input based on best practice recommendations for the tephra
+community (Wallace et al.  2022) <doi:10.1038/s41597-022-01515-y>.")
+    (license license:cc0)))
+
 (define-public r-avseqmc
   (package
     (name "r-avseqmc")
@@ -9809,19 +9845,19 @@ contains functions to calculate the buffer factors.")
 (define-public r-aquadtree
   (package
     (name "r-aquadtree")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQuadtree" version))
        (sha256
-        (base32 "1976mg76lpgvxg2zrg86r4zmrgspzj6h3zx6s6qpdd8nzy6f320i"))))
+        (base32 "08g39gbhpymy2c3smq7da6gsc75flsn2fkwr5p7vbk7zcb8px0kb"))))
     (properties `((upstream-name . "AQuadtree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp r-dplyr))
+    (propagated-inputs (list r-sp r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AQuadtree")
     (synopsis "Confidentiality of Spatial Point Data")
@@ -12978,13 +13014,13 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
 (define-public r-anomo
   (package
     (name "r-anomo")
-    (version "1.2.2")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anomo" version))
        (sha256
-        (base32 "1yxj9qvmg1p3q2c3ijcv8c98skh99vflsdsv677l59pipbb6ijsp"))))
+        (base32 "0fk5sq7sn8wd18g2yd2c7r6sv42dkywlbgwyr7c00307bb0209f3"))))
     (properties `((upstream-name . "anomo")))
     (build-system r-build-system)
     (arguments
@@ -15859,46 +15895,6 @@ guarantees.  Chen, S., Ma, S., Xue, L., & Zou, H. (2020)
 <doi:10.1198/106186006X113430>.  Zou, H., & Xue, L. (2018)
 <doi:10.1109/JPROC.2018.2846588>.")
     (license license:expat)))
-
-(define-public r-amanida
-  (package
-    (name "r-amanida")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "amanida" version))
-       (sha256
-        (base32 "1177nadl66xmbvp474951rfyf4lczhmwxq3bwxzivh0gzcq80bys"))))
-    (properties `((upstream-name . "amanida")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-webchem
-                             r-tidyverse
-                             r-tidyr
-                             r-tibble
-                             r-rmarkdown
-                             r-readxl
-                             r-readr
-                             r-magrittr
-                             r-knitr
-                             r-kableextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mariallr/amanida")
-    (synopsis "Meta-Analysis for Non-Integral Data")
-    (description
-     "Combination of results for meta-analysis using significance and effect size
-only.  P-values and fold-change are combined to obtain a global significance on
-each metabolite.  Produces a volcano plot summarising the relevant results from
-meta-analysis.  Vote-counting reports for metabolites.  And explore plot to
-detect discrepancies between studies at a first glance.  Methodology is
-described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
-    (license license:gpl3)))
 
 (define-public r-amadeus
   (package
@@ -21062,13 +21058,13 @@ custom age distributions are desired given a vector of birth dates.")
 (define-public r-agebanddecomposition
   (package
     (name "r-agebanddecomposition")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AgeBandDecomposition" version))
        (sha256
-        (base32 "19nc60qbjxad2z7i598r9nyb1m5ibgljnrb7w98qdjljr8bhdzbf"))))
+        (base32 "1lssfqgs0nswx16i66av6zw7gknnw93lgyq3sg52kfazsrmq5sdf"))))
     (properties `((upstream-name . "AgeBandDecomposition")))
     (build-system r-build-system)
     (arguments
@@ -21079,7 +21075,8 @@ custom age distributions are desired given a vector of birth dates.")
                              r-readxl
                              r-patchwork
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-dplr))
     (home-page "https://gitlab.com/Puletti/agebanddecomposition_rpackage")
     (synopsis "Age Band Decomposition Method for Tree Ring Standardization")
     (description
@@ -23349,13 +23346,13 @@ extension package of the admiral package.")
 (define-public r-admiralneuro
   (package
     (name "r-admiralneuro")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralneuro" version))
        (sha256
-        (base32 "1si8k447hqgfanmpjsj1vbrf4n5z216xlmxcm584p2nsdqcipcbl"))))
+        (base32 "09kz2kwicf5y2xrs7sq2k58izmzfzj29amad61xd5mrpsznbw8p5"))))
     (properties `((upstream-name . "admiralneuro")))
     (build-system r-build-system)
     (arguments
@@ -23379,12 +23376,12 @@ extension package of the admiral package.")
     (home-page "https://pharmaverse.github.io/admiralneuro/")
     (synopsis "Neuroscience Extension Package for ADaM in 'R' Asset Library")
     (description
-     "Programming neuroscience Clinical Data Standards Interchange Consortium (CDISC)
-compliant Analysis Data Model (A@code{DaM}) datasets.  A@code{DaM} datasets are
-a mandatory part of any New Drug or Biologics License Application submitted to
-the United States Food and Drug Administration (FDA).  Analysis derivations are
-implemented in accordance with the \"Analysis Data Model Implementation Guide\"
-(CDISC Analysis Data Model Team, 2021,
+     "Programming neuroscience specific Clinical Data Standards Interchange Consortium
+(CDISC) compliant Analysis Data Model (A@code{DaM}) datasets in R'.  A@code{DaM}
+datasets are a mandatory part of any New Drug or Biologics License Application
+submitted to the United States Food and Drug Administration (FDA).  Analysis
+derivations are implemented in accordance with the \"Analysis Data Model
+Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 <https://www.cdisc.org/standards/foundational/adam>).  This package extends the
 admiral package.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))

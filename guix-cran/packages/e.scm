@@ -7605,13 +7605,13 @@ performed traditionally by the rule of proportion or with a functional approach.
 (define-public r-esviz
   (package
     (name "r-esviz")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esviz" version))
        (sha256
-        (base32 "0fmyy6i905pz7q4kscrjfka6cq3r4n792jg7nf86zwjxxgghdzlj"))))
+        (base32 "1d1vmwsib617yqlpc92npiwiyc4iyvhz47z4dhi0ask56ixi6bfj"))))
     (properties `((upstream-name . "esviz")))
     (build-system r-build-system)
     (arguments
@@ -7619,7 +7619,6 @@ performed traditionally by the rule of proportion or with a functional approach.
       #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-webshot2
-                             r-variancepartition
                              r-sf
                              r-scales
                              r-s2dv
@@ -8194,13 +8193,13 @@ stochastic invariability.  Figueiredo et al. (2025) <doi:10.32942/X2M053>.")
 (define-public r-estadistica
   (package
     (name "r-estadistica")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estadistica" version))
        (sha256
-        (base32 "0g062i83yin07d3d5kdbdyfj6zlaba88h7l28k775j434cqx8xpp"))))
+        (base32 "0j3ahz8g9k3y31kiki5w2xv8mcg8hj0n5ijrc5rfwr6xcd3hiji5"))))
     (properties `((upstream-name . "estadistica")))
     (build-system r-build-system)
     (arguments
@@ -10579,13 +10578,13 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
 (define-public r-equalprognosis
   (package
     (name "r-equalprognosis")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EQUALPrognosis" version))
        (sha256
-        (base32 "02f627pvjfh55yzagvhwxn0wwq3m98qkzcx2518k5aqv1sxs4a1g"))))
+        (base32 "17qz8jgh19d4bjpwh1p43rr097qvksw88rjn7h1vzxi5wbz2gam8"))))
     (properties `((upstream-name . "EQUALPrognosis")))
     (build-system r-build-system)
     (arguments
@@ -10606,7 +10605,9 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
 data.  This allows users with little experience of developing models to develop
 models and assess the performance of the prognostic models.  This also
 summarises the information, so the performance of multiple models can be
-displayed simultaneously.  Gurusamy, K
+displayed simultaneously.  This minor update fixes issues related to memory
+requirements with large number of simulations and deals with situations when
+there is overfitting of data.  Gurusamy, K
 (2026)<https://github.com/kurinchi2k/EQUALPrognosis>.")
     (license license:gpl3+)))
 
@@ -12255,13 +12256,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiNow2" version))
        (sha256
-        (base32 "0m78lhfbjwp8ylhf1j98qagmgvif3fx2bgx6pmymcmvzj0ihspsa"))))
+        (base32 "06spv6aj42krw1v73fbvdb894gc40xndq11snzpmj2dbk09c01lq"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (arguments
@@ -12279,6 +12280,7 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
                              r-rcpp
                              r-r-utils
                              r-purrr
+                             r-primarycensored
                              r-posterior
                              r-patchwork
                              r-lubridate
@@ -12291,15 +12293,18 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://epiforecasts.io/EpiNow2/")
-    (synopsis
-     "Estimate Real-Time Case Counts and Time-Varying Epidemiological Parameters")
+    (synopsis "Estimate and Forecast Real-Time Infection Dynamics")
     (description
      "Estimates the time-varying reproduction number, rate of spread, and doubling
-time using a range of open-source tools (Abbott et al. (2020)
-<doi:10.12688/wellcomeopenres.16006.1>), and current best practices (Gostic et
-al. (2020) <doi:10.1101/2020.06.18.20134858>).  It aims to help users avoid some
-of the limitations of naive implementations in a framework that is informed by
-community feedback and is actively supported.")
+time using a renewal equation approach combined with Bayesian inference via
+Stan.  Supports Gaussian process and random walk priors for modelling changes in
+transmission over time.  Accounts for delays between infection and observation
+(incubation period, reporting delays), right-truncation in recent data,
+day-of-week effects, and observation overdispersion.  Can estimate relationships
+between primary and secondary outcomes (e.g., cases to hospitalisations or
+deaths) and forecast both.  Runs across multiple regions in parallel.  Based on
+Abbott et al. (2020) <doi:10.12688/wellcomeopenres.16006.1> and Gostic et al.
+(2020) <doi:10.1101/2020.06.18.20134858>.")
     (license license:expat)))
 
 (define-public r-epinetr
@@ -20594,13 +20599,13 @@ lower bound calculation.")
 (define-public r-efa-dimensions
   (package
     (name "r-efa-dimensions")
-    (version "0.1.8.4")
+    (version "0.1.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFA.dimensions" version))
        (sha256
-        (base32 "0zc2zby69c70g6qkama27b9lnk5dbrrrpp5w5r2xxk2wfg1lx8nn"))))
+        (base32 "013vd6vyr9ppm64vq42bdinpybrzffgm3545wc7wrp5fknvn8nb7"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
     (arguments
@@ -20622,10 +20627,11 @@ correlations, gamma correlations, or polychoric correlations.  Varimax rotation,
 promax rotation, and Procrustes rotations can be performed.  Additional
 functions focus on the factorability of a correlation matrix, the congruences
 between factors from different datasets, the assessment of local independence,
-the assessment of factor solution complexity, and internal consistency.
-Auerswald & Moshagen (2019, ISSN:1939-1463); Field, Miles, & Field (2012,
-ISBN:978-1-4462-0045-2); Mulaik (2010, ISBN:978-1-4200-9981-2); O'Connor (2000,
-<doi:10.3758/bf03200807>); O'Connor (2001, ISSN:0146-6216).")
+the assessment of factor solution complexity, internal consistency, and for
+correcting Pearson correlation coefficients for attenuation due to
+unreliability.  Auerswald & Moshagen (2019, ISSN:1939-1463); Field, Miles, &
+Field (2012, ISBN:978-1-4462-0045-2); Mulaik (2010, ISBN:978-1-4200-9981-2);
+O'Connor (2000, <doi:10.3758/bf03200807>); O'Connor (2001, ISSN:0146-6216).")
     (license license:gpl2+)))
 
 (define-public r-ef
@@ -21874,13 +21880,13 @@ gate (EDINA) cognitive diagnostic model described by Chen et al. (2018)
 (define-public r-ediblecity
   (package
     (name "r-ediblecity")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ediblecity" version))
        (sha256
-        (base32 "0ps6ing20bkaj1rjf63d1k5cc3mrymf5hf0mkdp3qq1ghn05s6la"))))
+        (base32 "1zi3y5s1hwkkayx9y2gf7l5nimvkj8safnyvb27lwkngw8xbahhd"))))
     (properties `((upstream-name . "ediblecity")))
     (build-system r-build-system)
     (arguments

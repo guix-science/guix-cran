@@ -21415,6 +21415,38 @@ little love by deploying functions that allow you to deploy complex SQL scripts
 within a typical R workflow.")
     (license license:expat)))
 
+(define-public r-sqlm
+  (package
+    (name "r-sqlm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sqlm" version))
+       (sha256
+        (base32 "1c3k1nm64jhhzdxpf4d2vzmsb6c4vb6jl6lxi7kl37w2pv97nihi"))))
+    (properties `((upstream-name . "sqlm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-s7
+                             r-purrr
+                             r-mass
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=sqlm")
+    (synopsis "SQL-Backed Linear Regression")
+    (description
+     "Fits linear regression models on datasets residing in SQL databases without
+pulling data into R memory.  Computes sufficient statistics inside the database
+engine via a single aggregation query and solves the normal equations in R.")
+    (license license:expat)))
+
 (define-public r-sqliteutils
   (package
     (name "r-sqliteutils")
@@ -29802,6 +29834,43 @@ Botond Szabo (JASA 2020) and Kolyan Ray, Botond Szabo, and Gabriel Clara
 (@code{NeurIPS} 2020).")
     (license license:gpl3+)))
 
+(define-public r-sparsevar
+  (package
+    (name "r-sparsevar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparsevar" version))
+       (sha256
+        (base32 "10xbdss0fvvifm2rjwd22z6kflkyaccr0kpz4l0g7afa0dd0c88i"))))
+    (properties `((upstream-name . "sparsevar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-reshape2
+                             r-ncvreg
+                             r-mvtnorm
+                             r-matrix
+                             r-glmnet
+                             r-ggplot2
+                             r-doparallel
+                             r-corpcor
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/svazzole/sparsevar")
+    (synopsis
+     "Sparse VAR (Vector Autoregression) / VECM (Vector Error Correction Model) Estimation")
+    (description
+     "This package provides a wrapper for sparse VAR (Vector Autoregression) and VECM
+(Vector Error Correction Model) time series models estimation using penalties
+like ENET (Elastic Net), SCAD (Smoothly Clipped Absolute Deviation) and MCP
+(Minimax Concave Penalty).  Based on the work of Basu and Michailidis (2015)
+<doi:10.1214/15-AOS1315>.")
+    (license license:gpl2)))
+
 (define-public r-sparsesvm
   (package
     (name "r-sparsesvm")
@@ -34854,13 +34923,13 @@ Tahar Allouche, Bruno Escoffier, Stefano Moretti and Meltem ÃztÃ¼rk (2020,
 (define-public r-socialmixr
   (package
     (name "r-socialmixr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socialmixr" version))
        (sha256
-        (base32 "1zisnyapj9cpnqla5ghi85ypm8kj5l269hzs82nwbhx3piskqg61"))))
+        (base32 "1c19bica5vqrcvflz0ck2qhbfmk527y25jr1h4b181jd5r0ml88q"))))
     (properties `((upstream-name . "socialmixr")))
     (build-system r-build-system)
     (arguments
@@ -35894,6 +35963,36 @@ fold cross-validation for them.  This package also provides functions for
 computing the classification error and classification instability of a
 classification procedure.")
     (license license:gpl3)))
+
+(define-public r-snma
+  (package
+    (name "r-snma")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SNMA" version))
+       (sha256
+        (base32 "1kl4x19n7sf335n8c1rl1sx779bz95nh1xnlz8g3065z7iyqx9p7"))))
+    (properties `((upstream-name . "SNMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-igraph r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SNMA")
+    (synopsis "Stream Network Movement Analyses")
+    (description
+     "Calculating home ranges and movements of animals in complex stream environments
+is often challenging, and standard home range estimators do not apply.  This
+package provides a series of tools for assessing movements in a stream network,
+such as calculating the total length of stream used, distances between points,
+and movement patterns over time.  See Vignette for additional details.  This
+package was originally released on @code{GitHub} under the name SNM'.  SNMA was
+developed for analyses in @code{McKnight} et al. (2025) <doi:10.3354/esr01442>
+which contains additional examples and information.")
+    (license license:gpl3+)))
 
 (define-public r-snirh-lab
   (package
@@ -40706,13 +40805,13 @@ SKNN is significantly superior to KNN.")
 (define-public r-skmeans
   (package
     (name "r-skmeans")
-    (version "0.2-18")
+    (version "0.2-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skmeans" version))
        (sha256
-        (base32 "1ilrz24yp7w7jc1683brmfzsvskakms2l02hwmqj9c24cvp9h7y6"))))
+        (base32 "1qlacmd0wdqidf1s9z7dfs92bisx5zlvmr3kjr8wfa1hisnjjay9"))))
     (properties `((upstream-name . "skmeans")))
     (build-system r-build-system)
     (arguments
@@ -44251,42 +44350,6 @@ regression, based on the correlations among the predictors and outcome and the
 reliability of predictors.")
     (license license:gpl2)))
 
-(define-public r-simpr
-  (package
-    (name "r-simpr")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simpr" version))
-       (sha256
-        (base32 "0r85hphhkk624p671r3vp74j0v6y9qj2pwpm5d1nv81pdcdwk0zi"))))
-    (properties `((upstream-name . "simpr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-generics
-                             r-furrr
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://statisfactions.github.io/simpr/")
-    (synopsis "Flexible 'Tidyverse'-Friendly Simulations")
-    (description
-     "This package provides a general, tidyverse'-friendly framework for simulation
-studies, design analysis, and power analysis.  Specify data generation, define
-varying parameters, generate data, fit models, and tidy model results in a
-single pipeline, without needing loops or custom functions.")
-    (license license:gpl2)))
-
 (define-public r-simpop
   (package
     (name "r-simpop")
@@ -47811,13 +47874,13 @@ networks.\" Journal of Complex Networks. <@code{arXiv:2012.05216>}.")
 (define-public r-signaly
   (package
     (name "r-signaly")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SignalY" version))
        (sha256
-        (base32 "0kqmdclk0fp8nawx83sdgxqnbck0cg9xicg00qp1ai8wqagmm3xy"))))
+        (base32 "0mxm6rs9xvhpzr53dhsng6ad0y9fpj288z9jzcmnqh1hd8c2lqsh"))))
     (properties `((upstream-name . "SignalY")))
     (build-system r-build-system)
     (arguments
@@ -56976,6 +57039,36 @@ resized.  The functions of this package only work if R is compiled for Unix
 systems and it is running interactively in a terminal emulator.")
     (license license:gpl2+)))
 
+(define-public r-setweaver
+  (package
+    (name "r-setweaver")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "setweaver" version))
+       (sha256
+        (base32 "0x7i726jla4rrbssm2hhx14ngnhn1n0k19r0xbrna5ibw580k0v0"))))
+    (properties `((upstream-name . "setweaver")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splittools r-pheatmap r-permutes r-igraph
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nicolasleenaerts/setweaver")
+    (synopsis "Building Sets of Variables in a Probabilistic Framework")
+    (description
+     "Create sets of variables based on a mutual information approach.  In this
+context, a set is a collection of distinct elements (e.g., variables) that can
+also be treated as a single entity.  Mutual information, a concept from
+probability theory, quantifies the dependence between two variables by
+expressing how much information about one variable can be gained from observing
+the other.  Furthermore, you can analyze, and visualize these sets in order to
+better understand the relationships among variables.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-settingssync
   (package
     (name "r-settingssync")
@@ -57246,47 +57339,6 @@ direction of directed relationships based on the weights matrix of the GGM
 alone.  The derivation of the equivalence set and its use for understanding GGMs
 as causal discovery tools is described by Ryan, O., Bringmann, L.F., &
 Schuurman, N.K. (2022) <doi: 10.31234/osf.io/ryg69>.")
-    (license license:gpl3)))
-
-(define-public r-servospherer
-  (package
-    (name "r-servospherer")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "servosphereR" version))
-       (sha256
-        (base32 "0m1fjd3f1s2ss54xmcrm3p0c33hhi2dj0vim790g4y0mw2aicc8l"))))
-    (properties `((upstream-name . "servosphereR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-purrr r-magrittr r-dplyr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/wittja01/servosphereR")
-    (synopsis "Analyze Data Generated from Syntech Servosphere Trials")
-    (description
-     "This package provides functions that facilitate and speed up the analysis of
-data produced by a Syntech servosphere
-<http://www.ockenfels-syntech.com/products/locomotion-compensation/>, which is
-equipment for studying the movement behavior of arthropods.  This package is
-designed to make working with data produced from a servosphere easy for someone
-new to or unfamiliar with R. The functions provided in this package fall into
-three broad-use categories: functions for cleaning raw data produced by the
-servosphere software, functions for deriving movement variables based on
-position data, and functions for summarizing movement variables for easier
-analysis.  These functions are built with functions from the tidyverse package
-to work efficiently, as a single servosphere file may consist of hundreds of
-thousands of rows of data and a user may wish to analyze hundreds of files at a
-time.  Many of the movement variables derivable through this package are
-described in the following papers: OtÃ¡lora-Luna, Fernando; Dickens, Joseph C.
-(2011) <doi:10.1371/journal.pone.0020990> Party, Virginie; Hanot, Christophe;
-Busser, Daniela Schmidt; Rochat, Didier; Renou, Michel (2013)
-<doi:10.1371/journal.pone.0052897> Bell, William J.; Kramer, Ernest (1980)
-<doi:10.1007/BF01402908> Becher, Paul G; Guerin, Patrick M. (2009)
-<doi:10.1016/j.jinsphys.2009.01.006>.")
     (license license:gpl3)))
 
 (define-public r-serrsbayes
@@ -66815,13 +66867,13 @@ reconstructed trajectory, as well as nice visualisation tools.  Cannoodt et al.
 (define-public r-scorpion
   (package
     (name "r-scorpion")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCORPION" version))
        (sha256
-        (base32 "0g608cbidhh9kixb43p0212ms2jcgrmg5qwplvcyh116qjkidpq3"))))
+        (base32 "18c6knpl01yvx8g04vslxqi7xc47m48q5a1ldwxw52ad1qkp1i1c"))))
     (properties `((upstream-name . "SCORPION")))
     (build-system r-build-system)
     (arguments
@@ -66832,6 +66884,7 @@ reconstructed trajectory, as well as nice visualisation tools.  Cannoodt et al.
                              r-matrix
                              r-irlba
                              r-igraph
+                             r-dplyr
                              r-cli))
     (home-page "https://cran.r-project.org/package=SCORPION")
     (synopsis
@@ -75658,6 +75711,53 @@ using Parametric Bootstrap approach.  For non-sampled cases, MSE are estimated
 using modified approach proposed by Haris F and Ubaidillah A
 <doi:10.4108/eai.2-8-2019.2290339>.")
     (license license:gpl3)))
+
+(define-public r-sae-projection
+  (package
+    (name "r-sae-projection")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sae.projection" version))
+       (sha256
+        (base32 "0j9yphnkjwp061cgnam2baxvaazzzag2f1yb8f2v9kidgcyf9nbp"))))
+    (properties `((upstream-name . "sae.projection")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-tidymodels
+                             r-themis
+                             r-survey
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-ranger
+                             r-randomforest
+                             r-parsnip
+                             r-lightgbm
+                             r-dplyr
+                             r-doparallel
+                             r-cli
+                             r-caret
+                             r-bonsai))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Alfrzlp/sae.projection")
+    (synopsis "Small Area Estimation Using Model-Assisted Projection Method")
+    (description
+     "Combines information from two independent surveys using a model-assisted
+projection method.  Designed for survey sampling scenarios where a large sample
+collects only auxiliary information (Survey 1) and a smaller sample provides
+data on both variables of interest and auxiliary variables (Survey 2).
+Implements a working model to generate synthetic values of the variable of
+interest by fitting the model to Survey 2 data and predicting values for Survey
+1 based on its auxiliary variables (Kim & Rao, 2012)
+<doi:10.1093/biomet/asr063>.")
+    (license license:expat)))
 
 (define-public r-sae
   (package

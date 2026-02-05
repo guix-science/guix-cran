@@ -1159,19 +1159,19 @@ format.")
 (define-public r-vowels
   (package
     (name "r-vowels")
-    (version "1.2-2")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vowels" version))
        (sha256
-        (base32 "0xhfn3avx9h6kg3jwd47n2x7w8q8c9h13wsxd74hhbbn2gkjrs84"))))
+        (base32 "02r82bh27z1pg1hg1qjnwvylq2a52fsn8psyfr6iwib8qh2lssvz"))))
     (properties `((upstream-name . "vowels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://blogs.uoregon.edu/vowels/")
+    (home-page "https://lingtools.uoregon.edu/norm/")
     (synopsis "Vowel Manipulation, Normalization, and Plotting")
     (description
      "Procedures for the manipulation, normalization, and plotting of phonetic and
@@ -3449,19 +3449,20 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "0i9pikrx3429lj7rh4vk5awcj36xlj4mi3zjkn7pj9isbd38rdwl"))))
+        (base32 "1b8h5vcjah1psa4zwpn2ggrx2zyw62w1qma3hipb4vwfq6nc5ab7"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-systemfonts
                              r-stringr
                              r-rlang
                              r-purrr
