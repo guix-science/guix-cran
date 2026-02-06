@@ -3651,13 +3651,13 @@ al. (2017) <@code{arXiv:1706.10029>}).")
 (define-public r-ctmed
   (package
     (name "r-ctmed")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTMed" version))
        (sha256
-        (base32 "1hzqpnpknvfshqsk9q2yvx20818jgaqbfgbkkp945vvhz177am19"))))
+        (base32 "0cblflgpivc5jazvx5sh5agkxj0n5rh2p2rfm1n97jxvzb32app5"))))
     (properties `((upstream-name . "cTMed")))
     (build-system r-build-system)
     (arguments
@@ -16572,13 +16572,13 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "1f4psvipm5qf63l9318jr503z3yx8x00r357s2d7ny3dc5blshl9"))))
+        (base32 "1pwayxsjp0xdkq3i3pd37vbxn1w3vi5r2dfp9pir8j8s7parj9fs"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (arguments
@@ -23013,13 +23013,13 @@ presence of a misclassified binary mediator\"
 (define-public r-comix
   (package
     (name "r-comix")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COMIX" version))
        (sha256
-        (base32 "0810m8v0lx2qr8dsyp7c9f8w6rclxwsn0q2261ar7j9qmigvz3d0"))))
+        (base32 "0sfl47jiaacafk0m84bvchs76wnzhh7xzfydsnl1icpgy3y463r2"))))
     (properties `((upstream-name . "COMIX")))
     (build-system r-build-system)
     (arguments
@@ -37854,13 +37854,13 @@ chunks, and number lines on code blocks.")
 (define-public r-chunked
   (package
     (name "r-chunked")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chunked" version))
        (sha256
-        (base32 "04l6vkqdf47b4161zks8jvk14cbqs3q8x7v6mswpwyi97zpqp8ia"))))
+        (base32 "14mkmvgk3ycylk00vilfnmqfjpnsaacppgvwhryiq7b2bgc26jcz"))))
     (properties `((upstream-name . "chunked")))
     (build-system r-build-system)
     (arguments
@@ -37904,13 +37904,13 @@ from (paleo)environmental/ecological research.")
 (define-public r-chronometre
   (package
     (name "r-chronometre")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chronometre" version))
        (sha256
-        (base32 "0gcd2x1x1mv7zm8gw93bm0569n310d6x7c7d080fhp29dx0n3n58"))))
+        (base32 "00x6amf4y1wyhsnnxipixs41wg7dss95nhwq92mcgx0ng03s3bvv"))))
     (properties `((upstream-name . "chronometre")))
     (build-system r-build-system)
     (arguments
@@ -45730,13 +45730,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "1mwgvm6rxywj4lv6wbyxrbs99ls7c08qrc1difzaf61g1im8x2ca"))))
+        (base32 "0smam93k0xmj2paccwa557fn5v3vzd2d6pzwm9ig5ywr0ry610as"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments
@@ -50756,19 +50756,24 @@ developments) in ecological time series using fitted Weibull functions.")
 (define-public r-cardargus
   (package
     (name "r-cardargus")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardargus" version))
        (sha256
-        (base32 "08rnjxw8glrmhril6q73vw8gq5af83q5gr3128p5k6ywl9nfhzk1"))))
+        (base32 "1r2w72xnssrfhnlhp1d2pf64fhb64zlv632ayws7qw6bkqam7p9i"))))
     (properties `((upstream-name . "cardargus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsvg r-magick r-gdtools r-digest r-cli))
+    (propagated-inputs (list r-rsvg
+                             r-magick
+                             r-glue
+                             r-gdtools
+                             r-digest
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/StrategicProjects/cardargus")
     (synopsis "Generate SVG Information Cards with Embedded Fonts and Badges")

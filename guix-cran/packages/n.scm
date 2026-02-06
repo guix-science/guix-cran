@@ -806,13 +806,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "13f0rj0qs99p28pppv00z94jk3hyl1b6ldbl61dz8dbwbkd993b6"))))
+        (base32 "04g81pixha347b8j6ysi3cjbh03rwcibp3vd4gbf7kpl30372nk5"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (arguments
@@ -6725,35 +6725,6 @@ data.  Cui, Z., Marder, E. P., Click, E. S., Hoekstra, R. M., & Bruce, B. B.
 (2022) <doi:10.1097/EDE.0000000000001504>.")
     (license license:gpl3+)))
 
-(define-public r-nnbenchmark
-  (package
-    (name "r-nnbenchmark")
-    (version "3.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NNbenchmark" version))
-       (sha256
-        (base32 "086smk3xy6p6ianw41h3gx806q7h28v1dg9d3khsrwyyf9gn8xyp"))))
-    (properties `((upstream-name . "NNbenchmark")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-pkgload))
-    (home-page "https://github.com/pkR-pkR/NNbenchmark")
-    (synopsis "Datasets and Functions to Benchmark Neural Network Packages")
-    (description
-     "Datasets and functions to benchmark (convergence, speed, ease of use) R packages
-dedicated to regression with neural networks (no classification in this
-version).  The templates for the tested packages are available in the R, R
-Markdown and HTML formats at
-<https://github.com/@code{pkR-pkR/NNbenchmarkTemplates>} and
-<https://theairbend3r.github.io/N@code{NbenchmarkWeb/index.html>}.  The
-submitted article to the R-Journal can be read at
-<https://www.inmodelia.com/gsoc2020.html>.")
-    (license license:gpl2)))
-
 (define-public r-nna
   (package
     (name "r-nna")
@@ -7349,13 +7320,13 @@ probability.  Methodology based on Papakonstantinou et al. (2021)
 (define-public r-nmar
   (package
     (name "r-nmar")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMAR" version))
        (sha256
-        (base32 "1nbw7kvdv3w7pgndnpagi51ydpfghma07ks7yc1z6sacanl7qp24"))))
+        (base32 "1q6h8nb1qx4p1kwwkzy0aq1f1h0di09f9g2is8n08gciziqqlgs6"))))
     (properties `((upstream-name . "NMAR")))
     (build-system r-build-system)
     (arguments

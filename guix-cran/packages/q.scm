@@ -3743,13 +3743,13 @@ hardware <https://quantum-computing.ibm.com/>.")
 (define-public r-qryflow
   (package
     (name "r-qryflow")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qryflow" version))
        (sha256
-        (base32 "03zly94ld976dv1imk4gr9d0n1a2whsxarwxq3an478qckihflq6"))))
+        (base32 "1fl7gi5zcycbwn882vqx888fl753sm4civbbjx36vjxa3dhl68m1"))))
     (properties `((upstream-name . "qryflow")))
     (build-system r-build-system)
     (arguments

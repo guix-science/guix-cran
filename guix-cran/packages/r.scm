@@ -2564,13 +2564,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-ruido
   (package
     (name "r-ruido")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ruido" version))
        (sha256
-        (base32 "15ci5mrhl82b3m1j9z2ffv4yna6y13wgbkw0baydgwj48vm7dvb0"))))
+        (base32 "018mqnhsr9n1mv2n0qri9misz821y05aic66mshpay0nbwd6fhj4"))))
     (properties `((upstream-name . "Ruido")))
     (build-system r-build-system)
     (arguments
@@ -2587,7 +2587,7 @@ variety of sampling designs.  Users can tailor calculations by specifying
 spectrogram time bin size, amplitude thresholds and normality tests.  By
 simplifying computation and standardizing reproducible methods, the package aims
 to support ecoacoustics studies.  For more details about the indices read Towsey
-(2014) <doi:10.1016/j.procs.2014.05.063> and Burivalova (2017)
+(2017) <https://eprints.qut.edu.au/110634/> and Burivalova (2017)
 <doi:10.1111/cobi.12968>.")
     (license license:expat)))
 
@@ -2812,18 +2812,19 @@ tools for fractal analysis of point clouds.")
 (define-public r-rtwalk
   (package
     (name "r-rtwalk")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rtwalk" version))
        (sha256
-        (base32 "0552cnj8h4x9rw7p26p6a62p359dpfa2zcm6kd6i8z1j7q89mrqs"))))
+        (base32 "19sia2w33d7kvrjjy8dj2yg73yxag93zz8jwjxskv5yc21w9638i"))))
     (properties `((upstream-name . "Rtwalk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rodrigosqrt3/Rtwalk")
     (synopsis "An MCMC Sampler Using the t-Walk Algorithm")
@@ -12503,13 +12504,13 @@ ISBN:9780412048418).")
 (define-public r-rparadox
   (package
     (name "r-rparadox")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rparadox" version))
        (sha256
-        (base32 "1cs8z39li5x6vpy39wqaggdw12vvam9ngns5xjzxlgvv6f345fa6"))))
+        (base32 "04ww3w7q1z6j985sm2wy2brs4jcqxyzf53jrh9vhc950sgafhhpn"))))
     (properties `((upstream-name . "Rparadox")))
     (build-system r-build-system)
     (arguments
@@ -12931,6 +12932,34 @@ the function.  Once processed, the unit tests are moved to the appropriate
 directory.  Currently supports testthat and tinytest frameworks.  The roxygen2
 package provides much of the infrastructure.")
     (license license:gpl3)))
+
+(define-public r-roxigraph
+  (package
+    (name "r-roxigraph")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roxigraph" version))
+       (sha256
+        (base32 "1wp94j71plky32a1kbn0f2q3fsxfjmwi1358pc7rzk192j006nhh"))))
+    (properties `((upstream-name . "roxigraph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cboettig/roxigraph")
+    (synopsis "'RDF' and 'SPARQL' for R using 'Oxigraph'")
+    (description
+     "This package provides RDF storage and SPARQL 1.1 query capabilities by wrapping
+the Oxigraph graph database library <https://github.com/oxigraph/oxigraph>.
+Supports in-memory and persistent ('@code{RocksDB}') storage, multiple RDF
+serialization formats ('Turtle', N-Triples', RDF-XML', N-Quads', @code{TriG}'),
+and full SPARQL 1.1 Query and Update support.  Built using the extendr framework
+for Rust'-R bindings.")
+    (license license:expat)))
 
 (define-public r-routr
   (package
@@ -17446,13 +17475,13 @@ for summary, visualization, and fit diagnostics.")
 (define-public r-robsurvey
   (package
     (name "r-robsurvey")
-    (version "0.7-1")
+    (version "0.7-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robsurvey" version))
        (sha256
-        (base32 "1cchriprrh88n4acpinknwdlfyrcl032p3993d98k1zxm32v1scq"))))
+        (base32 "19ny7gbyvpyknyijb7k2cnz4lazbs80hz3z2kv6lk7m7hrcfb42v"))))
     (properties `((upstream-name . "robsurvey")))
     (build-system r-build-system)
     (arguments
@@ -32710,13 +32739,13 @@ gracefully handle errors at any step.")
 (define-public r-restriktor
   (package
     (name "r-restriktor")
-    (version "0.6-10")
+    (version "0.6-30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restriktor" version))
        (sha256
-        (base32 "0v8mnccvgsayaqfggqchxfp523l72sinw5mxqmcg80s85rkvsn0x"))))
+        (base32 "1dzwgklr616kr47j0vqkw6ynynsrd9i6z72j0p3kxrdy3zyi6k6l"))))
     (properties `((upstream-name . "restriktor")))
     (build-system r-build-system)
     (arguments
@@ -38404,6 +38433,35 @@ spatial vector objects (regions) and spatial raster objects (cells with values).
 (1985) <doi:10.1016/S0734-189X(85)90153-7>, Jasiewicz et al. (2018)
 <doi:10.1016/j.cageo.2018.06.003>), and distinction (Nowosad (2021)
 <doi:10.1080/13658816.2021.1893324>).")
+    (license license:expat)))
+
+(define-public r-regextable
+  (package
+    (name "r-regextable")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regextable" version))
+       (sha256
+        (base32 "015s1ayhyimjdbsxxf0wm74xi0gdq9y06jwl85706z8rmj0n561h"))))
+    (properties `((upstream-name . "regextable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-stringi r-pbapply r-dplyr r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/judgelord/regextable")
+    (synopsis
+     "Pattern-Based Text Extraction and Standardization with Lookup Tables")
+    (description
+     "Extracts information from text using lookup tables of regular expressions.  Each
+text entry is compared against all patterns, and all matching patterns and their
+corresponding substrings are returned.  If a text entry matches multiple
+patterns, multiple rows are generated to capture each match.  This approach
+enables comprehensive pattern coverage when processing large or complex text
+datasets.")
     (license license:expat)))
 
 (define-public r-regexselect
@@ -53327,13 +53385,13 @@ sources can be found in the github repository
 (define-public r-rastarocket
   (package
     (name "r-rastarocket")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RastaRocket" version))
        (sha256
-        (base32 "185zrs70f3aqn5q8h14zkyrvgpjgm5k0mb7bqnahk58l47pama5v"))))
+        (base32 "1srxfw72fyav97i6av5y5p4v9cgv1lj1gkxlnplgx20awb8jymd0"))))
     (properties `((upstream-name . "RastaRocket")))
     (build-system r-build-system)
     (arguments

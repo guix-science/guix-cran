@@ -2480,13 +2480,13 @@ and Particle Swarm Optimization.")
 (define-public r-automerge
   (package
     (name "r-automerge")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "automerge" version))
        (sha256
-        (base32 "0bziqsxn84cx6dc1bljjg8ka1cwy5dv9qqr2g2556dg5mjjaz754"))))
+        (base32 "1j2djcz73aj3fgmllsw8fnsbshibjq52w2ijbqlsiwsij5d3gf63"))))
     (properties `((upstream-name . "automerge")))
     (build-system r-build-system)
     (arguments
@@ -17922,13 +17922,13 @@ regression.")
 (define-public r-aldex3
   (package
     (name "r-aldex3")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ALDEx3" version))
        (sha256
-        (base32 "0d9yghvmmq7y6hmcw8k463mafys9ranym499ypbz1w0g71slzp75"))))
+        (base32 "1xci6n6jhygxrayrvn59yhxb2a440wcsh2qxjmji4clar8yv0n26"))))
     (properties `((upstream-name . "ALDEx3")))
     (build-system r-build-system)
     (arguments
@@ -19196,13 +19196,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "08flinh33xqfp7ijz4z6d1mwjfgg1iyxavspx9mcb29y0fdf8pwq"))))
+        (base32 "1ibcg2q2c16vf7hr457qhc2m9c5agx2qw2vxmrj8s6rqkbi18b5d"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (arguments
@@ -23629,13 +23629,13 @@ space for ease of reuse.")
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.11.3")
+    (version "0.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjustedCurves" version))
        (sha256
-        (base32 "09q8lr5zm0g7p7avaqq8l9q385w2pnagqpads0lwifpclyqz9r4v"))))
+        (base32 "002hwvczvm06ph3rh17hz8xnp46fyy7zh3ai5539a6sdzs5ck4ha"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
     (arguments

@@ -4612,13 +4612,13 @@ and unequally spaced time-series.  Biological Rhythm Research, 30(2), 178-201.")
 (define-public r-lomar
   (package
     (name "r-lomar")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOMAR" version))
        (sha256
-        (base32 "0mibg2zn7agbwbjk5iprhjv0gnqz5pyx4pns7d0rk1g5dkw0hkgg"))))
+        (base32 "17m99q41462cnfj5f35bwfgyxf9fb5axi3j81f1dvbkxc1jqx8va"))))
     (properties `((upstream-name . "LOMAR")))
     (build-system r-build-system)
     (arguments

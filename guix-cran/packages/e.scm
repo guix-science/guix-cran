@@ -16825,13 +16825,13 @@ in both of unsupervised and semi-supervised learning.")
 (define-public r-emcadr
   (package
     (name "r-emcadr")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emcAdr" version))
        (sha256
-        (base32 "1v9lsj2n1dwfdy4vs324nplz2rp4s2dp54x3ggym72fbmdicfcds"))))
+        (base32 "09w39fmlb602njas21i5nxkgy40l4qxr00l7s1p5a9ab20v8snmx"))))
     (properties `((upstream-name . "emcAdr")))
     (build-system r-build-system)
     (arguments
@@ -16840,6 +16840,7 @@ in both of unsupervised and semi-supervised learning.")
     (propagated-inputs (list r-umap
                              r-rcpparmadillo
                              r-rcpp
+                             r-logistf
                              r-ggplot2
                              r-dplyr
                              r-dbscan))
@@ -20377,13 +20378,13 @@ signal.  Journal of the American Statistical Association 97.460 (2002):
 (define-public r-efdm
   (package
     (name "r-efdm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "efdm" version))
        (sha256
-        (base32 "0wv8vfp2903rvkdnjaawblvd9wi6xyy3n34h1iw2dbcmab84irmw"))))
+        (base32 "1xkc0xmc826s53jrp24b4zf1a7qzfqjri1bs93m8i8hr6w4bnh83"))))
     (properties `((upstream-name . "efdm")))
     (build-system r-build-system)
     (arguments
@@ -24318,45 +24319,6 @@ flexible data model for harmonizing ecological community surveys, in a research
 question agnostic format, from source data published across repositories, and
 with methods that keep the derived data up-to-date as the underlying sources
 change.  Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.")
-    (license license:expat)))
-
-(define-public r-ecocleanr
-  (package
-    (name "r-ecocleanr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EcoCleanR" version))
-       (sha256
-        (base32 "0rn9as9dmsnlfx750lxp6qcp781wl8hsqdy5dgrjxkrbdvpc4bwr"))))
-    (properties `((upstream-name . "EcoCleanR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-terra
-                             r-taxize
-                             r-sf
-                             r-sdmpredictors
-                             r-rlang
-                             r-patchwork
-                             r-mregions2
-                             r-ggplot2
-                             r-geosphere
-                             r-geodata
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EcoCleanR")
-    (synopsis
-     "Automated and Controlled Extraction, Cleaning, and Processing of Occurrence Data for Generating Biogeographic Ranges of Marine Organisms")
-    (description
-     "This package provides step-by-step automation for integrating biodiversity data
-from multiple online aggregators, merging and cleaning datasets while addressing
-challenges such as taxonomic inconsistencies, georeferencing issues, and spatial
-or environmental outliers.  Includes functions to extract environmental data and
-to define the biogeographic ranges in which species are most likely to occur.")
     (license license:expat)))
 
 (define-public r-ecochange

@@ -825,13 +825,13 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "081apn21jhi2kq3ldkahmj7d5k91zfrqylgdqf5s96ixky2mh8ni"))))
+        (base32 "0a636pf0psw69prmczdxnhfmb30sry9fixdvdy4di8l20d8ihkrv"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
@@ -844,8 +844,7 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
                              r-cli
                              r-caret))
     (native-inputs (list r-quarto r-knitr))
-    (home-page
-     "https://tingtingzhan.quarto.pub/groupedhyperframe/bioinformatics_btaf430.html")
+    (home-page "https://github.com/tingtingzhan/hyper.gam")
     (synopsis "Generalized Additive Models with Hyper Column")
     (description
      "Generalized additive models with a numeric hyper column.  Sign-adjustment based
@@ -1974,13 +1973,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "26.1.1")
+    (version "26.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "0lj3lzyvzkq92yzyk27i9zdnr2mjidr3qhriag270i7a5j08lsr9"))))
+        (base32 "1q7dpk5y917l7snvyd1b04168lpaykki7f5zicyn4c6q9q74ajga"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments

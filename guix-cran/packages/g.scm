@@ -5849,13 +5849,13 @@ function, or causality.")
 (define-public r-gridify
   (package
     (name "r-gridify")
-    (version "0.7.5")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gridify" version))
        (sha256
-        (base32 "1vkfmw00kmkrrfcp09lcwbw8fgskkjs21gwpp4wa9jdaw9as43cz"))))
+        (base32 "0vgbws5lijs13mk17292z2lwj0p54fnfxskjs8k8rykf9dmdzyml"))))
     (properties `((upstream-name . "gridify")))
     (build-system r-build-system)
     (arguments
@@ -17794,6 +17794,53 @@ individual-level) relations.  See Gates & Molenaar (2012)
 <doi:10.1016/j.neuroimage.2012.06.026>.")
     (license license:gpl2)))
 
+(define-public r-gimap
+  (package
+    (name "r-gimap")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gimap" version))
+       (sha256
+        (base32 "19hk6sbh81g1pzxj6w3zi16jslc7r6fjxqkfpd8hm8gkz38f6swv"))))
+    (properties `((upstream-name . "gimap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-tidyr
+                             r-stringr
+                             r-rmarkdown
+                             r-readr
+                             r-purrr
+                             r-pheatmap
+                             r-openssl
+                             r-magrittr
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FredHutch/gimap")
+    (synopsis "Calculate Genetic Interactions for Paired CRISPR Targets")
+    (description
+     "Helps find meaningful patterns in complex genetic experiments.  First gimap
+takes data from paired CRISPR (Clustered regularly interspaced short palindromic
+repeats) screens that has been pre-processed to counts table of paired
+@code{gRNA} (guide Ribonucleic Acid) reads.  The input data will have cell
+counts for how well cells grow (or don't grow) when different genes or pairs of
+genes are disabled.  The output of the gimap package is genetic interaction
+scores which are the distance between the observed CRISPR score and the expected
+CRISPR score.  The expected CRISPR scores are what we expect for the CRISPR
+values to be for two unrelated genes.  The further away an observed CRISPR score
+is from its expected score the more we suspect genetic interaction.  The work in
+this package is based off of original research from the Alice Berger lab at Fred
+Hutchinson Cancer Center (2021) <doi:10.1016/j.celrep.2021.109597>.")
+    (license license:gpl3)))
+
 (define-public r-gim
   (package
     (name "r-gim")
@@ -18991,6 +19038,29 @@ the methods used in this package, see Ritz and Streibig (2008)
 bar segment.  Also provides geometries for subgroup bordering and text
 annotation.")
     (license license:gpl3+)))
+
+(define-public r-ggtranslate
+  (package
+    (name "r-ggtranslate")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggtranslate" version))
+       (sha256
+        (base32 "0q0gydckcpm91fgmkq4pbs55b75hh3ryyifij0clyq4m9pvxi9sw"))))
+    (properties `((upstream-name . "ggtranslate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (home-page "https://github.com/mathiasleroy/ggtranslate")
+    (synopsis "'ggplot2' Extension for Translating Plot Text")
+    (description
+     "This package provides a simple way to translate text elements in ggplot2 plots
+using a dictionary-based approach.")
+    (license license:expat)))
 
 (define-public r-ggtrace
   (package
@@ -35331,13 +35401,13 @@ native functions that work on simple arrays.")
 (define-public r-garma
   (package
     (name "r-garma")
-    (version "0.9.24")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "garma" version))
        (sha256
-        (base32 "0ka8zxyya9na92jv9hnpia6rq33dbjhyb8q8k5n4h3bh654zhk32"))))
+        (base32 "1qwavs8wbdvx1cgrvy22kjdpld46qm6kh17zwrc2xajvlfnl4jys"))))
     (properties `((upstream-name . "garma")))
     (build-system r-build-system)
     (arguments
@@ -36069,13 +36139,13 @@ follows lineal regression structures.")
 (define-public r-gammafuncmodel
   (package
     (name "r-gammafuncmodel")
-    (version "5.0")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gammaFuncModel" version))
        (sha256
-        (base32 "1593lfbbnrai8amkqqmy6gpm7xg0yq4ndvxi877zz972542fnsv9"))))
+        (base32 "1cmaihfzagh4aar1gfnqj7scbq1p1l5dwj1zjv9wjzc9jqi1lllf"))))
     (properties `((upstream-name . "gammaFuncModel")))
     (build-system r-build-system)
     (arguments

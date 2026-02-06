@@ -5179,32 +5179,38 @@ Weisberg, Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 (define-public r-tseffects
   (package
     (name "r-tseffects")
-    (version "0.1.4")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseffects" version))
        (sha256
-        (base32 "00mvjrjrqrpch959xzxc1mq1x6j7w1yja3cgydyhxm72rhkdjv1s"))))
+        (base32 "16mdknrqc4mk5924h4m3by3albs4cf648zfk9biqzcp48pqwhmq7"))))
     (properties `((upstream-name . "tseffects")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sandwich r-mpoly r-ggplot2 r-car))
+    (native-inputs (list r-knitr))
     (home-page "https://sorenjordan.github.io/tseffects/")
-    (synopsis
-     "Dynamic (Causal) Inferences from Time Series (with Interactions)")
+    (synopsis "Dynamic Inferences from Time Series (with Interactions)")
     (description
      "Autoregressive distributed lag (A[R]DL) models (and their reparameterized
-equivalent, the Generalized Error-Correction Model [GECM]) (see De Boef and
-Keele 2008 <doi:10.1111/j.1540-5907.2007.00307.x>) are the workhorse models in
-uncovering dynamic inferences.  ADL models are simple to estimate; this is what
-makes them attractive.  Once these models are estimated, what is less clear is
-how to uncover a rich set of dynamic inferences from these models.  We provide
-tools for recovering those inferences in three forms: causal inferences from ADL
-models, traditional time series quantities of interest (short- and long-run
-effects), and dynamic conditional relationships.")
+equivalent, the Generalized Error-Correction Model [GECM]) are the workhorse
+models in uncovering dynamic inferences.  ADL models are simple to estimate;
+this is what makes them attractive.  Once these models are estimated, what is
+less clear is how to uncover a rich set of dynamic inferences from these models.
+ We provide tools for recovering those inferences.  These tools apply to
+traditional time-series quantities of interest: especially instantaneous effects
+for any period and cumulative effects for any period (including the long-run
+effect).  They also allow for a variety of shock histories to be applied to the
+independent variable (beyond just a one-time, one-unit increase) as well as the
+recovery of inferences in levels for shocks applies to (in)dependent variables
+in differences (what we call the Generalized Dynamic Response Function).  These
+effects are also available for the general conditional dynamic model advocated
+by Warner, Vande Kamp, and Jordan (2026 <doi:10.1017/psrm.2026.10087>).  We also
+provide the actual formulae for these effects.")
     (license license:gpl2+)))
 
 (define-public r-tse
@@ -9500,13 +9506,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traumar
   (package
     (name "r-traumar")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traumar" version))
        (sha256
-        (base32 "1z4lbsh76vrqm64g3wqj7qhq0mwzyz4jn99mc7fs6j86c325dbi6"))))
+        (base32 "07a1qiwq48b65pw4h8rw0f7f91gk3pih9qd5kc6q8vvl12wq2mn7"))))
     (properties `((upstream-name . "traumar")))
     (build-system r-build-system)
     (arguments
@@ -21332,13 +21338,13 @@ knitr'/'markdown'.")
 (define-public r-tidychangepoint
   (package
     (name "r-tidychangepoint")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidychangepoint" version))
        (sha256
-        (base32 "0ncsj9k6lqrf1grh58mcbq03r5n36483g7aqkcmqm8rz1d1sxx59"))))
+        (base32 "1l4vhmfgwwq0302l78xmrx4nfv85qnpx9l76lv43ylxf7hvws5kq"))))
     (properties `((upstream-name . "tidychangepoint")))
     (build-system r-build-system)
     (arguments
@@ -21452,43 +21458,55 @@ feature geometry for mapping and spatial analysis.")
 (define-public r-tidycdisc
   (package
     (name "r-tidycdisc")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyCDISC" version))
        (sha256
-        (base32 "06pri456bqmvnfna7g092ccd7lqr3bc9gdnw67d7nfz91qwnsny6"))))
+        (base32 "1lpkrpgzdyvwmrjb686zasiw0m467pfh17y1g0s5glb03mbn9qgf"))))
     (properties `((upstream-name . "tidyCDISC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tippy
+    (propagated-inputs (list r-vroom
+                             r-tippy
                              r-timevis
+                             r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-survival
                              r-stringr
+                             r-stringdist
                              r-sjlabelled
                              r-shinywidgets
                              r-shinyjs
                              r-shiny
                              r-rmarkdown
                              r-rlang
+                             r-readxl
                              r-purrr
                              r-plotly
+                             r-pkgload
                              r-ideafilter
                              r-haven
+                             r-gtsummary
                              r-gt
                              r-golem
                              r-glue
+                             r-ggsurvfit
                              r-ggplot2
                              r-ggcorrplot
                              r-ggally
+                             r-fs
                              r-dt
                              r-dplyr
                              r-config
-                             r-cicerone))
+                             r-cli
+                             r-cicerone
+                             r-broom-helpers
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Biogen-Inc/tidyCDISC/")
     (synopsis

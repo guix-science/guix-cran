@@ -759,13 +759,13 @@ set considering the demand for health care is provided.")
 (define-public r-zibr
   (package
     (name "r-zibr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZIBR" version))
        (sha256
-        (base32 "0c24g3s946nmm8m22wvmhdgh2ph9f9hmslfyx1s3cq139793grrz"))))
+        (base32 "1b0yb9kg2v16i13q8nnq2s90firvkdk8aq96yv70crkwva0dwrr9"))))
     (properties `((upstream-name . "ZIBR")))
     (build-system r-build-system)
     (arguments

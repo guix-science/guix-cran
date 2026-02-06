@@ -20425,13 +20425,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "08nm5lhpxrdxnkkhmx0dmfpxfkjidicg5ni553wf0rydl5ym1ffb"))))
+        (base32 "16madb2cgj1bigh9zw1hgdlbi96yw1nmmmyysx163v1kv5l3q1m0"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (arguments
@@ -29826,13 +29826,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "11a53hjppcp5illx0jj8fmhbi9qf1yblmd2vsbns1h3vnvhggsjw"))))
+        (base32 "03hsnk595cci485hif65ca1r59izapnp4n5xyrk286brjr0rmb4n"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments

@@ -2590,13 +2590,13 @@ transforming the data.")
 (define-public r-isocountry
   (package
     (name "r-isocountry")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isocountry" version))
        (sha256
-        (base32 "19y48jjxmqnzabyacik016hd2i2m7a54bb8x4w30x0jgdiq3zqpj"))))
+        (base32 "0s0vac32im73n4x7hxgqfnh6lfc19ysc6qlbi0c0p6ngjl80zrj9"))))
     (properties `((upstream-name . "isocountry")))
     (build-system r-build-system)
     (arguments
@@ -3558,13 +3558,13 @@ community, but do not impose many dependencies on the user.")
 (define-public r-isar
   (package
     (name "r-isar")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISAR" version))
        (sha256
-        (base32 "05bms74kdv9ah1gmvj3ygw01nfb6xjhcm5fd6dxsi73jrfiwx067"))))
+        (base32 "0r7mrr4zi8bb449byci0pqaflnw12xbng0h0hc9ad4a7bnblsgcx"))))
     (properties `((upstream-name . "ISAR")))
     (build-system r-build-system)
     (arguments
@@ -17232,13 +17232,13 @@ identity metrics\".")
 (define-public r-idmc
   (package
     (name "r-idmc")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idmc" version))
        (sha256
-        (base32 "0niffzlfm6437524hamhn95l011c8wm425nnabd5qs8zs9sgbniv"))))
+        (base32 "0nqldk8mrxbph6wkhangbhsqs046crrp440mzzkmq4ym5xbqf61x"))))
     (properties `((upstream-name . "idmc")))
     (build-system r-build-system)
     (arguments
@@ -17250,6 +17250,7 @@ identity metrics\".")
                              r-lifecycle
                              r-jsonlite
                              r-httr
+                             r-glue
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ocha-dap/idmc")

@@ -4118,13 +4118,13 @@ al (1998, ISBN:92-5-104219-5)).")
 (define-public r-fru
   (package
     (name "r-fru")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fru" version))
        (sha256
-        (base32 "1r5vnd7qmva4nrh3gc6spw7ap17drsirf3qy51xx0x1j8hsaf9cf"))))
+        (base32 "0wnirjfbmsn4c9xsr08sdzpn6yrfv84q614i48mii3a07p2blgx0"))))
     (properties `((upstream-name . "fru")))
     (build-system r-build-system)
     (arguments
@@ -11276,13 +11276,13 @@ setting.")
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "1.3.4")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "1cvzk59v80iy09q2snhim04ai3ljg0qsb2wdn0s9spwy56c51mk0"))))
+        (base32 "0221g56q9k6ni7n93f9gc8glfj4d1k7xxfm7va3gf1ywff7yxnml"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments

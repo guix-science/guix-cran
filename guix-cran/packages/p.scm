@@ -22072,13 +22072,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.23")
+    (version "1.0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmparser" version))
        (sha256
-        (base32 "1k66xrgrxn4hv4zckn1yx1cx87brlyfzwh8x535aw8p5pdh384ls"))))
+        (base32 "0k5hgd0crl3cxx5s81vv94rkljqgrbfzs8f8jbq7x9nz1ylfricb"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (arguments
@@ -29941,13 +29941,13 @@ population of European Brown Hares settled in central Italy.")
 (define-public r-phsopendata
   (package
     (name "r-phsopendata")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phsopendata" version))
        (sha256
-        (base32 "1k1jh6nymkq3187m33ayc3nkf6x2arjb39s3zpdcmiqzawj6jp5n"))))
+        (base32 "1np8ywrhg8hrnlabqhhrpc9wbwiz1fqq503yk2fa3z49p9nyy4zj"))))
     (properties `((upstream-name . "phsopendata")))
     (build-system r-build-system)
     (arguments
@@ -35511,13 +35511,13 @@ penalties include lasso, adaptive lasso, scad, mcp, and ridge.")
 (define-public r-penetrance
   (package
     (name "r-penetrance")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "penetrance" version))
        (sha256
-        (base32 "041cyvasm3qa9bpwkk9v64hi8rjgwlpfvv1rj71v87lia2d5ap4p"))))
+        (base32 "04lzmjizwip6zxcd56771liwxp8jkb98wsjzxx5vz9rdppx1qa86"))))
     (properties `((upstream-name . "penetrance")))
     (build-system r-build-system)
     (arguments
@@ -35525,7 +35525,7 @@ penalties include lasso, adaptive lasso, scad, mcp, and ridge.")
       #:tests? #f))
     (propagated-inputs (list r-mass r-kinship2 r-clipp))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/nicokubi/penetrance")
+    (home-page "https://github.com/bayesmendel/penetrance")
     (synopsis "Methods for Penetrance Estimation in Family-Based Studies")
     (description
      "This package implements statistical methods for estimating disease penetrance in
@@ -44579,13 +44579,13 @@ post-processing as well as visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.12.6")
+    (version "1.12.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMmisc" version))
        (sha256
-        (base32 "0mvpaai20jsr0qs60k4f4paix9n2zh8gqgpls0cjvc8s8vv7l70m"))))
+        (base32 "1i0y0cdpnc1rm3vhnfny6fy1ahzk6fcbcbgpik1c95rjrn64yfjy"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (arguments

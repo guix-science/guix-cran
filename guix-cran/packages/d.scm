@@ -5963,51 +5963,6 @@ minimum efficacious dose, etc.) are also implemented.  Copyright Eli Lilly and
 Company (2019).")
     (license license:expat)))
 
-(define-public r-dream
-  (package
-    (name "r-dream")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dream" version))
-       (sha256
-        (base32 "0v2c8g36981brpf48g5qbdj2agciiw4yyvwccs2yd9kjjh7qcb41"))))
-    (properties `((upstream-name . "dream")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-lifecycle
-                             r-foreach
-                             r-fastmatch
-                             r-dqrng
-                             r-doparallel
-                             r-data-table
-                             r-collapse))
-    (home-page "https://github.com/kevinCarson/dream")
-    (synopsis "Dynamic Relational Event Analysis and Modeling")
-    (description
-     "This package provides a set of tools for relational and event analysis,
-including two- and one-mode network brokerage and structural measures, and
-helper functions optimized for relational event analysis with large datasets,
-including creating relational risk sets, computing network statistics,
-estimating relational event models, and simulating relational event sequences.
-For more information on relational event models, see Butts (2008)
-<doi:10.1111/j.1467-9531.2008.00203.x>, Lerner and Lomi (2020)
-<doi:10.1017/nws.2019.57>, Bianchi et al. (2024)
-<doi:10.1146/annurev-statistics-040722-060248>, and Butts et al. (2023)
-<doi:10.1017/nws.2023.9>.  In terms of the structural measures in this package,
-see Leal (2025) <doi:10.1177/00491241251322517>, Burchard and Cornwell (2018)
-<doi:10.1016/j.socnet.2018.04.001>, and Fujimoto et al. (2018)
-<doi:10.1017/nws.2018.11>.  This package was developed with support from the
-National Science Foundationâs (NSF) Human Networks and Data Science Program
-(HNDS) under award number 2241536 (PI: Diego F. Leal).  Any opinions, findings,
-and conclusions, or recommendations expressed in this material are those of the
-authors and do not necessarily reflect the views of the NSF.")
-    (license license:expat)))
-
 (define-public r-drdrtest
   (package
     (name "r-drdrtest")
@@ -11198,24 +11153,19 @@ shiny interface to check model convergence and to help interpret results.")
 (define-public r-dlmtool
   (package
     (name "r-dlmtool")
-    (version "6.0.6")
+    (version "6.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DLMtool" version))
        (sha256
-        (base32 "1lhskk4022vzvmwki08jkwpz3scirbdr0imkpzb9dqfhvmsdyafx"))))
+        (base32 "0lsyr1rcqhia12m7zm3kyxrcrswkgl5q4xhiys5wnlcq31ikjjip"))))
     (properties `((upstream-name . "DLMtool")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tmb
-                             r-rcppeigen
-                             r-rcpp
-                             r-msetool
-                             r-ggplot2
-                             r-dplyr))
+    (propagated-inputs (list r-rcpp r-msetool r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=DLMtool")
     (synopsis "Data-Limited Methods Toolkit")
     (description
@@ -14542,13 +14492,13 @@ four-column version, so that each row represents a 2x2 table.")
 (define-public r-discovr
   (package
     (name "r-discovr")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discovr" version))
        (sha256
-        (base32 "1rkh9sq3r53f74r19vg4dm2mpjwcxjydv3cpnkbaqswp0qdvnzzb"))))
+        (base32 "1czmin2z57vqmpcz0frs0w0305h61qb72fdmgzal2dldm7kmv333"))))
     (properties `((upstream-name . "discovr")))
     (build-system r-build-system)
     (arguments
@@ -14565,8 +14515,9 @@ tutorials cover general workflow in R and RStudio', summarizing data,
 visualizing data, fitting models and bias, correlation, the general linear model
 (GLM), moderation, mediation, missing values, comparing means using the GLM
 (analysis of variance), comparing adjusted means (analysis of covariance),
-factorial designs, repeated measures designs, exploratory factor analysis (EFA).
- There are no functions, only datasets and interactive tutorials.")
+factorial designs, multilevel models, repeated measures designs, growth models,
+exploratory factor analysis (EFA), loglinear analysis, and logistic regression.
+There are no functions, only datasets and interactive tutorials.")
     (license license:gpl3)))
 
 (define-public r-discoverableresearch

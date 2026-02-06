@@ -85,13 +85,13 @@ decomposition of total effect.")
 (define-public r-mytai
   (package
     (name "r-mytai")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myTAI" version))
        (sha256
-        (base32 "1zdgj54h3iy88gjxknh5zhjl9qmh48fxd2p8r6kwh2r5wmybhzqh"))))
+        (base32 "0zwjb7g3f6l2dmkaqmzsyrwvxllnndfq9ii750mc93nkrhxxlj00"))))
     (properties `((upstream-name . "myTAI")))
     (build-system r-build-system)
     (arguments
@@ -13206,13 +13206,13 @@ convenience functions to aid in data processing.")
 (define-public r-mpathr
   (package
     (name "r-mpathr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpathr" version))
        (sha256
-        (base32 "1x8w0wsq71n7sr2xgjdhhkqw1k06ljw4sxbcdrzpzpjfap5iy113"))))
+        (base32 "1ghd2i4paq1j1rl5mhm1xigxxri9vr5pbpskibx5qms6y5s9x7w5"))))
     (properties `((upstream-name . "mpathr")))
     (build-system r-build-system)
     (arguments
@@ -20493,13 +20493,13 @@ Scutari (2010) <doi:10.18637/jss.v035.i03>.")
 (define-public r-mmarch-ac
   (package
     (name "r-mmarch-ac")
-    (version "3.2.0.1")
+    (version "3.3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mMARCH.AC" version))
        (sha256
-        (base32 "1a246ajrixad6lyb33dyd3gys780pd9s7w9s0mkzyzwaiannabql"))))
+        (base32 "1pf84ijsah5jg7z955mg2n5xn89h5whl2m6yyc4kj9aypkla6hbp"))))
     (properties `((upstream-name . "mMARCH.AC")))
     (build-system r-build-system)
     (arguments
@@ -21416,19 +21416,19 @@ Zhou(2018)<doi:10.1214/17-AOS1582>.")
 (define-public r-mlrpro
   (package
     (name "r-mlrpro")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlrpro" version))
        (sha256
-        (base32 "1j8w8ji1n6cahcbyi1q4zq8gmhpcl15pb97f7bl1km29f4x4f272"))))
+        (base32 "1qw32jbfb68lgkcjf3k2k184xzbbifx7i6lcbc6ih4sp1037qh75"))))
     (properties `((upstream-name . "mlrpro")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-dplyr r-car))
+    (propagated-inputs (list r-mass r-dplyr r-dgof r-car))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mlrpro")
     (synopsis "Stepwise Regression with Assumptions Checking")
@@ -36407,13 +36407,13 @@ Stackoverflow (2018) <https://stats.stackexchange.com/q/338043>.")
 (define-public r-metahd
   (package
     (name "r-metahd")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaHD" version))
        (sha256
-        (base32 "05a4m2byc5d16l3nv1b1j3hzhxw2pxyg5zr6sdsvyin4vqzsk7c7"))))
+        (base32 "0h76i5ylx9pllxszv3bxq3rxw0may29l6d5hdgjd1ahrbj2zzzv2"))))
     (properties `((upstream-name . "MetaHD")))
     (build-system r-build-system)
     (arguments
@@ -36423,23 +36423,30 @@ Stackoverflow (2018) <https://stats.stackexchange.com/q/338043>.")
                              r-rcpparmadillo
                              r-rcpp
                              r-nloptr
+                             r-metapro
+                             r-metap
                              r-metafor
                              r-matrixcalc
                              r-matrix
+                             r-future-apply
+                             r-dynamictreecut
                              r-dplyr
                              r-corpcor))
     (home-page "https://cran.r-project.org/package=MetaHD")
-    (synopsis
-     "Multivariate Meta-Analysis Model for High-Dimensional Metabolomics Data")
+    (synopsis "Multivariate Meta-Analysis Model for High-Dimensional Data")
     (description
-     "This package performs multivariate meta-analysis for high-dimensional
-metabolomics data for integrating and collectively analysing individual-level
-data generated from multiple studies as well as for combining summary estimates.
- This approach accounts for correlation between outcomes, considers variability
-within and between studies, handles missing values and uses shrinkage estimation
-to allow for high dimensionality.  A detailed vignette with example datasets and
-code to prepare data and analyses are available on
-<https://bookdown.org/a2delivera/@code{MetaHD/>}.")
+     "This package performs multivariate meta-analysis for high-dimensional data to
+integrate and collectively analyse individual-level data from multiple studies,
+as well as to combine summary estimates.  This approach accounts for correlation
+between outcomes, incorporates withinâ and betweenâstudy variability,
+handles missing values, and uses shrinkage estimation to accommodate high
+dimensionality.  The @code{MetaHD} R package provides access to our multivariate
+meta-analysis approach, along with a comprehensive suite of existing
+meta-analysis methods, including fixed-effects and random-effects models,
+Fisherâs method, Stoufferâs method, the weighted Z method, Lancasterâs
+method, the weighted Fisherâs method, and vote-counting approach.  A detailed
+vignette with example datasets and code for data preparation and analysis is
+available at <https://alyshadelivera.github.io/@code{MetaHD_vignette/>}.")
     (license license:gpl3)))
 
 (define-public r-metagroup

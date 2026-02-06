@@ -4722,13 +4722,13 @@ imputations that respect the censoring thresholds.")
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.9")
+    (version "2.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "1m54xnqcc02nd5f80qmzrkpir0im5g0w03v3k1a3q2dfyrwdhpgg"))))
+        (base32 "0jn8lrhkkc7ma9pb2d8gjr9fcl1jy1rb0jfqjq91fbk45raj4gr3"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (arguments
@@ -26426,19 +26426,19 @@ spectra and visualization of maps.")
 (define-public r-spectralgp
   (package
     (name "r-spectralgp")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spectralGP" version))
        (sha256
-        (base32 "1jf09nsil4r90vdj7n1k6ma9dzzx3bwv0fa7svil9pxrd2zlbkbs"))))
+        (base32 "0cyhadxaz8li9wlpdabm7wc6zf8ka2ahy1hgycq4xpqm9z8a1c6a"))))
     (properties `((upstream-name . "spectralGP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://www.jstatsoft.org/v19/a2")
+    (home-page "https://doi.org/10.18637/jss.v019.i02")
     (synopsis "Approximate Gaussian Processes Using the Fourier Basis")
     (description
      "Routines for creating, manipulating, and performing Bayesian inference about
@@ -37271,13 +37271,13 @@ the outcome of interest undefined at the follow-up time of interest.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.3.1")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "0891c85acl297fi603fw4rmhaq8fxl6c9xchwm566wr8iprxw697"))))
+        (base32 "15zlp0nbld81hkjpabv4v8nqsw0dvmpb6ziln111yp0jmph28bl7"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (arguments
@@ -37300,13 +37300,14 @@ the outcome of interest undefined at the follow-up time of interest.")
      "This package provides functions implementing Single Source of Error state space
 models for purposes of time series analysis and forecasting.  The package
 includes ADAM (Svetunkov, 2023, <https://openforecast.org/adam/>), Exponential
-Smoothing (Hyndman et al., 2008, <doi: 10.1007/978-3-540-71918-2>), SARIMA
+Smoothing (Hyndman et al., 2008, <doi:10.1007/978-3-540-71918-2>), SARIMA
 (Svetunkov & Boylan, 2019 <doi: 10.1080/00207543.2019.1600764>), Complex
-Exponential Smoothing (Svetunkov & Kourentzes, 2018, <doi:
-10.13140/RG.2.2.24986.29123>), Simple Moving Average (Svetunkov & Petropoulos,
-2018 <doi: 10.1080/00207543.2017.1380326>) and several simulation functions.  It
-also allows dealing with intermittent demand based on the @code{iETS} framework
-(Svetunkov & Boylan, 2019, <doi: 10.13140/RG.2.2.35897.06242>).")
+Exponential Smoothing (Svetunkov & Kourentzes, 2018,
+<doi:10.13140/RG.2.2.24986.29123>), Simple Moving Average (Svetunkov &
+Petropoulos, 2018 <doi:10.1080/00207543.2017.1380326>) and several simulation
+functions.  It also allows dealing with intermittent demand based on the
+@code{iETS} framework (Svetunkov & Boylan, 2019,
+<doi:10.13140/RG.2.2.35897.06242>).")
     (license license:lgpl2.1)))
 
 (define-public r-smoke
@@ -39598,13 +39599,13 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
 (define-public r-slimr
   (package
     (name "r-slimr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SlimR" version))
        (sha256
-        (base32 "0x152k13hlykymhjjv2i43amg5a4i9fkzaghf197iar1ndysl0hv"))))
+        (base32 "1vpds92dgw6agmxbw7dibsr1yx0jcawcihfja12wmvjz6xj42v8i"))))
     (properties `((upstream-name . "SlimR")))
     (build-system r-build-system)
     (arguments
@@ -39624,16 +39625,20 @@ Recommender Systems\" by Xia Ning and George Karypis <doi:10.1109/ICDM.2011.134>
     (synopsis
      "Adaptive Machine Learning-Powered, Context-Matching Tool for Single-Cell and Spatial Transcriptomics Annotation")
     (description
-     "Annotates single-cell and spatial-transcriptomic (ST) data using marker
-datasets.  Supports unified markers list ('Markers_list') creation from built-in
-databases (e.g., Cellmarker2', @code{PanglaoDB}', @code{scIBD}',
-T@code{CellSI}', PCTIT', PCTAM'), Seurat objects, or user-supplied Excel files.
-@code{SlimR} can predict calculation parameters by adaptive machine learning
-algorithms, and based on Markers_list, calculate gene expression of different
-cell types and predict annotation information, and calculate corresponding AUC
-and annotate it, then verify it.  At the same time, it can calculate gene
-expression corresponding to the cell type to generate a reference map for manual
-annotation (e.g., Heat Map', Feature Plots', Combined Plots').  For more
+     "Annotates single-cell and spatial-transcriptomic (ST) data using
+context-matching marker datasets.  It creates a unified marker list
+(`Markers_list`) from multiple sources: built-in curated databases
+('Cellmarker2', @code{PanglaoDB}', @code{scIBD}', T@code{CellSI}', PCTIT',
+PCTAM'), Seurat objects with cell labels, or user-provided Excel tables.
+@code{SlimR} first uses adaptive machine learning for parameter optimization,
+and then offers two automated annotation approaches: cluster-based and
+per-cell'.  Cluster-based annotation assigns one label per cluster,
+expression-based probability calculation, and AUC validation.  Per-cell
+annotation assigns labels to individual cells using three scoring methods with
+adaptive thresholds and ratio-based confidence filtering, plus optional UMAP
+spatial smoothing, making it ideal for heterogeneous clusters and rare cell
+types.  The package also supports semi-automated workflows with heatmaps,
+feature plots, and combined visualizations for manual annotation.  For more
 details, see Kabacoff (2020, ISBN:9787115420572).")
     (license license:expat)))
 
@@ -51600,13 +51605,13 @@ generated, as well as the errors displayed in the interface.")
 (define-public r-shinyloadtest
   (package
     (name "r-shinyloadtest")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyloadtest" version))
        (sha256
-        (base32 "01y75imwjbg1wdw7xx50a48py23ya0hgl4jm24lgfl60llm2lfrz"))))
+        (base32 "13g84pd39rbs4rkwwzl3zzzmb8p8b36m9qs6mqyzwgacli60hlhs"))))
     (properties `((upstream-name . "shinyloadtest")))
     (build-system r-build-system)
     (arguments
@@ -57919,13 +57924,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "191dxqf9y6arqz8p0jzysa2b06a5rahdzgr9zl0jk8pgn98igc9d"))))
+        (base32 "1v3r0jpnbhv51427njnll0v1zvd6kv2nvrc2h8lf40z0zvcm4818"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -73743,13 +73748,13 @@ Ying Yuan, Beibei Guo, Mark Munsell, Karen Lu, Amir Jazaeri (2016)
 (define-public r-samc
   (package
     (name "r-samc")
-    (version "4.0.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samc" version))
        (sha256
-        (base32 "0hmsna94q373hq92nlgswclda2f1007ssip8nl1hqyrhxvfswwn5"))))
+        (base32 "0qbrrlwbw04rb34gmj5lh97fmzg2h51wz76dbi4bpcim6xf6ri27"))))
     (properties `((upstream-name . "samc")))
     (build-system r-build-system)
     (arguments
