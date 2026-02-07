@@ -176,13 +176,13 @@ permutation on only a small proportion of the whole genome.")
 (define-public r-gwsdat
   (package
     (name "r-gwsdat")
-    (version "3.2.1")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWSDAT" version))
        (sha256
-        (base32 "0zqln2wnmid2cq5727pkk9lyqs4pb5nml12b5cza1xg0yzp38b6h"))))
+        (base32 "1xnq8rnp2r2rsn845dvgqsb9098ddhrwigdivdwhbirkbx19rviz"))))
     (properties `((upstream-name . "GWSDAT")))
     (build-system r-build-system)
     (arguments
@@ -10640,13 +10640,13 @@ first course of the EUPLA degree of Data Engineering in Industrial Processes.")
 (define-public r-gooser
   (package
     (name "r-gooser")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gooseR" version))
        (sha256
-        (base32 "1pcrkg86fw75gkm6yhvv196p9i79a15spwhzihn7lrngkxfflij0"))))
+        (base32 "1waa98mlsrw486lxqrvykjvdhv5kvvgv447fcaj9gkjsz12xzi0k"))))
     (properties `((upstream-name . "gooseR")))
     (build-system r-build-system)
     (arguments
@@ -18014,13 +18014,13 @@ support.")
 (define-public r-gifti
   (package
     (name "r-gifti")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gifti" version))
        (sha256
-        (base32 "1gb3x4rln9vayjd9fgzb434mm3dwcqgrvlv6rmh4b39mjfm73sly"))))
+        (base32 "1ldg9dp3xj0fnixz9zsn0yvayj0yphsvbbr65cr19b5kaplqzzsd"))))
     (properties `((upstream-name . "gifti")))
     (build-system r-build-system)
     (arguments

@@ -6423,13 +6423,13 @@ ordinal predictor.")
 (define-public r-crosswalkr
   (package
     (name "r-crosswalkr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crosswalkr" version))
        (sha256
-        (base32 "075x9xk271vnvkhbsyqzwhacz35aw86jynz7cjhzkrsmslrsc5j1"))))
+        (base32 "0k3hvwkq3bivkkd47wjrxvg14z8qdbdnd6qlrz2wrigm8jd6ic5a"))))
     (properties `((upstream-name . "crosswalkr")))
     (build-system r-build-system)
     (arguments
@@ -10096,13 +10096,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.2-5")
+    (version "1.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "0na9y69f0f0cxppimkfsxii7wp7277qw3wy1v955sh8vwmbk3kwb"))))
+        (base32 "10bwrwl456nldn9sxz0h7zjzgam0wwb7igama969srq37d10zcgg"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -33318,6 +33318,35 @@ the statistical models.  Details are given in Paciorek, Stone, and Wehner (2018)
 climate dynamics through exploring and measuring different dimensions of climate
 change in space and time.")
     (license license:gpl3+)))
+
+(define-public r-climenu
+  (package
+    (name "r-climenu")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "climenu" version))
+       (sha256
+        (base32 "085qq1b5nlb91yzqkzam1060j8qkh14hpryhy2c0d8zsa74cdnwm"))))
+    (properties `((upstream-name . "climenu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PetrCala/climenu")
+    (synopsis "Interactive Command-Line Menus")
+    (description
+     "This package provides interactive command-line menu functionality with single
+and multiple selection menus, keyboard navigation (arrow keys or vi-style j/k),
+preselection, and graceful fallback for non-interactive environments.  Inspired
+by tools such as inquirer.js <https://github.com/SBoudrias/Inquirer.js>, pick
+<https://github.com/aisk/pick>, and survey
+<https://github.com/@code{AlecAivazis/survey>}.  Designed to be lightweight and
+easy to integrate into R packages and scripts.")
+    (license license:expat)))
 
 (define-public r-clime
   (package

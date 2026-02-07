@@ -2024,13 +2024,13 @@ handle servers that run locally as well as the OSRM webserver.")
 (define-public r-osrm-backend
   (package
     (name "r-osrm-backend")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osrm.backend" version))
        (sha256
-        (base32 "0gfl0ylymyqbqhnrn68fgsakjqhk7q5hnqzyxr96xl7sn89d8yv1"))))
+        (base32 "1yrw09kh2z8w3l32nv6zmjvfg4wbrhvr891gjs8zp8w6b2frpkwm"))))
     (properties `((upstream-name . "osrm.backend")))
     (build-system r-build-system)
     (arguments
@@ -10484,13 +10484,13 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "1dnagrgw3m05ikz1pbnkkrmf0pl4cxzx0vz2lcamnw65gskfn3qy"))))
+        (base32 "12fzyhh2w34rbdf2crrbk6r5gy7vdsy5ic6zsgla2mq6prqvy91z"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments

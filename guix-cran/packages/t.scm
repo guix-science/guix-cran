@@ -13834,19 +13834,19 @@ variations.")
 (define-public r-toordinal
   (package
     (name "r-toordinal")
-    (version "1.3-0.0")
+    (version "1.4-0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toOrdinal" version))
        (sha256
-        (base32 "1zfx91024dyafkfyjsm2829qsqkz57g6p5v47lp2x0ykrwpdbm37"))))
+        (base32 "1fyzff317rhd41bvia54az9d1l4dr4pgj9yhphkcff8p959b0435"))))
     (properties `((upstream-name . "toOrdinal")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testthat r-crayon))
+    (propagated-inputs (list r-pkgsearch r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://centerforassessment.github.io/toOrdinal/")
     (synopsis "Cardinal to Ordinal Number & Date Conversion")
@@ -16117,6 +16117,53 @@ Relevant references include Baker and King (2010)
 <doi:10.1111/j.2041-210X.2009.00007.x>, King and Baker (2010)
 <doi:10.1899/09-144.1>, and Baker and King (2013) <doi:10.1899/12-142.1>.")
     (license license:gpl2)))
+
+(define-public r-tirt
+  (package
+    (name "r-tirt")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tirt" version))
+       (sha256
+        (base32 "150rvrysl7as7aafd0rn778akf2zwd0vyv2qdgbb0wlb70nh19wy"))))
+    (properties `((upstream-name . "tirt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-purrr r-gtools r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tirt")
+    (synopsis "Testlet Item Response Theory")
+    (description
+     "Implementation of Testlet Item Response Theory (tirt).  A light-version yet
+comprehensive and streamlined framework for psychometric analysis using
+unidimensional Item Response Theory (IRT; Baker & Kim (2004)
+<doi:10.1201/9781482276725>) and Testlet Response Theory (TRT; Wainer et al.,
+(2007) <doi:10.1017/CBO9780511618765>).  Designed for researchers, this package
+supports the estimation of item and person parameters for a wide variety of
+models, including binary (i.e., Rasch, 2-Parameter Logistic, 3-Parameter
+Logistic) and polytomous (Partial Credit Model, Generalized Partial Credit
+Model, Graded Response Model) formats.  It also supports the estimation of
+Testlet models (Rasch Testlet, 2-Parameter Logistic Testlet, 3-Parameter
+Logistic Testlet, Bifactor, Partial Credit Model Testlet, Graded Response),
+allowing users to account for local item dependence in bundled items.  A key
+feature is the specialized support for combination use and joint estimation of
+item response model and testlet response model in one calibration.  Beyond
+standard estimation via Marginal Maximum Likelihood with
+Expectation-Maximization (EM) or Joint Maximum Likelihood, the package offers
+robust tools for scale linking and equating (Mean-Mean, Mean-Sigma,
+Stocking-Lord) to ensure comparability across mixed-format test forms.  It also
+facilitates fixed-parameter calibration, enabling users to estimate person
+abilities with known item parameters or vice versa, which is essential for
+pre-equating studies and item bank maintenance.  Comprehensive data simulation
+functions are included to generate synthetic datasets with complex structures,
+including mixed-model blocks and specific testlet effects, aiding in
+methodological research and study design validation.  Researchers can try
+multiple simulation situations.")
+    (license license:gpl3)))
 
 (define-public r-tipse
   (package
@@ -20215,6 +20262,59 @@ Web services are available at <https://www.anthropic.com>, <https://openai.com>,
 <https://aistudio.google.com/>, <https://mistral.ai/> and <https://ollama.com>.")
     (license license:expat)))
 
+(define-public r-tidylearn
+  (package
+    (name "r-tidylearn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidylearn" version))
+       (sha256
+        (base32 "0655b2a70bsdcnhb8pp4c72pk5fvgnp6sv6l3r8pij1flsvqa37k"))))
+    (properties `((upstream-name . "tidylearn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-tidyr
+                             r-tibble
+                             r-smacof
+                             r-rsample
+                             r-rpart
+                             r-rocr
+                             r-rlang
+                             r-randomforest
+                             r-purrr
+                             r-nnet
+                             r-mass
+                             r-magrittr
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-e1071
+                             r-dplyr
+                             r-dbscan
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ces0491/tidylearn")
+    (synopsis "Unified Tidy Interface to R's Machine Learning Ecosystem")
+    (description
+     "This package provides a unified tidyverse-compatible interface to R's machine
+learning packages.  Wraps established implementations from glmnet',
+@code{randomForest}', xgboost', e1071', rpart', gbm', nnet', cluster', dbscan',
+and others - providing consistent function signatures, tidy tibble output, and
+unified ggplot2'-based visualization.  The underlying algorithms are unchanged;
+tidylearn simply makes them easier to use together.  Access raw model objects
+via the $fit slot for package-specific functionality.  Methods include random
+forests Breiman (2001) <doi:10.1023/A:1010933404324>, LASSO regression
+Tibshirani (1996) <doi:10.1111/j.2517-6161.1996.tb02080.x>, elastic net Zou and
+Hastie (2005) <doi:10.1111/j.1467-9868.2005.00503.x>, support vector machines
+Cortes and Vapnik (1995) <doi:10.1007/BF00994018>, and gradient boosting
+Friedman (2001) <doi:10.1214/aos/1013203451>.")
+    (license license:expat)))
+
 (define-public r-tidylda
   (package
     (name "r-tidylda")
@@ -20937,13 +21037,13 @@ sided dice.  Experiments can be combined with the pipe-operator.")
 (define-public r-tidydfidx
   (package
     (name "r-tidydfidx")
-    (version "0.0-1")
+    (version "0.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidydfidx" version))
        (sha256
-        (base32 "1ai45x6i0s670zn8bvn8hhv9zk6v94c4a174acg97w9qvdq8x6s8"))))
+        (base32 "0asnxnj7d2061dvydgxqzwnyf5zbk4f9297p1xcpkzfgbg1pxplv"))))
     (properties `((upstream-name . "tidydfidx")))
     (build-system r-build-system)
     (arguments
@@ -20951,7 +21051,7 @@ sided dice.  Experiments can be combined with the pipe-operator.")
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-rdpack r-pillar r-dplyr r-dfidx))
     (native-inputs (list r-quarto))
-    (home-page "https://cran.r-project.org/package=dfidx")
+    (home-page "https://cran.r-project.org/package=tidydfidx")
     (synopsis "Indexed 'tibble' and Methods for 'dplyr'")
     (description
      "This package provides extended data frames, with a special data frame column
@@ -28180,13 +28280,13 @@ particular teams.")
 (define-public r-tealeaves
   (package
     (name "r-tealeaves")
-    (version "1.0.6.1")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tealeaves" version))
        (sha256
-        (base32 "0wkinm8n1348aygmnprcasrc9mpyqg38akf8hsqkqcanygq42jgv"))))
+        (base32 "0w0mnldb5r412r400q3irjcygdy6h86bhgnxnp0s1yw5s361wg4r"))))
     (properties `((upstream-name . "tealeaves")))
     (build-system r-build-system)
     (arguments
@@ -28196,15 +28296,15 @@ particular teams.")
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-progressr
                              r-magrittr
                              r-glue
-                             r-future
                              r-furrr
                              r-dplyr
                              r-crayon
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tealeaves")
+    (home-page "https://github.com/cdmuir/tealeaves")
     (synopsis "Solve for Leaf Temperature Using Energy Balance")
     (description
      "This package implements models of leaf temperature using energy balance.  It

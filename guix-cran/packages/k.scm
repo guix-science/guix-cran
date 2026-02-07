@@ -4799,6 +4799,39 @@ attribute \"keys\" which is updated after every change in rows (subsetting,
 ordering, etc.).  This package is designed to work tightly with dplyr package.")
     (license license:expat)))
 
+(define-public r-keyed
+  (package
+    (name "r-keyed")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "keyed" version))
+       (sha256
+        (base32 "0hj9prf807bds72wxpkv65p70apzimzm5mp8xrdymd3mvnd2xany"))))
+    (properties `((upstream-name . "keyed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-pillar
+                             r-dplyr
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gcol33/keyed")
+    (synopsis "Explicit Key Assumptions for Flat-File Data")
+    (description
+     "Helps make implicit data assumptions explicit by attaching keys to flat-file
+data that error when those assumptions are violated.  Designed for CSV-first
+workflows without database infrastructure or version control.  Provides key
+definition, assumption checks, join diagnostics, and optional drift detection
+against reference snapshots.")
+    (license license:expat)))
+
 (define-public r-keyclust
   (package
     (name "r-keyclust")

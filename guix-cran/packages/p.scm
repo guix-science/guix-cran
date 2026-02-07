@@ -7858,13 +7858,13 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prome
   (package
     (name "r-prome")
-    (version "3.0.1.5")
+    (version "3.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prome" version))
        (sha256
-        (base32 "0ad328pd1nzb5mnw7xbj7j4c087ln7j57yppxqzg3v1pxhnsi6v6"))))
+        (base32 "0nr2i73dip1sng08vsw1w05islz4k58n0kwp92y3szsiz4zi4qji"))))
     (properties `((upstream-name . "prome")))
     (build-system r-build-system)
     (arguments
@@ -13864,6 +13864,40 @@ Comparison', (in press) <doi:10.1093/jalm/jfaf183>.")
     (description
      "This package provides tools for exploring projection pursuit classification tree
 using various projection pursuit indexes.")
+    (license license:gpl2+)))
+
+(define-public r-pptreeext
+  (package
+    (name "r-pptreeext")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PPtreeExt" version))
+       (sha256
+        (base32 "15047b7jqnkg4cspzs66kvp8386npqkcjbn6dzcxmzy7bilbrq97"))))
+    (properties `((upstream-name . "PPtreeExt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pptreeviz
+                             r-mixsim
+                             r-mass
+                             r-gridextra
+                             r-ggplot2))
+    (home-page "https://github.com/natydasilva/PPtreeExt")
+    (synopsis "Projection Pursuit Classification Tree Extensions")
+    (description
+     "This package implements extensions to the projection pursuit tree algorithm for
+supervised classification, see Lee, Y. (2013), <doi:10.1214/13-EJS810> and Lee,
+E-K. (2018) <doi:10.18637/jss.v083.i08>.  The algorithm is changed in two ways:
+improving prediction boundaries by modifying the choice of split points-through
+class subsetting; and increasing flexibility by allowing multiple splits per
+group.")
     (license license:gpl2+)))
 
 (define-public r-pptcirc
@@ -23441,13 +23475,13 @@ palettes for colour-blind viewers.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.9.3")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "07wc3qkjvnph8wnxah9898jg9q2dzrblw9q307m2cn2nc2zi08sp"))))
+        (base32 "1a9n8f4nasfn7pyfb5j0rby784ypjxyg8105qazs2546fxy0gjsw"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -32919,32 +32953,6 @@ miscellaneous functions for field ecologists such as spatial statistics and
 inference on diversity indexes, writing data.frame with Chinese characters.")
     (license license:gpl2+)))
 
-(define-public r-pgenlibr
-  (package
-    (name "r-pgenlibr")
-    (version "0.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pgenlibr" version))
-       (sha256
-        (base32 "1pdwr92xcgfw9cg09d1x4pacb8b9ynzl60pbsdwbpa7c3scjwzs5"))))
-    (properties `((upstream-name . "pgenlibr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=pgenlibr")
-    (synopsis "PLINK 2 Binary (.pgen) Reader")
-    (description
-     "This package provides a thin wrapper over PLINK 2's core libraries which
-provides an R interface for reading .pgen files.  A minimal .pvar loader is also
-included.  Chang et al. (2015) \\doi{10.1186/s13742-015-0047-8}.")
-    (license license:lgpl3+)))
-
 (define-public r-pgee-mixed
   (package
     (name "r-pgee-mixed")
@@ -41902,13 +41910,13 @@ expected, and the maintainer cannot provide any support.")
 (define-public r-partools
   (package
     (name "r-partools")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "partools" version))
        (sha256
-        (base32 "0w7p88y4ab4v14k16k95cyb5f3yl2g6ban11775rmi2h9xqkfxk8"))))
+        (base32 "16l6bd70abh6i4ayny8mbp6naw25zxybcm9f0jxqa4ay3qnm4zbw"))))
     (properties `((upstream-name . "partools")))
     (build-system r-build-system)
     (arguments

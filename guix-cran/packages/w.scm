@@ -3753,6 +3753,45 @@ residual variance.  Specifically, the weight parameter to the function
 variance).")
     (license license:gpl3)))
 
+(define-public r-wired
+  (package
+    (name "r-wired")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wired" version))
+       (sha256
+        (base32 "0d7pqimvyb0mhlj2j9c2gpd05pan640v7ny6n8z4jvqh6482igvd"))))
+    (properties `((upstream-name . "wired")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-mc2d r-mass r-imputets r-forecast))
+    (home-page "https://rpubs.com/giancarlo_vercellino/wired")
+    (synopsis "Weighted Adaptive Prediction with Structured Dependence")
+    (description
+     "Builds a joint probabilistic forecast across series and horizons using adaptive
+copulas (Gaussian/t) with shrinkage-repaired correlations.  At the low level it
+calls a probabilistic mixer per series and horizon, which backtests several
+simple predictors, predicts next-window Continuous Ranked Probability Score
+(CRPS), and converts those scores into softmax weights to form a calibrated
+mixture (r/q/p/dfun).  The mixer blends eight simple predictors: a naive
+predictor that wraps the last move in a PERT distribution; an arima predictor
+using auto.arima for one-step forecasts; an Exponentially Weighted Moving
+Average (EWMA) gaussian predictor with mean/variance under a Gaussian; a
+historical bootstrap predictor that resamples past horizon-aligned moves; a
+drift residual bootstrap predictor combining linear trend with bootstrapped
+residuals; a volatility-scaled naive predictor centering on the last move and
+scaling by recent volatility; a robust median mad predictor using median/MAD
+with Laplace or Normal shape; and a shrunk quantile predictor that fits a few
+quantile regressions over time and interpolates to a full predictive.  The
+function then couples the per-series mixtures on a common transform
+(additive/multiplicative/log-multiplicative), simulates coherent draws, and
+returns both transformed- and level-scale samplers and summaries.")
+    (license license:gpl3)))
+
 (define-public r-wipf
   (package
     (name "r-wipf")
@@ -5253,6 +5292,35 @@ removal), terrain analysis (e.g. common terrain indices such as slope,
 curvatures, wetness index, hillshading; hypsometric analysis; multi-scale
 topographic position analysis), and @code{LiDAR} data processing.  Suggested
 citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
+    (license license:expat)))
+
+(define-public r-whisper
+  (package
+    (name "r-whisper")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "whisper" version))
+       (sha256
+        (base32 "0mnn6r88fhpw9h1ljwzrdz3qv6w4775xpq0i9hlz5qq7ahdrhzyz"))))
+    (properties `((upstream-name . "whisper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-safetensors r-jsonlite r-hfhub r-av))
+    (home-page "https://github.com/cornball-ai/whisper")
+    (synopsis "Native R 'torch' Implementation of 'OpenAI' 'Whisper'")
+    (description
+     "Speech-to-text transcription using a native R torch implementation of
+@code{OpenAI} Whisper model <https://github.com/openai/whisper>.  Supports
+multiple model sizes from tiny (39M parameters) to large-v3 (1.5B parameters)
+with integrated download from @code{HuggingFace} <https://huggingface.co/> via
+the hfhub package.  Provides automatic speech recognition with optional language
+detection and translation to English.  Audio preprocessing, mel spectrogram
+computation, and transformer-based encoder-decoder inference are all implemented
+in R using the torch package.")
     (license license:expat)))
 
 (define-public r-whirl

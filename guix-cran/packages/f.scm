@@ -19466,13 +19466,13 @@ squares when estimating the interacted specification of Angrist and Imbens
 (define-public r-feisr
   (package
     (name "r-feisr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "feisr" version))
        (sha256
-        (base32 "1i89w3n365k4fwgiifb2f68ag11f96rrxqxradrjvbmi7r80md99"))))
+        (base32 "07x3n2dj37376k1d9n0qhqf5jkw8ihlhgqvma0y8k48sw4z3ciy9"))))
     (properties `((upstream-name . "feisr")))
     (build-system r-build-system)
     (arguments

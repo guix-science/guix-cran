@@ -33295,13 +33295,13 @@ based on weighted distributions as described in Lele and Keim (2006)
 (define-public r-resourcer
   (package
     (name "r-resourcer")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resourcer" version))
        (sha256
-        (base32 "0rffkz2ybvr58jpa3kfiw4s3rk0cmrm9r5ca2abbzlcny7kxb7v5"))))
+        (base32 "13fhb13kjvb3lb7b2fw06yn1b9pf0dfcl7racr754y0x1qqklm9r"))))
     (properties `((upstream-name . "resourcer")))
     (build-system r-build-system)
     (arguments
@@ -33309,7 +33309,7 @@ based on weighted distributions as described in Lele and Keim (2006)
       #:tests? #f))
     (propagated-inputs (list r-r6 r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=resourcer")
+    (home-page "https://www.obiba.org/resourcer/")
     (synopsis "Resource Resolver")
     (description
      "This package provides a resource represents some data or a computation unit.  It
@@ -33345,13 +33345,13 @@ spectral density.")
 (define-public r-resourcecode
   (package
     (name "r-resourcecode")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resourcecode" version))
        (sha256
-        (base32 "12j05f890v4hrxlji9qsb7w1mvdi14ync3qwrsz5mv0issawjhxc"))))
+        (base32 "0dzwws3440crn718a85w6834ay7ylzkbkx28vynf8qazwjrbv046"))))
     (properties `((upstream-name . "resourcecode")))
     (build-system r-build-system)
     (arguments
@@ -33368,11 +33368,10 @@ spectral density.")
                              r-patchwork
                              r-ncdf4
                              r-lubridate
-                             r-jsonlite
+                             r-httr2
                              r-gridtext
                              r-ggplot2
                              r-geosphere
-                             r-curl
                              r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Resourcecode-project/r-resourcecode")
@@ -33456,6 +33455,36 @@ et al 2015) <doi:10.1214/15-AOAS824>, temporal splines (Upton et al 2023)
 and result summarisation.  Notably, it accommodates the inherent measurement
 errors found in relative sea-level data across multiple dimensions, allowing for
 their inclusion in the statistical models.")
+    (license license:expat)))
+
+(define-public r-reslik
+  (package
+    (name "r-reslik")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "resLIK" version))
+       (sha256
+        (base32 "0cksil3y40am1sywk9m1f38x3pnq4ayx37gnn53xj3bfkbsa0ids"))))
+    (properties `((upstream-name . "resLIK")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=resLIK")
+    (synopsis "Representation-Level Control Surfaces for Reliability Sensing")
+    (description
+     "This package implements the Representation-Level Control Surfaces (RLCS)
+paradigm for ensuring the reliability of autonomous systems and AI models.  It
+provides three deterministic sensors: Residual Likelihood (@code{ResLik}) for
+population-level anomaly detection, Temporal Consistency Sensor (TCS) for drift
+and shock detection, and Agreement Sensor for multi-modal redundancy checks.
+These sensors feed into a standardized control surface that issues PROCEED',
+DEFER', or ABSTAIN signals based on strict safety invariants, allowing systems
+to detect and react to out-of-distribution states, sensor failures, and
+environmental shifts before they propagate to decision-making layers.")
     (license license:expat)))
 
 (define-public r-reslife
@@ -48310,13 +48339,13 @@ outcome using BUGS code from Bristol University (Lu and Ades).")
 (define-public r-rcmdrplugin-riskdemo
   (package
     (name "r-rcmdrplugin-riskdemo")
-    (version "3.2")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.RiskDemo" version))
        (sha256
-        (base32 "07v15wnmqqa69gy2kl2jkdgn9nzjj2fz5yy56gkhxczw7j6516ij"))))
+        (base32 "1jyf9h96x621fh06m75zdavjldxajka99nsapqww7a4bbqq70aj0"))))
     (properties `((upstream-name . "RcmdrPlugin.RiskDemo")))
     (build-system r-build-system)
     (arguments

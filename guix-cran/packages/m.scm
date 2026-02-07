@@ -14419,6 +14419,40 @@ ISBN:9780849394522), Balakrishnan and Sandhu (1995)
 <doi:10.1016/j.spl.2013.06.028>.")
     (license license:gpl3)))
 
+(define-public r-mortsoa
+  (package
+    (name "r-mortsoa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mortSOA" version))
+       (sha256
+        (base32 "0bcchzba67c18zk3k2zdspaj0zb6h0hfaf0nhgji6k4y0f33lxaq"))))
+    (properties `((upstream-name . "mortSOA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/mattheaphy/mortSOA/")
+    (synopsis
+     "Obtain Data from the Society of Actuaries 'Mortality and Other Rate Tables' Site")
+    (description
+     "The Society of Actuaries (SOA) provides an extensive online database called
+Mortality and Other Rate Tables ('MORT') at <https://mort.soa.org/>.  This
+database contains mortality, lapse, and valuation tables that cover a variety of
+product types and nations.  Users of the database can download any tables in
+Excel', CSV', or XML formats.  This package provides convenience functions that
+read XML formats from the database and return R objects.")
+    (license license:expat)))
+
 (define-public r-mortcast
   (package
     (name "r-mortcast")
@@ -20987,13 +21021,13 @@ the objectives of the KDD process.")
 (define-public r-mlvar
   (package
     (name "r-mlvar")
-    (version "0.5.2")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlVAR" version))
        (sha256
-        (base32 "0xvkhbjkzrvg9x5rd1yn9kzk27f4khwil1837l83jyd33hlyfsj3"))))
+        (base32 "035r2llz0cg1kpvjj0rwgxr4n2lp7hzmbml6f35akvxw3kiq2gaw"))))
     (properties `((upstream-name . "mlVAR")))
     (build-system r-build-system)
     (arguments
@@ -21001,7 +21035,6 @@ the objectives of the KDD process.")
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-qgraph
-                             r-plyr
                              r-mvtnorm
                              r-mplusautomation
                              r-lme4
@@ -31521,13 +31554,13 @@ GÃ¼nther K, Behrens T, Bullerdiek J, Nimzyk R, Ahrens W, Didelez V (2020)
 (define-public r-micar
   (package
     (name "r-micar")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micar" version))
        (sha256
-        (base32 "1zx2x6r4m0ihwhjd2n4rmk9da7p9bpadk65h7mbb0rgvwrspkzf8"))))
+        (base32 "18n97i1vjcx2iv8lrvicnnyma7vsb0cp8vyy7h5w3s8kxx1qnskb"))))
     (properties `((upstream-name . "micar")))
     (build-system r-build-system)
     (arguments
@@ -49361,19 +49394,19 @@ in experimental or observational settings under unconfoundedness.")
 (define-public r-mapycusmaximus
   (package
     (name "r-mapycusmaximus")
-    (version "1.0.0")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapycusmaximus" version))
        (sha256
-        (base32 "0vy4vb5yfhmqk744c5aalz1b7f1ddl3yzczlkzyxzzv1l6dhkfyq"))))
+        (base32 "0z8i357hz30w338hnqn77xl6nzb0rnqdb6rm9a8adacns1k7wl4w"))))
     (properties `((upstream-name . "mapycusmaximus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-lwgeom r-ggplot2))
+    (propagated-inputs (list r-sf r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://alex-nguyen-vn.github.io/mapycusmaximus/")
     (synopsis

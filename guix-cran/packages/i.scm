@@ -5641,19 +5641,20 @@ model/data set combination is close-to-linear or not.  See Bates and Watts
 (define-public r-ipeaplot
   (package
     (name "r-ipeaplot")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipeaplot" version))
        (sha256
-        (base32 "1hz3i4vrcyrc5mfsd8w50smhkc823x85m0w13wq0akdpy3dbgs25"))))
+        (base32 "1nbgk4vb1a997zim44kpm0wbmx2f43m848pi28x0qfhx7fnn1cmm"))))
     (properties `((upstream-name . "ipeaplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-svglite
+                             r-scales
                              r-rlang
                              r-ragg
                              r-paletteer
@@ -11456,6 +11457,38 @@ sources.  For more information on the APIs, see: Nager.Date
 Countries API <https://restcountries.com/>.")
     (license license:expat)))
 
+(define-public r-indonesiafootballscoutr
+  (package
+    (name "r-indonesiafootballscoutr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "indonesiaFootballScoutR" version))
+       (sha256
+        (base32 "0sr7dd6hgp1k09f4r3p5lxhp94v89ijr8b98cw7q1rngvsh3bzi8"))))
+    (properties `((upstream-name . "indonesiaFootballScoutR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rvest
+                             r-readr
+                             r-purrr
+                             r-proxy
+                             r-dplyr))
+    (home-page "https://github.com/tioanta/indonesiaFootballScoutR")
+    (synopsis "Tools for Football Player Scouting in Indonesia")
+    (description
+     "This package provides tools to scrape, clean, and analyze football player data
+from Indonesian leagues and perform similarity-based scouting analysis using
+standardized numeric features.  The similarity approach follows common
+vector-space methods as described in Manning et al. (2008, ISBN:9780521865715)
+and Salton et al. (1975, <doi:10.1145/361219.361220>).")
+    (license license:expat)))
+
 (define-public r-indirect
   (package
     (name "r-indirect")
@@ -16289,13 +16322,13 @@ association data, especially with large controls re-sequenced data.")
 (define-public r-ifo
   (package
     (name "r-ifo")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ifo" version))
        (sha256
-        (base32 "02if8fa49bfmfbk9bkjmayfsr6jx7j28i9z9kw48g2j7s31ajx20"))))
+        (base32 "0xr8w99iq3nqpj7fi04n3zqrq5vgi54lz0i1z13jjmi65hg13y4r"))))
     (properties `((upstream-name . "ifo")))
     (build-system r-build-system)
     (arguments

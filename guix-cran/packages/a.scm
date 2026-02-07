@@ -1920,13 +1920,13 @@ compatible with ggplot2 and dplyr'.")
 (define-public r-autotab
   (package
     (name "r-autotab")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autotab" version))
        (sha256
-        (base32 "0swzpp0w7wfwx46z5qk3znyfly9d2hx7ng6ccxk1qcs1y7a62mik"))))
+        (base32 "0lhdynnc5shv96rrh4k71rp1pzylq0bk4m3q0qh8ks343nfr6iy6"))))
     (properties `((upstream-name . "autotab")))
     (build-system r-build-system)
     (arguments
@@ -2279,13 +2279,13 @@ plots can be exported in \"HTML\", \"pdf('@code{LaTex}')\", \"docx('MS Word')\" 
 (define-public r-autoplots
   (package
     (name "r-autoplots")
-    (version "1.0.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AutoPlots" version))
        (sha256
-        (base32 "0fw90l1dc7s488yn7m45ivkg3l97bx7cks8vd66984zhqp0g66jd"))))
+        (base32 "1hzncr3zgpiqim3g2k17y5wjhwjid2a28k68chpqnqssfbhjvyi5"))))
     (properties `((upstream-name . "AutoPlots")))
     (build-system r-build-system)
     (arguments
@@ -2296,6 +2296,8 @@ plots can be exported in \"HTML\", \"pdf('@code{LaTex}')\", \"docx('MS Word')\" 
                              r-quanteda
                              r-nortest
                              r-lubridate
+                             r-htmlwidgets
+                             r-htmltools
                              r-echarts4r
                              r-e1071
                              r-dplyr
@@ -8381,6 +8383,35 @@ on-demand or precalculate and auto-upload data file beside shareable Arena URL."
 existing plots.  A variety of input formats are supported, including vectors,
 matrices, data frames, formulas, etc.")
     (license license:gpl3)))
+
+(define-public r-areaofeffect
+  (package
+    (name "r-areaofeffect")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "areaOfEffect" version))
+       (sha256
+        (base32 "0aqspvrnld5qjx4li5li9805pg9fs2nzgm88f12rblmcfyl8cbjn"))))
+    (properties `((upstream-name . "areaOfEffect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/areaOfEffect/")
+    (synopsis "Spatial Support at Scale")
+    (description
+     "Formalizes spatial support at scale for ecological and geographical analysis.
+Given points and support polygons, classifies points as \"core\" (inside original
+support) or \"halo\" (inside scaled support but outside original), pruning all
+others.  The default scale produces equal core and halo areas - a geometrically
+derived choice requiring no tuning.  An optional mask enforces hard boundaries
+such as coastlines.  Political borders are treated as soft boundaries with no
+ecological meaning.")
+    (license license:expat)))
 
 (define-public r-areal
   (package

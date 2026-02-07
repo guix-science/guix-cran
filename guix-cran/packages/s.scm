@@ -33443,13 +33443,13 @@ to drive cancer.")
 (define-public r-somadataio
   (package
     (name "r-somadataio")
-    (version "6.4.0")
+    (version "6.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SomaDataIO" version))
        (sha256
-        (base32 "1kia8452s5d3p60r8cn6hkgxjsa58l9dxz80nb3sfbr5l6h9bkkp"))))
+        (base32 "1df6v18w6q2v6fxc8131sdr4fqgyv5p6nxkmxhzrycr68hhsh69m"))))
     (properties `((upstream-name . "SomaDataIO")))
     (build-system r-build-system)
     (arguments
@@ -33467,8 +33467,8 @@ to drive cancer.")
     (home-page "https://somalogic.github.io/SomaDataIO/")
     (synopsis "Input/Output 'SomaScan' Data")
     (description
-     "Load and export @code{SomaScan} data via the Standard @code{BioTools}, Inc.
-structured text file called an ADAT ('*.adat').  For file format see
+     "Load and export @code{SomaScan} data via the @code{SomaLogic} Operating Co.,
+Inc.  structured text file called an ADAT ('*.adat').  For file format see
 <https://github.com/@code{SomaLogic/SomaLogic-Data/blob/main/README.md>}.  The
 package also exports auxiliary functions for manipulating, wrangling, and
 extracting relevant information from an ADAT object once in memory.")
@@ -35455,6 +35455,35 @@ differentiation of log-density are provided.  Note: Formerly available versions
 of the @code{MfUSampler} can be obtained from the archive
 <https://cran.r-project.org/src/contrib/Archive/@code{MfUSampler/>}.")
     (license license:gpl2+)))
+
+(define-public r-snreg
+  (package
+    (name "r-snreg")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snreg" version))
+       (sha256
+        (base32 "1a90r2wwrv8xj4s29mjbz14dbdlbd0dsc5vcg2vfnl9yrqm78210"))))
+    (properties `((upstream-name . "snreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-npsf r-formula))
+    (native-inputs (list r-knitr))
+    (home-page "https://olegbadunenko.github.io/snreg/")
+    (synopsis "Regression with Skew-Normally Distributed Error Term")
+    (description
+     "Models with skewânormally distributed and thus asymmetric error terms,
+implementing the methods developed in Badunenko and Henderson (2023) \"Production
+analysis with asymmetric noise\" <doi:10.1007/s11123-023-00680-5>.  The package
+provides tools to estimate regression models with skewânormal error terms,
+allowing both the variance and skewness parameters to be heteroskedastic.  It
+also includes a stochastic frontier framework that accommodates both i.i.d.  and
+heteroskedastic inefficiency terms.")
+    (license license:gpl3)))
 
 (define-public r-snqtl
   (package
@@ -43269,13 +43298,13 @@ purposes.")
 (define-public r-simulist
   (package
     (name "r-simulist")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simulist" version))
        (sha256
-        (base32 "1kzazg95jff5rs6vi5096vccwfm5s8j6vlx65849d15fx33q3wla"))))
+        (base32 "0dckind8djwi3sja1zk95nhqghm0432kaaq1a75c730997a3l8s7"))))
     (properties `((upstream-name . "simulist")))
     (build-system r-build-system)
     (arguments
@@ -43842,13 +43871,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.14")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "1nrcdh87vwjd0yq529har3h17h4wp22xz6v4wkg5x4dilwg5k6sn"))))
+        (base32 "09w5n4bws01afm36i004q2538zq11dhzv8fyj44kkkjrqzf6w272"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (arguments
@@ -45049,13 +45078,13 @@ using Bernoulli or Poisson distributions.  See Singer et al. (2019)
 (define-public r-simph
   (package
     (name "r-simph")
-    (version "1.3.14")
+    (version "1.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simPH" version))
        (sha256
-        (base32 "0wrhx01iiww09rlfdi5b15njh1yxxjwkxmr3kl2bd9ghp5bp4g3v"))))
+        (base32 "0iyi7zckdjr44bsl5vwx77598njz3wcnzglsnm4npqdz08sk3y25"))))
     (properties `((upstream-name . "simPH")))
     (build-system r-build-system)
     (arguments
@@ -45066,7 +45095,6 @@ using Bernoulli or Poisson distributions.  See Singer et al. (2019)
                              r-quadprog
                              r-mgcv
                              r-mass
-                             r-lazyeval
                              r-gridextra
                              r-ggplot2
                              r-dplyr
@@ -50370,13 +50398,13 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "0ih0db70my5h6lm3jd6jfc2d68m1i993g62ncq993c4w7qpa4qhn"))))
+        (base32 "1pdkgxjy65q3ib0pg8id86gvwm7a03yxs6wbl97i6yqidh8hvb7b"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
@@ -56725,13 +56753,13 @@ conceived to be used in a spatial tidyverse context.")
 (define-public r-sfc
   (package
     (name "r-sfc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfc" version))
        (sha256
-        (base32 "0cm4mfcfd9bhf2j5fppsihzrfipnldb6q3xradd88z9pwgrkfx2a"))))
+        (base32 "17dlxxs0v5mlipin82kd17hpjbr915w2y7y8hhwqixcnqrzlh03m"))))
     (properties `((upstream-name . "sfc")))
     (build-system r-build-system)
     (arguments
@@ -70468,6 +70496,51 @@ assessment, predictions, and cross-validation also included.")
      "Generate Stochastic Branching Networks ('SBNs').  Used to model the branching
 structure of rivers.")
     (license license:expat)))
+
+(define-public r-sbmtrees
+  (package
+    (name "r-sbmtrees")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SBMTrees" version))
+       (sha256
+        (base32 "0jpni6gvy1x5jnb6phajv12f6llcnhxn46ybri0mzjjv2hg5zgcq"))))
+    (properties `((upstream-name . "SBMTrees")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sn
+                             r-rcppprogress
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pg
+                             r-nnet
+                             r-mvtnorm
+                             r-mice
+                             r-matrix
+                             r-mass
+                             r-lme4
+                             r-dplyr
+                             r-arm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SBMTrees")
+    (synopsis
+     "Longitudinal Sequential Imputation and Prediction with Bayesian Trees Mixed-Effects Models for Longitudinal Data")
+    (description
+     "This package implements a sequential imputation framework using Bayesian
+Mixed-Effects Trees ('SBMTrees') for handling missing data in longitudinal
+studies.  The package supports a variety of models, including non-linear
+relationships and non-normal random effects and residuals, leveraging Dirichlet
+Process priors for increased flexibility.  Key features include handling Missing
+at Random (MAR) longitudinal data, imputation of both covariates and outcomes,
+and generating posterior predictive samples for further analysis.  The
+methodology is designed for applications in epidemiology, biostatistics, and
+other fields requiring robust handling of missing data in longitudinal settings.")
+    (license license:gpl2)))
 
 (define-public r-sbmsdp
   (package

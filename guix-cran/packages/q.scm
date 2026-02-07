@@ -618,6 +618,47 @@ details.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-quicksentiment
+  (package
+    (name "r-quicksentiment")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickSentiment" version))
+       (sha256
+        (base32 "178zxkyr4ppb88x84sndlqs3f1x0fs97cxgv0hhqc2xsdv1xzyjf"))))
+    (properties `((upstream-name . "quickSentiment")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-textstem
+                             r-stringr
+                             r-stopwords
+                             r-ranger
+                             r-quanteda
+                             r-matrix
+                             r-magrittr
+                             r-glmnet
+                             r-foreach
+                             r-doparallel
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=quickSentiment")
+    (synopsis "Fast and Flexible Pipeline for Text Classification")
+    (description
+     "This package provides a high-level wrapper that simplifies text classification
+into three streamlined steps: preprocessing, model training, and prediction.  It
+unifies the interface for multiple algorithms (including glmnet', ranger', and
+xgboost') and vectorization methods (Bag-of-Words, Term Frequency-Inverse
+Document Frequency (TF-IDF)), allowing users to go from raw text to a trained
+sentiment model in two function calls.  The resulting model artifact
+automatically handles preprocessing for new datasets in the third step, ensuring
+consistent prediction pipelines.")
+    (license license:expat)))
+
 (define-public r-quickregression
   (package
     (name "r-quickregression")

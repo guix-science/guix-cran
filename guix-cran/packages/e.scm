@@ -6686,27 +6686,22 @@ function).")
 (define-public r-eurlex
   (package
     (name "r-eurlex")
-    (version "0.4.8")
+    (version "0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eurlex" version))
        (sha256
-        (base32 "13f8bfkcda0n6fnh8hp398prx6nb18wfzxy7bklvj91s0y158j8s"))))
+        (base32 "0gxkwlw06r20sw397jppcw53qij1lazkdac42fm8gailrijj04bh"))))
     (properties `((upstream-name . "eurlex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-stringr
                              r-rvest
-                             r-rlang
                              r-pdftools
-                             r-magrittr
                              r-httr
-                             r-dplyr
                              r-curl
                              r-antiword))
     (native-inputs (list r-knitr))

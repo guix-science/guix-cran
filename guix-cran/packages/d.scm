@@ -29725,31 +29725,31 @@ character, and factor columns with NA-aware computations.")
 (define-public r-datastudio
   (package
     (name "r-datastudio")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DATAstudio" version))
        (sha256
-        (base32 "125656zgjkjyvi1h1zdvvi6x8myz0yhs0h3frvvfg9kaha28iiwi"))))
+        (base32 "09vkvbhxfcqpac7j17k92fiwfnfy7dwx3qb2qwkifaix54j2zrfg"))))
     (properties `((upstream-name . "DATAstudio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2 r-data-table))
-    (home-page "https://www.maths.ed.ac.uk/~mdecarv/")
+    (home-page "https://webhomes.maths.ed.ac.uk/~mdecarv/")
     (synopsis "The Research Data Warehouse of Miguel de Carvalho")
     (description
      "Pulls together a collection of datasets from Miguel de Carvalho research
-articles.  Including, for example: - de Carvalho (2012)
+articles and books.  Including, for example: - de Carvalho (2012)
 <doi:10.1016/j.jspi.2011.08.016>; - de Carvalho et al (2012)
 <doi:10.1080/03610926.2012.709905>; - de Carvalho et al (2012)
 <doi:10.1016/j.econlet.2011.09.007>); - de Carvalho and Davison (2014)
 <doi:10.1080/01621459.2013.872651>; - de Carvalho and Rua (2017)
 <doi:10.1016/j.ijforecast.2015.09.004>; - de Carvalho et al (2023)
 <doi:10.1002/sta4.560>; - de Carvalho et al (2022)
-<doi:10.1007/s13253-021-00469-9>; - Palacios et al (2024)
+<doi:10.1007/s13253-021-00469-9>; - Palacios et al (2025)
 <doi:10.1214/24-BA1420>.")
     (license license:gpl3+)))
 

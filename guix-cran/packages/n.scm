@@ -470,6 +470,31 @@ n-grams approach is used to determine possible segmentation given the text
 corpus.")
     (license license:gpl3+)))
 
+(define-public r-numspellr
+  (package
+    (name "r-numspellr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numspellR" version))
+       (sha256
+        (base32 "1swvq1ps6027wvpzm7c95h25z39da32v8ppjsfjkbps2lbjzplfn"))))
+    (properties `((upstream-name . "numspellR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=numspellR")
+    (synopsis "Detection of Numeric Persistence and Rigidity Patterns")
+    (description
+     "This package provides tools for detecting numeric persistence (\"spells\") and
+rigidity patterns in time-ordered numeric data.  The package identifies periods
+of stability, computes spell-based rigidity metrics, and provides plain-language
+interpretations suitable for policy and applied analysis.")
+    (license license:expat)))
+
 (define-public r-numosl
   (package
     (name "r-numosl")
@@ -8655,6 +8680,41 @@ inter-individual variability.  These strategies are designed to improve model
 robustness and convergence in nlmixr2 workflows.  For more details see Huang Z,
 Fidler M, Lan M, Cheng IL, Kloprogge F, Standing JF (2025)
 <doi:10.1007/s10928-025-10000-z>.")
+    (license license:gpl3+)))
+
+(define-public r-nlmixr2auto
+  (package
+    (name "r-nlmixr2auto")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2auto" version))
+       (sha256
+        (base32 "1g9h78bgg0bpfdxfysdnsn6c5hsigv3d665jh48wsh6y7h7nirm6"))))
+    (properties `((upstream-name . "nlmixr2auto")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rxode2
+                             r-progressr
+                             r-processx
+                             r-nlmixr2est
+                             r-nlmixr2data
+                             r-nlmixr2autoinit
+                             r-nlmixr2
+                             r-dplyr
+                             r-crayon))
+    (home-page "https://github.com/ucl-pharmacometrics/nlmixr2auto")
+    (synopsis "Automated Population Pharmacokinetic Modeling")
+    (description
+     "Automated population pharmacokinetic modeling framework for data-driven
+initialisation, model evaluation, and metaheuristic optimization.  Supports
+genetic algorithms, ant colony optimization, tabu search, and stepwise
+procedures for automated model selection and parameter estimation within the
+nlmixr2 ecosystem.")
     (license license:gpl3+)))
 
 (define-public r-nlmixr2

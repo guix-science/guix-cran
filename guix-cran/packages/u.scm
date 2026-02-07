@@ -5121,13 +5121,13 @@ list.")
 (define-public r-ucscxenatools
   (package
     (name "r-ucscxenatools")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UCSCXenaTools" version))
        (sha256
-        (base32 "1gnmayvjgar1q74lmndsdf9cvw3l3vsr36jw9m6qy558qkc6n4hf"))))
+        (base32 "1a14nbbvp8zr6157wsc6il6qwjh2w74db1grv8rn83mabs9j29kd"))))
     (properties `((upstream-name . "UCSCXenaTools")))
     (build-system r-build-system)
     (arguments

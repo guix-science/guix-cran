@@ -15505,6 +15505,36 @@ in the NCBI Gene database.  Currently supports NCBI Gene, @code{PubMed}', Gene
 Ontology, KEGG', CRAN and Bioconductor.")
     (license license:expat)))
 
+(define-public r-bioleak
+  (package
+    (name "r-bioleak")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bioLeak" version))
+       (sha256
+        (base32 "1v9xhxdr3267qvfqk5777y321ifpdld9qhdgcdqd0fw07463frzs"))))
+    (properties `((upstream-name . "bioLeak")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment r-parsnip r-hardhat
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/selcukorkmaz/bioLeak")
+    (synopsis
+     "Leakage-Safe Modeling and Auditing for Genomic and Clinical Data")
+    (description
+     "Prevents and detects information leakage in biomedical machine learning.
+Provides leakage-resistant split policies (subject-grouped, batch-blocked, study
+leave-out, time-ordered), guarded preprocessing (train-only imputation,
+normalization, filtering, feature selection), cross-validated fitting with
+common learners, permutation-gap auditing, batch and fold association tests, and
+duplicate detection.")
+    (license license:expat)))
+
 (define-public r-bioinsight
   (package
     (name "r-bioinsight")
@@ -15936,13 +15966,13 @@ analysis is available for free download from the website.  In 2012, methods for
 (define-public r-biocro
   (package
     (name "r-biocro")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioCro" version))
        (sha256
-        (base32 "1zgjv18yzd5nnfz47a6bv7qlnnwxc3miysgdz8z02yn5sfzl07xv"))))
+        (base32 "0kihh8niwmnzmpl8wq72q3awdrdhn235dj8nj2f20jz73nibp8hk"))))
     (properties `((upstream-name . "BioCro")))
     (build-system r-build-system)
     (arguments
@@ -22600,13 +22630,13 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "1jc7v20h3jc2yc0y1xgzs0c63cdrji41aswga5gggcm858kq9wb4"))))
+        (base32 "066c776np23p3n5yhpa06wkkr3d1ry1nbbzxc38gzxnkx0bgxvlc"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (arguments
@@ -27629,6 +27659,73 @@ of specific algorithms.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-bayesics
+  (package
+    (name "r-bayesics")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesics" version))
+       (sha256
+        (base32 "1bjmd2rhw9vj65hbqa760wrspqq6iivbl0kikl8dmwkg8f2l31qv"))))
+    (properties `((upstream-name . "bayesics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rlang
+                             r-patchwork
+                             r-mvtnorm
+                             r-matrix
+                             r-janitor
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-extradistr
+                             r-dplyr
+                             r-dfba
+                             r-cluster
+                             r-bms))
+    (home-page "https://github.com/dksewell/bayesics")
+    (synopsis
+     "Bayesian Analyses for One- and Two-Sample Inference and Regression Methods")
+    (description
+     "Perform fundamental analyses using Bayesian parametric and non-parametric
+inference (regression, anova, 1 and 2 sample inference, non-parametric tests,
+etc.). (Practically) no Markov chain Monte Carlo (MCMC) is used; all exact
+finite sample inference is completed via closed form solutions or else through
+posterior sampling automated to ensure precision in interval estimate bounds.
+Diagnostic plots for model assessment, and key inferential quantities (point and
+interval estimates, probability of direction, region of practical equivalence,
+and Bayes factors) and model visualizations are provided.  Bayes factors are
+computed either by the Savage Dickey ratio given in Dickey (1971)
+<doi:10.1214/aoms/1177693507> or by Chib's method as given in xxx.
+Interpretations are from Kass and Raftery (1995)
+<doi:10.1080/01621459.1995.10476572>.  ROPE bounds are based on discussions in
+Kruschke (2018) <doi:10.1177/2515245918771304>.  Methods for determining the
+number of posterior samples required are described in Doss et al. (2014)
+<doi:10.1214/14-EJS957>.  Bayesian model averaging is done in part by
+Feldkircher and Zeugner (2015) <doi:10.18637/jss.v068.i04>.  Methods for
+contingency table analysis is described in Gunel et al. (1974)
+<doi:10.1093/biomet/61.3.545>.  Variational Bayes (VB) methods are described in
+Salimans and Knowles (2013) <doi:10.1214/13-BA858>.  Mediation analysis uses the
+framework described in Imai et al. (2010) <doi:10.1037/a0020761>.  The
+loss-likelihood bootstrap used in the non-parametric regression modeling is
+described in Lyddon et al. (2019) <doi:10.1093/biomet/asz006>.  Non-parametric
+survival methods are described in Qing et al. (2023) <doi:10.1002/pst.2256>.
+Methods used for the Bayesian Wilcoxon signed-rank analysis is given in Chechile
+(2018) <doi:10.1080/03610926.2017.1388402> and for the Bayesian Wilcoxon rank
+sum analysis in Chechile (2020) <doi:10.1080/03610926.2018.1549247>.
+Correlation analysis methods are carried out by Barch and Chechile (2023)
+<doi:10.32614/CRAN.package.DFBA>, and described in Lindley and Phillips (1976)
+<doi:10.1080/00031305.1976.10479154> and Chechile and Barch (2021)
+<doi:10.1016/j.jmp.2021.102638>.  See also Chechile (2020, ISBN: 9780262044585).")
+    (license license:gpl3+)))
+
 (define-public r-bayesianvars
   (package
     (name "r-bayesianvars")
@@ -28079,6 +28176,43 @@ pre-built functions for high-level abstraction and supports hardware-accelerated
 computation for improved scalability, including parallelization, vectorization,
 and execution on CPU, GPU, or TPU.")
     (license license:gpl3+)))
+
+(define-public r-bayesianhybriddesign
+  (package
+    (name "r-bayesianhybriddesign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianHybridDesign" version))
+       (sha256
+        (base32 "1756s0ad66a6zbnrh1c4iajsriys0s54ay4mivz8vgm8zj5a71ny"))))
+    (properties `((upstream-name . "BayesianHybridDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rbest
+                             r-metrics
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-checkmate
+                             r-assertthat))
+    (home-page "https://cran.r-project.org/package=BayesianHybridDesign")
+    (synopsis "Bayesian Hybrid Design and Analysis")
+    (description
+     "This package implements Bayesian hybrid designs that incorporate historical
+control data into a current clinical trial.  The package uses a dynamic power
+prior method to determine the degree of borrowing from the historical data,
+creating a hybrid control arm.  This approach is primarily designed for studies
+with a binary primary endpoint, such as the overall response rate (ORR).
+Functions are provided for design calibration, sample size calculation, power
+evaluation, and final analysis.  Additionally, it includes functions adapted
+from the SAMprior package (v1.1.1) by Yang et al. (2023)
+<https://academic.oup.com/biometrics/article/79/4/2857/7587575> to support the
+Self-Adapting Mixture (SAM) prior framework for comparison.")
+    (license license:gpl3)))
 
 (define-public r-bayesianglasso
   (package
