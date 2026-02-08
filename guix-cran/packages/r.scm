@@ -27803,19 +27803,19 @@ available through the online app @code{QuickPed} at
 (define-public r-rib
   (package
     (name "r-rib")
-    (version "0.25.3")
+    (version "0.30.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rib" version))
        (sha256
-        (base32 "1bkxy9x6gr8fv8d05zxk8bxpavjz0blzrc5b4fqyc66nxprwp3j8"))))
+        (base32 "0r8vyicm7q3lvrqwy3ms407m37g9x558cdsrqg3akskc9hy3xd4z"))))
     (properties `((upstream-name . "rib")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6))
+    (propagated-inputs (list r-rprotobuf r-r6))
     (home-page "https://github.com/lbilli/rib")
     (synopsis "An Implementation of 'Interactive Brokers' API")
     (description
@@ -30737,19 +30737,24 @@ equivalent R commands and controlling the sequence of execution.")
 (define-public r-rfoc
   (package
     (name "r-rfoc")
-    (version "3.4-10")
+    (version "3.4-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFOC" version))
        (sha256
-        (base32 "0011irdbvflqz9r1l6c8d801y6jx0xmwhcv2a6xjwj0bjsw1s8di"))))
+        (base32 "167vdbgbb70z0yyx9gd5ddyv2clhsc7v7prkv22bsdqbbmw75ivf"))))
     (properties `((upstream-name . "RFOC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rseis r-rpmg r-mass r-geomap r-fields))
+    (propagated-inputs (list r-rseis
+                             r-rpmg
+                             r-rpanel
+                             r-mass
+                             r-geomap
+                             r-fields))
     (home-page "https://cran.r-project.org/package=RFOC")
     (synopsis
      "Graphics for Spherical Distributions and Earthquake Focal Mechanisms")
@@ -35126,13 +35131,13 @@ Also retrieve and process result sets as either a ragged or flattened tibble'.")
 (define-public r-reporter
   (package
     (name "r-reporter")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reporter" version))
        (sha256
-        (base32 "07w2hv910p57j458d3zckqh16c31gcpn9062pdkj42fjayk69zqj"))))
+        (base32 "0d51drjv3jvhz33qqvwph3xpmdpfp9hzxc98xxml3psgnk4c7c0f"))))
     (properties `((upstream-name . "reporter")))
     (build-system r-build-system)
     (arguments
@@ -42468,6 +42473,35 @@ statistical tables (<https://www.rba.gov.au/statistics/tables/>) and forecasts
 (<https://www.rba.gov.au/publications/smp/forecasts-archive.html>).  Data
 includes a broad range of Australian macroeconomic and financial time series.")
     (license license:expat)))
+
+(define-public r-readosense
+  (package
+    (name "r-readosense")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readosense" version))
+       (sha256
+        (base32 "1s8afql2knb4d7xlfjqkgj18148wqg10f0zcfbmw73hqiync7ihq"))))
+    (properties `((upstream-name . "readosense")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-dplyr))
+    (home-page "https://jogaudard.github.io/readosense/")
+    (synopsis "Imports Log and Data Files from Eosense Flux Chambers")
+    (description
+     "Imports log and data files from \"Eosense\" ecosystem gas flux chambers into
+dataframes that can directly be used with \"fluxible\" by Gaudard et al (2025)
+<doi:10.1111/2041-210X.70161>.")
+    (license license:gpl3+)))
 
 (define-public r-readoffice
   (package

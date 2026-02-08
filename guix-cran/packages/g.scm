@@ -7427,13 +7427,13 @@ lines.")
 (define-public r-gratia
   (package
     (name "r-gratia")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gratia" version))
        (sha256
-        (base32 "0y1vgqdy3dk1my582j4mm3ihwips7a4v6y9bs8vgc4m6f36hmp6d"))))
+        (base32 "08vfy3lbk8sf00wm10bykrxs31wrxqg6a8l0qm47fzk3sgggkigj"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
     (arguments
@@ -35401,13 +35401,13 @@ native functions that work on simple arrays.")
 (define-public r-garma
   (package
     (name "r-garma")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "garma" version))
        (sha256
-        (base32 "1qwavs8wbdvx1cgrvy22kjdpld46qm6kh17zwrc2xajvlfnl4jys"))))
+        (base32 "099xrh6q4aj81vdxa30jlvmq0dm2i2lw92m8l4rmknwgiqzpxpy6"))))
     (properties `((upstream-name . "garma")))
     (build-system r-build-system)
     (arguments

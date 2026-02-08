@@ -12026,20 +12026,19 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
 (define-public r-floral
   (package
     (name "r-floral")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLORAL" version))
        (sha256
-        (base32 "1gl7mp2pni5frwj41hmpxmp1f70irp01yv35qhb89fcmqmxfnfb2"))))
+        (base32 "1q701qhazk19ppjbxyjmjl07svik6spqnhcr77n7rv9dg0w0n7p1"))))
     (properties `((upstream-name . "FLORAL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
-                             r-survcomp
                              r-reshape
                              r-rcppprogress
                              r-rcpparmadillo
@@ -23067,13 +23066,13 @@ maintaining very fast response time.")
 (define-public r-fastrmodels
   (package
     (name "r-fastrmodels")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastrmodels" version))
        (sha256
-        (base32 "1hwgk0pjah8f503y8aydqmwmikdx88xmlxk805i106gcmcj7gbcx"))))
+        (base32 "0q97p944r7hi2xh7c94ajhr2p5l920cgavwmzmzb1kf37c08fbji"))))
     (properties `((upstream-name . "fastrmodels")))
     (build-system r-build-system)
     (arguments

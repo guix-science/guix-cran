@@ -16403,20 +16403,20 @@ supporting results.")
 (define-public r-ife
   (package
     (name "r-ife")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ife" version))
        (sha256
-        (base32 "0jxkx8pl1qn0l5m1lmzijhwzxv68l5v3m7irh7n7y8dcizjh8f21"))))
+        (base32 "1ljydlk5z6zz06ikakzl8pvwkcmbvrw2ypa2iq8rbnqllndixgmn"))))
     (properties `((upstream-name . "ife")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-s7 r-generics r-cli))
-    (home-page "https://cran.r-project.org/package=ife")
+    (propagated-inputs (list r-s7 r-generics r-collapse r-cli))
+    (home-page "https://github.com/nt-williams/ife")
     (synopsis "Autodiff for Influence Function Based Estimates")
     (description
      "This package implements an S7 class for estimates based on influence functions,

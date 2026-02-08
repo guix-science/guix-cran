@@ -11723,13 +11723,13 @@ The implementation is based on dbplyr with full tidyverse compatibility.")
 (define-public r-healthcare-antitrust
   (package
     (name "r-healthcare-antitrust")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthcare.antitrust" version))
        (sha256
-        (base32 "1584j0ljvxp4b1ly0gxs9sdsnvvg96f91x94v5xngr4zrvsc21ga"))))
+        (base32 "0fd1wla4fzpgv7bngxzckpa8mlvdsvx4wqnnjk1hw839h2vi59k4"))))
     (properties `((upstream-name . "healthcare.antitrust")))
     (build-system r-build-system)
     (arguments

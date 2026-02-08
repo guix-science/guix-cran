@@ -5694,6 +5694,35 @@ Gradient Descent and the Adaptive Moment Estimation (Adam) are the methods
 implemented.  Other methods will be implemented in the future.")
     (license license:gpl3)))
 
+(define-public r-optimflex
+  (package
+    (name "r-optimflex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimflex" version))
+       (sha256
+        (base32 "16316zj1hchb32irj2fs48nbviciyp1a550pyy5awpdib6c2zss8"))))
+    (properties `((upstream-name . "optimflex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=optimflex")
+    (synopsis
+     "Derivative-Based Optimization with User-Defined Convergence Criteria")
+    (description
+     "This package provides a derivative-based optimization framework that allows
+users to combine eight convergence criteria.  Unlike standard optimization
+functions, this package includes a built-in mechanism to verify the positive
+definiteness of the Hessian matrix at the point of convergence.  This additional
+check helps prevent the solver from falsely identifying non-optimal solutions,
+such as saddle points, as valid minima.")
+    (license license:expat)))
+
 (define-public r-optimcheck
   (package
     (name "r-optimcheck")

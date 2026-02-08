@@ -15626,19 +15626,19 @@ end-of-chapter exercises.  Information about the book is available at
 (define-public r-ambit
   (package
     (name "r-ambit")
-    (version "0.1.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ambit" version))
        (sha256
-        (base32 "1zjsbza5gzr0sfprfxrxrxy3f75r64bi5szk519n2wf5vr4qr7si"))))
+        (base32 "1n851np50jc7fxm97mbw61r2gahzwsn65rk3gjj8rby6rgi9hyjh"))))
     (properties `((upstream-name . "ambit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-fbasics))
+    (propagated-inputs (list r-rcpp r-nnet r-lsts r-fbasics r-deoptim))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ambit")
     (synopsis "Simulation and Estimation of Ambit Processes")

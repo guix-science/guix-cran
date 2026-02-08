@@ -5983,13 +5983,13 @@ cases and controls can be calculated and plotted.")
 (define-public r-westerlund
   (package
     (name "r-westerlund")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Westerlund" version))
        (sha256
-        (base32 "1fjkqdrmw4ymhzl9c007ja9rlwksyb16glxcwm2j8pwfargr9n6r"))))
+        (base32 "0z4q4yg3y5z76gh0jl2b976ilhfcsbx93ilx0kk0n7x7s423h4ak"))))
     (properties `((upstream-name . "Westerlund")))
     (build-system r-build-system)
     (arguments
@@ -6005,7 +6005,7 @@ cointegration tests developed by Westerlund (2007)
 <doi:10.1111/j.1468-0084.2007.00477.x>.  The tests are based on structural
 rather than residual dynamics and allow for heterogeneity in both the long-run
 cointegrating relationship and the short-run dynamics.  The package includes
-logic for automated lag and lead selection via AIC, Bartlett kernel long-run
+logic for automated lag and lead selection via AIC/BIC, Bartlett kernel long-run
 variance estimation, and a bootstrap procedure to handle cross-sectional
 dependence.  It also includes a bootstrapping distribution visualization
 function for diagnostic purposes.")

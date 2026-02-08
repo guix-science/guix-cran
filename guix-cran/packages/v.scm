@@ -1664,13 +1664,13 @@ after the initial release of this package.")
 (define-public r-volker
   (package
     (name "r-volker")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volker" version))
        (sha256
-        (base32 "0b8hvh6kj8syk8kk4y8w16wlkndci6vjwv7znfmjiidm4gg3whba"))))
+        (base32 "0v1aqjsxd5jvyww8dri4jiwclafr22c50pgpmbschx4g4zfrjx48"))))
     (properties `((upstream-name . "volker")))
     (build-system r-build-system)
     (arguments
@@ -7726,13 +7726,13 @@ W., & Bondell, H. D. (2023) <doi:10.1080/01621459.2023.2169701>.")
 (define-public r-vazul
   (package
     (name "r-vazul")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vazul" version))
        (sha256
-        (base32 "0dxcz18wsbh0nmsl8mn9gjaf3pv1jg5aa1m32b61blq7gb78gpcy"))))
+        (base32 "1vjc0h1ggwyqxsjzmfzvm10bv8vllajqxqx374nrb9pihkfkqcx9"))))
     (properties `((upstream-name . "vazul")))
     (build-system r-build-system)
     (arguments

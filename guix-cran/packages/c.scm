@@ -27431,13 +27431,13 @@ repository, as it is a part of RKWard.")
 (define-public r-cocoon
   (package
     (name "r-cocoon")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocoon" version))
        (sha256
-        (base32 "0q6gr3fk6yqgkz7l2k1nz9v4mwi525jcm3xbnsdyds24kixz20mz"))))
+        (base32 "0qyzn88lb5w3jx7xcg6dic243l9b6i085nyj2c2f0j76vnvpmpa5"))))
     (properties `((upstream-name . "cocoon")))
     (build-system r-build-system)
     (arguments
@@ -36021,13 +36021,13 @@ matrix representing multiple variables.")
 (define-public r-cisp
   (package
     (name "r-cisp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cisp" version))
        (sha256
-        (base32 "01i421rdh7n7m44sqsc2rzh2d9mpmvca8kgc2060fxi4sj116gb5"))))
+        (base32 "19szm21yn9c55k2v5gfn8dl5wrjq55isaj27wfz01gyrpsp1y1sv"))))
     (properties `((upstream-name . "cisp")))
     (build-system r-build-system)
     (arguments
@@ -36037,7 +36037,6 @@ matrix representing multiple variables.")
                              r-tibble
                              r-sf
                              r-sdsfun
-                             r-rcolorbrewer
                              r-purrr
                              r-magrittr
                              r-igraph
@@ -36050,7 +36049,7 @@ matrix representing multiple variables.")
     (home-page "https://stscl.github.io/cisp/")
     (synopsis "Correlation Indicator Based on Spatial Patterns")
     (description
-     "Use the spatial association marginal contributions derived from spatial
+     "Utilizes spatial association marginal contributions derived from spatial
 stratified heterogeneity to capture the degree of correlation between spatial
 patterns.")
     (license license:gpl3)))

@@ -1493,13 +1493,13 @@ modelled via a discrete Weibull distribution.")
 (define-public r-dwp
   (package
     (name "r-dwp")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dwp" version))
        (sha256
-        (base32 "1a70lxw4ck3pbklyibn8x6qpgj16zvawi76qqc9rnc26q2n5zp6j"))))
+        (base32 "1r4qgahmx33vjgp3ahijwd67n30lidq40fybn5wdv1y0wq2fha6m"))))
     (properties `((upstream-name . "dwp")))
     (build-system r-build-system)
     (arguments
@@ -1510,15 +1510,12 @@ modelled via a discrete Weibull distribution.")
                              r-sf
                              r-pracma
                              r-plotrix
-                             r-numderiv
                              r-mvtnorm
                              r-matrixstats
                              r-mass
                              r-magrittr
                              r-invgamma
                              r-gtools
-                             r-genest
-                             r-expint
                              r-boot))
     (home-page "https://cran.r-project.org/package=dwp")
     (synopsis "Density-Weighted Proportion")
@@ -1527,7 +1524,7 @@ modelled via a discrete Weibull distribution.")
 searched area at a wind farm to estimate the fraction of carcasses falling in
 the searched area and format the output for use as the dwp parameter in the
 @code{GenEst} or eoa package for estimating bird and bat mortality, following
-Dalthorp, et al. (2022) <@code{arXiv:2201.10064>}.")
+Dalthorp, et al. (2024) <doi:10.3133/tm7A3>.")
     (license license:cc0)))
 
 (define-public r-dwls
@@ -5961,6 +5958,51 @@ Bayesian model averaging framework as outlined in Payne, Ray, and Thomann (2024)
 various posterior quantities (e.g. posterior mean, quantiles, probability of
 minimum efficacious dose, etc.) are also implemented.  Copyright Eli Lilly and
 Company (2019).")
+    (license license:expat)))
+
+(define-public r-dream
+  (package
+    (name "r-dream")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dream" version))
+       (sha256
+        (base32 "0dcvvsz5jngi5y4h6nyqhr69srg9w84zxcqsl1j234farw8cji12"))))
+    (properties `((upstream-name . "dream")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-lifecycle
+                             r-foreach
+                             r-fastmatch
+                             r-dqrng
+                             r-doparallel
+                             r-data-table
+                             r-collapse))
+    (home-page "https://github.com/kevinCarson/dream")
+    (synopsis "Dynamic Relational Event Analysis and Modeling")
+    (description
+     "This package provides a set of tools for relational and event analysis,
+including two- and one-mode network brokerage and structural measures, and
+helper functions optimized for relational event analysis with large datasets,
+including creating relational risk sets, computing network statistics,
+estimating relational event models, and simulating relational event sequences.
+For more information on relational event models, see Butts (2008)
+<doi:10.1111/j.1467-9531.2008.00203.x>, Lerner and Lomi (2020)
+<doi:10.1017/nws.2019.57>, Bianchi et al. (2024)
+<doi:10.1146/annurev-statistics-040722-060248>, and Butts et al. (2023)
+<doi:10.1017/nws.2023.9>.  In terms of the structural measures in this package,
+see Leal (2025) <doi:10.1177/00491241251322517>, Burchard and Cornwell (2018)
+<doi:10.1016/j.socnet.2018.04.001>, and Fujimoto et al. (2018)
+<doi:10.1017/nws.2018.11>.  This package was developed with support from the
+National Science Foundationâs (NSF) Human Networks and Data Science Program
+(HNDS) under award number 2241536 (PI: Diego F. Leal).  Any opinions, findings,
+and conclusions, or recommendations expressed in this material are those of the
+authors and do not necessarily reflect the views of the NSF.")
     (license license:expat)))
 
 (define-public r-drdrtest

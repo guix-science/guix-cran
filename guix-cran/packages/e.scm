@@ -3179,13 +3179,13 @@ R and shiny on their system.")
 (define-public r-exdqlm
   (package
     (name "r-exdqlm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exdqlm" version))
        (sha256
-        (base32 "1qjr6r9mq3z589w1p7vckkf4saccbf2d9bh8l6z8cvr66vn2lcl8"))))
+        (base32 "1jjv0val1nwfahz8giqfgrrz1pnjylhc4j478hq4440xsni6cnsq"))))
     (properties `((upstream-name . "exdqlm")))
     (build-system r-build-system)
     (arguments
@@ -3193,18 +3193,18 @@ R and shiny on their system.")
       #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-tictoc
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-matrixstats
                              r-magic
                              r-laplacesdemon
-                             r-hyperbolicdist
                              r-generalizedhyperbolic
                              r-fnn
                              r-crch
                              r-coda
                              r-bh))
-    (home-page "https://cran.r-project.org/package=exdqlm")
+    (home-page "https://github.com/AntonioAPDL/exdqlm")
     (synopsis "Extended Dynamic Quantile Linear Models")
     (description
      "Routines for Bayesian estimation and analysis of dynamic quantile linear models
@@ -21944,13 +21944,13 @@ aids in experimental planning, management and workflow.")
 (define-public r-edgemodelr
   (package
     (name "r-edgemodelr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgemodelr" version))
        (sha256
-        (base32 "1ris8j8z1767kvc653h3g77bdmnh5jin7yjsn2ri4zknhqq77aqy"))))
+        (base32 "1af3aw713q3x7q6slfshlairdzy6d5rlpn8dsb2l2lb1pnx0jfjw"))))
     (properties `((upstream-name . "edgemodelr")))
     (build-system r-build-system)
     (arguments

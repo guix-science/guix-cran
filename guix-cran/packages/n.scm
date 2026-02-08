@@ -11191,13 +11191,13 @@ analysis in ggplot2 plots and gt tables.")
 (define-public r-nflfastr
   (package
     (name "r-nflfastr")
-    (version "5.1.0")
+    (version "5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflfastR" version))
        (sha256
-        (base32 "02507b9w6mgqanw54hnjwk591xgal7ncfd3g383jhnhd4rmghhhr"))))
+        (base32 "0hk0ki3kxvgn45mqgs93ilfzhd902yp44m4i1lvg8h3dc8d6l9sd"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (arguments
@@ -11221,7 +11221,7 @@ analysis in ggplot2 plots and gt tables.")
                              r-data-table
                              r-curl
                              r-cli))
-    (home-page "https://www.nflfastr.com/")
+    (home-page "https://nflfastr.com/")
     (synopsis "Functions to Efficiently Access NFL Play by Play Data")
     (description
      "This package provides a set of functions to access National Football League

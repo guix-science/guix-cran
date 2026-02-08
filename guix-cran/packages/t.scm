@@ -23118,21 +23118,23 @@ function.")
 (define-public r-theorytools
   (package
     (name "r-theorytools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theorytools" version))
        (sha256
-        (base32 "128p1s0fm3awmc2wsn86ixnblaik7ym02r2w4kjvghd0m0zvli9g"))))
+        (base32 "0vkafb91lmh641h93g1mnfg26gvnb2v3mw21362171lmrshq3ymq"))))
     (properties `((upstream-name . "theorytools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list python))
     (propagated-inputs (list r-yaml
                              r-worcs
                              r-tidysem
+                             r-stringdist
                              r-knitr
                              r-jsonlite
                              r-gh
@@ -28879,13 +28881,13 @@ codebooks and allows for extraction of code sequences.")
 (define-public r-tdsa
   (package
     (name "r-tdsa")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdsa" version))
        (sha256
-        (base32 "0yw0a91qfpv8g7kq7n21acj1wbw7nhqv481hnb7f6slk30isr884"))))
+        (base32 "1w5z66s81m7pbkrp3ar08b75j00zgyl8ybbj11q9zq8w7c515pp0"))))
     (properties `((upstream-name . "tdsa")))
     (build-system r-build-system)
     (arguments
@@ -29041,38 +29043,6 @@ sap flow rates at the tree and plot scale (For more information see : Granier
 compare trip distribution laws and models as described in Lenormand et al.
 (2016) <doi:10.1016/j.jtrangeo.2015.12.008>.")
     (license license:gpl3)))
-
-(define-public r-tdigest
-  (package
-    (name "r-tdigest")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tdigest" version))
-       (sha256
-        (base32 "0a6zd4y7wrxdwl3fchjn6g8p70frd0jpq9a6cf5bnxbhr5sjk6x1"))))
-    (properties `((upstream-name . "tdigest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-magrittr))
-    (home-page "https://git.sr.ht/~hrbrmstr/tdigest")
-    (synopsis "Wicked Fast, Accurate Quantiles Using t-Digests")
-    (description
-     "The t-Digest construction algorithm, by Dunning et al., (2019)
-<doi:10.48550/@code{arXiv.1902.04023>}, uses a variant of 1-dimensional k-means
-clustering to produce a very compact data structure that allows accurate
-estimation of quantiles.  This t-Digest data structure can be used to estimate
-quantiles, compute other rank statistics or even to estimate related measures
-like trimmed means.  The advantage of the t-Digest over previous digests for
-this purpose is that the t-Digest handles data with full floating point
-resolution.  The accuracy of quantile estimates produced by t-Digests can be
-orders of magnitude more accurate than those produced by previous digest
-algorithms.  Methods are provided to create and update t-Digests and retrieve
-quantiles from the accumulated distributions.")
-    (license license:expat)))
 
 (define-public r-tdiagree
   (package

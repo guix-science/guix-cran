@@ -14304,20 +14304,20 @@ solutions and statistical tests to assess their significance are provided.")
 (define-public r-mosalloc
   (package
     (name "r-mosalloc")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MOSAlloc" version))
        (sha256
-        (base32 "1f9fw5r3zrl2a8psx3ybabzwn3qpv0vb54dix328aj86f7vvh5zm"))))
+        (base32 "0j03sc8fc3vm66337rpcz2r17m5hfridbapkhxzr6wn50i5k175w"))))
     (properties `((upstream-name . "MOSAlloc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-matrix r-ecosolver))
-    (home-page "https://cran.r-project.org/package=MOSAlloc")
+    (home-page "https://gitlab.com/willemsf/mosalloc")
     (synopsis "Constraint Multiobjective Sample Allocation")
     (description
      "This package provides a framework for multipurpose optimal resource allocation
@@ -22109,13 +22109,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.6.3")
+    (version "4.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "1i1fnm4cqa2c0lj3j0h9nb7lpvkjnx8yg1x8xsximlbq941c38mb"))))
+        (base32 "1hpkzpala52ps80rwy7kxsanlf14bknhc158036rrryanp6zsg3p"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (arguments

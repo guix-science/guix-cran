@@ -22648,6 +22648,40 @@ test and spatial runs test.  The methodology of these models can be found in
 <doi:10.1007/s10109-009-0100-1> and <doi:10.1080/13658816.2011.586327>.")
     (license license:expat)))
 
+(define-public r-spptrend
+  (package
+    (name "r-spptrend")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SppTrend" version))
+       (sha256
+        (base32 "0ji01cblrsj5absrh7wllh0h51hfjycw17p5hbnj3nqplva5yi28"))))
+    (properties `((upstream-name . "SppTrend")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=SppTrend")
+    (synopsis "Analyzing Linear Trends in Species Occurrence Data")
+    (description
+     "This package provides a methodology to analyze how species occurrences change
+over time, particularly in relation to spatial and thermal factors.  It
+facilitates the development of explanatory hypotheses about the impact of
+environmental shifts on species by analyzing historical presence data that
+includes temporal and geographic information.  Approach described in Lobo et
+al., 2023 <doi:10.1002/ece3.10674>.")
+    (license license:expat)))
+
 (define-public r-sppop
   (package
     (name "r-sppop")
@@ -33290,19 +33324,23 @@ The relevant information can be found in inst/COPYRIGHT.")
 (define-public r-somhca
   (package
     (name "r-somhca")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "somhca" version))
        (sha256
-        (base32 "0vfp94bp5mgjy0wyzvk39v6fis76axhlkjsmjl6slwfr6ibsp5qg"))))
+        (base32 "011sd7c93i3ixjrlv7d3fnvqrfi3h7s3fbpsmvdabs7gmvdc6rfw"))))
     (properties `((upstream-name . "somhca")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer r-maptree r-kohonen r-dplyr
+    (propagated-inputs (list r-rcolorbrewer
+                             r-maptree
+                             r-kohonen
+                             r-fpc
+                             r-dplyr
                              r-awesom))
     (home-page "https://cran.r-project.org/package=somhca")
     (synopsis
@@ -67296,13 +67334,13 @@ underwriting scorecard development, extensively used in financial domain.")
 (define-public r-scorecard
   (package
     (name "r-scorecard")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scorecard" version))
        (sha256
-        (base32 "17mqypvxk5ffrnhcpy1ycbvky1jhbqy1hlbbj345f5664pd9xc6q"))))
+        (base32 "0wkdw4m3wbk9a2l65v3fmzqn6dnw85sdk364i8siggm9bpr3qqxv"))))
     (properties `((upstream-name . "scorecard")))
     (build-system r-build-system)
     (arguments

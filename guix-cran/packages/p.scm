@@ -8129,13 +8129,13 @@ observing the project already carried out.")
 (define-public r-projectlsa
   (package
     (name "r-projectlsa")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projectLSA" version))
        (sha256
-        (base32 "1fwvara4xvdlc260bmyv6r1y27f1b4w64x5ngn29akia6p9inflw"))))
+        (base32 "0s18zpkkqz39wa1y5f6qrm1xafpp5213lfxilmf8s968x7jc258f"))))
     (properties `((upstream-name . "projectLSA")))
     (build-system r-build-system)
     (arguments
@@ -8149,7 +8149,6 @@ observing the project already carried out.")
                              r-stringr
                              r-shinywidgets
                              r-shiny
-                             r-semtools
                              r-semptools
                              r-semplot
                              r-rlang

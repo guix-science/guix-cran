@@ -2267,13 +2267,13 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
 (define-public r-lrtester
   (package
     (name "r-lrtester")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LRTesteR" version))
        (sha256
-        (base32 "0hjpk39s2001kgs7slp3hz0rlnbdda1zmjf4l2kmhvli2il7w93j"))))
+        (base32 "19pgswgfrl1717qsvjkwdqb99yl5q5g6rgq5mn6l4lpj4b0q1vv5"))))
     (properties `((upstream-name . "LRTesteR")))
     (build-system r-build-system)
     (arguments
@@ -19937,27 +19937,25 @@ optimization process.")
 (define-public r-labrs
   (package
     (name "r-labrs")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LabRS" version))
        (sha256
-        (base32 "1a9qafimia83qldsif5wfqx273mvqbx22p5i0hg8n4jvj4vzpy2w"))))
+        (base32 "19chy54jaicyd6w1cxgj6xl2gs97565znnmzkbpgwd8cz064a0ls"))))
     (properties `((upstream-name . "LabRS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-knitr))
-    (home-page "https://www.agnesevardanega.eu/")
-    (synopsis "Laboratorio di \"Ricerca Sociale con R\"")
+    (home-page "http://www.agnesevardanega.eu/")
+    (synopsis "Laboratorio di Ricerca Sociale con R")
     (description
-     "Dati, scripts e funzioni per il libro \"Ricerca sociale con R. Concetti e
-funzioni base per la ricerca sociale\" (Datasets, scripts and functions to
-support the book \"Ricerca sociale con R. Concetti e funzioni base per la ricerca
-sociale\").")
-    (license license:gpl3+)))
+     "Libreria di dati, scripts e funzioni che accompagna il libro \"Ricerca sociale
+con R. Concetti e funzioni base per la ricerca sociale\".")
+    (license license:gpl3)))
 
 (define-public r-labourmarketareas
   (package

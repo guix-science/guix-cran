@@ -7717,13 +7717,13 @@ al.  2021, Frontiers in Applied Mathematics and Statistics',
 (define-public r-bootnet
   (package
     (name "r-bootnet")
-    (version "1.6")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootnet" version))
        (sha256
-        (base32 "0r7ad6ybzr3jm5s2791sv402293wi4wy59n7dv5q5ss1vykpsk6h"))))
+        (base32 "0vxididsv2qjmc3wcl7ba8a7ckax5s34scs7hha6vfj6qj7ri5p4"))))
     (properties `((upstream-name . "bootnet")))
     (build-system r-build-system)
     (arguments
@@ -19263,13 +19263,13 @@ plot, as well as a summary of the matching procedure.")
 (define-public r-bibliorefer
   (package
     (name "r-bibliorefer")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliorefer" version))
        (sha256
-        (base32 "0l48m5wjk8xavjlbgk8pcb52laj16yl23907mb72z9vgb3aa7dz1"))))
+        (base32 "1pyqyfll18qwxxspm93vvdjzfyghaq9p0ghyhghsjalxrw7v80mj"))))
     (properties `((upstream-name . "bibliorefer")))
     (build-system r-build-system)
     (arguments
@@ -24461,13 +24461,13 @@ sensitivity analysis, see Baio et al (2017) <doi:10.1007/978-3-319-55718-2>.")
 (define-public r-bcdata
   (package
     (name "r-bcdata")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcdata" version))
        (sha256
-        (base32 "107bbhsyg98jw80z1wmjn1yqw7azzwvx321y417zm1szg2hxjh4v"))))
+        (base32 "03my216ciqj5cw67zzj5hpybps9pm03my6knjhvcbwj92b1qvkva"))))
     (properties `((upstream-name . "bcdata")))
     (build-system r-build-system)
     (arguments
@@ -24481,7 +24481,6 @@ sensitivity analysis, see Baio et al (2017) <doi:10.1007/978-3-319-55718-2>.")
                              r-readxl
                              r-readr
                              r-purrr
-                             r-leaflet-extras
                              r-leaflet
                              r-jsonlite
                              r-glue
