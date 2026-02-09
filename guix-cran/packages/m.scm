@@ -22595,13 +22595,13 @@ the mlexperiments R package.")
 (define-public r-mllmcelltype
   (package
     (name "r-mllmcelltype")
-    (version "1.3.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mLLMCelltype" version))
        (sha256
-        (base32 "1q7z4s3ava236rzy3dfskx6pgqnj3q0ncchw3k0s6qzsv5abdhkf"))))
+        (base32 "1va6hyarcqm5lrpw6w240x4acv2yvyz6slgydr4wi1k33p4jwwc3"))))
     (properties `((upstream-name . "mLLMCelltype")))
     (build-system r-build-system)
     (arguments
@@ -22618,15 +22618,10 @@ the mlexperiments R package.")
     (synopsis "Cell Type Annotation Using Large Language Models")
     (description
      "Automated cell type annotation for single-cell RNA sequencing data using
-consensus predictions from multiple large language models (LLMs).  LLMs are
-artificial intelligence models trained on vast text corpora to understand and
-generate human-like text.  This package integrates with Seurat objects and
-provides uncertainty quantification for annotations.  Supports various LLM
-providers including @code{OpenAI}', Anthropic', and Google'.  The package
-leverages these models through their respective APIs (Application Programming
-Interfaces) <https://platform.openai.com/docs>, <https://docs.anthropic.com/>,
-and <https://ai.google.dev/gemini-api/docs>.  For details see Yang et al. (2025)
-<doi:10.1101/2025.04.10.647852>.")
+consensus predictions from multiple large language models.  Integrates with
+Seurat objects and provides uncertainty quantification for annotations.
+Supports various LLM providers including @code{OpenAI}, Anthropic, and Google.
+For details see Yang et al. (2025) <doi:10.1101/2025.04.10.647852>.")
     (license license:expat)))
 
 (define-public r-mlim

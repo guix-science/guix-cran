@@ -1920,13 +1920,13 @@ compatible with ggplot2 and dplyr'.")
 (define-public r-autotab
   (package
     (name "r-autotab")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autotab" version))
        (sha256
-        (base32 "0lhdynnc5shv96rrh4k71rp1pzylq0bk4m3q0qh8ks343nfr6iy6"))))
+        (base32 "1hw8lfdw2lhiwlbcqg4n2iansyiz2ww9kqz0iyfkdnzhh0mms1jv"))))
     (properties `((upstream-name . "autotab")))
     (build-system r-build-system)
     (arguments

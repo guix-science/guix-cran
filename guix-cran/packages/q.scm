@@ -1905,6 +1905,38 @@ the models with Constant Elasticity of Substitution (CES)-based social norm
 (Boucher et al., 2024 <doi:10.3982/ECTA21048>).")
     (license license:gpl3)))
 
+(define-public r-quantileonquantile
+  (package
+    (name "r-quantileonquantile")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantileOnQuantile" version))
+       (sha256
+        (base32 "1b4qw3bfss1ghrzfrrg63wd4bplplzbnncsplild7zhrsd2rq8cq"))))
+    (properties `((upstream-name . "QuantileOnQuantile")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-plotly))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/merwanroudane/qq")
+    (synopsis "Quantile-on-Quantile Regression Analysis")
+    (description
+     "This package implements the Quantile-on-Quantile (QQ) regression methodology
+developed by Sim and Zhou (2015) <doi:10.1016/j.jbankfin.2015.01.013>.  QQ
+regression estimates the effect that quantiles of one variable have on quantiles
+of another, capturing the dependence between distributions.  The package
+provides functions for QQ regression estimation, 3D surface visualization with
+MATLAB'-style color schemes ('Jet', Viridis', Plasma'), heatmaps, contour plots,
+and quantile correlation analysis.  Uses quantreg for quantile regression and
+plotly for interactive visualizations.  Particularly useful for examining
+relationships between financial variables, oil prices, and stock returns under
+different market conditions.")
+    (license license:gpl3)))
+
 (define-public r-quantilenpci
   (package
     (name "r-quantilenpci")

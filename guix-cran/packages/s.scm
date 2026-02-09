@@ -40853,13 +40853,13 @@ analyses more reproducible.  For details, see Morgan-Wall et al. (2021)
 (define-public r-sknn
   (package
     (name "r-sknn")
-    (version "4.1.2")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SKNN" version))
        (sha256
-        (base32 "0l9v45p0dg92mlx64cai1ji03dyd5sp1102al1301487phbn8y4b"))))
+        (base32 "1icbykrkqjxrmnhrv1pjqryyj208kg801q8qcbnkz3bvhis9jsgw"))))
     (properties `((upstream-name . "SKNN")))
     (build-system r-build-system)
     (arguments
@@ -51767,48 +51767,6 @@ application.  This allows for your shiny application exported by shinylive to be
 hosted by a static web server.")
     (license license:expat)))
 
-(define-public r-shinylink
-  (package
-    (name "r-shinylink")
-    (version "0.5.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ShinyLink" version))
-       (sha256
-        (base32 "0i3mnr7dajdpp24dyp0ipq6bpxm1hwjcdvgjvfxps8iacmh2970r"))))
-    (properties `((upstream-name . "ShinyLink")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-shinywidgets
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shiny
-                             r-magrittr
-                             r-jsonlite
-                             r-htmlwidgets
-                             r-golem
-                             r-fastlink
-                             r-dt
-                             r-dplyr
-                             r-config))
-    (native-inputs (list r-knitr))
-    (home-page "https://shinylink.org/")
-    (synopsis "'Shiny' Based Record Linkage Tool")
-    (description
-     "This package provides a bridge is created between existing robust open-source
-record linkage algorithms and an urgently needed user-friendly platform that
-removes financial and technical barriers, setting a new standard for data
-interoperability in public health and bioinformatics.  The @code{fastLink}
-algorithms are used for matching.  Ted Enamorado et al. (2019)
-<doi:10.1017/S0003055418000783>.")
-    (license license:gpl3)))
-
 (define-public r-shinylight
   (package
     (name "r-shinylight")
@@ -52502,6 +52460,36 @@ co-expression modules from WGCNA and lower dimensional projections.")
 with @code{shinydashboardPlus} and bs4Dash'.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-shinyeditor
+  (package
+    (name "r-shinyeditor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyEditor" version))
+       (sha256
+        (base32 "03zkz0pfd8fa0bgdbl3j7nbfnwnqkcmq20aaml3km6ra4nzy8sxn"))))
+    (properties `((upstream-name . "shinyEditor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-systemfonts
+                             r-shinyjs
+                             r-shiny
+                             r-memoise
+                             r-jsonlite
+                             r-htmlwidgets))
+    (home-page "https://github.com/zearoby/shinyEditor")
+    (synopsis "'Ace' and 'Monaco' Editors Bindings for 'shiny' Application")
+    (description
+     "Ace and Monaco editor bindings to enable a rich text widget within shiny
+application and provide more features, e.g. text comparison, spell checking and
+an extra SAS code highlight mode.")
+    (license license:expat)))
 
 (define-public r-shinydtc
   (package
@@ -62608,13 +62596,13 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 (define-public r-seekr
   (package
     (name "r-seekr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seekr" version))
        (sha256
-        (base32 "19a756w0awis228qlqq4gl4czzcgn7jn5r3ddigs4bngimwp6k6w"))))
+        (base32 "1cf6gyz3ap15d1bnn9n09icbhw6wjwmf6qs8y629y9jw8g50jw4k"))))
     (properties `((upstream-name . "seekr")))
     (build-system r-build-system)
     (arguments
@@ -70195,6 +70183,41 @@ Biswas, Lester Mackey and Xiao-Li Meng, \"Scalable Spike-and-Slab\" (2022)
 using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
 (2017) <doi:10.1002/sim.7287>.")
     (license license:gpl2+)))
+
+(define-public r-scaledescr
+  (package
+    (name "r-scaledescr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scaledescr" version))
+       (sha256
+        (base32 "1vfg0mmivh6q7a9xlalx6m7l7yqb4624dq5z1mzkq55v6g8lz1wi"))))
+    (properties `((upstream-name . "scaledescr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-openxlsx
+                             r-officer
+                             r-gtsummary
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=scaledescr")
+    (synopsis
+     "Descriptive, Reliability, and Inferential Tables for Psychometric Scales and Demographic Data")
+    (description
+     "This package provides functions to format and summarise already computed outputs
+from commonly used statistical and psychometric functions into compact,
+single-row tables and simple graphs, with utilities to export results to CSV,
+Word, and Excel formats.  The package does not implement new statistical methods
+or estimation procedures; instead, it organises and presents results obtained
+from existing functions such as @code{psych::describe()}, @code{psych::alpha()},
+@code{stats::t.test()}, and @code{gtsummary::tbl_summary()} to streamline
+reporting workflows in clinical and psychological research.")
+    (license license:expat)))
 
 (define-public r-scalealign
   (package

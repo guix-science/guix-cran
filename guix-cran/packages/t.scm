@@ -8319,13 +8319,13 @@ the source file is edited.")
 (define-public r-treesitter-c
   (package
     (name "r-treesitter-c")
-    (version "0.0.1")
+    (version "0.0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesitter.c" version))
        (sha256
-        (base32 "0s0n2y53vwv0kaap14mpxmbawxjzmqflra34xd5mydikp87l10b3"))))
+        (base32 "0d43m73558gq8ambynkn5g7mrajaxxs2xz4gmqjqnvppxcji2aia"))))
     (properties `((upstream-name . "treesitter.c")))
     (build-system r-build-system)
     (arguments
@@ -8337,7 +8337,8 @@ the source file is edited.")
     (description
      "This package provides bindings to a C grammar for Tree-sitter, to be used
 alongside the treesitter package.  Tree-sitter builds concrete syntax trees for
-source files and can efficiently update them as files are edited.")
+source files and can efficiently update them or generate code like producing R C
+API wrappers from C functions, structs and global definitions from header files.")
     (license license:gpl3)))
 
 (define-public r-treesitter
@@ -18438,47 +18439,6 @@ analysis.")
 formatting in a tidy structure for further manipulation.  Tokenizes Excel
 formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
 <https://rapidxml.sourceforge.net>.  Does not support .xlsb or .xls'.")
-    (license license:expat)))
-
-(define-public r-tidywikidatar
-  (package
-    (name "r-tidywikidatar")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidywikidatar" version))
-       (sha256
-        (base32 "11d1f3n4djxqqmd5vkb0lqbfk591xd7r02yar0f5dfgnifgwcps1"))))
-    (properties `((upstream-name . "tidywikidatar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wikidatar
-                             r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rsqlite
-                             r-rlang
-                             r-purrr
-                             r-progress
-                             r-pool
-                             r-magrittr
-                             r-jsonlite
-                             r-httr2
-                             r-glue
-                             r-fs
-                             r-dplyr
-                             r-dbi
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://edjnet.github.io/tidywikidatar/")
-    (synopsis "Explore 'Wikidata' Through Tidy Data Frames")
-    (description
-     "Query Wikidata API <https://www.wikidata.org/wiki/Wikidata:Main_Page> with ease,
-get tidy data frames in response, and cache data in a local database.")
     (license license:expat)))
 
 (define-public r-tidyweather
@@ -30492,38 +30452,6 @@ creating data visualizations with color palettes inspired by Taylor Swift's
 album covers.")
     (license license:expat)))
 
-(define-public r-taxotools
-  (package
-    (name "r-taxotools")
-    (version "0.0.148")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "taxotools" version))
-       (sha256
-        (base32 "03m1xqm1386dpy1paqfbqnia29nsr37ngm0337cscj4i0w0jq1lz"))))
-    (properties `((upstream-name . "taxotools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wikitaxa
-                             r-taxize
-                             r-stringr
-                             r-stringi
-                             r-stringdist
-                             r-sqldf
-                             r-rmarkdown
-                             r-plyr))
-    (home-page "https://cran.r-project.org/package=taxotools")
-    (synopsis "Taxonomic List Processing")
-    (description
-     "Taxonomic lists matching and merging, casting and melting scientific names,
-managing taxonomic lists from Global Biodiversity Information Facility GBIF
-<https://www.gbif.org/> or Integrated Taxonomic Information System ITIS',
-<https://itis.gov/> harvesting names from Wikipedia and fuzzy matching.")
-    (license license:cc0)))
-
 (define-public r-taxonomizr
   (package
     (name "r-taxonomizr")
@@ -30634,56 +30562,6 @@ summary-methods.")
     (description
      "Download taxonomic databases, convert them into SQLite format, and query them
 locally for fast, reliable, and reproducible access to taxonomic data.")
-    (license license:expat)))
-
-(define-public r-taxize
-  (package
-    (name "r-taxize")
-    (version "0.10.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "taxize" version))
-       (sha256
-        (base32 "0ix2zcgd93cs8kljxv547swa0adzkwabh2hwg14p4q348l049dv4"))))
-    (properties `((upstream-name . "taxize")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xml2
-                             r-worrms
-                             r-wikitaxa
-                             r-tibble
-                             r-stringi
-                             r-rredlist
-                             r-rotl
-                             r-ritis
-                             r-r6
-                             r-phangorn
-                             r-natserv
-                             r-lifecycle
-                             r-jsonlite
-                             r-data-table
-                             r-curl
-                             r-crul
-                             r-crayon
-                             r-cli
-                             r-ape))
-    (home-page "https://docs.ropensci.org/taxize/")
-    (synopsis "Taxonomic Information from Around the Web")
-    (description
-     "Interacts with a suite of web application programming interfaces (API) for
-taxonomic tasks, such as getting database specific taxonomic identifiers,
-verifying species names, getting taxonomic hierarchies, fetching downstream and
-upstream taxonomic names, getting taxonomic synonyms, converting scientific to
-common names and vice versa, and more.  Some of the services supported include
-NCBI E-utilities (<https://www.ncbi.nlm.nih.gov/books/NBK25501/>), Encyclopedia
-of Life (<https://eol.org/docs/what-is-eol/data-services>), Global Biodiversity
-Information Facility (<https://techdocs.gbif.org/en/openapi/>), and many more.
-Links to the API documentation for other supported services are available in the
-documentation for their respective functions in this package.")
     (license license:expat)))
 
 (define-public r-taxicabca

@@ -420,6 +420,36 @@ multi-ways analysis of variance models in the fuzzy context.  The unbalance in
 the considered designs are also foreseen.")
     (license license:expat)))
 
+(define-public r-fuzzystring
+  (package
+    (name "r-fuzzystring")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fuzzystring" version))
+       (sha256
+        (base32 "0319cjp51w38jc1kii198lj3hwiajirkhcpkbn6hnm3xbskm6apy"))))
+    (properties `((upstream-name . "fuzzystring")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringdist r-rcpp r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaulESantos/fuzzystring")
+    (synopsis "Fast Fuzzy String Joins for Data Frames")
+    (description
+     "Perform fuzzy joins on data frames using approximate string matching.
+Implements all standard join types (inner, left, right, full, semi, anti) with
+support for multiple string distance metrics from the stringdist package
+including Levenshtein, Damerau-Levenshtein, Jaro-Winkler, and Soundex.  Features
+a high-performance data.table backend with C++ row binding for efficient
+processing of large datasets.  Ideal for matching misspellings, inconsistent
+labels, messy user input, or reconciling datasets with slight variations in
+identifiers.  Optionally returns distance metrics alongside matched records.")
+    (license license:expat)))
+
 (define-public r-fuzzystattra
   (package
     (name "r-fuzzystattra")
@@ -8467,13 +8497,13 @@ functions such as @code{stats::lm()}, @code{stats::glm()} and
 (define-public r-forestmangr
   (package
     (name "r-forestmangr")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestmangr" version))
        (sha256
-        (base32 "1am8z2ghy6303m57rp72mm3blcknx05yj9kvf6233icw9yz1nzyd"))))
+        (base32 "138ja4dmzs3k0zsy158zpx3rk1nkvbg0ffjmbw544v2cia735d65"))))
     (properties `((upstream-name . "forestmangr")))
     (build-system r-build-system)
     (arguments

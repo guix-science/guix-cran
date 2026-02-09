@@ -8,7 +8,6 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
@@ -3535,30 +3534,6 @@ between the predictors and in applying the generalized Lasso criterion.")
 formats: ISO week, epidemiology week (epi week) and calendar date.")
     (license license:gpl2)))
 
-(define-public r-wklsr
-  (package
-    (name "r-wklsr")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wklsr" version))
-       (sha256
-        (base32 "06r8fzh4hvbdqqiy0i2w3256jmi34prbh72g7vpmkii9672iv1a2"))))
-    (properties `((upstream-name . "wklsr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-duckdb r-dbi))
-    (home-page "https://cran.r-project.org/package=wklsr")
-    (synopsis "Well-Known Locations in R")
-    (description
-     "Makes it easy to find global administrative boundaries from countries to cities
-using readable, chainable R syntax.  Fetches geometries from Overture Maps
-Foundation data.  Ported from <https://github.com/wherobots/wkls>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-wkb
   (package
     (name "r-wkb")
@@ -4518,37 +4493,6 @@ downloaded.  Additionally, it also builds links and snippets to use in
 combination with the function @code{gallery()} in @code{netCoin} package.")
     (license license:gpl3)))
 
-(define-public r-wikitaxa
-  (package
-    (name "r-wikitaxa")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wikitaxa" version))
-       (sha256
-        (base32 "1z7p7dwgl8x4ambwss5dqlp4zgz52mgj0vhx2bqwizarmx9ji1xs"))))
-    (properties `((upstream-name . "wikitaxa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-wikidatar
-                             r-tibble
-                             r-jsonlite
-                             r-data-table
-                             r-curl
-                             r-crul))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/wikitaxa")
-    (synopsis "Taxonomic Information from 'Wikipedia'")
-    (description
-     "Taxonomic information from Wikipedia', Wikicommons', Wikispecies', and
-Wikidata'.  Functions included for getting taxonomic information from each of
-the sources just listed, as well performing taxonomic search.")
-    (license license:expat)))
-
 (define-public r-wikiprofiler
   (package
     (name "r-wikiprofiler")
@@ -4653,74 +4597,6 @@ elements of the category tree.")
     (description
      "Query Wikidata and get facts from current and historic Wikipedia main pages.")
     (license license:cc0)))
-
-(define-public r-wikidatar
-  (package
-    (name "r-wikidatar")
-    (version "2.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WikidataR" version))
-       (sha256
-        (base32 "120833b7zyq1rhmn9c8iv0j6br60af7gbn5lc4dil55qhh2lp9rx"))))
-    (properties `((upstream-name . "WikidataR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wikipedir
-                             r-wikidataqueryservicer
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-progress
-                             r-pbapply
-                             r-jsonlite
-                             r-httr
-                             r-hmisc
-                             r-dplyr
-                             r-crayon))
-    (home-page "https://github.com/TS404/WikidataR")
-    (synopsis "Read-Write API Client Library for Wikidata")
-    (description
-     "Read from, interogate, and write to Wikidata <https://www.wikidata.org> - the
-multilingual, interdisciplinary, semantic knowledgebase.  Includes functions to:
-read from wikidata (single items, properties, or properties); query wikidata
-(retrieving all items that match a set of criterial via Wikidata SPARQL query
-service); write to Wikidata (adding new items or statements via
-@code{QuickStatements}); and handle and manipulate Wikidata objects (as lists
-and tibbles).  Uses the Wikidata and Quickstatements APIs.")
-    (license license:expat)))
-
-(define-public r-wikidataqueryservicer
-  (package
-    (name "r-wikidataqueryservicer")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WikidataQueryServiceR" version))
-       (sha256
-        (base32 "1bl1nbhbmss8cj9ni7plsjs996n4rwqv6h8bh1zj4whs8z4fw50f"))))
-    (properties `((upstream-name . "WikidataQueryServiceR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wikipedir
-                             r-rex
-                             r-readr
-                             r-ratelimitr
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://github.com/bearloga/WikidataQueryServiceR")
-    (synopsis "API Client Library for 'Wikidata Query Service'")
-    (description
-     "An API client for the Wikidata Query Service <https://query.wikidata.org/>.")
-    (license license:expat)))
 
 (define-public r-wikibooks
   (package

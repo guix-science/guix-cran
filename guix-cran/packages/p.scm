@@ -31143,13 +31143,13 @@ Life Sciences, Vienna, Austria.")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1yjvq0khx28spnp06g8mh3wnhzh8naw3g6a6m36mkwb2cdx8vqrq"))))
+        (base32 "1abgpyw3vll18n7gnql08vpnmm8yzasjbvmdqvgx1ax1sf1d5p0q"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
@@ -31159,15 +31159,17 @@ Life Sciences, Vienna, Austria.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-patientprofiles
                              r-omopsketch
                              r-omopgenerics
                              r-measurementdiagnostics
-                             r-magrittr
                              r-incidenceprevalence
+                             r-drugutilisation
                              r-dplyr
                              r-cohortconstructor
                              r-cohortcharacteristics
                              r-codelistgenerator
+                             r-clock
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/PhenotypeR/")

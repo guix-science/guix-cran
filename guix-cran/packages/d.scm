@@ -15195,13 +15195,13 @@ dispersion of emotional reactions and impact indicators.")
 (define-public r-disagmethod
   (package
     (name "r-disagmethod")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disagmethod" version))
        (sha256
-        (base32 "1jj3p6p6d4qqazkjg8il2b804l5w5g43an3si1rnpznfa55jg0fm"))))
+        (base32 "0yi3lryiid6w81pjwf8dmyz0x2hyhh263sscw1fg1bcw0vh7r2b0"))))
     (properties `((upstream-name . "disagmethod")))
     (build-system r-build-system)
     (arguments
@@ -17878,31 +17878,6 @@ average treatment effects.")
 dictionary definitions for English words, as well as additional information
 including phonetics, part of speech, origins, audio pronunciation, example
 usage, synonyms and antonyms, returned in tidy format for ease of use.")
-    (license license:expat)))
-
-(define-public r-dictionar6
-  (package
-    (name "r-dictionar6")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dictionar6" version))
-       (sha256
-        (base32 "1rg958py4pqghkid3830hla7vibvwsjhk75x55lxry5d8dp04m9f"))))
-    (properties `((upstream-name . "dictionar6")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-ooplah))
-    (home-page "https://xoopR.github.io/dictionar6/")
-    (synopsis "R6 Dictionary Interface")
-    (description
-     "Efficient object-oriented R6 dictionary capable of holding objects of any class,
-including R6.  Typed and untyped dictionaries are provided as well as the usual
-dictionary methods that are available in other OOP languages, for example
-listing keys, items, values, and methods to get/set these.")
     (license license:expat)))
 
 (define-public r-dict

@@ -19057,6 +19057,36 @@ Crossref and the Directory of Open Access Journals (DOAJ).  API usage is free
 and no registration is required.")
     (license license:expat)))
 
+(define-public r-roaddb
+  (package
+    (name "r-roaddb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roadDB" version))
+       (sha256
+        (base32 "0pzd8rvp2lnzfk91lrq27v87vfrapzh5qfcq5kqny75by4mr5qxy"))))
+    (properties `((upstream-name . "roadDB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rpostgres r-glue r-dplyr r-assertthat))
+    (home-page "https://cran.r-project.org/package=roadDB")
+    (synopsis "Access Data from the ROCEEH Out of Africa Database (ROAD)")
+    (description
+     "This package provides an R interface to the ROCEEH Out of Africa Database (ROAD)
+(<https://www.roceeh.uni-tuebingen.de/roadweb/smarty_road_simple_search.php>), a
+comprehensive resource for archaeological, anthropological, paleoenvironmental
+and geographic data from Africa and Eurasia dating from 3,000,000 to 20,000
+years BP. The package allows users to retrieve data from the online database at
+different levels of detail and customize search requests.  Functions return
+`data frame` objects compatible with other R packages used in prehistoric and
+paleoenvironmental science, supporting reproducible workflows as an input
+provider.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-rnvd3
   (package
     (name "r-rnvd3")
@@ -39330,50 +39360,6 @@ that allow subsets of any object to be referenced or expressions containing
 references to multiple objects.")
     (license license:expat)))
 
-(define-public r-refdb
-  (package
-    (name "r-refdb")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "refdb" version))
-       (sha256
-        (base32 "0j1zlbdvdr45xmnf0619im50zf47sikmg36l0y8fdrlvadjiijmz"))))
-    (properties `((upstream-name . "refdb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-taxize
-                             r-stringr
-                             r-rmarkdown
-                             r-rlang
-                             r-rentrez
-                             r-readr
-                             r-leaflet
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-bioseq
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://fkeck.github.io/refdb/")
-    (synopsis "DNA Reference Library Manager")
-    (description
-     "Reference database manager offering a set of functions to import, organize,
-clean, filter, audit and export reference genetic data.  Provide functions to
-download sequence data from NCBI @code{GenBank}
-<https://www.ncbi.nlm.nih.gov/genbank/>.  Designed as an environment for
-semi-automatic and assisted construction of reference databases and to improve
-standardization and repeatability in barcoding and metabarcoding studies.")
-    (license license:gpl3)))
-
 (define-public r-refbasedmi
   (package
     (name "r-refbasedmi")
@@ -52652,13 +52638,13 @@ simulations.")
 (define-public r-rattle
   (package
     (name "r-rattle")
-    (version "5.5.1")
+    (version "5.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rattle" version))
        (sha256
-        (base32 "1nhknpdy2a3szcbylg9cq1c1g9ds5y3m35dbbi6rh8r85777qviy"))))
+        (base32 "1z92rnkvppaffjigyb9wzfz9zg0m98vvh3sa441593a3z52nw8lb"))))
     (properties `((upstream-name . "rattle")))
     (build-system r-build-system)
     (arguments
@@ -52671,23 +52657,25 @@ simulations.")
                              r-stringi
                              r-rpart-plot
                              r-magrittr
+                             r-lubridate
+                             r-jsonlite
                              r-ggplot2
                              r-dplyr
                              r-bitops))
-    (home-page "https://rattle.togaware.com/")
-    (synopsis "Graphical User Interface for Data Science in R")
+    (home-page "https://togaware.com/projects/rattle/")
+    (synopsis "R Data Science Supporting Rattle")
     (description
      "The R Analytic Tool To Learn Easily (Rattle) provides a collection of utilities
-functions for the data scientist.  A Gnome (RGtk2) based graphical interface is
-included with the aim to provide a simple and intuitive introduction to R for
-data science, allowing a user to quickly load data from a CSV file (or via
-ODBC), transform and explore the data, build and evaluate models, and export
-models as PMML (predictive modelling markup language) or as scores.  A key
-aspect of the GUI is that all R commands are logged and commented through the
-log tab.  This can be saved as a standalone R script file and as an aid for the
-user to learn R or to copy-and-paste directly into R itself.  Note that RGtk2
-and @code{cairoDevice} have been archived on CRAN. See
-<https://rattle.togaware.com> for installation instructions.")
+functions for the data scientist.  This package (v5.6.0) supports the companion
+graphical interface with the aim to provide a simple and intuitive introduction
+to R for data science, allowing a user to quickly load data from a CSV file
+transform and explore the data, and to build and evaluate models.  A key aspect
+of the GUI is that all R commands are logged and commented through the log tab.
+This can be saved as a standalone R script file and as an aid for the user to
+learn R or to copy-and-paste directly into R itself.  If you want to use the
+older Rattle implementing the GUI in RGtk2 (which is no longer available from
+CRAN) then please install the Rattle package v5.5.1.  See rattle.togaware.com
+for instructions on installing the modern Rattle graphical user interface.")
     (license license:gpl2+)))
 
 (define-public r-rattains

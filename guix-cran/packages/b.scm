@@ -1082,6 +1082,42 @@ formats, such as data frames or zoo series.  The data may optionally be cached,
 so as to avoid repeated downloads of the same series.")
     (license license:gpl3)))
 
+(define-public r-bunddev
+  (package
+    (name "r-bunddev")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bunddev" version))
+       (sha256
+        (base32 "09ffbwgzjb07pxbwascv1ngxf10wlzif70jh2lkbwbjb6771jf1p"))))
+    (properties `((upstream-name . "bunddev")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=bunddev")
+    (synopsis "Discover and Call 'Bund.dev' APIs")
+    (description
+     "This package provides a registry of APIs listed on <https://bund.dev> and a core
+@code{OpenAPI} client layer to explore specs and perform requests.  Adapter
+helpers return tidy tibbles for supported APIs, with optional response caching
+and rate limiting guidance.")
+    (license license:expat)))
+
 (define-public r-bunchr
   (package
     (name "r-bunchr")
@@ -4718,45 +4754,6 @@ data about LEGO sets.  Data sets that can be used for teaching and learning
 without the need of a Brickset account and API key are also included.  Includes
 all LEGO since through the end of 2025.")
     (license license:gpl3+)))
-
-(define-public r-brfinance
-  (package
-    (name "r-brfinance")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "brfinance" version))
-       (sha256
-        (base32 "0gbv5ifq6ygmpyjjs04xsycbhy4japwamxj4y00zcpg11p6m0in6"))))
-    (properties `((upstream-name . "brfinance")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sidrar
-                             r-scales
-                             r-lubridate
-                             r-labelled
-                             r-janitor
-                             r-httr2
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/efram2/brfinance")
-    (synopsis
-     "Simplified Access to Brazilian Financial and Macroeconomic Data")
-    (description
-     "It offers simplified access to Brazilian macroeconomic and financial indicators
-selected from official sources, such as the IBGE (Brazilian Institute of
-Geography and Statistics) via the SIDRA API and the Central Bank of Brazil via
-the SGS API. It allows users to quickly retrieve and visualize data series such
-as the unemployment rate and the Selic interest rate.  This package was
-developed for data access and visualization purposes, without generating
-forecasts or statistical results.  For more information, see the official APIs:
-<https://sidra.ibge.gov.br/> and <https://dadosabertos.bcb.gov.br/dataset/>.")
-    (license license:expat)))
 
 (define-public r-bretigea
   (package

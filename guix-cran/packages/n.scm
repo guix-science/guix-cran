@@ -1644,6 +1644,36 @@ Encoding algorithm, available with base R, inspired by A. H. Robinson and C.
 Cherry (1967) <doi:10.1109/PROC.1967.5493>.")
     (license license:expat)))
 
+(define-public r-nse
+  (package
+    (name "r-nse")
+    (version "1.22")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nse" version))
+       (sha256
+        (base32 "18xii4bcy6qvyybp7a0vd4yikrg4x6cp10wmmrhycs41jk9gaj0m"))))
+    (properties `((upstream-name . "nse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-rcpp
+                             r-np
+                             r-mcmcse
+                             r-mcmc
+                             r-coda))
+    (home-page "https://github.com/keblu/nse")
+    (synopsis "Numerical Standard Errors Computation in R")
+    (description
+     "Collection of functions designed to calculate numerical standard error (NSE) of
+univariate time series as described in Ardia et al. (2018)
+<doi:10.1515/jtse-2017-0011> and Ardia and Bluteau (2017)
+<doi:10.21105/joss.00172>.")
+    (license license:gpl2+)))
+
 (define-public r-nscluster
   (package
     (name "r-nscluster")

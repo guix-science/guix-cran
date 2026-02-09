@@ -42088,13 +42088,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.30")
+    (version "1.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "1rs07x6aqhsiz4d4ja8bfly1rjmga5cd5mhw5nyp0m7zka8x0vjq"))))
+        (base32 "09q6wqmj30rdvwndcdfh995mpqqpl4gvffs2km0y3p04ysm2hq5s"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments
@@ -52201,13 +52201,13 @@ Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
 (define-public r-camtrapr
   (package
     (name "r-camtrapr")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapR" version))
        (sha256
-        (base32 "1s2f13y9i4xbgzkam3dv0zav31sj7ia8sffvwfn13fki89iinjpv"))))
+        (base32 "1gs2p2sa0pi9mn3yycrva8vqgx7rhk94h0dynp677s2fhcs6sas9"))))
     (properties `((upstream-name . "camtrapR")))
     (build-system r-build-system)
     (arguments

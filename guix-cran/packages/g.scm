@@ -23876,13 +23876,13 @@ function for ggplot2'.")
 (define-public r-ggbrick
   (package
     (name "r-ggbrick")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggbrick" version))
        (sha256
-        (base32 "123rs5n5gjv5ka5q0lf41qxpw0g28q6hh9z13ps2j6rhip7wff0c"))))
+        (base32 "1gy0lc3d9db0257n00hdfxrrhln047zlirhgdcm7fmxv2bqj4pjx"))))
     (properties `((upstream-name . "ggbrick")))
     (build-system r-build-system)
     (arguments
@@ -28809,13 +28809,13 @@ methods.")
 (define-public r-geoarrow
   (package
     (name "r-geoarrow")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoarrow" version))
        (sha256
-        (base32 "1hgh6hkmwavrbmgkmpidkls792nsn2z8azifgdpd4r2yqgxjy6sp"))))
+        (base32 "1lic7h48h6206xpca0qcii54wpyqhzd2f4c01nxxzx8pbpahwn97"))))
     (properties `((upstream-name . "geoarrow")))
     (build-system r-build-system)
     (arguments

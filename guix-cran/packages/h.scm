@@ -3157,6 +3157,45 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 2827-2851, <doi:10.48550/@code{arXiv.1405.3319>}.")
     (license license:gpl3)))
 
+(define-public r-htgm3d
+  (package
+    (name "r-htgm3d")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTGM3D" version))
+       (sha256
+        (base32 "1plnapfnys0dwv1hrvvzwk1n6s4bqllmbzl0ljip6p51fah84m11"))))
+    (properties `((upstream-name . "HTGM3D")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vprint
+                             r-stringr
+                             r-salesforcer
+                             r-rgl
+                             r-randomgodb
+                             r-r2html
+                             r-minimalistgodb
+                             r-htgm2d
+                             r-htgm
+                             r-gominer))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HTGM3D")
+    (synopsis "Three Dimensional High Throughput 'GoMiner'")
+    (description
+     "The Gene Ontology (GO) Consortium <https://geneontology.org/> organizes genes
+into hierarchical categories based on biological process (BP), molecular
+function (MF) and cellular component (CC, i.e., subcellular localization).
+Tools such as @code{GoMiner} (see Zeeberg, B.R., Feng, W., Wang, G. et al.
+(2003) <doi:10.1186/gb-2003-4-4-r28>) can leverage GO to perform ontological
+analysis of microarray and proteomics studies, typically generating a list of
+significant functional categories.  To capture the benefit of all three
+ontologies, I developed HTGM3D', a three-dimensional version of @code{GoMiner}'.")
+    (license license:gpl2+)))
+
 (define-public r-htgm2d
   (package
     (name "r-htgm2d")
@@ -5662,6 +5701,41 @@ be compressed and uncompressed easily to save disk space.")
 is provided.  Further, sets of @code{miRNA} target genes can be identified by
 using the targetscan.org API.")
     (license license:gpl2+)))
+
+(define-public r-hnpclassifier
+  (package
+    (name "r-hnpclassifier")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HNPclassifier" version))
+       (sha256
+        (base32 "1ihbxc7c873nvvhg8silgd60l41a72s1wyvj5kyhhddcy8783ybj"))))
+    (properties `((upstream-name . "HNPclassifier")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest r-nnet r-e1071 r-dplyr))
+    (home-page "https://cran.r-project.org/package=HNPclassifier")
+    (synopsis "Hierarchical Neyman-Pearson Classification for Ordered Classes")
+    (description
+     "The Hierarchical Neyman-Pearson (H-NP) classification framework extends the
+Neyman-Pearson classification paradigm to multi-class settings where classes
+have a natural priority ordering.  This is particularly useful for
+classification in unbalanced dataset, for example, disease severity
+classification, where under-classification errors (misclassifying patients into
+less severe categories) are more consequential than other misclassifications.
+The package implements H-NP umbrella algorithms that controls
+under-classification errors under user specified control levels with high
+probability.  It supports the creation of H-NP classifiers using scoring
+functions based on built-in classification methods (including logistic
+regression, support vector machines, and random forests), as well as
+user-trained scoring functions.  For theoretical details, please refer to Lijia
+Wang, Y. X. Rachel Wang, Jingyi Jessica Li & Xin Tong (2024)
+<doi:10.1080/01621459.2023.2270657>.")
+    (license license:expat)))
 
 (define-public r-hnp
   (package

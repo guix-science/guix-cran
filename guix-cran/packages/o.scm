@@ -8801,30 +8801,6 @@ the weak assumptions, however, they can be mostly effective only in small
 dimensions, for example, for hyperparameter tuning.")
     (license license:lgpl2.0+)))
 
-(define-public r-ooplah
-  (package
-    (name "r-ooplah")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ooplah" version))
-       (sha256
-        (base32 "1p74jh9g62yicrw0lhpbn0diqi2myl24z28kpd2b3mglyffadr0b"))))
-    (properties `((upstream-name . "ooplah")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6))
-    (home-page "https://xoopR.github.io/ooplah/")
-    (synopsis "Helper Functions for Class Object-Oriented Programming")
-    (description
-     "Helper functions for coding object-oriented programming with a focus on R6.
-Includes functions for assertions and testing, looping, and re-usable design
-patterns including Abstract and Decorator classes.")
-    (license license:expat)))
-
 (define-public r-oolong
   (package
     (name "r-oolong")

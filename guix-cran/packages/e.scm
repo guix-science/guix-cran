@@ -16000,44 +16000,6 @@ designs; visual fast count estimation.")
 work with emojis when they are in strings.")
     (license license:expat)))
 
-(define-public r-emodnet-wfs
-  (package
-    (name "r-emodnet-wfs")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "emodnet.wfs" version))
-       (sha256
-        (base32 "1jbwnybk44p7gq5y4pc60ravamr79y91izazlrmvjiywbcg48n6f"))))
-    (properties `((upstream-name . "emodnet.wfs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list proj geos gdal))
-    (propagated-inputs (list r-whoami
-                             r-tibble
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-ows4r
-                             r-memoise
-                             r-lifecycle
-                             r-dplyr
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/emodnet.wfs/")
-    (synopsis "Access 'EMODnet' Web Feature Service Data")
-    (description
-     "Access and interrogate EMODnet (European Marine Observation and Data Network)
-Web Feature Service data
-<https://emodnet.ec.europa.eu/en/emodnet-web-service-documentation#data-download-services>.
- This includes listing existing data sources, and getting data from each of
-them.")
-    (license license:expat)))
-
 (define-public r-emmreml
   (package
     (name "r-emmreml")
@@ -27287,6 +27249,37 @@ coupled-to-MCMC schemes are implemented.")
      "Some utility functions for validation and data manipulation.  These functions
 can be helpful to reduce internal codes everywhere in package development.")
     (license license:expat)))
+
+(define-public r-easy-glmnet
+  (package
+    (name "r-easy-glmnet")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easy.glmnet" version))
+       (sha256
+        (base32 "1zf30ihhb8pmiwrsnf8fm44xncczd80jwv9rwkpv6cj8vw1cw01j"))))
+    (properties `((upstream-name . "easy.glmnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-glmnet r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=easy.glmnet")
+    (synopsis "Functions to Simplify the Use of 'glmnet' for Machine Learning")
+    (description
+     "This package provides several functions to simplify using the glmnet package:
+converting data frames into matrices ready for glmnet'; b) imputing missing
+variables multiple times; c) fitting and applying prediction models
+straightforwardly; d) assigning observations to folds in a balanced way; e)
+cross-validate the models; f) selecting the most representative model across
+imputations and folds; and g) getting the relevance of the model regressors; as
+described in several publications: Solanes et al. (2022)
+<doi:10.1038/s41537-022-00309-w>, Palau et al. (2023)
+<doi:10.1016/j.rpsm.2023.01.001>, Salazar de Pablo et al. (2025)
+<doi:10.1038/s41380-025-03244-1>.")
+    (license license:gpl3)))
 
 (define-public r-ease
   (package
