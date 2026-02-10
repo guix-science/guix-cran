@@ -19114,13 +19114,13 @@ with dense datasets that are prone to overplotting.")
 (define-public r-ggtime
   (package
     (name "r-ggtime")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtime" version))
        (sha256
-        (base32 "1vkd67imby9xlf09fx3347ql40af9xm0n837x8j65p7l3jf9cajc"))))
+        (base32 "0w0g680g3dr97v4f6d7v5jiqrv18gpszz9dr1s6s1w7h01vqgdya"))))
     (properties `((upstream-name . "ggtime")))
     (build-system r-build-system)
     (arguments
@@ -19128,7 +19128,6 @@ with dense datasets that are prone to overplotting.")
       #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tsibble
-                             r-timechange
                              r-tidyr
                              r-scales
                              r-rlang
@@ -19137,8 +19136,9 @@ with dense datasets that are prone to overplotting.")
                              r-gtable
                              r-ggplot2
                              r-fabletools
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ggtime")
+                             r-dplyr
+                             r-cli))
+    (home-page "https://pkg.mitchelloharawild.com/ggtime/")
     (synopsis
      "Grammar of Graphics and Plot Helpers for Time Series Visualization")
     (description
@@ -21501,6 +21501,37 @@ covariance within the predictor, within the response and between the predictor
 and the response is present.  Base on the results published in guide ISO/TS
 28037 (2010) <https://www.iso.org/standard/44473.html>.")
     (license license:gpl2+)))
+
+(define-public r-ggmlr
+  (package
+    (name "r-ggmlr")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggmlR" version))
+       (sha256
+        (base32 "0r6klr875d3sad19gl92w3i1skgpb8h2favxzmdyy8iisg0436j2"))))
+    (properties `((upstream-name . "ggmlR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/Zabis13/ggmlR")
+    (synopsis "'GGML' Tensor Operations for Machine Learning")
+    (description
+     "This package provides R bindings to the GGML tensor library for efficient
+machine learning computation.  Implements core tensor operations including
+element-wise arithmetic, reshaping, and matrix multiplication.  Supports neural
+network layers (attention, convolutions, normalization), activation functions,
+and quantization.  Features optimization/training API with @code{AdamW} (Adam
+with Weight decay) and SGD (Stochastic Gradient Descent) optimizers, MSE (Mean
+Squared Error) and cross-entropy losses.  Multi-backend support with CPU and
+optional Vulkan GPU (Graphics Processing Unit) acceleration.  See
+<https://github.com/ggml-org/ggml> for more information about the underlying
+library.")
+    (license license:expat)))
 
 (define-public r-ggmix
   (package
@@ -32786,13 +32817,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.5.1")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0ri8bi65v1ars6snhzgf0600xc6b6kgkchax52j7k7rnrxhxyy8d"))))
+        (base32 "0hj5l7qn2ds5hwa84aflbvdbpjibn4mjvz37d9nmp3bm1hwb9mbc"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (arguments
@@ -35458,6 +35489,41 @@ standard Shiny reactive objects, this package allow to relying on a lighter set
 of triggers, so that reactive contexts can be invalidated with more control.")
     (license license:expat)))
 
+(define-public r-gareg
+  (package
+    (name "r-gareg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GAReg" version))
+       (sha256
+        (base32 "06gjrl8iwhf3av104shzxinwavx5j1by465kjln00wz736blqx3a"))))
+    (properties `((upstream-name . "GAReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ga r-changepointga))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mli171/GAReg")
+    (synopsis "Genetic Algorithms in Regression")
+    (description
+     "This package provides a genetic algorithm framework for regression problems
+requiring discrete optimization over model spaces with unknown or varying
+dimension, where gradient-based methods and exhaustive enumeration are
+impractical.  Uses a compact chromosome representation for tasks including
+spline knot placement and best-subset variable selection, with
+constraint-preserving crossover and mutation, exact uniform initialization under
+spacing constraints, steady-state replacement, and optional island-model
+parallelization from Lu, Lund, and Lee (2010, <doi:10.1214/09-AOAS289>).  The
+computation is built on the GA engine of Scrucca (2017,
+<doi:10.32614/RJ-2017-008>) and @code{changepointGA} engine from Li and Lu
+(2024, <doi:10.48550/@code{arXiv.2410.15571>}).  In challenging high-dimensional
+settings, GAReg enables efficient search and delivers near-optimal solutions
+when alternative algorithms are not well-justified.")
+    (license license:asl2.0)))
+
 (define-public r-garcom
   (package
     (name "r-garcom")
@@ -36778,13 +36844,13 @@ medmad for fast outlier detection in linear regression.")
 (define-public r-gallo
   (package
     (name "r-gallo")
-    (version "1.5")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GALLO" version))
        (sha256
-        (base32 "0idzzkgxfr5im9p7xk7f4iph445rp8y2dzdzddm4x9i4fnh5hkwn"))))
+        (base32 "1v0fh2fs20nml7pd6wyx2mslpgx9hp8mb7jw5xafvq4wp1g2xa3y"))))
     (properties `((upstream-name . "GALLO")))
     (build-system r-build-system)
     (arguments
@@ -36795,6 +36861,7 @@ medmad for fast outlier detection in linear regression.")
                              r-unbalhaar
                              r-stringr
                              r-rtracklayer
+                             r-reticulate
                              r-rcolorbrewer
                              r-matrix
                              r-lattice

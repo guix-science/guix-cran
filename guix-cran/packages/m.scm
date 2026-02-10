@@ -2320,6 +2320,48 @@ Hamiltonian Monte Carlo in the software Stan'.  References: Clark & Wells (2023)
 <doi:10.1111/2041-210X.13974>.")
     (license license:expat)))
 
+(define-public r-mvfmr
+  (package
+    (name "r-mvfmr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvfmr" version))
+       (sha256
+        (base32 "0ab16x841jczhmxsqnijhzsi0ah2a0yzxn22sfcgipwq3g8kbqli"))))
+    (properties `((upstream-name . "mvfmr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-progress
+                             r-proc
+                             r-gridextra
+                             r-glmnet
+                             r-ggplot2
+                             r-foreach
+                             r-fdapace
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mvfmr")
+    (synopsis "Functional Multivariable Mendelian Randomization")
+    (description
+     "This package implements Multivariable Functional Mendelian Randomization
+(MV-FMR) to estimate time-varying causal effects of multiple longitudinal
+exposures on health outcomes.  Extends univariable functional Mendelian
+Randomisation (MR) (Tian et al., 2024 <doi:10.1002/sim.10222>) to the
+multivariable setting, enabling joint estimation of multiple time-varying
+exposures with pleiotropy and mediation scenarios.  Key features include: (1)
+data-driven cross-validation for basis component selection, (2) handling of
+mediation pathways between exposures, (3) support for both continuous and binary
+outcomes using Generalized Method of Moments (GMM) and control function
+approaches, (4) one-sample and two-sample MR designs, (5) bootstrap inference
+and instrument diagnostics including Q-statistics for overidentification
+testing.  Methods are described in Fontana et al. (2025)
+<doi:10.48550/@code{arXiv.2512.19064>}.")
+    (license license:expat)))
+
 (define-public r-mvet
   (package
     (name "r-mvet")
@@ -6295,6 +6337,37 @@ Dimension Exploration (SDE) was incorporated for to analyze the exploration of
 the data.  It could help us in a better way to observe the behavior of the
 multigroup data with certain variables of interest.")
     (license license:gpl3)))
+
+(define-public r-multigroup-vaccine
+  (package
+    (name "r-multigroup-vaccine")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multigroup.vaccine" version))
+       (sha256
+        (base32 "029wpl7f4hfm24g9hmpzbljcndwsc0l1nkhxsbkilmi07pqb2v9n"))))
+    (properties `((upstream-name . "multigroup.vaccine")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-socialmixr r-shiny r-htmltools r-desolve
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiforesite.github.io/multigroup-vaccine/")
+    (synopsis
+     "Analyze Outbreak Models of Multi-Group Populations with Vaccination")
+    (description
+     "Model infectious disease dynamics in populations with multiple subgroups having
+different vaccination rates, transmission characteristics, and contact patterns.
+ Calculate final and intermediate outbreak sizes, form age-structured contact
+models with automatic fetching of U.S. census data, and explore vaccination
+scenarios with an interactive shiny dashboard for a model with two subgroups, as
+described in Nguyen et al. (2024) <doi:10.1016/j.jval.2024.03.039> and Duong et
+al. (2026) <doi:10.1093/ofid/ofaf695.217>.")
+    (license license:expat)))
 
 (define-public r-multigrey
   (package
@@ -24036,13 +24109,13 @@ focused on the marine environment.")
 (define-public r-mize
   (package
     (name "r-mize")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mize" version))
        (sha256
-        (base32 "1dfhldxsm1il9avfxvaiir9r878dp7swyc9c8ilm6llx208sd5d5"))))
+        (base32 "19bz04llsds70khrs9792r6924fvrx6avlk222kkjhfwfpx5gdab"))))
     (properties `((upstream-name . "mize")))
     (build-system r-build-system)
     (arguments
@@ -35765,13 +35838,13 @@ provides a layout method applicable for large trophic networks.")
 (define-public r-metanet
   (package
     (name "r-metanet")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaNet" version))
        (sha256
-        (base32 "0lvnq5wbwwc6cwp6dypkj3x0xn23g8sn18ins3r78nxynx0g31j7"))))
+        (base32 "0nfv8ma6cy0lfwrw030vy91gvmxssq6m01h3yp6dqvlv7c3y0dzb"))))
     (properties `((upstream-name . "MetaNet")))
     (build-system r-build-system)
     (arguments
@@ -45514,6 +45587,33 @@ program MAXENT, this approach yields estimates of the probability of occurrence,
 which is a natural descriptor of a species distribution.")
     (license license:gpl3+)))
 
+(define-public r-maxinttools
+  (package
+    (name "r-maxinttools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MaxIntTools" version))
+       (sha256
+        (base32 "0a4hn350bwzfv3aig7riwbsrzqc0rj26888f2vv15hq8bsb2mlal"))))
+    (properties `((upstream-name . "MaxIntTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape r-pracma r-mass r-ggplot2))
+    (home-page "https://cran.r-project.org/package=MaxIntTools")
+    (synopsis
+     "Testing Maximal Interaction in Two-Mode Clustering via a Permutation Based Procedure")
+    (description
+     "This package performs maximal interaction two-mode clustering, permutation
+tests, scree plots, and interaction visualizations for bicluster analysis.  See
+Ahmed et al. (2025) <doi:10.17605/OSF.IO/AWGXB>, Ahmed et al. (2023)
+<doi:10.1007/s00357-023-09434-2>, Ahmed et al. (2021)
+<doi:10.1007/s11634-021-00441-y>.")
+    (license license:gpl3)))
+
 (define-public r-maximininfer
   (package
     (name "r-maximininfer")
@@ -47473,13 +47573,13 @@ used to infer seed production by each individual plant.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MassWateR" version))
        (sha256
-        (base32 "0im4z8gms50mfmpkbk6vx35z5sjxs43hippvliz2cz3jwvpx46bs"))))
+        (base32 "0raqgvhmz60njlahd7jq5x1s15z6bcv4gs4wf3r5j32sa6am0h9d"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (arguments

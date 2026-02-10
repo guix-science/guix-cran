@@ -24762,13 +24762,13 @@ ensemble learning via the super learner approach and R neural networks.")
 (define-public r-deepgp
   (package
     (name "r-deepgp")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepgp" version))
        (sha256
-        (base32 "0mqpypdq4d9ip34vazavfam3dhc1h5yii0ybkb06wbfbdcyiqpr5"))))
+        (base32 "0100kpq4k6wafhpyh51n3jdw00yqgx0wgzgln91r0hb26jjcyp4d"))))
     (properties `((upstream-name . "deepgp")))
     (build-system r-build-system)
     (arguments

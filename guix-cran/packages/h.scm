@@ -7209,13 +7209,13 @@ hierarchical model approach to historical borrowing is discussed by Viele et al.
 (define-public r-historicalborrow
   (package
     (name "r-historicalborrow")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "historicalborrow" version))
        (sha256
-        (base32 "19z7v6a0yw5z0niyf7a5l3ydr2wrbvmrd3ly7zbkd9as6scks8hb"))))
+        (base32 "1k6dc02ag8z61cbkpxpa5lhslrkipkxbasgvd0wbzwrbqxfiajrq"))))
     (properties `((upstream-name . "historicalborrow")))
     (build-system r-build-system)
     (arguments
@@ -10576,6 +10576,29 @@ information is provided in the study by Chianucci F., Macek M. (2023)
 <doi:10.1016/j.agrformet.2023.109470>.")
     (license license:expat)))
 
+(define-public r-hemat
+  (package
+    (name "r-hemat")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hemat" version))
+       (sha256
+        (base32 "0bvvhx65hryyy78cm6z2lbw4ql81bl7cfihhg2jsawcz3x9b6d67"))))
+    (properties `((upstream-name . "hemat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=hemat")
+    (synopsis "Hematimetric Indices Calculator")
+    (description
+     "This package provides tools to calculate Mean Corpuscular Volume, Mean
+Corpuscular Hemoglobin, and Mean Corpuscular Hemoglobin Concentration, which are
+essential for assessing red blood cell health and diagnosing blood disorders.")
+    (license license:gpl2+)))
+
 (define-public r-helsinki
   (package
     (name "r-helsinki")
@@ -11407,6 +11430,37 @@ scientific community (<https://electricblue.eu>).")
 files, while automatically slowing down requests, letting you know where it is
 up to, and adjusting for files that have already been downloaded.")
     (license license:expat)))
+
+(define-public r-heaping
+  (package
+    (name "r-heaping")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heaping" version))
+       (sha256
+        (base32 "1yb9sxbfqangsmaipwprfwsga8w9ah9i7pk5awk97gac3g7k5pzh"))))
+    (properties `((upstream-name . "heaping")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fitdistrplus r-envstats))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matthias-da/heaping")
+    (synopsis "Correction of Heaping on Individual Level")
+    (description
+     "This package provides methods for correcting heaping (digit preference) in
+survey data at the individual record level.  Age heaping, where respondents
+disproportionately report ages ending in 0 or 5, is a common phenomenon that can
+distort demographic analyses.  Unlike traditional smoothing methods that only
+correct aggregated statistics, this package corrects individual values by
+replacing a calculated proportion of heaped observations with draws from fitted
+truncated distributions (log-normal, normal, or uniform).  Supports 5-year and
+10-year heaping patterns, single heap correction, and optional model-based
+adjustment to preserve covariate relationships.")
+    (license license:gpl2+)))
 
 (define-public r-healthyr-ts
   (package
@@ -16038,6 +16092,50 @@ Partially Balanced Incomplete Block (PBIB) designs is much evident from
 literature.  Here, we have constructed Incomplete Block Designs (IBDs) based on
 Hadamard matrices and Kronecker product of Hadamard matrices.")
     (license license:gpl2+)))
+
+(define-public r-hadex2
+  (package
+    (name "r-hadex2")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HaDeX2" version))
+       (sha256
+        (base32 "0jp5krhhnnlyy2b2bbfw657n65pdk1qxxl7bvxgv5yn91gqfd42m"))))
+    (properties `((upstream-name . "HaDeX2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringi
+                             r-remotes
+                             r-readxl
+                             r-readr
+                             r-r3dmol
+                             r-purrr
+                             r-magick
+                             r-gridextra
+                             r-glue
+                             r-ggplot2
+                             r-ggiraph
+                             r-dplyr
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://hadexversum.github.io/HaDeX2/")
+    (synopsis
+     "Analysis and Visualisation of Hydrogen/Deuterium Exchange Mass Spectrometry Data")
+    (description
+     "Processing, analysis and visualization of Hydrogen Deuterium @code{eXchange}
+monitored by Mass Spectrometry experiments (HDX-MS). @code{HaDeX2} introduces a
+new standardized and reproducible workflow for the analysis of the HDX-MS data,
+including uncertainty propagation, data aggregation and visualization on 3D
+structure.  Additionally, it covers data exploration, quality control and
+generation of publication-quality figures.  All functionalities are also
+available in the accompanying shiny app.")
+    (license license:gpl3)))
 
 (define-public r-hadex
   (package

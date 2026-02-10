@@ -3568,6 +3568,31 @@ linear model, with objective defined as either max Area Under the Curve or min
 Area Under Minimum.")
     (license license:gpl3)))
 
+(define-public r-auktest
+  (package
+    (name "r-auktest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AUKtest" version))
+       (sha256
+        (base32 "1bhpw843ck2ibnfbp46ghb2swgsfjfrlw4p1z0vfa47ir031ircc"))))
+    (properties `((upstream-name . "AUKtest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=AUKtest")
+    (synopsis "Calculate the AUK Estimator")
+    (description
+     "Computes the Area Under the Kendall (AUK) estimator for multivariate
+independence.  The AUK estimator is based on the survival copula and quantifies
+the deviation from the null hypothesis of independence.  The methodology
+implemented in this package is based on the work of Afendras', Markatou', and
+Papantonis (2025) <doi:10.1016/j.jmva.2025.105589>.")
+    (license license:gpl3)))
+
 (define-public r-auk
   (package
     (name "r-auk")
@@ -7717,13 +7742,13 @@ provides tools to check conditions and return informative error messages.")
 (define-public r-arkdb
   (package
     (name "r-arkdb")
-    (version "0.0.18")
+    (version "0.0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkdb" version))
        (sha256
-        (base32 "1zq4nrxi7h265zs10ay95s95s56nkwxfzljvbglj03adsb1fxz6s"))))
+        (base32 "0qnlxgqlv57mx4c4lkbd1i4cazy5g5qfxs5afrvnjbq4szgp59dx"))))
     (properties `((upstream-name . "arkdb")))
     (build-system r-build-system)
     (arguments
@@ -10547,6 +10572,36 @@ explanation and empirical examples on reproducible data, it is shown that it is
 possible to understand both the logic behind the planned comparisons and the way
 to interpret them when a model is tested.")
     (license license:gpl3+)))
+
+(define-public r-appraise
+  (package
+    (name "r-appraise")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "appraise" version))
+       (sha256
+        (base32 "06g425hxgdks5i8psyn9nbag3sj5p5xkchfj6xqmb41996qbjygg"))))
+    (properties `((upstream-name . "appraise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=appraise")
+    (synopsis "Bias-Aware Evidence Synthesis in Systematic Reviews")
+    (description
+     "This package implements a bias-aware framework for evidence synthesis in
+systematic reviews and health technology assessments, as described in Kabali
+(2025) <doi:10.1111/jep.70272>.  The package models study-level effect estimates
+by explicitly accounting for multiple sources of bias through prior
+distributions and propagates uncertainty using posterior simulation.  Evidence
+across studies is combined using posterior mixture distributions rather than a
+single pooled likelihood, enabling probabilistic inference on clinically or
+policy-relevant thresholds.  The methods are designed to support transparent
+decision-making when study relevance and bias vary across the evidence base.")
+    (license license:gpl3)))
 
 (define-public r-apportion
   (package
@@ -25477,13 +25532,13 @@ score-based signal detection approaches are also supplied.  See Courtois et al
 (define-public r-adapt3
   (package
     (name "r-adapt3")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adapt3" version))
        (sha256
-        (base32 "0b4pcv680910i4ypdd21v2l23xlqj435i1ibbj9kwp7sngnp3mmr"))))
+        (base32 "18mrgqn8329nym4zxdccx2n1y1b8s5yr8dzq4ikfm4xn8wbfs8rw"))))
     (properties `((upstream-name . "adapt3")))
     (build-system r-build-system)
     (arguments
@@ -25498,8 +25553,7 @@ score-based signal detection approaches are also supplied.  See Courtois et al
 dependence mechanisms to work across MPMs. This package was developed to run
 both adaptive dynamics simulations such as pairwise and multiple invasibility
 analyses, and community projections in which species are represented by MPMs.
-All forms of MPMs are allowed, including integral projection models (IPMs).
-Also includes individual-based modeling (IBM) versions of these.")
+All forms of MPMs are allowed, including integral projection models (IPMs).")
     (license license:gpl2+)))
 
 (define-public r-adaplots

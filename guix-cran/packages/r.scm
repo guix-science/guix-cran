@@ -48083,13 +48083,13 @@ paper by SepÃºlveda and Drakeley (2015, <doi:10.1186/s12936-015-0661-z>).")
 (define-public r-rcminification
   (package
     (name "r-rcminification")
-    (version "1.2")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCMinification" version))
        (sha256
-        (base32 "1bdgc7rwkdkimp4k1p5ah26nbp1ic09kyyx6xily260xq7m31g1w"))))
+        (base32 "0588d0bhcxywd6bcb75iphis13rf3rddm03par15h16mlwfrxd8q"))))
     (properties `((upstream-name . "RCMinification")))
     (build-system r-build-system)
     (arguments
@@ -54153,13 +54153,13 @@ plots.  Methods are described in Pickering and Endre (2012)
 (define-public r-rapsimng
   (package
     (name "r-rapsimng")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapsimng" version))
        (sha256
-        (base32 "1jpn9x4xn9qyvpphmnsws9r7vl0rzd1qrhzzfmnwgqalyzjqcnc5"))))
+        (base32 "1km5li207zl6bfpqz962rv9w3srsy40zrsfsfl10yky2psdy66pm"))))
     (properties `((upstream-name . "rapsimng")))
     (build-system r-build-system)
     (arguments

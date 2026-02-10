@@ -19784,6 +19784,32 @@ covariates by fitting a linear regression in a preliminary step before the
 semi-variogram fitting process.")
     (license license:expat)))
 
+(define-public r-egnyte
+  (package
+    (name "r-egnyte")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "egnyte" version))
+       (sha256
+        (base32 "1g0y3fid1dng29zp4fwcmh117df7xrgrrv815yr942a86r5xknrg"))))
+    (properties `((upstream-name . "egnyte")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://atorus-research.github.io/egnyte/")
+    (synopsis "Read and Write Files from 'Egnyte'")
+    (description
+     "This package provides functions to read and write files from Egnyte cloud
+storage using the Egnyte API <https://developers.egnyte.com/docs>.  Supports
+both API key and OAuth 2.0 authentication for file transfer operations.")
+    (license (list license:asl2.0
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-egm
   (package
     (name "r-egm")
@@ -27499,19 +27525,20 @@ changes in the industry over time, and discover new relationships in the data.")
 (define-public r-eam
   (package
     (name "r-eam")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eam" version))
        (sha256
-        (base32 "08r8a1w7invrcxszfw74xj2q9l4y323kgac2m43vc9v9wfag7kha"))))
+        (base32 "177j84321q1p8gl1n2hhgabp7z6wkm5c448azmdma8qa1na2ncmk"))))
     (properties `((upstream-name . "eam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
                              r-scales
                              r-rlang
                              r-rcpp
@@ -27523,7 +27550,7 @@ changes in the industry over time, and discover new relationships in the data.")
                              r-data-table
                              r-codetools
                              r-arrow))
-    (home-page "https://github.com/y-guang/eam")
+    (home-page "https://y-guang.github.io/eam/")
     (synopsis "Evidence Accumulation Models")
     (description
      "Simulation-based evidence accumulation models for analyzing responses and

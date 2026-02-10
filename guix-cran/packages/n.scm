@@ -18108,13 +18108,13 @@ technique was published in 2017 <doi:10.1016/j.ymeth.2017.12.001>.")
 (define-public r-nametagger
   (package
     (name "r-nametagger")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nametagger" version))
        (sha256
-        (base32 "167bs9ricw9xz682s4gcjw8q21qdvhc5gbmrsa09fw75ky2w7cv5"))))
+        (base32 "06vs9va330i3lcqr76zdmagh3if4825xyxpirkl0hmz7wcldckdx"))))
     (properties `((upstream-name . "nametagger")))
     (build-system r-build-system)
     (arguments

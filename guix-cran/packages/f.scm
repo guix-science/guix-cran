@@ -4256,13 +4256,13 @@ are distributed under the Norwegian License for Open Data 2.0 (NLOD)
 (define-public r-frontmatter
   (package
     (name "r-frontmatter")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frontmatter" version))
        (sha256
-        (base32 "0wr2alf509m9bhh9igdrw3m8g6pl3zx7hb3bn70cjakd9j8fx6fa"))))
+        (base32 "06m3pcnm08gbxrxkv6whh9wpmlz00cgvmzw0fs28c58crjl2b6fv"))))
     (properties `((upstream-name . "frontmatter")))
     (build-system r-build-system)
     (arguments
@@ -4394,42 +4394,36 @@ repositories, and more.  File paths are specified with function arguments, or
 (define-public r-frogger
   (package
     (name "r-frogger")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froggeR" version))
        (sha256
-        (base32 "19zr51h7xyv2cczwb7cwnlk580xzrccw979r1lsawinwr23n3fhs"))))
+        (base32 "173pgqc8rfhk67bqlvilrawqal6i973538003nvzybwphzkxp8wc"))))
     (properties `((upstream-name . "froggeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-usethis
-                             r-stringr
+    (propagated-inputs (list r-usethis
                              r-rstudioapi
                              r-rlang
-                             r-readr
                              r-rappdirs
-                             r-quarto
                              r-here
-                             r-glue
                              r-fs
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://www.kyleGrealis.com/froggeR/")
-    (synopsis "Enhance 'Quarto' Project Workflows and Standards")
+    (synopsis "Structured Project Standards for R and 'Quarto'")
     (description
-     "Streamlines Quarto workflows by providing tools for consistent project setup and
-documentation.  Enables portability through reusable metadata, automated project
-structure creation, and standardized templates.  Features include enhanced
-project initialization, pre-formatted Quarto documents, inclusion of Quarto
-brand functionality, comprehensive data protection settings, custom styling, and
-structured documentation generation.  Designed to improve efficiency and
-collaboration in R data science projects by reducing repetitive setup tasks
-while maintaining consistent formatting across multiple documents.")
+     "This package provides an opinionated project scaffold for R and Quarto analysis
+work, enforcing a consistent directory layout with scripts in R/, .qmd files in
+pages/, and assets in www/.  The primary entry point, @code{init()}, downloads
+the latest template from a companion @code{GitHub} repository so that project
+structure evolves independently of package releases.  Supports persistent author
+metadata and Quarto brand configuration that carry across projects
+automatically.")
     (license license:expat)))
 
 (define-public r-frlr
@@ -10589,13 +10583,13 @@ detailed by Friedman and Glover (2006) <doi:10.1002/jmri.20583>.")
 (define-public r-fmrihrf
   (package
     (name "r-fmrihrf")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmrihrf" version))
        (sha256
-        (base32 "0162g2bav9kh8zg3hggk8yg9cjablpvyjj6wqwvp1pcyf8zfpphn"))))
+        (base32 "0q04jw63yhs6pscz52lswwjvbxp7s9qwbgkfcxrshgz1qck3670l"))))
     (properties `((upstream-name . "fmrihrf")))
     (build-system r-build-system)
     (arguments
@@ -20174,13 +20168,13 @@ financial risk assessment.")
 (define-public r-feasts
   (package
     (name "r-feasts")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "feasts" version))
        (sha256
-        (base32 "0zpzqs41rkf2igfg74g2rc6s8xlh723ckgflh7lh9bd39b7nqrl1"))))
+        (base32 "0qy0vgmhhk36jvlfd3wf3p9lvw6xa071ny3zmnkinl6js2gnk1ad"))))
     (properties `((upstream-name . "feasts")))
     (build-system r-build-system)
     (arguments
@@ -20191,11 +20185,10 @@ financial risk assessment.")
                              r-tidyr
                              r-tibble
                              r-slider
-                             r-scales
                              r-rlang
                              r-lubridate
                              r-lifecycle
-                             r-gtable
+                             r-ggtime
                              r-ggplot2
                              r-fabletools
                              r-dplyr))
@@ -25819,13 +25812,13 @@ relatives, kinship networks and other topics in multi-generation populations.")
 (define-public r-familias
   (package
     (name "r-familias")
-    (version "2.6.3")
+    (version "2.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Familias" version))
        (sha256
-        (base32 "057528ks9pqka4fsg26fq6l6m1q9kyhz9khiy1m16hvgm38cy2hm"))))
+        (base32 "0d8cid51q8ymfm2mcff0s33hy4cn006z0frpf9kxsvk8bnqm0y35"))))
     (properties `((upstream-name . "Familias")))
     (build-system r-build-system)
     (arguments
@@ -27964,13 +27957,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabletools" version))
        (sha256
-        (base32 "1m7h6ppkbg7hjyzghvdl1f9kh9kcv740z6470vcajb28avam79gv"))))
+        (base32 "166bdf72mnd1hdwzs1ka6qn9gazyvm654yc1ml4mh65dmx90wx3g"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (arguments

@@ -1861,19 +1861,19 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tuvalues
   (package
     (name "r-tuvalues")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TUvalues" version))
        (sha256
-        (base32 "0w3b89f5s1lidgh3szfyxlv6bbqf2ng28kdhizb00lpij7qccr55"))))
+        (base32 "137yjvlm6wghk0zyivzah02bj8vbck6fxpqmdixc8v8kxkz8ir5g"))))
     (properties `((upstream-name . "TUvalues")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-highs r-gtools))
+    (propagated-inputs (list r-roi-plugin-glpk r-roi r-gtools))
     (home-page "https://github.com/mariaguilleng/TUvalues")
     (synopsis
      "Tools for Calculating Allocations in Game Theory using Exact and Approximated Methods")
@@ -4414,13 +4414,13 @@ tidied, visualised, and forecasted.")
 (define-public r-tsibble
   (package
     (name "r-tsibble")
-    (version "1.1.6")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsibble" version))
        (sha256
-        (base32 "1fxp7ca06k6q3f1dh4y4yqxlx75lkcxbncqaj33fvlqjryailwfd"))))
+        (base32 "1vs93fp72kpfhjsxalrcsxz5kzvdw71r2fap6hrxljnxk7yy59v0"))))
     (properties `((upstream-name . "tsibble")))
     (build-system r-build-system)
     (arguments
@@ -4433,7 +4433,6 @@ tidied, visualised, and forecasted.")
                              r-lubridate
                              r-lifecycle
                              r-generics
-                             r-ellipsis
                              r-dplyr
                              r-anytime))
     (native-inputs (list r-knitr))
@@ -12752,6 +12751,52 @@ bounds in raw scale units or in terms of effect sizes.  See: Lakens (2017)
 <doi:10.1177/1948550617697177>.")
     (license license:gpl3)))
 
+(define-public r-tost-suite
+  (package
+    (name "r-tost-suite")
+    (version "3.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tost.suite" version))
+       (sha256
+        (base32 "1vn4cv2lcxjc69ip7va06xn4sry1ssqfp4arr7r0k5ha79lfd3mj"))))
+    (properties `((upstream-name . "tost.suite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-webuse
+                             r-stringr
+                             r-rlang
+                             r-mathjaxr
+                             r-lm-beta
+                             r-index0
+                             r-hmisc
+                             r-combinat))
+    (home-page "https://cran.r-project.org/package=tost.suite")
+    (synopsis "Two One-Sided Tests for Equivalence")
+    (description
+     "Ports the Stata ado package tost which provides a suite of commands to perform
+two one-sided tests for equivalence following the approach by Schuirman (1987)
+<doi:10.1007/BF01068419>.  Commands are provided for t tests on means, z tests
+on proportions, @code{McNemar's} test (1947) <doi:10.1007/BF02295996> on
+proportions and related tests, tests on the regression coefficients from OLS
+linear regression (not yet implementing all of the current regression options
+from the Stata tostregress command, e.g., survey regression options, estimation
+options, etc.), Wilcoxon's (1945) <doi:10.2307/3001968> signed rank tests,
+Wilcoxon-Mann-Whitney (1947) <doi:10.1214/aoms/1177730491> rank sum tests,
+supporting inference about equivalence for a number of paired and unpaired,
+parametric and nonparametric study designs and data types.  Each command tests a
+null hypothesis that samples were drawn from populations different by at least
+plus or minus some researcher-defined level of tolerance, which can be defined
+in terms of units of the data or rank units (Delta), or in units of the test
+statistic's distribution (epsilon) except for @code{tost.rrp()} and
+@code{tost.rrpi()}.  Enough evidence rejects this null hypothesis in favor of
+equivalence within the tolerance.  Equivalence intervals for all tests may be
+defined symmetrically or asymmetrically.")
+    (license license:gpl2)))
+
 (define-public r-tosr
   (package
     (name "r-tosr")
@@ -13853,6 +13898,31 @@ variations.")
     (synopsis "Cardinal to Ordinal Number & Date Conversion")
     (description "Language specific cardinal to ordinal number conversion.")
     (license license:gpl3)))
+
+(define-public r-toonlite
+  (package
+    (name "r-toonlite")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toonlite" version))
+       (sha256
+        (base32 "14hql07hanksk9rdf5xlz9ncnmmzvxjy5nkb7l81iy6fab56z43j"))))
+    (properties `((upstream-name . "toonlite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/aljrico/toonlite")
+    (synopsis "Read, Write, Validate, Stream, and Convert TOON Data")
+    (description
+     "This package provides a minimal-dependency, performance-first R package for
+reading, writing, validating, streaming, and converting TOON (Token-Oriented
+Object Notation) data.  Optimized for very large tabular files with robust
+diagnostics.  Supports lossless JSON conversion and tabular CSV/Parquet/Feather
+conversion.")
+    (license license:expat)))
 
 (define-public r-toon
   (package
@@ -18441,6 +18511,46 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
 <https://rapidxml.sourceforge.net>.  Does not support .xlsb or .xls'.")
     (license license:expat)))
 
+(define-public r-tidywikidatar
+  (package
+    (name "r-tidywikidatar")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidywikidatar" version))
+       (sha256
+        (base32 "0snwcvwyvcacgph4n44pjjv0w6hlazgh9gd74w36cd9jik6z07cm"))))
+    (properties `((upstream-name . "tidywikidatar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rsqlite
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-pool
+                             r-magrittr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-dbi
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://edjnet.github.io/tidywikidatar/")
+    (synopsis "Explore 'Wikidata' Through Tidy Data Frames")
+    (description
+     "Query Wikidata API <https://www.wikidata.org/wiki/Wikidata:Main_Page> with ease,
+get tidy data frames in response, and cache data in a local database.")
+    (license license:expat)))
+
 (define-public r-tidyweather
   (package
     (name "r-tidyweather")
@@ -21476,13 +21586,13 @@ administrative data sources and pre-generated files in South Korea.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.7.3")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "11642pmwb74r4sbbxdkxnxr396baiy9f0fdfdhr5xhl4hl9yigjz"))))
+        (base32 "15yfw82bibr88civpb5wwiya1brcp2aik854hd3bi7qfk4ks8kr4"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (arguments
@@ -22362,13 +22472,13 @@ informative fashion.")
 (define-public r-threeway
   (package
     (name "r-threeway")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThreeWay" version))
        (sha256
-        (base32 "17yl8zq029wiy3c0f4ssljx85dnm9n862wj2d24w7p0lxlvarmz6"))))
+        (base32 "1w8mgj5wn93mvzkib2zg32yv5285j78d4sl3x5myi2zf7pjjpbln"))))
     (properties `((upstream-name . "ThreeWay")))
     (build-system r-build-system)
     (arguments
@@ -33442,6 +33552,35 @@ tidyverse idiom of taking the dataframe as the first argument so they work
 within pipelines.  Equivalent functions that operate directly on vectors are
 also provided where it makes sense.  This package aims to make exploratory data
 analysis involving categorical variables quicker, simpler and more robust.")
+    (license license:expat)))
+
+(define-public r-tabbitr
+  (package
+    (name "r-tabbitr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabbitR" version))
+       (sha256
+        (base32 "1bhbgg7ny81h1pnw080fqamhm3ixyzvcib3lxry92r82dvs5nsf4"))))
+    (properties `((upstream-name . "tabbitR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openxlsx r-haven))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/smmcandrew/tabbitR")
+    (synopsis "Weighted Cross-Tabulations Exported to 'Excel'")
+    (description
+     "This package produces weighted cross-tabulation tables for one or more outcome
+variables across one or more breakdown variables, and exports them directly to
+Excel'.  For each outcome-by-breakdown combination, the package creates a
+weighted percentage table and a corresponding unweighted count table, with
+transparent handling of missing values and light, readable formatting.  Designed
+to support social survey analysis workflows that require large sets of
+consistent, publication-ready tables.")
     (license license:expat)))
 
 (define-public r-taba

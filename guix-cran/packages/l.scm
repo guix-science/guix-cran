@@ -7,10 +7,10 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
@@ -2752,6 +2752,46 @@ minimize the mean absolute error between the consensus map and the linkage maps.
 ensure the ordering of the markers in the linkage maps is preserved.  When
 marker order is inconsistent between linkage maps, a minimum set of ordinal
 constraints is deleted to resolve the conflicts.")
+    (license license:gpl3)))
+
+(define-public r-lpmec
+  (package
+    (name "r-lpmec")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lpmec" version))
+       (sha256
+        (base32 "0gdv12mjvc39z9xc5rkr9ni7h6a4rvf93z41wxg8v4kf2z8kh8yg"))))
+    (properties `((upstream-name . "lpmec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python-numpy))
+    (propagated-inputs (list r-sensemakr
+                             r-sandwich
+                             r-reticulate
+                             r-pscl
+                             r-mvtnorm
+                             r-gtools
+                             r-emirt
+                             r-amelia
+                             r-aer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cjerzak/lpmec-software")
+    (synopsis
+     "Measurement Error Analysis and Correction Under Identification Restrictions")
+    (description
+     "This package implements methods for analyzing latent variable models with
+measurement error correction, including Item Response Theory (IRT) models.
+Provides tools for various correction methods such as Bayesian Markov Chain
+Monte Carlo (MCMC), over-imputation, bootstrapping for robust standard errors,
+Ordinary Least Squares (OLS), and Instrumental Variables (IV) based approaches.
+Supports flexible specification of observable indicators and groupings for
+latent variable analyses in social sciences and other fields.  Methods are
+described in a working paper (2025) <doi:10.48550/@code{arXiv.2507.22218>}.")
     (license license:gpl3)))
 
 (define-public r-lpm

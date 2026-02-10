@@ -4059,13 +4059,13 @@ results.")
 (define-public r-qrlabelr
   (package
     (name "r-qrlabelr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrlabelr" version))
        (sha256
-        (base32 "1bv76d3fkficcaqg4kzkkxjq1p24c6hxd25jyfia96nkmxyds44m"))))
+        (base32 "19mf04xldzx0fwj95ljdvf8myac2r9ag9d3a83y67d14ajklbbpq"))))
     (properties `((upstream-name . "qrlabelr")))
     (build-system r-build-system)
     (arguments

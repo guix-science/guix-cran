@@ -7308,19 +7308,27 @@ manipulation.")
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcdExtra" version))
        (sha256
-        (base32 "1hckq2sxrwhdhwdi6jw8l8n48igcin95maz990m9hmlf3hqjqd9n"))))
+        (base32 "0867dl3jcmi8y8bkyjjdc5779rm5qf59rkjkn4fhggk03rwkqq49"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vcd r-rgl r-mass r-gnm r-ca))
+    (propagated-inputs (list r-vcd
+                             r-scales
+                             r-rgl
+                             r-mass
+                             r-gt
+                             r-gnm
+                             r-dplyr
+                             r-colorspace
+                             r-ca))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://friendly.github.io/vcdExtra/")
     (synopsis "'vcd' Extensions and Additions")
@@ -9291,13 +9299,13 @@ RNA sequencing data.")
 (define-public r-valytics
   (package
     (name "r-valytics")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valytics" version))
        (sha256
-        (base32 "0fp8k1whx6fjdpzfb83cvlzv523abprrzdrlfmhk83b4jmfckd36"))))
+        (base32 "195g6agaj318192gjlhysdjhj3xf361z87cqjjpgfsxrp848vg94"))))
     (properties `((upstream-name . "valytics")))
     (build-system r-build-system)
     (arguments
@@ -9318,9 +9326,12 @@ non-parametric method comparison (Passing & Bablok (1983)
 measurement error in both variables (Linnet (1993)
 <doi:10.1093/clinchem/39.3.424>).  Also includes tools for setting quality goals
 based on biological variation (Fraser & Petersen (1993)
-<doi:10.1093/clinchem/39.7.1447>) and calculating Six Sigma metrics.  Commonly
-used in clinical laboratory method validation.  Provides publication-ready plots
-and comprehensive statistical summaries.")
+<doi:10.1093/clinchem/39.7.1447>) and calculating Six Sigma metrics, precision
+experiments with variance component analysis, precision profiles for functional
+sensitivity estimation (Kroll & Emancipator (1993)
+<https://pubmed.ncbi.nlm.nih.gov/8448849/>).  Commonly used in clinical
+laboratory method validation.  Provides publication-ready plots and
+comprehensive statistical summaries.")
     (license license:gpl3)))
 
 (define-public r-valueprhr

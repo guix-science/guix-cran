@@ -14908,6 +14908,40 @@ Pearson-type transformed) random variates (residuals, random effects), can be
 assessed employing STB-methodology.")
     (license license:gpl3+)))
 
+(define-public r-statuser
+  (package
+    (name "r-statuser")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statuser" version))
+       (sha256
+        (base32 "1la6nhrkaydyv20hjkm6v6262x73wnj4nyvdg6qqddhjif4b1rd4"))))
+    (properties `((upstream-name . "statuser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-rsvg
+                             r-mgcv
+                             r-magick
+                             r-lmtest
+                             r-labelled))
+    (home-page "https://cran.r-project.org/package=statuser")
+    (synopsis "Statistical Tools Designed for End Users")
+    (description
+     "The statistical tools in this package do one of four things: 1) Enhance basic
+statistical functions with more flexible inputs, smarter defaults, and richer,
+clearer, and ready-to-use output (e.g., @code{t.test2()}) 2) Produce
+publication-ready commonly needed figures with one line of code (e.g.,
+@code{plot_cdf()}) 3) Implement novel analytical tools developed by the authors
+(e.g., @code{twolines()}) 4) Deliver niche functions of high value to the
+authors that are not easily available elsewhere (e.g., @code{clear()},
+@code{convert_to_sql()}, @code{resize_images()}).")
+    (license license:gpl3)))
+
 (define-public r-stattools
   (package
     (name "r-stattools")
@@ -29215,13 +29249,13 @@ Nordhausen, Ruiz-Gazen and Virta (2020) <doi:10.1093/biomet/asz079>.")
 (define-public r-spatialatomizer
   (package
     (name "r-spatialatomizer")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialAtomizeR" version))
        (sha256
-        (base32 "1260x12w4sxg41vq79m80737yk4ac3s1lbjq4whkq819aaykrsba"))))
+        (base32 "1c2himk9jjj4220bwzy418rcswavzjpal7rawwfzsb4lbp7b91m9"))))
     (properties `((upstream-name . "spatialAtomizeR")))
     (build-system r-build-system)
     (arguments
@@ -43875,13 +43909,13 @@ Lambert (2013) <doi:10.1002/sim.5823>).")
 (define-public r-simstudy
   (package
     (name "r-simstudy")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simstudy" version))
        (sha256
-        (base32 "0p462wilbj1fh1hq18ajqzjavwvf3js714h0s6a7rqjhjgkh3cz7"))))
+        (base32 "01ghqlkvs3qmgrblh60im56xifjawzdzaij6ql42495dax3vvl33"))))
     (properties `((upstream-name . "simstudy")))
     (build-system r-build-system)
     (arguments
@@ -48790,13 +48824,13 @@ See Tong et al. (2013) <doi:10.1093/bioinformatics/bts713>.")
 (define-public r-siber
   (package
     (name "r-siber")
-    (version "2.1.9")
+    (version "2.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIBER" version))
        (sha256
-        (base32 "00sr2h0fry102z2jdzsf20jav04gfskdcznzfpkjr4y5h4vv62cb"))))
+        (base32 "0lln312mrs0kwdyr9mk3py1v2gfbj6xblpxnbm7mmsvri2m78mdj"))))
     (properties `((upstream-name . "SIBER")))
     (build-system r-build-system)
     (arguments
@@ -48805,13 +48839,10 @@ See Tong et al. (2013) <doi:10.1093/bioinformatics/bts713>.")
     (inputs (list jags))
     (propagated-inputs (list r-tidyr
                              r-spatstat-utils
-                             r-spatstat-geom
                              r-rjags
-                             r-purrr
                              r-mnormt
                              r-magrittr
                              r-hdrcde
-                             r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SIBER")
@@ -58901,13 +58932,13 @@ GPU acceleration is supported on Windows and Linux.")
 (define-public r-sentencepiece
   (package
     (name "r-sentencepiece")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sentencepiece" version))
        (sha256
-        (base32 "0969ynvx4cxiwpm31msz7lbg8qjjw9wgblgh8jh2mvrj6y1vydav"))))
+        (base32 "1pbwaflrv1bjfyvqz3b653qbkjprxsv7hslg5c2wznrgrnwlzhfm"))))
     (properties `((upstream-name . "sentencepiece")))
     (build-system r-build-system)
     (arguments

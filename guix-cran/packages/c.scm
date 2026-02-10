@@ -14965,6 +14965,37 @@ perspectives closer together.  The Core Hunter library is implemented in Java 8
 as an open source project (see <http://www.corehunter.org>).")
     (license license:expat)))
 
+(define-public r-coreheat
+  (package
+    (name "r-coreheat")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coreheat" version))
+       (sha256
+        (base32 "04n5nl48743r1sxywrx8179b8ijcic4ckz4z6yxp7xmq890qljcx"))))
+    (properties `((upstream-name . "coreheat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wgcna r-rappdirs r-heatmapflex r-convertid
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=coreheat")
+    (synopsis "Correlation Heatmaps")
+    (description
+     "Create correlation heatmaps from a numeric matrix.  Ensembl Gene ID row names
+can be converted to Gene Symbols using, e.g., @code{BioMart}.  Optionally, data
+can be clustered and filtered by correlation, tree cutting and/or number of
+missing values.  Genes of interest can be highlighted in the plot and
+correlation significance be indicated by asterisks encoding corresponding
+P-Values.  Plot dimensions and label measures are adjusted automatically by
+default.  The plot features rely on the @code{heatmap.n2()} function in the
+@code{heatmapFlex} package.")
+    (license license:gpl3)))
+
 (define-public r-corect
   (package
     (name "r-corect")
@@ -21410,6 +21441,35 @@ A.T.A. (2011), <doi:10.48550/@code{arXiv.1106.1451>}.  Garcia-Escudero Luis A.,
 Gordaliza Alfonso, Matran Carlos, Mayo-Iscar Agustin. (2008),
 <doi:10.1214/07-AOS515>.")
     (license license:gpl2+)))
+
+(define-public r-compositional-mle
+  (package
+    (name "r-compositional-mle")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "compositional.mle" version))
+       (sha256
+        (base32 "15as736p3gcjlcadfzgyva7ra1b2ckj6n4wwb60xfqfibzfbng84"))))
+    (properties `((upstream-name . "compositional.mle")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-mass r-algebraic-mle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/compositional.mle")
+    (synopsis "Compositional Maximum Likelihood Estimation")
+    (description
+     "This package provides composable optimization strategies for maximum likelihood
+estimation (MLE).  Solvers are first-class functions that combine via sequential
+chaining, parallel racing, and random restarts.  Implements gradient ascent,
+Newton-Raphson, quasi-Newton (BFGS), and derivative-free methods with support
+for constrained optimization and tracing.  Returns mle objects compatible with
+algebraic.mle for downstream analysis.  Methods based on Nocedal J, Wright SJ
+(2006) \"Numerical Optimization\" <doi:10.1007/978-0-387-40065-5>.")
+    (license license:expat)))
 
 (define-public r-compositional
   (package
@@ -53389,13 +53449,13 @@ web applications.  Learn more about the Calcite Design System at
 (define-public r-calcal
   (package
     (name "r-calcal")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calcal" version))
        (sha256
-        (base32 "17xqk312p3za4p18fp35hk93szn7a9lc8x59dmj1mv8nirks7r1p"))))
+        (base32 "0npxkf2ji9k7p7d0hb19bzjway26diyhgm4s045hxk9496bx9724"))))
     (properties `((upstream-name . "calcal")))
     (build-system r-build-system)
     (arguments

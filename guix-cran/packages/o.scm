@@ -10443,13 +10443,13 @@ more information, documentation and examples.")
 (define-public r-omopviewer
   (package
     (name "r-omopviewer")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopViewer" version))
        (sha256
-        (base32 "0flzwr2ay7siqsvhjvcr0z8wv67j6s2l8nwb9xi82gacnb4ry2zz"))))
+        (base32 "005nz95aa7vrzdqc04xa9m8hz8lzirr40as66c8ylp93hgm558ni"))))
     (properties `((upstream-name . "OmopViewer")))
     (build-system r-build-system)
     (arguments
@@ -10629,20 +10629,19 @@ common data model.")
 (define-public r-omopconstructor
   (package
     (name "r-omopconstructor")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopConstructor" version))
        (sha256
-        (base32 "0zbbh84ws61n18r18gf92gzgpyqh42aw89pa3y37sc3g0016gkxz"))))
+        (base32 "12cjnnx2g12wkrjz981v2gvay6zmc89fp90p9f93s6ingyhfx4x5"))))
     (properties `((upstream-name . "OmopConstructor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
@@ -11743,6 +11742,43 @@ Internet Institute (OII), University of Oxford, but the functions should be
 useful for general data analysis and especially for analysis of categorical and
 ordinal data.")
     (license license:expat)))
+
+(define-public r-ohvbd
+  (package
+    (name "r-ohvbd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohvbd" version))
+       (sha256
+        (base32 "095rkjzpmxr7wvy5z5l99n6mkqxnma0ls456xs32cda3xdhy6gip"))))
+    (properties `((upstream-name . "ohvbd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stringr
+                             r-rlang
+                             r-lubridate
+                             r-httr2
+                             r-dplyr
+                             r-data-table
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fwimp/ohvbd")
+    (synopsis "One Health VBD Hub")
+    (description
+     "Interface with the One Health VBD (vector-borne disease) Hub
+<https://vbdhub.org/> and related repositories (@code{VectorByte}
+<https://www.vectorbyte.org>, GBIF <https://www.gbif.org> and AREAdata
+<https://pearselab.github.io/areadata/>) directly to find, download, and subset
+vector-borne disease data.")
+    (license license:gpl3+)))
 
 (define-public r-ohun
   (package
@@ -13479,6 +13515,39 @@ study, please see the respective README file at
      "This package provides an Interface to Open Collaboration Services OCS
 (<https://www.open-collaboration-services.org/>) REST API.")
     (license license:expat)))
+
+(define-public r-ocrrbbr
+  (package
+    (name "r-ocrrbbr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ocrRBBR" version))
+       (sha256
+        (base32 "1b9gh162p854aflrv8pphm2q7fx056s8mkrba60sn6fw64zi1m72"))))
+    (properties `((upstream-name . "ocrRBBR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s4vectors
+                             r-rtracklayer
+                             r-matrix
+                             r-glmnet
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (home-page "https://github.com/CompBioIPM/ocrRBBR")
+    (synopsis "Explain Gene Expression with Boolean Rules of Chromatin States")
+    (description
+     "This package infers Boolean rules among cis-regulatory regions using paired
+chromatin accessibility and gene expression data at bulk and single-cell levels.
+ Links regulatory regions to target genes, providing insights into gene
+regulation mechanisms.")
+    (license license:gpl3)))
 
 (define-public r-ocp
   (package

@@ -2063,6 +2063,40 @@ including a detailed technical appendix, see <doi:10.18637/jss.v108.i06>.")
 (http://ljvillanueva.github.io/pumilio/).")
     (license license:gpl3)))
 
+(define-public r-pumbayes
+  (package
+    (name "r-pumbayes")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pumBayes" version))
+       (sha256
+        (base32 "11x63dr2fb3xndm597k55s906qc8hfcyjsinrdb1xj8m3m19qsai"))))
+    (properties `((upstream-name . "pumBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpptn r-rcppdist r-rcpparmadillo r-rcpp
+                             r-mvtnorm))
+    (home-page "https://github.com/SkylarShiHub/pumBayes")
+    (synopsis
+     "Bayesian Estimation of Probit Unfolding Models for Binary Preference Data")
+    (description
+     "Bayesian estimation and analysis methods for Probit Unfolding Models (PUMs), a
+novel class of scaling models designed for binary preference data.  These models
+allow for both monotonic and non-monotonic response functions.  The package
+supports Bayesian inference for both static and dynamic PUMs using Markov chain
+Monte Carlo (MCMC) algorithms with minimal or no tuning.  Key functionalities
+include posterior sampling, hyperparameter selection, data preprocessing, model
+fit evaluation, and visualization.  The methods are particularly suited to
+analyzing voting data, such as from the U.S. Congress or Supreme Court, but can
+also be applied in other contexts where non-monotonic responses are expected.
+For methodological details, see Shi et al. (2025)
+<doi:10.48550/@code{arXiv.2504.00423>}.")
+    (license license:gpl3)))
+
 (define-public r-pulsar
   (package
     (name "r-pulsar")
@@ -14084,19 +14118,20 @@ such as Cochran's \"Sampling Techniques\"; see the user's guide for references."
 (define-public r-pprof
   (package
     (name "r-pprof")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pprof" version))
        (sha256
-        (base32 "1dvx2qr3vqwhzykp6l86wprrsk8q82pm5cmgqxc6ml2hxc6qf9sf"))))
+        (base32 "1ci7mw0cl3h4zsj3w6fmingj0scyxavnp9k34ncb9qy76qfs9f25"))))
     (properties `((upstream-name . "pprof")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
                              r-scales
                              r-rlang
                              r-rcppparallel
@@ -14108,6 +14143,7 @@ such as Cochran's \"Sampling Techniques\"; see the user's guide for references."
                              r-matrix
                              r-magrittr
                              r-lme4
+                             r-globals
                              r-ggplot2
                              r-dplyr
                              r-caret))
@@ -24637,13 +24673,13 @@ linear genomic dependency.  See Wei Z, Sun W, Wang K, Hakonarson H (2009)
 (define-public r-plinkqc
   (package
     (name "r-plinkqc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plinkQC" version))
        (sha256
-        (base32 "1k99rmwp4cgdn28ngijcaxx7dvf1arxxwmpfps5vk23qf02zxl2n"))))
+        (base32 "1nnsd5gn3331gwlzf6rnn9yc02z0c5vlmysdyjnyc28av0vl5v90"))))
     (properties `((upstream-name . "plinkQC")))
     (build-system r-build-system)
     (arguments
@@ -32866,13 +32902,13 @@ resolution processes, as introduced in Boudraa et al. (2013).")
 (define-public r-pglm
   (package
     (name "r-pglm")
-    (version "0.2-3")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pglm" version))
        (sha256
-        (base32 "16ghdgnpwyqgfa6z6gc93bw933dvazb3alv1867cbn7qnp2gaj3j"))))
+        (base32 "1qsr6s2jnkl0jnjxc2svaalk5qfrw735fq590vdyz4ynypkqbw6a"))))
     (properties `((upstream-name . "pglm")))
     (build-system r-build-system)
     (arguments
@@ -38231,13 +38267,13 @@ moving average models.  Some original methods including Boshnakov & Iqelan
 (define-public r-pctax
   (package
     (name "r-pctax")
-    (version "0.1.3")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pctax" version))
        (sha256
-        (base32 "1wfxxjms5iz0a612a1d9bsryjnngkw632sfia15k6x0l7v2n6raq"))))
+        (base32 "151ra084znz1frid950w21rjk4xb0zlrrv7sy371nkqcxirmwnn3"))))
     (properties `((upstream-name . "pctax")))
     (build-system r-build-system)
     (arguments
@@ -38247,8 +38283,10 @@ moving average models.  Some original methods including Boshnakov & Iqelan
                              r-tibble
                              r-scales
                              r-reshape2
+                             r-readr
                              r-rcolorbrewer
                              r-pcutils
+                             r-patchwork
                              r-magrittr
                              r-ggrepel
                              r-ggpubr

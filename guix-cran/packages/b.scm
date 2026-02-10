@@ -19693,13 +19693,13 @@ factorial experiments.")
 (define-public r-bhetgp
   (package
     (name "r-bhetgp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bhetGP" version))
        (sha256
-        (base32 "0jz7h5j20wrxh52rylhg0fmkdf679064q5rz41c8g1m814d8i33d"))))
+        (base32 "1gfg81fx9g68azf4if25dd80c8vjyngpvwqpc576gjarlgxvb9nd"))))
     (properties `((upstream-name . "bhetGP")))
     (build-system r-build-system)
     (arguments
@@ -23909,13 +23909,13 @@ about Bi-cross-validation, see Owen & Perry's 2009 @code{AoAS} article (at
 (define-public r-bcsreg
   (package
     (name "r-bcsreg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCSreg" version))
        (sha256
-        (base32 "1kp2xrpmlgbqq4nvg2pzdr2b5391mhr0cvjx69c4bbv1cfkp0sgq"))))
+        (base32 "1bbn24dg980w3plaqq49x18qz5skf54mq4hhz9dgm9zsaq0m6cnw"))))
     (properties `((upstream-name . "BCSreg")))
     (build-system r-build-system)
     (arguments
