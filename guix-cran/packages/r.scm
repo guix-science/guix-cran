@@ -12504,13 +12504,13 @@ ISBN:9780412048418).")
 (define-public r-rparadox
   (package
     (name "r-rparadox")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rparadox" version))
        (sha256
-        (base32 "04ww3w7q1z6j985sm2wy2brs4jcqxyzf53jrh9vhc950sgafhhpn"))))
+        (base32 "09r21zha4714zdnb99b8pzmhrpq9wn3mscnzinx046ahcr0jqs5n"))))
     (properties `((upstream-name . "Rparadox")))
     (build-system r-build-system)
     (arguments
@@ -14576,13 +14576,13 @@ different colour metrics for the conversion.")
 (define-public r-rolluptree
   (package
     (name "r-rolluptree")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollupTree" version))
        (sha256
-        (base32 "1y9v2xhbddi8ikkskjpjj88dvghgwrwxvizx20f3af2b72i25cjy"))))
+        (base32 "1w53sa1kllx7r2b3kys40yh5v49wvnmy0k0rc912jv9vw78w5x7m"))))
     (properties `((upstream-name . "rollupTree")))
     (build-system r-build-system)
     (arguments
@@ -18781,28 +18781,35 @@ and low-level plot functions for the ternary diagram.")
 (define-public r-robcat
   (package
     (name "r-robcat")
-    (version "0.1.0")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robcat" version))
        (sha256
-        (base32 "1x0dhg43bvmn765r4ladpc8h1izbhxk45bwz7mndnbnqlr1ikxy3"))))
+        (base32 "0sxc627xhjj89spvqp7jbbdncx6w1l706k0rms5jvq8303i36x62"))))
     (properties `((upstream-name . "robcat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rcpp r-mvtnorm r-ggplot2))
+    (propagated-inputs (list r-stringr
+                             r-rcpp
+                             r-pracma
+                             r-numderiv
+                             r-mvtnorm
+                             r-matrix
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=robcat")
     (synopsis "Robust Categorical Data Analysis")
     (description
      "Robust categorical data analysis based on the theory of C-estimation developed
 in Welz (2024) <doi:10.48550/@code{arXiv.2403.11954>}.  For now, the package
 only implements robust estimation of polychoric correlation as proposed in Welz,
-Mair and Alfons (2024) <doi:10.48550/@code{arXiv.2407.18835>} with methods for
-printing and plotting.  We will implement further models in future releases.  In
-addition, the package is still experimental, so input arguments and class
+Mair and Alfons (2026) <doi:10.1017/psy.2025.10066> and robust estimation of
+polyserial correlation (Welz, 2026 <doi:10.1017/psy.2026.10091>) with methods
+for printing and plotting.  We will implement further models in future releases.
+ In addition, the package is still experimental, so input arguments and class
 structure may change in future releases.")
     (license license:gpl2+)))
 
@@ -23836,13 +23843,13 @@ also enables R users to insert, update, and delete records stored on a
 (define-public r-rlab
   (package
     (name "r-rlab")
-    (version "4.0")
+    (version "4.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlab" version))
        (sha256
-        (base32 "019rmciqza5rd5z9hvh8xk20c2rjhzyzp1k5731qm1d3jz5lwx5k"))))
+        (base32 "1bzjdrbkc22sann56wq15mabjd0bhm4w81vw6029kfgk87n8mgld"))))
     (properties `((upstream-name . "Rlab")))
     (build-system r-build-system)
     (arguments
@@ -31414,6 +31421,38 @@ limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 Safety Administration.")
     (license license:cc0)))
 
+(define-public r-rfams
+  (package
+    (name "r-rfams")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rFAMS" version))
+       (sha256
+        (base32 "0ih4yaqxwrzz4jgp7hvjv4dry5fa8s6ni0k41pm2lh8p1sb8mwg5"))))
+    (properties `((upstream-name . "rFAMS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-fsa))
+    (home-page "https://github.com/fishR-Core-Team/rFAMS/")
+    (synopsis "Fisheries Analysis and Modeling Simulator")
+    (description
+     "Simulates the dynamics of exploited fish populations using the Jones
+modification of the Beverton-Holt equilibrium yield equation to compute
+yield-per-recruit and dynamic pool models (Ricker 1975)
+<https://publications.gc.ca/site/eng/480738/publication.html>.  Allows users to
+evaluate minimum, slot, and inverted length limits on exploited fisheries using
+specified life history parameters.  Users can simulate population under a
+variety of conditional fishing mortality and conditional natural mortality.
+Calculated quantities include number of fish harvested and dying naturally, mean
+weight and length of fish harvested, number of fish that reach specified lengths
+of interest, total number of fish and biomass in the population, and stock
+density indices.")
+    (license license:gpl2+)))
+
 (define-public r-rfae
   (package
     (name "r-rfae")
@@ -36109,13 +36148,13 @@ and Christensen (2012, ISBN:9780470178966).")
 (define-public r-rena
   (package
     (name "r-rena")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rENA" version))
        (sha256
-        (base32 "0krpgy3p0w1h0ximz4mf90rzyncxr1qzpzj9pairm0m5i8im8f1n"))))
+        (base32 "1wiyqci36gf0crbc5izv3hzsh1f8axqk498p8baqmgmfmhdk1zbk"))))
     (properties `((upstream-name . "rENA")))
     (build-system r-build-system)
     (arguments
@@ -44489,13 +44528,13 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
 (define-public r-rdistance
   (package
     (name "r-rdistance")
-    (version "4.3.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdistance" version))
        (sha256
-        (base32 "0y0sjl3zxly3bn8rk6vdpx821wl6gpbgsrkj6x2wg210xa6bb71q"))))
+        (base32 "1xc43bvdf417a7wk7jmzzd0nzgkl766xqicvhrkfhb6zh8f2i6xg"))))
     (properties `((upstream-name . "Rdistance")))
     (build-system r-build-system)
     (arguments
@@ -51341,13 +51380,13 @@ between times in @code{LibBi} results and R time/dates.")
 (define-public r-rbi
   (package
     (name "r-rbi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbi" version))
        (sha256
-        (base32 "19gmxwblj1lvdspxiwmyxcl6mp7b1xpabwgy69n9vndfzkwq2bmc"))))
+        (base32 "01wzgzq26ccdh524gl6dllx1jcs942ccpjz1j31llnpa1v7qhja9"))))
     (properties `((upstream-name . "rbi")))
     (build-system r-build-system)
     (arguments
@@ -58751,13 +58790,13 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
 (define-public r-r5rgui
   (package
     (name "r-r5rgui")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r5rgui" version))
        (sha256
-        (base32 "04kxqay0klpr2fsdplg5vnbflqq2isanrv7fdbnkdbjda6z518mj"))))
+        (base32 "1qkjj8xs262sm4q302q3mnp607c7br2ah5gji1lj85iwjz4274bf"))))
     (properties `((upstream-name . "r5rgui")))
     (build-system r-build-system)
     (arguments

@@ -15722,6 +15722,45 @@ selection procedure based on total Sobol indices.  Please see Huang and Joseph
 National Science Foundation grants DMS-2310637 and DMREF-1921873.")
     (license license:gpl2+)))
 
+(define-public r-firmmatchr
+  (package
+    (name "r-firmmatchr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "firmmatchr" version))
+       (sha256
+        (base32 "0m9dhkid17saak8wz0ra10f43ycjq0mnk017sz3mmdvhmynsk8x2"))))
+    (properties `((upstream-name . "firmmatchr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoomerjoin
+                             r-stringi
+                             r-stringdist
+                             r-rsqlite
+                             r-readr
+                             r-purrr
+                             r-progressr
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-dbi
+                             r-data-table
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=firmmatchr")
+    (synopsis "Robust Probabilistic Matching for German Company Names")
+    (description
+     "This package provides a pipeline for matching messy company name strings against
+a clean dictionary (e.g., Orbis').  Implements a cascading strategy: Exact ->
+Fuzzy ('zoomerjoin') -> FTS5 ('SQLite') -> Rarity Weighted.  References:
+Beniamino Green (2025) <https://beniamino.org/zoomerjoin/>;
+<https://www.sqlite.org/fts5.html>.")
+    (license license:expat)))
+
 (define-public r-firestorm
   (package
     (name "r-firestorm")
@@ -19526,13 +19565,13 @@ version of the Hausman test.")
 (define-public r-fegarch
   (package
     (name "r-fegarch")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fEGarch" version))
        (sha256
-        (base32 "1iv7w0ml5saw6r3b4kjflv2d0mzxavkda0909wln7spvjk0nv6ch"))))
+        (base32 "1pdig7rc13gcmll8z8z23x87rmypkmkszjl7c3wa8v1bkww23mbj"))))
     (properties `((upstream-name . "fEGarch")))
     (build-system r-build-system)
     (arguments
@@ -22980,13 +23019,13 @@ shortcuts to facilitate operations on very large data.")
 (define-public r-fasttextr
   (package
     (name "r-fasttextr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTextR" version))
        (sha256
-        (base32 "1hj3cplh0v062q6jm0j3r4spi5aac5bfas7sda9is9glpv6h3sgw"))))
+        (base32 "0j0bmiwghrk6a0ngxr6f1x117l2v1cfb0pyibqmwhj4w75jwk92m"))))
     (properties `((upstream-name . "fastTextR")))
     (build-system r-build-system)
     (arguments
@@ -23006,13 +23045,13 @@ for text classification and to learn word vectors.  An example how to use
 (define-public r-fasttext
   (package
     (name "r-fasttext")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastText" version))
        (sha256
-        (base32 "0lj5kf1zfnqql8kpnd85ri0pcnfz9i5hmfzmczzd90bc0r6q414i"))))
+        (base32 "0y4mgwflw77qdjnkzp2zd5hfgsd4xl6wsvb10zmirhpnbvb1zfla"))))
     (properties `((upstream-name . "fastText")))
     (build-system r-build-system)
     (arguments

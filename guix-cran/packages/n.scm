@@ -168,36 +168,6 @@ information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 clean the data once in R.")
     (license license:expat)))
 
-(define-public r-nycopendata
-  (package
-    (name "r-nycopendata")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nycOpenData" version))
-       (sha256
-        (base32 "00ifmlval2g7bbw4g1hqapv4qap8kspczwidrazf8c1ayqd9kmxp"))))
-    (properties `((upstream-name . "nycOpenData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-jsonlite r-httr r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://martinezc1.github.io/nycOpenData/")
-    (synopsis "Convenient Access to NYC Open Data API Endpoints")
-    (description
-     "This package provides a unified set of helper functions to access datasets from
-the NYC Open Data platform <https://opendata.cityofnewyork.us/>.  Functions
-return results as tidy tibbles and support optional filtering, sorting, and row
-limits via the Socrata API. The package includes endpoints for 311 service
-requests, DOB job applications, juvenile justice metrics, school safety,
-environmental data, event permitting, and additional citywide datasets.  The
-package is utilized as a primary pedagogical tool for teaching data acquisition
-in Reproducible Research Using R'.")
-    (license license:expat)))
-
 (define-public r-nycflights23
   (package
     (name "r-nycflights23")
@@ -5663,13 +5633,13 @@ arbitrary category ordering.")
 (define-public r-nomisdata
   (package
     (name "r-nomisdata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nomisdata" version))
        (sha256
-        (base32 "0086ax6da3anx9j8zp94r2dhzvbdj098zh8clkg94l5pr3ayacg3"))))
+        (base32 "0xr3xcwzhbkcvwvq18y3s6qv4y26vbrdi65fs038yld9zg1pyw5q"))))
     (properties `((upstream-name . "nomisdata")))
     (build-system r-build-system)
     (arguments
@@ -5686,14 +5656,12 @@ arbitrary category ordering.")
     (home-page "https://github.com/cherylisabella/nomisdata")
     (synopsis "Access 'Nomis' UK Labour Market Data and Statistics")
     (description
-     "Interface to the Nomis database (<https://www.nomisweb.co.uk>), a comprehensive
-resource of United Kingdom labour market statistics provided by the Office for
-National Statistics (ONS).  Facilitates programmatic access to census data,
-labour force surveys, benefit statistics, and socioeconomic indicators through a
-modern HTTP client with intelligent caching, automatic query pagination, and
-tidy data principles.  Includes spatial data integration, interactive helpers,
-and visualization utilities.  Independent implementation unaffiliated with ONS
-or Durham University.")
+     "Interface to the Nomis database (<https://www.nomisweb.co.uk>), maintained by
+Durham University on behalf of the Office for National Statistics (ONS).
+Provides access to UK labour market statistics including census data, benefit
+claimant counts, and employment surveys.  Supports automatic pagination,
+optional disk caching, spatial data via sf', and tidy data output.  Independent
+implementation unaffiliated with ONS or Durham University.")
     (license license:expat)))
 
 (define-public r-nominatimlite
@@ -7495,13 +7463,13 @@ meta-analysis dataset.  INLA package can be obtained from
 (define-public r-nmaforest
   (package
     (name "r-nmaforest")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMAforest" version))
        (sha256
-        (base32 "1jhskbk737g9pk8vip0spak3pwapry9pvdrgyslyyl7b33r2bc4c"))))
+        (base32 "1djllic45sc32xhgv7xykxmly0xs8q14qkqa7rdi0sk9kw1w56d3"))))
     (properties `((upstream-name . "NMAforest")))
     (build-system r-build-system)
     (arguments
@@ -11261,20 +11229,19 @@ play-by-play data from <https://www.nfl.com/>.")
 (define-public r-nfl4th
   (package
     (name "r-nfl4th")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nfl4th" version))
        (sha256
-        (base32 "1ilvchs7g26ks6wgb8s8av0pm10s161fqiahcwbsm5xfy9bh8q78"))))
+        (base32 "0cj928q9k3imgswlx0d31mdnlmpamxm4jjhv0l69mqqvmv1pzl9d"))))
     (properties `((upstream-name . "nfl4th")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
-                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -11283,14 +11250,12 @@ play-by-play data from <https://www.nfl.com/>.")
                              r-nflreadr
                              r-nflfastr
                              r-mgcv
-                             r-magrittr
                              r-jsonlite
                              r-janitor
-                             r-httr
-                             r-glue
                              r-dplyr
+                             r-data-table
                              r-curl
-                             r-backports))
+                             r-cli))
     (home-page "https://www.nfl4th.com/")
     (synopsis
      "Functions to Calculate Optimal Fourth Down Decisions in the National Football League")
@@ -18702,6 +18667,33 @@ Eigenvectors (SCORE), network-based regularized spectral clustering (Net-based),
 covariate-based spectral clustering (Cov-based), covariate-assisted spectral
 clustering (CAclustering) and semidefinite programming (SDP).")
     (license license:gpl2)))
+
+(define-public r-nabla
+  (package
+    (name "r-nabla")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nabla" version))
+       (sha256
+        (base32 "1xzggs93nqmc02rbhl43ncg3qglsqj7ifir78cyqzg48cdmny5xl"))))
+    (properties `((upstream-name . "nabla")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/nabla")
+    (synopsis "Exact Derivatives via Automatic Differentiation")
+    (description
+     "Exact automatic differentiation for R functions.  Provides a composable
+derivative operator D that computes gradients, Hessians, Jacobians, and
+arbitrary-order derivative tensors at machine precision.  D(D(f)) gives
+Hessians, D(D(D(f))) gives third-order tensors for skewness of maximum
+likelihood estimators, and so on to any order.  Works through any R code
+including loops, branches, and control flow.")
+    (license license:expat)))
 
 (define-public r-naaccr
   (package

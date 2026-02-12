@@ -12129,13 +12129,13 @@ on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
 (define-public r-hdtg
   (package
     (name "r-hdtg")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdtg" version))
        (sha256
-        (base32 "1cn4j29833fzk879q6187lc0cgbfwbgmgsbnyrh3sdmqmq6krcy4"))))
+        (base32 "132qjdcf191fmz6bijhj0610if82zsjjzlf5z62y75qfzps18bs0"))))
     (properties `((upstream-name . "hdtg")))
     (build-system r-build-system)
     (arguments
@@ -15133,13 +15133,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.2.747")
+    (version "1.2.767")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "1232lnd2fxlbfskslmr2hb12j4f01xzkircdf7dcvwd3rx15ch8g"))))
+        (base32 "02ibbavxizc3lvvpgz5m9krl9lia4y14b3macidld62gk9wvzh6s"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (arguments

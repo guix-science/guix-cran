@@ -6147,13 +6147,13 @@ explore diverse ET data at different resolutions.")
 (define-public r-evanverse
   (package
     (name "r-evanverse")
-    (version "0.3.7")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evanverse" version))
        (sha256
-        (base32 "0cd5cqdg9kq2cyscgfqa1qnb8m9lns42ibai1d2aga9zyg57br2y"))))
+        (base32 "063f4r5flsyihbq9ly3f4c895vppw0qijxd34491ls7rz6qnmfjj"))))
     (properties `((upstream-name . "evanverse")))
     (build-system r-build-system)
     (arguments
@@ -6165,7 +6165,9 @@ explore diverse ET data at different resolutions.")
                              r-tibble
                              r-rlang
                              r-readxl
+                             r-pwr
                              r-openxlsx
+                             r-magrittr
                              r-jsonlite
                              r-ggpubr
                              r-ggplot2
@@ -6179,13 +6181,13 @@ explore diverse ET data at different resolutions.")
     (synopsis "Utility Functions for Data Analysis and Visualization")
     (description
      "This package provides a comprehensive collection of utility functions for data
-analysis and visualization in R. The package provides 55+ functions for data
+analysis and visualization in R. The package provides 60+ functions for data
 manipulation, file handling, color palette management, bioinformatics workflows,
-plotting, and package management.  Features include void value handling, custom
-infix operators, flexible file I/O, and publication-ready visualizations with
-sensible defaults.  Implementation follows tidyverse principles (Wickham et al.
-(2019) <doi:10.21105/joss.01686>) and incorporates best practices from the R
-community.")
+statistical analysis, plotting, and package management.  Features include void
+value handling, custom infix operators, flexible file I/O, and publication-ready
+visualizations with sensible defaults.  Implementation follows tidyverse
+principles (Wickham et al. (2019) <doi:10.21105/joss.01686>) and incorporates
+best practices from the R community.")
     (license license:expat)))
 
 (define-public r-evalue
@@ -12048,13 +12050,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.89")
+    (version "2.0.90")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "1k89r43rvkbv8840s9hr8sz9w1plx64j0jdxgpkv5p59c31va72h"))))
+        (base32 "0da0mvvc3xs4gjj88frbacg76qrckimjqxy75pkna729pqm54p58"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -13556,19 +13558,20 @@ footer information.")
 (define-public r-eoffice
   (package
     (name "r-eoffice")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eoffice" version))
        (sha256
-        (base32 "0nxyllragxn5bq28x37vkx16vi4y9af5nly1pslqrvvarl21ics4"))))
+        (base32 "1sfpnf836mzhzn8ydcdibddswifr2671jikfr58dra2ygw9whvki"))))
     (properties `((upstream-name . "eoffice")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rvg
+                             r-rlang
                              r-r-devices
                              r-plotly
                              r-officer
@@ -21030,13 +21033,13 @@ MuÃ±oz Zavala (2023) <doi:10.1016/j.asoc.2023.110230>.")
 (define-public r-eeaaq
   (package
     (name "r-eeaaq")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EEAaq" version))
        (sha256
-        (base32 "03mgrc56dwjx3yr9drslcwmn8ydx5pzp4y1ami7jhd1k6dxms389"))))
+        (base32 "0zq5i4nl8h9gfqar7cmfiz0lcf8dbxzr288yxb4hw1x118qrm4rw"))))
     (properties `((upstream-name . "EEAaq")))
     (build-system r-build-system)
     (arguments
@@ -24304,6 +24307,44 @@ with methods that keep the derived data up-to-date as the underlying sources
 change.  Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.")
     (license license:expat)))
 
+(define-public r-ecocleanr
+  (package
+    (name "r-ecocleanr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EcoCleanR" version))
+       (sha256
+        (base32 "0zqfl6wkx5cbqkxpbkb7qzz03c9rqnbgv3plyli4dhz15bfd64k4"))))
+    (properties `((upstream-name . "EcoCleanR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-sf
+                             r-sdmpredictors
+                             r-rlang
+                             r-patchwork
+                             r-mregions2
+                             r-ggplot2
+                             r-geosphere
+                             r-geodata
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://sonipri.github.io/EcoCleanR/")
+    (synopsis
+     "EcoCleanR: Enhancing Data Quality of Biogeographic Ranges with Application for Marine Invertebrates")
+    (description
+     "This package provides step-by-step automation for integrating biodiversity data
+from multiple online aggregators, merging and cleaning datasets while addressing
+challenges such as taxonomic inconsistencies, georeferencing issues, and spatial
+or environmental outliers.  Includes functions to extract environmental data and
+to define the biogeographic ranges in which species are most likely to occur.")
+    (license license:expat)))
+
 (define-public r-ecochange
   (package
     (name "r-ecochange")
@@ -24861,13 +24902,13 @@ build R lists for ECharts API. Lean set of powerful commands.")
 (define-public r-echarts4r
   (package
     (name "r-echarts4r")
-    (version "0.4.6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarts4r" version))
        (sha256
-        (base32 "1915qiss6jrfwl6q4j00m5d3z82kq509g3q4bx1qly2cwss75iyf"))))
+        (base32 "1cpvnaviszax40shyx6i8dw8649v98rn5d5gjick9aqkk8c77gpw"))))
     (properties `((upstream-name . "echarts4r")))
     (build-system r-build-system)
     (arguments
@@ -24891,6 +24932,7 @@ build R lists for ECharts API. Lean set of powerful commands.")
     (propagated-inputs (list r-shiny
                              r-scales
                              r-rstudioapi
+                             r-rlang
                              r-purrr
                              r-jsonlite
                              r-htmlwidgets
@@ -24898,10 +24940,11 @@ build R lists for ECharts API. Lean set of powerful commands.")
                              r-dplyr
                              r-countrycode
                              r-corrplot
+                             r-cli
                              r-broom))
     (native-inputs (list esbuild))
-    (home-page "https://echarts4r.john-coene.com/")
-    (synopsis "Create Interactive Graphs with 'Echarts JavaScript' Version 5")
+    (home-page "https://echarts4r.john-coene.com")
+    (synopsis "Create Interactive Graphs with 'Echarts JavaScript' Version 6")
     (description
      "Easily create interactive charts by leveraging the Echarts Javascript library
 which includes 36 chart types, themes, Shiny proxies and animations.")

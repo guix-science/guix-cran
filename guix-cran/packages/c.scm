@@ -3127,13 +3127,13 @@ CTT package, providing a GUI that guides the user through CTT analyses.")
 (define-public r-ctt
   (package
     (name "r-ctt")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CTT" version))
        (sha256
-        (base32 "02z354gf7rzh9xzyflmsag4hgmqgv3sr9s9ja903rwdz1pjqrlff"))))
+        (base32 "1nixani3kn9am7jg3nrk32645b4s0j8n303p19qam25pqw4djk8k"))))
     (properties `((upstream-name . "CTT")))
     (build-system r-build-system)
     (arguments
@@ -22923,13 +22923,13 @@ these community structures and an outcome of interest (binary or continuous).")
 (define-public r-commecometrics
   (package
     (name "r-commecometrics")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "commecometrics" version))
        (sha256
-        (base32 "1a61l2s76kxya65h3m61bfd9anp5q57m1fb4cklwmrwjh0y68a8s"))))
+        (base32 "1l96s5jv690hpd8h5h9bn73w0sn10idr1ms39gzdxiabcyfpy5ip"))))
     (properties `((upstream-name . "commecometrics")))
     (build-system r-build-system)
     (arguments
@@ -25753,13 +25753,13 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 (define-public r-cohortgenerator
   (package
     (name "r-cohortgenerator")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortGenerator" version))
        (sha256
-        (base32 "1nzw4kcvx26grcfinzdslc3kn8yxq4aqfprll6snqnqyk33rqk29"))))
+        (base32 "098kyvxvddbsyfbl5b8xy8q323x439ir7661q01q13wvl0d26ch5"))))
     (properties `((upstream-name . "CohortGenerator")))
     (build-system r-build-system)
     (arguments
@@ -26821,13 +26821,13 @@ nickname.")
 (define-public r-codemetar
   (package
     (name "r-codemetar")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codemetar" version))
        (sha256
-        (base32 "0v7zzf7hh5f56wsvm69alqyim8y3npjdrh85qvw8936la6xlh7db"))))
+        (base32 "1zzz214k1g6i6nli7hj8migia01f5gbiqmz5s60m2g6nmcbm0p70"))))
     (properties `((upstream-name . "codemetar")))
     (build-system r-build-system)
     (arguments
@@ -28376,6 +28376,51 @@ the region, date of birth, age, age based on year, gender, zodiac, constellation
 information from the Chinese ID number.")
     (license license:expat)))
 
+(define-public r-cnefetools
+  (package
+    (name "r-cnefetools")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cnefetools" version))
+       (sha256
+        (base32 "0drl4psmxjs5s6msgz6jsn07h4rfvlbv7g7w1kl4gxl5rkq0jnfv"))))
+    (properties `((upstream-name . "cnefetools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-piggyback
+                             r-lifecycle
+                             r-httr2
+                             r-h3jsr
+                             r-geobr
+                             r-fs
+                             r-duckspatial
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-arrow))
+    (home-page "https://github.com/pedreirajr/cnefetools")
+    (synopsis "Access and Analysis of Brazilian CNEFE Address Data")
+    (description
+     "Download, cache and read municipality-level address data from the Cadastro
+Nacional de Enderecos para Fins Estatisticos (CNEFE) of the 2022 Brazilian
+Census, published by the Instituto Brasileiro de Geografia e Estatistica (IBGE)
+<https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/>.
+ Beyond data access, provides spatial aggregation of addresses, computation of
+land-use mix indices, and dasymetric interpolation of census tract variables
+using CNEFE dwelling points as ancillary data.  Results can be produced on H3
+hexagonal grids or user-supplied polygons, and heavy operations leverage a
+@code{DuckDB} backend with extensions for fast, in-process execution.")
+    (license license:expat)))
+
 (define-public r-cnd
   (package
     (name "r-cnd")
@@ -29234,13 +29279,13 @@ programming algorithm.")
 (define-public r-cml
   (package
     (name "r-cml")
-    (version "0.2.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cml" version))
        (sha256
-        (base32 "1k1fj3j6kxpnxzykqbrcv09q8xhp749apfir0hzkp1f2apyjxymi"))))
+        (base32 "02jjkn8wdqh0ryygrsg2wkkbm07ar4jiiw41i24r7qms1ih56zyi"))))
     (properties `((upstream-name . "cml")))
     (build-system r-build-system)
     (arguments
@@ -29251,11 +29296,8 @@ programming algorithm.")
     (synopsis "Conditional Manifold Learning")
     (description
      "Finds a low-dimensional embedding of high-dimensional data, conditioning on
-available manifold information.  The current version supports conditional MDS
-(based on either conditional SMACOF in Bui (2021) <@code{arXiv:2111.13646>} or
-closed-form solution in Bui (2022) <doi:10.1016/j.patrec.2022.11.007>) and
-conditional ISOMAP in Bui (2021) <@code{arXiv:2111.13646>}.")
-    (license license:gpl2)))
+available manifold information.")
+    (license license:gpl3)))
 
 (define-public r-cmip6visr
   (package
@@ -32165,13 +32207,13 @@ et al. (2014) <doi:10.1186/s13059-014-0439-6>; Carreira et al. (2014)
 (define-public r-cloneseeker
   (package
     (name "r-cloneseeker")
-    (version "1.0.13")
+    (version "1.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CloneSeeker" version))
        (sha256
-        (base32 "1yq694gamsrkqszk0bj98lk74rxaixq3cf2y4k3fc8a98gwrpqjf"))))
+        (base32 "0080l2y764nmkaxh2iyg1js9b4ahdwpxxxglqr0xzcf82004q72r"))))
     (properties `((upstream-name . "CloneSeeker")))
     (build-system r-build-system)
     (arguments
@@ -32340,6 +32382,37 @@ and pattern analysis across multiple time frames.")
 <https://docs.clockify.me/>, making it possible to query, insert and update time
 keeping data.")
     (license license:gpl3)))
+
+(define-public r-clmstan
+  (package
+    (name "r-clmstan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clmstan" version))
+       (sha256
+        (base32 "09r15qghyzhkicrs2qvqla1j6gy6lgl8g7g9jvwxa84l6bq4b92v"))))
+    (properties `((upstream-name . "clmstan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-posterior r-loo r-instantiate r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://t-momozaki.github.io/clmstan/")
+    (synopsis "Cumulative Link Models with 'CmdStanR'")
+    (description
+     "Fits cumulative link models (CLMs) for ordinal categorical data using
+@code{CmdStanR}'.  Supports various link functions including logit, probit,
+cloglog, loglog, cauchit, and flexible parametric links such as Generalized
+Extreme Value (GEV), Asymmetric Exponential Power (AEP), and Symmetric Power.
+Models are pre-compiled using the instantiate package for fast execution without
+runtime compilation.  Methods are described in Agresti (2010,
+ISBN:978-0-470-08289-8), Wang and Dey (2011) <doi:10.1007/s10651-010-0154-8>,
+and Naranjo, Perez, and Martin (2015) <doi:10.1007/s11222-014-9449-1>.")
+    (license license:expat)))
 
 (define-public r-clmplus
   (package
@@ -33382,13 +33455,13 @@ change in space and time.")
 (define-public r-climenu
   (package
     (name "r-climenu")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climenu" version))
        (sha256
-        (base32 "085qq1b5nlb91yzqkzam1060j8qkh14hpryhy2c0d8zsa74cdnwm"))))
+        (base32 "13dvnb3vra9sza23nkyp9d13ah41abbrfwsdvq9gvr7nhh5lcng0"))))
     (properties `((upstream-name . "climenu")))
     (build-system r-build-system)
     (arguments
@@ -45630,13 +45703,13 @@ function to explore the available measures for each release year.")
 (define-public r-cdcatr
   (package
     (name "r-cdcatr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdcatR" version))
        (sha256
-        (base32 "168gs1v1a6pcz63q3hb1dc4mlllr38j91m91phb75np8hxfz2k2v"))))
+        (base32 "0wnvlz6481qp5wl9b2r8x2j906r1s4i8iayd2fmk6py3s2a5p22j"))))
     (properties `((upstream-name . "cdcatR")))
     (build-system r-build-system)
     (arguments

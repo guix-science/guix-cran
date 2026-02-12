@@ -6994,13 +6994,13 @@ dividers.")
 (define-public r-artma
   (package
     (name "r-artma")
-    (version "0.2.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "artma" version))
        (sha256
-        (base32 "0q9w773jzlc3f91ddxf6yrpz2lg1lcq2nrx2n1k8x6fbgkbzws7c"))))
+        (base32 "0g15x27gdkbplr9c5f5hr2g3ix76fhyj40zp54hcpr2r4i7si7a0"))))
     (properties `((upstream-name . "artma")))
     (build-system r-build-system)
     (arguments
@@ -7008,15 +7008,18 @@ dividers.")
       #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-withr
-                             r-usethis
-                             r-tidyverse
-                             r-stringr
+                             r-sandwich
                              r-rlang
-                             r-purrr
+                             r-rcpp
+                             r-plm
+                             r-nlcoptim
                              r-metafor
+                             r-memoise
+                             r-lmtest
                              r-lintr
-                             r-lifecycle
-                             r-glue
+                             r-ggtext
+                             r-ggplot2
+                             r-climenu
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PetrCala/artma")
@@ -8978,6 +8981,35 @@ including gzip', bzip2', compress', lzma and xz'.")
      "Stepwise Uncertainty Reduction criterion and algorithm for sequentially learning
 a Gaussian Process Classifier as described in Menz et al. (2025).")
     (license license:gpl3)))
+
+(define-public r-archipelago
+  (package
+    (name "r-archipelago")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "archipelago" version))
+       (sha256
+        (base32 "0spx89chc1hyng57k5lg23xjqa34axq1z6whxnjkdxshadync6bw"))))
+    (properties `((upstream-name . "archipelago")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=archipelago")
+    (synopsis "Visualising Variant Set Association Test Results")
+    (description
+     "This package provides a graphical method for joint visualisation of Variant Set
+Association Test (VSAT) results and individual variant association statistics.
+The Archipelago method assigns genomic coordinates to variant set statistics,
+allowing simultaneous display of variant-level and set-level signals in a
+unified plot.  This supports interpretation of both collective and individual
+variant contributions in genetic association studies using variant aggregation
+approaches.  For more see Lawless et al. (2026) <doi:10.1002/gepi.70025>.")
+    (license license:expat)))
 
 (define-public r-archidart
   (package
@@ -21852,6 +21884,31 @@ analysis.  An exploration of the AF with a genetic exposure can be found in the
 package AFheritability Dahlqwist E et al. (2019)
 <doi:10.1007/s00439-019-02006-8>.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-aesopr
+  (package
+    (name "r-aesopr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aesopR" version))
+       (sha256
+        (base32 "1pf5hq2arbsl3nbd8sf7shgp1mg25a8nchajxqnfpnpfdbgagayv"))))
+    (properties `((upstream-name . "aesopR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=aesopR")
+    (synopsis "Tools for Text Analysis of Aesop's Fables")
+    (description
+     "This package provides a tidy text corpus of Aesop's Fables sourced from the
+Library of Congress, along with analysis-ready datasets for sentiment, emotion,
+and linguistic analysis of moral storytelling.  The package includes both full
+narrative texts and word-level representations to support exploratory text
+analysis and teaching workflows.")
+    (license license:expat)))
 
 (define-public r-aerosampler
   (package

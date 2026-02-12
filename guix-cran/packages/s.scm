@@ -8295,19 +8295,19 @@ calculating confidence intervals.")
 (define-public r-sumextras
   (package
     (name "r-sumextras")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumExtras" version))
        (sha256
-        (base32 "08al93kiv2d94qip54yn5xx2m8il8abnlxc5xyn3akdlr7hj8rsf"))))
+        (base32 "06jp9xxsf9gcjd69cjxr628wyjfsr0nhva35ncl9qnjpdiy1rs6v"))))
     (properties `((upstream-name . "sumExtras")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-purrr r-gtsummary r-gt r-dplyr))
+    (propagated-inputs (list r-rlang r-gtsummary r-gt r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kyleGrealis/sumExtras")
     (synopsis "Extra Functions for 'gtsummary' Table Styling")
@@ -16524,6 +16524,53 @@ relational tables or as a complete @code{DuckDB} database.  All data was
 collected from the open source Star Wars API.")
     (license license:expat)))
 
+(define-public r-starvz
+  (package
+    (name "r-starvz")
+    (version "0.8.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "starvz" version))
+       (sha256
+        (base32 "1fzs90qjidddy7qbpvfcyy0jq2zfd55743qky51syqwa82dahlkp"))))
+    (properties `((upstream-name . "starvz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-zoo
+                             r-yaml
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-lpsolve
+                             r-gtools
+                             r-ggplot2
+                             r-dplyr
+                             r-data-tree
+                             r-bh))
+    (home-page "https://github.com/schnorr/starvz")
+    (synopsis "R-Based Visualization Techniques for Task-Based Applications")
+    (description
+     "Performance analysis workflow that combines the power of the R language (and the
+tidyverse realm) and many auxiliary tools to provide a consistent, flexible,
+extensible, fast, and versatile framework for the performance analysis of
+task-based applications that run on top of the @code{StarPU} runtime (with its
+MPI (Message Passing Interface) layer for multi-node support).  Its goal is to
+provide a fruitful prototypical environment to conduct performance analysis
+hypothesis-checking for task-based applications that run on heterogeneous
+(multi-GPU, multi-core) multi-node HPC (High-performance computing) platforms.")
+    (license license:gpl3)))
+
 (define-public r-starvars
   (package
     (name "r-starvars")
@@ -20459,13 +20506,13 @@ as well as Cint are sampled randomly without replacement.  See Beule & Karlovsky
 (define-public r-srppp
   (package
     (name "r-srppp")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srppp" version))
        (sha256
-        (base32 "00b9w1m7gss21vr14lzb7nnn9canfza38yc233ifhgsy739gpj7w"))))
+        (base32 "1aiaxjvj5r91rlxk44r6hzjys5why2msqq8q3zwg6vm458qs98ky"))))
     (properties `((upstream-name . "srppp")))
     (build-system r-build-system)
     (arguments
@@ -39586,31 +39633,6 @@ the models implemented can be found at Aznar-Gimeno et al. (2021)
 <doi:10.3390/math9192497>.")
     (license license:gpl3)))
 
-(define-public r-slmetrics
-  (package
-    (name "r-slmetrics")
-    (version "0.3-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SLmetrics" version))
-       (sha256
-        (base32 "1byrlbxrd5z41ym48kx5psqwj66jm35f2xpg8xqxh183gh6ydg15"))))
-    (properties `((upstream-name . "SLmetrics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice))
-    (native-inputs (list r-knitr))
-    (home-page "https://slmetrics-docs.gitbook.io/v1")
-    (synopsis "Machine Learning Performance Evaluation on Steroids")
-    (description
-     "Performance evaluation metrics for supervised and unsupervised machine learning,
-statistical learning and artificial intelligence applications.  Core
-computations are implemented in C++ for scalability and efficiency.")
-    (license license:gpl3+)))
-
 (define-public r-slm
   (package
     (name "r-slm")
@@ -46382,6 +46404,32 @@ item are also included.")
 <doi:10.1080/01621459.1994.10476871> and MCSIMEX by KÃ¼chenhoff, Mwalili &
 Lesaffre (2006) <doi:10.1111/j.1541-0420.2005.00396.x>.")
     (license license:gpl3)))
+
+(define-public r-simevent
+  (package
+    (name "r-simevent")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simevent" version))
+       (sha256
+        (base32 "1n7rjgw7lf3x7jiyh4mjs0sf0d5jl3b8yynwsb2y63qnrl8gjdbr"))))
+    (properties `((upstream-name . "simevent")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcpp r-ggplot2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/miclukacova/simevent")
+    (synopsis "Simulation and Analysis of Event History Data")
+    (description
+     "Simulate event history data from a framework where treatment decisions and
+disease progression are represented as counting process.  The user can specify
+number of events and parameters of intensities thereby creating a flexible
+simulation framework.")
+    (license license:expat)))
 
 (define-public r-simeucartellaw
   (package
@@ -56547,42 +56595,38 @@ Technometrics, <doi:10.1080/00401706.2015.1108233>).")
 (define-public r-sffdr
   (package
     (name "r-sffdr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sffdr" version))
        (sha256
-        (base32 "0z2nx5k7hmmyl4y64ajzf1j9ksbfqq0hfdg7m3xkfjmi51vn5whz"))))
+        (base32 "1zk28rx0c4nni86nz8i9b3z8iilf6xnpnacgbjf4xx6ayk25mk1z"))))
     (properties `((upstream-name . "sffdr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rcpp
+    (propagated-inputs (list r-withr
                              r-qvalue
                              r-patchwork
                              r-locfit
                              r-ggplot2
-                             r-gam
-                             r-dplyr))
+                             r-fastglm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ajbass/sffdr")
     (synopsis
      "Surrogate Functional False Discovery Rates for Genome-Wide Association Studies")
     (description
      "Pleiotropy-informed significance analysis of genome-wide association studies
-(GWAS) with surrogate functional false discovery rates (@code{sfFDR}).  The
+with surrogate functional false discovery rates (@code{sfFDR}).  The
 @code{sfFDR} framework adapts the @code{fFDR} to leverage informative data from
 multiple sets of GWAS summary statistics to increase power in study while
 accommodating for linkage disequilibrium. @code{sfFDR} provides estimates of key
 FDR quantities in a significance analysis such as the functional local FDR and
-q-value, and uses these estimates to derive a functional p-value for type I
+$q$-value, and uses these estimates to derive a functional $p$-value for type I
 error rate control and a functional local Bayes factor for post-GWAS analyses
-(e.g., fine mapping and colocalization).  The @code{sfFDR} framework is
-described in Bass and Wallace (2024) <doi:10.1101/2024.09.24.24314276>.")
+(e.g., fine mapping and colocalization).")
     (license license:lgpl2.0+)))
 
 (define-public r-sfdesign
@@ -60721,13 +60765,13 @@ forests.")
 (define-public r-semhelpinghands
   (package
     (name "r-semhelpinghands")
-    (version "0.1.12")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semhelpinghands" version))
        (sha256
-        (base32 "1czk7id5ah1s38jqc8sgq5j42dyf8062gqnb4y3gy27s5i5gkrbi"))))
+        (base32 "15k97fxqxxxpzrphsnnzzs679hbphxfngwwbvlfygcrwgacqkfai"))))
     (properties `((upstream-name . "semhelpinghands")))
     (build-system r-build-system)
     (arguments
@@ -70218,13 +70262,13 @@ using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
 (define-public r-scaledescr
   (package
     (name "r-scaledescr")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scaledescr" version))
        (sha256
-        (base32 "1vfg0mmivh6q7a9xlalx6m7l7yqb4624dq5z1mzkq55v6g8lz1wi"))))
+        (base32 "04s1j2qwklsji8n5s1hklp1sbrx4v0ryisip0qm1fhfb3qnl75rk"))))
     (properties `((upstream-name . "scaledescr")))
     (build-system r-build-system)
     (arguments
@@ -70232,6 +70276,7 @@ using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-purrr
+                             r-psych
                              r-openxlsx
                              r-officer
                              r-gtsummary
@@ -71194,13 +71239,13 @@ Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
 (define-public r-saturncoefficient
   (package
     (name "r-saturncoefficient")
-    (version "1.4")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SaturnCoefficient" version))
        (sha256
-        (base32 "1lhk0xafgnfqc0zm9vpcicwvdxfvbfs7vw20v8gf1i4ns6hai0vn"))))
+        (base32 "1dkky7imfvk7vz593qycd17wf8k5m29qn523r2bag42mg1y2pbsg"))))
     (properties `((upstream-name . "SaturnCoefficient")))
     (build-system r-build-system)
     (arguments
@@ -71218,9 +71263,10 @@ input matrix, its dimensionality reduction produced by UMAP, and evaluates the
 quality of this dimensionality reduction by producing a real value in the [0; 1]
 interval.  We call this real value Saturn coefficient.  A higher value means
 better dimensionality reduction; a lower value means worse dimensionality
-reduction.  Reference: Davide Chicco et al. \"The Saturn coefficient for
-evaluating the quality of UMAP dimensionality reduction results\" (2025, in
-preparation).")
+reduction.  Reference: Davide Chicco et al. (February 2026), \"The advantages of
+our proposed Saturn coefficient over continuity and trustworthiness for UMAP
+dimensionality reduction evaluation\", @code{PeerJ} Computer Science 12:e3424
+(pp.  1-30), <doi:10.7717/peerj-cs.3424>.")
     (license license:gpl3)))
 
 (define-public r-sats

@@ -153,13 +153,13 @@ documentation or optimizations.")
 (define-public r-typer
   (package
     (name "r-typer")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "typeR" version))
        (sha256
-        (base32 "0m5r7aqbqayq5g4zcdbr0wr8q4xq3zanpjahpdsnd9mcjkl1pmmq"))))
+        (base32 "00jnq7yqqiapjds3vqv0w7xvng1iynr88w855323yanc309idj2y"))))
     (properties `((upstream-name . "typeR")))
     (build-system r-build-system)
     (arguments
@@ -3689,13 +3689,13 @@ protocols by Rubinson et al. (2019) <doi:10.1177/00491241211036158>.")
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.2.747")
+    (version "1.2.767")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "1wj2czwxinb2da9h0x7hfgsm0d95zhd9aib9khm7var6gn6flr9j"))))
+        (base32 "1125ka6m5dc4a182rlmpvyfzrys90zb738zmas4334sgv2dag35c"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments
@@ -8095,13 +8095,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "0j1qsa16m31hpgmhfk7k0wb9l3v8jkkh2c3l91arjjin4b2mj3xm"))))
+        (base32 "0l9y7igx7lgaxkfdplipk7g573pirn28ckap6p9ra6jxymr7w8pb"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -9304,29 +9304,26 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "13ziyd05r1cv8f8s8xj24hyz2qzgds54d444m9ny5xvnvspb2mff"))))
+        (base32 "15k10zcdv25a08idbbm5b3g7aga2yvw3w3908mycvharzha6738w"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-sunburstr
-                             r-stringr
+                             r-stringi
                              r-r6
-                             r-networkd3
                              r-jsonlite
-                             r-htmlwidgets
-                             r-ggplot2
                              r-dplyr
                              r-dbplyr
                              r-checkmate
+                             r-cdmconnector
                              r-andromeda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/darwin-eu/TreatmentPatterns")
@@ -10058,13 +10055,13 @@ Ukrainian strings into Latin symbols.")
 (define-public r-transition
   (package
     (name "r-transition")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Transition" version))
        (sha256
-        (base32 "1fc2mhsqbxbjwq766sxlb3lwacj0g5a7bky7gblzwmmcl2ifxs23"))))
+        (base32 "0dlw1m0rw2b13hvgm1hk7x6c3c2khfxz3l2pnkr1n64jj6kyqgi4"))))
     (properties `((upstream-name . "Transition")))
     (build-system r-build-system)
     (arguments
@@ -16684,13 +16681,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.15.2")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "1i1k3wcg6l6hxv4dgy7fr8ak3w9k03pp6zg84na77b1yx760vg5x"))))
+        (base32 "12div1ds4mcsqdk6ny6w5cyg4i73lk4w3fpypph9wmjkfrbcbqbf"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -17593,13 +17590,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "1klv37g4knscynhxr538cmhcg023vg24b21cx993mccayxnk69hn"))))
+        (base32 "1xi0x9girianlh7y9k5m5hkfqnlpmjbmz3gr23xa864gzkcxajji"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (arguments
@@ -22021,6 +22018,35 @@ or AI players.  Various levels of AI players are trained through the Q-learning
 algorithm.")
     (license license:expat)))
 
+(define-public r-ticm
+  (package
+    (name "r-ticm")
+    (version "1.0-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TICM" version))
+       (sha256
+        (base32 "1q80z2mnn35dkgdjnf6ssyh8d8559r33k0xh7ass281d5scvwrpa"))))
+    (properties `((upstream-name . "TICM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-jade r-fica))
+    (home-page "https://cran.r-project.org/package=TICM")
+    (synopsis
+     "Testing the Validity of the Independent Component Model Assumption")
+    (description
+     "Description: Provides affine-invariant, distribution-free tests of multivariate
+independence, applied either directly to observed data or to estimated
+independent components.  In the latter case, the procedures can be used to
+assess the validity of independent component models.  The tests are based on
+L2-type distances between characteristic functions, with inference carried out
+using permutation or bootstrap resampling schemes.  The methods are described in
+Hallin et al. (2024) <doi:10.48550/@code{arXiv.2404.07632>}.")
+    (license license:gpl3+)))
+
 (define-public r-tickr
   (package
     (name "r-tickr")
@@ -22106,6 +22132,45 @@ the creation of time aware tibbles.  Some immediate advantages of this include:
 the ability to perform time-based subsetting on tibbles, quickly summarising and
 aggregating results by time periods, and creating columns that can be used as
 dplyr time-based groups.")
+    (license license:expat)))
+
+(define-public r-ti
+  (package
+    (name "r-ti")
+    (version "4.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ti" version))
+       (sha256
+        (base32 "0cn06iq9rl5d1bjjv6jsy9qp73dz9an2jk54dka4i2260rplmm27"))))
+    (properties `((upstream-name . "ti")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-s7
+                             r-rlang
+                             r-lubridate
+                             r-janitor
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-assertthat))
+    (home-page "https://codeberg.org/usrbinr/ti")
+    (synopsis
+     "Time Intelligence and Customer Segmentation for Financial Analysis")
+    (description
+     "Calculate time intelligence metrics for financial planning and analysis.  ti
+provides functions for period-over-period comparisons (year-over-year,
+month-over-month), period-to-date calculations (YTD, MTD, QTD), and customer
+segmentation (ABC analysis, cohorts).  Supports standard and retail calendars
+(4-4-5, 4-5-4, 5-4-4) with both in-memory and database backends via dbplyr'.")
     (license license:expat)))
 
 (define-public r-thurstonianirt
@@ -23712,13 +23777,13 @@ Fourier basis.")
 (define-public r-tfrmtbuilder
   (package
     (name "r-tfrmtbuilder")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmtbuilder" version))
        (sha256
-        (base32 "010vb839fkzj17mivyxjd3vbk7jhm2wrrdk7s7giy57dwmcyql5c"))))
+        (base32 "0dcyjnjcwp0681230f5yd7pam7bbg6nnv7l63ll3jgfzs1rl28ah"))))
     (properties `((upstream-name . "tfrmtbuilder")))
     (build-system r-build-system)
     (arguments
@@ -23738,7 +23803,6 @@ Fourier basis.")
                              r-rio
                              r-purrr
                              r-gt
-                             r-forcats
                              r-fontawesome
                              r-dt
                              r-dplyr
@@ -25110,13 +25174,13 @@ Meier & Mata (2024) <doi:10.1007/s11625-024-01516-3>.")
 (define-public r-text2map
   (package
     (name "r-text2map")
-    (version "0.2.0")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text2map" version))
        (sha256
-        (base32 "0fs51r2gz2kzyqd9i9vbyyvd8lx9ng40vxw3ncrph22b3vn9q5dl"))))
+        (base32 "0jxj6m4411zvxqvpdqnijfy2nml8syinwxv2z6qx06cisi76dkw7"))))
     (properties `((upstream-name . "text2map")))
     (build-system r-build-system)
     (arguments
@@ -25128,6 +25192,7 @@ Meier & Mata (2024) <doi:10.1007/s11625-024-01516-3>.")
                              r-rsvd
                              r-rlang
                              r-qgraph
+                             r-pillar
                              r-permute
                              r-matrix
                              r-kit
@@ -25136,8 +25201,9 @@ Meier & Mata (2024) <doi:10.1007/s11625-024-01516-3>.")
                              r-fastmatch
                              r-dplyr
                              r-doparallel
-                             r-clusterr))
-    (home-page "https://gitlab.com/culturalcartography/text2map")
+                             r-clusterr
+                             r-cli))
+    (home-page "https://culturalcartography.gitlab.io/text2map")
     (synopsis "R Tools for Text Matrices, Embeddings, and Networks")
     (description
      "This is a collection of functions optimized for working with with various kinds
@@ -30530,26 +30596,31 @@ tests in selection: Discussion and tables\" <doi:10.1037/h0057079>.")
 (define-public r-taylor
   (package
     (name "r-taylor")
-    (version "3.2.0")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taylor" version))
        (sha256
-        (base32 "049vyibjmzxw7hf6h3jl0lbma92ih8lda6j6acr0ncdp5m18d24s"))))
+        (base32 "0fl44x30dly8b1b9192y98lzc1nmi8my1q1falrra4vxifcdx164"))))
     (properties `((upstream-name . "taylor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs
+                             r-tidyr
                              r-tibble
+                             r-spotifyr
                              r-scales
                              r-rlang
                              r-lifecycle
+                             r-httr2
                              r-glue
                              r-ggplot2
-                             r-cli))
+                             r-dplyr
+                             r-cli
+                             r-askpass))
     (native-inputs (list r-knitr))
     (home-page "https://taylor.wjakethompson.com")
     (synopsis "Lyrics and Song Data for Taylor Swift's Discography")
@@ -30557,9 +30628,9 @@ tests in selection: Discussion and tables\" <doi:10.1037/h0057079>.")
      "This package provides a comprehensive resource for data on Taylor Swift songs.
 Data is included for all officially released studio albums, extended plays
 (EPs), and individual singles are included.  Data comes from Genius (lyrics) and
-Spotify (song characteristics).  Additional functions are included for easily
-creating data visualizations with color palettes inspired by Taylor Swift's
-album covers.")
+@code{SoundStat} (song characteristics).  Additional functions are included for
+easily creating data visualizations with color palettes inspired by Taylor
+Swift's album covers.")
     (license license:expat)))
 
 (define-public r-taxonomizr

@@ -3530,13 +3530,13 @@ explore design operating characteristics.  For more details see Parsons (2024)
 (define-public r-gse
   (package
     (name "r-gse")
-    (version "4.2-3")
+    (version "4.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSE" version))
        (sha256
-        (base32 "09c1yxkcys8mj66fbm3kjfdj4m7z1322vdf9w7rgzd7wlcqhwnab"))))
+        (base32 "0bmwrndi55d4r0apjwjmycp5svk48zvidpdhyvb3yfv6h4pibiwy"))))
     (properties `((upstream-name . "GSE")))
     (build-system r-build-system)
     (arguments
@@ -6643,20 +6643,19 @@ finalized @code{GreenFeed} data.")
 (define-public r-greener
   (package
     (name "r-greener")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GREENeR" version))
        (sha256
-        (base32 "18li2xs12gi4c1wsjxdqbjfyw81xsmgnljdrlgj9fdw91w3f9bzw"))))
+        (base32 "0j60l0giw1g4ywqmq3kyrqa47hlfzhzqqnb2ajn86nm33bak0w8b"))))
     (properties `((upstream-name . "GREENeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tmap
-                             r-tidyselect
                              r-sf
                              r-reshape2
                              r-parallelly
@@ -10029,13 +10028,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "1s5dzqmb0nj23hg43156zkq96fyckmcg41cqz2qk0v8mw0xr0qpc"))))
+        (base32 "07hy30frisp4ff1yxfq3j69sd2h4nwzlj3m3nwg7bb43kaxndvsr"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -21257,13 +21256,13 @@ easily use the Okabe-Ito palette in your data visualizations.")
 (define-public r-ggoceanmaps
   (package
     (name "r-ggoceanmaps")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggOceanMaps" version))
        (sha256
-        (base32 "1wrr92srwrg7fx0iz4qnmn89mhhwfbrx5z2rk8vfy3clh8i65x23"))))
+        (base32 "0dhd9vmc7gxv3pcqj01vm1x6skbpcrq1x9c0pbxb7lbls4xf8q42"))))
     (properties `((upstream-name . "ggOceanMaps")))
     (build-system r-build-system)
     (arguments
@@ -22817,13 +22816,13 @@ existing plots (e.g., themes and aesthetics).")
 (define-public r-ggfishplots
   (package
     (name "r-ggfishplots")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggFishPlots" version))
        (sha256
-        (base32 "12p3ldbfxp51sqswms9zk6chmi8qy0ncv3l2bh9i6b1xhjcx86b2"))))
+        (base32 "0whqcj4lw04n289yq1l75k1qf2xkl9na0fy9v15d2ww1imbvavak"))))
     (properties `((upstream-name . "ggFishPlots")))
     (build-system r-build-system)
     (arguments
@@ -22833,7 +22832,6 @@ existing plots (e.g., themes and aesthetics).")
                              r-tidyr
                              r-tibble
                              r-scales
-                             r-rlang
                              r-purrr
                              r-magrittr
                              r-ggridges
@@ -28808,6 +28806,33 @@ package includes a wide range of geospatial data available at various geographic
 scales and for various years with harmonized attributes, projection and fixed
 topology.")
     (license license:expat)))
+
+(define-public r-geobounds
+  (package
+    (name "r-geobounds")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geobounds" version))
+       (sha256
+        (base32 "1ikksfnk5m1vz5ahb2dc2c9haiilymkcgqbhcbhbzwla0ixprj1n"))))
+    (properties `((upstream-name . "geobounds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-httr2 r-dplyr r-countrycode r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://dieghernan.github.io/geobounds/")
+    (synopsis "Download Map Data from 'geoBoundaries'")
+    (description
+     "This package provides tools to download data from @code{geoBoundaries}
+<https://www.geoboundaries.org/>.  Several administration levels available.  See
+Runfola, D. et al. (2020) @code{geoBoundaries}: A global database of political
+administrative boundaries.  PLOS ONE 15(4): 1-9.
+<doi:10.1371/journal.pone.0231866>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-geobayes
   (package
@@ -37145,13 +37170,13 @@ Beck & Teboulle (2003) <doi:10.1016/S0167-6377(02)00231-6>, Nesterov (2017)
 (define-public r-galah
   (package
     (name "r-galah")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galah" version))
        (sha256
-        (base32 "17yij2sj24xb534cy2pls3az1vfb0nllwpp308ndkh4d28jkwxik"))))
+        (base32 "1i4vclnyvw0fr3gnzbnrr4l0cd74hacqyx9nvbh9hvd6jkw7iina"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
     (arguments

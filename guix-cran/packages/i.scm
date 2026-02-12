@@ -816,6 +816,31 @@ et al. (2011) <doi:10.1109/TSP.2011.2181836> and Lee et al. (2007)
 <doi:10.1016/j.sigpro.2007.01.010>.")
     (license license:gpl3+)))
 
+(define-public r-iv-sensemakr
+  (package
+    (name "r-iv-sensemakr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iv.sensemakr" version))
+       (sha256
+        (base32 "0dwpj74j507bg3dh18ksai131pdllah7ibh83q5lfjk5hgnfml5x"))))
+    (properties `((upstream-name . "iv.sensemakr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sensemakr))
+    (native-inputs (list r-knitr))
+    (home-page "https://carloscinelli.com/iv.sensemakr/")
+    (synopsis "Sensitivity Analysis Tools for Instrumental Variable Estimates")
+    (description
+     "This package implements a suite of sensitivity analysis tools for instrumental
+variable estimates as described in Cinelli and Hazlett (2025)
+<doi:10.1093/biomet/asaf004>.")
+    (license license:gpl3)))
+
 (define-public r-iucnr
   (package
     (name "r-iucnr")
@@ -5407,13 +5432,13 @@ or <https://ghfast.top/>, which is in real-time sync with @code{GitHub}.")
 (define-public r-ipft
   (package
     (name "r-ipft")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipft" version))
        (sha256
-        (base32 "0jifmkwac5yfl110200ljm3pas3321j068af9xqzqs0av20m8hps"))))
+        (base32 "1g06zjlisszckdbfbha4nzzsv2dyfqwbsbwwy1nl0fkxr8ckbkx1"))))
     (properties `((upstream-name . "ipft")))
     (build-system r-build-system)
     (arguments
@@ -10320,13 +10345,13 @@ and component-wise statistics for model assessment.")
 (define-public r-infoset
   (package
     (name "r-infoset")
-    (version "4.1")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INFOSET" version))
        (sha256
-        (base32 "1bybcjyvpn7rvvyccs99xzak5j5mm2ycb715pmkp0kszsrl8y3fc"))))
+        (base32 "1r56zb5agb1kyj03rwic9099hmpw6002ynq9d50xc0y3jf6hjprc"))))
     (properties `((upstream-name . "INFOSET")))
     (build-system r-build-system)
     (arguments
@@ -10638,13 +10663,13 @@ influence for structural equation models.")
 (define-public r-influence-me
   (package
     (name "r-influence-me")
-    (version "0.9-9")
+    (version "0.9-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "influence.ME" version))
        (sha256
-        (base32 "0f6d2hvs9qllyfpsp2cgh7w8yjxafclbk47n8av7j9zpp7s5yg9v"))))
+        (base32 "0s52iiwm6cv88rkb6j24xms6kc3gi1rz12g5y82ng6apldvp27mc"))))
     (properties `((upstream-name . "influence.ME")))
     (build-system r-build-system)
     (arguments

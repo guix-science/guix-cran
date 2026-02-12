@@ -2216,38 +2216,6 @@ more details please visit the official site (in Chinese)
 <http://www.pullword.com/>.")
     (license license:lgpl2.0+)))
 
-(define-public r-pulasso
-  (package
-    (name "r-pulasso")
-    (version "3.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PUlasso" version))
-       (sha256
-        (base32 "1lyf7x4sixpl74alns3kmr2iz10qmjz444gyqxgj5k4xqswgaz15"))))
-    (properties `((upstream-name . "PUlasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://arxiv.org/abs/1711.08129")
-    (synopsis "High-Dimensional Variable Selection with Presence-Only Data")
-    (description
-     "Efficient algorithm for solving PU (Positive and Unlabeled) problem in low or
-high dimensional setting with lasso or group lasso penalty.  The algorithm uses
-Maximization-Minorization and (block) coordinate descent.  Sparse calculation
-and parallel computing are supported for the computational speed-up.  See Hyebin
-Song, Garvesh Raskutti (2018) <@code{arXiv:1711.08129>}.")
-    (license license:gpl2)))
-
 (define-public r-pugmm
   (package
     (name "r-pugmm")
@@ -19388,6 +19356,37 @@ polynomial arithmetic, finding zeros, plotting, and some operations on lists of
 polynomials.")
     (license license:gpl2)))
 
+(define-public r-polymigr
+  (package
+    (name "r-polymigr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PolyMigR" version))
+       (sha256
+        (base32 "01iilmfn34hsprvybfxlw0pbzmz8mbkcxdr07ha0kqpzvnqf84ya"))))
+    (properties `((upstream-name . "PolyMigR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=PolyMigR")
+    (synopsis "Analysis of Polyphenol Migration from Packaging Films")
+    (description
+     "The gradual release of active substances from packaging can enhance food
+preservation by maintaining high concentrations of polyphenols and antioxidants
+for a period of 72 hrs.  To assess the effectiveness of packaging materials that
+serve as carriers for antioxidants, it is crucial to model the diffusivity of
+the active agents.  Understanding this diffusivity helps evaluate the
+packaging's capacity to prolong the shelf life of food items.  The process of
+migration, which encompasses diffusion, dissolution, and reaching equilibrium,
+facilitates the transfer of low molecular weight compounds from the packaging
+into food simulants.  The rate at which these active compounds are released from
+the packaging is typically analysed using food simulants under conditions
+outlined in European food packaging regulations (Ramos et al., 2014).")
+    (license license:gpl3)))
+
 (define-public r-polymatrix
   (package
     (name "r-polymatrix")
@@ -20220,13 +20219,13 @@ Urgency Analysis, a new method for the analysis of urgency in political texts.")
 (define-public r-polca
   (package
     (name "r-polca")
-    (version "1.6.0.1")
+    (version "1.6.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poLCA" version))
        (sha256
-        (base32 "05kbkyrds430v729hi56q48yfwfi5m1f371gpb4h417z5fj6137d"))))
+        (base32 "0n73jz0jii9agv2dkqf5w1jzhhxsdxps7fmjyzwpkas1dk4yk253"))))
     (properties `((upstream-name . "poLCA")))
     (build-system r-build-system)
     (arguments
@@ -25985,6 +25984,38 @@ standard errors or quasi-standard errors for inference as well as to fit
 Plackett-Luce trees.  See the package website or vignette for further details.")
     (license license:gpl3)))
 
+(define-public r-placematchr
+  (package
+    (name "r-placematchr")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "placematchr" version))
+       (sha256
+        (base32 "1bmyycsg689bhbdjws7vmgg854psfxhxcj90xh0xbijkbnc7jnvw"))))
+    (properties `((upstream-name . "placematchr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stringdist
+                             r-rlang
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=placematchr")
+    (synopsis "Normalize and Match City Names to NUTS Regions")
+    (description
+     "Normalizes city names for Germany (DE) and Switzerland (CH) and matches them to
+NUTS 3 regions using provided crosswalks.  Features include comprehensive
+normalization rules, cascading matching logic (Exact NUTS -> Exact LAU ->
+Fuzzy), and single-source data synthesis.  The package implements the NUTS
+classification as described in the NUTS methodology (Eurostat (2021)
+<https://ec.europa.eu/eurostat/web/nuts>).")
+    (license license:expat)))
+
 (define-public r-plac
   (package
     (name "r-plac")
@@ -26376,13 +26407,13 @@ package directory, and/or a vector of verbs implement via the usethis
 (define-public r-pkgstats
   (package
     (name "r-pkgstats")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgstats" version))
        (sha256
-        (base32 "1cp83wjlv8y3y9h3000yvffh6i48dcqyclx8dxn8pdcdgkflbypr"))))
+        (base32 "0r9qrj9naglj6b7ln8iy80nl1942q7v6f7cbm4gh0ivdyjwy9921"))))
     (properties `((upstream-name . "pkgstats")))
     (build-system r-build-system)
     (arguments
@@ -29614,6 +29645,35 @@ efficient functions to compute more standard conservation measures such as
 phylogenetic diversity, phylogenetic endemism, evolutionary distinctiveness and
 global endangerment, as well as compositional turnover (e.g., beta diversity).")
     (license license:agpl3)))
+
+(define-public r-phyloraster
+  (package
+    (name "r-phyloraster")
+    (version "2.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phyloraster" version))
+       (sha256
+        (base32 "1isbgxnhpickv1vw0vsq03ma26ysgqrc3r8jpaba3gxifi8l4arc"))))
+    (properties `((upstream-name . "phyloraster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sesraster r-purrr r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=phyloraster")
+    (synopsis "Evolutionary Diversity Metrics for Raster Data")
+    (description
+     "Phylogenetic Diversity (PD, Faith 1992), Evolutionary Distinctiveness (ED, Isaac
+et al.  2007), Phylogenetic Endemism (PE, Rosauer et al.  2009; Laffan et al.
+2016), and Weighted Endemism (WE, Laffan et al.  2016) for presence-absence
+raster.  Faith, D. P. (1992) <doi:10.1016/0006-3207(92)91201-3> Isaac, N. J. et
+al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
+<doi:10.1111/2041-210X.12513> Rosauer, D. et al. (2009)
+<doi:10.1111/j.1365-294X.2009.04311.x>.")
+    (license license:gpl3+)))
 
 (define-public r-phylopath
   (package

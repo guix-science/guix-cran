@@ -14374,13 +14374,13 @@ variables and spatial gene diversity are implemented.")
 (define-public r-biotimer
   (package
     (name "r-biotimer")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTIMEr" version))
        (sha256
-        (base32 "0wn60ywj73y465qycfdqwa3p1m47q68rlq3axsqh5gvprpsgga04"))))
+        (base32 "0xsar2m4712440cyfzi54434kkjzsszb63haa5wsznlyrg4jd0zl"))))
     (properties `((upstream-name . "BioTIMEr")))
     (build-system r-build-system)
     (arguments
@@ -14396,7 +14396,7 @@ variables and spatial gene diversity are implemented.")
                              r-checkmate
                              r-broom))
     (native-inputs (list r-quarto))
-    (home-page "https://github.com/bioTIMEHub/BioTIMEr")
+    (home-page "https://biotimehub.github.io/BioTIMEr/")
     (synopsis "Tools to Use and Explore the 'BioTIME' Database")
     (description
      "The @code{BioTIME} database was first published in 2018 and inspired ideas,
@@ -15505,20 +15505,20 @@ Ontology, KEGG', CRAN and Bioconductor.")
 (define-public r-bioleak
   (package
     (name "r-bioleak")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioLeak" version))
        (sha256
-        (base32 "1v9xhxdr3267qvfqk5777y321ifpdld9qhdgcdqd0fw07463frzs"))))
+        (base32 "1ys2lwqx1fksfrym2s8kkp01s7yxxhwjihr6jcj0c14n3v5w5q3l"))))
     (properties `((upstream-name . "bioLeak")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment r-parsnip r-hardhat
-                             r-digest))
+                             r-generics r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/selcukorkmaz/bioLeak")
     (synopsis
@@ -21919,19 +21919,19 @@ JAGS software is used to get posterior samples (Yang, Luo, @code{DeSantis}
 (define-public r-benthos
   (package
     (name "r-benthos")
-    (version "1.3-9")
+    (version "2.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "benthos" version))
        (sha256
-        (base32 "16nlk271b5hwzmflp4skvyi46crxr0qa0ick2ac68xnx2ax8rw2c"))))
+        (base32 "09q9q0ld3mq7zfcdzs18y0rq9mvl9hwsfvbnf0w5rlf5p9xivzja"))))
     (properties `((upstream-name . "benthos")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readr r-lazyeval r-dplyr))
+    (propagated-inputs (list r-tidyselect r-tibble r-readr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=benthos")
     (synopsis "Marine Benthic Ecosystem Analysis")
@@ -23859,19 +23859,19 @@ details, see Karasiewicz et al. (2022) <doi:10.3390/jmse10020174>.")
 (define-public r-bda
   (package
     (name "r-bda")
-    (version "19.0.0")
+    (version "19.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bda" version))
        (sha256
-        (base32 "1z3x200sxz078y6a06kn8w6ypdc0jm7x5350xrcval3y3gw5fg6l"))))
+        (base32 "1r93gf9y4lrcm5lynwdp4gffdnj355gk45cn7x72lr10hvy5w9fp"))))
     (properties `((upstream-name . "bda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-boot))
+    (propagated-inputs (list r-boot r-bi))
     (home-page "https://cran.r-project.org/package=bda")
     (synopsis "Binned Data Analysis")
     (description
@@ -24335,6 +24335,49 @@ parametric approach.")
     (synopsis "Semiparametric Bivariate Correlated Frailty Models Fit")
     (description "Fit semiparametric bivariate correlated frailty models.")
     (license license:gpl2+)))
+
+(define-public r-bcfm
+  (package
+    (name "r-bcfm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BCFM" version))
+       (sha256
+        (base32 "0raji9z3ka3pzv8pw206q3sb6ffrnv3vklrrg9nivrzy6y86j3v8"))))
+    (properties `((upstream-name . "BCFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-psych
+                             r-mvtnorm
+                             r-laplacesdemon
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-fastmatrix
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ategge/BCFM")
+    (synopsis "Bayesian Clustering Factor Models")
+    (description
+     "This package implements the Bayesian Clustering Factor Models (BCFM) for
+simultaneous clustering and latent factor analysis of multivariate longitudinal
+data.  The model accounts for within-cluster dependence through shared latent
+factors while allowing heterogeneity across clusters, enabling flexible
+covariance modeling in high-dimensional settings.  Inference is performed using
+Markov chain Monte Carlo (MCMC) methods with computationally intensive steps
+implemented via Rcpp'.  Model selection and visualization tools are provided.
+The methodology is described in Shin, Ferreira, and Tegge (2018)
+<doi:10.1002/sim.70350>.")
+    (license license:gpl3+)))
 
 (define-public r-bcf
   (package
@@ -33478,20 +33521,19 @@ can be found in Zhang, Ding and Yang (2021) <@code{arXiv:1911.03063v2>}.")
 (define-public r-baggr
   (package
     (name "r-baggr")
-    (version "0.7.11")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baggr" version))
        (sha256
-        (base32 "10vv8dl0b53i57x7r9vc64jpksvkrj7blis6hfi2h30v2jzhwnlv"))))
+        (base32 "12hrz7bp5zllhpibgzf5mjf5r2dgs7q41ybsldd0kndk6l8y3cxn"))))
     (properties `((upstream-name . "baggr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testthat
-                             r-stanheaders
+    (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
                              r-rcppparallel

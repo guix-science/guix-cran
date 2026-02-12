@@ -92,35 +92,6 @@
 <@code{arXiv:1703.08644>}.")
     (license license:gpl3)))
 
-(define-public r-lwqs
-  (package
-    (name "r-lwqs")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lwqs" version))
-       (sha256
-        (base32 "11hkz3b3sgm6v30gwaq463klljjf6c4qx26a5ccc1wl6r439gxqp"))))
-    (properties `((upstream-name . "lwqs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr
-                             r-gwqs
-                             r-gridextra
-                             r-ggplot2
-                             r-gamm4
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=lwqs")
-    (synopsis "Lagged Weighted Quantile Sum Regression")
-    (description
-     "Wrapper functions for the implementation of lagged weighted quantile sum
-regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
-    (license license:gpl2+)))
-
 (define-public r-lwfbrook90r
   (package
     (name "r-lwfbrook90r")
@@ -9054,6 +9025,40 @@ Replicating The Riddle of Literary Quality: The @code{litRiddle} package for R.
 In _Digital Humanities 2022: Conference Abstracts_, 636-637.")
     (license license:gpl3+)))
 
+(define-public r-litfetchr
+  (package
+    (name "r-litfetchr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LitFetchR" version))
+       (sha256
+        (base32 "0a2wj8qawc9q6656p8crnyr9c51m1gl9g1cldw5vcd7gzqkar0cv"))))
+    (properties `((upstream-name . "LitFetchR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-readxl
+                             r-purrr
+                             r-openxlsx
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thomasdumond/LitFetchR")
+    (synopsis
+     "Automatically Fetching References Metadata from Literature Databases")
+    (description
+     "This package provides functions to automatically retrieve and deduplicate
+reference metadata based on saved search strings.  Access to Web of Science and
+Scopus requires personal API keys, while @code{PubMed} can be queried without
+one.  The optional deduplication functionality requires the package A@code{SySD}
+available from <https://github.com/camaradesuk/A@code{SySD>}.")
+    (license license:expat)))
+
 (define-public r-literanger
   (package
     (name "r-literanger")
@@ -11122,19 +11127,24 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "148w6vsb4016pi408kyhhz5nxjf2dadd1r8dalvjx6260x6y26i7"))))
+        (base32 "176kqfx1dchfh1lff958yiqnxri2i6cw053181k0gjb3h8wjs7c4"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-gtools r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-gtools
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WinzarH/LikertMakeR/")
     (synopsis
@@ -11321,6 +11331,42 @@ likelihood based methods.")
 inference on an arbitrary scalar function of model parameters, plus some code
 for the (modified) profile likelihood.")
     (license license:gpl2+)))
+
+(define-public r-likelihood-model
+  (package
+    (name "r-likelihood-model")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "likelihood.model" version))
+       (sha256
+        (base32 "05h7xi7cdqb6sqp7rd5kmrr0m4cyxpan36hxw67sfb5qzsyn209s"))))
+    (properties `((upstream-name . "likelihood.model")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6
+                             r-numderiv
+                             r-mvtnorm
+                             r-generics
+                             r-boot
+                             r-algebraic-mle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/likelihood.model")
+    (synopsis
+     "Likelihood-Based Statistical Inference in the Fisherian Tradition")
+    (description
+     "Facilitates building likelihood models in the Fisherian tradition following
+Richard Royall (1997, ISBN:978-0412044113) \"Statistical Evidence: A Likelihood
+Paradigm\".  Defines generic methods for working with likelihoods
+@code{(loglik()}, @code{score()}, @code{hess_loglik()}, @code{fim()}) and
+provides functions for pure likelihood-based inference @code{(support()},
+@code{relative_likelihood()}, @code{likelihood_interval()},
+@code{profile_loglik()}).  Includes a likelihood contributions model for
+heterogeneous observation types (exact, censored, etc.) assuming i.i.d.  data.")
+    (license license:expat)))
 
 (define-public r-likelihood
   (package
@@ -14132,13 +14178,13 @@ colour displays.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.7.1")
+    (version "6.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "1pcwi3kg77wa6srz256mfx9cpi8jzymm1vh4driq9nnw7ydc3pkr"))))
+        (base32 "09r23wgxfbzxwlghj4i0jwisnhv56x40s18r92l7gyyx2a4znfrm"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (arguments
@@ -17189,13 +17235,13 @@ Bayesian learning: the partially CFA (Chen, Guo, Zhang, & Pan, 2020) <DOI:
 (define-public r-lavinteract
   (package
     (name "r-lavinteract")
-    (version "0.3.5")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavinteract" version))
        (sha256
-        (base32 "0p96m6kc5l7ac01ax8c2x3x9cmbv3bmy99h9il05a32fxfz7rz2s"))))
+        (base32 "0dm008bm1ps894274ghligcr6fzyg9jg9zgnbxi3j5yn2qzkjlv7"))))
     (properties `((upstream-name . "lavinteract")))
     (build-system r-build-system)
     (arguments

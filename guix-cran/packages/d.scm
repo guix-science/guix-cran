@@ -3358,6 +3358,33 @@ using the Bayesian method.  The Bayesian method can be referenced at Haiyan Gu
 and Qiguang Chen (1999) <doi:10.3969/j.issn.1002-3674.1999.04.004>.")
     (license license:gpl3)))
 
+(define-public r-dtaudit
+  (package
+    (name "r-dtaudit")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtaudit" version))
+       (sha256
+        (base32 "1z6klknczj85xz5ihn6s781x5m1dda8w6h969bxxv16rk4lwvas1"))))
+    (properties `((upstream-name . "dtaudit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fpcordeiro/dtaudit")
+    (synopsis "Audit and Diagnostic Tools for 'data.table' Workflows")
+    (description
+     "Diagnostic tools for auditing data analysis workflows built on data.table'.
+Provides functions to validate join operations, compare data.tables, filter with
+diagnostic output, summarize data quality, check primary keys and variable
+relationships, and diagnose string columns.  Designed to help analysts
+understand and document data transformations.")
+    (license license:lgpl3+)))
+
 (define-public r-dtat
   (package
     (name "r-dtat")
@@ -21847,13 +21874,13 @@ the event-oriented approach to DES; see the tutorial in Matloff (2008)
 (define-public r-derivmkts
   (package
     (name "r-derivmkts")
-    (version "0.2.5")
+    (version "0.2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "derivmkts" version))
        (sha256
-        (base32 "0zjdpjd7qa7zg0dyyq1y4rskk8bi2jpsxzrdg43lnsyrxg99q1n6"))))
+        (base32 "19a9ipv2csdvgw596bpv8sxgp3lygyi7as1aq6sscv2fxygqpj9v"))))
     (properties `((upstream-name . "derivmkts")))
     (build-system r-build-system)
     (arguments
@@ -21861,12 +21888,12 @@ the event-oriented approach to DES; see the tutorial in Matloff (2008)
       #:tests? #f))
     (propagated-inputs (list r-mnormt))
     (native-inputs (list r-tidyr
-                         r-pander
+                         r-rmarkdown
                          r-knitr
                          r-ggplot2
                          r-dplyr
                          r-bookdown))
-    (home-page "https://cran.r-project.org/package=derivmkts")
+    (home-page "https://github.com/rmcd1024/derivmkts")
     (synopsis "Functions and R Code to Accompany Derivatives Markets")
     (description
      "This package provides a set of pricing and expository functions that should be
@@ -22144,6 +22171,38 @@ tracks simulated using the DEPONS model <https://www.depons.eu> (v.3.0), for
 manipulating input raster files, shipping routes and for analyzing sound
 propagated from ships.")
     (license license:gpl3)))
+
+(define-public r-depmod
+  (package
+    (name "r-depmod")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DepMod" version))
+       (sha256
+        (base32 "13ri274dmk0z4nkf48b9j82x7xnf4005w9d1sjjr3zbywzicnsbd"))))
+    (properties `((upstream-name . "DepMod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse
+                             r-shiny
+                             r-here
+                             r-dt
+                             r-diagrammer
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=DepMod")
+    (synopsis
+     "Decision-Analytic Modelling for Depression Prevention and Treatment")
+    (description
+     "This package provides functions and example datasets to run a decision-analytic
+model for prevention and treatment strategies across depression severity states
+(sub-clinical, mild, moderate, severe, and recurrent).  The package supports
+scenario analyses (base and alternative inputs) and summarises outcomes such as
+coverage, adherence, effect sizes, and healthcare costs.")
+    (license license:expat)))
 
 (define-public r-deplotting
   (package
@@ -29742,13 +29801,13 @@ character, and factor columns with NA-aware computations.")
 (define-public r-datastudio
   (package
     (name "r-datastudio")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DATAstudio" version))
        (sha256
-        (base32 "09vkvbhxfcqpac7j17k92fiwfnfy7dwx3qb2qwkifaix54j2zrfg"))))
+        (base32 "1y5myg8p8x1qzfy3jf7qs58h0xmh1yd66yvydjahfgzvdkqjhxan"))))
     (properties `((upstream-name . "DATAstudio")))
     (build-system r-build-system)
     (arguments
@@ -30136,13 +30195,13 @@ comprehensive and up-to-date collection of open data from Switzerland.")
 (define-public r-datasda
   (package
     (name "r-datasda")
-    (version "0.1.2")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataSDA" version))
        (sha256
-        (base32 "1xdgv9cnpjw2iw4kqzvy1nbi6sdh6bzbi1n6sk3c388vhzgkms79"))))
+        (base32 "1dkz3mv43ygskwajmyrrn9v681ga8yrfhk09rccia1si36jnqw6s"))))
     (properties `((upstream-name . "dataSDA")))
     (build-system r-build-system)
     (arguments
@@ -32803,13 +32862,13 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.2.747")
+    (version "1.3.717")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "03fypixq4xb0m9bywk3bv2ybkz0fggw4i091k35784c46xbjc09j"))))
+        (base32 "1qf49958ynv8brr9x4jkgfqp03cr6hadfa78wv7qpa6fm86cwvgn"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments
@@ -32819,6 +32878,7 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
                              r-reshape
                              r-randomforest
                              r-nnet
+                             r-mclust
                              r-ggplot2
                              r-fnn
                              r-e1071
@@ -32826,7 +32886,9 @@ available in Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
                              r-dbscan
                              r-cluster
                              r-class
-                             r-caret))
+                             r-caret
+                             r-arulessequences
+                             r-arules))
     (home-page "https://cefet-rj-dal.github.io/daltoolbox/")
     (synopsis "Leveraging Experiment Lines to Data Analytics")
     (description

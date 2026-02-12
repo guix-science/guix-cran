@@ -226,13 +226,13 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
 (define-public r-junco
   (package
     (name "r-junco")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "junco" version))
        (sha256
-        (base32 "0zjpxrq3zphdw85g0m8llwg9z6ncylj7i3ngych402wf3b5cq4hs"))))
+        (base32 "0rjzgkhqrw869av1bdsilmiyvdw64dh0h2alydybx4mmpp3aygbp"))))
     (properties `((upstream-name . "junco")))
     (build-system r-build-system)
     (arguments
@@ -249,6 +249,7 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
                              r-rtables-officer
                              r-rtables
                              r-rlistings
+                             r-rbmi
                              r-officer
                              r-mmrm
                              r-ggplot2
@@ -1220,13 +1221,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "15x9cp245wcl8w60p4hx3xx6vi5v0zysbkb7ajjlkyx79fj30rgm"))))
+        (base32 "00yqj7fxbv0rhvq5zna6xv2f866jc2d15as9dmlylwhcafkgc966"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -4490,13 +4491,13 @@ BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
 (define-public r-jarbes
   (package
     (name "r-jarbes")
-    (version "2.4.0")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jarbes" version))
        (sha256
-        (base32 "0vsyhp7sbsrldfb5jp5mzmi1rad0b40rf9szxa3h36ddjvp9c057"))))
+        (base32 "0d5hkmfhm1d6x17s7lm0skw1416mcac0l0i6cq9wpdrg4blpj6q4"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
     (arguments

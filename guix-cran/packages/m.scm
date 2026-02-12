@@ -38583,39 +38583,32 @@ efficiency.")
 (define-public r-memoria
   (package
     (name "r-memoria")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memoria" version))
        (sha256
-        (base32 "05nx6xkgf1mkn1ajjizwp66xhn7ddbvgdnmkdbcl4s7sq456vczw"))))
+        (base32 "050cl74zs976k6lk5gbgpcqwjzbv96nhnylzkma04183qc3bri6f"))))
     (properties `((upstream-name . "memoria")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-viridislite
-                             r-viridis
-                             r-tidyr
-                             r-stringr
-                             r-ranger
-                             r-hh
-                             r-ggplot2
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=memoria")
+    (propagated-inputs (list r-zoo r-rlang r-ranger r-ggplot2))
+    (home-page "https://blasbenito.github.io/memoria/")
     (synopsis
      "Quantifying Ecological Memory in Palaeoecological Datasets and Other Long Time-Series")
     (description
-     "This package provides tools to quantify ecological memory in long time-series
-with Random Forest models (Breiman 2001 <doi:10.1023/A:1010933404324>) fitted
-with the ranger library (Wright and Ziegler 2017 <doi:10.18637/jss.v077.i01>).
-Particularly oriented to palaeoecological datasets and simulated pollen curves
-produced by the @code{virtualPollen} package, but also applicable to other long
-time-series involving a set of environmental drivers and a biotic response.")
-    (license license:gpl2+)))
+     "Quantifies ecological memory in long time-series using Random Forest models
+('Benito', Gil-Romera', and Birks 2019 <doi:10.1111/ecog.04772>) fitted with
+ranger (Wright and Ziegler 2017 <doi:10.18637/jss.v077.i01>).  Ecological memory
+is assessed by modeling a response variable as a function of lagged predictors,
+distinguishing endogenous memory (lagged response) from exogenous memory (lagged
+environmental drivers).  Designed for palaeoecological datasets and simulated
+pollen curves from @code{virtualPollen}', but applicable to any long time-series
+with environmental drivers and a biotic response.")
+    (license license:expat)))
 
 (define-public r-memor
   (package
@@ -40361,6 +40354,60 @@ world.  Includes measures of regression, (multiclass) classification and
 multilabel classification.  The measures come mainly from the mlr package and
 were programed by several mlr developers.")
     (license license:gpl3)))
+
+(define-public r-measurer
+  (package
+    (name "r-measurer")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "measureR" version))
+       (sha256
+        (base32 "0daf07a1lrc6zy0c4rmxhc68fjin20fsd5ji1iv8yf0b232f8qlc"))))
+    (properties `((upstream-name . "measureR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-tidyverse
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinywidgets
+                             r-shiny
+                             r-semptools
+                             r-semplot
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-psych
+                             r-mirt
+                             r-lavaan
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-ctt
+                             r-colourpicker))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hdmeasure/measureR")
+    (synopsis "Tools for Educational and Psychological Measurement")
+    (description
+     "Provides an interactive toolkit for educational and psychological measurement
+implemented using the shiny framework.  The package supports content validity
+analysis, dimensionality assessment, and Classical Test Theory using the CTT
+package (Willse, 2018) <doi:10.32614/CRAN.package.CTT>.Item Response Theory
+(IRT) analyses are conducted via mirt (Chalmers, 2012)
+<doi:10.18637/jss.v048.i06>.  Exploratory Factor Analysis is performed using
+psych (Revelle, 2025), while Confirmatory Factor Analysis and Structural
+Equation Modeling are based on the lavaan framework (Rosseel, 2012)
+<doi:10.18637/jss.v048.i02>.  The application allows users to upload data,
+evaluate statistical models, visualize results, and export outputs through an
+intuitive graphical interface without requiring programming experience.")
+    (license license:expat)))
 
 (define-public r-measurementprotocol
   (package
@@ -51293,13 +51340,13 @@ conceptual development and review of this work.")
 (define-public r-mantis
   (package
     (name "r-mantis")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mantis" version))
        (sha256
-        (base32 "1a7b4l556bhcqcalzs3ghz12j87rfvh4qn811liy93ibz6j2blp2"))))
+        (base32 "07wxkkny53nh4sni5qkicn7ap9fw762hy73lafl12gz7za4rd91n"))))
     (properties `((upstream-name . "mantis")))
     (build-system r-build-system)
     (arguments

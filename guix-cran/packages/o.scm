@@ -3162,19 +3162,20 @@ a correlated-residual structure.")
 (define-public r-orion
   (package
     (name "r-orion")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ORION" version))
        (sha256
-        (base32 "0k141rsilma5v9cknbsbsj445c1dx31l86p7pxkbyn0vbq9dw2vh"))))
+        (base32 "140spk5113l3j2wcy6mjv6c1p6gzqi0f53yi5gppvps7ggl87yhb"))))
     (properties `((upstream-name . "ORION")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tunepareto r-foreach))
+    (propagated-inputs (list r-tunepareto r-stringr r-plotrix r-foreach
+                             r-e1071))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ORION")
     (synopsis "Ordinal Relations")
@@ -7289,13 +7290,13 @@ information, as well as aircraft state vectors.")
 (define-public r-openscoring
   (package
     (name "r-openscoring")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openscoring" version))
        (sha256
-        (base32 "0y7yfqk0bqj03fvzni8dwvv0dhis1dp3h0gzbnfky9kmw43iinjv"))))
+        (base32 "014v1rj1jrb6s3pnib9rwnsznsbc337pwkq3jijm2q2jh8ri3pkb"))))
     (properties `((upstream-name . "openscoring")))
     (build-system r-build-system)
     (arguments
@@ -7309,6 +7310,7 @@ information, as well as aircraft state vectors.")
                              r-httr
                              r-glue
                              r-dplyr
+                             r-curl
                              r-cli))
     (home-page "https://github.com/jakub-jedrusiak/openscoring")
     (synopsis "'Open Scoring' API Client")
@@ -12738,13 +12740,13 @@ serve as supplements to the classical CART of Breiman (1984)
 (define-public r-odr
   (package
     (name "r-odr")
-    (version "1.7.3")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odr" version))
        (sha256
-        (base32 "1074ag1ypisa5zwqa5saj6129sq59lxfdp0d6zszrh5gjzcv99wm"))))
+        (base32 "1nfhy985kx2p16nil40rqvxpl6d7lphlg6r0rjlj2y62a1qgzrlp"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
     (arguments
@@ -14524,13 +14526,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "4.2.1")
+    (version "4.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "07r6irm0rikgn4cdq56mm4ad7pqqczzjz1d97bv3g06frfl34zk4"))))
+        (base32 "1ff7qvia4a9f89xyjrakfhkhaxdr8k75zxmfjaa1vaslj2cv46iv"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (arguments
@@ -14538,7 +14540,7 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
       #:tests? #f))
     (propagated-inputs (list r-data-table r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/AgroCares/Open-Bodem-Index-Calculator")
+    (home-page "https://github.com/nmi-agro/Open-Bodem-Index-Calculator")
     (synopsis "Calculate the Open Bodem Index (OBI) Score")
     (description
      "The Open Bodem Index (OBI) is a method to evaluate the quality of soils of

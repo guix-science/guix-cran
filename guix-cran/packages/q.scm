@@ -403,13 +403,13 @@ dimension reduction layout.")
 (define-public r-quitefastmst
   (package
     (name "r-quitefastmst")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quitefastmst" version))
        (sha256
-        (base32 "1lyy6m1hvbf2a0wqsga7m7k6vjg0q6cwf6xlikxrksj2z4bdalm2"))))
+        (base32 "1c889l5mv1fq71sknixfb0pmrgxbv0lxf37q77xlla42c4bjy18n"))))
     (properties `((upstream-name . "quitefastmst")))
     (build-system r-build-system)
     (arguments
@@ -423,8 +423,8 @@ dimension reduction layout.")
      "This package provides functions to compute Euclidean minimum spanning trees
 using single-, sesqui-, and dual-tree Boruvka algorithms.  Thanks to K-d trees,
 they are fast in spaces of low intrinsic dimensionality.  Mutual reachability
-distances (used in the definition of the HDBSCAN* algorithm) are also supported.
- The package also features relatively fast fallback minimum spanning tree and
+distances (used in the definition of the HDBSCAN* algorithm) are supported too.
+The package also includes relatively fast fallback minimum spanning tree and
 nearest-neighbours algorithms for spaces of higher dimensionality.  The Python
 version of quitefastmst is available via @code{PyPI}'.")
     (license license:agpl3)))
@@ -4841,13 +4841,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "0jqipmhrxz7zpa14gy5yi0rb8gwwwyp5d4323n1609ll3bd3mhiz"))))
+        (base32 "012wkjnx34i4i8r2ln37j67m61p88ccprgpfkp22zbka6jh2igjp"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments
