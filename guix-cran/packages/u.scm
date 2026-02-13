@@ -938,6 +938,32 @@ package & function usage to a Quarto document and enables aggregation of usage
 across a website.")
     (license license:expat)))
 
+(define-public r-usearchlite
+  (package
+    (name "r-usearchlite")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usearchlite" version))
+       (sha256
+        (base32 "1i43k30wmwxyqsayjrhqp2ky0y0xgdwbs3d8sq81pi81dqbgkv56"))))
+    (properties `((upstream-name . "usearchlite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://github.com/aljrico/usearchlite")
+    (synopsis "Local Vector Search with 'USearch'")
+    (description
+     "This package provides a lightweight local vector index for approximate nearest
+neighbor (ANN) search using the vendored USearch library Vardanian (2023)
+<doi:10.5281/zenodo.7949416>.  Provides a simple interface for adding vectors,
+searching for nearest neighbors, and persisting indexes to disk.  Metadata
+filtering is performed in R on the candidate set returned by the C++ layer.")
+    (license license:expat)))
+
 (define-public r-use
   (package
     (name "r-use")

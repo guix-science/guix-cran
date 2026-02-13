@@ -3434,13 +3434,13 @@ and jobs.")
 (define-public r-iscam
   (package
     (name "r-iscam")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISCAM" version))
        (sha256
-        (base32 "02vp5h08c6hr0czcsysr4c294y6yih9qkn43xxgx8qf7yyifr61p"))))
+        (base32 "121vk5alzslyi0z88lglga0hkwa30zhm2n2136c30990c0726syq"))))
     (properties `((upstream-name . "ISCAM")))
     (build-system r-build-system)
     (arguments
@@ -9986,13 +9986,13 @@ users to fit latent variable models using the lavaan syntax.")
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "03cqxkxx95gi2y861nr50kf4sf038c7xh8665klxfpzw3y9fcrvc"))))
+        (base32 "1sc23b7rmpzb836fjy4svmqfbkkpvh37j275mjjm1d3shdvhpjxn"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments
@@ -15260,6 +15260,37 @@ meta-information.  Useage of value labels and values respectively for subsetting
 and recoding data.")
     (license license:expat)))
 
+(define-public r-il-cbs-muni
+  (package
+    (name "r-il-cbs-muni")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "il.cbs.muni" version))
+       (sha256
+        (base32 "1kknh19mz7qwzqv664m94mmf6dl70fcf59js9g14qpx781air1ih"))))
+    (properties `((upstream-name . "il.cbs.muni")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-janitor
+                             r-dplyr))
+    (home-page "https://github.com/matanhakim/il.cbs.muni")
+    (synopsis
+     "Utility Functions to Work with Israeli Central Bureau of Statistics Municipal Data")
+    (description
+     "Analyst oriented utility functions to handle the different quirks of the Israeli
+CBS municipal data, harmonize id's and bring together data points from different
+years.")
+    (license license:expat)))
+
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
@@ -16050,13 +16081,13 @@ or IGL copula.  See the vignette for formulas, or for a derivation, see Coia, V
 (define-public r-igc-csm
   (package
     (name "r-igc-csm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IGC.CSM" version))
        (sha256
-        (base32 "0wv19hqsdx264m7wxh63krrw10ccv3axz44zfbk02m53p5v5vh58"))))
+        (base32 "0ckcqcmay7y6s8ridrs2xf197w4s9hnq2am4cxih2hqd5f1zk1jv"))))
     (properties `((upstream-name . "IGC.CSM")))
     (build-system r-build-system)
     (arguments

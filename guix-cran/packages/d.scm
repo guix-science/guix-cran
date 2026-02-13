@@ -5601,24 +5601,23 @@ implemented methods are based on the following research: Qiu, P. (1998)
 (define-public r-drimmr
   (package
     (name "r-drimmr")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drimmR" version))
        (sha256
-        (base32 "0fi0ifb9y2jfb347684fd9pjfgn4b693yb5sqbcfpf2z7jvknsi1"))))
+        (base32 "050xqfjsbpv3xzqvmzp0s0bvqs5809s2y2bv1fklpgdn2sbqf7kq"))))
     (properties `((upstream-name . "drimmR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-seqinr
+    (propagated-inputs (list r-seqinr
                              r-reshape2
                              r-rdpack
+                             r-parallelly
                              r-ggplot2
-                             r-future
                              r-foreach
                              r-dplyr
                              r-doparallel))

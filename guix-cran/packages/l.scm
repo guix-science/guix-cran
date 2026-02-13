@@ -3484,13 +3484,13 @@ are described in Robin, Josse, Moulines and Sardy (2019)
 (define-public r-lorenzregression
   (package
     (name "r-lorenzregression")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorenzRegression" version))
        (sha256
-        (base32 "1qazn33caiskh1bnrfxd2pazlrbfnip8nh6blk9dvk9x1z3h32yv"))))
+        (base32 "10kg7f2ah0pzjhv6i1sf9ydby02i96k6ni0gmj7n3qyjimhcf05m"))))
     (properties `((upstream-name . "LorenzRegression")))
     (build-system r-build-system)
     (arguments
@@ -17235,13 +17235,13 @@ Bayesian learning: the partially CFA (Chen, Guo, Zhang, & Pan, 2020) <DOI:
 (define-public r-lavinteract
   (package
     (name "r-lavinteract")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavinteract" version))
        (sha256
-        (base32 "0dm008bm1ps894274ghligcr6fzyg9jg9zgnbxi3j5yn2qzkjlv7"))))
+        (base32 "1c1ccrlpzmz9xfn3r4k09d2r8wrwhxbh2qc16a15580lbhsil44x"))))
     (properties `((upstream-name . "lavinteract")))
     (build-system r-build-system)
     (arguments
@@ -19465,13 +19465,13 @@ conversion equations in Bajocco et al.  2022 <doi:10.3390/rs14153554>.")
 (define-public r-lahman
   (package
     (name "r-lahman")
-    (version "13.0-0")
+    (version "14.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Lahman" version))
        (sha256
-        (base32 "10i6a4k6vkjhnhbr9n73vb3jxj302f40v5khzxi7vqmkqmsh3y3x"))))
+        (base32 "0cfx4n6yrcrcg4vv7jq4jr8va8dg5wyjgyscn537i5zvz9pmvl28"))))
     (properties `((upstream-name . "Lahman")))
     (build-system r-build-system)
     (arguments

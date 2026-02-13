@@ -7263,13 +7263,13 @@ Arah (2023) <doi:10.1093/ije/dyad001>.")
 (define-public r-multibd
   (package
     (name "r-multibd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiBD" version))
        (sha256
-        (base32 "0mjf7vzlfvllx7mrrsay21wwaz57gi61zkxysg23cr2mhzrj8vx6"))))
+        (base32 "1dr2b67g8jf9g7qy1p9chirgigmnickbwi3snbkspn9iq7mn6b8n"))))
     (properties `((upstream-name . "MultiBD")))
     (build-system r-build-system)
     (arguments
@@ -14373,41 +14373,6 @@ Different perturbations may be used: resampling techniques, random projections
 and noise injection.  Stability measures for the estimate of clustering
 solutions and statistical tests to assess their significance are provided.")
     (license license:gpl2+)))
-
-(define-public r-mosalloc
-  (package
-    (name "r-mosalloc")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MOSAlloc" version))
-       (sha256
-        (base32 "0j03sc8fc3vm66337rpcz2r17m5hfridbapkhxzr6wn50i5k175w"))))
-    (properties `((upstream-name . "MOSAlloc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-ecosolver))
-    (home-page "https://gitlab.com/willemsf/mosalloc")
-    (synopsis "Constraint Multiobjective Sample Allocation")
-    (description
-     "This package provides a framework for multipurpose optimal resource allocation
-in survey sampling, extending the classical optimal allocation principles
-introduced by Tschuprow (1923) and Neyman (1934) to multidomain and multivariate
-allocation problems.  The primary method @code{mosalloc()} allows for the
-consideration of precision and cost constraints at the subpopulation level while
-minimizing either a vector of sampling errors or survey costs across a broad
-range of optimal sample allocation problems.  The approach supports both single-
-and multistage designs.  For single-stage stratified random sampling, the
-@code{mosallocSTRS()} function offers a user- friendly interface.  Sensitivity
-analysis is supported through the problem's dual variables, which are naturally
-obtained via the internal use of the Embedded Conic Solver from the
-ECO@code{SolveR} package.  See Willems (2025,
-<doi:10.25353/ubtr-9200-484c-5c89>) for a detailed description of the theory
-behind MOSAlloc'.")
-    (license license:gpl3+)))
 
 (define-public r-mosaiccalc
   (package
@@ -24717,6 +24682,40 @@ fitting can be raw data or binned data.  The model fitting process is
 accelerated by using R package Rcpp'.")
     (license license:gpl2+)))
 
+(define-public r-mixpower
+  (package
+    (name "r-mixpower")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixpower" version))
+       (sha256
+        (base32 "11rh959wpc6aq48ij1m4yfqflarg20dv3zh0y4kd2ikvdqxrym3c"))))
+    (properties `((upstream-name . "mixpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lme4))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alitovchenko/mixpower")
+    (synopsis "Simulation-Based Power Analysis for Mixed-Effects Models")
+    (description
+     "This package provides a comprehensive, simulation-based toolkit for power and
+sample-size analysis for linear and generalized linear mixed-effects models
+(LMMs and GLMMs).  Supports Gaussian, binomial, Poisson, and negative binomial
+families via lme4'; Wald and likelihood-ratio tests; multi-parameter sensitivity
+grids; power curves and minimum sample-size solvers; parallel evaluation with
+deterministic seeds; and full reproducibility (manifests, result bundling, and
+export to CSV/JSON).  Delivers thorough diagnostics per run (failure rate,
+singular-fit rate, effective N) and publication-ready summary tables.
+References: Bates et al. (2015) \"Fitting Linear Mixed-Effects Models Using lme4\"
+<doi:10.18637/jss.v067.i01>; Green and @code{MacLeod} (2016) \"SIMR: an R package
+for power analysis of generalized linear mixed models by simulation\"
+<doi:10.1111/2041-210X.12504>.")
+    (license license:expat)))
+
 (define-public r-mixpoissonreg
   (package
     (name "r-mixpoissonreg")
@@ -26452,13 +26451,13 @@ Completely at Random (MCAR)\", Journal of Statistical Software, 56(6), 1-31.
 (define-public r-missmda
   (package
     (name "r-missmda")
-    (version "1.20")
+    (version "1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missMDA" version))
        (sha256
-        (base32 "0c7xdy27yvinqgld8z2l7ii3fijpkxl5sh1wf3rc1l0fagji00gr"))))
+        (base32 "0vncrh491bg31zp7y9qcbm772x43bwc0jspjggb06dknhmnpab25"))))
     (properties `((upstream-name . "missMDA")))
     (build-system r-build-system)
     (arguments
@@ -40523,6 +40522,36 @@ the model's performance using model fit indices, information criteria, and
 reliability metrics.")
     (license license:gpl3+)))
 
+(define-public r-measles
+  (package
+    (name "r-measles")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "measles" version))
+       (sha256
+        (base32 "1q1sz39cz36hzb40ia14pc1b344vva29lijk90zz6lk8raniixcd"))))
+    (properties `((upstream-name . "measles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-epiworldr r-cpp11))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/UofUEpiBio/measles")
+    (synopsis "Measles Epidemiological Models")
+    (description
+     "This package provides a specialized collection of measles epidemiological models
+built on the @code{epiworldR} framework.  This package is a spinoff from
+@code{epiworldR} focusing specifically on measles transmission dynamics.  It
+includes models for school settings with quarantine and isolation policies,
+mixing models with population groups, and risk-based quarantine strategies.  The
+models use Agent-Based Models (ABM) with a fast C++ backend from the epiworld
+library.  Ideal for studying measles outbreaks, vaccination strategies, and
+intervention policies.")
+    (license license:expat)))
+
 (define-public r-meantables
   (package
     (name "r-meantables")
@@ -41263,6 +41292,51 @@ hierarchical generalized linear models, the mean, dispersion parameters for
 variance of random effects, and residual variance can be further modeled as
 random-effect models.")
     (license (license:fsdg-compatible "Unlimited"))))
+
+(define-public r-mdgof
+  (package
+    (name "r-mdgof")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MDgof" version))
+       (sha256
+        (base32 "1f3354kglrnig9ka9cbmxmap9x6rk14cxx4md3rzc4lzrcbafhic"))))
+    (properties `((upstream-name . "MDgof")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-geom
+                             r-spatstat-explore
+                             r-rcpp
+                             r-mvtnorm
+                             r-microbenchmark
+                             r-microbenchmark
+                             r-md2sample
+                             r-ggplot2
+                             r-fnn
+                             r-copula))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MDgof")
+    (synopsis
+     "Various Methods for the Goodness-of-Fit Problem in D>1 Dimensions")
+    (description
+     "The routine @code{gof_test()} in this package runs the goodness-of-fit test
+using various test statistic for multivariate data.  Models under the null
+hypothesis can either be simple or allow for parameter estimation.  p values are
+found via the parametric bootstrap (simulation).  The routine
+@code{gof_test_adjusted_pvalues()} runs several tests and then finds a p value
+adjusted for simultaneous inference.  The routine @code{gof_power()} allows the
+estimation of the power of the tests. @code{hybrid_test()} and
+@code{hybrid_power()} do the same by first generating a Monte Carlo data set
+under the null hypothesis and then running a number of two-sample methods.  The
+routine @code{run.studies()} allows a user to quickly study the power of a new
+method and how it compares to those included in the package via a large number
+of case studies.  For details of the methods and references see the included
+vignettes.")
+    (license license:gpl2+)))
 
 (define-public r-mdgc
   (package
@@ -47688,13 +47762,13 @@ estimation.")
 (define-public r-massprops
   (package
     (name "r-massprops")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "massProps" version))
        (sha256
-        (base32 "1vigl56kczf53hpvaj4s41v7ry272mdw90ixqramdk03mqfs1j5z"))))
+        (base32 "0rrxgagvr4x0q13h8ddbahmsjqs9rmb59gw4r1xm852pwq01gs3s"))))
     (properties `((upstream-name . "massProps")))
     (build-system r-build-system)
     (arguments
@@ -53327,13 +53401,13 @@ software paper Wong, Yang, and Kou (2024) <doi:10.18637/jss.v109.i04>.")
 (define-public r-magee
   (package
     (name "r-magee")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAGEE" version))
        (sha256
-        (base32 "028gvpld3rpn2kq0vpk751727n24nvapr4cmwb3qk6w8yff4d9c7"))))
+        (base32 "1vr4rdgk9wga26wv0hi2sm0b392m1ma4kdns4ic0p8rrxii22wv1"))))
     (properties `((upstream-name . "MAGEE")))
     (build-system r-build-system)
     (arguments

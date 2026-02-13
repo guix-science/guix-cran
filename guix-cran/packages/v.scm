@@ -2747,13 +2747,13 @@ of mortality models.")
 (define-public r-vital
   (package
     (name "r-vital")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vital" version))
        (sha256
-        (base32 "16idsdflxcb4v0y9x9nqmx45wk3fp1vpxcqfnzh81xvy1wbrnyhr"))))
+        (base32 "003k3kcddcyad6zssvgqqlp1llqc5gcxyd5s18xk8rsqv43l659f"))))
     (properties `((upstream-name . "vital")))
     (build-system r-build-system)
     (arguments
@@ -4073,6 +4073,48 @@ with different life traits and niche features.  It also provides the means to
 simulate quasi-realistic pollen-data conditions by applying simulated
 accumulation rates and given depth intervals between consecutive samples.")
     (license license:gpl2+)))
+
+(define-public r-viroreportr
+  (package
+    (name "r-viroreportr")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ViroReportR" version))
+       (sha256
+        (base32 "0639q107vbm4qb3fcbavpmfhj9bysbsqbzsdr57pv5syysaxlqr2"))))
+    (properties `((upstream-name . "ViroReportR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-projections
+                             r-mgcv
+                             r-lubridate
+                             r-kableextra
+                             r-incidence
+                             r-glue
+                             r-ggplot2
+                             r-epiestim
+                             r-dplyr
+                             r-data-table
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BCCDC-PHSA/ViroReportR")
+    (synopsis "Respiratory Viral Infection Forecast Reporting")
+    (description
+     "This package provides tools for reporting and forecasting viral respiratory
+infections, using case surveillance data.  Report generation tools for
+short-term forecasts, and validation metrics for an arbitrary number of
+customizable respiratory viruses.  Estimation of the effective reproduction
+number is based on the @code{EpiEstim} framework described in work by Cori and
+colleagues. (2013) <doi:10.1093/aje/kwt133>.")
+    (license license:gpl3+)))
 
 (define-public r-virf
   (package
@@ -8333,13 +8375,13 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 (define-public r-varpro
   (package
     (name "r-varpro")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varPro" version))
        (sha256
-        (base32 "063jpd9k60dw6zbynvjyhfb64587smwlkahhya3jgrxg8qysd4w4"))))
+        (base32 "02avlwkwl6xwf52hfvr887j93qck3qr1xydc1d3x8yar1izm4021"))))
     (properties `((upstream-name . "varPro")))
     (build-system r-build-system)
     (arguments
@@ -9768,13 +9810,13 @@ be downloaded from <https://github.com/valhalla/valhalla>.")
 (define-public r-valh
   (package
     (name "r-valh")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valh" version))
        (sha256
-        (base32 "0y91hvln9d8wgs5i1hn977k98wdsk5qn137l1nfdvw1xhij0rc7j"))))
+        (base32 "1db5qkzgrd070m2skr50dhq0sgnczmrpx7xg27iqk09vmijxxcz3"))))
     (properties `((upstream-name . "valh")))
     (build-system r-build-system)
     (arguments
@@ -9784,7 +9826,7 @@ be downloaded from <https://github.com/valhalla/valhalla>.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/riatelab/valh")
     (synopsis
-     "Interface Between R and the OpenStreetMap-Based Routing Service Valhalla")
+     "Interface Between R and the OpenStreetMap-Based Routing Service 'Valhalla'")
     (description
      "An interface between R and the Valhalla API. Valhalla is a routing service based
 on @code{OpenStreetMap} data.  See <https://valhalla.github.io/valhalla/> for

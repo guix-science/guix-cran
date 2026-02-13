@@ -6865,13 +6865,13 @@ Assistant (<https://www.deepseek.com/>).")
 (define-public r-fpp3
   (package
     (name "r-fpp3")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fpp3" version))
        (sha256
-        (base32 "0kglahbhvjcpi3ndbklciycvh2pyvacbzyfbacjj11zk84ngr2zl"))))
+        (base32 "0b0lqnwbr3hrxi6w3qw8nkp5d6q51r0y2lqnr9lfgg8z29jz1l31"))))
     (properties `((upstream-name . "fpp3")))
     (build-system r-build-system)
     (arguments
@@ -6884,6 +6884,7 @@ Assistant (<https://www.deepseek.com/>).")
                              r-rstudioapi
                              r-purrr
                              r-lubridate
+                             r-ggtime
                              r-ggplot2
                              r-feasts
                              r-fable
@@ -13457,6 +13458,38 @@ in the original BCF implementation, allowing the model to be fit to larger
 datasets.  The implementation was originally developed for the 2022 American
 Causal Inference Conference's Data Challenge.  See Kokandakar et al. (2023)
 <doi:10.1353/obs.2023.0024> for more details.")
+    (license license:gpl3+)))
+
+(define-public r-flexbart
+  (package
+    (name "r-flexbart")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexBART" version))
+       (sha256
+        (base32 "0s5404864vq3wjs5fdxjr871jkv8yq3wrs3s84kyyxqqv9lfrawp"))))
+    (properties `((upstream-name . "flexBART")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
+    (home-page "https://skdeshpande91.github.io/flexBART/")
+    (synopsis "More Flexible BART Model")
+    (description
+     "This package implements a faster and more expressive version of Bayesian
+Additive Regression Trees that, at a high level, approximates unknown functions
+as a weighted sum of binary regression tree ensembles.  Supports fitting
+(generalized) linear varying coefficient models that posits a linear
+relationship between the inverse link and some covariates but allows that
+relationship to change as a function of other covariates.  Additionally supports
+fitting heteroscedastic BART models, in which both the mean and log-variance are
+approximated with separate regression tree ensembles.  A formula interface
+allows for different splitting variables to be used in each ensemble.  For more
+details see Deshpande (2025) <doi:10.1080/10618600.2024.2431072> and Deshpande
+et al. (2024) <doi:10.1214/24-BA1470>.")
     (license license:gpl3+)))
 
 (define-public r-flex

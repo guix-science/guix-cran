@@ -145,6 +145,35 @@ of the wild binary segmentation algorithm for detecting multiple changepoints in
 multivariate data.")
     (license license:expat)))
 
+(define-public r-kvr2
+  (package
+    (name "r-kvr2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kvr2" version))
+       (sha256
+        (base32 "1q04lgxbmzrcmqv7m28anbzh0kvr7lg230cq6k42v3qlm963dhbn"))))
+    (properties `((upstream-name . "kvr2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/indenkun/kvr2")
+    (synopsis
+     "Calculate and Compare Multiple Definitions of Coefficient of Determination")
+    (description
+     "Calculate nine types of coefficients of determination (R-squared) based on the
+classification by Kvalseth (1985) <doi:10.1080/00031305.1985.10479448>.  This
+package is designed for educational purposes to demonstrate how R-squared values
+can fluctuate depending on the choice of formula, particularly in power
+regression models or linear models without an intercept.  By providing a
+comprehensive list of definitions, it helps users understand the mathematical
+sensitivity of goodness-of-fit indices.")
+    (license license:expat)))
+
 (define-public r-kvkapir
   (package
     (name "r-kvkapir")

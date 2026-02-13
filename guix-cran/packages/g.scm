@@ -2259,13 +2259,13 @@ feature format.")
 (define-public r-gtfs2emis
   (package
     (name "r-gtfs2emis")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfs2emis" version))
        (sha256
-        (base32 "1vz0kfycv3fgcm5bhbdn9hg3ls4pr1n88r1lhmy2fq9hwp8djgc6"))))
+        (base32 "1h6f5z7p18i5njf7dxray09vrlb8cjb921slq74syfhy698pvlkg"))))
     (properties `((upstream-name . "gtfs2emis")))
     (build-system r-build-system)
     (arguments
@@ -2275,6 +2275,7 @@ feature format.")
                              r-terra
                              r-sfheaders
                              r-sf
+                             r-parallelly
                              r-gtfs2gps
                              r-future
                              r-furrr
@@ -3597,13 +3598,13 @@ processing is described in Bengtsson (2021) <doi:10.32614/RJ-2021-048>.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign2" version))
        (sha256
-        (base32 "10szimpnxwz6zwyrcmdsapmd36jgy23imbgaaasl6q6061ykb1yc"))))
+        (base32 "1nnkqd4wzcwm2r3l5gkphymwrbndl50qvx25mgvwmhai7y55sah6"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (arguments
@@ -4387,6 +4388,51 @@ group-wise descent with some computational tricks including the screening,
 active set, and warm-start.  Different tuning regularization parameter methods
 are provided.")
     (license license:gpl2+)))
+
+(define-public r-growthtrendr
+  (package
+    (name "r-growthtrendr")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "growthTrendR" version))
+       (sha256
+        (base32 "1w3sywdrzbw92khkk12115xqbdry20brgzmfwan4590vvwmf5gqw"))))
+    (properties `((upstream-name . "growthTrendR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stringr
+                             r-raster
+                             r-patchwork
+                             r-nlme
+                             r-mgcv
+                             r-htmltools
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-data-table
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=growthTrendR")
+    (synopsis "Toolkit for Data Processing, Quality, and Statistical Models")
+    (description
+     "Offers tools for data formatting, anomaly detection, and classification of
+tree-ring data using spatial comparisons and cross-correlation.  Supports
+flexible detrending and climateâgrowth modeling via generalized additive mixed
+models (Wood 2017, ISBN:978-1498728331) and the mgcv package
+(<https://CRAN.R-project.org/package=mgcv>), enabling robust analysis of
+non-linear trends and autocorrelated data.  Provides standardized visual
+reporting, including summaries, diagnostics, and model performance.  Compatible
+with .rwl files and tailored for the Canadian Forest Service Tree-Ring Data
+(CFS-T@code{RenD}) repository (Girardin et al. (2021)
+<doi:10.1139/er-2020-0099>), offering a comprehensive and adaptable framework
+for dendrochronologists working with large and complex datasets.")
+    (license license:gpl3)))
 
 (define-public r-growthrates
   (package
@@ -10562,6 +10608,42 @@ W.S. Gosset aka âStudentâ, a pioneer of modern statistics in small sam
 experimental design and analysis.")
     (license license:expat)))
 
+(define-public r-gorica
+  (package
+    (name "r-gorica")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gorica" version))
+       (sha256
+        (base32 "1s873sld0c057yg32311jj8pbhvc0mk3wrs1j5879x26zwlxhybz"))))
+    (properties `((upstream-name . "gorica")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog
+                             r-mvtnorm
+                             r-mass
+                             r-lme4
+                             r-limsolve
+                             r-lavaan
+                             r-bain))
+    (home-page "https://informative-hypotheses.sites.uu.nl/software/goric/")
+    (synopsis "Evaluation of Inequality Constrained Hypotheses Using GORICA")
+    (description
+     "This package implements the generalized order-restricted information criterion
+approximation (GORICA), an AIC-like information criterion that can be utilized
+to evaluate informative hypotheses specifying directional relationships between
+model parameters in terms of (in)equality constraints (see Altinisik, Van Lissa,
+Hoijtink, Oldehinkel, & Kuiper, 2021), <doi:10.31234/osf.io/t3c8g>.  The GORICA
+is applicable not only to normal linear models, but also to generalized linear
+models (GLMs), generalized linear mixed models (GLMMs), structural equation
+models (SEMs), and contingency tables.  For contingency tables, restrictions on
+cell probabilities can be non-linear.")
+    (license license:gpl3+)))
+
 (define-public r-goric
   (package
     (name "r-goric")
@@ -11543,6 +11625,32 @@ provide a statistical summary of the results as well as a visualization.")
      "An efficient algorithm to generate group assignments for classroom settings
 while minimizing repeated pairings across multiple rounds.")
     (license license:gpl3)))
+
+(define-public r-golfastr
+  (package
+    (name "r-golfastr")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "golfastr" version))
+       (sha256
+        (base32 "0knxbm431vd8ysawmy3p0m7f4qirxr3n1hybxnznpvnnlvi70dlx"))))
+    (properties `((upstream-name . "golfastr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-httr2 r-dplyr))
+    (home-page "https://github.com/array-carpenter/golfastr")
+    (synopsis "Efficiently Access Pro Golf Data")
+    (description
+     "Fetch Professional Golfers Association (PGA) Tour tournament data from ESPN
+<https://www.espn.com/golf/> including leaderboards and hole-by-hole scoring.
+Data is returned in tidy tibble format ready for analysis.  Supports local
+storage via RDS or Apache Arrow Parquet files for fast repeated access.
+Designed for golf analytics, data journalism, and fantasy sports research.")
+    (license license:expat)))
 
 (define-public r-goldprice
   (package
@@ -18472,13 +18580,13 @@ O'Reilly et al. (2021) <doi:10.1016/S2542-5196(20)30292-8>.")
 (define-public r-ghrexplore
   (package
     (name "r-ghrexplore")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHRexplore" version))
        (sha256
-        (base32 "0y12fv7160n8ap36xzwmjl2h8s5k8vvbnby6csmx962hsx92r5c3"))))
+        (base32 "1ypa6c4jz8mjlq8d5pafcvmvyam45wv9jici842j15j9ra63wh42"))))
     (properties `((upstream-name . "GHRexplore")))
     (build-system r-build-system)
     (arguments
@@ -18487,7 +18595,7 @@ O'Reilly et al. (2021) <doi:10.1016/S2542-5196(20)30292-8>.")
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-rcolorbrewer
-                             r-isoweek
+                             r-lubridate
                              r-ggplot2
                              r-dplyr
                              r-cowplot

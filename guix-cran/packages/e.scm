@@ -9305,32 +9305,6 @@ non-overlapping groups) and is called in reference to the Exponential Random
 Graph Models (ERGM) for networks.")
     (license license:gpl3+)))
 
-(define-public r-erpeq
-  (package
-    (name "r-erpeq")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ERPeq" version))
-       (sha256
-        (base32 "1619j6fgsg594fdbv9qk64rw2yqsy7wyj8qnwmpnmv66gxc5mqaq"))))
-    (properties `((upstream-name . "ERPeq")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam r-rmutil r-pracma r-invgamma))
-    (home-page "https://cran.r-project.org/package=ERPeq")
-    (synopsis "Probabilistic Hazard Assessment")
-    (description
-     "Computes the probability density and cumulative distribution functions of
-fourteen distributions used for the probabilistic hazard assessment.  Estimates
-the model parameters of the distributions using the maximum likelihood and
-reports the goodness-of-fit statistics.  The recurrence interval estimations of
-earthquakes are computed for each distribution.")
-    (license license:gpl3)))
-
 (define-public r-erp-easy
   (package
     (name "r-erp-easy")

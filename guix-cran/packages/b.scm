@@ -26586,19 +26586,20 @@ Duan et al. (2006) <doi:10.1002/env.752> and Ibrahim et al. (2015)
 (define-public r-bayespower
   (package
     (name "r-bayespower")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPower" version))
        (sha256
-        (base32 "1a1pklvbm6pi29kfa7hj3i6hk68zknr27j8yz3m7cwcqb4dizigr"))))
+        (base32 "1padvak80zga10d63vw38sniwficz74vik1nvwsizgh4ica9afq1"))))
     (properties `((upstream-name . "BayesPower")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shinywidgets
+    (propagated-inputs (list r-tidyr
+                             r-shinywidgets
                              r-shiny
                              r-rootsolve
                              r-rmarkdown
@@ -26621,7 +26622,7 @@ scenarios using Bayes factors.  The main function,
 @code{BayesPower_BayesFactor()}, launches an interactive shiny application for
 performing these analyses.  The application also provides command-line code for
 reproducibility.  Details of the methods are described in the tutorial by Wong,
-Pawel, and Tendeiro (2025) <doi:10.31234/osf.io/pgdac_v1>.")
+Pawel, and Tendeiro (2025) <doi:10.31234/osf.io/pgdac_v2>.")
     (license license:gpl3+)))
 
 (define-public r-bayespostest
@@ -26836,6 +26837,51 @@ drive the risk of the event.  This function outputs trace plots depicting the
 number of split points in the hazard and the number of variables included in the
 hazard.  The function saves all posterior quantities to the desired path.")
     (license license:gpl2)))
+
+(define-public r-bayespet
+  (package
+    (name "r-bayespet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesPET" version))
+       (sha256
+        (base32 "0rj43csq04zy44mzrfixzfgjzrfsnw6d1hn23i40jb6f8r2aciq0"))))
+    (properties `((upstream-name . "BayesPET")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stanheaders
+                             r-rstan
+                             r-reshape2
+                             r-readr
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-magrittr
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=BayesPET")
+    (synopsis
+     "Bayesian Prediction of Event Times for Blinded Randomized Controlled Trials")
+    (description
+     "Bayesian methods for predicting the calendar time at which a target number of
+events is reached in clinical trials.  The methodology applies to both blinded
+and unblinded settings and jointly models enrollment, event-time, and censoring
+processes.  The package provides tools for trial data simulation, model fitting
+using Stan via the rstan interface, and event time prediction under a wide range
+of trial designs, including varying sample sizes, enrollment patterns, treatment
+effects, and event or censoring time distributions.  The package is intended to
+support interim monitoring, operational planning, and decision-making in
+clinical trial development.  Methods are described in Fu et al. (2025)
+<doi:10.1002/sim.70310>.")
+    (license license:gpl3+)))
 
 (define-public r-bayesnsgp
   (package

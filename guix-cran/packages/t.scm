@@ -4628,13 +4628,13 @@ re-think of rugarch', making use of automatic differentiation for estimation.")
 (define-public r-tsg
   (package
     (name "r-tsg")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsg" version))
        (sha256
-        (base32 "13w4s6g5sf3y3caag9ibyccz3c402z6p77fwfhyi52ssr4lsgkrz"))))
+        (base32 "0dxqh5gkxdjihyrjsqkyi04hgxlavwiybfc4blq2xzzcp9mwbqx3"))))
     (properties `((upstream-name . "tsg")))
     (build-system r-build-system)
     (arguments
@@ -6340,13 +6340,13 @@ release files.  For more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "07vy7i4mgpcaywgldp30w5k7045h9mqx985hdi3lfkiznvds3cqf"))))
+        (base32 "1ixbnxcxib8bvi8yrlfys5d9javilsqbjgrczailzpxl1kmdy3f4"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -12794,40 +12794,6 @@ equivalence within the tolerance.  Equivalence intervals for all tests may be
 defined symmetrically or asymmetrically.")
     (license license:gpl2)))
 
-(define-public r-tosr
-  (package
-    (name "r-tosr")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tosr" version))
-       (sha256
-        (base32 "0ckv23q4hgk97666akmhdbxac9albdln0vvryf1xl8fv7dwi3w2a"))))
-    (properties `((upstream-name . "tosr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rebus
-                             r-magrittr
-                             r-igraph
-                             r-dplyr
-                             r-bibliometrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/coreofscience/tosr")
-    (synopsis "Create the Tree of Science from WoS and Scopus")
-    (description
-     "The goal of tosr is to create the Tree of Science from Web of Science
-(@code{WoS}) and Scopus data.  It can read files from both sources at the same
-time.  More information can be found in Valencia-HernÃ¡ndez (2020)
-<https://revistas.unal.edu.co/index.php/ingeinv/article/view/77718>.")
-    (license license:expat)))
-
 (define-public r-tosi
   (package
     (name "r-tosi")
@@ -14597,13 +14563,13 @@ nodes in the network.")
 (define-public r-tna
   (package
     (name "r-tna")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tna" version))
        (sha256
-        (base32 "0vc5sp4yxb8iqggqw6qm9ppwfff9d20bx2i3wid6qjr4h9r1i60b"))))
+        (base32 "1kb7rmvrsmfmcch0ip5mh2xbp39pmap53v20yjna7bymnwmn9dfm"))))
     (properties `((upstream-name . "tna")))
     (build-system r-build-system)
     (arguments
@@ -14612,7 +14578,6 @@ nodes in the network.")
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-stringdist
                              r-rlang
                              r-rcolorbrewer
                              r-qgraph
@@ -16185,6 +16150,34 @@ Relevant references include Baker and King (2010)
 <doi:10.1111/j.2041-210X.2009.00007.x>, King and Baker (2010)
 <doi:10.1899/09-144.1>, and Baker and King (2013) <doi:10.1899/12-142.1>.")
     (license license:gpl2)))
+
+(define-public r-tissot
+  (package
+    (name "r-tissot")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tissot" version))
+       (sha256
+        (base32 "12s3mq7vgkrx6l7sv2jfa9gs1pjimwwr0pz1b3lsy4qqcp3jr3k4"))))
+    (properties `((upstream-name . "tissot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-gdalraster))
+    (home-page "https://github.com/hypertidy/tissot")
+    (synopsis "Tissot Indicatrix for Map Projection Distortion")
+    (description
+     "Compute and visualize the Tissot Indicatrix for map projections.  The indicatrix
+characterizes projection distortion by computing scale factors, angular
+deformation, areal distortion, and convergence at arbitrary points.  Based on
+the calculations shared by Bill Huber on
+<https://gis.stackexchange.com/a/5075/482>.  Uses GDAL for coordinate
+transformation.  Developed using the method published in Snyder, JP (1987)
+<doi:10.3133/pp1395>.")
+    (license license:expat)))
 
 (define-public r-tirt
   (package
@@ -20422,6 +20415,37 @@ style conventions from the tidyverse', Wickham et al.
 al.<https://tidymodels.github.io/model-implementation-principles/>.  Fitting is
 done via collapsed Gibbs sampling.  Also implements several novel features for
 LDA such as guided models and transfer learning.")
+    (license license:expat)))
+
+(define-public r-tidylaslog
+  (package
+    (name "r-tidylaslog")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidylaslog" version))
+       (sha256
+        (base32 "008c4lp1ly534q70iqxi3vp484xqjhiydwspg6cyvn2q9ni1payc"))))
+    (properties `((upstream-name . "tidylaslog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-dplyr))
+    (home-page "https://github.com/Omodolor/tidylaslog")
+    (synopsis "Tidy Import, Indexing, and Export of LAS Well Log Data")
+    (description
+     "This package provides tools for reading, parsing, indexing, and exporting LAS
+(Log ASCII Standard) well log files into tidy, analysis-ready tabular formats.
+The package separates LAS header information and log data into structured
+components, builds a searchable index across collections of LAS files, and
+enables reproducible subsetting of wells based on metadata or curve
+availability.  Output tables can be written to CSV or Parquet formats to support
+large-scale statistical, machine learning, and earth science workflows.  The
+tidy data structure follows Wickham (2014) <doi:10.18637/jss.v059.i10>.  The LAS
+file structure follows the Canadian Well Logging Society LAS standard
+<https://www.cwls.org/wp-content/uploads/2017/02/Las2_Update_Jan2017.pdf>.")
     (license license:expat)))
 
 (define-public r-tidyklips
@@ -31847,13 +31871,13 @@ available.")
 (define-public r-tall
   (package
     (name "r-tall")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tall" version))
        (sha256
-        (base32 "05m8xcdp5cm69z5vcd6z61bqs9l1sk8ga43p5c40j5ghhfxixcyk"))))
+        (base32 "1ywdsmyv40pcwggarj7i7qyh9cm8l1h31s4rgxh50bdnll0kkd3q"))))
     (properties `((upstream-name . "tall")))
     (build-system r-build-system)
     (arguments

@@ -3162,13 +3162,13 @@ a correlated-residual structure.")
 (define-public r-orion
   (package
     (name "r-orion")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ORION" version))
        (sha256
-        (base32 "140spk5113l3j2wcy6mjv6c1p6gzqi0f53yi5gppvps7ggl87yhb"))))
+        (base32 "0pdh8nnagj5hv5yyw72p9x89ld3mjqxxzz21zybpb7a9h57lz65b"))))
     (properties `((upstream-name . "ORION")))
     (build-system r-build-system)
     (arguments

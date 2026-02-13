@@ -12475,13 +12475,13 @@ Hosszejni and Kastner (2021) <doi:10.18637/jss.v100.i12> and Kastner (2016)
 (define-public r-stochtree
   (package
     (name "r-stochtree")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochtree" version))
        (sha256
-        (base32 "0k8m8haak2sk41vxln77knzb2bkwx6h17cx8j3g131l2ha5mlj50"))))
+        (base32 "0v1g31fmna24xw5x7rrv9qgl8pm6mgvf9pmlnih9kdjbmqccj8w7"))))
     (properties `((upstream-name . "stochtree")))
     (build-system r-build-system)
     (arguments
@@ -19471,6 +19471,34 @@ adaptive bandwidth kernel function for irregular lattice-based maps.")
 locally in the Bayesian framework.  Inconsistencies are located by applying
 Bayesian variable selection to the inconsistency factors.  The implementation of
 the method is described by Seitidis et al. (2023) <doi:10.1002/sim.9891>.")
+    (license license:gpl3+)))
+
+(define-public r-sshist
+  (package
+    (name "r-sshist")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sshist" version))
+       (sha256
+        (base32 "0vl6kr3ichg1yx9yvwm46c12x9nisi802dvkqglx0qy9ahynzl6c"))))
+    (properties `((upstream-name . "sshist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/celebithil/sshist")
+    (synopsis "Optimal Histogram Binning Using Shimazaki-Shinomoto Method")
+    (description
+     "This package implements the Shimazaki-Shinomoto method (2007)
+<doi:10.1162/neco.2007.19.6.1503> for optimizing the bin width of a histogram.
+This method minimizes the mean integrated squared error (MISE) and features a
+C++ backend for high performance and shift-averaging to remove edge-position
+bias.  Ideally suits for time-dependent rate estimation and identifying
+intrinsic data structures.  Supports both 1D and 2D data distributions.")
     (license license:gpl3+)))
 
 (define-public r-sship
@@ -67001,13 +67029,13 @@ reconstructed trajectory, as well as nice visualisation tools.  Cannoodt et al.
 (define-public r-scorpion
   (package
     (name "r-scorpion")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCORPION" version))
        (sha256
-        (base32 "18c6knpl01yvx8g04vslxqi7xc47m48q5a1ldwxw52ad1qkp1i1c"))))
+        (base32 "1ai34zblmjn6l3wz412s7hiw11dhvxy5snmnrwp9rdva63y7032q"))))
     (properties `((upstream-name . "SCORPION")))
     (build-system r-build-system)
     (arguments
@@ -67020,12 +67048,16 @@ reconstructed trajectory, as well as nice visualisation tools.  Cannoodt et al.
                              r-igraph
                              r-dplyr
                              r-cli))
-    (home-page "https://cran.r-project.org/package=SCORPION")
+    (home-page "https://github.com/kuijjerlab/SCORPION")
     (synopsis
      "Single Cell Oriented Reconstruction of PANDA Individual Optimized Networks")
     (description
-     "Constructs gene regulatory networks from single-cell gene expression data using
-the PANDA (Passing Attributes between Networks for Data Assimilation) algorithm.")
+     "Constructs cell-typeâspecific gene regulatory networks from single-cell
+RNA-sequencing data.  The method implements the SCORPION algorithm, which first
+aggregates individual cells into supercells and then applies PANDA (Passing
+Attributes between Networks for Data Assimilation) to infer transcription
+factorâtarget regulatory relationships.  It also provides statistical methods
+for differential edge analysis.")
     (license license:gpl3)))
 
 (define-public r-scornet
@@ -70637,13 +70669,13 @@ structure of rivers.")
 (define-public r-sbmtrees
   (package
     (name "r-sbmtrees")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SBMTrees" version))
        (sha256
-        (base32 "0jpni6gvy1x5jnb6phajv12f6llcnhxn46ybri0mzjjv2hg5zgcq"))))
+        (base32 "1wrrja4fd4vkl2g4pdklihl63nk0qdzr71vdaikw3hiijn5lb535"))))
     (properties `((upstream-name . "SBMTrees")))
     (build-system r-build-system)
     (arguments

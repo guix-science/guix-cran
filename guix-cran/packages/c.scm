@@ -15865,20 +15865,19 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.3.7")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "0sda3jhazwvla32g0agh6s4ar0r1kv88mfizqmjn26nz15ix2wf7"))))
+        (base32 "0qv7lgkgzyqrhqky8xf1qa9y9xs6d04gn3n14y5csh5qmd8dfv8i"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-units
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -16424,13 +16423,13 @@ original cookiecutter template format.")
 (define-public r-cooccurrenceaffinity
   (package
     (name "r-cooccurrenceaffinity")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CooccurrenceAffinity" version))
        (sha256
-        (base32 "0a8ya9fsbz20bmywbjva1jxgz90sf2vschbbi4ccqxa18fb1wlxl"))))
+        (base32 "18rvlala3as4jf12q7r2vs21z04rfvrakj14v0zy5h0s2r4wrmn5"))))
     (properties `((upstream-name . "CooccurrenceAffinity")))
     (build-system r-build-system)
     (arguments
@@ -16441,12 +16440,12 @@ original cookiecutter template format.")
     (synopsis "Affinity in Co-Occurrence Data")
     (description
      "Computes a novel metric of affinity between two entities based on their
-co-occurrence (using binary presence/absence data).  The metric and its MLE,
-alpha hat, were advanced in Mainali, Slud, et al, 2021
-<doi:10.1126/sciadv.abj9204>.  Various types of confidence intervals and median
+co-occurrence (using binary presence/absence data).  The metric and its maximum
+likelihood estimator (alpha hat) were advanced in Mainali, Slud, et al, 2021
+<doi:10.1126/sciadv.abj9204>.  Four types of confidence intervals and median
 interval were developed in Mainali and Slud, 2022
-<doi:10.1101/2022.11.01.514801>.  The `finches` dataset is now bundled
-internally (no longer pulled via the cooccur package, which has been dropped).")
+<doi:10.1101/2022.11.01.514801>.  The `finches` dataset is bundled with the
+package.")
     (license license:expat)))
 
 (define-public r-convospat
@@ -18367,18 +18366,19 @@ downloaded from <https://shop.acer.org/acer-conquest-5.html>.")
 (define-public r-conover-test
   (package
     (name "r-conover-test")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conover.test" version))
        (sha256
-        (base32 "0x0wzxdg4pkkr5yqrapvq04i1gc7qa6c7f44skcmq3qpfziq3fpj"))))
+        (base32 "1sdcs7g67pkx2flnjdg5fgik5p2gsw0x0swqzfzlkg2k17bhvw5i"))))
     (properties `((upstream-name . "conover.test")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rlang))
     (home-page "https://cran.r-project.org/package=conover.test")
     (synopsis "Conover-Iman Test of Multiple Comparisons Using Rank Sums")
     (description
@@ -27033,37 +27033,6 @@ the R console.  This game is inspired by Mastermind, a game that became popular
 in the 1970s.  Can you break the code?")
     (license license:gpl3)))
 
-(define-public r-codebookr
-  (package
-    (name "r-codebookr")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "codebookr" version))
-       (sha256
-        (base32 "1y5daii4qms0sj0mqa0lrxfqagxbmd7wc94j8h33szmip7ivqp6v"))))
-    (properties `((upstream-name . "codebookr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-officer
-                             r-haven
-                             r-flextable
-                             r-dplyr))
-    (home-page "https://github.com/brad-cannell/codebookr")
-    (synopsis "Create Codebooks from Data Frames")
-    (description
-     "Quickly and easily create codebooks (i.e.  data dictionaries) directly from a
-data frame.")
-    (license license:expat)))
-
 (define-public r-code
   (package
     (name "r-code")
@@ -29616,13 +29585,13 @@ and examples.")
 (define-public r-cmbclust
   (package
     (name "r-cmbclust")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmbClust" version))
        (sha256
-        (base32 "01yjiscnligy6wpn752sqm53xhx0qxjbfd4dc8p7c31kbzfpif2x"))))
+        (base32 "02l2d4w2vk11gf6lci11ckxp5002sq3jj2jp0b2jv3rzrnkddbp3"))))
     (properties `((upstream-name . "cmbClust")))
     (build-system r-build-system)
     (arguments
@@ -32386,19 +32355,18 @@ keeping data.")
 (define-public r-clmstan
   (package
     (name "r-clmstan")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clmstan" version))
        (sha256
-        (base32 "09r15qghyzhkicrs2qvqla1j6gy6lgl8g7g9jvwxa84l6bq4b92v"))))
+        (base32 "19w7njc3rqci3cpx70d6nfihb78av1zrawzi3f7xn2yr6hcnw4lc"))))
     (properties `((upstream-name . "clmstan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
     (propagated-inputs (list r-posterior r-loo r-instantiate r-bayesplot))
     (native-inputs (list r-knitr))
     (home-page "https://t-momozaki.github.io/clmstan/")
@@ -39237,13 +39205,13 @@ name gender, name valence, and name warmth/competence).  Details are provided at
 (define-public r-chinapis
   (package
     (name "r-chinapis")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChinAPIs" version))
        (sha256
-        (base32 "1gssmjndbc4a6a9g7jv7hfh3d7l89bi1xj6l7cdvyfp1wb370dq4"))))
+        (base32 "19nnm3n1x11k3jlhr827sfpxdb8fscbjdmscwcyl37jqqchb5h4b"))))
     (properties `((upstream-name . "ChinAPIs")))
     (build-system r-build-system)
     (arguments
@@ -45678,13 +45646,13 @@ assumption of two multivariate variable.")
 (define-public r-cdcplaces
   (package
     (name "r-cdcplaces")
-    (version "1.1.10")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDCPLACES" version))
        (sha256
-        (base32 "1rvmdli7dn5ha3lzxqvf7322kxswb0z1lpi650c2ml8qcndglxhd"))))
+        (base32 "0s7w037fxvgxmn3ymff2vvrrj0lcjw1h20229dmd2svvzz0jccaq"))))
     (properties `((upstream-name . "CDCPLACES")))
     (build-system r-build-system)
     (arguments
@@ -49639,6 +49607,31 @@ bootstrap confidence intervals for all major metrics, with seamless integration
 of parallel computation and propensity scored variants of standard metrics.")
     (license license:expat)))
 
+(define-public r-casidata
+  (package
+    (name "r-casidata")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CASIdata" version))
+       (sha256
+        (base32 "1f0blv2bd0pvsj88rq42pmlg0sxrpg004xrsm6h4ryd4080ixqgl"))))
+    (properties `((upstream-name . "CASIdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/friendly/CASIdata")
+    (synopsis "Datasets from Computer Age Statistical Inference")
+    (description
+     "This package provides the datasets from Efron & Hastie (2016, ISBN:
+9781108107952), \"Computer Age Statistical Inference: Algorithms, Evidence, and
+Data Science\", in an accessible R format for those who want to use them for
+study or to try to reproduce analyses from the book.")
+    (license license:gpl3+)))
+
 (define-public r-cases
   (package
     (name "r-cases")
@@ -50914,35 +50907,39 @@ clustering, machine learning, and visualization.")
 developments) in ecological time series using fitted Weibull functions.")
     (license license:gpl2+)))
 
-(define-public r-cardargus
+(define-public r-cardiacdp
   (package
-    (name "r-cardargus")
-    (version "0.2.1")
+    (name "r-cardiacdp")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "cardargus" version))
+       (uri (cran-uri "CardiacDP" version))
        (sha256
-        (base32 "1r2w72xnssrfhnlhp1d2pf64fhb64zlv632ayws7qw6bkqam7p9i"))))
-    (properties `((upstream-name . "cardargus")))
+        (base32 "1apbkzcyk32fh5zq7hsihg85jvwq3r18jczw0gyja4v68zcnkipr"))))
+    (properties `((upstream-name . "CardiacDP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsvg
-                             r-magick
-                             r-glue
-                             r-gdtools
-                             r-digest
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/StrategicProjects/cardargus")
-    (synopsis "Generate SVG Information Cards with Embedded Fonts and Badges")
+    (propagated-inputs (list r-stringr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=CardiacDP")
+    (synopsis "Automated Cardiac Data Processing via ACF, GA & Tracking Index")
     (description
-     "Create self-contained SVG information cards with embedded Google Fonts',
-shields-style badges, and custom logos.  Cards are fully portable SVG files
-ideal for dashboards, reports, and web applications.  Includes functions to
-export cards to PNG format and display them in R Markdown and Quarto documents.")
+     "An algorithm developed to efficiently and accurately process complex and
+variable cardiac data with three key features: 1.  employing autocorrelation to
+identify recurrent heartbeats and use their periods to compute heart rates; 2.
+incorporating a genetic algorithm framework to minimize data loss due to noise
+interference and accommodate within-sequence variations; and 3.  introducing a
+tracking index as a moving reference to reduce errors.  Lau, Wong, & Gu (2026)
+<https://ssrn.com/abstract=5153081>.")
     (license license:expat)))
 
 (define-public r-card-pro

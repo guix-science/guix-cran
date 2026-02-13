@@ -17944,13 +17944,13 @@ generate output.")
 (define-public r-popepi
   (package
     (name "r-popepi")
-    (version "0.4.13")
+    (version "0.4.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popEpi" version))
        (sha256
-        (base32 "0zikxba1wfnwp28akpb67cyxd7d7icpdkpixcj4hp8hyyyvkxi5r"))))
+        (base32 "01lj86p6wybyz0a9d40g4j80b6nlqmpp1p4xa9j9i438n06ghd2l"))))
     (properties `((upstream-name . "popEpi")))
     (build-system r-build-system)
     (arguments
@@ -21599,13 +21599,13 @@ such clustering.")
 (define-public r-pnd
   (package
     (name "r-pnd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pnd" version))
        (sha256
-        (base32 "17r0gyl12sq3ssvmg6phyh8xzq6z6n9vx85z7briyp4lsk1ng3xg"))))
+        (base32 "07y2apdg4skavabkfjvllzwr8lyys49jmzimd9pcchfhyjsylz98"))))
     (properties `((upstream-name . "pnd")))
     (build-system r-build-system)
     (arguments
@@ -22174,40 +22174,6 @@ the publicly available @code{PubMed} XML files, incorporating @code{PubMed's}
 regular updates, and combining the data with the NIH Open Citation Collection.
 See Schoenbachler and Hughey (2021) <doi:10.7717/peerj.11071>.")
     (license license:gpl2)))
-
-(define-public r-pmmltransformations
-  (package
-    (name "r-pmmltransformations")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pmmlTransformations" version))
-       (sha256
-        (base32 "0315kb5x04pidpzr04yaxyynp0mz4ilzp7vkspq4agjkds5hyc88"))))
-    (properties `((upstream-name . "pmmlTransformations")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.softwareag.com/zementis")
-    (synopsis "Transforms Input Data from a PMML Perspective")
-    (description
-     "Allows for data to be transformed before using it to construct models.  Builds
-structures to allow functions in the PMML package to output transformation
-details in addition to the model in the resulting PMML file.  The Predictive
-Model Markup Language (PMML) is an XML-based language which provides a way for
-applications to define machine learning, statistical and data mining models and
-to share models between PMML compliant applications.  More information about the
-PMML industry standard and the Data Mining Group can be found at
-<http://www.dmg.org>.  The generated PMML can be imported into any PMML
-consuming application, such as Zementis Predictive Analytics products, which
-integrate with web services, relational database systems and deploy natively on
-Hadoop in conjunction with Hive, Spark or Storm, as well as allow predictive
-analytics to be executed for IBM z Systems mainframe applications and real-time,
-streaming analytics platforms.")
-    (license (license:fsdg-compatible "GPL (>= 2.1)"))))
 
 (define-public r-pmlsp
   (package

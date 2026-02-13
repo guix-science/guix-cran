@@ -3423,13 +3423,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "0v31rlc40w34w3dfvbzkllsx2165ppkycbpjybycqr0qlr9rzn3q"))))
+        (base32 "1ij1c57gcjxvjkq9s49p183vd06gjqcw22fwx7la4ikrks38lvyb"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -3441,6 +3441,7 @@ centered on an approach using machine learning for path classification.")
                              r-multcomp
                              r-lmertest
                              r-lme4
+                             r-ggsignif
                              r-ggplot2
                              r-emmeans
                              r-dplyr))
@@ -3449,7 +3450,7 @@ centered on an approach using machine learning for path classification.")
     (synopsis "qPCR Data Analysis")
     (description
      "This package provides tools for @code{qPCR} data analysis using Delta Ct and
-Delta Delta Ct methods, including t-test, wilcox.test, ANOVA models, and
+Delta Delta Ct methods, including t-test, Wilcoxon-test, ANOVA models, and
 publication-ready visualizations.  The package supports multiple target, and
 multiple reference genes, and uses a calculation framework adopted from Ganger
 et al. (2017) <doi:10.1186/s12859-017-1949-5> and Taylor et al. (2019)
@@ -5283,13 +5284,13 @@ and geography from notifiable disease reports in Germany.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurveycto" version))
        (sha256
-        (base32 "0vsjbhmv97ykhvagpqwca1ykwgqc0whv7pphlidf6vhklmgxnx6j"))))
+        (base32 "1h180k6m7bv4bvsgvi4j3rxffdr3kz3nqw4rcinf8wq91kpq5kfc"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (arguments
@@ -12936,13 +12937,13 @@ package provides much of the infrastructure.")
 (define-public r-roxigraph
   (package
     (name "r-roxigraph")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roxigraph" version))
        (sha256
-        (base32 "1wp94j71plky32a1kbn0f2q3fsxfjmwi1358pc7rzk192j006nhh"))))
+        (base32 "1s5fnzy3lasmh87p2jnfnlclv2kkhssws5rarpz2xhhsj275fbgx"))))
     (properties `((upstream-name . "roxigraph")))
     (build-system r-build-system)
     (arguments
@@ -17254,31 +17255,6 @@ univariate meta-analysis.  Also fits standard random effects meta-analysis and
 the Copas-like selection model of Ning et al. (2017)
 <doi:10.1093/biostatistics/kxx004>.")
     (license license:gpl3)))
-
-(define-public r-robustarima
-  (package
-    (name "r-robustarima")
-    (version "0.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robustarima" version))
-       (sha256
-        (base32 "1f1bp9mqkrz91j1jfq2w4wp1dps0rni9l0jpa0r0pflbqlhjhdz3"))))
-    (properties `((upstream-name . "robustarima")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-splustimeseries r-splustimedate))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/spkaluzny/robustarima")
-    (synopsis "Robust ARIMA Modeling")
-    (description
-     "This package provides functions for fitting a linear regression model with ARIMA
-errors using a filtered tau-estimate.  The methodology is described in Maronna
-et al (2017, ISBN:9781119214687).")
-    (license license:bsd-3)))
 
 (define-public r-robustanova
   (package
@@ -39782,13 +39758,13 @@ package seamlessly.")
 (define-public r-redist
   (package
     (name "r-redist")
-    (version "4.3.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redist" version))
        (sha256
-        (base32 "13cd3r134phxby5gwj58dbwxf7qb2fczrqglfl45nlaxcrxp0m6p"))))
+        (base32 "12a2qi9c9i4v92l8z0bf1mnkakcpscd644cfr283lysxa53ivvc2"))))
     (properties `((upstream-name . "redist")))
     (build-system r-build-system)
     (arguments
@@ -49854,6 +49830,46 @@ cheminformatics.  This allows the user to load molecules, evaluate fingerprints,
 calculate molecular descriptors and so on.  In addition, the CDK API allows the
 user to view structures in 2D.")
     (license license:lgpl2.0+)))
+
+(define-public r-rcdf
+  (package
+    (name "r-rcdf")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcdf" version))
+       (sha256
+        (base32 "131wvv3qhvn319yp4l5mpy961sn5hbznn482i03n06ggvmd1gv0b"))))
+    (properties `((upstream-name . "rcdf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-uuid
+                             r-stringr
+                             r-rsqlite
+                             r-openxlsx
+                             r-openssl
+                             r-jsonlite
+                             r-haven
+                             r-glue
+                             r-fs
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://yng-me.github.io/rcdf/")
+    (synopsis "Comprehensive Toolkit for Working with Encrypted Parquet Files")
+    (description
+     "Utilities for reading, writing, and managing RCDF files, including encryption
+and decryption support.  It offers a flexible interface for handling data stored
+in encrypted Parquet format, along with metadata extraction, key management, and
+secure operations using Advanced Encryption Standard (AES) and
+Rivest-Shamir-Adleman (RSA) encryption.")
+    (license license:expat)))
 
 (define-public r-rcdea
   (package
