@@ -4724,36 +4724,6 @@ for calibrating the model and helpful tools for analysing model outputs and
 performance.")
     (license license:expat)))
 
-(define-public r-growfunctions
-  (package
-    (name "r-growfunctions")
-    (version "0.17")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "growfunctions" version))
-       (sha256
-        (base32 "1bafilkma723y4vdb8daka37mshwnjb6dpvwwrds4f67nbq6ss1x"))))
-    (properties `((upstream-name . "growfunctions")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spam r-reshape2 r-rcpparmadillo r-rcpp
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=growfunctions")
-    (synopsis
-     "Bayesian Non-Parametric Dependent Models for Time-Indexed Functional Data")
-    (description
-     "Estimates a collection of time-indexed functions under either of Gaussian
-process (GP) or intrinsic Gaussian Markov random field (@code{iGMRF}) prior
-formulations where a Dirichlet process mixture allows sub-groupings of the
-functions to share the same covariance or precision parameters.  The GP and
-@code{iGMRF} formulations both support any number of additive covariance or
-precision terms, respectively, expressing either or both of multiple trend and
-seasonality.")
-    (license license:gpl3+)))
-
 (define-public r-grove
   (package
     (name "r-grove")
@@ -7738,6 +7708,47 @@ p-values.  For methodological details, see Zhou and Chen (2023)
     (description
      "Bindings to the libgraphqlparser C++ library.  Parses @code{GraphQL}
 <https://graphql.org> syntax and exports the AST in JSON format.")
+    (license license:expat)))
+
+(define-public r-graphpaf
+  (package
+    (name "r-graphpaf")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "graphPAF" version))
+       (sha256
+        (base32 "06mh424dcbhdaksl187zsks2rk9536rzmhmjswifvnik5vy44j6p"))))
+    (properties `((upstream-name . "graphPAF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-survival
+                             r-reshape2
+                             r-mass
+                             r-madness
+                             r-gtools
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-boot))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/johnfergusonNUIG/graphPAF")
+    (synopsis "Estimating and Displaying Population Attributable Fractions")
+    (description
+     "Estimation and display of various types of population attributable fraction and
+impact fractions.  As well as the usual calculations of attributable fractions
+and impact fractions, functions are provided for attributable fraction nomograms
+and fan plots, continuous exposures, for pathway specific population
+attributable fractions, and for joint, average and sequential population
+attributable fractions.")
     (license license:expat)))
 
 (define-public r-graphonmix
@@ -10805,13 +10816,13 @@ places, directions, roads, distances, geocoding, elevation and timezone.")
 (define-public r-googletraffic
   (package
     (name "r-googletraffic")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googletraffic" version))
        (sha256
-        (base32 "0zy3dn8rzhdwlxpxmpj8j3m5nzx1hkk733lcvfl6dl7z61n72s7a"))))
+        (base32 "0jr8lhncly9vcmwnxa6jhjky29chc460wx7z4qw5pzpymfs5mv20"))))
     (properties `((upstream-name . "googletraffic")))
     (build-system r-build-system)
     (arguments
@@ -13905,13 +13916,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "1ksk1rgi7madicrznyw5lqpxy9pgraizhdx98p1bhbbib2g0jhhg"))))
+        (base32 "14zz8ib2s85h2bf3ifc316p1ka34zccbis6vyx1zib18kv0jba1d"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments
@@ -33253,6 +33264,35 @@ dimension via hypothesis testing, see Chen et al. (2021)
      "Model and estimate the model parameters for the spatial model of
 individual-level infectious disease transmission in
 Susceptible-Infected-Recovered (SIR) framework.")
+    (license license:expat)))
+
+(define-public r-gdilm-seirs
+  (package
+    (name "r-gdilm-seirs")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GDILM.SEIRS" version))
+       (sha256
+        (base32 "1f4w083695zw90jaqfr7rmy6b2qznvpvm9nisz2mi4dd9nzdv2f6"))))
+    (properties `((upstream-name . "GDILM.SEIRS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ngspatial r-mvtnorm r-mass))
+    (home-page "https://doi.org/10.1016/j.sste.2025.100780")
+    (synopsis "Spatial Modeling of Infectious Disease with Reinfection")
+    (description
+     "Geographically Dependent Individual Level Models (GDILMs) within the
+Susceptible-Exposed-Infectious-Recovered-Susceptible (SEIRS) framework are
+applied to model infectious disease transmission, incorporating reinfection
+dynamics.  This package employs a likelihood based Monte Carlo Expectation
+Conditional Maximization (MCECM) algorithm for estimating model parameters.  It
+also provides tools for GDILM fitting, parameter estimation, AIC calculation on
+real pandemic data, and simulation studies customized to user-defined model
+settings.")
     (license license:expat)))
 
 (define-public r-gdilm-me

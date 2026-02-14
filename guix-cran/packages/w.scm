@@ -4493,6 +4493,38 @@ downloaded.  Additionally, it also builds links and snippets to use in
 combination with the function @code{gallery()} in @code{netCoin} package.")
     (license license:gpl3)))
 
+(define-public r-wikitaxa
+  (package
+    (name "r-wikitaxa")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wikitaxa" version))
+       (sha256
+        (base32 "0ia0nvjyc71if22fk140vfx4jqblcbd3jlq2h2pm006wzm178via"))))
+    (properties `((upstream-name . "wikitaxa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-wikipedir
+                             r-tibble
+                             r-jsonlite
+                             r-httr
+                             r-data-table
+                             r-curl
+                             r-crul))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/wikitaxa/")
+    (synopsis "Taxonomic Information from 'Wikipedia'")
+    (description
+     "Taxonomic information from Wikipedia', Wikicommons', Wikispecies', and
+Wikidata'.  Functions included for getting taxonomic information from each of
+the sources just listed, as well performing taxonomic search.")
+    (license license:expat)))
+
 (define-public r-wikiprofiler
   (package
     (name "r-wikiprofiler")

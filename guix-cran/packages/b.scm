@@ -1085,13 +1085,13 @@ so as to avoid repeated downloads of the same series.")
 (define-public r-bunddev
   (package
     (name "r-bunddev")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bunddev" version))
        (sha256
-        (base32 "09ffbwgzjb07pxbwascv1ngxf10wlzif70jh2lkbwbjb6771jf1p"))))
+        (base32 "1hn8hbqmz839m5dxnyajkkf1mjm3vljhzvb34k05qj07bvx9zwnw"))))
     (properties `((upstream-name . "bunddev")))
     (build-system r-build-system)
     (arguments
@@ -1109,7 +1109,7 @@ so as to avoid repeated downloads of the same series.")
                              r-dplyr
                              r-cli))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=bunddev")
+    (home-page "https://github.com/mchlbckr/bunddev")
     (synopsis "Discover and Call 'Bund.dev' APIs")
     (description
      "This package provides a registry of APIs listed on <https://bund.dev> and a core
@@ -10832,13 +10832,13 @@ graphical representations or apply clustering techniques.")
 (define-public r-blsloadr
   (package
     (name "r-blsloadr")
-    (version "0.2")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BLSloadR" version))
        (sha256
-        (base32 "0qpvynkkzbxvpahhyfqa3cnxygqmp95nppv98b81fwv6ackiqmr6"))))
+        (base32 "0qrykk6j3iry0fkk86khlv3vmrzz5dhvr4i38w7smyjzflpf6myp"))))
     (properties `((upstream-name . "BLSloadR")))
     (build-system r-build-system)
     (arguments
@@ -25296,6 +25296,42 @@ models for genotype Ã environment interaction.  The method is explained in
 Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011)
 (<doi:10.1007/s13253-011-0063-9>).")
     (license license:gpl2)))
+
+(define-public r-bayou
+  (package
+    (name "r-bayou")
+    (version "2.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayou" version))
+       (sha256
+        (base32 "082a8yzvbdf9dhzh53238vakk3gr791k5sm2q9skapa2s83qi3kq"))))
+    (properties `((upstream-name . "bayou")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-phytools
+                             r-mnormt
+                             r-matrix
+                             r-mass
+                             r-geiger
+                             r-foreach
+                             r-fitdistrplus
+                             r-denstrip
+                             r-coda
+                             r-assertthat
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=bayou")
+    (synopsis "Bayesian Fitting of Ornstein-Uhlenbeck Models to Phylogenies")
+    (description
+     "Fits and simulates multi-optima Ornstein-Uhlenbeck models to phylogenetic
+comparative data using Bayesian reversible-jump methods.  See Uyeda and Harmon
+(2014) <DOI:10.1093/sysbio/syu057>.")
+    (license license:gpl2+)))
 
 (define-public r-baymedr
   (package

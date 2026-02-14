@@ -685,13 +685,13 @@ via the EM algorithm.")
 (define-public r-usingr
   (package
     (name "r-usingr")
-    (version "2.0-7")
+    (version "2.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UsingR" version))
        (sha256
-        (base32 "17ljllslhfmi80yj1336lx9pmzy2i8zdb6byky5yay1lry7s1g30"))))
+        (base32 "0z2k263rpwqrjpl7vj4qjkmmyp8mklr67qrrj46r43qynl2f958h"))))
     (properties `((upstream-name . "UsingR")))
     (build-system r-build-system)
     (arguments
@@ -936,32 +936,6 @@ matrices and vectors, ROC and PR statistics.")
      "Consistent with knitr syntax highlighting, usedthese adds a summary table of
 package & function usage to a Quarto document and enables aggregation of usage
 across a website.")
-    (license license:expat)))
-
-(define-public r-usearchlite
-  (package
-    (name "r-usearchlite")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "usearchlite" version))
-       (sha256
-        (base32 "1i43k30wmwxyqsayjrhqp2ky0y0xgdwbs3d8sq81pi81dqbgkv56"))))
-    (properties `((upstream-name . "usearchlite")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cpp11))
-    (home-page "https://github.com/aljrico/usearchlite")
-    (synopsis "Local Vector Search with 'USearch'")
-    (description
-     "This package provides a lightweight local vector index for approximate nearest
-neighbor (ANN) search using the vendored USearch library Vardanian (2023)
-<doi:10.5281/zenodo.7949416>.  Provides a simple interface for adding vectors,
-searching for nearest neighbors, and persisting indexes to disk.  Metadata
-filtering is performed in R on the candidate set returned by the C++ layer.")
     (license license:expat)))
 
 (define-public r-use
@@ -4407,13 +4381,13 @@ monotonic sort order (correctly detects and handles the same millisecond).")
 (define-public r-ulex
   (package
     (name "r-ulex")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ulex" version))
        (sha256
-        (base32 "1h379kqnnp1vvgx35q67h47fd8q9g81m234xsx5vshm3jvqakhn0"))))
+        (base32 "1h9vkwl902n1czjgfz2gdwk5z60bygwhs43llqm1r4jbhvmq8agf"))))
     (properties `((upstream-name . "ulex")))
     (build-system r-build-system)
     (arguments
@@ -4444,7 +4418,9 @@ and ignores other location references; for example, if determining the location
 of a road traffic crash from the text \"crash near [location 1] heading towards
 [location 2]\", only the coordinates of \"location 1\" would be returned.
 Moreover, accounts for differences in spelling between how a user references a
-location and how a location is captured in location dictionaries.")
+location and how a location is captured in location dictionaries.  For more
+information on the algorithm, see Milusheva et al. (2021)
+<doi:10.1371/journal.pone.0244317>.")
     (license license:expat)))
 
 (define-public r-ukpolice

@@ -14431,13 +14431,13 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
 (define-public r-discretefdr
   (package
     (name "r-discretefdr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteFDR" version))
        (sha256
-        (base32 "1p52b54fhmn15dd0666i5hn4smj8vi8qyvm06clarfaldknbai68"))))
+        (base32 "0ci7615zfpn83245qi04cc1y4c8hynz8srfv28v9kbbmgpp0xrys"))))
     (properties `((upstream-name . "DiscreteFDR")))
     (build-system r-build-system)
     (arguments
@@ -22949,23 +22949,27 @@ state/ province/ country.")
 (define-public r-dendser
   (package
     (name "r-dendser")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DendSer" version))
        (sha256
-        (base32 "1naz8sx5ksb3gqhgfsgdsf5377c96za829m7lmbpr7zlzlxg5jyf"))))
+        (base32 "1nknr71wxzx6i5284v3w892qm8cqhzhm7ya3fjbijvr3zd9p3f5z"))))
     (properties `((upstream-name . "DendSer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-seriation r-gclus))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DendSer")
     (synopsis "Dendrogram Seriation: Ordering for Visualisation")
     (description
-     "Re-arranges a dendrogram to optimize visualisation-based cost functions.")
+     "Re-arranges a dendrogram to optimize visualisation-based cost functions.  The
+methods implemented here are described in \"Advances in Dendrogram Seriation for
+Application to Visualization\", Journal of Computational and Graphical Statistics
+(2015) D. Earle and C.B. Hurley <doi:10.1080/10618600.2013.874295>.")
     (license license:gpl2)))
 
 (define-public r-dendrotools
@@ -24232,6 +24236,36 @@ stable distributions, and another one- non-parametric, using the squared
 Mahalanobis distance.  The package also contains functions for data handling and
 building of new classifiers as well as some test data set.")
     (license license:gpl3)))
+
+(define-public r-defm
+  (package
+    (name "r-defm")
+    (version "0.2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "defm" version))
+       (sha256
+        (base32 "146ww8dpwwiczbwzdxywalcbhk8zr281ilbkyxczjwcg4hi7d6bj"))))
+    (properties `((upstream-name . "defm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-barry))
+    (home-page "https://github.com/UofUEpiBio/defm")
+    (synopsis "Estimation and Simulation of Multi-Binary Response Models")
+    (description
+     "Multi-binary response models are a class of models that allow for the estimation
+of multiple binary outcomes simultaneously.  This package provides functions to
+estimate and simulate these models using the Discrete Exponential-Family Models
+[DEFM] framework.  In it, we implement the models described in Vega Yon,
+Valente, and Pugh (2023) <doi:10.48550/@code{arXiv.2211.00627>}.  DEFMs include
+Exponential-Family Random Graph Models [ERGMs], which characterize graphs using
+sufficient statistics, which is also the core of DEFMs. Using sufficient
+statistics, we can describe the data through meaningful motifs, for example,
+transitions between different states, joint distribution of the outcomes, etc.")
+    (license license:expat)))
 
 (define-public r-deflist
   (package

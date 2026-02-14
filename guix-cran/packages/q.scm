@@ -789,19 +789,19 @@ function or modules the create the visualizations).")
 (define-public r-quickoutlier
   (package
     (name "r-quickoutlier")
-    (version "0.1.0")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickOutlier" version))
        (sha256
-        (base32 "0c8c5jj8w80svaxcvhivnzfg8alhrbzjsfs8f7xsfsj9zl0b5k9b"))))
+        (base32 "0pp7wf604m7sy01k3f5jbrpaxswa6n4zsrrpaj9jfl4x2z7bjylg"))))
     (properties `((upstream-name . "quickOutlier")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-dbscan))
+    (propagated-inputs (list r-plotly r-isotree r-ggplot2 r-dbscan))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/daniellop1/quickOutlier")
     (synopsis "Detect and Treat Outliers in Data Mining")
@@ -6927,13 +6927,13 @@ adjusted.")
 (define-public r-qatarcars
   (package
     (name "r-qatarcars")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qatarcars" version))
        (sha256
-        (base32 "1gxqn0y9hfrx0m08gakq516jz4080b294jm809x26nf39fnvk93b"))))
+        (base32 "1sva66kcj7bmfiy5mj0dp1bf97lj52jd4bwxcmhghqc0qbm0xq0h"))))
     (properties `((upstream-name . "qatarcars")))
     (build-system r-build-system)
     (arguments
@@ -6945,7 +6945,8 @@ adjusted.")
      "Fuel economy, size, performance, and price data for cars in Qatar in 2025.
 Mirrors many of the columns in mtcars, but uses (1) non-US-centric makes and
 models, (2) 2025 prices, and (3) metric measurements, making it more appropriate
-for use as an example dataset outside the United States.")
+for use as an example dataset outside the United States.  For more details see
+Musgrave (2025) <doi:10.1080/15512169.2025.2572320>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-qapprox

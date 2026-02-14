@@ -5546,13 +5546,13 @@ Monte Carlo Logic Regression is described in and Kooperberg and Ruczinski (2005)
 (define-public r-logicforest
   (package
     (name "r-logicforest")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogicForest" version))
        (sha256
-        (base32 "1sf41sj9l7dfpr3giay9q84v52rscrrfh1x45njx3g9ysn3pl3i3"))))
+        (base32 "1v56zkgrvdalwalvlzaq6qx6xkc1504n03nr9rvf1jbwjx6qzkml"))))
     (properties `((upstream-name . "LogicForest")))
     (build-system r-build-system)
     (arguments
@@ -17727,13 +17727,13 @@ linear spaces and front-end tools facilitating their use in the R ecosystem.")
 (define-public r-latrend
   (package
     (name "r-latrend")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latrend" version))
        (sha256
-        (base32 "1p468y9bnifk2ady9skc6521yzg1lv50m7m7wsliq5k0j2k6vq21"))))
+        (base32 "1bdgk7d1r8iqi3bgf4bn0r0clb0x17fgnp53jd6652i4s8wh66vq"))))
     (properties `((upstream-name . "latrend")))
     (build-system r-build-system)
     (arguments

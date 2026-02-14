@@ -21664,13 +21664,13 @@ Archemedean, Elliptical, Extreme Value, and Empirical Copulae.")
 (define-public r-fco
   (package
     (name "r-fco")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FCO" version))
        (sha256
-        (base32 "1947n6kn2ylzzrv8zhk9z5pvm3dmqijw9n2p8m93ks5rm2j5qyns"))))
+        (base32 "15wzw83i8hwfa59gfbh17kjq1d82ci4phzwvywcpikry39028yvs"))))
     (properties `((upstream-name . "FCO")))
     (build-system r-build-system)
     (arguments
@@ -21679,7 +21679,6 @@ Archemedean, Elliptical, Extreme Value, and Empirical Copulae.")
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-simstandard
-                             r-semtools
                              r-rcompanion
                              r-psych
                              r-poisbinordnor
@@ -21940,36 +21939,30 @@ p-values.")
 (define-public r-fcar
   (package
     (name "r-fcar")
-    (version "1.3.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcaR" version))
        (sha256
-        (base32 "1wdi82s9hhnhsavbia1xa2rvy64mx2dgj5a8fm2xdxdj5dd6jqwh"))))
+        (base32 "16d4vs73wypn30y8dmyq2ks03h9n75hawrhark1zck6a4mv79h8y"))))
     (properties `((upstream-name . "fcaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-settings
-                             r-rstudioapi
                              r-rlang
                              r-registry
                              r-rcpp
                              r-r6
                              r-purrr
                              r-matrix
-                             r-magrittr
-                             r-igraph
                              r-glue
-                             r-ggraph
-                             r-ggplot2
-                             r-forcats
                              r-dplyr
                              r-cli
                              r-bh))
@@ -23458,6 +23451,34 @@ in cross-sectional data.  For more details, see Arellano and Bonhomme (2017)
 <doi:10.3982/ECTA14030> and Pereda-FernÃ¡ndez (2024)
 <doi:10.48550/@code{arXiv.2402.16693>}.")
     (license license:gpl3)))
+
+(define-public r-fastqr
+  (package
+    (name "r-fastqr")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastQR" version))
+       (sha256
+        (base32 "0pc0dw00lxzkz6x8n5s3rxzd036awrg9bf0h58nzn5s5g7mi0gwi"))))
+    (properties `((upstream-name . "fastQR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcppeigen r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=fastQR")
+    (synopsis "Fast QR Decomposition and Update")
+    (description
+     "Efficient algorithms for performing, updating, and removing rows or columns from
+the QR decomposition, R decomposition, or the inverse of the R decomposition of
+a matrix as rows or columns are added or removed.  It also includes functions
+for solving linear systems of equations, normal equations for linear regression
+models, and normal equations for linear regression with a RIDGE penalty.  For a
+detailed introduction to these methods, the monograph Matrix Computations (2013,
+<doi:10.1007/978-3-319-05089-8>) for complete introduction to the methods.")
+    (license license:gpl2+)))
 
 (define-public r-fastqq
   (package

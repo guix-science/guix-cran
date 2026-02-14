@@ -2216,6 +2216,38 @@ more details please visit the official site (in Chinese)
 <http://www.pullword.com/>.")
     (license license:lgpl2.0+)))
 
+(define-public r-pulasso
+  (package
+    (name "r-pulasso")
+    (version "3.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PUlasso" version))
+       (sha256
+        (base32 "03qcdhndxhwj13bbh9q5k45g8xc9jd4ajpvg27n0naqbmm43l631"))))
+    (properties `((upstream-name . "PUlasso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://arxiv.org/abs/1711.08129")
+    (synopsis "High-Dimensional Variable Selection with Presence-Only Data")
+    (description
+     "Efficient algorithm for solving PU (Positive and Unlabeled) problem in low or
+high dimensional setting with lasso or group lasso penalty.  The algorithm uses
+Maximization-Minorization and (block) coordinate descent.  Sparse calculation
+and parallel computing are supported for the computational speed-up.  See Hyebin
+Song, Garvesh Raskutti (2018) <doi:10.48550/@code{arXiv.1711.08129>}.")
+    (license license:gpl2)))
+
 (define-public r-pugmm
   (package
     (name "r-pugmm")
@@ -3047,6 +3079,37 @@ Taufemback, C.G. and Carlos, J.H. (2025). \"Positive time series regression
 models: theoretical and computational aspects\".  Computational Statistics 40,
 1185â1215. <doi:10.1007/s00180-024-01531-z>.")
     (license license:gpl3+)))
+
+(define-public r-ptsddiag
+  (package
+    (name "r-ptsddiag")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PTSDdiag" version))
+       (sha256
+        (base32 "1jlns0fs8yisidh77gwf04dzc0lkz3l767lffa8d1v6sslkb2f8m"))))
+    (properties `((upstream-name . "PTSDdiag")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-modelr r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/WeidmannL/PTSDdiag")
+    (synopsis "Optimize PTSD Diagnostic Criteria")
+    (description
+     "This package provides tools for analyzing and optimizing PTSD (Post-Traumatic
+Stress Disorder) diagnostic criteria using PCL-5 (PTSD Checklist for DSM-5)
+data.  Functions identify optimal subsets of PCL-5 items that maintain
+diagnostic accuracy while reducing assessment burden.  Includes tools for both
+hierarchical (cluster-based) and non-hierarchical symptom combinations,
+calculation of diagnostic metrics, and comparison with standard DSM-5 criteria.
+Model validation is conducted using holdout and cross-validation methods to
+assess robustness and generalizability of the results.  For more details see
+Weidmann et al. (2025) <doi:10.31219/osf.io/6rk72_v1>.")
+    (license license:expat)))
 
 (define-public r-ptprocess
   (package
@@ -22992,13 +23055,13 @@ from vectors and to include the length of a vector in natural language.")
 (define-public r-plsvarsel
   (package
     (name "r-plsvarsel")
-    (version "0.9.13")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsVarSel" version))
        (sha256
-        (base32 "0i697h84apqjm42f07b892iwh320br00mglkl7gw2kyysxmada8y"))))
+        (base32 "1993xv9pnimqdy3cdlgfc70wj7rpq41jnww88r00480k4xq6b5cc"))))
     (properties `((upstream-name . "plsVarSel")))
     (build-system r-build-system)
     (arguments
@@ -43030,19 +43093,19 @@ outsourced into a separate package.")
 (define-public r-paran
   (package
     (name "r-paran")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paran" version))
        (sha256
-        (base32 "0yz1gxhf8af64k20smrdc11nzkvllv76w86cw07c6i7fnw0niw79"))))
+        (base32 "1kyg8c3bx6j65v3pbxpzs5qdji94waqhck038xjiybzizizh2j31"))))
     (properties `((upstream-name . "paran")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass))
+    (propagated-inputs (list r-rlang r-mass))
     (home-page "https://alexisdinno.com/Software/index.shtml#paran")
     (synopsis "Horn's Test of Principal Components/Factors")
     (description

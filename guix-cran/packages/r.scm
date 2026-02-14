@@ -3200,13 +3200,13 @@ ecosystems.<https://github.com/@code{ShulanSun/rTRIPLEX_CW_Flux>}.")
 (define-public r-rtrim
   (package
     (name "r-rtrim")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtrim" version))
        (sha256
-        (base32 "14i81rd4iyych1yrqf3y1b3nf5hrpfjfdb4xync2v4mqqrhx0cmx"))))
+        (base32 "1pi5imb22xnlqw9fpdmva30awa1z7fpygs6lj4ycyp221rf3rg6z"))))
     (properties `((upstream-name . "rtrim")))
     (build-system r-build-system)
     (arguments
@@ -5047,13 +5047,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "1n02wnz5xb51sjsyp8gnbrnis4wwhzf9qapvihmmpxfjij9lff7x"))))
+        (base32 "08jf8rp9yxykw8rfi2ifj71a41misflz4az8acbh0im3ipmmszf8"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -17256,6 +17256,31 @@ the Copas-like selection model of Ning et al. (2017)
 <doi:10.1093/biostatistics/kxx004>.")
     (license license:gpl3)))
 
+(define-public r-robustarima
+  (package
+    (name "r-robustarima")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robustarima" version))
+       (sha256
+        (base32 "1f1bp9mqkrz91j1jfq2w4wp1dps0rni9l0jpa0r0pflbqlhjhdz3"))))
+    (properties `((upstream-name . "robustarima")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splustimeseries r-splustimedate))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/spkaluzny/robustarima")
+    (synopsis "Robust ARIMA Modeling")
+    (description
+     "This package provides functions for fitting a linear regression model with ARIMA
+errors using a filtered tau-estimate.  The methodology is described in Maronna
+et al (2017, ISBN:9781119214687).")
+    (license license:bsd-3)))
+
 (define-public r-robustanova
   (package
     (name "r-robustanova")
@@ -20255,50 +20280,6 @@ to predict, from the model's perspective, the future.  For an example, see
 Grange et al. (2021) <doi:10.5194/acp-2020-1171>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-rmvp
-  (package
-    (name "r-rmvp")
-    (version "1.4.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rMVP" version))
-       (sha256
-        (base32 "1ah0v8b780s9b8vz3j6ms9p99mh1dl26v78gdk2bc2dp8v701w8c"))))
-    (properties `((upstream-name . "rMVP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rhpcblasctl
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-bigmemory
-                             r-bh))
-    (home-page "https://github.com/xiaolei-lab/rMVP")
-    (synopsis
-     "Memory-Efficient, Visualize-Enhanced, Parallel-Accelerated GWAS Tool")
-    (description
-     "This package provides a memory-efficient, visualize-enhanced,
-parallel-accelerated Genome-Wide Association Study (GWAS) tool.  It can (1)
-effectively process large data, (2) rapidly evaluate population structure, (3)
-efficiently estimate variance components several algorithms, (4) implement
-parallel-accelerated association tests of markers three methods, (5) globally
-efficient design on GWAS process computing, (6) enhance visualization of related
-information. @code{rMVP} contains three models GLM (Alkes Price (2006)
-<DOI:10.1038/ng1847>), MLM (Jianming Yu (2006) <DOI:10.1038/ng1702>) and
-@code{FarmCPU} (Xiaolei Liu (2016) <doi:10.1371/journal.pgen.1005767>); variance
-components estimation methods EMMAX (Hyunmin Kang (2008)
-<DOI:10.1534/genetics.107.080101>;), @code{FaSTLMM} (method: Christoph Lippert
-(2011) <DOI:10.1038/nmeth.1681>, R implementation from GAPIT2': You Tang and
-Xiaolei Liu (2016) <DOI:10.1371/journal.pone.0107684> and SUPER': Qishan Wang
-and Feng Tian (2014) <DOI:10.1371/journal.pone.0107684>), and HE regression
-(Xiang Zhou (2017) <DOI:10.1214/17-AOAS1052>).")
-    (license license:asl2.0)))
 
 (define-public r-rmvl
   (package
@@ -38514,6 +38495,41 @@ spatial vector objects (regions) and spatial raster objects (cells with values).
 <doi:10.1080/13658816.2021.1893324>).")
     (license license:expat)))
 
+(define-public r-regimechange
+  (package
+    (name "r-regimechange")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RegimeChange" version))
+       (sha256
+        (base32 "1mm15wb6w2whl5lcjr5p5v3l2fb3f2qgmg10k669h9yssb793np1"))))
+    (properties `((upstream-name . "RegimeChange")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/IsadoreNabi/RegimeChange")
+    (synopsis "Comprehensive Regime Change Detection in Time Series")
+    (description
+     "This package provides a unified framework for detecting regime changes
+(changepoints) in time series data.  Implements both frequentist methods
+including Cumulative Sum (CUSUM, Page (1954) <doi:10.1093/biomet/41.1-2.100>),
+Pruned Exact Linear Time (PELT, Killick, Fearnhead, and Eckley (2012)
+<doi:10.1080/01621459.2012.737745>), Binary Segmentation, and Wild Binary
+Segmentation, as well as Bayesian methods such as Bayesian Online Changepoint
+Detection (BOCPD, Adams and @code{MacKay} (2007)
+<doi:10.48550/@code{arXiv.0710.3742>} and Shiryaev-Roberts.  Supports offline
+analysis for retrospective detection and online monitoring for real-time
+surveillance.  Provides rigorous uncertainty quantification through confidence
+intervals and posterior distributions.  Handles univariate and multivariate
+series with detection of changes in mean, variance, trend, and distributional
+properties.")
+    (license license:expat)))
+
 (define-public r-regextable
   (package
     (name "r-regextable")
@@ -53904,6 +53920,35 @@ richness and species abundance distributions.  Functions are described in L.
 Cayuela, N.J. Gotelli & R.K. Colwell (2015) <doi:10.1890/14-1261.1>.")
     (license license:gpl2+)))
 
+(define-public r-rareflow
+  (package
+    (name "r-rareflow")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rareflow" version))
+       (sha256
+        (base32 "0v4faw4bnxrzrzchp295yjvg613xxnwzzsc0cl94l6q4al9hsbhc"))))
+    (properties `((upstream-name . "rareflow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rareflow")
+    (synopsis
+     "Variational Flow-Based Inference for Rare Events and Large Deviations")
+    (description
+     "Variational flow-based methods for modeling rare events using KullbackâLeibler
+(KL) divergence, normalizing flows, Girsanov change of measure, and
+FreidlinâWentzell action functionals.  The package provides tools for
+rare-event inference, minimum-action paths, and quasi-potential computation in
+stochastic dynamical systems.  Methods are based on Rezende and Mohamed (2015)
+<doi:10.48550/@code{arXiv.1505.05770>}, Girsanov (1960) <doi:10.1137/1105027>,
+and Freidlin and Wentzell (2012, ISBN:978-0387955477).")
+    (license license:gpl3+)))
+
 (define-public r-rarecomb
   (package
     (name "r-rarecomb")
@@ -57623,33 +57668,6 @@ neutron/photon/electron transport (Werner et.  al. (2018)
      "Generate random user data from the Random User Generator API. For more
 information, see <https://randomuser.me/>.")
     (license license:expat)))
-
-(define-public r-radonc
-  (package
-    (name "r-radonc")
-    (version "1.1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RadOnc" version))
-       (sha256
-        (base32 "0c6ars9xcviqcm022dn2p3irck3dmhz399vbrlb2dwg87s3k89yx"))))
-    (properties `((upstream-name . "RadOnc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ptinpoly r-oro-dicom))
-    (home-page "https://cran.r-project.org/package=RadOnc")
-    (synopsis "Analytical Tools for Radiation Oncology")
-    (description
-     "Designed for the import, analysis, and visualization of dosimetric and
-volumetric data in Radiation Oncology, the tools herein enable import of
-dose-volume histogram information from multiple treatment planning system
-platforms and 3D structural representations and dosimetric information from
-DICOM-RT files.  These tools also enable subsequent visualization and
-statistical analysis of these data.")
-    (license license:gpl2+)))
 
 (define-public r-radlibs
   (package

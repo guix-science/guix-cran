@@ -4896,13 +4896,13 @@ download, organize, and maintain data from the \"Tehran Stock Exchange\" and
 (define-public r-tseriestarma
   (package
     (name "r-tseriestarma")
-    (version "0.5-1")
+    (version "0.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseriesTARMA" version))
        (sha256
-        (base32 "1dgsxsykfj2xgk730751v7gkrzdjjss9n6vqv7cm9bjbp6wr33ik"))))
+        (base32 "0h0im9qfcxkd45r0yhkrmzcis796y283npk879wqpfvn3c30lns9"))))
     (properties `((upstream-name . "tseriesTARMA")))
     (build-system r-build-system)
     (arguments
@@ -4927,9 +4927,8 @@ model fitting and forecasting, including robust estimators, see Goracci et al.
 JBES (2025) <doi:10.1080/07350015.2024.2412011>; tests for threshold effects,
 see Giannerini et al. @code{JoE} (2024) <doi:10.1016/j.jeconom.2023.01.004>,
 Goracci et al.  Statistica Sinica (2023) <doi:10.5705/ss.202021.0120>, Angelini
-et al. (2024) <doi:10.48550/@code{arXiv.2308.00444>}; unit-root tests based on
-TARMA models, see Chan et al.  Statistica Sinica (2024)
-<doi:10.5705/ss.202022.0125>.")
+et al. (2024) OBES <doi:10.1111/obes.12647>; unit-root tests based on TARMA
+models, see Chan et al.  Statistica Sinica (2024) <doi:10.5705/ss.202022.0125>.")
     (license license:gpl2+)))
 
 (define-public r-tseriesmma
@@ -8698,13 +8697,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.11.1")
+    (version "2.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "1scr3fddgpwkg8x3av3x504kgmr2xcpy31cwi76p99v8rp0a0ik4"))))
+        (base32 "0r1ds2xpp873bhgqvy4gx1737prs7nmcxdda7p4ng5rbccahj2yk"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (arguments
@@ -16447,6 +16446,33 @@ use is the planning, analysis and interpretation of extrapolation studies in
 pediatric drug development, but applicability is generally wider.")
     (license license:asl2.0)))
 
+(define-public r-tipitaka
+  (package
+    (name "r-tipitaka")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tipitaka" version))
+       (sha256
+        (base32 "11hbkrf3kvpc974fbj66sly88wzw8krgv3dsbjlnrxkww3vravl1"))))
+    (properties `((upstream-name . "tipitaka")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-cpp11))
+    (home-page "https://cran.r-project.org/package=tipitaka")
+    (synopsis "Data and Tools for Analyzing the Pali Canon")
+    (description
+     "This package provides access to the complete Pali Canon, or Tipitaka, the
+canonical scripture for Theravadin Buddhists worldwide.  Based on the Chattha
+Sangayana Tipitaka version 4 (Vipassana Research Institute, 1990).  Includes
+word frequency data and tools for Pali string sorting.  For a lemmatized
+critical edition with sutta-level granularity, see the companion package
+tipitaka.critical'.")
+    (license license:cc0)))
+
 (define-public r-tipdatingbeast
   (package
     (name "r-tipdatingbeast")
@@ -20502,6 +20528,40 @@ frame using this package.")
     (home-page "https://github.com/colearendt/tidyjson")
     (synopsis "Tidy Complex 'JSON'")
     (description "Turn complex JSON data into tidy data frames.")
+    (license license:expat)))
+
+(define-public r-tidyild
+  (package
+    (name "r-tidyild")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyILD" version))
+       (sha256
+        (base32 "1i5a3ymrplkvd1kzgmxjyfpsi5biip75y2a2jq6p8fwigz6sj9d2"))))
+    (properties `((upstream-name . "tidyILD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-nlme
+                             r-lubridate
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tidyILD")
+    (synopsis "Tidy Intensive Longitudinal Data Analysis")
+    (description
+     "An opinionated, tidyverse-native toolkit for intensive longitudinal data (ILD).
+Encodes time structure, enforces within-between decomposition, provides
+spacing-aware lags, and integrates diagnostics and visualization.  Use
+@code{ild_prepare()}, @code{ild_center()}, @code{ild_lag()}, and related
+functions for a unified pipeline from raw EMA/diary data to interpretable
+models.")
     (license license:expat)))
 
 (define-public r-tidyhydat
@@ -27370,34 +27430,6 @@ Team within Google's Machine Intelligence research organization for the purposes
 of conducting machine learning and deep neural networks research, but the system
 is general enough to be applicable in a wide variety of other domains as well.")
     (license license:asl2.0)))
-
-(define-public r-tensorevd
-  (package
-    (name "r-tensorevd")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tensorEVD" version))
-       (sha256
-        (base32 "0gzl02y4zwirlk07b7aavrz17djk5qqbgsfsh00qbj8zisf6fjkk"))))
-    (properties `((upstream-name . "tensorEVD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/MarcooLopez/tensorEVD")
-    (synopsis
-     "Fast Algorithm to Factorize High-Dimensional Tensor Product Matrices")
-    (description
-     "Here we provide tools for the computation and factorization of high-dimensional
-tensor products that are formed by smaller matrices.  The methods are based on
-properties of Kronecker products (Searle 1982, p.  265, ISBN-10: 0470009616).
-We evaluated this methodology by benchmark testing and illustrated its use in
-Gaussian Linear Models ('Lopez-Cruz et al., 2024')
-<doi:10.1093/g3journal/jkae001>.")
-    (license license:gpl3)))
 
 (define-public r-tensorclustering
   (package

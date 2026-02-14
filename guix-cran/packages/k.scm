@@ -5583,13 +5583,13 @@ for keras models.")
 (define-public r-keras3
   (package
     (name "r-keras3")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keras3" version))
        (sha256
-        (base32 "0lyf6gva3lvz2zv7rf7a6ah89qf25hf842c8a1pw969r234ldmhk"))))
+        (base32 "0lw5mm2dgbcljvrlwia81y09zv567wswxgsc89djqmpky0klvisy"))))
     (properties `((upstream-name . "keras3")))
     (build-system r-build-system)
     (arguments

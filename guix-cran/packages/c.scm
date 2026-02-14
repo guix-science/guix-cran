@@ -27033,6 +27033,37 @@ the R console.  This game is inspired by Mastermind, a game that became popular
 in the 1970s.  Can you break the code?")
     (license license:gpl3)))
 
+(define-public r-codebookr
+  (package
+    (name "r-codebookr")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "codebookr" version))
+       (sha256
+        (base32 "0y5c1jfgqcgw336r8v3w1v1ixamf6231l1g6nkx1vjicrvdmd33z"))))
+    (properties `((upstream-name . "codebookr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-officer
+                             r-haven
+                             r-flextable
+                             r-dplyr))
+    (home-page "https://github.com/brad-cannell/codebookr")
+    (synopsis "Create Codebooks from Data Frames")
+    (description
+     "Quickly and easily create codebooks (i.e.  data dictionaries) directly from a
+data frame.")
+    (license license:expat)))
+
 (define-public r-code
   (package
     (name "r-code")
@@ -28348,13 +28379,13 @@ information from the Chinese ID number.")
 (define-public r-cnefetools
   (package
     (name "r-cnefetools")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnefetools" version))
        (sha256
-        (base32 "0drl4psmxjs5s6msgz6jsn07h4rfvlbv7g7w1kl4gxl5rkq0jnfv"))))
+        (base32 "0sln5l9g4bmqx0i28872x0ggny7yzc9br95hz2ipn2ag4cqn9lnp"))))
     (properties `((upstream-name . "cnefetools")))
     (build-system r-build-system)
     (arguments
@@ -42049,29 +42080,6 @@ produces PDFs of individual and aggregate AGP plots.  Please visit
 new-user guide.")
     (license license:cc0)))
 
-(define-public r-cglm
-  (package
-    (name "r-cglm")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cglm" version))
-       (sha256
-        (base32 "1r3wrds5lbirzzqsi12prwykxa5361jb95pq7j95nlp6y8kcb94j"))))
-    (properties `((upstream-name . "cglm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-nleqslv r-data-table))
-    (home-page "https://cran.r-project.org/package=cglm")
-    (synopsis "Fits Conditional Generalized Linear Models")
-    (description
-     "Estimates the ratio of the regression coefficients and the dispersion parameter
-in conditional generalized linear models for clustered data.")
-    (license license:gpl2+)))
-
 (define-public r-cglasso
   (package
     (name "r-cglasso")
@@ -43727,6 +43735,35 @@ data frames.")
      "This package provides functions and Data to support Context Driven Exploratory
 Projection Pursuit.")
     (license license:gpl3)))
+
+(define-public r-cepiweek
+  (package
+    (name "r-cepiweek")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cepiweek" version))
+       (sha256
+        (base32 "0in3vpg31k3c1rgj9vgpm43sn4yjdwg4rv53fnrk9sj80z7hvf1s"))))
+    (properties `((upstream-name . "cepiweek")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lubridate))
+    (home-page "https://cran.r-project.org/package=cepiweek")
+    (synopsis
+     "Continuous Epidemiological Week Indexing for Time-Series Analysis")
+    (description
+     "This package provides a simple algorithm to generate a continuous
+epidemiological week index from date variables in a dataframe.  Weeks are
+computed as sequential 7-day intervals starting from the earliest observed date.
+ They do not reset at calendar year boundaries and are not ISO 8601 nor MMWR
+calendar weeks.  The approach is intended for epidemiological modeling and
+time-series analysis where temporal continuity is required.  The generated weeks
+are sequential and do not reset at calendar year boundaries.")
+    (license license:expat)))
 
 (define-public r-cepiigeodist
   (package
@@ -46177,6 +46214,45 @@ for an overview.")
 <https://mohcontacttracing.my.salesforce.com>.")
     (license license:expat)))
 
+(define-public r-ccmnet
+  (package
+    (name "r-ccmnet")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CCMnet" version))
+       (sha256
+        (base32 "05xwp61ac8a862apkdk67qhz7z6yxbpvq0993p21qfh4c9bg159a"))))
+    (properties `((upstream-name . "CCMnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rbest
+                             r-network
+                             r-mvtnorm
+                             r-kableextra
+                             r-intergraph
+                             r-igraph
+                             r-gtools
+                             r-ggplot2
+                             r-ergm
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CCMnet")
+    (synopsis "Congruence Class Models for Networks")
+    (description
+     "This package provides an implementation of Congruence Class Models for
+generating networks.  It facilitates sampling networks based on specific
+topological properties and attribute mixing patterns using a Markov Chain Monte
+Carlo framework.  The implementation builds upon code from the ergm package; see
+Handcock et al. (2008) <doi:10.18637/jss.v024.i01>.")
+    (license license:gpl3)))
+
 (define-public r-ccmmr
   (package
     (name "r-ccmmr")
@@ -46746,19 +46822,19 @@ discussion of the methodology.")
 (define-public r-cbtf
   (package
     (name "r-cbtf")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CBTF" version))
        (sha256
-        (base32 "0fqn5mnrfk639v9mdsqc7d8vfswf6l0n19z0c0z1v84ba1ziv56y"))))
+        (base32 "1bn8azjjba136lzih3lpj2f36n43syf3mk4ysydkx7imgqva6cf4"))))
     (properties `((upstream-name . "CBTF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-cli))
+    (propagated-inputs (list r-rlang r-mirai r-cli))
     (home-page "https://mcol.github.io/caught-by-the-fuzz/")
     (synopsis "Caught by the Fuzz! - A Minimalistic Fuzz-Test Runner")
     (description

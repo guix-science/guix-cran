@@ -18011,13 +18011,13 @@ users about returned objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "147prvgdnn0jhy4cz4njmidv0p0wyd7h6mcnv0y6423x80pb8acn"))))
+        (base32 "0zrd05rnbk7ns8ifzqvqkk0dzb6x53yddh56ndmmqblrk2jnqydk"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (arguments
@@ -22392,35 +22392,6 @@ at molecular markers using the maximum-likelihood method described in Schneider
 various formats, and perform maximum-likelihood estimation on the imported data
 by the package's @code{moimle()} function.")
     (license license:gpl3)))
-
-(define-public r-mlmodelselection
-  (package
-    (name "r-mlmodelselection")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MLModelSelection" version))
-       (sha256
-        (base32 "1qfy2rfx2nvkwisl9wwllqsq2qhqzsdmrh90z5zn5qs07d0305wn"))))
-    (properties `((upstream-name . "MLModelSelection")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppdist r-rcpparmadillo r-rcpp r-mass))
-    (home-page "https://github.com/kuojunglee/")
-    (synopsis "Model Selection in Multivariate Longitudinal Data Analysis")
-    (description
-     "An efficient Gibbs sampling algorithm is developed for Bayesian multivariate
-longitudinal data analysis with the focus on selection of important elements in
-the generalized autoregressive matrix.  It provides posterior samples and
-estimates of parameters.  In addition, estimates of several information criteria
-such as Akaike information criterion (AIC), Bayesian information criterion
-(BIC), deviance information criterion (DIC) and prediction accuracy such as the
-marginal predictive likelihood (MPL) and the mean squared prediction error
-(MSPE) are provided for model selection.")
-    (license license:gpl2)))
 
 (define-public r-mlmm-gwas
   (package
@@ -31925,6 +31896,46 @@ summary statistics, and visualization tools to facilitate interpretation.  For
 more details see van Krugten et al.(2022) <doi:10.1007/s11136-021-02935-w>.")
     (license license:expat)))
 
+(define-public r-mhpfilter
+  (package
+    (name "r-mhpfilter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mhpfilter" version))
+       (sha256
+        (base32 "060p4y8bjsbq6i7i1ixfddjmn19rscyxah8g44zkmr10ccmqkvqa"))))
+    (properties `((upstream-name . "mhpfilter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2 r-data-table
+                             r-collapse))
+    (native-inputs (list r-knitr))
+    (home-page "https://myaseen208.com/mhpfilter/")
+    (synopsis
+     "Modified Hodrick-Prescott Filter with Optimal Smoothing Parameter Selection")
+    (description
+     "High-performance implementation of the Modified Hodrick-Prescott (HP) Filter for
+decomposing macroeconomic time series into trend and cyclical components.  Based
+on the methodology of Choudhary, Hanif and Iqbal (2014)
+<doi:10.1080/00036846.2014.894631> \"On smoothing macroeconomic time series using
+the modified HP filter\", which uses generalized cross-validation (GCV) to
+automatically select the optimal smoothing parameter lambda, following
+@code{McDermott} (1997) \"An automatic method for choosing the smoothing
+parameter in the HP filter\" (as described in Coe and @code{McDermott} (1997)
+<doi:10.2307/3867497>).  Unlike the standard HP filter that uses fixed lambda
+values (1600 for quarterly, 100 for annual data), this package estimates
+series-specific lambda values that minimize the GCV criterion.  Implements
+efficient C++ routines via @code{RcppArmadillo} for fast computation, supports
+batch processing of multiple series, and provides comprehensive visualization
+tools using ggplot2'.  Particularly useful for cross-country macroeconomic
+comparisons, business cycle analysis, and when the appropriate smoothing
+parameter is uncertain.")
+    (license license:expat)))
+
 (define-public r-mhorseshoe
   (package
     (name "r-mhorseshoe")
@@ -33232,6 +33243,48 @@ component GARCH models\" by Conrad and Kleen (2020, <doi:10.1002/jae.2742>).  Th
 GARCH-MIDAS model decomposes the conditional variance of (daily) stock returns
 into a short- and long-term component, where the latter may depend on an
 exogenous covariate sampled at a lower frequency.")
+    (license license:expat)))
+
+(define-public r-mff
+  (package
+    (name "r-mff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MFF" version))
+       (sha256
+        (base32 "0636knq37hbaz8970ib9lifbf07j6a2b573szxz7f37d74lakpry"))))
+    (properties `((upstream-name . "MFF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-randomforest
+                             r-ppclust
+                             r-lightgbm
+                             r-glmnet
+                             r-e1071))
+    (home-page "https://cran.r-project.org/package=MFF")
+    (synopsis "Meta Fuzzy Functions")
+    (description
+     "This package implements Meta Fuzzy Functions (MFFs) for regression Tak and Ucan
+(2026) <doi:10.1016/j.asoc.2026.114592> by aggregating predictions from multiple
+base learners using membership weights learned in the prediction space of
+validation set.  The package supports fuzzy and crisp meta-ensemble structures
+via Fuzzy C-Means (FCM) Tak (2018) <doi:10.1016/j.asoc.2018.08.009>,
+Possibilistic FCM (PFCM) Tak (2021) <doi:10.1016/j.ins.2021.01.024>, and
+k-means, and provides a workflow to (i) generate validation/test prediction
+matrices from common regression learners (linear and penalized regression via
+glmnet', random forests, gradient boosting with xgboost and lightgbm'), (ii) fit
+cluster-wise meta fuzzy functions and compute membership-based weights, (iii)
+tune clustering-related hyperparameters (number of clusters/functions, fuzziness
+exponent, possibilistic regularization) via grid search on validation loss, and
+(iv) predict on new/test prediction matrices and evaluate performance using
+standard regression metrics (MAE, RMSE, MAPE, SMAPE, MSE, @code{MedAE}).  This
+enables flexible, interpretable ensemble regression where different base models
+contribute to different meta components according to learned memberships.")
     (license license:expat)))
 
 (define-public r-mfdp
@@ -35699,44 +35752,6 @@ algorithm that preserves ending vowels.  Useful for name matching processing
 preserving gender information carried generally by ending vowels in Portuguese.
 Mation (2025) <doi:10.6082/uchicago.15104>.")
     (license license:expat)))
-
-(define-public r-metapack
-  (package
-    (name "r-metapack")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metapack" version))
-       (sha256
-        (base32 "17j3xivpyq17is5vzmca9zck6dryzfnrzddvppik4ml3xq122br9"))))
-    (properties `((upstream-name . "metapack")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-gridextra
-                             r-ggplot2
-                             r-formula
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://events.stat.uconn.edu/metapack/")
-    (synopsis "Bayesian Meta-Analysis and Network Meta-Analysis")
-    (description
-     "This package contains functions performing Bayesian inference for meta-analytic
-and network meta-analytic models through Markov chain Monte Carlo algorithm.
-Currently, the package implements Hui Yao, Sungduk Kim, Ming-Hui Chen, Joseph G.
-Ibrahim, Arvind K. Shah, and Jianxin Lin (2015)
-<doi:10.1080/01621459.2015.1006065> and Hao Li, Daeyoung Lim, Ming-Hui Chen,
-Joseph G. Ibrahim, Sungduk Kim, Arvind K. Shah, Jianxin Lin (2021)
-<doi:10.1002/sim.8983>.  For maximal computational efficiency, the Markov chain
-Monte Carlo samplers for each model, written in C++, are fine-tuned.  This
-software has been developed under the auspices of the National Institutes of
-Health and Merck & Co., Inc., Kenilworth, NJ, USA.")
-    (license license:gpl3+)))
 
 (define-public r-metansue
   (package
@@ -40357,13 +40372,13 @@ were programed by several mlr developers.")
 (define-public r-measurer
   (package
     (name "r-measurer")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "measureR" version))
        (sha256
-        (base32 "0daf07a1lrc6zy0c4rmxhc68fjin20fsd5ji1iv8yf0b232f8qlc"))))
+        (base32 "1mxaq5vi9h4ck82397gfm9v7lk0pq2w1x6i3nkiyyk6vvnc79mx0"))))
     (properties `((upstream-name . "measureR")))
     (build-system r-build-system)
     (arguments
@@ -46028,13 +46043,13 @@ BEAST2 package.  This package allows to work with BEAST2 packages from R'.")
 (define-public r-mau
   (package
     (name "r-mau")
-    (version "0.1.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mau" version))
        (sha256
-        (base32 "1wgiai8f1kbjh9hfwv4m0kavd44ib5xb33p8m16zpawnw14m7sj5"))))
+        (base32 "1f2b41zbhha6cqhazr5rvwjrmzs1wj2p5ag2cdkg71yd98spnirz"))))
     (properties `((upstream-name . "mau")))
     (build-system r-build-system)
     (arguments
@@ -46055,7 +46070,9 @@ BEAST2 package.  This package allows to work with BEAST2 packages from R'.")
 decision models based in Multi Attribute Utility Theory (MAUT).  Can process and
 evaluate local risk aversion utilities for a set of indexes, compute utilities
 and weights for the whole decision tree defining the decision model and simulate
-weights employing Dirichlet distributions under addition constraints in weights.")
+weights employing Dirichlet distributions under addition constraints in weights.
+ Also includes other rating analysis methods as for example the Colley,
+Offensive - Defensive ratings and the ranking aggregation with Borda count.")
     (license license:lgpl3)))
 
 (define-public r-matur
@@ -48030,13 +48047,13 @@ variance estimator is presented in Mashreghi et al. (2016)
 (define-public r-mascarade
   (package
     (name "r-mascarade")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mascarade" version))
        (sha256
-        (base32 "0i9j421nlwznng3kx870by765dyha6zrby4zqrwlyjjs79vcyyah"))))
+        (base32 "1hgn9lfm507c4c8y5m424ia01976wzq8dmfapbgwsccl86bqaaq8"))))
     (properties `((upstream-name . "mascarade")))
     (build-system r-build-system)
     (arguments
@@ -48046,7 +48063,6 @@ variance estimator is presented in Mashreghi et al. (2016)
                              r-systemfonts
                              r-spatstat-geom
                              r-spatstat-explore
-                             r-scales
                              r-rlang
                              r-polyclip
                              r-lifecycle

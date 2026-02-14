@@ -5623,13 +5623,13 @@ ordered curve for assessing mean structures.")
 (define-public r-assertions
   (package
     (name "r-assertions")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assertions" version))
        (sha256
-        (base32 "1kg6k45ff0s486l78vw3576jjy3h24kgd5i6palgvann82dqp0ls"))))
+        (base32 "0cbjhm613l4s4s61kjgpnrhdr6g0s1hhdir1lckqlbf41l290iyh"))))
     (properties `((upstream-name . "assertions")))
     (build-system r-build-system)
     (arguments
@@ -9904,13 +9904,13 @@ measurement of a chemical component.")
 (define-public r-aquaenv
   (package
     (name "r-aquaenv")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AquaEnv" version))
        (sha256
-        (base32 "07yx7mbslqgqg7ky67n3xfhskaj7s3w5mvl7xkih48xbsdlmxi4l"))))
+        (base32 "1qv2pqar02j3is4y13azdbcjdww6730pbj5aa5r86qdy3ladwr5g"))))
     (properties `((upstream-name . "AquaEnv")))
     (build-system r-build-system)
     (arguments
@@ -25589,13 +25589,13 @@ score-based signal detection approaches are also supplied.  See Courtois et al
 (define-public r-adapt3
   (package
     (name "r-adapt3")
-    (version "2.0.0")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adapt3" version))
        (sha256
-        (base32 "18mrgqn8329nym4zxdccx2n1y1b8s5yr8dzq4ikfm4xn8wbfs8rw"))))
+        (base32 "0nm7dj0h6z9g7kxnpvdylh519ls0zz0z3wdv7xrz47njvr9h2ngf"))))
     (properties `((upstream-name . "adapt3")))
     (build-system r-build-system)
     (arguments

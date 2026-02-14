@@ -6057,13 +6057,13 @@ GonzÃ¡lez-RodrÃ­guez et at (2023) <https://inria.hal.science/hal-04362876v1>
 (define-public r-evcgsampler
   (package
     (name "r-evcgsampler")
-    (version "0.9.2")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eVCGsampler" version))
        (sha256
-        (base32 "1sa70i9ykr5v8qayn61dkksclcdjqbkkb900y0c40zjqh5bkk676"))))
+        (base32 "10apbf0z24gc33khs542yy8s13c81nga5w2821zq82wjjcqbscpa"))))
     (properties `((upstream-name . "eVCGsampler")))
     (build-system r-build-system)
     (arguments
@@ -6071,7 +6071,7 @@ GonzÃ¡lez-RodrÃ­guez et at (2023) <https://inria.hal.science/hal-04362876v1>
       #:tests? #f))
     (propagated-inputs (list r-patchwork r-osqp r-ggplot2 r-ggforce))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=eVCGsampler")
+    (home-page "https://github.com/Sanofi-Public/eVCGsampler")
     (synopsis "VCG Sampling using Energy-Based Covariate Balancing")
     (description
      "This package provides a principled framework for sampling Virtual Control Group
@@ -9304,6 +9304,32 @@ model is an exponential family distribution on the space of partitions (sets of
 non-overlapping groups) and is called in reference to the Exponential Random
 Graph Models (ERGM) for networks.")
     (license license:gpl3+)))
+
+(define-public r-erpeq
+  (package
+    (name "r-erpeq")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ERPeq" version))
+       (sha256
+        (base32 "1619j6fgsg594fdbv9qk64rw2yqsy7wyj8qnwmpnmv66gxc5mqaq"))))
+    (properties `((upstream-name . "ERPeq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-rmutil r-pracma r-invgamma))
+    (home-page "https://cran.r-project.org/package=ERPeq")
+    (synopsis "Probabilistic Hazard Assessment")
+    (description
+     "Computes the probability density and cumulative distribution functions of
+fourteen distributions used for the probabilistic hazard assessment.  Estimates
+the model parameters of the distributions using the maximum likelihood and
+reports the goodness-of-fit statistics.  The recurrence interval estimations of
+earthquakes are computed for each distribution.")
+    (license license:gpl3)))
 
 (define-public r-erp-easy
   (package
@@ -24284,19 +24310,20 @@ change.  Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.
 (define-public r-ecocleanr
   (package
     (name "r-ecocleanr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EcoCleanR" version))
        (sha256
-        (base32 "0zqfl6wkx5cbqkxpbkb7qzz03c9rqnbgv3plyli4dhz15bfd64k4"))))
+        (base32 "1h1ix6rc56hnzbq7q07di529w3wnylk14wp6iks39gvgprk0a2ap"))))
     (properties `((upstream-name . "EcoCleanR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-worrms
+                             r-tidyr
                              r-terra
                              r-sf
                              r-sdmpredictors
@@ -24308,15 +24335,17 @@ change.  Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.
                              r-geodata
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://sonipri.github.io/EcoCleanR/")
+    (home-page "https://github.com/sonipri/EcoCleanR")
     (synopsis
-     "EcoCleanR: Enhancing Data Quality of Biogeographic Ranges with Application for Marine Invertebrates")
+     "Enhancing Data Quality of Biogeographic Ranges with Application for Marine Invertebrates")
     (description
      "This package provides step-by-step automation for integrating biodiversity data
 from multiple online aggregators, merging and cleaning datasets while addressing
 challenges such as taxonomic inconsistencies, georeferencing issues, and spatial
 or environmental outliers.  Includes functions to extract environmental data and
-to define the biogeographic ranges in which species are most likely to occur.")
+to define the biogeographic ranges in which species are most likely to occur.
+For methodological details see the associated publication.<doi:
+10.1002/ecog.08203>.")
     (license license:expat)))
 
 (define-public r-ecochange

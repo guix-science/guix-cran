@@ -7276,33 +7276,6 @@ et al. (2015) <doi:10.1017/CBO9781107337855> for details on best-worst scaling,
 and Aizaki and Fogarty (2023) <doi:10.1016/j.jocm.2022.100394> for the package.")
     (license license:gpl2+)))
 
-(define-public r-support
-  (package
-    (name "r-support")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "support" version))
-       (sha256
-        (base32 "1n1ckvxagbh9xr8r1anf3y6kb0j10ir332019wxd34mm67can62z"))))
-    (properties `((upstream-name . "support")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-randtoolbox r-bh))
-    (home-page "https://cran.r-project.org/package=support")
-    (synopsis "Support Points")
-    (description
-     "The functions @code{sp()} and @code{sp_seq()} compute the support points in Mak
-and Joseph (2018) <DOI:10.1214/17-AOS1629>.  Support points can be used as a
-representative sample of a desired distribution, or a representative reduction
-of a big dataset (e.g., an \"optimal\" thinning of Markov-chain Monte Carlo sample
-chains).  This work was supported by USARO grant W911NF-14-1-0024 and NSF DMS
-grant 1712642.")
-    (license license:gpl2+)))
-
 (define-public r-supmz
   (package
     (name "r-supmz")
@@ -19476,13 +19449,13 @@ the method is described by Seitidis et al. (2023) <doi:10.1002/sim.9891>.")
 (define-public r-sshist
   (package
     (name "r-sshist")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sshist" version))
        (sha256
-        (base32 "0vl6kr3ichg1yx9yvwm46c12x9nisi802dvkqglx0qy9ahynzl6c"))))
+        (base32 "1vyj7fwvlliv6vkf9mpsqbc5lqv8l3247rm6wlw9b7vnqgq9ciq3"))))
     (properties `((upstream-name . "sshist")))
     (build-system r-build-system)
     (arguments
@@ -19493,12 +19466,14 @@ the method is described by Seitidis et al. (2023) <doi:10.1002/sim.9891>.")
     (home-page "https://github.com/celebithil/sshist")
     (synopsis "Optimal Histogram Binning Using Shimazaki-Shinomoto Method")
     (description
-     "This package implements the Shimazaki-Shinomoto method (2007)
-<doi:10.1162/neco.2007.19.6.1503> for optimizing the bin width of a histogram.
-This method minimizes the mean integrated squared error (MISE) and features a
-C++ backend for high performance and shift-averaging to remove edge-position
-bias.  Ideally suits for time-dependent rate estimation and identifying
-intrinsic data structures.  Supports both 1D and 2D data distributions.")
+     "This package implements the Shimazaki-Shinomoto method for optimizing the bin
+width of a histogram.  This method minimizes the mean integrated squared error
+(MISE) and features a C++ backend for high performance and shift-averaging to
+remove edge-position bias.  Ideally suits for time-dependent rate estimation and
+identifying intrinsic data structures.  Supports both 1D and 2D data
+distributions.  For more details see Shimazaki and Shinomoto (2007) \"A Method
+for Selecting the Bin Size of a Time Histogram\"
+<doi:10.1162/neco.2007.19.6.1503>.")
     (license license:gpl3+)))
 
 (define-public r-sship
@@ -22882,13 +22857,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.5.1")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "0hp9qxg88l4i7782hcjpqsqqwrn2lq1cl4f7fn5b4lqr5j465c3h"))))
+        (base32 "1vpnj55xr7jf473mcvpp0n7vc73n406j5q4v9gl4yif62fyd4a2x"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -22904,7 +22879,7 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
                              r-cocor
                              r-car))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/philchalmers/Spower")
+    (home-page "https://philchalmers.github.io/Spower/")
     (synopsis "Power Analyses using Monte Carlo Simulations")
     (description
      "This package provides a general purpose simulation-based power analysis API for
@@ -54811,13 +54786,13 @@ Mayrhofer and Filzmoser (2023) <doi:10.1016/j.ecosta.2023.04.003>.")
 (define-public r-shapley
   (package
     (name "r-shapley")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapley" version))
        (sha256
-        (base32 "06w6mpzari8zhxczkx0pm7dd2rgq373p85yz7ga9wvvjwn45ypgn"))))
+        (base32 "119fa86hvk7c83yiv2vf75wm6lhx1r58k9r333s7ksq10lzy8axz"))))
     (properties `((upstream-name . "shapley")))
     (build-system r-build-system)
     (arguments
@@ -58455,13 +58430,13 @@ details on the implemented methods.")
 (define-public r-seqfeatr
   (package
     (name "r-seqfeatr")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeqFeatR" version))
        (sha256
-        (base32 "1dvl65n60j7wl0jdb0myi9hprlr9grq6nf9m68gzxm9sz3h8lpvh"))))
+        (base32 "05szq2rhw58sfngcicgl87zifcxw8nqaif9xhvsfa2fdvfpv5d58"))))
     (properties `((upstream-name . "SeqFeatR")))
     (build-system r-build-system)
     (arguments
@@ -65370,6 +65345,42 @@ group based at the Department of History and Classical Studies at Aarhus
 University.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-sdafilter
+  (package
+    (name "r-sdafilter")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdafilter" version))
+       (sha256
+        (base32 "1zh60gr41jqv7nlfa5j57zp83ryr9l4zkjniz9cgnh2lx1x880rb"))))
+    (properties `((upstream-name . "sdafilter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-selectiveinference r-poet r-glmnet r-glasso))
+    (home-page "https://cran.r-project.org/package=sdafilter")
+    (synopsis "Symmetrized Data Aggregation")
+    (description
+     "We develop a new class of distribution free multiple testing rules for false
+discovery rate (FDR) control under general dependence.  A key element in our
+proposal is a symmetrized data aggregation (SDA) approach to incorporating the
+dependence structure via sample splitting, data screening and information
+pooling.  The proposed SDA filter first constructs a sequence of ranking
+statistics that fulfill global symmetry properties, and then chooses a data
+driven threshold along the ranking to control the FDR. For more information, see
+the website below and the accompanying paper: Du et al. (2023), \"False Discovery
+Rate Control Under General Dependence By Symmetrized Data Aggregation\",
+<doi:10.1080/01621459.2021.1945459>.  Some optional functionality uses the
+archived R packages âhugeâ and âpfaâ, which are not available from
+CRANâs main repositories.  Users who need this optional functionality can
+obtain them from the CRAN Archive as follows: âhugeâ at
+<https://cran.r-project.org/src/contrib/Archive/huge/>; âpfaâ at
+<https://cran.r-project.org/src/contrib/Archive/pfa/>.")
+    (license license:gpl2+)))
+
 (define-public r-sdaa
   (package
     (name "r-sdaa")
@@ -68583,6 +68594,33 @@ the web Util', various utilities needed to process raw data Group', to aggregate
 data at the municipality or province level Map', to visualize the output
 datasets.")
     (license license:gpl3+)))
+
+(define-public r-scholid
+  (package
+    (name "r-scholid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scholid" version))
+       (sha256
+        (base32 "1wn5wxsll3966qxz20iclk3bj6akmawzgldwhx92rl0i93wj8gm3"))))
+    (properties `((upstream-name . "scholid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://thomas-rauter.github.io/scholid/")
+    (synopsis "Tools for Scholarly and Academic Identifiers")
+    (description
+     "This package provides tools for detecting, normalizing, classifying, and
+extracting scholarly identifier strings.  The package provides lightweight,
+dependency-free helpers for common identifier systems such as DOIs, ORCID
+@code{iDs}, ISBNs, ISSNs, @code{arXiv} identifiers, and @code{PubMed}
+identifiers.  Functions are designed to be vectorized, predictable, and suitable
+as low-level building blocks for other R packages and data workflows.")
+    (license license:expat)))
 
 (define-public r-scholar
   (package

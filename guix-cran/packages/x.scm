@@ -1958,13 +1958,13 @@ package.")
 (define-public r-xegaselectgene
   (package
     (name "r-xegaselectgene")
-    (version "1.0.0.3")
+    (version "1.0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaSelectGene" version))
        (sha256
-        (base32 "0wlfhy5ylxzbagggnzws8810lwx92db2b21f8di56yr888zaix2x"))))
+        (base32 "1kbgzfihks8r0mjhbhd56g569ca2l00wgcgx330g6r3ripw0xl92"))))
     (properties `((upstream-name . "xegaSelectGene")))
     (build-system r-build-system)
     (arguments
@@ -1975,23 +1975,25 @@ package.")
      "Selection of Genes and Gene Representation Independent Functions")
     (description
      "This collection of gene representation-independent mechanisms for evolutionary
-and genetic algorithms contains four groups of functions: First, functions for
-selecting a gene in a population of genes according to its fitness value and for
-adaptive scaling of the fitness values as well as for performance optimization
-and measurement offer several variants for implementing the survival of the
-fittest.  Second, evaluation functions for deterministic functions avoid
-recomputation.  Evaluation of stochastic functions incrementally improve the
-estimation of the mean and variance of fitness values at almost no additional
-cost.  Evaluation functions for gene repair handle error-correcting decoders.
-Third, timing and counting functions for profiling the algorithm pipeline are
-provided to assess bottlenecks in the algorithms.  Fourth, a small collection of
-problem environments for function optimization, combinatorial optimization, and
-grammar-based genetic programming and grammatical evolution is provided for
-tutorial examples.  The methods in the package are described by the following
-references: Baker, James E. (1987, ISBN:978-08058-0158-8), De Jong, Kenneth A.
-(1975) <https://deepblue.lib.umich.edu/handle/2027.42/4507>, Geyer-Schulz,
-Andreas (1997, ISBN:978-3-7908-0830-X), Grefenstette, John J. (1987,
-ISBN:978-08058-0158-8), Grefenstette, John J. and Baker, James E. (1989,
+and genetic algorithms for the R-package xega
+<https://CRAN.R-project.org/package=xega> contains four groups of functions:
+First, functions for selecting a gene in a population of genes according to its
+fitness value and for adaptive scaling of the fitness values as well as for
+performance optimization and measurement offer several variants for implementing
+the survival of the fittest.  Second, evaluation functions for deterministic
+functions avoid recomputation.  Evaluation of stochastic functions incrementally
+improve the estimation of the mean and variance of fitness values at almost no
+additional cost.  Evaluation functions for gene repair handle error-correcting
+decoders.  Third, timing and counting functions for profiling the algorithm
+pipeline are provided to assess bottlenecks in the algorithms.  Fourth, a small
+collection of problem environments for function optimization, combinatorial
+optimization, and grammar-based genetic programming and grammatical evolution is
+provided for tutorial examples.  For xega's architecture, see Geyer-Schulz, A.
+(2025) <doi:10.5445/IR/1000187255>.  The methods in the package are described by
+the following references: Baker, James E. (1987, ISBN:978-08058-0158-8), De
+Jong, Kenneth A. (1975) <https://deepblue.lib.umich.edu/handle/2027.42/4507>,
+Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X), Grefenstette, John J.
+(1987, ISBN:978-08058-0158-8), Grefenstette, John J. and Baker, James E. (1989,
 ISBN:1-55860-066-3), Holland, John (1975, ISBN:0-472-08460-7), Lau, H. T. (1986)
 <doi:10.1007/978-3-642-61649-5>, Price, Kenneth V., Storn, Rainer M. and
 Lampinen, Jouni A. (2005) <doi:10.1007/3-540-31306-0>, Reynolds, J. C. (1993)

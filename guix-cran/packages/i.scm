@@ -6455,13 +6455,13 @@ structure creation.")
 (define-public r-inzightts
   (package
     (name "r-inzightts")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightTS" version))
        (sha256
-        (base32 "0i4z4721w0mjblywvr23mqbm7yjgnmqp52v9sc86k3wn341vqs1i"))))
+        (base32 "0wnjla6c40hd92ycx21dgab4c6sqdxn3x7scy9ka65lbvc0dnmsi"))))
     (properties `((upstream-name . "iNZightTS")))
     (build-system r-build-system)
     (arguments
@@ -6476,6 +6476,7 @@ structure creation.")
                              r-patchwork
                              r-lubridate
                              r-glue
+                             r-ggtime
                              r-ggtext
                              r-ggplot2
                              r-forcats
@@ -6762,13 +6763,13 @@ in Wambaugh et al. (2019) <doi:10.1093/toxsci/kfz205>.")
 (define-public r-invitrotkdata
   (package
     (name "r-invitrotkdata")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "invitroTKdata" version))
        (sha256
-        (base32 "0wxb450vz6jf1ll2avrsp1wwmpmnjlgnyhhjbw675hcc1ng8bvkb"))))
+        (base32 "1694bv3yb95y8mfb7c2awy1yyvy520fhv3j8nl6bvagxwp11jkjj"))))
     (properties `((upstream-name . "invitroTKdata")))
     (build-system r-build-system)
     (arguments
@@ -10567,46 +10568,38 @@ provided.")
 (define-public r-influential
   (package
     (name "r-influential")
-    (version "2.2.9")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "influential" version))
        (sha256
-        (base32 "0xzmc15xaw68xywsfjxzjf57ncyfvxv9qj8dzflahr5l1jnfcg7g"))))
+        (base32 "0f7x3r9i3f9akphq2bcjx5gczb14zisiln77cwq5xis7wrsh0wyc"))))
     (properties `((upstream-name . "influential")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ranger
+    (propagated-inputs (list r-rcpp
+                             r-ranger
                              r-janitor
                              r-igraph
                              r-ggplot2
                              r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-coop
-                             r-biocmanager))
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/asalavaty/influential")
     (synopsis
      "Identification and Classification of the Most Influential Nodes")
     (description
-     "This package contains functions for the classification and ranking of top
-candidate features, reconstruction of networks from adjacency matrices and data
-frames, analysis of the topology of the network and calculation of centrality
-measures, and identification of the most influential nodes.  Also, a function is
-provided for running SIRIR model, which is the combination of leave-one-out
-cross validation technique and the conventional SIR model, on a network to
-unsupervisedly rank the true influence of vertices.  Additionally, some
-functions have been provided for the assessment of dependence and correlation of
-two network centrality measures as well as the conditional probability of
-deviation from their corresponding means in opposite direction.  Fred Viole and
-David Nawrocki (2013, ISBN:1490523995).  Csardi G, Nepusz T (2006). \"The igraph
-software package for complex network research.\" @code{InterJournal}, Complex
-Systems, 1695.  Adopted algorithms and sources are referenced in function
-document.")
+     "This package provides functions for classification and ranking of candidate
+features, reconstruction of networks from adjacency matrices and data frames,
+topological analysis, and calculation of centrality measures.  The package
+includes the SIRIR model, which combines leave-one-out cross-validation with the
+conventional SIR model to rank vertex influence in an unsupervised manner.
+Additional functions support assessment of dependence and correlation between
+network centrality measures, as well as estimation of conditional probabilities
+of deviation from their corresponding means in opposite directions.")
     (license license:gpl3)))
 
 (define-public r-influenceauc
@@ -18853,13 +18846,13 @@ Kan Ling and Chaoyu Yuan (2024, <doi:10.48550/@code{arXiv.2411.19878>}).")
 (define-public r-iclick
   (package
     (name "r-iclick")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iClick" version))
        (sha256
-        (base32 "1zvmw4ihi16k1hixyn0qmsmasgd4znrw0jgnr70kv7wb2p1wplcx"))))
+        (base32 "051lzk1b3acjvvckfgnyvizyifbcafxn2yp79ay1a5gkanh1sdd7"))))
     (properties `((upstream-name . "iClick")))
     (build-system r-build-system)
     (arguments

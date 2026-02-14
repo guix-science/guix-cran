@@ -9683,13 +9683,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimble" version))
        (sha256
-        (base32 "1xj5rnqg6l7sl0j6bw0dx04ri3d15pix8xnprfpn4zclrim9fhn6"))))
+        (base32 "0kpbmf5k7w6s3abzfgwpqlcrrv4wjbs2s85h3p9pswrqzqsjclcy"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (arguments

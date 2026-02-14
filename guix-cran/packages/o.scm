@@ -3902,13 +3902,13 @@ Schnurr and Fischer (2022) <doi:10.1016/j.csda.2022.107472> are also considered.
 (define-public r-ordinalnet
   (package
     (name "r-ordinalnet")
-    (version "2.13")
+    (version "2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalNet" version))
        (sha256
-        (base32 "0j15grxa11pn4bvvgwibr2x2gbghg77zgqvqc83f5h9ws96940p9"))))
+        (base32 "0gqmlwylqp7z3md4dkvp3a9kh2lwwz37g5d1xm2y589bnnhr7gmr"))))
     (properties `((upstream-name . "ordinalNet")))
     (build-system r-build-system)
     (arguments
