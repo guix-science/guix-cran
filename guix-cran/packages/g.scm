@@ -3639,13 +3639,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "0c6hplqh0xq9fbdswdxbkni09hjl68l678vmqk8dm80qyhmwz5xh"))))
+        (base32 "1ml226k8hl353rilp2kw49aq3zh0jsp6463caxkxfw5giyhs991c"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (arguments
@@ -3656,7 +3656,6 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
                              r-tibble
                              r-rlang
                              r-r2rtf
-                             r-magrittr
                              r-gt
                              r-ggplot2
                              r-dplyr))
@@ -4669,13 +4668,13 @@ records.")
 (define-public r-growth
   (package
     (name "r-growth")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growth" version))
        (sha256
-        (base32 "05yxjlbv1i4ly8yp3aqbxzq1z2mp7sfx7xyqw48qsdv0acqai7jy"))))
+        (base32 "09rqcsxqjikw4nybvbaf0cmay4nsw31hs10b8ahvi8qrjh3gqxpv"))))
     (properties `((upstream-name . "growth")))
     (build-system r-build-system)
     (arguments
@@ -4683,7 +4682,7 @@ records.")
       #:tests? #f))
     (propagated-inputs (list r-rmutil))
     (native-inputs (list gfortran))
-    (home-page "http://www.commanster.eu/rcode.html")
+    (home-page "https://www.commanster.eu/rcode.html")
     (synopsis
      "Multivariate Normal and Elliptically-Contoured Repeated Measurements Models")
     (description
@@ -24332,28 +24331,6 @@ built-in many line-based geom layers.")
 end; position function to shift starts and ends of arrows to avoid exactly
 intersecting points.")
     (license license:gpl3)))
-
-(define-public r-ggamma
-  (package
-    (name "r-ggamma")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggamma" version))
-       (sha256
-        (base32 "05kdswyl04x9g6z94rgpm7p4c6maa2vr96xfrxfsq21bqjqknx6b"))))
-    (properties `((upstream-name . "ggamma")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/matheushjs/ggamma")
-    (synopsis "Generalized Gamma Probability Distribution")
-    (description
-     "Density, distribution function, quantile function and random generation for the
-Generalized Gamma proposed in Stacy, E. W. (1962) <doi:10.1214/aoms/1177704481>.")
-    (license license:expat)))
 
 (define-public r-ggallin
   (package

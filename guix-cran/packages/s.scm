@@ -2309,13 +2309,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "1y25mwy3df0di7yph7wsmvfm9qsdzw4xm0j14r7xi67mljvckj66"))))
+        (base32 "1p81379vax9j87n8ikmnzsks7b4nmfg71ibjdzc88cgkz477wy1m"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -29299,13 +29299,13 @@ Nordhausen, Ruiz-Gazen and Virta (2020) <doi:10.1093/biomet/asz079>.")
 (define-public r-spatialatomizer
   (package
     (name "r-spatialatomizer")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialAtomizeR" version))
        (sha256
-        (base32 "1c2himk9jjj4220bwzy418rcswavzjpal7rawwfzsb4lbp7b91m9"))))
+        (base32 "0fr9m9f1s7934hs38vm1kbn7jvyyzpq096hvfkygrq9nw7kxmsm3"))))
     (properties `((upstream-name . "spatialAtomizeR")))
     (build-system r-build-system)
     (arguments
@@ -29330,13 +29330,13 @@ Nordhausen, Ruiz-Gazen and Virta (2020) <doi:10.1093/biomet/asz079>.")
     (description
      "This package implements atom-based regression models (ABRM) for analyzing
 spatially misaligned data.  Provides functions for simulating misaligned spatial
-data, preparing NIMBLE model inputs, running MCMC diagnostics, and comparing
-different spatial analysis methods including dasymetric mapping.  All main
-functions return S3 objects with @code{print()}, @code{summary()}, and
-@code{plot()} methods for intuitive result exploration.  Methods are described
-in Nethery et al. (2023) <doi:10.1101/2023.01.10.23284410>.  Further
-methodological details and software implementation are described in Qian et al.
-(in review).")
+data, preparing NIMBLE model inputs, running MCMC diagnostics, and providing
+results.  All main functions return S3 objects with @code{print()},
+@code{summary()}, and @code{plot()} methods for intuitive result exploration.
+Methods originally described in Mugglin et al. (2000)
+<doi:10.1080/01621459.2000.10474279>, further investigated in Trevisani &
+Gelfand (2013), and applied in Nethery et al. (2023)
+<doi:10.1101/2023.01.10.23284410>.")
     (license license:expat)))
 
 (define-public r-spatialacc
@@ -38248,13 +38248,13 @@ visualization of immune cell abundance of samples in different mutation status..
 (define-public r-smdi
   (package
     (name "r-smdi")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smdi" version))
        (sha256
-        (base32 "17l5620pjwyfwl1p0h5zv264nllca3gzcnw94hbfvb79kyls9x2s"))))
+        (base32 "1832avb6xv0il6zc4c54ngnz0wppz6d4mldvab4vmsk92dbjqfs2"))))
     (properties `((upstream-name . "smdi")))
     (build-system r-build-system)
     (arguments
@@ -43827,36 +43827,6 @@ by the user.  The method to obtain the data with the target empirical covariance
 matrix is described in Section 5.1 of Christidis, Van Aelst and Zamar (2019)
 <@code{arXiv:1812.05678>}.")
     (license license:gpl2+)))
-
-(define-public r-simsurvnmarker
-  (package
-    (name "r-simsurvnmarker")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SimSurvNMarker" version))
-       (sha256
-        (base32 "0ngr6cbhg3ccsm0v5mf3871pzxzmdprdap3kljfi8w6rrah830fx"))))
-    (properties `((upstream-name . "SimSurvNMarker")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/boennecd/SimSurvNMarker")
-    (synopsis "Simulate Survival Time and Markers")
-    (description
-     "This package provides functions to simulate from joint survival and marker
-models.  The user can specific all basis functions of time, random or
-deterministic covariates, random or deterministic left-truncation and
-right-censoring times, and model parameters.")
-    (license license:gpl2)))
 
 (define-public r-simsurvey
   (package
@@ -51104,13 +51074,13 @@ interactively.")
 (define-public r-shinyoauth
   (package
     (name "r-shinyoauth")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyOAuth" version))
        (sha256
-        (base32 "1cyjbs68macq1989jn9p224snkw0chffl1qkf5dfwhrnan4fswhv"))))
+        (base32 "03yv3h0jr6fv0fw6qimd8199jxhx3qmlnicphz4ybdr2xp3w8jjy"))))
     (properties `((upstream-name . "shinyOAuth")))
     (build-system r-build-system)
     (arguments

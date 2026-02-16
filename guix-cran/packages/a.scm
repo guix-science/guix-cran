@@ -2340,46 +2340,6 @@ automatic routing of the functional elements such as the domain and the mutation
 site is completed.")
     (license license:gpl3)))
 
-(define-public r-autopipe
-  (package
-    (name "r-autopipe")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AutoPipe" version))
-       (sha256
-        (base32 "0bzllh92fgsmz79lh6m2f10vsx5qng4l7bwbwkp2kzwnncy7cq63"))))
-    (properties `((upstream-name . "AutoPipe")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-siggenes
-                             r-rtsne
-                             r-rcolorbrewer
-                             r-pamr
-                             r-org-hs-eg-db
-                             r-msigdbr
-                             r-fgsea
-                             r-consensusclusterplus
-                             r-clusterprofiler
-                             r-cluster
-                             r-annotate))
-    (home-page "https://cran.r-project.org/package=AutoPipe")
-    (synopsis
-     "Automated Transcriptome Classifier Pipeline: Comprehensive Transcriptome Analysis")
-    (description
-     "An unsupervised fully-automated pipeline for transcriptome analysis or a
-supervised option to identify characteristic genes from predefined subclasses.
-We rely on the pamr
-<http://www.bioconductor.org/packages//2.7/bioc/html/pamr.html> clustering
-algorithm to cluster the Data and then draw a heatmap of the clusters with the
-most significant genes and the least significant genes according to the pamr
-algorithm.  This way we get easy to grasp heatmaps that show us for each cluster
-which are the clusters most defining genes.")
-    (license license:gpl3)))
-
 (define-public r-autonewsmd
   (package
     (name "r-autonewsmd")
@@ -4814,13 +4774,13 @@ is implemented in standard statistical software.")
 (define-public r-asympdiag
   (package
     (name "r-asympdiag")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asympDiag" version))
        (sha256
-        (base32 "1sjnr6z4mymp13yzb59jma7f614y2dvy6gsib5ka5vw4g0zbal70"))))
+        (base32 "1w0smsyslsibgzacpsg565gzjzbi2361azp628vp29yj2a3gymgc"))))
     (properties `((upstream-name . "asympDiag")))
     (build-system r-build-system)
     (arguments
@@ -11926,38 +11886,6 @@ Format numbers and text consistent with APA style.  Create tables that comply
 with APA style by extending flextable functions.")
     (license license:cc0)))
 
-(define-public r-apa
-  (package
-    (name "r-apa")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "apa" version))
-       (sha256
-        (base32 "0w4cqb9fviz6k4b9cj31sgizqmrkxjr9hjdb8ap32ylzr9dw6gy0"))))
-    (properties `((upstream-name . "apa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rmarkdown
-                             r-purrr
-                             r-mbess
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dgromer/apa")
-    (synopsis
-     "Format Outputs of Statistical Tests According to APA Guidelines")
-    (description
-     "Formatter functions in the apa package take the return value of a statistical
-test function, e.g. a call to @code{chisq.test()} and return a string formatted
-according to the guidelines of the APA (American Psychological Association).")
-    (license license:gpl3+)))
-
 (define-public r-aovbay
   (package
     (name "r-aovbay")
@@ -16740,13 +16668,13 @@ cell receptors.")
 (define-public r-alpha-correction-bh
   (package
     (name "r-alpha-correction-bh")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alpha.correction.bh" version))
        (sha256
-        (base32 "1n9hnnig1mp32f0gwfk8rspccswfr5fzpcqcj2dj6a1wzb7jlv40"))))
+        (base32 "1wv4lawvqb0hjiacyz1cq04pcy0wn6nr6dbikabzjixc6x25bax8"))))
     (properties `((upstream-name . "alpha.correction.bh")))
     (build-system r-build-system)
     (arguments
@@ -21310,13 +21238,13 @@ reanalysis\"
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.5.1")
+    (version "4.5.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afttest" version))
        (sha256
-        (base32 "0f6mabl3p42waa7ilqrhxvfskhj9a1hlyly7hgv2f540fj84h2sp"))))
+        (base32 "10j10dc6paxvpb1q9ar3z2ldiqwv2rqkl85qraqn0jiw47kdmr3y"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (arguments

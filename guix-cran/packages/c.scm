@@ -5589,13 +5589,13 @@ hardware.  The following system functions are used: @code{arc4random_buf()} on
 (define-public r-cryptoquotes
   (package
     (name "r-cryptoquotes")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptoQuotes" version))
        (sha256
-        (base32 "02hjayan2a75nb1sxc4frgzxi05skjcq8s4dxgvdqaw7r0ip7pm6"))))
+        (base32 "1jk8xx9map446wdmqm7jxpbajjgqp9m79lgkkhnkivbd6rkr9y1h"))))
     (properties `((upstream-name . "cryptoQuotes")))
     (build-system r-build-system)
     (arguments
@@ -34827,13 +34827,13 @@ for easy modification.  Debug your binary classifiers faster and easier!")
 (define-public r-classificationensembles
   (package
     (name "r-classificationensembles")
-    (version "0.7.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassificationEnsembles" version))
        (sha256
-        (base32 "1ixq5l907w1wdyd11d1466wvmd2znc15fnf72k08zzd8mickyzxx"))))
+        (base32 "002slp7nli6l43azgnxf0vr99kj5g1832f0pg58cbqcl0vjmdmjz"))))
     (properties `((upstream-name . "ClassificationEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -34862,17 +34862,11 @@ for easy modification.  Debug your binary classifiers faster and easier!")
                              r-c50))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/InfiniteCuriosity/ClassificationEnsembles")
-    (synopsis "Automatically Builds 12 Classification Models")
+    (synopsis
+     "Automatically Builds 12 Classification Models (6 Individual and 6 Ensembles of Models) from Classification Data")
     (description
-     "Automatically builds 12 classification models from data.  The package returns 26
-plots, 5 tables and a summary report.  The package automatically builds six
-individual classification models, including error (RMSE) and predictions.  That
-data is used to create an ensemble, which is then modeled using six methods.
-The process is repeated as many times as the user requests.  The mean of the
-results are presented in a summary table.  The package returns the confusion
-matrices for all 12 models, tables of the correlation of the numeric data, the
-results of the variance inflation process, the head of the ensemble and the head
-of the data frame.")
+     "Automatically builds 12 classification models from data.  The package also
+returns 25 plots, 5 tables and a summary report.")
     (license license:expat)))
 
 (define-public r-classicaltest
@@ -40856,13 +40850,13 @@ comes with back-ends for @code{OpenAI}', @code{GitHub} Copilot', and
 (define-public r-chatllm
   (package
     (name "r-chatllm")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatLLM" version))
        (sha256
-        (base32 "1jw257mwddyxvi9wcg4691j1ivfxxxp77ijhg8sysbbvzy4p8p2v"))))
+        (base32 "0i48lbyp56vz416bq1v3dglj7w2jvkzkvn99xmkzmx8b0qqr2wh3"))))
     (properties `((upstream-name . "chatLLM")))
     (build-system r-build-system)
     (arguments
@@ -40873,12 +40867,13 @@ comes with back-ends for @code{OpenAI}', @code{GitHub} Copilot', and
     (synopsis "Flexible Interface for 'LLM' API Interactions")
     (description
      "This package provides a flexible interface for interacting with Large Language
-Model ('LLM') providers including @code{OpenAI}', Groq', Anthropic',
-@code{DeepSeek}', @code{DashScope}', Gemini', Grok and @code{GitHub} Models'.
-Supports both synchronous and asynchronous chat-completion APIs, with features
-such as retry logic, dynamic model selection, customizable parameters, and
-multi-message conversation handling.  Designed to streamline integration with
-state-of-the-art LLM services across multiple platforms.")
+Model ('LLM') providers including @code{OpenAI}', Azure @code{OpenAI}', Azure AI
+Foundry', Groq', Anthropic', @code{DeepSeek}', @code{DashScope}', Gemini',
+Grok', @code{GitHub} Models', and AWS Bedrock.  Supports both synchronous and
+asynchronous chat-completion APIs, with features such as retry logic, dynamic
+model selection, customizable parameters, and multi-message conversation
+handling.  Designed to streamline integration with state-of-the-art LLM services
+across multiple platforms.")
     (license license:expat)))
 
 (define-public r-chatgpt
@@ -47888,13 +47883,13 @@ plot format.")
 (define-public r-causalot
   (package
     (name "r-causalot")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalOT" version))
        (sha256
-        (base32 "10fvmhv4g791xhrxdfhyjn02fk0b80z4n9y73l1hhc3fr4vzphz3"))))
+        (base32 "05dspza4wwb0a4gl14qxihcqmlwvpqwvwgxp2j6r5my39i1dcyhd"))))
     (properties `((upstream-name . "causalOT")))
     (build-system r-build-system)
     (arguments
@@ -47920,10 +47915,10 @@ plot format.")
     (description
      "Uses optimal transport distances to find probabilistic matching estimators for
 causal inference.  These methods are described in Dunipace, Eric (2021)
-<@code{arXiv:2109.01991>}.  The package will build the weights, estimate
-treatment effects, and calculate confidence intervals via the methods described
-in the paper.  The package also supports several other methods as described in
-the help files.")
+<doi:10.48550/@code{arXiv.2109.01991>}.  The package will build the weights,
+estimate treatment effects, and calculate confidence intervals via the methods
+described in the paper.  The package also supports several other methods as
+described in the help files.")
     (license (license:fsdg-compatible "GPL (== 3.0)"))))
 
 (define-public r-causaloptim

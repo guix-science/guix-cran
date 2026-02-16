@@ -11899,13 +11899,13 @@ body mass index etc.  related to fitness and health of a person.")
 (define-public r-healthbr
   (package
     (name "r-healthbr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthbR" version))
        (sha256
-        (base32 "1d0gkb8im9f4x8ljd1arzyhd4gayshwjlfkrmx5f2dlzfz23s7yw"))))
+        (base32 "1sw4yl13djqahffh1hkdsln7gr54bi60l7kgvlzb446zhrwrjijc"))))
     (properties `((upstream-name . "healthbR")))
     (build-system r-build-system)
     (arguments
@@ -11914,9 +11914,10 @@ body mass index etc.  related to fitness and health of a person.")
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
-                             r-readxl
+                             r-readr
                              r-purrr
-                             r-janitor
+                             r-jsonlite
+                             r-foreign
                              r-dplyr
                              r-curl
                              r-cli))
@@ -11926,11 +11927,22 @@ body mass index etc.  related to fitness and health of a person.")
     (description
      "This package provides easy access to Brazilian public health data from multiple
 sources including VIGITEL (Surveillance of Risk Factors for Chronic Diseases by
-Telephone Survey), PNS (National Health Survey), SIM (Mortality Information
-System), SINASC (Live Birth Information System), and other health information
-systems.  Data is downloaded from the Brazilian Ministry of Health VIGITEL
-repository <https://svs.aids.gov.br/download/Vigitel/>.  Data is returned in
-tidy format following tidyverse conventions.")
+Telephone Survey), PNS (National Health Survey), PNAD Continua (Continuous
+National Household Sample Survey), POF (Household Budget Survey with food
+security and consumption data), Censo Demografico (population denominators via
+SIDRA API), SIM (Mortality Information System), SINASC (Live Birth Information
+System), SIH (Hospital Information System), SIA (Outpatient Information System),
+SINAN (Notifiable Diseases Surveillance), CNES (National Health Facility
+Registry), SI-PNI (National Immunization Program - aggregated 1994-2019 via FTP,
+individual-level microdata 2020+ via @code{OpenDataSUS} API), SISAB (Primary
+Care Health Information System - coverage indicators via REST API), ANS
+('Agencia Nacional de Saude Suplementar - supplementary health beneficiaries,
+consumer complaints, and financial statements), ANVISA ('Agencia Nacional de
+Vigilancia Sanitaria - product registrations, pharmacovigilance',
+hemovigilance', technovigilance', and controlled substance sales via SNGPC'),
+and other health information systems.  Data is downloaded from the Brazilian
+Ministry of Health and IBGE repositories.  Data is returned in tidy format
+following tidyverse conventions.")
     (license license:expat)))
 
 (define-public r-healthatlas
@@ -14479,13 +14491,13 @@ al. (2019) <DOI:10.1080/19466315.2018.1527248>.")
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.4.4")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "1ybpp47mzfxzy1zbl5wdirm4iz1l0riv015i4rb0rxjwmwwqbc61"))))
+        (base32 "0fwcgx5wz8cgnl29yalcpw77h63xp5llhg5gzxd0ariaaq3ir8nh"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (arguments

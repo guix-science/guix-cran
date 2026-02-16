@@ -390,20 +390,23 @@ test and then inspect specific edge difference with partial pruning.")
 (define-public r-ivolcano
   (package
     (name "r-ivolcano")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivolcano" version))
        (sha256
-        (base32 "1fb1nwq9j50azz1f81q6kna5axqa6fdm5kl60vz051v1ni6m9a4k"))))
+        (base32 "1658qixh5gqygg4nd7yvd1wvbcyqpyc12wpmvvimkg8g6ldq2m04"))))
     (properties `((upstream-name . "ivolcano")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang
+                             r-patchwork
                              r-knitr
+                             r-htmlwidgets
+                             r-htmltools
                              r-ggrepel
                              r-ggplot2
                              r-ggiraph
@@ -9455,13 +9458,13 @@ of the output.")
 (define-public r-inshiny
   (package
     (name "r-inshiny")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inshiny" version))
        (sha256
-        (base32 "0gw5g1rvppgmvr6kqqa45p0gscva9i2j6jw0fq5k44sigav08jib"))))
+        (base32 "1y8wzbmrrqlk867fkf3nhmddzk8z9sqiscv6cj8bnq9bycw694y0"))))
     (properties `((upstream-name . "inshiny")))
     (build-system r-build-system)
     (arguments

@@ -2097,34 +2097,6 @@ For methodological details, see Shi et al. (2025)
 <doi:10.48550/@code{arXiv.2504.00423>}.")
     (license license:gpl3)))
 
-(define-public r-pulsar
-  (package
-    (name "r-pulsar")
-    (version "0.3.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pulsar" version))
-       (sha256
-        (base32 "14wkqxgi8vi5szd01j5q5vis07zav22wljy32g3vljxyn8jyz0pf"))))
-    (properties `((upstream-name . "pulsar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zdk123/pulsar")
-    (synopsis
-     "Parallel Utilities for Lambda Selection along a Regularization Path")
-    (description
-     "Model selection for penalized graphical models using the Stability Approach to
-Regularization Selection ('@code{StARS}'), with options for speed-ups including
-Bounded @code{StARS} (B-@code{StARS}), batch computing, and other stability
-metrics (e.g., graphlet stability G-@code{StARS}).  Christian L. MÃ¼ller,
-Richard Bonneau, Zachary Kurtz (2016) <@code{arXiv:1605.07072>}.")
-    (license license:gpl3+)))
-
 (define-public r-puls
   (package
     (name "r-puls")
@@ -23734,13 +23706,13 @@ site is completed.")
 (define-public r-plotor
   (package
     (name "r-plotor")
-    (version "0.8.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotor" version))
        (sha256
-        (base32 "1w7ncn9camkydmvy8x6gp7c8ga50n2afvg71q269s2qm4m1bhwk5"))))
+        (base32 "1zmk367y5lvgk6w8f0i5mig1jghk81i9pnvzbkszaakrhw0rh8l2"))))
     (properties `((upstream-name . "plotor")))
     (build-system r-build-system)
     (arguments
@@ -23753,7 +23725,9 @@ site is completed.")
                              r-scales
                              r-rlang
                              r-purrr
+                             r-prettyunits
                              r-janitor
+                             r-gtextras
                              r-gt
                              r-glue
                              r-ggplot2
@@ -23762,6 +23736,7 @@ site is completed.")
                              r-detectseparation
                              r-cli
                              r-car
+                             r-callr
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/craig-parylo/plotor")
@@ -36178,13 +36153,13 @@ parameters are included.")
 (define-public r-peiman2
   (package
     (name "r-peiman2")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEIMAN2" version))
        (sha256
-        (base32 "19038za9xs82swra58psy05jbpgp3982pyhqilj7f9xzckf3yiya"))))
+        (base32 "0whspw4d8qvjmhw91i76kx0zjfj1f0s7hpnzpj2524gw0pg1y4g7"))))
     (properties `((upstream-name . "PEIMAN2")))
     (build-system r-build-system)
     (arguments
@@ -41229,13 +41204,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "9.2.0")
+    (version "9.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "052wdy0z2kwcgb20pdw4h31rv71n34img3q5cd51npc635225l8y"))))
+        (base32 "1n3iyib529cb1dr5gdpiv95khad6lli3jqx99yqaph2c43xqlyib"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments
@@ -43016,13 +42991,13 @@ another.")
 (define-public r-parcr
   (package
     (name "r-parcr")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parcr" version))
        (sha256
-        (base32 "07z5p8n6wvvmv4z20m0m868655a28zr7pqgh3q0w3xh3k2ydyl7m"))))
+        (base32 "08q2c0crdj6kad1m0scvn7v6b30s56i8ggjnqlnf6zphpx7x7jmm"))))
     (properties `((upstream-name . "parcr")))
     (build-system r-build-system)
     (arguments

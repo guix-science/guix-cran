@@ -621,13 +621,13 @@ details.")
 (define-public r-quicksentiment
   (package
     (name "r-quicksentiment")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickSentiment" version))
        (sha256
-        (base32 "178zxkyr4ppb88x84sndlqs3f1x0fs97cxgv0hhqc2xsdv1xzyjf"))))
+        (base32 "1hjmvl2929a7sl69izz49h5h4bqaiz98z4yvxinj6cdy3lg3r9wy"))))
     (properties `((upstream-name . "quickSentiment")))
     (build-system r-build-system)
     (arguments
@@ -639,6 +639,7 @@ details.")
                              r-stopwords
                              r-ranger
                              r-quanteda
+                             r-naivebayes
                              r-matrix
                              r-magrittr
                              r-glmnet

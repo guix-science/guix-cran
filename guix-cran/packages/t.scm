@@ -4033,13 +4033,13 @@ Pearson VII, Slash or Contaminated Normal).")
 (define-public r-tsmethods
   (package
     (name "r-tsmethods")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsmethods" version))
        (sha256
-        (base32 "0zalax4bhaf11nhvxk1sxlixgizf4bkfpwaa81v24q4x5y9b2acn"))))
+        (base32 "1nl5gx68m1nwp6y4iy0ighxll8076b6p04g7qp4186j07v9mbfw5"))))
     (properties `((upstream-name . "tsmethods")))
     (build-system r-build-system)
     (arguments
@@ -7323,13 +7323,13 @@ Clinical Research.")
 (define-public r-trialsimulator
   (package
     (name "r-trialsimulator")
-    (version "1.7.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialSimulator" version))
        (sha256
-        (base32 "0asnv1w7fbgiyw1rv55injzkwikmsaahaw95jyq8vjk62hkkhv7z"))))
+        (base32 "0w3dn1953bqsn35v6pg53zaagf9ap6vj1lvlvwdyxfpds49qqx6b"))))
     (properties `((upstream-name . "TrialSimulator")))
     (build-system r-build-system)
     (arguments
@@ -10792,13 +10792,13 @@ Modeling of Development.  Cambridge, MA: Harvard University Press.  and Noel
 (define-public r-trajectories
   (package
     (name "r-trajectories")
-    (version "0.2-9")
+    (version "0.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajectories" version))
        (sha256
-        (base32 "1wwkkz96wp300ps8jqg4bi7arb43z81821rziw7n31yhag38h3zp"))))
+        (base32 "1zy1banjdk81rj1l8cbrai17qnwsh8rfqwdmzs6gqs5ywb9ay712"))))
     (properties `((upstream-name . "trajectories")))
     (build-system r-build-system)
     (arguments
@@ -10962,39 +10962,6 @@ data feeds provide historical data, Historic Service Performance (HSP), and much
 more. @code{trainR} simplifies the data retrieval, so that the users can focus
 on their analyses.  For more details visit
 <https://www.nationalrail.co.uk/46391.aspx>.")
-    (license license:expat)))
-
-(define-public r-trafficcar
-  (package
-    (name "r-trafficcar")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trafficCAR" version))
-       (sha256
-        (base32 "1lna79vd1adr2n32w27qrz6bgl6l2wyy8xsh47xcdcbl20vnka2f"))))
-    (properties `((upstream-name . "trafficCAR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-sf
-                             r-rlang
-                             r-posterior
-                             r-matrix
-                             r-igraph
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=trafficCAR")
-    (synopsis "Bayesian CAR Models for Road-Segment Traffic")
-    (description
-     "This package provides tools for simulating and modeling traffic flow on road
-networks using spatial conditional autoregressive (CAR) models.  The package
-represents road systems as graphs derived from @code{OpenStreetMap} data
-<https://www.openstreetmap.org/> and supports network-based spatial dependence,
-basic preprocessing, and visualization for spatial traffic analysis.")
     (license license:expat)))
 
 (define-public r-trafficbde
@@ -16181,13 +16148,13 @@ transformation.  Developed using the method published in Snyder, JP (1987)
 (define-public r-tirt
   (package
     (name "r-tirt")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tirt" version))
        (sha256
-        (base32 "150rvrysl7as7aafd0rn778akf2zwd0vyv2qdgbb0wlb70nh19wy"))))
+        (base32 "1rxls8gmn88mz85mfy8nz0nxvfgwsmggqb0grp91i1js8mbwl5w0"))))
     (properties `((upstream-name . "tirt")))
     (build-system r-build-system)
     (arguments
@@ -16198,7 +16165,7 @@ transformation.  Developed using the method published in Snyder, JP (1987)
     (home-page "https://cran.r-project.org/package=tirt")
     (synopsis "Testlet Item Response Theory")
     (description
-     "Implementation of Testlet Item Response Theory (tirt).  A light-version yet
+     "Implementation of Testlet and Item Response Theory.  A light-version yet
 comprehensive and streamlined framework for psychometric analysis using
 unidimensional Item Response Theory (IRT; Baker & Kim (2004)
 <doi:10.1201/9781482276725>) and Testlet Response Theory (TRT; Wainer et al.,
@@ -16213,16 +16180,17 @@ allowing users to account for local item dependence in bundled items.  A key
 feature is the specialized support for combination use and joint estimation of
 item response model and testlet response model in one calibration.  Beyond
 standard estimation via Marginal Maximum Likelihood with
-Expectation-Maximization (EM) or Joint Maximum Likelihood, the package offers
-robust tools for scale linking and equating (Mean-Mean, Mean-Sigma,
-Stocking-Lord) to ensure comparability across mixed-format test forms.  It also
-facilitates fixed-parameter calibration, enabling users to estimate person
-abilities with known item parameters or vice versa, which is essential for
-pre-equating studies and item bank maintenance.  Comprehensive data simulation
-functions are included to generate synthetic datasets with complex structures,
-including mixed-model blocks and specific testlet effects, aiding in
-methodological research and study design validation.  Researchers can try
-multiple simulation situations.")
+Expectation-Maximization (EM) or Joint Maximum Likelihood, the package also
+offers Bayesian estimation using priors with maximum a posteriori (MAP) method
+for item response theory models.  It also provides functions for scale linking
+and equating (Mean-Mean, Mean-Sigma, Stocking-Lord) to ensure comparability
+across mixed-format test forms.  It also facilitates fixed-parameter
+calibration, enabling users to estimate person abilities with known item
+parameters or vice versa, which is essential for pre-equating studies and item
+bank maintenance.  Comprehensive data simulation functions are included to
+generate synthetic datasets with complex structures, including mixed-model
+blocks and specific testlet effects, aiding in methodological research and study
+design validation.  Researchers can try multiple simulation situations.")
     (license license:gpl3)))
 
 (define-public r-tipse
@@ -16897,13 +16865,13 @@ of lenses, see the lens package wiki:
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.5.8")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "10gf86i9xq3gkxgb45df266sdy5xlh3vvxjncwmfbarghp7r2762"))))
+        (base32 "0mg6g1pz12x5i7ijyk5f7sh2l0hf04g496089kvzl9azkkf6a4cr"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (arguments
@@ -30799,6 +30767,56 @@ summary-methods.")
     (description
      "Download taxonomic databases, convert them into SQLite format, and query them
 locally for fast, reliable, and reproducible access to taxonomic data.")
+    (license license:expat)))
+
+(define-public r-taxize
+  (package
+    (name "r-taxize")
+    (version "0.10.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taxize" version))
+       (sha256
+        (base32 "0n7bcv5zxk8scgdrv8j4sidkq7jnl98dca4lv6j7v8nnmz0bx7ip"))))
+    (properties `((upstream-name . "taxize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xml2
+                             r-worrms
+                             r-wikitaxa
+                             r-tibble
+                             r-stringi
+                             r-rredlist
+                             r-rotl
+                             r-ritis
+                             r-r6
+                             r-phangorn
+                             r-natserv
+                             r-lifecycle
+                             r-jsonlite
+                             r-data-table
+                             r-curl
+                             r-crul
+                             r-crayon
+                             r-cli
+                             r-ape))
+    (home-page "https://docs.ropensci.org/taxize/")
+    (synopsis "Taxonomic Information from Around the Web")
+    (description
+     "Interacts with a suite of web application programming interfaces (API) for
+taxonomic tasks, such as getting database specific taxonomic identifiers,
+verifying species names, getting taxonomic hierarchies, fetching downstream and
+upstream taxonomic names, getting taxonomic synonyms, converting scientific to
+common names and vice versa, and more.  Some of the services supported include
+NCBI E-utilities (<https://www.ncbi.nlm.nih.gov/books/NBK25501/>), Encyclopedia
+of Life (<https://eol.org/docs/what-is-eol/data-services>), Global Biodiversity
+Information Facility (<https://techdocs.gbif.org/en/openapi/>), and many more.
+Links to the API documentation for other supported services are available in the
+documentation for their respective functions in this package.")
     (license license:expat)))
 
 (define-public r-taxicabca

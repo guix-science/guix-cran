@@ -9737,31 +9737,32 @@ tools for common low-level tasks.")
 (define-public r-doconv
   (package
     (name "r-doconv")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doconv" version))
        (sha256
-        (base32 "1lkxiamvxa6glcb4dj8fnik4l4z0mqfqw734s3c5jv82r9cwv0b0"))))
+        (base32 "08484li5ghyf4jsscr8rclznzawhbwqvvvv2blsch031pqbkp9h8"))))
     (properties `((upstream-name . "doconv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list libreoffice))
-    (propagated-inputs (list r-processx r-pdftools r-magick r-locatexec))
+    (propagated-inputs (list r-processx r-pdftools r-magick r-locatexec
+                             r-gdtools))
     (home-page "https://cran.r-project.org/package=doconv")
-    (synopsis "Document Conversion to 'PDF' or 'PNG'")
+    (synopsis "Document Conversion to 'PDF', Thumbnails and Visual Testing")
     (description
-     "It provides the ability to generate images from documents of different types.
-Three main features are provided: functions for generating document thumbnails,
-functions for performing visual tests of documents and a function for updating
-fields and table of contents of a Microsoft Word or RTF document.  In order to
-work, @code{LibreOffice} must be installed on the machine and or Microsoft
-Word'.  If the latter is available, it can be used to produce PDF documents or
-images identical to the originals; otherwise, @code{LibreOffice} is used and the
-rendering can be sometimes different from the original documents.")
+     "This package provides the ability to generate images from documents of different
+types.  Three main features are provided: generating document thumbnails,
+performing visual tests of documents, and updating fields and tables of contents
+of a Microsoft Word or RTF document.  Microsoft Word and/or @code{LibreOffice}
+must be installed on the machine.  If Microsoft Word is available, it can
+produce PDF documents or images identical to the originals; otherwise
+@code{LibreOffice} is used and the rendering may sometimes differ from the
+original documents.")
     (license license:expat)))
 
 (define-public r-dockviewr
@@ -24151,30 +24152,6 @@ maintenance.  Based on the methodology of Liu and Huang (2016)
      "Compute degree days from daily min and max temperatures for modeling plant and
 insect development.")
     (license license:gpl3+)))
-
-(define-public r-deformula
-  (package
-    (name "r-deformula")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "deformula" version))
-       (sha256
-        (base32 "18jrznpw2vqb658wv88yq4x7z44ilkjg0xb5v2lww87wxbv4m0gj"))))
-    (properties `((upstream-name . "deformula")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-cpp11))
-    (home-page "https://github.com/okamumu/deformula/")
-    (synopsis
-     "Integration of One-Dimensional Functions with Double Exponential Formulas")
-    (description
-     "Numerical quadrature of functions of one variable over a finite or infinite
-interval with double exponential formulas.")
-    (license license:expat)))
 
 (define-public r-deform
   (package

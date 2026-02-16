@@ -168,6 +168,34 @@ information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 clean the data once in R.")
     (license license:expat)))
 
+(define-public r-nycopendata
+  (package
+    (name "r-nycopendata")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nycOpenData" version))
+       (sha256
+        (base32 "0bjvqpkkgc3j5hqprkj0qq9fq671qdi6jz7k9lqrjb0zzmfqz53n"))))
+    (properties `((upstream-name . "nycOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-jsonlite r-httr r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://martinezc1.github.io/nycOpenData/")
+    (synopsis "Convenient Access to NYC Open Data API Endpoints")
+    (description
+     "This package provides a unified set of helper functions to access datasets from
+the NYC Open Data platform <https://opendata.cityofnewyork.us/>.  Functions
+return results as tidy tibbles and support optional filtering, sorting, and row
+limits via the Socrata API. The package includes endpoints for 311 service
+requests, DOB job applications, juvenile justice metrics, school safety,
+environmental data, event permitting, and additional citywide datasets.")
+    (license license:expat)))
+
 (define-public r-nycflights23
   (package
     (name "r-nycflights23")
@@ -564,21 +592,23 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "0.10.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "0bzb1hg3kpr8dvgik5diszycfdsgq31gnjmwv3r8lprjz0m3d5i8"))))
+        (base32 "1gxy1mnwyqbbnac0wxkrz04kl9lrn633rpkyqnz2x3x0fj639hh0"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
+                             r-vip
                              r-tree
                              r-tidyr
+                             r-scales
                              r-rpart
                              r-readr
                              r-reactablefmtr
@@ -613,10 +643,11 @@ their names easy to remember and easy to deploy.")
     (description
      "Automatically runs 18 individual models and 14 ensembles on numeric data, for a
 total of 32 models.  The package automatically returns complete results on all
-32 models, 30 charts and six tables.  The user simply provides the tidy data,
+32 models, 25 charts and six tables.  The user simply provides the tidy data,
 and answers a few questions (for example, how many times would you like to
 resample the data).  From there the package randomly splits the data into train,
-test and validation sets, fits each of models on the training data, makes
+test and validation sets as the user requests (for example, train = 0.60, test =
+0.20, validation = 0.20), fits each of models on the training data, makes
 predictions on the test and validation sets, measures root mean squared error
 (RMSE), removes features above a user-set level of Variance Inflation Factor,
 and has several optional features including scaling all numeric data, four
@@ -17609,13 +17640,13 @@ Artificial Bee Colony algorithm.")
 (define-public r-nascar-data
   (package
     (name "r-nascar-data")
-    (version "2.2.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nascaR.data" version))
        (sha256
-        (base32 "047vwrz6p8k6c5l08c3mdzp0wha1xxif9rs0iqrb1qig7g4x5jlh"))))
+        (base32 "1lyma6icay4b7qi18sy2wa9x9i9snj571y48hg9xy6p8g0qr5w5x"))))
     (properties `((upstream-name . "nascaR.data")))
     (build-system r-build-system)
     (arguments
@@ -17623,21 +17654,20 @@ Artificial Bee Colony algorithm.")
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringdist
-                             r-rvest
                              r-rlang
-                             r-purrr
                              r-glue
-                             r-dplyr))
-    (home-page "https://www.kyleGrealis.com/nascaR.data/")
+                             r-dplyr
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.kylegrealis.com/nascaR.data/")
     (synopsis "NASCAR Race Data")
     (description
      "This package provides a collection of NASCAR race, driver, owner and
 manufacturer data across the three major NASCAR divisions: NASCAR Cup Series,
-NASCAR Xfinity Series, and NASCAR Craftsman Truck Series.  The curated data
-begins with the 1949 season and extends through the end of the 2024 season.
-Explore race, season, or career performance for drivers, teams, and
-manufacturers throughout NASCAR's history.  Data was sourced with permission
-from @code{DriverAverages.com}.")
+NXS, and NASCAR Craftsman Truck Series.  The curated data begins with the 1949
+season and is updated weekly during the racing season.  Explore race, season, or
+career performance for drivers, teams, and manufacturers throughout NASCAR's
+history.  Data was sourced with permission from @code{DriverAverages.com}.")
     (license license:gpl3+)))
 
 (define-public r-nasaweather
@@ -17924,13 +17954,13 @@ dataset, by ATCO region code, or by name of region.")
 (define-public r-naprior
   (package
     (name "r-naprior")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NAPrior" version))
        (sha256
-        (base32 "112bx1hvvckmrmg8ld4nciimvwlza1b32i2k75iwknr9bypgpqmk"))))
+        (base32 "01krl92f04daarbvy3s4mmqb4s15dhhzby3dxyn7agkjj55i76i1"))))
     (properties `((upstream-name . "NAPrior")))
     (build-system r-build-system)
     (arguments

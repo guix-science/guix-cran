@@ -10,6 +10,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages spreadsheet)
   #:use-module (gnu packages web)
   #:use-module (gnu packages image)
@@ -36,7 +37,6 @@
   #:use-module (gnu packages mpi)
   #:use-module (gnu packages base)
   #:use-module (gnu packages pcre)
-  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages tbb)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1401,19 +1401,20 @@ advanced statistics for teams and players.")
 (define-public r-rvmf
   (package
     (name "r-rvmf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvMF" version))
        (sha256
-        (base32 "0mlmkax5f86zpr1r81xvzcq874i18smh9af19jdkb70skg92jafs"))))
+        (base32 "1c5sfbm3l4h4wvgj4yiq2fssxygby6ahzv9563xv54m84xnradx3"))))
     (properties `((upstream-name . "rvMF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scmodels r-rfast r-rcpp r-bessel))
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rfast r-rcpp r-bessel))
     (home-page "https://github.com/seungwoo-stat/rvMF")
     (synopsis
      "Fast Generation of von Mises-Fisher Distributed Pseudo-Random Vectors")
@@ -1797,13 +1798,13 @@ MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
 (define-public r-rvec
   (package
     (name "r-rvec")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvec" version))
        (sha256
-        (base32 "0mips1jpcnkd295g4klfcc813p99wk45mdskxfkg27jfhjhrvkil"))))
+        (base32 "0jkybbggp6iv470pvjvmrkq5443gl0c9ha8k3rdrkh3rdqnk84hl"))))
     (properties `((upstream-name . "rvec")))
     (build-system r-build-system)
     (arguments
@@ -3544,13 +3545,13 @@ URL: <https://docs.joinmastodon.org/>.")
 (define-public r-rtodoist
   (package
     (name "r-rtodoist")
-    (version "0.2.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtodoist" version))
        (sha256
-        (base32 "02j5vnd132bvl14cq7dkqjpygv05v6gxhg6s5zg4a0r89pcjxxxl"))))
+        (base32 "1kjqm27agg952hcfm51q17rfv2klxl5zw2yr0h38b750xlc8c564"))))
     (properties `((upstream-name . "rtodoist")))
     (build-system r-build-system)
     (arguments
@@ -3562,11 +3563,11 @@ URL: <https://docs.joinmastodon.org/>.")
                              r-magrittr
                              r-keyring
                              r-httr2
-                             r-httr
                              r-glue
                              r-getpass
                              r-dplyr
-                             r-digest))
+                             r-digest
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ThinkR-open/rtodoist")
     (synopsis "Create and Manage Todolist using 'Todoist.com' API")
@@ -34159,13 +34160,13 @@ forms for both the recurrent event process and the terminal event.")
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddapXtracto" version))
        (sha256
-        (base32 "1rq17h1zp5q3mrs1b1rzzmhjy774fzrph5p75gj2s5msccgnabwh"))))
+        (base32 "0ay48a0rpffz7vbi3z4cbyqrzla8f5bpndg193b0aj8l29ywjraf"))))
     (properties `((upstream-name . "rerddapXtracto")))
     (build-system r-build-system)
     (arguments
@@ -57668,6 +57669,33 @@ neutron/photon/electron transport (Werner et.  al. (2018)
      "Generate random user data from the Random User Generator API. For more
 information, see <https://randomuser.me/>.")
     (license license:expat)))
+
+(define-public r-radonc
+  (package
+    (name "r-radonc")
+    (version "1.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RadOnc" version))
+       (sha256
+        (base32 "0c6ars9xcviqcm022dn2p3irck3dmhz399vbrlb2dwg87s3k89yx"))))
+    (properties `((upstream-name . "RadOnc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ptinpoly r-oro-dicom))
+    (home-page "https://cran.r-project.org/package=RadOnc")
+    (synopsis "Analytical Tools for Radiation Oncology")
+    (description
+     "Designed for the import, analysis, and visualization of dosimetric and
+volumetric data in Radiation Oncology, the tools herein enable import of
+dose-volume histogram information from multiple treatment planning system
+platforms and 3D structural representations and dosimetric information from
+DICOM-RT files.  These tools also enable subsequent visualization and
+statistical analysis of these data.")
+    (license license:gpl2+)))
 
 (define-public r-radlibs
   (package

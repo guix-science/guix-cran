@@ -2218,13 +2218,13 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
 (define-public r-osmapir
   (package
     (name "r-osmapir")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmapiR" version))
        (sha256
-        (base32 "1a5116srf0g46h8v89spxnjnr6igm017v0lri6r95dwx2fzsdx7w"))))
+        (base32 "033dlpq95qbn9lxbl16v95ihlpywz0vwykkqh45d0bgvz2rpf4pj"))))
     (properties `((upstream-name . "osmapiR")))
     (build-system r-build-system)
     (arguments

@@ -19990,13 +19990,13 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.6.2")
+    (version "0.1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "0ns23fgajgrzg0y4cxw31n8ajvfw54b370hbdwjxahfgjm3fi5hx"))))
+        (base32 "1wmlkl50kh32aqz74xk8g04ss2wiryq4z71b04lc48yj6p0yzwmk"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (arguments
@@ -23415,27 +23415,32 @@ Statistics (to appear).")
 (define-public r-bdrc
   (package
     (name "r-bdrc")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdrc" version))
        (sha256
-        (base32 "0xkqm04q8cvrfkddw8bfsn8mh2l0h4762g6p3jg9n2psiac05yrc"))))
+        (base32 "1ljx89skyp4mh2qvakw0zgw29cm7b64z6g38km699hpjgrirf8jy"))))
     (properties `((upstream-name . "bdrc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-rlang r-gridextra r-ggplot2))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-gridextra
+                             r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bdrc")
+    (home-page "https://sor16.github.io/bdrc/")
     (synopsis "Bayesian Discharge Rating Curves")
     (description
      "Fits a discharge rating curve based on the power-law and the generalized
 power-law from data on paired stage and discharge measurements in a given river
 using a Bayesian hierarchical model as described in Hrafnkelsson et al. (2020)
-<@code{arXiv:2010.04769>}.")
+<doi:10.48550/@code{arXiv.2010.04769>}.")
     (license license:expat)))
 
 (define-public r-bdpv

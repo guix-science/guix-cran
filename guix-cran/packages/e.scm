@@ -5780,62 +5780,6 @@ generalized linear model and allows for features including plotting of
 residuals, the use of sampling weights, and corrected variance estimation.")
     (license license:gpl3)))
 
-(define-public r-eventdetectr
-  (package
-    (name "r-eventdetectr")
-    (version "0.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EventDetectR" version))
-       (sha256
-        (base32 "0wx3bcs8n95fmyc5vnlrwd75bzqqvy6czb9bsbp04g3770c5ja0r"))))
-    (properties `((upstream-name . "EventDetectR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-neuralnet r-imputets r-gridextra r-ggplot2
-                             r-forecast))
-    (home-page "https://github.com/frehbach/EventDetectR")
-    (synopsis "Event Detection Framework")
-    (description
-     "Detect events in time-series data.  Combines multiple well-known R packages like
-forecast and neuralnet to deliver an easily configurable tool for multivariate
-event detection.")
-    (license license:gpl3)))
-
-(define-public r-eventdetectgui
-  (package
-    (name "r-eventdetectgui")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EventDetectGUI" version))
-       (sha256
-        (base32 "02gwgbp692cfmf933jg1f7h4gghhc1v2cswz7rpcazm8h39mc4wh"))))
-    (properties `((upstream-name . "EventDetectGUI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinybs
-                             r-shiny
-                             r-plotly
-                             r-ggplot2
-                             r-eventdetectr
-                             r-dt))
-    (home-page "https://cran.r-project.org/package=EventDetectGUI")
-    (synopsis "Graphical User Interface for the 'EventDetectR' Package")
-    (description
-     "This package provides a graphical user interface for open source event
-detection.")
-    (license license:gpl3)))
-
 (define-public r-eventdatar
   (package
     (name "r-eventdatar")
@@ -25850,13 +25794,13 @@ implementation is based on Armstrong, KolesÃ¡r and Plagborg-MÃ¸ller (2020)
 (define-public r-ebchs
   (package
     (name "r-ebchs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBCHS" version))
        (sha256
-        (base32 "103k4y105dn8v5yb5xk520404sd7c05cxd9iwh2k2v18kbvg8pdp"))))
+        (base32 "0x1bfmshn07ga7vp079zazfcs7pwipc45d8qpgj51xm0xvf27cj9"))))
     (properties `((upstream-name . "EBCHS")))
     (build-system r-build-system)
     (arguments
@@ -25869,7 +25813,7 @@ implementation is based on Armstrong, KolesÃ¡r and Plagborg-MÃ¸ller (2020)
      "We provide the main R functions to compute the posterior interval for the
 noncentrality parameter of the chi-squared distribution.  The skewness estimate
 of the posterior distribution is also available to improve the coverage rate of
-posterior intervals.  Details can be found in Du and Hu (2020)
+posterior intervals.  Details can be found in Du and Hu (2022)
 <doi:10.1080/01621459.2020.1777137>.")
     (license license:expat)))
 

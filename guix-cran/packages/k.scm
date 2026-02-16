@@ -5619,13 +5619,13 @@ the two), and runs seamlessly on both CPU and GPU devices.")
 (define-public r-keras
   (package
     (name "r-keras")
-    (version "2.16.0")
+    (version "2.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keras" version))
        (sha256
-        (base32 "00xq9pxi0w21gm4vs46i6whm1p5vz64gra0b4nzx24av0h6i60sa"))))
+        (base32 "02jjpn6ni4wx2ksd4ag89akf1jc5agpkcd48n40q3ai3mv65cigg"))))
     (properties `((upstream-name . "keras")))
     (build-system r-build-system)
     (arguments

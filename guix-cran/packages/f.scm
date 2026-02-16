@@ -8162,13 +8162,13 @@ single numbers in inline R code chunks and for rendering columns in tables.")
 (define-public r-forlion
   (package
     (name "r-forlion")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForLion" version))
        (sha256
-        (base32 "1f4vchv25pmcjw5w00jir0b6z8rzqflk7rlp308a8nldg09lbnxc"))))
+        (base32 "05j2778hzvc8avkkmkngcswyjyg34jg3wzyvr20scvkxzk5h2jha"))))
     (properties `((upstream-name . "ForLion")))
     (build-system r-build-system)
     (arguments
@@ -8181,9 +8181,10 @@ single numbers in inline R code chunks and for rendering columns in tables.")
     (description
      "Designing experimental plans that involve both discrete and continuous factors
 with general parametric statistical models using the @code{ForLion} algorithm
-and EW @code{ForLion} algorithm.  The algorithms will search for locally optimal
-designs and EW optimal designs under the D-criterion.  Reference: Huang, Y., Li,
-K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.")
+and EW @code{ForLion} algorithm.  The algorithms searches for locally optimal
+designs and EW optimal designs under the D-criterion.  See Huang, Y., Li, K.,
+Mandal, A., & Yang, J., (2024) <doi:10.1007/s11222-024-10465-x> and Lin, S.,
+Huang, Y., & Yang, J. (2025) <doi:10.48550/@code{arXiv.2505.00629>}.")
     (license license:expat)))
 
 (define-public r-forit
@@ -13176,13 +13177,13 @@ trait metric, as described by Feuerstahler (2019)
 (define-public r-flexlsx
   (package
     (name "r-flexlsx")
-    (version "0.3.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexlsx" version))
        (sha256
-        (base32 "1d19iivykllwp9p0v29rff7j252fraqazsif0nndmk5w1sxz6aiq"))))
+        (base32 "0n4mpbn7a6jnldh7mf3l0b6ih885cy1bwv5d924d8zphkdmfimcm"))))
     (properties `((upstream-name . "flexlsx")))
     (build-system r-build-system)
     (arguments
@@ -22700,13 +22701,13 @@ Limnios, (2007, ISBN: 9780470612484) <DOI: 10.1002/9780470612484>.")
 (define-public r-fattailsr
   (package
     (name "r-fattailsr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FatTailsR" version))
        (sha256
-        (base32 "07ckdd6yc57qdv9slk4rczfx5ziczdpj3y1vhr43dwys67lbpgj6"))))
+        (base32 "0866jn8rg51bbkia5m8rdz0fv2f9nlb2ccwr5lv2994x2wphhcix"))))
     (properties `((upstream-name . "FatTailsR")))
     (build-system r-build-system)
     (arguments
@@ -22969,13 +22970,13 @@ using a randomized algorithm with provable running time O(n^3 log^2 n).")
 (define-public r-fasttopics
   (package
     (name "r-fasttopics")
-    (version "0.7-37")
+    (version "0.7-38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTopics" version))
        (sha256
-        (base32 "0slw5jbcsnfibiv5bxzk5sl18mlrbhsfcgk3yskk9nh4yjwwqmip"))))
+        (base32 "0l5x82sbrk2bsgrrfg0wljcswaq8md4w38ldxwrcxi9w5b15nxf5"))))
     (properties `((upstream-name . "fastTopics")))
     (build-system r-build-system)
     (arguments

@@ -1024,13 +1024,13 @@ package by providing tools for generating expectations.")
 (define-public r-xpect
   (package
     (name "r-xpect")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpect" version))
        (sha256
-        (base32 "0gyg7gdx4ziv9py6l146sh8vy0q677jra93fwj5s6ki8jp0x1nk7"))))
+        (base32 "1nipvzr3bchmjyx742vhcdpm8wpc9v7h4q8cyhcmjjd6iv1cz4q6"))))
     (properties `((upstream-name . "xpect")))
     (build-system r-build-system)
     (arguments

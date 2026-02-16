@@ -754,13 +754,13 @@ programmers working with date-time data.")
 (define-public r-luajr
   (package
     (name "r-luajr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luajr" version))
        (sha256
-        (base32 "12w904v7avrzxn2pr9l9j1v91ff69qhyxq5nbzjm8v2cbqlvvqcb"))))
+        (base32 "1jnm24ry4435bp1hwgng94rrch64fa86slx5s1rcsfpb6yw30b39"))))
     (properties `((upstream-name . "luajr")))
     (build-system r-build-system)
     (arguments
@@ -5302,13 +5302,13 @@ is helpful to detect patients that may present cognitive decline.")
 (define-public r-logisticensembles
   (package
     (name "r-logisticensembles")
-    (version "0.8.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogisticEnsembles" version))
        (sha256
-        (base32 "1qn971l5d64xs22nbn8s0497zazzdrvddlcghh1lfabavbm7x9rb"))))
+        (base32 "08i4mjvyvh0qzp2px4yv5dz5g5r97jvrlqgwda75khdx3f3295v0"))))
     (properties `((upstream-name . "LogisticEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -5345,6 +5345,7 @@ is helpful to detect patients that may present cognitive decline.")
                              r-doparallel
                              r-cubist
                              r-corrplot
+                             r-caret
                              r-car
                              r-c50
                              r-brnn
@@ -5353,20 +5354,21 @@ is helpful to detect patients that may present cognitive decline.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/InfiniteCuriosity/LogisticEnsembles")
     (synopsis
-     "Automatically Runs 24 Logistic Models (Individual and Ensembles)")
+     "Automatically Runs 18 Logistic Models-14 Individual Logistic Models and 4 Ensembles of Models")
     (description
-     "Automatically returns 24 logistic models including 13 individual models and 11
-ensembles of models of logistic data.  The package also returns 25 plots, 5
-tables, and a summary report.  The package automatically builds all 24 models,
-reports all results, and provides graphics to show how the models performed.
-This can be used for a wide range of data, such as sports or medical data.  The
-package includes medical data (the Pima Indians data set), and information about
-the performance of Lebron James.  The package can be used to analyze many other
-examples, such as stock market data.  The package automatically returns many
-values for each model, such as True Positive Rate, True Negative Rate, False
-Positive Rate, False Negative Rate, Positive Predictive Value, Negative
-Predictive Value, F1 Score, Area Under the Curve.  The package also returns 36
-Receiver Operating Characteristic (ROC) curves for each of the 24 models.")
+     "Automatically returns results from 18 logistic models including 14 individual
+logistic models and 4 logistic ensembles of models.  The package also returns 25
+plots, 5 tables, and a summary report.  The package automatically builds all 18
+models, reports all results, and provides graphics to show how the models
+performed.  This can be used for a wide range of data, such as sports or medical
+data.  The package includes medical data (the Pima Indians data set), and
+information about the performance of Lebron James.  The package can be used to
+analyze many other examples, such as stock market data.  The package
+automatically returns many values for each model, such as True Positive Rate,
+True Negative Rate, False Positive Rate, False Negative Rate, Positive
+Predictive Value, Negative Predictive Value, F1 Score, Area Under the Curve.
+The package also returns 36 Receiver Operating Characteristic (ROC) curves for
+each of the 18 models.")
     (license license:expat)))
 
 (define-public r-logisticcurvefitting
@@ -8160,13 +8162,13 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "0rf2wiyf78rrmqscjf981wvdb7643hcq3qcg1dgd8zb1gcdy3nxw"))))
+        (base32 "0q9c894n4b3mqsrcdkxa1yw58jinhrh8wq9kr2imfchqv5qs5306"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
@@ -8580,13 +8582,13 @@ management.")
 (define-public r-llmagentr
   (package
     (name "r-llmagentr")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMAgentR" version))
        (sha256
-        (base32 "0qsql1qk15g5gskwqdb87hm6ki4v3xw4nj4xdgvnvlaw3v60djp7"))))
+        (base32 "0nbn9mxbaln7d7i7rd0jm7mszcyqvhn52wdcn12xw8j45ad69hzn"))))
     (properties `((upstream-name . "LLMAgentR")))
     (build-system r-build-system)
     (arguments

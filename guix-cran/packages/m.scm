@@ -14374,6 +14374,41 @@ and noise injection.  Stability measures for the estimate of clustering
 solutions and statistical tests to assess their significance are provided.")
     (license license:gpl2+)))
 
+(define-public r-mosalloc
+  (package
+    (name "r-mosalloc")
+    (version "1.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MOSAlloc" version))
+       (sha256
+        (base32 "1902rm210qwy6l0j0yn3a7dz9vas9i290vpy2affs0qrfw3zf0p7"))))
+    (properties `((upstream-name . "MOSAlloc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-ecosolver))
+    (home-page "https://gitlab.com/willemsf/mosalloc")
+    (synopsis "Constraint Multiobjective Sample Allocation")
+    (description
+     "This package provides a framework for multipurpose optimal resource allocation
+in survey sampling, extending the classical optimal allocation principles
+introduced by Tschuprow (1923) and Neyman (1934) to multidomain and multivariate
+allocation problems.  The primary method @code{mosalloc()} allows for the
+consideration of precision and cost constraints at the subpopulation level while
+minimizing either a vector of sampling errors or survey costs across a broad
+range of optimal sample allocation problems.  The approach supports both single-
+and multistage designs.  For single-stage stratified random sampling, the
+@code{mosallocSTRS()} function offers a user- friendly interface.  Sensitivity
+analysis is supported through the problem's dual variables, which are naturally
+obtained via the internal use of the Embedded Conic Solver from the
+ECO@code{SolveR} package.  See Willems (2025,
+<doi:10.25353/ubtr-9200-484c-5c89>) for a detailed description of the theory
+behind MOSAlloc'.")
+    (license license:gpl3+)))
+
 (define-public r-mosaiccalc
   (package
     (name "r-mosaiccalc")
@@ -23356,13 +23391,13 @@ et al. (2014) <doi:10.1007/s00180-013-0457-y>.")
 (define-public r-mlcm
   (package
     (name "r-mlcm")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLCM" version))
        (sha256
-        (base32 "1sz5c3wxvnyxd3bf53i8x2jw591phx2np6c6bj4cqppb98ab83f3"))))
+        (base32 "16jicrhhq7i8kk9d197jbymqpx1pr90rqhlm3qz1j62725m9gmpd"))))
     (properties `((upstream-name . "MLCM")))
     (build-system r-build-system)
     (arguments
@@ -32051,13 +32086,13 @@ data.  Implementing the method described in Dai and Lopez-Pintado (2022)
 (define-public r-mhctools
   (package
     (name "r-mhctools")
-    (version "1.5.5")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHCtools" version))
        (sha256
-        (base32 "1crg0z9d4ipcqhq7g7ki9mjfrlvwygghrzn6w2k5vp0psw5fb26h"))))
+        (base32 "1xcpf1303qbz6c0fd69nlpvc2x8hqb1nj1lr6ymvdz99rm8kr9fk"))))
     (properties `((upstream-name . "MHCtools")))
     (build-system r-build-system)
     (arguments
@@ -32067,7 +32102,7 @@ data.  Implementing the method described in Dai and Lopez-Pintado (2022)
     (home-page "https://cran.r-project.org/package=MHCtools")
     (synopsis "Analysis of MHC Data in Non-Model Species")
     (description
-     "Fifteen tools for bioinformatics processing and analysis of major
+     "Sixteen tools for bioinformatics processing and analysis of major
 histocompatibility complex (MHC) data.  The functions are tailored for amplicon
 data sets that have been filtered using the dada2 method (for more information
 on dada2, visit <https://benjjneb.github.io/dada2/> ), but even other types of
@@ -32095,18 +32130,25 @@ models identify similar clusters, and summarize bootstrap model stats as means
 for different estimated values of k.  It is designed to take files produced by
 the @code{BootKmeans()} function as input, but other data can be analyzed if the
 descriptions of the required data formats are observed carefully.  The
-@code{PapaDiv()} function compares parent pairs in the data set and calculate
-their joint MHC diversity, taking into account sequence variants that occur in
-both parents.  The @code{HpltFind()} function infers putative haplotypes from
-families in the data set.  The @code{GetHpltTable()} and @code{GetHpltStats()}
-functions evaluate the accuracy of the haplotype inference.  The
-@code{CreateHpltOccTable()} function creates a binary (logical)
-haplotype-sequence occurrence matrix from the output of @code{HpltFind()}, for
-easy overview of which sequences are present in which haplotypes.  The
-@code{HpltMatch()} function compares haplotypes to help identify overlapping and
-potentially identical types.  The @code{NestTablesXL()} function translates the
-output from @code{HpltFind()} to an Excel workbook, that provides a convenient
-overview for evaluation and curating of the inferred putative haplotypes.")
+@code{SynDist()} function analyses of synonymous variation among aligned
+protein-coding DNA sequences, that is, nucleotide substitutions that do not
+translate to changes in the amino acid sequences due to degeneracy of the
+genetic code.  The @code{SynDist()} function calculates synonymous nucleotide
+changes per base and per codon in pairwise sequence comparisons, as well as mean
+synonymous variation among all pairwise comparisons of the sequences within each
+sample in a data set.  The @code{PapaDiv()} function compares parent pairs in
+the data set and calculate their joint MHC diversity, taking into account
+sequence variants that occur in both parents.  The @code{HpltFind()} function
+infers putative haplotypes from families in the data set.  The
+@code{GetHpltTable()} and @code{GetHpltStats()} functions evaluate the accuracy
+of the haplotype inference.  The @code{CreateHpltOccTable()} function creates a
+binary (logical) haplotype-sequence occurrence matrix from the output of
+@code{HpltFind()}, for easy overview of which sequences are present in which
+haplotypes.  The @code{HpltMatch()} function compares haplotypes to help
+identify overlapping and potentially identical types.  The @code{NestTablesXL()}
+function translates the output from @code{HpltFind()} to an Excel workbook, that
+provides a convenient overview for evaluation and curating of the inferred
+putative haplotypes.")
     (license license:expat)))
 
 (define-public r-mhcnuggetsr
@@ -35645,13 +35687,13 @@ code, and functions to read solved @code{MetaPost} paths back into R.")
 (define-public r-metaplus
   (package
     (name "r-metaplus")
-    (version "1.0-6")
+    (version "1.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaplus" version))
        (sha256
-        (base32 "09naia49r44pwkb06pvxcqvdhwgkh0drqg57didia5wijp1cwjxi"))))
+        (base32 "05rn0ikp0h4p385637dz43fvxp5pj9x7gdfm1r8xip674prp8nvb"))))
     (properties `((upstream-name . "metaplus")))
     (build-system r-build-system)
     (arguments
@@ -35666,9 +35708,7 @@ code, and functions to read solved @code{MetaPost} paths back into R.")
                              r-metafor
                              r-mass
                              r-lme4
-                             r-foreach
                              r-fastghquad
-                             r-doparallel
                              r-boot
                              r-bbmle))
     (native-inputs (list r-r-rsp))
@@ -50538,45 +50578,16 @@ hypothesis that the two-dimensional predictor is not associated with the outcome
 variable (adjusting for confounders).")
     (license license:gpl3)))
 
-(define-public r-mapfit
-  (package
-    (name "r-mapfit")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mapfit" version))
-       (sha256
-        (base32 "0xdkc325y75mcx082b6ncp1n2mfq0yq67j2mkfdcpavnz6s8jdqg"))))
-    (properties `((upstream-name . "mapfit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-r6 r-matrix r-deformula))
-    (home-page "https://github.com/okamumu/mapfit")
-    (synopsis "PH/MAP Parameter Estimation")
-    (description
-     "Estimation methods for phase-type distribution (PH) and Markovian arrival
-process (MAP) from empirical data (point and grouped data) and density function.
- The tool is based on the following researches: Okamura et al. (2009)
-<doi:10.1109/TNET.2008.2008750>, Okamura and Dohi (2009)
-<doi:10.1109/QEST.2009.28>, Okamura et al. (2011)
-<doi:10.1016/j.peva.2011.04.001>, Okamura et al. (2013) <doi:10.1002/asmb.1919>,
-Horvath and Okamura (2013) <doi:10.1007/978-3-642-40725-3_10>, Okamura and Dohi
-(2016) <doi:10.15807/jorsj.59.72>.")
-    (license license:expat)))
-
 (define-public r-mapedit
   (package
     (name "r-mapedit")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapedit" version))
        (sha256
-        (base32 "1cj15xax4sgdzslac3fvlsjzm2idh4d41d6nzrsh7nyh662pmcpd"))))
+        (base32 "18p0k2w6sddbyr0h9i0wbvjqjj49d5p1x5v3kr6fn6mxaflj0jiv"))))
     (properties `((upstream-name . "mapedit")))
     (build-system r-build-system)
     (arguments
@@ -50591,9 +50602,9 @@ Horvath and Okamura (2013) <doi:10.1007/978-3-642-40725-3_10>, Okamura and Dohi
                              r-raster
                              r-miniui
                              r-mapview
+                             r-magrittr
                              r-leafpop
                              r-leafpm
-                             r-leaflet-extras
                              r-leaflet
                              r-leafem
                              r-jsonlite
