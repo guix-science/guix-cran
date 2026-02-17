@@ -5204,6 +5204,30 @@ Risks.  Method is detailed in: Neykov, Hejblum & Sinnott (2018) <doi:
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-kernreg
+  (package
+    (name "r-kernreg")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kernreg" version))
+       (sha256
+        (base32 "043k974wx0kh8f632g3v6izy93rz75cqmq3xz024696bz55i2x0s"))))
+    (properties `((upstream-name . "kernreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2 r-rfast r-rcppparallel r-rcpp))
+    (home-page "https://cran.r-project.org/package=kernreg")
+    (synopsis "Nadaraya-Watson Kernel Regression")
+    (description
+     "Fast implementation of Nadaraya-Watson kernel regression for either univariate
+or multivariate responses, with one or more bandwidths.  K-fold cross-validation
+is also performed.")
+    (license license:gpl2+)))
+
 (define-public r-kernplus
   (package
     (name "r-kernplus")

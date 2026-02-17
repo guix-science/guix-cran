@@ -1085,13 +1085,13 @@ so as to avoid repeated downloads of the same series.")
 (define-public r-bunddev
   (package
     (name "r-bunddev")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bunddev" version))
        (sha256
-        (base32 "1hn8hbqmz839m5dxnyajkkf1mjm3vljhzvb34k05qj07bvx9zwnw"))))
+        (base32 "1q92s9xi7vm9wf2wfvi7qbakg2pbqc1j1ygisy97g11gjwyvib52"))))
     (properties `((upstream-name . "bunddev")))
     (build-system r-build-system)
     (arguments
@@ -12385,13 +12385,13 @@ immature trial data.  See Che et al. (2022) <doi:10.1177/0272989X221134545>.")
 (define-public r-blend
   (package
     (name "r-blend")
-    (version "0.1.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Blend" version))
        (sha256
-        (base32 "0ysk1nkqsqbj4g9zznwgpghb2dbknjy7sqfhyq87rn2sh9drxa89"))))
+        (base32 "0qxwsmn0vp6abjd7q3pkbxbmy4iapzgrvg6w1pkbb23zh3w1z01x"))))
     (properties `((upstream-name . "Blend")))
     (build-system r-build-system)
     (arguments
@@ -13528,35 +13528,35 @@ supported.")
 (define-public r-bitfield
   (package
     (name "r-bitfield")
-    (version "0.6.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bitfield" version))
        (sha256
-        (base32 "1kdzh5is5y29jclsk4c8ljd1hlklqg61b04fn28ijrqpiqy99xzk"))))
+        (base32 "0qwz77lax8gljpl4hvngm4ll6yr5w073kkbrvkbmm0qnq06s6q7i"))))
     (properties `((upstream-name . "bitfield")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yaml
-                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-terra
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-jsonlite
                              r-httr
                              r-glue
                              r-gitcreds
                              r-gh
                              r-dplyr
-                             r-crayon
                              r-codetools
                              r-checkmate
                              r-base64enc))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bitfloat/bitfield")
     (synopsis "Handle Bitfields to Record Meta Data")
     (description

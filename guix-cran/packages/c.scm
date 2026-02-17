@@ -29031,13 +29031,13 @@ signatures.")
 (define-public r-cmprskqr
   (package
     (name "r-cmprskqr")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmprskQR" version))
        (sha256
-        (base32 "1b3di5fsgglriv00fxydpc4p8lh0xcgi6jc04awq2vmp6s8kvjmw"))))
+        (base32 "1b9hyw0j16g5xb4yl73x4vspag363scp53mvcsfc1v3fckrm3zwx"))))
     (properties `((upstream-name . "cmprskQR")))
     (build-system r-build-system)
     (arguments
@@ -45314,13 +45314,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "0zxqspanabyix7dvb40f94gbf7x3asgr3klnr7iscpswzr293wzl"))))
+        (base32 "0sxz9idbijhjmzsj022r9d8fm4a11fsxz9gd3v7g0fmxliwxl3dd"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments
@@ -52118,13 +52118,13 @@ the Kenya Health Information System <https://hiskenya.org> in a consistent way."
 (define-public r-cancerradarr
   (package
     (name "r-cancerradarr")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancerradarr" version))
        (sha256
-        (base32 "09wzqiw9z0gni965hf2v7swp6liqyw92zlsn9qkblyzxlzz5bflw"))))
+        (base32 "0gvxv90ilymc8mdyk2vlv8pnvba664ppmh8jqgbq9v3qi45n86rc"))))
     (properties `((upstream-name . "cancerradarr")))
     (build-system r-build-system)
     (arguments

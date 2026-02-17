@@ -15825,13 +15825,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-amapvox
   (package
     (name "r-amapvox")
-    (version "2.2.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMAPVox" version))
        (sha256
-        (base32 "10gb0k3msw2jmrq2dl0fm7636frsn7if9gsdxi6zgh0vpha6dqwz"))))
+        (base32 "1sqkyi3q6bp28z1hadm3y96f2g7kqd50gkxgj1qz3rj6ipgdi7dk"))))
     (properties `((upstream-name . "AMAPVox")))
     (build-system r-build-system)
     (arguments

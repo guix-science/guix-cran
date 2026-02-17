@@ -3130,6 +3130,40 @@ calculate trait heritability; and (2) handling overfitting by calculating the
 variance components and the heritability through cross validation.")
     (license license:gpl2+)))
 
+(define-public r-gsmeanfreq
+  (package
+    (name "r-gsmeanfreq")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gsMeanFreq" version))
+       (sha256
+        (base32 "1cxnls91j76jvb5gbsdcy1p7np0ry78n6r3y80yclxk74izjzhc6"))))
+    (properties `((upstream-name . "gsMeanFreq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-survival
+                             r-rlang
+                             r-pracma
+                             r-mvtnorm
+                             r-gsdesign
+                             r-foreach
+                             r-dplyr
+                             r-bdsmatrix))
+    (home-page "https://cran.r-project.org/package=gsMeanFreq")
+    (synopsis
+     "Group Sequential Clinical Trial Designs for Composite Endpoints")
+    (description
+     "Simulating composite endpoints with recurrent and terminal events under
+staggered entry, and for constructing one- and two-sample group sequential test
+statistics and monitoring boundaries based on the mean frequency function.
+Details will be available in an upcoming publication.")
+    (license license:gpl3)))
+
 (define-public r-gsmams
   (package
     (name "r-gsmams")
@@ -3594,6 +3628,38 @@ design are described in Anderson (2025)
 <doi:10.32614/CRAN.package.@code{gsDesign>}.  The future framework for parallel
 processing is described in Bengtsson (2021) <doi:10.32614/RJ-2021-048>.")
     (license license:expat)))
+
+(define-public r-gsdesignnb
+  (package
+    (name "r-gsdesignnb")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gsDesignNB" version))
+       (sha256
+        (base32 "1f5x63cb2s9bjhnhdkrfmp6wnrvcf6fh52fgzpmq9vykizkfsi4v"))))
+    (properties `((upstream-name . "gsDesignNB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-simtrial r-mass r-gsdesign r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://keaven.github.io/gsDesignNB/")
+    (synopsis "Sample Size and Simulation for Negative Binomial Outcomes")
+    (description
+     "This package provides tools for planning and simulating recurrent event trials
+with overdispersed count endpoints analyzed using negative binomial (or Poisson)
+rate models.  Implements sample size and power calculations for fixed designs
+with variable accrual, dropout, maximum follow-up, and event gaps, including
+methods of Zhu and Lakkis (2014) <doi:10.1002/sim.5947> and Friede and Schmidli
+(2010) <doi:10.3414/ME09-02-0060>.  Supports group sequential designs by adding
+calendar-time analysis schedules compatible with the @code{gsDesign} package and
+by estimating blinded information at interim looks.  Includes simulation
+utilities for recurrent events (including seasonal rates), interim data
+truncation, and Wald-based inference for treatment rate ratios.")
+    (license license:gpl3+)))
 
 (define-public r-gsdesign2
   (package

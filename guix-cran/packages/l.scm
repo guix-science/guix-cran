@@ -754,13 +754,13 @@ programmers working with date-time data.")
 (define-public r-luajr
   (package
     (name "r-luajr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luajr" version))
        (sha256
-        (base32 "1jnm24ry4435bp1hwgng94rrch64fa86slx5s1rcsfpb6yw30b39"))))
+        (base32 "1vym0ixm7ymmzslc75nc8q3ns99m0cl4rnhlkpfhy33vdsh3lik2"))))
     (properties `((upstream-name . "luajr")))
     (build-system r-build-system)
     (arguments
@@ -15927,13 +15927,13 @@ offers visualization tools.  For more details, see Wang (2024)
 (define-public r-ldaprototype
   (package
     (name "r-ldaprototype")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldaPrototype" version))
        (sha256
-        (base32 "1gnwss71488837ry9zhri7yv68hhnrckrn8qb1b8sszvsch5apan"))))
+        (base32 "1f443jbivp4rzjvk7cyq4bs5fbi6lbv8l3yb6r7vxvjmh1z8lkp8"))))
     (properties `((upstream-name . "ldaPrototype")))
     (build-system r-build-system)
     (arguments
@@ -15941,8 +15941,8 @@ offers visualization tools.  For more details, see Wang (2024)
       #:tests? #f))
     (propagated-inputs (list r-progress
                              r-parallelmap
+                             r-parallelly
                              r-lda
-                             r-future
                              r-fs
                              r-dendextend
                              r-data-table

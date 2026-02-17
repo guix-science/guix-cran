@@ -2130,13 +2130,13 @@ O'Neill, M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>.")
 (define-public r-xegagagene
   (package
     (name "r-xegagagene")
-    (version "1.0.0.5")
+    (version "1.0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGaGene" version))
        (sha256
-        (base32 "0dwhzz8jlj9cl1dljpi7c4d9q62kh9wpygbmc5gsf7kv2sdhzb4j"))))
+        (base32 "0az5bamnmf4nl82ry6xfvf5230ps5lfqz8gqv6khll8nhbpa2r9z"))))
     (properties `((upstream-name . "xegaGaGene")))
     (build-system r-build-system)
     (arguments
@@ -2147,26 +2147,28 @@ O'Neill, M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>.")
     (synopsis "Binary Gene Operations for Genetic Algorithms")
     (description
      "Representation-dependent gene level operations of a genetic algorithm with
-binary coded genes: Initialization of random binary genes, several gene maps for
-binary genes, several mutation operators, several crossover operators with 1 and
-2 kids, replication pipelines for 1 and 2 kids, and, last but not least,
-function factories for configuration.  See Goldberg, D. E. (1989,
-ISBN:0-201-15767-5).  For crossover operators, see Syswerda, G. (1989,
+binary coded genes for the R-package xega
+<https://CRAN.R-project.org/package=xega>: Initialization of random binary
+genes, several gene maps for binary genes, several mutation operators, several
+crossover operators with 1 and 2 kids, replication pipelines for 1 and 2 kids,
+and, last but not least, function factories for configuration.  See Goldberg, D.
+E. (1989, ISBN:0-201-15767-5).  For crossover operators, see Syswerda, G. (1989,
 ISBN:1-55860-066-3), Spears, W. and De Jong, K. (1991, ISBN:1-55860-208-9).  For
 mutation operators, see Stanhope, S. A. and Daida, J. M. (1996,
-ISBN:0-18-201-031-7).")
+ISBN:0-18-201-031-7).  For xega''s architecture, see Geyer-Schulz, A. (2025)
+<doi:10.5445/IR/1000187255>.")
     (license license:expat)))
 
 (define-public r-xegadfgene
   (package
     (name "r-xegadfgene")
-    (version "1.0.0.7")
+    (version "1.0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaDfGene" version))
        (sha256
-        (base32 "1l5gzqfnh6vmaidc2wd5z82b55v4xdrkgbfcj0niwb3ysc6506pd"))))
+        (base32 "0q7khpydmabyhmrxdrm3vjyyid4bfrz91zkp6k0srhbwiv7z35wk"))))
     (properties `((upstream-name . "xegaDfGene")))
     (build-system r-build-system)
     (arguments
@@ -2177,13 +2179,15 @@ ISBN:0-18-201-031-7).")
     (synopsis "Gene Operations for Real-Coded Genes")
     (description
      "Representation-dependent gene-level operations for genetic and evolutionary
-algorithms with real-coded genes are collected in this package.  The common
-feature of the gene operations is that all of them are useful for
+algorithms with real-coded genes used in the R-package xega
+<https://CRAN.R-project.org/package=xega> are collected in this package.  The
+common feature of the gene operations is that all of them are useful for
 derivation-free optimization algorithms.  At the moment the package implements
 initialization, mutation, crossover, and replication operations for differential
 evolution as described in Price, Kenneth V., Storn, Rainer M. and Lampinen,
 Jouni A. (2005) <doi:10.1007/3-540-31306-0>.  In addition, several (more recent)
-methods for determining the scale factor are provided.")
+methods for determining the scale factor are provided.  For xega''s
+architecture, see Geyer-Schulz, A. (2025) <doi:10.5445/IR/1000187255>.")
     (license license:expat)))
 
 (define-public r-xegaderivationtrees

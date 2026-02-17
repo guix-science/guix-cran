@@ -1233,13 +1233,13 @@ y <- future.apply::future_lapply(files, FUN = process)'.")
 (define-public r-futility
   (package
     (name "r-futility")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "futility" version))
        (sha256
-        (base32 "0zjb87brz7pkx3nq3q30y69cmcxpqqsra447p60qh7005kgr9vx4"))))
+        (base32 "04rpa73w292yzj3zfx9an6hybb6i5m1ynl44v4y6my2gpdhl9jw7"))))
     (properties `((upstream-name . "futility")))
     (build-system r-build-system)
     (arguments
@@ -28051,13 +28051,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabletools" version))
        (sha256
-        (base32 "166bdf72mnd1hdwzs1ka6qn9gazyvm654yc1ml4mh65dmx90wx3g"))))
+        (base32 "0z2gzlkdmc76w2v0171xgyqn3raib260ra66g6r1rzxzqik21lns"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (arguments

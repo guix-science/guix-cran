@@ -13,8 +13,8 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages geo)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (guix-cran packages z)
@@ -5031,13 +5031,13 @@ for use in teaching.")
 (define-public r-evmissing
   (package
     (name "r-evmissing")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evmissing" version))
        (sha256
-        (base32 "1585jqjr95pid55pfvdgkpn96wscnxwhn6x31arf4gag9hq3df09"))))
+        (base32 "1dg60qf9zghl9n4gg8lwq2k2m6sydnzm1pavfdmdr17kkmzlgmnk"))))
     (properties `((upstream-name . "evmissing")))
     (build-system r-build-system)
     (arguments
@@ -5048,14 +5048,14 @@ for use in teaching.")
     (synopsis "Extreme Value Analyses with Missing Data")
     (description
      "This package performs likelihood-based extreme value inferences with adjustment
-for the presence of missing values based on Simpson and Northrop (2026).  A
-Generalised Extreme Value distribution is fitted to block maxima using maximum
-likelihood estimation, with the location and scale parameters reflecting the
-numbers of non-missing raw values in each block.  A Bayesian version is also
-provided.  For the purposes of comparison, there are options to make no
-adjustment for missing values or to discard any block maximum for which greater
-than a percentage of the underlying raw values are missing.  Example datasets
-containing missing values are provided.")
+for the presence of missing values based on Simpson and Northrop (2026)
+<doi:10.1002/env.70075>.  A Generalised Extreme Value distribution is fitted to
+block maxima using maximum likelihood estimation, with the location and scale
+parameters reflecting the numbers of non-missing raw values in each block.  A
+Bayesian version is also provided.  For the purposes of comparison, there are
+options to make no adjustment for missing values or to discard any block maximum
+for which greater than a percentage of the underlying raw values are missing.
+Example datasets containing missing values are provided.")
     (license license:gpl3+)))
 
 (define-public r-evitaicossa
@@ -5808,20 +5808,21 @@ They can be used in combination with functionalities provided by the
 (define-public r-event
   (package
     (name "r-event")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "event" version))
        (sha256
-        (base32 "0w3v8j61y7vr0cjl8a1rkvi4pyjlfhmzzn1n4dgkivac4iafzqjj"))))
+        (base32 "04x41k25981nriympjxxyhia5dac2kgj4d50bj5sbf6rzrfigk7v"))))
     (properties `((upstream-name . "event")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rmutil))
-    (home-page "http://www.commanster.eu/rcode.html")
+    (native-inputs (list gfortran))
+    (home-page "https://www.commanster.eu/rcode.html")
     (synopsis "Event History Procedures and Models")
     (description
      "This package provides functions for setting up and analyzing event history data.")

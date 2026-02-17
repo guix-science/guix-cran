@@ -3636,13 +3636,13 @@ vectorized manner, preserve non-serial values, and support both the 1900 and
 (define-public r-undidr
   (package
     (name "r-undidr")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "undidR" version))
        (sha256
-        (base32 "0kfad1x8gz7mzg53flxx6wb0c6yxfanm2crv91hlqsv74iw7zp1f"))))
+        (base32 "0b4b4wpbdi6kibpl0v8m8qgldnmbiqsq3pr7vgp0s6a8lcjsbm2g"))))
     (properties `((upstream-name . "undidR")))
     (build-system r-build-system)
     (arguments

@@ -13485,13 +13485,13 @@ methodology derived from Tiruviluamala, N., Port, A., and Lewis, E. (2022)
 (define-public r-impectr
   (package
     (name "r-impectr")
-    (version "2.5.3")
+    (version "2.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impectR" version))
        (sha256
-        (base32 "1zgw4gbbwk15gbbr64lf89zd7zcy8rqby3af0nw4cwp0im1lsqqa"))))
+        (base32 "1vf2l5xds38qi8b4dbnyi1wcf5r97rjzhllybb4s9h7llx4ij0gh"))))
     (properties `((upstream-name . "impectR")))
     (build-system r-build-system)
     (arguments

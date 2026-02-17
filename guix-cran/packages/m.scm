@@ -7696,13 +7696,13 @@ with missing values.  Tomic et al. (2019) <doi:10.1101/545186>.")
 (define-public r-mulsem
   (package
     (name "r-mulsem")
-    (version "1.0")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mulSEM" version))
        (sha256
-        (base32 "00lx8w3xxm7zdwv07pc3z5vsl4l1rj95s9wwil9y55bpf2ih4yp2"))))
+        (base32 "13lqg78y39zynh440s9ppsgr7avwcy1j2hv7rj1w26l0vl9v91w8"))))
     (properties `((upstream-name . "mulSEM")))
     (build-system r-build-system)
     (arguments
@@ -12449,6 +12449,58 @@ time precision etc.  Various software outputs are supported such as
 Linear Regression Analysis (3rd ed), by Montgomery, Peck and Vining.  Some
 additional data sets and functions are also included.")
     (license (license:fsdg-compatible "Unlimited"))))
+
+(define-public r-mptmultiverse
+  (package
+    (name "r-mptmultiverse")
+    (version "0.4-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MPTmultiverse" version))
+       (sha256
+        (base32 "13f48ibvmc2sx9fkbb4gl5xkkhfkk4v3bik2bpvv2cinbl4hi4fp"))))
+    (properties `((upstream-name . "MPTmultiverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treebugs
+                             r-tidyr
+                             r-tibble
+                             r-runjags
+                             r-rlang
+                             r-reshape2
+                             r-readr
+                             r-purrr
+                             r-mptinr
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mpt-network/MPTmultiverse")
+    (synopsis "Multiverse Analysis of Multinomial Processing Tree Models")
+    (description
+     "Statistical or cognitive modeling usually requires a number of more or less
+arbitrary choices creating one specific path through a garden of forking paths'.
+ The multiverse approach (Steegen, Tuerlinckx, Gelman, & Vanpaemel, 2016,
+<doi:10.1177/1745691616658637>) offers a principled alternative in which results
+for all possible combinations of reasonable modeling choices are reported.
+MPTmultiverse performs a multiverse analysis for multinomial processing tree
+(MPT, Riefer & Batchelder, 1988, <doi:10.1037/0033-295X.95.3.318>) models
+combining maximum-likelihood/frequentist and Bayesian estimation approaches with
+different levels of pooling (i.e., data aggregation) as described in Singmann et
+al. (2024, <doi:10.1037/bul0000434>).  For the frequentist approaches, no
+pooling (with and without parametric or nonparametric bootstrap) and complete
+pooling are implemented using MP@code{TinR}
+<https://cran.r-project.org/package=MP@code{TinR>}.  For the Bayesian
+approaches, no pooling, complete pooling, and three different variants of
+partial pooling are implemented using @code{TreeBUGS}
+<https://cran.r-project.org/package=@code{TreeBUGS>}.  The main function is
+@code{fit_mpt()} which performs the multiverse analysis in one call.")
+    (license license:gpl2)))
 
 (define-public r-mptinr
   (package
@@ -22328,13 +22380,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "1d7a5x9b0w3nk6dxvnbjkqf72cmx4y5czw39gj4fdib639s054gb"))))
+        (base32 "0hpb91c8sdgjqckb0jf76jbycwg1b1lsr5ypicx7l6cbd05nzws1"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (arguments

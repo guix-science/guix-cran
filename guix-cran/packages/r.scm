@@ -1682,13 +1682,13 @@ Linux for haplotyping.")
 (define-public r-rvg
   (package
     (name "r-rvg")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvg" version))
        (sha256
-        (base32 "1z7w4zwclz03iki9bm34d1ymgp2zj87wmxw4lfz74s17izp7swnz"))))
+        (base32 "0zl1ln1m91bg9wl995n1kwjrqsb38ixmplkhnhwvha7nxk3zyzf8"))))
     (properties `((upstream-name . "rvg")))
     (build-system r-build-system)
     (arguments
@@ -12506,13 +12506,13 @@ ISBN:9780412048418).")
 (define-public r-rparadox
   (package
     (name "r-rparadox")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rparadox" version))
        (sha256
-        (base32 "09r21zha4714zdnb99b8pzmhrpq9wn3mscnzinx046ahcr0jqs5n"))))
+        (base32 "0fwv1wis4affga2w417qdxxi6vb58xxd55lh6rsllx7jkpx155vb"))))
     (properties `((upstream-name . "Rparadox")))
     (build-system r-build-system)
     (arguments
@@ -25705,13 +25705,13 @@ models (Spiegelman and Hertzmark 2005, <doi:10.1093/aje/kwi188>), and others.")
 (define-public r-riskregression
   (package
     (name "r-riskregression")
-    (version "2025.09.17")
+    (version "2026.02.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskRegression" version))
        (sha256
-        (base32 "002s8mzq577308l5gyl22q26mx3krq32gp1clpj0hh3pvphbckwy"))))
+        (base32 "018p93cp5lrgslarrb5gs9h56xsa5xzvkjib9a7krfb472rnwqj5"))))
     (properties `((upstream-name . "riskRegression")))
     (build-system r-build-system)
     (arguments
@@ -36080,13 +36080,13 @@ usability but break backwards compatibility.")
 (define-public r-rencher
   (package
     (name "r-rencher")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rencher" version))
        (sha256
-        (base32 "1rs5ygnq0ybffqjkbc6i3x06dmadldbzcmpqy3j4ir2b8d6if2rs"))))
+        (base32 "1pd7cjxkny5v7kpprrdmskp82pkh4gpx6cgnal8giw21d75s20hy"))))
     (properties `((upstream-name . "rencher")))
     (build-system r-build-system)
     (arguments
@@ -50302,13 +50302,13 @@ characteristics of East Caucasian languages.")
 (define-public r-rcatfish
   (package
     (name "r-rcatfish")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcatfish" version))
        (sha256
-        (base32 "1h0zka6dx73vjprdrvhmz3fzbb67jvary4fc8hgx8m1ln155lg57"))))
+        (base32 "1c3lka03pqniis5jim2yxygfwind1jbaggjy59pk09hzik39hfix"))))
     (properties `((upstream-name . "rcatfish")))
     (build-system r-build-system)
     (arguments
@@ -50999,13 +50999,13 @@ text files and more...")
 (define-public r-rbmiutils
   (package
     (name "r-rbmiutils")
-    (version "0.1.8")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmiUtils" version))
        (sha256
-        (base32 "0jdi3pvh447v5danz25fd0sp5cr8hmjf0kpdr7by5j0j6yn2x8n6"))))
+        (base32 "1ylwpramfjbiv5lazdklh0l0wxdvaqw3x8qf7zzjzw9yl8v8fr96"))))
     (properties `((upstream-name . "rbmiUtils")))
     (build-system r-build-system)
     (arguments
@@ -51015,7 +51015,9 @@ text files and more...")
                              r-rlang
                              r-rbmi
                              r-purrr
+                             r-lifecycle
                              r-dplyr
+                             r-cli
                              r-beeca
                              r-assertthat))
     (native-inputs (list r-knitr))

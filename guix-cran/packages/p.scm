@@ -3927,13 +3927,13 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 (define-public r-psvmsdr
   (package
     (name "r-psvmsdr")
-    (version "2.0.1")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psvmSDR" version))
        (sha256
-        (base32 "0cpwkbjgs30m68jlwwkhv414cl1qcxqlz3wi8d3p9qwh06yln3r4"))))
+        (base32 "1fxlbvfv9qg9bcpawprxb8scpczyjzz6iqwj9ampaf0hxwyh646p"))))
     (properties `((upstream-name . "psvmSDR")))
     (build-system r-build-system)
     (arguments
@@ -7999,13 +7999,13 @@ index (PI) from an RNA-seq dataset.  As described in Ramaker & Lasseigne, et al.
 (define-public r-projoint
   (package
     (name "r-projoint")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projoint" version))
        (sha256
-        (base32 "12q89171lfjdglrnw1xm79fizjn8z54zlrfdsfq4si7qqmfkvi6f"))))
+        (base32 "01qqrv1mrz2fmgmah06qkjfs56wwzbkzq09gxs6b51br1hf2in28"))))
     (properties `((upstream-name . "projoint")))
     (build-system r-build-system)
     (arguments
@@ -17378,13 +17378,13 @@ included for reference and examples.")
 (define-public r-poputils
   (package
     (name "r-poputils")
-    (version "0.5.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poputils" version))
        (sha256
-        (base32 "1hr5pb4rsa3adawv4pf7jl3q0ygzb8jldmz9dj9raaakmqh0xk6h"))))
+        (base32 "13lkkjdlc39cwh9is79bbvbfass77wk0r2yj6x52kvh4j4hqay9z"))))
     (properties `((upstream-name . "poputils")))
     (build-system r-build-system)
     (arguments
@@ -17395,6 +17395,7 @@ included for reference and examples.")
                              r-tibble
                              r-rvec
                              r-rlang
+                             r-lifecycle
                              r-cpp11
                              r-cli))
     (native-inputs (list r-knitr))
@@ -44642,13 +44643,13 @@ Baumann-Pickering et al (2010) <doi:10.1121/1.3479549>.")
 (define-public r-pammtools
   (package
     (name "r-pammtools")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pammtools" version))
        (sha256
-        (base32 "0wzaf6ang93mkb52pg49l126037ccsfvz7j4dhba9642xkbcln5a"))))
+        (base32 "08fa8hhnc3c94jm0kmzwqg59f2nfxnapardlhn5nlp8znyng4q9p"))))
     (properties `((upstream-name . "pammtools")))
     (build-system r-build-system)
     (arguments

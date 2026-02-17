@@ -5040,13 +5040,13 @@ for drug sensitivity analysis in patient-derived cancer models.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0krz92420rmqld36d9z6fxjnzam11v9pvbry6cah3aab2d5jscsw"))))
+        (base32 "0dws69q2zprg3xv6hkgynl0milvp3lpfykf4zklcbamyalhs86fy"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -14230,19 +14230,25 @@ distributions.")
 (define-public r-discretetests
   (package
     (name "r-discretetests")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteTests" version))
        (sha256
-        (base32 "1ii0jqq2k0in11dhmw1mzhwbxijnd6inhwfi0j43cpxzddnbg8bs"))))
+        (base32 "0k2k575gdzqx7g0afppyippizyrk6pkfbn68q5fhjdcw1akidcvn"))))
     (properties `((upstream-name . "DiscreteTests")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-lifecycle r-checkmate))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-rcpp
+                             r-r6
+                             r-lifecycle
+                             r-cli
+                             r-checkmate))
     (home-page "https://github.com/DISOhda/DiscreteTests")
     (synopsis
      "Vectorised Computation of P-Values and Their Supports for Several Discrete Statistical Tests")
@@ -14250,7 +14256,7 @@ distributions.")
      "This package provides vectorised functions for computing p-values of various
 common discrete statistical tests, as described e.g. in Agresti (2002)
 <doi:10.1002/0471249688>, including their distributions.  Exact and approximate
-computation methods are provided.  For exact p-values, several procedures of
+computation methods are provided.  For exact ones, several procedures of
 determining two-sided p-values are included, which are outlined in more detail
 in Hirji (2006) <doi:10.1201/9781420036190>.")
     (license license:gpl3)))

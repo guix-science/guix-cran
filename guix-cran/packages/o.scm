@@ -5076,6 +5076,34 @@ after claiming your free academic license at
 <https://www.gurobi.com/academia/academic-program-and-licenses/>.")
     (license license:gpl3+)))
 
+(define-public r-optree
+  (package
+    (name "r-optree")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optree" version))
+       (sha256
+        (base32 "1rgwm06k7n88vx6kxzi3nrdm2n3zy0dqqm80f801j6cp0pi9pcsg"))))
+    (properties `((upstream-name . "optree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://optree.bangyou.me/")
+    (synopsis "Hierarchical Runtime Configuration Management")
+    (description
+     "This package provides tools for managing nested, multi-level configuration
+systems with runtime mutability, type validation, and default value management.
+Supports creating hierarchical options managers with customizable validators for
+scalar and vector types (numeric, character, logical), enumerated values,
+bounded ranges, and complex structures like XY pairs.  Options can be
+dynamically modified at runtime while maintaining type safety through validator
+functions, and easily reset to their default values when needed.")
+    (license license:expat)))
+
 (define-public r-optrcdmaeat
   (package
     (name "r-optrcdmaeat")

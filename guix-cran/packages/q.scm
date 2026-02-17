@@ -2530,6 +2530,52 @@ features.  For each area identified on the map, the id numbers of these polygons
 can be entered as vectors and transformed using qualmap.")
     (license license:gpl3)))
 
+(define-public r-quallmer
+  (package
+    (name "r-quallmer")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quallmer" version))
+       (sha256
+        (base32 "194x090jih4wdib7sl5v9r731vssi5pp0w8g0y8x6y7gr1chkhda"))))
+    (properties `((upstream-name . "quallmer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-tidyr
+                             r-rlang
+                             r-lifecycle
+                             r-irr
+                             r-ellmer
+                             r-dplyr
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://quallmer.github.io/quallmer/")
+    (synopsis "Qualitative Analysis with Large Language Models")
+    (description
+     "This package provides tools for AI-assisted qualitative data coding using large
+language models ('LLMs') via the ellmer package, supporting providers including
+@code{OpenAI}', Anthropic', Google', Azure', and local models via Ollama'.
+Provides a codebook'-based workflow for defining coding instructions and
+applying them to texts, images, and other data.  Includes built-in codebooks for
+common applications such as sentiment analysis and policy coding, and functions
+for creating custom codebooks for specific research questions.  Supports
+systematic replication across models and settings, computing inter-coder
+reliability statistics including Krippendorff's alpha (Krippendorff 2019,
+<doi:10.4135/9781071878781>) and Fleiss kappa (Fleiss 1971,
+<doi:10.1037/h0031619>), as well as gold-standard validation metrics including
+accuracy, precision, recall, and F1 scores following Sokolova and Lapalme (2009,
+<doi:10.1016/j.ipm.2009.03.002>).  Provides audit trail functionality for
+documenting coding workflows following Lincoln and Guba's (1985,
+ISBN:0803924313) framework for establishing trustworthiness in qualitative
+research.")
+    (license license:gpl3)))
+
 (define-public r-qualitymeasure
   (package
     (name "r-qualitymeasure")
@@ -6413,13 +6459,13 @@ resampling methods, as in Coraggio, L. and Coretto, P. (2023)
 (define-public r-qch
   (package
     (name "r-qch")
-    (version "2.1.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qch" version))
        (sha256
-        (base32 "0s0qxkahlyzpzvy5n94q9hk49kmlb39jzrjyqra8kr1l092avfhr"))))
+        (base32 "16k193wx4jziajfrfa28fcfx9swpzs9xakvb5v5257vkl73jdyrw"))))
     (properties `((upstream-name . "qch")))
     (build-system r-build-system)
     (arguments
@@ -6440,13 +6486,13 @@ resampling methods, as in Coraggio, L. and Coretto, P. (2023)
 obtained for the same list of items.  This joint analysis is performed by
 querying a composite hypothesis, i.e.  an arbitrary complex combination of
 simple hypotheses, as described in Mary-Huard et al. (2021)
-<doi:10.1093/bioinformatics/btab592> and De Walsche et al.(2023)
-<doi:10.1101/2024.03.17.585412>.  In this approach, the Q-uplet of p-values
-associated with each item is distributed as a multivariate mixture, where each
-of the 2^Q components corresponds to a specific combination of simple
-hypotheses.  The dependence between the p-value series is considered using a
-Gaussian copula function.  A p-value for the composite hypothesis test is
-derived from the posterior probabilities.")
+<doi:10.1093/bioinformatics/btab592> and De Walsche et al.(2025) <doi:
+10.1093/nargab/lqaf118>.  In this approach, the Q-uplet of p-values associated
+with each item is distributed as a multivariate mixture, where each of the 2^Q
+components corresponds to a specific combination of simple hypotheses.  The
+dependence between the p-value series is considered using a Gaussian copula
+function.  A p-value for the composite hypothesis test is derived from the
+posterior probabilities.")
     (license license:gpl3)))
 
 (define-public r-qcgwas

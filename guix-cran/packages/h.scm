@@ -6468,13 +6468,13 @@ Single and multi-individual models are available.  O'Brien et al. (2024)
 (define-public r-hmda
   (package
     (name "r-hmda")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMDA" version))
        (sha256
-        (base32 "136vm9paw0nbdhnwddryaiw568q220vk88dacyqz19h9gav9ijbs"))))
+        (base32 "1wp8ij0lkidq47fiq981wjk04wwddlglcz0sdsvk6qlc2f3l0vxw"))))
     (properties `((upstream-name . "HMDA")))
     (build-system r-build-system)
     (arguments
@@ -6482,9 +6482,11 @@ Single and multi-individual models are available.  O'Brien et al. (2024)
       #:tests? #f))
     (propagated-inputs (list r-splittools
                              r-shapley
+                             r-reshape2
                              r-psych
                              r-h2otools
                              r-h2o
+                             r-gridextra
                              r-ggplot2
                              r-dplyr
                              r-curl
@@ -8766,40 +8768,32 @@ distributed via CRAN.")
 (define-public r-hicociety
   (package
     (name "r-hicociety")
-    (version "0.1.38")
+    (version "0.1.39")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiCociety" version))
        (sha256
-        (base32 "1k858yjjmwy0a3f3355s7dllzcbajsxsbj52617cjzrv4xiaz410"))))
+        (base32 "1p1z0jkmqfjk85q40mkdjiifmg4im5f8yz4vs3pnyj9s94i1ams3"))))
     (properties `((upstream-name . "HiCociety")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-txdb-mmusculus-ucsc-mm10-knowngene
-                             r-txdb-hsapiens-ucsc-hg38-knowngene
-                             r-strawr
+    (propagated-inputs (list r-strawr
                              r-signal
                              r-shape
                              r-s4vectors
                              r-rcpp
                              r-pracma
-                             r-org-mm-eg-db
-                             r-org-hs-eg-db
                              r-iranges
                              r-igraph
                              r-hicocietyexample
-                             r-ggraph
                              r-genomicranges
                              r-genomicfeatures
                              r-foreach
                              r-fitdistrplus
                              r-doparallel
-                             r-biomart
-                             r-biocmanager
-                             r-biocgenerics
                              r-annotationdbi))
     (home-page "https://cran.r-project.org/package=HiCociety")
     (synopsis "Inferring Chromatin Interaction Modules from 3C-Based Data")

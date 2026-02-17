@@ -73,6 +73,31 @@ Olson database) and make it current in your R session.  Beware: on Windows
 Cygwin is required!")
     (license license:expat)))
 
+(define-public r-typstable
+  (package
+    (name "r-typstable")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "typstable" version))
+       (sha256
+        (base32 "07x4kpa6lgi24layqjmizapqglcxj3jnmp9p5cfw9ln38987pjw2"))))
+    (properties `((upstream-name . "typstable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://freierson.github.io/typstable/")
+    (synopsis "Better 'Typst' Tables")
+    (description
+     "Create Typst table markup from data frames.  Features a pipe-friendly interface
+for column, row, and cell styling with support for grouped headers, grouped
+rows, and data-driven formatting.")
+    (license license:gpl3)))
+
 (define-public r-typr
   (package
     (name "r-typr")
@@ -13583,13 +13608,13 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
 (define-public r-topics
   (package
     (name "r-topics")
-    (version "0.62")
+    (version "0.70")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topics" version))
        (sha256
-        (base32 "07a3r2yfxihfxhrr3xvvkdjw27m41bgy6frl0ccd7x93wwibnwhx"))))
+        (base32 "1n01945f5qxh4x2aypww38y4imyi0dmsi72if27gj3s0yrgbr1mk"))))
     (properties `((upstream-name . "topics")))
     (build-system r-build-system)
     (arguments
@@ -13600,11 +13625,13 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
                              r-tibble
                              r-textminer
                              r-stringr
+                             r-stringi
                              r-stopwords
                              r-rlang
                              r-readr
+                             r-quanteda
                              r-purrr
-                             r-ngram
+                             r-patchwork
                              r-matrix
                              r-ggwordcloud
                              r-ggplot2
@@ -25336,13 +25363,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "12bfcmr9rxli6yb0fa2fdms941sglrlf4mni4b2xb6ph4a7jhnmk"))))
+        (base32 "1ng1gpfrkdafyygda2r3shv3175xapaq8a5l8ldds0ppmm4l7v9s"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (arguments

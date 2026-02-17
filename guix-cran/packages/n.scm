@@ -8,6 +8,7 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages java)
   #:use-module (gnu packages xml)
@@ -18,7 +19,6 @@
   #:use-module (gnu packages julia)
   #:use-module (gnu packages web)
   #:use-module (gnu packages duckdb)
-  #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -2264,6 +2264,44 @@ selection, and @code{nprobust.plot()} for plotting results.  The main
 methodological and numerical features of this package are described in Calonico,
 Cattaneo and Farrell (2019, <doi:10.18637/jss.v091.i08>).")
     (license license:gpl2)))
+
+(define-public r-nprmpi
+  (package
+    (name "r-nprmpi")
+    (version "0.60-20")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npRmpi" version))
+       (sha256
+        (base32 "0yflr13chmsvqc1qxz3qvwsg1pmiqs56s4060i60idnrhafl2w12"))))
+    (properties `((upstream-name . "npRmpi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-quadprog r-cubature r-boot))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/JeffreyRacine/R-Package-np")
+    (synopsis
+     "Parallel Nonparametric Kernel Smoothing Methods for Mixed Data Types Using 'MPI'")
+    (description
+     "Nonparametric (and semiparametric) kernel methods that seamlessly handle a mix
+of continuous, unordered, and ordered factor data types.  This package is a
+parallel implementation of the np package based on the MPI specification that
+incorporates the Rmpi package (Hao Yu <hyu@@stats.uwo.ca>) with minor
+modifications and we are extremely grateful to Hao Yu for his contributions to
+the R community.  We would like to gratefully acknowledge support from the
+Natural Sciences and Engineering Research Council of Canada (NSERC,
+<https://www.nserc-crsng.gc.ca/>), the Social Sciences and Humanities Research
+Council of Canada (SSHRC, <https://www.sshrc-crsh.gc.ca/>), and the Shared
+Hierarchical Academic Research Computing Network (SHARCNET,
+<https://sharcnet.ca/>).  We would also like to acknowledge the contributions of
+the GNU GSL authors.  In particular, we adapt the GNU GSL B-spline routine
+gsl_bspline.c adding automated support for quantile knots (in addition to
+uniform knots), providing missing functionality for derivatives, and for
+extending the splines beyond their endpoints.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-npregfast
   (package
@@ -17640,13 +17678,13 @@ Artificial Bee Colony algorithm.")
 (define-public r-nascar-data
   (package
     (name "r-nascar-data")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nascaR.data" version))
        (sha256
-        (base32 "1lyma6icay4b7qi18sy2wa9x9i9snj571y48hg9xy6p8g0qr5w5x"))))
+        (base32 "06rpvyds4hz5lhyvbl1mz0bqbnk3x7ks3p95bqv0dgj60l13sfjk"))))
     (properties `((upstream-name . "nascaR.data")))
     (build-system r-build-system)
     (arguments

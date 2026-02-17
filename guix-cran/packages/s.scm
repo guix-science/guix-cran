@@ -21392,6 +21392,30 @@ statements and queries as strings.  This works by annotating the SQL code with a
 name comment, which also will be the name of the list element.")
     (license license:expat)))
 
+(define-public r-sqlserverconnect
+  (package
+    (name "r-sqlserverconnect")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sqlserverconnect" version))
+       (sha256
+        (base32 "0bx6kdsird2h2x5d7nb067crsimp803k4l0rfvvgs8z7zygjxqw3"))))
+    (properties `((upstream-name . "sqlserverconnect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pool r-odbc r-dbi r-cli))
+    (home-page "https://cran.r-project.org/package=sqlserverconnect")
+    (synopsis "Simple Helpers for Connecting to 'SQL Server'")
+    (description
+     "Lightweight helpers for connecting to Microsoft SQL Server using DBI', odbc',
+and pool'.  Provides simple wrappers for building connection arguments,
+establishing connections, and safely disconnecting.")
+    (license license:expat)))
+
 (define-public r-sqlscore
   (package
     (name "r-sqlscore")
@@ -43828,6 +43852,39 @@ matrix is described in Section 5.1 of Christidis, Van Aelst and Zamar (2019)
 <@code{arXiv:1812.05678>}.")
     (license license:gpl2+)))
 
+(define-public r-simtablr
+  (package
+    (name "r-simtablr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimtablR" version))
+       (sha256
+        (base32 "0j6in7xcdzvixfy3xv6sc86vkpywlhd3lhw17x9j8kjmb40wj2y8"))))
+    (properties `((upstream-name . "SimtablR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sandwich
+                             r-openxlsx
+                             r-lmtest
+                             r-flextable
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MatheusTG-14/SimtablR")
+    (synopsis "Easy Publication-Ready Tables and Regression Analysis")
+    (description
+     "Streamlines the creation of descriptive frequency tables ('Table 1'), diagnostic
+test accuracy evaluations (sensitivity, specificity, predictive values), and
+multi-outcome regression summaries.  Features automatic tables, prevalence and
+odds ratio calculations, and seamless integration with flextable for exporting
+results to Microsoft Word and @code{PowerPoint}'.")
+    (license license:expat)))
+
 (define-public r-simsurvey
   (package
     (name "r-simsurvey")
@@ -58026,13 +58083,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "1v3r0jpnbhv51427njnll0v1zvd6kv2nvrc2h8lf40z0zvcm4818"))))
+        (base32 "1mknvabdd6r3rxl81xb8wwr35w51yc249pij0cz58q7r98bbz78k"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -65632,13 +65689,13 @@ respectively.")
 (define-public r-scspatialsim
   (package
     (name "r-scspatialsim")
-    (version "0.1.3.4")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scSpatialSIM" version))
        (sha256
-        (base32 "04r3fqsv0ycjycy11r03ga05s4wzjlmhxifw8cm92qkcl8h4av40"))))
+        (base32 "18a7pa06yd2l9dlgc29jgqmbqn49n5d4nfqzj5kyqg01jnslwjxh"))))
     (properties `((upstream-name . "scSpatialSIM")))
     (build-system r-build-system)
     (arguments
@@ -74906,37 +74963,6 @@ coefficients across the frequency and severity components.  This enhancement not
 only increases model accuracy but also enhances its interpretability, making it
 more suitable for practical applications in risk assessment.")
     (license license:gpl2)))
-
-(define-public r-safemapper
-  (package
-    (name "r-safemapper")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SafeMapper" version))
-       (sha256
-        (base32 "1jh5sx1gkwn0v6q8j7nw2wqx1mma8l3p4333902kkn5245fnhs2q"))))
-    (properties `((upstream-name . "SafeMapper")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-purrr r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Zaoqu-Liu/SafeMapper")
-    (synopsis
-     "Fault-Tolerant Functional Programming with Automatic Checkpointing")
-    (description
-     "This package provides drop-in replacements for purrr and furrr mapping functions
-with built-in fault tolerance, automatic checkpointing, and seamless recovery
-capabilities.  When long-running computations are interrupted due to errors,
-system crashes, or other failures, simply re-run the same code to automatically
-resume from the last checkpoint.  Ideal for large-scale data processing, API
-calls, web scraping, and other time-intensive operations where reliability is
-critical.  For purrr methodology, see Wickham and Henry (2023)
-<https://purrr.tidyverse.org/>.")
-    (license license:expat)))
 
 (define-public r-safejoin
   (package
