@@ -3687,6 +3687,36 @@ package implements the methods introduced in Green, P. J. and Mortera, J. (2017)
 given along with sale prices.")
     (license license:expat)))
 
+(define-public r-kinformr
+  (package
+    (name "r-kinformr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KinformR" version))
+       (sha256
+        (base32 "1nghn0bj9pvkhi03rh1sr32f9zc07d8pwh79jshp403ih5mnm6n5"))))
+    (properties `((upstream-name . "KinformR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SequenceBio/KinformR")
+    (synopsis "Relationship-Informed Pedigree and Variant Scoring")
+    (description
+     "Comparative evaluation of families and candidate variants in rare-variant
+association studies.  The package can be used for two methodologically
+overlapping but distinct purposes.  First, the prior to any genetic or genomic
+evaluation, evaluation of relative detection power of pedigrees, can direct
+recruitment efforts by showing which individuals not yet sampled would be the
+most meaningful additions to a study.  Second, after sequencing and analysis,
+variants based on association with disease status and familial relationships of
+individuals, aids in variant prioritization.  Methodology is described in Nugent
+(2025) <doi:10.1101/2025.10.06.25337426>.")
+    (license license:expat)))
+
 (define-public r-kinesis
   (package
     (name "r-kinesis")

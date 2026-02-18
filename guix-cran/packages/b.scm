@@ -3961,13 +3961,13 @@ of the LZ77 algorithm and Huffman coding
 (define-public r-broom-mixed
   (package
     (name "r-broom-mixed")
-    (version "0.2.9.6")
+    (version "0.2.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broom.mixed" version))
        (sha256
-        (base32 "134qwdwhm0ih55n26hbyqb1hxj8d5k5jpc6gagpn9ny2vryzsszh"))))
+        (base32 "0hcnp9p9412a38n0q49yvmsbv6wzbwdwv825cgj0rpf3a8izmf11"))))
     (properties `((upstream-name . "broom.mixed")))
     (build-system r-build-system)
     (arguments
@@ -17046,13 +17046,13 @@ districts, counties, and states.")
 (define-public r-bindata
   (package
     (name "r-bindata")
-    (version "0.9-23")
+    (version "0.9-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bindata" version))
        (sha256
-        (base32 "1f5vvkjyipq6dpknqzj0qsvgrwagkqlpggbqxrv93ywcmca2f375"))))
+        (base32 "1rf0is43765bkh7nfn3rrr8p85ic80wq84ij1aw69i2gf732139w"))))
     (properties `((upstream-name . "bindata")))
     (build-system r-build-system)
     (arguments
@@ -23415,13 +23415,13 @@ Statistics (to appear).")
 (define-public r-bdrc
   (package
     (name "r-bdrc")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdrc" version))
        (sha256
-        (base32 "1ljx89skyp4mh2qvakw0zgw29cm7b64z6g38km699hpjgrirf8jy"))))
+        (base32 "12rd21xryl6z339vv9zl5z2zmx1jzpjxx3885hpfinp754j53n3y"))))
     (properties `((upstream-name . "bdrc")))
     (build-system r-build-system)
     (arguments
@@ -23439,8 +23439,8 @@ Statistics (to appear).")
     (description
      "Fits a discharge rating curve based on the power-law and the generalized
 power-law from data on paired stage and discharge measurements in a given river
-using a Bayesian hierarchical model as described in Hrafnkelsson et al. (2020)
-<doi:10.48550/@code{arXiv.2010.04769>}.")
+using a Bayesian hierarchical model as described in Hrafnkelsson et al. (2022)
+<doi:10.1002/env.2711>.")
     (license license:expat)))
 
 (define-public r-bdpv
@@ -32759,13 +32759,13 @@ models using Bayes factors, and more.")
 (define-public r-bamm
   (package
     (name "r-bamm")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamm" version))
        (sha256
-        (base32 "0mbdsiiazwpwaak793mjsf75d4q3mbw5kgvcxwdxrwr8s6h49szh"))))
+        (base32 "1cbk0rfj8zfiwadbjz9xxzvsmai8ha94y2mihlwi8l3v88k9mq7h"))))
     (properties `((upstream-name . "bamm")))
     (build-system r-build-system)
     (arguments
@@ -32779,16 +32779,13 @@ models using Bayes factors, and more.")
                              r-rcpp
                              r-raster
                              r-purrr
-                             r-plotly
                              r-matrix
                              r-magrittr
                              r-leaflet
                              r-igraph
                              r-future
                              r-furrr
-                             r-exactextractr
                              r-dplyr
-                             r-crosstalk
                              r-animation))
     (native-inputs (list r-knitr))
     (home-page "https://luismurao.github.io/bamm/")

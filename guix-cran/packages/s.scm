@@ -25803,6 +25803,34 @@ be parallelized on multi-thread computing platforms that support @code{OpenMP}'.
  Both continuous and unordered categorical response variables are supported.")
     (license license:expat)))
 
+(define-public r-spexvb
+  (package
+    (name "r-spexvb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spexvb" version))
+       (sha256
+        (base32 "11in9zy9pbf4fr9hcadwl29bap3ik91r45ymdnz2snaa5zxww230"))))
+    (properties `((upstream-name . "spexvb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet r-foreach r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spexvb")
+    (synopsis
+     "Parameter Expanded Variational Bayes for High-Dimensional Linear Regression")
+    (description
+     "This package implements a parameter expanded variational Bayes algorithm for
+linear regression models with high-dimensional variable selection.  The
+methodology utilizes spike-and-slab priors to perform simultaneous estimation
+and selection.  Details can be found in Olejua et al. (2024)
+<doi:10.21203/rs.3.rs-7208847/v1>.")
+    (license license:expat)))
+
 (define-public r-spex
   (package
     (name "r-spex")
@@ -32909,13 +32937,13 @@ constraints\".  Biometrics, 75, 539-550. <doi:10.1111/biom.12997>.")
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sorcering" version))
        (sha256
-        (base32 "17rfhbsddgahai6i6y2n1xzd4x91kra2cwap36h9w6jrq9an2vp8"))))
+        (base32 "14ff1s3ysw7ipx5v16ii5px6agd8plpdfvha6g9daq4kr9g0n3l9"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (arguments
@@ -40107,13 +40135,13 @@ function in this package is \"@code{maximinSLHD}\".")
 (define-public r-slgp
   (package
     (name "r-slgp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLGP" version))
        (sha256
-        (base32 "1rfisms26bz9mimvfw3plwlh49ygvqfikj2bps9i3dmndzqvq41c"))))
+        (base32 "1fnx7drbc5j19gbkbvps83j0dqiv6cqwq56a444bnp3dw9bf1gzf"))))
     (properties `((upstream-name . "SLGP")))
     (build-system r-build-system)
     (arguments

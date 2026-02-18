@@ -554,13 +554,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.46")
+    (version "4.48")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1qpxjzbw500qg5h8l0hxhfhv0xrah13mh1phz31lmwh4lhv42x60"))))
+        (base32 "1x1yk60wdc4nw5g3dgjfbm2jv7pl91kd85pb6xrvcvcs9w0dkrw9"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -2100,13 +2100,13 @@ methods.")
 (define-public r-funmodeling
   (package
     (name "r-funmodeling")
-    (version "1.9.5")
+    (version "1.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funModeling" version))
        (sha256
-        (base32 "0wrcfqn0sj2shs2105glhm4ll5avbh8aq0yc6q72cjixjck9hn6h"))))
+        (base32 "0bz09axpn1zqkfnv4p58cd5qlppv8qsva93qvpdfddhp51zbvvfd"))))
     (properties `((upstream-name . "funModeling")))
     (build-system r-build-system)
     (arguments
@@ -2115,11 +2115,11 @@ methods.")
     (propagated-inputs (list r-stringr
                              r-scales
                              r-rocr
+                             r-rlang
                              r-reshape2
                              r-rcolorbrewer
                              r-pander
                              r-moments
-                             r-lazyeval
                              r-hmisc
                              r-gridextra
                              r-ggplot2
@@ -5858,6 +5858,41 @@ contained in this package.")
 spoken by more than one million speakers.  Franc is a port of the
 @code{JavaScript} project of the same name, see
 <https://github.com/wooorm/franc>.")
+    (license license:expat)))
+
+(define-public r-framework
+  (package
+    (name "r-framework")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "framework" version))
+       (sha256
+        (base32 "0g1l4alydwi478g8hgpb6sn3zwjfzww7w7pvf97fy47is582i1fy"))))
+    (properties `((upstream-name . "framework")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-rsqlite
+                             r-readr
+                             r-plumber
+                             r-openssl
+                             r-lubridate
+                             r-jsonlite
+                             r-fs
+                             r-dotenv
+                             r-dbi
+                             r-checkmate))
+    (home-page "https://framework.table1.org")
+    (synopsis "Structured Data Science Project Scaffolding")
+    (description
+     "Project scaffolding and workflow tools for reproducible data science.  Manages
+packages, tracks data integrity, handles database connections, generates
+notebooks, and publishes to S3-compatible storage.  More information at
+<https://framework.table1.org>.")
     (license license:expat)))
 
 (define-public r-frames2
@@ -25300,13 +25335,13 @@ regressions, see Lederer & Vogt (2021, JMLR)
 (define-public r-fars
   (package
     (name "r-fars")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FARS" version))
        (sha256
-        (base32 "1k6lrghx23paj82bngadnzwc45agqqzg7jd5yl4m5xp3hkf7gh0h"))))
+        (base32 "1a1k32mdvzk798pz5sivf9waanmqf5rxhrhrvnq0jqsv6lnkd9q6"))))
     (properties `((upstream-name . "FARS")))
     (build-system r-build-system)
     (arguments

@@ -552,13 +552,13 @@ user input, searching rows of a data frame and capturing string tokens.")
 (define-public r-ymlthis
   (package
     (name "r-ymlthis")
-    (version "0.1.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ymlthis" version))
        (sha256
-        (base32 "127rh8mfff0ii6wcd7iaaz60vlkynjlrs188wwcap8l2qgv67idy"))))
+        (base32 "164634rvr0hyswzx862387hg1s8mh9yvi3zfblndm23g7crq5h1i"))))
     (properties `((upstream-name . "ymlthis")))
     (build-system r-build-system)
     (arguments

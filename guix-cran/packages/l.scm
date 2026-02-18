@@ -6557,13 +6557,13 @@ created based on local rather than global behaviour of each original feature.")
 (define-public r-localllm
   (package
     (name "r-localllm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localLLM" version))
        (sha256
-        (base32 "0166vm239ashnri8jppph02zmyhp34340wqsmnrrjl3w52s394ax"))))
+        (base32 "0ib5wnrcj26cb42yfxyqjwfdv7anrxg0i4jvyb171yyq9d86ryih"))))
     (properties `((upstream-name . "localLLM")))
     (build-system r-build-system)
     (arguments
@@ -11701,6 +11701,36 @@ proportion test are presented in Liu, Yu, Mao, Wu, Dyer (2023)
 wavelet lifting scales and wavelet energy of Knight et al (2017)
 <doi:10.1007/s11222-016-9698-2>.")
     (license license:gpl2)))
+
+(define-public r-lifetablefertility
+  (package
+    (name "r-lifetablefertility")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LifeTableFertility" version))
+       (sha256
+        (base32 "0683g52mh138z2m41d1ajhj64cqrc71n8xi4mprmazflsrby3sbw"))))
+    (properties `((upstream-name . "LifeTableFertility")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (home-page "https://github.com/almarazkrae-4081/LifeTableFertility")
+    (synopsis "'shiny' Application for Life Table and Fertility Analysis")
+    (description
+     "This package provides a shiny application to construct age-specific life tables
+and fertility schedules from individual female daily egg records.  The
+application computes age-specific survival and fertility functions and estimates
+key demographic parameters including the net reproductive rate, mean generation
+time, intrinsic rate of increase, finite rate of increase and doubling time.
+Optional confidence intervals can be obtained using percentile bootstrap or
+delete-1 jackknife resampling at the female level.  Methods and definitions
+follow Stevens (2009) <doi:10.1007/978-0-387-89882-7> and Rossini et al. (2024)
+<doi:10.1371/journal.pone.0299598>.")
+    (license license:expat)))
 
 (define-public r-lifertable
   (package
@@ -17001,13 +17031,13 @@ will be added as required.")
 (define-public r-lazysf
   (package
     (name "r-lazysf")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lazysf" version))
        (sha256
-        (base32 "0648ds8xdw9jmdlljg7732fpcyk5gb7cagcp84ix6f2rqfqn8say"))))
+        (base32 "04qygmsyr7f5ifv48f3kqnl3cwykkyfrn34ac1cc0mc0zgaw3zj3"))))
     (properties `((upstream-name . "lazysf")))
     (build-system r-build-system)
     (arguments

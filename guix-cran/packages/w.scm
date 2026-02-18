@@ -998,13 +998,13 @@ insert, update, upsert, patch, delete, overwrite, overwrite_schema.")
 (define-public r-writealizer
   (package
     (name "r-writealizer")
-    (version "1.7.2")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "writeAlizer" version))
        (sha256
-        (base32 "16vh668bhn837lknni94wsybpxmgpngsi8nxivz1llviczw9ak3m"))))
+        (base32 "1dwp2nyz9dpy41hym36kzbbgzw2fc34nlzg560sf93gjdz3sg4pv"))))
     (properties `((upstream-name . "writeAlizer")))
     (build-system r-build-system)
     (arguments

@@ -3915,13 +3915,13 @@ ISBN:978-0132892314).")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "0m70nhy48wv72yidsqq1qc5p9j7s8pv2nad2p7c0271lwga83x4a"))))
+        (base32 "0bhknv49c9gf46f5w2mri9xghpk93yprk2z6lywfcay9fm169686"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -7202,13 +7202,13 @@ function for re-coding vectors.")
 (define-public r-etl
   (package
     (name "r-etl")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "etl" version))
        (sha256
-        (base32 "0cggfdw98v70wigifqvnz01lg362mpbvvcla4apcvkysmpsyqlz1"))))
+        (base32 "0a4hgjmlg54qwmy5ibhy28qy4bqjp25nf83754k1bjn2441z3rns"))))
     (properties `((upstream-name . "etl")))
     (build-system r-build-system)
     (arguments
@@ -9769,13 +9769,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.11.0")
+    (version "4.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "1lb1gznwxbfajvdmy3ifhdv7r938wjrlm9m89ccqdvr7hynzaxh0"))))
+        (base32 "1db3qgwsb4507zs6vjf43g3zdsi67jqn4ng2yhbfh3zwsqnyyjpb"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (arguments
@@ -9797,7 +9797,8 @@ networks whose edge weights are counts.  See Krivitsky (2012)
                              r-magrittr
                              r-lpsolveapi
                              r-knitr
-                             r-coda))
+                             r-coda
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://statnet.org")
     (synopsis

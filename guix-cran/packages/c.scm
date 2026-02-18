@@ -4476,13 +4476,13 @@ data.")
 (define-public r-cspstandsegmentation
   (package
     (name "r-cspstandsegmentation")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CspStandSegmentation" version))
        (sha256
-        (base32 "08kipa19dya4ynll3hgqbrd6axrbmjql01k4b97gdy2r7c2lsm5n"))))
+        (base32 "0x6d9qj823vl6lyraqwvim6iw57kwb8gb1qi3b6hhpkwgg441yd2"))))
     (properties `((upstream-name . "CspStandSegmentation")))
     (build-system r-build-system)
     (arguments
@@ -21474,13 +21474,13 @@ algebraic.mle for downstream analysis.  Methods based on Nocedal J, Wright SJ
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "8.0")
+    (version "8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "176c4r6nb0h9jyx638vncqfh9k1h32znw17dyrxhar66ldzy3v97"))))
+        (base32 "00axm6nznh77cwnrayizlsm1yxc9b66vzvjdjha56sw2b551vgas"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -21493,6 +21493,7 @@ algebraic.mle for downstream analysis.  Methods based on Nocedal J, Wright SJ
                              r-rfast
                              r-quantreg
                              r-quadprog
+                             r-osqp
                              r-nnet
                              r-mixture
                              r-minpack-lm
@@ -21500,10 +21501,8 @@ algebraic.mle for downstream analysis.  Methods based on Nocedal J, Wright SJ
                              r-matrix
                              r-mass
                              r-glmnet
-                             r-foreach
                              r-energy
                              r-emplik
-                             r-doparallel
                              r-cluster
                              r-bigstatsr))
     (home-page "https://cran.r-project.org/package=Compositional")
@@ -21552,11 +21551,11 @@ Statistics--Theory and Methods, 52(16): 5535--5567.
 data with zeros\".  Statistics and Computing, 33(106).
 <doi:10.1007/s11222-023-10277-5>.  n) Tsagris.  M. (2025). \"Constrained least
 squares simplicial-simplicial regression\".  Statistics and Computing, 35(27).
-<doi:10.1007/s11222-024-10560-z>.  o) Sevinc V. and Tsagris.  M. (2024). \"Energy
+<doi:10.1007/s11222-024-10560-z>.  o) Sevinc V. and Tsagris.  M. (2025). \"Energy
 Based Equality of Distributions Testing for Compositional Data\".
-<doi:10.48550/@code{arXiv.2412.05199>}.  p) Tsagris M. (2025). \"Scalable
-approximation of the transformation-free linear simplicial-simplicial regression
-via constrained iterative reweighted least squares\".
+<doi:10.48550/@code{arXiv.2412.05199>}.  p) Tsagris M. and Alzeley O. (2025).
+\"Scalable approximation of the transformation-free linear simplicial-simplicial
+regression via constrained iterative reweighted least squares\".
 <doi:10.48550/@code{arXiv.2511.13296>}.")
     (license license:gpl2+)))
 
@@ -25298,13 +25297,13 @@ Statistics & Data Analysis, <doi:10.1016/j.csda.2007.03.002>).")
 (define-public r-col2hex2col
   (package
     (name "r-col2hex2col")
-    (version "0.3.1")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "col2hex2col" version))
        (sha256
-        (base32 "0df6791irm80avnwyyzz3g9ldyhdn89a8d4zljy3mhf5r86p3rn1"))))
+        (base32 "1jya4yr27wp2pnbkzrpjpbzp9msv1ff5ww63jdhvkb3pxq020590"))))
     (properties `((upstream-name . "col2hex2col")))
     (build-system r-build-system)
     (arguments

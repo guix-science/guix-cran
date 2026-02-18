@@ -16699,13 +16699,13 @@ Kang et al. (2012) <doi:10.4196/kjpp.2012.16.2.97>.")
 (define-public r-positron-tutorials
   (package
     (name "r-positron-tutorials")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "positron.tutorials" version))
        (sha256
-        (base32 "1pjn0jwm6q9543rajc1kal8bvah1dcim775ydrcpqfbq4x7br7a5"))))
+        (base32 "1rzybph22cjpn7zkmsx988qac8s8kp33m7f60y8dadxcylq0gcbj"))))
     (properties `((upstream-name . "positron.tutorials")))
     (build-system r-build-system)
     (arguments
@@ -16713,11 +16713,12 @@ Kang et al. (2012) <doi:10.4196/kjpp.2012.16.2.97>.")
       #:tests? #f))
     (propagated-inputs (list r-usethis r-tutorial-helpers))
     (home-page "https://ppbds.github.io/positron.tutorials/")
-    (synopsis "Tutorials for Learning 'Positron' and Related Tools")
+    (synopsis "Tutorials for Learning 'Positron' and for Using AI")
     (description
-     "Collection of tutorials for working with Positron'.  Covers scripts, Quarto
-documents, Git', @code{GitHub}', and Quarto websites.  Makes extensive use of
-the tools in the tutorial.helpers package.")
+     "Collection of tutorials for working with Positron and for learning how to apply
+generative AI when coding with R. Covers scripts, Quarto documents, Git',
+@code{GitHub}', and Quarto websites.  Makes extensive use of the tools in the
+tutorial.helpers package.")
     (license license:expat)))
 
 (define-public r-posir
@@ -26971,13 +26972,13 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
 (define-public r-pkbioanalysis
   (package
     (name "r-pkbioanalysis")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKbioanalysis" version))
        (sha256
-        (base32 "0vi5vkgmf6phnjwn1srcq43zi6p601qdnzhj6i80xyw4fbfmkfgr"))))
+        (base32 "16x3fj1lq53mp149w9chxni6d6c3gdn8r9a5v06d089yk1y1965c"))))
     (properties `((upstream-name . "PKbioanalysis")))
     (build-system r-build-system)
     (arguments
@@ -26986,6 +26987,7 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
     (inputs (list python))
     (propagated-inputs (list r-yaml
                              r-xml2
+                             r-writexl
                              r-uuid
                              r-units
                              r-tidyselect
@@ -27006,7 +27008,6 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
                              r-reactable
                              r-rams
                              r-pracma
-                             r-pmxtools
                              r-plotly
                              r-nloptr
                              r-nlme
@@ -28455,6 +28456,56 @@ Index ('PII').")
      "Check a data frame for personal information, including names, location,
 disability status, and geo-coordinates.")
     (license license:expat)))
+
+(define-public r-piglet
+  (package
+    (name "r-piglet")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "piglet" version))
+       (sha256
+        (base32 "0zq34n7zzp9nwwq14klpri11xyf7yw9jq9c264gzjgg39dgawxxx"))))
+    (properties `((upstream-name . "piglet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zen4r
+                             r-tigger
+                             r-stringdist
+                             r-rlang
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-igraph
+                             r-ggplot2
+                             r-dendextend
+                             r-decipher
+                             r-data-table
+                             r-cluster
+                             r-circlize
+                             r-biostrings
+                             r-ape
+                             r-alakazam))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=piglet")
+    (synopsis
+     "Program for Inferring Immunoglobulin Allele Similarity Clusters and Genotypes")
+    (description
+     "Improves genotype inference and downstream Adaptive Immune Receptor Repertoire
+Sequence data analysis.  Inference of allele similarity clusters, an alternative
+naming scheme and genotype inference for immunoglobulin heavy chain repertoires.
+ The main tools are allele similarity clusters, and allele based genotype.  The
+first tool is designed to reduce the ambiguity within the immunoglobulin heavy
+chain V alleles.  The ambiguity is caused by duplicated or similar alleles which
+are shared among different genes.  The second tool is an allele based genotype,
+that determined the presence of an allele based on a threshold derived from a
+naive population.  See Peres et al. (2023) <doi:10.1093/nar/gkad603>.")
+    (license license:cc-by-sa4.0)))
 
 (define-public r-piggyback
   (package
@@ -42992,13 +43043,13 @@ another.")
 (define-public r-parcr
   (package
     (name "r-parcr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parcr" version))
        (sha256
-        (base32 "08q2c0crdj6kad1m0scvn7v6b30s56i8ggjnqlnf6zphpx7x7jmm"))))
+        (base32 "05d5n2ycc9k3khmiz1flx8lkfdz2fi0rdgack6q020cllxcg85vv"))))
     (properties `((upstream-name . "parcr")))
     (build-system r-build-system)
     (arguments

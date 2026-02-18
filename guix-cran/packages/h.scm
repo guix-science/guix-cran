@@ -3525,19 +3525,19 @@ Bivand and Piras, (2015) <doi:10.18637/jss.v063.i18>, Drukker et al., (2013)
 (define-public r-hsphase
   (package
     (name "r-hsphase")
-    (version "2.0.4")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hsphase" version))
        (sha256
-        (base32 "077cdnd9d2d8jdjcbvp494asbxk2pckvrznd2341lg4yp6kx5g17"))))
+        (base32 "0pmikrcf1r4qnxpdm5sbsph671m0cap5g6mp07k4dsbd96n07i07"))))
     (properties `((upstream-name . "hsphase")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-snowfall r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-snowfall r-rcpparmadillo r-rcpp r-gdata))
     (home-page "https://cran.r-project.org/package=hsphase")
     (synopsis
      "Phasing, Pedigree Reconstruction, Sire Imputation and Recombination Events Identification of Half-sib Families Using SNP Data")
@@ -10501,13 +10501,13 @@ space when there are more than a few response variables.")
 (define-public r-henna
   (package
     (name "r-henna")
-    (version "0.3.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "henna" version))
        (sha256
-        (base32 "15i05mscb760f2726ydsmrnwcgw351gcqp1ny3lv9i1qi6z469y0"))))
+        (base32 "0rj835dyqf7zzls2yyb515l5y3capqwavifhna2bj4pfvxa7f33p"))))
     (properties `((upstream-name . "henna")))
     (build-system r-build-system)
     (arguments
@@ -10518,6 +10518,7 @@ space when there are more than a few response variables.")
                              r-tidygraph
                              r-rlang
                              r-reshape2
+                             r-paletteer
                              r-liver
                              r-ggrepel
                              r-ggraph
@@ -10528,14 +10529,14 @@ space when there are more than a few response variables.")
                              r-ggalluvial
                              r-dplyr
                              r-abdiv))
-    (home-page "https://cran.r-project.org/package=henna")
+    (home-page "https://github.com/andrei-stoica26/henna")
     (synopsis "Versatile Visualization Suite")
     (description
      "This package provides a visualization suite primarily designed for single-cell
-RNA-sequencing data analysis applications, but adaptable to other purposes as
+RNA-sequencing data analysis applications but well-suited for other purposes as
 well.  It introduces novel plots to represent two-variable and frequency data
 and optimizes some commonly used plotting options (e.g., correlation, network,
-density and alluvial plots) for ease of usage and flexibility.")
+density, alluvial and volcano plots) for ease of usage and flexibility.")
     (license license:expat)))
 
 (define-public r-hemispher

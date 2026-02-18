@@ -5874,6 +5874,32 @@ Provide distribution d, p, q, r functions, fitting and testing functions.
 Project initiated by Paul Higbie and based on Cosma Shalizi's code.")
     (license license:gpl2+)))
 
+(define-public r-ts
+  (package
+    (name "r-ts")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ts" version))
+       (sha256
+        (base32 "0z0kwkm2a9ld97av4qdcgcnh89biipdz3vi15i4x1nyy29hkxjgp"))))
+    (properties `((upstream-name . "Ts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (home-page "https://cran.r-project.org/package=Ts")
+    (synopsis
+     "Calculation of the Surface Temperature (Ts) from Geospatial Raster Data")
+    (description
+     "This package provides functions to calculate the Surface Temperature (Ts) from
+geospatial raster data.  These functions use albedo, Normalized Difference
+Vegetation Index (NDVI), and air temperature (Ta) to estimate Ts, facilitating
+hydrological, ecological, and remote sensing analyses.")
+    (license license:gpl3)))
+
 (define-public r-tryr
   (package
     (name "r-tryr")
@@ -20741,6 +20767,52 @@ palettes.")
 parses geo feeds and returns tidy simple features data frames.")
     (license license:expat)))
 
+(define-public r-tidygenr
+  (package
+    (name "r-tidygenr")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyGenR" version))
+       (sha256
+        (base32 "13hs0m18q01rdw7r2n07sjv5bf58180myk8gzqpcr45sq52fmrvg"))))
+    (properties `((upstream-name . "tidyGenR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shortread
+                             r-readr
+                             r-plyr
+                             r-patchwork
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-digest
+                             r-decipher
+                             r-dada2
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/csmiguel/tidyGenR")
+    (synopsis "Tidy Multilocus Amplicon Genotypes")
+    (description
+     "Variant determination and genotyping from high throughput sequences from
+multilocus amplicon libraries, typically sequenced in Illumina @code{MiSeq} or
+similar.  It provides a set of core functions for the central steps: demultiplex
+by locus, truncate reads, variant calling, and genotype calling.  Additionally,
+it provides a set of functions for diagnosis and estimation of best running
+parameters and multiple extensions for genotype/variants manipulation and
+reformatting.  Output variants and genotypes are output in tidy format, thus
+facilitating reformatting, manipulation and potential connection to other R
+packages.")
+    (license license:gpl3+)))
+
 (define-public r-tidygate
   (package
     (name "r-tidygate")
@@ -21810,13 +21882,13 @@ easier control on categorical parameter estimates.")
 (define-public r-tidyboot
   (package
     (name "r-tidyboot")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyboot" version))
        (sha256
-        (base32 "0nss1ci763g9p5f33g163ppamx72axc8xhrils0cql3ka8439pmn"))))
+        (base32 "0yl4jg4nkj2yjgq4dya53hzcjkkc6cwbc97qi57y9hpq8lbxywq0"))))
     (properties `((upstream-name . "tidyboot")))
     (build-system r-build-system)
     (arguments

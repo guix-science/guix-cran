@@ -2592,6 +2592,54 @@ to support ecoacoustics studies.  For more details about the indices read Towsey
 <doi:10.1111/cobi.12968>.")
     (license license:expat)))
 
+(define-public r-ruhere
+  (package
+    (name "r-ruhere")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RuHere" version))
+       (sha256
+        (base32 "0pwgw02imfdysrx2mkc1982lgiymavm7w1aqg4jv1qblmw209fan"))))
+    (properties `((upstream-name . "RuHere")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stringi
+                             r-sf
+                             r-rredlist
+                             r-ridigbio
+                             r-rgbif
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mapview
+                             r-jsonlite
+                             r-ggplot2
+                             r-ggnewscale
+                             r-florabr
+                             r-fields
+                             r-faunabr
+                             r-data-table
+                             r-bien))
+    (native-inputs (list r-knitr))
+    (home-page "https://wevertonbio.github.io/RuHere/")
+    (synopsis
+     "Flags Spatial Errors in Biological Collection Data Using Specialists' Information")
+    (description
+     "Automatically flags common spatial errors in biological collection data using
+metadata and specialists information. @code{RuHere} implements a workflow to
+manage occurrence data through six steps: dataset merging, metadata flagging,
+validation against expert-derived distribution maps, visualization of flagged
+records, and sampling bias exploration.  It specifically integrates
+specialist-curated range information to identify geographic errors and
+introductions that often escape standard automated validation procedures.  For
+details on the methodology, see: Trindade & Caron (2026)
+<doi:10.64898/2026.02.02.703373>.")
+    (license license:gpl3+)))
+
 (define-public r-rugarch
   (package
     (name "r-rugarch")
@@ -11368,13 +11416,13 @@ performance.  For more information see, Markowitz, H.M. (1952),
 (define-public r-rpointcloud
   (package
     (name "r-rpointcloud")
-    (version "0.8.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPointCloud" version))
        (sha256
-        (base32 "1rzqfszcras62gndzg3z34qlhkqjdrrf3z5gcxfqdfmn6cj2ynm9"))))
+        (base32 "177p145h2hrq4yn802fj702ab7wvlgr61zfgbj4n02s85689cwcf"))))
     (properties `((upstream-name . "RPointCloud")))
     (build-system r-build-system)
     (arguments
@@ -27725,6 +27773,31 @@ drug discovery, providing functions and utilities with minimal external
 dependency and maximal efficiency.")
     (license license:gpl3)))
 
+(define-public r-ribiosmath
+  (package
+    (name "r-ribiosmath")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ribiosMath" version))
+       (sha256
+        (base32 "033acsz2wn3v788bw31z4s4lxf7q7jiib9aczgqskbyi4qskmzqj"))))
+    (properties `((upstream-name . "ribiosMath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/bedapub/ribiosMath")
+    (synopsis "Mathematical and Statistical Tools in 'ribios'")
+    (description
+     "Mathematical and statistical tools for computational biology in drug discovery.
+Functions are designed for high performance.  Implements the hierarchical fuzzy
+multi-linkage partitioning method proposed by Huang et al. (2007)
+<doi:10.1186/gb-2007-8-9-r183>.")
+    (license license:gpl3)))
+
 (define-public r-ribench
   (package
     (name "r-ribench")
@@ -38375,6 +38448,49 @@ through a unified interface.  For details, see Gramacy & Polson (2012
      "An algorithm is proposed to estimate regression kink model proposed by the
 paper, Lixiong Yang and Jen-Je Su (2018) <doi:10.1016/j.jimonfin.2018.06.002>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-registr
+  (package
+    (name "r-registr")
+    (version "2.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "registr" version))
+       (sha256
+        (base32 "1844bal4ibh7lm9yp353l7gfcw73i01wp4r4paf2v1g46aniw6i7"))))
+    (properties `((upstream-name . "registr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-pbs
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-lme4
+                             r-gamm4
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=registr")
+    (synopsis "Curve Registration for Exponential Family Functional Data")
+    (description
+     "This package provides a method for performing joint registration and functional
+principal component analysis for curves (functional data) that are generated
+from exponential family distributions.  This mainly implements the algorithms
+described in Wrobel et al. (2019) <doi:10.1111/biom.12963> and further adapts
+them to potentially incomplete curves where (some) curves are not observed from
+the beginning and/or until the end of the common domain.  Curve registration can
+be used to better understand patterns in functional data by separating curves
+into phase and amplitude variability.  This software handles both binary and
+continuous functional data, and is especially applicable in accelerometry and
+wearable technology.")
+    (license license:expat)))
 
 (define-public r-regions
   (package
@@ -51828,6 +51944,31 @@ functions and can be obtained in different data structures common to R
 which groups of transformations are composed together and act on probability
 distributions.")
     (license license:expat)))
+
+(define-public r-rbbr
+  (package
+    (name "r-rbbr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RBBR" version))
+       (sha256
+        (base32 "03w2bwdjdb7rlgavr58bjh10xmkwyb19sdkfz92g5q51pdgvyyd6"))))
+    (properties `((upstream-name . "RBBR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet r-foreach r-doparallel))
+    (home-page "https://github.com/CompBioIPM/RBBR")
+    (synopsis "Regression-Based Boolean Rule Inference")
+    (description
+     "This package provides tools for regression-based Boolean rule inference in
+artificial intelligence studies.  The package fits ridge regression models on
+conjunction expansions and composes interpretable rule sets.  Parallel execution
+is supported for multi-CPU environments.")
+    (license license:gpl3)))
 
 (define-public r-rbbnp
   (package

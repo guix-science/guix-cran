@@ -21815,13 +21815,13 @@ parameters (FernÃ¡ndez-i-MarÃ­n, 2016 <doi:10.18637/jss.v070.i09>).")
 (define-public r-ggmatplot
   (package
     (name "r-ggmatplot")
-    (version "0.1.2")
+    (version "0.1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmatplot" version))
        (sha256
-        (base32 "0k062kqa9hrq1iyjwjj670sdk559zx1nxpbkk0sxkda2h235lxjr"))))
+        (base32 "1w883wdfzl4vs1x19nqr886pv5mbkidw7fpz2sjmv7r8xvcw21ra"))))
     (properties `((upstream-name . "ggmatplot")))
     (build-system r-build-system)
     (arguments
@@ -37218,13 +37218,13 @@ materials.")
 (define-public r-galaxyr
   (package
     (name "r-galaxyr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GalaxyR" version))
        (sha256
-        (base32 "0ckdbz77d2f29fmzdkfsbvq4nqvmrjx6qc82ykfkmqdy2hg9a9dc"))))
+        (base32 "1q1vpaafsffxiqjfp4v7ca1sb4rhh4687l6lrl3z04wxk9751d9y"))))
     (properties `((upstream-name . "GalaxyR")))
     (build-system r-build-system)
     (arguments

@@ -384,6 +384,54 @@ linear models.  It also implements a test of upward/downward sloping
 relationships at the lower and upper boundary of the data range.")
     (license license:expat)))
 
+(define-public r-uteals
+  (package
+    (name "r-uteals")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uteals" version))
+       (sha256
+        (base32 "14y9i5kdmd8sfhl9h7q7q7yyss9rpp75ykh43y0p7wsgrwhskbbi"))))
+    (properties `((upstream-name . "uteals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tern
+                             r-teal-modules-clinical
+                             r-teal-code
+                             r-teal
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinybs
+                             r-shiny
+                             r-rtables
+                             r-rlang
+                             r-r6
+                             r-patchwork
+                             r-openxlsx
+                             r-junco
+                             r-ggplotify
+                             r-ggplot2
+                             r-formatters
+                             r-dplyr
+                             r-cowplot
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/phuse-org/uteals")
+    (synopsis "Shared Utilities to Extend the 'teal' Modules")
+    (description
+     "This package provides decorators, transformators, and utility functions to
+extend the teal framework for interactive data analysis applications.
+Implements methods for data visualization enhancement, statistical data
+transformations, and workflow integration tools.  Designed to support clinical
+and pharmaceutical research workflows within the teal ecosystem through modular
+and reusable components.")
+    (license license:expat)))
+
 (define-public r-utc
   (package
     (name "r-utc")

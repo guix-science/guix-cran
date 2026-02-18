@@ -17630,13 +17630,13 @@ affect the current outcome.")
 (define-public r-didmultiplegt
   (package
     (name "r-didmultiplegt")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegt" version))
        (sha256
-        (base32 "14fa7zmhyz815z6h1ycvhcvq072g09jfjkcpyllxim4dl5430hdc"))))
+        (base32 "12pblrxfydfs7y8s3vlp87rga54dsrdcaaf0f09idrg6bdndpsv0"))))
     (properties `((upstream-name . "DIDmultiplegt")))
     (build-system r-build-system)
     (arguments
@@ -17644,13 +17644,13 @@ affect the current outcome.")
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sampling
+                             r-rlang
                              r-plotrix
-                             r-magrittr
                              r-fixest
                              r-dplyr
                              r-didmultiplegtdyn
                              r-didhad))
-    (home-page "https://cran.r-project.org/package=DIDmultiplegt")
+    (home-page "https://github.com/Credible-Answers/did_multiplegt")
     (synopsis "Estimators DID with Multiple Groups and Periods")
     (description
      "Estimators of Difference-in-Differences based on de Chaisemartin and
@@ -24104,6 +24104,34 @@ used in network modeling. \"degreenet\" is a part of the \"statnet\" suite of
 packages for network analysis.  See Jones and Handcock
 <doi:10.1098/rspb.2003.2369>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-degreedaycalc
+  (package
+    (name "r-degreedaycalc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DegreeDayCalc" version))
+       (sha256
+        (base32 "0lgsmrdrc4l97ah19fasl35q1fx7k4jj6cvw2n0snjdqbnyxycqm"))))
+    (properties `((upstream-name . "DegreeDayCalc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-ggplot2 r-dt))
+    (home-page "https://github.com/almarazkrae-4081/DegreeDayCalc")
+    (synopsis "Degree-Day Phenology Calculator ('shiny' Application)")
+    (description
+     "This package provides a shiny application to compute daily and cumulative
+degree-days from minimum and maximum temperatures using average, single
+triangle, and single sine methods, with optional upper temperature thresholds.
+The application maps cumulative thermal accumulation to user-defined
+developmental stage thresholds and supports exporting tabular and graphical
+outputs.  The degree-day approach follows assumptions described by Higley et al.
+(1986) <doi:10.1093/ee/15.5.999>.")
+    (license license:expat)))
 
 (define-public r-degradr
   (package

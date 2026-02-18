@@ -4077,13 +4077,13 @@ accumulation rates and given depth intervals between consecutive samples.")
 (define-public r-viroreportr
   (package
     (name "r-viroreportr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ViroReportR" version))
        (sha256
-        (base32 "0639q107vbm4qb3fcbavpmfhj9bysbsqbzsdr57pv5syysaxlqr2"))))
+        (base32 "09pdwgwl0chmw3mpmdmbhzz892pgy4gvgjjjqdfw24szvar1sywm"))))
     (properties `((upstream-name . "ViroReportR")))
     (build-system r-build-system)
     (arguments
@@ -8692,6 +8692,34 @@ different sets of parameterizations for the variance gamma distribution.")
      "Uses a Bayesian model to estimate the variability in a repeated measure outcome
 and use that as an outcome or a predictor in a second stage model.")
     (license license:expat)))
+
+(define-public r-variableselection
+  (package
+    (name "r-variableselection")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VariableSelection" version))
+       (sha256
+        (base32 "19m1fy4dff3f5x7yqkr3sw8yfzvk1s3yflk9fx6nxg6hpr7wv9si"))))
+    (properties `((upstream-name . "VariableSelection")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-memoise r-ga))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=VariableSelection")
+    (synopsis "Select Variables for Linear Models")
+    (description
+     "This package provides variable selection for linear models and generalized
+linear models using Bayesian information criterion (BIC) and model posterior
+probability (MPP).  Given a set of candidate predictors, it evaluates candidate
+models and returns model-level summaries (BIC and MPP) and predictor-level
+posterior inclusion probabilities (PIP).  For more details see Xu, S., Ferreira,
+M. A., & Tegge, A. N. (2025) <doi:10.48550/@code{arXiv.2510.02628>}.")
+    (license license:gpl3)))
 
 (define-public r-variablescreening
   (package

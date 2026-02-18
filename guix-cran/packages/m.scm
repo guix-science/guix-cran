@@ -18650,13 +18650,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.13.1")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "0i7qgpaq0i35knfzh13g94l6aw0ny8k2qb5azx52ggqh66z730lj"))))
+        (base32 "0mrx77lrdz1x964qvk8xzpf2hra9yk68xrznlqybb00x9n7ibvx4"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments
@@ -40542,19 +40542,20 @@ allows sending HTTP tracking events from R code.")
 (define-public r-measurementdiagnostics
   (package
     (name "r-measurementdiagnostics")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MeasurementDiagnostics" version))
        (sha256
-        (base32 "00wf5aa0ngcnjng2ibbp1kpmidfwn2n2191p0r19rbnbmr5qhhq3"))))
+        (base32 "0q30s28fnzmdrv0iikz2z9vpmb075im4x2gkqp5nz650g90x9y45"))))
     (properties `((upstream-name . "MeasurementDiagnostics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-rlang
                              r-purrr
                              r-patientprofiles
@@ -40563,9 +40564,9 @@ allows sending HTTP tracking events from R code.")
                              r-dplyr
                              r-dbi
                              r-cohortconstructor
+                             r-cohortcharacteristics
                              r-clock
-                             r-cli
-                             r-cdmconnector))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/MeasurementDiagnostics/")
     (synopsis "Diagnostics for Lists of Codes Based on Measurements")
@@ -44003,20 +44004,19 @@ de Velden (2022)<doi:10.1080/10618600.2022.2035737>.")
 (define-public r-mcca
   (package
     (name "r-mcca")
-    (version "0.7.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcca" version))
        (sha256
-        (base32 "01nm0plgkik241qhd06v1vs84lf7agc0vkxa27cpr5qlfl4cm4zb"))))
+        (base32 "0k7lixba5h6adxzwz2hx63pcfn7w3vh077sk0lgjhwymk0jahp37"))))
     (properties `((upstream-name . "mcca")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rpart
-                             r-rgl
                              r-proc
                              r-nnet
                              r-mass
@@ -44034,7 +44034,8 @@ Net Reclassification Improvement (NRI), R-Squared Value (RSQ), described in Li,
 Jiang and Fine (2013) <doi:10.1093/biostatistics/kxs047>.  Polytomous
 Discrimination Index (PDI), described in Van Calster et al. (2012)
 <doi:10.1007/s10654-012-9733-3>.  Li et al. (2018)
-<doi:10.1177/0962280217692830>.  We described all these above measures and our
+<doi:10.1177/0962280217692830>.  PDI with variance estimation using Dover et al.
+(2021) <doi:10.1002/sim.9187>.  We described all these above measures and our
 mcca package in Li, Gao and D'Agostino (2019) <doi:10.1002/sim.8103>.")
     (license (list license:gpl2+ license:gpl3+))))
 

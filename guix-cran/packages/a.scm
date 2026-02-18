@@ -624,13 +624,13 @@ submit events.")
 (define-public r-azr
   (package
     (name "r-azr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azr" version))
        (sha256
-        (base32 "1fkg0hjkd6ml1ks9nwj9w1ki8n0rla7dsy21yfarh2mai1bwi357"))))
+        (base32 "1zv2xryd5zjngfhnhinnyv8jd30dl3g4gkzllr86carg52qgq4f1"))))
     (properties `((upstream-name . "azr")))
     (build-system r-build-system)
     (arguments
@@ -2442,13 +2442,13 @@ and Particle Swarm Optimization.")
 (define-public r-automerge
   (package
     (name "r-automerge")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "automerge" version))
        (sha256
-        (base32 "1j2djcz73aj3fgmllsw8fnsbshibjq52w2ijbqlsiwsij5d3gf63"))))
+        (base32 "0fpb1c83h2i0c623a4gxnvp9s7yv3crjq4wqrm1sk45ai7vq12g0"))))
     (properties `((upstream-name . "automerge")))
     (build-system r-build-system)
     (arguments
@@ -4279,13 +4279,13 @@ W911NF-17-1-0007.")
 (define-public r-atmchile
   (package
     (name "r-atmchile")
-    (version "1.0.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AtmChile" version))
        (sha256
-        (base32 "07ja0r2fvdqb6y9xs9axdws7dqif9l92qjlmdh4rzfyf1gfqpcx8"))))
+        (base32 "01dijw2a3qvc15m8qskjxfg500ns53kpsjha80q4llg3nmrknr7d"))))
     (properties `((upstream-name . "AtmChile")))
     (build-system r-build-system)
     (arguments
@@ -16169,13 +16169,13 @@ tested condition.")
 (define-public r-altdoc
   (package
     (name "r-altdoc")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "altdoc" version))
        (sha256
-        (base32 "1bsrhz1bsjy5s0mza2mg3s4f99xr5dfm9w34x35ycfhy7ahpvq3b"))))
+        (base32 "0sp8j9ramn69sj9xmw56r7l3jy6xcfppkx6xx4gwh3dxvld0p9q1"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
     (arguments
@@ -16254,6 +16254,34 @@ without having to deal with accessing and managing requests and responses.
 ALTADATA is a curated data marketplace for more information go to
 <https://www.altadata.io>.")
     (license license:expat)))
+
+(define-public r-alsi
+  (package
+    (name "r-alsi")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alsi" version))
+       (sha256
+        (base32 "1p053q8i6x4y3vrb9pxrkxfxwrymq3j0c8nlcaj7gaj1077y8acd"))))
+    (properties `((upstream-name . "alsi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=alsi")
+    (synopsis
+     "Aggregated Latent Space Index for Multiple Correspondence Analysis")
+    (description
+     "This package provides tools for stability-validated aggregation in multiple
+correspondence analysis (MCA).  Implements parallel analysis for dimensionality
+assessment, bootstrap-based subspace stability diagnostics using Procrustes
+rotation and Tucker's congruence coefficients, and computation of the Aggregated
+Latent Space Index (ALSI).  ALSI is a person-level summary measure derived from
+validated MCA dimensions that quantifies departure from independence along
+stable association directions in multivariate categorical data.")
+    (license license:gpl3)))
 
 (define-public r-alscpc
   (package
@@ -22750,6 +22778,41 @@ univariate, multivariate and marked mapped data in rectangular, circular or
 irregular shaped sampling windows, with tests of statistical significance based
 on Monte Carlo simulations.")
     (license license:gpl2)))
+
+(define-public r-adrftools
+  (package
+    (name "r-adrftools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adrftools" version))
+       (sha256
+        (base32 "0j1qnkls9lzf68plgprgf9bxq551dlwfcyx4qcqn7ygd6jrhki0m"))))
+    (properties `((upstream-name . "adrftools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-rlang
+                             r-mvtnorm
+                             r-marginaleffects
+                             r-insight
+                             r-ggplot2
+                             r-collapse
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ngreifer/adrftools")
+    (synopsis
+     "Estimating, Visualizing, and Testing Average Dose-Response Functions")
+    (description
+     "Facilitates estimating, visualizing, and testing average dose-response functions
+(ADRFs) for characterizing the causal effect of a continuous (i.e.,
+non-discrete) treatment or exposure.  Includes support for frequentist and
+Bayesian regression models, analytical and bootstrap inference, and
+characterization of subgroup effects.")
+    (license license:gpl2+)))
 
 (define-public r-adpss
   (package

@@ -11298,13 +11298,13 @@ play-by-play data from <https://www.nfl.com/>.")
 (define-public r-nfl4th
   (package
     (name "r-nfl4th")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nfl4th" version))
        (sha256
-        (base32 "0cj928q9k3imgswlx0d31mdnlmpamxm4jjhv0l69mqqvmv1pzl9d"))))
+        (base32 "0132ppvl1r9biba69cqdyl2hk3y955phl68q92fq21pzx3ixg0zl"))))
     (properties `((upstream-name . "nfl4th")))
     (build-system r-build-system)
     (arguments
