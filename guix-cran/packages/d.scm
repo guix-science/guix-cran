@@ -3103,6 +3103,45 @@ new distribution for count data analysis.  The DTGIW is discrete distribution
 based on Atchanut and Sirinapa (2021). <DOI: 10.14456/sjst-psu.2021.149>.")
     (license license:gpl3)))
 
+(define-public r-dtgap
+  (package
+    (name "r-dtgap")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtGAP" version))
+       (sha256
+        (base32 "1jqyiik8qkbaijqyapax4lici27cv87y7xbwdkllh38h9s4np3k8"))))
+    (properties `((upstream-name . "dtGAP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-stringr
+                             r-seriation
+                             r-rpart
+                             r-rlang
+                             r-rcolorbrewer
+                             r-partykit
+                             r-magrittr
+                             r-ggparty
+                             r-dplyr
+                             r-complexheatmap
+                             r-circlize
+                             r-caret
+                             r-c50))
+    (home-page "https://github.com/hanmingwu1103/dtGAP")
+    (synopsis
+     "Supervised Generalized Association Plots Based on Decision Trees")
+    (description
+     "Enhances decision tree visualization by incorporating Generalized Association
+Plots (GAP) through matrix-based visualizations including confusion matrix maps,
+decision tree matrix maps, and predicted class membership maps based on
+supervised correlation and distance metrics.")
+    (license license:expat)))
+
 (define-public r-dtebop2
   (package
     (name "r-dtebop2")
@@ -16291,6 +16330,31 @@ selection process (the @code{autoDI()} function) and has the flexibility to fit
 a wide range of user-defined DI models (the @code{DI()} function).")
     (license license:gpl2+)))
 
+(define-public r-dimodal
+  (package
+    (name "r-dimodal")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Dimodal" version))
+       (sha256
+        (base32 "0xkgjb6ksfjs01fl17g701vc52vk1spiyg6878l7gsigsgph8wdn"))))
+    (properties `((upstream-name . "Dimodal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod))
+    (home-page "https://cran.r-project.org/package=Dimodal")
+    (synopsis "Spacing Tests for Multi-Modality")
+    (description
+     "Tests for modality of data using its spacing.  The main approach evaluates
+features (peaks, flats) using a combination of parametric models and
+non-parametric tests, either after smoothing the spacing by a low-pass filter or
+by looking over larger intervals.")
+    (license license:bsd-3)))
+
 (define-public r-dimensionsr
   (package
     (name "r-dimensionsr")
@@ -27882,32 +27946,6 @@ Reference: Parichit Sharma, Hasan Kurban, Mehmet Dalkilic (2022)
 (2016) <doi:10.1007/s41060-017-0062-1>.")
     (license license:gpl3)))
 
-(define-public r-dccpp
-  (package
-    (name "r-dccpp")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dccpp" version))
-       (sha256
-        (base32 "1j17rv9wklmxbxa6ri9vhl370jzhi00h7h8hz1ajzqf6v3b2lkvc"))))
-    (properties `((upstream-name . "dccpp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://dccpp.berrisch.biz/")
-    (synopsis "Fast Computation of Distance Correlations")
-    (description
-     "Fast computation of the distance covariance dcov and distance correlation dcor'.
- The computation cost is only O(n log(n)) for the distance correlation (see
-Chaudhuri, Hu (2019) <@code{arXiv:1810.11332>}
-<doi:10.1016/j.csda.2019.01.016>).  The functions are written entirely in C++ to
-speed up the computation.")
-    (license license:gpl3+)))
-
 (define-public r-dccmidas
   (package
     (name "r-dccmidas")
@@ -29572,13 +29610,13 @@ crÃ©ation et de gestion des sÃ©ries temporelles @code{(ts()}, @code{window()
 (define-public r-date
   (package
     (name "r-date")
-    (version "1.2-42")
+    (version "1.2-43")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "date" version))
        (sha256
-        (base32 "0x6b9dk7llvmcf2bzgdk8g1a28as0l1xxx2xn2fwyw801ab3z4as"))))
+        (base32 "1g4n5k9jmyrmxqp79zn85mjwmzxzh18wwamg5nssf5ixavfrci4i"))))
     (properties `((upstream-name . "date")))
     (build-system r-build-system)
     (arguments

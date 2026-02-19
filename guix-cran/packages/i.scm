@@ -11670,13 +11670,13 @@ Countries API <https://restcountries.com/>.")
 (define-public r-india
   (package
     (name "r-india")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "india" version))
        (sha256
-        (base32 "1zpn3hysaac7kkq3ymfyp554y5kkfvhjmcr1xvxm0dapyra752y2"))))
+        (base32 "10qw9xlw1mdzbqczxajv2gspqkfh2ifjljp6djmk8nwdpam5xisk"))))
     (properties `((upstream-name . "india")))
     (build-system r-build-system)
     (arguments

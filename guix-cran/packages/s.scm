@@ -8294,19 +8294,25 @@ formatting helpers for streamlined table styling workflows.")
 (define-public r-sumer
   (package
     (name "r-sumer")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumer" version))
        (sha256
-        (base32 "08iv5i075w56jw4yzl6rjgj95g7c3mkx58w9k1h2g3g50pnd46zs"))))
+        (base32 "198kr204q58dgnirgplampmns1rrqalqpncvb7f3m170nl4vjx0y"))))
     (properties `((upstream-name . "sumer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-stringr r-officer r-dplyr r-cli))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rlang
+                             r-ragg
+                             r-officer
+                             r-ggplot2
+                             r-cli))
     (home-page "https://cran.r-project.org/package=sumer")
     (synopsis "Sumerian Cuneiform Text Analysis")
     (description
@@ -56690,13 +56696,13 @@ error rate control and a functional local Bayes factor for post-GWAS analyses
 (define-public r-sfdesign
   (package
     (name "r-sfdesign")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFDesign" version))
        (sha256
-        (base32 "1cmkizklzv1nps18w4j7x3vakxh7pnal1azwga6xx968izmnswzy"))))
+        (base32 "14y2sxz9qgg6jx4n80n1k847hgjkpljia72yihbnry58zvql3rnd"))))
     (properties `((upstream-name . "SFDesign")))
     (build-system r-build-system)
     (arguments
@@ -60534,26 +60540,19 @@ including Cross Validated Prediction and Testing (CVPAT, Liengaard et al., 2021
 (define-public r-seminr
   (package
     (name "r-seminr")
-    (version "2.4.0")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminr" version))
        (sha256
-        (base32 "0fyqf7skiwa5cygfids760m7klga888pipyl9wsqg5xw886r04wc"))))
+        (base32 "04ybrih34fqg6skjpdkvf0c707d44wlmk1v2vc6vkc423dqn5l6j"))))
     (properties `((upstream-name . "seminr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-webp
-                             r-testthat
-                             r-rmarkdown
-                             r-lavaan
-                             r-knitr
-                             r-glue
-                             r-diagrammersvg
-                             r-diagrammer))
+    (propagated-inputs (list r-lavaan r-glue r-diagrammersvg r-diagrammer))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sem-in-r/seminr")
     (synopsis "Building and Estimating Structural Equation Models")

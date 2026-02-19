@@ -582,13 +582,13 @@ sciences.")
 (define-public r-pwrrasch
   (package
     (name "r-pwrrasch")
-    (version "0.1-2")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwrRasch" version))
        (sha256
-        (base32 "13fr4yfk8aky1vv36pllx673l4lg9q7i661vbyn2zabyizd2rw3b"))))
+        (base32 "1m86r2afk0ff2qbrjq3pwdfcbrdkaf5l2bqv4zfjxdky8p38sqg0"))))
     (properties `((upstream-name . "pwrRasch")))
     (build-system r-build-system)
     (arguments
@@ -2842,13 +2842,13 @@ model for each response.")
 (define-public r-ptxqc
   (package
     (name "r-ptxqc")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PTXQC" version))
        (sha256
-        (base32 "05s9nc5ckiv9gz0ind93rq9c8v40lmcy9gxr56hg4dnax16d73gs"))))
+        (base32 "1nw068ir8j9raylfi821sf3zxhkgf94d0n1ql6f3lb0qiyfps67s"))))
     (properties `((upstream-name . "PTXQC")))
     (build-system r-build-system)
     (arguments
@@ -2860,7 +2860,6 @@ model for each response.")
                              r-seqinr
                              r-rmzqc
                              r-rmarkdown
-                             r-rlang
                              r-reshape2
                              r-rcolorbrewer
                              r-r6p
@@ -4255,13 +4254,13 @@ incorporating the prevalence of disease.  You can also use the online version at
 (define-public r-psrwe
   (package
     (name "r-psrwe")
-    (version "3.2")
+    (version "3.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psrwe" version))
        (sha256
-        (base32 "0wrlbc05zakyvjrphqks8nvblhb6jj5npp9fms02gkzmx264nz39"))))
+        (base32 "1vydsj1i36lhjyy3496czs3ddhbqdl36r5gnk5bj0l0zi9f6ghbm"))))
     (properties `((upstream-name . "psrwe")))
     (build-system r-build-system)
     (arguments
@@ -5936,13 +5935,13 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
 (define-public r-prtree
   (package
     (name "r-prtree")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRTree" version))
        (sha256
-        (base32 "1al3hmbacgs3mp4sqhr6hqzfiblnr897m87148dmkn3zx5pgq5c4"))))
+        (base32 "0adzbnvhkf4l38j9mkaq0inmaah0ijfbjb433vd6d7zvkp85b5sx"))))
     (properties `((upstream-name . "PRTree")))
     (build-system r-build-system)
     (arguments
@@ -10974,13 +10973,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "1qim78skxhwfsswlkws2l6s0x3wv5rbd4l65ayw9kqd794xck3hf"))))
+        (base32 "0356aap9ll52l78cssw6yi1a9szx3d6ibfk2shv1kdnibnrgsl20"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (arguments
@@ -14374,13 +14373,13 @@ bias-variance tradeoff.")
 (define-public r-ppmiss
   (package
     (name "r-ppmiss")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PPMiss" version))
        (sha256
-        (base32 "06vj4r6s2lnz74l49762chxkixxs63v88w5wknkmhdzv6795c4f4"))))
+        (base32 "04861w4fv52z77fzgy4kpp329kca9yzpdy85cnrqcpspz1698rk5"))))
     (properties `((upstream-name . "PPMiss")))
     (build-system r-build-system)
     (arguments
@@ -14396,8 +14395,9 @@ bias-variance tradeoff.")
 dependent processes, introduced in Pumi et al. (2023)
 <doi:10.1007/s00362-023-01418-z>.  Notably, this estimator is capable of
 handling missing data and has been shown to perform exceptionally well, even
-when up to 70% of data is missing (as reported in <@code{arXiv:2303.04754>}) and
-has been found to outperform several other commonly applied estimators.")
+when up to 70% of data is missing (as reported in
+<doi:10.48550/@code{arXiv.2303.04754>}) and has been found to outperform several
+other commonly applied estimators.")
     (license license:gpl3+)))
 
 (define-public r-ppmhr
@@ -20166,13 +20166,13 @@ Soule and King (2006) <doi:10.1086/499908>, Berry et al. (1998)
 (define-public r-policytree
   (package
     (name "r-policytree")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "policytree" version))
        (sha256
-        (base32 "1a0yqg754gb793k9zrhp2zb1j5lw1kv1ziv9dr7rk2zmzgs1k5pb"))))
+        (base32 "1ixwl659cfq1h4x60ysk9bvqp6dbk96kgk8phy1q26lrywp6l991"))))
     (properties `((upstream-name . "policytree")))
     (build-system r-build-system)
     (arguments
@@ -20984,13 +20984,13 @@ point forecast.")
 (define-public r-pointedsdms
   (package
     (name "r-pointedsdms")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PointedSDMs" version))
        (sha256
-        (base32 "1s18j2vdx88q4y1kbsg5i05vfci61nrmz6vp0x89qylr45y8nipp"))))
+        (base32 "0hvcnif9vg9a45ivs7fwvj0wcgb95iwniiag5azf3dspylg5npmf"))))
     (properties `((upstream-name . "PointedSDMs")))
     (build-system r-build-system)
     (arguments
@@ -27589,19 +27589,19 @@ to provide superior results for predicting association football outcomes.")
 (define-public r-piqp
   (package
     (name "r-piqp")
-    (version "0.2.2")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piqp" version))
        (sha256
-        (base32 "0cipmcbxfyply01kccv0bycip4lcg46s15g97fms8qijhpwi2n3c"))))
+        (base32 "08fvv07xrhjk3n2hl1cb53ra3jzjj8c8djy1lfl6rm623zj9yq2g"))))
     (properties `((upstream-name . "piqp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-matrix))
+    (propagated-inputs (list r-s7 r-rcppeigen r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://predict-epfl.github.io/piqp-r/")
     (synopsis
@@ -42316,6 +42316,30 @@ class are used to run the PSO with methods to easily print, plot and save the
 result.")
     (license license:gpl3)))
 
+(define-public r-partialtl
+  (package
+    (name "r-partialtl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PartialTL" version))
+       (sha256
+        (base32 "1byzcxi6jwfg7fpa0dnnn57ckbxpwnh35xmd1q5y3hxk7mf69686"))))
+    (properties `((upstream-name . "PartialTL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ncvreg r-mass r-doubleml))
+    (home-page "https://github.com/JackQuu/PartialTL")
+    (synopsis "Partial Transfer Learning for Causal Estimation")
+    (description
+     "This package implements partial transfer learning (PTL) for causal effect
+estimation using source and target data, with bootstrap-based source detection.
+Provides data generating processes and nuisance functions for simulation.")
+    (license license:gpl2+)))
+
 (define-public r-partialnetwork
   (package
     (name "r-partialnetwork")
@@ -46269,13 +46293,13 @@ to Warm's weighted likelihood approach.")
 (define-public r-pairviz
   (package
     (name "r-pairviz")
-    (version "1.3.6")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PairViz" version))
        (sha256
-        (base32 "12rg1ml401c9zz1q6qy2ghs18x9vdb8smrkb2bcp34afbg5dvdd3"))))
+        (base32 "1s34z1sx368vcif2kdknmrdx30h0qsgslamriaknhff3d9zi6gj6"))))
     (properties `((upstream-name . "PairViz")))
     (build-system r-build-system)
     (arguments

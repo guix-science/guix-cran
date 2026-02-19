@@ -13501,13 +13501,13 @@ representations of multidimensional data sets.")
 (define-public r-movmf
   (package
     (name "r-movmf")
-    (version "0.2-9")
+    (version "0.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movMF" version))
        (sha256
-        (base32 "06k5hz7zkn78591349m8xzsrasqgv0da363b3ahbc3gamki3r2kx"))))
+        (base32 "0x4fcqg22kybgfhlxz1pwdns4jpvx4afxzkqab25w6zwsn9x46zc"))))
     (properties `((upstream-name . "movMF")))
     (build-system r-build-system)
     (arguments
@@ -21735,13 +21735,13 @@ Polley, and Hubbard (2007) <doi:10.2202/1544-6115.1309 using the mlr3 framework.
 (define-public r-mlr3summary
   (package
     (name "r-mlr3summary")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3summary" version))
        (sha256
-        (base32 "1z5kngqvvrm00m5k8w6xva5q131y703v6z605v4zqvj5x6ldhr5d"))))
+        (base32 "1ypms3j9n24j390mhsmfbvy96ya27vwgdw3fhnmjzwcxvn1k4mvj"))))
     (properties `((upstream-name . "mlr3summary")))
     (build-system r-build-system)
     (arguments
@@ -21754,7 +21754,7 @@ Polley, and Hubbard (2007) <doi:10.2202/1544-6115.1309 using the mlr3 framework.
                              r-cli
                              r-checkmate
                              r-backports))
-    (home-page "https://cran.r-project.org/package=mlr3summary")
+    (home-page "https://github.com/mlr-org/mlr3summary")
     (synopsis "Model and Learner Summaries for 'mlr3'")
     (description
      "Concise and interpretable summaries for machine learning models and learners of
@@ -24630,6 +24630,41 @@ their data structure and research questions, via options for fixed/ random
 effects, source data types, priors, and error terms. @code{MixSIAR} incorporates
 several years of advances since @code{MixSIR} and SIAR'.")
     (license license:gpl3)))
+
+(define-public r-mixsemirob
+  (package
+    (name "r-mixsemirob")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MixSemiRob" version))
+       (sha256
+        (base32 "06a2pbx6rcbb6cd8bczlmhz7fmld5jmv73k45vr3acnbwzv0g75k"))))
+    (properties `((upstream-name . "MixSemiRob")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ucminf
+                             r-robustbase
+                             r-rlab
+                             r-quadprog
+                             r-pracma
+                             r-mvtnorm
+                             r-mixtools
+                             r-mass
+                             r-gofkernel))
+    (home-page "https://cran.r-project.org/package=MixSemiRob")
+    (synopsis "Mixture Models: Parametric, Semiparametric, and Robust")
+    (description
+     "Various functions are provided to estimate parametric mixture models (with
+Gaussian, t, Laplace, log-concave distributions, etc.) and non-parametric
+mixture models.  The package performs hypothesis tests and addresses label
+switching issues in mixture models.  The package also allows for parameter
+estimation in mixture of regressions, proportion-varying mixture of regressions,
+and robust mixture of regressions.")
+    (license license:gpl2+)))
 
 (define-public r-mixsal
   (package
@@ -30677,13 +30712,13 @@ Data., Journal of Statistical Software, 63(3), 1-25.,
 (define-public r-micromap
   (package
     (name "r-micromap")
-    (version "1.9.10")
+    (version "1.9.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromap" version))
        (sha256
-        (base32 "0kyi4amnmjrgicyg2nj3aranxpzv68kr990syhj81pzsfigmishn"))))
+        (base32 "0k0vx4y0w45bs48c6gdjcysv44zd9dn4rfn8bd1pbk78rh386cx8"))))
     (properties `((upstream-name . "micromap")))
     (build-system r-build-system)
     (arguments
@@ -34699,13 +34734,13 @@ modeling, particularly crop and crop disease modeling.")
 (define-public r-meteoland
   (package
     (name "r-meteoland")
-    (version "2.2.5")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteoland" version))
        (sha256
-        (base32 "17jn3siy4km5w8jkbirdm37kcihw85136fnbm0ssrq6gfw3amgy0"))))
+        (base32 "0ylcks2dsafzcqviyqaq3gqhwizq5yxw278w5haz5ygy91fw1rgd"))))
     (properties `((upstream-name . "meteoland")))
     (build-system r-build-system)
     (arguments
@@ -53630,13 +53665,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "0hhcmn1q2n69wm133niav4f9765g1d0k69wnmiv13m76mbrivw19"))))
+        (base32 "0hr5fm8yj2y1hgs0igv87294yjpbpn9b02l52gsq56lmlsnhhj5f"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

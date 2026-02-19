@@ -4592,19 +4592,20 @@ sets.  Multi-threading is available through @code{OpenMP}
 (define-public r-bridgr
   (package
     (name "r-bridgr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bridgr" version))
        (sha256
-        (base32 "1z5wcz1c44p8j8ynfq2im2j3f2r1fgf3v4cn0180r0q2xx9xp0hj"))))
+        (base32 "068qzh0iyh82ymwiwh0paw0xlc11h01a378ffsigcgmbg6vbpsf8"))))
     (properties `((upstream-name . "bridgr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tsbox
+    (propagated-inputs (list r-xts
+                             r-tsbox
                              r-rlang
                              r-magrittr
                              r-lubridate

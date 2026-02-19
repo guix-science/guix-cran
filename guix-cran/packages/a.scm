@@ -2439,37 +2439,6 @@ and custom cost function.  A mix inspired by the common tricks on Deep Learning
 and Particle Swarm Optimization.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-automerge
-  (package
-    (name "r-automerge")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "automerge" version))
-       (sha256
-        (base32 "0fpb1c83h2i0c623a4gxnvp9s7yv3crjq4wqrm1sk45ai7vq12g0"))))
-    (properties `((upstream-name . "automerge")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/posit-dev/automerge-r")
-    (synopsis "R Bindings for 'Automerge' 'CRDT' Library")
-    (description
-     "This package provides R bindings to the Automerge Conflict-free Replicated Data
-Type ('CRDT') library.  Automerge enables automatic merging of concurrent
-changes without conflicts, making it ideal for distributed systems,
-collaborative applications, and offline-first architectures.  The approach of
-local-first software was proposed in Kleppmann, M., Wiggins, A., van Hardenberg,
-P., @code{McGranaghan}, M. (2019) <doi:10.1145/3359591.3359737>.  This package
-supports all Automerge data types (maps, lists, text, counters) and provides
-both low-level and high-level synchronization protocols for seamless
-interoperability with @code{JavaScript} and other Automerge implementations.")
-    (license license:expat)))
-
 (define-public r-automatedtests
   (package
     (name "r-automatedtests")
@@ -13639,25 +13608,40 @@ conservative estimates of excursion sets under Gaussian random field priors.")
 (define-public r-ankir
   (package
     (name "r-ankir")
-    (version "0.2.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ankiR" version))
        (sha256
-        (base32 "0c7jrk9qlnw68q34hglzmpk059p7g9h0n930j150jspi2131yrsh"))))
+        (base32 "1qpj7aak2lflsay40jg3kzm0a669cnl4n4h1mbn2g9j91qvig2k0"))))
     (properties `((upstream-name . "ankiR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rsqlite r-jsonlite r-dbi))
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-rsqlite
+                             r-rlang
+                             r-jsonlite
+                             r-dbi))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/chrislongros/ankiR")
-    (synopsis "Read 'Anki' Flashcard Databases")
+    (synopsis "Read and Analyze 'Anki' Flashcard Databases")
     (description
-     "Read and analyze Anki flashcard collection databases.  Provides functions to
-access notes, cards, and review logs from Anki SQLite database with a tidy
-interface.")
+     "Comprehensive toolkit for reading and analyzing Anki flashcard collection
+databases.  Provides functions to access notes, cards, decks, note types, and
+review logs with a tidy interface.  Features extensive analytics including
+retention rates, learning curves, forgetting curve fitting, and review patterns.
+ Supports FSRS (Free Spaced Repetition Scheduler) analysis with stability,
+difficulty, retrievability metrics, parameter comparison, and workload
+predictions.  Includes visualization functions, comparative analysis, time-based
+analytics, card quality assessment, sibling card analysis, interference
+detection, predictive features, session simulation, and an interactive Shiny
+dashboard.  Academic/exam preparation tools for medical students and board exam
+preparation.  Export capabilities include CSV, Org-mode, Markdown,
+@code{SuperMemo}, Mochi, Obsidian SR, and JSON formats with progress reports.")
     (license license:expat)))
 
 (define-public r-aniview
@@ -18765,13 +18749,13 @@ Joudah, Muller and Zhu (2025) <doi:10.1007/s11222-025-10599-6>.")
 (define-public r-airr
   (package
     (name "r-airr")
-    (version "1.5.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airr" version))
        (sha256
-        (base32 "0k3a9yg30brpysp62fvvl7pisgb7441ggbl03jx8mh5bjdckr210"))))
+        (base32 "0l92ihjsmzs71hjj7faqwyp29nxjn8g1v8vfmf0f37q8s5gsqrp4"))))
     (properties `((upstream-name . "airr")))
     (build-system r-build-system)
     (arguments
@@ -18779,12 +18763,12 @@ Joudah, Muller and Zhu (2025) <doi:10.1007/s11222-025-10599-6>.")
       #:tests? #f))
     (propagated-inputs (list r-yaml r-stringi r-readr r-jsonlite))
     (native-inputs (list r-knitr))
-    (home-page "http://docs.airr-community.org")
+    (home-page "https://docs.airr-community.org")
     (synopsis "AIRR Data Representation Reference Library")
     (description
      "Schema definitions and read, write and validation tools for data formatted in
 accordance with the AIRR Data Representation schemas defined by the AIRR
-Community <http://docs.airr-community.org>.")
+Community <https://docs.airr-community.org>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-airqualityes
@@ -26854,25 +26838,28 @@ PRISM raster.  See the examples, testing versions and more details from:
 (define-public r-acdcquery
   (package
     (name "r-acdcquery")
-    (version "1.1.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acdcquery" version))
        (sha256
-        (base32 "0k2r0913rx28bry6av8gjsi0rkqyv6bdv4hm12xrcxgx2ba0r9j0"))))
+        (base32 "1s4lq4clb0kkzd3g193238y1k4w5dkf0jhdmvqbg8kwvwqmzaql3"))))
     (properties `((upstream-name . "acdcquery")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsqlite r-dbi))
+    (propagated-inputs (list r-rsqlite r-jsonlite r-httr r-digest r-dbi))
     (home-page "https://github.com/SLesche/acdc-query")
-    (synopsis "Query the Attentional Control Data Collection")
+    (synopsis
+     "Query the Attentional Control Data Collection or the Truth Effect Database")
     (description
-     "Interact with the Attentional Control Data Collection (ACDC).  Connect to the
-database via @code{connect_to_db()}, set filter arguments via
-@code{add_argument()} and query the database via @code{query_db()}.")
+     "Interact with the Attentional Control Data Collection (ACDC) or the Truth Effect
+Database (TED).  Download the databases using @code{download_acdc()} or
+@code{download_ted()}, connect to the database via @code{connect_to_db()}, set
+filter arguments via @code{add_argument()} and query the database via
+@code{query_db()}.")
     (license license:gpl3+)))
 
 (define-public r-accumulate

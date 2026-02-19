@@ -8835,13 +8835,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.26")
+    (version "1.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "1pyhslljlyz47j9rh7b1ygw0dd2fxaad35iajhc4qcqpkrprz0id"))))
+        (base32 "0lkxgmqy4zwym9b1a5zyj9zgh2g9xm4vxan64qdqvzk6yid76ip5"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -8860,8 +8860,8 @@ experience.  Functions include tools for data partitioning, performance
 evaluation, and data transformations (e.g., z-score and min-max scaling).  The
 included datasets are curated to highlight practical applications in data
 exploration, modeling, and multivariate analysis.  An early inspiration for the
-package came from an ancient Persian idiom about \"eating the @code{liveR},\"
-symbolizing deep and immersive engagement with knowledge.")
+package came from an ancient Persian idiom about \"eating the liver\", symbolizing
+deep and immersive engagement with knowledge.")
     (license license:gpl2+)))
 
 (define-public r-live
@@ -13820,19 +13820,19 @@ of its as proposed by Hussain A. and Tsagris M. (2025),
 (define-public r-leontief
   (package
     (name "r-leontief")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leontief" version))
        (sha256
-        (base32 "0rhagsgsnf3bnc3nhqn0638ayx2mxcwn55h14jjdw80l936a9lm0"))))
+        (base32 "1mm3al8b2hynf7ikxhyxhh48jhjgw9k3s71nrxh923zn28skj984"))))
     (properties `((upstream-name . "leontief")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-cpp11armadillo r-cpp11))
+    (propagated-inputs (list r-cpp4r r-armadillo4r))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pachadotdev/leontief")
     (synopsis "Input-Output Analysis")
@@ -20595,13 +20595,13 @@ for the presence of local factors with main function @code{local_factors()}.")
 (define-public r-l1pack
   (package
     (name "r-l1pack")
-    (version "0.62")
+    (version "0.62-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1pack" version))
        (sha256
-        (base32 "127xzsymcdhh1p2cf0ccghdw238agai59k2v3zms0ygl8jakbr17"))))
+        (base32 "1iavyp8fjflvs5kgs06pr7rax2d0pq0lhhc3l003snjhzxf6j0bh"))))
     (properties `((upstream-name . "L1pack")))
     (build-system r-build-system)
     (arguments

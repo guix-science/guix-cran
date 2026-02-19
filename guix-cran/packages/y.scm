@@ -183,6 +183,43 @@ functionality).")
 channel including geography, traffic sources, time period, etc.")
     (license license:expat)))
 
+(define-public r-yrnd
+  (package
+    (name "r-yrnd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yrnd" version))
+       (sha256
+        (base32 "1h6d2a21ijsxjlp3bb12cypy4s61b56w27k3wnkkh2q4mfrfxxk2"))))
+    (properties `((upstream-name . "yrnd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tvm
+                             r-scales
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=yrnd")
+    (synopsis
+     "Computes Risk Neutral Densities of Futures Prices and Yields on Fixed Income Products")
+    (description
+     "This package provides with parametric risk neutral densities and cumulative
+densities for futures prices on fixed-income products.  It relies on options on
+Short Term Interest Rate futures contracts prices or options on bond futures
+contracts prices.  It models the price of the underlying asset as a mixture of
+either two or three lognormal densities.  It also brings new functions which
+provide with risk neutral densities and cumulative densities of the rate or the
+yield underlying the futures contract, using the density of the futures price.
+The package is based on the works of Melick, W. R. and Thomas, C. P. (1997)
+<doi:10.2307/2331318> and B. Bahra (1998) <doi:10.2139/ssrn.77429>.")
+    (license license:gpl3)))
+
 (define-public r-yrmisc
   (package
     (name "r-yrmisc")

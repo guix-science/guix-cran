@@ -1087,13 +1087,13 @@ behaviour.  For more details, see Eddin et al. (2021)
 (define-public r-rweka
   (package
     (name "r-rweka")
-    (version "0.4-46")
+    (version "0.4-47")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RWeka" version))
        (sha256
-        (base32 "0rsbz7ck7z4bjk9qrwrr4nq30b1iv3kwkkwx9jcrph832xw5a1b6"))))
+        (base32 "0k9mbkg1cmi70k5mixkg9h3p56hmiril4qp1qfhigsm6k1q2ar8w"))))
     (properties `((upstream-name . "RWeka")))
     (build-system r-build-system)
     (arguments
@@ -25122,13 +25122,13 @@ targets package.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.18.1")
+    (version "0.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "0z6m5xg4pbzavf28gp1d5w5gcqsm651a0phkkjiza7c2gvi52l7a"))))
+        (base32 "09g4g3nfrwclzb9msw1n1ikfd8ipxjmzifssiqi1p39p58zp5624"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (arguments
@@ -25152,13 +25152,13 @@ software environments for testing and production.")
 (define-public r-rivretrieve
   (package
     (name "r-rivretrieve")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RivRetrieve" version))
        (sha256
-        (base32 "05xhdsgl6pdiad3valq507ksk5hjd9c7pa3ai554qgs24jysfjan"))))
+        (base32 "1ilpzy0h7hzpxcnk039v6vb87hw967mvl6zpka1y1q5byl76kfah"))))
     (properties `((upstream-name . "RivRetrieve")))
     (build-system r-build-system)
     (arguments
@@ -25179,6 +25179,7 @@ software environments for testing and production.")
                              r-dplyr
                              r-devtools
                              r-dataretrieval
+                             r-data-table
                              r-bbmisc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ryan-Riggs/RivRetrieve")
@@ -50414,48 +50415,6 @@ with external data tables containing language information and features, offering
 a tool for visualizing the geographic distribution and linguistic
 characteristics of East Caucasian languages.")
     (license license:gpl3+)))
-
-(define-public r-rcatfish
-  (package
-    (name "r-rcatfish")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rcatfish" version))
-       (sha256
-        (base32 "1c3lka03pqniis5jim2yxygfwind1jbaggjy59pk09hzik39hfix"))))
-    (properties `((upstream-name . "rcatfish")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rfishbase
-                             r-rcurl
-                             r-qdapregex
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rcatfish")
-    (synopsis
-     "An R Interface to the California Academy of Sciences Eschmeyer's Catalog of Fishes")
-    (description
-     "Accesses the California Academy of Sciences Eschmeyer's Catalog of Fishes in R
-using web requests.  The Catalog of fishes is the leading authority in fish
-taxonomy.  Functions in the package allow users to search for fish taxa and
-valid names, retrieve taxonomic references, retrieve monthly taxonomic changes,
-obtain natural history collection information, and see the number of species by
-taxonomic group.  For more information on the Catalog: Fricke, R., Eschmeyer, W.
-N. & R. van der Laan (eds) 2025.  ESCHMEYER'S CATALOG OF FISHES
-<https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>.")
-    (license license:gpl2+)))
 
 (define-public r-rcatch22
   (package

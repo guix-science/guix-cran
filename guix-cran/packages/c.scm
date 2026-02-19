@@ -15358,6 +15358,39 @@ new.arm.copula.sim can be used to generate new multivariate data with the same
 dependence structure of the original data but with a shifted mean vector.")
     (license license:expat)))
 
+(define-public r-copulasfm
+  (package
+    (name "r-copulasfm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "copulaSFM" version))
+       (sha256
+        (base32 "12cr76gyhhm87f2lxcmahhb77jxycrzk5y6mw41jwj0x7mxg85bj"))))
+    (properties `((upstream-name . "copulaSFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vinecopula r-truncnorm))
+    (home-page "https://cran.r-project.org/package=copulaSFM")
+    (synopsis "Copula-Based Simultaneous Stochastic Frontier Models")
+    (description
+     "This package provides estimation procedures for copula-based stochastic frontier
+models for cross-sectional data.  The package implements maximum likelihood
+estimation of stochastic frontier models allowing flexible dependence structures
+between inefficiency and noise terms through various copula families (e.g.,
+Gaussian and Student-t).  It enables estimation of technical efficiency scores,
+log-likelihood values, and information criteria (AIC and BIC).  The implemented
+framework builds upon stochastic frontier analysis introduced by Aigner, Lovell
+and Schmidt (1977) <doi:10.1016/0304-4076(77)90052-5> and the copula theory
+described in Joe (2014, ISBN:9781466583221).  Empirical applications of
+copula-based stochastic frontier models can be found in Wiboonpongse et al.
+(2015) <doi:10.1016/j.ijar.2015.06.001> and Maneejuk et al. (2017,
+ISBN:9783319562176).")
+    (license license:gpl3)))
+
 (define-public r-copularemada
   (package
     (name "r-copularemada")
@@ -33214,6 +33247,57 @@ data batches/sets.  A clinical data review report is created via study-specific
 configuration files and template R Markdown reports contained in the package.")
     (license license:expat)))
 
+(define-public r-clincompare
+  (package
+    (name "r-clincompare")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinCompare" version))
+       (sha256
+        (base32 "0nl21r50lz6sk4sxpaq84yzxi2gnjhfmd6zhxq8adjvfdi3gh4fs"))))
+    (properties `((upstream-name . "clinCompare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-tidyr r-rlang r-haven r-dplyr))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/siddharthlokineni/clinCompare")
+    (synopsis
+     "Dataset Comparison with 'CDISC' Validation for Clinical Trial Data")
+    (description
+     "This package provides a general-purpose toolkit for comparing any two data
+frames with optional CDISC (Clinical Data Interchange Standards Consortium)
+validation for clinical trial data.  Core comparison functions work on arbitrary
+datasets: variable-level and observation-level comparison, data type checking,
+metadata attribute analysis (types, labels, lengths, formats), missing value
+handling, key-based row matching, tolerance-based numeric comparisons, and
+group-wise comparisons.  Optional z-score outlier detection is available when
+enabled.  When working with clinical data, the package additionally validates
+SDTM (Study Data Tabulation Model) and A@code{DaM} (Analysis Data Model)
+datasets against CDISC standards (SDTM IG 3.3/3.4, A@code{DaM} IG 1.1/1.2/1.3),
+automatically detecting domains and flagging non-conformant variables.
+Generates unified comparison reports in text or HTML format with interactive
+dashboards.  For CDISC standards, see <https://www.cdisc.org/standards>.")
+    (license license:expat)))
+
 (define-public r-climwin
   (package
     (name "r-climwin")
@@ -33453,13 +33537,13 @@ change in space and time.")
 (define-public r-climenu
   (package
     (name "r-climenu")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climenu" version))
        (sha256
-        (base32 "13dvnb3vra9sza23nkyp9d13ah41abbrfwsdvq9gvr7nhh5lcng0"))))
+        (base32 "1zljfwndadka2hy9nj2z851lps4hcdsgvvhhjx73lxkp6si0mdx3"))))
     (properties `((upstream-name . "climenu")))
     (build-system r-build-system)
     (arguments
@@ -38082,13 +38166,13 @@ the unit tests.")
 (define-public r-chronochrt
   (package
     (name "r-chronochrt")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chronochrt" version))
        (sha256
-        (base32 "18jgqpdm5f73yimfjqb4gsp5bdfq5ikkmb269bgxrcw0dvprlj76"))))
+        (base32 "02phiq8mxwbwhfih2ibly1pydpja6prnawmwsv58rnan0wgwhl03"))))
     (properties `((upstream-name . "chronochrt")))
     (build-system r-build-system)
     (arguments
@@ -41725,13 +41809,13 @@ models can be compared using an adjusted likelihood ratio test.")
 (define-public r-chainladder
   (package
     (name "r-chainladder")
-    (version "0.2.20")
+    (version "0.2.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChainLadder" version))
        (sha256
-        (base32 "0z6dm3h5dfxcvjgnz9dw4mxm57v3qm4295aypxk3jkg9j5jr8rwq"))))
+        (base32 "0r2zxrpbq2fx35xz8j47rrqb85d8v4g8s33z1mxqdfwkh602g89z"))))
     (properties `((upstream-name . "ChainLadder")))
     (build-system r-build-system)
     (arguments
@@ -46211,13 +46295,13 @@ for an overview.")
 (define-public r-ccmnet
   (package
     (name "r-ccmnet")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCMnet" version))
        (sha256
-        (base32 "05xwp61ac8a862apkdk67qhz7z6yxbpvq0993p21qfh4c9bg159a"))))
+        (base32 "14w6rf6mzc78wd7rhsvv8s1i1sdbpkbsndi4fln0r46f8xbkrg9i"))))
     (properties `((upstream-name . "CCMnet")))
     (build-system r-build-system)
     (arguments
@@ -46356,13 +46440,13 @@ test and training samples with known classes.")
 (define-public r-cclust
   (package
     (name "r-cclust")
-    (version "0.6-26")
+    (version "0.6-27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cclust" version))
        (sha256
-        (base32 "0mwqna3751lff5n6bb0k09r7qwh0mpwdxgq68wd4wkl6l5akrv4j"))))
+        (base32 "0rj7xryk10xzpp73dfd1krpqi4hbd112gcj99mabl4ysn9vj2i9r"))))
     (properties `((upstream-name . "cclust")))
     (build-system r-build-system)
     (arguments
@@ -46952,13 +47036,13 @@ Netherlands.")
 (define-public r-cbrt
   (package
     (name "r-cbrt")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CBRT" version))
        (sha256
-        (base32 "1jrb71ri2am3pa8cy78ddliysrzi1m7yf5zsic8xaxisdh5yg8ch"))))
+        (base32 "1h34hfbllj7fjdqy81rla8v0izlgmcj08szalhklm5l1j67r46rq"))))
     (properties `((upstream-name . "CBRT")))
     (build-system r-build-system)
     (arguments
@@ -46972,9 +47056,9 @@ Netherlands.")
      "The Central Bank of the Republic of Turkey (CBRT) provides one of the most
 comprehensive time series databases on the Turkish economy.  The CBRT package
 provides functions for accessing the CBRT's electronic data delivery system
-<https://evds2.tcmb.gov.tr/>.  It contains the lists of all data categories and
-data groups for searching the available variables (data series).  As of November
-3, 2024, there were 40,826 variables in the dataset.  The lists of data
+<https://evds3.tcmb.gov.tr/>.  It contains the lists of all data categories and
+data groups for searching the available variables (data series).  As of February
+17, 2026, there were 47,986 variables in the dataset.  The lists of data
 categories and data groups can be updated by the user at any time.  A specific
 variable, a group of variables, or all variables in a data group can be
 downloaded at different frequencies using a variety of aggregation methods.")

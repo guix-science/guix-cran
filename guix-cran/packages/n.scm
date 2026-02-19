@@ -13054,13 +13054,13 @@ networks can be directed or undirected.")
 (define-public r-networkcomparisontest
   (package
     (name "r-networkcomparisontest")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkComparisonTest" version))
        (sha256
-        (base32 "08v29q7shygbbdbfrw6vpdhbs2qb4x8hycg0vhlfsm0w0fwivxhi"))))
+        (base32 "1vgc8la08rhjd1akshvpa1y46laxw1f06knl70v4hhw0nwmhm9hl"))))
     (properties `((upstream-name . "NetworkComparisonTest")))
     (build-system r-build-system)
     (arguments

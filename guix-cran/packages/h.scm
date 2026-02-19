@@ -7574,6 +7574,51 @@ relatives using a simple exclusion method for bi-allelic markers.  Molecular
 Ecology Resources, DOI to be added upon acceptance.")
     (license license:gpl2)))
 
+(define-public r-hipecr
+  (package
+    (name "r-hipecr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hipecR" version))
+       (sha256
+        (base32 "136g0lbhb31vglrhwawwanzxnx24rv0mf9n7zlf5j9g33ilmp7v7"))))
+    (properties `((upstream-name . "hipecR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-webshot2
+                             r-tidyr
+                             r-tibble
+                             r-survminer
+                             r-survival
+                             r-stringr
+                             r-shinywidgets
+                             r-shiny
+                             r-rlang
+                             r-magick
+                             r-labelled
+                             r-htmltools
+                             r-ggpubr
+                             r-ggplot2
+                             r-gganimate
+                             r-formatr
+                             r-forcats
+                             r-dplyr
+                             r-dlookr
+                             r-curl))
+    (home-page "https://github.com/TarJae/hipecR")
+    (synopsis "Tools for Analysing HIPEC Patient Data")
+    (description
+     "This package provides helper functions for analysing patient data in
+hyperthermic intraperitoneal chemotherapy (HIPEC) workflows.  Includes functions
+to estimate peritoneal surface area (PSA), summarise registry data, and produce
+reporting graphics.  Body surface area calculations are based on Du Bois and Du
+Bois (1916) <doi:10.1001/archinte.1916.00080130010002>.")
+    (license license:expat)))
+
 (define-public r-hint
   (package
     (name "r-hint")
@@ -10574,13 +10619,13 @@ information is provided in the study by Chianucci F., Macek M. (2023)
 (define-public r-hemat
   (package
     (name "r-hemat")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemat" version))
        (sha256
-        (base32 "0bvvhx65hryyy78cm6z2lbw4ql81bl7cfihhg2jsawcz3x9b6d67"))))
+        (base32 "0x0bn6s307nilph79sw43nnv2c4wfz871pfn4wj6yk2ikndh5744"))))
     (properties `((upstream-name . "hemat")))
     (build-system r-build-system)
     (arguments

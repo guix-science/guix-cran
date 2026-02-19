@@ -3680,13 +3680,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tsqca
   (package
     (name "r-tsqca")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSQCA" version))
        (sha256
-        (base32 "170vi0pgn8r90ysvd83aspng5apkrlsyajrfs78j5gzzn8bnb492"))))
+        (base32 "0lpak9b79si2px1xa5pdb29b6gx8kz82dlqdg7lhzibxwnh7mlc5"))))
     (properties `((upstream-name . "TSQCA")))
     (build-system r-build-system)
     (arguments
@@ -25127,13 +25127,13 @@ labeled text data sets for classification and analysis.")
 (define-public r-textcat
   (package
     (name "r-textcat")
-    (version "1.0-9")
+    (version "1.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textcat" version))
        (sha256
-        (base32 "1pr5fyhwgkf4yqkgqid8pk3rq3b3xlc8h45a7phz3fggw0nzixnw"))))
+        (base32 "0app3p9y3wvpi0ljc4vznbnffhfkkvkdb18aic72r4lxd91k0rp8"))))
     (properties `((upstream-name . "textcat")))
     (build-system r-build-system)
     (arguments
@@ -31170,13 +31170,13 @@ performances over time.")
 (define-public r-tau
   (package
     (name "r-tau")
-    (version "0.0-26")
+    (version "0.0-27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tau" version))
        (sha256
-        (base32 "00pwc479a8d0clvqxq1byzv2j54mlr3mmxhza0knrmg4dlwwz26v"))))
+        (base32 "020n324v250300l5jyklkb80bhn6j903pimpy6zvab3ilwvna574"))))
     (properties `((upstream-name . "tau")))
     (build-system r-build-system)
     (arguments

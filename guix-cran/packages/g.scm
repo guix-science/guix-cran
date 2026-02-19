@@ -4702,19 +4702,20 @@ contact us at models@@dfci.harvard.edu with any questions.")
 (define-public r-growthcleanr
   (package
     (name "r-growthcleanr")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthcleanr" version))
        (sha256
-        (base32 "0wlpaqjw44xa7z95ngiihgvmcrif6d2j7mfzjlzjgc04sjsb6y1v"))))
+        (base32 "12dydf2h0xvg8nw0rjpf9gbispfdl8ib6jj0b87w4x47811z33z6"))))
     (properties `((upstream-name . "growthcleanr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-rlang
                              r-r-utils
                              r-plyr
                              r-magrittr
@@ -11705,13 +11706,13 @@ while minimizing repeated pairings across multiple rounds.")
 (define-public r-golfastr
   (package
     (name "r-golfastr")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "golfastr" version))
        (sha256
-        (base32 "0knxbm431vd8ysawmy3p0m7f4qirxr3n1hybxnznpvnnlvi70dlx"))))
+        (base32 "145m4mr3ysqr95fsnlpcwy9xp87kld50sljj33g7nj1bn9xwrjwr"))))
     (properties `((upstream-name . "golfastr")))
     (build-system r-build-system)
     (arguments
@@ -20093,6 +20094,39 @@ sets.  Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
 <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
+(define-public r-ggseg-formats
+  (package
+    (name "r-ggseg-formats")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggseg.formats" version))
+       (sha256
+        (base32 "06v93j8xgi7mrfdcyr5ia7wpq05pml4l0vndacha15r3ws8rkrwj"))))
+    (properties `((upstream-name . "ggseg.formats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ggsegverse/ggseg.formats")
+    (synopsis "Brain Atlas Data Structures for the 'ggseg' Ecosystem")
+    (description
+     "This package provides the ggseg_atlas S3 class used across the ggseg ecosystem
+for 2D and 3D brain visualisation.  Ships three bundled atlases
+('Desikan-Killiany', @code{FreeSurfer} aseg', TRACULA') and functions for
+querying, subsetting, renaming, and enriching atlas objects.  Also includes
+readers for @code{FreeSurfer} statistics files.")
+    (license license:expat)))
+
 (define-public r-ggseg
   (package
     (name "r-ggseg")
@@ -26583,13 +26617,13 @@ bootstrap variograms.")
 (define-public r-geothinner
   (package
     (name "r-geothinner")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoThinneR" version))
        (sha256
-        (base32 "1znvjg2cwc6z1g2c02idmknjcg3qc316a00bv6kpqlgfanw5ygsa"))))
+        (base32 "1cnbaad2r0xi958dmwqqgxjvvlang9a2vz24qg8a9r0mjibh3yg4"))))
     (properties `((upstream-name . "GeoThinneR")))
     (build-system r-build-system)
     (arguments
@@ -28878,13 +28912,13 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 (define-public r-geocausal
   (package
     (name "r-geocausal")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocausal" version))
        (sha256
-        (base32 "17x0npa6x0hycxd8vbrap7mlw9x3fc2pz7aynmmj7fkq22iksyw2"))))
+        (base32 "1hfr78hmxrbp3mww2d0mp6aa8g1dsi4p7xfqpvwwnimbc5dlx601"))))
     (properties `((upstream-name . "geocausal")))
     (build-system r-build-system)
     (arguments
@@ -28895,6 +28929,7 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
                              r-tidyr
                              r-terra
                              r-spatstat-univar
+                             r-spatstat-random
                              r-spatstat-model
                              r-spatstat-geom
                              r-spatstat-explore
@@ -28902,12 +28937,13 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
                              r-purrr
                              r-progressr
                              r-mclust
-                             r-latex2exp
+                             r-ggthemes
                              r-ggpubr
                              r-ggplot2
                              r-furrr
                              r-dplyr
-                             r-data-table))
+                             r-data-table
+                             r-crsuggest))
     (home-page "https://github.com/mmukaigawara/geocausal")
     (synopsis "Causal Inference with Spatio-Temporal Data")
     (description
@@ -29023,6 +29059,53 @@ Conjugate priors are assumed on some parameters while inference on the other
 parameters can be done through a full Bayesian analysis of by empirical Bayes
 methods.")
     (license license:gpl2+)))
+
+(define-public r-geoarrowwidget
+  (package
+    (name "r-geoarrowwidget")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoarrowWidget" version))
+       (sha256
+        (base32 "0rjc23p0d2gmfsg8yr820f07n41pd37i0mskkfif6z6wdjnfhysp"))))
+    (properties `((upstream-name . "geoarrowWidget")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-nanoarrow r-listviewer r-htmlwidgets
+                             r-htmltools))
+    (native-inputs (list r-quarto esbuild))
+    (home-page "https://github.com/r-spatial/geoarrowWidget")
+    (synopsis "Attach '(Geo)Arrow' and/or '(Geo)Parquet' Data to a Widget")
+    (description
+     "This package provides functions and necessary @code{JavaScript} bindings to
+quickly transfer spatial data from R memory or remote URLs to the browser for
+use in interactive HTML widgets created with the htmlwidgets R package.
+Leverages @code{GeoArrow} (<https://geoarrow.org/>) data representation for data
+stored in local R memory which is generally faster than traditional
+@code{GeoJSON} by minimising the amount of copy, serialization and
+deserialization steps necessary for the data transfer.  Furthermore, provides
+functionality and @code{JavaScript} bindings to consume @code{GeoParquet}
+(<https://geoparquet.org/>) files from remote URLs in the browser.")
+    (license license:expat)))
 
 (define-public r-geoarrow
   (package

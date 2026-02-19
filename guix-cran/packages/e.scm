@@ -11518,6 +11518,36 @@ running various epidemiological ABMs, simulating interventions, and visualizing
 results interactively.")
     (license license:expat)))
 
+(define-public r-epiworldrcalibrate
+  (package
+    (name "r-epiworldrcalibrate")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiworldRcalibrate" version))
+       (sha256
+        (base32 "163p5jqvnd2y7kn267galwfiipha66wv3fcpydshn22lp2sgah18"))))
+    (properties `((upstream-name . "epiworldRcalibrate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://sima-njf.github.io/epiworldRcalibrate/")
+    (synopsis
+     "Fast and Effortless Calibration of Agent-Based Models using Machine Learning")
+    (description
+     "This package provides tools and pre-trained Machine Learning [ML] models for
+calibration of Agent-Based Models [ABMs] built with the R package
+@code{epiworldR}'.  Implements methods described in Najafzadehkhoei, Vega Yon,
+Modenesi, and Meyer (2025) <doi:10.48550/@code{arXiv.2509.07013>}.  Users can
+automatically calibrate ABMs in seconds with pre-trained ML models, effectively
+focusing on simulation rather than calibration.  Bridges a gap by allowing
+public health practitioners to run their own ABMs without the advanced technical
+expertise often required by calibration.")
+    (license license:expat)))
+
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
@@ -15232,13 +15262,13 @@ P-values will be provided in the output.")
 (define-public r-encode
   (package
     (name "r-encode")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "encode" version))
        (sha256
-        (base32 "04zwclmqasbx54m77wqfr9jg4axhkkqnykaxv3if8lnr46fl3zyc"))))
+        (base32 "1yrmdicqfwkgcch7dgny04sb9i5zdlx4hc0vb4sv7nn22aqivp7p"))))
     (properties `((upstream-name . "encode")))
     (build-system r-build-system)
     (arguments
@@ -23455,19 +23485,19 @@ per capita or government expenditure shares.")
 (define-public r-economiccomplexity
   (package
     (name "r-economiccomplexity")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "economiccomplexity" version))
        (sha256
-        (base32 "1zddl25rp9fcmqp7h43xhn28j4l7h1jvg1p430az04m4dpwpnhk9"))))
+        (base32 "1qahkfm42cbb3jdss894q2cv5sy5r00j1szfc8a3768qz7af11wf"))))
     (properties `((upstream-name . "economiccomplexity")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-igraph r-cpp11armadillo r-cpp11))
+    (propagated-inputs (list r-rdpack r-igraph r-cpp4r r-armadillo4r))
     (native-inputs (list r-knitr))
     (home-page "https://pacha.dev/economiccomplexity/")
     (synopsis "Computational Methods for Economic Complexity")

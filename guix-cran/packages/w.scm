@@ -2695,13 +2695,13 @@ demand and consumer surplus of Word-of-Mouth-campaigns on mean-field networks.")
 (define-public r-wordnet
   (package
     (name "r-wordnet")
-    (version "0.1-17")
+    (version "0.1-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordnet" version))
        (sha256
-        (base32 "1m08k2z7a1zf41n8gnffv6q3b3rgssw3smdwy7v9fjvngf04w7ax"))))
+        (base32 "0894gqd2k9csaslxmfsc6045n0g427k1sh3y4s5iingjwmfvhym1"))))
     (properties `((upstream-name . "wordnet")))
     (build-system r-build-system)
     (arguments
@@ -3152,19 +3152,20 @@ Hadley Wickham and Karen Kafadar (2017) <doi:10.1080/10618600.2017.1305277>.")
 (define-public r-woakmedoids
   (package
     (name "r-woakmedoids")
-    (version "0.1.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WOAkMedoids" version))
        (sha256
-        (base32 "0hh5dkjzqxwkzx5d28cywr9q5bdk3a44md57irj3gp6bd00rv0p6"))))
+        (base32 "0pcif0l3lvki5glh4pjy6js3zc4cvcg1hr6k1i3zcjcahans4cxa"))))
     (properties `((upstream-name . "WOAkMedoids")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-proxy r-dtwclust r-cluster))
+    (propagated-inputs (list r-rcppparallel r-rcpp r-proxy r-dtwclust
+                             r-cluster))
     (home-page "https://cran.r-project.org/package=WOAkMedoids")
     (synopsis "Whale Optimization Algorithm for K-Medoids Clustering")
     (description

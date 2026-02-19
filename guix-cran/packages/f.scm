@@ -4540,13 +4540,13 @@ may depend on packages with priority base').")
 (define-public r-fritools
   (package
     (name "r-fritools")
-    (version "4.5.0")
+    (version "4.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fritools" version))
        (sha256
-        (base32 "0820vfypgjk6mmsl6z08l9d74y06lrzwp6wbwig4fd3m549nibnv"))))
+        (base32 "0wjdflgnsi0xy5pvkjcrv5xz4d3gn9bf1zwlv0bqinjsg775d8pa"))))
     (properties `((upstream-name . "fritools")))
     (build-system r-build-system)
     (arguments
@@ -8574,13 +8574,13 @@ Husch (2016). <doi:10.1002/9781118902028>.")
 (define-public r-forestly
   (package
     (name "r-forestly")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestly" version))
        (sha256
-        (base32 "0i8h4q4cpykclkrm890fvikr92744s3h0rxg2c3axibs1wlmaf32"))))
+        (base32 "0c57704ai7hlk76jjr4pbhrqbg7lj68zrvqaw2xyw7kb3bhdzdk0"))))
     (properties `((upstream-name . "forestly")))
     (build-system r-build-system)
     (arguments
