@@ -9369,13 +9369,13 @@ RNA sequencing data.")
 (define-public r-valytics
   (package
     (name "r-valytics")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valytics" version))
        (sha256
-        (base32 "195g6agaj318192gjlhysdjhj3xf361z87cqjjpgfsxrp848vg94"))))
+        (base32 "1kif43q0a1438fy116k8b83zlphq1gajpzicigl3j2r1kvn4ghra"))))
     (properties `((upstream-name . "valytics")))
     (build-system r-build-system)
     (arguments

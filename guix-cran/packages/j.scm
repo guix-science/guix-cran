@@ -482,13 +482,13 @@ these CSS transformations when given HTML text and it does so by using the
 (define-public r-juicr
   (package
     (name "r-juicr")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "juicr" version))
        (sha256
-        (base32 "0vkbgbagcgaxj6k62b033ik85jnkzvshg8dm9cz7vq4yjqj3icip"))))
+        (base32 "13iwyc5jmpa6djchxm83fvhqpz9b1m6jmczh8wic7d4ifncjfmw1"))))
     (properties `((upstream-name . "juicr")))
     (build-system r-build-system)
     (arguments
@@ -500,7 +500,7 @@ these CSS transformations when given HTML text and it does so by using the
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xml r-rcurl))
     (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=juicr")
+    (home-page "https://github.com/mjlajeunesse/")
     (synopsis
      "Automated and Manual Extraction of Numerical Data from Scientific Images")
     (description

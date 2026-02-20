@@ -16965,6 +16965,34 @@ is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
 <https://www.nsf.gov/awardsearch/@code{showAward?AWD_ID=1921646>}.")
     (license license:gpl2+)))
 
+(define-public r-moewishart
+  (package
+    (name "r-moewishart")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moewishart" version))
+       (sha256
+        (base32 "1lkrfy1jsjpfqbza88212a7marcygqjydf09ach22hq66al0qa98"))))
+    (properties `((upstream-name . "moewishart")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-loo))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zhizuio/moewishart")
+    (synopsis "Mixture-of-Experts Wishart Models for Covariance Data")
+    (description
+     "This package provides methods for maximum likelihood and Bayesian estimation for
+the Wishart mixture model and the mixture-of-experts Wishart
+(@code{MoE-Wishart}) model.  The package provides four inference algorithms for
+these models, each implemented using the expectationâmaximization (EM)
+algorithm for maximum likelihood estimation and a fully Bayesian approach via
+Gibbs-within-MetropolisâHastings sampling.")
+    (license license:gpl3)))
+
 (define-public r-moeclust
   (package
     (name "r-moeclust")
@@ -29479,13 +29507,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.5.6")
+    (version "1.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "05kljvldysvmzab8k64qnmkhf3ranbpc89k61sc8c95qhn3nh71r"))))
+        (base32 "0f3ip844jk68k8w06qv03wfcxpnfz4096dgpc8zh7bbgy8mcn1if"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
@@ -41281,58 +41309,6 @@ Bayesian estimation.  Substantive-model compatible multiple imputation can be
 also conducted.")
     (license license:gpl2+)))
 
-(define-public r-mdmapr
-  (package
-    (name "r-mdmapr")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MDMAPR" version))
-       (sha256
-        (base32 "0w2n6qrjvyzf2wc1yw8a8k027g3y3w2k0z6wkwnj1p8q5zg24c66"))))
-    (properties `((upstream-name . "MDMAPR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xfun
-                             r-writexl
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shiny
-                             r-rmysql
-                             r-readxl
-                             r-reactable
-                             r-plotly
-                             r-leaflet-extras
-                             r-leaflet
-                             r-htmlwidgets
-                             r-htmltools
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-dbi
-                             r-bslib
-                             r-berryfunctions))
-    (home-page "https://github.com/HannerLab/MDMAPR")
-    (synopsis "Molecular Detection Mapping and Analysis Platform")
-    (description
-     "Runs a Shiny web application that merges raw @code{qPCR} fluorescence data with
-related metadata to visualize species presence/absence detection patterns and
-assess data quality.  The application calculates threshold values from raw
-fluorescence data using a method based on the second derivative method, Luu-The
-et al (2005) <doi:10.2144/05382RR05>, and utilizes the â@code{chipPCRâ}
-package by RÃ¶diger, Burdukiewicz, & Schierack (2015)
-<doi:10.1093/bioinformatics/btv205> to calculate Cq values.  The application has
-the ability to connect to a custom developed @code{MySQL} database to populate
-the applications interface.  The application allows users to interact with
-visualizations such as a dynamic map, amplification curves and standard curves,
-that allow for zooming and/or filtering.  It also enables the generation of
-customized exportable reports based on filtered mapping data.")
-    (license license:gpl3)))
-
 (define-public r-mdma
   (package
     (name "r-mdma")
@@ -51209,13 +51185,13 @@ generating fictional state names.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1slff499ncsyvqbn7z8c2664qwz3h9072pb7x2qrjqy3pwjnwnxd"))))
+        (base32 "1kz513kwi0ldam1xadhfp8pmj6pb4q9mlbra8jdq59piya03qvzx"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments

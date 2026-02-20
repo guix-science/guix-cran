@@ -15932,13 +15932,13 @@ from VSN international (<https://vsni.co.uk/software/asreml-r/>).")
 (define-public r-statgengwas
   (package
     (name "r-statgengwas")
-    (version "1.0.12")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGWAS" version))
        (sha256
-        (base32 "07zgyi17n3yc5g3ryc15k6z7zn441zi598h117xab97bzd8r7bz9"))))
+        (base32 "1dpcf54k0i5amiizwmdrp9fs8rwdhkny3mzlwz0vg1c5vdjz1yhy"))))
     (properties `((upstream-name . "statgenGWAS")))
     (build-system r-build-system)
     (arguments
@@ -17072,13 +17072,13 @@ estimate unknown parameters and functions. [Li, Y. et al., (2024),
 (define-public r-stardom
   (package
     (name "r-stardom")
-    (version "1.1.30")
+    (version "1.1.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staRdom" version))
        (sha256
-        (base32 "0dy677wdq2gr2xk0aqskyhizm18djcbk36ib1mnb36ssl89j9hfc"))))
+        (base32 "0gway07daqf8s215viwcx9m3zi8g336z1mfz83an4x87dfbr36kg"))))
     (properties `((upstream-name . "staRdom")))
     (build-system r-build-system)
     (arguments
@@ -17089,8 +17089,10 @@ estimate unknown parameters and functions. [Li, Y. et al., (2024),
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-readr
                              r-r-matlab
+                             r-purrr
                              r-pracma
                              r-multiway
                              r-mba
@@ -20515,13 +20517,13 @@ as well as Cint are sampled randomly without replacement.  See Beule & Karlovsky
 (define-public r-srppp
   (package
     (name "r-srppp")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srppp" version))
        (sha256
-        (base32 "1aiaxjvj5r91rlxk44r6hzjys5why2msqq8q3zwg6vm458qs98ky"))))
+        (base32 "0y7xbfza9qg9ifd8b3r7v69nshzhym50f4sgx82mhbc9dc1bbdg6"))))
     (properties `((upstream-name . "srppp")))
     (build-system r-build-system)
     (arguments
@@ -29295,32 +29297,6 @@ and for spatial data that arise on irregularly shaped regions like counties or
 zipcodes by laying a fine grid of rectangles and aggregating the integrals in a
 form of Riemann integration.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-spatialcatalogueviewer
-  (package
-    (name "r-spatialcatalogueviewer")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spatialCatalogueViewer" version))
-       (sha256
-        (base32 "17msky6h2zvcplrqg58irykj3i1ypgp347jyzisvnzw3yk78wa10"))))
-    (properties `((upstream-name . "spatialCatalogueViewer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinythemes r-shiny r-leaflet-extras r-leaflet
-                             r-dt))
-    (home-page "https://github.com/sebastien-plutniak/spatialCatalogueViewer")
-    (synopsis
-     "'Shiny' Tool to Create Interactive Catalogues for Geospatial Data")
-    (description
-     "Seamlessly create interactive online catalogues for geospatial data.  Items can
-be mapped as points or areas and retrieved using either a map or a dynamic table
-with search form and optional column filters.")
-    (license license:gpl3)))
 
 (define-public r-spatialbss
   (package
@@ -74215,13 +74191,13 @@ Department of Economics at Stellenbosch University.")
 (define-public r-sam
   (package
     (name "r-sam")
-    (version "1.1.3")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAM" version))
        (sha256
-        (base32 "0vg9hdlp0q58qwyf7iqij73kia124sn8wcplc81ydvs8z826y7yq"))))
+        (base32 "1lakfk718c719q1lk7d19108a7lfh9n757dxrvwaz77r2dwpj3m2"))))
     (properties `((upstream-name . "SAM")))
     (build-system r-build-system)
     (arguments

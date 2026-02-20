@@ -17301,49 +17301,6 @@ linear combination of) the coefficients in a linear regression model, following
      "Collection of example animal sounds for bioacoustic analysis.")
     (license license:gpl2+)))
 
-(define-public r-naturalist
-  (package
-    (name "r-naturalist")
-    (version "0.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "naturaList" version))
-       (sha256
-        (base32 "0fh4cx7zh0kr0flvlfafxwxr9j74d9h74vpfa8mbn2ibgz63j65p"))))
-    (properties `((upstream-name . "naturaList")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-tm
-                             r-tidytext
-                             r-stringr
-                             r-stringi
-                             r-sp
-                             r-shinywidgets
-                             r-shinydashboard
-                             r-shiny
-                             r-sf
-                             r-rlang
-                             r-raster
-                             r-magrittr
-                             r-leaflet-extras
-                             r-leaflet
-                             r-htmltools
-                             r-fasterize
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/avrodrigues/naturaList")
-    (synopsis "Classify Occurrences by Confidence Levels in the Species ID")
-    (description
-     "Classify occurrence records based on confidence levels of species
-identification.  In addition, implement tools to filter occurrences inside grid
-cells and to manually check for possibles errors with an interactive shiny
-application.")
-    (license license:expat)))
-
 (define-public r-natural
   (package
     (name "r-natural")

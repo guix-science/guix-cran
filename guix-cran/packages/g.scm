@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages video)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages python)
@@ -482,51 +481,6 @@ sparse non-negative principal components analyses
 <doi:10.17608/k6.auckland.9850826.v1>.")
     (license license:gpl3+)))
 
-(define-public r-gwmodelvis
-  (package
-    (name "r-gwmodelvis")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GWmodelVis" version))
-       (sha256
-        (base32 "0n4z2bj2116v2dh7hamv7zkqwhjxb20rp09k7p10nclk4gkvggjl"))))
-    (properties `((upstream-name . "GWmodelVis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list geos ffmpeg))
-    (propagated-inputs (list r-tuner
-                             r-sp
-                             r-signal
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shinydashboard
-                             r-shiny
-                             r-sf
-                             r-servr
-                             r-leaflet-extras
-                             r-leaflet
-                             r-gwmodel
-                             r-ggspatial
-                             r-ggforce
-                             r-dt
-                             r-dplyr
-                             r-av))
-    (home-page "http://gwmodel.whu.edu.cn/")
-    (synopsis "Visualization Tools for Geographically Weighted Models")
-    (description
-     "The increasing popularity of geographically weighted (GW) techniques has
-resulted in the development of several R packages, such as GWmodel'.  To
-facilitate their usages, G@code{WmodelVis} provides a shiny'-based interactive
-visualization toolkit for geographically weighted (GW) models.  It includes a
-number of visualization tools, including dynamic mapping of parameter surfaces,
-statistical visualization, sonification and exporting videos via FFmpeg'.")
-    (license license:gpl2+)))
-
 (define-public r-gwmodel
   (package
     (name "r-gwmodel")
@@ -763,50 +717,6 @@ entire study space, or locally, where a beta regression model is fitted for each
 region, considering only influential locations for that area.  Da Silva, A. R.
 and Lima, A. O. (2017) <doi:10.1016/j.spasta.2017.07.011>.")
     (license license:gpl3)))
-
-(define-public r-gwavr
-  (package
-    (name "r-gwavr")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gwavr" version))
-       (sha256
-        (base32 "1yd3d96yi01ndrgsy4vfi6ppwglg1791dg4ln0s2j0bnkp18cpn5"))))
-    (properties `((upstream-name . "gwavr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-whitebox
-                             r-units
-                             r-tidyr
-                             r-terra
-                             r-shinywidgets
-                             r-shiny
-                             r-sf
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-promises
-                             r-nhdplustools
-                             r-miniui
-                             r-leaflet-extras
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-htmlwidgets
-                             r-elevatr
-                             r-dplyr))
-    (home-page "https://github.com/joshualerickson/gwavr/")
-    (synopsis "Get Water Attributes Visually in R")
-    (description
-     "This package provides methods to Get Water Attributes Visually in R ('gwavr').
-This allows the user to point and click on areas within the United States and
-get back hydrological data, e.g. flowlines, catchments, basin boundaries,
-comids, etc.")
-    (license license:expat)))
 
 (define-public r-gwasrapidd
   (package
@@ -9363,42 +9273,6 @@ for multiscale data integration (Zhao et al. (2025)
 both low- and high-dimensional data.")
     (license license:gpl3)))
 
-(define-public r-gpseqclus
-  (package
-    (name "r-gpseqclus")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPSeqClus" version))
-       (sha256
-        (base32 "0bs6swzj2zh2dgyiwxirimz5gdk7vfssb7ga0cqmr9s5ckvgh8ir"))))
-    (properties `((upstream-name . "GPSeqClus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-suncalc
-                             r-sp
-                             r-sf
-                             r-purrr
-                             r-plyr
-                             r-leaflet-extras
-                             r-leaflet
-                             r-htmlwidgets
-                             r-geosphere))
-    (home-page "https://cran.r-project.org/package=GPSeqClus")
-    (synopsis "Sequential Clustering Algorithm for Location Data")
-    (description
-     "Applies sequential clustering algorithm to animal location data based on
-user-defined parameters.  Plots interactive cluster maps and provides a summary
-dataframe with attributes for each cluster commonly used as covariates in
-subsequent modeling efforts.  Additional functions provide individual keyhole
-markup language plots for quick assessment, and export of global positioning
-system exchange format files for navigation purposes.  Methods can be found at
-<doi:10.1111/2041-210X.13572>.")
-    (license license:gpl3)))
-
 (define-public r-gpscdf
   (package
     (name "r-gpscdf")
@@ -11470,24 +11344,19 @@ Erdos-Renyi (ER) and Beta versions.")
 (define-public r-goodfibes
   (package
     (name "r-goodfibes")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GoodFibes" version))
        (sha256
-        (base32 "0w123gkymzqjg8wxhchjwsrvamgama54zwqdr5rk5i1yrjy8nqkm"))))
+        (base32 "1a99kzpxahn3ip2j91gy6c4bxb6xyapc48w17jwzvdy2jpzjhvga"))))
     (properties `((upstream-name . "GoodFibes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tinycodet
-                             r-splines2
-                             r-rgl
-                             r-prodlim
-                             r-imager
-                             r-concaveman))
+    (propagated-inputs (list r-splines2 r-rgl r-prodlim r-imager r-concaveman))
     (home-page "https://cran.r-project.org/package=GoodFibes")
     (synopsis
      "Detection and Reconstruction of Muscle Fibers from diceCT Image Data")
@@ -20130,27 +19999,35 @@ readers for @code{FreeSurfer} statistics files.")
 (define-public r-ggseg
   (package
     (name "r-ggseg")
-    (version "1.6.8")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg" version))
        (sha256
-        (base32 "1zzy6g4j2vaim8cmawmfn7a2fa40kvnkj46r6pxrryjilg56wnlh"))))
+        (base32 "128yap65ny1myvkj88jdvr8n381s5xls2zjdr94k1di9vk4w6bjy"))))
     (properties `((upstream-name . "ggseg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list proj geos gdal))
-    (propagated-inputs (list r-vctrs r-tidyr r-sf r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-lifecycle
+                             r-ggseg-formats
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ggseg/ggseg")
+    (home-page "https://ggsegverse.github.io/ggseg/")
     (synopsis "Plotting Tool for Brain Atlases")
     (description
-     "This package contains ggplot2 geom for plotting brain atlases using simple
-features.  The largest component of the package is the data for the two built-in
-atlases.  Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
+     "This package provides a ggplot2 geom and position for visualizing brain region
+data on cortical, subcortical, and white matter tract atlases.  Brain atlas
+geometries are stored as simple features ('sf'), enabling seamless integration
+with the ggplot2 ecosystem including faceting, custom scales, and themes.
+Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
 (define-public r-ggscidca
@@ -35096,18 +34973,19 @@ Langsrud (2019) <doi:10.1007/s11222-018-9848-9>.")
 (define-public r-gaussratiovegind
   (package
     (name "r-gaussratiovegind")
-    (version "2.0.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaussratiovegind" version))
        (sha256
-        (base32 "0q342nvcds969r0vvak962kvkzv5ydi0zcaa1vcqs7wld5nsdml3"))))
+        (base32 "13y3ndbwv22p0pwxbf1kf07685r8w0yvqsm5gyfvq6p4jhb8c4kz"))))
     (properties `((upstream-name . "gaussratiovegind")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-mass))
     (home-page "https://forge.inrae.fr/imhorphen/gaussratiovegind")
     (synopsis "Distribution of Gaussian Ratios")
     (description

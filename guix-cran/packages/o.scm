@@ -673,13 +673,13 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
 (define-public r-overlapping
   (package
     (name "r-overlapping")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overlapping" version))
        (sha256
-        (base32 "0k0q2zcq47w2wlj6r9lir63qqqp06b98aahd3h4zx79zqjai9hxp"))))
+        (base32 "0wmab01aa7y7s0h2a6xczqqs0cbp6np192vznk733skfvj59d78v"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
     (arguments
@@ -5307,13 +5307,13 @@ problems with second order cone constraints and solved with package cccp'.")
 (define-public r-optisel
   (package
     (name "r-optisel")
-    (version "2.0.9")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optiSel" version))
        (sha256
-        (base32 "0n1snxh05dsrgcgzl5xm65ghixja8yb1kbkxws9i0i1zy7qm6kzp"))))
+        (base32 "1wbqp2grjr4ifmjkf5h4fbsl00b9w8rh6nr32f4gvmmgd49hjxq4"))))
     (properties `((upstream-name . "optiSel")))
     (build-system r-build-system)
     (arguments
@@ -13898,50 +13898,6 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
 temperature, chlorophyll, ocean fronts & bathymetry).  Recognized classes and
 formats include netcdf, Raster, .nc and .gz files.")
     (license license:gpl3+)))
-
-(define-public r-oceanis
-  (package
-    (name "r-oceanis")
-    (version "1.8.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oceanis" version))
-       (sha256
-        (base32 "13zdzqjlf5pihji6np9a3m2j5ycy4jvfl75knzry2ir78zr9ngj7"))))
-    (properties `((upstream-name . "oceanis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-webshot
-                             r-stringr
-                             r-shinythemes
-                             r-shinyjs
-                             r-shinybs
-                             r-shiny
-                             r-sf
-                             r-lwgeom
-                             r-leaflet-extras
-                             r-leaflet
-                             r-htmlwidgets
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-classint))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/insee-psar-at/oceanis-package/")
-    (synopsis "Cartography for Statistical Analysis")
-    (description
-     "Creating maps for statistical analysis such as proportional circles, choropleth,
-typology and flows.  Some functions use shiny or leaflet technologies for
-dynamism and interactivity.  The great features are : - Create maps in a web
-environment where the parameters are modifiable on the fly ('shiny and leaflet
-technologies). - Create interactive maps through zoom and pop-up ('leaflet
-technology). - Create frozen maps with the possibility to add labels.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-oceanic
   (package

@@ -4756,6 +4756,41 @@ without the need of a Brickset account and API key are also included.  Includes
 all LEGO since through the end of 2025.")
     (license license:gpl3+)))
 
+(define-public r-brfinance
+  (package
+    (name "r-brfinance")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brfinance" version))
+       (sha256
+        (base32 "0rfqh6kjd1ijnzy6vc95r6b5r4xmgkjh1r3i0pw05kl93xpdx445"))))
+    (properties `((upstream-name . "brfinance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-lubridate
+                             r-labelled
+                             r-httr2
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/efram2/brfinance")
+    (synopsis "Access to Brazilian Macroeconomic and Financial Time Series")
+    (description
+     "This package provides simplified access to selected Brazilian macroeconomic and
+financial time series from official sources, primarily the Central Bank of
+Brazil through the SGS (Sistema Gerenciador de SÃ©ries Temporais) API. The
+package enables users to quickly retrieve and visualize indicators such as the
+unemployment rate and the Selic interest rate using a standardized data
+structure.  It is designed for data access and visualization purposes, without
+performing forecasts or statistical modeling.  For more information, see the
+official API: <https://dadosabertos.bcb.gov.br/dataset/>.")
+    (license license:expat)))
+
 (define-public r-bretigea
   (package
     (name "r-bretigea")
@@ -6411,13 +6446,13 @@ G., Porzio G.C. (2018) <doi:10.1111/biom.12889>.")
 (define-public r-bpcp
   (package
     (name "r-bpcp")
-    (version "1.4.2")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpcp" version))
        (sha256
-        (base32 "1xgspmknjs7cqh0iw3qgikbxpbl2qscjx9n07ib5s3z8hi282wrn"))))
+        (base32 "0x08c1s94sy7ik033h3caqmb3vkxqr5jsfpl6gfm0ynkgqw3rr4n"))))
     (properties `((upstream-name . "bpcp")))
     (build-system r-build-system)
     (arguments
@@ -8511,13 +8546,13 @@ F. and Jales, I. (2024) <doi:10.1080/02331888.2024.2344670>.")
 (define-public r-booami
   (package
     (name "r-booami")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "booami" version))
        (sha256
-        (base32 "083szrv35b9lqvbhafk222ch20wg2mirvd5vxgrbpsdrrdw5k989"))))
+        (base32 "16mgq93dz5nhsr4cn10jsa3avv8w5xfk1mn9ar8hgf56zrzz0xq4"))))
     (properties `((upstream-name . "booami")))
     (build-system r-build-system)
     (arguments
@@ -13969,6 +14004,58 @@ individual race.  Implements the methods described in @code{McCartan}, Fisher,
 Goldin, Ho and Imai (2025) <doi:10.1080/01621459.2025.2526695>.")
     (license license:gpl3+)))
 
+(define-public r-birddog
+  (package
+    (name "r-birddog")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "birddog" version))
+       (sha256
+        (base32 "1p0a2y97v7hbjkiyndma9ng5xhrc52c8nhs190mkjc27rhk0mxj2"))))
+    (properties `((upstream-name . "birddog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tidygraph
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-plotly
+                             r-openalexr
+                             r-matrix
+                             r-igraph
+                             r-glue
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "http://roneyfraga.com/birddog/")
+    (synopsis
+     "Sniffing Emergence and Trajectories in Academic Papers and Patents")
+    (description
+     "This package provides a unified set of methods to detect scientific emergence
+and technological trajectories in academic papers and patents.  The package
+combines citation network analysis with community detection and attribute
+extraction, also applying natural language processing (NLP) and structural topic
+modeling (STM) to uncover the contents of research communities.  It implements
+metrics and visualizations of community trajectories, including novelty
+indicators, citation cycle time, and main path analysis, allowing researchers to
+map and interpret the dynamics of emerging knowledge fields.  Applications of
+the method include: Souza et al. (2022) <doi:10.1002/bbb.2441>, Souza et al.
+(2022) <doi:10.14211/ibjesb.e1742>, Matos et al. (2023)
+<doi:10.1007/s43938-023-00036-3>, Maria et al. (2023) <doi:10.3390/su15020967>,
+Biazatti et al. (2024) <doi:10.1016/j.envdev.2024.101074>, Felizardo et al.
+(2025) <doi:10.1007/s12649-025-03136-z>, and Miranda et al. (2025)
+<doi:10.1016/j.ijhydene.2025.01.089>.")
+    (license license:gpl3)))
+
 (define-public r-birankr
   (package
     (name "r-birankr")
@@ -18968,6 +19055,52 @@ developed and used in the reproducible analysis and visualization of
 intracranial electroencephalography, or RAVE', see Magnotti, J. F., Wang, Z.,
 and Beauchamp, M. S. (2020) <doi:10.1016/j.neuroimage.2020.117341>; see
 citation(\"bidsr\") for details and attributions.")
+    (license license:expat)))
+
+(define-public r-bidser
+  (package
+    (name "r-bidser")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bidser" version))
+       (sha256
+        (base32 "0k2pgn5dx5vxqqi2yxpd2cnnfddv5z6bymraljcncl7f6i8zj20r"))))
+    (properties `((upstream-name . "bidser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-rlang
+                             r-rio
+                             r-readr
+                             r-purrr
+                             r-neuroim2
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-fs
+                             r-dplyr
+                             r-data-tree
+                             r-crayon
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bbuchsbaum/bidser")
+    (synopsis "Work with 'BIDS' (Brain Imaging Data Structure) Projects")
+    (description
+     "This package provides tools for working with BIDS (Brain Imaging Data Structure)
+formatted neuroimaging datasets.  The package provides functionality for reading
+and querying BIDS'-compliant projects, creating mock BIDS datasets for testing,
+and extracting preprocessed data from @code{fMRIPrep} derivatives.  It supports
+searching and filtering BIDS files by various entities such as subject, session,
+task, and run to streamline neuroimaging data workflows.  See Gorgolewski et al.
+(2016) <doi:10.1038/sdata.2016.44> for the BIDS specification.")
     (license license:expat)))
 
 (define-public r-bidistances
@@ -24151,13 +24284,13 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
 (define-public r-bcmaps
   (package
     (name "r-bcmaps")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcmaps" version))
        (sha256
-        (base32 "07pczf0hkw3pq9jl6rdk2nghad2irf6njhn20915xws0d0p2c5c8"))))
+        (base32 "0yr4838xbal0sg5kzhfl13hxxwpxbsfpmk222z88677fajh1qxax"))))
     (properties `((upstream-name . "bcmaps")))
     (build-system r-build-system)
     (arguments
@@ -24182,7 +24315,7 @@ which is the B.C. government standard.  The layers are sourced from the British
 Columbia and Canadian government under open licenses, including B.C. Data
 Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data Portal
 (<https://open.canada.ca/en/using-open-data>), and Statistics Canada
-(<https://www.statcan.gc.ca/en/reference/licence>).")
+(<https://www.statcan.gc.ca/en/terms-conditions/open-licence>).")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -26719,18 +26852,22 @@ tool including JAGS', BUGS', MCMCpack', and Stan'.")
 (define-public r-bayespop
   (package
     (name "r-bayespop")
-    (version "11.0-3")
+    (version "12.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesPop" version))
        (sha256
-        (base32 "10nwivdg16ak17zmvc5jchrn6ip9krv0bns5cv5x07sfc9ih70lv"))))
+        (base32 "1p99fchlfx5n42aayrjn50zrvhraa0r3123vcmkyw4i0zs8aaisj"))))
     (properties `((upstream-name . "bayesPop")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-wpp2019
                              r-wpp2012
                              r-rworldmap
@@ -26743,12 +26880,14 @@ tool including JAGS', BUGS', MCMCpack', and Stan'.")
                              r-bayestfr
                              r-bayeslife
                              r-abind))
+    (native-inputs (list r-r-rsp))
     (home-page "https://bayespop.csss.washington.edu")
     (synopsis "Probabilistic Population Projection")
     (description
      "Generating population projections for all countries of the world using several
-probabilistic components, such as total fertility rate and life expectancy
-(Raftery et al., 2012 <doi:10.1073/pnas.1211452109>).")
+probabilistic components, such as total fertility rate, life expectancy at birth
+and net migration (Raftery et al., 2012 <doi:10.1073/pnas.1211452109>).  The
+package can be also used for subnational population projections.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -27856,13 +27995,13 @@ Correlation analysis methods are carried out by Barch and Chechile (2023)
 (define-public r-bayesianvars
   (package
     (name "r-bayesianvars")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesianVARs" version))
        (sha256
-        (base32 "18a2ppvbyy5k87hpd3hdhqgm7gal6vn970b5l04jkcynyrvwwh8g"))))
+        (base32 "0v97a9cjx2vf9mzfc9ahzq4cg2b9s8h5364fddbdy3rg940ndyq5"))))
     (properties `((upstream-name . "bayesianVARs")))
     (build-system r-build-system)
     (arguments

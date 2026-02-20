@@ -17,8 +17,8 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
@@ -3493,6 +3493,44 @@ bioequivalence assessment in the univariate framework using the methods proposed
 in Boulaguiem et al. (2023) <doi:10.1101/2023.03.11.532179>.")
     (license license:agpl3)))
 
+(define-public r-ctoclient
+  (package
+    (name "r-ctoclient")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ctoclient" version))
+       (sha256
+        (base32 "0rd317zifpi3xilj25yyg0d1kmdgla5s36692ilcg53ag8sgk0ky"))))
+    (properties `((upstream-name . "ctoclient")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (home-page "https://guturago.github.io/ctoclient/")
+    (synopsis "Modern and Flexible Data Pipeline for 'SurveyCTO'")
+    (description
+     "This package provides a modern and flexible R client for the @code{SurveyCTO}',
+a mobile and offline data collection platform, providing a modern and consistent
+interface for programmatic access to server resources.  Built on top of the
+httr2 package, it enables secure and efficient data retrieval and returns
+analysis-ready data through optional tidying.  It includes functions to create,
+upload, and download server datasets, in addition to fetching form data, files,
+and submission attachments.  Robust authentication and request handling make the
+package suitable for automated survey monitoring and downstream analysis.")
+    (license license:expat)))
+
 (define-public r-ctnote
   (package
     (name "r-ctnote")
@@ -6861,6 +6899,34 @@ crosshap enables users to explore and understand genomic variation across a
 trait-associated region.  For an example of successful local haplotype analysis,
 see Marsh et al. (2022) <doi:10.1007/s00122-022-04045-8>.")
     (license license:expat)))
+
+(define-public r-crossfit
+  (package
+    (name "r-crossfit")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crossfit" version))
+       (sha256
+        (base32 "085qqwdsb7gh40zapchvmdyl9hpimbc629qnlbm0w8nwg5byamnd"))))
+    (properties `((upstream-name . "crossfit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EtiennePeyrot/crossfit-R")
+    (synopsis "Cross-Fitting Engine for Double/Debiased Machine Learning")
+    (description
+     "This package provides a general cross-fitting engine for double / debiased
+machine learning and other meta-learners.  The core functions implement flexible
+graphs of nuisance models with per-node training fold widths, target-specific
+evaluation windows, and several fold allocation schemes (\"independence\",
+\"overlap\", \"disjoint\").  The engine supports both numeric estimators (mode =
+\"estimate\") and cross-fitted prediction functions (mode = \"predict\"), with
+configurable aggregation over panels and repetitions.")
+    (license license:gpl3)))
 
 (define-public r-crossexpression
   (package
@@ -11261,49 +11327,6 @@ everyone was tested on a given day, and all tested negative.")
     (description
      "Publicly available COVID-19 data for Norway cleaned and merged into one dataset,
 including PCR confirmed cases, tests, hospitalisation and vaccination.")
-    (license license:expat)))
-
-(define-public r-covidmx
-  (package
-    (name "r-covidmx")
-    (version "0.7.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covidmx" version))
-       (sha256
-        (base32 "1m73pxpn080w7sby88spz2pfjw1v479m9fa74ag25mkdymfbh02d"))))
-    (properties `((upstream-name . "covidmx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-rcurl
-                             r-pins
-                             r-fs
-                             r-duckdb
-                             r-dplyr
-                             r-dbi
-                             r-cli))
-    (home-page "https://github.com/RodrigoZepeda/covidmx")
-    (synopsis "Descarga y analiza datos de COVID-19 en MÃ©xico")
-    (description
-     "Herramientas para el anÃ¡lisis de datos de COVID-19 en MÃ©xico.  Descarga y
-analiza los datos para COVID-19 de la Direccion General de EpidemiologÃ­a de
-MÃ©xico (DGE) <https://www.gob.mx/salud/documentos/datos-abiertos-152127>, la
-Red de Infecciones Respiratorias Agudas Graves (Red IRAG)
-<https://www.gits.igg.unam.mx/red-irag-dashboard/@code{reviewHome>} y la
-Iniciativa Global para compartir todos los datos de influenza (GISAID)
-<https://gisaid.org/>.  English: Downloads and analyzes data of COVID-19 from
-the Mexican General Directorate of Epidemiology (DGE), the Network of Severe
-Acute Respiratory Infections (IRAG network),and the Global Initiative on Sharing
-All Influenza Data GISAID.")
     (license license:expat)))
 
 (define-public r-covidmutations
@@ -36435,38 +36458,6 @@ Tenreiro (2022) <doi:10.1080/10485252.2022.2057974>, and higher-order kernels by
 Tsuruta & Sagae (2017) <doi:10.1016/j.spl.2017.08.003>.")
     (license license:gpl2)))
 
-(define-public r-circularev
-  (package
-    (name "r-circularev")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "circularEV" version))
-       (sha256
-        (base32 "0g499mn8knkfspk3wdgn8r9v4hpr6gy8wjwf0zrgf0j05xap6g7a"))))
-    (properties `((upstream-name . "circularEV")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-npcirc
-                             r-mgcv
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-circular))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=circularEV")
-    (synopsis "Extreme Value Analysis for Circular Data")
-    (description
-     "General functions for performing extreme value analysis on a circular domain as
-part of the statistical methodology in the paper by Konzen, E., Neves, C., and
-Jonathan, P. (2021).  Modeling nonstationary extremes of storm severity:
-Comparing parametric and semiparametric inference.  Environmetrics, 32(4),
-e2667.")
-    (license license:gpl3)))
-
 (define-public r-circularddm
   (package
     (name "r-circularddm")
@@ -43817,13 +43808,13 @@ Projection Pursuit.")
 (define-public r-cepiweek
   (package
     (name "r-cepiweek")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cepiweek" version))
        (sha256
-        (base32 "0in3vpg31k3c1rgj9vgpm43sn4yjdwg4rv53fnrk9sj80z7hvf1s"))))
+        (base32 "0lwc923piiy6nx54lj271r7axx7zdzvvac7r4simf62bhwa29wd0"))))
     (properties `((upstream-name . "cepiweek")))
     (build-system r-build-system)
     (arguments

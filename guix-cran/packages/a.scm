@@ -2439,6 +2439,37 @@ and custom cost function.  A mix inspired by the common tricks on Deep Learning
 and Particle Swarm Optimization.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-automerge
+  (package
+    (name "r-automerge")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "automerge" version))
+       (sha256
+        (base32 "0934yb2jqdjzv2bbg0nhvkbab41h4nzdci8bissx4abq0nhl4spg"))))
+    (properties `((upstream-name . "automerge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/posit-dev/automerge-r")
+    (synopsis "R Bindings for 'Automerge' 'CRDT' Library")
+    (description
+     "This package provides R bindings to the Automerge Conflict-free Replicated Data
+Type ('CRDT') library.  Automerge enables automatic merging of concurrent
+changes without conflicts, making it ideal for distributed systems,
+collaborative applications, and offline-first architectures.  The approach of
+local-first software was proposed in Kleppmann, M., Wiggins, A., van Hardenberg,
+P., @code{McGranaghan}, M. (2019) <doi:10.1145/3359591.3359737>.  This package
+supports all Automerge data types (maps, lists, text, counters) and provides
+both low-level and high-level synchronization protocols for seamless
+interoperability with @code{JavaScript} and other Automerge implementations.")
+    (license license:expat)))
+
 (define-public r-automatedtests
   (package
     (name "r-automatedtests")
@@ -2684,19 +2715,20 @@ better task related brain activity models in a quick and efficient manner.")
 (define-public r-autoharp
   (package
     (name "r-autoharp")
-    (version "0.0.13")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoharp" version))
        (sha256
-        (base32 "0817a9r0cy8rdz2nfp3zfqqbh5vdggh4m4gd18alcqsjqxpkja0f"))))
+        (base32 "1ai13avn122vvbgi44q811f4lrz9h69dy6jmr6fr97snpxhgh4q2"))))
     (properties `((upstream-name . "autoharp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-xfun
+                             r-tibble
                              r-stringr
                              r-shiny
                              r-rmarkdown
@@ -16242,13 +16274,13 @@ ALTADATA is a curated data marketplace for more information go to
 (define-public r-alsi
   (package
     (name "r-alsi")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alsi" version))
        (sha256
-        (base32 "1p053q8i6x4y3vrb9pxrkxfxwrymq3j0c8nlcaj7gaj1077y8acd"))))
+        (base32 "1a8hmw76wq7kkcmlcliqyrm8qk90lj6r06gpzwwc5nrhbn7rdlk1"))))
     (properties `((upstream-name . "alsi")))
     (build-system r-build-system)
     (arguments
@@ -26838,13 +26870,13 @@ PRISM raster.  See the examples, testing versions and more details from:
 (define-public r-acdcquery
   (package
     (name "r-acdcquery")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acdcquery" version))
        (sha256
-        (base32 "1s4lq4clb0kkzd3g193238y1k4w5dkf0jhdmvqbg8kwvwqmzaql3"))))
+        (base32 "08sjcq58ah5z9d4wzjm02p4gq7mkqcbzyddpnzw7l4nj786pawqj"))))
     (properties `((upstream-name . "acdcquery")))
     (build-system r-build-system)
     (arguments

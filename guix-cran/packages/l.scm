@@ -15090,43 +15090,6 @@ Provides control over options to e.g. prevent self-intersection of polygons and
 lines or to enable/disable snapping to align shapes.")
     (license license:expat)))
 
-(define-public r-leafletzh
-  (package
-    (name "r-leafletzh")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leafletZH" version))
-       (sha256
-        (base32 "02q5znqjx5mhw469j5zfkhb518hv54vhc9lds8zc27m9i4jwpyfa"))))
-    (properties `((upstream-name . "leafletZH")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sf
-                             r-scales
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-purrr
-                             r-leaflet-extras
-                             r-leaflet
-                             r-htmlwidgets
-                             r-htmltools
-                             r-geosphere
-                             r-geojsonsf))
-    (native-inputs (list r-knitr))
-    (home-page "https://damonsoul.github.io/leafletZH/")
-    (synopsis "Chinese Leaflet Map Relate Operation")
-    (description
-     "This package provides sf data for Chinese provinces and cities, methods for
-plotting shape maps of Chinese provinces and cities, Convert Coordinates Between
-Different Systems, and a layer for leaflet with Gaode tiles.  It is designed to
-facilitate geographical data visualization in China.")
-    (license license:expat)))
-
 (define-public r-leaflet-minicharts
   (package
     (name "r-leaflet-minicharts")
@@ -15205,34 +15168,6 @@ single map.")
     (description
      "Several leaflet plugins are integrated, which are available as extension to the
 leaflet package.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-leaflet-extras
-  (package
-    (name "r-leaflet-extras")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leaflet.extras" version))
-       (sha256
-        (base32 "0yhn8dz33wq1yka480hqbsn4izzj9xp2vj4m072dpc6iwgp5rjny"))))
-    (properties `((upstream-name . "leaflet.extras")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-magrittr r-leaflet r-htmlwidgets
-                             r-htmltools))
-    (home-page "https://github.com/trafficonese/leaflet.extras")
-    (synopsis "Extra Functionality for 'leaflet' Package")
-    (description
-     "The leaflet @code{JavaScript} library provides many plugins some of which are
-available in the core leaflet package, but there are many more.  It is not
-possible to support them all in the core leaflet package.  This package serves
-as an add-on to the leaflet package by providing extra functionality via leaflet
-plugins.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 

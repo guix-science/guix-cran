@@ -7115,19 +7115,20 @@ file.")
 (define-public r-fplot
   (package
     (name "r-fplot")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fplot" version))
        (sha256
-        (base32 "0rjdjv67yh6nbxi3l8ds0dr26s9cxsrfqc47rkfwh82g1iga2fqi"))))
+        (base32 "1wgqcfy77l3px0q6ji7m6h6j5pd3zpj8hyb366lb2v1r5cacvqn1"))))
     (properties `((upstream-name . "fplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-formula r-dreamerr r-data-table))
+    (propagated-inputs (list r-stringmagic r-rcpp r-formula r-dreamerr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fplot")
     (synopsis "Automatic Distribution Graphs Using Formulas")
@@ -15829,6 +15830,37 @@ Fuzzy ('zoomerjoin') -> FTS5 ('SQLite') -> Rarity Weighted.  References:
 Beniamino Green (2025) <https://beniamino.org/zoomerjoin/>;
 <https://www.sqlite.org/fts5.html>.")
     (license license:expat)))
+
+(define-public r-firm
+  (package
+    (name "r-firm")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FIRM" version))
+       (sha256
+        (base32 "19ri5xqkpl1lyg98v3vkqp843z0cmz97wr064mhc5scn9828pmqr"))))
+    (properties `((upstream-name . "FIRM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seurat r-rcppeigen r-rcpparmadillo r-rcpp
+                             r-rann))
+    (home-page "https://github.com/mingjingsi/FIRM")
+    (synopsis "Flexible Integration of Single-Cell RNA-Seq Data")
+    (description
+     "This package provides functions for the flexible integration of heterogeneous
+@code{scRNA-seq} datasets across multiple tissue types, platforms, and
+experimental batches.  Implements the method described in Ming (2022)
+<doi:10.1093/bib/bbac167>.  The package incorporates modified C++ source code
+from the flashpca library (Abraham, 2014-2016
+<https://github.com/gabraham/flashpca>) for efficient principal component
+analysis, and the Spectra library (Qiu, 2016-2025) for large-scale eigenvalue
+and singular value decomposition; see inst/COPYRIGHTS for details on third-party
+code.")
+    (license license:gpl3)))
 
 (define-public r-firestorm
   (package

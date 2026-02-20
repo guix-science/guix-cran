@@ -3438,6 +3438,29 @@ construct definitions and corresponding instructions in a decentralized manner
 <doi:10.31234/osf.io/xebhn>).")
     (license license:gpl3+)))
 
+(define-public r-psytoolkit
+  (package
+    (name "r-psytoolkit")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PsyToolkit" version))
+       (sha256
+        (base32 "0ypqzkgmfr8kq0faay5sgjwm1wc1x2pg8b3dqcz73wzs31f9k7wb"))))
+    (properties `((upstream-name . "PsyToolkit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openxlsx2))
+    (home-page "https://cran.r-project.org/package=PsyToolkit")
+    (synopsis "Analysis Tools for 'PsyToolkit'")
+    (description
+     "Analyses and reports @code{PsyToolkit} questionnaire and experiment data.  See
+Stoet (2017) <doi:10.1177/0098628316677643>.")
+    (license license:expat)))
+
 (define-public r-psyphy
   (package
     (name "r-psyphy")
@@ -10081,13 +10104,13 @@ offers options to deal with block-wise missingness in multi-omics data.")
 (define-public r-priorityelasticnet
   (package
     (name "r-priorityelasticnet")
-    (version "0.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorityelasticnet" version))
        (sha256
-        (base32 "0hr54a6jkn6rcbvr3sdckblnkhvdcw394zpgvks5k33cylqaw7n4"))))
+        (base32 "1sd5ap7dffy8xmc3s0288ypmjy62v2brkbwirkpnn7fgxwyca9ir"))))
     (properties `((upstream-name . "priorityelasticnet")))
     (build-system r-build-system)
     (arguments
@@ -19731,39 +19754,6 @@ distribution.  More information on the implementation can be found at Conrad J.
 Burden (2014) <@code{arXiv:1406.2780>}.")
     (license license:gpl2+)))
 
-(define-public r-poly4at
-  (package
-    (name "r-poly4at")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Poly4AT" version))
-       (sha256
-        (base32 "11dx99x6iya6liw60gwa0w7y6k3ghhhzxyvmdja43a5wgi6g4vla"))))
-    (properties `((upstream-name . "Poly4AT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinydashboard
-                             r-shiny
-                             r-sf
-                             r-readxl
-                             r-leaflet-extras
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-geojsonsf
-                             r-dt))
-    (home-page "https://github.com/farmse988/Poly4AT")
-    (synopsis "Access 'INVEKOS' API for Field Polygons")
-    (description
-     "This package provides a shiny app that allows to access and use the INVEKOS API
-for field polygons in Austria.  API documentation is available at
-<https://gis.lfrz.gv.at/api/geodata/i009501/ogc/features/v1/>.")
-    (license license:expat)))
-
 (define-public r-polminer
   (package
     (name "r-polminer")
@@ -20252,6 +20242,35 @@ visualization.")
      "Wrangle and annotate different types of political texts.  It also introduces
 Urgency Analysis, a new method for the analysis of urgency in political texts.")
     (license license:expat)))
+
+(define-public r-polcaparallel
+  (package
+    (name "r-polcaparallel")
+    (version "1.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poLCAParallel" version))
+       (sha256
+        (base32 "1d3hm5hi9mab2n4k3nwngv0zpg5g4zx8iqp9dkiakznzhb0fqxkr"))))
+    (properties `((upstream-name . "poLCAParallel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scatterplot3d r-rcpparmadillo r-rcpp r-polca
+                             r-mass))
+    (home-page "https://github.com/QMUL/poLCAParallel")
+    (synopsis "Polytomous Variable Latent Class Analysis Parallel")
+    (description
+     "This package provides a C++ reimplementation of @code{poLCA} - latent class
+analysis and latent class regression models for polytomous outcome variables,
+also known as latent structure analysis.  It attempts to reproduce results and
+be as similar as possible to the original code, while running faster, especially
+with multiple repetitions, by utilising multiple threads.  Further reading is
+available on the Queen Mary, University of London, IT Services Research blog
+<https://blog.hpc.qmul.ac.uk/speeding_up_r_packages/>.")
+    (license license:gpl2)))
 
 (define-public r-polca
   (package
@@ -25061,13 +25080,13 @@ vignette.")
 (define-public r-pleioh2g
   (package
     (name "r-pleioh2g")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pleioh2g" version))
        (sha256
-        (base32 "15f0zkbcxxh3za0pxwa5s7vnk89r6bc5ywv49y30gfkf6n0nc95x"))))
+        (base32 "1frkcr88576wzyyn49cb2q14pb3iy21zqm5ycc4rdc02rd0vdilf"))))
     (properties `((upstream-name . "pleioh2g")))
     (build-system r-build-system)
     (arguments
@@ -43842,66 +43861,6 @@ statistics of genome-wide association (GWA) studies.  Based upon the methods and
 original PANPRS package as found in: Chen, Chatterjee, Landi, and Shi (2020)
 <doi:10.1080/01621459.2020.1764849>.")
     (license license:gpl3)))
-
-(define-public r-pannotator
-  (package
-    (name "r-pannotator")
-    (version "1.0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pannotator" version))
-       (sha256
-        (base32 "06062z1idszmxkfy7wqj6yn8svb3fgh5421246dxw5yw0mr0kpq7"))))
-    (properties `((upstream-name . "pannotator")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-shinywidgets
-                             r-shinythemes
-                             r-shinyjs
-                             r-shinyhelper
-                             r-shinyfiles
-                             r-shiny
-                             r-sf
-                             r-scales
-                             r-readr
-                             r-magrittr
-                             r-leafpm
-                             r-leaflet-extras
-                             r-leaflet
-                             r-jsonlite
-                             r-jsonify
-                             r-jpeg
-                             r-htmlwidgets
-                             r-golem
-                             r-ggplot2
-                             r-geojsonsf
-                             r-exiftoolr
-                             r-dplyr
-                             r-configr
-                             r-config
-                             r-colourpicker
-                             r-bslib))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/NunzioKnerr/pannotator_package_source")
-    (synopsis "Visualisation and Annotation of 360 Degree Imagery")
-    (description
-     "This package provides a customisable R shiny app for immersively visualising,
-mapping and annotating panospheric (360 degree) imagery.  The flexible interface
-allows annotation of any geocoded images using up to 4 user specified dropdown
-menus.  The app uses leaflet to render maps that display the geo-locations of
-images and panellum <https://pannellum.org/>, a lightweight panorama viewer for
-the web, to render images in virtual 360 degree viewing mode.  Key functions
-include the ability to draw on & export parts of 360 images for downstream
-applications.  Users can also draw polygons and points on map imagery related to
-the panoramic images and export them for further analysis.  Downstream
-applications include using annotations to train Artificial Intelligence/Machine
-Learning (AI/ML) models and geospatial modelling and analysis of camera based
-survey data.")
-    (license license:gpl3+)))
 
 (define-public r-panjen
   (package

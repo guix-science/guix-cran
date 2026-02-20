@@ -9600,13 +9600,13 @@ code file.")
 (define-public r-doctest
   (package
     (name "r-doctest")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doctest" version))
        (sha256
-        (base32 "04gicrh3fc3639ccwsg5c41axbsl7vkj5al6qcwlrf3jx8vaad64"))))
+        (base32 "1ybpnfjfm4qlcbrhhx72fip1bi9bsqkcwna8xy88wjc649lgbkx6"))))
     (properties `((upstream-name . "doctest")))
     (build-system r-build-system)
     (arguments
@@ -14552,13 +14552,13 @@ on Dempsey and Wyse (2025) <doi:10.48550/@code{arXiv.2403.03646>}.")
 (define-public r-discretedists
   (package
     (name "r-discretedists")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteDists" version))
        (sha256
-        (base32 "0bsw8sg9kfzrrr9gk4c7aar3hf3y9rw5vs6kw8mdfr6n1x9sklcs"))))
+        (base32 "159gas9bavjxb9ak6dyja65hsmmx7rdqp5nh7sy0i6zy5v4618mb"))))
     (properties `((upstream-name . "DiscreteDists")))
     (build-system r-build-system)
     (arguments
@@ -27946,6 +27946,32 @@ Reference: Parichit Sharma, Hasan Kurban, Mehmet Dalkilic (2022)
 (2016) <doi:10.1007/s41060-017-0062-1>.")
     (license license:gpl3)))
 
+(define-public r-dccpp
+  (package
+    (name "r-dccpp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dccpp" version))
+       (sha256
+        (base32 "1j17rv9wklmxbxa6ri9vhl370jzhi00h7h8hz1ajzqf6v3b2lkvc"))))
+    (properties `((upstream-name . "dccpp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://dccpp.berrisch.biz/")
+    (synopsis "Fast Computation of Distance Correlations")
+    (description
+     "Fast computation of the distance covariance dcov and distance correlation dcor'.
+ The computation cost is only O(n log(n)) for the distance correlation (see
+Chaudhuri, Hu (2019) <@code{arXiv:1810.11332>}
+<doi:10.1016/j.csda.2019.01.016>).  The functions are written entirely in C++ to
+speed up the computation.")
+    (license license:gpl3+)))
+
 (define-public r-dccmidas
   (package
     (name "r-dccmidas")
@@ -28152,42 +28178,6 @@ coefficients for propensity score estimation and outcome regression are produced
 using the M-estimation.  The same functions can be used to estimate average
 outcomes in missing outcome cases.")
     (license license:expat)))
-
-(define-public r-dbtcshiny
-  (package
-    (name "r-dbtcshiny")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DBTCShiny" version))
-       (sha256
-        (base32 "0rk9f4wbpmibydbmq17bjfgdznpl67xfd5f1srkpnai459c5ni6y"))))
-    (properties `((upstream-name . "DBTCShiny")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinywidgets
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
-                             r-magrittr
-                             r-leaflet-extras
-                             r-leaflet
-                             r-ggplot2
-                             r-dt
-                             r-dbtc))
-    (home-page "<https://github.com/rgyoung6/DBTCShiny>")
-    (synopsis
-     "Dada-BLAST-Taxon Assign-Condense Metabarcode Analysis 'shiny' Application")
-    (description
-     "Metabarcoding analysis using the DBTC package is implemented here using shiny in
-an interactive graphical user interface to conduct Metabarcode analyses and
-visualize and filter results.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-dbtc
   (package

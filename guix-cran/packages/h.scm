@@ -11727,62 +11727,35 @@ rehabilitation.")
 (define-public r-healthiar
   (package
     (name "r-healthiar")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthiar" version))
        (sha256
-        (base32 "1g48dhz075i8ffak5lbcrb0dp69k1yaks8473yw74a63ddl1i6iv"))))
+        (base32 "0qxriq80fsxxjm1sq7dlwkz7pcrf3pg7c9vpl2c2v0apfdl9cnbx"))))
     (properties `((upstream-name . "healthiar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-purrr r-dplyr))
+    (propagated-inputs (list r-tidyr r-tibble r-rdpack r-purrr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://swisstph.github.io/healthiar/")
     (synopsis
      "Quantifying and Monetizing Health Impacts Attributable to Exposure")
     (description
      "This R package has been developed with a focus on air pollution and noise but
-can applied to other exposures.  The initial development has been funded by the
-European Union project BEST-COST. Disclaimer: It is work in progress and the
+can be applied to other exposures.  The initial development has been funded by
+the European Union project BEST-COST. Disclaimer: It is work in progress and the
 developers are not liable for any calculation errors or inaccuracies resulting
-from the use of this package.  References (in chronological order): WHO (2003a)
-\"Assessing the environmental burden of disease at national and local levels\"
-<https://www.who.int/publications/i/item/9241546204> (accessed October 2025);
-WHO (2003b) \"Comparative quantification of health risks: Conceptual framework
-and methodological issues\" <doi:10.1186/1478-7954-1-1> (accessed October 2025);
-Miller & Hurley (2003) \"Life table methods for quantitative impact assessments
-in chronic mortality\" <doi:10.1136/jech.57.3.200> (accessed October 2025);
-Steenland & Armstrong (2006) \"An Overview of Methods for Calculating the Burden
-of Disease Due to Specific Risk Factors\"
-<doi:10.1097/01.ede.0000229155.05644.43> (accessed October 2025); Miller (2010)
-\"Report on estimation of mortality impacts of particulate air pollution in
-London\"
-<https://cleanair.london/app/uploads/CAL-098-Mayors-health-study-report-June-2010-1.pdf>
-(accessed October 2025); WHO (2011) \"Burden of disease from environmental noise\"
-<https://iris.who.int/items/723ab97c-5c33-4e3b-8df1-744aa5bc1c27> (accessed
-October 2025); Jerrett et al. (2013) \"Spatial Analysis of Air Pollution and
-Mortality in California\" <doi:10.1164/rccm.201303-0609OC> (accessed October
-2025); GBD 2019 Risk Factors Collaborators (2020) \"Global burden of 87 risk
-factors in 204 countries and territories, 1990â2019\"
-<doi:10.1016/S0140-6736(20)30752-2> (accessed October 2025); @code{VanderWeele}
-(2019) \"Optimal Approximate Conversions of Odds Ratios and Hazard Ratios to Risk
-Ratios\" <doi: 10.1111/biom.13197> (accessed October 2025); WHO (2020) \"Health
-impact assessment of air pollution: @code{AirQ+} life table manual\"
-<https://iris.who.int/bitstream/handle/10665/337683/WHO-EURO-2020-1559-41310-56212-eng.pdf?sequence=1>
-(accessed October 2025); ETC HE (2022) \"Health risk assessment of air pollution
-and the impact of the new WHO guidelines\"
-<https://www.eionet.europa.eu/etcs/all-etc-reports> (accessed October 2025); Kim
-et al. (2022) \"DALY Estimation Approaches: Understanding and Using the
-Incidence-based Approach and the Prevalence-based Approach\"
-<doi:10.3961/jpmph.21.597> (accessed October 2025); Pozzer et al. (2022)
-\"Mortality Attributable to Ambient Air Pollution: A Review of Global Estimates\"
-<doi:10.1029/2022GH000711> (accessed October 2025); Teaching group in EBM (2022)
-\"Evidence-based medicine research helper\"
-<https://ebm-helper.cn/en/Conv/HR_RR.html> (accessed October 2025).")
+from the use of this package.  Selection of relevant references (in
+chronological order): WHO (2003)
+<https://www.who.int/publications/i/item/9241546204>, Murray et al. (2003)
+<doi:10.1186/1478-7954-1-1>, Miller & Hurley (2003) <doi:10.1136/jech.57.3.200>,
+Steenland & Armstrong (2006) <doi:10.1097/01.ede.0000229155.05644.43>, WHO
+(2011) <https://iris.who.int/items/723ab97c-5c33-4e3b-8df1-744aa5bc1c27>, GBD
+2019 Risk Factors Collaborators (2020) <doi:10.1016/S0140-6736(20)30752-2>.")
     (license license:gpl3+)))
 
 (define-public r-healthfinance
@@ -13198,13 +13171,13 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
 (define-public r-hdf5lib
   (package
     (name "r-hdf5lib")
-    (version "2.0.0.5")
+    (version "2.0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5lib" version))
        (sha256
-        (base32 "0jgq62vzwn4prycry5z0q8r3cakyzq4dvcdksa7g2875skj22rjr"))))
+        (base32 "12l9mw6zxm5h9q3v84y4ykxrvfsikr26jkh39jaja9n6pbkcm0vp"))))
     (properties `((upstream-name . "hdf5lib")))
     (build-system r-build-system)
     (arguments
@@ -15253,13 +15226,13 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "1mqkf5749gqx505f0g7g9wm2n4hy22pwyxa66lrz5v9jg8adlvk2"))))
+        (base32 "07643gxnlxchwk0zz3wm4yl1cb0d88dgvn755ylb3dsgn6rp1iww"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (arguments
@@ -15267,7 +15240,7 @@ including most of the delicious Cantonese cuisine.")
       #:tests? #f))
     (propagated-inputs (list r-xml2 r-terra r-sf r-jsonlite r-httr2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/paul-carteron")
+    (home-page "https://paul-carteron.github.io/happign/")
     (synopsis "R Interface to 'IGN' Web Services")
     (description
      "Automatic open data acquisition from resources of IGN ('Institut National de

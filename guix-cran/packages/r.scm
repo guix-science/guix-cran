@@ -25091,13 +25091,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rixpress
   (package
     (name "r-rixpress")
-    (version "0.11.2")
+    (version "0.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rixpress" version))
        (sha256
-        (base32 "1lrgy5f3bqpbiaya4qyq1zdlhi2pyjj1ia4cjc03badkmhjc17nm"))))
+        (base32 "0dwnqlz52bb6j69zl47qii1dsmqr0pna2s8in5nnr0211r0c0av1"))))
     (properties `((upstream-name . "rixpress")))
     (build-system r-build-system)
     (arguments
@@ -29657,13 +29657,13 @@ Density Estimation\" by Y. Wang, A. Canale, D. Dunson (2016)
 (define-public r-rgeoda
   (package
     (name "r-rgeoda")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgeoda" version))
        (sha256
-        (base32 "1n5sa5gawyn39hdi90nmnc79l8mdh3w9r4r973q97qbs1mf27rfz"))))
+        (base32 "126l509llrxhg9vjmqm6vl3wsnzwkd51psdbyj5ghnzr3rchbj8r"))))
     (properties `((upstream-name . "rgeoda")))
     (build-system r-build-system)
     (arguments
@@ -43002,13 +43002,13 @@ rectangular, @code{readit()} can probably read it.")
 (define-public r-reader
   (package
     (name "r-reader")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reader" version))
        (sha256
-        (base32 "1x489q3ljap4zpny68mx83mgxaqiwlkglcy57whwhnh33dd7qp4h"))))
+        (base32 "07q4w1wd6ww2zrbgrhd4khmjmq78k0sdxq4j3fckgxybn1fslch7"))))
     (properties `((upstream-name . "reader")))
     (build-system r-build-system)
     (arguments
@@ -49116,13 +49116,13 @@ user interface) for R, based on the tcltk package.")
 (define-public r-rclsp
   (package
     (name "r-rclsp")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rclsp" version))
        (sha256
-        (base32 "06bygpfn4b7lcb32i2j2dh5f50gmbhlfcwfi47zspbk0g3w47kkc"))))
+        (base32 "00zh516f1jqz75cg8zswzmi9n6ncpxs3q0b40vlkxxz8v1y8vncm"))))
     (properties `((upstream-name . "rclsp")))
     (build-system r-build-system)
     (arguments
@@ -49965,46 +49965,6 @@ calculate molecular descriptors and so on.  In addition, the CDK API allows the
 user to view structures in 2D.")
     (license license:lgpl2.0+)))
 
-(define-public r-rcdf
-  (package
-    (name "r-rcdf")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rcdf" version))
-       (sha256
-        (base32 "131wvv3qhvn319yp4l5mpy961sn5hbznn482i03n06ggvmd1gv0b"))))
-    (properties `((upstream-name . "rcdf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-uuid
-                             r-stringr
-                             r-rsqlite
-                             r-openxlsx
-                             r-openssl
-                             r-jsonlite
-                             r-haven
-                             r-glue
-                             r-fs
-                             r-duckdb
-                             r-dplyr
-                             r-dbi
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://yng-me.github.io/rcdf/")
-    (synopsis "Comprehensive Toolkit for Working with Encrypted Parquet Files")
-    (description
-     "Utilities for reading, writing, and managing RCDF files, including encryption
-and decryption support.  It offers a flexible interface for handling data stored
-in encrypted Parquet format, along with metadata extraction, key management, and
-secure operations using Advanced Encryption Standard (AES) and
-Rivest-Shamir-Adleman (RSA) encryption.")
-    (license license:expat)))
-
 (define-public r-rcdea
   (package
     (name "r-rcdea")
@@ -50415,6 +50375,48 @@ with external data tables containing language information and features, offering
 a tool for visualizing the geographic distribution and linguistic
 characteristics of East Caucasian languages.")
     (license license:gpl3+)))
+
+(define-public r-rcatfish
+  (package
+    (name "r-rcatfish")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcatfish" version))
+       (sha256
+        (base32 "09c95xxrfp2jlz6hlg1kx6s6s9mr090xcm3ks3sxfqpp6xlgbqmw"))))
+    (properties `((upstream-name . "rcatfish")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rfishbase
+                             r-rcurl
+                             r-qdapregex
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rcatfish")
+    (synopsis
+     "An R Interface to the California Academy of Sciences Eschmeyer's Catalog of Fishes")
+    (description
+     "Accesses the California Academy of Sciences Eschmeyer's Catalog of Fishes in R
+using web requests.  The Catalog of fishes is the leading authority in fish
+taxonomy.  Functions in the package allow users to search for fish taxa and
+valid names, retrieve taxonomic references, retrieve monthly taxonomic changes,
+obtain natural history collection information, and see the number of species by
+taxonomic group.  For more information on the Catalog: Fricke, R., Eschmeyer, W.
+N. & R. van der Laan (eds) 2025.  ESCHMEYER'S CATALOG OF FISHES
+<https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp>.")
+    (license license:gpl2+)))
 
 (define-public r-rcatch22
   (package

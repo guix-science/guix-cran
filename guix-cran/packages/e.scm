@@ -9045,6 +9045,36 @@ edge-planes.  The algorithm selects symmetric adjacency matrix, which many other
 regression-based undirected graph selection procedures cannot do.")
     (license license:gpl2)))
 
+(define-public r-ervissexplore
+  (package
+    (name "r-ervissexplore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ervissexplore" version))
+       (sha256
+        (base32 "1s59ala42lp1d9r3frg1s8139ns1svzri17y43v4c9zsp7n3irms"))))
+    (properties `((upstream-name . "ervissexplore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-data-table r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Epiconcept-Paris/ervissexplore")
+    (synopsis
+     "Retrieve and Explore ERVISS Respiratory Virus Surveillance Data")
+    (description
+     "This package provides easy access to ERVISS (European Respiratory Virus
+Surveillance Summary) data from the EU-ECDC
+<https://github.com/EU-ECDC/Respiratory_viruses_weekly_data>.  Enables
+retrieval, filtering, and optional visualization of data across European
+countries.  Data is fetched directly from the EU-ECDC Respiratory Viruses Weekly
+Data repository, with support for both latest data and historical snapshots for
+reproducible analyses.")
+    (license license:expat)))
+
 (define-public r-ertg3d
   (package
     (name "r-ertg3d")
@@ -12806,13 +12836,13 @@ held by the UK Health Security Agency, UKHSA.")
 (define-public r-epidisplay
   (package
     (name "r-epidisplay")
-    (version "3.5.0.2")
+    (version "3.7.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiDisplay" version))
        (sha256
-        (base32 "0430mwnaa0qamdyvmwkh37ic0kp4hq8mr5nxkc97mhhl7djw0y92"))))
+        (base32 "1nyglzbwa8yxv9cgjkkv8anq95vwa1xzv7mvizsgcd150mc3rd31"))))
     (properties `((upstream-name . "epiDisplay")))
     (build-system r-build-system)
     (arguments
@@ -21175,13 +21205,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-educabr
   (package
     (name "r-educabr")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "educabR" version))
        (sha256
-        (base32 "0xsvs95h6kkwa73yz4bzyd22jhrq3ishk2l5695q1r67jj3g5a9l"))))
+        (base32 "1yzd348xg20v04x33bwzm5jj2xlfyvlq5bfy9c6y0y25p8r07w8v"))))
     (properties `((upstream-name . "educabR")))
     (build-system r-build-system)
     (arguments
@@ -23021,6 +23051,35 @@ as tools to explore the number of clusters in the data.  Functions to produce
 synthetic ecological datasets are also provided.")
     (license license:expat)))
 
+(define-public r-ecotolerance
+  (package
+    (name "r-ecotolerance")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecoTolerance" version))
+       (sha256
+        (base32 "141l6x7cdh0xqnmw976g6kk47caxg8czjw57y46wghsidlbwgjc7"))))
+    (properties `((upstream-name . "ecoTolerance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-raster r-magrittr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ecoTolerance")
+    (synopsis "Ecological Tolerance Indices")
+    (description
+     "Computes the Road Tolerance Index (RTI) and the Human Footprint Tolerance Index
+(HFTI) for species occurrence data.  It automates data cleaning and integrates
+spatial data (roads and human footprint) to produce reproducible tolerance
+metrics for biodiversity and conservation research.  The HFTI calculation is
+based on the global human footprint dataset by Mu et al. (2022)
+<doi:10.1038/s41597-022-01284-8>.  This package is part of a @code{PhD} thesis
+focused on amphibian ecology in Brazil.")
+    (license license:gpl3+)))
+
 (define-public r-ecoteach
   (package
     (name "r-ecoteach")
@@ -24537,6 +24596,38 @@ package provides three different methods (LRMC, CLRMC and ECLRMC) for data
 imputation.  There is also an NRMS function for evaluating the result.  Chen,
 Xiaobo, et al (2017) <doi:10.1016/j.knosys.2017.06.010>.")
     (license license:gpl2)))
+
+(define-public r-eclipseplot
+  (package
+    (name "r-eclipseplot")
+    (version "0.9.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eclipseplot" version))
+       (sha256
+        (base32 "1zqsimwllk390r04da20wg2rv2ldick5bl9mb97s3kaiwzdr77bw"))))
+    (properties `((upstream-name . "eclipseplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-readxl
+                             r-magrittr
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://github.com/pevid-sci/eclipseplot")
+    (synopsis
+     "Graphical Visualizations for ROBUST-RCT Risk of Bias Assessments")
+    (description
+     "This package provides visual representations of risk-of-bias assessments using
+the ROBUST-RCT framework, as described in Wang et al. (2025)
+<doi:10.1136/bmj-2024-081199>.  The graphical visualization displays both
+factual evaluation (Step 1) and judgment (Step 2).")
+    (license license:gpl3)))
 
 (define-public r-ecipex
   (package

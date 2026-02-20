@@ -18591,19 +18591,19 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidyweather
   (package
     (name "r-tidyweather")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyweather" version))
        (sha256
-        (base32 "1gbi2vvpwmlbh5r6hzm61fxwbq5qm8b3656vpcw8rbs72qwxjq0k"))))
+        (base32 "1bfmbibm3mlfwgxcn0fc2x3drw43idyfm1mqrjb0xx0nvdvp5zxn"))))
     (properties `((upstream-name . "tidyweather")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-stringr r-settings r-dplyr))
+    (propagated-inputs (list r-tibble r-stringr r-optree r-dplyr))
     (home-page "https://tidyweather.bangyou.me/")
     (synopsis "Analysis the Weather Data for Agriculture")
     (description
@@ -32514,13 +32514,13 @@ package roulette that is designed to facilitate learning about new packages.")
 (define-public r-tad
   (package
     (name "r-tad")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TAD" version))
        (sha256
-        (base32 "0ab1jb1yfm7s12ivmywr3cnh5aq5ccfrnkb56izzbbsdbc3vd31l"))))
+        (base32 "1rwkz09jjd190s8yi9sf2ki63x7f59b0s3vcd4yz38rzkxmd6sd6"))))
     (properties `((upstream-name . "TAD")))
     (build-system r-build-system)
     (arguments
@@ -32528,21 +32528,21 @@ package roulette that is designed to facilitate learning about new packages.")
       #:tests? #f))
     (propagated-inputs (list r-mblm r-foreach r-dofuture))
     (native-inputs (list r-knitr))
-    (home-page "https://forgemia.inra.fr/urep/data_processing/tad")
+    (home-page "https://forge.inrae.fr/urep/data_processing/tad")
     (synopsis "Realize the Trait Abundance Distribution")
     (description
-     "This analytical framework is based on an analysis of the shape of the trait
-abundance distributions to better understand community assembly processes, and
-predict community dynamics under environmental changes.  This framework
-mobilized a study of the relationship between the moments describing the shape
-of the distributions: the skewness and the kurtosis (SKR).  The SKR allows the
-identification of commonalities in the shape of trait distributions across
-contrasting communities.  Derived from the SKR, we developed mathematical
-parameters that summarise the complex pattern of distributions by assessing (i)
-the RÂ², (ii) the Y-intercept, (iii) the slope, (iv) the functional stability of
-community (TADstab), and, (v) the distance from specific distribution families
-(i.e., the distance from the skew-uniform family a limit to the highest degree
-of evenness: TADeve).")
+     "The âTADâ package compiled an analytical framework based on an analysis of
+the shape of the trait abundance distributions to better understand community
+assembly processes, and predict community dynamics under environmental changes.
+This framework mobilized a study of the relationship between the moments
+describing the shape of the distributions: the skewness and the kurtosis (SKR).
+The SKR allows the identification of commonalities in the shape of trait
+distributions across contrasting communities.  Derived from the SKR, we
+developed mathematical parameters that summarise the complex pattern of
+distributions by assessing (i) the RÂ², (ii) the Y-intercept, (iii) the slope,
+(iv) the functional stability of community (TADstab), and, (v) the distance from
+specific distribution families (i.e., the distance from the skew-uniform family
+a limit to the highest degree of evenness: TADeve).")
     (license license:bsd-3)))
 
 (define-public r-tactile
@@ -32936,52 +32936,6 @@ form, where packages such as tidyr could be used for reshaping.  The schema
 description documents the arrangement of input tables and is used to reshape
 them into a standardised (tidy) output format.")
     (license license:gpl3)))
-
-(define-public r-tabs
-  (package
-    (name "r-tabs")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tabs" version))
-       (sha256
-        (base32 "02cfnbc1nd5fmr5n0hpxdcswxf9lp08mrbcsis3nwkal78vxck60"))))
-    (properties `((upstream-name . "tabs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-stringi
-                             r-sf
-                             r-rsqlite
-                             r-rlang
-                             r-qs2
-                             r-mapedit
-                             r-leaftime
-                             r-leaflet-extras
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-htmlwidgets
-                             r-htmltools
-                             r-gpkg
-                             r-geojsonio
-                             r-dplyr
-                             r-ape))
-    (home-page "https://uva_ibed_piac.gitlab.io/tabs/")
-    (synopsis "Temporal Altitudinal Biogeographic Shifts")
-    (description
-     "This package provides a standardized workflow to reconstruct spatial
-configurations of altitude-bounded biogeographic systems over time.  For
-example, tabs can model how island archipelagos expand or contract with changing
-sea levels or how alpine biomes shift in response to tree line movements.  It
-provides functionality to account for various geophysical processes such as
-crustal deformation and other tectonic changes, allowing for a more accurate
-representation of biogeographic system dynamics.  For more information see De
-Groeve et al. (2025) <doi:10.3897/arphapreprints.e151900>.")
-    (license license:gpl3+)))
 
 (define-public r-tabr
   (package
