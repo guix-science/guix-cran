@@ -3359,13 +3359,13 @@ intervals.")
 (define-public r-npcirc
   (package
     (name "r-npcirc")
-    (version "3.1.2")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPCirc" version))
        (sha256
-        (base32 "05z0cp8nwdl6rh74vjwvv951n2kq39r8z8i6yk1jz4c1c33nmi5g"))))
+        (base32 "0sx26sppk7pl6spqwxm9krd8k3bplp13j4v58igql68zzh0jdz8n"))))
     (properties `((upstream-name . "NPCirc")))
     (build-system r-build-system)
     (arguments
@@ -3383,9 +3383,18 @@ intervals.")
     (home-page "https://www.jstatsoft.org/v61/i09/")
     (synopsis "Nonparametric Circular Methods")
     (description
-     "Nonparametric smoothing methods for density and regression estimation involving
-circular data, including the estimation of the mean regression function and
-other conditional characteristics.")
+     "Nonparametric smoothing methods for density and regression estimation and
+inference with circular data.  The package provides kernel density estimation
+along with inferential tools such as circular @code{SiZer} for feature
+significance, mode estimation, and modal clustering.  It includes multiple
+methods for selecting the smoothing parameter, allowing users to optimize the
+trade-off between bias and variance.  Various plotting functions help visualize
+estimated densities, modes, clusters, and significance features.  For
+regression, the package implements nonparametric estimation of the mean
+regression function as well as other conditional characteristics, including
+modal regression and generalized regression.  Bandwidth selection is also
+supported in the regression context, and testing procedures are available to
+assess structural features or effects in circular regression models.")
     (license license:gpl2+)))
 
 (define-public r-npcdtools
@@ -6542,6 +6551,33 @@ neural network approximations for differential equations\",
 and Theory\" <doi:10.48550/@code{arXiv.2310.20360>}.  Our implementation is meant
 mainly as a pedagogical tool, and proof of concept.  Faster implementations with
 deeper vectorizations may be made in future versions.")
+    (license license:gpl3)))
+
+(define-public r-nnmomo
+  (package
+    (name "r-nnmomo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NNMoMo" version))
+       (sha256
+        (base32 "1vv85q09ca1szs4xvzldihn4d3m1p0k1hll8c8v35nlicnmq9x21"))))
+    (properties `((upstream-name . "NNMoMo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-stmomo r-luz r-demography))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NNMoMo")
+    (synopsis "Neural Network Extension to 'StMoMo' for Lee-Carter Modeling")
+    (description
+     "This package provides extensions to the @code{StMoMo} package by incorporating
+neural network functionality for Lee-Carter and Poisson Lee-Carter mortality
+models.  Includes tools for constructing mortality datasets from demogdata
+objects and fitting neural network-based mortality models.  Further analysis,
+such as plotting and forecasting, can be done with @code{StMoMo} functions.")
     (license license:gpl3)))
 
 (define-public r-nnmis
@@ -18548,6 +18584,54 @@ functions have been created to be used in conjunction with the R package asreml
 for the ASReml software, which can be obtained upon purchase from VSN
 international (<https://vsni.co.uk/software/asreml>).")
     (license license:gpl2+)))
+
+(define-public r-nadir
+  (package
+    (name "r-nadir")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nadir" version))
+       (sha256
+        (base32 "1g628smqgg6kj15lr6691f750qjj83pg9hmlqbiakn9cg3p8kxjj"))))
+    (properties `((upstream-name . "nadir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-vgam
+                             r-tidyr
+                             r-tibble
+                             r-ranger
+                             r-randomforest
+                             r-origami
+                             r-nnls
+                             r-nnet
+                             r-mgcv
+                             r-lme4
+                             r-lifecycle
+                             r-hal9001
+                             r-glmnet
+                             r-gbm
+                             r-future-apply
+                             r-future
+                             r-earth
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ctesta01.github.io/nadir/")
+    (synopsis "Super Learning with Flexible Formulas")
+    (description
+     "This package provides a functional programming based implementation of the super
+learner algorithm with an emphasis on supporting the use of formulas to specify
+learners.  This approach offers several improvements compared to past
+implementations including the ability to easily use random-effects specified in
+formulas (like y ~ (age | strata) + ...) and construction of new learners is as
+simple as writing and passing a new function.  The super learner algorithm was
+originally described in van der Laan et al. (2007)
+<https://biostats.bepress.com/ucbbiostat/paper222/>.")
+    (license license:expat)))
 
 (define-public r-nadaverse
   (package

@@ -7610,13 +7610,13 @@ these packages.  Learn more about @code{openMSE} at <https://openmse.com/>.")
 (define-public r-openmpp
   (package
     (name "r-openmpp")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openmpp" version))
        (sha256
-        (base32 "1a5d8zfqbi76bdyxsinhrf97k37v1li5xjfbd73185xan51aj0zp"))))
+        (base32 "1f1xhn2rcxvh6assy6jaxmk0ycvfizq8lw6vr2zwmm33mf2w5ix7"))))
     (properties `((upstream-name . "openmpp")))
     (build-system r-build-system)
     (arguments

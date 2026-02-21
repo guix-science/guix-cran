@@ -5291,13 +5291,13 @@ of different algorithms.")
 (define-public r-rsurvstat
   (package
     (name "r-rsurvstat")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurvstat" version))
        (sha256
-        (base32 "1cblfbgvr4q0032mhx1pk6mbf1i14lbxcsgmpf2zabxghhmz5ni2"))))
+        (base32 "05bs3d66mrh1wcajqbmh9pklqnd46v2ic2wa3y2935gglnswdk12"))))
     (properties `((upstream-name . "rsurvstat")))
     (build-system r-build-system)
     (arguments
@@ -23313,6 +23313,33 @@ jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
 
+(define-public r-rlifting
+  (package
+    (name "r-rlifting")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rLifting" version))
+       (sha256
+        (base32 "1i0fk4lj3376lg7ck89mbvclzq0sgacxnarkh2xhibz0rr30rh3m"))))
+    (properties `((upstream-name . "rLifting")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mkyou/rLifting")
+    (synopsis "High-Performance Wavelet Lifting Transforms")
+    (description
+     "This package performs Wavelet Lifting Transforms focusing on signal denoising
+and functional data analysis (FDA).  Implements a hybrid architecture with a
+zero-allocation C++ core for high-performance processing.  Features include
+unified offline (batch) denoising, causal (real-time) filtering using a ring
+buffer engine, and adaptive recursive thresholding.")
+    (license license:expat)))
+
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
@@ -24825,6 +24852,31 @@ outlier regressors, user-defined calendar regressors, Unobserved Components
 @code{AutoRegressive} Integrated Moving Average (UCARIMA) models...), to test
 the presence of trading days or seasonal effects and also to set specifications
 in pre-adjustment and benchmarking when using rjd3x13 or rjd3tramoseats'.")
+    (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-rjd3providers
+  (package
+    (name "r-rjd3providers")
+    (version "3.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3providers" version))
+       (sha256
+        (base32 "15k5z7l3pd0vdp614p5rq3374s32cq4l23bw1dpmm7qnwhnqc5ss"))))
+    (properties `((upstream-name . "rjd3providers")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjd3toolkit r-rjd3jars r-rjava))
+    (home-page "https://github.com/rjdverse/rjd3providers")
+    (synopsis "Interface to 'JDemetra+' 3.x Time Series Analysis Software")
+    (description
+     "Interface to JDemetra+ 3.x (<https://github.com/jdemetra>) time series analysis
+software.  It offers full access to txt, csv, xml and spreadsheets files which
+are meant to be read by JDemetra+ Graphical User Interface.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-rjd3jars
@@ -27797,6 +27849,81 @@ dependency and maximal efficiency.")
 Functions are designed for high performance.  Implements the hierarchical fuzzy
 multi-linkage partitioning method proposed by Huang et al. (2007)
 <doi:10.1186/gb-2007-8-9-r183>.")
+    (license license:gpl3)))
+
+(define-public r-ribiosio
+  (package
+    (name "r-ribiosio")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ribiosIO" version))
+       (sha256
+        (base32 "05vp4wnqzppz9vj07j9bp3jbzblxlbsazs027bvz36siklxikbi5"))))
+    (properties `((upstream-name . "ribiosIO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ribiosutils))
+    (home-page "https://github.com/bedapub/ribiosIO")
+    (synopsis "Input/Output Utilities of the 'ribios' Suite")
+    (description
+     "This package provides data structures and functions for file input/output in the
+ribios software suite, supporting common bioinformatics and computational
+biology file formats, designed for fast loading and high performance with
+minimal dependencies.")
+    (license license:gpl3)))
+
+(define-public r-ribiosgraph
+  (package
+    (name "r-ribiosgraph")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ribiosGraph" version))
+       (sha256
+        (base32 "122af18l33nx8mqrvc50a5m1h74rb2m9wdb1a7jq5bhlkml4hz19"))))
+    (properties `((upstream-name . "ribiosGraph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ribiosutils r-plotly r-magrittr r-igraph))
+    (home-page "https://github.com/bedapub/ribiosGraph")
+    (synopsis "Manipulate and Visualize Graphs in the 'ribios' Software Suite")
+    (description
+     "This package provides tools to manipulate and visualize graphs (networks) for
+computational biology in drug discovery, for instance functions for creating
+bipartite graphs and for interactive visualizations.  Zhang (2025)
+<https://github.com/bedapub/@code{ribiosGraph>}.")
+    (license license:gpl3)))
+
+(define-public r-ribiosarg
+  (package
+    (name "r-ribiosarg")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ribiosArg" version))
+       (sha256
+        (base32 "1mvbmr4p7f7a3pmg5fk579k4kz77v8jjy4ip2an645x3363aw57a"))))
+    (properties `((upstream-name . "ribiosArg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ribiosutils))
+    (home-page "https://github.com/bedapub/ribiosArg")
+    (synopsis "Argument Handling for Command-Line, Stand-Alone R Scripts")
+    (description
+     "This package provides functions to handle command-line arguments for R
+scripting.  It enables building stand-alone R programs that accept and parse
+command-line options in BIOS style.  Zhang (2025)
+<https://github.com/bedapub/@code{ribiosArg>}.")
     (license license:gpl3)))
 
 (define-public r-ribench
@@ -35157,13 +35284,13 @@ parameterisation and provision of helper functions to manage dependencies.")
 (define-public r-reporterscore
   (package
     (name "r-reporterscore")
-    (version "0.1.9")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReporterScore" version))
        (sha256
-        (base32 "07kr0myak7vazwlayl6sl8sm12g95pj03qhdggh2ys0i9q2d3gph"))))
+        (base32 "1j835xs56wld5qamf1rllg47zx82r3rwy5amsvkxgpfvj27m2a5w"))))
     (properties `((upstream-name . "ReporterScore")))
     (build-system r-build-system)
     (arguments
@@ -51255,6 +51382,33 @@ possible to link behavioral labels extracted from BORIS software
     (description "An R Interface to Bloomberg is provided via the Blp API'.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-rblimp
+  (package
+    (name "r-rblimp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rblimp" version))
+       (sha256
+        (base32 "144h1yw8r4c2ss059g59z1b360al272qy13zczwch9jna1b69kl6"))))
+    (properties `((upstream-name . "rblimp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-cli))
+    (home-page "https://github.com/blimp-stats/rblimp")
+    (synopsis "Integration of 'Blimp' Software into R")
+    (description
+     "This package provides an interface to Blimp software for Bayesian latent
+variable modeling, missing data analysis, and multiple imputation.  The package
+generates Blimp syntax, executes Blimp models, and imports results back into R
+as structured objects with methods for visualization and analysis.  Requires
+Blimp software (freely available at <https://www.appliedmissingdata.com/blimp>)
+to be installed separately.")
+    (license license:gpl3)))
+
 (define-public r-rbldatalicense
   (package
     (name "r-rbldatalicense")
@@ -59021,6 +59175,63 @@ synchrony with R5, the development of R5 follows Conveyal's independent update
 process.  Hence, users should confirm the R5 version implied by the Conveyal
 user manual (see <https://docs.conveyal.com/changelog>) corresponds with the R5
 version that r5r depends on.  This version of r5r depends on R5 v7.1.")
+    (license license:expat)))
+
+(define-public r-r4subdata
+  (package
+    (name "r-r4subdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r4subdata" version))
+       (sha256
+        (base32 "197lp6aylrqcd2pwgmww1r2hwdp7fk0v34ygb2lw96wd9770w8f4"))))
+    (properties `((upstream-name . "r4subdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble))
+    (home-page "https://github.com/R4SUB/r4subdata")
+    (synopsis "Example Datasets for Clinical Submission Readiness")
+    (description
+     "This package provides realistic synthetic example datasets for the R4SUB (R for
+Regulatory Submission) ecosystem.  Includes a pharma study evidence table,
+A@code{DaM} (Analysis Data Model) and SDTM (Study Data Tabulation Model)
+metadata following CDISC (Clinical Data Interchange Standards Consortium)
+conventions (<https://www.cdisc.org>), traceability mappings, a risk register
+based on ICH (International Council for Harmonisation) Q9 quality risk
+management principles (<https://www.ich.org/page/quality-guidelines>), and
+regulatory indicator definitions.  Designed for demos, vignettes, and package
+testing.")
+    (license license:expat)))
+
+(define-public r-r4subcore
+  (package
+    (name "r-r4subcore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r4subcore" version))
+       (sha256
+        (base32 "1vrp0axdl33vw2djgfyc9fjafgvqribv5hpqks69l324x29x2y32"))))
+    (properties `((upstream-name . "r4subcore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-jsonlite r-cli))
+    (home-page "https://github.com/R4SUB/r4subcore")
+    (synopsis
+     "Core Data Contracts, Parsers, and Scoring Primitives for Clinical Submission Readiness")
+    (description
+     "Foundational package in the R4SUB (R for Regulatory Submission) ecosystem.
+Defines the core evidence table schema, parsers, indicator abstractions, and
+scoring primitives needed to quantify clinical submission readiness.  Provides a
+standardized contract for ingesting heterogeneous sources (validation outputs,
+metadata, traceability) into a single evidence framework.")
     (license license:expat)))
 
 (define-public r-r4ss

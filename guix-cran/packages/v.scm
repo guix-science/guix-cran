@@ -6559,6 +6559,42 @@ statistical operations which vary in results with the attributes of each vector.
 multiple vectors within the same object.")
     (license license:expat)))
 
+(define-public r-vectrixdb
+  (package
+    (name "r-vectrixdb")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VectrixDB" version))
+       (sha256
+        (base32 "1lsalx32km8pc5r0bn8zxmz0bnjz3mr10bngmjq7qhp1nk4zgf92"))))
+    (properties `((upstream-name . "VectrixDB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-text2vec
+                             r-stopwords
+                             r-rsqlite
+                             r-r6
+                             r-matrix
+                             r-jsonlite
+                             r-digest
+                             r-dbi))
+    (home-page "https://knowusuboaky.github.io/vectrixdb-r/")
+    (synopsis
+     "Lightweight Vector Database with Embedded Machine Learning Models")
+    (description
+     "This package provides a lightweight vector database for text retrieval in R with
+embedded machine learning models and no external API (Application Programming
+Interface) keys.  Supports dense and hybrid search, optional HNSW (Hierarchical
+Navigable Small World) approximate nearest-neighbor indexing, faceted filters
+with ACL (Access Control List) metadata, command-line tools, and a local
+dashboard built with shiny'.  The HNSW method is described by Malkov and
+Yashunin (2018) <doi:10.1109/TPAMI.2018.2889473>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-vectorwavelet
   (package
     (name "r-vectorwavelet")

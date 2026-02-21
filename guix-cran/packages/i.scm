@@ -9804,41 +9804,6 @@ subsets, ranges, regular expressions and others.  Implemented operators work on
 vectors, matrices, and lists.")
     (license license:gpl3)))
 
-(define-public r-ino
-  (package
-    (name "r-ino")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ino" version))
-       (sha256
-        (base32 "0pbcnsyb9wxcs97jx501acbxpbqrikzid8rnxx99j5c3488wqdmz"))))
-    (properties `((upstream-name . "ino")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-r6
-                             r-portion
-                             r-optimizer
-                             r-oeli
-                             r-normalize
-                             r-ggplot2
-                             r-future-apply
-                             r-dplyr
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://loelschlaeger.de/ino/")
-    (synopsis "Initialization of Numerical Optimization")
-    (description
-     "Analysis of the initialization for numerical optimization of real-valued
-functions, particularly likelihood functions of statistical models.  See
-<https://loelschlaeger.de/ino/> for more details.")
-    (license license:gpl3+)))
-
 (define-public r-innsight
   (package
     (name "r-innsight")
@@ -11148,38 +11113,6 @@ across individual assemblages.  Asymptotic 3D diversity estimates are also
 provided.  See Chao et al. (2021) <doi:10.1111/2041-210X.13682> for more
 details.")
     (license license:gpl3+)))
-
-(define-public r-inettool
-  (package
-    (name "r-inettool")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "INetTool" version))
-       (sha256
-        (base32 "0380irgb6zxaq637ij1534n791kcqqj6xnr4qzpx18hdnaf93gxi"))))
-    (properties `((upstream-name . "INetTool")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-robin
-                             r-r2r
-                             r-multinet
-                             r-igraph
-                             r-ggpubr
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=INetTool")
-    (synopsis "Integration Network")
-    (description
-     "It constructs a Consensus Network which identifies the general information of
-all the layers and Specific Networks for each layer with the information present
-only in that layer and not in all the others.The method is described in
-Policastro et al. (2024) \"INet for network integration\"
-<doi:10.1007/s00180-024-01536-8>.")
-    (license license:expat)))
 
 (define-public r-inet
   (package
@@ -19144,6 +19077,61 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site
 <https://www.ices.dk/data/tools/Pages/@code{WebServices.aspx>}.")
     (license license:gpl3)))
 
+(define-public r-icesat2r
+  (package
+    (name "r-icesat2r")
+    (version "1.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IceSat2R" version))
+       (sha256
+        (base32 "17rpmlx1s5l9w28ik5fw5n5azx61ahqzx05fywsqhh5jv0i9kgha"))))
+    (properties `((upstream-name . "IceSat2R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-units
+                             r-shiny
+                             r-sf
+                             r-rvest
+                             r-rnaturalearth
+                             r-miniui
+                             r-magrittr
+                             r-lwgeom
+                             r-lubridate
+                             r-leafsync
+                             r-leaflet
+                             r-leafgl
+                             r-httr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-glue
+                             r-foreach
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mlampros/IceSat2R")
+    (synopsis "'ICESat-2' Altimeter Data using R")
+    (description
+     "Programmatic connection to the @code{OpenAltimetry} API
+<https://openaltimetry.earthdatacloud.nasa.gov/data/openapi/swagger-ui/index.html/>
+to download and process ATL03 (Global Geolocated Photon Data), ATL06 (Land Ice
+Height), ATL07 (Sea Ice Height), ATL08 (Land and Vegetation Height), ATL10 (Sea
+Ice Freeboard'), ATL12 (Ocean Surface Height) and ATL13 (Inland Water Surface
+Height) ICESat-2 Altimeter Data.  The user has the option to download the data
+by selecting a bounding box from a 1- or 5-degree grid globally utilizing a
+shiny application.  The ICESat-2 mission collects altimetry data of the Earth's
+surface.  The sole instrument on ICESat-2 is the Advanced Topographic Laser
+Altimeter System (ATLAS) instrument that measures ice sheet elevation change and
+sea ice thickness, while also generating an estimate of global vegetation
+biomass.  ICESat-2 continues the important observations of ice-sheet elevation
+change, sea-ice freeboard', and vegetation canopy height begun by ICESat in
+2003.")
+    (license license:gpl3)))
+
 (define-public r-icesadvice
   (package
     (name "r-icesadvice")
@@ -20674,6 +20662,39 @@ combine a conventional generalized linear model (GLM) with a machine learning
 component, such as XGBoost.  The package also provides tools within for
 explaining and analyzing these models.  For more details see Gawlowski and Wang
 (2025) <https://ifoa-adswp.github.io/IBLM/reference/figures/iblm_paper.pdf>.")
+    (license license:expat)))
+
+(define-public r-ibger
+  (package
+    (name "r-ibger")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ibger" version))
+       (sha256
+        (base32 "01jkh3nvp52pg3krc7kifmcrd1l54qiqmjpjgfl9n0gfl66djqih"))))
+    (properties `((upstream-name . "ibger")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/ibger")
+    (synopsis "Access the 'IBGE' Aggregate Data API from 'R'")
+    (description
+     "Tidyverse'-friendly interface to the Brazilian Institute of Geography and
+Statistics ('IBGE') aggregate data API
+<https://servicodados.ibge.gov.br/api/docs/agregados?versao=3>.  Query
+aggregates, variables, localities, periods, and metadata from surveys and
+censuses conducted by IBGE'.")
     (license license:expat)))
 
 (define-public r-ibfs

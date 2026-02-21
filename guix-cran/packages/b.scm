@@ -4141,13 +4141,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-broadcast
   (package
     (name "r-broadcast")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broadcast" version))
        (sha256
-        (base32 "17cxphrx6b1g77nh9gm5abz0vvp9nj1lg6mn0kar789xyhq5fkrg"))))
+        (base32 "1ygkxzhc94y56dr3f5zwbaiiz4cqcvhgaiia3vvp05w9fzjrfn6c"))))
     (properties `((upstream-name . "broadcast")))
     (build-system r-build-system)
     (arguments
@@ -4159,20 +4159,20 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
     (description
      "This package implements efficient @code{NumPy'-like} broadcasted operations for
 atomic and recursive arrays.  In the context of operations involving 2 (or more)
-arrays, âbroadcastingâ refers to efficiently recycling array dimensions,
-without making copies.  Besides linking to Rcpp', broadcast does not use any
-external libraries in any way; broadcast was essentially made from scratch and
-can be installed out-of-the-box.  The implementations available in broadcast
-include, but are not limited to, the following.  1) Broadcasted element-wise
-operations on any 2 arrays; they support a large set of relational, arithmetic,
-Boolean, string, and bit-wise operations.  2) A faster, more memory efficient,
-and broadcasted abind-like function, for binding arrays along an arbitrary
-dimension.  3) Broadcasted ifelse-like and apply-like functions.  4) Casting
-functions, that cast subset-groups of an array to a new dimension, cast nested
-lists to dimensional lists, and vice-versa.  5) A few linear algebra functions
-for statistics.  The functions in the broadcast package strive to minimize
-computation time and memory usage (which is not just better for efficient
-computing, but also for the environment).")
+arrays, âbroadcastingâ (AKA singleton expansion) refers to efficiently
+recycling array dimensions, without making copies.  Besides linking to Rcpp',
+broadcast does not use any external libraries in any way; broadcast was
+essentially made from scratch and can be installed out-of-the-box.  The
+implementations available in broadcast include, but are not limited to, the
+following.  1) Broadcasted element-wise operations on any 2 arrays; they support
+a large set of relational, arithmetic, Boolean, string, and bit-wise operations.
+ 2) A faster, more memory efficient, and broadcasted abind-like function, for
+binding arrays along an arbitrary dimension.  3) Broadcasted ifelse-like and
+apply-like functions.  4) Casting functions, that cast subset-groups of an array
+to a new dimension, cast nested lists to dimensional lists, and vice-versa.  5)
+A few linear algebra functions for statistics.  The functions in the broadcast
+package strive to minimize computation time and memory usage (which is not just
+better for efficient computing, but also for the environment).")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-brnn
@@ -10234,6 +10234,50 @@ References: Frischkorn and Popov (2023) <doi:10.31234/osf.io/umt57>.")
     (description
      "Easy estimation of Bayesian multilevel mediation models with Stan.")
     (license license:gpl3+)))
+
+(define-public r-bml
+  (package
+    (name "r-bml")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bml" version))
+       (sha256
+        (base32 "0zviza3k44lryvix75yq8wxl4kh8qqm43xmnvrss94lmab17664j"))))
+    (properties `((upstream-name . "bml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-r2jags
+                             r-purrr
+                             r-patchwork
+                             r-ggplot2
+                             r-ggmcmc
+                             r-dplyr
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://benrosche.github.io/bml/")
+    (synopsis
+     "Bayesian Multiple-Membership Multilevel Models with Parameterizable Weight Functions")
+    (description
+     "This package implements Bayesian multiple-membership multilevel models with
+parameterizable weight functions via JAGS to model how lower-level units jointly
+shape higher-level outcomes (micro-macro link) across a range of outcome types
+(e.g., linear, logit, and survival models).  Supports estimation and comparison
+of alternative aggregation mechanisms, allows weight matrices to be endogenized
+through parameters and covariates, and accommodates complex dependence
+structures that extend beyond traditional multilevel frameworks.  For details,
+see Rosche (2026) \"A Multilevel Model for Coalition Governments.  Uncovering
+Party-Level Dependencies Within and Between Governments\"
+<doi:10.31235/osf.io/4bafr_v2>.")
+    (license license:gpl3)))
 
 (define-public r-bmixture
   (package
@@ -16920,40 +16964,6 @@ boundaries and conditional power for single-arm group sequential test with
 binary endpoint, via either asymptotic or exact test.  The package also provides
 functions to obtain boundary crossing probabilities given the design.")
     (license license:gpl3)))
-
-(define-public r-bingroup2
-  (package
-    (name "r-bingroup2")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "binGroup2" version))
-       (sha256
-        (base32 "0wpw8kxnhs499rpqsxlz1w3j2kb3jibgvfk6g0l2shhacl16a7w6"))))
-    (properties `((upstream-name . "binGroup2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rbeta2009
-                             r-partitions
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bdhitt/binGroup2")
-    (synopsis "Identification and Estimation using Group Testing")
-    (description
-     "This package provides methods for the group testing identification problem: 1)
-Operating characteristics (e.g., expected number of tests) for commonly used
-hierarchical and array-based algorithms, and 2) Optimal testing configurations
-for these same algorithms.  Methods for the group testing estimation problem: 1)
-Estimation and inference procedures for an overall prevalence, and 2) Regression
-modeling for commonly used hierarchical and array-based algorithms.")
-    (license license:gpl3+)))
 
 (define-public r-bingroup
   (package
@@ -27928,13 +27938,13 @@ of specific algorithms.")
 (define-public r-bayesics
   (package
     (name "r-bayesics")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesics" version))
        (sha256
-        (base32 "1bjmd2rhw9vj65hbqa760wrspqq6iivbl0kikl8dmwkg8f2l31qv"))))
+        (base32 "123bx3gs0b937sx6gybqifbkl6qxwjc9hkkcbs41jg8pns7wvwy4"))))
     (properties `((upstream-name . "bayesics")))
     (build-system r-build-system)
     (arguments
@@ -30756,6 +30766,44 @@ described in <doi:10.18637/jss.v094.i08>.  Built to handle continuous and
 categorical inputs as well as functional or scalar output.  An extension of the
 methodology in Denison, Mallick and Smith (1998) <doi:10.1023/A:1008824606259>.")
     (license license:gpl3)))
+
+(define-public r-basksim
+  (package
+    (name "r-basksim")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "basksim" version))
+       (sha256
+        (base32 "0dsckmwnbrl2f5bk2dk132f19qvnpfaiyxwri46hp46q52gcjli8"))))
+    (properties `((upstream-name . "basksim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr
+                             r-progressr
+                             r-hdinterval
+                             r-foreach
+                             r-extradistr
+                             r-dofuture
+                             r-bhmbasket
+                             r-arrangements))
+    (home-page "https://github.com/lbau7/basksim")
+    (synopsis
+     "Simulation-Based Calculation of Basket Trial Operating Characteristics")
+    (description
+     "This package provides a unified syntax for the simulation-based comparison of
+different single-stage basket trial designs with a binary endpoint and equal
+sample sizes in all baskets.  Methods include the designs by Baumann et al.
+(2025) <doi:10.1080/19466315.2024.2402275>, Schmitt and Baumann (2025)
+<doi:10.1080/19466315.2025.2486231>, Fujikawa et al. (2020)
+<doi:10.1002/bimj.201800404>, Berry et al. (2020)
+<doi:10.1177/1740774513497539>, and Neuenschwander et al. (2016)
+<doi:10.1002/pst.1730>.  For the latter two designs, the functions are mostly
+wrappers for functions provided by the package bhmbasket'.")
+    (license license:gpl3+)))
 
 (define-public r-baskexact
   (package

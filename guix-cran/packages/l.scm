@@ -2336,6 +2336,36 @@ are output: one is the standard variational Bayesian estimation, and the other
 is the variational Bayesian estimation corrected with low-rank adjustment.")
     (license license:expat)))
 
+(define-public r-lrmiss
+  (package
+    (name "r-lrmiss")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LRMiss" version))
+       (sha256
+        (base32 "1zl0dzsvl6pk7r6ljh26glpi5v22y6m50ndbyjsh0iknhqypr7f2"))))
+    (properties `((upstream-name . "LRMiss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rglpk r-rdpack r-mass r-fastdummies))
+    (home-page "https://github.com/benrisebrow/LRMiss")
+    (synopsis "Linear Regression with Missing Data")
+    (description
+     "This package provides methods for linear regression in the presence of missing
+data, including missingness in covariates and responses.  The package implements
+two estimators: @code{oss_estimator()}, a low-dimensional semi-supervised
+method, and @code{dantzig_missing()}, a high-dimensional approach.  The tuning
+parameter can be selected automatically via @code{cv_dantzig_missing()}.  See
+Risebrow and Berrett (2026) <doi:10.48550/@code{arXiv.2602.13729>}.  Optional
+support for the gurobi optimizer via the gurobi R package (available from
+Gurobi, see
+<https://docs.gurobi.com/projects/optimizer/en/current/reference/r.html>).")
+    (license license:expat)))
+
 (define-public r-lrmf3
   (package
     (name "r-lrmf3")
@@ -11732,6 +11762,34 @@ follow Stevens (2009) <doi:10.1007/978-0-387-89882-7> and Rossini et al. (2024)
 <doi:10.1371/journal.pone.0299598>.")
     (license license:expat)))
 
+(define-public r-lifetablebuilder
+  (package
+    (name "r-lifetablebuilder")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LifeTableBuilder" version))
+       (sha256
+        (base32 "1brckpm8arv6lc52pkpknbnh62s0rm1al4lxd3w5f9zx1jzlq313"))))
+    (properties `((upstream-name . "LifeTableBuilder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-readxl r-gridextra r-ggplot2 r-dt))
+    (home-page "https://github.com/almarazkrae-4081/lifetablebuilder")
+    (synopsis "Interactive 'shiny' Application for Constructing Life Tables")
+    (description
+     "This package provides an interactive shiny application to construct
+stage-structured life tables from tabular input data.  The application includes
+input validation, demographic calculations, visualization tools, and export of
+tables and figures to support reproducible workflows in ecological and
+entomological studies.  Methods for life table construction follow classical
+demographic approaches described in Martinez (2015)
+<doi:10.13140/RG.2.2.21333.65760>.")
+    (license license:expat)))
+
 (define-public r-lifertable
   (package
     (name "r-lifertable")
@@ -19548,13 +19606,13 @@ also provided.  For details and tutorial, see Gramacy (2016
 (define-public r-lagosne
   (package
     (name "r-lagosne")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LAGOSNE" version))
        (sha256
-        (base32 "1qv0q46574hic8qzjm63sp1jz7ql6y98zb9djizl6pj7nj05z46x"))))
+        (base32 "1fd92s74vyk0sjr20czasc4l4qnblp0578lm9q599799936y8bhy"))))
     (properties `((upstream-name . "LAGOSNE")))
     (build-system r-build-system)
     (arguments
@@ -19576,7 +19634,6 @@ also provided.  For details and tutorial, see Gramacy (2016
                              r-progress
                              r-memoise
                              r-magrittr
-                             r-lazyeval
                              r-dplyr
                              r-curl))
     (native-inputs (list r-r-rsp r-knitr))
@@ -19908,6 +19965,40 @@ more information is available on their website
      "Perform pairwise likelihood inference in latent autoregressive count models.
 See Pedeli and Varin (2020) for details.")
     (license license:gpl2+)))
+
+(define-public r-labtnscpss
+  (package
+    (name "r-labtnscpss")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LABTNSCPSS" version))
+       (sha256
+        (base32 "0sw1gq6rzmbn7lzssx1c6i8izfg8srwmrsphdbg445s49bxb7b12"))))
+    (properties `((upstream-name . "LABTNSCPSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi
+                             r-purrr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-checkmate))
+    (home-page "https://github.com/bayaniazadeh/LabTNSCPSSPackage")
+    (synopsis "Calculation of Comorbidity and Frailty Scores")
+    (description
+     "Computes comorbidity indices and combined frailty scores for multiple ICD coding
+systems, including ICD-10-CA, ICD-10-CM, and ICD-11.  The package provides tools
+to preprocess episode data, map diagnosis codes to chronic categories, propagate
+conditions across episodes, and generate comorbidity and frailty measures.  The
+methods implemented are original to this package and were developed by the
+authors for research applications; a manuscript describing the methodology is
+currently in preparation.")
+    (license license:gpl3)))
 
 (define-public r-labstats
   (package

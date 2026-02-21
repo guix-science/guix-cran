@@ -5612,13 +5612,13 @@ by the cli package.")
 (define-public r-asserthe
   (package
     (name "r-asserthe")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assertHE" version))
        (sha256
-        (base32 "0fn64i3m982y0x0d0v7cdpia1bpm8ai5q1grzkz739lhpf06hban"))))
+        (base32 "0nh76cj9hdikvqxk4wcdsfi1rdijji7cjig6bh33m6a6ymndk1dv"))))
     (properties `((upstream-name . "assertHE")))
     (build-system r-build-system)
     (arguments
@@ -23937,6 +23937,31 @@ efficient.  This algorithm is described in Ambroise et al (2019)
 <doi:10.1186/s13015-019-0157-4>.")
     (license license:gpl3)))
 
+(define-public r-adj
+  (package
+    (name "r-adj")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adj" version))
+       (sha256
+        (base32 "0j0mmib1g9xjjj8xr85ap83mvljsli7mbibwp3anvhsj2cavqav2"))))
+    (properties `((upstream-name . "adj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang r-cli))
+    (home-page "https://alarm-redist.org/adj/")
+    (synopsis "Lightweight Adjacency Lists")
+    (description
+     "This package provides an S3 class to represent graph adjacency lists using
+vctrs'.  Allows for creation, subsetting, combining, and pretty printing of
+these lists.  Adjacency lists can be easily converted to zero-indexed lists,
+which allows for easy passing of objects to low-level languages for processing.")
+    (license license:expat)))
+
 (define-public r-adiv
   (package
     (name "r-adiv")
@@ -26955,13 +26980,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
 (define-public r-accsamplingdesign
   (package
     (name "r-accsamplingdesign")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccSamplingDesign" version))
        (sha256
-        (base32 "1rffc99yv6qzxxmjirc4lmpidz3hc612v8n1n39x3z28y7h6ib8a"))))
+        (base32 "0zvn8laq4zki91xcacmv51q3ag53f8406kk3w3kx3qjj9f4y3g8f"))))
     (properties `((upstream-name . "AccSamplingDesign")))
     (build-system r-build-system)
     (arguments

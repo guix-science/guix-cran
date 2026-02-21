@@ -5924,6 +5924,35 @@ logging mechanism to standard output (STDOUT) or standard error (STDERR)
 depending on the log level.")
     (license license:expat)))
 
+(define-public r-trustworthymlr
+  (package
+    (name "r-trustworthymlr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TrustworthyMLR" version))
+       (sha256
+        (base32 "12659gxvqzbljx8b0y8k1mk84klhwg7ajvs8w9yrmq03c9drmyvi"))))
+    (properties `((upstream-name . "TrustworthyMLR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TrustworthyMLR")
+    (synopsis
+     "Stability and Robustness Evaluation for Machine Learning Models")
+    (description
+     "This package provides tools for evaluating the trustworthiness of machine
+learning models in production and research settings.  Computes a Stability Index
+that quantifies the consistency of model predictions across multiple runs or
+resamples, and a Robustness Score that measures model resilience under small
+input perturbations.  Designed for data scientists, ML engineers, and
+researchers who need to monitor and ensure model reliability, reproducibility,
+and deployment readiness.")
+    (license license:expat)))
+
 (define-public r-trustoptim
   (package
     (name "r-trustoptim")
@@ -16467,6 +16496,38 @@ use is the planning, analysis and interpretation of extrapolation studies in
 pediatric drug development, but applicability is generally wider.")
     (license license:asl2.0)))
 
+(define-public r-tipitaka-critical
+  (package
+    (name "r-tipitaka-critical")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tipitaka.critical" version))
+       (sha256
+        (base32 "17ljx3d4wczs80ivr43f4pvz5jca5p256c3g0860jgv74jb2d8lw"))))
+    (properties `((upstream-name . "tipitaka.critical")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dangerzig/tipitaka.critical")
+    (synopsis "Lemmatized Critical Edition of the Pali Canon")
+    (description
+     "This package provides a lemmatized critical edition of the complete Pali Canon
+(Tipitaka), the canonical scripture of Theravadin Buddhism.  Based on a
+five-witness collation of the Pali Text Society (PTS) edition (via GRETIL'),
+@code{SuttaCentral}', the Vipassana Research Institute (VRI) Chattha Sangayana
+edition, the Buddha Jayanti Tipitaka (BJT), and the Thai Royal Edition.  All
+text is lemmatized using the Digital Pali Dictionary', grouping inflected forms
+by dictionary headword.  Covers all three pitakas (Sutta, Vinaya, Abhidhamma)
+with 5,777 individual text units.  The companion package tipitaka provides the
+original VRI edition data and Pali text tools.  For background on the collation
+method, see Zigmond (2026) <https://github.com/dangerzig/tipitaka.critical>.")
+    (license license:cc0)))
+
 (define-public r-tipitaka
   (package
     (name "r-tipitaka")
@@ -16913,6 +16974,32 @@ inspired by the Haskell lens package by Kmett (2012)
 implementations of lenses.  For additional background and history on the theory
 of lenses, see the lens package wiki:
 <https://github.com/ekmett/lens/wiki/History-of-Lenses>.")
+    (license license:expat)))
+
+(define-public r-tinyimg
+  (package
+    (name "r-tinyimg")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyimg" version))
+       (sha256
+        (base32 "1arcq5gzxn136y3zyqw4avm7lbw8w8i3xfvvwxixsvj4vmhpfv26"))))
+    (properties `((upstream-name . "tinyimg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/yihui/tinyimg")
+    (synopsis "Optimize and Compress Images")
+    (description
+     "Optimize and compress images using Rust libraries to reduce file sizes while
+maintaining image quality.  Currently supports lossless PNG optimization via the
+oxipng crate.  The package provides functions to optimize individual image files
+or entire directories, with configurable compression levels to balance between
+file size reduction and processing speed.")
     (license license:expat)))
 
 (define-public r-tinycodet
@@ -17409,6 +17496,35 @@ time-varying concurrent model.  The plots will show the amount of area that
 falls outside the confidence band(s) which is used for the test statistic within
 the hypothesis test.")
     (license license:gpl2+)))
+
+(define-public r-timetraits
+  (package
+    (name "r-timetraits")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TimeTraits" version))
+       (sha256
+        (base32 "1p0mlbr0dbfq0m8y3y86bxkrzp6p276b3b7vrr4138q7mryxcx7l"))))
+    (properties `((upstream-name . "TimeTraits")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-lomb r-fdaoutlier r-fda))
+    (home-page "https://github.com/scllock/TimeTraits")
+    (synopsis
+     "Functional Data Analysis Pipeline, Extracting Functional Traits from Biological Time-Series Data")
+    (description
+     "This package provides a pipeline of tools for analysing circadian time-series
+data using functional data analysis (FDA).  The package supports smoothing of
+rhythmic time series, functional principle component analysis (FPCA), and
+extraction of group-level traits from functional representations.  Analyses can
+incorporate multiple curve derivatives and optional temporal segmentation,
+enabling comparative analysis of circadian dynamics across experimental groups
+and time windows.")
+    (license license:expat)))
 
 (define-public r-timetools
   (package
@@ -28699,13 +28815,13 @@ displays filtered and unfiltered observation counts.")
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.reporter" version))
        (sha256
-        (base32 "0lpvnsv0l55agqymbmb6g5hfhpjibnfkkrip0car44k8hazraclm"))))
+        (base32 "1951rg5w985n9khrrjgb1yy6xhmvpbaqassarvwim89sm462zl5d"))))
     (properties `((upstream-name . "teal.reporter")))
     (build-system r-build-system)
     (arguments
@@ -30240,33 +30356,6 @@ detailed in: Hejblum, Skinner & Thiebaut (2015) <doi:
      "Differential analysis of tumor tissue immune cell type abundance based on
 RNA-seq gene-level expression from The Cancer Genome Atlas (TCGA;
 <https://pancanatlas.xenahubs.net>) database.")
-    (license license:gpl3)))
-
-(define-public r-tcgaretriever
-  (package
-    (name "r-tcgaretriever")
-    (version "1.10.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TCGAretriever" version))
-       (sha256
-        (base32 "08dwmkrz58h5slnjzbpbmfwr0957xw6akwcnh1ci8iccsv24rkas"))))
-    (properties `((upstream-name . "TCGAretriever")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.data-pulse.com/dev_site/TCGAretriever/")
-    (synopsis
-     "Retrieve Genomic and Clinical Data from CBioPortal Including TCGA Data")
-    (description
-     "The Cancer Genome Atlas (TCGA) is a program aimed at improving our understanding
-of Cancer Biology.  Several TCGA Datasets are available online.  TCGAretriever
-helps accessing and downloading TCGA data hosted on @code{cBioPortal} via its
-Web Interface (see <https://www.cbioportal.org/> for more information).")
     (license license:gpl3)))
 
 (define-public r-tcftt
@@ -33281,13 +33370,13 @@ eliminate the need for Node.js and NPM on package installation.")
 (define-public r-tableparser
   (package
     (name "r-tableparser")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tableParser" version))
        (sha256
-        (base32 "1warh12lsr2a22qaal3f6l1rrh5ym0wvh47i0vb02vzy7id8ni5j"))))
+        (base32 "11g97qim3y1j2aw94w42gb106w4cda6y1hhg9fkd23sg859h42av"))))
     (properties `((upstream-name . "tableParser")))
     (build-system r-build-system)
     (arguments

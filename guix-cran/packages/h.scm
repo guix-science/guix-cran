@@ -1239,13 +1239,13 @@ time.")
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroloom" version))
        (sha256
-        (base32 "0h15b2c8lwz21gbr0z4hmcnbkgks2vbpd62y2bn50pmiz1a1rski"))))
+        (base32 "010mng5nrgqp4vnhy6xjkjmx2r9fsykcy0walnpmsbzwz7mddvab"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
     (arguments
@@ -3160,13 +3160,13 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 (define-public r-htgm3d
   (package
     (name "r-htgm3d")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HTGM3D" version))
        (sha256
-        (base32 "1plnapfnys0dwv1hrvvzwk1n6s4bqllmbzl0ljip6p51fah84m11"))))
+        (base32 "0571lkmm2gf3ps17dsbcyw4yn1zbic519y5qx8ihqb1lhfyhgg91"))))
     (properties `((upstream-name . "HTGM3D")))
     (build-system r-build-system)
     (arguments
@@ -4479,13 +4479,13 @@ prof/cls/ora lessons do not overlap in the same hour. <https://vlad.bazon.net/>.
 (define-public r-houba
   (package
     (name "r-houba")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "houba" version))
        (sha256
-        (base32 "16rj78dldglal3l52ff3v99jrigqj5wmx2j8s0d3h61jx5idyj7v"))))
+        (base32 "1vabdllzmv4zdb78qdq7pqiyf4cx0zhpnvlr533i4bccbk8h53wn"))))
     (properties `((upstream-name . "houba")))
     (build-system r-build-system)
     (arguments

@@ -9203,13 +9203,13 @@ analyze likelihood ratio distributions.")
 (define-public r-forecomp
   (package
     (name "r-forecomp")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForeComp" version))
        (sha256
-        (base32 "1d7hs563q0h6zx3ky3lj0acb25b2wi4g4c5vacrppf0lv8m16rqw"))))
+        (base32 "0kz14fhq3ypyhr18z2ssws128jdb2yxnvxsg6ksydijjzqn7mvrq"))))
     (properties `((upstream-name . "ForeComp")))
     (build-system r-build-system)
     (arguments
@@ -9220,19 +9220,22 @@ analyze likelihood ratio distributions.")
     (synopsis
      "Size-Power Tradeoff Visualization for Equal Predictive Ability of Two Forecasts")
     (description
-     "Offers a set of tools for visualizing and analyzing size and power properties of
-the test for equal predictive accuracy, the Diebold-Mariano test that is based
-on heteroskedasticity and autocorrelation-robust (HAR) inference.  A typical HAR
-inference is involved with non-parametric estimation of the long-run variance,
-and one of its tuning parameters, the truncation parameter, trades off a size
-and power.  Lazarus, Lewis, and Stock (2021)<doi:10.3982/ECTA15404>
-theoretically characterize the size-power frontier for the Gaussian multivariate
-location model. @code{ForeComp} computes and visualizes the finite-sample
-size-power frontier of the Diebold-Mariano test based on fixed-b asymptotics
-together with the Bartlett kernel.  To compute the finite-sample size and power,
-it works with the best approximating ARMA process to the given dataset.  It
-informs the user how their choice of the truncation parameter performs and how
-robust the testing outcomes are.")
+     "Offers tools for visualizing and analyzing size and power properties of tests
+for equal predictive accuracy, including Diebold-Mariano and related procedures.
+ Provides multiple Diebold-Mariano test implementations based on fixed-smoothing
+approaches, including fixed-b methods such as Kiefer and Vogelsang (2005)
+<doi:10.1017/S0266466605050565>, and applications to tests for equal predictive
+accuracy as in Coroneo and Iacone (2020) <doi:10.1002/jae.2756>, alongside
+conventional large-sample approximations.  HAR inference involves nonparametric
+estimation of the long-run variance, and a key tuning parameter (the truncation
+parameter) trades off size and power.  Lazarus, Lewis, and Stock (2021)
+<doi:10.3982/ECTA15404> theoretically characterize the size-power frontier for
+the Gaussian multivariate location model. @code{ForeComp} computes and
+visualizes the finite-sample size-power frontier of the Diebold-Mariano test
+based on fixed-b asymptotics together with the Bartlett kernel.  To compute
+finite-sample size and power, it fits a best approximating ARMA process to the
+input data and reports how the truncation parameter performs and how robust
+testing outcomes are to its choice.")
     (license license:gpl3+)))
 
 (define-public r-foreco
@@ -10587,13 +10590,13 @@ other outlier detection tasks involving high-dimensional data.")
 (define-public r-fmriqa
   (package
     (name "r-fmriqa")
-    (version "0.3.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmriqa" version))
        (sha256
-        (base32 "1z09nf1c305a78c129jvs21b9z91wyhazz41wrn4bimmhfhx7szv"))))
+        (base32 "1f6ny5a9wnb3d938c7bi8rdj9f2viyz3x3dxxp0mvnb0c367da70"))))
     (properties `((upstream-name . "fmriqa")))
     (build-system r-build-system)
     (arguments
@@ -20932,13 +20935,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "1hby4g6vv6xipsz59qwgdah5srs5j9vz7djlwsg43aq96rv0pk8y"))))
+        (base32 "1w1afypc9vfdvk73xakpk10lqbbbz3q12fjn484nny28v2czfjxc"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments
@@ -23139,13 +23142,13 @@ for text classification and to learn word vectors.  An example how to use
 (define-public r-fasttext
   (package
     (name "r-fasttext")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastText" version))
        (sha256
-        (base32 "0y4mgwflw77qdjnkzp2zd5hfgsd4xl6wsvb10zmirhpnbvb1zfla"))))
+        (base32 "0ya1lyk6prppsgbrfb5pad1jxgr2m4b7l88na0z53rd8mc6yg6q4"))))
     (properties `((upstream-name . "fastText")))
     (build-system r-build-system)
     (arguments

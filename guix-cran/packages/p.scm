@@ -4321,6 +4321,50 @@ al. (2019) <doi:10.1080/10543406.2019.1657133>, Wang et al. (2020)
 <doi:10.1080/10543406.2020.1730877>.")
     (license license:gpl3+)))
 
+(define-public r-psricalcsm
+  (package
+    (name "r-psricalcsm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSRICalcSM" version))
+       (sha256
+        (base32 "1j4bnm6yg0l2zvfc8ij2j61yh6wsbq5zwxhcdz293hc7ci21ylhv"))))
+    (properties `((upstream-name . "PSRICalcSM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/RFeissIV/PSRICalcSM")
+    (synopsis "Plant Stress Response Index Calculator - Softmax Method")
+    (description
+     "This package implements the softmax aggregation method for calculating Plant
+Stress Response Index (PSRI) from time-series germination data under
+environmental stressors including prions, xenobiotics, osmotic stress, heavy
+metals, and chemical contaminants.  Provides zero-robust PSRI computation
+through adaptive softmax weighting of germination components (Maximum
+Stress-adjusted Germination, Maximum Rate of Germination, complementary Mean
+Time to Germination, and Radicle Vigor Score), eliminating the zero-collapse
+failure mode of the geometric mean approach implemented in PSRICalc'.  Includes
+perplexity-based temperature parameter calibration and modular component
+functions for transparent germination analysis.  Built on the methodological
+foundation of the Osmotic Stress Response Index (OSRI) framework developed by
+Walne et al. (2020) <doi:10.1002/agg2.20087>.  Note: This package implements
+methodology currently under peer review.  Please contact the author before
+publication using this approach.  Development followed an iterative
+human-machine collaboration where all algorithmic design, statistical
+methodologies, and biological validation logic were conceptualized, tested, and
+iteratively refined by Richard A. Feiss through repeated cycles of running
+experimental data, evaluating analytical outputs, and selecting among candidate
+algorithms and approaches.  AI systems (Anthropic Claude and @code{OpenAI} GPT)
+served as coding assistants and analytical sounding boards under continuous
+human direction.  The selection of statistical methods, evaluation of biological
+plausibility, and all final methodology decisions were made by the human author.
+ AI systems did not independently originate algorithms, statistical approaches,
+or scientific methodologies.")
+    (license license:expat)))
+
 (define-public r-psricalc
   (package
     (name "r-psricalc")
@@ -32480,13 +32524,13 @@ Statistical Programming.")
 (define-public r-pharmaverseadam
   (package
     (name "r-pharmaverseadam")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadam" version))
        (sha256
-        (base32 "0r0sfvsfnqj943v2xipl3xfpbv443zsbxvbx6mc3vdb376j0kia7"))))
+        (base32 "0kladk4fxhhqh1isg8mwdp6nx7nsqvn2p3gknl8jnqjsia3ga2l3"))))
     (properties `((upstream-name . "pharmaverseadam")))
     (build-system r-build-system)
     (arguments
@@ -32797,6 +32841,80 @@ and individual data.  More details can be found: Yao and Chakraborti (2020)
 10.1080/08982112.2021.1878220>, and Yao et al. (2023) <doi:
 10.1080/00224065.2022.2139783>.")
     (license license:gpl3)))
+
+(define-public r-pguimp
+  (package
+    (name "r-pguimp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pguIMP" version))
+       (sha256
+        (base32 "0mw7rjw6xyb89y5hz7pc70crqz9mkwy2i1kd0843pkxgrjm519yx"))))
+    (properties `((upstream-name . "pguIMP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-writexl
+                             r-vim
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shiny
+                             r-rweka
+                             r-robust
+                             r-rmarkdown
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-rcompanion
+                             r-r6
+                             r-purrr
+                             r-psych
+                             r-plotly
+                             r-outliers
+                             r-nortest
+                             r-mice
+                             r-mass
+                             r-magrittr
+                             r-hmisc
+                             r-gridextra
+                             r-ggthemes
+                             r-ggplot2
+                             r-finalfit
+                             r-e1071
+                             r-dt
+                             r-dplyr
+                             r-dbscan
+                             r-datavisualizations
+                             r-bbmle))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/JornLotsch/pguIMP")
+    (synopsis "Visually Guided Preprocessing of Bioanalytical Laboratory Data")
+    (description
+     "Reproducible cleaning of biomedical laboratory data using visualization, error
+correction, and transformation methods implemented as interactive R notebooks.
+A detailed description of the methods ca ben found in Malkusch, S., Hahnefeld,
+L., Gurke, R. and J. Lotsch. (2021) <doi:10.1002/psp4.12704>.")
+    (license license:gpl3+)))
 
 (define-public r-pgtools
   (package

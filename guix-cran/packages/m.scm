@@ -5420,29 +5420,6 @@ ISBN:978-3-319-24520-1).  The package was developed essentially as an extension
 to igraph'.")
     (license license:gpl3)))
 
-(define-public r-multinet
-  (package
-    (name "r-multinet")
-    (version "4.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multinet" version))
-       (sha256
-        (base32 "1narw3j2m0x6znym8shg15if5mb6zrznvang2xz48fcvvb9lbyhn"))))
-    (properties `((upstream-name . "multinet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-rcolorbrewer r-igraph))
-    (home-page "https://cran.r-project.org/package=multinet")
-    (synopsis "Analysis and Mining of Multilayer Social Networks")
-    (description
-     "This package provides functions for the creation/generation and analysis of
-multilayer social networks <doi:10.18637/jss.v098.i08>.")
-    (license license:asl2.0)))
-
 (define-public r-multiness
   (package
     (name "r-multiness")

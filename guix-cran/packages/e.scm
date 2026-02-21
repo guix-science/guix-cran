@@ -2077,6 +2077,31 @@ as a wide variety of R stats objects, via wrappers to @code{xtable()},
 well as matrices and data frames and many more...")
     (license license:gpl2)))
 
+(define-public r-explorethedata
+  (package
+    (name "r-explorethedata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExploreTheData" version))
+       (sha256
+        (base32 "1g4dwnik6nvp5vh6awwr8204iyjld3b10kyqn4h0p9ds6ibg42ll"))))
+    (properties `((upstream-name . "ExploreTheData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-propcis r-data-table))
+    (home-page "https://cran.r-project.org/package=ExploreTheData")
+    (synopsis "Set of Tools for Exploratory Data Analysis")
+    (description
+     "This package provides functions to profile a dataset, identify anomalies
+(special values, outliers, and inliers, defined as data values that are repeated
+unusually often), and compare data subsets with respect to either numerical or
+categorical variable distributions.")
+    (license license:expat)))
+
 (define-public r-explorer
   (package
     (name "r-explorer")
@@ -6237,13 +6262,13 @@ phenotypic trait data according to Odong et al. (2015)
 (define-public r-evaltest
   (package
     (name "r-evaltest")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvalTest" version))
        (sha256
-        (base32 "1hah7pk6kznnx79i3b0lq1yq0q8imxx1bjx1867sn9mpvpfawph6"))))
+        (base32 "1pw6cwrw89q9bcvj9cnx62y9g4yiy9y46i7qzcxn134bjlsfkjdm"))))
     (properties `((upstream-name . "EvalTest")))
     (build-system r-build-system)
     (arguments
@@ -6260,17 +6285,19 @@ phenotypic trait data according to Odong et al. (2015)
                              r-binom))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EvalTest")
-    (synopsis "'shiny' App to Evaluate Diagnostic Tests Performance")
+    (synopsis "Tools for Evaluating Diagnostic Test Performance")
     (description
-     "Evaluate diagnostic test performance using data from laboratory or diagnostic
-research.  It supports both binary and continuous test variables.  It allows
-users to compute key performance indicators and visualize Receiver Operating
+     "Evaluates diagnostic test performance using data from laboratory or diagnostic
+research.  It includes functions to compute common performance indicators along
+with their confidence intervals, and offers an interactive shiny application for
+comprehensive analysis including ROC curve visualization and related metrics.
+It supports both binary and continuous test variables.  It allows users to
+compute key performance indicators and visualize Receiver Operating
 Characteristic (ROC) curves, determine optimal cut-off thresholds, display
 confusion matrix, and export publication-ready plot.  It aims to facilitate the
 application of statistical methods in diagnostic test evaluation by healthcare
-professionals.  The methodology used to compute the performance indicators
-follows the overview described by Habibzadeh (2025)
-<doi:10.11613/BM.2025.010101>.  Thanks to shiny package.")
+professionals.  Methodological details and references for the computation of
+performance indicators are provided in the package vignette.")
     (license license:expat)))
 
 (define-public r-evalr
@@ -12705,6 +12732,41 @@ log-linear regressions, sibling design linear regression functionalities a
 method for calculating the confidence intervals for functions of parameters from
 a GLM, Bayes equivalent for hypothesis testing with asymptotic Bayes factor, and
 several help functions for generalized random forest analysis using grf'.")
+    (license license:expat)))
+
+(define-public r-epiflows
+  (package
+    (name "r-epiflows")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiflows" version))
+       (sha256
+        (base32 "0kvsh07dl0ynhmri91lrhdqraq0hs7igsphq9jskpgbd1iz7dhhf"))))
+    (properties `((upstream-name . "epiflows")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-tibble
+                             r-sp
+                             r-leaflet
+                             r-htmltools
+                             r-ggplot2
+                             r-ggmap
+                             r-geosphere
+                             r-epicontacts))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.repidemicsconsortium.org/epiflows/")
+    (synopsis "Predicting Disease Spread from Flow Data")
+    (description
+     "This package provides functions and classes designed to handle and visualise
+epidemiological flows between locations.  Also contains a statistical method for
+predicting disease spread from flow data initially described in Dorigatti et al.
+(2017) <doi:10.2807/1560-7917.ES.2017.22.28.30572>.  This package is part of the
+RECON (<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
     (license license:expat)))
 
 (define-public r-epifitter
@@ -19496,13 +19558,13 @@ the prototyping of packages.")
 (define-public r-ehdprep
   (package
     (name "r-ehdprep")
-    (version "1.3.4")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eHDPrep" version))
        (sha256
-        (base32 "01ia7shh9svaabr6bgg8cjc6cv39rzsj9k3w9dhmhqiqq4brp8xa"))))
+        (base32 "1jq7ag7168gvz2sgbxfc41wm1hq1nvnva209bxqllazy69flgvcm"))))
     (properties `((upstream-name . "eHDPrep")))
     (build-system r-build-system)
     (arguments

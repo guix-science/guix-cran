@@ -4910,42 +4910,6 @@ the package can be found at
 censored times-to-event and to evaluate its prognostic capacities.")
     (license license:gpl2+)))
 
-(define-public r-survivalrec
-  (package
-    (name "r-survivalrec")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "survivalREC" version))
-       (sha256
-        (base32 "14b4zzdjhk258lsy6dhlgdpkpyry6bd01dncrm9g0qj36hlwll3d"))))
-    (properties `((upstream-name . "survivalREC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-kernsmooth))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=survivalREC")
-    (synopsis
-     "Nonparametric Estimation of the Distribution of Gap Times for Recurrent Events")
-    (description
-     "This package provides estimates for the bivariate and trivariate distribution
-functions and bivariate and trivariate survival functions for censored gap
-times.  Two approaches, using existing methodologies, are considered: (i) the
-Lin's estimator, which is based on the extension the Kaplan-Meier estimator of
-the distribution function for the first event time and the Inverse Probability
-of Censoring Weights for the second time (Lin DY, Sun W, Ying Z (1999)
-<doi:10.1093/biomet/86.1.59> and (ii) another estimator based on Kaplan-Meier
-weights (Una-Alvarez J, Meira-Machado L (2008)
-<https://w3.math.uminho.pt/~lmachado/Biometria_conference.pdf>).  The proposed
-methods are the landmark estimators based on subsampling approach, and the
-estimator based on weighted cumulative hazard estimator.  The package also
-provides nonparametric estimator conditional to a given continuous covariate.
-All these methods have been submitted to be published.")
-    (license license:gpl3)))
-
 (define-public r-survivalplann
   (package
     (name "r-survivalplann")
@@ -30414,6 +30378,32 @@ Kashlak and Kong (2019) <@code{arXiv:1705.02679>} and in Kashlak (2019)
 <@code{arXiv:1903.10988>}.")
     (license license:gpl3)))
 
+(define-public r-sparselu
+  (package
+    (name "r-sparselu")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparselu" version))
+       (sha256
+        (base32 "1cxfps2fy2ds8zk9n3syfas3aa6gmfq8awpppp7f5j9lsj1nhmsd"))))
+    (properties `((upstream-name . "sparselu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list suitesparse))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=sparselu")
+    (synopsis "Sparse LU Decomposition via SuiteSparse")
+    (description
+     "This package provides an interface to the @code{SuiteSparse} UMFPACK LU
+factorisation routines for sparse matrices stored in compressed column format.
+Implements the algorithm described in Davis (2004) <doi:10.1145/992200.992206>.")
+    (license license:gpl3)))
+
 (define-public r-sparseltseigen
   (package
     (name "r-sparseltseigen")
@@ -32098,6 +32088,34 @@ partial support for ACES Color workflows.")
 algorithm.  See D Angelo et al. (2018) <@code{arXiv:1803.07166>} and D Angelo et
 al. (2018) <@code{arXiv:1807.03874>}.")
     (license license:gpl2+)))
+
+(define-public r-spacemodr
+  (package
+    (name "r-spacemodr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spacemodR" version))
+       (sha256
+        (base32 "0s1wphb89i2i80xc3a7q3kshskv2fcdima6qkkvn13pxrakx19s3"))))
+    (properties `((upstream-name . "spacemodR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-httr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spacemodR")
+    (synopsis
+     "Workflow for Environmental Risk Assessment: Habitat, Food Web, Dispersal, Exposure and Risk")
+    (description
+     "This package provides a set of tools dedicated to modeling food web transfer
+based on an initial ground raster.  It provides a directed acyclic graph
+structure for a set of rasters representing the flow of elements (e.g., food,
+energy, contaminants).  It also includes tools for working with dispersal
+algorithms, enabling the combination of flux data with population movement.")
+    (license license:expat)))
 
 (define-public r-spacci
   (package
@@ -57663,13 +57681,13 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 (define-public r-serolyzer
   (package
     (name "r-serolyzer")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SerolyzeR" version))
        (sha256
-        (base32 "1cd4dxwqxwh8dmdjzgpjfi35nf72ss9fc0njm7wc3spq25zyi9fx"))))
+        (base32 "187rsgf779ajq2pj1d6pc6bvx558ib3hgcs3rj0ml4jd7z30w0l4"))))
     (properties `((upstream-name . "SerolyzeR")))
     (build-system r-build-system)
     (arguments
@@ -57684,13 +57702,13 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
                              r-r6
                              r-r-utils
                              r-png
+                             r-patchwork
                              r-nplr
                              r-lubridate
                              r-ggrepel
                              r-ggplot2
                              r-fs
                              r-dplyr
-                             r-cowplot
                              r-cellranger))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mini-pw/SerolyzeR")
@@ -73146,13 +73164,13 @@ refer to Yang et al. (2023) <doi:10.1111/biom.13927>.")
 (define-public r-samplr
   (package
     (name "r-samplr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplr" version))
        (sha256
-        (base32 "07s3vs82pw5f1s4rn0992gy8zllij0p2i0n77d1xkxxk9mw77q8s"))))
+        (base32 "10zg9zhxjpx193s9qsvsw7l4h4sf0cbgkd6whhidnqz6jksyq0p7"))))
     (properties `((upstream-name . "samplr")))
     (build-system r-build-system)
     (arguments
@@ -73166,7 +73184,6 @@ refer to Yang et al. (2023) <doi:10.1111/biom.13927>.")
                              r-r6
                              r-pracma
                              r-lme4
-                             r-latex2exp
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://lucas-castillo.github.io/samplr/")

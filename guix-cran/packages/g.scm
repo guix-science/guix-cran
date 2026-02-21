@@ -4773,43 +4773,6 @@ The procedure controls the false discovery rate (FDR) at a user-specified
 threshold.")
     (license license:expat)))
 
-(define-public r-grouptesting
-  (package
-    (name "r-grouptesting")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "groupTesting" version))
-       (sha256
-        (base32 "10scrwi5g2i4g32wfksfhmmbhiddcnj4khh7ls32kx2m4lhmll53"))))
-    (properties `((upstream-name . "groupTesting")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pracma r-bingroup2))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=groupTesting")
-    (synopsis "Simulating and Modeling Group (Pooled) Testing Data")
-    (description
-     "This package provides an expectation-maximization (EM) algorithm using the
-approach introduced in Warasi (2023) <doi:10.1080/03610918.2021.2009867>.  The
-EM algorithm can be used to estimate the prevalence (overall proportion) of a
-disease and to estimate a binary regression model from among the class of
-generalized linear models based on group testing data.  The estimation framework
-we consider offers a flexible and general approach; i.e., its application is not
-limited to any specific group testing protocol.  Consequently, the EM algorithm
-can model data arising from simple pooling as well as advanced pooling such as
-hierarchical testing, array testing, and quality control pooling.  Also,
-provided are functions that can be used to conduct the Wald tests described in
-Buse (1982) <doi:10.1080/00031305.1982.10482817> and to simulate the group
-testing data described in Kim et al. (2007)
-<doi:10.1111/j.1541-0420.2007.00817.x>.  We offer a function to compute relative
-efficiency measures, which can be used to optimize the maximum likelihood
-estimator of disease prevalence.")
-    (license license:gpl3)))
-
 (define-public r-grouptest
   (package
     (name "r-grouptest")
@@ -19938,29 +19901,53 @@ compare the segments and their contributions to the total.")
 (define-public r-ggseg3d
   (package
     (name "r-ggseg3d")
-    (version "1.6.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg3d" version))
        (sha256
-        (base32 "1rpq2wgyyladz5nkngkvbf3cy4pw212dj1vfh7ksh0bxi7v1k6mh"))))
+        (base32 "1nsn5dxym4i0qsgyg4d2i7jpr4r0jdrzp8ri88f0z48d4wihnw3k"))))
     (properties `((upstream-name . "ggseg3d")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-scales r-plotly r-magrittr r-dplyr))
-    (home-page "https://github.com/ggseg/ggseg3d/")
-    (synopsis "Tri-Surface Mesh Plots for Brain Atlases")
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-webshot2
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-lifecycle
+                             r-knitr
+                             r-htmlwidgets
+                             r-ggseg-formats
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/ggsegverse/ggseg3d")
+    (synopsis "Interactive 3D Brain Atlas Visualization")
     (description
-     "Mainly contains a plotting function @code{ggseg3d()}, and data of two standard
-brain atlases (Desikan-Killiany and aseg).  By far, the largest bit of the
-package is the data for each of the atlases.  The functions and data enable
-users to plot tri-surface mesh plots of brain atlases, and customise these by
-projecting colours onto the brain segments based on values in their own data
-sets.  Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
-<doi:10.1177/2515245920928009>.")
+     "Plot brain atlases as interactive 3D meshes using Three.js via htmlwidgets', or
+render publication-quality static images through rgl and rayshader'.  A
+pipe-friendly API lets you map data onto brain regions, control camera angles,
+toggle region edges, overlay glass brains, and snapshot or ray-trace the result.
+ Additional atlases are available through the ggsegverse r-universe.  Mowinckel
+& Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
 (define-public r-ggseg-formats

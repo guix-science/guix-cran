@@ -21110,6 +21110,39 @@ techniques are explained by Chow (2007) <doi:10.1201/9781584889830>.")
 effects <https://github.com/mmrabe/designr>.")
     (license license:gpl3)))
 
+(define-public r-designmatch
+  (package
+    (name "r-designmatch")
+    (version "0.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "designmatch" version))
+       (sha256
+        (base32 "0v6m6m7wg5f071pgklrxqy20wk604nk1fs232masfja3c5l7z30y"))))
+    (properties `((upstream-name . "designmatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam r-mass r-highs))
+    (home-page "https://github.com/jrzubizarreta/designmatch")
+    (synopsis "Matched Samples that are Balanced and Representative by Design")
+    (description
+     "Includes functions for the construction of matched samples that are balanced and
+representative by design.  Among others, these functions can be used for
+matching in observational studies with treated and control units, with cases and
+controls, in related settings with instrumental variables, and in discontinuity
+designs.  Also, they can be used for the design of randomized experiments, for
+example, for matching before randomization.  By default, designmatch uses the
+highs optimization solver, but its performance is greatly enhanced by the Gurobi
+optimization solver and its associated R interface.  For their installation,
+please follow the instructions at <https://www.gurobi.com/getting-started/> and
+<https://docs.gurobi.com/projects/optimizer/en/current/reference/r/setup.html>.
+We have also included directions in the gurobi_installation file in the inst
+folder.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-designlibrary
   (package
     (name "r-designlibrary")
@@ -26309,6 +26342,38 @@ A.; Cooper, W.W.; Rhodes, E. (1981). <doi:10.1287/mnsc.27.6.668>.")
 compared from data.  The method is described in Boettcher and Dethlefsen (2003),
 <doi:10.18637/jss.v008.i20>.")
     (license license:gpl2+)))
+
+(define-public r-deadwood
+  (package
+    (name "r-deadwood")
+    (version "0.9.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deadwood" version))
+       (sha256
+        (base32 "12wsy7mqb4y6w7k76dkp19nz6d608nhvy8p0imrh6idcbia0zhlk"))))
+    (properties `((upstream-name . "deadwood")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp r-quitefastmst))
+    (home-page "https://deadwood.gagolewski.com/")
+    (synopsis
+     "Outlier Detection via Trimming of Mutual Reachability Minimum Spanning Trees")
+    (description
+     "This package implements an anomaly detection algorithm based on mutual
+reachability minimum spanning trees: deadwood trims protruding tree segments and
+marks small debris as outliers; see Gagolewski (2026)
+<https://deadwood.gagolewski.com/>.  More precisely, the use of a mutual
+reachability distance pulls peripheral points farther away from each other.
+Tree edges with weights beyond the detected elbow point are removed.  All the
+resulting connected components whose sizes are smaller than a given threshold
+are deemed anomalous.  The Python version of deadwood is available via
+@code{PyPI}'.")
+    (license license:agpl3)))
 
 (define-public r-deadband
   (package
@@ -33389,13 +33454,13 @@ polytree structure rather than a simple path.")
 (define-public r-dagassist
   (package
     (name "r-dagassist")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAGassist" version))
        (sha256
-        (base32 "1ss8zbzj5knw11n0pf70gnsvfqldmcvvi4g1h6k75h700pj4hhkj"))))
+        (base32 "08c46g6pw5rg3087dz3424pzlj2b3iqiyrix18dgwl6iqxr2skgq"))))
     (properties `((upstream-name . "DAGassist")))
     (build-system r-build-system)
     (arguments
@@ -33416,12 +33481,12 @@ polytree structure rather than a simple path.")
     (description
      "This package provides robustness checks to align estimands with the
 identification that they require.  Given a dagitty object and a model
-specification, DAGassist classifies variables by causal roles, flags problematic
-controls, and generates a report comparing the original model with minimal and
-canonical adjustment sets.  Exports publication-grade reports in @code{LaTeX}',
-Word', Excel', dotwhisker', or plain text/'markdown'.  DAGassist is built on
-dagitty', an R package that uses the DAGitty web tool (<https://dagitty.net/>)
-for creating and analyzing DAGs.  Methods draw on Pearl (2009)
+specification, DAGassist classifies variables by causal roles, recovers a target
+estimand, and generates a report comparing the original model with DAG-derived
+adjustment sets.  Exports publication-grade reports in @code{LaTeX}', Word',
+Excel', dotwhisker', or plain text/'markdown'.  DAGassist is built on dagitty',
+an R package that uses the DAGitty web tool (<https://dagitty.net/>) for
+creating and analyzing DAGs.  Methods draw on Pearl (2009)
 <doi:10.1017/CBO9780511803161> and Textor et al. (2016)
 <doi:10.1093/ije/dyw341>.")
     (license license:gpl2+)))

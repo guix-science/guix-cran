@@ -4019,13 +4019,13 @@ for rarefaction, interpolation, and masking as described in Bishop et al. (2023)
 (define-public r-winfapreader
   (package
     (name "r-winfapreader")
-    (version "0.1-6")
+    (version "0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "winfapReader" version))
        (sha256
-        (base32 "0jni53gswr4amln87c6kksrb54apdacw3mdcg0dgz2107f9l0a4g"))))
+        (base32 "059yp7shccgxpyy55dcx68x0nvpr6w1hd4s5gmm7cc73s3zmf8n8"))))
     (properties `((upstream-name . "winfapReader")))
     (build-system r-build-system)
     (arguments
@@ -4850,6 +4850,33 @@ singular value decomposition, see Edelman A, Wang Y (2020)
      "Computationally easy modeling, interpolation, forecasting of massive
 temporal-spacial data.")
     (license license:gpl2+)))
+
+(define-public r-wid
+  (package
+    (name "r-wid")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wid" version))
+       (sha256
+        (base32 "08a19ggdkq1x66k1f38fbdc4c1liahy29bs5vl1750na69hmwdas"))))
+    (properties `((upstream-name . "wid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plyr r-jsonlite r-httr r-base64enc))
+    (home-page "https://cran.r-project.org/package=wid")
+    (synopsis "Download Data from the World Inequality Database")
+    (description
+     "This package provides tools to download data from the online World Inequality
+Database directly into R. The World Inequality Database is an extensive source
+on the historical evolution of the distribution of income and wealth both within
+and between countries.  It relies on the combined effort of an international
+network of over a hundred researchers covering more than seventy countries from
+all continents.")
+    (license license:expat)))
 
 (define-public r-whsample
   (package
