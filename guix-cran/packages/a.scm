@@ -17506,40 +17506,6 @@ discoveries, thus providing better estimates than using Generalized Linear
 Models which assume perfect immediate detection of newly introduced species.")
     (license license:expat)))
 
-(define-public r-aliases2entrez
-  (package
-    (name "r-aliases2entrez")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aliases2entrez" version))
-       (sha256
-        (base32 "11myzwvmagnj35qrrxr35hklzv76c0c4h2zl64y3lzzn5rfii0n6"))))
-    (properties `((upstream-name . "aliases2entrez")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readr
-                             r-rcurl
-                             r-org-hs-eg-db
-                             r-limma
-                             r-foreach
-                             r-doparallel
-                             r-annotationdbi))
-    (home-page "https://cran.r-project.org/package=aliases2entrez")
-    (synopsis "Converts Human gene symbols to entrez IDs")
-    (description
-     "Queries multiple resources authors HGNC (2019) <https://www.genenames.org>,
-authors limma (2015) <doi:10.1093/nar/gkv007> to find the correspondence between
-evolving nomenclature of human gene symbols, aliases, previous symbols or
-synonyms with stable, curated gene @code{entrezID} from NCBI database.  This
-allows fast, accurate and up-to-date correspondence between human gene
-expression datasets from various date and platform (e.g: gene symbol: BRCA1 -
-ID: 672).")
-    (license license:expat)))
-
 (define-public r-algorithmia
   (package
     (name "r-algorithmia")
@@ -25216,18 +25182,19 @@ University of Trento, Italy.")
 (define-public r-adar
   (package
     (name "r-adar")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaR" version))
        (sha256
-        (base32 "1gap73h3xmgnyi8zbkgskvfy2sch02pirbhdq3h80qp21jhbj2wp"))))
+        (base32 "095i044mmyj85x6zili1q6ib9b8i01cscli786amrynlac55abar"))))
     (properties `((upstream-name . "adaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list))
     (propagated-inputs (list r-triebeard r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://gesistsa.github.io/adaR/")

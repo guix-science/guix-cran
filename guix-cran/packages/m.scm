@@ -40673,13 +40673,13 @@ reliability metrics.")
 (define-public r-measles
   (package
     (name "r-measles")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "measles" version))
        (sha256
-        (base32 "1q1sz39cz36hzb40ia14pc1b344vva29lijk90zz6lk8raniixcd"))))
+        (base32 "11mfizaixjvbw3msy45wr67ckvacywazwhi1fj7c4qxs0nlmszpj"))))
     (properties `((upstream-name . "measles")))
     (build-system r-build-system)
     (arguments
@@ -51424,13 +51424,13 @@ ensembles of datasets on global governance called datacubes.")
 (define-public r-manureshed
   (package
     (name "r-manureshed")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manureshed" version))
        (sha256
-        (base32 "06ckxn5cvws7n6j82df7xwdfhgnlr72zcsz6v0ak5gr73ka8bm0w"))))
+        (base32 "0k5lpbdbz3l3qlwhgr4lb55ccgdhc55zv1sjlifs2v1xbn5i21bq"))))
     (properties `((upstream-name . "manureshed")))
     (build-system r-build-system)
     (arguments

@@ -5723,35 +5723,6 @@ Gradient Descent and the Adaptive Moment Estimation (Adam) are the methods
 implemented.  Other methods will be implemented in the future.")
     (license license:gpl3)))
 
-(define-public r-optimflex
-  (package
-    (name "r-optimflex")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optimflex" version))
-       (sha256
-        (base32 "16316zj1hchb32irj2fs48nbviciyp1a550pyy5awpdib6c2zss8"))))
-    (properties `((upstream-name . "optimflex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=optimflex")
-    (synopsis
-     "Derivative-Based Optimization with User-Defined Convergence Criteria")
-    (description
-     "This package provides a derivative-based optimization framework that allows
-users to combine eight convergence criteria.  Unlike standard optimization
-functions, this package includes a built-in mechanism to verify the positive
-definiteness of the Hessian matrix at the point of convergence.  This additional
-check helps prevent the solver from falsely identifying non-optimal solutions,
-such as saddle points, as valid minima.")
-    (license license:expat)))
-
 (define-public r-optimcheck
   (package
     (name "r-optimcheck")
@@ -7057,13 +7028,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.23.1")
+    (version "1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "0qw4i6rb1ni7ad5vvnx4li4lz4ycsbkp2kpxj5rink4f1jk0xab1"))))
+        (base32 "15c3bbk03zmv51dfw48rx7yyzmwq31ris7wwmysvgqz15wf60alr"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -8179,13 +8150,13 @@ Format, see <https://opendataformat.github.io/>.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencv" version))
        (sha256
-        (base32 "1ydmms5xf92qn4417007p71c8w360x9h1sw2b3hql3l7dq12f3xa"))))
+        (base32 "0ksp6vng2x3hjjni4sn2vrnv6vw4d1xj83g418xmljsd87nq30c6"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (arguments

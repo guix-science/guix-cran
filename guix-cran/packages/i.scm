@@ -9804,6 +9804,41 @@ subsets, ranges, regular expressions and others.  Implemented operators work on
 vectors, matrices, and lists.")
     (license license:gpl3)))
 
+(define-public r-ino
+  (package
+    (name "r-ino")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ino" version))
+       (sha256
+        (base32 "0pbcnsyb9wxcs97jx501acbxpbqrikzid8rnxx99j5c3488wqdmz"))))
+    (properties `((upstream-name . "ino")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-r6
+                             r-portion
+                             r-optimizer
+                             r-oeli
+                             r-normalize
+                             r-ggplot2
+                             r-future-apply
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://loelschlaeger.de/ino/")
+    (synopsis "Initialization of Numerical Optimization")
+    (description
+     "Analysis of the initialization for numerical optimization of real-valued
+functions, particularly likelihood functions of statistical models.  See
+<https://loelschlaeger.de/ino/> for more details.")
+    (license license:gpl3+)))
+
 (define-public r-innsight
   (package
     (name "r-innsight")
@@ -19467,37 +19502,6 @@ individual observations.  Specifically, ICE plots highlight the variation in the
 fitted values across the range of a covariate of interest, suggesting where and
 to what extent they may exist.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-icds
-  (package
-    (name "r-icds")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ICDS" version))
-       (sha256
-        (base32 "12zg6bixwqn6m25pnmyqh7fpy5rlkp5warfw5nlmmay0hjydm03q"))))
-    (properties `((upstream-name . "ICDS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-org-hs-eg-db r-metap r-igraph r-graphite))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ICDS")
-    (synopsis
-     "Identification of Cancer Dysfunctional Subpathway with Omics Data")
-    (description
-     "Identify Cancer Dysfunctional Sub-pathway by integrating gene expression, DNA
-methylation and copy number variation, and pathway topological information.
-1)We firstly calculate the gene risk scores by integrating three kinds of data:
-DNA methylation, copy number variation, and gene expression.  2)Secondly, we
-perform a greedy search algorithm to identify the key dysfunctional sub-pathways
-within the pathways for which the discriminative scores were locally maximal.
-3)Finally, the permutation test was used to calculate statistical significance
-level for these key dysfunctional sub-pathways.")
-    (license license:gpl2+)))
 
 (define-public r-icdpicr2
   (package

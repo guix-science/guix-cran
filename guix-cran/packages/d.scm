@@ -19286,31 +19286,6 @@ downstream analysis.  Boyer, R.S., Moore, J.S. (1991)
 <doi:10.1007/978-94-011-3488-0_5>.")
     (license license:expat)))
 
-(define-public r-dgaselid
-  (package
-    (name "r-dgaselid")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dGAselID" version))
-       (sha256
-        (base32 "0da7fi872i3ycb3j5v4isr4x2z39a68w4mdq859zslmqhiqd43b6"))))
-    (properties `((upstream-name . "dGAselID")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mlinterfaces r-genefilter r-biobase r-all))
-    (home-page "https://cran.r-project.org/package=dGAselID")
-    (synopsis
-     "Genetic Algorithm with Incomplete Dominance for Feature Selection")
-    (description
-     "Feature selection from high dimensional data using a diploid genetic algorithm
-with Incomplete Dominance for genotype to phenotype mapping and Random
-Assortment of chromosomes approach to recombination.")
-    (license license:expat)))
-
 (define-public r-dga
   (package
     (name "r-dga")
@@ -26346,13 +26321,13 @@ compared from data.  The method is described in Boettcher and Dethlefsen (2003),
 (define-public r-deadwood
   (package
     (name "r-deadwood")
-    (version "0.9.0-2")
+    (version "0.9.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deadwood" version))
        (sha256
-        (base32 "12wsy7mqb4y6w7k76dkp19nz6d608nhvy8p0imrh6idcbia0zhlk"))))
+        (base32 "0835ynyh693vqwkcs53a04pvw8x5hwpfs4llf7df8lipc1m81dsp"))))
     (properties `((upstream-name . "deadwood")))
     (build-system r-build-system)
     (arguments

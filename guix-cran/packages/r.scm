@@ -2699,43 +2699,6 @@ fit, forecast, simulation, inference and plotting.")
 best match under Dynamic Time Warping and Euclidean Distance.")
     (license (license:fsdg-compatible "Apache License"))))
 
-(define-public r-rubias
-  (package
-    (name "r-rubias")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rubias" version))
-       (sha256
-        (base32 "1b36w3mqfazv62zb542b3c4h2xwjrjqx1azxhl0daw57x2lfh01b"))))
-    (properties `((upstream-name . "rubias")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-rcppparallel
-                             r-rcpp
-                             r-magrittr
-                             r-gtools
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rubias")
-    (synopsis
-     "Bayesian Inference from the Conditional Genetic Stock Identification Model")
-    (description
-     "This package implements Bayesian inference for the conditional genetic stock
-identification model.  It allows inference of mixed fisheries and also
-simulation of mixtures to predict accuracy.  A full description of the
-underlying methods is available in a recently published article in the Canadian
-Journal of Fisheries and Aquatic Sciences: <doi:10.1139/cjfas-2018-0016>.")
-    (license license:cc0)))
-
 (define-public r-rtypeform
   (package
     (name "r-rtypeform")
@@ -13648,13 +13611,13 @@ Rosenbrock Distribution for MCMC Testing\" by Pagani, Wiegand and Nadarajah
 (define-public r-rosario
   (package
     (name "r-rosario")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rosario" version))
        (sha256
-        (base32 "1x72nw5yfzlyvs5hpsm98jlqpiy6s7xldjn4lr3hp77kgp8r1xdh"))))
+        (base32 "13d1aayvnivpwr1zvrilrbsddrcicxli6vl1mgpv3yqq9x26lvs9"))))
     (properties `((upstream-name . "rosario")))
     (build-system r-build-system)
     (arguments
@@ -13666,13 +13629,14 @@ Rosenbrock Distribution for MCMC Testing\" by Pagani, Wiegand and Nadarajah
                              r-future
                              r-furrr
                              r-broom))
+    (native-inputs (list r-knitr))
     (home-page "https://alrobles.github.io/rosario/")
     (synopsis "Null Model Algorithm to Analyze Cyclical Data in Ecology")
     (description
      "This package implements a null model analysis to quantify concurrent temporal
 niche overlap (i.e., activity or phenology) among biological identities (e.g.,
 individuals, populations, species) using the Rosario randomization algorithm
-Castro-Arellano et al. (2010) <doi:10.1111/j.2041-210X.2010.00031.x>.")
+(Castro-Arellano et al.  2010) <doi:10.1111/j.2041-210X.2010.00031.x>.")
     (license license:gpl3+)))
 
 (define-public r-rorqual-morpho
@@ -20396,13 +20360,13 @@ Li, Zhongyuan Lyu, Chenyu Ren, Dong Xia (2023) <@code{arXiv:2302.04437>}.")
 (define-public r-rmtl
   (package
     (name "r-rmtl")
-    (version "0.9.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMTL" version))
        (sha256
-        (base32 "1wyv9l1xgdm4s8ibjw3kwfsr77hxkxj80cgvkfv4mdir0bxm84b4"))))
+        (base32 "0m7xszf3v18mvd1h9qj1sw2vmcpjzy1b4dkyqhkxpwvaq68g8w4p"))))
     (properties `((upstream-name . "RMTL")))
     (build-system r-build-system)
     (arguments
@@ -20410,7 +20374,7 @@ Li, Zhongyuan Lyu, Chenyu Ren, Dong Xia (2023) <@code{arXiv:2302.04437>}.")
       #:tests? #f))
     (propagated-inputs (list r-psych r-mass r-foreach r-doparallel r-corpcor))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/transbioZI/RMTL/")
+    (home-page "https://github.com/transbioZI/RMTL")
     (synopsis "Regularized Multi-Task Learning")
     (description
      "Efficient solvers for 10 regularized multi-task learning algorithms applicable
@@ -23850,13 +23814,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.4.5")
+    (version "3.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "1dvi710521yy9lbj1qiwnsi5r5b3ni38rxzi9lkk724w3rmp7yj4"))))
+        (base32 "1y90lz87k5aqahd4ig6ab8nh2h1bcjg4pspg0b25qi5ssqvaz23s"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (arguments
@@ -40704,13 +40668,13 @@ SPC program and gets the results as data frames @code{(redatam_query()},
 (define-public r-redatam
   (package
     (name "r-redatam")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatam" version))
        (sha256
-        (base32 "121qb3a5xkhlsl141x7hgn8v0i2nw25a2x6dhzgnbdah9h9bmpfw"))))
+        (base32 "0wyc5f2szgmwjqm6jshys9xgd13982hdaqllcaqg0llc9qzji2p5"))))
     (properties `((upstream-name . "redatam")))
     (build-system r-build-system)
     (arguments
@@ -40721,7 +40685,7 @@ SPC program and gets the results as data frames @code{(redatam_query()},
                              r-stringi
                              r-janitor
                              r-data-table
-                             r-cpp11))
+                             r-cpp4r))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/litalbarkai/open-redatam")
     (synopsis "Import 'REDATAM' Files")

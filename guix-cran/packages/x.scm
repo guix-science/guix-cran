@@ -1535,13 +1535,13 @@ other's coefficients unrealistically.")
 (define-public r-xlr
   (package
     (name "r-xlr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xlr" version))
        (sha256
-        (base32 "01jqcp7j4rf4hpdx8r2wxq13w0il0kpm3708424mppnp753fk1sa"))))
+        (base32 "0g92qf1lg5h3d0zjhvncsdwd5i5v3njbrkp1jyh746d7dvhh1d1w"))))
     (properties `((upstream-name . "xlr")))
     (build-system r-build-system)
     (arguments

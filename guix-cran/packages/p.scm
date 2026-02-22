@@ -10423,35 +10423,6 @@ in the 3 dimensions, while facilitating usersâ choices and parameterization
 (Doxa et al.  2025 <doi:10.1016/j.ecolmodel.2024.110919>).")
     (license license:gpl3)))
 
-(define-public r-priogene
-  (package
-    (name "r-priogene")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prioGene" version))
-       (sha256
-        (base32 "0k1rlvmfhj1m2zp5zaac8wcwjypd6f4dd8fxxsyrzsafp9aw189l"))))
-    (properties `((upstream-name . "prioGene")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=prioGene")
-    (synopsis
-     "Candidate Gene Prioritization for Non-Communicable Diseases Based on Functional Information")
-    (description
-     "In gene sequencing methods, the topological features of protein-protein
-interaction (PPI) networks are often used, such as @code{ToppNet}
-<https://toppgene.cchmc.org>.  In this study, a candidate gene prioritization
-method was proposed for non-communicable diseases considering disease risks
-transferred between genes in weighted disease PPI networks with weights for
-nodes and edges based on functional information.")
-    (license license:artistic2.0)))
-
 (define-public r-prinvars
   (package
     (name "r-prinvars")
@@ -22688,41 +22659,6 @@ et al. (2011) <doi:10.1002/pmic.201100078>.  Matzke et al. (2011)
 <doi:10.1093/bioinformatics/btn217>.  Webb-Robertson et al. (2010)
 <doi:10.1021/pr1005247>.")
     (license license:bsd-2)))
-
-(define-public r-pmapscore
-  (package
-    (name "r-pmapscore")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PMAPscore" version))
-       (sha256
-        (base32 "174ll5gr2csy4r5iz92zq6jqq7yfcpiyyigzklgmzpah5v0k5854"))))
-    (properties `((upstream-name . "PMAPscore")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer
-                             r-survival
-                             r-proc
-                             r-org-hs-eg-db
-                             r-maftools
-                             r-glmnet
-                             r-clusterprofiler))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PMAPscore")
-    (synopsis
-     "Identify Prognosis-Related Pathways Altered by Somatic Mutation")
-    (description
-     "We innovatively defined a pathway mutation accumulate perturbation score
-(PMAPscore) to reflect the position and the cumulative effect of the genetic
-mutations at the pathway level.  Based on the PMAPscore of pathways, identified
-prognosis-related pathways altered by somatic mutation and predict immunotherapy
-efficacy by constructing a multiple-pathway-based risk model (Tarca, Adi
-Laurentiu et al (2008) <doi:10.1093/bioinformatics/btn577>).")
-    (license license:gpl2+)))
 
 (define-public r-pm3
   (package

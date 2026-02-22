@@ -13753,32 +13753,6 @@ identifying (visualizing neighbours) on the map, the neighbors of any region
 once the scheme of the spatial weights matrix has been established.")
     (license license:gpl2+)))
 
-(define-public r-bisep
-  (package
-    (name "r-bisep")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BiSEp" version))
-       (sha256
-        (base32 "1xg2m8rvxwpj47nb20kyd5hpa1lshg58bi0alf1v476yhcwqgrhx"))))
-    (properties `((upstream-name . "BiSEp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-org-hs-eg-db r-mclust r-gosemsim r-go-db
-                             r-annotationdbi))
-    (home-page "https://cran.r-project.org/package=BiSEp")
-    (synopsis "Toolkit to Identify Candidate Synthetic Lethality")
-    (description
-     "Enables the user to infer potential synthetic lethal relationships by analysing
-relationships between bimodally distributed gene pairs in big gene expression
-datasets.  Enables the user to visualise these candidate synthetic lethal
-relationships.")
-    (license license:artistic2.0)))
-
 (define-public r-bisdata
   (package
     (name "r-bisdata")
@@ -19746,19 +19720,19 @@ smoothed images of the effect sizes and samples from the posterior distribution.
 (define-public r-bhmbasket
   (package
     (name "r-bhmbasket")
-    (version "0.9.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bhmbasket" version))
        (sha256
-        (base32 "1mcgbvlnrmxlxqcjmc7ij7qn3zqfwsmbx2r2facbqrf043hmiipc"))))
+        (base32 "0vc2n63ybb40wrn945svaaqlvrcb16dad9w5k6m49mp761ygf7la"))))
     (properties `((upstream-name . "bhmbasket")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r2jags r-foreach r-dorng))
+    (propagated-inputs (list r-rjags r-foreach r-dorng r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=bhmbasket")
     (synopsis "Bayesian Hierarchical Models for Basket Trials")

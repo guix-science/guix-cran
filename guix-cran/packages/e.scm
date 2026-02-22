@@ -11608,13 +11608,13 @@ expertise often required by calibration.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.11.2.0")
+    (version "0.12.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "0jmgghv0gz7nkw60kk812019p71x5k30qhr8pmq37dkamvlihjfj"))))
+        (base32 "1iaigllsszmjdcvrbmyl026wa3flwa2n18gzw14650v1433rzmsx"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -24755,13 +24755,13 @@ event-study style for either individual periods or individual quantiles.")
 (define-public r-echos
   (package
     (name "r-echos")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echos" version))
        (sha256
-        (base32 "0dnjzsh5rs59ps56sb899mqaq5g4kmcxdbvdswfibynxnvh94i2p"))))
+        (base32 "00vii71p1hr38dcd6gw2kq82sqjw7flfz90q85308adiy6rrp0fb"))))
     (properties `((upstream-name . "echos")))
     (build-system r-build-system)
     (arguments

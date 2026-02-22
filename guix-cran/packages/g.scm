@@ -4925,45 +4925,6 @@ jointly diagonalize a list of matrices.  For more details see the project
 website <https://sweichwald.de/@code{groupICA/>}.")
     (license license:agpl3)))
 
-(define-public r-grouphmap
-  (package
-    (name "r-grouphmap")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Grouphmap" version))
-       (sha256
-        (base32 "0wmzgd76adwq2gm8p1cxgy1kj1vl83bfsx4d9afk7wh3dxgq4c7l"))))
-    (properties `((upstream-name . "Grouphmap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-pheatmap
-                             r-org-mm-eg-db
-                             r-limma
-                             r-dplyr
-                             r-clusterprofiler))
-    (home-page "https://cran.r-project.org/package=Grouphmap")
-    (synopsis
-     "'Grouphmap' is an Automated One-Step Common Analysis of Batch Expression Profile")
-    (description
-     "The Grouphmap was implemented in R, an open-source programming environment, and
-was released under the provided website.  The difference analysis is based on
-the limma package, which can cover gene and protein expression profiles
-(Reference: Matthew E Ritchie , Belinda Phipson , Di Wu , Yifang Hu , Charity W
-Law , Wei Shi , Gordon K Smyth (2015) <doi:10.1093/nar/gkv007>).  The GO
-enrichment analysis is based on the @code{clusterProfiler} package and supports
-three common species: human, mouse, and yeast (Reference: Guangchuang Yu, Li-Gen
-Wang, Yanyan Han, Qing-Yu He (2012) <doi:10.1089/omi.2011.0118>).  The results
-of batch difference analysis and enrichment analysis are output in separate
-folders for easy viewing and further visualization of the results during the
-process.  The results returned a heatmap in R and exported to 3 folders named
-DEG, go, and merge.")
-    (license license:artistic2.0)))
-
 (define-public r-grouper
   (package
     (name "r-grouper")
@@ -10243,43 +10204,6 @@ Poisson regression model\".  Communications in Statistics - Theory and Methods,
 from GAMS code and comments.  In order to use the package you need to install
 pandoc and pandoc-citeproc first (<https://pandoc.org/>).")
     (license license:bsd-2)))
-
-(define-public r-goxplorer
-  (package
-    (name "r-goxplorer")
-    (version "1.2.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GOxploreR" version))
-       (sha256
-        (base32 "1i1sx4rm6qddxl4pgdpi43xdzjc274j91md2br53075fa0s6hk1k"))))
-    (properties `((upstream-name . "GOxploreR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-network
-                             r-igraph
-                             r-gontr
-                             r-go-db
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-biomart
-                             r-annotate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GOxploreR")
-    (synopsis
-     "Structural Exploration of the Gene Ontology (GO) Knowledge Base")
-    (description
-     "It provides an effective, efficient, and fast way to explore the Gene Ontology
-(GO).  Given a set of genes, the package contains functions to assess the GO and
-obtain the terms associated with the genes and the levels of the GO terms.  The
-package provides functions for the three different GO ontology.  We discussed
-the methods explicitly in the following article
-<doi:10.1038/s41598-020-73326-3>.")
-    (license license:gpl2)))
 
 (define-public r-gowersom
   (package
@@ -21921,29 +21845,22 @@ object.")
 (define-public r-gglm
   (package
     (name "r-gglm")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglm" version))
        (sha256
-        (base32 "1y9n3ylwp1cbl0ls7pm6vmm98fiqqq7pq6ghail3bjl41y852iz2"))))
+        (base32 "0i55fdp82jz52c0mrr8dpggyzcqcxk9r2635v1z51886746an4dn"))))
     (properties `((upstream-name . "gglm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs
-                             r-tidyr
-                             r-tibble
                              r-rlang
-                             r-purrr
                              r-patchwork
-                             r-nlme
-                             r-metafor
                              r-ggplot2
-                             r-dplyr
-                             r-cli
                              r-broom-mixed
                              r-broom))
     (home-page "https://github.com/graysonwhite/gglm")
@@ -29701,43 +29618,6 @@ published by Saeed et al. (2009) <doi:10.1186/1471-2164-10-S3-S10>.  The
 Relative Synonymous Codon Usage (RSCU) values are calculated based on the work
 published by Elek (2018) <https://urn.nsk.hr/urn:nbn:hr:217:686131>.")
     (license license:gpl3)))
-
-(define-public r-genomicper
-  (package
-    (name "r-genomicper")
-    (version "1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "genomicper" version))
-       (sha256
-        (base32 "1sran9gjjkrq9yxv4630cyhjhm9w9cggyx3amhcncmyiknz6pa76"))))
-    (properties `((upstream-name . "genomicper")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reactome-db r-dbi r-annotationdbi))
-    (home-page "https://cran.r-project.org/package=genomicper")
-    (synopsis
-     "Circular Genomic Permutation using Genome Wide Association p-Values")
-    (description
-     "Circular genomic permutation approach uses genome wide association studies
-(GWAS) results to establish the significance of pathway/gene-set associations
-whilst accounting for genomic structure(Cabrera et al (2012)
-<doi:10.1534/g3.112.002618>).  All single nucleotide polymorphisms (SNPs) in the
-GWAS are placed in a circular genome according to their location.  Then the
-complete set of SNP association p-values are permuted by rotation with respect
-to the SNPs genomic locations.  Two testing frameworks are available:
-permutations at the gene level, and permutations at the SNP level.  The
-permutation at the gene level uses Fisher's combination test to calculate a
-single gene p-value, followed by the hypergeometric test.  The SNP count
-methodology maps each SNP to pathways/gene-sets and calculates the proportion of
-SNPs for the real and the permutated datasets above a pre-defined threshold.
-Genomicper requires a matrix of GWAS association p-values and SNPs annotation to
-genes.  Pathways can be obtained from within the package or can be provided by
-the user.")
-    (license license:gpl2)))
 
 (define-public r-genomic-autocorr
   (package
@@ -37794,51 +37674,6 @@ are available such as interactive edge creation, collapse-expand and brush
 select.  17 plugins designed to improve the user experience such as a mini-map,
 toolbars and grid lines.  Customise the look and feel of your graph with
 comprehensive options for nodes, edges and more.")
-    (license license:expat)))
-
-(define-public r-g3viz
-  (package
-    (name "r-g3viz")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "g3viz" version))
-       (sha256
-        (base32 "1lkasna05pp5sc9jqgqmias8kl7h1fb64jfb9rpld575lmy2n2gv"))))
-    (properties `((upstream-name . "g3viz")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  ((guix build minify-build-system)
-                   #:select (minify))
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-stringr
-                             r-org-hs-eg-db
-                             r-jsonlite
-                             r-httr2
-                             r-htmlwidgets
-                             r-annotationdbi))
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/G3viz/g3viz")
-    (synopsis
-     "Interactively Visualize Genetic Mutation Data using a Lollipop-Diagram")
-    (description
-     "Interface for g3-lollipop @code{JavaScript} library.  Visualize genetic mutation
-data using an interactive lollipop diagram in RStudio or your web browser.")
     (license license:expat)))
 
 (define-public r-g2sd

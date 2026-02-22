@@ -4910,6 +4910,42 @@ the package can be found at
 censored times-to-event and to evaluate its prognostic capacities.")
     (license license:gpl2+)))
 
+(define-public r-survivalrec
+  (package
+    (name "r-survivalrec")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survivalREC" version))
+       (sha256
+        (base32 "14b4zzdjhk258lsy6dhlgdpkpyry6bd01dncrm9g0qj36hlwll3d"))))
+    (properties `((upstream-name . "survivalREC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-kernsmooth))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=survivalREC")
+    (synopsis
+     "Nonparametric Estimation of the Distribution of Gap Times for Recurrent Events")
+    (description
+     "This package provides estimates for the bivariate and trivariate distribution
+functions and bivariate and trivariate survival functions for censored gap
+times.  Two approaches, using existing methodologies, are considered: (i) the
+Lin's estimator, which is based on the extension the Kaplan-Meier estimator of
+the distribution function for the first event time and the Inverse Probability
+of Censoring Weights for the second time (Lin DY, Sun W, Ying Z (1999)
+<doi:10.1093/biomet/86.1.59> and (ii) another estimator based on Kaplan-Meier
+weights (Una-Alvarez J, Meira-Machado L (2008)
+<https://w3.math.uminho.pt/~lmachado/Biometria_conference.pdf>).  The proposed
+methods are the landmark estimators based on subsampling approach, and the
+estimator based on weighted cumulative hazard estimator.  The package also
+provides nonparametric estimator conditional to a given continuous covariate.
+All these methods have been submitted to be published.")
+    (license license:gpl3)))
+
 (define-public r-survivalplann
   (package
     (name "r-survivalplann")
@@ -19928,43 +19964,6 @@ specific evaluation metric or by drawing repeatedly from a Bernoulli
 distribution.  The SSDM package also provides a user-friendly interface.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-ssdgsa
-  (package
-    (name "r-ssdgsa")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ssdGSA" version))
-       (sha256
-        (base32 "1167vfacvhkc9p7pv30snj24jz2x09fpfvad5qb3brw7lkr0japs"))))
-    (properties `((upstream-name . "ssdGSA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-org-hs-eg-db
-                             r-gsva
-                             r-dplyr
-                             r-clusterprofiler))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ssdGSA")
-    (synopsis "Single Sample Directional Gene Set Analysis")
-    (description
-     "This package provides a method that inherits the standard gene set variation
-analysis (GSVA) method and also provides the option to use summary statistics
-from any analysis (disease vs healthy, lesional side vs nonlesional side, etc..)
-input to define the direction of gene sets used for directional gene set score
-calculation for a given disease.  Note to use this package, GSVA(>= 1.52.1) is
-needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
-<doi:10.1186/1471-2105-14-7>.")
-    (license license:gpl2)))
 
 (define-public r-ssdforr
   (package
@@ -43883,13 +43882,13 @@ matrix is described in Section 5.1 of Christidis, Van Aelst and Zamar (2019)
 (define-public r-simtablr
   (package
     (name "r-simtablr")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimtablR" version))
        (sha256
-        (base32 "0j6in7xcdzvixfy3xv6sc86vkpywlhd3lhw17x9j8kjmb40wj2y8"))))
+        (base32 "1rx3r0jykkab2mwa9jfwdh58dq2wfm9ilps2fwq4y9hqc54645yh"))))
     (properties `((upstream-name . "SimtablR")))
     (build-system r-build-system)
     (arguments
@@ -65962,49 +65961,6 @@ Last.fm to act as a complete record of your entire listening history.  scrobbler
 provides helper functions to download and analyse your listening history in R.")
     (license license:gpl3)))
 
-(define-public r-scrnatools
-  (package
-    (name "r-scrnatools")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scRNAtools" version))
-       (sha256
-        (base32 "0x0lniqhq6q87y08kkkyvmk1g5b8i73hm3h86ba8rcv0v0n7ap9a"))))
-    (properties `((upstream-name . "scRNAtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tpea
-                             r-survival
-                             r-scatterplot3d
-                             r-rtsne
-                             r-rmisc
-                             r-reshape2
-                             r-plyr
-                             r-performanceanalytics
-                             r-limma
-                             r-lattice
-                             r-igraph
-                             r-hmisc
-                             r-ggthemes
-                             r-ggplot2
-                             r-foreach
-                             r-edger
-                             r-corrplot
-                             r-consensusclusterplus
-                             r-all))
-    (home-page "https://cran.r-project.org/package=scRNAtools")
-    (synopsis "Single Cell RNA Sequencing Data Analysis Tools")
-    (description
-     "We integrated the common analysis methods utilized in single cell RNA sequencing
-data, which included cluster method, principal components analysis (PCA), the
-filter of differentially expressed genes, pathway enrichment analysis and
-correlated analysis methods.")
-    (license license:gpl2)))
-
 (define-public r-scrnastat
   (package
     (name "r-scrnastat")
@@ -66744,40 +66700,6 @@ scan\" JÃ¼rgen Wilbert (2025) <https://jazznbass.github.io/scan-Book/>.")
      "Compute ploidy of single cells (or nuclei) based on single-cell (or
 single-nucleus) ATAC-seq (Assay for Transposase-Accessible Chromatin using
 sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
-    (license license:expat)))
-
-(define-public r-scpipeline
-  (package
-    (name "r-scpipeline")
-    (version "0.2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scPipeline" version))
-       (sha256
-        (base32 "0afvy5wxhm31gn9x08j2fa8w4wk8xkn0kg99f1xhl6334zw5s7va"))))
-    (properties `((upstream-name . "scPipeline")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-summarizedexperiment
-                             r-singler
-                             r-seurat
-                             r-rlang
-                             r-magrittr
-                             r-dplyr
-                             r-celldex
-                             r-biomart
-                             r-batchelor))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=scPipeline")
-    (synopsis
-     "Wrapper for 'Seurat' and Related R Packages for End-to-End Single Cell Analysis")
-    (description
-     "Reports markers list, differentially expressed genes, associated pathways,
-cell-type annotations, does batch correction and other related single cell
-analyses all wrapped within Seurat'.")
     (license license:expat)))
 
 (define-public r-scpi
@@ -71386,41 +71308,6 @@ our proposed Saturn coefficient over continuity and trustworthiness for UMAP
 dimensionality reduction evaluation\", @code{PeerJ} Computer Science 12:e3424
 (pp.  1-30), <doi:10.7717/peerj-cs.3424>.")
     (license license:gpl3)))
-
-(define-public r-sats
-  (package
-    (name "r-sats")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SATS" version))
-       (sha256
-        (base32 "1l87q7s8jn5h545d8pga8an0isnlbqjh2yv9xaysnm74bqsql1mx"))))
-    (properties `((upstream-name . "SATS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-iranges
-                             r-glmnet
-                             r-genomicranges
-                             r-dplyr
-                             r-bsgenome-hsapiens-ucsc-hg38
-                             r-bsgenome-hsapiens-ucsc-hg19
-                             r-biostrings))
-    (home-page "https://cran.r-project.org/package=SATS")
-    (synopsis "Signature Analyzer for Targeted Sequencing (SATS)")
-    (description
-     "This package performs mutational signature analysis for targeted sequenced
-tumors.  Unlike the canonical analysis of mutational signatures, SATS factorizes
-the mutation counts matrix into a panel context matrix (measuring the size of
-the targeted sequenced genome for each tumor in the unit of million base pairs
-(Mb)), a signature profile matrix, and a signature activity matrix.  SATS also
-calculates the expected number of mutations attributed by a signature, namely
-signature burden, for each targeted sequenced tumor.  For more details see Lee
-et al. (2024) <doi:10.1101/2023.05.18.23290188>.")
-    (license license:gpl2)))
 
 (define-public r-satres
   (package

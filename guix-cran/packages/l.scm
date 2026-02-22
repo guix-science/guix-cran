@@ -18335,20 +18335,20 @@ index models.")
 (define-public r-lassohidfastgibbs
   (package
     (name "r-lassohidfastgibbs")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LassoHiDFastGibbs" version))
        (sha256
-        (base32 "1lc7ci3jhysm1rsvsgi29j5y4b1w89jkbiadkmnlg3f95x9k3n04"))))
+        (base32 "0807brgp13whwkjl7m4j6mccdak44jc1yj9a8fdf77g25vkpfykg"))))
     (properties `((upstream-name . "LassoHiDFastGibbs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcppclock
-                             r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpparmadillo
+                             r-rcpp))
     (home-page "https://github.com/MJDavoudabadi/LassoHiDFastGibbs")
     (synopsis
      "Fast High-Dimensional Gibbs Samplers for Bayesian Lasso Regression")
