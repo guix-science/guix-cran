@@ -2309,13 +2309,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "1p81379vax9j87n8ikmnzsks7b4nmfg71ibjdzc88cgkz477wy1m"))))
+        (base32 "077j0rihssp92pp6hf9rdiwvih1704xds4jqyjfayxyicg5cx6yw"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -7917,6 +7917,55 @@ based on the formulas given in Astronomy Answers articles about position of the
 sun and the planets : <https://www.aa.quae.nl/en/reken/zonpositie.html>.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-sunburstshinywidget
+  (package
+    (name "r-sunburstshinywidget")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sunburstShinyWidget" version))
+       (sha256
+        (base32 "1n2a979w7hdslj30xp8afjkfc5w0wbm18adn8i8bgc6nl45qvar9"))))
+    (properties `((upstream-name . "sunburstShinyWidget")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-waiter
+                             r-tidyr
+                             r-tibble
+                             r-shiny
+                             r-scales
+                             r-purrr
+                             r-htmlwidgets
+                             r-glue
+                             r-dt
+                             r-dplyr
+                             r-bslib))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://cran.r-project.org/package=sunburstShinyWidget")
+    (synopsis "Sunburst 'HTML' Widget Based on 'd3.js'")
+    (description
+     "This package provides a sunburst plot based on the d3.js library as an HTML
+shiny widget.")
+    (license license:expat)))
 
 (define-public r-sunburstr
   (package
@@ -31483,13 +31532,13 @@ and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "18ygx5dr467djwila5q8jgd4lcxaqk7zq7vkhjfnzy1qx1rfrjdy"))))
+        (base32 "00v221ihffnh56674pcsh5jz74k04zk6gg0hy2ijpwnlqywnmmb5"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -34556,19 +34605,20 @@ growth\".")
 (define-public r-soilassessment
   (package
     (name "r-soilassessment")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilassessment" version))
        (sha256
-        (base32 "0k1jy2pc9ylckv2ixrr4n2rh2p4f5160345njy1ciwfnkflyypww"))))
+        (base32 "1h86jhfb55s9skl4dvrvpl6y11d8w6ckfmiw8gkjwjj766kn10sl"))))
     (properties `((upstream-name . "soilassessment")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra
+    (propagated-inputs (list r-withr
+                             r-terra
                              r-sp
                              r-soiltexture
                              r-sf
@@ -34576,11 +34626,13 @@ growth\".")
                              r-randomforest
                              r-png
                              r-nnet
+                             r-httr
                              r-hmisc
                              r-googledrive
                              r-fuzzyahp
                              r-e1071
                              r-desolve
+                             r-curl
                              r-caret))
     (home-page "https://cran.r-project.org/package=soilassessment")
     (synopsis
@@ -47027,13 +47079,13 @@ specification.")
 (define-public r-simcop
   (package
     (name "r-simcop")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimCop" version))
        (sha256
-        (base32 "1s3589ph9kbdry8wpyfjlj99bvzj13gcrrl8c748n6rvsy78dgks"))))
+        (base32 "0718snk9d57za56m53snadpadmlqrqcs3f93jwc0xzlczlp00917"))))
     (properties `((upstream-name . "SimCop")))
     (build-system r-build-system)
     (arguments
@@ -61882,6 +61934,43 @@ use of this package in an effort to maintain a repository of dietary selections
 studies.")
     (license license:gpl2+)))
 
+(define-public r-select
+  (package
+    (name "r-select")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Select" version))
+       (sha256
+        (base32 "09vdk1wchqc4avaym8g8y02z2hdgdrag2h2w11xl48w50gvi0m19"))))
+    (properties `((upstream-name . "Select")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsolnp r-latticeextra r-lattice r-ade4))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Select")
+    (synopsis "Determines Species Probabilities Based on Functional Traits")
+    (description
+     "The objective of these functions is to derive a species assemblage that
+satisfies a functional trait profile.  Restoring resilient ecosystems requires a
+flexible framework for selecting assemblages that are based on the functional
+traits of species.  However, current trait-based models have been limited to
+algorithms that can only select species by optimising specific trait values, and
+could not elegantly accommodate the common desire among restoration ecologists
+to produce functionally diverse assemblages.  We have solved this problem by
+applying a non-linear optimisation algorithm that optimises Rao Q, a closed-form
+functional trait diversity index that incorporates species abundances, subject
+to other linear constraints.  This framework generalises previous models that
+only optimised the entropy of the community, and can optimise both functional
+diversity and entropy simultaneously.  This package can also be used to generate
+experimental assemblages to test the effects of community-level traits on
+community dynamics and ecosystem function.  The method is based on theory
+discussed in Laughlin (2014, Ecology Letters) <doi:10.1111/ele.12288>.")
+    (license license:gpl2+)))
+
 (define-public r-selcorr
   (package
     (name "r-selcorr")
@@ -64909,6 +64998,38 @@ described in Guo et al. (2025).")
     (synopsis "Detect SDGs and Targets in Text")
     (description
      "Identify 17 Sustainable Development Goals and associated 169 targets in text.")
+    (license license:gpl3+)))
+
+(define-public r-sdf-test
+  (package
+    (name "r-sdf-test")
+    (version "0.0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdf.test" version))
+       (sha256
+        (base32 "007jz7l541ksbrhibfkfkrqm9f9hg12d77gq7i3a7kpmalav9qhj"))))
+    (properties `((upstream-name . "sdf.test")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dtt))
+    (home-page "https://cran.r-project.org/package=sdf.test")
+    (synopsis
+     "Nonparametric Two Sample Test for Equality of Spectral Densities")
+    (description
+     "Nonparametric method for testing the equality of the spectral densities of two
+time series of possibly different lengths.  The time series are preprocessed
+with the discrete cosine transform and the variance stabilising transform to
+obtain an approximate Gaussian regression setting for the log-spectral density
+function.  The test statistic is based on the squared L2 norm of the difference
+between the estimated log-spectral densities.  The test returns the result, the
+statistic value, and the p-value.  It also provides the estimated empirical
+quantile and null distribution under the hypothesis of equal spectral densities.
+ An example using EEG data is included.  For details see Nadin, Krivobokova,
+Enikeeva (2026), <doi:10.48550/@code{arXiv.2602.10774>}.")
     (license license:gpl3+)))
 
 (define-public r-sdetorus

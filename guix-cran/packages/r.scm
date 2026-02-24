@@ -32,6 +32,7 @@
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages dotnet)
   #:use-module (gnu packages duckdb)
+  #:use-module (gnu packages curl)
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages mpi)
@@ -3525,13 +3526,13 @@ by SkÃ¸ien et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
 (define-public r-rtoot
   (package
     (name "r-rtoot")
-    (version "0.3.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtoot" version))
        (sha256
-        (base32 "0dzmgfxh3dlibyj9zaiyf5plp75nn2267gcx8shdhn5j48g227c5"))))
+        (base32 "005lip440jhwjjvjb0swl3syn7v0k3nw4r4pq02fl03nzisn2dm7"))))
     (properties `((upstream-name . "rtoot")))
     (build-system r-build-system)
     (arguments
@@ -3539,7 +3540,7 @@ by SkÃ¸ien et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-curl
                              r-clipr
@@ -5175,13 +5176,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "10.1.1.1")
+    (version "10.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "0mv90sf9xy4by40hjfdyiw9rxi6b5pxsfqhdx1ybxb7s645li7xg"))))
+        (base32 "1a59cs75j8rhi9xrai8klfidn9bkk5ypg0v6jhlsrs18w4yrk9q8"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -10225,13 +10226,13 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
 (define-public r-rqti
   (package
     (name "r-rqti")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqti" version))
        (sha256
-        (base32 "0kwwdgw3qz85nf6hwbxcwhkkv8yy0646ic5bdk2k4dckxj8bl7m2"))))
+        (base32 "0n3dzlx7pgzzfl6ij5bz84kx7ysip7bs60a4dxya2fskiahm1mln"))))
     (properties `((upstream-name . "rqti")))
     (build-system r-build-system)
     (arguments
@@ -16464,20 +16465,20 @@ diagnostic accuracy studies; Whiting et al (2011)
 (define-public r-robustx
   (package
     (name "r-robustx")
-    (version "1.2-7")
+    (version "1.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustX" version))
        (sha256
-        (base32 "0wy0fv7v03lsvzjhg5m6g331lhqsd8f1adgjw0r6bwdkkak2l2gl"))))
+        (base32 "068m7fpnzpdp6pgrx0bpm3kdv1i8lvq1a1swxqf4rybmb1sps3xx"))))
     (properties `((upstream-name . "robustX")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-robustbase))
-    (home-page "https://cran.r-project.org/package=robustX")
+    (home-page "https://robustbase.R-forge.R-project.org/")
     (synopsis "'eXtra' / 'eXperimental' Functionality for Robust Statistics")
     (description
      "Robustness -- @code{eXperimental}', @code{eXtraneous}', or @code{eXtraordinary}
@@ -21935,20 +21936,35 @@ on custom templates.")
 (define-public r-rmdpartials
   (package
     (name "r-rmdpartials")
-    (version "0.5.8")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmdpartials" version))
        (sha256
-        (base32 "15dw0pk1hdif839k60swna4li04inf7fzsiq9bxbw2wk5pdkqirn"))))
+        (base32 "0mrpa1gggq9xjqqxisgs59gajfsqyc79jjsa250vbw8fh82vqdlp"))))
     (properties `((upstream-name . "rmdpartials")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rlang r-knitr r-digest))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/rubenarslan/rmdpartials")
     (synopsis "Partial 'rmarkdown' Documents to Prettify your Reports")
     (description
@@ -21957,7 +21973,8 @@ components for HTML, PDF, and Word documents.  The package provides various
 helper functions to make certain functions easier.  You may want to use this
 package, if you want to flexibly summarise objects using a combination of
 figures, tables, text, and HTML widgets.  Unlike HTML widgets, the output is
-Markdown and can hence be turn into other output formats than HTML.")
+Markdown and can hence be turn into other output formats than HTML. Currently
+does not play well with rmarkdown notebooks, not tested with Quarto.")
     (license license:expat)))
 
 (define-public r-rmdhelpers
@@ -26676,13 +26693,13 @@ with different implementations that represent different trade-offs.")
 (define-public r-rinet
   (package
     (name "r-rinet")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rinet" version))
        (sha256
-        (base32 "0q4brb4p2m2lzkdqckrqn6p0i9hhh58cbryj4zy7d51wfsc1wqdm"))))
+        (base32 "1grj3f5jcdsq9yq7nzaizqkf4j9k05rksszribzbbk711c5jhhlm"))))
     (properties `((upstream-name . "rinet")))
     (build-system r-build-system)
     (arguments
@@ -43965,6 +43982,42 @@ This project is not affiliated with the Arduino company,
 <https://www.arduino.cc/>.")
     (license license:gpl3)))
 
+(define-public r-rduckhts
+  (package
+    (name "r-rduckhts")
+    (version "0.1.2-0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rduckhts" version))
+       (sha256
+        (base32 "11b0y7gz979v07yb8va31winw65sy7nmpjrvpf8ddgb7abahq2ns"))))
+    (properties `((upstream-name . "Rduckhts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib
+                  zlib
+                  openssl
+                  openssl
+                  xz
+                  bzip2
+                  curl
+                  cmake))
+    (propagated-inputs (list r-duckdb r-dbi))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/RGenomicsETL/duckhts")
+    (synopsis
+     "'DuckDB' High Throughput Sequencing File Formats Reader Extension")
+    (description
+     "Bundles the duckhts @code{DuckDB} extension for reading High Throughput
+Sequencing file formats with @code{DuckDB}'.  The @code{DuckDB} C extension API
+<https://duckdb.org/docs/stable/clients/c/api> and its htslib dependency are
+compiled from vendored sources during package installation.  James K Bonfield
+and co-authors (2021) <doi:10.1093/gigascience/giab007>.")
+    (license license:gpl3)))
+
 (define-public r-rdtlite
   (package
     (name "r-rdtlite")
@@ -46574,32 +46627,6 @@ did not find any overhead of the timer itself at this resolution.  Results (with
 summary statistics) are automatically passed back to R as a data frame.")
     (license license:gpl3+)))
 
-(define-public r-rcppstreams
-  (package
-    (name "r-rcppstreams")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppStreams" version))
-       (sha256
-        (base32 "0y1jpnqa8hgy25aij2ps1g1s2d9vgnarp1qw6650q81bfjhx85q7"))))
-    (properties `((upstream-name . "RcppStreams")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "http://dirk.eddelbuettel.com/code/rcpp.streams.html")
-    (synopsis
-     "'Rcpp' Integration of the 'Streamulus' 'DSEL' for Stream Processing")
-    (description
-     "The Streamulus (template, header-only) library by Irit Katriel (at
-<https://github.com/iritkatriel/streamulus>) provides a very powerful yet
-convenient framework for stream processing.  This package connects Streamulus to
-R by providing both the header files and all examples.")
-    (license license:gpl3+)))
-
 (define-public r-rcppsmc
   (package
     (name "r-rcppsmc")
@@ -47451,13 +47478,13 @@ Currently downloads version 6.1 of the CGAL header files.")
 (define-public r-rcppblaze
   (package
     (name "r-rcppblaze")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppBlaze" version))
        (sha256
-        (base32 "09v2j44dwxrwi4x5d0hcjw4bdfzjlvnxsxx3jyq4l7i3vja2459d"))))
+        (base32 "09807hcwy108x7qal3s8il1drmgbixjrs5slvyn4z3w9bn14pk07"))))
     (properties `((upstream-name . "RcppBlaze")))
     (build-system r-build-system)
     (arguments
@@ -57549,13 +57576,13 @@ abbreviation of R @code{agGrid}'.")
 (define-public r-ragflowchainr
   (package
     (name "r-ragflowchainr")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAGFlowChainR" version))
        (sha256
-        (base32 "199xfc9vl5zjq768h1p7yp56i81xf9dp6nv6p38cvw9vr3a0z1jk"))))
+        (base32 "1lp7xywdqyh0g1j3vh49wmc6jqrwb2ssjs2jdi75kai1v0gbmg78"))))
     (properties `((upstream-name . "RAGFlowChainR")))
     (build-system r-build-system)
     (arguments
@@ -59651,13 +59678,13 @@ formats ('xml2', tibble', sf').")
 (define-public r-r2winbugs
   (package
     (name "r-r2winbugs")
-    (version "2.1-23")
+    (version "2.1-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2WinBUGS" version))
        (sha256
-        (base32 "1czz9rqpfzqfhfk8sg08nxn9zlv4qr1xf89pyw5wsc7hrnpaxsza"))))
+        (base32 "1vkprcfv74gvai9gb4w8sbd0b9pm8nhxs7dw9bp5i9r77kljrizh"))))
     (properties `((upstream-name . "R2WinBUGS")))
     (build-system r-build-system)
     (arguments
@@ -60145,13 +60172,13 @@ converts R models to Predictive Model Markup Language ('PMML').")
 (define-public r-r2openbugs
   (package
     (name "r-r2openbugs")
-    (version "3.2-4")
+    (version "3.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2OpenBUGS" version))
        (sha256
-        (base32 "0isrfwvzvz4jlxmwrn6jfwcfccndk2q6645cwh11y4qrbf70yazz"))))
+        (base32 "0kr08b626r4465g0a1hkga5z6p4hwciywxpgfbvnvb8ha39syyg8"))))
     (properties `((upstream-name . "R2OpenBUGS")))
     (build-system r-build-system)
     (arguments

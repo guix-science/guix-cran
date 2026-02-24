@@ -847,13 +847,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzylink
   (package
     (name "r-fuzzylink")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzylink" version))
        (sha256
-        (base32 "1fqwcxsjj747423imny6ayfbbn2dzi185kl4gppa3zs92ygn11pi"))))
+        (base32 "167kdm2glsaw00529igwzhia5cl7rjy5c4r642xi2iz86rj382xd"))))
     (properties `((upstream-name . "fuzzylink")))
     (build-system r-build-system)
     (arguments
@@ -869,7 +869,7 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
                              r-httr
                              r-ellmer
                              r-dplyr))
-    (home-page "https://github.com/joeornstein/fuzzylink")
+    (home-page "https://joeornstein.github.io/software/fuzzylink/")
     (synopsis "Probabilistic Record Linkage Using Pretrained Text Embeddings")
     (description
      "Links datasets through fuzzy string matching using pretrained text embeddings.
@@ -10310,13 +10310,13 @@ between individuals using the method of Van Vleck (2007)
 (define-public r-fnonlinear
   (package
     (name "r-fnonlinear")
-    (version "4041.82")
+    (version "4052.83")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fNonlinear" version))
        (sha256
-        (base32 "0zbi1l4r7vccs375mx6m0djlk3z767i0cp4g2rgvzh8f6wq6q08y"))))
+        (base32 "1szrv6xmh38l7rm1577jbv5phxci34cy5wc4imy3xprpabnxkggl"))))
     (properties `((upstream-name . "fNonlinear")))
     (build-system r-build-system)
     (arguments
@@ -11806,13 +11806,13 @@ regulation by dams based on GarcÃ­a de Jalon et al.  2017
 (define-public r-flownet
   (package
     (name "r-flownet")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flownet" version))
        (sha256
-        (base32 "1x031z9ipj48x1qk8ly1ziiim3mbd0xp3mfm2n1l42w0jhkb5l7w"))))
+        (base32 "080w3gmp2f3mkjx01l4dv483hnhp630z2i3d6b3kfijbqv3cbz6g"))))
     (properties `((upstream-name . "flownet")))
     (build-system r-build-system)
     (arguments
@@ -14967,13 +14967,13 @@ package(<doi:10.21105/joss.01505>).")
 (define-public r-fitmix
   (package
     (name "r-fitmix")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitmix" version))
        (sha256
-        (base32 "1z7jgxz119lkyggmgpykcslv56z1i7pnbp872jkdni77sx94x89c"))))
+        (base32 "0fcaqa8bv8ch8vk460g1n1s8l1qpypy11a62ckyl87rdalvzyvlv"))))
     (properties `((upstream-name . "fitmix")))
     (build-system r-build-system)
     (arguments
@@ -14984,7 +14984,7 @@ package(<doi:10.21105/joss.01505>).")
     (description
      "Fits the lifespan datasets of biological systems such as yeast, fruit flies, and
 other similar biological units with well-known finite mixture models introduced
-by Farewell V. (1982) <doi:10.2307/2529885> and Al-Hussaini et al. (2000)
+by Farewell et al. (1982) <doi:10.2307/2529885> and Al-Hussaini et al. (2000)
 <doi:10.1080/00949650008812033>.  Estimates parameter space fitting of a
 lifespan dataset with finite mixtures of parametric distributions.  Computes the
 following tasks; 1) Estimates parameter space of the finite mixture model by
@@ -21711,13 +21711,13 @@ for anonymous function accepted by utilities such as @code{apply()} and
 (define-public r-fcopulae
   (package
     (name "r-fcopulae")
-    (version "4022.85")
+    (version "4052.86")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fCopulae" version))
        (sha256
-        (base32 "18gjlh254wm2yjyxrhrlbhjp6qvan3yway2m3fb0dqskd6dwmgq2"))))
+        (base32 "0z9790agc4cga3ggr2n5mzlg4vlxpy2bf3r10109vbjkdjmjs288"))))
     (properties `((upstream-name . "fCopulae")))
     (build-system r-build-system)
     (arguments

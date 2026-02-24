@@ -3392,33 +3392,39 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
 (define-public r-vispedigree
   (package
     (name "r-vispedigree")
-    (version "0.7.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visPedigree" version))
        (sha256
-        (base32 "1ha6bzf7053n931v61xfq6ri2jk17h35w0bbbi5rk139kf1wgvkj"))))
+        (base32 "16a9az2ycdjaxfyxk43ynsg18s8j9dzqhs0z2k6g3wqf8j9wkls7"))))
     (properties `((upstream-name . "visPedigree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nadiv r-igraph r-data-table))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-lattice
+                             r-igraph
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luansheng/visPedigree")
     (synopsis "Tidying and Visualizing Animal Pedigrees")
     (description
      "Built on graph theory and the high-performance data.table framework, this
-package provides a comprehensive suite of tools for tidying, pruning, and
+package provides a comprehensive suite of tools for tidying, analyzing, and
 visualizing animal pedigrees.  By modeling pedigrees as directed acyclic graphs
 using igraph', it ensures robust loop detection, efficient generation
-assignment, and sophisticated hierarchical layouts.  Key features include
+assignment, and optimal sub-population splitting.  Key features include
 standardizing pedigree formats, flexible ancestry tracing, and generating
 legible vector-based PDF graphs.  A unique compaction algorithm enables the
-visualization of massive pedigrees (e.g., in aquaculture selective breeding
-population) by grouping full-sib families, maintaining structural clarity
-without overcrowding.")
+visualization of massive pedigrees by grouping full-sib families.  Furthermore,
+the package implements high-performance C++ algorithms for calculating and
+visualizing genetic relationship matrices (A, D, AA, and their inverses) and
+inbreeding coefficients.")
     (license license:expat)))
 
 (define-public r-visor

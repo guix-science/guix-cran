@@ -6095,13 +6095,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "1vvb25y40kifqss2qc7h9jq2c1y6sl9is5p7r98hffgxnv8h22k9"))))
+        (base32 "0g6qxrz8mrxgw07dhx3i9w4ajqbp1v42lfxmnmfbapcvcqdg484x"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (arguments
@@ -21510,32 +21510,39 @@ and the response is present.  Base on the results published in guide ISO/TS
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.5.1")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "0r6klr875d3sad19gl92w3i1skgpb8h2favxzmdyy8iisg0436j2"))))
+        (base32 "0fq8gzc57x6knh8086nw8k80hlpljp8sm6ngvn1vmy32jwipwsq4"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list pkg-config r-knitr))
+    (inputs (list))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/Zabis13/ggmlR")
     (synopsis "'GGML' Tensor Operations for Machine Learning")
     (description
-     "This package provides R bindings to the GGML tensor library for efficient
-machine learning computation.  Implements core tensor operations including
-element-wise arithmetic, reshaping, and matrix multiplication.  Supports neural
-network layers (attention, convolutions, normalization), activation functions,
-and quantization.  Features optimization/training API with @code{AdamW} (Adam
-with Weight decay) and SGD (Stochastic Gradient Descent) optimizers, MSE (Mean
-Squared Error) and cross-entropy losses.  Multi-backend support with CPU and
-optional Vulkan GPU (Graphics Processing Unit) acceleration.  See
-<https://github.com/ggml-org/ggml> for more information about the underlying
-library.")
+     "This package provides R bindings to the GGML tensor library for machine
+learning, designed primarily for Vulkan GPU acceleration with full CPU fallback.
+ Vulkan support is auto-detected at build time on Linux (when libvulkan-dev and
+glslc are installed) and on Windows (when Vulkan SDK is installed and VULKAN_SDK
+environment variable is set); all operations fall back to CPU transparently when
+no GPU is available.  Implements tensor operations, neural network layers,
+quantization, and a Keras'-like sequential model API for building and training
+networks.  Includes @code{AdamW} (Adam with Weight decay) and SGD (Stochastic
+Gradient Descent) optimizers with MSE (Mean Squared Error) and cross-entropy
+losses.  Also provides a dynamic autograd engine ('@code{PyTorch'-style}) with
+data-parallel training via @code{dp_train()}', broadcast arithmetic, f16
+(half-precision) support on Vulkan GPU, and a multi-head attention layer for
+building Transformer architectures.  Serves as backend for LLM (Large Language
+Model) inference via @code{llamaR} and Stable Diffusion image generation via
+@code{sdR}'.  See <https://github.com/ggml-org/ggml> for more information about
+the underlying library.")
     (license license:expat)))
 
 (define-public r-ggmix
@@ -22130,6 +22137,49 @@ support for both IPv4 and IPv6 (Internet Protocol versions 4 and 6) address
 spaces.")
     (license license:expat)))
 
+(define-public r-gginterval
+  (package
+    (name "r-gginterval")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggInterval" version))
+       (sha256
+        (base32 "18dhwlannvxlnnpkmxjv32715nma068xcvmnkk0wknmz0fpd5s0a"))))
+    (properties `((upstream-name . "ggInterval")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyverse
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rsda
+                             r-rlang
+                             r-r6
+                             r-prodlim
+                             r-magrittr
+                             r-gtools
+                             r-gridextra
+                             r-ggthemes
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hanmingwu1103/ggInterval")
+    (synopsis "Visualizing Interval-Valued Data using 'ggplot2'")
+    (description
+     "This package implements an extension of ggplot2 (formerly @code{ggESDA}') and
+visualizes symbolic interval-valued data with various plots, offering more
+general and flexible input arguments.  Additionally, it provides a function to
+transform classical data into symbolic data using both clustering algorithms and
+customized methods.")
+    (license license:gpl2+)))
+
 (define-public r-gginnards
   (package
     (name "r-gginnards")
@@ -22525,13 +22575,13 @@ not require a square coordinate system.")
 (define-public r-gggenomes
   (package
     (name "r-gggenomes")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gggenomes" version))
        (sha256
-        (base32 "1qkpy6d281917az6kj8xa3xf85d49z8nd22chxfii42il80hj9df"))))
+        (base32 "031c33m9zhf5hsi31k7qn2fp1frij5xdq9sqzg0gc8x3gissc1bz"))))
     (properties `((upstream-name . "gggenomes")))
     (build-system r-build-system)
     (arguments
@@ -29619,6 +29669,41 @@ Relative Synonymous Codon Usage (RSCU) values are calculated based on the work
 published by Elek (2018) <https://urn.nsk.hr/urn:nbn:hr:217:686131>.")
     (license license:gpl3)))
 
+(define-public r-genomicper
+  (package
+    (name "r-genomicper")
+    (version "1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genomicper" version))
+       (sha256
+        (base32 "1pvxj98wm7n6yqnflf5saykjn22x9vmy4fwvmwgrhvva7rgf0nyq"))))
+    (properties `((upstream-name . "genomicper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=genomicper")
+    (synopsis
+     "Circular Genomic Permutation using Genome Wide Association p-Values")
+    (description
+     "Circular genomic permutation approach uses genome wide association studies
+(GWAS) results to establish the significance of pathway/gene-set associations
+whilst accounting for genomic structure.  All single nucleotide polymorphisms
+(SNPs) in the GWAS are placed in a circular genome according to their location.
+Then the complete set of SNP association p-values are permuted by rotation with
+respect to the SNPs genomic locations.  Two testing frameworks are available:
+permutations at the gene level, and permutations at the SNP level.  The
+permutation at the gene level uses Fisher's combination test to calculate a
+single gene p-value, followed by the hypergeometric test.  The SNP count
+methodology maps each SNP to pathways/gene-sets and calculates the proportion of
+SNPs for the real and the permutated datasets above a pre-defined threshold.
+Genomicper requires a matrix of GWAS association p-values and SNPs annotation to
+genes.  Pathways can be obtained from within the package or can be provided by
+the user.  Cabrera et al (2012) <doi:10.1534/g3.112.002618> .")
+    (license license:gpl2)))
+
 (define-public r-genomic-autocorr
   (package
     (name "r-genomic-autocorr")
@@ -29990,36 +30075,36 @@ genotype data.")
 (define-public r-genieclust
   (package
     (name "r-genieclust")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genieclust" version))
        (sha256
-        (base32 "1kk5zcq4mw9dqzdvgw1wfc234xawjydr8awbn41iscxa6sisnvmj"))))
+        (base32 "01lgrgk1q9irvqm4i91lclpm3l2sw49izwmhwrd1kv1dwkagibnf"))))
     (properties `((upstream-name . "genieclust")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-rcpp r-quitefastmst))
+    (propagated-inputs (list r-rcpp r-deadwood))
     (home-page "https://genieclust.gagolewski.com/")
-    (synopsis
-     "Fast and Robust Hierarchical Clustering with Noise Point Detection")
+    (synopsis "Genie: Fast and Robust Hierarchical Clustering")
     (description
-     "The Genie algorithm (Gagolewski, 2021 <DOI:10.1016/j.softx.2021.100722>) is a
-robust and outlier-resistant hierarchical clustering method (Gagolewski,
-Bartoszuk, Cena, 2016 <DOI:10.1016/j.ins.2016.05.003>).  This package features
-its faster and more powerful version.  It allows clustering with respect to
-mutual reachability distances, enabling it to act as a noise point detector or a
-version of HDBSCAN* that can identify a predefined number of clusters.  The
-package also features an implementation of the Gini and Bonferroni inequality
-indices, external cluster validity measures (e.g., the normalised clustering
-accuracy, the adjusted Rand index, the Fowlkes-Mallows index, and normalised
-mutual information), and internal cluster validity indices (e.g., the
-Calinski-Harabasz, Davies-Bouldin, Ball-Hall, Silhouette, and generalised Dunn
-indices).  The Python version of genieclust is available via @code{PyPI}'.")
+     "Genie is a robust hierarchical clustering algorithm (Gagolewski, Bartoszuk,
+Cena, 2016 <DOI:10.1016/j.ins.2016.05.003>).  genieclust is its faster, more
+capable implementation (Gagolewski, 2021 <DOI:10.1016/j.softx.2021.100722>).  It
+enables clustering with respect to mutual reachability distances, allowing it to
+act as an alternative to HDBSCAN* that can identify any number of clusters or
+their entire hierarchy.  When combined with the deadwood package, it can act as
+an outlier detector.  Additional package features include the Gini and
+Bonferroni inequality indices, external cluster validity measures (e.g., the
+normalised clustering accuracy, the adjusted Rand index, the Fowlkes-Mallows
+index, and normalised mutual information), and internal cluster validity indices
+(e.g., the Calinski-Harabasz, Davies-Bouldin, Ball-Hall, Silhouette, and
+generalised Dunn indices).  The Python version of genieclust is available via
+@code{PyPI}'.")
     (license license:agpl3)))
 
 (define-public r-geniebpc

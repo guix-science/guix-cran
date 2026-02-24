@@ -4658,13 +4658,13 @@ citation('@code{dsBaseClient}').")
 (define-public r-dsbase
   (package
     (name "r-dsbase")
-    (version "6.3.4")
+    (version "6.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsBase" version))
        (sha256
-        (base32 "0s1yb64d4wl4jmrgk6dxnngpx4119nz8my39b6dxkrl1zpzmz2ab"))))
+        (base32 "0wik5j1p747gwlj4f736giic6gl7m521a7zgyiz2cj9z5wmf9k94"))))
     (properties `((upstream-name . "dsBase")))
     (build-system r-build-system)
     (arguments
@@ -8049,13 +8049,13 @@ you to visualize all your data with graphic representation.")
 (define-public r-douconca
   (package
     (name "r-douconca")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "douconca" version))
        (sha256
-        (base32 "06x8xhg6l8bp9cv5bn9fbi1llwh0dpwpbhqzs0mnnjr9d2xxhjhr"))))
+        (base32 "01n3qz82vckc9iyma1lfl9zldvavqv3j7xykjzkpz13cy9nmrzyb"))))
     (properties `((upstream-name . "douconca")))
     (build-system r-build-system)
     (arguments
@@ -15116,13 +15116,13 @@ published by Ghannoum et.  al. (2019) <doi:10.1101/700989>.")
 (define-public r-discauc
   (package
     (name "r-discauc")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discAUC" version))
        (sha256
-        (base32 "1b0pk75jk7z9hcrv3pnci4709cvc2givwdbisd6yhanlg9vsz545"))))
+        (base32 "0k2x72y2scz7cpi0rgcvz2h3igx2pxp7a9q2arjzljn8ibyfiz68"))))
     (properties `((upstream-name . "discAUC")))
     (build-system r-build-system)
     (arguments

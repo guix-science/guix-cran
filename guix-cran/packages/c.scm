@@ -20244,13 +20244,13 @@ space.")
 (define-public r-condtruncmvn
   (package
     (name "r-condtruncmvn")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condTruncMVN" version))
        (sha256
-        (base32 "1dicfa82yg8k83lnb5c17jnqwgkazpb8404kfzdf6ikmndwjn0zg"))))
+        (base32 "0lb3hsc6zk4gmiwhklpw4n091cafrh8i7waylsjhyniq9y9zs8nx"))))
     (properties `((upstream-name . "condTruncMVN")))
     (build-system r-build-system)
     (arguments
@@ -22947,13 +22947,13 @@ Structured Query Language (SQL) to the other supported dialects.")
 (define-public r-common
   (package
     (name "r-common")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "common" version))
        (sha256
-        (base32 "1hw7gfa698jazlvka96v2xkxgyylv5pn4y09lmhkf1qykskwrnrs"))))
+        (base32 "0zrnn410ibibx3zky68arfihj2n1cdp2i0qg722ig47q95kwdmas"))))
     (properties `((upstream-name . "common")))
     (build-system r-build-system)
     (arguments
@@ -49330,13 +49330,13 @@ tibbles, lists, etc..")
 (define-public r-catastro
   (package
     (name "r-catastro")
-    (version "0.4.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatastRo" version))
        (sha256
-        (base32 "1d8mm2c3wn09w6add4dz9744c2qja4xj0f93w689gn5z1zi79zlx"))))
+        (base32 "1kxzpi7gpxyc6dwkp8q5wihh8ls16dj9v99pmmwcp05gx116wia7"))))
     (properties `((upstream-name . "CatastRo")))
     (build-system r-build-system)
     (arguments
@@ -49345,13 +49345,14 @@ tibbles, lists, etc..")
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-terra
-                             r-stringi
                              r-sf
                              r-rappdirs
                              r-mapspain
+                             r-lifecycle
                              r-httr2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-quarto))
     (home-page "https://ropenspain.github.io/CatastRo/")
     (synopsis "Interface to the API 'Sede Electronica Del Catastro'")
     (description
@@ -51607,13 +51608,13 @@ estimated fixed-effects coefficients is based on Stammann (2018)
 (define-public r-captain
   (package
     (name "r-captain")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "captain" version))
        (sha256
-        (base32 "01r5kli2wwqy8v7v80h10z4yvbala8fmijv28awjgjdvg81xjjpl"))))
+        (base32 "1rms303w2mkk6xl1jjsv8mkbrv6ifs5fwfzyg414md93nq24300a"))))
     (properties `((upstream-name . "captain")))
     (build-system r-build-system)
     (arguments

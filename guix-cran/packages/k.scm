@@ -3241,13 +3241,13 @@ date with options to choose language, hierarchical level and formatting.")
 (define-public r-klar
   (package
     (name "r-klar")
-    (version "1.7-3")
+    (version "1.7-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klaR" version))
        (sha256
-        (base32 "1rg3p3y984s7k7y14agbh3kxh21rrvan3yzpvfimpnvw04f08v6k"))))
+        (base32 "03kz6207hfgxhr3k4g6whv5nkxwr0nz3d2dxgnqln8v0i48v721l"))))
     (properties `((upstream-name . "klaR")))
     (build-system r-build-system)
     (arguments
@@ -6460,13 +6460,13 @@ multivariate skewness.  See Khattree, R. and Bahuguna, M. (2019) <doi:
 (define-public r-kbal
   (package
     (name "r-kbal")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kbal" version))
        (sha256
-        (base32 "0ck4zcdj09fnw4nx93pwcjr24flaim66lsygg6d843r60i6pdd3m"))))
+        (base32 "0zw62bcqafl90g2hirvx7hhw5wmvlvwyfvmkm3ggrimx6lsnxmnf"))))
     (properties `((upstream-name . "kbal")))
     (build-system r-build-system)
     (arguments

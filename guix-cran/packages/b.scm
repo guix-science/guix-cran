@@ -28293,13 +28293,13 @@ mediation effects are reported as analytic results.")
 (define-public r-bayesianmcpmod
   (package
     (name "r-bayesianmcpmod")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianMCPMod" version))
        (sha256
-        (base32 "0r5il36kdqd9fgh19alwflymr1ga51rbad39m5bnxl2ycn99jpb3"))))
+        (base32 "1lb0sbjzw6kjac5x5yl4q3as7q0rh19xhja2b0h5qcapiqzbjz8d"))))
     (properties `((upstream-name . "BayesianMCPMod")))
     (build-system r-build-system)
     (arguments
@@ -28319,17 +28319,18 @@ mediation effects are reported as analytic results.")
     (description
      "Bayesian MCPMod (Fleischer et al. (2022) <doi:10.1002/pst.2193>) is an
 innovative method that improves the traditional MCPMod by systematically
-incorporating historical data, such as previous placebo group data.  This R
+incorporating historical data, such as previous placebo group data.  This
 package offers functions for simulating, analyzing, and evaluating Bayesian
-MCPMod trials with normally distributed endpoints.  It enables the assessment of
-trial designs incorporating historical data across various true dose-response
-relationships and sample sizes.  Robust mixture prior distributions, such as
-those derived with the Meta-Analytic-Predictive approach (Schmidli et al. (2014)
-<doi:10.1111/biom.12242>), can be specified for each dose group.  Resulting
-mixture posterior distributions are used in the Bayesian Multiple Comparison
-Procedure and modeling steps.  The modeling step also includes a weighted model
-averaging approach (Pinheiro et al. (2014) <doi:10.1002/sim.6052>).  Estimated
-dose-response relationships can be bootstrapped and visualized.")
+MCPMod trials with normally and binary distributed endpoints.  It enables the
+assessment of trial designs incorporating historical data across various true
+dose-response relationships and sample sizes.  Robust mixture prior
+distributions, such as those derived with the Meta-Analytic-Predictive approach
+(Schmidli et al. (2014) <doi:10.1111/biom.12242>), can be specified for each
+dose group.  Resulting mixture posterior distributions are used in the Bayesian
+Multiple Comparison Procedure and modeling steps.  The modeling step also
+includes a weighted model averaging approach (Pinheiro et al. (2014)
+<doi:10.1002/sim.6052>).  Estimated dose-response relationships can be
+bootstrapped and visualized.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bayesianlaterality
@@ -30410,13 +30411,13 @@ visualization of results.")
 (define-public r-batchtma
   (package
     (name "r-batchtma")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "batchtma" version))
        (sha256
-        (base32 "1ii7iiq6vhfqnhzp5xpl40g2gdmm9c7ib3kg8fbswg99f96hqhbp"))))
+        (base32 "0i6bw19m6y21sw6gdx9l3fiidpyh7wxc6pxsy8f15wgzvsxg5d99"))))
     (properties `((upstream-name . "batchtma")))
     (build-system r-build-system)
     (arguments
@@ -30429,7 +30430,6 @@ visualization of results.")
                              r-quantreg
                              r-purrr
                              r-nnet
-                             r-magrittr
                              r-limma
                              r-ggplot2
                              r-geepack
@@ -33874,13 +33874,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.10.2")
+    (version "0.10.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "0z7qj0fbfndy84s8i51b4spkvpyxskm6ay79jh2bdymmn756zjr7"))))
+        (base32 "1icz63myrzgj4kp0p1zvs2g8n3np1fz6ryka8y8y0glq96njlvcs"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments

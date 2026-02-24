@@ -11887,6 +11887,38 @@ Format numbers and text consistent with APA style.  Create tables that comply
 with APA style by extending flextable functions.")
     (license license:cc0)))
 
+(define-public r-apa
+  (package
+    (name "r-apa")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apa" version))
+       (sha256
+        (base32 "1hg0xr3jga3bzk9nvrv423m1jqi8az1xj1ipvh4vn8mcv2xyvagl"))))
+    (properties `((upstream-name . "apa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rmarkdown
+                             r-purrr
+                             r-mbess
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dgromer/apa")
+    (synopsis
+     "Format Outputs of Statistical Tests According to APA Guidelines")
+    (description
+     "Formatter functions in the apa package take the return value of a statistical
+test function, e.g. a call to @code{chisq.test()} and return a string formatted
+according to the guidelines of the APA (American Psychological Association).")
+    (license license:gpl3+)))
+
 (define-public r-aovbay
   (package
     (name "r-aovbay")
@@ -21978,13 +22010,13 @@ introduced by Dongming and Zinde-Walsh (2009)
 (define-public r-aelab
   (package
     (name "r-aelab")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aelab" version))
        (sha256
-        (base32 "1dwkwhvdjqiqhahxz25yinrmx9if1rijfxb236plw53ml74gnkha"))))
+        (base32 "1krqgscjp7p4z24vvv1pvb7bgafmic29krrk1czy3abzdrbmc765"))))
     (properties `((upstream-name . "aelab")))
     (build-system r-build-system)
     (arguments
@@ -21993,11 +22025,19 @@ introduced by Dongming and Zinde-Walsh (2009)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-sf
+                             r-rnaturalearth
+                             r-rlang
                              r-readxl
                              r-readr
+                             r-rcompanion
+                             r-purrr
                              r-openxlsx
+                             r-multcompview
                              r-lubridate
+                             r-ggspatial
                              r-ggplot2
+                             r-fsa
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=aelab")
@@ -23035,13 +23075,13 @@ uncertainty and conditional (given stage-one outcome) constraints are supported.
 (define-public r-adobeanalyticsr
   (package
     (name "r-adobeanalyticsr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adobeanalyticsr" version))
        (sha256
-        (base32 "1q6kh83jfd57l7ihc30a8ssxz728p860vq1gpigrck7r46zsm73y"))))
+        (base32 "0l4glxjw15xmp01cwdi9zqss1lfqgw3lwifwz9z92fhy1868kyzm"))))
     (properties `((upstream-name . "adobeanalyticsr")))
     (build-system r-build-system)
     (arguments
@@ -23068,7 +23108,7 @@ uncertainty and conditional (given stage-one outcome) constraints are supported.
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/benrwoodard/adobeanalyticsr")
+    (home-page "https://adobeanalyticsr.com")
     (synopsis "R Client for 'Adobe Analytics' API 2.0")
     (description
      "Connect to the Adobe Analytics API v2.0

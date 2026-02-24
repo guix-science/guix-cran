@@ -15048,13 +15048,13 @@ and joining tables.")
 (define-public r-neoniso
   (package
     (name "r-neoniso")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NEONiso" version))
        (sha256
-        (base32 "0yv6044xsf05c3r33rxbsvpq2hqgamk7rs5an32qcwpf5mq1l0j9"))))
+        (base32 "0g7wp276kgs4s2dzlb7rpw352zl60w8dx0vc0l0rabgqlbmryrzk"))))
     (properties `((upstream-name . "NEONiso")))
     (build-system r-build-system)
     (arguments
@@ -15063,7 +15063,6 @@ and joining tables.")
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-rlang
-                             r-rhdf5
                              r-r-utils
                              r-neonutilities
                              r-magrittr
@@ -15072,8 +15071,7 @@ and joining tables.")
                              r-gridextra
                              r-ggplot2
                              r-dplyr
-                             r-data-table
-                             r-caret))
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lanl/NEONiso")
     (synopsis "Tools to Calibrate and Work with NEON Atmospheric Isotope Data")
@@ -15092,13 +15090,13 @@ considered experimental and unsupported.")
 (define-public r-neojags
   (package
     (name "r-neojags")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neojags" version))
        (sha256
-        (base32 "09mgz2zbhqnflq23h89r66b16fbmmx495alqi77sjb6ski3jj3nk"))))
+        (base32 "1lraqfrhxp3hinivyc0fpbjpmlg6g6jyb5q7wns1q9h9pd0pivav"))))
     (properties `((upstream-name . "neojags")))
     (build-system r-build-system)
     (arguments

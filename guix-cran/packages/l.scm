@@ -6436,13 +6436,13 @@ in a rectangular format.")
 (define-public r-locar
   (package
     (name "r-locar")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locaR" version))
        (sha256
-        (base32 "1qjbf6g2sb5bpgg3fvqbp3xbyrk31lnxwp3c3pfbrnm5llh4w5qd"))))
+        (base32 "0s3cdz2achpin184g3giz5n3d6849f63pz8ngdh93wq20n71p623"))))
     (properties `((upstream-name . "locaR")))
     (build-system r-build-system)
     (arguments
@@ -12436,13 +12436,13 @@ compared to other libraries.")
 (define-public r-libimath
   (package
     (name "r-libimath")
-    (version "3.1.9-5")
+    (version "3.2.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libimath" version))
        (sha256
-        (base32 "1wc3m2dzdls6gx6n3h0rvv10hllh11y4mwfaphmv80xmwxg61pdp"))))
+        (base32 "07x7p5pr3png5llhpp2dhdm521rykml92s433pgdja19mki4a0ib"))))
     (properties `((upstream-name . "libimath")))
     (build-system r-build-system)
     (arguments

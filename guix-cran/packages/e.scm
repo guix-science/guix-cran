@@ -12083,13 +12083,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.90")
+    (version "2.0.91")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "0da0mvvc3xs4gjj88frbacg76qrckimjqxy75pkna729pqm54p58"))))
+        (base32 "17av6wp28q6pzgm24fcpafzrg9j10xyv87z9dwkwjcj65m5zfmqk"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -16456,13 +16456,13 @@ described in Imai, Lo, and Olmsted (2016) <DOI:10.1017/S000305541600037X>.")
 (define-public r-emir
   (package
     (name "r-emir")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmiR" version))
        (sha256
-        (base32 "112srd951lxdq1rb98fnqy6l4firf0cnnjiryksf19p9ma77zc11"))))
+        (base32 "07i4lmw8gikzb484djwhz5kwfhdn9wiigdbm9i0nc91gq1walk8s"))))
     (properties `((upstream-name . "EmiR")))
     (build-system r-build-system)
     (arguments
@@ -16653,13 +16653,13 @@ details, see Byrnes et al. (2014) <doi:10.1111/2041-210X.12143> and Chao et al.
 (define-public r-emery
   (package
     (name "r-emery")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emery" version))
        (sha256
-        (base32 "0nzy70i4b9pdlz5fzpv7rdd80wdmxvvay3wqip05zxmsc7r488rf"))))
+        (base32 "07mxbxmz608jrzc4pdhwwiy4x86ams58jl3gxdj5hmvvk8sq65m5"))))
     (properties `((upstream-name . "emery")))
     (build-system r-build-system)
     (arguments
@@ -26955,13 +26955,13 @@ capabilities into/from multidimensional R arrays.")
 (define-public r-easymx
   (package
     (name "r-easymx")
-    (version "0.3-2")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EasyMx" version))
        (sha256
-        (base32 "155grvar94bfwddp99ipvafnn52ssdh2jd4q6ddqnw3zmv506snf"))))
+        (base32 "1ncvq3lsy5yzyk0sqh1vdbwank3fpd0xcqkxq8qd529czh8cp2vj"))))
     (properties `((upstream-name . "EasyMx")))
     (build-system r-build-system)
     (arguments
@@ -27543,13 +27543,13 @@ the resulting color palette.")
 (define-public r-earthtide
   (package
     (name "r-earthtide")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earthtide" version))
        (sha256
-        (base32 "17jdf7kl77pd0l6lkaki3niz4d37frwf3i92nlr6z0c7dw7midr1"))))
+        (base32 "1hwqxv1aw5ibx0lxh7q25a5ny17kqxq76nc1pn0pb767fr8l5z3c"))))
     (properties `((upstream-name . "earthtide")))
     (build-system r-build-system)
     (arguments

@@ -4653,13 +4653,13 @@ re-think of rugarch', making use of automatic differentiation for estimation.")
 (define-public r-tsg
   (package
     (name "r-tsg")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsg" version))
        (sha256
-        (base32 "0dxqh5gkxdjihyrjsqkyi04hgxlavwiybfc4blq2xzzcp9mwbqx3"))))
+        (base32 "1ghasjn5670xxx1zgf3wr1m1qpba670z2ghr3nawwji1qyf8czl5"))))
     (properties `((upstream-name . "tsg")))
     (build-system r-build-system)
     (arguments
@@ -4671,6 +4671,7 @@ re-think of rugarch', making use of automatic differentiation for estimation.")
                              r-rlang
                              r-purrr
                              r-openxlsx
+                             r-lifecycle
                              r-jsonlite
                              r-haven
                              r-glue
@@ -7529,13 +7530,13 @@ application of the method can be found in Danaei et al (2013)
 (define-public r-triadsim
   (package
     (name "r-triadsim")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TriadSim" version))
        (sha256
-        (base32 "0r9p50vw2gcbm02vl24q4g1vj46ll0v1vvxi2ip1k73hymv6pz3g"))))
+        (base32 "14a9v6ifbg1kmgb3299r3rfxdqqj4ay7z6bjf2jh51zm4zcf7kkc"))))
     (properties `((upstream-name . "TriadSim")))
     (build-system r-build-system)
     (arguments
@@ -19725,13 +19726,13 @@ filtering, joining and summarising Earth Engine image collections.")
 (define-public r-tidyredcap
   (package
     (name "r-tidyredcap")
-    (version "1.1.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyREDCap" version))
        (sha256
-        (base32 "0z9vjrm7rnqp322w1l6pby233rnbfp5b8cg8ywybsh9113r209gf"))))
+        (base32 "0pdwrf9d0ad9sv5f7cly4x8ycnswbq8vmw3k7w496k1xfwki5asy"))))
     (properties `((upstream-name . "tidyREDCap")))
     (build-system r-build-system)
     (arguments
@@ -19746,7 +19747,9 @@ filtering, joining and summarising Earth Engine image collections.")
                              r-redcapr
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-labelvector
+                             r-keyring
                              r-janitor
                              r-dplyr
                              r-cli))
@@ -23101,13 +23104,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.3.6")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "0ly304pskng6xcffi0h9wbknd82pdsyjqw1y07wbgsl28f6mavis"))))
+        (base32 "0qyx7161ll25axv2li14x6g1ibm352hilpd6b7zj74fzks66jaha"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -23115,6 +23118,7 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpp
+                             r-pak
                              r-matrix
                              r-foreach
                              r-doparallel
@@ -23131,13 +23135,13 @@ computational tasks to streamline workflows.")
 (define-public r-thisplot
   (package
     (name "r-thisplot")
-    (version "0.3.2")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisplot" version))
        (sha256
-        (base32 "03wy66w094ff7582kpdhr27infihi49f6cv03m121hgb9sqrxfa6"))))
+        (base32 "1ilkmcxjg28rbd5bz3z06ig2ifpa2yb0hh2kfzg954f291f6wrl9"))))
     (properties `((upstream-name . "thisplot")))
     (build-system r-build-system)
     (arguments
@@ -23146,9 +23150,10 @@ computational tasks to streamline workflows.")
     (propagated-inputs (list r-thisutils
                              r-patchwork
                              r-igraph
-                             r-htmltools
                              r-gtable
+                             r-ggrepel
                              r-ggplot2
+                             r-geomtextpath
                              r-cli))
     (home-page "https://mengxu98.github.io/thisplot/")
     (synopsis "Utility Functions for Plotting")
@@ -24954,13 +24959,13 @@ found in the paper from Mihalcea, Rada & Tarau, Paul (2004)
 (define-public r-textpress
   (package
     (name "r-textpress")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textpress" version))
        (sha256
-        (base32 "1wxsqgpqrcwr3p3w2csq3g9312dfnv6nfygbirs3l12j4pr3aykj"))))
+        (base32 "0r2w885c8hw691zwczjfynb97pwmcpdx7m3sfx7pzr167ab9m2xd"))))
     (properties `((upstream-name . "textpress")))
     (build-system r-build-system)
     (arguments
@@ -24979,11 +24984,14 @@ found in the paper from Mihalcea, Rada & Tarau, Paul (2004)
     (home-page "https://github.com/jaytimm/textpress")
     (synopsis "Lightweight and Versatile NLP Toolkit")
     (description
-     "This package provides a simple Natural Language Processing (NLP) toolkit focused
-on search-centric workflows with minimal dependencies.  The package offers key
-features for web scraping, text processing, corpus search, and text embedding
-generation via the @code{HuggingFace} API
-<https://huggingface.co/docs/api-inference/index>.")
+     "This package provides a lightweight toolkit for text retrieval and NLP with a
+consistent and predictable API organized around four actions: fetching, reading,
+processing, and searching.  Functions cover the full pipeline from web data
+acquisition to text processing and indexing.  Multiple search strategies are
+supported including regex, BM25 keyword ranking, cosine similarity, and
+dictionary matching.  Pipe-friendly with no heavy dependencies and all outputs
+are plain data frames.  Also useful as a building block for retrieval-augmented
+generation pipelines and autonomous agent workflows.")
     (license license:expat)))
 
 (define-public r-textometry
@@ -29679,13 +29687,13 @@ frequencies.")
 (define-public r-tdastats
   (package
     (name "r-tdastats")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDAstats" version))
        (sha256
-        (base32 "1zmickqk60vm9rzy67hib835v3c45aqjk441p31vpbvhbiy58nq5"))))
+        (base32 "0mfqmw5aclzzf9v7qm3ajxvsvc8bb6blrswi111acz4knqzkpqv2"))))
     (properties `((upstream-name . "TDAstats")))
     (build-system r-build-system)
     (arguments
@@ -29693,7 +29701,7 @@ frequencies.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rrrlw/TDAstats")
+    (home-page "https://tdaverse.github.io/TDAstats/")
     (synopsis "Pipeline for Topological Data Analysis")
     (description
      "This package provides a comprehensive toolset for any @code{useR} conducting
@@ -30356,6 +30364,33 @@ detailed in: Hejblum, Skinner & Thiebaut (2015) <doi:
      "Differential analysis of tumor tissue immune cell type abundance based on
 RNA-seq gene-level expression from The Cancer Genome Atlas (TCGA;
 <https://pancanatlas.xenahubs.net>) database.")
+    (license license:gpl3)))
+
+(define-public r-tcgaretriever
+  (package
+    (name "r-tcgaretriever")
+    (version "1.10.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TCGAretriever" version))
+       (sha256
+        (base32 "1mg32dckd4c46x4k5d5dvmwwagmj9fmh2ydalsgpss2lcg2ha822"))))
+    (properties `((upstream-name . "TCGAretriever")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2 r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.data-pulse.com/dev_site/TCGAretriever/")
+    (synopsis
+     "Retrieve Genomic and Clinical Data from CBioPortal Including TCGA Data")
+    (description
+     "The Cancer Genome Atlas (TCGA) is a program aimed at improving our understanding
+of Cancer Biology.  Several TCGA Datasets are available online.  TCGAretriever
+helps accessing and downloading TCGA data hosted on @code{cBioPortal} via its
+Web Interface (see <https://www.cbioportal.org/> for more information).")
     (license license:gpl3)))
 
 (define-public r-tcftt

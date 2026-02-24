@@ -516,13 +516,13 @@ Welch-Satterthwaite approach described in Welch (1947)
 (define-public r-wsrf
   (package
     (name "r-wsrf")
-    (version "1.7.31")
+    (version "1.7.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wsrf" version))
        (sha256
-        (base32 "0q1rd84lwimncz0x38i8k39hqrgnkv6ymhass0i0sf1frvpqs46p"))))
+        (base32 "1a46rdxrwf5vccx00ddsad4zz2x73hl11if8kyhfg22dr1kq1j1y"))))
     (properties `((upstream-name . "wsrf")))
     (build-system r-build-system)
     (arguments
@@ -2868,13 +2868,13 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.19")
+    (version "0.1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worcs" version))
        (sha256
-        (base32 "1q41ijd2pl8bdyv2nf61yh07n2nm9zgqd4n3zlrq357izbj5pl3j"))))
+        (base32 "0h9wrhg5p5ps1qik9rlnddqjqicf00wrrl9x5cvn9007p5k18bpa"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (arguments
@@ -2885,6 +2885,7 @@ given parallel corpus.")
                              r-usethis
                              r-tinytex
                              r-rticles
+                             r-rprojroot
                              r-rmarkdown
                              r-rlang
                              r-renv
@@ -2906,7 +2907,7 @@ RStudio project template, several convenience functions, and all dependencies
 required to make your project reproducible and transparent.  WORCS is explained
 in the tutorial paper by Van Lissa, Brandmaier, Brinkman, Lamprecht, Struiksma,
 & Vreede (2021). <doi:10.3233/DS-210031>.")
-    (license license:gpl3+)))
+    (license license:cc0)))
 
 (define-public r-wooldridge
   (package

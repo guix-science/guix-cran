@@ -2887,6 +2887,32 @@ estimating equations, and different bias-corrected variance estimators such as
 BC1, BC2, and BC3.")
     (license license:gpl2+)))
 
+(define-public r-ort
+  (package
+    (name "r-ort")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ort" version))
+       (sha256
+        (base32 "0h07ds57bm02n027y4ail5cihzl910fgffhlsj4j089yl94ya39b"))))
+    (properties `((upstream-name . "ort")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-imager))
+    (home-page "https://cran.r-project.org/package=ort")
+    (synopsis "Create a Data Frame Representation of an Image")
+    (description
+     "Takes images, imported via imager', and converts them into a data frame that can
+be plotted to look like the imported image.  This can be used for creating data
+that looks like a specific image.  Additionally, images with color and alpha
+channels can be converted to grayscale in preparation for converting to the data
+frame format.")
+    (license license:expat)))
+
 (define-public r-orsk
   (package
     (name "r-orsk")
@@ -10560,13 +10586,13 @@ functionality is supported.")
 (define-public r-omophub
   (package
     (name "r-omophub")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omophub" version))
        (sha256
-        (base32 "0a3g07zfbkq2r2w6ybfffgx10mp9cnci63m93n89ksmh9gm7r9nf"))))
+        (base32 "1mnwgjsrqwdpp81nsp5gx3xp03ai5blmd1g12pgny4dj5r58vzwg"))))
     (properties `((upstream-name . "omophub")))
     (build-system r-build-system)
     (arguments
@@ -10585,9 +10611,10 @@ functionality is supported.")
     (synopsis "R Client for the 'OMOPHub' Medical Vocabulary API")
     (description
      "This package provides an R interface to the OMOPHub API for accessing OHDSI
-ATHENA standardized medical vocabularies.  Supports concept search, vocabulary
-exploration, hierarchy navigation, relationship queries, and concept mappings
-with automatic pagination and rate limiting.")
+ATHENA standardized medical vocabularies.  Supports concept search, semantic
+search using neural embeddings, concept similarity, vocabulary exploration,
+hierarchy navigation, relationship queries, and concept mappings with automatic
+pagination and rate limiting.")
     (license license:expat)))
 
 (define-public r-omopgenerics
@@ -14087,47 +14114,6 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
 <doi:10.1111/2041-210X.13732>, Fukaya and Hasebe (2025)
 <doi:10.1002/1438-390X.12219>.")
     (license license:gpl3+)))
-
-(define-public r-occcite
-  (package
-    (name "r-occcite")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "occCite" version))
-       (sha256
-        (base32 "1n3861ipa90w4gvd6b9yp457krq9zf17bqnq6bj0398j61957pxa"))))
-    (properties `((upstream-name . "occCite")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tidyr
-                             r-stringr
-                             r-rpostgresql
-                             r-rlang
-                             r-rgbif
-                             r-refmanager
-                             r-rcolorbrewer
-                             r-lubridate
-                             r-leaflet
-                             r-htmltools
-                             r-ggplot2
-                             r-dplyr
-                             r-dbi
-                             r-curl
-                             r-bien
-                             r-bib2df))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://docs.ropensci.org/occCite/")
-    (synopsis "Querying and Managing Large Biodiversity Occurrence Datasets")
-    (description
-     "Facilitates the gathering of biodiversity occurrence data from disparate
-sources.  Metadata is managed throughout the process to facilitate reporting and
-enhanced ability to repeat analyses.")
-    (license license:gpl3)))
 
 (define-public r-occ
   (package

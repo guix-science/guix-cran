@@ -1679,6 +1679,42 @@ adopted to to update the model parameters and draw imputations of the coarse
 data.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-mvngmod
+  (package
+    (name "r-mvngmod")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MVNGmod" version))
+       (sha256
+        (base32 "02yrjz70jqsmmmp1q1dby5i3n23hf0ls1dq181vsgj8kypz5641y"))))
+    (properties `((upstream-name . "MVNGmod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-pracma
+                             r-maxlik
+                             r-matlib
+                             r-distributionutils
+                             r-clustergeneration
+                             r-bessel))
+    (home-page "https://github.com/soonsk-vcu/MVNGmod")
+    (synopsis "Matrix-Variate Non-Gaussian Linear Regression Models")
+    (description
+     "An implementation of the expectation conditional maximization (ECM) algorithm
+for matrix-variate variance gamma (MVVG) and normal-inverse Gaussian (MVNIG)
+linear models.  These models are designed for settings of multivariate analysis
+with clustered non-uniform observations and correlated responses.  The package
+includes fitting and prediction functions for both models, and an example
+dataset from a periodontal on Gullah-speaking African Americans, with responses
+in gaad_res', and covariates in gaad_cov'.  For more details on the
+matrix-variate distributions used, see Gallaugher & @code{McNicholas} (2019)
+<doi:10.1016/j.spl.2018.08.012>.")
+    (license license:expat)))
+
 (define-public r-mvnggrad
   (package
     (name "r-mvnggrad")
@@ -1955,19 +1991,20 @@ tubes.  Directional and other multivariate histograms are provided.")
 (define-public r-mvmapit
   (package
     (name "r-mvmapit")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvMAPIT" version))
        (sha256
-        (base32 "1ab4snxbw9p80cs7d6fnxl7cv20l1h2b243q2nj50yh6xirx2a0h"))))
+        (base32 "1fmi58802zl54yndxyy48j5w8wb4zm2i7ik7az2gczags89469sd"))))
     (properties `((upstream-name . "mvMAPIT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-truncnorm
+                             r-tidyr
                              r-testthat
                              r-rcppspdlog
                              r-rcppprogress
@@ -2008,7 +2045,8 @@ variance component estimation algorithm for efficient parameter inference and
 P-value computation.  Together with reasonable model approximations, our
 proposed approach is scalable to moderately sized genome-wide association
 studies.  Crawford et al. (2017) <doi:10.1371/journal.pgen.1006869>.  Stamp et
-al. (2023) <doi:10.1093/g3journal/jkad118>.")
+al. (2023) <doi:10.1093/g3journal/jkad118>.  Stamp et al. (2025)
+<doi:10.1016/j.ajhg.2025.07.004>.")
     (license license:gpl3+)))
 
 (define-public r-mvlswimpute
@@ -30717,13 +30755,13 @@ Data., Journal of Statistical Software, 63(3), 1-25.,
 (define-public r-micromap
   (package
     (name "r-micromap")
-    (version "1.9.11")
+    (version "1.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromap" version))
        (sha256
-        (base32 "0k0vx4y0w45bs48c6gdjcysv44zd9dn4rfn8bd1pbk78rh386cx8"))))
+        (base32 "0l8kviifrdd68k8fi2byr9r5wnxqbjs5w5hwcizadp3zva2cfprc"))))
     (properties `((upstream-name . "micromap")))
     (build-system r-build-system)
     (arguments
@@ -39711,13 +39749,13 @@ from existing R packages, and some data donations.")
 (define-public r-medicalcoder
   (package
     (name "r-medicalcoder")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medicalcoder" version))
        (sha256
-        (base32 "0ri2a3li1ld5fr6ww7vi5dm88xmzfwrdyagf7gqpylzb3bl8lwz2"))))
+        (base32 "1maksifn2440dmp55qr2lz7ss2hmcz6qvl5s8vrx3g7hcsvw4s1j"))))
     (properties `((upstream-name . "medicalcoder")))
     (build-system r-build-system)
     (arguments
@@ -39725,13 +39763,15 @@ from existing R packages, and some data donations.")
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "http://www.peteredewitt.com/medicalcoder/")
-    (synopsis "Package for Working with ICD Codes and Comorbidity Algorithms")
+    (synopsis
+     "Unified and Longitudinally Aware Framework for ICD-Based Comorbidity Assessment")
     (description
-     "This package provides tools for working with medical coding schemas such as the
-International Classification of Diseases (ICD).  Includes functions for
-comorbidity classification algorithms such as the Pediatric Complex Chronic
-Conditions (PCCC), Charlson, and Elixhauser indices.")
-    (license license:gpl2)))
+     "This package provides comorbidity classification algorithms such as the
+Pediatric Complex Chronic Conditions (PCCC), Charlson, and Elixhauser indices,
+supports longitudinal comorbidity flagging across encounters, and includes
+utilities for working with medical coding schemas such as the International
+Classification of Diseases (ICD).")
+    (license license:bsd-3)))
 
 (define-public r-mediationsens
   (package
@@ -41571,13 +41611,13 @@ significance level of the difference.")
 (define-public r-mde
   (package
     (name "r-mde")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mde" version))
        (sha256
-        (base32 "121bzypndsx4abls1f7rjrvg98rqkb155vd5aiql8vi1lwgzy9jl"))))
+        (base32 "1033j7pdz6lq2xjw2xw7jzczp6zwzmslqapvpbs2nfwmbyhz57j8"))))
     (properties `((upstream-name . "mde")))
     (build-system r-build-system)
     (arguments
@@ -46491,13 +46531,13 @@ all-pairs-similarity for a given window size for time series data.")
 (define-public r-matrixnormal
   (package
     (name "r-matrixnormal")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixNormal" version))
        (sha256
-        (base32 "0l89s33sjxjb7dyzfny6v7cjw8qmlps4z1bjmlzvcka4qbn6kc2z"))))
+        (base32 "0zagh4mx356nlcpjhc7kf3m40lbdjahjnf55i1w71p24hqlrccx0"))))
     (properties `((upstream-name . "matrixNormal")))
     (build-system r-build-system)
     (arguments
@@ -50838,13 +50878,13 @@ the R console, in R Markdown documents and in Shiny apps.")
 (define-public r-mapboxapi
   (package
     (name "r-mapboxapi")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapboxapi" version))
        (sha256
-        (base32 "1sf01288m3hix7mgkp529vasnmxs1qw508v9i5w931nla03wsl3h"))))
+        (base32 "0nxs3n23v3y1rq31mh4zsbldrn038d1cji14d69vfxjd8b657mqy"))))
     (properties `((upstream-name . "mapboxapi")))
     (build-system r-build-system)
     (arguments
@@ -53039,6 +53079,48 @@ viewer pane, and send (draft) email using gmailr'.")
      "Collect your data on digital marketing campaigns from Mailchimp using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
+
+(define-public r-maidr
+  (package
+    (name "r-maidr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maidr" version))
+       (sha256
+        (base32 "1zya9ff0n2lyxy9hzajdhijfsgba5fpc0qkvs3zxzvrvamaqsgyi"))))
+    (properties `((upstream-name . "maidr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-shiny
+                             r-rlang
+                             r-r6
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-gridsvg
+                             r-ggplotify
+                             r-ggplot2
+                             r-curl
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/xability/r-maidr")
+    (synopsis "Multimodal Access and Interactive Data Representation")
+    (description
+     "This package provides accessible, interactive visualizations through the MAIDR
+(Multimodal Access and Interactive Data Representation) system.  Converts
+ggplot2 and Base R plots into accessible HTML/SVG formats with keyboard
+navigation, screen reader support, and sonification capabilities.  Supports bar
+charts (simple, grouped, stacked), histograms, line plots, scatter plots, box
+plots, heat maps, density/smooth curves, faceted plots, multi-panel layouts
+(including patchwork), and multi-layered plot combinations.  Enables data
+exploration for users with visual impairments through multiple sensory
+modalities.  For more details see the MAIDR project <https://maidr.ai/>.")
+    (license license:gpl3+)))
 
 (define-public r-maictools
   (package
