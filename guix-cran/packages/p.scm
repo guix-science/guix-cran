@@ -19776,6 +19776,38 @@ distribution.  More information on the implementation can be found at Conrad J.
 Burden (2014) <@code{arXiv:1406.2780>}.")
     (license license:gpl2+)))
 
+(define-public r-poly4at
+  (package
+    (name "r-poly4at")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Poly4AT" version))
+       (sha256
+        (base32 "05bk57007bwhsw7qsizpk2ymzzz891whlij2wycz285rr72invxv"))))
+    (properties `((upstream-name . "Poly4AT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinydashboard
+                             r-shiny
+                             r-sf
+                             r-readxl
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-geojsonsf
+                             r-dt))
+    (home-page "https://github.com/farmse988/Poly4AT")
+    (synopsis "Access 'INVEKOS' API for Field Polygons")
+    (description
+     "This package provides a shiny app that allows to access and use the INVEKOS API
+for field polygons in Austria.  API documentation is available at
+<https://gis.lfrz.gv.at/api/geodata/i009501/ogc/features/v1/>.")
+    (license license:expat)))
+
 (define-public r-polminer
   (package
     (name "r-polminer")
@@ -26600,13 +26632,13 @@ CRAN/Bioconductor ecosystems for many old R versions.")
 (define-public r-pkglite
   (package
     (name "r-pkglite")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkglite" version))
        (sha256
-        (base32 "1163hjqlpryzrjnsxylsr7s50bxhb6y679dyhhkxak045l922c4a"))))
+        (base32 "1qnfbsv57ly2d1d4q449n45wkcm3zsg9qv88651i5vxl3dz36kk0"))))
     (properties `((upstream-name . "pkglite")))
     (build-system r-build-system)
     (arguments
@@ -33947,6 +33979,46 @@ R.D.P.(2022)<doi:10.21704/rfp.v37i3.1956>.")
 comprehension.")
     (license license:gpl2)))
 
+(define-public r-perumammals
+  (package
+    (name "r-perumammals")
+    (version "0.0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "perumammals" version))
+       (sha256
+        (base32 "0d3zz5x4hwby6acp03aapapqbiq0p5gx7p6bnrsjw2993rcy52ih"))))
+    (properties `((upstream-name . "perumammals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-memoise
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaulESantos/perumammals")
+    (synopsis
+     "Taxonomic Backbone and Name Validation Tools for Mammals of Peru")
+    (description
+     "This package provides a curated taxonomic backbone of mammal species recorded in
+Peru, based on the checklist published by Pacheco and collaborators (2021)
+<doi:10.15381/rpb.v28i4.21019>.  The package includes standardized species data,
+occurrence records by ecological regions, endemic status, and tools for
+validating and matching scientific names through exact and approximate string
+procedures.  It is designed as a lightweight and reliable reference for
+ecological, environmental, biogeographical, and conservation workflows that
+require verified species information for Peruvian mammals.")
+    (license license:expat)))
+
 (define-public r-peruapis
   (package
     (name "r-peruapis")
@@ -40450,6 +40522,29 @@ method can be applied to analyze phase II randomized clinical trials with the
 endpoints being time to treatment response and time to progression or death.")
     (license license:gpl2+)))
 
+(define-public r-pbiparams
+  (package
+    (name "r-pbiparams")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pbiparams" version))
+       (sha256
+        (base32 "0nkzkjj0rlxzxykps8xdr500y1ycyd7wl9116jlihjn1hgb71rfg"))))
+    (properties `((upstream-name . "pbiparams")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=pbiparams")
+    (synopsis "Safe Parameter Extraction for Power BI R Scripts")
+    (description
+     "Safely extracts and coerces values from a Power BI parameter table (one row,
+multiple columns) without string concatenation or injection of raw values into
+scripts.")
+    (license license:expat)))
+
 (define-public r-pbimisc
   (package
     (name "r-pbimisc")
@@ -41047,13 +41142,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.4.5")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1awx5pjsh022bs45xzhhppp17rskbjgsksqby6zrw6700x07if7r"))))
+        (base32 "0g8h3pnrahzg93js9i3fk1hv448945n24yxvynnklawqamjmffba"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments
@@ -41330,13 +41425,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "9.3.0")
+    (version "9.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "1n3iyib529cb1dr5gdpiv95khad6lli3jqx99yqaph2c43xqlyib"))))
+        (base32 "0k5ppdclhy9gnmgqgxhf8kax6g4c30d0nfwxcfazi9rg8yq5wp78"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments

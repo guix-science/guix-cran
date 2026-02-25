@@ -7822,6 +7822,49 @@ Network or ANN and Support Vector Regression or SVR) models.  More information
 can be obtained from Paul and Garai (2022) <doi:10.1007/s41096-022-00128-3>.")
     (license license:gpl3)))
 
+(define-public r-aridagri
+  (package
+    (name "r-aridagri")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aridagri" version))
+       (sha256
+        (base32 "0bm9fr03fbwas94x9l0w09jmsn794yf3vasfdl01vd9ybsx00wi3"))))
+    (properties `((upstream-name . "aridagri")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/lalitrolaniya/aridagri")
+    (synopsis "Comprehensive Statistical Tools for Agricultural Research")
+    (description
+     "This package provides a comprehensive suite of statistical and analytical tools
+for agricultural research.  Includes complete analysis of variance (ANOVA)
+functions for all experimental designs: Completely Randomized Design (CRD),
+Randomized Block Design (RBD), Pooled RBD, Split Plot with all variations,
+Split-Split Plot, Strip Plot, Latin Square, Factorial, Augmented, and Alpha
+Lattice, with proper error terms and comprehensive Standard Error (SE) and
+Critical Difference (CD) calculations.  Features multiple post-hoc tests: Least
+Significant Difference (LSD), Duncan Multiple Range Test (DMRT), Tukey Honestly
+Significant Difference (HSD), Student-Newman-Keuls (SNK), Scheffe, Bonferroni,
+and Dunnett, along with assumption checking and publication-ready output.
+Advanced methods include stability analysis using Eberhart-Russell regression,
+Additive Main Effects and Multiplicative Interaction (AMMI), Finlay-Wilkinson
+regression, Shukla stability variance, Wricke ecovalence, Coefficient of
+Variation (CV), and Cultivar Superiority Index as described in Eberhart and
+Russell (1966) <doi:10.2135/cropsci1966.0011183X000600010011x>.  Thermal indices
+include Growing Degree Days (GDD), Heliothermal Units (HTU), Photothermal Units
+(PTU), and Heat Use Efficiency (HUE).  Crop growth analysis covers Crop Growth
+Rate (CGR), Relative Growth Rate (RGR), Net Assimilation Rate (NAR), and Leaf
+Area Index (LAI).  Also provides harvest index, yield gap analysis, economic
+efficiency indices (Benefit-Cost ratio), nutrient use efficiency calculations,
+correlation matrix, Principal Component Analysis (PCA), path analysis, and
+Structural Equation Modeling (SEM).  Statistical methods follow Gomez and Gomez
+(1984, ISBN:0471870927) and Panse and Sukhatme (1985, ISBN:8170271169).")
+    (license license:gpl3)))
+
 (define-public r-aribrain
   (package
     (name "r-aribrain")
@@ -10701,6 +10744,41 @@ Collister, Liu, and Clifton (2022) <doi:10.3389/fgene.2022.818574>.")
      "This package provides a few functions and several data set for the Springer book
 Applied Predictive Modeling'.")
     (license license:gpl2)))
+
+(define-public r-applicable
+  (package
+    (name "r-applicable")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "applicable" version))
+       (sha256
+        (base32 "0rf7w239wm46id6yb54cqxrzrv8dx69jih8c7la68wjiw2pmgc2q"))))
+    (properties `((upstream-name . "applicable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-proxyc
+                             r-matrix
+                             r-hardhat
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/tidymodels/applicable")
+    (synopsis "Compilation of Applicability Domain Methods")
+    (description
+     "This package provides a modeling package compiling applicability domain methods
+in R. It combines different methods to measure the amount of extrapolation new
+samples can have from the training set.  See <doi:10.4018/IJQSPR.2016010102> for
+an overview of applicability domains.")
+    (license license:expat)))
 
 (define-public r-appleadsr
   (package
@@ -18913,34 +18991,6 @@ explanation of all concepts, see Thomson (2024)
 <doi:10.1016/j.mathsocsci.2024.03.007>.")
     (license license:gpl3)))
 
-(define-public r-airnow
-  (package
-    (name "r-airnow")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "airnow" version))
-       (sha256
-        (base32 "0dpx2hkh0y6769pi8xzyi327lygxysckqz85z40ps50ghw02r8bh"))))
-    (properties `((upstream-name . "airnow")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr2
-                             r-glue
-                             r-cli))
-    (home-page "https://github.com/briandconnelly/airnow")
-    (synopsis "Retrieve 'AirNow' Air Quality Observations and Forecasts")
-    (description
-     "Retrieve air quality data via the @code{AirNow} <https://www.airnow.gov/> API.")
-    (license license:expat)))
-
 (define-public r-airmonitor
   (package
     (name "r-airmonitor")
@@ -21280,13 +21330,13 @@ reanalysis\"
 (define-public r-afttest
   (package
     (name "r-afttest")
-    (version "4.5.2.1")
+    (version "4.5.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afttest" version))
        (sha256
-        (base32 "10j10dc6paxvpb1q9ar3z2ldiqwv2rqkl85qraqn0jiw47kdmr3y"))))
+        (base32 "0d7wl10jyci3mgwlmpsc6lb7w0qzrcdhi8akk51x5va6zqii404m"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
     (arguments
@@ -21943,13 +21993,13 @@ estimates open water evaporation using the aerodynamic mass transfer approach.")
 (define-public r-aerobiology
   (package
     (name "r-aerobiology")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AeRobiology" version))
        (sha256
-        (base32 "14d5gjx53v2wfij8m4br0k7lfi6x2frc8ny1li4g8c05qv2dvnbb"))))
+        (base32 "12dgxdd7bc9awnnjxfq7cx1lnrfvjqd4giq50idwqz6r0dyqazgv"))))
     (properties `((upstream-name . "AeRobiology")))
     (build-system r-build-system)
     (arguments
@@ -22978,42 +23028,6 @@ noise and signal, ADPF outperformed both optimally chosen and sub-optimally
 chosen fixed-degree Savitzky-Golay filters.  See Barak, P. (1995)
 <doi:10.1021/ac00113a006> for more information.")
     (license license:gpl3)))
-
-(define-public r-adpclust
-  (package
-    (name "r-adpclust")
-    (version "0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ADPclust" version))
-       (sha256
-        (base32 "0s47cpsjykn7imsssa9w9b6g9d1sz2yah78yqzxmh0i3lqd757c1"))))
-    (properties `((upstream-name . "ADPclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-knitr r-fields r-dplyr r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ethanyxu/ADPclust")
-    (synopsis "Fast Clustering Using Adaptive Density Peak Detection")
-    (description
-     "An implementation of ADPclust clustering procedures (Fast Clustering Using
-Adaptive Density Peak Detection).  The work is built and improved upon the idea
-of Rodriguez and Laio (2014)<DOI:10.1126/science.1242072>.  ADPclust clusters
-data by finding density peaks in a density-distance plot generated from local
-multivariate Gaussian density estimation.  It includes an automatic centroids
-selection and parameter optimization algorithm, which finds the number of
-clusters and cluster centroids by comparing average silhouettes on a grid of
-testing clustering results; It also includes a user interactive algorithm that
-allows the user to manually selects cluster centroids from a two dimensional
-\"density-distance plot\".  Here is the research article associated with this
-package: \"Wang, Xiao-Feng, and Yifan Xu (2015)<DOI:10.1177/0962280215609948>
-Fast clustering using adaptive density peak detection.\" Statistical methods in
-medical research\".  url:
-http://smm.sagepub.com/content/early/2015/10/15/0962280215609948.abstract.")
-    (license license:gpl2+)))
 
 (define-public r-adp
   (package
@@ -25373,33 +25387,6 @@ Developed as part of the INCEPT (Intensive Care Platform Trial) project
 (<https://incept.dk/>), primarily supported by a grant from Sygeforsikringen
 \"danmark\" (<https://www.sygeforsikring.dk/>).")
     (license license:gpl3+)))
-
-(define-public r-adaptmt
-  (package
-    (name "r-adaptmt")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "adaptMT" version))
-       (sha256
-        (base32 "1yllz1zd4cryf5bj8b2lcrj6zl79yjkllyh9p02ikryy5qmg419b"))))
-    (properties `((upstream-name . "adaptMT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://arxiv.org/abs/1609.06035")
-    (synopsis
-     "Adaptive P-Value Thresholding for Multiple Hypothesis Testing with Side Information")
-    (description
-     "Implementation of adaptive p-value thresholding (@code{AdaPT}), including both a
-framework that allows the user to specify any algorithm to learn local false
-discovery rate and a pool of convenient functions that implement specific
-algorithms.  See Lei, Lihua and Fithian, William (2016)
-<@code{arXiv:1609.06035>}.")
-    (license license:expat)))
 
 (define-public r-adaptmcmc
   (package

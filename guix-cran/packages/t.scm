@@ -8951,19 +8951,19 @@ EPA-454/B-96-001.  Weiss A, Norman JM (1985) Agricultural and Forest Meteorology
 (define-public r-treedbalance
   (package
     (name "r-treedbalance")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treeDbalance" version))
        (sha256
-        (base32 "0i2sqvqjiw26z3fnbz6h3ki2yjhy0g33rr7wd4bl4vwvr833z7c2"))))
+        (base32 "0kyls0zy7s7c1sqkcaz5290faavp9zdmk9qzdp2v42izsinkgrc6"))))
     (properties `((upstream-name . "treeDbalance")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rgl))
+    (propagated-inputs (list r-rgl r-r-matlab))
     (home-page "https://cran.r-project.org/package=treeDbalance")
     (synopsis "Computation of 3D Tree Imbalance")
     (description
@@ -8974,25 +8974,30 @@ format for rooted 3D tree objects.  Moreover, it encompasses an example dataset
 of 3D models of 63 beans in phylo3D format.  Please note that this R package was
 developed alongside the project described in the manuscript Measuring 3D tree
 imbalance of plant models using graph-theoretical approaches by M. Fischer, S.
-Kersting, and L. KÃ¼hn (2023) <@code{arXiv:2307.14537>}, which provides precise
-mathematical definitions of the measurements.  Furthermore, the package contains
-several helpful functions, for example, some auxiliary functions for computing
-the ancestors, descendants, and depths of the nodes, which ensures that the
-computations can be done in linear time.  Most functions of @code{treeDbalance}
-require as input a rooted tree in the phylo3D format, an extended phylo format
-(as introduced in the R package ape 1.9 in November 2006).  Such a phylo3D
-object must have at least two new attributes next to those required by the phylo
-format: node.coord', the coordinates of the nodes, as well as edge.weight', the
-literal weight or volume of the edges.  Optional attributes are edge.diam', the
-diameter of the edges, and edge.length', the length of the edges.  For
-visualization purposes one can also specify edge.type', which ranges from normal
-cylinder to bud to leaf, as well as edge.color to change the color of the edge
-depiction.  This project was supported by the joint research project DIG-IT!
-funded by the European Social Fund (ESF), reference: ESF/14-BM-A55-0017/19, and
-the Ministry of Education, Science and Culture of Mecklenburg-Western Pomerania,
-Germany, as well as by the the project @code{ArtIGROW}, which is a part of the
-WIR!-Alliance @code{ArtIFARM} â Artificial Intelligence in Farming funded by
-the German Federal Ministry of Education and Research (FKZ: 03WIR4805).")
+Kersting, and L. KÃ¼hn (2023) <doi:10.48550/@code{arXiv.2307.14537>}, which
+provides precise mathematical definitions of the measurements.  Furthermore, the
+package contains several helpful functions, for example, some auxiliary
+functions for computing the ancestors, descendants, and depths of the nodes,
+which ensures that the computations can be done in linear time, or functions
+that convert existing formats of 3D tree models of other software into the
+phylo3D format.  Moreover, it comprises functions to extract the
+graph-theoretical topology without vertices of in- and out-degree 1 of rooted 3D
+trees as well as to adapt node enumerations to the common phylo format.  Most
+functions of @code{treeDbalance} require as input a rooted tree in the phylo3D
+format, an extended phylo format (as introduced in the R package ape 1.9 in
+November 2006).  Such a phylo3D object must have at least two new attributes
+next to those required by the phylo format: node.coord', the coordinates of the
+nodes, as well as edge.weight', the literal weight or volume of the edges.
+Optional attributes are edge.diam', the diameter of the edges, and edge.length',
+the length of the edges.  For visualization purposes one can also specify
+edge.type', which ranges from normal cylinder to bud to leaf, as well as
+edge.color to change the color of the edge depiction.  This project was
+supported by the joint research project DIG-IT! funded by the European Social
+Fund (ESF), reference: ESF/14-BM-A55-0017/19, and the Ministry of Education,
+Science and Culture of Mecklenburg-Western Pomerania, Germany, as well as by the
+project @code{ArtIGROW}, which is a part of the WIR!-Alliance @code{ArtIFARM}
+â Artificial Intelligence in Farming funded by the German Federal Ministry of
+Education and Research (FKZ: 03WIR4805).")
     (license license:gpl3)))
 
 (define-public r-treedater
@@ -28708,13 +28713,13 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
 (define-public r-teal-widgets
   (package
     (name "r-teal-widgets")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.widgets" version))
        (sha256
-        (base32 "0shka82rz5ci0qqhz9cbv0grs637yd5p48dsxv822kjrp86n4dkw"))))
+        (base32 "0w026nrqgyi8xv6bppab2561ij422gjqlzvxlzqgp6bh9yrzdd5l"))))
     (properties `((upstream-name . "teal.widgets")))
     (build-system r-build-system)
     (arguments
@@ -28724,13 +28729,17 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-styler
+    (propagated-inputs (list r-xml2
+                             r-styler
                              r-shinywidgets
                              r-shinyjs
                              r-shiny
+                             r-rvest
                              r-rtables
                              r-lifecycle
                              r-htmltools
+                             r-gtsummary
+                             r-gt
                              r-ggplot2
                              r-checkmate
                              r-bslib))

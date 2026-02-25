@@ -12305,13 +12305,13 @@ in addition to the carefully selected @code{dittoColors()}.")
 (define-public r-dittodb
   (package
     (name "r-dittodb")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittodb" version))
        (sha256
-        (base32 "0zhg9ihrdp50v0j0lxamhf6gjqrhlk4mxxp59bl27hgda4cbyn9d"))))
+        (base32 "12wykqm04dwkw8f3387ri3sk99yj18w3lp0i2q2z74l3i6rkwyk6"))))
     (properties `((upstream-name . "dittodb")))
     (build-system r-build-system)
     (arguments
@@ -26264,13 +26264,13 @@ the vast majority of the time (>95%).")
 (define-public r-dear
   (package
     (name "r-dear")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deaR" version))
        (sha256
-        (base32 "1jgj4py7x3x08hnbyj0ybjag59qqc7ph12qhxqm1ynmy5q6vswqb"))))
+        (base32 "1qd7fi9n3qf7gkqhaa0m3lw0mzmvzf78p3mcsqlrd22f0sqlxd48"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
     (arguments

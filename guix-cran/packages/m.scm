@@ -17231,13 +17231,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.16")
+    (version "1.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "14h3pk07bwc544lx0b5qlf9l7mj8cn2pnsv61c8gc594272am145"))))
+        (base32 "0whypzqccbhinzd6n6hg576vnsxqfsq5ps0gyghxba5vl140mzgp"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments

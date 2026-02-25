@@ -2027,13 +2027,13 @@ cluster certain effects and to reduce the complexity of the models.")
 (define-public r-btime
   (package
     (name "r-btime")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTIME" version))
        (sha256
-        (base32 "1askqcdjfgpifplal2zwymski0q13hckj8xvwsm0q9g6qwsyw5pr"))))
+        (base32 "07mh9qmqikvwysfwhg0dhcp3x1140gqamcallm0c5calfxcjqhqd"))))
     (properties `((upstream-name . "BTIME")))
     (build-system r-build-system)
     (arguments
@@ -2045,9 +2045,9 @@ cluster certain effects and to reduce the complexity of the models.")
     (synopsis "Bayesian Hierarchical Models for Single-Cell Protein Data")
     (description
      "Bayesian Hierarchical beta-binomial models for modeling cell population to
-predictors/exposures.  This package utilizes runjags to run Gibbs sampling with
-parallel chains.  Options for different covariances/relationship structures
-between parameters of interest.")
+predictors/exposures.  This package utilizes runjags to run Gibbs sampling,
+parallelizing the chains.  Options for different covariances/relationship
+structures between parameters of interest.")
     (license license:expat)))
 
 (define-public r-btergm
@@ -17163,13 +17163,13 @@ continuous data.")
 (define-public r-bincor
   (package
     (name "r-bincor")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BINCOR" version))
        (sha256
-        (base32 "0x2s82jql429shk70bhjdy9kamz8dz5ymsxj6kp8ga1711bpwyq6"))))
+        (base32 "18m7xn8hkj39b6myxahcjzs8cg3yyqnf1rnjqajs16fcwpmjhf2n"))))
     (properties `((upstream-name . "BINCOR")))
     (build-system r-build-system)
     (arguments
@@ -17190,7 +17190,8 @@ functions: @code{bin_cor()} (the main function to build the binned time series),
 @code{plot_ts()} (to plot and compare the irregular and binned time series,
 @code{cor_ts()} (to estimate the correlation between the binned time series) and
 @code{ccf_ts()} (to estimate the cross-correlation between the binned time
-series).")
+series).  A description of the method and package is provided in
+Polanco-MartÃ­nez et al. (2019), <doi:10.32614/RJ-2019-035>.")
     (license license:gpl2+)))
 
 (define-public r-binb
@@ -20854,6 +20855,32 @@ the duration of the trial, in various realistic setting.")
      "Calculate the operating characteristics of the Bayesian Optimal Interval with
 Back Filling Design for dose escalation in early-phase oncology trials.")
     (license license:gpl3+)))
+
+(define-public r-bfbin2arm
+  (package
+    (name "r-bfbin2arm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bfbin2arm" version))
+       (sha256
+        (base32 "093kv42yafxv9pjx9xcf5hf4y1jscnjjflzcg97hm8l7v2w3bj20"))))
+    (properties `((upstream-name . "bfbin2arm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-patchwork r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bfbin2arm")
+    (synopsis "Bayesian Bayes Factor Design for Two-Arm Binomial Trials")
+    (description
+     "Design and analysis of two-arm binomial clinical (phase II) trials using Bayes
+factors.  Implements Bayes factors for point-null and directional hypotheses,
+predictive densities under different hypotheses, and power and sample size
+calibration with optional frequentist type-I error and power.")
+    (license license:gpl3)))
 
 (define-public r-bfast
   (package
@@ -25322,19 +25349,21 @@ the prices (not adjusted for dividends) of the S&P 500 stock market index.")
 (define-public r-baytrends
   (package
     (name "r-baytrends")
-    (version "2.0.12")
+    (version "2.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baytrends" version))
        (sha256
-        (base32 "05gd8i6y5fvkx12v55drff0fqpkg7bs3qjcaqmmcid9sl4168ms8"))))
+        (base32 "00hnl3i5sd25yr33j9qnw1y3rgg05g4ljb6qncil4d5q47pckd0v"))))
     (properties `((upstream-name . "baytrends")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
                              r-sessioninfo
                              r-readxl
                              r-plyr

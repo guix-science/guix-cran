@@ -25917,13 +25917,13 @@ Observational Medical Outcomes Partnership (OMOP) common data model (CDM).")
 (define-public r-cohortbuilder
   (package
     (name "r-cohortbuilder")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cohortBuilder" version))
        (sha256
-        (base32 "0rwqi9sh69j1bx116q41gby7j0lrh81j232xlp003vs4i7pwwx4k"))))
+        (base32 "17w46949f1vjmm4wnzg4v4xws6563pvx0wnmpq419zvrvqifp91q"))))
     (properties `((upstream-name . "cohortBuilder")))
     (build-system r-build-system)
     (arguments
@@ -25939,7 +25939,8 @@ Observational Medical Outcomes Partnership (OMOP) common data model (CDM).")
                              r-glue
                              r-ggplot2
                              r-formatr
-                             r-dplyr))
+                             r-dplyr
+                             r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/r-world-devs/cohortBuilder/")
     (synopsis "Data Source Agnostic Filtering Tools")
@@ -48404,36 +48405,55 @@ methods is given in Galagate (2016)
 (define-public r-causaldisco
   (package
     (name "r-causaldisco")
-    (version "0.9.5")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalDisco" version))
        (sha256
-        (base32 "0dg204gv6bi5jb873k336gcw48yx5bnzsyvvgc6f5yyfjk50609q"))))
+        (base32 "0yci919pb2kc5bz7qdwd2kb0nx7dzzp2njadpl4gig4kwl111wfh"))))
     (properties `((upstream-name . "causalDisco")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rmarkdown
-                             r-rgraphviz
-                             r-rcolorbrewer
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-s7
+                             r-rlang
+                             r-readr
+                             r-r6
+                             r-purrr
                              r-pcalg
-                             r-magick
-                             r-igraph
+                             r-mice
+                             r-micd
                              r-gtools
-                             r-graph
-                             r-clipr))
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-cli
+                             r-checkmate
+                             r-caugi
+                             r-bnlearn))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/disco-coders/causalDisco")
     (synopsis "Tools for Causal Discovery on Observational Data")
     (description
-     "Various tools for inferring causal models from observational data.  The package
-includes an implementation of the temporal Peter-Clark (TPC) algorithm.
-Petersen, Osler and EkstrÃ¸m (2021) <doi:10.1093/aje/kwab087>.  It also includes
-general tools for evaluating differences in adjacency matrices, which can be
-used for evaluating performance of causal discovery procedures.")
+     "This package provides tools for causal structure learning from observational
+data, with emphasis on temporally ordered variables.  The package implements the
+Temporal PeterâClark (TPC) algorithm (Petersen, Osler & EkstrÃ¸m, 2021;
+<doi:10.1093/aje/kwab087>), the Temporal Greedy Equivalence Search (TGES)
+algorithm (Larsen, EkstrÃ¸m & Petersen, 2025;
+<doi:10.48550/@code{arXiv.2502.06232>}) and Temporal Fast Causal Inference
+(TFCI).  It provides a unified framework for specifying background knowledge,
+which can be incorporated into the implemented algorithms from the R packages
+bnlearn (Scutari, 2010; <doi:10.18637/jss.v035.i03>) and pcalg (Kalish et al.,
+2012; <doi:10.18637/jss.v047.i11>), as well as the Java library Tetrad (Scheines
+et al., 1998; <doi:10.1207/s15327906mbr3301_3>).  The package further includes
+utilities for visualization, comparison, and evaluation of graph structures,
+facilitating performance evaluation and methodological studies.")
     (license license:gpl2)))
 
 (define-public r-causaldata

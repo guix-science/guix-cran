@@ -1685,13 +1685,13 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 (define-public r-isubgen
   (package
     (name "r-isubgen")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iSubGen" version))
        (sha256
-        (base32 "0b19g7qhj62f9qb6x5zczrr5d1n7waiaqr410snlrcs9agcww63k"))))
+        (base32 "16ffwcsvmazhz6qqrc79i7y6imshh5psyycaw6sdpxgsy0wbp7zb"))))
     (properties `((upstream-name . "iSubGen")))
     (build-system r-build-system)
     (arguments
@@ -10684,6 +10684,32 @@ influential a (single group of) observation(s) is, several measures of influence
 are common practice, such as Cook's Distance.  In addition, we provide a measure
 of percentage change of the fixed point estimates and a simple procedure to
 detect changing levels of significance.")
+    (license license:gpl3)))
+
+(define-public r-inflongitudinal
+  (package
+    (name "r-inflongitudinal")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Inflongitudinal" version))
+       (sha256
+        (base32 "1sa6v8g8mkvsl1cb7prgrk27sjwkg86817dxigs9zv0rjhgcdhg8"))))
+    (properties `((upstream-name . "Inflongitudinal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mice r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=Inflongitudinal")
+    (synopsis "Detecting Influential Subjects in Longitudinal Data")
+    (description
+     "This package provides methods for detecting influential subjects in longitudinal
+data, particularly when observations are collected at irregular time points.
+The package identifies subjects whose response trajectories deviate
+substantially from population-level patterns, helping to diagnose anomalies and
+undue influence on model estimates.")
     (license license:gpl3)))
 
 (define-public r-inflectssp

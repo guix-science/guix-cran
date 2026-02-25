@@ -4111,32 +4111,32 @@ for characteristic and information curves.  Samejima (2018)
 (define-public r-grpstring
   (package
     (name "r-grpstring")
-    (version "0.3.2")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GrpString" version))
        (sha256
-        (base32 "14ss6assqk6s9kv4bvzlydm8qrbnslm4vj876q5dn2dw4k50dai1"))))
+        (base32 "0nc8j86dd0imbdjsgya7gdd531hj9aj6dfgrmflawbqpv6348874"))))
     (properties `((upstream-name . "GrpString")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-plyr r-cluster))
-    (home-page "https://cran.r-project.org/package=GrpString")
+    (propagated-inputs (list r-plyr))
+    (home-page "https://github.com/dstgithub/GrpString-Shiny")
     (synopsis
-     "Patterns and Statistical Differences Between Two Groups of Strings")
+     "String Patterns and Statistical Differences Between Two Groups of Strings")
     (description
      "This package provides methods include converting series of event names to
-strings, finding common patterns in a group of strings, discovering featured
+strings, finding common patterns in a group of strings, discovering \"unique\"
 patterns when comparing two groups of strings as well as the number and starting
 position of each pattern in each string, obtaining transition matrix, computing
 transition entropy, statistically comparing the difference between two groups of
 strings, and clustering string groups.  Event names can be any action names or
 labels such as events in log files or areas of interest (AOIs) in eye tracking
-research.")
-    (license license:gpl2)))
+research.  An R Shiny application is available on @code{GitHub}.")
+    (license license:expat)))
 
 (define-public r-grpslope
   (package
@@ -13781,19 +13781,20 @@ glycoproteomics analysis workflows.")
 (define-public r-glyparse
   (package
     (name "r-glyparse")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyparse" version))
        (sha256
-        (base32 "1n212gylc5qmi5aj1h6ririagqlqhzvxq9xi56bmk9khqbdnh3yn"))))
+        (base32 "0895068scnnw8kiqyahzjnqqr36k9gdv8z8qfz12sbhfwa95ddrr"))))
     (properties `((upstream-name . "glyparse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-vctrs
+                             r-stringr
                              r-rstackdeque
                              r-rlang
                              r-purrr

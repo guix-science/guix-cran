@@ -9783,29 +9783,25 @@ organizations); extract information, check ID validity and diagnostics.")
 (define-public r-hettx
   (package
     (name "r-hettx")
-    (version "0.1.3")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hettx" version))
        (sha256
-        (base32 "15i9n2fcfbkv11qlgh4gsjvfnzzziwbcn8izzxw2d0kbdhhk7h8c"))))
+        (base32 "12vn9rklg91rg99x0g6jv08s71a627xd9n3bnw73sad4fq6g5v7d"))))
     (properties `((upstream-name . "hettx")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-quantreg
-                             r-purrr
-                             r-plyr
+    (propagated-inputs (list r-quantreg
                              r-mvtnorm
                              r-moments
                              r-mass
                              r-ggplot2
-                             r-formula-tools
+                             r-generics
                              r-foreach
-                             r-dplyr
                              r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hettx")
@@ -9813,13 +9809,13 @@ organizations); extract information, check ID validity and diagnostics.")
      "Fisherian and Neymanian Methods for Detecting and Measuring Treatment Effect Variation")
     (description
      "This package implements methods developed by Ding, Feller, and Miratrix (2016)
-<doi:10.1111/rssb.12124> <@code{arXiv:1412.5000>}, and Ding, Feller, and
-Miratrix (2018) <doi:10.1080/01621459.2017.1407322> <@code{arXiv:1605.06566>}
-for testing whether there is unexplained variation in treatment effects across
-observations, and for characterizing the extent of the explained and unexplained
-variation in treatment effects.  The package includes wrapper functions
-implementing the proposed methods, as well as helper functions for analyzing and
-visualizing the results of the test.")
+<doi:10.1111/rssb.12124> <doi:10.48550/@code{arXiv.1412.5000>}, and Ding,
+Feller, and Miratrix (2018) <doi:10.1080/01621459.2017.1407322>
+<doi:10.48550/@code{arXiv.1605.06566>} for testing whether there is unexplained
+variation in treatment effects across observations, and for characterizing the
+extent of the explained and unexplained variation in treatment effects.  The
+package includes wrapper functions implementing the proposed methods, as well as
+helper functions for analyzing and visualizing the results of the test.")
     (license license:gpl3+)))
 
 (define-public r-hettreatreg

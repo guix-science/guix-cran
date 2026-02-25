@@ -24247,13 +24247,13 @@ time.")
 (define-public r-fastkmedoids
   (package
     (name "r-fastkmedoids")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastkmedoids" version))
        (sha256
-        (base32 "1z98ndxhq2ag870g0xqkw04b4k722994vh0pq46bw8bqc9v7bpkk"))))
+        (base32 "0jdwqgc1rj639rwgcp1zrd9sg34m1fgd73s6387sagyp92nqnl69"))))
     (properties `((upstream-name . "fastkmedoids")))
     (build-system r-build-system)
     (arguments

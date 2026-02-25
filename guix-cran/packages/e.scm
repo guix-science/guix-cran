@@ -2002,6 +2002,52 @@ marginal likelihoods for permutations'.  Publication details will be updated as
 soon as they are finalized.")
     (license license:gpl3)))
 
+(define-public r-expowo
+  (package
+    (name "r-expowo")
+    (version "3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "expowo" version))
+       (sha256
+        (base32 "1a4zh9d5w3lh9g0qk3brwavn6ljmn43k4440all42r2j1nsspgmr"))))
+    (properties `((upstream-name . "expowo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-tibble
+                             r-sp
+                             r-sf
+                             r-scales
+                             r-rnaturalearth
+                             r-rcolorbrewer
+                             r-r-utils
+                             r-pupillometryr
+                             r-plyr
+                             r-magrittr
+                             r-ggplot2
+                             r-flora
+                             r-dplyr
+                             r-data-table
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://dboslab.github.io/expowo/")
+    (synopsis
+     "An R Package for Mining Global Plant Diversity and Distribution Data")
+    (description
+     "This package produces diversity estimates and species lists with associated
+global distribution for any vascular plant family and genus from Plants of the
+World Online database <https://powo.science.kew.org/>, by interacting with the
+source code of each plant taxon page.  It also creates global maps of species
+richness, graphics of species discoveries and name changes over time.  For more
+details: Zuanny, D.C., B.Vilela, P.W.Moonlight, T.E.SÃ¤rkinen, and D.Cardoso.
+2024.  expowo: An R package for mining global plant diversity and distribution
+data.  Applications in Plant Sciences 12: e11609'.")
+    (license license:expat)))
+
 (define-public r-exposr
   (package
     (name "r-exposr")
@@ -10441,13 +10487,13 @@ package includes tests to assess the stability of the equating transformations
 (define-public r-equate
   (package
     (name "r-equate")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equate" version))
        (sha256
-        (base32 "0yjgnhn1hj5rs68qn51caia4zb78hh7vipm4411ng28cn9cxzdm4"))))
+        (base32 "1d9s57qqfwpdb1cwsnzjcnvbkx2drzcv5r9556kblwf747szwq5s"))))
     (properties `((upstream-name . "equate")))
     (build-system r-build-system)
     (arguments

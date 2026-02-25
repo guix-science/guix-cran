@@ -443,13 +443,13 @@ study with RNA-seq data.")
 (define-public r-rxode2ll
   (package
     (name "r-rxode2ll")
-    (version "2.0.13")
+    (version "2.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2ll" version))
        (sha256
-        (base32 "0czg97cyky78564drmdyy4cm7zhxm3ql1jyvcchsk3lx3f9ffwa0"))))
+        (base32 "02y125nmshpmdbrg8k9pa6i22n4c6c024s03lpfrv8r1ly8y2cdl"))))
     (properties `((upstream-name . "rxode2ll")))
     (build-system r-build-system)
     (arguments
@@ -3154,13 +3154,13 @@ analysis are available in : Page, R., Yoshida, R. & Zhang L. (2020)
 (define-public r-rtrng
   (package
     (name "r-rtrng")
-    (version "4.23.1-4")
+    (version "4.23.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTRNG" version))
        (sha256
-        (base32 "1i2xhn4jn39f14mb281hch75l3g3j3fcx5xid781j0vapmxx354m"))))
+        (base32 "17ilpf8bd9mppsknfaqaj2kr1i9hdfp7zh0yxcnv02ygmw5zn1b9"))))
     (properties `((upstream-name . "rTRNG")))
     (build-system r-build-system)
     (arguments
@@ -3436,13 +3436,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "1ij1c57gcjxvjkq9s49p183vd06gjqcw22fwx7la4ikrks38lvyb"))))
+        (base32 "1y26yffzywncl2kbxx61s5h8l7lpghbvd7114zmid2w7j2qxsd0n"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -3454,7 +3454,7 @@ centered on an approach using machine learning for path classification.")
                              r-multcomp
                              r-lmertest
                              r-lme4
-                             r-ggsignif
+                             r-lifecycle
                              r-ggplot2
                              r-emmeans
                              r-dplyr))
@@ -3735,13 +3735,13 @@ fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
 (define-public r-rtmbdist
   (package
     (name "r-rtmbdist")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMBdist" version))
        (sha256
-        (base32 "1dkkcrj0vb6m48mrk5wx9zl0nkmh2kismv87my1idrjiaj8xcfzb"))))
+        (base32 "12v6jsrdn3ay1gw86dz5vh976qcdvf201gh6yb2d6na319vmdy45"))))
     (properties `((upstream-name . "RTMBdist")))
     (build-system r-build-system)
     (arguments
@@ -3754,7 +3754,7 @@ fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
                              r-gamlss-dist
                              r-circular))
     (native-inputs (list r-knitr))
-    (home-page "https://janoleko.github.io/RTMBdist/")
+    (home-page "https://janolefi.github.io/RTMBdist/")
     (synopsis
      "Distributions Compatible with Automatic Differentiation by 'RTMB'")
     (description
@@ -14516,13 +14516,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.24")
+    (version "0.9.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "0v7lckf9n4sjs4y56lgf8x20ngq6kvsrl7pyfwg5sh2kf8ji3lzj"))))
+        (base32 "1vxxx4amhvmqd8hi6s8jq6bisvh8rvzdf8abqrdx72hs7cvachkm"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (arguments
@@ -19541,13 +19541,13 @@ also specify other colours.")
 (define-public r-rniftyreg
   (package
     (name "r-rniftyreg")
-    (version "2.8.4")
+    (version "2.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNiftyReg" version))
        (sha256
-        (base32 "1vj5rr97fzb98ggf013rir1b7i48d1cm90xkzasa3nw066vbgs04"))))
+        (base32 "1nccsh8krs7p1dj2140fvyl4pw6sspfkh2hn5kyk6gbn6jrvdvgm"))))
     (properties `((upstream-name . "RNiftyReg")))
     (build-system r-build-system)
     (arguments
@@ -29149,6 +29149,36 @@ Research Unit TERSANE2 (For 2332, TEmperature Related Stressors in ANcient
 Extinctions).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-rgph
+  (package
+    (name "r-rgph")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgph" version))
+       (sha256
+        (base32 "0wag2126fzzxb5nxnm4hkqk39xkkiz6m8yajf5rgcdv3s5l59r9y"))))
+    (properties `((upstream-name . "rgph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjava r-phutil))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rgph")
+    (synopsis
+     "Pair Critical Points and Compute Persistent Homology of Reeb Graphs")
+    (description
+     "Interface to the @code{ReebGraphPairing} program to compute critical points of
+Reeb graphs following Tu, Hajij, & Rosen (2019)
+<doi:10.1007/978-3-030-33720-9_8> via the @code{rJava} package.  Also store Reeb
+graphs in a minimal S3 class, convert between other network data structures, and
+post-process pairing data to obtain extended persistent homology following
+CarriÃ¨re & Oudot (2018) <doi:10.1007/s10208-017-9370-z>.")
+    (license license:gpl3)))
+
 (define-public r-rgooglefit
   (package
     (name "r-rgooglefit")
@@ -37532,13 +37562,13 @@ heavily on the desc packages.")
 (define-public r-reldists
   (package
     (name "r-reldists")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RelDists" version))
        (sha256
-        (base32 "1dxgn8gs80cvk0i8q1j4fpayazv01hly16jawf32m03irml6kl6c"))))
+        (base32 "10wrfjjqd52zxj5l4vchfwf6w9882bbzknakp8wnc6sz1050zls2"))))
     (properties `((upstream-name . "RelDists")))
     (build-system r-build-system)
     (arguments
@@ -37554,13 +37584,13 @@ heavily on the desc packages.")
                              r-estimationtools
                              r-bbmisc))
     (native-inputs (list r-knitr))
-    (home-page "https://ousuga.github.io/RelDists/")
+    (home-page "https://fhernanb.github.io/RelDists/")
     (synopsis "Estimation for some Reliability Distributions")
     (description
      "Parameters estimation and linear regression models for Reliability distributions
 families reviewed by Almalki & Nadarajah (2014) <doi:10.1016/j.ress.2013.11.010>
-using Generalized Additive Models for Location, Scale and Shape, aka GAMLSS by
-Rigby & Stasinopoulos (2005) <doi:10.1111/j.1467-9876.2005.00510.x>.")
+using Generalized Additive Models for Location, Scale and Shape, GAMLSS by Rigby
+& Stasinopoulos (2005) <doi:10.1111/j.1467-9876.2005.00510.x>.")
     (license license:gpl3)))
 
 (define-public r-relcircle
@@ -43985,13 +44015,13 @@ This project is not affiliated with the Arduino company,
 (define-public r-rduckhts
   (package
     (name "r-rduckhts")
-    (version "0.1.2-0.1.4")
+    (version "0.1.3-0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rduckhts" version))
        (sha256
-        (base32 "11b0y7gz979v07yb8va31winw65sy7nmpjrvpf8ddgb7abahq2ns"))))
+        (base32 "036jx3cs4qgi50jwdh1bp6mr0pwca4q0qqs4d4ckfs143igsa1in"))))
     (properties `((upstream-name . "Rduckhts")))
     (build-system r-build-system)
     (arguments
@@ -46739,13 +46769,13 @@ is generally preferred.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.13")
+    (version "2.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "149fkjrfgqkvlr99c8ri1019hr2lrjfrpsdmnxg447wsvxgm39r2"))))
+        (base32 "08jcal7fin2dk5a350kdf5sq1s2cfr8yx349ggvpl48f8q5dlwdj"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments

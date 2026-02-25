@@ -8043,13 +8043,13 @@ ease and simplicity of the \"sum\" and \"tab\" functions from stata'.")
 (define-public r-sumup
   (package
     (name "r-sumup")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumup" version))
        (sha256
-        (base32 "1qshym8fwx0q8823l2vnpqg74g1cv0fgpf0nmc213cgl4si8qssb"))))
+        (base32 "0lcjvnj7iyrrc47mzi8w3hm4zbkabcgy4l8rap7hkbky4pyjjvji"))))
     (properties `((upstream-name . "sumup")))
     (build-system r-build-system)
     (arguments
@@ -8060,7 +8060,6 @@ ease and simplicity of the \"sum\" and \"tab\" functions from stata'.")
                              r-tidytext
                              r-tidyr
                              r-tibble
-                             r-textclean
                              r-stringr
                              r-rlang
                              r-reticulate
@@ -31673,13 +31672,13 @@ thresholds.  Built on @code{lidR} (Roussel et al., 2020)
 (define-public r-spanishoddata
   (package
     (name "r-spanishoddata")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spanishoddata" version))
        (sha256
-        (base32 "04x508vny94fx7xwisgmhr17h1k8cwaa0r2cv5pc41ynd6iq6yjz"))))
+        (base32 "0n4ylhpj5blvzzzh070i4237p9g2cxass2ah1l9di70l0zwym35a"))))
     (properties `((upstream-name . "spanishoddata")))
     (build-system r-build-system)
     (arguments
@@ -31691,6 +31690,7 @@ thresholds.  Built on @code{lidR} (Roussel et al., 2020)
                              r-sf
                              r-rlang
                              r-readr
+                             r-rdpack
                              r-purrr
                              r-paws-storage
                              r-parallelly
@@ -31700,7 +31700,6 @@ thresholds.  Built on @code{lidR} (Roussel et al., 2020)
                              r-lifecycle
                              r-jsonlite
                              r-httr2
-                             r-here
                              r-glue
                              r-fs
                              r-duckdb
@@ -31719,7 +31718,8 @@ of Transport, hosted at
 tools to download zone boundaries, handle associated origin-destination data,
 and process it efficiently with the duckdb database interface.  Local caching
 minimizes repeated downloads, streamlining workflows for researchers and
-analysts.  Extensive documentation is available at
+analysts.  Methods described in Kotov et al. (2026)
+<doi:10.1177/23998083251415040>.  Extensive documentation is available at
 <https://ropenspain.github.io/spanishoddata/index.html>, offering guides on
 creating static and dynamic mobility flow visualizations and transforming large
 datasets into analysis-ready formats.")
@@ -32602,13 +32602,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.8.0")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "117054mla23fvxc0rllj8p6w9ilv403vn1aqb8pb8yxgkz648y60"))))
+        (base32 "0jqbq6ylq81lqij23dx2m91jrii5xjw2yvj050z6a6w36ry7qkkh"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (arguments
@@ -42186,13 +42186,13 @@ Minimum recommended requirements: 16 GB RAM and 4 CPU dual-core.")
 (define-public r-sitrep
   (package
     (name "r-sitrep")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sitrep" version))
        (sha256
-        (base32 "1cajq98an7fn8582wzyd05lpiai09igcmrny9yahda6pxjdywf3m"))))
+        (base32 "01g93rqiwq0rw0dy442b8gc4119mzyic4al9fvk74cq4wgjp8879"))))
     (properties `((upstream-name . "sitrep")))
     (build-system r-build-system)
     (arguments
@@ -63411,13 +63411,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "5.4.1")
+    (version "5.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "014wzf5ywbf0y808yjgmwf4zryhdhvpmhapngbad3zpvkkcp8in5"))))
+        (base32 "152rx028p3km7k8k2bxbdw5l8mhlabf0773jznhq00xdigvclxs3"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (arguments

@@ -5679,13 +5679,13 @@ chromium based browser installed on your system.")
 (define-public r-nomishape
   (package
     (name "r-nomishape")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nomiShape" version))
        (sha256
-        (base32 "0q7hvrby5cp6fzvbazmq4advgwr8hf94lwi0rmq15p9nd6xp8ghw"))))
+        (base32 "0755jbdc1h7cgz4linsrjrbsma22psblwffn9q0b33l690wl0r92"))))
     (properties `((upstream-name . "nomiShape")))
     (build-system r-build-system)
     (arguments
@@ -9463,32 +9463,6 @@ circumference, sex and age.  The focus is on anthropometric status but many of
 the presented methods could be applied to other variables.")
     (license license:gpl3)))
 
-(define-public r-nipals
-  (package
-    (name "r-nipals")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nipals" version))
-       (sha256
-        (base32 "1aasm7ifnlxwaywq0g7v5m2w6jl7kld08k9gn3vbsm43wnpp0ahw"))))
-    (properties `((upstream-name . "nipals")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://kwstat.github.io/nipals/")
-    (synopsis
-     "Principal Components Analysis using NIPALS or Weighted EMPCA, with Gram-Schmidt Orthogonalization")
-    (description
-     "Principal Components Analysis of a matrix using Non-linear Iterative Partial
-Least Squares or weighted Expectation Maximization PCA with Gram-Schmidt
-orthogonalization of the scores and loadings.  Optimized for speed.  See
-Andrecut (2009) <doi:10.1089/cmb.2008.0221>.")
-    (license license:expat)))
-
 (define-public r-nimblewomble
   (package
     (name "r-nimblewomble")
@@ -10639,13 +10613,13 @@ transition probabilities.")
 (define-public r-nhlscraper
   (package
     (name "r-nhlscraper")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhlscraper" version))
        (sha256
-        (base32 "01wy8f3yg484md2x9c3fdv4jgfsds9jbmj37x2dsvvn44vp01k1y"))))
+        (base32 "1l7sc8sq3jjfx43vfzxs38cf14qhw6qvff703ys7lm2j2zh7cwbh"))))
     (properties `((upstream-name . "nhlscraper")))
     (build-system r-build-system)
     (arguments
@@ -10662,7 +10636,7 @@ Wraps 125+ endpoints documented in
 multi-season summaries and award winners to low-level decisecond replays and
 bookmakers odds, making them more accessible.  Features cleaning and
 visualization tools, primarily for play-by-plays.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-nhldata
   (package
@@ -13430,29 +13404,39 @@ to excess by Yiannis Parizas (2019)
 (define-public r-netsem
   (package
     (name "r-netsem")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netSEM" version))
        (sha256
-        (base32 "1znb3r8jc1ms4ajzb3ryr89wjx6f3rw1f410msh46d5h08wsjn9n"))))
+        (base32 "0mg4k2a66babfdgy1rq4fql2pdqbc8bq2p5pyhkyxfnj50w13w0y"))))
     (properties `((upstream-name . "netSEM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-svglite
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-svglite
+                             r-stringr
                              r-segmented
                              r-rsvg
+                             r-rlang
+                             r-rcompanion
+                             r-purrr
                              r-png
                              r-mass
                              r-magrittr
                              r-knitr
+                             r-janitor
                              r-htmlwidgets
-                             r-gtools
+                             r-glue
+                             r-dplyr
                              r-diagrammersvg
-                             r-diagrammer))
+                             r-diagrammer
+                             r-butcher
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=netSEM")
     (synopsis "Network Structural Equation Modeling")
