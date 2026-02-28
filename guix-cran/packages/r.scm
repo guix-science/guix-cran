@@ -3702,6 +3702,40 @@ exponential RT-MPTs) or Hamiltonian-within-Gibbs sampler (for diffusion
 RT-MPTs).")
     (license license:gpl2+)))
 
+(define-public r-rtmpinvi
+  (package
+    (name "r-rtmpinvi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtmpinvi" version))
+       (sha256
+        (base32 "0zk4h55dgdfs4cvvwwfqzh98il63wpv69hj8lfvs61mk7g5imbh7"))))
+    (properties `((upstream-name . "rtmpinvi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rtmpinv))
+    (home-page "https://github.com/econcz/rtmpinvi")
+    (synopsis
+     "Interactive Tabular Matrix Problems via Pseudoinverse Estimation")
+    (description
+     "This package provides an interactive wrapper for the @code{tmpinv()} function
+from the rtmpinv package with options extending its functionality to pre- and
+post-estimation processing and streamlined incorporation of prior cell
+information.  The Tabular Matrix Problems via Pseudoinverse Estimation (TMPinv)
+is a two-stage estimation method that reformulates structured table-based
+systems - such as allocation problems, transaction matrices, and input-output
+tables - as structured least-squares problems.  Based on the Convex Least
+Squares Programming (CLSP) framework, TMPinv solves systems with row and column
+constraints, block structure, and optionally reduced dimensionality by (1)
+constructing a canonical constraint form and applying a pseudoinverse-based
+projection, followed by (2) a convex-programming refinement stage to improve
+fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
+    (license license:expat)))
+
 (define-public r-rtmpinv
   (package
     (name "r-rtmpinv")
@@ -5060,13 +5094,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "4.0.1")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "08jf8rp9yxykw8rfi2ifj71a41misflz4az8acbh0im3ipmmszf8"))))
+        (base32 "02r7h2awwvayh07jlkcfjikc742kawiwyn4pys0zq2mg88x49gjg"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -7317,13 +7351,13 @@ compatible terminal emulators.")
 (define-public r-rsinaica
   (package
     (name "r-rsinaica")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsinaica" version))
        (sha256
-        (base32 "00fnz0afa635zbkphc92wbwzarxa5dnvxy2g4gry43zykq1m3wgd"))))
+        (base32 "12ylzi08zn4r82385wzdhp3d5a0id00s8kq0bl99sk4nlx4y9m10"))))
     (properties `((upstream-name . "rsinaica")))
     (build-system r-build-system)
     (arguments
@@ -25185,13 +25219,13 @@ software environments for testing and production.")
 (define-public r-rivretrieve
   (package
     (name "r-rivretrieve")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RivRetrieve" version))
        (sha256
-        (base32 "1ilpzy0h7hzpxcnk039v6vb87hw967mvl6zpka1y1q5byl76kfah"))))
+        (base32 "0pm5gqfi111jzvjpnjhnvp8262x1ayqab1v4l6py2frhih4jqpwm"))))
     (properties `((upstream-name . "RivRetrieve")))
     (build-system r-build-system)
     (arguments
@@ -26015,13 +26049,13 @@ in Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
 (define-public r-riskdiff
   (package
     (name "r-riskdiff")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskdiff" version))
        (sha256
-        (base32 "0pwd023p812b180z66yqnafjsnpslmyagngdg5c1aiw83pg52n0p"))))
+        (base32 "115ll7fai7b1hyah9cbmdsqnjd4h56ab9h54vh09wm1ci06szgas"))))
     (properties `((upstream-name . "riskdiff")))
     (build-system r-build-system)
     (arguments
@@ -26040,20 +26074,20 @@ in Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
      "Risk Difference Estimation with Multiple Link Functions and Inverse Probability of Treatment Weighting")
     (description
      "Calculates risk differences (or prevalence differences for cross-sectional data)
-using generalized linear models with automatic link function selection.
-Provides robust model fitting with fallback methods, support for stratification
-and adjustment variables, inverse probability of treatment weighting (IPTW) for
-causal inference, and publication-ready output formatting.  Handles model
-convergence issues gracefully and provides confidence intervals using multiple
-approaches.  Methods are based on approaches described in Mark W. Donoghoe and
-Ian C. Marschner (2018) \"logbin: An R Package for Relative Risk Regression Using
-the Log-Binomial Model\" <doi:10.18637/jss.v086.i09> for robust GLM fitting,
-Peter C. Austin (2011) \"An Introduction to Propensity Score Methods for Reducing
-the Effects of Confounding in Observational Studies\"
-<doi:10.1080/00273171.2011.568786> for IPTW methods, and standard
-epidemiological methods for risk difference estimation as described in Kenneth
-J. Rothman, Sander Greenland and Timothy L. Lash (2008, ISBN:9780781755641)
-\"Modern Epidemiology\".")
+and Number Needed to Treat (NNT) using generalized linear models with automatic
+link function selection.  Provides robust model fitting with fallback methods,
+support for stratification and adjustment variables, inverse probability of
+treatment weighting (IPTW) for causal inference with NNT calculations, and
+publication-ready output formatting.  Handles model convergence issues
+gracefully and provides confidence intervals using multiple approaches.  Methods
+are based on approaches described in Mark W. Donoghoe and Ian C. Marschner
+(2018) \"logbin: An R Package for Relative Risk Regression Using the Log-Binomial
+Model\" <doi:10.18637/jss.v086.i09> for robust GLM fitting, Peter C. Austin
+(2011) \"An Introduction to Propensity Score Methods for Reducing the Effects of
+Confounding in Observational Studies\" <doi:10.1080/00273171.2011.568786> for
+IPTW methods, and standard epidemiological methods for risk difference
+estimation as described in Kenneth J. Rothman, Sander Greenland and Timothy L.
+Lash (2008, ISBN:9780781755641) \"Modern Epidemiology\".")
     (license license:expat)))
 
 (define-public r-riskcommunicator
@@ -27805,6 +27839,31 @@ provide the user with useful error messages.")
 and utilities. @code{ribiosUtils} is a Swiss-knife for computational biology in
 drug discovery, providing functions and utilities with minimal external
 dependency and maximal efficiency.")
+    (license license:gpl3)))
+
+(define-public r-ribiosplot
+  (package
+    (name "r-ribiosplot")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ribiosPlot" version))
+       (sha256
+        (base32 "18fpis07ywj4xwj4hmxydvmy7a6arp3ymlpfii3bdivivc9zh9l2"))))
+    (properties `((upstream-name . "ribiosPlot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ribiosutils r-rcolorbrewer r-lattice
+                             r-gridextra r-ggplot2))
+    (home-page "https://github.com/bedapub/ribiosPlot")
+    (synopsis "Plotting Module of the 'ribios' Software Suite")
+    (description
+     "This package provides data structures and functions for data transformation and
+visualization in computational biology in drug discovery as part of the ribios
+software suite.  Zhang (2025) <https://github.com/bedapub/@code{ribiosPlot>}.")
     (license license:gpl3)))
 
 (define-public r-ribiosmath
@@ -34414,13 +34473,13 @@ to simplify the creation of maps of the data.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddap" version))
        (sha256
-        (base32 "04gdz5dlff650cv5wvv8fyfyczfq09azv1vjyqqvinj5r6z5ialp"))))
+        (base32 "1lvkb474pmrxj24rvd6911mai0id8p3dcd6m8rzm6j0lwwg6dqfa"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (arguments
@@ -37789,13 +37848,13 @@ Reinsurance\" by Munich Re (2010)
 (define-public r-reins
   (package
     (name "r-reins")
-    (version "1.0.15")
+    (version "1.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReIns" version))
        (sha256
-        (base32 "03y671y9gzf25mxwc5syi84hw5shklg3y29829yi0qwg2x0qxl6g"))))
+        (base32 "0b42qm4pfivqpqk9plkykfm80wiy3hj892sgbf0gvig3hh3pyvxh"))))
     (properties `((upstream-name . "ReIns")))
     (build-system r-build-system)
     (arguments
@@ -39121,13 +39180,13 @@ working with regression models.")
 (define-public r-refund-shiny
   (package
     (name "r-refund-shiny")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refund.shiny" version))
        (sha256
-        (base32 "00aygn4vyn67dssjhxmhc5x61rhqjli286ymh4kqpnq0vfmqgpa9"))))
+        (base32 "123x1bx4vvsa8pdfixh5dimk7y92z0x8kdbdw3ci7rxl961b6gd3"))))
     (properties `((upstream-name . "refund.shiny")))
     (build-system r-build-system)
     (arguments
@@ -39646,6 +39705,50 @@ active bindings as workarounds.  Users can also create expression references
 that allow subsets of any object to be referenced or expressions containing
 references to multiple objects.")
     (license license:expat)))
+
+(define-public r-refdb
+  (package
+    (name "r-refdb")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "refdb" version))
+       (sha256
+        (base32 "19b34hvs1rpwidizkwrj3f5d4fbc8cybniw835sm97j6d5zzf94k"))))
+    (properties `((upstream-name . "refdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-taxize
+                             r-stringr
+                             r-rmarkdown
+                             r-rlang
+                             r-rentrez
+                             r-readr
+                             r-leaflet
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr
+                             r-bioseq
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://fkeck.github.io/refdb/")
+    (synopsis "DNA Reference Library Manager")
+    (description
+     "Reference database manager offering a set of functions to import, organize,
+clean, filter, audit and export reference genetic data.  Provide functions to
+download sequence data from NCBI @code{GenBank}
+<https://www.ncbi.nlm.nih.gov/genbank/>.  Designed as an environment for
+semi-automatic and assisted construction of reference databases and to improve
+standardization and repeatability in barcoding and metabarcoding studies.")
+    (license license:gpl3)))
 
 (define-public r-refbasedmi
   (package
@@ -46603,6 +46706,41 @@ supporting random (version 4), name (version 5) and time (version 7) UUIDs'.
 The initial repository was at <https://gitlab.com/artemklevtsov/rcppuuid>.")
     (license license:gpl2+)))
 
+(define-public r-rcpptskit
+  (package
+    (name "r-rcpptskit")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppTskit" version))
+       (sha256
+        (base32 "0iqapwjv7jrcffqxgf10njh6ib2169mfh2clvnag20iwsam6452r"))))
+    (properties `((upstream-name . "RcppTskit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate r-rcpp r-r6))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/HighlanderLab/RcppTskit")
+    (synopsis "'R' Access to the 'tskit C' API")
+    (description
+     "Tskit enables efficient storage, manipulation, and analysis of ancestral
+recombination graphs (ARGs) using succinct tree sequence encoding.  The tree
+sequence encoding of an ARG is described in Wong et al. (2024)
+<doi:10.1093/genetics/iyae100>, while `tskit` project is described in Jeffrey et
+al. (2026) <doi:10.48550/@code{arXiv.2602.09649>}.  See also <https://tskit.dev>
+for project news, documentation, and tutorials.  Tskit provides Python', C', and
+Rust application programming interfaces (APIs).  The Python API can be called
+from R via the reticulate package to load and analyse tree sequences as
+described at <https://tskit.dev/tutorials/tskitr.html>. @code{RcppTskit}
+provides R access to the tskit C API for cases where the reticulate option is
+not optimal; for example, high-performance or low-level work with tree
+sequences.  Currently, @code{RcppTskit} provides a limited set of R functions
+because the Python API and reticulate already covers most needs.")
+    (license license:expat)))
+
 (define-public r-rcpptn
   (package
     (name "r-rcpptn")
@@ -46769,13 +46907,13 @@ is generally preferred.")
 (define-public r-rcppplanc
   (package
     (name "r-rcppplanc")
-    (version "2.0.14")
+    (version "2.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppPlanc" version))
        (sha256
-        (base32 "08jcal7fin2dk5a350kdf5sq1s2cfr8yx349ggvpl48f8q5dlwdj"))))
+        (base32 "14hg3mrfi7wrhdsgbhqyxaixdbnycr3knbsxaky59rs3lcn1sm87"))))
     (properties `((upstream-name . "RcppPlanc")))
     (build-system r-build-system)
     (arguments
@@ -52953,13 +53091,13 @@ providing brain imaging normalization to template brain, facilitating
 (define-public r-ravages
   (package
     (name "r-ravages")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ravages" version))
        (sha256
-        (base32 "0scfxzfisqcj9zn50pvhy9xrl3k5bgglp11gqxf885yskdiwrkik"))))
+        (base32 "0p13m3hy29yg5c6qm9n7k7xfp6vhmv6qqq01dv1n1mjpbfr03ars"))))
     (properties `((upstream-name . "Ravages")))
     (build-system r-build-system)
     (arguments
@@ -52982,8 +53120,10 @@ providing brain imaging normalization to template brain, facilitating
     (description
      "Rare variant association tests: burden tests (Bocher et al.  2019
 <doi:10.1002/gepi.22210>) and the Sequence Kernel Association Test (Bocher et
-al.  2021 <doi:10.1038/s41431-020-00792-8>) in the whole genome; and genetic
-simulations.")
+al.  2021 <doi:10.1038/s41431-020-00792-8>) in the whole genome using the
+RAVA-FIRST approach (Bocher et al.  2022 <doi:10.1371/journal.pgen.1009923>).
+Ravages also enables to perform genetic simulations (Bocher et al.  2023
+<doi:10.1002/gepi.22529>).")
     (license license:gpl3)))
 
 (define-public r-rattle
@@ -53787,13 +53927,13 @@ sources can be found in the github repository
 (define-public r-rastarocket
   (package
     (name "r-rastarocket")
-    (version "1.0.2")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RastaRocket" version))
        (sha256
-        (base32 "1srxfw72fyav97i6av5y5p4v9cgv1lj1gkxlnplgx20awb8jymd0"))))
+        (base32 "05rjl8g5hzqlfy8i4vm8a5f1fj7kq61yn5s555am67zkmzs6wr1a"))))
     (properties `((upstream-name . "RastaRocket")))
     (build-system r-build-system)
     (arguments
@@ -57788,13 +57928,13 @@ analysis.")
 (define-public r-radviz3d
   (package
     (name "r-radviz3d")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radviz3d" version))
        (sha256
-        (base32 "0p761idxnd8xp7xz15wkzrvvyiazg3w2spaxivs599nkch8zb202"))))
+        (base32 "01c3k8zblj1j6qcqarsn8pj512w1s5r4hb57svdbiwjx9s2b70d8"))))
     (properties `((upstream-name . "radviz3d")))
     (build-system r-build-system)
     (arguments
@@ -59201,13 +59341,13 @@ version that r5r depends on.  This version of r5r depends on R5 v7.1.")
 (define-public r-r4subdata
   (package
     (name "r-r4subdata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r4subdata" version))
        (sha256
-        (base32 "197lp6aylrqcd2pwgmww1r2hwdp7fk0v34ygb2lw96wd9770w8f4"))))
+        (base32 "095hbwkc4v3rnzwkis2p5ypa3yk4chb3wsw051797cqp49vg9xny"))))
     (properties `((upstream-name . "r4subdata")))
     (build-system r-build-system)
     (arguments

@@ -2177,13 +2177,13 @@ vector data.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "0jp214szf9ghdblc001nmmjsbhl3f23gcda15s4jsq69q9qmxiqf"))))
+        (base32 "1gjxbmci9jkvqjswfblw3333ray9rs0v0n4m4bxmf12r08g0472k"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (arguments
@@ -2920,6 +2920,41 @@ static panel threshold estimation and the Caner and (Hansen (2004)
 <doi:10.1017/S0266466604205011>) cross-sectional instrumental variable threshold
 model, where generalized methods of moments type estimators are used.")
     (license license:gpl3)))
+
+(define-public r-dtms
+  (package
+    (name "r-dtms")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtms" version))
+       (sha256
+        (base32 "0wjilg8gyy7zvldspk8fvk19a6c6yngwdy0wv4kmnkl5ssxjl477"))))
+    (properties `((upstream-name . "dtms")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam
+                             r-nnet
+                             r-mclogit
+                             r-markovchain
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://github.com/christiandudel/dtms")
+    (synopsis "Discrete-Time Multistate Models")
+    (description
+     "Discrete-time multistate models with a user-friendly workflow.  The package
+provides tools for processing data, several ways of estimating parametric and
+nonparametric multistate models, and an extensive set of Markov chain methods
+which use transition probabilities derived from the multistate model.  Some of
+the implemented methods are described in Schneider et al. (2024)
+<doi:10.1080/00324728.2023.2176535>, Dudel (2021)
+<doi:10.1177/0049124118782541>, Dudel & MyrskylÃ¤ (2020)
+<doi:10.1186/s12963-020-00217-0>, van den Hout (2017)
+<doi:10.1201/9781315374321>.")
+    (license license:expat)))
 
 (define-public r-dtmcpack
   (package
@@ -5960,6 +5995,31 @@ Michel & Naf & Meinshausen & Buhlmann (2022)
 <doi:10.48550/@code{arXiv.2005.14458>}.")
     (license license:gpl3)))
 
+(define-public r-dress-graph
+  (package
+    (name "r-dress-graph")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dress.graph" version))
+       (sha256
+        (base32 "1ffcss18h72xq47z3rxbn3rcyz1i7b7yqwhzz630zm3f2wadrl2r"))))
+    (properties `((upstream-name . "dress.graph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://cran.r-project.org/package=dress.graph")
+    (synopsis "Diffusive Recursive Structural Similarity on Graphs")
+    (description
+     "Compute per-edge similarity values on graphs using the DRESS (Diffusive
+Recursive Structural Similarity) algorithm.  Supports weighted/unweighted and
+directed/undirected graphs.  Iterative fixed-point fitting converges to stable
+edge scores that capture neighbourhood overlap structure.")
+    (license license:expat)))
+
 (define-public r-dregar
   (package
     (name "r-dregar")
@@ -7242,13 +7302,13 @@ use in order to improve standard R @code{pbeta()}, @code{qgamma()}, ..., etc:
 (define-public r-dppmix
   (package
     (name "r-dppmix")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dppmix" version))
        (sha256
-        (base32 "1gq51kix0jln25gr6bffzdy24fhn6cd3gmyl3jlmvqvni4vwswy7"))))
+        (base32 "1fk1p9mi0wsa8zi7p0f0wvasck0hnzr88q8zwrkr4mjzkbybfwap"))))
     (properties `((upstream-name . "dppmix")))
     (build-system r-build-system)
     (arguments
@@ -7477,13 +7537,13 @@ dataset has been analyzed.")
 (define-public r-dpi
   (package
     (name "r-dpi")
-    (version "2025.11")
+    (version "2026.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPI" version))
        (sha256
-        (base32 "0j8107a7zs33rxlf5c70kmf7yxh6v57bb62dxhqm2xmasfckd6zi"))))
+        (base32 "1gq58avg4mva2shcggm73lcrdasd9agqk46msfnyy8fqybfigfhj"))))
     (properties `((upstream-name . "DPI")))
     (build-system r-build-system)
     (arguments
@@ -7501,17 +7561,17 @@ dataset has been analyzed.")
     (synopsis
      "The Directed Prediction Index for Causal Direction Inference from Observational Data")
     (description
-     "The Directed Prediction Index ('DPI') is a quasi-causal inference (causal
-discovery) method for observational data designed to quantify the relative
-endogeneity (relative dependence) of outcome (Y) versus predictor (X) variables
-in regression models.  By comparing the proportion of variance explained
-(R-squared) between the Y-as-outcome model and the X-as-outcome model while
-controlling for a sufficient number of possible confounders, it can suggest a
-plausible (admissible) direction of influence from a less endogenous variable
+     "The Directed Prediction Index ('DPI') is a causal discovery method for
+observational data designed to quantify the relative endogeneity of outcome (Y)
+versus predictor (X) variables in regression models.  By comparing the
+coefficients of determination (R-squared) between the Y-as-outcome and
+X-as-outcome models while controlling for sufficient confounders and simulating
+k random covariates, it can quantify relative endogeneity, providing a necessary
+but insufficient condition for causal direction from a less endogenous variable
 (X) to a more endogenous variable (Y).  Methodological details are provided at
 <https://psychbruce.github.io/DPI/>.  This package also includes functions for
 data simulation and network analysis (correlation, partial correlation, and
-Bayesian networks).")
+Bayesian Networks).")
     (license license:gpl3)))
 
 (define-public r-dpgmm
@@ -10966,13 +11026,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.0.12")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "0xy7cvgafpkl024w8p59pmlphhx66znr748j87xcwlihmqx5722g"))))
+        (base32 "0055faqqw07119a2x15fvip13921r6w54ypvwn3x6569xsb6jl79"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (arguments
@@ -11001,7 +11061,6 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
                              r-purrr
                              r-memoise
                              r-lifecycle
-                             r-igraph
                              r-glue
                              r-dplyr
                              r-cli
@@ -17656,13 +17715,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "15zyp68pc0qxmxk82kwzzr6d7lbnlgp886scbwj517rnvhmgkhai"))))
+        (base32 "0c0zjjwx791l3l5gwvpn79iaph2sg600l2spcpnp14gpms69yf91"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (arguments
@@ -27773,13 +27832,13 @@ the method, and visualize the results.  Gerlovina et al. (2022)
 (define-public r-dci
   (package
     (name "r-dci")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dci" version))
        (sha256
-        (base32 "1h45z7i2sljg3rh8v68348ylbbkycwl0c866ng2iw8ajymm3abhb"))))
+        (base32 "01ybnr9bhhksxnnxdkb84cvjbw2axd1v1krq1a45agw913q0grbf"))))
     (properties `((upstream-name . "dci")))
     (build-system r-build-system)
     (arguments
@@ -30114,13 +30173,13 @@ pre-clinical and clinical HIV vaccine studies.")
 (define-public r-datasimilarity
   (package
     (name "r-datasimilarity")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataSimilarity" version))
        (sha256
-        (base32 "1i6chd06cjsidhy73if6wmibikdpxd1hdy29fk8frz6j2mc3smcw"))))
+        (base32 "139s4c18q4jjkry9raxb418xl0wkhi4llngk5xxhdzy9809i47wr"))))
     (properties `((upstream-name . "DataSimilarity")))
     (build-system r-build-system)
     (arguments
@@ -30136,7 +30195,8 @@ two or more datasets, many of which can be used for two- or k-sample testing.
 It provides newly implemented methods as well as wrapper functions for existing
 methods that enable calling many different methods in a unified framework.  The
 methods were selected from the review and comparison of Stolte et al. (2024)
-<doi:10.1214/24-SS149>.")
+<doi:10.1214/24-SS149>.  An empirical comparison of the methods for categorical
+data was performed in Stolte et al. (2025) <doi:10.17877/DE290R-25572>.")
     (license license:gpl3+)))
 
 (define-public r-datasetsverse

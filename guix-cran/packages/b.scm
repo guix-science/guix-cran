@@ -20,7 +20,6 @@
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
@@ -5965,6 +5964,31 @@ sample sums to 1, and this introduces severe statistical distortions.  This
 method takes a Bayesian approach to correcting for these statistical
 distortions, in which the total abundance is treated as an unknown variable.
 This package runs the python implementation using reticulate.")
+    (license license:expat)))
+
+(define-public r-bracketeer
+  (package
+    (name "r-bracketeer")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bracketeer" version))
+       (sha256
+        (base32 "1df7xv16dg78d3q623sgh7s3fhww1m3bhrd0pjia8k6n58f3d4m2"))))
+    (properties `((upstream-name . "bracketeer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bbtheo/bracketeer")
+    (synopsis "Tournament Generator")
+    (description
+     "Create and manage tournament brackets for various competition formats including
+single elimination, double elimination, round robin, Swiss system, and
+group-stage-to-knockout tournaments.  Provides tools for seeding, scheduling,
+recording results, and tracking standings.")
     (license license:expat)))
 
 (define-public r-bracer
@@ -16579,13 +16603,13 @@ further change-point.")
 (define-public r-binr
   (package
     (name "r-binr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binr" version))
        (sha256
-        (base32 "1h1zkawhzp23diav6q4i2sysf4lh3pxc0gsmh4q3vgany1wj57wy"))))
+        (base32 "0vv223r0caw8scfy6bbgf5vk69w4bf6jwh6pnpcrv16sy1j83l37"))))
     (properties `((upstream-name . "binr")))
     (build-system r-build-system)
     (arguments
@@ -16594,11 +16618,12 @@ further change-point.")
     (home-page "https://github.com/jabiru/binr")
     (synopsis "Cut Numeric Values into Evenly Distributed Groups")
     (description
-     "Implementation of algorithms for cutting numerical values exhibiting a
-potentially highly skewed distribution into evenly distributed groups (bins).
-This functionality can be applied for binning discrete values, such as counts,
-as well as for discretization of continuous values, for example, during
-generation of features used in machine learning algorithms.")
+     "Package binr (pronounced as \"binner\") provides algorithms for cutting numerical
+values exhibiting a potentially highly skewed distribution into evenly
+distributed groups (bins).  This functionality can be applied for binning
+discrete values, such as counts, as well as for discretization of continuous
+values, for example, during generation of features used in machine learning
+algorithms.")
     (license license:asl2.0)))
 
 (define-public r-binpackr
@@ -18314,6 +18339,37 @@ package utilizes the Boost.Multiprecision C++ library.  It is specifically
 designed to work well with the tidyverse collection of R packages.")
     (license license:expat)))
 
+(define-public r-bigmice
+  (package
+    (name "r-bigmice")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigMICE" version))
+       (sha256
+        (base32 "02g9mr009gy4fyg33skn1clrgh0zazw8wifn8qqzr9bnswyj3vyl"))))
+    (properties `((upstream-name . "bigMICE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-sparklyr
+                             r-rlang
+                             r-matrix
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bigMICE")
+    (synopsis "Multiple Imputation of Big Data")
+    (description
+     "This package provides a computational toolbox designed for handling missing
+values in large datasets with the Multiple Imputation by Chained Equations
+(MICE) by using Apache Spark'.  The methodology is described in Morvan et al.
+(2026) <doi:10.48550/@code{arXiv.2601.21613>}.")
+    (license license:gpl2+)))
+
 (define-public r-bigmds
   (package
     (name "r-bigmds")
@@ -18969,13 +19025,13 @@ or item response models.")
 (define-public r-bidux
   (package
     (name "r-bidux")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidux" version))
        (sha256
-        (base32 "1m6dc4x7vqwv4h18im6qqf63k4wgfzy268h4j5r9x9vvgn3vva4q"))))
+        (base32 "1q8bhn7pjlsz1jkil9x0za815296z2xsgbgj2pxj11annfmc3yi1"))))
     (properties `((upstream-name . "bidux")))
     (build-system r-build-system)
     (arguments
@@ -18986,6 +19042,7 @@ or item response models.")
                              r-rsqlite
                              r-rlang
                              r-readr
+                             r-memoise
                              r-jsonlite
                              r-janitor
                              r-glue
@@ -21245,6 +21302,47 @@ package can also be used to generate confidence intervals for R-squared,
 adjusted R-squared, and differences of standardized regression coefficients.  A
 description of the package and code examples are presented in Pesigan, Sun, and
 Cheung (2023) <doi:10.1080/00273171.2023.2201277>.")
+    (license license:expat)))
+
+(define-public r-betaregscale
+  (package
+    (name "r-betaregscale")
+    (version "2.6.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "betaregscale" version))
+       (sha256
+        (base32 "1hqfwqid20cgf7c60vjz8xbb1d99w7hbcgn7g35njaqbj879jk6d"))))
+    (properties `((upstream-name . "betaregscale")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-ggplot2
+                             r-formula))
+    (native-inputs (list r-knitr))
+    (home-page "https://evandeilton.github.io/betaregscale/")
+    (synopsis "Beta Regression for Interval-Censored Scale-Derived Outcomes")
+    (description
+     "Maximum-likelihood estimation of beta regression models for responses derived
+from bounded rating scales.  Observations are treated as interval-censored on
+(0, 1) after a scale-to-unit transformation, and the likelihood is built from
+the difference of the beta CDF at the interval endpoints.  The complete
+likelihood supports mixed censoring types: uncensored, left-censored,
+right-censored, and interval-censored observations.  Both fixed- and
+variable-dispersion submodels are supported, with flexible link functions for
+the mean and precision components.  A compiled C++ backend (via Rcpp and
+@code{RcppArmadillo}') provides numerically stable, high-performance
+log-likelihood evaluation.  Standard S3 methods @code{(print()},
+@code{summary()}, @code{coef()}, @code{fitted()}, @code{residuals()},
+@code{predict()}, @code{plot()}, @code{confint()}, @code{vcov()},
+@code{logLik()}, @code{AIC()}, @code{BIC()}) are available for fitted objects.")
     (license license:expat)))
 
 (define-public r-betaper
@@ -23532,13 +23630,13 @@ dynamic panel data models and analyze the results of the estimation.")
 (define-public r-bdribs
   (package
     (name "r-bdribs")
-    (version "1.0.4")
+    (version "1.0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdribs" version))
        (sha256
-        (base32 "19qakmdw3l8vfxkr4p1ydkyfs4cmq37lqzw7l5zx5rdn6zlhqwh4"))))
+        (base32 "1cikv4vzmb24af607gwqkjf7mh5cqb3w2ch1mhqaazv3444qzi06"))))
     (properties `((upstream-name . "bdribs")))
     (build-system r-build-system)
     (arguments
@@ -24329,6 +24427,46 @@ Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data Portal
 (<https://www.statcan.gc.ca/en/terms-conditions/open-licence>).")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-bclogit
+  (package
+    (name "r-bclogit")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bclogit" version))
+       (sha256
+        (base32 "079rskbhmcjx7h13q6gdqm6v4gii4nhb7y4jwm75wpm9pabbs847"))))
+    (properties `((upstream-name . "bclogit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-glmmtmb
+                             r-geepack
+                             r-fastlogisticregressionwrap
+                             r-coda
+                             r-checkmate
+                             r-bh))
+    (home-page
+     "https://github.com/Tennenbaum-J/bclogit_package_and_paper_repo")
+    (synopsis "Conditional Logistic Regression")
+    (description
+     "This package performs inference for Bayesian conditional logistic regression
+with informative priors built from the concordant pair data.  We include many
+options to build the priors.  And we include many options during the inference
+step for estimation, testing and confidence set creation.  For details, see
+Kapelner and Tennenbaum (2026) ``Improved Conditional Logistic Regression using
+Information in Concordant Pairs with Software
+<doi:10.48550/@code{arXiv.2602.08212>}.")
+    (license license:gpl3)))
 
 (define-public r-bchron
   (package
@@ -25665,13 +25803,13 @@ MoriÃ±a D, Puig P, Navarro A. (2021) <doi:10.1186/s12874-021-01427-2>.")
 (define-public r-bayesxsrc
   (package
     (name "r-bayesxsrc")
-    (version "3.0-7")
+    (version "3.0-7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesXsrc" version))
        (sha256
-        (base32 "0ffmzs1010il3hfd3hq8hdal7k7n8fm5fx99814rcb5gj5jf87zs"))))
+        (base32 "00qak993bxcnxlfxwqp7f9ayxv3s125m48lmqn6r6nanz279h9ji"))))
     (properties `((upstream-name . "BayesXsrc")))
     (build-system r-build-system)
     (arguments
@@ -26617,42 +26755,6 @@ mixed hierarchies (Mix-Cond and TD-cond) (Zambon et al., 2024)
 <https://proceedings.mlr.press/v244/zambon24a.html>.")
     (license license:lgpl3+)))
 
-(define-public r-bayesqrsurvey
-  (package
-    (name "r-bayesqrsurvey")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesQRsurvey" version))
-       (sha256
-        (base32 "17ndbqdzpch5173jzswva4pr0pccx9rsxg6gxcqgnbpxrgbvnpd2"))))
-    (properties `((upstream-name . "bayesQRsurvey")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list lapack))
-    (propagated-inputs (list r-rlang
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pracma
-                             r-posterior
-                             r-ggplot2))
-    (home-page "https://github.com/torodriguezt/bayesQRsurvey")
-    (synopsis
-     "Bayesian Quantile Regression Models for Complex Survey Data Analysis")
-    (description
-     "This package provides Bayesian quantile regression models for complex survey
-data under informative sampling using survey-weighted estimators.  Both single-
-and multiple-output models are supported.  To accelerate computation, all
-algorithms are implemented in C++ using Rcpp', @code{RcppArmadillo}', and
-@code{RcppEigen}', and are called from R'.  See Nascimento and GonÃ§alves (2024)
-<doi:10.1093/jssam/smae015> and Nascimento and GonÃ§alves (2025, in press)
-<https://academic.oup.com/jssam>.")
-    (license license:expat)))
-
 (define-public r-bayesqr
   (package
     (name "r-bayesqr")
@@ -27227,13 +27329,13 @@ rank normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMultiMode" version))
        (sha256
-        (base32 "081gb80idvzmk2fnrmvp5rx4r50asr8vd42b5d4b5hph0622ld38"))))
+        (base32 "1mmfz5mnpymc7dfw8awg3anpcd7zmxf0cgywpdsmqqh065mf19qw"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (arguments
@@ -28322,13 +28424,13 @@ mediation effects are reported as analytic results.")
 (define-public r-bayesianmcpmod
   (package
     (name "r-bayesianmcpmod")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianMCPMod" version))
        (sha256
-        (base32 "1lb0sbjzw6kjac5x5yl4q3as7q0rh19xhja2b0h5qcapiqzbjz8d"))))
+        (base32 "0ixaav64yaxsag6wh5rrax4zbcidkv5pgd59gs94rv15d9ki0mhy"))))
     (properties `((upstream-name . "BayesianMCPMod")))
     (build-system r-build-system)
     (arguments
@@ -30240,13 +30342,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.4.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "03hsnk595cci485hif65ca1r59izapnp4n5xyrk286brjr0rmb4n"))))
+        (base32 "1c8lpiicjp0i2zxbybdihp6rp0fq6xapz1mb400sq0ss8fn129ln"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments
@@ -31337,13 +31439,13 @@ several data structures.")
 (define-public r-bases
   (package
     (name "r-bases")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bases" version))
        (sha256
-        (base32 "1xddz4j7qnkifwglpmys3lqwsy66zr0qwq5nmbk6gn7kkwn6x3wk"))))
+        (base32 "06wi6kpaidbz7m26jz0sy4lwsnh01l326319x6lk47ywv3xayl54"))))
     (properties `((upstream-name . "bases")))
     (build-system r-build-system)
     (arguments
@@ -31357,14 +31459,14 @@ several data structures.")
      "This package provides various basis expansions for flexible regression modeling,
 including random Fourier features (Rahimi & Recht, 2007)
 <https://proceedings.neurips.cc/paper_files/paper/2007/file/013a006f03dbc5392effeb8f18fda755-Paper.pdf>,
-exact kernel / Gaussian process feature maps, Bayesian Additive Regression Trees
-(BART) (Chipman et al., 2010) <doi:10.1214/09-AOAS285> prior features, and a
-helpful interface for n-way interactions.  The provided functions may be used
-within any modeling formula, allowing the use of kernel methods and other basis
-expansions in modeling functions that do not otherwise support them.  Along with
-the basis expansions, a number of kernel functions are also provided, which
-support kernel arithmetic to form new kernels.  Basic ridge regression
-functionality is included as well.")
+exact kernel / Gaussian process feature maps, prior features for Bayesian
+Additive Regression Trees (BART) (Chipman et al., 2010)
+<doi:10.1214/09-AOAS285>, and a helpful interface for n-way interactions.  The
+provided functions may be used within any modeling formula, allowing the use of
+kernel methods and other basis expansions in modeling functions that do not
+otherwise support them.  Along with the basis expansions, a number of kernel
+functions are also provided, which support kernel arithmetic to form new
+kernels.  Basic ridge regression functionality is included as well.")
     (license license:expat)))
 
 (define-public r-baserater

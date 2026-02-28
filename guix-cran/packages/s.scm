@@ -4970,31 +4970,6 @@ We implemented Partial Logistic Artificial Neural Networks (PLANN) as proposed
 by Biganzoli et al. (1998) <https://pubmed.ncbi.nlm.nih.gov/9618776>.")
     (license license:gpl2+)))
 
-(define-public r-survivalmpldc
-  (package
-    (name "r-survivalmpldc")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "survivalMPLdc" version))
-       (sha256
-        (base32 "1wqlzpwm1p7nq19l3d7c93zv6fnn0b1w24kak9zwsgyhar3f5lv9"))))
-    (properties `((upstream-name . "survivalMPLdc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-splines2 r-matrixcalc r-copula))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=survivalMPLdc")
-    (synopsis
-     "Penalised Likelihood for Survival Analysis with Dependent Censoring")
-    (description
-     "Fitting Cox proportional hazard model under dependent right censoring using
-copula and maximum penalised likelihood methods.")
-    (license license:gpl3)))
-
 (define-public r-survivalmpl
   (package
     (name "r-survivalmpl")
@@ -5052,23 +5027,19 @@ the Python package pycox <https://github.com/havakv/pycox>.")
 (define-public r-survivalclusteringtree
   (package
     (name "r-survivalclusteringtree")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurvivalClusteringTree" version))
        (sha256
-        (base32 "1wxyk0b22igv319dpidm0b1wjp675k9z1araqzdd140lxan8nndf"))))
+        (base32 "02708y0lfh1fvhan94vswpkp9ybxlhhpiyllnin6bd4pnrd39s6v"))))
     (properties `((upstream-name . "SurvivalClusteringTree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-gridtext
-                             r-formula-tools
+    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-formula-tools
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SurvivalClusteringTree")
@@ -10376,6 +10347,29 @@ Liess et al. (2019) <doi:10.1038/s41598-019-51645-4> and Liess et al. (2020)
 <doi:10.1186/s12302-020-00394-7>.")
     (license license:gpl3)))
 
+(define-public r-strength
+  (package
+    (name "r-strength")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "strength" version))
+       (sha256
+        (base32 "0g2cvyyxl8crs2f500ln11zwazafj9pslll7br8vw3zlnfqakbp0"))))
+    (properties `((upstream-name . "strength")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-dplyr r-cli))
+    (home-page "https://github.com/alexpaynter/strength")
+    (synopsis "Operations Designed for Tidy Strength Data")
+    (description
+     "Mappings for estimated one rep max from commonly used formulas.  Convenience
+functions for turning mass/rep/set data into useful derived quantities.")
+    (license license:gpl3+)))
+
 (define-public r-streg
   (package
     (name "r-streg")
@@ -14938,13 +14932,13 @@ assessed employing STB-methodology.")
 (define-public r-statuser
   (package
     (name "r-statuser")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statuser" version))
        (sha256
-        (base32 "1la6nhrkaydyv20hjkm6v6262x73wnj4nyvdg6qqddhjif4b1rd4"))))
+        (base32 "00m0p13wbk55fnwjcvnci1gwis9gz0ii4nw38qhaxbxld57klbdy"))))
     (properties `((upstream-name . "statuser")))
     (build-system r-build-system)
     (arguments
@@ -21707,6 +21701,31 @@ within R'.  It acts as a wrapper around the sql_format Rust crate.  The package
 allows you to format SQL code with customizable options, including indentation,
 case formatting, and more, ensuring your SQL queries are clean, readable, and
 consistent.")
+    (license license:expat)))
+
+(define-public r-sqlfluffr
+  (package
+    (name "r-sqlfluffr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sqlfluffr" version))
+       (sha256
+        (base32 "1194i3h5hwbyv0jd80v5jgk4c449l2452n3rm2yy7q9g4r33h6dg"))))
+    (properties `((upstream-name . "sqlfluffr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://github.com/brendensm/sqlfluffr")
+    (synopsis "Wrapper to the 'SQL' Linter and Formatter 'sqlfluff'")
+    (description
+     "An R interface to the Python sqlfluff SQL linter and formatter via the
+reticulate package.  Enables linting, fixing, and parsing of SQL queries with
+support for multiple dialects.  Includes special handling for glue SQL syntax
+with curly-brace placeholders.")
     (license license:expat)))
 
 (define-public r-sqlcaser
@@ -29309,6 +29328,31 @@ zipcodes by laying a fine grid of rectangles and aggregating the integrals in a
 form of Riemann integration.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-spatialcatalogueviewer
+  (package
+    (name "r-spatialcatalogueviewer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialCatalogueViewer" version))
+       (sha256
+        (base32 "135px5dnsn9m70dp6w3cn5skrh9gxnj3da7m9hx5gix9zvyz687g"))))
+    (properties `((upstream-name . "spatialCatalogueViewer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinythemes r-shiny r-leaflet r-dt))
+    (home-page "https://github.com/sebastien-plutniak/spatialCatalogueViewer")
+    (synopsis
+     "'Shiny' Tool to Create Interactive Catalogues for Geospatial Data")
+    (description
+     "Seamlessly create interactive online catalogues for geospatial data.  Items can
+be mapped as points or areas and retrieved using either a map or a dynamic table
+with search form and optional column filters.")
+    (license license:gpl3)))
+
 (define-public r-spatialbss
   (package
     (name "r-spatialbss")
@@ -32168,19 +32212,20 @@ algorithms, enabling the combination of flux data with population movement.")
 (define-public r-spacci
   (package
     (name "r-spacci")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaCCI" version))
        (sha256
-        (base32 "0yzsx91zfislc0akwpfxqf2rqw2wj799jv5x5nxqm05jn89qp560"))))
+        (base32 "0i69rpvszg2a42yaqpfcv2wklzd0hj3c127vd34jv90dyqmji263"))))
     (properties `((upstream-name . "SpaCCI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-seurat
+                             r-rlang
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
@@ -32199,9 +32244,9 @@ algorithms, enabling the combination of flux data with population movement.")
      "This package provides tools for analyzing spatial cell-cell interactions based
 on ligand-receptor pairs, including functions for local, regional, and global
 analysis using spatial transcriptomics data.  Integrates with databases like
-@code{CellChat} <http://www.cellchat.org/>, @code{CellPhoneDB}
-<https://www.cellphonedb.org/>, Cellinker
-<https://www.rna-society.org/cellinker/index.html>, ICELLNET
+@code{CellChat} <https://github.com/jinworks/@code{CellChat>},
+@code{CellPhoneDB} <https://www.cellphonedb.org/>, Cellinker
+<https://www.rna-society.org/cellinker/>, ICELLNET
 <https://github.com/soumelis-lab/ICELLNET>, and @code{ConnectomeDB}
 <https://humanconnectome.org/software/connectomedb/> to identify ligand-receptor
 pairs, visualize interactions through heatmaps, chord diagrams, and infer
@@ -40074,13 +40119,13 @@ cells being compared.  Based on Sen, N., Mukherjee, G., and Arvin, A.M. (2015)
 (define-public r-slick
   (package
     (name "r-slick")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Slick" version))
        (sha256
-        (base32 "03dm8wyj6fprnswlicl6rbss27hfxb3cxv3srwif600wp943r07c"))))
+        (base32 "0jn4cj65by1r4vwshb4p1ikca75y4lnrcwy5mccrmp6wpzfxnhkx"))))
     (properties `((upstream-name . "Slick")))
     (build-system r-build-system)
     (arguments
@@ -40101,7 +40146,7 @@ cells being compared.  Based on Sen, N., Mukherjee, G., and Arvin, A.M. (2015)
      "This package provides a framework for visualizing and exploring results of a
 Management Strategy Evaluation (MSE).  The publication quality figures and
 tables can be developed directly from the R console, or interactively explored
-with the Slick App.  For more details, see the `Slick` website
+with the Slick App.  For more details, see the Slick website
 <https://slick.bluematterscience.com>.")
     (license license:gpl2)))
 
@@ -45123,13 +45168,13 @@ palettes in addition to returning the desired hex codes.")
 (define-public r-simplecache
   (package
     (name "r-simplecache")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simpleCache" version))
        (sha256
-        (base32 "0zayq4n8cc0xgszckjvvf55ygy8hwywv161pp8pqi2k4z91rq4lz"))))
+        (base32 "1d39z8vfq44irxw7y52bnfkiqy9rn4j0h59d8x4344338g98hg1g"))))
     (properties `((upstream-name . "simpleCache")))
     (build-system r-build-system)
     (arguments
@@ -49411,13 +49456,13 @@ the number of variables is larger than the sample size.")
 (define-public r-shrinkagetrees
   (package
     (name "r-shrinkagetrees")
-    (version "1.0.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShrinkageTrees" version))
        (sha256
-        (base32 "19inmw0c9fjypmhhmbwylfiwksk8bx33m6d5svn8qm0pzing8v4m"))))
+        (base32 "0vnps5kcbl0ly7fy5x87jjvyww3140h1z65xm4b9ypiyg40ys5ah"))))
     (properties `((upstream-name . "ShrinkageTrees")))
     (build-system r-build-system)
     (arguments
@@ -49425,11 +49470,14 @@ the number of variables is larger than the sample size.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/tijn-jacobs/ShrinkageTrees")
-    (synopsis "Regression Trees with Shrinkage Priors")
+    (synopsis
+     "Bayesian Tree Ensembles for Survival Analysis and Causal Inference")
     (description
-     "Bayesian regression tree models with shrinkage priors on step heights.  Supports
-continuous, binary, and right-censored (survival) outcomes.  Used for
-high-dimensional prediction and causal inference.")
+     "Bayesian regression tree ensembles for survival analysis and causal inference.
+Implements BART, DART, Bayesian Causal Forests (BCF), and Horseshoe Forests
+models.  Supports right-censored survival outcomes via accelerated failure time
+(AFT) formulations.  Designed for high-dimensional prediction and heterogeneous
+treatment effect estimation in causal inference.")
     (license license:expat)))
 
 (define-public r-shrink
@@ -49547,13 +49595,13 @@ extreme spread.  Includes a set of web-based graphical user interfaces.")
 (define-public r-shortuuid
   (package
     (name "r-shortuuid")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shortuuid" version))
        (sha256
-        (base32 "1kd6pgdn01bsxzabkdfmzr08nwf82d2n6njvb128bgyr5jdc61s8"))))
+        (base32 "1ng63i8q0h5n1cy6mq59mpx6r0l46611bw0smcir88khc4nivz64"))))
     (properties `((upstream-name . "shortuuid")))
     (build-system r-build-system)
     (arguments
@@ -50242,13 +50290,13 @@ hoc structure of the shiny App.")
 (define-public r-shinytest2
   (package
     (name "r-shinytest2")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinytest2" version))
        (sha256
-        (base32 "0l4jf2nbzgjb3ja9y7qjgb5rlhl56x59n9i0ma80j3xmmvzj9z5n"))))
+        (base32 "0fjq8rarx8lx96hw0b8kkbxmm99mmbfhdxbhx2vmqbpp5g7md8bx"))))
     (properties `((upstream-name . "shinytest2")))
     (build-system r-build-system)
     (arguments
@@ -52930,13 +52978,13 @@ visualization and presentation of predicted survival curves.")
 (define-public r-shinycohortbuilder
   (package
     (name "r-shinycohortbuilder")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyCohortBuilder" version))
        (sha256
-        (base32 "0l22fwq6mk9z8bv3vpxbf6gfimknwidbx55gjxjsww85v7qmh6r5"))))
+        (base32 "1sqm470prvzhqbf90z1hm96c154jzcfh6jlkqs4h0cnwfz8dnw0p"))))
     (properties `((upstream-name . "shinyCohortBuilder")))
     (build-system r-build-system)
     (arguments
@@ -57526,6 +57574,30 @@ near the author's home.  The data is intended for use in data analysis practice.
      "More easy to get intersection, union or complementary set and combinations.")
     (license license:gpl3)))
 
+(define-public r-sessioncheck
+  (package
+    (name "r-sessioncheck")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sessioncheck" version))
+       (sha256
+        (base32 "0q0ir39glja12hjsb87lkd0gknpa3f3xlamh0h1q39vh2l4ix3j5"))))
+    (properties `((upstream-name . "sessioncheck")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/djnavarro/sessioncheck")
+    (synopsis "Checks Session Status")
+    (description
+     "This package provides tools to check variables contained in the user
+environment, and inspect the currently loaded package namespaces.  The intended
+use is to allow user scripts to throw errors or warnings if unwanted variables
+exist or if unwanted packages are loaded.")
+    (license license:expat)))
+
 (define-public r-sesraster
   (package
     (name "r-sesraster")
@@ -59666,13 +59738,13 @@ Cochran-Mantel-Haenszel-Birch tests and sensitivity analyses for one or two
 (define-public r-sensitivity
   (package
     (name "r-sensitivity")
-    (version "1.30.2")
+    (version "1.31.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensitivity" version))
        (sha256
-        (base32 "02ca4xwgm5iwvds95m2302r06qdgkly86mfaw122r07iw0sq45c6"))))
+        (base32 "10rcshhx2n2y8w31yzxgamnsmqi9zqiw48yy6hb4d80wm64ymmzp"))))
     (properties `((upstream-name . "sensitivity")))
     (build-system r-build-system)
     (arguments
@@ -59829,6 +59901,33 @@ researchers to generate the set of recommended sensitivity summaries to evaluate
 the sensitivity in their underlying weighting estimators to omitted moderators
 or confounders.  The tools can be flexibly applied in causal inference settings
 (i.e., in external and internal validity contexts) or survey contexts.")
+    (license license:expat)))
+
+(define-public r-senser
+  (package
+    (name "r-senser")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "senseR" version))
+       (sha256
+        (base32 "0rac2da3jrx7nl7fvp5pxkvrwv1aknwcygvpxydb4pnpr6nd2yfa"))))
+    (properties `((upstream-name . "senseR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=senseR")
+    (synopsis "Proxy Indicator Diagnostic Tool for Analytical and Policy Use")
+    (description
+     "This package provides statistical diagnostics to evaluate whether proxy
+indicators reliably represent an unobservable target construct.  The main
+function @code{senser()} assesses proxies across multiple dimensions including
+monotonicity, information content, stability, distributional alignment, and
+potential bias risk.  It prints a concise, interpretable summary suitable for
+analytical and policy-oriented assessment, without claiming causal inference.")
     (license license:expat)))
 
 (define-public r-sensemakr
@@ -66764,13 +66863,13 @@ manifold alignment implemented in @code{scTenifoldNet}'.  See
 (define-public r-scplot
   (package
     (name "r-scplot")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scplot" version))
        (sha256
-        (base32 "0bsdzvc6c5bdwwah5mbr1x7aq40zd0597ivdhzi88c3awfjvm08q"))))
+        (base32 "0ldvgzjmcx926f37pi7yihq6vfniqrvmigjaalypnsm7acnrq2lb"))))
     (properties `((upstream-name . "scplot")))
     (build-system r-build-system)
     (arguments
@@ -66785,7 +66884,7 @@ manifold alignment implemented in @code{scTenifoldNet}'.  See
 phase-based lines to indicate various statistical parameters, and predefined
 themes for presentations and publications.  More information and in depth
 examples can be found in the online book \"Analyzing Single-Case Data with R and
-scan\" JÃ¼rgen Wilbert (2025) <https://jazznbass.github.io/scan-Book/>.")
+scan\" JÃ¼rgen Wilbert (2026) <https://jazznbass.github.io/scan-Book/>.")
     (license license:gpl3+)))
 
 (define-public r-scploidy
@@ -68716,13 +68815,13 @@ as low-level building blocks for other R packages and data workflows.")
 (define-public r-scholar
   (package
     (name "r-scholar")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scholar" version))
        (sha256
-        (base32 "15zdikddwc0dv3f0p98vr6vnxq7117yzws6a6lrkn08qg2k8wq5j"))))
+        (base32 "0bahscfr62qx8nilmy9js6rg3ypkbb9575ba9m2w9w1px84figky"))))
     (properties `((upstream-name . "scholar")))
     (build-system r-build-system)
     (arguments
@@ -71667,6 +71766,54 @@ install SASPy and create a configuration file for the connection.  Please review
 the SASPy license file as instructed so that you comply with its separate and
 independent license.")
     (license license:asl2.0)))
+
+(define-public r-sasquatch
+  (package
+    (name "r-sasquatch")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sasquatch" version))
+       (sha256
+        (base32 "036k7idxnwaqfa1j0ags4g4l8156c9wglp5rmarvx41i0dmpxi7s"))))
+    (properties `((upstream-name . "sasquatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (inputs (list python))
+    (propagated-inputs (list r-rstudioapi
+                             r-rlang
+                             r-reticulate
+                             r-knitr
+                             r-htmlwidgets
+                             r-evaluate
+                             r-cli))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://docs.ropensci.org/sasquatch/")
+    (synopsis "Use 'SAS', R, and 'quarto' Together")
+    (description
+     "Use R and SAS within reproducible multilingual quarto documents.  Run SAS code
+blocks interactively, send data back and forth between SAS and R, and render SAS
+output within quarto documents.  SAS connections are established through a
+combination of SASPy and reticulate'.")
+    (license license:expat)))
 
 (define-public r-sasmixed
   (package
@@ -75359,13 +75506,13 @@ estimation.")
 (define-public r-saemix
   (package
     (name "r-saemix")
-    (version "3.4")
+    (version "3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saemix" version))
        (sha256
-        (base32 "1az3wrmw9digjkq58gc0619114nyr0miia6d7nsp5fgbn9khd7q6"))))
+        (base32 "0wmd8m1b49sw2gz5jyqbm66n4znw3mxfzp550x5inwsdi4v6fnl6"))))
     (properties `((upstream-name . "saemix")))
     (build-system r-build-system)
     (arguments

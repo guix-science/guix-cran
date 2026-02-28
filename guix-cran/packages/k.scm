@@ -1713,13 +1713,13 @@ layout based on DIN 5008B'.")
 (define-public r-kollar
   (package
     (name "r-kollar")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kollaR" version))
        (sha256
-        (base32 "043cmi7vzl0g0lfwrfg97a7h9rq4kgyj6c734ylzsk7q6c1fkn7b"))))
+        (base32 "1azqbgh149xm7ymmgznwj3kdzc1301apsyb46pi483id5a6l74mb"))))
     (properties `((upstream-name . "kollaR")))
     (build-system r-build-system)
     (arguments
@@ -1747,11 +1747,13 @@ detection, visualizations and area of interest (AOI) based analyses.  The
 package includes implementations of the IV-T, I-DT, adaptive velocity threshold,
 and Identification by two means clustering (I2MC) algorithms.  See separate
 documentation for each function.  The principles underlying I-VT and I-DT
-algorithms are described in Salvucci & Goldberg
-(2000,\\doi{10.1145/355017.355028}).  Two-means clustering is described in
-Hessels et al. (2017, \\doi{10.3758/s13428-016-0822-1}).  The adaptive velocity
-threshold algorithm is described in NystrÃ¶m & Holmqvist
-(2010,\\doi{10.3758/BRM.42.1.188}).  See a demonstration in the URL.")
+algorithms are described in Salvucci & Goldberg (2000)
+<doi:10.1145/355017.355028>.  Two-means clustering is described in Hessels et
+al. (2017), <doi: 10.3758/s13428-016-0822-1>.  The adaptive velocity threshold
+algorithm is described in NystrÃ¶m & Holmqvist
+(2010),<doi:10.3758/BRM.42.1.188>.  A documentation of the @code{kollaR} can be
+found in Kleberg et al (2026) <doi:10.3758/s13428-025-02903-z>.  Cite this paper
+when using @code{kollaR} See a demonstration in the URL.")
     (license license:gpl3)))
 
 (define-public r-kolaide
@@ -3216,13 +3218,13 @@ project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klassR" version))
        (sha256
-        (base32 "1i1qqv6mh36ddwbyh16mj4qxc6jmknss07gd0xgf1nnhzf7irbqq"))))
+        (base32 "061id06ncq7bq5wfj0fqcl3m1qhrm2fcs521c7p73f7ryik2cz95"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
     (arguments
@@ -4861,13 +4863,13 @@ ordering, etc.).  This package is designed to work tightly with dplyr package.")
 (define-public r-keyed
   (package
     (name "r-keyed")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keyed" version))
        (sha256
-        (base32 "0hj9prf807bds72wxpkv65p70apzimzm5mp8xrdymd3mvnd2xany"))))
+        (base32 "1rcbnfyq7mz809j10g1s9jd5ihdjqnngjkzl7qc3zm726gz53vdm"))))
     (properties `((upstream-name . "keyed")))
     (build-system r-build-system)
     (arguments
@@ -4877,6 +4879,7 @@ ordering, etc.).  This package is designed to work tightly with dplyr package.")
                              r-tibble
                              r-rlang
                              r-pillar
+                             r-lifecycle
                              r-dplyr
                              r-digest
                              r-cli))
@@ -4887,8 +4890,9 @@ ordering, etc.).  This package is designed to work tightly with dplyr package.")
      "Helps make implicit data assumptions explicit by attaching keys to flat-file
 data that error when those assumptions are violated.  Designed for CSV-first
 workflows without database infrastructure or version control.  Provides key
-definition, assumption checks, join diagnostics, and optional drift detection
-against reference snapshots.")
+definition, assumption checks, join diagnostics, and automatic drift detection
+via watched data frames that snapshot before each transformation and report
+cell-level changes.")
     (license license:expat)))
 
 (define-public r-keyclust

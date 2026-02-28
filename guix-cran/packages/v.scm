@@ -1311,13 +1311,13 @@ cartograms and theme them.")
 (define-public r-vote
   (package
     (name "r-vote")
-    (version "2.4-4")
+    (version "2.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vote" version))
        (sha256
-        (base32 "18jj38dva2bvz7gl7hm3qrlycmds9glnln0w9pvjnbj800147ddw"))))
+        (base32 "0mx2bq4xkbfgnrjs8ryizx20zggvnjnk9wkjd4c54ivxyr28f9c2"))))
     (properties `((upstream-name . "vote")))
     (build-system r-build-system)
     (arguments
@@ -1710,13 +1710,13 @@ are tidyverse compatible.")
 (define-public r-volesti
   (package
     (name "r-volesti")
-    (version "1.1.2-9")
+    (version "1.1.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volesti" version))
        (sha256
-        (base32 "1m4k07038z6096j3k38pyd12v5ayq1snggj3prh2agigz88i03qy"))))
+        (base32 "13p9l9n63025r7y450kqbjzfrmfx8qcmpqz9nykkg1j5wrcggmgw"))))
     (properties `((upstream-name . "volesti")))
     (build-system r-build-system)
     (arguments
@@ -9748,13 +9748,13 @@ file as well.  See also Van der Loo and De Jonge (2018)
 (define-public r-validata
   (package
     (name "r-validata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "validata" version))
        (sha256
-        (base32 "01ghnkkhqgjllpwdvphcqymps7jq3wd919rplk092iiwwq1mpb9m"))))
+        (base32 "18b2m2g48wsj430zfy0qzqq39dwmhcns3sdpzb7inkq9rj0kn2i0"))))
     (properties `((upstream-name . "validata")))
     (build-system r-build-system)
     (arguments
@@ -9775,7 +9775,6 @@ file as well.  See also Van der Loo and De Jonge (2018)
                              r-framecleaner
                              r-dplyr
                              r-data-table
-                             r-bbmisc
                              r-badger))
     (native-inputs (list r-knitr))
     (home-page "https://harrison4192.github.io/validata/")
@@ -10032,13 +10031,13 @@ athlete reports.")
 (define-public r-valdr
   (package
     (name "r-valdr")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valdr" version))
        (sha256
-        (base32 "0nlfia8nv2a8h6d5xs197bkyg9w96piqly52qwp02p69lmij7hxp"))))
+        (base32 "0m2959vq1nf5j0vp1j26zkbr39xix696f8ddx69ajjgg7m8ba1pm"))))
     (properties `((upstream-name . "valdr")))
     (build-system r-build-system)
     (arguments

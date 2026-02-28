@@ -4944,27 +4944,28 @@ is provided.")
 (define-public r-evolution
   (package
     (name "r-evolution")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evolution" version))
        (sha256
-        (base32 "05krncv4crhjv6317ipm6whz45wzljbw2q7pjl8xaap7g2py2xjm"))))
+        (base32 "1qr6pdb6nnhz2jbqwcnnzx2kd8r2vr5xlv6wf6410rlqssrjpaxw"))))
     (properties `((upstream-name . "evolution")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-httr2 r-cli r-base64enc))
+    (propagated-inputs (list r-jsonlite r-httr2 r-cli r-base64enc))
     (home-page "https://github.com/StrategicProjects/evolution/")
     (synopsis "Client for 'Evolution Cloud API'")
     (description
      "This package provides an R interface to the Evolution API
 <https://evoapicloud.com>, enabling sending and receiving @code{WhatsApp}
-messages directly from R'.  Functions include sending text, images, documents,
-stickers, geographic locations, and interactive messages (lists).  Also includes
-webhook parsing utilities and channel health checks.")
+messages directly from R'.  Functions include sending text, media
+(image/video/document), audio, stickers, geographic locations, contacts, polls,
+interactive lists and button messages.  Also includes number verification and
+structured CLI logging for debugging.")
     (license license:expat)))
 
 (define-public r-evolqg
@@ -7346,13 +7347,13 @@ data.")
 (define-public r-ethnobotanyr
   (package
     (name "r-ethnobotanyr")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ethnobotanyR" version))
        (sha256
-        (base32 "1bdylx3in2hj3989kbp5xgpas5y84m3nrl9jpqr05rv19l6i4350"))))
+        (base32 "0jpk8iwrnnpcxr74siqizk7gp5j85q1csn65ps7h5vqh3q47czsi"))))
     (properties `((upstream-name . "ethnobotanyR")))
     (build-system r-build-system)
     (arguments
@@ -7368,15 +7369,15 @@ data.")
                              r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=ethnobotanyR")
-    (synopsis "Calculate Quantitative Ethnobotany Indices")
+    (synopsis "Ethnobotanical Analysis, Decision-Framing, and TEK Modeling")
     (description
-     "An implementation of the quantitative ethnobotany indices in R. The goal is to
-provide an easy-to-use platform for ethnobotanists to assess the cultural
-significance of plant species based on informant consensus.  The package closely
-follows the paper by Tardio and Pardo-de-Santayana (2008).  Tardio, J., and M.
-Pardo-de-Santayana, 2008.  Cultural Importance Indices: A Comparative Analysis
-Based on the Useful Wild Plants of Southern Cantabria (Northern Spain) 1.
-Economic Botany, 62(1), 24-39. <doi:10.1007/s12231-007-9004-5>.")
+     "This package provides tools for quantifying Traditional Ecological Knowledge
+(TEK), modeling TEK in decision frameworks, and designing structured
+decision-framing exercises in conservation and development contexts.  The
+package implements quantitative ethnobotany indices (Use Value, Relative
+Frequency of Citation, etc.) but positions them within a larger framework of
+Bayesian modeling and participatory decision analysis.  Includes critical
+assessment of indices limitations and case studies of participatory workshops.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ethiodate
@@ -10902,13 +10903,13 @@ data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.16.1")
+    (version "0.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "1kz5sz3f3j6r9s6md4a50qqyd5rmwgpqbxxzc9xh22ffn5lp8rc6"))))
+        (base32 "1jdr2zrk7a5dxgvqaacm04k51qds5nmyxzcams2z4qwr2xlglgaf"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (arguments
@@ -10934,12 +10935,12 @@ scale.  Frequently the scores on these five dimensions are converted to a single
 utility index using country specific value sets, which can be used in the
 clinical and economic evaluation of health care as well as in population health
 surveys.  The eq5d package provides methods to calculate index scores from a
-subject's dimension scores.  32 TTO and 11 VAS EQ-5D-3L value sets including
+subject's dimension scores.  33 TTO and 11 VAS EQ-5D-3L value sets including
 those for countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and
 Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 48 EQ-5D-5L EQ-VT value
 sets, the EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
 <doi:10.1016/j.jval.2012.02.008>, the crosswalk value sets for Bermuda, Jordan
-and Russia and the van Hout (2021) reverse crosswalk value sets.  11 EQ-5D-Y3L
+and Russia and the van Hout (2021) reverse crosswalk value sets.  12 EQ-5D-Y3L
 value sets are also included as are the NICE DSU age-sex based EQ-5D-3L to
 EQ-5D-5L and EQ-5D-5L to EQ-5D-3L mappings.  Methods are also included for the
 analysis of EQ-5D profiles, including those from the book \"Methods for Analyzing
@@ -12913,13 +12914,13 @@ deterministic and stochastic models can be simulated and plotted.")
 (define-public r-epidm
   (package
     (name "r-epidm")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidm" version))
        (sha256
-        (base32 "0ncjfhq45gs1w0kpkpdwfs43iccl6pq8yrc2999g3r5dsiw06lyq"))))
+        (base32 "0vd806cjfahc0fshljbfx3ggjiiwxy445ypkzlcpxqih159v1kg1"))))
     (properties `((upstream-name . "epidm")))
     (build-system r-build-system)
     (arguments
@@ -12931,9 +12932,11 @@ deterministic and stochastic models can be simulated and plotted.")
                              r-purrr
                              r-phonics
                              r-odbc
+                             r-lubridate
                              r-dbi
                              r-data-table))
-    (home-page "https://github.com/alexbhatt/epidm")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ukhsa-collaboration/epidm")
     (synopsis "UK Epidemiological Data Management")
     (description
      "This package contains utilities and functions for the cleaning, processing and
@@ -14620,13 +14623,13 @@ ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
 (define-public r-enrichit
   (package
     (name "r-enrichit")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enrichit" version))
        (sha256
-        (base32 "0fqmx449cpdb05bf2pkf5zn1jmnksj4hkm5lrn4wk5icmlm3wc6z"))))
+        (base32 "15p4qlbyivk5r8xw0fq9nmjvbmqfakkrihbpkqf47n4dy7y5bdy9"))))
     (properties `((upstream-name . "enrichit")))
     (build-system r-build-system)
     (arguments
@@ -16699,13 +16702,13 @@ details, see Byrnes et al. (2014) <doi:10.1111/2041-210X.12143> and Chao et al.
 (define-public r-emery
   (package
     (name "r-emery")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emery" version))
        (sha256
-        (base32 "07mxbxmz608jrzc4pdhwwiy4x86ams58jl3gxdj5hmvvk8sq65m5"))))
+        (base32 "0cqs2scycwxn3351nggi821rp8w0m8y9bawn4gmw8z7nf7d1nm0g"))))
     (properties `((upstream-name . "emery")))
     (build-system r-build-system)
     (arguments
@@ -22049,13 +22052,13 @@ aids in experimental planning, management and workflow.")
 (define-public r-edgemodelr
   (package
     (name "r-edgemodelr")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgemodelr" version))
        (sha256
-        (base32 "1af3aw713q3x7q6slfshlairdzy6d5rlpn8dsb2l2lb1pnx0jfjw"))))
+        (base32 "0p1y9dwg3hls5mzj3ylrc4ps1fnbym38r0m367y2izlx07zixprk"))))
     (properties `((upstream-name . "edgemodelr")))
     (build-system r-build-system)
     (arguments
@@ -26446,18 +26449,19 @@ estimating technical efficiency is also included.  More details in:
 (define-public r-easyviz
   (package
     (name "r-easyviz")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyViz" version))
        (sha256
-        (base32 "16kfwnlhg5khcasl56vya037lgsynsxk5cav0zc06l18z87i0ck9"))))
+        (base32 "1vq78v3cg1c3jxk41w8rmbqis0xhpia1sq8ldirgal718a938hch"))))
     (properties `((upstream-name . "easyViz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-reformulas))
     (home-page "https://cran.r-project.org/package=easyViz")
     (synopsis
      "Easy Visualization of Conditional Effects from Regression Models")

@@ -869,13 +869,13 @@ visualization, and validation of two-mode cluster structures in data matrices.")
 (define-public r-twodcdapsa
   (package
     (name "r-twodcdapsa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoDcDAPSA" version))
        (sha256
-        (base32 "18ixmp9yni9gipkdw80kh1sig2l64jrnjb3bvafi1wal058cv9f0"))))
+        (base32 "0knr12sy9rifwqbm02gmx306kg0p7xl9i8y5kyfxbyqv644vbdpb"))))
     (properties `((upstream-name . "TwoDcDAPSA")))
     (build-system r-build-system)
     (arguments
@@ -884,19 +884,21 @@ visualization, and validation of two-mode cluster structures in data matrices.")
     (propagated-inputs (list r-rlang r-dplyr))
     (home-page "https://cran.r-project.org/package=TwoDcDAPSA")
     (synopsis
-     "Calculate TwoDcDAPSA: PROs-Joint Contrast (PJC) Score and Quartiles")
+     "Calculate TwoDcDAPSA: PROs-Joint Contrast (PJC) and SwollenâTender Joints Contrast (STC) Scores and Quartiles")
     (description
      "This package provides a calculator for the two-dimensional clinical Disease
 Activity index for Psoriatic Arthritis (@code{TwoDcDAPSA}), a principal
 component-derived measure that complements the conventional clinical DAPSA
-score.  The @code{TwoDcDAPSA} captures residual variation in patient-reported
+score. @code{TwoDcDAPSA} captures residual variation in patient-reported
 outcomes (pain and patient global assessment) and joint counts (swollen and
 tender) after adjusting for standardized @code{cDAPSA} using natural spline
 coefficients derived from published models.  Residuals are standardized and
-combined with fixed principal component loadings to yield a continuous
-PROs-Joint Contrast (PJC) score and quartile groupings.  The package applies
-pre-specified coefficients and loadings to new datasets but does not estimate
-spline models or principal components itself.")
+combined with fixed principal component loadings to yield two continuous
+component scores: the PROs-Joint Contrast (PJC) and the SwollenâTender joints
+Contrast (STC), along with quartile-based groupings (including optional combined
+quartile groupings).  The package applies pre-specified coefficients, residual
+standardization, and loadings to new datasets but does not estimate spline
+models or principal components itself.")
     (license license:expat)))
 
 (define-public r-twocoprimary
@@ -2266,19 +2268,19 @@ also provided.")
 (define-public r-tukeyc
   (package
     (name "r-tukeyc")
-    (version "1.3-43")
+    (version "1.3-44")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TukeyC" version))
        (sha256
-        (base32 "03hyj4yixlgp8gzryh7sp3hgpiyhznw6bc0dw6z0f4nnaj5hyxba"))))
+        (base32 "0wpbh1b5v6pnc9fvid9pa08vaw2bwxglayngicl26xd1ickg5kc8"))))
     (properties `((upstream-name . "TukeyC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xtable r-doby))
+    (propagated-inputs (list r-xtable r-emmeans))
     (home-page "https://github.com/jcfaria/TukeyC")
     (synopsis "Conventional Tukey Test")
     (description
@@ -8172,6 +8174,48 @@ also offers functions for applying the palettes to plots made using the ggplot2
 package.")
     (license license:expat)))
 
+(define-public r-treetraits
+  (package
+    (name "r-treetraits")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tReeTraits" version))
+       (sha256
+        (base32 "1djzpxbj2rad9y62cxf7x4byry37r88mw2zg1v6v5p6i1hcscmp2"))))
+    (properties `((upstream-name . "tReeTraits")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-terra
+                             r-stringr
+                             r-spanner
+                             r-sf
+                             r-rlang
+                             r-rgl
+                             r-reticulate
+                             r-recexcavaar
+                             r-readr
+                             r-lidr
+                             r-ggpubr
+                             r-ggplotify
+                             r-ggplot2
+                             r-fnn
+                             r-dplyr
+                             r-data-table
+                             r-crownscorchtls
+                             r-alphashape3d))
+    (home-page "https://cran.r-project.org/package=tReeTraits")
+    (synopsis "Calculate Tree Traits from Terrestrial Lidar")
+    (description
+     "Measuring tree architecture from terrestrial lidar data, including tree-level
+properties, crown characteristics, and structural attributes derived from
+quantitative structure models (QSMs).")
+    (license license:gpl3)))
+
 (define-public r-treetools
   (package
     (name "r-treetools")
@@ -8671,13 +8715,13 @@ Tree Ordered Alternatives in One-way ANOVA\"
 (define-public r-treeminer
   (package
     (name "r-treeminer")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeMineR" version))
        (sha256
-        (base32 "18d1y5sf871sbp1yhsc9ji27a8hly5g7qv0jxy2apml44i1003iw"))))
+        (base32 "01g7v0lqrdwzsh7s1rv2l402pn97fvb7dvfz383ld7cdc8mmgd08"))))
     (properties `((upstream-name . "TreeMineR")))
     (build-system r-build-system)
     (arguments
@@ -10703,13 +10747,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.3-2")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1jwkpi032dgfh3hsyx44yrdia606yyibxm079v5zrpiilhr80rx9"))))
+        (base32 "0acb9j221klyfiy26d2awpig3izncd3nymqwhpk3787kkqcvxsqz"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -10725,7 +10769,7 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
                              r-formula
                              r-basefun))
     (native-inputs (list r-knitr))
-    (home-page "http://ctm.R-forge.R-project.org")
+    (home-page "https://ctm.R-forge.R-project.org")
     (synopsis "Transformation Models")
     (description
      "Formula-based user-interfaces to specific transformation models implemented in
@@ -10963,20 +11007,20 @@ developed in Maitner et al (2021) <doi:10.22541/au.162196147.76797968/v1>.")
 (define-public r-traipse
   (package
     (name "r-traipse")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traipse" version))
        (sha256
-        (base32 "1ln0l8dkslj8pf0h5g5pj5iwy9x05nfkp1x36dxbi5iab88cv76w"))))
+        (base32 "01zj353lqk1m9x0k2y2413f0cwlf9i2mi41p3qx9f2k5yhg1kdsn"))))
     (properties `((upstream-name . "traipse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-geosphere r-geodist))
-    (home-page "https://github.com/Trackage/traipse")
+    (propagated-inputs (list r-magrittr r-geographiclib r-geodist))
+    (home-page "https://github.com/AustralianAntarcticDivision/traipse")
     (synopsis "Shared Tools for Tracking Data")
     (description
      "This package provides a collection of commonly used tools for animal movement
@@ -10984,7 +11028,7 @@ and other tracking data.  Variously distance, angle, bearing, distance-to,
 bearing-to and speed are provided for geographic data that can be used directly
 or within tidyverse syntax.  Distances and bearings are calculated using modern
 geodesic methods as provided by Charles F. F. Karney (2013)
-<doi:10.1007/s00190-012-0578-z> via the geodist and geosphere packages.")
+<doi:10.1007/s00190-012-0578-z> via the geographiclib package.")
     (license license:gpl3)))
 
 (define-public r-trainsplit
@@ -11205,6 +11249,44 @@ line, absolute increase, growth averaging methods.")
 Trade Policy Analysis\" and functions to report regression summaries with
 clustered robust standard errors.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-tradeoffaucdim
+  (package
+    (name "r-tradeoffaucdim")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tradeoffaucdim" version))
+       (sha256
+        (base32 "0lyphs2y2icaw382z5jflq9g9c4ydrzs5drqjhrqccdqaszn9klh"))))
+    (properties `((upstream-name . "tradeoffaucdim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-superlearner
+                             r-stringr
+                             r-speedglm
+                             r-rsample
+                             r-rocr
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-fuzzysim
+                             r-fastdummies
+                             r-ez
+                             r-dplyr
+                             r-caret))
+    (home-page "https://github.com/luisgarcez11/tradeoffaucdim")
+    (synopsis "Plotting Trade-Off AUC-Dimensionality")
+    (description
+     "Perform and Runtime statistical comparisons between models.  This package aims
+at choosing the best model for a particular dataset, regarding its discriminant
+power and runtime.")
+    (license license:expat)))
 
 (define-public r-trade
   (package
@@ -12028,13 +12110,13 @@ reliability performance measures.  Implements
 (define-public r-tplyr
   (package
     (name "r-tplyr")
-    (version "1.2.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Tplyr" version))
        (sha256
-        (base32 "092lazly5l2891x7yriii19ifck0rhlwk0ic8n6yjpp2ibwg6dbz"))))
+        (base32 "0pbz2xpzc41gdg6qs9sjypg07lscn35vjwzfpg62y0vmhmkj206v"))))
     (properties `((upstream-name . "Tplyr")))
     (build-system r-build-system)
     (arguments
@@ -12052,7 +12134,7 @@ reliability performance measures.  Implements
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/atorus-research/Tplyr")
+    (home-page "https://atorus-research.github.io/Tplyr/")
     (synopsis "Traceability Focused Grammar of Clinical Data Summary")
     (description
      "This package provides a traceability focused tool created to simplify the data
@@ -19418,13 +19500,13 @@ the results in a tidy format.")
 (define-public r-tidyseurat
   (package
     (name "r-tidyseurat")
-    (version "0.8.7")
+    (version "0.8.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyseurat" version))
        (sha256
-        (base32 "19j3jxq7b33hh9kgd2x27k102p3wxpiphlp6v7ymhkh7qdxc95ql"))))
+        (base32 "0p424gvlyqk3kaal88lxj5ci49wivzp2lxwcj3vd7jrl1v955ngr"))))
     (properties `((upstream-name . "tidyseurat")))
     (build-system r-build-system)
     (arguments
@@ -20364,23 +20446,23 @@ summarizing the results from the simulation.")
 (define-public r-tidylpa
   (package
     (name "r-tidylpa")
-    (version "1.1.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyLPA" version))
        (sha256
-        (base32 "1lyd8cx90j49bm65330i57jyimiid75c2pvnzk7dcp6mbmglvimz"))))
+        (base32 "05y8cx2ji4wa9rh9lgznw0bmdwnigra23ikl5zmnsh80446017va"))))
     (properties `((upstream-name . "tidyLPA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidysem
+                             r-tibble
+                             r-rlang
                              r-mplusautomation
-                             r-mix
                              r-mclust
-                             r-gtable
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -20388,11 +20470,13 @@ summarizing the results from the simulation.")
     (synopsis
      "Easily Carry Out Latent Profile Analysis (LPA) Using Open-Source or Commercial Software")
     (description
-     "An interface to the mclust package to easily carry out latent profile analysis
-(\"LPA\").  Provides functionality to estimate commonly-specified models.  Follows
-a tidy approach, in that output is in the form of a data frame that can
-subsequently be computed on.  Also has functions to interface to the commercial
-MPlus software via the @code{MplusAutomation} package.")
+     "Easily carry out latent profile analysis (\"LPA\"), determine the correct number
+of classes based on best practices, and tabulate and plot the results.  Provides
+functionality to estimate commonly-specified models with free means, variances,
+and covariances for each profile.  Follows a tidy approach, in that output is in
+the form of a data frame that can subsequently be computed on.  Models can be
+estimated using the free open source R packages Mclust and @code{OpenMx}', or
+using the commercial program MPlus', via the @code{MplusAutomation} package.")
     (license license:expat)))
 
 (define-public r-tidylog
@@ -22101,6 +22185,33 @@ visualization primitives like points with multiple uncertainty intervals, eye
 plots (intervals plus densities), and fit curves with multiple, arbitrary
 uncertainty bands.")
     (license license:gpl3+)))
+
+(define-public r-tidyaudit
+  (package
+    (name "r-tidyaudit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyaudit" version))
+       (sha256
+        (base32 "0dnc455bm586grnxqys8lii9ygv8bs7cspg0rgymzwzz25hlq4q7"))))
+    (properties `((upstream-name . "tidyaudit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-glue r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fpcordeiro/tidyaudit")
+    (synopsis
+     "Pipeline Audit Trails and Data Diagnostics for 'tidyverse' Workflows")
+    (description
+     "This package provides pipeline audit trails and data diagnostics for tidyverse
+workflows.  The audit trail system captures lightweight metadata snapshots at
+each step of a pipeline, building a structured audit report without storing the
+data itself.  Also includes diagnostic functions for interactive data analysis.")
+    (license license:lgpl3+)))
 
 (define-public r-tidyaml
   (package
@@ -28030,13 +28141,13 @@ following the methodology described in Shao, Moore, and Ramirez (2025)
 (define-public r-temporal
   (package
     (name "r-temporal")
-    (version "0.3.0.1")
+    (version "0.3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Temporal" version))
        (sha256
-        (base32 "0xsvnm4fvbyih731h6by7zva5pm11r8k0paky8kl7zdr72rpkym4"))))
+        (base32 "0gc8fggr1aw6k538grh28ggxjyqc594ir8f4spbj6cvhk516n6b1"))))
     (properties `((upstream-name . "Temporal")))
     (build-system r-build-system)
     (arguments
@@ -28044,7 +28155,7 @@ following the methodology described in Shao, Moore, and Ramirez (2025)
       #:tests? #f))
     (propagated-inputs (list r-tidyr r-numderiv r-expint r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Temporal")
+    (home-page "https://github.com/zrmacc/Temporal")
     (synopsis "Parametric Time to Event Analysis")
     (description
      "This package performs maximum likelihood based estimation and inference on time
@@ -33069,6 +33180,51 @@ form, where packages such as tidyr could be used for reshaping.  The schema
 description documents the arrangement of input tables and is used to reshape
 them into a standardised (tidy) output format.")
     (license license:gpl3)))
+
+(define-public r-tabs
+  (package
+    (name "r-tabs")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabs" version))
+       (sha256
+        (base32 "0vmswdgfhalp2fbska1qq51fdhb67n16l1h0bslffm98yb5876pw"))))
+    (properties `((upstream-name . "tabs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stringi
+                             r-sf
+                             r-rsqlite
+                             r-rlang
+                             r-qs2
+                             r-mapedit
+                             r-leaftime
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-gpkg
+                             r-geojsonio
+                             r-dplyr
+                             r-ape))
+    (home-page "https://uva_ibed_piac.gitlab.io/tabs/")
+    (synopsis "Temporal Altitudinal Biogeographic Shifts")
+    (description
+     "This package provides a standardized workflow to reconstruct spatial
+configurations of altitude-bounded biogeographic systems over time.  For
+example, tabs can model how island archipelagos expand or contract with changing
+sea levels or how alpine biomes shift in response to tree line movements.  It
+provides functionality to account for various geophysical processes such as
+crustal deformation and other tectonic changes, allowing for a more accurate
+representation of biogeographic system dynamics.  For more information see De
+Groeve et al. (2025) <doi:10.21425/fob.18.151677>.")
+    (license license:gpl3+)))
 
 (define-public r-tabr
   (package

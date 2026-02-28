@@ -2427,13 +2427,13 @@ results.")
 (define-public r-wordvector
   (package
     (name "r-wordvector")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordvector" version))
        (sha256
-        (base32 "1n1ihk5snr5vbq9d3218xdbymxz2acd4fn55bkzn5kv2aqax9p2b"))))
+        (base32 "0izvhmi7h1w9fk21f3r6y18sj2jyzi28fsa7kypk15kascf9ar12"))))
     (properties `((upstream-name . "wordvector")))
     (build-system r-build-system)
     (arguments
@@ -2451,8 +2451,9 @@ results.")
     (synopsis "Word and Document Vector Models")
     (description
      "Create dense vector representation of words and documents using quanteda'.
-Currently implements Word2vec (Mikolov et al., 2013)
-<doi:10.48550/@code{arXiv.1310.4546>} and Latent Semantic Analysis (Deerwester
+Implements Word2vec (Mikolov et al., 2013)
+<doi:10.48550/@code{arXiv.1310.4546>}, Doc2vec (Le & Mikolov, 2014)
+<doi:10.48550/@code{arXiv.1405.4053>} and Latent Semantic Analysis (Deerwester
 et al., 1990)
 <doi:10.1002/(SICI)1097-4571(199009)41:6%3C391::AID-ASI1%3E3.0.CO;2-9>.")
     (license license:asl2.0)))
@@ -8268,13 +8269,13 @@ cubic regression splines.")
 (define-public r-wcde
   (package
     (name "r-wcde")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wcde" version))
        (sha256
-        (base32 "1wyq4m6ziv4b8zkzg3gjjnyhj2bg18ikfxz98q9c2nxqdiq4kbir"))))
+        (base32 "0fxs6x4j3rn9rgfs1vcs8n6a3y46ppihxc8jdjyhgp3mw2x5digb"))))
     (properties `((upstream-name . "wcde")))
     (build-system r-build-system)
     (arguments
@@ -8297,7 +8298,7 @@ cubic regression splines.")
     (description
      "Download and plot education specific demographic data from the Wittgenstein
 Centre for Demography and Human Capital Data Explorer
-<http://dataexplorer.wittgensteincentre.org/>.")
+<https://dataexplorer.wittgensteincentre.org/>.")
     (license license:gpl3)))
 
 (define-public r-wbwdi

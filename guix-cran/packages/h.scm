@@ -546,6 +546,28 @@ generation.  Applications include modeling trait and niche hypervolumes and
 species distribution modeling.")
     (license license:gpl3)))
 
+(define-public r-hypertext
+  (package
+    (name "r-hypertext")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypertext" version))
+       (sha256
+        (base32 "0jn18qbdivgcz6dnvqmwzzkz6b1gpp8k2ldgjk16lv2bdksf6clp"))))
+    (properties `((upstream-name . "hypertext")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/sigflux/hypertext")
+    (synopsis "'HTML' Element Construction")
+    (description
+     "This package provides a deterministic, framework-agnostic Domain-Specific
+Language for building HTML nodes and rendering them to a string.")
+    (license license:expat)))
+
 (define-public r-hyperspec
   (package
     (name "r-hyperspec")
@@ -1236,6 +1258,32 @@ to alleviate the computational burden of complex models with long execution
 time.")
     (license license:gpl2+)))
 
+(define-public r-hydrome
+  (package
+    (name "r-hydrome")
+    (version "2.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HydroMe" version))
+       (sha256
+        (base32 "0y1acgf2hjp0hsd69pb5bs6v3ggmfnc03qz318s3wzq1766h4h5a"))))
+    (properties `((upstream-name . "HydroMe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=HydroMe")
+    (synopsis
+     "Estimating Water Retention and Infiltration Model Parameters using Experimental Data")
+    (description
+     "Estimates the parameters of infiltration and water retention models using the
+curve-fitting methods as shown in Omuto and Gumbe (2009)
+<doi:10.1016/j.cageo.2008.08.011>.  The models considered are those that are
+commonly used in soil science.  Version 2 of the package has new models for
+water retention characteristic curves.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
@@ -1345,6 +1393,57 @@ matched across multiple time series.  The package has been applied in studies
 such as Wasko and Guo (2022) <doi:10.1002/hyp.14563> and Mohammadpour Khoie, Guo
 and Wasko (2025) <doi:10.1016/j.envsoft.2025.106521>.")
     (license license:gpl3)))
+
+(define-public r-hydrodownloadr
+  (package
+    (name "r-hydrodownloadr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydrodownloadR" version))
+       (sha256
+        (base32 "1jf86ka1p78d0ng8z4cvlvhj7k446ylcdlljx31hqmz1059mmdhd"))))
+    (properties `((upstream-name . "hydrodownloadR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-sf
+                             r-rsqlite
+                             r-rlang
+                             r-ratelimitr
+                             r-rappdirs
+                             r-progress
+                             r-pdftools
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-dplyr
+                             r-dbi
+                             r-dataretrieval
+                             r-cli
+                             r-cellranger))
+    (home-page "https://bafg-bund.github.io/hydrodownloadR/")
+    (synopsis "Hydrologic Station Catalogs and Time Series from Public APIs")
+    (description
+     "This package provides a unified, extensible interface to discover hydrologic
+stations and download daily time series (e.g., water discharge, water level,
+water temperature, and several other water quality parameter) from national and
+regional public APIs.  Includes a provider registry, S3 generics stations and
+timeseries', licensing metadata, date-range and complete history modes, rate
+limiting and retries, optional authentication via environment variables, tidy
+outputs, UTF-8 to ASCII transliteration, and WGS84 coordinates.  Designed for
+reproducible workflows and straightforward addition of new providers.
+Background and use cases are described in Farber et al. (2025)
+<doi:10.5194/essd-17-4613-2025> and Farber et al. (2023)
+<doi:10.57757/IUGG23-2838>.")
+    (license license:expat)))
 
 (define-public r-hydrodcindex
   (package
@@ -13218,30 +13317,6 @@ the syntax for manipulation is similar to data.table'.  Operations are performed
 \"chunk-wise\" behind the scene.")
     (license license:gpl3)))
 
-(define-public r-hdcurves
-  (package
-    (name "r-hdcurves")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDCurves" version))
-       (sha256
-        (base32 "1656ia0qn4yrbkcrpjiyqq72fbvb088d07ma7kchvg875nzwj42v"))))
-    (properties `((upstream-name . "HDCurves")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=HDCurves")
-    (synopsis "Hierarchical Derivative Curve Estimation")
-    (description
-     "This package provides a procedure that fits derivative curves based on a
-sequence of quotient differences.  In a hierarchical setting the package
-produces estimates of subject-specific and group-specific derivative curves.  In
-a non-hierarchical setting the package produces a single derivative curve.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-hdcuremodels
   (package
     (name "r-hdcuremodels")
@@ -15358,6 +15433,39 @@ relative frequencies.")
      "Simulate haplotypes through meioses.  Allows specification of population
 parameters.")
     (license license:gpl2+)))
+
+(define-public r-haplodiploidequilibrium
+  (package
+    (name "r-haplodiploidequilibrium")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HaploDiploidEquilibrium" version))
+       (sha256
+        (base32 "14nrsdkx3c0q6hb6g7zx38hxzx0p49rq5wh0ljpqyvg9kylk5msx"))))
+    (properties `((upstream-name . "HaploDiploidEquilibrium")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr r-matrixstats r-dplyr r-data-table))
+    (home-page "https://cran.r-project.org/package=HaploDiploidEquilibrium")
+    (synopsis
+     "Calculate F Statistics Using Mixed Haploid and Diploid Organism Data")
+    (description
+     "This package provides functions to estimate population genetics summary
+statistics from haplo-diploid systems, where one sex is haploid and the other
+diploid (e.g. Hymenoptera insects).  It implements a theoretical model assuming
+equal sex ratio, random mating, no selection, no mutation, and no gene flow,
+deriving expected genotype frequencies for both sexes under these equilibrium
+conditions.  The package includes windowed calculations (operating over genomic
+sliding windows from VCF input) for allele and genotype frequencies, the
+inbreeding coefficient (Fis), pairwise Fst, Nei's H (gene diversity),
+Watterson's Theta, and sex-specific reference allele frequencies.  Most
+statistics are agnostic to ploidy, allowing the package to be applied to both
+strictly haplo-diploid and fully diploid systems.")
+    (license license:gpl3)))
 
 (define-public r-haplocatcher
   (package

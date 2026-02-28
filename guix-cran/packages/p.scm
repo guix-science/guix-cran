@@ -3679,13 +3679,13 @@ and imperial (IP) systems of units.  References: Meyer, D. and Thevenard, D
 (define-public r-psychonetrics
   (package
     (name "r-psychonetrics")
-    (version "0.13.2")
+    (version "0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychonetrics" version))
        (sha256
-        (base32 "0wjn3g2qr4y57lrxn9dwmv47pjmmlxmziyfa4lv2n38b5cscs89p"))))
+        (base32 "18cr1ag2n5yixqdjrw6i30l0ac0gj49akl22m4j64qi0wc01d3cg"))))
     (properties `((upstream-name . "psychonetrics")))
     (build-system r-build-system)
     (arguments
@@ -3695,6 +3695,7 @@ and imperial (IP) systems of units.  References: Meyer, D. and Thevenard, D
                              r-tidyr
                              r-roptim
                              r-rlang
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-qgraph
@@ -3703,6 +3704,7 @@ and imperial (IP) systems of units.  References: Meyer, D. and Thevenard, D
                              r-pbapply
                              r-optimx
                              r-numderiv
+                             r-nloptr
                              r-mgcv
                              r-matrix
                              r-magrittr
@@ -3714,7 +3716,7 @@ and imperial (IP) systems of units.  References: Meyer, D. and Thevenard, D
                              r-corpcor
                              r-combinat
                              r-abind))
-    (home-page "http://psychonetrics.org/")
+    (home-page "https://psychonetrics.org/")
     (synopsis "Structural Equation Modeling and Confirmatory Network Analysis")
     (description
      "Multi-group (dynamical) structural equation models in combination with
@@ -4004,6 +4006,43 @@ This result is used to obtain the singular value decomposition (SVD) and the
 principal component analysis (PCA) results.  Compared to the classical SVD
 method, the first r singular values can be computed.")
     (license license:gpl2+)))
+
+(define-public r-pstr
+  (package
+    (name "r-pstr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSTR" version))
+       (sha256
+        (base32 "16ixaxgs2xhc5fpwry316i12phppsyihlh0ld7bjyav2wd1ygx2f"))))
+    (properties `((upstream-name . "PSTR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-r6
+                             r-plotly
+                             r-magrittr
+                             r-knitr
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yukai-yang/PSTR")
+    (synopsis "Panel Smooth Transition Regression Modelling")
+    (description
+     "This package implements the Panel Smooth Transition Regression (PSTR) framework
+for nonlinear panel data modelling.  The modelling procedure consists of three
+stages: Specification, Estimation and Evaluation.  The package provides tools
+for model specification testing, to do PSTR model estimation, and to do model
+evaluation.  The implemented tests allow for cluster dependence and are
+heteroskedasticity-consistent.  The wild bootstrap and wild cluster bootstrap
+tests are also implemented.  Parallel computation (as an option) is implemented
+in some functions, especially the bootstrap tests.  The package supports
+parallel computation, which is useful for large-scale bootstrap procedures.")
+    (license license:gpl3)))
 
 (define-public r-pstest
   (package
@@ -7620,19 +7659,19 @@ of random multigraph models and conformity-based decompositions.")
 (define-public r-propagate
   (package
     (name "r-propagate")
-    (version "1.0-7")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "propagate" version))
        (sha256
-        (base32 "0j1bwn7bzh9qahajcbf4v1sydwx9z1wvxvvblmm9rz9m7firxpbz"))))
+        (base32 "00irwg2kabvdai79qkag8sxn2xaby8kahqvvrl258c7lg1wqj2sc"))))
     (properties `((upstream-name . "propagate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tmvtnorm r-rcpp r-minpack-lm r-mass r-ff))
+    (propagated-inputs (list r-rcpp r-minpack-lm r-hdf5r r-crayon r-copula))
     (home-page "https://cran.r-project.org/package=propagate")
     (synopsis "Propagation of Uncertainty")
     (description
@@ -14737,6 +14776,44 @@ see Wood, S.N., Pya, N. & Safken, B. (2016) <doi:10.1080/01621459.2016.1180986>.
 classification.")
     (license license:gpl2+)))
 
+(define-public r-ppendemic
+  (package
+    (name "r-ppendemic")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ppendemic" version))
+       (sha256
+        (base32 "1g3rfklzpn4accg30hqm13mdnpijki9biv73hrvk395pdyza79lb"))))
+    (properties `((upstream-name . "ppendemic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-memoise
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-cli
+                             r-assertthat))
+    (home-page "https://github.com/PaulESantos/ppendemic/")
+    (synopsis "Glimpse at the Diversity of Peru's Endemic Plants")
+    (description
+     "Introducing a novel and updated database showcasing Peru's endemic plants.  This
+meticulously compiled and revised botanical collection encompasses a remarkable
+assemblage of over 7,898 distinct species.  The data for this resource was
+sourced from the work of Govaerts, R., Nic Lughadha, E., Black, N. et al.,
+titled The World Checklist of Vascular Plants: A continuously updated resource
+for exploring global plant diversity', published in Sci Data 8, 215 (2021)
+<doi:10.1038/s41597-021-00997-6>.")
+    (license license:expat)))
+
 (define-public r-ppdiag
   (package
     (name "r-ppdiag")
@@ -19138,19 +19215,20 @@ large.")
 (define-public r-polysegratiomm
   (package
     (name "r-polysegratiomm")
-    (version "0.6-4")
+    (version "0.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polySegratioMM" version))
        (sha256
-        (base32 "162xj52566kaxgfk7c14170xx07isyjmqb9skvhrdg7sz20lc3l1"))))
+        (base32 "1f7px26a45zwydrdks027bdf6fsm2dp9vm23wq70f6zkr6sy4h1l"))))
     (properties `((upstream-name . "polySegratioMM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-polysegratio r-lattice r-gtools r-coda))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/petebaker/polysegratiomm")
     (synopsis "Bayesian Mixture Models for Marker Dosage in Autopolyploids")
     (description
@@ -19164,20 +19242,21 @@ estimation of marker dosage in sugarcane and other autopolyploids\" (2010,
 (define-public r-polysegratio
   (package
     (name "r-polysegratio")
-    (version "0.2-5")
+    (version "0.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polySegratio" version))
        (sha256
-        (base32 "0djw49mbhd7x6jr0f5qkb9akw3fw3ax4w9xv8iwa5f65q5gbxpdf"))))
+        (base32 "05jc8cl4h2ppfigyi9r9b2bwil7c95bcq9zjv4lr5cxjbis7iidk"))))
     (properties `((upstream-name . "polySegratio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-gdata))
-    (home-page "https://cran.r-project.org/package=polySegratio")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/petebaker/polysegratio")
     (synopsis
      "Simulate and Test Marker Dosage for Dominant Markers in Autopolyploids")
     (description
@@ -29392,6 +29471,31 @@ models.  The Bayesian phylogenetic generalized linear mixed models are fitted
 with the INLA package (<https://www.r-inla.org>).")
     (license license:gpl3)))
 
+(define-public r-phymapnet
+  (package
+    (name "r-phymapnet")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phymapnet" version))
+       (sha256
+        (base32 "01ahk4l9z8r05kwj4dq8x9ina5dy3kq8sg2jcp8lavrjh312bfhq"))))
+    (properties `((upstream-name . "phymapnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gunifrac r-compositions r-ape))
+    (home-page "https://cran.r-project.org/package=phymapnet")
+    (synopsis "Phylogeny-Guided Bayesian Microbial Network Inference")
+    (description
+     "This package implements a phylogeny-aware Bayesian graphical modeling framework
+for microbial network inference using a shrinkage precision estimator guided by
+a phylogenetic kernel, with optional hyperparameter-ensemble edge reliability
+analysis.")
+    (license license:gpl3)))
+
 (define-public r-phylter
   (package
     (name "r-phylter")
@@ -34019,6 +34123,47 @@ ecological, environmental, biogeographical, and conservation workflows that
 require verified species information for Peruvian mammals.")
     (license license:expat)))
 
+(define-public r-peruflorads43
+  (package
+    (name "r-peruflorads43")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "peruflorads43" version))
+       (sha256
+        (base32 "15x3szwwf0pa6g2kfa3yd513d9vjad2d8g4jq8prvp1pjgmrhr81"))))
+    (properties `((upstream-name . "peruflorads43")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-memoise
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaulESantos/peruflorads43")
+    (synopsis
+     "Check Threatened Plant Species Status Against Peru's Supreme Decree 043-2006-AG")
+    (description
+     "This package provides tools to match plant species names against the official
+threatened species list of Peru (Supreme Decree 043-2006-AG, 2006).  Implements
+a hierarchical matching pipeline with exact, fuzzy, and suffix matching
+algorithms to handle naming variations and taxonomic changes.  Supports both the
+original 2006 nomenclature and updated taxonomic names, allowing users to check
+protection status regardless of nomenclatural changes since the decree's
+publication.  Threat categories follow International Union for Conservation of
+Nature standards (Critically Endangered, Endangered, Vulnerable, Near
+Threatened).")
+    (license license:expat)))
+
 (define-public r-peruapis
   (package
     (name "r-peruapis")
@@ -36139,13 +36284,13 @@ Dementia Subtypes.  Statistics in Medicine, 43(30), 5711-5747.\".")
 (define-public r-pems-utils
   (package
     (name "r-pems-utils")
-    (version "0.3.0.8")
+    (version "0.3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pems.utils" version))
        (sha256
-        (base32 "1c255kw6ljmn7nbj6qwmb7jvnzcxvj3vw7chkplbmfsza0ym555z"))))
+        (base32 "01v66bcmvc4yd2mfph1plykz76806v1hqvc9f39vxyvqa9rzvpsg"))))
     (properties `((upstream-name . "pems.utils")))
     (build-system r-build-system)
     (arguments
@@ -41622,25 +41767,26 @@ path utilities.")
 (define-public r-patentsview
   (package
     (name "r-patentsview")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patentsview" version))
        (sha256
-        (base32 "1ysqarmqqbw7zy1c3nfa08i6byima31pmcvv60qz9qjpyd2np0fn"))))
+        (base32 "1795582ydsivm35qbc62sl70qg35lbqal5zv6ijcjaj5f1mialvb"))))
     (properties `((upstream-name . "patentsview")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
+    (propagated-inputs (list r-lifecycle r-jsonlite r-httr2))
     (home-page "https://docs.ropensci.org/patentsview/index.html")
     (synopsis "An R Client to the 'PatentsView' API")
     (description
      "This package provides functions to simplify the @code{PatentsView} API
-(<https://patentsview.org/apis/purpose>) query language, send GET and POST
-requests to the API's seven endpoints, and parse the data that comes back.")
+(<https://search.patentsview.org/docs/docs/Search%20API/@code{SearchAPIReference/#api-query-language>})
+query language, send GET and POST requests to the API's twenty seven endpoints,
+and parse the data that comes back.")
     (license license:expat)))
 
 (define-public r-patentr
@@ -42694,25 +42840,26 @@ but considering the SMN family.")
 (define-public r-parsim
   (package
     (name "r-parsim")
-    (version "0.1.5")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parSim" version))
        (sha256
-        (base32 "0gcycp0gcgz2a1w7nzrlwq41wvyg36931c9q4zjyq876nd43ah12"))))
+        (base32 "0cvr1m4i180bavv79vbik2gakl31n7xmhb0as1d71673dxm04ky7"))))
     (properties `((upstream-name . "parSim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-snow r-pbapply r-dplyr r-data-table))
-    (home-page "https://cran.r-project.org/package=parSim")
-    (synopsis "Parallel Simulation Studies")
+    (propagated-inputs (list r-parabar r-dplyr r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SachaEpskamp/parSim")
+    (synopsis "Parallel Simulator")
     (description
      "Perform flexible simulation studies using one or multiple computer cores.  The
 package is set up to be usable on high-performance clusters in addition to being
-run locally, see examples on <https://github.com/@code{SachaEpskamp/parSim>}.")
+run locally (i.e., see the package vignettes for more information).")
     (license license:gpl2)))
 
 (define-public r-parserpdr
@@ -44781,13 +44928,13 @@ similar measurements.")
 (define-public r-pampal
   (package
     (name "r-pampal")
-    (version "1.4.4")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMpal" version))
        (sha256
-        (base32 "1ym1hq8ylzrgn3snryws097s67cimfvkljmlffg555n238cq50qw"))))
+        (base32 "1kcni21mlpbmzfw997fjgrm5g4x8vllj2c8r1zi3vwvjkp5ir3hr"))))
     (properties `((upstream-name . "PAMpal")))
     (build-system r-build-system)
     (arguments

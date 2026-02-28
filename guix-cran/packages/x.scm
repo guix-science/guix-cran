@@ -926,13 +926,13 @@ and RFM analysis.")
 (define-public r-xplainfi
   (package
     (name "r-xplainfi")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xplainfi" version))
        (sha256
-        (base32 "00zfc8fcw97g8s1yws4knmz66vnr0pq35ls847vpggnxq4yl8cdf"))))
+        (base32 "16cp1zp3mx4i2if6352jgi9znyidrnhxscfxnhzvywahy8bqi35f"))))
     (properties `((upstream-name . "xplainfi")))
     (build-system r-build-system)
     (arguments
@@ -941,6 +941,7 @@ and RFM analysis.")
     (propagated-inputs (list r-r6
                              r-paradox
                              r-mvtnorm
+                             r-mlr3fselect
                              r-mlr3
                              r-mirai
                              r-data-table
@@ -2656,13 +2657,13 @@ to the 3D surface measurements.")
 (define-public r-x13binary
   (package
     (name "r-x13binary")
-    (version "1.1.61.1")
+    (version "1.1.61.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "x13binary" version))
        (sha256
-        (base32 "1dgax6rpjc9sprpqjwr5y5r1xlzkf43m77bpji0850z69wlirq4x"))))
+        (base32 "1g408jmhjgw46ibjxkiparic9b9f2rfmgjqkxfd00ad4wd613ck9"))))
     (properties `((upstream-name . "x13binary")))
     (build-system r-build-system)
     (arguments

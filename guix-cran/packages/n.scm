@@ -592,13 +592,13 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "1gxy1mnwyqbbnac0wxkrz04kl9lrn633rpkyqnz2x3x0fj639hh0"))))
+        (base32 "1fwsyspk593gbir720m4appaiazpj9xvc5ra5jc74dz4riw2akwf"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -611,7 +611,6 @@ their names easy to remember and easy to deploy.")
                              r-scales
                              r-rpart
                              r-readr
-                             r-reactablefmtr
                              r-reactable
                              r-randomforest
                              r-purrr
@@ -621,6 +620,8 @@ their names easy to remember and easy to deploy.")
                              r-metrics
                              r-leaps
                              r-ipred
+                             r-htmlwidgets
+                             r-htmltools
                              r-gridextra
                              r-glmnet
                              r-ggplot2
@@ -6790,6 +6791,30 @@ specification methodology see: (i) Crone and Kourentzes (2010)
 <doi:10.1016/j.eswa.2013.12.011>.")
     (license license:gpl3)))
 
+(define-public r-nnetlm
+  (package
+    (name "r-nnetlm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnetLM" version))
+       (sha256
+        (base32 "0c3cly0s6w94nql54r3s8phc8s46kgmnvnb5r6gq1s2pa763gx3n"))))
+    (properties `((upstream-name . "nnetLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minpack-lm))
+    (home-page "https://github.com/umbe1987/nnetLM")
+    (synopsis "Neural Network with Levenberg-Marquardt Optimization")
+    (description
+     "An implementation of a Neural Network using the Levenberg-Marquardt optimization
+from minpack.lm', ideal for small datasets.  For more details see MorÃ© (1978)
+<doi:10.1007/BFb0067700>.")
+    (license license:expat)))
+
 (define-public r-nndiagram
   (package
     (name "r-nndiagram")
@@ -12087,6 +12112,46 @@ Annals of Applied Statistics.  A preprint may be found at
 <@code{arXiv:1911.04387>}.")
     (license license:gpl2)))
 
+(define-public r-neuromapr
+  (package
+    (name "r-neuromapr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuromapr" version))
+       (sha256
+        (base32 "1j8wb33i53vnqxzp11y7m0pmkhbrkvw1h5x2qdvhppnfc2zpd4lr"))))
+    (properties `((upstream-name . "neuromapr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-rlang
+                             r-lifecycle
+                             r-igraph
+                             r-httr2
+                             r-gifti
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lcbc-uio/neuromapr")
+    (synopsis "Spatial Null Models and Transforms for Brain Map Comparison")
+    (description
+     "This package implements spatial null models and coordinate-space transformations
+for statistical comparison of brain maps, following the framework described in
+Markello et al. (2022) <doi:10.1038/s41592-022-01625-w>.  Provides
+variogram-matching surrogates (Burt et al.  2020), Moran spectral randomization
+(Wagner & Dray 2015), and spin-based permutation tests (Alexander-Bloch et al.
+2018).  Includes an R interface to the neuromaps annotation registry for
+browsing, downloading, and comparing brain map annotations from the Open Science
+Framework ('OSF').  Integrates with @code{ciftiTools} for coordinate-space
+transforms.")
+    (license license:expat)))
+
 (define-public r-neuroimagene
   (package
     (name "r-neuroimagene")
@@ -14111,6 +14176,33 @@ to estimate the history of the immune pressure on the evolution of the tumor
 clones.The model is based on the estimation result from Andrew Roth (2014)
 <doi:10.1038/nmeth.2883>.")
     (license (license:fsdg-compatible "Apache License"))))
+
+(define-public r-netgreg
+  (package
+    (name "r-netgreg")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetGreg" version))
+       (sha256
+        (base32 "1h06ml5nrq5wp85s5j6wshpbggrk8yl0qi6ddrd4fc6wjiv34gc8"))))
+    (properties `((upstream-name . "NetGreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plsgenomics r-huge r-glmnet r-dplyr))
+    (home-page "https://cran.r-project.org/package=NetGreg")
+    (synopsis "Network-Guided Penalized Regression (NetGreg)")
+    (description
+     "This package provides a network-guided penalized regression framework that
+integrates network characteristics from Gaussian graphical models with partial
+penalization, accounting for both network structure (hubs and non-hubs) and
+clinical covariates in high-dimensional omics data, including transcriptomics
+and proteomics.  The full methodological details can be found in our publication
+by Ahn S and Oh EJ (2026) <doi:10.1093/bioadv/vbag038>.")
+    (license license:gpl3)))
 
 (define-public r-netexplorer
   (package
@@ -16525,13 +16617,13 @@ or output).  A quick start guide for using this package can be found here:
 (define-public r-nc
   (package
     (name "r-nc")
-    (version "2025.3.24")
+    (version "2026.2.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nc" version))
        (sha256
-        (base32 "12msx21j91pf3531r1bpx3xvqqmhgc4i76ipd29fly5485fnc25q"))))
+        (base32 "1bfnxr63k4lcpnfywjnqrxjg44ybmaq45ik50bfm5s6axd9kv6ij"))))
     (properties `((upstream-name . "nc")))
     (build-system r-build-system)
     (arguments

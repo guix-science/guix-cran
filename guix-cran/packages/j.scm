@@ -3076,6 +3076,39 @@ analysis; and includes functions related to the Laplace (double exponential) and
 triangular distributions.  Performs power calculations for the binomial test.")
     (license license:gpl3)))
 
+(define-public r-jmsurface
+  (package
+    (name "r-jmsurface")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmSurface" version))
+       (sha256
+        (base32 "0i3zi0lc297wmgjc0aa7a1j64nf6vjmq2rmc4ysr842vavbl5i4n"))))
+    (properties `((upstream-name . "jmSurface")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-nlme r-mgcv))
+    (home-page "https://cran.r-project.org/package=jmSurface")
+    (synopsis
+     "Semi-Parametric Association Surfaces for Joint Longitudinal-Survival Models")
+    (description
+     "This package implements interpretable multi-biomarker fusion in joint
+longitudinal-survival models via semi-parametric association surfaces.  Provides
+a two-stage estimation framework where Stage 1 fits mixed-effects longitudinal
+models and extracts Best Linear Unbiased Predictors ('BLUP's), and Stage 2 fits
+transition-specific penalized Cox models with tensor-product spline surfaces
+linking latent biomarker summaries to transition hazards.  Supports multi-state
+disease processes with transition-specific surfaces, Restricted Maximum
+Likelihood ('REML') smoothing parameter selection, effective degrees of freedom
+('EDF') diagnostics, dynamic prediction of transition probabilities, and three
+interpretability visualizations (surface plots, contour heatmaps, marginal
+effect slices).  Methods are described in Bhattacharjee (2025, under review).")
+    (license license:gpl3+)))
+
 (define-public r-jmotif
   (package
     (name "r-jmotif")

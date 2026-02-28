@@ -2019,6 +2019,66 @@ prefers one or more metrics to the others, Field, A. (2013,
 ISBN:978-1-4462-4918-5).")
     (license license:expat)))
 
+(define-public r-autostats
+  (package
+    (name "r-autostats")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autostats" version))
+       (sha256
+        (base32 "1lhcih3gjwrwr653cyfrw1pa7681arywwf8xmd79kisl15q9pcwk"))))
+    (properties `((upstream-name . "autostats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-xgboost
+                             r-workflows
+                             r-tune
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-rlist
+                             r-rlang
+                             r-recosystem
+                             r-recipes
+                             r-purrr
+                             r-presenter
+                             r-patchwork
+                             r-party
+                             r-parsnip
+                             r-nnet
+                             r-magrittr
+                             r-jtools
+                             r-janitor
+                             r-igraph
+                             r-gtools
+                             r-ggthemes
+                             r-ggplot2
+                             r-ggeasy
+                             r-framecleaner
+                             r-dplyr
+                             r-dials
+                             r-data-table
+                             r-ckmeans-1d-dp
+                             r-broom-mixed
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://harrison4192.github.io/autostats/")
+    (synopsis "Auto Stats")
+    (description
+     "Automatically do statistical exploration.  Create formulas using tidyselect
+syntax, and then determine cross-validated model accuracy and variable
+contributions using glm and xgboost'.  Contains additional helper functions to
+create and modify formulas.  Has a flagship function to quickly determine
+relationships between categorical and continuous variables in the data set.")
+    (license license:expat)))
+
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
@@ -2442,13 +2502,13 @@ and Particle Swarm Optimization.")
 (define-public r-automerge
   (package
     (name "r-automerge")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "automerge" version))
        (sha256
-        (base32 "0934yb2jqdjzv2bbg0nhvkbab41h4nzdci8bissx4abq0nhl4spg"))))
+        (base32 "1bdjq2302bns184jc89sqkx7p99nz67iw4jzcvaln4x1hidp6s4c"))))
     (properties `((upstream-name . "automerge")))
     (build-system r-build-system)
     (arguments
@@ -5030,6 +5090,35 @@ For more information, please see the paper Adaptive Sparse Estimation with Side
 Information by Banerjee, Mukherjee and Sun (JASA 2020).")
     (license license:gpl2+)))
 
+(define-public r-astronomyengine
+  (package
+    (name "r-astronomyengine")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "astronomyengine" version))
+       (sha256
+        (base32 "0fk2d5bjkvk0v03qgqs288cbm5019rigkzvvhyc5rdpgd8amw2db"))))
+    (properties `((upstream-name . "astronomyengine")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://github.com/mitchelloharawild/astronomyengine")
+    (synopsis "R Bindings to the 'Astronomy Engine' C Library")
+    (description
+     "This package provides access to the Astronomy Engine C library
+(<https://github.com/cosinekitty/astronomy>) by Don Cross.  The library
+calculates positions of the Sun, Moon, and planets, and predicts astronomical
+events such as rise/set times, lunar phases, equinoxes, solstices, eclipses, and
+transits.  It is based on the VSOP87 planetary model and is accurate to within
+approximately one arcminute.  This package bundles the single-file C source so
+that other R packages can link against it via @code{LinkingTo} without shipping
+their own copy.")
+    (license license:expat)))
+
 (define-public r-astrofns
   (package
     (name "r-astrofns")
@@ -5053,13 +5142,13 @@ Information by Banerjee, Mukherjee and Sun (JASA 2020).")
 (define-public r-astrochron
   (package
     (name "r-astrochron")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "astrochron" version))
        (sha256
-        (base32 "0apvkagdjrsajkjlf9nxjwrambjqpkfwgzin8bwi0r1mg0gf01qm"))))
+        (base32 "0mfs5kz01cdxdq87qx1pb4b9n7ii2w7ab8zaggk3l5wl593p8hxg"))))
     (properties `((upstream-name . "astrochron")))
     (build-system r-build-system)
     (arguments
@@ -10690,13 +10779,13 @@ published sequences with experimental, in vitro, evidence of amyloid formation."
 (define-public r-applypolygenicscore
   (package
     (name "r-applypolygenicscore")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ApplyPolygenicScore" version))
        (sha256
-        (base32 "1998bwsd92bq8hxpw2v9kvk950lcdzxq3bpyzqa9bam668m55gbw"))))
+        (base32 "036p63c7zv9nif819l6w6jkfbqi42rfl7pzf878sc73ab9yrzp2c"))))
     (properties `((upstream-name . "ApplyPolygenicScore")))
     (build-system r-build-system)
     (arguments
@@ -12695,13 +12784,13 @@ divergence, with facilities for trait selection and graphical representations
 (define-public r-anthroplus
   (package
     (name "r-anthroplus")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anthroplus" version))
        (sha256
-        (base32 "041aa61yi3jkaal11faf06q7iqafi2npa5ayk5gwpfbh0pscaj7h"))))
+        (base32 "1667n7h5s98i294dzwaxsmfk2fh3vzdwc41bs1lica9sxf82pz22"))))
     (properties `((upstream-name . "anthroplus")))
     (build-system r-build-system)
     (arguments
@@ -17754,13 +17843,13 @@ estimation, see Lehmann and Casella (1998, ISBN:978-0387985022).")
 (define-public r-algebraic-dist
   (package
     (name "r-algebraic-dist")
-    (version "0.1.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "algebraic.dist" version))
        (sha256
-        (base32 "1qqbw8njqzn4c7d713mjnyigpid3nxzxb8bxi6ak112gbd7f6gis"))))
+        (base32 "07yrky3n5ki4hd9dsyj16wifh74jcb3c6wi527zys5lhrqsfh16b"))))
     (properties `((upstream-name . "algebraic.dist")))
     (build-system r-build-system)
     (arguments
@@ -17773,10 +17862,14 @@ estimation, see Lehmann and Casella (1998, ISBN:978-0387985022).")
     (description
      "This package provides an algebra over probability distributions enabling
 composition, sampling, and automatic simplification to closed forms.  Supports
-normal, exponential, multivariate normal, and empirical distributions with
-operations like addition and subtraction that automatically simplify when
-mathematical identities apply (e.g., the sum of independent normal distributions
-is normal).  Uses S3 classes for distributions and R6 for support objects.")
+normal, exponential, gamma, Weibull, chi-squared, uniform, beta, log-normal,
+Poisson, multivariate normal, empirical, and mixture distributions with
+algebraic operators (addition, subtraction, multiplication, division, power,
+exp, log, min, max) that automatically simplify when mathematical identities
+apply.  Includes closed-form MVN conditioning (Schur complement), affine
+transformations, mixture marginals/conditionals (Bayes rule), and limiting
+distribution builders (CLT, LLN, delta method).  Uses S3 classes for
+distributions and R6 for support objects.")
     (license license:gpl3+)))
 
 (define-public r-algaeclassify
@@ -21031,13 +21124,13 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "0azmk3hf8wzv36qq2yb9sac9hikkrvfgx3fv7zrf77r5k6wr794p"))))
+        (base32 "054bjpvcr90361vg9ycdbi8v43wzdwprz5g4czh5yhd09cf2m0r2"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (arguments
@@ -21821,19 +21914,24 @@ help meet accessibility guidance.")
 (define-public r-afcharts
   (package
     (name "r-afcharts")
-    (version "0.4.1")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afcharts" version))
        (sha256
-        (base32 "1gbakh67r0qi7arz3xdai6h4gn1a80iagfbml6crfxjlyh5z43jc"))))
+        (base32 "01bjyzz2jnjqpwnipx04amrqg7gk76w0kp9w1xhmhb95lcmbqfmb"))))
     (properties `((upstream-name . "afcharts")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-rlang r-ggplot2 r-dplyr r-cli))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/best-practice-and-impact/afcharts")
     (synopsis
@@ -22060,13 +22158,13 @@ introduced by Dongming and Zinde-Walsh (2009)
 (define-public r-aelab
   (package
     (name "r-aelab")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aelab" version))
        (sha256
-        (base32 "1krqgscjp7p4z24vvv1pvb7bgafmic29krrk1czy3abzdrbmc765"))))
+        (base32 "13srvyywcz44k8cvkpaj41f8jarcj366bpy756qwgn2ivpfy1jy9"))))
     (properties `((upstream-name . "aelab")))
     (build-system r-build-system)
     (arguments
@@ -22336,13 +22434,13 @@ transformation.  Genetics 200:469-481 <doi:10.1534/genetics.115.176842>.")
 (define-public r-adw
   (package
     (name "r-adw")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adw" version))
        (sha256
-        (base32 "056j039lq1bh4v2vfzvx55j0bzvvj88i5dq7zp2drw7cvyl21rh9"))))
+        (base32 "1qmmgdmrgx39sxlj1qqkwajiprn8gc5mvyd9s4j5hq2pqa98lh9y"))))
     (properties `((upstream-name . "adw")))
     (build-system r-build-system)
     (arguments
@@ -22357,7 +22455,9 @@ transformation.  Genetics 200:469-481 <doi:10.1534/genetics.115.176842>.")
 grids by weighting each station according to its distance and angle from the
 center of a search radius.  In addition to this, we also provide a simple way
 (Jones and Hulme, 1996) to grid the irregularly-spaced data points onto regular
-latitude-longitude grids by averaging all stations in grid-boxes.")
+latitude-longitude grids by averaging all stations in grid-boxes.  This study
+was supported by the National Natural Science Foundation of China (NSFC, Grant
+No.  42205177).")
     (license license:gpl3)))
 
 (define-public r-advice
@@ -25194,13 +25294,13 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adas-utils
   (package
     (name "r-adas-utils")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adas.utils" version))
        (sha256
-        (base32 "1n67s1j1444py0rq02xam525r99wznnvvqv0g6q7vm3grbvbnanm"))))
+        (base32 "1fbjgy1hmyf21ghikr57lb6dsm06fv3q5lsysxbyi8sihy4v8bid"))))
     (properties `((upstream-name . "adas.utils")))
     (build-system r-build-system)
     (arguments
@@ -25979,13 +26079,13 @@ COVID-19 and actuarial data\".  Open Physics, 21(1), 20220242.
 (define-public r-actuare
   (package
     (name "r-actuare")
-    (version "0.1.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actuaRE" version))
        (sha256
-        (base32 "1ldj668cxfd7nwx4sf97iicqcjvm88rd3yj8apz48b1s5wlm6jsq"))))
+        (base32 "199bgrmqv6334vn4535bdbwhwxijkdy4rc10656xghl4z1r0x1jx"))))
     (properties `((upstream-name . "actuaRE")))
     (build-system r-build-system)
     (arguments
@@ -25996,20 +26096,20 @@ COVID-19 and actuarial data\".  Open Physics, 21(1), 20220242.
                              r-nlme
                              r-magrittr
                              r-lme4
-                             r-knitr
                              r-ggplot2
                              r-data-table
                              r-cplm))
     (native-inputs (list r-knitr))
     (home-page "https://bavodc.github.io/websiteactuaRE/")
     (synopsis
-     "Handling Hierarchically Structured Risk Factors using Random Effects Models")
+     "Handling Single-Level and Hierarchically Structured Risk Factors using Credibility and Random Effects Models")
     (description
-     "Using this package, you can fit a random effects model using either the
-hierarchical credibility model, a combination of the hierarchical credibility
-model with a generalized linear model or a Tweedie generalized linear mixed
-model.  See Campo, B.D.C. and Antonio, K. (2023)
-<doi:10.1080/03461238.2022.2161413>.")
+     "Fits random effects models for multi-level/high-cardinality factors using
+credibility theory (Buhlmann-Straub for single-level, Jewell for hierarchical
+structures), GLM extensions following Ohlsson (2008)
+<doi:10.1080/03461230701878612>, or Tweedie generalized linear mixed models.
+Provides functions for model fitting, visualization, and prediction.  See Campo,
+B.D.C. and Antonio, K. (2023) <doi:10.1080/03461238.2022.2161413>.")
     (license license:gpl3+)))
 
 (define-public r-actlifer

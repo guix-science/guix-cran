@@ -7275,13 +7275,13 @@ sample files of personal income tax returns is assumed.")
 (define-public r-gratis
   (package
     (name "r-gratis")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gratis" version))
        (sha256
-        (base32 "0y9gblkcn145r8kx4447waqwc59iibm6nlmdykf6vrwn1y5vssa3"))))
+        (base32 "1c5lnyw3b8w0qnscaxfgqx37y4cpzdhd8f8vffgpy1y4vrrh1zws"))))
     (properties `((upstream-name . "gratis")))
     (build-system r-build-system)
     (arguments
@@ -7389,13 +7389,13 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "15v52gl87jm6kxg3ppzdn1rxdbawv18zrnlwhgy44vb1619bs1jb"))))
+        (base32 "1yy9wh5pwa09pjgq5jqk5w9jpmi4vczdc699ai56jsd1ymq5gwf8"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
@@ -13252,13 +13252,13 @@ burden test and SKAT, based on user-defined variant sets.")
 (define-public r-gmgm
   (package
     (name "r-gmgm")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmgm" version))
        (sha256
-        (base32 "18q119v8wi4l5i8r6qdsdwih3jj71iidwgbjjvqp2bh37wp58wq3"))))
+        (base32 "1m1gvq78nvzarvwgw7s98my0mjghs414nylnva14paqlz56650n6"))))
     (properties `((upstream-name . "gmgm")))
     (build-system r-build-system)
     (arguments
@@ -13281,7 +13281,7 @@ and quantitatively representing nonlinear dependencies between continuous
 variables.  This package provides a complete framework to create, manipulate,
 learn the structure and the parameters, and perform inference in these models.
 Most of the algorithms are described in the @code{PhD} thesis of Roos (2018)
-<https://tel.archives-ouvertes.fr/tel-01943718>.")
+<https://theses.hal.science/tel-01943718>.")
     (license license:gpl3)))
 
 (define-public r-gmgeostats
@@ -13510,13 +13510,13 @@ easy interface for accessing it.")
 (define-public r-gmcplite
   (package
     (name "r-gmcplite")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMCPLite" version))
        (sha256
-        (base32 "153miwm6j4m11qqn0qi7x90pki2lyzaf40vs9l4ckjhcjjvlqj6j"))))
+        (base32 "1as6sahrn8qxc1l5vv14f592yw2gwpdjqfg2ikcpcaygjbqiliaf"))))
     (properties `((upstream-name . "gMCPLite")))
     (build-system r-build-system)
     (arguments
@@ -14881,6 +14881,46 @@ Models, 2nd edition, by Jeff Gill and Michelle Torres.  Examples to create all
 models, tables, and plots are included for each data set.")
     (license license:gpl3+)))
 
+(define-public r-glmom
+  (package
+    (name "r-glmom")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GLmom" version))
+       (sha256
+        (base32 "0ddyjib7d9rynmvncvgr9xm27j8bdakpcp9xhwlai42adkgkxl54"))))
+    (properties `((upstream-name . "GLmom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-rsolnp
+                             r-robustbase
+                             r-nleqslv
+                             r-lmomco
+                             r-ismev))
+    (home-page "https://github.com/sygstat/GLmom")
+    (synopsis
+     "Generalized L-Moments Estimation for Extreme Value Distributions")
+    (description
+     "This package provides generalized L-moments estimation methods for the
+generalized extreme value ('GEV') distribution.  Implements both stationary GEV
+and non-stationary GEV11 models where location and scale parameters vary with
+time.  Includes various penalty functions ('Martins'-'Stedinger', Park, Cannon,
+Coles'-Dixon) for shape parameter regularization.  Also provides model averaging
+estimation ('ma.gev') that combines MLE and L-moment methods with multiple
+weighting schemes for robust high quantile estimation.  The GLME methodology is
+described in Shin et al. (2025a) <doi:10.48550/@code{arXiv.2512.20385>}.  The
+non-stationary L-moment method is based on Shin et al. (2025b)
+<doi:10.1007/s42952-025-00325-3>.  The model averaging method is described in
+Shin et al. (2026) <doi:10.1007/s00477-025-03167-x>.  See also Hosking (1990)
+<doi:10.1111/j.2517-6161.1990.tb01775.x> for L-moments theory and Martins and
+Stedinger (2000) <doi:10.1029/1999WR900330> for penalized likelihood methods.")
+    (license license:gpl3+)))
+
 (define-public r-glmnetse
   (package
     (name "r-glmnetse")
@@ -15668,6 +15708,31 @@ An R Package for Generalized Linear Models for Categorical Responses\" in the
 Journal of Statistical Software, Volume 114, Issue 9 (see
 <doi:10.18637/jss.v114.i09>).")
     (license license:gpl3)))
+
+(define-public r-glmc
+  (package
+    (name "r-glmc")
+    (version "0.4-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmc" version))
+       (sha256
+        (base32 "0nplf67l0d4xcy2smi74zzwwydk6b7lkw1pkmp6a13hy3nb7g1f9"))))
+    (properties `((upstream-name . "glmc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-emplik))
+    (home-page "https://cran.r-project.org/package=glmc")
+    (synopsis "Fitting Generalized Linear Models Subject to Constraints")
+    (description
+     "Fits generalized linear models where the parameters are subject to linear
+constraints.  The model is specified by giving a symbolic description of the
+linear predictor, a description of the error distribution, and a matrix of
+constraints on the parameters.")
+    (license license:gpl2+)))
 
 (define-public r-glmbb
   (package
@@ -16853,43 +16918,6 @@ repository using commit messages generated by passing the git diff output to the
 @code{OpenAI} GPT-3.5 Turbo model
 (<https://platform.openai.com/docs/models/gpt-3>).")
     (license license:expat)))
-
-(define-public r-gitgadget
-  (package
-    (name "r-gitgadget")
-    (version "0.8.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gitgadget" version))
-       (sha256
-        (base32 "1sksywh50l2v63hnjvhf6ps36mhwda8pq1amc4igq8b4ay40w0z1"))))
-    (properties `((upstream-name . "gitgadget")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-usethis
-                             r-shinyfiles
-                             r-shiny
-                             r-rstudioapi
-                             r-miniui
-                             r-markdown
-                             r-jsonlite
-                             r-dplyr
-                             r-curl
-                             r-callr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/vnijs/gitgadget")
-    (synopsis
-     "'Rstudio' Addin for Version Control and Assignment Management using Git")
-    (description
-     "An Rstudio addin for version control that allows users to clone repositories,
-create and delete branches, and sync forks on @code{GitHub}, @code{GitLab}, etc.
- Furthermore, the addin uses the @code{GitLab} API to allow instructors to
-create forks and merge requests for all students/teams with one click of a
-button.")
-    (license license:gpl3)))
 
 (define-public r-gitear
   (package
@@ -18873,6 +18901,66 @@ and scalar data to estimate underlying patterns.")
 versatiles con ggplot: Analisis visuales de datos\", by Raymond L. Tremblay and
 Julian Hernandez-Serano.")
     (license license:gpl2)))
+
+(define-public r-ggvegan
+  (package
+    (name "r-ggvegan")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggvegan" version))
+       (sha256
+        (base32 "1ghggc3035y8589kwnyfzdzivllb9zxngzv0g02a6mg48pvvwsp4"))))
+    (properties `((upstream-name . "ggvegan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-ggrepel
+                             r-ggplot2
+                             r-generics
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=ggvegan")
+    (synopsis "'ggplot2' Plots for the 'vegan' Package")
+    (description
+     "This package provides functions to produce ggplot2'-based plots of objects
+produced by functions in the vegan package.  Provides @code{fortify()}',
+@code{autoplot()}', and @code{tidy()} methods for many of vegan''s functions.
+The aim of ggvegan is to make it easier to work within the tidyverse with
+vegan'.")
+    (license license:gpl2)))
+
+(define-public r-ggvariant
+  (package
+    (name "r-ggvariant")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggvariant" version))
+       (sha256
+        (base32 "1z4385cp90g7pwck3nddyvznbbnnigmjv0xx8gmhr6p10a24g9ql"))))
+    (properties `((upstream-name . "ggvariant")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/josh45-source/ggvariant")
+    (synopsis "Tidy, 'ggplot2'-Native Visualization for Genomic Variants")
+    (description
+     "This package provides a simple, opinionated toolkit for visualizing genomic
+variant data using a ggplot2'-native grammar.  Accepts VCF files or plain data
+frames and produces publication-ready lollipop plots, consequence summaries,
+mutational spectrum charts, and cohort-level comparisons with minimal code.
+Designed for both wet-lab biologists and experienced bioinformaticians.")
+    (license license:expat)))
 
 (define-public r-ggum
   (package
@@ -23579,13 +23667,13 @@ plotted in ggplot2'.")
 (define-public r-ggdensity
   (package
     (name "r-ggdensity")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdensity" version))
        (sha256
-        (base32 "01ym1af6w39zg6xh5mls8kwl4mg0lpjd94j0hm2xrgl39llpwx6r"))))
+        (base32 "1sjd348qvdi5b6xfr3mah3k590sqqx9amhjsk2dbq5n1pfizvqjc"))))
     (properties `((upstream-name . "ggdensity")))
     (build-system r-build-system)
     (arguments
@@ -24700,13 +24788,13 @@ identification and environmental data visualization.")
 (define-public r-gfe
   (package
     (name "r-gfe")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GFE" version))
        (sha256
-        (base32 "1mhlvp7i8g4b3mj4qwfnk0vl7af9sflgi6zgsjjp16kdsv42zkwn"))))
+        (base32 "1q5mfhxf7aqg1bd8a08w8dfv9davcfwyarhiaygqdp671xp2v252"))))
     (properties `((upstream-name . "GFE")))
     (build-system r-build-system)
     (arguments
@@ -24717,7 +24805,7 @@ identification and environmental data visualization.")
     (synopsis "Gross Flows Estimation under Complex Surveys")
     (description
      "The philosophy in the package is described in Stasny (1988)
-<doi:10.2307/1391558> and Gutierrez, A., Trujillo, L. & Silva, N. (2014),
+<doi:10.2307/1391558> and Guti?rrez, A., Trujillo, L. & Silva, N. (2014),
 <ISSN:1492-0921> to estimate the gross flows under complex surveys using a
 Markov chain approach with non response.")
     (license license:gpl2+)))
@@ -26516,13 +26604,13 @@ demonstrations, and explanations of how to use the various package extensions.")
 (define-public r-geostatsp
   (package
     (name "r-geostatsp")
-    (version "2.0.8")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostatsp" version))
        (sha256
-        (base32 "0mmbpkw01s5phvrq5q9bpm94sj2isl714ws4lznr2mraynqbrlw0"))))
+        (base32 "09z3hvspb0rpdd0qpplxb6wvivk6hbgiqgwnmhxgl7xczcg8zsmf"))))
     (properties `((upstream-name . "geostatsp")))
     (build-system r-build-system)
     (arguments
@@ -27469,24 +27557,25 @@ Kriging technique.")
 (define-public r-geommc
   (package
     (name "r-geommc")
-    (version "0.1.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geommc" version))
        (sha256
-        (base32 "172iv017p5lfsy0436sqmvf8r1grwyb146czp6x6cyzn2n9qxhqx"))))
+        (base32 "0vbycjmjw5bymk7m5iy3zi5kgg4hfmks2cfb6w52d4xcsxqilmxv"))))
     (properties `((upstream-name . "geommc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-mcmc
-                             r-matrixcalc
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-numderiv
                              r-matrix
-                             r-magrittr
                              r-cubature))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/vroys/geommc")
     (synopsis "Geometric Markov Chain Sampling")
     (description
@@ -27494,7 +27583,7 @@ Kriging technique.")
 Metropolis-Hastings (MH) algorithms.  Users specify the target distribution by
 an R function that evaluates the log un-normalized pdf or pmf.  The package also
 contains a function implementing a specific geometric MH algorithm for
-performing high dimensional Bayesian variable selection.")
+performing high-dimensional Bayesian variable selection.")
     (license license:gpl3+)))
 
 (define-public r-geometricmorphometricsmix
@@ -27988,6 +28077,35 @@ polygons to the new grid using the Hungarian algorithm, Kuhn (1955)
 (<doi:10.1007/978-3-540-68279-0_2>).  This prevents the need for manual
 generation of hexagonal grids or regular grids that are supposed to reflect
 existing geography.")
+    (license license:expat)))
+
+(define-public r-geographiclib
+  (package
+    (name "r-geographiclib")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geographiclib" version))
+       (sha256
+        (base32 "195l47nx57w2kb1hpi6qxci5xkz4d118kq4jiwk0gqp0yhh2kjdh"))))
+    (properties `((upstream-name . "geographiclib")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hypertidy/geographiclib")
+    (synopsis "Access to 'GeographicLib'")
+    (description
+     "Bindings to the @code{GeographicLib} C++ library
+<https://geographiclib.sourceforge.io/> for precise geodetic calculations
+including geodesic computations (distance, bearing, paths, intersections), map
+projections (UTM/UPS, Transverse Mercator, Lambert Conformal Conic, and more),
+grid reference systems (MGRS, Geohash, GARS, Georef), coordinate conversions
+(geocentric, local Cartesian), and polygon area on the WGS84 ellipsoid.  All
+functions are fully vectorized.")
     (license license:expat)))
 
 (define-public r-geogenr
@@ -33571,13 +33689,13 @@ Press 2015).")
 (define-public r-gd
   (package
     (name "r-gd")
-    (version "10.8")
+    (version "10.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GD" version))
        (sha256
-        (base32 "102y9q8lpmvad0ih82r3pqg8qy7sq61j5wzd6lj6b6dp6pnv8s2r"))))
+        (base32 "1k8q9jcbb2pzfbb5bkkjhi0ck4wvb0yin3yhvg6343nwgshi6r0q"))))
     (properties `((upstream-name . "GD")))
     (build-system r-build-system)
     (arguments
@@ -34893,13 +35011,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "00kq7ppgnxv9z3wr3drhzlz9si21d97jmphypqqd3c289nymr8gv"))))
+        (base32 "12np4wc9dphhy5mi0k4n7bnzkycpmcz98yc1c6pc429qyhp6lzb5"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments
@@ -35948,13 +36066,13 @@ evaluations.")
 (define-public r-ganttify
   (package
     (name "r-ganttify")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganttify" version))
        (sha256
-        (base32 "17mwn63zhpdh8qmpk1p98r40jdkpxjvhb1dk6n5nqims7am7i0ws"))))
+        (base32 "1rczfcl41g5q3v2rb6kdibi8d5ypb46k8yr1rcwbh4x1mscv6zly"))))
     (properties `((upstream-name . "ganttify")))
     (build-system r-build-system)
     (arguments
@@ -36651,13 +36769,13 @@ and decision trees.")
 (define-public r-gamlr
   (package
     (name "r-gamlr")
-    (version "1.13-8")
+    (version "1.13-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlr" version))
        (sha256
-        (base32 "1psvxx7ymkgr4acis85842xgafc5azdl7v1cmgvgbhsdwksm95q7"))))
+        (base32 "1yv595702w19763in1ay3lh5ns32vx63avz2ac2pzjgn08rd3s2k"))))
     (properties `((upstream-name . "gamlr")))
     (build-system r-build-system)
     (arguments
@@ -36672,7 +36790,7 @@ of non-convex cost functions between L0 and L1 norms.  As much as possible,
 usage for this package is analogous to that for the glmnet package (which does
 the same thing for penalization between L1 and L2 norms).  For details see:
 Taddy (2017 JCGS), One-Step Estimator Paths for Concave Regularization',
-<@code{arXiv:1308.5623>}.")
+<doi:10.48550/@code{arXiv.1308.5623>}.")
     (license license:gpl3)))
 
 (define-public r-gametheory

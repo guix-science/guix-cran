@@ -190,13 +190,13 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
 (define-public r-cytoprofile
   (package
     (name "r-cytoprofile")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CytoProfile" version))
        (sha256
-        (base32 "1ijnq97fgx0plwlml9a5nbvkhxbzqay3vcl6bnl6f456v81xa57h"))))
+        (base32 "0yyg5lxklljqj7bs24vc5zymmwfgj3p7mv0dwifsngss0ymwdkr3"))))
     (properties `((upstream-name . "CytoProfile")))
     (build-system r-build-system)
     (arguments
@@ -216,6 +216,7 @@ Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
                              r-ggplot2
                              r-e1071
                              r-dplyr
+                             r-data-table
                              r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/saraswatsh/CytoProfile")
@@ -3955,13 +3956,13 @@ functions to read and write CTF data from R.")
 (define-public r-cte
   (package
     (name "r-cte")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CTE" version))
        (sha256
-        (base32 "12igmjcfkmplnqn0cxiqdq8zcih8hg82mrazp4fqwamh0xq4q4lf"))))
+        (base32 "0vj961v3dawscp73xkf03yprxsqvfkf026wb7j0lsylx4m5m1419"))))
     (properties `((upstream-name . "CTE")))
     (build-system r-build-system)
     (arguments
@@ -8676,13 +8677,13 @@ for ggplot2 for discrete coloring.")
 (define-public r-crawl
   (package
     (name "r-crawl")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crawl" version))
        (sha256
-        (base32 "0qn64n54lsj56r5xj7xk8irns95724zmdv0nscsm3jd06fqybgj4"))))
+        (base32 "1zzsl548419b39nxf29kag4v6r9yihby4hynxdzcybshiv05rkad"))))
     (properties `((upstream-name . "crawl")))
     (build-system r-build-system)
     (arguments
@@ -8699,7 +8700,7 @@ for ggplot2 for discrete coloring.")
                              r-magrittr
                              r-lubridate
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=crawl")
+    (home-page "https://github.com/NMML/crawl")
     (synopsis
      "Fit Continuous-Time Correlated Random Walk Models to Animal Movement Data")
     (description
@@ -12284,6 +12285,42 @@ robust), greedy matching algorithms, and comprehensive balance diagnostics for
 assessing match quality using standardized differences and distribution
 comparisons.")
     (license license:expat)))
+
+(define-public r-countyhealthr
+  (package
+    (name "r-countyhealthr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "countyhealthR" version))
+       (sha256
+        (base32 "1d3v9ycgmvlq8f9jm92f6s88gpidvj2piv4jfvg3ipxp0gzia9vr"))))
+    (properties `((upstream-name . "countyhealthR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-readr
+                             r-rappdirs
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/County-Health-Rankings-and-Roadmaps/countyhealthR")
+    (synopsis "Programmatic Access to County Health Rankings & Roadmaps Data")
+    (description
+     "This package provides a simple interface to pull County Health Rankings &
+Roadmaps (CHR&R) county-level health data and metadata directly from Zenodo
+<doi:10.5281/zenodo.18157681>.  Users can retrieve data for CHR&R release years
+2010 through 2025.  CHR&R data support research and decision-making to promote
+health equity and policies that help all communities thrive.")
+    (license license:gpl3+)))
 
 (define-public r-countts
   (package
@@ -15948,13 +15985,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.4.0")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "0qv7lgkgzyqrhqky8xf1qa9y9xs6d04gn3n14y5csh5qmd8dfv8i"))))
+        (base32 "0fjpd213ixpz9w64y3gawi2wbm432jf528i3cc9f26074glkw4yw"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -15970,6 +16007,7 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
                              r-purrr
                              r-lubridate
                              r-leaflet
+                             r-jsonlite
                              r-httr2
                              r-dplyr
                              r-cli
@@ -18850,13 +18888,13 @@ correctly, OAuth token caching, and refresh behaviour.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "036wbqmb1bvnxv1wznfxgf7jwky7rxa9108vddmr0s46i0pnab24"))))
+        (base32 "0h9m7pbzl7lzbpiyrxzaf8chdcy240yg2pxcv9y0ydb6shw0nwan"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (arguments
@@ -21370,13 +21408,13 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
 (define-public r-compositionalsr
   (package
     (name "r-compositionalsr")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalSR" version))
        (sha256
-        (base32 "030y1w9xxm1c8vwvgan1nhrnbrs1nfqzq9avjhhrsd81zw2kpgbw"))))
+        (base32 "0rpf39c05mm2j25cdm3wxxlwzzpad70l26llqgp4cim551f36csq"))))
     (properties `((upstream-name . "CompositionalSR")))
     (build-system r-build-system)
     (arguments
@@ -21385,6 +21423,7 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
     (propagated-inputs (list r-sf
                              r-rfast
                              r-minpack-lm
+                             r-gslnls
                              r-foreach
                              r-doparallel
                              r-compositional
@@ -22301,13 +22340,13 @@ such a compilation database.")
 (define-public r-compclassmetrics
   (package
     (name "r-compclassmetrics")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompClassMetrics" version))
        (sha256
-        (base32 "1sxa7rzbj5z6ny6jxzgq4kvnr10zdaax9fh41drgsc41ahwjkxjx"))))
+        (base32 "0x6jmf3bxyn0vfdyyn803xjxap9x7r0dz6nvmmjlrj2nd1p911b9"))))
     (properties `((upstream-name . "CompClassMetrics")))
     (build-system r-build-system)
     (arguments
@@ -27121,6 +27160,58 @@ in the 1970s.  Can you break the code?")
 data frame.")
     (license license:expat)))
 
+(define-public r-codebook
+  (package
+    (name "r-codebook")
+    (version "0.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "codebook" version))
+       (sha256
+        (base32 "1x89pc9fp0n9i1xa8xdj9m9j6xplqsd4w30hdnipgzwrdq8jl5d0"))))
+    (properties `((upstream-name . "codebook")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-skimr
+                             r-rmdpartials
+                             r-rlang
+                             r-purrr
+                             r-likert
+                             r-labelled
+                             r-labeling
+                             r-knitr
+                             r-jsonlite
+                             r-htmltools
+                             r-haven
+                             r-glue
+                             r-ggplot2
+                             r-future
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://rubenarslan.github.io/codebook/")
+    (synopsis
+     "Automatic Codebooks from Metadata Encoded in Dataset Attributes")
+    (description
+     "Easily automate the following tasks to describe data frames: Summarise the
+distributions, and labelled missings of variables graphically and using
+descriptive statistics.  For surveys, compute and summarise reliabilities
+(internal consistencies, retest, multilevel) for psychological scales.  Combine
+this information with metadata (such as item labels and labelled values) that is
+derived from R attributes.  To do so, the package relies on rmarkdown partials,
+so you can generate HTML, PDF, and Word documents.  Codebooks are also available
+as tables (CSV, Excel, etc.) and in JSON-LD, so that search engines can find
+your data and index the metadata.  The metadata are also available at your
+fingertips via RStudio Addins.")
+    (license license:expat)))
+
 (define-public r-code
   (package
     (name "r-code")
@@ -28296,13 +28387,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.5.1")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "0fvk9zjgbshdq37qrnibiw6yxj7rb11yv01vk5rlxdacmrf91jy5"))))
+        (base32 "1dbzylndab0m65vnw4xpsh5dlw0gd4zmq8lqng7ca1wm7h3kwwfy"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (arguments
@@ -28337,13 +28428,13 @@ Iterative Proportional Fitting.  Based on Lenhard et al. (2016)
 (define-public r-cnmap
   (package
     (name "r-cnmap")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnmap" version))
        (sha256
-        (base32 "0778m0f88nqdryx8mzm4883k9yal195kswvsm6jxk5164k15d8zk"))))
+        (base32 "01mn9xfgr5a4lwpnqk3q69nrfpm7za1nbh803rfdnbjd3adz2lq3"))))
     (properties `((upstream-name . "cnmap")))
     (build-system r-build-system)
     (arguments
@@ -28354,11 +28445,12 @@ Iterative Proportional Fitting.  Based on Lenhard et al. (2016)
     (home-page "https://github.com/PanfengZhang/cnmap")
     (synopsis "China Map Data from AutoNavi Map")
     (description
-     "According to the code or the name of the administrative division at the county
-level and above provided by the Ministry of Civil Affairs of the People's
-Republic of China in 2022, get the map file online from the website of
-@code{AutoNavi} Map
-(<http://datav.aliyun.com/portal/school/atlas/area_selector>).")
+     "According to the codes and names of county-level and above administrative
+divisions released in 2022 by the Ministry of Civil Affairs of the People's
+Republic of China, the online vector map files were retrieved from the website
+(available at: <http://datav.aliyun.com/portal/school/atlas/area_selector>).
+This study was supported by the National Natural Science Foundation of China
+(NSFC, Grant No.  42205177).")
     (license license:gpl3)))
 
 (define-public r-cnlttsa
@@ -28436,13 +28528,13 @@ information from the Chinese ID number.")
 (define-public r-cnefetools
   (package
     (name "r-cnefetools")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnefetools" version))
        (sha256
-        (base32 "0sln5l9g4bmqx0i28872x0ggny7yzc9br95hz2ipn2ag4cqn9lnp"))))
+        (base32 "0qxk49s9l4jch995x4wbg48ia325ss3y80nf56lag4b1277r2gyc"))))
     (properties `((upstream-name . "cnefetools")))
     (build-system r-build-system)
     (arguments
@@ -34935,13 +35027,13 @@ for easy modification.  Debug your binary classifiers faster and easier!")
 (define-public r-classificationensembles
   (package
     (name "r-classificationensembles")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassificationEnsembles" version))
        (sha256
-        (base32 "002slp7nli6l43azgnxf0vr99kj5g1832f0pg58cbqcl0vjmdmjz"))))
+        (base32 "143micgl63q7cq9nlccvqm8msvwdb9n1ck72n9awjjyk4yq5m4a2"))))
     (properties `((upstream-name . "ClassificationEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -34950,7 +35042,6 @@ for easy modification.  Debug your binary classifiers faster and easier!")
     (propagated-inputs (list r-tree
                              r-tidyr
                              r-scales
-                             r-reactablefmtr
                              r-reactable
                              r-ranger
                              r-randomforest
@@ -34959,6 +35050,8 @@ for easy modification.  Debug your binary classifiers faster and easier!")
                              r-magrittr
                              r-machineshop
                              r-ipred
+                             r-htmlwidgets
+                             r-htmltools
                              r-gt
                              r-ggplot2
                              r-e1071
@@ -39564,13 +39657,13 @@ for full list.")
 (define-public r-childfree
   (package
     (name "r-childfree")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "childfree" version))
        (sha256
-        (base32 "14c01qjgnypcwv6hyy0hsb4cdmw9hkhw8vn4i4301b27qpd694bf"))))
+        (base32 "16lbjisyq70prgjpwa2lnr1568jcaxdmrss2wpa8c8kj81k1a7py"))))
     (properties `((upstream-name . "childfree")))
     (build-system r-build-system)
     (arguments
@@ -39578,7 +39671,7 @@ for full list.")
       #:tests? #f))
     (propagated-inputs (list r-rio r-rcurl))
     (native-inputs (list r-knitr))
-    (home-page "https://www.zacharyneal.com/childfree-home")
+    (home-page "https://thechildfree.org/")
     (synopsis "Access and Harmonize Childfree Demographic Data")
     (description
      "Reads demographic data from a variety of public data sources, extracting and
@@ -40624,13 +40717,13 @@ been applied.")
 (define-public r-checked
   (package
     (name "r-checked")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checked" version))
        (sha256
-        (base32 "1pnizpgpxnkpqamhlp5y1jw5b7zsari8hksc1jis6d6qgw1wgpph"))))
+        (base32 "09b69g955swhp40x0mbhhr04bfgjlzh5dswra3zrcjj7qskmvw1f"))))
     (properties `((upstream-name . "checked")))
     (build-system r-build-system)
     (arguments
@@ -44644,13 +44737,13 @@ Iacus, King, Porro (2012) <DOI:10.1093/pan/mpr013> and Iacus, King, Porro (2019)
 (define-public r-cellwise
   (package
     (name "r-cellwise")
-    (version "2.5.5")
+    (version "2.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellWise" version))
        (sha256
-        (base32 "17m8hzdkqky4ir7ma1ilqgb0mrbr268i3bwjnyrkc8db8ify1sqi"))))
+        (base32 "14681w7idfqy3dis87npk8axy27paylb0q7zp2v2p6k01xc97hby"))))
     (properties `((upstream-name . "cellWise")))
     (build-system r-build-system)
     (arguments
@@ -45970,13 +46063,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "0pcim6vnr3yfwc1g6qm1pdn8agssjwy3iyxwnriyysq33aa3qnqv"))))
+        (base32 "0zn6s41haygfhh7llbykaf63rqja8c8h0hjws3gkdrjxfr6dz8xa"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments
@@ -45992,7 +46085,8 @@ for correlation, Kruskal-Wallis tests, common approximate versions of Wilcoxon
 rank-sum and signed rank tests, chi-squared tests of independence, score tests
 of particular hypotheses in generalized linear models, canonical correlation
 analysis and linear discriminant analysis.")
-    (license (license:fsdg-compatible "EUPL (>= 1.1)"))))
+    (license (list license:expat
+                   (license:fsdg-compatible "EUPL (>= 1.1)")))))
 
 (define-public r-cctensor
   (package
@@ -47819,13 +47913,13 @@ effects.")
 (define-public r-causalreg
   (package
     (name "r-causalreg")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalreg" version))
        (sha256
-        (base32 "19xij1df44lz50r4rdd8ffkbxwwap9ad903z61xxlk79cl79hcab"))))
+        (base32 "1lz0z654dcvz2cy07gjihrilif0vpb16silzcrmxpkyhab3yr4y9"))))
     (properties `((upstream-name . "causalreg")))
     (build-system r-build-system)
     (arguments
@@ -49886,6 +49980,46 @@ estimated from stratified and unstratified case-cohort data as described in
 Etievant, L., Gail, M.H. (Lifetime Data Analysis, 2024)
 <doi:10.1007/s10985-024-09621-2>.")
     (license license:gpl2)))
+
+(define-public r-casebasedreasoning
+  (package
+    (name "r-casebasedreasoning")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CaseBasedReasoning" version))
+       (sha256
+        (base32 "1vrpr167qbaf11vjq9lkqpfr0mnzqdhd72s39hdxvn56ppqsdrbl"))))
+    (properties `((upstream-name . "CaseBasedReasoning")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rms
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ranger
+                             r-r6
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sipemu/case-based-reasoning")
+    (synopsis "Case Based Reasoning")
+    (description
+     "Case-based reasoning is a problem-solving methodology that involves solving a
+new problem by referring to the solution of a similar problem in a large set of
+previously solved problems.  The key aspect of Case Based Reasoning is to
+determine the problem that \"most closely\" matches the new problem at hand.  This
+is achieved by defining a family of distance functions and using these distance
+functions as parameters for local averaging regression estimates of the final
+result.  The optimal distance function is chosen based on a specific error
+measure used in regression estimation.  This approach allows for efficient
+problem-solving by leveraging past experiences and adapting solutions from
+similar cases.  The underlying concept is inspired by the work of Dippon J. et
+al. (2002) <doi:10.1016/S0167-9473(02)00058-0>.")
+    (license license:expat)))
 
 (define-public r-casebase
   (package
@@ -53689,13 +53823,13 @@ web applications.  Learn more about the Calcite Design System at
 (define-public r-calcal
   (package
     (name "r-calcal")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calcal" version))
        (sha256
-        (base32 "0npxkf2ji9k7p7d0hb19bzjway26diyhgm4s045hxk9496bx9724"))))
+        (base32 "1wydy5wmckjwqvmw7hjcnplzzvsdxnhn4kvq6532l7lnkfg44ks5"))))
     (properties `((upstream-name . "calcal")))
     (build-system r-build-system)
     (arguments

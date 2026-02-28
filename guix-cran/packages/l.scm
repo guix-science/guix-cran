@@ -5332,13 +5332,13 @@ is helpful to detect patients that may present cognitive decline.")
 (define-public r-logisticensembles
   (package
     (name "r-logisticensembles")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogisticEnsembles" version))
        (sha256
-        (base32 "08i4mjvyvh0qzp2px4yv5dz5g5r97jvrlqgwda75khdx3f3295v0"))))
+        (base32 "0f7x5x004n0q02gd3hy4bhnp8fm6ayr1w6fvb9gp9sm0vqgsq48m"))))
     (properties `((upstream-name . "LogisticEnsembles")))
     (build-system r-build-system)
     (arguments
@@ -5350,7 +5350,6 @@ is helpful to detect patients that may present cognitive decline.")
                              r-scales
                              r-rpart
                              r-readr
-                             r-reactablefmtr
                              r-reactable
                              r-ranger
                              r-randomforest
@@ -5363,6 +5362,8 @@ is helpful to detect patients that may present cognitive decline.")
                              r-machineshop
                              r-klar
                              r-ipred
+                             r-htmlwidgets
+                             r-htmltools
                              r-gt
                              r-gridextra
                              r-glmnet
@@ -6587,13 +6588,13 @@ created based on local rather than global behaviour of each original feature.")
 (define-public r-localllm
   (package
     (name "r-localllm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localLLM" version))
        (sha256
-        (base32 "0ib5wnrcj26cb42yfxyqjwfdv7anrxg0i4jvyb171yyq9d86ryih"))))
+        (base32 "0315my2pyjfwm2xqcll462xnihb3vifzmdppsl50v8a8v1x3xkhq"))))
     (properties `((upstream-name . "localLLM")))
     (build-system r-build-system)
     (arguments
@@ -16203,13 +16204,13 @@ results based on constrained optimization.")
 (define-public r-lcpa
   (package
     (name "r-lcpa")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LCPA" version))
        (sha256
-        (base32 "12991akcqacmjhg8gl9jf2d3z540yii917y97l43376zpqq4c5zr"))))
+        (base32 "1lrl5j64zk2w5mv1sshnyfand4ry9v2n71xzwanrzs4l6f19z17k"))))
     (properties `((upstream-name . "LCPA")))
     (build-system r-build-system)
     (arguments

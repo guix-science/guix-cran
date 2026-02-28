@@ -2945,13 +2945,13 @@ backend for performance.")
 (define-public r-fun
   (package
     (name "r-fun")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fun" version))
        (sha256
-        (base32 "09601ma4irmpkgjspq6zmr383m1pbgyfdkf7gw8w8gp0q7ab89aq"))))
+        (base32 "09lmxkb89yhl8plngz5ri03660mpr55nj1ayqv11m6k3dd510x46"))))
     (properties `((upstream-name . "fun")))
     (build-system r-build-system)
     (arguments
@@ -2960,8 +2960,8 @@ backend for performance.")
     (home-page "https://github.com/yihui/fun")
     (synopsis "Use R for Fun")
     (description
-     "This is a collection of R games and other funny stuff, such as the classic Mine
-sweeper and sliding puzzles.")
+     "This package provides a collection of R games and other funny stuff, such as the
+classic Mine sweeper and sliding puzzles.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-fullroc
@@ -7607,24 +7607,19 @@ speciation, preservation and sampling.")
 (define-public r-fossilsim
   (package
     (name "r-fossilsim")
-    (version "2.4.3")
+    (version "2.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FossilSim" version))
        (sha256
-        (base32 "13mzvj7lwnyr98dm1110pl6s1d1kjp8fxj5rmjh7ffzd4di1870d"))))
+        (base32 "09pizwarkg5zjshqyy7ij80zp82pn09pjm5qxi0khd9mg2jsin7w"))))
     (properties `((upstream-name . "FossilSim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidytree
-                             r-rlang
-                             r-ggtree
-                             r-ggplot2
-                             r-ggfun
-                             r-ape))
+    (propagated-inputs (list r-tidytree r-rlang r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FossilSim")
     (synopsis "Simulation and Plots for Fossil and Taxonomy Data")
@@ -14636,6 +14631,29 @@ functions allow for easy processing, cleaning and transformation of this data
 into formats that can be used for analysis.")
     (license license:expat)))
 
+(define-public r-fitvarmxid
+  (package
+    (name "r-fitvarmxid")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fitVARMxID" version))
+       (sha256
+        (base32 "11p414pfbxnl5qgjdrcnjffb42451bj7vjhgs2ayyrr0phz3hpni"))))
+    (properties `((upstream-name . "fitVARMxID")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-simstatespace r-openmx))
+    (home-page "https://github.com/jeksterslab/fitVARMxID")
+    (synopsis "Fit the Vector Autoregressive Model for Multiple Individuals")
+    (description
+     "Fit the vector autoregressive model for multiple individuals using the
+@code{OpenMx} package (Hunter, 2017 <doi:10.1080/10705511.2017.1369354>).")
+    (license license:expat)))
+
 (define-public r-fitur
   (package
     (name "r-fitur")
@@ -16190,16 +16208,40 @@ described in the Nature Communications article by Nowatzky (2025)
 <doi:10.1038/s41467-025-57422-4>.")
     (license license:expat)))
 
+(define-public r-fiodata
+  (package
+    (name "r-fiodata")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fiodata" version))
+       (sha256
+        (base32 "18hnz5s37angc2xfjxfd2q8jmw4w1a5s1r40jd4flwzg1wzmdssl"))))
+    (properties `((upstream-name . "fiodata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/albersonmiranda/fiodata")
+    (synopsis "Regional and Multi-Regional Input-Output Data")
+    (description
+     "This package provides Regional (Brazil, 2020) and Multi-Regional (World, 2000)
+input-output matrices for R. This package serves as a data-only companion to the
+fio package, facilitating input-output analysis by providing standardized R6
+data objects.")
+    (license license:cc0)))
+
 (define-public r-fio
   (package
     (name "r-fio")
-    (version "0.1.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fio" version))
        (sha256
-        (base32 "0k51a2swr76c98lvg4ajk4srqwqp82439m2k8lrhcb79anqpqziy"))))
+        (base32 "055jsf119rirwqwbb8q2jl7vqd1wnk39k7nn9jf6z9xf75dvkbql"))))
     (properties `((upstream-name . "fio")))
     (build-system r-build-system)
     (arguments
@@ -16220,11 +16262,11 @@ described in the Nature Communications article by Nowatzky (2025)
     (home-page "https://albersonmiranda.github.io/fio/")
     (synopsis "Friendly Input-Output Analysis")
     (description
-     "Simplifies the process of importing and managing input-output matrices from
-Microsoft Excel into R, and provides a suite of functions for analysis.  It
-leverages the R6 class for clean, memory-efficient object-oriented programming.
-Furthermore, all linear algebra computations are implemented in Rust to achieve
-highly optimized performance.")
+     "Simplifies the process of economic input-output analysis by combining
+user-friendly interfaces with high-performance computation.  It provides tools
+for analyzing both single-region and multi-regional economic systems through a
+hybrid architecture that pairs R's accessibility with Rust's computational
+efficiency.")
     (license license:expat)))
 
 (define-public r-fints
@@ -17912,13 +17954,13 @@ wrapper functions for the R package `@code{AlphaSimR`}.")
 (define-public r-fieldhub
   (package
     (name "r-fieldhub")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FielDHub" version))
        (sha256
-        (base32 "1sfrhz6b3pzrcjp3jdg35yxj3j2m7mvzhwwv49f7nvfmrs3fx936"))))
+        (base32 "0qbd773qlagcm45pdj300j87sgfakzjrmzl4pmfxvk558chlq7nz"))))
     (properties `((upstream-name . "FielDHub")))
     (build-system r-build-system)
     (arguments
@@ -18976,24 +19018,19 @@ for the official REST API documentation published by the FFIEC'.")
 (define-public r-ffdownload
   (package
     (name "r-ffdownload")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FFdownload" version))
        (sha256
-        (base32 "1xhjp2zk5w7gryfhr7qlzhdgfnfy3c7ivslayy0fhy7r7jdxr847"))))
+        (base32 "1psl1iarqlyncay7z1ws3yfj28v9ra9sn3ygzh1jf6yf5wndx0g2"))))
     (properties `((upstream-name . "FFdownload")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-xml2
-                             r-timetk
-                             r-rvest
-                             r-plyr))
+    (propagated-inputs (list r-zoo r-xts r-xml2 r-timetk r-rvest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sstoeckl/ffdownload")
     (synopsis "Download Data from Kenneth French's Website")
@@ -21574,21 +21611,22 @@ selection.")
 (define-public r-fcuk
   (package
     (name "r-fcuk")
-    (version "0.1.21")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcuk" version))
        (sha256
-        (base32 "1sb7p1m5qb88028mrw95lhh8l7dxj696hjh88nfsdpnscryknfpv"))))
+        (base32 "1517ll71lh8whyrjrl7sy4xdacqmwih5id05lbhxrvyr5yfm1y2w"))))
     (properties `((upstream-name . "fcuk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-stringdist r-purrr r-magrittr))
+    (propagated-inputs (list r-stringdist r-rstudioapi r-crayon r-clisymbols
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ThinkRstat/fcuk")
+    (home-page "https://thinkr-open.github.io/fcuk/")
     (synopsis "The Ultimate Helper for Clumsy Fingers")
     (description "Automatically suggests a correction when a typo occurs.")
     (license license:gpl3)))
@@ -21735,13 +21773,13 @@ Archemedean, Elliptical, Extreme Value, and Empirical Copulae.")
 (define-public r-fco
   (package
     (name "r-fco")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FCO" version))
        (sha256
-        (base32 "15wzw83i8hwfa59gfbh17kjq1d82ci4phzwvywcpikry39028yvs"))))
+        (base32 "1dzdq305469haszl11mgpzjxxps7kff0cb0k2aivwk88l5irwm6m"))))
     (properties `((upstream-name . "FCO")))
     (build-system r-build-system)
     (arguments
@@ -22824,13 +22862,13 @@ under 2-locus and 1-locus models defined by some design matrix.")
 (define-public r-fastymd
   (package
     (name "r-fastymd")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastymd" version))
        (sha256
-        (base32 "0qkc9aw05lm5cdn6k4dcz0qg3scaxxmml8xwqj032bajhcv5r7ph"))))
+        (base32 "07xkl0b3j0v62kwni36gslpm1zjlw7iagix7hiszz4i46dnvi6sl"))))
     (properties `((upstream-name . "fastymd")))
     (build-system r-build-system)
     (arguments
@@ -23438,6 +23476,44 @@ based on Jerzak and Goldstein (2023) <doi:10.48550/@code{arXiv.2310.00861>}.")
 tables and summaries of data.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-fastreg
+  (package
+    (name "r-fastreg")
+    (version "0.8.17")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastreg" version))
+       (sha256
+        (base32 "1jdrah3gf9d6jfd8j3c5l54bvlj499qfsdy2clbxx2hwmp8arcfk"))))
+    (properties `((upstream-name . "fastreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-osdc
+                             r-haven
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-cli
+                             r-checkmate
+                             r-arrow))
+    (native-inputs (list r-quarto))
+    (home-page "https://cran.r-project.org/package=fastreg")
+    (synopsis
+     "Fast Conversion and Querying of Danish Registers with 'Parquet'")
+    (description
+     "Converts large Danish register files ('sas7bdat') into Parquet format with
+year-based Hive partitioning and chunked reading for larger-than-memory files.
+Supports parallel conversion with a targets pipeline and reading those registers
+into @code{DuckDB} tables for faster querying and analyses.")
+    (license license:expat)))
+
 (define-public r-fastrcs
   (package
     (name "r-fastrcs")
@@ -23679,13 +23755,13 @@ Hatamyar, Shah and Kreif (2025) <doi:10.48550/@code{arXiv.2506.15435>}.")
 (define-public r-fastpng
   (package
     (name "r-fastpng")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastpng" version))
        (sha256
-        (base32 "1zb2d89659r912yxg003zhbxacvh1qrwi33hpqnmr4afhsqgw34f"))))
+        (base32 "0dc991ga2byywaly6i5r13z62fnkam37l4jp4ixnb7g0ppmwfyp8"))))
     (properties `((upstream-name . "fastpng")))
     (build-system r-build-system)
     (arguments
@@ -24247,13 +24323,13 @@ time.")
 (define-public r-fastkmedoids
   (package
     (name "r-fastkmedoids")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastkmedoids" version))
        (sha256
-        (base32 "0jdwqgc1rj639rwgcp1zrd9sg34m1fgd73s6387sagyp92nqnl69"))))
+        (base32 "0ji9n4sdizh8lyrzjcz5jgx566189pjjliqh39sa5g01xgvpbrkx"))))
     (properties `((upstream-name . "fastkmedoids")))
     (build-system r-build-system)
     (arguments
@@ -24875,6 +24951,34 @@ solution paths of the elastic net penalized Cox's proportional hazards model.
 The package is an implementation of Yang, Y. and Zou, H. (2013)
 <doi:10.4310/SII.2013.v6.n2.a1>.")
     (license license:gpl2)))
+
+(define-public r-fastcmprsk
+  (package
+    (name "r-fastcmprsk")
+    (version "1.26.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastcmprsk" version))
+       (sha256
+        (base32 "19lbimc2aqgd99vaakfl4cnsbcjhrwcgzhh3hn40vhrbvjsn6xgr"))))
+    (properties `((upstream-name . "fastcmprsk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-matrix r-foreach r-dynpred))
+    (home-page "https://cran.r-project.org/package=fastcmprsk")
+    (synopsis "Fine-Gray Regression via Forward-Backward Scan")
+    (description
+     "In competing risks regression, the proportional subdistribution hazards (PSH)
+model is popular for its direct assessment of covariate effects on the
+cumulative incidence function.  This package allows for both penalized and
+unpenalized PSH regression in linear time using a novel forward-backward scan.
+Penalties include Ridge, Lease Absolute Shrinkage and Selection Operator
+(LASSO), Smoothly Clipped Absolute Deviation (SCAD), Minimax Concave Plus (MCP),
+and elastic net <doi: 10.32614/RJ-2021-010>.")
+    (license license:gpl3)))
 
 (define-public r-fastbioclim
   (package
@@ -26793,13 +26897,13 @@ for downloading outputs.")
 (define-public r-faersquarterlydata
   (package
     (name "r-faersquarterlydata")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faersquarterlydata" version))
        (sha256
-        (base32 "1qh96k0jkx75707jx7r6cqfj8xskp5vqgqkki3riarz31m6fhznf"))))
+        (base32 "0fibqlrczw849apcs6gy74bzg5w6bnv7cik51is9p5zizxxfdkkg"))))
     (properties `((upstream-name . "faersquarterlydata")))
     (build-system r-build-system)
     (arguments
@@ -26816,8 +26920,7 @@ for downloading outputs.")
     (synopsis
      "FDA Adverse Event Reporting System Quarterly Data Extracting Tool")
     (description
-     "An easy framework to read FDA Adverse Event Reporting System XML/ASCII files
-<https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files>.")
+     "An easy framework to read FDA Adverse Event Reporting System XML/ASCII files.")
     (license license:gpl3+)))
 
 (define-public r-fadpclust

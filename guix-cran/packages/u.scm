@@ -2289,13 +2289,13 @@ Informations-, Dokumentations- und Administrations-System'), see
 (define-public r-unrtf
   (package
     (name "r-unrtf")
-    (version "1.4.7")
+    (version "1.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unrtf" version))
        (sha256
-        (base32 "1z5bdck8ykj9dh6ngr3qf88ad209hx8xizv02z7iil0jgycriqqr"))))
+        (base32 "0naw6x2hyb98fpgq98cnclx9xc1r7xm8ca4lqc686m9l5xc2r8hn"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
     (arguments
@@ -2726,13 +2726,13 @@ general factor.")
 (define-public r-unityforest
   (package
     (name "r-unityforest")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unityForest" version))
        (sha256
-        (base32 "01b17y0iinaxk4fnw2inr8xd6v92552l6fzysp43y8gvx0ph7wqa"))))
+        (base32 "19jmskwd0mrv6f4b18dzmyap2xisc5ljxzz1gxmpf2mclc3dyq4l"))))
     (properties `((upstream-name . "unityForest")))
     (build-system r-build-system)
     (arguments
@@ -2762,7 +2762,7 @@ the package includes the unity variable importance measure (unity VIM), which
 quantifies covariate effects under the conditions in which they are strongest -
 either marginally or within subgroups defined by interactions - as well as
 covariate-representative tree roots (CRTRs) that provide interpretable
-visualizations of these conditions.  Currently, only classification is
+visualizations of these conditions.  Categorical and continuous outcomes are
 supported.  This package is a fork of the R package ranger (main author: Marvin
 N. Wright), which implements random forests using an efficient C++ backend.")
     (license license:gpl3)))

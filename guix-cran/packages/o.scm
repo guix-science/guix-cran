@@ -3821,13 +3821,13 @@ ISBN:978-0805849677) \"Analyzing Rater Agreement: Manifest Variable Methods\".")
 (define-public r-ordinalsimr
   (package
     (name "r-ordinalsimr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalsimr" version))
        (sha256
-        (base32 "0dgz5jkmcfig2csapddh6yg4syhl7q1qkizd8sn9c3nhv0psra83"))))
+        (base32 "064lj04xsm4bzppa0xvc3d0l1jnzgz56arlb00qbd8nm1w01683z"))))
     (properties `((upstream-name . "ordinalsimr")))
     (build-system r-build-system)
     (arguments
@@ -4690,13 +4690,13 @@ your workflow for optimal productivity.")
 (define-public r-orbital
   (package
     (name "r-orbital")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbital" version))
        (sha256
-        (base32 "160l1vpj68f9k1b1nqbrh3ijnx5g96il1jn5iai9yxxkc457yd75"))))
+        (base32 "1s44rd9wx88jiqbjnjbw19b2534zw7zinz34xsb9ghci8z34v0n6"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
     (arguments
@@ -11173,13 +11173,13 @@ Y to predict Y.")
 (define-public r-omicflow
   (package
     (name "r-omicflow")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicFlow" version))
        (sha256
-        (base32 "1kxhaipaxhfibghvbjv0vxhwmq0zl0w7g3fg4xaqyqbx35y3lj4f"))))
+        (base32 "126ygmvhbqk5c1wbc54fyww8zlc6wbgavixg7a5d86bbwa3pb65v"))))
     (properties `((upstream-name . "OmicFlow")))
     (build-system r-build-system)
     (arguments

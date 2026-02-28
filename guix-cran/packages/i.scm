@@ -3169,13 +3169,13 @@ the Ising model the distribution can only be computed up to ~10 nodes.")
 (define-public r-isinglenzmc
   (package
     (name "r-isinglenzmc")
-    (version "0.2.8")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isingLenzMC" version))
        (sha256
-        (base32 "10x772g6b1p2si8hcjacz14xxxs9avb5gir7kb8sax6b7jm3p7p0"))))
+        (base32 "013pbni3nvw2ir4nhp7fn23qp6x6qf85a4y92spndlxinnwv1xxg"))))
     (properties `((upstream-name . "isingLenzMC")))
     (build-system r-build-system)
     (arguments
@@ -3192,7 +3192,9 @@ Metropolis and Glauber Monte Carlo with single flip dynamics in periodic
 boundary conditions.  Utility functions for exact solutions are provided.  Such
 as transfer matrix for 1D. Utility functions for exact solutions are provided.
 Example use cases are as follows: Measuring effective ergodicity and power-laws
-in so called functional-diffusion.")
+in so called functional-diffusion.  Example usage contains parallel runs,
+fitting power-laws, finite size scaling, computing autocorrelation, uncertainty
+analysis and plotting utilities.")
     (license license:gpl3+)))
 
 (define-public r-isinglandr
@@ -4415,13 +4417,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irfcb
   (package
     (name "r-irfcb")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iRfcb" version))
        (sha256
-        (base32 "1bwzzv9mbhj1ca9jxyp76a40y0pq96qw3h1yb3ykh307f0rpd9y7"))))
+        (base32 "1vf673bcrbd5n6z0vv126vs83sjjsb0v8n2a4cw81qv70jkaw4fw"))))
     (properties `((upstream-name . "iRfcb")))
     (build-system r-build-system)
     (arguments
