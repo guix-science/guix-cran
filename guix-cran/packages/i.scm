@@ -356,24 +356,27 @@ diagnostics in addition to other standard model tools.")
 (define-public r-ivpp
   (package
     (name "r-ivpp")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IVPP" version))
        (sha256
-        (base32 "15fzbphxpbzg5qxkch1lmg7ncipy34i780pphnpip8bznzzzq1ry"))))
+        (base32 "0adcvfckwac16ccjw24na3zkj4krlvgahq9m8aimwh110drvldhv"))))
     (properties `((upstream-name . "IVPP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-psychonetrics
+    (propagated-inputs (list r-qgraph
+                             r-psychonetrics
+                             r-networktools
                              r-mvtnorm
                              r-lifecycle
                              r-graphicalvar
                              r-future-apply
                              r-future
+                             r-fmsb
                              r-dplyr
                              r-clustergeneration
                              r-bootnet))
@@ -384,7 +387,11 @@ diagnostics in addition to other standard model tools.")
 Du, X., Johnson, S. U., Epskamp, S. (2025) The Invariance Partial Pruning
 Approach to The Network Comparison in Longitudinal Data.  IVPP is a two-step
 method that first test for global network structural difference with invariance
-test and then inspect specific edge difference with partial pruning.")
+test and then inspect specific edge difference with partial pruning.  The
+package also allows you to compute centrality measures and use radar chart to
+plot.  Analysis of bridge centralities by community pairs is also possible
+(e.g., the bridge strength from depression to anxiety, and from depression to
+panic disorder).")
     (license license:gpl3+)))
 
 (define-public r-ivolcano
@@ -1356,13 +1363,13 @@ recommended to switch to arrangements'.")
 (define-public r-iterors
   (package
     (name "r-iterors")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iterors" version))
        (sha256
-        (base32 "0cvd1c9zmc43ks5sjbii9xvnlrdmyqw3qpf5bkn8c9i0dyrv6ap1"))))
+        (base32 "07sk801cyvwshn3ajsb9590s8pqmpwcc4h64d3ysjh0qiipbkw43"))))
     (properties `((upstream-name . "iterors")))
     (build-system r-build-system)
     (arguments
@@ -17428,20 +17435,19 @@ data, to interpolate unsampled measurements from low-resolution time series.")
 (define-public r-idiolect
   (package
     (name "r-idiolect")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idiolect" version))
        (sha256
-        (base32 "1cj330pg97ammy033570s22jkzf8760jxqpng3mzcss7rzccg7kl"))))
+        (base32 "063nfxh945dssfs9xvcvhl7v4ff92rs2b1l7s3hnf2yynfdf9kd5"))))
     (properties `((upstream-name . "idiolect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-textclean
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-spacyr
                              r-quanteda-textstats
                              r-quanteda

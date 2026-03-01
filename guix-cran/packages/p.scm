@@ -5144,13 +5144,13 @@ package have been described by Stephen JJ, Carolan P, Krefman AE, et al. (2024)
 (define-public r-psgp
   (package
     (name "r-psgp")
-    (version "0.3-25")
+    (version "0.3-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psgp" version))
        (sha256
-        (base32 "0sdnqfq24nsw760g7bxjkiwkp5h1dn2d8dgjskwa72854z96y8ky"))))
+        (base32 "0fj5daqan74b0b96751f9k2gair9kr8mcf74zl3r58xfhpznx96f"))))
     (properties `((upstream-name . "psgp")))
     (build-system r-build-system)
     (arguments
@@ -23207,13 +23207,13 @@ constructions are also available.")
 (define-public r-plsrcox
   (package
     (name "r-plsrcox")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsRcox" version))
        (sha256
-        (base32 "0cgng4q10562bk4fsl7i77w9kd9zdgdcy9fvfgr3sq46drg55rlf"))))
+        (base32 "1yfydxaxwzs504bx1c98lafpvp68ks60z3z9f3rz60dmjlhm4md8"))))
     (properties `((upstream-name . "plsRcox")))
     (build-system r-build-system)
     (arguments
@@ -30548,19 +30548,20 @@ used for the final data analysis.")
 (define-public r-photon
   (package
     (name "r-photon")
-    (version "0.7.4-1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photon" version))
        (sha256
-        (base32 "1kjbvvz96gzqwxqpkkspwjpyxpfwlswhgzjbkqfvqv0n24rf21dc"))))
+        (base32 "1c6k3zx18r771szxyzg4l0fqbvmc908pysrvgb7k522j212fsl60"))))
     (properties `((upstream-name . "photon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sf
+                             r-rvest
                              r-r6
                              r-processx
                              r-httr2
@@ -31630,13 +31631,13 @@ projection raster, following methodologies described in John (2016)
 (define-public r-phenology
   (package
     (name "r-phenology")
-    (version "2025.11.12")
+    (version "2026.2.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenology" version))
        (sha256
-        (base32 "0ihdzkmi7h6baf2pzilcm1ypvngh9zla5mnw47s385ssggd89vl5"))))
+        (base32 "19a7qwfxbycnkrcfcf7nxy68p8q16w309iik1gljan8j92wyszz3"))))
     (properties `((upstream-name . "phenology")))
     (build-system r-build-system)
     (arguments
@@ -35492,6 +35493,34 @@ prioritize these remaining compounds for those most likely contributing to each
 bioactivity data set.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
+(define-public r-pepr
+  (package
+    (name "r-pepr")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pepr" version))
+       (sha256
+        (base32 "12ld4pqmn6rs1kr6250vpza8mkbaqk0x6lmvsiqwvxzp87infp9n"))))
+    (properties `((upstream-name . "pepr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-stringr r-rcurl r-httr2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pepr")
+    (synopsis "Reading Portable Encapsulated Projects")
+    (description
+     "This package provides a PEP, or Portable Encapsulated Project, is a dataset that
+subscribes to the PEP structure for organizing metadata.  It is written using a
+simple YAML + CSV format, it is your one-stop solution to metadata management
+across data analysis environments.  This package reads this standardized project
+configuration structure into R. Described in Sheffield et al. (2021)
+<doi:10.1093/gigascience/giab077>.")
+    (license license:bsd-2)))
+
 (define-public r-peppm
   (package
     (name "r-peppm")
@@ -36634,13 +36663,13 @@ server of the Peer Models Network.")
 (define-public r-pedtricks
   (package
     (name "r-pedtricks")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtricks" version))
        (sha256
-        (base32 "1l1ysyipwlbfvhm6d8dqyvn2hchy7dnmlgnx5l32znv0dv4s0zcl"))))
+        (base32 "1x4pl9na4r3xwsx241gxrrh4k306sf4xc5m1i3hsnvr067in83hg"))))
     (properties `((upstream-name . "pedtricks")))
     (build-system r-build-system)
     (arguments
@@ -36660,7 +36689,9 @@ server of the Peer Models Network.")
     (synopsis "Visualize, Summarize and Simulate Data from Pedigrees")
     (description
      "Sensitivity and power analysis, for calculating statistics describing pedigrees
-from wild populations, and for visualizing pedigrees.")
+from wild populations, and for visualizing pedigrees.  This is a reboot of the
+methods developed by Morrissey and Wilson (2010) <doi:
+10.1111/j.1755-0998.2009.02817.x>.")
     (license license:expat)))
 
 (define-public r-pedtools
@@ -39191,13 +39222,13 @@ are less biased than in partial credit models.")
 (define-public r-pcmbasecpp
   (package
     (name "r-pcmbasecpp")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCMBaseCpp" version))
        (sha256
-        (base32 "0507bkhprwa0x4l3apv2ax0081v9pgqcxnm6vrd7p6k3p25bdhvb"))))
+        (base32 "0bbmldidih3mkx75mcnyxqv8v1g6inw35n87cv4qcb5dz7ycnp02"))))
     (properties `((upstream-name . "PCMBaseCpp")))
     (build-system r-build-system)
     (arguments
@@ -41400,13 +41431,13 @@ robust to parameter perturbations.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "0bq7cjfazaplbsqy6qpjhf3vysyhk5fr36dhmfpx75w5c1nx2qc7"))))
+        (base32 "1ph9ggsy5qy6qdc7vm93mldjd8lp4571rr6ynwbmhafwr8bgfiq6"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (arguments
@@ -41418,7 +41449,8 @@ robust to parameter perturbations.")
                              r-lifecycle
                              r-igraph
                              r-ggrepel
-                             r-ggplot2))
+                             r-ggplot2
+                             r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://sysbiolab.github.io/PathwaySpace/")
     (synopsis "Spatial Projection of Network Signals along Geodesic Paths")

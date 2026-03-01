@@ -69,13 +69,13 @@ precision of LAPACK library (version 3.10.0 or later).")
 (define-public r-qwraps2
   (package
     (name "r-qwraps2")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qwraps2" version))
        (sha256
-        (base32 "1zv3yg5b32irh3paz2qwwhj2cn3a9laqi4d5gwlk8qmjiacxq6bh"))))
+        (base32 "0brs44g9jc2f2q22w7bcv4yy7r05r45dq4wzqba93yjsv039bz3h"))))
     (properties `((upstream-name . "qwraps2")))
     (build-system r-build-system)
     (arguments
@@ -90,7 +90,7 @@ precision of LAPACK library (version 3.10.0 or later).")
 useful for quickly placing data summaries and formatted regression results into
 .Rnw or .Rmd files.  Functions for generating commonly used graphics, such as
 receiver operating curves or Bland-Altman plots, are also provided by qwraps2'.
-qwraps2 is a updated version of a package qwraps'.  The original version qwraps
+qwraps2 is an updated version of a package qwraps'.  The original version qwraps
 was never submitted to CRAN but can be found at
 <https://github.com/dewittpe/qwraps/>.  The implementation and limited scope of
 the functions within qwraps2 <https://github.com/dewittpe/qwraps2/> is

@@ -4768,6 +4768,33 @@ numerical vectors and time-series features calculated within the theft
 ecosystem.")
     (license license:expat)))
 
+(define-public r-normagene
+  (package
+    (name "r-normagene")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NORMAgene" version))
+       (sha256
+        (base32 "1k5hv7p4qsl4qpwgk77kqgxy3rgrv8jbzvxgq534lgpxibq77z9j"))))
+    (properties `((upstream-name . "NORMAgene")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=NORMAgene")
+    (synopsis "Data-Driven qRT-PCR Normalization Using NORMAgene")
+    (description
+     "Enables correction for technical variance in raw quantitative reverse
+transcription polymerase chain reaction (@code{qRT-PCR}) data using the least
+squares-based NORMAgene data-driven normalization algorithm originally described
+by Heckmann et al. (2011) <doi:10.1186/1471-2105-12-250>.  Performs
+normalization of raw crossing threshold values (CT) and also calculates relative
+variability metrics that can be used to assess the impact of normalization on
+variance.")
+    (license license:gpl3)))
+
 (define-public r-nordklimdata1
   (package
     (name "r-nordklimdata1")
@@ -8591,20 +8618,20 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "5.0.0")
+    (version "5.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "03jyvcdq9wh13kyjb1jgz7ypxyzng6f6v2bdzpqnhipicfdm5gxm"))))
+        (base32 "00inp37jclw4nccxlqkyi4kgahpb2cpfgdzs52r2cjpx45khnf8f"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgxr
-                             r-vpc
+                             r-tidyr
                              r-rxode2
                              r-nlmixr2extra
                              r-nlmixr2est
@@ -10769,6 +10796,41 @@ Dataset Plus (NHDPlus) data.  All methods implemented in @code{nhdplusTools} are
 available in the NHDPlus documentation available from the US Environmental
 Protection Agency <https://www.epa.gov/waterdata/basic-information>.")
     (license license:cc0)))
+
+(define-public r-nhanesdata
+  (package
+    (name "r-nhanesdata")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhanesdata" version))
+       (sha256
+        (base32 "12jxh52pzihcbjslm061dql78ld8a62zslzyhrvsfaxrvdqvpwpz"))))
+    (properties `((upstream-name . "nhanesdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-srvyr
+                             r-scales
+                             r-rlang
+                             r-nhanesa
+                             r-dplyr
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kyleGrealis/nhanesdata")
+    (synopsis "Harmonized Access to NHANES Survey Data")
+    (description
+     "Instant access to harmonized National Health and Nutrition Examination Survey
+(NHANES) data spanning 1999-2023.  Retrieve pre-processed datasets from reliable
+cloud storage with automatic type reconciliation and integrated search tools for
+variables and datasets.  Simplifies NHANES data workflows by handling cycle
+management and maintaining data consistency across survey waves.  Data is
+sourced from <https://www.cdc.gov/nchs/nhanes/>.")
+    (license license:expat)))
 
 (define-public r-nhanesa
   (package

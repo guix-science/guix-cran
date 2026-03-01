@@ -8313,13 +8313,13 @@ formatting helpers for streamlined table styling workflows.")
 (define-public r-sumer
   (package
     (name "r-sumer")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumer" version))
        (sha256
-        (base32 "198kr204q58dgnirgplampmns1rrqalqpncvb7f3m170nl4vjx0y"))))
+        (base32 "102ihvdpww4791apc5h739z5bj42mysblx38m6q1rf260zrbj6pg"))))
     (properties `((upstream-name . "sumer")))
     (build-system r-build-system)
     (arguments
@@ -8327,19 +8327,21 @@ formatting helpers for streamlined table styling workflows.")
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-stringr
+                             r-shiny
                              r-rlang
                              r-ragg
                              r-officer
                              r-ggplot2
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=sumer")
     (synopsis "Sumerian Cuneiform Text Analysis")
     (description
      "This package provides functions for converting transliterated Sumerian texts to
-sign names and cuneiform characters, creating and querying dictionaries, and
-analyzing the structure of Sumerian words.  Includes a built-in dictionary and
-supports both forward lookup (Sumerian to English) and reverse lookup (English
-to Sumerian).")
+sign names and cuneiform characters, creating and querying dictionaries,
+analyzing the structure of Sumerian words, and creating translations.  Includes
+a built-in dictionary and supports both forward lookup (Sumerian to English) and
+reverse lookup (English to Sumerian).")
     (license license:gpl3)))
 
 (define-public r-sumcaver1
@@ -61861,39 +61863,31 @@ and Waernbaum (2022) <doi:10.1515/em-2022-0108>, and Zetterstrom (2024)
 (define-public r-selection-index
   (package
     (name "r-selection-index")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selection.index" version))
        (sha256
-        (base32 "09bdm2nq16b5cws4919mks6rnmykmabqkk1pyrwmkixnscnmzyw9"))))
+        (base32 "00skjcpgzmyypgh5qzn3mq0xd9lnlzx4fikarhns6xwx5i28syk6"))))
     (properties `((upstream-name . "selection.index")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zankrut20/selection.index")
     (synopsis "Analysis of Selection Index in Plant Breeding")
     (description
-     "The aim of most plant breeding programmes is simultaneous improvement of several
-characters.  An objective method involving simultaneous selection for several
-attributes then becomes necessary.  It has been recognised that most rapid
-improvements in the economic value is expected from selection applied
-simultaneously to all the characters which determine the economic value of a
-plant, and appropriate assigned weights to each character according to their
-economic importance, heritability and correlations between characters.  So the
-selection for economic value is a complex matter.  If the component characters
-are combined together into an index in such a way that when selection is applied
-to the index, as if index is the character to be improved, most rapid
-improvement of economic value is expected.  Such an index was first proposed by
-Smith (1937 <doi:10.1111/j.1469-1809.1936.tb02143.x>) based on the Fisher's
-(1936 <doi:10.1111/j.1469-1809.1936.tb02137.x>) \"discriminant function\"
-Dabholkar (1999
-<https://books.google.co.in/books?id=@code{mlFtumAXQ0oC&lpg=PA4&ots=Xgxp1qLuxS&dq=elements%20of%20biometrical%20genetics&lr&pg=PP1#v=onepage&q&f=false>}).
- In this package selection index is calculated based on the Smith (1937)
-selection index method.")
+     "This package provides tools for the simultaneous improvement of multiple traits
+in plant breeding.  Building upon the classical selection index (Smith 1937
+<doi:10.1111/j.1469-1809.1936.tb02143.x>) and modern quantitative genetics (Kang
+2020 <doi:10.1007/978-3-319-91223-3>), this package calculates classical
+phenotypic, genomic, marker-assisted, restricted/constrained, and eigen
+selection indices.  It also incorporates multi-stage selection evaluation and
+stochastic simulations to estimate genetic advance based on economic weights,
+heritability, and genetic correlations.")
     (license license:gpl3+)))
 
 (define-public r-selectboost-gamlss

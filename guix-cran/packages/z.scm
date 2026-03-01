@@ -91,6 +91,34 @@ documentation is available at <https://developers.zoom.us/docs/api/>.  This
 package is not supported by Zoom (owner of the software).")
     (license license:cc0)))
 
+(define-public r-zoomgrid
+  (package
+    (name "r-zoomgrid")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zoomgrid" version))
+       (sha256
+        (base32 "19ld4wk67p1glmi5hdmk8kja9l5rq7qnxrd07brjcq5hxlahvg4b"))))
+    (properties `((upstream-name . "zoomgrid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yukai-yang/zoomgrid")
+    (synopsis "Grid Search Algorithm with a Zoom")
+    (description
+     "This package implements a grid search algorithm with an adaptive zooming
+strategy for global optimisation problems with multiple local optima.  The
+method recursively refines the search region around promising grid points,
+providing reliable initial values for subsequent optimisation procedures.  The
+algorithm is computationally efficient in moderate- to high-dimensional
+settings.")
+    (license license:gpl3)))
+
 (define-public r-zoomerjoin
   (package
     (name "r-zoomerjoin")

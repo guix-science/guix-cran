@@ -20,6 +20,7 @@
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
@@ -24186,13 +24187,13 @@ framework, including estimation and tools for evaluating goodness-of-fit.")
 (define-public r-bcrypt
   (package
     (name "r-bcrypt")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcrypt" version))
        (sha256
-        (base32 "0n1zkhjq4q16smp672617w6bb506f74ifljaddn50djk0s1cb8ca"))))
+        (base32 "1kfkvcw5bwcpks7zg5j8f1vb2zw14df7ipmmllyivl84hlkazg53"))))
     (properties `((upstream-name . "bcrypt")))
     (build-system r-build-system)
     (arguments
@@ -26754,6 +26755,42 @@ al., 2024) <doi:10.1007/s11222-023-10343-y>, methods for the reconciliation of
 mixed hierarchies (Mix-Cond and TD-cond) (Zambon et al., 2024)
 <https://proceedings.mlr.press/v244/zambon24a.html>.")
     (license license:lgpl3+)))
+
+(define-public r-bayesqrsurvey
+  (package
+    (name "r-bayesqrsurvey")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesQRsurvey" version))
+       (sha256
+        (base32 "17ndbqdzpch5173jzswva4pr0pccx9rsxg6gxcqgnbpxrgbvnpd2"))))
+    (properties `((upstream-name . "bayesQRsurvey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list lapack))
+    (propagated-inputs (list r-rlang
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-posterior
+                             r-ggplot2))
+    (home-page "https://github.com/torodriguezt/bayesQRsurvey")
+    (synopsis
+     "Bayesian Quantile Regression Models for Complex Survey Data Analysis")
+    (description
+     "This package provides Bayesian quantile regression models for complex survey
+data under informative sampling using survey-weighted estimators.  Both single-
+and multiple-output models are supported.  To accelerate computation, all
+algorithms are implemented in C++ using Rcpp', @code{RcppArmadillo}', and
+@code{RcppEigen}', and are called from R'.  See Nascimento and GonÃ§alves (2024)
+<doi:10.1093/jssam/smae015> and Nascimento and GonÃ§alves (2025, in press)
+<https://academic.oup.com/jssam>.")
+    (license license:expat)))
 
 (define-public r-bayesqr
   (package

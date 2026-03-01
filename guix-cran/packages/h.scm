@@ -344,13 +344,13 @@ Rabe et al. (2020) <doi:10.21105/joss.02134>.")
 (define-public r-hypothesize
   (package
     (name "r-hypothesize")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypothesize" version))
        (sha256
-        (base32 "0g41nyiir39xvq79kzmhiikjbl94a3hg5hiydb6hm29vl8c3qs52"))))
+        (base32 "1lczary8r9xn6syqk67hzwda3zib2614vjvvmx8dnypiv6kmqa18"))))
     (properties `((upstream-name . "hypothesize")))
     (build-system r-build-system)
     (arguments
@@ -9714,13 +9714,13 @@ lost nor inappropriately cut.")
 (define-public r-hexify
   (package
     (name "r-hexify")
-    (version "0.3.10")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexify" version))
        (sha256
-        (base32 "0b9f3k1lzhzws4gvvsggbh4zanhbd35iclmz6hhf9hp0kpsy7vzw"))))
+        (base32 "1di5586kk0k6qz7z83lj7bz23xfniin5mpcx2qyd0ja92qj3sbjz"))))
     (properties `((upstream-name . "hexify")))
     (build-system r-build-system)
     (arguments
@@ -9731,13 +9731,15 @@ lost nor inappropriately cut.")
     (home-page "https://gillescolling.com/hexify/")
     (synopsis "Equal-Area Hex Grids on the 'Snyder' 'ISEA' 'Icosahedron'")
     (description
-     "This package provides functions to build and use equal-area hexagonal discrete
-global grids using the Snyder ISEA projection ('Snyder 1992
-<doi:10.3138/27H7-8K88-4882-1752>).  Implements the ISEA discrete global grid
-system ('Sahr', White and Kimerling 2003 <doi:10.1559/152304003100011090>).
-Includes a fast C++ core for projection and aperture quantization, and
-sf'/'terra'-compatible R wrappers for grid generation and coordinate assignment.
- Output is compatible with @code{dggridR} for interoperability.")
+     "This package provides functions to build and use hexagonal discrete global grids
+using the Snyder ISEA projection ('Snyder 1992
+<doi:10.3138/27H7-8K88-4882-1752>) and the H3 hierarchical hexagonal system
+('Uber Technologies).  Implements the ISEA discrete global grid system ('Sahr',
+White and Kimerling 2003 <doi:10.1559/152304003100011090>).  Includes a fast C++
+core for ISEA projection and aperture quantization, an included H3 v4.4.1 C
+library for native H3 grid operations, and sf'/'terra'-compatible R wrappers for
+grid generation and coordinate assignment.  Output is compatible with
+@code{dggridR} for interoperability.")
     (license license:expat)))
 
 (define-public r-hexfont
@@ -10768,13 +10770,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "2025.12.22")
+    (version "2026.2.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "053p9hg7lvb1926kxv851fl76rjnwd58d0f9mpaa8irbm5b4arkd"))))
+        (base32 "00d13xfkj5f9fg3sj91c0kix1jvp4zj6q2v8rzya441j35glixmm"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (arguments
@@ -13316,6 +13318,30 @@ of memory data sets.  The data sets are located on disk but look like in-memory,
 the syntax for manipulation is similar to data.table'.  Operations are performed
 \"chunk-wise\" behind the scene.")
     (license license:gpl3)))
+
+(define-public r-hdcurves
+  (package
+    (name "r-hdcurves")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDCurves" version))
+       (sha256
+        (base32 "1656ia0qn4yrbkcrpjiyqq72fbvb088d07ma7kchvg875nzwj42v"))))
+    (properties `((upstream-name . "HDCurves")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=HDCurves")
+    (synopsis "Hierarchical Derivative Curve Estimation")
+    (description
+     "This package provides a procedure that fits derivative curves based on a
+sequence of quotient differences.  In a hierarchical setting the package
+produces estimates of subject-specific and group-specific derivative curves.  In
+a non-hierarchical setting the package produces a single derivative curve.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hdcuremodels
   (package

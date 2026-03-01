@@ -576,13 +576,13 @@ modular functions and modular curves.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.6.0")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cyclops" version))
        (sha256
-        (base32 "0a7hk0wir7ffkbgj2swq3wprr0jv83zavhxj758nqzj83wmk7km9"))))
+        (base32 "1jx1lcdpk0x9mmcg7svc107d3iw82k1kkf8cxq5pgn1i3fmhg442"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (arguments
@@ -17455,20 +17455,20 @@ non-regular canvas.")
 (define-public r-contoso
   (package
     (name "r-contoso")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contoso" version))
        (sha256
-        (base32 "1858zdpd89zx2h76ygaj13sldi6lw7rds6xx0hq2x744n1d4sg1j"))))
+        (base32 "1rl4dk4c70snfsq300pj5nvfska4cmwd3g81vm81dqbjqjvhfbl6"))))
     (properties `((upstream-name . "contoso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-duckdb r-dplyr r-dbi r-cli r-assertthat))
-    (home-page "https://usrbinr.github.io/contoso/")
+    (propagated-inputs (list r-purrr r-duckdb r-dplyr r-dbi r-cli))
+    (home-page "https://codeberg.org/usrbinr/contoso")
     (synopsis "Dataset of the 'Contoso' Company")
     (description
      "This package provides a collection of synthetic datasets simulating sales
@@ -21441,13 +21441,13 @@ S. and Wood A.T.A. (2011), <doi:10.48550/@code{arXiv.1106.1451>}.")
 (define-public r-compositionalrf
   (package
     (name "r-compositionalrf")
-    (version "1.4")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalRF" version))
        (sha256
-        (base32 "1i1dwdh70ch71iajsh59lbdmdn2wvfx9an21aryjqz1rl4lrvs13"))))
+        (base32 "0is08dpf4q8z3vdma8kblzzdvmqgscccfa6xfcrvrrl6yzy2rsbi"))))
     (properties `((upstream-name . "CompositionalRF")))
     (build-system r-build-system)
     (arguments
@@ -51246,6 +51246,38 @@ tracking index as a moving reference to reduce errors.  Lau, Wong, & Gu (2026)
 <https://ssrn.com/abstract=5153081>.")
     (license license:expat)))
 
+(define-public r-cardargus
+  (package
+    (name "r-cardargus")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cardargus" version))
+       (sha256
+        (base32 "13ji3c4rbm8w5mfb4wvkpnjk12ad0fc9l392sq99q5hdqgq09i4g"))))
+    (properties `((upstream-name . "cardargus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsvg
+                             r-magick
+                             r-later
+                             r-glue
+                             r-gdtools
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/cardargus")
+    (synopsis "Generate SVG Information Cards with Embedded Fonts and Badges")
+    (description
+     "Create self-contained SVG information cards with embedded Google Fonts',
+shields-style badges, and custom logos.  Cards are fully portable SVG files
+ideal for dashboards, reports, and web applications.  Includes functions to
+export cards to PNG format and display them in R Markdown and Quarto documents.")
+    (license license:expat)))
+
 (define-public r-card-pro
   (package
     (name "r-card-pro")
@@ -53823,13 +53855,13 @@ web applications.  Learn more about the Calcite Design System at
 (define-public r-calcal
   (package
     (name "r-calcal")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calcal" version))
        (sha256
-        (base32 "1wydy5wmckjwqvmw7hjcnplzzvsdxnhn4kvq6532l7lnkfg44ks5"))))
+        (base32 "1mnkih9w3g6lpxnh3chsl5xf9sc9l2blv9rp3qg04wv68gfz4ag4"))))
     (properties `((upstream-name . "calcal")))
     (build-system r-build-system)
     (arguments

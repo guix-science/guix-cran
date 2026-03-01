@@ -14418,13 +14418,13 @@ time to apply a treatment or multiple treatments.")
 (define-public r-mosemiind
   (package
     (name "r-mosemiind")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MOsemiind" version))
        (sha256
-        (base32 "1gzw4ap2j97l9nvc9qafshcfgpyi8k67s7px8c11n94wn9ksll8m"))))
+        (base32 "0ac8rrkc0dzqvznyb57xpibcb9kk1pfgib9ad9r8rwd6crq2d0xk"))))
     (properties `((upstream-name . "MOsemiind")))
     (build-system r-build-system)
     (arguments
@@ -22098,13 +22098,13 @@ joint tuning of machine learning algorithms and debiasing methods.")
 (define-public r-mlr3db
   (package
     (name "r-mlr3db")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3db" version))
        (sha256
-        (base32 "05i1zkx60gkqs4rmhgpwd7zm7qi2c5ns958rxcgz3wigi13hdb0s"))))
+        (base32 "08wacgh54s1a6r5ky9ns9gcm214wz0jc4k3vxhmj63n5x6fp02w1"))))
     (properties `((upstream-name . "mlr3db")))
     (build-system r-build-system)
     (arguments
@@ -25778,13 +25778,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "1i79fj1i10k6j11r24lxfm7ssa6a1brlq4bjg8qd83m6kwicfpyf"))))
+        (base32 "0wdp0ijksrf83x251dpmg9yfr39qy86k36mfbxgq5k7vp8sj3cdq"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -29064,6 +29064,42 @@ attributes in recommendation system) may also be modelled in addition to the
 low-rank model.  GeneviÃ¨ve Robin, Olga Klopp, Julie Josse, Ãric Moulines,
 Robert Tibshirani (2018) <@code{arXiv:1806.09734>}.")
     (license license:gpl3)))
+
+(define-public r-mimer
+  (package
+    (name "r-mimer")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MIMER" version))
+       (sha256
+        (base32 "1h434nra2ija6lmp0r6lx8h9h397pl25li94rpjg42iiakq7vs3a"))))
+    (properties `((upstream-name . "MIMER")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-stringr
+                             r-rlang
+                             r-reshape2
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-data-table
+                             r-amr))
+    (home-page "https://cran.r-project.org/package=MIMER")
+    (synopsis "Data Wrangling for Antimicrobial Resistance Studies")
+    (description
+     "Designed for analyzing the Medical Information Mart for Intensive Care(MIMIC)
+dataset, a repository of freely accessible electronic health records.
+MIMER(MIMIC-enabled Research) package, offers a suite of data wrangling
+functions tailored specifically for preparing the dataset for research purposes,
+particularly in antimicrobial resistance(AMR) studies.  It simplifies complex
+data manipulation tasks, allowing researchers to focus on their primary
+inquiries without being bogged down by wrangling complexities.")
+    (license license:gpl3+)))
 
 (define-public r-mimdo
   (package

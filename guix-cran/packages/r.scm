@@ -10380,13 +10380,13 @@ URL provides a link to article in the R Journal.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "4.3-1")
+    (version "4.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "1p8n60k5dc6jl5rli1lr0qg2318mw4y9i911xw8n05inriqin1sp"))))
+        (base32 "0gdspc5z0xn4n76cvjzzmycnx3a7kz9vrdp13nbglycsq0fg2h8x"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (arguments
@@ -10398,15 +10398,16 @@ URL provides a link to article in the R Journal.")
      "Modified Poisson Regression for Binary Outcome and Related Methods")
     (description
      "Modified Poisson, logistic and least-squares regression analyses for binary
-outcomes of Zou (2004) <doi:10.1093/aje/kwh090>, Noma (2025)<Forthcoming>, and
-Cheung (2007) <doi:10.1093/aje/kwm223> have been standard multivariate analysis
-methods to estimate risk ratio and risk difference in clinical and
-epidemiological studies.  This R package involves an easy-to-handle function to
-implement these analyses by simple commands.  Missing data analysis tools
-(multiple imputation) are also involved.  In addition, recent studies have shown
-the ordinary robust variance estimator possibly has serious bias under small or
-moderate sample size situations for these methods.  This package also provides
-computational tools to calculate alternative accurate confidence intervals.")
+outcomes of Zou (2004) <doi:10.1093/aje/kwh090>, Noma
+(2026)<doi:10.1016/j.spl.2026.110698>, and Cheung (2007)
+<doi:10.1093/aje/kwm223> have been standard multivariate analysis methods to
+estimate risk ratio and risk difference in clinical and epidemiological studies.
+ This R package involves an easy-to-handle function to implement these analyses
+by simple commands.  Missing data analysis tools (multiple imputation) are also
+involved.  In addition, recent studies have shown the ordinary robust variance
+estimator possibly has serious bias under small or moderate sample size
+situations for these methods.  This package also provides computational tools to
+calculate alternative accurate confidence intervals.")
     (license license:gpl3)))
 
 (define-public r-rqentangle
@@ -29089,19 +29090,28 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "1j1zmxiy06fmjkgwdiczjdw2lmnwi5pv7whxm6cip98hi9fm37gz"))))
+        (base32 "0d4g5bjpx72fqc3xzb3rlw490bvp5rpnijirs51m4zr7mkjjfv4d"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-lifecycle r-igraph r-ggplot2))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-patchwork
+                             r-lifecycle
+                             r-igraph
+                             r-gtable
+                             r-ggrastr
+                             r-ggplot2
+                             r-cowplot
+                             r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sysbiolab/RGraphSpace")
     (synopsis "Lightweight Interface Between 'igraph' and 'ggplot2' Graphics")
@@ -29109,8 +29119,8 @@ still permitting the use of GRASS 7'.")
      "Interface to integrate igraph and ggplot2 graphics in a normalized coordinate
 system.  R@code{GraphSpace} implements new geometric objects using ggplot2
 prototypes, customized for side-by-side visualization of multiple graphs.  By
-scaling shapes and graph elements, R@code{GraphSpace} can provide a framework
-for layered visualizations.")
+scaling shapes and graph elements, R@code{GraphSpace} helps to create layered
+visualizations that stay coherent across multiple graphs.")
     (license license:artistic2.0)))
 
 (define-public r-rgraphics
@@ -40594,13 +40604,13 @@ programming.")
 (define-public r-redcapexporter
   (package
     (name "r-redcapexporter")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapExporter" version))
        (sha256
-        (base32 "09agay7glhfzwp9h3j0f71r65d1d6b2ccar04bkbas5fgbfv8xl7"))))
+        (base32 "0a36b1n7ryin00wxdgdb8nqfv2cvnv9ql7vfz059qjn7ssw8ks7k"))))
     (properties `((upstream-name . "REDCapExporter")))
     (build-system r-build-system)
     (arguments

@@ -114,6 +114,53 @@ Transforms.")
 publication-ready tables to latex files, and running Monte Carlo experiments.")
     (license license:gpl2+)))
 
+(define-public r-kwela
+  (package
+    (name "r-kwela")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KWELA" version))
+       (sha256
+        (base32 "1lan9byjaiyyxqdggzyq1llb2l5gjk1fd72v0qgkvkg21ddyyks4"))))
+    (properties `((upstream-name . "KWELA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/RFeissIV/KWELA")
+    (synopsis
+     "Hierarchical Adaptive 'RT-QuIC' Classification for Complex Matrices")
+    (description
+     "Extends RT-@code{QuIC} (Real-Time Quaking-Induced Conversion) statistical
+analysis to complex environmental matrices through hierarchical adaptive
+classification.  KWELA is named after a deity of the Fore people of Papua New
+Guinea, among whom Kuru, a notable human prion disease, was identified.
+Implements a 6-layer architecture: hard gate biological constraints, per-well
+adaptive scoring, separation-aware combination, Youden-optimized cutoffs,
+replicate consensus, and matrix instability detection.  Features dual-mode
+operation (diagnostic/research), auto-profile selection
+(Standard/Sensitive/Matrix-Robust), RAF integration for artifact detection,
+matrix-aware baseline correction, and multiple consensus rules.  Methods include
+energy distance (Szekely and Rizzo (2013) <doi:10.1016/j.jspi.2013.03.018>),
+CRPS (Gneiting and Raftery (2007) <doi:10.1198/016214506000001437>), SSMD (Zhang
+(2007) <doi:10.1016/j.ygeno.2007.01.005>), and Jensen-Shannon divergence (Lin
+(1991) <doi:10.1109/18.61115>).  This package implements methodology currently
+under peer review; please contact the author before publication using this
+approach.  Development followed an iterative human-machine collaboration where
+all algorithmic design, statistical methodologies, and biological validation
+logic were conceptualized, tested, and iteratively refined by Richard A. Feiss
+through repeated cycles of running experimental data, evaluating analytical
+outputs, and selecting among candidate algorithms and approaches.  AI systems
+('Anthropic Claude and @code{OpenAI} GPT') served as coding assistants and
+analytical sounding boards under continuous human direction.  The selection of
+statistical methods, evaluation of biological plausibility, and all final
+methodology decisions were made by the human author.  AI systems did not
+independently originate algorithms, statistical approaches, or scientific
+methodologies.")
+    (license license:expat)))
+
 (define-public r-kwcchangepoint
   (package
     (name "r-kwcchangepoint")
@@ -471,13 +518,13 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "2.2-1")
+    (version "2.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "1vqxq66y7bvhcjbij089cl6sr3lrlhli9hky1l0s36fh85ywsyay"))))
+        (base32 "13blgx33z23y818bz4jvccrg05dcsnlxy83iz8gdd9rgllc658iv"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments

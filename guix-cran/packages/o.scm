@@ -14295,6 +14295,32 @@ the probability of subsequent captures due to their becoming \"trap happy\" or
 \"trap shy.\".")
     (license license:gpl3)))
 
+(define-public r-obm
+  (package
+    (name "r-obm")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "obm" version))
+       (sha256
+        (base32 "1457bzd76v8c3v458plv5nkh9nwa7vv2zpq0n5f9vrpsaa4qv05m"))))
+    (properties `((upstream-name . "obm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpostgresql r-rjson r-jsonlite r-httr r-dbi))
+    (home-page "https://cran.r-project.org/package=obm")
+    (synopsis "Interface to 'OpenBioMaps' Data and Services")
+    (description
+     "This package provides access to selected functions and data available through
+any @code{OpenBioMaps} <https://openbiomaps.org> server instance.
+@code{OpenBioMaps} is an open-source biodiversity data management platform
+designed for conservation professionals and researchers.  User authentication
+and access control are handled through @code{OpenBioMaps} login credentials.")
+    (license license:gpl3)))
+
 (define-public r-obliquersf
   (package
     (name "r-obliquersf")

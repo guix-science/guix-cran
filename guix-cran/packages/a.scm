@@ -19828,22 +19828,23 @@ defining the cumulative hazard and hazard rate functions.  See Chen and Wang
 (define-public r-ahpwr
   (package
     (name "r-ahpwr")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AHPWR" version))
        (sha256
-        (base32 "1g7d1vbjxb232fk6wjah73kjm6pj81acls8wqssphgnfiffgrrq6"))))
+        (base32 "074dgsm6zrl5kaf5422hzkm7hpgj8i0aw3bzqz7pwx827ak6rj7c"))))
     (properties `((upstream-name . "AHPWR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xlsx
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-rlang
                              r-readxl
+                             r-openxlsx
                              r-magrittr
                              r-igraph
                              r-ggplot2
@@ -21151,13 +21152,13 @@ age distributions.")
 (define-public r-agetopicmodels
   (package
     (name "r-agetopicmodels")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AgeTopicModels" version))
        (sha256
-        (base32 "0si57xgmz8gz7cp63i0kms03zr58dzwy964vidfgk8sd6h2dlzc5"))))
+        (base32 "14wdfssk28fpx4b1dz9clmx7g5n86g132qcxx907da7nk8h5m95m"))))
     (properties `((upstream-name . "AgeTopicModels")))
     (build-system r-build-system)
     (arguments
@@ -21173,7 +21174,8 @@ age distributions.")
                              r-gtools
                              r-ggrepel
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=AgeTopicModels")
     (synopsis "Inferring Age-Dependent Disease Topic from Diagnosis Data")
     (description

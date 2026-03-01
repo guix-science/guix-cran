@@ -2812,13 +2812,13 @@ translators.")
 (define-public r-tteice
   (package
     (name "r-tteice")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tteICE" version))
        (sha256
-        (base32 "1bsyci1fsg7gf1wx17qavfyxsnjk0lmlhxhgc4w2jryl3mm9ancb"))))
+        (base32 "1h8bca2qfyv0bn6qw057jyqfwp1jz6c10kjn3prh13gk2c386jv5"))))
     (properties `((upstream-name . "tteICE")))
     (build-system r-build-system)
     (arguments
@@ -4655,13 +4655,13 @@ re-think of rugarch', making use of automatic differentiation for estimation.")
 (define-public r-tsg
   (package
     (name "r-tsg")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsg" version))
        (sha256
-        (base32 "1ghasjn5670xxx1zgf3wr1m1qpba670z2ghr3nawwji1qyf8czl5"))))
+        (base32 "14hfg1anrsyrdkfn3wjq4dhqz2srb1qmvdqxw2c0171l6pzhsd8h"))))
     (properties `((upstream-name . "tsg")))
     (build-system r-build-system)
     (arguments

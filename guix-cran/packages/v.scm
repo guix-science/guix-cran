@@ -6706,6 +6706,32 @@ Apostol (1969) <ISBN:9780471000051>, Spivak (1971) <ISBN:9780805390216>, Schey
 (2013) <ISBN:9781439870791>.")
     (license license:expat)))
 
+(define-public r-vectorforgeml
+  (package
+    (name "r-vectorforgeml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VectorForgeML" version))
+       (sha256
+        (base32 "1gqpj16vvlf7h8c67glhwl743aqgnngvfz61rka5hngxdf7l3j1y"))))
+    (properties `((upstream-name . "VectorForgeML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://vectorforgeml.work.gd")
+    (synopsis
+     "High-Performance Machine Learning Framework with C++ Acceleration")
+    (description
+     "Machine learning utilities for fast vectorized model training.  Methods are
+based on standard statistical learning references such as Hastie et al. (2009)
+<doi:10.1007/978-0-387-84858-7>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-vectorcoder
   (package
     (name "r-vectorcoder")
