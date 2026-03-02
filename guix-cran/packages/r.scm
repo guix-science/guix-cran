@@ -1772,19 +1772,19 @@ to build expressions in a chain-like fashion.")
 (define-public r-rveg
   (package
     (name "r-rveg")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rveg" version))
        (sha256
-        (base32 "0641n31dcxznrz5vi4lz12q6zbva5c49g2s20n63gpi5pq9nd3rb"))))
+        (base32 "09z8sbv2z3cq3c8bfwskpd6b961gkhcz90zlnm2vb18rxx4329m4"))))
     (properties `((upstream-name . "Rveg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-dplyr))
+    (propagated-inputs (list r-xml2))
     (native-inputs (list r-knitr))
     (home-page "https://plant-ecology-lab-czu.com/rveg/")
     (synopsis "Digitization of Phytosociological RelevÃ©s")
@@ -42250,19 +42250,19 @@ and combine bibliographies from both sources.")
 (define-public r-rebayes
   (package
     (name "r-rebayes")
-    (version "2.59")
+    (version "2.60")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REBayes" version))
        (sha256
-        (base32 "0kk5ji11xszj8z0dy8sx1ynizi96djvs44xvxbpzvz0skji73mii"))))
+        (base32 "1800qy20fvxdmwkzxy8s7n7v5gi5p7blwhgmql4ankn1g8v9yf03"))))
     (properties `((upstream-name . "REBayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-lattice r-deconvolver))
+    (propagated-inputs (list r-matrix r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://www.r-project.org")
     (synopsis "Empirical Bayes Estimation and Inference")

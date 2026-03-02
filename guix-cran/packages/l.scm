@@ -15563,13 +15563,13 @@ with the rest of the inputs.")
 (define-public r-ldmppr
   (package
     (name "r-ldmppr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldmppr" version))
        (sha256
-        (base32 "0yzxjmjxmpfs613ww12mfs7x56k9fqslc19y3z9z9l6wxidy3gwq"))))
+        (base32 "1lr45r5wh0mwbdb06x25x34pbzpm6b5zp5fnvhsjknjz600gwnby"))))
     (properties `((upstream-name . "ldmppr")))
     (build-system r-build-system)
     (arguments
@@ -15586,7 +15586,7 @@ with the rest of the inputs.")
                              r-recipes
                              r-rcpparmadillo
                              r-rcpp
-                             r-ranger
+                             r-progressr
                              r-progress
                              r-parsnip
                              r-nloptr

@@ -621,13 +621,13 @@ details.")
 (define-public r-quicksentiment
   (package
     (name "r-quicksentiment")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickSentiment" version))
        (sha256
-        (base32 "1hjmvl2929a7sl69izz49h5h4bqaiz98z4yvxinj6cdy3lg3r9wy"))))
+        (base32 "0qxig3h402lzap4h15xz7my1z8csgf4bk74piyvarjswnwicmd4j"))))
     (properties `((upstream-name . "quickSentiment")))
     (build-system r-build-system)
     (arguments
@@ -639,25 +639,27 @@ details.")
                              r-stopwords
                              r-ranger
                              r-quanteda
+                             r-proc
                              r-naivebayes
                              r-matrix
                              r-magrittr
                              r-glmnet
                              r-foreach
-                             r-doparallel
-                             r-caret))
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=quickSentiment")
     (synopsis "Fast and Flexible Pipeline for Text Classification")
     (description
-     "This package provides a high-level wrapper that simplifies text classification
-into three streamlined steps: preprocessing, model training, and prediction.  It
-unifies the interface for multiple algorithms (including glmnet', ranger', and
-xgboost') and vectorization methods (Bag-of-Words, Term Frequency-Inverse
-Document Frequency (TF-IDF)), allowing users to go from raw text to a trained
-sentiment model in two function calls.  The resulting model artifact
-automatically handles preprocessing for new datasets in the third step, ensuring
-consistent prediction pipelines.")
+     "This package provides a high-level pipeline that simplifies text classification
+into three streamlined steps: preprocessing, model training, and standardized
+prediction.  It unifies the interface for multiple algorithms (including
+glmnet', ranger', xgboost', and naivebayes') and memory-efficient sparse matrix
+vectorization methods (Bag-of-Words, Term Frequency, TF-IDF, and Binary).  Users
+can go from raw text to a fully evaluated sentiment model, complete with
+ROC-optimized thresholds, in just a few function calls.  The resulting model
+artifact automatically aligns the vocabulary of new datasets during the
+prediction phase, safely appending predicted classes and probability matrices
+directly to the user's original dataframe to preserve metadata.")
     (license license:expat)))
 
 (define-public r-quickregression

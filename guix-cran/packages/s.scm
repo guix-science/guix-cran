@@ -7457,13 +7457,13 @@ by high-throughput technologies.")
 (define-public r-supernova
   (package
     (name "r-supernova")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supernova" version))
        (sha256
-        (base32 "127qkcvjq4f1qa31hzmsvlmf97r5s28372977qz628azpd4l7x3g"))))
+        (base32 "1nh0hrgvpzs0z6zbacg74fbfmyxpcvblkn3av969mdhl5jkizyga"))))
     (properties `((upstream-name . "supernova")))
     (build-system r-build-system)
     (arguments
@@ -45170,13 +45170,13 @@ palettes in addition to returning the desired hex codes.")
 (define-public r-simplecache
   (package
     (name "r-simplecache")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simpleCache" version))
        (sha256
-        (base32 "1d39z8vfq44irxw7y52bnfkiqy9rn4j0h59d8x4344338g98hg1g"))))
+        (base32 "1nl601amk5h2vxzjkg0iv7d42g6ska6k11fai2xz3v6bimh9xyii"))))
     (properties `((upstream-name . "simpleCache")))
     (build-system r-build-system)
     (arguments

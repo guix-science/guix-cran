@@ -13053,13 +13053,13 @@ Information on @code{oTree} is found in Chen, D. L., Schonger, M., & Wickens, C.
 (define-public r-gmoip
   (package
     (name "r-gmoip")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMOIP" version))
        (sha256
-        (base32 "128sv7m3x0gb43bs1bm5jwsgymxl14gadyjvnjcff8wmbi0ax7f2"))))
+        (base32 "1bwiyimhhvcdypkk5avhsjx85i1g30xqym525305xg0cadny6gfk"))))
     (properties `((upstream-name . "gMOIP")))
     (build-system r-build-system)
     (arguments

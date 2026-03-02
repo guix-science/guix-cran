@@ -19010,13 +19010,13 @@ patterns assessment.  Piou C, U Berger and V Grimm (2009)
 (define-public r-pomdpsolve
   (package
     (name "r-pomdpsolve")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomdpSolve" version))
        (sha256
-        (base32 "0ywiqry0df1cjy3k8r3rzpd42rmnn578ih03qvp8qydq66bdrh3b"))))
+        (base32 "1ib295lhiizg7cn506hin9hkk2r2h6wdhdcdf5jvvadqdqc91by1"))))
     (properties `((upstream-name . "pomdpSolve")))
     (build-system r-build-system)
     (arguments
@@ -19026,11 +19026,11 @@ patterns assessment.  Piou C, U Berger and V Grimm (2009)
     (synopsis
      "Interface to 'pomdp-solve' for Partially Observable Markov Decision Processes")
     (description
-     "Installs an updated version of pomdp-solve', a program to solve Partially
-Observable Markov Decision Processes (POMDPs) using a variety of exact and
-approximate value iteration algorithms.  A convenient R infrastructure is
-provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
-<doi:10.1016/S0004-3702(98)00023-X>.")
+     "Installs an updated version of pomdp-solve and provides a low-level interface.
+Pomdp-solve is a program to solve Partially Observable Markov Decision Processes
+(POMDPs) using a variety of exact and approximate value iteration algorithms.  A
+convenient R infrastructure is provided in the separate package pomdp.  Hahsler
+and Cassandra <doi:10.32614/RJ-2024-021>.")
     (license license:gpl3+)))
 
 (define-public r-pomdp

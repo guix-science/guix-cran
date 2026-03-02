@@ -24432,13 +24432,13 @@ Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data Portal
 (define-public r-bclogit
   (package
     (name "r-bclogit")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bclogit" version))
        (sha256
-        (base32 "079rskbhmcjx7h13q6gdqm6v4gii4nhb7y4jwm75wpm9pabbs847"))))
+        (base32 "0cvcsi3ymsi1jwhvnhra5v3vv8axln09dpz8pfv8kk6lmlxmrlwx"))))
     (properties `((upstream-name . "bclogit")))
     (build-system r-build-system)
     (arguments
@@ -24464,8 +24464,8 @@ Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data Portal
 with informative priors built from the concordant pair data.  We include many
 options to build the priors.  And we include many options during the inference
 step for estimation, testing and confidence set creation.  For details, see
-Kapelner and Tennenbaum (2026) ``Improved Conditional Logistic Regression using
-Information in Concordant Pairs with Software
+Kapelner and Tennenbaum (2026) \"Improved Conditional Logistic Regression using
+Information in Concordant Pairs with Software\"
 <doi:10.48550/@code{arXiv.2602.08212>}.")
     (license license:gpl3)))
 

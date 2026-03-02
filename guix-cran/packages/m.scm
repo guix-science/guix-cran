@@ -10936,13 +10936,13 @@ baseline and time-varying covariates for improved efficiency.")
 (define-public r-mrstdlcrt
   (package
     (name "r-mrstdlcrt")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRStdLCRT" version))
        (sha256
-        (base32 "0glqf5613i4h28f1fcimzgs8nbmr53s7s1dmlalad9pmn8h65941"))))
+        (base32 "1mv5899x8s62iz4klmk0bbvkz4sd7c0pdp3kj5k444k34ds89lzg"))))
     (properties `((upstream-name . "MRStdLCRT")))
     (build-system r-build-system)
     (arguments
@@ -10952,6 +10952,7 @@ baseline and time-varying covariates for improved efficiency.")
                              r-tidyr
                              r-rlang
                              r-reformulas
+                             r-mass
                              r-lme4
                              r-ggplot2
                              r-gee
@@ -18694,13 +18695,13 @@ and identity link functions are supported.")
 (define-public r-modelbpp
   (package
     (name "r-modelbpp")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbpp" version))
        (sha256
-        (base32 "0iz28wzlnyxjv6bcl40sva6fwn9v5i5d1yxwcfkx0c3n54rdnkkj"))))
+        (base32 "12ckpcyns8bj0x8vii22k7n7k2is54lr1rqnyfl2x6c1siy7xkfa"))))
     (properties `((upstream-name . "modelbpp")))
     (build-system r-build-system)
     (arguments
@@ -18712,9 +18713,10 @@ and identity link functions are supported.")
     (synopsis "Model BIC Posterior Probability")
     (description
      "Fits the neighboring models of a fitted structural equation model and assesses
-the model uncertainty of the fitted model based on BIC posterior probabilities,
-using the method presented in Wu, Cheung, and Leung (2020)
-<doi:10.1080/00273171.2019.1574546>.")
+the model uncertainty of the fitted model based on BIC posterior probabilities
+(BPP), using the method presented in Wu, Cheung, and Leung (2020)
+<doi:10.1080/00273171.2019.1574546>.  See Pesigan, Cheung, Wu, Chang, and Leung
+(2026) <doi:10.3758/s13428-025-02921-x> for an introduction to the package.")
     (license license:gpl3+)))
 
 (define-public r-modelbased

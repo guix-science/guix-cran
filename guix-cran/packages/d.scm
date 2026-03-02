@@ -28728,13 +28728,13 @@ be slow.")
 (define-public r-dbi-table
   (package
     (name "r-dbi-table")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbi.table" version))
        (sha256
-        (base32 "0qi9113aazhskikh4cxzj5ykp1v2g1damhiibgrdf3mki8z6l7dc"))))
+        (base32 "0yh3354z1wzp2qy4rxicj67dqb2cz14yh6zqbn2qfvh34fvkslmd"))))
     (properties `((upstream-name . "dbi.table")))
     (build-system r-build-system)
     (arguments

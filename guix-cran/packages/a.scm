@@ -2810,13 +2810,13 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autograph
   (package
     (name "r-autograph")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autograph" version))
        (sha256
-        (base32 "00z6h398p0dnhkm3kpmygxlrpsf675aa4p911idnbf979n646dj9"))))
+        (base32 "18a460ijbzmmymgc8nngnxb2aab6v8xkr1nn1px6wm2hmklw8qmm"))))
     (properties `((upstream-name . "autograph")))
     (build-system r-build-system)
     (arguments
@@ -2831,7 +2831,7 @@ possible by representing R expressions using a tree structure.")
                              r-ggdendro
                              r-dplyr))
     (home-page "https://stocnet.github.io/autograph/")
-    (synopsis "Automatic Plotting of Many Graphs")
+    (synopsis "Automatic Plotting and Theming of Many Graphs")
     (description
      "Visual exploration and presentation of networks should not be difficult.  This
 package includes functions for plotting networks and network-related metrics
@@ -8957,6 +8957,43 @@ queries.  This package was neither produced nor is maintained by Esri.")
      "Fast processing of @code{ArcGIS} @code{FeatureCollection} protocol buffers in R.
 It is designed to work seamlessly with httr2 and integrates with sf'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-arcokrig
+  (package
+    (name "r-arcokrig")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARCokrig" version))
+       (sha256
+        (base32 "0bd1r7xpmas1avdl3hz25kjw2za09ff043dindaq58f1cl3a77rc"))))
+    (properties `((upstream-name . "ARCokrig")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-mvtnorm
+                             r-ggplot2))
+    (home-page "https://github.com/pulongma/ARCokrig/issues")
+    (synopsis "Autoregressive Cokriging Models for Multifidelity Codes")
+    (description
+     "For emulating multifidelity computer models.  The major methods include
+univariate autoregressive cokriging and multivariate autoregressive cokriging.
+The autoregressive cokriging methods are implemented for both hierarchically
+nested design and non-nested design.  For hierarchically nested design, the
+model parameters are estimated via standard optimization algorithms; For
+non-nested design, the model parameters are estimated via Monte Carlo
+expectation-maximization (MCEM) algorithms.  In both cases, the priors are
+chosen such that the posterior distributions are proper.  Notice that the
+uniform priors on range parameters in the correlation function lead to improper
+posteriors.  This should be avoided when Bayesian analysis is adopted.  The
+development of objective priors for autoregressive cokriging models can be found
+in Pulong Ma (2020) <DOI:10.1137/19M1289893>.  The development of the
+multivariate autoregressive cokriging models with possibly non-nested design can
+be found in Pulong Ma, Georgios Karagiannis, Bledar A Konomi, Taylor G Asher,
+Gabriel R Toro, and Andrew T Cox (2022) <DOI:10.1111/rssc.12558>.")
+    (license license:gpl2+)))
 
 (define-public r-arco
   (package
@@ -16381,38 +16418,6 @@ relative protein quantities to each other have been significantly altered in the
 tested condition.")
     (license license:gpl3+)))
 
-(define-public r-altdoc
-  (package
-    (name "r-altdoc")
-    (version "0.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "altdoc" version))
-       (sha256
-        (base32 "0sp8j9ramn69sj9xmw56r7l3jy6xcfppkx6xx4gwh3dxvld0p9q1"))))
-    (properties `((upstream-name . "altdoc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmarkdown
-                             r-quarto
-                             r-fs
-                             r-evaluate
-                             r-desc
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://altdoc.etiennebacher.com")
-    (synopsis
-     "Package Documentation Websites with 'Quarto', 'Docsify', 'Docute', or 'MkDocs'")
-    (description
-     "This is a simple and powerful package to create, render, preview, and deploy
-documentation websites for R packages.  It is a lightweight and flexible
-alternative to pkgdown', with support for many documentation generators,
-including Quarto', Docute', Docsify', and @code{MkDocs}'.")
-    (license license:expat)))
-
 (define-public r-altair
   (package
     (name "r-altair")
@@ -19083,6 +19088,34 @@ different applications and examples of airport problems.  For a more detailed
 explanation of all concepts, see Thomson (2024)
 <doi:10.1016/j.mathsocsci.2024.03.007>.")
     (license license:gpl3)))
+
+(define-public r-airnow
+  (package
+    (name "r-airnow")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "airnow" version))
+       (sha256
+        (base32 "022q6pnxqqilg904g9paxm9psjk5raxwfmszhqb9bx4w6bm04rbh"))))
+    (properties `((upstream-name . "airnow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-cli))
+    (home-page "https://briandconnelly.github.io/airnow/")
+    (synopsis "Retrieve 'AirNow' Air Quality Observations and Forecasts")
+    (description
+     "Retrieve air quality data via the @code{AirNow} <https://www.airnow.gov/> API.")
+    (license license:expat)))
 
 (define-public r-airmonitor
   (package

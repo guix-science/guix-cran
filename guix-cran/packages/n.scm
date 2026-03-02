@@ -592,13 +592,13 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "1fwsyspk593gbir720m4appaiazpj9xvc5ra5jc74dz4riw2akwf"))))
+        (base32 "0m7i0pf9kdfgpbc03bwklbk4z3wbd74adwx1dvjmy8ilx4knpmm6"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments

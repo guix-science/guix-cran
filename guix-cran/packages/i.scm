@@ -4424,13 +4424,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irfcb
   (package
     (name "r-irfcb")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iRfcb" version))
        (sha256
-        (base32 "1vf673bcrbd5n6z0vv126vs83sjjsb0v8n2a4cw81qv70jkaw4fw"))))
+        (base32 "18g7bfsq2blx0ra2p7qfx5gxkq5gyl11nh1akhc1lsfya5vk996i"))))
     (properties `((upstream-name . "iRfcb")))
     (build-system r-build-system)
     (arguments
