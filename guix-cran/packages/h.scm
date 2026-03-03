@@ -847,13 +847,13 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "0a636pf0psw69prmczdxnhfmb30sry9fixdvdy4di8l20d8ihkrv"))))
+        (base32 "1g9sb5nca2g1snjb4ixz4c53s10pyzcp7j0gj5yybf3p0dnns9zj"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
@@ -865,7 +865,6 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
                              r-groupedhyperframe
                              r-cli
                              r-caret))
-    (native-inputs (list r-quarto r-knitr))
     (home-page "https://github.com/tingtingzhan/hyper.gam")
     (synopsis "Generalized Additive Models with Hyper Column")
     (description

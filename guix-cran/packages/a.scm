@@ -11835,47 +11835,6 @@ standards.  APCalign also supplies information about the established status of
 plant taxa across different states/territories.")
     (license license:expat)))
 
-(define-public r-apc
-  (package
-    (name "r-apc")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "apc" version))
-       (sha256
-        (base32 "1ryypindnm1x5k2r24nyn0dnclcvisk3a8x64ris1p2yvs3ak789"))))
-    (properties `((upstream-name . "apc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survey
-                             r-reshape
-                             r-plyr
-                             r-plm
-                             r-lmtest
-                             r-lattice
-                             r-islr
-                             r-ggplot2
-                             r-car
-                             r-aer))
-    (home-page "https://cran.r-project.org/package=apc")
-    (synopsis "Age-Period-Cohort Analysis")
-    (description
-     "This package provides functions for age-period-cohort analysis.  Aggregate data
-can be organised in matrices indexed by age-cohort, age-period or cohort-period.
- The data can include dose and response or just doses.  The statistical model is
-a generalized linear model (GLM) allowing for 3,2,1 or 0 of the
-age-period-cohort factors.  2-sample analysis is possible.  Mixed frequency data
-are possible.  Individual-level data should have a row for each individual and
-columns for each of age, period, and cohort.  The statistical model for repeated
-cross-section is a generalized linear model.  The statistical model for panel
-data is ordinary least squares.  The canonical parametrisation of Kuang, Nielsen
-and Nielsen (2008) <DOI:10.1093/biomet/asn026> is used.  Thus, the analysis does
-not rely on ad hoc identification.")
-    (license license:gpl3)))
-
 (define-public r-apathe
   (package
     (name "r-apathe")
@@ -15502,57 +15461,16 @@ called AM Model Manager @code{(modelMgr()}) enables the use of these functions
 via a GUI.")
     (license license:gpl3)))
 
-(define-public r-ammistability
-  (package
-    (name "r-ammistability")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ammistability" version))
-       (sha256
-        (base32 "06hlbpwa0d1grs7k1vfhchrfi9zml76hkn41vnrayv35fx0sl1pz"))))
-    (properties `((upstream-name . "ammistability")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-rdpack
-                             r-mathjaxr
-                             r-ggplot2
-                             r-ggcorrplot
-                             r-agricolae))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ammistability")
-    (synopsis
-     "Additive Main Effects and Multiplicative Interaction Model Stability Parameters")
-    (description
-     "Computes various stability parameters from Additive Main Effects and
-Multiplicative Interaction (AMMI) analysis results such as Modified AMMI
-Stability Value (MASV), Sums of the Absolute Value of the Interaction Principal
-Component Scores (SIPC), Sum Across Environments of Genotype-Environment
-Interaction Modelled by AMMI (AMGE), Sum Across Environments of Absolute Value
-of Genotype-Environment Interaction Modelled by AMMI (AV_(AMGE)), AMMI Stability
-Index (ASI), Modified ASI (MASI), AMMI Based Stability Parameter (ASTAB),
-Annicchiarico's D Parameter (DA), Zhang's D Parameter (DZ), Averages of the
-Squared Eigenvector Values (EV), Stability Measure Based on Fitted AMMI Model
-(FA), Absolute Value of the Relative Contribution of IPCs to the Interaction
-(Za).  Further calculates the Simultaneous Selection Index for Yield and
-Stability from the computed stability parameters.  See the vignette for complete
-list of citations for the methods implemented.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-ammibayes
   (package
     (name "r-ammibayes")
-    (version "1.0-3")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ammiBayes" version))
        (sha256
-        (base32 "0lmsb606k0hvfwyryq6hssqv59m7dgy1as7x21mc5f3jnmhsjjj5"))))
+        (base32 "117622gvg1mpr8bwxphlsjg3ji8s1g8rs2pivlal5872dglfq6zq"))))
     (properties `((upstream-name . "ammiBayes")))
     (build-system r-build-system)
     (arguments
@@ -15573,12 +15491,13 @@ list of citations for the methods implemented.")
                              r-bayesplot))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ammiBayes")
-    (synopsis "Bayesian Ammi Model for Continuous Data")
+    (synopsis
+     "Bayesian Ammi Model for Continuous Data with or without Additive and Dominance Effect")
     (description
      "Flexible multi-environment trials analysis via MCMC method for Additive Main
-Effects and Multiplicative Model (AMMI) for continuous data.  Biplot with the
-averages and regions of confidence can be generated.  The chains run in parallel
-on Linux systems and run serially on Windows.")
+Effects and Multiplicative Interaction Model (AMMI) for continuous data.  Biplot
+with the averages and regions of confidence can be generated.  The chains run in
+parallel on Linux systems and run serially on Windows.")
     (license license:gpl2+)))
 
 (define-public r-amisforinfectiousdiseases
@@ -16417,6 +16336,38 @@ change between different conditions.  It reports protein pairs for which
 relative protein quantities to each other have been significantly altered in the
 tested condition.")
     (license license:gpl3+)))
+
+(define-public r-altdoc
+  (package
+    (name "r-altdoc")
+    (version "0.7.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "altdoc" version))
+       (sha256
+        (base32 "0biwgka3wxj2j9ghaxdh94kgx9iynxbybr8i5fmlklrl71my24nk"))))
+    (properties `((upstream-name . "altdoc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmarkdown
+                             r-quarto
+                             r-fs
+                             r-evaluate
+                             r-desc
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://altdoc.etiennebacher.com")
+    (synopsis
+     "Package Documentation Websites with 'Quarto', 'Docsify', 'Docute', or 'MkDocs'")
+    (description
+     "This is a simple and powerful package to create, render, preview, and deploy
+documentation websites for R packages.  It is a lightweight and flexible
+alternative to pkgdown', with support for many documentation generators,
+including Quarto', Docute', Docsify', and @code{MkDocs}'.")
+    (license license:expat)))
 
 (define-public r-altair
   (package
@@ -19621,13 +19572,13 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "0r9ajxw7zi9hamc114rhdl55fyfc1v90kmqy79rr5ypjvjwzzs6h"))))
+        (base32 "0nhm7pmp5macca3vy993w0vhdlififk2r811i1lrrcmxzrkgfv5y"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments
@@ -21673,6 +21624,47 @@ through a fast API and a web-based platform at
 <https://africamonitor.ifw-kiel.de/>.  The database is maintained at the Kiel
 Institute for the World Economy <https://www.ifw-kiel.de/>.")
     (license license:gpl3)))
+
+(define-public r-afr
+  (package
+    (name "r-afr")
+    (version "0.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AFR" version))
+       (sha256
+        (base32 "1dwn9zddshwn76lydi5d310apmx6scmgl9pjbb99l002q5mg8llq"))))
+    (properties `((upstream-name . "AFR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tseries
+                             r-rlang
+                             r-olsrr
+                             r-nortest
+                             r-nlme
+                             r-lmtest
+                             r-gridextra
+                             r-goftest
+                             r-ggplot2
+                             r-forecast
+                             r-cli
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AFR")
+    (synopsis
+     "Toolkit for Regression Analysis of Kazakhstan Banking Sector Data")
+    (description
+     "Tool is created for regression, prediction and forecast analysis of
+macroeconomic and credit data.  The package includes functions from existing R
+packages adapted for banking sector of Kazakhstan.  The purpose of the package
+is to optimize statistical functions for easier interpretation for bank analysts
+and non-statisticians.")
+    (license license:gpl2)))
 
 (define-public r-afmtoolkit
   (package

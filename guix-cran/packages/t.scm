@@ -2812,13 +2812,13 @@ translators.")
 (define-public r-tteice
   (package
     (name "r-tteice")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tteICE" version))
        (sha256
-        (base32 "1h8bca2qfyv0bn6qw057jyqfwp1jz6c10kjn3prh13gk2c386jv5"))))
+        (base32 "0y61yd0mzsxsd89gc8xmlxlfr2bb9axzw5626zjaqa7b594nnljw"))))
     (properties `((upstream-name . "tteICE")))
     (build-system r-build-system)
     (arguments
@@ -11667,19 +11667,19 @@ based on the relative position of tracheids within tree rings.")
 (define-public r-tracerer
   (package
     (name "r-tracerer")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tracerer" version))
        (sha256
-        (base32 "0jqf0p0j0g4naspgg9k7jxslwcdqwv7mxca41wyffrgglgya8rci"))))
+        (base32 "0rc3naqpvnf90rqa6f2zni2ffi4gmbv5f6inpmrgxpirz983yv3m"))))
     (properties `((upstream-name . "tracerer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testit r-rcpp r-jsonlite))
+    (propagated-inputs (list r-rcpp r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page
      "https://docs.ropensci.org/tracerer/https://github.com/ropensci/tracerer/")
@@ -17694,34 +17694,6 @@ forecasting and machine learning prediction.  Consolidates and extends time
 series functionality from packages including dplyr', stats', xts', forecast',
 slider', padr', recipes', and rsample'.")
     (license license:gpl3+)))
-
-(define-public r-timeseriesdb
-  (package
-    (name "r-timeseriesdb")
-    (version "1.0.0-1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "timeseriesdb" version))
-       (sha256
-        (base32 "17j1nxpgbfbzmfc6zrgcw68ri9ncslic9qdkxkdpfr2gi1w61bpc"))))
-    (properties `((upstream-name . "timeseriesdb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts r-rpostgres r-jsonlite r-dbi r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mbannert/timeseriesdb")
-    (synopsis
-     "Time Series Database for Official Statistics with R and PostgreSQL")
-    (description
-     "Archive and manage times series data from official statistics.  The timeseriesdb
-package was designed to manage a large catalog of time series from official
-statistics which are typically published on a monthly, quarterly or yearly
-basis.  Thus timeseriesdb is optimized to handle updates caused by data revision
-as well as elaborate, multi-lingual meta information.")
-    (license license:gpl3)))
 
 (define-public r-timeseriesdatasets
   (package
@@ -26905,6 +26877,45 @@ demographically adjusted scores are calculated from the residuals of a model
 that regresses scaled scores on demographic predictors (e.g., age).  The norming
 procedure makes use of the @code{mfp2()} function from the mfp2 package to
 explore nonlinear associations between cognition and demographic variables.")
+    (license license:gpl2+)))
+
+(define-public r-test-assessr
+  (package
+    (name "r-test-assessr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "test.assessr" version))
+       (sha256
+        (base32 "1k98rrbh2jm7gm8hjvvimpj9ylpx5d5qw04nq9hxhhz61lw7khlm"))))
+    (properties `((upstream-name . "test.assessr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-testthat
+                             r-stringr
+                             r-runit
+                             r-rmarkdown
+                             r-rlang
+                             r-remotes
+                             r-pkgload
+                             r-jsonlite
+                             r-fs
+                             r-dplyr
+                             r-covr
+                             r-checkmate
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=test.assessr")
+    (synopsis "Assessing Package Test Reliability and Quality")
+    (description
+     "This package provides a reliable and validated tool that calculates unit test
+coverage for R packages with standard testing frameworks and non-standard
+testing frameworks.")
     (license license:gpl2+)))
 
 (define-public r-tesselle

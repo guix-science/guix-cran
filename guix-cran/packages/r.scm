@@ -20599,13 +20599,13 @@ panels.  The full documentation and tutorials are at
 (define-public r-rmss
   (package
     (name "r-rmss")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMSS" version))
        (sha256
-        (base32 "0wd3jiaaskrrq1r2k2x96v2hi85bpaj16cmwv2l3qzdiwn2kjy0j"))))
+        (base32 "13cljn7gqnbq6rx9w6nnak0484kcqggd0y8zjwyv7x6fgdhijg8w"))))
     (properties `((upstream-name . "RMSS")))
     (build-system r-build-system)
     (arguments
@@ -24390,13 +24390,13 @@ package.")
 (define-public r-rjwsacruncher
   (package
     (name "r-rjwsacruncher")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjwsacruncher" version))
        (sha256
-        (base32 "0ybkxnfc4h6bkplk7l3hwb0mnl14305plf1h4fmsy59n8bsdyhsz"))))
+        (base32 "1yjcg5v6rxjcxp8sr4xgszr8fqy3w5sf9459zmyrn1gv7bakrq7i"))))
     (properties `((upstream-name . "rjwsacruncher")))
     (build-system r-build-system)
     (arguments
@@ -32535,41 +32535,6 @@ future and furrr'.  Provides functions for generating function argument sets
 using one-factor-at-a-time (OFAT) and (sampled) permutations.")
     (license license:gpl3+)))
 
-(define-public r-returncurves
-  (package
-    (name "r-returncurves")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ReturnCurves" version))
-       (sha256
-        (base32 "1w2x1spyg3dam6jrj85vc0n058fiziz0awz524hzh7nrm6ra0yly"))))
-    (properties `((upstream-name . "ReturnCurves")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinydashboard
-                             r-shiny
-                             r-rdpack
-                             r-openair
-                             r-mathjaxr
-                             r-ismev
-                             r-gridextra
-                             r-ggplot2
-                             r-evd
-                             r-dt))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lidiamandre/ReturnCurves")
-    (synopsis "Estimation of Return Curves")
-    (description
-     "Estimates the p-probability return curve proposed by Murphy-Barltrop et al.
-(2023) <doi:10.1002/env.2797>.  Implements pointwise and smooth estimation of
-the angular dependence function introduced by Wadsworth and Tawn (2013)
-<doi:10.3150/12-BEJ471>.")
-    (license license:gpl3+)))
-
 (define-public r-retry
   (package
     (name "r-retry")
@@ -33924,26 +33889,27 @@ For more details on Feature Selection see Theng and Bhoyar (2023)
 (define-public r-resin
   (package
     (name "r-resin")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResIN" version))
        (sha256
-        (base32 "0mgx4k0rsqf4wxlxjsfw7zp8ri7fpwj4xrjqaag45mk08rxkx21p"))))
+        (base32 "1k62m5qpb1jdi2m7zv2qm1kx5y3xhpb36xp74b1zy1cny98h7dfn"))))
     (properties `((upstream-name . "ResIN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wcorr
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
+                             r-tidygraph
                              r-shadowtext
+                             r-readr
                              r-readr
                              r-qgraph
                              r-psych
                              r-parallelly
-                             r-matrix
+                             r-network
                              r-igraph
                              r-ggraph
                              r-ggplot2
@@ -33954,14 +33920,14 @@ For more details on Feature Selection see Theng and Bhoyar (2023)
                              r-directedclustering))
     (native-inputs (list r-knitr))
     (home-page "https://pwarncke77.github.io/ResIN/")
-    (synopsis "Response Item Networks")
+    (synopsis
+     "Conduct Response Item Network (ResIN) Analysis with Social Response Data")
     (description
      "This package contains various tools to perform and visualize Response Item
-Networks ('@code{ResIN's}'). @code{ResIN} binarizes ordered-categorical and
-qualitative response choices from (survey) data, calculates pairwise
-associations and maps the location of each item response as a node in a
-force-directed network.  Please refer to <https://www.resinmethod.net/> for more
-details.")
+Networks ('@code{ResIN's}'). @code{ResIN} dummy-codes ordered and qualitative
+response choices from (survey) data, calculates pairwise associations and maps
+the location of each item response as a node in a force-directed network.
+Please refer to <https://www.resinmethod.net/> for more details.")
     (license license:gpl3)))
 
 (define-public r-resilience
@@ -47084,32 +47050,6 @@ information about the underlying library can be found at its repository at
 <https://github.com/Neargye/magic_enum>.")
     (license license:expat)))
 
-(define-public r-rcpplbfgsblaze
-  (package
-    (name "r-rcpplbfgsblaze")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppLbfgsBlaze" version))
-       (sha256
-        (base32 "1c3cdnhabxns804baa416fjd62ayy4mn5wcyfay1q2w3cijryjq1"))))
-    (properties `((upstream-name . "RcppLbfgsBlaze")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppblaze r-rcpp))
-    (home-page "https://github.com/ChingChuan-Chen/RcppLbfgsBlaze")
-    (synopsis "'L-BFGS' Algorithm Based on 'Blaze' for 'R' and 'Rcpp'")
-    (description
-     "The L-BFGS algorithm is a popular optimization algorithm for unconstrained
-optimization problems.  Blaze is a high-performance C++ math library for dense
-and sparse arithmetic.  This package provides a simple interface to the L-BFGS
-algorithm and allows users to optimize their objective functions with Blaze
-vectors and matrices in R and Rcpp'.")
-    (license license:expat)))
-
 (define-public r-rcppjagger
   (package
     (name "r-rcppjagger")
@@ -50643,20 +50583,20 @@ and continuous treatment settings.  A description of the methods is given in Liu
 (define-public r-rcauctile
   (package
     (name "r-rcauctile")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCaucTile" version))
        (sha256
-        (base32 "0i3n7piwj9s3gbsccvkxnzi09z6cg5nkaqgcgxfcwa9x4n8s4jxc"))))
+        (base32 "17wx5dypmljsg4jbv50aj9vfaja97dch6db9fgqykn372z30xhh1"))))
     (properties `((upstream-name . "RCaucTile")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
-    (home-page "https://cran.r-project.org/package=RCaucTile")
+    (home-page "https://LingConLab.github.io/RCaucTile/")
     (synopsis "Tile Grid Maps for East Caucasian Languages")
     (description
      "Generates tile maps for the East Caucasian language family, inspired by the
@@ -55892,6 +55832,31 @@ diversity maps on hexagonal or square grids.  Valcu et al.(2012)
 <doi:10.1111/j.1466-8238.2011.00739.x>.")
     (license license:gpl2+)))
 
+(define-public r-rangecondprob
+  (package
+    (name "r-rangecondprob")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rangecondprob" version))
+       (sha256
+        (base32 "17q6i3lqyc2qwa0xwh8gwsdvnyg1cah93v2zj6hg27nmzndyfhi1"))))
+    (properties `((upstream-name . "rangecondprob")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://github.com/kimmanlui/calc_cond_prob")
+    (synopsis "Tools for Conditional Probability")
+    (description
+     "Streamline the calculation of conditional probabilities for various numeric
+ranges in an R @code{DataFrame}.  It automates the need to convert numerical
+data into categorical data for conditional probability calculation, making it
+ideal for quick and preliminary data analysis.")
+    (license license:gpl3)))
+
 (define-public r-rangebuilder
   (package
     (name "r-rangebuilder")
@@ -59015,34 +58980,6 @@ to evaluate its type I error rate, power and operating characteristics for
 binary and continuous endpoints.  For more details of the proposed method,
 please refer to Zhan et al. (2021) <doi:10.1002/sim.9104>.")
     (license license:expat)))
-
-(define-public r-rabi
-  (package
-    (name "r-rabi")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rabi" version))
-       (sha256
-        (base32 "0jndx1gvsnsv1xrx3ismgvjp7d4kj3436zcawvw32c5klvxx0y4j"))))
-    (properties `((upstream-name . "rabi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringdist r-shiny r-polynom r-numbers))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rabi")
-    (synopsis
-     "Generate Codes to Uniquely and Robustly Identify Individuals for Animal Behavior Studies")
-    (description
-     "Facilitates the design and generation of optimal color (or symbol) codes that
-can be used to mark and identify individual animals.  These codes are made such
-that the IDs are robust to partial erasure: even if sections of the code are
-lost, the entire identity of the animal can be reconstructed.  Thus, animal
-subjects are not confused and no ambiguity is introduced.")
-    (license license:gpl3)))
 
 (define-public r-ra4bayesmeta
   (package

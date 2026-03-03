@@ -5105,13 +5105,13 @@ after claiming your free academic license at
 (define-public r-optree
   (package
     (name "r-optree")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optree" version))
        (sha256
-        (base32 "1rgwm06k7n88vx6kxzi3nrdm2n3zy0dqqm80f801j6cp0pi9pcsg"))))
+        (base32 "14z6jhksikfk5f97hyi2wcrfw6d39w381bb0cavvnvhs01grlcjy"))))
     (properties `((upstream-name . "optree")))
     (build-system r-build-system)
     (arguments

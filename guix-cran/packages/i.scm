@@ -326,13 +326,13 @@ in this package were inspired by James Allen's interval algebra, Allen (1983)
 (define-public r-ivreg
   (package
     (name "r-ivreg")
-    (version "0.6-6")
+    (version "0.6-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivreg" version))
        (sha256
-        (base32 "1601x4ah63mw5w3v792na9qxhbpwh4cqjwp4mm5rd3m7x90015j1"))))
+        (base32 "0jfzhzf8r284pr2i6rnfjc29pgz0728smhg99n0qgswjm3wjls3h"))))
     (properties `((upstream-name . "ivreg")))
     (build-system r-build-system)
     (arguments
@@ -12317,13 +12317,13 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.6.3")
+    (version "2.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "1wxj42lg8vh966y5pcawnksqbnf6s7jk9f37x7c4nb6pvfcij94a"))))
+        (base32 "1wvy4vzx96j7iw0f5a3rh814kpy3203xcgmp8dfqlp57fzpl9jvd"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
     (arguments

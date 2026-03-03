@@ -3120,6 +3120,40 @@ for m-statistics, see Rosenbaum (2007) Biometrics 63 456-464
 by R users.")
     (license license:cc0)))
 
+(define-public r-fueldeep3d
+  (package
+    (name "r-fueldeep3d")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FuelDeep3D" version))
+       (sha256
+        (base32 "1jp4z8zr5j1mczsdzh3q32shspvly3rsn5g9p5iw7l8q2qhvrbz9"))))
+    (properties `((upstream-name . "FuelDeep3D")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite r-rlang r-rcolorbrewer))
+    (home-page "https://github.com/venkatasivanaga/FuelDeep3D")
+    (synopsis
+     "3D Fuel Segmentation Using Terrestrial Laser Scanning and Deep Learning")
+    (description
+     "This package provides tools for preprocessing, feature extraction, and
+segmentation of three-dimensional forest point clouds derived from terrestrial
+laser scanning.  Functions support creating height-above-ground (HAG) metrics,
+tiling, and sampling point clouds, generating training datasets, applying
+trained models to new point clouds, and producing per-point fuel classes such as
+stems, branches, foliage, and surface fuels.  These tools support workflows for
+forest structure analysis, wildfire behavior modeling, and fuel complexity
+assessment.  Deep learning segmentation relies on the @code{PointNeXt}
+architecture described by Qian et al. (2022)
+<doi:10.48550/@code{arXiv.2206.04670>}, while ground classification utilizes the
+Cloth Simulation Filter algorithm by Zhang et al. (2016)
+<doi:10.3390/rs8060501>.")
+    (license license:gpl3+)))
+
 (define-public r-fuel
   (package
     (name "r-fuel")
@@ -13286,6 +13320,36 @@ be linked against the @code{FlexiBLAS} wrapper library
 <https://www.mpi-magdeburg.mpg.de/projects/flexiblas>.")
     (license license:lgpl3+)))
 
+(define-public r-flexhaz
+  (package
+    (name "r-flexhaz")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexhaz" version))
+       (sha256
+        (base32 "1j0h7cgfafhlgkp6gpzbfa98dx1a3h12ckmd9xisz4zwc1qymp5s"))))
+    (properties `((upstream-name . "flexhaz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-likelihood-model r-generics
+                             r-algebraic-dist))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/flexhaz")
+    (synopsis "Dynamic Failure Rate Distributions for Survival Analysis")
+    (description
+     "Flexible framework for specifying survival distributions through their hazard
+(failure rate) functions.  Define arbitrary time-varying hazard functions to
+model complex failure patterns including bathtub curves, proportional hazards
+with covariates, and other non-standard hazard behaviors.  Provides automatic
+computation of survival, CDF, PDF, quantiles, and sampling.  Implements the
+likelihood model interface for maximum likelihood estimation with right-censored
+and left-censored survival data.")
+    (license license:gpl3+)))
+
 (define-public r-flexgam
   (package
     (name "r-flexgam")
@@ -14384,36 +14448,6 @@ buzz, respectively.  This package gives interviewers the optional answer of \"I
 use @code{fizzbuzzR::fizzbuzz()}\" when interviewing rather than having to write
 an algorithm themselves.")
     (license license:gpl3+)))
-
-(define-public r-fixtures
-  (package
-    (name "r-fixtures")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fixtuRes" version))
-       (sha256
-        (base32 "1vmdbx1pfk4kcxq5q5hj4v6rz403xw66gpg6zpvrxkpcgkx2dwyz"))))
-    (properties `((upstream-name . "fixtuRes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-stringi
-                             r-rlang
-                             r-r6
-                             r-purrr
-                             r-lubridate
-                             r-glue
-                             r-dplyr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jakubnowicki/fixtuRes")
-    (synopsis "Mock Data Generator")
-    (description "Generate mock data in R using YAML configuration.")
-    (license license:expat)))
 
 (define-public r-fixseqmtp
   (package
@@ -22721,37 +22755,6 @@ Xue, and Rosenberg (2025) <doi:10.1073/pnas.2413211122>.")
 specify multiple values to be replaced with NA using a single function.")
     (license license:expat)))
 
-(define-public r-faux
-  (package
-    (name "r-faux")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "faux" version))
-       (sha256
-        (base32 "0kdcxmhab7g6w4zh6i7g8f302dlh4j2i61pv3kmhmfy912cw1c3s"))))
-    (properties `((upstream-name . "faux")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncnorm
-                             r-rlang
-                             r-lme4
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/scienceverse/faux")
-    (synopsis "Simulation for Factorial Designs")
-    (description
-     "Create datasets with factorial structure through simulation by specifying
-variable parameters.  Extended documentation at
-<https://scienceverse.github.io/faux/>.  Described in @code{DeBruine} (2020)
-<doi:10.5281/zenodo.2669586>.")
-    (license license:expat)))
-
 (define-public r-faunabr
   (package
     (name "r-faunabr")
@@ -24072,6 +24075,32 @@ matrix decompositions and statistical procedures, many of which have minimal
 memory overhead.  Furthermore, the package provides interfaces to C code
 callable by another C code from other R packages.")
     (license license:gpl3)))
+
+(define-public r-fastmatmr
+  (package
+    (name "r-fastmatmr")
+    (version "1.2.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastMatMR" version))
+       (sha256
+        (base32 "1dxkq807h013k21shq6f9hzyxba65lwkm8x5d4m0kp5hdxj4p41v"))))
+    (properties `((upstream-name . "fastMatMR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/fastMatMR")
+    (synopsis "High-Performance Matrix Market File Operations")
+    (description
+     "An interface to the fast_matrix_market C++ library, this package offers
+efficient read and write operations for Matrix Market files in R. It supports
+both sparse and dense matrix formats.  Peer-reviewed at @code{rOpenSci}
+(<https://github.com/ropensci/software-review/issues/606>).")
+    (license license:expat)))
 
 (define-public r-fastm
   (package
@@ -27186,13 +27215,13 @@ it easier to construct function factories.")
 (define-public r-factorstochvol
   (package
     (name "r-factorstochvol")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factorstochvol" version))
        (sha256
-        (base32 "15ki0kaqam97zlm0mgl8pf2swrcqw46d5816aavwmn6jw2banksm"))))
+        (base32 "061yh5qhazxn3zwh7j9cfi629qr4qrq0nw8f3r055sd6vp6cihhy"))))
     (properties `((upstream-name . "factorstochvol")))
     (build-system r-build-system)
     (arguments

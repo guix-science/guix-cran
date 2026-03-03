@@ -43122,13 +43122,13 @@ tree problems.")
 (define-public r-mcmodule
   (package
     (name "r-mcmodule")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmodule" version))
        (sha256
-        (base32 "09ydbk5nzbkaqb5jfnays6lwlh63bmq4byciai2arikninpvjw28"))))
+        (base32 "1cq5i901vmvpx1cajgfl4drwbs2j7pj31b2kp3vhwamblk39x94k"))))
     (properties `((upstream-name . "mcmodule")))
     (build-system r-build-system)
     (arguments
@@ -43136,16 +43136,15 @@ tree problems.")
       #:tests? #f))
     (propagated-inputs (list r-mc2d r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://nataliaciria.github.io/mcmodule/")
+    (home-page "https://nataliaciria.com/mcmodule/")
     (synopsis "Modular Monte Carlo Risk Analysis")
     (description
      "Framework for building modular Monte Carlo risk analysis models.  It extends the
 capabilities of mc2d to facilitate working with multiple risk pathways, variates
 and scenarios.  It provides tools to organize risk analysis in independent
 flexible modules, perform multivariate Monte Carlo node operations, automate the
-creation of Monte Carlo nodes and visualize risk analysis models.  For more
-details see Ciria (2025)
-<https://nataliaciria.github.io/mcmodule/articles/mcmodule>.")
+creation of Monte Carlo nodes and visualise risk analysis models.  For more
+details see Ciria (2025) <https://nataliaciria.com/mcmodule/>.")
     (license license:gpl3+)))
 
 (define-public r-mcmiso
@@ -46113,13 +46112,13 @@ A., Zuraw, K. (in press)
 (define-public r-maxeff
   (package
     (name "r-maxeff")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maxEff" version))
        (sha256
-        (base32 "0n1lrm3mpfz0vnjg9sdmd2ngjivvriggpvx9ckylb23rsg2l5d7y"))))
+        (base32 "04sp0ks7jlcvi0qr03xchhg5q7nzi44mhj7v04a817knn3c4sdlf"))))
     (properties `((upstream-name . "maxEff")))
     (build-system r-build-system)
     (arguments
@@ -46131,7 +46130,6 @@ A., Zuraw, K. (in press)
                              r-foreach
                              r-doparallel
                              r-caret))
-    (native-inputs (list r-quarto))
     (home-page "https://github.com/tingtingzhan/maxEff")
     (synopsis "Additional Predictor with Maximum Effect Size")
     (description
@@ -53020,13 +53018,13 @@ meta-analysis.  Methods are described in Irsova et al. (2025)
 (define-public r-maint-data
   (package
     (name "r-maint-data")
-    (version "2.7.4")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAINT.Data" version))
        (sha256
-        (base32 "1xy9qn7v79g2bzyjilli34mzdhzskbcmcgjp5n5b5qk7zx62rbgf"))))
+        (base32 "00rx8pv5xng9q6kzwchdsq9mv1rv9q9h7mykw9j6yr5ng702nc7n"))))
     (properties `((upstream-name . "MAINT.Data")))
     (build-system r-build-system)
     (arguments

@@ -9813,13 +9813,13 @@ Krivitsky, Coletti, and Hens (2023) <doi:10.1080/01621459.2023.2242627>.")
 (define-public r-ergm-ego
   (package
     (name "r-ergm-ego")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.ego" version))
        (sha256
-        (base32 "1qmp1pzrznlm554yg7y71q0w32i2v66vgdk29mh4cwjkmwp43bq4"))))
+        (base32 "1ydqsrs1ksygngxdhcq21q52zgxkjsfapxlaapv43x5b47nfx2z4"))))
     (properties `((upstream-name . "ergm.ego")))
     (build-system r-build-system)
     (arguments
@@ -9828,6 +9828,7 @@ Krivitsky, Coletti, and Hens (2023) <doi:10.1080/01621459.2023.2242627>.")
     (propagated-inputs (list r-tibble
                              r-survey
                              r-statnet-common
+                             r-rdpack
                              r-rcolorbrewer
                              r-purrr
                              r-network
@@ -23437,28 +23438,19 @@ System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/api/#/>.")
 (define-public r-ecorisk
   (package
     (name "r-ecorisk")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecorisk" version))
        (sha256
-        (base32 "03mcw6cncrizk0av9i6f11lg4h28ms1z7k6jlhlb88r0gj55hdc1"))))
+        (base32 "1xqpiiqd1rfrgnhx95z8zh2ni6i9nphzycvjbsx3canbkysvyjzs"))))
     (properties `((upstream-name . "ecorisk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-mgcv
-                             r-gridextra
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggnewscale
-                             r-geomtextpath
-                             r-forecast
-                             r-colorspace))
+    (propagated-inputs (list r-tibble r-rlang r-mgcv r-forecast))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HeleneGutte/ecorisk")
     (synopsis "Risk Assessments for Ecosystems or Ecosystem Components")

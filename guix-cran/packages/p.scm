@@ -7629,6 +7629,33 @@ with standard error calculations propagating error as appropriate from the
 covariance model.")
     (license license:expat)))
 
+(define-public r-propensity
+  (package
+    (name "r-propensity")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "propensity" version))
+       (sha256
+        (base32 "0ycfmk7fig6bpidjfq8w85z9fivnzjav5pxhhnb3ll1l3a31sdc3"))))
+    (properties `((upstream-name . "propensity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-tidyselect r-rlang r-lifecycle r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://r-causal.github.io/propensity/")
+    (synopsis "Toolkit for Calculating and Working with Propensity Scores")
+    (description
+     "Calculates propensity score weights for multiple causal estimands across binary,
+continuous, and categorical exposures.  Provides methods for handling extreme
+propensity scores through trimming, truncation, and calibration.  Includes
+inverse probability weighted estimators that correctly account for propensity
+score estimation uncertainty.")
+    (license license:expat)))
+
 (define-public r-propclust
   (package
     (name "r-propclust")
@@ -15975,13 +16002,13 @@ bioequivalence studies in Two-Stage Designs (TSD) via simulations.")
 (define-public r-power-transform
   (package
     (name "r-power-transform")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "power.transform" version))
        (sha256
-        (base32 "0mny92zbrr5jffl5p23v90lgamhm77illb93v3cd3jjpffm2rq8s"))))
+        (base32 "0rpabc16afi9s1r7ablwy40jjhf644aqnbhqcb9hasj9y91ydspz"))))
     (properties `((upstream-name . "power.transform")))
     (build-system r-build-system)
     (arguments
@@ -16095,51 +16122,6 @@ sum of squares and is an exact method that explains all observed variation.  It
 quantitates both the between and within factor variation effects and can
 quantitate the influence of both continuous and categorical factors.")
     (license license:gpl3)))
-
-(define-public r-poumm
-  (package
-    (name "r-poumm")
-    (version "2.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "POUMM" version))
-       (sha256
-        (base32 "1qs9prspdkx7k8pc1wn8ngb8jvyzpicgq3hs2ajal2g3bc1vsz39"))))
-    (properties `((upstream-name . "POUMM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-lamw
-                             r-ggplot2
-                             r-foreach
-                             r-data-table
-                             r-coda
-                             r-ape
-                             r-adaptmcmc))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://venelin.github.io/POUMM/index.html")
-    (synopsis "The Phylogenetic Ornstein-Uhlenbeck Mixed Model")
-    (description
-     "The Phylogenetic Ornstein-Uhlenbeck Mixed Model (POUMM) allows to estimate the
-phylogenetic heritability of continuous traits, to test hypotheses of neutral
-evolution versus stabilizing selection, to quantify the strength of stabilizing
-selection, to estimate measurement error and to make predictions about the
-evolution of a phenotype and phenotypic variation in a population.  The package
-implements combined maximum likelihood and Bayesian inference of the univariate
-Phylogenetic Ornstein-Uhlenbeck Mixed Model, fast parallel likelihood
-calculation, maximum likelihood inference of the genotypic values at the tips,
-functions for summarizing and plotting traces and posterior samples, functions
-for simulation of a univariate continuous trait evolution model along a
-phylogenetic tree.  So far, the package has been used for estimating the
-heritability of quantitative traits in macroevolutionary and epidemiological
-studies, see e.g. Bertels et al. (2017) <doi:10.1093/molbev/msx246> and Mitov
-and Stadler (2018) <doi:10.1093/molbev/msx328>.  The algorithm for parallel
-POUMM likelihood calculation has been published in Mitov and Stadler (2019)
-<doi:10.1111/2041-210X.13136>.")
-    (license license:gpl3+)))
 
 (define-public r-pould
   (package
@@ -22329,13 +22311,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.24")
+    (version "1.0.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmparser" version))
        (sha256
-        (base32 "0k5hgd0crl3cxx5s81vv94rkljqgrbfzs8f8jbq7x9nz1ylfricb"))))
+        (base32 "0q26qkcx8nahwsav6dl20liiwiqfszif0yv7wq7992nq44s0s6wr"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (arguments

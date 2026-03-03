@@ -511,29 +511,6 @@ variable chart, meanwhile the @code{we_rules()} function detects non random
 patterns in sample.")
     (license license:gpl2+)))
 
-(define-public r-xrpython
-  (package
-    (name "r-xrpython")
-    (version "0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "XRPython" version))
-       (sha256
-        (base32 "0alg33spiaqf3jwg1qn543nxvbfaqv8gvf5px3grhbgrcmi5mcmj"))))
-    (properties `((upstream-name . "XRPython")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xr r-reticulate))
-    (home-page "https://cran.r-project.org/package=XRPython")
-    (synopsis "Structured Interface to 'Python'")
-    (description
-     "This package provides a Python interface structured according to the general
-form described in package XR and in the book \"Extending R\".")
-    (license license:gpl2+)))
-
 (define-public r-xrnet
   (package
     (name "r-xrnet")
@@ -780,13 +757,13 @@ diagnostics.")
 (define-public r-xpose
   (package
     (name "r-xpose")
-    (version "0.4.22")
+    (version "0.4.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose" version))
        (sha256
-        (base32 "0lbqzpby9aa2lcwrrnrwp9a33qyldwznw1pczq1zmxzmvhd2h3r1"))))
+        (base32 "0dqnxq3vr4cxsjkvxwvs9qmywym9pgxdxygpghk3n63d30jqayk7"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
     (arguments

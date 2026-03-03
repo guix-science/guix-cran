@@ -10223,13 +10223,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.24")
+    (version "1.1.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "06m9gjl182lf60k4wc2mfv76ljqngnc7hsyxv1942rs90i5p7y3x"))))
+        (base32 "1la2zfa2172fcnwppiy6zdi5i8b6plpha75y9rxfb8shkwyfgv84"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (arguments
@@ -12374,33 +12374,6 @@ function will generate data dictionaries for individual data frames or an entire
 library.  And the @code{datestep()} function will perform row-by-row data
 processing.")
     (license license:cc0)))
-
-(define-public r-libopenexr
-  (package
-    (name "r-libopenexr")
-    (version "3.4.0-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "libopenexr" version))
-       (sha256
-        (base32 "1cmvs4csbjf89rd6xc0vxvc9lcqyi9biirnam48m5svxskzd9gfc"))))
-    (properties `((upstream-name . "libopenexr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list cmake))
-    (propagated-inputs (list r-libimath r-libdeflate))
-    (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=libopenexr")
-    (synopsis "Static Library and Headers for 'OpenEXR' Image I/O")
-    (description
-     "This package provides the @code{OpenEXR} static library and C++ headers for
-high-dynamic-range image I/O (see <https://openexr.com/>) needed to link R
-packages against the @code{OpenEXR} library, along with a basic R interface to
-load EXR images.")
-    (license license:bsd-3)))
 
 (define-public r-liblinear
   (package

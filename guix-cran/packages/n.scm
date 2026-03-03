@@ -6408,42 +6408,6 @@ section of @code{GitHub} README.md
 <https://github.com/rikenbit/@code{nnTensor>}, for details of the methods.")
     (license license:expat)))
 
-(define-public r-nntbiomarker
-  (package
-    (name "r-nntbiomarker")
-    (version "0.29.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NNTbiomarker" version))
-       (sha256
-        (base32 "0sqlf7vzhpmq2g98c2qlrcqn3ba4ycfxbczgcjiqqhqsvgkpacc1"))))
-    (properties `((upstream-name . "NNTbiomarker")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable r-stringr r-shiny r-mvbutils r-magrittr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=NNTbiomarker")
-    (synopsis "Calculate Design Parameters for Biomarker Validation Studies")
-    (description
-     "Helps a clinical trial team discuss the clinical goals of a well-defined
-biomarker with a diagnostic, staging, prognostic, or predictive purpose.  From
-this discussion will come a statistical plan for a (non-randomized) validation
-trial.  Both prospective and retrospective trials are supported.  In a specific
-focused discussion, investigators should determine the range of \"discomfort\" for
-the NNT, number needed to treat.  The meaning of the discomfort range,
-[NNTlower, NNTupper], is that within this range most physicians would feel
-discomfort either in treating or withholding treatment.  A pair of NNT values
-bracketing that range, NNTpos and NNTneg, become the targets of the study's
-design.  If the trial can demonstrate that a positive biomarker test yields an
-NNT less than NNTlower, and that a negative biomarker test yields an NNT less
-than NNTlower, then the biomarker may be useful for patients.  A highlight of
-the package is visualization of a \"contra-Bayes\" theorem, which produces
-criteria for retrospective case-controls studies.")
-    (license license:gpl3)))
-
 (define-public r-nnt
   (package
     (name "r-nnt")

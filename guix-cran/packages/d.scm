@@ -7577,13 +7577,13 @@ Bayesian Networks).")
 (define-public r-dpgmm
   (package
     (name "r-dpgmm")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dpGMM" version))
        (sha256
-        (base32 "0wxnb7q794ri8vqzlydlndm97d4fmd6fp9b82gkxmbs3c31mnfir"))))
+        (base32 "0j8xh3r6gclsp685gr62nh827rw7kfzjk3np96yas86r9ivwabzm"))))
     (properties `((upstream-name . "dpGMM")))
     (build-system r-build-system)
     (arguments
@@ -7604,8 +7604,39 @@ Bayesian Networks).")
 or binned form, with an option to estimate the number of model components.  The
 method uses Gaussian Mixture Models (GMM) with initial parameters determined by
 a dynamic programming algorithm, leading to stable and reproducible model
-fitting.")
+fitting.  For more details see Zyla, J., Szumala, K., Polanski, A., Polanska,
+J., & Marczyk, M. (2026) <doi:10.1016/j.jocs.2026.102811>.")
     (license license:gpl3)))
+
+(define-public r-dpdr
+  (package
+    (name "r-dpdr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dpdr" version))
+       (sha256
+        (base32 "033g1k0ixh03lm3j9cj43wfw57925dhg1jkldpvxm7xh6kv1fz9w"))))
+    (properties `((upstream-name . "dpdr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-memoise
+                             r-jsonlite
+                             r-httr2
+                             r-glue))
+    (home-page "https://github.com/mattwarkentin/dpdr")
+    (synopsis "Interface to Health Canada Drug Product Database API")
+    (description
+     "This package provides a programmatic interface to Health Canada's Drug Product
+Database (DPD) REST API for querying information about drugs approved for use in
+Canada.  More information on the DPD can be found in the API guide
+(<https://health-products.canada.ca/api/documentation/dpd-documentation-en.html>).")
+    (license license:expat)))
 
 (define-public r-dpcr
   (package
@@ -19628,13 +19659,13 @@ Described in Guiterman et al. (2020) <doi:10.1016/j.dendro.2020.125750>.")
 (define-public r-dfmta
   (package
     (name "r-dfmta")
-    (version "1.7-6")
+    (version "1.7-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfmta" version))
        (sha256
-        (base32 "0g1fi9m9j5z43n9037qq2a4i88y3p3h2q00x3q3xvhzhnqc5lrns"))))
+        (base32 "134x503p3m0lyyb2izbsq5hm4wfbjxirg6k6km9ahiqapivnk8id"))))
     (properties `((upstream-name . "dfmta")))
     (build-system r-build-system)
     (arguments
@@ -19886,13 +19917,13 @@ deleted records.")
 (define-public r-dfcomb
   (package
     (name "r-dfcomb")
-    (version "3.1-4")
+    (version "3.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfcomb" version))
        (sha256
-        (base32 "1h5x9759ljlyv9h7bmybm2ygw60ivnfrqc1f7drx700m71cwc6kk"))))
+        (base32 "1vvawlysnddafgaa5k7l0icrd2h1ww0hrwrc79gl86kgz7zlr5pp"))))
     (properties `((upstream-name . "dfcomb")))
     (build-system r-build-system)
     (arguments

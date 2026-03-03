@@ -2667,38 +2667,6 @@ the Regularization Algorithm under Marginality Principle (RAMP) by Hao et al.
 models, and construct networks with partial derivatives.")
     (license license:gpl3+)))
 
-(define-public r-quadtree
-  (package
-    (name "r-quadtree")
-    (version "0.1.14")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quadtree" version))
-       (sha256
-        (base32 "15i68ykbr0ld8cfcha1ywf4lmsf7zpgi7qsn2rpf44k92fp6hzc7"))))
-    (properties `((upstream-name . "quadtree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dfriend21/quadtree/")
-    (synopsis "Region Quadtrees for Spatial Data")
-    (description
-     "This package provides functionality for working with raster-like quadtrees (also
-called âregion quadtreesâ), which allow for variable-sized cells.  The
-package allows for flexibility in the quadtree creation process.  Several
-functions defining how to split and aggregate cells are provided, and custom
-functions can be written for both of these processes.  In addition, quadtrees
-can be created using other quadtrees as âtemplatesâ, so that the new
-quadtree's structure is identical to the template quadtree.  The package also
-includes functionality for modifying quadtrees, querying values, saving
-quadtrees to a file, and calculating least-cost paths using the quadtree as a
-resistance surface.")
-    (license license:expat)))
-
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")

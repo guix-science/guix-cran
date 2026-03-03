@@ -18864,13 +18864,13 @@ filtering to improve the degree of connectedness.  See Weeks & Williams (1964)
 (define-public r-connectcreds
   (package
     (name "r-connectcreds")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectcreds" version))
        (sha256
-        (base32 "0kcz3apcqwk4i313ahm60rbsx31iffagcgbnmbf3g24z36190bcz"))))
+        (base32 "1pyc93pj10mbmwgx0x6vzvdqqlr36ambfjn9z6bqdc7n0dyhzwsx"))))
     (properties `((upstream-name . "connectcreds")))
     (build-system r-build-system)
     (arguments
@@ -20101,13 +20101,13 @@ manipulating confounded and fractional factorial designs.")
 (define-public r-conf
   (package
     (name "r-conf")
-    (version "1.9.2")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conf" version))
        (sha256
-        (base32 "03977qjsv2g7rs08flf45zpsiafm1qff4xpsbw1lfhmjq38nsb0j"))))
+        (base32 "0q5xwcgsn3iscc5vcjhvfdwr5n61bp8r3589p4mw56q59i5zz3m0"))))
     (properties `((upstream-name . "conf")))
     (build-system r-build-system)
     (arguments
@@ -26024,6 +26024,34 @@ L. (2025) \"Assessing Surrogate Heterogeneity in Real World Data Using
 Meta-Learners.\" A tutorial for this package can be found at
 <https://www.laylaparast.com/cohetsurr>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-cograph
+  (package
+    (name "r-cograph")
+    (version "1.5.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cograph" version))
+       (sha256
+        (base32 "0i9grqsrc3jir5gihlc5m9fqk6kwf6pd6njya252xbwgccrw64rg"))))
+    (properties `((upstream-name . "cograph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://sonsoles.me/cograph/")
+    (synopsis "Modern Network Visualization")
+    (description
+     "This package provides tools for the analysis, visualization, and manipulation of
+dynamical, social (Saqr et al. (2024) <doi:10.1007/978-3-031-54464-4_10>) and
+complex networks (Saqr et al. (2025) <doi:10.1145/3706468.3706513>).  The
+package supports multiple network formats and offers flexible tools for
+heterogeneous, multi-layer, and hierarchical network analysis with simple syntax
+and extensive toolset.")
+    (license license:expat)))
 
 (define-public r-cognitor
   (package
@@ -46380,13 +46408,13 @@ for an overview.")
 (define-public r-ccmnet
   (package
     (name "r-ccmnet")
-    (version "0.1.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCMnet" version))
        (sha256
-        (base32 "14w6rf6mzc78wd7rhsvv8s1i1sdbpkbsndi4fln0r46f8xbkrg9i"))))
+        (base32 "0dqcrn7kpf7py9i68bk3x8pn4pm1v3xd43q75s622dkpswgkxfg0"))))
     (properties `((upstream-name . "CCMnet")))
     (build-system r-build-system)
     (arguments

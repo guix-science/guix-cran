@@ -4062,56 +4062,6 @@ Browse Over Longitudinal Data Graphically and Analytically in R\", Nicholas
 Tierney, Dianne Cook, Tania Prvan (2020) <doi:10.32614/RJ-2022-023>.")
     (license license:expat)))
 
-(define-public r-brokenstick
-  (package
-    (name "r-brokenstick")
-    (version "2.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "brokenstick" version))
-       (sha256
-        (base32 "1ipyxdmd1p3vs12ij6figybhgyq25pdnjknhs5bjszln4h54dqff"))))
-    (properties `((upstream-name . "brokenstick")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-matrixsampling
-                             r-lme4
-                             r-dplyr
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "doi:10.18637/jss.v106.i07")
-    (synopsis "Broken Stick Model for Irregular Longitudinal Data")
-    (description
-     "Data on multiple individuals through time are often sampled at times that differ
-between persons.  Irregular observation times can severely complicate the
-statistical analysis of the data.  The broken stick model approximates each
-subjectâs trajectory by one or more connected line segments.  The times at
-which segments connect (breakpoints) are identical for all subjects and under
-control of the user.  A well-fitting broken stick model effectively transforms
-individual measurements made at irregular times into regular trajectories with
-common observation times.  Specification of the model requires three variables:
-time, measurement and subject.  The model is a special case of the linear mixed
-model, with time as a linear B-spline and subject as the grouping factor.  The
-main assumptions are: subjects are exchangeable, trajectories between
-consecutive breakpoints are straight, random effects follow a multivariate
-normal distribution, and unobserved data are missing at random.  The package
-contains functions for fitting the broken stick model to data, for predicting
-curves in new data and for plotting broken stick estimates.  The package
-supports two optimization methods, and includes options to structure the
-variance-covariance matrix of the random effects.  The analyst may use the
-software to smooth growth curves by a series of connected straight lines, to
-align irregularly observed curves to a common time grid, to create synthetic
-curves at a user-specified set of breakpoints, to estimate the time-to-time
-correlation matrix and to predict future observations.  See
-<doi:10.18637/jss.v106.i07> for additional documentation on background,
-methodology and applications.")
-    (license license:expat)))
-
 (define-public r-brokenadaptiveridge
   (package
     (name "r-brokenadaptiveridge")
@@ -29358,49 +29308,6 @@ prior methodology was developed in collaboration with the The Medical Device
 Innovation Consortium (MDIC) Computer Modeling & Simulation Working Group.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-bayesdlmfmri
-  (package
-    (name "r-bayesdlmfmri")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesDLMfMRI" version))
-       (sha256
-        (base32 "06806wckw629gl6p8jbxpg8lh6wsy8nhs2017qcfc3wwxb6dd3jc"))))
-    (properties `((upstream-name . "BayesDLMfMRI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-rcppdist
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pbapply
-                             r-oro-nifti
-                             r-neurobase
-                             r-mathjaxr
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JohnatanLAB/BayesDLMfMRI/")
-    (synopsis "Statistical Analysis for Task-Based Fmri Data")
-    (description
-     "The @code{BayesDLMfMRI} package performs statistical analysis for task-based
-functional magnetic resonance imaging (@code{fMRI}) data at both individual and
-group levels.  The analysis to detect brain activation at the individual level
-is based on modeling the @code{fMRI} signal using Matrix-Variate Dynamic Linear
-Models (MDLM).  The analysis for the group stage is based on posterior
-distributions of the state parameter obtained from the modeling at the
-individual level.  In this way, this package offers several R functions with
-different algorithms to perform inference on the state parameter to assess brain
-activation for both individual and group stages.  Those functions allow for
-parallel computation when the analysis is performed for the entire brain as well
-as analysis at specific voxels when it is required.  References:
-Cardona-JimÃ©nez (2021) <doi:10.1016/j.csda.2021.107297>; Cardona-JimÃ©nez
-(2021) <@code{arXiv:2111.01318>}.")
-    (license license:gpl2)))
 
 (define-public r-bayesdissolution
   (package

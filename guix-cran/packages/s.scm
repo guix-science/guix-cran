@@ -15862,13 +15862,13 @@ mixed model approach for QTL Mapping as described in Li et al.
 (define-public r-statgenibd
   (package
     (name "r-statgenibd")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenIBD" version))
        (sha256
-        (base32 "15xv0njyg93ci8vm797i8milh5w1zkgmpl73lsi41b3rbp76izzx"))))
+        (base32 "0byak873ddnsq7jz5v72p7rcw8q2wmaf8ch7kmk96yzqq6rhvpr5"))))
     (properties `((upstream-name . "statgenIBD")))
     (build-system r-build-system)
     (arguments
@@ -20706,28 +20706,30 @@ Swartz, 2001, <doi:10.2307/3316080>; Nestler, 2018,
 (define-public r-srlars
   (package
     (name "r-srlars")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srlars" version))
        (sha256
-        (base32 "1l98d24r746h0yh1g885slaq292d3xiy355ihkwdrhvvmirs7l0f"))))
+        (base32 "0x07d46sj13llnng613sbfxpk00787zby3q8pj883qqr7w42rpnk"))))
     (properties `((upstream-name . "srlars")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-glmnet r-cellwise))
+    (propagated-inputs (list r-robustbase r-mvnfast r-cellwise))
     (home-page "https://cran.r-project.org/package=srlars")
-    (synopsis "Split Robust Least Angle Regression")
+    (synopsis "Fast and Scalable Cellwise-Robust Ensemble")
     (description
-     "This package provides functions to perform split robust least angle regression.
-The approach first uses the least angle regression algorithm to split the
-variables into the models of an ensemble and robust estimates of the correlation
-between predictors.  An elastic net estimator is then applied to the selected
-predictors in each model using the imputed data from the detect deviating cell
-(DDC) method.")
+     "This package provides functions to perform robust variable selection and
+regression using the Fast and Scalable Cellwise-Robust Ensemble (FSCRE)
+algorithm.  The approach establishes a robust foundation using the Detect
+Deviating Cells (DDC) algorithm and robust correlation estimates.  It then
+employs a competitive ensemble architecture where a robust Least Angle
+Regression (LARS) engine proposes candidate variables and cross-validation
+arbitrates their assignment.  A final robust MM-estimator is applied to the
+selected predictors.")
     (license license:gpl2+)))
 
 (define-public r-sregsurvey
@@ -34330,13 +34332,13 @@ representation described in Sierra and others (2012)
 (define-public r-soilphysics
   (package
     (name "r-soilphysics")
-    (version "5.0")
+    (version "5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilphysics" version))
        (sha256
-        (base32 "1ijnqlb52c3vm6ydiginp0f82vkip0kbsvbd9yac3scrc5g1b5z3"))))
+        (base32 "15h9fp7xs1a169sli0gjdkdj1690hx42hzfmm30h87g4qjhgdxr0"))))
     (properties `((upstream-name . "soilphysics")))
     (build-system r-build-system)
     (arguments
@@ -36970,13 +36972,13 @@ generates random numbers.")
 (define-public r-smplot2
   (package
     (name "r-smplot2")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smplot2" version))
        (sha256
-        (base32 "0w51q0nh1r6a587qhrf8ac2rqmvarfv6gh91h9lll0b24dzbcqlj"))))
+        (base32 "0grigs0cjzyvwxgz8gh9jzmf8lw9zrhpsz2gl3k6f6ppzr30pm2f"))))
     (properties `((upstream-name . "smplot2")))
     (build-system r-build-system)
     (arguments

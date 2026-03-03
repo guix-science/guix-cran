@@ -4999,13 +4999,13 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
 (define-public r-groupedhyperframe-random
   (package
     (name "r-groupedhyperframe-random")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe.random" version))
        (sha256
-        (base32 "1iy0gi0zbm6pp8mvgs05r6gd29cqscfmivdv72jq4ss8d9g7sxs9"))))
+        (base32 "13a22gw3csa6zyf4fr89baxmhdpx5b0wfrcycyp34m7x1lrsybr8"))))
     (properties `((upstream-name . "groupedHyperframe.random")))
     (build-system r-build-system)
     (arguments
@@ -5013,7 +5013,6 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
       #:tests? #f))
     (propagated-inputs (list r-spatstat-random r-spatstat-geom r-mass
                              r-groupedhyperframe r-cli))
-    (native-inputs (list r-quarto))
     (home-page "https://github.com/tingtingzhan/groupedHyperframe.random")
     (synopsis "Simulated Grouped Hyper Data Frame")
     (description
@@ -5026,13 +5025,13 @@ subject-specific random effects.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0adwmnnc3a6j02j6lhwn7qcmrw49m5zlci1wsbhhaphmysp7g29f"))))
+        (base32 "1rja5brwhf4m2wmdpdrwa6gzk8y73h3ff7z77dh41qhid2375l5r"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
@@ -5054,12 +5053,12 @@ subject-specific random effects.")
                              r-foreach
                              r-doparallel
                              r-cli))
-    (native-inputs (list r-quarto))
     (home-page "https://github.com/tingtingzhan/groupedHyperframe")
     (synopsis "Grouped Hyper Data Frame")
     (description
-     "An S3 class @code{groupedHyperframe} that inherits from hyper data frame.  Batch
-processes and aggregation of hyper column(s) over a nested grouping structure.")
+     "An S3 class @code{groupedHyperframe} that inherits from the hyper data frame
+class from the spatstat packages.  Batch process and aggregation of the hyper
+column(s) over a nested grouping structure.")
     (license license:gpl2)))
 
 (define-public r-groupdata2
@@ -8462,13 +8461,13 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
 (define-public r-grain
   (package
     (name "r-grain")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRain" version))
        (sha256
-        (base32 "02wh9lwg7ky8yl58rxj2f7fay1gg0q0wf3j8gkb7381cn7d4c6xk"))))
+        (base32 "1wyygxywcq720k2lf5s9z8ykx1jf43vqblwr801bdmv6176czfiv"))))
     (properties `((upstream-name . "gRain")))
     (build-system r-build-system)
     (arguments
@@ -28312,13 +28311,13 @@ data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofi" version))
        (sha256
-        (base32 "1s2c8m084ql7jczzh5gpzh2s21j5gc79r49jzvrnv83l9i05v8jj"))))
+        (base32 "0f1j8nswfikar5f3ifb0z06xqmlwcihmsq8dwpfmhk0bnvyizm1g"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (arguments
@@ -30271,13 +30270,13 @@ datasets for analysis.")
 (define-public r-genie
   (package
     (name "r-genie")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genie" version))
        (sha256
-        (base32 "0gdvz1q0jcqm8ib9vc4mg2rvcfg0vbc5i5bq3hbmq7z9kfnbpd6x"))))
+        (base32 "1nf36skpnlcm0d40ndzjhkwc32lhc7jp88awik1asqf9d7y3h46w"))))
     (properties `((upstream-name . "genie")))
     (build-system r-build-system)
     (arguments
@@ -30287,16 +30286,17 @@ datasets for analysis.")
     (home-page "https://genieclust.gagolewski.com/")
     (synopsis "Fast, Robust, and Outlier Resistant Hierarchical Clustering")
     (description
-     "Includes the basic implementation of Genie - a hierarchical clustering algorithm
-that links two point groups in such a way that an inequity measure (namely, the
-Gini index) of the cluster sizes does not significantly increase above a given
-threshold.  This method most often outperforms many other data segmentation
-approaches in terms of clustering quality as tested on a wide range of benchmark
-datasets.  At the same time, Genie retains the high speed of the single linkage
-approach, therefore it is also suitable for analysing larger data sets.  For
-more details see (Gagolewski et al.  2016 <DOI:10.1016/j.ins.2016.05.003>).  For
-an even faster and more feature-rich implementation, including, amongst others,
-see the genieclust package (Gagolewski, 2021 <DOI:10.1016/j.softx.2021.100722>).")
+     "This package implements a basic version of the hierarchical clustering algorithm
+Genie which links two point groups in such a way that an inequity measure
+(namely, the Gini index) of the cluster sizes does not significantly increase
+above a given threshold.  This method most often outperforms many other data
+segmentation approaches in terms of clustering quality as tested on a wide range
+of benchmark datasets.  At the same time, Genie retains the high speed of the
+single linkage approach, therefore it is also suitable for analysing larger data
+sets.  For more details see (Gagolewski et al.  2016
+<DOI:10.1016/j.ins.2016.05.003>).  For a faster and more feature-rich
+implementation, see the genieclust package (Gagolewski, 2021
+<DOI:10.1016/j.softx.2021.100722>).")
     (license license:gpl3+)))
 
 (define-public r-genhmm1d
