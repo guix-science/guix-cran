@@ -23538,6 +23538,32 @@ into @code{DuckDB} tables for faster querying and analyses.")
 multivariable linear regression model and outliers detection.")
     (license license:gpl2+)))
 
+(define-public r-fastrc
+  (package
+    (name "r-fastrc")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastrc" version))
+       (sha256
+        (base32 "133xbkx6jkn05vskmdpzknq81nk2z8f0kf1spnjziial454kdv7x"))))
+    (properties `((upstream-name . "fastrc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=fastrc")
+    (synopsis "Fast Reverse Complement of DNA and RNA Sequences")
+    (description
+     "Fast reverse complement of DNA and RNA sequences using a C++ lookup table for
+O(1) per-base complement mapping.  Supports full IUPAC ambiguity codes, DNA and
+RNA modes, case preservation, and NA handling.  Much faster than other packages
+for computing reverse complements of many short sequences such as primers,
+probes, and, k-mers.")
+    (license license:gpl3+)))
+
 (define-public r-fastr2
   (package
     (name "r-fastr2")

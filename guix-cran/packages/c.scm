@@ -10372,13 +10372,13 @@ available from: A Majumdar, T Haldar, S Bhattacharya, JS Witte (2018)
 (define-public r-cpam
   (package
     (name "r-cpam")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpam" version))
        (sha256
-        (base32 "1981zax9vyjz7g6ikhkqb2vk2iwsxigbpjr2mq3zc2i9hk537lc8"))))
+        (base32 "1wy1vrj497g89sjg991q0yvv7v8li841wf4r46rk8sfb7pp8zp9i"))))
     (properties `((upstream-name . "cpam")))
     (build-system r-build-system)
     (arguments
@@ -12244,13 +12244,13 @@ provide cohesion between the network of packages.  Learn more about
 (define-public r-couplr
   (package
     (name "r-couplr")
-    (version "1.0.10")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "couplr" version))
        (sha256
-        (base32 "0sqd3x0nl57jvpspcqf00nla21dswfcpl2sickliz2nwlfdwr4ml"))))
+        (base32 "08xnq1n334dnlgkqw6n96qxf95jckafk7mqaqw99qzxgnrymilrk"))))
     (properties `((upstream-name . "couplr")))
     (build-system r-build-system)
     (arguments
@@ -12262,7 +12262,6 @@ provide cohesion between the network of packages.  Learn more about
                              r-rcppeigen
                              r-rcpp
                              r-purrr
-                             r-magrittr
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://gillescolling.com/couplr/")
@@ -24511,13 +24510,13 @@ grouping aligns to naturally occurring clusters.")
 (define-public r-colorfindr
   (package
     (name "r-colorfindr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorfindr" version))
        (sha256
-        (base32 "1jl650llv8cykp1ihgng3hxikxhca2qsni1r1qn0721mg8b1ahlj"))))
+        (base32 "12w1iimpj9f8j6kskhzqs357iwqbp88v663v46ij4kyvr9pfzlrx"))))
     (properties `((upstream-name . "colorfindr")))
     (build-system r-build-system)
     (arguments
@@ -24544,7 +24543,7 @@ grouping aligns to naturally occurring clusters.")
      "Extracts colors from various image types, returns customized reports and plots
 treemaps and 3D scatterplots of image compositions.  Color palettes can also be
 created.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-colorfast
   (package
@@ -25848,13 +25847,13 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 (define-public r-cohortgenerator
   (package
     (name "r-cohortgenerator")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortGenerator" version))
        (sha256
-        (base32 "098kyvxvddbsyfbl5b8xy8q323x439ir7661q01q13wvl0d26ch5"))))
+        (base32 "06v6mdvl76q1xvqc9ws1lffdaw8i0pv18gprb41261a0026wds67"))))
     (properties `((upstream-name . "CohortGenerator")))
     (build-system r-build-system)
     (arguments
@@ -27191,13 +27190,13 @@ data frame.")
 (define-public r-codebook
   (package
     (name "r-codebook")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codebook" version))
        (sha256
-        (base32 "1x89pc9fp0n9i1xa8xdj9m9j6xplqsd4w30hdnipgzwrdq8jl5d0"))))
+        (base32 "0crwww4qjf1001qdmrv1hyqv6l3dvvzdhkhjp12g7jkiw4lpqdcc"))))
     (properties `((upstream-name . "codebook")))
     (build-system r-build-system)
     (arguments
@@ -30427,13 +30426,13 @@ some basic data handling tools for angular data.")
 (define-public r-clustord
   (package
     (name "r-clustord")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustord" version))
        (sha256
-        (base32 "0lwwxfv0m4isapycaq6d80xk264asjnhnfbi31r9cw9igk29041k"))))
+        (base32 "1pajl3nb8f3vk3dr9vv4n7l6v50cijkhg0mjxlgkg0iw8xizjxq7"))))
     (properties `((upstream-name . "clustord")))
     (build-system r-build-system)
     (arguments
@@ -32862,6 +32861,34 @@ observation time, and the censoring parameter) can be derived analytically given
 the other three parameters.  And the simulation datasets can be generated based
 on the design settings.")
     (license license:expat)))
+
+(define-public r-clintrialdata
+  (package
+    (name "r-clintrialdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinTrialData" version))
+       (sha256
+        (base32 "1v3kydx2rnibr3y23dvywm28vry1imyz5jwjh5m4lmslalf94r60"))))
+    (properties `((upstream-name . "clinTrialData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-piggyback r-jsonlite r-httr r-connector))
+    (native-inputs (list r-knitr))
+    (home-page "https://lovemore-gakava.github.io/clinTrialData/")
+    (synopsis "Clinical Trial Example Datasets")
+    (description
+     "This package provides a collection of clinical trial example datasets from
+multiple sources including the CDISC Pilot 01 study (CDISC
+<https://www.cdisc.org/>).  All datasets are provided in Parquet format for
+efficient storage and can be accessed using the connector package.  Designed for
+training, testing, prototyping, and demonstrating clinical data analysis
+workflows.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-clintools
   (package
@@ -46574,6 +46601,30 @@ Learning), and calculation of several indexes for finding the number of clusters
 in a data set.")
     (license license:gpl2)))
 
+(define-public r-cclrforr
+  (package
+    (name "r-cclrforr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ccLRforR" version))
+       (sha256
+        (base32 "17b1mlp5jmlq8fgaikcrg1l6jqxv8prkqcwnzcfsvqcadmyx4x15"))))
+    (properties `((upstream-name . "ccLRforR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rcpp r-dplyr))
+    (home-page "https://cran.r-project.org/package=ccLRforR")
+    (synopsis "Case-Control Likelihood Ratio (ccLR)")
+    (description
+     "Implementation of case-control data analysis using likelihood ratio approaches
+and logistic regression for the classification of variants of uncertain
+significance (VUS) in breast, ovarian, or custom cancer susceptibility genes.")
+    (license license:gpl2)))
+
 (define-public r-ccid
   (package
     (name "r-ccid")
@@ -46610,13 +46661,13 @@ dynamic functional connectivity.  Medical Image Analysis, Volume 75.")
 (define-public r-cci
   (package
     (name "r-cci")
-    (version "0.3.6")
+    (version "0.3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCI" version))
        (sha256
-        (base32 "0sfd8aspplah9gbz9ps1a4a3207q0dxdjwhk3a6hlr7hyfjdmvnf"))))
+        (base32 "18sazzv3mm47sw5pzll25bz6v39qzkm1jkk7a8ricrqcydsqjxxw"))))
     (properties `((upstream-name . "CCI")))
     (build-system r-build-system)
     (arguments
@@ -46953,13 +47004,13 @@ robust and nonparametric methods.")
 (define-public r-ccamlrgis
   (package
     (name "r-ccamlrgis")
-    (version "4.2.1")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCAMLRGIS" version))
        (sha256
-        (base32 "0ida0lgn608gsazvw0i28sav7rvalihd2sr5lv4hbrkpc3pf94b7"))))
+        (base32 "0rqsc1rzvi176rrmdm3azlnxkw7cfw5zjf3cn9fn1n400wp1y356"))))
     (properties `((upstream-name . "CCAMLRGIS")))
     (build-system r-build-system)
     (arguments
@@ -53853,20 +53904,20 @@ estimates.")
 (define-public r-calcite
   (package
     (name "r-calcite")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calcite" version))
        (sha256
-        (base32 "00f44dj348fsp3bvl7p5jb7v2l2nid2gx0fsfidcjm3d3fb6401j"))))
+        (base32 "0p9dnga44lynbyc75r80q6ik6c58nfahgmqsdgi4pgs1987hldj6"))))
     (properties `((upstream-name . "calcite")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-rlang r-htmltools))
-    (home-page "https://cran.r-project.org/package=calcite")
+    (propagated-inputs (list r-yyjsonr r-shiny r-rlang r-htmltools r-cli))
+    (home-page "https://r.esri.com/calcite/")
     (synopsis
      "Bindings to the Calcite Design System 'JavaScript' Component Library")
     (description

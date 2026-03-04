@@ -3413,6 +3413,47 @@ heterogeneous genomic data.  For more details see Chen and Rahmani et al. (2024)
 <doi:10.1101/2024.01.27.577588>.")
     (license license:gpl3)))
 
+(define-public r-unicefdata
+  (package
+    (name "r-unicefdata")
+    (version "2.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unicefData" version))
+       (sha256
+        (base32 "1vxdxfkb3w133gaff0z7vx7z7lrhygnq4fmby1wly2aa32afbswp"))))
+    (properties `((upstream-name . "unicefData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-memoise
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-digest
+                             r-countrycode))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/unicef-drp/unicefData")
+    (synopsis "Download Indicators from UNICEF Data Warehouse")
+    (description
+     "An R client to fetch SDMX (Statistical Data and Metadata @code{eXchange}) CSV
+series from the UNICEF Data Warehouse <https://data.unicef.org/>.  Part of a
+trilingual suite also available for Python and Stata'.  Features include
+automatic pagination, caching with memoisation, country name lookups, metadata
+versioning (vintages), and comprehensive indicator support for SDG (Sustainable
+Development Goals) monitoring.")
+    (license license:expat)))
+
 (define-public r-uniah
   (package
     (name "r-uniah")

@@ -8045,6 +8045,37 @@ and paired samples and proportion difference.  Plot the confidence intervals.
 Generate documents explaining the statistical result step by step.")
     (license license:gpl3)))
 
+(define-public r-interpret
+  (package
+    (name "r-interpret")
+    (version "0.1.35")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interpret" version))
+       (sha256
+        (base32 "1fqnlpmaqs8x764gma48aqs7ziyx42ag4dng1clm9pianakg28mx"))))
+    (properties `((upstream-name . "interpret")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/interpretml/interpret")
+    (synopsis "Fit Interpretable Machine Learning Models")
+    (description
+     "Package for training interpretable machine learning models.  Historically, the
+most interpretable machine learning models were not very accurate, and the most
+accurate models were not very interpretable.  Microsoft Research has developed
+an algorithm called the Explainable Boosting Machine (EBM) which has both high
+accuracy and interpretable characteristics.  EBM uses machine learning
+techniques like bagging and boosting to breathe new life into traditional GAMs
+(Generalized Additive Models).  This makes them as accurate as random forests
+and gradient boosted trees, and also enhances their intelligibility and
+editability.  Details on the EBM algorithm can be found in the paper by Rich
+Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
+(2015, <doi:10.1145/2783258.2788613>).")
+    (license license:expat)))
+
 (define-public r-interpolators
   (package
     (name "r-interpolators")
@@ -10807,6 +10838,32 @@ inflation functions are provided.  The well known trimmed means, exclusion and
 double weighing methods, alongside the new Triple Filter method introduced in
 Ferreira et al. (2016) <https://goo.gl/UYLhcj>.")
     (license license:bsd-3)))
+
+(define-public r-inflater
+  (package
+    (name "r-inflater")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inflateR" version))
+       (sha256
+        (base32 "16l33lki619sa5ig3rb5mil9p8in5lja8xag6andjqihc8gqzr1r"))))
+    (properties `((upstream-name . "inflateR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/charlescoverdale/inflateR")
+    (synopsis "Inflation Adjustment for Historical Currency Values")
+    (description
+     "Convert historical monetary values into their present-day equivalents using
+bundled CPI (Consumer Price Index) data sourced from the World Bank Development
+Indicators.  Supports British pounds (GBP), Australian dollars (AUD), US dollars
+(USD), Euro (EUR), Canadian dollars (CAD), Japanese yen (JPY), Chinese yuan
+(CNY), and Swiss francs (CHF).  Currency codes and country names are both
+accepted as input.")
+    (license license:expat)))
 
 (define-public r-infixit
   (package

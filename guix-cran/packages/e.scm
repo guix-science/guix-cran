@@ -11967,13 +11967,13 @@ package.")
 (define-public r-episignaldetection
   (package
     (name "r-episignaldetection")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiSignalDetection" version))
        (sha256
-        (base32 "17mawnx3c87kgfa7aj42a7db9c1ciyxdfgka9sgx6lc0yw5249as"))))
+        (base32 "1wfpcpzm083p86xx7zchilj0d373rm30n1qg6yrfa0ayrq4zwf2l"))))
     (properties `((upstream-name . "EpiSignalDetection")))
     (build-system r-build-system)
     (arguments

@@ -5949,13 +5949,13 @@ et al. (2025) <doi:10.1080/01621459.2025.2491154>.")
 (define-public r-grf
   (package
     (name "r-grf")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grf" version))
        (sha256
-        (base32 "0zcmqmap7mj90fgi4ki2miyl04m6g7qsrnk08p7wlald3bzqv0i9"))))
+        (base32 "0gc0ijnf8z1iazbg0nb9r42hws22xc1i7j129aga66vqd4sb5n26"))))
     (properties `((upstream-name . "grf")))
     (build-system r-build-system)
     (arguments
@@ -5967,6 +5967,7 @@ et al. (2025) <doi:10.1080/01621459.2025.2491154>.")
                              r-matrix
                              r-lmtest
                              r-dicekriging))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/grf-labs/grf")
     (synopsis "Generalized Random Forests")
     (description
@@ -36067,13 +36068,13 @@ evaluations.")
 (define-public r-ganttify
   (package
     (name "r-ganttify")
-    (version "0.2.2")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganttify" version))
        (sha256
-        (base32 "1rczfcl41g5q3v2rb6kdibi8d5ypb46k8yr1rcwbh4x1mscv6zly"))))
+        (base32 "11ybgahpp4pcd6l1gjrkql22b6kz3zdx6bpq7yrf7ywk4sdpzaz3"))))
     (properties `((upstream-name . "ganttify")))
     (build-system r-build-system)
     (arguments

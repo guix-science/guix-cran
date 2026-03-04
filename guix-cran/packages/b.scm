@@ -1082,42 +1082,6 @@ formats, such as data frames or zoo series.  The data may optionally be cached,
 so as to avoid repeated downloads of the same series.")
     (license license:gpl3)))
 
-(define-public r-bunddev
-  (package
-    (name "r-bunddev")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bunddev" version))
-       (sha256
-        (base32 "1q92s9xi7vm9wf2wfvi7qbakg2pbqc1j1ygisy97g11gjwyvib52"))))
-    (properties `((upstream-name . "bunddev")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-jsonlite
-                             r-httr2
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/mchlbckr/bunddev")
-    (synopsis "Discover and Call 'Bund.dev' APIs")
-    (description
-     "This package provides a registry of APIs listed on <https://bund.dev> and a core
-@code{OpenAPI} client layer to explore specs and perform requests.  Adapter
-helpers return tidy tibbles for supported APIs, with optional response caching
-and rate limiting guidance.")
-    (license license:expat)))
-
 (define-public r-bunchr
   (package
     (name "r-bunchr")
@@ -8521,13 +8485,13 @@ F. and Jales, I. (2024) <doi:10.1080/02331888.2024.2344670>.")
 (define-public r-booami
   (package
     (name "r-booami")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "booami" version))
        (sha256
-        (base32 "16mgq93dz5nhsr4cn10jsa3avv8w5xfk1mn9ar8hgf56zrzz0xq4"))))
+        (base32 "0xc9n8j1jw1f3b367jsd7av5yn6dzcx870kzjbb2rw9vn2sspkm6"))))
     (properties `((upstream-name . "booami")))
     (build-system r-build-system)
     (arguments
@@ -13622,13 +13586,13 @@ bitfield, which can be published alongside any (modelled) data products.")
 (define-public r-bistablehistory
   (package
     (name "r-bistablehistory")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bistablehistory" version))
        (sha256
-        (base32 "03jchl9gqlq2wy4k3z37y69y4rwn53q1bxsl5mmiq1fil3s9vn87"))))
+        (base32 "06g32asdwj16fbrs1cbcy50r83g8x2d5l13vxy4sn09njm0pfn8m"))))
     (properties `((upstream-name . "bistablehistory")))
     (build-system r-build-system)
     (arguments
@@ -13646,7 +13610,6 @@ bitfield, which can be published alongside any (modelled) data products.")
                              r-purrr
                              r-loo
                              r-glue
-                             r-future
                              r-dplyr
                              r-boot
                              r-bh))
@@ -15409,25 +15372,28 @@ file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
 (define-public r-biometrics
   (package
     (name "r-biometrics")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometrics" version))
        (sha256
-        (base32 "19cm0vk17n3mpw7kv94h3x38kzaxpbyz3ml1xg7yq0sj2r0zm1r9"))))
+        (base32 "0cg3h9yjwvab6ws46sii2v4ml72zzrvs6pz1bf8p4s8df1v9b9l3"))))
     (properties `((upstream-name . "biometrics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=biometrics")
-    (synopsis "Functions and Datasets for Forest Biometrics and Modelling")
+    (propagated-inputs (list r-nlme r-gtools))
+    (home-page "https://eljatib.com")
+    (synopsis "Package for Biometrics and Modelling")
     (description
-     "This package provides a system of functions and data aiming to apply
-quantitative analyses to forest ecology, silviculture and decision-making.
-Besides, the package helps to carry out data management, exploratory analysis,
-and model assessment.")
+     "This package provides a system of functions and datasets to carry out
+quantitative analyses in the biological sciences.  The package facilitates data
+management, exploratory analyses, and model assessment.  Although it currently
+focuses on forest ecology, silviculture and decision-making, most of the package
+functions are applicable across several disciplines, including economics,
+environmental science, and healthcare.")
     (license license:gpl3+)))
 
 (define-public r-biomass
@@ -22708,26 +22674,40 @@ this package.")
 (define-public r-beezdemand
   (package
     (name "r-beezdemand")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beezdemand" version))
        (sha256
-        (base32 "0rzs0mhl8dyflfz69c98ibk5bnsaf651k72wpx4ihl1im2scapfw"))))
+        (base32 "12ahn618106rc7sgpz8xdd6xpm1dlq8rkl57zp21y5k14a8q64md"))))
     (properties `((upstream-name . "beezdemand")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2
+    (propagated-inputs (list r-tmb
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-rcppeigen
+                             r-performance
                              r-optimx
                              r-nlstools
                              r-nlsr
                              r-nls2
-                             r-ggplot2))
+                             r-nls-multstart
+                             r-nlme
+                             r-minpack-lm
+                             r-lme4
+                             r-lifecycle
+                             r-ggplot2
+                             r-emmeans
+                             r-dplyr
+                             r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/brentkaplan/beezdemand")
+    (home-page "https://brentkaplan.github.io/beezdemand/")
     (synopsis "Behavioral Economic Easy Demand")
     (description
      "Facilitates many of the analyses performed in studies of behavioral economic
@@ -22735,13 +22715,12 @@ demand.  The package supports commonly-used options for modeling operant demand
 including (1) data screening proposed by Stein, Koffarnus, Snider, Quisenberry,
 & Bickel (2015; <doi:10.1037/pha0000020>), (2) fitting models of demand such as
 linear (Hursh, Raslear, Bauman, & Black, 1989,
-<doi:10.1007/978-94-009-2470-3_22>), exponential	(Hursh & Silberberg, 2008,
+<doi:10.1007/978-94-009-2470-3_22>), exponential (Hursh & Silberberg, 2008,
 <doi:10.1037/0033-295X.115.1.186>) and modified exponential (Koffarnus, Franck,
 Stein, & Bickel, 2015, <doi:10.1037/pha0000045>), and (3) calculating numerous
-measures	relevant to applied behavioral economists (Intensity, Pmax, Omax).
-Also	supports plotting and comparing data.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
+measures relevant to applied behavioral economists (Intensity, Pmax, Omax).
+Also supports plotting and comparing data.")
+    (license license:gpl2+)))
 
 (define-public r-beeguts
   (package
@@ -30819,13 +30798,13 @@ methodology in Denison, Mallick and Smith (1998) <doi:10.1023/A:1008824606259>."
 (define-public r-basksim
   (package
     (name "r-basksim")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basksim" version))
        (sha256
-        (base32 "0dsckmwnbrl2f5bk2dk132f19qvnpfaiyxwri46hp46q52gcjli8"))))
+        (base32 "0ld5kjgrnns76jlxph1q8j6jhj2lhl64jwc5r0b92dk07m9zd1mj"))))
     (properties `((upstream-name . "basksim")))
     (build-system r-build-system)
     (arguments

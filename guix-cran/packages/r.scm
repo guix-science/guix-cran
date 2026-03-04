@@ -720,43 +720,6 @@ evaluation.")
 be plotted in rworldmap.")
     (license license:gpl2+)))
 
-(define-public r-rworkflows
-  (package
-    (name "r-rworkflows")
-    (version "1.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rworkflows" version))
-       (sha256
-        (base32 "0xqz1b02mrnrckb3py1lfy25g4b8rj4g2czcy8cqgj40ixdl8gn0"))))
-    (properties `((upstream-name . "rworkflows")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-renv
-                             r-here
-                             r-desc
-                             r-data-table
-                             r-biocmanager
-                             r-badger))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/neurogenomics/rworkflows")
-    (synopsis "Test, Document, Containerise, and Deploy R Packages")
-    (description
-     "Reproducibility is essential to the progress of research, yet achieving it
-remains elusive even in computational fields.  Continuous Integration (CI)
-platforms offer a powerful way to launch automated workflows to check and
-document code, but often require considerable time, effort, and technical
-expertise to setup.  We therefore developed the rworkflows suite to make robust
-CI workflows easy and freely accessible to all R package developers.  rworkflows
-consists of 1) a CRAN/Bioconductor-compatible R package template, 2) an R
-package to quickly implement a standardised workflow, and 3) a centrally
-maintained @code{GitHub} Action.")
-    (license license:gpl3)))
-
 (define-public r-rwofost
   (package
     (name "r-rwofost")
@@ -5560,6 +5523,40 @@ maximized by several optimization procedures using the GNU Scientific Library
 package also provides methods for the gamma, Laplace, and Asymmetric Laplace
 distributions.")
     (license license:gpl3)))
+
+(define-public r-rstudiothemes
+  (package
+    (name "r-rstudiothemes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rstudiothemes" version))
+       (sha256
+        (base32 "0i4ngxkyah3n1xsqg2qz86xg4vznrs7skn6607bbhnhfsqf5z0n6"))))
+    (properties `((upstream-name . "rstudiothemes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-sass
+                             r-rstudioapi
+                             r-jsonlite
+                             r-dplyr
+                             r-colorspace
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://dieghernan.github.io/rstudiothemes/")
+    (synopsis
+     "Create 'RStudio' Themes from Visual Studio Code, Positron and 'TextMate' Themes")
+    (description
+     "Create and install RStudio themes derived from Visual Studio Code, Positron and
+@code{TextMate} themes.  Provides functions to convert between @code{TextMate}
+and Visual Studio Code or Positron themes, as well as ports of several Visual
+Studio Code themes.")
+    (license license:expat)))
 
 (define-public r-rstudio-prefs
   (package
@@ -17444,6 +17441,56 @@ times or until the procedure converges.  The algorithms and robust inference are
 described in more detail in Jiao (2019)
 <https://drive.google.com/file/d/1@code{qPxDJnLlzLqdk94X9wwVASptf1MPpI2w/view>}.")
     (license license:gpl3)))
+
+(define-public r-robust-prioritizr
+  (package
+    (name "r-robust-prioritizr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robust.prioritizr" version))
+       (sha256
+        (base32 "0lf7vz73wp8avkccp208m8cs0c1scg3x1h2g5nslwsbdrzv1s04r"))))
+    (properties `((upstream-name . "robust.prioritizr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tibble
+                             r-terra
+                             r-sf
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-prioritizr
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/frankiecho/robust.prioritizr")
+    (synopsis "Robust Systematic Conservation Prioritization")
+    (description
+     "Systematic conservation prioritization with robust optimization techniques.
+This is important because conservation prioritizations typically only consider
+the most likely outcome associated with a conservation action (e.g.,
+establishing a protected area will safeguard a threatened species population)
+and fail to consider other outcomes and their consequences for meeting
+conservation objectives.  By extending the prioritizr package, this package can
+be used to generate conservation prioritizations that account of uncertainty in
+the climate change scenario projections, species distribution models, ecosystem
+service models, and measurement errors.  In particular, prioritizations can be
+generated to be fully robust to uncertainty by minimizing (or maximizing)
+objectives under the worst possible outcome.  Since reducing the associated with
+achieving conservation objectives may sacrifice other objectives (e.g.,
+minimizing protected area implementation costs), prioritizations can also be
+generated to be partially robust based on a specified confidence level
+parameter.  Partially robust prioritizations can be generated based on the
+chance constrained programming problem (Charnes & Cooper 1959,
+<doi:10.1287/mnsc.6.1.73>) and the conditional value-at-risk problem
+(Rockafellar & Uryasev 2000, <doi:10.21314/JOR.2000.038>).")
+    (license license:gpl3+)))
 
 (define-public r-robumeta
   (package
@@ -47899,6 +47946,39 @@ occupations; science: elements, planets; words: adjectives, verbs, proverbs, US
 president quotes.")
     (license license:cc0)))
 
+(define-public r-rcope
+  (package
+    (name "r-rcope")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rcope" version))
+       (sha256
+        (base32 "10r72d13swjdn6qmsjg7xwfjzqxf7ly9qiv7d7zky8z79499sba8"))))
+    (properties `((upstream-name . "Rcope")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-formula r-dplyr r-car))
+    (home-page "https://cran.r-project.org/package=Rcope")
+    (synopsis "Tools to Cope with Endogeneity Problems")
+    (description
+     "Researchers across disciplines often face biased regression model estimates due
+to endogenous regressors correlated with the error term.  Traditional solutions
+require instrumental variables (IVs), which are often difficult to find and
+validate.  This package provides flexible, alternative IV-free methods using
+copulas, as described in the practical guide to endogeneity correction using
+copulas (Yi Qian, Tony Koschmann, and Hui Xie 2025)
+<doi:10.1177/00222429251410844>.  The current version implements the two-stage
+copula endogeneity correction (2@code{sCOPE}) method to fit models with
+continuous endogenous regressors and both continuous and discrete exogenous
+regressors, as described in Fan Yang, Yi Qian, and Hui Xie (2024)
+<doi:10.1177/00222437241296453>.  Using this method, users can address regressor
+endogeneity problems in nonexperimental data without requiring IVs.")
+    (license license:expat)))
+
 (define-public r-rconvertu
   (package
     (name "r-rconvertu")
@@ -49581,13 +49661,13 @@ respected.")
 (define-public r-rcissvae
   (package
     (name "r-rcissvae")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rCISSVAE" version))
        (sha256
-        (base32 "1p1zai0xqchcyjsxfn7pp0q1y0awklnvfsnlxand3sk8njw48gda"))))
+        (base32 "03lswhwhy12m8773hg13j70hjyyxv7l2m6j3sdb7ahras7vhhzsf"))))
     (properties `((upstream-name . "rCISSVAE")))
     (build-system r-build-system)
     (arguments
@@ -49921,6 +50001,57 @@ for downstream analysis in R/Bioconductor workflows.  See
 further details.")
     (license license:expat)))
 
+(define-public r-rchasm
+  (package
+    (name "r-rchasm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RChASM" version))
+       (sha256
+        (base32 "0qc10h2xzb7s928f55shfa7kkjwfqlvlxagkvfv2n0zy3hzlxsn2"))))
+    (properties `((upstream-name . "RChASM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sirt
+                             r-rstatix
+                             r-readr
+                             r-mclust
+                             r-matrixstats
+                             r-magrittr
+                             r-ggstar
+                             r-ggsci
+                             r-ggrepel
+                             r-ggplot2
+                             r-envstats
+                             r-dplyr
+                             r-cowplot
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://jonotuke.github.io/RChASM/")
+    (synopsis "Detection of Chromosomal Aneuploidies in Ancient DNA Studies")
+    (description
+     "An R implementation of @code{ChASM} (Chromosomal Aneuploidy Screening
+Methodology): a statistically rigorous Bayesian approach for screening data sets
+for autosomal and sex chromosomal aneuploidies.  This package takes as input the
+number of (deduplicated) reads mapping to chromosomes 1-22 and the X and Y
+chromosomes, and models these using a Dirichlet-multinomial distribution.  From
+this, This package returns posterior probabilities of sex chromosomal karyotypes
+(XX, XY, XXY, XYY, XXX and X) and full autosomal aneuploidies (trisomy 13,
+trisomy 18 and trisomy 21).  This package also returns two diagnostic
+statistics: (i) a posterior probability addressing whether contamination between
+XX and XY may explain the observed sex chromosomal aneuploidy, and (ii) a
+chi-squared statistic measuring whether the observed read counts are too
+divergent from the underlying distribution (and may represent abnormal
+sequencing/quality issues).")
+    (license license:expat)))
+
 (define-public r-rchallenge
   (package
     (name "r-rchallenge")
@@ -50200,6 +50331,46 @@ cheminformatics.  This allows the user to load molecules, evaluate fingerprints,
 calculate molecular descriptors and so on.  In addition, the CDK API allows the
 user to view structures in 2D.")
     (license license:lgpl2.0+)))
+
+(define-public r-rcdf
+  (package
+    (name "r-rcdf")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcdf" version))
+       (sha256
+        (base32 "1qiidh32l259x326vhzdbxbcs41hrj0xy7zh5bkii937f56dyy6f"))))
+    (properties `((upstream-name . "rcdf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-uuid
+                             r-stringr
+                             r-rsqlite
+                             r-openxlsx
+                             r-openssl
+                             r-lifecycle
+                             r-jsonlite
+                             r-haven
+                             r-glue
+                             r-fs
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://yng-me.github.io/rcdf/")
+    (synopsis "Comprehensive Toolkit for Working with Encrypted Parquet Files")
+    (description
+     "Utilities for reading, writing, and managing RCDF files, including encryption
+and decryption support.  It offers a flexible interface for handling data stored
+in encrypted Parquet format, along with metadata extraction, key management, and
+secure operations using AES and RSA encryptions.")
+    (license license:expat)))
 
 (define-public r-rcdea
   (package
@@ -50551,6 +50722,41 @@ causal effects.  Data simulation adheres to principles of structural causal
 modeling.  Detailed methodologies and examples are documented in our vignette,
 available at
 <https://htmlpreview.github.io/?https://github.com/herdiantrisufriyana/rcausim/blob/master/doc/causal_simulation_exemplar.html>.")
+    (license license:gpl3)))
+
+(define-public r-rcausalmgm
+  (package
+    (name "r-rcausalmgm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rCausalMGM" version))
+       (sha256
+        (base32 "08ghykra2f0dwmrbih52d509c86ab7y4r6ykyjkqvg0zsndacsnz"))))
+    (properties `((upstream-name . "rCausalMGM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcppthread r-rcpparmadillo r-rcpp
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=rCausalMGM")
+    (synopsis
+     "Scalable Causal Discovery and Model Selection on Mixed Datasets with 'rCausalMGM'")
+    (description
+     "Scalable methods for learning causal graphical models from mixed data, including
+continuous, discrete, and censored variables.  The package implements
+@code{CausalMGM}, which combines a convex, score-based approach for learning an
+initial moralized graph with a producer-consumer scheme that enables efficient
+parallel conditional independence testing in constraint-based causal discovery
+algorithms.  The implementation supports high-dimensional datasets and provides
+individual access to core components of the workflow, including MGM and the
+PC-Stable and FCI-Stable causal discovery algorithms.  To support practical
+applications, the package includes multiple model selection strategies,
+including information criteria based on likelihood and model complexity,
+cross-validation for out-of-sample likelihood estimation, and stability-based
+approaches that assess graph robustness across subsamples.")
     (license license:gpl3)))
 
 (define-public r-rcausalegm
@@ -54656,13 +54862,13 @@ designed to create, modify and run apsimx files in the APSIM Next Generation
 (define-public r-rapr
   (package
     (name "r-rapr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapr" version))
        (sha256
-        (base32 "1ylgk9cin4rs0gk3001ynvhihcblppaqhn22vcd10xc6c8625wj3"))))
+        (base32 "04j1fcgh1m1mi157apirp2685zgiqmvrm238di1sjzyxhcamv87c"))))
     (properties `((upstream-name . "rapr")))
     (build-system r-build-system)
     (arguments
@@ -59283,6 +59489,118 @@ synchrony with R5, the development of R5 follows Conveyal's independent update
 process.  Hence, users should confirm the R5 version implied by the Conveyal
 user manual (see <https://docs.conveyal.com/changelog>) corresponds with the R5
 version that r5r depends on.  This version of r5r depends on R5 v7.1.")
+    (license license:expat)))
+
+(define-public r-r4subtrace
+  (package
+    (name "r-r4subtrace")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r4subtrace" version))
+       (sha256
+        (base32 "1lsd79hn2dmj7pikimzjb54nlfff2zax7dmhnapl7vgdfmmp9i8s"))))
+    (properties `((upstream-name . "r4subtrace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-r4subcore
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/R4SUB/r4subtrace")
+    (synopsis "Traceability Engine for Clinical Submission Readiness")
+    (description
+     "Quantifies and explains end-to-end traceability between clinical submission
+artifacts (A@code{DaM} (Analysis Data Model) outputs, derivations, SDTM (Study
+Data Tabulation Model) sources, specs, code).  Builds trace models from metadata
+and mapping sheets, computes trace levels, and emits standardized R4SUB (R for
+Regulatory Submission) evidence table rows via r4subcore'.")
+    (license license:expat)))
+
+(define-public r-r4subscore
+  (package
+    (name "r-r4subscore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r4subscore" version))
+       (sha256
+        (base32 "10yavhk85yryr6xz2nigfhjn2a63a3vyhkik26frcxm10jiqacc5"))))
+    (properties `((upstream-name . "r4subscore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-r4subcore r-dplyr r-cli))
+    (home-page "https://github.com/R4SUB/r4subscore")
+    (synopsis "Submission Confidence Index Engine")
+    (description
+     "Converts standardized R4SUB (R for Regulatory Submission) evidence into
+indicator scores, pillar scores, and a Submission Confidence Index (SCI).
+Provides sensitivity analysis, explainability tables, and decision band
+classification to answer the question: are we ready for regulatory submission.")
+    (license license:expat)))
+
+(define-public r-r4subrisk
+  (package
+    (name "r-r4subrisk")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r4subrisk" version))
+       (sha256
+        (base32 "0s29cgxi11w965z636ccl2cqljkd9gk4y4fqry1qr3qb5qbl0ylg"))))
+    (properties `((upstream-name . "r4subrisk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-r4subcore r-dplyr r-cli))
+    (home-page "https://github.com/R4SUB/r4subrisk")
+    (synopsis "Risk Quantification Engine for Clinical Submission Readiness")
+    (description
+     "Quantifies submission risk using a Failure Modes and Effects Analysis
+(FMEA)-inspired framework (probability, impact, detectability).  Builds risk
+registers from evidence, computes Risk Priority Numbers (RPN), classifies risk
+levels, and emits standardized R4SUB (R for Regulatory Submission) evidence
+table rows via r4subcore'.  Supports risk mitigation tracking and trend analysis
+across submission milestones.")
+    (license license:expat)))
+
+(define-public r-r4subprofile
+  (package
+    (name "r-r4subprofile")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r4subprofile" version))
+       (sha256
+        (base32 "081kzc4xqk90q7a7zkwgx3gb0fwljfn1234sb3gzk05mvv1vdajh"))))
+    (properties `((upstream-name . "r4subprofile")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-r4subcore r-cli))
+    (home-page "https://github.com/R4SUB/r4subprofile")
+    (synopsis
+     "Regulatory Submission Profiles for Clinical Submission Readiness")
+    (description
+     "Defines submission profiles per regulatory authority with authority-specific
+pillar weights, decision thresholds, indicator requirements, and risk
+configuration.  Supports the U.S. Food and Drug Administration (FDA), European
+Medicines Agency (EMA), Pharmaceuticals and Medical Devices Agency (PMDA),
+Health Canada, Therapeutic Goods Administration (TGA), and Medicines and
+Healthcare products Regulatory Agency (MHRA).  Integrates with r4subscore and
+r4subrisk configuration systems.")
     (license license:expat)))
 
 (define-public r-r4subdata

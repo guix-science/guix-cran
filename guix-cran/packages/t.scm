@@ -11094,6 +11094,60 @@ on their analyses.  For more details visit
 <https://www.nationalrail.co.uk/46391.aspx>.")
     (license license:expat)))
 
+(define-public r-trainer
+  (package
+    (name "r-trainer")
+    (version "2.2.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "traineR" version))
+       (sha256
+        (base32 "12ycfs4nb92g6agqrfsr9dbcrhdz459pkb6yn5y0kpwmr2665fqh"))))
+    (properties `((upstream-name . "traineR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-stringr
+                             r-rpart
+                             r-rocr
+                             r-rlang
+                             r-randomforest
+                             r-nnet
+                             r-neuralnet
+                             r-mass
+                             r-kknn
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-e1071
+                             r-dplyr
+                             r-adabag))
+    (home-page "https://promidat.website/")
+    (synopsis "Predictive (Classification and Regression) Models Homologator")
+    (description
+     "This package provides methods to unify the different ways of creating predictive
+models and their different predictive formats for classification and regression.
+ It includes methods such as K-Nearest Neighbors Schliep, K. P. (2004)
+<doi:10.5282/ubm/epub.1769>, Decision Trees Leo Breiman, Jerome H. Friedman,
+Richard A. Olshen, Charles J. Stone (2017) <doi:10.1201/9781315139470>, ADA
+Boosting Esteban Alfaro, Matias Gamez, Noelia GarcÃ­a (2013)
+<doi:10.18637/jss.v054.i02>, Extreme Gradient Boosting Chen & Guestrin (2016)
+<doi:10.1145/2939672.2939785>, Random Forest Breiman (2001)
+<doi:10.1023/A:1010933404324>, Neural Networks Venables, W. N., & Ripley, B. D.
+(2002) <ISBN:0-387-95457-0>, Support Vector Machines Bennett, K. P. & Campbell,
+C. (2000) <doi:10.1145/380995.380999>, Bayesian Methods Gelman, A., Carlin, J.
+B., Stern, H. S., & Rubin, D. B. (1995) <doi:10.1201/9780429258411>, Linear
+Discriminant Analysis Venables, W. N., & Ripley, B. D. (2002)
+<ISBN:0-387-95457-0>, Quadratic Discriminant Analysis Venables, W. N., & Ripley,
+B. D. (2002) <ISBN:0-387-95457-0>, Logistic Regression Dobson, A. J., & Barnett,
+A. G. (2018) <doi:10.1201/9781315182780> and Penalized Logistic Regression
+Friedman, J. H., Hastie, T., & Tibshirani, R. (2010)
+<doi:10.18637/jss.v033.i01>.")
+    (license license:gpl2+)))
+
 (define-public r-trafficbde
   (package
     (name "r-trafficbde")
@@ -25085,13 +25139,13 @@ generation pipelines and autonomous agent workflows.")
 (define-public r-textometry
   (package
     (name "r-textometry")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textometry" version))
        (sha256
-        (base32 "0frxwi3n7syjgjxgzc4ync9svd25bq2zyppiyrla1n85dawi3r8f"))))
+        (base32 "1r721qxngizwj0x3yip8xgh6rli92xv3nxkggzs61dfyjc7qbgg6"))))
     (properties `((upstream-name . "textometry")))
     (build-system r-build-system)
     (arguments
@@ -31826,36 +31880,6 @@ et al. (2022) <doi:10.1111/rssb.12504>).")
 and modifiers.  User-supplied dictionaries are supported, including Unicode
 emojis and multi-word tokens, so this package can also be used to study
 constructs beyond sentiment.")
-    (license license:expat)))
-
-(define-public r-tarchives
-  (package
-    (name "r-tarchives")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tarchives" version))
-       (sha256
-        (base32 "0bvi7wrq3nav50fbdhlrr245dr0xxkampasnnrqjbcv2pnbcw87w"))))
-    (properties `((upstream-name . "tarchives")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-usethis
-                             r-targets
-                             r-rlang
-                             r-fs
-                             r-callr))
-    (home-page "https://cran.r-project.org/package=tarchives")
-    (synopsis "Make Your 'targets' Pipelines into a Package")
-    (description
-     "Runs targets pipeline in /inst/tarchives and stores the results in the R user
-directory.  This means that the user does not have to run the process
-repeatedly, and the developer has the flexibility to update the data as versions
-are updated.")
     (license license:expat)))
 
 (define-public r-tar

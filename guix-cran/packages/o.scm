@@ -2855,6 +2855,43 @@ through @code{OpenMP}'.")
 relationships between glutamine synthetase proteins in seed plants.")
     (license license:gpl2+)))
 
+(define-public r-orthanc
+  (package
+    (name "r-orthanc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orthanc" version))
+       (sha256
+        (base32 "1vyfh4gjy4q7jv7ldkjya62k1bkyyv0q7fi7j2frji8z3ysy91rs"))))
+    (properties `((upstream-name . "orthanc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-r6
+                             r-purrr
+                             r-mirai
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-digest
+                             r-carrier))
+    (home-page "https://github.com/mattwarkentin/orthanc")
+    (synopsis "Programmatic Interface to 'Orthanc' DICOM Servers")
+    (description
+     "An R Interface to Orthanc DICOM servers for medical imaging workflows.  Orthanc
+is a lightweight, open-source DICOM server that exposes a comprehensive REST API
+for managing, querying, retrieving, and modifying DICOM resources
+(<https://www.orthanc-server.com>).  The goal of this package is to provide
+comprehensive and user-friendly access to the Orthanc REST API, designed to
+align with idiomatic R workflows while preserving the structure and semantics of
+DICOM resources.")
+    (license license:expat)))
+
 (define-public r-orth-ord
   (package
     (name "r-orth-ord")

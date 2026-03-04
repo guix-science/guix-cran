@@ -3401,19 +3401,19 @@ assess structural features or effects in circular regression models.")
 (define-public r-npcdtools
   (package
     (name "r-npcdtools")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPCDTools" version))
        (sha256
-        (base32 "1m8npqn0a4662nmq5w7hxphwxp2jcrv90xzsx5y4sbdal5irnpqn"))))
+        (base32 "09n35a6h1nphh2rz5zfm97yja8gxyxvw77kljhf1gvfrmvx7vs63"))))
     (properties `((upstream-name . "NPCDTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-simdesign r-psych r-npcd r-gtools r-gdina))
+    (propagated-inputs (list r-shiny r-psych r-matrix r-gtools r-gdina))
     (home-page "https://cran.r-project.org/package=NPCDTools")
     (synopsis
      "The Nonparametric Classification Methods for Cognitive Diagnosis")

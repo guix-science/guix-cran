@@ -668,13 +668,13 @@ bugs.")
 (define-public r-lucid
   (package
     (name "r-lucid")
-    (version "1.9")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lucid" version))
        (sha256
-        (base32 "02jn3zgcsw8wqab3cdp5s4h1lfrx72xfnh7ypi8rcd9gmsbcaf5q"))))
+        (base32 "1fd1api93wi3fpy2hf1zqwzhy5ry94wiz76fzn13as9fxn57y4r0"))))
     (properties `((upstream-name . "lucid")))
     (build-system r-build-system)
     (arguments
@@ -6858,6 +6858,40 @@ can be modeled.  Details of the methods for modeling those processes can be
 found in: Addison and Bell (1997) <doi:10.1071/MF97169>.")
     (license license:gpl3+)))
 
+(define-public r-lobster
+  (package
+    (name "r-lobster")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lobsteR" version))
+       (sha256
+        (base32 "041r5cl5l34hf541rvpaj59ji8l55z305aljc2cwsxlvysg2kdjj"))))
+    (properties `((upstream-name . "lobsteR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timedate
+                             r-rvest
+                             r-purrr
+                             r-lubridate
+                             r-httr
+                             r-dplyr
+                             r-callr
+                             r-assertthat
+                             r-archive))
+    (home-page "https://github.com/voigtstefan/lobsteR")
+    (synopsis "Access and Process 'LOBSTER' High-Frequency Data")
+    (description
+     "This package provides tools to authenticate with LOBSTER (Limit Order Book
+System - The Efficient Reconstruction, <https://app.lobsterdata.com/>), request,
+download, and process high-frequency limit order book data.  Streamlines the
+end-to-end workflow from data request to analysis-ready datasets.  For advanced
+high-frequency econometric analysis, see the highfrequency package.")
+    (license license:expat)))
+
 (define-public r-lobra
   (package
     (name "r-lobra")
@@ -6917,6 +6951,37 @@ attempts to clean, or at least flag, filings that could provide incorrect
 results when seeking to answer the question: How much is being spent on lobbying
 our Congress and the administration and what issues do they care about?")
     (license license:lgpl3+)))
+
+(define-public r-lobby
+  (package
+    (name "r-lobby")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lobby" version))
+       (sha256
+        (base32 "0x040p72y29d5d8lwpb116rclyz6z47qh3cinqq46m1s0cy7s0hg"))))
+    (properties `((upstream-name . "lobby")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/christopherkenny/lobby")
+    (synopsis "Interact with the 'US Senate Lobbying Disclosure API'")
+    (description
+     "Download and read data on lobbying in the United States Congress.  Data is
+queried from the Senate's Application Programming Interface
+(<https://lda.senate.gov/api/>).  This supports filings since 2008.  Functions
+exist for all primary data endpoints, including queries by filings,
+contributions, registrations, clients, and lobbyists.")
+    (license license:expat)))
 
 (define-public r-loadshaper
   (package
@@ -15536,13 +15601,13 @@ with the rest of the inputs.")
 (define-public r-ldmppr
   (package
     (name "r-ldmppr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldmppr" version))
        (sha256
-        (base32 "1lr45r5wh0mwbdb06x25x34pbzpm6b5zp5fnvhsjknjz600gwnby"))))
+        (base32 "11a06wqxw3k1j4ncl8nj72irbwd6xjnvw4zzprvk2id24259gvqh"))))
     (properties `((upstream-name . "ldmppr")))
     (build-system r-build-system)
     (arguments

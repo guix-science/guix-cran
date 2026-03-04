@@ -2849,6 +2849,30 @@ causal population average treatment effect.  Salerno et al., (2024)
 <doi:10.48550/@code{arXiv.2406.19597>}.")
     (license license:gpl3+)))
 
+(define-public r-svycausalglm
+  (package
+    (name "r-svycausalglm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svyCausalGLM" version))
+       (sha256
+        (base32 "0zi46s01ia8n11rpdpnw1hy7vh4dn39d3ygd3z5dwiknyz6iyxsm"))))
+    (properties `((upstream-name . "svyCausalGLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey r-nnet r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=svyCausalGLM")
+    (synopsis "Survey-Weighted Modeling Utilities")
+    (description
+     "Utility functions for survey-weighted regression, diagnostics, and
+visualization.")
+    (license license:expat)))
+
 (define-public r-svwidgets
   (package
     (name "r-svwidgets")
@@ -33224,13 +33248,13 @@ Based on the work described in Rodriguez-Alvarez et al. (2015)
 (define-public r-sooty
   (package
     (name "r-sooty")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sooty" version))
        (sha256
-        (base32 "14lpd8spqkfnhpnb2z8i43g1w2z518144mzal5zlbsqv7s8jksmx"))))
+        (base32 "1idc7h3j2k86sqclayxm8ss42r51h69y098w61cdys3hybps95jf"))))
     (properties `((upstream-name . "sooty")))
     (build-system r-build-system)
     (arguments
@@ -33251,7 +33275,7 @@ Based on the work described in Rodriguez-Alvarez et al. (2015)
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-tibble r-s7 r-dplyr r-arrow))
+    (propagated-inputs (list r-tibble r-s7 r-curl r-arrow))
     (native-inputs (list esbuild))
     (home-page "https://github.com/mdsumner/sooty")
     (synopsis
@@ -71406,6 +71430,37 @@ algorithm can be found in the paper: A. Murph, A. Flynt, B. R. King (2021).
 Comparing finite sequences of discrete events with non-uniform time intervals,
 Sequential Analysis, 40(3), 291-313. <doi:10.1080/07474946.2021.1940491>.")
     (license license:expat)))
+
+(define-public r-savvysh
+  (package
+    (name "r-savvysh")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "savvySh" version))
+       (sha256
+        (base32 "1pdsszn1cn6b5sy8gaycfk7yamdc6iv6y6j7api55y2sabwrj7v9"))))
+    (properties `((upstream-name . "savvySh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mnormt r-matrix r-mass r-glmnet r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://ziwei-chenchen.github.io/savvySh/")
+    (synopsis "Slab and Shrinkage Linear Regression Estimation")
+    (description
+     "This package implements a suite of shrinkage estimators for multivariate linear
+regression to improve estimation stability and predictive accuracy.  Provides
+methods including the Stein estimator, Diagonal Shrinkage, the general Shrinkage
+estimator (solving a Sylvester equation), and Slab Regression (Simple and
+Generalized).  These methods address Stein's paradox by introducing structured
+bias to reduce variance without requiring cross-validation, except for Shrinkage
+Ridge Regression where the intensity is chosen by minimizing an explicit Mean
+Squared Error (MSE) criterion.  Methods are based on paper
+<https://openaccess.city.ac.uk/id/eprint/35005/>.")
+    (license license:gpl3+)))
 
 (define-public r-savvyr
   (package

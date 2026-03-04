@@ -5419,13 +5419,13 @@ Evaluation (NSE), for example in ggplot2', dplyr', or data.table'.")
 (define-public r-whep
   (package
     (name "r-whep")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whep" version))
        (sha256
-        (base32 "1sm3m4hb8hj6iizg4hh8c7k5vvcza92qc723r74fqa7riavpgf1l"))))
+        (base32 "08jky2182p6qmljfvrydp5dghi8bxic1fccbzcp6mf2y687wn4kp"))))
     (properties `((upstream-name . "whep")))
     (build-system r-build-system)
     (arguments
@@ -5435,13 +5435,14 @@ Evaluation (NSE), for example in ggplot2', dplyr', or data.table'.")
                              r-yaml
                              r-withr
                              r-tidyr
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-readr
+                             r-rappdirs
                              r-purrr
                              r-pins
                              r-nanoparquet
-                             r-mipfp
                              r-httr
                              r-fs
                              r-faostat

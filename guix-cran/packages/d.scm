@@ -3039,43 +3039,6 @@ customizable summary statistics, and return tidy, machine-readable results ready
 to render with downstream table/formatting packages in analysis pipelines.")
     (license license:expat)))
 
-(define-public r-dtlcor
-  (package
-    (name "r-dtlcor")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dtlcor" version))
-       (sha256
-        (base32 "1g9rnnidnxag8pqp9m6hhl478y82hagpidispqvlv470gnbzmciz"))))
-    (properties `((upstream-name . "dtlcor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-survival
-                             r-stringr
-                             r-shinythemes
-                             r-shiny
-                             r-mvtnorm
-                             r-gsdesign
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-cubature
-                             r-coin))
-    (home-page "https://cran.r-project.org/package=dtlcor")
-    (synopsis "Multiplicity Control on Drop-the-Losers Designs")
-    (description
-     "This package provides a tool to calculate the correlation boundary for the
-correlation between the response rate and the log-rank test statistic for the
-binary surrogate endpoint and the time-to-event primary endpoint, as well as
-conduct simulation studies to obtain design operating characteristics of the
-drop-the-losers design.")
-    (license license:gpl3+)))
-
 (define-public r-dti
   (package
     (name "r-dti")
@@ -5455,13 +5418,13 @@ Ambient Liquid Oxygen and Pressurized Liquid and Gaseous Oxygen Environments\"
 (define-public r-dropr
   (package
     (name "r-dropr")
-    (version "1.0.3")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dropR" version))
        (sha256
-        (base32 "159kw9wxglc7rbb5bvvg1ixi0j1y22179wn7g40k9ahpfvfmbqy4"))))
+        (base32 "157h2gs7vc9qczqfvidn80irklk0hwynshr7laik5lx9qgx4j4a0"))))
     (properties `((upstream-name . "dropR")))
     (build-system r-build-system)
     (arguments
@@ -5475,14 +5438,16 @@ Ambient Liquid Oxygen and Pressurized Liquid and Gaseous Oxygen Environments\"
     (description
      "Analysis and visualization of dropout between conditions in surveys and (online)
 experiments.  Features include computation of dropout statistics, comparing
-dropout between conditions (e.g. Chi square), analyzing survival (e.g.
+dropout between conditions (e.g. Chi squared), analyzing survival (e.g.
 Kaplan-Meier estimation), comparing conditions with the most different rates of
 dropout (Kolmogorov-Smirnov) and visualizing the result of each in designated
-plotting functions.  Sources: Andrea Frick, Marie-Terese Baechtiger &
-Ulf-Dietrich Reips (2001)
-<https://www.researchgate.net/publication/223956222_Financial_incentives_personal_information_and_drop-out_in_online_studies>;
-Ulf-Dietrich Reips (2002) \"Standards for Internet-Based Experimenting\"
-<doi:10.1027//1618-3169.49.4.243>.")
+plotting functions.  Article published in _Behavior Research Methods_ on
+@code{dropR} by the authors: Dropout analysis: A method for data from
+Internet-based research and @code{dropR}', an R-based web app and package to
+analyze and visualize dropout. (2025) <doi:10.3758/s13428-025-02730-2>.
+Sources: Andrea Frick, Marie-Terese Baechtiger & Ulf-Dietrich Reips (2001)
+<doi:10.5167/uzh-19758>; Ulf-Dietrich Reips (2002)
+<doi:10.1026//1618-3169.49.4.243>.")
     (license license:gpl3+)))
 
 (define-public r-dropout
@@ -27026,6 +26991,89 @@ Haar-Fisz algorithm.  Also contains related algorithms for simulating from
 certain microarray gene intensity models and evaluation of certain
 transformations.  Contains @code{cDNA} and shipping credit flow data.")
     (license license:gpl2)))
+
+(define-public r-ddesonn
+  (package
+    (name "r-ddesonn")
+    (version "7.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DDESONN" version))
+       (sha256
+        (base32 "05hgjbh7an0jqnjslc1qbyi29z430y97cmmiw82njc4rlwkvswfb"))))
+    (properties `((upstream-name . "DDESONN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-reshape2
+                             r-r6
+                             r-prroc
+                             r-proc
+                             r-openxlsx
+                             r-ggplot2
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MatHatter/DDESONN")
+    (synopsis
+     "Deep Dynamic Experimental Self-Organizing Neural Network Framework")
+    (description
+     "This package provides a fully native R deep learning framework for constructing,
+training, evaluating, and inspecting Deep Dynamic Ensemble Self Organizing
+Neural Networks at research scale.  The core engine is an object oriented R6
+class-based implementation with explicit control over layer layout, dimensional
+flow, forward propagation, back propagation, and transparent optimizer state
+updates.  The framework does not rely on external deep learning back ends,
+enabling direct inspection of model state, reproducible numerical behavior, and
+fine grained architectural control without requiring compiled dependencies or
+graphics processing unit specific run times.  Users can define dimension
+agnostic single layer or deep multi-layer networks without hard coded
+architecture limits, with per layer configuration vectors for activation
+functions, derivatives, dropout behavior, and initialization strategies
+automatically aligned to network depth through controlled replication or
+truncation.  Reproducible workflows can be executed through high level helpers
+for fit, run, and predict across binary classification, multi-class
+classification, and regression modes.  Training pipelines support optional self
+organization, adaptive learning rate behavior, and structured ensemble
+orchestration in which candidate models are evaluated under user specified
+performance metrics and selectively promoted or pruned to refine a primary
+ensemble, enabling controlled ensemble evolution over successive runs.  Ensemble
+evaluation includes fused prediction strategies in which member outputs may be
+combined through weighted averaging, arithmetic averaging, or voting mechanisms
+to generate consolidated metrics for research level comparison and reproducible
+per-seed assessment.  The framework supports multiple optimization approaches,
+including stochastic gradient descent, adaptive moment estimation, and look
+ahead methods, alongside configurable regularization controls such as L1, L2,
+and mixed penalties with separate weight and bias update logic.  Evaluation
+features provide threshold tuning, relevance scoring, receiver operating
+characteristic and precision recall curve generation, area under curve
+computation, regression error diagnostics, and report ready metric outputs.  The
+package also includes artifact path management, debug state utilities,
+structured run level metadata persistence capturing seeds, configuration states,
+thresholds, metrics, ensemble transitions, fused evaluation artifacts, and model
+identifiers, as well as reproducible scripts and vignettes documenting end to
+end experiments.  Kingma and Ba (2015) <doi:10.48550/@code{arXiv.1412.6980>}
+\"Adam: A Method for Stochastic Optimization\".  Hinton et al. (2012)
+<https://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf>
+\"Neural Networks for Machine Learning (RMSprop lecture notes)\".  Duchi et al.
+(2011) <https://jmlr.org/papers/v12/duchi11a.html> \"Adaptive Subgradient Methods
+for Online Learning and Stochastic Optimization\".  Zeiler (2012)
+<doi:10.48550/@code{arXiv.1212.5701>} \"ADADELTA: An Adaptive Learning Rate
+Method\".  Zhang et al. (2019) <doi:10.48550/@code{arXiv.1907.08610>} \"Lookahead
+Optimizer: k steps forward, 1 step back\".  You et al. (2019)
+<doi:10.48550/@code{arXiv.1904.00962>} \"Large Batch Optimization for Deep
+Learning: Training BERT in 76 minutes (LAMB)\". @code{McMahan} et al. (2013)
+<https://research.google.com/pubs/archive/41159.pdf> \"Ad Click Prediction: a
+View from the Trenches (FTRL-Proximal)\".  Klambauer et al. (2017)
+<https://proceedings.neurips.cc/paper/6698-self-normalizing-neural-networks.pdf>
+\"Self-Normalizing Neural Networks (SELU)\".  Maas et al. (2013)
+<https://ai.stanford.edu/~amaas/papers/relu_hybrid_icml2013_final.pdf>
+\"Rectifier Nonlinearities Improve Neural Network Acoustic Models (Leaky
+@code{ReLU} / rectifiers)\".")
+    (license license:expat)))
 
 (define-public r-ddecompose
   (package

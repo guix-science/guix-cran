@@ -28011,22 +28011,18 @@ codes.")
 (define-public r-pintervals
   (package
     (name "r-pintervals")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pintervals" version))
        (sha256
-        (base32 "1vfqc3h88gxw60fvysy42kv5plhf080b4dh0w6xmrsx2rhz8brmc"))))
+        (base32 "0ba1jny291r0f77m5s1j1mwhb8xi1qpvsd5ryn1fms02a7cni568"))))
     (properties `((upstream-name . "pintervals")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rcpp
                              r-purrr
@@ -28034,7 +28030,7 @@ codes.")
                              r-hmisc
                              r-foreach
                              r-dplyr))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=pintervals")
     (synopsis "Model Agnostic Prediction Intervals")
     (description
@@ -28044,8 +28040,8 @@ The package is designed for ease of use, offering intuitive functions for both
 binned and full conformal prediction methods, as well as parametric interval
 estimation with diagnostic checks.  Currently only working for continuous
 predictions.  For details on the conformal and bin-conditional conformal
-prediction methods, see Randahl, Williams, and Hegre (2024)
-<DOI:10.48550/@code{arXiv.2410.14507>}.")
+prediction methods, see Randahl, Williams, and Hegre (2026)
+<DOI:10.1017/pan.2025.10010>.")
     (license license:gpl3+)))
 
 (define-public r-pinterestadsr
@@ -31381,6 +31377,35 @@ detailed method is described in preprint by FertÃ© et al. (2020)
 the evaluation of the goodness-of-fit and the predictive capacity of the
 proportional hazards model.")
     (license license:gpl2+)))
+
+(define-public r-phers
+  (package
+    (name "r-phers")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phers" version))
+       (sha256
+        (base32 "1d0byg3i0azfywnjwnxn31hvwwnsm784lfqivq0rgggj29jsjj2r"))))
+    (properties `((upstream-name . "phers")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-iterators
+                             r-foreach
+                             r-data-table
+                             r-checkmate
+                             r-bedmatrix))
+    (home-page "https://phers.hugheylab.org")
+    (synopsis "Calculate Phenotype Risk Scores")
+    (description
+     "Use phenotype risk scores based on linked clinical and genetic data to study
+Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
+<doi:10.1126/science.aal4043>.")
+    (license license:gpl2)))
 
 (define-public r-phenthauproc
   (package

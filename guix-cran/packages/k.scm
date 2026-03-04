@@ -3835,13 +3835,13 @@ curvature.")
 (define-public r-kindling
   (package
     (name "r-kindling")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kindling" version))
        (sha256
-        (base32 "1mvwlbrjfdy3zlwyblqg6dav7dmg361mh4c21f54n7d69zx62i5r"))))
+        (base32 "0h23kinl38kxv932dyl5vyjav5l9gc5ljgmwyn164fnna8r3d0d9"))))
     (properties `((upstream-name . "kindling")))
     (build-system r-build-system)
     (arguments
@@ -3857,11 +3857,13 @@ curvature.")
                              r-purrr
                              r-parsnip
                              r-neuralnettools
+                             r-lifecycle
                              r-hardhat
                              r-glue
                              r-ggplot2
                              r-dplyr
                              r-dials
+                             r-coro
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://kindling.joshuamarie.com")
@@ -3870,14 +3872,14 @@ curvature.")
     (description
      "This package provides a higher-level interface to the torch package for
 defining, training, and fine-tuning neural networks, including its depth,
-powered by code generation.  This package currently supports few to several
-architectures, namely feedforward (multi-layer perceptron) and recurrent neural
-networks (Recurrent Neural Networks (RNN), Long Short-Term Memory (LSTM), Gated
-Recurrent Unit (GRU)), while also reduces boilerplate torch code while enabling
-seamless integration with torch'.  The model methods to train neural networks
-from this package also bridges to titanic ML frameworks in R, namely tidymodels
-ecosystem, which enables the parsnip model specifications, workflows, recipes,
-and tuning tools.")
+powered by code generation.  This package supports few to several architectures,
+including feedforward (multi-layer perceptron) and recurrent neural networks
+(Recurrent Neural Networks (RNN), Long Short-Term Memory (LSTM), Gated Recurrent
+Unit (GRU)), while also reduces boilerplate torch code while enabling seamless
+integration with torch'.  The model methods to train neural networks from this
+package also bridges to titanic ML frameworks in R, namely tidymodels ecosystem,
+which enables the parsnip model specifications, workflows, recipes, and tuning
+tools.")
     (license license:expat)))
 
 (define-public r-kindisperse

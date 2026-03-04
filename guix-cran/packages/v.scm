@@ -2476,13 +2476,13 @@ based in Russia.")
 (define-public r-viztest
   (package
     (name "r-viztest")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VizTest" version))
        (sha256
-        (base32 "0dpiw16iqcrbq79dm6g1kjw0issb08l84vggm89icr5zl6wwhp75"))))
+        (base32 "12hl3y15vx5g3p34y201rhwxrbx7daw4cval4hi2r711adqcfyxb"))))
     (properties `((upstream-name . "VizTest")))
     (build-system r-build-system)
     (arguments
@@ -9305,13 +9305,13 @@ the representativeness effect in presence-absence models.  Methods Ecol.  Evol,
 (define-public r-vancouvr
   (package
     (name "r-vancouvr")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VancouvR" version))
        (sha256
-        (base32 "1dc6vcszck1kk4kc910kvvcgzva5f35hcqs69mllws8bs899la58"))))
+        (base32 "0nvg0plnxg30six31cc60asbblfvg28pm8yyi8jhx1i6mqnvwi6f"))))
     (properties `((upstream-name . "VancouvR")))
     (build-system r-build-system)
     (arguments
