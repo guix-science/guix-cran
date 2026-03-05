@@ -12247,13 +12247,13 @@ Centre (grant no.  pl0090-01).")
 (define-public r-mram
   (package
     (name "r-mram")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRAM" version))
        (sha256
-        (base32 "01p8g1bqm652aa5mbcm6732v7wjb8ydd6w46lxhrgj9r28hkh8aa"))))
+        (base32 "1xlqf0d3q6nm8fgr30r06x44i79nxq66608q6hhkdhd89ss430pv"))))
     (properties `((upstream-name . "MRAM")))
     (build-system r-build-system)
     (arguments
@@ -34696,6 +34696,38 @@ measurements for each method and it takes care of the estimates.  Multiple plots
 to evaluate bias, precision and compare methods.")
     (license license:gpl3+)))
 
+(define-public r-methfuse
+  (package
+    (name "r-methfuse")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "methFuse" version))
+       (sha256
+        (base32 "05dx89ywksgp9y34x3vfp6ir61jb40mdm020kh788lk4624lwyaa"))))
+    (properties `((upstream-name . "methFuse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://holmsusa.github.io/methFuse/")
+    (synopsis "Functional Segmentation of the Methylome")
+    (description
+     "This package implements FUSE (Functional Segmentation of DNA methylation data),
+a data-driven method for identifying spatially coherent DNA methylation segments
+from whole-genome bisulfite sequencing (WGBS) count data.  The method performs
+hierarchical clustering of @code{CpG} sites based on methylated and unmethylated
+read counts across multiple samples and determines the optimal number of
+segments using an information criterion (AIC or BIC).  Resulting segments
+represent regions with homogeneous methylation profiles across the input cohort
+while allowing sample-specific methylation levels.  The package provides
+functions for clustering, model selection, tree cutting, segment-level
+summarization, and visualization.  Input can be supplied as count matrices or
+extracted directly from BSseq and methrix objects.")
+    (license license:expat)))
+
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
@@ -36286,13 +36318,13 @@ multi-environment trial data are also provided.")
 (define-public r-metamorphr
   (package
     (name "r-metamorphr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metamorphr" version))
        (sha256
-        (base32 "11cl2kg3nwbi01yv1897wp5fn4b8ncamxjv42ll9dm0sp8yk39gx"))))
+        (base32 "0x3y2c008qammrbcxmydfdg3g23zsrb1lcdcxzlhasm3g1sd8i93"))))
     (properties `((upstream-name . "metamorphr")))
     (build-system r-build-system)
     (arguments
@@ -36309,6 +36341,7 @@ multi-environment trial data are also provided.")
                              r-pcamethods
                              r-missforest
                              r-magrittr
+                             r-lifecycle
                              r-impute
                              r-ggplot2
                              r-dplyr
@@ -37682,6 +37715,29 @@ be found in Cahoy and Sedransk (2023), Cahoy and Sedransk (2022)
      "Takes QC signal for each day and normalize metabolomic data that has been
 acquired in a certain period of time.  At least three QC per day are required.")
     (license license:gpl2)))
+
+(define-public r-metabook
+  (package
+    (name "r-metabook")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metabook" version))
+       (sha256
+        (base32 "1b0rsrwl3ig4zn5bbdh0k96lqraphadbyl8xbc89dk07alf0kzj0"))))
+    (properties `((upstream-name . "metabook")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-netmeta r-metasens r-meta))
+    (home-page "https://github.com/guido-s/metabook/")
+    (synopsis "Data Sets and Code for Meta-Analysis with R")
+    (description
+     "Data sets and code supporting the second edition of Schwarzer, Carpenter, and
+RÃ¼cker <DOI:10.1007/978-3-319-21416-0>, \"Meta-Analysis with R\".")
+    (license license:gpl2+)))
 
 (define-public r-metabolssmf
   (package

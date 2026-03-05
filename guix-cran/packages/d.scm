@@ -14637,13 +14637,13 @@ framework.")
 (define-public r-discretedatasets
   (package
     (name "r-discretedatasets")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteDatasets" version))
        (sha256
-        (base32 "15z3wf2shwvz954cxylpmblcqv0l9mqv8qrdwg5fz4f2k1ql2a9q"))))
+        (base32 "0pdjgrcwc58gb6lxxqn7hpjg36zh84d4djkjgv2dhv5ycly2ilqr"))))
     (properties `((upstream-name . "DiscreteDatasets")))
     (build-system r-build-system)
     (arguments
@@ -14654,8 +14654,7 @@ framework.")
     (synopsis "Example Data Sets for Use with Discrete Statistical Tests")
     (description
      "This package provides several data sets for use with discrete statistical tests
-and discrete multiple testing procedures.  Some of them are also available as a
-four-column version, so that each row represents a 2x2 table.")
+and discrete multiple testing procedures.")
     (license license:gpl3)))
 
 (define-public r-discovr
@@ -17925,13 +17924,13 @@ implementation with tuning parameters, consider the xgboost package.")
 (define-public r-did2s
   (package
     (name "r-did2s")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "did2s" version))
        (sha256
-        (base32 "0p2zdk7dlbxpdpgvxlpmpd7p2i6dy6zcplrv1qdliwzzybw9kj5v"))))
+        (base32 "1dbj7d9y4gyacpfja4dfbn6758bz156qjiz17m32sm2lr4vnpyaq"))))
     (properties `((upstream-name . "did2s")))
     (build-system r-build-system)
     (arguments

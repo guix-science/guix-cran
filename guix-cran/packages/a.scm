@@ -624,13 +624,13 @@ submit events.")
 (define-public r-azr
   (package
     (name "r-azr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azr" version))
        (sha256
-        (base32 "1zv2xryd5zjngfhnhinnyv8jd30dl3g4gkzllr86carg52qgq4f1"))))
+        (base32 "17140s2kwf55g6wnq6alv04facv019d2ss3500yfn40mcr0hw6g6"))))
     (properties `((upstream-name . "azr")))
     (build-system r-build-system)
     (arguments
@@ -9452,13 +9452,13 @@ as described in Philippe and Vibet (2020) <doi:10.18637/jss.v093.c01>.")
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisutils" version))
        (sha256
-        (base32 "1a74mzzzgd2ppq5ijsfnlxlcrxq329d536ccdikamy6816786f6v"))))
+        (base32 "0n5gvvccphra39cfaw9dn54whjp96yxi91ynpr0ykq6p9pcrpilq"))))
     (properties `((upstream-name . "arcgisutils")))
     (build-system r-build-system)
     (arguments
@@ -9518,13 +9518,13 @@ API reference <https://developers.arcgis.com/rest/places/>.")
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgislayers" version))
        (sha256
-        (base32 "1nbkc0cmjjc7kza2pxw64wbymgzf0mqakzmwqnjnsbkcsapx95vi"))))
+        (base32 "08f7s1k2ja40ka513lzl56wyh74k1a3y319vp2ws4csgjrk665mn"))))
     (properties `((upstream-name . "arcgislayers")))
     (build-system r-build-system)
     (arguments
@@ -16429,30 +16429,34 @@ ALTADATA is a curated data marketplace for more information go to
 (define-public r-alsi
   (package
     (name "r-alsi")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alsi" version))
        (sha256
-        (base32 "1a8hmw76wq7kkcmlcliqyrm8qk90lj6r06gpzwwc5nrhbn7rdlk1"))))
+        (base32 "1dq2i756fh5rq0vicjr8247nszai9rfy919r9w912biyga98l3z7"))))
     (properties `((upstream-name . "alsi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-homals))
     (home-page "https://cran.r-project.org/package=alsi")
     (synopsis
-     "Aggregated Latent Space Index for Multiple Correspondence Analysis")
+     "Aggregated Latent Space Index for Binary, Ordinal, and Continuous Data")
     (description
-     "This package provides tools for stability-validated aggregation in multiple
-correspondence analysis (MCA).  Implements parallel analysis for dimensionality
-assessment, bootstrap-based subspace stability diagnostics using Procrustes
-rotation and Tucker's congruence coefficients, and computation of the Aggregated
-Latent Space Index (ALSI).  ALSI is a person-level summary measure derived from
-validated MCA dimensions that quantifies departure from independence along
-stable association directions in multivariate categorical data.")
-    (license license:gpl3)))
+     "This package provides three stability-validated pipelines for computing an
+Aggregated Latent Space Index (ALSI): a binary MCA pipeline
+@code{(alsi_workflow()}), an ordinal pipeline using homals alternating least
+squares optimal scaling @code{(alsi_workflow_ordinal()}), and a continuous
+ipsatized SVD pipeline @code{(calsi_workflow()}).  All three pipelines share a
+common bootstrap dual-criterion stability framework (principal angles and Tucker
+congruence phi) for determining the number of dimensions to retain before index
+construction.  The package is designed to complement Segmented Profile Analysis
+(SEPA) and is intended for psychometric scale construction and dimensional
+reduction in survey and clinical research.")
+    (license license:expat)))
 
 (define-public r-alscpc
   (package
@@ -26068,6 +26072,52 @@ month, a quarter or a year.  Actuarial models assume that certain events happen
 at the beginning or end of periods.  The package contains functions to easily
 refer to the first or last (working) day within a specific period relative to a
 base date to facilitate actuarial reporting and to compare results.")
+    (license license:expat)))
+
+(define-public r-actuary
+  (package
+    (name "r-actuary")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "actuary" version))
+       (sha256
+        (base32 "1hq261wcns7sm9m5ny766ms23zmwgd6dnyxymcjbqnk5137rw7wj"))))
+    (properties `((upstream-name . "actuary")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-pracma
+                             r-mass
+                             r-ggtext
+                             r-ggplot2
+                             r-gamlss-dist
+                             r-future
+                             r-furrr
+                             r-forcats
+                             r-dtplyr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=actuary")
+    (synopsis "Actuarial Functions and Utilities")
+    (description
+     "This package provides actuarial modeling tools for Monte Carlo loss simulations,
+loss reserving, and reinsurance layer loss calculations.  It enables users to
+generate stochastic loss datasets with customisable frequency and severity
+distributions, fit development patterns to claim triangles, and calculate
+reinsurance losses for occurrence and aggregate layers with user-defined
+retentions, limits, and reinstatements.  For development pattern selection, the
+package includes a machine learning approach that evaluates multiple reserving
+models using holdout validation to identify the best-fitting pattern based on
+predictive accuracy, this is based on the algorithm described in Richman, R and
+Balona, C (2020)<https://www.ssrn.com/abstract=3697256>.")
     (license license:expat)))
 
 (define-public r-actuarialm

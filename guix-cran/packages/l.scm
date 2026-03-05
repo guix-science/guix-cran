@@ -6772,20 +6772,24 @@ quasi-Newton algorithms may be used for parameter estimation.")
 (define-public r-localcontrol
   (package
     (name "r-localcontrol")
-    (version "1.1.4")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LocalControl" version))
        (sha256
-        (base32 "0c8032657nhk62c5a4nd3ja5kq5igmnfxqi3r5fkpjgvx43s82s6"))))
+        (base32 "1r29yrqjb8w08r42ymhl0nk0rlrbd8p8c9brg7qi4p10wpw36464"))))
     (properties `((upstream-name . "LocalControl")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcpp r-lattice r-gss r-cluster))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/OHDSI/LocalControl")
     (synopsis
      "Nonparametric Methods for Generating High Quality Comparative Effectiveness Evidence")

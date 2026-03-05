@@ -4261,13 +4261,13 @@ problem, where two duplicate-free datafiles are to be merged.")
 (define-public r-brisk
   (package
     (name "r-brisk")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brisk" version))
        (sha256
-        (base32 "1l6m47rj25klrjil0275bnv0m149d2kjh23r8cv7zw2vhmlza7z1"))))
+        (base32 "1g5lxp02j8x7xr5sfrpg5zh9l4l2smjmm2iwg9w6n93paf3fxkkh"))))
     (properties `((upstream-name . "brisk")))
     (build-system r-build-system)
     (arguments
@@ -4278,7 +4278,6 @@ problem, where two duplicate-free datafiles are to be merged.")
                              r-purrr
                              r-hitandrun
                              r-ggplot2
-                             r-ellipsis
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://rich-payne.github.io/brisk/")
@@ -14418,13 +14417,13 @@ variables and spatial gene diversity are implemented.")
 (define-public r-biotimer
   (package
     (name "r-biotimer")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTIMEr" version))
        (sha256
-        (base32 "0xsar2m4712440cyfzi54434kkjzsszb63haa5wsznlyrg4jd0zl"))))
+        (base32 "09ri2mj56r8v4gpvfg8256j7y9i8dwgnpbng2xwqkfcd438cy2ab"))))
     (properties `((upstream-name . "BioTIMEr")))
     (build-system r-build-system)
     (arguments

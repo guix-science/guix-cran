@@ -1948,6 +1948,32 @@ the methodology described by R. Rastelli and M. Fop (2020)
 <doi:10.1007/s11634-020-00403-w>.")
     (license license:gpl3)))
 
+(define-public r-expressioncellnet
+  (package
+    (name "r-expressioncellnet")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExpressionCellNet" version))
+       (sha256
+        (base32 "09q4mr1jnal8qnm36r0nh4lbqpp9q53xhmqi5ckz6ab19lrgb3a8"))))
+    (properties `((upstream-name . "ExpressionCellNet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uwot r-metrics r-igraph r-ggplot2 r-crayon))
+    (home-page "https://doi.org/10.1093/bib/bbw139")
+    (synopsis "Network-Based Analysis of Gene Expression Perturbations")
+    (description
+     "Network-centric framework for integrative analysis of high-throughput gene
+expression data using user-supplied gene-gene interaction graphs.  Constructs
+seed-centered multi-generation networks constrained by expression correlations
+and simulates expression perturbation scenarios via regression-based prediction
+(van Dam, 2018).")
+    (license license:gpl3)))
+
 (define-public r-exprep
   (package
     (name "r-exprep")
@@ -15748,13 +15774,13 @@ Reliability in Educational Measurement chapter of the 5th edition of
 (define-public r-emplikcs
   (package
     (name "r-emplikcs")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emplikCS" version))
        (sha256
-        (base32 "0y1a9kq23l0q6brbv4vlmlvpkfs8rmvgfs1vmf9fv8s5psmhj1hk"))))
+        (base32 "07mr6mgdqwbiqdmp1q6jfwgpa6insxhw6qsa7p0cci4hy13bwmqm"))))
     (properties `((upstream-name . "emplikCS")))
     (build-system r-build-system)
     (arguments
@@ -15766,7 +15792,7 @@ Reliability in Educational Measurement chapter of the 5th edition of
      "Empirical Likelihood with Current Status Data for Mean, Probability, Hazard")
     (description
      "Compute the empirical likelihood ratio, -2@code{LogLikRatio} (Wilks) statistics,
-based on current status data for the hypothesis about the parameters of mean or
+based on current status data for the hypotheses about the parameters of mean or
 probability or weighted cumulative hazard.")
     (license license:gpl2+)))
 

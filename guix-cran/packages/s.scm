@@ -1181,13 +1181,13 @@ Rcpp package which ensures great performance of the code.")
 (define-public r-symengine
   (package
     (name "r-symengine")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symengine" version))
        (sha256
-        (base32 "16rckkhbbg80ggpq5grhpd3n6ycnnwfvw6ciwa8riwv3j10b1703"))))
+        (base32 "12hy7xwk0mx1w1fb4sa4h0ygcdzm352j9zhala9ra1gkkffvs4kw"))))
     (properties `((upstream-name . "symengine")))
     (build-system r-build-system)
     (arguments
@@ -1674,13 +1674,13 @@ been executed.")
 (define-public r-swissparl
   (package
     (name "r-swissparl")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swissparl" version))
        (sha256
-        (base32 "0rj01qcg0vh3vwrbag42w7mvb9ld800hzn4lszmbiv13yifgi8ys"))))
+        (base32 "1j0jn6lvy7gpligkx7dp418q355jf8k24qims17k6f94j873jddh"))))
     (properties `((upstream-name . "swissparl")))
     (build-system r-build-system)
     (arguments
@@ -1693,16 +1693,20 @@ been executed.")
                              r-magrittr
                              r-jsonlite
                              r-httr
+                             r-glue
                              r-ggplot2
                              r-dplyr
                              r-crayon))
-    (home-page "https://www.parlament.ch/en/services/open-data-webservices")
-    (synopsis "Interface to the Webservices of the Swiss Parliament")
+    (home-page
+     "https://www.parlament.ch/de/%c3%bcber-das-parlament/fakten-und-zahlen/open-data-web-services")
+    (synopsis
+     "Interface to Swiss Parliament Web Services and the 'OpenParlData' API")
     (description
-     "Retrieves the most important data on parliamentary activities of the Swiss
-Federal Assembly via an open, machine-readable interface (see
-<https://ws.parlament.ch/odata.svc/>).")
-    (license license:gpl2+)))
+     "This package provides machine-readable access to parliamentary data of the Swiss
+Federal Assembly via the OData interface (<https://ws.parlament.ch/odata.svc/>)
+and the @code{OpenParlData} REST API (<https://api.openparldata.ch>), which also
+offers harmonized data for selected cantonal and municipal parliaments.")
+    (license license:expat)))
 
 (define-public r-swissair
   (package
@@ -19525,13 +19529,13 @@ the method is described by Seitidis et al. (2023) <doi:10.1002/sim.9891>.")
 (define-public r-sshist
   (package
     (name "r-sshist")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sshist" version))
        (sha256
-        (base32 "1vyj7fwvlliv6vkf9mpsqbc5lqv8l3247rm6wlw9b7vnqgq9ciq3"))))
+        (base32 "18lmla8cc8fgclrsfrbsh59izczdg1s32g8ij1kf145v4fihgsy0"))))
     (properties `((upstream-name . "sshist")))
     (build-system r-build-system)
     (arguments
@@ -54968,13 +54972,13 @@ Mayrhofer and Filzmoser (2023) <doi:10.1016/j.ecosta.2023.04.003>.")
 (define-public r-shapley
   (package
     (name "r-shapley")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapley" version))
        (sha256
-        (base32 "119fa86hvk7c83yiv2vf75wm6lhx1r58k9r333s7ksq10lzy8axz"))))
+        (base32 "0l244k4g5bwzslnarqimbjgqgjwaw9wq72nsqn3lim4gpi3n1sa5"))))
     (properties `((upstream-name . "shapley")))
     (build-system r-build-system)
     (arguments

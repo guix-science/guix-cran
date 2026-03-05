@@ -10842,13 +10842,13 @@ Ferreira et al. (2016) <https://goo.gl/UYLhcj>.")
 (define-public r-inflater
   (package
     (name "r-inflater")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inflateR" version))
        (sha256
-        (base32 "16l33lki619sa5ig3rb5mil9p8in5lja8xag6andjqihc8gqzr1r"))))
+        (base32 "1l68xxk4sf0z9dvm9qdi708kghjb6y8ish6pip65p8rjz968sl71"))))
     (properties `((upstream-name . "inflateR")))
     (build-system r-build-system)
     (arguments
@@ -10858,11 +10858,12 @@ Ferreira et al. (2016) <https://goo.gl/UYLhcj>.")
     (synopsis "Inflation Adjustment for Historical Currency Values")
     (description
      "Convert historical monetary values into their present-day equivalents using
-bundled CPI (Consumer Price Index) data sourced from the World Bank Development
-Indicators.  Supports British pounds (GBP), Australian dollars (AUD), US dollars
-(USD), Euro (EUR), Canadian dollars (CAD), Japanese yen (JPY), Chinese yuan
-(CNY), and Swiss francs (CHF).  Currency codes and country names are both
-accepted as input.")
+bundled CPI (Consumer Price Index) and GDP deflator data sourced from the World
+Bank Development Indicators.  Supports British pounds (GBP), Australian dollars
+(AUD), US dollars (USD), Euro (EUR), Canadian dollars (CAD), Japanese yen (JPY),
+Chinese yuan (CNY), Swiss francs (CHF), New Zealand dollars (NZD), Indian rupees
+(INR), South Korean won (KRW), Brazilian reais (BRL), and Norwegian krone (NOK).
+ Currency codes and country names are both accepted as input.")
     (license license:expat)))
 
 (define-public r-infixit
@@ -14653,6 +14654,34 @@ distributions for claim amounts.")
     (license (list (license:fsdg-compatible "MPL-2.0")
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-imaginarycss
+  (package
+    (name "r-imaginarycss")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imaginarycss" version))
+       (sha256
+        (base32 "0ly296x4p7p8jkdmmp5znsnp5ih5nijx6vn4ns9c7gmry81kvb6j"))))
+    (properties `((upstream-name . "imaginarycss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-barry))
+    (native-inputs (list r-quarto))
+    (home-page "https://gvegayon.github.io/imaginary-structures/")
+    (synopsis "Tools for Studying Imaginary Cognitive Social Structure")
+    (description
+     "This package provides functions to measure and test imaginary cognitive social
+structure (CSS) motifs, which are patterns of perceived relationships among
+individuals in a social network.  Includes tools for calculating motif
+frequencies, comparing observed motifs to expected distributions, and
+visualizing motif structures.  Implements methods described in Tanaka and Vega
+Yon (2023) <doi:10.1016/j.socnet.2023.11.005>.")
+    (license license:expat)))
+
 (define-public r-imageviewer
   (package
     (name "r-imageviewer")
@@ -16137,13 +16166,13 @@ or IGL copula.  See the vignette for formulas, or for a derivation, see Coia, V
 (define-public r-igc-csm
   (package
     (name "r-igc-csm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IGC.CSM" version))
        (sha256
-        (base32 "0ckcqcmay7y6s8ridrs2xf197w4s9hnq2am4cxih2hqd5f1zk1jv"))))
+        (base32 "1pw5w1afhksfyp0n8m17qvqbmfl0g3p5i4lqma8hynv3vqbbgwnl"))))
     (properties `((upstream-name . "IGC.CSM")))
     (build-system r-build-system)
     (arguments

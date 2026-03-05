@@ -19497,19 +19497,20 @@ Modeling\" <https://CRAN.R-project.org/package=recipes>.")
 (define-public r-tidysmd
   (package
     (name "r-tidysmd")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysmd" version))
        (sha256
-        (base32 "1sbn4x59wdshc0xhxycvkf6ssm3w3pgfl64r8s3m77piara2i0dm"))))
+        (base32 "0cybkqcbp6fvcy6rgl4ch8wz37ciz0v2yb328lf6kncm84djsqpb"))))
     (properties `((upstream-name . "tidysmd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
                              r-tidyr
                              r-smd
                              r-rlang
@@ -21700,13 +21701,13 @@ as HTML files or static images.")
 (define-public r-tidycpp
   (package
     (name "r-tidycpp")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyCpp" version))
        (sha256
-        (base32 "1rwmjvz8vw44cnbzwlvlsw9byx2cvdkzvx60pr2m2p4xdisbrp1q"))))
+        (base32 "1a7snr6czwbir7w6jwcj53ymwd6dximxy481qcggjsvbfhg5vf3q"))))
     (properties `((upstream-name . "tidyCpp")))
     (build-system r-build-system)
     (arguments

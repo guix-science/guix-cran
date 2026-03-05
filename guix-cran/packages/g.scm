@@ -5949,13 +5949,13 @@ et al. (2025) <doi:10.1080/01621459.2025.2491154>.")
 (define-public r-grf
   (package
     (name "r-grf")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grf" version))
        (sha256
-        (base32 "0gc0ijnf8z1iazbg0nb9r42hws22xc1i7j129aga66vqd4sb5n26"))))
+        (base32 "1hlshmaz0zfrwbsbqk7f1rm3fnvixhnb13ax0ha7hc10mz286rc2"))))
     (properties `((upstream-name . "grf")))
     (build-system r-build-system)
     (arguments
@@ -16446,13 +16446,13 @@ and Goplerud (2024) <doi:10.1017/pan.2023.27> provide further details.")
 (define-public r-gkgraphr
   (package
     (name "r-gkgraphr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkgraphR" version))
        (sha256
-        (base32 "1sb52hhpwm3bq7rn2xdq5vly6z1c5yab9a26xzgj3c5s47vk02pa"))))
+        (base32 "10w6csm0pvf7lgz40kp8if6m0w5y2hm47kzbgi7x4kq0wl2smwac"))))
     (properties `((upstream-name . "gkgraphR")))
     (build-system r-build-system)
     (arguments
@@ -28083,13 +28083,13 @@ existing geography.")
 (define-public r-geographiclib
   (package
     (name "r-geographiclib")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geographiclib" version))
        (sha256
-        (base32 "195l47nx57w2kb1hpi6qxci5xkz4d118kq4jiwk0gqp0yhh2kjdh"))))
+        (base32 "0izi4qva12i5y4259nbbkv9x0il9i0n6za8g91gcf3isjz0nbm4c"))))
     (properties `((upstream-name . "geographiclib")))
     (build-system r-build-system)
     (arguments

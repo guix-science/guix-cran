@@ -6930,13 +6930,13 @@ see Marsh et al. (2022) <doi:10.1007/s00122-022-04045-8>.")
 (define-public r-crossfit
   (package
     (name "r-crossfit")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossfit" version))
        (sha256
-        (base32 "085qqwdsb7gh40zapchvmdyl9hpimbc629qnlbm0w8nwg5byamnd"))))
+        (base32 "1659vx7sldba39q3hpk007idcx0ggpw90mwls9q21z1wiagcwh9g"))))
     (properties `((upstream-name . "crossfit")))
     (build-system r-build-system)
     (arguments
@@ -6944,15 +6944,17 @@ see Marsh et al. (2022) <doi:10.1007/s00122-022-04045-8>.")
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EtiennePeyrot/crossfit-R")
-    (synopsis "Cross-Fitting Engine for Double/Debiased Machine Learning")
+    (synopsis "Graph-Based Cross-Fitting Engine in R")
     (description
-     "This package provides a general cross-fitting engine for double / debiased
-machine learning and other meta-learners.  The core functions implement flexible
-graphs of nuisance models with per-node training fold widths, target-specific
-evaluation windows, and several fold allocation schemes (\"independence\",
-\"overlap\", \"disjoint\").  The engine supports both numeric estimators (mode =
-\"estimate\") and cross-fitted prediction functions (mode = \"predict\"), with
-configurable aggregation over panels and repetitions.")
+     "This package provides a general cross-fitting engine for semiparametric
+estimation (e.g., double/debiased machine learning).  Supports user-defined
+target functionals and directed acyclic graphs of nuisance learners with
+per-node training fold widths, target-specific evaluation windows, and
+fold-allocation modes (\"overlap\", \"disjoint\", \"independence\").  Returns either
+numeric estimates (mode = \"estimate\") or cross-fitted prediction functions (mode
+= \"predict\"), with configurable aggregation over panels and repetitions,
+reuse-aware caching, and failure isolation, making it well-suited for simulation
+studies and large benchmarks.")
     (license license:gpl3)))
 
 (define-public r-crossexpression
@@ -15404,6 +15406,38 @@ data.  Works best when there are only two gene copies and read length >=250 base
 pairs.  High and relatively even coverage are important.")
     (license license:gpl2)))
 
+(define-public r-copulasqm
+  (package
+    (name "r-copulasqm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "copulaSQM" version))
+       (sha256
+        (base32 "0ca9mh4zpnd0zj48b5zk831f20kpaiqzj53216b698hc9l46fmzn"))))
+    (properties `((upstream-name . "copulaSQM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vinecopula r-mass r-ald))
+    (home-page "https://cran.r-project.org/package=copulaSQM")
+    (synopsis "Copula Based Stochastic Frontier Quantile Model")
+    (description
+     "This package provides estimation procedures for copula-based stochastic frontier
+quantile models for cross-sectional data.  The package implements maximum
+likelihood estimation of quantile regression models allowing flexible dependence
+structures between error components through various copula families (e.g.,
+Gaussian and Student-t).  It enables estimation of conditional quantile effects,
+dependence parameters, log-likelihood values, and information criteria (AIC and
+BIC).  The framework combines quantile regression methodology introduced by
+Koenker and Bassett (1978) <doi:10.2307/1913643> with copula theory described in
+Joe (2014, ISBN:9781466583221).  This approach allows modeling heterogeneous
+effects across quantiles while capturing nonlinear dependence structures between
+variables.")
+    (license license:gpl3)))
+
 (define-public r-copulasim
   (package
     (name "r-copulasim")
@@ -15446,21 +15480,21 @@ dependence structure of the original data but with a shifted mean vector.")
 (define-public r-copulasfm
   (package
     (name "r-copulasfm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copulaSFM" version))
        (sha256
-        (base32 "12cr76gyhhm87f2lxcmahhb77jxycrzk5y6mw41jwj0x7mxg85bj"))))
+        (base32 "1q5d5b5dr51hk8wyc5ijl0vk1jayqf4y2g8lzjrjfk3ip2zp6x50"))))
     (properties `((upstream-name . "copulaSFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vinecopula r-truncnorm))
+    (propagated-inputs (list r-vinecopula r-truncnorm r-mass))
     (home-page "https://cran.r-project.org/package=copulaSFM")
-    (synopsis "Copula-Based Simultaneous Stochastic Frontier Models")
+    (synopsis "Copula-Based Stochastic Frontier Models")
     (description
      "This package provides estimation procedures for copula-based stochastic frontier
 models for cross-sectional data.  The package implements maximum likelihood
@@ -24036,6 +24070,35 @@ derived from R@code{ColorBrewer}
 <https://CRAN.R-project.org/package=colorspace> packages.")
     (license license:gpl3)))
 
+(define-public r-colourspace
+  (package
+    (name "r-colourspace")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colourspace" version))
+       (sha256
+        (base32 "1k1671na777kh9hfd1x8ymd9lpfc7q5p1ql1dr1v7kd9vwdp7hya"))))
+    (properties `((upstream-name . "colourspace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rann r-farver))
+    (home-page "https://cran.r-project.org/package=colourspace")
+    (synopsis
+     "Convert from One Colour Space to Another, Print a Ready-to-Paste Modern 'CSS' Syntax")
+    (description
+     "This package provides a comprehensive API for colour conversion between popular
+colour spaces ('RGB', HSL', OKLab', OKLch', hex', and named colours) along with
+clean, modern CSS Color Level 4 syntax output.  Integrates seamlessly into Shiny
+and Quarto workflows.  Includes nearest colour name lookup powered by a curated
+database of over 30,000 colour names.  OKLab'/'OKLCh colour spaces are described
+in Ottosson (2020) <https://bottosson.github.io/posts/oklab/>.  CSS Color Level
+4 syntax follows the W3C specification <https://www.w3.org/TR/css-color-4/>.")
+    (license license:expat)))
+
 (define-public r-colourlovers
   (package
     (name "r-colourlovers")
@@ -27502,13 +27565,13 @@ common plotting techniques in compositional data analysis.")
 (define-public r-coda-base
   (package
     (name "r-coda-base")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.base" version))
        (sha256
-        (base32 "1r22yy7id4j1i1m7zd0vqvqyfcly22viw3p7wdfc6bx388shfzqd"))))
+        (base32 "00s82hxpsh3lw889rbiyprdrvhdmk0x4r4rykqabw5jahmzc33j1"))))
     (properties `((upstream-name . "coda.base")))
     (build-system r-build-system)
     (arguments
@@ -33869,13 +33932,13 @@ Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.2.9")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "18hwgxl0mkx59m80w62ysy9m7szn6ad6n099p15l4jm5kimbh0bp"))))
+        (base32 "0l6m55r5shp7p73mcy8nkj3vcjjwxazddhqsqkadr8wyvaasa058"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
@@ -38670,13 +38733,13 @@ regions (e.g., provinces, prefectures, etc.).")
 (define-public r-chores
   (package
     (name "r-chores")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chores" version))
        (sha256
-        (base32 "0ql1zy8wi8hda34c93z631n6m57hjbj4vy6x4j23qlnw7b32ixd5"))))
+        (base32 "14h2sbjrk8nhk3n5s1d3lfcd77w5241sd7sbzj3pkc01x2p1ia54"))))
     (properties `((upstream-name . "chores")))
     (build-system r-build-system)
     (arguments
@@ -43886,13 +43949,13 @@ regression.The methodology is based on Li and Dong (2025)
 (define-public r-cepreader
   (package
     (name "r-cepreader")
-    (version "1.2-2")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cepreader" version))
        (sha256
-        (base32 "0n704vya03p3njx9z930mw0rg0vh14aq0kng5zh2nwkx1g9aqa2p"))))
+        (base32 "0ygzm2rjr1b5r99vvrp5423dkv13varwhrn59isqdi2jzf8mp915"))))
     (properties `((upstream-name . "cepreader")))
     (build-system r-build-system)
     (arguments

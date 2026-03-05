@@ -12705,13 +12705,13 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "4.3.0")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpact" version))
        (sha256
-        (base32 "0s47ny48k1gvjqc46a50zhnvyfhna2dmhdfnsxp2jmn0xanj3swp"))))
+        (base32 "178rkb1mprsm8rzy3nhdwwmhd4x9adsf0ix1zn5h726kv2wqs2kl"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (arguments
@@ -24162,27 +24162,26 @@ generate errors when installing @code{rKOMICS}.  Install Bioconductor and
 (define-public r-rkolada
   (package
     (name "r-rkolada")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rKolada" version))
        (sha256
-        (base32 "0q4npg3f50rx9vx9d3zmh2i6m0rnd2f7pvgr624ickja6s28bjc1"))))
+        (base32 "0a9bcb1pw5kajxjbja5n5jn2zym76rh256yi2sgxjizzyxhxn4kh"))))
     (properties `((upstream-name . "rKolada")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-urltools
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
                              r-magrittr
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-glue
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -27640,6 +27639,44 @@ running arbitrary queries against available data sets, a system for defining
 clinical concepts and encoding their representations in tabular ICU data is
 presented.")
     (license license:gpl3)))
+
+(define-public r-rict
+  (package
+    (name "r-rict")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rict" version))
+       (sha256
+        (base32 "0dm5zl03lr1n3y6xmxy7rnlq26x8xn89sx6j6ys9ggxbhlsfxph4"))))
+    (properties `((upstream-name . "rict")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-redistmetrics
+                             r-redist
+                             r-purrr
+                             r-gt
+                             r-ggplot2
+                             r-geos
+                             r-geomander
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "http://christophertkenny.com/rict/")
+    (synopsis "Redistricting in Clean Tables")
+    (description
+     "This package provides a suite of tools to create tables that accompany maps.
+The tools create clean, informative tables for electoral outcomes, compactness,
+and other district-level quantities.  Most tools are aimed at the redistricting
+context, but are broadly applicable to other electoral data.")
+    (license license:expat)))
 
 (define-public r-ricrt
   (package
@@ -38195,6 +38232,65 @@ hypothesis testing, and plotting moderating effects (the effect of X on Y
 becomes stronger/weaker as Z increases).")
     (license license:gpl3)))
 
+(define-public r-regressor
+  (package
+    (name "r-regressor")
+    (version "4.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regressoR" version))
+       (sha256
+        (base32 "1b8vj73d1fdgyp6masddp77d9svclfwb54d35gh1zizbi607k0j9"))))
+    (properties `((upstream-name . "regressoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-trainer
+                             r-shinyjs
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shinycustomloader
+                             r-shinyace
+                             r-shiny
+                             r-rpart-plot
+                             r-rlang
+                             r-psych
+                             r-pls
+                             r-loader
+                             r-htmltools
+                             r-golem
+                             r-glmnet
+                             r-gbm
+                             r-echarts4r
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list esbuild))
+    (home-page "https://promidat.website/")
+    (synopsis "Regression Data Analysis System")
+    (description
+     "Perform a supervised data analysis on a database through a shiny graphical
+interface.  It includes methods such as linear regression, penalized regression,
+k-nearest neighbors, decision trees, ada boosting, extreme gradient boosting,
+random forest, neural networks, deep learning and support vector machines.")
+    (license license:gpl2+)))
+
 (define-public r-regressionfactory
   (package
     (name "r-regressionfactory")
@@ -42367,33 +42463,31 @@ confidence intervals.")
 (define-public r-reappraised
   (package
     (name "r-reappraised")
-    (version "0.1.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reappraised" version))
        (sha256
-        (base32 "1f8qmxzn4vyn68dfc6c31jrjnymy6r7r4fg9qddx9cv01asfscws"))))
+        (base32 "0m1rqi046rrswc3qpq5x3hqc5l6pg0vmnyajxlc74qq67wd1ha6f"))))
     (properties `((upstream-name . "reappraised")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vcdextra
-                             r-vcd
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rlang
                              r-readxl
                              r-purrr
+                             r-patchwork
                              r-officer
                              r-magrittr
                              r-ggpubr
                              r-ggplot2
                              r-flextable
-                             r-epitools
                              r-dplyr
                              r-data-table
-                             r-broom
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=reappraised")

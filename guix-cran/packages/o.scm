@@ -6997,13 +6997,13 @@ Journal of Pain (in minor revision).")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "3.0.6")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "1q8i5k63kdw9cj9jvz690xm4y92kkaxw071js2kjr9qsjx67bcah"))))
+        (base32 "16ldg23f63i4fpwvpvgy13g1crfqm39d7blrdk3qjha5k2pcibvh"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
     (arguments

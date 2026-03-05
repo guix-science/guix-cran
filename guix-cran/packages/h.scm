@@ -3073,6 +3073,49 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
 (2024) <doi:10.1038/s41586-023-06618-z>.")
     (license license:gpl3)))
 
+(define-public r-htmxr
+  (package
+    (name "r-htmxr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htmxr" version))
+       (sha256
+        (base32 "08kpv066pmnmmlfz28kxy70jigbcgi2g1pzk87k2wsc23xjbffx9"))))
+    (properties `((upstream-name . "htmxr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-plumber2 r-htmltools))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://hyperverse-r.github.io/htmxr/")
+    (synopsis "Build Modern Web Applications with 'htmx' and 'plumber2'")
+    (description
+     "This package provides a lightweight framework for building server-driven web
+applications in R'.  htmxr combines the simplicity of htmx for partial page
+updates with the power of plumber2 for non-blocking HTTP endpoints.  Build
+interactive dashboards and data applications without writing @code{JavaScript}',
+using familiar R patterns inspired by Shiny'.  For more information on htmx',
+see <https://htmx.org>.")
+    (license license:expat)))
+
 (define-public r-htmlutils
   (package
     (name "r-htmlutils")
@@ -6566,13 +6609,13 @@ Single and multi-individual models are available.  O'Brien et al. (2024)
 (define-public r-hmda
   (package
     (name "r-hmda")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMDA" version))
        (sha256
-        (base32 "1wp8ij0lkidq47fiq981wjk04wwddlglcz0sdsvk6qlc2f3l0vxw"))))
+        (base32 "14g8xrnhb6rc6lwsakdnpawnd2p8df6zc277z6adnj2kb44d65ji"))))
     (properties `((upstream-name . "HMDA")))
     (build-system r-build-system)
     (arguments
@@ -16023,19 +16066,32 @@ hierarchical age length keys and use them to assign ages given length.")
 (define-public r-halfmoon
   (package
     (name "r-halfmoon")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "halfmoon" version))
        (sha256
-        (base32 "19pclcrcbmmf1b1q2dhwh17a67xif992y3w6685si5bn0ripsj6h"))))
+        (base32 "00zrfb4y9mfvv9jd8sz6fxm3zrbx4489165h73b2wrcwb53qg6ng"))))
     (properties `((upstream-name . "halfmoon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidysmd r-tidyselect r-ggplot2 r-cli))
+    (propagated-inputs (list r-vctrs
+                             r-tidysmd
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-smd
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-propensity
+                             r-gtsummary
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/r-causal/halfmoon")
     (synopsis "Techniques to Build Better Balance")
     (description

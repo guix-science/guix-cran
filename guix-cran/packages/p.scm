@@ -12741,6 +12741,49 @@ of sample predictability based on out of sample mean squared error comparisons
 given in Gonzalo and Pitarakis (2023) <doi:10.1016/j.ijforecast.2023.10.005>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-predictor
+  (package
+    (name "r-predictor")
+    (version "4.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "predictoR" version))
+       (sha256
+        (base32 "18jakfqgj30c84yf2qfczfwix31rx6379hvmd9kxljr5ca2qwz12"))))
+    (properties `((upstream-name . "predictoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-trainer
+                             r-shinyjs
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shinycustomloader
+                             r-shinyace
+                             r-shiny
+                             r-rpart-plot
+                             r-rlang
+                             r-loader
+                             r-htmltools
+                             r-golem
+                             r-glmnet
+                             r-echarts4r
+                             r-dt
+                             r-dplyr
+                             r-config
+                             r-colourpicker))
+    (home-page "https://promidat.website/")
+    (synopsis "Predictive Data Analysis System")
+    (description
+     "Perform a supervised data analysis on a database through a shiny graphical
+interface.  It includes methods such as K-Nearest Neighbors, Decision Trees, ADA
+Boosting, Extreme Gradient Boosting, Random Forest, Neural Networks, Deep
+Learning, Support Vector Machines and Bayesian Methods.")
+    (license license:gpl2+)))
+
 (define-public r-predictnmb
   (package
     (name "r-predictnmb")

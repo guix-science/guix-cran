@@ -7817,56 +7817,6 @@ result sets and time-series analysis of island performance.  The API endpoint is
 <https://api.fortnite.com/ecosystem/v1>.")
     (license license:expat)))
 
-(define-public r-fortls
-  (package
-    (name "r-fortls")
-    (version "1.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FORTLS" version))
-       (sha256
-        (base32 "0qyjhmmw8bn0bmqjqmjkfik8fzbyn7q3pwwwigfs111ixihmqsv0"))))
-    (properties `((upstream-name . "FORTLS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vroom
-                             r-voxr
-                             r-tidyr
-                             r-sf
-                             r-scales
-                             r-reticulate
-                             r-rcsf
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-progress
-                             r-plotly
-                             r-moments
-                             r-lidr
-                             r-htmlwidgets
-                             r-distance
-                             r-dbscan
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://molina-valero.github.io/FORTLS/")
-    (synopsis
-     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
-    (description
-     "Process automation of point cloud data derived from terrestrial-based
-technologies such as Terrestrial Laser Scanner (TLS) or Mobile Laser Scanner.
-FORTLS enables (i) detection of trees and estimation of tree-level attributes
-(e.g. diameters and heights), (ii) estimation of stand-level variables (e.g.
-density, basal area, mean and dominant height), (iii) computation of metrics
-related to important forest attributes estimated in Forest Inventories at
-stand-level, and (iv) optimization of plot design for combining TLS data and
-field measured data.  Documentation about FORTLS is described in Molina-Valero
-et al. (2022, <doi:10.1016/j.envsoft.2022.105337>).")
-    (license license:gpl3)))
-
 (define-public r-forstringr
   (package
     (name "r-forstringr")
@@ -17139,19 +17089,19 @@ computational finance.")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.12")
+    (version "0.9.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "0as2pb9ly5rqpil04ivbb8kjvaw0y1nhl6hhs1mwwzyksdj17zk3"))))
+        (base32 "13n0rmczmz3pa39hjka4cchs6901kxnpjhz98rmi6nbxxz4ygx3k"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lutz r-jsonlite r-httr r-digest))
+    (propagated-inputs (list r-secretbase r-lutz r-jsonlite r-httr2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luomus/finbif")
     (synopsis

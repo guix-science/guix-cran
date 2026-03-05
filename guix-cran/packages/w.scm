@@ -3570,13 +3570,13 @@ Spotfire'.")
 (define-public r-wizardry
   (package
     (name "r-wizardry")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wizaRdry" version))
        (sha256
-        (base32 "1x10dr4sx3wpwpzamydn3hraqxdz42l5zxh8k7yz6jvhdajpqn92"))))
+        (base32 "1jgw9hrimq4sa6i1zn7npa2ihcsvqcpba0iwdbdil4bfy10r8zr6"))))
     (properties `((upstream-name . "wizaRdry")))
     (build-system r-build-system)
     (arguments
@@ -3613,11 +3613,12 @@ Spotfire'.")
      "This package provides a comprehensive data analysis framework for NIH-funded
 research that streamlines workflows for both data cleaning and preparing NIH
 Data Archive ('NDA') submission templates.  Provides unified access to multiple
-data sources ('REDCap', @code{MongoDB}', Qualtrics') through interfaces to their
-APIs, with specialized functions for data cleaning, filtering, merging, and
-parsing.  Features automatic validation, field harmonization, and memory-aware
-processing to enhance reproducibility in multi-site collaborative research as
-described in Mittal et al. (2021) <doi:10.20900/jpbs.20210011>.")
+data sources ('REDCap', @code{MongoDB}', Qualtrics', SQL', ORACLE') through
+interfaces to their APIs, with specialized functions for data cleaning,
+filtering, merging, and parsing.  Features automatic validation, field
+harmonization, and memory-aware processing to enhance reproducibility in
+multi-site collaborative research as described in Mittal et al. (2021)
+<doi:10.20900/jpbs.20210011>.")
     (license license:expat)))
 
 (define-public r-wither
