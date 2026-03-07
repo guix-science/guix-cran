@@ -1161,13 +1161,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yamlet" version))
        (sha256
-        (base32 "1ca89w6cv0jfrcwlv4w74fd2dq0l6hnilpmk2n45kdakhbpqhp1d"))))
+        (base32 "168sgxx475qk74wvxcxxxgby3q4c7vp2cd4m6r3wk0dzb2grzsqz"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (arguments

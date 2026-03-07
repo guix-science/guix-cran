@@ -862,6 +862,33 @@ the algorithm of Efraimidis and Spirakis (2006) <doi:10.1016/j.ipl.2005.11.003>
 and Wong and Easton (1980) <doi:10.1137/0209009>.")
     (license license:gpl3)))
 
+(define-public r-wrss
+  (package
+    (name "r-wrss")
+    (version "3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WRSS" version))
+       (sha256
+        (base32 "10hcc9bh339g9j10g7d2nwnx22d8xldv9fypsgin2p2nmjhx1zxy"))))
+    (properties `((upstream-name . "WRSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nloptr r-network r-hmisc r-ggplot2 r-ggally))
+    (home-page "https://cran.r-project.org/package=WRSS")
+    (synopsis "Water Resources System Simulator")
+    (description
+     "This package provides tools for constructing, simulating, and analyzing
+large-scale water resources systems.  The package provides functions to
+represent system components such as reservoirs, aquifers, rivers, diversions,
+and demand sites, and to simulate system behavior under Standard Operating
+Policy.  It also supports the development and evaluation of water allocation
+strategies and hydropower operations within integrated water resources systems.")
+    (license license:gpl3)))
+
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
@@ -3537,6 +3564,36 @@ between the predictors and in applying the generalized Lasso criterion.")
 formats: ISO week, epidemiology week (epi week) and calendar date.")
     (license license:gpl2)))
 
+(define-public r-wkpool
+  (package
+    (name "r-wkpool")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wkpool" version))
+       (sha256
+        (base32 "0f009jnsvc37rm3bvpvg0i2wiiahwa2mimfrvwmxccwa4j3ng41q"))))
+    (properties `((upstream-name . "wkpool")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wk r-vctrs))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hypertidy/wkpool")
+    (synopsis "Vertex Pool Topology for Well-Known Geometry")
+    (description
+     "Establishes and maintains vertex pool topology for geometry handled by wk'.
+Segments are the atomic unit, vertices are shared via integer references into a
+pool.  Topology is made discoverable via coincident vertex detection while not
+requiring modification of the input data.  Topological data models follow
+principles described in Worboys and Duckham (2004, ISBN:978-0415283755).  The
+edge-based topology geometry decomposed into vertices and directed edge pairs is
+a simplification of the quad-edge case in Guibas & Stolfi (1985)
+<doi:10.1145/282918.282923>.")
+    (license license:expat)))
+
 (define-public r-wkb
   (package
     (name "r-wkb")
@@ -3774,13 +3831,13 @@ returns both transformed- and level-scale samplers and summaries.")
 (define-public r-wipf
   (package
     (name "r-wipf")
-    (version "0.1.0-3")
+    (version "0.1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WIPF" version))
        (sha256
-        (base32 "0ax43vrlksgd001dyp7h49qhzw6p8d4685vayphxzs5d90vb11h8"))))
+        (base32 "0cr5j3icnz2lh6n9amqbs98j4lliihk8nffcj7y98l8sawpwz5w3"))))
     (properties `((upstream-name . "WIPF")))
     (build-system r-build-system)
     (arguments
@@ -5642,6 +5699,46 @@ Functions include sending text, images, documents, stickers, geographic
 locations, and interactive messages (buttons and lists).  Also includes webhook
 parsing utilities and channel health checks.")
     (license license:expat)))
+
+(define-public r-whalestrike
+  (package
+    (name "r-whalestrike")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "whalestrike" version))
+       (sha256
+        (base32 "1zylr6wzgg6hinsbcinpbpac4knfvfsd34h3n6ypvr62d1svmfij"))))
+    (properties `((upstream-name . "whalestrike")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-desolve r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://dankelley.github.io/whalestrike/")
+    (synopsis "Simulate Whale Ship Strikes")
+    (description
+     "This package provides tools for simulating the biophysical effects of
+vessel-strikes on whales.  The aim is to support the evaluation of marine
+policies limiting ship speeds through regions in which whales reside.  This is
+important because ship strikes are a major source of lethality for several whale
+species, including the critically endangered North Atlantic right whale.  In
+this analysis, whales are modelled with a four-layer system comprising skin,
+blubber, sub-layer (muscle or organ) and bone.  Reasonable values for the
+material properties of these layers, along with other factors such as whale
+surface area and mass, are provided for a variety of whale species.  Similarly,
+key values are provided for several ship types.  The collision is modelled
+according to Newtonian dynamics, with stresses and strains within the whale
+layers being simulated over time.  The simulation results are analyzed in the
+context of whale-strike data, to develop a Lethality Index for the whale in the
+modelled collision.  For the underlying science, see Kelley and other \"Assessing
+the Lethality of Ship Strikes on Whales Using Simple Biophysical Models.\" (2021)
+<doi:10.1111/mms.12745>.  For more on the R code, see Kelley \"`whalestrike`: An
+R package for simulating ship strikes on whales\" (2024)
+<doi:10.21105/joss.06473>.")
+    (license license:gpl3+)))
 
 (define-public r-wh
   (package
@@ -10024,6 +10121,47 @@ Georgia Institute of Technology.
 <https://www.warehouse-science.com/book/editions/wh-sci-0.98.1.pdf>.")
     (license license:gpl3)))
 
+(define-public r-wareg
+  (package
+    (name "r-wareg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WAreg" version))
+       (sha256
+        (base32 "1higpz8b30hff83g7h256390nsanzmi0cwpfwvzfgn79p6412f5y"))))
+    (properties `((upstream-name . "WAreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rlang
+                             r-nleqslv
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/fancy575/WAreg")
+    (synopsis
+     "While-Alive Regression for Composite Endpoints with Cluster-Robust Inference")
+    (description
+     "This package provides estimation and inference for while-alive regression models
+targeting the while-alive loss rate for composite endpoints that include
+recurrent events and a terminal event.  The implementation supports flexible
+time-varying covariate effects through user-selected time bases, including
+B-splines, natural splines, M-splines, step functions, truncated linear bases,
+interval-local bases, and piecewise polynomials.  Inference can be performed
+using cluster-robust variance estimators for cluster-randomized trials, with
+subject-level (IID) variance as a special case.  The package includes prediction
+and plotting utilities and K-fold cross-validation for selecting basis and
+tuning parameters.  Methodology is based on Fang et al. (2025)
+<doi:10.1093/biostatistics/kxaf047>.")
+    (license license:gpl3)))
+
 (define-public r-warden
   (package
     (name "r-warden")
@@ -10592,19 +10730,19 @@ archives.  It can also read models in MDL and MD2 formats.")
 (define-public r-wakefield
   (package
     (name "r-wakefield")
-    (version "0.3.6")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wakefield" version))
        (sha256
-        (base32 "1rssh6v8m6fim2pvm4cjw8cbni77bv5qp0rwi6vwdl3jhi5zws7n"))))
+        (base32 "1jm1vqz48yj44m0z3wwiircizhrmwby60y35byhmmxb4ary7akap"))))
     (properties `((upstream-name . "wakefield")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi r-ggplot2 r-dplyr r-chron))
+    (propagated-inputs (list r-stringi r-rlang r-ggplot2 r-dplyr r-chron))
     (home-page "https://github.com/trinker/wakefield")
     (synopsis "Generate Random Data Sets")
     (description

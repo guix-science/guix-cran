@@ -2364,13 +2364,13 @@ method of Wang and Lin (2015) <http://www.jmlr.org/papers/v16/wang15b.html>.")
 (define-public r-npreg
   (package
     (name "r-npreg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npreg" version))
        (sha256
-        (base32 "09z51svfigw7xzs8s20m19amy2ypi9gdihqsjvqngh6pwsci5v9n"))))
+        (base32 "1hm6gd4p1xx8ki2nzj3fkwg1s60zzm27xv6fa8x9fgs3mwjq513w"))))
     (properties `((upstream-name . "npreg")))
     (build-system r-build-system)
     (arguments
@@ -12178,42 +12178,6 @@ Framework ('OSF').  Integrates with @code{ciftiTools} for coordinate-space
 transforms.")
     (license license:expat)))
 
-(define-public r-neuroimagene
-  (package
-    (name "r-neuroimagene")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neuroimaGene" version))
-       (sha256
-        (base32 "0j0z6l93b2pxa2dyw5xi7s1cgijx06w0mzyqh5d2s5rhdr5ihzvg"))))
-    (properties `((upstream-name . "neuroimaGene")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rsqlite
-                             r-ggseg
-                             r-ggplot2
-                             r-dbi
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=neuroimaGene")
-    (synopsis "Transcriptomic Atlas of Neuroimaging Derived Phenotypes")
-    (description
-     "This package contains functions to query and visualize the Neuroimaging features
-associated with genetically regulated gene expression (G@code{ReX}).  The
-primary utility, @code{neuroimaGene()}, relies on a list of user-defined genes
-and returns a table of neuroimaging features (NIDPs) associated with each gene.
-This resource is designed to assist in the interpretation of genome-wide and
-transcriptome-wide association studies that evaluate brain related traits.
-Bledsoe (2024) <doi:10.1016/j.ajhg.2024.06.002>.  In addition there are several
-visualization functions that generate summary plots and 2-dimensional
-visualizations of regional brain measures.  Mowinckel (2020).")
-    (license license:gpl3+)))
-
 (define-public r-neuroim2
   (package
     (name "r-neuroim2")
@@ -14779,13 +14743,13 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
 (define-public r-nestedlogit
   (package
     (name "r-nestedlogit")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nestedLogit" version))
        (sha256
-        (base32 "01bszi8my6hlx98mcr0i9l0562z552vryj8x6r0nryb3nmbalkp5"))))
+        (base32 "0y6fbyppycz5pahbc1qan0yg9yfar484770rignkz8psrjvgvf4j"))))
     (properties `((upstream-name . "nestedLogit")))
     (build-system r-build-system)
     (arguments
@@ -14793,6 +14757,7 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
+                             r-scales
                              r-effects
                              r-dplyr
                              r-car

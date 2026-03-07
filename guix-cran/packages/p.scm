@@ -2136,13 +2136,13 @@ candidates into a specific set of subregions.")
 (define-public r-pulmodatasets
   (package
     (name "r-pulmodatasets")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PulmoDataSets" version))
        (sha256
-        (base32 "0071aq1b2jkrd2i0l5q6q0amf8yx3qk85hh594gzc6lb9jiw9d9l"))))
+        (base32 "1qyw831g1bnsypbh6q9w5cgb24h8gmkl6f7l8g3363kr06bzzs3a"))))
     (properties `((upstream-name . "PulmoDataSets")))
     (build-system r-build-system)
     (arguments
@@ -2735,13 +2735,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.1.8")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "0xzcxfrw4aq5jg3y8vfmh5fv6ipa9q57p1gsvm5gzc73npn50fxh"))))
+        (base32 "1ywzrj7v26k7waqv4b6x397qws5cph3h5wvlp3827j013n4yvq0j"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (arguments
@@ -2750,12 +2750,8 @@ is for educational purposes only.")
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-rsvg
                              r-rjsonio
-                             r-rcurl
-                             r-png
                              r-magrittr
-                             r-magick
                              r-httr
                              r-dplyr))
     (home-page "https://selcukorkmaz.github.io/pubchemr-tutorial/")
@@ -10885,19 +10881,19 @@ aggregation of these tabular inputs.")
 (define-public r-primarycensored
   (package
     (name "r-primarycensored")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primarycensored" version))
        (sha256
-        (base32 "181id96yh7mgysp8ijw8dwnlsch3fsf9crl784vwyz93wdj8g73k"))))
+        (base32 "1ks3xjiwldsnjjy93hny1b2im2h4shjnl00hb3fqq9z562hhbapx"))))
     (properties `((upstream-name . "primarycensored")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-pracma r-lifecycle))
+    (propagated-inputs (list r-pracma))
     (native-inputs (list r-knitr))
     (home-page "https://primarycensored.epinowcast.org")
     (synopsis "Primary Event Censored Distributions")
@@ -20401,35 +20397,6 @@ visualization.")
 Urgency Analysis, a new method for the analysis of urgency in political texts.")
     (license license:expat)))
 
-(define-public r-polcaparallel
-  (package
-    (name "r-polcaparallel")
-    (version "1.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "poLCAParallel" version))
-       (sha256
-        (base32 "1d3hm5hi9mab2n4k3nwngv0zpg5g4zx8iqp9dkiakznzhb0fqxkr"))))
-    (properties `((upstream-name . "poLCAParallel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scatterplot3d r-rcpparmadillo r-rcpp r-polca
-                             r-mass))
-    (home-page "https://github.com/QMUL/poLCAParallel")
-    (synopsis "Polytomous Variable Latent Class Analysis Parallel")
-    (description
-     "This package provides a C++ reimplementation of @code{poLCA} - latent class
-analysis and latent class regression models for polytomous outcome variables,
-also known as latent structure analysis.  It attempts to reproduce results and
-be as similar as possible to the original code, while running faster, especially
-with multiple repetitions, by utilising multiple threads.  Further reading is
-available on the Queen Mary, University of London, IT Services Research blog
-<https://blog.hpc.qmul.ac.uk/speeding_up_r_packages/>.")
-    (license license:gpl2)))
-
 (define-public r-polca
   (package
     (name "r-polca")
@@ -20734,13 +20701,13 @@ dimensions\" <doi:10.1145%2F1278780.1278807>.")
 (define-public r-poissonbinomial
   (package
     (name "r-poissonbinomial")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoissonBinomial" version))
        (sha256
-        (base32 "0vv1hmskd1ri3p9w7hxvs62jghia76l5y0b1m7vh600qqyg45k30"))))
+        (base32 "0j6h8jlmml3kdhi66qlsk26dg15lvwhbld6sqjhqswpd5wv2pp3n"))))
     (properties `((upstream-name . "PoissonBinomial")))
     (build-system r-build-system)
     (arguments
@@ -20751,14 +20718,14 @@ dimensions\" <doi:10.1145%2F1278780.1278807>.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fj86/PoissonBinomial")
     (synopsis
-     "Efficient Computation of Ordinary and Generalized Poisson Binomial Distributions")
+     "Efficient Computation of Ordinary and Generalised Poisson Binomial Distributions")
     (description
      "Efficient implementations of multiple exact and approximate methods as described
 in Hong (2013) <doi:10.1016/j.csda.2012.10.006>, Biscarri, Zhao & Brunner (2018)
 <doi:10.1016/j.csda.2018.01.007> and Zhang, Hong & Balakrishnan (2018)
 <doi:10.1080/00949655.2018.1440294> for computing the probability mass,
 cumulative distribution and quantile functions, as well as generating random
-numbers for both the ordinary and generalized Poisson binomial distribution.")
+numbers for both the ordinary and generalised Poisson binomial distribution.")
     (license license:gpl3)))
 
 (define-public r-poisson-glm-mix
@@ -26135,13 +26102,13 @@ Plackett-Luce trees.  See the package website or vignette for further details.")
 (define-public r-placematchr
   (package
     (name "r-placematchr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "placematchr" version))
        (sha256
-        (base32 "1bmyycsg689bhbdjws7vmgg854psfxhxcj90xh0xbijkbnc7jnvw"))))
+        (base32 "0z3gbs6h5vxagfdhc94kwxmqla92d7df23vpij7m8a8raisrcpkp"))))
     (properties `((upstream-name . "placematchr")))
     (build-system r-build-system)
     (arguments
@@ -26156,12 +26123,11 @@ Plackett-Luce trees.  See the package website or vignette for further details.")
     (home-page "https://cran.r-project.org/package=placematchr")
     (synopsis "Normalize and Match City Names to NUTS Regions")
     (description
-     "Normalizes city names for Germany (DE) and Switzerland (CH) and matches them to
-NUTS 3 regions using provided crosswalks.  Features include comprehensive
-normalization rules, cascading matching logic (Exact NUTS -> Exact LAU ->
-Fuzzy), and single-source data synthesis.  The package implements the NUTS
-classification as described in the NUTS methodology (Eurostat (2021)
-<https://ec.europa.eu/eurostat/web/nuts>).")
+     "Normalizes city names for EEA countries and matches them to NUTS 3 regions using
+provided crosswalks.  Features include comprehensive normalization rules,
+cascading matching logic (Exact NUTS -> Exact LAU -> Fuzzy), and single-source
+data synthesis.  The package implements the NUTS classification as described in
+the NUTS methodology (Eurostat (2021) <https://ec.europa.eu/eurostat/web/nuts>).")
     (license license:expat)))
 
 (define-public r-plac
@@ -37721,31 +37687,6 @@ Schnurbus (2021) <doi:10.32614/RJ-2021-035>.  For more details on the IV-based
 estimation routines, see Fritsch, Pua, and Schnurbus (WP, 2024) and Han and
 Phillips (2010) <doi:10.1017/S026646660909063X>.")
     (license license:gpl2+)))
-
-(define-public r-pdxtrees
-  (package
-    (name "r-pdxtrees")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pdxTrees" version))
-       (sha256
-        (base32 "0vzsvz66gxwvgcb9vqzadi3n2r09sv8b930gv3lpwlxvxxjahcad"))))
-    (properties `((upstream-name . "pdxTrees")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mcconvil/pdxTrees")
-    (synopsis "Data Package of Portland, Oregon Trees")
-    (description
-     "An engaging collection of datasets from Portland Parks and Recreation.  The city
-of Portland inventoried every tree in over 170 parks and along the streets in 96
-neighborhoods.")
-    (license license:gpl3)))
 
 (define-public r-pdxpower
   (package

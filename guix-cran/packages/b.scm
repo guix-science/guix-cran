@@ -5335,6 +5335,30 @@ intelligence, natural language processing, cellular automata, and so on, to be
 run in their original form.")
     (license license:gpl3)))
 
+(define-public r-brar
+  (package
+    (name "r-brar")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brar" version))
+       (sha256
+        (base32 "154za7bmqj2p3pby8q0cmslgcggy2k5xj4sa9r1prqpzxlc3qzl2"))))
+    (properties `((upstream-name . "brar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://github.com/SamCH93/brar")
+    (synopsis "Null Hypothesis Bayesian Response-Adaptive Randomization")
+    (description
+     "This package implements Bayesian response-adaptive randomization methods based
+on Bayesian hypothesis testing for multi-arm settings (Pawel and Held, 2025,
+<doi:10.48550/@code{arXiv.2510.01734>}).")
+    (license license:gpl3)))
+
 (define-public r-braqca
   (package
     (name "r-braqca")
@@ -9618,6 +9642,42 @@ by a tree.  Method described in Ochoa and Storey (2021)
 values with arbitrary dependencies, based on the Dirichlet process prior
 distribution.")
     (license license:gpl2+)))
+
+(define-public r-bnpmix
+  (package
+    (name "r-bnpmix")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BNPmix" version))
+       (sha256
+        (base32 "0z9xlnr57kxmsz4a0256i0mxsrbfx97y9z2shhh5q0a391mvhn82"))))
+    (properties `((upstream-name . "BNPmix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggpubr
+                             r-ggplot2
+                             r-coda))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=BNPmix")
+    (synopsis "Bayesian Nonparametric Mixture Models")
+    (description
+     "This package provides functions to perform Bayesian nonparametric univariate and
+multivariate density estimation and clustering, by means of Pitman-Yor mixtures,
+and dependent Dirichlet process mixtures for partially exchangeable data.  See
+Corradin et al. (2021) <doi:10.18637/jss.v100.i15> for more details.")
+    (license (list license:lgpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-bnpa
   (package
@@ -14585,13 +14645,13 @@ ISBN:978-1-118-62561-3) Levin & Chen (1999) <doi:10.1080/00031305.1999.10474431>
 (define-public r-biostats
   (package
     (name "r-biostats")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biostats" version))
        (sha256
-        (base32 "1fcgx5f4hkml2cvkxg0n1h4mmxlhbmfjwz1yv6jd8vksdkawlb34"))))
+        (base32 "0xcp5d75qs4jf3w3j5rsxfs5wn11mnck4f9kh6n8w36a783928x2"))))
     (properties `((upstream-name . "biostats")))
     (build-system r-build-system)
     (arguments
@@ -15551,13 +15611,13 @@ Ontology, KEGG', CRAN and Bioconductor.")
 (define-public r-bioleak
   (package
     (name "r-bioleak")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioLeak" version))
        (sha256
-        (base32 "1ys2lwqx1fksfrym2s8kkp01s7yxxhwjihr6jcj0c14n3v5w5q3l"))))
+        (base32 "0na7757p17h36ba86yi7665vx2sjiqp5rr6h59d8dr83hgspy4cf"))))
     (properties `((upstream-name . "bioLeak")))
     (build-system r-build-system)
     (arguments
@@ -29774,13 +29834,13 @@ meta-analysis.")
 (define-public r-bayeschange
   (package
     (name "r-bayeschange")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesChange" version))
        (sha256
-        (base32 "0cd79g0l98gwnvxrz5rnnp4svalz9nryv2hgds1p3imnzqah9wjy"))))
+        (base32 "02k98skzhb1sp96xl4n0srl10cf5xs8s6pvji6y2s5y067606rc8"))))
     (properties `((upstream-name . "BayesChange")))
     (build-system r-build-system)
     (arguments
@@ -31580,13 +31640,13 @@ as well as custom uncertainty models and delay estimation methods.")
 (define-public r-basefun
   (package
     (name "r-basefun")
-    (version "1.2-5")
+    (version "1.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basefun" version))
        (sha256
-        (base32 "1ig9qrwm5yv5amvnklwyqiixnwjf2calcvc0y3wiymj3hjf7g0rn"))))
+        (base32 "1ga1czds08gwi4ha95hyxlp7asq27b2r5pnxa0kdf08ci02lqdsc"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
     (arguments
@@ -34464,13 +34524,13 @@ at a time.")
 (define-public r-babynamesil
   (package
     (name "r-babynamesil")
-    (version "0.0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babynamesIL" version))
        (sha256
-        (base32 "0g8p5afhsh0piip0i8jxd1s52bk4zb1z5bf3chdkcbxr8z0d42f6"))))
+        (base32 "1v7rz7669zz2r8kjp8kis92s2saacwqylvavhc2qiavj4xm5y65m"))))
     (properties `((upstream-name . "babynamesIL")))
     (build-system r-build-system)
     (arguments
@@ -34478,13 +34538,14 @@ at a time.")
       #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/aviezerl/babynamesIL")
-    (synopsis "Israel Baby Names 1948-2022")
+    (synopsis "Israel Baby Names 1949-2024")
     (description
-     "Israeli baby names provided by Israel's Central Bureau of Statistics.  The
-package contains only names used for at least 5 children in at least one gender
-and sector (\"Jewish\", \"Muslim\", \"Christian\", \"Druze\" and \"Other\").  Data was
-downloaded from:
-<https://www.cbs.gov.il/he/publications/@code{LochutTlushim/2020/%D7%A9%D7%9E%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%99%D7%9D.xlsx>}.")
+     "Israeli baby names provided by Israel's Central Bureau of Statistics
+(CBS/LAMAS).  Contains names used for at least 5 children in a given year,
+covering sectors \"Jewish\", \"Muslim\", \"Christian-Arab\", and \"Druze\" from
+1949-2024.  Legacy 1948 data and archived \"Other\" sector data are provided as
+separate datasets.  Primary data source: CBS Release 391/2025
+<https://www.cbs.gov.il/he/mediarelease/@code{DocLib/2025/391/11_25_391t1.xlsx>}.")
     (license license:cc0)))
 
 (define-public r-babynames

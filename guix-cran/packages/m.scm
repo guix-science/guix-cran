@@ -3462,13 +3462,13 @@ Chapman and Hall/CRC Press 2009.")
 (define-public r-multvardiv
   (package
     (name "r-multvardiv")
-    (version "1.0.14")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multvardiv" version))
        (sha256
-        (base32 "1qz2bkdslcx0p148mkb2bkd2as878sddm0r7a7rjknajr86szk1c"))))
+        (base32 "1jyfngkisx892zlal6008cvbqq3b9i1c6mg2l4p7gaixn5lwyl3k"))))
     (properties `((upstream-name . "multvardiv")))
     (build-system r-build-system)
     (arguments
@@ -3476,7 +3476,8 @@ Chapman and Hall/CRC Press 2009.")
       #:tests? #f))
     (propagated-inputs (list r-rgl r-mass r-data-table))
     (home-page "https://forge.inrae.fr/imhorphen/multvardiv")
-    (synopsis "Multivariate Probability Distributions, Statistical Divergence")
+    (synopsis
+     "Multivariate Generalized Gaussian Distribution, Multivariate t Distribution, Multivariate Cauchy Distribution, Statistical Divergence")
     (description
      "Multivariate generalized Gaussian distribution, Multivariate Cauchy
 distribution, Multivariate t distribution.  Distance between two distributions
@@ -5184,6 +5185,40 @@ problems, carries an academic license and is not available on CRAN, but may be
 downloaded from Github at <https://github.com/josherrickson/rrelaxiv/>.")
     (license license:expat)))
 
+(define-public r-multiobjectivemdp
+  (package
+    (name "r-multiobjectivemdp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiobjectiveMDP" version))
+       (sha256
+        (base32 "1g1k04njgdjsfjiqrsznn3s60i7qxrxksxnj5fgp66ndihn0lqfk"))))
+    (properties `((upstream-name . "multiobjectiveMDP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-prodlim
+                             r-pracma
+                             r-nsga2r
+                             r-lintools
+                             r-linprog
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=multiobjectiveMDP")
+    (synopsis "Solution Methods for Multi-Objective Markov Decision Processes")
+    (description
+     "Compendium of the most representative algorithms in print---vector-valued
+dynamic programming, linear programming, policy iteration, the weighting factor
+approach---for solving multi-objective Markov decision processes, with or
+without reward discount, over a finite or infinite horizon.  Mifrani, A. (2024)
+<doi:10.1007/s10479-024-06439-x>; Mifrani, A. & Noll, D.
+<doi:10.48550/@code{arXiv.2502.13697>}; Wakuta, K. (1995)
+<doi:10.1016/0304-4149(94)00064-Z>.")
+    (license license:gpl3)))
+
 (define-public r-multinttestfunc
   (package
     (name "r-multinttestfunc")
@@ -5457,6 +5492,29 @@ Stan'.")
 ISBN:978-3-319-24520-1).  The package was developed essentially as an extension
 to igraph'.")
     (license license:gpl3)))
+
+(define-public r-multinet
+  (package
+    (name "r-multinet")
+    (version "4.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multinet" version))
+       (sha256
+        (base32 "16h30zdhwgx5qjqq2dla0zkxpd88xd9pamyr0imyzlmr5w1jh8bk"))))
+    (properties `((upstream-name . "multinet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-rcolorbrewer r-igraph))
+    (home-page "https://cran.r-project.org/package=multinet")
+    (synopsis "Analysis and Mining of Multilayer Social Networks")
+    (description
+     "This package provides functions for the creation/generation and analysis of
+multilayer social networks <doi:10.18637/jss.v098.i08>.")
+    (license license:asl2.0)))
 
 (define-public r-multiness
   (package
@@ -13888,13 +13946,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move2
   (package
     (name "r-move2")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move2" version))
        (sha256
-        (base32 "03r6q8m7yfylyqkhfrm85cqrzgv3aa63lq4s7la7ajszbmaargyd"))))
+        (base32 "0visvhlw7j5632ps3534b51xrcc362a1cb5mb1lcs3h6gqv6408a"))))
     (properties `((upstream-name . "move2")))
     (build-system r-build-system)
     (arguments
@@ -15385,6 +15443,33 @@ L. Paquete, and T. StÃ¼tzle (2010) <doi:10.1007/978-3-642-02538-9_9>, and
 symmetric Vorob'ev expectation and deviation, M. Binois, D. Ginsbourger, O.
 Roustant (2015) <doi:10.1016/j.ejor.2014.07.032>, among others.")
     (license license:lgpl2.0+)))
+
+(define-public r-moonlit
+  (package
+    (name "r-moonlit")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moonlit" version))
+       (sha256
+        (base32 "1dmgnb1km0didv9dasd7bpz1hka77293jcb6h97nb3s9pi0mhz5n"))))
+    (properties `((upstream-name . "moonlit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-suncalc r-lubridate))
+    (home-page "https://github.com/msmielak/moonlit")
+    (synopsis "Predicting Moonlight Intensity for a Given Time and Location")
+    (description
+     "This package provides tools for predicting moonlight intensity on the ground
+based on the position of the moon, atmospheric conditions, and other factors.
+Provides functions to calculate moonlight intensity and related statistics for
+ecological and behavioral research, offering more accurate estimates than simple
+moon phase calculations.  The underlying model is described in Smielak (2023)
+<doi:10.1007/s00265-022-03287-2>.")
+    (license license:gpl3)))
 
 (define-public r-moonboot
   (package
@@ -21377,13 +21462,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.7-3")
+    (version "1.7-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "05rkx80wswrfl21xm2804jlll163m45mwr0ncpqd1bg83fi5cm77"))))
+        (base32 "1bnc8rmrk00cv9l6n9y4iq90dg90s688ifgi43l58vaz19dw1wc4"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -26275,13 +26360,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "1gz9znb45nka6q1jjv35c7sqkxfi7w0izgi3bhdn2xdy6zjwqi2s"))))
+        (base32 "068dbvs9drq0xq0hpqb1m1365sjl6mqis1klk45pj2a270zxgjvk"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
@@ -28175,13 +28260,13 @@ library or graphics device dependencies.")
 (define-public r-minipch
   (package
     (name "r-minipch")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniPCH" version))
        (sha256
-        (base32 "0kv6dg6wfbhs7z8g59kbgiq36rbkyc6bb5iy01dzlkdb34z7q3yc"))))
+        (base32 "0hxambhqz5j4c65wrzhcmgljmjx1v4s9s01bg1yrh7jd0lfyhixl"))))
     (properties `((upstream-name . "miniPCH")))
     (build-system r-build-system)
     (arguments
@@ -42020,19 +42105,19 @@ files and then reading those as data frames.")
 (define-public r-mdatools
   (package
     (name "r-mdatools")
-    (version "0.14.2")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdatools" version))
        (sha256
-        (base32 "0w54phv95cv1mvz2mq7bijw9b03byg7bvxz98a81dzc907j8r2bh"))))
+        (base32 "0kfcsqlamxwikfa5fywhfmfhcr17b1m1ryqvazw7y1mn4sfpyzl5"))))
     (properties `((upstream-name . "mdatools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix))
+    (propagated-inputs (list r-spam r-pcv))
     (home-page "https://mda.tools")
     (synopsis "Multivariate Data Analysis for Chemometrics")
     (description
@@ -48422,13 +48507,13 @@ variance estimator is presented in Mashreghi et al. (2016)
 (define-public r-mascarade
   (package
     (name "r-mascarade")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mascarade" version))
        (sha256
-        (base32 "1hgn9lfm507c4c8y5m424ia01976wzq8dmfapbgwsccl86bqaaq8"))))
+        (base32 "1hld97pa5xz0j1f2q6z7rc0d6lzrvm30nis89j781rkrr3fwnshi"))))
     (properties `((upstream-name . "mascarade")))
     (build-system r-build-system)
     (arguments
@@ -50678,6 +50763,47 @@ a wide range of legends useful for cartography, some of which may also be useful
 for other types of graphics.")
     (license license:gpl3)))
 
+(define-public r-maplamina
+  (package
+    (name "r-maplamina")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maplamina" version))
+       (sha256
+        (base32 "179dbjq1yvwvvx94dnpv3lndawlvhqkm21z14xpnjbf9r20bkzpj"))))
+    (properties `((upstream-name . "maplamina")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-sf r-htmlwidgets r-digest r-base64enc))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/jhumbl/maplamina")
+    (synopsis "High-Performance 'WebGL' Mapping Widgets for R")
+    (description
+     "This package creates interactive maps using @code{MapLibre} GL and deck.gl via
+htmlwidgets'.  Provides GPU-accelerated layers for points, lines and polygons,
+plus linked user interface components such as filters, views and summary cards
+for exploratory analysis and production dashboards.")
+    (license license:expat)))
+
 (define-public r-mapiso
   (package
     (name "r-mapiso")
@@ -50824,13 +50950,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "0fg8yq8m8g1kzr4i33fa17xz2gfncyryxz6nc713nb1jqwwnv6qq"))))
+        (base32 "1icjfk4yw55wzk5zmgczxm02qd3dgc8hznv26yndfhsi22sp8zl4"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -51714,64 +51840,6 @@ mixed data.  Methods based on van de Velden et al. (2024)
 includes functions to help researchers access, work across, and maintain
 ensembles of datasets on global governance called datacubes.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
-
-(define-public r-manureshed
-  (package
-    (name "r-manureshed")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "manureshed" version))
-       (sha256
-        (base32 "0k5lpbdbz3l3qlwhgr4lb55ccgdhc55zv1sjlifs2v1xbn5i21bq"))))
-    (properties `((upstream-name . "manureshed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list proj geos gdal))
-    (propagated-inputs (list r-tigris
-                             r-tidyr
-                             r-sf
-                             r-scales
-                             r-rlang
-                             r-magrittr
-                             r-jsonlite
-                             r-igraph
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://osf.io/g39xa/")
-    (synopsis
-     "Spatiotemporal Nutrient Balance Analysis Across Agricultural and Municipal Systems")
-    (description
-     "This package provides a comprehensive framework for analyzing agricultural
-nutrient balances across multiple spatial scales (county, HUC8', HUC2') with
-integration of wastewater treatment plant ('WWTP') effluent loads for both
-nitrogen and phosphorus.  Supports classification of spatial units as nutrient
-sources, sinks, or balanced areas based on agricultural surplus and deficit
-calculations.  Includes visualization tools, spatial transition probability
-analysis, and nutrient flow network mapping.  Built-in datasets include
-agricultural nutrient balance data from the Nutrient Use Geographic Information
-System ('@code{NuGIS}'; The Fertilizer Institute and Plant Nutrition Canada,
-1987-2016) <https://nugis.tfi.org/tabular_data/> and U.S. Environmental
-Protection Agency ('EPA') wastewater discharge data from the ECHO Discharge
-Monitoring Report ('DMR') Loading Tool (2007-2016)
-<https://echo.epa.gov/trends/loading-tool/water-pollution-search>.  Data are
-downloaded on demand from the Open Science Framework ('OSF') repository to
-minimize package size while maintaining full functionality.  The integrated
-manureshed framework methodology is described in Akanbi et al. (2025)
-<doi:10.1016/j.resconrec.2025.108697>.  Designed for nutrient management
-planning, environmental analysis, and circular economy research at
-watershed/administrative to national scales.  This material is based upon
-financial support by the National Science Foundation, EEC Division of
-Engineering Education and Centers, NSF Engineering Research Center for Advancing
-Sustainable and Distributed Fertilizer Production (CASFER), NSF 20-553 Gen-4
-Engineering Research Centers award 2133576.  We thank Dr. Robert D. Sabo (U.S.
-Environmental Protection Agency) for his valuable contributions to the
-conceptual development and review of this work.")
-    (license license:expat)))
 
 (define-public r-mantis
   (package

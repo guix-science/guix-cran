@@ -34,6 +34,8 @@
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages documentation)
+  #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages chemistry)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages mpi)
   #:use-module (gnu packages base)
@@ -2641,13 +2643,13 @@ fit, forecast, simulation, inference and plotting.")
 (define-public r-rucrdtw
   (package
     (name "r-rucrdtw")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rucrdtw" version))
        (sha256
-        (base32 "0qa6jw6g8ax5l2js09px4chy4n0ibvprj0ygdh3iwf1pbskw3kma"))))
+        (base32 "058bryc0126abn2dflr1xnkcw2rdd0vw4m2hffn9l58jn7aq4x69"))))
     (properties `((upstream-name . "rucrdtw")))
     (build-system r-build-system)
     (arguments
@@ -6359,6 +6361,34 @@ via cross-fitting\" <doi:10.1101/2023.02.06.527391>.")
 statements.")
     (license license:gpl2)))
 
+(define-public r-rsqlite-toolkit
+  (package
+    (name "r-rsqlite-toolkit")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSQLite.toolkit" version))
+       (sha256
+        (base32 "0r3b72pm7nd8rw3wab2r4j69irkv2hkvqrsnkwkf5487iry75nxm"))))
+    (properties `((upstream-name . "RSQLite.toolkit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsqlite r-openxlsx2 r-dbi r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fab-algo/RSQLite.toolkit")
+    (synopsis "Load Data in SQLite from Tabular Files")
+    (description
+     "This package provides a lightweight wrapper around the RSQLite package for
+streamlined loading of data from tabular files (i,e.  text delimited files like
+Comma Separated Values and Tab Separated Values, Microsoft Excel, and Arrow
+Inter-process Communication files) in SQLite databases.  Includes helper
+functions for inspecting the structure of the input files, and some functions to
+simplify activities on the SQLite tables.")
+    (license license:gpl3+)))
+
 (define-public r-rsql
   (package
     (name "r-rsql")
@@ -6906,27 +6936,27 @@ database when the data are required.")
 (define-public r-rsoi
   (package
     (name "r-rsoi")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsoi" version))
        (sha256
-        (base32 "0x22mh27bsjrpc90dss59ycib6qlpvk9vb9p07fxlk6b68vdfi06"))))
+        (base32 "1baqf0lpas2n2s6ba0a6y4nygb24chzlnv5s7df2w8n9rrqnndl5"))))
     (properties `((upstream-name . "rsoi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-memoise r-curl))
-    (home-page "https://github.com/boshek/rsoi/")
+    (home-page "https://boshek.github.io/rsoi/")
     (synopsis
      "Import Various Northern and Southern Hemisphere Climate Indices")
     (description
      "Downloads Southern Oscillation Index, Oceanic Nino Index, North Pacific Gyre
 Oscillation data, North Atlantic Oscillation and Arctic Oscillation.  Data
 sources are described in the help files for each function.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-rsofun
   (package
@@ -12294,26 +12324,26 @@ of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 (define-public r-rpdbapi
   (package
     (name "r-rpdbapi")
-    (version "2.1.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPDBapi" version))
        (sha256
-        (base32 "1h86dlsmsqwcipkf16rw6l4cfg621idxky4rl77lqmhc5ijjk2dx"))))
+        (base32 "0ywy8ycfwms4qprfjlfs1a8napw280wwsh921ybx8vl32kvgvpjd"))))
     (properties `((upstream-name . "rPDBapi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-testthat
                              r-purrr
                              r-magrittr
                              r-jsonlite
                              r-httr
                              r-dplyr
                              r-bio3d))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rPDBapi")
     (synopsis "Comprehensive Interface for Accessing the Protein Data Bank")
     (description
@@ -12323,7 +12353,7 @@ for searching and retrieving a diverse range of data types from the PDB'.  It
 includes advanced functionalities like BLAST and sequence motif queries.  Built
 upon the existing XML-based API of the PDB', it simplifies the creation of
 custom requests, thereby enhancing usability and flexibility for researchers.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-rpdb
   (package
@@ -17700,6 +17730,32 @@ session, shiny application or rmarkdown document.")
 regularization parameter described in Pedro Cisneros-Velarde, Alexander Petersen
 and Sang-Yun Oh (2020) <http://proceedings.mlr.press/v108/cisneros20a.html>.")
     (license license:gpl2)))
+
+(define-public r-robscale
+  (package
+    (name "r-robscale")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robscale" version))
+       (sha256
+        (base32 "182x7b4dhl0yxvs0vlbjd7hii454g3hf3n58hz1jlcv23fvlgdi8"))))
+    (properties `((upstream-name . "robscale")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/davdittrich/robscale")
+    (synopsis "Fast Robust Estimation in Very Small Samples")
+    (description
+     "High-performance C++ implementation (via Rcpp') of the robust location and scale
+M-estimators described in Rousseeuw & Verboven (2002)
+<doi:10.1016/S0167-9473(02)00078-6> for very small samples.  Provides
+numerically identical results to the revss package with significantly improved
+performance through sorting networks and compiled iteration loops.")
+    (license license:expat)))
 
 (define-public r-robsa
   (package
@@ -24944,13 +25000,13 @@ are meant to be read by JDemetra+ Graphical User Interface.")
 (define-public r-rjd3jars
   (package
     (name "r-rjd3jars")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjd3jars" version))
        (sha256
-        (base32 "10xcqfxns0nw00fqlj88d3m276v1implwmf829gkssp2zsikrcsq"))))
+        (base32 "08dcbyiia6fgylz985yi7zhxw97i544v8jhb6yiy45rp4ggkfccf"))))
     (properties `((upstream-name . "rjd3jars")))
     (build-system r-build-system)
     (arguments
@@ -37466,6 +37522,37 @@ Change Point Detection based on the segmented package by Muggeo (2024)
 <https://cran.r-project.org/package=segmented>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-reliacoef
+  (package
+    (name "r-reliacoef")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reliacoef" version))
+       (sha256
+        (base32 "16vm5avbigrn8a7df21mr10kv9cnkx38j93s0jpv1l1sg99paqxb"))))
+    (properties `((upstream-name . "reliacoef")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-matrixcalc r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=reliacoef")
+    (synopsis "Unidimensional and Multidimensional Reliability Coefficients")
+    (description
+     "Calculates and compares various reliability coefficients for unidimensional and
+multidimensional scales.  Supported unidimensional estimators include
+coefficient alpha, congeneric reliability, the Gilmer-Feldt coefficient, Feldt's
+classical congeneric reliability, Hancock's H, Heise-Bohrnstedt's omega,
+Kaiser-Caffrey's alpha, and Ten Berge and Zegers mu series.  Multidimensional
+estimators include stratified alpha, maximal reliability, correlated factors
+reliability, second-order factor reliability, and bifactor reliability.  See Cho
+(2021) <doi:10.1007/s11336-021-09801-1>, Cho (2024) <doi:10.1037/met0000475>,
+Cho (2025) <doi:10.1037/met0000525>.")
+    (license license:gpl3+)))
+
 (define-public r-reliabilitytheory
   (package
     (name "r-reliabilitytheory")
@@ -38682,6 +38769,45 @@ main emphasis of this package is on regularization techniques for fitting HMMs.
 Additionally, it provides an implementation for fitting HMMs without
 regularization, referencing Zucchini et al. (2017, ISBN:9781315372488).")
     (license license:gpl3+)))
+
+(define-public r-regmedint
+  (package
+    (name "r-regmedint")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regmedint" version))
+       (sha256
+        (base32 "0ksw40p5wd5zg9yv8al8bpzklhazp4z4jgswx1wp2vyj7d8dsm1x"))))
+    (properties `((upstream-name . "regmedint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-sandwich
+                             r-matrix
+                             r-mass
+                             r-deriv
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://kaz-yos.github.io/regmedint/")
+    (synopsis
+     "Regression-Based Causal Mediation Analysis with Interaction and Effect Modification Terms")
+    (description
+     "This is an extension of the regression-based causal mediation analysis first
+proposed by Valeri and @code{VanderWeele} (2013) <doi:10.1037/a0031034> and
+Valeri and @code{VanderWeele} (2015) <doi:10.1097/EDE.0000000000000253>).  It
+supports including effect measure modification by covariates(treatment-covariate
+and mediator-covariate product terms in mediator and outcome regression models)
+as proposed by Li et al (2023) <doi:10.1097/EDE.0000000000001643>.  It also
+accommodates the original SAS macro and PROC CAUSALMED procedure in SAS when
+there is no effect measure modification.  Linear and logistic models are
+supported for the mediator model.  Linear, logistic, loglinear, Poisson,
+negative binomial, Cox, and accelerated failure time (exponential and Weibull)
+models are supported for the outcome model.")
+    (license license:gpl2)))
 
 (define-public r-regmed
   (package
@@ -45001,6 +45127,33 @@ designs with multiple cutoffs, based on Zhang et al. (2022)
 perform no worse than the existing cutoffs in terms of overall outcomes.  The
 rdlearn package also includes features for visualizing the learned cutoffs
 relative to the baseline and conducting sensitivity analyses.")
+    (license license:expat)))
+
+(define-public r-rdkitpyr
+  (package
+    (name "r-rdkitpyr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdkitpyr" version))
+       (sha256
+        (base32 "1xpr4glkb4phwbsxizf3i1z0afsp49i2qldn080rnpz70ln4454k"))))
+    (properties `((upstream-name . "rdkitpyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list rdkit python python-numpy))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://mass-spec.ru/projects/cheminformatics/rdkitpyr/eng/")
+    (synopsis "Task-Oriented Cheminformatics in R Using 'RDKit' via 'Python'")
+    (description
+     "This package provides a task-oriented R interface to the RDKit
+<https://www.rdkit.org> library through its Python API via reticulate'.  The
+package offers high-level cheminformatics functionality, including molecule
+parsing, descriptor calculation, and fingerprint generation without replicating
+the native structure of RDKit'.")
     (license license:expat)))
 
 (define-public r-rdiversity
@@ -53459,29 +53612,6 @@ provided by states about water quality assessments conducted under federal Clean
 Water Act requirements.  ATTAINS information and API information is available at
 <https://www.epa.gov/waterdata/attains>.")
     (license license:expat)))
-
-(define-public r-rato
-  (package
-    (name "r-rato")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rato" version))
-       (sha256
-        (base32 "0n24kbcia2z4v06pf258g2s3y5qln5ybzh2vqxd2v3l9k8chk0zb"))))
-    (properties `((upstream-name . "Rato")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph r-desolve))
-    (home-page "https://cran.r-project.org/package=Rato")
-    (synopsis "Resilience Analysis Toolkit (RATO)")
-    (description
-     "Collection of tools for the analysis of the resilience of dynamic networks.
-Created as a classroom project.")
-    (license license:gpl3)))
 
 (define-public r-ratios
   (package

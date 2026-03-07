@@ -939,6 +939,32 @@ generalised linear models, linear models with negative constraints, generalised
 additive models,shape constrained additive models, and I-splines.")
     (license license:gpl3)))
 
+(define-public r-zeroonedists
+  (package
+    (name "r-zeroonedists")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZeroOneDists" version))
+       (sha256
+        (base32 "0hagc4xgyxscz4gdg0wk2j7df07jqjf2gy39rmk4kfs6v7n264hj"))))
+    (properties `((upstream-name . "ZeroOneDists")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gamlss-dist r-gamlss))
+    (home-page "https://github.com/fhernanb/ZeroOneDists")
+    (synopsis "One Zero Statistical Distributions")
+    (description
+     "Implementation of new statistical distributions in (0, 1) interval.  Each
+distribution includes the traditional functions as well as an additional
+function called the family function, which can be used to estimate parameters
+using Generalized Additive Models for Location, Scale and Shape, GAMLSS by Rigby
+& Stasinopoulos (2005) <doi:10.1111/j.1467-9876.2005.00510.x>.")
+    (license license:expat)))
+
 (define-public r-zeroeqpart
   (package
     (name "r-zeroeqpart")

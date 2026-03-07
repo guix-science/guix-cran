@@ -18772,6 +18772,29 @@ that they do not overlap as in ggrepel'.  The algorithm used is a variation
 around the one of wordcloud2.js'.")
     (license license:gpl3)))
 
+(define-public r-ggwidth
+  (package
+    (name "r-ggwidth")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggwidth" version))
+       (sha256
+        (base32 "1hkcq2116fzmf9saa55ay20pjmhgn0i95jmjwwb4v8g9r2i47mxf"))))
+    (properties `((upstream-name . "ggwidth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/davidhodge931/ggwidth")
+    (synopsis "Standardise 'ggplot2' Geom Width")
+    (description
+     "Standardise the width in ggplot2 geoms to appear visually consistent across
+plots with different numbers of categories, panel dimensions, and orientations.")
+    (license license:expat)))
+
 (define-public r-ggvolcano
   (package
     (name "r-ggvolcano")
@@ -23366,13 +23389,13 @@ projections of a latin hypercube design.")
 (define-public r-ggdnavis
   (package
     (name "r-ggdnavis")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggDNAvis" version))
        (sha256
-        (base32 "1qpy0ampyiswdq5if9sw5fhpbljpw1z3hn0f7b573bn0nvbqc9fi"))))
+        (base32 "1m76bhfnrh7dzp8mzzmffrw6mnls48swkyzwqgigdicg0dh3k2i6"))))
     (properties `((upstream-name . "ggDNAvis")))
     (build-system r-build-system)
     (arguments
@@ -23385,7 +23408,10 @@ projections of a latin hypercube design.")
                              r-png
                              r-magick
                              r-ggplot2
-                             r-dplyr))
+                             r-ggnewscale
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://ejade42.github.io/ggDNAvis/")
     (synopsis
      "'ggplot2'-Based Tools for Visualising DNA Sequences and Modifications")
@@ -23393,12 +23419,13 @@ projections of a latin hypercube design.")
      "Uses ggplot2 to visualise either (a) a single DNA/RNA sequence split across
 multiple lines, (b) multiple DNA/RNA sequences, each occupying a whole line, or
 (c) base modifications such as DNA methylation called by modified bases models
-in Dorado or Guppy.  Functions starting with @code{visualise_<something>()} are
-the main plotting functions, and functions starting with
-@code{extract_<something>()} are key helper functions for reading files and
-reformatting data.  Source code is available at
-<https://github.com/ejade42/@code{ggDNAvis>} and a full non-expert user guide is
-available at <https://ejade42.github.io/@code{ggDNAvis/>}.")
+in Dorado or Guppy.  Functions starting with @code{visualise_<>()} are the main
+plotting functions, and functions starting with @code{extract_and_sort_<>()} are
+key helper functions for reading files and reformatting data.  Source code is
+available at <https://github.com/ejade42/@code{ggDNAvis>}, a full non-expert
+user guide is available at <https://ejade42.github.io/@code{ggDNAvis/>}, and an
+interactive web-app version of the software is available at
+<https://ejade42.github.io/@code{ggDNAvis/articles/interactive_app.html>}.")
     (license license:expat)))
 
 (define-public r-ggdmcprior

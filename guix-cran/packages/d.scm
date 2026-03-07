@@ -11022,13 +11022,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "0055faqqw07119a2x15fvip13921r6w54ypvwn3x6569xsb6jl79"))))
+        (base32 "084jgmdj73nxcb563jab1sa8bm1k588x1y5n5mm43wvhzbjkx5zm"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (arguments
@@ -11451,13 +11451,13 @@ use dlib through Rcpp'.")
 (define-public r-dlfm
   (package
     (name "r-dlfm")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DLFM" version))
        (sha256
-        (base32 "1h2ja710x4hzgsmhhgnlp4lgs04fznpbgxps6a7wnawi0g5phhd3"))))
+        (base32 "1synvz9ww9mwci6rrap99cyfiipram65hkviam33pjnx5gw7wf79"))))
     (properties `((upstream-name . "DLFM")))
     (build-system r-build-system)
     (arguments
@@ -17710,13 +17710,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0c0zjjwx791l3l5gwvpn79iaph2sg600l2spcpnp14gpms69yf91"))))
+        (base32 "14xhv0whgy72kq3cadifjl259kl6kzn19nbr97wy38z90p93iakb"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (arguments

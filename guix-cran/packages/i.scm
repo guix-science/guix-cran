@@ -2161,13 +2161,13 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.6.1-4")
+    (version "0.6.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotree" version))
        (sha256
-        (base32 "14vn0460qnaf91030r15b3jr2w23hr3sqbpcbdg9n0pv1xz0vs1j"))))
+        (base32 "1swixi6h92jdyr7kbl8cj39ypxi099vh4q7a3d6sz76jp38fyk3r"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (arguments
@@ -5805,24 +5805,26 @@ with some modifications.")
 (define-public r-ipd
   (package
     (name "r-ipd")
-    (version "0.1.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipd" version))
        (sha256
-        (base32 "0yl6zcffpkmg2032mfpm6cikvnqsc3q3llx36spcpla7a57z5r0r"))))
+        (base32 "10ycjl0d2655xynf3x6327gnbp0slssvbmj0r254ymmg6g5jfjz8"))))
     (properties `((upstream-name . "ipd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ranger
+    (propagated-inputs (list r-tibble
+                             r-ranger
                              r-randomforest
                              r-mass
                              r-generics
                              r-gam
-                             r-caret))
+                             r-caret
+                             r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipd-tools/ipd")
     (synopsis "Inference on Predicted Data")
@@ -5831,8 +5833,8 @@ with some modifications.")
 recent methods, where for a subset of the data, the outcomes have been predicted
 by an algorithm.  Provides a wrapper function with specified defaults for the
 type of model and method to be used for estimation and inference.  Further
-provides methods for tidying and summarizing results.  Salerno et al., (2024)
-<doi:10.48550/@code{arXiv.2410.09665>}.")
+provides methods for tidying and summarizing results.  Salerno et al., (2025)
+<doi:10.1093/bioinformatics/btaf055>.")
     (license license:expat)))
 
 (define-public r-ipcwk
@@ -11812,13 +11814,13 @@ S., Pook, T. Geibel, J. and Reimer, C. (2023) <doi:10.1186/s12711-023-00807-0>."
 (define-public r-indexthis
   (package
     (name "r-indexthis")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "indexthis" version))
        (sha256
-        (base32 "18l87ifgglz5qpjwnj0wklwmpyzihhil9iwy34krhrbpkg6r30p8"))))
+        (base32 "044p0181sj14kcrynvdyj09kkl6i9dl7n7dzy0brp06ahg08bnij"))))
     (properties `((upstream-name . "indexthis")))
     (build-system r-build-system)
     (arguments
@@ -19235,13 +19237,13 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site
 (define-public r-icesat2r
   (package
     (name "r-icesat2r")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IceSat2R" version))
        (sha256
-        (base32 "17rpmlx1s5l9w28ik5fw5n5azx61ahqzx05fywsqhh5jv0i9kgha"))))
+        (base32 "009vigj0v5cjk3h9lj5zvfk99fpy5q97n3mdhd8aa4dhds774wsl"))))
     (properties `((upstream-name . "IceSat2R")))
     (build-system r-build-system)
     (arguments
@@ -20002,6 +20004,32 @@ Several of the implemented approaches are based on the work of Donner and Zou
      "Assists in generating binary clustered data, estimates of Intracluster
 Correlation coefficient (ICC) for binary response in 16 different methods, and 5
 different types of confidence intervals.")
+    (license license:gpl2+)))
+
+(define-public r-iccbeta
+  (package
+    (name "r-iccbeta")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iccbeta" version))
+       (sha256
+        (base32 "0az10rv16m81fy1bvks3260d50j48jps7a0bc5la1pjx1bn6m1lx"))))
+    (properties `((upstream-name . "iccbeta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lme4))
+    (home-page "https://tmsalab.github.io/iccbeta/")
+    (synopsis
+     "Multilevel Model Intraclass Correlation for Slope Heterogeneity")
+    (description
+     "This package provides a function and vignettes for computing an intraclass
+correlation described in Aguinis & Culpepper (2015)
+<doi:10.1177/1094428114563618>.  This package quantifies the share of variance
+in a dependent variable that is attributed to group heterogeneity in slopes.")
     (license license:gpl2+)))
 
 (define-public r-iccalib

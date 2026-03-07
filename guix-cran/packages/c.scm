@@ -5136,13 +5136,13 @@ the model fit, test the model fit etc.).")
 (define-public r-csdownscale
   (package
     (name "r-csdownscale")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSDownscale" version))
        (sha256
-        (base32 "1j9y7jxdqx5s1k7vrm3pvbx19x2m8cnv3l65q4fya2xw5ws4h75m"))))
+        (base32 "0sib7xx67csmkrihb2iisvjadm7mqr7350s2366nzwa850n63y1s"))))
     (properties `((upstream-name . "CSDownscale")))
     (build-system r-build-system)
     (arguments
@@ -23885,13 +23885,13 @@ concept maps and concept landscapes (sets of concept maps).")
 (define-public r-comat
   (package
     (name "r-comat")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comat" version))
        (sha256
-        (base32 "1x6q72dag0nm630rgj57a1ryimflvzw1g5jw3kcyzxd9gbyyz4vi"))))
+        (base32 "1gxdrx9cl52167zfilbyj92v3ipmhgphmni700skwd8hh65s5z2h"))))
     (properties `((upstream-name . "comat")))
     (build-system r-build-system)
     (arguments
@@ -25710,13 +25710,13 @@ Cap <https://coinmarketcap.com/api/>.")
 (define-public r-coimp
   (package
     (name "r-coimp")
-    (version "2.1.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoImp" version))
        (sha256
-        (base32 "0i8ivigyi1s5ap1m2rg1826pj97fxc4n2n4l8j4b8jrkfvylwgpm"))))
+        (base32 "0vk3qkmawpb1pbc0vyxsdab6bjqmb0rb2sg78ka56k5z53yn47bc"))))
     (properties `((upstream-name . "CoImp")))
     (build-system r-build-system)
     (arguments
@@ -27541,19 +27541,19 @@ and continuous outcomes.")
 (define-public r-coda-plot
   (package
     (name "r-coda-plot")
-    (version "0.1.10")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.plot" version))
        (sha256
-        (base32 "1c6wibkpgn5na8jc2sag5rgiq2yyr16xsxalsrmc4pcyvxhp9vg2"))))
+        (base32 "18fr7gj4z4v5zjp38lyvcvawysbyplrwrfdzvxvyhzvzr9pilbjj"))))
     (properties `((upstream-name . "coda.plot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-coda-base))
+    (propagated-inputs (list r-ggrepel r-ggplot2 r-coda-base))
     (home-page "https://cran.r-project.org/package=coda.plot")
     (synopsis "Plots for Compositional Data")
     (description
@@ -28618,13 +28618,13 @@ information from the Chinese ID number.")
 (define-public r-cnefetools
   (package
     (name "r-cnefetools")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnefetools" version))
        (sha256
-        (base32 "0qxk49s9l4jch995x4wbg48ia325ss3y80nf56lag4b1277r2gyc"))))
+        (base32 "1r30r8gr0b4179i99ma01m3c9lxbj44xh85j74k904j5pgcfn5ly"))))
     (properties `((upstream-name . "cnefetools")))
     (build-system r-build-system)
     (arguments
@@ -40719,6 +40719,30 @@ eye.  Additionally, the checkthat package is optimized to work within tidyverse
 data manipulation pipelines.")
     (license license:expat)))
 
+(define-public r-checkstring
+  (package
+    (name "r-checkstring")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "checkstring" version))
+       (sha256
+        (base32 "0w59lmq20j08xklls2vcjpk115scz4zhiw9i396080ppjir0sx4p"))))
+    (properties `((upstream-name . "checkstring")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://m-muecke.github.io/checkstring/")
+    (synopsis "Common String Format Validation")
+    (description
+     "Validates common string formats including financial identifiers (ISIN, CUSIP,
+SEDOL, FIGI, IBAN, LEI), publication identifiers (ISBN, ISSN, DOI, ORCID), and
+general formats (email, UUID, URL, semver), with check digit verification where
+applicable.")
+    (license license:expat)))
+
 (define-public r-checkluhn
   (package
     (name "r-checkluhn")
@@ -42477,13 +42501,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.31")
+    (version "1.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "09q6wqmj30rdvwndcdfh995mpqqpl4gvffs2km0y3p04ysm2hq5s"))))
+        (base32 "0nblfvpnc3nmlvmwyl87wprf7zi3sbxcqsyy525b4913fzsh759v"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments
@@ -46667,13 +46691,13 @@ in a data set.")
 (define-public r-cclrforr
   (package
     (name "r-cclrforr")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ccLRforR" version))
        (sha256
-        (base32 "17b1mlp5jmlq8fgaikcrg1l6jqxv8prkqcwnzcfsvqcadmyx4x15"))))
+        (base32 "0k9q7zb2w2pjdspbh6q6ph34xxrng8bfxdbabsk8bpky1xz7b4ma"))))
     (properties `((upstream-name . "ccLRforR")))
     (build-system r-build-system)
     (arguments

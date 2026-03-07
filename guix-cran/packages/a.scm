@@ -1591,6 +1591,41 @@ validity.  Checks if it is used on @code{GitHub}', CRAN and Bioconductor'.
 Checks for unintended meanings by querying Wiktionary and Wikipedia.")
     (license license:expat)))
 
+(define-public r-av1r
+  (package
+    (name "r-av1r")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AV1R" version))
+       (sha256
+        (base32 "0gsv25qvg0r3pp4gy2hdni970794gr401h8pgclbsmrqffa7wskv"))))
+    (properties `((upstream-name . "AV1R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/Zabis13/AV1R")
+    (synopsis "'AV1' Video Encoding for Biological Microscopy Data")
+    (description
+     "Converts legacy microscopy video formats (H.264/H.265, AVI/MJPEG, TIFF stacks)
+to the modern AV1 codec with minimal quality loss.  Typical use cases include
+compressing large TIFF stacks from confocal microscopy and time-lapse
+experiments from hundreds of gigabytes to manageable sizes, re-encoding MP4
+files exported from @code{CellProfiler}', @code{ImageJ'/'Fiji}', and microscope
+software with approximately 2x better compression at the same visual quality,
+and converting legacy AVI (MJPEG) and H.265 recordings to a single patent-free
+format suited for long-term archival.  Automatically selects the best available
+backend: GPU hardware acceleration via Vulkan VK_KHR_VIDEO_ENCODE_AV1 (tested on
+AMD RDNA4; bundled headers, builds with any Vulkan SDK >= 1.3.275), with
+automatic fallback to CPU encoding through FFmpeg and SVT-AV1'.  Audio tracks
+are preserved automatically.  Provides a simple R API for batch conversion of
+entire experiment folders.")
+    (license license:expat)))
+
 (define-public r-av
   (package
     (name "r-av")
@@ -4892,19 +4927,19 @@ and economics.")
 (define-public r-asymmetry
   (package
     (name "r-asymmetry")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asymmetry" version))
        (sha256
-        (base32 "0yyz7v71pa8mcjarn3m94zmid7jk1i02knx0accn9kkziyy0isz3"))))
+        (base32 "0dksw2f615z9456fmlkhy8l3l4alhaas10caip73k8j7ia3n8gn6"))))
     (properties `((upstream-name . "asymmetry")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-smacof r-gplots))
+    (propagated-inputs (list r-smacof))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=asymmetry")
     (synopsis "Multidimensional Scaling of Asymmetric Proximities")
@@ -4918,9 +4953,9 @@ matrix is a student migration table, where the rows correspond to the countries
 of origin of the students and the columns to the destination countries.  This
 package provides algorithms for three multidimensional scaling models, the
 slide-vector model, a scaling model with unique dimensions and the asymscal
-model.Furthermore, some other procedures, such as a heat map for skew-symmetric
-data, and the decomposition of asymmetry are also provided for the exploratory
-analysis of asymmetric tables.")
+model.  Furthermore, some other procedures, such as a heat map for
+skew-symmetric data, and the decomposition of asymmetry are also provided for
+the exploratory analysis of asymmetric tables.")
     (license license:gpl3+)))
 
 (define-public r-asymmetricsords
@@ -11709,6 +11744,38 @@ effects of interest.  Details are described in Yushu Shi, Liangliang Zhang,
 Kim-Anh Do, Christine Peterson and Robert Jenq (2020) Bioinformatics, Volume 36,
 Issue 13, 4099-4101.")
     (license license:gpl2+)))
+
+(define-public r-apcinteraction
+  (package
+    (name "r-apcinteraction")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APCinteraction" version))
+       (sha256
+        (base32 "0fvw94sygyzpcjlgi1rgzqjm6jsdgnzcmhhq4wp73hw4km2r51xg"))))
+    (properties `((upstream-name . "APCinteraction")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-pbapply r-magrittr r-dplyr))
+    (home-page "https://github.com/tranbaokhue/APCinteraction")
+    (synopsis
+     "Nonparametric Interaction Tests in Balanced Two-Way ANOVA Models")
+    (description
+     "This package provides novel nonparametric tests, APCSSA and APCSSM', for
+interaction in two-way ANOVA designs with balanced replications using all
+possible comparisons.  These statistics extend previous methods, allow greater
+flexibility, and demonstrate higher power in detecting interactions for
+non-normal data.  The package includes optimized functions for computing these
+test statistics, generating interaction plots, and simulating their null
+distributions.  The companion package AP@code{CinteractionData} is available on
+@code{GitHub} <https://github.com/tranbaokhue/AP@code{CinteractionData>}.
+Methods are described and compared empirically in Tran, Wagaman, Nguyen,
+Jacobson, and Hartlaub (2024) <doi:10.48550/@code{arXiv.2410.04700>}.")
+    (license license:expat)))
 
 (define-public r-apci
   (package
@@ -19319,13 +19386,13 @@ such as exposure time and pollutant concentration.")
 (define-public r-aire-zmvm
   (package
     (name "r-aire-zmvm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aire.zmvm" version))
        (sha256
-        (base32 "10x22n9cjr2zcjm84j6l3i9lywfw744giww4h2ki3iq3v4qli09y"))))
+        (base32 "0brwpabpc1x18dkjhk1v8mrfbh1y9556vkzh80myac2bh4fr8ibm"))))
     (properties `((upstream-name . "aire.zmvm")))
     (build-system r-build-system)
     (arguments
@@ -20693,6 +20760,51 @@ comparison procedures and several non-parametric tests comparison, biodiversity
 indexes and consensus cluster.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-agregr
+  (package
+    (name "r-agregr")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "agregR" version))
+       (sha256
+        (base32 "1hcij4z4vkr4z3baj8ksva5zbaazxxasz3jacr44xavm612cv4am"))))
+    (properties `((upstream-name . "agregR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-systemfonts
+                             r-sysfonts
+                             r-stringr
+                             r-stringi
+                             r-showtext
+                             r-scales
+                             r-readr
+                             r-ragg
+                             r-purrr
+                             r-lubridate
+                             r-instantiate
+                             r-ggplot2
+                             r-ggdist
+                             r-dplyr
+                             r-cli))
+    (home-page "https://rnmag.github.io/agregR/")
+    (synopsis
+     "Bayesian State-Space Aggregation of Brazilian Presidential Polls")
+    (description
+     "This package provides a set of dynamic measurement models to estimate latent
+vote shares from noisy polling sources.  The models build on Jackman (2009,
+ISBN: 9780470011546) and feature specialized methods for bias adjustment based
+on past performance and correction for asymmetric errors based on candidate
+political alignment.")
+    (license license:expat)))
+
 (define-public r-agreementinterval
   (package
     (name "r-agreementinterval")
@@ -21896,13 +22008,13 @@ for error-prone data and estimate the functional covariates for an AFT model.")
 (define-public r-afdx
   (package
     (name "r-afdx")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afdx" version))
        (sha256
-        (base32 "1654vxakdd11b5zhwy1vcv127xk5rifan6fs1k6w1qsk74j4drqv"))))
+        (base32 "06wd6qmrmzcpynbmrrbw7kg90crr0vlick45pn6w87lhr4drfjxp"))))
     (properties `((upstream-name . "afdx")))
     (build-system r-build-system)
     (arguments
@@ -26463,13 +26575,13 @@ Expenditures (PCEC) <https://fred.stlouisfed.org/series/PCEC>.")
 (define-public r-actel
   (package
     (name "r-actel")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actel" version))
        (sha256
-        (base32 "0hd1mkshywszswnllcx1lvlghnfk92438r57v6r7w8p5i9m04z9x"))))
+        (base32 "187mm334myhh40iprmgr3ga3cf20qn6kp9q8h5sa15jxca2qrrxq"))))
     (properties `((upstream-name . "actel")))
     (build-system r-build-system)
     (arguments

@@ -7149,6 +7149,32 @@ direction of the stop. @code{TriMet} has catalogued these stops, 6880 in total."
     (description "Propensity score matching for non-binary treatments.")
     (license license:gpl2+)))
 
+(define-public r-trilliem
+  (package
+    (name "r-trilliem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TriLLIEM" version))
+       (sha256
+        (base32 "1v2ysisr6n65ny8p51kk5i0aq7r9b1ijiin46hn9j56s8z3b1bdv"))))
+    (properties `((upstream-name . "TriLLIEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rdpack r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KevinHZhao/TriLLIEM")
+    (synopsis "Log-Linear Modelling of Triad Genotype Data")
+    (description
+     "Triad Log-Linear modelling of Imprinting Environmental interactions, and
+Maternal effects (@code{TriLLIEM}).  This is an implementation of the log-linear
+model described in a series of papers, see for example Ainsworth et al. (2010)
+<doi:10.1002/gepi.20547>.")
+    (license license:expat)))
+
 (define-public r-trigpoints
   (package
     (name "r-trigpoints")
@@ -10552,13 +10578,13 @@ TRFLP profiles across species.")
 (define-public r-tramnet
   (package
     (name "r-tramnet")
-    (version "0.0-10")
+    (version "0.0-99")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramnet" version))
        (sha256
-        (base32 "1k0kgiv4p3v79v87xb4hpwnr9f981ppik37camih1vrxi2jhrcb2"))))
+        (base32 "019rjmj5d23bvhqy53z7lbd82f8iblgb8k82m76cpgiyclzdxhx9"))))
     (properties `((upstream-name . "tramnet")))
     (build-system r-build-system)
     (arguments
@@ -12634,13 +12660,13 @@ require specific column or group naming to work.")
 (define-public r-toxcrit
   (package
     (name "r-toxcrit")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ToxCrit" version))
        (sha256
-        (base32 "1jxi10b733k3djfykyqnpcp2fapsmaszsd7lkwcwmwq62v73rhax"))))
+        (base32 "0x3krgifqzdvx79wcxzhbfm7bnszbcd4l6vr2hlwdnprph0mh9dw"))))
     (properties `((upstream-name . "ToxCrit")))
     (build-system r-build-system)
     (arguments
@@ -12651,13 +12677,13 @@ require specific column or group naming to work.")
      "Calculates Safety Stopping Boundaries for a Single-Arm Trial using Bayes")
     (description
      "Computation of stopping boundaries for a single-arm trial using a Bayesian
-criterion; i.e., for each m<=n (n= total patient number of the trial) the
-smallest number of observed toxicities is calculated leading to the termination
-of the trial/accrual according to the specified criteria.  The probabilities of
+criterion.  For each m<=n (n=total patient number of the trial) the smallest
+number of observed toxicities is calculated leading to the termination of the
+trial/accrual according to the specified criteria.  The probabilities of
 stopping the trial/accrual at and up until (resp.) the m-th patient (m<=n) is
 also calculated.  This design is more conservative than the frequentist approach
-(using Clopper Pearson CIs) which might be preferred as it concerns safety.See
-also Aamot et.al.(2010) \"Continuous monitoring of toxicity in clinical trials -
+(using Clopper Pearson CIs) which might be preferred as it concerns safety.  See
+also Aamot et al. (2010) \"Continuous monitoring of toxicity in clinical Trials -
 simulating the risk of stopping prematurely\" <doi:10.5414/cpp48476>.")
     (license license:gpl3)))
 
@@ -17121,13 +17147,13 @@ of lenses, see the lens package wiki:
 (define-public r-tinyimg
   (package
     (name "r-tinyimg")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyimg" version))
        (sha256
-        (base32 "1arcq5gzxn136y3zyqw4avm7lbw8w8i3xfvvwxixsvj4vmhpfv26"))))
+        (base32 "1x5szaknf0y694418mim35jnc6ih1rsw5la7gyj7nx27vgfwnrkx"))))
     (properties `((upstream-name . "tinyimg")))
     (build-system r-build-system)
     (arguments
@@ -17138,22 +17164,22 @@ of lenses, see the lens package wiki:
     (synopsis "Optimize and Compress Images")
     (description
      "Optimize and compress images using Rust libraries to reduce file sizes while
-maintaining image quality.  Currently supports lossless PNG optimization via the
-oxipng crate.  The package provides functions to optimize individual image files
-or entire directories, with configurable compression levels to balance between
-file size reduction and processing speed.")
+maintaining image quality.  Supports PNG palette reduction and dithering via the
+exoquant crate before lossless PNG optimization via the oxipng crate.  The
+package provides functions to optimize individual image files or entire
+directories, with configurable compression levels.")
     (license license:expat)))
 
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0mg6g1pz12x5i7ijyk5f7sh2l0hf04g496089kvzl9azkkf6a4cr"))))
+        (base32 "1yiwkpx9m7kj10q4fl6vxnjx27nw3kz1sjpqhmjvfczq4x6viv3l"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (arguments
@@ -20789,13 +20815,13 @@ frame using this package.")
 (define-public r-tidyild
   (package
     (name "r-tidyild")
-    (version "0.0.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyILD" version))
        (sha256
-        (base32 "1i5a3ymrplkvd1kzgmxjyfpsi5biip75y2a2jq6p8fwigz6sj9d2"))))
+        (base32 "0v6rchh2nw5akymm3ynxq48xfxbx1nq3cib6j97kifi1lbnnr1nl"))))
     (properties `((upstream-name . "tidyILD")))
     (build-system r-build-system)
     (arguments
@@ -21752,6 +21778,39 @@ ecosystem, making it easy to filter, arrange, and visualize country-level data
 in R.")
     (license license:expat)))
 
+(define-public r-tidyconsultant
+  (package
+    (name "r-tidyconsultant")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TidyConsultant" version))
+       (sha256
+        (base32 "1b1i9pj3gxiyaddm0jqqfpwc3p01xvvcqs5dwylx1vgk1wsh6lys"))))
+    (properties `((upstream-name . "TidyConsultant")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-validata
+                             r-tidybins
+                             r-presenter
+                             r-pacman
+                             r-framecleaner
+                             r-ckmeans-1d-dp
+                             r-badger
+                             r-autostats))
+    (native-inputs (list r-knitr))
+    (home-page "https://harrison4192.github.io/TidyConsultant/")
+    (synopsis "Tidy Consultant Universe")
+    (description
+     "Loads the 5 packages in the Tidy Consultant Universe.  This collection of
+packages is useful for anyone doing data science, data analysis, or quantitative
+consulting.  The functions in these packages range from data cleaning, data
+validation, data binning, statistical modeling, and file exporting.")
+    (license license:expat)))
+
 (define-public r-tidycomm
   (package
     (name "r-tidycomm")
@@ -22136,6 +22195,50 @@ easier control on categorical parameter estimates.")
      "Compute arbitrary non-parametric bootstrap statistics on data in tidy data
 frames.")
     (license license:gpl3)))
+
+(define-public r-tidybins
+  (package
+    (name "r-tidybins")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidybins" version))
+       (sha256
+        (base32 "02j564ddssmhz9cg70ix7cmbv8xkkh4r60vlhknzv8nf8rqi48jj"))))
+    (properties `((upstream-name . "tidybins")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-strex
+                             r-scales
+                             r-rlist
+                             r-rlang
+                             r-purrr
+                             r-oner
+                             r-magrittr
+                             r-lubridate
+                             r-janitor
+                             r-ggplot2
+                             r-framecleaner
+                             r-dplyr
+                             r-clusterr
+                             r-badger
+                             r-autostats))
+    (native-inputs (list r-knitr))
+    (home-page "https://harrison4192.github.io/tidybins/")
+    (synopsis "Make Tidy Bins")
+    (description
+     "Multiple ways to bin numeric columns with a tidy output.  Wraps a variety of
+existing binning methods into one function, and includes a new method for
+binning by equal value, which is useful for sales data.  Provides a function to
+automatically summarize the properties of the binned columns.")
+    (license license:gpl3+)))
 
 (define-public r-tidybde
   (package
@@ -23247,13 +23350,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "0qyx7161ll25axv2li14x6g1ibm352hilpd6b7zj74fzks66jaha"))))
+        (base32 "0c9pwijkisxdrws69n3651lgnyinrdmyy7bqmzipdbsaf9s8dj1m"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -23270,9 +23373,9 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
     (synopsis
      "Collection of Utility Functions for Data Analysis and Computing")
     (description
-     "This package provides utility functions for data analysis and scientific
-computing.  Includes functions for logging, parallel processing, and other
-computational tasks to streamline workflows.")
+     "This package provides utility functions for data analysis and computing.
+Includes functions for logging, parallel processing, and other computational
+tasks to streamline workflows.")
     (license license:expat)))
 
 (define-public r-thisplot
@@ -27492,13 +27595,13 @@ de-escalated only if an unacceptable level of toxicity is experienced.")
 (define-public r-tepr
   (package
     (name "r-tepr")
-    (version "1.1.14")
+    (version "1.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tepr" version))
        (sha256
-        (base32 "0j08bab5qylifbzvn023dsva9k3lfmcpns4vj0hm1qckqhh4l4kl"))))
+        (base32 "10ysldr19y422n6987q5469z4x971pjz5xm6vffd63f6bgggydjg"))))
     (properties `((upstream-name . "tepr")))
     (build-system r-build-system)
     (arguments
@@ -31424,13 +31527,13 @@ documentation is available at
 (define-public r-taustar
   (package
     (name "r-taustar")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TauStar" version))
        (sha256
-        (base32 "1fxkay7h333nr3wv9crn3y0dxzbkdp3qylzpmvih1cp9wqkckv06"))))
+        (base32 "05l3zsl5q8b0p7h8lm1n39gjw31sjqw3v94sgz3777aflxpprkxm"))))
     (properties `((upstream-name . "TauStar")))
     (build-system r-build-system)
     (arguments

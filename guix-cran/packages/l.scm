@@ -12,9 +12,9 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages python-science)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -8787,6 +8787,36 @@ robustness to outliers and applications.  Brazilian Journal of Probability and
 Statistics, <https://www.imstat.org/wp-content/uploads/2018/05/BJPS397.pdf>.")
     (license license:gpl3+)))
 
+(define-public r-llamar
+  (package
+    (name "r-llamar")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llamaR" version))
+       (sha256
+        (base32 "0jiapw445q6j9hlq68i60pswbywx8a9k7bgxbqpqbf4dghdqxdw2"))))
+    (properties `((upstream-name . "llamaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-ggmlr))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/Zabis13/llamaR")
+    (synopsis "Interface for Large Language Models via 'llama.cpp'")
+    (description
+     "This package provides R bindings to llama.cpp for running Large Language Models
+('LLMs') locally with optional Vulkan GPU acceleration via @code{ggmlR}'.
+Supports model loading, text generation, tokenization', token-to-piece
+conversion, embeddings (single and batch), encoder-decoder inference, low-level
+batch management, chat templates, @code{LoRA} adapters, explicit backend/device
+selection, multi-GPU split, and NUMA optimization.  Includes a high-level
+ragnar'-compatible embedding provider ('embed_llamar').  Built on top of
+@code{ggmlR} for efficient tensor operations.")
+    (license license:expat)))
+
 (define-public r-llama
   (package
     (name "r-llama")
@@ -9368,6 +9398,35 @@ installed from CRAN or <https://github.com/timelyportfolio/@code{reactR>}.")
 short-cuts to operations like selecting and merging data stored in lists.  The
 functions in this package are designed to be used with pipes.")
     (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-listo
+  (package
+    (name "r-listo")
+    (version "0.6.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LISTO" version))
+       (sha256
+        (base32 "11mkbxd7wljr9frry0qmwrs9cwdmdx4l22yn7q9b87mb1zywwh0j"))))
+    (properties `((upstream-name . "LISTO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statisfactory r-primes))
+    (home-page "https://github.com/andrei-stoica26/LISTO")
+    (synopsis "Performing Comprehensive Overlap Assessments")
+    (description
+     "The implementation of a statistical framework for performing overlap assessments
+on lists comprising sets of strings (such as lists of gene sets) described in
+Stoica (2023)
+<https://ora.ox.ac.uk/objects/uuid:b0847284-a02f-47ee-88e3-a3c4e0cdb8b1>.  It
+can assess overlaps of pair of sets of strings selected from the same universe
+or from different universes, and overlaps of triplets of sets of strings
+selected from the same universe.  Designed for single-cell RNA-sequencing data
+analysis applications, but suitable for other purposes as well.")
+    (license license:expat)))
 
 (define-public r-listcompr
   (package
@@ -13716,13 +13775,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.5.1")
+    (version "4.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "0pji77yiw6ilvhw5l1al6c5s1ryx38klfkk4m2bgs130m18szmlc"))))
+        (base32 "0lnigzpx634bz7zbg8lymvm1bfcdy2pprj8vw7gypl9nszbp9nvv"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments

@@ -3076,13 +3076,13 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
 (define-public r-htmxr
   (package
     (name "r-htmxr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htmxr" version))
        (sha256
-        (base32 "08kpv066pmnmmlfz28kxy70jigbcgi2g1pzk87k2wsc23xjbffx9"))))
+        (base32 "1j4365lpxxqaccrariizi8aakf6l1wm8cjhchxx2krvv4l6l83rn"))))
     (properties `((upstream-name . "htmxr")))
     (build-system r-build-system)
     (arguments
@@ -3104,7 +3104,7 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-plumber2 r-htmltools))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list esbuild))
     (home-page "https://hyperverse-r.github.io/htmxr/")
     (synopsis "Build Modern Web Applications with 'htmx' and 'plumber2'")
     (description

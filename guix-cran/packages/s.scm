@@ -12526,13 +12526,13 @@ Hosszejni and Kastner (2021) <doi:10.18637/jss.v100.i12> and Kastner (2016)
 (define-public r-stochtree
   (package
     (name "r-stochtree")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochtree" version))
        (sha256
-        (base32 "0v1g31fmna24xw5x7rrv9qgl8pm6mgvf9pmlnih9kdjbmqccj8w7"))))
+        (base32 "011rllwa6cij43j0szhlpzrm1my3qndaj1p3i3izhmiqbdddlr02"))))
     (properties `((upstream-name . "stochtree")))
     (build-system r-build-system)
     (arguments
@@ -12544,11 +12544,16 @@ Hosszejni and Kastner (2021) <doi:10.18637/jss.v100.i12> and Kastner (2016)
      "Stochastic Tree Ensembles (XBART and BART) for Supervised Learning and Causal Inference")
     (description
      "Flexible stochastic tree ensemble software.  Robust implementations of Bayesian
-Additive Regression Trees (BART) Chipman, George, @code{McCulloch} (2010)
-<doi:10.1214/09-AOAS285> for supervised learning and Bayesian Causal Forests
-(BCF) Hahn, Murray, Carvalho (2020) <doi:10.1214/19-BA1195> for causal
+Additive Regression Trees (BART) (Chipman, George, @code{McCulloch} (2010)
+<doi:10.1214/09-AOAS285>) for supervised learning and Bayesian Causal Forests
+(BCF) (Hahn, Murray, Carvalho (2020) <doi:10.1214/19-BA1195>) for causal
 inference.  Enables model serialization and parallel sampling and provides a
-low-level interface for custom stochastic forest samplers.")
+low-level interface for custom stochastic forest samplers.  Includes the
+grow-from-root algorithm for accelerated forest sampling (He and Hahn (2021)
+<doi:10.1080/01621459.2021.1942012>), a log-linear leaf model for forest-based
+heteroskedasticity (Murray (2020) <doi:10.1080/01621459.2020.1813587>), and the
+cloglog BART model of Alam and Linero (2025)
+<doi:10.48550/@code{arXiv.2502.00606>} for ordinal outcomes.")
     (license license:expat)))
 
 (define-public r-stochqn
@@ -19911,13 +19916,13 @@ variations.  Based on Roerink, Su, and Menenti (2000)
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssdtools" version))
        (sha256
-        (base32 "11a67kphm0rxdph7hw5q5rfjpdqkqixcmhqifk9znqv55fkarqad"))))
+        (base32 "155q8zzfdb7ys1jplw044r65dr5a346binqnncnxsx2il2isxqkg"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
     (arguments
@@ -25260,13 +25265,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "1x1gnrqkwhh51nm1akh4zh92y351g97ai3v73g6gdryxbam0ydyc"))))
+        (base32 "0as3xr707f65n2jdxjswkr3i67572qaklcfkbqscg9bbrlw165d5"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments
@@ -25279,12 +25284,9 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
                              r-rlang
                              r-labelled
                              r-haven
-                             r-dt
                              r-dplyr
                              r-crayon
-                             r-collapse
-                             r-clipr
-                             r-cli))
+                             r-collapse))
     (home-page "https://github.com/amaltawfik/spicy/")
     (synopsis "Descriptive Statistics and Data Management Tools")
     (description
@@ -30499,32 +30501,6 @@ fixed corresponding to the probability of falsely including a matrix entry in
 the support of the estimator.  It uses the binary search method outlined in
 Kashlak and Kong (2019) <@code{arXiv:1705.02679>} and in Kashlak (2019)
 <@code{arXiv:1903.10988>}.")
-    (license license:gpl3)))
-
-(define-public r-sparselu
-  (package
-    (name "r-sparselu")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sparselu" version))
-       (sha256
-        (base32 "1cxfps2fy2ds8zk9n3syfas3aa6gmfq8awpppp7f5j9lsj1nhmsd"))))
-    (properties `((upstream-name . "sparselu")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list suitesparse))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=sparselu")
-    (synopsis "Sparse LU Decomposition via SuiteSparse")
-    (description
-     "This package provides an interface to the @code{SuiteSparse} UMFPACK LU
-factorisation routines for sparse matrices stored in compressed column format.
-Implements the algorithm described in Davis (2004) <doi:10.1145/992200.992206>.")
     (license license:gpl3)))
 
 (define-public r-sparseltseigen
@@ -40529,13 +40505,13 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
 (define-public r-sleev
   (package
     (name "r-sleev")
-    (version "1.1.6")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleev" version))
        (sha256
-        (base32 "1pfsa0qna8nydricfgyp3aqpwi6qj6gih0av960p58ia2hnsffk6"))))
+        (base32 "09vb27dfs9017q6631p9qby0nr54s9sb4pxif5432zwa2lzrgkwf"))))
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (arguments
@@ -51776,13 +51752,13 @@ syntax highlighting for several coding languages.")
 (define-public r-shinymatrix
   (package
     (name "r-shinymatrix")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyMatrix" version))
        (sha256
-        (base32 "0dlmih1xf49vaw27r83dyzbz7w6wfvz06iz214pcp0xp51hx37gw"))))
+        (base32 "1v47y6ah7dkdx1aika23yzrpmszb964i4iakir91nk40l87rjszn"))))
     (properties `((upstream-name . "shinyMatrix")))
     (build-system r-build-system)
     (arguments
@@ -51805,7 +51781,7 @@ syntax highlighting for several coding languages.")
                                   '())))))))
     (propagated-inputs (list r-shiny r-jsonlite))
     (native-inputs (list esbuild))
-    (home-page "https://inwtlab.github.io/shiny-matrix/")
+    (home-page "https://inwtlab.github.io/shinyMatrix/")
     (synopsis "Shiny Matrix Input Field")
     (description "This package implements a custom matrix input field.")
     (license license:expat)))
@@ -61103,13 +61079,13 @@ generated by spacyr'.  For further reference, see: Stuhler (2022) <doi:
 (define-public r-semfindr
   (package
     (name "r-semfindr")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semfindr" version))
        (sha256
-        (base32 "1ngwzgympqhhr3m8d2yxy0ljszjry5w8f68av0w19yqfanb3y6ly"))))
+        (base32 "0lr4qdqn3ppia3w1gvcqxwsz9759sj91spqqbrpjr7ik4aph6khm"))))
     (properties `((upstream-name . "semfindr")))
     (build-system r-build-system)
     (arguments
@@ -61128,7 +61104,9 @@ generated by spacyr'.  For further reference, see: Stuhler (2022) <doi:
      "Sensitivity analysis in structural equation modeling using influence measures
 and diagnostic plots.  Support leave-one-out casewise sensitivity analysis
 presented by Pek and @code{MacCallum} (2011) <doi:10.1080/00273171.2011.561068>
-and approximate casewise influence using scores and casewise likelihood.")
+and approximate casewise influence using scores and casewise likelihood.  An
+introduction to the package can be found in Cheung and Lai (2026)
+<doi:10.1080/00273171.2026.2634293>.")
     (license license:gpl3)))
 
 (define-public r-semeffect
@@ -66949,13 +66927,13 @@ sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scpi" version))
        (sha256
-        (base32 "1g63csw4fpcy67y6pl9h02m233k4rqv2kvk50bb788nmpxw79pzk"))))
+        (base32 "1g69n97gn4gz9sfbzla9p3hnbdi68w4fplfgnd6xzd7vbm3969d7"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (arguments
@@ -67042,6 +67020,53 @@ in SzÃ©kely and Rizzo (2004).")
 other supply chain performance variables.  Marchena Marlene (2010)
 <@code{arXiv:1009.3977>}.")
     (license license:gpl3)))
+
+(define-public r-scpairs
+  (package
+    (name "r-scpairs")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scPairs" version))
+       (sha256
+        (base32 "0sbm8f6z1kmghsa6i4yc3kr8rk9nz7hj9dq63gssgy66bnih7ids"))))
+    (properties `((upstream-name . "scPairs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tidygraph
+                             r-seuratobject
+                             r-seurat
+                             r-patchwork
+                             r-matrix
+                             r-igraph
+                             r-ggrepel
+                             r-ggraph
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://github.com/zhaoqing-wang/scPairs")
+    (synopsis
+     "Identifying Synergistic Gene Pairs in Single-Cell and Spatial Transcriptomics")
+    (description
+     "Discovers synergistic gene pairs in single-cell RNA-seq and spatial
+transcriptomics data.  Unlike conventional pairwise co-expression analyses that
+rely on a single correlation metric, @code{scPairs} integrates 14 complementary
+metrics across five orthogonal evidence layers to compute a composite synergy
+score with optional permutation-based significance testing.  The five evidence
+layers span cell-level co-expression (Pearson, Spearman, biweight
+midcorrelation, mutual information, ratio consistency), neighbourhood-aware
+smoothing (KNN-smoothed correlation, neighbourhood co-expression, cluster
+pseudo-bulk, cross-cell-type, neighbourhood synergy), prior biological knowledge
+(GO/KEGG co-annotation Jaccard, pathway bridge score), trans-cellular
+interaction, and spatial co-variation (Lee's L, co-location quotient).  This
+multi-scale design enables researchers to move beyond simple co-expression
+towards a comprehensive characterisation of cooperative gene regulation at
+transcriptomic and spatial resolution.  For more information, see the package
+documentation at <https://github.com/zhaoqing-wang/@code{scPairs>}.")
+    (license license:expat)))
 
 (define-public r-scov
   (package
@@ -70546,13 +70571,13 @@ using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
 (define-public r-scaledescr
   (package
     (name "r-scaledescr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scaledescr" version))
        (sha256
-        (base32 "04s1j2qwklsji8n5s1hklp1sbrx4v0ryisip0qm1fhfb3qnl75rk"))))
+        (base32 "0mvxkbwh08h8wbxnaa3s01mi57raq313wps03mjdcy5difsggy89"))))
     (properties `((upstream-name . "scaledescr")))
     (build-system r-build-system)
     (arguments
@@ -71688,13 +71713,13 @@ compatibility is ensured for the Landsat Global Land Survey data set.")
 (define-public r-sate
   (package
     (name "r-sate")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sate" version))
        (sha256
-        (base32 "08sarb63sb5xfp57mykgxfwby0kh591z7i4lzc9ax1dq3nrhyv54"))))
+        (base32 "1zv923q3nivr6dfxv9bqamng0ncjh5jw3gw3s0b0vphhbyppd3cn"))))
     (properties `((upstream-name . "sate")))
     (build-system r-build-system)
     (arguments

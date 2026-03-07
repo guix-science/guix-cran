@@ -911,13 +911,13 @@ exploratory data analysis, and preprocessing workflows.")
 (define-public r-outliertree
   (package
     (name "r-outliertree")
-    (version "1.10.0")
+    (version "1.10.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outliertree" version))
        (sha256
-        (base32 "13z39pfc7fzxil5gc48s7b2f0zal4l4d8qw5xvwy4mlp010mwrc5"))))
+        (base32 "1pva49dipbsgpq3hxndd77vyv91kvzrys6jg07b7pv7ik5rcrwcs"))))
     (properties `((upstream-name . "outliertree")))
     (build-system r-build-system)
     (arguments
@@ -3935,13 +3935,13 @@ Technometrics paper.")
 (define-public r-ordinalpattern
   (package
     (name "r-ordinalpattern")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalpattern" version))
        (sha256
-        (base32 "1yn2sypknqlyr5x6pcqrz61w1y4ssin29rsmqjwihhxs990g5r42"))))
+        (base32 "1xaykkrn1iqylg9qhpsf1ccgkvn5yf9hr0hn5afkxpib3379m8yj"))))
     (properties `((upstream-name . "ordinalpattern")))
     (build-system r-build-system)
     (arguments
@@ -8500,6 +8500,31 @@ into R.")
     (description
      "This package provides a set of tools to extract bibliographic content from
 @code{OpenAlex} database using API <https://docs.openalex.org>.")
+    (license license:expat)))
+
+(define-public r-openairtools
+  (package
+    (name "r-openairtools")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openaiRtools" version))
+       (sha256
+        (base32 "10mzxdby9wg8a857x6hcmi3sifbp55x2ajhkk7fvqprqgykmv50z"))))
+    (properties `((upstream-name . "openaiRtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-r6 r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/xiaoluolorn/openaiRtools")
+    (synopsis "R Client for the 'OpenAI' API")
+    (description
+     "Complete R implementation of the @code{OpenAI} Python SDK'.  Provides full
+compatibility with the @code{OpenAI} API including chat completions,
+embeddings', images, audio, fine-tuning, and model management.")
     (license license:expat)))
 
 (define-public r-openairmaps

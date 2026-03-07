@@ -13,8 +13,8 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (guix-cran packages z)
@@ -3827,13 +3827,13 @@ illustrate the usage of exams.forge commands.")
 (define-public r-exams-forge
   (package
     (name "r-exams-forge")
-    (version "1.0.12")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams.forge" version))
        (sha256
-        (base32 "0xgf6pfsvhrxm8rms10lmsr22wy4hbma5ildg75bbczwdg2fvl3d"))))
+        (base32 "1adwmcxcngrj9wxixiag696icvx54pm7gf7ag6ggfhw587m7af63"))))
     (properties `((upstream-name . "exams.forge")))
     (build-system r-build-system)
     (arguments
@@ -3853,7 +3853,7 @@ illustrate the usage of exams.forge commands.")
                              r-mass
                              r-magrittr
                              r-knitr
-                             r-extradistr
+                             r-httr
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=exams.forge")
@@ -5902,29 +5902,6 @@ They can be used in combination with functionalities provided by the
 @code{bupaR} packages.  Janssenswillen et al. (2020)
 <http://ceur-ws.org/Vol-2703/@code{paperTD7.pdf>}.")
     (license license:expat)))
-
-(define-public r-event
-  (package
-    (name "r-event")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "event" version))
-       (sha256
-        (base32 "04x41k25981nriympjxxyhia5dac2kgj4d50bj5sbf6rzrfigk7v"))))
-    (properties `((upstream-name . "event")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmutil))
-    (native-inputs (list gfortran))
-    (home-page "https://www.commanster.eu/rcode.html")
-    (synopsis "Event History Procedures and Models")
-    (description
-     "This package provides functions for setting up and analyzing event history data.")
-    (license license:gpl2)))
 
 (define-public r-evenbreak
   (package
@@ -11709,6 +11686,53 @@ models.  Users can specify infectiousness/susceptibility rates as a function of
 agents features, providing great complexity for the model dynamics.
 Furthermore, @code{epiworldR} is ideal for simulation studies featuring large
 populations.")
+    (license license:expat)))
+
+(define-public r-epiviz
+  (package
+    (name "r-epiviz")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiviz" version))
+       (sha256
+        (base32 "0fvnyy8rh7q0dl56crrka1ddjsf61v6d1ja3rw5b8yfzdnaq5aym"))))
+    (properties `((upstream-name . "epiviz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-slider
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-plotly
+                             r-lubridate
+                             r-lifecycle
+                             r-leaflet
+                             r-jsonlite
+                             r-isoweek
+                             r-htmltools
+                             r-ggplot2
+                             r-forcats
+                             r-ellmer
+                             r-dplyr
+                             r-classint
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ukhsa-collaboration/epiviz")
+    (synopsis
+     "Data Visualisation Functions for Epidemiological Data Science Products")
+    (description
+     "This package provides tools for making epidemiological reporting easier with
+consistent static and dynamic charts and maps.  Builds on ggplot2 for static
+visualizations as described in Wickham (2016) <doi:10.1007/978-3-319-24277-4>
+and plotly for interactive visualizations as described in Sievert (2020)
+<doi:10.1201/9780429447273>.")
     (license license:expat)))
 
 (define-public r-epitrix
@@ -21343,13 +21367,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-educabr
   (package
     (name "r-educabr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "educabR" version))
        (sha256
-        (base32 "1yzd348xg20v04x33bwzm5jj2xlfyvlq5bfy9c6y0y25p8r07w8v"))))
+        (base32 "15w82icaflhf682cs2cgrvzb521h40mcwkpbgn3959m80dpy3cc7"))))
     (properties `((upstream-name . "educabR")))
     (build-system r-build-system)
     (arguments
@@ -26467,19 +26491,18 @@ estimating technical efficiency is also included.  More details in:
 (define-public r-easyviz
   (package
     (name "r-easyviz")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyViz" version))
        (sha256
-        (base32 "1vq78v3cg1c3jxk41w8rmbqis0xhpia1sq8ldirgal718a938hch"))))
+        (base32 "110y15zb7rq0braa4as6iw72y3agib2n3a4zs133ix7f10mhwv3g"))))
     (properties `((upstream-name . "easyViz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reformulas))
     (home-page "https://cran.r-project.org/package=easyViz")
     (synopsis
      "Easy Visualization of Conditional Effects from Regression Models")

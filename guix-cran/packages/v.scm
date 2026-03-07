@@ -4790,6 +4790,47 @@ with the correct Unicode characters (with or without diacritics).")
 diacritics and different spellings.")
     (license license:gpl3)))
 
+(define-public r-videogameinsightsr
+  (package
+    (name "r-videogameinsightsr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "videogameinsightsR" version))
+       (sha256
+        (base32 "1ismzwccwic05m0zx73gmdd45z27ah8qv1fw90zq5qkq9ll5wy6z"))))
+    (properties `((upstream-name . "videogameinsightsR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-digest))
+    (home-page "https://github.com/econosopher/videogameinsightsR")
+    (synopsis
+     "Interface to 'Video Game Insights' API for Gaming Market Analytics")
+    (description
+     "Interface to the Video Game Insights API <https://app.sensortower.com/vgi/> for
+video game market analytics and intelligence.  Provides functions to retrieve
+game metadata, developer and publisher information, player statistics
+(concurrent players, daily and monthly active users), revenue and sales data,
+review analytics, wish-list tracking, and platform-specific rankings.  The
+package includes data processing utilities to analyze player demographics, track
+pricing history, calculate player overlap between games, and monitor market
+trends.  Supports analysis across multiple gaming platforms including Steam',
+@code{PlayStation}', Xbox', and Nintendo with unified data structures for
+cross-platform comparison.")
+    (license license:expat)))
+
 (define-public r-video
   (package
     (name "r-video")
@@ -6637,19 +6678,20 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "0yw70c9i05y6wi5phjzyxd78i4p85d0fq3wj2rs3kqg6ywxsnapm"))))
+        (base32 "0pv2x13ksdhs0sifa0b25363jbh61gs64z4v3c7n8ijp1qr9207a"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-viridis
+                             r-tidyr
                              r-stringr
                              r-sf
                              r-scales
@@ -6657,13 +6699,16 @@ analyses.")
                              r-rlang
                              r-magrittr
                              r-lubridate
+                             r-leaflet-minicharts
+                             r-leaflet
                              r-knitr
                              r-kableextra
                              r-jsonlite
                              r-httr2
                              r-ggplot2
                              r-dt
-                             r-dplyr))
+                             r-dplyr
+                             r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vectorsurvR")
     (synopsis "Data Access and Analytical Tools for 'VectorSurv' Users")
@@ -7414,6 +7459,32 @@ library, enabling rapid processing of both compressed and uncompressed VCF
 files.  Explore a range of powerful features for efficient VCF data
 manipulation.")
     (license license:expat)))
+
+(define-public r-vcfheader
+  (package
+    (name "r-vcfheader")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcfheader" version))
+       (sha256
+        (base32 "1hwb46189wn72rqalx7wrzavxiizzzgj3sr32nl2b4prgz8nyn4y"))))
+    (properties `((upstream-name . "vcfheader")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=vcfheader")
+    (synopsis
+     "Fast Genetic Variant Call Format File Header Intelligence and Audit")
+    (description
+     "Streams and parses variant call format file headers without reading full files.
+Provides structured metadata, validation, inference, and HTML reporting.  For
+details on the specifications used see Danecek et al. (2021)
+<doi:10.1093/gigascience/giab008>.")
+    (license license:gpl3)))
 
 (define-public r-vcdextra
   (package

@@ -15798,13 +15798,13 @@ National Science Foundation grants DMS-2310637 and DMREF-1921873.")
 (define-public r-firmmatchr
   (package
     (name "r-firmmatchr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "firmmatchr" version))
        (sha256
-        (base32 "0m9dhkid17saak8wz0ra10f43ycjq0mnk017sz3mmdvhmynsk8x2"))))
+        (base32 "12y5cfmgh4z85vsc4qsps0d9c55dns94j73nlp9yrabl6c430a5f"))))
     (properties `((upstream-name . "firmmatchr")))
     (build-system r-build-system)
     (arguments
@@ -16193,18 +16193,19 @@ described in the Nature Communications article by Nowatzky (2025)
 (define-public r-fiodata
   (package
     (name "r-fiodata")
-    (version "0.0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fiodata" version))
        (sha256
-        (base32 "18hnz5s37angc2xfjxfd2q8jmw4w1a5s1r40jd4flwzg1wzmdssl"))))
+        (base32 "0ck2lh6mk8iklz2g0kc3wrx3knlhrlv29y7czbrr760vzgyds91g"))))
     (properties `((upstream-name . "fiodata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-fio))
     (home-page "https://github.com/albersonmiranda/fiodata")
     (synopsis "Regional and Multi-Regional Input-Output Data")
     (description
@@ -20243,13 +20244,13 @@ data.")
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.12.0")
+    (version "3.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "1fz2js54dd0wg0cmcyj4kq6g00qyr3k5d5zbd3nd45hmrlgl5q8c"))))
+        (base32 "18ana2svqiwqz0jpzm3bzh04vcr011lmqzq4chf8mf9515mkjj44"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (arguments
@@ -21021,6 +21022,36 @@ Majorizing-Minimizing (MM) and Alternating Direction Method of Multipliers
 (ADMM) techniques.  See Boyd et al (2010) <doi:10.1561/2200000016> for complete
 introduction to the method.")
     (license license:gpl3+)))
+
+(define-public r-fdars
+  (package
+    (name "r-fdars")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdars" version))
+       (sha256
+        (base32 "1hpblmr61dn6rza0qgvn6k9q5q3w991nb184n23rc8h0j60f3yi5"))))
+    (properties `((upstream-name . "fdars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://sipemu.github.io/fdars-r/")
+    (synopsis "Functional Data Analysis in 'Rust'")
+    (description
+     "Functional data analysis tools with a high-performance Rust backend.  Provides
+methods for functional data manipulation, depth computation, distance metrics,
+regression, and statistical testing.  Supports both 1D functional data (curves)
+and 2D functional data (surfaces).  Methods are described in Ramsay and
+Silverman (2005, ISBN:978-0-387-40080-8) \"Functional Data Analysis\" and Ferraty
+and Vieu (2006, ISBN:978-0-387-30369-7) \"Nonparametric Functional Data
+Analysis\".")
+    (license license:expat)))
 
 (define-public r-fdarep
   (package
