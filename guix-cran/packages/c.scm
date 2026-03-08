@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages python)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
@@ -19,6 +18,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages duckdb)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
@@ -17701,13 +17701,13 @@ identifiers permit the same content to be registered in many locations.")
 (define-public r-contentanalysis
   (package
     (name "r-contentanalysis")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contentanalysis" version))
        (sha256
-        (base32 "1xy60a904sy25jym3x6acb0vwh4gzw98sl5j5v7qdkri51p5llqv"))))
+        (base32 "0qa88jzqcj99abvgk5gxpb57m5ixbq5z2lh5fxwx4w1p7yjinmys"))))
     (properties `((upstream-name . "contentanalysis")))
     (build-system r-build-system)
     (arguments
@@ -20108,28 +20108,6 @@ transferability of predictive/potential distribution models (including species
 distribution models) as described by Somodi & Bede-Fazekas et al. (2024)
 <doi:10.1016/j.ecolmodel.2024.110667>.")
     (license license:gpl3+)))
-
-(define-public r-conf-design
-  (package
-    (name "r-conf-design")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "conf.design" version))
-       (sha256
-        (base32 "06vdxljkjq1x56xkg041l271an1xv9wq79swxvzzk64dqqnmay51"))))
-    (properties `((upstream-name . "conf.design")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=conf.design")
-    (synopsis "Construction of factorial designs")
-    (description
-     "This small library contains a series of simple tools for constructing and
-manipulating confounded and fractional factorial designs.")
-    (license license:gpl2)))
 
 (define-public r-conf
   (package
@@ -26274,13 +26252,13 @@ longitudinal cognitive research using methods first described by Thomas et al.
 (define-public r-coga
   (package
     (name "r-coga")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coga" version))
        (sha256
-        (base32 "0h4qps0k973ia2aw19smlh84p34nnwdrfgk9nm4pgcs3qx3pn102"))))
+        (base32 "1j765qvfmh71c71xvlb5f5biyy76irlc9hryww7a9izcqcwsyv35"))))
     (properties `((upstream-name . "coga")))
     (build-system r-build-system)
     (arguments
@@ -33076,13 +33054,13 @@ number needed to treat, number needed to diagnose, and predictive summary index.
 (define-public r-clinpubr
   (package
     (name "r-clinpubr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinpubr" version))
        (sha256
-        (base32 "04jzpm2hgzgclw5aj47m2jz4mdxvnns6nc77kgx6py663wi9fw5d"))))
+        (base32 "0d5b40iyqnz1zxg2dpaw8hfw68q5h38qks8gcm704namz07zp58x"))))
     (properties `((upstream-name . "clinpubr")))
     (build-system r-build-system)
     (arguments
@@ -36439,7 +36417,7 @@ agop instead.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list gsl gsl))
+    (inputs (list gsl))
     (home-page "https://github.com/USCbiostats/cit")
     (synopsis "Causal Inference Test")
     (description

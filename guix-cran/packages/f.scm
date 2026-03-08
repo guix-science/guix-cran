@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages python)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)

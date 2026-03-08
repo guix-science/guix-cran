@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages python)
   #:use-module (gnu packages gcc)
@@ -3171,7 +3170,7 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list gsl gsl))
+    (inputs (list gsl))
     (propagated-inputs (list r-matrix))
     (native-inputs (list pkg-config gfortran))
     (home-page "https://github.com/JorisChau/gslnls")

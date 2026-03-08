@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages base)
@@ -23,6 +22,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages tcl)
   #:use-module (guix-cran packages z)
@@ -9473,38 +9473,6 @@ instructions at
 functionality in the stump CRAN R package Rmosek'.")
     (license license:gpl2+)))
 
-(define-public r-doe-base
-  (package
-    (name "r-doe-base")
-    (version "1.2-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DoE.base" version))
-       (sha256
-        (base32 "1fglnzhjygpq6y967ffw7z7p7c2fiy72ama68lnpkvvvzqm4xk2r"))))
-    (properties `((upstream-name . "DoE.base")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vcd
-                             r-partitions
-                             r-numbers
-                             r-mass
-                             r-lattice
-                             r-conf-design
-                             r-combinat))
-    (home-page "https://prof.bht-berlin.de/groemping/DoE/")
-    (synopsis
-     "Full Factorials, Orthogonal Arrays and Base Utilities for DoE Packages")
-    (description
-     "This package creates full factorial experimental designs and designs based on
-orthogonal arrays for (industrial) experiments.  Provides diverse quality
-criteria.  Provides utility functions for the class design, which is also used
-by other packages for designed experiments.")
-    (license license:gpl2+)))
-
 (define-public r-dodgr
   (package
     (name "r-dodgr")
@@ -14829,13 +14797,13 @@ out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
 (define-public r-discos
   (package
     (name "r-discos")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiSCos" version))
        (sha256
-        (base32 "1fpx16m85j41l0xy3lmnnmx0nnjq6776w6pg77wb864ffaq877xg"))))
+        (base32 "14f1im7q27zr4hagr5zbzh6yd6y6qdc5mw6bpinvky4d70j6qzs1"))))
     (properties `((upstream-name . "DiSCos")))
     (build-system r-build-system)
     (arguments

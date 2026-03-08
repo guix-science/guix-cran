@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages bioconductor)

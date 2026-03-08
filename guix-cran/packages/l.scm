@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
@@ -14,6 +13,7 @@
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
@@ -2263,19 +2263,27 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.15")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "0f4r5r3i706qi52fih4lx1rkc990pf37332dni5callzfjw88f4v"))))
+        (base32 "0ibih6hggzghwycw4b24pv15zlqjyl77m6sqmcvp0bf9i5l3fl0v"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-rcpp r-mvtnorm r-lpsolve))
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-rcppthread
+                             r-rcppparallel
+                             r-rcpp
+                             r-mvtnorm
+                             r-lpsolve
+                             r-ggplot2
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kaifenglu/lrstat")
     (synopsis
@@ -18994,7 +19002,7 @@ in Goslee (2012) <doi:10.14358/PERS.78.9.973>.")
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-sm r-quantreg r-quantreg))
+    (propagated-inputs (list r-survival r-sm r-quantreg))
     (home-page "https://cran.r-project.org/package=landpred")
     (synopsis "Landmark Prediction of a Survival Outcome")
     (description

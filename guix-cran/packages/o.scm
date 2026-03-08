@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages cmake)
@@ -13,6 +12,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages java)
@@ -7091,13 +7091,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.24")
+    (version "1.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "15c3bbk03zmv51dfw48rx7yyzmwq31ris7wwmysvgqz15wf60alr"))))
+        (base32 "196jr1nd27ns25bv12q785067hm7mww7rnd5qw9gfx6axnn9ynqd"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -10682,13 +10682,13 @@ pagination and rate limiting.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "1qvq9c2idrqs1x2k6ww3ykm2zc076dzrm434lvf7r28bwz0l4g8r"))))
+        (base32 "1pb6n2qmqi2jygcw10xbpj1i6iy7iaamnf1s160sp69h8ycxbdpx"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments

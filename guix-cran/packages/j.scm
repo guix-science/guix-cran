@@ -5,10 +5,10 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
@@ -199,13 +199,13 @@ it will be skipped.")
 (define-public r-junctions
   (package
     (name "r-junctions")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "junctions" version))
        (sha256
-        (base32 "0pmh7993fh8f7f6q1g5djcpv1b6mmhigk1k2222rzh46m4zp1ciq"))))
+        (base32 "0ld0vp186y4yssp4i7qdxr3jnzc7rb70iyrblv7v60zrjg9qgxsf"))))
     (properties `((upstream-name . "junctions")))
     (build-system r-build-system)
     (arguments

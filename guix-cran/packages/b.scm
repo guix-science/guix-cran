@@ -5,9 +5,9 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages duckdb)
@@ -20724,13 +20724,13 @@ papers.")
 (define-public r-bfp
   (package
     (name "r-bfp")
-    (version "0.0-49")
+    (version "0.0-50")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfp" version))
        (sha256
-        (base32 "12qv5gjm3dqbgbqhrhh778v4anhpmy18y299kfpg4lfclv2mx843"))))
+        (base32 "0zxw8d3896vzndmy8r787a6jmrnsgl6wvpqdqhjw271r77vvrbcm"))))
     (properties `((upstream-name . "bfp")))
     (build-system r-build-system)
     (arguments
@@ -26717,19 +26717,19 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 (define-public r-bayesrecon
   (package
     (name "r-bayesrecon")
-    (version "0.3.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesRecon" version))
        (sha256
-        (base32 "08dy4mw39vh57rwnwm70d7agpi8l3j8h40pi5jpijbc4sx89n0hc"))))
+        (base32 "1z7j7xj7srfjj2ycvjjvxyiks5i6gvhvvm5brl8wgcwvw9qy5hc3"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lpsolve))
+    (propagated-inputs (list r-nloptr r-lpsolve))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/IDSIA/bayesRecon")
     (synopsis "Probabilistic Reconciliation via Conditioning")
@@ -26741,7 +26741,9 @@ reconciliation of count time series (Corani et al., 2024)
 <doi:10.1016/j.ijforecast.2023.04.003>, Bottom-Up Importance Sampling (Zambon et
 al., 2024) <doi:10.1007/s11222-023-10343-y>, methods for the reconciliation of
 mixed hierarchies (Mix-Cond and TD-cond) (Zambon et al., 2024)
-<https://proceedings.mlr.press/v244/zambon24a.html>.")
+<https://proceedings.mlr.press/v244/zambon24a.html>, analytical reconciliation
+with Bayesian treatment of the covariance matrix (Carrara et al., 2025) <doi:
+10.48550/@code{arXiv.2506.19554>}.")
     (license license:lgpl3+)))
 
 (define-public r-bayesqrsurvey

@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages bioconductor)
@@ -549,13 +548,13 @@ species distribution modeling.")
 (define-public r-hypertext
   (package
     (name "r-hypertext")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypertext" version))
        (sha256
-        (base32 "0jn18qbdivgcz6dnvqmwzzkz6b1gpp8k2ldgjk16lv2bdksf6clp"))))
+        (base32 "1lf9fairpa3h9rxxwgil8yf0paml6wcqx7af8i9da1c0cyw8pabz"))))
     (properties `((upstream-name . "hypertext")))
     (build-system r-build-system)
     (arguments

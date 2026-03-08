@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
@@ -9536,7 +9535,7 @@ Installation instructions for arcgisbinding can be found at
     (arguments
      (list
       #:tests? #f))
-    (inputs (list openssl openssl))
+    (inputs (list openssl))
     (propagated-inputs (list r-wk r-rlang r-httr2 r-cli r-arcgisutils))
     (home-page "https://cran.r-project.org/package=arcgisplaces")
     (synopsis "Search for POIs using ArcGIS 'Places Service'")

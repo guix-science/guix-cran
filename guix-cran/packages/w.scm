@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
@@ -1282,38 +1281,6 @@ large subset of libassp's signal processing functions and provides them to the
 user in a (hopefully) user-friendly manner.")
     (license license:gpl3+)))
 
-(define-public r-wrapr
-  (package
-    (name "r-wrapr")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wrapr" version))
-       (sha256
-        (base32 "1r2mqgf4wiwx83lgs20r59c3h7yynkaif4qp6lbd20y06avb1jz1"))))
-    (properties `((upstream-name . "wrapr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/WinVector/wrapr")
-    (synopsis "Wrap R Tools for Debugging and Parametric Programming")
-    (description
-     "This package provides tools for writing and debugging R code.  Provides: %.>%
-dot-pipe (an S3 configurable pipe), unpack/to (R style multiple
-assignment/return), @code{build_frame()'/'draw_frame()} ('data.frame example
-tools), @code{qc()} (quoting concatenate), := (named map builder), @code{let()}
-(converts non-standard evaluation interfaces to parametric standard evaluation
-interfaces, inspired by @code{gtools::strmacro()} and @code{base::bquote()}'),
-and more.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-wrappr
   (package
     (name "r-wrappr")
@@ -1354,7 +1321,6 @@ directory within functions and wrap console messages around other functions.")
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlist
@@ -3261,13 +3227,13 @@ smaller than the number of predictors.  For more information see Faisal and Tutz
 (define-public r-wnl
   (package
     (name "r-wnl")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wnl" version))
        (sha256
-        (base32 "04knhnd01cyrnwjfi1a5d8mcallrp3ifwrm6l003zgvkgw33c5z4"))))
+        (base32 "1qn6bq4hwpylgiqls5ydsgvhbz6x83a3vf2njz4zs2llmhfxq5yq"))))
     (properties `((upstream-name . "wnl")))
     (build-system r-build-system)
     (arguments

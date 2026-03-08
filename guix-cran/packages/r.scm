@@ -8,7 +8,6 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages java)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages spreadsheet)
@@ -25,6 +24,7 @@
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages machine-learning)
@@ -10842,13 +10842,13 @@ Lindy Hop and West Coast Swing dance contests.")
 (define-public r-rprotobuf
   (package
     (name "r-rprotobuf")
-    (version "0.4.25")
+    (version "0.4.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RProtoBuf" version))
        (sha256
-        (base32 "1baw8qrk30n37pyfm41qmb3h9670c4w5w3zh3kp5bx0zlgkfzwv9"))))
+        (base32 "0a9a0fm0hy5r49xkk69c86b23ypq48bpb1ylwr79fck11zlrj31l"))))
     (properties `((upstream-name . "RProtoBuf")))
     (build-system r-build-system)
     (arguments
@@ -10864,7 +10864,7 @@ extensible format.  Google uses Protocol Buffers for almost all of its internal
 RPC protocols and file formats.  Additional documentation is available in two
 included vignettes one of which corresponds to our JSS paper (2016,
 <doi:10.18637/jss.v071.i02>.  A sufficiently recent version of Protocol Buffers
-library is required; currently version 3.3.0 from 2017 is the stated minimum.")
+library is required; currently version 3.3.0 from 2017 is the tested minimum.")
     (license license:gpl2+)))
 
 (define-public r-rprojtree
@@ -12324,13 +12324,13 @@ of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 (define-public r-rpdbapi
   (package
     (name "r-rpdbapi")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPDBapi" version))
        (sha256
-        (base32 "0ywy8ycfwms4qprfjlfs1a8napw280wwsh921ybx8vl32kvgvpjd"))))
+        (base32 "127h3j3ba78j2y8q8pd8fvm92mzhvxk67y35j6s4v30jlbwvfsrl"))))
     (properties `((upstream-name . "rPDBapi")))
     (build-system r-build-system)
     (arguments
@@ -12347,12 +12347,12 @@ of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
     (home-page "https://cran.r-project.org/package=rPDBapi")
     (synopsis "Comprehensive Interface for Accessing the Protein Data Bank")
     (description
-     "Streamlines the interaction with the RCSB Protein Data Bank ('PDB')
-<https://www.rcsb.org/>.  This interface offers an intuitive and powerful tool
-for searching and retrieving a diverse range of data types from the PDB'.  It
-includes advanced functionalities like BLAST and sequence motif queries.  Built
-upon the existing XML-based API of the PDB', it simplifies the creation of
-custom requests, thereby enhancing usability and flexibility for researchers.")
+     "This package provides an R interface to the RCSB Protein Data Bank ('PDB')
+Search and Data APIs (<https://www.rcsb.org/>).  Supports full-text, attribute,
+sequence, motif, structure, and chemical searches; retrieval of entry-,
+assembly-, polymer-entity-, and chemical-component-level metadata; and
+conversion of API responses into analysis-ready tables and typed R objects for
+reproducible structural bioinformatics workflows.")
     (license license:expat)))
 
 (define-public r-rpdb
@@ -31734,13 +31734,13 @@ Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 (define-public r-rfast2
   (package
     (name "r-rfast2")
-    (version "0.1.5.5")
+    (version "0.1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfast2" version))
        (sha256
-        (base32 "1vi456nx4gs81f5ks4v0qvm76z52zfxlbshc1501b9hlxhyk96v3"))))
+        (base32 "0kqks4mgx7a9hil1w66xfgv27f9ymnfhszyi26cw07r2g1avpd59"))))
     (properties `((upstream-name . "Rfast2")))
     (build-system r-build-system)
     (arguments
@@ -34044,7 +34044,6 @@ For more details on Feature Selection see Theng and Bhoyar (2023)
     (propagated-inputs (list r-tidyr
                              r-tidygraph
                              r-shadowtext
-                             r-readr
                              r-readr
                              r-qgraph
                              r-psych
@@ -44374,8 +44373,6 @@ This project is not affiliated with the Arduino company,
      (list
       #:tests? #f))
     (inputs (list zlib
-                  zlib
-                  openssl
                   openssl
                   xz
                   bzip2
@@ -47684,7 +47681,7 @@ approximation.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list pcre2 pcre2))
+    (inputs (list pcre2))
     (propagated-inputs (list r-rcpp r-fs))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/PolMine/RcppCWB")
@@ -50582,13 +50579,13 @@ user to view structures in 2D.")
 (define-public r-rcdf
   (package
     (name "r-rcdf")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcdf" version))
        (sha256
-        (base32 "1qiidh32l259x326vhzdbxbcs41hrj0xy7zh5bkii937f56dyy6f"))))
+        (base32 "0yfvv1dcv5rchlp6rv2z6rylkax3227wlmzawl3p31wm7kpm7120"))))
     (properties `((upstream-name . "rcdf")))
     (build-system r-build-system)
     (arguments
@@ -52145,22 +52142,22 @@ methods.  References: Siddiqi, N. (2006) <doi:10.1002/9781119201731.biblio>.")
 (define-public r-rbiascorrection
   (package
     (name "r-rbiascorrection")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rBiasCorrection" version))
        (sha256
-        (base32 "1xyr11jmx1lphim0825a6dgxzc9mx6p14s32lqdalsrzx4pkd0wa"))))
+        (base32 "0dam9pm1vw9i2wd7i9jzyh1m5kjb1cxyi8malrhnplcq54r4745f"))))
     (properties `((upstream-name . "rBiasCorrection")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-polynom
+                             r-parallelly
                              r-nls2
                              r-minpack-lm
-                             r-magrittr
                              r-ggplot2
                              r-future-apply
                              r-future
@@ -52405,7 +52402,7 @@ and Qunhua Li (2016).  Robust bent line regression, submitted.\".")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list zlib zlib cmake))
+    (inputs (list zlib cmake))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rappdirs
@@ -53612,6 +53609,29 @@ provided by states about water quality assessments conducted under federal Clean
 Water Act requirements.  ATTAINS information and API information is available at
 <https://www.epa.gov/waterdata/attains>.")
     (license license:expat)))
+
+(define-public r-rato
+  (package
+    (name "r-rato")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rato" version))
+       (sha256
+        (base32 "0n24kbcia2z4v06pf258g2s3y5qln5ybzh2vqxd2v3l9k8chk0zb"))))
+    (properties `((upstream-name . "Rato")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph r-desolve))
+    (home-page "https://cran.r-project.org/package=Rato")
+    (synopsis "Resilience Analysis Toolkit (RATO)")
+    (description
+     "Collection of tools for the analysis of the resilience of dynamic networks.
+Created as a classroom project.")
+    (license license:gpl3)))
 
 (define-public r-ratios
   (package

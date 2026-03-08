@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
@@ -1715,19 +1714,19 @@ such as reading and writing files, producing graphics and cleaning up datasets."
 (define-public r-upsilon
   (package
     (name "r-upsilon")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Upsilon" version))
        (sha256
-        (base32 "1vr3k9rf9vpyiafyx9wmhbfbj8xz3xymwzxf4s2jl6cqa8ckb7gy"))))
+        (base32 "02x4m88m842q5b5qijrkh7bni4k1lfdpbx05zgj31iz8smzwxy72"))))
     (properties `((upstream-name . "Upsilon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-reshape2 r-rdpack r-rcpp r-ggplot2))
+    (propagated-inputs (list r-rdpack r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Upsilon")
     (synopsis "Another Test of Association for Count Data")
@@ -1743,8 +1742,8 @@ varying null population by tensor product of observed marginals.  Although
 Pearson's chi-squared test, Fisher's exact test, and Woolf's G-test (related to
 mutual information) are useful in some contexts, the Upsilon test appeals to
 ranking association patterns not necessarily following same marginal
-distributions, such as in count data from DNA sequencing---an important modern
-scientific domain.")
+distributions, such as in count data from DNA and RNA sequencing---a rapidly
+expanding frontier in modern science.")
     (license license:lgpl3+)))
 
 (define-public r-upsetjs

@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
   #:use-module (gnu packages maths)
@@ -17,6 +16,7 @@
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
   #:use-module (gnu packages duckdb)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages xml)
@@ -16395,7 +16395,7 @@ sources for mapping and spatial analysis.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list zlib openssl openssl))
+    (inputs (list zlib openssl))
     (propagated-inputs (list r-openssl r-mime r-jsonlite))
     (native-inputs (list pkg-config))
     (home-page "https://jeroen.r-universe.dev/mongolite")
@@ -41790,7 +41790,6 @@ random-effect models.")
                              r-rcpp
                              r-mvtnorm
                              r-microbenchmark
-                             r-microbenchmark
                              r-md2sample
                              r-ggplot2
                              r-fnn
@@ -53405,13 +53404,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-maidr
   (package
     (name "r-maidr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maidr" version))
        (sha256
-        (base32 "1zya9ff0n2lyxy9hzajdhijfsgba5fpc0qkvs3zxzvrvamaqsgyi"))))
+        (base32 "0r7qhd0aikv9cr31jz9grkbd9pfvfd3y36q1kd01b1isiwppwnrx"))))
     (properties `((upstream-name . "maidr")))
     (build-system r-build-system)
     (arguments
@@ -53438,10 +53437,10 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 ggplot2 and Base R plots into accessible HTML/SVG formats with keyboard
 navigation, screen reader support, and sonification capabilities.  Supports bar
 charts (simple, grouped, stacked), histograms, line plots, scatter plots, box
-plots, heat maps, density/smooth curves, faceted plots, multi-panel layouts
-(including patchwork), and multi-layered plot combinations.  Enables data
-exploration for users with visual impairments through multiple sensory
-modalities.  For more details see the MAIDR project <https://maidr.ai/>.")
+plots, violin plots, heat maps, density/smooth curves, faceted plots,
+multi-panel layouts (including patchwork), and multi-layered plot combinations.
+Enables data exploration for users with visual impairments through multiple
+sensory modalities.  For more details see the MAIDR project <https://maidr.ai/>.")
     (license license:gpl3+)))
 
 (define-public r-maictools

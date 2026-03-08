@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
@@ -696,30 +695,6 @@ numbers are used to identify individuals (CPF), vehicles (RENAVAN), companies
 been implemented in a vectorized way in order to speed up validations and
 comparisons in big datasets.")
     (license license:expat)))
-
-(define-public r-numbers
-  (package
-    (name "r-numbers")
-    (version "0.9-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "numbers" version))
-       (sha256
-        (base32 "1kgzb9pqdkghkch6l4zhbngrzbnwkqgz6hgi8wkswvm12831bqq1"))))
-    (properties `((upstream-name . "numbers")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=numbers")
-    (synopsis "Number-Theoretic Functions")
-    (description
-     "This package provides number-theoretic functions for factorization, prime
-numbers, twin primes, primitive roots, modular logarithm and inverses, extended
-GCD, Farey series and continued fractions.  Includes Legendre and Jacobi
-symbols, some divisor functions, Euler's Phi function, etc.")
-    (license license:gpl3+)))
 
 (define-public r-numberofalleles
   (package
@@ -6930,13 +6905,13 @@ a tool for interpretability or @code{eXplainable} Artificial Intelligence (XAI).
 (define-public r-nmw
   (package
     (name "r-nmw")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmw" version))
        (sha256
-        (base32 "1wzqdg7cc5q9yw2axvzzlh60az1x6f7ycaqwadns1xr416x0kwfw"))))
+        (base32 "1y0nyj0jalzb7x9xm5fca7iqgl9lrgvqjhiscc2wy1n0kky21cqh"))))
     (properties `((upstream-name . "nmw")))
     (build-system r-build-system)
     (arguments

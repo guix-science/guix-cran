@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
@@ -13,6 +12,7 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
   #:use-module (gnu packages tcl)
@@ -23381,13 +23381,13 @@ tasks to streamline workflows.")
 (define-public r-thisplot
   (package
     (name "r-thisplot")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisplot" version))
        (sha256
-        (base32 "1ilkmcxjg28rbd5bz3z06ig2ifpa2yb0hh2kfzg954f291f6wrl9"))))
+        (base32 "036fpys1rfb31l0xdshlcf1cyjzni58xy3sg61dsp56975ajdz69"))))
     (properties `((upstream-name . "thisplot")))
     (build-system r-build-system)
     (arguments
@@ -23400,6 +23400,7 @@ tasks to streamline workflows.")
                              r-ggrepel
                              r-ggplot2
                              r-geomtextpath
+                             r-dendextend
                              r-cli))
     (home-page "https://mengxu98.github.io/thisplot/")
     (synopsis "Utility Functions for Plotting")

@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python)
@@ -17,6 +16,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages java)
   #:use-module (gnu packages docker)
@@ -9270,13 +9270,13 @@ the testing procedure.")
 (define-public r-subgrpid
   (package
     (name "r-subgrpid")
-    (version "0.12")
+    (version "0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SubgrpID" version))
        (sha256
-        (base32 "0x25n5gm1fl5s157g5a7jszy1rj16151r0jpf61vvsw0c9c58707"))))
+        (base32 "0cy29nadhg4n63vrdr8vr5x51zmy8qjp4pc2808b1p30biych2fn"))))
     (properties `((upstream-name . "SubgrpID")))
     (build-system r-build-system)
     (arguments
@@ -12496,13 +12496,13 @@ approximation.  The models are fitted via TMB (Template Model Builder)
 (define-public r-stochvol
   (package
     (name "r-stochvol")
-    (version "3.2.8")
+    (version "3.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochvol" version))
        (sha256
-        (base32 "0k7iahryksbl010xv79xjz9pvrazragwf9w4hadfci33ccn0k32a"))))
+        (base32 "1qj0x8zw6xpqzs2c39xmn0ciii3zw0a0m0kkgq96b0i08dwqvard"))))
     (properties `((upstream-name . "stochvol")))
     (build-system r-build-system)
     (arguments
@@ -37097,33 +37097,6 @@ according to Matthew Correlation Coefficient metric.  Alternative resampling
 methods are also available in the package.")
     (license license:expat)))
 
-(define-public r-smotefamily
-  (package
-    (name "r-smotefamily")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smotefamily" version))
-       (sha256
-        (base32 "05ck6c4pldqqspb7abjh8vabc3g0fp6ivfbd9y2q2rm031mil4p2"))))
-    (properties `((upstream-name . "smotefamily")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph r-fnn r-dbscan))
-    (home-page "https://cran.r-project.org/package=smotefamily")
-    (synopsis
-     "Collection of Oversampling Techniques for Class Imbalance Problem Based on SMOTE")
-    (description
-     "This package provides a collection of various oversampling techniques developed
-from SMOTE is provided.  SMOTE is a oversampling technique which synthesizes a
-new minority instance between a pair of one minority instance and one of its K
-nearest neighbor.  Other techniques adopt this concept with other criteria in
-order to generate balanced dataset for class imbalance problem.")
-    (license license:gpl3+)))
-
 (define-public r-smosr
   (package
     (name "r-smosr")
@@ -39046,13 +39019,13 @@ see Artman (2020) <@code{arXiv:2008.02341>}.")
 (define-public r-smam
   (package
     (name "r-smam")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smam" version))
        (sha256
-        (base32 "0p7k4x27rbfmibifq9hn161v57zvlgw088inq2gnmm95sh6kqh1v"))))
+        (base32 "0qa2fh5a9qcbw54x92mwvc354kyxm0zb8rx7pvy6x1r8isf0na4r"))))
     (properties `((upstream-name . "smam")))
     (build-system r-build-system)
     (arguments
@@ -39454,13 +39427,13 @@ likelihood.  Biometrics <doi:10.1111/biom.13366>.")
 (define-public r-slsedesign
   (package
     (name "r-slsedesign")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLSEdesign" version))
        (sha256
-        (base32 "1nciazg1xj039p2v5c18rl49fnfri5x8871mxadnhc4n93hf9iyb"))))
+        (base32 "187bp6l0qmwwwa8iz67y00cvvf4y3v4lafij0hgnx1gb4jhlzg9x"))))
     (properties `((upstream-name . "SLSEdesign")))
     (build-system r-build-system)
     (arguments
@@ -41853,13 +41826,13 @@ such as those of White (1980) <doi:10.2307/1912934>, @code{MacKinnon} and White
 (define-public r-skater
   (package
     (name "r-skater")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skater" version))
        (sha256
-        (base32 "1hw6hk2v6jxhv86dzjpqnakkrbp2k7gayg2zffpyd2z8l4mpgmxd"))))
+        (base32 "0avvb4ynysh5djr1qsnjy79g6f2mhlcg8i3sxk34ki5zy4dr4y7v"))))
     (properties `((upstream-name . "skater")))
     (build-system r-build-system)
     (arguments
@@ -70878,7 +70851,7 @@ ML with robust standard errors.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list gsl gsl gmp))
+    (inputs (list gsl gmp))
     (propagated-inputs (list r-rcpp r-arules))
     (home-page "https://cran.r-project.org/package=sbrl")
     (synopsis "Scalable Bayesian Rule Lists Model")

@@ -7,9 +7,9 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages web)
   #:use-module (gnu packages curl)
@@ -3437,13 +3437,13 @@ construct definitions and corresponding instructions in a decentralized manner
 (define-public r-psytoolkit
   (package
     (name "r-psytoolkit")
-    (version "1.1.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PsyToolkit" version))
        (sha256
-        (base32 "1bmzjm45qv46jpv0ll3qr7h50j0hp31ywkcb3nmjd8c1y9rvplh8"))))
+        (base32 "0wbqphjxiikf520zhgfqj91sf88zymdp6lm3czpmln7i2ddzy9kf"))))
     (properties `((upstream-name . "PsyToolkit")))
     (build-system r-build-system)
     (arguments
@@ -37703,11 +37703,7 @@ Phillips (2010) <doi:10.1017/S026646660909063X>.")
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-nlme
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggplot2
+    (propagated-inputs (list r-survival r-nlme r-ggpubr r-ggplot2
                              r-frailtypack))
     (home-page "https://cran.r-project.org/package=PDXpower")
     (synopsis

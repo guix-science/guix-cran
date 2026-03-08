@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages bioconductor)
@@ -621,40 +620,6 @@ as at
 Variable trees display information about nested subsets of a data frame.
 <doi:10.18637/jss.v114.i04>.")
     (license license:gpl3)))
-
-(define-public r-vtreat
-  (package
-    (name "r-vtreat")
-    (version "1.6.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vtreat" version))
-       (sha256
-        (base32 "04ymyv7ybahs4k6yc2dbmhhnxnjsa09h8cbfayslr655rzlgyqx5"))))
-    (properties `((upstream-name . "vtreat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-wrapr r-digest))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/WinVector/vtreat/")
-    (synopsis "Statistically Sound 'data.frame' Processor/Conditioner")
-    (description
-     "This package provides a data.frame processor/conditioner that prepares
-real-world data for predictive modeling in a statistically sound manner.  vtreat
-prepares variables so that data has fewer exceptional cases, making it easier to
-safely use models in production.  Common problems vtreat defends against: Inf',
-NA', too many categorical levels, rare categorical levels, and new categorical
-levels (levels seen during application, but not during training).  Reference:
-\"'vtreat': a data.frame Processor for Predictive Modeling\", Zumel, Mount, 2016,
-<DOI:10.5281/zenodo.1173313>.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-vtable
   (package
@@ -1558,28 +1523,28 @@ port of the original code published in the early 1990's by Steven Fortune.")
 (define-public r-voronoibiomedplot
   (package
     (name "r-voronoibiomedplot")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VoronoiBiomedPlot" version))
        (sha256
-        (base32 "06aw1p6h35scvcjkbiaxs3911qx0hzh7z3wsvfnaihz7rrslg9qa"))))
+        (base32 "19qsv54d6srdwqyf354ak134x595s5r1aarxxhpwz71d5kpzv79h"))))
     (properties `((upstream-name . "VoronoiBiomedPlot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mass r-ggrepel r-ggplot2 r-deldir))
-    (home-page "https://cran.r-project.org/package=VoronoiBiomedPlot")
-    (synopsis "Projection Visualization Plots for Dimensionally Reduced Data")
+    (home-page "https://github.com/JornLotsch/voronoi_tesselation_plot")
+    (synopsis "Tesselation Visualization Plots for 2D Data")
     (description
-     "This package creates visualization plots for 2D projected data including ellipse
-plots, Voronoi diagram plots, and combined ellipse-Voronoi plots.  Designed to
-visualize class separation in dimensionally reduced data from techniques like
+     "This package creates visualization plots for 2D data including ellipse plots,
+Voronoi tesselation plots, and combined ellipse-Voronoi plots.  Designed to
+visualize class separation in 2D data, raw of from projection techniques like
 principal component analysis (PCA), partial least squares discriminant analysis
-(PLS-DA) or others.  For more details see Lotsch and Ultsch (2024)
-<doi:10.1016/j.imu.2024.101573>.")
+(PLS-DA) or others.  For more details see Lotsch and Kringel (2026) and Lotsch
+and Ultsch (2024) <doi:10.1016/j.imu.2024.101573>.")
     (license license:gpl3)))
 
 (define-public r-volumodel

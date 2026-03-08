@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
@@ -14771,13 +14770,13 @@ color images, both for binary and multi-class image segmentation.")
 (define-public r-imagery
   (package
     (name "r-imagery")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imageRy" version))
        (sha256
-        (base32 "06zcw2jsvdbvc28hrcrqw9b8xck0ml3sg27bqi93c68navphcbm7"))))
+        (base32 "0xncbz2jzzaw4mmzhgakar5ld58w7fxs13836i5j3z4a1bzrr65j"))))
     (properties `((upstream-name . "imageRy")))
     (build-system r-build-system)
     (arguments
@@ -14794,7 +14793,7 @@ color ramps, export RGB composites, and create multi-frame visualizations.
 Built on top of the terra and ggplot2 packages.  See
 <https://github.com/ducciorocchini/@code{imageRy>} for more details and
 examples.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-imagerextra
   (package
@@ -15394,7 +15393,6 @@ years.")
      (list
       #:tests? #f))
     (inputs (list zlib
-                  zlib
                   libx11
                   zstd
                   libwebp
