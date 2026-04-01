@@ -26236,13 +26236,13 @@ Meta-Learners.\" A tutorial for this package can be found at
 (define-public r-cograph
   (package
     (name "r-cograph")
-    (version "1.5.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cograph" version))
        (sha256
-        (base32 "0i9grqsrc3jir5gihlc5m9fqk6kwf6pd6njya252xbwgccrw64rg"))))
+        (base32 "0kabsfm51m2dpxfwr4nikr13s93gyah67xx8q83q1vwd2s935kib"))))
     (properties `((upstream-name . "cograph")))
     (build-system r-build-system)
     (arguments
@@ -26251,7 +26251,7 @@ Meta-Learners.\" A tutorial for this package can be found at
     (propagated-inputs (list r-r6 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://sonsoles.me/cograph/")
-    (synopsis "Modern Network Visualization")
+    (synopsis "Analysis and Visualization of Complex Networks")
     (description
      "This package provides tools for the analysis, visualization, and manipulation of
 dynamical, social (Saqr et al. (2024) <doi:10.1007/978-3-031-54464-4_10>) and
@@ -49867,13 +49867,13 @@ Pashley (2010) <doi:10.1007/978-0-387-85461-8_1>, and Eggen (1999)
 (define-public r-cati
   (package
     (name "r-cati")
-    (version "0.99.4")
+    (version "0.99.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cati" version))
        (sha256
-        (base32 "02g33kkp97kswiyjsd378zpa3fc9rjk2d9f4l1gdh7pzglabsmgl"))))
+        (base32 "1zqdz8clk6hs8drj9gwbdlm9y8qyzmvfkax8r7s71hr6sdj0qzdp"))))
     (properties `((upstream-name . "cati")))
     (build-system r-build-system)
     (arguments
@@ -49884,8 +49884,8 @@ Pashley (2010) <doi:10.1007/978-0-387-85461-8_1>, and Eggen (1999)
                              r-nlme
                              r-hypervolume
                              r-geometry
-                             r-fd
                              r-e1071
+                             r-cluster
                              r-ape
                              r-ade4))
     (home-page "https://github.com/adrientaudiere/cati")
@@ -49893,7 +49893,11 @@ Pashley (2010) <doi:10.1007/978-0-387-85461-8_1>, and Eggen (1999)
     (description
      "Detect and quantify community assembly processes using trait values of
 individuals or populations, the T-statistics and other metrics, and dedicated
-null models.")
+null models.  Provides tools to analyse intraspecific trait variability and its
+consequences for community assembly.  Implements a framework using
+individual-level trait data to decompose variance at the population, species,
+and community levels.  Methods are described in Taudiere and Violle (2016)
+<doi:10.1111/ecog.01433>.")
     (license license:gpl2+)))
 
 (define-public r-catfun

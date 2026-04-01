@@ -41291,6 +41291,36 @@ the model's performance using model fit indices, information criteria, and
 reliability metrics.")
     (license license:gpl3+)))
 
+(define-public r-measles
+  (package
+    (name "r-measles")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "measles" version))
+       (sha256
+        (base32 "0jmmn90wrj3q3x8bvl3d45l5xbvqvnxcfwj6mg3cnhq687y8mjrn"))))
+    (properties `((upstream-name . "measles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-epiworldr r-cpp11))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/UofUEpiBio/measles")
+    (synopsis "Measles Epidemiological Models")
+    (description
+     "This package provides a specialized collection of measles epidemiological models
+built on the @code{epiworldR} framework.  This package is a spinoff from
+@code{epiworldR} focusing specifically on measles transmission dynamics.  It
+includes models for school settings with quarantine and isolation policies,
+mixing models with population groups, and risk-based quarantine strategies.  The
+models use Agent-Based Models (ABM) with a fast C++ backend from the epiworld
+library.  Ideal for studying measles outbreaks, vaccination strategies, and
+intervention policies.")
+    (license license:expat)))
+
 (define-public r-meantables
   (package
     (name "r-meantables")
@@ -45470,13 +45500,13 @@ Foster (2021) <doi:10.1111/2041-210X.13535>.")
 (define-public r-mbg
   (package
     (name "r-mbg")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mbg" version))
        (sha256
-        (base32 "1gm5q944721mcc0bzcnr8v0cpz2ms2wmppbhpbzh97pw399jcfm3"))))
+        (base32 "1dsncz4bw5fqwrswpgjsyfxqn87mnagz2lxi369jwfczwkjphf0d"))))
     (properties `((upstream-name . "mbg")))
     (build-system r-build-system)
     (arguments

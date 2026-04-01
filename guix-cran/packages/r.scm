@@ -32615,13 +32615,13 @@ the axioms, and (iii) compute power against uniformly random behavior.")
 (define-public r-reviser
   (package
     (name "r-reviser")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reviser" version))
        (sha256
-        (base32 "0hwgh827rfm1l0xh602f4r6572wqk8dz8860r0nq7qz1gvwzzk9m"))))
+        (base32 "05k556y1xphswaymnlx931v68zx0ddw5dhc28a0l3vn1f31glllf"))))
     (properties `((upstream-name . "reviser")))
     (build-system r-build-system)
     (arguments
@@ -32643,7 +32643,7 @@ the axioms, and (iii) compute power against uniformly random behavior.")
                              r-car
                              r-calculus))
     (native-inputs (list r-knitr))
-    (home-page "https://p-wegmueller.github.io/reviser/")
+    (home-page "https://docs.ropensci.org/reviser/")
     (synopsis "Analyzing Revisions in Real-Time Time Series Vintages")
     (description
      "Analyzes revisions in real-time time series vintages.  The package converts
@@ -48409,6 +48409,58 @@ neighbors, and convex hull algorithms.  For more information about how to use
 the header files, see the CGAL documentation at <https://www.cgal.org>.
 Currently downloads version 6.1 of the CGAL header files.")
     (license license:gpl3)))
+
+(define-public r-rcppcensspatial
+  (package
+    (name "r-rcppcensspatial")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppCensSpatial" version))
+       (sha256
+        (base32 "1981q9qb1c13k55czmr3r7yyd4pssbykwn0zi2yqilpby9376smf"))))
+    (properties `((upstream-name . "RcppCensSpatial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stempcens
+                             r-roptim
+                             r-relliptical
+                             r-rdpack
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-momtrunc
+                             r-gridextra
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=RcppCensSpatial")
+    (synopsis
+     "Spatial Estimation and Prediction for Censored/Missing Responses")
+    (description
+     "It provides functions for estimating parameters in linear spatial models with
+censored or missing responses using the Expectation-Maximization (EM),
+Stochastic Approximation EM (SAEM), and Monte Carlo EM (MCEM) algorithms.  These
+methods are widely used to obtain maximum likelihood (ML) estimates in the
+presence of incomplete data.  The EM algorithm computes ML estimates when a
+closed-form expression for the conditional expectation of the complete-data
+log-likelihood is available.  The MCEM algorithm replaces this expectation with
+a Monte Carlo approximation based on independent simulations of the missing
+data.  In contrast, the SAEM algorithm decomposes the E-step into simulation and
+stochastic approximation steps, improving computational efficiency in complex
+settings.  In addition, the package provides standard error estimation based on
+the Louis method.  It also includes functionality for spatial prediction at new
+locations.  References used for this package: Galarza, C. E., Matos, L. A.,
+Castro, L. M., & Lachos, V. H. (2022).  Moments of the doubly truncated
+selection elliptical distributions with emphasis on the unified multivariate
+skew-t distribution.  Journal of Multivariate Analysis, 189, 104944
+<doi:10.1016/j.jmva.2021.104944>; Valeriano, K. A., Galarza, C. E., & Matos, L.
+A. (2023).  Moments and random number generation for the truncated elliptical
+family of distributions.  Statistics and Computing, 33(1), 32
+<doi:10.1007/s11222-022-10200-4>.")
+    (license license:gpl2+)))
 
 (define-public r-rcppblaze
   (package

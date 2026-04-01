@@ -10463,13 +10463,13 @@ interactive introduction, see
 (define-public r-focus
   (package
     (name "r-focus")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "focus" version))
        (sha256
-        (base32 "1vqdr6wsjrrsn8hvix78pbgnqzv64di5zwylfvxky62dycng18dw"))))
+        (base32 "0qlc7aknxpqy675vhpfjjf792sgbz4v4250hl0vhxwq1sh2408m4"))))
     (properties `((upstream-name . "focus")))
     (build-system r-build-system)
     (arguments

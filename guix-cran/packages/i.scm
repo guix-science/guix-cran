@@ -15050,6 +15050,35 @@ within are general and have wide applications for image processing, analyzing,
 filtering, and plotting.")
     (license license:gpl3)))
 
+(define-public r-imagefluency
+  (package
+    (name "r-imagefluency")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imagefluency" version))
+       (sha256
+        (base32 "11n9anc15rvh50piwfl182al2h1vixksbczh14x33iydk93m0rp1"))))
+    (properties `((upstream-name . "imagefluency")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readbitmap r-r-utils r-pracma r-openimager
+                             r-magick))
+    (native-inputs (list r-knitr))
+    (home-page "https://imagefluency.com")
+    (synopsis "Image Statistics Based on Processing Fluency")
+    (description
+     "Get image statistics based on processing fluency theory.  The functions provide
+scores for several basic aesthetic principles that facilitate fluent cognitive
+processing of images: contrast, complexity / simplicity, self-similarity,
+symmetry, and typicality.  See Mayer & Landwehr (2018) <doi:10.1037/aca0000187>
+and Mayer & Landwehr (2018) <doi:10.31219/osf.io/gtbhw> for the theoretical
+background of the methods.")
+    (license license:gpl3)))
+
 (define-public r-imagedata
   (package
     (name "r-imagedata")

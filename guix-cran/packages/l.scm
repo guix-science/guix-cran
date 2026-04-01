@@ -6064,6 +6064,38 @@ vector fonts).  All text can be easily previewed as a matrix or raster image.  A
 selection of fonts is included with this package.")
     (license license:expat)))
 
+(define-public r-loewesadditivity
+  (package
+    (name "r-loewesadditivity")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "loewesadditivity" version))
+       (sha256
+        (base32 "0j9vvh2ys09hy2k3mbrlf0p493ymrxvfsdcjw0p6rlls54z9lqqc"))))
+    (properties `((upstream-name . "loewesadditivity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-rootsolve
+                             r-rlang
+                             r-metr
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=loewesadditivity")
+    (synopsis "Loewe's Additivity")
+    (description
+     "Estimate model parameters to determine whether two compounds have synergy,
+antagonism, or Loewe's Additivity.")
+    (license license:expat)))
+
 (define-public r-loedata
   (package
     (name "r-loedata")

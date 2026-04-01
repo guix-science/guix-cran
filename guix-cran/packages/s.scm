@@ -32182,13 +32182,13 @@ high-dimensional large-scale spatial count data with additional covariates.")
 (define-public r-spaco
   (package
     (name "r-spaco")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPACO" version))
        (sha256
-        (base32 "18xbl76sd0fxdif5wl7j7rvhhbsxc5lgn7dvx8vgyqpr271i1bim"))))
+        (base32 "1kr8y7c8mvm5df6m4gbaq7s58h1w3ni9pa6v9p9xm0099il2gd23"))))
     (properties `((upstream-name . "SPACO")))
     (build-system r-build-system)
     (arguments
@@ -34155,6 +34155,41 @@ Ellingson LD, Schwabacher IJ, Kim Y, Welk GJ, & Cook DB (2016)
 Welk GJ (2018) <doi:10.1249/MSS.0000000000001486>.")
     (license license:gpl3)))
 
+(define-public r-sojourn
+  (package
+    (name "r-sojourn")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Sojourn" version))
+       (sha256
+        (base32 "0cfb686c5yq85d8k8sx4wyrsrzygn0ri9qmycpkmb95v20kx1q9r"))))
+    (properties `((upstream-name . "Sojourn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-svdialogs
+                             r-rlang
+                             r-pautilities
+                             r-nnet
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr))
+    (home-page "https://github.com/paulhibbing/Sojourn")
+    (synopsis
+     "Apply Sojourn Methods for Processing ActiGraph Accelerometer Data")
+    (description
+     "This package provides a simple way for utilizing Sojourn methods for
+accelerometer processing, as detailed in Lyden K, Keadle S, Staudenmayer J, &
+Freedson P (2014) <doi:10.1249/MSS.0b013e3182a42a2d>, Ellingson LD, Schwabacher
+IJ, Kim Y, Welk GJ, & Cook DB (2016) <doi:10.1249/MSS.0000000000000915>, and
+Hibbing PR, Ellingson LD, Dixon PM, & Welk GJ (2018)
+<doi:10.1249/MSS.0000000000001486>.")
+    (license license:gpl3)))
+
 (define-public r-soilwater
   (package
     (name "r-soilwater")
@@ -35210,13 +35245,13 @@ sf-compatible data frames.")
 (define-public r-socialsim
   (package
     (name "r-socialsim")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socialSim" version))
        (sha256
-        (base32 "0r83nnbm8x0hrxjhv32g9dv7lb5crigvr1jfpzjl1f0bz3abwlg1"))))
+        (base32 "0fhlgjqi0rmq0bz4f2vwywi7c7gjfmpy813lf11rx0f3qp218v3d"))))
     (properties `((upstream-name . "socialSim")))
     (build-system r-build-system)
     (arguments
@@ -35240,8 +35275,8 @@ research on interacting phenotypes and on direct and indirect genetic effects
 alternative models of social effects, including impactâresponsiveness,
 varianceâpartitioning, and trait-based models, and to summarise model
 performance in terms of bias and dispersion.  For a more detailed description of
-the available models and impactâresponsiveness, see the accompanying preprint
-Wijnhorst et al. (2025) <doi:10.32942/X2F65M>.")
+the available models and impactâresponsiveness, see the accompanying article
+Wijnhorst et al. (2026) <doi:10.1093/jeb/voag013>.")
     (license license:expat)))
 
 (define-public r-socialrisk
@@ -58240,13 +58275,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.3.6")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "1mknvabdd6r3rxl81xb8wwr35w51yc249pij0cz58q7r98bbz78k"))))
+        (base32 "1kwrwqzppw1l4y32gfgz55ikb257gfl5gz41f0wfnwp8h8sqdm1c"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments

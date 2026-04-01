@@ -23551,13 +23551,13 @@ remember ggplot2 sequences.")
 (define-public r-gge
   (package
     (name "r-gge")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gge" version))
        (sha256
-        (base32 "0n33dpqvmf3iqr3bimx91zzla5m83nhyf0ldm9hrflxgnnmlnzhg"))))
+        (base32 "1xba9dxgvnhp83dr2izgfw93xvkiax4144xlqn5rk42352dm3wha"))))
     (properties `((upstream-name . "gge")))
     (build-system r-build-system)
     (arguments

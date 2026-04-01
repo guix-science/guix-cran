@@ -172,6 +172,48 @@ helper functions for supplemental calculations, tabling, and model
 visualization.")
     (license license:gpl3)))
 
+(define-public r-dynwrap
+  (package
+    (name "r-dynwrap")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dynwrap" version))
+       (sha256
+        (base32 "1m0cv3iqgbdhvhbgs31w0ax9k3hd97vhcc2nm47m5h93bd57sn2m"))))
+    (properties `((upstream-name . "dynwrap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-reshape2
+                             r-readr
+                             r-purrr
+                             r-processx
+                             r-matrix
+                             r-igraph
+                             r-glue
+                             r-dynutils
+                             r-dynparam
+                             r-dplyr
+                             r-crayon
+                             r-babelwhale
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dynverse/dynwrap")
+    (synopsis "Representing and Inferring Single-Cell Trajectories")
+    (description
+     "This package provides functionality to infer trajectories from single-cell data,
+represent them into a common format, and adapt them.  Other biological
+information can also be added, such as cellular grouping, RNA velocity and
+annotation.  Saelens et al. (2019) <doi:10.1038/s41587-019-0071-9>.")
+    (license license:expat)))
+
 (define-public r-dyntxregime
   (package
     (name "r-dyntxregime")
