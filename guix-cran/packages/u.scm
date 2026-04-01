@@ -577,6 +577,29 @@ can also be called using \"usshraw\", as described in: Ussher, J. (1658)
 <https://archive.org/stream/@code{AnnalsOfTheWorld/Annals_djvu.txt>}.")
     (license license:expat)))
 
+(define-public r-usportsr
+  (package
+    (name "r-usportsr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usportsR" version))
+       (sha256
+        (base32 "0x9m0pn9ihr1j6z5iwgm13v6z7v5da46ikd6yygf8f9wm9605xyp"))))
+    (properties `((upstream-name . "usportsR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-magrittr r-dplyr))
+    (home-page "https://github.com/uwaggs/usportsR")
+    (synopsis "Access U SPORTS Data")
+    (description
+     "This package provides tools package to extract and analyze data from U SPORTS,
+the governing body of university sport in Canada.")
+    (license license:expat)))
+
 (define-public r-uspopcenters
   (package
     (name "r-uspopcenters")
@@ -1904,13 +1927,13 @@ disturbances simulated according to Le et al.(2022)
 (define-public r-updog
   (package
     (name "r-updog")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "updog" version))
        (sha256
-        (base32 "0zxaschvj5wbmjz2l9izfkxqrna6izar0pd4lb74d79m4zs3lcra"))))
+        (base32 "1i1qcy554m16pnxch510rbq5afx67fx8lim0z2mnl0b2dbq1xys7"))))
     (properties `((upstream-name . "updog")))
     (build-system r-build-system)
     (arguments
@@ -1919,6 +1942,7 @@ disturbances simulated according to Le et al.(2022)
     (propagated-inputs (list r-reshape2
                              r-rcpparmadillo
                              r-rcpp
+                             r-parallelly
                              r-iterators
                              r-ggplot2
                              r-future
@@ -2216,6 +2240,34 @@ predictors.")
      "This package performs a test for second-order stationarity of time series based
 on unsystematic sub-samples.")
     (license license:gpl2)))
+
+(define-public r-unsurv
+  (package
+    (name "r-unsurv")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unsurv" version))
+       (sha256
+        (base32 "0rc36wlq8bk2m7mpdlx4h4vz3v0abkz3bqqpiib4fxdfwwc6p7d8"))))
+    (properties `((upstream-name . "unsurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ielbadisy/unsurv")
+    (synopsis "Unsupervised Clustering of Individualized Survival Curves")
+    (description
+     "This package provides tools for clustering individualized survival curves using
+the Partitioning Around Medoids (PAM) algorithm, with monotonic enforcement,
+optional smoothing, weighted distances (L1/L2), automatic K selection via
+silhouette width, prediction for new curves, basic stability checks, and
+plotting helpers.  The clustering strategy follows Kaufman and Rousseeuw (1990,
+ISBN:0471878766).")
+    (license license:expat)))
 
 (define-public r-unsum
   (package
@@ -2819,6 +2871,34 @@ function diagnoses the input data and returns with an optimised solution on the
 same.")
     (license license:gpl3)))
 
+(define-public r-unitrootests
+  (package
+    (name "r-unitrootests")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unitrootests" version))
+       (sha256
+        (base32 "0ask1w25bg20w15w3zh0aag1ckaji2krkxhyl014xm7n9158hr2y"))))
+    (properties `((upstream-name . "unitrootests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-urca r-tseries r-strucchange r-quantreg))
+    (home-page "https://cran.r-project.org/package=unitrootests")
+    (synopsis "Comprehensive Unit Root and Stationarity Tests")
+    (description
+     "This package provides a unified framework for unit root and stationarity testing
+including quantile ADF tests (Koenker and Xiao, 2004)
+<doi:10.1198/016214504000001114>, GARCH-based unit root tests with endogenous
+structural breaks (Narayan and Liu, 2015) <doi:10.1016/j.eneco.2014.11.021>, and
+comprehensive Dickey-Fuller, Phillips-Perron, KPSS, ERS/DF-GLS, Zivot-Andrews,
+and Kobayashi-@code{McAleer} tests with an Elder-Kennedy decision strategy
+(Elder and Kennedy, 2001) <doi:10.1080/00220480109595179>.")
+    (license license:gpl3)))
+
 (define-public r-unitquantreg
   (package
     (name "r-unitquantreg")
@@ -2853,6 +2933,35 @@ comparison.  For more computation efficient the [dpqr]'s, likelihood, score and
 hessian functions are written in C++.  For further details see Mazucheli et.  al
 (2022) <doi:10.1016/j.cmpb.2022.106816>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-unitmix
+  (package
+    (name "r-unitmix")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UnitMix" version))
+       (sha256
+        (base32 "1qc2px725hsbrm9fbrkk5ydcqbh9f7d7nbbapmb6fwnl8wkxwjam"))))
+    (properties `((upstream-name . "UnitMix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=UnitMix")
+    (synopsis "Detecting Measurement-Unit Errors via Gaussian Mixture Models")
+    (description
+     "This package provides tools to detect and correct measurement-unit errors in
+multivariate numeric data using model-based clustering.  Gaussian mixture models
+with user-defined translation vectors identify clusters of records that differ
+in scale or unit.  Core functionality includes cluster assignment via the EM
+algorithm, error correction based on posterior probabilities and pairwise
+scatterplot visualizations.  For more details see Di Zio, Guarnera and Luzi
+(2005)
+<https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2005001/article/8087-eng.pdf>.")
+    (license license:gpl3)))
 
 (define-public r-unitedr
   (package
@@ -3356,13 +3465,13 @@ diverse range of color palettes for creating scientific visualizations.")
 (define-public r-unicode
   (package
     (name "r-unicode")
-    (version "16.0.0-1")
+    (version "17.0.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Unicode" version))
        (sha256
-        (base32 "0q19qn0x5pi8fhylx1c381y4ssysysf30pi3cq948jkg0s84cp1z"))))
+        (base32 "120r3sx8f34avkxklqfacyxz70wdkymmngjd980qh7nanimynyvz"))))
     (properties `((upstream-name . "Unicode")))
     (build-system r-build-system)
     (arguments
@@ -3370,7 +3479,7 @@ diverse range of color palettes for creating scientific visualizations.")
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=Unicode")
     (synopsis "Unicode Data and Utilities")
-    (description "Data from Unicode 16.0.0 and related utilities.")
+    (description "Data from Unicode 17.0.0 and related utilities.")
     (license license:gpl2)))
 
 (define-public r-unico
@@ -3747,43 +3856,6 @@ multiple groups, and the inclusion of covariates.  Also computes p-values for
 the aggregate average treatment effect on the treated via the randomization
 inference procedure described in @code{MacKinnon} and Webb (2020)
 <doi:10.1016/j.jeconom.2020.04.024>.")
-    (license license:expat)))
-
-(define-public r-understandbpmn
-  (package
-    (name "r-understandbpmn")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "understandBPMN" version))
-       (sha256
-        (base32 "04wnyxplrn5c6jb76dw25pawwcvvn5xq80lqn5imsf31nbwybpm5"))))
-    (properties `((upstream-name . "understandBPMN")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-usethis
-                             r-tidyr
-                             r-tibble
-                             r-rcpp
-                             r-r-utils
-                             r-purrr
-                             r-dplyr
-                             r-devtools))
-    (home-page "https://cran.r-project.org/package=understandBPMN")
-    (synopsis "Calculator of Understandability Metrics for BPMN")
-    (description
-     "Calculate several understandability metrics of BPMN models.  BPMN stands for
-business process modelling notation and is a language for expressing business
-processes into business process diagrams.  Examples of these understandability
-metrics are: average connector degree, maximum connector degree, sequentiality,
-cyclicity, diameter, depth, token split, control flow complexity, connector
-mismatch, connector heterogeneity, separability, structuredness and cross
-connectivity.  See R documentation and paper on metric implementation included
-in this package for more information concerning the metrics.")
     (license license:expat)))
 
 (define-public r-uncover
@@ -4462,31 +4534,6 @@ information on the algorithm, see Milusheva et al. (2021)
 available at <https://data.police.uk/docs/>.  Includes data on police forces and
 police force areas, crime reports, and the use of stop-and-search powers.")
     (license license:expat)))
-
-(define-public r-uklr
-  (package
-    (name "r-uklr")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "uklr" version))
-       (sha256
-        (base32 "1x5lfzb0a64k84dscdj61kcibww8mizf9w62anmb207f8dggj7lg"))))
-    (properties `((upstream-name . "uklr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-jsonlite r-httr r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://kvasilopoulos.github.io/uklr/")
-    (synopsis "Client to United Kingdom Land Registry")
-    (description
-     "Access data from Land Registry Open Data <http://landregistry.data.gov.uk/>
-through SPARQL queries.  uklr supports the house price index, transaction and
-price paid data.")
-    (license license:gpl3)))
 
 (define-public r-ukhsadatr
   (package
@@ -5684,26 +5731,26 @@ it contains some useful tools for digitizing and data manipulation.")
 (define-public r-uaparserjs
   (package
     (name "r-uaparserjs")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uaparserjs" version))
        (sha256
-        (base32 "0v24smgsz1p2wa23mc2llx7dycwmgf7zyxdhwxgwplabpmy3xzhl"))))
+        (base32 "0w6lpj4i6k92pxcfqxd42hkj023mwjyqlb90kw6pjdfi9m13hs69"))))
     (properties `((upstream-name . "uaparserjs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-v8 r-progress))
-    (home-page "https://gitlab.com/hrbrmstr/uaparserjs")
+    (home-page "https://github.com/gregfrog/uaparserjs-a")
     (synopsis "Parse 'User-Agent' Strings")
     (description
      "Despite there being a section in RFC 7231
-<https://tools.ietf.org/html/rfc7231#section-5.5.3> defining a suggested
-structure for User-Agent headers this data is notoriously difficult to parse
-consistently.  Tools are provided that will take in user agent strings and
+<https://datatracker.ietf.org/doc/html/rfc7231#section-5.5.3> defining a
+suggested structure for User-Agent headers this data is notoriously difficult to
+parse consistently.  Tools are provided that will take in user agent strings and
 return structured R objects.  This is a V8'-backed package based on the
 ua-parser project <https://github.com/ua-parser>.")
     (license (list license:asl2.0

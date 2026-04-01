@@ -121,13 +121,13 @@ settings.")
 (define-public r-zoomerjoin
   (package
     (name "r-zoomerjoin")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zoomerjoin" version))
        (sha256
-        (base32 "1jsypf63gzdc145y8l4l5kkx6bpz5z3csyqyxpb7mw0mwwdi09zj"))))
+        (base32 "0zb93mfkzz9lvfahis4yn1iblh50gwvxb8mmxmn8s5wyphsc3jcm"))))
     (properties `((upstream-name . "zoomerjoin")))
     (build-system r-build-system)
     (arguments
@@ -1156,13 +1156,13 @@ further details, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zen4r
   (package
     (name "r-zen4r")
-    (version "0.10.4")
+    (version "0.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zen4R" version))
        (sha256
-        (base32 "1m64ljb03pnv6h624lrf2xyl9xfkpjqdii3jkb1wvld0ds4b31p7"))))
+        (base32 "0nvbfrjm8jlx14jskm7fckj4p2d6n5v9gz0zz0z4696wimx84vcv"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (arguments
@@ -1240,30 +1240,6 @@ pointwise mutual information and chi-squared residuals.  The significance of
 local (and global) association is accessed using p-values estimated by
 permutations.")
     (license license:gpl3)))
-
-(define-public r-zebook
-  (package
-    (name "r-zebook")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ZeBook" version))
-       (sha256
-        (base32 "0v98kbz9njjdx60x9dn8hl8mc6x19i5knjyg2gkwfd667yy1rkl6"))))
-    (properties `((upstream-name . "ZeBook")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-triangle r-desolve))
-    (home-page "https://cran.r-project.org/package=ZeBook")
-    (synopsis "Working with Dynamic Models for Agriculture and Environment")
-    (description
-     "R package accompanying the book Working with dynamic models for agriculture and
-environment, by Daniel Wallach (INRA), David Makowski (INRA), James W. Jones
-(U.of Florida), Francois Brun (ACTA).  3rd edition 2018-09-27.")
-    (license license:lgpl3)))
 
 (define-public r-zdeskr
   (package

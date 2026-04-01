@@ -6,6 +6,7 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages geo)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages bioconductor)
@@ -194,18 +195,19 @@ multivariate data.")
 (define-public r-kvr2
   (package
     (name "r-kvr2")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kvr2" version))
        (sha256
-        (base32 "1q04lgxbmzrcmqv7m28anbzh0kvr7lg230cq6k42v3qlm963dhbn"))))
+        (base32 "18m2g99sqqyhlpyqz2is0hspqpyiqaaalxd98azqhs2br3rpb6r4"))))
     (properties `((upstream-name . "kvr2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-tidyr r-insight r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/indenkun/kvr2")
     (synopsis
@@ -397,6 +399,50 @@ method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
 (2).  Paltani, S. (2004). <DOI:10.1051/0004-6361:20034220>.")
     (license license:agpl3)))
 
+(define-public r-kuenm2
+  (package
+    (name "r-kuenm2")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kuenm2" version))
+       (sha256
+        (base32 "0db1c93vbg7r6ib3xikgrdvb4baggsbzn0b3lpyn40w3q33m6ayd"))))
+    (properties `((upstream-name . "kuenm2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list proj geos gdal))
+    (propagated-inputs (list r-terra
+                             r-mop
+                             r-mgcv
+                             r-glmnet
+                             r-fproc
+                             r-foreach
+                             r-enmpa
+                             r-dosnow))
+    (native-inputs (list r-knitr))
+    (home-page "https://marlonecobos.github.io/kuenm2/")
+    (synopsis "Detailed Development of Ecological Niche Models")
+    (description
+     "This package provides a new set of tools to help with the development of
+detailed ecological niche models using multiple algorithms.  Pre-modeling
+analyses and explorations can be done to prepare data.  Model calibration (model
+selection) can be done by creating and testing models with several parameter
+combinations.  Handy options for producing final models with transfers are
+included.  Other tools to assess extrapolation risks and variability in model
+transfers are also available.  Methodological and theoretical basis for the
+methods implemented here can be found in: Peterson et al. (2011)
+<https://www.degruyter.com/princetonup/view/title/506966>, Radosavljevic and
+Anderson (2014) <doi:10.1111/jbi.12227>, Peterson et al. (2018)
+<doi:10.1111/nyas.13873>, Cobos et al. (2019) <doi:10.7717/peerj.6281>, Alkishe
+et al. (2020) <doi:10.1016/j.pecon.2020.03.002>, Machado-Stredel et al. (2021)
+<doi:10.21425/F5FBG48814>, Arias-Giraldo and Cobos (2024)
+<doi:10.17161/bi.v18i.21742>, Cobos et al. (2024) <doi:10.17161/bi.v18i.21742>.")
+    (license license:gpl3+)))
+
 (define-public r-ktweedie
   (package
     (name "r-ktweedie")
@@ -554,24 +600,19 @@ experts.")
 (define-public r-kstio
   (package
     (name "r-kstio")
-    (version "0.4-3")
+    (version "0.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstIO" version))
        (sha256
-        (base32 "0z4qa2y9qck8ygp641g44aznh6hmh3ypim3yfwl3p0dyn8v0h50v"))))
+        (base32 "0ya3z4vk7qkhjq1hzhkr5dj9cv2i2jklappfd1lyakrbkckrslrc"))))
     (properties `((upstream-name . "kstIO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sets
-                             r-relations
-                             r-pks
-                             r-mass
-                             r-kstmatrix))
+    (propagated-inputs (list r-sets r-readods r-openxlsx2 r-kstmatrix))
     (home-page "https://cran.r-project.org/package=kstIO")
     (synopsis "Knowledge Space Theory Input/Output")
     (description
@@ -580,7 +621,7 @@ experts.")
 proposes mathematical formalisms to operationalize knowledge structures in a
 particular domain.  The @code{kstIO} package provides basic functionalities to
 read and write KST data from/to files to be used together with the kst',
-@code{kstMatrix}', CDSS', pks', or DAKS packages.")
+@code{kstMatrix}', pks', or DAKS packages.")
     (license license:gpl3+)))
 
 (define-public r-kstatistics
@@ -615,13 +656,13 @@ see Di Nardo E., Guarino G., Senato D. (2009) <@code{arXiv:0807.5008>},
 (define-public r-kst
   (package
     (name "r-kst")
-    (version "0.5-4")
+    (version "0.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kst" version))
        (sha256
-        (base32 "0drh5zjin73jfa5vksprv43ak4s8jr4y4py6sbcc4835rkl9qzph"))))
+        (base32 "02mzgygrh7lm43jsajhzrqvpp1hl56b6a313yb7l6p6jk86s4mjp"))))
     (properties `((upstream-name . "kst")))
     (build-system r-build-system)
     (arguments
@@ -871,6 +912,34 @@ KS2sample and Kuiper2sample: Efficient Exact Calculation of P-values of the
 Two-sample Kolmogorov-Smirnov and Kuiper Tests.  submitted.")
     (license license:gpl2+)))
 
+(define-public r-ksformat
+  (package
+    (name "r-ksformat")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ksformat" version))
+       (sha256
+        (base32 "0i7rcrcgxqp9qgp5lsqna2l0gfgf28z7nsamnlnx18cyr1nc004h"))))
+    (properties `((upstream-name . "ksformat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/crow16384/ksformat")
+    (synopsis "'SAS'-Style 'PROC FORMAT' for R")
+    (description
+     "This package provides SAS PROC FORMAT'-like functionality for creating and
+applying value formats in R. Supports discrete and range-based mapping of values
+to labels, reverse formatting (invalue), date/time/datetime formatting with
+built-in SAS format names, multi-label formats, expression labels evaluated at
+apply-time, case-insensitive matching, import/export of format definitions, and
+proper handling of missing values (NA, NULL, @code{NaN}).")
+    (license license:gpl3)))
+
 (define-public r-kselection
   (package
     (name "r-kselection")
@@ -896,13 +965,13 @@ k in k-means clustering''.")
 (define-public r-kseaapp
   (package
     (name "r-kseaapp")
-    (version "0.99.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KSEAapp" version))
        (sha256
-        (base32 "1gfgpa2d32y6bzvf4ww70sm7niq34sqmyrhi0phlqxshqq9xviqc"))))
+        (base32 "0rqrsm8jwy2cfd07wng5d11idl00pysc5iqwbfbq38viyyy9r12w"))))
     (properties `((upstream-name . "KSEAapp")))
     (build-system r-build-system)
     (arguments
@@ -1961,6 +2030,39 @@ data mostly about Switzerland.  The package itself is a set of wrappers around
 the KOF Datenservice API. The kofdata package is able to consume public
 information as well as data that requires an API token.")
     (license license:gpl2)))
+
+(define-public r-kodama
+  (package
+    (name "r-kodama")
+    (version "3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KODAMA" version))
+       (sha256
+        (base32 "110clns7bnjgysr2p9j82llqpk6kn624fd8i0pwxzgig09x9i86k"))))
+    (properties `((upstream-name . "KODAMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-umap
+                             r-rtsne
+                             r-rnanoflann
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=KODAMA")
+    (synopsis "Knowledge Discovery by Accuracy Maximization")
+    (description
+     "This package provides a self-guided, weakly supervised learning algorithm for
+feature extraction from noisy and high-dimensional data.  It facilitates the
+identification of patterns that reflect underlying group structures across all
+samples in a dataset.  The method incorporates a novel strategy to integrate
+spatial information, improving the clarity of results in spatially resolved
+data.")
+    (license license:gpl2+)))
 
 (define-public r-koboconnectr
   (package
@@ -4205,45 +4307,6 @@ calculate scores for each dimension of the KHQ; converts KHQ item scores to
 KHQ5D scores; and also calculates the utility index of the KHQ5D.")
     (license license:expat)))
 
-(define-public r-khisr
-  (package
-    (name "r-khisr")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "khisr" version))
-       (sha256
-        (base32 "14z9h4msddq36kf79hrqyqlq956vbyn9jxqc02w56z9b91mrkjgm"))))
-    (properties `((upstream-name . "khisr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-lifecycle
-                             r-jsonlite
-                             r-janitor
-                             r-httr2
-                             r-dplyr
-                             r-curl
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://khisr.damurka.com")
-    (synopsis "An R Client to Retrieve Data from DHIS2")
-    (description
-     "This package provides a user-friendly interface for interacting with the
-District Health Information Software 2 (DHIS2) instance.  It streamlines data
-retrieval, empowering researchers, analysts, and healthcare professionals to
-obtain and utilize data efficiently.")
-    (license license:expat)))
-
 (define-public r-kgschart
   (package
     (name "r-kgschart")
@@ -4414,24 +4477,19 @@ regularisation and warping.")
 (define-public r-kgen
   (package
     (name "r-kgen")
-    (version "0.3.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kgen" version))
        (sha256
-        (base32 "1rf7mic35jbaik9hw7j28sc98qjqjmzlv720lfpmgjsf6yhi2mlz"))))
+        (base32 "121pzisklrc6bwcqimiz726wimj89903d9jp1iph1ciq5n3znx0n"))))
     (properties `((upstream-name . "kgen")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rjson
-                             r-reticulate
-                             r-rappdirs
-                             r-pbapply
-                             r-data-table
-                             r-checkmate))
+    (propagated-inputs (list r-rjson r-reticulate r-data-table r-checkmate))
     (home-page "https://cran.r-project.org/package=kgen")
     (synopsis
      "Tool for Calculating Stoichiometric Equilibrium Constants (Ks) for Seawater")
@@ -4724,29 +4782,6 @@ determine k by drawing on power analytic techniques for covariance structures
 (@code{MacCallum}, Browne, & Sugawara, 1996) <doi:10.1037/1082-989X.1.2.130>,
 generate model syntax, and summarize results in a report.")
     (license license:gpl3+)))
-
-(define-public r-keytoenglish
-  (package
-    (name "r-keytoenglish")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "keyToEnglish" version))
-       (sha256
-        (base32 "1wzn93gp1v6y8qh9kypydqadnf6fc7xzjili77b7j402hvb0a8zg"))))
-    (properties `((upstream-name . "keyToEnglish")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-openssl r-jsonlite))
-    (home-page "https://github.com/mcandocia/keyToEnglish")
-    (synopsis "Convert Data to Memorable Phrases")
-    (description
-     "Convert keys and other values to memorable phrases.  Includes some methods to
-build lists of words.")
-    (license license:gpl2+)))
 
 (define-public r-keys
   (package
@@ -5812,51 +5847,16 @@ kernel functions.  See Tang and Li (2024) <doi:10.48550/@code{arXiv.2306.10594>}
 for details.")
     (license license:bsd-3)))
 
-(define-public r-kensyn
-  (package
-    (name "r-kensyn")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "KenSyn" version))
-       (sha256
-        (base32 "0s8sq3caxn4swac81196dp52r9lbmxb3ni45yaxh53f5g34slsi8"))))
-    (properties `((upstream-name . "KenSyn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-metafor r-lme4))
-    (home-page "http://www.modelia.org")
-    (synopsis
-     "Knowledge Synthesis in Agriculture - From Experimental Network to Meta-Analysis")
-    (description
-     "Demo and dataset accompaying the books : De l'analyse des rÃ©seaux
-expÃ©rimentaux Ã  la mÃ©ta-analyse: MÃ©thodes et applications avec le logiciel R
-pour les sciences agronomiques et environnementales (Published 2018-06-28, Quae,
-for french version) by David Makowski, Francois Piraux and Francois Brun -
-<https://www.quae.com/produit/1514/9782759228164/de-l-analyse-des-reseaux-experimentaux-a-la-meta-analyse>
-Knowledge Synthesis in Agriculture : from Experimental Network to Meta-Analysis
-(in preparation for 2018-06, Springer , for English version) by David Makowski,
-Francois Piraux and Francois Brun A full description of all the material is in
-both books.  ACKNOWLEDGMENTS : The French network \"RMT modeling and data
-analysis for agriculture\" (<http://www.modelia.org>) have contributed to the
-development of this R package.  This project and network are lead by ACTA
-(French Technical Institute for Agriculture) and was funded by a grant from the
-Ministry of Agriculture and Fishing of France.")
-    (license license:lgpl3)))
-
 (define-public r-keng
   (package
     (name "r-keng")
-    (version "2025.10.8")
+    (version "2026.3.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Keng" version))
        (sha256
-        (base32 "051clnk32mlkhz61i6i5gixf8610b244fk8xk7vw7dlrmbrxg1rl"))))
+        (base32 "1cmg6f51b2nig4j6rmghgm0xwa43068jp7yxray2bb38v3qdpw7s"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
     (arguments
@@ -5868,17 +5868,18 @@ Ministry of Agriculture and Fishing of France.")
     (description
      "Miscellaneous functions and data used in psychological research and teaching.
 Keng currently has a built-in dataset depress, and could (1) scale a vector; (2)
-compute the cut-off values of Pearson's r with known sample size; (3) test the
-significance and compute the post-hoc power for Pearson's r with known sample
-size; (4) conduct a priori power analysis and plan the sample size for Pearson's
-r; (5) compare @code{lm()}'s fitted outputs using R-squared, f_squared, post-hoc
-power, and PRE (Proportional Reduction in Error, also called partial R-squared
-or partial Eta-squared); (6) calculate PRE from partial correlation, Cohen's f,
-or f_squared; (7) conduct a priori power analysis and plan the sample size for
-one or a set of predictors in regression analysis; (8) conduct post-hoc power
-analysis for one or a set of predictors in regression analysis with known sample
-size; (9) randomly pick numbers for Chinese Super Lotto and Double Color Balls;
-(10) assess course objective achievement in Outcome-Based Education.")
+divide a vector into three groups, (3) compute the cut-off values of Pearson's r
+with known sample size; (4) test the significance and compute the post-hoc power
+for Pearson's r with known sample size; (5) conduct a priori power analysis and
+plan the sample size for Pearson's r; (6) compare @code{lm()}'s fitted outputs
+using R-squared, f_squared, post-hoc power, and PRE (Proportional Reduction in
+Error, also called partial R-squared or partial Eta-squared); (7) calculate PRE
+from partial correlation, Cohen's f, or f_squared; (8) conduct a priori power
+analysis and plan the sample size for one or a set of predictors in regression
+analysis; (9) conduct post-hoc power analysis for one or a set of predictors in
+regression analysis with known sample size; (10) randomly pick numbers for
+Chinese Super Lotto and Double Color Balls; (11) assess course objective
+achievement in Outcome-Based Education.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-kendallrandomwalks
@@ -6820,19 +6821,19 @@ in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
 (define-public r-kardl
   (package
     (name "r-kardl")
-    (version "0.1.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kardl" version))
        (sha256
-        (base32 "0gfscdmbvvanjvs8wd12la9rzzz6w0zwhfvfk3syb2p3b4x4i2ri"))))
+        (base32 "1daag7hsmb1g5zkyi1xr8gca6yk2pkkbhig2gq896kh3ijl594c1"))))
     (properties `((upstream-name . "kardl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nlwaldtest r-msm r-lmtest r-car))
+    (propagated-inputs (list r-nlwaldtest r-msm r-lmtest r-ggplot2 r-car))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kardl")
     (synopsis "Make Symmetric and Asymmetric ARDL Estimations")
@@ -6843,10 +6844,8 @@ both short- and long-run relationships in time series data under mixed orders of
 integration.  The package supports simultaneous modeling of symmetric and
 asymmetric regressors, flexible treatment of short-run and long-run asymmetries,
 and automated equation handling.  It includes several cointegration testing
-approaches such as the Pesaran-Shin-Smith F and t bounds tests, the Banerjee
-error correction test, and the restricted ECM test, together with diagnostic
-tools including Wald tests for asymmetry, ARCH tests, and stability procedures
-(CUSUM and CUSUMQ).  Methodological foundations are provided in Pesaran, Shin,
+approaches such as the Pesaran-Shin-Smith F and t bounds tests, and the
+restricted ECM test.  Methodological foundations are provided in Pesaran, Shin,
 and Smith (2001) <doi:10.1016/S0304-4076(01)00049-5> and Shin, Yu, and
 Greenwood-Nimmo (2014, ISBN:9780123855079).")
     (license license:gpl3)))

@@ -285,13 +285,13 @@ Springer, <doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
 (define-public r-hyreg2
   (package
     (name "r-hyreg2")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyreg2" version))
        (sha256
-        (base32 "0a777na847c6843mi5gx86kylcw0k2cljs1519h1i5rmzgv81y1l"))))
+        (base32 "0b1gsngaj9cx2n9f0j3hnl531a0ywivz0836jvy9kg0wy1k7nn7w"))))
     (properties `((upstream-name . "hyreg2")))
     (build-system r-build-system)
     (arguments
@@ -303,15 +303,15 @@ Springer, <doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
     (synopsis
      "Estimate Latent Classes on a Mixture of Continuous and Dichotomous Data")
     (description
-     "EQ-5D value set estimation can be done using the hybrid model likelihood as
-described by Oppe and van Hout (2010) <doi:10.1002/hec.3560> and Ramos-GoÃ±i et
-al. (2017) <doi:10.1097/MLR.0000000000000283>.  The package is based on flexmix
-and among others contains an M-step-driver as described by Leisch (2004)
-<doi:10.18637/jss.v011.i08>.  Users can estimate latent classes and address
+     "The hybrid model likelihood as described by Ramos-GoÃ±i et al. (2017)
+<doi:10.1097/MLR.0000000000000283> is implemented and and embedded in a latent
+class framework.  The package is based on flexmix and among others contains an
+M-step-driver as described by Leisch (2004) <doi:10.18637/jss.v011.i08>.  Users
+can, for example, estimate latent classes for EQ-5D value sets and address
 preference heterogeneity.  Both uncensored and censored data are supported.
 Furthermore, heteroscedasticity can be taken into account.  It is possible to
-control for different covariates on the continuous and dichotomous parts of the
-data and start values can differ between the expected latent classes.")
+control for different covariates on the continuous and dichotomous data and
+start values can differ between the expected latent classes.")
     (license license:expat)))
 
 (define-public r-hypr
@@ -343,13 +343,13 @@ Rabe et al. (2020) <doi:10.21105/joss.02134>.")
 (define-public r-hypothesize
   (package
     (name "r-hypothesize")
-    (version "0.11.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypothesize" version))
        (sha256
-        (base32 "1lczary8r9xn6syqk67hzwda3zib2614vjvvmx8dnypiv6kmqa18"))))
+        (base32 "1d23fn4caacm3j714cqjxd51bgz1g0m9ab8bbv32fwwqyrr073mh"))))
     (properties `((upstream-name . "hypothesize")))
     (build-system r-build-system)
     (arguments
@@ -842,35 +842,6 @@ publications please use Hankin 2017 <doi:10.32614/rj-2017-061>, and for
 Generalized Plackett-Luce likelihoods use Hankin 2024
 <doi:10.18637/jss.v109.i08>.")
     (license license:gpl2+)))
-
-(define-public r-hyper-gam
-  (package
-    (name "r-hyper-gam")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hyper.gam" version))
-       (sha256
-        (base32 "1g9sb5nca2g1snjb4ixz4c53s10pyzcp7j0gj5yybf3p0dnns9zj"))))
-    (properties `((upstream-name . "hyper.gam")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotly
-                             r-nlme
-                             r-mgcv
-                             r-groupedhyperframe
-                             r-cli
-                             r-caret))
-    (home-page "https://github.com/tingtingzhan/hyper.gam")
-    (synopsis "Generalized Additive Models with Hyper Column")
-    (description
-     "Generalized additive models with a numeric hyper column.  Sign-adjustment based
-on the correlation of model prediction and a selected slice of the hyper column.
- Visualization of the integrand surface over the hyper column.")
-    (license license:gpl2)))
 
 (define-public r-hyper-fit
   (package
@@ -2662,27 +2633,6 @@ estimates) from multiple models into an aggregated ensemble model output.")
 French National APIs on water <https://hubeau.eaufrance.fr/>.")
     (license license:expat)))
 
-(define-public r-httprequest
-  (package
-    (name "r-httprequest")
-    (version "0.0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "httpRequest" version))
-       (sha256
-        (base32 "0qsi01fcrkps0h6r7l3l5ph3zlq9gscmq19b9ah2q2qlcv3hk4cf"))))
-    (properties `((upstream-name . "httpRequest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=httpRequest")
-    (synopsis "Basic HTTP Request")
-    (description
-     "HTTP Request protocols.  Implements the GET, POST and multipart POST request.")
-    (license license:gpl2+)))
-
 (define-public r-httpproblems
   (package
     (name "r-httpproblems")
@@ -3421,13 +3371,13 @@ the desired picture element, the user can recover the \"lost\" genes.")
 (define-public r-htetree
   (package
     (name "r-htetree")
-    (version "0.1.20")
+    (version "0.1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htetree" version))
        (sha256
-        (base32 "0jv26dwx21nqd600lp257rwf2q3v3xn2pgmcm6vxzwixnyjg483y"))))
+        (base32 "0i1sypfc5y5d4hfqq8b9mn7zsvml92bf1g05q075ha9jddrgzqnr"))))
     (properties `((upstream-name . "htetree")))
     (build-system r-build-system)
     (arguments
@@ -3559,13 +3509,13 @@ Paasiniemi and Vehtari (2020) <doi:10.1214/20-EJS1711>).")
 (define-public r-hsrecombi
   (package
     (name "r-hsrecombi")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hsrecombi" version))
        (sha256
-        (base32 "1f5ks1wvpc0dn5lwyhs479zhkcbcfg2c5gxxlwr9pliv5ncgcmla"))))
+        (base32 "0aqlhxms9p0qg7l1iiikxv0dv9rkbhqwpwzcq64sigdvzwii17sq"))))
     (properties `((upstream-name . "hsrecombi")))
     (build-system r-build-system)
     (arguments
@@ -3575,6 +3525,7 @@ Paasiniemi and Vehtari (2020) <doi:10.1214/20-EJS1711>).")
                              r-rcpp
                              r-quadprog
                              r-matrix
+                             r-magrittr
                              r-hsphase
                              r-dplyr
                              r-data-table
@@ -4230,19 +4181,19 @@ stratified sample of 80 talkers of Dutch.")
 (define-public r-hqm
   (package
     (name "r-hqm")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HQM" version))
        (sha256
-        (base32 "1z9fvd1nchkblva8lrg28qbc6qk0r87ssplwbzrk28j04n34c41a"))))
+        (base32 "1wwvfg06f8gqcdxyqpx2psyvfjx7rm458z4qbhkir14k04i3zqsv"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-timeroc r-survival r-pec r-nlme r-jm))
+    (propagated-inputs (list r-survival r-pec r-nlme r-jm))
     (home-page "https://cran.r-project.org/package=HQM")
     (synopsis
      "Superefficient Estimation of Future Conditional Hazards Based on Marker Information")
@@ -5130,21 +5081,20 @@ simulations.  It is also possible to consider random data and ACK probabilities.
 (define-public r-hoopr
   (package
     (name "r-hoopr")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hoopR" version))
        (sha256
-        (base32 "1m6ffh7slcqzj28jn9f67n5czidal5nkv6c883sk96w13h3lhyam"))))
+        (base32 "0fkvpjs1p8qvgi63pm3gban1h9nqzh4lb273aa7h70nxqayxrsbi"))))
     (properties `((upstream-name . "hoopR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list pandoc pandoc))
-    (propagated-inputs (list r-usethis
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rvest
                              r-rlang
@@ -5154,12 +5104,11 @@ simulations.  It is also possible to consider random data and ACK probabilities.
                              r-progressr
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-jsonlite
                              r-janitor
-                             r-httr
+                             r-httr2
                              r-glue
-                             r-future
-                             r-furrr
                              r-dplyr
                              r-data-table
                              r-cli))
@@ -6091,6 +6040,37 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-hmrc
+  (package
+    (name "r-hmrc")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmrc" version))
+       (sha256
+        (base32 "105vg52sdcpi6imbli7zhmiviq5r77a8pzl6fihshf52mmqcyp10"))))
+    (properties `((upstream-name . "hmrc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-readods r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/charlescoverdale/hmrc")
+    (synopsis "Download and Tidy 'HMRC' Statistical Data")
+    (description
+     "This package provides functions to download, parse, and tidy statistical data
+published by HM Revenue and Customs ('HMRC') on GOV.UK'.  Covers monthly tax
+receipts (41 tax heads from 2016), VAT (from 1973), fuel duties (from 1990),
+tobacco duties (from 1991), annual Corporation Tax receipts, stamp duty,
+research and development tax credit statistics (from 2000), tax gap estimates,
+Income Tax liabilities by income range, and monthly property transaction counts.
+ File URLs are resolved at runtime via the GOV.UK Content API
+<https://www.gov.uk/api/content>, so data is always current without hardcoded
+URLs.  Files are cached locally between sessions.")
+    (license license:expat)))
+
 (define-public r-hmr
   (package
     (name "r-hmr")
@@ -6450,13 +6430,13 @@ accommodated in the univariate setting.")
 (define-public r-hmix
   (package
     (name "r-hmix")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmix" version))
        (sha256
-        (base32 "1h1qj4c0f3nbw3p61n8fvwqr1q2da1q476xinj6bl7pcy4y5l6mb"))))
+        (base32 "0s3qivx2dws5ga47mb88y1hx2zvyy9frshxz8vk28ra4pg2hwgvp"))))
     (properties `((upstream-name . "hmix")))
     (build-system r-build-system)
     (arguments
@@ -6468,7 +6448,6 @@ accommodated in the univariate setting.")
                              r-hmm
                              r-glogis
                              r-gld
-                             r-edfun
                              r-dplyr
                              r-cubature))
     (home-page "https://rpubs.com/giancarlo_vercellino/hmix")
@@ -6479,6 +6458,43 @@ accommodated in the univariate setting.")
 cluster analysis, and mixture distributions to segment data, detect patterns and
 predict future sequences.")
     (license license:gpl3)))
+
+(define-public r-hmetad
+  (package
+    (name "r-hmetad")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmetad" version))
+       (sha256
+        (base32 "0pwhzv55sbsjkg92cxdnf7n6axirv44jimc5v3j0s8x7109km9wb"))))
+    (properties `((upstream-name . "hmetad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tidybayes
+                             r-stringr
+                             r-rlang
+                             r-posterior
+                             r-glue
+                             r-dplyr
+                             r-brms
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://metacoglab.github.io/hmetad/")
+    (synopsis "Fit the Meta-D' Model of Confidence Ratings Using 'brms'")
+    (description
+     "Implementation of Bayesian regressions over the meta-d model of psychological
+data from two alternative forced choice tasks with ordinal confidence ratings.
+For more information, see Maniscalco & Lau (2012)
+<doi:10.1016/j.concog.2011.09.021>.  The package is a front-end to the brms
+package, which facilitates a wide range of regression designs, as well as tools
+for efficiently extracting posterior estimates, plotting, and significance
+testing.")
+    (license license:gpl3+)))
 
 (define-public r-hmer
   (package
@@ -7620,13 +7636,13 @@ described in Hoffmann et al. (2018) <doi:10.1021/acs.analchem.8b00356>.")
 (define-public r-hipread
   (package
     (name "r-hipread")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hipread" version))
        (sha256
-        (base32 "0p4xhafk9ahvvklwy7lfsqzi3lxyqh3rkbqazdq4ifrmgwqmifiw"))))
+        (base32 "0dxaqpq31nh5ghvf3b5x254xaws0gfd6x7qb4fajl2vjqfjid9lh"))))
     (properties `((upstream-name . "hipread")))
     (build-system r-build-system)
     (arguments
@@ -8665,6 +8681,48 @@ Tibshirani, R., (2013) \"A Lasso for Hierarchical Interactions.\" Annals of
 Statistics.  41(3).  1111-1141.")
     (license license:gpl2)))
 
+(define-public r-hiernest
+  (package
+    (name "r-hiernest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hierNest" version))
+       (sha256
+        (base32 "1i0iic3x5ld6m9pljw0sb7kbblvk3bfpslljw79iagz89shd1gnw"))))
+    (properties `((upstream-name . "hierNest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rtensor
+                             r-rspectra
+                             r-rlang
+                             r-proc
+                             r-plotly
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-dotcall64
+                             r-cli))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/ZirenJiang/hierNest")
+    (synopsis
+     "Penalized Regression with Hierarchical Nested Parameterization Structure")
+    (description
+     "Efficient implementation of penalized regression with hierarchical nested
+parametrization for grouped data.  The package provides penalized regression
+methods that decompose subgroup specific effects into shared global effects,
+Major subgroup specific effects, and Minor subgroup specific effects, enabling
+structured borrowing of information across related clinical subgroups.  Both
+lasso and hierarchical overlapping group lasso penalties are supported to
+encourage sparsity while respecting the nested subgroup structure.  Efficient
+computation is achieved through a modified design matrix representation and a
+custom majorization minimization algorithm for overlapping group penalties.")
+    (license license:gpl2+)))
+
 (define-public r-hierbipartite
   (package
     (name "r-hierbipartite")
@@ -8949,49 +9007,6 @@ HICP data from Eurostat's public database
 are intended for demonstration purposes only and kept small enough to be
 distributed via CRAN.")
     (license license:expat)))
-
-(define-public r-hicociety
-  (package
-    (name "r-hicociety")
-    (version "0.1.39")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HiCociety" version))
-       (sha256
-        (base32 "1p1z0jkmqfjk85q40mkdjiifmg4im5f8yz4vs3pnyj9s94i1ams3"))))
-    (properties `((upstream-name . "HiCociety")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-strawr
-                             r-signal
-                             r-shape
-                             r-s4vectors
-                             r-rcpp
-                             r-pracma
-                             r-iranges
-                             r-igraph
-                             r-hicocietyexample
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-foreach
-                             r-fitdistrplus
-                             r-doparallel
-                             r-annotationdbi))
-    (home-page "https://cran.r-project.org/package=HiCociety")
-    (synopsis "Inferring Chromatin Interaction Modules from 3C-Based Data")
-    (description
-     "Identifies chromatin interaction modules by constructing a Hi-C contact network
-based on statistically significant interactions, followed by network clustering.
- The method enables comparison of module connectivity across two Hi-C datasets
-and is capable of detecting cell-type-specific regulatory modules.  By
-integrating network analysis with chromatin conformation data, this approach
-provides insights into the spatial organization of the genome and its functional
-implications in gene regulation.  Author: Sora Yoon (2025)
-<https://github.com/ysora/@code{HiCociety>}.")
-    (license license:gpl3)))
 
 (define-public r-hiclimr
   (package
@@ -9280,6 +9295,32 @@ from the POLYMOD survey.  This package contains the data and code to reproduce
 the results from the paper, see demo(\"hhh4contacts\")'.")
     (license license:gpl2)))
 
+(define-public r-hhdynamics
+  (package
+    (name "r-hhdynamics")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hhdynamics" version))
+       (sha256
+        (base32 "1lfi5n64gh34dhnsxh2nxlf5kf7v68f2j816r8c0pvrsv6q4gi9p"))))
+    (properties `((upstream-name . "hhdynamics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/timktsang/hhdynamics")
+    (synopsis
+     "Fitting Household Transmission Model to Estimate Household Transmission Dynamics of Influenza")
+    (description
+     "This package provides a Bayesian household transmission model to estimate
+household transmission dynamics, with accounting for infection from community
+and tertiary cases.")
+    (license license:gpl2+)))
+
 (define-public r-hgwrr
   (package
     (name "r-hgwrr")
@@ -9488,13 +9529,13 @@ HGM.")
 (define-public r-hglm-data
   (package
     (name "r-hglm-data")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hglm.data" version))
        (sha256
-        (base32 "0mw1s0kahsh9jmwkxysfy5f7vbld7mpzmdnnww6im5h21jhnczx2"))))
+        (base32 "00k23dy91scd3axw0ivnns9qc115xgpiq1kypmz6czbj8h0srnic"))))
     (properties `((upstream-name . "hglm.data")))
     (build-system r-build-system)
     (arguments
@@ -9751,6 +9792,36 @@ lost nor inappropriately cut.")
     (description
      "Helper functions for creating reproducible hexagon sticker purely in R.")
     (license license:artistic2.0)))
+
+(define-public r-hexsession
+  (package
+    (name "r-hexsession")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hexsession" version))
+       (sha256
+        (base32 "1c5wgs072n0sbi7vzhl8vficychhy3gga64krmc4i7jsf4giznk4"))))
+    (properties `((upstream-name . "hexsession")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr
+                             r-magick
+                             r-jsonlite
+                             r-htmltools
+                             r-chromote
+                             r-base64enc))
+    (home-page "https://github.com/luisDVA/hexsession")
+    (synopsis "Create a Tile of Logos for Loaded Packages")
+    (description
+     "This package creates a responsive HTML file with tiled hexagonal logos for
+packages in an R session.  Tiles can be also be generated for a custom set of
+packages specified with a character vector.  Output can be saved as a static
+screenshot in PNG format using a headless browser.")
+    (license license:expat)))
 
 (define-public r-hexify
   (package
@@ -10811,13 +10882,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "2026.2.28")
+    (version "2026.3.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "00d13xfkj5f9fg3sj91c0kix1jvp4zj6q2v8rzya441j35glixmm"))))
+        (base32 "08k5avm8dbkwk0glq7i7ifqz2s14ia2i69wd7bgxxj1775ag09c1"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (arguments
@@ -11089,13 +11160,13 @@ Australia's higher education system, as well as a range of relevant information.
 (define-public r-heimdall
   (package
     (name "r-heimdall")
-    (version "1.2.707")
+    (version "1.2.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heimdall" version))
        (sha256
-        (base32 "0rhrs3h5lbrrif925v06d4jigbrza6ifnq8yb61ssisxbi80pnbx"))))
+        (base32 "1amhsz43fjkiql7h0mhxcjafzsmq9w8kr42v0w1md811dj100cv8"))))
     (properties `((upstream-name . "heimdall")))
     (build-system r-build-system)
     (arguments
@@ -11103,6 +11174,7 @@ Australia's higher education system, as well as a range of relevant information.
       #:tests? #f))
     (propagated-inputs (list r-reticulate
                              r-proc
+                             r-metrics
                              r-ggplot2
                              r-daltoolbox
                              r-caret
@@ -11375,19 +11447,19 @@ case conversion for R'.")
 (define-public r-heavytails
   (package
     (name "r-heavytails")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heavytails" version))
        (sha256
-        (base32 "18c6f5kh61zla13z0js4w6z52wkbqrdxs4qw8nx7gbkgvaaf3bld"))))
+        (base32 "0rqmhfxingmzcrrbcawjw0dq9m6rv8ydklr1qmza3in7pm18fcsi"))))
     (properties `((upstream-name . "heavytails")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/0diraf/heavytails")
+    (home-page "https://cran.r-project.org/package=heavytails")
     (synopsis "Estimators and Algorithms for Heavy-Tailed Distributions")
     (description
      "This package implements the estimators and algorithms described in Chapters 8
@@ -11429,6 +11501,37 @@ events known as heatwaves or cold-spells, as first proposed in Hobday et al.
 both air and water temperature data of hourly and daily temporal resolution.
 These detection algorithms may be used on non-temperature data as well.")
     (license license:expat)))
+
+(define-public r-heatmapr
+  (package
+    (name "r-heatmapr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HeatmapR" version))
+       (sha256
+        (base32 "1sldnk69j5yiibxvds8l9wsz1a1a0qkpvckqiljmpal224jymg3x"))))
+    (properties `((upstream-name . "HeatmapR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://dillonhammill.github.io/HeatmapR/")
+    (synopsis "Create Heatmaps Using Base Graphics")
+    (description
+     "This package provides a lightweight framework for creating high quality, complex
+heatmaps using base graphics.  Supports hierarchical clustering with
+dendrograms, column and row scaling, cluster sub-divisions, customizable cell
+colours, shapes and sizes, legends, and flexible layouts for arranging multiple
+heatmaps.  Designed to return plot objects that can be easily arranged with
+other plots without sacrificing resolution.  Methods for hierarchical clustering
+and distance computations are described in Murtagh and Contreras (2012)
+<doi:10.1002/wics.53>.  Dendrogram visualisation methods are based on the
+ggdendro package by de Vries and Ripley (2020)
+<https://CRAN.R-project.org/package=ggdendro>.")
+    (license license:gpl2)))
 
 (define-public r-heatmapflex
   (package
@@ -11865,13 +11968,13 @@ rehabilitation.")
 (define-public r-healthiar
   (package
     (name "r-healthiar")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthiar" version))
        (sha256
-        (base32 "0qxriq80fsxxjm1sq7dlwkz7pcrf3pg7c9vpl2c2v0apfdl9cnbx"))))
+        (base32 "0lsl9vpaipfrph4knwnlxfkzgw3v1dv0v3fkq34jgfc49v5q12m6"))))
     (properties `((upstream-name . "healthiar")))
     (build-system r-build-system)
     (arguments
@@ -13195,26 +13298,27 @@ models.")
 (define-public r-hdftsa
   (package
     (name "r-hdftsa")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdftsa" version))
        (sha256
-        (base32 "0haf1p7qh2rw44q5cj7pd1xbkmypfvwwj827h08qfapfn311vw16"))))
+        (base32 "1fpaclid8mx7y5bwwmj2qcl5zl4qqk2jckydcs41zw6w3n49im8h"))))
     (properties `((upstream-name . "hdftsa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ftsa))
+    (propagated-inputs (list r-pdfcluster r-mass r-ftsa r-forecast))
     (home-page "https://cran.r-project.org/package=hdftsa")
     (synopsis "High-Dimensional Functional Time Series Analysis")
     (description
-     "Offers methods for visualizing, modelling, and forecasting high-dimensional
+     "Offers methods for visualising, modelling, and forecasting high-dimensional
 functional time series, also known as functional panel data.  Documentation
-about hdftsa is provided via the paper by Cristian F. Jimenez-Varon, Ying Sun
-and Han Lin Shang (2024, <doi:10.1080/10618600.2024.2319166>).")
+about hdftsa is initially provided via the paper by Cristian F. Jimenez-Varon,
+Ying Sun and Han Lin Shang (2024, Journal of Computational and Graphical
+Statistics).")
     (license license:gpl3)))
 
 (define-public r-hdfqlr
@@ -13801,19 +13905,22 @@ available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
 (define-public r-hdanova
   (package
     (name "r-hdanova")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDANOVA" version))
        (sha256
-        (base32 "0mgmzl9yci8nk0k0n0hp6bxmgbdcfzq8nwjn0fs1wc5xc1frj4jl"))))
+        (base32 "1b3m383iw3irhc9sifiinzr7d1qwys3nxfw5phr749gi4r2q2hg4"))))
     (properties `((upstream-name . "HDANOVA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rspectra
+                             r-reformulas
+                             r-rcpparmadillo
+                             r-rcpp
                              r-progress
                              r-pracma
                              r-pls
@@ -14294,13 +14401,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "0g072b8qv5vbjwx8sbm4qaqvh250ansnv7acnwmsmnjj65cajwyp"))))
+        (base32 "05l1ydm62dlydiri6g994d8640z02xqgipwhv1azslya39m5k6ki"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (arguments
@@ -14864,6 +14971,32 @@ dependencies in order to prioritize them for removal if needed.  Uses graph
 stress minimization adapted from Schoch (2023) <doi:10.21105/joss.05238> and
 originally reported in Gansner et al. (2004) <doi:10.1007/978-3-540-31843-9_25>.")
     (license license:gpl3+)))
+
+(define-public r-hatemicoint
+  (package
+    (name "r-hatemicoint")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hatemicoint" version))
+       (sha256
+        (base32 "0w6gc7fd05isd90l3257j6rskpzzkf3z2r7mwbi06xvmmidffidi"))))
+    (properties `((upstream-name . "hatemicoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/muhammedalkhalaf/hatemicoint")
+    (synopsis "Hatemi-J Cointegration Test with Two Unknown Regime Shifts")
+    (description
+     "This package implements the Hatemi-J (2008) cointegration test which allows for
+two unknown structural breaks (regime shifts) in the cointegrating relationship.
+ The test provides three test statistics: ADF* (Augmented Dickey-Fuller), Zt*
+(Phillips-Perron Z_t), and Za* (Phillips-Perron Z_alpha), along with
+endogenously determined break dates.  Critical values are based on simulations
+from Hatemi-J (2008) <doi:10.1007/s00181-007-0175-9>.")
+    (license license:gpl3)))
 
 (define-public r-hatchr
   (package
@@ -15577,31 +15710,6 @@ package is based off work done by Winn et al 2021.  For more specific
 information on this method, refer to <doi:10.1007/s00122-022-04178-w>.")
     (license license:expat)))
 
-(define-public r-haplo-ccs
-  (package
-    (name "r-haplo-ccs")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "haplo.ccs" version))
-       (sha256
-        (base32 "1792n5z63phax9c01wh3n89hk1qfdhhqjzj8qqwgcs9m775ngl16"))))
-    (properties `((upstream-name . "haplo.ccs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-haplo-stats))
-    (home-page "https://github.com/vubiostat/haplo.ccs")
-    (synopsis "Estimate Haplotype Relative Risks in Case-Control Data")
-    (description
-     "Haplotype and covariate relative risks in case-control data are estimated by
-weighted logistic regression.  Diplotype probabilities, which are estimated by
-EM computation with progressive insertion of loci, are utilized as weights.
-French et al. (2006) <doi:10.1002/gepi.20161>.")
-    (license license:gpl2+)))
-
 (define-public r-haplin
   (package
     (name "r-haplin")
@@ -15997,13 +16105,13 @@ patterns.")
 (define-public r-ham
   (package
     (name "r-ham")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ham" version))
        (sha256
-        (base32 "1vfkv6xqa8jrdnv2a84yw6jbf1jd3k6fyxvgv61bn15r0qfwqghc"))))
+        (base32 "0sfrzbzma4xhigharywiv4014gmkgv17cb27wn8f3jvh1dq3n4v4"))))
     (properties `((upstream-name . "ham")))
     (build-system r-build-system)
     (arguments
@@ -16020,46 +16128,20 @@ such as differences-in-differences (DID) and interrupted time series (ITS)
 models.  Provides limited interpretations of model results and a ranking of
 variable importance in models.  Performs propensity score models, top-coding of
 model outcome variables, and can return new data with the newly formed
-variables.  Also performs Cronbach's alpha for various scale items (e.g., survey
-questions).  See Github URL for examples in the README file.  For more details
-on the statistical methods, see Allen & Yen (1979, ISBN:0-8185-0283-5), Angrist
-& Pischke (2009, ISBN:9780691120355), Harrell (2016, ISBN:978-3-319-19424-0),
-Kline (1999, ISBN:9780415211581), Linden (2015)
-<doi:10.1177/1536867X1501500208>, Merlo (2006) <doi:10.1136/jech.2004.029454>
-Muthen & Satorra (1995) <doi:10.2307/271070>, and Rabe-Hesketh & Skrondal (2008,
-ISBN:978-1-59718-040-5).")
-    (license license:expat)))
-
-(define-public r-halk
-  (package
-    (name "r-halk")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "halk" version))
-       (sha256
-        (base32 "109xrz7wm0zsl4kkr5fx0igiwcq2lgkxsws4g1m8k1nhnz1aidbn"))))
-    (properties `((upstream-name . "halk")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=halk")
-    (synopsis
-     "Methods to Create Hierarchical Age Length Keys for Age Assignment")
-    (description
-     "This package provides methods for implementing hierarchical age length keys to
-estimate fish ages from lengths using data borrowing.  Users can create
-hierarchical age length keys and use them to assign ages given length.")
+variables.  Conducts Bayesian analysis summaries and graphs, decision curve
+analysis, and produces some Shewhart control charts.  Also performs Cronbach's
+alpha for various scale items (e.g., survey questions).  See Github URL for
+examples in the README file.  For more details on the statistical methods, see
+Allen & Yen (1979, ISBN:0-8185-0283-5), Angrist & Pischke (2009,
+ISBN:9780691120355), Cohen (1988, ISBN:0-8058-0283-5), Gebski (2012)
+<doi:10.1017/S0950268812000179>, Gelman & Goodrich (2019)
+<doi:10.1080/00031305.2018.1549100>, Harrell (2016, ISBN:978-3-319-19424-0),
+Kline (1999, ISBN:9780415211581), Kruschke (2014, ISBN:9780124058880), Linden
+(2015) <doi:10.1177/1536867X1501500208>, Merlo (2006)
+<doi:10.1136/jech.2004.029454>, Muthen & Satorra (1995) <doi:10.2307/271070>,
+Rabe-Hesketh & Skrondal (2008, ISBN:978-1-59718-040-5), Ryan (2011,
+ISBN:978-0-470-59074-4), and Vickers & Elkin (2006)
+<doi:10.1177/0272989X06295361>.")
     (license license:expat)))
 
 (define-public r-halfmoon

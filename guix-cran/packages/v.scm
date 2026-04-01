@@ -1092,35 +1092,6 @@ the concept of space exploration and are described in Lecigne et al. (2018,
 <doi:10.1093/aob/mcx095>).")
     (license license:gpl3)))
 
-(define-public r-voxel
-  (package
-    (name "r-voxel")
-    (version "1.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "voxel" version))
-       (sha256
-        (base32 "1xlym8xc22dq67h0lylrr16z7b4zdidpgrkvbs7n9fnkh6vijw2j"))))
-    (properties `((upstream-name . "voxel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-purrr
-                             r-oro-nifti
-                             r-mgcv
-                             r-lmertest
-                             r-ggplot2
-                             r-gamm4))
-    (home-page "https://github.com/angelgar/voxel")
-    (synopsis "Mass-Univariate Voxelwise Analysis of Medical Imaging Data")
-    (description
-     "This package provides functions for the mass-univariate voxelwise analysis of
-medical imaging data that follows the N@code{IfTI} <http://nifti.nimh.nih.gov>
-format.")
-    (license license:gpl2)))
-
 (define-public r-vowels
   (package
     (name "r-vowels")
@@ -1166,6 +1137,33 @@ sociophonetic vowel formant data.  vowels is the backend for the NORM website.")
 for use in shiny applications.  Simply wrap a UI element in one of the animation
 functions to see it move.")
     (license license:expat)))
+
+(define-public r-voucher
+  (package
+    (name "r-voucher")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voucher" version))
+       (sha256
+        (base32 "061mxk19p60lzkr9wr1a3qbnk384rm4nqngjf3sniv4gi65kb82d"))))
+    (properties `((upstream-name . "voucher")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fs r-cli))
+    (home-page "https://github.com/VisruthSK/voucher")
+    (synopsis "'Trustdown' Interface for R")
+    (description
+     "This package provides a R interface to the vouch project
+(<https://github.com/mitchellh/vouch>), which bills itself as \"a community trust
+management system based on explicit vouches to participate\".  vouch is a Nushell
+module, so voucher provides a R application programming interface (API) to
+modify the VOUCHED.td database without Nushell'.  voucher does not depend on
+vouch or Nushell'.")
+    (license license:gpl3+)))
 
 (define-public r-vottrans
   (package
@@ -1298,6 +1296,41 @@ plurality, condorcet and two-round runoff methods (Raftery et al., 2021
 <doi:10.32614/RJ-2021-086>).")
     (license license:gpl2+)))
 
+(define-public r-vostokr
+  (package
+    (name "r-vostokr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vostokR" version))
+       (sha256
+        (base32 "0c67b546sy1jwn80c9bdzgb9rq97zbmlya0kinjng3iyz1i32y74"))))
+    (properties `((upstream-name . "vostokR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-lidr
+                             r-data-table))
+    (home-page "https://github.com/bi0m3trics/vostokR")
+    (synopsis "Solar Potential Calculation for Point Clouds using 'VOSTOK'")
+    (description
+     "Calculate solar potential for @code{LiDAR} point clouds using the VOSTOK (Voxel
+Octree Solar Toolkit) algorithm.  This R program provides an interface to the
+original VOSTOK C++ implementation by Bechtold and Hofle (2020), enabling
+efficient ray casting and solar position algorithms to compute solar irradiance
+for each point while accounting for shadowing effects.  Integrates seamlessly
+with the @code{lidR} package for @code{LiDAR} data processing workflows.  The
+original VOSTOK toolkit is available at <doi:10.11588/data/QNA02B>.")
+    (license license:gpl3+)))
+
 (define-public r-voss
   (package
     (name "r-voss")
@@ -1425,31 +1458,6 @@ media data using @code{vosonSML}'.")
     (description
      "Collects tweets and metadata for threaded conversations and generates networks.")
     (license license:gpl3+)))
-
-(define-public r-vorteksexport
-  (package
-    (name "r-vorteksexport")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VorteksExport" version))
-       (sha256
-        (base32 "0r9wmd9bdarjkqmpwp85xz27nbyhjkcpxm8qb8bqjmxq4nds6nxx"))))
-    (properties `((upstream-name . "VorteksExport")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=VorteksExport")
-    (synopsis "Export Dataframes to 'Vorteks' Software")
-    (description
-     "Export dataframes and automatically start importing into Vorteks'.  Vorteks
-Visualization Environment (VVE) and Vorteks Data Manager (VDM) will start an
-import.  Vorteks Processing Environment (VPE) will start a new project and add a
-file reader with the dataframe file already set.  Warning: WINDOWS ONLY.
-Requires installation of Vorteks software.")
-    (license license:gpl3)))
 
 (define-public r-voronoitreemap
   (package
@@ -3243,13 +3251,13 @@ to a single feature.")
 (define-public r-vistime
   (package
     (name "r-vistime")
-    (version "1.2.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistime" version))
        (sha256
-        (base32 "14nm2p8yyl0zcf4al31cvnji4a9fi6zs1hvcjpa7dcyjdxd6yfyi"))))
+        (base32 "1g4xvsprdaqgrcfaf8i5fcv2hknz326nv7wa249w7q6iz2sk2dkc"))))
     (properties `((upstream-name . "vistime")))
     (build-system r-build-system)
     (arguments
@@ -3357,13 +3365,13 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
 (define-public r-vispedigree
   (package
     (name "r-vispedigree")
-    (version "1.0.1")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visPedigree" version))
        (sha256
-        (base32 "16a9az2ycdjaxfyxk43ynsg18s8j9dzqhs0z2k6g3wqf8j9wkls7"))))
+        (base32 "008cv7xav17r2dkdvr8bfhv7nkznn1bzhdzz8s3ff6jwvrd471z6"))))
     (properties `((upstream-name . "visPedigree")))
     (build-system r-build-system)
     (arguments
@@ -3377,20 +3385,22 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luansheng/visPedigree")
-    (synopsis "Tidying and Visualizing Animal Pedigrees")
+    (synopsis
+     "Tidying, Analysis, and Fast Visualization of Animal and Plant Pedigrees")
     (description
-     "Built on graph theory and the high-performance data.table framework, this
-package provides a comprehensive suite of tools for tidying, analyzing, and
-visualizing animal pedigrees.  By modeling pedigrees as directed acyclic graphs
-using igraph', it ensures robust loop detection, efficient generation
-assignment, and optimal sub-population splitting.  Key features include
-standardizing pedigree formats, flexible ancestry tracing, and generating
-legible vector-based PDF graphs.  A unique compaction algorithm enables the
-visualization of massive pedigrees by grouping full-sib families.  Furthermore,
-the package implements high-performance C++ algorithms for calculating and
-visualizing genetic relationship matrices (A, D, AA, and their inverses) and
-inbreeding coefficients.")
-    (license license:expat)))
+     "This package provides tools for the analysis and visualization of animal and
+plant pedigrees.  Analytical methods include equivalent complete generations,
+generation intervals, effective population size (via inbreeding, coancestry, and
+demographic approaches), founder and ancestor contributions, partial inbreeding,
+genetic diversity indices, and additive (A), dominance (D), and epistatic (AA)
+relationship matrices.  Core algorithms â ancestry tracing, topological
+sorting, inbreeding coefficients, and matrix construction â are implemented in
+C++ ('Rcpp', @code{RcppArmadillo}') and data.table', scaling to pedigrees with
+over one million individuals.  Pedigree graphs are rendered via igraph with
+support for compact full-sib family display; relationship matrices can be
+visualized as heatmaps.  Supports complex mating systems, including selfing and
+pedigrees in which the same individual can appear as both sire and dam.")
+    (license license:gpl3)))
 
 (define-public r-visor
   (package
@@ -3547,42 +3557,6 @@ made.  A reference for the underlying model that @code{VisitorCounts} uses can
 be found at Russell Goebel, Austin Schmaltz, Beth Ann Brackett, Spencer A. Wood,
 Kimihiro Noguchi (2023) <doi:10.1002/for.2965> .")
     (license license:gpl3)))
-
-(define-public r-visielse
-  (package
-    (name "r-visielse")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ViSiElse" version))
-       (sha256
-        (base32 "1ay09dahlqnfrgf4gl4s45a4ahrk2xliagxqz5h826w2vzsawqcc"))))
-    (properties `((upstream-name . "ViSiElse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-reshape2
-                             r-matrix
-                             r-ggplot2
-                             r-colorspace
-                             r-chron))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Re2SimLab/ViSiElse")
-    (synopsis "Visual Tool for Behavior Analysis over Time")
-    (description
-     "This package provides a graphical R package designed to visualize behavioral
-observations over time.  Based on raw time data extracted from video recorded
-sessions of experimental observations, @code{ViSiElse} grants a global overview
-of a process by combining the visualization of multiple actions timestamps for
-all participants in a single graph.  Individuals and/or group behavior can
-easily be assessed.  Supplementary features allow users to further inspect their
-data by adding summary statistics (mean, standard deviation, quantile or
-statistical test) and/or time constraints to assess the accuracy of the realized
-actions.")
-    (license license:agpl3)))
 
 (define-public r-vise
   (package
@@ -5010,42 +4984,6 @@ Summer School.  Installing vibass installs all the other packages used during
 the course and downloads all necessary materials for working off line.")
     (license license:gpl3)))
 
-(define-public r-viafr
-  (package
-    (name "r-viafr")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "viafr" version))
-       (sha256
-        (base32 "0fq7dqpsnrfnf03dvz2zpxysj0qjapvpvclzl9ch1j5g06jpbdmg"))))
-    (properties `((upstream-name . "viafr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-utf8
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-dplyr
-                             r-crul
-                             r-assertthat))
-    (home-page "https://github.com/stefanieschneider/viafr")
-    (synopsis
-     "Interface to the 'VIAF' ('Virtual International Authority File') API")
-    (description
-     "This package provides direct access to linked names for the same entity across
-the world's major name authority files, including national and regional
-variations in language, character set, and spelling.  For more information go to
-<https://viaf.org/>.")
-    (license license:gpl3)))
-
 (define-public r-viafoundry
   (package
     (name "r-viafoundry")
@@ -5480,31 +5418,6 @@ an unblinded placebo participant accepts study vaccine: Tsiatis, A. A. and
 Davidian, M. (2022) <doi:10.1111/biom.13509>.")
     (license license:gpl2)))
 
-(define-public r-vetresearchlmm
-  (package
-    (name "r-vetresearchlmm")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VetResearchLMM" version))
-       (sha256
-        (base32 "1a7wm04bsr5shak7l8ypxlhlnx3qkq1jdpjnji1n05p6b00ih9h1"))))
-    (properties `((upstream-name . "VetResearchLMM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-multcomp r-lmertest r-lme4 r-ggplot2))
-    (home-page "https://github.com/MYaseen208/VetResearchLMM")
-    (synopsis
-     "Linear Mixed Models - An Introduction with Applications in Veterinary Research")
-    (description
-     "R Codes and Datasets for Duchateau, L. and Janssen, P. and Rowlands, G. J.
-(1998).  Linear Mixed Models.  An Introduction with applications in Veterinary
-Research.  International Livestock Research Institute.")
-    (license license:gpl2)))
-
 (define-public r-vetr
   (package
     (name "r-vetr")
@@ -5600,13 +5513,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.4.5")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "1n4h3dni929ycwgsqh8xa20cpkqg226v07yzcclsv7rpzpqdbqbb"))))
+        (base32 "1lhffm7ynjbxkj2lqqb2b3sqvp7i3fjdyjgpn7wgjiyxs6x03yqx"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -5639,10 +5552,10 @@ Factorization algorithms - Random generators of diferent types of integers.")
 neuroimaging data, computing measures including cortical thickness and surface
 area of the whole-brain and of the hippocampi.  It can make use of
 @code{FreeSurfer}', @code{fMRIprep}', XCP-D', HCP and CAT12 preprocessed
-datasets and @code{HippUnfold} hippocampal segmentation outputs for a given
-sample by restructuring the data values into a single file.  The single file can
-then be used by the package for analyses independently from its base dataset and
-without need for its access.")
+datasets, @code{HippUnfold} hippocampal outputs and @code{SubCortexMesh}
+subcortical outputs for a given sample by restructuring the data values into a
+single file.  The single file can then be used by the package for analyses
+independently from its base dataset and without need for its access.")
     (license license:gpl3)))
 
 (define-public r-vertexsimilarity
@@ -6171,36 +6084,6 @@ Then, it is recommended to start with the project to download a template to
 create a structure of directories and scripts.")
     (license license:expat)))
 
-(define-public r-vegtable
-  (package
-    (name "r-vegtable")
-    (version "0.1.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vegtable" version))
-       (sha256
-        (base32 "1dhikvz586y6ppcbnj2ijm0hdbjwzwifizhwwm77cs96srw1i2zf"))))
-    (properties `((upstream-name . "vegtable")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegdata
-                             r-taxlist
-                             r-stringi
-                             r-sp
-                             r-qdapregex
-                             r-foreign))
-    (home-page "https://github.com/kamapu/vegtable")
-    (synopsis "Handling Vegetation Data Sets")
-    (description
-     "Import and handling data from vegetation-plot databases, especially data stored
-in Turboveg 2 (<https://www.synbiosys.alterra.nl/turboveg/>).  Also
-import/export routines for exchange of data with Juice
-(<https://www.sci.muni.cz/botany/juice/>) are implemented.")
-    (license license:gpl2+)))
-
 (define-public r-vegspecindex
   (package
     (name "r-vegspecindex")
@@ -6293,45 +6176,6 @@ remote sensing imagery, enhancing their comprehension of vegetation dynamics and
 their importance in global ecosystems.  The package includes the function
 @code{vegetation_indices()}.")
     (license license:gpl3)))
-
-(define-public r-vegdata
-  (package
-    (name "r-vegdata")
-    (version "1.9.15")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vegdata" version))
-       (sha256
-        (base32 "13xfk9i8g3i5d8n7213x6gixxsszff8lv2ngvj8yp83n57r9knf8"))))
-    (properties `((upstream-name . "vegdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-rsqlite
-                             r-plyr
-                             r-magrittr
-                             r-hoardr
-                             r-foreign
-                             r-forcats
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-data-table
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://git.loe.auf.uni-rostock.de/jansen/vegdata.git")
-    (synopsis "Access Vegetation Databases and Treat Taxonomy")
-    (description
-     "Handling of vegetation data from different sources ( Turboveg 2.0
-<https://www.synbiosys.alterra.nl/turboveg/>; the German national repository
-<https://www.vegetweb.de> and others.  Taxonomic harmonization (given
-appropriate taxonomic lists, e.g. the Euro+Med list
-<https://eurosl.infinitenature.org>).")
-    (license license:gpl2+)))
 
 (define-public r-vegclust
   (package
@@ -7399,13 +7243,13 @@ storyteller.  VChart examples and documentation are available here:
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "0fdnyv0m85fi0jv7i09pgqq8p1p7xlwp7x9qfg1dcawnaiza6786"))))
+        (base32 "1r4958485sc132r2ngjq0jz8fypkq7njglwb5i4ayqinfn7biz03"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (arguments
@@ -7454,22 +7298,25 @@ details on the specifications used see Danecek et al. (2021)
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.9.1")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcdExtra" version))
        (sha256
-        (base32 "0867dl3jcmi8y8bkyjjdc5779rm5qf59rkjkn4fhggk03rwkqq49"))))
+        (base32 "07774z7cps33x1ggg5lpq6hakalz8dpg2d632hp4dbj61zgi0wcy"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vcd
+    (propagated-inputs (list r-webshot2
+                             r-vcd
                              r-scales
-                             r-rgl
                              r-mass
+                             r-knitr
+                             r-igraph
+                             r-htmlwidgets
                              r-gt
                              r-gnm
                              r-dplyr
@@ -7736,13 +7583,13 @@ estimated variance of the random noise.")
 (define-public r-vbracket
   (package
     (name "r-vbracket")
-    (version "1.1.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vbracket" version))
        (sha256
-        (base32 "1k4h57adrza6hyrm5z55764axpynb6h6dwdgy24c9chhhyr5bfk0"))))
+        (base32 "1qwj6612l1wlxk66apy8nrnlr2c0dhvsrwslkqssv4jy4ic43php"))))
     (properties `((upstream-name . "vbracket")))
     (build-system r-build-system)
     (arguments
@@ -8047,6 +7894,38 @@ through several backends including user name/password and authentication via
 registration of an API key.  Basic features are free, some require a paid
 subscription.  You can find the full API documentation at
 <https://vatcheckapi.com/docs> .")
+    (license license:expat)))
+
+(define-public r-vaster
+  (package
+    (name "r-vaster")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaster" version))
+       (sha256
+        (base32 "1iqwhrkqg3x54557xbinl4kllrmfa7rffypmf8b1ipwcbhlapcf4"))))
+    (properties `((upstream-name . "vaster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hypertidy/vaster")
+    (synopsis "Tools for Raster Grid Logic")
+    (description
+     "This package provides raster grid logic, operations that describe a discretized
+rectangular domain and do not require access to materialized data.  Grids are
+arrays with dimension and extent, and many operations are functions of dimension
+only: number of columns, number of rows, or they are a combination of the
+dimension and the extent the range in x and the range in y in that order.  Here
+we provide direct access to this logic without need for connection to any
+materialized data or formats.  Grid logic includes functions that relate the
+cell index to row and column, or row and column to cell index, row, column or
+cell index to position.  These methods are described in Loudon, TV, Wheeler, JF,
+Andrew, KP (1980) <doi:10.1016/0098-3004(80)90015-1>, and implementations were
+in part derived from Hijmans R (2024) <doi:10.32614/CRAN.package.terra>.")
     (license license:expat)))
 
 (define-public r-vasicekreg
@@ -9213,13 +9092,13 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.15.0")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vapour" version))
        (sha256
-        (base32 "0h0gbffhivsc7603sabm26sv81ll39fzj0dil0qlarbynhms6qxx"))))
+        (base32 "03srq6yla4q0hiz8bmkwx3ykdc49my1xmd4pg2799gbf0g8jfnc6"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (arguments
@@ -9232,7 +9111,7 @@ testing, prediction for stationary vector autoregressive models.")
                   openssh
                   gdal
                   curl))
-    (propagated-inputs (list r-wk r-stringr r-rcpp r-nanoarrow r-jsonlite))
+    (propagated-inputs (list r-wk r-stringr r-nanoarrow r-jsonlite r-cpp11))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/hypertidy/vapour")
     (synopsis "Access to the 'Geospatial Data Abstraction Library' ('GDAL')")
@@ -9248,13 +9127,13 @@ only what GDAL does, to enable developing further tools.")
 (define-public r-vannstats
   (package
     (name "r-vannstats")
-    (version "1.6.1.08")
+    (version "1.6.3.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vannstats" version))
        (sha256
-        (base32 "1arsd845rc4lf2d699k7jjgzlnhl8b04yalv3ahcmjr47z9v8pyp"))))
+        (base32 "08c6ifp16k2dm4qalwniss9v0ls7f3pnhbv7gvcnvi6m8ci4fzpz"))))
     (properties `((upstream-name . "vannstats")))
     (build-system r-build-system)
     (arguments
@@ -9277,12 +9156,12 @@ only what GDAL does, to enable developing further tools.")
     (home-page "https://cran.r-project.org/package=vannstats")
     (synopsis "Simplified Statistical Procedures for Social Sciences")
     (description
-     "Simplifies functions assess normality for bivariate and multivariate statistical
-techniques.  Includes functions designed to replicate plots and tables that
-would result from similar calls in SPSS', including @code{hst()}, @code{box()},
-@code{qq()}, @code{tab()}, @code{cormat()}, and @code{residplot()}.  Also
-includes simplified formulae, such as @code{mode()}, @code{scatter()},
-@code{p.corr()}, @code{ow.anova()}, and @code{rm.anova()}.")
+     "Simplifies functions to conduct univariate, bivariate, and multivariate
+statistical techniques.  Includes functions designed to replicate plots and
+tables that would result from similar calls in SPSS', including @code{hst()},
+@code{box()}, @code{qq()}, @code{tab()}, @code{cormat()}, and
+@code{residplot()}.  Also includes simplified formulae, such as @code{mode()},
+@code{scatter()}, @code{p.corr()}, @code{ow.anova()}, and @code{rm.anova()}.")
     (license license:gpl3)))
 
 (define-public r-vangogh
@@ -9644,13 +9523,13 @@ Johanna Wetterlind, Mats Soderstrom and Bo Stenberg (2021).
 (define-public r-validmind
   (package
     (name "r-validmind")
-    (version "0.1.2")
+    (version "2.12.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "validmind" version))
        (sha256
-        (base32 "04kcisl7xwxzinqi0rzm3ixf814l2wihhpinnncna6sffzd9g3xd"))))
+        (base32 "1s77wcai2fzzr9i0w3v20l5pxkvigwl7qy64sw75d7v4lkfvf0v9"))))
     (properties `((upstream-name . "validmind")))
     (build-system r-build-system)
     (arguments
@@ -9664,13 +9543,13 @@ Johanna Wetterlind, Mats Soderstrom and Bo Stenberg (2021).
                              r-dt
                              r-dplyr
                              r-base64enc))
-    (home-page "https://github.com/validmind/developer-framework")
+    (home-page "https://github.com/validmind/validmind-library")
     (synopsis "Interface to the 'ValidMind' Platform")
     (description
      "Deploy, execute, and analyze the results of models hosted on the
-@code{ValidMind} platform <https://validmind.com>.  This package interfaces with
-the Python client library in order to allow advanced diagnostics and insight
-into trained models all from an R environment.")
+@code{ValidMind} Platform <https://validmind.ai>.  This package interfaces with
+the Python Library API in order to allow advanced diagnostics and insight into
+trained models all from an R environment.")
     (license license:agpl3)))
 
 (define-public r-validiclust
@@ -10518,44 +10397,51 @@ needed to vaccinate).  Inspired by the methodology proposed by Foppa et al.
 (define-public r-vacalibration
   (package
     (name "r-vacalibration")
-    (version "2.0")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vacalibration" version))
        (sha256
-        (base32 "1j13q5lv265p1vxp0xbffab437q5897km22gmmwi3bm6ql1g4smc"))))
+        (base32 "0yf46dkwkbzjfwk68pygwdq646hzsmj03d3bw154dz5995fiskr3"))))
     (properties `((upstream-name . "vacalibration")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstan r-reshape2 r-patchwork r-loo r-ggplot2))
+    (propagated-inputs (list r-rstan
+                             r-reshape2
+                             r-patchwork
+                             r-openva
+                             r-mass
+                             r-laplacesdemon
+                             r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=vacalibration")
+    (home-page "https://github.com/sandy-pramanik/vacalibration")
     (synopsis "Calibration of Computer-Coded Verbal Autopsy Algorithm")
     (description
-     "Calibrates cause-specific mortality fractions (CSMF) estimates generated by
-computer-coded verbal autopsy (CCVA) algorithms from WHO-standardized verbal
-autopsy (VA) survey data.  It leverages data from the multi-country Child Health
-and Mortality Prevention Surveillance (CHAMPS) project
-<https://champshealth.org/>, which determines gold standard causes of death via
-Minimally Invasive Tissue Sampling (MITS).  By modeling the CHAMPS data using
-the misclassification matrix modeling framework proposed in Pramanik et al.
-(2025, <doi:10.1214/24-AOAS2006>), the package includes an inventory of 48
-uncertainty-quantified misclassification matrices for three CCVA algorithms
-(EAVA, @code{InSilicoVA}, @code{InterVA}), two age groups (neonates aged 0-27
-days and children aged 1-59 months), and eight \"countries\" (seven countries in
-CHAMPS -- Bangladesh, Ethiopia, Kenya, Mali, Mozambique, Sierra Leone, South
-Africa -- and an estimate for countries not in CHAMPS).  Given a VA-only data
-for an age group, CCVA algorithm, and country, the package uses the
-corresponding uncertainty-quantified misclassification matrix estimates as an
-informative prior, and utilizes the modular VA-calibration to produce calibrated
-CSMF estimates.  It also supports ensemble calibration when VA-only data are
-provided for multiple algorithms.  More generally, the package can be applied to
-calibrate predictions from a discrete classifier (or ensemble of classifiers)
-utilizing user-provided fixed or uncertainty-quantified misclassification
-matrices.  This work is supported by the Bill and Melinda Gates Foundation Grant
-INV-034842.")
-    (license license:gpl2)))
+     "Calibrates population-level cause-specific mortality fractions (CSMFs) that are
+derived using computer-coded verbal autopsy (CCVA) algorithms.  Leveraging the
+data collected in the Child Health and Mortality Prevention Surveillance
+(CHAMPS;<https://champshealth.org/>) project, the package stores
+misclassification matrix estimates of three CCVA algorithms (EAVA,
+@code{InSilicoVA}, and @code{InterVA}) and two age groups (neonates aged 0-27
+days, and children aged 1-59 months) across countries (specific estimates for
+Bangladesh, Ethiopia, Kenya, Mali, Mozambique, Sierra Leone, and South Africa,
+and a combined estimate for all other countries), enabling global calibration.
+These estimates are obtained using the framework proposed in Pramanik et al.
+(2025;<doi:10.1214/24-AOAS2006>) and are analyzed in Pramanik et al.
+(2026;<doi:10.1136/bmjgh-2025-021747>).  Given VA-only data for an age group,
+CCVA algorithm, and country, the package utilizes the corresponding
+misclassification matrix estimate in the modular VA-Calibration framework
+(Pramanik et al.,2025;<doi:10.1214/24-AOAS2006>) and produces calibrated
+estimates of CSMFs.  The package also supports ensemble calibration to
+accommodate multiple algorithms.  More generally, this allows calibration of
+population-level prevalence derived from single-class predictions of discrete
+classifiers.  For this, users need to provide fixed or uncertainty-quantified
+misclassification matrices.  This work is supported by the Eunice Kennedy
+Shriver National Institute of Child Health K99 NIH Pathway to Independence Award
+(1K99HD114884-01A1), the Bill and Melinda Gates Foundation (INV-034842), and the
+Johns Hopkins Data Science and AI Institute.")
+    (license license:expat)))
 

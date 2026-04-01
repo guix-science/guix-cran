@@ -11,10 +11,10 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages python-science)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages web)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages docker)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -447,13 +447,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "1.1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "1nw18x2sn9pa2fjhi4rcs8sy52i577f4gbacl24m7v7ispf2ral4"))))
+        (base32 "1j2m8ijg74mzzsp79vq8lck0zrxi99vqhq2ngg6y2js6y237m2nn"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (arguments
@@ -465,7 +465,6 @@ environmental covariates.")
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xml
                              r-shape
-                             r-rcpparmadillo
                              r-rcpp
                              r-minpack-lm
                              r-mclust
@@ -485,6 +484,37 @@ Luminescence dating data analysis.  This includes, amongst others, data import,
 export, application of age models, curve deconvolution, sequence analysis and
 plotting of equivalent dose distributions.")
     (license license:gpl3)))
+
+(define-public r-lumbermark
+  (package
+    (name "r-lumbermark")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lumbermark" version))
+       (sha256
+        (base32 "01wkcinrln781nmh2bcx5fk9ill1gm6ykzh5gj9pibg8zz1wpkb1"))))
+    (properties `((upstream-name . "lumbermark")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp r-deadwood))
+    (home-page "https://lumbermark.gagolewski.com/")
+    (synopsis
+     "Resistant Clustering via Chopping Up Mutual Reachability Minimum Spanning Trees")
+    (description
+     "This package implements a fast and resistant divisive clustering algorithm which
+identifies a specified number of clusters: lumbermark iteratively chops off
+sizeable limbs that are joined by protruding segments of a dataset's mutual
+reachability minimum spanning tree; see Gagolewski (2026)
+<https://lumbermark.gagolewski.com/>.  The use of a mutual reachability distance
+pulls peripheral points farther away from each other.  When combined with the
+deadwood package, it can act as an outlier detector.  The Python version of
+lumbermark is available via @code{PyPI}'.")
+    (license license:agpl3)))
 
 (define-public r-lumberjack
   (package
@@ -627,13 +657,13 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
 (define-public r-lucidus
   (package
     (name "r-lucidus")
-    (version "3.0.3")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LUCIDus" version))
        (sha256
-        (base32 "1gxhad64hwyfq2ff21mphlbawclxap684717x4jg5bnnbphihi4d"))))
+        (base32 "19irnmwvsz8cydiwf6ndn5lbl72grnjywx2njxd8srvhs7zjsgcb"))))
     (properties `((upstream-name . "LUCIDus")))
     (build-system r-build-system)
     (arguments
@@ -647,22 +677,45 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
                              r-glmnet
                              r-glasso
                              r-boot))
-    (home-page "https://cran.r-project.org/package=LUCIDus")
+    (home-page
+     "https://journal.r-project.org/articles/RJ-2024-012/RJ-2024-012.pdf")
     (synopsis "LUCID with Multiple Omics Data")
     (description
-     "An implementation of estimating the Latent Unknown Clusters By Integrating
-Multi-omics Data (LUCID) model (Peng (2019)
-<doi:10.1093/bioinformatics/btz667>).  LUCID conducts integrated clustering
-using exposures, omics information (and outcome information as an option).  This
-package implements three different integration strategies for multi-omics data
-analysis within the LUCID framework: LUCID early integration (the original LUCID
-model), LUCID in parallel (intermediate integration), and LUCID in serial (late
-integration).  Automated model selection for each LUCID model is available to
-obtain the optimal number of latent clusters, and an integrated imputation
-approach is implemented to handle sporadic and list-wise missingness in
-multi-omics data.  Lasso-type regularity for exposure and omics features were
-added.  S3 methods for summary and plotting functions were fixed.  Fixed minor
-bugs.")
+     "This package implements Latent Unknown Clusters By Integrating Multi-omics Data
+(LUCID; Peng (2019) <doi:10.1093/bioinformatics/btz667>) for integrative
+clustering with exposures, multi-omics data, and health outcomes.  Supports
+three integration strategies: early, parallel, and serial.  Provides model
+fitting and tuning, lasso-type regularization for exposure and omics feature
+selection, handling of missing data, including both sporadic and complete-case
+patterns, prediction, and g-computation for estimating causal effects of
+exposures, bootstrap inference for uncertainty estimation, and S3 summary and
+plot methods.  For the multi-omics integration framework, see Jia (2024)
+<https://journal.r-project.org/articles/RJ-2024-012/RJ-2024-012.pdf>.  For the
+missing-data imputation mechanism, see Jia (2024) <doi:10.1093/bioadv/vbae123>.")
+    (license license:expat)))
+
+(define-public r-lucidr
+  (package
+    (name "r-lucidr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lucidr" version))
+       (sha256
+        (base32 "0aiz339cxp1iqw59vr5m46c0j70mx4i4mzzj9l9i69jcbimmq6hy"))))
+    (properties `((upstream-name . "lucidr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-htmltools))
+    (home-page "https://github.com/hyperverse-r/lucidr")
+    (synopsis "'Lucide' Icons for 'R'")
+    (description
+     "This package provides a lightweight wrapper for the Lucide icon library
+<https://lucide.dev>.  Embed beautiful and consistent SVG icons inline in any R
+web application.")
     (license license:expat)))
 
 (define-public r-lucid
@@ -3066,13 +3119,13 @@ data-driven bandwidth selection.")
 (define-public r-lpda
   (package
     (name "r-lpda")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpda" version))
        (sha256
-        (base32 "0ba2c3x1al8lqna2rcvgpi9v9xlqjmra6iy4v1l1xpi0bkkavac1"))))
+        (base32 "19b8sw5m79kb7pg88rx36lh60x91445jw6algkf64vniyj79nfjl"))))
     (properties `((upstream-name . "lpda")))
     (build-system r-build-system)
     (arguments
@@ -3381,19 +3434,19 @@ Kowalska, van de Wiel, van der Pas (2024)
 (define-public r-lotri
   (package
     (name "r-lotri")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lotri" version))
        (sha256
-        (base32 "1swnhams909qc7sr0zychsjjr738h1ms8z42vgf72d20kyvs3vp3"))))
+        (base32 "1wpnmq3hixnjbcad8shwb4ghpfzxfml9m56r5rvdpwp3szs9by1q"))))
     (properties `((upstream-name . "lotri")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-crayon r-cpp11armadillo r-cpp11 r-checkmate))
+    (propagated-inputs (list r-crayon r-cpp4r r-checkmate r-armadillo4r))
     (native-inputs (list r-knitr))
     (home-page "https://nlmixr2.github.io/lotri/")
     (synopsis "Simple Way to Specify Symmetric, Block Diagonal Matrices")
@@ -3409,13 +3462,13 @@ rxode2 and nlmixr2'.")
 (define-public r-lost
   (package
     (name "r-lost")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOST" version))
        (sha256
-        (base32 "0wkixqzwlsygq8mly39j64mbxrxhs7rdxa62jlcl41jkr1c6w2k7"))))
+        (base32 "0mcd3p01lp41iqs6f28gi8w3sg68iw70r1p5v0ahhgkjf7s49j7l"))))
     (properties `((upstream-name . "LOST")))
     (build-system r-build-system)
     (arguments
@@ -3989,35 +4042,6 @@ structure to the other.")
      "An extendable toolkit for interactive data visualization and exploration.")
     (license license:gpl2)))
 
-(define-public r-lookuptable
-  (package
-    (name "r-lookuptable")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lookupTable" version))
-       (sha256
-        (base32 "0ipy0glrad2gfr75kd8p3999xnfw4pgpbg6p064qa8ljqg0n1s49"))))
-    (properties `((upstream-name . "lookupTable")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-dplyr r-data-table))
-    (home-page "https://cran.r-project.org/package=lookupTable")
-    (synopsis "Look-Up Tables using S4")
-    (description
-     "Fits look-up tables by filling entries with the mean or median values of
-observations fall in partitions of the feature space.  Partitions can be
-determined by user of the package using input argument feature.boundaries, and
-dimensions of the feature space can be any combination of continuous and
-categorical features provided by the data set.  A Predict function directly
-fetches corresponding entry value, and a default value is defined as the mean or
-median of all available observations.  The table and other components are
-represented using the S4 class @code{lookupTable}.")
-    (license license:expat)))
-
 (define-public r-lookup
   (package
     (name "r-lookup")
@@ -4044,22 +4068,22 @@ represented using the S4 class @code{lookupTable}.")
 (define-public r-lookout
   (package
     (name "r-lookout")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lookout" version))
        (sha256
-        (base32 "0g0ivi9qbc0rpbbglq92kj1vwpiyfrdvykhq1jlmyhbvg9vrx6yl"))))
+        (base32 "1gsr75sfxd2y4c7342nckqz13033b0m2pr8gnbv12rm2jlq9g7qk"))))
     (properties `((upstream-name . "lookout")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tdastats
                              r-robustbase
                              r-rann
+                             r-mlpack
                              r-ggplot2
                              r-evd))
     (home-page "https://sevvandi.github.io/lookout/")
@@ -4449,6 +4473,34 @@ covariates.  Please cite the manuscripts corresponding to this package: Sun, Z.
 et al. (2023) <@code{arXiv:2305.17715>} and Liu, C. et al. (2023)
 <@code{arXiv:2305.17662>}.")
     (license license:gpl3)))
+
+(define-public r-longitree
+  (package
+    (name "r-longitree")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "longitree" version))
+       (sha256
+        (base32 "1dbzjra4f8xqsvdp7m1amx10gi5bsbn32b78kmhzh078w4vdspjk"))))
+    (properties `((upstream-name . "longitree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-partykit r-lme4 r-ggplot2 r-ggparty))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=longitree")
+    (synopsis "Decision Tree Analysis for Longitudinal Measurement Data")
+    (description
+     "This package implements tree-based methods for longitudinal data.  The package
+constructs decision trees that evaluate both the main effect of a covariate and
+its interaction with time through a weighted splitting criterion.  It supports
+single-tree construction, bootstrap-based multiple-tree selection, and tree
+visualisation.  For methodological details, see Obata and Sugimoto (2026)
+<doi:10.1007/s11634-025-00665-2>.")
+    (license license:gpl3+)))
 
 (define-public r-longit
   (package
@@ -6012,38 +6064,6 @@ vector fonts).  All text can be easily previewed as a matrix or raster image.  A
 selection of fonts is included with this package.")
     (license license:expat)))
 
-(define-public r-loewesadditivity
-  (package
-    (name "r-loewesadditivity")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "loewesadditivity" version))
-       (sha256
-        (base32 "0j9vvh2ys09hy2k3mbrlf0p493ymrxvfsdcjw0p6rlls54z9lqqc"))))
-    (properties `((upstream-name . "loewesadditivity")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tidyr
-                             r-rootsolve
-                             r-rlang
-                             r-metr
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=loewesadditivity")
-    (synopsis "Loewe's Additivity")
-    (description
-     "Estimate model parameters to determine whether two compounds have synergy,
-antagonism, or Loewe's Additivity.")
-    (license license:expat)))
-
 (define-public r-loedata
   (package
     (name "r-loedata")
@@ -6333,13 +6353,13 @@ series.\" Journal of the Royal Statistical Society, Series B, 75, 879-904.
 (define-public r-locatt
   (package
     (name "r-locatt")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LocaTT" version))
        (sha256
-        (base32 "0zbhf5mpyg1cn0ab033lajjaqh7j2614lhwcxxwra5by26b6gh75"))))
+        (base32 "0wnsw09mdhnmymlcjpymkjpzvdvmc7139ylbcma3jgmsij24jdi9"))))
     (properties `((upstream-name . "LocaTT")))
     (build-system r-build-system)
     (arguments
@@ -6352,7 +6372,7 @@ series.\" Journal of the Royal Statistical Society, Series B, 75, 879-904.
      "This package provides a bioinformatics pipeline for performing taxonomic
 assignment of DNA metabarcoding sequence data while considering geographic
 location.  A detailed tutorial is available at
-<https://urodelan.github.io/Local_Taxa_Tool_Tutorial/>.  A manuscript describing
+<https://urodelan.github.io/@code{LocaTT_Tutorial/>}.  A manuscript describing
 these methods is in preparation.")
     (license license:gpl3+)))
 
@@ -6994,37 +7014,6 @@ queried from the Senate's Application Programming Interface
 exist for all primary data endpoints, including queries by filings,
 contributions, registrations, clients, and lobbyists.")
     (license license:expat)))
-
-(define-public r-loadshaper
-  (package
-    (name "r-loadshaper")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "loadshaper" version))
-       (sha256
-        (base32 "10fypkybqi6kpvxcrwsvzczqc11mihyj5f1d3jhd22s8llm8k0gc"))))
-    (properties `((upstream-name . "loadshaper")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=loadshaper")
-    (synopsis "Producing Load Shape with Target Peak and Load Factor")
-    (description
-     "Modifying a load shape to match specific peak and load factor is a fundamental
-component for various power system planning and operation studies.  This package
-is an efficient tool to modify a reference load shape while matching the desired
-peak and load factor.  The package offers both linear and non-linear method,
-described in <https://rpubs.com/riazakhan94/load_shape_match_peak_energy>.  The
-user can control the shape of the final load shape by regulating certain
-parameters.  The package provides validation metrics for assessing the derived
-load shape in terms of preserving time series properties.  It also offers
-powerful graphics, that allows the user to visually assess the derived load
-shape.")
-    (license license:gpl3)))
 
 (define-public r-loadings
   (package
@@ -7792,6 +7781,34 @@ modeling of spatial and temporal trends using penalized splines (Boer, 2023)
 <doi:10.1177/1471082X231178591>.")
     (license license:gpl3)))
 
+(define-public r-lmmprobe
+  (package
+    (name "r-lmmprobe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lmmprobe" version))
+       (sha256
+        (base32 "1finnnxp5g9lr83ssr02w77g7xvx8cszrgz35h2mgk5w8ff47wks"))))
+    (properties `((upstream-name . "lmmprobe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lme4 r-future-apply))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/anjazgodic/lmmprobe")
+    (synopsis
+     "Sparse High-Dimensional Linear Mixed Modeling with a Partitioned Empirical Bayes ECM Algorithm")
+    (description
+     "This package implements a partitioned Empirical Bayes Expectation Conditional
+Maximization (ECM) algorithm for sparse high-dimensional linear mixed modeling
+as described in Zgodic, Bai, Zhang, and @code{McLain} (2025)
+<doi:10.1007/s11222-025-10649-z>.  The package provides efficient estimation and
+inference for mixed models with high-dimensional fixed effects.")
+    (license license:gpl2+)))
+
 (define-public r-lmmpar
   (package
     (name "r-lmmpar")
@@ -7942,13 +7959,13 @@ diagnostic plots for the model class.")
 (define-public r-lmhelprs
   (package
     (name "r-lmhelprs")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmhelprs" version))
        (sha256
-        (base32 "06q79bzsxjgxk0q9zl7ymkc7kk6f9cl9kxmkvdn0g797nzpwkfj0"))))
+        (base32 "1g07ppwgnxg2xi6pmvwqj31kmfn6ndy8rpq4gcj44fdgq9lpdjvk"))))
     (properties `((upstream-name . "lmhelprs")))
     (build-system r-build-system)
     (arguments
@@ -8461,20 +8478,19 @@ standardized and provides xtable'-support.")
 (define-public r-llsr
   (package
     (name "r-llsr")
-    (version "0.0.3.1")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLSR" version))
        (sha256
-        (base32 "0nci8p3gw35a3ifwrq7r2jih718p2iwmmh3495qnh0fk304y7kbi"))))
+        (base32 "0pcnq4pfhz5zj3dpl8d9z6wk8f6h15xga5qfyh8jlf951304i24s"))))
     (properties `((upstream-name . "LLSR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-svglite
-                             r-svdialogs
+    (propagated-inputs (list r-svdialogs
                              r-rootsolve
                              r-openxlsx
                              r-nleqslv
@@ -8586,29 +8602,55 @@ JSON Schema validation, and embeddings.  Includes tidyverse-friendly helpers,
 chat session, consistent error handling, and parallel batch tools.")
     (license license:expat)))
 
+(define-public r-llmjson
+  (package
+    (name "r-llmjson")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llmjson" version))
+       (sha256
+        (base32 "14ps3rvfwc9vcn6zsw4x70pda3y8vnfjja2ldb67v56xl784svqv"))))
+    (properties `((upstream-name . "llmjson")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/DyfanJones/llmjson")
+    (synopsis "Repair Malformed JSON Strings")
+    (description
+     "Repairs malformed JSON strings, particularly those generated by Large Language
+Models.  Handles missing quotes, trailing commas, unquoted keys, and other
+common JSON syntax errors.")
+    (license license:expat)))
+
 (define-public r-llming
   (package
     (name "r-llming")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMing" version))
        (sha256
-        (base32 "0w1haxgy5482vscgykrh780hq0rmfh4nfmkgnkfk0133a3s53k5v"))))
+        (base32 "1cnhx00i9kig5di5h1f6iq5b8ji8wcksb2wdsvi6xhjq04vy7sg4"))))
     (properties `((upstream-name . "LLMing")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list python-pandas python-numpy))
-    (propagated-inputs (list r-text
+    (propagated-inputs (list r-text2vec
+                             r-text
                              r-stringi
                              r-stopwords
                              r-reticulate
                              r-rdpack
                              r-quanteda
                              r-pracma
+                             r-matrix
                              r-jsonlite
                              r-dbscan))
     (home-page "https://github.com/sliplr19/LLMing")
@@ -8762,68 +8804,6 @@ by the Python package langagent'.")
      "Fits the Logit Leaf Model, makes predictions and visualizes the output. (De
 Caigny et al., (2018) <DOI:10.1016/j.ejor.2018.02.009>).")
     (license license:gpl3+)))
-
-(define-public r-llbayesireg
-  (package
-    (name "r-llbayesireg")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "llbayesireg" version))
-       (sha256
-        (base32 "0jhkmrjkqfm1flwsbpv6060j6g7cj4ngm0drvrlvsiqpni0k96mh"))))
-    (properties `((upstream-name . "llbayesireg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-rstan
-                             r-rcpp
-                             r-mcmcpack
-                             r-mass
-                             r-llogistic
-                             r-ggplot2
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=llbayesireg")
-    (synopsis "The L-Logistic Bayesian Regression")
-    (description
-     "R functions and data sets for the work Paz, R.F., Balakrishnan, N and BazÃ¡n,
-J.L. (2018).  L-logistic regression models: Prior sensitivity analysis,
-robustness to outliers and applications.  Brazilian Journal of Probability and
-Statistics, <https://www.imstat.org/wp-content/uploads/2018/05/BJPS397.pdf>.")
-    (license license:gpl3+)))
-
-(define-public r-llamar
-  (package
-    (name "r-llamar")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "llamaR" version))
-       (sha256
-        (base32 "0jiapw445q6j9hlq68i60pswbywx8a9k7bgxbqpqbf4dghdqxdw2"))))
-    (properties `((upstream-name . "llamaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-ggmlr))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/Zabis13/llamaR")
-    (synopsis "Interface for Large Language Models via 'llama.cpp'")
-    (description
-     "This package provides R bindings to llama.cpp for running Large Language Models
-('LLMs') locally with optional Vulkan GPU acceleration via @code{ggmlR}'.
-Supports model loading, text generation, tokenization', token-to-piece
-conversion, embeddings (single and batch), encoder-decoder inference, low-level
-batch management, chat templates, @code{LoRA} adapters, explicit backend/device
-selection, multi-GPU split, and NUMA optimization.  Includes a high-level
-ragnar'-compatible embedding provider ('embed_llamar').  Built on top of
-@code{ggmlR} for efficient tensor operations.")
-    (license license:expat)))
 
 (define-public r-llama
   (package
@@ -9582,6 +9562,44 @@ is designed to detect certain failures of list experiments, and a placebo test
 for the list experiment using data from direct questions.")
     (license license:gpl2+)))
 
+(define-public r-lisat
+  (package
+    (name "r-lisat")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lisat" version))
+       (sha256
+        (base32 "1wvsm0cg1brfyc924z1l9g3n96psl9w0sxs41amfckmgas6mqqd4"))))
+    (properties `((upstream-name . "lisat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-s4vectors
+                             r-purrr
+                             r-magrittr
+                             r-iranges
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-dplyr
+                             r-broom
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lisat")
+    (synopsis "Longitudinal Integration Site Analysis Toolkit")
+    (description
+     "This package provides a comprehensive toolkit for the analysis of longitudinal
+integration site data, including data cleaning, quality control, statistical
+modeling, and visualization.  It streamlines the entire workflow of integration
+site analysis, supports simple input formats, and provides user-friendly
+functions for researchers in virus integration site analysis.  Ni et al. (2025)
+<doi:10.64898/2025.12.20.695672>.")
+    (license license:expat)))
+
 (define-public r-lisa
   (package
     (name "r-lisa")
@@ -9780,13 +9798,13 @@ the visualizations are based on rigorous statistical models.")
 (define-public r-lipidms
   (package
     (name "r-lipidms")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LipidMS" version))
        (sha256
-        (base32 "1clwpz0rh36hm2a0arabq31537ydccv20y26jq0w7nglkxa5l2mi"))))
+        (base32 "0r2jilgk085fwd8gb44kzara4cndba6z7wiqg0gw36j3yw4nsljl"))))
     (properties `((upstream-name . "LipidMS")))
     (build-system r-build-system)
     (arguments
@@ -11296,33 +11314,37 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "1.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "176kqfx1dchfh1lff958yiqnxri2i6cw053181k0gjb3h8wjs7c4"))))
+        (base32 "0s3jszczs6w81yqipyjqk30rcz5mz1674a7bv9h5vnr3mblfqpw5"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
+                             r-matrixstats
                              r-matrix
-                             r-gtools
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WinzarH/LikertMakeR/")
     (synopsis
      "Synthesise and Correlate Likert Scale and Rating-Scale Data Based on Summary Statistics")
     (description
-     "Generate and correlate synthetic Likert and rating-scale data with predefined
-means, standard deviations, Cronbach's Alpha, Factor Loading table,
-coefficients, and other summary statistics.  Worked examples and documentation
-are available in the package articles, accessible via the package website,
+     "Generate and correlate synthetic Likert and rating-scale questionnaire responses
+with predefined means, standard deviations, Cronbach's Alpha, Factor Loading
+table, coefficients, and other summary statistics.  It can be used to simulate
+Likert data, construct multi-item scales, generate correlation matrices, and
+create example survey datasets for teaching statistics, psychometrics, and
+methodological research.  Worked examples and documentation are available in the
+package articles, accessible via the package website,
 <https://winzarh.github.io/@code{LikertMakeR/>}.")
     (license license:expat)))
 
@@ -11504,24 +11526,20 @@ for the (modified) profile likelihood.")
 (define-public r-likelihood-model
   (package
     (name "r-likelihood-model")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "likelihood.model" version))
        (sha256
-        (base32 "05h7xi7cdqb6sqp7rd5kmrr0m4cyxpan36hxw67sfb5qzsyn209s"))))
+        (base32 "06id8zlv9m8d9q85l62hzicqlf6z33wg4hvz6la789vrg8psbbs1"))))
     (properties `((upstream-name . "likelihood.model")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6
-                             r-numderiv
-                             r-mvtnorm
-                             r-generics
-                             r-boot
-                             r-algebraic-mle))
+    (propagated-inputs (list r-numderiv r-generics r-boot r-algebraic-mle
+                             r-algebraic-dist))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/queelius/likelihood.model")
     (synopsis
@@ -11533,8 +11551,7 @@ Paradigm\".  Defines generic methods for working with likelihoods
 @code{(loglik()}, @code{score()}, @code{hess_loglik()}, @code{fim()}) and
 provides functions for pure likelihood-based inference @code{(support()},
 @code{relative_likelihood()}, @code{likelihood_interval()},
-@code{profile_loglik()}).  Includes a likelihood contributions model for
-heterogeneous observation types (exact, censored, etc.) assuming i.i.d.  data.")
+@code{profile_loglik()}).")
     (license license:expat)))
 
 (define-public r-likelihood
@@ -12511,6 +12528,33 @@ library.  And the @code{datestep()} function will perform row-by-row data
 processing.")
     (license license:cc0)))
 
+(define-public r-libopenexr
+  (package
+    (name "r-libopenexr")
+    (version "3.4.4-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "libopenexr" version))
+       (sha256
+        (base32 "0b3xdqn01mfgn1p4rvkfkpkq5mmh7zv8pxqxxxhh3la5imsklvxs"))))
+    (properties `((upstream-name . "libopenexr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (propagated-inputs (list r-libimath))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=libopenexr")
+    (synopsis "Static Library and Headers for 'OpenEXR' Image I/O")
+    (description
+     "This package provides the @code{OpenEXR} static library and C++ headers for
+high-dynamic-range image I/O (see <https://openexr.com/>) needed to link R
+packages against the @code{OpenEXR} library, along with a basic R interface to
+load EXR images.")
+    (license license:bsd-3)))
+
 (define-public r-liblinear
   (package
     (name "r-liblinear")
@@ -12572,13 +12616,13 @@ functions and data types common in computer graphics applications, including a
 (define-public r-libdeflate
   (package
     (name "r-libdeflate")
-    (version "1.24-7")
+    (version "1.25-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libdeflate" version))
        (sha256
-        (base32 "1jq8wr2a9hzalpiilywankcpxgd3v7cy7xnf5xc4ff00ilbb6qal"))))
+        (base32 "046xwj26q85zl6phjkb52c0p7a78p8aqydkf6nf0lkqgzsi4c7i9"))))
     (properties `((upstream-name . "libdeflate")))
     (build-system r-build-system)
     (arguments
@@ -12707,13 +12751,13 @@ data.")
 (define-public r-lgspline
   (package
     (name "r-lgspline")
-    (version "0.3.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgspline" version))
        (sha256
-        (base32 "1l7a04khfaiaic89f6zzq9cp3ymf8acia4z4v47kashkl51a6dm8"))))
+        (base32 "0i13w2yhwhfdvb2fmr49cjvm8d2qyymzcrmsknijk7hxipxnd3l4"))))
     (properties `((upstream-name . "lgspline")))
     (build-system r-build-system)
     (arguments
@@ -12733,16 +12777,17 @@ data.")
 nonparametric regression and function estimation.  Provides tools for fitting,
 prediction, and inference using a constrained optimization approach to enforce
 smoothness.  Supports generalized linear models, Weibull accelerated failure
-time (AFT) models, quadratic programming problems, and customizable arbitrary
-correlation structures.  Options for fitting in parallel are provided.  The
-method builds upon the framework described by Ezhov et al. (2018)
-<doi:10.1515/jag-2017-0029> using Lagrangian multipliers to fit cubic splines.
-For more information on correlation structure estimation, see Searle et al.
-(2009) <ISBN:978-0470009598>.  For quadratic programming and constrained
-optimization in general, see Nocedal & Wright (2006)
-<doi:10.1007/978-0-387-40065-5>.  For a comprehensive background on smoothing
-splines, see Wahba (1990) <doi:10.1137/1.9781611970128> and Wood (2006)
-<ISBN:978-1584884743> \"Generalized Additive Models: An Introduction with R\".")
+time (AFT) models, quadratic programming constraints, and customizable
+working-correlation structures, with options for parallel fitting.  The core
+spline construction builds on Ezhov et al. (2018) <doi:10.1515/jag-2017-0029>.
+Quadratic-programming and SQP details follow Goldfarb & Idnani (1983)
+<doi:10.1007/BF02591962> and Nocedal & Wright (2006)
+<doi:10.1007/978-0-387-40065-5>.  For smoothing spline and penalized spline
+background, see Wahba (1990) <doi:10.1137/1.9781611970128> and Wood (2017)
+<doi:10.1201/9781315370279>.  For variance-component and correlation-parameter
+estimation, see Searle et al. (2006) <ISBN:978-0470009598>.  The default
+multivariate partitioning step uses k-means clustering as in @code{MacQueen}
+(1967).")
     (license license:expat)))
 
 (define-public r-lgrf
@@ -13628,13 +13673,13 @@ textbook of Tukey (1977) <ISBN: 978-0201076165>.")
 (define-public r-letsrept
   (package
     (name "r-letsrept")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "letsRept" version))
        (sha256
-        (base32 "010vl0vdmmv9b2x2bjyq03qjbz1pcq365rpyy8sp5yx85i4qi2zx"))))
+        (base32 "0lif667nz4vcjr3i0m7lia5vc9pcrka6vjz1nwfw389crzgxq4a6"))))
     (properties `((upstream-name . "letsRept")))
     (build-system r-build-system)
     (arguments
@@ -13658,6 +13703,32 @@ website (<https://reptile-database.reptarium.cz/>).  Outputs include clean and
 structured data frames useful for ecological, evolutionary, and conservation
 research.")
     (license license:expat)))
+
+(define-public r-letsr
+  (package
+    (name "r-letsr")
+    (version "6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "letsR" version))
+       (sha256
+        (base32 "0dzj0dbahli9w8gaga6pv2ssxkz5bzdspz0v0nzjhciw3f58sn5c"))))
+    (properties `((upstream-name . "letsR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12401")
+    (synopsis "Data Handling and Analysis in Macroecology")
+    (description
+     "Handling, processing, and analyzing geographic data on species distributions and
+environmental variables.  Read Vilela & Villalobos (2015)
+<doi:10.1111/2041-210X.12401> for details.")
+    (license license:gpl2)))
 
 (define-public r-letsherp
   (package
@@ -13783,13 +13854,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.5.2")
+    (version "4.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "0lnigzpx634bz7zbg8lymvm1bfcdy2pprj8vw7gypl9nszbp9nvv"))))
+        (base32 "0s1nqq2bngvv77ysxslfabc05qfzzg7yjbr4p244hhk290jc0f6x"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -14445,19 +14516,19 @@ knowledge.")
 (define-public r-ledger
   (package
     (name "r-ledger")
-    (version "2.0.11")
+    (version "2.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ledger" version))
        (sha256
-        (base32 "0l26s7mnfrn9yi03xdx2i0965p17vif6cks1k9fi6h8lbfdj3id7"))))
+        (base32 "04a7aqk6jsrn3xkcgj9ahql5pyklylfr0pjjgdhmizbgyas5rrbr"))))
     (properties `((upstream-name . "ledger")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list hledger beancount))
+    (inputs (list hledger beanquery))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -15150,34 +15221,6 @@ settings of location and time, to calculate the tilt angle of a surface, and the
 minimum angle between two non-orthogonal planes.")
     (license license:agpl3)))
 
-(define-public r-leafr
-  (package
-    (name "r-leafr")
-    (version "0.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leafR" version))
-       (sha256
-        (base32 "02kimgffynf7nx164g1vw30wcv2plr7a5gf27q4x87c9c8b0cb1b"))))
-    (properties `((upstream-name . "leafR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp r-raster r-lidr r-data-table))
-    (home-page "https://github.com/DRAAlmeida/leafR")
-    (synopsis
-     "Calculates the Leaf Area Index (LAD) and Other Related Functions")
-    (description
-     "This package provides a set of functions for analyzing the structure of forests
-based on the leaf area density (LAD) and leaf area index (LAI) measures
-calculated from Airborne Laser Scanning (ALS), i.e., scanning lidar (Light
-Detection and Ranging) data.  The methodology is discussed and described in
-Almeida et al. (2019) <doi:10.3390/rs11010092> and Stark et al. (2012)
-<doi:10.1111/j.1461-0248.2012.01864.x>.")
-    (license license:gpl3)))
-
 (define-public r-leafpop
   (package
     (name "r-leafpop")
@@ -15336,6 +15379,34 @@ single map.")
     (description
      "Several leaflet plugins are integrated, which are available as extension to the
 leaflet package.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-leaflet-extras
+  (package
+    (name "r-leaflet-extras")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "leaflet.extras" version))
+       (sha256
+        (base32 "0k26wzn26fr30ygs8b8qvd9cyg35x6mg243n5xak1wh2kw6igpnl"))))
+    (properties `((upstream-name . "leaflet.extras")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-magrittr r-leaflet r-htmlwidgets
+                             r-htmltools))
+    (home-page "https://github.com/sebastien-plutniak/leaflet.extras")
+    (synopsis "Extra Functionality for 'leaflet' Package")
+    (description
+     "The leaflet @code{JavaScript} library provides many plugins some of which are
+available in the core leaflet package, but there are many more.  It is not
+possible to support them all in the core leaflet package.  This package serves
+as an add-on to the leaflet package by providing extra functionality via leaflet
+plugins.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -19278,13 +19349,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "1bijix075978mj72nis04z56814v39rxirfi094fahjqh35jjfnj"))))
+        (base32 "1cki669z1m2wlcmgx5fki64pfq2lxgqp2cf36gvf0hhr3knc7qzg"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments
@@ -19378,30 +19449,29 @@ on Torch'.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "2.0.6")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "1aaywczvidw0j7011vi5x4k8h64bz0kdjwyir34ya832pyakcfgm"))))
+        (base32 "081ny05x8l1p6yx9h1bs4b7550q852hjimsqi8crfw0g9pjj4xpr"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-splines2
-                             r-sn
+                             r-rtmbdist
                              r-rtmb
                              r-rcpparmadillo
                              r-rcpp
                              r-numderiv
                              r-mgcv
                              r-matrix
-                             r-mass
-                             r-circular))
+                             r-mass))
     (native-inputs (list r-knitr))
-    (home-page "https://janoleko.github.io/LaMa/")
+    (home-page "https://janolefi.github.io/LaMa/")
     (synopsis
      "Fast Numerical Maximum Likelihood Estimation for Latent Markov Models")
     (description
@@ -19418,7 +19488,7 @@ approach, offering up to 10-20 times faster estimation via standard numerical
 optimisers.  To aid in building fully custom likelihood functions, several
 vignettes are included that show how to simulate data from and estimate all the
 above model classes.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-lam
   (package
@@ -19572,6 +19642,37 @@ compute conversions and implement calculations commonly applied to raw data
 prior to estimating metabolism (e.g., oxygen saturation and optical conversion
 models).")
     (license license:gpl2+)))
+
+(define-public r-lakefetch
+  (package
+    (name "r-lakefetch")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lakefetch" version))
+       (sha256
+        (base32 "0w5bvgvwk2mcd8j5n2cv0a7i83nn1937c1xx7nqjs8apnk0javf3"))))
+    (properties `((upstream-name . "lakefetch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-osmdata r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jeremylfarrell/lakefetch")
+    (synopsis "Calculate Fetch and Wave Exposure for Lake Sampling Points")
+    (description
+     "Calculates fetch (open water distance) and wave exposure metrics for lake
+sampling points.  Downloads lake boundaries from @code{OpenStreetMap}',
+calculates directional fetch using a ray-casting approach, and optionally
+integrates National Hydrography Dataset ('NHD') data
+<https://www.usgs.gov/national-hydrography> for hydrological context including
+outlet and inlet locations.  Can estimate lake depth from surface area using
+empirical relationships, and integrate historical weather data for cumulative
+wave energy calculations.  Includes an optional interactive shiny application
+for visualization.")
+    (license license:expat)))
 
 (define-public r-lair
   (package
@@ -19966,6 +20067,38 @@ most computations such maps are converted into raster images.  The package is
 based on research conducted during the author's @code{PhD} studies.")
     (license license:gpl2+)))
 
+(define-public r-lactcurvemodels
+  (package
+    (name "r-lactcurvemodels")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LactCurveModels" version))
+       (sha256
+        (base32 "0gppxqp30ln24h0lvprl6g6gkw8kb2jircyzjynydpg7ds2rnw5b"))))
+    (properties `((upstream-name . "LactCurveModels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/venkatesanraja/LactCurveModels")
+    (synopsis "Lactation Curve Model Fitting for Dairy Animals")
+    (description
+     "Fits up to 20 nonlinear lactation curve models to dairy animal milk yield data.
+Models fitted include exponential, polynomial, mixed logarithmic, inverse
+polynomial, and sigmoid families published between 1923 and 2000.  Supports
+batch processing of multiple animals from a single CSV file, with flexible
+selection of animals and models.  Produces per-animal parameter tables,
+goodness-of-fit metrics including R-squared (R2), Root Mean Square Error (RMSE),
+Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), and a
+serial autocorrelation statistic, 15 diagnostic figures, and combined
+cross-animal comparison outputs.  References: <doi:10.1085/jgp.5.4.441>,
+<doi:10.1038/216164a0>, <doi:10.1016/0301-6226(87)90003-0>,
+<doi:10.4141/cjas87-067>, <doi:10.3168/jds.S0022-0302(00)75136-8>.")
+    (license license:gpl3)))
+
 (define-public r-lactater
   (package
     (name "r-lactater")
@@ -20079,22 +20212,26 @@ See Pedeli and Varin (2020) for details.")
 (define-public r-labtnscpss
   (package
     (name "r-labtnscpss")
-    (version "1.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LABTNSCPSS" version))
        (sha256
-        (base32 "0sw1gq6rzmbn7lzssx1c6i8izfg8srwmrsphdbg445s49bxb7b12"))))
+        (base32 "0v7105c658r2bn2144vgc1rbmj62pcci676d60pw6rv1ifwrnsf0"))))
     (properties `((upstream-name . "LABTNSCPSS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringi
                              r-purrr
+                             r-magrittr
                              r-lubridate
-                             r-ggplot2
+                             r-glue
                              r-dplyr
                              r-data-table
                              r-checkmate))
@@ -20446,13 +20583,13 @@ using various relabelling algorithms.")
 (define-public r-labdsv
   (package
     (name "r-labdsv")
-    (version "2.1-2")
+    (version "2.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labdsv" version))
        (sha256
-        (base32 "0n7sd5j8b2bq88744gsbzsxwkpv5l8siik47gg6bzh0ch9g2ycii"))))
+        (base32 "1sa6bmkdb2vgfszfn58mc8vd5zm39vf6n5slr7mryhmbqh1dzavy"))))
     (properties `((upstream-name . "labdsv")))
     (build-system r-build-system)
     (arguments
@@ -20902,6 +21039,65 @@ problems (a.k.a.  best subset selection).  The algorithms are based on
 coordinate descent and local combinatorial search.  For more details, check the
 paper by Hazimeh and Mazumder (2020) <doi:10.1287/opre.2019.1919>.")
     (license license:expat)))
+
+(define-public r-l0ggm
+  (package
+    (name "r-l0ggm")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "L0ggm" version))
+       (sha256
+        (base32 "18zzm2pqzqa0vspiq1pqb648x8sldg0mimy7r4bjsv4kfm6lhp83"))))
+    (properties `((upstream-name . "L0ggm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-matrix r-igraph r-glassofast r-glasso))
+    (home-page "https://cran.r-project.org/package=L0ggm")
+    (synopsis "Smooth L0 Penalty Approximations for Gaussian Graphical Models")
+    (description
+     "This package provides smooth approximations to the L0 norm penalty for
+estimating sparse Gaussian graphical models (GGMs).  Network estimation is
+performed using the Local Linear Approximation (LLA) framework (Fan & Li, 2001
+<doi:10.1198/016214501753382273>; Zou & Li, 2008
+<doi:10.1214/009053607000000802>) with five penalty functions: arctangent (Wang
+& Zhu, 2016 <doi:10.1155/2016/6495417>), EXP (Wang, Fan, & Zhu, 2018
+<doi:10.1007/s10463-016-0588-3>), Gumbel, Log (Candes, Wakin, & Boyd, 2008
+<doi:10.1007/s00041-008-9045-x>), and Weibull.  Adaptive penalty parameters for
+EXP, Gumbel, and Weibull are estimated via maximum likelihood, and model
+selection uses information criteria including AIC, BIC, and EBIC (Extended BIC).
+ Simulation functions generate multivariate normal data from GGMs with
+stochastic block model or small-world (Watts-Strogatz) network structures.")
+    (license (license:fsdg-compatible "AGPL (>= 3.0)"))))
+
+(define-public r-l0cpt
+  (package
+    (name "r-l0cpt")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "L0cpt" version))
+       (sha256
+        (base32 "1964rm0dc1003favp018b487hj8dyf92yzdmdprz2603ckq7da8s"))))
+    (properties `((upstream-name . "L0cpt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=L0cpt")
+    (synopsis "Change Point Detection with L0 Penalty")
+    (description
+     "Under an L0 penalty framework, a computationally efficient implementation of
+change point detection is developed.  By integrating active set algorithms with
+warm start initialization, the package achieves linear-time complexity for
+solving change point detection problems.  References: Wen et al. (2020)
+<doi:10.18637/jss.v094.i04>; Zhu et al. (2020)<doi:10.1073/pnas.2014241117>.")
+    (license license:gpl3+)))
 
 (define-public r-l0ara
   (package

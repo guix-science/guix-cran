@@ -96,13 +96,13 @@ functionality).")
 (define-public r-yuimagui
   (package
     (name "r-yuimagui")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yuimaGUI" version))
        (sha256
-        (base32 "1sl45kmqqq7hg3lkpn3cy70f409fwsgg76gjldx1l4cvmyzyf9hl"))))
+        (base32 "0fgr37nsf1scmcjv1alz4sr1cnvz4s4sisj4vzgwfgzx3wsa6yag"))))
     (properties `((upstream-name . "yuimaGUI")))
     (build-system r-build-system)
     (arguments
@@ -185,13 +185,13 @@ channel including geography, traffic sources, time period, etc.")
 (define-public r-yrnd
   (package
     (name "r-yrnd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yrnd" version))
        (sha256
-        (base32 "1h6d2a21ijsxjlp3bb12cypy4s61b56w27k3wnkkh2q4mfrfxxk2"))))
+        (base32 "19035kfyj1qbrkjgj2ah44kyqn5lqx433b6i7fx8fh0ra87rpir4"))))
     (properties `((upstream-name . "yrnd")))
     (build-system r-build-system)
     (arguments
@@ -199,24 +199,27 @@ channel including geography, traffic sources, time period, etc.")
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tvm
+                             r-tibble
                              r-scales
+                             r-rblpapi
                              r-lubridate
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=yrnd")
     (synopsis
-     "Computes Risk Neutral Densities of Futures Prices and Yields on Fixed Income Products")
+     "Extracts Risk Neutral Densities of Prices, Money Market Rates and Bond Yields from Fixed Income Options")
     (description
      "This package provides with parametric risk neutral densities and cumulative
 densities for futures prices on fixed-income products.  It relies on options on
 Short Term Interest Rate futures contracts prices or options on bond futures
 contracts prices.  It models the price of the underlying asset as a mixture of
 either two or three lognormal densities.  It also brings new functions which
-provide with risk neutral densities and cumulative densities of the rate or the
-yield underlying the futures contract, using the density of the futures price.
-The package is based on the works of Melick, W. R. and Thomas, C. P. (1997)
-<doi:10.2307/2331318> and B. Bahra (1998) <doi:10.2139/ssrn.77429>.")
+provide with risk neutral densities and cumulative densities of the money market
+rate or the bond yield inferred from the futures contract's price, using the
+density of the futures price.  The package leverages on the works of Melick, W.
+R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B. Bahra (1998)
+<doi:10.2139/ssrn.77429>.")
     (license license:gpl3)))
 
 (define-public r-yrmisc
@@ -244,40 +247,6 @@ creating leading and lagging variables, portfolio return analysis, time series
 difference and percentage change calculation, stacking data for higher efficient
 analysis.")
     (license license:gpl2+)))
-
-(define-public r-ypssc
-  (package
-    (name "r-ypssc")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ypssc" version))
-       (sha256
-        (base32 "0fpph19amj1cafcbh5k6s75pi7nahzgfvnsbs9i5644gv43iavbj"))))
-    (properties `((upstream-name . "ypssc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-svdialogs
-                             r-stringr
-                             r-spelling
-                             r-readxl
-                             r-peptides
-                             r-eulerr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ypssc")
-    (synopsis "Yeast-Proteome Secondary-Structure Calculator")
-    (description
-     "An extension for @code{NetSurfP-2.0} (Klausen et al. (2019)
-<doi:10.1002/prot.25674>) which is specifically designed to analyze the results
-of bottom-up-proteomics that is primarily analyzed with @code{MaxQuant} (Cox,
-J., Mann, M. (2008) <doi:10.1038/nbt.1511>).  This tool is designed to process a
-large number of yeast peptides that produced as a results of whole yeast
-cell-proteome digestion and provide a coherent picture of secondary structure of
-proteins.")
-    (license license:gpl3+)))
 
 (define-public r-ypr
   (package
@@ -695,6 +664,35 @@ external standard life expectancy curve.  It also computes the average YLL,
 which highlights premature causes of death and brings attention to preventable
 deaths (Aragon et al., 2008).")
     (license license:gpl2+)))
+
+(define-public r-yieldcurves
+  (package
+    (name "r-yieldcurves")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yieldcurves" version))
+       (sha256
+        (base32 "16p0yyab2zdg6ym45v83sdrklnawy987gblqdb98vc7p2n30cwgk"))))
+    (properties `((upstream-name . "yieldcurves")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/charlescoverdale/yieldcurves")
+    (synopsis "Yield Curve Fitting, Analysis, and Decomposition")
+    (description
+     "Fits yield curves using Nelson-Siegel (1987) <doi:10.1086/296409>, Svensson
+(1994) <doi:10.3386/w4871>, and cubic spline methods.  Extracts forward rates,
+discount factors, and par rates from fitted curves.  Computes duration and
+convexity risk measures.  Computes Z-spread and key rate durations.  Provides
+principal component decomposition following Litterman and Scheinkman (1991)
+<doi:10.3905/jfi.1991.692347>, carry and roll-down analysis, and slope measures.
+ All methods are pure computation with no external dependencies beyond base R;
+works with yield data from any source.")
+    (license license:expat)))
 
 (define-public r-yieldcurve
   (package
@@ -1131,6 +1129,29 @@ version of the e-book is available for free at
 <https://bookdown.org/ndphillips/@code{YaRrr/>}.")
     (license license:gpl2)))
 
+(define-public r-yanghuimagic
+  (package
+    (name "r-yanghuimagic")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YangHuiMagic" version))
+       (sha256
+        (base32 "14q6fwf96nbi25rfbn2q4kbny2a1z9bzlh4xaqlfa6xix9mvhl73"))))
+    (properties `((upstream-name . "YangHuiMagic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=YangHuiMagic")
+    (synopsis "Generalization of Yang Hui's Magic Squares")
+    (description
+     "The generalized construction methods for magic squares, inspired by the ancient
+Chinese mathematician Yang Hui's classical work \"Xu Gu Zhai Qi Suan Fa\".  These
+methods can construct 4n-order magic squares and 2(2n+1)-order magic squares.")
+    (license license:gpl3)))
+
 (define-public r-yamlme
   (package
     (name "r-yamlme")
@@ -1160,13 +1181,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yamlet" version))
        (sha256
-        (base32 "168sgxx475qk74wvxcxxxgby3q4c7vp2cd4m6r3wk0dzb2grzsqz"))))
+        (base32 "1l7iasb19vd78hgkciwqab1p0m8x651i2fdvzjy1kc27pallmn1x"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (arguments

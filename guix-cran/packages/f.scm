@@ -11,13 +11,13 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages tbb)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages bioinformatics)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages base)
   #:use-module (gnu packages algebra)
@@ -422,13 +422,13 @@ the considered designs are also foreseen.")
 (define-public r-fuzzystring
   (package
     (name "r-fuzzystring")
-    (version "0.0.1")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzystring" version))
        (sha256
-        (base32 "0319cjp51w38jc1kii198lj3hwiajirkhcpkbn6hnm3xbskm6apy"))))
+        (base32 "1vvn06vbnr2baqhv32ax41q3cs2q3ymh8rd6fwp8zr0aziyfrl72"))))
     (properties `((upstream-name . "fuzzystring")))
     (build-system r-build-system)
     (arguments
@@ -440,13 +440,14 @@ the considered designs are also foreseen.")
     (synopsis "Fast Fuzzy String Joins for Data Frames")
     (description
      "Perform fuzzy joins on data frames using approximate string matching.
-Implements all standard join types (inner, left, right, full, semi, anti) with
-support for multiple string distance metrics from the stringdist package
-including Levenshtein, Damerau-Levenshtein, Jaro-Winkler, and Soundex.  Features
-a high-performance data.table backend with C++ row binding for efficient
-processing of large datasets.  Ideal for matching misspellings, inconsistent
-labels, messy user input, or reconciling datasets with slight variations in
-identifiers.  Optionally returns distance metrics alongside matched records.")
+Implements inner, left, right, full, semi, and anti joins with string distance
+metrics from the stringdist package, including Optimal String Alignment,
+Levenshtein, Damerau-Levenshtein, Jaro-Winkler, q-gram, cosine, Jaccard, and
+Soundex.  Uses a data.table backend plus compiled C++ result assembly to reduce
+overhead in large joins, while adaptive candidate planning avoids unnecessary
+distance evaluations in single-column string joins.  Suitable for reconciling
+misspellings, inconsistent labels, and other near-match identifiers while
+optionally returning the computed distance for each match.")
     (license license:expat)))
 
 (define-public r-fuzzystattra
@@ -553,13 +554,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.48")
+    (version "4.50")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1x1yk60wdc4nw5g3dgjfbm2jv7pl91kd85pb6xrvcvcs9w0dkrw9"))))
+        (base32 "07zlw7l600gmwzcjra9x6d4ll8s7iyxs9ihqsjqaw5qh1n9xqjkd"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -1073,20 +1074,20 @@ summarizing messages, warnings, errors, and returned values.")
 (define-public r-futurize
   (package
     (name "r-futurize")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "futurize" version))
        (sha256
-        (base32 "12z8dxn3k3i2dgfwpnbxnk1w6nb59b08f32fjr3zp7lxzjpldfkl"))))
+        (base32 "1x3h6wm9d6zcm86q7v2dn7pa8lvv7p9m7hlzwy5ckgfzljjmpyhi"))))
     (properties `((upstream-name . "futurize")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-future))
-    (home-page "https://www.futureverse.org")
+    (home-page "https://futurize.futureverse.org")
     (synopsis "Parallelize Common Functions via One Magic Function")
     (description
      "The @code{futurize()} function transpiles calls to sequential map-reduce
@@ -1094,13 +1095,18 @@ functions such as @code{base::lapply()}, @code{purrr::map()},
 @code{foreach::foreach()} %do% { ... } into concurrent alternatives, providing
 you with a simple, straightforward path to scalable parallel computing via the
 future ecosystem <doi:10.32614/RJ-2021-048>.  By combining this function with
-R's native pipe operator, you have an convenient way for speeding up iterative
+R's native pipe operator, you have a convenient way for speeding up iterative
 computations with minimal refactoring, e.g. lapply(xs, fcn) |>
 @code{futurize()}', purrr::map(xs, fcn) |> @code{futurize()}', and
 foreach::foreach(x = xs) %do% { fcn(x) } |> @code{futurize()}'.  Other
-map-reduce packages that be \"futurized\" are @code{BiocParallel}', plyr',
-crossmap packages.  There is also support for growing set of domain-specific
-packages, including boot', glmnet', mgcv', lme4', and tm'.")
+map-reduce packages that can be \"futurized\" are @code{BiocParallel}', plyr',
+crossmap', pbapply packages.  There is also support for a growing set of
+domain-specific packages (e.g. CRAN package boot', caret', fgsea', fwb',
+gamlss', @code{glmmTMB}', glmnet', kernelshap', lme4', metafor', mgcv',
+partykit', @code{riskRegression}', seriation', shapr', @code{SimDesign}',
+strucchange', tm', TSP', and vegan') and Bioconductor packages (e.g. DESeq2',
+@code{GenomicAlignments}', GSVA', Rsamtools', scater', scuttle',
+@code{SingleCellExperiment}', and sva').")
     (license license:gpl3+)))
 
 (define-public r-futureverse
@@ -3027,19 +3033,19 @@ M. (2008) <doi:10.18637/jss.v028.i05>.")
 (define-public r-fullfact
   (package
     (name "r-fullfact")
-    (version "1.5.2")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fullfact" version))
        (sha256
-        (base32 "1x62zxqi99i91n1j8rsmxp6k614rq34r8l9qhszz3a9z32yi9mf6"))))
+        (base32 "09m3wlj5bs3qhssa70dhbv1i2k5hgzrxnr3082dybb6g5gdkg0hn"))))
     (properties `((upstream-name . "fullfact")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lme4 r-afex))
+    (propagated-inputs (list r-reformulas r-lme4 r-afex))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fullfact")
     (synopsis "Full Factorial Breeding Analysis")
@@ -3284,13 +3290,13 @@ and Rice, Wirjanto, and Zhao (2020) <doi:10.1111/jtsa.12532>.")
 (define-public r-ftsa
   (package
     (name "r-ftsa")
-    (version "6.6")
+    (version "6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftsa" version))
        (sha256
-        (base32 "1d0s5w14n2vc6md8c2zy0028ai48m9xssnjvw79ikr36xqnbj34a"))))
+        (base32 "15qr28qhhhbj5dylf1iimsxqjnir0amkvzvykljzm856i5rsj3h7"))))
     (properties `((upstream-name . "ftsa")))
     (build-system r-build-system)
     (arguments
@@ -4179,13 +4185,13 @@ al (1998, ISBN:92-5-104219-5)).")
 (define-public r-fru
   (package
     (name "r-fru")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fru" version))
        (sha256
-        (base32 "0wnirjfbmsn4c9xsr08sdzpn6yrfv84q614i48mii3a07p2blgx0"))))
+        (base32 "1vdpfnhjynqxrc6dma0zczs88iwbliasxzl437sgrxmzbdp038qn"))))
     (properties `((upstream-name . "fru")))
     (build-system r-build-system)
     (arguments
@@ -4425,13 +4431,13 @@ repositories, and more.  File paths are specified with function arguments, or
 (define-public r-frogger
   (package
     (name "r-frogger")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froggeR" version))
        (sha256
-        (base32 "173pgqc8rfhk67bqlvilrawqal6i973538003nvzybwphzkxp8wc"))))
+        (base32 "1yy9wy6cfzmgz45528rzh39kwis7gdxlq87bl6qdcbrmz50yy1hf"))))
     (properties `((upstream-name . "froggeR")))
     (build-system r-build-system)
     (arguments
@@ -4446,15 +4452,14 @@ repositories, and more.  File paths are specified with function arguments, or
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://www.kyleGrealis.com/froggeR/")
-    (synopsis "Structured Project Standards for R and 'Quarto'")
+    (synopsis "Project Scaffolding for R and 'Quarto'")
     (description
-     "This package provides an opinionated project scaffold for R and Quarto analysis
-work, enforcing a consistent directory layout with scripts in R/, .qmd files in
-pages/, and assets in www/.  The primary entry point, @code{init()}, downloads
-the latest template from a companion @code{GitHub} repository so that project
-structure evolves independently of package releases.  Supports persistent author
-metadata and Quarto brand configuration that carry across projects
-automatically.")
+     "This package creates structured R and Quarto projects with a consistent
+directory layout: scripts in R/, analysis documents in analysis/, and web assets
+in www/.  The primary entry point, @code{init()}, downloads the latest template
+from a companion @code{GitHub} repository so that project structure evolves
+independently of package releases.  Supports persistent author metadata and
+Quarto brand configuration that carry across projects automatically.")
     (license license:expat)))
 
 (define-public r-frlr
@@ -5494,6 +5499,31 @@ requires registration of an API key.  You can find the full API documentation at
 <https://freecurrencyapi.com/docs> .")
     (license license:expat)))
 
+(define-public r-freebsdcontribs
+  (package
+    (name "r-freebsdcontribs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "freebsdcontribs" version))
+       (sha256
+        (base32 "1axinfvbhgpm26b61nyz51896j3ha8mi4kc4iazm93kd6bbz2rp5"))))
+    (properties `((upstream-name . "freebsdcontribs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/chrislongros/freebsdcontribs")
+    (synopsis "'FreeBSD' Contributor and Commit Statistics")
+    (description
+     "Over 30 years of @code{FreeBSD} commit activity and contributor growth.
+Includes daily commit counts and new committer data extracted from the cloned
+git repository (1993-2026), plus Phabricator signup statistics (2013-2026).
+Contains no personal data -- only aggregated counts.  Useful for time series
+analysis, growth modeling, and studying open source community dynamics.")
+    (license license:cc0)))
+
 (define-public r-freebird
   (package
     (name "r-freebird")
@@ -5595,6 +5625,38 @@ development.  Reference: Yi Yang, Yuwen Gu, Yue Zhao, Jun Fan (2021)
      "An R client for the Federal Reserve Economic Data ('FRED') API
 <https://research.stlouisfed.org/docs/api/>.  Functions to retrieve economic
 time series and other data from FRED'.")
+    (license license:expat)))
+
+(define-public r-fred
+  (package
+    (name "r-fred")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fred" version))
+       (sha256
+        (base32 "1fl5i8cdzhnwfdzx4mnbfpg9k1lmysg5mg2ah55f0ndn95qr01dc"))))
+    (properties `((upstream-name . "fred")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2 r-cli))
+    (home-page "https://github.com/charlescoverdale/fred")
+    (synopsis "Access 'Federal Reserve Economic Data'")
+    (description
+     "This package provides clean, tidy access to economic data from the Federal
+Reserve Economic Data ('FRED') API <https://fred.stlouisfed.org/docs/api/fred/>.
+ FRED is maintained by the Federal Reserve Bank of St.  Louis and contains over
+800,000 time series from 118 sources covering GDP, employment, inflation,
+interest rates, trade, and more.  Dedicated functions fetch series observations,
+search for series, browse categories, releases, and tags, and retrieve series
+metadata.  Multiple series can be fetched in a single call.  Server-side unit
+transformations (percent change, log, etc.) and frequency aggregation are
+supported.  Data is cached locally for subsequent calls.  This product uses the
+FRED API but is not endorsed or certified by the Federal Reserve Bank of St.
+Louis'.")
     (license license:expat)))
 
 (define-public r-frechet
@@ -6728,6 +6790,43 @@ tabular-data-resource by providing a data.frame and specifying metadata.  Write
 and read tabular-data-resources to and from disk.")
     (license license:expat)))
 
+(define-public r-fqardl
+  (package
+    (name "r-fqardl")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fqardl" version))
+       (sha256
+        (base32 "10ajyvqrqafw8gxqhh6s3lcrcrvrsy6bz1nsdd2y2d6dbphq835r"))))
+    (properties `((upstream-name . "fqardl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-quantreg r-gridextra r-ggplot2))
+    (home-page "https://github.com/muhammedalkhalaf/fqardl")
+    (synopsis
+     "Fourier ARDL Methods: Quantile, Nonlinear, Multi-Threshold & Unit Root Tests")
+    (description
+     "Comprehensive implementation of advanced ARDL methodologies for cointegration
+analysis with structural breaks and asymmetric effects.  Includes: (1) Fourier
+Quantile ARDL (FQARDL) - quantile regression with Fourier approximation for
+analyzing relationships across the conditional distribution; (2) Fourier
+Nonlinear ARDL (FNARDL) - asymmetric cointegration with partial sum
+decomposition following Shin, Yu & Greenwood-Nimmo (2014)
+<doi:10.1007/978-1-4899-8008-3_9>; (3) Multi-Threshold NARDL (MTNARDL) -
+multiple regime asymmetry analysis; (4) Fourier Unit Root Tests - ADF and KPSS
+tests with Fourier terms following Enders & Lee (2012)
+<doi:10.1016/j.econlet.2012.05.019> and Becker, Enders & Lee (2006)
+<doi:10.1111/j.1467-9892.2006.00490.x>.  Features automatic lag and frequency
+selection, PSS bounds testing following Pesaran, Shin & Smith (2001)
+<doi:10.1002/jae.616>, bootstrap cointegration tests, Wald tests for asymmetry,
+dynamic multiplier computation, and publication-ready visualizations.  Ported
+from Stata/Python by Dr. Merwan Roudane.")
+    (license license:gpl3)))
+
 (define-public r-fqar
   (package
     (name "r-fqar")
@@ -7424,6 +7523,40 @@ complete all the preprocessing within moments.  The other three functions are
 supportive functions which visualize the eye fixation patterns.")
     (license license:gpl2)))
 
+(define-public r-fozziejoin
+  (package
+    (name "r-fozziejoin")
+    (version "0.0.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fozziejoin" version))
+       (sha256
+        (base32 "0mhf4yk351m4x5ydwxq3a3j5jp750snkh9hidikynfk3w8j42rhb"))))
+    (properties `((upstream-name . "fozziejoin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (propagated-inputs (list r-tibble))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fozzieverse/fozziejoin")
+    (synopsis "Utilities for Joining Dataframes with Inexact Matching")
+    (description
+     "This package provides functions for joining data frames based on inexact
+criteria, including string distance, Manhattan distance, Euclidean distance, and
+interval overlap.  This API is designed as a modern, performance-oriented
+alternative to the fuzzyjoin package (Robinson 2026)
+<doi:10.32614/CRAN.package.fuzzyjoin>.  String distance functions utilizing
+q-grams are adapted with permission from the textdistance Rust crate (Orsinium
+2024) <https://docs.rs/textdistance/latest/textdistance/>.  Other string
+distance calculations rely on the rapidfuzz Rust crate (Bachmann 2023)
+<https://docs.rs/rapidfuzz/0.5.0/rapidfuzz/>.  Interval joins are backed by a
+Adelson-Velsky and Landis tree as implemented by the interavl Rust crate
+<https://docs.rs/interavl/0.5.0/interavl/>.")
+    (license license:expat)))
+
 (define-public r-fourwayhmm
   (package
     (name "r-fourwayhmm")
@@ -7881,6 +8014,37 @@ analyzed by functions lm {stats}, glm {stats}, nls {stats}, lme {nlme}, or coxph
 functions to display the descriptive statistics.")
     (license license:gpl3+)))
 
+(define-public r-forrest
+  (package
+    (name "r-forrest")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forrest" version))
+       (sha256
+        (base32 "1yhggibyx0nv3nmm19qsn5bgc0hcdnivcwiihv2026ljgak600j4"))))
+    (properties `((upstream-name . "forrest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tinyplot))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://lorenzofabbri.github.io/forrest/")
+    (synopsis "Publication-Ready Forest Plots")
+    (description
+     "This package creates publication-ready forest plots from any tabular data
+containing point estimates and confidence intervals.  Suitable for visualising
+results from regression models, meta-analyses, subgroup analyses, or any
+comparative study.  Supports group and subgroup headings, summary estimates
+displayed as diamonds, grouped estimates with automatic colour and shape
+mapping, vertical dodging of multiple estimates within the same row,
+customisable text columns alongside the plot, and optional row striping.
+Provides a helper to export plots to PDF, PNG, SVG, or TIFF. Built on tinyplot
+for clean, consistent visual styling with a minimal dependency footprint.")
+    (license license:expat)))
+
 (define-public r-forrel
   (package
     (name "r-forrel")
@@ -8323,6 +8487,59 @@ Latent Class Discrete Weibull Models.This package is based on Fader and Hardie
 functions for detecting treetops from canopy models, outlining tree crowns, and
 calculating textural metrics.")
     (license license:gpl3)))
+
+(define-public r-forestsearch
+  (package
+    (name "r-forestsearch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestsearch" version))
+       (sha256
+        (base32 "1m08yl0dqn32vb53ha84jfnxiclw2lmg77y8s32qffaw133vzgni"))))
+    (properties `((upstream-name . "forestsearch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weightedsurv
+                             r-survival
+                             r-stringr
+                             r-rlang
+                             r-randomforest
+                             r-progressr
+                             r-policytree
+                             r-patchwork
+                             r-gt
+                             r-grf
+                             r-glmnet
+                             r-ggplot2
+                             r-future-callr
+                             r-future-apply
+                             r-future
+                             r-foreach
+                             r-dplyr
+                             r-dofuture
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/larry-leon/forestsearch")
+    (synopsis
+     "Exploratory Subgroup Identification in Clinical Trials with Survival Endpoints")
+    (description
+     "This package implements statistical methods for exploratory subgroup
+identification in clinical trials with survival endpoints.  Provides tools for
+identifying patient subgroups with differential treatment effects using machine
+learning approaches including Generalized Random Forests (GRF), LASSO
+regularization, and exhaustive combinatorial search algorithms.  Features
+bootstrap bias correction using infinitesimal jackknife methods to address
+selection bias in post-hoc analyses.  Designed for clinical researchers
+conducting exploratory subgroup analyses in randomized controlled trials,
+particularly for multi-regional clinical trials (MRCT) requiring regional
+consistency evaluation.  Supports both accelerated failure time (AFT) and Cox
+proportional hazards models with comprehensive diagnostic and visualization
+tools.  Methods are described in LeÃ³n et al. (2024) <doi:10.1002/sim.10163>.")
+    (license license:expat)))
 
 (define-public r-forestsas
   (package
@@ -9217,19 +9434,20 @@ testing outcomes are to its choice.")
 (define-public r-foreco
   (package
     (name "r-foreco")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoReco" version))
        (sha256
-        (base32 "0ccjr4ipym1832lsq8ri45rlyv8riawp3m98xpab2bnjqrka5kj6"))))
+        (base32 "1pmfpgkmka15fl6ns9gmhwbzc2ydvp01a29xy6kwy64kxaa6hp9i"))))
     (properties `((upstream-name . "FoReco")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-osqp r-matrix r-cli))
+    (propagated-inputs (list r-osqp r-matrix r-lifecycle r-distributional
+                             r-cli))
     (home-page "https://github.com/danigiro/FoReco")
     (synopsis "Forecast Reconciliation")
     (description
@@ -10000,6 +10218,48 @@ fonts will be available for PDF or Postscript output files; however, this will
 (probably) not make the font available for screen or bitmap output files.")
     (license license:gpl2)))
 
+(define-public r-fonctionr
+  (package
+    (name "r-fonctionr")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fonctionr" version))
+       (sha256
+        (base32 "1k9pfz4l0k5xh27nqkp0vw5cfiglh7m4jmcfmgkx07pl9i70qxcd"))))
+    (properties `((upstream-name . "fonctionr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sysfonts
+                             r-survey
+                             r-stringr
+                             r-srvyr
+                             r-showtext
+                             r-scales
+                             r-rlang
+                             r-ggtext
+                             r-ggplot2
+                             r-ggnewscale
+                             r-foreach
+                             r-forcats
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://jgires.github.io/fonctionr/")
+    (synopsis
+     "Easy Estimation and Vizualisation of Indicators from Data with Complex Design")
+    (description
+     "Many functions to easily vizualise and estimate indicators such as proportions,
+means, medians and continuous/discrete distributions from complex survey data.
+The package also estimates confidence intervals for all indicators, compares
+different groups and computes different statistical tests.")
+    (license license:gpl3)))
+
 (define-public r-fomantic-plus
   (package
     (name "r-fomantic-plus")
@@ -10084,6 +10344,31 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
     (synopsis "Standardized Folder Names")
     (description "Supports the use of standardized folder names.")
     (license license:expat)))
+
+(define-public r-foldedt
+  (package
+    (name "r-foldedt")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "foldedt" version))
+       (sha256
+        (base32 "06qjhfx9amdg6xg761y99i9iy5jm6z36qrq071cg4qra62cxk00p"))))
+    (properties `((upstream-name . "foldedt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=foldedt")
+    (synopsis "The Folded t Family of Distributions")
+    (description
+     "Maximum likelihood estimation of the folded t and related distributions.  The
+reference paper is: Psarakis and Panaretos (1990). \"The folded t distribution\".
+Communications in Statistics--Theory and Methods, 19(7): 2717--2734.
+<doi:10.1080/03610929008830342>.")
+    (license license:gpl2+)))
 
 (define-public r-folda
   (package
@@ -10175,23 +10460,51 @@ interactive introduction, see
 <https://lea-urpa.github.io/@code{focusedMDS.html>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-focus
+  (package
+    (name "r-focus")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "focus" version))
+       (sha256
+        (base32 "1vqdr6wsjrrsn8hvix78pbgnqzv64di5zwylfvxky62dycng18dw"))))
+    (properties `((upstream-name . "focus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=focus")
+    (synopsis
+     "Online Changepoint Detection in Univariate and Multivariate Data Streams")
+    (description
+     "This package provides high-performance online changepoint detection in
+univariate and multivariate data streams.  Implements efficient C++ backends for
+the focus', md-focus and np-focus algorithms, with an R interface for real-time
+monitoring and offline analysis.  The package bundles code from Qhull
+<http://www.qhull.org/>, by C. B. Barber and The Geometry Center.  See
+inst/COPYRIGHTS for details.")
+    (license license:gpl3+)))
+
 (define-public r-foco2
   (package
     (name "r-foco2")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoCo2" version))
        (sha256
-        (base32 "1q19pfix25vd96ikqjld0w8gp3kgzk2crd2cdrsmvbj6pcfx0y1z"))))
+        (base32 "0739kqdsrkvnn1fh4j13fw7cf3dmlz3da97kqlxv3wr1hlr83vy8"))))
     (properties `((upstream-name . "FoCo2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-quadprog r-osqp r-matrix r-foreco r-cli))
-    (home-page "https://github.com/danigiro/FoCo2/")
+    (home-page "https://github.com/danigiro/FoCo2")
     (synopsis
      "Coherent Forecast Combination for Linearly Constrained Multiple Time Series")
     (description
@@ -10203,7 +10516,7 @@ multi-task forecast combination and reconciliation approaches leveraging input
 from multiple forecasting models or experts and ensuring that the resulting
 forecasts satisfy specified linear constraints.  In addition, linear inequality
 constraints (e.g., non-negativity of the forecasts) can be imposed, if needed.")
-    (license license:gpl3+)))
+    (license license:gpl3)))
 
 (define-public r-foci
   (package
@@ -10398,13 +10711,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.7.2")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "0lwvb894ix8akghrac41nhkf2d9zfjpqn9gnsydvrwd0dj1y8p5i"))))
+        (base32 "1ryag1aaam0pv17s5vmqw2yvvbkz91ag16mva7asdxvapb6i8yzx"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (arguments
@@ -10530,26 +10843,19 @@ al. (2014) <doi:10.1016/j.neuroimage.2014.03.028>).")
 (define-public r-fmriscrub
   (package
     (name "r-fmriscrub")
-    (version "0.14.5")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRIscrub" version))
        (sha256
-        (base32 "1k0ixg82sgngmpbpl2b57lhamm19bfgcxszrwpf5qkvrh83ab3gs"))))
+        (base32 "1xmp4iafyn92ldwa92zkf2rv68hrws7hhvfr07i7hydgi97nsb8w"))))
     (properties `((upstream-name . "fMRIscrub")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-robustbase
-                             r-pesel
-                             r-mass
-                             r-gamlss
-                             r-fmritools
-                             r-expm
-                             r-e1071
-                             r-cellwise))
+    (propagated-inputs (list r-robustbase r-pesel r-mass r-fmritools r-e1071))
     (home-page "https://github.com/mandymejia/fMRIscrub")
     (synopsis "Scrubbing and Other Data Cleaning Routines for fMRI")
     (description
@@ -10600,13 +10906,13 @@ detailed by Friedman and Glover (2006) <doi:10.1002/jmri.20583>.")
 (define-public r-fmrihrf
   (package
     (name "r-fmrihrf")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmrihrf" version))
        (sha256
-        (base32 "0q04jw63yhs6pscz52lswwjvbxp7s9qwbgkfcxrshgz1qck3670l"))))
+        (base32 "1nfj3wnqmz3mxnjq5ak78a94cvfs0n7vifx8w5mclpfmy0ak85wn"))))
     (properties `((upstream-name . "fmrihrf")))
     (build-system r-build-system)
     (arguments
@@ -11156,19 +11462,19 @@ Wheelwright & Hyndman (Wiley, 3rd ed., 1998)
 (define-public r-flyingr
   (package
     (name "r-flyingr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlyingR" version))
        (sha256
-        (base32 "08jyp4hfb9pydicx4i6vgi94p6pykyi545w8svhar2fwmn1ik955"))))
+        (base32 "0hm37by005rc717fhl2r7fz9w23mxh2nv63dj5rngarg6gy46ps1"))))
     (properties `((upstream-name . "FlyingR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-rcpp r-knitr r-kableextra))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BMasinde/FlyingR")
     (synopsis "Simulation of Bird Flight Range")
@@ -11270,6 +11576,45 @@ scatterplot, and can export a cleaned .csv with removed points set to NA plus an
 R script for reproducibility.  Reference: Key (2025)
 <DOI:10.5281/zenodo.15597159>.")
     (license license:gpl3)))
+
+(define-public r-fluxseparator
+  (package
+    (name "r-fluxseparator")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FluxSeparator" version))
+       (sha256
+        (base32 "19hfnlf27qa72pg9h83gyld2bbmpqarhqq6b65q7bzfg6qyswwb8"))))
+    (properties `((upstream-name . "FluxSeparator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ttr
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-hmr
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JonasStage/FluxSeparator")
+    (synopsis "Separation of Diffusive and Ebullitive Fluxes")
+    (description
+     "Separates diffusive and ebullitive (bubble) fluxes from continuous concentration
+measurements using a running variance approach.  Ebullitive events are
+identified when the running variance exceeds a user-set threshold.  Diffusive
+fluxes are calculated via linear regression on the non-ebullitive portion of the
+data.  See SÃ¸ et al. (2024) <doi:10.1029/2024JG008035> for details.")
+    (license license:expat)))
 
 (define-public r-fluxpoint
   (package
@@ -11782,13 +12127,13 @@ regulation by dams based on GarcÃ­a de Jalon et al.  2017
 (define-public r-flownet
   (package
     (name "r-flownet")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flownet" version))
        (sha256
-        (base32 "080w3gmp2f3mkjx01l4dv483hnhp630z2i3d6b3kfijbqv3cbz6g"))))
+        (base32 "04jdf2r2jqny7llxrhk8acq7byn9vcw435315nnhq48iav7lnfny"))))
     (properties `((upstream-name . "flownet")))
     (build-system r-build-system)
     (arguments
@@ -13272,13 +13617,13 @@ be linked against the @code{FlexiBLAS} wrapper library
 (define-public r-flexhaz
   (package
     (name "r-flexhaz")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexhaz" version))
        (sha256
-        (base32 "1j0h7cgfafhlgkp6gpzbfa98dx1a3h12ckmd9xisz4zwc1qymp5s"))))
+        (base32 "0iw95l5jfpgjp96ish4q7l7fg8zqgxb9v3fa5ymf531hnd5whdsx"))))
     (properties `((upstream-name . "flexhaz")))
     (build-system r-build-system)
     (arguments
@@ -13475,6 +13820,42 @@ simulated likelihood, see Greene and Hill (2010)
 <doi:10.1093/0198774753.001.0001>; or Hensher et al. (2015)
 <doi:10.1017/CBO9781316136232>.")
     (license license:expat)))
+
+(define-public r-flexcausal
+  (package
+    (name "r-flexcausal")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexCausal" version))
+       (sha256
+        (base32 "186m9qdahkl7kwa8hyxx39brqwn8wnkb5k88q5rxlyjcq6py3gk4"))))
+    (properties `((upstream-name . "flexCausal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-superlearner
+                             r-rlang
+                             r-mvtnorm
+                             r-mass
+                             r-dplyr
+                             r-densratio))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/annaguo-bios/flexCausal")
+    (synopsis
+     "Causal Effect Estimation via Doubly Robust One-Step Estimators and TMLE in Graphical Models with Unmeasured Variables")
+    (description
+     "This package provides doubly robust one-step and targeted maximum likelihood
+(TMLE) estimators for average causal effects in acyclic directed mixed graphs
+(ADMGs) with unmeasured variables.  Automatically determines whether the
+treatment effect is identified via backdoor adjustment or the extended
+front-door functional, and dispatches to the appropriate estimator.  Supports
+incorporation of machine learning algorithms via @code{SuperLearner} and
+cross-fitting for nuisance estimation.  Methods are described in Guo and Nabi
+(2024) <doi:10.48550/@code{arXiv.2409.03962>}.")
+    (license license:gpl3)))
 
 (define-public r-flexbcf
   (package
@@ -14279,6 +14660,32 @@ datasets becomes possible.  This package also contains a plot function for the
 visualization of the state vector and graphical diagnostics of the residuals.")
     (license license:gpl2+)))
 
+(define-public r-fkcentroids
+  (package
+    (name "r-fkcentroids")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fkcentroids" version))
+       (sha256
+        (base32 "18pmxsa05hvvqnamf8xdqkllyavcycq2czanpg18ian08rk12gwc"))))
+    (properties `((upstream-name . "fkcentroids")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-kmedians r-fdasrvf))
+    (home-page "https://github.com/seungwoo-stat/fkcentroids")
+    (synopsis
+     "Functional K-Centroids Clustering Using Phase and Amplitude Components")
+    (description
+     "Cluster functional data using phase and amplitude components of each function.
+By weighting phase and amplitude variation differently, clustering results can
+be obtained from multiple perspectives.  Routines for synchronization,
+functional k-means clustering, and functional k-medians clustering are provided.")
+    (license license:gpl3+)))
+
 (define-public r-fkbma
   (package
     (name "r-fkbma")
@@ -14343,13 +14750,13 @@ detailed explanation of the methodology.")
 (define-public r-fjoin
   (package
     (name "r-fjoin")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fjoin" version))
        (sha256
-        (base32 "1phr7hg8d16psc12qqyv8xizpggav9hwczcq6r9mrjl9p24318i1"))))
+        (base32 "0qjapd6pdal7ld978w9p2pp9y548rknfax1dbmigfl1qrk8y1dv0"))))
     (properties `((upstream-name . "fjoin")))
     (build-system r-build-system)
     (arguments
@@ -14569,13 +14976,13 @@ Jackson 1976 <doi:10.1137/0713060>).")
 (define-public r-fitzroy
   (package
     (name "r-fitzroy")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitzRoy" version))
        (sha256
-        (base32 "01c5khphb8w2jwh4zw4irmfy99wq1fl9rfjhchgsdlfj32spccyh"))))
+        (base32 "04jl1grar86vy8j7c0sy1gdy6pm0c4aqm5487x3xhgnbhrgg0vi9"))))
     (properties `((upstream-name . "fitzRoy")))
     (build-system r-build-system)
     (arguments
@@ -14615,13 +15022,13 @@ into formats that can be used for analysis.")
 (define-public r-fitvarmxid
   (package
     (name "r-fitvarmxid")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitVARMxID" version))
        (sha256
-        (base32 "11p414pfbxnl5qgjdrcnjffb42451bj7vjhgs2ayyrr0phz3hpni"))))
+        (base32 "0kc1gxq9fbv102wcgmp3nzhjbsn17dzn8y6k5rkg9nf06d4xsm4z"))))
     (properties `((upstream-name . "fitVARMxID")))
     (build-system r-build-system)
     (arguments
@@ -14962,6 +15369,39 @@ Binomial Mixture Distributions (BMD) (Manoj et al (2013)
 (1985) <doi:10.1080/03610928508828990>), also Journal article to use the
 package(<doi:10.21105/joss.01505>).")
     (license license:expat)))
+
+(define-public r-fitnmr
+  (package
+    (name "r-fitnmr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fitnmr" version))
+       (sha256
+        (base32 "1n33kfzfdirszdcpfwcyw8zylykap1gxhdrc1fqfjm1jkq87gdvq"))))
+    (properties `((upstream-name . "fitnmr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minpack-lm r-matrix r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/smith-group/fitnmr/")
+    (synopsis
+     "Multidimensional Nuclear Magnetic Resonance Peak Fitting and Analysis")
+    (description
+     "This package provides tools for fitting and analyzing 1D-4D nuclear magnetic
+resonance spectra with analytical models of peak shapes and peak groups.  The
+package reads spectra in NMRPipe format, builds constrained parameter structures
+for chemical shifts, line widths, scalar couplings, volumes, and phases, and
+performs nonlinear least-squares optimization for iterative peak discovery or
+simultaneous fits across multiple spectra.  It also provides methods for
+visualization, preprocessing, and kinetic analysis of 1D time-series data,
+including automated phase optimization, solvent suppression, time-domain
+correction for frequency shifts and line broadening, modeling spectra as linear
+combinations of two component spectra, and exponential rate fitting.")
+    (license license:gpl3)))
 
 (define-public r-fitmix
   (package
@@ -15539,6 +15979,44 @@ a backbone the phylogenetic tree proposed by Rabosky et al. (2018)
 log-normal, 2) Tweedie, or 3) Poisson-gamma (G)LMs.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-fishmechr
+  (package
+    (name "r-fishmechr")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fishmechr" version))
+       (sha256
+        (base32 "0w38wz49iwk6gm796papqq6y68w888g8dyc6pr9msx2qrmn9z59w"))))
+    (properties `((upstream-name . "fishmechr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-pracma
+                             r-gsignal
+                             r-dplyr
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://tytell.github.io/fishmechr/")
+    (synopsis "Computes Kinematic Parameters for Swimming")
+    (description
+     "Processes tracked points on a fish's body and uses them to estimate standard
+kinematic parameters such as tail beat amplitude and frequency, body wavelength
+and wavespeed.  As part of this, it also estimates the location of the center of
+mass and the principal swimming axis.  The techniques are described in detail in
+the main vignette and are published in the book chapter Hawkins, O.H., Di Santo,
+V., Tytell, Eric.D., 2025. \"Biomechanics and energetics of swimming\", in:
+Higham, T.E., Lauder, G.V. (Eds.), Integrative Fish Biomechanics, Fish
+Physiology.  Academic Press. <doi:10.1016/bs.fp.2025.06.003>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-fishkirkko2015
   (package
     (name "r-fishkirkko2015")
@@ -15767,6 +16245,32 @@ will be added in a future release.")
 Shannon entropy power.  More theoretical and implementation details can be found
 in Guignard et al. <doi:10.3389/feart.2020.00255>.  A python version of this
 work is available on github and @code{PyPi} ('@code{FiShPy}').")
+    (license license:expat)))
+
+(define-public r-fiscal
+  (package
+    (name "r-fiscal")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Fiscal" version))
+       (sha256
+        (base32 "09ljf6klm97agk8vjgvpi57mdz52gs82k82488hsvdc5i561c14g"))))
+    (properties `((upstream-name . "Fiscal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=Fiscal")
+    (synopsis "Income Tax Calculations (UK)")
+    (description
+     "Income tax calculations for England, Northern Ireland and Wales.  Estimate
+annual income tax within the different taxation bands at specified levels of
+both taxable income and the Personal Allowance, emulating the results obtained
+at <https://www.gov.uk/estimate-income-tax>.  Calculate the standard Personal
+Allowance at various levels of taxable income.  Estimate the personal allowance
+required to recoup a specified amount of income tax.")
     (license license:expat)))
 
 (define-public r-first
@@ -16823,13 +17327,13 @@ returns a data frame of packages with description containing the input string.")
 (define-public r-findn
   (package
     (name "r-findn")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "findn" version))
        (sha256
-        (base32 "0wz3lrj054bsnfvf4csdfqfsgsk0iwcgfjbkgjwlljgcpis1xkyw"))))
+        (base32 "0hypfs52zpvk3mlc6lv1f82bg7wsaaj09820wmhqrcb4pixykg1k"))))
     (properties `((upstream-name . "findn")))
     (build-system r-build-system)
     (arguments
@@ -17143,6 +17647,54 @@ functions included in the Society of Actuaries and Casualty Actuarial Society
 Financial Mathematics exam, and some topics in the Models for Financial
 Economics exam.")
     (license license:gpl2)))
+
+(define-public r-financegraphs
+  (package
+    (name "r-financegraphs")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FinanceGraphs" version))
+       (sha256
+        (base32 "1m129al4ln2psbk19i02x5llpac905hshh77n3zx3xvahnhcvxas"))))
+    (properties `((upstream-name . "FinanceGraphs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xts
+                             r-timedate
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-purrr
+                             r-lubridate
+                             r-knitr
+                             r-hexbin
+                             r-ggtext
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggiraph
+                             r-forcats
+                             r-dygraphs
+                             r-dplyr
+                             r-data-table
+                             r-cpm
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/derekholmes0/FinanceGraphs")
+    (synopsis "Flexible Graphs for Analysis of Financial Data and Time Series")
+    (description
+     "Flexible wrappers around R graphics modules dygraphs <https://dygraphs.com/> and
+ggplot2 <https://ggplot2.tidyverse.org/> to visualize data commonly found in
+Financial Studies, with an emphasis on time series.  Interactive time series
+plots include multiple options for incorporating external data such as forecasts
+and events.  Other static plots useful for time series data include an intuitive
+and generic scatter plotter, a boxplot generator suitable for multiple time
+series, and event study plotters for time series analysis around sets of dates.")
+    (license license:gpl3+)))
 
 (define-public r-finana
   (package
@@ -17624,13 +18176,13 @@ convenient file sharing on the web.")
 (define-public r-filearray
   (package
     (name "r-filearray")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filearray" version))
        (sha256
-        (base32 "0scm5yaqfck1jpxpr5542i33vn7lxg6n453qrwzwdx0m0ig790hb"))))
+        (base32 "09yypjnk5x5ls4lpvx84fc79dyivffhq3cpii5139cgcg9ifkw37"))))
     (properties `((upstream-name . "filearray")))
     (build-system r-build-system)
     (arguments
@@ -19292,19 +19844,19 @@ visualisation.")
 (define-public r-fertilmodel
   (package
     (name "r-fertilmodel")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fertilmodel" version))
        (sha256
-        (base32 "0bh259lgs3fbv2mkij1md1gxzx7qclbhvcb6nydcd9f7n5x15zhk"))))
+        (base32 "1lqgaia9s0w1zihgkihsx83y0kkpix3cgd2llpwwj9i41lx330ll"))))
     (properties `((upstream-name . "fertilmodel")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quadprog))
+    (propagated-inputs (list r-nnsolve))
     (home-page "https://cran.r-project.org/package=fertilmodel")
     (synopsis "Fertility Models")
     (description
@@ -19975,13 +20527,13 @@ USGS).")
 (define-public r-fect
   (package
     (name "r-fect")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fect" version))
        (sha256
-        (base32 "0w3l87j3n95dm8ifzn2fk3qhvz14nx1p3rj9hyrjvphf4y8cmscg"))))
+        (base32 "11sgmj0d96xz97avxxzysngiii1wqm4h3ralg6ilk3dsfj97n8js"))))
     (properties `((upstream-name . "fect")))
     (build-system r-build-system)
     (arguments
@@ -20006,6 +20558,7 @@ USGS).")
                              r-dorng
                              r-doparallel
                              r-dofuture
+                             r-codetools
                              r-abind))
     (home-page "https://yiqingxu.org/packages/fect/")
     (synopsis "Fixed Effects Counterfactual Estimators")
@@ -20023,30 +20576,6 @@ completion method.  Detailed methodology is described in Liu, Wang, and Xu
 imputation estimators. \"@code{HonestDiDFEct}\" is not on CRAN but can be obtained
 from <https://github.com/lzy318/@code{HonestDiDFEct>}.")
     (license license:expat)))
-
-(define-public r-fechner
-  (package
-    (name "r-fechner")
-    (version "1.0-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fechner" version))
-       (sha256
-        (base32 "0bassigcipwlr2g8cdjh8jyhmb903k3hla9gnigcbz7qwzlfwa86"))))
-    (properties `((upstream-name . "fechner")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://www.meb.edu.tum.de")
-    (synopsis "Fechnerian Scaling of Discrete Object Sets")
-    (description
-     "This package provides functions and example datasets for Fechnerian scaling of
-discrete object sets.  User can compute Fechnerian distances among objects
-representing subjective dissimilarities, and other related information.  See
-package?fechner for an overview.")
-    (license license:gpl2+)))
 
 (define-public r-fec16
   (package
@@ -20824,6 +21353,47 @@ package name came from the French \"Fouille de DonnÃ©es en Master 2 Informatiq
 DÃ©cisionnelle\".")
     (license license:gpl3)))
 
+(define-public r-fdid
+  (package
+    (name "r-fdid")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdid" version))
+       (sha256
+        (base32 "00alc8wpb9x46398nia86bvsbnizrmn99g6n402lz79rg5yl3rsy"))))
+    (properties `((upstream-name . "fdid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-sandwich
+                             r-rlang
+                             r-rcolorbrewer
+                             r-grf
+                             r-future
+                             r-foreach
+                             r-estimatr
+                             r-ebal
+                             r-dplyr
+                             r-dofuture
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://yiqingxu.org/packages/fdid/")
+    (synopsis "Factorial Difference-in-Differences")
+    (description
+     "This package implements the factorial difference-in-differences (FDID) framework
+for panel data settings where all units are exposed to a universal event but
+vary in a baseline factor G. Provides support for various estimators; supports
+robust, bootstrap, and jackknife variance; returns dynamic, pre/event/post
+aggregates and raw means; and includes helpers for data preparation and
+plotting.  Methodology follows Xu, Zhao and Ding (2026)
+<doi:10.1080/01621459.2026.2628343>.")
+    (license license:expat)))
+
 (define-public r-fdesigns
   (package
     (name "r-fdesigns")
@@ -20889,13 +21459,13 @@ are implemented purely in C++ providing faster speed than existing packages.")
 (define-public r-fdboost
   (package
     (name "r-fdboost")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FDboost" version))
        (sha256
-        (base32 "0lb2zgypqjhqb1g3iqwfy7nwlz7gqh2h0hp5qllr54s108dpn977"))))
+        (base32 "0s7krcx1x17w7b7ibxflcl3qmpsg863ni0siqsr44ngrhv3rsgn8"))))
     (properties `((upstream-name . "FDboost")))
     (build-system r-build-system)
     (arguments
@@ -21021,36 +21591,6 @@ Majorizing-Minimizing (MM) and Alternating Direction Method of Multipliers
 (ADMM) techniques.  See Boyd et al (2010) <doi:10.1561/2200000016> for complete
 introduction to the method.")
     (license license:gpl3+)))
-
-(define-public r-fdars
-  (package
-    (name "r-fdars")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fdars" version))
-       (sha256
-        (base32 "1hpblmr61dn6rza0qgvn6k9q5q3w991nb184n23rc8h0j60f3yi5"))))
-    (properties `((upstream-name . "fdars")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://sipemu.github.io/fdars-r/")
-    (synopsis "Functional Data Analysis in 'Rust'")
-    (description
-     "Functional data analysis tools with a high-performance Rust backend.  Provides
-methods for functional data manipulation, depth computation, distance metrics,
-regression, and statistical testing.  Supports both 1D functional data (curves)
-and 2D functional data (surfaces).  Methods are described in Ramsay and
-Silverman (2005, ISBN:978-0-387-40080-8) \"Functional Data Analysis\" and Ferraty
-and Vieu (2006, ISBN:978-0-387-30369-7) \"Nonparametric Functional Data
-Analysis\".")
-    (license license:expat)))
 
 (define-public r-fdarep
   (package
@@ -21701,13 +22241,13 @@ results are obtained by merging the significant probes detected.")
 (define-public r-fcps
   (package
     (name "r-fcps")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FCPS" version))
        (sha256
-        (base32 "0djc88kyc4x2cfg2ypla1raayncgpil9gw1ik3m0qj657wdv4ldw"))))
+        (base32 "1ffznm7f0fg8b32w5410j3ksayflhnd8wrldg13lmqax0qsqdvb2"))))
     (properties `((upstream-name . "FCPS")))
     (build-system r-build-system)
     (arguments
@@ -22488,47 +23028,34 @@ gene-environment interaction test, and a test of a set of genes conditional on
 another set of genes.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-fbar
+(define-public r-fbardl
   (package
-    (name "r-fbar")
-    (version "0.6.0")
+    (name "r-fbardl")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "fbar" version))
+       (uri (cran-uri "fbardl" version))
        (sha256
-        (base32 "005725xiz6k868hrj12ryq3xlyin2r94n0yychimjzhfsppx2zba"))))
-    (properties `((upstream-name . "fbar")))
+        (base32 "00b440kd1hmjxr06wsf40ldsxa0xbcc7gkvdhzxammy7w8rhpk6y"))))
+    (properties `((upstream-name . "fbardl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-roi-plugin-ecos
-                             r-roi
-                             r-rlang
-                             r-purrr
-                             r-matrix
-                             r-magrittr
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "http://maxconway.github.io/fbar/")
-    (synopsis "An Extensible Approach to Flux Balance Analysis")
+    (home-page "https://github.com/muhammedalkhalaf/fbardl")
+    (synopsis "Fourier Bootstrap ARDL Cointegration Test")
     (description
-     "This package provides a toolkit for Flux Balance Analysis and related metabolic
-modeling techniques.  Functions are provided for: parsing models in tabular
-format, converting parsed metabolic models to input formats for common linear
-programming solvers, and evaluating and applying gene-protein-reaction mappings.
- In addition, there are wrappers to parse a model, select a solver, find the
-metabolic fluxes, and return the results applied to the original model.
-Compared to other packages in this field, this package puts a much heavier focus
-on providing reusable components that can be used in the design of new
-implementation of new techniques, in particular those that involve large
-parameter sweeps.  For a background on the theory, see What is Flux Balance
-Analysis <doi:10.1038/nbt.1614>.")
+     "This package implements the Fourier Bootstrap Autoregressive Distributed Lag
+(FBARDL) bounds testing approach for cointegration analysis.  Combines the
+Pesaran, Shin & Smith (2001) <doi:10.1002/jae.616> ARDL bounds testing framework
+with Fourier terms to capture structural breaks following Yilanci, Bozoklu &
+Gorus (2020) <doi:10.1080/00036846.2019.1686454>, and bootstrap critical values
+based on @code{McNown}, Sam & Goh (2018) <doi:10.1080/00036846.2017.1366643> and
+Bertelli, Vacca & Zoia (2022) <doi:10.1016/j.econmod.2022.105987>.  Features
+include automatic lag selection via AIC/BIC, optimal Fourier frequency selection
+by minimum SSR, long-run and short-run coefficient estimation, diagnostic tests,
+and dynamic multiplier analysis.")
     (license license:gpl3)))
 
 (define-public r-fawr
@@ -22733,6 +23260,37 @@ Xue, and Rosenberg (2025) <doi:10.1073/pnas.2413211122>.")
     (description
      "This package provides a replacement for @code{dplyr::na_if()}.  Allows you to
 specify multiple values to be replaced with NA using a single function.")
+    (license license:expat)))
+
+(define-public r-faux
+  (package
+    (name "r-faux")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "faux" version))
+       (sha256
+        (base32 "0b0kpckxqz5xhgz3biz5yg8b0by97vs21acm9dcq271f13fa8gmx"))))
+    (properties `((upstream-name . "faux")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-rlang
+                             r-lme4
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/scienceverse/faux")
+    (synopsis "Simulation for Factorial Designs")
+    (description
+     "Create datasets with factorial structure through simulation by specifying
+variable parameters.  Extended documentation at
+<https://www.scienceverse.org/faux/>.  Described in @code{DeBruine} (2020)
+<doi:10.5281/zenodo.2669586>.")
     (license license:expat)))
 
 (define-public r-faunabr
@@ -23637,13 +24195,13 @@ detailed introduction to these methods, the monograph Matrix Computations (2013,
 (define-public r-fastqq
   (package
     (name "r-fastqq")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastqq" version))
        (sha256
-        (base32 "0009s32zgvm7nnd0zx7rqcvsdfjh27xhlnnrsafbxcxslc3wy496"))))
+        (base32 "16zhkbw33mr1bkdbdh5jlsgvzg12b9742sqanz1vn7dd0zlx0ncf"))))
     (properties `((upstream-name . "fastqq")))
     (build-system r-build-system)
     (arguments
@@ -23958,13 +24516,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.7.7")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "16wpyqzpwh0f5ny27d1bn0k98z64mx9fainfafzpvvsj3mjia2z4"))))
+        (base32 "1rfwprl63wddz1swahfm7b50n4drzdflchm7ijnwgf1j0jmi2qip"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -23977,10 +24535,8 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-tune
                              r-tidyr
                              r-tibble
-                             r-survrm2
                              r-survival
                              r-stringr
-                             r-rstpm2
                              r-rsample
                              r-rlang
                              r-reshape2
@@ -23988,29 +24544,17 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-rcolorbrewer
                              r-purrr
                              r-proc
-                             r-probably
-                             r-plsmod
-                             r-pdp
                              r-parsnip
-                             r-modelstudio
                              r-magrittr
-                             r-lime
                              r-janitor
-                             r-iml
-                             r-ibreakdown
                              r-ggplot2
                              r-future
                              r-foreach
-                             r-flexsurv
                              r-finetune
-                             r-fairmodels
                              r-dplyr
                              r-dofuture
-                             r-discrim
                              r-dials
-                             r-dalex
-                             r-broom
-                             r-baguette))
+                             r-broom))
     (home-page "https://selcukorkmaz.github.io/fastml-tutorial/")
     (synopsis
      "Guarded Resampling Workflows for Safe and Automated Machine Learning in R")
@@ -24356,13 +24900,13 @@ time.")
 (define-public r-fastkmedoids
   (package
     (name "r-fastkmedoids")
-    (version "1.4")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastkmedoids" version))
        (sha256
-        (base32 "0ji9n4sdizh8lyrzjcz5jgx566189pjjliqh39sa5g01xgvpbrkx"))))
+        (base32 "16bgvwx1c1la2p4wd3rhm7abmkfn1bgh2dk26g168bk585a7affx"))))
     (properties `((upstream-name . "fastkmedoids")))
     (build-system r-build-system)
     (arguments
@@ -24437,24 +24981,24 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.5.3")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "01cdivs125ss9z1vfngywcnwcpg46d0j2349p0ka8vgm5sjshsm1"))))
+        (base32 "14h09yp7ljxzh93bm5idr95l8dmhswkpaqj5kwyhk9fmfvdb6349"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-timeroc
-                             r-survival
+    (propagated-inputs (list r-survival
                              r-statmod
                              r-rlang
                              r-rcppeigen
                              r-rcpp
+                             r-pec
                              r-nlme
                              r-mass
                              r-magrittr
@@ -24462,23 +25006,26 @@ computing to reduce overall processing time.")
                              r-future
                              r-dplyr
                              r-caret))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FastJM")
     (synopsis
      "Semi-Parametric Joint Modeling of Longitudinal and Survival Data")
     (description
-     "This package provides a joint model for large-scale, competing risks
-time-to-event data with singular or multiple longitudinal biomarkers,
-implemented with the efficient algorithms developed by Li and colleagues (2022)
-<doi:10.1155/2022/1362913> and <doi:10.48550/@code{arXiv.2506.12741>}.  The
-time-to-event data is modelled using a (cause-specific) Cox proportional hazards
-regression model with time-fixed covariates.  The longitudinal biomarkers are
-modelled using a linear mixed effects model.  The association between the
-longitudinal submodel and the survival submodel is captured through shared
-random effects.  It allows researchers to analyze large-scale data to model
-biomarker trajectories, estimate their effects on event outcomes, and
-dynamically predict future events from patientsâ past histories.  A function
-for simulating survival and longitudinal data for multiple biomarkers is also
-included alongside built-in datasets.")
+     "This package implements scalable joint models for large-scale competing risks
+time-to-event data with one or multiple longitudinal biomarkers using the
+efficient algorithms developed by Li et al. (2022) <doi:10.1155/2022/1362913>
+and <doi:10.48550/@code{arXiv.2506.12741>}.  The time-to-event process is
+modeled using a cause-specific Cox proportional hazards model with time-fixed
+covariates, while longitudinal biomarkers are modeled using linear mixed-effects
+models.  The association between the longitudinal and survival processes is
+captured through shared random effects.  The package enables analysis of
+large-scale biomedical data to model biomarker trajectories, estimate their
+effects on event risks, and perform dynamic prediction of future events based on
+patients longitudinal histories.  Functions for simulating survival and
+longitudinal data for multiple biomarkers are included, along with built-in
+example datasets.  The package also supports modeling a single biomarker with
+heterogeneous within-subject variability via functionality adapted from the JMH
+package.")
     (license license:gpl3+)))
 
 (define-public r-fastimputation
@@ -24686,13 +25233,13 @@ encoding overhead.")
 (define-public r-fastgasp
   (package
     (name "r-fastgasp")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastGaSP" version))
        (sha256
-        (base32 "134w804n5qan2adgi0snkh8v2nlxq61kjbw2lfs7y6f9bizf5i7i"))))
+        (base32 "1dwx0mwmbkc0fygnrwl0w80k11nbw0qdxby0f08mzdcimp8rv1jd"))))
     (properties `((upstream-name . "FastGaSP")))
     (build-system r-build-system)
     (arguments
@@ -25016,13 +25563,13 @@ and elastic net <doi: 10.32614/RJ-2021-010>.")
 (define-public r-fastbioclim
   (package
     (name "r-fastbioclim")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbioclim" version))
        (sha256
-        (base32 "086b6aydapjmbn79hvaqhsi8llq1crzprwjmz2yizq9d5c6cvi36"))))
+        (base32 "1pkqjv8gidmdb3y0yr8mh835r3r6bhb6clsgkidkkddxg5bki31d"))))
     (properties `((upstream-name . "fastbioclim")))
     (build-system r-build-system)
     (arguments
@@ -25038,18 +25585,20 @@ and elastic net <doi: 10.32614/RJ-2021-010>.")
                              r-future-apply
                              r-exactextractr))
     (home-page "https://gepinillab.github.io/fastbioclim/")
-    (synopsis "Scalable and Efficient Derivation of Bioclimatic Variables")
+    (synopsis
+     "Scalable and Flexible Derivation of Custom-Time Bioclimatic and Environmental Summary Variables")
     (description
-     "This package provides a high-performance framework for deriving bioclimatic and
-custom summary variables from large-scale climate raster data.  The package
-features a dual-backend architecture that intelligently switches between fast
-in-memory processing for smaller datasets (via the terra package) and a
-memory-safe tiled approach for massive datasets that do not fit in RAM (via
-exactextractr and Rfast').  The main functions, @code{derive_bioclim()} and
-@code{derive_statistics()}, offer a unified interface with advanced options for
-custom time periods and static indices, making it suitable for a wide range of
-ecological and environmental modeling applications.  A software note is in
-preparation.  In the meantime, you can visit the package website
+     "This package provides an efficient tool for creating custom-time bioclimatic and
+derived environmental summary variables from user-supplied raster data for
+user-defined timeframes.  The package overcomes computational bottlenecks by
+automatically switching between an in-memory framework using the terra package
+to maximize speed for smaller datasets, and an on-disk tiling framework for
+rasters that exceed available RAM, leveraging exactextractr and Rfast to process
+data in chunks.  The core functions, @code{derive_bioclim()} and
+@code{derive_statistics()}, offer a unified interface with flexibility for
+custom time periods beyond standard quarters and the use of fixed temporal
+indices, facilitating the creation of temporally-matched environmental variables
+for ecological and biogeographical modeling.  Visit the package website
 <https://gepinillab.github.io/fastbioclim/> to find tutorials in English and
 Spanish.")
     (license license:gpl3+)))
@@ -25923,13 +26472,13 @@ details in R Journal article; Abel (2015) <doi:10.32614/RJ-2015-002>.")
 (define-public r-fangs
   (package
     (name "r-fangs")
-    (version "0.2.21")
+    (version "0.2.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fangs" version))
        (sha256
-        (base32 "1rn315gxdk4hs73c30srz29yhhl93yaalai3vy65zcscbav8l745"))))
+        (base32 "0qxz9n1xkhwy5546kmjqij8v091immrahm2hc3cs30cmgbalmz36"))))
     (properties `((upstream-name . "fangs")))
     (build-system r-build-system)
     (arguments
@@ -26592,13 +27141,13 @@ regression models.  Find more details in (WiÅniewski, Biecek (2021))
 (define-public r-fairml
   (package
     (name "r-fairml")
-    (version "0.9")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairml" version))
        (sha256
-        (base32 "1q5h340ygpjajwp806bw05mhj8w91d7fsc72phv7cs8ws9w13s6a"))))
+        (base32 "0ia2qzlvf63sak53rk96ya6vqm1hwb0r93z7wp8kmhc1hmmryc45"))))
     (properties `((upstream-name . "fairml")))
     (build-system r-build-system)
     (arguments
@@ -26643,39 +27192,6 @@ criterion commonly used in fairness research, particularly in healthcare for
 binary protected attributes.  It is based on the overview of fairness in machine
 learning written by Gao et al (2024) <doi:10.48550/@code{arXiv.2406.09307>}.")
     (license license:expat)))
-
-(define-public r-fairmclus
-  (package
-    (name "r-fairmclus")
-    (version "2.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FairMclus" version))
-       (sha256
-        (base32 "0mhccn6yyf35qb856psh3dpiwdf24l3w2lqr643lkn38lhbmyvn8"))))
-    (properties `((upstream-name . "FairMclus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlist
-                             r-magrittr
-                             r-irr
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-data-table
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=FairMclus")
-    (synopsis "Clustering for Data with Sensitive Attribute")
-    (description
-     "Clustering for categorical and mixed-type of data, to preventing classification
-biases due to race, gender or others sensitive attributes.  This algorithm is an
-extension of the methodology proposed by \"Santos & Heras (2020)
-<doi:10.28945/4643>\".")
-    (license license:gpl2+)))
 
 (define-public r-fairmaterials
   (package
@@ -27221,13 +27737,13 @@ it easier to construct function factories.")
 (define-public r-factorstochvol
   (package
     (name "r-factorstochvol")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factorstochvol" version))
        (sha256
-        (base32 "061yh5qhazxn3zwh7j9cfi629qr4qrq0nw8f3r055sd6vp6cihhy"))))
+        (base32 "07gfx21gkcp4nhmpixgw2ajk537h36mvc4ncpb4j6w6ayqmx5612"))))
     (properties `((upstream-name . "factorstochvol")))
     (build-system r-build-system)
     (arguments
@@ -27300,36 +27816,6 @@ discrete proxy variables using an EM algorithm (Dempster, Laird, Rubin (1977)
 <doi:10.1016/j.jeconom.2017.06.002> ).  The function cproxyme estimates a linear
 factor model (Cunha, Heckman, and Schennach (2010) <doi:10.3982/ECTA6551>).")
     (license license:gpl3)))
-
-(define-public r-factorial2x2
-  (package
-    (name "r-factorial2x2")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "factorial2x2" version))
-       (sha256
-        (base32 "045887hwknwm92wlrp0jlvxj5aal50vpnc7ddbh7c8smawmrdwfd"))))
-    (properties `((upstream-name . "factorial2x2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-mvtnorm))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=factorial2x2")
-    (synopsis "Design and Analysis of a 2x2 Factorial Trial")
-    (description
-     "Used for the design and analysis of a 2x2 factorial trial for a time-to-event
-endpoint.  It performs power calculations and significance testing as well as
-providing estimates of the relevant hazard ratios and the corresponding 95%
-confidence intervals.  Important reference papers include Slud EV. (1994)
-<https://www.ncbi.nlm.nih.gov/pubmed/8086609> Lin DY, Gong J, Gallo P, Bunn PH,
-Couper D. (2016) <DOI:10.1111/biom.12507> Leifer ES, Troendle JF, Kolecki A,
-Follmann DA. (2020)
-<https://github.com/@code{EricSLeifer/factorial2x2/blob/master/Leifer%20et%20al.%20paper.pdf>}.")
-    (license license:gpl2)))
 
 (define-public r-factorhet
   (package
@@ -28549,62 +29035,47 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
 (define-public r-faasr
   (package
     (name "r-faasr")
-    (version "1.4.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FaaSr" version))
        (sha256
-        (base32 "0sfcbgad6ywylc51m2z9caqv5z9pij3gig0n6r0cpyrx8i3igfl1"))))
+        (base32 "0q6xm633vm776pl572n9cmrh67lszj6y0gq5jxdmv0a6k4zzjs2i"))))
     (properties `((upstream-name . "FaaSr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-sodium
-                             r-paws-storage
-                             r-paws-security-identity
-                             r-paws-compute
-                             r-paws-application-integration
-                             r-jsonvalidate
-                             r-jsonlite
-                             r-httr
-                             r-cli
-                             r-base64enc
-                             r-askpass))
-    (home-page "https://github.com/FaaSr/FaaSr-package")
-    (synopsis "FaaS (Function as a Service) Package")
+    (propagated-inputs (list r-uuid r-jsonvalidate r-jsonlite r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FaaSr/FaaSr-package-v2")
+    (synopsis "'FaaSr' Local Test Development Package")
     (description
-     "Allows users to create and deploy the workflow with multiple functions in
-Function-as-a-Service (@code{FaaS}) cloud computing platforms.  The @code{FaaSr}
-package makes it simpler for R developers to use @code{FaaS} platforms by
-providing the following functionality: 1) Parsing and validating a JSON-based
-payload compliant to @code{FaaSr} schema supporting multiple @code{FaaS}
-platforms 2) Invoking user functions written in R in a Docker container (derived
-from rocker), using a list generated from the parser as argument 3)
-Downloading/uploading of files from/to S3 buckets using simple primitives 4)
-Logging to files in S3 buckets 5) Triggering downstream actions supporting
-multiple @code{FaaS} platforms 6) Generating @code{FaaS-specific} API calls to
-simplify the registering of a user's workflow with a @code{FaaS} platform
-Supported @code{FaaS} platforms: Apache @code{OpenWhisk}
-<https://openwhisk.apache.org/> @code{GitHub} Actions
-<https://github.com/features/actions> Amazon Web Services (AWS) Lambda
-<https://aws.amazon.com/lambda/> Supported cloud data storage for persistent
-storage: Amazon Web Services (AWS) Simple Storage Service (S3)
-<https://aws.amazon.com/s3/>.")
+     "This package provides a local execution environment for testing and developing
+the @code{FaaSr} workflows without requiring cloud infrastructure.  The
+@code{FaaSr} package enables R developers to validate and test workflows locally
+before deploying to Function-as-a-Service (@code{FaaS}) platforms.  Key features
+include: 1) Parsing and validating JSON workflow configurations compliant with
+the @code{FaaSr} schema 2) Simulated S3 storage operations using local file
+system with local logging 3) Support for conditional branching 4) Support for
+parallel rank functions execution 5) Workflow cycle detection and validation 6)
+No cloud credentials or infrastructure required for testing This package is
+designed for development and testing purposes.  For production deployment to
+cloud @code{FaaS} platforms, use the main @code{FaaSr} package available at
+<https://faasr.io/>.")
     (license license:expat)))
 
 (define-public r-f1pits
   (package
     (name "r-f1pits")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1pits" version))
        (sha256
-        (base32 "1l8pnipjzvm9snlsskvibf7jvwkw1bzvrzgbqgdzad6nl24kvi6q"))))
+        (base32 "0mshy2i1043w2icmaw81n7rl7hzjfvsknh0kb123qg0cj7r0z82p"))))
     (properties `((upstream-name . "f1pits")))
     (build-system r-build-system)
     (arguments
@@ -28622,7 +29093,7 @@ storage: Amazon Web Services (AWS) Simple Storage Service (S3)
     (synopsis "F1 Pit Stop Datasets")
     (description
      "Formula 1 pit stop data.  The package provides information on teams and drivers
-across seasons (2025 or higher).  It also includes a function to visualize pit
+across seasons (2023 or higher).  It also includes a function to visualize pit
 stop performance.")
     (license license:expat)))
 

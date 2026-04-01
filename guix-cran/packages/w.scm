@@ -512,6 +512,29 @@ Welch-Satterthwaite approach described in Welch (1947)
 <doi:10.1093/biomet/34.1-2.28> and Satterthwaite (1946) <doi:10.2307/3002019>.")
     (license license:expat)))
 
+(define-public r-wstats
+  (package
+    (name "r-wstats")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wstats" version))
+       (sha256
+        (base32 "1qz5l3xiqh3hyzvnpv6grfsjmx96vqy6cs084zf8hvbx974ksr7z"))))
+    (properties `((upstream-name . "wstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-glue r-cpp11))
+    (home-page "https://cran.r-project.org/package=wstats")
+    (synopsis "Weighted Descriptive Statistics")
+    (description
+     "Weighted versions of common descriptive statistics (variance, standard
+deviation, covariance, correlation, quantiles).")
+    (license license:expat)))
+
 (define-public r-wsrf
   (package
     (name "r-wsrf")
@@ -891,13 +914,13 @@ strategies and hydropower operations within integrated water resources systems."
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.13.3")
+    (version "2.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrProteo" version))
        (sha256
-        (base32 "02vg6rq5fj4hl9clp56i0107g1hfdh3aj0wrnyk3klwgy04pb0x6"))))
+        (base32 "1vy5y5m4dsz5b7cqkw9rmlld3myagh2v057pgaqj6g1pk90a0r4r"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (arguments
@@ -951,13 +974,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.15.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "0740bvsb748zh3a0vd1dgb2cpl6i8f6ivz023qf0jr1609p8271c"))))
+        (base32 "06sj8l6m34imb14yr87f62blvlsl4bd23dw6f4gsjskhw4y51cdh"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (arguments
@@ -1098,13 +1121,13 @@ to create Wright Maps directly from data frames of person and item parameters.")
 (define-public r-wri
   (package
     (name "r-wri")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WRI" version))
        (sha256
-        (base32 "1c1jf66bmggsvk4ivdpx7cy80qmda8p6bkfr80cfpds5vr58kfwn"))))
+        (base32 "1z0a1h8hl9lhpafcmrnf1ik986p5jb5c9idsh7sknkqdyyf1r3vx"))))
     (properties `((upstream-name . "WRI")))
     (build-system r-build-system)
     (arguments
@@ -1136,13 +1159,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.11")
+    (version "1.3.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "14gx1vr9mkr4bmjg5kamdlgykbbhrh7vif1g8fwpcij0av1hr0yg"))))
+        (base32 "0iwaprmvmg9scg6jsacxnfwd1j56qd0la29vfk91z7pcfpgfjr1w"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (arguments
@@ -1959,33 +1982,6 @@ invariant.  See more details in Buj, Cook, Asimov and Hurley (2005)
 <doi:10.48550/@code{arXiv.2311.08181>}.")
     (license license:expat)))
 
-(define-public r-wowa
-  (package
-    (name "r-wowa")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wowa" version))
-       (sha256
-        (base32 "0i677bzgd9qx57x7n7qsaqpacgpap2d0n8gq1lc9hsmg13bs2v8f"))))
-    (properties `((upstream-name . "wowa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=wowa")
-    (synopsis "Weighted Ordered Weighted Average")
-    (description
-     "Introduce weights into Ordered Weighted Averages and extend bivariate means
-based on n-ary tree construction.  Please refer to the following: G. Beliakov,
-H. Bustince, and T. Calvo (2016, ISBN: 978-3-319-24753-3), G. Beliakov(2018)
-<doi:10.1002/int.21913>, G. Beliakov, J.J. Dujmovic (2016)
-<doi:10.1016/j.ins.2015.10.040>, J.J. Dujmovic and G. Beliakov (2017)
-<doi:10.1002/int.21828>.")
-    (license license:lgpl3)))
-
 (define-public r-wotply
   (package
     (name "r-wotply")
@@ -2281,13 +2277,13 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "1c6pnvqk8wghk3afcs6qaryc50vm2ai8gd7yzpbx6b29s1a246jw"))))
+        (base32 "1rffv2ziwysxyhz5zzp4mbfmwxzcf1ry9v49rwiv1gzyn7xy0fhj"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (arguments
@@ -2295,13 +2291,13 @@ static since 2013.")
       #:tests? #f))
     (propagated-inputs (list r-httr2))
     (home-page "https://m-muecke.github.io/worldbank/")
-    (synopsis
-     "Client for World Banks's 'Indicators' and 'Poverty and Inequality Platform (PIP)' APIs")
+    (synopsis "Client for the 'World Bank' APIs")
     (description
-     "Download and search data from the World Bank Indicators API', which provides
-access to nearly 16,000 time series indicators.  See
-<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation>
-for further details about the API.")
+     "Download and search data from the World Bank APIs, including the Indicators API,
+the Poverty and Inequality Platform (PIP) API, the Finances One API, and the
+Projects API. See
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889386-developer-information-overview>
+for further details.")
     (license license:expat)))
 
 (define-public r-workspace
@@ -2547,41 +2543,6 @@ limited number of guesses.  In each round, if your guess hit any letters in the
 word, they reveal themselves.  If all letters are revealed before your guesses
 run out, you win this game; otherwise you fail.  You may run multiple games to
 guess different words.")
-    (license license:expat)))
-
-(define-public r-wordpredictor
-  (package
-    (name "r-wordpredictor")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wordpredictor" version))
-       (sha256
-        (base32 "0gr04si037rwnmkb2i9p4cc75lrshjfwh3chbgl86dxyxryx9mdy"))))
-    (properties `((upstream-name . "wordpredictor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-snowballc
-                             r-patchwork
-                             r-ggplot2
-                             r-dplyr
-                             r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pakjiddat/word-predictor")
-    (synopsis "Develop Text Prediction Models Based on N-Grams")
-    (description
-     "This package provides a framework for developing n-gram models for text
-prediction.  It provides data cleaning, data sampling, extracting tokens from
-text, model generation, model evaluation and word prediction.  For information
-on how n-gram models work we referred to: \"Speech and Language Processing\"
-<https://web.archive.org/web/20240919222934/https%3A%2F%2Fweb.stanford.edu%2F~jurafsky%2Fslp3%2F3.pdf>.
- For optimizing R code and using R6 classes we referred to \"Advanced R\"
-<https://adv-r.hadley.nz/r6.html>.  For writing R extensions we referred to \"R
-Packages\", <https://r-pkgs.org/index.html>.")
     (license license:expat)))
 
 (define-public r-wordpools
@@ -3593,13 +3554,13 @@ Spotfire'.")
 (define-public r-wizardry
   (package
     (name "r-wizardry")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wizaRdry" version))
        (sha256
-        (base32 "1jgw9hrimq4sa6i1zn7npa2ihcsvqcpba0iwdbdil4bfy10r8zr6"))))
+        (base32 "0jniv1q89lxl6zirqw3kdxf9gpk3y1n9029kxdbjvyxnqzx7ycng"))))
     (properties `((upstream-name . "wizaRdry")))
     (build-system r-build-system)
     (arguments
@@ -4496,19 +4457,24 @@ correct, and receive results in tidy tibbles.")
 (define-public r-wikitools
   (package
     (name "r-wikitools")
-    (version "1.2.15")
+    (version "1.2.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikiTools" version))
        (sha256
-        (base32 "0yg5s7njsimwjhh468ag95q89xjppi313s7i6hqm84b0rg0llcqd"))))
+        (base32 "1bq0dca0axjw4apidfdaazcphlgflx3p678vp2b3dpby5x3xbwm4"))))
     (properties `((upstream-name . "wikiTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-netcoin r-jsonlite r-httr r-curl r-collections))
+    (propagated-inputs (list r-netcoin
+                             r-jsonlite
+                             r-httr
+                             r-evolmap
+                             r-curl
+                             r-collections))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wikiTools")
     (synopsis "Tools for Wikidata and Wikipedia")
@@ -4780,6 +4746,38 @@ processing, then turning it back into a tidy form.  This is useful for several
 operations such as co-occurrence counts, correlations, or clustering that are
 mathematically convenient on wide matrices.")
     (license license:expat)))
+
+(define-public r-widr
+  (package
+    (name "r-widr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "widr" version))
+       (sha256
+        (base32 "1vvbvdvwl7rawpac7vy0vi5s0pi3nkzikd94k79j60fk144q081h"))))
+    (properties `((upstream-name . "widr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-jsonlite
+                             r-httr2
+                             r-ggplot2
+                             r-digest
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cherylisabella/widr")
+    (synopsis "Interface to the World Inequality Database (WID)")
+    (description
+     "Interface to the World Inequality Database (WID) API <https://wid.world>.
+Downloads distributional national accounts data with filters for country, year,
+percentile, age group, and population type.  Includes code validation and
+reference tables.  Independent implementation unaffiliated with the World
+Inequality Lab (WIL) or the Paris School of Economics.")
+    (license license:gpl3)))
 
 (define-public r-widgetframe
   (package
@@ -5259,13 +5257,13 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
 (define-public r-whisper
   (package
     (name "r-whisper")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whisper" version))
        (sha256
-        (base32 "0mnn6r88fhpw9h1ljwzrdz3qv6w4775xpq0i9hlz5qq7ahdrhzyz"))))
+        (base32 "1qdn38wlilqlscjrqvvldwxf35fhdmbzssmjsddd1s7zv3lc0ymc"))))
     (properties `((upstream-name . "whisper")))
     (build-system r-build-system)
     (arguments
@@ -5629,6 +5627,45 @@ The methods used in simulation were inspired by Offer-Westort et al. (2021)
 <doi:10.1111/ajps.12597>.")
     (license license:gpl3+)))
 
+(define-public r-whatif
+  (package
+    (name "r-whatif")
+    (version "1.5-11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WhatIf" version))
+       (sha256
+        (base32 "1iiwd00kysmq02dqn3zjg8d4dhqzz54dlahibrfqrkq49r9cimpl"))))
+    (properties `((upstream-name . "WhatIf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pbmcapply r-lpsolve))
+    (home-page "https://gking.harvard.edu/whatif")
+    (synopsis "Software for Evaluating Counterfactuals")
+    (description
+     "Inferences about counterfactuals are essential for prediction, answering what if
+questions, and estimating causal effects.  However, when the counterfactuals
+posed are too far from the data at hand, conclusions drawn from well-specified
+statistical analyses become based largely on speculation hidden in convenient
+modeling assumptions that few would be willing to defend.  Unfortunately,
+standard statistical approaches assume the veracity of the model rather than
+revealing the degree of model-dependence, which makes this problem hard to
+detect. @code{WhatIf} offers easy-to-apply methods to evaluate counterfactuals
+that do not require sensitivity testing over specified classes of models.  If an
+analysis fails the tests offered here, then we know that substantive inferences
+will be sensitive to at least some modeling choices that are not based on
+empirical evidence, no matter what method of inference one chooses to use.
+@code{WhatIf} implements the methods for evaluating counterfactuals discussed in
+Gary King and Langche Zeng, 2006, \"The Dangers of Extreme Counterfactuals,\"
+Political Analysis 14 (2) <DOI:10.1093/pan/mpj004>; and Gary King and Langche
+Zeng, 2007, \"When Can History Be Our Guide? The Pitfalls of Counterfactual
+Inference,\" International Studies Quarterly 51 (March)
+<DOI:10.1111/j.1468-2478.2007.00445.x>.")
+    (license license:gpl3+)))
+
 (define-public r-whapi
   (package
     (name "r-whapi")
@@ -5893,6 +5930,36 @@ implements methods described in Imai and Kim (2017) \"When should We Use Linear
 Fixed Effects Regression Models for Causal Inference with Longitudinal Data?\",
 available at <https://imai.fas.harvard.edu/research/FEmatch.html>.")
     (license license:gpl2+)))
+
+(define-public r-wf
+  (package
+    (name "r-wf")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wf" version))
+       (sha256
+        (base32 "0vpkxqn8c5m3x1cpjvab3f80r9gch431ap2mfp9n6m2agladfq1c"))))
+    (properties `((upstream-name . "wf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-rlang
+                             r-jsonlite
+                             r-gh
+                             r-fs
+                             r-cli))
+    (home-page "https://christophertkenny.com/wf/")
+    (synopsis "Artificial Intelligence Workflow Tools")
+    (description
+     "Manage skills for large language model coding agents.  Supports installing
+skills from @code{GitHub} or local directories, tracking versions in a lock
+file, and keeping installations current.  Installations can be scoped to a
+single project or shared globally across projects.")
+    (license license:expat)))
 
 (define-public r-weyl
   (package
@@ -6289,13 +6356,13 @@ with a condition established upon person ability and item difficulty.")
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "1wclv2vfv1zrnnmggbqw6p8a1liq025yslbjn6nmmjz33si2sjvx"))))
+        (base32 "1qf2b3wa52cdm73bwzvz3zw5p3n0q45h8nz9x5zjbzb94r23mqf2"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (arguments
@@ -6305,9 +6372,8 @@ with a condition established upon person ability and item difficulty.")
                              r-rlang
                              r-ggplot2
                              r-generics
-                             r-crayon
                              r-cobalt
-                             r-chk))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/WeightIt/")
     (synopsis "Weighting for Covariate Balance in Observational Studies")
@@ -6658,6 +6724,29 @@ interpretation can be given by weighted histogram and weighted scatter plot
 using this package to describe properties of real-valued fuzzy data set.")
     (license license:lgpl3+)))
 
+(define-public r-weightcraft
+  (package
+    (name "r-weightcraft")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WeightCraft" version))
+       (sha256
+        (base32 "1a71ldqhch1bsv2gm61canyyz9dknlj26wbckzsfpxma0n4ara0x"))))
+    (properties `((upstream-name . "WeightCraft")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog))
+    (home-page "https://cran.r-project.org/package=WeightCraft")
+    (synopsis "Portfolio Choice: Estimation, Construction, and Evaluation")
+    (description
+     "Providing quantitative tools for input estimation, portfolio construction, and
+performance evaluation.")
+    (license license:gpl3)))
+
 (define-public r-weibulltools
   (package
     (name "r-weibulltools")
@@ -6929,6 +7018,52 @@ Evolutionary Distinctiveness (ED) and Extinction risk (ER).  Farooq, H.,
 Azevedo, J., Belluardo F., Nanvonamuquitxo, C., Bennett, D., Moat, J., Soares,
 A., Faurby, S. & Antonelli, A. (2020) <doi:10.1101/2020.01.17.910299>.")
     (license license:expat)))
+
+(define-public r-wefnexus
+  (package
+    (name "r-wefnexus")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wefnexus" version))
+       (sha256
+        (base32 "1j36g6g7yqi5ndk53yncmgg49bq61rhhawj7il15m178dskgk9vv"))))
+    (properties `((upstream-name . "wefnexus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lalitrolaniya/wefnexus")
+    (synopsis
+     "Water-Energy-Food-Nutrient-Carbon Nexus Analysis for Agronomic Systems")
+    (description
+     "This package provides functions for analysing Water-Energy-Food-Nutrient-Carbon
+(WEFNC) nexus interactions in agricultural production systems.  Includes
+functions for computing water use efficiency (WUE), water productivity (WP), and
+water footprint (WF) including green, blue, and grey components following the
+methodology of Hoekstra et al. (2011, ISBN:9781849712798).  Includes energy
+budgeting tools for energy use efficiency (EUE), energy return on investment
+(EROI), net energy (NE), and energy productivity (EP).  Computes nutrient use
+efficiency (NUE) metrics including agronomic efficiency (AE), physiological
+efficiency (PE), recovery efficiency (RE), and partial factor productivity (PFP)
+as defined by Dobermann (2007)
+<https://digitalcommons.unl.edu/agronomyfacpub/316/> and Congreves et al. (2021)
+<doi:10.3389/fpls.2021.637108>.  Estimates carbon footprint (CF), greenhouse gas
+(GHG) emissions, soil organic carbon (SOC) stocks, and global warming potential
+(GWP) using Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment
+Report (AR6) default values (CH4 = 27, N2O = 273) as reported in Forster et al.
+(2021) <doi:10.1017/9781009157896.009>.  Computes composite
+Water-Energy-Food-Nutrient-Carbon (WEFNC) nexus indices, trade-off correlation
+matrices, and generates radar and heatmap visualizations for comparing
+agricultural treatments.  Supports conservation agriculture (CA), irrigated and
+rain-fed systems, and arid and semi-arid production environments.  Methods
+follow Lal (2004) <doi:10.1016/j.envint.2004.03.005> for carbon emissions from
+farm operations, and Hoover et al. (2023) <doi:10.1016/j.scitotenv.2022.160992>
+for water use efficiency indicators.")
+    (license license:gpl3+)))
 
 (define-public r-weed
   (package
@@ -7966,13 +8101,13 @@ Department of Natural Resources @code{ArcGIS} REST APIs
 (define-public r-wdnet
   (package
     (name "r-wdnet")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdnet" version))
        (sha256
-        (base32 "02sz8rdj3wy2lj5zxb3znc4hymahmpxmsi1n3bg30naz7492k9pk"))))
+        (base32 "0ggyagl6ff9xzyhr0mbkvhq8kmxc8adhvr2n0917nlwh737c4fa6"))))
     (properties `((upstream-name . "wdnet")))
     (build-system r-build-system)
     (arguments
@@ -8107,6 +8242,47 @@ different bandwidth selectors.  Also includes a real length-biased dataset on
 shrub width from Muttlak (1988)
 <https://www.proquest.com/openview/3dd74592e623cdbcfa6176e85bd3d390/1?cbl=18750&diss=y&pq-origsite=gscholar>.")
     (license license:gpl3)))
+
+(define-public r-wcvpmatch
+  (package
+    (name "r-wcvpmatch")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wcvpmatch" version))
+       (sha256
+        (base32 "0hmd4xbh98ann8hdkhhqv5dcxa8qzx9fl0aqnyvbqi72m5aw4jhp"))))
+    (properties `((upstream-name . "wcvpmatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-purrr
+                             r-memoise
+                             r-magrittr
+                             r-lifecycle
+                             r-fozziejoin
+                             r-dplyr
+                             r-cli
+                             r-assertthat))
+    (home-page "https://github.com/PaulESantos/wcvpmatch")
+    (synopsis "Taxonomic Name Reconciliation Against the 'WCVP' Backbone")
+    (description
+     "Standardizes and reconciles scientific plant names against a World Checklist of
+Vascular Plants ('WCVP')-style taxonomic backbone.  The package parses names
+into taxonomic components and applies staged exact and fuzzy matching for
+binomial and trinomial inputs, including infraspecific rank-aware checks.  It
+also returns accepted-name context and row-level matching flags to support
+reproducible, auditable preprocessing for downstream biodiversity, spatial, and
+trait analyses.  A user-supplied backbone can be passed through target_df'; when
+the optional companion package wcvpdata is installed, its default checklist can
+also be used.")
+    (license license:expat)))
 
 (define-public r-wcox
   (package
@@ -8515,20 +8691,19 @@ model.")
 (define-public r-wbids
   (package
     (name "r-wbids")
-    (version "1.1.3")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbids" version))
        (sha256
-        (base32 "0h66351m4brfvglagkdys075w949dlgkjjavmqxh9vg9df7gglq2"))))
+        (base32 "1h6qzl7smqaig1ps7gink23gnpfxc9k4bs7p4hc9zwizfp81d0lh"))))
     (properties `((upstream-name . "wbids")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
                              r-purrr
@@ -8546,6 +8721,33 @@ model.")
 creditor-debtor relationships between countries, regions, and institutions.
 wbids enables users to download, process and work with IDS series across
 multiple geographies, counterparts, and time periods.")
+    (license license:expat)))
+
+(define-public r-wbi
+  (package
+    (name "r-wbi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WBI" version))
+       (sha256
+        (base32 "1k4xrk6fvy62126yjy0vqavj95m37vsiq9c0q93wivdg3d82z3nw"))))
+    (properties `((upstream-name . "WBI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-transport r-dplyr r-bcaboot))
+    (home-page "https://cran.r-project.org/package=WBI")
+    (synopsis "Wasserstein Bipolarization Index")
+    (description
+     "Computation of the Wasserstein Bipolarization Index as described in Lee and
+Sobel (Forthcoming) <doi:10.48550/@code{arXiv.2408.03331>}.  Provides both
+asymptotic (Sommerfeld, 2017
+<https://ediss.uni-goettingen.de/bitstream/handle/11858/00-1735-0000-0023-3FA1-C/@code{DissertationSommerfeldRev.pdf?sequence=1>})
+and bootstrap methods (Efron and Narasimhan, 2020
+<doi:10.1080/10618600.2020.1714633>) for calculating confidence intervals.")
     (license license:expat)))
 
 (define-public r-wbacon
@@ -8787,6 +8989,41 @@ wavelet shrinkage for various kinds of data, locally stationary wavelet time
 series, nonstationary multiscale transfer function modeling, density estimation.")
     (license license:gpl2+)))
 
+(define-public r-wavest
+  (package
+    (name "r-wavest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WaveST" version))
+       (sha256
+        (base32 "1wr90smngy2acwafbfa1wzd9766yjyhdr5b3fyiyb5nhq55q7g9g"))))
+    (properties `((upstream-name . "WaveST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavelets r-tsutils r-neuralnet r-forecast))
+    (home-page "https://cran.r-project.org/package=WaveST")
+    (synopsis "Wavelet-Based Spatial Time Series Models")
+    (description
+     "An integrated wavelet-based spatial time series modelling framework designed to
+enhance predictive accuracy under noisy and nonstationary conditions by jointly
+exploiting multi-resolution (wavelet) information and spatial dependence.  The
+package implements @code{WaveSARIMA()} (Wavelet Based Spatial
+@code{AutoRegressive} Integrated Moving Average model using regression features
+with @code{forecast::auto.arima()}) and @code{WaveSNN()} (Wavelet Based Spatial
+Neural Network model using neuralnet with hyperparameter search).  Both
+functions support spatial transformation via a user-supplied spatial matrix, lag
+feature construction, MODWT-based wavelet sub-series feature generation,
+time-ordered train/test splitting, and performance evaluation (Root Mean Square
+Error (RMSE), Mean Absolute Error (MAE), R-squared (RÂ²), and Mean Absolute
+Percentage Error (MAPE)), returning fitted models and actual vs predicted values
+for train and test sets.  The package has been developed using the algorithm of
+Paul et al. (2023) <doi:10.1007/s43538-025-00581-1>.")
+    (license license:gpl3)))
+
 (define-public r-wavesampling
   (package
     (name "r-wavesampling")
@@ -8865,30 +9102,6 @@ documented in a peer-reviewed manuscript in the Plant Phenome Journal
 detail in JarquÃ­n et al. (2017) <doi:10.3835/plantgenome2016.12.0130>.  Example
 data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
     (license license:expat)))
-
-(define-public r-waverr
-  (package
-    (name "r-waverr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WaverR" version))
-       (sha256
-        (base32 "084fhzggzm075w6wp2lqd3j0an21idhw8z5l8ynz4y96mpmn204a"))))
-    (properties `((upstream-name . "WaverR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-kimisc))
-    (home-page "https://cran.r-project.org/package=WaverR")
-    (synopsis
-     "Data Estimation using Weighted Averages of Multiple Regressions")
-    (description
-     "For multivariate datasets, this function enables the estimation of missing data
-using the Weighted AVERage of all possible Regressions using the data available.")
-    (license license:gpl2)))
 
 (define-public r-waverider
   (package
@@ -9666,13 +9879,13 @@ object created will need to be modified through a theme.")
 (define-public r-waterbalancer
   (package
     (name "r-waterbalancer")
-    (version "0.1.19")
+    (version "0.1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WaterBalanceR" version))
        (sha256
-        (base32 "0a4d2vila5dv6gilgwnv9y6zz9vw8sbnpaa0gi7zcsricx5kdili"))))
+        (base32 "0xj7p6g1p7n38qdwzgb65a35hjb81w409nj72qxnsd63hm4ljjc3"))))
     (properties `((upstream-name . "WaterBalanceR")))
     (build-system r-build-system)
     (arguments
@@ -10131,13 +10344,13 @@ tuning parameters.  Methodology is based on Fang et al. (2025)
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "0m48gb2z45511wm5hwknqmpq0klk6m7vid7q3f81kfyhffryyfmj"))))
+        (base32 "19pvy1fzbc5nv7dq84f5crdzcnkgki4bxckixj9i7lwwv5dsa0wi"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments

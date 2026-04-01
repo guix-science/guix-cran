@@ -112,13 +112,13 @@ al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
 (define-public r-nzilbb-labbcat
   (package
     (name "r-nzilbb-labbcat")
-    (version "1.5-0")
+    (version "1.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nzilbb.labbcat" version))
        (sha256
-        (base32 "0c6r4kf8gi29lzwkc3v2nx5934iildrky50ap2d73czgmm7p8hc1"))))
+        (base32 "0c4v595yj3maw41jpk23w194a60pvd4b0f4p7ckzd2fflrh6m1ln"))))
     (properties `((upstream-name . "nzilbb.labbcat")))
     (build-system r-build-system)
     (arguments
@@ -669,33 +669,6 @@ duration.  The best results on the holdout data typically beat the best results
 in data science competitions and published results for the same data set.")
     (license license:expat)))
 
-(define-public r-numbersbr
-  (package
-    (name "r-numbersbr")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "numbersBR" version))
-       (sha256
-        (base32 "0ihxlny745gpz1ngq862rydn1zwn8zni1xw9mmgw8hkylsrnjfq8"))))
-    (properties `((upstream-name . "numbersBR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr))
-    (home-page "https://cran.r-project.org/package=numbersBR")
-    (synopsis
-     "Validate, Compare and Format Identification Numbers from Brazil")
-    (description
-     "Validate, format and compare identification numbers used in Brazil.  These
-numbers are used to identify individuals (CPF), vehicles (RENAVAN), companies
-(CNPJ) and etc.  Functions to format, validate and compare these numbers have
-been implemented in a vectorized way in order to speed up validations and
-comparisons in big datasets.")
-    (license license:expat)))
-
 (define-public r-numberofalleles
   (package
     (name "r-numberofalleles")
@@ -808,13 +781,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "04g81pixha347b8j6ysi3cjbh03rwcibp3vd4gbf7kpl30372nk5"))))
+        (base32 "0709jy9d80x33s8zv54dvflzdswhajbkvzif3vzqh93p0dl1zdnz"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (arguments
@@ -1178,6 +1151,34 @@ open source if you want to run your own.  Visit <https://ntfy.sh> for more
 details.")
     (license license:expat)))
 
+(define-public r-ntarp
+  (package
+    (name "r-ntarp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nTARP" version))
+       (sha256
+        (base32 "11zp5cq7b6fclh3619kdal54n5mb8vqaghsyn3fsy399m5w4plsi"))))
+    (properties `((upstream-name . "nTARP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=nTARP")
+    (synopsis
+     "Cluster Analysis Using Thresholding After Random Projections (n-TARP)")
+    (description
+     "This package implements the high-dimensional clustering technique Thresholding
+After Random Projections (n-TARP).  Provides functionality to iteratively
+decompose larger datasets using contextual variables or within-cluster sum of
+squares.  See Tarun & Boutin (2018) <doi:10.48550/@code{arXiv.1806.05297>} and
+Tarun & Boutin (2018) <doi:10.4231/R74B2ZJV> for the original method and
+applications.")
+    (license license:expat)))
+
 (define-public r-nsyllable
   (package
     (name "r-nsyllable")
@@ -1203,13 +1204,13 @@ the number of vowel sequences for words not found.")
 (define-public r-nswgeo
   (package
     (name "r-nswgeo")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nswgeo" version))
        (sha256
-        (base32 "0r9ldmcnqxkb5vkhzavjn7kl3jck248fd47p5dga0g6x5sc5dbsz"))))
+        (base32 "1wiffxpki65xd2i50qfn1xd0kkirnmhmfdhzb7lmalz11827jvc8"))))
     (properties `((upstream-name . "nswgeo")))
     (build-system r-build-system)
     (arguments
@@ -1654,13 +1655,13 @@ univariate time series as described in Ardia et al. (2018)
 (define-public r-nscluster
   (package
     (name "r-nscluster")
-    (version "1.3.6-4")
+    (version "1.3.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NScluster" version))
        (sha256
-        (base32 "0ynl5hc3hnmbgr48g5s4an8mm4wpjvj4c799y95z4i0vf9ghj6lg"))))
+        (base32 "0y6xc0bxqnq3cnybg10k8q60jd339v0g5ixq7dzr8r7cj429ggxq"))))
     (properties `((upstream-name . "NScluster")))
     (build-system r-build-system)
     (arguments
@@ -2418,29 +2419,6 @@ products).  Processing of very large raster files is supported.  For more
 information, please check the following paper: ChÃ¡vez et al. (2023)
 <doi:10.3390/rs15010073>.")
     (license license:gpl3+)))
-
-(define-public r-nppbib
-  (package
-    (name "r-nppbib")
-    (version "1.2-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nppbib" version))
-       (sha256
-        (base32 "1nn6wf89jhr3gy4rcd6px0cd5b1bsr7pbaxng4adba8n3yrss7vs"))))
-    (properties `((upstream-name . "nppbib")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/dalling1")
-    (synopsis
-     "Nonparametric Partially-Balanced Incomplete Block Design Analysis")
-    (description
-     "This package implements a nonparametric statistical test for rank or score data
-from partially-balanced incomplete block-design experiments.")
-    (license license:gpl3)))
 
 (define-public r-npp
   (package
@@ -3585,13 +3563,13 @@ along with all parameters of a given NPBBB design.")
 (define-public r-npbayesimputecat
   (package
     (name "r-npbayesimputecat")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPBayesImputeCat" version))
        (sha256
-        (base32 "0lmnin9amvp8yf4inbl1sa6mzq68ai4ichraw73fsa7ipdkxjzkp"))))
+        (base32 "0c06ff99mm0fsbk3qh8jx9crbxi8mfhc00acbn21141fzhgix1j1"))))
     (properties `((upstream-name . "NPBayesImputeCat")))
     (build-system r-build-system)
     (arguments
@@ -3819,6 +3797,37 @@ these methods in practice.  These methods are described in Olejnik et al. (1985)
     (description "The noweb system for source code, implemented in R.")
     (license license:lgpl2.0)))
 
+(define-public r-nowcast
+  (package
+    (name "r-nowcast")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nowcast" version))
+       (sha256
+        (base32 "0gr7b6np3vp7lkkja7fwmdl1b1hnm8xzxr16d01a3ijibc8gqky7"))))
+    (properties `((upstream-name . "nowcast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/charlescoverdale/nowcast")
+    (synopsis
+     "Economic Nowcasting with Bridge Equations and Real-Time Evaluation")
+    (description
+     "This package provides bridge equations with optional autoregressive terms for
+nowcasting low-frequency macroeconomic variables (e.g. quarterly GDP) from
+higher-frequency indicators (e.g. monthly retail sales).  Handles the
+ragged-edge problem where different indicators have different publication lags
+via mixed-frequency alignment.  Includes pseudo-real-time evaluation with
+expanding or rolling windows, and the Diebold-Mariano test for comparing
+forecast accuracy following Harvey, Leybourne, and Newbold (1997)
+<doi:10.1016/S0169-2070(96)00719-4>.  No API calls; designed to work with data
+from any source.")
+    (license license:expat)))
+
 (define-public r-novicedeveloperresources2
   (package
     (name "r-novicedeveloperresources2")
@@ -3960,13 +3969,13 @@ alpha powerfamily, gull alpha power family.")
 (define-public r-nova
   (package
     (name "r-nova")
-    (version "0.1.1")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NOVA" version))
        (sha256
-        (base32 "1nm74arzfgld7d4qknnxln8kshclhj5q2qnzgr0m8irnxf1zyhf4"))))
+        (base32 "1qd5wzz58fwg3zvvzgsvy8xiaa5ima0h6x8hg6mm3j2wral9m0lm"))))
     (properties `((upstream-name . "NOVA")))
     (build-system r-build-system)
     (arguments
@@ -3986,6 +3995,7 @@ alpha powerfamily, gull alpha power family.")
                              r-pheatmap
                              r-knitr
                              r-gridextra
+                             r-ggrepel
                              r-ggplot2
                              r-dt
                              r-dplyr))
@@ -3997,7 +4007,7 @@ neural data outputs, including Principal Component Analysis (PCA) trajectory
 plotting, Multi-Electrode Array (MEA) heatmap generation, and variable
 importance analysis.  Provides publication-ready visualizations with flexible
 customization options for neuroscience research applications.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-notionr
   (package
@@ -5354,13 +5364,13 @@ goodness of fit (GOF) plots, and simulate with parameter uncertainty.")
 (define-public r-nonlineartseries
   (package
     (name "r-nonlineartseries")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonlinearTseries" version))
        (sha256
-        (base32 "1rvjklmja5ak2mkg5vp97pilghgxk789b8p1n1rcd69qv3nl1hlw"))))
+        (base32 "0rn2wv5yr2giw9ngyc2mzj7c1znm0jm7wdqdr1lrqhzaviaxvy8p"))))
     (properties `((upstream-name . "nonlinearTseries")))
     (build-system r-build-system)
     (arguments
@@ -5572,13 +5582,13 @@ that there are only Compliers and Never Takers in the population.")
 (define-public r-noncompart
   (package
     (name "r-noncompart")
-    (version "0.7.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NonCompart" version))
        (sha256
-        (base32 "1cisq051azpybkj4wmg9k1xb4danyhl523cmjjvlqvvyxrkmp6pf"))))
+        (base32 "0s4y6hxqp21f04fxpxdnfqsz41j5ds3w2aly5sm0nb7kggn9ifzb"))))
     (properties `((upstream-name . "NonCompart")))
     (build-system r-build-system)
     (arguments
@@ -5682,13 +5692,13 @@ chromium based browser installed on your system.")
 (define-public r-nomishape
   (package
     (name "r-nomishape")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nomiShape" version))
        (sha256
-        (base32 "0755jbdc1h7cgz4linsrjrbsma22psblwffn9q0b33l690wl0r92"))))
+        (base32 "1vh71p2x0fp1qgig2i9fxhzvszh4s1wbigw1xlmaq21xdid33cwc"))))
     (properties `((upstream-name . "nomiShape")))
     (build-system r-build-system)
     (arguments
@@ -5748,20 +5758,20 @@ implementation unaffiliated with ONS or Durham University.")
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nominatimlite" version))
        (sha256
-        (base32 "19279y51s7k4yd4i1vkahjmwhaa3440ghi38i5ysq8j94j3hs0n3"))))
+        (base32 "1qa5bgssn5igbdkq8hj8hzbmmzhc62xj5ri35glywlqv646zmrn5"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-jsonlite r-dplyr))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-testthat r-sf r-jsonlite r-dplyr))
+    (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/nominatimlite/")
     (synopsis "Interface with 'Nominatim' API Service")
     (description
@@ -6291,13 +6301,13 @@ agricultural meteorology.")
 (define-public r-no-ping-pong
   (package
     (name "r-no-ping-pong")
-    (version "0.1.8.7")
+    (version "0.1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NO.PING.PONG" version))
        (sha256
-        (base32 "0fszx8a99znc067lpj4h3n5991lvm7iwq8yici8hhizr11f0dc70"))))
+        (base32 "1irlza9szrw8y5ikfvqwlifkh838h3qqc6pj9qrlbz98di6p19v5"))))
     (properties `((upstream-name . "NO.PING.PONG")))
     (build-system r-build-system)
     (arguments
@@ -6446,16 +6456,41 @@ dimensional data.  The tests are usually (asymptotic) normal z-tests or
 chi-square tests.")
     (license license:gpl2)))
 
+(define-public r-nnsolve
+  (package
+    (name "r-nnsolve")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnsolve" version))
+       (sha256
+        (base32 "1hk9i7w6hbl7mcwmf2cbf4bgdqkkxxw6nnna023i5pykzw3k8299"))))
+    (properties `((upstream-name . "nnsolve")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=nnsolve")
+    (synopsis "Fast Non-Negative Least Squares")
+    (description
+     "This package provides a fast algorithm for solving non-negative least squares
+problems.  It implements the Fast Non-Negative Least Squares algorithm of Bro
+and de Jong (1997)
+<doi:10.1002/(SICI)1099-128X(199709/10)11:5%3C393::AID-CEM483%3E3.0.CO;2-L>.")
+    (license license:gpl2+)))
+
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.6.4")
+    (version "11.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "0k9jfn4y6mddiisbb5y4jmrgx4s18g1vdy6j10b41h781hkc6k3j"))))
+        (base32 "133q1ivgjnp1isw313i0x3ka9l68r2vsg4cwb9y89xlsipm98fz5"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -6577,13 +6612,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnmf
   (package
     (name "r-nnmf")
-    (version "1.1")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnmf" version))
        (sha256
-        (base32 "071wwpbjmhrb5b0rqjb2pg8xcpsv75ihf9xxfjgcbwilgix2hw4n"))))
+        (base32 "1aqp0vk79akgf9ls5s78szkmpxfmww4drxcndi4gg0xq8rp38f48"))))
     (properties `((upstream-name . "nnmf")))
     (build-system r-build-system)
     (arguments
@@ -6593,9 +6628,12 @@ version can only impute for a situation with one missing covariate.")
                              r-rglpk
                              r-rfast2
                              r-rfast
+                             r-rcppeigen
+                             r-rcpp
                              r-quadprog
                              r-osqp
                              r-matrix
+                             r-compositional
                              r-clusterr))
     (home-page "https://cran.r-project.org/package=nnmf")
     (synopsis "Nonnegative Matrix Factorization")
@@ -6606,10 +6644,10 @@ allowed.  Parallel computing is an option to enhance the speed and
 high-dimensional and large scale (and/or sparse) data are allowed.  Relevant
 papers include: Wang Y. X. and Zhang Y. J. (2012).  Nonnegative matrix
 factorization: A comprehensive review.  IEEE Transactions on Knowledge and Data
-Engineering, 25(6), 1336-1353 <doi:10.1109/TKDE.2012.51> and Kim H. and Park H.
+Engineering, 25(6): 1336-1353 <doi:10.1109/TKDE.2012.51> and Kim H. and Park H.
 (2008).  Nonnegative matrix factorization based on alternating nonnegativity
 constrained least squares and active set method.  SIAM Journal on Matrix
-Analysis and Applications, 30(2), 713-730 <doi:10.1137/07069239X>.")
+Analysis and Applications, 30(2): 713-730 <doi:10.1137/07069239X>.")
     (license license:gpl2+)))
 
 (define-public r-nnlib2rcpp
@@ -7032,13 +7070,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "026b14qwk84ac6z6a7mqyclsralihsyvahdlyc7s8jlmy4ic2wa2"))))
+        (base32 "17x6yfdz5yargcrzww1qn805xf1y7cp0xddclyxa6qb9jgrdr1cm"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -7329,13 +7367,13 @@ the updating process.  See e.g. TomÃ© et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "136lzlnpx09j28xxs9392s3fabsj2dasydfd4zm6fbg4398xlrmi"))))
+        (base32 "1k2v04qgsd12c0s1ysp6w3mam51ixgxpm8caki4pd6gpn5bdpl27"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (arguments
@@ -8254,13 +8292,13 @@ and non-local prior mixtures as described in Sanyal (2025)
 (define-public r-nlpsem
   (package
     (name "r-nlpsem")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlpsem" version))
        (sha256
-        (base32 "0i6skpmnbi99dkcdam61rq5rfk6wv41q0r1q357qm66wbqyj30fr"))))
+        (base32 "0rb101pwv7drynwnzzjkb7r9v921fh1g1myqgwn0ixwxqh8lhdif"))))
     (properties `((upstream-name . "nlpsem")))
     (build-system r-build-system)
     (arguments
@@ -8276,8 +8314,7 @@ and non-local prior mixtures as described in Sanyal (2025)
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Veronica0206/nlpsem")
-    (synopsis
-     "Linear and Nonlinear Longitudinal Process in Structural Equation Modeling Framework")
+    (synopsis "Nonlinear Longitudinal Process in Structural Equation Modeling")
     (description
      "This package provides computational tools for nonlinear longitudinal models, in
 particular the intrinsically nonlinear models, in four scenarios: (1) univariate
@@ -8288,8 +8325,8 @@ correlation or causation between multiple longitudinal variables; (3)
 multiple-group models for scenarios (1) and (2) to evaluate differences among
 manifested groups, and (4) longitudinal mixture models for scenarios (1) and
 (2), with an assumption that trajectories are from multiple latent classes.  The
-methods implemented are introduced in Jin Liu (2023)
-<@code{arXiv:2302.03237v2>}.")
+methods implemented are introduced in Liu (2025)
+<doi:10.3758/s13428-025-02596-4>.")
     (license license:gpl3+)))
 
 (define-public r-nlpembeds
@@ -8986,13 +9023,13 @@ and coda::mcmc.list objects.")
 (define-public r-nlints
   (package
     (name "r-nlints")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NlinTS" version))
        (sha256
-        (base32 "1laxk4iz5rqxz2m0zxr2q4jl38zdw14xkpbiv0aa9fj3c5l5zrpn"))))
+        (base32 "0frw5fxaqsm24lbg4lzchij5d3c4fnpcfmj7ybq7gz9bdjhjy44h"))))
     (properties `((upstream-name . "NlinTS")))
     (build-system r-build-system)
     (arguments
@@ -9313,44 +9350,6 @@ species.")
     (synopsis "Nonlinear least squares examples from NIST")
     (description "Datasets for testing nonlinear regression routines.")
     (license license:gpl2+)))
-
-(define-public r-nisrarr
-  (package
-    (name "r-nisrarr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nisrarr" version))
-       (sha256
-        (base32 "1gap9qkm4nv7gan0rnbsg9lqqscsa79dc1wmw9vkd70n6k4bf677"))))
-    (properties `((upstream-name . "nisrarr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rjstat
-                             r-purrr
-                             r-pillar
-                             r-lubridate
-                             r-jsonlite
-                             r-httr2
-                             r-glue
-                             r-dplyr
-                             r-cachem))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MarkPaulin/nisrarr")
-    (synopsis "Download Data from the NISRA Data Portal")
-    (description
-     "Download data from the Northern Ireland Statistics and Research Agency (NISRA)
-data portal, accessed at <https://data.nisra.gov.uk>.  NISRA is a government
-agency and the principal source of official statistics and social research on
-Northern Ireland.")
-    (license license:expat)))
 
 (define-public r-nirstat
   (package
@@ -12051,19 +12050,19 @@ manipulate the arguments.  See Welvaert et al. (2011)
 (define-public r-neuroscc
   (package
     (name "r-neuroscc")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuroSCC" version))
        (sha256
-        (base32 "12w2i1zgabh4hac0xwzj8b93gh21crrbxj77mvcdbnyxc8cchk77"))))
+        (base32 "06fggb887lmysq2rjqxk8v0i4bk1nxvswqj9wbld4j17ajjq4blb"))))
     (properties `((upstream-name . "neuroSCC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-oro-nifti r-memisc r-dplyr r-contourer))
+    (propagated-inputs (list r-tidyr r-oro-nifti r-memisc r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://iguanamarina.github.io/neuroSCC/")
     (synopsis
@@ -13517,13 +13516,13 @@ computational companion to Bojanowski & Corten (2014)
 (define-public r-netseer
   (package
     (name "r-netseer")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netseer" version))
        (sha256
-        (base32 "0j8w89fbd32mgdzhkjkwlqgax40rcjrl3yg6r64bqiywxdnvmvhh"))))
+        (base32 "16na5z976mxn8gjjip7nznmsx8wi6i2jqfbgixqgvz86gi4r6nhb"))))
     (properties `((upstream-name . "netseer")))
     (build-system r-build-system)
     (arguments
@@ -13537,6 +13536,7 @@ computational companion to Bojanowski & Corten (2014)
                              r-igraph
                              r-future
                              r-forecast
+                             r-feasts
                              r-fabletools
                              r-fable
                              r-dplyr))
@@ -13584,27 +13584,6 @@ significance.  Significance can be computed both using a degree-preserving
 randomization and non-degree preserving.")
     (license license:gpl2)))
 
-(define-public r-nets
-  (package
-    (name "r-nets")
-    (version "0.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nets" version))
-       (sha256
-        (base32 "00adkyd2hm8aynpnk4avzss8fxkbaai74n5cf03vpwyc306jq0d7"))))
-    (properties `((upstream-name . "nets")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph))
-    (home-page "https://github.com/ctbrownlees/R-Package-nets")
-    (synopsis "Network Estimation for Time Series")
-    (description "Sparse VAR estimation based on LASSO.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-netropy
   (package
     (name "r-netropy")
@@ -13627,6 +13606,34 @@ randomization and non-degree preserving.")
     (description
      "Statistical entropy analysis of network data as introduced by Frank and Shafie
 (2016) <doi:10.1177/0759106315615511>, and a in textbook which is in progress.")
+    (license license:expat)))
+
+(define-public r-netrics
+  (package
+    (name "r-netrics")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netrics" version))
+       (sha256
+        (base32 "1wj45ifjlkdhx4rrqpcmdd09fsp5vi8kdw72r7z5vs6l6fj5zwfr"))))
+    (properties `((upstream-name . "netrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-manynet r-igraph r-dplyr))
+    (home-page "https://stocnet.github.io/netrics/")
+    (synopsis
+     "Many Ways to Measure and Classify Membership for Networks, Nodes, and Ties")
+    (description
+     "Many tools for calculating network, node, or tie marks, measures, motifs and
+memberships of many different types of networks.  Marks identify structural
+positions, measures quantify network properties, memberships classify nodes into
+groups, and motifs tabulate substructure participation.  All functions operate
+with all classes of network data covered in manynet', and on directed,
+undirected, multiplex, multimodal, signed, and other networks.")
     (license license:expat)))
 
 (define-public r-netregr
@@ -14780,6 +14787,34 @@ settings before using the reset of NEST packages to ensure consistent settings
 in both static and interactive output at the downstream.")
     (license license:asl2.0)))
 
+(define-public r-nestage
+  (package
+    (name "r-nestage")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeStage" version))
+       (sha256
+        (base32 "0ss1ma9bm5pj410y1l2lsyp4nhzlnv430mqqy1phbzrl8i1ifrm7"))))
+    (properties `((upstream-name . "NeStage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RaymondLTremblay/NeStage")
+    (synopsis "Effective Population Size from Stage-Structured Populations")
+    (description
+     "Computes effective population size (Ne) and the Ne/N ratio for stage-structured
+populations using the matrix population model framework of Yonezawa (2000)
+<doi:10.1111/j.0014-3820.2000.tb01244.x>.  Functions are provided for sexually
+reproducing, clonally reproducing, and mixed (sexual + clonal) populations.
+Includes sensitivity and elasticity analyses for Ne/N with respect to vital
+rates.")
+    (license license:gpl3)))
+
 (define-public r-neptune
   (package
     (name "r-neptune")
@@ -15087,48 +15122,6 @@ common operations on NEON observational data, including checking for duplicates
 and joining tables.")
     (license license:agpl3)))
 
-(define-public r-neoniso
-  (package
-    (name "r-neoniso")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NEONiso" version))
-       (sha256
-        (base32 "0g7wp276kgs4s2dzlb7rpw352zl60w8dx0vc0l0rabgqlbmryrzk"))))
-    (properties `((upstream-name . "NEONiso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tidyselect
-                             r-rlang
-                             r-r-utils
-                             r-neonutilities
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lanl/NEONiso")
-    (synopsis "Tools to Calibrate and Work with NEON Atmospheric Isotope Data")
-    (description
-     "This package provides functions for downloading, calibrating, and analyzing
-atmospheric isotope data bundled into the eddy covariance data products of the
-National Ecological Observatory Network (NEON) <https://www.neonscience.org>.
-Calibration tools are provided for carbon and water isotope products.  Carbon
-isotope calibration details are found in Fiorella et al. (2021)
-<doi:10.1029/2020JG005862>, and the readme file at
-<https://github.com/lanl/NEONiso>.  Tools for calibrating water isotope products
-have been added as of 0.6.0, but have known deficiencies and should be
-considered experimental and unsupported.")
-    (license license:gpl3)))
-
 (define-public r-neojags
   (package
     (name "r-neojags")
@@ -15399,13 +15392,13 @@ co-authorship networks).")
 (define-public r-nematode
   (package
     (name "r-nematode")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Nematode" version))
        (sha256
-        (base32 "0wc6s7yvrb5xv35arzilgfrv1isp881pf0jiddfxfh94n72s4dz7"))))
+        (base32 "06m0ycha8s5v6m1zlmz5asnc1dghiqc3mk4v7rylvygjp58r7s3a"))))
     (properties `((upstream-name . "Nematode")))
     (build-system r-build-system)
     (arguments
@@ -16096,13 +16089,13 @@ disparity.")
 (define-public r-nda
   (package
     (name "r-nda")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nda" version))
        (sha256
-        (base32 "1jagqycs98khrfrsw9sqrnb6rj9wlxma5jzgywhwdmczk89gy51j"))))
+        (base32 "1shnki70bx9y5ji2spcnnwrxj538j7019cqd0x8nkblqi56abkkb"))))
     (properties `((upstream-name . "nda")))
     (build-system r-build-system)
     (arguments
@@ -16243,44 +16236,6 @@ imputation estimates.  It uses multiple auxiliary variables and multivariate
 clustering to search for an optimal sample.  Further details are given in
 Melville G. & Stone C. (2016) <doi:10.1080/00049158.2016.1218265>.")
     (license license:gpl2)))
-
-(define-public r-ncpen
-  (package
-    (name "r-ncpen")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ncpen" version))
-       (sha256
-        (base32 "0vl4cbrsifr5s1691gacmp0lk3aqyq0yfafafzv6g3zygi4igrsa"))))
-    (properties `((upstream-name . "ncpen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/zeemkr/ncpen")
-    (synopsis
-     "Unified Algorithm for Non-convex Penalized Estimation for Generalized Linear Models")
-    (description
-     "An efficient unified nonconvex penalized estimation algorithm for Gaussian
-(linear), binomial Logit (logistic), Poisson, multinomial Logit, and Cox
-proportional hazard regression models.  The unified algorithm is implemented
-based on the convex concave procedure and the algorithm can be applied to most
-of the existing nonconvex penalties.  The algorithm also supports convex
-penalty: least absolute shrinkage and selection operator (LASSO).  Supported
-nonconvex penalties include smoothly clipped absolute deviation (SCAD), minimax
-concave penalty (MCP), truncated LASSO penalty (TLP), clipped LASSO (CLASSO),
-sparse ridge (SRIDGE), modified bridge (MBRIDGE) and modified log (MLOG).  For
-high-dimensional data (data set with many variables), the algorithm selects
-relevant variables producing a parsimonious regression model.  Kim, D., Lee, S.
-and Kwon, S. (2018) <@code{arXiv:1811.05061>}, Lee, S., Kwon, S. and Kim, Y.
-(2016) <doi:10.1016/j.csda.2015.08.019>, Kwon, S., Lee, S. and Kim, Y. (2015)
-<doi:10.1016/j.csda.2015.07.001>. (This research is funded by Julian Virtue
-Professorship from Center for Applied Research at Pepperdine Graziadio Business
-School and the National Research Foundation of Korea.).")
-    (license license:gpl3+)))
 
 (define-public r-ncoder
   (package
@@ -16426,13 +16381,13 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
 (define-public r-ncar
   (package
     (name "r-ncar")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncar" version))
        (sha256
-        (base32 "1cyf06bml2dfdilvyzhal42s56a70fd88wk5zkmrgblckvfyl3cg"))))
+        (base32 "05kkab117hf11bjpfd13pd9wql386196lqxsgrx7hrrkm535rzbj"))))
     (properties `((upstream-name . "ncar")))
     (build-system r-build-system)
     (arguments
@@ -16535,19 +16490,20 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "4.0.5")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NCA" version))
        (sha256
-        (base32 "127pyaqxr30yavszq2bx3v77z634d26dh19di3i6liiah35d4zkb"))))
+        (base32 "1kb9cw93virb5i584816jfvma6745r7k4wp6br77rh8kygfqxv7x"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-truncnorm
+                             r-rsqlite
                              r-quantreg
                              r-plotly
                              r-lpsolve
@@ -16556,9 +16512,9 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
                              r-gplots
                              r-ggplot2
                              r-foreach
-                             r-doparallel))
-    (home-page
-     "https://www.eur.nl/en/erim/erim/research-initiatives/necessary-condition-analysis")
+                             r-doparallel
+                             r-dbi))
+    (home-page "https://www.erim.eur.nl/necessary-condition-analysis/")
     (synopsis "Necessary Condition Analysis")
     (description
      "This package performs a Necessary Condition Analysis (NCA). (Dul, J. 2016.
@@ -16573,10 +16529,10 @@ ceiling line: y <= f(x).  The empty zone is in the upper left hand corner of the
 xy-plot (with the convention that the x-axis is horizontal and the y-axis is
 vertical and that values increase upwards and to the right'').  The ceiling line
 is a (piecewise) linear non-decreasing line: a linear step function or a
-straight line.  It indicates which level of x (e.g. an effort or input) is
-necessary but not sufficient for a (desired) level of y (e.g. good performance
-or output).  A quick start guide for using this package can be found here:
-<https://repub.eur.nl/pub/78323/> or
+straight line.  It indicates which level of x (e.g., an effort, a
+characteristic) is necessary but not sufficient for a (desired or undesired)
+level of y (e.g., good performance or disease).  A quick start guide for using
+this package can be found here: <https://repub.eur.nl/pub/78323/> or
 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2624981>.")
     (license license:gpl3+)))
 
@@ -17017,13 +16973,13 @@ functions for making tables that compare observed and theoretical statistics.")
 (define-public r-nbdctools
   (package
     (name "r-nbdctools")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NBDCtools" version))
        (sha256
-        (base32 "0y305gzja6hfvqb2b20xk17gr05xknywjcwnkglpg929i7lpv4iq"))))
+        (base32 "0lq3ysxjbfn7q2h0mz7afiwx9aq60z64dj0yws7d0pzjj5q5vb7y"))))
     (properties `((upstream-name . "NBDCtools")))
     (build-system r-build-system)
     (arguments
@@ -17043,6 +16999,7 @@ functions for making tables that compare observed and theoretical statistics.")
                              r-haven
                              r-glue
                              r-dplyr
+                             r-crayon
                              r-cli
                              r-chk
                              r-arrow))
@@ -17854,13 +17811,13 @@ dataframe-friendly format.")
 (define-public r-naryn
   (package
     (name "r-naryn")
-    (version "2.6.32")
+    (version "2.6.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naryn" version))
        (sha256
-        (base32 "10m0xnk2xk2yhcd4pkm35jvrpshh62p8nmpy1s9lk8bkw5msx16p"))))
+        (base32 "01ypm7f3090mmyxpibjhlpcn58y28zbmgzifwmyxabdhfjpjzacw"))))
     (properties `((upstream-name . "naryn")))
     (build-system r-build-system)
     (arguments
@@ -18230,13 +18187,13 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
 (define-public r-nameneedle
   (package
     (name "r-nameneedle")
-    (version "1.2.8")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NameNeedle" version))
        (sha256
-        (base32 "0g7mvwzbygin41wp7g7dhc284sydd5l4sqlba7ksqm32h97zvrk7"))))
+        (base32 "0qgwwf8dz7j9m152v9al6sj0gmgqr04gndzpbfmxhmh0kswg46md"))))
     (properties `((upstream-name . "NameNeedle")))
     (build-system r-build-system)
     (arguments
@@ -18485,13 +18442,13 @@ provides a name to the latent variable.")
 (define-public r-naijr
   (package
     (name "r-naijr")
-    (version "0.6.3")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naijR" version))
        (sha256
-        (base32 "0qm7p7klywld0y8d1c5r2smhfpxnhzarwb5b4vhrzzmgp72z0xac"))))
+        (base32 "0ryyx28khbgmyspr0pp7i2qjzcyirs74hzj3lcykyp0yybbq6cja"))))
     (properties `((upstream-name . "naijR")))
     (build-system r-build-system)
     (arguments
@@ -18503,7 +18460,6 @@ provides a name to the latent variable.")
                              r-rcolorbrewer
                              r-maps
                              r-mapdata
-                             r-lifecycle
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/naijR/")
@@ -18706,13 +18662,13 @@ researchers and policy analysts globally.")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NADA2" version))
        (sha256
-        (base32 "1smkd5k392ha0h1kbpa99hlcfldyllz1gbn1yd16wc7lg4laihpb"))))
+        (base32 "0a8ljfdadbjfcbyzn15cb2ryppdjsypa3w8xhz2zcxiy9qpqfr5d"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (arguments
@@ -18721,11 +18677,9 @@ researchers and policy analysts globally.")
     (propagated-inputs (list r-vegan
                              r-survminer
                              r-survival
-                             r-perm
                              r-nbclust
                              r-multcomp
                              r-mgcv
-                             r-kendall
                              r-fitdistrplus
                              r-envstats
                              r-coin
@@ -18867,33 +18821,6 @@ including loops, branches, and control flow.")
 format defined by the North American Association of Central Cancer Registries
 (NAACCR).")
     (license license:expat)))
-
-(define-public r-na-tools
-  (package
-    (name "r-na-tools")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "na.tools" version))
-       (sha256
-        (base32 "1lbzsckfg297n85kzbin65x1l6qgg9l50hd3xi2gflxc7n2xb8bw"))))
-    (properties `((upstream-name . "na.tools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/decisionpatterns/na.tools")
-    (synopsis
-     "Comprehensive Library for Working with Missing (NA) Values in Vectors")
-    (description
-     "This comprehensive toolkit provide a consistent and extensible framework for
-working with missing values in vectors.  The companion package tidyimpute
-provides similar functionality for list-like and table-like structures).
-Functions exist for detection, removal, replacement, imputation, recollection,
-etc.  of NAs'.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-n2h4
   (package

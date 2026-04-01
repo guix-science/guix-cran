@@ -84,34 +84,6 @@ analysis using igraph'.  The package enables a reproducible workflow from raw
 data processing to biological interpretation.")
     (license license:expat)))
 
-(define-public r-xxirt
-  (package
-    (name "r-xxirt")
-    (version "2.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xxIRT" version))
-       (sha256
-        (base32 "0b8yv8ixmcjiv9hlvpfdknx815smy7df7f2ixifnvhxxafgf1fwq"))))
-    (properties `((upstream-name . "xxIRT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-lpsolveapi r-glpkapi r-ggplot2))
-    (home-page "https://github.com/xluo11/xxIRT")
-    (synopsis "Item Response Theory and Computer-Based Testing in R")
-    (description
-     "This package provides a suite of psychometric analysis tools for research and
-operation, including: (1) computation of probability, information, and
-likelihood for the 3PL, GPCM, and GRM; (2) parameter estimation using joint or
-marginal likelihood estimation method; (3) simulation of computerized adaptive
-testing using built-in or customized algorithms; (4) assembly and simulation of
-multistage testing.  The full documentation and tutorials are at
-<https://github.com/xluo11/@code{xxIRT>}.")
-    (license license:gpl3+)))
-
 (define-public r-xxhashlite
   (package
     (name "r-xxhashlite")
@@ -345,6 +317,33 @@ Porter (2023) <https://stephenporter.org/files/xtsum_handout.pdf>,
 @code{StataCorp} (2023) <https://www.stata.com/manuals/xtxtsum.pdf>.")
     (license license:gpl3)))
 
+(define-public r-xtrec
+  (package
+    (name "r-xtrec")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtrec" version))
+       (sha256
+        (base32 "1908jx3mypnr1csch29gz0y6r7ywq404866ab7d1nmx792rd6qzh"))))
+    (properties `((upstream-name . "xtrec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/muhammedalkhalaf/xtrec")
+    (synopsis "Panel Unit Root Test Based on Recursive Detrending")
+    (description
+     "This package implements the recursively detrended panel unit root tests proposed
+by Westerlund (2015) <doi:10.1016/j.jeconom.2014.09.013>.  Two variants are
+provided: the basic t-REC test assuming iid errors, and the robust t-RREC test
+that accounts for serial correlation, cross-sectional dependence, and
+heteroskedasticity via defactoring and BIC-selected lag augmentation.  Both
+tests have a standard normal null distribution requiring no mean or variance
+correction.  The panel must be strongly balanced.")
+    (license license:gpl3)))
+
 (define-public r-xtranat
   (package
     (name "r-xtranat")
@@ -372,22 +371,54 @@ Traditional measures do not work as well for those network characteristics.  The
 main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.")
     (license license:gpl3)))
 
+(define-public r-xtpqardl
+  (package
+    (name "r-xtpqardl")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtpqardl" version))
+       (sha256
+        (base32 "13hv9b35mrpm4c2ky91yi45r6hcc7ysm1njibx9kyhl1xmzypzz0"))))
+    (properties `((upstream-name . "xtpqardl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg))
+    (home-page "https://cran.r-project.org/package=xtpqardl")
+    (synopsis "Panel Quantile Autoregressive Distributed Lag Model")
+    (description
+     "Estimation of Panel Quantile Autoregressive Distributed Lag (PQARDL) models that
+combine panel ARDL methodology with quantile regression.  Supports Pooled Mean
+Group (PMG), Mean Group (MG), and Dynamic Fixed Effects (DFE) estimators across
+multiple quantiles.  Computes long-run cointegrating parameters, error
+correction term speed of adjustment, half-life of adjustment, and performs Wald
+tests for parameter equality across quantiles.  Based on the econometric
+frameworks of Pesaran, Shin, and Smith (1999)
+<doi:10.1080/01621459.1999.10474156>, Cho, Kim, and Shin (2015)
+<doi:10.1016/j.jeconom.2015.02.030>, and Bildirici and Kayikci (2022)
+<doi:10.1016/j.energy.2022.124303>.")
+    (license license:gpl3)))
+
 (define-public r-xtdml
   (package
     (name "r-xtdml")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtdml" version))
        (sha256
-        (base32 "0hfrymnbzcp8q6d994yz5ixnmlk6r1qm152qwn7rifzlmv86y398"))))
+        (base32 "0qz7qpqd0fmixmvs1i9gvlmm8np376hc9x7rn8lr7c96m7734q36"))))
     (properties `((upstream-name . "xtdml")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readstata13
+    (propagated-inputs (list r-rlang
+                             r-readstata13
                              r-r6
                              r-mvtnorm
                              r-mlr3tuning
@@ -413,6 +444,116 @@ fixed effects using the approaches established in Clarke and Polselli (2025)
 @code{DoubleML} (Bach et al., 2024) <doi:10.18637/jss.v108.i03> using the mlr3
 ecosystem.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-xtdhcoint
+  (package
+    (name "r-xtdhcoint")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtdhcoint" version))
+       (sha256
+        (base32 "00bhc0xa7h1d8njd8y76sq7vcnlaikcqa1l297b83kmajxxjsd8d"))))
+    (properties `((upstream-name . "xtdhcoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/muhammedalkhalaf/xtdhcoint")
+    (synopsis "Durbin-Hausman Panel Cointegration Tests")
+    (description
+     "This package implements the Durbin-Hausman panel cointegration tests of
+Westerlund (2008) <doi:10.1002/jae.963>.  The tests are robust to
+cross-sectional dependence through common factor extraction using principal
+components.  Provides both group-mean (DHg) and panel (DHp) test statistics with
+automatic factor number selection via information criteria.")
+    (license license:gpl3)))
+
+(define-public r-xtcspqardl
+  (package
+    (name "r-xtcspqardl")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtcspqardl" version))
+       (sha256
+        (base32 "1c5gzyh5b65cbzy6b0ya3saaqvz49kwsx5xnq6mpl2s60c4p02ci"))))
+    (properties `((upstream-name . "xtcspqardl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg))
+    (home-page "https://github.com/muhammedalkhalaf/xtcspqardl")
+    (synopsis "Cross-Sectionally Augmented Panel Quantile ARDL")
+    (description
+     "This package implements the Cross-Sectionally Augmented Panel Quantile
+Autoregressive Distributed Lag (CS-PQARDL) model and the Quantile Common
+Correlated Effects Mean Group (QCCEMG) estimator for panel data with
+cross-sectional dependence.  The package handles unobserved common factors
+through cross-sectional averages following Pesaran (2006)
+<doi:10.1111/j.1468-0262.2006.00692.x> and Chudik and Pesaran (2015)
+<doi:10.1016/j.jeconom.2015.03.007>.  Quantile regression for dynamic panels
+follows Harding, Lamarche, and Pesaran (2018)
+<doi:10.1016/j.jeconom.2018.07.010>.  The ARDL approach to cointegration testing
+is based on Pesaran, Shin, and Smith (2001) <doi:10.1002/jae.616>.")
+    (license license:gpl3)))
+
+(define-public r-xtbreakcoint
+  (package
+    (name "r-xtbreakcoint")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtbreakcoint" version))
+       (sha256
+        (base32 "0miz6lvwy70fg2x2l10vzcnrafrwk92xdbfd39qspp7rr2mp4rzb"))))
+    (properties `((upstream-name . "xtbreakcoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/muhammedalkhalaf/xtbreakcoint")
+    (synopsis "Panel Cointegration Tests with Structural Breaks")
+    (description
+     "This package implements panel cointegration tests allowing for structural breaks
+and cross-section dependence following the methodology of Banerjee and
+Carrion-i-Silvestre (2015) <doi:10.1002/jae.2348>.  The package provides
+iterative factor-break estimation, individual ADF tests on defactored residuals,
+standardized panel test statistics, and the Bai and Ng (2004)
+<doi:10.1111/j.1468-0262.2004.00528.x> MQ test for identifying common stochastic
+trends.  Supports five model specifications with varying deterministic
+components and break structures.")
+    (license license:gpl3)))
+
+(define-public r-xtbhst
+  (package
+    (name "r-xtbhst")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtbhst" version))
+       (sha256
+        (base32 "1v0xfngc6h3w2x3cr8a0pyixwl09xwzbs9km83vkjgb3q06fq0w9"))))
+    (properties `((upstream-name . "xtbhst")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/muhammedalkhalaf/xtbhst")
+    (synopsis "Bootstrap Slope Heterogeneity Test for Panel Data")
+    (description
+     "This package implements the bootstrap slope heterogeneity test for panel data
+based on Blomquist and Westerlund (2015) <doi:10.1007/s00181-015-0978-z>.  Tests
+the null hypothesis that slope coefficients are homogeneous across
+cross-sectional units.  Provides both standard and adjusted Delta statistics
+with bootstrap p-values.  Supports partialling out of control variables and
+cross-sectional averages for dealing with cross-sectional dependence.")
+    (license license:gpl3)))
 
 (define-public r-xsub
   (package
@@ -1001,13 +1142,13 @@ package by providing tools for generating expectations.")
 (define-public r-xpect
   (package
     (name "r-xpect")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpect" version))
        (sha256
-        (base32 "1nipvzr3bchmjyx742vhcdpm8wpc9v7h4q8cyhcmjjd6iv1cz4q6"))))
+        (base32 "093c06fg2kkz44c0inr86lqzpgd93a4bqn911sdmwmis9f5c74fy"))))
     (properties `((upstream-name . "xpect")))
     (build-system r-build-system)
     (arguments
@@ -1026,7 +1167,6 @@ package by providing tools for generating expectations.")
                              r-future
                              r-furrr
                              r-evd
-                             r-edfun
                              r-cubature
                              r-ald))
     (home-page "https://rpubs.com/giancarlo_vercellino/xpect")

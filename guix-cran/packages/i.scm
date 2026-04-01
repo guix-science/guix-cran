@@ -101,22 +101,51 @@ hurdle models and obtain maximum likelihood estimate of unknown parameters in
 these models.")
     (license license:expat)))
 
+(define-public r-ixsurface
+  (package
+    (name "r-ixsurface")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ixsurface" version))
+       (sha256
+        (base32 "1qq7zvjpgi3hxljlzy0mzmjri6vdqfs1iwzyikj8hhjwcsx8kbzx"))))
+    (properties `((upstream-name . "ixsurface")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cjbrant/ixsurface")
+    (synopsis
+     "Interactive 3D Surface Plots for Multi-Factor Interaction Visualization")
+    (description
+     "Visualize interactions between multiple experimental factors using interactive
+3D surface plots powered by plotly'.  Instead of examining combinatorial
+pairwise interaction plots, map factor combinations to response surfaces and use
+surface crossings as geometric indicators of interaction effects.  Supports
+continuous, categorical, and mixed factor designs with automatic binning for
+continuous conditioning variables.")
+    (license license:expat)))
+
 (define-public r-ixpopdymod
   (package
     (name "r-ixpopdymod")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IxPopDyMod" version))
        (sha256
-        (base32 "1wg6m1sf8h157xi7nzml10k014dvnhcf0qyprqvasghiad7c2dc9"))))
+        (base32 "1n507bg0mwmxhmddkx2q10ii6j9m0k0mbdw4r0pg5z7bqczhqfmc"))))
     (properties `((upstream-name . "IxPopDyMod")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-checkmate))
+    (propagated-inputs (list r-checkmate))
     (home-page "https://github.com/dallenmidd/IxPopDyMod")
     (synopsis "Framework for Tick Population and Infection Modeling")
     (description
@@ -2298,32 +2327,6 @@ Chemistry.  See: Lacki, Valkenborg, Startek (2020)
 <DOI:10.1021/acs.analchem.6b01459> for the description of the algorithms used.")
     (license (license:fsdg-compatible "BSD_2_clause + file LICENCE"))))
 
-(define-public r-isopurer
-  (package
-    (name "r-isopurer")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ISOpureR" version))
-       (sha256
-        (base32 "1ydhsh3v6n7prrg0dm7hsg8wx1244g791xnz1sjyhljhm31hgwc0"))))
-    (properties `((upstream-name . "ISOpureR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-futile-logger))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ISOpureR")
-    (synopsis "Deconvolution of Tumour Profiles")
-    (description
-     "Deconvolution of mixed tumour profiles into normal and cancer for each patient,
-using the ISOpure algorithm in Quon et al.  Genome Medicine, 2013 5:29.
-Deconvolution requires mixed tumour profiles and a set of unmatched \"basis\"
-normal profiles.")
-    (license license:gpl2)))
-
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
@@ -2428,13 +2431,13 @@ soil texture charts, ceramic phase diagram).")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "3.4")
+    (version "3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopam" version))
        (sha256
-        (base32 "1ks3wlp6j7plzmllnzpsz2r1m6cx30098n52hfrpynj3nd7rz8nr"))))
+        (base32 "0ns340m9imkpp64lhvdcc0jbhbhy9gdzc2q01l3sc3i31zn1wfrj"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (arguments
@@ -2442,12 +2445,12 @@ soil texture charts, ceramic phase diagram).")
       #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tibble
-                             r-rcpp
                              r-ps
                              r-proxy
                              r-ggplot2
                              r-future-apply
                              r-future
+                             r-fastkmedoids
                              r-cluster))
     (home-page "https://cran.r-project.org/package=isopam")
     (synopsis "Clustering of Sites with Species Data")
@@ -2961,6 +2964,36 @@ see Troxel Ma and Heitjan (2004) and Xie and Heitjan (2004)
 <doi:10.1002/sim.2107> and Xie (2008) <doi:10.1002/sim.3117> and Xie (2012)
 <doi:10.1016/j.csda.2010.11.021> and Xie and Qian (2012) <doi:10.1002/jae.1157>.")
     (license license:gpl2)))
+
+(define-public r-ismtools
+  (package
+    (name "r-ismtools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISMtools" version))
+       (sha256
+        (base32 "12fvn4kj152f3xg27wwb18yhq6vbzz6csmp1gabw900cpaqvifra"))))
+    (properties `((upstream-name . "ISMtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ISMtools")
+    (synopsis "Interpretive Structural Modelling Analysis Tools")
+    (description
+     "This package provides a comprehensive toolkit for Interpretive Structural
+Modelling (ISM) analysis.  Provides functions for creating adjacency matrices
+from various input formats including SSIM (Structural Self-Interaction Matrix),
+computing reachability matrices using Warshall's algorithm, performing
+hierarchical level partitioning, MICMAC (Cross-Impact Matrix Multiplication
+Applied to Classification) analysis, and visualizing ISM structures through both
+static and interactive diagrams.  ISM is a methodology for identifying and
+summarizing relationships among specific elements which define an issue or
+problem, as described in Warfield (1974) <doi:10.1109/TSMC.1974.5408524>.")
+    (license license:expat)))
 
 (define-public r-ismtchile
   (package
@@ -3594,13 +3627,13 @@ community, but do not impose many dependencies on the user.")
 (define-public r-isar
   (package
     (name "r-isar")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISAR" version))
        (sha256
-        (base32 "0r7mrr4zi8bb449byci0pqaflnw12xbng0h0hc9ad4a7bnblsgcx"))))
+        (base32 "1frb62jrpm9fywzslly98q3x9lh0576wg5my762r1kpi6fshv64z"))))
     (properties `((upstream-name . "ISAR")))
     (build-system r-build-system)
     (arguments
@@ -3874,26 +3907,27 @@ Interface.")
 (define-public r-irtest
   (package
     (name "r-irtest")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRTest" version))
        (sha256
-        (base32 "1rnpdba06104kqild065w01jr188dmp3v7vs4zkakqpgrf1lf7jj"))))
+        (base32 "0gclcwjhiqcwx10sh5g283irrvbbk8si86h45qyw5ywd9rr3p06m"))))
     (properties `((upstream-name . "IRTest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-usethis r-ggplot2 r-dcurver r-betafunctions))
+    (propagated-inputs (list r-usethis r-tidyr r-ggplot2 r-dcurver
+                             r-betafunctions))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SeewooLi/IRTest")
     (synopsis
      "Parameter Estimation of Item Response Theory with Estimation of Latent Distribution")
     (description
      "Item response theory (IRT) parameter estimation using marginal maximum
-likelihood and expectation-maximization algorithm (Bock & Aitkin, 1981
+likelihood and expectation-maximization algorithm (Bock \\& Aitkin, 1981
 <doi:10.1007/BF02293801>).  Within parameter estimation algorithm, several
 methods for latent distribution estimation are available.  Reflecting some
 features of the true latent distribution, these latent distribution estimation
@@ -4308,13 +4342,13 @@ column-wise fashion.")
 (define-public r-irisseismic
   (package
     (name "r-irisseismic")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRISSeismic" version))
        (sha256
-        (base32 "1128s5fccpbzrcsrb236n0jak4g9wkx7ps8w26agdc1kr0w6r4mc"))))
+        (base32 "1m09jcckssl9w6mf0axq8f7hg9jrajmhymp0xlcc1rnib0v0wq8k"))))
     (properties `((upstream-name . "IRISSeismic")))
     (build-system r-build-system)
     (arguments
@@ -4333,8 +4367,8 @@ column-wise fashion.")
      "This package provides classes and methods for seismic data analysis.  The base
 classes and methods are inspired by the python code found in the @code{ObsPy}
 python toolbox <https://github.com/obspy/obspy>.  Additional classes and methods
-support data returned by web services provided by the IRIS DMC
-<http://service.iris.edu/>.")
+support data returned by web services provided by the @code{EarthScope}
+Consortium. <https://service.earthscope.org/>.")
     (license license:gpl2+)))
 
 (define-public r-irismustangmetrics
@@ -4629,13 +4663,13 @@ ties.  It also includes Yilmaz et al. (2008) <doi:10.1145/1390334.1390435>
 (define-public r-irboost
   (package
     (name "r-irboost")
-    (version "0.2-1.0")
+    (version "0.2-1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irboost" version))
        (sha256
-        (base32 "1c6pc4lsx7l0s3m03fliwa6xz40dani9fd2hfkxpl9874w9an5cb"))))
+        (base32 "0rfsvwx8xga6mg0nfklm4n453rfr00qmh7qjfwxa77gargcwspq8"))))
     (properties `((upstream-name . "irboost")))
     (build-system r-build-system)
     (arguments
@@ -4772,13 +4806,13 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iq" version))
        (sha256
-        (base32 "11kdql17b493vwz3jld6vr1ggazpqlyv3j0wc2mmrhaa3rj06gs2"))))
+        (base32 "0sqar68qr2izxvp69sv3a441543v9bbi8igzhr12i0l7sb6fygyh"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (arguments
@@ -4792,7 +4826,8 @@ multivariate cases.")
      "An implementation of the @code{MaxLFQ} algorithm by Cox et al. (2014)
 <doi:10.1074/mcp.M113.031591> in a comprehensive pipeline for processing
 proteomics data in data-independent acquisition mode (Pham et al.  2020
-<doi:10.1093/bioinformatics/btz961>).  It offers additional options for protein
+<doi:10.1093/bioinformatics/btz961>; Pham et al.  2026
+<doi:10.1021/acs.jproteome.5c01038>).  It offers additional options for protein
 quantification using the N most intense fragment ions, using all fragment ions,
 the median polish algorithm by Tukey (1977, ISBN:0201076160), and a robust
 linear model.  In general, the tool can be used to integrate multiple
@@ -4944,13 +4979,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipumsr" version))
        (sha256
-        (base32 "1pg8z8kg48plkmnv78y1lhs5vik6mw7yjgdzz4sxhxh5xhira0ar"))))
+        (base32 "029wccqjfkmzfzhf1qh1myhagqwk8p9azx77j0l9ik31b1190v5v"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (arguments
@@ -5804,13 +5839,13 @@ with some modifications.")
 (define-public r-ipd
   (package
     (name "r-ipd")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipd" version))
        (sha256
-        (base32 "10ycjl0d2655xynf3x6327gnbp0slssvbmj0r254ymmg6g5jfjz8"))))
+        (base32 "0v53spzcdnr2fnn2vf12ciawnp1j0fdg87ijb7x6gsf1sgq7s8hp"))))
     (properties `((upstream-name . "ipd")))
     (build-system r-build-system)
     (arguments
@@ -5822,8 +5857,7 @@ with some modifications.")
                              r-mass
                              r-generics
                              r-gam
-                             r-caret
-                             r-biocgenerics))
+                             r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipd-tools/ipd")
     (synopsis "Inference on Predicted Data")
@@ -7591,13 +7625,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.91")
+    (version "0.6.92")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "1vbbh19yxzq2mwrw7hqa1lhni0ns7rqpn8hikcsa71r2m1qg0wh1"))))
+        (base32 "1sw2pc6kgmk4qlrkh8w33x2cn66albf4ajv0iqf926i2hp9qy9a5"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (arguments
@@ -8666,13 +8700,13 @@ Assmann et al. (1996), [<doi:10.1097/00001648-199605000-00012>]).")
 (define-public r-interactionpower
   (package
     (name "r-interactionpower")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InteractionPoweR" version))
        (sha256
-        (base32 "12bnmsx9xf5124vfnbpmfwsswaifaywbg26prsmmsmkjiarplfvl"))))
+        (base32 "09ky9rfckv3n9yr3lzfd5c4bn6izvzsr1lc7sbv5kld2sdgfq91s"))))
     (properties `((upstream-name . "InteractionPoweR")))
     (build-system r-build-system)
     (arguments
@@ -8700,9 +8734,14 @@ analyses can be done either analytically or via simulation.  Includes tools for
 simulating single data sets and visualizing power analysis results.  The primary
 functions are @code{power_interaction_r2()} and @code{power_interaction()} for
 two-way interactions, and @code{power_interaction_3way_r2()} for three-way
-interactions.  Please cite as: Baranger DAA, Finsaas MC, Goldstein BL, Vize CE,
-Lynam DR, Olino TM (2023). \"Tutorial: Power analyses for interaction effects in
-cross-sectional regressions.\" <doi:10.1177/25152459231187531>.")
+interactions.  The function @code{run_pos_power_search()} provides a stability
+analysis for two-way interactions.  Please cite as: Baranger DAA, Finsaas MC,
+Goldstein BL, Vize CE, Lynam DR, Olino TM (2023). \"Tutorial: Power analyses for
+interaction effects in cross-sectional regressions.\"
+<doi:10.1177/25152459231187531>.  If you use the stability analyses, please
+cite: Castillo A, Miller JD, Vize C, Baranger DAA, Lynam DR. \"When Do
+Interaction/Moderation Effects Stabilize in Linear
+Regression?\"<doi:10.1177/25152459251407860>.")
     (license license:gpl3+)))
 
 (define-public r-inteq
@@ -9499,13 +9538,13 @@ of the output.")
 (define-public r-inshiny
   (package
     (name "r-inshiny")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inshiny" version))
        (sha256
-        (base32 "1y8wzbmrrqlk867fkf3nhmddzk8z9sqiscv6cj8bnq9bycw694y0"))))
+        (base32 "1qrb8w6dq4lsg87mmda8f3pgp3zilpvih64sb9byx08wmllfr2hs"))))
     (properties `((upstream-name . "inshiny")))
     (build-system r-build-system)
     (arguments
@@ -9581,6 +9620,37 @@ maps with inset maps with minimal code.")
      "Using embedded sdmx queries, get the data of more than 150 000 insee series from
 bdm macroeconomic database.")
     (license license:expat)))
+
+(define-public r-insectlabelr
+  (package
+    (name "r-insectlabelr")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InsectLabelR" version))
+       (sha256
+        (base32 "0jyd111m79j9n9cbccvz9hfw7hhyqgabdqffj9cxfjcyq1czw559"))))
+    (properties `((upstream-name . "InsectLabelR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-stringr r-shiny r-magrittr r-dplyr))
+    (home-page "https://cran.r-project.org/package=InsectLabelR")
+    (synopsis "Create Labels for Insect in Collection")
+    (description
+     "Streamlines the creation of high-quality labels for insect pinning.  By taking a
+dataset as input, the package allow to generate printable labels in @code{LaTeX}
+and PDF format, helping researchers and entomologists maintain accurate and
+standardized specimen records.  Requires a compatible installation of pdflatex
+(e.g. <https://www.tug.org/texlive/>).  For enhanced accessibility, the package
+includes a user-friendly shiny application (accessible online
+<https://nicolas-moiroux.shinyapps.io/@code{InsectLabelR/>}), which provides a
+graphical interface for generating labels without requiring programming
+expertise.")
+    (license license:gpl3+)))
 
 (define-public r-insect
   (package
@@ -10031,13 +10101,13 @@ users to fit latent variable models using the lavaan syntax.")
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "1sc23b7rmpzb836fjy4svmqfbkkpvh37j275mjjm1d3shdvhpjxn"))))
+        (base32 "19wm9lqv0z64ljchijq844xpnvpi6rlf61qvfrp99bjgrvawg8kn"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments
@@ -10171,13 +10241,13 @@ console).")
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.13.0")
+    (version "2.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlabru" version))
        (sha256
-        (base32 "1y908g6sjfp5anppp67d6d43jxqlqx46mmmqlwaca8ykig2n9cdj"))))
+        (base32 "1khx8sc2ymrs4i4c6awc1qyyxk0abij83zka85zr0c3cq122yd2b"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (arguments
@@ -10187,11 +10257,12 @@ console).")
                              r-tibble
                              r-sf
                              r-rlang
+                             r-rcpp
                              r-plyr
                              r-matrixmodels
                              r-matrix
-                             r-magrittr
                              r-lifecycle
+                             r-glue
                              r-fmesher
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -10329,6 +10400,36 @@ to follow the dependency inversion principle.  The user delegates to external
 code (the injector) the responsibility of providing its dependencies.  This
 separates the responsibilities of use and construction.")
     (license license:lgpl3+)))
+
+(define-public r-infoxtr
+  (package
+    (name "r-infoxtr")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infoxtr" version))
+       (sha256
+        (base32 "1h9p59lyn0hs2dw4y08l5y59j0invd5j30kqkvny4gdh8in58m18"))))
+    (properties `((upstream-name . "infoxtr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-sdsfun r-rcppthread r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://stscl.github.io/infoxtr/")
+    (synopsis
+     "Information-Theoretic Measures for Revealing Variable Interactions")
+    (description
+     "This package implements information-theoretic measures to explore variable
+interactions, including KSG mutual information estimation for continuous
+variables from Kraskov et al. (2004) <doi:10.1103/@code{PhysRevE.69.066138>},
+knockoff conditional mutual information described in Zhang & Chen (2025)
+<doi:10.1126/sciadv.adu6464>, synergistic-unique-redundant decomposition
+introduced by Martinez-Sanchez et al. (2024) <doi:10.1038/s41467-024-53373-4>,
+allowing detection of complex and diverse relationships among variables.")
+    (license license:gpl3)))
 
 (define-public r-infotrad
   (package
@@ -10551,13 +10652,13 @@ and NIV).")
 (define-public r-infocausality
   (package
     (name "r-infocausality")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "infocausality" version))
        (sha256
-        (base32 "1n43fgmbk5s3q1akaf79xkyc35mkn60iah4bjpb1q5cvr9826cf7"))))
+        (base32 "1kzn5v00aj3i9s1p98crwa2dkvwvj9dvv4xqsgs5vbg9xsml2d8h"))))
     (properties `((upstream-name . "infocausality")))
     (build-system r-build-system)
     (arguments
@@ -10814,6 +10915,35 @@ Estimator (EDE) to identify the inflection point of a curve .  Christopoulos, DT
 <https://demovtu.veltech.edu.in/wp-content/uploads/2016/04/Paper-04-2016.pdf> .
 Christopoulos, DT (2016) <doi:10.2139/ssrn.3043076> .")
     (license license:gpl2+)))
+
+(define-public r-inflationkit
+  (package
+    (name "r-inflationkit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inflationkit" version))
+       (sha256
+        (base32 "03wsgd7xm5yski0nfs22bayyhkdjxic2fddwnsjcna55d545y6bc"))))
+    (properties `((upstream-name . "inflationkit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/charlescoverdale/inflationkit")
+    (synopsis "Inflation Decomposition, Core Measures, and Trend Estimation")
+    (description
+     "This package provides tools for analysing inflation dynamics.  Computes weighted
+contributions of price index components, core inflation measures (trimmed mean,
+weighted median, exclusion-based) following Bryan and Cecchetti (1994)
+<doi:10.1016/0304-3932(94)90030-2>, inflation persistence via
+sum-of-AR-coefficients, diffusion indices, Phillips curve estimation, breakeven
+inflation, and trend inflation using the Beveridge-Nelson decomposition and
+Hodrick-Prescott filter.  All functions are pure computation and work with price
+data from any source.")
+    (license license:expat)))
 
 (define-public r-inflation
   (package
@@ -11242,6 +11372,38 @@ across individual assemblages.  Asymptotic 3D diversity estimates are also
 provided.  See Chao et al. (2021) <doi:10.1111/2041-210X.13682> for more
 details.")
     (license license:gpl3+)))
+
+(define-public r-inettool
+  (package
+    (name "r-inettool")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INetTool" version))
+       (sha256
+        (base32 "0n98ybq4qqf8macsv1w6syf6q1awflgw6bckw4gy31mihffzybgi"))))
+    (properties `((upstream-name . "INetTool")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robin
+                             r-r2r
+                             r-multinet
+                             r-igraph
+                             r-ggpubr
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=INetTool")
+    (synopsis "Integration Network")
+    (description
+     "It constructs a Consensus Network which identifies the general information of
+all the layers and Specific Networks for each layer with the information present
+only in that layer and not in all the others.The method is described in
+Policastro et al. (2024) \"INet for network integration\"
+<doi:10.1007/s00180-024-01536-8>.")
+    (license license:expat)))
 
 (define-public r-inet
   (package
@@ -12143,16 +12305,53 @@ guidance, making it easy for users to navigate between different analysis steps,
 and download intermediate results and publication-ready plots.")
     (license license:gpl3+)))
 
+(define-public r-incvcommunitydetection
+  (package
+    (name "r-incvcommunitydetection")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INCVCommunityDetection" version))
+       (sha256
+        (base32 "1sxdwbyqvk3rx1i2sxvwxyv5c6y22wcyj56gpqyhxvn9ywah2yn5"))))
+    (properties `((upstream-name . "INCVCommunityDetection")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspectra
+                             r-rfast
+                             r-matrix
+                             r-irlba
+                             r-imifa
+                             r-data-table
+                             r-clusterr
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ivylinzhang97/incv-community-detection")
+    (synopsis
+     "Inductive Node-Splitting Cross-Validation for Community Detection")
+    (description
+     "This package implements Inductive Node-Splitting Cross-Validation (INCV) for
+selecting the number of communities in stochastic block models.  Provides f-fold
+and random-split node-level cross-validation, along with competing methods
+including CROISSANT, Edge Cross-Validation (ECV), and Node Cross-Validation
+(NCV).  Supports both SBM and Degree-Corrected Block Models (DCBM), with
+multiple loss functions (L2, binomial deviance, AUC).  Includes network
+simulation utilities for SBM, RDPG, and latent space models.")
+    (license license:expat)))
+
 (define-public r-incubate
   (package
     (name "r-incubate")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incubate" version))
        (sha256
-        (base32 "1vgmdjk355f33kr8fdpzyvpxyl2qiq53hvdl8l0jbsznn6n75786"))))
+        (base32 "09wj9nnc4ymfz7vl8d5v21qxb78cc6bx7x2fdris5pjnbzlbgwm6"))))
     (properties `((upstream-name . "incubate")))
     (build-system r-build-system)
     (arguments
@@ -12162,20 +12361,24 @@ and download intermediate results and publication-ready plots.")
                              r-survival
                              r-rlang
                              r-purrr
+                             r-minqa
                              r-mass
                              r-glue
                              r-future-apply
-                             r-future))
+                             r-future
+                             r-cpp11))
+    (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/imb-dev/incubate/")
     (synopsis
      "Parametric Time-to-Event Analysis with Variable Incubation Phases")
     (description
      "Fit parametric models for time-to-event data that show an initial incubation
-period', i.e., a variable delay phase where the hazard is zero.  The delayed
-Weibull distribution serves as foundational data model.  The specific method of
-MPSE (maximum product of spacings estimation) and MLE-based methods are used for
-parameter estimation.  Bootstrap confidence intervals for parameters and
-significance tests in a two group setting are provided.")
+period', i.e., a variable delay phase where no events occur.  The delayed
+Weibull distribution serves as the foundational data model.  For parameter
+estimation, different flavours of maximum likelihood estimation ('MLE') and the
+method of maximum product of spacings estimation ('MPSE') are implemented.
+Bootstrap confidence intervals for parameters and significance tests in a two
+group setting are provided.")
     (license license:lgpl3+)))
 
 (define-public r-inctools
@@ -13852,13 +14055,13 @@ regulations.")
 (define-public r-immundata
   (package
     (name "r-immundata")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immundata" version))
        (sha256
-        (base32 "0g55pk21z8qw7d5k06nqm04csk2654fvww9y7cnbzds2laz19n0n"))))
+        (base32 "0bvw9x1jgyyzkv54h4q1zjfrzz7cg8di4pvijmazcc7mr2dnblib"))))
     (properties `((upstream-name . "immundata")))
     (build-system r-build-system)
     (arguments
@@ -14847,35 +15050,6 @@ within are general and have wide applications for image processing, analyzing,
 filtering, and plotting.")
     (license license:gpl3)))
 
-(define-public r-imagefluency
-  (package
-    (name "r-imagefluency")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "imagefluency" version))
-       (sha256
-        (base32 "1vvr66a3mr6gyhs0acymics9k6k9lq6kbmpy0k86z91fb34pipfz"))))
-    (properties `((upstream-name . "imagefluency")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readbitmap r-r-utils r-pracma r-openimager
-                             r-magick))
-    (native-inputs (list r-knitr))
-    (home-page "https://imagefluency.com")
-    (synopsis "Image Statistics Based on Processing Fluency")
-    (description
-     "Get image statistics based on processing fluency theory.  The functions provide
-scores for several basic aesthetic principles that facilitate fluent cognitive
-processing of images: contrast, complexity / simplicity, self-similarity,
-symmetry, and typicality.  See Mayer & Landwehr (2018) <doi:10.1037/aca0000187>
-and Mayer & Landwehr (2018) <doi:10.31219/osf.io/gtbhw> for the theoretical
-background of the methods.")
-    (license license:gpl3)))
-
 (define-public r-imagedata
   (package
     (name "r-imagedata")
@@ -15211,13 +15385,13 @@ calculating such metrics of tripartite networks by functions of this R package."
 (define-public r-ilsastats
   (package
     (name "r-ilsastats")
-    (version "0.4.0")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAstats" version))
        (sha256
-        (base32 "1gr6shcmkqr82z63gz9qssgdmfj8xfaia1dm75gkldxqmh6rn3xl"))))
+        (base32 "01s8f2dhdnqzsx85as3ph458pdv7gna2wnbvc2fnfb5w28s4hbz5"))))
     (properties `((upstream-name . "ILSAstats")))
     (build-system r-build-system)
     (arguments
@@ -15235,13 +15409,13 @@ multilevel regressions.")
 (define-public r-ilsamerge
   (package
     (name "r-ilsamerge")
-    (version "1.3.8")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAmerge" version))
        (sha256
-        (base32 "0hclpbzhc0pssb51ld0abyzicvmrzq1azbqm2vvl9ns5bwwz5ywm"))))
+        (base32 "1a9d1ry6fp2nlvharm984wn0596qpca4lvd9dh21jf8b6yybf7va"))))
     (properties `((upstream-name . "ILSAmerge")))
     (build-system r-build-system)
     (arguments
@@ -16007,19 +16181,19 @@ recording and analysing neuronal data.  See
 (define-public r-igor
   (package
     (name "r-igor")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igoR" version))
        (sha256
-        (base32 "1ycxwhz2i2l8nx8lclsnqnpc0i2bm6n63gl9g3rahxxr71q1jksp"))))
+        (base32 "110k9h2gna2f9m6sy3i510rg1f9g3jgqav5farxlh58gw57jad4r"))))
     (properties `((upstream-name . "igoR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/igoR/")
     (synopsis "Intergovernmental Organizations Database")
     (description
@@ -16076,13 +16250,13 @@ plots, lasagna plots and ambulatory glucose profile report.")
 (define-public r-iglm
   (package
     (name "r-iglm")
-    (version "1.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglm" version))
        (sha256
-        (base32 "0c0k6kk8s3xvccwxpizdhljv1a0fy8ap64s57h956p8cvg5npcdm"))))
+        (base32 "1v5s50zwr24xgvfzfjm9ci8331f6c6wf6hk57ichd20bn12ws494"))))
     (properties `((upstream-name . "iglm")))
     (build-system r-build-system)
     (arguments
@@ -16098,7 +16272,7 @@ plots, lasagna plots and ambulatory glucose profile report.")
                              r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=iglm")
-    (synopsis "Regression under Network Interference")
+    (synopsis "Regression under Interference in Connected Populations")
     (description
      "An implementation of generalized linear models (GLMs) for studying relationships
 among attributes in connected populations, where responses of connected units
@@ -16413,30 +16587,6 @@ technique on Indonesia food prices data that is time series data.  Also, this
 technique applies imputation to data whose dates do not appear directly.  So
 that the series assumptions in the time series data are met.")
     (license license:gpl3)))
-
-(define-public r-ifp
-  (package
-    (name "r-ifp")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IFP" version))
-       (sha256
-        (base32 "066wz6bjqcvq22gjg2wcmglp798f87rsc8yhm13p0dic3arb5ph6"))))
-    (properties `((upstream-name . "IFP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-haplo-stats r-coda))
-    (home-page "https://www.r-project.org")
-    (synopsis "Identifying Functional Polymorphisms")
-    (description
-     "This package provides a suite for identifying causal models using relative
-concordances and identifying causal polymorphisms in case-control genetic
-association data, especially with large controls re-sequenced data.")
-    (license license:gpl2+)))
 
 (define-public r-iforecast
   (package
@@ -17780,20 +17930,20 @@ box-counting dimension, and the information dimension.")
 (define-public r-idendr0
   (package
     (name "r-idendr0")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idendr0" version))
        (sha256
-        (base32 "11c12d166bp2i498d8y6ipg5jhz1xsdsrmnhjqnrqqzp9avvrsjp"))))
+        (base32 "086f53azy29897hwv856lb9diqbcwqpg8nsngl3bzpf40nh50rqi"))))
     (properties `((upstream-name . "idendr0")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tkrplot))
-    (home-page "http://github.com/tsieger/idendr0")
+    (home-page "https://github.com/tsieger/idendr0")
     (synopsis "Interactive Dendrograms")
     (description
      "Interactive dendrogram that enables the user to select and color clusters, to
@@ -18282,6 +18432,31 @@ Hart, J.D., Sheather, S.J. (2010).  Indirect cross-validation for density
 estimation.  Journal of the American Statistical Association, 105(489), 415-423
 <doi:10.1198/jasa.2010.tm08532>.")
     (license license:gpl2)))
+
+(define-public r-ictools
+  (package
+    (name "r-ictools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ictools" version))
+       (sha256
+        (base32 "1zh0r5nybmgxci7sl6w3sff317mzsxfp69bf5k7bfc1wrbvxbykk"))))
+    (properties `((upstream-name . "ictools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/RayanSiffeO/ictools")
+    (synopsis "Unified Tools for Classical and Bootstrap Confidence Intervals")
+    (description
+     "This package provides a unified and consistent interface for computing classical
+and bootstrap confidence intervals for means, variances, proportions, variance
+ratios, and regression coefficients.  The package offers a standardized output
+structure, S3 classes, and user-friendly methods to facilitate statistical
+analysis and reproducibility.")
+    (license license:expat)))
 
 (define-public r-ictest
   (package
@@ -19508,39 +19683,37 @@ et al (2020) <doi:10.1101/2020.05.05.078550> and Khodadadi-Jamayran, et al
 (2020) <doi:10.1101/2020.03.31.019109> for more details.")
     (license license:gpl2)))
 
-(define-public r-iceinfer
+(define-public r-icehmeasures
   (package
-    (name "r-iceinfer")
-    (version "1.3")
+    (name "r-icehmeasures")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "ICEinfer" version))
+       (uri (cran-uri "ICEHmeasures" version))
        (sha256
-        (base32 "0hg1vdg9clsk24lqdh89dfzlb0mnig690wq06pzd5nl9mr6dlvns"))))
-    (properties `((upstream-name . "ICEinfer")))
+        (base32 "0xqpiv75ydklbbnzp99idy0i4aca8a5mfbz4gz9h6mq6iz3jnfdj"))))
+    (properties `((upstream-name . "ICEHmeasures")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lattice))
-    (home-page "https://www.R-project.org")
-    (synopsis
-     "Incremental Cost-Effectiveness Inference using Two Unbiased Samples")
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survey
+                             r-rlang
+                             r-ggplot2
+                             r-dplyr
+                             r-car))
+    (home-page "https://cran.r-project.org/package=ICEHmeasures")
+    (synopsis "The Equiplot Graph and Complex Inequality Measures")
     (description
-     "Given two unbiased samples of patient level data on cost and effectiveness for a
-pair of treatments, make head-to-head treatment comparisons by (i) generating
-the bivariate bootstrap resampling distribution of ICE uncertainty for a
-specified value of the shadow price of health, lambda, (ii) form the
-wedge-shaped ICE confidence region with specified confidence fraction within
-[0.50, 0.99] that is equivariant with respect to changes in lambda, (iii) color
-the bootstrap outcomes within the above confidence wedge with economic
-preferences from an ICE map with specified values of lambda, beta and gamma
-parameters, (iv) display VAGR and ALICE acceptability curves, and (v) illustrate
-variation in ICE preferences by displaying potentially non-linear
-indifference(iso-preference) curves from an ICE map with specified values of
-lambda, beta and either gamma or eta parameters.")
-    (license license:gpl2)))
+     "Generates the equiplot, an iconic dot-plot graph for visualizing inequalities,
+as well as three complex inequality measures: the slope index of inequality, the
+concentration index and the mean absolute difference to the mean.  For more
+details see World Health Organization (2013)
+<https://www.who.int/docs/default-source/gho-documents/health-equity/handbook-on-health-inequality-monitoring/handbook-on-health-inequality-monitoring.pdf>.")
+    (license license:expat)))
 
 (define-public r-iced
   (package
@@ -19593,6 +19766,37 @@ version release name: \"Good work squirrels\".")
 single function, @code{ic()}.  Wrap an expression in @code{ic()} to print the
 expression, its value and (where available) its source location.  Debugging
 output can be toggled globally without modifying code.")
+    (license license:expat)))
+
+(define-public r-icecdr
+  (package
+    (name "r-icecdr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icecdr" version))
+       (sha256
+        (base32 "1r4x7nycbdk0dmrvyb081rg4km3bgyqmxrvm7l8f1k683zps1k2p"))))
+    (properties `((upstream-name . "icecdr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-httr2
+                             r-glue
+                             r-digest
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/eliocamp/icecdr")
+    (synopsis
+     "Download Sea Ice Concentration Data from the NSIDC Climate Data Record")
+    (description
+     "Programmatic access to NSIDC's sea ice concentration CDR versions 4 and 5
+<https://nsidc.org/data/g02135/versions/4> via its ERDAPP server and Sea Ice
+index <https://nsidc.org/data/g02135/versions/4>.  Supports caching results and
+optional fixes for some inconsistencies of the raw files.")
     (license license:expat)))
 
 (define-public r-icebox
@@ -21148,13 +21352,13 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
 (define-public r-ibawds
   (package
     (name "r-ibawds")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibawds" version))
        (sha256
-        (base32 "098rxab5sgm50j3bhms95bfall4g83hficc13a7k4s8ri2gbhsxy"))))
+        (base32 "0iznbqkhm9idjr3wdnsk11i7rrr91w5h5di897h1pfv6wjrb0i96"))))
     (properties `((upstream-name . "ibawds")))
     (build-system r-build-system)
     (arguments
@@ -21173,6 +21377,7 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
                              r-ggplot2
                              r-dslabs
                              r-dplyr
+                             r-deldir
                              r-cli))
     (home-page "https://stibu81.github.io/ibawds/")
     (synopsis "Functions and Datasets for the Data Science Course at IBAW")
@@ -21322,30 +21527,6 @@ that trial (0=correct, 1=incorrect), and the participantâs reaction time (i
 milliseconds).  A sample dataset (titled sampledata') is included in this
 package to practice with.")
     (license license:expat)))
-
-(define-public r-iat
-  (package
-    (name "r-iat")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IAT" version))
-       (sha256
-        (base32 "110rn2q09gspfd4msyh30dllxdxdraffkr18h1nm72brzhmx9cfi"))))
-    (properties `((upstream-name . "IAT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lazyeval r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=IAT")
-    (synopsis "Cleaning and Visualizing Implicit Association Test (IAT) Data")
-    (description
-     "This package implements the standard D-Scoring algorithm (Greenwald, Banaji, &
-Nosek, 2003) for Implicit Association Test (IAT) data and includes plotting
-capabilities for exploring raw IAT data.")
-    (license license:asl2.0)))
 
 (define-public r-iasd
   (package

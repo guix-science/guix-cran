@@ -620,13 +620,13 @@ details.")
 (define-public r-quicksentiment
   (package
     (name "r-quicksentiment")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickSentiment" version))
        (sha256
-        (base32 "0qxig3h402lzap4h15xz7my1z8csgf4bk74piyvarjswnwicmd4j"))))
+        (base32 "1r66z70apk63pnyhmr4n0l0z1xp8kxbgq5sz727z05xqk9dz4vb6"))))
     (properties `((upstream-name . "quickSentiment")))
     (build-system r-build-system)
     (arguments
@@ -638,7 +638,6 @@ details.")
                              r-stopwords
                              r-ranger
                              r-quanteda
-                             r-proc
                              r-naivebayes
                              r-matrix
                              r-magrittr
@@ -739,20 +738,20 @@ proposed by JVitter (1985) <doi:10.1145/3147.3165>.")
 (define-public r-quickpsy
   (package
     (name "r-quickpsy")
-    (version "0.1.5.1")
+    (version "0.1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickpsy" version))
        (sha256
-        (base32 "0dfqlpghnw79idw3ir03cxx9n88sqs5p14jz7jgpkdwvjpw1y4q9"))))
+        (base32 "10815y73s0g1zxavha7d0430aqcin3lijnk5f7m0xnv45r5rnv1s"))))
     (properties `((upstream-name . "quickpsy")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mpdir r-ggplot2 r-dplyr r-deoptim))
-    (home-page "http://dlinares.org/quickpsy.html")
+    (home-page "https://dlinares.org/quickpsy.html")
     (synopsis "Fits Psychometric Functions for Multiple Groups")
     (description
      "Quickly fits and plots psychometric functions (normal, logistic, Weibull or any
@@ -1406,13 +1405,13 @@ Causal Quartets\" (Gelman et al.  2023) <doi:10.48550/@code{arXiv.2302.12878>}."
 (define-public r-quartet
   (package
     (name "r-quartet")
-    (version "1.2.7")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Quartet" version))
        (sha256
-        (base32 "082g4wxbvrkqwkaak29ngpd523d3ygxpffghf1vfp1r2v6761s9r"))))
+        (base32 "10x9pgqqnbk43kyqbki8pigsz7mb8lwdpidy8642ajagvma41ds1"))))
     (properties `((upstream-name . "Quartet")))
     (build-system r-build-system)
     (arguments
@@ -2530,6 +2529,44 @@ focused on data that are drawn on a map that contains some type of polygon
 features.  For each area identified on the map, the id numbers of these polygons
 can be entered as vectors and transformed using qualmap.")
     (license license:gpl3)))
+
+(define-public r-quallmer-app
+  (package
+    (name "r-quallmer-app")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quallmer.app" version))
+       (sha256
+        (base32 "18dvahcniavvfcbkamnd75r3n37pi4yp2nj83qkp4jds67d0b3a9"))))
+    (properties `((upstream-name . "quallmer.app")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shiny
+                             r-quallmer
+                             r-irr
+                             r-htmltools
+                             r-dplyr
+                             r-cli
+                             r-bslib))
+    (home-page "https://github.com/quallmer/quallmer.app")
+    (synopsis "Interactive Validation App for 'quallmer'")
+    (description
+     "Companion package to quallmer providing an interactive shiny application for
+manual coding, reviewing large language model (LLM) generated annotations, and
+computing inter-rater reliability metrics.  Supports three modes: blind manual
+coding, LLM output validation, and agreement calculation.  Computes standard
+reliability metrics including Krippendorff's alpha (Krippendorff 2019
+<doi:10.4135/9781071878781>), Cohen's kappa, Fleiss kappa (Fleiss 1971
+<doi:10.1037/h0031619>), intraclass correlation coefficient (ICC), and percent
+agreement for nominal, ordinal, interval, and ratio data.  Also computes
+gold-standard validation metrics including accuracy, precision, recall, and F1
+scores following Sokolova and Lapalme (2009 <doi:10.1016/j.ipm.2009.03.002>).")
+    (license license:expat)))
 
 (define-public r-quallmer
   (package
@@ -3808,6 +3845,41 @@ plotting of circuits and is able to export circuits to Qiskit
 hardware <https://quantum-computing.ibm.com/>.")
     (license license:gpl3)))
 
+(define-public r-qshap
+  (package
+    (name "r-qshap")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qshap" version))
+       (sha256
+        (base32 "11xxihcja4s2y3r6saih11a2f249152ni5dmfz37l3rgnmz1khcv"))))
+    (properties `((upstream-name . "qshap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-viridislite
+                             r-rcppeigen
+                             r-rcpp
+                             r-progress
+                             r-lightgbm
+                             r-jsonlite
+                             r-ggplot2))
+    (home-page "https://github.com/catstats/Q-SHAP_R")
+    (synopsis "Fast Calculation of Feature Contributions in Boosting Trees")
+    (description
+     "Computes feature-specific R-squared (R2) contributions for boosting tree models
+using a Shapley-value-based decomposition of the total R-squared in polynomial
+time.  Supports models fitted with XGBoost and @code{LightGBM}', and provides
+efficient parallel implementations suitable for large-scale problems.  Multiple
+visualization tools are included for interpreting and communicating feature
+contributions.  The methodology is described in Jiang, Zhang, and Zhang (2025)
+<doi:10.48550/@code{arXiv.2407.03515>}.")
+    (license license:gpl2+)))
+
 (define-public r-qsardata
   (package
     (name "r-qsardata")
@@ -4857,13 +4929,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "012wkjnx34i4i8r2ln37j67m61p88ccprgpfkp22zbka6jh2igjp"))))
+        (base32 "13jqp0887xyx9y75rxj8jkx66fbx5fd22x7cdk4nyn511f1ff7x3"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments
@@ -5192,35 +5264,6 @@ file AUTHORS for a full list of contributors to @code{QuantLib} (and hence also
 Quantuccia').")
     (license license:gpl2+)))
 
-(define-public r-qkerntool
-  (package
-    (name "r-qkerntool")
-    (version "1.19")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qkerntool" version))
-       (sha256
-        (base32 "14inry2hqvkmy0y2y3cl75ri4vri0hirv98gw2rymny69lia5x0s"))))
-    (properties `((upstream-name . "qkerntool")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-class))
-    (home-page "https://cran.r-project.org/package=qkerntool")
-    (synopsis
-     "Q-Kernel-Based and Conditionally Negative Definite Kernel-Based Machine Learning Tools")
-    (description
-     "Nonlinear machine learning tool for classification, clustering and
-dimensionality reduction.  It integrates 12 q-kernel functions and 15
-conditional negative definite kernel functions and includes the q-kernel and
-conditional negative definite kernel version of density-based spatial clustering
-of applications with noise, spectral clustering, generalized discriminant
-analysis, principal component analysis, multidimensional scaling, locally linear
-embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
-    (license license:gpl2+)))
-
 (define-public r-qindex-data
   (package
     (name "r-qindex-data")
@@ -5490,13 +5533,13 @@ ISBN:978-0972072427).")
 (define-public r-qgisprocess
   (package
     (name "r-qgisprocess")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgisprocess" version))
        (sha256
-        (base32 "0l3rql8w12kqgaz6fczmm4b7mxxagm60d3fvw1i2sv1wdqwlb269"))))
+        (base32 "0aa65x4nd2dyk00q4vin89s3c6394py387hlc5jllmg8qi8mypvi"))))
     (properties `((upstream-name . "qgisprocess")))
     (build-system r-build-system)
     (arguments
@@ -5627,13 +5670,13 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
 (define-public r-qgcomp
   (package
     (name "r-qgcomp")
-    (version "2.18.7")
+    (version "2.18.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgcomp" version))
        (sha256
-        (base32 "1cx1mxj8qc7sp8qmzi74y6g8x2cvw90ny3bslqfy92cmb99pj4wl"))))
+        (base32 "0w1pkaq30wb80s2y16bgfgll54phfzlplam7k0kjwhpkv648zlzp"))))
     (properties `((upstream-name . "qgcomp")))
     (build-system r-build-system)
     (arguments
@@ -5901,44 +5944,56 @@ fatty acid signature analysis (QFASA) to study predator diets.")
 (define-public r-qfa
   (package
     (name "r-qfa")
-    (version "4.2")
+    (version "5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qfa" version))
        (sha256
-        (base32 "0x4y45b0mx6vag5ixsd8ax37cg1dwni3kblna74cam82xkpa8lbq"))))
+        (base32 "14wfw7fzh6mrhp7vrqpl0ln37ydyd9gv2f9h8gvkf3w8csirgw42"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rhpcblasctl
+    (propagated-inputs (list r-sparsem
+                             r-rhpcblasctl
                              r-quantreg
+                             r-piqp
+                             r-osqp
                              r-nlme
                              r-mgcv
+                             r-matrix
                              r-mass
                              r-foreach
                              r-fields
                              r-doparallel
-                             r-colorramps))
+                             r-colorramps
+                             r-boot))
     (native-inputs (list gfortran))
     (home-page "https://github.com/IBM/qfa")
-    (synopsis "Quantile-Frequency Analysis (QFA) of Time Series")
+    (synopsis
+     "Quantile-Frequency Analysis (QFA) of Time Series and Spline Quantile Regression (SQR)")
     (description
-     "Quantile-frequency analysis (QFA) of time series based on trigonometric quantile
-regression.  Spline quantile regression (SQR) for regression coefficient
-estimation.  References: [1] Li, T.-H. (2012) \"Quantile periodograms,\" Journal
-of the American Statistical Association, 107, 765â776,
-<doi:10.1080/01621459.2012.682815>. [2] Li, T.-H. (2014) Time Series with Mixed
-Spectra, CRC Press, <doi:10.1201/b15154> [3] Li, T.-H. (2022) \"Quantile Fourier
-transform, quantile series, and nonparametric estimation of quantile spectra,\"
-<doi:10.48550/@code{arXiv.2211.05844>}. [4] Li, T.-H. (2024) \"Quantile crossing
-spectrum and spline autoregression estimation,\"
-<doi:10.48550/@code{arXiv.2412.02513>}. [5] Li, T.-H. (2024) \"Spline
-autoregression method for estimation of quantile spectrum,\"
-<doi:10.48550/@code{arXiv.2412.17163>}. [6] Li, T.-H., and Megiddo, N. (2025)
-\"Spline quantile regression,\" <doi:10.48550/@code{arXiv.2501.03883>}.")
+     "Implementation of quantile frequency analysis (QFA) for time series based on
+trigonometric quantile regression and of spline quantile regression (SQR) for
+estimating the coefficients in linear quantile regression models as smooth
+functions of the quantile level.  References: [1] Li, T.-H. (2012).  Quantile
+periodograms, J. of the American Statistical Association, 107, 765â776.
+<doi:10.1080/01621459.2012.682815> [2] Li, T.-H. (2014).  Time Series with Mixed
+Spectra, CRC Press. <doi:10.1201/b15154> [3] Li, T.-H. (2025).  Quantile Fourier
+transform, quantile series, and nonparametric estimation of quantile spectra,
+Communications in Statistics: Simulation and Computation, 1â22.
+<doi:10.1080/03610918.2025.2509820> [4] Li, T.-H. (2025).  Quantile-crossing
+spectrum and spline autoregression estimation, Statistical Inference for
+Stochastic Processes, 28, 20. <doi:10.1007/s11203-025-09336-7> [5] Li, T.-H.
+(2025).  Spline autoregression method for estimation of quantile spectrum, J. of
+Computational and Graphical Statistics, 1-15.
+<doi:10.1080/10618600.2025.2549452> [6] Li, T.-H., and Megiddo, N. (2026).
+Spline quantile regression, J. of Statistical Theory and Practice, 20, 30.
+<doi:10.1007/s42519-026-00545-8> [7] Li, T.-H. (2026).  Spline quantile
+regression with cubic and linear smoothing splines,
+<doi:10.48550/@code{arXiv.2603.22408>}.")
     (license license:gpl2+)))
 
 (define-public r-qf
@@ -6697,35 +6752,20 @@ introducing power estimation for QCA is: Rohlfing, Ingo (2018)
 (define-public r-qca
   (package
     (name "r-qca")
-    (version "3.23")
+    (version "3.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QCA" version))
        (sha256
-        (base32 "016xvl4mwq51l55v3k5pvi996lvzvak71arggfjr7r0sfa6b1kym"))))
+        (base32 "0ycvlw1kzhz033gj6g314li7hnvawk2napz8sy6h4qxbad30fnc4"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  ((guix build minify-build-system)
-                   #:select (minify))
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-venn r-shiny r-lpsolve r-declared r-admisc))
-    (native-inputs (list esbuild))
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-venn r-lpsolve r-declared r-admisc))
     (home-page "https://github.com/dusadrian/QCA")
     (synopsis "Qualitative Comparative Analysis")
     (description
@@ -6965,6 +7005,34 @@ for use as an example dataset outside the United States.  For more details see
 Musgrave (2025) <doi:10.1080/15512169.2025.2572320>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-qardlr
+  (package
+    (name "r-qardlr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qardlr" version))
+       (sha256
+        (base32 "0gsl3ci7gaxy70z46n1j5pdi67pba57j2phazr6mjgq7qpswhq3a"))))
+    (properties `((upstream-name . "qardlr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-mass))
+    (home-page "https://github.com/muhammedalkhalaf/qardlr")
+    (synopsis "Quantile Autoregressive Distributed Lag Model")
+    (description
+     "This package implements the Quantile Autoregressive Distributed Lag (QARDL)
+model of Cho, Kim and Shin (2015) <doi:10.1016/j.jeconom.2015.01.003>.
+Estimates quantile-specific long-run (beta), short-run autoregressive (phi), and
+impact (gamma) parameters.  Features include BIC-based automatic lag selection,
+Error Correction Model (ECM) parameterization, Wald tests for parameter
+constancy across quantiles, rolling/recursive QARDL estimation, Monte Carlo
+simulation, and publication-ready output tables.")
+    (license license:gpl3)))
+
 (define-public r-qapprox
   (package
     (name "r-qapprox")
@@ -7083,6 +7151,34 @@ Highest Posterior Density Estimation algorithm is used for obtaining credible
 intervals and the potential scale reduction factor diagnostic is used for
 checking the convergence of the chains.")
     (license license:gpl2+)))
+
+(define-public r-qadf
+  (package
+    (name "r-qadf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qadf" version))
+       (sha256
+        (base32 "0zcynpx8f5sb9pwgl8gy5vp5vs6db27l4mpfnxmysz36sfihcamr"))))
+    (properties `((upstream-name . "qadf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg))
+    (home-page "https://github.com/muhammedalkhalaf/qadf")
+    (synopsis "Quantile Autoregressive Distributed Lag Unit Root Test")
+    (description
+     "This package implements the Quantile Autoregressive Distributed Lag (QADF) unit
+root test proposed by Koenker and Xiao (2004) <doi:10.1198/016214504000001114>.
+The test examines unit root behaviour across the conditional distribution of a
+time series using quantile regression, providing a richer characterisation of
+persistence than standard ADF tests.  Critical values follow Hansen (1995)
+<doi:10.1017/S0266466600009713>.  Lag order selection is supported via AIC, BIC,
+or the t-statistic sequential testing approach.")
+    (license license:gpl3)))
 
 (define-public r-qad
   (package

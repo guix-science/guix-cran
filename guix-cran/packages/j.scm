@@ -9,8 +9,8 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages julia)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages java)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages z)
@@ -330,6 +330,28 @@ for replicability analysis based on maximum of p-values.  Please cite the
 manuscript corresponding to this package [Lyu, P. et al., (2023),
 <doi:10.1093/bioinformatics/btad366>].")
     (license license:gpl3)))
+
+(define-public r-jumble
+  (package
+    (name "r-jumble")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jumble" version))
+       (sha256
+        (base32 "0kmkb8xalhfbp395q1apgj7w8d9ma2589li8jb0mg8i7g6v15129"))))
+    (properties `((upstream-name . "jumble")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/davidhodge931/jumble")
+    (synopsis "Discrete Colour Palette")
+    (description
+     "This package provides a pretty discrete colour palette that is also relatively
+colourblind and contrast-safe for a light background.")
+    (license license:expat)))
 
 (define-public r-juliaformulae
   (package
@@ -868,13 +890,13 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.3.24")
+    (version "1.3.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "0qc89iw0bq49kdahhhyqjga435jdbhdn5jrb2g10wqkj8672xwam"))))
+        (base32 "18l6f51ldhpfk6q7v5gj74q6xsfjw3rqsmms3c00i77qpb3992b8"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (arguments
@@ -1221,13 +1243,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "00yqj7fxbv0rhvq5zna6xv2f866jc2d15as9dmlylwhcafkgc966"))))
+        (base32 "1gz8ci4c91ci8yzdk4aldfmmlm9hsaxz4yyqiqkav4gcmhnig9w4"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -1271,6 +1293,31 @@ estimator.")
      "Allow to run jshint on @code{JavaScript} files with a R command or a RStudio
 addin.  The report appears in the RStudio viewer pane.")
     (license license:gpl3)))
+
+(define-public r-jsdtools
+  (package
+    (name "r-jsdtools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsdtools" version))
+       (sha256
+        (base32 "0svbkdbn64b219kqvnihsl9j1iq5l233aywnfplcp6830djrp247"))))
+    (properties `((upstream-name . "jsdtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=jsdtools")
+    (synopsis
+     "Jensen-Shannon Divergence Estimation, Confidence Intervals, and Distribution Plots")
+    (description
+     "Estimates Jensen-Shannon divergence (JSD) for quantifying distributional
+differences between two groups on a given variable.  Supports both continuous
+and discrete variables, with tools for point estimation, bootstrap confidence
+intervals, and visualization of raw group-specific distributions.")
+    (license license:gpl3+)))
 
 (define-public r-jsdne
   (package
@@ -2643,13 +2690,13 @@ also available.")
 (define-public r-joinspy
   (package
     (name "r-joinspy")
-    (version "0.7.3")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joinspy" version))
        (sha256
-        (base32 "1yw730r9gs4519dlxffcw3kvph6cwysh4h3c4n5wc6xz31zkwdrs"))))
+        (base32 "1pngd3h23pb9c47iqs2cv17ww4asag3mb9i9xd4nkdlrrld3k6zl"))))
     (properties `((upstream-name . "joinspy")))
     (build-system r-build-system)
     (arguments
@@ -3580,6 +3627,33 @@ handle earthquake record files.")
 data.")
     (license license:gpl2+)))
 
+(define-public r-jlview
+  (package
+    (name "r-jlview")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jlview" version))
+       (sha256
+        (base32 "0cxmlq0906w77wgj0d5jqh6hsqs5qb00q3nd3j1lsw1r012dg8h3"))))
+    (properties `((upstream-name . "jlview")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list julia))
+    (propagated-inputs (list r-matrix r-juliacall))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tanaylab/jlview")
+    (synopsis "Zero-Copy Julia to R Array Bridge via ALTREP")
+    (description
+     "This package provides zero-copy R views of Julia-owned arrays by implementing
+ALTREP (Alternative Representations) classes that return pointers directly into
+Julia's memory.  The package integrates with @code{JuliaCall} and uses C-level
+finalizers for safe cross-runtime garbage collection.")
+    (license license:expat)))
+
 (define-public r-jlpm
   (package
     (name "r-jlpm")
@@ -3978,6 +4052,39 @@ of example code.")
 virtual environment with minimal additional files in your project.  Provides
 tools to add, remove, and update dependencies as well as install existing
 dependencies with a single function.")
+    (license license:expat)))
+
+(define-public r-jentre
+  (package
+    (name "r-jentre")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jentre" version))
+       (sha256
+        (base32 "067988nrn2zlid6qqg7ix0a84zswz34dwdlw9839v8qxa7qn6sdz"))))
+    (properties `((upstream-name . "jentre")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-vctrs
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-cli))
+    (home-page "https://github.com/cidm-ph/jentre")
+    (synopsis "Toolkit for the 'Entrez' API")
+    (description
+     "Interact with the Entrez API hosted by the National Center for Biotechnology
+Information (NCBI), <https://www.ncbi.nlm.nih.gov/books/NBK25499/>.  This
+package is focused on working with sequence metadata and links.  It handles
+pagination and compensates for some API limitations to simplify these tasks.
+API calls are printed to the console to highlight how high-level queries are
+translated into individual HTTP requests.")
     (license license:expat)))
 
 (define-public r-jenga
@@ -4524,13 +4631,13 @@ BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
 (define-public r-jarbes
   (package
     (name "r-jarbes")
-    (version "2.4.2")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jarbes" version))
        (sha256
-        (base32 "0d5hkmfhm1d6x17s7lm0skw1416mcac0l0i6cq9wpdrg4blpj6q4"))))
+        (base32 "0430cxrx24rmm6zii4aams7wkgyavsyg5p6phwsn3lichml6068v"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
     (arguments
