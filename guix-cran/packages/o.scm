@@ -8677,31 +8677,29 @@ and air mass trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.19.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openair" version))
        (sha256
-        (base32 "0cj3bkynq43q5a8q99p0x938j9fv9vslyffkbgdivhm1wgz0jgpw"))))
+        (base32 "18p5ij79qbxanlch0papdary8gsswrn4i7v4gb17gpyjx77jhy91"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tibble
+                             r-scales
                              r-rlang
                              r-readr
                              r-rcpp
                              r-purrr
+                             r-patchwork
                              r-mgcv
                              r-mass
-                             r-mapproj
                              r-lubridate
-                             r-latticeextra
-                             r-lattice
-                             r-hexbin
+                             r-ggplot2
                              r-dplyr
                              r-cluster
                              r-cli))

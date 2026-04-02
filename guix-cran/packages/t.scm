@@ -23619,13 +23619,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "0c9pwijkisxdrws69n3651lgnyinrdmyy7bqmzipdbsaf9s8dj1m"))))
+        (base32 "1wf93k476k7084mjpfyx9a1250mcgk9bki2jrw3ga1px4jd0ri16"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -23650,24 +23650,27 @@ tasks to streamline workflows.")
 (define-public r-thisplot
   (package
     (name "r-thisplot")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisplot" version))
        (sha256
-        (base32 "036fpys1rfb31l0xdshlcf1cyjzni58xy3sg61dsp56975ajdz69"))))
+        (base32 "1f3j2hdsih7ck6nsd3vsqg258vsmvgjmwc2c61rpw2hr2hdbpzsv"))))
     (properties `((upstream-name . "thisplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-thisutils
+                             r-reshape2
+                             r-proxyc
                              r-patchwork
                              r-igraph
                              r-gtable
                              r-ggrepel
                              r-ggplot2
+                             r-ggnewscale
                              r-geomtextpath
                              r-dendextend
                              r-cli))
@@ -34126,30 +34129,6 @@ created by the tables and xtable packages.  Methods can be added to display
 other table-like objects.  A vignette is included that illustrates usage and
 options available in the package.")
     (license license:gpl3+)))
-
-(define-public r-tables
-  (package
-    (name "r-tables")
-    (version "0.9.33")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tables" version))
-       (sha256
-        (base32 "0vzja9g5w8afr68q0nx8szl7zx3f8z7dwzf6zhc0lzysrsm8g4kv"))))
-    (properties `((upstream-name . "tables")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-knitr r-htmltools))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://dmurdoch.github.io/tables/")
-    (synopsis "Formula-Driven Table Generation")
-    (description
-     "Computes and displays complex tables of summary statistics.  Output may be in
-@code{LaTeX}, HTML, plain text, or an R matrix for further processing.")
-    (license license:gpl2)))
 
 (define-public r-tabler
   (package

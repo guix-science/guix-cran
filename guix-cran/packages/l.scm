@@ -19736,6 +19736,30 @@ wave energy calculations.  Includes an optional interactive shiny application
 for visualization.")
     (license license:expat)))
 
+(define-public r-lair
+  (package
+    (name "r-lair")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LAIr" version))
+       (sha256
+        (base32 "092dk6fhp0fkd2fxhwqxfhrm4im1z8dvyd9kg4m2dbyyn17h5i1c"))))
+    (properties `((upstream-name . "LAIr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-stringr r-purrr r-dplyr))
+    (home-page "https://cran.r-project.org/package=LAIr")
+    (synopsis "Converting NDVI to LAI of Field, Proximal and Satellite Data")
+    (description
+     "Convert Leaf Area Index (LAI) from the Normalized Difference Vegetation Index
+(NDVI) using available equations from literature.  Detailed description of
+conversion equations in Bajocco et al.  2022 <doi:10.3390/rs14153554>.")
+    (license license:expat)))
+
 (define-public r-lahman
   (package
     (name "r-lahman")

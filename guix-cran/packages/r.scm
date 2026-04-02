@@ -37,9 +37,6 @@
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages chemistry)
-  #:use-module (gnu packages version-control)
-  #:use-module (gnu packages mpi)
-  #:use-module (gnu packages base)
   #:use-module (gnu packages pcre)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -24145,13 +24142,13 @@ Based on \"Robust Likelihood Cross-Validation for Kernel Density Estimation,\" W
 (define-public r-rlas
   (package
     (name "r-rlas")
-    (version "1.8.4")
+    (version "1.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlas" version))
        (sha256
-        (base32 "1mihqixx5mxnx28ss76c8qfqqwhyqjw0brqadg8adn8j1mmr2jz9"))))
+        (base32 "0k0370fwy9h6r2k6p8gjpnd739c2iip59cihkvx921gc8zrrf9lk"))))
     (properties `((upstream-name . "rlas")))
     (build-system r-build-system)
     (arguments
@@ -34837,6 +34834,38 @@ least-squares problem\", Computational Statistics 34(1): 23-46,
 <doi:10.1007/s00180-018-0837-4>.")
     (license license:gpl2+)))
 
+(define-public r-rescomp
+  (package
+    (name "r-rescomp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rescomp" version))
+       (sha256
+        (base32 "0i2ay95jg6rmgi5pbgmx68y0a7yyncab670bas8h5cf02vzi7jgj"))))
+    (properties `((upstream-name . "rescomp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-glue
+                             r-ggplot2
+                             r-desolve
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pyrrhicpachyderm/rescomp")
+    (synopsis "Efficient Modelling of Resource Competition")
+    (description
+     "Generate, simulate and visualise ODE models of consumer-resource interactions.
+At its core, rescomp provides a resource competition modelling focused interface
+to @code{deSolve}', alongside flexible functions for visualising model
+properties and dynamics.  More information, documentation and examples can be
+found on the package website.")
+    (license license:expat)))
+
 (define-public r-resampledata3
   (package
     (name "r-resampledata3")
@@ -39856,6 +39885,38 @@ reliability.  With integrated tools for assessing key aspects like linearity,
 homoscedasticity, and more.  It's a valuable asset for researchers and analysts
 working with regression models.")
     (license license:gpl3+)))
+
+(define-public r-refundbayes
+  (package
+    (name "r-refundbayes")
+    (version "0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "refundBayes" version))
+       (sha256
+        (base32 "024nl2ma955pkdd6ddmhk7vwv8cpfg2zc499rl11c4a8pzzyzbaj"))))
+    (properties `((upstream-name . "refundBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splines2
+                             r-rstan
+                             r-refund
+                             r-mgcv
+                             r-ggplot2
+                             r-dplyr
+                             r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ZirenJiang/refundBayes")
+    (synopsis "Bayesian Regression with Functional Data")
+    (description
+     "Bayesian regression with functional data, including regression with scalar,
+survival, or functional outcomes.  The package allows regression with scalar and
+functional predictors.  Methods are described in Jiang et al. (2025) \"Tutorial
+on Bayesian Functional Regression Using Stan\" <doi:10.1002/sim.70265>.")
+    (license license:gpl2)))
 
 (define-public r-refund-shiny
   (package
@@ -47751,41 +47812,6 @@ contributors to both @code{QuantLib} and Quantuccia'.  Note that this package
 provided an initial viability proof, current work is done (via approximately
 quarterly releases tracking @code{QuantLib}') in the smaller package qlcal which
 is generally preferred.")
-    (license license:gpl2+)))
-
-(define-public r-rcppplanc
-  (package
-    (name "r-rcppplanc")
-    (version "2.0.15")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppPlanc" version))
-       (sha256
-        (base32 "14hg3mrfi7wrhdsgbhqyxaixdbnycr3knbsxaky59rs3lcn1sm87"))))
-    (properties `((upstream-name . "RcppPlanc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list patch hwloc hdf5 git))
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-highfive
-                             r-hdf5r-extra))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/welch-lab/RcppPlanc/")
-    (synopsis "Parallel Low-Rank Approximation with Nonnegativity Constraints")
-    (description
-     "Rcpp bindings for PLANC', a highly parallel and extensible NMF/NTF (Non-negative
-Matrix/Tensor Factorization) library.  Wraps algorithms described in Kannan et.
-al (2018) <doi:10.1109/TKDE.2017.2767592> and Eswar et.  al (2021)
-<doi:10.1145/3432185>.  Implements algorithms described in Welch et al. (2019)
-<doi:10.1016/j.cell.2019.05.006>, Gao et al. (2021)
-<doi:10.1038/s41587-021-00867-x>, and Kriebel & Welch (2022)
-<doi:10.1038/s41467-022-28431-4>.")
     (license license:gpl2+)))
 
 (define-public r-rcppnloptexample

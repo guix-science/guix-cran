@@ -26145,40 +26145,6 @@ information about the theoretical background of the package, please refer to
 Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
     (license license:expat)))
 
-(define-public r-farr
-  (package
-    (name "r-farr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "farr" version))
-       (sha256
-        (base32 "0jx9js1lqzr20n0n2raa3kf2xxx7yg8vmf8sc7z7zn5ifkqyalmi"))))
-    (properties `((upstream-name . "farr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rpart
-                             r-rlang
-                             r-readr
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi))
-    (home-page "https://github.com/iangow/farr")
-    (synopsis "Data and Code for Empirical Research in Accounting")
-    (description
-     "Handy functions and data to support the course book Empirical Research in
-Accounting: Tools and Methods (1st ed.).  Chapman and Hall/CRC.
-<doi:10.1201/9781003456230> and <https://iangow.github.io/far_book/>.")
-    (license license:expat)))
-
 (define-public r-farff
   (package
     (name "r-farff")

@@ -26147,40 +26147,6 @@ Khoshgoftaar, Jason Van Hulse, and Amri Napolitano (2010)
 <doi:10.1006/jcss.1997.1504>.")
     (license license:gpl3+)))
 
-(define-public r-ebmaforecast
-  (package
-    (name "r-ebmaforecast")
-    (version "1.0.32")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EBMAforecast" version))
-       (sha256
-        (base32 "01pv873d0sl0qzlgmqw4ahg5ym9gdjzbmzqlg593g5l935r3dgi4"))))
-    (properties `((upstream-name . "EBMAforecast")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-separationplot
-                             r-rcpp
-                             r-plyr
-                             r-hmisc
-                             r-gtools
-                             r-glue
-                             r-abind))
-    (home-page "https://github.com/fhollenbach/EBMA/")
-    (synopsis
-     "Estimate Ensemble Bayesian Model Averaging Forecasts using Gibbs Sampling or EM-Algorithms")
-    (description
-     "Create forecasts from multiple predictions using ensemble Bayesian model
-averaging (EBMA).  EBMA models can be estimated using an expectation
-maximization (EM) algorithm or as fully Bayesian models via Gibbs sampling.  The
-methods in this package are Montgomery, Hollenbach, and Ward (2015)
-<doi:10.1016/j.ijforecast.2014.08.001> and Montgomery, Hollenbach, and Ward
-(2012) <doi:10.1093/pan/mps002>.")
-    (license license:gpl2+)))
-
 (define-public r-ebm
   (package
     (name "r-ebm")
@@ -27946,29 +27912,6 @@ and to retrieve the simulation outputs in an appropriate format for
 post-processing treatments.  Five sequential sampling schemes and three
 coupled-to-MCMC schemes are implemented.")
     (license license:gpl3)))
-
-(define-public r-easy-utils
-  (package
-    (name "r-easy-utils")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "easy.utils" version))
-       (sha256
-        (base32 "01p6hp7ajb7k9disdzkxvgjinv9wqxhk4k24r89q31ljyvkfrqw6"))))
-    (properties `((upstream-name . "easy.utils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-rlang r-fastmatch r-dplyr))
-    (home-page "https://github.com/ycli1995/easy.utils")
-    (synopsis "Frequently Used Functions for Easy R Programming")
-    (description
-     "Some utility functions for validation and data manipulation.  These functions
-can be helpful to reduce internal codes everywhere in package development.")
-    (license license:expat)))
 
 (define-public r-easy-glmnet
   (package

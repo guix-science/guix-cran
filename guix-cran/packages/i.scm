@@ -18490,13 +18490,13 @@ analysis and reproducibility.")
 (define-public r-ictest
   (package
     (name "r-ictest")
-    (version "0.3-6")
+    (version "0.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICtest" version))
        (sha256
-        (base32 "1zzdfybfgyi9rnzdamwaf0xcvwh72fy2v8j0wzivpsvxgqa7a15k"))))
+        (base32 "1cn26gi71nrgsjswwyb4srk1rqjz6daafc89lcpzh1vr1yx5hivk"))))
     (properties `((upstream-name . "ICtest")))
     (build-system r-build-system)
     (arguments

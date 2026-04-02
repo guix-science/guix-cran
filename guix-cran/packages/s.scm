@@ -50922,6 +50922,37 @@ the basic functions of sbm'.")
 export @code{WebGL} visualization in a shiny-friendly format.")
     (license license:expat)))
 
+(define-public r-shinyreprex
+  (package
+    (name "r-shinyreprex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyreprex" version))
+       (sha256
+        (base32 "1rhd8b8ha59i72cvfk0qml6h357x5lm52g6vpw8d82ggxg8626cs"))))
+    (properties `((upstream-name . "shinyreprex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-styler r-s7 r-rlang r-purrr r-constructive))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AscentSoftware/shinyreprex")
+    (synopsis "Reproducible Code for 'Shiny' Objects")
+    (description
+     "This package provides functionality to extract reactive expressions from a shiny
+application and convert them into stand-alone R scripts.  This enables users to
+reproduce tables and visualisations outside the interactive UI, facilitating
+integration into static reports or automated workflows without requiring access
+to the original application source code.")
+    (license license:expat)))
+
 (define-public r-shinyrecipes
   (package
     (name "r-shinyrecipes")

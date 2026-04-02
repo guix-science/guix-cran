@@ -28606,29 +28606,6 @@ The parametric bootstrap and Kenward-Roger-type adjustment by Noma et al. (2022)
 <forthcoming> are implementable.")
     (license license:gpl3)))
 
-(define-public r-pingr
-  (package
-    (name "r-pingr")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pingr" version))
-       (sha256
-        (base32 "152zffi2bg5yyjbk7h83fdn1n6ab24m14d69qb2xhs4bydjad2r1"))))
-    (properties `((upstream-name . "pingr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-processx))
-    (home-page "https://r-lib.github.io/pingr/")
-    (synopsis "Check if a Remote Computer is Up")
-    (description
-     "Check if a remote computer is up.  It can either just call the system ping
-command, or check a specified TCP port.")
-    (license license:expat)))
-
 (define-public r-pingers
   (package
     (name "r-pingers")
@@ -32567,6 +32544,43 @@ data for Phase-type distributions.  The methods of Bladt et al (2003)
 <doi:10.1080/03461230110106435> and Aslett (2012)
 <https://www.louisaslett.com/@code{PhD_Thesis.pdf>} are provided.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-phasegmm
+  (package
+    (name "r-phasegmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhaseGMM" version))
+       (sha256
+        (base32 "1gmp48hfn23z02ix96wdk57q9svxppvks9nvmki9j3ankmh0pm7b"))))
+    (properties `((upstream-name . "PhaseGMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nleqslv))
+    (home-page "https://cran.r-project.org/package=PhaseGMM")
+    (synopsis
+     "Phase-Function Based Estimation and Inference for Linear Errors-in-Variables (EIV) Models")
+    (description
+     "Estimation and inference for coefficients of linear EIV models with symmetric
+measurement errors.  The measurement errors can be homoscedastic or
+heteroscedastic, for the latter, replication for at least some observations
+needs to be available.  The estimation method and asymptotic inference are based
+on a generalised method of moments framework, where the estimating equations are
+formed from (1) minimising the distance between the empirical phase function
+(normalised characteristic function) of the response and that of the linear
+combination of all the covariates at the estimates, and (2) minimising a
+corrected least-square discrepancy function.  Specifically, for a linear EIV
+model with p error-prone and q error-free covariates, if replicates are
+available, the GMM approach is based on a 2(p+q) estimating equations if some
+replicates are available and based on p+2q estimating equations if no replicate
+is available.  The details of the method are described in Nghiem and Potgieter
+(2020) <doi:10.1093/biomet/asaa025> and Nghiem and Potgieter (2025)
+<doi:10.5705/ss.202022.0331>.")
+    (license license:gpl2)))
 
 (define-public r-phase1rmd
   (package
@@ -46707,34 +46721,6 @@ Population Census 2023 (<https://www.pbs.gov.pk/>).")
      "This package provides data sets and functions for exploration of Pakistan
 Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
     (license license:gpl2)))
-
-(define-public r-pak
-  (package
-    (name "r-pak")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pak" version))
-       (sha256
-        (base32 "0jx14dkdnry9r5pp7lfn8acpq64jv9sn08il672h8x3qad45lcb7"))))
-    (properties `((upstream-name . "pak")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib openssl openssh curl))
-    (native-inputs (list pkg-config))
-    (home-page "https://pak.r-lib.org/")
-    (synopsis "Another Approach to Package Installation")
-    (description
-     "The goal of pak is to make package installation faster and more reliable.  In
-particular, it performs all HTTP operations in parallel, so metadata resolution
-and package downloads are fast.  Metadata and package files are cached on the
-local disk as well.  pak has a dependency solver, so it finds version conflicts
-before performing the installation.  This version of pak supports CRAN,
-Bioconductor and @code{GitHub} packages as well.")
-    (license license:gpl3)))
 
 (define-public r-paisaje
   (package

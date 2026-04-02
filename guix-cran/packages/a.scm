@@ -2466,56 +2466,6 @@ history using conventional commit messages
 (<https://www.conventionalcommits.org/en/v1.0.0/>).")
     (license license:gpl3)))
 
-(define-public r-automrp
-  (package
-    (name "r-automrp")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autoMrP" version))
-       (sha256
-        (base32 "00shy2yjkhys59nvxwd0smr5bzkfrg55xq6rcmc5z7f6c07wygci"))))
-    (properties `((upstream-name . "autoMrP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-vglmer
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-lme4
-                             r-knitr
-                             r-glmmlasso
-                             r-ggplot2
-                             r-gbm
-                             r-foreach
-                             r-forcats
-                             r-ebmaforecast
-                             r-e1071
-                             r-dplyr
-                             r-dorng
-                             r-doparallel))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/retowuest/autoMrP")
-    (synopsis "Improving MrP with Ensemble Learning")
-    (description
-     "This package provides a tool that improves the prediction performance of
-multilevel regression with post-stratification (@code{MrP}) by combining a
-number of machine learning methods.  For information on the method, please refer
-to Broniecki, WÃ¼est, Leemann (2020) Improving Multilevel Regression with
-Post-Stratification Through Machine Learning (@code{autoMrP}) in the Journal of
-Politics'.  Final pre-print version:
-<https://lucasleemann.files.wordpress.com/2020/07/automrp-r2pa.pdf>.")
-    (license license:gpl3)))
-
 (define-public r-automr
   (package
     (name "r-automr")

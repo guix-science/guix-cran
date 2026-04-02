@@ -39195,37 +39195,6 @@ example in multicentre trials.  It can be used for more than two groups or
 unequal randomization ratios.")
     (license license:gpl3)))
 
-(define-public r-merderiv
-  (package
-    (name "r-merderiv")
-    (version "0.2-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "merDeriv" version))
-       (sha256
-        (base32 "1zc4pslim520w1mqn32ijksf5qn9qg66gg1zmrf1iicgbsnhq6ff"))))
-    (properties `((upstream-name . "merDeriv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich
-                             r-numderiv
-                             r-nonnest2
-                             r-matrix
-                             r-lme4
-                             r-lavaan))
-    (home-page "https://github.com/nctingwang/merDeriv")
-    (synopsis
-     "Case-Wise and Cluster-Wise Derivatives for Mixed Effects Models")
-    (description
-     "Compute case-wise and cluster-wise derivative for mixed effects models with
-respect to fixed effects parameter, random effect (co)variances, and residual
-variance.  This material is partially based on work supported by the National
-Science Foundation under Grant Number 1460719.")
-    (license license:gpl2+)))
-
 (define-public r-mercator
   (package
     (name "r-mercator")

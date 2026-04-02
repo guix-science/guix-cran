@@ -13965,13 +13965,13 @@ new version.")
 (define-public r-correlplot
   (package
     (name "r-correlplot")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Correlplot" version))
        (sha256
-        (base32 "1vcs1slif1hag7qzgim7apy7az56gbq47j45gjkdx11w5bqjvmmg"))))
+        (base32 "0zfgy7bghlac7dm55a3f6zvchiyzb70xcvxk1lmrxanvxd7cr47z"))))
     (properties `((upstream-name . "Correlplot")))
     (build-system r-build-system)
     (arguments

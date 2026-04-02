@@ -8389,29 +8389,6 @@ periodicity.  A detailed vignette can be found in the open-access paper
 Kleen, and Sjoerup (2022, <doi:10.18637/jss.v104.i08>).")
     (license license:gpl2+)))
 
-(define-public r-highfive
-  (package
-    (name "r-highfive")
-    (version "3.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HighFive" version))
-       (sha256
-        (base32 "1nzshjh5kizjiq93jy1cjsy5shcmk5z3qz0n4dcxf9wcg2rw7f0m"))))
-    (properties `((upstream-name . "HighFive")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list hdf5))
-    (home-page "https://github.com/theAeon/HighFive")
-    (synopsis "The 'HighFive' 'C++' Interface to 'HDF5'")
-    (description
-     "This package provides a modern idiomatic header-only C++ interface for libhdf5'.
- Original software can be found at <https://github.com/highfive-devs/highfive/>.")
-    (license (license:fsdg-compatible "BSL-1.0"))))
-
 (define-public r-highestmedianrules
   (package
     (name "r-highestmedianrules")
@@ -13381,45 +13358,16 @@ forecast.  For a detailed explanation of the method, please refer to Adaemmer et
 al. (2025) <doi:10.1080/07350015.2025.2526424>.")
     (license license:gpl2+)))
 
-(define-public r-hdf5r-extra
-  (package
-    (name "r-hdf5r-extra")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hdf5r.Extra" version))
-       (sha256
-        (base32 "1kfpa8i697f0ksa0pd726g6bf0j2injlbwkjg71k6apv3sq8aqxg"))))
-    (properties `((upstream-name . "hdf5r.Extra")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-matrix
-                             r-hdf5r
-                             r-easy-utils
-                             r-dplyr
-                             r-checkmate))
-    (home-page "https://github.com/ycli1995/hdf5r.Extra")
-    (synopsis "Extensions for 'HDF5' R Interfaces")
-    (description
-     "Some methods to manipulate HDF5 files, extending the hdf5r package.  Reading and
-writing R objects to HDF5 formats follow the specification of @code{AnnData}
-<https://anndata.readthedocs.io/en/latest/fileformat-prose.html>.")
-    (license license:expat)))
-
 (define-public r-hdf5lib
   (package
     (name "r-hdf5lib")
-    (version "2.0.0.6")
+    (version "2.1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5lib" version))
        (sha256
-        (base32 "12l9mw6zxm5h9q3v84y4ykxrvfsikr26jkh39jaja9n6pbkcm0vp"))))
+        (base32 "01k2wjvzmy1ra2xvqa3awjmv5i148gjk7ygkd9isk3irwy4g3k0m"))))
     (properties `((upstream-name . "hdf5lib")))
     (build-system r-build-system)
     (arguments
@@ -13428,13 +13376,16 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
     (home-page "https://github.com/cmmr/hdf5lib")
     (synopsis "Headers and Static Libraries for 'HDF5'")
     (description
-     "HDF5 (Hierarchical Data Format 5) is a high-performance library and file format
-for storing and managing large, complex data.  This package provides the static
-libraries and headers for the HDF5 C library (release 2.0.0).  It is intended
-for R package developers to use in the @code{LinkingTo} field, which eliminates
-the need for users to install system-level HDF5 dependencies.  This build is
-compiled with thread-safety enabled and supports dynamic loading of external
-compression filters.  HDF5 is developed by The HDF Group
+     "This package provides a self-contained, static build of the HDF5 (Hierarchical
+Data Format 5) C library (release 2.1.1) for R package developers.  Designed for
+use in the @code{LinkingTo} field, it enables zero-dependency integration by
+building the library entirely from source during installation.  Additionally, it
+compiles and internally links a comprehensive suite of advanced compression
+filters and their HDF5 plugins (Zstd, LZ4, Blosc/Blosc2, Snappy, ZFP, Bzip2,
+LZF, Bitshuffle, szip, and gzip).  These plugins are integrated out-of-the-box,
+allowing downstream packages to utilize high-performance compression directly
+through the standard HDF5 API while keeping the underlying third-party headers
+fully encapsulated.  HDF5 is developed by The HDF Group
 <https://www.hdfgroup.org/>.")
     (license license:expat)))
 

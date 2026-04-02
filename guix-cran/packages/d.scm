@@ -4447,6 +4447,39 @@ defines the API that is to be implemented by @code{DataSHIELD} compliant data
 repositories.")
     (license license:lgpl2.1+)))
 
+(define-public r-dsge
+  (package
+    (name "r-dsge")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsge" version))
+       (sha256
+        (base32 "1h3skrh7ilhkd840h6y4mn72mgdh98rsvdk13f7vc8aixkdk0bq8"))))
+    (properties `((upstream-name . "dsge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dsge")
+    (synopsis "Dynamic Stochastic General Equilibrium Models")
+    (description
+     "Specify, solve, and estimate dynamic stochastic general equilibrium (DSGE)
+models by maximum likelihood and Bayesian methods.  Supports both linear models
+via an equation-based formula interface and nonlinear models via string-based
+equations with first-order perturbation (linearization around deterministic
+steady state).  Solution uses the method of undetermined coefficients (Klein,
+2000 <doi:10.1016/S0165-1889(99)00045-7>).  Likelihood evaluated via the Kalman
+filter.  Bayesian estimation uses adaptive Random-Walk Metropolis-Hastings with
+prior specification.  Additional tools include Kalman smoothing, historical
+shock decomposition, local identification diagnostics, parameter sensitivity
+analysis, second-order perturbation, occasionally binding constraints,
+impulse-response functions, forecasting, and robust standard errors.")
+    (license license:expat)))
+
 (define-public r-dsfm
   (package
     (name "r-dsfm")
@@ -21962,33 +21995,6 @@ contains R approximations of some common SAS and Stata functions such as PROC
 MEANS from SAS and ladder', gladder', and pwcorr from Stata'.")
     (license license:gpl3)))
 
-(define-public r-descr
-  (package
-    (name "r-descr")
-    (version "1.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "descr" version))
-       (sha256
-        (base32 "0yyxh1030pfjriwm8xfx9rp32cq7jfqlxq8mim1qvx06siah545c"))))
-    (properties `((upstream-name . "descr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable))
-    (home-page "https://github.com/jalvesaq/descr")
-    (synopsis "Descriptive Statistics")
-    (description
-     "Weighted frequency and contingency tables of categorical variables and of the
-comparison of the mean value of a numerical variable by the levels of a factor,
-and methods to produce xtable objects of the tables and to plot them.  There are
-also functions to facilitate the character encoding conversion of objects, to
-quickly convert fixed width files into csv ones, and to export a data.frame to a
-text file with the necessary R and SPSS codes to reread the data.")
-    (license license:gpl2+)))
-
 (define-public r-descomponer
   (package
     (name "r-descomponer")
@@ -25299,19 +25305,19 @@ chosen columns and collapse it into one row.")
 (define-public r-deduped
   (package
     (name "r-deduped")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deduped" version))
        (sha256
-        (base32 "0krlgf7xhvxkk69ah8qwv0wrpqsw72vyg64amh047c8gnlj5n6s1"))))
+        (base32 "0nyy5x8m0m09m7zmcai7ghqq0p1b1h4ih59vcxx76vdncdkp6sr3"))))
     (properties `((upstream-name . "deduped")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-fastmatch r-collapse))
+    (propagated-inputs (list r-collapse))
     (home-page "https://github.com/orgadish/deduped")
     (synopsis "Making \"Deduplicated\" Functions")
     (description
