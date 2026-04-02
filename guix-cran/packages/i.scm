@@ -20300,13 +20300,13 @@ partial likelihood for the proportional hazard model, Nevo et al. (2018+)
 (define-public r-icc-sample-size
   (package
     (name "r-icc-sample-size")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICC.Sample.Size" version))
        (sha256
-        (base32 "1w6v1jp8bfvf6c49ikswkc5527gdx5cyqnw95x00pgmm6riwlsp9"))))
+        (base32 "1m1alx12zl451wkxryr96rr3ksaxb4cklix4iircbykkn953snah"))))
     (properties `((upstream-name . "ICC.Sample.Size")))
     (build-system r-build-system)
     (arguments
@@ -21200,13 +21200,13 @@ of Donnelly (1983) <doi:10.1016/0040-5809(83)90004-7>.")
 (define-public r-ibdinfer
   (package
     (name "r-ibdinfer")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IBDInfer" version))
        (sha256
-        (base32 "062vk4bsqj05m3v9mls920riras0xnlrvkca42kfn0q300a7nlhf"))))
+        (base32 "006ds01mxc35plk5ambh83ziwn74dkircmpk6mmh9l732lpvvfn7"))))
     (properties `((upstream-name . "IBDInfer")))
     (build-system r-build-system)
     (arguments
@@ -21219,8 +21219,8 @@ of Donnelly (1983) <doi:10.1016/0040-5809(83)90004-7>.")
     (description
      "This R package implements methods for estimation and inference under Incomplete
 Block Designs and Balanced Incomplete Block Designs within a design-based
-finite-population framework.  Based on Koo and Pashley (2024)
-<@code{arXiv:2405.19312>}, it includes block-level estimators and extends to
+finite-population framework.  Based on Koo and Pashley (2026)
+<doi:10.1093/biomet/asag013>, it includes block-level estimators and extends to
 unit-level effects using Horvitz-Thompson and HÃ¡jek estimators.  The package
 also provides asymptotic confidence intervals to support valid statistical
 inference.")

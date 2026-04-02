@@ -18571,6 +18571,36 @@ Annelies Tourny, Rytis Bagdziunas, Olivier Thas, Maxim Nazarov, Heather Turner,
 Bie Verbist & Hugo Ceulemans (2017) <doi:10.1038/s41598-017-18068-5>.")
     (license license:gpl3)))
 
+(define-public r-bigknn
+  (package
+    (name "r-bigknn")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigKNN" version))
+       (sha256
+        (base32 "0r09a8jknmcz3ms74ii9clsw36glhpdnzsz529rdwac7nwiwwqc8"))))
+    (properties `((upstream-name . "bigKNN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-matrix r-bigmemory r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/bigKNN/")
+    (synopsis "Exact Search and Graph Construction for 'bigmemory' Matrices")
+    (description
+     "Exact nearest-neighbour and radius-search routines that operate directly on
+bigmemory::big.matrix objects.  The package streams row blocks through BLAS
+kernels, supports self-search and external-query search, exposes prepared
+references for repeated queries, and can build exact k-nearest-neighbour,
+radius, mutual k-nearest-neighbour, and shared-nearest-neighbour graphs.
+Version 0.3.0 adds execution plans, serializable prepared caches, resumable
+streamed graph jobs, coercion helpers, exact candidate reranking, and recall
+summaries for evaluating approximate neighbours.")
+    (license license:gpl2+)))
+
 (define-public r-biggp
   (package
     (name "r-biggp")
@@ -18772,6 +18802,37 @@ size, in any base from 2 to 36, including 2's complement format, and perform
 actions like \"AND,\" \"OR\", \"NOT\", \"SHIFTR/L\" etc.  The output can be in any base
 specified.  A direct base to base converter is included.")
     (license license:lgpl3)))
+
+(define-public r-bigannoy
+  (package
+    (name "r-bigannoy")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigANNOY" version))
+       (sha256
+        (base32 "0zi361bvxclv72xi2jvwkckq4yf1zw4427hc82liqgbwfkm3kdri"))))
+    (properties `((upstream-name . "bigANNOY")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppannoy r-rcpp r-bigmemory r-bh))
+    (native-inputs (list r-litedown))
+    (home-page "https://fbertran.github.io/bigANNOY/")
+    (synopsis
+     "Approximate k-Nearest Neighbour Search for 'bigmemory' Matrices with Annoy")
+    (description
+     "Approximate Euclidean k-nearest neighbour search routines that operate on
+bigmemory::big.matrix data through Annoy indexes created with @code{RcppAnnoy}'.
+ The package builds persistent on-disk indexes plus sidecar metadata from
+streamed big.matrix rows, supports euclidean, angular, Manhattan, and
+dot-product Annoy metrics, and can either return in-memory results or stream
+neighbour indices and distances into destination bigmemory matrices.  Explicit
+index life cycle helpers, stronger metadata validation, descriptor-aware
+file-backed workflows, and benchmark helpers are also included.")
+    (license license:gpl2+)))
 
 (define-public r-biganalytics
   (package
@@ -20858,13 +20919,13 @@ calibration with optional frequentist type-I error and power.")
 (define-public r-bfast
   (package
     (name "r-bfast")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfast" version))
        (sha256
-        (base32 "16svk55yd9ymwl7vl4p70bym2lgp5vsh7r2yckfzh3y72i7afs9g"))))
+        (base32 "0ij6jz8cvnfaa8ijcyhgy6fppq5d9b9dqwm1z8k5nnn0sg64wpp2"))))
     (properties `((upstream-name . "bfast")))
     (build-system r-build-system)
     (arguments

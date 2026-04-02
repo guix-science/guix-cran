@@ -5731,20 +5731,20 @@ it contains some useful tools for digitizing and data manipulation.")
 (define-public r-uaparserjs
   (package
     (name "r-uaparserjs")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uaparserjs" version))
        (sha256
-        (base32 "0w6lpj4i6k92pxcfqxd42hkj023mwjyqlb90kw6pjdfi9m13hs69"))))
+        (base32 "0k8f06hrw8ldw9nri3iay78z5v7n8zvrlklp6im4finajl4mqpi7"))))
     (properties `((upstream-name . "uaparserjs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-v8 r-progress))
-    (home-page "https://github.com/gregfrog/uaparserjs-a")
+    (home-page "https://github.com/gregfrog/uaparserjs")
     (synopsis "Parse 'User-Agent' Strings")
     (description
      "Despite there being a section in RFC 7231

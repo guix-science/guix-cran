@@ -9756,6 +9756,32 @@ genetic algorithms, brute force, or random sampling.  Schultze (2017)
 <doi:10.17169/refubium-622>.")
     (license license:gpl3)))
 
+(define-public r-stt-api
+  (package
+    (name "r-stt-api")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stt.api" version))
+       (sha256
+        (base32 "1x8gjaqp5rb3f8v22bb3kp7wgj9zacgni6gkpxdds65mg5zisjn9"))))
+    (properties `((upstream-name . "stt.api")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://github.com/cornball-ai/stt.api")
+    (synopsis "'OpenAI' Compatible Speech-to-Text API Client")
+    (description
+     "This package provides a minimal-dependency R client for
+@code{OpenAI'-compatible} speech-to-text APIs (see
+<https://platform.openai.com/docs/api-reference/audio>) with optional local
+fallbacks.  Supports @code{OpenAI}', local servers, and the whisper package for
+local transcription.")
+    (license license:expat)))
+
 (define-public r-stsd
   (package
     (name "r-stsd")
@@ -31770,13 +31796,13 @@ Scott-Knott.")
 (define-public r-spanner
   (package
     (name "r-spanner")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spanner" version))
        (sha256
-        (base32 "1js4ay1ijwz3b0mbs9gkizisv0yrjnyiv32j7xjys5w78ssx0q6g"))))
+        (base32 "0ia29ymzqj9s0myjby4xa3pvx2rq8ija93whw902iny2kqsh5gic"))))
     (properties `((upstream-name . "spanner")))
     (build-system r-build-system)
     (arguments
@@ -43332,6 +43358,44 @@ errors and confidence intervals (based on the assumption that the outcome
 measurements are mutually independent) are provided for the subset of effect
 sizes indices with known sampling distributions.")
     (license license:gpl3)))
+
+(define-public r-singlearmmrct
+  (package
+    (name "r-singlearmmrct")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SingleArmMRCT" version))
+       (sha256
+        (base32 "18ry6vqvjqyk83zryn5xr16gbj7iwa7k44b1z75mwab20sxbx24b"))))
+    (properties `((upstream-name . "SingleArmMRCT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://gosukehommaEX.github.io/SingleArmMRCT/")
+    (synopsis
+     "Regional Consistency Probability for Single-Arm Multi-Regional Clinical Trials")
+    (description
+     "This package provides functions to calculate and visualise the Regional
+Consistency Probability (RCP) for single-arm multi-regional clinical trials
+(MRCTs) using the Effect Retention Approach (ERA).  Six endpoint types are
+supported: continuous, binary, count (negative binomial), time-to-event via
+hazard ratio, milestone survival, and restricted mean survival time (RMST).  For
+each endpoint, both a closed-form (or semi-analytical) solution and a Monte
+Carlo simulation approach are implemented.  Two consistency evaluation methods
+are available: Method 1 (effect retention in Region 1 relative to the overall
+population) and Method 2 (simultaneous positive effect across all regions).
+Plotting functions generate faceted visualisations of RCP as a function of the
+regional allocation proportion, overlaying formula and simulation results for
+direct comparison.  The methodology follows the Japanese MHLW guidelines for
+MRCTs.  Abbreviations used: RCP (Regional Consistency Probability), MRCT
+(Multi-Regional Clinical Trial), RMST (Restricted Mean Survival Time), MHLW
+(Ministry of Health, Labour and Welfare).")
+    (license license:expat)))
 
 (define-public r-singcar
   (package
@@ -70436,13 +70500,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.67.0")
+    (version "0.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "1fffvaiw23r1qnn8bpy7xjksgfkvdjxpa6x2z0lm0p1hd8p9fmgp"))))
+        (base32 "19jwgvffkcfrqiffffigi06yw6q27rxry32vy0vw38dn8rgwrrgh"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (arguments
@@ -70453,7 +70517,6 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
                              r-nlme
                              r-miniui
                              r-mcmcglmm
-                             r-mblm
                              r-magrittr
                              r-knitr
                              r-kableextra
@@ -70464,15 +70527,16 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
      "Single-Case Data Analyses for Single and Multiple Baseline Designs")
     (description
      "This package provides a collection of procedures for analysing, visualising, and
-managing single-case data.  These include regression models (multilevel,
+managing single-case data.  Multi-phase and multi-baseline designs are
+supported.  Analysing methods include regression models (multilevel,
 multivariate, bayesian), between case standardised mean difference, overlap
-indices ('PND', PEM', PAND', PET', tau-u', IRD', baseline corrected tau', CDC'),
-and randomization tests.  Data preparation functions support outlier detection,
-handling missing values, scaling, and custom transformations.  An export
-function helps to generate html, word, and latex tables in a publication
+indices ('PND', PEM', PAND', NAP', PET', tau-u', IRD', baseline corrected tau',
+CDC'), and randomization tests.  Data preparation functions support outlier
+detection, handling missing values, scaling, and custom transformations.  An
+export function helps to generate html, word, and latex tables in a publication
 friendly style.  A shiny app allows to use scan in a graphical user interface.
 More details can be found in the online book Analyzing single-case data with R
-and scan', Juergen Wilbert (2025) <https://jazznbass.github.io/scan-Book/>.")
+and scan', Juergen Wilbert (2026) <https://jazznbass.github.io/scan-Book/>.")
     (license license:gpl3+)))
 
 (define-public r-scam

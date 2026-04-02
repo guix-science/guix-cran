@@ -167,6 +167,37 @@ information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 clean the data once in R.")
     (license license:expat)))
 
+(define-public r-nysopendata
+  (package
+    (name "r-nysopendata")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nysOpenData" version))
+       (sha256
+        (base32 "0y2wxb4jfsqsdd8rpzwgd1prr2ndd5r9qlngw9488978f50fhfs8"))))
+    (properties `((upstream-name . "nysOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://martinezc1.github.io/nysOpenData/")
+    (synopsis "Convenient Access to NYS Open Data API Endpoints")
+    (description
+     "This package provides helper functions to access datasets from the NYS Open Data
+platform <https://data.ny.gov/>.  Functions return results as tidy tibbles and
+support optional filtering, sorting, and row limits via the Socrata API.")
+    (license license:expat)))
+
 (define-public r-nycopendata
   (package
     (name "r-nycopendata")
@@ -5755,6 +5786,31 @@ optional disk caching, spatial data via sf', and tidy data output.  Independent
 implementation unaffiliated with ONS or Durham University.")
     (license license:expat)))
 
+(define-public r-nomine
+  (package
+    (name "r-nomine")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomine" version))
+       (sha256
+        (base32 "1nyi0q7i887fhv2qih2n3x3i8bkrg700hdfi3jbhwcqkiydzx93d"))))
+    (properties `((upstream-name . "nomine")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcurl r-jsonlite r-httr))
+    (home-page "https://github.com/lobsterbush/nomine")
+    (synopsis "Classify Names by Gender, U.S. Ethnicity, and Leaf Nationality")
+    (description
+     "This package provides functions to use the @code{NamePrism} API
+<https://www.name-prism.com/api> or @code{NamSor} API v2 <https://namsor.app/>
+for classifying names based on gender, 6 U.S. ethnicities, or 39 leaf
+nationalities.  Updated to work with current API endpoints.")
+    (license license:expat)))
+
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
@@ -9752,13 +9808,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimble" version))
        (sha256
-        (base32 "0kpbmf5k7w6s3abzfgwpqlcrrv4wjbs2s85h3p9pswrqzqsjclcy"))))
+        (base32 "01nmmzq54831rlpmw7a85q8ib5wffycy8xjlgldakbx2j3zg812f"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (arguments

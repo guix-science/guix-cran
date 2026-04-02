@@ -31758,6 +31758,35 @@ CA but is based on the Taxicab or Manhattan distance.  For some tables, Taxicab
 CA gives more informative results than classical CA.")
     (license license:gpl2+)))
 
+(define-public r-taxdiv
+  (package
+    (name "r-taxdiv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taxdiv" version))
+       (sha256
+        (base32 "0705ysq8ry96zan0b98512wg3cwa3k8xrzrn3ragdsd33xv03k8v"))))
+    (properties `((upstream-name . "taxdiv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mgorgoz/taxonomic-diversity-r")
+    (synopsis "Taxonomic Diversity Indices Using Deng Entropy")
+    (description
+     "Calculates taxonomic diversity indices for ecological community data using Deng
+entropy framework and classical approaches (Shannon, Simpson, Clarke & Warwick).
+ Provides functions for computing taxonomic distinctness, average taxonomic
+distinctness (@code{AvTD/Delta+}), variation in taxonomic distinctness
+(@code{VarTD/Lambda+}), and Deng entropy-based measures that incorporate
+taxonomic hierarchy information.  Includes tools for constructing taxonomic
+trees and computing pairwise taxonomic distances.")
+    (license license:expat)))
+
 (define-public r-taxanorm
   (package
     (name "r-taxanorm")

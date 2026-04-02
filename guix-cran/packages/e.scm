@@ -16248,13 +16248,13 @@ implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg
 (define-public r-emotions
   (package
     (name "r-emotions")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMOTIONS" version))
        (sha256
-        (base32 "00s5g5s1mr3kjicmzzx5xdnws7myp5qawlmwr9bhwar27a7nl9dv"))))
+        (base32 "185znjxhmsxldpsz8nghwlp1bqybagiaryl0a2hqrlrc7pmi63w0"))))
     (properties `((upstream-name . "EMOTIONS")))
     (build-system r-build-system)
     (arguments
@@ -21447,6 +21447,33 @@ extended vignette of the main functions included in the package, are available
 at the @code{GitHub} web page dedicated to the project.")
     (license license:gpl3+)))
 
+(define-public r-ee-data
+  (package
+    (name "r-ee-data")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EE.Data" version))
+       (sha256
+        (base32 "0dmlknr12d98kbzsx6l4cl8p4l1ysjjapkqlng38phqwdmlchpvw"))))
+    (properties `((upstream-name . "EE.Data")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=EE.Data")
+    (synopsis "Objects for Predicting Energy Expenditure")
+    (description
+     "This is a data-only package containing model objects that predict human energy
+expenditure from wearable sensor data.  Supported methods include the neural
+networks of Montoye et al. (2017) <doi:10.1080/1091367X.2017.1337638> and the
+models of Staudenmayer et al. (2015) <doi:10.1152/japplphysiol.00026.2015>, one
+a linear model and the other a random forest.  The package is intended as a
+spoke for the hub-package @code{accelEE}', which brings together the above
+methods and others from packages such as Sojourn and @code{TwoRegression}.'.")
+    (license license:expat)))
+
 (define-public r-edwards97
   (package
     (name "r-edwards97")
@@ -23162,13 +23189,13 @@ C. (2023). <doi:10.57805/revstat.v21i2.405>.")
 (define-public r-ecoxcorr
   (package
     (name "r-ecoxcorr")
-    (version "0.1.9")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoXCorr" version))
        (sha256
-        (base32 "1qv9ggla8bfqwk1xyhj9ksb6q6rsfwp02zrhpnqhr6jnk5037i9c"))))
+        (base32 "12bjgcbph52bl5wm39550znmmy5qdzx5sj9xffm2b4y882ya8m5s"))))
     (properties `((upstream-name . "ecoXCorr")))
     (build-system r-build-system)
     (arguments

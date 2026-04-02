@@ -22702,6 +22702,34 @@ numeric vector.  This is especially useful, since @code{qplot()} was deprecated
 in ggplot2 3.4.0.")
     (license license:gpl3+)))
 
+(define-public r-gghinton
+  (package
+    (name "r-gghinton")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gghinton" version))
+       (sha256
+        (base32 "06qjmj4ji8dn93ywpn5dxwh08cmmvkvny71zx7z2v5fxihgzvxhw"))))
+    (properties `((upstream-name . "gghinton")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/robin-foster-rf/gghinton")
+    (synopsis "Hinton Diagrams for 'ggplot2'")
+    (description
+     "This package provides a ggplot2 extension for drawing Hinton diagrams, a
+visualisation technique for numerical matrices in which the area of each square
+is proportional to the magnitude of the corresponding entry.  For signed data,
+white squares indicate positive values and black squares indicate negative
+values on a grey background.  Hinton diagrams are especially useful for
+visualising PCA weight matrices, correlation matrices, and transition matrices.")
+    (license license:expat)))
+
 (define-public r-gghexsize
   (package
     (name "r-gghexsize")
@@ -34220,6 +34248,34 @@ easy to work with using gcplyr and other packages.  Also streamlines common
 growth curve processing steps, like smoothing and calculating derivatives, and
 facilitates model-free characterization and analysis of growth data.  See
 methods at <https://mikeblazanin.github.io/gcplyr/>.")
+    (license license:expat)))
+
+(define-public r-gcpca
+  (package
+    (name "r-gcpca")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gcpca" version))
+       (sha256
+        (base32 "0gyxl7mdk02rnzrn0vdyl5c0jbrqd7099kahngnfsffiqywyz09s"))))
+    (properties `((upstream-name . "gcpca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/SjulsonLab/generalized_contrastive_PCA")
+    (synopsis "Generalized Contrastive Principal Component Analysis")
+    (description
+     "This package implements dense and sparse generalized contrastive principal
+component analysis (@code{gcPCA}) with S3 fit objects and methods for
+prediction, summaries, and plotting.  The @code{gcPCA} is a hyperparameter-free
+method for comparing high-dimensional datasets collected under different
+experimental conditions to reveal low-dimensional patterns enriched in one
+condition compared to the other.  Method details are described in de Oliveira,
+Garg, Hjerling-Leffler, Batista-Brito, and Sjulson (2025)
+<doi:10.1371/journal.pcbi.1012747>.")
     (license license:expat)))
 
 (define-public r-gcpbayes

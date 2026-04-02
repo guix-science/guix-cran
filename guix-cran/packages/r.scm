@@ -3769,13 +3769,13 @@ fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
 (define-public r-rtmbdist
   (package
     (name "r-rtmbdist")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMBdist" version))
        (sha256
-        (base32 "1ji955jp9l6vbb82ahr1bz8nps896s398z9aa3wbnagvjdvwsmrf"))))
+        (base32 "1nf6255fgb8bz8h7gm6g6bjp212j7jky4q98vj19sc0vs6j73iwn"))))
     (properties `((upstream-name . "RTMBdist")))
     (build-system r-build-system)
     (arguments
@@ -26403,13 +26403,13 @@ F. Spinu (2013), An Algorithm for Computing Risk Parity Weights.
 (define-public r-riskmetric
   (package
     (name "r-riskmetric")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskmetric" version))
        (sha256
-        (base32 "1s9chdzl85m2gpim1hc33jbfkg7ghkar5rbzn1q4ww0mg1765xhh"))))
+        (base32 "0s6hzwv5y3r2c9842q01qwddhblybgz5i42yks92qvhdq1szzb79"))))
     (properties `((upstream-name . "riskmetric")))
     (build-system r-build-system)
     (arguments
@@ -32368,6 +32368,40 @@ how Rcpp or cpp11 allow easy interfacing with C++ code.  Also provides helper
 functions to create R packages that use Rust code.  Under the hood, the Rust
 crate extendr is used to do all the heavy lifting.")
     (license license:expat)))
+
+(define-public r-rexpokit
+  (package
+    (name "r-rexpokit")
+    (version "0.26.6.15")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rexpokit" version))
+       (sha256
+        (base32 "03i1isxsfr4dzvjj9v0vsdzlnnzbdw3ixw8dgyfp11bd0wbncd6w"))))
+    (properties `((upstream-name . "rexpokit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-matrix))
+    (native-inputs (list gfortran))
+    (home-page "http://phylo.wikidot.com/rexpokit")
+    (synopsis "R Wrappers for EXPOKIT; Other Matrix Functions")
+    (description
+     "Wraps some of the matrix exponentiation utilities from EXPOKIT
+(<http://www.maths.uq.edu.au/expokit/>), a FORTRAN library that is widely
+recommended for matrix exponentiation (Sidje RB, 1998. \"Expokit: A Software
+Package for Computing Matrix Exponentials.\" ACM Trans.  Math.  Softw.  24(1):
+130-156).  EXPOKIT includes functions for exponentiating both small, dense
+matrices, and large, sparse matrices (in sparse matrices, most of the cells have
+value 0).  Rapid matrix exponentiation is useful in phylogenetics when we have a
+large number of states (as we do when we are inferring the history of
+transitions between the possible geographic ranges of a species), but is
+probably useful in other ways as well.  NOTE: In case FORTRAN checks temporarily
+get rexpokit archived on CRAN, see archived binaries at @code{GitHub} in:
+nmatzke/Matzke_R_binaries (binaries install without compilation of source code).")
+    (license license:gpl2+)))
 
 (define-public r-rexoplanets
   (package

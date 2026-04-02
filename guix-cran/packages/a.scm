@@ -18525,6 +18525,34 @@ and visualizes length-weight relationships using linear regression, with options
 for log-transformation and customizable plotting.")
     (license license:gpl3)))
 
+(define-public r-albersdown
+  (package
+    (name "r-albersdown")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "albersdown" version))
+       (sha256
+        (base32 "05r74jv861c6hvfzqwhlfp9l81hacapmqcw77cf5208r6gm08gkq"))))
+    (properties `((upstream-name . "albersdown")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bbuchsbaum/albersdown")
+    (synopsis "Minimalist Theme and Vignette Kit for 'pkgdown' and R Markdown")
+    (description
+     "This package provides a minimalist ggplot2 theme, colour scales, and pkgdown
+template built around a curated colour palette system inspired by Josef Albers
+colour theory (Albers (1963, ISBN:978-0-300-17935-4) \"Interaction of Color\").
+Includes helpers to apply consistent theming to ggplot2 plots, gt tables, and
+bslib Bootstrap 5 sites, along with one-command setup functions for adopting the
+style across an R package.")
+    (license license:expat)))
+
 (define-public r-albatross
   (package
     (name "r-albatross")
@@ -20855,6 +20883,36 @@ Ritz and others (2015) <doi:10.1371/journal.pone.0146021>, and Bates and others
 Matrix(GLCM), RGB-based Vegetative Index(RGB VI) and Normalized Difference
 Vegetation Index(NDVI) family image features.  GLCM calculations are based on
 Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
+    (license license:gpl3)))
+
+(define-public r-agridiversix
+  (package
+    (name "r-agridiversix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AgriDiversiX" version))
+       (sha256
+        (base32 "1pr065s65v9ri0ai765x3jsj3vqngjnah014y1vr5ls1k1i49nzw"))))
+    (properties `((upstream-name . "AgriDiversiX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-mcmcpack
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=AgriDiversiX")
+    (synopsis "Agricultural Crop Diversification Indices Analysis")
+    (description
+     "This package provides functions to compute agricultural crop diversification
+indices for crop data across zones and years.  The package implements widely
+used diversification and concentration measures including Herfindahl
+Index,Simpson Index, Entropy Index, Ogive Index, and Maximum Proportion Index.")
     (license license:gpl3)))
 
 (define-public r-agridat

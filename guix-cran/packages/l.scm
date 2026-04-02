@@ -11586,6 +11586,36 @@ provides functions for pure likelihood-based inference @code{(support()},
 @code{profile_loglik()}).")
     (license license:expat)))
 
+(define-public r-likelihood-contr
+  (package
+    (name "r-likelihood-contr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "likelihood.contr" version))
+       (sha256
+        (base32 "0d0kq4s0x1qjg89y54iqzl4fpmamrhd3i964limwkph1y3176vh9"))))
+    (properties `((upstream-name . "likelihood.contr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-likelihood-model))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/likelihood.contr")
+    (synopsis
+     "Likelihood Contribution Models for Heterogeneous Observation Types")
+    (description
+     "Constructs likelihood models from heterogeneous observation types by composing
+named contributions.  Each observation type (exact, left-censored,
+right-censored, interval-censored, or custom) contributes independently to the
+total log-likelihood, which is summed under an i.i.d.  assumption.  Provides
+@code{contr_name()} for standard R distributions and @code{contr_fn()} for
+user-defined contributions, composed via @code{likelihood_contr()} into objects
+compatible with the likelihood.model inference framework.")
+    (license license:expat)))
+
 (define-public r-likelihood
   (package
     (name "r-likelihood")
@@ -19704,30 +19734,6 @@ outlet and inlet locations.  Can estimate lake depth from surface area using
 empirical relationships, and integrate historical weather data for cumulative
 wave energy calculations.  Includes an optional interactive shiny application
 for visualization.")
-    (license license:expat)))
-
-(define-public r-lair
-  (package
-    (name "r-lair")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LAIr" version))
-       (sha256
-        (base32 "092dk6fhp0fkd2fxhwqxfhrm4im1z8dvyd9kg4m2dbyyn17h5i1c"))))
-    (properties `((upstream-name . "LAIr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-stringr r-purrr r-dplyr))
-    (home-page "https://cran.r-project.org/package=LAIr")
-    (synopsis "Converting NDVI to LAI of Field, Proximal and Satellite Data")
-    (description
-     "Convert Leaf Area Index (LAI) from the Normalized Difference Vegetation Index
-(NDVI) using available equations from literature.  Detailed description of
-conversion equations in Bajocco et al.  2022 <doi:10.3390/rs14153554>.")
     (license license:expat)))
 
 (define-public r-lahman

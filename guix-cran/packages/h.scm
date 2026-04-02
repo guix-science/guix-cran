@@ -5128,13 +5128,13 @@ data for themselves.")
 (define-public r-honestdid
   (package
     (name "r-honestdid")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HonestDiD" version))
        (sha256
-        (base32 "1ywq7a4lz9w2k4yzqlljrb0qa623lgn3wngx00vapdx6a14vfaam"))))
+        (base32 "12bcc1gd1xyvb1k4z29cn9j45jr1bpndzkmm7k631clz3y2dk5i0"))))
     (properties `((upstream-name . "HonestDiD")))
     (build-system r-build-system)
     (arguments

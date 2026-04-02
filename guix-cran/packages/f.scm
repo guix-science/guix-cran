@@ -1074,13 +1074,13 @@ summarizing messages, warnings, errors, and returned values.")
 (define-public r-futurize
   (package
     (name "r-futurize")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "futurize" version))
        (sha256
-        (base32 "1x3h6wm9d6zcm86q7v2dn7pa8lvv7p9m7hlzwy5ckgfzljjmpyhi"))))
+        (base32 "1lr32s37rg2cc30hjmkf0nq546zc74mrhw4d71hzw5fq9xp4c5s1"))))
     (properties `((upstream-name . "futurize")))
     (build-system r-build-system)
     (arguments
@@ -1101,10 +1101,10 @@ computations with minimal refactoring, e.g. lapply(xs, fcn) |>
 foreach::foreach(x = xs) %do% { fcn(x) } |> @code{futurize()}'.  Other
 map-reduce packages that can be \"futurized\" are @code{BiocParallel}', plyr',
 crossmap', pbapply packages.  There is also support for a growing set of
-domain-specific packages (e.g. CRAN package boot', caret', fgsea', fwb',
-gamlss', @code{glmmTMB}', glmnet', kernelshap', lme4', metafor', mgcv',
-partykit', @code{riskRegression}', seriation', shapr', @code{SimDesign}',
-strucchange', tm', TSP', and vegan') and Bioconductor packages (e.g. DESeq2',
+domain-specific packages on CRAN (e.g. boot', caret', fgsea', fwb', gamlss',
+@code{glmmTMB}', glmnet', kernelshap', lme4', metafor', mgcv', partykit',
+@code{riskRegression}', seriation', shapr', @code{SimDesign}', strucchange',
+tm', TSP', and vegan') and on Bioconductor (e.g. DESeq2',
 @code{GenomicAlignments}', GSVA', Rsamtools', scater', scuttle',
 @code{SingleCellExperiment}', and sva').")
     (license license:gpl3+)))
@@ -26346,13 +26346,13 @@ P., 2012, <doi:10.3389/fpsyg.2012.00055>).")
 (define-public r-faostat
   (package
     (name "r-faostat")
-    (version "2.4.0")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAOSTAT" version))
        (sha256
-        (base32 "0fyd9ypssax6pm3fzw7g864kaamfh8r3hi4ljd972g13n82b1jag"))))
+        (base32 "0wvh0k0wxslwp9fn7293p6v33hf6qk7vr91rkfw1an46jy24yrir"))))
     (properties `((upstream-name . "FAOSTAT")))
     (build-system r-build-system)
     (arguments

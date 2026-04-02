@@ -620,13 +620,13 @@ details.")
 (define-public r-quicksentiment
   (package
     (name "r-quicksentiment")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickSentiment" version))
        (sha256
-        (base32 "1r66z70apk63pnyhmr4n0l0z1xp8kxbgq5sz727z05xqk9dz4vb6"))))
+        (base32 "1za4gl1ws6rx945p6rf0106j00iraj3p97ninxn2ffjmn7ycz88y"))))
     (properties `((upstream-name . "quickSentiment")))
     (build-system r-build-system)
     (arguments

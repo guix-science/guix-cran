@@ -1102,38 +1102,6 @@ Puls (2024) <doi:10.1016/j.jval.2024.03.006> reviews challenges of incorporating
 such dynamic value elements.  This package aims to reduce those challenges.")
     (license license:gpl3+)))
 
-(define-public r-dynamaedes
-  (package
-    (name "r-dynamaedes")
-    (version "2.2.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynamAedes" version))
-       (sha256
-        (base32 "0dzr8wf00hwwnivqn73hcgdncx8jkka54fygiy6iz9b065ilcvqi"))))
-    (properties `((upstream-name . "dynamAedes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-geosphere
-                             r-foreach
-                             r-drc
-                             r-doparallel
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://mattmar.github.io/dynamAedes/")
-    (synopsis
-     "Unified Mechanistic Model for the Population Dynamics of Invasive Aedes Mosquitoes")
-    (description
-     "Generalised model for population dynamics of invasive Aedes mosquitoes.
-Rationale and model structure are described here: Da Re et al. (2021)
-<doi:10.1016/j.ecoinf.2020.101180> and Da Re et al. (2022)
-<doi:10.1101/2021.12.21.473628>.")
-    (license license:gpl2+)))
-
 (define-public r-dynamac
   (package
     (name "r-dynamac")

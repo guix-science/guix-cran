@@ -9062,6 +9062,37 @@ Analysis of Rare-Variant Association Summary Statistics using MTAR\" by Luo, L.,
 Shen, J., Zhang, H., Chhibber, A. Mehrotra, D.V., Tang, Z., 2019 (submitted).")
     (license license:gpl2+)))
 
+(define-public r-mtaopendata
+  (package
+    (name "r-mtaopendata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mtaOpenData" version))
+       (sha256
+        (base32 "0ya447gz4jnwwz3xa9mxp6sgp59z0djj9xkhsrdv0hm7fir1mv5l"))))
+    (properties `((upstream-name . "mtaOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://martinezc1.github.io/mtaOpenData/")
+    (synopsis "Convenient Access to MTA Open Data API Endpoints")
+    (description
+     "This package provides helper functions to access datasets from the Metropolitan
+Transportation Authority (MTA) portion of the New York State Open Data platform
+<https://data.ny.gov/>.  Returns results as tidy tibbles with support for
+optional filtering, sorting, and row limits through the Socrata API.")
+    (license license:expat)))
+
 (define-public r-mtanan
   (package
     (name "r-mtanan")
@@ -33899,13 +33930,13 @@ exogenous covariate sampled at a lower frequency.")
 (define-public r-mff
   (package
     (name "r-mff")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFF" version))
        (sha256
-        (base32 "0636knq37hbaz8970ib9lifbf07j6a2b573szxz7f37d74lakpry"))))
+        (base32 "1y4nji4xkf0mq4wr7rm39i098gq99jl337601ifp5r8qqy5ylvvc"))))
     (properties `((upstream-name . "MFF")))
     (build-system r-build-system)
     (arguments
@@ -33916,7 +33947,9 @@ exogenous covariate sampled at a lower frequency.")
                              r-ppclust
                              r-lightgbm
                              r-glmnet
-                             r-e1071))
+                             r-foreach
+                             r-e1071
+                             r-doparallel))
     (home-page "https://cran.r-project.org/package=MFF")
     (synopsis "Meta Fuzzy Functions")
     (description
@@ -33925,17 +33958,18 @@ exogenous covariate sampled at a lower frequency.")
 base learners using membership weights learned in the prediction space of
 validation set.  The package supports fuzzy and crisp meta-ensemble structures
 via Fuzzy C-Means (FCM) Tak (2018) <doi:10.1016/j.asoc.2018.08.009>,
-Possibilistic FCM (PFCM) Tak (2021) <doi:10.1016/j.ins.2021.01.024>, and
-k-means, and provides a workflow to (i) generate validation/test prediction
-matrices from common regression learners (linear and penalized regression via
-glmnet', random forests, gradient boosting with xgboost and lightgbm'), (ii) fit
-cluster-wise meta fuzzy functions and compute membership-based weights, (iii)
-tune clustering-related hyperparameters (number of clusters/functions, fuzziness
-exponent, possibilistic regularization) via grid search on validation loss, and
-(iv) predict on new/test prediction matrices and evaluate performance using
-standard regression metrics (MAE, RMSE, MAPE, SMAPE, MSE, @code{MedAE}).  This
-enables flexible, interpretable ensemble regression where different base models
-contribute to different meta components according to learned memberships.")
+Possibilistic FCM (PFCM) Tak (2021) <doi:10.1016/j.ins.2021.01.024>,
+GustafsonâKessel (GK) clustering, and k-means, and provides a workflow to (i)
+generate validation/test prediction matrices from common regression learners
+(linear and penalized regression via glmnet', random forests, gradient boosting
+with xgboost and lightgbm'), (ii) fit cluster-wise meta fuzzy functions and
+compute membership-based weights, (iii) tune clustering-related hyperparameters
+(number of clusters/functions, fuzziness exponent, possibilistic regularization)
+via grid search on validation loss, and (iv) predict on new/test prediction
+matrices and evaluate performance using standard regression metrics (MAE, RMSE,
+MAPE, SMAPE, MSE, @code{MedAE}).  This enables flexible, interpretable ensemble
+regression where different base models contribute to different meta components
+according to learned memberships.")
     (license license:expat)))
 
 (define-public r-mfdp
@@ -53716,13 +53750,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-maidr
   (package
     (name "r-maidr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maidr" version))
        (sha256
-        (base32 "0r7qhd0aikv9cr31jz9grkbd9pfvfd3y36q1kd01b1isiwppwnrx"))))
+        (base32 "1am3jmi0z97vkaa35ppy42f3yn8zlky4nyqmp8pgh2r9ipicljmz"))))
     (properties `((upstream-name . "maidr")))
     (build-system r-build-system)
     (arguments

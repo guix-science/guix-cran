@@ -16765,13 +16765,13 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "1pwayxsjp0xdkq3i3pd37vbxn1w3vi5r2dfp9pir8j8s7parj9fs"))))
+        (base32 "08y576l60n5mgdi5wigf0imxmcmhj7b6qfjy6c5lfr7k48mp5ljl"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (arguments
@@ -49472,6 +49472,46 @@ Tsagris M. and Wood A.T.A. (2024). \"Cauchy robust principal component analysis
 with applications to high-dimensional data sets\".  Statistics and Computing, 34:
 26. <doi:10.1007/s11222-023-10328-x>.")
     (license license:gpl2+)))
+
+(define-public r-catviz
+  (package
+    (name "r-catviz")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "catviz" version))
+       (sha256
+        (base32 "0pif2z8aziwmz0mraz0zhwi2dl4q72v7snif41q102b8z8ln6dyq"))))
+    (properties `((upstream-name . "catviz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/VictorKilanko/catviz")
+    (synopsis
+     "Visualizing Causal Assignment Trees for CSDiD and DR-DDD Designs")
+    (description
+     "This package provides tools for constructing, labeling, and visualizing Causal
+Assignment Trees (CATs) in settings with staggered adoption.  Supports Callaway
+and Sant'Anna difference-in-differences (CS@code{DiD}) and doubly robust
+difference-in-difference-differences (DR-DDD) designs.  The package helps
+clarify treatment timing, never-treated vs. not-yet-treated composition, and
+subgroup structure, and produces publication-quality diagrams and summary
+tables.  Current functionality focuses on data-to-node mapping, node counts,
+cohort-year summaries, and high-quality tree plots suitable for empirical
+applications prior to estimation.  Methods are based on Callaway and Sant'Anna
+(2021) <doi:10.1016/j.jeconom.2020.12.001>, Sant'Anna and Zhao (2020)
+<doi:10.1016/j.jeconom.2020.06.003>, and Kilanko (2026)
+<https://github.com/@code{VictorKilanko/catviz>}.")
+    (license license:expat)))
 
 (define-public r-cattexact
   (package
