@@ -261,6 +261,34 @@ viewing, and support a safer approach to vector sampling, sequence generation,
 and aggregation.")
     (license license:expat)))
 
+(define-public r-zmctp
+  (package
+    (name "r-zmctp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zmctp" version))
+       (sha256
+        (base32 "1ihgvh5bpdwx8hsi9g3iqkg2arih9p8j4vfn0b6802lw833jnhim"))))
+    (properties `((upstream-name . "zmctp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/roladoja/zmctp")
+    (synopsis
+     "Zero-Modified Complex 'Tri-Parametric' Pearson Distribution for Overdispersed Count Data")
+    (description
+     "This package implements zero-modified versions of the Complex Tri-Parametric
+Pearson distribution for overdispersed count data.  The package addresses
+limitations of existing implementations when the parameter b approaches zero.
+It provides distribution functions, maximum likelihood estimation, and
+diagnostic tools for modeling count data with excess zeros.  The methodology is
+based on Rodriguez-Avi and coauthors (2003) <doi:10.1007/s00362-002-0134-7>.")
+    (license license:gpl3)))
+
 (define-public r-zlib
   (package
     (name "r-zlib")

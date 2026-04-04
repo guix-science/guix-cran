@@ -9,6 +9,7 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages tbb)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages duckdb)
@@ -2269,6 +2270,40 @@ scoring functions (Muessel et al. (2012), <doi:10.18637/jss.v046.i05>).")
 patient data.  Output includes individual and summary data for tumor growth rate
 estimates as well as optional plots of the observed and predicted tumor quantity
 over time.")
+    (license license:expat)))
+
+(define-public r-tulpamesh
+  (package
+    (name "r-tulpamesh")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tulpaMesh" version))
+       (sha256
+        (base32 "1mmrpwffbmmpdb3l8ccsa9b8sdaaj3mqa8x6x4awjgpr1lidcxp2"))))
+    (properties `((upstream-name . "tulpaMesh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list tbb))
+    (propagated-inputs (list r-rcppparallel r-rcpp r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gcol33/tulpaMesh")
+    (synopsis
+     "Constrained Delaunay Triangulation Meshes for Spatial 'SPDE' Models")
+    (description
+     "Generate constrained Delaunay triangulation meshes for use with stochastic
+partial differential equation (SPDE) spatial models (Lindgren, Rue and
+Lindstroem 2011 <doi:10.1111/j.1467-9868.2011.00777.x>).  Provides automatic
+mesh generation from point coordinates with boundary constraints, Ruppert
+refinement for mesh quality, finite element method (FEM) matrix assembly (mass,
+stiffness, projection), barrier models, spherical meshes via icosahedral
+subdivision, and metric graph meshes for network geometries.  Built on the CDT
+header-only C++ library (Amirkhanov 2024 <https://github.com/artem-ogre/CDT>).
+Designed as the mesh backend for the tulpa Bayesian hierarchical modelling
+engine but usable standalone for any spatial triangulation task.")
     (license license:expat)))
 
 (define-public r-tulip
@@ -5839,13 +5874,13 @@ in R\" <doi:10.18637/jss.v114.i07>.")
 (define-public r-tsbss
   (package
     (name "r-tsbss")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsBSS" version))
        (sha256
-        (base32 "04nsbifc6zkilqifj6iwc0vf2z84y8wcbf8pndgkzi039kk6c385"))))
+        (base32 "1pj6vgz98whjnghi92j1fvzq7dya38xi7z3vcp6cfl8q300nb3lb"))))
     (properties `((upstream-name . "tsBSS")))
     (build-system r-build-system)
     (arguments
@@ -5857,6 +5892,7 @@ in R\" <doi:10.18637/jss.v114.i07>.")
                              r-rcpp
                              r-jade
                              r-ictest
+                             r-ics
                              r-forecast
                              r-bssprep
                              r-boot))
@@ -8662,13 +8698,13 @@ API wrappers from C functions, structs and global definitions from header files.
 (define-public r-treesitter
   (package
     (name "r-treesitter")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesitter" version))
        (sha256
-        (base32 "0mwsrjrrm78jqayhn6cnz51cvv45rrxaacm1k42b7xj2hnhlpc7r"))))
+        (base32 "1cmxim893h2m3ziyij9gr6vd4vqhplx7qhrrh604k2j8svgzw0im"))))
     (properties `((upstream-name . "treesitter")))
     (build-system r-build-system)
     (arguments

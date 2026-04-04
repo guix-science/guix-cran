@@ -4185,13 +4185,13 @@ al (1998, ISBN:92-5-104219-5)).")
 (define-public r-fru
   (package
     (name "r-fru")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fru" version))
        (sha256
-        (base32 "1vdpfnhjynqxrc6dma0zczs88iwbliasxzl437sgrxmzbdp038qn"))))
+        (base32 "07bv9n4s10vj9bxnp21dridcy2hhqzyyqdw7v7g372r26rf82khn"))))
     (properties `((upstream-name . "fru")))
     (build-system r-build-system)
     (arguments
@@ -28486,13 +28486,13 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
 (define-public r-fabricqueryr
   (package
     (name "r-fabricqueryr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabricQueryR" version))
        (sha256
-        (base32 "0i0rrbv5mbqz4xblqfnz5i32slglqq7iz1q33lvwlc2byf3y2l4b"))))
+        (base32 "1iy00mcrd7k84w7n2gi3njxd47qc3brr7gdmzszx5nfzjj3hczkj"))))
     (properties `((upstream-name . "fabricQueryR")))
     (build-system r-build-system)
     (arguments
@@ -29035,13 +29035,13 @@ cloud @code{FaaS} platforms, use the main @code{FaaSr} package available at
 (define-public r-f1pits
   (package
     (name "r-f1pits")
-    (version "0.2.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1pits" version))
        (sha256
-        (base32 "0mshy2i1043w2icmaw81n7rl7hzjfvsknh0kb123qg0cj7r0z82p"))))
+        (base32 "1hl76wgvkw83df3jyma4y0j3srpivfi27q91ykkxdcb6mw1cb424"))))
     (properties `((upstream-name . "f1pits")))
     (build-system r-build-system)
     (arguments
@@ -29059,7 +29059,7 @@ cloud @code{FaaS} platforms, use the main @code{FaaSr} package available at
     (synopsis "F1 Pit Stop Datasets")
     (description
      "Formula 1 pit stop data.  The package provides information on teams and drivers
-across seasons (2023 or higher).  It also includes a function to visualize pit
+across seasons (2019 or higher).  It also includes a function to visualize pit
 stop performance.")
     (license license:expat)))
 

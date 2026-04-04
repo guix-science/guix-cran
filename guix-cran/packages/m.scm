@@ -193,6 +193,36 @@ frames that can be easily integrated into existing workflows.")
 coding agent to help users with R programming tasks.")
     (license license:expat)))
 
+(define-public r-myoscore
+  (package
+    (name "r-myoscore")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MyoScore" version))
+       (sha256
+        (base32 "0k1pyqjfz20hpp2j3889152ldhpqk20kr8wl38nis83xs983dadr"))))
+    (properties `((upstream-name . "MyoScore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Hirriririir/MyoScore")
+    (synopsis "Transcriptomic Scoring for Human Skeletal Muscle Health")
+    (description
+     "Calculate @code{MyoScore}, a genetically informed muscle health score, from bulk
+RNA sequencing (RNA-seq) raw count data. @code{MyoScore} integrates results from
+genome-wide association studies (GWAS) and transcriptome-wide association
+studies (TWAS) across 28 muscle-related phenotypes to quantify muscle health
+along five dimensions (Strength, Mass, @code{LeanMuscle}, Youth, Resilience),
+each scored from 0 to 100.  The package provides preprocessing via counts per
+million (CPM) normalization, dimension-level and composite scoring, and
+visualization utilities including radar charts and grouped boxplots.  For more
+information, see <https://github.com/Hirriririir/@code{MyoScore>}.")
+    (license license:expat)))
+
 (define-public r-mycran
   (package
     (name "r-mycran")
@@ -5134,6 +5164,43 @@ handles one or multiple endpoints, additional matching and makes it possible to
 reuse controls for other endpoints Stoer NC and Samuelsen SO (2016)
 <doi:10.32614/rj-2016-030>.")
     (license license:gpl2)))
+
+(define-public r-multipleitscontrol
+  (package
+    (name "r-multipleitscontrol")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multipleITScontrol" version))
+       (sha256
+        (base32 "1225fg6d5pli1hxyg44zhk9b9qdf23r22bs21cwmgfsxy8rwkmjs"))))
+    (properties `((upstream-name . "multipleITScontrol")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-nlme
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-aiccmodavg))
+    (native-inputs (list r-knitr))
+    (home-page "https://herts-phei.github.io/multipleITScontrol/")
+    (synopsis
+     "Interrupted Time Series with a Control and Multiple Interventions")
+    (description
+     "This package provides tools to perform interrupted-time series through a
+generalised least squares (GLS) framework on linear outcomes.  Allows for
+multiple interventions and a control with ARMA (autoregressive and
+moving-average) correction.  For more details see Lopez Bernal, Cummins, and
+Gasparrini (2017) <doi:10.1093/ije/dyw098>.")
+    (license license:gpl3+)))
 
 (define-public r-multipledl
   (package
@@ -11818,13 +11885,13 @@ employed in quantitative pharmacology and systems biology.")
 (define-public r-mrgsim-sa
   (package
     (name "r-mrgsim-sa")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsim.sa" version))
        (sha256
-        (base32 "1ag6zxfyrcm1lipab6kpjbphvbamgyv3wgz8yf0qdj5dy0ra06hy"))))
+        (base32 "1sv2rgf8mwzr7xnr8kz2j6fc1npkpis7p6iax5zfsv2wixm07xkb"))))
     (properties `((upstream-name . "mrgsim.sa")))
     (build-system r-build-system)
     (arguments
@@ -11838,6 +11905,8 @@ employed in quantitative pharmacology and systems biology.")
                              r-purrr
                              r-patchwork
                              r-mrgsolve
+                             r-lifecycle
+                             r-lattice
                              r-glue
                              r-ggplot2
                              r-dplyr
@@ -13239,6 +13308,38 @@ with @code{OpenMP} and suited to large genomic datasets.")
      "This package provides functions to compute and plot multivariate (partial)
 Mantel correlograms.")
     (license license:gpl2+)))
+
+(define-public r-mpmaggregate
+  (package
+    (name "r-mpmaggregate")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpmaggregate" version))
+       (sha256
+        (base32 "05l2adw4rfb47f19ihznmf4wpw0xs1rv6cscckmw80jx05mi35pc"))))
+    (properties `((upstream-name . "mpmaggregate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mpmaggregate")
+    (synopsis "Aggregate Matrix Population Models")
+    (description
+     "Aggregates matrix population models (MPMs) in both the lambda (stable growth
+rate) and R0 (net reproductive rate) frameworks, including standard and
+elasticity-consistent aggregators.  Standard aggregation in the lambda framework
+maintains consistent lambda and stable stage distribution, while standard
+aggregation in the R0 framework maintains consistent R0 and cohort stable stage
+distribution.  Elasticity-consistent aggregators maintain these same
+consistencies with respect to the chosen framework and additionally preserve
+consistent reproductive values in the lambda framework and cohort reproductive
+values in the R0 framework.  Aggregation can take the form of general-to-general
+MPM (mpm_aggregate) or Leslie-to-Leslie MPM (leslie_aggregate).")
+    (license license:expat)))
 
 (define-public r-mplustrees
   (package
@@ -21754,6 +21855,40 @@ side.  The user must have adequate credentials.  Please see
 <https://opaldoc.obiba.org/> for complete documentation.")
     (license license:gpl3)))
 
+(define-public r-mlstm
+  (package
+    (name "r-mlstm")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlstm" version))
+       (sha256
+        (base32 "18zml0wxplh94776m6an17kxfs8wcnvhp5rvywk195xl7a7bp53r"))))
+    (properties `((upstream-name . "mlstm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-data-table
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://thimeno1993.github.io/mlstm/")
+    (synopsis "Multilevel Supervised Topic Models with Multiple Outcomes")
+    (description
+     "Fits latent Dirichlet allocation (LDA), supervised topic models, and multilevel
+supervised topic models for text data with multiple outcome variables.  Core
+estimation routines are implemented in C++ using the Rcpp ecosystem.  For topic
+models, see Blei et al. (2003)
+<https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf>.  For supervised topic
+models, see Blei and @code{McAuliffe} (2007)
+<https://papers.nips.cc/paper_files/paper/2007/hash/d56b9fc4b0f1be8871f5e1c40c0067e7-Abstract.html>.")
+    (license license:expat)))
+
 (define-public r-mlspatial
   (package
     (name "r-mlspatial")
@@ -22826,13 +22961,13 @@ by the package's @code{moimle()} function.")
 (define-public r-mlmoderator
   (package
     (name "r-mlmoderator")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmoderator" version))
        (sha256
-        (base32 "01rv4bc0zlg8qzcbykz4ylhmgifvms166s6k67sv78fq3xx80gjw"))))
+        (base32 "1hjprlgkmw0vm4z2vr5fa56vbmx4s7achkqjfassxci0hz6fpk46"))))
     (properties `((upstream-name . "mlmoderator")))
     (build-system r-build-system)
     (arguments
@@ -38603,13 +38738,13 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "8.2-1")
+    (version "8.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meta" version))
        (sha256
-        (base32 "0il5ya0m67nmkcabsxnffxbnz423xnz3hbmp9s8bykcv0dphv02d"))))
+        (base32 "06x7byw6rc3sv6hn0ygr4l672w4pbmfc6h3zda0rigz74glszcwh"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (arguments
@@ -38619,10 +38754,12 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
                              r-tibble
                              r-stringr
                              r-scales
+                             r-rlang
                              r-readr
                              r-purrr
                              r-metafor
                              r-metadat
+                             r-metabook
                              r-magrittr
                              r-lme4
                              r-ggplot2
@@ -38639,11 +38776,12 @@ supporting Schwarzer, Carpenter, and RÃ¼cker <DOI:10.1007/978-3-319-21416-0>,
 three-level meta-analysis model; - generalised linear mixed model; - logistic
 regression with penalised likelihood for rare events; - Hartung-Knapp method for
 random effects model; - Kenward-Roger method for random effects model; -
-prediction interval; - statistical tests for funnel plot asymmetry; -
-trim-and-fill method to evaluate bias in meta-analysis; - meta-regression; -
-cumulative meta-analysis and leave-one-out meta-analysis; - import data from
-@code{RevMan} 5'; - produce forest plot summarising several (subgroup)
-meta-analyses.")
+prediction interval and density of the prediction distribution; - expected
+proportion of comparable studies with clinically important benefit or harm; -
+statistical tests for funnel plot asymmetry; - trim-and-fill method to evaluate
+bias in meta-analysis; - meta-regression; - cumulative meta-analysis and
+leave-one-out meta-analysis; - import data from @code{RevMan} 5'; - produce
+forest plot summarising several (subgroup) meta-analyses.")
     (license license:gpl2+)))
 
 (define-public r-mestim
@@ -43574,26 +43712,30 @@ details see Ciria (2025) <https://nataliaciria.com/mcmodule/>.")
 (define-public r-mcmiso
   (package
     (name "r-mcmiso")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "McMiso" version))
        (sha256
-        (base32 "0gjz237nakfkzmsfqq7609i57cy74yidsgq16vxyxsxlwgs936cq"))))
+        (base32 "12nz5bjswb3h1hqvlk6wvx4ngrq3j1ylk55r1yczcm3ywy88sx7d"))))
     (properties `((upstream-name . "McMiso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-future r-dplyr))
     (home-page "https://cran.r-project.org/package=McMiso")
     (synopsis "Multicore Multivariable Isotonic Regression")
     (description
-     "The goal of @code{McMiso} is to provide functions for isotonic regression when
+     "This package provides functions for isotonic regression and classification when
 there are multiple independent variables.  The functions solve the optimization
-problem using recursion and leverage parallel computing to improve speed, and
-are useful for situations with relatively large number of covariates.  The
+problem using a projective Bayes approach with recursive sequential update
+algorithms, and are useful for situations with a relatively large number of
+covariates.  Supports binary outcomes via a Beta-Binomial conjugate model
+('miso', PBclassifier') and continuous outcomes via a Normal-Inverse-Chi-Squared
+conjugate model ('@code{misoN}').  Parallel computing wrappers ('mcmiso',
+@code{mcPBclassifier}', @code{mcmisoN}') are provided that run the down-up and
+up-down algorithms simultaneously and return whichever finishes first.  The
 estimation method follows the projective Bayes solution described in Cheung and
 Diaz (2023) <doi:10.1093/jrsssb/qkad014>.")
     (license license:gpl3)))
@@ -47286,13 +47428,13 @@ and Coxhead's coefficient are included for comparison and flexibility.")
 (define-public r-matrixcorr
   (package
     (name "r-matrixcorr")
-    (version "0.8.5")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixCorr" version))
        (sha256
-        (base32 "0bh14120qkpm580v4z7l09qhkwvvfj78kiq5hi63v3rhnk6mmzgm"))))
+        (base32 "1r69ac3524dfsz9rrppvicfsykidp95fm93p55q8kkdxzpwarb1b"))))
     (properties `((upstream-name . "matrixCorr")))
     (build-system r-build-system)
     (arguments
@@ -47303,24 +47445,26 @@ and Coxhead's coefficient are included for comparison and flexibility.")
                              r-rcpp
                              r-matrix
                              r-ggplot2
-                             r-cpp11
                              r-cli))
     (home-page "https://github.com/Prof-ThiagoOliveira/matrixCorr")
     (synopsis "Collection of Correlation and Association Estimators")
     (description
-     "Compute correlation and other association matrices from small to
-high-dimensional datasets with relative simple functions and sensible defaults.
-Includes options for shrinkage and robustness to improve results in noisy or
-high-dimensional settings (p >= n), plus convenient print/plot methods for
-inspection.  Implemented with optimised C++ backends using BLAS/@code{OpenMP}
-and memory-aware symmetric updates.  Works with base matrices and data frames,
-returning standard R objects via a consistent S3 interface.  Useful across
-genomics, agriculture, and machine-learning workflows.  Supports Pearson,
-Spearman, Kendall, distance correlation, partial correlation, and robust
-biweight mid-correlation; BlandâAltman analyses and Lin's concordance
-correlation coefficient (including repeated-measures extensions).  Methods based
-on Ledoit and Wolf (2004) <doi:10.1016/S0047-259X(03)00096-4>; SchÃ¤fer and
-Strimmer (2005) <doi:10.2202/1544-6115.1175>; Lin (1989) <doi:10.2307/2532051>.")
+     "Compute correlation, association, and agreement measures for small to
+high-dimensional datasets through a consistent matrix-oriented interface.
+Supports classical correlations (Pearson, Spearman, Kendall), distance
+correlation, partial correlation with regularised estimators, shrinkage
+correlation for p >= n settings, robust correlations including biweight
+mid-correlation, percentage-bend, and skipped correlation, latent-variable
+methods for binary and ordinal data, repeated-measures correlation, and
+agreement analyses based on Bland-Altman methods and Lin's concordance
+correlation coefficient, including repeated-measures extensions.  Implemented
+with optimized C++ backends using BLAS/@code{OpenMP} and memory-aware symmetric
+updates, and returns standard R objects with print/summary/plot methods plus
+optional Shiny viewers for matrix inspection.  Methods based on Ledoit and Wolf
+(2004) <doi:10.1016/S0047-259X(03)00096-4>; high-dimensional shrinkage
+covariance estimation <doi:10.2202/1544-6115.1175>; Lin (1989)
+<doi:10.2307/2532051>; Wilcox (1994) <doi:10.1007/BF02294395>; Wilcox (2004)
+<doi:10.1080/0266476032000148821>.")
     (license license:expat)))
 
 (define-public r-matrisk
@@ -53715,6 +53859,35 @@ viewer pane, and send (draft) email using gmailr'.")
      "Collect your data on digital marketing campaigns from Mailchimp using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
+
+(define-public r-maihda
+  (package
+    (name "r-maihda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAIHDA" version))
+       (sha256
+        (base32 "00dcsfmyriyjwvsvs4il2lpwsh2bzsgws2x640sqpk4gkzr3nvpa"))))
+    (properties `((upstream-name . "MAIHDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-lme4 r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hdbt/MAIHDA")
+    (synopsis
+     "Multilevel Analysis of Individual Heterogeneity and Discriminatory Accuracy")
+    (description
+     "This package provides a comprehensive toolkit for conducting Multilevel Analysis
+of Individual Heterogeneity and Discriminatory Accuracy (MAIHDA).  Methods are
+described in Merlo (2018) <doi:10.1016/j.socscimed.2017.12.018> and Evans et al.
+(2018) <doi:10.1016/j.socscimed.2017.11.011>.  Automatically generates
+intersectional strata, fits analytical models, extracts statistics, and produces
+visualizations.")
+    (license license:expat)))
 
 (define-public r-maidr
   (package

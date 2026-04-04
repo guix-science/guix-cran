@@ -12301,13 +12301,13 @@ elastic net methods.")
 (define-public r-hdtsa
   (package
     (name "r-hdtsa")
-    (version "1.0.5-1")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDTSA" version))
        (sha256
-        (base32 "0ahzlfq8g5qnmyhm66b5p819039y1b51bgm84pjydh0bhs770n98"))))
+        (base32 "049dqly6ziprxzhjrksnhfcmq6skpwiqcr3bv63mksy0w438fifh"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
     (arguments
@@ -12316,6 +12316,7 @@ elastic net methods.")
     (propagated-inputs (list r-vars
                              r-sandwich
                              r-rcppeigen
+                             r-rcpparmadillo
                              r-rcpp
                              r-mass
                              r-jointdiag
@@ -12333,13 +12334,13 @@ Chang, Jiang and Shao (2023) <doi:10.1016/j.jeconom.2022.09.001>, principal
 component analysis for vector time series proposed by Chang, Guo and Yao (2018)
 <doi:10.1214/17-AOS1613>, cointegration analysis proposed by Zhang, Robinson and
 Yao (2019) <doi:10.1080/01621459.2018.1458620>, unit root test proposed by
-Chang, Cheng and Yao (2022) <doi:10.1093/biomet/asab034>, white noise test
-proposed by Chang, Yao and Zhou (2017) <doi:10.1093/biomet/asw066>,
-CP-decomposition for matrix time series proposed by Chang et al. (2023)
-<doi:10.1093/jrsssb/qkac011> and Chang et al. (2024)
+Chang, Cheng and Yao (2022) <doi:10.1093/biomet/asab034>, white noise tests
+proposed by Chang, Yao and Zhou (2017) <doi:10.1093/biomet/asw066> and Chang et
+al. (2026+), CP-decomposition for matrix time series proposed by Chang et al.
+(2023) <doi:10.1093/jrsssb/qkac011> and Chang et al. (2026+)
 <doi:10.48550/@code{arXiv.2410.05634>}, and statistical inference for spectral
-density matrix proposed by Chang et al. (2022)
-<doi:10.48550/@code{arXiv.2212.13686>}.")
+density matrix proposed by Chang et al. (2025)
+<doi:10.1080/01621459.2025.2468013>.")
     (license license:gpl3)))
 
 (define-public r-hdthreshold

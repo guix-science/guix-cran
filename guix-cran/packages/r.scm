@@ -9553,13 +9553,13 @@ supported by National Institutes of Health grants R37 GM-046255.")
 (define-public r-rrepest
   (package
     (name "r-rrepest")
-    (version "1.6.11")
+    (version "1.6.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrepest" version))
        (sha256
-        (base32 "1iwp8wylppxifp86vqr5vnpnw15wzhs37m5y3rnsar6g8kkk3vzf"))))
+        (base32 "101k28dlwbca2d7hkh1byfvfc1jm0vm3xixys32bmrc5hvzkw2i9"))))
     (properties `((upstream-name . "Rrepest")))
     (build-system r-build-system)
     (arguments
@@ -24142,13 +24142,13 @@ Based on \"Robust Likelihood Cross-Validation for Kernel Density Estimation,\" W
 (define-public r-rlas
   (package
     (name "r-rlas")
-    (version "1.8.5")
+    (version "1.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlas" version))
        (sha256
-        (base32 "0k0370fwy9h6r2k6p8gjpnd739c2iip59cihkvx921gc8zrrf9lk"))))
+        (base32 "1xgg0xir8mk1qadkwjvxalavjk5ds8z3hdy76rq9i01mjkhcgyjx"))))
     (properties `((upstream-name . "rlas")))
     (build-system r-build-system)
     (arguments
@@ -25204,6 +25204,33 @@ analysis software.  It offers full access to options and outputs of X-13',
 including Reg-ARIMA modelling (automatic @code{AutoRegressive} Integrated Moving
 Average (ARIMA) model with outlier detection and trading days adjustment) and
 X-11 decomposition.")
+    (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-rjd3workspace
+  (package
+    (name "r-rjd3workspace")
+    (version "3.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3workspace" version))
+       (sha256
+        (base32 "0p3g6dw7vzzzg0r60la39b66ksfjskl6w51d00dv8w4768xqqzri"))))
+    (properties `((upstream-name . "rjd3workspace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjd3x13 r-rjd3tramoseats r-rjd3toolkit
+                             r-rjd3providers r-rjava))
+    (home-page "https://github.com/rjdverse/rjd3workspace")
+    (synopsis "Wrangling 'JDemetra+ 3.x' Workspace")
+    (description
+     "R Interface to JDemetra+ 3.x'(<https://github.com/jdemetra>).  It offers several
+functions to manipulate JDemetra+ workspaces, which can be read by the software
+and can store several seasonal adjusted series along with user-defined calendars
+or regression variables.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-rjd3tramoseats
@@ -27410,13 +27437,13 @@ Tiingo API <https://api.tiingo.com/>.")
 (define-public r-rigr
   (package
     (name "r-rigr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rigr" version))
        (sha256
-        (base32 "1m3922yycj1pblpsy1rqf6n2h0l2wqh9fk9yg86k7771klw9i596"))))
+        (base32 "1a7hi2pxzdkkly5n2yn4a6j7prz5cvpr6adqr0079pc1x38qn2x3"))))
     (properties `((upstream-name . "rigr")))
     (build-system r-build-system)
     (arguments
@@ -54121,16 +54148,51 @@ and weavers.  You can retrieve pattern, yarn, author, and shop information by
 search or by a given id.")
     (license license:expat)))
 
+(define-public r-ravel
+  (package
+    (name "r-ravel")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ravel" version))
+       (sha256
+        (base32 "0b0ibcqf31jls61iqc4gprdjkl5b194b0a56414km9m77cgmq8cm"))))
+    (properties `((upstream-name . "ravel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-shiny
+                             r-rstudioapi
+                             r-miniui
+                             r-jsonlite
+                             r-httr2
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/msaule/ravel")
+    (synopsis "AI Copilot for R Analysis Workflows in 'RStudio'")
+    (description
+     "An AI copilot for R users in RStudio and Posit workflows with active-editor,
+workspace, object, console, plot, and git-aware context.  Provides statistical
+helpers for interpreting @code{lm()} and @code{glm()} models, stages code and
+file actions before execution, drafts reproducible Quarto content, and connects
+to official provider APIs or CLIs for @code{OpenAI}', @code{GitHub} Copilot',
+Gemini', and Anthropic'.")
+    (license license:expat)))
+
 (define-public r-ravecore
   (package
     (name "r-ravecore")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravecore" version))
        (sha256
-        (base32 "059wv4482by6wpx6in46rbzaqxghx5m166nkd0ycyfyr7jq63n87"))))
+        (base32 "1b862nj2q45x2ig2xlyi6928jwr1cfj0p80r8fqb244c9ikylpid"))))
     (properties `((upstream-name . "ravecore")))
     (build-system r-build-system)
     (arguments
@@ -56070,6 +56132,42 @@ polygons being searched.")
 Distances Method, under a Brownian Motion Model.  See Peng et al. (2021)
 <doi:10.1016/j.ympev.2021.107142>.")
     (license license:agpl3)))
+
+(define-public r-rapidopgs
+  (package
+    (name "r-rapidopgs")
+    (version "2.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RapidoPGS" version))
+       (sha256
+        (base32 "01b6s9zn6n16ig0jvhx0jrsr0yxc0qd6gj146ncqhyni5xz6jc6n"))))
+    (properties `((upstream-name . "RapidoPGS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcurl
+                             r-magrittr
+                             r-iranges
+                             r-genomicranges
+                             r-dplyr
+                             r-data-table
+                             r-curl
+                             r-coloc
+                             r-bigsnpr
+                             r-bigreadr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RapidoPGS")
+    (synopsis "Fast and Light Package to Compute Polygenic Risk Scores")
+    (description
+     "Quickly computes polygenic scores from GWAS summary statistics of either
+case-control or quantitative traits without parameter tuning.  Reales,G.,
+Vigorito, E., Kelemen,M., Wallace,C. (2021) <doi:10.1101/2020.07.24.220392>
+\"RÃ¡@code{pidoPGS}: A rapid polygenic score calculator for summary GWAS data
+without a test dataset\".")
+    (license license:gpl3)))
 
 (define-public r-rapidoc
   (package
@@ -59640,13 +59738,13 @@ be found at the following link:
 (define-public r-rademu
   (package
     (name "r-rademu")
-    (version "2.3.1.0")
+    (version "2.3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radEmu" version))
        (sha256
-        (base32 "1s3jkf9gb0zfc27byfygkr7g31yn7xvbm48pg6f7ffp8z8dham37"))))
+        (base32 "1yi7qas9habgppjylnx6cn3x05lh4yy45h34s81ziylvrgpi8ha8"))))
     (properties `((upstream-name . "radEmu")))
     (build-system r-build-system)
     (arguments

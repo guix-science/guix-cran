@@ -18910,13 +18910,13 @@ in Korea.")
 (define-public r-n1qn1
   (package
     (name "r-n1qn1")
-    (version "6.0.1-12")
+    (version "6.0.1-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "n1qn1" version))
        (sha256
-        (base32 "1rgmvmawvrac0b2k4r39429yvw7vidkhln68q2llr2k81ns58b32"))))
+        (base32 "03cy7xf52ikf6fnkblfcbb3gpjjfcin5fmg9ws2crrpd6n9zw0qb"))))
     (properties `((upstream-name . "n1qn1")))
     (build-system r-build-system)
     (arguments

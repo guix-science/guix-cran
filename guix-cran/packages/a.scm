@@ -17662,13 +17662,13 @@ deterministically calculated.")
 (define-public r-allcontributors
   (package
     (name "r-allcontributors")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allcontributors" version))
        (sha256
-        (base32 "0yxk7433g9n62ff08cg9zcqng553kyhswc7yb15qwx4wynn376f3"))))
+        (base32 "178bms9w975ww0f195bm56nv3wsnlb34y677cv5z69d2psra3imn"))))
     (properties `((upstream-name . "allcontributors")))
     (build-system r-build-system)
     (arguments
@@ -23251,13 +23251,13 @@ allows to fetch customer details, submit queries to ADH.")
 (define-public r-adsasi
   (package
     (name "r-adsasi")
-    (version "0.9.0.1")
+    (version "0.9.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adsasi" version))
        (sha256
-        (base32 "1zvs239lyzsrq5y1m462cq2nx7q73iqpk2rx6710wmd8n2bvjpwb"))))
+        (base32 "0pik9800dq84xyijng35hiq6jg41jya5lpcixyqp65c1pp2cj50y"))))
     (properties `((upstream-name . "adsasi")))
     (build-system r-build-system)
     (arguments
@@ -28033,13 +28033,13 @@ toolkit in your work, please cite the paper.")
 (define-public r-abover
   (package
     (name "r-abover")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aboveR" version))
        (sha256
-        (base32 "0k92v7n3w419z0jga0ppfbhllscgrqiw0h0phhn2jnpgq34ii2ai"))))
+        (base32 "08cx2ml6frcbg00n5m3lpx0lcs69g4mfy4glzyi5fckcb0xq1yf1"))))
     (properties `((upstream-name . "aboveR")))
     (build-system r-build-system)
     (arguments
@@ -28051,13 +28051,14 @@ toolkit in your work, please cite the paper.")
     (synopsis "'LiDAR' Terrain Analysis and Change Detection from Above")
     (description
      "Terrain change detection, cut and fill volume estimation, terrain profiling,
-reclamation monitoring, erosion analysis, and flood risk assessment from
-@code{LiDAR} (Light Detection and Ranging) point clouds and digital elevation
-models ('DEMs').  Applications include surface mine reclamation monitoring,
-sediment pond capacity tracking, highwall safety classification, and erosion
-channel detection.  Built on @code{lidR} for point cloud I/O and terra for
-raster operations.  Includes access utilities for @code{KyFromAbove}
-cloud-native elevation data on Amazon Web Services ('AWS')
+flood inundation analysis, slope and aspect computation, hillshade generation,
+contour extraction, reclamation monitoring, erosion analysis, and engineering
+export (@code{LandXML}, STL) from @code{LiDAR} (Light Detection and Ranging)
+point clouds and digital elevation models ('DEMs').  Applications include
+surface mine reclamation monitoring, sediment pond capacity tracking, highwall
+safety classification, and erosion channel detection.  Built on @code{lidR} for
+point cloud I/O and terra for raster operations.  Includes access utilities for
+@code{KyFromAbove} cloud-native elevation data on Amazon Web Services ('AWS')
 <https://kyfromabove.ky.gov/>.  Methods for terrain change detection and volume
 estimation follow Li and others (2005) <doi:10.1016/j.geomorph.2004.10.007>.")
     (license license:expat)))

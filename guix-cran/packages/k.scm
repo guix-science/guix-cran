@@ -563,25 +563,20 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "2.3-0")
+    (version "2.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "13blgx33z23y818bz4jvccrg05dcsnlxy83iz8gdd9rgllc658iv"))))
+        (base32 "158mi240rkdbkg3nahf1fjhn0km30njlhvzfr9iiac6fcmbkwspp"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-sets
-                             r-rsvg
-                             r-pks
-                             r-diagrammersvg
-                             r-diagrammer))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-tidyr r-sets r-rsvg r-pks r-diagrammer))
+    (native-inputs (list r-litedown))
     (home-page "https://cran.r-project.org/package=kstMatrix")
     (synopsis
      "Basic Functions in Knowledge Space Theory Using Matrix Representation")

@@ -6102,13 +6102,13 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
 (define-public r-optimall
   (package
     (name "r-optimall")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimall" version))
        (sha256
-        (base32 "09hskpzd83hb7cxq8gl582dnfh33wgihwqin58jy5r2f5c035j4h"))))
+        (base32 "0h22s4ra3j8d28mhy835s34r4crh9qv15aipznjc9v521xlnvw9r"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (arguments
@@ -12793,6 +12793,33 @@ archive for scholarly documents from all academic fields.  This package provides
 programmatic access to the API <https://api.archives-ouvertes.fr/docs> and
 allows to search for records and download documents.")
     (license license:gpl3+)))
+
+(define-public r-odysseussurvivalmodule
+  (package
+    (name "r-odysseussurvivalmodule")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OdysseusSurvivalModule" version))
+       (sha256
+        (base32 "173w76gqh4ap6d9pc9vfn6y56y6cxjyyqhqkg5kh2lb3a6mf4c9f"))))
+    (properties `((upstream-name . "OdysseusSurvivalModule")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-sqlrender r-ggsurvfit
+                             r-databaseconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OdysseusSurvivalModule")
+    (synopsis "Cohort-Based Single-Event Survival Utilities")
+    (description
+     "This package provides tools to build single-event survival datasets from \"OMOP
+CDM\" cohorts and estimate survival outcomes.  The package supports Kaplan-Meier,
+Cox proportional hazards, and parametric accelerated-failure-time models, with
+optional stratification by gender and age groups.")
+    (license license:asl2.0)))
 
 (define-public r-odt
   (package

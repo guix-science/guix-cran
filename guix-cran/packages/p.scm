@@ -7689,13 +7689,13 @@ applications.")
 (define-public r-propertee
   (package
     (name "r-propertee")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "propertee" version))
        (sha256
-        (base32 "1lpb7gnk0pjd5amm1ixlckrf0g37wayd637d4qg63inqvlsxkbxi"))))
+        (base32 "0b6fz1kq57x2522xdy4dp1ngzmwznjf0h9ysg5b2qxnrlmn8zxm2"))))
     (properties `((upstream-name . "propertee")))
     (build-system r-build-system)
     (arguments
@@ -22417,13 +22417,13 @@ model.")
 (define-public r-pmrm
   (package
     (name "r-pmrm")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmrm" version))
        (sha256
-        (base32 "1xxh34z5v72bkyjrnpgpcxw0w0rs2kjsp4q59l7p7mrhd9sj6y0p"))))
+        (base32 "1ikvzpxxlzbhr0zgqvd17xb1v60nis0wfxfz0s3w465fk0dqvnsa"))))
     (properties `((upstream-name . "pmrm")))
     (build-system r-build-system)
     (arguments
@@ -29905,13 +29905,13 @@ trees in NEXUS and Newick formats, while preserving annotations.")
 (define-public r-phylospatial
   (package
     (name "r-phylospatial")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylospatial" version))
        (sha256
-        (base32 "0h8iqa2165msh5kchjaa6wxv3dd980paymay1w7nl0krfrgmhqmh"))))
+        (base32 "16xnqznj8d34yvnlnmr22xg66sff2rpfps091s8rbl6cq83nvl2s"))))
     (properties `((upstream-name . "phylospatial")))
     (build-system r-build-system)
     (arguments
@@ -35519,6 +35519,29 @@ suitable to polytomous data include extensions of lz, U3, and (normed) number of
 Guttman errors.")
     (license license:gpl2+)))
 
+(define-public r-percentiles
+  (package
+    (name "r-percentiles")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "percentiles" version))
+       (sha256
+        (base32 "1f3k7iss6qkl638xagz7rmz5syg5shlkprvhrwns3jab6z8vxj18"))))
+    (properties `((upstream-name . "percentiles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-dplyr r-assertthat))
+    (home-page "https://cran.r-project.org/package=percentiles")
+    (synopsis "Calculate (Stratified) Percentiles")
+    (description
+     "Calculate (stratified) percentiles on a data.frame Stratification will split the
+data.frame into subgroups and calculate percentiles for each independently.")
+    (license license:gpl3)))
+
 (define-public r-perccalc
   (package
     (name "r-perccalc")
@@ -35903,6 +35926,45 @@ Ch., Schumacher M. and Binder H. (2011) <doi:10.1007/s00180-011-0236-6>.")
      "Is designed to make easier printing summary statistics (for continues and factor
 level) tables in Latex, and plotting by factor.")
     (license license:gpl3)))
+
+(define-public r-pepdiff
+  (package
+    (name "r-pepdiff")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pepdiff" version))
+       (sha256
+        (base32 "06xpn4wggbi88qcvikjsnzmap6jiryn5x7a5p75faxv9dlgdm575"))))
+    (properties `((upstream-name . "pepdiff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-emmeans
+                             r-dplyr
+                             r-cowplot
+                             r-artool))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pepdiff")
+    (synopsis "Differential Abundance Analysis for Phosphoproteomics Data")
+    (description
+     "This package provides tools for analyzing differential abundance in proteomics
+experiments.  Implements S3 classes for data management and supports Generalized
+Linear Models (GLM; Nelder and Wedderburn (1972) <doi:10.2307/2344614>), Aligned
+Rank Transform (ART; Wobbrock et al. (2011) <doi:10.1145/1978942.1978963>), and
+pairwise test methods for statistical analysis.  Includes visualization
+functions for Principal Component Analysis (PCA), volcano plots, and heatmaps.")
+    (license license:expat)))
 
 (define-public r-pepbvs
   (package
@@ -44876,6 +44938,56 @@ log-normal form.  Model details are provided in Bailey and Peng (2025)
 <doi:10.2139/ssrn.5475626> and Peng and Van den Bulte (2024)
 <doi:10.1287/mnsc.2019.01897>.")
     (license license:gpl3+)))
+
+(define-public r-panelr
+  (package
+    (name "r-panelr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "panelr" version))
+       (sha256
+        (base32 "0xky4jxnx27krjkl0n3rnlc22m777kr5zzbi80hvikgsni4zvj0n"))))
+    (properties `((upstream-name . "panelr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-reformulas
+                             r-purrr
+                             r-magrittr
+                             r-lmertest
+                             r-lme4
+                             r-jtools
+                             r-ggplot2
+                             r-formula
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://panelr.jacob-long.com")
+    (synopsis
+     "Regression Models and Utilities for Repeated Measures and Panel Data")
+    (description
+     "This package provides an object type and associated tools for storing and
+wrangling panel data.  Implements several methods for creating regression models
+that take advantage of the unique aspects of panel data.  Among other
+capabilities, automates the \"within-between\" (also known as \"between-within\" and
+\"hybrid\") panel regression specification that combines the desirable aspects of
+both fixed effects and random effects econometric models and fits them as
+multilevel models (Allison, 2009 <doi:10.4135/9781412993869.d33>; Bell & Jones,
+2015 <doi:10.1017/psrm.2014.7>).  These models can also be estimated via
+generalized estimating equations (GEE; @code{McNeish}, 2019
+<doi:10.1080/00273171.2019.1602504>) and Bayesian estimation is (optionally)
+supported via Stan'.  Supports estimation of asymmetric effects models via first
+differences (Allison, 2019 <doi:10.1177/2378023119826441>) as well as a
+generalized linear model extension thereof using GEE.")
+    (license license:expat)))
 
 (define-public r-panelpomp
   (package

@@ -2072,6 +2072,34 @@ experimental setup.  LSD (Laboratory for Simulation Development) is free
 software available at <https://www.labsimdev.org/>).")
     (license license:gpl3)))
 
+(define-public r-lsdinterface
+  (package
+    (name "r-lsdinterface")
+    (version "1.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSDinterface" version))
+       (sha256
+        (base32 "0vnf6501m09lfbykdh9229z3dl3ghjyi1gk3fsii5ci2qxz8p94z"))))
+    (properties `((upstream-name . "LSDinterface")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-paralleldist r-boot r-abind))
+    (home-page "https://cran.r-project.org/package=LSDinterface")
+    (synopsis "Interface Tools for 'LSD' Simulation Results Files")
+    (description
+     "Interfaces R with LSD simulation models.  Reads object-oriented data in results
+files (.res[.gz]) produced by LSD and creates appropriate multi-dimensional
+arrays in R'.  Supports multiple core parallel threads of multi-file data
+reading for increased performance.  Also provides functions to extract basic
+information and statistics from data files.  LSD (Laboratory for Simulation
+Development) is free software developed by Marco Valente and Marcelo C. Pereira
+(documentation and downloads available at <https://www.labsimdev.org/>).")
+    (license license:gpl3)))
+
 (define-public r-lsdbc
   (package
     (name "r-lsdbc")
@@ -5639,13 +5667,13 @@ Monte Carlo Logic Regression is described in and Kooperberg and Ruczinski (2005)
 (define-public r-logicforest
   (package
     (name "r-logicforest")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogicForest" version))
        (sha256
-        (base32 "1v56zkgrvdalwalvlzaq6qx6xkc1504n03nr9rvf1jbwjx6qzkml"))))
+        (base32 "0rzhlw8c1mzmk9lalb2njcwqnpv89xmkrff1y09mgmhii6irydj9"))))
     (properties `((upstream-name . "LogicForest")))
     (build-system r-build-system)
     (arguments
@@ -10846,6 +10874,43 @@ returns minimum distance estimator of parameter b in the model.")
      "This package provides functions to access and test results from a linear model.")
     (license license:expat)))
 
+(define-public r-lineagefreq
+  (package
+    (name "r-lineagefreq")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lineagefreq" version))
+       (sha256
+        (base32 "1dkfp010kh9nmr92fmqfhmbz5rla2b1hmi6kbz7kpvphh0ha9h4x"))))
+    (properties `((upstream-name . "lineagefreq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-numderiv
+                             r-mass
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CuiweiG/lineagefreq")
+    (synopsis "Lineage Frequency Dynamics from Genomic Surveillance Counts")
+    (description
+     "Models pathogen lineage frequency dynamics from genomic surveillance count data.
+ Provides a unified interface for multinomial logistic regression, hierarchical
+partial-pooling models, and the Piantham approximation for relative reproduction
+number estimation.  Features include rolling-origin backtesting, standardized
+forecast scoring, lineage collapsing, emergence detection, and sequencing power
+analysis.  Designed for real-time public health surveillance of any
+variant-resolved pathogen.  Methods described in Abousamra, Figgins, and Bedford
+(2024) <doi:10.1371/journal.pcbi.1012443>.")
+    (license license:expat)))
+
 (define-public r-lindleypowerseries
   (package
     (name "r-lindleypowerseries")
@@ -12316,13 +12381,13 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.2.3")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "0nd7ripvzildrgqba57x1pr7nsddjb5q16v4z3qm194av2qki8d0"))))
+        (base32 "0kah78d6ml2cccayhd5x3r65vky3658pycdq5df959x3awxa7mvl"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (arguments
@@ -12331,7 +12396,6 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
     (propagated-inputs (list r-terra
                              r-stars
                              r-sf
-                             r-rnanoflann
                              r-rlas
                              r-rgl
                              r-rcpparmadillo

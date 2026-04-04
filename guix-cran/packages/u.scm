@@ -2874,13 +2874,13 @@ same.")
 (define-public r-unitrootests
   (package
     (name "r-unitrootests")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unitrootests" version))
        (sha256
-        (base32 "0ask1w25bg20w15w3zh0aag1ckaji2krkxhyl014xm7n9158hr2y"))))
+        (base32 "09wjnpmr9yzfg091j6ai5jbzgrqwn40i743537jrhb5nwizy1rg3"))))
     (properties `((upstream-name . "unitrootests")))
     (build-system r-build-system)
     (arguments
@@ -3299,13 +3299,13 @@ as well as scene management.")
 (define-public r-unifiedml
   (package
     (name "r-unifiedml")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unifiedml" version))
        (sha256
-        (base32 "0j2rp7ylm4cmkny2i7w2vc7rajpm06hslxg8iihc2l1rw2fh5c11"))))
+        (base32 "143xj7la4lny8mmxl49b91n3ql1rk16b56r9zxmw6j0mggls2m46"))))
     (properties `((upstream-name . "unifiedml")))
     (build-system r-build-system)
     (arguments

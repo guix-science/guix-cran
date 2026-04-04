@@ -3229,25 +3229,26 @@ provides the p-value for dependence tests.  See Zeng, X., Xia, Y. and Tong, H.
 (define-public r-jmh
   (package
     (name "r-jmh")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMH" version))
        (sha256
-        (base32 "1n41vhr07ylqb393bsw8lrv1h77a10qshwfxrkyx2y1hsq1bh3iy"))))
+        (base32 "0fw2ilvmgl6qmsllbir9j9wc50mn22ja6n7qkwbdjg105l572blg"))))
     (properties `((upstream-name . "JMH")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-timeroc
-                             r-survival
+    (propagated-inputs (list r-survival
                              r-statmod
                              r-rcppeigen
                              r-rcpp
+                             r-pec
                              r-nlme
                              r-mass
+                             r-magrittr
                              r-dplyr
                              r-caret))
     (home-page "https://cran.r-project.org/package=JMH")
@@ -3257,13 +3258,16 @@ provides the p-value for dependence tests.  See Zeng, X., Xia, Y. and Tong, H.
      "Maximum likelihood estimation for the semi-parametric joint modeling of
 competing risks and longitudinal data in the presence of heterogeneous
 within-subject variability, proposed by Li and colleagues (2023)
-<@code{arXiv:2301.06584>}.  The proposed method models the within-subject
-variability of the biomarker and associates it with the risk of the competing
-risks event.  The time-to-event data is modeled using a (cause-specific) Cox
-proportional hazards regression model with time-fixed covariates.  The
-longitudinal outcome is modeled using a mixed-effects location and scale model.
-The association is captured by shared random effects.  The model is estimated
-using an Expectation Maximization algorithm.")
+<doi:10.48550/@code{arXiv.2506.12741>}.  The proposed method models the
+within-subject variability of the biomarker and associates it with the risk of
+the competing risks event.  The time-to-event data is modeled using a
+(cause-specific) Cox proportional hazards regression model with time-fixed
+covariates.  The longitudinal outcome is modeled using a mixed-effects location
+and scale model.  The association is captured by shared random effects.  The
+model is estimated using an Expectation Maximization algorithm.  This is the
+final release of the JMH package.  Active development has been moved to the
+@code{FastJM} package, which provides improved functionality and ongoing
+support.  Users are strongly encouraged to transition to @code{FastJM}'.")
     (license license:gpl3+)))
 
 (define-public r-jmetrik

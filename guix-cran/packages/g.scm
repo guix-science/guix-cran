@@ -9607,13 +9607,13 @@ Accession and ENTREZID <http://www.ncbi.nlm.nih.gov/gene>.")
 (define-public r-gpkg
   (package
     (name "r-gpkg")
-    (version "0.0.12")
+    (version "0.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpkg" version))
        (sha256
-        (base32 "0irps745qfd7ak78dk4scvnhcmm1dscida6hp460nli6i86n4jzf"))))
+        (base32 "0j4fhcf16hnvnc7pw0799d2b4pdvx61cwqcbsza73x3n9i0kiyn1"))))
     (properties `((upstream-name . "gpkg")))
     (build-system r-build-system)
     (arguments
@@ -16825,13 +16825,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "0w83af9gsybaqh1nhw1wbz9s4gk3pm5lh6619p3v9xll7a5grbw3"))))
+        (base32 "15r9nl0kisisyyp5znbswbvcv9hbv8yvz4wdz5m4imqfd35m31bk"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -16841,6 +16841,7 @@ that all targets remain up to date.")
                              r-rlang
                              r-r6
                              r-purrr
+                             r-mirai
                              r-lubridate
                              r-httr2
                              r-glue
@@ -20096,13 +20097,13 @@ toggle region edges, overlay glass brains, and snapshot or ray-trace the result.
 (define-public r-ggseg-formats
   (package
     (name "r-ggseg-formats")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg.formats" version))
        (sha256
-        (base32 "06v93j8xgi7mrfdcyr5ia7wpq05pml4l0vndacha15r3ws8rkrwj"))))
+        (base32 "1r9b4yjj2la7xjs31fy49rv4gzgs1xcj0pn44p0dfmasmdi2ahp5"))))
     (properties `((upstream-name . "ggseg.formats")))
     (build-system r-build-system)
     (arguments
@@ -20129,13 +20130,13 @@ readers for @code{FreeSurfer} statistics files.")
 (define-public r-ggseg
   (package
     (name "r-ggseg")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg" version))
        (sha256
-        (base32 "128yap65ny1myvkj88jdvr8n381s5xls2zjdr94k1di9vk4w6bjy"))))
+        (base32 "0ljjzjqjfzmm8yxfbg3nryzsg5sc1p3ajd909hqzh8a2dw139m5i"))))
     (properties `((upstream-name . "ggseg")))
     (build-system r-build-system)
     (arguments
@@ -25965,44 +25966,6 @@ imported from CVM's public ftp site
 <https://dados.cvm.gov.br/dados/CIA_ABERTA/>.")
     (license license:gpl2)))
 
-(define-public r-getdfpdata
-  (package
-    (name "r-getdfpdata")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GetDFPData" version))
-       (sha256
-        (base32 "1yxf1i5bipz16pbydl6qxlalh2zpdiigbxd1qczbjc1z78bl5727"))))
-    (properties `((upstream-name . "GetDFPData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-xlsx
-                             r-tibble
-                             r-stringr
-                             r-reshape2
-                             r-readr
-                             r-lubridate
-                             r-dplyr
-                             r-curl
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/msperlin/GetDFPData/")
-    (synopsis
-     "Reading Annual Financial Reports from Bovespa's DFP, FRE and FCA System")
-    (description
-     "Reads annual financial reports including assets, liabilities, dividends history,
-stockholder composition and much more from Bovespa's DFP, FRE and FCA systems
-<http://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm>.
- These are web based interfaces for all financial reports of companies traded at
-Bovespa.  The package is specially designed for large scale data importation,
-keeping a tabular (long) structure for easier processing.")
-    (license license:gpl2)))
-
 (define-public r-getdesigns
   (package
     (name "r-getdesigns")
@@ -28639,13 +28602,13 @@ data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofi" version))
        (sha256
-        (base32 "0f1j8nswfikar5f3ifb0z06xqmlwcihmsq8dwpfmhk0bnvyizm1g"))))
+        (base32 "0rv21yxmyadwdgcv767p5mdldhdcfbwd27rbr45mhq7hppgf5z97"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (arguments
@@ -31693,19 +31656,19 @@ GENEActiv device.")
 (define-public r-geneacore
   (package
     (name "r-geneacore")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GENEAcore" version))
        (sha256
-        (base32 "0kgnfdsp82xx5lfaxlc17yc7cyigsr17ysavb2av7j1hhcf2yh39"))))
+        (base32 "140xxhg04n68lg41m4giy1xhj3asiapzag3qxhq0wwrz18i0rhh0"))))
     (properties `((upstream-name . "GENEAcore")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-signal r-changepoint))
+    (propagated-inputs (list r-signal r-jsonlite r-changepoint))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GENEAcore")
     (synopsis "Pre-Processing of 'GENEActiv' Data")

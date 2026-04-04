@@ -4819,6 +4819,32 @@ selection (CSMES) (as described in De bock et al. (2020)
 conditions.")
     (license license:gpl2+)))
 
+(define-public r-csmbuilder
+  (package
+    (name "r-csmbuilder")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "csmbuilder" version))
+       (sha256
+        (base32 "1pssqkrganshhgj7rffa1knsijz15q2c9aa8jygxbjxgj6jswzrn"))))
+    (properties `((upstream-name . "csmbuilder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=csmbuilder")
+    (synopsis "Collection of Tools for Building Cropping System Models")
+    (description
+     "This package provides a collection of tools for designing, implementing,
+testing, documenting and visualizing dynamic simulation cropping system models.
+Models are specified as a combination of state variables, parameters,
+intermediate factors and input data that define a system of ordinary
+differential equations.  Specified models can be used to simulate dynamic
+processes using numerical integration algorithms.")
+    (license license:gpl3)))
+
 (define-public r-csmaps
   (package
     (name "r-csmaps")
@@ -12397,31 +12423,19 @@ highly variable features in RNA-Seq dataset.")
 (define-public r-countstar
   (package
     (name "r-countstar")
-    (version "1.0.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countSTAR" version))
        (sha256
-        (base32 "054y59r7g4g33ix020m90v8g0c09db59bd9vb7461j0il3amcs99"))))
+        (base32 "14jgjzdw12ixiywrqq92m82wvvc37mqww1016sh7p9kk0i13cimz"))))
     (properties `((upstream-name . "countSTAR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-truncdist
-                             r-truncatednormal
-                             r-splines2
-                             r-spikeslabgam
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-randomforest
-                             r-matrix
-                             r-kfas
-                             r-gbm
-                             r-fastgp
-                             r-dbarts
-                             r-coda))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=countSTAR")
     (synopsis "Flexible Modeling of Count Data")
@@ -12443,8 +12457,8 @@ package also includes several methods for modeling count time series data,
 namely via warped Dynamic Linear Models.  For more details and background on
 these methodologies, see the works of Kowal and Canale (2020)
 <doi:10.1214/20-EJS1707>, Kowal and Wu (2022) <doi:10.1111/biom.13617>, King and
-Kowal (2022) <@code{arXiv:2110.14790>}, and Kowal and Wu (2023)
-<@code{arXiv:2110.12316>}.")
+Kowal (2023) <doi:10.1214/23-BA1394>, and Kowal and Wu (2023)
+<doi:10.48550/@code{arXiv.2110.12316>}.")
     (license license:gpl2+)))
 
 (define-public r-countsplit
@@ -28738,6 +28752,51 @@ the region, date of birth, age, age based on year, gender, zodiac, constellation
 information from the Chinese ID number.")
     (license license:expat)))
 
+(define-public r-cnefetools
+  (package
+    (name "r-cnefetools")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cnefetools" version))
+       (sha256
+        (base32 "0j45qkayxyx1gdk0756n8j8makyhzzm7w2x80nw66akmc00p10r1"))))
+    (properties `((upstream-name . "cnefetools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-piggyback
+                             r-lifecycle
+                             r-httr2
+                             r-h3jsr
+                             r-geobr
+                             r-fs
+                             r-duckspatial
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-arrow))
+    (home-page "https://github.com/pedreirajr/cnefetools")
+    (synopsis "Access and Analysis of Brazilian CNEFE Address Data")
+    (description
+     "Download, cache and read municipality-level address data from the Cadastro
+Nacional de Enderecos para Fins Estatisticos (CNEFE) of the 2022 Brazilian
+Census, published by the Instituto Brasileiro de Geografia e Estatistica (IBGE)
+<https://ftp.ibge.gov.br/Cadastro_Nacional_de_Enderecos_para_Fins_Estatisticos/>.
+ Beyond data access, provides spatial aggregation of addresses, computation of
+land-use mix indices, and dasymetric interpolation of census tract variables
+using CNEFE dwelling points as ancillary data.  Results can be produced on H3
+hexagonal grids or user-supplied polygons, and heavy operations leverage a
+@code{DuckDB} backend with extensions for fast, in-process execution.")
+    (license license:expat)))
+
 (define-public r-cnd
   (package
     (name "r-cnd")
@@ -31197,13 +31256,13 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "1g4ccyippdb8vvy8k9lzvnfvqhlc06nkv0vvfxdnw6q91bsjrwkl"))))
+        (base32 "0dchk4ki67cp08jc2w25amfribknh55sr42w72hhxmxqvmp16qan"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (arguments
@@ -33372,6 +33431,38 @@ al. <doi:10.18637/jss.v111.i01>.")
 for easy data downloading and importing. @code{ClinicalOmicsDB} is a database of
 clinical and omics data from cancer patients.  The database is accessible at
 <http://trials.linkedomics.org>.")
+    (license license:expat)))
+
+(define-public r-clinicalfair
+  (package
+    (name "r-clinicalfair")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinicalfair" version))
+       (sha256
+        (base32 "0vn2n559av8c42ksamljpjhsvz5v2qfyvj7ln7dzgssk7k5yxzsc"))))
+    (properties `((upstream-name . "clinicalfair")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-ggplot2 r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CuiweiG/clinicalfair")
+    (synopsis "Algorithmic Fairness Assessment for Clinical Prediction Models")
+    (description
+     "Post-hoc fairness auditing toolkit for clinical prediction models.  Unlike
+in-processing approaches that modify model training, this package evaluates
+existing models by computing group-wise fairness metrics (demographic parity,
+equalized odds, predictive parity, calibration disparity), visualizing
+disparities across protected attributes, and performing threshold-based
+mitigation.  Supports intersectional analysis across multiple attributes and
+generates audit reports useful for fairness-oriented auditing in clinical AI
+settings.  Methods described in Obermeyer et al. (2019)
+<doi:10.1126/science.aax2342> and Hardt, Price, and Srebro (2016)
+<doi:10.48550/@code{arXiv.1610.02413>}.")
     (license license:expat)))
 
 (define-public r-clinical
@@ -39123,13 +39214,13 @@ some positive but many zero responses (see Follmann, Fay, and Proschan
 (define-public r-chopin
   (package
     (name "r-chopin")
-    (version "0.9.9")
+    (version "0.9.9-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chopin" version))
        (sha256
-        (base32 "1jmawbjvx9w7572ngklag4x8nd5p53i0k1azvkfhnmw6brsbndi1"))))
+        (base32 "08lqqyfw5fk4r5irvgb0m0s4a56d5brcpm8r816f9sqazbcw2zil"))))
     (properties `((upstream-name . "chopin")))
     (build-system r-build-system)
     (arguments
@@ -45968,13 +46059,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "1101msqf3dbncpv7vq6zywj01l4rvd3lwd23j9d1fhsdcsc6884m"))))
+        (base32 "0qjsn62skkkwf696yhysa426dn10p05xn3qzmc7s054f1ddz8kdn"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments

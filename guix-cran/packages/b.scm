@@ -14135,6 +14135,30 @@ Biazatti et al. (2024) <doi:10.1016/j.envdev.2024.101074>, Felizardo et al.
 <doi:10.1016/j.ijhydene.2025.01.089>.")
     (license license:gpl3)))
 
+(define-public r-birdcolors
+  (package
+    (name "r-birdcolors")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "birdcolors" version))
+       (sha256
+        (base32 "0ic37nypklsdyml3phfcmg2wkw1a9bxz6d3kjd7ajkmpv3m5wn1d"))))
+    (properties `((upstream-name . "birdcolors")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=birdcolors")
+    (synopsis "Create Palettes from the Colors of the World's Birds")
+    (description
+     "Create attractive palettes based on the colors of the world's birds.  Palettes
+are composed of 2 to 9 colors, with options to expand palettes via
+interpolation.  Compatible with the package ggplot2 and base R graphics.")
+    (license license:expat)))
+
 (define-public r-birankr
   (package
     (name "r-birankr")
@@ -26853,13 +26877,13 @@ with Bayesian treatment of the covariance matrix (Carrara et al., 2025) <doi:
 (define-public r-bayesqrsurvey
   (package
     (name "r-bayesqrsurvey")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesQRsurvey" version))
        (sha256
-        (base32 "1s37shs94wiwf86p2k3j6dvaqnd6f8n26kid8jzh14f33gfx9cb1"))))
+        (base32 "1xk6rhcmscx512vzg6jnyfzwk38kk8r9lblb7f8rbd5krjz4qmdv"))))
     (properties `((upstream-name . "bayesQRsurvey")))
     (build-system r-build-system)
     (arguments
@@ -28086,6 +28110,31 @@ the variance.  Functions to estimate several kind of means (unconditional,
 conditional and conditional under a mixed model) and quantiles (unconditional
 and conditional) are provided.")
     (license license:gpl3)))
+
+(define-public r-bayeslm
+  (package
+    (name "r-bayeslm")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayeslm" version))
+       (sha256
+        (base32 "0wrhbra465ba3xjp2kc2znsncjd298hq3wsdk63dwf7av5cylamz"))))
+    (properties `((upstream-name . "bayeslm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JingyuHe/bayeslm")
+    (synopsis
+     "Efficient Sampling for Gaussian Linear Regression with Arbitrary Priors")
+    (description
+     "Efficient sampling for Gaussian linear regression with arbitrary priors, Hahn,
+He and Lopes (2018) <doi:10.48550/@code{arXiv.1806.05738>}.")
+    (license license:lgpl2.0+)))
 
 (define-public r-bayeslist
   (package
@@ -31002,6 +31051,32 @@ sample sizes in all baskets.  Methods include the designs by Baumann et al.
 wrappers for functions provided by the package bhmbasket'.")
     (license license:gpl3+)))
 
+(define-public r-baskoptr
+  (package
+    (name "r-baskoptr")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baskoptr" version))
+       (sha256
+        (base32 "0ld31yfhcbfl6xdl0sdy72c2mic1gcn4cr4cb5mm9r4dlvif07mg"))))
+    (properties `((upstream-name . "baskoptr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-future-apply r-baskwrap))
+    (home-page "https://github.com/LukasDSauer/baskoptr")
+    (synopsis "Utility-Based Optimization for Basket Trial Designs")
+    (description
+     "This package provides a unified framework for optimizing basket trial designs.
+To this end, the package supplies several utility functions and also a function
+for executing optimization algorithms on basket trial designs.  The considered
+utility functions are discussed in Sauer et al. (2025)
+<doi:10.1371/journal.pone.0323097>.")
+    (license license:expat)))
+
 (define-public r-baskexact
   (package
     (name "r-baskexact")
@@ -33399,6 +33474,34 @@ shrinkage priors on the effects.")
 Social and Behavioral Sciences Approach\".  First, Second, and Third Edition.
 Published by Chapman and Hall/CRC (2002, 2007, 2014) <doi:10.1201/b17888>.")
     (license license:gpl2+)))
+
+(define-public r-balnet
+  (package
+    (name "r-balnet")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "balnet" version))
+       (sha256
+        (base32 "0wr0vn8qf6ymmgaxa5sjl80h7mwkf6aqmgl8fwm9wnlkknig27nc"))))
+    (properties `((upstream-name . "balnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/erikcs/balnet")
+    (synopsis "Pathwise Estimation of Covariate Balancing Propensity Scores")
+    (description
+     "This package provides pathwise estimation of regularized logistic propensity
+score models using covariate balancing loss functions rather than maximum
+likelihood.  Regularization paths are fit via the adelie elastic-net solver with
+a glmnet'-like interface and objectives that directly target covariate balance
+for the ATE and ATT. For details, see Sverdrup & Hastie (2026)
+<doi:10.48550/@code{arXiv.2602.18577>}.")
+    (license license:expat)))
 
 (define-public r-ballmapper
   (package

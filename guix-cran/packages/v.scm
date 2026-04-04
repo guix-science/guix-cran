@@ -5421,13 +5421,13 @@ Davidian, M. (2022) <doi:10.1111/biom.13509>.")
 (define-public r-vetr
   (package
     (name "r-vetr")
-    (version "0.2.20")
+    (version "0.2.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vetr" version))
        (sha256
-        (base32 "02f1bidaikjz7jc2b55ikswhygpf4yllqdlbwgip68aak0syzlx7"))))
+        (base32 "1qhlgwsffs1pkin06qadqlpnz6f2qasii5xfj8n9a13rscnkba67"))))
     (properties `((upstream-name . "vetr")))
     (build-system r-build-system)
     (arguments

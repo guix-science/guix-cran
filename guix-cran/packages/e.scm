@@ -11631,13 +11631,13 @@ results interactively.")
 (define-public r-epiworldrcalibrate
   (package
     (name "r-epiworldrcalibrate")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldRcalibrate" version))
        (sha256
-        (base32 "163p5jqvnd2y7kn267galwfiipha66wv3fcpydshn22lp2sgah18"))))
+        (base32 "1vcxcc5r2f91hf3bqifrz0w83qggmz106lq5b8q4n5nx07jqsckp"))))
     (properties `((upstream-name . "epiworldRcalibrate")))
     (build-system r-build-system)
     (arguments
@@ -21593,13 +21593,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-educabr
   (package
     (name "r-educabr")
-    (version "0.1.3")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "educabR" version))
        (sha256
-        (base32 "15w82icaflhf682cs2cgrvzb521h40mcwkpbgn3959m80dpy3cc7"))))
+        (base32 "1ql5pazm2wd98yighpm0gv8magz26z3b56ifavhvqw9wi8fdp4k7"))))
     (properties `((upstream-name . "educabR")))
     (build-system r-build-system)
     (arguments
@@ -21620,9 +21620,15 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
      "Download and process public education data from INEP (Instituto Nacional de
 Estudos e Pesquisas Educacionais AnÃ­sio Teixeira).  Provides functions to
 access microdata from the School Census (Censo Escolar), ENEM (Exame Nacional do
-Ensino MÃ©dio), IDEB (Ãndice de Desenvolvimento da EducaÃ§Ã£o BÃ¡sica), and
-other educational datasets.  Returns data in tidy format ready for analysis.
-Data source: INEP Open Data Portal
+Ensino MÃ©dio), SAEB (Sistema de AvaliaÃ§Ã£o da EducaÃ§Ã£o BÃ¡sica), Higher
+Education Census (Censo da EducaÃ§Ã£o Superior), ENADE (Exame Nacional de
+Desempenho dos Estudantes), ENCCEJA (Exame Nacional para CertificaÃ§Ã£o de
+CompetÃªncias de Jovens e Adultos), IDD (Indicador de DiferenÃ§a entre os
+Desempenhos Observado e Esperado), CPC (Conceito Preliminar de Curso), IGC
+(Ãndice Geral de Cursos), CAPES graduate education data, FUNDEB (Fundo de
+Manutencao e Desenvolvimento da Educacao Basica), IDEB (Ãndice de
+Desenvolvimento da EducaÃ§Ã£o BÃ¡sica), and other educational datasets.  Returns
+data in tidy format ready for analysis.  Data source: INEP Open Data Portal
 <https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos>.")
     (license license:expat)))
 
@@ -27627,6 +27633,29 @@ your credentials.  Once database configuration and connection has been set up
 once, you won't have to do it ever again.")
     (license license:expat)))
 
+(define-public r-easycomment
+  (package
+    (name "r-easycomment")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easyComment" version))
+       (sha256
+        (base32 "1rfx404j207whpa78fwn6wmhvafnlf464kdnbmh9xxnsgn7n8qcb"))))
+    (properties `((upstream-name . "easyComment")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=easyComment")
+    (synopsis "Generate Comment Boxes with Custom Alignment")
+    (description
+     "This package provides a function to generate comment boxes framed with #
+characters, with configurable width and text alignment (left, center, or right).
+ Useful for formatting scripts and improving code readability.")
+    (license license:expat)))
+
 (define-public r-easycoda
   (package
     (name "r-easycoda")
@@ -27749,13 +27778,13 @@ functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
 (define-public r-easybgm
   (package
     (name "r-easybgm")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybgm" version))
        (sha256
-        (base32 "0jl8s57ssn1wz0b2x72h977pbl07n7zsf356blk9z27hjvv9ibrh"))))
+        (base32 "01ic3hml5j2g3bm0pzxsbxxxfa5zr3ji50hljylgdpfrgl2r9q9r"))))
     (properties `((upstream-name . "easybgm")))
     (build-system r-build-system)
     (arguments
@@ -27774,9 +27803,9 @@ functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
     (synopsis "Extracting and Visualizing Bayesian Graphical Models")
     (description
      "Fit and visualize the results of a Bayesian analysis of networks commonly found
-in psychology.  The package supports fitting cross-sectional network models
-fitted using the packages BDgraph', bgms and BGGM', as well as network
-comparison fitted using the bgms and BBGM'.  The package provides the parameter
+in psychology.  The package supports cross-sectional network models fitted using
+the packages BDgraph', bgms and BGGM', as well as network comparison tests
+fitted using the packages bgms and BBGM'.  The package provides the parameter
 estimates, posterior inclusion probabilities, inclusion Bayes factor, and the
 posterior density of the parameters.  In addition, for BDgraph and bgms it
 allows to assess the posterior structure space.  Furthermore, the package comes

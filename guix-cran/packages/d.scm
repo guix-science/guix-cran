@@ -25906,13 +25906,13 @@ can also make it easier for designs to be shared, replicated, and critiqued.")
 (define-public r-declared
   (package
     (name "r-declared")
-    (version "0.25")
+    (version "0.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "declared" version))
        (sha256
-        (base32 "0qdzrmmn2p5wb502syk05hj3jn3wbqhjhs7ya08r5gp1fapsalq4"))))
+        (base32 "1z31lmacr61hc6pavv2m87zm9m4zn65x6sc3ff7xz3wy2gqnjmis"))))
     (properties `((upstream-name . "declared")))
     (build-system r-build-system)
     (arguments

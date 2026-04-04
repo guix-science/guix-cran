@@ -10060,54 +10060,43 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlavaan
   (package
     (name "r-inlavaan")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAvaan" version))
        (sha256
-        (base32 "1yg7iglzslgnb6wallc8x04z6r9mfh4q7smvbyy54sqmjckma53h"))))
+        (base32 "0x6d5vyhgx40ychzirmzdy5zjw159nm5snbf4v3wyar2rs9d4nqw"))))
     (properties `((upstream-name . "INLAvaan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ucminf
-                             r-tidyr
-                             r-statmod
-                             r-scales
-                             r-qrng
-                             r-numderiv
-                             r-mvtnorm
-                             r-modeest
-                             r-lavaan
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-cli
-                             r-blavaan))
+    (propagated-inputs (list r-lavaan r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://inlavaan.haziqj.ml/")
     (synopsis "Approximate Bayesian Latent Variable Analysis")
     (description
      "This package implements approximate Bayesian inference for Structural Equation
 Models (SEM) using a custom adaptation of the Integrated Nested Laplace
-Approximation as described in Rue et al. (2009)
-<doi:10.1111/j.1467-9868.2008.00700.x>.  Provides a computationally efficient
-alternative to Markov Chain Monte Carlo (MCMC) for Bayesian estimation, allowing
-users to fit latent variable models using the lavaan syntax.")
+Approximation (Rue et al., 2009) <doi:10.1111/j.1467-9868.2008.00700.x> as
+described in Jamil and Rue (2026a) <doi:10.48550/@code{arXiv.2603.25690>}.
+Provides a computationally efficient alternative to Markov Chain Monte Carlo
+(MCMC) for Bayesian estimation, allowing users to fit latent variable models
+using the lavaan syntax.  See also the companion paper on implementation and
+workflows, Jamil and Rue (2026b) <doi:10.48550/@code{arXiv.2604.00671>}.")
     (license license:gpl3+)))
 
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "19wm9lqv0z64ljchijq844xpnvpi6rlf61qvfrp99bjgrvawg8kn"))))
+        (base32 "0sc9hv732qbjh6vwqignvq9v8d6kxyr5hjz0k5ijpghp4f2kijpv"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments
@@ -10125,14 +10114,16 @@ and is the recommended way to implement new GMRF models in the INLA package
 (<https://www.r-inla.org>).  The INLAtools implement functions to evaluate each
 one of the model specifications from R. The implemented functionalities leverage
 the use of cgeneric models and provide a way to debug the code as well to work
-with the prior for the model parameters and to sample from it.  A very useful
-functionality is the Kronecker product method that creates a new model from
-multiple cgeneric models.  It also works with the rgeneric, the R version of the
-cgeneric intended to easy try implementation of new GMRF models.  The Kronecker
-between two cgeneric models was used in Sterrantino et.  al. (2024)
-<doi:10.1007/s10260-025-00788-y>, and can be used to build the spatio-temporal
-intrinsic interaction models for what the needed constraints are automatically
-set.")
+with the prior for the model parameters and to sample from it.  The `generic0`
+can be used to implement intrinsic models with the scaling as proposed in
+SÃ¸rbye & Rue (2014) <doi:10.1016/j.spasta.2013.06.004>, and the required
+contraints.  A very useful functionality is the Kronecker product method that
+creates a new model from multiple cgeneric models.  It also works with the
+rgeneric, the R version of the cgeneric intended to easy try implementation of
+new GMRF models.  The Kronecker between two cgeneric models was used in
+Sterrantino et.  al. (2024) <doi:10.1007/s10260-025-00788-y>, and can be used to
+build the spatio-temporal intrinsic interaction models for what the needed
+constraints are automatically set, as illustrated in the vignette.")
     (license license:gpl2+)))
 
 (define-public r-inlaspacetime
@@ -10305,6 +10296,40 @@ Ecology-focused introduction in Bachl, Lindgren, Borchers, and Illian (2019)
      "Fit Spatial Econometrics models using Bayesian model averaging on models fitted
 with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
     (license license:gpl2+)))
+
+(define-public r-inkar
+  (package
+    (name "r-inkar")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inkaR" version))
+       (sha256
+        (base32 "0rjlaz5j358fsvz9al4a0p64izrh46gncj0m063j3bx9kjg8ym7v"))))
+    (properties `((upstream-name . "inkaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringdist
+                             r-rlang
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ofurkancoban/inkaR")
+    (synopsis "Download and Analyze Spatial Development Data from 'INKAR'")
+    (description
+     "This package provides a professional R interface to download and analyze spatial
+development indicators from the BBSR INKAR (Indikatoren und Karten zur Raum- und
+Stadtentwicklung) database.  Features a bilingual interactive wizard, fuzzy
+search, multi-indicator downloads with automatic tidy merging (long/wide),
+robust disk caching, and premium ggplot2 themes for regional mapping.")
+    (license license:expat)))
 
 (define-public r-injurytools
   (package
@@ -15414,19 +15439,20 @@ calculating such metrics of tripartite networks by functions of this R package."
 (define-public r-ilsastats
   (package
     (name "r-ilsastats")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAstats" version))
        (sha256
-        (base32 "01s8f2dhdnqzsx85as3ph458pdv7gna2wnbvc2fnfb5w28s4hbz5"))))
+        (base32 "0d15yg55yirdy4g4jgazv5vwwsmg6iapjsvhbafr5cwp4k21mgc5"))))
     (properties `((upstream-name . "ILSAstats")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=ILSAstats")
+    (native-inputs (list r-knitr))
+    (home-page "https://dopatendo.github.io/ILSAstats/")
     (synopsis "Statistics for International Large-Scale Assessments (ILSA)")
     (description
      "Calculates point estimates and standard errors using replicate weights and

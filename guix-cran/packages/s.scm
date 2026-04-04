@@ -482,6 +482,38 @@ package, and their use is illustrated in a vignette on disclosure (Practical
 Privacy Metrics for Synthetic Data).")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-syntheticdata
+  (package
+    (name "r-syntheticdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "syntheticdata" version))
+       (sha256
+        (base32 "0jmid4a3p1lgf82adz9r3vmif2czr9y76gh9dvqi8z5m0ag5krj6"))))
+    (properties `((upstream-name . "syntheticdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CuiweiG/syntheticdata")
+    (synopsis
+     "Synthetic Clinical Data Generation and Privacy-Preserving Validation")
+    (description
+     "Generates synthetic clinical datasets that preserve statistical properties while
+reducing re-identification risk.  Implements Gaussian copula simulation,
+bootstrap with noise injection, and Laplace noise perturbation, with built-in
+utility and privacy validation metrics.  Useful for privacy-aware data sharing
+in multi-site clinical research.  Validates synthetic data quality via
+distributional similarity (Kolmogorov-Smirnov), discriminative accuracy
+(real-vs-synthetic classifier), and nearest-neighbor privacy ratio.  Methods
+described in Jordon et al. (2022) <doi:10.48550/@code{arXiv.2205.03257>} and
+Snoke et al. (2018) <doi:10.1111/rssa.12358>.")
+    (license license:expat)))
+
 (define-public r-synthetic
   (package
     (name "r-synthetic")
@@ -718,30 +750,29 @@ classify participant data as valid or invalid.")
 (define-public r-synopr
   (package
     (name "r-synopr")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synopR" version))
        (sha256
-        (base32 "191m6b0l9hhj08rjbcpkzbc1lcqyqsxpz6sx4bpahpgp2j0gdhxz"))))
+        (base32 "0k5zwkr53m4d63v2bgy5j4mlqp2886pr4bw2k4g3kjbzhgc2c3k0"))))
     (properties `((upstream-name . "synopR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-stringr r-purrr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://ezequiel1593.github.io/synopR/")
     (synopsis
-     "Tidy Decoding of SYNOP (Surface Synoptic Observations) Meteorological Messages")
+     "Fast Decoding of SYNOP (Surface Synoptic Observations) Meteorological Messages")
     (description
-     "Decode raw SYNOP (surface synoptic observations) messages into tidy data frames.
- Supports batch processing of messages from the same station, extracting data
-from Sections 0, 1, and 3, including temperature, dew point, pressure, wind,
-clouds, and precipitation.  The decoding logic follows the specifications
-defined in the World Meteorological Organization (2019) \"Manual on Codes, Volume
-I.1 (WMO-No.  306)\" <https://library.wmo.int/idurl/4/35713>.")
+     "Decode raw SYNOP (surface synoptic observations) messages into data frames,
+extracting data from Sections 0, 1, and 3, including temperature, dew point,
+pressure, wind, clouds, and precipitation.  Available functions to download
+SYNOP messages from Ogimet <https://www.ogimet.com/> if needed.  The decoding
+logic follows the specifications defined in the World Meteorological
+Organization (2019) \"Manual on Codes, Volume I.1 (WMO-No.  306)\".")
     (license license:expat)))
 
 (define-public r-synmicrodata
@@ -1214,6 +1245,30 @@ and generalized autoregressive conditional heteroskedasticity (GARCH) models
 (fitted with the @code{fGarch} package).  All tests are implemented using the
 Rcpp package which ensures great performance of the code.")
     (license license:expat)))
+
+(define-public r-symmcd
+  (package
+    (name "r-symmcd")
+    (version "0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "symMCD" version))
+       (sha256
+        (base32 "1xn0063z6nqr9hi0fpq7ix9p6d570mg0myggxw135rz4ab1fmkzi"))))
+    (properties `((upstream-name . "symMCD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=symMCD")
+    (synopsis "Symmetrized MCD")
+    (description
+     "This package provides implementations of origin-based and symmetrized minimum
+covariance determinant (MCD) estimators, together with supporting utility
+functions.")
+    (license license:gpl2+)))
 
 (define-public r-symengine
   (package
@@ -5080,6 +5135,43 @@ forest.  Given the distances, we can apply hierarchical clustering algorithms to
 define clusters.  Details about this method is described in
 <https://github.com/luyouepiusf/@code{SurvivalClusteringTree>}.")
     (license license:gpl2+)))
+
+(define-public r-survinger
+  (package
+    (name "r-survinger")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survinger" version))
+       (sha256
+        (base32 "1yxhb7jh4vmizgxdd0j83csxfwxsdlzfywqpcdi1grk7isnlxc38"))))
+    (properties `((upstream-name . "survinger")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CuiweiG/survinger")
+    (synopsis "Design-Adjusted Inference for Pathogen Lineage Surveillance")
+    (description
+     "This package provides tools for optimizing sequencing resource allocation and
+estimating pathogen lineage prevalence under real-world genomic surveillance
+conditions.  Implements constrained allocation optimization for limited
+sequencing capacity across multiple regions and sample sources.  Includes
+Horvitz-Thompson and post-stratified estimators that account for unequal
+sequencing rates, delay-adjusted nowcasting for right-censored reporting data,
+and combined design-weighted delay-corrected inference with uncertainty
+propagation.")
+    (license license:expat)))
 
 (define-public r-survimpute
   (package
@@ -16555,6 +16647,49 @@ lead/lag).")
     (description "Settings and functions to extend the knitr Stata engine.")
     (license license:expat)))
 
+(define-public r-statafrikr
+  (package
+    (name "r-statafrikr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statAfrikR" version))
+       (sha256
+        (base32 "0xh13zjrwxf7a5vprjpvnfphy71g8akig6yddkzvng36mlgjwjqw"))))
+    (properties `((upstream-name . "statAfrikR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survey
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-haven
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/damoko2004/statAfrikR")
+    (synopsis "Statistical Tools for African National Statistics Institutes")
+    (description
+     "This package provides a comprehensive statistical toolbox for National
+Statistics Institutes (INS) in Africa.  Provides functions for survey data
+import ('@code{KoboToolbox}', ODK', CSPro', Excel', Stata', SPSS'), data
+processing and validation, weighted statistical analysis (descriptive
+statistics, cross-tabulations, regression, Human Development Index (HDI),
+Multidimensional Poverty Index (MPI) following Alkire and Foster (2011)
+<doi:10.1093/oep/gpr051>, inequalities), visualization (age pyramids, thematic
+maps, official charts) and dissemination ('SDMX export, DDI metadata,
+anonymization, Word/PDF reports).  Designed to work in resource-constrained
+environments, offline and in French.")
+    (license license:gpl3+)))
+
 (define-public r-stat2data
   (package
     (name "r-stat2data")
@@ -17706,13 +17841,13 @@ B.R., & Wood D.J. <doi:10.2307/259247> Hester, P.T., & Adams, K.M. (2013)
 (define-public r-staggr
   (package
     (name "r-staggr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staggR" version))
        (sha256
-        (base32 "1xm5cnzvffhx91a52bc8smyc0dbwy1l3lw6m0mf4d6b2vv0lz85s"))))
+        (base32 "1gzyazg4f12x7ib7lbbig8wbhqimwxnsh6213zm1kilw3x013w50"))))
     (properties `((upstream-name . "staggR")))
     (build-system r-build-system)
     (arguments
@@ -20434,13 +20569,13 @@ and structural assumptions.  For method details see Golyandina N, Zhigljavsky A
 (define-public r-ssabss
   (package
     (name "r-ssabss")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssaBSS" version))
        (sha256
-        (base32 "1sfhrp5y4hhnc417jq2vyk935iyicl58jbw4nwrj3rayh0ng7dbp"))))
+        (base32 "01159hk4g59qaim2mi3gv4ff0r3yjl1a5i5xa8innafvcj16azi7"))))
     (properties `((upstream-name . "ssaBSS")))
     (build-system r-build-system)
     (arguments
@@ -20451,6 +20586,7 @@ and structural assumptions.  For method details see Golyandina N, Zhigljavsky A
                              r-tsbss
                              r-jade
                              r-ictest
+                             r-ics
                              r-ggplot2
                              r-bssprep))
     (home-page "https://cran.r-project.org/package=ssaBSS")
@@ -20459,9 +20595,10 @@ and structural assumptions.  For method details see Golyandina N, Zhigljavsky A
      "Stationary subspace analysis (SSA) is a blind source separation (BSS) variant
 where stationary components are separated from non-stationary components.
 Several SSA methods for multivariate time series are provided here (Flumian et
-al. (2021); Hara et al. (2010) <doi:10.1007/978-3-642-17537-4_52>) along with
-functions to simulate time series with time-varying variance and autocovariance
-(Patilea and Raissi(2014) <doi:10.1080/01621459.2014.884504>).")
+al. (2024) <doi:10.1016/j.cam.2023.115379>; Hara et al. (2010)
+<doi:10.1007/978-3-642-17537-4_52>) along with functions to simulate time series
+with time-varying variance and autocovariance (Patilea and Raissi(2014)
+<doi:10.1080/01621459.2014.884504>).")
     (license license:gpl2+)))
 
 (define-public r-ss3sim
@@ -34795,19 +34932,19 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.13")
+    (version "2.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "0xwrcqw9wca3y4644iysqmd3cscn6ihx71klp034g5qvga374w1i"))))
+        (base32 "08h7fza6jz0c1j9kca55zdwap3xycn26v76qvlbr101n8v6xxz29"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-dbi r-data-table r-curl r-aqp))
+    (propagated-inputs (list r-jsonlite r-dbi r-data-table r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ncss-tech/soilDB/")
     (synopsis "Soil Database Interface")
@@ -35625,46 +35762,6 @@ required, by delayed assignment.")
      "Identifies single nucleotide variants in next-generation sequencing data by
 estimating their local false discovery rates.  For more details, see
 Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
-    (license license:gpl3+)))
-
-(define-public r-snvecr
-  (package
-    (name "r-snvecr")
-    (version "3.10.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "snvecR" version))
-       (sha256
-        (base32 "0l841ylciid2f63h4a3imrlvv5cg46f8zfgz8l2i9q9nyfpnnhqm"))))
-    (properties `((upstream-name . "snvecR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-glue
-                             r-dplyr
-                             r-desolve
-                             r-cli
-                             r-backports))
-    (native-inputs (list r-knitr))
-    (home-page "https://japhir.github.io/snvecR/")
-    (synopsis "Calculate Earthâs Obliquity and Precession in the Past")
-    (description
-     "Easily calculate precession and obliquity from an orbital solution (defaults to
-ZB18a from Zeebe and Lourens (2019) <doi:10.1126/science.aax0612>) and assumed
-or reconstructed values for tidal dissipation (Td) and dynamical ellipticity
-(Ed).  This is a translation and adaptation of the C'-code in the supplementary
-material to Zeebe and Lourens (2022) <doi:10.1029/2021PA004349>, with further
-details on the methodology described in Zeebe (2022)
-<doi:10.3847/1538-3881/ac80f8>.  The name of the C'-routine is snvec', which
-refers to the key units of computation: spin vector s and orbit normal vector n.")
     (license license:gpl3+)))
 
 (define-public r-snsmart
@@ -43333,13 +43430,13 @@ and integrates with Seurat objects.  For more details see Gu (2022)
 (define-public r-singlecasees
   (package
     (name "r-singlecasees")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SingleCaseES" version))
        (sha256
-        (base32 "198rfvs45bqaaj91lcmasc98jximivksv6m1ik7wr49daifikddv"))))
+        (base32 "1wcma4afjfdzcxcbfcs43sw3365f81v9hvw8p2sd8awdwq0qxknl"))))
     (properties `((upstream-name . "SingleCaseES")))
     (build-system r-build-system)
     (arguments
@@ -50815,27 +50912,24 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "1pdkgxjy65q3ib0pg8id86gvwm7a03yxs6wbl97i6yqidh8hvb7b"))))
+        (base32 "1qibvxp2hrynyardpb1bvw93ikgqvj39l9albwpkjh8gk1s4ab97"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zip
-                             r-shiny
-                             r-leaflet
+                             r-pak
                              r-knitr
                              r-glue
-                             r-gargoyle
                              r-devtools
-                             r-curl
-                             r-bslib))
+                             r-curl))
     (home-page "https://simon-smart88.github.io/shinyscholar/")
     (synopsis "Template for Creating Reproducible 'shiny' Applications")
     (description
@@ -54850,6 +54944,34 @@ Commission (IOC) - UNESCO databases on harmful algae
 <https://toxins.hais.ioc-unesco.org/>.")
     (license license:expat)))
 
+(define-public r-shard
+  (package
+    (name "r-shard")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shard" version))
+       (sha256
+        (base32 "0g81nm9bidrcmv4dqzxd62630hxkwpgznn8h6621zzc3p3i7718s"))))
+    (properties `((upstream-name . "shard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://bbuchsbaum.github.io/shard/")
+    (synopsis "Deterministic, Zero-Copy Parallel Execution for R")
+    (description
+     "This package provides a parallel execution runtime for R that emphasizes
+deterministic memory behavior and efficient handling of large shared inputs.
+shard enables zero-copy parallel reads via shared/memory-mapped segments,
+encourages explicit output buffers to avoid large result aggregation, and
+supervises worker processes to mitigate memory drift via controlled recycling.
+Diagnostics report peak memory usage, end-of-run memory return, and hidden
+copy/materialization events to support reproducible performance benchmarking.")
+    (license license:expat)))
+
 (define-public r-shar
   (package
     (name "r-shar")
@@ -57893,6 +58015,37 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 & Faes, Christel & Damme, Pierre & Beutels, Philippe., 2013)
 <doi:10.1007/978-1-4614-4072-7>.")
     (license license:expat)))
+
+(define-public r-seroreconstruct
+  (package
+    (name "r-seroreconstruct")
+    (version "1.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seroreconstruct" version))
+       (sha256
+        (base32 "0s5shyff19ldwy54shz5avfw0f3gjp969v71hjnwlj23b40mkc1p"))))
+    (properties `((upstream-name . "seroreconstruct")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list tbb))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/timktsang/seroreconstruct")
+    (synopsis
+     "Reconstructing Antibody Dynamics to Estimate the Risk of Influenza Virus Infection")
+    (description
+     "This package provides a Bayesian framework for inferring influenza infection
+status from serial antibody measurements.  Jointly estimates season-specific
+infection probabilities, antibody boosting and waning after infection, and
+baseline hemagglutination inhibition (HAI) titer distributions via Markov chain
+Monte Carlo (MCMC).  Supports multi-season analysis and subgroup comparisons via
+a group_by interface.  See Tsang et al. (2022) <doi:10.1038/s41467-022-29310-8>
+for methodological details.")
+    (license license:gpl2+)))
 
 (define-public r-serolyzer
   (package
@@ -68427,6 +68580,36 @@ principles.")
      "This package provides a collection of functions that creates graphs with error
 bars for data collected from one-way or higher factorial designs.")
     (license license:gpl2+)))
+
+(define-public r-scip
+  (package
+    (name "r-scip")
+    (version "1.10.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scip" version))
+       (sha256
+        (base32 "1q76xmsbzv9c3wg6214cj7as1m3sa75i7nn2dr5vgnvq7a7dm2pf"))))
+    (properties `((upstream-name . "scip")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bnaras/scip")
+    (synopsis "Interface to the SCIP Optimization Suite")
+    (description
+     "This package provides an R interface to SCIP (Solving Constraint Integer
+Programs), a framework for mixed-integer programming (MIP), mixed-integer
+nonlinear programming (MINLP), and constraint integer programming (2025,
+<doi:10.48550/@code{arXiv.2511.18580>}).  Supports linear, quadratic, SOS,
+indicator, and knapsack constraints with continuous, binary, and integer
+variables.  Includes a one-shot solver interface and a model-building API for
+incremental problem construction.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-scinsight
   (package
