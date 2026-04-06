@@ -4422,6 +4422,28 @@ based on Hermite polynomial approximation which was proposed and described by A.
 Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
     (license license:gpl3)))
 
+(define-public r-howzatr
+  (package
+    (name "r-howzatr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "howzatR" version))
+       (sha256
+        (base32 "0gs640js2g7iaf1mnvbfdzgc417k1qj8v4f7dmqh89ay2804g8hf"))))
+    (properties `((upstream-name . "howzatR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr))
+    (home-page "https://github.com/lukelockley/howzatR")
+    (synopsis "Useful Functions for Cricket Analysis")
+    (description
+     "Helping to calculate cricket specific problems in a tidy & simple manner.")
+    (license license:expat)))
+
 (define-public r-howmanyimputations
   (package
     (name "r-howmanyimputations")

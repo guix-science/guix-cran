@@ -20439,13 +20439,13 @@ Zoubeidi, T. (2020) <DOI:10.1080/00949655.2020.1803320>.")
 (define-public r-ggreveal
   (package
     (name "r-ggreveal")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggreveal" version))
        (sha256
-        (base32 "1999p7rkiz8bbq8c83phhdb21qf24x8wqv6g54kcwnmrdlp66w0c"))))
+        (base32 "1l3mjbh80429pfdvymn8qhpjf6say3hy233bn26a30li4cx7kfg2"))))
     (properties `((upstream-name . "ggreveal")))
     (build-system r-build-system)
     (arguments
@@ -20454,6 +20454,7 @@ Zoubeidi, T. (2020) <DOI:10.1080/00949655.2020.1803320>.")
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
+                             r-patchwork
                              r-ggplotify
                              r-ggplot2
                              r-dplyr
@@ -21625,13 +21626,13 @@ normal distributions and confidence intervals.")
 (define-public r-ggmulti
   (package
     (name "r-ggmulti")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmulti" version))
        (sha256
-        (base32 "0lm62ls71irz8vhhz30zs1gglhqgbb7907qc94i86s8xyn2qwknz"))))
+        (base32 "14ffjrn18mqxg5c3j853pg0bkh85grpd8pasfpmz0x1vz6hp33p5"))))
     (properties `((upstream-name . "ggmulti")))
     (build-system r-build-system)
     (arguments
@@ -27006,13 +27007,13 @@ Donegan (2022) <doi:10.21105/joss.04716>; Donegan, Chun and Hughes (2020)
 (define-public r-geosptdb
   (package
     (name "r-geosptdb")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosptdb" version))
        (sha256
-        (base32 "0g12z3imw2x6xph0qi39kk3jr1drddjs82lf5hgsyb4v5ypb809x"))))
+        (base32 "00bf4wmyldr3dfvnvi7ayqghnww0f6m3hzixgr6ngfmpffwpvdma"))))
     (properties `((upstream-name . "geosptdb")))
     (build-system r-build-system)
     (arguments
@@ -27024,8 +27025,7 @@ Donegan (2022) <doi:10.21105/joss.04716>; Donegan, Chun and Hughes (2020)
                              r-mass
                              r-gsl
                              r-geospt
-                             r-fields
-                             r-fd))
+                             r-fields))
     (home-page "https://cran.r-project.org/package=geosptdb")
     (synopsis
      "Spatio-Temporal Radial Basis Functions with Distance-Based Methods (Optimization, Prediction and Cross Validation)")
@@ -29624,13 +29624,13 @@ G.J.J. van den Burg and P.J.F. Groenen (2018)
 (define-public r-gensurv
   (package
     (name "r-gensurv")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genSurv" version))
        (sha256
-        (base32 "07f6prqpc1mafzb8dyp8xgycrrd548rj9cpn3qz64lh1qjymns3m"))))
+        (base32 "10m7cn5860n7616i6hyg8hp3chdpghlqb0phg6hi8m21fprglhgx"))))
     (properties `((upstream-name . "genSurv")))
     (build-system r-build-system)
     (arguments

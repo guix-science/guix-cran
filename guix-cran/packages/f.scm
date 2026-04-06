@@ -3188,28 +3188,19 @@ models, Technical report.")
 (define-public r-fude
   (package
     (name "r-fude")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fude" version))
        (sha256
-        (base32 "17mr48fcc72bfsyrdwnxhz88zywd4qqbi9mcs1k76s96ws3lwkrs"))))
+        (base32 "1nyliif0vik3ncmsf0pma7pfc730gwj69x0dmr2vrp8x6aj9c0kj"))))
     (properties `((upstream-name . "fude")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-shiny
-                             r-sf
-                             r-readxl
-                             r-purrr
-                             r-magrittr
-                             r-leaflet
-                             r-glue
-                             r-dt
-                             r-dplyr))
+    (propagated-inputs (list r-units r-sf r-readxl r-readr r-dplyr))
     (home-page "https://github.com/takeshinishimura/fude")
     (synopsis "Utilities for Fude Polygon")
     (description
@@ -15829,13 +15820,13 @@ fossil calibrations, and diversification rate information for ray-finned fishes.
 (define-public r-fishstat
   (package
     (name "r-fishstat")
-    (version "2025.1.0.1")
+    (version "2026.1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishstat" version))
        (sha256
-        (base32 "02hwij5cc8267z6zs9qwvlaicnzx8dkk6gxrl75wd3p97l8dj860"))))
+        (base32 "1mgxi15l2mny8q2sqkcc7472qh7my64cxyimh4ihnkb21bq32dal"))))
     (properties `((upstream-name . "fishstat")))
     (build-system r-build-system)
     (arguments
@@ -24352,13 +24343,13 @@ available from <https://github.com/randy408/libspng/>.")
 (define-public r-fastplyr
   (package
     (name "r-fastplyr")
-    (version "0.9.91")
+    (version "0.9.92")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastplyr" version))
        (sha256
-        (base32 "1fxf7dsaidmng6j41b754hvj1wk9dj8g0n9x0ip9l5yjr8damhlp"))))
+        (base32 "0prkcycz22nkp0nsfmflh95s8cn5mmgq0b4yl2z2fyvvrpvdd8qm"))))
     (properties `((upstream-name . "fastplyr")))
     (build-system r-build-system)
     (arguments

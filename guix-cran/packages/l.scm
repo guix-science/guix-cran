@@ -2036,6 +2036,47 @@ factorization.  Finally some codes for the solution of LSE applied in
 quaternions.")
     (license license:gpl3)))
 
+(define-public r-lsdsensitivity
+  (package
+    (name "r-lsdsensitivity")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSDsensitivity" version))
+       (sha256
+        (base32 "0kqwyw56r4s3w0yy0wbw5sw783v6zkaj7jqhm4l8ff4lapch9rfh"))))
+    (properties `((upstream-name . "LSDsensitivity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-tseries
+                             r-sensitivity
+                             r-rgenoud
+                             r-randtoolbox
+                             r-lsdinterface
+                             r-lawstat
+                             r-ksamples
+                             r-diptest
+                             r-dicekriging
+                             r-car
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=LSDsensitivity")
+    (synopsis "Sensitivity Analysis Tools for 'LSD' Simulations")
+    (description
+     "This package provides tools for sensitivity analysis of LSD simulation models.
+Reads object-oriented data produced by LSD simulation models and performs
+screening and global sensitivity analysis (Sobol decomposition method, Saltelli
+et al. (2008) ISBN:9780470725177).  A Kriging or polynomial meta-model (Kleijnen
+(2009) <doi:10.1016/j.ejor.2007.10.013>) is estimated using the simulation data
+to provide the data required by the Sobol decomposition.  LSD (Laboratory for
+Simulation Development) is free software developed by Marco Valente and Marcelo
+C. Pereira (documentation and downloads available at
+<https://www.labsimdev.org/>).")
+    (license license:gpl3)))
+
 (define-public r-lsdirf
   (package
     (name "r-lsdirf")
@@ -12620,13 +12661,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.3.9")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "17f3qkxx1zk562ai5nzqgzrsr580cl9wz6kqcldgvh5cphw85a15"))))
+        (base32 "10nwkf43plismninv502gq4x1f9md8ljild5idg5pqja5m73fx5c"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (arguments

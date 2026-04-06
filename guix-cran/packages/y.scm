@@ -36,13 +36,13 @@
 (define-public r-yyjsonr
   (package
     (name "r-yyjsonr")
-    (version "0.1.21")
+    (version "0.1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yyjsonr" version))
        (sha256
-        (base32 "15b8c07j45ncvkq1l2ld0j9dc7bbsr2hpgk7278fv5nn8bhxd5by"))))
+        (base32 "13lblhgp64hs69x3dqrj5vlbv42xlwsq5b3anxmm77jqq7h6hb6a"))))
     (properties `((upstream-name . "yyjsonr")))
     (build-system r-build-system)
     (arguments

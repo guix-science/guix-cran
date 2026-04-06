@@ -5991,31 +5991,30 @@ To cite the package in publications, use Hankin 2022
 (define-public r-wex
   (package
     (name "r-wex")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wex" version))
        (sha256
-        (base32 "1mrif8czhcrb58mda6c2332q464sdggx742ddksgzzm38n8pjg4x"))))
+        (base32 "0fzdrxg68xh9asah5n5xkmyv4b73dwbajxbafv3449sgcmdnbzb9"))))
     (properties `((upstream-name . "wex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-fkf))
+    (propagated-inputs (list r-kfas r-fkf))
     (home-page "https://github.com/timginker/wex")
-    (synopsis
-     "Compute the Exact Observation Weights for the Kalman Filter and Smoother")
+    (synopsis "Exact Observation Weights for the Kalman Filter and Smoother")
     (description
-     "Computes the exact observation weights for the Kalman filter and smoother, based
-on the method described in Koopman and Harvey (2003)
+     "Computes exact observation weights for the Kalman filter and smoother, following
+Koopman and Harvey (2003)
 <www.sciencedirect.com/science/article/pii/S0165188902000611>.  The package
-supports in-depth exploration of state-space models, enabling researchers and
-practitioners to extract meaningful insights from time series data.  This
-functionality is especially valuable in dynamic factor models, where the
-computed weights can be used to decompose the contributions of individual
-variables to the latent factors.  See the README file for examples.")
+provides tools for analyzing linear Gaussian state-space models, allowing users
+to quantify the contribution of individual observations to filtered and smoothed
+state estimates.  These weights can be used for interpretation, decomposition,
+and diagnostic analysis in time series models, including applications such as
+dynamic factor models.  See the README for examples.")
     (license license:expat)))
 
 (define-public r-wevid
@@ -8186,13 +8185,13 @@ maps of surface moisture and evaporative dynamics.")
 (define-public r-wdi
   (package
     (name "r-wdi")
-    (version "2.7.9")
+    (version "2.7.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WDI" version))
        (sha256
-        (base32 "1kjl0iv16fdhkdzbywn5n15kh9bj231xg8glx9md801qin9j23ra"))))
+        (base32 "1a7kcxx8dmfvzv89n7z6990fiq0agy4dhql850mcmz9shjjz9d60"))))
     (properties `((upstream-name . "WDI")))
     (build-system r-build-system)
     (arguments

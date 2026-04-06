@@ -11919,13 +11919,13 @@ Countries API <https://restcountries.com/>.")
 (define-public r-india
   (package
     (name "r-india")
-    (version "0.1-2")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "india" version))
        (sha256
-        (base32 "10qw9xlw1mdzbqczxajv2gspqkfh2ifjljp6djmk8nwdpam5xisk"))))
+        (base32 "1wsm6jpyagyvkmvc1wshkkmwg92pvsvfrzrh1lh0l16xm5qjf478"))))
     (properties `((upstream-name . "india")))
     (build-system r-build-system)
     (arguments
@@ -14080,13 +14080,13 @@ regulations.")
 (define-public r-immundata
   (package
     (name "r-immundata")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immundata" version))
        (sha256
-        (base32 "0bvw9x1jgyyzkv54h4q1zjfrzz7cg8di4pvijmazcc7mr2dnblib"))))
+        (base32 "1258w5ks81frjr035hav375823xb8lns4wx4aav6vcrwrgmynrz1"))))
     (properties `((upstream-name . "immundata")))
     (build-system r-build-system)
     (arguments

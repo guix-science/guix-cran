@@ -27892,6 +27892,49 @@ rati, GARCH(1,1) Forecasting.")
 classification, curve fitting, and spatial data analysis.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-misc
+  (package
+    (name "r-misc")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "misc" version))
+       (sha256
+        (base32 "1zqrff4cj1aqh14m40b5v9pd1mvs4j6h2rvavinq84x5v821687p"))))
+    (properties `((upstream-name . "misc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-writexl
+                             r-usethis
+                             r-tidyr
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-mapview
+                             r-magrittr
+                             r-jsonlite
+                             r-here
+                             r-glue
+                             r-ggplot2
+                             r-fs
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/kguidonimartins/misc")
+    (synopsis "Miscellaneous Functions for Data and Geospatial Work")
+    (description
+     "Helpers for common data analysis tasks including missing-value summaries and
+filters, simple reporting and plotting utilities, Excel import and export
+workflows, and reading geospatial formats (for example shapefiles in zip
+archives, file geodatabases, KMZ, and KML) via sf and related packages.  Also
+includes small project utilities such as creating directories, gitignore
+scaffolding, combined package loading, and optional lintr setup.")
+    (license license:expat)))
+
 (define-public r-misaem
   (package
     (name "r-misaem")
@@ -30103,20 +30146,23 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.5.8")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "0f3ip844jk68k8w06qv03wfcxpnfz4096dgpc8zh7bbgy8mcn1if"))))
+        (base32 "0ba7h8k7c3nagvrn9mydhhkcl7z9bbnzn6k8fvhd9mpqjpqbws60"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-purrr
+                             r-netrics
                              r-manynet
+                             r-learnr
+                             r-knitr
                              r-generics
                              r-future
                              r-furrr
@@ -30138,13 +30184,13 @@ tidygraph objects, and on one-mode and two-mode (bipartite) networks.")
 (define-public r-migest
   (package
     (name "r-migest")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migest" version))
        (sha256
-        (base32 "04s5kczg19klzlbhy3mh5y3swqq01ydrw5bg2lnmmsdpaz9jp9xq"))))
+        (base32 "0h03a8iw9gi4ixz4bm48p80f15syym6l1ggkk5q1k12r6azh4xz8"))))
     (properties `((upstream-name . "migest")))
     (build-system r-build-system)
     (arguments
@@ -30158,10 +30204,8 @@ tidygraph objects, and on one-mode and two-mode (bipartite) networks.")
                              r-migration-indices
                              r-matrixstats
                              r-magrittr
-                             r-lpsolve
                              r-forcats
                              r-dplyr
-                             r-cvxr
                              r-circlize))
     (home-page "http://guyabel.github.io/migest/")
     (synopsis
@@ -51982,13 +52026,13 @@ generating fictional state names.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.7.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1kz513kwi0ldam1xadhfp8pmj6pb4q9mlbra8jdq59piya03qvzx"))))
+        (base32 "1p8rfy3rqzpm5filnxdg95arvj0sxasljhsndzrfw9y2gvkpa0iy"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments
@@ -53863,13 +53907,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-maihda
   (package
     (name "r-maihda")
-    (version "0.1.0")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAIHDA" version))
        (sha256
-        (base32 "00dcsfmyriyjwvsvs4il2lpwsh2bzsgws2x640sqpk4gkzr3nvpa"))))
+        (base32 "14d0cffk3xd31zi142fw2zlvv1f1ysl5hclpvilszdlgb7m5zkb8"))))
     (properties `((upstream-name . "MAIHDA")))
     (build-system r-build-system)
     (arguments

@@ -8633,46 +8633,38 @@ embeddings', images, audio, fine-tuning, and model management.")
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openairmaps" version))
        (sha256
-        (base32 "0f56qpfjrx620qmlcad6d69rf02kvdh9fbb3p1ip4j9swshcl1a6"))))
+        (base32 "0wk8h1kf5fw8kfs2mzn3pb4ln9im05gzvvdb05447mg81hwzcvj2"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-stringr
                              r-sf
-                             r-rosm
                              r-rlang
                              r-purrr
-                             r-prettymapr
                              r-openair
-                             r-mgcv
-                             r-magrittr
                              r-lubridate
                              r-lifecycle
                              r-leaflet
-                             r-ggtext
-                             r-ggspatial
                              r-ggplot2
-                             r-forcats
                              r-dplyr
                              r-cli))
-    (home-page "https://davidcarslaw.github.io/openairmaps/")
+    (home-page "https://openair-project.github.io/openairmaps/")
     (synopsis "Create Maps of Air Pollution Data")
     (description
      "Combine the air quality data analysis methods of openair with the
 @code{JavaScript} Leaflet (<https://leafletjs.com/>) library.  Functionality
 includes plotting site maps, \"directional analysis\" figures such as polar plots,
 and air mass trajectories.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-openair
   (package

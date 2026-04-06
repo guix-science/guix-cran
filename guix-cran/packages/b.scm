@@ -14086,13 +14086,13 @@ Goldin, Ho and Imai (2025) <doi:10.1080/01621459.2025.2526695>.")
 (define-public r-birddog
   (package
     (name "r-birddog")
-    (version "1.0.0")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "birddog" version))
        (sha256
-        (base32 "1p0a2y97v7hbjkiyndma9ng5xhrc52c8nhs190mkjc27rhk0mxj2"))))
+        (base32 "11lchq6vs0d1n0bqm0rjskmdxhcw7b7y2bdjh34gdxigkk5ihcmc"))))
     (properties `((upstream-name . "birddog")))
     (build-system r-build-system)
     (arguments
@@ -14115,6 +14115,7 @@ Goldin, Ho and Imai (2025) <doi:10.1080/01621459.2025.2526695>.")
                              r-ggraph
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "http://roneyfraga.com/birddog/")
     (synopsis
      "Sniffing Emergence and Trajectories in Academic Papers and Patents")
@@ -28714,6 +28715,36 @@ membership in the population.  The provided functions implement a Bayesian model
 for predicting hemispheric dominance from observed laterality indices (Sorensen
 and Westerhausen, Laterality: Asymmetries of Body, Brain and Cognition, 2020,
 <doi:10.1080/1357650X.2020.1769124>).")
+    (license license:gpl3)))
+
+(define-public r-bayesianlasso
+  (package
+    (name "r-bayesianlasso")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianLasso" version))
+       (sha256
+        (base32 "13bbp78g8xc5x9sb8r62wvyhz1zhd47r8syz1v3rdiwxsixx7hq8"))))
+    (properties `((upstream-name . "BayesianLasso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpparmadillo
+                             r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://garthtarr.github.io/BayesianLasso/")
+    (synopsis "Bayesian Lasso Regression and Tools for the Lasso Distribution")
+    (description
+     "This package implements Bayesian Lasso regression using efficient Gibbs sampling
+algorithms, including modified versions of the Hans and Park Casella (PC)
+samplers.  Includes functions for working with the Lasso distribution, such as
+its density, cumulative distribution, quantile, and random generation functions,
+along with moment calculations.  Also includes a function to compute the Mills
+ratio.  Designed for sparse linear models and suitable for high-dimensional
+regression problems.")
     (license license:gpl3)))
 
 (define-public r-bayesianinference

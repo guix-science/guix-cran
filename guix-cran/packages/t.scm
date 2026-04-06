@@ -5936,13 +5936,13 @@ tsibble', tis or irts'.  Also converts reliably between these classes.")
 (define-public r-tsaux
   (package
     (name "r-tsaux")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsaux" version))
        (sha256
-        (base32 "0ib2hl4kzb42a88hdcy1pccjxc1xbdpb5gnx8hfnlc778b4a7lq0"))))
+        (base32 "094hqgq2ir1iwlmirs1x1vkv6wqxf2bzsvjbp811mc19sgw6asf6"))))
     (properties `((upstream-name . "tsaux")))
     (build-system r-build-system)
     (arguments
@@ -5952,7 +5952,6 @@ tsibble', tis or irts'.  Also converts reliably between these classes.")
                              r-xts
                              r-tsoutliers
                              r-tsmethods
-                             r-stlplus
                              r-scoringrules
                              r-rdpack
                              r-lubridate
@@ -13899,26 +13898,29 @@ Euclidean embedding details are in Arhami and Rohani (2025b)
 (define-public r-topologyr
   (package
     (name "r-topologyr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topologyR" version))
        (sha256
-        (base32 "1y9dx06aqpfyqrvi3kanx0hlqg9jhrc7gbyfsc7s8xb2j3f3dv97"))))
+        (base32 "0hiqh5zszjsi8pfygjggda89flg9lsw0q1mxh1msr6phymzj487s"))))
     (properties `((upstream-name . "topologyR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-rcpp r-ggplot2))
     (home-page "https://github.com/IsadoreNabi/topologyR")
     (synopsis "Topological Connectivity Analysis for Numeric Data")
     (description
-     "Description: Implementation of topological data analysis methods based on
-graph-theoretic approaches for discovering topological structures in data.  The
-core algorithm constructs topological spaces from graphs following Nada et al.
-(2018) <doi:10.1002/mma.4726> \"New types of topological structures via graphs\".")
+     "Topological data analysis methods based on graph-theoretic approaches for
+discovering topological structures in data.  Constructs topological spaces from
+graphs following Nada et al. (2018) <doi:10.1002/mma.4726>, with visibility
+graph construction for time series following Lacasa et al. (2008)
+<doi:10.1073/pnas.0709247105>.  Supports directed visibility graphs for
+bitopological analysis of temporal irreversibility (Kelly, 1963), and Alexandrov
+topology construction from reachability preorders.")
     (license license:expat)))
 
 (define-public r-topologygsa

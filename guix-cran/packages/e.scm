@@ -5595,13 +5595,13 @@ exponential.")
 (define-public r-eventstudyr
   (package
     (name "r-eventstudyr")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventstudyr" version))
        (sha256
-        (base32 "0785x8vdwgwnfqkjadmyshrrc01pajs5phrmncypmk4ivj85y6z0"))))
+        (base32 "0sgdw58a0mmbnj48dq2ybashjhpvnvhgi5fr5r08bs63nlband7k"))))
     (properties `((upstream-name . "eventstudyr")))
     (build-system r-build-system)
     (arguments
@@ -5612,6 +5612,7 @@ exponential.")
                              r-pracma
                              r-mass
                              r-ggplot2
+                             r-fixest
                              r-estimatr
                              r-dplyr
                              r-data-table
@@ -25411,13 +25412,13 @@ using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarty" version))
        (sha256
-        (base32 "04119fqc6a7n9qrxxj5734b6llqm4ijrgghmkym28p2gdsnvxi4q"))))
+        (base32 "11c5cfbw4yqlafp0hfr79k4d85jcql52xid9523ir70zyqyadyfk"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (arguments

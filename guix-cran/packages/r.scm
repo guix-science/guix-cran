@@ -1770,13 +1770,13 @@ to build expressions in a chain-like fashion.")
 (define-public r-rveg
   (package
     (name "r-rveg")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rveg" version))
        (sha256
-        (base32 "09z8sbv2z3cq3c8bfwskpd6b961gkhcz90zlnm2vb18rxx4329m4"))))
+        (base32 "0lm3yy0zcjjh6i9c830hadcs0r23y0p827v16d99h3y0h7g5fs67"))))
     (properties `((upstream-name . "Rveg")))
     (build-system r-build-system)
     (arguments
@@ -6398,13 +6398,13 @@ statements.")
 (define-public r-rsqlite-toolkit
   (package
     (name "r-rsqlite-toolkit")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSQLite.toolkit" version))
        (sha256
-        (base32 "0r3b72pm7nd8rw3wab2r4j69irkv2hkvqrsnkwkf5487iry75nxm"))))
+        (base32 "13f1ca7c6bjh8i8cvhwy44d89aqs2izh7cc4mh8jjk0v3n4g95cr"))))
     (properties `((upstream-name . "RSQLite.toolkit")))
     (build-system r-build-system)
     (arguments
@@ -18059,13 +18059,13 @@ scrapers, ...) are allowed to access specific resources on a domain.")
 (define-public r-robotoolbox
   (package
     (name "r-robotoolbox")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robotoolbox" version))
        (sha256
-        (base32 "1g920v76dfnk68ii9igl99s5d1505rv1sdiqyh5vv7kq94r68kn3"))))
+        (base32 "1g0pbdqpn7k7myf3jpcjw4cvgif6ldkdy1yknrxyg4dciq2mm3kd"))))
     (properties `((upstream-name . "robotoolbox")))
     (build-system r-build-system)
     (arguments
@@ -46724,13 +46724,13 @@ natively.")
 (define-public r-rdacca-hp
   (package
     (name "r-rdacca-hp")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdacca.hp" version))
        (sha256
-        (base32 "0bgsr2a7xb82q5rnfdxd0h2c923c1s8jc7jgglbzqbinlwqjry5i"))))
+        (base32 "16sa350s7i2z6pqpkx5gxsnrd04gk6vfxsm4fvpw7xxxmv8f2y2k"))))
     (properties `((upstream-name . "rdacca.hp")))
     (build-system r-build-system)
     (arguments

@@ -2469,13 +2469,13 @@ history using conventional commit messages
 (define-public r-automr
   (package
     (name "r-automr")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoMR" version))
        (sha256
-        (base32 "0dz5ipjk277mp3pia8mn4flarmrfh1cfajc5phbnvgnvv3da1r9h"))))
+        (base32 "1p7hg6fdyqq5fnm7xz8ljcmcmizqx2d32r8dsizssv88diq1dsf1"))))
     (properties `((upstream-name . "autoMR")))
     (build-system r-build-system)
     (arguments
@@ -2847,13 +2847,13 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autograph
   (package
     (name "r-autograph")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autograph" version))
        (sha256
-        (base32 "18a460ijbzmmymgc8nngnxb2aab6v8xkr1nn1px6wm2hmklw8qmm"))))
+        (base32 "0bf72gbvwzh1br59wpawi6xdwraw94dcx7lddy5s5zqg63xdj63n"))))
     (properties `((upstream-name . "autograph")))
     (build-system r-build-system)
     (arguments
@@ -4487,13 +4487,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2025.9.30")
+    (version "2026.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "1hcxs3pif25jd1mph423fkvy4q3j9z6jakhkryf0sadhmzwnj586"))))
+        (base32 "0yszdca2dnnijk4ji1700ga186bf0kf8fv1dhvzhfy5p67bqa0xc"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (arguments
@@ -9859,6 +9859,39 @@ the logs of the ratios between the different argon isotopes so as to properly
 treat them as compositional data', sensu Aitchison [1986, The Statistics of
 Compositional Data, Chapman and Hall].")
     (license license:gpl2)))
+
+(define-public r-aramappings
+  (package
+    (name "r-aramappings")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aramappings" version))
+       (sha256
+        (base32 "0blqw3qf45m55hpwapsbkc77gs0vl5ar4gzzh5zn8pbxhgc8shvc"))))
+    (properties `((upstream-name . "aramappings")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam
+                             r-rglpk
+                             r-pracma
+                             r-matrix
+                             r-ggplot2
+                             r-cvxr
+                             r-clarabel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/manuelrubio/aramappings")
+    (synopsis "Computes Adaptable Radial Axes Mappings")
+    (description
+     "Computes low-dimensional point representations of high-dimensional numerical
+data according to the data visualization method Adaptable Radial Axes described
+in: Manuel Rubio-SÃ¡nchez, Alberto Sanchez, and Dirk J. Lehmann (2017)
+\"Adaptable radial axes plots for improved multivariate data visualization\"
+<doi:10.1111/cgf.13196>.")
+    (license license:expat)))
 
 (define-public r-arakno
   (package
@@ -19967,6 +20000,51 @@ tests five data transformations: prop, clr, TMM, TMMwsp, and RLE from the R
 packages ALDEx2', @code{edgeR} and DESeq2 (Fernandes et al (2014)
 <doi:10.1186/2049-2618-2-15>, Anders et al. (2013)<doi:10.1038/nprot.2013.099>).")
     (license license:gpl3+)))
+
+(define-public r-aibias
+  (package
+    (name "r-aibias")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AIBias" version))
+       (sha256
+        (base32 "0m4xmn93v77xzc55k77v9p6wi0w4r4x2wxzdg7w63vl6qj04zcq9"))))
+    (properties `((upstream-name . "AIBias")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/AIBias")
+    (synopsis "Longitudinal Bias Auditing for Sequential Decision Systems")
+    (description
+     "This package provides tools for detecting, quantifying, and visualizing
+algorithmic bias as a longitudinal process in repeated decision systems.
+Existing fairness metrics treat bias as a single-period snapshot; this package
+operationalizes the view that bias in sequential systems must be measured over
+time.  Implements group-specific decision-rate trajectories, standardized
+disparity measures analogous to the standardized mean difference (Cohen, 1988,
+ISBN:0-8058-0283-5), cumulative bias burden, Markov-based transition disparity
+(recovery and retention gaps), and a dynamic amplification index that quantifies
+whether prior decisions compound current group inequality.  The amplification
+framework extends longitudinal causal inference ideas from Robins (1986)
+<doi:10.1016/0270-0255(86)90088-6> and the sequential decision-process
+perspective in the fairness literature (see <https://fairmlbook.org>) to the
+audit setting.  Covariate-adjusted trajectories are estimated via logistic
+regression, generalized additive models (Wood, 2017,
+<doi:10.1201/9781315370279>), or generalized linear mixed models (Bates, 2015,
+<doi:10.18637/jss.v067.i01>).  Uncertainty quantification uses the cluster
+bootstrap (Cameron, 2008, <doi:10.1162/rest.90.3.414>).")
+    (license license:expat)))
 
 (define-public r-ai
   (package

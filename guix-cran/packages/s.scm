@@ -5139,13 +5139,13 @@ define clusters.  Details about this method is described in
 (define-public r-survinger
   (package
     (name "r-survinger")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survinger" version))
        (sha256
-        (base32 "1yxhb7jh4vmizgxdd0j83csxfwxsdlzfywqpcdi1grk7isnlxc38"))))
+        (base32 "07kq8rr7ccppxm6dca63miicr5gncxch3w650bdwfk3x0s4sdmk1"))))
     (properties `((upstream-name . "survinger")))
     (build-system r-build-system)
     (arguments
@@ -15093,13 +15093,13 @@ Scott (2024) <doi:10.32614/CRAN.package.bsts>, and Stephenson et al'. (2024)
 (define-public r-stbl
   (package
     (name "r-stbl")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stbl" version))
        (sha256
-        (base32 "008k6005cmpnz3aapdlmxv8dnfhr9cxc8gzmjxp5knv8jhpphii3"))))
+        (base32 "03d0wrsh8nd7dmjdxhgdn289jdbg107806lwhlm4zl13pzcb4p6s"))))
     (properties `((upstream-name . "stbl")))
     (build-system r-build-system)
     (arguments
@@ -15107,7 +15107,7 @@ Scott (2024) <doi:10.32614/CRAN.package.bsts>, and Stephenson et al'. (2024)
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-rlang r-glue r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://stbl.api2r.org/")
+    (home-page "https://stbl.wrangle.zone/")
     (synopsis "Stabilize Function Arguments")
     (description
      "This package provides a set of consistent, opinionated functions to quickly
@@ -25041,13 +25041,13 @@ clinicaltrials.gov<https://www.clinicaltrials.gov/> for trial registration.")
 (define-public r-spiralize
   (package
     (name "r-spiralize")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spiralize" version))
        (sha256
-        (base32 "07ckzg2fhjjn5p1q7jpxlpj8ls5rzcafy3krjvr6a51hidlfan56"))))
+        (base32 "0shj6wfaxyd3l8xd6niizriafslzhrgvlz1z10nlg67yzmn3zgpj"))))
     (properties `((upstream-name . "spiralize")))
     (build-system r-build-system)
     (arguments
@@ -25464,13 +25464,13 @@ files.")
 (define-public r-spider
   (package
     (name "r-spider")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spider" version))
        (sha256
-        (base32 "13c8axrkdqrc52v7wwxmam5j3hlrpxal6yfrpk56mhk85fy6fb1a"))))
+        (base32 "0xxc6sm8140f5xn43c87d0rrilj1xwd12gjs0cnjza52qrp0qr88"))))
     (properties `((upstream-name . "spider")))
     (build-system r-build-system)
     (arguments
@@ -26577,13 +26577,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "19rk8fvz95nrv4y9ld1kbkc0xcgvm3705sx58gwbpgnm10qgd4iw"))))
+        (base32 "0ly19iz94k7bm35ap1bx4a3xsd107qkp8fybsk832jhsskwd1nkh"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -26606,7 +26606,7 @@ modeling (EDM), with methodological extensions including geographical convergent
 cross mapping from Gao et al. (2023) <doi:10.1038/s41467-023-41619-6>, as well
 as the spatial causality test following the approach of Herrera et al. (2016)
 <doi:10.1111/pirs.12144>, together with geographical pattern causality proposed
-in Zhang et al. (2025) <doi:10.1080/13658816.2025.2581207>.")
+in Zhang & Wang (2025) <doi:10.1080/13658816.2025.2581207>.")
     (license license:gpl3)))
 
 (define-public r-spedinstabr
@@ -29491,13 +29491,13 @@ mapping.")
 (define-public r-spatialeco
   (package
     (name "r-spatialeco")
-    (version "2.0-3")
+    (version "2.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialEco" version))
        (sha256
-        (base32 "0idpcyfynvrxdsi48kn8nh1d3irswa2jx5fq2k06dc9iy2w436s1"))))
+        (base32 "1kiqm90gmns0j9n60hf8jk1vpfhi7nn0jnvrbr4pfiwx3wavra7j"))))
     (properties `((upstream-name . "spatialEco")))
     (build-system r-build-system)
     (arguments
@@ -32789,6 +32789,34 @@ analysis.")
 structurally-regularized time-dependent Cox models.")
     (license license:gpl3+)))
 
+(define-public r-sov
+  (package
+    (name "r-sov")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sov" version))
+       (sha256
+        (base32 "1w37kyzh5ki0i3df91hp5zy928mgfzqf396y0vs6sdvkfcva25qr"))))
+    (properties `((upstream-name . "sov")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-openxlsx r-dplyr))
+    (home-page "https://github.com/spatial-voting-lab/sov")
+    (synopsis
+     "Calculate vs-SOVs and SOVs for Assemblies with D-Dimensional Voting")
+    (description
+     "Calculates vote-specific and traditional Shapley-Owen power indices (vs-SOVs and
+SOVs) for spatial voting games in one to four dimensions.  Evaluates voter
+influence through an a posteriori analysis of relative preferences.  Supports
+weighted voting and various voting thresholds.  Compatible with ideal point
+estimates from NOMINATE, Optimal Classification, and MCMCpack'.  The method
+builds on Bibina and Dougherty (2025) <doi:10.2139/ssrn.6324519>.")
+    (license license:expat)))
+
 (define-public r-southparkrshiny
   (package
     (name "r-southparkrshiny")
@@ -35069,13 +35097,13 @@ be found in Ahn S and Datta S (2023) <@code{arXiv:2303.13702v1>}.")
 (define-public r-softwarerisk
   (package
     (name "r-softwarerisk")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "softwareRisk" version))
        (sha256
-        (base32 "1w5j1qkihbv23c71vikxag2swk9qhdqljims0j53hf8pz7zvrlb4"))))
+        (base32 "0j3n6k3584zbpqrl3snvcmqaycfdpy8cwn7xiwx5q00817pkw8i0"))))
     (properties `((upstream-name . "softwareRisk")))
     (build-system r-build-system)
     (arguments
@@ -35091,8 +35119,7 @@ be found in Ahn S and Datta S (2023) <@code{arXiv:2303.13702v1>}.")
                              r-igraph
                              r-ggraph
                              r-ggplot2
-                             r-dplyr
-                             r-data-table))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=softwareRisk")
     (synopsis
@@ -37844,13 +37871,13 @@ been developed, one in each of the next references: Azzalini (2023)
 (define-public r-smnlmec
   (package
     (name "r-smnlmec")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMNlmec" version))
        (sha256
-        (base32 "0jdgxz0ay82cq8s280y6wib7bapbvbgssbb9rsa7ql6ljdwqh8rm"))))
+        (base32 "1b6yqym9zyzyvx26dhd1441kb1nfigqgl86279dwnlw70dpxjb53"))))
     (properties `((upstream-name . "SMNlmec")))
     (build-system r-build-system)
     (arguments
@@ -52636,13 +52663,13 @@ assistant-like user interfaces.")
 (define-public r-shinygizmo
   (package
     (name "r-shinygizmo")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyGizmo" version))
        (sha256
-        (base32 "0pjmin2qmfqg5ppqx8ld6pv8y91ci6bagmp4bi476i9bk9q50hz8"))))
+        (base32 "0p3329ryrsmsl094ayhmp94zljxk3hanq7x3fjif76ravbaiar40"))))
     (properties `((upstream-name . "shinyGizmo")))
     (build-system r-build-system)
     (arguments
@@ -54438,13 +54465,13 @@ shell carbonate) through input parameters.")
 (define-public r-shelf
   (package
     (name "r-shelf")
-    (version "1.12.1")
+    (version "1.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHELF" version))
        (sha256
-        (base32 "09k33id2rwlrp4ld2s9rdjc635sy4201i0v1246yl38w7j4d2n7y"))))
+        (base32 "11ag6a1y4j6vk36h5d90ia2yq135kadmlnag0cg86crbqa7mwn43"))))
     (properties `((upstream-name . "SHELF")))
     (build-system r-build-system)
     (arguments
@@ -54460,6 +54487,7 @@ shell carbonate) through input parameters.")
                              r-rmarkdown
                              r-hmisc
                              r-ggridges
+                             r-ggrepel
                              r-ggplot2
                              r-ggextra
                              r-flexsurv))
@@ -54947,13 +54975,13 @@ Commission (IOC) - UNESCO databases on harmful algae
 (define-public r-shard
   (package
     (name "r-shard")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shard" version))
        (sha256
-        (base32 "0g81nm9bidrcmv4dqzxd62630hxkwpgznn8h6621zzc3p3i7718s"))))
+        (base32 "0zd9bmy94s1j0mi968i1ivxq4mzwwnkgbap2smvv301nim0x3s8j"))))
     (properties `((upstream-name . "shard")))
     (build-system r-build-system)
     (arguments
@@ -59712,13 +59740,13 @@ sensory data analysis.  S. Le and F. Husson (2008).")
 (define-public r-sensobol
   (package
     (name "r-sensobol")
-    (version "1.1.6")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensobol" version))
        (sha256
-        (base32 "0irdiknzrjd6mk2652qljawj4li1r9ii4m4fhbyl1wf9rh5gkg6n"))))
+        (base32 "0riw1mg90p2fqrarvsgijnm12cmygxw8ichjci7i7j9y1fazg2z5"))))
     (properties `((upstream-name . "sensobol")))
     (build-system r-build-system)
     (arguments
@@ -66248,31 +66276,6 @@ and a summary file (like HALO').
 <https://github.com/@code{FridleyLab/scSpatialSIM/>}.")
     (license license:expat)))
 
-(define-public r-scsorter
-  (package
-    (name "r-scsorter")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scSorter" version))
-       (sha256
-        (base32 "04gnw9i4j8sk3fjh74idk0d6wflw17z1c3afz6wir5pc4y3lzn2j"))))
-    (properties `((upstream-name . "scSorter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=scSorter")
-    (synopsis "Implementation of 'scSorter' Algorithm")
-    (description
-     "This package implements the algorithm described in Guo, H., and Li, J.,
-\"@code{scSorter}: assigning cells to known cell types according to known marker
-genes\".  Cluster cells to known cell types based on marker genes specified for
-each cell type.")
-    (license license:gpl3)))
-
 (define-public r-scryr
   (package
     (name "r-scryr")
@@ -66697,13 +66700,13 @@ use with Rscript'.")
 (define-public r-scregclust
   (package
     (name "r-scregclust")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scregclust" version))
        (sha256
-        (base32 "07cicq7lbp6x4gk2rk9q2c9lh98zkjlg3j9qsg50x8xc216x6462"))))
+        (base32 "0fqgb4g591z9vrkvpzgzcg1447g02cl69nbgpikbb67j24hq9h44"))))
     (properties `((upstream-name . "scregclust")))
     (build-system r-build-system)
     (arguments
@@ -67580,13 +67583,13 @@ Robins (1997) <doi:10.2307/2670119>.")
 (define-public r-scoringutils
   (package
     (name "r-scoringutils")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringutils" version))
        (sha256
-        (base32 "1qbdral0zbk5zwnfrc6krzj2mrarb42pbzjrx2qj5pd734bh0zqp"))))
+        (base32 "1iaqcc3i2mvxj6x6514ppidgklbnvbr0xxk2rv2mpgsijlmwdr0p"))))
     (properties `((upstream-name . "scoringutils")))
     (build-system r-build-system)
     (arguments
@@ -67594,7 +67597,6 @@ Robins (1997) <doi:10.2307/2670119>.")
       #:tests? #f))
     (propagated-inputs (list r-scoringrules
                              r-purrr
-                             r-metrics
                              r-ggplot2
                              r-data-table
                              r-cli
@@ -76831,13 +76833,13 @@ implementation of the @code{MapCurve} method (Hargrove et al. (2006)
 (define-public r-saber
   (package
     (name "r-saber")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saber" version))
        (sha256
-        (base32 "122a41q0il7la881p1f2vls1sdd6lxpvv9dw3dcjsrjah7aa26qw"))))
+        (base32 "0njpxphlal7c41zhb7lyx3ygr30gx9rsp8la24zigxpv7q2fq013"))))
     (properties `((upstream-name . "saber")))
     (build-system r-build-system)
     (arguments
@@ -76846,10 +76848,10 @@ implementation of the @code{MapCurve} method (Hargrove et al. (2006)
     (home-page "https://github.com/cornball-ai/saber")
     (synopsis "Code Analysis and Project Context for R")
     (description
-     "Parses R source files into AST symbol indices, traces function callers across
-projects, discovers project dependency graphs, generates project briefings, and
-provides package introspection tools.  Designed for AI coding agents that need
-structured code understanding.")
+     "Parses R source files into Abstract Syntax Tree (AST) symbol indices, traces
+function callers across projects, discovers project dependency graphs, generates
+project briefings, and provides package introspection tools.  Designed for AI
+coding agents that need structured code understanding.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-saascnv

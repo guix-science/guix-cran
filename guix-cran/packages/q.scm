@@ -877,19 +877,19 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "05kjjllgjl7vbk70i9ahpz2v0a6a3p4k3czv3kq0qdyxb9bsdrd8"))))
+        (base32 "03gp8i1sr099jjz7k66sdi28y77m0ag8kg9bl5cnfb7xqw7jdd2h"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-polychrome r-fitdistrplus))
+    (propagated-inputs (list r-rstudioapi r-fitdistrplus))
     (native-inputs (list r-knitr))
     (home-page "https://quickcode.rpkg.net")
     (synopsis "Quick and Essential 'R' Tricks for Better Scripts")

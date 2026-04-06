@@ -20748,6 +20748,41 @@ more.")
     (description "Simulation of models Poisson-Tweedie.")
     (license license:gpl2+)))
 
+(define-public r-poissonsuperlearner
+  (package
+    (name "r-poissonsuperlearner")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poissonsuperlearner" version))
+       (sha256
+        (base32 "0pqnskabj0jhd6wvjgjwmja88ivspnz38k1s9801g0wmx995n4ai"))))
+    (properties `((upstream-name . "poissonsuperlearner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sampling
+                             r-riskregression
+                             r-rcpp
+                             r-mgcv
+                             r-matrix
+                             r-lava
+                             r-glmnet
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=poissonsuperlearner")
+    (synopsis "Poisson Super Learner")
+    (description
+     "This package provides tools for fitting piece-wise constant hazard models for
+survival and competing risks data, including ensemble hazard estimation via the
+Super Learner framework.  The package supports estimation of survival functions
+and absolute risk predictions from fitted cause-specific hazard models.  For the
+Super Learner framework see van der Laan, Polley and Hubbard (2007)
+<doi:10.2202/1544-6115.1309>.")
+    (license license:gpl2+)))
+
 (define-public r-poissonreg
   (package
     (name "r-poissonreg")
@@ -45546,13 +45581,13 @@ post-processing as well as visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.12.7")
+    (version "1.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMmisc" version))
        (sha256
-        (base32 "1i0y0cdpnc1rm3vhnfny6fy1ahzk6fcbcbgpik1c95rjrn64yfjy"))))
+        (base32 "0cfjr941mk1l4g04img4p8x6wj70fg4113g84kzibialcpa7hppk"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (arguments
