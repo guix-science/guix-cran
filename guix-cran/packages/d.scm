@@ -5852,13 +5852,13 @@ by Richter, Ulrich, and Janczyk (2023, <doi:10.1016/j.jmp.2023.102756>).")
 (define-public r-drhutools
   (package
     (name "r-drhutools")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drhutools" version))
        (sha256
-        (base32 "0g0xbzk50svx3q39fvicaagi6igr39kshv5mccsraz7hs42p5ip6"))))
+        (base32 "10knmvx329mq93pv20a52vwxf5071a9hdxhn05qj9nnrfxnr9f5g"))))
     (properties `((upstream-name . "drhutools")))
     (build-system r-build-system)
     (arguments
@@ -5885,10 +5885,10 @@ by Richter, Ulrich, and Janczyk (2023, <doi:10.1016/j.jmp.2023.102756>).")
      "Using these tools to simplify the research process of political science and
 other social sciences.  The current version can create folder system for
 academic project in political science, calculate psychological trait scores,
-visualize experimental and spatial data, and set up color-blind palette,
-functions used in academic research of political psychology or political science
-in general.")
-    (license license:expat)))
+visualize experimental and spatial data, set up color-blind palette, and test
+for Type I error (false positives) in Qualitative Comparative Analysis (QCA) for
+crisp-set, multi-value, and fuzzy-set variants.")
+    (license license:gpl3+)))
 
 (define-public r-drhur
   (package
@@ -7420,6 +7420,42 @@ normal distributions from a mixture of normals can be inferred.  Following the
 method described in Escobar (1994) <doi:10.2307/2291223> we use a Dirichlet
 Process Prior (DPP) to describe stochastically our prior assumptions about the
 dimensionality of the data.")
+    (license license:expat)))
+
+(define-public r-dpm
+  (package
+    (name "r-dpm")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dpm" version))
+       (sha256
+        (base32 "1a88yy09rldrvb4x28qq8zy4581c2b5cj8p67ngjk6jxhy33np31"))))
+    (properties `((upstream-name . "dpm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-panelr
+                             r-lavaan
+                             r-jtools
+                             r-formula
+                             r-dplyr
+                             r-crayon))
+    (home-page "https://github.com/jacob-long/dpm")
+    (synopsis "Dynamic Panel Models Fit with Maximum Likelihood")
+    (description
+     "This package implements the dynamic panel models described by Allison, Williams,
+and Moral-Benito (2017 <doi:10.1177/2378023117710578>) in R. This class of
+models uses structural equation modeling to specify dynamic (lagged dependent
+variable) models with fixed effects for panel data.  Additionally, models may
+have predictors that are only weakly exogenous, i.e., are affected by prior
+values of the dependent variable.  Options also allow for random effects,
+dropping the lagged dependent variable, and a number of other specification
+choices.")
     (license license:expat)))
 
 (define-public r-dplyrassist
@@ -18460,20 +18496,20 @@ Pinilla-Agudelo (2014) - DISP index by Stenger-KovÃ¡cs et al. (2018,
 (define-public r-diario
   (package
     (name "r-diario")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diario" version))
        (sha256
-        (base32 "048b9c9hqvjn20l8sv907zk2sjwc47brg11babvf9y858j4lvzwf"))))
+        (base32 "12ad1jg953ydll6kmcql6vzi5wj9ka08zd3v3a9kmk15gx3fqww3"))))
     (properties `((upstream-name . "diario")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-keyring r-httr2))
-    (home-page "<https://github.com/StrategicProjects/diario>")
+    (propagated-inputs (list r-tibble r-keyring r-httr2 r-cli))
+    (home-page "https://github.com/StrategicProjects/diario")
     (synopsis "'R' Interface to the 'Diariodeobras' Application")
     (description
      "This package provides a set of functions for securely storing API tokens and
@@ -30119,19 +30155,20 @@ Self-Organization and Swarm Intelligence\" (2018)
 (define-public r-dataviewr
   (package
     (name "r-dataviewr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataviewR" version))
        (sha256
-        (base32 "0p685rn2arwmm7vk7b5z4mi3pwx8j3mps8zacd71dv1mlmwcybdh"))))
+        (base32 "0gamnagmbd684iq2sh1bmwmz41j5j63xb8h7v98m95v1l187ma0k"))))
     (properties `((upstream-name . "dataviewR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-writexl
+                             r-tibble
                              r-stringr
                              r-shinyjs
                              r-shiny
@@ -30148,12 +30185,12 @@ Self-Organization and Swarm Intelligence\" (2018)
     (home-page "https://github.com/madhankumarnagaraji/dataviewR")
     (synopsis "An Interactive and Feature-Rich Data Viewer")
     (description
-     "This package provides an interactive viewer for data.frame and tibble objects
-using shiny <https://shiny.posit.co/> and DT <https://rstudio.github.io/DT/>.
-It supports complex filtering, column selection, and automatic generation of
-reproducible dplyr <https://dplyr.tidyverse.org/> code for data manipulation.
-The package is designed for ease of use in data exploration and reporting
-workflows.")
+     "This package provides an interactive viewer for data.frame', tibble and
+data.table objects using shiny <https://shiny.posit.co/> and DT
+<https://rstudio.github.io/DT/>.  It supports complex filtering, column
+selection, and automatic generation of reproducible dplyr
+<https://dplyr.tidyverse.org/> code for data manipulation.  The package is
+designed for ease of use in data exploration and reporting workflows.")
     (license license:expat)))
 
 (define-public r-dataverse

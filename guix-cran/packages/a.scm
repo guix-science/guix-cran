@@ -5781,6 +5781,36 @@ package and to @code{assert_that()} from the assertthat package.  It provides
 more informative error messages and facilitates debugging.")
     (license license:gpl2+)))
 
+(define-public r-assemblykor
+  (package
+    (name "r-assemblykor")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "assemblykor" version))
+       (sha256
+        (base32 "0i1xggqlmk2scyyjkl4lv8n9dzkq3rmnxj0vcbzna14ivc6vlf32"))))
+    (properties `((upstream-name . "assemblykor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://kyusik-yang.github.io/assemblykor/")
+    (synopsis "Korean National Assembly Data for Political Science Education")
+    (description
+     "This package provides ready-to-use datasets from the Korean National Assembly
+(assemblies 20 through 22, 2016-2026) for teaching quantitative methods in
+political science.  Includes legislator metadata, bill proposals, roll call
+votes, asset declarations, and policy seminar records.  Designed as a Korean
+politics counterpart to packages like palmerpenguins', enabling students to
+practice regression, panel data analysis, text analysis, and network analysis
+with real legislative data.  Roll call vote data and spatial voting models are
+described in Poole and Rosenthal (1985) <doi:10.2307/2111172>.  Legislative data
+is sourced from the Korean National Assembly Open API.")
+    (license license:expat)))
+
 (define-public r-assa
   (package
     (name "r-assa")
@@ -6669,13 +6699,13 @@ or pandoc syntax.  Package comes with a set of drivers for Sweave'.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.12-2")
+    (version "1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asbio" version))
        (sha256
-        (base32 "1pbplgy96qjl85536pqwbq17w6yg5n3zn7i82pay03m6afixhwap"))))
+        (base32 "04r9b1vny71zn68xwcwa1p3d6ak3qhlkdi35d2ai5cfp509j8vps"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (arguments
@@ -6692,7 +6722,7 @@ or pandoc syntax.  Package comes with a set of drivers for Sweave'.")
                              r-gwidgets2tcltk
                              r-gwidgets2
                              r-desolve))
-    (home-page "https://cran.r-project.org/package=asbio")
+    (home-page "https://kenaho.aws.cose.isu.edu/shiny/apps/asbio_shiny.Rmd")
     (synopsis "Collection of Statistical Tools for Biologists")
     (description
      "This package contains functions from: Aho, K. (2014) Foundational and Applied
@@ -20004,13 +20034,13 @@ packages ALDEx2', @code{edgeR} and DESeq2 (Fernandes et al (2014)
 (define-public r-aibias
   (package
     (name "r-aibias")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIBias" version))
        (sha256
-        (base32 "0m4xmn93v77xzc55k77v9p6wi0w4r4x2wxzdg7w63vl6qj04zcq9"))))
+        (base32 "0lan6d6hfjsclhc0l0ifnywsds1vy98z3q7cmmd8j8w7hf1qv7ka"))))
     (properties `((upstream-name . "AIBias")))
     (build-system r-build-system)
     (arguments
@@ -21894,6 +21924,37 @@ right-censored data and for comparing different estimation algorithms.")
     (description
      "Compute the R-squared measure under the accelerated failure time (AFT) models
 proposed in Chan et.  al. (2018) <doi:10.1080/03610918.2016.1177072>.")
+    (license license:gpl3)))
+
+(define-public r-aftpencda
+  (package
+    (name "r-aftpencda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aftPenCDA" version))
+       (sha256
+        (base32 "0lxgwpp7igddnga2j9fa572zzblz5qx0nx877wpdg2zz4xwn697y"))))
+    (properties `((upstream-name . "aftPenCDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/seonsy/aftPenCDA")
+    (synopsis "Penalized AFT Estimation via Coordinate Descent")
+    (description
+     "This package provides penalized accelerated failure time (AFT) model estimation
+for right-censored and partly interval-censored survival data using induced
+smoothing and coordinate descent algorithms.  Supported penalties include broken
+adaptive ridge (BAR), LASSO, adaptive LASSO, and SCAD. Core estimation routines
+are implemented in C++ via Rcpp and @code{RcppArmadillo} for computational
+efficiency.  The methodology is related to Zeng and Lin (2008)
+<doi:10.1093/biostatistics/kxm034>, Xu et al. (2010) <doi:10.1002/sim.2576>, Dai
+et al. (2018) <doi:10.1016/j.jmva.2018.08.007>, and Choi et al. (2025)
+<doi:10.48550/@code{arXiv.2503.11268>}.")
     (license license:gpl3)))
 
 (define-public r-afthd

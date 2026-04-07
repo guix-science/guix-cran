@@ -2377,13 +2377,13 @@ optimization is described in <https://hal.science/hal-02532713>.")
 (define-public r-fungible
   (package
     (name "r-fungible")
-    (version "2.4.4.1")
+    (version "2.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fungible" version))
        (sha256
-        (base32 "0b3n2796h05rp1ky209a6widl3n1927d73am7rv0hqf3nf93731a"))))
+        (base32 "0jsr3a40b1400nw3w57ikxnh4lygsxs1k0yd4svxx1cd5s9ng1af"))))
     (properties `((upstream-name . "fungible")))
     (build-system r-build-system)
     (arguments
@@ -2399,6 +2399,7 @@ optimization is described in <https://hal.science/hal-02532713>.")
                              r-mbess
                              r-mass
                              r-lattice
+                             r-laplacesdemon
                              r-gparotation
                              r-ga
                              r-deoptim
@@ -9176,6 +9177,35 @@ threshold at false positive rates and selection frequency false positive rate
 feature selection.")
     (license license:expat)))
 
+(define-public r-forestbalance
+  (package
+    (name "r-forestbalance")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestBalance" version))
+       (sha256
+        (base32 "073jlddcv1f0n2s9brmbshbmw5nq9i8c26spb2sp3f7wzkn1g1jj"))))
+    (properties `((upstream-name . "forestBalance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass r-grf))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jaredhuling/forestBalance")
+    (synopsis
+     "Balancing Confounder Distributions with Forest Energy Balancing")
+    (description
+     "Estimates average treatment effects using kernel energy balancing with random
+forest similarity kernels.  A multivariate random forest jointly models
+covariates, outcome, and treatment to build a similarity kernel between
+observations.  This kernel is then used for energy balancing to create weights
+that control for confounding.  The method is described in De and Huling (2025)
+<doi:10.48550/@code{arXiv.2512.18069>}.")
+    (license license:gpl3+)))
+
 (define-public r-forestat
   (package
     (name "r-forestat")
@@ -9700,13 +9730,13 @@ spectral density of the transformed signal.")
 (define-public r-fordm
   (package
     (name "r-fordm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoRDM" version))
        (sha256
-        (base32 "1wqds1qs46mf6463rq6d3b9y38dl0q77hrpkvdi80n9p1prbzvh8"))))
+        (base32 "12v6cf8nj1y0s11sbbq68734g2favsgz5mqmhq6njf1hq1crbgpj"))))
     (properties `((upstream-name . "FoRDM")))
     (build-system r-build-system)
     (arguments
@@ -9715,6 +9745,7 @@ spectral density of the transformed signal.")
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
+                             r-rcolorbrewer
                              r-plotly
                              r-magrittr
                              r-ggplot2
@@ -14161,13 +14192,13 @@ function names.")
 (define-public r-flashmm
   (package
     (name "r-flashmm")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLASHMM" version))
        (sha256
-        (base32 "1dj54v33fcqjxql129jwhq7rhlm2p8lqhzq2nk7rhbh1f7wjmkk9"))))
+        (base32 "1hlyippp7d09fznx004l44czskmfdwzrgzii6c1pl205n86g6zmf"))))
     (properties `((upstream-name . "FLASHMM")))
     (build-system r-build-system)
     (arguments
@@ -17969,13 +18000,13 @@ topic.")
 (define-public r-filibustr
   (package
     (name "r-filibustr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filibustr" version))
        (sha256
-        (base32 "1vd859hdx5br1snd3kh47x3fh3g3gxr2hqx75gvkix3p058v92d5"))))
+        (base32 "0hzq21n75i34w8vp05zjxgyw9cqxp024x5v1amdrzpy8raz578nh"))))
     (properties `((upstream-name . "filibustr")))
     (build-system r-build-system)
     (arguments

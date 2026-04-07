@@ -8299,13 +8299,13 @@ projects.")
 (define-public r-projecttemplate
   (package
     (name "r-projecttemplate")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProjectTemplate" version))
        (sha256
-        (base32 "1w4awq58crr83i8cmzwv9yn21spaag9prgss3jjf4wry3vqc5ram"))))
+        (base32 "13p0rynz7qlfkm7d5zzjrlrrrwa1kz2lca939zvw5iy26vpfwzhd"))))
     (properties `((upstream-name . "ProjectTemplate")))
     (build-system r-build-system)
     (arguments
@@ -8559,6 +8559,37 @@ transformations.  The intention is for this package to be used by user-packages
 such as reproj', and that the older PROJ.4 and version 5 pathways be provided by
 the proj4 package.")
     (license license:gpl3)))
+
+(define-public r-progressify
+  (package
+    (name "r-progressify")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "progressify" version))
+       (sha256
+        (base32 "0pd1jllyvymlzfvm07pywjr84w3vp8qdp3g64pb4br7kypax229v"))))
+    (properties `((upstream-name . "progressify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-progressr))
+    (home-page "https://cran.r-project.org/package=progressify")
+    (synopsis "Progress Reporting of Common Functions via One Magic Function")
+    (description
+     "The @code{progressify()} function rewrites (transpiles) calls to sequential and
+parallel map-reduce functions such as @code{base::lapply()},
+@code{purrr::map()}, @code{foreach::foreach()}, and @code{plyr::llply()} to
+signal progress updates.  By combining this function with R's native pipe
+operator, you have a straightforward way to report progress on iterative
+computations with minimal refactoring, e.g. lapply(x, fcn) |>
+@code{progressify()} and purrr::map(x, fcn) |> @code{progressify()}'.  It is
+compatible with the futurize package for parallelization, e.g. lapply(x, fcn) |>
+@code{progressify()} |> @code{futurize()} and purrr::map(x, fcn) |>
+@code{futurize()} |> @code{progressify()}'.")
+    (license license:gpl3+)))
 
 (define-public r-proftools
   (package
@@ -11211,13 +11242,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.9")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "1k3hgfl57mq3gq0wsiinxbl38s7v9gjik86kqrn708sszwk2niba"))))
+        (base32 "1rj4f29sr4g4i5y2wvcj8q79fbyk00rjlw0r4yn6nw4iz849l57j"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (arguments
@@ -28761,13 +28792,13 @@ has changed in this new version.  The old version is still available at R-Forge.
 (define-public r-pikchr
   (package
     (name "r-pikchr")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pikchr" version))
        (sha256
-        (base32 "0n6gsxg10nda3y1dcdqlrygxl25adc5p5arrp93gi6c96vbxx8bl"))))
+        (base32 "0w2g5g7k9lnkgqhvdnhi66ay2i1913m486n7a46fig5n304myi6b"))))
     (properties `((upstream-name . "pikchr")))
     (build-system r-build-system)
     (arguments
@@ -28775,17 +28806,15 @@ has changed in this new version.  The old version is still available at R-Forge.
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rsvg
-                             r-rlang
-                             r-purrr
                              r-knitr
                              r-htmltools
-                             r-dplyr
+                             r-cli
                              r-brio))
     (native-inputs (list r-knitr))
-    (home-page "<https://github.com/StrategicProjects/pikchr>")
+    (home-page "https://strategicprojects.github.io/pikchr/")
     (synopsis "R Wrapper for 'pikchr' (PIC) Diagram Language")
     (description
-     "An R interface to pikchr (<https://pikchr.org>, pronounced âpictureâ), a
+     "An R interface to pikchr (<https://pikchr.org>, pronounced \"picture\"), a
 PIC'-like markup language for creating diagrams within technical documentation.
 Originally developed by Brian Kernighan, PIC has been adapted into pikchr by D.
 Richard Hipp, the creator of SQLite'.  pikchr is designed to be embedded in

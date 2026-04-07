@@ -5563,13 +5563,13 @@ distributions.")
 (define-public r-rstudiothemes
   (package
     (name "r-rstudiothemes")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstudiothemes" version))
        (sha256
-        (base32 "0i4ngxkyah3n1xsqg2qz86xg4vznrs7skn6607bbhnhfsqf5z0n6"))))
+        (base32 "0i4d5vi96i8dgli2dnz6x1r4rz5cspmfd85n9iyx3rm5cc9fjhvh"))))
     (properties `((upstream-name . "rstudiothemes")))
     (build-system r-build-system)
     (arguments
@@ -7471,19 +7471,19 @@ it with additional performance measures and functionality.")
 (define-public r-rsiena
   (package
     (name "r-rsiena")
-    (version "1.5.0")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSiena" version))
        (sha256
-        (base32 "17cky5769ra4mpppb2m4kf9zpkf9lnvkm21wq11cbhrfzaspaqn8"))))
+        (base32 "1d14qiy6r34m898194hdhhwldjiiaq0h6sxs2kh1vyd56bw62k1n"))))
     (properties `((upstream-name . "RSiena")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xtable r-matrix r-mass r-lattice))
+    (propagated-inputs (list r-xtable r-network r-matrix r-mass r-lattice))
     (home-page "https://www.stats.ox.ac.uk/~snijders/siena/")
     (synopsis
      "Siena - Simulation Investigation for Empirical Network Analysis")
@@ -31878,13 +31878,13 @@ now out-dated @code{fishBC} software
 (define-public r-rfishbase
   (package
     (name "r-rfishbase")
-    (version "5.0.2")
+    (version "5.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfishbase" version))
        (sha256
-        (base32 "081d1d4khz8jgpbsmgaxqm4iyz1y16wq0863gddywvkfw26gy7ny"))))
+        (base32 "0jigr3cf6m9fvjy4c4lpimm6zpv41abrb7i4mgv6br1dw9fw32nc"))))
     (properties `((upstream-name . "rfishbase")))
     (build-system r-build-system)
     (arguments
@@ -39489,19 +39489,18 @@ hierarchical levels to create meaningful data panels and time series.")
 (define-public r-regioncode
   (package
     (name "r-regioncode")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regioncode" version))
        (sha256
-        (base32 "012fadyzkcw2dimjzmday8b705xci1k8z9fq02wkqhkrhkvw45mj"))))
+        (base32 "0kp25nhsl00gmi3wwa61635a0mg5bj47i325yd6wiha3vbkqq0gg"))))
     (properties `((upstream-name . "regioncode")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pinyin))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=regioncode")
     (synopsis "Convert Region Names and Division Codes of China Over Years")
@@ -39916,13 +39915,13 @@ working with regression models.")
 (define-public r-refundbayes
   (package
     (name "r-refundbayes")
-    (version "0.5")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refundBayes" version))
        (sha256
-        (base32 "024nl2ma955pkdd6ddmhk7vwv8cpfg2zc499rl11c4a8pzzyzbaj"))))
+        (base32 "0vhh30sl35yxgydx7c6w874faf3ml2dfwmi9bql1hrxq603hd8zi"))))
     (properties `((upstream-name . "refundBayes")))
     (build-system r-build-system)
     (arguments
@@ -39936,7 +39935,7 @@ working with regression models.")
                              r-dplyr
                              r-brms))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ZirenJiang/refundBayes")
+    (home-page "https://zirenjiang.github.io/refundBayes/")
     (synopsis "Bayesian Regression with Functional Data")
     (description
      "Bayesian regression with functional data, including regression with scalar,
@@ -44164,6 +44163,30 @@ file format and structure.")
 Information Systems ('HIS').  The current version of the package supports
 importing data from RDBMS including MS SQL', @code{MySQL}', @code{PostGRESQL}',
 and SQLite', as well as from two HIS platforms: DHIS2 and SORMAS'.")
+    (license license:expat)))
+
+(define-public r-readelan
+  (package
+    (name "r-readelan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readelan" version))
+       (sha256
+        (base32 "130sbx7c7kbz3hxq7kcm18jabmabpk8bbvnl1dazcaic7hxapw1z"))))
+    (properties `((upstream-name . "readelan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2))
+    (home-page "https://github.com/borstell/readelan")
+    (synopsis "Read 'ELAN' Files")
+    (description
+     "The goal of the readelan is to provide a simple way to read data and metadata in
+files created with the annotation software ELAN
+<https://archive.mpi.nl/tla/elan> into R as data frames.")
     (license license:expat)))
 
 (define-public r-readecb

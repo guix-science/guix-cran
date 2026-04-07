@@ -2368,13 +2368,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.3.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "077j0rihssp92pp6hf9rdiwvih1704xds4jqyjfayxyicg5cx6yw"))))
+        (base32 "0bccsr98k53yd3kfyp0rcpmbs1f9342h07py3jb7x1pnxs5jkwv8"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -2382,16 +2382,19 @@ formats as well as other swatch file formats can be found at
       #:tests? #f))
     (propagated-inputs (list r-zoo r-strucchange r-spdep r-sf r-lubridate))
     (home-page "https://cran.r-project.org/package=swash")
-    (synopsis "Swash-Backwash Model for the Single Epidemic Wave")
+    (synopsis
+     "Health Geography Toolbox for Model-Based Analysis of Infections Panel Data")
     (description
-     "The Swash-Backwash Model for the Single Epidemic Wave was developed by Cliff and
-Haggett (2006) <doi:10.1007/s10109-006-0027-8> to model the velocity of spread
-of infectious diseases across space.  This package enables the calculation of
-the Swash-Backwash Model for user-supplied panel data on regional infections.
-The package provides additional functions for bootstrap confidence intervals,
-country comparison, visualization of results, and data management.  Furthermore,
-it contains several functions for analysis and visualization of (spatial)
-infection data.")
+     "Within epidemic outbreaks, infections grow and decline differently between
+regions, and the velocity of spatial spread differs between countries.  The
+swash library offers a set of model-based analyses for these topics.  Spread
+velocity may be analysed with the Swash-Backwash Model for the Single Epidemic
+Wave and corresponding functions for bootstrap confidence intervals, country
+comparison, and visualization of results.  Differences in epidemic growth
+between regions may be analysed using logistic growth models, exponential growth
+models, Hawkes processes and breakpoint analyses.  All functionalities are
+accessed by the class \"infpan\" for infections panel data defined in this
+package, which is built from a data.frame provided by the user.")
     (license license:gpl2+)))
 
 (define-public r-swarmverse
@@ -8507,13 +8510,13 @@ formatting helpers for streamlined table styling workflows.")
 (define-public r-sumer
   (package
     (name "r-sumer")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumer" version))
        (sha256
-        (base32 "13aj146zq3milchmg41lb5vxk3g2i4diskc2w9891wczbdzins49"))))
+        (base32 "0c6f0cg79y750mr33xzpxbrgxqxlx29rhzamxg3cxz77z07m6dj9"))))
     (properties `((upstream-name . "sumer")))
     (build-system r-build-system)
     (arguments
@@ -24181,13 +24184,13 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 (define-public r-splustimeseries
   (package
     (name "r-splustimeseries")
-    (version "1.5.7")
+    (version "1.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splusTimeSeries" version))
        (sha256
-        (base32 "1q2ldyfz27dam033gki3f8chp87qy8f0s985hn762fv2cpi5p02m"))))
+        (base32 "1q27yybw0zqfp2jcycq8if9dbijq2w0x2ns2kydff97bs4w14sby"))))
     (properties `((upstream-name . "splusTimeSeries")))
     (build-system r-build-system)
     (arguments
@@ -24207,13 +24210,13 @@ available in S-PLUS'.")
 (define-public r-splustimedate
   (package
     (name "r-splustimedate")
-    (version "2.5.9")
+    (version "2.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splusTimeDate" version))
        (sha256
-        (base32 "1fljfda9250f1axw9k2vg5xhd0pwf5ha2f0hkihr2ipj6qgplb95"))))
+        (base32 "0zmyxjf8jgnz2vwlss5lwllc0f3vkbzkrq4szxjfpxzwwgfz86js"))))
     (properties `((upstream-name . "splusTimeDate")))
     (build-system r-build-system)
     (arguments
@@ -26975,19 +26978,20 @@ interpret the results.")
 (define-public r-spectrakit
   (package
     (name "r-spectrakit")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spectrakit" version))
        (sha256
-        (base32 "13in16i7f9mk6lg0wcmqd8c8zszi3y9ivcldjb7rd15fl3h0jh8v"))))
+        (base32 "1h4r60karngfvh2qc0nzb8mrw62a3i0xd06bsfqs4dxyac2ysd13"))))
     (properties `((upstream-name . "spectrakit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
+                             r-scales
                              r-rlang
                              r-readr
                              r-purrr
@@ -26997,7 +27001,8 @@ interpret the results.")
                              r-ggplot2
                              r-dplyr
                              r-data-table))
-    (home-page "https://cran.r-project.org/package=spectrakit")
+    (home-page
+     "https://rpackagelab.blogspot.com/2026/04/introducing-spectrakit-r-package.html")
     (synopsis "Spectral Data Handling and Visualization")
     (description
      "This package provides functions to combine, normalize and visualize spectral
@@ -40031,13 +40036,13 @@ georeferenced raster image.")
 (define-public r-slimr
   (package
     (name "r-slimr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SlimR" version))
        (sha256
-        (base32 "1152z9a5kdjh7805x3mzam4ll77p101vlpc13cfvjyyasd7s1y9z"))))
+        (base32 "0x02ynjif094q2ijn1ijjsm6rmpl6ngwmr31bib3cranr8ar0fc4"))))
     (properties `((upstream-name . "SlimR")))
     (build-system r-build-system)
     (arguments
@@ -52217,13 +52222,13 @@ resulting metrics.")
 (define-public r-shinylive
   (package
     (name "r-shinylive")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinylive" version))
        (sha256
-        (base32 "0l5krdpbg0miwlrr70w0nyghgvp5lb66bh10xdxr6s0xgc4g6c16"))))
+        (base32 "1rc8qm4vgrq1yz3hqzfzz1fbhpck4xp55c7n6a57jf2pkw1zr5ns"))))
     (properties `((upstream-name . "shinylive")))
     (build-system r-build-system)
     (arguments
@@ -57996,34 +58001,39 @@ machine learning classification algorithm.")
 (define-public r-serosv
   (package
     (name "r-serosv")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serosv" version))
        (sha256
-        (base32 "0qh6xmr28z2wwnkkrx3w3bqgsh2ilr1fx288qf5n9yjpg47q7i68"))))
+        (base32 "0pzbv65mpicx7kasj60n1bcyv0p7gxlvbhfg4j6f3bmbsn28wawp"))))
     (properties `((upstream-name . "serosv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-stanheaders
+                             r-scam
                              r-rstantools
                              r-rstan
+                             r-rlang
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-purrr
+                             r-proc
                              r-patchwork
+                             r-mvtnorm
                              r-mixdist
                              r-mgcv
                              r-magrittr
                              r-locfit
+                             r-janitor
                              r-ggplot2
                              r-dplyr
-                             r-desolve
                              r-boot
                              r-bh
                              r-assertthat))
@@ -69122,6 +69132,33 @@ data at the municipality or province level Map', to visualize the output
 datasets.")
     (license license:gpl3+)))
 
+(define-public r-scholidonline
+  (package
+    (name "r-scholidonline")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scholidonline" version))
+       (sha256
+        (base32 "1k0x7sci829wmrpvsinalnpildl2z6505c7ix5jf5q0wq157ny3m"))))
+    (properties `((upstream-name . "scholidonline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scholid r-rlang r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://thomas-rauter.github.io/scholidonline/")
+    (synopsis
+     "Resolution, Conversion, Linking and Metadata for Scholarly Identifiers")
+    (description
+     "Enables querying of scholarly identifier services to verify identifier
+existence, convert identifiers across systems, retrieve bibliographic metadata,
+and discover linked identifiers.  Supports common identifier types including
+DOI, PMID, PMCID, @code{arXiv}, and ORCID.")
+    (license license:expat)))
+
 (define-public r-scholid
   (package
     (name "r-scholid")
@@ -71818,13 +71855,13 @@ functions to easily conduct the proposed improved AE analyses.")
 (define-public r-savvypr
   (package
     (name "r-savvypr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "savvyPR" version))
        (sha256
-        (base32 "1mx9yl4wm7n3hqyi1fagglcv2mnkp9hayxbfav0raw2hifghr0sy"))))
+        (base32 "0z4s4lr1jwhxldhxq6qb3r5lrcwiiqh3xi2g1vccd2ypp01vsxp0"))))
     (properties `((upstream-name . "savvyPR")))
     (build-system r-build-system)
     (arguments
@@ -71846,7 +71883,7 @@ fixed loss contribution to each predictor, and a Target-based approach
 distribution analysis, and parameter tuning via cross-validation (PR1, PR2, and
 PR3 model types) to optimize predictive accuracy.  Methods are based on Asimit,
 Chen, Ichim and Millossovich (2026)
-<https://openaccess.city.ac.uk/id/eprint/35005/>.")
+<https://openaccess.city.ac.uk/id/eprint/37017/>.")
     (license license:gpl3+)))
 
 (define-public r-savonliquide

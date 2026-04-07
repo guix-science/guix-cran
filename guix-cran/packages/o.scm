@@ -6423,20 +6423,19 @@ al. (2022) <doi:10.1186/s12874-021-01471-y> for a description of our methods.")
 (define-public r-optholdoutsize
   (package
     (name "r-optholdoutsize")
-    (version "0.1.0.1")
+    (version "0.1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptHoldoutSize" version))
        (sha256
-        (base32 "1yrgwnl6192rnbq79yq9ppbf3hdfgk8kn4inmm1skvai1629bcd4"))))
+        (base32 "13awb31whjsva7jprk7hk6sy7g0b1f8b8rg723a2hlln7il6388s"))))
     (properties `((upstream-name . "OptHoldoutSize")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ranger r-mvtnorm r-mnormt r-mle-tools
-                             r-matrixstats))
+    (propagated-inputs (list r-ranger r-mvtnorm r-mnormt r-matrixstats))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OptHoldoutSize")
     (synopsis
@@ -6449,7 +6448,7 @@ population is held-out from computation of the previous risk score.  This
 package provides tools to estimate a size for this holdout set and associated
 errors.  Comprehensive vignettes are included.  Please see: Haidar-Wehbe S,
 Emerson SR, Aslett LJM, Liley J (2022) <doi:10.48550/@code{arXiv.2202.06374>}
-(to appear in Annals of Applied Statistics) for details of methods.")
+(in Annals of Applied Statistics) for details of methods.")
     (license license:gpl3+)))
 
 (define-public r-opthedging
@@ -14263,13 +14262,13 @@ distributions are implemented as described in OâNeill (2019)
 (define-public r-occumb
   (package
     (name "r-occumb")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occumb" version))
        (sha256
-        (base32 "12rp9ysn24g1p9vjf9f70qf9q2lqv3b2bnsa1g5xkq1xzg0hs7cr"))))
+        (base32 "1lm659lpdgmwc6x8bc2gd9zqz4r96yhcz08705cbmzz02lcbly1c"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
     (arguments

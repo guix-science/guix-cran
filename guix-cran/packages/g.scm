@@ -21794,30 +21794,33 @@ and the response is present.  Base on the results published in guide ISO/TS
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.6.7")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "16v98kqh2qlcy17frlybr9l8zrk8f7x7y5vbf2xdl2ap10av108g"))))
+        (base32 "197ma33hfa8wfhpr6h4y03hgv5h8y1n4pl0m2lwgxhswxspx3kp2"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (native-inputs (list pkg-config))
+    (native-inputs (list r-rcpp pkg-config))
     (home-page "https://github.com/Zabis13/ggmlR")
     (synopsis "'GGML' Tensor Operations for Machine Learning")
     (description
      "This package provides R bindings to the GGML tensor library for machine
 learning, designed primarily for Vulkan GPU acceleration with full CPU fallback.
+ Requires Vulkan 1.2+ with legacy pipeline barriers (avoids Synchronization2 due
+to RADV performance issues); supports Push Descriptors
+('VK_KHR_push_descriptor') to eliminate descriptor pool overhead when available.
  Vulkan support is auto-detected at build time on Linux (when libvulkan-dev and
 glslc are installed) and on Windows (when Vulkan SDK is installed and VULKAN_SDK
 environment variable is set); all operations fall back to CPU transparently when
 no GPU is available.  Supports tensors up to 5D natively (GGML_MAX_DIMS=5).
-Implements tensor operations, neural network layers, quantization, and a
+Implements tensor operations, neural network layers, quantization', and a
 Keras'-like sequential model API for building and training networks.  Includes
 @code{AdamW} (Adam with Weight decay) and SGD (Stochastic Gradient Descent)
 optimizers with MSE (Mean Squared Error) and cross-entropy losses.  Also
@@ -21832,12 +21835,14 @@ shape operations, @code{ScatterElements} (with Vulkan @code{atomicAdd} for GNN
 scatter-add), and fused custom ops (@code{RelPosBias2D} for @code{BoTNet}') â
 sufficient to run real-world models such as @code{RoBERTa}', BERT',
 GPT-@code{NeoX}', @code{SqueezeNet}', Inception v3', BAT-@code{ResNeXt}',
-@code{BoTNet}', and MNIST out of the box.  Uses a dedicated weight buffer
-architecture for zero-overhead repeated inference â weights are loaded to GPU
-once and never re-transferred.  Serves as backend for LLM (Large Language Model)
-inference via @code{llamaR} and Stable Diffusion image generation via sd2R'.
-See <https://github.com/ggml-org/ggml> for more information about the underlying
-library.")
+@code{BoTNet}', and MNIST out of the box.  Reads GGUF files natively: load
+pretrained weights from any gguf'-compatible source ('llama.cpp', Hugging Face')
+with automatic weight conversion and metadata access.  Uses a dedicated weight
+buffer architecture for zero-overhead repeated inference â weights are loaded
+to GPU once and never re-transferred.  Serves as backend for LLM (Large Language
+Model) inference via @code{llamaR} and Stable Diffusion image generation via
+sd2R'.  See <https://github.com/ggml-org/ggml> for more information about the
+underlying library.")
     (license license:expat)))
 
 (define-public r-ggmix
@@ -27741,13 +27746,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "19570wirf75fdgdli0z5klriv793r0djvgi5cxmmwrqcq4iqsw79"))))
+        (base32 "0b4hc90lwkwcwchg1lfhvlqn3sk3r75dx8a6nh6pq28zdzs4i1kr"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
@@ -34677,13 +34682,13 @@ online SQL database at <http://paleofire.org>.")
 (define-public r-gccfactor
   (package
     (name "r-gccfactor")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCCfactor" version))
        (sha256
-        (base32 "1cx7ir2l55rq0w9lz912xa54ankcfm8pdn3g9d0cpzrgrc6l236j"))))
+        (base32 "1xqgz8m5l9chvh64c9hrmiawk8bs8rrvbhnn5b9989x7w7r28zhj"))))
     (properties `((upstream-name . "GCCfactor")))
     (build-system r-build-system)
     (arguments

@@ -39024,6 +39024,37 @@ statistical functions, some of which may even be referenced in The R Primer
 book.  See EkstrÃ¸m, C. T. (2016).  The R Primer.  2nd edition.  Chapman & Hall.")
     (license license:gpl2)))
 
+(define-public r-mesreg
+  (package
+    (name "r-mesreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MEsreg" version))
+       (sha256
+        (base32 "1jjzq1bzmpbshgclkd8vxafiq2v3lx634y6dcnd7xv01g5qgvhbv"))))
+    (properties `((upstream-name . "MEsreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsolnp))
+    (home-page "https://cran.r-project.org/package=MEsreg")
+    (synopsis
+     "Generalized Maximum Entropy Estimation for Smooth Transition and Kink Regression Models")
+    (description
+     "This package implements generalized maximum entropy estimation for linear
+regression, kink regression, and smooth transition kink regression models.  The
+approach represents unknown parameters and disturbances as probability
+distributions over discrete support spaces and estimates them by maximizing
+entropy subject to model constraints.  It is particularly suited to ill-posed
+problems and does not require distributional assumptions on the error term.  The
+methods have been applied in empirical studies such as Tarkhamtham and Yamaka
+(2019) <https://thaijmath.com/index.php/thaijmath/article/view/867/870> and
+Maneejuk, Yamaka, and Sriboonchitta (2022) <doi:10.1080/03610918.2020.1836214>.")
+    (license license:gpl3)))
+
 (define-public r-mesonet
   (package
     (name "r-mesonet")
@@ -50770,6 +50801,33 @@ elements that improve the graphic presentation of maps (e.g. scale bar, north
 arrow, title, labels).  mapsf maps sf objects on base graphics.")
     (license license:gpl3+)))
 
+(define-public r-mapsenegal
+  (package
+    (name "r-mapsenegal")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapSenegal" version))
+       (sha256
+        (base32 "1akdwg03ibg9vscaghyq227kzfi4zgha9bwiiwdys6masdzkpzp6"))))
+    (properties `((upstream-name . "mapSenegal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf))
+    (home-page "https://github.com/mapSenegal/mapSenegal")
+    (synopsis "Administrative Boundaries of Senegal")
+    (description
+     "The administrative boundaries of Senegal are provided at several levels,
+including regions, departments, arrondissements and communes.  The Global
+Administrative Areas database, or `GADM` <https://gadm.org/>, is the primary
+source for these layers.  The dataset is complemented by the incorporation of
+additional geographic layers, such as localities, universities, roads, or health
+facility locations.")
+    (license license:gpl3)))
+
 (define-public r-mapscanner
   (package
     (name "r-mapscanner")
@@ -51186,13 +51244,13 @@ regions were intervention is most duly needed.")
 (define-public r-maplegend
   (package
     (name "r-maplegend")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maplegend" version))
        (sha256
-        (base32 "138cp6fqxk9qf7bad75kxk387ikyj1hrplvk3mjai8rkl875aaq0"))))
+        (base32 "0zv78jraww308hg7gf4q834pv88vmci8cqfk1d07bhifvm2fmf6l"))))
     (properties `((upstream-name . "maplegend")))
     (build-system r-build-system)
     (arguments

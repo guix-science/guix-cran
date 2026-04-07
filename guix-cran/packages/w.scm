@@ -2416,13 +2416,13 @@ results.")
 (define-public r-wordvector
   (package
     (name "r-wordvector")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordvector" version))
        (sha256
-        (base32 "0izvhmi7h1w9fk21f3r6y18sj2jyzi28fsa7kypk15kascf9ar12"))))
+        (base32 "0z7n70wpc6rx7ngvh1byxpn00g2rk100k3qhfdciv78sspassryb"))))
     (properties `((upstream-name . "wordvector")))
     (build-system r-build-system)
     (arguments
@@ -4936,6 +4936,39 @@ normal approximation to the hypergeometric distribution based on Nicholson
 and key metadata for reference.  It is menu-driven and lets users pick an output
 directory.  See vignettes for a detailed walk-through.")
     (license license:gpl3)))
+
+(define-public r-whoriskcalculator
+  (package
+    (name "r-whoriskcalculator")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WHORiskCalculator" version))
+       (sha256
+        (base32 "0km1bqnrc8i8g143mb5h27sy13nhnkdksn91nhnsjff0kryzx1za"))))
+    (properties `((upstream-name . "WHORiskCalculator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=WHORiskCalculator")
+    (synopsis "WHO Cardiovascular Disease Risk Calculator")
+    (description
+     "This package implements the 2019 World Health Organization (WHO) cardiovascular
+disease (CVD) risk prediction models, as described in Kaptoge et al. (2019)
+<doi:10.1016/S2214-109X(19)30318-3>.  Provides two validated models for
+estimating 10-year risk of fatal and non-fatal cardiovascular events (myocardial
+infarction and stroke): a laboratory-based model using age, sex, systolic blood
+pressure, total cholesterol, smoking status, and diabetes history; and a
+non-laboratory-based model substituting body mass index (BMI) for cholesterol
+and diabetes, suitable for resource-limited settings.  Risk estimates are
+recalibrated to 21 Global Burden of Disease regions using region-specific
+incidence rates and risk factor distributions derived from the Emerging Risk
+Factors Collaboration.  Functions are fully vectorized for efficient batch
+calculations and support automatic country-to-region mapping via ISO 3166-1
+alpha-3 country codes.")
+    (license license:expat)))
 
 (define-public r-whomds
   (package
@@ -7671,13 +7704,13 @@ protocol.")
 (define-public r-webanalytics
   (package
     (name "r-webanalytics")
-    (version "0.9.14")
+    (version "0.9.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WebAnalytics" version))
        (sha256
-        (base32 "1z12lvb7qln08zg42gsjrjxp5ksg8awbdwnw3y8cfv7zmh316sf6"))))
+        (base32 "130620pbabvkslj049gak9mj8xa47n4wbqnp9a1n0v5m4x2ixxzp"))))
     (properties `((upstream-name . "WebAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -7690,7 +7723,6 @@ protocol.")
                              r-ggplot2
                              r-fs
                              r-digest
-                             r-data-table
                              r-brew))
     (home-page "https://github.com/gregfrog/WebAnalytics")
     (synopsis "Web Server Log Analysis")
@@ -9105,13 +9137,13 @@ data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
 (define-public r-waverider
   (package
     (name "r-waverider")
-    (version "0.4.1")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WaverideR" version))
        (sha256
-        (base32 "1ag80sj1fn9apbxhfibfl1b9zazz0j3llk03qahjrm2gd469badd"))))
+        (base32 "0w06apjjc1hcmknzrwmv0zsjlj1i3lgz60fgr8vwcjmg6isdki97"))))
     (properties `((upstream-name . "WaverideR")))
     (build-system r-build-system)
     (arguments
@@ -9120,6 +9152,7 @@ data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
     (propagated-inputs (list r-viridis
                              r-truncnorm
                              r-trapezoid
+                             r-scico
                              r-rlist
                              r-reshape2
                              r-rcolorbrewer
@@ -9138,59 +9171,8 @@ data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
     (home-page "https://github.com/stratigraphy/WaverideR")
     (synopsis "Extracting Signals from Wavelet Spectra")
     (description
-     "The continuous wavelet transform enables the observation of
-transient/non-stationary cyclicity in time-series.  The goal of
-cyclostratigraphic studies is to define frequency/period in the depth/time
-domain.  By conducting the continuous wavelet transform on cyclostratigraphic
-data series one can observe and extract cyclic signals/signatures from signals.
-These results can then be visualized and interpreted enabling one to
-identify/interpret cyclicity in the geological record, which can be used to
-construct astrochronological age-models and identify and interpret cyclicity in
-past and present climate systems.  The @code{WaverideR} R package builds upon
-existing literature and existing codebase.  The list of articles which are
-relevant can be grouped in four subjects; cyclostratigraphic data
-analysis,example data sets,the (continuous) wavelet transform and astronomical
-solutions.  References for the cyclostratigraphic data analysis articles are:
-Stephen Meyers (2019) <doi:10.1016/j.earscirev.2018.11.015>.  Mingsong Li, Linda
-Hinnov, Lee Kump (2019) <doi:10.1016/j.cageo.2019.02.011> Stephen Meyers
-(2012)<doi:10.1029/2012PA002307> Mingsong Li, Lee R. Kump, Linda A. Hinnov,
-Michael E. Mann (2018) <doi:10.1016/j.epsl.2018.08.041>.  Wouters, S., Crucifix,
-M., Sinnesael, M., Da Silva, A.C., Zeeden, C., Zivanovic, M., Boulvain, F.,
-Devleeschouwer, X. (2022) <doi:10.1016/j.earscirev.2021.103894>.  Wouters, S.,
-Da Silva, A.-C., Boulvain, F., and Devleeschouwer, X. (2021)
-<doi:10.32614/RJ-2021-039>.  Huang, Norden E., Zhaohua Wu, Steven R. Long,
-Kenneth C. Arnold, Xianyao Chen, and Karin Blank (2009)
-<doi:10.1142/S1793536909000096>.  Cleveland, W. S.
-(1979)<doi:10.1080/01621459.1979.10481038> Hurvich, C.M., Simonoff, J.S., and
-Tsai, C.L. (1998) <doi:10.1111/1467-9868.00125>, Golub, G., Heath, M. and Wahba,
-G. (1979) <doi:10.2307/1268518>.  References for the example data articles are:
-Damien Pas, Linda Hinnov, James E. (Jed) Day, Kenneth Kodama, Matthias
-Sinnesael, Wei Liu (2018) <doi:10.1016/j.epsl.2018.02.010>.  Steinhilber,
-Friedhelm, Abreu, Jacksiel, Beer, Juerg , Brunner, Irene, Christl, Marcus,
-Fischer, Hubertus, @code{HeikkilA}, U., Kubik, Peter, Mann, Mathias, Mccracken,
-K. , Miller, Heinrich, Miyahara, Hiroko, Oerter, Hans , Wilhelms, Frank. (2012
-<doi:10.1073/pnas.1118965109>.  Christian Zeeden, Frederik Hilgen, Thomas
-Westerhold, Lucas Lourens, Ursula RÃ¶hl, Torsten Bickert (2013)
-<doi:10.1016/j.palaeo.2012.11.009>.  References for the (continuous) wavelet
-transform articles are: Morlet, Jean, Georges Arens, Eliane Fourgeau, and
-Dominique Glard (1982a) <doi:10.1190/1.1441328>.  J. Morlet, G. Arens, E.
-Fourgeau, D. Giard (1982b) <doi:10.1190/1.1441329>.  Torrence, C., and G. P.
-Compo (1998)<https://paos.colorado.edu/research/wavelets/bams_79_01_0061.pdf>,
-Gouhier TC, Grinsted A, Simko V (2021) <https://github.com/tgouhier/biwavelet>.
-Angi Roesch and Harald Schmidbauer (2018)
-<https://CRAN.R-project.org/package=@code{WaveletComp>}.  Russell, Brian, and
-Jiajun Han
-(2016)<https://www.crewes.org/Documents/@code{ResearchReports/2016/CRR201668.pdf>}.
- Gabor, Dennis (1946) <http://genesis.eecg.toronto.edu/gabor1946.pdf>.  J.
-Laskar, P. Robutel, F. Joutel, M. Gastineau, A.C.M. Correia, and B. Levrard, B.
-(2004) <doi:10.1051/0004-6361:20041335>.  Laskar, J., Fienga, A., Gastineau, M.,
-Manche, H. (2011a) <doi:10.1051/0004-6361/201116836>.  References for the
-astronomical solutions articles are: Laskar, J., Gastineau, M., Delisle, J.-B.,
-Farres, A., Fienga, A. (2011b <doi:10.1051/0004-6361/201117504>.  J. Laskar
-(2019) <doi:10.1016/B978-0-12-824360-2.00004-8>.  Zeebe, Richard E (2017)
-<doi:10.3847/1538-3881/aa8cce>.  Zeebe, R. E. and Lourens, L. J. (2019)
-<doi:10.1016/j.epsl.2022.117595>.  Richard E. Zeebe Lucas J. Lourens (2022)
-<doi:10.1126/science.aax0612>.")
+     "This package provides tools for extracting and analyzing cyclic signals from
+time series.")
     (license license:gpl2+)))
 
 (define-public r-waver

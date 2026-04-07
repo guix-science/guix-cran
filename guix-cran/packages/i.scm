@@ -5475,6 +5475,33 @@ download file from @code{GitHub} via the proxy website <https://gh-proxy.com/>
 or <https://ghfast.top/>, which is in real-time sync with @code{GitHub}.")
     (license license:expat)))
 
+(define-public r-ipgeolocation
+  (package
+    (name "r-ipgeolocation")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipgeolocation" version))
+       (sha256
+        (base32 "143srfahdgvabzxi5fggnrg1xp3czrvfrap9wlwkg1yl7aa95nki"))))
+    (properties `((upstream-name . "ipgeolocation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2))
+    (home-page "https://github.com/devjfreaks/ipgeolocation-r")
+    (synopsis "Client for the 'IPGeolocation.io IP Location API'")
+    (description
+     "This package provides functions to query the IPGeolocation.io IP Location API
+(<https://ipgeolocation.io/documentation/ip-location-api.html>).  Supports
+retrieval of IP location, ASN, network, currency, timezone, abuse, and security
+data.  Response filtering is supported using fields and excludes parameters (dot
+notation supported), and optional objects can be requested via the include
+parameter.  Returns parsed API responses as R objects.")
+    (license license:expat)))
+
 (define-public r-ipft
   (package
     (name "r-ipft")
@@ -14037,13 +14064,13 @@ to harness AI for predictive analytics.")
 (define-public r-immunogenetr
   (package
     (name "r-immunogenetr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunogenetr" version))
        (sha256
-        (base32 "0z1gfam7rpkr2rb6vmzh7ybin00d84i9q3nqbkb4wc72y5srqk1l"))))
+        (base32 "049jq5kq1nh56vg8wpscj45lcjjbpgikghd1apml6fc3bcidkj16"))))
     (properties `((upstream-name . "immunogenetr")))
     (build-system r-build-system)
     (arguments
@@ -14060,6 +14087,7 @@ to harness AI for predictive analytics.")
                              r-glue
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/k96nb01/immunogenetr_package")
     (synopsis "Comprehensive Toolkit for Clinical HLA Informatics")
     (description

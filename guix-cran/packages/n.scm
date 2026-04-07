@@ -753,13 +753,13 @@ written in English, French, or Spanish.")
 (define-public r-nullcat
   (package
     (name "r-nullcat")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nullcat" version))
        (sha256
-        (base32 "1bcb7pg16bk4545jdimwsf7xk5wwhys61ans4ayz1pk455kxxz71"))))
+        (base32 "186hvldzqbhh4gp5xlb61vmdf0jyppg1dvxxzyahscw92vzbm9v8"))))
     (properties `((upstream-name . "nullcat")))
     (build-system r-build-system)
     (arguments
@@ -6999,26 +6999,31 @@ a tool for interpretability or @code{eXplainable} Artificial Intelligence (XAI).
 (define-public r-nmw
   (package
     (name "r-nmw")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmw" version))
        (sha256
-        (base32 "1y0nyj0jalzb7x9xm5fca7iqgl9lrgvqjhiscc2wy1n0kky21cqh"))))
+        (base32 "13g6yzicdbhzw918cf2a7dkk26n76xa4zcixc3yvmc6ybcnbkrnq"))))
     (properties `((upstream-name . "nmw")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-numderiv))
+    (propagated-inputs (list r-numderiv r-mass))
     (home-page "https://cran.r-project.org/package=nmw")
     (synopsis
      "Understanding Nonlinear Mixed Effects Modeling for Population Pharmacokinetics")
     (description
      "This shows how NONMEM(R) software works.  NONMEM's classical estimation methods
 like First Order(FO) approximation', First Order Conditional Estimation(FOCE)',
-and Laplacian approximation are explained.")
+and Laplacian approximation are explained.  Additionally, provides functions for
+post-run processing of NONMEM output files, generating comprehensive PDF
+diagnostic reports including objective function value analysis, parameter
+estimates, prediction diagnostics, residual diagnostics, empirical Bayes
+estimate (EBE) analysis, input data summary, and individual pharmacokinetic
+parameter distributions.")
     (license license:gpl3)))
 
 (define-public r-nmvanova
@@ -10659,19 +10664,19 @@ transition probabilities.")
 (define-public r-nhlscraper
   (package
     (name "r-nhlscraper")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhlscraper" version))
        (sha256
-        (base32 "1l7sc8sq3jjfx43vfzxs38cf14qhw6qvff703ys7lm2j2zh7cwbh"))))
+        (base32 "00qrggyqia3lq4yz8gs3b3nvm7r1szknb74d2chbj440dp92dv5f"))))
     (properties `((upstream-name . "nhlscraper")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr2))
+    (propagated-inputs (list r-xml2 r-jsonlite r-httr2 r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://rentosaijo.github.io/nhlscraper/")
     (synopsis "Scraper for National Hockey League Data")
@@ -13181,13 +13186,13 @@ available from <doi:10.1037/met0000476>.")
 (define-public r-networkchange
   (package
     (name "r-networkchange")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkChange" version))
        (sha256
-        (base32 "1n3zayziqrnyr52nx33w9mmpj0kvfp0w1d1d2461ghbn3hsj4p9v"))))
+        (base32 "04h0ca4x8yqlsx884samlb3jv48z42c89yarcgmhipq6fg54h643"))))
     (properties `((upstream-name . "NetworkChange")))
     (build-system r-build-system)
     (arguments
@@ -13197,6 +13202,8 @@ available from <doi:10.1037/met0000476>.")
                              r-tidyr
                              r-rmpfr
                              r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
                              r-rcolorbrewer
                              r-qgraph
                              r-patchwork
@@ -13215,9 +13222,10 @@ available from <doi:10.1037/met0000476>.")
      "Network changepoint analysis for undirected network data.  The package
 implements a hidden Markov network change point model (Park and Sohn (2020)).
 Functions for break number detection using the approximate marginal likelihood
-and WAIC are also provided.  This version includes performance optimizations
-with vectorized MCMC operations and modern ggplot2-based visualizations with
-colorblind-friendly palettes.")
+and WAIC are also provided.  Version 1.1.0 includes high-performance C++
+implementations via Rcpp'/'@code{RcppArmadillo} for 5-15x faster MCMC sampling,
+along with modern ggplot2'-based visualizations with colorblind-friendly
+palettes.")
     (license license:gpl3)))
 
 (define-public r-networkabc
@@ -13667,13 +13675,13 @@ randomization and non-degree preserving.")
 (define-public r-netrics
   (package
     (name "r-netrics")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netrics" version))
        (sha256
-        (base32 "1wj45ifjlkdhx4rrqpcmdd09fsp5vi8kdw72r7z5vs6l6fj5zwfr"))))
+        (base32 "1d3rz5ry5ywsidyrpxkr0bij9276dyinlf0nhpcf0bp0likkggfp"))))
     (properties `((upstream-name . "netrics")))
     (build-system r-build-system)
     (arguments
@@ -14304,47 +14312,6 @@ exportation.")
 network meta-analysis model with dose-response relationships, predicted values
 of the fitted model and dose-response plots in a frequentist way.")
     (license license:gpl2+)))
-
-(define-public r-netdiffuser
-  (package
-    (name "r-netdiffuser")
-    (version "1.24.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netdiffuseR" version))
-       (sha256
-        (base32 "1iv8hc16qbwc2xyafacfphzq1w0v9bqnw3796yqgx63952wy7wz4"))))
-    (properties `((upstream-name . "netdiffuseR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-sparsem
-                             r-sna
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-networkdynamic
-                             r-network
-                             r-matrix
-                             r-matchit
-                             r-mass
-                             r-igraph
-                             r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/USCCANA/netdiffuseR")
-    (synopsis "Analysis of Diffusion and Contagion Processes on Networks")
-    (description
-     "Empirical statistical analysis, visualization and simulation of diffusion and
-contagion processes on networks.  The package implements algorithms for
-calculating network diffusion statistics such as transmission rate, hazard
-rates, exposure models, network threshold levels, infectiousness (contagion),
-and susceptibility.  The package is inspired by work published in Valente, et
-al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
-9781881303213>, Myers (2000) <DOI:10.1086/303110>, Iyengar and others (2011)
-<DOI:10.1287/mksc.1100.0566>, Burt (1987) <DOI:10.1086/228667>; among others.")
-    (license license:expat)))
 
 (define-public r-netda
   (package
@@ -15448,13 +15415,13 @@ co-authorship networks).")
 (define-public r-nematode
   (package
     (name "r-nematode")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Nematode" version))
        (sha256
-        (base32 "06m0ycha8s5v6m1zlmz5asnc1dghiqc3mk4v7rylvygjp58r7s3a"))))
+        (base32 "1xzax5hy4x8mp3303scwsfgak4rypv7jn778wjp7y5hm8zc187wb"))))
     (properties `((upstream-name . "Nematode")))
     (build-system r-build-system)
     (arguments
@@ -18910,13 +18877,13 @@ in Korea.")
 (define-public r-n1qn1
   (package
     (name "r-n1qn1")
-    (version "6.0.1-13")
+    (version "6.0.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "n1qn1" version))
        (sha256
-        (base32 "03cy7xf52ikf6fnkblfcbb3gpjjfcin5fmg9ws2crrpd6n9zw0qb"))))
+        (base32 "04b8zdl1r81f8v5d8ky6waihyidfa9vhiw4v9sxp9qbvzjmwn2br"))))
     (properties `((upstream-name . "n1qn1")))
     (build-system r-build-system)
     (arguments

@@ -11,10 +11,10 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages python-science)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages web)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages docker)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -1313,13 +1313,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "1pnbni4g4jybzvm7r831aiizmiibpj8x8ig4x18q87vq2b0gcmlx"))))
+        (base32 "1lf544n3y23d4dq0as9w862pck3dzwn3cmsfln54bg8r0867r3vv"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (arguments
@@ -8906,6 +8906,36 @@ by the Python package langagent'.")
 Caigny et al., (2018) <DOI:10.1016/j.ejor.2018.02.009>).")
     (license license:gpl3+)))
 
+(define-public r-llamar
+  (package
+    (name "r-llamar")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llamaR" version))
+       (sha256
+        (base32 "1rya5fv8pkycrmv423gki1kav9fzzdjszp8bdw4p56daphfjsqda"))))
+    (properties `((upstream-name . "llamaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-ggmlr))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/Zabis13/llamaR")
+    (synopsis "Interface for Large Language Models via 'llama.cpp'")
+    (description
+     "This package provides R bindings to llama.cpp for running Large Language Models
+('LLMs') locally with optional Vulkan GPU acceleration via @code{ggmlR}'.
+Supports model loading, text generation, tokenization', token-to-piece
+conversion, embeddings (single and batch), encoder-decoder inference, low-level
+batch management, chat templates, @code{LoRA} adapters, explicit backend/device
+selection, multi-GPU split, and NUMA optimization.  Includes a high-level
+ragnar'-compatible embedding provider ('embed_llamar').  Built on top of
+@code{ggmlR} for efficient tensor operations.")
+    (license license:expat)))
+
 (define-public r-llama
   (package
     (name "r-llama")
@@ -9054,13 +9084,13 @@ dependencies.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.27")
+    (version "1.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "0lkxgmqy4zwym9b1a5zyj9zgh2g9xm4vxan64qdqvzk6yid76ip5"))))
+        (base32 "1qiad0dqii4s6vj0nhngncwdn8gpzazqir76i1wgdy6y4lqhb4i8"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -12422,13 +12452,13 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.3.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "0kah78d6ml2cccayhd5x3r65vky3658pycdq5df959x3awxa7mvl"))))
+        (base32 "1xszjwc1xmxa3bip7ly1ld7cwdqw4j99a2nxr0jziszql1nca81s"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (arguments
@@ -20750,13 +20780,13 @@ using various relabelling algorithms.")
 (define-public r-labdsv
   (package
     (name "r-labdsv")
-    (version "2.3-0")
+    (version "2.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labdsv" version))
        (sha256
-        (base32 "1sa6bmkdb2vgfszfn58mc8vd5zm39vf6n5slr7mryhmbqh1dzavy"))))
+        (base32 "1zyz8nxmxc2i4wzfrmclbc23rkm6gy0h489jax7iy1h6jhz0m272"))))
     (properties `((upstream-name . "labdsv")))
     (build-system r-build-system)
     (arguments

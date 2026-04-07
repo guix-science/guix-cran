@@ -1795,13 +1795,13 @@ devtools::install_github(\"david-barnett/@code{microViz}\").")
 (define-public r-hybridehr
   (package
     (name "r-hybridehr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hybridEHR" version))
        (sha256
-        (base32 "1dl39n5w0y8ypv3saa7p8dd30p1dwi6yn0ynd2qqrcd2srx5nvqs"))))
+        (base32 "0ian1ywv1gf1h55iwaaday5r4fzs7yb0h844z0jlxbq6yjkx4yj0"))))
     (properties `((upstream-name . "hybridEHR")))
     (build-system r-build-system)
     (arguments
@@ -1810,6 +1810,7 @@ devtools::install_github(\"david-barnett/@code{microViz}\").")
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rsqlite
+                             r-rlang
                              r-openxlsx
                              r-magrittr
                              r-lubridate
@@ -1819,13 +1820,13 @@ devtools::install_github(\"david-barnett/@code{microViz}\").")
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hybridEHR")
     (synopsis
-     "Synthetic Hybrid Electronic Health Records Dataset Generator with COVID/CT Research Views")
+     "Synthetic Hybrid Electronic Health Record Generation for SARS-Related Research and CT Views")
     (description
-     "This package provides tools to generate synthetic electronic health records
-including patients, encounters, vitals, labs, medications, procedures, and
-allergies, with optional COVID-19-focused and computed tomography (CT)-research
-views, and export them to comma separated values ('CSV'), SQLite', and Excel
-formats for researchers and developers.")
+     "Generates synthetic electronic health record data, including patients,
+encounters, vitals, laboratory results, medications, procedures, and allergies.
+The package supports optional SARS-focused and computed tomography (CT) research
+views and export to CSV, SQLite, and Excel formats for research and development
+workflows.")
     (license license:expat)))
 
 (define-public r-hybriddesign
@@ -8679,48 +8680,6 @@ included as a main effect.  For more details, see Bien, J., Taylor, J.,
 Tibshirani, R., (2013) \"A Lasso for Hierarchical Interactions.\" Annals of
 Statistics.  41(3).  1111-1141.")
     (license license:gpl2)))
-
-(define-public r-hiernest
-  (package
-    (name "r-hiernest")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hierNest" version))
-       (sha256
-        (base32 "1i0iic3x5ld6m9pljw0sb7kbblvk3bfpslljw79iagz89shd1gnw"))))
-    (properties `((upstream-name . "hierNest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rtensor
-                             r-rspectra
-                             r-rlang
-                             r-proc
-                             r-plotly
-                             r-matrix
-                             r-magrittr
-                             r-ggplot2
-                             r-dotcall64
-                             r-cli))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/ZirenJiang/hierNest")
-    (synopsis
-     "Penalized Regression with Hierarchical Nested Parameterization Structure")
-    (description
-     "Efficient implementation of penalized regression with hierarchical nested
-parametrization for grouped data.  The package provides penalized regression
-methods that decompose subgroup specific effects into shared global effects,
-Major subgroup specific effects, and Minor subgroup specific effects, enabling
-structured borrowing of information across related clinical subgroups.  Both
-lasso and hierarchical overlapping group lasso penalties are supported to
-encourage sparsity while respecting the nested subgroup structure.  Efficient
-computation is achieved through a modified design matrix representation and a
-custom majorization minimization algorithm for overlapping group penalties.")
-    (license license:gpl2+)))
 
 (define-public r-hierbipartite
   (package

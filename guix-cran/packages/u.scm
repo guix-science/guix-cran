@@ -4708,6 +4708,47 @@ biological variation.  For further details on methods see Ritchie SC et al.  Sci
 Data (2023) <doi:10.1038/s41597-023-01949-y>.")
     (license license:expat)))
 
+(define-public r-ukbflow
+  (package
+    (name "r-ukbflow")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukbflow" version))
+       (sha256
+        (base32 "1r2vy0fry8r3mwc1sq0z7i71axjnknjjw1gcx59id3giwh1wj953"))))
+    (properties `((upstream-name . "ukbflow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-survival
+                             r-rlang
+                             r-processx
+                             r-jsonlite
+                             r-gtsummary
+                             r-gt
+                             r-forestploter
+                             r-dplyr
+                             r-data-table
+                             r-curl
+                             r-cli
+                             r-broom))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/evanbio/ukbflow")
+    (synopsis
+     "Streamlined Workflow for UK Biobank Data Extraction, Analysis, and Visualization")
+    (description
+     "This package provides a streamlined workflow for UK Biobank cloud-based analysis
+on the Research Analysis Platform (RAP).  Includes tools for phenotype
+extraction and decoding, variable derivation, survival and association analysis,
+genetic risk score computation, and publication-quality visualization.  For
+details on the UK Biobank resource, see Bycroft et al. (2018)
+<doi:10.1038/s41586-018-0579-z>.")
+    (license license:expat)))
+
 (define-public r-ukbabynames
   (package
     (name "r-ukbabynames")

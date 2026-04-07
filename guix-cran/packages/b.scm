@@ -4187,13 +4187,13 @@ better for efficient computing, but also for the environment).")
 (define-public r-brmsmargins
   (package
     (name "r-brmsmargins")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brmsmargins" version))
        (sha256
-        (base32 "1hy4jbg08idv39l66g1l595ikh5b7blwlqjyv6790xs9yzv51r6c"))))
+        (base32 "0pfbaal9knfa2wrbfnyiwwq2alaigq6zxj89plvav1xjp3agh2fl"))))
     (properties `((upstream-name . "brmsmargins")))
     (build-system r-build-system)
     (arguments
@@ -11035,13 +11035,13 @@ Statistics.")
 (define-public r-blscraper
   (package
     (name "r-blscraper")
-    (version "4.0.1")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blscrapeR" version))
        (sha256
-        (base32 "0bz1bqma9r9qdd10k8yzm9bf0pxcw8dpsb44ch5hd57p9p1p9q4y"))))
+        (base32 "011ysz8m0skq80fblfj3xscyzbdf3bbpw8ldvp73bbwf41cmx654"))))
     (properties `((upstream-name . "blscrapeR")))
     (build-system r-build-system)
     (arguments
@@ -18751,20 +18751,21 @@ funded by the Public University of Navarra (project PJUPNA2001).")
 (define-public r-bigdatape
   (package
     (name "r-bigdatape")
-    (version "0.0.96")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BigDataPE" version))
        (sha256
-        (base32 "1p6jppmm1zapa1w2r1dn9nx174q3n84p6aawzi6xam9r4a2qki4k"))))
+        (base32 "100cf46xc6k2jl4l17mg2w22kd7lxmwqs66qi9c6nrd6cl9n74dd"))))
     (properties `((upstream-name . "BigDataPE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-httr2 r-dplyr))
-    (home-page "<https://github.com/StrategicProjects/bigdatape>")
+    (propagated-inputs (list r-tibble r-httr2 r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "<https://strategicprojects.github.io/BigDataPE/>")
     (synopsis "Secure and Intuitive Access to 'BigDataPE' 'API' Datasets")
     (description
      "Designed to simplify the process of retrieving datasets from the Big Data PE
@@ -21248,13 +21249,13 @@ with leverage (one-component, two-component, skewed versions).")
 (define-public r-betaselectr
   (package
     (name "r-betaselectr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaselectr" version))
        (sha256
-        (base32 "03pw8ggyhdjjqa4wz88hrc15f5xl00bhhd65hbl44bdrbzkrmw9l"))))
+        (base32 "0frwkh6gs5j05jsg6a7i9nky5by82wgq3lv2jk4fi91aisxdvkd3"))))
     (properties `((upstream-name . "betaselectr")))
     (build-system r-build-system)
     (arguments
@@ -26453,13 +26454,13 @@ automatic tuning inspired by Pitt et al. (2012)
 (define-public r-bayessim
   (package
     (name "r-bayessim")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSIM" version))
        (sha256
-        (base32 "0ffla82higrl379657iyszsajyliyg8jz26sfrh2h55k33wyd3pv"))))
+        (base32 "1w38kb4psslwx4ycq5f89m3r00mfadai6vvxixy9v5dzv61bzkys"))))
     (properties `((upstream-name . "BayesSIM")))
     (build-system r-build-system)
     (arguments
@@ -26878,13 +26879,13 @@ with Bayesian treatment of the covariance matrix (Carrara et al., 2025) <doi:
 (define-public r-bayesqrsurvey
   (package
     (name "r-bayesqrsurvey")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesQRsurvey" version))
        (sha256
-        (base32 "1xk6rhcmscx512vzg6jnyfzwk38kk8r9lblb7f8rbd5krjz4qmdv"))))
+        (base32 "0j48i314iqzrqdb0356g06sbvrqpd23hacab3r37lvsyrrdfzbzg"))))
     (properties `((upstream-name . "bayesQRsurvey")))
     (build-system r-build-system)
     (arguments

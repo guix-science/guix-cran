@@ -16904,51 +16904,6 @@ modeling: Blei et al. (2003) <doi:10.1162/jmlr.2003.3.4-5.993>; Landauer et al.
 <https://github.com/trinker/sentimentr>.")
     (license license:gpl3+)))
 
-(define-public r-conversationalign
-  (package
-    (name "r-conversationalign")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ConversationAlign" version))
-       (sha256
-        (base32 "06hx9cinykch8qrvzaiiimyy4qy4mqnn156n6sjw9x1p2nq9v9iz"))))
-    (properties `((upstream-name . "ConversationAlign")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-yrmisc
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-textstem
-                             r-stringr
-                             r-stringi
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-httr
-                             r-dplyr
-                             r-desctools))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://github.com/Reilly-ConceptsCognitionLab/ConversationAlign")
-    (synopsis
-     "Process Text and Compute Linguistic Alignment in Conversation Transcripts")
-    (description
-     "Imports conversation transcripts into R, concatenates them into a single
-dataframe appending event identifiers, cleans and formats the text, then yokes
-user-specified psycholinguistic database values to each word.
-@code{ConversationAlign} then computes alignment indices between two
-interlocutors across each transcript for >40 possible semantic, lexical, and
-affective dimensions.  In addition to alignment, @code{ConversationAlign} also
-produces a table of analytics (e.g., token count, type-token-ratio) in a summary
-table describing your particular text corpus.")
-    (license license:lgpl3+)))
-
 (define-public r-convergeu
   (package
     (name "r-convergeu")
@@ -21455,19 +21410,20 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
 (define-public r-compositionalsr
   (package
     (name "r-compositionalsr")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalSR" version))
        (sha256
-        (base32 "1zryxdzqpyqrfr4wpv6ag4kk7h4d5sh41i2zbb7z2db151q0f38x"))))
+        (base32 "1a7ilhwm6baqvjfpivczb5yi39w0gzwl7wkk9nl0n4z1lk5g481x"))))
     (properties `((upstream-name . "CompositionalSR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf
+    (propagated-inputs (list r-spmoran
+                             r-sf
                              r-rfast
                              r-rangen
                              r-minpack-lm
@@ -32796,13 +32752,13 @@ Development in a RunâOff Triangleâ <doi:10.1080/10920277.2025.2496725>
 (define-public r-clme
   (package
     (name "r-clme")
-    (version "2.0-12")
+    (version "2.0-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CLME" version))
        (sha256
-        (base32 "161maq22r8wbd6c2dc8b47mh6991vc4iqmjr8g6yqb5gcwca8zhg"))))
+        (base32 "0afzvkwfyd4yvd59grbp7dsnj2p8arnadzgzga0w58f5v4my3hw6"))))
     (properties `((upstream-name . "CLME")))
     (build-system r-build-system)
     (arguments
@@ -32810,12 +32766,12 @@ Development in a RunâOff Triangleâ <doi:10.1080/10920277.2025.2496725>
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shiny
-                             r-prettyr
                              r-openxlsx
                              r-nlme
                              r-mass
                              r-lme4
-                             r-isotone))
+                             r-isotone
+                             r-dt))
     (home-page "https://cran.r-project.org/package=CLME")
     (synopsis "Constrained Inference for Linear Mixed Effects Models")
     (description
@@ -38290,13 +38246,13 @@ hierarchical code validation.  Data from Centro FIC Chile DEIS
 (define-public r-cici
   (package
     (name "r-cici")
-    (version "0.9.8")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICI" version))
        (sha256
-        (base32 "1dvlixky04mm0cv59vb88m9fz5kq36k51fr0gg7rlg9nr52lqwv7"))))
+        (base32 "1pjk3f8jl3xw2qni7vv3ch8wcpn8hikicyd0v1wn2axl64wy1z4b"))))
     (properties `((upstream-name . "CICI")))
     (build-system r-build-system)
     (arguments
@@ -53157,13 +53113,13 @@ data protections rules.")
 (define-public r-cancerr
   (package
     (name "r-cancerr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancerR" version))
        (sha256
-        (base32 "02k4d7z565xlmwv5kl7dqqdm27zvmwm2pyfqpp7czdji17agkji0"))))
+        (base32 "1k9aibs3mqwdwhs8cgw2iikqqrjm9hybv0r5lqrdwpbrmqx9zdzk"))))
     (properties `((upstream-name . "cancerR")))
     (build-system r-build-system)
     (arguments
@@ -53847,13 +53803,13 @@ API. @code{CalPASS} Plus.  MMAP API V1.
 (define-public r-calms
   (package
     (name "r-calms")
-    (version "1.0-1")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calms" version))
        (sha256
-        (base32 "0hn08yhfg2ivslwqyd7335bkl7d7k978mwmms1r2s61w5snri30g"))))
+        (base32 "0h0xvlmsc53fzcmnxs3jjjgxx513hba8cw7n0mh375s5gdyf70bd"))))
     (properties `((upstream-name . "calms")))
     (build-system r-build-system)
     (arguments

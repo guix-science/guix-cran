@@ -12375,13 +12375,13 @@ flexible tpn model <doi:10.3390/math11214431> and the unit tpn distribution
 (define-public r-tpmsm
   (package
     (name "r-tpmsm")
-    (version "1.2.14")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPmsm" version))
        (sha256
-        (base32 "1g2zzcay95hy4dgg4sippywn8vgq23a69l3wfwjn9rckbb53anwc"))))
+        (base32 "0pil0m1522nc6vkr0ml6lwqkd1gzd6ykmknfmszbq97msz74wjzn"))))
     (properties `((upstream-name . "TPmsm")))
     (build-system r-build-system)
     (arguments
@@ -22957,45 +22957,6 @@ aggregating results by time periods, and creating columns that can be used as
 dplyr time-based groups.")
     (license license:expat)))
 
-(define-public r-ti
-  (package
-    (name "r-ti")
-    (version "4.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ti" version))
-       (sha256
-        (base32 "0cn06iq9rl5d1bjjv6jsy9qp73dz9an2jk54dka4i2260rplmm27"))))
-    (properties `((upstream-name . "ti")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-scales
-                             r-s7
-                             r-rlang
-                             r-lubridate
-                             r-janitor
-                             r-glue
-                             r-duckdb
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-cli
-                             r-assertthat))
-    (home-page "https://codeberg.org/usrbinr/ti")
-    (synopsis
-     "Time Intelligence and Customer Segmentation for Financial Analysis")
-    (description
-     "Calculate time intelligence metrics for financial planning and analysis.  ti
-provides functions for period-over-period comparisons (year-over-year,
-month-over-month), period-to-date calculations (YTD, MTD, QTD), and customer
-segmentation (ABC analysis, cohorts).  Supports standard and retail calendars
-(4-4-5, 4-5-4, 5-4-4) with both in-memory and database backends via dbplyr'.")
-    (license license:expat)))
-
 (define-public r-thurstonianirt
   (package
     (name "r-thurstonianirt")
@@ -25288,13 +25249,13 @@ Arabidopsis).")
 (define-public r-tf
   (package
     (name "r-tf")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tf" version))
        (sha256
-        (base32 "0lb5dj9xaslnifk5v48ss19xdildzsdjnyvlxhxvyf35lckzr22y"))))
+        (base32 "0mlhyiyq1cy23ll4fgglcnjc3sh4mvrkpyhk48194dxwk0yrmn1d"))))
     (properties `((upstream-name . "tf")))
     (build-system r-build-system)
     (arguments

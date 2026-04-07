@@ -8009,13 +8009,13 @@ inference.")
 (define-public r-estempmm
   (package
     (name "r-estempmm")
-    (version "0.1.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EstemPMM" version))
        (sha256
-        (base32 "0932c3vd2yscarbhllhmzq8ndj4apgzqj9zd0v6j8hrr12rjkqq1"))))
+        (base32 "0avnjikh3z6rnp68ks5yaqs1yxfjkf0fkgd98k93j2qcn0y0prm4"))))
     (properties `((upstream-name . "EstemPMM")))
     (build-system r-build-system)
     (arguments
@@ -8029,11 +8029,13 @@ inference.")
 estimation in linear and time series models when error distributions deviate
 from normality.  The PMM2 variant achieves lower variance parameter estimates
 compared to ordinary least squares ('OLS') when errors exhibit significant
-skewness.  Includes methods for linear regression, AR'/'MA'/'ARMA'/'ARIMA
-models, and bootstrap inference.  Methodology described in Zabolotnii, Warsza,
-and Tkachenko (2018) <doi:10.1007/978-3-319-77179-3_75>, Zabolotnii, Tkachenko,
-and Warsza (2022) <doi:10.1007/978-3-031-03502-9_37>, and Zabolotnii, Tkachenko,
-and Warsza (2023) <doi:10.1007/978-3-031-25844-2_21>.")
+skewness.  The PMM3 variant (S=3) targets symmetric platykurtic error
+distributions, reducing variance when excess kurtosis is negative.  Includes
+automatic method selection ('pmm_dispatch'), linear regression,
+AR'/'MA'/'ARMA'/'ARIMA models, and bootstrap inference.  Methodology described
+in Zabolotnii, Warsza, and Tkachenko (2018) <doi:10.1007/978-3-319-77179-3_75>,
+Zabolotnii, Tkachenko, and Warsza (2022) <doi:10.1007/978-3-031-03502-9_37>, and
+Zabolotnii, Tkachenko, and Warsza (2023) <doi:10.1007/978-3-031-25844-2_21>.")
     (license license:gpl3)))
 
 (define-public r-estcrm
@@ -21594,13 +21596,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-educabr
   (package
     (name "r-educabr")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "educabR" version))
        (sha256
-        (base32 "1ql5pazm2wd98yighpm0gv8magz26z3b56ifavhvqw9wi8fdp4k7"))))
+        (base32 "14gwm0s8y8raawk6bx389wbxbjlrdaznkws21mgs21ln9h674dwy"))))
     (properties `((upstream-name . "educabR")))
     (build-system r-build-system)
     (arguments
@@ -21611,6 +21613,7 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-lifecycle
                              r-httr2
                              r-dplyr
                              r-cli))

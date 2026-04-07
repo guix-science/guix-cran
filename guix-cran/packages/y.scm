@@ -222,32 +222,6 @@ R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B. Bahra (1998)
 <doi:10.2139/ssrn.77429>.")
     (license license:gpl3)))
 
-(define-public r-yrmisc
-  (package
-    (name "r-yrmisc")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "YRmisc" version))
-       (sha256
-        (base32 "1crms7dqmhj7br1a5p5j0j7p6sdfimnip31207i6g24f9jkkysv1"))))
-    (properties `((upstream-name . "YRmisc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-gridextra r-ggplot2))
-    (home-page "https://cran.r-project.org/package=YRmisc")
-    (synopsis "Y&R Miscellaneous R Functions")
-    (description
-     "Miscellaneous functions for data analysis, portfolio management, graphics, data
-manipulation, statistical investigation, including descriptive statistics,
-creating leading and lagging variables, portfolio return analysis, time series
-difference and percentage change calculation, stacking data for higher efficient
-analysis.")
-    (license license:gpl2+)))
-
 (define-public r-ypr
   (package
     (name "r-ypr")

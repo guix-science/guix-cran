@@ -8093,13 +8093,13 @@ Estelle Kuhn (2019) <doi:10.18637/jss.v107.i06>.")
 (define-public r-vartest
   (package
     (name "r-vartest")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vartest" version))
        (sha256
-        (base32 "0g6i971ps3fzydirzql88d9x8nrh5v0nzrgfvwxmw3yd1l0bvjpj"))))
+        (base32 "13wz2k6yl1dhh9zj3hmyd1fh5r965sl68m11pm8345p1xc1cg8ip"))))
     (properties `((upstream-name . "vartest")))
     (build-system r-build-system)
     (arguments
