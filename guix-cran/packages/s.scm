@@ -10106,13 +10106,13 @@ of hypotheses into account, as described in Sankaran & Holmes (2014)
 (define-public r-structenforcement
   (package
     (name "r-structenforcement")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "structenforcement" version))
        (sha256
-        (base32 "1vj4kwp1g0d7k4viw9sybpm6jgpzjm50agxw8vwj92f34kqi1l67"))))
+        (base32 "103b10w0vhfxhwvs7l3qb7ysw0x4m0ni5w7xcf6y55zr0j4nmxzf"))))
     (properties `((upstream-name . "structenforcement")))
     (build-system r-build-system)
     (arguments

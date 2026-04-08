@@ -16041,13 +16041,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "0gz6z8543b7lvjc86lbv7wa4wi8x0fwkybvlzwfqnh30h1zg9xyl"))))
+        (base32 "03w1gbcvc4ydv0b7s8lyfsvpk40ifkps54gsa0377lqb02qspxz2"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -17759,13 +17759,13 @@ Antonio Punzo, Angelo Mazza, and Paul D @code{McNicholas} (2018)
 (define-public r-containr
   (package
     (name "r-containr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "containr" version))
        (sha256
-        (base32 "1s41fi08v7qwih3asx6xr4lnx16pwzyra4hgma1l3pn3dws5xp87"))))
+        (base32 "1mr6df3y74f7lnhws4asy2id9l5kzgdqpba0hg4v2jpj0yyx02z7"))))
     (properties `((upstream-name . "containr")))
     (build-system r-build-system)
     (arguments
@@ -17775,15 +17775,14 @@ Antonio Punzo, Angelo Mazza, and Paul D @code{McNicholas} (2018)
     (home-page "https://github.com/erwinlares/containr")
     (synopsis "Containerize Your 'R' Project")
     (description
-     "Automates the process of containerizing R projects.  The core function of
-containr is @code{generate_dockerfile()}', which analyzes an R project's
-environment and dependencies via an renv lock file and generates a ready-to-use
-Dockerfile that encapsulates the computational setup.  The package helps
-researchers build portable and consistent workflows so that analyses can be
-reliably shared, archived, and rerun across systems.  See R Core Team (2025)
-<https://www.R-project.org/>, Ushey et al. (2025)
-<https://CRAN.R-project.org/package=renv>, and Docker Inc. (2025)
-<https://www.docker.com/>.")
+     "This package provides tools for containerizing R projects.  The core function,
+@code{generate_dockerfile()}', analyzes an R project's environment and
+dependencies via an renv lock file and generates a ready-to-use Dockerfile that
+encapsulates the computational setup.  Designed to help researchers build
+portable, reproducible workflows that can be reliably shared, archived, and
+rerun across systems.  See R Core Team (2025) <https://www.R-project.org/>,
+Ushey et al. (2025) <https://CRAN.R-project.org/package=renv>, and Docker Inc.
+(2025) <https://www.docker.com/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-container

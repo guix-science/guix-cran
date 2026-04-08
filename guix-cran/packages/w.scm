@@ -7668,13 +7668,13 @@ to web development.")
 (define-public r-webdav
   (package
     (name "r-webdav")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webdav" version))
        (sha256
-        (base32 "1f8h0ivyzi27vhcb9myjw5ygl3nvh86cns1vcsv00i26skdfwr6j"))))
+        (base32 "1a14hsc2zfj78xnx97f6wb956myfibxpd7sl7ka73ra10mxh9x41"))))
     (properties `((upstream-name . "webdav")))
     (build-system r-build-system)
     (arguments
@@ -7689,7 +7689,8 @@ to web development.")
                              r-httpuv
                              r-glue
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "<https://github.com/StrategicProjects/webdav>")
     (synopsis "Simple Interface for Interacting with 'WebDAV' Servers")

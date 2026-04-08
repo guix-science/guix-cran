@@ -32162,13 +32162,13 @@ limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 (define-public r-rfars
   (package
     (name "r-rfars")
-    (version "2.0.2")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfars" version))
        (sha256
-        (base32 "1yb1734iqw9zi1klpq5d3ih98kc3zl1a2s9pv374y99cdxy7z74l"))))
+        (base32 "0j9x58gic5dv3jp3bgl161pvjgj507vf2akf7y6mf6dpp6rcsfvf"))))
     (properties `((upstream-name . "rfars")))
     (build-system r-build-system)
     (arguments
@@ -56235,19 +56235,20 @@ Specification: <https://mrin9.github.io/@code{RapiDoc/>}.")
 (define-public r-rapidfuzz
   (package
     (name "r-rapidfuzz")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RapidFuzz" version))
        (sha256
-        (base32 "0sidnjdqcykjnhl8ilc31sdrrbhyyxjpdxznfr9n8n8m4ihv12ng"))))
+        (base32 "10xl1fh26zrhim5fgbh9w3g2rah3q88fwm29aczawb2xv979f3w1"))))
     (properties `((upstream-name . "RapidFuzz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-cli))
+    (native-inputs (list r-knitr))
     (home-page "<https://github.com/StrategicProjects/RapidFuzz>")
     (synopsis "String Similarity Computation Using 'RapidFuzz'")
     (description
@@ -56255,7 +56256,10 @@ Specification: <https://mrin9.github.io/@code{RapiDoc/>}.")
 similarities and distances, leveraging the efficient library @code{RapidFuzz}
 <https://github.com/rapidfuzz/rapidfuzz-cpp>.  This package integrates the C++
 implementation, allowing R users to access cutting-edge algorithms for fuzzy
-matching and text analysis.")
+matching and text analysis.  Supported metrics include Levenshtein,
+Damerau-Levenshtein, Hamming, Jaro, Jaro-Winkler, Longest Common Subsequence
+(LCS), Optimal String Alignment (OSA), Indel, Prefix, and Postfix distances and
+similarities, as well as multiple fuzzy matching ratios.")
     (license license:expat)))
 
 (define-public r-rapidcoder

@@ -7187,13 +7187,13 @@ time computing other summary statistics which are summarily ignored.")
 (define-public r-vcmeta
   (package
     (name "r-vcmeta")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcmeta" version))
        (sha256
-        (base32 "1c162v27jlwbcij1mdwnwk9ig5fhg66awn2h7xiz38q7i9mxjj53"))))
+        (base32 "16iwyq7qri1gjddr06fdbhjg7hfyw1cs7cwbz1b9z6z0wj59xnix"))))
     (properties `((upstream-name . "vcmeta")))
     (build-system r-build-system)
     (arguments
