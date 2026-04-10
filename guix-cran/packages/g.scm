@@ -2491,6 +2491,32 @@ normally transformed randomized survival probability (Li,L., et al. (2021)
 <doi:10.1002/sim.8852>) residuals are obtained for the GTDL model.")
     (license license:gpl3+)))
 
+(define-public r-gtdesign
+  (package
+    (name "r-gtdesign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtDesign" version))
+       (sha256
+        (base32 "1r1yfvd48bxxpr66c72514bikng0m8laz89rpzl8alq5cka7xbpy"))))
+    (properties `((upstream-name . "gtDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-mass r-cvxr))
+    (home-page "https://github.com/chikuang/gtDesign")
+    (synopsis "Convex Optimal Designs for Group Testing Experiments")
+    (description
+     "Finite candidate-set approximate optimal designs for group testing and related
+experiments, using convex optimization and equivalence checks.  Implements the
+information matrix and cost structure for the prevalence / sensitivity /
+specificity model used in Huang and colleagues (2020), as in Chi-Kuang Yeh, Weng
+Kee Wong, and Julie Zhou (<doi:10.48550/@code{arXiv.2508.08445>}).")
+    (license license:gpl3)))
+
 (define-public r-gtbasedim
   (package
     (name "r-gtbasedim")
@@ -9229,6 +9255,37 @@ for multiscale data integration (Zhao et al. (2025)
 <doi:10.48550/@code{arXiv.2509.01001>}).  The Bayesian GPTCMs are applicable for
 both low- and high-dimensional data.")
     (license license:gpl3)))
+
+(define-public r-gpss
+  (package
+    (name "r-gpss")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gpss" version))
+       (sha256
+        (base32 "0vv0mfwi0nrbx8pil19avdxsvkjh3gi69mvp0psp23r6g9dmghfd"))))
+    (properties `((upstream-name . "gpss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-matrix r-ggplot2))
+    (home-page "https://doeunkim.org/gpss/")
+    (synopsis "Gaussian Processes for Social Science")
+    (description
+     "This package provides Gaussian process (GP) regression tools for social science
+inference problems.  GPs combine flexible nonparametric regression with
+principled uncertainty quantification: rather than committing to a single model
+fit, the posterior reflects lesser knowledge at the edge of or beyond the
+observed data, where other approaches become highly model-dependent.  The
+package reduces user-chosen hyperparameters from three to zero and supplies
+convenience functions for regression discontinuity @code{(gp_rdd()}),
+interrupted time-series @code{(gp_its()}), and general GP fitting
+@code{(gpss()}, @code{gp_train()}, @code{gp_predict()}).  Methods are described
+in Cho, Kim, and Hazlett (2026) <doi:10.1017/pan.2026.10032>.")
+    (license license:gpl3+)))
 
 (define-public r-gpscdf
   (package
@@ -17158,13 +17215,13 @@ on-premises remote option.")
 (define-public r-git2rdata
   (package
     (name "r-git2rdata")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "git2rdata" version))
        (sha256
-        (base32 "06f0fjfv7sk3hyssjm6nll4kw32zjnjkjmav3mr0k9n9zzckwakr"))))
+        (base32 "1xcx061wf2schmfy4i1p6pi8bn2sjzb71kcvswfxv56n42lq51gx"))))
     (properties `((upstream-name . "git2rdata")))
     (build-system r-build-system)
     (arguments
@@ -20045,13 +20102,13 @@ compare the segments and their contributions to the total.")
 (define-public r-ggseg3d
   (package
     (name "r-ggseg3d")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg3d" version))
        (sha256
-        (base32 "1nsn5dxym4i0qsgyg4d2i7jpr4r0jdrzp8ri88f0z48d4wihnw3k"))))
+        (base32 "1h0yclva5mznkihna6pz2qwfq0k2aaafkaqwdcvqa25xpzkrr423"))))
     (properties `((upstream-name . "ggseg3d")))
     (build-system r-build-system)
     (arguments
@@ -20092,6 +20149,34 @@ pipe-friendly API lets you map data onto brain regions, control camera angles,
 toggle region edges, overlay glass brains, and snapshot or ray-trace the result.
  Additional atlases are available through the ggsegverse r-universe.  Mowinckel
 & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
+    (license license:expat)))
+
+(define-public r-ggseg-meshes
+  (package
+    (name "r-ggseg-meshes")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggseg.meshes" version))
+       (sha256
+        (base32 "1z013dch1nhkkfds9aa3yy31c7nyygsw39a5xsl90w0c8xfwadrm"))))
+    (properties `((upstream-name . "ggseg.meshes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ggsegverse/ggseg.meshes")
+    (synopsis "Additional Brain Surface Meshes for the 'ggsegverse' Ecosystem")
+    (description
+     "This package provides additional brain surface meshes for cortical and
+cerebellar visualisation in the ggsegverse ecosystem.  Cortical surfaces include
+pial, white, midthickness, semi-inflated, sphere, smoothwm, and orig at
+fsaverage5 resolution.  Cerebellar surfaces include the Spatially Unbiased
+Infratentorial Template (SUIT) flatmap.  All meshes follow the same
+vertices/faces data frame format used by ggseg.formats and ggseg3d'.")
     (license license:expat)))
 
 (define-public r-ggseg-formats
@@ -32128,13 +32213,13 @@ R users in streamlining laborious coding and language processing tasks.")
 (define-public r-gena
   (package
     (name "r-gena")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gena" version))
        (sha256
-        (base32 "0hwfjzsz0hrca5vdlkhggzdpv9r8hybqwd5c8mlj5ja896vkrc0w"))))
+        (base32 "0kmdah0p6cms5ldizrl6dk037kwwjlqywg8qbxvwnqpv4kprrw9w"))))
     (properties `((upstream-name . "gena")))
     (build-system r-build-system)
     (arguments
@@ -32149,7 +32234,7 @@ real-valued functions.  Various modifications (including hybridization and
 elitism) of these algorithms are provided.  Implemented functions are based on
 ideas described in S. Katoch, S. Chauhan, V. Kumar (2020)
 <doi:10.1007/s11042-020-10139-6> and M. Clerc (2012)
-<https://hal.archives-ouvertes.fr/hal-00764996>.")
+<https://hal.science/hal-00764996>.")
     (license license:gpl2+)))
 
 (define-public r-gen5helper
@@ -36319,6 +36404,37 @@ model selection with Genetic Algorithms (GA) proposed in {Martinez-de-Pison}
 selection procedure is introduced based on separate cost and complexity
 evaluations.")
     (license license:gpl2+)))
+
+(define-public r-gapanalysis
+  (package
+    (name "r-gapanalysis")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GapAnalysis" version))
+       (sha256
+        (base32 "0k6qqingg4cwa7ql078d71qv5zsxgqaq0bbvxh5z7zzhnx40dz6z"))))
+    (properties `((upstream-name . "GapAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-leaflet r-dplyr r-dataverse))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CIAT-DAPA/GapAnalysis")
+    (synopsis "Conservation Indicators Using Spatial Information")
+    (description
+     "Supports the assessment of the degree of conservation of taxa in conservation
+systems, both in ex situ (in genebanks, botanical gardens, and other
+repositories), and in situ (in protected natural areas).  Methods are described
+in Carver et al. (2021) <doi:10.1111/ecog.05430>, building on Khoury et al.
+(2020) <doi:10.1073/pnas.2007029117>, Khoury et al. (2019)
+<doi:10.1016/j.ecolind.2018.11.016>, Khoury et al. (2019)
+<doi:10.1111/DDI.13008>, Castaneda-Alvarez et al. (2016)
+<doi:10.1038/nplants.2016.22>, and Ramirez-Villegas et al. (2010)
+<doi:10.1371/journal.pone.0013497>.")
+    (license license:gpl3)))
 
 (define-public r-ganttify
   (package

@@ -12322,6 +12322,35 @@ Science and Analytics. <doi:10.1007/s41060-023-00453-1>.\".")
 function, and maximum likelihood estimation.")
     (license license:gpl3)))
 
+(define-public r-tptest
+  (package
+    (name "r-tptest")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tptest" version))
+       (sha256
+        (base32 "1bmhz902wf1vms39h3vjw7wmv11ymjfmah0ykfvygvkx59s0zhbp"))))
+    (properties `((upstream-name . "tptest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/muhammedalkhalaf/tptest")
+    (synopsis "Universal Turning Point and Inflection Point Tests")
+    (description
+     "This package performs turning point and inflection point tests for U-shaped and
+inverse U-shaped relationships in regression models.  Implements the Sasabuchi
+(1980) test as extended by Lind and Mehlum (2010) with support for quadratic,
+cubic, log-quadratic, and inverse functional forms.  Features include
+delta-method standard errors, Fieller confidence intervals, Simonsohn (2018)
+two-lines test, and parametric bootstrap.  Designed for post-estimation analysis
+of linear models, panel models, and quantile regression.  References: Lind and
+Mehlum (2010) <doi:10.1111/j.1468-0084.2009.00569.x>; Sasabuchi (1980); Fieller
+(1954) <doi:10.1111/j.2517-6161.1954.tb00159.x>.")
+    (license license:gpl3)))
+
 (define-public r-tpr
   (package
     (name "r-tpr")
@@ -13366,13 +13395,13 @@ in pure base R are patched.")
 (define-public r-toscca
   (package
     (name "r-toscca")
-    (version "0.1.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toscca" version))
        (sha256
-        (base32 "1z5401r8wl0havpdy68a5zm0jsz1jjdglx8fbila19mjps3h9glz"))))
+        (base32 "1m8fa4c50n6wnnnzdx59aqkixdmm459kxp1hbqpwachn996w04v9"))))
     (properties `((upstream-name . "toscca")))
     (build-system r-build-system)
     (arguments
@@ -15987,21 +16016,27 @@ variables.")
 (define-public r-tlsr
   (package
     (name "r-tlsr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tlsR" version))
        (sha256
-        (base32 "1qh4bm2xgjarjiljxba3dw46pl756z592knpgag1dvjcc9kiz35i"))))
+        (base32 "1hcxvi3zs0a37hv1cdgcr6k3frmin6lj53kal2ck8ygxjq7jhdr0"))))
     (properties `((upstream-name . "tlsR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spatstat-geom r-spatstat-explore r-rann
-                             r-fastica r-dbscan))
-    (home-page "https://cran.r-project.org/package=tlsR")
+    (propagated-inputs (list r-spatstat-geom
+                             r-spatstat-explore
+                             r-rlang
+                             r-ggplot2
+                             r-fnn
+                             r-fastica
+                             r-dbscan))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/labsyspharm/tlsR")
     (synopsis "Detection and Spatial Analysis of Tertiary Lymphoid Structures")
     (description
      "Fast, reproducible detection and quantitative analysis of tertiary lymphoid
@@ -20933,13 +20968,13 @@ Web services are available at <https://www.anthropic.com>, <https://openai.com>,
 (define-public r-tidylearn
   (package
     (name "r-tidylearn")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidylearn" version))
        (sha256
-        (base32 "03jz50y585bqp0qb7vcljznfzcj82ycj053br6z0djcz6fnkc752"))))
+        (base32 "0gkkrv3ynb2khgnjkvqdhwx5khprpnkbaw9v15r99lh51q0pjkaf"))))
     (properties `((upstream-name . "tidylearn")))
     (build-system r-build-system)
     (arguments
@@ -20970,18 +21005,22 @@ Web services are available at <https://www.anthropic.com>, <https://openai.com>,
     (synopsis "Unified Tidy Interface to R's Machine Learning Ecosystem")
     (description
      "This package provides a unified tidyverse-compatible interface to R's machine
-learning packages.  Wraps established implementations from glmnet',
-@code{randomForest}', xgboost', e1071', rpart', gbm', nnet', cluster', dbscan',
-and others - providing consistent function signatures, tidy tibble output,
-unified ggplot2'-based visualization, and optional formatted gt tables via the
-@code{tl_table()} family of functions.  The underlying algorithms are unchanged;
-tidylearn simply makes them easier to use together.  Access raw model objects
-via the $fit slot for package-specific functionality.  Methods include random
-forests Breiman (2001) <doi:10.1023/A:1010933404324>, LASSO regression
-Tibshirani (1996) <doi:10.1111/j.2517-6161.1996.tb02080.x>, elastic net Zou and
-Hastie (2005) <doi:10.1111/j.1467-9868.2005.00503.x>, support vector machines
-Cortes and Vapnik (1995) <doi:10.1007/BF00994018>, and gradient boosting
-Friedman (2001) <doi:10.1214/aos/1013203451>.")
+learning ecosystem - from data ingestion to model publishing.  The
+@code{tl_read()} family reads data from files ('CSV', Excel', Parquet', JSON'),
+databases ('SQLite', @code{PostgreSQL}', @code{MySQL}', @code{BigQuery}'), and
+cloud sources ('S3', @code{GitHub}', Kaggle').  The @code{tl_model()} function
+wraps established implementations from glmnet', @code{randomForest}', xgboost',
+e1071', rpart', gbm', nnet', cluster', dbscan', and others with consistent
+function signatures and tidy tibble output.  Results flow into unified
+ggplot2'-based visualization and optional formatted gt tables via the
+@code{tl_table()} family.  The underlying algorithms are unchanged; tidylearn
+simply makes them easier to use together.  Access raw model objects via the $fit
+slot for package-specific functionality.  Methods include random forests Breiman
+(2001) <doi:10.1023/A:1010933404324>, LASSO regression Tibshirani (1996)
+<doi:10.1111/j.2517-6161.1996.tb02080.x>, elastic net Zou and Hastie (2005)
+<doi:10.1111/j.1467-9868.2005.00503.x>, support vector machines Cortes and
+Vapnik (1995) <doi:10.1007/BF00994018>, and gradient boosting Friedman (2001)
+<doi:10.1214/aos/1013203451>.")
     (license license:expat)))
 
 (define-public r-tidylda
@@ -22173,13 +22212,13 @@ Fleiss 1971 <doi: 10.1037/h0031619>).")
 (define-public r-tidycmprsk
   (package
     (name "r-tidycmprsk")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycmprsk" version))
        (sha256
-        (base32 "1hwx6jw30cc3xsc9f06dbv2p3fzlg9g8ih4dc5b5hyq46gz6va8f"))))
+        (base32 "0vk1sijwxwqp9c63cdpk4jk31b6blwvghblx2s8s705kfw0lgw1n"))))
     (properties `((upstream-name . "tidycmprsk")))
     (build-system r-build-system)
     (arguments
@@ -23001,13 +23040,13 @@ Maydeu-Olivares (2011) <doi:10.1177/0013164410375112>; BÃ¼rkner et al. (2019)
 (define-public r-thurmod
   (package
     (name "r-thurmod")
-    (version "1.1.11")
+    (version "1.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThurMod" version))
        (sha256
-        (base32 "01ay1w3h300day5aljha93xyk0n8a98c7g5binvchgsa019mg9dd"))))
+        (base32 "1fjmxs34x6g61c8llg20mszm8y7dkmnn34f3mr2m5g9m984y5cs7"))))
     (properties `((upstream-name . "ThurMod")))
     (build-system r-build-system)
     (arguments
@@ -23913,13 +23952,13 @@ Subtype-Free Average Causal Effect For Heterogeneous Disease Etiology\" (soon on
 (define-public r-theseusplot
   (package
     (name "r-theseusplot")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TheseusPlot" version))
        (sha256
-        (base32 "1smms0cgjhn27hxbmqygh9hwbinj1dp7z1qlrirxic635k497ilq"))))
+        (base32 "0sk30ws89ky2gsyz9y6qxwr99lvvjcm6kp28ncfdlw5zna89wnzv"))))
     (properties `((upstream-name . "TheseusPlot")))
     (build-system r-build-system)
     (arguments
@@ -34176,13 +34215,13 @@ eliminate the need for Node.js and NPM on package installation.")
 (define-public r-tableparser
   (package
     (name "r-tableparser")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tableParser" version))
        (sha256
-        (base32 "16ivcfn5svsk6v7zr14n3scdqr4prsbkl8infjbbp66wwr4i9f64"))))
+        (base32 "0xrsli1ca6l37gd6na8mrrm02h6jh8qqnm1pm7xkvnljfarkvz05"))))
     (properties `((upstream-name . "tableParser")))
     (build-system r-build-system)
     (arguments

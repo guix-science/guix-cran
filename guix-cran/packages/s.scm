@@ -3771,6 +3771,36 @@ and Clark (2019) <doi:10.1007/s13524-019-00785-3>.")
      "R bindings to SVD and eigensolvers (PROPACK, @code{nuTRLan}).")
     (license license:bsd-3)))
 
+(define-public r-svartca
+  (package
+    (name "r-svartca")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SVARtca" version))
+       (sha256
+        (base32 "12jwbgsxpg75ds3bqcw2bcxzakhqcjparkr2jw0vrqcxz7agns2h"))))
+    (properties `((upstream-name . "SVARtca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-matrix r-ggplot2))
+    (home-page "https://github.com/muhammedalkhalaf/SVARtca")
+    (synopsis "Transmission Channel Analysis in Structural VAR Models")
+    (description
+     "This package implements Transmission Channel Analysis (TCA) for structural
+vector autoregressive (SVAR) models following the methodology of Wegner, Lieb,
+and Smeekes (2025) <doi:10.48550/@code{arXiv.2405.18987>}.  TCA decomposes
+impulse response functions (IRFs) into contributions from distinct transmission
+channels using a systems form representation and directed acyclic graph (DAG)
+path analysis.  Supports overlapping channels, exhaustive 3-way and 4-way
+decompositions via inclusion-exclusion principle.  This is a parallel R
+implementation of the tca-matlab-toolbox
+(<https://github.com/enweg/tca-matlab-toolbox>).")
+    (license license:expat)))
+
 (define-public r-svars
   (package
     (name "r-svars")
@@ -6204,6 +6234,34 @@ cross-validation, hyperparameter tuning, survival curve plotting, and evaluation
 metrics such as the C-index, Brier score, and integrated Brier score.  For
 methodological details, see Kvamme et al. (2019)
 <https://www.jmlr.org/papers/v20/18-424.html>.")
+    (license license:expat)))
+
+(define-public r-survdistr
+  (package
+    (name "r-survdistr")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survdistr" version))
+       (sha256
+        (base32 "1nj0db1jwllliphm82ykbj9ra354fcxlwvr9qm3snyzqg8gfqx6l"))))
+    (properties `((upstream-name . "survdistr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-r6 r-checkmate))
+    (home-page "https://survdistr.mlr-org.com")
+    (synopsis
+     "Survival Distribution Container with Flexible Interpolation Methods")
+    (description
+     "Efficient containers for storing and managing prediction outputs from survival
+models, including Cox proportional hazards, random survival forests, and modern
+machine learning estimators.  Provides fast C++ methods to evaluate survival
+probabilities, hazards, probability densities, and related quantities at
+arbitrary time points, with support for multiple interpolation methods via
+Rcpp'.")
     (license license:expat)))
 
 (define-public r-survdisc
@@ -17131,13 +17189,13 @@ providing the user with options to create and customise plots and tables.")
 (define-public r-starnet
   (package
     (name "r-starnet")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starnet" version))
        (sha256
-        (base32 "0iz4l3va3d98zq2la2404pf9l0gcmpgla9gszkpc4hfhgzj82fsr"))))
+        (base32 "00j6krhhig1f4s15ingsv6xxk04jkrmnks03bb1l47jll9vaa1sz"))))
     (properties `((upstream-name . "starnet")))
     (build-system r-build-system)
     (arguments
@@ -17559,6 +17617,32 @@ in turn use the @code{CmdStan} engine which is often accessed through
 code can make package installation easy.  Using staninside offers a way to cache
 user-compiled Stan models in user-specified directories reducing the need to
 recompile the same model multiple times.")
+    (license license:expat)))
+
+(define-public r-standrecon
+  (package
+    (name "r-standrecon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "standrecon" version))
+       (sha256
+        (base32 "0m7hix4a9149smz0c12ssbh3livbp7iprhlnm4inab47b88396y4"))))
+    (properties `((upstream-name . "standrecon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/kriggithub/standrecon")
+    (synopsis "Reconstruct Historical Forest Stand Conditions")
+    (description
+     "Reconstructs forest stand basal area and stem density at user-specified
+reference years using tree-level inventory data.  The method estimates missing
+tree ages, back-calculates diameters using species-specific growth rates, and
+incorporates decay-class-based decomposition to infer mortality timing for dead
+trees.  Results are returned in a tidy long format suitable for analysis and
+visualization.")
     (license license:expat)))
 
 (define-public r-standby
@@ -18655,13 +18739,13 @@ developed the original C and C++ implementation.")
 (define-public r-ssvs
   (package
     (name "r-ssvs")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSVS" version))
        (sha256
-        (base32 "17kc5hid5xhki48ps278c6j9yq1ccfbfdx9dk3svx011rfj72ax6"))))
+        (base32 "0827h821fqxiiy2spz2rydklc7w6d7qq4v6f4d7ji2n5viw18kab"))))
     (properties `((upstream-name . "SSVS")))
     (build-system r-build-system)
     (arguments
@@ -24828,13 +24912,13 @@ provides comprehensive methodology for generalized additive models.")
 (define-public r-splinemixmeta
   (package
     (name "r-splinemixmeta")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splinemixmeta" version))
        (sha256
-        (base32 "1sl69x5vjhmzqgnzxz23byjh5bz7jf05y3bsvjkmw9lm84v89hla"))))
+        (base32 "1v0a11h836ba74x5id95bfl0wjx3zy3s51cd5qbsjf9pb5k2r2rh"))))
     (properties `((upstream-name . "splinemixmeta")))
     (build-system r-build-system)
     (arguments
@@ -31269,6 +31353,38 @@ centers.")
 thresholding operators.")
     (license license:gpl2+)))
 
+(define-public r-sparsecommunity
+  (package
+    (name "r-sparsecommunity")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparsecommunity" version))
+       (sha256
+        (base32 "05sdsrn71miahxypywhx68d0mgqm6a4zppgck0yaisyzgrm7yqx1"))))
+    (properties `((upstream-name . "sparsecommunity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspectra r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sparsecommunity")
+    (synopsis "Spectral Community Detection for Sparse Networks")
+    (description
+     "This package implements spectral clustering algorithms for community detection
+in sparse networks under the stochastic block model ('SBM') and degree-corrected
+stochastic block model ('DCSBM'), following the methods of Lei and Rinaldo
+(2015) <doi:10.1214/14-AOS1274>.  Provides a regularized normalized Laplacian
+embedding, spherical k-median clustering for DCSBM', standard k-means for SBM',
+simulation utilities for both models, and a misclustering rate evaluation
+metric.  Also includes the NCAA college football network of Girvan and Newman
+(2002) <doi:10.1073/pnas.122653799> as a benchmark dataset, and the
+Bethe-Hessian community number estimator of Hwang (2023)
+<doi:10.1080/01621459.2023.2223793>.")
+    (license license:gpl3)))
+
 (define-public r-sparsechol
   (package
     (name "r-sparsechol")
@@ -31441,6 +31557,38 @@ spatio-temporal densities and relative risk functions, and perform subsequent
 inference.  Methodological details can be found in the accompanying tutorial:
 Davies et al. (2018) <DOI:10.1002/sim.7577>.")
     (license license:gpl2+)))
+
+(define-public r-sparqlr
+  (package
+    (name "r-sparqlr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparqlr" version))
+       (sha256
+        (base32 "034c4p0d1jrpj16zypvmblkq8ad6gc9bfgscm0ncdyhcdb2hl05r"))))
+    (properties `((upstream-name . "sparqlr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sib-swiss/sparqlr")
+    (synopsis "SPARQL Client for R")
+    (description
+     "This package provides a client for running SPARQL queries directly from R.
+SPARQL (short for SPARQL Protocol and RDF Query Language) is a query language
+used to retrieve and manipulate data stored in RDF (Resource Description
+Framework) format.")
+    (license license:gpl3)))
 
 (define-public r-sparkxgb
   (package
@@ -31989,13 +32137,13 @@ thresholds.  Built on @code{lidR} (Roussel et al., 2020)
 (define-public r-spanishoddata
   (package
     (name "r-spanishoddata")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spanishoddata" version))
        (sha256
-        (base32 "12pi92d18cylak9sid3dapam10m76rqnl1chww3kla00ww2x7h4z"))))
+        (base32 "1pi6nx67kmrj30ycvgr9l8d2x3546plnzqimn0plx4xclskvkpav"))))
     (properties `((upstream-name . "spanishoddata")))
     (build-system r-build-system)
     (arguments
@@ -38250,6 +38398,59 @@ assessing uniqueness of giving taxon.  It is possible to use @code{smirnov()}
 output as a distance measure: convert it to distance by \"as.dist(1 -
 smirnov(x))\".")
     (license license:gpl2+)))
+
+(define-public r-smimodel
+  (package
+    (name "r-smimodel")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smimodel" version))
+       (sha256
+        (base32 "0bk58pgnl6bvma8i74xyagnik3gl3c5zqzaka0v9sqp1qsmwannk"))))
+    (properties `((upstream-name . "smimodel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsibble
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-roi
+                             r-purrr
+                             r-mgcv
+                             r-matrix
+                             r-gtools
+                             r-gratia
+                             r-ggplot2
+                             r-generics
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-conformalforecast
+                             r-cgaim))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nuwani-palihawadana/smimodel")
+    (synopsis "Sparse Multiple Index Models for Nonparametric Forecasting")
+    (description
+     "This package implements a general algorithm for estimating Sparse Multiple Index
+(SMI) models for nonparametric forecasting and prediction.  Estimation of SMI
+models requires the Gurobi mixed integer programming (MIP) solver via the gurobi
+R package.  To use this functionality, the Gurobi Optimizer must be installed,
+and a valid license obtained and activated from <https://www.gurobi.com>.  The
+gurobi R package must then be installed and configured following the
+instructions at
+<https://support.gurobi.com/hc/en-us/articles/14462206790033-How-do-I-install-Gurobi-for-R>.
+ The package also includes functions for fitting nonparametric additive models
+with backward elimination, group-wise additive index models, and projection
+pursuit regression models as benchmark comparison methods.  In addition, it
+provides tools for generating prediction intervals to quantify uncertainty in
+point forecasts produced by the SMI model and benchmark models, using the
+classical block bootstrap and a new method called conformal bootstrap, which
+integrates block bootstrap with split conformal prediction.")
+    (license license:gpl3+)))
 
 (define-public r-smile
   (package
@@ -53123,6 +53324,30 @@ successful.")
 datetime picker is an input field for selecting both a date and a time.")
     (license license:gpl3)))
 
+(define-public r-shinydataviewer
+  (package
+    (name "r-shinydataviewer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinydataviewer" version))
+       (sha256
+        (base32 "1003n92z0pwmxljkhakf265z67vfzj9rjal2jg8f9xs3hx31vfjz"))))
+    (properties `((upstream-name . "shinydataviewer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-reactable r-htmltools r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://ryan-w-harrison.github.io/shinydataviewer/")
+    (synopsis "Reusable Data Viewer Module for 'shiny'")
+    (description
+     "This package provides a reusable shiny module for viewing tabular data with a
+searchable reactable table and a variable summary sidebar built with bslib'.")
+    (license license:expat)))
+
 (define-public r-shinycyjs
   (package
     (name "r-shinycyjs")
@@ -56605,6 +56830,38 @@ object being monitored; movement data are made of trajectories, i.e.  the line
 representation of the path, composed by steps (the straight-line segments
 connecting successive locations).  sftrack is designed to handle movement of
 both living organisms and inanimate objects.")
+    (license license:expat)))
+
+(define-public r-sftpr
+  (package
+    (name "r-sftpr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sftpR" version))
+       (sha256
+        (base32 "0rk2f0nhsmvimjzf5jgkxs9ny04hzxzzvpy6r6cim7jd6rdy7n2z"))))
+    (properties `((upstream-name . "sftpR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://mikuo0628.github.io/sftpR/")
+    (synopsis "Robust SFTP Interface Using 'curl'")
+    (description
+     "This package provides a high-level, object-oriented interface for Secure File
+Transfer Protocol (SFTP) operations built upon the curl package.  The package
+implements an R6 class to manage persistent connections and provides
+tidyverse'-style functions for common file system tasks.  Key features include
+recursive directory creation with idempotency support, \"smart\" local path
+resolution that distinguishes between files and directories, and the ability to
+download remote resources directly into memory as raw vectors for seamless
+integration into data processing pipelines.  It is designed to handle common
+SFTP edge cases gracefully, providing informative error messages and robust path
+sanitization to ensure compatibility across different server configurations.")
     (license license:expat)))
 
 (define-public r-sftools
@@ -62540,6 +62797,33 @@ its popularity given the observed history.  See
 <http://snap.stanford.edu/seismic/> for more information and datasets.")
     (license license:gpl3)))
 
+(define-public r-seirmfg
+  (package
+    (name "r-seirmfg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seirMFG" version))
+       (sha256
+        (base32 "1q3l0dpygqb31w76mgyp0vgpcvhv4irmhrsjapcsvksnzqjr46sk"))))
+    (properties `((upstream-name . "seirMFG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://doi.org/10.5281/zenodo.19381052")
+    (synopsis "Mean-Field Game Equilibrium for SEIR Epidemics on Networks")
+    (description
+     "This package implements the forward-backward sweep algorithm for computing Nash
+equilibrium contact policies in SEIR epidemic mean-field games on heterogeneous
+contact networks, as described in Wang (2026) <doi:10.5281/zenodo.19381052>.
+Supports both heterogeneous networks with arbitrary degree distributions (e.g.,
+truncated Poisson) and homogeneous networks.  Computes equilibrium susceptible
+contact effort, value functions, epidemic trajectories, and the effective
+reproduction number Rt.")
+    (license license:expat)))
+
 (define-public r-seirfansy
   (package
     (name "r-seirfansy")
@@ -65978,13 +66262,13 @@ error is controlled using false non-discovery rates or higher criticism.")
 (define-public r-sd2r
   (package
     (name "r-sd2r")
-    (version "0.1.7")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sd2R" version))
        (sha256
-        (base32 "0xvl1bgvmw99q6q9wks2dimy79i6f71vc51hcvi9qcclvlmhdwa0"))))
+        (base32 "0l836ihcxxk99hh4ngn9bdh1fqhq9yhlisfyi4jpwap1jn71lr8j"))))
     (properties `((upstream-name . "sd2R")))
     (build-system r-build-system)
     (arguments
@@ -66009,8 +66293,11 @@ image-to-image).  Multi-GPU parallel generation via
 in @code{sd_ctx()}: distribute diffusion, text encoders, and VAE across separate
 Vulkan devices.  Built-in profiling @code{(sd_profile_start()},
 @code{sd_profile_summary()}) for per-stage timing of text encoding, sampling,
-and VAE decode.  Supports CPU and Vulkan GPU. No Python or external API
-dependencies required.  Cross-platform: Linux, @code{macOS}, Windows.")
+and VAE decode.  Interactive Shiny GUI via @code{sd_app()} with non-blocking
+asynchronous generation (C++ std::thread), live progress bar, auto-detection of
+model architecture, and ETA display.  Supports CPU and Vulkan GPU. No Python or
+external API dependencies required.  Cross-platform: Linux, @code{macOS},
+Windows.")
     (license license:expat)))
 
 (define-public r-scva
@@ -70136,6 +70423,35 @@ probability matrix from double-censored data is added.")
      "This package provides wrappers for scclust', a C library for computationally
 efficient size-constrained clustering with near-optimal performance.  See
 <https://github.com/fsavje/scclust> for more information.")
+    (license license:gpl3+)))
+
+(define-public r-sccic
+  (package
+    (name "r-sccic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sccic" version))
+       (sha256
+        (base32 "19z512ipf5ax5ynwxp8vrighq6kc3mjwwjxalhxyd5hd1p3cvqxc"))))
+    (properties `((upstream-name . "sccic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neilhwang/sccic")
+    (synopsis "Synthetic Control Changes-in-Changes Estimator")
+    (description
+     "This package implements the Changes-in-Changes (CIC) estimator of Athey and
+Imbens (2006) <doi:10.1111/j.1468-0262.2006.00668.x> combined with synthetic
+control methods.  Provides nonparametric estimation of the entire counterfactual
+distribution of outcomes for a treated group, allowing evaluation of average,
+quantile, and distributional treatment effects.  Synthetic control weights are
+constructed via elastic net regularization to handle settings with many
+potential control units.")
     (license license:gpl3+)))
 
 (define-public r-scci

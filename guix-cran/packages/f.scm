@@ -11050,13 +11050,13 @@ functions.")
 (define-public r-fmpapi
   (package
     (name "r-fmpapi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmpapi" version))
        (sha256
-        (base32 "05fi4fwb7m2qb14di1ibc81ld4kmqch4q662iypnd9ml2462ng8v"))))
+        (base32 "0rs72gzsdza0ynnsh6qfwnqcagmc64lgf2vbbg9a03b9s2isfqvc"))))
     (properties `((upstream-name . "fmpapi")))
     (build-system r-build-system)
     (arguments
@@ -11878,6 +11878,37 @@ moment when variance in autofluorescence signal drops to zero.  The package
 provides functions to obtain this estimate together with functions to import
 spectrophotometry data from a Biotek microplate reader.  Details of the method
 are given in Parthuisot et al. (2018) <doi:10.1101/297929>.")
+    (license license:gpl3)))
+
+(define-public r-fluorojip
+  (package
+    (name "r-fluorojip")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fluorojip" version))
+       (sha256
+        (base32 "0sk7rh74vqsihfs5n0v95hp5bmxh4cll39xz1z7cnx624dq29h9d"))))
+    (properties `((upstream-name . "fluorojip")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fluorojip")
+    (synopsis "Analysis of Chlorophyll a Fluorescence Transient Parameters")
+    (description
+     "Computes chlorophyll a fluorescence transient parameters from fluorescence
+summary data, including minimum and maximum fluorescence, selected transient
+steps, and area.  Provides standard photosynthetic performance indices and
+fluxes per reaction center and per cross section.  Includes helpers to read
+exported trace tables in supported csv formats and validation workflows based on
+bundled example files, as well as visualization tools and an interactive shiny
+interface.  The implemented calculations are based on Strasser et al. (2004)
+<doi:10.1007/978-1-4020-3218-9_12> and Stirbet and Govindjee (2011)
+<doi:10.1016/j.jphotobiol.2010.12.010>.")
     (license license:gpl3)))
 
 (define-public r-fluidsynth
@@ -25358,6 +25389,49 @@ mixed models.  User guides and Python package information can be found at
 <https://github.com/gloewing/photometry_FLMM>.")
     (license license:gpl3+)))
 
+(define-public r-fastfgee
+  (package
+    (name "r-fastfgee")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastFGEE" version))
+       (sha256
+        (base32 "1cni4psaky76q31w99lmhzn5dcfzj2pfwy7zprg6is3c6axinjjq"))))
+    (properties `((upstream-name . "fastFGEE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-supergauss
+                             r-rfast
+                             r-refund
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-gridextra
+                             r-ggplot2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gloewing/fastFGEE")
+    (synopsis
+     "Fast Functional Generalized Estimating Equations via a One-Step Estimator")
+    (description
+     "Fits functional generalized estimating equations for longitudinal functional
+outcomes and covariates using a one-step estimator that is fast even for large
+cluster sizes or large numbers of clusters.  The package supports
+quasi-likelihoods derived from a range of families, common link functions, and
+several working correlation structures.  Uncertainty quantification is based on
+sandwich variance estimators and bootstrap procedures that remain valid even
+when the working correlation is incorrectly specified.  The package provides an
+implementation of the method described in Loewinger et al. (2025)
+<https://pmc.ncbi.nlm.nih.gov/articles/PMC12306803/>.  For irregularly spaced
+AR(1) precision matrices, the package can optionally use the archived package
+@code{irregulAR1}'; if needed, it can be obtained from the CRAN Archive at
+<https://cran.r-project.org/src/contrib/Archive/@code{irregulAR1/>}.")
+    (license license:gpl3+)))
+
 (define-public r-fasterraster
   (package
     (name "r-fasterraster")
@@ -27844,19 +27918,19 @@ Pashley (2024) <doi:10.48550/ARXIV.2201.01357> provide further details.")
 (define-public r-factorh
   (package
     (name "r-factorh")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factorH" version))
        (sha256
-        (base32 "08h869hv586993aybanwpg32yqixjadr3h9dig0plp8x2nmqiyki"))))
+        (base32 "0fvz8w2jbza8nlxq257xx1zy10spimr59l25mxr56wbsz5bjxi6m"))))
     (properties `((upstream-name . "factorH")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcompanion r-fsa r-dplyr r-car))
+    (propagated-inputs (list r-rcompanion r-fsa r-car))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=factorH")
     (synopsis "Multifactor Nonparametric Rank-Based ANOVA with Post Hoc Tests")

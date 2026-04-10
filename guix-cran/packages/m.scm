@@ -21257,13 +21257,13 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
 (define-public r-mmap
   (package
     (name "r-mmap")
-    (version "0.6-24")
+    (version "0.6-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmap" version))
        (sha256
-        (base32 "1433p03nxjni5m3jir0hn2i541k4jhsjhfd5lskp7lhkdg0byccv"))))
+        (base32 "1ndxrxlcw1502hdgzjivrj100mqd4ys5jp1vh2inwp3fn5lpd7d1"))))
     (properties `((upstream-name . "mmap")))
     (build-system r-build-system)
     (arguments
@@ -27656,13 +27656,13 @@ For methodological details see Marsico et al. (2023)
 (define-public r-misl
   (package
     (name "r-misl")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misl" version))
        (sha256
-        (base32 "10n8xvvwcs7g33svxdrs2irvnmwbdg0dhd3caciiqkj02nspd4ly"))))
+        (base32 "0kd69smggb0gg70xqx62hi13bhdw001h3dpmasxwj3iwbdcs9r42"))))
     (properties `((upstream-name . "misl")))
     (build-system r-build-system)
     (arguments
@@ -30517,6 +30517,34 @@ missing data.  midoc will advise which analysis approaches can be used, and how
 best to perform them.  midoc follows the framework for the treatment and
 reporting of missing data in observational studies (TARMOS).  Lee et al (2021).
 <doi:10.1016/j.jclinepi.2021.01.008>.")
+    (license license:expat)))
+
+(define-public r-midnight
+  (package
+    (name "r-midnight")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "midnight" version))
+       (sha256
+        (base32 "1690pxph3prs3d5ji7lz0ylfgc3iribbd32dvdvnvkfpf7b05y4z"))))
+    (properties `((upstream-name . "midnight")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-midr))
+    (home-page "https://github.com/ryo-asashi/midnight")
+    (synopsis
+     "'tidymodels' Engine and Other Extensions for the 'midr' Package")
+    (description
+     "This package provides a parsnip engine for the midr package, enabling users to
+fit, tune, and evaluate Maximum Interpretation Decomposition (MID) models within
+the tidymodels framework.  Developed through research by the Moonlight Seminar
+2025, a study group of actuaries from the Institute of Actuaries of Japan, to
+enhance practical applications of interpretable modeling.  Detailed methodology
+is available in Asashiba et al. (2025) <doi:10.48550/@code{arXiv.2506.08338>}.")
     (license license:expat)))
 
 (define-public r-midn
@@ -48265,6 +48293,42 @@ Algorithm to compute the stable matching for two-sided markets, such as the
 stable marriage problem and the college-admissions problem.  Implements Irving's
 Algorithm for the stable roommate problem.  Implements the top trading cycle
 algorithm for the indivisible goods trading problem.")
+    (license license:gpl2+)))
+
+(define-public r-matchingpursuit
+  (package
+    (name "r-matchingpursuit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MatchingPursuit" version))
+       (sha256
+        (base32 "0bvsfb08d2wqjjgj0ljg1nmg3d3km5a25il2ds6a1qwkprq6ijan"))))
+    (properties `((upstream-name . "MatchingPursuit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-signal
+                             r-rsqlite
+                             r-raster
+                             r-imager
+                             r-edf
+                             r-digest
+                             r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MatchingPursuit")
+    (synopsis
+     "Processing Time Series Data Using the Matching Pursuit Algorithm")
+    (description
+     "This package provides tools for analysing and decomposing time series data using
+the Matching Pursuit (MP) algorithm, a greedy signal decomposition technique
+that represents complex signals as a linear combination of simpler functions
+(called atoms) selected from a redundant dictionary.  For more details see
+Mallat and Zhang (1993) <doi:10.1109/78.258082>, Pati et al. (1993)
+<doi:10.1109/ACSSC.1993.342465>, Elad (2010) <doi:10.1007/978-1-4419-7011-4> and
+RÃ³Å¼aÅski (2024) <doi:10.1145/3674832>.")
     (license license:gpl2+)))
 
 (define-public r-matchingmarkets

@@ -13058,13 +13058,13 @@ objects.")
 (define-public r-networkdynamic
   (package
     (name "r-networkdynamic")
-    (version "0.11.5")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkDynamic" version))
        (sha256
-        (base32 "1h55y95l23r1670aqgcfi0n9mymcnnv3wy8raa8j7yfpm06g8gx3"))))
+        (base32 "0vdwb07k1l2n3yhk41xy0xzgbi1h5svqn7idimkq8nmcridgc25d"))))
     (properties `((upstream-name . "networkDynamic")))
     (build-system r-build-system)
     (arguments
@@ -14655,6 +14655,38 @@ performance in clinical tasks with nested data.  For more details on the above
 methods, please refer to the paper by H Du, S Wen, Y Guo, F Jin, BD Gallas
 (2022) <doi:10.1177/09622802221111539>.")
     (license license:cc0)))
+
+(define-public r-nestimate
+  (package
+    (name "r-nestimate")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Nestimate" version))
+       (sha256
+        (base32 "1rr67w6r54jnhcpkwbg8m0gmddmni2wkhzfw9xc0py72qq0mkm0l"))))
+    (properties `((upstream-name . "Nestimate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glasso r-ggplot2 r-data-table r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mohsaqr/Nestimate")
+    (synopsis "Network Estimation, Bootstrap, and Higher-Order Analysis")
+    (description
+     "Estimate, compare, and analyze dynamic and psychological networks using a
+unified interface.  Provides transition network analysis estimation (transition,
+frequency, co-occurrence, attention-weighted) Saqr et al. (2025)
+<doi:10.1145/3706468.3706513>, psychological network methods (correlation,
+partial correlation, graphical lasso', Ising') Saqr, Beck, and Lopez-Pernas
+(2024) <doi:10.1007/978-3-031-54464-4_19>, and higher-order network methods
+including higher-order networks, higher-order network embedding, hyper-path
+anomaly, and multi-order generative model.  Supports bootstrap inference,
+permutation testing, split-half reliability, centrality stability analysis,
+mixed Markov models, multi-cluster multi-layer networks and clustering.")
+    (license license:expat)))
 
 (define-public r-nestfs
   (package

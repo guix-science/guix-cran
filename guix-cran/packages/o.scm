@@ -9,6 +9,8 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages curl)
+  #:use-module (gnu packages ssh)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
@@ -1750,19 +1752,19 @@ multivariate data using these limiting distributions and binning.")
 (define-public r-otelsdk
   (package
     (name "r-otelsdk")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otelsdk" version))
        (sha256
-        (base32 "0y019v9f56l9dj72ky4dn6x2smz9n3pij14xk5ccqph22nly7q25"))))
+        (base32 "1f7sixdapvs0xwfm6k9hddxl810cl13ddn31inf4z4yxygv9p0z4"))))
     (properties `((upstream-name . "otelsdk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list zlib curl cmake))
+    (inputs (list zlib openssl openssh curl cmake))
     (propagated-inputs (list r-otel))
     (native-inputs (list pkg-config))
     (home-page "https://otelsdk.r-lib.org")
@@ -2337,13 +2339,13 @@ precise tail-behavior adjustment.")
 (define-public r-oskeyring
   (package
     (name "r-oskeyring")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oskeyring" version))
        (sha256
-        (base32 "1fsgz4jln3nk53bxpmjpc7dcapc9j1wdqlrab169ymvrlzypgvqc"))))
+        (base32 "0yj6v95fvf81ngbbwqgvlwhcwp8a9ykxlkvk1qhbnx6gcf7vq9r3"))))
     (properties `((upstream-name . "oskeyring")))
     (build-system r-build-system)
     (arguments
@@ -3583,13 +3585,13 @@ horizons.")
 (define-public r-org
   (package
     (name "r-org")
-    (version "2025.11.24")
+    (version "2026.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "org" version))
        (sha256
-        (base32 "17yp1hjhk9kwqf59yb95qk6ls160y2jliwl2891qs9x86wlgnxqa"))))
+        (base32 "16ihb2pdi4935rp0ypds3jadi7sc7jvphlpdl6bzs7q7bwrxivim"))))
     (properties `((upstream-name . "org")))
     (build-system r-build-system)
     (arguments
@@ -3604,10 +3606,9 @@ structure.  Most analyses consist of three main components: code, results, and
 data, each with different requirements such as version control, sharing, and
 encryption.  This package provides tools to set up and manage project
 directories, handle file paths consistently across operating systems, organize
-results using date-based structures, source code from specified directories,
-create and manage Quarto documents, and perform file operations safely.  It
-ensures consistency across projects while accommodating different requirements
-for various types of content.")
+results using date-based structures, source code from specified directories, and
+perform file operations safely.  It ensures consistency across projects while
+accommodating different requirements for various types of content.")
     (license license:expat)))
 
 (define-public r-orfid

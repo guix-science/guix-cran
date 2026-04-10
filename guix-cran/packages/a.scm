@@ -7759,20 +7759,19 @@ Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
 (define-public r-armadillo4r
   (package
     (name "r-armadillo4r")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "armadillo4r" version))
        (sha256
-        (base32 "1ny1ysrsj3qlnig5zmr9wmjvimm9n5lsqb86bxgaxwcig0qyxa51"))))
+        (base32 "0gnnwaifqyzxi0mnr57vd8fpzlsg480g9xk0ydjan59sxa130z9b"))))
     (properties `((upstream-name . "armadillo4r")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-cpp4r))
-    (native-inputs (list pkg-config))
     (home-page "https://pacha.dev/armadillo4r/")
     (synopsis "An 'Armadillo' Interface")
     (description
@@ -8412,6 +8411,29 @@ datasets from various domains.  For more details on the APIs, see:
 <https://restcountries.com/>, and World Bank API
 <https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>.")
     (license license:gpl3)))
+
+(define-public r-arg
+  (package
+    (name "r-arg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arg" version))
+       (sha256
+        (base32 "1v9smz1p6ss5rvag0n3al4k4icy4h9ish7q007ldx16122nkj3xy"))))
+    (properties `((upstream-name . "arg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-cli))
+    (home-page "https://ngreifer.github.io/arg/")
+    (synopsis "Clean and Simple Argument Checking")
+    (description
+     "Checks function arguments, ideally for use in R packages.  Uses a simple
+interface and produces clean, informative error messages using cli'.")
+    (license license:gpl2+)))
 
 (define-public r-arfima
   (package
@@ -11366,6 +11388,32 @@ final plot.  This package provides a set of utilities to help users to create
 subplots and complex plots.")
     (license license:artistic2.0)))
 
+(define-public r-aplosnca
+  (package
+    (name "r-aplosnca")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AplosNCA" version))
+       (sha256
+        (base32 "18k472xahanklb1d1b1l2dyywkzarmrl95ljndic0b5nl1jmkkdk"))))
+    (properties `((upstream-name . "AplosNCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-jsonlite r-httr r-azureauth))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AplosAnalytics/AplosNCA")
+    (synopsis "Use 'Aplos NCA API' for Pharmacokinetic Analysis")
+    (description
+     "Using this package you can interact with the Aplos NCA
+API'<https://docs.aplosanalytics.com/> using standard R functions.  This will
+allow you to authenticate with your Aplos NCA account, upload input datasets,
+initiate analyses, and download results.")
+    (license license:expat)))
+
 (define-public r-aplore3
   (package
     (name "r-aplore3")
@@ -12963,6 +13011,45 @@ intervals and standard errors around the prevalence estimates, taking into
 account complex sample designs.  More information on the methods is available
 online: <https://www.who.int/tools/child-growth-standards>.")
     (license license:gpl3)))
+
+(define-public r-antclassify
+  (package
+    (name "r-antclassify")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AntClassify" version))
+       (sha256
+        (base32 "150828di7ndagx8llmp22csjr4p81s0wwy888qxv52k3v2l1gxar"))))
+    (properties `((upstream-name . "AntClassify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cogdebora/AntClassify")
+    (synopsis
+     "Functional Guilds, Invasion Status, Endemism, and Rarity of Ants")
+    (description
+     "This package provides functions for the analysis of ant communities, aiming to
+standardize workflows in myrmecology.  The package automates the assignment of
+species to functional guilds based on trophic strategies, feeding habits, and
+foraging behavior, using established classification frameworks (Silva et al.,
+2015; Silvestre et al., 2003; Delabie et al., 2000), and also includes a novel
+classification system implemented within the package, developed from ant species
+occurring in urban environments.  It also includes routines to flag exotic
+species (Vieira, 2025), identify endemic species (Silva et al., 2025), and
+classify species rarity and rarity forms (Silva et al., 2024).  The package
+reduces manual effort and improves reproducibility, supporting research and
+biodiversity management of Neotropical ant communities.")
+    (license license:expat)))
 
 (define-public r-antaresviz
   (package
@@ -20744,13 +20831,13 @@ imÃ¡genes de alta resoluciÃ³n para informes tÃ©cnicos.")
 (define-public r-agrmt
   (package
     (name "r-agrmt")
-    (version "1.42.12")
+    (version "1.42.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agrmt" version))
        (sha256
-        (base32 "04bq0ya6nxz97bzcclby1rhhz7fdgkh73lmzlpzfnfnfmwjbd2hd"))))
+        (base32 "1xxrgarm92iidwbngkmknw5ydybcxnn558cv3jbf6b7zl1w6a70c"))))
     (properties `((upstream-name . "agrmt")))
     (build-system r-build-system)
     (arguments
@@ -25675,13 +25762,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.22.0")
+    (version "0.23.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1vglghrnz1yv73ll6fyjf1icbawqiz3panbv9bkgpkkwircylxh3"))))
+        (base32 "0h9l41nhin73bwq9ppvrypz3bnh9d8lyw9j2b15f20xr8ng4hadi"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (arguments
@@ -25702,13 +25789,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.22.0")
+    (version "0.23.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "075ihd73bzz25m2c8sy4jy574z87qb09zqgv6msdrhhlfs0cs74p"))))
+        (base32 "01galmyjy0skfnw45rm5z29cyn82zw0kcm4yjnxi518slrrjj2n7"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (arguments

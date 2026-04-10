@@ -20,6 +20,7 @@
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages julia)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
@@ -34066,13 +34067,13 @@ for acquisition.")
 (define-public r-climatehealth
   (package
     (name "r-climatehealth")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climatehealth" version))
        (sha256
-        (base32 "0cyclpvrxk32rm0mxajn3fj53phn8bmcvjvlanknmkjay11zhygv"))))
+        (base32 "025g9nr320k4521wanr3ypxdhvcixg1bmpfc94q94ryi5syz43ba"))))
     (properties `((upstream-name . "climatehealth")))
     (build-system r-build-system)
     (arguments
@@ -35005,19 +35006,19 @@ other manipulation can produce log files to keep track of process.")
 (define-public r-cleancall
   (package
     (name "r-cleancall")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cleancall" version))
        (sha256
-        (base32 "079l5knm3lrvnfbwcvg2g62sqbg7iira5x0gxd4fk1pysnm5hwmf"))))
+        (base32 "1xx04zckpri11yf2mj53m5d8m67k7l6iw4jxbk67i5f0sf2kl01p"))))
     (properties `((upstream-name . "cleancall")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/r-lib/cleancall#readme")
+    (home-page "https://r-lib.github.io/cleancall/")
     (synopsis "C Resource Cleanup via Exit Handlers")
     (description
      "Wrapper of @code{.Call()} that runs exit handlers to clean up C resources.
@@ -35318,6 +35319,46 @@ the vignettes: \"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples
 \"Support_vector_machine_examples\", \"Rpart_examples\", \"Random_forest_examples\",
 \"Neural_net_examples\", and \"predsplot_examples\".")
     (license license:gpl2+)))
+
+(define-public r-classifyits
+  (package
+    (name "r-classifyits")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClassifyITS" version))
+       (sha256
+        (base32 "0z68g4pjv0a777l53rbxll7c53ih5l7k7c8xym6r0razp5jd77va"))))
+    (properties `((upstream-name . "ClassifyITS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seqinr
+                             r-reshape2
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-rmarkdown r-knitr r-formatr))
+    (home-page "https://cran.r-project.org/package=ClassifyITS")
+    (synopsis "Fungal Assignment Pipeline")
+    (description
+     "Fungi are ubiquitous in Earth's wonderfully diverse ecosystems.  The
+@code{ClassifyITS} package aids in the taxonomic classification of environmental
+internal transcribed spacer (ITS) short-read barcoding data.  Unlike previous
+methods, it employs taxon-specific e-value and percent identity cutoffs at each
+taxonomic rank from kingdom to species.  The package takes a conservative
+approach and outputs both graphics and user-friendly files to help users
+manually inspect fungal operational taxonomic units (OTUs) that fail
+classification at relevant levels (e.g., Phylum). @code{ClassifyITS} is based on
+taxonomic cutoff criteria from \"The Global Soil Mycobiome consortium dataset for
+boosting fungal diversity research\" (Fungal Diversity, Tedersoo, 2021,
+<doi:10.1007/s13225-021-00493-7>) and \"Best practices in metabarcoding of fungi:
+From experimental design to results\" (Molecular Ecology, Tedersoo, 2022,
+<doi:10.1111/mec.16460>).")
+    (license license:gpl3)))
 
 (define-public r-classifly
   (package
@@ -36954,6 +36995,38 @@ Tsuruta & Sagae (2017) <doi:10.1016/j.spl.2017.08.003>.")
     (synopsis "Circular Drift-Diffusion Model")
     (description "Circular drift-diffusion model for continuous reports.")
     (license license:gpl2)))
+
+(define-public r-circuitscaper
+  (package
+    (name "r-circuitscaper")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "circuitscaper" version))
+       (sha256
+        (base32 "1fbyffmvm6p5bskiqdz5qm7fxmpk8fyh28prb2i6rvrpvf1xcb0i"))))
+    (properties `((upstream-name . "circuitscaper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list julia))
+    (propagated-inputs (list r-terra r-juliacall))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matthewkling/circuitscaper")
+    (synopsis
+     "'Circuitscape' and 'Omniscape' Connectivity Analysis via 'Julia'")
+    (description
+     "This package provides an R-native interface to the Circuitscape.jl and
+Omniscape.jl Julia packages for landscape connectivity modeling using circuit
+theory.  Users work entirely in R with familiar objects (@code{SpatRaster}, file
+paths) while Julia handles computation invisibly.  Supports all four
+Circuitscape modes (pairwise, one-to-all, all-to-one, advanced) and Omniscape
+moving-window analysis.  Methods are described in @code{McRae} (2006)
+<doi:10.1111/j.0014-3820.2006.tb00500.x> and Landau et al. (2021)
+<doi:10.21105/joss.02829>.")
+    (license license:expat)))
 
 (define-public r-circoutlier
   (package
@@ -45558,6 +45631,47 @@ accuracy than the traditional ML models.  Two models have been provided here for
 time series forecasting.  More information may be obtained from Garai and Paul
 (2023) <doi:10.1016/j.iswa.2023.200202>.")
     (license license:gpl3)))
+
+(define-public r-cedmr
+  (package
+    (name "r-cedmr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CEDMr" version))
+       (sha256
+        (base32 "023h4ilqg0fi7f60a29p92vylb0ryvl3jf15h753r4b6szc7xjir"))))
+    (properties `((upstream-name . "CEDMr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rms
+                             r-rlang
+                             r-mediation
+                             r-magrittr
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/causalfragility-lab/CEDMr")
+    (synopsis "Capability-Ecological Developmental Model (CEDM) Analysis")
+    (description
+     "This package implements the Capability-Ecological Developmental Model (CEDM) for
+longitudinal and multilevel data.  The package supports estimation and
+interpretation of models examining how socioeconomic status (SES), health
+indicators, and contextual factors jointly relate to academic outcomes.
+Functionality includes: (1) classification of ecological capability regimes
+(amplifying, neutral, compensatory); (2) estimation of moderated multilevel
+models with higher-order interaction terms; (3) causal mediation analysis using
+doubly robust estimation; (4) random-effects within-between (REWB)
+decomposition; (5) nonlinear moderation using restricted cubic splines; (6)
+clustering of longitudinal health trajectories; and (7) sensitivity analysis
+using the impact threshold for a confounding variable (ITCV) and
+robustness-to-replacement (RIR) measures.  The package is designed for use with
+general longitudinal multilevel datasets.")
+    (license license:expat)))
 
 (define-public r-ceda
   (package

@@ -14048,13 +14048,13 @@ provides options for embedding audio in figures and animating figures.")
 (define-public r-pra
   (package
     (name "r-pra")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRA" version))
        (sha256
-        (base32 "0j5lhaw4vhmcsxbi4fymky9zi8yk3zgkjlqjm7899w7y48qdcnfq"))))
+        (base32 "19bmxf833np80bkwpj1j1ybvp34n85ymibsjm1vv9rqg061236bm"))))
     (properties `((upstream-name . "PRA")))
     (build-system r-build-system)
     (arguments
@@ -14067,8 +14067,8 @@ provides options for embedding audio in figures and animating figures.")
     (description
      "Data analysis for Project Risk Management via the Second Moment Method, Monte
 Carlo Simulation, Contingency Analysis, Sensitivity Analysis, Earned Value
-Management, Learning Curves, Design Structure Matrices, and more.")
-    (license license:expat)))
+Management, Learning Curves, Bayesian Methods, and more.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-pqtldata
   (package
@@ -26980,13 +26980,13 @@ information.")
 (define-public r-pkgndep
   (package
     (name "r-pkgndep")
-    (version "1.99.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgndep" version))
        (sha256
-        (base32 "1llpizr2wkhfgygr9fd79qxym0xcrxfvz8w5n0kwvkvlq3iqid44"))))
+        (base32 "1z7cr6rwzldp827kn4xn74lmhlv7i1r2bs9yam47221a9cv3z7nv"))))
     (properties `((upstream-name . "pkgndep")))
     (build-system r-build-system)
     (arguments
@@ -27007,13 +27007,8 @@ information.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-hash
-                             r-globaloptions
-                             r-getoptlong
-                             r-complexheatmap
-                             r-brew
-                             r-biocversion
-                             r-biocmanager))
+    (propagated-inputs (list r-hash r-globaloptions r-getoptlong
+                             r-complexheatmap r-brew))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/jokergoo/pkgndep")
     (synopsis "Analyze Dependency Heaviness of R Packages")
@@ -27024,12 +27019,8 @@ brings to its child package and are unique to the dependency packages imported
 by all other parents.  The dependency heaviness analysis is visualized by a
 customized heatmap.  The package is described in
 <doi:10.1093/bioinformatics/btac449>.  We have also performed the dependency
-heaviness analysis on the CRAN/Bioconductor package ecosystem and the results
-are implemented as a web-based database which provides comprehensive tools for
-querying dependencies of individual R packages.  The systematic analysis on the
-CRAN/Bioconductor ecosystem is described in <doi:10.1016/j.jss.2023.111610>.
-From pkgndep version 2.0.0, the heaviness database includes snapshots of the
-CRAN/Bioconductor ecosystems for many old R versions.")
+heaviness analysis on the CRAN/Bioconductor package ecosystem, described in
+<doi:10.1016/j.jss.2023.111610>.")
     (license license:expat)))
 
 (define-public r-pkglite
@@ -27257,13 +27248,13 @@ base of multiple R packages.")
 (define-public r-pkgdepends
   (package
     (name "r-pkgdepends")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdepends" version))
        (sha256
-        (base32 "05jsg28acrw81llrj3hg09xwblxb63qlcpzxdfrlpan1pd43pr8a"))))
+        (base32 "0ac2hnnbxdi22mm41865456mlx12bvnixac3bn1glq8pcsqa9xww"))))
     (properties `((upstream-name . "pkgdepends")))
     (build-system r-build-system)
     (arguments
@@ -27320,13 +27311,13 @@ on where the error originated.")
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
-    (version "2.2.4")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgcache" version))
        (sha256
-        (base32 "00ly737hg16jy426p49393ldkscc5ldmfzag1ccy8l0lnajkq60k"))))
+        (base32 "0vsy8arwdsrxi6ylk2wp32wk6sv2snmy6h9rwayg5xfhcsj8xdsc"))))
     (properties `((upstream-name . "pkgcache")))
     (build-system r-build-system)
     (arguments
@@ -33901,13 +33892,13 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "7.0.2")
+    (version "7.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "10a7xphi38ksyfsc4nx48l28lnjz4rd3rmn71k4cy42whh6q40wp"))))
+        (base32 "0026208c2cjvi35fknxzcg4mnv6zrl1viv31zxppypkjl5m5sc59"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (arguments
@@ -36481,13 +36472,13 @@ effects selection.  See also Groll and Hohberg (2024)
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pencal" version))
        (sha256
-        (base32 "09irlxfb834lklby2hxg35q17h3ch99c6iwwh3f7m0mjpl809pdl"))))
+        (base32 "1cpviscpqgmf7d0di5g9jjmc32py4vxlambi9x424lcgw7kf96pp"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (arguments
@@ -36510,7 +36501,7 @@ effects selection.  See also Groll and Hohberg (2024)
     (native-inputs (list r-knitr))
     (home-page "https://mirkosignorelli.github.io/r")
     (synopsis
-     "Penalized Regression Calibration (PRC) for the Dynamic Prediction of Survival")
+     "Penalized Regression Calibration for the Dynamic Prediction of Survival")
     (description
      "Computes penalized regression calibration (PRC), a statistical method for the
 dynamic prediction of survival when many longitudinal predictors are available.
@@ -45934,6 +45925,38 @@ Laskar et al. (2004).  Computes daily-mean, season-averaged and annual means and
 for all latitudes, and polar night dates.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-palimpsestr
+  (package
+    (name "r-palimpsestr")
+    (version "0.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "palimpsestr" version))
+       (sha256
+        (base32 "1c0s7v06iy8v0jj6hglqm18pkvb729ixxlgjvh4ccv44hc33kjfq"))))
+    (properties `((upstream-name . "palimpsestr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/enzococca/palimpsestr")
+    (synopsis "Probabilistic Decomposition of Archaeological Palimpsests")
+    (description
+     "Probabilistic framework for the analysis of archaeological palimpsests based on
+the Stratigraphic Entanglement Field (SEF).  Integrates spatial proximity,
+stratigraphic depth, chronological overlap, and cultural similarity to estimate
+latent depositional phases via diagonal Gaussian mixture
+Expectation-Maximisation (EM).  Provides the Stratigraphic Entanglement Index
+(SEI), Excavation Stratigraphic Energy (ESE), and Palimpsest Dissolution Index
+(PDI) for quantifying depositional coherence, detecting intrusive finds, and
+measuring palimpsest formation.  Includes simulation, diagnostics, phase-count
+selection, publication-quality plots, and Geographic Information System (GIS)
+export via sf'.  Methods are described in Cocca (2026)
+<https://github.com/enzococca/palimpsestr>.")
+    (license license:expat)))
+
 (define-public r-palettetown
   (package
     (name "r-palettetown")
@@ -47361,13 +47384,13 @@ graphics.")
 (define-public r-pagedown
   (package
     (name "r-pagedown")
-    (version "0.23")
+    (version "0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pagedown" version))
        (sha256
-        (base32 "0rq16rwys45i45vprfnri33pfc5hvgqb4wic6l0qq2yknzr473x5"))))
+        (base32 "0nxq9gpdhjndmgcddc4b8b1n5fgnmgn70103vqxd4rm0dm217cj1"))))
     (properties `((upstream-name . "pagedown")))
     (build-system r-build-system)
     (arguments

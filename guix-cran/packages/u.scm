@@ -4711,13 +4711,13 @@ Data (2023) <doi:10.1038/s41597-023-01949-y>.")
 (define-public r-ukbflow
   (package
     (name "r-ukbflow")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ukbflow" version))
        (sha256
-        (base32 "1r2vy0fry8r3mwc1sq0z7i71axjnknjjw1gcx59id3giwh1wj953"))))
+        (base32 "160v0scahhfxlr38g3avh06ym3xk053syr5565yiyriabqz8bkls"))))
     (properties `((upstream-name . "ukbflow")))
     (build-system r-build-system)
     (arguments
@@ -5339,13 +5339,13 @@ datasets from 1998-2014.")
 (define-public r-ucomp
   (package
     (name "r-ucomp")
-    (version "5.1.7")
+    (version "5.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UComp" version))
        (sha256
-        (base32 "1v6pcqzjycjqriyrphf9mn3pj1s2c2qszw2jsxr20ql753xgah8y"))))
+        (base32 "1kbri0aasfh3pgk4r70mpvyb3iasbll7qqh7xiazfs97s9p4swqq"))))
     (properties `((upstream-name . "UComp")))
     (build-system r-build-system)
     (arguments

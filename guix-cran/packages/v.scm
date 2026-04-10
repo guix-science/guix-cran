@@ -2477,6 +2477,53 @@ pairwise tests as suggested by Armstrong and Poirier (2025)
 <doi:10.1017/pan.2024.24>.")
     (license license:expat)))
 
+(define-public r-vizmodules
+  (package
+    (name "r-vizmodules")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VizModules" version))
+       (sha256
+        (base32 "1vkgz3nr7xji6v4gz0ykyqb0p27xgp830vmhq1vw0s0dbgv96x3m"))))
+    (properties `((upstream-name . "VizModules")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinyjs
+                             r-shinyjqui
+                             r-shinybs
+                             r-shiny
+                             r-scales
+                             r-roclang
+                             r-readxl
+                             r-plotthis
+                             r-plotly
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-dittoviz
+                             r-colourpicker))
+    (native-inputs (list r-knitr))
+    (home-page "https://j-andrews7.github.io/VizModules/")
+    (synopsis "Flexible, Interactive 'shiny' Modules for Almost Any Plot")
+    (description
+     "Offers a core selection of interactivity-first shiny modules for many plot types
+meant to serve as flexible building blocks for applications and as the base for
+more complex modules.  These modules allow for the rapid and convenient
+construction of shiny apps with very few lines of code and decouple plotting
+from the underlying data.  These modules allow for full plot aesthetic
+customization by the end user through UI inputs.  Utility functions for simple
+UI organization, automated UI tooltips, and additional plot enhancements are
+also provided.")
+    (license license:expat)))
+
 (define-public r-vizdraws
   (package
     (name "r-vizdraws")
@@ -5513,13 +5560,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "1lhffm7ynjbxkj2lqqb2b3sqvp7i3fjdyjgpn7wgjiyxs6x03yqx"))))
+        (base32 "0zd6ypbh1ii0hq8lb0772cfzz9cgqb0r43kr2qjz8kk1v4qg7jkc"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -5546,7 +5593,7 @@ Factorization algorithms - Random generators of diferent types of integers.")
     (native-inputs (list r-r-rsp))
     (home-page "https://cogbrainhealthlab.github.io/VertexWiseR/")
     (synopsis
-     "Simplified Vertex-Wise Analyses of Whole-Brain and Hippocampal Surface")
+     "Simplified Vertex-Wise Analyses of Whole-Brain and Subcortical Surface")
     (description
      "This package provides functions to run statistical analyses on surface-based
 neuroimaging data, computing measures including cortical thickness and surface
@@ -6390,20 +6437,20 @@ systems, and helpful in examining its impact in the time series analysis domain.
 (define-public r-vecvec
   (package
     (name "r-vecvec")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecvec" version))
        (sha256
-        (base32 "1l0i1my7yddp6q4aa96x2r66gb4mig9dzx685mw8wdig988mypsb"))))
+        (base32 "0jmd0rw78v4r60zrna02134zkr4arm0zg0ldwnah2v3qy33h5hm1"))))
     (properties `((upstream-name . "vecvec")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-rlang))
-    (home-page "https://cran.r-project.org/package=vecvec")
+    (home-page "https://pkg.mitchelloharawild.com/vecvec/")
     (synopsis "Construct Mixed Type Data Structures with Vectors of Vectors")
     (description
      "Mixed type vectors are useful for combining semantically similar classes.  Some
@@ -8312,13 +8359,13 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 (define-public r-varpro
   (package
     (name "r-varpro")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varPro" version))
        (sha256
-        (base32 "02avlwkwl6xwf52hfvr887j93qck3qr1xydc1d3x8yar1izm4021"))))
+        (base32 "12gk7ys2605n74klyp43m8jdc98nzv0rs95g79x1rpvcbbijnk54"))))
     (properties `((upstream-name . "varPro")))
     (build-system r-build-system)
     (arguments

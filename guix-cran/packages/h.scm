@@ -450,13 +450,13 @@ Hediger & Michel & Naef (2022).")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.6.6")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "085yhx6v6073h7qg082fw3g54h3bnq5aq4y89pbv7pkxh2j8253w"))))
+        (base32 "1d72d7r71qb0ljqffyris581czhi1km8amvdfv0067a8xwg6wv9d"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (arguments
@@ -4210,13 +4210,13 @@ package refer to Bagkavos, Isakson, Mammen, Nielsen and Proust-Lima (2025)
 (define-public r-hpzoneapi
   (package
     (name "r-hpzoneapi")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HPZoneAPI" version))
        (sha256
-        (base32 "1nmj1rqghcbhc8m49kbz6hhq1gyl04d1zky9jhwdhk89rv8pchrx"))))
+        (base32 "1k8cfsbgvs5hq0zvzfyykgprmzd5xrzinz0xfz3425i347wa8zia"))))
     (properties `((upstream-name . "HPZoneAPI")))
     (build-system r-build-system)
     (arguments
@@ -5559,6 +5559,42 @@ holiglm package simplifies estimating HGLMs using convex optimization.
 Additional information about the package can be found in the reference manual,
 the README and the accompanying paper <doi:10.18637/jss.v108.i07>.")
     (license license:gpl3)))
+
+(define-public r-holideh
+  (package
+    (name "r-holideh")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "holideh" version))
+       (sha256
+        (base32 "0mmwy509n20lsld4lcdlvf1c9fv3k30zxqvbc0lv3wz1cqzbn2k7"))))
+    (properties `((upstream-name . "holideh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-utf8
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://adamoshen.github.io/holideh/")
+    (synopsis "Working with Canadian Dates")
+    (description
+     "Convenience date tools for identifying weekends, business days, and Canadian
+holidays, including R wrappers for the Canada Holidays API
+<https://canada-holidays.ca/>.")
+    (license license:expat)))
 
 (define-public r-holi
   (package
@@ -9256,13 +9292,13 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
 (define-public r-hhdynamics
   (package
     (name "r-hhdynamics")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hhdynamics" version))
        (sha256
-        (base32 "1lfi5n64gh34dhnsxh2nxlf5kf7v68f2j816r8c0pvrsv6q4gi9p"))))
+        (base32 "1swxdvribdhmw1zqi1imrmbh4j99ycz4lfj5maxhp51r2dk9bifi"))))
     (properties `((upstream-name . "hhdynamics")))
     (build-system r-build-system)
     (arguments
@@ -10315,6 +10351,38 @@ analyze and assess data heterogeneity and climate variability in spatial
 datasets.  This package is specifically designed to address the challenges
 associated with characterizing and understanding complex spatial patterns in
 environmental and climate-related data.")
+    (license license:gpl3+)))
+
+(define-public r-heterocop
+  (package
+    (name "r-heterocop")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heterocop" version))
+       (sha256
+        (base32 "1bl5p05lz5znawpb09gj07p385va2pq8ipfcr40xggw3f0r372g1"))))
+    (properties `((upstream-name . "heterocop")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-mvtnorm
+                             r-matrixcalc
+                             r-igraph
+                             r-huge
+                             r-foreach
+                             r-dosnow))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=heterocop")
+    (synopsis "Semi-Parametric Estimation with Gaussian Copula")
+    (description
+     "This package provides a method for estimating the correlation matrix of the
+Gaussian copula from the observed data.  This package also contains a penalized
+estimation of the corresponding precision matrix, and enables to generate random
+vectors that are distributed according to a Gaussian copula.")
     (license license:gpl3+)))
 
 (define-public r-heterfunctionaldata

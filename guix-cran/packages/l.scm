@@ -2080,13 +2080,13 @@ C. Pereira (documentation and downloads available at
 (define-public r-lsdirf
   (package
     (name "r-lsdirf")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSDirf" version))
        (sha256
-        (base32 "0malgsq6gdc53iylkbbndn11b9pf5l7wdaj406ips2k42idfzk91"))))
+        (base32 "0z9x3mprb5a2g0052q06y9c2s8h7qhj11kn1dk2cvdprcqm2i4zc"))))
     (properties `((upstream-name . "LSDirf")))
     (build-system r-build-system)
     (arguments
@@ -2106,9 +2106,9 @@ agent-based simulation models, in particular for models described in LSD format.
  Based on the data produced by the simulation model, it performs both linear and
 state-dependent IRF analysis, providing the tools required by the Counterfactual
 Monte Carlo (CMC) methodology (Amendola and Pereira (2024)
-<doi:10.2139/ssrn.4740360>), including state identification and sensitivity.
-CMC proposes retrieving the causal effect of shocks by exploiting the
-opportunity to directly observe the counterfactual in a fully controlled
+<doi:10.1016/j.jebo.2024.106811>), including state identification and
+sensitivity.  CMC proposes retrieving the causal effect of shocks by exploiting
+the opportunity to directly observe the counterfactual in a fully controlled
 experimental setup.  LSD (Laboratory for Simulation Development) is free
 software available at <https://www.labsimdev.org/>).")
     (license license:gpl3)))
@@ -2385,13 +2385,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "0ibih6hggzghwycw4b24pv15zlqjyl77m6sqmcvp0bf9i5l3fl0v"))))
+        (base32 "1gcp7677241qap45ib2mfc8a8sqm8sd6mj8lpd5ayr955jjb9067"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (arguments
@@ -2407,7 +2407,7 @@ based on the likelihood ratio
                              r-ggplot2
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/kaifenglu/lrstat")
+    (home-page "https://kaifenglu.github.io/lrstat/")
     (synopsis
      "Power and Sample Size Calculation for Non-Proportional Hazards and Beyond")
     (description

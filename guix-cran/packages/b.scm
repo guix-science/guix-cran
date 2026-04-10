@@ -2292,13 +2292,13 @@ toolset.")
 (define-public r-bsub
   (package
     (name "r-bsub")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsub" version))
        (sha256
-        (base32 "12vq7wphnkgx6kfn139kmay9rwcragf7f75059c0z8vw5cz2n3wr"))))
+        (base32 "0pfaggvvj0s1nwb8s14hjwbs3haxckjnp8l933fp7bxxbm98imc8"))))
     (properties `((upstream-name . "bsub")))
     (build-system r-build-system)
     (arguments
@@ -19526,13 +19526,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "5.2.1")
+    (version "5.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "16b9k4l6r0wrivv0ydw0jwi1fdvx54vhr5ygvxzgvx0dc8b4yfiq"))))
+        (base32 "1r5ls1h4m1a047g5jh70dm2slmwc2vllg1qjx5wlqiv4vzy6kqjp"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments
@@ -19561,7 +19561,6 @@ They can be used to test the different features of the package bibliometrix
                              r-ggrepel
                              r-ggplot2
                              r-forcats
-                             r-dt
                              r-dplyr
                              r-dimensionsr
                              r-contentanalysis
@@ -31382,32 +31381,35 @@ Isaque; VICENTE, FÃ¡bio; PEREIRA, Felipe; LOPES, FabrÃ­cio, 2018)
 (define-public r-basifor
   (package
     (name "r-basifor")
-    (version "0.4.1")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basifoR" version))
        (sha256
-        (base32 "0nlv8ym8wwqvh5ri3cg3qj51wm3mz3xpw0s3qjn07lxijq5si6zg"))))
+        (base32 "07x6p8r5ip1lzpkfwh72gnyfhgl6snh6aw5jsy34kjhcp6627a44"))))
     (properties `((upstream-name . "basifoR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rodbc
+    (propagated-inputs (list r-rvest
+                             r-rodbc
                              r-measurements
                              r-httr
                              r-hmisc
                              r-foreign
                              r-curl))
-    (home-page "https://cran.r-project.org/package=basifoR")
+    (home-page
+     "https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-forestal-nacional.html")
     (synopsis
      "Retrieval and Processing of the Spanish National Forest Inventory")
     (description
-     "Data sets of the Spanish National Forest Inventory
-<https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible.html>
-are processed to compute tree metrics and statistics.  Function
-@code{metrics2Vol()} controls most of the routines.")
+     "Fetches, harmonizes, and analyses data from the Spanish National Forest
+Inventory for reproducible, design-aware forest inventory workflows.  Computes
+tree- and stand-level metrics, applies sampling-based expansion factors,
+estimates volume, and supports extensible processing for external inventory
+designs with custom sampling schemes and volume equations.")
     (license license:gpl3)))
 
 (define-public r-basictabler

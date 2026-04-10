@@ -6423,6 +6423,41 @@ Supporting Packages\" for instructions on how to install any package
 @code{WeightIt} uses, including those that may not be on CRAN.")
     (license license:gpl2+)))
 
+(define-public r-weightedvoronoi
+  (package
+    (name "r-weightedvoronoi")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weightedVoronoi" version))
+       (sha256
+        (base32 "1955ackq50cxx9qd4dai8klni6v7w2cav5hh2shp0lndhakn3h10"))))
+    (properties `((upstream-name . "weightedVoronoi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-raster
+                             r-matrix
+                             r-gdistance
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://HarriRaven.github.io/weightedVoronoi/")
+    (synopsis "Weighted Spatial Tessellations in Constrained Polygon Domains")
+    (description
+     "This package provides tools for weighted spatial tessellation using Euclidean
+and geodesic distances within constrained polygonal domains.  The package can
+generate complete and connected spatial partitions that respect complex
+boundaries, heterogeneous point weights, and optional resistance or terrain
+effects.  The methods extend weighted Voronoi tessellations to constrained
+domains and graph-based cost-distance surfaces.  For background see Aurenhammer
+(1991) <doi:10.1145/116873.116880> and van Etten (2017)
+<doi:10.18637/jss.v076.i13>.")
+    (license license:expat)))
+
 (define-public r-weightedtreemaps
   (package
     (name "r-weightedtreemaps")
@@ -7817,13 +7852,13 @@ Twitter data for research and commercial purposes.")
 (define-public r-weatheroz
   (package
     (name "r-weatheroz")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weatherOz" version))
        (sha256
-        (base32 "1ng126f6cgm8934wcqz6d7wklfca61x6lf4ljafd051q7m2zs3f0"))))
+        (base32 "1sn6j78bhxbq34akpa2sv30r6bxjzzqwf9myd6b25n27k030b4b9"))))
     (properties `((upstream-name . "weatherOz")))
     (build-system r-build-system)
     (arguments
@@ -7868,8 +7903,7 @@ released under a Creative Commons Attribution 4.0 International licence (CC BY
 4.0) <https://creativecommons.org/licenses/by/4.0/>.  BOM data are (c)
 Australian Government Bureau of Meteorology and released under a Creative
 Commons (CC) Attribution 3.0 licence or Public Access Licence (PAL) as
-appropriate, see <http://www.bom.gov.au/other/copyright.shtml> for further
-details.")
+appropriate, see <https://www.bom.gov.au/copyright> for further details.")
     (license license:gpl3+)))
 
 (define-public r-weathermetrics

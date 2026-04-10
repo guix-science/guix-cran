@@ -3766,13 +3766,13 @@ fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
 (define-public r-rtmbdist
   (package
     (name "r-rtmbdist")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMBdist" version))
        (sha256
-        (base32 "1nf6255fgb8bz8h7gm6g6bjp212j7jky4q98vj19sc0vs6j73iwn"))))
+        (base32 "1qs6v2xx8p5hn4hi0spdi9i6bbxhd4vil700vn5gabs8j1ciqc7q"))))
     (properties `((upstream-name . "RTMBdist")))
     (build-system r-build-system)
     (arguments
@@ -3782,6 +3782,7 @@ fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
                              r-sn
                              r-rtmb
                              r-movmf
+                             r-matrix
                              r-gamlss-dist
                              r-circular))
     (native-inputs (list r-knitr))
@@ -5330,13 +5331,13 @@ and geography from notifiable disease reports in Germany.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurveycto" version))
        (sha256
-        (base32 "1h180k6m7bv4bvsgvi4j3rxffdr3kz3nqw4rcinf8wq91kpq5kfc"))))
+        (base32 "0nx2rwrmq388iymir5s4wbsmlncx7p8sxga9jnavp7xjy83c7ld3"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (arguments
@@ -7533,13 +7534,13 @@ An overview of these models is given in Snijders (2017),
 (define-public r-rsi
   (package
     (name "r-rsi")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsi" version))
        (sha256
-        (base32 "1syzbli0zphpl6bxcc02ivpq4aqlmz86706sgmfjyxvqscy3hsjj"))))
+        (base32 "0cr5m7ic9bj8gm2c25r8pf12dq9q102rmsrw52kd607x1y45chqj"))))
     (properties `((upstream-name . "rsi")))
     (build-system r-build-system)
     (arguments
@@ -12578,13 +12579,13 @@ provides a clean, user-friendly R interface.")
 (define-public r-rpanel
   (package
     (name "r-rpanel")
-    (version "1.1-6.1")
+    (version "1.1-6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpanel" version))
        (sha256
-        (base32 "02400vzny2qakdx3l03k0phzfskfsamgm63dg4k0bzzv6qmn19m8"))))
+        (base32 "1p5xw6sh7li9qmhckzisk760nqpvmqvxhn3yrn0b967z8nz6dywf"))))
     (properties `((upstream-name . "rpanel")))
     (build-system r-build-system)
     (arguments
@@ -15752,24 +15753,28 @@ imperfect reference standard.")
 (define-public r-rocrater
   (package
     (name "r-rocrater")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rocrateR" version))
        (sha256
-        (base32 "17x1imgnada6shk5hs6jq6qyz6qb2vpsmr2f6yk2awbgg0kx6fm2"))))
+        (base32 "0qggaydh325pkbja08xvzn190d3g0ilp08h653c34bsnsnb96z77"))))
     (properties `((upstream-name . "rocrateR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zip r-tibble r-jsonlite r-digest))
+    (propagated-inputs (list r-zip r-lifecycle r-jsonlite r-digest))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ResearchObject/ro-crate-r/")
-    (synopsis "RO-Crate R Package Wrapper")
+    (synopsis "Tools for Creating and Manipulating RO-Crates")
     (description
-     "R package for creating, manipulating and reading RO-Crates.  Latest supported
-version of the specification: <https://w3id.org/ro/crate/1.2/>.")
+     "This package provides tools for creating, manipulating and reading Research
+Object Crates (RO-Crates), a lightweight approach to packaging research data
+with structured metadata.  Includes utilities for metadata generation, entity
+management, validation and reading existing RO-Crates following the
+specification <https://w3id.org/ro/crate/1.2/>.")
     (license license:expat)))
 
 (define-public r-rocpsych
@@ -24974,13 +24979,13 @@ implemented here.")
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
-    (version "3.8-0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJSDMX" version))
        (sha256
-        (base32 "1mznyydnlkhsf6y69cipf011zipgzbfxj0m3r9vsjabrlwhhwsd3"))))
+        (base32 "0xni24ndxz3ixrfw77phr1464pbld5f9d92zpgk7wd6wn82v88fn"))))
     (properties `((upstream-name . "RJSDMX")))
     (build-system r-build-system)
     (arguments
@@ -26614,13 +26619,13 @@ Begg CB, Zabor EC, Bernstein JL, Bernstein L, Press MF, Seshan VE (2013)
 (define-public r-risk-assessr
   (package
     (name "r-risk-assessr")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "risk.assessr" version))
        (sha256
-        (base32 "1p17xfk48arf8wrzc7c9350npa50490ssziqhia3j8pna774ywzw"))))
+        (base32 "0n8d62bydfgs2jwd1jrh3pv152xp31aw8jvcgim01s5mpyvk4ir1"))))
     (properties `((upstream-name . "risk.assessr")))
     (build-system r-build-system)
     (arguments
@@ -26638,6 +26643,7 @@ Begg CB, Zabor EC, Bernstein JL, Bernstein L, Press MF, Seshan VE (2013)
                              r-pkgload
                              r-memoise
                              r-jsonlite
+                             r-glue
                              r-fs
                              r-dplyr
                              r-desc
@@ -28220,13 +28226,13 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "1kgip17hlj0i34r0zc6pn31289afk0hk3y5rgpl2qgi7yi4hgzmw"))))
+        (base32 "0vg209xkw2vsqm5vhpxqwj849wwvglmx14rmawz9ppm0dwyh603m"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (arguments
@@ -45018,13 +45024,13 @@ This project is not affiliated with the Arduino company,
 (define-public r-rduckhts
   (package
     (name "r-rduckhts")
-    (version "1.1.4-0.0.1")
+    (version "1.1.6-0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rduckhts" version))
        (sha256
-        (base32 "09r0qah21ncc0hyw9hx8ps7x7py91h6davm0qzj5yvcv2ijzjmsc"))))
+        (base32 "0hliawkddb5xs9kfj4m03hg8b9d233369xfcpymf13mpi8bw1x0q"))))
     (properties `((upstream-name . "Rduckhts")))
     (build-system r-build-system)
     (arguments
@@ -52938,6 +52944,38 @@ provided to read from BGM files directly, preserving their internal topology, as
 well as helper functions to generate spatial data from these mesh forms.  This
 functionality aims to simplify the creation and modification of box and geometry
 as well as the ability to integrate with other data sources.")
+    (license license:gpl3)))
+
+(define-public r-rbfmvar
+  (package
+    (name "r-rbfmvar")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbfmvar" version))
+       (sha256
+        (base32 "0ap0irwr0iy01qsc6bd3f3bllbq3cbgzb2i5ivz9v7lvvq9r1cq9"))))
+    (properties `((upstream-name . "rbfmvar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/muhammedalkhalaf/rbfmvar")
+    (synopsis "Residual-Based Fully Modified Vector Autoregression")
+    (description
+     "This package implements the Residual-Based Fully Modified Vector Autoregression
+(RBFM-VAR) estimator of Chang (2000) <doi:10.1017/S0266466600166071>.  The
+RBFM-VAR procedure extends Phillips (1995) FM-VAR to handle any unknown mixture
+of I(0), I(1), and I(2) components without prior knowledge of the number or
+location of unit roots.  Provides automatic lag selection via information
+criteria (AIC, BIC, HQ), long-run variance estimation using Bartlett, Parzen, or
+Quadratic Spectral kernels with Andrews (1991) <doi:10.2307/2938229> automatic
+bandwidth selection, Granger non-causality testing with asymptotically
+chi-squared Wald statistics, impulse response functions (IRF) with bootstrap
+confidence intervals, forecast error variance decomposition (FEVD), and
+out-of-sample forecasting.")
     (license license:gpl3)))
 
 (define-public r-rbf

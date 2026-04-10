@@ -2865,6 +2865,36 @@ date-times into R-objects.  Additionally, there are functions to determine the
 type of ISO8601 string and to standardise ISO8601 strings.")
     (license license:gpl3)))
 
+(define-public r-iso6976-2016
+  (package
+    (name "r-iso6976-2016")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISO6976.2016" version))
+       (sha256
+        (base32 "1xyhcjarifn5ipdk6hzr58nh8c952fh3kqaxlb2xx7y9bk4rhc38"))))
+    (properties `((upstream-name . "ISO6976.2016")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RuedigerForster/ISO_6976")
+    (synopsis
+     "Calorific Values and Properties of Natural Gas per ISO 6976:2016")
+    (description
+     "Calculates calorific values (gross and net), density, relative density, and
+Wobbe indices together with their standard uncertainties from natural gas
+composition, implementing the method of ISO 6976:2016 \"Natural Gas â
+Calculation of calorific values, density, relative density and Wobbe indices
+from composition\".  Uncertainty propagation follows Annex B of that standard.
+Reference: International Organization for Standardization (2016)
+<https://www.iso.org/standard/55842.html>.")
+    (license license:gpl3+)))
+
 (define-public r-iso11784tools
   (package
     (name "r-iso11784tools")
@@ -8926,6 +8956,46 @@ ratio, risk difference, relative risk and their likelihood function plots.
 Testing functions are also provided.")
     (license license:gpl3+)))
 
+(define-public r-integrity
+  (package
+    (name "r-integrity")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "integrity" version))
+       (sha256
+        (base32 "1hl35z6j9v5zg5aj0vfssk4rw99pmcgs00szl4lf2bsnfvjykvk7"))))
+    (properties `((upstream-name . "integrity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-lubridate
+                             r-janitor
+                             r-gtsummary
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.sydney.edu.au/Charles-Perkins-Centre-Data-Science-Hub/CPCDASH0010")
+    (synopsis "Tests Checking for Implausible Values in Clinical Trials Data")
+    (description
+     "Sixteen individual participant data-specific checks in a report-style result.
+Items are automated where possible, and are grouped into eight domains,
+including unusual data patterns, baseline characteristics, correlations, date
+violations, patterns of allocation, internal and external inconsistencies, and
+plausibility of data.  The package may be applied by evidence synthesists,
+editors, and others to determine whether a randomised controlled trial may be
+considered trustworthy to contribute to the evidence base that informs policy
+and practice.  For more details, see Hunter et al. (2024)
+<doi:10.1002/jrsm.1738> and <doi:10.32614/RJ-2017-008> in the same issue of
+Research Synthesis Methods.")
+    (license license:gpl3)))
+
 (define-public r-integratedjm
   (package
     (name "r-integratedjm")
@@ -10117,13 +10187,13 @@ workflows, Jamil and Rue (2026b) <doi:10.48550/@code{arXiv.2604.00671>}.")
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "0sc9hv732qbjh6vwqignvq9v8d6kxyr5hjz0k5ijpghp4f2kijpv"))))
+        (base32 "16wj65vx44204q2wbbhmw8qxd59m6bmjy1j7j5gcdh32kb3fc1w3"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments

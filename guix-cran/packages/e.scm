@@ -12279,13 +12279,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.91")
+    (version "2.0.92")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "17av6wp28q6pzgm24fcpafzrg9j10xyv87z9dwkwjcj65m5zfmqk"))))
+        (base32 "0lkkplzyc83ami0m03if2dmc26f7gws6ikgnkg622lkfclx67rnq"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (arguments
@@ -14844,13 +14844,13 @@ ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
 (define-public r-enrichit
   (package
     (name "r-enrichit")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enrichit" version))
        (sha256
-        (base32 "1wvn734xznv49rlv3jqgg9immigldzgbflnas4np9h400k3yb90n"))))
+        (base32 "1s7ddxpmi1x79216ib0lflkqcdc4dlcxf2s63n2i7hbjgppn1ncv"))))
     (properties `((upstream-name . "enrichit")))
     (build-system r-build-system)
     (arguments

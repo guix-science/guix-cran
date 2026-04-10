@@ -1358,13 +1358,13 @@ the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
 (define-public r-dyadratios
   (package
     (name "r-dyadratios")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DyadRatios" version))
        (sha256
-        (base32 "1b5rgnd52r9zkayrqfj89pnx4ljyasmcdy2a3xhgpxyxn19r9idn"))))
+        (base32 "15f0i8gn37sfvirc16bpbibnjfjhyyiqvkks37jn3d3s1cffgkzn"))))
     (properties `((upstream-name . "DyadRatios")))
     (build-system r-build-system)
     (arguments
@@ -5603,6 +5603,39 @@ and Larras et al (2018) <DOI:10.1021/acs.est.8b04752>.")
     (description
      "This package provides a toolkit for parsing dice notation, analyzing rolls,
 calculating success probabilities, and plotting outcome distributions.")
+    (license license:expat)))
+
+(define-public r-drmeta
+  (package
+    (name "r-drmeta")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drmeta" version))
+       (sha256
+        (base32 "09bhsgxv4kbih8vc1cqvpmyapasj0zwdp4adnqryapcnmwvfps7b"))))
+    (properties `((upstream-name . "drmeta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/drmeta")
+    (synopsis "Design-Robust Meta-Analysis via Variance-Function Models")
+    (description
+     "This package implements Design-Robust Meta-Analysis (DR-Meta), a
+variance-function random-effects framework in which between-study heterogeneity
+is modelled as a function of a study-level design robustness index, allowing
+heterogeneity to depend systematically on study quality or design strength
+rather than being treated as a single nuisance parameter.  The package provides
+profiled restricted maximum likelihood (REML) estimation of the overall effect
+and variance-function parameters, study-specific weights, heterogeneity
+diagnostics (tau-squared, I-squared), influence and leave-one-out analysis, and
+graphical tools including forest plots and influence plots.  The DR-Meta
+framework nests classical fixed-effects and standard random-effects
+meta-analysis as special cases, making it a strict generalisation of existing
+approaches.")
     (license license:expat)))
 
 (define-public r-drmaic
@@ -22056,13 +22089,13 @@ transformations to amplitude-frequency domain.")
 (define-public r-descide
   (package
     (name "r-descide")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeSciDe" version))
        (sha256
-        (base32 "106lfyp7rkgb5l5anbvm2ykpawyjddbv1z1hfy1h9mry2zig592p"))))
+        (base32 "1gm74d9gjkbyv65wi66mv18i61yf4is07f6ll3b8b0bnlizfpjyy"))))
     (properties `((upstream-name . "DeSciDe")))
     (build-system r-build-system)
     (arguments
@@ -22091,9 +22124,9 @@ comprehensive data summarization.  This package aims to help users identify
 novel targets within their data sets based on protein network interactions and
 publication precedence of target's association with research context based on
 literature precedence.  Methods in this package are described in detail in:
-Douglas (Year) <to-be-added DOI or link to the preprint>.  Key functionalities
-of this package also leverage methodologies from previous works, such as: -
-Szklarczyk et al. (2023) <doi:10.1093/nar/gkac1000> - Winter (2017)
+Douglas et al. (2025) <doi:10.1039/D5MO00160A>.  Key functionalities of this
+package also leverage methodologies from previous works, such as: - Szklarczyk
+et al. (2023) <doi:10.1093/nar/gkac1000> - Winter (2017)
 <doi:10.32614/RJ-2017-066>.")
     (license license:expat)))
 
@@ -23723,13 +23756,13 @@ comparison(s) over one or more groups.")
 (define-public r-demofit
   (package
     (name "r-demofit")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "demofit" version))
        (sha256
-        (base32 "1f48ah081ix5ryqbjsqi465gf4zkp43qiz0vy6n9gvpk7vppg8ci"))))
+        (base32 "14wjdhh58g7iwa94yfdlj6pz59db18ijv56cd34374rj1rls7wjv"))))
     (properties `((upstream-name . "demofit")))
     (build-system r-build-system)
     (arguments
