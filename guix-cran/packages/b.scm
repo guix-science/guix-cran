@@ -5367,33 +5367,6 @@ Public Security.
 dimensional linear regression models.")
     (license license:gpl3)))
 
-(define-public r-bratteli
-  (package
-    (name "r-bratteli")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bratteli" version))
-       (sha256
-        (base32 "07hl2s2vcjqx4db0gksfnwdarl59a9441d0ff13zf0vj0pbaqam2"))))
-    (properties `((upstream-name . "bratteli")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-kantorovich r-gmp r-diagram r-data-table))
-    (home-page "https://github.com/stla/bratteliR")
-    (synopsis "Deal with Bratteli Graphs")
-    (description
-     "Utilities for Bratteli graphs.  A tree is an example of a Bratteli graph.  The
-package provides a function which generates a @code{LaTeX} file that renders the
-given Bratteli graph.  It also provides functions to compute the dimensions of
-the vertices, the intrinsic kernels and the intrinsic distances.  Intrinsic
-kernels and distances were introduced by Vershik (2014)
-<doi:10.1007/s10958-014-1958-0>.")
-    (license license:gpl3)))
-
 (define-public r-brassica
   (package
     (name "r-brassica")
@@ -8278,6 +8251,35 @@ learner.  The package implements this algorithm and allows cross-validation and
 stability selection.")
     (license license:gpl2+)))
 
+(define-public r-boostmtree
+  (package
+    (name "r-boostmtree")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boostmtree" version))
+       (sha256
+        (base32 "04rb7314ny8bdzzn3xix0hy0kamn9vwg039fg0cjwyv4ddwxqcws"))))
+    (properties `((upstream-name . "boostmtree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforestsrc r-nlme))
+    (home-page "https://ishwaran.org/")
+    (synopsis "Boosted Multivariate Trees for Longitudinal Data")
+    (description
+     "This package implements Friedman's gradient descent boosting algorithm for
+modeling longitudinal response using multivariate tree base learners.
+Longitudinal response could be continuous, binary, nominal or ordinal.  A
+time-covariate interaction effect is modeled using penalized B-splines
+(P-splines) with estimated adaptive smoothing parameter.  Although the package
+is design for longitudinal data, it can handle cross-sectional data as well.
+Implementation details are provided in Pande et al. (2017), Mach Learn
+<DOI:10.1007/s10994-016-5597-1>.")
+    (license license:gpl3+)))
+
 (define-public r-boostmlr
   (package
     (name "r-boostmlr")
@@ -11032,39 +11034,6 @@ provide direct access to the Current Employment Statistics (CES)
 Statistics.")
     (license license:expat)))
 
-(define-public r-blscraper
-  (package
-    (name "r-blscraper")
-    (version "4.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blscrapeR" version))
-       (sha256
-        (base32 "011ysz8m0skq80fblfj3xscyzbdf3bbpw8ldvp73bbwf41cmx654"))))
-    (properties `((upstream-name . "blscrapeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/keberwein/blscrapeR")
-    (synopsis
-     "An API Wrapper for the United States Bureau of Labor Statistics")
-    (description
-     "Scrapes various data from <https://www.bls.gov/>.  The Bureau of Labor
-Statistics is the statistical branch of the United States Department of Labor.
-The package has additional functions to help parse, analyze and visualize the
-data.")
-    (license license:expat)))
-
 (define-public r-blsbandit
   (package
     (name "r-blsbandit")
@@ -12712,6 +12681,31 @@ Laplace-P-spline methodology can also be implemented for inference in
 (generalized) additive models (Gressani, O. and Lambert, P. (2021)
 <doi:10.1016/j.csda.2020.107088>).  See the associated website for more
 information and examples.")
+    (license license:gpl3)))
+
+(define-public r-blanketstatsments
+  (package
+    (name "r-blanketstatsments")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BlanketStatsments" version))
+       (sha256
+        (base32 "077mkdfv9xi7n5z2dgj0yv0rlc3paxym70l0bq4w8p7ay8cdpy37"))))
+    (properties `((upstream-name . "BlanketStatsments")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-survauc r-hmisc r-desctools
+                             r-basecamb))
+    (home-page "https://github.com/p-mq/BlanketStatsments")
+    (synopsis "Build and Compare Statistical Models")
+    (description
+     "Build and compare nested statistical models with sets of equal and different
+independent variables.  An analysis using this package is Marquardt et al.
+(2021) <https://github.com/p-mq/Percentile_based_averaging>.")
     (license license:gpl3)))
 
 (define-public r-blandr
@@ -15674,13 +15668,13 @@ Ontology, KEGG', CRAN and Bioconductor.")
 (define-public r-bioleak
   (package
     (name "r-bioleak")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioLeak" version))
        (sha256
-        (base32 "1fi738d4cvqckv6dvl9xc8h0wm6098479yv4f14ycsj5b1x1kzdc"))))
+        (base32 "1f6iscy50hbbqd0a58hczm7fawg0x0r5lwn6cs4s167k9n44p204"))))
     (properties `((upstream-name . "bioLeak")))
     (build-system r-build-system)
     (arguments
@@ -19844,29 +19838,6 @@ interaction using probability index measurement.  Test for treatment-biomarker
 interaction using residual bootstrap method.")
     (license license:gpl2+)))
 
-(define-public r-bhh2
-  (package
-    (name "r-bhh2")
-    (version "2016.05.31")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BHH2" version))
-       (sha256
-        (base32 "1m4fcx979nbm97hi89vbjjix0sx6qhdzs486risck9bi7yzih5k4"))))
-    (properties `((upstream-name . "BHH2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=BHH2")
-    (synopsis "Useful Functions for Box, Hunter and Hunter II")
-    (description
-     "This package provides functions and data sets reproducing some examples in Box,
-Hunter and Hunter II. Useful for statistical design of experiments, especially
-factorial experiments.")
-    (license license:gpl2+)))
-
 (define-public r-bhetgp
   (package
     (name "r-bhetgp")
@@ -20195,36 +20166,6 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
      "Bayesian variable selection methods for analyzing the structure of a Markov
 random field model for a network of binary and/or ordinal variables.")
     (license license:gpl2+)))
-
-(define-public r-bgmm
-  (package
-    (name "r-bgmm")
-    (version "1.8.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bgmm" version))
-       (sha256
-        (base32 "1qng8zlpm5pp2ilny99gxyppmp5dnrada4kmvpyg2ap06i69a9gs"))))
-    (properties `((upstream-name . "bgmm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-lattice r-combinat r-car))
-    (home-page "http://bgmm.molgen.mpg.de/")
-    (synopsis
-     "Gaussian Mixture Modeling Algorithms and the Belief-Based Mixture Modeling")
-    (description
-     "Two partially supervised mixture modeling methods: soft-label and belief-based
-modeling are implemented.  For completeness, we equipped the package also with
-the functionality of unsupervised, semi- and fully supervised mixture modeling.
-The package can be applied also to selection of the best-fitting from a set of
-models with different component numbers or constraints on their structures.  For
-detailed introduction see: Przemyslaw Biecek, Ewa Szczurek, Martin Vingron,
-Jerzy Tiuryn (2012), The R Package bgmm: Mixture Modeling with Uncertain
-Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
-    (license license:gpl3)))
 
 (define-public r-bgmisc
   (package
@@ -30130,31 +30071,6 @@ weighted version of the data and summary statistics that works on a resampled
 data set.")
     (license license:expat)))
 
-(define-public r-bayesbio
-  (package
-    (name "r-bayesbio")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesbio" version))
-       (sha256
-        (base32 "08qa4lzkrcwin7n3kzfqfdlnlqahdmjl1lxpdh29n780cgyjfvs0"))))
-    (properties `((upstream-name . "bayesbio")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=bayesbio")
-    (synopsis
-     "Miscellaneous Functions for Bioinformatics and Bayesian Statistics")
-    (description
-     "This package provides a hodgepodge of hopefully helpful functions.  Two of these
-perform shrinkage estimation: one using a simple weighted method where the user
-can specify the degree of shrinkage required, and one using James-Stein
-shrinkage estimation for the case of unequal variances.")
-    (license license:gpl3)))
-
 (define-public r-bayesbinmix
   (package
     (name "r-bayesbinmix")
@@ -34820,13 +34736,13 @@ at a time.")
 (define-public r-babynamesil
   (package
     (name "r-babynamesil")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babynamesIL" version))
        (sha256
-        (base32 "1v7rz7669zz2r8kjp8kis92s2saacwqylvavhc2qiavj4xm5y65m"))))
+        (base32 "0v49rxzm5imqflv3y9nxwl1nwg24fyqp1lkkzq7hhwbkb7zcppny"))))
     (properties `((upstream-name . "babynamesIL")))
     (build-system r-build-system)
     (arguments

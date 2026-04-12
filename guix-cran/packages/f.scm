@@ -5622,13 +5622,13 @@ time series and other data from FRED'.")
 (define-public r-fred
   (package
     (name "r-fred")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fred" version))
        (sha256
-        (base32 "1fl5i8cdzhnwfdzx4mnbfpg9k1lmysg5mg2ah55f0ndn95qr01dc"))))
+        (base32 "1w7i1h75vk3bggv0jy4ich4ysvaagvn532wy47gwwwf1hly809hx"))))
     (properties `((upstream-name . "fred")))
     (build-system r-build-system)
     (arguments
@@ -5644,11 +5644,14 @@ Reserve Economic Data ('FRED') API <https://fred.stlouisfed.org/docs/api/fred/>.
 800,000 time series from 118 sources covering GDP, employment, inflation,
 interest rates, trade, and more.  Dedicated functions fetch series observations,
 search for series, browse categories, releases, and tags, and retrieve series
-metadata.  Multiple series can be fetched in a single call.  Server-side unit
-transformations (percent change, log, etc.) and frequency aggregation are
-supported.  Data is cached locally for subsequent calls.  This product uses the
-FRED API but is not endorsed or certified by the Federal Reserve Bank of St.
-Louis'.")
+metadata.  Multiple series can be fetched in a single call, in long or wide
+format.  Server-side unit transformations (percent change, log, etc.) and
+frequency aggregation are supported, with readable transform aliases such as
+yoy_pct and log_diff'.  Real-time and vintage helpers (built on ALFRED') return
+a series as it appeared on a given date, the first-release version, every
+revision, or a panel of selected vintages.  Data is cached locally for
+subsequent calls.  This product uses the FRED API but is not endorsed or
+certified by the Federal Reserve Bank of St.  Louis'.")
     (license license:expat)))
 
 (define-public r-frechet
@@ -7940,6 +7943,56 @@ such as daily active users and play duration.  It supports pagination for large
 result sets and time-series analysis of island performance.  The API endpoint is
 <https://api.fortnite.com/ecosystem/v1>.")
     (license license:expat)))
+
+(define-public r-fortls
+  (package
+    (name "r-fortls")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FORTLS" version))
+       (sha256
+        (base32 "1ycc61qiz146bs9mz7y8fl55qsqaz1qp32nwgnv1dyz4ab5q3f3n"))))
+    (properties `((upstream-name . "FORTLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-voxr
+                             r-tidyr
+                             r-sf
+                             r-scales
+                             r-reticulate
+                             r-rcsf
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-raster
+                             r-progress
+                             r-plotly
+                             r-moments
+                             r-lidr
+                             r-htmlwidgets
+                             r-distance
+                             r-dbscan
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://molina-valero.github.io/FORTLS/")
+    (synopsis
+     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
+    (description
+     "Process automation of point cloud data derived from terrestrial-based
+technologies such as Terrestrial Laser Scanner (TLS) or Mobile Laser Scanner.
+FORTLS enables (i) detection of trees and estimation of tree-level attributes
+(e.g. diameters and heights), (ii) estimation of stand-level variables (e.g.
+density, basal area, mean and dominant height), (iii) computation of metrics
+related to important forest attributes estimated in Forest Inventories at
+stand-level, and (iv) optimization of plot design for combining TLS data and
+field measured data.  Documentation about FORTLS is described in Molina-Valero
+et al. (2022, <doi:10.1016/j.envsoft.2022.105337>).")
+    (license license:gpl3)))
 
 (define-public r-forstringr
   (package
@@ -11737,13 +11790,13 @@ curves.")
 (define-public r-fluxfixer
   (package
     (name "r-fluxfixer")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxfixer" version))
        (sha256
-        (base32 "0yakbsxswcsxzzqavn49c3sfag9ian3h4c1wdhpywf16sndirszz"))))
+        (base32 "00h0lhk622ydiadkfqmd041yvg9r1qh21hzpqmjld0v2797yhgis"))))
     (properties `((upstream-name . "fluxfixer")))
     (build-system r-build-system)
     (arguments
@@ -25627,34 +25680,6 @@ solution paths of the elastic net penalized Cox's proportional hazards model.
 The package is an implementation of Yang, Y. and Zou, H. (2013)
 <doi:10.4310/SII.2013.v6.n2.a1>.")
     (license license:gpl2)))
-
-(define-public r-fastcmprsk
-  (package
-    (name "r-fastcmprsk")
-    (version "1.26.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastcmprsk" version))
-       (sha256
-        (base32 "19lbimc2aqgd99vaakfl4cnsbcjhrwcgzhh3hn40vhrbvjsn6xgr"))))
-    (properties `((upstream-name . "fastcmprsk")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-matrix r-foreach r-dynpred))
-    (home-page "https://cran.r-project.org/package=fastcmprsk")
-    (synopsis "Fine-Gray Regression via Forward-Backward Scan")
-    (description
-     "In competing risks regression, the proportional subdistribution hazards (PSH)
-model is popular for its direct assessment of covariate effects on the
-cumulative incidence function.  This package allows for both penalized and
-unpenalized PSH regression in linear time using a novel forward-backward scan.
-Penalties include Ridge, Lease Absolute Shrinkage and Selection Operator
-(LASSO), Smoothly Clipped Absolute Deviation (SCAD), Minimax Concave Plus (MCP),
-and elastic net <doi: 10.32614/RJ-2021-010>.")
-    (license license:gpl3)))
 
 (define-public r-fastbioclim
   (package

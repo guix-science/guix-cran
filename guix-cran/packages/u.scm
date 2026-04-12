@@ -152,6 +152,32 @@ radiation (UV) data from the TEMIS database, based on date and geographical
 location.")
     (license license:gpl3)))
 
+(define-public r-uuidx
+  (package
+    (name "r-uuidx")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uuidx" version))
+       (sha256
+        (base32 "1a51lch9p3k6xiia1k2n0x9xsm0qy3gc2h0n5p0qxs7vxhfginq7"))))
+    (properties `((upstream-name . "uuidx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://cran.r-project.org/package=uuidx")
+    (synopsis "Modern UUIDs for R with a Rust Backend")
+    (description
+     "Generate, parse, and validate RFC 9562 UUIDs from R using the Rust uuid crate
+via extendr'.  Developed by Thomas Bryce Kelly at Icy Seas Co-Laboratory LLC.
+Version 7 UUIDs are the default for new identifiers, while versions 4, 5, 6, and
+legacy version 1 are also supported.  Functions return character vectors by
+default and can also expose 16-byte raw representations for low-level workflows.")
+    (license license:expat)))
+
 (define-public r-utsf
   (package
     (name "r-utsf")

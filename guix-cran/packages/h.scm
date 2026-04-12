@@ -8327,13 +8327,13 @@ in two sample populations.")
 (define-public r-highlightr
   (package
     (name "r-highlightr")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highlightr" version))
        (sha256
-        (base32 "05a5x5skp9whv24xdblfbjxfyv83x021i05wyy1brb3p7ykvz94l"))))
+        (base32 "03z4wbp7kffxrdzka4ypcv3wfcxcpjd0cf4vr3zmz5cdyciy8lid"))))
     (properties `((upstream-name . "highlightr")))
     (build-system r-build-system)
     (arguments
@@ -9314,6 +9314,47 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
 household transmission dynamics, with accounting for infection from community
 and tertiary cases.")
     (license license:gpl2+)))
+
+(define-public r-hhbayes
+  (package
+    (name "r-hhbayes")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HHBayes" version))
+       (sha256
+        (base32 "0ixqnllmgj32qfsah9my3fg551r3hy6xy37xc2nf9akdimzzv940"))))
+    (properties `((upstream-name . "HHBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stanheaders
+                             r-scales
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-desolve
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/keli5734/HHBayes")
+    (synopsis "Bayesian Household Transmission Modeling with 'Stan'")
+    (description
+     "This package provides a streamlined pipeline to simulate household infection
+dynamics, estimate transmission parameters, and visualize epidemic timelines.
+Uses a Bayesian approach with Stan that models transmission probability as a
+function of viral load, seasonality and infectivity, multiple infection episodes
+(reinfections), and waning immunity modeling.  Li et al. (2026)
+<doi:10.64898/2026.04.01.26349903>).")
+    (license license:expat)))
 
 (define-public r-hgwrr
   (package
@@ -11283,33 +11324,6 @@ coverage compared to unit testing.  One of the key benefits of Hedgehog is
 integrated shrinking of counterexamples, which allows one to quickly find the
 cause of bugs, given salient examples when incorrect behaviour occurs.")
     (license license:expat)))
-
-(define-public r-hedgedrf
-  (package
-    (name "r-hedgedrf")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hedgedrf" version))
-       (sha256
-        (base32 "1y95qhpxasbgi42bzqnfcab6z9z22c0qlykp3y7dy926fqdc4mj1"))))
-    (properties `((upstream-name . "hedgedrf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ranger r-cvxr))
-    (home-page "https://cran.r-project.org/package=hedgedrf")
-    (synopsis "An Implementation of the Hedged Random Forest Algorithm")
-    (description
-     "This algorithm is described in detail in the paper \"Hedging Forecast
-Combinations With an Application to the Random Forest\" by Beck et al. (2024)
-<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5032102>.  The package
-provides a function @code{hedgedrf()} that can be used to train a Hedged Random
-Forest model on a dataset, and a function @code{predict.hedgedrf()} that can be
-used to make predictions with the model.")
-    (license license:gpl3)))
 
 (define-public r-heddlr
   (package

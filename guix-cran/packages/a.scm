@@ -2812,13 +2812,13 @@ better task related brain activity models in a quick and efficient manner.")
 (define-public r-autoharp
   (package
     (name "r-autoharp")
-    (version "0.2.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoharp" version))
        (sha256
-        (base32 "1ai13avn122vvbgi44q811f4lrz9h69dy6jmr6fr97snpxhgh4q2"))))
+        (base32 "0rqamzl47p2hmal234x0c43zq598608bxd0v1i5b882k1n3jix0v"))))
     (properties `((upstream-name . "autoharp")))
     (build-system r-build-system)
     (arguments
@@ -2835,7 +2835,8 @@ better task related brain activity models in a quick and efficient manner.")
                              r-knitr
                              r-igraph
                              r-dplyr))
-    (home-page "https://singator.github.io/autoharp-docs/")
+    (native-inputs (list r-knitr))
+    (home-page "https://namanlab.github.io/autoharp/")
     (synopsis "Semi-Automatic Grading of R and Rmd Scripts")
     (description
      "This package provides a customisable set of tools for assessing and grading R or
@@ -3041,64 +3042,6 @@ Electronic Health Records (EHR) data, with benchmarking capabilities for
 validation and publication.  Methods based on: Liu et al. (2008)
 <doi:10.1109/ICDM.2008.17>, Breunig et al. (2000) <doi:10.1145/342009.335388>.")
     (license license:expat)))
-
-(define-public r-autofc
-  (package
-    (name "r-autofc")
-    (version "0.2.0.1002")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autoFC" version))
-       (sha256
-        (base32 "1ajjc8yzyanxvm6bmfsg59pgm0s0cgp3k7hnyy7xjxwaqxasnc01"))))
-    (properties `((upstream-name . "autoFC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-thurstonianirt
-                             r-simdesign
-                             r-mplusautomation
-                             r-mass
-                             r-lavaan
-                             r-irrcac
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tspsyched/autoFC")
-    (synopsis "Automatic Construction of Forced-Choice Tests")
-    (description
-     "Forced-choice (FC) response has gained increasing popularity and interest for
-its resistance to faking when well-designed (Cao & Drasgow, 2019
-<doi:10.1037/apl0000414>).  To established well-designed FC scales, typically
-each item within a block should measure different trait and have similar level
-of social desirability (Zhang et al., 2020 <doi:10.1177/1094428119836486>).
-Recent study also suggests the importance of high inter-item agreement of social
-desirability between items within a block (Pavlov et al., 2021
-<doi:10.31234/osf.io/hmnrc>).  In addition to this, FC developers may also need
-to maximize factor loading differences (Brown & Maydeu-Olivares, 2011
-<doi:10.1177/0013164410375112>) or minimize item location differences (Cao &
-Drasgow, 2019 <doi:10.1037/apl0000414>) depending on scoring models.  Decision
-of which items should be assigned to the same block, termed item pairing, is
-thus critical to the quality of an FC test.  This pairing process is essentially
-an optimization process which is currently carried out manually.  However, given
-that we often need to simultaneously meet multiple objectives, manual pairing
-becomes impractical or even not feasible once the number of latent traits and/or
-number of items per trait are relatively large.  To address these problems,
-@code{autoFC} is developed as a practical tool for facilitating the automatic
-construction of FC tests (Li et al., 2022 <doi:10.1177/01466216211051726>),
-essentially exempting users from the burden of manual item pairing and reducing
-the computational costs and biases induced by simple ranking methods.  Given
-characteristics of each item (and item responses), FC measures can be
-constructed either automatically based on user-defined pairing criteria and
-weights, or based on exact specifications of each block (i.e., blueprint; see Li
-et al., 2024 <doi:10.1177/10944281241229784>).  Users can also generate
-simulated responses based on the Thurstonian Item Response Theory model (Brown &
-Maydeu-Olivares, 2011 <doi:10.1177/0013164410375112>) and predict trait scores
-of simulated/actual respondents based on an estimated model.")
-    (license license:gpl3)))
 
 (define-public r-autoensemble
   (package
@@ -18824,6 +18767,42 @@ Stern, Yaari and Vander Heiden, et al (2014) <doi:10.1126/scitranslmed.3008879>.
 Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
     (license license:gpl3)))
 
+(define-public r-akin
+  (package
+    (name "r-akin")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "akin" version))
+       (sha256
+        (base32 "0v9pc8qy9362lar71kjkxp4akdy49anivsg780cqdnv4yza0kiyl"))))
+    (properties `((upstream-name . "akin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rverbalexpressions
+                             r-rcppalgos
+                             r-matrix
+                             r-listenv
+                             r-fastmatch
+                             r-erer
+                             r-data-table
+                             r-callr))
+    (home-page "https://cran.r-project.org/package=akin")
+    (synopsis "Functional Utilities for Data Processing")
+    (description
+     "Covers several areas of data processing: batch-splitting, reading and writing of
+large data files, data tiling, one-hot encoding and decoding of data tiles,
+stratified proportional (random or probabilistic) data sampling, data
+normalization and thresholding, substring location and commonalities inside
+strings and location and tabulation of amino acids, modifications or associated
+monoisotopic masses inside modified peptides.  The extractor utility implements
+code from Matrix.utils', Varrichio C (2020),
+<https://cran.r-project.org/package=Matrix.utils>.")
+    (license license:gpl3+)))
+
 (define-public r-akima
   (package
     (name "r-akima")
@@ -20454,44 +20433,6 @@ It also has all the utility functions and data sets needed to replicate the
 analyses shown in the books.")
     (license license:gpl3+)))
 
-(define-public r-ahm
-  (package
-    (name "r-ahm")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AHM" version))
-       (sha256
-        (base32 "00r1rn7d64a18rckbxvla5yapqv00p9ajxv72fx7s6p80kfal89w"))))
-    (properties `((upstream-name . "AHM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-quadprog
-                             r-plgp
-                             r-mixexp
-                             r-matrix
-                             r-glmnet
-                             r-dplyr
-                             r-devtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AHM")
-    (synopsis
-     "Additive Heredity Model: Method for the Mixture-of-Mixtures Experiments")
-    (description
-     "An implementation of the additive heredity model for the mixture-of-mixtures
-experiments of Shen et al. (2019) in Technometrics
-<doi:10.1080/00401706.2019.1630010>.  The additive heredity model considers an
-additive structure to inherently connect the major components with the minor
-components.  The additive heredity model has a meaningful interpretation for the
-estimated model because of the hierarchical and heredity principles applied and
-the nonnegative garrote technique used for variable selection.")
-    (license license:gpl3)))
-
 (define-public r-ahaz
   (package
     (name "r-ahaz")
@@ -21788,13 +21729,13 @@ custom age distributions are desired given a vector of birth dates.")
 (define-public r-agebanddecomposition
   (package
     (name "r-agebanddecomposition")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AgeBandDecomposition" version))
        (sha256
-        (base32 "1lssfqgs0nswx16i66av6zw7gknnw93lgyq3sg52kfazsrmq5sdf"))))
+        (base32 "02j4r5xfks1kjcdin90xp9w0cpgrxv3c39g4dmja3pjxrv5450mp"))))
     (properties `((upstream-name . "AgeBandDecomposition")))
     (build-system r-build-system)
     (arguments

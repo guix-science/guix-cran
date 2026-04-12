@@ -4174,34 +4174,6 @@ of irregularity, fit inverse-intensity weighted Generalized Estimating Equations
 models (Liang Y (2009) <doi: 10.1111/j.1541-0420.2008.01104.x>).")
     (license license:gpl3)))
 
-(define-public r-irrcac
-  (package
-    (name "r-irrcac")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "irrCAC" version))
-       (sha256
-        (base32 "1j9z8vz5zcl51a8qq6maf9sw0dqaknkrai7gp31mzag7b6vwms06"))))
-    (properties `((upstream-name . "irrCAC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=irrCAC")
-    (synopsis "Computing Chance-Corrected Agreement Coefficients (CAC)")
-    (description
-     "Calculates various chance-corrected agreement coefficients (CAC) among 2 or more
-raters are provided.  Among the CAC coefficients covered are Cohen's kappa,
-Conger's kappa, Fleiss kappa, Brennan-Prediger coefficient, Gwet's AC1/AC2
-coefficients, and Krippendorff's alpha.  Multiple sets of weights are proposed
-for computing weighted analyses.  All of these statistical procedures are
-described in details in Gwet, K.L. (2014,ISBN:978-0970806284): \"Handbook of
-Inter-Rater Reliability,\" 4th edition, Advanced Analytics, LLC.")
-    (license license:gpl2+)))
-
 (define-public r-irr2fpr
   (package
     (name "r-irr2fpr")
@@ -8073,19 +8045,19 @@ plots for (cross-validated) @code{randomForest} and ada models.")
 (define-public r-interpretmsspectrum
   (package
     (name "r-interpretmsspectrum")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InterpretMSSpectrum" version))
        (sha256
-        (base32 "1mnmz8rs2vqh9zz78bh11qs4f1yciz7qa9bivir4aw8b29spbkkv"))))
+        (base32 "0vj8338gs5wkywbzr0lsfibk4cw0aypgr7habri364qc0f6qiqcm"))))
     (properties `((upstream-name . "InterpretMSSpectrum")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr r-envipat))
+    (propagated-inputs (list r-rcdk r-plyr r-envipat))
     (home-page "https://github.com/janlisec/InterpretMSSpectrum")
     (synopsis "Interpreting High Resolution Mass Spectra")
     (description
@@ -8400,26 +8372,29 @@ can be assessed.")
 (define-public r-interflex
   (package
     (name "r-interflex")
-    (version "1.2.8")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interflex" version))
        (sha256
-        (base32 "0f02r8r1lmh82s8kjplccb2v5j7w1g9wk47wgspbq48r7d92l3f2"))))
+        (base32 "1pxvxq21warvn1mb0x3yj3zpmssvyhnp2q1972yw1p6aghj98bsx"))))
     (properties `((upstream-name . "interflex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sandwich
-                             r-rcpparmadillo
-                             r-rcpp
                              r-rcolorbrewer
+                             r-progressr
                              r-proc
                              r-pcse
+                             r-parallelly
+                             r-paradox
                              r-mvtnorm
                              r-modelmetrics
+                             r-mlr3learners
+                             r-mlr3
                              r-mgcv
                              r-mass
                              r-lmtest
@@ -8427,19 +8402,29 @@ can be assessed.")
                              r-lfe
                              r-gtable
                              r-gridextra
+                             r-grf
+                             r-glmnet
                              r-ggplotify
                              r-ggplot2
                              r-future
                              r-foreach
-                             r-doparallel
+                             r-fixest
+                             r-doubleml
+                             r-dorng
+                             r-dofuture
+                             r-data-table
+                             r-cli
                              r-aer))
     (home-page "https://yiqingxu.org/packages/interflex/")
     (synopsis
-     "Multiplicative Interaction Models Diagnostics and Visualization")
+     "Estimation, Diagnostics and Visualization of Conditional Marginal Effects")
     (description
-     "This package performs diagnostic tests of multiplicative interaction models and
-plots non-linear marginal effects of a treatment on an outcome across different
-values of a moderator.")
+     "This package performs estimation, diagnostics, and visualization of conditional
+marginal effects and group average treatment effects of a treatment on an
+outcome across different values of a moderator.  Optionally integrates with the
+mlr3extralearners package for additional machine learning backends compatible
+with the double machine learning estimators.  mlr3extralearners is not on CRAN
+but can be obtained from <https://github.com/mlr-org/mlr3extralearners>.")
     (license license:expat)))
 
 (define-public r-interfacer
@@ -9544,39 +9529,6 @@ inspections.  It generates a diagram of pallets in a lot, highlights the units
 to be sampled, and documents them based on the selected sampling method (simple
 random or systematic sampling).")
     (license license:gpl3)))
-
-(define-public r-inspectdf
-  (package
-    (name "r-inspectdf")
-    (version "0.0.12.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "inspectdf" version))
-       (sha256
-        (base32 "0abw58w1ndfkni35plkgzphfxa6vaarg26wnzm9hxa1bvjszjvrm"))))
-    (properties `((upstream-name . "inspectdf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-rcpp
-                             r-progress
-                             r-magrittr
-                             r-ggplot2
-                             r-ggfittext
-                             r-dplyr))
-    (home-page "https://alastairrushworth.github.io/inspectdf/")
-    (synopsis "Inspection, Comparison and Visualisation of Data Frames")
-    (description
-     "This package provides a collection of utilities for columnwise summary,
-comparison and visualisation of data frames.  Functions report missingness,
-categorical levels, numeric distribution, correlation, column types and memory
-usage.")
-    (license license:gpl2)))
 
 (define-public r-inspectchangepoint
   (package
@@ -16403,13 +16355,13 @@ plots, lasagna plots and ambulatory glucose profile report.")
 (define-public r-iglm
   (package
     (name "r-iglm")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglm" version))
        (sha256
-        (base32 "1v5s50zwr24xgvfzfjm9ci8331f6c6wf6hk57ichd20bn12ws494"))))
+        (base32 "0prabwi84blm43gzh89y40q6wmni88y20my3l6jblqhjbkxjlva9"))))
     (properties `((upstream-name . "iglm")))
     (build-system r-build-system)
     (arguments

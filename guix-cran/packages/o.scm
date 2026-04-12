@@ -5892,6 +5892,35 @@ Gradient Descent and the Adaptive Moment Estimation (Adam) are the methods
 implemented.  Other methods will be implemented in the future.")
     (license license:gpl3)))
 
+(define-public r-optimflex
+  (package
+    (name "r-optimflex")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimflex" version))
+       (sha256
+        (base32 "14fq820gp6h3vkgnxpwl1jcvn586y9nc669ak4wbpb0921lpna4l"))))
+    (properties `((upstream-name . "optimflex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/eunscho/optimflex")
+    (synopsis
+     "Derivative-Based Optimization with User-Defined Convergence Criteria")
+    (description
+     "This package provides a derivative-based optimization framework that allows
+users to combine eight convergence criteria.  Unlike standard optimization
+functions, this package includes a built-in mechanism to verify the positive
+definiteness of the Hessian matrix at the point of convergence.  This additional
+check helps prevent the solver from falsely identifying non-optimal solutions,
+such as saddle points, as valid minima.")
+    (license license:expat)))
+
 (define-public r-optimcheck
   (package
     (name "r-optimcheck")
@@ -10922,59 +10951,6 @@ frames with different schema (copying, filling, or concatenating columns or
 applying functions before combining).")
     (license license:gpl3+)))
 
-(define-public r-omixvizr
-  (package
-    (name "r-omixvizr")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "omixVizR" version))
-       (sha256
-        (base32 "1xn0lf8rrnqmminpvycdamq6ybwkwlb9i9br3z0xr0jj5si4c574"))))
-    (properties `((upstream-name . "omixVizR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-systemfonts
-                             r-sysfonts
-                             r-stringr
-                             r-showtext
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-pheatmap
-                             r-patchwork
-                             r-matrix
-                             r-magrittr
-                             r-lulab-utils
-                             r-gtable
-                             r-gridextra
-                             r-ggtext
-                             r-ggsci
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggbreak
-                             r-genpwr
-                             r-dplyr
-                             r-data-table
-                             r-corpcor))
-    (home-page "https://github.com/Leslie-Lu/omixVizR")
-    (synopsis "Toolkit for Omics Data Visualization")
-    (description
-     "This package provides a suite of tools for the comprehensive visualization of
-multi-omics data, including genomics, transcriptomics, and proteomics.  Offers
-user-friendly functions to generate publication-quality plots, thereby
-facilitating the exploration and interpretation of complex biological datasets.
-Supports seamless integration with popular R visualization frameworks and is
-well-suited for both exploratory data analysis and the presentation of final
-results.  Key formats and methods are presented in Huang, S., et al. (2024) \"The
-Born in Guangzhou Cohort Study enables generational genetic discoveries\"
-<doi:10.1038/s41586-023-06988-4>.")
-    (license license:expat)))
-
 (define-public r-omisc
   (package
     (name "r-omisc")
@@ -14389,6 +14365,33 @@ and Deldossi in order to choose the optimal experiment that better discriminate
 between competing models, see Deldossi and Nai Ruscone (2020)
 <doi:10.18637/jss.v094.i02>.")
     (license license:gpl2+)))
+
+(define-public r-observationalblocks
+  (package
+    (name "r-observationalblocks")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "observationalBlocks" version))
+       (sha256
+        (base32 "06xax30jp8n6c02sn249zlkcq9mxnib8dd5kg5rbammb4cml7gnr"))))
+    (properties `((upstream-name . "observationalBlocks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lpsolve r-itos))
+    (home-page "https://cran.r-project.org/package=observationalBlocks")
+    (synopsis "Block Designs for Observational Studies")
+    (description
+     "This package creates block designs of fixed size J with at least one treated and
+control unit per block.  Blocks larger than pairs better distinguish effects
+caused by a treatment from unmeasured confounding in assignment of individuals
+to treatment.  Somewhat counterintuitively, blocks larger than pairs can use
+more units while attaining better covariate balance and block homogeneity.  A
+forthcoming manuscript by Brumberg and Rosenbaum details the design.")
+    (license license:gpl2)))
 
 (define-public r-observation
   (package

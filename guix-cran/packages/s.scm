@@ -16428,6 +16428,34 @@ provided that allow for use of a binned, discrete scale, a continuous scale or
 manually specified colors depending on what is needed for the underlying data.")
     (license license:expat)))
 
+(define-public r-statderiver
+  (package
+    (name "r-statderiver")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StatDeriveR" version))
+       (sha256
+        (base32 "15q8msf40k1c3rpanv9j35dnqv3brf1fy9nhnafln7kyh500nl4d"))))
+    (properties `((upstream-name . "StatDeriveR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Jokhrof042/StatDeriveR")
+    (synopsis
+     "Step-by-Step Derivation and Simulation Verification in Mathematical Statistics")
+    (description
+     "This package provides step-by-step derivations of key results in mathematical
+statistics, including transformations of random variables, order statistics, and
+sampling distributions.  The package combines analytical derivation with Monte
+Carlo simulation to compare theoretical and empirical results, facilitating
+deeper understanding of statistical theory and its computational implementation.
+ The methods are motivated by standard treatments in mathematical statistics
+(Hogg, @code{McKean}, and Craig, 2019, ISBN: 9780134686991).")
+    (license license:expat)))
+
 (define-public r-statdecider
   (package
     (name "r-statdecider")
@@ -18848,31 +18876,31 @@ decompositions.  See Heather Anderson, Farshid Vahid (1998)
 (define-public r-sstn
   (package
     (name "r-sstn")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstn" version))
        (sha256
-        (base32 "0iipr4hl4l59cb7f40sy2szfwky8sfzaras5j42ky3mgbhhjw5n9"))))
+        (base32 "12p9nzfvfqpbl2c90nygxmph19rpgwlndp6g5q8jdz99ii9d99fb"))))
     (properties `((upstream-name . "sstn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=sstn")
     (synopsis "Self-Similarity Test for Normality")
     (description
      "This package implements the Self-Similarity Test for Normality (SSTN), a new
 statistical test designed to assess whether a given sample originates from a
-normal distribution.  The procedure is based on iteratively estimating the
-characteristic function of the sum of standardized i.i.d.  random variables and
-comparing it to the characteristic function of the standard normal distribution.
- A Monte Carlo procedure is used to determine the empirical distribution of the
-test statistic under the null hypothesis.  Details of the methodology are
-described in Anarat and Schwender (2025), \"A normality test based on
-self-similarity\" (Submitted).")
+normal distribution.  The method exploits the self-similarity property of the
+normal characteristic function by iteratively transforming and comparing
+standardized empirical characteristic functions.  The null distribution of the
+test statistic is obtained via Monte Carlo simulation.  Details of the
+methodology are described in Anarat and Schwender (2026), \"A test for normality
+based on self-similarity\", <doi:10.48550/@code{arXiv.2604.03810>}.")
     (license license:gpl3)))
 
 (define-public r-sstack
@@ -25580,13 +25608,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "05r7padjfcw9c2frdshqjllsdgsq4pzwwanccz03wgv0xkl3bn36"))))
+        (base32 "00s5yq0w69mbskzb8160kfn102b3l7bvlw0idch58gw5sca900v6"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments
@@ -25610,10 +25638,11 @@ data management, and tabulation workflows in R'.  Summarizes variable metadata,
 labels, classes, missing values, and representative values, with support for
 readable frequency tables, cross-tabulations, association measures for
 contingency tables (Cramer's V, Phi, Goodman-Kruskal Gamma, Kendall's Tau-b,
-Somers D, and others), categorical and continuous summary tables, including
-APA-style reporting outputs.  Includes helpers for interactive codebooks,
-variable label extraction, clipboard export, and row-wise descriptive summaries.
- Designed to make descriptive analysis faster, clearer, and easier to work with
+Somers D, and others), categorical and continuous summary tables, and
+model-based bivariate tables for continuous outcomes, including APA-style
+reporting outputs.  Includes helpers for interactive codebooks, variable label
+extraction, clipboard export, and row-wise descriptive summaries.  Designed to
+make descriptive analysis and reporting faster, clearer, and easier to work with
 in practice.")
     (license license:expat)))
 
@@ -54445,13 +54474,13 @@ and arithmetic.")
 (define-public r-shidashi
   (package
     (name "r-shidashi")
-    (version "0.1.8")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shidashi" version))
        (sha256
-        (base32 "1h39lnzcblc7fvlkjqvl1hhjiyac2g859p4fk2fhqs85x96mca59"))))
+        (base32 "0gbdcz55igjk818dw0074mk2ifixamil3l2sab53nl1i411bgzni"))))
     (properties `((upstream-name . "shidashi")))
     (build-system r-build-system)
     (arguments
@@ -54478,6 +54507,7 @@ and arithmetic.")
                              r-s7
                              r-jsonlite
                              r-httr2
+                             r-htmlwidgets
                              r-formatr
                              r-fastmap
                              r-ellmer
@@ -56249,33 +56279,6 @@ filter lengths are implemented in the direct space, while longer filters are
 implemented in frequency space, using a Fast Fourier Transform (FFT).")
     (license license:gpl2+)))
 
-(define-public r-sgof
-  (package
-    (name "r-sgof")
-    (version "2.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sgof" version))
-       (sha256
-        (base32 "028gas18jrfg6ww5r0p32am7x0rjk0a9bcb84pdg9k091dz4b120"))))
-    (properties `((upstream-name . "sgof")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-poibin))
-    (home-page "https://cran.r-project.org/package=sgof")
-    (synopsis "Multiple Hypothesis Testing")
-    (description
-     "Seven different methods for multiple testing problems.  The S@code{GoF-type}
-methods (see for example, Carvajal RodrÃ­guez et al., 2009
-<doi:10.1186/1471-2105-10-209>; de UÃ±a Ãlvarez, 2012
-<doi:10.1515/1544-6115.1812>; Castro Conde et al., 2015
-<doi:10.1177/0962280215597580>) and the BH and BY false discovery rate
-controlling procedures.")
-    (license license:gpl2)))
-
 (define-public r-sgo
   (package
     (name "r-sgo")
@@ -57338,13 +57341,13 @@ Delaunay.")
 (define-public r-sfcurve
   (package
     (name "r-sfcurve")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfcurve" version))
        (sha256
-        (base32 "02r87znczsvx8k4yrwjyayg9hynk97dgy5i3xbhal0cc6rlf1h5m"))))
+        (base32 "17q1yy9xc15kypm738ax03wsriwsln1qip5akb7jwi1qdcni2kk9"))))
     (properties `((upstream-name . "sfcurve")))
     (build-system r-build-system)
     (arguments
@@ -57361,7 +57364,8 @@ the generalized forms of the Hilbert curve
 <https://en.wikipedia.org/wiki/Peano_curve> and the Peano curve in the meander
 type (Figure 5 in <https://eudml.org/doc/141086>).  It can generates nxn curves
 expanded from any specific level-1 units.  It also implements the H-curve and
-the three-dimensional Hilbert curve.")
+the three-dimensional Hilbert curve.  See <doi:10.48550/@code{arXiv.2412.16962>}
+for more details.")
     (license license:expat)))
 
 (define-public r-sfcr
@@ -62251,13 +62255,13 @@ reproducible code, with no visible impact on the experience of the programmer.")
 (define-public r-selemix
   (package
     (name "r-selemix")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeleMix" version))
        (sha256
-        (base32 "0flc2ackvk54k5ixpbhmnkgybqssxbh5jz2g3bp7h6ff6xz49pb4"))))
+        (base32 "15a7xawgs8qz4f5iwf06i416d0cmk0530bsxadssvf6s1iyw54sm"))))
     (properties `((upstream-name . "SeleMix")))
     (build-system r-build-system)
     (arguments
@@ -62493,6 +62497,42 @@ helper functions for corrected AIC calculation.  More details can be found in
 Bertrand and Maumy (2024) <https://hal.science/hal-05352041> that highlights
 correlation-aware resampling to improve variable selection for GAMLSS and
 quantile regression when predictors are numerous and highly correlated.")
+    (license license:gpl3)))
+
+(define-public r-selectboost-fda
+  (package
+    (name "r-selectboost-fda")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SelectBoost.FDA" version))
+       (sha256
+        (base32 "135i6bm27q374dy6rivgvgs26r0dxfcd825l004r7g3q8bw078zb"))))
+    (properties `((upstream-name . "SelectBoost.FDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-selectboost))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/SelectBoost.FDA/")
+    (synopsis
+     "SelectBoost-Style Variable Selection for Functional Data Analysis")
+    (description
+     "This package implements @code{SelectBoost'-style} variable selection workflows
+for functional data analysis.  The package provides FDA-native design and
+preprocessing objects for raw curves, spline-basis expansions, Functional
+principal component analysis scores, and scalar covariates; grouped
+stability-selection routines based on repeated subject-level subsampling;
+multiple selector backends including lasso, group lasso, and sparse-group lasso;
+FDA-aware grouping functions and calibration helpers for @code{SelectBoost}';
+method-comparison utilities; a formula interface; simulation, benchmarking, and
+validation helpers with mapped ground truth; targeted sensitivity-study
+utilities and shipped benchmark summaries for mean F1 comparisons between
+FDA-aware and plain @code{SelectBoost} workflows; small example datasets; and an
+optional adapter to the native stability-selection interface from the FDboost
+package.")
     (license license:gpl3)))
 
 (define-public r-selectboost-beta
@@ -68883,13 +68923,13 @@ bars for data collected from one-way or higher factorial designs.")
 (define-public r-scip
   (package
     (name "r-scip")
-    (version "1.10.0-2")
+    (version "1.10.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scip" version))
        (sha256
-        (base32 "1q76xmsbzv9c3wg6214cj7as1m3sa75i7nn2dr5vgnvq7a7dm2pf"))))
+        (base32 "0wi2ky85ygkda0z440ranhpcn2f9xyxicq5gb5fkqbi1851j93cm"))))
     (properties `((upstream-name . "scip")))
     (build-system r-build-system)
     (arguments
@@ -68898,7 +68938,7 @@ bars for data collected from one-way or higher factorial designs.")
     (inputs (list cmake))
     (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bnaras/scip")
+    (home-page "https://bnaras.github.io/scip/")
     (synopsis "Interface to the SCIP Optimization Suite")
     (description
      "This package provides an R interface to SCIP (Solving Constraint Integer
@@ -70428,13 +70468,13 @@ efficient size-constrained clustering with near-optimal performance.  See
 (define-public r-sccic
   (package
     (name "r-sccic")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sccic" version))
        (sha256
-        (base32 "19z512ipf5ax5ynwxp8vrighq6kc3mjwwjxalhxyd5hd1p3cvqxc"))))
+        (base32 "1k6sr67cvl4lnvm2b3grbvdvvnkri5bp32gyjh1dwq5iml1m8mrb"))))
     (properties `((upstream-name . "sccic")))
     (build-system r-build-system)
     (arguments
@@ -70447,11 +70487,13 @@ efficient size-constrained clustering with near-optimal performance.  See
     (description
      "This package implements the Changes-in-Changes (CIC) estimator of Athey and
 Imbens (2006) <doi:10.1111/j.1468-0262.2006.00668.x> combined with synthetic
-control methods.  Provides nonparametric estimation of the entire counterfactual
-distribution of outcomes for a treated group, allowing evaluation of average,
-quantile, and distributional treatment effects.  Synthetic control weights are
-constructed via elastic net regularization to handle settings with many
-potential control units.")
+control methods.  Provides both the continuous CIC estimator (Theorem 3.1) and
+the discrete CIC estimator (Theorem 4.1) for integer-valued outcomes, with
+analytic and bootstrap inference.  Also provides nonparametric estimation of the
+entire counterfactual distribution of outcomes for a treated group, allowing
+evaluation of average, quantile, and distributional treatment effects.
+Synthetic control weights are constructed via elastic net regularization to
+handle settings with many potential control units.")
     (license license:gpl3+)))
 
 (define-public r-scci
@@ -71212,13 +71254,13 @@ using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
 (define-public r-scaledescr
   (package
     (name "r-scaledescr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scaledescr" version))
        (sha256
-        (base32 "1zhsf3gd8ih3lhpih0l52rd3ac0h2y927xczsvdqpwwrx8dn1b2k"))))
+        (base32 "02pnx37i5vk8pnfi0zqmbqrcglm3jafpfaz814f58c5mai5fhk55"))))
     (properties `((upstream-name . "scaledescr")))
     (build-system r-build-system)
     (arguments
@@ -71561,6 +71603,30 @@ For a description of @code{AdaBoost}, see Freund and Schapire (1997)
 interpret and visualize.  Feature vectors may be a combination of continuous
 (numeric) and categorical (string, factor) elements.  Methods for classifier
 assessment, predictions, and cross-validation also included.")
+    (license license:expat)))
+
+(define-public r-sboatools
+  (package
+    (name "r-sboatools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SBOAtools" version))
+       (sha256
+        (base32 "1i7njb8vk46sbp0y7mzj3lw3q1a4b9qp2zld5w2g8xhhlw1wzlry"))))
+    (properties `((upstream-name . "SBOAtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/burakdilber/SBOAtools")
+    (synopsis
+     "Secretary Bird Optimization for Continuous Optimization and Neural Networks")
+    (description
+     "This package provides an implementation of secretary bird optimization for
+general-purpose continuous optimization and for training single-hidden-layer
+feed-forward neural network models.")
     (license license:expat)))
 
 (define-public r-sbn

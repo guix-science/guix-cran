@@ -1348,13 +1348,13 @@ identify the optimal estimator from among a prespecified set of candidates.")
 (define-public r-cvasi
   (package
     (name "r-cvasi")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvasi" version))
        (sha256
-        (base32 "0h3z41w8g87k2i4l2hrp746vrqw7aprvwvhzv45bfb2njydf5v2v"))))
+        (base32 "15c9c8rliqwj6i1rnkxvn4zylg8bz52p76d5803n40ccgp1kxgih"))))
     (properties `((upstream-name . "cvasi")))
     (build-system r-build-system)
     (arguments
@@ -1979,32 +1979,6 @@ designs using other approaches, for example designs by Simon (1989)
 using a weighted sum of expected sample sizes under the null and alternative
 hypotheses and maximum sample size; visualise any binary outcome design.")
     (license license:gpl3+)))
-
-(define-public r-curstatci
-  (package
-    (name "r-curstatci")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "curstatCI" version))
-       (sha256
-        (base32 "0igqdv0fzzji10gz3j3ir8qxpy7vdjfl137067rc28qzbrl2sy2c"))))
-    (properties `((upstream-name . "curstatCI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/kimhendrickx/curstatCI")
-    (synopsis "Confidence Intervals for the Current Status Model")
-    (description
-     "Computes the maximum likelihood estimator, the smoothed maximum likelihood
-estimator and pointwise bootstrap confidence intervals for the distribution
-function under current status data.  Groeneboom and Hendrickx (2017)
-<doi:10.1214/17-EJS1345>.")
-    (license license:gpl3)))
 
 (define-public r-cursr
   (package
@@ -2839,31 +2813,6 @@ models and their extensions (where CUB stands for Combination of a discrete
 Uniform and a shifted Binomial distributions); Simulation routines, plotting
 facilities and fitting measures are also provided.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-cuadramelo
-  (package
-    (name "r-cuadramelo")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cuadramelo" version))
-       (sha256
-        (base32 "08n1g32lfbm8mjg1m9brxbqbjlxxbpfv8gfwzqv6mjdsiri00qiw"))))
-    (properties `((upstream-name . "cuadramelo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-dplyr r-cvxr))
-    (native-inputs (list r-knitr))
-    (home-page "https://mserrano-ine.github.io/cuadramelo/")
-    (synopsis "Matrix Balancing and Rounding")
-    (description
-     "Balancing and rounding matrices subject to restrictions.  Adjustment of matrices
-so that columns and rows add up to given vectors, rounding of a matrix while
-keeping the column and/or row totals, performing these by blocks...")
-    (license license:gpl3+)))
 
 (define-public r-ctypesio
   (package
@@ -6316,19 +6265,20 @@ correlation, autocorrelation, and volatility clustering without power loss.")
 (define-public r-crs
   (package
     (name "r-crs")
-    (version "0.15-39")
+    (version "0.15-41")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crs" version))
        (sha256
-        (base32 "077hll3wc2vjjdhj7mrd52mbmhwxyh13c95ckbgf8p75vc1k2cbr"))))
+        (base32 "16ry4vrnx5nskspnghabbr9ijpy5i6pr8lpl2z0qfmgvigqr5al2"))))
     (properties `((upstream-name . "crs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quantreg r-np r-boot))
+    (propagated-inputs (list r-quantreg r-boot))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/JeffreyRacine/R-Package-crs")
     (synopsis "Categorical Regression Splines")
     (description
@@ -8511,13 +8461,13 @@ in the approach.")
 (define-public r-cre-dcf
   (package
     (name "r-cre-dcf")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cre.dcf" version))
        (sha256
-        (base32 "1b6bb7rj3j6ypr781nsglkn7daa6qd6nk1n3mqjim21gbigzn68f"))))
+        (base32 "048j6mx2pxwv8dm860q0lx7fjpb7rcg7mr7knqw8w2sww0qp0a3d"))))
     (properties `((upstream-name . "cre.dcf")))
     (build-system r-build-system)
     (arguments
@@ -8536,13 +8486,14 @@ in the approach.")
      "This package provides R utilities to build unlevered and levered discounted cash
 flow (DCF) tables for commercial real estate (CRE) assets.  Functions generate
 bullet and amortising debt schedules, compute credit metrics such as debt
-coverage ratios (DCR), debt service coverage ratios (DSCR), interest coverage
-ratios, debt yield ratios, and forward loan-to-value ratios (LTV) based on net
-operating income (NOI).  The toolkit evaluates refinancing feasibility under
-alternative market scenarios and supports end-to-end scenario execution from a
-YAML (YAML Ain't Markup Language) configuration file parsed with yaml'.
-Includes helpers for sensitivity analysis, covenant diagnostics, and
-reproducible vignettes.")
+service coverage ratios (DSCR), debt yield ratios, and forward loan-to-value
+ratios (LTV), and expose an explicit property-level operating chain from gross
+effective income (GEI) to net operating income (NOI) and property before-tax
+cash flow (PBTCF).  The toolkit supports end-to-end scenario execution from a
+YAML (YAML Ain't Markup Language) configuration file parsed with yaml', includes
+helpers for effective rent, constrained loan underwriting, and simplified
+SPV-level tax simulations, and ships reproducible vignettes for methodological
+and applied use cases.")
     (license license:expat)))
 
 (define-public r-cre
@@ -12618,6 +12569,35 @@ package).")
      "Calculates metrics of proportionality using the logit-normal multinomial model.
 It can also provide empirical and plugin estimates of these metrics.")
     (license license:gpl3+)))
+
+(define-public r-countmaskr
+  (package
+    (name "r-countmaskr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "countmaskr" version))
+       (sha256
+        (base32 "1hzdfgv3pvjf9sxjyvjim3ykyylyrjr33m3rxrf1k3b22j10l2fd"))))
+    (properties `((upstream-name . "countmaskr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-lifecycle r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://query-fulfillment.github.io/countmaskr/")
+    (synopsis "Small Cell Masking Tool for One- & Two-Way Tabular Reports")
+    (description
+     "This package provides automated small-cell suppression for one- and two-way
+frequency tables.  Cells falling below a user-defined frequency threshold are
+masked, with suppression propagated to secondary cells to prevent indirect
+disclosure.  Designed for clinical and health administrative data, the package
+supports a range of tabular structures and fits into reproducible reporting
+pipelines, reducing manual review while applying consistent suppression rules
+across data sharing workflows.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-countland
   (package
@@ -17583,13 +17563,13 @@ Includes an add-in for further workflow enhancement.")
 (define-public r-context
   (package
     (name "r-context")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conText" version))
        (sha256
-        (base32 "1pf8xnbyp19lcgwh3cskic0a2zppw98imgnv6kyxnsqpig71ms52"))))
+        (base32 "1f4zww91cwsj8c7gmp43p7nrjqld8ba4daq6lzgsld3119v27clj"))))
     (properties `((upstream-name . "conText")))
     (build-system r-build-system)
     (arguments
@@ -27653,6 +27633,30 @@ and continuous outcomes.")
 visualizations of compositional data using ggplot2'.  Includes support for
 common plotting techniques in compositional data analysis.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-coda-pack
+  (package
+    (name "r-coda-pack")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coda.pack" version))
+       (sha256
+        (base32 "1530b5964db6k5p4988dmw7dpbdligl99xyinfc1971b6w1alqhm"))))
+    (properties `((upstream-name . "coda.pack")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-coda-plot r-coda-base))
+    (home-page "https://cran.r-project.org/package=coda.pack")
+    (synopsis "Meta-Package for Compositional Data Analysis")
+    (description
+     "Meta-package for compositional data analysis.  It attaches the main stable
+packages of the coda ecosystem, currently coda.base and coda.plot', and provides
+helper tools to install development extensions from @code{GitHub}'.")
+    (license license:gpl3+)))
 
 (define-public r-coda-base
   (package
@@ -44510,13 +44514,13 @@ The reference article for these datasets is Mayer and Zignago (2011)
 (define-public r-cepa
   (package
     (name "r-cepa")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CePa" version))
        (sha256
-        (base32 "1nhcr9pyn2swv8jmqm26gl9plxr7qln3mjylmyawc94ayhnj45g0"))))
+        (base32 "0rad3n37zv3mrj7l49ckj9b7zs9d5ml7qfmnsw6372qdjcmxz3a8"))))
     (properties `((upstream-name . "CePa")))
     (build-system r-build-system)
     (arguments
@@ -47551,50 +47555,6 @@ more information).")
      "Calculates the credit debt for the next period based on the available data using
 the cross-classification credibility model.")
     (license license:gpl3)))
-
-(define-public r-ccar3
-  (package
-    (name "r-ccar3")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ccar3" version))
-       (sha256
-        (base32 "0d7yigi19wsial3wcn3i6ava74gkf8fx54j951h8wygzh7yd595n"))))
-    (properties `((upstream-name . "ccar3")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rspectra
-                             r-purrr
-                             r-pracma
-                             r-matrixstats
-                             r-magrittr
-                             r-foreach
-                             r-dplyr
-                             r-corpcor
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=ccar3")
-    (synopsis "Canonical Correlation Analysis via Reduced Rank Regression")
-    (description
-     "Canonical correlation analysis (CCA) via reduced-rank regression with support
-for regularization and cross-validation.  Several methods for estimating CCA in
-high-dimensional settings are implemented.  The first set of methods,
-@code{cca_rrr()} (and variants: @code{cca_group_rrr()} and
-@code{cca_graph_rrr()}), assumes that one dataset is high-dimensional and the
-other is low-dimensional, while the second, @code{ecca()} (for Efficient CCA)
-assumes that both datasets are high-dimensional.  For both methods, standard l1
-regularization as well as group-lasso regularization are available.
-cca_graph_rrr further supports total variation regularization when there is a
-known graph structure among the variables of the high-dimensional dataset.  In
-this case, the loadings of the canonical directions of the high-dimensional
-dataset are assumed to be smooth on the graph.  For more details see Donnat and
-Tuzhilina (2024) <doi:10.48550/@code{arXiv.2405.19539>} and Wu, Tuzhilina and
-Donnat (2025) <doi:10.48550/@code{arXiv.2507.11160>}.")
-    (license license:expat)))
 
 (define-public r-ccapp
   (package

@@ -12,7 +12,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -595,13 +594,13 @@ experts.")
 (define-public r-kstio
   (package
     (name "r-kstio")
-    (version "0.5-0")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstIO" version))
        (sha256
-        (base32 "0ya3z4vk7qkhjq1hzhkr5dj9cv2i2jklappfd1lyakrbkckrslrc"))))
+        (base32 "1rhz5wvbxjijv677ay7bkcyjr9fbbmbl3plcfzhbq1d19bw5fk7v"))))
     (properties `((upstream-name . "kstIO")))
     (build-system r-build-system)
     (arguments
@@ -6156,19 +6155,19 @@ Lamont-Smith (2018), submitted J. R. Stat.  Soc.")
 (define-public r-kdglm
   (package
     (name "r-kdglm")
-    (version "1.2.12")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kDGLM" version))
        (sha256
-        (base32 "0851vh8v0jn6mj7dh8hwbq6kvsd3bmaqdss3v6ina0ywc68x37vn"))))
+        (base32 "1dz3b1hczgbx34nqs0cnpyw14yw0v2m3ffgkk778lzrvh04cji1w"))))
     (properties `((upstream-name . "kDGLM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast r-rdpack r-generics r-extradistr))
+    (propagated-inputs (list r-rlang r-rfast r-rdpack r-generics r-extradistr))
     (native-inputs (list r-knitr))
     (home-page "https://silvaneojunior.github.io/kDGLM/")
     (synopsis "Bayesian Analysis of Dynamic Generalized Linear Models")
@@ -7036,40 +7035,6 @@ Michael Eliasziw, Neil Klar (1996) <doi:10.2307/2533154>.")
      "Sequences encoding by using the chaos game representation.  LÃ¶chel et al.
 (2019) <doi:10.1093/bioinformatics/btz493>.")
     (license license:gpl2+)))
-
-(define-public r-kantorovich
-  (package
-    (name "r-kantorovich")
-    (version "3.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kantorovich" version))
-       (sha256
-        (base32 "1fvf2j518h6mfjrkh7c9swpi8adfd6a5pr7b6pc6al16jbvbw3rf"))))
-    (properties `((upstream-name . "kantorovich")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gmp))
-    (propagated-inputs (list r-slam
-                             r-roi-plugin-glpk
-                             r-rglpk
-                             r-rcdd
-                             r-ompr-roi
-                             r-ompr
-                             r-lpsolve
-                             r-gmp
-                             r-cvxr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/kantorovich")
-    (synopsis "Kantorovich Distance Between Probability Measures")
-    (description
-     "Computes the Kantorovich distance between two probability measures on a finite
-set.  The Kantorovich distance is also known as the Monge-Kantorovich distance
-or the first Wasserstein distance.")
-    (license license:gpl3)))
 
 (define-public r-kanova
   (package

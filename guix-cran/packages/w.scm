@@ -2522,13 +2522,13 @@ and plots.")
 (define-public r-wordpuzzler
   (package
     (name "r-wordpuzzler")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordPuzzleR" version))
        (sha256
-        (base32 "04cxniagz9y2szq2b9qhz8lfjsmbdc6d928rfayy22yigy6mwi1i"))))
+        (base32 "1384iqwf9y8xlshs5ckdk09j5nz04bh4a9s9bv9c3v4snambv36b"))))
     (properties `((upstream-name . "wordPuzzleR")))
     (build-system r-build-system)
     (arguments
@@ -8350,6 +8350,38 @@ the optional companion package wcvpdata is installed, its default checklist can
 also be used.")
     (license license:expat)))
 
+(define-public r-wcrbayesdesign
+  (package
+    (name "r-wcrbayesdesign")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WCRBayesDesign" version))
+       (sha256
+        (base32 "0kbn3xx3139cf2qpb141kgwqzpd3lyqnl5k0jfg01l11vyb7ikfy"))))
+    (properties `((upstream-name . "WCRBayesDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=WCRBayesDesign")
+    (synopsis
+     "Bayesian Two-Stage Design with Window-Cohort and Controlled Roll-on for Time-to-Event Estimand")
+    (description
+     "Calibrates Bayesian two-stage designs for single-arm phase II trials with
+time-to-event endpoints using a window-cohort with controlled roll-on.  Interim
+monitoring is anchored to a locked interim cohort and a pre-specified follow-up
+requirement, so analysis timing remains predictable while preserving follow-up
+maturity.  The package searches feasible interim rules, optimizes final sample
+size and decision thresholds, evaluates operating characteristics by Monte Carlo
+simulation, and supports exponential, Weibull, log-normal, log-logistic, and
+user-defined baseline survival models.  Related published foundations include
+Simon (1989) <doi:10.1016/0197-2456(89)90015-9> and Cotterill and Whitehead
+(2015) <doi:10.1002/sim.6426>.")
+    (license license:gpl3)))
+
 (define-public r-wcox
   (package
     (name "r-wcox")
@@ -8611,13 +8643,13 @@ Centre for Demography and Human Capital Data Explorer
 (define-public r-wbwdi
   (package
     (name "r-wbwdi")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbwdi" version))
        (sha256
-        (base32 "0x8gwczv6sqkclw7s6vacrlvc91867f6qw25j0vr7hh0ws4mqm91"))))
+        (base32 "12qgg0bci8gsyshr1z6bd26bzjsgp1fan20bb9765g3b4li202pa"))))
     (properties `((upstream-name . "wbwdi")))
     (build-system r-build-system)
     (arguments

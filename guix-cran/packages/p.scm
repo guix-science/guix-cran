@@ -3732,6 +3732,30 @@ and imperial (IP) systems of units.  References: Meyer, D. and Thevenard, D
 (2019) <doi:10.21105/joss.01137>.")
     (license license:expat)))
 
+(define-public r-psychreport
+  (package
+    (name "r-psychreport")
+    (version "4.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psychReport" version))
+       (sha256
+        (base32 "1q7hs3ms8digzgldz5f4m6zp1rzjz7zr32hif7rqnhiqg7nyi9qp"))))
+    (properties `((upstream-name . "psychReport")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable r-dplyr r-cli r-broom))
+    (home-page "https://cran.r-project.org/package=psychReport")
+    (synopsis "Reproducible Reports in Psychology")
+    (description
+     "Helper functions for producing reports in Psychology (Reproducible Research).
+Provides required formatted strings (APA style) for use in Knitr'/'Latex
+integration within *.Rnw files.")
+    (license license:expat)))
+
 (define-public r-psychonetrics
   (package
     (name "r-psychonetrics")
@@ -14393,13 +14417,13 @@ For more information on PPS, see <https://github.com/paulvanderlaken/ppsr>.")
 (define-public r-ppsfs
   (package
     (name "r-ppsfs")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PPSFS" version))
        (sha256
-        (base32 "1vq8l7ri6q8g7a67ipbwf2xi1spkhgn9slzjmrvh5nfm5sxrv4s6"))))
+        (base32 "1mwbiv9jlx0hpi6jg4957sj289lca7gqzp2acqzld5ixln2zp9cl"))))
     (properties `((upstream-name . "PPSFS")))
     (build-system r-build-system)
     (arguments
@@ -14413,7 +14437,7 @@ For more information on PPS, see <https://github.com/paulvanderlaken/ppsr>.")
      "This is an implementation of the partial profile score feature selection (PPSFS)
 approach to generalized linear (interaction) models.  The PPSFS is highly
 scalable even for ultra-high-dimensional feature space.  See the paper by Xu,
-Luo and Chen (2022, <doi:10.4310/21-SII706>).")
+Luo and Chen (2022) <doi:10.4310/21-SII706>.")
     (license license:gpl3)))
 
 (define-public r-ppseq
@@ -17421,13 +17445,13 @@ plotted in a number of ways with nice barplots and boxplots.")
 (define-public r-portfolioanalytics
   (package
     (name "r-portfolioanalytics")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PortfolioAnalytics" version))
        (sha256
-        (base32 "07870r08av9srb4spzhd0iyv6i21kzmcijdhxca74npyb0qjah18"))))
+        (base32 "0x6rbvbdldx0mwd7a31jghmlyrp8khgbmbzb0q585c1khq55p7bd"))))
     (properties `((upstream-name . "PortfolioAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -19929,20 +19953,20 @@ translation services online.")
 (define-public r-polycub
   (package
     (name "r-polycub")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyCub" version))
        (sha256
-        (base32 "19mxyrzca5psigi1h8h32px8m52w6258b4qd298jjxiiw0hlxlx6"))))
+        (base32 "1859ly5mq4n185fnwc9i7d168q5rbmbyk8gyqbjrf8jx518kykvy"))))
     (properties `((upstream-name . "polyCub")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://github.com/bastistician/polyCub")
     (synopsis "Cubature over Polygonal Domains")
     (description
@@ -28344,35 +28368,6 @@ shiny app.  See Banker, R.; Charnes, A.; Cooper, W.W. (1984)
 <doi:10.1007/978-94-009-1816-0>.")
     (license license:gpl3)))
 
-(define-public r-pinyin
-  (package
-    (name "r-pinyin")
-    (version "1.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pinyin" version))
-       (sha256
-        (base32 "0rw9qd5hbcmpi30vdqs31ijy37d8jlpqv0xif2nndb8cwj8x5bw2"))))
-    (properties `((upstream-name . "pinyin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-splitstackshape r-data-table))
-    (home-page "https://github.com/pzhaonet/pinyin")
-    (synopsis
-     "Convert Chinese Characters into Pinyin, Sijiao, Wubi or Other Codes")
-    (description
-     "Convert Chinese characters into Pinyin (the official romanization system for
-Standard Chinese in mainland China, Malaysia, Singapore, and Taiwan.  See
-<https://en.wikipedia.org/wiki/Pinyin> for details), Sijiao (four or five
-numerical digits per character.  See
-<https://en.wikipedia.org/wiki/Four-Corner_Method>.), Wubi (an input method with
-five strokes.  See <https://en.wikipedia.org/wiki/Wubi_method>) or user-defined
-codes.")
-    (license license:expat)))
-
 (define-public r-pintervals
   (package
     (name "r-pintervals")
@@ -30895,6 +30890,37 @@ to login and logout, as well as receive project information and project data.
 Further it transforms the received JSON objects into a data frame, which can be
 used for the final data analysis.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
+
+(define-public r-photon
+  (package
+    (name "r-photon")
+    (version "1.0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "photon" version))
+       (sha256
+        (base32 "183hm641s9n0i7i8hzrbx4fbsf3yw6c8dkjniz7yx3imrrzrpd23"))))
+    (properties `((upstream-name . "photon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-rvest
+                             r-r6
+                             r-processx
+                             r-httr2
+                             r-countrycode
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jslth/photon/")
+    (synopsis "High-Performance Geocoding using 'photon'")
+    (description
+     "Features unstructured, structured and reverse geocoding using the photon
+geocoding API <https://photon.komoot.io/>.  Facilitates the setup of local
+photon instances to enable offline geocoding.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-photogea
   (package
@@ -37009,30 +37035,6 @@ funds returns as described in Ardia and Boudt (2018)
 <doi:10.1016/j.jbankfin.2017.10.014>.")
     (license license:gpl2+)))
 
-(define-public r-peermodels
-  (package
-    (name "r-peermodels")
-    (version "0.10.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "peermodels" version))
-       (sha256
-        (base32 "116xn5w7rwm9q0m7bj4z29l4hspj2nqdcxzir9dqpdqmf7z58v67"))))
-    (properties `((upstream-name . "peermodels")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-jsonlite r-httr2 r-httr r-curl))
-    (home-page "https://www.peermodelsnetwork.com")
-    (synopsis
-     "Client-Side R API Wrapper for Peer Models Network Model Repository")
-    (description
-     "Enables direct cloud access to health care decision models hosted on the PRISM
-server of the Peer Models Network.")
-    (license license:gpl3)))
-
 (define-public r-pedtricks
   (package
     (name "r-pedtricks")
@@ -37559,13 +37561,13 @@ two-samples t-tests in a multivariate framework.")
 (define-public r-pecanr
   (package
     (name "r-pecanr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pecanr" version))
        (sha256
-        (base32 "0zhwsp19rgbnjwgjr1dss010fd0qqn1rbzl3cidcjvwnkym6fc8x"))))
+        (base32 "01l6cplx20xjhcx7xh8nna1khc93cncz3pliiv6azsljqn9v78sd"))))
     (properties `((upstream-name . "pecanr")))
     (build-system r-build-system)
     (arguments
@@ -37573,11 +37575,15 @@ two-samples t-tests in a multivariate framework.")
       #:tests? #f))
     (propagated-inputs (list r-lme4))
     (home-page "https://github.com/bcohen0901/pecanr")
-    (synopsis "Partial Eta-Squared for Crossed and Nested Linear Mixed Models")
+    (synopsis
+     "Partial Eta-Squared for Crossed, Nested, and Mixed Linear Mixed Models")
     (description
      "Computes partial eta-squared effect sizes for fixed effects in linear mixed
-models fitted with the lme4 package.  Supports crossed and nested random effects
-structures with any number of grouping factors.  Random slope variances are
+models fitted with the lme4 package.  Supports crossed, nested, and mixed
+(crossed-and-nested) random effects structures with any number of grouping
+factors.  Mixed designs handle cases where grouping factors are simultaneously
+crossed with some variables and nested within others (e.g., photos nested within
+models, but both crossed with participants).  Random slope variances are
 translated to the outcome scale using a variance decomposition approach,
 correctly accounting for predictor scaling and interaction terms.  Both general
 and operative effect sizes are provided.  Methods are based on Correll,
@@ -40654,19 +40660,24 @@ Principal Component Analysis.  Implements the method described in (Luu, 2016)
 (define-public r-pc
   (package
     (name "r-pc")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pc" version))
        (sha256
-        (base32 "1qcv9m1h8ib0b4mcknkf0anzns6ydfi03q7wcy97srj75bhga0zd"))))
+        (base32 "1ygip37wpd1p69bjhl02n3l1xsyw43iwx5p7yl6x1kjv1v7g3nqb"))))
     (properties `((upstream-name . "pc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-sf r-sdsfun r-rcppthread r-rcpp))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-sdsfun
+                             r-rcppthread
+                             r-rcpp
+                             r-ggplot2))
     (home-page "https://stscl.github.io/pc/")
     (synopsis "Pattern Causality Analysis")
     (description
@@ -40675,7 +40686,7 @@ with original algorithm for time series data from Stavroglou et al. (2020)
 <doi:10.1073/pnas.1918269117>, as well as methodological extensions for spatial
 cross-sectional data introduced by Zhang & Wang (2025)
 <doi:10.1080/13658816.2025.2581207>, together with a systematic description
-proposed in Runge et al. (2023) <doi:10.1038/s43017-023-00431-y>.")
+proposed in Lyu et al. (2026) <doi:10.1016/j.compenvurbsys.2026.102435>.")
     (license license:gpl3)))
 
 (define-public r-pbv
@@ -44803,13 +44814,13 @@ end.")
 (define-public r-panelview
   (package
     (name "r-panelview")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panelView" version))
        (sha256
-        (base32 "0c9a7ar4sw08s99svvkh6xbcpq9nz6vk839lybjbs89vir2k2jzn"))))
+        (base32 "0ahg7n82yxrqgncqr30kc6fbb8jazdf0j7vcis6ljbxqx56c4bcj"))))
     (properties `((upstream-name . "panelView")))
     (build-system r-build-system)
     (arguments
@@ -44819,11 +44830,13 @@ end.")
     (home-page "https://yiqingxu.org/packages/panelview/")
     (synopsis "Visualizing Panel Data")
     (description
-     "Visualizes panel data.  It has three main functionalities: (1) it plots the
+     "Visualizes panel data.  It has four main functionalities: (1) it plots the
 treatment status and missing values in a panel dataset; (2) it visualizes the
 temporal dynamics of a main variable of interest; (3) it depicts the bivariate
 relationships between a treatment variable and an outcome variable either by
-unit or in aggregate.  For details, see <doi:10.18637/jss.v107.i07>.")
+unit or in aggregate; (4) it displays the network structure of multi-way fixed
+effects as a k-partite graph, identifying connected components, singletons, and
+duplicate observations.  For details, see <doi:10.18637/jss.v107.i07>.")
     (license license:expat)))
 
 (define-public r-panelvar
@@ -45761,13 +45774,13 @@ Michael Oswald.")
 (define-public r-pam
   (package
     (name "r-pam")
-    (version "2.0.2")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pam" version))
        (sha256
-        (base32 "17ffbc8hh4al3474aq4svvmg6vjwg6b18fwcfds00zwnib4p2pi0"))))
+        (base32 "0ln1sz4s208gs00c7z9f1pah9b4g5w447wdzld2bk305g5573sxl"))))
     (properties `((upstream-name . "pam")))
     (build-system r-build-system)
     (arguments
@@ -47851,29 +47864,6 @@ test whether a regular vine copula satisfies the so-called simplifying
 assumption or to test a single copula within a regular vine copula to be a
 (j-1)-th order partial copula are available.  The CCC test comes with a decision
 tree approach to allow testing in high-dimensional settings.")
-    (license license:expat)))
-
-(define-public r-paco
-  (package
-    (name "r-paco")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "paco" version))
-       (sha256
-        (base32 "0p02fdc5f7d7sbdvxill8jln76p1ndiw95k6s9j41slfriq647vd"))))
-    (properties `((upstream-name . "paco")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan r-plyr r-ape))
-    (home-page "https://www.uv.es/cophylpaco/")
-    (synopsis "Procrustes Application to Cophylogenetic Analysis")
-    (description
-     "Procrustes analyses to infer co-phylogenetic matching between pairs of
-phylogenetic trees.")
     (license license:expat)))
 
 (define-public r-packmbplsda

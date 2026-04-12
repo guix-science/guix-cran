@@ -1400,13 +1400,13 @@ advanced statistics for teams and players.")
 (define-public r-rvmf
   (package
     (name "r-rvmf")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvMF" version))
        (sha256
-        (base32 "1c5sfbm3l4h4wvgj4yiq2fssxygby6ahzv9563xv54m84xnradx3"))))
+        (base32 "1xmh4rc1lb50s8rl5vynr10b56jfpd5kz6rn9agg7ak1sv3w0x0r"))))
     (properties `((upstream-name . "rvMF")))
     (build-system r-build-system)
     (arguments
@@ -2035,6 +2035,35 @@ and so on).  You will obtain an amazing geometric figure that complicates and
 beautifies itself by varying the number of points and the multiplication table
 you use.")
     (license license:gpl3)))
+
+(define-public r-rurality
+  (package
+    (name "r-rurality")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rurality" version))
+       (sha256
+        (base32 "007g337dniln3mnp936bkp1h1b8ycplbj3fy5xrhr7wmky571aac"))))
+    (properties `((upstream-name . "rurality")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cwimpy/rurality")
+    (synopsis
+     "Classification and Scoring of U.S. County and ZIP Code Rurality")
+    (description
+     "This package provides USDA Rural-Urban Continuum Codes (RUCC 2023), Rural-Urban
+Commuting Area codes (RUCA 2020), and a composite rurality score for all U.S.
+counties.  Functions enable lookup by FIPS code, ZIP code, or county name, and
+easy merging with existing datasets.  Data sources include the USDA Economic
+Research Service, U.S. Census Bureau American Community Survey, and Census
+TIGER/Line shapefiles.")
+    (license license:expat)))
 
 (define-public r-rupturesrcpp
   (package
@@ -3470,29 +3499,30 @@ et al. (2017) <doi:10.1186/s12859-017-1949-5> and Taylor et al. (2019)
 (define-public r-rtpc
   (package
     (name "r-rtpc")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTPC" version))
        (sha256
-        (base32 "17ycj1cf7azlxi3mn8lpwji194c3awbhky7l03v4yj1wim0r0mss"))))
+        (base32 "0w3c82p39khf94kfzpw176lb3zf7p4qpn2xnl8cc439yjwcyq0l6"))))
     (properties `((upstream-name . "rTPC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rlang r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/padpadpadpad/rTPC")
     (synopsis "Fitting and Analysing Thermal Performance Curves")
     (description
-     "Helps to fit thermal performance curves (TPCs). @code{rTPC} contains 26 model
+     "Helps to fit thermal performance curves (TPCs). @code{rTPC} contains 49 model
 formulations previously used to fit TPCs and has helper functions to set
 sensible start parameters, upper and lower parameter limits and estimate
 parameters useful in downstream analyses, such as cardinal temperatures, maximum
 rate and optimum temperature.  See Padfield et al. (2021)
 <doi:10.1111/2041-210X.13585>.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-rtop
   (package
@@ -4813,39 +4843,6 @@ contains several wrappers of R built-in serialize/unserialize mechanism allowing
 user to quickly append objects to a tape-like file and later iterate over them
 requiring only one copy of each stored object to reside in memory a time.")
     (license license:gpl2)))
-
-(define-public r-rtapas
-  (package
-    (name "r-rtapas")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rtapas" version))
-       (sha256
-        (base32 "0vcd3zbrckmszj1w8jrjybym0y4dfaljajdr48fbx0x52cqly865"))))
-    (properties `((upstream-name . "Rtapas")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-stringr
-                             r-phytools
-                             r-parallelly
-                             r-paco
-                             r-distory
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=Rtapas")
-    (synopsis "Random Tanglegram Partitions")
-    (description
-     "Applies a given global-fit method to random partial tanglegrams of a fixed size
-to identify the associations, terminals, and nodes that maximize phylogenetic
-(in)congruence.  It also includes functions to compute more easily the
-confidence intervals of classification metrics and plot results, reducing
-computational time.  See Llaberia-Robledillo et al., (2023)
-<doi:10.1093/sysbio/syad016>.")
-    (license license:expat)))
 
 (define-public r-rtabulator
   (package
@@ -8308,30 +8305,6 @@ connections, opened via R packages integrate with the connections pane inside
 the RStudio interactive development environment (IDE).")
     (license license:gpl3)))
 
-(define-public r-rsconctdply
-  (package
-    (name "r-rsconctdply")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rsconctdply" version))
-       (sha256
-        (base32 "12xc1laxgivv4szp8341pvhmxnzzzzc2s4jhnqsqrbx71lbd9szg"))))
-    (properties `((upstream-name . "Rsconctdply")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsconnect r-rjson r-dplyr))
-    (home-page "https://cran.r-project.org/package=Rsconctdply")
-    (synopsis "Deploys Multiple 'Shiny' Apps using Configuration File")
-    (description
-     "This package provides a tool for mass deployment of shiny apps to RStudio
-Connect or Shiny Server'.  Multiple user accounts and servers can be configured
-for deployment.")
-    (license license:expat)))
-
 (define-public r-rsclient
   (package
     (name "r-rsclient")
@@ -9633,13 +9606,13 @@ out uncertainty and sensitivity analysis using the power of R environment.")
 (define-public r-rregm
   (package
     (name "r-rregm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rregm" version))
        (sha256
-        (base32 "07a94ciax3hv1wjs3zvxdy5xj25j97yf8nyrr1jk22rc4v65ph5c"))))
+        (base32 "0lc83s9ami897ja5gh50l65kda0hwzm8qdqhwma6nkxkpi9b901l"))))
     (properties `((upstream-name . "rregm")))
     (build-system r-build-system)
     (arguments
@@ -31946,13 +31919,13 @@ forest.")
 (define-public r-rfif
   (package
     (name "r-rfif")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFIF" version))
        (sha256
-        (base32 "1za8dbw9ycm5w22wnn75svxp9qd3h9yjqgvaghd9g8zpp8rh79h9"))))
+        (base32 "1yimn1sbiivnvf4zlqxbxh1y0psd1x3zqb45mw9awn6c5cy1r0s5"))))
     (properties `((upstream-name . "RFIF")))
     (build-system r-build-system)
     (arguments
@@ -31967,7 +31940,8 @@ Filtering (FIF) for decomposing a univariate signal into intrinsic mode
 functions (IMFs) and a residual.  The package uses Fast Fourier Transform
 library FFTW, if found.  If not, it provides instructions to install it for your
 OS. This is recommended, as R's internal @code{fft()}, while avoiding external
-FFT dependencies, is two orders of magnitude slower.")
+FFT dependencies, is two orders of magnitude slower.  See vignette Installing
+FFTW for RFIF for RFIF installation instructions.")
     (license license:expat)))
 
 (define-public r-rfieldclimate
@@ -50315,13 +50289,13 @@ package in the R Commander GUI for R.")
 (define-public r-rcmdr
   (package
     (name "r-rcmdr")
-    (version "2.9-5")
+    (version "2.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcmdr" version))
        (sha256
-        (base32 "06yy14iimc54w1j0wgjslnrb1qkqqnaaq0kx3by815i0kxq7v9dx"))))
+        (base32 "1cms0wk70arzy564pxm8lc78lycvw2373zln1lgxvbzxn7hmnf10"))))
     (properties `((upstream-name . "Rcmdr")))
     (build-system r-build-system)
     (arguments

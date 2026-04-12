@@ -10246,31 +10246,6 @@ United States.\" For more information about the data, visit
 hazards, visit <http://www.questionuniverse.com/rethink.html/#vaccine>.")
     (license license:cc0)))
 
-(define-public r-vader
-  (package
-    (name "r-vader")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vader" version))
-       (sha256
-        (base32 "1xjak5xlgpk0ds4l825kq90dg6kk5i5al5zmjqjqn8b7xdgix8mf"))))
-    (properties `((upstream-name . "vader")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tm))
-    (home-page "https://cran.r-project.org/package=vader")
-    (synopsis "Valence Aware Dictionary and sEntiment Reasoner (VADER)")
-    (description
-     "This package provides a lexicon and rule-based sentiment analysis tool that is
-specifically attuned to sentiments expressed in social media, and works well on
-texts from other domains.  Hutto & Gilbert (2014)
-<https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/view/8109/8122>.")
-    (license license:expat)))
-
 (define-public r-vacuum
   (package
     (name "r-vacuum")

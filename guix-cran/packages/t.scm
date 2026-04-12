@@ -3534,13 +3534,13 @@ forecasting.")
 (define-public r-tsss
   (package
     (name "r-tsss")
-    (version "1.3.4-5")
+    (version "1.3.4-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSSS" version))
        (sha256
-        (base32 "13d58fkjll08hznpawl1ln93vz5sy65k8j92kxz4kkpw2jdg690h"))))
+        (base32 "07d6c3rckz5irkhphzm236h4hk1fdb6n9lxx160qvsxx4mk28xda"))))
     (properties `((upstream-name . "TSSS")))
     (build-system r-build-system)
     (arguments
@@ -7725,13 +7725,13 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.4.9")
+    (version "0.0.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "0a35hh51n17pmvmwnla8gjn0njczcar3h04x8i6v4x102nlc0ilf"))))
+        (base32 "0ljznn4j42z0z4awdc9qgfya45gd5bxhzabha26bag63cwyi8hi2"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (arguments
@@ -10053,13 +10053,13 @@ regression analysis.")
 (define-public r-transreg
   (package
     (name "r-transreg")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transreg" version))
        (sha256
-        (base32 "0kygikv9hra0przwyq38ji47abj7b094xh0c68yqdhinw3ppn0bc"))))
+        (base32 "1xi2xxs72r8pl0756ps4mhpgfj0v1lyr25naqa36jxqdp6ql3p17"))))
     (properties `((upstream-name . "transreg")))
     (build-system r-build-system)
     (arguments
@@ -11270,6 +11270,40 @@ Clustering algorithm.")
     (description
      "Calculates trait moments from trait and community data using the methods
 developed in Maitner et al (2021) <doi:10.22541/au.162196147.76797968/v1>.")
+    (license license:expat)))
+
+(define-public r-traits
+  (package
+    (name "r-traits")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "traits" version))
+       (sha256
+        (base32 "10qbrssia67ppidaj4gz8n904wvirwg7sr2ir632y686pynpvpxs"))))
+    (properties `((upstream-name . "traits")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-taxize
+                             r-rvest
+                             r-readr
+                             r-jsonlite
+                             r-httr
+                             r-hoardr
+                             r-data-table
+                             r-crul))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/traits/")
+    (synopsis "Species Trait Data from Around the Web")
+    (description
+     "Species trait data from many sources, including sequence data from NCBI
+(<https://www.ncbi.nlm.nih.gov/>), plant traits from BETYdb, and data from EOL
+Traitbank and @code{BirdLife} International.")
     (license license:expat)))
 
 (define-public r-traipse
@@ -18122,13 +18156,13 @@ disciplines, making it a valuable resource for researchers and analysts.")
 (define-public r-timeroc
   (package
     (name "r-timeroc")
-    (version "0.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeROC" version))
        (sha256
-        (base32 "1qxijg7hazc8bifwj2254ig2p3cbrp9p0bsyhhh3aikf1rg113v1"))))
+        (base32 "0fpzr7qybaxv9ck988ix1sywml77mm68l69h8wkr6afrv978bvzr"))))
     (properties `((upstream-name . "timeROC")))
     (build-system r-build-system)
     (arguments
@@ -22726,6 +22760,33 @@ machine learning that fits the tidymodels framework.  The intention is to work
 for regression and classification problems with a simple verb framework.")
     (license license:expat)))
 
+(define-public r-tidyactuarial
+  (package
+    (name "r-tidyactuarial")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyactuarial" version))
+       (sha256
+        (base32 "0nfbmbj1rakmlhj8jg48f1c8v0p0syl57sl0ppy3y4r9r771qflc"))))
+    (properties `((upstream-name . "tidyactuarial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=tidyactuarial")
+    (synopsis "Tidy Tools for Actuarial Mathematics and Life Contingencies")
+    (description
+     "This package provides tidyverse-aligned tools for actuarial mathematics and life
+contingencies, including life tables, survival probabilities, actuarial present
+values of cash flows, life annuities, multi-life benefits, and related
+quantities.  The package emphasizes clear actuarial notation consistent with
+standard curricula (e.g. SOA exams) and supports reproducible workflows using
+modern R.")
+    (license license:expat)))
+
 (define-public r-tidier
   (package
     (name "r-tidier")
@@ -23723,13 +23784,13 @@ for plots, and layout adjustments.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.7.1")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "11ynrhfhf1dr4rjmzk3ppa9jlvvphxkv7hgl4kn9c1ynfn92p9fj"))))
+        (base32 "05g3qs0b27h4fh8mdvzciyrbrr62jwv1him0adbibc5n86ndsvsr"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (arguments
@@ -29030,13 +29091,13 @@ seeks to create a profile that define a social group.")
 (define-public r-telescope
   (package
     (name "r-telescope")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "telescope" version))
        (sha256
-        (base32 "1qljr5hww2agxzyl3hzih2zamiikwlcsax5gvgslvs0zzvs90aa3"))))
+        (base32 "1g4fibaijay82y6mv462f8bw9hwvw7k0502af7fq9vp8k3r68knk"))))
     (properties `((upstream-name . "telescope")))
     (build-system r-build-system)
     (arguments
@@ -29054,7 +29115,9 @@ seeks to create a profile that define a social group.")
     (description
      "Fits Bayesian finite mixtures with an unknown number of components using the
 telescoping sampler and different component distributions.  For more details see
-FrÃ¼hwirth-Schnatter et al. (2021) <doi:10.1214/21-BA1294>.")
+FrÃ¼hwirth-Schnatter et al. (2021) <doi:10.1214/21-BA1294>, Malsiner-Walli et
+al. (in press) <doi:10.1007/s11634-025-00640-x> and Malsiner-Walli et al. (2026)
+<doi:10.48550/@code{arXiv.2603.00277>}.")
     (license license:gpl2)))
 
 (define-public r-telemetr
@@ -30421,13 +30484,13 @@ Wadhwa et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdarec
   (package
     (name "r-tdarec")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdarec" version))
        (sha256
-        (base32 "009848spvsrqx69k3adpdqz3zrfz1fsrbdph7fp079f8x5l04v4v"))))
+        (base32 "1gh25m8p7zgrcgf4jxgkwda36kakfvjf5bds6m5bakkpqp44y03v"))))
     (properties `((upstream-name . "tdarec")))
     (build-system r-build-system)
     (arguments
@@ -33309,6 +33372,42 @@ useful for organizing and managing large collections of objects in R.")
     (synopsis "Tag Clouds")
     (description "Generating Tag and Word Clouds.")
     (license license:gpl2+)))
+
+(define-public r-tag
+  (package
+    (name "r-tag")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TAG" version))
+       (sha256
+        (base32 "1hc251278rrqjxlv5hc1kwyq21dx28z94v57srxkvawy167rl482"))))
+    (properties `((upstream-name . "TAG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-randtoolbox
+                             r-mlegp
+                             r-mgcv
+                             r-matrix
+                             r-foreach
+                             r-fastgp
+                             r-dicekriging))
+    (home-page "https://cran.r-project.org/package=TAG")
+    (synopsis "Transformed Additive Gaussian Processes")
+    (description
+     "Implement the transformed additive Gaussian (TAG) process and the transformed
+approximately additive Gaussian (TAAG) process proposed in Lin and Joseph (2020)
+<DOI:10.1080/00401706.2019.1665592>.  These functions can be used to model
+deterministic computer experiments, obtain predictions at new inputs, and
+quantify the uncertainty of the predictions.  This research is supported by a
+U.S. National Science Foundation grant DMS-1712642 and a U.S. Army Research
+Office grant W911NF-17-1-0007.")
+    (license license:gpl2)))
 
 (define-public r-taf
   (package

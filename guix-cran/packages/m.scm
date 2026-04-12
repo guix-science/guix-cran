@@ -625,13 +625,13 @@ summary functions are from the spatstat package <https://spatstat.org/>.")
 (define-public r-mxcc
   (package
     (name "r-mxcc")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mxcc" version))
        (sha256
-        (base32 "0jr418dvzrkbp7izllcv3d7747vvafsdnjljsksdzj7ly9x7lkjd"))))
+        (base32 "1wgs0sqcwcjrm20wh7mcp8iafyc74dl25ix18vsn4h2nj2b0ilgh"))))
     (properties `((upstream-name . "mxcc")))
     (build-system r-build-system)
     (arguments
@@ -7083,13 +7083,13 @@ many repositories with a single command.")
 (define-public r-multideggs
   (package
     (name "r-multideggs")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiDEGGs" version))
        (sha256
-        (base32 "1s060rrix17nsl3xjamjs0gic2v5brf09yg2hipnh1fkccd3vw4f"))))
+        (base32 "1k99lyb3bk18f826an2zpj66fb7k51fm1k8xnff4lx49xc4apk62"))))
     (properties `((upstream-name . "multiDEGGs")))
     (build-system r-build-system)
     (arguments
@@ -11952,6 +11952,35 @@ parallel using @code{mclapply()} or @code{future_lapply()}
 <https://cran.r-project.org/package=future.apply>.")
     (license license:gpl2+)))
 
+(define-public r-mrgrowth
+  (package
+    (name "r-mrgrowth")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MRgrowth" version))
+       (sha256
+        (base32 "1qcixwjna14cdvjaxfz8vzcfsq892fs3fbayq9kbzblrxldg9p5g"))))
+    (properties `((upstream-name . "MRgrowth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MRgrowth")
+    (synopsis "Mark-Recapture Growth Models")
+    (description
+     "Researchers often need to calculate body-size growth rates for individuals that
+do not have associated age data.  These growth rates are based on mark-recapture
+data where an individual was captured and measured at time 1 then recaptured and
+measured at time 2.  The sizes at each time and amount of time between captures
+can be used to calculate growth rates.  MRgrowth follows the approach in Edmonds
+et al. (2021) <doi:10.1371/journal.pone.0259978> and provides functions to
+calculate growth using three formulas, the Faben's reformulation of the von
+Bertalanffy formula, the Gompertz formula, and a logistic formula.")
+    (license license:gpl3+)))
+
 (define-public r-mrg
   (package
     (name "r-mrg")
@@ -15928,13 +15957,13 @@ examples and a shiny app.")
 (define-public r-moodlequiz
   (package
     (name "r-moodlequiz")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moodlequiz" version))
        (sha256
-        (base32 "13idsk8cc8x2askcg9lwxw8dhr8fwf87s38jjc2x17jdyd5h2js3"))))
+        (base32 "1mhgcwkf7ns9nihpjv413h3j58g9n82s4s5rkria0qj8p31avncw"))))
     (properties `((upstream-name . "moodlequiz")))
     (build-system r-build-system)
     (arguments
@@ -21469,24 +21498,19 @@ models ('GSE36594').  Deena Gendoo et al. (2015)
 (define-public r-mm
   (package
     (name "r-mm")
-    (version "1.6-8")
+    (version "1.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MM" version))
        (sha256
-        (base32 "04fr8vxjc7kgpxrlk7q5ibad00ff8fafl14l36snhbszv0zv4n8k"))))
+        (base32 "07f52zcncyj8cbvfa648z4z1072jqvvjhcniiy00gpw22rmlpnvx"))))
     (properties `((upstream-name . "MM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quadform
-                             r-partitions
-                             r-oarray
-                             r-mathjaxr
-                             r-magic
-                             r-abind))
+    (propagated-inputs (list r-quadform r-partitions r-oarray r-magic r-abind))
     (home-page "https://github.com/RobinHankin/MM")
     (synopsis "The Multiplicative Multinomial Distribution")
     (description
@@ -23724,29 +23748,6 @@ corresponding MLEs.  Further details and explanations of MLEces can be found in.
 <doi:10.1080/03610926.2023.2179880>.")
     (license license:gpl2)))
 
-(define-public r-mle-tools
-  (package
-    (name "r-mle-tools")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mle.tools" version))
-       (sha256
-        (base32 "02yndj1if31zr9y805mq5km5n8jz4w9jz1bmaz9nnqsqimrnigrb"))))
-    (properties `((upstream-name . "mle.tools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=mle.tools")
-    (synopsis
-     "Expected/Observed Fisher Information and Bias-Corrected Maximum Likelihood Estimate(s)")
-    (description
-     "Calculates the expected/observed Fisher information and the bias-corrected
-maximum likelihood estimate(s) via Cox-Snell Methodology.")
-    (license license:gpl2+)))
-
 (define-public r-mle
   (package
     (name "r-mle")
@@ -25427,37 +25428,6 @@ by Max Kuhn.  It also provides a plot routine using ggplot2 and patchwork'.")
 whose inputs are a combination of continuous, ordered, and unordered variables.")
     (license license:lgpl3+)))
 
-(define-public r-mixoofa
-  (package
-    (name "r-mixoofa")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixOofA" version))
-       (sha256
-        (base32 "1npa4hbs9xgirb4smsbjpwvk8jk8nh4y6i644lwdsr3zf34rxr7d"))))
-    (properties `((upstream-name . "mixOofA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-mixexp r-doofa r-crossdes r-combinat))
-    (home-page "https://cran.r-project.org/package=mixOofA")
-    (synopsis "Design and Analysis of Order-of-Addition Mixture Experiments")
-    (description
-     "This package provides a facility to generate various classes of fractional
-designs for order-of-addition experiments namely fractional order-of-additions
-orthogonal arrays, see Voelkel, Joseph G. (2019). \"The design of
-order-of-addition experiments.\" Journal of Quality Technology 51:3, 230-241,
-<doi:10.1080/00224065.2019.1569958>.  Provides facility to construct component
-orthogonal arrays, see Jian-Feng Yang, Fasheng Sun and Hongquan Xu (2020). \"A
-Component Position Model, Analysis and Design for Order-of-Addition
-Experiments.\" Technometrics, <doi:10.1080/00401706.2020.1764394>.  Supports
-generation of fractional designs for order-of-addition mixture experiments.
-Analysis of data from order-of-addition mixture experiments is also supported.")
-    (license license:gpl2+)))
-
 (define-public r-mixmeta
   (package
     (name "r-mixmeta")
@@ -25874,30 +25844,6 @@ Mixed Effect Models using Markov Chains Monte Carlo for continuous and discrete
 data.")
     (license license:gpl3)))
 
-(define-public r-mixexp
-  (package
-    (name "r-mixexp")
-    (version "1.2.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixexp" version))
-       (sha256
-        (base32 "1b9m820sy6g4ahfrghqm0wzs2v5imqn1n8x2nrd5ilyissav6p08"))))
-    (properties `((upstream-name . "mixexp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lattice r-daewr))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=mixexp")
-    (synopsis "Design and Analysis of Mixture Experiments")
-    (description
-     "This package provides functions for creating designs for mixture experiments,
-making ternary contour plots, and making mixture effect plots.")
-    (license license:gpl2+)))
-
 (define-public r-mixedts
   (package
     (name "r-mixedts")
@@ -26150,13 +26096,13 @@ between random variables appeared in Genest, NeÅ¡lehovÃ¡, RÃ©millard & Mur
 (define-public r-mixediffusion
   (package
     (name "r-mixediffusion")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixediffusion" version))
        (sha256
-        (base32 "1mb3gbaqnn2k0g6yi6mq8cv7a5pbwpagrr7gsinj6k2hvmy9xg56"))))
+        (base32 "1mcnn44v9zq5f8c737vzq9bw2mpjm2gblrp0fbhi7d5cafar9fff"))))
     (properties `((upstream-name . "mixediffusion")))
     (build-system r-build-system)
     (arguments
@@ -31489,13 +31435,13 @@ Fronius microinverters.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "1zgbi757z0k0wp38sfv69w93p75cbcms2xglakfnpa7frrqknjj5"))))
+        (base32 "1iz7a3avkma79hdgbdyminqzvs2dfrdy8w1x0323b6g5kxbr3m5v"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -38170,6 +38116,56 @@ Mikkelson 2002 <doi:10.1034/j.1600-0706.2002.970210.x>.  The package also
 includes functions to visualize ecological networks, and to calculate modularity
 as a replacement to boundary clumping.")
     (license license:gpl2)))
+
+(define-public r-metacoder
+  (package
+    (name "r-metacoder")
+    (version "0.3.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metacoder" version))
+       (sha256
+        (base32 "1qsg9bmzmw8maf7jds3k3n67gvyl3q2b4dgvzrvzbwdal2244pqq"))))
+    (properties `((upstream-name . "metacoder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-taxize
+                             r-stringr
+                             r-seqinr
+                             r-rlang
+                             r-readr
+                             r-rcurl
+                             r-rcpp
+                             r-r6
+                             r-magrittr
+                             r-lazyeval
+                             r-igraph
+                             r-ggplot2
+                             r-ggfittext
+                             r-ga
+                             r-dplyr
+                             r-crayon
+                             r-cowplot
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://grunwaldlab.github.io/metacoder_documentation/")
+    (synopsis
+     "Tools for Parsing, Manipulating, and Graphing Taxonomic Abundance Data")
+    (description
+     "Reads, plots, and manipulates large taxonomic data sets, like those generated
+from modern high-throughput sequencing, such as metabarcoding (i.e.
+amplification metagenomics, 16S metagenomics, etc).  It provides a tree-based
+visualization called \"heat trees\" used to depict statistics for every taxon in a
+taxonomy using color and size.  It also provides various functions to do common
+tasks in microbiome bioinformatics on data in the taxmap format defined by the
+taxa package.  The metacoder package is described in the publication by Foster
+et al. (2017) <doi:10.1371/journal.pcbi.1005404>.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-metacluster
   (package
@@ -51308,13 +51304,13 @@ regions were intervention is most duly needed.")
 (define-public r-maplegend
   (package
     (name "r-maplegend")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maplegend" version))
        (sha256
-        (base32 "0zv78jraww308hg7gf4q834pv88vmci8cqfk1d07bhifvm2fmf6l"))))
+        (base32 "0pms1g4qihdimq9f3rn07hbz90p8ai9xaqi7lb18hv86aylbi4ii"))))
     (properties `((upstream-name . "maplegend")))
     (build-system r-build-system)
     (arguments

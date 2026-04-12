@@ -1286,13 +1286,13 @@ potential for forest restoration as described in Axer et al (2021)
 (define-public r-quasar
   (package
     (name "r-quasar")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quasar" version))
        (sha256
-        (base32 "1847abcp6in7hrj8w19ilm6yx30imyg5i2j3kw8ms6ixk9xa9mc5"))))
+        (base32 "17afjhjraj1q6vk3y6alfj8k32nijnn13ri34n61qds5fvvpqdjw"))))
     (properties `((upstream-name . "quasar")))
     (build-system r-build-system)
     (arguments

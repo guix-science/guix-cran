@@ -10408,13 +10408,13 @@ measure the performance of these designs.  It consist of the function
 (define-public r-equatiomatic
   (package
     (name "r-equatiomatic")
-    (version "0.4.4")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equatiomatic" version))
        (sha256
-        (base32 "0yvq63xp8mrx802a3bdn9zxb4y2r052i3mn220pf9a3vh4hq7sj7"))))
+        (base32 "0jcqdggkfkq9fhr5jn1ygsn4ysc0j2abzi2zg6cgk3mpniil7fij"))))
     (properties `((upstream-name . "equatiomatic")))
     (build-system r-build-system)
     (arguments
@@ -10869,13 +10869,13 @@ polynomials).")
 (define-public r-eq5dsuite
   (package
     (name "r-eq5dsuite")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5dsuite" version))
        (sha256
-        (base32 "0pirqppyn8j76c6y5baxpyijnlsq5yhl8k4f06j9vhas4g8xzmqn"))))
+        (base32 "12m4sf2axgb0jbmvgs7wpra7nidimygc7kz0rbsb4p887draffrf"))))
     (properties `((upstream-name . "eq5dsuite")))
     (build-system r-build-system)
     (arguments
@@ -22586,29 +22586,6 @@ desired keywords, provides sentiment measures, parses filing header information,
 and provides HTML view of SEC filings.")
     (license license:gpl2)))
 
-(define-public r-edfun
-  (package
-    (name "r-edfun")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "edfun" version))
-       (sha256
-        (base32 "1wxx6bgy03z7c1d6556bbjl1cb49n2vn734fw2d5c1jk0zsh3fmz"))))
-    (properties `((upstream-name . "edfun")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=edfun")
-    (synopsis "Creating Empirical Distribution Functions")
-    (description
-     "Easily creating empirical distribution functions from data: dfun', pfun', qfun
-and rfun'.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-edfreader
   (package
     (name "r-edfreader")
@@ -27640,19 +27617,19 @@ once, you won't have to do it ever again.")
 (define-public r-easycomment
   (package
     (name "r-easycomment")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyComment" version))
        (sha256
-        (base32 "1rfx404j207whpa78fwn6wmhvafnlf464kdnbmh9xxnsgn7n8qcb"))))
+        (base32 "14im1jyn2s36kmxx1knkf0y2qa4c7dn48bgl4hxncnjpxmd5ljhy"))))
     (properties `((upstream-name . "easyComment")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=easyComment")
+    (home-page "https://gitlab.com/r-packages3/easycomment")
     (synopsis "Generate Comment Boxes with Custom Alignment")
     (description
      "This package provides a function to generate comment boxes framed with #

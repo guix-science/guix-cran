@@ -3828,13 +3828,13 @@ and individual structures from the covariates respectively.")
 (define-public r-jgsbook
   (package
     (name "r-jgsbook")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jgsbook" version))
        (sha256
-        (base32 "1k0jcfjxn5qf67533br3p6zj464knnakxvr563lvgvqxjv4j8sh2"))))
+        (base32 "13rqxrlk3fw7f7dlacr4ap9smysxqzv344mjs2m622grfbmld6j7"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
     (arguments

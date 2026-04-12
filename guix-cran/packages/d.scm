@@ -461,30 +461,6 @@ recursions into dynamic-programming algorithms.  See
 programming.")
     (license license:gpl3)))
 
-(define-public r-dynpred
-  (package
-    (name "r-dynpred")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynpred" version))
-       (sha256
-        (base32 "111ykasaiznn3431msj4flfhmjvzq7dd1mnzn1wklc5ndix1pvf9"))))
-    (properties `((upstream-name . "dynpred")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (home-page "http://www.msbi.nl/putter")
-    (synopsis
-     "Companion Package to \"Dynamic Prediction in Clinical Survival Analysis\"")
-    (description
-     "The dynpred package contains functions for dynamic prediction in survival
-analysis.")
-    (license license:gpl2+)))
-
 (define-public r-dynparam
   (package
     (name "r-dynparam")
@@ -8946,42 +8922,6 @@ that conventional methods miss because they focus only on currently active
 relationships.")
     (license license:expat)))
 
-(define-public r-doremi
-  (package
-    (name "r-doremi")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "doremi" version))
-       (sha256
-        (base32 "005kp6f4jh8y1ykhri3mjnvc9w66b1a51bji574rkbxd1ans6mal"))))
-    (properties `((upstream-name . "doremi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-lmertest
-                             r-lme4
-                             r-gridextra
-                             r-ggplot2
-                             r-futile-logger
-                             r-desolve
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dcourvoisier/doremi")
-    (synopsis "Dynamics of Return to Equilibrium During Multiple Inputs")
-    (description
-     "This package provides models to fit the dynamics of a regulated system
-experiencing exogenous inputs.  The underlying models use differential equations
-and linear mixed-effects regressions to estimate the coefficients of the
-equation.  With them, the functions can provide an estimated signal.  The
-package provides simulation and analysis functions and also print, summary, plot
-and predict methods, adapted to the function outputs, for easy implementation
-and presentation of results.")
-    (license license:gpl3)))
-
 (define-public r-doredis
   (package
     (name "r-doredis")
@@ -9695,30 +9635,6 @@ comments.  Tools are provided to determine table count/structure, comment count
 and also to extract/clean tables and comments from Microsoft Word docx
 documents.  There is also nascent support for .doc and .pptx files.")
     (license license:expat)))
-
-(define-public r-docusignr
-  (package
-    (name "r-docusignr")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "docuSignr" version))
-       (sha256
-        (base32 "0q90z31svbdnvylfr0yj2f0gahvpi089c1d5llvwqy8qc5p9fbqw"))))
-    (properties `((upstream-name . "docuSignr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-magrittr r-jsonlite r-httr))
-    (home-page "https://github.com/CannaData/docuSignr")
-    (synopsis "Connect to 'DocuSign' API")
-    (description
-     "Connect to the @code{DocuSign} Rest API
-<https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm>, which supports
-embedded signing, and sending of documents.")
-    (license license:gpl3)))
 
 (define-public r-documenter
   (package
@@ -18359,35 +18275,6 @@ successor package ggdiceplot (see <https://github.com/maflot/ggdiceplot> and
 (\"Picheny and Ginsbourger, 2012\") <doi:10.1016/j.csda.2013.03.018>, parallel
 infill, and problems with constraints.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-dicem
-  (package
-    (name "r-dicem")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DICEM" version))
-       (sha256
-        (base32 "099z5ns939az3nkajw179cc02ldagpwyvb9bhbvkvaxz5cpfn3j0"))))
-    (properties `((upstream-name . "DICEM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-vader
-                             r-stringr
-                             r-quanteda
-                             r-politeness
-                             r-matrix
-                             r-doc2concrete))
-    (home-page "https://cran.r-project.org/package=DICEM")
-    (synopsis "Directness and Intensity of Conflict Expression")
-    (description
-     "This package provides a Natural Language Processing Model trained to detect
-directness and intensity during conflict.  See <https://www.mikeyeomans.info>.")
-    (license license:expat)))
 
 (define-public r-diceeval
   (package
@@ -30261,13 +30148,13 @@ versions <= 3.0, use the archived dvn package
 (define-public r-dataverifyr
   (package
     (name "r-dataverifyr")
-    (version "0.1.8")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataverifyr" version))
        (sha256
-        (base32 "1jy8hdzld8yhz632rdk3j592szp7xn3qbs2h3g0gax3p33cpcasj"))))
+        (base32 "026wckkbpdmj9jxlhy0gsc5k47ldlydpzh4cl2b7n5vslqk00wc9"))))
     (properties `((upstream-name . "dataverifyr")))
     (build-system r-build-system)
     (arguments
@@ -31731,44 +31618,6 @@ treat and format data.")
 entering, filtering and editing of data in R
 <https://dillonhammill.github.io/@code{DataEditR/>}.")
     (license license:gpl2)))
-
-(define-public r-datadriftr
-  (package
-    (name "r-datadriftr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "datadriftR" version))
-       (sha256
-        (base32 "028zcs5nm15q1y3yzc93ayk0s5xhcgi01sszhzimh5x188crqfal"))))
-    (properties `((upstream-name . "datadriftR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-fda-usc r-doremi))
-    (home-page "https://github.com/ugurdar/datadriftR")
-    (synopsis "Concept Drift Detection Methods for Stream Data")
-    (description
-     "This package provides a system designed for detecting concept drift in streaming
-datasets.  It offers a comprehensive suite of statistical methods to detect
-concept drift, including methods for monitoring changes in data distributions
-over time.  The package supports several tests, such as Drift Detection Method
-(DDM), Early Drift Detection Method (EDDM), Hoeffding Drift Detection Methods
-(HDDM_A, HDDM_W), Kolmogorov-Smirnov test-based Windowing (KSWIN) and Page
-Hinkley (PH) tests.  The methods implemented in this package are based on
-established research and have been demonstrated to be effective in real-time
-data analysis.  For more details on the methods, please check to the following
-sources.  KobyliÅska et al. (2023) <doi:10.48550/@code{arXiv.2308.11446>}, S.
-Kullback & R.A. Leibler (1951) <doi:10.1214/aoms/1177729694>, Gama et al. (2004)
-<doi:10.1007/978-3-540-28645-5_29>, Baena-Garcia et al. (2006)
-<https://www.researchgate.net/publication/245999704_Early_Drift_Detection_Method>,
-FrÃ­as-Blanco et al. (2014) <https://ieeexplore.ieee.org/document/6871418>, Raab
-et al. (2020) <doi:10.1016/j.neucom.2019.11.111>, Page (1954)
-<doi:10.1093/biomet/41.1-2.100>, Montiel et al. (2018)
-<https://jmlr.org/papers/volume19/18-251/18-251.pdf>.")
-    (license license:gpl2+)))
 
 (define-public r-datadogr
   (package

@@ -5963,36 +5963,6 @@ variables), as well as least-squares regression, quantile regression, and
 survival regression, all with support for missing covariates.")
     (license license:gpl3)))
 
-(define-public r-greyzones
-  (package
-    (name "r-greyzones")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GreyZones" version))
-       (sha256
-        (base32 "1mjnfiqc4zj08n8j899zqxkvxd6ryp6sg1n46isy0ni7ghbng38w"))))
-    (properties `((upstream-name . "GreyZones")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-irrcac))
-    (home-page "https://cran.r-project.org/package=GreyZones")
-    (synopsis
-     "Detection of Grey Zones in Two-Way Inter-Rater Agreement Tables")
-    (description
-     "Grey zones locally occur in an agreement table due to the subjective evaluation
-of raters based on various factors such as not having uniform guidelines, the
-differences between the raters level of expertise or low variability among the
-level of the categorical variable.  It is important to detect grey zones since
-they cause a negative bias in the estimate of the agreement level.  This package
-provides a function for detecting the existence of grey zones in two-way
-inter-rater agreement tables (Demirhan and Yilmaz (2023)
-<doi:10.1186/s12874-022-01759-7>).")
-    (license license:gpl3)))
-
 (define-public r-greymodels
   (package
     (name "r-greymodels")
@@ -11922,13 +11892,13 @@ data applications considered in GarcÃ­a-PortuguÃ©s, Ãlvarez-LiÃ©bana,
 (define-public r-gofedf
   (package
     (name "r-gofedf")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gofedf" version))
        (sha256
-        (base32 "1y5s9qpwykpzgpiqhi661ssd3z1xkhk9z0wp1f82vspsi3llf9gh"))))
+        (base32 "1kxfn1ridj19fsyb2x9nplkms05zzs9lp1grjnd5jb982f8k7yss"))))
     (properties `((upstream-name . "gofedf")))
     (build-system r-build-system)
     (arguments
@@ -16313,13 +16283,13 @@ et al (1997) <doi:10.1080/01621459.1997.10473658>; Clogg and Goodman (1985)
 (define-public r-glasstabs
   (package
     (name "r-glasstabs")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glasstabs" version))
        (sha256
-        (base32 "191w063za13k7m0p3zxfklj5k9sal4l2hjyi23zysmx8i1wc4ykl"))))
+        (base32 "1s7r64jkfx9k0am49d9i64xhrkryrkqzwhld51n7973pg8hgqk2x"))))
     (properties `((upstream-name . "glasstabs")))
     (build-system r-build-system)
     (arguments
@@ -20433,19 +20403,19 @@ extensive.  There are computationally optimized functions to calculate Q.")
 (define-public r-ggrounded
   (package
     (name "r-ggrounded")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrounded" version))
        (sha256
-        (base32 "124khfv4fl3xgylq4s1pc3wzld0n68iclyl0pm19jcw97bmf1cxl"))))
+        (base32 "1fkzzq8jp1gjl5d23xbn3xsv37j1p1jnhcgi79dmwdsai69ph383"))))
     (properties `((upstream-name . "ggrounded")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gridgeometry r-ggplot2))
+    (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/botan/ggrounded")
     (synopsis "Rounded Bar Plots")
     (description
@@ -20692,36 +20662,6 @@ requires the use of the @code{rcs()} function of the rms package.  Can fit cox
 regression, logistic regression.  This method was described by Per Kragh (2003)
 <doi:10.1002/sim.1497>.")
     (license license:gpl3)))
-
-(define-public r-ggrasp
-  (package
-    (name "r-ggrasp")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggrasp" version))
-       (sha256
-        (base32 "0jl4bmhsisqc7nam8r027lr1qp0yr6bvdiyycknp7bkl65cg2x1z"))))
-    (properties `((upstream-name . "ggrasp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mixtools r-ggplot2 r-colorspace r-bgmm r-ape))
-    (home-page "https://cran.r-project.org/package=ggrasp")
-    (synopsis
-     "Gaussian-Based Genome Representative Selector with Prioritization")
-    (description
-     "Given a group of genomes and their relationship with each other, the package
-clusters the genomes and selects the most representative members of each
-cluster.  Additional data can be provided to the prioritize certain genomes.
-The results can be printed out as a list or a new phylogeny with graphs of the
-trees and distance distributions also available.  For detailed introduction see:
-Thomas H Clarke, Lauren M Brinkac, Granger Sutton, and Derrick E Fouts (2018),
-GG@code{RaSP}: a R-package for selecting representative genomes using Gaussian
-mixture models, Bioinformatics, bty300, <doi:10.1093/bioinformatics/bty300>.")
-    (license license:gpl2)))
 
 (define-public r-ggraptr
   (package
@@ -29052,20 +28992,20 @@ Y (Wang et al 2014 <doi:10.1080/13658810802443457>, Wang, Zhang, and Fu 2016
 (define-public r-geodata
   (package
     (name "r-geodata")
-    (version "0.6-6")
+    (version "0.6-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodata" version))
        (sha256
-        (base32 "14dgh8nc1ywiskga71139fgs2z2jwhfbssq1zd8kw78z3qbqdrbs"))))
+        (base32 "0qjkchq32rzg0pkxzw7ch6sz3cg1sp901m7idsd1zldzm44pk6j3"))))
     (properties `((upstream-name . "geodata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-terra r-rappdirs))
-    (home-page "https://cran.r-project.org/package=geodata")
+    (home-page "https://rspatial.github.io/geodata/")
     (synopsis "Access Geographic Data")
     (description
      "This package provides functions for downloading of geographic data for use in
@@ -29895,41 +29835,6 @@ estimates themselves.  2D and 3D plotting methods are provided, both in the
 space of the predictor variables and in the transformed space of the PCA/SVD of
 the predictors.")
     (license license:gpl2+)))
-
-(define-public r-genpwr
-  (package
-    (name "r-genpwr")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "genpwr" version))
-       (sha256
-        (base32 "0cys4zmfq07g99xywqampvmn8g0a6bjjj368d62q5xki2mi9z649"))))
-    (properties `((upstream-name . "genpwr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nleqslv r-mass r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=genpwr")
-    (synopsis "Power Calculations Under Genetic Model Misspecification")
-    (description
-     "Power and sample size calculations for genetic association studies allowing for
-misspecification of the model of genetic susceptibility. \"Hum Hered.
-2019;84(6):256-271.<doi:10.1159/000508558>.  Epub 2020 Jul 28.\" Power and/or
-sample size can be calculated for logistic (case/control study design) and
-linear (continuous phenotype) regression models, using additive, dominant,
-recessive or degree of freedom coding of the genetic covariate while assuming a
-true dominant, recessive or additive genetic effect.  In addition, power and
-sample size calculations can be performed for gene by environment interactions.
-These methods are extensions of Gauderman (2002) <doi:10.1093/aje/155.5.478> and
-Gauderman (2002) <doi:10.1002/sim.973> and are described in: Moore CM, Jacobson
-S, Fingerlin TE. Power and Sample Size Calculations for Genetic Association
-Studies in the Presence of Genetic Model Misspecification.  American Society of
-Human Genetics.  October 2018, San Diego.")
-    (license license:gpl3)))
 
 (define-public r-genpathmox
   (package
@@ -33195,13 +33100,13 @@ modeling, as discussed in the forthcoming work of Dimitrova et al. (2025).")
 (define-public r-gecko
   (package
     (name "r-gecko")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gecko" version))
        (sha256
-        (base32 "0p9ywa5dr16lkxdkvzfj98ihwapnn7x4f8izkga9hmcb4yvw393s"))))
+        (base32 "1c5s73wk2h98d5hmwqjmf9p6zblm4jlakbgrcin16kjpbahn82cd"))))
     (properties `((upstream-name . "gecko")))
     (build-system r-build-system)
     (arguments

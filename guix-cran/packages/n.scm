@@ -201,19 +201,25 @@ support optional filtering, sorting, and row limits via the Socrata API.")
 (define-public r-nycopendata
   (package
     (name "r-nycopendata")
-    (version "0.1.6")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nycOpenData" version))
        (sha256
-        (base32 "0bjvqpkkgc3j5hqprkj0qq9fq671qdi6jz7k9lqrjb0zzmfqz53n"))))
+        (base32 "14bw61dik9g0v2ns4rbri61ip0fljlk53yh68k5y83c7l030rqw8"))))
     (properties `((upstream-name . "nycOpenData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-jsonlite r-httr r-curl))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://martinezc1.github.io/nycOpenData/")
     (synopsis "Convenient Access to NYC Open Data API Endpoints")
@@ -4396,13 +4402,13 @@ use at the Department of Forensic Sciences, Oslo, Norway.")
 (define-public r-normref
   (package
     (name "r-normref")
-    (version "0.0.0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normref" version))
        (sha256
-        (base32 "0mljc68xpmmdrr1qkgjg9rir9094n5wji6xw7dys1yiz1awyjb5y"))))
+        (base32 "11mln191jkgx8r9hsxsb75hnr1f1q2svsr7a8j31hl8a7dqp3l65"))))
     (properties `((upstream-name . "normref")))
     (build-system r-build-system)
     (arguments
@@ -4412,6 +4418,7 @@ use at the Department of Forensic Sciences, Oslo, Norway.")
                              r-rlang
                              r-rdpack
                              r-openxlsx2
+                             r-lpsolve
                              r-ggplot2
                              r-gamlss-dist
                              r-gamlss))
@@ -4419,13 +4426,15 @@ use at the Department of Forensic Sciences, Oslo, Norway.")
     (home-page "https://cran.r-project.org/package=normref")
     (synopsis "Continuous Norming")
     (description
-     "This package provides a toolbox for calculating continuous norms for
-psychological tests, where the norms can be age-dependent.  The norms are based
-Generalized Additive Models for Location, Scale, and Shape (GAMLSS) for the test
-scores in the normative sample.  The package includes functions for model
-selection, reliability estimation, and calculating norms, including confidence
-intervals.  For more details, see Timmerman et al. (2021)
-<doi:10.1037/met0000348>.")
+     "This package provides a toolbox for continuous norming of psychological and
+educational tests, supporting regression-based norming where norms can vary as a
+continuous function of age or another norm predictor.  Norms are estimated using
+Generalized Additive Models for Location, Scale, and Shape (GAMLSS), enabling
+flexible modelling of the full score distribution in a normative sample.  The
+package supports applications in psychometrics and psychological testing, and
+includes functions for model selection, reliability estimation, norm
+calculation, including confidence intervals, and sample size planning.  For more
+details, see Timmerman et al. (2021) <doi:10.1037/met0000348>.")
     (license license:gpl3+)))
 
 (define-public r-normpsy
@@ -6540,13 +6549,13 @@ and de Jong (1997)
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.6.5")
+    (version "12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "133q1ivgjnp1isw313i0x3ka9l68r2vsg4cwb9y89xlsipm98fz5"))))
+        (base32 "19aahr5wmllzkylq71cxa79w3s4prjz7a36dxqr7rlmv6vdkm57k"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -6563,19 +6572,21 @@ and de Jong (1997)
                              r-doparallel
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=NNS")
+    (home-page "https://github.com/OVVO-Financial/NNS")
     (synopsis "Nonlinear Nonparametric Statistics")
     (description
      "NNS (Nonlinear Nonparametric Statistics) leverages partial moments â the
 fundamental elements of variance that asymptotically approximate the area under
 f(x) â to provide a robust foundation for nonlinear analysis while maintaining
-linear equivalences.  NNS delivers a comprehensive suite of advanced statistical
-techniques, including: Numerical integration, Numerical differentiation,
-Clustering, Correlation, Dependence, Causal analysis, ANOVA, Regression,
-Classification, Seasonality, Autoregressive modeling, Normalization, Stochastic
-dominance and Advanced Monte Carlo sampling.  All routines based on: Viole, F.
-and Nawrocki, D. (2013), Nonlinear Nonparametric Statistics: Using Partial
-Moments (ISBN: 1490523995).")
+linear equivalences.  Designed for real-world data that violates symmetry,
+linearity, or distributional assumptions, NNS delivers a comprehensive suite of
+advanced statistical techniques, including: Numerical integration, Numerical
+differentiation, Clustering, Correlation, Dependence, Causal analysis, ANOVA,
+Regression, Classification, Seasonality, Autoregressive modeling, Normalization,
+Stochastic superiority / dominance and Advanced Monte Carlo sampling.  All
+routines based on: Viole, F. and Nawrocki, D. (2013), Nonlinear Nonparametric
+Statistics: Using Partial Moments (ISBN: 1490523995, Second edition:
+<https://ovvo-financial.github.io/NNS/book/>).")
     (license license:gpl3)))
 
 (define-public r-nnr
@@ -13925,13 +13936,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "3.3-1")
+    (version "3.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "1qd19j2cs51izy5achcs8p7na4rfcnxapl2djih9m71pnaspwsvr"))))
+        (base32 "1y9mbmlp3rapyhamhzd80babw9pbfrsap0k203s95irbvnsfqkl0"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -14312,6 +14323,47 @@ exportation.")
 network meta-analysis model with dose-response relationships, predicted values
 of the fitted model and dose-response plots in a frequentist way.")
     (license license:gpl2+)))
+
+(define-public r-netdiffuser
+  (package
+    (name "r-netdiffuser")
+    (version "1.25.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netdiffuseR" version))
+       (sha256
+        (base32 "18mmpc46bhm8q59sf37ghswjwp0wy5ncqsla007k057f6dpwklh8"))))
+    (properties `((upstream-name . "netdiffuseR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-sparsem
+                             r-sna
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-networkdynamic
+                             r-network
+                             r-matrix
+                             r-matchit
+                             r-mass
+                             r-igraph
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/USCCANA/netdiffuseR")
+    (synopsis "Analysis of Diffusion and Contagion Processes on Networks")
+    (description
+     "Empirical statistical analysis, visualization and simulation of diffusion and
+contagion processes on networks.  The package implements algorithms for
+calculating network diffusion statistics such as transmission rate, hazard
+rates, exposure models, network threshold levels, infectiousness (contagion),
+and susceptibility.  The package is inspired by work published in Valente, et
+al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
+9781881303213>, Myers (2000) <DOI:10.1086/303110>, Iyengar and others (2011)
+<DOI:10.1287/mksc.1100.0566>, Burt (1987) <DOI:10.1086/228667>; among others.")
+    (license license:expat)))
 
 (define-public r-netda
   (package
@@ -16318,6 +16370,32 @@ Ethnography.  ISBN: 0578191687) is designed specifically for working with big
 data: large document collections, logfiles, and other text data.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-ncmr
+  (package
+    (name "r-ncmr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncmR" version))
+       (sha256
+        (base32 "04x0wmhxd052kz0jkbvwl8gpy0fv1hcmypyamrypbsbv3jg6hl38"))))
+    (properties `((upstream-name . "ncmR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minpack-lm r-hmisc r-dplyr))
+    (home-page "https://github.com/h-xuanjiu/ncmR")
+    (synopsis "Fit Neutral Community Model to Microbiome or Ecological Data")
+    (description
+     "This package provides tools for fitting the neutral community model (NCM) to
+assess the role of stochastic processes in community assembly.  The package
+implements the framework of Sloan et al. (2006)
+<doi:10.1111/j.1462-2920.2005.00956.x>, enabling users to evaluate neutral
+dynamics in ecological and microbial communities.")
+    (license license:gpl3+)))
 
 (define-public r-ncf
   (package

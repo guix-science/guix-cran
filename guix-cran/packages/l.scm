@@ -11837,19 +11837,19 @@ allowing flexible exploration of geospatial phenomena.")
 (define-public r-lightr
   (package
     (name "r-lightr")
-    (version "1.9.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lightr" version))
        (sha256
-        (base32 "0g49l7cqg485svwfc07i87626mcdv13g99mvmlkgl2fhsm69dibr"))))
+        (base32 "04g8hvhig604iqllf796g8p08s4r0j0g9izx107z77wz3pva55gm"))))
     (properties `((upstream-name . "lightr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-progressr r-future-apply))
+    (propagated-inputs (list r-xml2 r-progressr r-lifecycle r-future-apply))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/lightr/")
     (synopsis "Read Spectrometric Data and Metadata")
@@ -16581,13 +16581,13 @@ results based on constrained optimization.")
 (define-public r-lcpa
   (package
     (name "r-lcpa")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LCPA" version))
        (sha256
-        (base32 "1lrl5j64zk2w5mv1sshnyfand4ry9v2n71xzwanrzs4l6f19z17k"))))
+        (base32 "0wc3ajcgx0894i1ji1kxjrkkd65hzxk7fyqq7si4ny9x56wcc9jn"))))
     (properties `((upstream-name . "LCPA")))
     (build-system r-build-system)
     (arguments
@@ -16595,9 +16595,12 @@ results based on constrained optimization.")
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-scales
                              r-reticulate
+                             r-reshape2
                              r-rcpparmadillo
                              r-rcpp
+                             r-patchwork
                              r-numderiv
                              r-nloptr
                              r-mvtnorm
@@ -20525,13 +20528,13 @@ optimization process.")
 (define-public r-labrs
   (package
     (name "r-labrs")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LabRS" version))
        (sha256
-        (base32 "19chy54jaicyd6w1cxgj6xl2gs97565znnmzkbpgwd8cz064a0ls"))))
+        (base32 "128ljmhgj7dmpkz0dbrywz5bka63d0sfqbyq8rs3vg3y82ws6b6f"))))
     (properties `((upstream-name . "LabRS")))
     (build-system r-build-system)
     (arguments
