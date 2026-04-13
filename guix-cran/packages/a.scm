@@ -5818,13 +5818,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.55")
+    (version "4.4.58")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "0z8nvds9p33dv6kmy9is95wsaq6yg971a6vrmhpmxapi7yb9mb23"))))
+        (base32 "0b3bdbf2mzgil6mv7icckphc8abjwfdy5frd145dcahbicf9293b"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (arguments
@@ -9128,13 +9128,13 @@ which can be then easily used for further analysis.")
 (define-public r-archive
   (package
     (name "r-archive")
-    (version "1.1.12.1")
+    (version "1.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archive" version))
        (sha256
-        (base32 "11gsmybnjpwlpgwqwfr62w1kg93yqvmdb11qwx4mblj7vxhmz6bl"))))
+        (base32 "0i9a8vr2bml7wwbv4a23j8vprqab1bbrjg8v5dbq5hcyg8v64hsl"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
     (arguments
@@ -19718,13 +19718,13 @@ own key for the @code{OpenAI} API
 (define-public r-aipw
   (package
     (name "r-aipw")
-    (version "0.6.9.2")
+    (version "0.6.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIPW" version))
        (sha256
-        (base32 "01nggnpdlzzwd9vcfgivn5qdsr2s7810b7zqzwpg10j10bj9qfi1"))))
+        (base32 "1s65nagi3g3d62hsws628l4v2nk4binwqr7mpvhpixv3gc3lszvx"))))
     (properties `((upstream-name . "AIPW")))
     (build-system r-build-system)
     (arguments

@@ -6524,26 +6524,25 @@ chi-square tests.")
 (define-public r-nnsolve
   (package
     (name "r-nnsolve")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnsolve" version))
        (sha256
-        (base32 "1hk9i7w6hbl7mcwmf2cbf4bgdqkkxxw6nnna023i5pykzw3k8299"))))
+        (base32 "1amb66y8k7jh001l0r3kac4l90k2z3saw2886gh10vi0dnrj5p0f"))))
     (properties `((upstream-name . "nnsolve")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (propagated-inputs (list r-rfast r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=nnsolve")
     (synopsis "Fast Non-Negative Least Squares")
     (description
      "This package provides a fast algorithm for solving non-negative least squares
-problems.  It implements the Fast Non-Negative Least Squares algorithm of Bro
-and de Jong (1997)
-<doi:10.1002/(SICI)1099-128X(199709/10)11:5%3C393::AID-CEM483%3E3.0.CO;2-L>.")
+problems.  It implements the Fast Non-Negative Least Squares algorithm.  of Bro
+and De Jong (1997)<doi:10.1002/(SICI)1099-128X(199709/10)11:53.0.CO;2-L>.")
     (license license:gpl2+)))
 
 (define-public r-nns
@@ -6679,13 +6678,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnmf
   (package
     (name "r-nnmf")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnmf" version))
        (sha256
-        (base32 "1aqp0vk79akgf9ls5s78szkmpxfmww4drxcndi4gg0xq8rp38f48"))))
+        (base32 "1q002q6p077lb17kw7ww5vavmsg0ph0i8n4725aas4qqh3ijvf5r"))))
     (properties `((upstream-name . "nnmf")))
     (build-system r-build-system)
     (arguments
@@ -6693,10 +6692,10 @@ version can only impute for a situation with one missing covariate.")
       #:tests? #f))
     (propagated-inputs (list r-sparcl
                              r-rglpk
-                             r-rfast2
                              r-rfast
                              r-rcppeigen
                              r-rcpp
+                             r-rangen
                              r-quadprog
                              r-osqp
                              r-matrix

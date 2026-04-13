@@ -6085,13 +6085,13 @@ cases and controls can be calculated and plotted.")
 (define-public r-westerlund
   (package
     (name "r-westerlund")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Westerlund" version))
        (sha256
-        (base32 "0z4q4yg3y5z76gh0jl2b976ilhfcsbx93ilx0kk0n7x7s423h4ak"))))
+        (base32 "1lmjws3li49fjdkij6icgqnnh217ymwg81zajgwjhzrpff1c8i88"))))
     (properties `((upstream-name . "Westerlund")))
     (build-system r-build-system)
     (arguments

@@ -6811,28 +6811,43 @@ package can be found at
 (define-public r-surrogateparadoxtest
   (package
     (name "r-surrogateparadoxtest")
-    (version "2.0")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateParadoxTest" version))
        (sha256
-        (base32 "13wpbv31rkxyxv5mhfa2jq172z45qaxc90w5nmxqf9q6db9qhvk7"))))
+        (base32 "0v9c9yfyn7y0scxahrg3jg0find13k1h3xzjvdz8lnr8mvwzjalx"))))
     (properties `((upstream-name . "SurrogateParadoxTest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-monotonicitytest))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-monotonicitytest
+                             r-matrix
+                             r-mass
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=SurrogateParadoxTest")
     (synopsis "Empirical Testing of Surrogate Paradox Assumptions")
     (description
      "This package provides functions to nonparametrically assess assumptions
-necessary to prevent the surrogate paradox through hypothesis tests of
-stochastic dominance, monotonicity of regression functions, and non-negative
-residual treatment effects.  More details are available in Hsiao et al 2025
-(under review).  A tutorial for this package can be found at
-<https://laylaparast.com/home/@code{SurrogateParadoxTest.html>}.")
+sufficient to prevent the surrogate paradox through hypothesis tests of
+stochastic dominance, monotonicity of conditional mean functions, and
+non-negative residual treatment effect.  Details are described in: Hsiao E, Tian
+L, and Parast L (2026). \"Avoiding the surrogate paradox: an empirical framework
+for assessing assumptions.\" Journal of Nonparametric Statistics
+<doi:10.1080/10485252.2025.2498609>.  There are also functions to assess
+resilience to the surrogate paradox via calculation of the resilience
+probability, the resilience bound, and the resilience set.  Details will be
+available in Hsiao E, Tian L, and Parast L, \"Resilience Measures for the
+Surrogate Paradox\" (Under Review).  Lastly, there is a function to assess
+resilience to the surrogate paradox in the met-analytic setting, described in
+Hsiao E and Parast L, \"A Functional-Class Meta-Analytic Framework for
+Quantifying Surrogate Resilience\" (Under Review).  A tutorial for this package
+can be found at <https://www.laylaparast.com/surrogateparadoxtest>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-surrogateoutcome
@@ -56279,6 +56294,33 @@ filter lengths are implemented in the direct space, while longer filters are
 implemented in frequency space, using a Fast Fourier Transform (FFT).")
     (license license:gpl2+)))
 
+(define-public r-sgof
+  (package
+    (name "r-sgof")
+    (version "2.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgof" version))
+       (sha256
+        (base32 "028gas18jrfg6ww5r0p32am7x0rjk0a9bcb84pdg9k091dz4b120"))))
+    (properties `((upstream-name . "sgof")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-poibin))
+    (home-page "https://cran.r-project.org/package=sgof")
+    (synopsis "Multiple Hypothesis Testing")
+    (description
+     "Seven different methods for multiple testing problems.  The S@code{GoF-type}
+methods (see for example, Carvajal RodrÃ­guez et al., 2009
+<doi:10.1186/1471-2105-10-209>; de UÃ±a Ãlvarez, 2012
+<doi:10.1515/1544-6115.1812>; Castro Conde et al., 2015
+<doi:10.1177/0962280215597580>) and the BH and BY false discovery rate
+controlling procedures.")
+    (license license:gpl2)))
+
 (define-public r-sgo
   (package
     (name "r-sgo")
@@ -75267,13 +75309,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.69")
+    (version "0.3.77")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salso" version))
        (sha256
-        (base32 "1ci6imjkzk3dz7y7bxjk0zh7k8llc7lx39qlg0i3f2d7030gi0ql"))))
+        (base32 "1b860q9k8lcwqd88dmmdlzscvn99j0m52xca9g6920aswb0kksc7"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (arguments

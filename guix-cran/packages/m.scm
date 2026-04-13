@@ -3669,36 +3669,6 @@ covariates on the response style, as proposed by Schauberger and Tutz 2021
 multivariate cumulative model and the multivariate adjacent categories model.")
     (license license:gpl2+)))
 
-(define-public r-multnonparam
-  (package
-    (name "r-multnonparam")
-    (version "1.3.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MultNonParam" version))
-       (sha256
-        (base32 "0p66pqairn0k3ciz31ykb2kk0mr4jyzvarkf1knlh3dkvagh7pvj"))))
-    (properties `((upstream-name . "MultNonParam")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-icsnp))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=MultNonParam")
-    (synopsis "Multivariate Nonparametric Methods")
-    (description
-     "This package provides a collection of multivariate nonparametric methods,
-selected in part to support an MS level course in nonparametric statistical
-methods.  Methods include adjustments for multiple comparisons, implementation
-of multivariate Mann-Whitney-Wilcoxon testing, inversion of these tests to
-produce a confidence region, some permutation tests for linear models, and some
-algorithms for calculating exact probabilities associated with one- and two-
-stage testing involving Mann-Whitney-Wilcoxon statistics.  Supported by grant
-NSF DMS 1712839.  See Kolassa and Seifu (2013) <doi:10.1016/j.acra.2013.03.006>.")
-    (license license:gpl2)))
-
 (define-public r-multiwayvcov
   (package
     (name "r-multiwayvcov")
@@ -21308,13 +21278,13 @@ characters separated by characters as if it were a simple R(cpp) matrix.")
 (define-public r-mmand
   (package
     (name "r-mmand")
-    (version "1.6.3")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmand" version))
        (sha256
-        (base32 "18bl3s0x0rm3yg7zjamhl6rn2bknxg75ilqgi28ikzbrp2k5sdzw"))))
+        (base32 "12llyyjv1bvkxlwajyvy721v47vc3vfilcr0ngr0i9v4cdb4d37l"))))
     (properties `((upstream-name . "mmand")))
     (build-system r-build-system)
     (arguments
@@ -33790,13 +33760,13 @@ functional principal component analysis for data observed on different
 (define-public r-mfrmr
   (package
     (name "r-mfrmr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfrmr" version))
        (sha256
-        (base32 "18fllyqzhpwca319d5l8mfdsaiavi9kngqyg7pzsfw16adypp27g"))))
+        (base32 "070blz30n2b6iqf2a9p18xfgnlxa1v1nad7q5757zd4fwgy70j80"))))
     (properties `((upstream-name . "mfrmr")))
     (build-system r-build-system)
     (arguments
@@ -33809,7 +33779,8 @@ functional principal component analysis for data observed on different
                              r-purrr
                              r-psych
                              r-lifecycle
-                             r-dplyr))
+                             r-dplyr
+                             r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://ryuya-dot-com.github.io/R_package_mfrmr/")
     (synopsis "Estimation and Diagnostics for Many-Facet Measurement Models")
@@ -33818,10 +33789,10 @@ functional principal component analysis for data observed on different
 and reproducible analysis bundles using a native R implementation.  Supports
 arbitrary facet counts, rating-scale and partial-credit parameterizations
 ('Andrich (1978) <doi:10.1007/BF02293814>; Masters (1982)
-<doi:10.1007/BF02296272>), marginal maximum likelihood estimation via the EM
-algorithm ('Bock and Aitkin (1981) <doi:10.1007/BF02293801>) and joint maximum
-likelihood estimation, plus tools for anchor review, interaction screening,
-linking workflows, and publication-ready summaries.")
+<doi:10.1007/BF02296272>), marginal maximum likelihood estimation with
+Gauss-Hermite quadrature and direct optimization of the marginal log-likelihood,
+joint maximum likelihood estimation, plus tools for anchor review, interaction
+screening, linking workflows, and publication-oriented summaries.")
     (license license:expat)))
 
 (define-public r-mfpp

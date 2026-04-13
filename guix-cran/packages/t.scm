@@ -2593,26 +2593,28 @@ out Tucker Models.")
 (define-public r-tubern
   (package
     (name "r-tubern")
-    (version "0.2.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tubern" version))
        (sha256
-        (base32 "1d52zlaxy2yrl2b94k1sizn31pw8bp48cn8ryhgk7169ndcw53lp"))))
+        (base32 "10m2vkp5hpxa3samay51ddf6wf9w94gkq8rwxwzxxp1sdvp85p2b"))))
     (properties `((upstream-name . "tubern")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
+    (propagated-inputs (list r-rlang r-jsonlite r-httr r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gojiplus/tubern")
     (synopsis "R Client for the YouTube Analytics and Reporting API")
     (description
-     "Get statistics and reports from @code{YouTube}.  To learn more about the
-@code{YouTube} Analytics and Reporting API, see
-<https://developers.google.com/youtube/reporting/>.")
+     "This package provides access to @code{YouTube} Analytics API v2 for retrieving
+@code{YouTube} Analytics data including views, engagement metrics, demographics,
+and revenue data.  Supports OAuth 2.0 authentication and channel group
+management.  See <https://developers.google.com/youtube/analytics/> for API
+documentation.")
     (license license:expat)))
 
 (define-public r-tuber
@@ -12183,40 +12185,6 @@ detailed description can be found in C. Lee, L. Li, H. Zhang, and M. Wang
 sign series for trace regression (ASSIST) algorithm.")
     (license license:gpl2+)))
 
-(define-public r-trace
-  (package
-    (name "r-trace")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trace" version))
-       (sha256
-        (base32 "1maa8zm91p7kq0z89p2q73rbqsmam9pn0d8p0mizr84miyck952n"))))
-    (properties `((upstream-name . "trace")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-shiny
-                             r-seqinr
-                             r-pracma
-                             r-plotly
-                             r-mgcv
-                             r-lme4))
-    (native-inputs (list r-knitr))
-    (home-page "https://zachariahmclean.github.io/trace/")
-    (synopsis "Tandem Repeat Analysis by Capillary Electrophoresis")
-    (description
-     "This package provides a pipeline for short tandem repeat instability analysis
-from fragment analysis data.  Inputs of fsa files or peak tables, and a user
-supplied metadata data-frame.  The package identifies ladders, calls peaks,
-identifies the modal peaks, calls repeats, then calculates repeat instability
-metrics (e.g. expansion index from Lee et al. (2010)
-<doi:10.1186/1752-0509-4-29>).")
-    (license license:expat)))
-
 (define-public r-tr8
   (package
     (name "r-tr8")
@@ -13811,21 +13779,24 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topr" version))
        (sha256
-        (base32 "1hqljylwja01jn8zhkrkcyy4pza7pvmfibgzjvy9q3lbprf278zr"))))
+        (base32 "1pzsrpqgdyi7n3rpxmax180yxv64prippmaziwy8m6sa05dbkcdi"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-scales
+                             r-rlang
+                             r-purrr
                              r-magrittr
                              r-gridextra
                              r-ggrepel
@@ -19295,13 +19266,13 @@ convenience plot builders for quick publication-quality charts.")
 (define-public r-tidytuesdayr
   (package
     (name "r-tidytuesdayr")
-    (version "1.2.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytuesdayR" version))
        (sha256
-        (base32 "12y6sgwdwxi47gs94sa1zf49ci03wf0gqcy2jk5riyfybvwpgi3b"))))
+        (base32 "1q8ca4fw5sadw39b61zjvlzgxg1g0v1701wb4d2w6g5wmyxjz50p"))))
     (properties `((upstream-name . "tidytuesdayR")))
     (build-system r-build-system)
     (arguments
@@ -19309,6 +19280,7 @@ convenience plot builders for quick publication-quality charts.")
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
+                             r-stbl
                              r-rvest
                              r-rlang
                              r-readr
@@ -26299,41 +26271,6 @@ output is highly customizable.  New model types can be easily implemented.
 Details can be found in Leifeld (2013), J@code{StatSoft}
 <doi:10.18637/jss.v055.i08>.).")
     (license license:gpl3)))
-
-(define-public r-texpreview
-  (package
-    (name "r-texpreview")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "texPreview" version))
-       (sha256
-        (base32 "0qkl91638qw2gjk05h07bfly87yk283cg4wlq531i1wi5dc41r92"))))
-    (properties `((upstream-name . "texPreview")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-whisker
-                             r-tinytex
-                             r-svgpanzoom
-                             r-rstudioapi
-                             r-rematch2
-                             r-magick
-                             r-knitr
-                             r-htmltools
-                             r-fs
-                             r-details
-                             r-base64enc))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yonicd/texPreview")
-    (synopsis "Compile and Preview Snippets of 'LaTeX'")
-    (description
-     "Compile snippets of @code{LaTeX} directly into images from the R console to view
-in the RStudio viewer pane, Shiny apps and RMarkdown documents.")
-    (license license:expat)))
 
 (define-public r-texposition
   (package

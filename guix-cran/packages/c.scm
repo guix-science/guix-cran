@@ -27613,13 +27613,13 @@ and continuous outcomes.")
 (define-public r-coda-plot
   (package
     (name "r-coda-plot")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.plot" version))
        (sha256
-        (base32 "18fr7gj4z4v5zjp38lyvcvawysbyplrwrfdzvxvyhzvzr9pilbjj"))))
+        (base32 "0v860g5fa3xk2776lg9rb4qcscq9jwylixp8sgdawqx292nw20is"))))
     (properties `((upstream-name . "coda.plot")))
     (build-system r-build-system)
     (arguments

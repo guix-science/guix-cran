@@ -3510,13 +3510,13 @@ Paasiniemi and Vehtari (2020) <doi:10.1214/20-EJS1711>).")
 (define-public r-hsrecombi
   (package
     (name "r-hsrecombi")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hsrecombi" version))
        (sha256
-        (base32 "0aqlhxms9p0qg7l1iiikxv0dv9rkbhqwpwzcq64sigdvzwii17sq"))))
+        (base32 "0rf786z7n58n21nabbarf6drqv6q8p5jya3ynq2csykrmd48hdgc"))))
     (properties `((upstream-name . "hsrecombi")))
     (build-system r-build-system)
     (arguments
@@ -3531,7 +3531,6 @@ Paasiniemi and Vehtari (2020) <doi:10.1214/20-EJS1711>).")
                              r-dplyr
                              r-data-table
                              r-curl))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hsrecombi")
     (synopsis "Estimation of Recombination Rate and Maternal LD in Half-Sibs")
     (description
@@ -3544,13 +3543,12 @@ estimation, at least one sire has to be double heterozygous at the investigated
 pairs of SNPs.  Based on recombination rates, genetic distances between markers
 can be estimated.  Markers with unusually large recombination rate to markers in
 close proximity (i.e.  putatively misplaced markers) shall be discarded in this
-derivation.  A workflow description is attached as vignette. *A pipeline is
-available at @code{GitHub}* <https://github.com/wittenburg/hsrecombi> Hampel,
-Teuscher, Gomez-Raya, Doschoris, Wittenburg (2018) \"Estimation of recombination
-rate and maternal linkage disequilibrium in half-sibs\"
-<doi:10.3389/fgene.2018.00186>.  Gomez-Raya (2012) \"Maximum likelihood
-estimation of linkage disequilibrium in half-sib families\"
-<doi:10.1534/genetics.111.137521>.")
+derivation. *A pipeline is available at @code{GitHub}*
+<https://github.com/wittenburg/hsrecombi> Hampel, Teuscher, Gomez-Raya,
+Doschoris, Wittenburg (2018) \"Estimation of recombination rate and maternal
+linkage disequilibrium in half-sibs\" <doi:10.3389/fgene.2018.00186>.  Gomez-Raya
+(2012) \"Maximum likelihood estimation of linkage disequilibrium in half-sib
+families\" <doi:10.1534/genetics.111.137521>.")
     (license license:gpl2+)))
 
 (define-public r-hspor
@@ -5151,13 +5149,13 @@ data for themselves.")
 (define-public r-honestdid
   (package
     (name "r-honestdid")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HonestDiD" version))
        (sha256
-        (base32 "12bcc1gd1xyvb1k4z29cn9j45jr1bpndzkmm7k631clz3y2dk5i0"))))
+        (base32 "1zh8yizjhc8c54qbdnakjj09hmnn9pl3cad06x3c31x4c6a5dzq5"))))
     (properties `((upstream-name . "HonestDiD")))
     (build-system r-build-system)
     (arguments
@@ -5176,6 +5174,7 @@ data for themselves.")
                              r-latex2exp
                              r-ggplot2
                              r-foreach
+                             r-ecosolver
                              r-dplyr
                              r-cvxr))
     (home-page "https://cran.r-project.org/package=HonestDiD")

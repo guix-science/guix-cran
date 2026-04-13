@@ -6112,30 +6112,6 @@ Ozdemir Y.A., Ebegil M., & Gokpinar F. (2017),
 <doi:10.1080/03610918.2016.1263736>.")
     (license license:gpl2)))
 
-(define-public r-rssop
-  (package
-    (name "r-rssop")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSSOP" version))
-       (sha256
-        (base32 "119xrxpaf68qdb2kj2pbaja6im2nbxsgibb1bnlpnc3fcxkmqcsf"))))
-    (properties `((upstream-name . "RSSOP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=RSSOP")
-    (synopsis
-     "Simulation of Supply Reservoir Systems using Standard Operation Policy")
-    (description
-     "Reservoir Systems Standard Operation Policy.  A system for simulation of supply
-reservoirs.  It proposes functionalities for plotting and evaluation of supply
-reservoirs systems.")
-    (license license:gpl2)))
-
 (define-public r-rssl
   (package
     (name "r-rssl")

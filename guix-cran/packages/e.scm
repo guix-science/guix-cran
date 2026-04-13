@@ -13002,13 +13002,13 @@ RECON (<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
 (define-public r-epifitter
   (package
     (name "r-epifitter")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epifitter" version))
        (sha256
-        (base32 "104hl3b3951psi023hv95486ygcv9ilmqkzw96yygym7rhkaww9m"))))
+        (base32 "18nw0jxa3d34lj369j63zdh2rc7vvj9702f6y1yf29vkvv94csnl"))))
     (properties `((upstream-name . "epifitter")))
     (build-system r-build-system)
     (arguments
@@ -13018,23 +13018,23 @@ RECON (<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
                              r-tibble
                              r-minpack-lm
                              r-magrittr
-                             r-knitr
                              r-ggplot2
                              r-dplyr
                              r-desolve
-                             r-desctools))
+                             r-desctools
+                             r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AlvesKS/epifitter")
     (synopsis "Analysis and Simulation of Plant Disease Progress Curves")
     (description
-     "Analysis and visualization of plant disease progress curve data.  Functions for
-fitting two-parameter population dynamics models (exponential, monomolecular,
-logistic and Gompertz) to proportion data for single or multiple epidemics using
-either linear or no-linear regression.  Statistical and visual outputs are
-provided to aid in model selection.  Synthetic curves can be simulated for any
-of the models given the parameters.  See Laurence V. Madden, Gareth Hughes, and
-Frank van den Bosch (2007) <doi:10.1094/9780890545058> for further information
-on the methods.")
+     "This package provides tools for analysis, visualization, and simulation of plant
+disease progress curves.  Includes functions to calculate area-under-the-curve
+summaries, fit and compare exponential, monomolecular, logistic, and Gompertz
+models using linear or nonlinear regression, work with single or multiple
+epidemics, and produce ggplot2'-based visualizations.  Also includes an
+experimental powdery mildew dataset for reproducible teaching and research
+workflows.  See Madden, Hughes, and van den Bosch (2007)
+<doi:10.1094/9780890545058> for background on the epidemiological methods.")
     (license license:expat)))
 
 (define-public r-epiestim
@@ -15116,13 +15116,13 @@ big for CRAN, can be found here on the package's Github Pages website:
 (define-public r-enhancer
   (package
     (name "r-enhancer")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enhancer" version))
        (sha256
-        (base32 "0l6bb0xvnkjmkci5m4ngw912k2ihvzndfxkyz49h08mg0wjzcdqs"))))
+        (base32 "0j4nspzs44ns2x47dpny3yqbysgzgrabk6aq0sch51fq8j0z2zcg"))))
     (properties `((upstream-name . "enhancer")))
     (build-system r-build-system)
     (arguments
