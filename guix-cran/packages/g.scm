@@ -3437,41 +3437,6 @@ incorporating subgroup selection\" (GSED) method proposed by Magnusson and
 Turnbull (2013) <doi:10.1002/sim.5738>.")
     (license license:gpl3)))
 
-(define-public r-gseavis
-  (package
-    (name "r-gseavis")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GseaVis" version))
-       (sha256
-        (base32 "01c5rl05lf9abmasw9w8rxlgl55jr3faiwi1ndx993r3j8xvbcqj"))))
-    (properties `((upstream-name . "GseaVis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-purrr
-                             r-magrittr
-                             r-ggsci
-                             r-ggrepel
-                             r-ggpp
-                             r-ggplot2
-                             r-dplyr
-                             r-dose
-                             r-aplot))
-    (home-page "https://github.com/junjunlab/GseaVis")
-    (synopsis "Implement for 'GSEA' Enrichment Visualization")
-    (description
-     "Mark your interesting genes on plot and support more parameters to handle your
-own gene set enrichment analysis plot.")
-    (license license:expat)))
-
 (define-public r-gseasy
   (package
     (name "r-gseasy")
@@ -29082,13 +29047,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "1kv80b3g7yazw92sqn6f1jdqd7ldxb20v9nlrfwv51xlvj2rddr1"))))
+        (base32 "01xhkh47i5dmcmqaw73zii515q6mbqf9k8ax1z7nl2hcxg6drd3g"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -29103,8 +29068,10 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
                              r-httr2
                              r-h3r
                              r-glue
+                             r-geoarrow
                              r-fs
                              r-enderecobr
+                             r-duckspatial
                              r-duckdb
                              r-dplyr
                              r-dbi

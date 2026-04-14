@@ -2746,13 +2746,13 @@ comprehensive inference tables following the four-case framework.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.7")
+    (version "2.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "0bjlbsi63rx8pin1w0qxxwsyrpqc6vpaz5sbg16y274cnh10xx3b"))))
+        (base32 "16k0c2fvqi6k6xcah4m7h0fzgrq6n4bgw2qq74008jf4r8prac20"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (arguments
@@ -2776,13 +2776,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.7")
+    (version "2.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "018mnhv5rnfbmirh8g93b36qmfhlpjwnr1w8abj3qnm8rmlnvk6p"))))
+        (base32 "1bkvwzpyk6vc4gb88d6v75qkjyi3rbnwld01imphkd950w6nszz0"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (arguments
@@ -3668,6 +3668,36 @@ covariates on the response style, as proposed by Schauberger and Tutz 2021
 <doi:10.1177/1471082X20978034>.  The method is implemented both for the
 multivariate cumulative model and the multivariate adjacent categories model.")
     (license license:gpl2+)))
+
+(define-public r-multnonparam
+  (package
+    (name "r-multnonparam")
+    (version "1.3.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultNonParam" version))
+       (sha256
+        (base32 "0p66pqairn0k3ciz31ykb2kk0mr4jyzvarkf1knlh3dkvagh7pvj"))))
+    (properties `((upstream-name . "MultNonParam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-icsnp))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=MultNonParam")
+    (synopsis "Multivariate Nonparametric Methods")
+    (description
+     "This package provides a collection of multivariate nonparametric methods,
+selected in part to support an MS level course in nonparametric statistical
+methods.  Methods include adjustments for multiple comparisons, implementation
+of multivariate Mann-Whitney-Wilcoxon testing, inversion of these tests to
+produce a confidence region, some permutation tests for linear models, and some
+algorithms for calculating exact probabilities associated with one- and two-
+stage testing involving Mann-Whitney-Wilcoxon statistics.  Supported by grant
+NSF DMS 1712839.  See Kolassa and Seifu (2013) <doi:10.1016/j.acra.2013.03.006>.")
+    (license license:gpl2)))
 
 (define-public r-multiwayvcov
   (package
@@ -4566,13 +4596,13 @@ alternative area-targeted conservation scenarios.")
 (define-public r-multiscaler
   (package
     (name "r-multiscaler")
-    (version "0.5.0")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiScaleR" version))
        (sha256
-        (base32 "154clmr32ddh68hh45c4719w2qy14zq315n6g7c1qba9xhw6lcmx"))))
+        (base32 "0bjss234msb4si278fbkar1a68fg1p2d3dkfrlcrlds3cacyrxj5"))))
     (properties `((upstream-name . "multiScaleR")))
     (build-system r-build-system)
     (arguments
@@ -5632,13 +5662,13 @@ N., Parnell, A., Prado, E., & Moral, R. A. (2022)
 (define-public r-multinma
   (package
     (name "r-multinma")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinma" version))
        (sha256
-        (base32 "1ps6g9pw09lxmip6mcqy8nsjdv35daxy2p82r41kci01zw8jnyg6"))))
+        (base32 "18rlj8h3rvfsg3kfsn6p70dqf3xav4qh2rvfnfarjlxdnqhgnhz0"))))
     (properties `((upstream-name . "multinma")))
     (build-system r-build-system)
     (arguments
@@ -26191,13 +26221,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "0szqa6ylsxx5ni1nswhyy9yyvllyaaw5jvhn0fvszqp146n1ycvf"))))
+        (base32 "0ik2hplzp57y7l1bbhmspipw6lqz406w880jb0j8zrw9g0yry8rc"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -26865,6 +26895,35 @@ missing data (e.g. mean imputation) so that bias is not introduced.  See Little
 (1988) <doi:10.1080/01621459.1988.10478722> for the statistical rationale for
 the methods used.")
     (license license:expat)))
+
+(define-public r-misspls
+  (package
+    (name "r-misspls")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "missPLS" version))
+       (sha256
+        (base32 "028z54calzrjzv4yxc4yj2nax80jxbr083mvs5igmblaz2c1nrh1"))))
+    (properties `((upstream-name . "missPLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vim r-plsrglm r-mice))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/missPLS/")
+    (synopsis
+     "Methods and Reproducible Workflows for Partial Least Squares with Missing Data")
+    (description
+     "Methods-first tooling for reproducing and extending the partial least squares
+regression studies on incomplete data described in Nengsih et al. (2019)
+<doi:10.1515/sagmb-2018-0059>.  The package provides simulation helpers,
+missingness generators, imputation wrappers, component-selection utilities,
+real-data diagnostics, and reproducible study orchestration for Nonlinear
+Iterative Partial Least Squares (NIPALS)-Partial Least Squares (PLS) workflows.")
+    (license license:gpl3)))
 
 (define-public r-missplot
   (package
@@ -34258,13 +34317,13 @@ testing, and visualization of results with confidence intervals.")
 (define-public r-mfag
   (package
     (name "r-mfag")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFAg" version))
        (sha256
-        (base32 "0nlhvgjsan70qlkffx6dy6d5p7n8q5x5lmj7hhm3am5jzp9ky78m"))))
+        (base32 "1nnk0d9ki89cxi1p2ng7m99xhnsbfh1f6g8c0bxrazlqbbkpp3si"))))
     (properties `((upstream-name . "MFAg")))
     (build-system r-build-system)
     (arguments
@@ -44796,13 +44855,13 @@ de Velden (2022)<doi:10.1080/10618600.2022.2035737>.")
 (define-public r-mcca
   (package
     (name "r-mcca")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcca" version))
        (sha256
-        (base32 "0k7lixba5h6adxzwz2hx63pcfn7w3vh077sk0lgjhwymk0jahp37"))))
+        (base32 "0h74yi72yqryx5ggjs7da5giwx7jg8flskpb7v5siixf28xq64r7"))))
     (properties `((upstream-name . "mcca")))
     (build-system r-build-system)
     (arguments
@@ -51111,13 +51170,13 @@ images or html, interactive maps.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "021f1yzvk7dl847a8prwlpzm06xyizcynmjbrc4ld83plxd5y1zx"))))
+        (base32 "1i92fpa2589jpjxmvcahkd65m8060phc0js0z5qgdxgm3fbfhzsy"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
@@ -51127,7 +51186,9 @@ images or html, interactive maps.")
                              r-viridislite
                              r-rlang
                              r-ppclust
+                             r-nortest
                              r-networkd3
+                             r-mclust
                              r-jsonlite
                              r-inaparc
                              r-igraph

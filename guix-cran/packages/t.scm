@@ -1381,13 +1381,13 @@ terrestrial water cycle data across various spatio-temporal scales.")
 (define-public r-twbparser
   (package
     (name "r-twbparser")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twbparser" version))
        (sha256
-        (base32 "17ax3fjzgiyj4l91hlc5ynp0i338b0v89dkhbxh6rpxc9gajpxik"))))
+        (base32 "0ixhav16f61mrrw8310jk26w0c4vjzcxwgpvjbpj4f9gwrrkl84s"))))
     (properties `((upstream-name . "twbparser")))
     (build-system r-build-system)
     (arguments
@@ -5664,6 +5664,38 @@ Phase I dose-finding (two-/three-stage).  This package also allows users to run
 dose-finding simulations based on customized decision table.")
     (license license:gpl2)))
 
+(define-public r-tsdeeplearning
+  (package
+    (name "r-tsdeeplearning")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TSdeeplearning" version))
+       (sha256
+        (base32 "1nl5k92mncs8smibq1bfx51nq9gazw5hf0qf80968zx1xx6qafar"))))
+    (properties `((upstream-name . "TSdeeplearning")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsutils
+                             r-tensorflow
+                             r-reticulate
+                             r-magrittr
+                             r-keras
+                             r-biocgenerics))
+    (home-page "https://cran.r-project.org/package=TSdeeplearning")
+    (synopsis "Deep Learning Model for Time Series Forecasting")
+    (description
+     "This package provides deep learning models for time series forecasting using
+Recurrent Neural Networks (RNN), Long Short-Term Memory (LSTM), and Gated
+Recurrent Unit (GRU).  These models capture temporal dependencies and address
+vanishing gradient issues in sequential data.  The package enables efficient
+forecasting for univariate time series.  For methodological details see Jaiswal
+and co-authors (2022). <doi:10.1007/s00521-021-06621-3>.")
+    (license license:gpl3)))
+
 (define-public r-tsdecomp
   (package
     (name "r-tsdecomp")
@@ -7639,13 +7671,13 @@ Clinical Research.")
 (define-public r-trialsimulator
   (package
     (name "r-trialsimulator")
-    (version "1.10.1")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialSimulator" version))
        (sha256
-        (base32 "0w3dn1953bqsn35v6pg53zaagf9ap6vj1lvlvwdyxfpds49qqx6b"))))
+        (base32 "1r701zqb9wzyapdigq0cka10s71vps04dq7l96nczn44aj63ba01"))))
     (properties `((upstream-name . "TrialSimulator")))
     (build-system r-build-system)
     (arguments
@@ -12185,6 +12217,40 @@ detailed description can be found in C. Lee, L. Li, H. Zhang, and M. Wang
 sign series for trace regression (ASSIST) algorithm.")
     (license license:gpl2+)))
 
+(define-public r-trace
+  (package
+    (name "r-trace")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trace" version))
+       (sha256
+        (base32 "1maa8zm91p7kq0z89p2q73rbqsmam9pn0d8p0mizr84miyck952n"))))
+    (properties `((upstream-name . "trace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-shiny
+                             r-seqinr
+                             r-pracma
+                             r-plotly
+                             r-mgcv
+                             r-lme4))
+    (native-inputs (list r-knitr))
+    (home-page "https://zachariahmclean.github.io/trace/")
+    (synopsis "Tandem Repeat Analysis by Capillary Electrophoresis")
+    (description
+     "This package provides a pipeline for short tandem repeat instability analysis
+from fragment analysis data.  Inputs of fsa files or peak tables, and a user
+supplied metadata data-frame.  The package identifies ladders, calls peaks,
+identifies the modal peaks, calls repeats, then calculates repeat instability
+metrics (e.g. expansion index from Lee et al. (2010)
+<doi:10.1186/1752-0509-4-29>).")
+    (license license:expat)))
+
 (define-public r-tr8
   (package
     (name "r-tr8")
@@ -13779,13 +13845,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topr" version))
        (sha256
-        (base32 "1pzsrpqgdyi7n3rpxmax180yxv64prippmaziwy8m6sa05dbkcdi"))))
+        (base32 "0qjbbh37klq7cbhq8rv1qmq4dwnjsdqlapzkfwr645gk4mwfr3lv"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (arguments
@@ -13795,7 +13861,6 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
                              r-tibble
                              r-stringr
                              r-scales
-                             r-rlang
                              r-purrr
                              r-magrittr
                              r-gridextra
@@ -13865,6 +13930,43 @@ hierarchy estimation through topological sorting.  The package also contains
 infrastructure to investigate partially defined hierarchies and hierarchy
 dynamics.")
     (license license:gpl3)))
+
+(define-public r-toponym
+  (package
+    (name "r-toponym")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toponym" version))
+       (sha256
+        (base32 "1899j01w5j1mg2834cr8ndzkjync3m4sbdbw2bjsdjbhamky47zm"))))
+    (properties `((upstream-name . "toponym")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-spatstat-utils
+                             r-spatstat-geom
+                             r-sf
+                             r-ggplot2
+                             r-geodata))
+    (home-page "https://github.com/Lennart05/toponym")
+    (synopsis "Analyze and Visualize Toponyms")
+    (description
+     "This package provides a tool to analyze and visualize toponym distributions.
+This package is intended as an interface to the @code{GeoNames} data.  A regular
+expression filters data and in a second step a map is created displaying all
+locations in the filtered data set.  The functions make data and plots available
+for further analysisâeither within R or in a chosen directory.  Users can
+select regions within countries, provide coordinates to define regions, or
+specify a region within the package to restrict the data selection to that
+region or compare regions with the remainder of countries.  This package relies
+on the R packages geodata for map data and ggplot2 for plotting purposes.  For
+more information on the study of toponyms, see Wichmann & Chevallier (2025)
+<doi:10.5195/names.2025.2616>.")
+    (license license:gpl3+)))
 
 (define-public r-topolow
   (package
@@ -14678,20 +14780,20 @@ of R objects such as lists, data.frames, numeric, logical, and date vectors.")
 (define-public r-toml
   (package
     (name "r-toml")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toml" version))
        (sha256
-        (base32 "1kh90fgj663plahgw7yxg0zwwvsyfr27c7j5bk9k8pma55h6l2aw"))))
+        (base32 "09kdjgiw54i3687s5b638srmy0prk4jlw0ih3vq0r8llclqjdp96"))))
     (properties `((upstream-name . "toml")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-v8 r-jsonlite))
-    (home-page "https://cran.r-project.org/package=toml")
+    (home-page "https://r-lib.r-universe.dev/toml")
     (synopsis "Read, Write, and Modify TOML Files")
     (description
      "Simple toolkit for working with TOML text.  Based on tomledit which allows for
@@ -17247,13 +17349,13 @@ install Roboto Condensed'.  Note that hrbrthemes is now archived at CRAN.")
 (define-public r-tinytest2junit
   (package
     (name "r-tinytest2junit")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytest2JUnit" version))
        (sha256
-        (base32 "1c7vzdyjqqayrsbdasr7zif2m367yvid5y00fhy35r43ggzzhb4n"))))
+        (base32 "0l9wxsnis1mcyihvgzpsz7pm10l9xrvfnih313pda2izqackzg12"))))
     (properties `((upstream-name . "tinytest2JUnit")))
     (build-system r-build-system)
     (arguments
@@ -17265,10 +17367,9 @@ install Roboto Condensed'.  Note that hrbrthemes is now archived at CRAN.")
     (description
      "Unit testing is a solid component of automated CI/CD pipelines.  tinytest - a
 lightweight, zero-dependency alternative to testthat was developed.  To be able
-to integrate tinytests results into common CI/CD systems the test results from
-tinytest need to be caputred and converted to JUnit XML format.  tinytest2JUnit
-enables this conversion while staying also lightweight and only have tinytest as
-its dependency.")
+to integrate tinytests results into common CI/CD systems the tinytests'-object
+is converted to JUnit XML format.  tinytest2JUnit enables this conversion while
+staying lightweight, having only tinytest as its dependency.")
     (license license:gpl3)))
 
 (define-public r-tinytable
@@ -21522,6 +21623,42 @@ are very messy.")
 Additive Models (GAMs) fitted with mgcv and return them as a tibble.  These can
 be plotted with a generic @code{plot()}-method that uses ggplot2 or plotted as
 any other data frame.  The main function is @code{predict_gam()}.")
+    (license license:expat)))
+
+(define-public r-tidyfun
+  (package
+    (name "r-tidyfun")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyfun" version))
+       (sha256
+        (base32 "1mii71rccn3jsxpfdg48q7drkc3fblfvlr10q5gmgpw43405n4w6"))))
+    (properties `((upstream-name . "tidyfun")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-tf
+                             r-rlang
+                             r-purrr
+                             r-pillar
+                             r-ggplot2
+                             r-ggally
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tidyfun/tidyfun")
+    (synopsis "Tidy Functional Data Wrangling and Visualization")
+    (description
+     "Represent, visualize, describe and wrangle functional data in tidy data frames,
+building on the tf package.  Provides data types for functional observations
+that work as columns in data frames, enabling manipulation with dplyr verbs and
+visualization with ggplot2 geoms designed for functional data.")
     (license license:expat)))
 
 (define-public r-tidyfst
@@ -26271,6 +26408,41 @@ output is highly customizable.  New model types can be easily implemented.
 Details can be found in Leifeld (2013), J@code{StatSoft}
 <doi:10.18637/jss.v055.i08>.).")
     (license license:gpl3)))
+
+(define-public r-texpreview
+  (package
+    (name "r-texpreview")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "texPreview" version))
+       (sha256
+        (base32 "0qkl91638qw2gjk05h07bfly87yk283cg4wlq531i1wi5dc41r92"))))
+    (properties `((upstream-name . "texPreview")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-whisker
+                             r-tinytex
+                             r-svgpanzoom
+                             r-rstudioapi
+                             r-rematch2
+                             r-magick
+                             r-knitr
+                             r-htmltools
+                             r-fs
+                             r-details
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yonicd/texPreview")
+    (synopsis "Compile and Preview Snippets of 'LaTeX'")
+    (description
+     "Compile snippets of @code{LaTeX} directly into images from the R console to view
+in the RStudio viewer pane, Shiny apps and RMarkdown documents.")
+    (license license:expat)))
 
 (define-public r-texposition
   (package

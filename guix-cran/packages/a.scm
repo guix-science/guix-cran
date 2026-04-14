@@ -2469,13 +2469,13 @@ history using conventional commit messages
 (define-public r-automr
   (package
     (name "r-automr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoMR" version))
        (sha256
-        (base32 "1p7hg6fdyqq5fnm7xz8ljcmcmizqx2d32r8dsizssv88diq1dsf1"))))
+        (base32 "12xxk7ljddd0wlc4yl3sfa96bdm733qwv8i5q89g94gj0w98s2ds"))))
     (properties `((upstream-name . "autoMR")))
     (build-system r-build-system)
     (arguments
@@ -3396,13 +3396,13 @@ formats.")
 (define-public r-auth0
   (package
     (name "r-auth0")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "auth0" version))
        (sha256
-        (base32 "0pbnxq2f0bpj1gz8yn3wj3qn03dl08l7754k0ys7s49w2isx9y3h"))))
+        (base32 "00fk87sxqfqgzhfqc7xs24im934fzfinf0f80iw3z4918x8di866"))))
     (properties `((upstream-name . "auth0")))
     (build-system r-build-system)
     (arguments
@@ -19065,38 +19065,41 @@ sharing AI capabilities.")
 (define-public r-aiscreenr
   (package
     (name "r-aiscreenr")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIscreenR" version))
        (sha256
-        (base32 "1zs8h0yxpxbf9n4harakky733q0hhskr8cpvwlpwrv3wkczyifnd"))))
+        (base32 "0mqhngvk58zj5h6q3jwyhsqrnxm65aqf36mygmia75d2ifcizz8j"))))
     (properties `((upstream-name . "AIscreenR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tictoc
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-purrr
                              r-lifecycle
                              r-jsonlite
                              r-httr2
+                             r-htmltools
                              r-furrr
                              r-dplyr
                              r-curl
                              r-askpass))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://mikkelvembye.github.io/AIscreenR/")
     (synopsis "AI Screening Tools in R for Systematic Reviewing")
     (description
      "This package provides functions to conduct title and abstract screening in
 systematic reviews using large language models, such as the Generative
 Pre-trained Transformer (GPT) models from @code{OpenAI}
-<https://platform.openai.com/>.  These functions can enhance the quality of
+<https://developers.openai.com/>.  These functions can enhance the quality of
 title and abstract screenings while reducing the total screening time
 significantly.  In addition, the package includes tools for quality assessment
 of title and abstract screenings, as described in Vembye, Christensen,
@@ -20725,13 +20728,13 @@ Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
 (define-public r-agrobox
   (package
     (name "r-agrobox")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agrobox" version))
        (sha256
-        (base32 "1xm8lqpd73kk4q3vzdc23gl5ddhw5hb5mrgcn9rgxgkcrgjni6sf"))))
+        (base32 "1kqb54lw2a02k8mgccrxwsng2bii0jhlbgm8rhggdh8nlgxdlwhf"))))
     (properties `((upstream-name . "agrobox")))
     (build-system r-build-system)
     (arguments
@@ -20739,9 +20742,11 @@ Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-rstatix
                              r-rlang
                              r-pwr
                              r-openxlsx
+                             r-multcompview
                              r-ggplot2
                              r-dplyr
                              r-agricolae))
@@ -20751,22 +20756,44 @@ Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
     (description
      "Set of tools for statistical analysis, visualization, and reporting of
 agroindustrial and agricultural experiments.  The package provides functions to
-perform ANOVA with post-hoc tests (e.g. Tukey HSD and Duncan MRR), compute
-coefficients of variation, and generate publication-ready summaries.  High-level
-wrappers allow automated multi-variable analysis with optional clustering by
-experimental factors, as well as direct export of results to Excel spreadsheets
-and high-resolution image tables for reporting.  Functions build on ggplot2',
-stats', and related packages and follow methods widely used in agronomy (field
-trials and plant breeding).  Key references include Tukey (1949)
-<doi:10.2307/3001913>, Duncan (1955) <doi:10.2307/3001478>, and Cohen (1988,
-ISBN:9781138892899); see also agricolae
-<https://CRAN.R-project.org/package=agricolae> and Wickham (2016,
-ISBN:9783319242750> for ggplot2'.  VersiÃ³n en espaÃ±ol: Conjunto de
-herramientas para el anÃ¡lisis estadÃ­stico, visualizaciÃ³n y generaciÃ³n de
-reportes en ensayos agroindustriales y agrÃ­colas.  Incluye funciones para ANOVA
-con pruebas post-hoc, resÃºmenes automÃ¡ticos multivariables con o sin
-agrupamiento por factores, y exportaciÃ³n directa de resultados a Excel e
-imÃ¡genes de alta resoluciÃ³n para informes tÃ©cnicos.")
+perform one-way and two-way ANOVA with post-hoc tests (Tukey HSD and Duncan
+MRT), Welch ANOVA for heteroscedastic data, and the Games-Howell post-hoc test
+as a robust alternative when variance homogeneity fails.  Normality of residuals
+is assessed with the Shapiro-Wilk test and homoscedasticity with the
+Fligner-Killeen test; the appropriate statistical path is selected automatically
+based on these diagnostics.  Coefficients of variation and statistical power
+(via one-way ANOVA power analysis) are reported alongside the post-hoc letter
+display.  High-level wrappers allow automated multi-variable analysis with
+optional clustering by one or two experimental factors, with support for custom
+level ordering and relabeling.  Results are returned as ggplot2 boxplots with
+mean and letter annotations, wide-format summary tables ready for publication or
+@code{LaTeX} rendering, and structured decision summaries for rapid agronomic
+interpretation.  Direct export to Excel spreadsheets and high-resolution image
+tables is also supported.  Functions follow methods widely used in agronomy,
+field trials, and plant breeding.  Key references: Tukey (1949)
+<doi:10.2307/3001913>; Duncan (1955) <doi:10.2307/3001478>; Welch (1951)
+<doi:10.2307/2332579>; Games and Howell (1976) <doi:10.2307/2529858>; Shapiro
+and Wilk (1965) <doi:10.2307/2333709>; Fligner and Killeen (1976)
+<doi:10.2307/2529096>; Cohen (1988, ISBN:9781138892899); Wickham (2016,
+ISBN:9783319242750) for ggplot2'; see also agricolae
+<https://CRAN.R-project.org/package=agricolae> and rstatix
+<https://CRAN.R-project.org/package=rstatix>.  Version en espanol: Conjunto de
+herramientas para el analisis estadistico, visualizacion y generacion de
+reportes en ensayos agroindustriales y agricolas.  Incluye ANOVA univariado y
+bifactorial con pruebas post-hoc (Tukey HSD y Duncan MRT), ANOVA de Welch para
+datos heterocedasticos y la prueba post-hoc de Games-Howell como alternativa
+robusta cuando falla la homogeneidad de varianzas.  La normalidad de residuos se
+evalua con la prueba de Shapiro-Wilk y la homogeneidad de varianzas con la
+prueba de Fligner-Killeen; la ruta estadistica apropiada se selecciona
+automaticamente segun estos diagnosticos.  Se reportan coeficientes de variacion
+y potencia estadistica junto con las letras de separacion de medias.  Los
+envoltorios de alto nivel permiten analisis multivariable automatizado con
+agrupamiento opcional por uno o dos factores experimentales, con soporte para
+orden y etiquetado personalizado de niveles.  Los resultados se devuelven como
+boxplots con anotaciones de medias y letras, tablas resumen en formato ancho
+listas para publicacion o renderizado en @code{LaTeX}, y resumenes de decision
+para interpretacion agronomica rapida.  Tambien se soporta exportacion directa a
+Excel e imagenes de alta resolucion para informes tecnicos.")
     (license license:expat)))
 
 (define-public r-agrmt

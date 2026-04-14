@@ -5806,49 +5806,6 @@ directories, including targeting files by path or by key; cached directories can
 be compressed and uncompressed easily to save disk space.")
     (license license:expat)))
 
-(define-public r-hoarder
-  (package
-    (name "r-hoarder")
-    (version "0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hoardeR" version))
-       (sha256
-        (base32 "0maqypigq2942mqbnr7a11iryv6xhhfrnyarqw3r8z5zimjy1y7p"))))
-    (properties `((upstream-name . "hoardeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-stringr
-                             r-seqinr
-                             r-s4vectors
-                             r-rsamtools
-                             r-rmarkdown
-                             r-rcurl
-                             r-r-utils
-                             r-mass
-                             r-knitr
-                             r-kernsmooth
-                             r-iranges
-                             r-httr
-                             r-genomictools-filehandler
-                             r-genomicranges
-                             r-data-table
-                             r-biostrings
-                             r-bamsignals))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hoardeR")
-    (synopsis
-     "Collect and Retrieve Annotation Data for Various Genomic Data Using Different Webservices")
-    (description
-     "Cross-species identification of novel gene candidates using the NCBI web service
-is provided.  Further, sets of @code{miRNA} target genes can be identified by
-using the targetscan.org API.")
-    (license license:gpl2+)))
-
 (define-public r-hnpclassifier
   (package
     (name "r-hnpclassifier")

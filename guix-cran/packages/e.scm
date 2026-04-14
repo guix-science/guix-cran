@@ -20282,13 +20282,13 @@ using Stan <https://mc-stan.org/>.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "0ylrpan34dn9nf7sgaia5dyflb2kj34qnmw8ppsywc24m6gxrvdm"))))
+        (base32 "0g5697rdsqyg402476ym805vl7wpcq32jk5x367khxs3s33m5lij"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (arguments
@@ -21212,6 +21212,37 @@ neural network models.  For method details see Yu L, Wang S, Lai KK (2008).
 Support Vector regression model for univariate time series forecasting.  For
 method details see Das
 (2020).<http://krishi.icar.gov.in/jspui/handle/123456789/44138>.")
+    (license license:gpl3)))
+
+(define-public r-eemdlstm
+  (package
+    (name "r-eemdlstm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EEMDlstm" version))
+       (sha256
+        (base32 "1299y3r0xw3q6a80r2b8698c7d8cjz4aqvxwx90vshy2igl0s127"))))
+    (properties `((upstream-name . "EEMDlstm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsutils
+                             r-tsdeeplearning
+                             r-tensorflow
+                             r-rlibeemd
+                             r-reticulate
+                             r-magrittr
+                             r-keras
+                             r-biocgenerics))
+    (home-page "https://cran.r-project.org/package=EEMDlstm")
+    (synopsis "EEMD Based LSTM Model for Time Series Forecasting")
+    (description
+     "Forecasting univariate time series with ensemble empirical mode decomposition
+(EEMD) with long short-term memory (LSTM).  For method details see Jaiswal, R.
+et al. (2022). <doi:10.1007/s00521-021-06621-3>.")
     (license license:gpl3)))
 
 (define-public r-eemdelm
@@ -22738,13 +22769,13 @@ package @code{bupaR}'.")
 (define-public r-eddington
   (package
     (name "r-eddington")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eddington" version))
        (sha256
-        (base32 "0nr9mv6vjd0m0n23p9ydamf23rfb9xhy6h8q27qic327avsa3a7g"))))
+        (base32 "17lr3pgmvbvl3ysslls299lb5wj5rx123a5jxrnscp4w3gccays1"))))
     (properties `((upstream-name . "eddington")))
     (build-system r-build-system)
     (arguments
@@ -22765,7 +22796,9 @@ cumulative statistics can be computed in linear time, since it does not require
 initial sorting of the data.  These functions may also be used for computing
 h-indices for authors, a metric described by Hirsch (2005)
 <doi:10.1073/pnas.0507655102>.  Both are specific applications of computing the
-side length of a Durfee square <https://en.wikipedia.org/wiki/Durfee_square>.")
+side length of a Durfee square <https://en.wikipedia.org/wiki/Durfee_square>.
+Some additional author-level metrics such as g-index and i10-index are also
+included in the package.")
     (license license:gpl2+)))
 
 (define-public r-edcpr
@@ -25059,13 +25092,13 @@ Closed Benjamini-Yekutieli procedures.")
 (define-public r-eclipseplot
   (package
     (name "r-eclipseplot")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eclipseplot" version))
        (sha256
-        (base32 "1zqsimwllk390r04da20wg2rv2ldick5bl9mb97s3kaiwzdr77bw"))))
+        (base32 "19rai0rg2dlvmjq5ik4wsw89sa2nzhcf0xijy4cgsil2695y1diq"))))
     (properties `((upstream-name . "eclipseplot")))
     (build-system r-build-system)
     (arguments

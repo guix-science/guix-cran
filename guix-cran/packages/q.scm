@@ -6116,6 +6116,45 @@ Fechnerian distances can be computed.")
 algorithms derived by @code{ClinRisk}'.")
     (license (license:fsdg-compatible "AGPL-3 + file LICENSE"))))
 
+(define-public r-qdea
+  (package
+    (name "r-qdea")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qDEA" version))
+       (sha256
+        (base32 "16c769yfjaqnfvb4n171aqqzqf7wbnbaf1l9vzmkf6lg8n68z9bz"))))
+    (properties `((upstream-name . "qDEA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-highs r-dplyr r-doby))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=qDEA")
+    (synopsis "Quantile Data Envelopment Analysis")
+    (description
+     "R implementation of Quantile Data Envelopment Analysis.  The package @code{qDEA}
+allows a user specified proportion of observations to lie external to a given
+Decision Making Units's (DMU's)reference hyperplane. @code{qDEA} can be used to
+detect and address influential outliers or to implement quantile benchmarking,
+as discussed in Atwood and Shaik (2020).  Quantile benchmarking is accomplished
+by using heuristic procedures to find a DMU's closest input-output projection
+point in a specified direction while allowing a specified proportion of
+observations to lie external to the projected point's hyperplane.  The
+@code{qDEA} package accommodates standard (DEA) and quantile DEA estimation,
+returns to scale CRS(constant),VRS(variable),DRS(decreasing) or IRS(increasing),
+the use of directional vectors, bias correction through subsample bootstrapping
+and subsample size selection procedures.  The user can also recover each DMU's
+reference DMUs and external DMUs if desired.  The implemented procedures are
+based on discussions in: Atwood and Shaik (2020)
+<doi:10.1016/j.ejor.2020.03.054> Atwood and Shaik (2018)
+<doi:10.1007/978-3-319-68678-3_4> Walden and Atwood (2023) <doi:10.1086/724932>
+Walden and Atwood (2025) <doi:10.1086/736554>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-qdcomparison
   (package
     (name "r-qdcomparison")
@@ -6435,20 +6474,20 @@ among constructs and between constructs and observed variables.")
 (define-public r-qcluster
   (package
     (name "r-qcluster")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qcluster" version))
        (sha256
-        (base32 "0w6m2iasr0q2r8a1jy31x11cxjgkjb8f6l2lcxsh91c80p4g17jj"))))
+        (base32 "032ay8nwraz4dhvxdzn2vnpfqv7j0130hvp9wbl3dzwyivzj6ac0"))))
     (properties `((upstream-name . "qcluster")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-iterators r-foreach r-doparallel r-cluster))
-    (home-page "https://cran.r-project.org/package=qcluster")
+    (home-page "https://luca-coraggio.com")
     (synopsis "Clustering via Quadratic Scoring")
     (description
      "This package performs tuning of clustering models, methods and algorithms

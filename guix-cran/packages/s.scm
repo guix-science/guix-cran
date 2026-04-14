@@ -18,6 +18,7 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages fontutils)
   #:use-module (gnu packages java)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages duckdb)
@@ -1020,13 +1021,13 @@ and synchrony analysis; generating autocorrelated and cross-correlated matrices.
 (define-public r-syncdr
   (package
     (name "r-syncdr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syncdr" version))
        (sha256
-        (base32 "1jxaz60dkvclnbfqci0wwijpva9n67p3sxhng4dg910qwnbhfyk3"))))
+        (base32 "0f2sjd24k52a6n6sipzpc4k9i1l8xhv8snskz5g8z989xgksh1m7"))))
     (properties `((upstream-name . "syncdr")))
     (build-system r-build-system)
     (arguments
@@ -10477,20 +10478,21 @@ This represents an attempt to replicate some of python's string formatting.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "string2path" version))
        (sha256
-        (base32 "0c0ylz5za4rnk1chvna1h0q9mqagxj2zdza9f2f3r3yji8h3wnjf"))))
+        (base32 "0fb2yf0iv7yy6w36w50jj0kvpjcgpmd2p27x58lrm7s2cf249xfa"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
+    (inputs (list fontconfig))
     (propagated-inputs (list r-tibble r-cli))
+    (native-inputs (list pkg-config))
     (home-page "https://yutannihilation.github.io/string2path/")
     (synopsis "Rendering Font into 'data.frame'")
     (description
@@ -35238,6 +35240,50 @@ glass, mica, and platinum\".  Khasawneh FE (1971).
 growth\".")
     (license license:gpl3+)))
 
+(define-public r-soilassessment
+  (package
+    (name "r-soilassessment")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "soilassessment" version))
+       (sha256
+        (base32 "0jjwv8kmwbvh588f00smfnlw82gf9icp0fnk2agw2pcaaq1clnm6"))))
+    (properties `((upstream-name . "soilassessment")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-terra
+                             r-sp
+                             r-soiltexture
+                             r-sf
+                             r-raster
+                             r-randomforest
+                             r-png
+                             r-nnet
+                             r-httr
+                             r-hmisc
+                             r-googledrive
+                             r-fuzzyahp
+                             r-e1071
+                             r-desolve
+                             r-curl
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=soilassessment")
+    (synopsis
+     "Soil Health Assessment Models for Assessing Soil Conditions and Suitability")
+    (description
+     "Soil health assessment builds information to improve decision in soil
+management.  It facilitates assessment of soil conditions for crop suitability
+[such as those given by FAO
+<https://www.fao.org/land-water/databases-and-software/crop-information/en/>],
+groundwater recharge, fertility, erosion, salinization [<doi:10.1002/ldr.4211>],
+carbon sequestration, irrigation potential, and status of soil resources.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-soil
   (package
     (name "r-soil")
@@ -36426,6 +36472,45 @@ filtered @code{vcfR} object, which can then be written to a local directory in
 standard vcf format using the @code{vcfR} package, for downstream population
 genetic and phylogenetic analyses.")
     (license license:expat)))
+
+(define-public r-snpassoc
+  (package
+    (name "r-snpassoc")
+    (version "2.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SNPassoc" version))
+       (sha256
+        (base32 "1wdhdryfgnsl8rmw9fhrbi6a2qrdphicmyzbpdnna7p9h8533vi6"))))
+    (properties `((upstream-name . "SNPassoc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-rms
+                             r-poisbinom
+                             r-plyr
+                             r-mvtnorm
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/isglobal-brge/SNPassoc")
+    (synopsis "SNPs-Based Whole Genome Association Studies")
+    (description
+     "This package provides functions to perform most of the common analysis in genome
+association studies are implemented.  These analyses include descriptive
+statistics and exploratory analysis of missing values, calculation of
+Hardy-Weinberg equilibrium, analysis of association based on generalized linear
+models (either for quantitative or binary traits), and analysis of multiple SNPs
+(haplotype and epistasis analysis).  Permutation test and related tests (sum
+statistic and truncated product) are also implemented.  Max-statistic and
+genetic risk-allele score exact distributions are also possible to be estimated.
+ The methods are described in Gonzalez JR et al., 2007 <doi:
+10.1093/bioinformatics/btm025>.  This version includes internal copies of
+functions from the archived haplo.stats package to maintain functionality.")
+    (license license:gpl2+)))
 
 (define-public r-snpannotator
   (package
@@ -52844,13 +52929,13 @@ developers.")
 (define-public r-shinygovstyle
   (package
     (name "r-shinygovstyle")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyGovstyle" version))
        (sha256
-        (base32 "02n2m3g9r06ck1cqwrk9wqbsbqan3ghzqpk4mp3gx2hrxl7807c1"))))
+        (base32 "1xzx1sq1n5l7sbw7ng7r99cvpma65z35gr58b8gr1iays1dr3fhm"))))
     (properties `((upstream-name . "shinyGovstyle")))
     (build-system r-build-system)
     (arguments
@@ -52871,20 +52956,24 @@ developers.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-writexl
+                             r-stringr
                              r-shinyjs
                              r-shiny
+                             r-readr
+                             r-readods
+                             r-reactable
                              r-purrr
-                             r-magrittr
+                             r-lifecycle
                              r-jsonlite
                              r-htmltools))
-    (native-inputs (list esbuild))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/dfe-analytical-services/shinyGovstyle")
     (synopsis "Custom Gov Style Inputs for Shiny")
     (description
-     "Collection of shiny application styling that are the based on the GOV.UK Design
+     "Collection of shiny application styling that are based on the GOV.UK Design
 System.  See <https://design-system.service.gov.uk/components/> for details.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-shinyglide
   (package
@@ -58551,6 +58640,36 @@ delta coverage calculations to output recommended lower confidence bound
 methods.")
     (license license:gpl3)))
 
+(define-public r-serieshaz
+  (package
+    (name "r-serieshaz")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "serieshaz" version))
+       (sha256
+        (base32 "0a5nnll9wi93qjs2xqlzmsdy775p19m5cgi04yhd75cwsxih8a7j"))))
+    (properties `((upstream-name . "serieshaz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-likelihood-model r-generics
+                             r-flexhaz r-algebraic-dist))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/serieshaz")
+    (synopsis
+     "Series System Distributions from Dynamic Failure Rate Components")
+    (description
+     "Compose multiple dynamic failure rate distributions into series system
+distributions where the system hazard equals the sum of component hazards.
+Supports hazard, survival, cumulative distribution function, density, sampling,
+and maximum likelihood estimation fitting via the @code{dfr_dist()} class from
+flexhaz'.  Methods for series system reliability follow Barlow and Proschan
+(1975, ISBN:0898713692).")
+    (license license:gpl3+)))
+
 (define-public r-serial
   (package
     (name "r-serial")
@@ -62508,6 +62627,34 @@ selection indices.  It also incorporates multi-stage selection evaluation and
 stochastic simulations to estimate genetic advance based on economic weights,
 heritability, and genetic correlations.")
     (license license:gpl3+)))
+
+(define-public r-selectboost-quantile
+  (package
+    (name "r-selectboost-quantile")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SelectBoost.quantile" version))
+       (sha256
+        (base32 "0qah13rv7vr4m3nn4pccafpbin3rla3siaf6ph7dn4xfcd6fg8zx"))))
+    (properties `((upstream-name . "SelectBoost.quantile")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-quantreg r-movmf))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/SelectBoost.quantile/")
+    (synopsis "'SelectBoost'-Style Variable Selection for Quantile Regression")
+    (description
+     "This package provides a @code{SelectBoost'-inspired} workflow for sparse
+quantile regression.  The package builds correlation neighborhoods, perturbs
+correlated predictors with a directional sampler inspired by the original
+@code{SelectBoost} internals, refits penalized quantile regression models on the
+perturbed designs, and aggregates variable-selection frequencies across a path
+of correlation thresholds.")
+    (license license:gpl3)))
 
 (define-public r-selectboost-gamlss
   (package

@@ -3554,13 +3554,13 @@ Spotfire'.")
 (define-public r-wizardry
   (package
     (name "r-wizardry")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wizaRdry" version))
        (sha256
-        (base32 "0jniv1q89lxl6zirqw3kdxf9gpk3y1n9029kxdbjvyxnqzx7ycng"))))
+        (base32 "0zlpdsvv3iv0wk1rpz3rwvr6n4fkm30z2vbj2y6xa4y1cb5q8pi3"))))
     (properties `((upstream-name . "wizaRdry")))
     (build-system r-build-system)
     (arguments
@@ -3719,13 +3719,13 @@ variance).")
 (define-public r-wired
   (package
     (name "r-wired")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wired" version))
        (sha256
-        (base32 "0d7pqimvyb0mhlj2j9c2gpd05pan640v7ny6n8z4jvqh6482igvd"))))
+        (base32 "0qiy8xkbbkp0jz2f1gj4x8nwb8ynd6fb9w23h5pkig9mmjrd8vvb"))))
     (properties `((upstream-name . "wired")))
     (build-system r-build-system)
     (arguments
@@ -11150,13 +11150,13 @@ Delporte et al (2025) <doi:10.1002/cpz1.70095> for more details.")
 (define-public r-w3cmarkupvalidator
   (package
     (name "r-w3cmarkupvalidator")
-    (version "0.2-2")
+    (version "0.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "W3CMarkupValidator" version))
        (sha256
-        (base32 "02lyp2f35jg2f40zqra8vw8y3q50rc83s3zqchxb2p76yn9730px"))))
+        (base32 "0qbin07d78rqx2z5lywksqg268lckd2z44cqwqcxfvdky001jngf"))))
     (properties `((upstream-name . "W3CMarkupValidator")))
     (build-system r-build-system)
     (arguments

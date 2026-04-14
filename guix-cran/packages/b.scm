@@ -2976,6 +2976,42 @@ heteroscedatic case.  The fit is made through MCMC algorithms and observational
 working variables approach.")
     (license license:gpl2+)))
 
+(define-public r-bsocialv2
+  (package
+    (name "r-bsocialv2")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bsocialv2" version))
+       (sha256
+        (base32 "1pjyrhax7ngm2r0p4ms15y5jiix8vbj29fqj7farl0nb6hjkrgm0"))))
+    (properties `((upstream-name . "bsocialv2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-rlang
+                             r-reshape2
+                             r-magrittr
+                             r-igraph
+                             r-growthcurver
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Juane99/bsocialv2")
+    (synopsis "Analysis of Microbial Social Behavior in Bacterial Consortia")
+    (description
+     "This package provides an S4 class and methods for analyzing microbial social
+behavior in bacterial consortia.  Includes growth parameter extraction, social
+behavior classification (cooperators/cheaters/neutrals), diversity effect
+analysis, consortium assembly path finding, and stability analysis via
+coefficient of variation.  Methods are described in Purswani et al. (2017)
+<doi:10.3389/fmicb.2017.00919>.")
+    (license license:expat)))
+
 (define-public r-bsnsing
   (package
     (name "r-bsnsing")
@@ -4520,35 +4556,6 @@ RBC folate and serum B-12 is not included in the R package, since evidence shows
 that no adjustment is needed for these micronutrient biomarkers in either WRA or
 PSC groups (Young (2020) <doi:10.1093/ajcn/nqz303>).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
-
-(define-public r-brikmeans
-  (package
-    (name "r-brikmeans")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "briKmeans" version))
-       (sha256
-        (base32 "158q2yb4dj4vhw8warv005s3rr8svr2vpkp2insgqv8mbvz7kzwq"))))
-    (properties `((upstream-name . "briKmeans")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-splines2 r-depthtools r-cluster r-boot))
-    (home-page "https://cran.r-project.org/package=briKmeans")
-    (synopsis
-     "Package for Brik, Fabrik and Fdebrik Algorithms to Initialise Kmeans")
-    (description
-     "Implementation of the BRIk, FABRIk and FDEBRIk algorithms to initialise k-means.
- These methods are intended for the clustering of multivariate and functional
-data, respectively.  They make use of the Modified Band Depth and bootstrap to
-identify appropriate initial seeds for k-means, which are proven to be better
-options than many techniques in the literature.  Torrente and Romo (2021)
-<doi:10.1007/s00357-020-09372-3> It makes use of the functions kma and
-kma.similarity, from the archived package fdakma, by Alice Parodi et al.")
-    (license license:gpl3+)))
 
 (define-public r-brightspacer
   (package
@@ -12414,13 +12421,13 @@ Kieser, M. (2011) <doi:10.3414/ME09-01-0063>.")
 (define-public r-blendstat
   (package
     (name "r-blendstat")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Blendstat" version))
        (sha256
-        (base32 "1nz5gwsjlvk6lajiyf0j2max6q5ifsj1arsbn1l4x6z8m7psm9wp"))))
+        (base32 "1r8zrb3pvw96x3mxyhn9l947cm6g0vcv66hvlzz7cazgaxlm6qf5"))))
     (properties `((upstream-name . "Blendstat")))
     (build-system r-build-system)
     (arguments
@@ -12618,34 +12625,6 @@ a range of email clients and device sizes.  Helper functions let the user insert
 embedded images, web link buttons, and ggplot2 plot objects into the message
 body.  Messages can be sent through an SMTP server, through the Posit Connect
 service, or through the Mailgun API service <https://www.mailgun.com/>.")
-    (license license:expat)))
-
-(define-public r-blastar
-  (package
-    (name "r-blastar")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blastar" version))
-       (sha256
-        (base32 "1qdqklprrnrfavcrvcfiq3lsxzbm06093hnl85c2sr0qrpdjqyxp"))))
-    (properties `((upstream-name . "blastar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-rentrez r-dplyr r-biostrings r-ape))
-    (home-page "https://github.com/loukesio/blastar")
-    (synopsis "BLAST and Sequence Analysis Tools")
-    (description
-     "Description: Provides streamlined tools for retrieving sequences from NCBI,
-performing sequence alignments (pairwise and multiple), and building
-phylogenetic trees.  Implements the Needleman-Wunsch algorithm for global
-alignment (Needleman & Wunsch (1970) <doi:10.1016/0022-2836(70)90057-4>),
-Smith-Waterman for local alignment (Smith & Waterman (1981)
-<doi:10.1016/0022-2836(81)90087-5>), and Neighbor-Joining for tree construction
-(Saitou & Nei (1987) <doi:10.1093/oxfordjournals.molbev.a040454>).")
     (license license:expat)))
 
 (define-public r-blapsr
@@ -20634,13 +20613,13 @@ power and sample size calculations as described in Pawel and Held (2025)
 (define-public r-bfpack
   (package
     (name "r-bfpack")
-    (version "1.5.3")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFpack" version))
        (sha256
-        (base32 "08b5aps3180m1adxn4wsprzcnf4wpp4bl3355dvgvlix2av0c8jn"))))
+        (base32 "14xif5cxb5k5mblancbjsfqznk3a4kzni7sc17pqas81ppn77irv"))))
     (properties `((upstream-name . "BFpack")))
     (build-system r-build-system)
     (arguments
@@ -20672,16 +20651,14 @@ models, relational event models.  Parameters that can be tested are location
 parameters (e.g., group means, regression coefficients), variances (e.g., group
 variances), and measures of association (e.g,.
 polychoric/polyserial/biserial/tetrachoric/product moments correlations), among
-others.  The statistical underpinnings are described in O'Hagan (1995)
-<DOI:10.1111/j.2517-6161.1995.tb02017.x>, De Santis and Spezzaferri (2001)
-<DOI:10.1016/S0378-3758(00)00240-8>, Mulder and Xin (2022)
-<DOI:10.1080/00273171.2021.1904809>, Mulder and Gelissen (2019)
-<DOI:10.1080/02664763.2021.1992360>, Mulder (2016)
-<DOI:10.1016/j.jmp.2014.09.004>, Mulder and Fox (2019) <DOI:10.1214/18-BA1115>,
-Mulder and Fox (2013) <DOI:10.1007/s11222-011-9295-3>, Boeing-Messing, van
-Assen, Hofman, Hoijtink, and Mulder (2017) <DOI:10.1037/met0000116>, Hoijtink,
-Mulder, van Lissa, and Gu (2018) <DOI:10.1037/met0000201>, Gu, Mulder, and
-Hoijtink (2018) <DOI:10.1111/bmsp.12110>, Hoijtink, Gu, and Mulder (2018)
+others.  Relevant references on the methodology The statistical underpinnings
+are described in O'Hagan (1995) <DOI:10.1111/j.2517-6161.1995.tb02017.x>, Mulder
+and Xin (2022) <DOI:10.1080/00273171.2021.1904809>, Mulder and Gelissen (2019)
+<DOI:10.1080/02664763.2021.1992360>, Mulder and Fox (2019)
+<DOI:10.1214/18-BA1115>, Boeing-Messing, van Assen, Hofman, Hoijtink, and Mulder
+(2017) <DOI:10.1037/met0000116>, Hoijtink, Mulder, van Lissa, and Gu (2018)
+<DOI:10.1037/met0000201>, Gu, Mulder, and Hoijtink (2018)
+<DOI:10.1111/bmsp.12110>, Hoijtink, Gu, and Mulder (2018)
 <DOI:10.1111/bmsp.12145>, and Hoijtink, Gu, Mulder, and Rosseel (2018)
 <DOI:10.1037/met0000187>.  When using the packages, please refer to the package
 Mulder et al. (2021) <DOI:10.18637/jss.v100.i18> and the relevant methodological
@@ -26973,13 +26950,13 @@ Duan et al. (2006) <doi:10.1002/env.752> and Ibrahim et al. (2015)
 (define-public r-bayespower
   (package
     (name "r-bayespower")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPower" version))
        (sha256
-        (base32 "0r72x69plnhlddb8b8044vv4005xg1rll9mg9xqd9wyfiyhza8dw"))))
+        (base32 "02wi3g2097jfayq8nhqcpspj4zr8m117kk6ripka48kwrbhjcwjn"))))
     (properties `((upstream-name . "BayesPower")))
     (build-system r-build-system)
     (arguments
@@ -31466,6 +31443,31 @@ packages.  This is suited to workflows that require plotting using the
 established and traditional idioms of plotting spatially coincident data where
 it belongs.  This package depends on sf and only replaces the plot method.")
     (license license:gpl3)))
+
+(define-public r-baseverse
+  (package
+    (name "r-baseverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baseverse" version))
+       (sha256
+        (base32 "0ryfm7grgkraibbq8l64j7w42l1vxzvyallwlivx1vc7f26rn0d9"))))
+    (properties `((upstream-name . "baseverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=baseverse")
+    (synopsis "Modern Base-R Functions")
+    (description
+     "Includes modern base-R functions.  Functions beginning with p_ are wrapper
+functions to existing base-R functions, supporting native piping.
+@code{base_match()} and @code{base_when()} mimic @code{case_match()} and
+@code{case_when()} from dplyr but return a factor by default with levels ordered
+according to user input. @code{et()} mimics @code{count()} from dplyr'.")
+    (license license:expat)))
 
 (define-public r-basetheme
   (package

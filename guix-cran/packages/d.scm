@@ -18755,6 +18755,43 @@ and quantile computation, and weight diagnostic plot for generic importance
 sampling type or other probability weighted samples.")
     (license license:gpl2+)))
 
+(define-public r-diagfdr
+  (package
+    (name "r-diagfdr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diagFDR" version))
+       (sha256
+        (base32 "09px6dqb04kp5xwg28avdyxyaj7z5z69f1xs0flw0ayyfy4mhr7w"))))
+    (properties `((upstream-name . "diagFDR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-cp4p))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=diagFDR")
+    (synopsis "Verifiable FDR Diagnostics for Proteomics")
+    (description
+     "This package provides methods to compute verifiable false discovery rate (FDR)
+diagnostic checks for workflows based on target-decoy competition and related
+confidence measures.  Implements calibration, stability and tail diagnostics,
+including tail support, threshold elasticity, posterior error probability (PEP)
+reliability, and equal-chance checks.")
+    (license license:gpl3)))
+
 (define-public r-diagcounts
   (package
     (name "r-diagcounts")
@@ -22636,13 +22673,13 @@ Data Analysis 157.  107140.")
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
-    (version "0.1.8")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depCensoring" version))
        (sha256
-        (base32 "1brj9j1rinxi4xhnwax9n3pmvxkc9853ywp44ywfv7zqkl01s22d"))))
+        (base32 "171xfgdixicnapxkwhv4ylvb7sy751vab7pgc3mmh5qbmk2364x6"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
     (arguments
@@ -26730,43 +26767,6 @@ effects of continuous covariates, interactions between categorical and/or
 continuous covariates, varying coefficient terms, and random effects.  Please
 see Rodriguez-Alvarez, Inacio et al. (2025) for more details.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-ddpna
-  (package
-    (name "r-ddpna")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DDPNA" version))
-       (sha256
-        (base32 "1kynw40r9vrp8ilg3nmb7zjadymfczf4711k9zkc2bpqd1figv10"))))
-    (properties `((upstream-name . "DDPNA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-venndiagram
-                             r-scales
-                             r-plyr
-                             r-megena
-                             r-igraph
-                             r-hmisc
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggfun))
-    (home-page "https://github.com/liukf10/DDPNA")
-    (synopsis
-     "Disease-Drived Differential Proteins Co-Expression Network Analysis")
-    (description
-     "This package provides functions designed to connect disease-related differential
-proteins and co-expression network.  It provides the basic statics analysis
-included t test, ANOVA analysis.  The network construction is not offered by the
-package, you can used WGCNA package which you can learn in Peter et al. (2008)
-<doi:10.1186/1471-2105-9-559>.  It also provides module analysis included PCA
-analysis, two enrichment analysis, Planner maximally filtered graph extraction
-and hub analysis.")
-    (license license:gpl2)))
 
 (define-public r-ddpm
   (package

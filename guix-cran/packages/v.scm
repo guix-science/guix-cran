@@ -3865,13 +3865,13 @@ results of analysis in the ggplot2 style.")
 (define-public r-virustotal
   (package
     (name "r-virustotal")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "virustotal" version))
        (sha256
-        (base32 "1g5w8y4l1fb01v4wgz580lvsb1wa1g3hfqyigsk47nm6bgxyg9wl"))))
+        (base32 "1b8jgzxjfm46djmip6lr9lx1s66sfjxr2k8n5n26li2g8053y5a0"))))
     (properties `((upstream-name . "virustotal")))
     (build-system r-build-system)
     (arguments
@@ -3885,14 +3885,15 @@ results of analysis in the ggplot2 style.")
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/themains/virustotal")
-    (synopsis "R Client for the VirusTotal API")
+    (synopsis "R Client for the 'VirusTotal' API")
     (description
      "This package provides a comprehensive R interface to the @code{VirusTotal} API
-(v2 and v3), a Google service that analyzes files and URLs for viruses, worms,
-trojans and other malware.  Features include file/URL scanning, domain
-categorization, passive DNS information, IP reputation analysis, and
-comment/voting systems.  Implements rate limiting, error handling, and response
-validation for robust security analysis workflows.")
+v3.0 <https://docs.virustotal.com/>, a Google service that analyzes files and
+URLs for viruses, worms, trojans and other malware.  Features include file/URL
+scanning, domain categorization, passive DNS information, IP reputation
+analysis, @code{IoC} relationships, sandbox analysis, and comment/voting
+systems.  Implements rate limiting, error handling, and response validation for
+robust security analysis workflows.")
     (license license:expat)))
 
 (define-public r-virusparies

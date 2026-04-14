@@ -3462,13 +3462,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "15rqil25a9cl9i45dc8g2xqjzhkgs9pyn6q3jzp0j6gyxf2cs1h4"))))
+        (base32 "07394w77dc295k9fpv6wwx8py8jbqj19x3w0y3akqx4nald344b4"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -6110,6 +6110,30 @@ imperfect ranking data for Ranked Set Sampling and Median Ranked Set Sampling.
 Ozdemir Y.A., Ebegil M., & Gokpinar F. (2019), <doi:10.1007/s40995-018-0558-0>
 Ozdemir Y.A., Ebegil M., & Gokpinar F. (2017),
 <doi:10.1080/03610918.2016.1263736>.")
+    (license license:gpl2)))
+
+(define-public r-rssop
+  (package
+    (name "r-rssop")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSSOP" version))
+       (sha256
+        (base32 "119xrxpaf68qdb2kj2pbaja6im2nbxsgibb1bnlpnc3fcxkmqcsf"))))
+    (properties `((upstream-name . "RSSOP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=RSSOP")
+    (synopsis
+     "Simulation of Supply Reservoir Systems using Standard Operation Policy")
+    (description
+     "Reservoir Systems Standard Operation Policy.  A system for simulation of supply
+reservoirs.  It proposes functionalities for plotting and evaluation of supply
+reservoirs systems.")
     (license license:gpl2)))
 
 (define-public r-rssl
@@ -18956,41 +18980,6 @@ In addition, visualisation and diagnostic tools are implemented as well as high
 and low-level plot functions for the ternary diagram.")
     (license license:gpl2+)))
 
-(define-public r-robcat
-  (package
-    (name "r-robcat")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robcat" version))
-       (sha256
-        (base32 "0sxc627xhjj89spvqp7jbbdncx6w1l706k0rms5jvq8303i36x62"))))
-    (properties `((upstream-name . "robcat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rcpp
-                             r-pracma
-                             r-numderiv
-                             r-mvtnorm
-                             r-matrix
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=robcat")
-    (synopsis "Robust Categorical Data Analysis")
-    (description
-     "Robust categorical data analysis based on the theory of C-estimation developed
-in Welz (2024) <doi:10.48550/@code{arXiv.2403.11954>}.  For now, the package
-only implements robust estimation of polychoric correlation as proposed in Welz,
-Mair and Alfons (2026) <doi:10.1017/psy.2025.10066> and robust estimation of
-polyserial correlation (Welz, 2026 <doi:10.1017/psy.2026.10091>) with methods
-for printing and plotting.  We will implement further models in future releases.
- In addition, the package is still experimental, so input arguments and class
-structure may change in future releases.")
-    (license license:gpl2+)))
-
 (define-public r-robber
   (package
     (name "r-robber")
@@ -20529,13 +20518,13 @@ and Feng Tian (2014) <DOI:10.1371/journal.pone.0107684>), and HE regression
 (define-public r-rmvl
   (package
     (name "r-rmvl")
-    (version "1.1.0.2")
+    (version "1.1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMVL" version))
        (sha256
-        (base32 "185an7asgsw0dqqn33p39zyn32i9zajn6r97bvvx0nyxqvsrllh2"))))
+        (base32 "17n2zl24n7dyqjhdxm68r9xyrkcv01rzds80zx509m1mlmcw4r7h"))))
     (properties `((upstream-name . "RMVL")))
     (build-system r-build-system)
     (arguments
@@ -49482,13 +49471,13 @@ developed to show work flows and scripts for first-time users.")
 (define-public r-rcmdrplugin-uca
   (package
     (name "r-rcmdrplugin-uca")
-    (version "5.1-2")
+    (version "5.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.UCA" version))
        (sha256
-        (base32 "0m46318z7rrdh3amw5rs6crkpdrn1kkbn9hvqswky9swjj6ckrry"))))
+        (base32 "09168a15iw8klx7wicg2hzraxrypbfs7n1w886qm34hyblx7alib"))))
     (properties `((upstream-name . "RcmdrPlugin.UCA")))
     (build-system r-build-system)
     (arguments

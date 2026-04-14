@@ -1529,13 +1529,13 @@ respectively.  For the details of these methods, see the reference section of
 (define-public r-itemrest
   (package
     (name "r-itemrest")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ItemRest" version))
        (sha256
-        (base32 "0d951891bxmm47hwm5l7fj1z8ll5qcp5zzfh69p1pqy85yyc5z6b"))))
+        (base32 "06n7p08vzpqp1qghs66h56dazhkmh6si7z2xx4r2yc20a3p1xgry"))))
     (properties `((upstream-name . "ItemRest")))
     (build-system r-build-system)
     (arguments
@@ -1552,7 +1552,9 @@ strategies in exploratory factor analysis, producing transparent summaries
 (explained variance, loading ranges, reliability) to support comfortable,
 reproducible decisions.  The criteria are based on best practices and
 established heuristics (e.g., Costello & Osborne (2005) <doi:10.7275/jyj1-4868>,
-Howard (2016) <doi:10.1080/10447318.2015.1087664>).")
+Howard (2016) <doi:10.1080/10447318.2015.1087664>).  Includes flexible
+thresholds for factor loadings (min_loading) and cross-loading differences
+(loading_diff).")
     (license license:expat)))
 
 (define-public r-itemanalysis
@@ -2501,6 +2503,31 @@ accepting suggestions for species with greater weight and cluster medoids.")
      "Read and process isotopocule data from an Orbitrap Isotope Solutions mass
 spectrometer.  Citation: Kantnerova et al. (Nature Protocols, 2024).")
     (license license:expat)))
+
+(define-public r-isoniche
+  (package
+    (name "r-isoniche")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isoniche" version))
+       (sha256
+        (base32 "18k1rmw9bw6zls7qkldxfwr9r10vl68r0fgb9jfidn980r7rqv0a"))))
+    (properties `((upstream-name . "isoniche")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-lmodel2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=isoniche")
+    (synopsis
+     "Calculating Density-Independent Niche Breadth Indices from Abundance Data")
+    (description
+     "Deriving isodar-based niche breadth indices from abundance data of two or more
+habitats, including several methods based on pairwise isodars, multidimensional
+isodars, and isodar-adjusted inequality.")
+    (license license:gpl3)))
 
 (define-public r-isomemo
   (package
@@ -15599,6 +15626,47 @@ The package is designed for handling complex longitudinal datasets, optimizing
 them for research in healthcare, demography, and other fields requiring temporal
 data modeling.")
     (license license:gpl3)))
+
+(define-public r-ilora
+  (package
+    (name "r-ilora")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ILORA" version))
+       (sha256
+        (base32 "1ip8r6dnyxd7j85bbdb6irbn2mqrjy9v3wlny6s3qhx09gc9hx5h"))))
+    (properties `((upstream-name . "ILORA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-units
+                             r-tidyr
+                             r-sf
+                             r-rpostgres
+                             r-rnaturalearthdata
+                             r-rnaturalearth
+                             r-rcolorbrewer
+                             r-plotly
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ILORA")
+    (synopsis "'ILORA': Indian Alien Flora Information Database Retrieval")
+    (description
+     "This package provides tools to access, query, and visualize species occurrence
+data from the ILORA package.  The package enables users to retrieve species
+names, explore available variables, and extract species-level data based on
+user-defined criteria.  It also supports exploratory data analysis and
+visualization to facilitate ecological and bio-geographical research.  Further
+details about the database are available at
+<https://ilora2020.wixsite.com/ilora2020>.")
+    (license license:expat)))
 
 (define-public r-ilabelled
   (package

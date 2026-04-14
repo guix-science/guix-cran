@@ -11991,13 +11991,13 @@ specify your own temporal, spatial and/or thematic filters.")
 (define-public r-ohpl
   (package
     (name "r-ohpl")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OHPL" version))
        (sha256
-        (base32 "1bcg97lgjs00xka2k5k8kdnc42vz10g78cb9mh5jz2g58iamjzbk"))))
+        (base32 "1z1jq2bbmhbdjjdkb3gj37vz9877mwrkyvf731xza5s14lw8g6l7"))))
     (properties `((upstream-name . "OHPL")))
     (build-system r-build-system)
     (arguments

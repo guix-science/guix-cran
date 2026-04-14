@@ -1605,13 +1605,13 @@ Shiny input or output.")
 (define-public r-pursuit
   (package
     (name "r-pursuit")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pursuit" version))
        (sha256
-        (base32 "1iz7vbsc7by3dwfnlz3sdch1ij3765lr9422v49mpqj51laykni6"))))
+        (base32 "1gxn4ih5wrf7c2hnnxgz6c59h0bcpdfpglp5kxdmfafa5gbdbjcw"))))
     (properties `((upstream-name . "Pursuit")))
     (build-system r-build-system)
     (arguments
@@ -12471,6 +12471,42 @@ pregnancies or supporting partners through the process, making use of options to
 personalise output messages.  For details on due date calculations, see
 <https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/05/methods-for-estimating-the-due-date>.")
     (license license:expat)))
+
+(define-public r-prefviz
+  (package
+    (name "r-prefviz")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prefviz" version))
+       (sha256
+        (base32 "1701kbk3bzh48rd4vvnm04sbvg5y1in9qbaz87br2b67dz28jhjk"))))
+    (properties `((upstream-name . "prefviz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-prefio
+                             r-ggplot2
+                             r-geozoo
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://numbats.github.io/prefviz/")
+    (synopsis
+     "Visualizes Preference Data via Ternary Plots in Two and Higher Dimensions")
+    (description
+     "Visualises preference and ranking data by extending traditional ternary plots to
+support high-dimensional simplexes.  The package provides methods to transform
+compositional data into coordinates suitable for 2D and high-dimensional ternary
+plots (see Cook & Laa (2024) <https://dicook.github.io/mulgar_book/>).
+Compatibility with interactive visualization packages such as plotly or detourr
+allows users to explore high-dimensional preference structures dynamically.")
+    (license license:gpl3+)))
 
 (define-public r-prefmod
   (package

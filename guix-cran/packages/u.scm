@@ -412,13 +412,13 @@ relationships at the lower and upper boundary of the data range.")
 (define-public r-uteals
   (package
     (name "r-uteals")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uteals" version))
        (sha256
-        (base32 "14y9i5kdmd8sfhl9h7q7q7yyss9rpp75ykh43y0p7wsgrwhskbbi"))))
+        (base32 "1dm7bq1gn9wvp9sdrd0c6nnmvfjh7jdkgvc0c72m3nq9ss7f2njz"))))
     (properties `((upstream-name . "uteals")))
     (build-system r-build-system)
     (arguments
@@ -439,6 +439,7 @@ relationships at the lower and upper boundary of the data range.")
                              r-patchwork
                              r-openxlsx
                              r-junco
+                             r-gridify
                              r-ggplotify
                              r-ggplot2
                              r-formatters

@@ -654,6 +654,35 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
 <doi: 10.1093/jamia/ocab187>.")
     (license license:expat)))
 
+(define-public r-luckier
+  (package
+    (name "r-luckier")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "luckieR" version))
+       (sha256
+        (base32 "1i9jf2zp7j4vx1np0j940svkdk28zn8996akymfn02xcwr1n6vnn"))))
+    (properties `((upstream-name . "luckieR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (home-page "https://github.com/chrissy3815/luckieR")
+    (synopsis "Calculations of Luck in Structured Population Models")
+    (description
+     "User-friendly and generalized tools for the calculation of luck -- moments of
+variation in metrics like lifespan and lifetime reproductive output.  We provide
+tools for calculating those moments and also performing decompositions into
+contributions from, for example, individual traits, environmental impacts, and
+luck (also called individual stochasticity).  The functions included here are
+based on Snyder and Ellner (2024) <doi:10.1086/730557>, Cochran and Ellner
+(1992) <https://www.jstor.org/stable/2937115>, and Hernandez et al. (2024)
+<doi:10.1111/ele.14390>.")
+    (license license:expat)))
+
 (define-public r-lucidus
   (package
     (name "r-lucidus")
@@ -12948,13 +12977,13 @@ data.")
 (define-public r-lgspline
   (package
     (name "r-lgspline")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgspline" version))
        (sha256
-        (base32 "0i13w2yhwhfdvb2fmr49cjvm8d2qyymzcrmsknijk7hxipxnd3l4"))))
+        (base32 "1flpd8wmpbqxgm79an3fn8kkyiy5azqh3irq871k6rm96ma1fvpg"))))
     (properties `((upstream-name . "lgspline")))
     (build-system r-build-system)
     (arguments

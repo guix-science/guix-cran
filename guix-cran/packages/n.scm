@@ -4078,13 +4078,13 @@ see <https://developers.notion.com/>.")
 (define-public r-notionapi
   (package
     (name "r-notionapi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "notionapi" version))
        (sha256
-        (base32 "023840llkwkiz2lzfi4mwyz4cqlzfhfyd4j9b384xcfnalvz1j4a"))))
+        (base32 "0aky95lbn975b7n0p0m0hcz3h62pc92mv6q9yg5z9khplys8pbax"))))
     (properties `((upstream-name . "notionapi")))
     (build-system r-build-system)
     (arguments
@@ -11297,13 +11297,13 @@ seasons including the sophisticated tie-breaking procedures.")
 (define-public r-nflreadr
   (package
     (name "r-nflreadr")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflreadr" version))
        (sha256
-        (base32 "17dv828jzyfpxajk8121pnv7k2yr92ak4kg64bzbygkz40h7n7i0"))))
+        (base32 "0gbj9qb3lj6c6gnrnlqm1qk62qjqzfs3yai2yi8i4bw1p0dyhha6"))))
     (properties `((upstream-name . "nflreadr")))
     (build-system r-build-system)
     (arguments
