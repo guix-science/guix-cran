@@ -2159,13 +2159,13 @@ map projection.")
 (define-public r-osmextract
   (package
     (name "r-osmextract")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmextract" version))
        (sha256
-        (base32 "1ghkv4p3kmy4lsxq480hw8yylxfrasplv6n3l91h7r9nrnqwbss5"))))
+        (base32 "0yk0pbdn0wlnv1q65xh46n511zrsm8andjw17v7zf8wwx3pirvwz"))))
     (properties `((upstream-name . "osmextract")))
     (build-system r-build-system)
     (arguments
@@ -10762,13 +10762,13 @@ functionality is supported.")
 (define-public r-omophub
   (package
     (name "r-omophub")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omophub" version))
        (sha256
-        (base32 "0gkrzj2njl8bpnljd53as6h42vrri75plk4gyn9yzi0cpya21iph"))))
+        (base32 "0g8dm5amhifyxlxika4g7kf7jxp5bamvqp4wwg6m0bcmz8kpmknc"))))
     (properties `((upstream-name . "omophub")))
     (build-system r-build-system)
     (arguments
@@ -10789,8 +10789,8 @@ functionality is supported.")
      "This package provides an R interface to the OMOPHub API for accessing OHDSI
 ATHENA standardized medical vocabularies.  Supports concept search, semantic
 search using neural embeddings, concept similarity, vocabulary exploration,
-hierarchy navigation, relationship queries, and concept mappings with automatic
-pagination and rate limiting.")
+hierarchy navigation, relationship queries, concept mappings, and FHIR-to-OMOP
+concept resolution with automatic pagination.")
     (license license:expat)))
 
 (define-public r-omopgenerics
@@ -14444,6 +14444,37 @@ alternatively until the solution is reached.  Some tools for analyzing the
 estimates are included.  The most relevant is covariance matrix computation
 using a closed formula.")
     (license license:gpl3+)))
+
+(define-public r-obr
+  (package
+    (name "r-obr")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "obr" version))
+       (sha256
+        (base32 "1nh5wl2rf2xgk0z9r3dd9ig5ffrjnzbd110xkg5m28y0c6j9sdgl"))))
+    (properties `((upstream-name . "obr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-httr2 r-cli))
+    (home-page "https://github.com/charlescoverdale/obr")
+    (synopsis "Access 'Office for Budget Responsibility' Data")
+    (description
+     "This package provides clean, tidy access to data published by the Office for
+Budget Responsibility ('OBR'), the UK's independent fiscal watchdog.  Covers the
+Public Finances Databank (outturn for PSNB, PSND, receipts, and expenditure
+since 1946), the Historical Official Forecasts Database (every OBR forecast
+since 2010), the Economic and Fiscal Outlook detailed forecast tables (five-year
+projections from the latest Budget), the Welfare Trends Report (incapacity
+benefit spending and caseloads), and the Fiscal Risks and Sustainability Report
+(50-year state pension projections).  Data is downloaded from the OBR on first
+use and cached locally for subsequent calls.  Data is sourced from the OBR
+website <https://obr.uk>.")
+    (license license:expat)))
 
 (define-public r-obmbpkg
   (package

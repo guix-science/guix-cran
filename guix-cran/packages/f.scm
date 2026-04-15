@@ -23562,13 +23562,13 @@ performing wavelet decomposition of time series.  See Quilty and Adamowski
 (define-public r-fastvoter
   (package
     (name "r-fastvoter")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastVoteR" version))
        (sha256
-        (base32 "05wd9s057zg9wsm2cpnwvkq0n3nwhlhm80jh0whccw7ph157xhq7"))))
+        (base32 "002npjrrcjdvlfgmlqqlv501209jkwws16l3dc56d1kd6fdhkzhr"))))
     (properties `((upstream-name . "fastVoteR")))
     (build-system r-build-system)
     (arguments
@@ -23584,7 +23584,7 @@ polynomially-computable voting theory methods for committee ranking and scoring.
 Approval Voting (SAV), sequential Proportional Approval Voting (PAV), and
 sequential Phragmen's Rule.  Weighted variants of these methods are also
 provided, allowing for differential voter influence.")
-    (license license:lgpl3+)))
+    (license license:expat)))
 
 (define-public r-fastverse
   (package

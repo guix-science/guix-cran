@@ -4399,13 +4399,13 @@ charts.")
 (define-public r-hpa
   (package
     (name "r-hpa")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hpa" version))
        (sha256
-        (base32 "1p3bi6syn211wp2xa90mcxsl11gk8w9rpn2axlxasnqc4c3ag64x"))))
+        (base32 "0zm8pyfqcxvg6ybhfm3d1a00hf14mashczw4gvws6h6bhf4dxm5j"))))
     (properties `((upstream-name . "hpa")))
     (build-system r-build-system)
     (arguments
@@ -4417,8 +4417,8 @@ charts.")
     (description
      "Multivariate conditional and marginal densities, moments, cumulative
 distribution functions as well as binary choice and sample selection models
-based on Hermite polynomial approximation which was proposed and described by A.
-Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
+based on the Hermite polynomial approximation which was proposed and described
+by A. Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
     (license license:gpl3)))
 
 (define-public r-howzatr

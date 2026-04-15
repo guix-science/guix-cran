@@ -17246,13 +17246,13 @@ tensors.")
 (define-public r-tinyvast
   (package
     (name "r-tinyvast")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyVAST" version))
        (sha256
-        (base32 "1fmfzgrjf09gwip02aaw1qg5f6xs3qkkidrxrspzvibl5jcqslsp"))))
+        (base32 "17ygchy8477nq06bara5p5icq62lzyq8yn391yimhvl3d0mqfzca"))))
     (properties `((upstream-name . "tinyVAST")))
     (build-system r-build-system)
     (arguments
@@ -17572,13 +17572,13 @@ of lenses, see the lens package wiki:
 (define-public r-tinyimg
   (package
     (name "r-tinyimg")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyimg" version))
        (sha256
-        (base32 "1x5szaknf0y694418mim35jnc6ih1rsw5la7gyj7nx27vgfwnrkx"))))
+        (base32 "1k0l8r8qgr5mb1a1i5g57i4lif68ij4ik0q05iv9mqb7mszahqgg"))))
     (properties `((upstream-name . "tinyimg")))
     (build-system r-build-system)
     (arguments
@@ -17590,9 +17590,11 @@ of lenses, see the lens package wiki:
     (description
      "Optimize and compress images using Rust libraries to reduce file sizes while
 maintaining image quality.  Supports PNG palette reduction and dithering via the
-exoquant crate before lossless PNG optimization via the oxipng crate.  The
-package provides functions to optimize individual image files or entire
-directories, with configurable compression levels.")
+exoquant crate before lossless PNG optimization via the oxipng crate, and JPEG
+re-encoding via the mozjpeg crate.  The package provides functions to optimize
+individual image files or entire directories, with configurable compression
+levels.  Use @code{tinyimg()} as a convenient entry point for mixed PNG/JPEG
+workflows.")
     (license license:expat)))
 
 (define-public r-tinycodet

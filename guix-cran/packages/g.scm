@@ -20523,13 +20523,13 @@ diagnostic plots.")
 (define-public r-ggrefine
   (package
     (name "r-ggrefine")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrefine" version))
        (sha256
-        (base32 "0d43by5f9lwm62jildibdbv26hddbsi1f0pwyldfqg3war7i6yf2"))))
+        (base32 "1rknskyrh51wv75kg2cv1khwjf0dvwjvndsqxk62m1xry0n5y8d6"))))
     (properties `((upstream-name . "ggrefine")))
     (build-system r-build-system)
     (arguments
@@ -20545,8 +20545,10 @@ diagnostic plots.")
     (home-page "https://github.com/davidhodge931/ggrefine")
     (synopsis "Pretty 'ggplot2' Themes")
     (description
-     "This package provides a set of complete ggplot2 themes and functions to refine
-these.")
+     "This package provides a set of complete ggplot2 themes and refine functions for
+plot appearance.  The themes are designed to work seamlessly with the refine
+functions, which adjust gridlines and axis elements to suit the particulars of a
+plot.")
     (license license:expat)))
 
 (define-public r-ggredist
@@ -22117,13 +22119,13 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
 (define-public r-gglogger
   (package
     (name "r-gglogger")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglogger" version))
        (sha256
-        (base32 "0kdlg7cs8bmgf8i2ddaixs7vimfpgs48z05k754idm4r5l4z3xd1"))))
+        (base32 "12qlgg4ckj1p1i2l5bglyki4mwyj7f45xmqhxg9ci8bxc8qj736r"))))
     (properties `((upstream-name . "gglogger")))
     (build-system r-build-system)
     (arguments

@@ -13805,47 +13805,6 @@ where gene names may vary among accessions.  Borstein & O'Meara (2018)
 that we can have an idea of what the packages we are loading are meant for.")
     (license license:expat)))
 
-(define-public r-annotar
-  (package
-    (name "r-annotar")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "annotaR" version))
-       (sha256
-        (base32 "1kwpjqvaqnr9d2phrp8s0jxnw5f048v04ix6lmw07xi2qyha6aj1"))))
-    (properties `((upstream-name . "annotaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-testthat
-                             r-rmarkdown
-                             r-purrr
-                             r-magrittr
-                             r-later
-                             r-knitr
-                             r-jsonlite
-                             r-httr
-                             r-gprofiler2
-                             r-ggplot2
-                             r-dplyr
-                             r-biomart))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=annotaR")
-    (synopsis "Tidy, Integrated Gene Annotation")
-    (description
-     "This package provides a framework for intuitive, multi-source gene and protein
-annotation, with a focus on integrating functional genomics with disease and
-drug data for translational insights.  Methods used include g:Profiler (Raudvere
-et al. (2019) <doi:10.1093/nar/gkz369>), @code{biomaRt} (Durinck et al. (2009)
-<doi:10.1038/nprot.2009.97>), and the Open Targets Platform (Koscielny et al.
-(2017) <doi:10.1093/nar/gkw1055>).")
-    (license license:expat)))
-
 (define-public r-annoprobe
   (package
     (name "r-annoprobe")

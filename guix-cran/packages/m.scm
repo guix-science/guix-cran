@@ -19634,13 +19634,13 @@ multivariate normal random vectors.  Huixuan, Gao (2005, ISBN:9787301078587),
 (define-public r-mnorm
   (package
     (name "r-mnorm")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mnorm" version))
        (sha256
-        (base32 "1ivd40cmcp66h4yccbll90fgqmq03pgy3hgklz8wxj0j479r21z0"))))
+        (base32 "05rgfqy8qhcpcxs34v1mbn3yn7aycrdvsb1yz79k27y5r1yx61d1"))))
     (properties `((upstream-name . "mnorm")))
     (build-system r-build-system)
     (arguments
@@ -21773,13 +21773,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.7-4")
+    (version "1.8-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1bnc8rmrk00cv9l6n9y4iq90dg90s688ifgi43l58vaz19dw1wc4"))))
+        (base32 "1rv4i1rp2srxh8g2fwv44l7vk3ac3d35a6yy2iq0x9axkf0v46ck"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -21882,13 +21882,13 @@ side.  The user must have adequate credentials.  Please see
 (define-public r-mlstm
   (package
     (name "r-mlstm")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlstm" version))
        (sha256
-        (base32 "18zml0wxplh94776m6an17kxfs8wcnvhp5rvywk195xl7a7bp53r"))))
+        (base32 "1ab69zqjlm9wzrwg5gsr0a4r17fa36kbjn7n5rqzn1i710dxaa1b"))))
     (properties `((upstream-name . "mlstm")))
     (build-system r-build-system)
     (arguments
@@ -48324,13 +48324,13 @@ algorithm for the indivisible goods trading problem.")
 (define-public r-matchingpursuit
   (package
     (name "r-matchingpursuit")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchingPursuit" version))
        (sha256
-        (base32 "0bvsfb08d2wqjjgj0ljg1nmg3d3km5a25il2ds6a1qwkprq6ijan"))))
+        (base32 "1vinz69js4nfh6jycaq7d1201aaim4f1b91y1x11cqagqza0956x"))))
     (properties `((upstream-name . "MatchingPursuit")))
     (build-system r-build-system)
     (arguments
@@ -49028,13 +49028,13 @@ variance estimator is presented in Mashreghi et al. (2016)
 (define-public r-mascarade
   (package
     (name "r-mascarade")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mascarade" version))
        (sha256
-        (base32 "05mqv9piirb83vivjbbnyc030yzfqmi9928wi9734j5l0zklbcja"))))
+        (base32 "1k2d3krw7zkixvf2lyl4g3g1av0l3iw7h11m802vx68pnsyf10jh"))))
     (properties `((upstream-name . "mascarade")))
     (build-system r-build-system)
     (arguments
@@ -51336,13 +51336,13 @@ regions were intervention is most duly needed.")
 (define-public r-maplegend
   (package
     (name "r-maplegend")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maplegend" version))
        (sha256
-        (base32 "0pms1g4qihdimq9f3rn07hbz90p8ai9xaqi7lb18hv86aylbi4ii"))))
+        (base32 "142svjr4c90jsnms4h71sdw2f9f3ynfd5m7csw8n6qg2bb88s3aq"))))
     (properties `((upstream-name . "maplegend")))
     (build-system r-build-system)
     (arguments
@@ -51544,13 +51544,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1icjfk4yw55wzk5zmgczxm02qd3dgc8hznv26yndfhsi22sp8zl4"))))
+        (base32 "12skzykw4rjrlsgjgg7fczh00fshxypnifazp2n5p3c5kx62vi2d"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments

@@ -28269,6 +28269,37 @@ characteristics of a DCE. DCEmgmt includes the function DCEestm which estimates
 choice models once the database has been reshaped with DCEmgmt'.")
     (license license:gpl3)))
 
+(define-public r-dcem
+  (package
+    (name "r-dcem")
+    (version "2.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DCEM" version))
+       (sha256
+        (base32 "0s6xfngmxa8xcdvhlki412y90fnfg34kfm5anzv2pg9z42yw7qb0"))))
+    (properties `((upstream-name . "DCEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-mvtnorm r-matrixcalc r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/parichit/DCEM")
+    (synopsis
+     "Clustering Big Data using Expectation Maximization Star (EM*) Algorithm")
+    (description
+     "This package implements the Improved Expectation Maximisation EM* and the
+traditional EM algorithm for clustering big data (gaussian mixture models for
+both multivariate and univariate datasets).  This version implements the faster
+alternative-EM* that expedites convergence via structure based data segregation.
+ The implementation supports both random and K-means++ based initialization.
+Reference: Parichit Sharma, Hasan Kurban, Mehmet Dalkilic (2022)
+<doi:10.1016/j.softx.2021.100944>.  Hasan Kurban, Mark Jenne, Mehmet Dalkilic
+(2016) <doi:10.1007/s41060-017-0062-1>.")
+    (license license:gpl3)))
+
 (define-public r-dccpp
   (package
     (name "r-dccpp")

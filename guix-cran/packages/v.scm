@@ -9241,13 +9241,13 @@ accessibility.")
 (define-public r-vandalico
   (package
     (name "r-vandalico")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vandalico" version))
        (sha256
-        (base32 "1as7r8cp6d0gcdlln11mkj0wqrzdyi17z1ylxggyrjv3z298v9k2"))))
+        (base32 "13hdpjl7qd1ixabrkvv8b8yflvipmb1h0rgrzq9xc3pi99na58fh"))))
     (properties `((upstream-name . "vandalico")))
     (build-system r-build-system)
     (arguments

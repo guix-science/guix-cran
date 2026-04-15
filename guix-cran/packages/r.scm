@@ -18980,6 +18980,41 @@ In addition, visualisation and diagnostic tools are implemented as well as high
 and low-level plot functions for the ternary diagram.")
     (license license:gpl2+)))
 
+(define-public r-robcat
+  (package
+    (name "r-robcat")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robcat" version))
+       (sha256
+        (base32 "0sxc627xhjj89spvqp7jbbdncx6w1l706k0rms5jvq8303i36x62"))))
+    (properties `((upstream-name . "robcat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rcpp
+                             r-pracma
+                             r-numderiv
+                             r-mvtnorm
+                             r-matrix
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=robcat")
+    (synopsis "Robust Categorical Data Analysis")
+    (description
+     "Robust categorical data analysis based on the theory of C-estimation developed
+in Welz (2024) <doi:10.48550/@code{arXiv.2403.11954>}.  For now, the package
+only implements robust estimation of polychoric correlation as proposed in Welz,
+Mair and Alfons (2026) <doi:10.1017/psy.2025.10066> and robust estimation of
+polyserial correlation (Welz, 2026 <doi:10.1017/psy.2026.10091>) with methods
+for printing and plotting.  We will implement further models in future releases.
+ In addition, the package is still experimental, so input arguments and class
+structure may change in future releases.")
+    (license license:gpl2+)))
+
 (define-public r-robber
   (package
     (name "r-robber")
@@ -52563,13 +52598,13 @@ possible to link behavioral labels extracted from BORIS software
 (define-public r-rblimp
   (package
     (name "r-rblimp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rblimp" version))
        (sha256
-        (base32 "144h1yw8r4c2ss059g59z1b360al272qy13zczwch9jna1b69kl6"))))
+        (base32 "0c8vkdzalk7pbjs1yyza7fnqr034jc68lx99vll5nd5jgyc9ilcd"))))
     (properties `((upstream-name . "rblimp")))
     (build-system r-build-system)
     (arguments

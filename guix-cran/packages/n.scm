@@ -1138,13 +1138,13 @@ Miari, Mahmoud; Anan, Mohamad Taher; Zeina, Mohamed Bisher(2022)
 (define-public r-ntlkwiex
   (package
     (name "r-ntlkwiex")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NTLKwIEx" version))
        (sha256
-        (base32 "1pdqcbiznil97s8m3yc3f251mii0w9qpa1ayw6bnx6bm9brgd4my"))))
+        (base32 "070llzcywm3pdybgbdjwshn647p680q2wzlxvx4n0wd57yczr7gq"))))
     (properties `((upstream-name . "NTLKwIEx")))
     (build-system r-build-system)
     (arguments
@@ -13339,13 +13339,13 @@ model via heatmaps.")
 (define-public r-netutils
   (package
     (name "r-netutils")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netUtils" version))
        (sha256
-        (base32 "0wirgfcdvc93710g8s30yb8kyaawafdq7q8xvjwkjdscpp5fhgfm"))))
+        (base32 "1568nzc48g16dz4la7zlfxk6ivv871zr63r49rdcmp8gir39zvys"))))
     (properties `((upstream-name . "netUtils")))
     (build-system r-build-system)
     (arguments

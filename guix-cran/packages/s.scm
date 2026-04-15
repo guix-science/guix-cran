@@ -2743,13 +2743,13 @@ permutation tests.  Includes simulation utilities replicating Wang et al. (2023
 (define-public r-svyroc
   (package
     (name "r-svyroc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svyROC" version))
        (sha256
-        (base32 "0pyxrcjww4q0wv2g135hvrd46h661nz5fyqamppdx8x6gwchcdwb"))))
+        (base32 "0kr7r17zx750f8ynqfl1fmg6a0q24gijd6vzav8891wggs88zian"))))
     (properties `((upstream-name . "svyROC")))
     (build-system r-build-system)
     (arguments
@@ -13181,13 +13181,13 @@ K (2014). <doi:10.1007/s00521-012-1264-z>, Xiong T, Li C, Bao Y (2018).
 (define-public r-stlplus
   (package
     (name "r-stlplus")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stlplus" version))
        (sha256
-        (base32 "14728xsm982z9sg4rbqg307pbwqlsiyzj8z3sr9wr6fi0dayf6z5"))))
+        (base32 "0123fqcv4kr1k7yjai12dk1cfmjzvjzmj0avrphipjfm05sw94r9"))))
     (properties `((upstream-name . "stlplus")))
     (build-system r-build-system)
     (arguments
@@ -30085,19 +30085,19 @@ works with the updated spatstat package (>= 3.0-2).")
 (define-public r-spatemr
   (package
     (name "r-spatemr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatemR" version))
        (sha256
-        (base32 "0mrdx23mv94rm88f3bld3qm5cg21w900wz436wp3rwzmp0ficnjd"))))
+        (base32 "0qr5b8fa1a6fr5jn5iph5qk17gy879ymhh3fhkslmqgg689kkiqa"))))
     (properties `((upstream-name . "spatemR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gamlss-dist r-gamlss))
+    (propagated-inputs (list r-sphet r-matrix r-gamlss-dist r-gamlss))
     (home-page "https://cran.r-project.org/package=spatemR")
     (synopsis "Generalized Spatial Autoregresive Models for Mean and Variance")
     (description
@@ -50256,13 +50256,13 @@ this package is based on the works of Furusawa K, Hill AV, Parkinson JL (1927)
 (define-public r-shortr
   (package
     (name "r-shortr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shortr" version))
        (sha256
-        (base32 "0hy73p76xqi2hqxvn1g5i53r0bqf0lsghlnil3yrsyryjv62llz2"))))
+        (base32 "0fxc80dllrfki1rkj4avmzac4xwnsvm1ngs559lds2ik62s2ij4g"))))
     (properties `((upstream-name . "shortr")))
     (build-system r-build-system)
     (arguments
@@ -50270,14 +50270,12 @@ this package is based on the works of Furusawa K, Hill AV, Parkinson JL (1927)
       #:tests? #f))
     (home-page "https://doi.org/10.32614/CRAN.package.shortr")
     (synopsis
-     "Optimal Subset Identification in Undirected Weighted Network Models")
+     "Develop Concise but Comprehensive Shortened Versions of Psychometric Instruments")
     (description
-     "Identifies what optimal subset of a desired number of items should be retained
-in a short version of a psychometric instrument to assess the âbroadestâ
-proportion of the construct-level content of the set of items included in the
-original version of the said psychometric instrument.  Expects a symmetric
-adjacency matrix as input (undirected weighted network model).  Supports brute
-force and simulated annealing combinatorial search algorithms.")
+     "Operationalizes the identification problem of which subset of items should be
+kept in the shortened version of a said psychometric instrument to best
+represent the set of items comprised in the original version of the said
+psychometric instrument.")
     (license license:gpl3+)))
 
 (define-public r-shortirt

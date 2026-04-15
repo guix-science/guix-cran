@@ -1529,13 +1529,13 @@ respectively.  For the details of these methods, see the reference section of
 (define-public r-itemrest
   (package
     (name "r-itemrest")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ItemRest" version))
        (sha256
-        (base32 "06n7p08vzpqp1qghs66h56dazhkmh6si7z2xx4r2yc20a3p1xgry"))))
+        (base32 "199cfh9xpcc0dcavci6rnhnlbrr9180dngcskrr461qric9sgx5z"))))
     (properties `((upstream-name . "ItemRest")))
     (build-system r-build-system)
     (arguments
@@ -13851,13 +13851,13 @@ methodology derived from Tiruviluamala, N., Port, A., and Lewis, E. (2022)
 (define-public r-impectr
   (package
     (name "r-impectr")
-    (version "2.5.4")
+    (version "2.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impectR" version))
        (sha256
-        (base32 "1vf2l5xds38qi8b4dbnyi1wcf5r97rjzhllybb4s9h7llx4ij0gh"))))
+        (base32 "17sn53jhl568vxgglfl6ibri3a1j10r3civd2wabpnd1kqrqv02d"))))
     (properties `((upstream-name . "impectR")))
     (build-system r-build-system)
     (arguments
@@ -14113,13 +14113,13 @@ to harness AI for predictive analytics.")
 (define-public r-immunogenetr
   (package
     (name "r-immunogenetr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunogenetr" version))
        (sha256
-        (base32 "049jq5kq1nh56vg8wpscj45lcjjbpgikghd1apml6fc3bcidkj16"))))
+        (base32 "0skmbjpa5x73sdsivm5lq684hylxjmx4asxd5l5iyg3fh67pa1ji"))))
     (properties `((upstream-name . "immunogenetr")))
     (build-system r-build-system)
     (arguments
@@ -18519,13 +18519,13 @@ visualization are also implemented.")
 (define-public r-idar
   (package
     (name "r-idar")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idar" version))
        (sha256
-        (base32 "1qif497wqb51ibp00sxsfzwfccdyizpfcvyb97j3dfjj3wc9xf3c"))))
+        (base32 "0xy56p83j7ai40bcdygm7hjd4wv941kw71zlzcqj684ajrzd37za"))))
     (properties `((upstream-name . "idar")))
     (build-system r-build-system)
     (arguments
@@ -18536,8 +18536,8 @@ visualization are also implemented.")
                              r-spatstat-explore
                              r-spatstat
                              r-picante
-                             r-fd
-                             r-ape))
+                             r-ape
+                             r-ade4))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=idar")
     (synopsis "Individual Diversity-Area Relationships")

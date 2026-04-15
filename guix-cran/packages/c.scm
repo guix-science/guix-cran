@@ -18904,13 +18904,13 @@ see Bodner et al.(2021) <doi:10.3758/s13428-021-01760-w>.")
 (define-public r-conmition
   (package
     (name "r-conmition")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conMItion" version))
        (sha256
-        (base32 "035nmrwal4vsbhffbwv6ar4l7s4rpcb3a7akr6j7fv6cgydkzzb1"))))
+        (base32 "1mdgwb3slsp1rlnlk2kcsid6smw5s2k9g7dwqr4jygz1b2qzh88v"))))
     (properties `((upstream-name . "conMItion")))
     (build-system r-build-system)
     (arguments
@@ -21387,13 +21387,13 @@ sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
 (define-public r-compositionalsr
   (package
     (name "r-compositionalsr")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalSR" version))
        (sha256
-        (base32 "1a7ilhwm6baqvjfpivczb5yi39w0gzwl7wkk9nl0n4z1lk5g481x"))))
+        (base32 "02llx92m6x2ndk0glrgwg6cgp6r44k18yp64hxv992nz01pfh9ik"))))
     (properties `((upstream-name . "CompositionalSR")))
     (build-system r-build-system)
     (arguments
@@ -53303,13 +53303,13 @@ and can be further refined as needed by the user.")
 (define-public r-cancensus
   (package
     (name "r-cancensus")
-    (version "0.5.10")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancensus" version))
        (sha256
-        (base32 "0ig7qzrn73mhqfszml3393qf4jmq9qyhlbqfxccpvi2k6valphyw"))))
+        (base32 "1dv15my94fikask49mkp0fismy21bg4mwzdgfrxrrq1fvwmfhkk1"))))
     (properties `((upstream-name . "cancensus")))
     (build-system r-build-system)
     (arguments

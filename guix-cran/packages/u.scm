@@ -181,13 +181,13 @@ default and can also expose 16-byte raw representations for low-level workflows.
 (define-public r-utsf
   (package
     (name "r-utsf")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utsf" version))
        (sha256
-        (base32 "0bcvh4qy545lh5g1is7ibsrkrh8maskikd6mr8hplsab73ymf02r"))))
+        (base32 "0gg96l3708bw33hwxqmkfy8rqkj3sb52qvapf9xvh33p3mjj0agg"))))
     (properties `((upstream-name . "utsf")))
     (build-system r-build-system)
     (arguments

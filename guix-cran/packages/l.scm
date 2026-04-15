@@ -2763,45 +2763,6 @@ Based on Maximum Lq-likelihood Estimation.  Statistics in Medicine,
 40:6818-6834.<doi:10.1002/sim.9212>.")
     (license license:gpl3)))
 
-(define-public r-lpsmooth
-  (package
-    (name "r-lpsmooth")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LPsmooth" version))
-       (sha256
-        (base32 "0fvn6vwfl37xhzzj44vadk8fr3d85zv58jjg7qfdjqvyw8khd59p"))))
-    (properties `((upstream-name . "LPsmooth")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncnorm
-                             r-polynom
-                             r-orthopolynom
-                             r-nloptr
-                             r-lpgraph
-                             r-lpbkg
-                             r-hmisc))
-    (home-page "https://cran.r-project.org/package=LPsmooth")
-    (synopsis "LP Smoothed Inference and Graphics")
-    (description
-     "Classical tests of goodness-of-fit aim to validate the conformity of a
-postulated model to the data under study.  In their standard formulation,
-however, they do not allow exploring how the hypothesized model deviates from
-the truth nor do they provide any insight into how the rejected model could be
-improved to better fit the data.  To overcome these shortcomings, we establish a
-comprehensive framework for goodness-of-fit which naturally integrates modeling,
-estimation, inference and graphics.  In this package, the deviance tests and
-comparison density plots are performed to conduct the LP smoothed inference,
-where the letter L denotes nonparametric methods based on quantiles and P stands
-for polynomials.  Simulations methods are used to perform variance estimation,
-inference and post-selection adjustments.  Algeri S. and Zhang X. (2020)
-<@code{arXiv:2005.13011>}.")
-    (license license:gpl3)))
-
 (define-public r-lpridge
   (package
     (name "r-lpridge")
@@ -9308,13 +9269,13 @@ In _Digital Humanities 2022: Conference Abstracts_, 636-637.")
 (define-public r-litfetchr
   (package
     (name "r-litfetchr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LitFetchR" version))
        (sha256
-        (base32 "0a2wj8qawc9q6656p8crnyr9c51m1gl9g1cldw5vcd7gzqkar0cv"))))
+        (base32 "0xf7ia0zsn3cshicqqyc9pbx67b2yb07psx8bhfpamw2nmhzmij3"))))
     (properties `((upstream-name . "LitFetchR")))
     (build-system r-build-system)
     (arguments
@@ -17860,13 +17821,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "0qgrml3zrjkvcl9w3sxabkh6i8d2jmqdsd5pwz7x3zg5ygslk6mq"))))
+        (base32 "10x3vcszpxhhf19qm18fcz648mwbilirzq95rhcjdvfqjr21h42p"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (arguments
@@ -17895,7 +17856,9 @@ for latent variable models from the lavaan package.  It offers two core
 functions: first, @code{lavaangui()} launches a web application that allows
 users to specify models by drawing path diagrams, fitting them, assessing model
 fit, and more; second, @code{plot_lavaan()} creates interactive path diagrams
-from models specified in lavaan'.  Karch (2024) <doi:
+from models specified in lavaan'.  After customizing a diagram interactively,
+@code{export_plot()} saves it to a file, enabling reproducible scripts without
+sacrificing fine-grained control over appearance.  Karch (2024) <doi:
 10.1080/10705511.2024.2420678> contains a tutorial.")
     (license license:gpl3+)))
 

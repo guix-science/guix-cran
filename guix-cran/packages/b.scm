@@ -4557,6 +4557,35 @@ that no adjustment is needed for these micronutrient biomarkers in either WRA or
 PSC groups (Young (2020) <doi:10.1093/ajcn/nqz303>).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-brikmeans
+  (package
+    (name "r-brikmeans")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "briKmeans" version))
+       (sha256
+        (base32 "158q2yb4dj4vhw8warv005s3rr8svr2vpkp2insgqv8mbvz7kzwq"))))
+    (properties `((upstream-name . "briKmeans")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splines2 r-depthtools r-cluster r-boot))
+    (home-page "https://cran.r-project.org/package=briKmeans")
+    (synopsis
+     "Package for Brik, Fabrik and Fdebrik Algorithms to Initialise Kmeans")
+    (description
+     "Implementation of the BRIk, FABRIk and FDEBRIk algorithms to initialise k-means.
+ These methods are intended for the clustering of multivariate and functional
+data, respectively.  They make use of the Modified Band Depth and bootstrap to
+identify appropriate initial seeds for k-means, which are proven to be better
+options than many techniques in the literature.  Torrente and Romo (2021)
+<doi:10.1007/s00357-020-09372-3> It makes use of the functions kma and
+kma.similarity, from the archived package fdakma, by Alice Parodi et al.")
+    (license license:gpl3+)))
+
 (define-public r-brightspacer
   (package
     (name "r-brightspacer")
@@ -20782,30 +20811,37 @@ mean difference), and an R2 statistic to assess clustering quality.")
 (define-public r-bfboinet
   (package
     (name "r-bfboinet")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfboinet" version))
        (sha256
-        (base32 "1m98gzld9y5a2mn6s0gibzsw06xxkkx7mfdgy35ciikviz7p2b37"))))
+        (base32 "1rd7gbb9hb7j2rq65arwy9gm1qr45gh1pc2293q0mzvzjipmwz7w"))))
     (properties `((upstream-name . "bfboinet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect r-magrittr r-iso r-dplyr r-copula))
+    (propagated-inputs (list r-tidyselect
+                             r-magrittr
+                             r-iso
+                             r-dplyr
+                             r-copula
+                             r-bop2fe
+                             r-boinet
+                             r-boin))
     (home-page "https://cran.r-project.org/package=bfboinet")
     (synopsis
      "Backfill Bayesian Optimal Interval Design Using Efficacy and Toxicity")
     (description
-     "The backfill Bayesian optimal interval design using efficacy and toxicity
-outcomes for dose optimization (BF-BOIN-ET) design is a novel clinical trial
-design to allow patients to be backfilled at lower doses during a dose-finding
-trial while prioritizing the dose-escalation cohort to explore a higher dose.
-The advantages compared to the other designs in terms of the percentage of
-correct optimal dose (OD) selection, reducing the sample size, and shortening
-the duration of the trial, in various realistic setting.")
+     "This package implements the Backfill Bayesian Optimal Interval Design
+(BF-BOIN-ET), a novel clinical trial methodology for dose optimization that
+simultaneously consider both efficacy and toxicity outcome as described in
+(Takeda et al (2025) <doi:10.1002/pst.2470>).  The package has been extended to
+include a seamless two-stage phase I/II trial design with backfill and joint
+efficacy and toxicity monitoring as described in (Takeda et al (2026)
+<doi:10.1002/pst.70092>).")
     (license license:gpl3)))
 
 (define-public r-bfboin
