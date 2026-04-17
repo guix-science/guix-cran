@@ -32472,13 +32472,13 @@ surrogate residual, which extends the results of Liu and Zhang (2017) <doi:
 (define-public r-clootl
   (package
     (name "r-clootl")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clootl" version))
        (sha256
-        (base32 "1vwmzcxv3v4ahkam8zfaahzih9pw7psblzxx58clw9alys5gi5zm"))))
+        (base32 "0j66mx7rb01yjd72assmfbjbnyrsxji9z5z5pfghx5cw8hsyyjsp"))))
     (properties `((upstream-name . "clootl")))
     (build-system r-build-system)
     (arguments

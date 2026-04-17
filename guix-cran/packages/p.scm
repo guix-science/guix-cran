@@ -1091,6 +1091,36 @@ eigenvectors regression (PVR) and phylogenetic signal-representation (PSR)
 curve, along with some plot utilities.")
     (license license:gpl2+)))
 
+(define-public r-pvlrt
+  (package
+    (name "r-pvlrt")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pvLRT" version))
+       (sha256
+        (base32 "02w88z752svyk63n288dwnbwlw5v5cla294pzrms361ggs1bdkph"))))
+    (properties `((upstream-name . "pvLRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer
+                             r-progress
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-ggfittext
+                             r-data-table
+                             r-bit64))
+    (home-page "https://cran.r-project.org/package=pvLRT")
+    (synopsis "Likelihood Ratio Test-Based Approaches to Pharmacovigilance")
+    (description
+     "This package provides a suite of likelihood ratio test based methods to use in
+pharmacovigilance.  Contains various testing and post-processing functions.")
+    (license license:gpl3)))
+
 (define-public r-pvldcurve
   (package
     (name "r-pvldcurve")
@@ -17602,13 +17632,13 @@ monitoring site in the Chihuahuan desert.  The raw data files can be found at
 (define-public r-portalhacienda
   (package
     (name "r-portalhacienda")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PortalHacienda" version))
        (sha256
-        (base32 "0qxx4s5z0gsnymhbqxsw0hnp2jgqgq48iqdlanvzn5hgd92nhhiq"))))
+        (base32 "0izg4z36vi495ywdk7g7fdawii20qw6npcmmsrlmar0rhiapslww"))))
     (properties `((upstream-name . "PortalHacienda")))
     (build-system r-build-system)
     (arguments

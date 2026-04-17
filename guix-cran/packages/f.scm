@@ -4658,13 +4658,13 @@ modified generalized weights is computed.  Ibrahim et al. (2022)
 (define-public r-frheritage
   (package
     (name "r-frheritage")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frheritage" version))
        (sha256
-        (base32 "0cqin009v5nxa28y3xskqkm6irjlbm687wy8q17g94bq9vsns4vs"))))
+        (base32 "0fvm80h6vpw348g36dc4h69017c7zq6ajpvm2v3hc07f3h081gw4"))))
     (properties `((upstream-name . "frheritage")))
     (build-system r-build-system)
     (arguments
@@ -10026,6 +10026,36 @@ TUV model:
 <https://www2.acom.ucar.edu/modeling/tropospheric-ultraviolet-and-visible-tuv-radiation-model>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-footprint
+  (package
+    (name "r-footprint")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "footprint" version))
+       (sha256
+        (base32 "1mmv0pj19zlab3yk5ffbjzl2kda8w03dvmkw0ws0sl5ga56sqbws"))))
+    (properties `((upstream-name . "footprint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr r-airportr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/acircleda/footprint")
+    (synopsis "Calculate Air Travel Emissions")
+    (description
+     "This package provides a handy tool to calculate carbon footprints from air
+travel based on three-letter International Air Transport Association (IATA)
+airport codes or latitude and longitude.  footprint first calculates the
+great-circle distance between departure and arrival destinations.  It then uses
+the Department of Environment, Food & Rural Affairs (DEFRA) greenhouse gas
+conversion factors for business air travel to estimate the carbon footprint.
+These conversion factors consider trip length, flight class (e.g. economy,
+business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
+    (license license:cc0)))
 
 (define-public r-footbayes
   (package
@@ -17616,13 +17646,13 @@ computational finance.")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.13")
+    (version "0.9.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "13n0rmczmz3pa39hjka4cchs6901kxnpjhz98rmi6nbxxz4ygx3k"))))
+        (base32 "12ny0fm1082mr00rx5y2xw69jyrb78w0p168079xglcwmj7fvz7g"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (arguments

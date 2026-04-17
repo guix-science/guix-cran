@@ -54755,19 +54755,19 @@ proposed in Wang et al. (2020) <DOI:10.1002/gepi.22351>.")
 (define-public r-magclass
   (package
     (name "r-magclass")
-    (version "6.13.2")
+    (version "7.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magclass" version))
        (sha256
-        (base32 "1nv500vlmrl4d8rkmrk0fkklwigablb7ybgwr42zx50vjd9wz850"))))
+        (base32 "0dinxmcxp3finhvzy7zjal99xcdspjxbzza0d569zaawkzjjqma9"))))
     (properties `((upstream-name . "magclass")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-data-table r-abind))
+    (propagated-inputs (list r-rlang r-data-table r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pik-piam/magclass")
     (synopsis "Data Class and Tools for Handling Spatial-Temporal Data")

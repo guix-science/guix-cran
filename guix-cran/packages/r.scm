@@ -4297,13 +4297,13 @@ platform for device management, data collection, processing and visualization.")
 (define-public r-rtgstat
   (package
     (name "r-rtgstat")
-    (version "0.3.4")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtgstat" version))
        (sha256
-        (base32 "1mvl19a66z5bmm3vwk89vdwdznm96kazmxr2rndwngz94dsyc79y"))))
+        (base32 "1i14m354g5jv24awhpp3yh6fww5c1m1m2s3fk3i4ls3l98km1dvl"))))
     (properties `((upstream-name . "rtgstat")))
     (build-system r-build-system)
     (arguments

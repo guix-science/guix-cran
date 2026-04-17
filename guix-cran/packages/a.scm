@@ -1344,6 +1344,41 @@ treatments groups.  This is an adaptation of the Jared Foster method
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-avinertia
+  (package
+    (name "r-avinertia")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AvInertia" version))
+       (sha256
+        (base32 "1i3fy4jf91x662xhi07kcsg9b1p0hfyj2x5fav3zkvs9lx7gwfqx"))))
+    (properties `((upstream-name . "AvInertia")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-reshape2
+                             r-readxl
+                             r-pracma
+                             r-ggthemes
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/charvey23/AvInertia")
+    (synopsis "Calculate the Inertial Properties of a Flying Bird")
+    (description
+     "This package provides tools to compute the center of gravity and moment of
+inertia tensor of any flying bird.  The tools function by modeling a bird as a
+composite structure of simple geometric objects.  This requires detailed
+morphological measurements of bird specimens although those obtained for the
+associated paper have been included in the package for use.  Refer to the
+vignettes and supplementary material for detailed information on the package
+function.")
+    (license license:gpl3)))
+
 (define-public r-avilistr
   (package
     (name "r-avilistr")

@@ -17901,13 +17901,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.9.4")
+    (version "10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "11k6n10y2xw9v19sdvv5acwnjwz15n95ymr8x06hb1i9gfyrr40w"))))
+        (base32 "12657g78bxn0akcxxfai9mxj49a2nbxzp55pknc222i68p18s8in"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (arguments
@@ -27966,19 +27966,19 @@ performing high-dimensional Bayesian variable selection.")
 (define-public r-geometricmorphometricsmix
   (package
     (name "r-geometricmorphometricsmix")
-    (version "0.6.0.1")
+    (version "0.6.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeometricMorphometricsMix" version))
        (sha256
-        (base32 "1az0pvfy3026zcwgabmr0ig6hjyxn5vj8sj9xdrmnnhrmmjyqh7s"))))
+        (base32 "11bb2iq2m0mwpwa8i3jszfdbss9x5ad25rz23151fz2m2xg6g7al"))))
     (properties `((upstream-name . "GeometricMorphometricsMix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mclust r-corpcor r-ape))
+    (propagated-inputs (list r-mclust r-corpcor))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=GeometricMorphometricsMix")
     (synopsis
