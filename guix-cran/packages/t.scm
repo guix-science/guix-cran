@@ -9896,13 +9896,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traumar
   (package
     (name "r-traumar")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traumar" version))
        (sha256
-        (base32 "07a1qiwq48b65pw4h8rw0f7f91gk3pih9qd5kc6q8vvl12wq2mn7"))))
+        (base32 "1zshinrav6vkgxwch55pk6nlw0dgv0c4n1axbs54dn0z2m6i13v3"))))
     (properties `((upstream-name . "traumar")))
     (build-system r-build-system)
     (arguments
@@ -13601,13 +13601,13 @@ on a third order response surface model.")
 (define-public r-torchvisionlib
   (package
     (name "r-torchvisionlib")
-    (version "0.6.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchvisionlib" version))
        (sha256
-        (base32 "05zxkiwgslvnkvk798ifasb7rgng9hapxbc98xysbbkmkqgfhffk"))))
+        (base32 "13mihx53k6c2r49n5y31q9yiw18aka3bw0a0wlnj137iin8acg8v"))))
     (properties `((upstream-name . "torchvisionlib")))
     (build-system r-build-system)
     (arguments
@@ -15193,13 +15193,13 @@ nodes in the network.")
 (define-public r-tna
   (package
     (name "r-tna")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tna" version))
        (sha256
-        (base32 "1kb7rmvrsmfmcch0ip5mh2xbp39pmap53v20yjna7bymnwmn9dfm"))))
+        (base32 "1vk0y3as7dc5km33ypkcg81s62jv0a0vqd3q7cz71lb8x3h7l3j1"))))
     (properties `((upstream-name . "tna")))
     (build-system r-build-system)
     (arguments
@@ -15210,11 +15210,11 @@ nodes in the network.")
                              r-tibble
                              r-rlang
                              r-rcolorbrewer
-                             r-qgraph
                              r-igraph
                              r-ggplot2
                              r-dplyr
                              r-colorspace
+                             r-cograph
                              r-cluster
                              r-cli
                              r-checkmate))
@@ -17516,6 +17516,30 @@ server using a JSON configuration file.")
 web API and show it in table or figure format.")
     (license license:expat)))
 
+(define-public r-tinyrox
+  (package
+    (name "r-tinyrox")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyrox" version))
+       (sha256
+        (base32 "08f1i2wl0zqf70vig10xc7a6dhzax12cb28qyd0nww1gmgzdpla8"))))
+    (properties `((upstream-name . "tinyrox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/cornball-ai/tinyrox")
+    (synopsis "Minimal R Documentation Generator")
+    (description
+     "This package provides a deterministic, dependency-free documentation generator
+for R packages.  Generates valid Rd files and NAMESPACE from roxygen2'-style
+comments using only base R. Supports a strict subset of tags with no markdown
+parsing, no inference magic, and explicit-only behavior.")
+    (license license:gpl3)))
+
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
@@ -18328,13 +18352,13 @@ efficiency of data.table and speed of collapse'.")
 (define-public r-timeperiodsr
   (package
     (name "r-timeperiodsr")
-    (version "0.7.3")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeperiodsR" version))
        (sha256
-        (base32 "1ah3am6fyyp3hp3n2028iysx7qv3bbg7mwcvviq7hqi6xrwq7qqi"))))
+        (base32 "0pvnky2harvx2xbp4dkmbaiw5qp60plngqnl6znhy3npafb295zy"))))
     (properties `((upstream-name . "timeperiodsR")))
     (build-system r-build-system)
     (arguments
@@ -19037,13 +19061,13 @@ package.")
 (define-public r-tigger
   (package
     (name "r-tigger")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigger" version))
        (sha256
-        (base32 "03anybabxvd8xr0x0sx07gxf579mdx93xs7f6ygbn2d273qsplyv"))))
+        (base32 "18giljqmlf82va2j2r4y3nm6qsll2nnxxlbp1av2ay9d5nlnk5py"))))
     (properties `((upstream-name . "tigger")))
     (build-system r-build-system)
     (arguments
@@ -20728,6 +20752,35 @@ diagrams.  Helpers are also provided to reproduce the exploratory statistical
 summaries that are frequently included on stratigraphic diagrams.  See
 Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
     (license license:expat)))
+
+(define-public r-tidyohdsisolutions
+  (package
+    (name "r-tidyohdsisolutions")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyOhdsiSolutions" version))
+       (sha256
+        (base32 "1nlpfzd9a6x5a6n91bslvyp7xc0nzldigb5x7wxn7j83pjw6j4q6"))))
+    (properties `((upstream-name . "tidyOhdsiSolutions")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tidyOhdsiSolutions")
+    (synopsis
+     "Tidy Utilities for Observational Medical Outcomes Partnership Common Data Model Workflows")
+    (description
+     "Lightweight utilities for working with OMOP (Observational Medical Outcomes
+Partnership) Common Data Model (CDM) data in the Observational Health Data
+Sciences and Informatics ecosystem.  Provides base-R re-implementations of
+common purrr functional helpers, tools to convert plain data frames into CIRCE
+concept set expressions, SQL generators for resolving concept sets against an
+OMOP vocabulary schema without requiring @code{CirceR}'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-tidynorm
   (package
@@ -26979,13 +27032,13 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
 (define-public r-testgenerator
   (package
     (name "r-testgenerator")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGenerator" version))
        (sha256
-        (base32 "0v0m82s36vlrp9mhi7g7mamh5k6aqiclhz6iiw7y3m3jvrjyy5q1"))))
+        (base32 "07dwg2bzc2bcdswg9fnfx1rkar2crnfnf7nnjq9lirsk8hm8kg4l"))))
     (properties `((upstream-name . "TestGenerator")))
     (build-system r-build-system)
     (arguments
@@ -27007,8 +27060,7 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
                              r-dbi
                              r-cli
                              r-checkmate
-                             r-cdmconnector
-                             r-arrow))
+                             r-cdmconnector))
     (home-page "https://github.com/darwin-eu/TestGenerator")
     (synopsis "Integration Unit Tests for Pharmacoepidemiological Studies")
     (description
@@ -27570,19 +27622,20 @@ explore nonlinear associations between cognition and demographic variables.")
 (define-public r-test-assessr
   (package
     (name "r-test-assessr")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "test.assessr" version))
        (sha256
-        (base32 "1k98rrbh2jm7gm8hjvvimpj9ylpx5d5qw04nq9hxhhz61lw7khlm"))))
+        (base32 "0k1gh0s4x8fr9r1cj7jv4ndp3k17m9ysbg9zrva6cnl24y1fwbim"))))
     (properties `((upstream-name . "test.assessr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
+                             r-tinytest
                              r-tidyr
                              r-testthat
                              r-stringr
@@ -33046,13 +33099,13 @@ available.")
 (define-public r-tall
   (package
     (name "r-tall")
-    (version "0.5.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tall" version))
        (sha256
-        (base32 "1ywdsmyv40pcwggarj7i7qyh9cm8l1h31s4rgxh50bdnll0kkd3q"))))
+        (base32 "1wpv8lmcwdy4g9nxswagzyavyiq4z862pkbd6j6x9z6xm61kgq5h"))))
     (properties `((upstream-name . "tall")))
     (build-system r-build-system)
     (arguments
@@ -33068,6 +33121,7 @@ available.")
                              r-textrank
                              r-strucchange
                              r-stringr
+                             r-stm
                              r-sparkline
                              r-shinywidgets
                              r-shinyjs
@@ -33088,6 +33142,7 @@ available.")
                              r-pdftools
                              r-pagedown
                              r-openxlsx
+                             r-matrix
                              r-later
                              r-jsonlite
                              r-igraph
@@ -33095,6 +33150,7 @@ available.")
                              r-ggwordcloud
                              r-ggraph
                              r-ggplot2
+                             r-future
                              r-fontawesome
                              r-dt
                              r-dplyr

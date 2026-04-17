@@ -453,6 +453,37 @@ an extension from @code{gwss()} function in the GWmodel package (Percival and
 Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
     (license license:gpl3)))
 
+(define-public r-gwnorm
+  (package
+    (name "r-gwnorm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GWnorm" version))
+       (sha256
+        (base32 "1ahgplijnhl4pp4zvz573fwrwxwnakzizh529cn1qhkswch5k89r"))))
+    (properties `((upstream-name . "GWnorm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-mvtnorm
+                             r-mass
+                             r-igraph
+                             r-cholwishart
+                             r-bdgraph))
+    (home-page "https://cran.r-project.org/package=GWnorm")
+    (synopsis "G-Wishart Normalising Constants for Gaussian Graphical Models")
+    (description
+     "Computes G-Wishart normalising constants through a Fourier approach.  Either
+exact analytical results, numerical integration or Monte Carlo estimation are
+employed.  Details at C. Wong, G. Moffa and J. Kuipers (2024),
+<doi:10.48550/@code{arXiv.2404.06803>}.")
+    (license license:gpl2+)))
+
 (define-public r-gwnnegpca
   (package
     (name "r-gwnnegpca")
@@ -14043,6 +14074,30 @@ reference for the underlying glue package is Hester and Bryan (2022)
 <https://CRAN.R-project.org/package=glue>.")
     (license license:expat)))
 
+(define-public r-glsup
+  (package
+    (name "r-glsup")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GLSUP" version))
+       (sha256
+        (base32 "1zzkx97y0gs34kfgl0miwafng4l9giirmwl2labwy537i841l9p8"))))
+    (properties `((upstream-name . "GLSUP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=GLSUP")
+    (synopsis
+     "Generalised Linear Step-Up Procedure for Multiple Hypothesis Testing")
+    (description
+     "This package performs the Generalised Linear Step-up Procedure (GLSUP) with a
+flexible user-defined sizing function.  Functions are also available for
+creating common sizing functions.")
+    (license license:gpl3)))
+
 (define-public r-glsme
   (package
     (name "r-glsme")
@@ -15240,44 +15295,6 @@ Klotzke, K. (2018).  Generalized Linear Mixed Models for Randomized Responses.
 Methodology. <doi:10.1027/1614-2241/a000153>.")
     (license license:gpl3)))
 
-(define-public r-glmmroptim
-  (package
-    (name "r-glmmroptim")
-    (version "0.3.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glmmrOptim" version))
-       (sha256
-        (base32 "1rnxdbnpzsi3x4q0sl5lwaf61i2ppji9zvq0dsppa1f86nsjfm8a"))))
-    (properties `((upstream-name . "glmmrOptim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsechol
-                             r-rminqa
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-glmmrbase
-                             r-digest
-                             r-bh))
-    (home-page "https://github.com/samuel-watson/glmmrOptim")
-    (synopsis
-     "Approximate Optimal Experimental Designs Using Generalised Linear Mixed Models")
-    (description
-     "Optimal design analysis algorithms for any study design that can be represented
-or modelled as a generalised linear mixed model including cluster randomised
-trials, cohort studies, spatial and temporal epidemiological studies, and
-split-plot designs.  See
-<https://github.com/samuel-watson/@code{glmmrBase/blob/master/README.md>} for a
-detailed manual on model specification.  A detailed discussion of the methods in
-this package can be found in Watson, Hemming, and Girling (2023)
-<doi:10.1177/09622802231202379>.")
-    (license license:gpl2+)))
-
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
@@ -15865,6 +15882,33 @@ against a high-dimensional alternative in the generalized linear model:
 asymptotic type I error control.  Biometrika, 98(2).")
     (license license:gpl2)))
 
+(define-public r-glm4
+  (package
+    (name "r-glm4")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glm4" version))
+       (sha256
+        (base32 "0s1msvpd93klcl3v2vgv2zilw5bqsyhjr9md0n106bbmfb7zw4wm"))))
+    (properties `((upstream-name . "glm4")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixmodels r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/awhug/glm4/issues")
+    (synopsis "Fitting Generalized Linear Models Using Sparse Matrices")
+    (description
+     "Fits Generalised Linear Models (GLMs) with sparse and dense Matrix matrices for
+memory efficiency.  Acts as a wrapper for the @code{glm4()} function in the
+@code{MatrixModels} package <doi:10.32614/CRAN.package.@code{MatrixModels>}, but
+adds convenient model methods and functions designed to mimic those associated
+with the @code{glm()} function from the stats package.")
+    (license license:gpl2+)))
+
 (define-public r-glm2
   (package
     (name "r-glm2")
@@ -16091,6 +16135,36 @@ can easily specify their own sub-models, or re-parameterizations, and obtain the
 maximum-likelihood estimates and confidence intervals of their own custom
 models.")
     (license license:gpl3)))
+
+(define-public r-gleam
+  (package
+    (name "r-gleam")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gleam" version))
+       (sha256
+        (base32 "1cblxwivd5mfwvsq4bqnj3idrqmbbj25z9114b9nrskidvfz72v2"))))
+    (properties `((upstream-name . "gleam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/un-fao/GLEAM/")
+    (synopsis "Global Livestock Environmental Assessment Model (GLEAM-X)")
+    (description
+     "The official implementation of the Global Livestock Environmental Assessment
+Model (GLEAM) of the Food and Agriculture Organization of the United Nations
+(FAO) in R. GLEAM-X provides a modular, transparent framework for simulating
+livestock production systems and quantifying their environmental impacts.
+Methodological background: @code{MacLeod} et al. (2017) \"Invited review: A
+position on the Global Livestock Environmental Assessment Model (GLEAM)\"
+<doi:10.1017/S1751731117001847>.  Further information:
+<https://www.fao.org/gleam/en/>.")
+    (license license:agpl3)))
 
 (define-public r-gldrm
   (package
@@ -20150,13 +20224,13 @@ readers for @code{FreeSurfer} statistics files.")
 (define-public r-ggseg
   (package
     (name "r-ggseg")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg" version))
        (sha256
-        (base32 "0ljjzjqjfzmm8yxfbg3nryzsg5sc1p3ajd909hqzh8a2dw139m5i"))))
+        (base32 "1n5d3kpkk38gw1k8jrixl2rzamvmhm5z971wyrxvk50hcyx09gxi"))))
     (properties `((upstream-name . "ggseg")))
     (build-system r-build-system)
     (arguments
@@ -21786,55 +21860,36 @@ and the response is present.  Base on the results published in guide ISO/TS
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.7.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "197ma33hfa8wfhpr6h4y03hgv5h8y1n4pl0m2lwgxhswxspx3kp2"))))
+        (base32 "01j4l9my2r21sa8z74kl6v2apf52mhmbpfh84ya0fjis9s0g162s"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (native-inputs (list r-rcpp pkg-config))
+    (propagated-inputs (list r-generics))
+    (native-inputs (list r-rmarkdown r-rcpp pkg-config r-knitr))
     (home-page "https://github.com/Zabis13/ggmlR")
     (synopsis "'GGML' Tensor Operations for Machine Learning")
     (description
      "This package provides R bindings to the GGML tensor library for machine
-learning, designed primarily for Vulkan GPU acceleration with full CPU fallback.
- Requires Vulkan 1.2+ with legacy pipeline barriers (avoids Synchronization2 due
-to RADV performance issues); supports Push Descriptors
-('VK_KHR_push_descriptor') to eliminate descriptor pool overhead when available.
- Vulkan support is auto-detected at build time on Linux (when libvulkan-dev and
-glslc are installed) and on Windows (when Vulkan SDK is installed and VULKAN_SDK
-environment variable is set); all operations fall back to CPU transparently when
-no GPU is available.  Supports tensors up to 5D natively (GGML_MAX_DIMS=5).
-Implements tensor operations, neural network layers, quantization', and a
-Keras'-like sequential model API for building and training networks.  Includes
-@code{AdamW} (Adam with Weight decay) and SGD (Stochastic Gradient Descent)
-optimizers with MSE (Mean Squared Error) and cross-entropy losses.  Also
-provides a dynamic autograd engine ('@code{PyTorch'-style}) with data-parallel
-training via @code{dp_train()}', broadcast arithmetic, f16 (half-precision)
-support on Vulkan GPU, and a multi-head attention layer for building Transformer
-architectures.  Supports ONNX model import via built-in zero-dependency protobuf
-parser: load pretrained ONNX models from @code{PyTorch}', @code{TensorFlow}', or
-other frameworks and run inference on Vulkan GPU or CPU. Covers 50+ ONNX ops
-including convolutions, attention primitives, normalization, quantized ops,
-shape operations, @code{ScatterElements} (with Vulkan @code{atomicAdd} for GNN
-scatter-add), and fused custom ops (@code{RelPosBias2D} for @code{BoTNet}') â
-sufficient to run real-world models such as @code{RoBERTa}', BERT',
-GPT-@code{NeoX}', @code{SqueezeNet}', Inception v3', BAT-@code{ResNeXt}',
-@code{BoTNet}', and MNIST out of the box.  Reads GGUF files natively: load
-pretrained weights from any gguf'-compatible source ('llama.cpp', Hugging Face')
-with automatic weight conversion and metadata access.  Uses a dedicated weight
-buffer architecture for zero-overhead repeated inference â weights are loaded
-to GPU once and never re-transferred.  Serves as backend for LLM (Large Language
-Model) inference via @code{llamaR} and Stable Diffusion image generation via
-sd2R'.  See <https://github.com/ggml-org/ggml> for more information about the
-underlying library.")
+learning, optimized for Vulkan GPU acceleration with a transparent CPU fallback.
+ The package features a Keras'-like sequential API and a @code{PyTorch'-style}
+autograd engine for building, training, and deploying neural networks.  Key
+capabilities include high-performance 5D tensor operations, f16 precision, and
+efficient quantization.  It supports native ONNX model import (50+ operators)
+and GGUF weight loading from the llama.cpp and Hugging Face ecosystems.
+Designed for zero-overhead inference via dedicated weight buffering, it
+integrates seamlessly as a parsnip engine for tidymodels and provides
+first-class learners for the mlr3 framework.  See
+<https://github.com/ggml-org/ggml> for more information about the underlying
+library.")
     (license license:expat)))
 
 (define-public r-ggmix
@@ -23371,13 +23426,13 @@ or change theme elements.  3D graphs are made with plotly'.")
 (define-public r-ggexametrika
   (package
     (name "r-ggexametrika")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggExametrika" version))
        (sha256
-        (base32 "1zfr5jd93haiz5pdvq50gps8lm8mx3dsvx848zihdw2bs5lfqz4p"))))
+        (base32 "1nb008izbhj9ifcbd3fa8y32whdiqn6b7si81hazhpxr7vpwwkgp"))))
     (properties `((upstream-name . "ggExametrika")))
     (build-system r-build-system)
     (arguments
@@ -25072,6 +25127,40 @@ analysis under the generalized Farlie-Gumbel-Morgenstern (FGM) copula.  See Shih
 and Emura (2018) <doi:10.1007/s00180-018-0804-0> and Shih and Emura (2019)
 <doi:10.1007/s00362-016-0865-5> for details.")
     (license license:gpl2)))
+
+(define-public r-gffstrandloc
+  (package
+    (name "r-gffstrandloc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GFFStrandLoc" version))
+       (sha256
+        (base32 "0ri1h3d2qmvprs16aj6pskzynv3mka27ba7xxvnp833v6lmlp381"))))
+    (properties `((upstream-name . "GFFStrandLoc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=GFFStrandLoc")
+    (synopsis "Strand-Wise Gene and Protein Extraction from GFF3 Files")
+    (description
+     "Facilitates the extraction and organization of strand-specific genomic features
+from GFF3 files.  In many species and variants, high quality genome annotations
+are not always available, necessitating de novo annotation using tools such as
+AUGUSTUS (Stanke et al., 2006; <doi:10.1093/nar/gkl200>).  However, downstream
+processing of such annotations to obtain structured information, such as
+strand-wise gene locations, transcript regions, and associated protein
+identifiersâcan be computationally intensive and complex.  GFF@code{StrandLoc}
+provides a streamlined framework to parse GFF3 files and generate structured
+outputs containing strand-wise and region-wise genomic coordinates for each
+transcript, along with their associated protein information.  Additionally, it
+enables users to define custom promoter lengths and extract corresponding
+promoter region coordinates for genes in a strand-aware manner.  By simplifying
+post-annotation processing, it enhances the usability of de novo annotated
+genomic datasets for downstream analysis and interpretation.")
+    (license license:gpl3)))
 
 (define-public r-gfer
   (package
@@ -30737,13 +30826,13 @@ respectively.")
 (define-public r-geneticae
   (package
     (name "r-geneticae")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geneticae" version))
        (sha256
-        (base32 "0ka0m4dq8a9bzdk3gi7gj6dnc2a7c4chrzixw2g4qd7md31z33vx"))))
+        (base32 "1iif0fjk4i5ssaw9g7lwayv45qcww7z6nlhpfs10jcb83pmaaida"))))
     (properties `((upstream-name . "geneticae")))
     (build-system r-build-system)
     (arguments
@@ -30753,17 +30842,13 @@ respectively.")
                              r-scales
                              r-rrcov
                              r-rlang
-                             r-reshape2
-                             r-prettydoc
                              r-pcamethods
                              r-missmda
-                             r-matrixstats
                              r-mass
                              r-ggplot2
                              r-ggforce
-                             r-ggebiplots
                              r-dplyr
-                             r-calibrate))
+                             r-corpcor))
     (native-inputs (list r-knitr))
     (home-page "https://jangelini.github.io/geneticae/")
     (synopsis

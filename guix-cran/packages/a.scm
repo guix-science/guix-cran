@@ -1344,41 +1344,6 @@ treatments groups.  This is an adaptation of the Jared Foster method
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-avinertia
-  (package
-    (name "r-avinertia")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AvInertia" version))
-       (sha256
-        (base32 "1i3fy4jf91x662xhi07kcsg9b1p0hfyj2x5fav3zkvs9lx7gwfqx"))))
-    (properties `((upstream-name . "AvInertia")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-reshape2
-                             r-readxl
-                             r-pracma
-                             r-ggthemes
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/charvey23/AvInertia")
-    (synopsis "Calculate the Inertial Properties of a Flying Bird")
-    (description
-     "This package provides tools to compute the center of gravity and moment of
-inertia tensor of any flying bird.  The tools function by modeling a bird as a
-composite structure of simple geometric objects.  This requires detailed
-morphological measurements of bird specimens although those obtained for the
-associated paper have been included in the package for use.  Refer to the
-vignettes and supplementary material for detailed information on the package
-function.")
-    (license license:gpl3)))
-
 (define-public r-avilistr
   (package
     (name "r-avilistr")
@@ -3685,47 +3650,6 @@ provides a similar summary output as that of @code{glm()} function.  Both
 parametric and empirical SIMEX are considered in the package.")
     (license license:gpl2+)))
 
-(define-public r-augmentedrcbd
-  (package
-    (name "r-augmentedrcbd")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "augmentedRCBD" version))
-       (sha256
-        (base32 "1gnl6i81m5w7hxi147ycr963sm661xscw0xb6wm9vcr043ddvx3p"))))
-    (properties `((upstream-name . "augmentedRCBD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-reshape2
-                             r-rdpack
-                             r-openxlsx
-                             r-officer
-                             r-numform
-                             r-multcompview
-                             r-multcomp
-                             r-moments
-                             r-mathjaxr
-                             r-ggplot2
-                             r-flextable
-                             r-emmeans
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=augmentedRCBD")
-    (synopsis "Analysis of Augmented Randomised Complete Block Designs")
-    (description
-     "This package provides functions for analysis of data generated from experiments
-in augmented randomised complete block design according to Federer, W.T. (1961)
-<doi:10.2307/2527837>.  Computes analysis of variance, adjusted means,
-descriptive statistics, genetic variability statistics etc.  Further includes
-data visualization and report generation functions.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-audubon
   (package
     (name "r-audubon")
@@ -5727,13 +5651,13 @@ more informative error messages and facilitates debugging.")
 (define-public r-assemblykor
   (package
     (name "r-assemblykor")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assemblykor" version))
        (sha256
-        (base32 "0i1xggqlmk2scyyjkl4lv8n9dzkq3rmnxj0vcbzna14ivc6vlf32"))))
+        (base32 "1hfj2cdswfczpa7rs2x2l0gs5x3xx1jhnzvij4szxkl0zdgajqa3"))))
     (properties `((upstream-name . "assemblykor")))
     (build-system r-build-system)
     (arguments
@@ -10551,6 +10475,33 @@ about APSIM see (<https://www.apsim.info/>) and for APSIM next generation
 (<https://apsimnextgeneration.netlify.app/>).")
     (license license:gpl3)))
 
+(define-public r-aps
+  (package
+    (name "r-aps")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APS" version))
+       (sha256
+        (base32 "1kypn4ljm42dbskcgx6hnh57kg3zaprsn1zzsq9z89hp9qmz7n9n"))))
+    (properties `((upstream-name . "APS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=APS")
+    (synopsis
+     "Analysing Prediction Stability of Non-Deterministic Prediction Models")
+    (description
+     "This package provides methods to analyse the stability of non-deterministic
+prediction models.  Prediction stability is quantified either as data-based
+prediction stability (phi) or as model-based prediction stability (psi).  The
+package implements measures for categorical, ordinal, and metric predictions
+based on repeated model fitting and corresponding predictions.  Methods are
+based on Lange et al. (2025) <doi:10.1186/s12859-025-06097-1>.")
+    (license license:gpl2+)))
+
 (define-public r-aprscenario
   (package
     (name "r-aprscenario")
@@ -12743,13 +12694,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.13")
+    (version "0.8.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "0q3lc7l588wq4070r3x6rarv8x4wsq6c2qam0g6jxcyjiyzk3ax9"))))
+        (base32 "0gnvw9q7rlqjy83jjk511hf2ccvcb8412k4r5m3jkd5c74b4my8j"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (arguments
@@ -18729,13 +18680,13 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
 (define-public r-akin
   (package
     (name "r-akin")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akin" version))
        (sha256
-        (base32 "0v9pc8qy9362lar71kjkxp4akdy49anivsg780cqdnv4yza0kiyl"))))
+        (base32 "1yscp56n2gq10vg8932fhaliw6gzs5bqiygpiqflj9m5r1bn7paw"))))
     (properties `((upstream-name . "akin")))
     (build-system r-build-system)
     (arguments
@@ -18746,7 +18697,6 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
                              r-matrix
                              r-listenv
                              r-fastmatch
-                             r-erer
                              r-data-table
                              r-callr))
     (home-page "https://cran.r-project.org/package=akin")
@@ -20368,13 +20318,13 @@ sequences use at most 26 distinct characters and usually only 20.  UTF-8
 (define-public r-ahmbook
   (package
     (name "r-ahmbook")
-    (version "0.2.10")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AHMbook" version))
        (sha256
-        (base32 "02hfwd9jyml2z05nkjvs1vwpdcbj3jqscgvpfc1hhrv4819vsf2d"))))
+        (base32 "0g3q6zsmwij6jd529xl8wjjjaj0mpa1f67x3y5jz3i37aivwfg67"))))
     (properties `((upstream-name . "AHMbook")))
     (build-system r-build-system)
     (arguments

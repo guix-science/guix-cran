@@ -2641,47 +2641,6 @@ Wilson, Joan E. Bailey-Wilson, and Momiao Xiong (2013)
 <doi:10.1002/gepi.21757>).")
     (license license:gpl2+)))
 
-(define-public r-funcnn
-  (package
-    (name "r-funcnn")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FuncNN" version))
-       (sha256
-        (base32 "0kcr7c54igzi0imp8w9a0mnrqaa2qcls9777scsjz5sbcxdy3if3"))))
-    (properties `((upstream-name . "FuncNN")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorflow
-                             r-reshape2
-                             r-pbapply
-                             r-matrix
-                             r-keras
-                             r-ggpubr
-                             r-ggplot2
-                             r-foreach
-                             r-flux
-                             r-fda-usc
-                             r-fda
-                             r-doparallel
-                             r-caret))
-    (home-page "https://arxiv.org/abs/2006.09590")
-    (synopsis "Functional Neural Networks")
-    (description
-     "This package provides a collection of functions which fit functional neural
-network models.  In other words, this package will allow users to build deep
-learning models that have either functional or scalar responses paired with
-functional and scalar covariates.  We implement the theoretical discussion found
-in Thind, Multani and Cao (2020) <@code{arXiv:2006.09590>} through the help of a
-main fitting and prediction function as well as a number of helper functions to
-assist with cross-validation, tuning, and the display of estimated functional
-weights.")
-    (license license:gpl3)))
-
 (define-public r-funcmapper
   (package
     (name "r-funcmapper")
@@ -9508,13 +9467,13 @@ testing outcomes are to its choice.")
 (define-public r-foreco
   (package
     (name "r-foreco")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoReco" version))
        (sha256
-        (base32 "1pmfpgkmka15fl6ns9gmhwbzc2ydvp01a29xy6kwy64kxaa6hp9i"))))
+        (base32 "1mzicnvmpdmazhj30fpkm4a6i09c1kzx7zri1f8aalp2h2zbcmkl"))))
     (properties `((upstream-name . "FoReco")))
     (build-system r-build-system)
     (arguments
@@ -10067,36 +10026,6 @@ TUV model:
 <https://www2.acom.ucar.edu/modeling/tropospheric-ultraviolet-and-visible-tuv-radiation-model>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-footprint
-  (package
-    (name "r-footprint")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "footprint" version))
-       (sha256
-        (base32 "1mmv0pj19zlab3yk5ffbjzl2kda8w03dvmkw0ws0sl5ga56sqbws"))))
-    (properties `((upstream-name . "footprint")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-dplyr r-airportr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/acircleda/footprint")
-    (synopsis "Calculate Air Travel Emissions")
-    (description
-     "This package provides a handy tool to calculate carbon footprints from air
-travel based on three-letter International Air Transport Association (IATA)
-airport codes or latitude and longitude.  footprint first calculates the
-great-circle distance between departure and arrival destinations.  It then uses
-the Department of Environment, Food & Rural Affairs (DEFRA) greenhouse gas
-conversion factors for business air travel to estimate the carbon footprint.
-These conversion factors consider trip length, flight class (e.g. economy,
-business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
-    (license license:cc0)))
 
 (define-public r-footbayes
   (package
@@ -11018,13 +10947,13 @@ Jezzard et al. (2001, ISBN:9780192630711).")
 (define-public r-fmriar
   (package
     (name "r-fmriar")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmriAR" version))
        (sha256
-        (base32 "00hy1161wryqppp1633j1nni9vmd2ncw7hv7x5dxjwyqif5s53h7"))))
+        (base32 "1xivmcdvrr802kr44smrhxikh0cg3iw55g6pky06vq269yaxxn70"))))
     (properties `((upstream-name . "fmriAR")))
     (build-system r-build-system)
     (arguments
@@ -11850,32 +11779,6 @@ instruments; compute flux rates using multi-observation metadata; and generate
 diagnostic metrics and plots.  Designed to be easy to integrate into
 reproducible scientific workflows.")
     (license license:expat)))
-
-(define-public r-flux
-  (package
-    (name "r-flux")
-    (version "0.3-0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flux" version))
-       (sha256
-        (base32 "1xkiri1bxnf8j1jxlwjmajjiq1dj9cddi9cmbwyhbnpycl19y35g"))))
-    (properties `((upstream-name . "flux")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-catools))
-    (home-page "https://cran.r-project.org/package=flux")
-    (synopsis "Flux Rate Calculation from Dynamic Closed Chamber Measurements")
-    (description
-     "This package provides functions for the calculation of greenhouse gas flux rates
-from closed chamber concentration measurements.  The package follows a modular
-concept: Fluxes can be calculated in just two simple steps or in several steps
-if more control in details is wanted.  Additionally plot and preparation
-functions as well as functions for modelling gpp and reco are provided.")
-    (license license:gpl2)))
 
 (define-public r-fluspect
   (package
@@ -17182,13 +17085,13 @@ completeness.")
 (define-public r-fingerpro
   (package
     (name "r-fingerpro")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fingerPro" version))
        (sha256
-        (base32 "1xa166a9ccz78axsbmv8i6gia8vqlmw9d087z05xbb7gdrdjncj1"))))
+        (base32 "0ashxpvd8dd1px8hjmhvwqg6m5syxcswrw4icgivhvsaanr6k9kr"))))
     (properties `((upstream-name . "fingerPro")))
     (build-system r-build-system)
     (arguments
@@ -17196,7 +17099,6 @@ completeness.")
       #:tests? #f))
     (propagated-inputs (list r-ternary
                              r-scales
-                             r-rgl
                              r-reshape
                              r-rcppprogress
                              r-rcppgsl
@@ -17211,21 +17113,36 @@ completeness.")
                              r-dplyr
                              r-crayon
                              r-car))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/eead-csic-eesa/fingerPro")
-    (synopsis "Comprehensive Package for Sediment Source Unmixing")
+    (synopsis "Unmixing Model Framework")
     (description
-     "\"This package quantifies the provenance of sediments in a catchment or study
-area.  Based on a characterization of the sediment sources and the end sediment
-mixtures, a mixing model algorithm is applied to the sediment mixtures to
-estimate the relative contribution of each potential source.  The package
-includes several graphs to help users in their data understanding, such as box
-plots, correlation, PCA, and LDA graphs.  In addition, new developments such as
-the Consensus Ranking (CR), Consistent Tracer Selection (CTS), and Linear
-Variability Propagation (LVP) methods are included to correctly apply the
-fingerprinting technique and increase dataset and model understanding.  A new
-method based on Conservative Balance (CB) method has also been included to
-enable the use of isotopic tracers.\".")
-    (license license:gpl3+)))
+     "Quantifies the provenance of sediments by applying a mixing model algorithm to
+end sediment mixtures based on a comprehensive characterization of the sediment
+sources.  The @code{fingerPro} model builds upon the foundational concept of
+using mass balance linear equations for sediment source quantification by
+incorporating several distinct technical advancements.  It employs an
+optimization approach to normalize discrepancies in tracer ranges and minimize
+the objective function.  Latin hypercube sampling is used to explore all
+possible combinations of source contributions (0-100%), mitigating the risk of
+local minima.  Uncertainty in source estimates is quantified through a Monte
+Carlo routine, and the model includes additional metrics, such as the normalized
+error of the virtual mixture, to detect mathematical inconsistencies,
+non-physical solutions, and biases.  A new linear variability propagation (LVP)
+method is also included to address and quantify potential bias in model
+outcomes, particularly when dealing with dominant or non-contributing sources
+and high source variability, offering a significant advancement for field
+studies where direct comparison with theoretical apportionments is not feasible.
+ In addition to the unmixing model, a complete framework for tracer selection is
+included.  Several methods are implemented to evaluate tracer behaviour by
+considering both source and mixture information.  These include the Consistent
+Tracer Selection (CTS) method to explore all tracer combinations and select the
+optimal ones improving the robustness and interpretability of the model results.
+ A Conservative Balance (CB) method is also incorporated to enable the use of
+isotopic tracers.  The package also provides several graphical tools to support
+data exploration and interpretation, including box plots, correlation plots,
+Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA).")
+    (license license:gpl2)))
 
 (define-public r-finetune
   (package
@@ -26397,6 +26314,40 @@ covariance operator in a subspace, ...")
      "Create Frequently Asked Questions page for Shiny application.")
     (license license:expat)))
 
+(define-public r-fapa
+  (package
+    (name "r-fapa")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FAPA" version))
+       (sha256
+        (base32 "0crgm73wxjyv6ia2y74xvbiwp3f729akjinv53s572c4y159j18v"))))
+    (properties `((upstream-name . "FAPA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sekangakim/FAPA")
+    (synopsis "Factor Analytic Profile Analysis of Ipsatized Data")
+    (description
+     "This package implements Factor Analytic Profile Analysis of Ipsatized Data
+('FAPA'), a metric inferential framework for pattern detection and person-level
+reconstruction in multivariate profile data.  After row-centering (ipsatization)
+to remove profile elevation, FAPA applies singular value decomposition ('SVD')
+to recover shared core profiles and individual pattern weights.  Dimensionality
+is determined by a variance-matched Horn's parallel analysis.  A three-stage
+bootstrap verification framework assesses (1) dimensionality via parallel
+analysis, (2) subspace stability via Procrustes principal angles, and (3)
+profile replicability via Tucker's congruence coefficients.  BCa bootstrap
+confidence intervals for core-profile coordinates are computed via the canonical
+boot package implementation of Davison and Hinkley (1997)
+<doi:10.1017/CBO9780511802843>.")
+    (license license:expat)))
+
 (define-public r-faoutlier
   (package
     (name "r-faoutlier")
@@ -27255,13 +27206,13 @@ approach from Scutari, Panero and Proissl (2022)
 (define-public r-fairmetrics
   (package
     (name "r-fairmetrics")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairmetrics" version))
        (sha256
-        (base32 "10ibddlnrjxb0v3ri5l20yvs5kjvpfy8j9hjwnzrdm0i9ziqf0la"))))
+        (base32 "1j8ybj5k023sjl97n84ilsswfm9wgnxj8fwszm53haa50qn493l6"))))
     (properties `((upstream-name . "fairmetrics")))
     (build-system r-build-system)
     (arguments
@@ -27277,7 +27228,7 @@ for machine learning and statistical models, including confidence intervals for
 each metric.  The package supports the evaluation of group-level fairness
 criterion commonly used in fairness research, particularly in healthcare for
 binary protected attributes.  It is based on the overview of fairness in machine
-learning written by Gao et al (2024) <doi:10.48550/@code{arXiv.2406.09307>}.")
+learning written by Gao et al (2025) <doi:10.1002/sim.70234>.")
     (license license:expat)))
 
 (define-public r-fairmaterials

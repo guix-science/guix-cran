@@ -2919,13 +2919,13 @@ robust support for precise and effective process monitoring and analysis.")
 (define-public r-ctv
   (package
     (name "r-ctv")
-    (version "0.9-7")
+    (version "0.9-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctv" version))
        (sha256
-        (base32 "0d8kac74hncbjiz4jcg7f3931lqdcga3hk8n8fxdj37y33f6dapb"))))
+        (base32 "09faykpv7va8pp8sfkv1y6vybr695rjik5vm8lriikza41vli905"))))
     (properties `((upstream-name . "ctv")))
     (build-system r-build-system)
     (arguments
@@ -5442,37 +5442,6 @@ are described in: Brunner (1977) <doi:10.1107/S0567739477000461>; Hoppe (1979)
 Pan et al. (2021) <doi:10.1021/acs.inorgchem.0c02996>; Pauling (1960,
 ISBN:978-0801403330).")
     (license license:gpl3+)))
-
-(define-public r-cryst
-  (package
-    (name "r-cryst")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cryst" version))
-       (sha256
-        (base32 "04da19dy3mkngd3ma44cd8cdkb5acjy9lbhfipa9flp339j1pp57"))))
-    (properties `((upstream-name . "cryst")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pracma r-flux))
-    (home-page "https://cran.r-project.org/package=cryst")
-    (synopsis "Calculate the Relative Crystallinity of Starch by XRD and FTIR")
-    (description
-     "This package provides functions to calculate the relative crystallinity of
-starch by X-ray Diffraction (XRD) and Infrared Spectroscopy (FTIR).  Starch is
-biosynthesized by plants in the form of granules semicrystalline.  For XRD, the
-relative crystallinity is obtained by separating the crystalline peaks from the
-amorphous scattering region.  For FTIR, the relative crystallinity is achieved
-by setting of a Gaussian holocrystalline-peak in the 800-1300 cm-1 region of
-FTIR spectrum of starch which is divided into amorphous region and crystalline
-region.  The relative crystallinity of native starch granules varies from 14 of
-45 percent.  This package was supported by FONDECYT 3150630 and CIPA
-Conicyt-Regional R08C1002 is gratefully acknowledged.")
-    (license license:gpl2)))
 
 (define-public r-cryptrndtest
   (package
@@ -9611,13 +9580,13 @@ recommendations on the code.")
 (define-public r-cpp4r
   (package
     (name "r-cpp4r")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp4r" version))
        (sha256
-        (base32 "00m9chzndk0k1if06cigg48xnx7jqbbdk5sn21jl443hnsmzbz92"))))
+        (base32 "0c5zs7w273jblp8hk4c1bl90pmq7sq2azlafw45an5csj2rg913k"))))
     (properties `((upstream-name . "cpp4r")))
     (build-system r-build-system)
     (arguments
@@ -23973,13 +23942,13 @@ missing values is assigned to each palette.")
 (define-public r-cols
   (package
     (name "r-cols")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols" version))
        (sha256
-        (base32 "1psb0hw75g0m2v2x80pbwy5rdd4adxmfdlc6z173wlkig97rb9rd"))))
+        (base32 "0c37gxxf8g6fqiqcnc2h4ysm2l6qip5yx6vdvd38574qk8jhxp91"))))
     (properties `((upstream-name . "cols")))
     (build-system r-build-system)
     (arguments
@@ -24164,13 +24133,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.4.10")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "0lfwxwncnk1800pn98n50s8jqbvz51vlz2azxvps5n2sa4albmk1"))))
+        (base32 "16nqd8aa75glk5l5fjap7qjmiffx5wxfx9p6d4glz50fw9vkzz0c"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
@@ -26038,6 +26007,54 @@ matching.")
 (<https://github.com/OHDSI/@code{SqlRender>}).")
     (license (license:fsdg-compatible "Apache License"))))
 
+(define-public r-cohortcontrast
+  (package
+    (name "r-cohortcontrast")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CohortContrast" version))
+       (sha256
+        (base32 "16hdxxkylkmgw6bkx7fbhbjj04bwjbl6x1aazz483apw710gp243"))))
+    (properties `((upstream-name . "CohortContrast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-omopgenerics
+                             r-nanoparquet
+                             r-lubridate
+                             r-jsonlite
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-cohortconstructor
+                             r-cli
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://healthinformaticsut.github.io/CohortContrast/")
+    (synopsis
+     "Enrichment Analysis of Clinically Relevant Concepts in Common Data Model Cohort Data")
+    (description
+     "Identifies clinically relevant concepts in Observational Medical Outcomes
+Partnership Common Data Model cohorts using an enrichment-based workflow.
+Defines target and control cohorts and extracts medical interventions that are
+over-represented in the target cohort during the observation period.  Users can
+tune filtering and selection thresholds.  The workflow includes chi-squared
+tests for two proportions with Yates continuity correction, logistic tests, and
+hierarchy and correlation mappings for relevant concepts.  The results can be
+optionally explored using the bundled graphical user interface.  For workflow
+details and examples, see
+<https://healthinformaticsut.github.io/@code{CohortContrast/>}.")
+    (license license:asl2.0)))
+
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
@@ -26183,19 +26200,19 @@ Meta-Learners.\" A tutorial for this package can be found at
 (define-public r-cograph
   (package
     (name "r-cograph")
-    (version "2.0.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cograph" version))
        (sha256
-        (base32 "0kabsfm51m2dpxfwr4nikr13s93gyah67xx8q83q1vwd2s935kib"))))
+        (base32 "19vs3vzzqi90xkbpn8kfzfvkg5wdjplndxbjsxf7aadr47darp03"))))
     (properties `((upstream-name . "cograph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-ggplot2))
+    (propagated-inputs (list r-r6 r-matrix r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://sonsoles.me/cograph/")
     (synopsis "Analysis and Visualization of Complex Networks")
@@ -33871,19 +33888,19 @@ change in space and time.")
 (define-public r-climenu
   (package
     (name "r-climenu")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climenu" version))
        (sha256
-        (base32 "1zljfwndadka2hy9nj2z851lps4hcdsgvvhhjx73lxkp6si0mdx3"))))
+        (base32 "18bxh80cp3rrr4wjhdhpfw2qhp69cq70q75fqx7kjg757zjy6bib"))))
     (properties `((upstream-name . "climenu")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-cli))
+    (propagated-inputs (list r-keypress r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PetrCala/climenu")
     (synopsis "Interactive Command-Line Menus")
@@ -39854,6 +39871,37 @@ As detection system intercalating dyes (@code{EvaGreen}, SYBR Green) and
 hydrolysis probes (@code{TaqMan}) were used.  For more information see: Roediger
 et al. (2015) <doi:10.1093/bioinformatics/btv205>.")
     (license license:gpl3)))
+
+(define-public r-chiopendata
+  (package
+    (name "r-chiopendata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chiOpenData" version))
+       (sha256
+        (base32 "1n20xyjf3l2h0yxw42fc9jqn539q230fgpc8mgiqfww56b7cs4gq"))))
+    (properties `((upstream-name . "chiOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://martinezc1.github.io/chiOpenData/")
+    (synopsis "Convenient Access to Chicago Open Data API Endpoints")
+    (description
+     "This package provides simple, reproducible access to datasets from the Chicago
+Open Data portal <https://data.cityofchicago.org/>.  Functions return results as
+tidy tibbles and support optional filtering, sorting, and row limits via the
+Socrata API.")
+    (license license:expat)))
 
 (define-public r-chinesenames
   (package
@@ -51257,6 +51305,36 @@ Survival (CARS) Scores.  The method is described in Welchowski, T. and Zuber, V.
 and Schmid, M., (2018), Correlation-Adjusted Regression Survival Scores for
 High-Dimensional Variable Selection, <@code{arXiv:1802.08178>}.")
     (license license:gpl3)))
+
+(define-public r-carsalgo
+  (package
+    (name "r-carsalgo")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "carsAlgo" version))
+       (sha256
+        (base32 "0l0mi8gblp1x6xdwsvwcjvnc7b0qxbfg30h093yfj2mnzziw45p5"))))
+    (properties `((upstream-name . "carsAlgo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-pls r-ggplot2))
+    (home-page "https://github.com/mah-iasri/carsAlgo")
+    (synopsis "Competitive Adaptive Reweighted Sampling (CARS) Algorithm")
+    (description
+     "This package implements Competitive Adaptive Reweighted Sampling (CARS)
+algorithm for variable selection from high-dimensional dataset using Partial
+Least Squares (PLS) regression models.  CARS algorithm iteratively applies the
+Monte Carlo sub-sampling and exponential variable elimination techniques to
+identify/select the most informative variables/features subjected to minimal
+cross-validated RMSE score.  The implementation of CARS algorithm is inspired
+from the work of Li et al. (2009) <doi:10.1016/j.aca.2009.06.046>.  This
+algorithm is widely applied in near-infrared (NIR), mid-infrared (MIR),
+hyperspectral chemometrics areas, etc.")
+    (license license:expat)))
 
 (define-public r-carrot
   (package

@@ -3983,13 +3983,13 @@ ISBN:978-0132892314).")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.10.1")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "11xa2ix2n4f72sj68cxpg6v2wy9bfx8ak72fa5dv7930wvimb1ng"))))
+        (base32 "1jabbpwkfbhf39kbqqw7z5bg0v8by01vr9h5l2ywrqk5fj0pa4fa"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -15165,13 +15165,13 @@ Engineering Experimentation\" (Elsevier, 2003) with sample code.")
 (define-public r-engression
   (package
     (name "r-engression")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "engression" version))
        (sha256
-        (base32 "174sv5l05wfjgccsrhzl20sqvb5xmisr5lhj1ad99v3hb7kmhd1x"))))
+        (base32 "0cn3bzjmgk84ihwlvn5vi40a15b0vsxmvbjz99w6p9kvlxxfsh07"))))
     (properties `((upstream-name . "engression")))
     (build-system r-build-system)
     (arguments
@@ -17447,6 +17447,31 @@ have been implemented in the form of quantile/least-square varying coefficient
 mixed effect models for high-dimensional longitudinal data.  The core module of
 this package is developed in C++'.")
     (license license:gpl2)))
+
+(define-public r-embalvi
+  (package
+    (name "r-embalvi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emBALVI" version))
+       (sha256
+        (base32 "1mvd84729hawqv55rbbmziv01w3nxzwqwqcd5ah9kn1qp4pl7wwf"))))
+    (properties `((upstream-name . "emBALVI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer r-ggplot2))
+    (home-page "https://cran.r-project.org/package=emBALVI")
+    (synopsis "EM Bayesian Adaptive LASSO Variational Inference Based GWAS")
+    (description
+     "This package performs Genome-Wide Association Study (GWAS) analysis using
+Expectation-Maximization Bayesian Adaptive LASSO with Variational Inference
+(@code{emBALVI}).  Includes genotype preprocessing, genomic relationship matrix
+construction, GWAS analysis, Manhattan and QQ plotting.s.")
+    (license license:expat)))
 
 (define-public r-emayili
   (package
@@ -25068,13 +25093,13 @@ Xiaobo, et al (2017) <doi:10.1016/j.knosys.2017.06.010>.")
 (define-public r-eclosure
   (package
     (name "r-eclosure")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eClosure" version))
        (sha256
-        (base32 "0zl47zzqr58qr1fzaaanf8hjf3wwxv18d4zw9i2ybdmnmkvxq99y"))))
+        (base32 "12wl5v31nfkrlwn6n616jpkp0v8dn5bcrggvz2skv40qf1kl9gap"))))
     (properties `((upstream-name . "eClosure")))
     (build-system r-build-system)
     (arguments

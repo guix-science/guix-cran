@@ -1091,36 +1091,6 @@ eigenvectors regression (PVR) and phylogenetic signal-representation (PSR)
 curve, along with some plot utilities.")
     (license license:gpl2+)))
 
-(define-public r-pvlrt
-  (package
-    (name "r-pvlrt")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pvLRT" version))
-       (sha256
-        (base32 "02w88z752svyk63n288dwnbwlw5v5cla294pzrms361ggs1bdkph"))))
-    (properties `((upstream-name . "pvLRT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer
-                             r-progress
-                             r-magrittr
-                             r-glue
-                             r-ggplot2
-                             r-ggfittext
-                             r-data-table
-                             r-bit64))
-    (home-page "https://cran.r-project.org/package=pvLRT")
-    (synopsis "Likelihood Ratio Test-Based Approaches to Pharmacovigilance")
-    (description
-     "This package provides a suite of likelihood ratio test based methods to use in
-pharmacovigilance.  Contains various testing and post-processing functions.")
-    (license license:gpl3)))
-
 (define-public r-pvldcurve
   (package
     (name "r-pvldcurve")
@@ -2438,13 +2408,13 @@ information from Pubmed via the API,
 (define-public r-pubmedr
   (package
     (name "r-pubmedr")
-    (version "0.0.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubmedR" version))
        (sha256
-        (base32 "153br94iqayrvvgzrzx0r3ilcrmnznfdnzk8yaii01s8i1g1wxcd"))))
+        (base32 "1091m1s7lsyy1yhq4x7069z4gn0fbdk9a7wpwf4icghnmaqmi9a6"))))
     (properties `((upstream-name . "pubmedR")))
     (build-system r-build-system)
     (arguments
@@ -2458,7 +2428,11 @@ information from Pubmed via the API,
     (description
      "This package provides a set of tools to extract bibliographic content from
 @code{PubMed} database using NCBI REST API
-<https://www.ncbi.nlm.nih.gov/home/develop/api/>.")
+<https://www.ncbi.nlm.nih.gov/home/develop/api/>.  It includes functions to
+search, download, and convert @code{PubMed} bibliographic records into data
+frames compatible with the bibliometrix package.  Features include programmatic
+query building, batch downloading by PMID, citation enrichment via NCBI E-Link,
+and robust error handling with automatic retry logic.")
     (license license:gpl3)))
 
 (define-public r-pubmedmining
@@ -11496,28 +11470,6 @@ available on the user's system.  JAGS can be downloaded from
 <https://mcmc-jags.sourceforge.io/>.")
     (license license:gpl2+)))
 
-(define-public r-prettyr
-  (package
-    (name "r-prettyr")
-    (version "2.2-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prettyR" version))
-       (sha256
-        (base32 "1rs90cmr5dyry724php90mp41qwzzk1z3gxfwcj1k157qawacyhr"))))
-    (properties `((upstream-name . "prettyR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=prettyR")
-    (synopsis "Pretty Descriptive Stats")
-    (description
-     "This package provides functions for conventionally formatting descriptive stats,
-reshaping data frames and formatting R output as HTML.")
-    (license license:gpl2+)))
-
 (define-public r-prettypanelmatch
   (package
     (name "r-prettypanelmatch")
@@ -11702,13 +11654,13 @@ tests developed in Pitarakis, J. (2023) <doi:10.1017/S0266466623000154>.")
 (define-public r-pressure
   (package
     (name "r-pressure")
-    (version "0.2.5")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pressuRe" version))
        (sha256
-        (base32 "1fcld5w2d5gmgs1in1rgixk8ni7nv43jq1pnsg00xsyykfq5q3xb"))))
+        (base32 "0k8nghqgvhgdzzrq6fwddli1lz3akqxj9hsql15afwckh86g7q2n"))))
     (properties `((upstream-name . "pressuRe")))
     (build-system r-build-system)
     (arguments
@@ -11720,6 +11672,7 @@ tests developed in Pitarakis, J. (2023) <doi:10.1017/S0266466623000154>.")
                              r-scales
                              r-rvcg
                              r-readxl
+                             r-rdist
                              r-raster
                              r-pracma
                              r-morpho
@@ -16227,13 +16180,13 @@ metadata about workspaces and users are also supported.")
 (define-public r-powerbal
   (package
     (name "r-powerbal")
-    (version "0.0.1.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poweRbal" version))
        (sha256
-        (base32 "16n331pyc41cy59cvp9fidvy3dzi68nw64lg6862amzna72nk85b"))))
+        (base32 "0s682l4ad1fdnj86czwy7dwj95k9wpb5rh3lg0rr5r69h0z40qq3"))))
     (properties `((upstream-name . "poweRbal")))
     (build-system r-build-system)
     (arguments
@@ -16243,7 +16196,7 @@ metadata about workspaces and users are also supported.")
                              r-scales
                              r-r-utils
                              r-phytools
-                             r-diversitree
+                             r-memoise
                              r-ape))
     (home-page "https://cran.r-project.org/package=poweRbal")
     (synopsis
@@ -16254,12 +16207,12 @@ functions that generate rooted binary trees with a given number of leaves.
 Second, the package allows for an easy evaluation and comparison of tree shape
 statistics by estimating their power to differentiate between different tree
 models.  Please note that this R package was developed alongside the manuscript
-\"Tree balance in phylogenetic models\" by S. J. Kersting, K. Wicke, and M.
-Fischer (2024) <doi:10.48550/@code{arXiv.2406.05185>}, which provides further
-background and the respective mathematical definitions.  This project was
-supported by the project @code{ArtIGROW}, which is a part of the WIR!-Alliance
-@code{ArtIFARM} â Artificial Intelligence in Farming funded by the German
-Federal Ministry of Education and Research (No.  03WIR4805).")
+Tree balance in phylogenetic models by S. J. Kersting, K. Wicke, and M. Fischer
+(2025) <doi:10.1098/rstb.2023.0303>, which provides further background and the
+respective mathematical definitions.  This project was supported by the project
+@code{ArtIGROW}, which is a part of the WIR!-Alliance @code{ArtIFARM} â
+Artificial Intelligence in Farming funded by the German Federal Ministry of
+Education and Research (No.  03WIR4805).")
     (license license:gpl3+)))
 
 (define-public r-power4mome
@@ -16723,6 +16676,52 @@ and can accommodate both continuous and binary outcomes.")
      "This package provides adds postfix and infix logic operators for if, then,
 unless, and otherwise.")
     (license license:gpl2)))
+
+(define-public r-postlink
+  (package
+    (name "r-postlink")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "postlink" version))
+       (sha256
+        (base32 "1ybf23ck6vqdx3pnb2bxnjlv19j79wc3sr7gad4qcrr11dfbrxwa"))))
+    (properties `((upstream-name . "postlink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-nleqslv
+                             r-label-switching
+                             r-bh))
+    (home-page "https://postlink-group.github.io/postlink/")
+    (synopsis "Post-Linkage Data Analysis")
+    (description
+     "This package provides a suite of statistical tools for post-linkage data
+analysis (PLDA), designed to account for record linkage errors in downstream
+modeling.  The package implements a familiar, formula-based regression interface
+that adjusts for linkage uncertainty, accommodating workflows where direct
+access to unlinked primary files is restricted.  It consolidates diverse
+adjustment methodologies, all of which support generalized linear models
+(linear, logistic, Poisson, and Gamma).  These methodologies include weighting
+approaches (Chambers (2009) <https://hdl.handle.net/10779/uow.27788247>;
+Chambers et al. (2023) <doi:10.1002/wics.1596>), mixture modeling (Slawski et
+al. (2025) <doi:10.1093/jrsssa/qnae083>), and Bayesian mixture modeling (Gutman
+et al. (2016) <doi:10.1002/sim.6586>).  For time-to-event data, both the
+weighting (Vo et al. (2024) <doi:10.1002/sim.9960>) and mixture modeling
+approaches accommodate Cox proportional hazards models, while the Bayesian
+approaches extend to parametric survival analysis.  Additionally, the package
+leverages mixture modeling for contingency table analyses and Bayesian methods
+to enable the multiple imputation of latent match status.")
+    (license license:expat)))
 
 (define-public r-postlightmercury
   (package
@@ -29991,13 +29990,13 @@ trees in NEXUS and Newick formats, while preserving annotations.")
 (define-public r-phylospatial
   (package
     (name "r-phylospatial")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylospatial" version))
        (sha256
-        (base32 "16xnqznj8d34yvnlnmr22xg66sff2rpfps091s8rbl6cq83nvl2s"))))
+        (base32 "0w61w1jv9pprl31nbd2qw04c8pyq6idaf59xq0b7s22ffr2rf9yv"))))
     (properties `((upstream-name . "phylospatial")))
     (build-system r-build-system)
     (arguments
@@ -30587,19 +30586,19 @@ other extra features.")
 (define-public r-phutil
   (package
     (name "r-phutil")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phutil" version))
        (sha256
-        (base32 "10hrc4ik8cnpscbl2cpmzzzksp8xhjbywcxwkqgihswa3af03j1d"))))
+        (base32 "00ikwgk49zjd619icw41ycad0mdjxxlpd0hy96hswbvfigr16jbl"))))
     (properties `((upstream-name . "phutil")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-cli r-bh))
+    (propagated-inputs (list r-rlang r-cpp11 r-cli r-bh))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/tdaverse/phutil")
     (synopsis "Persistence Homology Utilities")
@@ -31843,13 +31842,13 @@ Life Sciences, Vienna, Austria.")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "0lzpjp3kx81b6gw0jhrvgjnv0z8hpxzm6ns9bybcwgjnzmcr91pg"))))
+        (base32 "1r9zf84ifb91f262d2pz9bfi8if1nd2j7wnwlaxvwd0kgflpr5bv"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
@@ -44246,13 +44245,13 @@ estimators from census data.")
 (define-public r-paramanova
   (package
     (name "r-paramanova")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParamANOVA" version))
        (sha256
-        (base32 "1g04yisxq3cl02qz233cgrgqdc5jss6jkbgpa28j3g68ladwi2gp"))))
+        (base32 "0gs7xmjr3s5c913f18yllgr3b1x6sfmjbha8qr7w7mv3sp600v79"))))
     (properties `((upstream-name . "ParamANOVA")))
     (build-system r-build-system)
     (arguments
@@ -46523,13 +46522,13 @@ mixed-effect regression from Heegaard et al (2005)
 (define-public r-pakret
   (package
     (name "r-pakret")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pakret" version))
        (sha256
-        (base32 "1612m5niqg9p3q8shkq71fxbzjgfa9a696n6ak9ls11nh6s0lllw"))))
+        (base32 "13nr09vszk9mk13rcx05d5sxqnvf05bqhq0kg01ib8bcbljg3mhy"))))
     (properties `((upstream-name . "pakret")))
     (build-system r-build-system)
     (arguments

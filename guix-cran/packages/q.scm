@@ -153,20 +153,20 @@ spectral decomposition of the Hamiltonian.  E. Farhi (1997):
 (define-public r-qvirus
   (package
     (name "r-qvirus")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qvirus" version))
        (sha256
-        (base32 "0nxhh07z5rx687fpim60kl28i1aaaspijm7qds8m4l3rbjdwjj8g"))))
+        (base32 "054srazskvdh25s1sp93i2gr8lqcpbrwjpq0ympbfpl6ar5l02l8"))))
     (properties `((upstream-name . "qvirus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-magrittr r-dplyr))
-    (home-page "https://github.com/juan-acu/qvirus")
+    (home-page "https://cran.r-project.org/package=qvirus")
     (synopsis
      "Quantum Computing for Analyzing CD4 Lymphocytes and Antiretroviral Therapy")
     (description
@@ -177,11 +177,9 @@ antiretroviral therapy (ART) for human immunodeficiency virus (HIV).  With the
 emergence of quantum artificial intelligence and the development of small-scale
 quantum computers, there's an unprecedented opportunity to revolutionize the
 understanding of HIV dynamics and treatment strategies.  This project leverages
-the R package @code{qsimulatR} (Ostmeyer and Urbach, 2023,
-<https://CRAN.R-project.org/package=@code{qsimulatR>}), a quantum computer
-simulator, to explore these applications in quantum computing techniques,
-addressing the challenges in studying CD4 lymphocytes and enhancing ART
-efficacy.")
+a quantum computer simulator, to explore these applications in quantum computing
+techniques, addressing the challenges in studying CD4 lymphocytes and enhancing
+ART efficacy.")
     (license license:expat)))
 
 (define-public r-qvarsel
@@ -620,13 +618,13 @@ details.")
 (define-public r-quicksentiment
   (package
     (name "r-quicksentiment")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickSentiment" version))
        (sha256
-        (base32 "1za4gl1ws6rx945p6rf0106j00iraj3p97ninxn2ffjmn7ycz88y"))))
+        (base32 "0a1h8iyk27rksgqg4lh2ixbyx102ik8b9s075skb2jk00fqfz4c7"))))
     (properties `((upstream-name . "quickSentiment")))
     (build-system r-build-system)
     (arguments
@@ -5219,13 +5217,13 @@ recoding of nominal data.")
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcal" version))
        (sha256
-        (base32 "1xbiwi59rs0r8hqj3yr33brfzzsh4jk4fwhcfw1w6nqi25jvqycr"))))
+        (base32 "05k9m44nx3vdad8n43y63sdy9hhx68ck1ws77ihc0bm6r6v3hg0q"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (arguments

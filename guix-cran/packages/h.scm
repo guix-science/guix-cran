@@ -6831,6 +6831,44 @@ with the R Package hlt\"
 models for ensembles of networks as described in Sweet, Thomas & Junker (2013).")
     (license license:gpl2+)))
 
+(define-public r-hlmlab
+  (package
+    (name "r-hlmlab")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hlmLab" version))
+       (sha256
+        (base32 "0xl2i5qmqdghszsfrm81h20p9mklf15jbl9i7bp149pz5wp1pgfq"))))
+    (properties `((upstream-name . "hlmLab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-lme4 r-ggplot2 r-dplyr))
+    (home-page "https://github.com/causalfragility-lab/hlmLab")
+    (synopsis
+     "Hierarchical Linear Modeling with Visualization and Decomposition")
+    (description
+     "This package provides functions for visualization and decomposition in
+hierarchical linear models (HLM) for applications in education, psychology, and
+the social sciences.  Includes variance decomposition for two-level and
+three-level data structures following Snijders and Bosker (2012,
+ISBN:9781849202015), intraclass correlation (ICC) estimation and design effect
+computation as described in Shrout and Fleiss (1979)
+<doi:10.1037/0033-2909.86.2.420>, and contextual effect decomposition via the
+Mundlak (1978) <doi:10.2307/1913646> specification distinguishing within- and
+between-cluster components.  Supports visualization of random slopes and
+cross-level interactions following Hofmann and Gavin (1998)
+<doi:10.1177/014920639802400504> and Hamaker and Muthen (2020)
+<doi:10.1037/met0000239>.  Multilevel models are estimated using lme4 (Bates et
+al., 2015 <doi:10.18637/jss.v067.i01>).  An optional Shiny application enables
+interactive exploration of model components and parameter variation.  The
+implementation follows the multilevel modeling framework of Raudenbush and Bryk
+(2002, ISBN:9780761919049).")
+    (license license:expat)))
+
 (define-public r-hlmdiag
   (package
     (name "r-hlmdiag")
@@ -9656,13 +9694,13 @@ that departed Houston (IAH and HOU) in 2011.")
 (define-public r-hfhub
   (package
     (name "r-hfhub")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hfhub" version))
        (sha256
-        (base32 "0s2fm8lx680ymn8srln6dyay0lp03mxhyv7p71aw892hdq1d2sm1"))))
+        (base32 "0q7irlfjc92rch0nz88bwv5rfyzmrr9d8pmcy96s93gfv900zzrp"))))
     (properties `((upstream-name . "hfhub")))
     (build-system r-build-system)
     (arguments
@@ -16669,6 +16707,48 @@ that automatically map R objects (vectors, matrices, data frames) to efficient
 HDF5 types, removing the need to manage low-level details like dataspaces or
 property lists.  Uses the HDF5 library developed by The HDF Group
 <https://www.hdfgroup.org/>.")
+    (license license:expat)))
+
+(define-public r-h3sdm
+  (package
+    (name "r-h3sdm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h3sdm" version))
+       (sha256
+        (base32 "1l00y052shy9fi5lmdjw1z5fx8w43v6dxm903cwfg2r77p7ysyik"))))
+    (properties `((upstream-name . "h3sdm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-tibble
+                             r-terra
+                             r-stacks
+                             r-spatialsample
+                             r-sf
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-ecospat
+                             r-dplyr
+                             r-dalex))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ManuelSpinola/h3sdm")
+    (synopsis "Species Distribution Modeling with H3 Grids")
+    (description
+     "This package provides tools for species distribution modeling using H3 hexagonal
+grids (Uber Technologies Inc., 2022, <https://h3geo.org>).  Facilitates
+retrieval of species occurrence records, generation of H3 grids, computation of
+landscape metrics, and preparation of spatial data for modern species
+distribution models workflows.  Designed for biodiversity and landscape ecology
+research.")
     (license license:expat)))
 
 (define-public r-h3r

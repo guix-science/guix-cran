@@ -1683,19 +1683,24 @@ environmental decision making.")
 (define-public r-switchselection
   (package
     (name "r-switchselection")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "switchSelection" version))
        (sha256
-        (base32 "0lgicakwcmvjhvy1sqvv4rasxyyx2s1gadxnz81s7ii1865lbryk"))))
+        (base32 "08wmjd33iav9gqjllngplkwlrpkms1b91kin48y6gvxllignfjp0"))))
     (properties `((upstream-name . "switchSelection")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mnorm r-hpa r-gena))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mnorm
+                             r-hpa
+                             r-gena
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=switchSelection")
     (synopsis "Endogenous Switching and Sample Selection Regression Models")
     (description
@@ -2333,6 +2338,43 @@ aspects of stepped wedge cluster randomized trials (SW CRT) based on a repeated
 cross-sectional or cohort sampling scheme (Hussey MA and Hughes JP (2007)
 Contemporary Clinical Trials 28:182-191).")
     (license license:gpl2)))
+
+(define-public r-swcecon
+  (package
+    (name "r-swcecon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "swcEcon" version))
+       (sha256
+        (base32 "08b8gb13clw9vqbpm0pyx77n8v23pxnr49y9h85k0c8d5a4wh6zs"))))
+    (properties `((upstream-name . "swcEcon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=swcEcon")
+    (synopsis
+     "Economic Analysis of Soil and Water Conservation Measures in Watersheds")
+    (description
+     "This package provides functions and benchmark datasets for the economic
+appraisal of soil and water conservation (SWC) measures in watershed development
+projects.  Implements benefit-cost ratio (BCR), net present value (NPV),
+internal rate of return (IRR) via the bisection method of Brent (1973,
+ISBN:9780130223715), modified BCR, marginal rate of return using the CIMMYT
+(1988, ISBN:9686127127) method, payback period, soil loss economic valuation via
+the Universal Soil Loss Equation of Wischmeier and Smith (1978,
+ISBN:0160016258), groundwater recharge valuation, employment generation ratio,
+sensitivity analysis, switching value analysis, and Monte Carlo simulation.  Six
+datasets are included: state-wise BCR benchmarks from NABARD (2019) watershed
+evaluations, USLE erodibility parameters for Indian soil orders from NBSS and
+LUP, rainfall erosivity for twenty Indian districts from IMD data, SWC unit cost
+norms from PMKSY-WDC (@code{GoI} 2015), and two hypothetical datasets for
+illustration.  Methods follow Gittinger (1982, ISBN:9780801825439) and Squire
+and van der Tak (1975, ISBN:9780801816697).")
+    (license license:gpl3+)))
 
 (define-public r-swatches
   (package
@@ -10478,13 +10520,13 @@ This represents an attempt to replicate some of python's string formatting.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "string2path" version))
        (sha256
-        (base32 "0fb2yf0iv7yy6w36w50jj0kvpjcgpmd2p27x58lrm7s2cf249xfa"))))
+        (base32 "07fxbw5jvpmk3shazkfglp38w7frc4spc1q1qd0l30w8g2z3bfxf"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (arguments
@@ -16730,6 +16772,50 @@ are explained in the text book of Montgomery and Runger (2010) <ISBN:
 ('summarize', tabulate', xtile', pctile', binscatter', elapsed quarters/month,
 lead/lag).")
     (license license:gpl2)))
+
+(define-public r-statapa
+  (package
+    (name "r-statapa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statAPA" version))
+       (sha256
+        (base32 "0l24wvzm4gwbmgq1k3w0lj3waxw3m2a1pj0wk93190jsskmn4jsk"))))
+    (properties `((upstream-name . "statAPA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-rlang
+                             r-officer
+                             r-lmtest
+                             r-lme4
+                             r-ggplot2
+                             r-flextable
+                             r-emmeans
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/statAPA")
+    (synopsis
+     "APA 7th Edition Statistical Tables, Plots, and Multilevel Model Reports")
+    (description
+     "This package produces publication-ready statistical tables and figures formatted
+according to the 7th edition of the American Psychological Association (APA)
+style guidelines.  Supports descriptive statistics, t-tests, z-tests, chi-square
+tests, Analysis of Variance (ANOVA), Analysis of Covariance (ANCOVA), two-way
+ANOVA with simple effects, Multivariate Analysis of Variance (MANOVA), robust
+and cluster-robust regression using Heteroscedasticity-Consistent (HC) standard
+errors, post-hoc pairwise comparisons, homoskedasticity and heteroscedasticity
+diagnostics including the Non-Constant Variance (NCV) test, proportion tests,
+and multilevel mixed-effects models with intraclass correlation coefficients
+(ICC) and model-comparison tables.  Output can be directed to the console,
+Microsoft Word (via officer and flextable'), or @code{LaTeX}.  For APA style
+guidelines see American Psychological Association (2020,
+ISBN:978-1-4338-3216-1).")
+    (license license:expat)))
 
 (define-public r-statamarkdown
   (package
@@ -24146,6 +24232,37 @@ unobserved locations are readily obtainable.  For additional details, see
 Dumelle et al. (2023) <doi:10.1371/journal.pone.0282524>.")
     (license license:gpl3)))
 
+(define-public r-spmixw
+  (package
+    (name "r-spmixw")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spmixW" version))
+       (sha256
+        (base32 "0hybgqcflxkmrg09kky5lbp19waw7g4kzmjnyl3s7mxvdkrljzj1"))))
+    (properties `((upstream-name . "spmixW")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-coda))
+    (home-page "https://cran.r-project.org/package=spmixW")
+    (synopsis
+     "Bayesian Spatial Panel Data Models with Convex Combinations of Weight Matrices")
+    (description
+     "Bayesian Markov chain Monte Carlo (MCMC) estimation of spatial panel data models
+including Spatial Autoregressive (SAR), Spatial Durbin Model (SDM), Spatial
+Error Model (SEM), Spatial Durbin Error Model (SDEM), and Spatial Lag of X (SLX)
+specifications with fixed effects.  Supports convex combinations of multiple
+spatial weight matrices and Bayesian Model Averaging (BMA) over subsets of
+weight matrices.  Implements the convex combination spatial weight matrix
+methodology of Debarsy and @code{LeSage} (2021)
+<doi:10.1080/07350015.2020.1840993> and the Bayesian spatial panel data models
+of @code{LeSage} and Pace (2009, ISBN:9781420064247).")
+    (license license:gpl3+)))
+
 (define-public r-spmc
   (package
     (name "r-spmc")
@@ -29717,19 +29834,20 @@ form of Riemann integration.")
 (define-public r-spatialcatalogueviewer
   (package
     (name "r-spatialcatalogueviewer")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialCatalogueViewer" version))
        (sha256
-        (base32 "135px5dnsn9m70dp6w3cn5skrh9gxnj3da7m9hx5gix9zvyz687g"))))
+        (base32 "18dszrz8h05vqd39jx1zqji8mgz92nd7rmwngpq53g8vjw82awdm"))))
     (properties `((upstream-name . "spatialCatalogueViewer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shinythemes r-shiny r-leaflet r-dt))
+    (propagated-inputs (list r-shinythemes r-shiny r-leaflet-extras r-leaflet
+                             r-dt))
     (home-page "https://github.com/sebastien-plutniak/spatialCatalogueViewer")
     (synopsis
      "'Shiny' Tool to Create Interactive Catalogues for Geospatial Data")
@@ -40498,27 +40616,27 @@ comparison of the same region at different time stamps.")
 (define-public r-slideimp
   (package
     (name "r-slideimp")
-    (version "0.5.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slideimp" version))
        (sha256
-        (base32 "1mi7racfaf9l97qd5kd3wrwlfx25wr1p1m22d865hs1y1pmnxvps"))))
+        (base32 "0xkjnfc9p9gky7k8r4ghdgdyisggwfimxvkr81bwmvmgcrqv8smx"))))
     (properties `((upstream-name . "slideimp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rcppensmallen
+    (propagated-inputs (list r-rcppensmallen
                              r-rcpparmadillo
                              r-rcpp
-                             r-purrr
                              r-mlpack
                              r-mirai
                              r-collapse
+                             r-cli
                              r-checkmate
+                             r-carrier
                              r-bigmemory))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hhp94/slideimp")
@@ -57076,13 +57194,13 @@ multi-group rank data.")
 (define-public r-sfocds
   (package
     (name "r-sfocds")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFOCDs" version))
        (sha256
-        (base32 "0piqrkmwqf7g70r61dy7zxcgkkzfqzkgcck6zq99crfbkgiz3zjs"))))
+        (base32 "0193ldpb7vi8xzp8hk6nfdy9palv869aqdrg6cj8gss2la4cygnb"))))
     (properties `((upstream-name . "SFOCDs")))
     (build-system r-build-system)
     (arguments
@@ -60849,6 +60967,43 @@ Microscopic findings.  These database types are supported: SQLite and Oracle'.")
     (description
      "Send email using Sendgrid <https://sendgrid.com/> mail API(v3)
 <https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication>.")
+    (license license:expat)))
+
+(define-public r-senatebr
+  (package
+    (name "r-senatebr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "senatebR" version))
+       (sha256
+        (base32 "07wj85pdb0a6wk7dsf10d5ljwc57sinizrkrmxks9ngmrrsc7iy9"))))
+    (properties `((upstream-name . "senatebR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vsntos/senatebR")
+    (synopsis "Collect Data from the Brazilian Federal Senate Open Data API")
+    (description
+     "This package provides functions to access and collect data from the Brazilian
+Federal Senate open data API and website.  Covers senators, legislative
+materials, committees, voting records, speeches, provisional measures, vetoes,
+and legislative agendas, returning results as tidy data frames ready for
+analysis.")
     (license license:expat)))
 
 (define-public r-semtree
@@ -65051,13 +65206,13 @@ found at Chi, Ipsen, Hsiao, Lin, Wang, Lee, Lu, and Tzeng. (2021+)
 (define-public r-seacarb
   (package
     (name "r-seacarb")
-    (version "3.3.3")
+    (version "3.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seacarb" version))
        (sha256
-        (base32 "1xrwvkal60dkj4i6h27dskbliizkz6q476s06627asjacy8vdls3"))))
+        (base32 "0wihr9mbq20xjkz4ywps8z24i0x5acijqmz1hc9ad3c5q0q7z0cr"))))
     (properties `((upstream-name . "seacarb")))
     (build-system r-build-system)
     (arguments
@@ -65067,7 +65222,7 @@ found at Chi, Ipsen, Hsiao, Lin, Wang, Lee, Lu, and Tzeng. (2021+)
     (home-page "https://CRAN.R-project.org/package=seacarb")
     (synopsis "Seawater Carbonate Chemistry")
     (description
-     "Calculates parameters of the seawater carbonate system and assists the design of
+     "Calculates parameters of the seawater carbonate system and assists in design of
 ocean acidification perturbation experiments.")
     (license license:gpl2+)))
 
@@ -67556,13 +67711,13 @@ minimal modifications for a research article.")
 (define-public r-scpropreg
   (package
     (name "r-scpropreg")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scpropreg" version))
        (sha256
-        (base32 "0yz3888aw5w5n1l9hyw09l9f9gl6nqvmdg2w3mb8qz4pgdj1dpxk"))))
+        (base32 "15a6hwddddbjp8j18s6jyr65svbid9qy2423pp7pckaa4fvqshwn"))))
     (properties `((upstream-name . "scpropreg")))
     (build-system r-build-system)
     (arguments
@@ -74217,6 +74372,50 @@ model-based management procedures, and diagnostic tools for evaluating
 assessments inside closed-loop simulation.")
     (license license:gpl3)))
 
+(define-public r-samsaralight
+  (package
+    (name "r-samsaralight")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SamsaRaLight" version))
+       (sha256
+        (base32 "1pnh4flzpax1p7pr4wp62qh87f1grjk1x6yn001zyrlnr6ffgai6"))))
+    (properties `((upstream-name . "SamsaRaLight")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sfheaders
+                             r-sf
+                             r-scales
+                             r-rhpcblasctl
+                             r-rcpp
+                             r-patchwork
+                             r-httr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggforce
+                             r-dplyr
+                             r-data-table
+                             r-concaveman))
+    (native-inputs (list r-knitr))
+    (home-page "https://natheob.github.io/SamsaRaLight/")
+    (synopsis "Simulate Tree Light Transmission Using Ray-Tracing")
+    (description
+     "This package provides tools to simulate light transmission in forest stands
+using three-dimensional ray-tracing.  The package allows users to build virtual
+stands from tree inventories and to estimate (1) light intercepted by individual
+trees, (2) light reaching the forest floor, and (3) light at virtual sensors.
+The package is designed for ecological and forestry applications, including the
+analysis of light competition, tree growth, and forest regeneration.  The
+implementation builds on the individual-based ray-tracing model
+@code{SamsaraLight} developed by Courbaud et al. (2003)
+<doi:10.1016/S0168-1923(02)00254-X>.")
+    (license license:gpl3+)))
+
 (define-public r-sams
   (package
     (name "r-sams")
@@ -75454,13 +75653,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.77")
+    (version "0.3.78")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salso" version))
        (sha256
-        (base32 "1b860q9k8lcwqd88dmmdlzscvn99j0m52xca9g6920aswb0kksc7"))))
+        (base32 "0fzk16h4dmficlf7cw1fa4sddlfldwig34vxsg9zpmkrfvmkvarp"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (arguments
@@ -75483,13 +75682,13 @@ Dahl, Johnson, MÃ¼ller (2022) <doi:10.1080/10618600.2022.2069779>.")
 (define-public r-salmonmse
   (package
     (name "r-salmonmse")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salmonMSE" version))
        (sha256
-        (base32 "0kdiwb45r8v3zdiy4vvgp0r8hd15v781js6zzlrry01hwm04938y"))))
+        (base32 "1ss6541i0rj3cdgrnfx4r4j2j94rhd0yscv18i8h2ra941z6qyv4"))))
     (properties `((upstream-name . "salmonMSE")))
     (build-system r-build-system)
     (arguments

@@ -2763,6 +2763,45 @@ Based on Maximum Lq-likelihood Estimation.  Statistics in Medicine,
 40:6818-6834.<doi:10.1002/sim.9212>.")
     (license license:gpl3)))
 
+(define-public r-lpsmooth
+  (package
+    (name "r-lpsmooth")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LPsmooth" version))
+       (sha256
+        (base32 "0fvn6vwfl37xhzzj44vadk8fr3d85zv58jjg7qfdjqvyw8khd59p"))))
+    (properties `((upstream-name . "LPsmooth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-polynom
+                             r-orthopolynom
+                             r-nloptr
+                             r-lpgraph
+                             r-lpbkg
+                             r-hmisc))
+    (home-page "https://cran.r-project.org/package=LPsmooth")
+    (synopsis "LP Smoothed Inference and Graphics")
+    (description
+     "Classical tests of goodness-of-fit aim to validate the conformity of a
+postulated model to the data under study.  In their standard formulation,
+however, they do not allow exploring how the hypothesized model deviates from
+the truth nor do they provide any insight into how the rejected model could be
+improved to better fit the data.  To overcome these shortcomings, we establish a
+comprehensive framework for goodness-of-fit which naturally integrates modeling,
+estimation, inference and graphics.  In this package, the deviance tests and
+comparison density plots are performed to conduct the LP smoothed inference,
+where the letter L denotes nonparametric methods based on quantiles and P stands
+for polynomials.  Simulations methods are used to perform variance estimation,
+inference and post-selection adjustments.  Algeri S. and Zhang X. (2020)
+<@code{arXiv:2005.13011>}.")
+    (license license:gpl3)))
+
 (define-public r-lpridge
   (package
     (name "r-lpridge")
@@ -6957,30 +6996,6 @@ probability matrices, and plotting network structures.  The reference will be
 updated soon.")
     (license license:gpl3)))
 
-(define-public r-lobstercatch
-  (package
-    (name "r-lobstercatch")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LobsterCatch" version))
-       (sha256
-        (base32 "186h2727ii7y2x8wmvx7favrhg4pwv4ijf7zvjg6vh7lnj365cfb"))))
-    (properties `((upstream-name . "LobsterCatch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=LobsterCatch")
-    (synopsis "Models the Capture Processes in American Lobster Trap Fishery")
-    (description
-     "Simulate lobster catch process in a trap fishery.  Factors such as lobster
-density on ocean floor, their movement, trap saturation and bait shrinkage rate
-can be modeled.  Details of the methods for modeling those processes can be
-found in: Addison and Bell (1997) <doi:10.1071/MF97169>.")
-    (license license:gpl3+)))
-
 (define-public r-lobster
   (package
     (name "r-lobster")
@@ -8868,6 +8883,34 @@ LLM providers such as @code{OpenAI}', Anthropic', Groq', and Ollama'.  Inspired
 by the Python package langagent'.")
     (license license:expat)))
 
+(define-public r-llm-api
+  (package
+    (name "r-llm-api")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llm.api" version))
+       (sha256
+        (base32 "188bhz4waxbgqf46ss7q19yv71wmhj0b4jd32wlcv11x0zqz8h27"))))
+    (properties `((upstream-name . "llm.api")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://github.com/cornball-ai/llm.api")
+    (synopsis "Minimal LLM Chat Interface")
+    (description
+     "This package provides a minimal-dependency client for Large Language Model chat
+APIs.  Supports @code{OpenAI} <https://github.com/openai>, Anthropic Claude
+<https://claude.com/>, Moonshot Kimi <https://www.moonshot.ai/>, Ollama
+<https://ollama.com/>, and other @code{OpenAI'-compatible} endpoints.  Includes
+an agent loop with tool use and a Model Context Protocol client
+<https://modelcontextprotocol.io/>.  API design is derived from the ellmer
+package, reimplemented with only base R, curl', and jsonlite'.")
+    (license license:expat)))
+
 (define-public r-llm
   (package
     (name "r-llm")
@@ -10064,6 +10107,41 @@ factors are used as covariates every combination of the levels of each factor is
 treated separately.  The automatic calculation of marginal effects and a number
 of possibilities to customize the graphical output are useful features as well.")
     (license license:gpl2)))
+
+(define-public r-linreg
+  (package
+    (name "r-linreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "linreg" version))
+       (sha256
+        (base32 "03fjdciryy59m76c5vs2v2kc716z3h2azp513z0f6dm1iamcsagv"))))
+    (properties `((upstream-name . "linreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lmtest r-hmisc r-corrplot r-car))
+    (home-page "https://cran.r-project.org/package=linreg")
+    (synopsis "Linear Regression and Model Selection Framework")
+    (description
+     "This package provides a comprehensive framework for linear regression modeling
+and associated statistical analysis.  The package implements methods for
+correlation analysis, including computation of correlation matrices with
+corresponding significance levels and visualization via correlation heatmaps.
+It supports estimation of multiple linear regression models, along with
+automated model selection through backward elimination procedures based on
+statistical significance criteria.  In addition, the package offers a suite of
+diagnostic tools to assess key assumptions of linear regression, including
+multicollinearity using variance inflation factors, heteroscedasticity using the
+Goldfeld-Quandt test, and normality of residuals using the Shapiro-Wilk test.
+These functionalities, as described in Draper and Smith (1998)
+<doi:10.1002/9781118625590>, are designed to facilitate robust model building,
+evaluation, and interpretation in applied statistical and data analytical
+contexts.")
+    (license license:gpl3)))
 
 (define-public r-linpk
   (package
@@ -14732,13 +14810,13 @@ Beancount'.")
 (define-public r-ledecomp
   (package
     (name "r-ledecomp")
-    (version "1.0.4")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LEdecomp" version))
        (sha256
-        (base32 "1a1v0galy1mj31cri4viszwaaqc4q02rvpi8qgw2d73nyiax12kq"))))
+        (base32 "0b6n0iza0ci348n4646cxaaphidgzwwj8g3a906737m1zx0lw037"))))
     (properties `((upstream-name . "LEdecomp")))
     (build-system r-build-system)
     (arguments
@@ -14752,9 +14830,10 @@ Beancount'.")
      "This package provides a set of all-cause and cause-specific life expectancy
 sensitivity and decomposition methods, including Arriaga (1984)
 <doi:10.2307/2061029>, others documented by Ponnapalli (2005)
-<doi:10.4054/@code{DemRes.2005.12.7>}, lifetable, numerical, and other
-algorithmic approaches such as Horiuchi et al (2008) <doi:10.1353/dem.0.0033>,
-or Andreev et al (2002) <doi:10.4054/@code{DemRes.2002.7.14>}.")
+<doi:10.4054/@code{DemRes.2005.12.7>}, lifetable, numerical, and other analytic
+or algorithmic approaches such as Horiuchi et al (2008)
+<doi:10.1353/dem.0.0033>, or Andreev et al (2002)
+<doi:10.4054/@code{DemRes.2002.7.14>}.")
     (license license:gpl3)))
 
 (define-public r-leastcostpath
@@ -15624,19 +15703,19 @@ create symbols to plot on maps.")
 (define-public r-leafgl
   (package
     (name "r-leafgl")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leafgl" version))
        (sha256
-        (base32 "12l9aa97jp1hhqfnp7700za85x2n0r34b4878cnj2hg4k6r3vs19"))))
+        (base32 "1zk0w9jiigl69jzqfvdnmaglz5iv89cdggp3iy8s3drvihz83jak"))))
     (properties `((upstream-name . "leafgl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-leaflet r-jsonify r-htmltools r-geojsonsf))
+    (propagated-inputs (list r-yyjsonr r-sf r-leaflet r-htmltools))
     (home-page "https://github.com/r-spatial/leafgl")
     (synopsis "High-Performance 'WebGl' Rendering for Package 'leaflet'")
     (description
@@ -18910,6 +18989,37 @@ Learning, Data Wrangling, Marketing Mix Modeling (Robyn), Exploratory, API, and
 Scrapper, it helps the analyst or data scientist to get quick and robust
 results, without the need of repetitive coding or advanced R programming skills.")
     (license license:agpl3)))
+
+(define-public r-laopendata
+  (package
+    (name "r-laopendata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "laOpenData" version))
+       (sha256
+        (base32 "01zg80gzmnkspq884yv2v3p3rhp8l9688zv0ygya9158qgnypgdv"))))
+    (properties `((upstream-name . "laOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://martinezc1.github.io/laOpenData/")
+    (synopsis "Convenient Access to Los Angeles Open Data API Endpoints")
+    (description
+     "This package provides simple, reproducible access to datasets from the Los
+Angeles Open Data portal <https://data.lacity.org/>.  Functions return results
+as tidy tibbles and support optional filtering, sorting, and row limits via the
+Socrata API.")
+    (license license:expat)))
 
 (define-public r-lans2r
   (package

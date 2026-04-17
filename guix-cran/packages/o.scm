@@ -6659,13 +6659,13 @@ divided by the intercept and provides confidence intervals for the ratio.")
 (define-public r-optconerrf
   (package
     (name "r-optconerrf")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optconerrf" version))
        (sha256
-        (base32 "0x1qwk8hxiqgxd4gfas5wm0j26y6rxm8l8md90sdjcbiikcg3pzq"))))
+        (base32 "1id1pm01ac7rvcrv9ni25012rfl4dl5495yl2dp6yrnghr6bbmk5"))))
     (properties `((upstream-name . "optconerrf")))
     (build-system r-build-system)
     (arguments
@@ -7144,13 +7144,13 @@ field data.")
 (define-public r-opgmmassessment
   (package
     (name "r-opgmmassessment")
-    (version "0.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opGMMassessment" version))
        (sha256
-        (base32 "0qnxq9i0spygz2lmjb23y94r9cgvkkariv0v8llqdb6l89bhfdqm"))))
+        (base32 "089vckjx25g481q7rfscfah9snch6dy1nzwdfrvly87z1g45ficj"))))
     (properties `((upstream-name . "opGMMassessment")))
     (build-system r-build-system)
     (arguments
@@ -7172,7 +7172,7 @@ field data.")
                              r-cluster
                              r-catools
                              r-adaptgauss))
-    (home-page "https://cran.r-project.org/package=opGMMassessment")
+    (home-page "https://github.com/JornLotsch/opGMMassessment")
     (synopsis "Optimized Automated Gaussian Mixture Assessment")
     (description
      "Necessary functions for optimized automated evaluation of the number and
@@ -7207,13 +7207,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.25")
+    (version "1.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "196jr1nd27ns25bv12q785067hm7mww7rnd5qw9gfx6axnn9ynqd"))))
+        (base32 "1ziss4a4lxv1jrclv685b4b98r9kj0f59m8g5fnmhc9c1nkvnh0w"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -8873,13 +8873,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.5.2")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "0h2skik2pbrvvhc963iwpi0dn1i63hq97q9y3by4dhncxxibnm6i"))))
+        (base32 "09mz035vmk32padgywlcr17wjg111p3ca0yfhn9ipncfds3ic0yn"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (arguments

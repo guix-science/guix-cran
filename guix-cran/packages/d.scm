@@ -5096,13 +5096,13 @@ for drug sensitivity analysis in patient-derived cancer models.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0dws69q2zprg3xv6hkgynl0milvp3lpfykf4zklcbamyalhs86fy"))))
+        (base32 "11mi7fnkq1fdvrsxfd6p07q3rs0h2ya163qsgn3ffzyxrakw2r9x"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -9901,6 +9901,29 @@ must be installed on the machine.  If Microsoft Word is available, it can
 produce PDF documents or images identical to the originals; otherwise
 @code{LibreOffice} is used and the rendering may sometimes differ from the
 original documents.")
+    (license license:expat)))
+
+(define-public r-doclisting
+  (package
+    (name "r-doclisting")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "doclisting" version))
+       (sha256
+        (base32 "0lnmpw4r7dg4fyiv0qpks5p9zpxc13pzfv4nc4p2l8mx64v61d6n"))))
+    (properties `((upstream-name . "doclisting")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/r-lib/doclisting")
+    (synopsis "List Functions in Documentation")
+    (description
+     "Generate Rd markup to list methods for a generic function.  Makes it easier to
+document S3, S4, and S7 generics by automatically finding and linking to method
+documentation.")
     (license license:expat)))
 
 (define-public r-dockviewr
@@ -16667,6 +16690,32 @@ compute and visualize harmonic power, actograms, average activity and diurnality
 index.")
     (license license:gpl3)))
 
+(define-public r-diginorm
+  (package
+    (name "r-diginorm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "digiNORM" version))
+       (sha256
+        (base32 "189hlfvfbb305pc5py7f0j1fv20iljb088r543mz3xdzs0dvzbfg"))))
+    (properties `((upstream-name . "digiNORM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=digiNORM")
+    (synopsis "Data-Driven Digital PCR Normalization")
+    (description
+     "Adopts the general least squares-based data-driven normalization strategy
+developed by Heckmann et al. (2011) <doi:10.1186/1471-2105-12-250> to correct
+for technical variance in gene expression data generated via digital polymerase
+chain reaction (@code{dPCR}).  Performs normalization of raw copy numbers and
+also calculates relative variability metrics that can be used to assess the
+impact of normalization on variance.")
+    (license license:gpl3)))
+
 (define-public r-digestivedatasets
   (package
     (name "r-digestivedatasets")
@@ -17219,38 +17268,6 @@ value and equality constraints) are possible.  In addition, factor scores
 assessment tools are also available.  The traditional diffusion model can be
 estimated as well.")
     (license license:gpl2)))
-
-(define-public r-differentes
-  (package
-    (name "r-differentes")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diffeRenTES" version))
-       (sha256
-        (base32 "1904zg9ynf873cqkww2ii4k60cr1bi9km67dxvgsc2bd8dxkm9ks"))))
-    (properties `((upstream-name . "diffeRenTES")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph r-dot r-boolnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=diffeRenTES")
-    (synopsis "Computation of TES-Based Cell Differentiation Trees")
-    (description
-     "Computes the ATM (Attractor Transition Matrix) structure and the tree-like
-structure describing the cell differentiation process (based on the Threshold
-Ergodic Set concept introduced by Serra and Villani), starting from the Boolean
-networks with synchronous updating scheme of the @code{BoolNet} R package.  TESs
-(Threshold Ergodic Sets) are the mathematical abstractions that represent the
-different cell types arising during ontogenesis.  TESs and the powerful model of
-biological differentiation based on Boolean networks to which it belongs have
-been firstly described in \"A Dynamical Model of Genetic Networks for Cell
-Differentiation\" Villani M, Barbieri A, Serra R (2011) A Dynamical Model of
-Genetic Networks for Cell Differentiation.  PLOS ONE 6(3): e17703.")
-    (license license:gpl3)))
 
 (define-public r-differ
   (package
@@ -26052,6 +26069,45 @@ Shannon (1948) <doi:10.1002/j.1538-7305.1948.tb01338.x>, classify systems by
 infrastructure type (static, periodic, continuous, human-in-the-loop), and
 evaluate subgroup disparities in decision exposure and stability.  Applications
 include education, policy, health, and organisational research.")
+    (license license:expat)))
+
+(define-public r-decisiondrift
+  (package
+    (name "r-decisiondrift")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DecisionDrift" version))
+       (sha256
+        (base32 "0wyy6rxa67yvxxlngaicvqp4havdnzrmj8n7yka298qj73nndsg7"))))
+    (properties `((upstream-name . "DecisionDrift")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/DecisionDrift")
+    (synopsis
+     "Detecting, Decomposing, and Stress-Testing Temporal Change in Repeated Decision Systems")
+    (description
+     "This package provides tools for detecting, decomposing, and stress-testing
+temporal drift in repeated binary decision systems.  Complements the
+decisionpaths package by shifting focus from path construction to system-level
+change over time.  Implements five core analytic modules: (1) prevalence drift
+â did the overall decision rate change over time?; (2) transition drift â
+did the probability of switching or persisting change?; (3) entropy and
+stability trends â did path complexity evolve?; (4) group-differential drift
+â did the system drift differently across subgroups?; (5) change-point and
+regime-shift detection â did the system change abruptly after a policy or
+model update? Additionally provides a robustness module for testing stability of
+drift conclusions across analytic choices, and a sensitivity module for probing
+vulnerability to data problems including missingness, miscoding, and threshold
+shifts.  Defines four original drift indices: the Decision Drift Index (DDI),
+Transition Drift Index (TDI), Group Differential Drift (GDD), and Cumulative
+Drift Burden (CDB).  Applications include algorithmic audit, AI governance,
+education, health, and organisational research.")
     (license license:expat)))
 
 (define-public r-decision

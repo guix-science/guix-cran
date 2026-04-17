@@ -185,13 +185,13 @@ channel including geography, traffic sources, time period, etc.")
 (define-public r-yrnd
   (package
     (name "r-yrnd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yrnd" version))
        (sha256
-        (base32 "19035kfyj1qbrkjgj2ah44kyqn5lqx433b6i7fx8fh0ra87rpir4"))))
+        (base32 "1yvszbylc90dlvgn703lfnwx4yf8fr8sz8zshq53gh8096ywpvcr"))))
     (properties `((upstream-name . "yrnd")))
     (build-system r-build-system)
     (arguments
@@ -208,15 +208,15 @@ channel including geography, traffic sources, time period, etc.")
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=yrnd")
     (synopsis
-     "Extracts Risk Neutral Densities of Prices, Money Market Rates and Bond Yields from Fixed Income Options")
+     "Extracts Risk Neutral Densities of Prices, Money Market Rates and Government Bond Yields from Fixed Income Options Prices")
     (description
      "This package provides with parametric risk neutral densities and cumulative
 densities for futures prices on fixed-income products.  It relies on options on
-Short Term Interest Rate futures contracts prices or options on bond futures
-contracts prices.  It models the price of the underlying asset as a mixture of
-either two or three lognormal densities.  It also brings new functions which
-provide with risk neutral densities and cumulative densities of the money market
-rate or the bond yield inferred from the futures contract's price, using the
+Short Term Interest Rate futures contracts or options on government bond futures
+contracts.  It models the price of the underlying asset as a mixture of either
+two or three lognormal densities.  It also offers new functions which provide
+with risk neutral densities and cumulative densities of the money market rate or
+the government bond yield inferred from the futures contract's price, using the
 density of the futures price.  The package leverages on the works of Melick, W.
 R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B. Bahra (1998)
 <doi:10.2139/ssrn.77429>.")

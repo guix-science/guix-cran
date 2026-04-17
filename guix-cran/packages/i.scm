@@ -17042,13 +17042,13 @@ for specific queries.")
 (define-public r-ietest
   (package
     (name "r-ietest")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieTest" version))
        (sha256
-        (base32 "010grx4l73r5dn87sds9ipabph6vvvsfjiklwdwwrb3rbqljzcrx"))))
+        (base32 "0cg7a045w89sjg1cvfww18svbgpn3399vjw5ml2jlrnzj7yrvg6a"))))
     (properties `((upstream-name . "ieTest")))
     (build-system r-build-system)
     (arguments
@@ -19859,13 +19859,13 @@ et al (2020) <doi:10.1101/2020.05.05.078550> and Khodadadi-Jamayran, et al
 (define-public r-icehmeasures
   (package
     (name "r-icehmeasures")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICEHmeasures" version))
        (sha256
-        (base32 "0xqpiv75ydklbbnzp99idy0i4aca8a5mfbz4gz9h6mq6iz3jnfdj"))))
+        (base32 "1a1738lvv9pxmcmkpaqcj7hvj613jl18gpf1vvhlv75z4lh42pl9"))))
     (properties `((upstream-name . "ICEHmeasures")))
     (build-system r-build-system)
     (arguments

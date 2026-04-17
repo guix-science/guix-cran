@@ -1473,6 +1473,44 @@ compatible with the API v2.0 and get data sets and its detailed informations
 from the API.")
     (license license:gpl3)))
 
+(define-public r-nsmm
+  (package
+    (name "r-nsmm")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NSMM" version))
+       (sha256
+        (base32 "1bc0qazfml7gnj9ism6r0hacrz275kx6fb7cgp81iskgfj2rn1m1"))))
+    (properties `((upstream-name . "NSMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openxlsx
+                             r-ggplot2
+                             r-evd
+                             r-envstats
+                             r-dplyr
+                             r-copula
+                             r-colorspace))
+    (home-page "https://cran.r-project.org/package=NSMM")
+    (synopsis
+     "Non-Stationary Multivariate (Copula-Based) Framework, Hydrological Applications")
+    (description
+     "To account for non-stationary multivariate data, this package implements the
+framework including copula and marginal distributions.  In addition to modeling
+and parameter estimations, it allows the computation and visualization of
+multivariate quantile curves for given events.  This package is useful for a
+variety of disciplines such as finance, climatology and particularly for
+hydrological applications, where dependence structures and marginal parameters
+may vary over time.  This framework, based on Chebana & Ouarda (2021)
+<doi:10.1016/j.jhydrol.2020.125907>, integrates both multivariate and
+non-stationary aspects to be more accurate (e.g. for risk assessment) and more
+realistic (e.g. considering climate changes).")
+    (license license:gpl3+)))
+
 (define-public r-nsm3data
   (package
     (name "r-nsm3data")
@@ -3833,6 +3871,41 @@ these methods in practice.  These methods are described in Olejnik et al. (1985)
     (synopsis "The 'noweb' System for R")
     (description "The noweb system for source code, implemented in R.")
     (license license:lgpl2.0)))
+
+(define-public r-nowcastr
+  (package
+    (name "r-nowcastr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nowcastr" version))
+       (sha256
+        (base32 "11daq8vrp35cf523n0sbww9ipb1z5r6rnis4qab7s679bi4qmc3c"))))
+    (properties `((upstream-name . "nowcastr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/whocov/nowcastr")
+    (synopsis "Nowcasting with Chain-Ladder Method")
+    (description
+     "This package provides tools for performing nowcasting using the Chain-Ladder
+method <https://en.wikipedia.org/wiki/Chain-ladder_method>.  It supports both
+non-cumulative delay-based estimation and model-based completeness fitting
+(e.g., using logistic or Gompertz curves) to predict final counts from partially
+reported data.")
+    (license license:expat)))
 
 (define-public r-nowcast
   (package
@@ -7411,6 +7484,41 @@ in network analysis.")
     (description "Non-negative Matrix Factorization.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-nmfkc
+  (package
+    (name "r-nmfkc")
+    (version "0.6.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmfkc" version))
+       (sha256
+        (base32 "0rzsk35svw94k6indqq95gis1q7nj9pcw2ii90bk9bgy8grw56qf"))))
+    (properties `((upstream-name . "nmfkc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ksatohds/nmfkc")
+    (synopsis "Non-Negative Matrix Factorization with Kernel Covariates")
+    (description
+     "This package performs Non-negative Matrix Factorization (NMF) with Kernel
+Covariates.  Given an observation matrix and kernel covariates, it optimizes
+both a basis matrix and a parameter matrix.  Notably, if the kernel matrix is an
+identity matrix, the method simplifies to standard NMF. Also provides NMF with
+Random Effects (NMF-RE) via @code{nmfre()}, which estimates a mixed-effects
+model combining covariate-driven scores with unit-specific random effects
+together with wild bootstrap inference, and NMF-based Structural Equation
+Modeling (NMF-SEM) via @code{nmf.sem()}, which fits a two-block input-output
+model for blind source separation and path analysis.  References: Satoh (2025)
+<doi:10.48550/@code{arXiv.2403.05359>}; Satoh (2025)
+<doi:10.48550/@code{arXiv.2510.10375>}; Satoh (2025)
+<doi:10.48550/@code{arXiv.2512.18250>}; Satoh (2026)
+<doi:10.48550/@code{arXiv.2603.01468>}; Satoh (2026)
+<doi:10.1007/s42081-025-00314-0>.")
+    (license license:expat)))
+
 (define-public r-nmfbin
   (package
     (name "r-nmfbin")
@@ -7702,13 +7810,13 @@ evidence flow decomposition.")
 (define-public r-nmadta
   (package
     (name "r-nmadta")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMADTA" version))
        (sha256
-        (base32 "02cw9gypqbb07vcjg4s3awdjxvbsqjk3vs9nm7zhngfjhw7a1kkj"))))
+        (base32 "00jxkgfz91bm7qq4pq426xadybg20k7gq94pndhxrcmp2mv89yrb"))))
     (properties `((upstream-name . "NMADTA")))
     (build-system r-build-system)
     (arguments
@@ -7726,7 +7834,7 @@ evidence flow decomposition.")
     (home-page "https://cran.r-project.org/package=NMADTA")
     (synopsis "Network Meta-Analysis of Multiple Diagnostic Tests")
     (description
-     "This package provides statistical methods for network meta-analysis of 1â5
+     "This package provides statistical methods for network meta-analysis of
 diagnostic tests to simultaneously compare multiple tests within a missing data
 framework, including: - Bayesian hierarchical model for network meta-analysis of
 multiple diagnostic tests (Ma, Lian, Chu, Ibrahim, and Chen (2018)
@@ -12226,13 +12334,13 @@ transforms.")
 (define-public r-neuroim2
   (package
     (name "r-neuroim2")
-    (version "0.8.5")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuroim2" version))
        (sha256
-        (base32 "1rhbxa0ri42va83ryx39h7v60cs4q93ws9aw5hgpms75vgc87j2m"))))
+        (base32 "06y3xa4d2m51zxdn8fqa070xcb0xa6jb4hiqr4d495vm8wh3vddw"))))
     (properties `((upstream-name . "neuroim2")))
     (build-system r-build-system)
     (arguments
@@ -12250,11 +12358,11 @@ transforms.")
                              r-magrittr
                              r-ggplot2
                              r-future-apply
+                             r-future
                              r-deflist
                              r-dbscan
-                             r-crayon
-                             r-bigstatsr
-                             r-assertthat))
+                             r-cli
+                             r-bigstatsr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/bbuchsbaum/neuroim2")
     (synopsis "Data Structures for Brain Imaging Data")
@@ -13997,6 +14105,37 @@ et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
 binary covariate; - subgroup network meta-analysis.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-netmem
+  (package
+    (name "r-netmem")
+    (version "1.0-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netmem" version))
+       (sha256
+        (base32 "01lppzz87l389f30vzys8mcxyhcz11ma68djwlxzj6l4zznvhymb"))))
+    (properties `((upstream-name . "netmem")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/anespinosa/netmem")
+    (synopsis "Social Network Measures using Matrices")
+    (description
+     "This package provides measures to describe and manipulate one-mode, two-mode,
+multiplex, and multilevel networks using matrix algebra.  Implements functions
+for network centrality, cohesive subgroups, structural holes, similarity
+measures, path distances, signed networks, and random network generation.
+Supports ego-centric and whole-network analyses, including dyadic and triadic
+census, structural balance, and bipartite projections.  Key references: Bonacich
+(1972) <doi:10.1080/0022250X.1972.9989806>, Breiger (1974)
+<doi:10.2307/2576011>, KivelÃ¤ et al. (2014) <doi:10.1093/comnet/cnu016>,
+Espinosa-Rada et al. (2024) <doi:10.1016/j.socnet.2023.11.008>.")
+    (license license:gpl3)))
 
 (define-public r-netmediate
   (package

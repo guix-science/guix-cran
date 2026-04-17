@@ -5155,25 +5155,27 @@ described in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
 (define-public r-breadr
   (package
     (name "r-breadr")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BREADR" version))
        (sha256
-        (base32 "04rwdfdw7xm2bqahrgyacsvc5ah5yw65c5c3pi4bxqwkp8fn8dyp"))))
+        (base32 "1agffkdl4i169y6jayxjx16spa1yp2l8zy94pynn0ygcbl08v2qi"))))
     (properties `((upstream-name . "BREADR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-readr
                              r-purrr
                              r-matrixstats
                              r-mass
                              r-magrittr
+                             r-ggstatsplot
                              r-ggpubr
                              r-ggplot2
                              r-forcats
@@ -5406,13 +5408,13 @@ dimensional linear regression models.")
 (define-public r-brassica
   (package
     (name "r-brassica")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brassica" version))
        (sha256
-        (base32 "1av52p39jsv54q02v8xa7xilwmz5vzj6zy68y9m5lgl6s86r509y"))))
+        (base32 "1c30sdpwhp6fy1mm48w8c2glyvn3xmnq31vrhjlvmx2hn6ldbgas"))))
     (properties `((upstream-name . "brassica")))
     (build-system r-build-system)
     (arguments
@@ -12587,13 +12589,13 @@ use.  It can be found at the Blat website http://www.blat.net.")
 (define-public r-blatent
   (package
     (name "r-blatent")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blatent" version))
        (sha256
-        (base32 "0vmybbb5xwmlmzgzyaxiiargi4fd2f661sap2wfmjw9rav89zhmv"))))
+        (base32 "1x9g3vx5f4zailc4qn6sv231zm29zr8v9c42xy69l2p223y12fk4"))))
     (properties `((upstream-name . "blatent")))
     (build-system r-build-system)
     (arguments
@@ -15929,13 +15931,13 @@ n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogeom" version))
        (sha256
-        (base32 "0wvnwgglww7xpmgjvmny211hd8ynfz3hnv60m6sk6nflibbkya66"))))
+        (base32 "1zaf3q3cl6157zmvjpi9xrhgqb8ibaygaphn5h41d4a1ssghp9j2"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (arguments
@@ -17541,13 +17543,13 @@ portfolio management and trading:
 (define-public r-bin2norm
   (package
     (name "r-bin2norm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bin2norm" version))
        (sha256
-        (base32 "1w1ngb82vsk8miginkrfv3wdfj6k8niwksnjs9bbqwqkwidhc9v7"))))
+        (base32 "1mvf425gl32nr5rmdd56inl3qsf124p2mwmi8ma80g4hmwvklfyw"))))
     (properties `((upstream-name . "bin2norm")))
     (build-system r-build-system)
     (arguments
@@ -18954,13 +18956,13 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
 (define-public r-bifrost
   (package
     (name "r-bifrost")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bifrost" version))
        (sha256
-        (base32 "172w0xvyzx3723kp9ji84875a5rwxq2xys6sk9xvs5zj7nqpb129"))))
+        (base32 "14jn3xya5svc2n8z6szzs0kz1abg7pna9i6wqlxhpap18gzxbfdz"))))
     (properties `((upstream-name . "bifrost")))
     (build-system r-build-system)
     (arguments
@@ -18988,8 +18990,8 @@ algorithm following approaches developed in Smith et al. (2023)
 Methods build on multivariate GLS approaches described in Clavel et al. (2019)
 <doi:10.1093/sysbio/syy045> and implemented in the @code{mvgls()} function from
 the @code{mvMORPH} package.  Documentation and vignettes are available at
-<https://jakeberv.com/bifrost/>, including the introductory vignette at
-<https://jakeberv.com/bifrost/articles/jaw-shape-vignette.html>.")
+<https://jakeberv.com/bifrost/>, including worked examples for the jaw-shape
+dataset.")
     (license license:gpl2+)))
 
 (define-public r-bifiesurvey
@@ -19781,13 +19783,13 @@ smoothed images of the effect sizes and samples from the posterior distribution.
 (define-public r-bhmbasket
   (package
     (name "r-bhmbasket")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bhmbasket" version))
        (sha256
-        (base32 "0vc2n63ybb40wrn945svaaqlvrcb16dad9w5k6m49mp761ygf7la"))))
+        (base32 "1i42kk2pxdx1743bx2jwsgvr5yv0s9f0c3wvkvvrlwxbibxh21m6"))))
     (properties `((upstream-name . "bhmbasket")))
     (build-system r-build-system)
     (arguments
@@ -20934,13 +20936,13 @@ used to fit the time series data and detect structural changes (breaks).")
 (define-public r-beyondwhittle
   (package
     (name "r-beyondwhittle")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beyondWhittle" version))
        (sha256
-        (base32 "0vhd6vhxcx0chc71cnp9iwxp2x3sh7w0pxzjhxa6hdmxq2f1gpp7"))))
+        (base32 "0mg4v7rvg47zya26zq59clw27y3hfv12x0mhm70vd9hk1k2rljx7"))))
     (properties `((upstream-name . "beyondWhittle")))
     (build-system r-build-system)
     (arguments
@@ -20959,8 +20961,8 @@ used to fit the time series data and detect structural changes (breaks).")
 procedures for univariate and multivariate time series.  The package is based on
 the methods presented in C. Kirch et al (2018) <doi:10.1214/18-BA1126>, A. Meier
 (2018) <https://opendata.uni-halle.de//handle/1981185920/13470> and Y. Tang et
-al (2023) <doi:10.48550/@code{arXiv.2303.11561>}.  It was supported by DFG
-grants KI 1443/3-1 and KI 1443/3-2.")
+al (2025) <doi:10.1080/01621459.2025.2594191>.  It was supported by DFG grants
+KI 1443/3-1 and KI 1443/3-2.")
     (license license:gpl3+)))
 
 (define-public r-beyondbenford
@@ -21639,13 +21641,13 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
 (define-public r-betaarma
   (package
     (name "r-betaarma")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaARMA" version))
        (sha256
-        (base32 "01v2yswjniwywmpg0vqxqjp2hdz0jvm18g805p4269r78gl2dycg"))))
+        (base32 "0wr8nnr34y8rl2m515xcc4x08afd8zlsrkwmm66xvk2iq07mp1c1"))))
     (properties `((upstream-name . "betaARMA")))
     (build-system r-build-system)
     (arguments
@@ -26800,13 +26802,13 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 (define-public r-bayesrecon
   (package
     (name "r-bayesrecon")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesRecon" version))
        (sha256
-        (base32 "1z7j7xj7srfjj2ycvjjvxyiks5i6gvhvvm5brl8wgcwvw9qy5hc3"))))
+        (base32 "0j682c0h1ymkmv4c7m40sgkh4dr391l2akpxlyncq84kp7avcqfd"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
     (arguments

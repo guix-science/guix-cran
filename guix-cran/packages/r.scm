@@ -8,6 +8,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages java)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages spreadsheet)
@@ -32,7 +33,6 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages dotnet)
-  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages documentation)
   #:use-module (gnu packages python-xyz)
@@ -553,25 +553,31 @@ sub-structure masking are as described in: Giri et al. (2015)
 (define-public r-rxkcd
   (package
     (name "r-rxkcd")
-    (version "1.9.2")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RXKCD" version))
        (sha256
-        (base32 "1yk12ic6kdbwc44ppag2yfnga7xjmifkglhvcw93vc3qg469mm15"))))
+        (base32 "16s0s37s2kch9w386qgc4sqksjhw7yawfxhnj3dd0wj25cbnqckh"))))
     (properties `((upstream-name . "RXKCD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rjsonio r-png r-plyr r-jpeg))
-    (home-page "https://cran.r-project.org/package=RXKCD")
+    (propagated-inputs (list r-text2vec
+                             r-png
+                             r-jsonlite
+                             r-jpeg
+                             r-httr
+                             r-duckdb
+                             r-dbi))
+    (home-page "https://onertipaday.github.io/RXKCD/")
     (synopsis "Get XKCD Comic from R")
     (description
-     "Visualize your favorite XKCD comic strip directly from R. XKCD
-<https://xkcd.com> web comic content is provided under the Creative Commons
-Attribution-@code{NonCommercial} 2.5 License.")
+     "Visualize your favorite XKCD comic strip directly from R. Includes full-text
+search with BM25 ranking and semantic similarity search via local @code{GloVe}
+embeddings, powered by a local @code{DuckDB} cache.")
     (license license:gpl2)))
 
 (define-public r-rwunderground
@@ -1114,30 +1120,31 @@ in a separate package RWekajars'.  For more information on Weka see
 (define-public r-rweaveextra
   (package
     (name "r-rweaveextra")
-    (version "1.3-0")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RweaveExtra" version))
        (sha256
-        (base32 "1fgmph0wqf9l6ji9p5r60wmskjdn65dmn04w2m5bn2ypcvfxizp4"))))
+        (base32 "1k3ynilxxk8qa3bcm7w77llbmz7d0jyyxzcs9x6f5fhvzgpg1dgf"))))
     (properties `((upstream-name . "RweaveExtra")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://gitlab.com/vigou3/rweaveextra")
-    (synopsis "Sweave Drivers with Extra Tricks Up their Sleeve")
+    (synopsis "Sweave Drivers with Extra Tricks Up their Sleeves")
     (description
-     "Weave and tangle drivers for Sweave extending the standard drivers.
-@code{RweaveExtraLatex} and @code{RtangleExtra} provide options to completely
-ignore code chunks on weaving, tangling, or both.  Chunks ignored on weaving are
-not parsed, yet are written out verbatim on tangling.  Chunks ignored on
-tangling may be evaluated as usual on weaving, but are completely left out of
-the tangled scripts.  The driver @code{RtangleExtra} also provides options to
-control the separation between code chunks in the tangled script, and to specify
-the extension of the file name (or remove it entirely) when splitting is
-selected.")
+     "*The package is deprecated.  It uses the standard drivers on R >= 4.6.0 since
+they incorporate all the functionalities below.* Weave and tangle drivers for
+Sweave extending the standard drivers. @code{RweaveExtraLatex} and
+@code{RtangleExtra} provide options to completely ignore code chunks on weaving,
+tangling, or both.  Chunks ignored on weaving are not parsed, yet are written
+out verbatim on tangling.  Chunks ignored on tangling may be evaluated as usual
+on weaving, but are completely left out of the tangled scripts.  The driver
+@code{RtangleExtra} also provides options to control the separation between code
+chunks in the tangled script, and to specify the extension of the file name (or
+remove it entirely) when splitting is selected.")
     (license license:gpl2+)))
 
 (define-public r-rwdataplyr
@@ -2039,13 +2046,13 @@ you use.")
 (define-public r-rurality
   (package
     (name "r-rurality")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rurality" version))
        (sha256
-        (base32 "007g337dniln3mnp936bkp1h1b8ycplbj3fy5xrhr7wmky571aac"))))
+        (base32 "10qhkw22lh83ysx6j3z6c1hcij01ir547s36i0kph3vxq4qwj07d"))))
     (properties `((upstream-name . "rurality")))
     (build-system r-build-system)
     (arguments
@@ -10161,6 +10168,40 @@ and Analysis of the Randomized Response Technique, Journal of the American
 Statistical Association <https://graemeblair.com/papers/randresp.pdf>.")
     (license license:gpl3+)))
 
+(define-public r-rquiz
+  (package
+    (name "r-rquiz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rquiz" version))
+       (sha256
+        (base32 "0bmf0f0hab8kqvp0c8prhgb2zvjd8xbgh21cpr6fps9b8gjla4da"))))
+    (properties `((upstream-name . "rquiz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-htmlwidgets))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/saskiaotto/rquiz")
+    (synopsis "Interactive Quizzes as HTML Widgets")
+    (description
+     "This package creates interactive @code{JavaScript-based} quizzes as HTML
+widgets.  Offers three quiz types: a single question with instant feedback
+@code{(singleQuestion()}), a multi-question quiz with navigation, timer, and
+results @code{(multiQuestions()}), and fill-in-the-blank cloze exercises
+@code{(fillBlanks()}).  All quizzes auto-detect single-choice and
+multiple-choice modes from the input data, support customizable styling,
+keyboard navigation, and multilingual UI (English, German, French, Spanish).
+Designed for use in R Markdown', Quarto', and Shiny applications.  The
+@code{singleQuestion()} quiz design was inspired by Ozzie Kirkby
+<https://codepen.io/ozzie/pen/@code{pvrVLm>}.  The @code{multiQuestions()} quiz
+design was inspired by Abhilash Narayan
+<https://codepen.io/abhilashn/pen/B@code{RepQz>}.")
+    (license license:expat)))
+
 (define-public r-rquest
   (package
     (name "r-rquest")
@@ -10274,6 +10315,32 @@ for quantitative finance.  The goal is to provide a standard open source library
 for quantitative analysis, modeling, trading, and risk management of financial
 assets.")
     (license license:gpl2+)))
+
+(define-public r-rqualify
+  (package
+    (name "r-rqualify")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rqualify" version))
+       (sha256
+        (base32 "1cllw9syv28x3izqlz4sp5yqwda2kx7h0f6l54znzdyrdvjgz140"))))
+    (properties `((upstream-name . "rqualify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tinytex r-rmarkdown r-pandoc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Medtronic-Biostatistics/rqualify")
+    (synopsis "Qualification of R Software Installations")
+    (description
+     "Qualify R software installations using R Markdown as the foundation for the
+Installation Qualification (IQ) and Operational Qualification (OQ) when used in
+environments (such as regulated clinical trials) where such processes may be
+required.")
+    (license license:gpl2)))
 
 (define-public r-rquake
   (package
@@ -13672,6 +13739,43 @@ maximum engulfment capacity) from body length using allometric equations from
 Kahane-Rapport and Goldbogen (2018) <doi:10.1002/jmor.20846>.")
     (license license:expat)))
 
+(define-public r-roroph
+  (package
+    (name "r-roroph")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roroph" version))
+       (sha256
+        (base32 "1ab1znz93r5qg1bn6sf8y19v7j21x23b1ig5mirfpmli7inzz9x4"))))
+    (properties `((upstream-name . "roroph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep r-sf r-ggplot2 r-dplyr
+                             r-archipelagoengine))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/njtalingting/roroph")
+    (synopsis
+     "Philippine Roll-on/Roll-Off (RoRo) Connectivity and Transport Data")
+    (description
+     "This package provides the first standardized dataset of the Philippines
+Roll-on/Roll-off (@code{RoRo}) shipping network, reflecting the 2024-2026
+operational state.  It digitizes fragmented records from the Maritime Industry
+Authority (MARINA) and Philippine Ports Authority (PPA) into a unified framework
+for transport modeling.  The package includes 108 bidirectional provincial links
+across the Western, Central, and Eastern Nautical Highways, complete with
+GADM-standardized naming, geospatial coordinates, and metrics such as distance,
+travel time, and vessel frequency.  Methodology follows Anselin (1988,
+ISBN:9024737354) and @code{LeSage} and Pace (2009) <doi:10.1201/9781420064254>
+for spatial weight construction.  Data sources include \"MARINA Inventory of
+@code{RoRo} Routes\" <https://marina.gov.ph> and \"PPA Port Statistics\"
+<https://www.ppa.com.ph/ppa_statistics>.  Designed to support research in
+economic geography and disaster-response logistics.")
+    (license license:expat)))
+
 (define-public r-roracle
   (package
     (name "r-roracle")
@@ -16870,6 +16974,43 @@ results caused by influential outliers.  The density power divergence is
 originally introduced by Basu et al. (1998) <doi:10.1093/biomet/85.3.549>, and
 the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
     (license license:gpl3)))
+
+(define-public r-robustmediate
+  (package
+    (name "r-robustmediate")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobustMediate" version))
+       (sha256
+        (base32 "0inii49dxqvrf4k38l6z4gbxqcc29pjmv2lwawxwff43bwlzi8hw"))))
+    (properties `((upstream-name . "RobustMediate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rlang r-ggplot2 r-cli r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/RobustMediate")
+    (synopsis
+     "Causal Mediation Analysis with Diagnostics and Sensitivity Analysis")
+    (description
+     "This package provides tools for causal mediation analysis with continuous
+treatments using inverse probability weighting (IPW).  Estimates natural direct
+and indirect effects over a user-defined treatment grid and supports flexible
+dose-response mediation analysis.  Includes diagnostic procedures for assessing
+covariate balance in both treatment and mediator models using standardized mean
+differences.  Implements pathway-specific extensions of the impact threshold for
+a confounding variable (ITCV; Frank, 2000 <doi:10.1177/0049124100029002001>)
+adapted to mediation settings.  Provides joint sensitivity analysis combining
+E-values (@code{VanderWeele} and Ding, 2017 <doi:10.7326/M16-2607>) and
+violations of sequential ignorability (Imai, Keele, and Yamamoto, 2010
+<doi:10.1214/10-STS321>).  Additional utilities include visualization of
+dose-response mediation functions, robustness profiles, fragility summaries, and
+formatted outputs for applied research.  Supports clustered data structures and
+multiple outcome families.")
+    (license license:expat)))
 
 (define-public r-robustmatrix
   (package
@@ -21930,13 +22071,13 @@ receive only compatibility and documentation updates.")
 (define-public r-rmfrac
   (package
     (name "r-rmfrac")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rmfrac" version))
        (sha256
-        (base32 "1gzcpp2aqirfyvlrp3n02gx18sc4hrwr9x4kvy2f7rcxhcz75kj1"))))
+        (base32 "1aank3d67ygs4fxl2l2q7njigg1c8q482j54wx71dhsk3k7y0agd"))))
     (properties `((upstream-name . "Rmfrac")))
     (build-system r-build-system)
     (arguments
@@ -21961,7 +22102,7 @@ receive only compatibility and documentation updates.")
      "Simulation of several fractional and multifractional processes.  Includes
 Brownian and fractional Brownian motions, bridges and Gaussian Haar-based
 multifractional processes (GHBMP).  Implements the methods from Ayache, Olenko
-and Samarakoon (2025) <doi:10.48550/@code{arXiv.2503.07286>} for simulation of
+and Samarakoon (2026) <doi:10.1016/j.matcom.2026.01.033> for simulation of
 GHBMP. Estimation of Hurst functions and local fractal dimension.  Clustering
 realisations based on the Hurst functions.  Several functions to estimate and
 plot geometric statistics of the processes and time series.  Provides a shiny
@@ -26899,6 +27040,32 @@ all of the IPC-CH Public API (<https://docs.api.ipcinfo.org>) simplified and
 advanced endpoints to easily download the data in a clean and tidy format.")
     (license license:gpl3+)))
 
+(define-public r-rip-opencv
+  (package
+    (name "r-rip-opencv")
+    (version "0.3-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rip.opencv" version))
+       (sha256
+        (base32 "01rasap745117dxlc2imjrbldl7g6xmvr7gn2pvh46w17plbs7gs"))))
+    (properties `((upstream-name . "rip.opencv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/deepayan/rip")
+    (synopsis "Interface to 'OpenCV' Image Processing Routines")
+    (description
+     "R interface for calling @code{OpenCV} routines that works by translating R
+objects to @code{OpenCV} classes and back.  Low-level wrappers for several
+@code{OpenCV} routines are provided as Rcpp modules.  In addition, high level
+interfaces are provided for a limited selection of common operations.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-rioplot
   (package
     (name "r-rioplot")
@@ -29782,13 +29949,13 @@ package.  The user can read data from the excel file into R using
 (define-public r-rgoogleads
   (package
     (name "r-rgoogleads")
-    (version "0.13.3")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgoogleads" version))
        (sha256
-        (base32 "0ddlcc8mgagr77l9y4d78w0717xww8brg20fr16b2nr5hnxx5scz"))))
+        (base32 "1mb4rcrfsffh1cmssvd3vwkvhfhscxfai540jf2k3j6hx4y8hqkr"))))
     (properties `((upstream-name . "rgoogleads")))
     (build-system r-build-system)
     (arguments
@@ -31916,34 +32083,6 @@ prediction interval, the split conformal method, and the quantile regression
 forest.")
     (license license:gpl3)))
 
-(define-public r-rfif
-  (package
-    (name "r-rfif")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RFIF" version))
-       (sha256
-        (base32 "1yimn1sbiivnvf4zlqxbxh1y0psd1x3zqb45mw9awn6c5cy1r0s5"))))
-    (properties `((upstream-name . "RFIF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/ChuckColeman/RFIF")
-    (synopsis "Fast Iterative Filtering (FIF) with Portable FFT Backend")
-    (description
-     "This package provides an R interface to a C implementation of Fast Iterative
-Filtering (FIF) for decomposing a univariate signal into intrinsic mode
-functions (IMFs) and a residual.  The package uses Fast Fourier Transform
-library FFTW, if found.  If not, it provides instructions to install it for your
-OS. This is recommended, as R's internal @code{fft()}, while avoiding external
-FFT dependencies, is two orders of magnitude slower.  See vignette Installing
-FFTW for RFIF for RFIF installation instructions.")
-    (license license:expat)))
-
 (define-public r-rfieldclimate
   (package
     (name "r-rfieldclimate")
@@ -32282,13 +32421,13 @@ reproducibility.  For more information on FACTS itself, please visit
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.13.1")
+    (version "2.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfacebookstat" version))
        (sha256
-        (base32 "0x56wn42d5r6x0mdyvspdzqbaf0v5dl24j44cmadqxap1dapdvi9"))))
+        (base32 "1krgjv6l2q9ix7119ksaaydlaz3alk9y5f4xy0m03yymikqcdixn"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (arguments
@@ -35317,32 +35456,6 @@ references, making it ready for research and analysis.  Data is sourced from The
 Reptile Database <http://www.reptile-database.org/>.")
     (license license:expat)))
 
-(define-public r-reptile
-  (package
-    (name "r-reptile")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "REPTILE" version))
-       (sha256
-        (base32 "11swy4jrmmb0xjjxm1wyxd628fxxcqnialvijdrjwjpdbvraz4gq"))))
-    (properties `((upstream-name . "REPTILE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforest r-optparse r-foreach r-flux
-                             r-doparallel))
-    (home-page "https://github.com/yupenghe/REPTILE")
-    (synopsis "Regulatory DNA Element Prediction")
-    (description
-     "Predicting regulatory DNA elements based on epigenomic signatures.  This package
-is more of a set of building blocks than a direct solution.  REPTILE regulatory
-prediction pipeline is built on this R package.  See
-<https://github.com/yupenghe/REPTILE> for more information.")
-    (license license:bsd-2)))
-
 (define-public r-repsim
   (package
     (name "r-repsim")
@@ -37990,13 +38103,13 @@ Reliability Testing.")
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.4")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "01s8rnl2qvim1d276wc91s5n6zm6sjjk4j9g2sm46k6qyyapwkss"))))
+        (base32 "0jndprm3r9q4dz20ib1df4dmdswp0n7as8lfdcq6xiam3j1kjaaj"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (arguments
@@ -38005,14 +38118,17 @@ Reliability Testing.")
     (propagated-inputs (list r-segmented r-plumber))
     (native-inputs (list r-knitr))
     (home-page "https://paulgovan.github.io/ReliaGrowR/")
-    (synopsis "Reliability Growth Analysis")
+    (synopsis "Reliability Growth Analysis and Repairable Systems Modeling")
     (description
-     "Modeling and plotting functions for Reliability Growth Analysis (RGA).  Models
-include the Duane (1962) <doi:10.1109/TA.1964.4319640>, Non-Homogeneous Poisson
-Process (NHPP) by Crow (1975) (No.  AMSAATR138), Piecewise Weibull NHPP by Guo
-et al. (2010) <doi:10.1109/RAMS.2010.5448029>, and Piecewise Weibull NHPP with
-Change Point Detection based on the segmented package by Muggeo (2024)
-<https://cran.r-project.org/package=segmented>.")
+     "Modeling and plotting functions for Reliability Growth Analysis (RGA) and
+Non-Homogeneous Poisson Process (NHPP) models for repairable systems.  RGA
+models include the Duane (1962) <doi:10.1109/TA.1964.4319640>, NHPP by Crow
+(1975) (No.  AMSAATR138), Piecewise Weibull NHPP by Guo et al. (2010)
+<doi:10.1109/RAMS.2010.5448029>, and Piecewise Weibull NHPP with Change Point
+Detection based on the segmented package by Muggeo (2024)
+<https://cran.r-project.org/package=segmented>.  Repairable systems functions
+include the Mean Cumulative Function (MCF) using the Nelson-Aalen estimator,
+parametric Power Law and Log-Linear NHPP models, and forecasting.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-reliacoef
@@ -49221,13 +49337,13 @@ within the Global Talent Mentoring platform.
 (define-public r-rcoletum
   (package
     (name "r-rcoletum")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RColetum" version))
        (sha256
-        (base32 "04gf2689fm9fm1nwsi4yn46rdsxpqznxspxcmjjhg0j1lxdkda39"))))
+        (base32 "0hd9r1w37r46ly43bgzz1rp13n7vvyckwwjdjm5k6276k2kwfdca"))))
     (properties `((upstream-name . "RColetum")))
     (build-system r-build-system)
     (arguments
@@ -56065,13 +56181,13 @@ header-only library.")
 (define-public r-rapidsplithalf
   (package
     (name "r-rapidsplithalf")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapidsplithalf" version))
        (sha256
-        (base32 "13cp4f1cj20pgkpjhr31az184ya2iap15q90xivj7cd39h1fvnh3"))))
+        (base32 "0jm1rf86sa6zfnfpcyxslgx0n906yah341jrzx9nbyhg0c81gw63"))))
     (properties `((upstream-name . "rapidsplithalf")))
     (build-system r-build-system)
     (arguments
@@ -58486,13 +58602,13 @@ parsers developed in Haskell.")
 (define-public r-ralsa
   (package
     (name "r-ralsa")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RALSA" version))
        (sha256
-        (base32 "1kbqhnfc8nsxf1h871lnfivjn48ns2i0l2z9j8fp8vs28qmkbwqj"))))
+        (base32 "0p8dq43f1wzapijflzjf513bv7g72z64l2wgs754c23lddvbfkhl"))))
     (properties `((upstream-name . "RALSA")))
     (build-system r-build-system)
     (arguments
@@ -59540,13 +59656,13 @@ functionality in radiant.data'.")
 (define-public r-radiant-model
   (package
     (name "r-radiant-model")
-    (version "1.6.9")
+    (version "1.6.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.model" version))
        (sha256
-        (base32 "0as8m3q778a50q18bldvdlaa898g0n0fq2rkn3fvhgh46addv41h"))))
+        (base32 "1r6mciga8yz1srq2xkhdcpjq960glv4m45w1hplir9yva1484682"))))
     (properties `((upstream-name . "radiant.model")))
     (build-system r-build-system)
     (arguments
@@ -59554,7 +59670,6 @@ functionality in radiant.data'.")
       #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xgboost
-                             r-vip
                              r-tidyselect
                              r-tidyr
                              r-stringr

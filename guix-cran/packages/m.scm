@@ -3435,6 +3435,41 @@ on the work by Paul Centore, \"The Munsell and Kubelka-Munk Toolbox\".")
 Procrustes rotation of unfolding results.")
     (license license:gpl2)))
 
+(define-public r-munch
+  (package
+    (name "r-munch")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "munch" version))
+       (sha256
+        (base32 "1p2frbnc74idp2dps95g33kqwcw2s818bgqnc1vmk43vs06j3ml3"))))
+    (properties `((upstream-name . "munch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-systemfonts
+                             r-patchwork
+                             r-ggplot2
+                             r-gdtools
+                             r-flextable
+                             r-commonmark
+                             r-cli))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://ardata-fr.github.io/munch/")
+    (synopsis "Rich Inline Text for 'grid' Graphics and 'flextable'")
+    (description
+     "Renders rich inline text (bold, italic, code, links, images) in grid graphics
+and ggplot2', from markdown or flextable chunks.  Provides grobs, theme
+elements, and geometry layers for styled text rendering.  Only works with
+graphics devices that support systemfonts', such as those provided by ragg',
+svglite', or ggiraph'.  The cairo_pdf device is also supported when fonts are
+installed at the system level.")
+    (license license:expat)))
+
 (define-public r-mumarinex
   (package
     (name "r-mumarinex")
@@ -4312,38 +4347,36 @@ ISBN:9783030813925), \"Multivariate Statistical Methods\".")
 (define-public r-multispline
   (package
     (name "r-multispline")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiSpline" version))
        (sha256
-        (base32 "0daws3mmpvmnds095yvvr0cby13rvwsry7nz7ljwrabbfin3cxhr"))))
+        (base32 "1b1bb0ypfbx0p761y63f493c8ldp2a8nrl0rkbi7a8n0qaszh3si"))))
     (properties `((upstream-name . "MultiSpline")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-mgcv r-lme4 r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=MultiSpline")
+    (home-page "https://github.com/causalfragility-lab/MultiSpline")
     (synopsis
      "Spline-Based Nonlinear Modeling for Multilevel and Longitudinal Data")
     (description
-     "This package provides tools for fitting, predicting, and visualizing nonlinear
-relationships in single-level, multilevel, and longitudinal regression models.
-Nonlinear functional forms are represented using natural cubic splines from
-splines and smooth terms from mgcv'.  The package offers a unified interface for
-specifying nonlinear effects, interactions with time variables, random-intercept
-clustering structures, and additional linear covariates.  Utilities are included
-to generate prediction grids and produce effect plots, facilitating
-interpretation and visualization of nonlinear relationships in applied
-regression workflows.  The implementation builds on established methods for
-spline-based regression and mixed-effects modeling (Hastie and Tibshirani, 1990
-<doi:10.1201/9780203738535>; Bates et al., 2015 <doi:10.18637/jss.v067.i01>;
-Wood, 2017 <doi:10.1201/9781315370279>).  Applications include hierarchical and
-longitudinal data structures common in education, health, and social science
-research.")
-    (license license:expat)))
+     "This package provides a unified framework for fitting, predicting, and
+interpreting nonlinear relationships in single-level, multilevel, and
+longitudinal regression models.  Flexible functional forms are supported using
+natural cubic splines ('splines'), B-splines ('splines'), and GAM smooths
+('mgcv').  Supports two-way and nested clustering via lme4', automatic knot
+selection by AIC or BIC, multilevel R-squared decomposition (Nakagawa-Schielzeth
+marginal and conditional R-squared with level-specific variance partitioning), a
+postestimation suite returning first and second derivatives with confidence
+bands, turning points and inflection regions, and a model comparison workflow
+contrasting linear, polynomial, and spline fits by AIC, BIC, and
+likelihood-ratio tests.  Cluster heterogeneity in nonlinear effects is supported
+via random-slope spline terms.")
+    (license license:gpl3)))
 
 (define-public r-multispatialccm
   (package
@@ -5662,13 +5695,13 @@ N., Parnell, A., Prado, E., & Moral, R. A. (2022)
 (define-public r-multinma
   (package
     (name "r-multinma")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinma" version))
        (sha256
-        (base32 "18rlj8h3rvfsg3kfsn6p70dqf3xav4qh2rvfnfarjlxdnqhgnhz0"))))
+        (base32 "0ghm0b1rzifvmfiy89q5vw2lfhjzk4qc2id1jya05nm3bg7md6dc"))))
     (properties `((upstream-name . "multinma")))
     (build-system r-build-system)
     (arguments
@@ -12189,6 +12222,44 @@ and Potts Model.  A complete manuscript describing the package is available in
 Freguglia & Garcia (2022) <doi:10.18637/jss.v101.i08>.")
     (license license:gpl3)))
 
+(define-public r-mrf
+  (package
+    (name "r-mrf")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mrf" version))
+       (sha256
+        (base32 "1xh8z7zw9b5kjw2sn6h01g5hrw57nz52kdxdwqijqz8r25pawc7j"))))
+    (properties `((upstream-name . "mrf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavelets r-nnfor r-monmlp r-forecast r-deoptim))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.deepbionics.org")
+    (synopsis "Multiresolution Forecasting")
+    (description
+     "Forecasting of univariate time series using feature extraction with variable
+prediction methods is provided.  Feature extraction is done with a redundant
+Haar wavelet transform with filter h = (0.5, 0.5).  The advantage of the
+approach compared to typical Fourier based methods is an dynamic adaptation to
+varying seasonalities.  Currently implemented prediction methods based on the
+selected wavelets levels and scales are a regression and a multi-layer
+perceptron.  Forecasts can be computed for horizon 1 or higher.  Model selection
+is performed with an evolutionary optimization.  Selection criteria are
+currently the AIC criterion, the Mean Absolute Error or the Mean Root Error.
+The data is split into three parts for model selection: Training, test, and
+evaluation dataset.  The training data is for computing the weights of a
+parameter set.  The test data is for choosing the best parameter set.  The
+evaluation data is for assessing the forecast performance of the best parameter
+set on new data unknown to the model.  This work is published in Stier, Q.;
+Gehlert, T.; Thrun, M.C. Multiresolution Forecasting for Industrial
+Applications.  Processes 2021, 9, 1697. <doi:10.3390/pr9101697>.")
+    (license license:gpl3)))
+
 (define-public r-mregions2
   (package
     (name "r-mregions2")
@@ -14556,6 +14627,37 @@ cross correlation histogram peaks and most available indices for calculating
 synchronization into simple functions.  See Nordstrom, Fuglevand, and Enoka
 (1992) <doi:10.1113/jphysiol.1992.sp019244> for a more thorough introduction.")
     (license license:gpl2)))
+
+(define-public r-motmot
+  (package
+    (name "r-motmot")
+    (version "2.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "motmot" version))
+       (sha256
+        (base32 "0z6nya9cqsgic6500lwzcq62l4zvzc1yjgw6b7z12fg6hsznm6s9"))))
+    (properties `((upstream-name . "motmot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-mvtnorm
+                             r-ks
+                             r-coda
+                             r-caper
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://puttickbiology.wordpress.com/motmot/")
+    (synopsis "Models of Trait Macroevolution on Trees")
+    (description
+     "This package provides functions for fitting models of trait evolution on
+phylogenies for continuous traits.  The majority of functions are described in
+Thomas and Freckleton (2012) <doi:10.1111/j.2041-210X.2011.00132.x> and allow
+tests of variation in the rates of trait evolution.")
+    (license license:gpl2+)))
 
 (define-public r-motifr
   (package
@@ -18941,6 +19043,38 @@ website can be easily recreated in current R session.  Work on this package was
 financially supported by the NCN Opus grant 2017/27/B/ST6/01307 at Warsaw
 University of Technology, Faculty of Mathematics and Information Science.")
     (license license:asl2.0)))
+
+(define-public r-modeldiagramr
+  (package
+    (name "r-modeldiagramr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modeldiagramR" version))
+       (sha256
+        (base32 "1bdg4jqvzrp23jvcddi6f9k2jqf7yvl0dq6qqivric3la3zi3pvq"))))
+    (properties `((upstream-name . "modeldiagramR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-nlme
+                             r-magrittr
+                             r-gtools
+                             r-forcats
+                             r-dplyr
+                             r-diagrammer))
+    (home-page "https://github.com/glinse-stat/modeldiagramr")
+    (synopsis "Generate Model Diagrams for Linear Mixed Effect Models")
+    (description
+     "Generates @code{DiagrammeR} model diagrams for hierarchical linear mixed effects
+models.  Details can be found in Linse (2026) <doi:10.6339/26-JDS1222>.")
+    (license license:gpl3)))
 
 (define-public r-modeldb
   (package
@@ -24014,6 +24148,36 @@ weights may be included in the new version together with possibility of
 constraints on all model parameters.")
     (license license:gpl2+)))
 
+(define-public r-mlcausal
+  (package
+    (name "r-mlcausal")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLCausal" version))
+       (sha256
+        (base32 "0bxd9n1cg2v9mhqvcjjxfv9zclv365nrjrwrmhvxfn05nqwiy16v"))))
+    (properties `((upstream-name . "MLCausal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-rlang r-lmtest r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/MLCausal")
+    (synopsis "Causal Inference Methods for Multilevel and Clustered Data")
+    (description
+     "This package provides an end-to-end workflow for estimating average treatment
+effects in clustered (multilevel) observational data.  Core functionality
+includes cluster-aware propensity score estimation using fixed effects and
+Mundlak-style specifications, inverse probability weighting, within-cluster
+nearest-neighbor matching, covariate balance diagnostics at both individual and
+cluster-mean levels, outcome regression with cluster-robust standard errors,
+propensity score overlap visualization, and tipping-point sensitivity analysis
+for omitted cluster-level confounding.")
+    (license license:expat)))
+
 (define-public r-mlbstats
   (package
     (name "r-mlbstats")
@@ -29072,13 +29236,13 @@ results, and more.")
 (define-public r-minicran
   (package
     (name "r-minicran")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniCRAN" version))
        (sha256
-        (base32 "0m0sp6yzn6lkb7dkrp73c9r6j3s23sj5nrvbzzjfizrcqkc5mjw8"))))
+        (base32 "1cfmkpz9mh9xkwwa7phlh5w8gaa92p45lppdq81vksjfh2w8w0vd"))))
     (properties `((upstream-name . "miniCRAN")))
     (build-system r-build-system)
     (arguments
@@ -34613,13 +34777,13 @@ references.")
 (define-public r-mev
   (package
     (name "r-mev")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mev" version))
        (sha256
-        (base32 "1hxprylkhh4ji8iyjfllikjxpjwfrvfgaih6h4zyr31hlxng8dh0"))))
+        (base32 "1h7xmsnlsxnaabbk7bp4cgsfj6bim1cjaip3zvv0p7lla7rgl4bc"))))
     (properties `((upstream-name . "mev")))
     (build-system r-build-system)
     (arguments
@@ -40084,42 +40248,6 @@ submarine, olympic, Mondrian or product plots and tree maps.")
 ensembles of linear models.")
     (license license:expat)))
 
-(define-public r-megena
-  (package
-    (name "r-megena")
-    (version "1.3.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MEGENA" version))
-       (sha256
-        (base32 "0cr10pmj1n831scz5kgaq3nkglr3imwgc62cxng2dvdxr9991g21"))))
-    (properties `((upstream-name . "MEGENA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape
-                             r-rcpp
-                             r-matrix
-                             r-igraph
-                             r-ggrepel
-                             r-ggraph
-                             r-ggplot2
-                             r-fpc
-                             r-foreach
-                             r-doparallel
-                             r-cluster
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/songw01/MEGENA")
-    (synopsis "Multiscale Clustering of Geometrical Network")
-    (description
-     "Co-Expression Network Analysis by adopting network embedding technique.  Song
-W.-M., Zhang B. (2015) Multiscale Embedded Gene Co-expression Network Analysis.
-P@code{LoS} Comput Biol 11(11): e1004574. <doi: 10.1371/journal.pcbi.1004574>.")
-    (license license:gpl3+)))
-
 (define-public r-megb
   (package
     (name "r-megb")
@@ -43809,6 +43937,46 @@ Comiskey, Alkema, Cahill (2022) <@code{arXiv:2212.03844>}.")
      "Algorithms to approximate the Pareto-front of multi-criteria minimum spanning
 tree problems.")
     (license license:bsd-2)))
+
+(define-public r-mcmsector
+  (package
+    (name "r-mcmsector")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcmsector" version))
+       (sha256
+        (base32 "0hq3sr17npqwbwvgfyyv5b2l8l3kihpklafvw6r71lz08dlirlrb"))))
+    (properties `((upstream-name . "mcmsector")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survey
+                             r-stringr
+                             r-rlang
+                             r-plyr
+                             r-openxlsx
+                             r-magrittr
+                             r-labelled
+                             r-haven
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=mcmsector")
+    (synopsis
+     "Estimating Subnational Public and Private Contraceptive Supply Shares Over Time")
+    (description
+     "Engaging the private sector in contraceptive method supply is critical for
+equitable, sustainable, and accessible healthcare systems.  This package
+implements Bayesian hierarchical models to estimate public and private
+contraceptive supply shares over time at national and subnational levels, using
+Demographic and Health Survey (DHS) data.  Penalized splines are used to track
+supply shares over time, and spatial correlation structures link national and
+subnational estimates in data- sparse settings.  For more details see Comiskey
+(2025) <doi:10.48550/@code{arXiv.2510.25153>}.")
+    (license license:expat)))
 
 (define-public r-mcmodule
   (package
@@ -49487,13 +49655,13 @@ z-constrained least-cost paths.")
 (define-public r-marlod
   (package
     (name "r-marlod")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marlod" version))
        (sha256
-        (base32 "0spay1w0fwxs7r3i3h8889hnx4mgq6saa1wvcabxgd8n6xy7jbk6"))))
+        (base32 "110706w3vif0df75mcmgg55j40km280nmk1vbxydykgawdkglhq7"))))
     (properties `((upstream-name . "marlod")))
     (build-system r-build-system)
     (arguments

@@ -3799,13 +3799,13 @@ detailed description of the method and applications see Rizzi et al. (2015)
 (define-public r-unfold
   (package
     (name "r-unfold")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unfold" version))
        (sha256
-        (base32 "1yhqaq574zglh6rkg51ffgabj73zbmkrsbfmngj9a3sz5xl14l4z"))))
+        (base32 "0wwx3j8jl6mddz8dnhnvidj488iy9p9gww5fy4zfmpz6929jhmq2"))))
     (properties `((upstream-name . "unfold")))
     (build-system r-build-system)
     (arguments

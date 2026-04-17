@@ -766,28 +766,35 @@ example are included.  For details see (Klockmann, Krivobokova; 2023),
 (define-public r-vsp
   (package
     (name "r-vsp")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vsp" version))
        (sha256
-        (base32 "0vxbh1sf506vph013kgpniycx3gpvibh91m6nv9j175cm04fdi1j"))))
+        (base32 "1p0h6zmmwx528sznrgq2s7sdrhhxd7ahamla2h13c4iqb2q0n7v9"))))
     (properties `((upstream-name . "vsp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
+                             r-tidyselect
+                             r-tidyr
                              r-tibble
+                             r-scales
                              r-rspectra
                              r-rlang
+                             r-purrr
                              r-matrix
                              r-magrittr
                              r-lrmf3
                              r-invertiforms
+                             r-igraph
                              r-glue
                              r-ggplot2
+                             r-furrr
+                             r-dplyr
                              r-clue))
     (native-inputs (list r-knitr))
     (home-page "https://rohelab.github.io/vsp/")

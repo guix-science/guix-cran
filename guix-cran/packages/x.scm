@@ -1865,6 +1865,45 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 <@code{arXiv:1909.10140>} This package includes the Galton peas example.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-xiacf
+  (package
+    (name "r-xiacf")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xiacf" version))
+       (sha256
+        (base32 "0i6wsb5n72v7xywr6svvzfp52aw4vk25i63v4w2q49sdhixs1npd"))))
+    (properties `((upstream-name . "xiacf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-latex2exp
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-dplyr
+                             r-dofuture))
+    (home-page "https://cran.r-project.org/package=xiacf")
+    (synopsis
+     "Quantifying Nonlinear Dependence and Lead-Lag Dynamics via Chatterjee's Xi")
+    (description
+     "Computes Chatterjee's non-parametric correlation coefficient for time series
+data.  It extends the original metric to time series analysis by providing the
+Xi-Autocorrelation Function (Xi-ACF) and Xi-Cross-Correlation Function (Xi-CCF).
+ The package allows users to test for non-linear dependence using Iterative
+Amplitude Adjusted Fourier Transform (IAAFT) surrogate data.  Main functions
+include @code{xi_acf()} and @code{xi_ccf()} for computation, along with matrix
+extraction tools.  Methodologies are based on Chatterjee (2021)
+<doi:10.1080/01621459.2020.1758115> and surrogate data testing methods by
+Schreiber and Schmitz (1996) <doi:10.1103/@code{PhysRevLett.77.635>}.")
+    (license license:expat)))
+
 (define-public r-xhaz
   (package
     (name "r-xhaz")
