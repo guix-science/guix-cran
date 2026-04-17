@@ -548,13 +548,13 @@ species distribution modeling.")
 (define-public r-hypertext
   (package
     (name "r-hypertext")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypertext" version))
        (sha256
-        (base32 "1lf9fairpa3h9rxxwgil8yf0paml6wcqx7af8i9da1c0cyw8pabz"))))
+        (base32 "11r25gcgf2p1naifw5qiixasghw73fb92k47gjl6g25iwsx84mgy"))))
     (properties `((upstream-name . "hypertext")))
     (build-system r-build-system)
     (arguments

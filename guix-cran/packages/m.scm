@@ -30285,13 +30285,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "0ba7h8k7c3nagvrn9mydhhkcl7z9bbnzn6k8fvhd9mpqjpqbws60"))))
+        (base32 "1lvwd8wy3s0jj8kh8iv5crccv75jw89qj6bva9h5wq393v48wv7h"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
