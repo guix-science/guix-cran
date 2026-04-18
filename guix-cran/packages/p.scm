@@ -47677,13 +47677,13 @@ manage and analyze products, customers, invoices and many more.")
 (define-public r-pacvr
   (package
     (name "r-pacvr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PACVr" version))
        (sha256
-        (base32 "184cmkig2lxy8927ml83j60r52zw4a50h23biz5bqc399lhjrnh0"))))
+        (base32 "1wis50q77xcabqhpk7nswwifj8cjmbqndh0jd0h67igh4k7xa84m"))))
     (properties `((upstream-name . "PACVr")))
     (build-system r-build-system)
     (arguments

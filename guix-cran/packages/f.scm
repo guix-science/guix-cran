@@ -25435,13 +25435,13 @@ AR(1) precision matrices, the package can optionally use the archived package
 (define-public r-fasterraster
   (package
     (name "r-fasterraster")
-    (version "8.4.1.1")
+    (version "8.4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasterRaster" version))
        (sha256
-        (base32 "1azp2q9g4wf6why7gcwaszy0cpqgzv9qzf581s2pq00drh1flmab"))))
+        (base32 "1lqfi335zmbnb2h93wlqwfb5mqqg391pry8k7f14m3afis30hn4d"))))
     (properties `((upstream-name . "fasterRaster")))
     (build-system r-build-system)
     (arguments

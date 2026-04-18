@@ -21317,13 +21317,13 @@ frame using this package.")
 (define-public r-tidyild
   (package
     (name "r-tidyild")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyILD" version))
        (sha256
-        (base32 "0pbi6jp4sis6z9k64yy5mxvyjid8ihry5m6x8hagbzz2iwrivq5n"))))
+        (base32 "1s8vx6n344rck6idb9lh8mksijkh4kdncyv6q7rln85b8pbmpz8d"))))
     (properties `((upstream-name . "tidyILD")))
     (build-system r-build-system)
     (arguments

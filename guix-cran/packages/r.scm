@@ -29323,19 +29323,19 @@ their regulatory significant features.  Please see Hasan, Badsha and Mollah
 (define-public r-rhclust
   (package
     (name "r-rhclust")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RHclust" version))
        (sha256
-        (base32 "0hfi1p1y3kfi7kmmwvpzf7j2rlkamfl2s6sb26h2qz07fp5ha3p5"))))
+        (base32 "1wj9xfs2pl1wvckjz8jrw007izmr4h36lhhk6v1ynn8nhxyva3cr"))))
     (properties `((upstream-name . "RHclust")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-runuran))
+    (propagated-inputs (list r-stringr r-runuran r-rfast r-dplyr r-clue))
     (home-page "https://cran.r-project.org/package=RHclust")
     (synopsis "Vector in Partition")
     (description
