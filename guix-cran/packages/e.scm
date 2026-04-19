@@ -15277,13 +15277,13 @@ animals.")
 (define-public r-energyr
   (package
     (name "r-energyr")
-    (version "0.2")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "energyr" version))
        (sha256
-        (base32 "0cx3lmfzj6awfvn5q76j5cb4kdbqwqvwaivvawwdbxnzf4pc99hi"))))
+        (base32 "0xn7a0dwx72i30ggmhkms9r7pkbc9m02zczvckn4mw9ak360daa8"))))
     (properties `((upstream-name . "energyr")))
     (build-system r-build-system)
     (arguments

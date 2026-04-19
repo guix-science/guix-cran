@@ -4368,6 +4368,43 @@ bias produced by the method of Ibrahim and Lipsitz (1996) <DOI:10.2307/2533068>.
 problem, where two duplicate-free datafiles are to be merged.")
     (license license:gpl3)))
 
+(define-public r-brisk
+  (package
+    (name "r-brisk")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brisk" version))
+       (sha256
+        (base32 "1g5lxp02j8x7xr5sfrpg5zh9l4l2smjmm2iwg9w6n93paf3fxkkh"))))
+    (properties `((upstream-name . "brisk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-hitandrun
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://rich-payne.github.io/brisk/")
+    (synopsis "Bayesian Benefit Risk Analysis")
+    (description
+     "Quantitative methods for benefit-risk analysis help to condense complex
+decisions into a univariate metric describing the overall benefit relative to
+risk.  One approach is to use the multi-criteria decision analysis framework
+(MCDA), as in Mussen, Salek, and Walker (2007) <doi:10.1002/pds.1435>.  Bayesian
+benefit-risk analysis incorporates uncertainty through posterior distributions
+which are inputs to the benefit-risk framework.  The brisk package provides
+functions to assist with Bayesian benefit-risk analyses, such as MCDA. Users
+input posterior samples, utility functions, weights, and the package outputs
+quantitative benefit-risk scores.  The posterior of the benefit-risk scores for
+each group can be compared.  Some plotting capabilities are also included.")
+    (license license:expat)))
+
 (define-public r-brisc
   (package
     (name "r-brisc")
@@ -22308,13 +22345,13 @@ new trials within your R script itself.")
 (define-public r-bend
   (package
     (name "r-bend")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BEND" version))
        (sha256
-        (base32 "1v0xllvfasl0ax4ixzxs1s9a7lllpib48ibq38bpnpmypiqh37dg"))))
+        (base32 "15924jhnljlfdd8nf6dblb1p3991x04qp7403k4k2shh27jijfhr"))))
     (properties `((upstream-name . "BEND")))
     (build-system r-build-system)
     (arguments

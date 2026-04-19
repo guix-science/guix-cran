@@ -23350,13 +23350,13 @@ variable parameters.  Extended documentation at
 (define-public r-faunabr
   (package
     (name "r-faunabr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faunabr" version))
        (sha256
-        (base32 "0x84rb474pgn16922wh8w6sadsky4z4f49q6flk6kmkb4k02dc8y"))))
+        (base32 "14ds0rrkzdkyiplljqj7fmcsi6g21qrh4kd360zp3rqfq3pz029s"))))
     (properties `((upstream-name . "faunabr")))
     (build-system r-build-system)
     (arguments
@@ -23370,7 +23370,7 @@ variable parameters.  Extended documentation at
      "This package provides a collection of functions designed to retrieve, filter and
 spatialize data from the CatÃ¡logo TaxÃ´nomico da Fauna do Brasil.  For more
 information about the dataset, please visit
-<http://fauna.jbrj.gov.br/fauna/@code{listaBrasil/>}.")
+<https://fauna.jbrj.gov.br/fauna/@code{listaBrasil/>}.")
     (license license:gpl3+)))
 
 (define-public r-faulttree

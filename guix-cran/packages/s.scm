@@ -73057,20 +73057,21 @@ Reference: Littell RC, Stroup WW, Freund RJ (2002, ISBN:0-471-22174-0).")
 (define-public r-sasif
   (package
     (name "r-sasif")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasif" version))
        (sha256
-        (base32 "0kgq87z36d2nd255cfr38l82irp30mh6gmvsx69gg52ignccn1zc"))))
+        (base32 "13i72549x7ydj5lak9wd8dwg2hvz6c1yxr08816yn2p8f0f9kpym"))))
     (properties `((upstream-name . "sasif")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-data-table))
-    (home-page "https://cran.r-project.org/package=sasif")
+    (native-inputs (list r-knitr))
+    (home-page "https://chandrt23-lang.github.io/sasif/")
     (synopsis "'SAS' IF Style Data Step Logic for Data Tables")
     (description
      "This package provides SAS'-style IF/ELSE chains, independent IF rules, and
