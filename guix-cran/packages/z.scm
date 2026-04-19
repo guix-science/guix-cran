@@ -1367,13 +1367,13 @@ ZIP Code Tabulation Areas (ZCTAs).")
 (define-public r-zarr
   (package
     (name "r-zarr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zarr" version))
        (sha256
-        (base32 "1n8rlgn3w2xj7gazx0qpm46xi80pdjc65hic2y6v3w0ipnnjqcd8"))))
+        (base32 "160i6ylghcn6rjf7iag943dg9bs0ajd56r70x1d0vrpsbnbs4dmg"))))
     (properties `((upstream-name . "zarr")))
     (build-system r-build-system)
     (arguments

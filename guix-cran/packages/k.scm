@@ -6815,13 +6815,13 @@ in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
 (define-public r-kardl
   (package
     (name "r-kardl")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kardl" version))
        (sha256
-        (base32 "1daag7hsmb1g5zkyi1xr8gca6yk2pkkbhig2gq896kh3ijl594c1"))))
+        (base32 "1h29k9rsf145sbgckhl6wlfrjzgzngybv8yxfbj39llzh5nk8nkj"))))
     (properties `((upstream-name . "kardl")))
     (build-system r-build-system)
     (arguments
@@ -6838,10 +6838,10 @@ both short- and long-run relationships in time series data under mixed orders of
 integration.  The package supports simultaneous modeling of symmetric and
 asymmetric regressors, flexible treatment of short-run and long-run asymmetries,
 and automated equation handling.  It includes several cointegration testing
-approaches such as the Pesaran-Shin-Smith F and t bounds tests, and the
-restricted ECM test.  Methodological foundations are provided in Pesaran, Shin,
-and Smith (2001) <doi:10.1016/S0304-4076(01)00049-5> and Shin, Yu, and
-Greenwood-Nimmo (2014, ISBN:9780123855079).")
+approaches such as the Pesaran-Shin-Smith F and t bounds tests, and narayan
+test.  Methodological foundations are provided in Pesaran, Shin, and Smith
+(2001) <doi:10.1016/S0304-4076(01)00049-5> and Shin, Yu, and Greenwood-Nimmo
+(2014, ISBN:9780123855079).")
     (license license:gpl3)))
 
 (define-public r-karaoke

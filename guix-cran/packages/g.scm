@@ -34726,13 +34726,13 @@ online SQL database at <http://paleofire.org>.")
 (define-public r-gccfactor
   (package
     (name "r-gccfactor")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCCfactor" version))
        (sha256
-        (base32 "1xqgz8m5l9chvh64c9hrmiawk8bs8rrvbhnn5b9989x7w7r28zhj"))))
+        (base32 "1jgc1kvxd3ilkiqzmh900ar7xrwj9a31dxkwjvzv6n9an8rcacmh"))))
     (properties `((upstream-name . "GCCfactor")))
     (build-system r-build-system)
     (arguments

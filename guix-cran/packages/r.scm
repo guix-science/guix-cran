@@ -2629,13 +2629,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-ruido
   (package
     (name "r-ruido")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ruido" version))
        (sha256
-        (base32 "018mqnhsr9n1mv2n0qri9misz821y05aic66mshpay0nbwd6fhj4"))))
+        (base32 "1gx663773sf3563vr13456c623fqam3fsp8dd8c9k0idybrsqf5n"))))
     (properties `((upstream-name . "Ruido")))
     (build-system r-build-system)
     (arguments
@@ -32476,13 +32476,13 @@ documents by Facebook Marketing API
 (define-public r-rextendr
   (package
     (name "r-rextendr")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rextendr" version))
        (sha256
-        (base32 "1xl1zqahjq3rs80ci9w4x5psl85crwc52b749f7n356ki0yz7l9v"))))
+        (base32 "1aql78qcrzixr0aqx1q3mz3s7kdkb7xzks72ya32icp2cv3mzxj5"))))
     (properties `((upstream-name . "rextendr")))
     (build-system r-build-system)
     (arguments
@@ -32495,21 +32495,24 @@ documents by Facebook Marketing API
                              r-rlang
                              r-processx
                              r-pkgbuild
+                             r-lifecycle
                              r-jsonlite
                              r-glue
                              r-dplyr
                              r-desc
                              r-cli
-                             r-callr
                              r-brio))
     (native-inputs (list r-knitr))
     (home-page "https://extendr.rs/rextendr/")
-    (synopsis "Call Rust Code from R using the 'extendr' Crate")
+    (synopsis "Build 'Rust' Powered 'R' Packages")
     (description
-     "This package provides functions to compile and load Rust code from R, similar to
-how Rcpp or cpp11 allow easy interfacing with C++ code.  Also provides helper
-functions to create R packages that use Rust code.  Under the hood, the Rust
-crate extendr is used to do all the heavy lifting.")
+     "This package provides a framework for creating high-performance R packages
+powered by the Rust programming language using the extendr Rust crate.  It
+offers usethis'-like functions to scaffold and develop Rust powered R packages,
+including utilities for publishing to CRAN, managing dependencies, configuring
+development environments, and rendering Rust code in knitr documents.
+Additionally, it provides functions to compile and evaluate Rust code directly
+from R for interactive development.")
     (license license:expat)))
 
 (define-public r-rexpokit
@@ -38055,19 +38058,19 @@ and applied statistical modeling.")
 (define-public r-reliaplotr
   (package
     (name "r-reliaplotr")
-    (version "0.4.2")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaPlotR" version))
        (sha256
-        (base32 "0c42jfiqx71filw49ppgh4n2h61m6ydy8csbd4wx845qws4zhh2b"))))
+        (base32 "1r936kfz3xrhrwr2b7m2vyf7giw4vbbzdyh58mhvr6rlpyrdb1wc"))))
     (properties `((upstream-name . "ReliaPlotR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-weibullr r-reliagrowr r-plotly))
+    (propagated-inputs (list r-weibullr-alt r-weibullr r-reliagrowr r-plotly))
     (home-page "https://paulgovan.github.io/ReliaPlotR/")
     (synopsis "Interactive Reliability Probability Plots")
     (description

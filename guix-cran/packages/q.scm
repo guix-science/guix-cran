@@ -685,13 +685,13 @@ Factor (VIF) level.")
 (define-public r-quickr
   (package
     (name "r-quickr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickr" version))
        (sha256
-        (base32 "0xjgrm50q519irixkbslc2gqr3l790hffps6snms23wyjh7q760h"))))
+        (base32 "06d9fxa24dwpxr9a3ls5xpcvqf2r6p3jg510ns1g1q3b92480yzf"))))
     (properties `((upstream-name . "quickr")))
     (build-system r-build-system)
     (arguments
@@ -4905,19 +4905,19 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "13jqp0887xyx9y75rxj8jkx66fbx5fd22x7cdk4nyn511f1ff7x3"))))
+        (base32 "0zzg2p5y8ha8768bx83ywpj06qzs72rgs4jqg91fqxzc5zc1l5ln"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-openxlsx2 r-data-table r-collapse))
+    (propagated-inputs (list r-openxlsx2 r-fst r-data-table r-collapse))
     (home-page "https://github.com/s3rdia/qol")
     (synopsis
      "Powerful 'SAS' Inspired Concepts for more Efficient Bigger Outputs")

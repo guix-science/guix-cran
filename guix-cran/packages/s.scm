@@ -31881,13 +31881,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.9.3")
+    (version "1.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "1rda2w01nxylqk1v3w2466xry9ndi5x40q2hfw8mqxf9ib9l12jj"))))
+        (base32 "1a0gnbc7czzy5a5w4m9vr9l70wl1hk5n3lk8yjzvqdjawjv329yc"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (arguments
@@ -71596,13 +71596,13 @@ using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
 (define-public r-scaledescr
   (package
     (name "r-scaledescr")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scaledescr" version))
        (sha256
-        (base32 "02pnx37i5vk8pnfi0zqmbqrcglm3jafpfaz814f58c5mai5fhk55"))))
+        (base32 "038gdc9m3q8hr7x9xwszxsfdbf9kj9g7c0smng39j5q6r5jaj9jr"))))
     (properties `((upstream-name . "scaledescr")))
     (build-system r-build-system)
     (arguments

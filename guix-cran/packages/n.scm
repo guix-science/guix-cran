@@ -12229,13 +12229,13 @@ manipulate the arguments.  See Welvaert et al. (2011)
 (define-public r-neuroscc
   (package
     (name "r-neuroscc")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuroSCC" version))
        (sha256
-        (base32 "06fggb887lmysq2rjqxk8v0i4bk1nxvswqj9wbld4j17ajjq4blb"))))
+        (base32 "0n3zlfhffk3marn6rhbphz1s2x2dfdwjscqxi78a74x206wqbxdl"))))
     (properties `((upstream-name . "neuroSCC")))
     (build-system r-build-system)
     (arguments

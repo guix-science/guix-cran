@@ -393,13 +393,13 @@ dissemination.")
 (define-public r-pxmake
   (package
     (name "r-pxmake")
-    (version "0.19.0")
+    (version "0.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pxmake" version))
        (sha256
-        (base32 "1f6gx6cbp2p4xk8zs5l7z1lxvdb5i0drpvmqvq9a26ask3zsah0j"))))
+        (base32 "0xc1qiv6zh8g0k9ihlk39sh4pnkhbxil75l3c2afsxij552498q3"))))
     (properties `((upstream-name . "pxmake")))
     (build-system r-build-system)
     (arguments
@@ -11270,13 +11270,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "1rj4f29sr4g4i5y2wvcj8q79fbyk00rjlw0r4yn6nw4iz849l57j"))))
+        (base32 "0pr3gq7wmn0p52kjwslz0z9wyd29bccf5cp60z8rh22mhh2jh8mh"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (arguments

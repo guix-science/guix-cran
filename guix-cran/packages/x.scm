@@ -814,13 +814,13 @@ objects.")
 (define-public r-xpose-xtras
   (package
     (name "r-xpose-xtras")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose.xtras" version))
        (sha256
-        (base32 "13igshkry35mv8nfmb0jp13farvvy00xwlxjcjajwrj6cx0fb8dj"))))
+        (base32 "0fi6lrk3v0mg7qh745ypdgvdfy47979rfjzsdvjwkfs5z24rr7m1"))))
     (properties `((upstream-name . "xpose.xtras")))
     (build-system r-build-system)
     (arguments

@@ -8711,6 +8711,48 @@ Tibshirani, R., (2013) \"A Lasso for Hierarchical Interactions.\" Annals of
 Statistics.  41(3).  1111-1141.")
     (license license:gpl2)))
 
+(define-public r-hiernest
+  (package
+    (name "r-hiernest")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hierNest" version))
+       (sha256
+        (base32 "0s12sdd5ybd36gd1r0yn6igg9dhc82yjm51mzx8chc6m4zxbrf0g"))))
+    (properties `((upstream-name . "hierNest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rtensor
+                             r-rspectra
+                             r-rlang
+                             r-proc
+                             r-plotly
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-dotcall64
+                             r-cli))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/ZirenJiang/hierNest")
+    (synopsis
+     "Penalized Regression with Hierarchical Nested Parameterization Structure")
+    (description
+     "Efficient implementation of penalized regression with hierarchical nested
+parametrization for grouped data.  The package provides penalized regression
+methods that decompose subgroup specific effects into shared global effects,
+Major subgroup specific effects, and Minor subgroup specific effects, enabling
+structured borrowing of information across related clinical subgroups.  Both
+lasso and hierarchical overlapping group lasso penalties are supported to
+encourage sparsity while respecting the nested subgroup structure.  Efficient
+computation is achieved through a modified design matrix representation and a
+custom algorithm for overlapping group penalties.")
+    (license license:gpl2+)))
+
 (define-public r-hierbipartite
   (package
     (name "r-hierbipartite")
@@ -16683,13 +16725,13 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
 (define-public r-h5lite
   (package
     (name "r-h5lite")
-    (version "2.0.0.2")
+    (version "2.1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h5lite" version))
        (sha256
-        (base32 "0n8wnziixr3mksm1dkihrg5dcn8mlqf190bgvkrz29knww61l7fv"))))
+        (base32 "1wk27i712p2kwq0djmca73fw1y2b8dkiix81qczzij3a4qznv23y"))))
     (properties `((upstream-name . "h5lite")))
     (build-system r-build-system)
     (arguments

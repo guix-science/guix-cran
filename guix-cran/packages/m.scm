@@ -4629,13 +4629,13 @@ alternative area-targeted conservation scenarios.")
 (define-public r-multiscaler
   (package
     (name "r-multiscaler")
-    (version "0.6.6")
+    (version "0.6.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiScaleR" version))
        (sha256
-        (base32 "0bjss234msb4si278fbkar1a68fg1p2d3dkfrlcrlds3cacyrxj5"))))
+        (base32 "1yl6035mxqwrh1x5qyfigj0dwhw47lm8gxbckigwfcx58dsrspjz"))))
     (properties `((upstream-name . "multiScaleR")))
     (build-system r-build-system)
     (arguments
@@ -19934,13 +19934,13 @@ inference on a random-effects model with multivariate normal observations.")
 (define-public r-mnirs
   (package
     (name "r-mnirs")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mnirs" version))
        (sha256
-        (base32 "1zmb3i7rx74sw888lvj3x3a4j0fmijz9ilmiwvf9aa5sa5h9yqpg"))))
+        (base32 "0wvw9mhxligbjkyglhvz6083khg777mfn90rf7s7qcddvhxcf4sw"))))
     (properties `((upstream-name . "mnirs")))
     (build-system r-build-system)
     (arguments
@@ -37119,13 +37119,13 @@ iterative algorithm proposed by Matejka & Fitzmaurice (2017)
 (define-public r-metamedian
   (package
     (name "r-metamedian")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metamedian" version))
        (sha256
-        (base32 "0b2mbvl6m6md2zwqsky6y4gim6mivyzm7vrhb2a2dvz7x5j96glz"))))
+        (base32 "1vd4dksgd89gxsalky5y1b8ggw31bii4dklhpnlg38v7r20y3f98"))))
     (properties `((upstream-name . "metamedian")))
     (build-system r-build-system)
     (arguments
@@ -37146,9 +37146,9 @@ or difference of medians between groups.  Additionally, a number of methods
 <doi:10.1177/09622802221139233>) are implemented to estimate study-specific
 (difference of) means and their standard errors in order to estimate the pooled
 (difference of) means.  Methods for meta-analyzing median survival times
-(@code{McGrath} et al. (2025) <doi:10.48550/@code{arXiv.2503.03065>}) are also
-implemented.  See @code{McGrath} et al. (2024) <doi:10.1002/jrsm.1686> for a
-detailed guide on using the package.")
+(@code{McGrath} et al. (2026) <doi:10.1002/sim.70533>) are also implemented.
+See @code{McGrath} et al. (2024) <doi:10.1002/jrsm.1686> for a detailed guide on
+using the package.")
     (license license:gpl3+)))
 
 (define-public r-metama
@@ -47725,13 +47725,13 @@ and Coxhead's coefficient are included for comparison and flexibility.")
 (define-public r-matrixcorr
   (package
     (name "r-matrixcorr")
-    (version "0.10.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixCorr" version))
        (sha256
-        (base32 "1r69ac3524dfsz9rrppvicfsykidp95fm93p55q8kkdxzpwarb1b"))))
+        (base32 "0a47c8fg9d1ay2sry4gxwa4s3qmxwljwp8shw9wfx59mdk53y7fh"))))
     (properties `((upstream-name . "matrixCorr")))
     (build-system r-build-system)
     (arguments
@@ -47743,24 +47743,26 @@ and Coxhead's coefficient are included for comparison and flexibility.")
                              r-matrix
                              r-ggplot2
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Prof-ThiagoOliveira/matrixCorr")
     (synopsis "Collection of Correlation and Association Estimators")
     (description
-     "Compute correlation, association, and agreement measures for small to
-high-dimensional datasets through a consistent matrix-oriented interface.
+     "Compute correlation, association, agreement, and reliability measures for small
+to high-dimensional datasets through a consistent matrix-oriented interface.
 Supports classical correlations (Pearson, Spearman, Kendall), distance
 correlation, partial correlation with regularised estimators, shrinkage
 correlation for p >= n settings, robust correlations including biweight
 mid-correlation, percentage-bend, and skipped correlation, latent-variable
-methods for binary and ordinal data, repeated-measures correlation, and
-agreement analyses based on Bland-Altman methods and Lin's concordance
-correlation coefficient, including repeated-measures extensions.  Implemented
-with optimized C++ backends using BLAS/@code{OpenMP} and memory-aware symmetric
-updates, and returns standard R objects with print/summary/plot methods plus
-optional Shiny viewers for matrix inspection.  Methods based on Ledoit and Wolf
-(2004) <doi:10.1016/S0047-259X(03)00096-4>; high-dimensional shrinkage
-covariance estimation <doi:10.2202/1544-6115.1175>; Lin (1989)
-<doi:10.2307/2532051>; Wilcox (1994) <doi:10.1007/BF02294395>; Wilcox (2004)
+methods for binary and ordinal data, pairwise and overall intraclass correlation
+for wide data, repeated-measures correlation, and agreement analyses based on
+Bland-Altman methods, Lin's concordance correlation coefficient, and
+repeated-measures intraclass correlation.  Implemented with optimized C++
+backends using BLAS/@code{OpenMP} and memory-aware symmetric updates, and
+returns standard R objects with print/summary/plot methods plus optional Shiny
+viewers for matrix inspection.  Methods based on Ledoit and Wolf (2004)
+<doi:10.1016/S0047-259X(03)00096-4>; high-dimensional shrinkage covariance
+estimation <doi:10.2202/1544-6115.1175>; Lin (1989) <doi:10.2307/2532051>;
+Wilcox (1994) <doi:10.1007/BF02294395>; Wilcox (2004)
 <doi:10.1080/0266476032000148821>.")
     (license license:expat)))
 

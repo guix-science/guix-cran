@@ -17177,13 +17177,13 @@ Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA).")
 (define-public r-finetune
   (package
     (name "r-finetune")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finetune" version))
        (sha256
-        (base32 "07vcqx2wv8zkhxr6jrcdl513mi7lr69xw3vdbn42xmqndx22mb41"))))
+        (base32 "0gb8gdnp244y92ml9h3b3az2gs2sd8bnrl5w0apx0yqrdn6v0s05"))))
     (properties `((upstream-name . "finetune")))
     (build-system r-build-system)
     (arguments
@@ -19567,13 +19567,13 @@ involve spatial data of Germany.")
 (define-public r-ffiec
   (package
     (name "r-ffiec")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ffiec" version))
        (sha256
-        (base32 "10574z7r41ifd4qy8h117w1swnbxfmh2ad3fy33y8345if2g90jy"))))
+        (base32 "1psn2g02p1914r21xmra6snf0v6vkdj32dg7sjr19qmjf5k1x11r"))))
     (properties `((upstream-name . "ffiec")))
     (build-system r-build-system)
     (arguments
@@ -19588,6 +19588,7 @@ involve spatial data of Germany.")
                              r-httr2
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ketchbrookanalytics/ffiec")
     (synopsis
      "R Interface to 'FFIEC Central Data Repository REST API' Service")
