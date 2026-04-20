@@ -30767,13 +30767,13 @@ annotations, scales, colors, tooltips, and more.")
 (define-public r-genetit
   (package
     (name "r-genetit")
-    (version "0.1-6")
+    (version "0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeNetIt" version))
        (sha256
-        (base32 "1ay40ym6khs016bs7ljcn7krqn9bmj2csd7p4nhzapbhp4g45wsc"))))
+        (base32 "15wcd7cxan9n8wx9y7fviazkvflc5raj0q1g25yzz7cc4qriwsn0"))))
     (properties `((upstream-name . "GeNetIt")))
     (build-system r-build-system)
     (arguments
@@ -32845,31 +32845,6 @@ estimating equations with bias-adjusted covariance estimator.  The package
 provides any combination of three modified generalized estimating equations and
 11 bias-adjusted covariance estimators.")
     (license license:gpl2+)))
-
-(define-public r-geesmv
-  (package
-    (name "r-geesmv")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geesmv" version))
-       (sha256
-        (base32 "0gm953z8q5cc1adl3d6vj5djg2inc880zfcdl5gd56fnb5gl6h1w"))))
-    (properties `((upstream-name . "geesmv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-matrixcalc r-mass r-gee))
-    (home-page "https://cran.r-project.org/package=geesmv")
-    (synopsis
-     "Modified Variance Estimators for Generalized Estimating Equations")
-    (description
-     "Generalized estimating equations with the original sandwich variance estimator
-proposed by Liang and Zeger (1986), and eight types of more recent modified
-variance estimators for improving the finite small-sample performance.")
-    (license license:gpl3+)))
 
 (define-public r-geemediate
   (package

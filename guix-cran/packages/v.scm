@@ -8367,13 +8367,13 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 (define-public r-varpro
   (package
     (name "r-varpro")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varPro" version))
        (sha256
-        (base32 "12gk7ys2605n74klyp43m8jdc98nzv0rs95g79x1rpvcbbijnk54"))))
+        (base32 "0xgnrxrdc33cmmwdh8amxpryiq6qcv90rkskn62kkjl9jmgjl361"))))
     (properties `((upstream-name . "varPro")))
     (build-system r-build-system)
     (arguments

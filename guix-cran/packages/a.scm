@@ -18715,13 +18715,13 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
 (define-public r-akin
   (package
     (name "r-akin")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akin" version))
        (sha256
-        (base32 "1yscp56n2gq10vg8932fhaliw6gzs5bqiygpiqflj9m5r1bn7paw"))))
+        (base32 "0m1gysn2xmv4q2hna04i5vwfz69f7skynvhj9f0k7bi9y577prsk"))))
     (properties `((upstream-name . "akin")))
     (build-system r-build-system)
     (arguments

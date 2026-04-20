@@ -11787,13 +11787,13 @@ analysis.  Originally inspired by the infamous \"covfefe\" tweet of 2017.")
 (define-public r-covests
   (package
     (name "r-covests")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CovEsts" version))
        (sha256
-        (base32 "0bvsf3l1skk9szm8d8cljjrsh8g3kqqihv937xzmcgcq0iiym7lx"))))
+        (base32 "0pwyw6pm4jkzdsfbyjvibw01vbmrcfk5kskn4ahqla1fx7zzfih2"))))
     (properties `((upstream-name . "CovEsts")))
     (build-system r-build-system)
     (arguments
@@ -27651,13 +27651,13 @@ common plotting techniques in compositional data analysis.")
 (define-public r-coda-pack
   (package
     (name "r-coda-pack")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.pack" version))
        (sha256
-        (base32 "1530b5964db6k5p4988dmw7dpbdligl99xyinfc1971b6w1alqhm"))))
+        (base32 "1ak65r2j2zn5i7p2m8gakz5bz0d2yxavmyds3bf58zi7f3ny79nv"))))
     (properties `((upstream-name . "coda.pack")))
     (build-system r-build-system)
     (arguments
@@ -32468,33 +32468,6 @@ and covariance matrix with parallel processing option.  Moreover, the proposed
 surrogate residual, which extends the results of Liu and Zhang (2017) <doi:
 10.1080/01621459.2017.1292915>, can act as a useful tool for model diagnostics.")
     (license license:gpl2)))
-
-(define-public r-clootl
-  (package
-    (name "r-clootl")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clootl" version))
-       (sha256
-        (base32 "0j66mx7rb01yjd72assmfbjbnyrsxji9z5z5pfghx5cw8hsyyjsp"))))
-    (properties `((upstream-name . "clootl")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcurl r-jsonlite r-dplyr r-ape))
-    (home-page "https://github.com/eliotmiller/clootl")
-    (synopsis
-     "Fetch and Explore the Cornell Lab of Ornithology Open Tree of Life Avian Phylogeny")
-    (description
-     "Fetches the Cornell Lab of Ornithology Open Tree of Life (clootl) tree in a
-specified taxonomy.  Optionally prune it to a given set of study taxa.  Provide
-a recommended citation list for the studies that informed the extracted tree.
-Tree generated as described in @code{McTavish} et al. (2024)
-<doi:10.1101/2024.05.20.595017>.")
-    (license license:gpl3)))
 
 (define-public r-clonetv2
   (package
@@ -38300,13 +38273,13 @@ implemented for comparison.")
 (define-public r-ciecl
   (package
     (name "r-ciecl")
-    (version "0.9.2")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciecl" version))
        (sha256
-        (base32 "0yphqr9fc1qjr96r1nf19gj46n8vlsc0vq8g2k4nlp7i3p0faljz"))))
+        (base32 "136vxz5rbrm5z5q68crz2zn67j9qb94ll5h86s3pnalks477s9ch"))))
     (properties `((upstream-name . "ciecl")))
     (build-system r-build-system)
     (arguments
@@ -38316,18 +38289,16 @@ implemented for comparison.")
                              r-stringr
                              r-stringdist
                              r-rsqlite
-                             r-gt
                              r-dplyr
-                             r-dbi
-                             r-comorbidity))
+                             r-dbi))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Rodotasso/ciecl")
+    (home-page "https://rodotasso.github.io/ciecl/")
     (synopsis
      "International Classification of Diseases 'ICD-10'/'ICD-11' for Chile")
     (description
      "This package provides tools for working with the International Classification of
 Diseases ('ICD-10 Chile official MINSAL'/'DEIS v2018).  Includes optimized SQL
-search with SQLite', fuzzy matching of medical terms (Jaro-Winkler), Charlson
+search with SQLite', fuzzy matching of medical terms ('Jaro-Winkler'), Charlson
 and Elixhauser comorbidity calculation, WHO ICD-11 API integration, and
 hierarchical code validation.  Data from Centro FIC Chile DEIS
 <https://deis.minsal.cl/centrofic/>.")
@@ -45553,13 +45524,13 @@ which was extended and enhanced by Giessing and Tent (2019)
 (define-public r-cellgeometry
   (package
     (name "r-cellgeometry")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellGeometry" version))
        (sha256
-        (base32 "1y0ja64dy6lj73rg6riqsykpcinarphcfz3fjrby33li1qqvcvvf"))))
+        (base32 "1k26hnk8qg9jzs8pfyj7phkbvn4c1h4m4wcj3kg9v556diaiswac"))))
     (properties `((upstream-name . "cellGeometry")))
     (build-system r-build-system)
     (arguments
@@ -45574,7 +45545,6 @@ which was extended and enhanced by Giessing and Tent (2019)
                              r-ggplot2
                              r-ensembldb
                              r-dplyr
-                             r-desctools
                              r-delayedarray
                              r-complexheatmap
                              r-circlize))

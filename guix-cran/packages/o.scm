@@ -2051,19 +2051,25 @@ handle servers that run locally as well as the OSRM webserver.")
 (define-public r-osrm-backend
   (package
     (name "r-osrm-backend")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osrm.backend" version))
        (sha256
-        (base32 "1yrw09kh2z8w3l32nv6zmjvfg4wbrhvr891gjs8zp8w6b2frpkwm"))))
+        (base32 "18ybv287qm2802fbn4pij5g3698kfqffya0p68q9y7hnh73fv238"))))
     (properties `((upstream-name . "osrm.backend")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ps r-processx r-jsonlite r-httr2 r-digest))
+    (propagated-inputs (list r-viridislite
+                             r-ps
+                             r-processx
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/e-kotov/osrm.backend")
     (synopsis "Bindings for 'Open Source Routing Machine'")

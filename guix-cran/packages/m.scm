@@ -46455,13 +46455,13 @@ processing of environmental time-series data.")
 (define-public r-mazamalocationutils
   (package
     (name "r-mazamalocationutils")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaLocationUtils" version))
        (sha256
-        (base32 "1xyfashhapzw7j5svzgv6p7ngxy09zpsp5da9x51w4r3z5f4id7w"))))
+        (base32 "1h4rfwxi7x69b919hha1bmzb2lldhf1bl9xq53d747m8czmr5qjz"))))
     (properties `((upstream-name . "MazamaLocationUtils")))
     (build-system r-build-system)
     (arguments

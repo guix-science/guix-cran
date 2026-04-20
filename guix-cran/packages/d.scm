@@ -9191,13 +9191,13 @@ package.")
 (define-public r-domir
   (package
     (name "r-domir")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "domir" version))
        (sha256
-        (base32 "0jqbigk1kd0b2n9y0q7cavh8f73ydii4fnp7w4msiy39nmpkn08k"))))
+        (base32 "1ggml8zxvxvhx9mbqvzlvss5n4nlpa3h3xgvdg84v8a5dqgvwpjx"))))
     (properties `((upstream-name . "domir")))
     (build-system r-build-system)
     (arguments
@@ -9205,16 +9205,10 @@ package.")
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jluchman/domir")
-    (synopsis "Tools to Support Relative Importance Analysis")
+    (synopsis "Dominance Analysis Methods")
     (description
-     "This package provides methods to apply decomposition-based relative importance
-analysis for R functions.  This package supports the application of
-decomposition methods by providing lapply'- or Map'-like meta-functions that
-compute dominance analysis (Azen, R., & Budescu, D. V. (2003)
-<doi:10.1037/1082-989X.8.2.129>; GrÃ¶mping, U. (2007)
-<doi:10.1198/000313007X188252>) an extension of Shapley value regression
-(Lipovetsky, S., & Conklin, M. (2001) <doi:10.1002/asmb.446>) based on the
-values returned from other functions.")
+     "Dominance analysis relative importance methods that are intended for predictive
+models.")
     (license license:gpl3+)))
 
 (define-public r-dominodatar

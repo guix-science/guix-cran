@@ -16512,19 +16512,24 @@ data: large document collections, logfiles, and other text data.")
 (define-public r-ncmr
   (package
     (name "r-ncmr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncmR" version))
        (sha256
-        (base32 "04x0wmhxd052kz0jkbvwl8gpy0fv1hcmypyamrypbsbv3jg6hl38"))))
+        (base32 "1723cbz61nj5vgj8wkvbmbcmp9dzip9igns5191fwbdmfc1ac5ia"))))
     (properties `((upstream-name . "ncmR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-minpack-lm r-hmisc r-dplyr))
+    (propagated-inputs (list r-showtext
+                             r-minpack-lm
+                             r-hmisc
+                             r-ggtext
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://github.com/h-xuanjiu/ncmR")
     (synopsis "Fit Neutral Community Model to Microbiome or Ecological Data")
     (description

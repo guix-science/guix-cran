@@ -14633,13 +14633,13 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
 (define-public r-biothermr
   (package
     (name "r-biothermr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioThermR" version))
        (sha256
-        (base32 "0h2qa4svwwwgjqb8vb006w8dkrww86fybp4gws7l8c2fa0x8dimj"))))
+        (base32 "0grij7g2kld4ss91qn7fdg8d67lxbxkc4pz09h2hvss65s4q35ab"))))
     (properties `((upstream-name . "BioThermR")))
     (build-system r-build-system)
     (arguments
@@ -14650,6 +14650,7 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
                              r-plotly
                              r-ggsci
                              r-ggrepel
+                             r-ggpubr
                              r-ggplot2
                              r-ebimage))
     (native-inputs (list r-knitr))
