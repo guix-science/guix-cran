@@ -7642,13 +7642,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.7.2")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "0qalwa3mf6gramgmzpqif3x0vn7xhv1avhkqvjv4gqlr8n2v1gmq"))))
+        (base32 "1nblphcp801z83k17f1scyx7zp3izci1z4pz9bff2jmfcyjkhj9q"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (arguments
@@ -7665,15 +7665,15 @@ attenuate the results to the null or by a given amount?")
     (home-page "https://github.com/pcbrendel/multibias")
     (synopsis "Multiple Bias Analysis in Causal Inference")
     (description
-     "Quantify the causal effect of a binary exposure on a binary outcome with
-adjustment for multiple biases.  The functions can simultaneously adjust for any
-combination of uncontrolled confounding, exposure/outcome misclassification, and
-selection bias.  The underlying method generalizes the concept of combining
-inverse probability of selection weighting with predictive value weighting.
-Simultaneous multi-bias analysis can be used to enhance the validity and
-transparency of real-world evidence obtained from observational, longitudinal
-studies.  Based on the work from Paul Brendel, Aracelis Torres, and Onyebuchi
-Arah (2023) <doi:10.1093/ije/dyad001>.")
+     "Quantify exposure-outcome causal effects with adjustment for multiple biases.
+The functions can simultaneously adjust for any combination of uncontrolled
+confounding, exposure/outcome misclassification, and selection bias.  The
+underlying method generalizes the combination of inverse probability of
+selection weighting with predictive value weighting.  Simultaneous multi-bias
+analysis can be used to enhance the validity and transparency of real-world
+evidence obtained from observational, longitudinal studies.  Based on the work
+from Paul Brendel, Aracelis Torres, and Onyebuchi Arah (2023)
+<doi:10.1093/ije/dyad001>.")
     (license license:expat)))
 
 (define-public r-multibd
@@ -33952,13 +33952,13 @@ including SIS (Fan and Lv (2008) <doi:10.1111/j.1467-9868.2008.00674.x>), SIRS
 (define-public r-mfsd
   (package
     (name "r-mfsd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFSD" version))
        (sha256
-        (base32 "0jh3g6ri676jzdkxc738hqbb6is2y7fnrgsm2vqxkfl99sjvp49g"))))
+        (base32 "0lcfmjg8d9415b7ja4a5vw0k49g1bq43fp0kaw9kmwpi0132if5v"))))
     (properties `((upstream-name . "MFSD")))
     (build-system r-build-system)
     (arguments
@@ -54873,13 +54873,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "0hr5fm8yj2y1hgs0igv87294yjpbpn9b02l52gsq56lmlsnhhj5f"))))
+        (base32 "0qf83bc0x4v38gsk6xp1vfyallf5gwxas0w8zpra1bx2jn0mb0nm"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

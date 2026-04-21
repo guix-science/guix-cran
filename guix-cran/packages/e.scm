@@ -12023,13 +12023,13 @@ epidemiological and public health research.")
 (define-public r-episomer
   (package
     (name "r-episomer")
-    (version "3.0.32")
+    (version "3.0.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "episomer" version))
        (sha256
-        (base32 "07hd9canqb259mnhm14vpln05cjd30wi7ywx20hsgb5ll2m5sjri"))))
+        (base32 "1293dnlbs17nvy4qs9gxnjq5mz35z0fjd7cg8kaih0dzhvggibx3"))))
     (properties `((upstream-name . "episomer")))
     (build-system r-build-system)
     (arguments

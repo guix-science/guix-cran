@@ -6997,6 +6997,53 @@ documentation).  Bugs/comments/questions/collaboration of any kind are warmly
 welcomed.")
     (license license:gpl3+)))
 
+(define-public r-boundirt
+  (package
+    (name "r-boundirt")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BoundIRT" version))
+       (sha256
+        (base32 "1m806l0nnmdgfjw6a8phxps9rcf9kwagfrw0h6acvs0s7kxdgchb"))))
+    (properties `((upstream-name . "BoundIRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rmutil
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvtnorm
+                             r-mass
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=BoundIRT")
+    (synopsis "Fit Bounded Continuous Item Response Theory Models to Data")
+    (description
+     "Bounded continuous data are encountered in many areas of test application.
+Examples include visual analogue scales used in the measurement of personality,
+mood, depression, and quality of life; item response times from tests with item
+deadlines; confidence ratings; and pain intensity ratings.  Using this package,
+item response theory (IRT) models suitable for bounded continuous item scores
+can be fitted to data within a Bayesian framework.  The package draws on
+posterior sampling facilities provided by R-package rstan (Stan Development
+Team, 2025)<https://mc-stan.org/>.  Available models include the Beta IRT model
+by Noel and Dauvier (2007)<doi:10.1177/0146621605287691>, the continuous
+response model by Samejima (1973)<doi:10.1007/BF03372160>, the unbounded normal
+model by Mellenbergh (1994)<doi:10.1207/s15327906mbr2903_2>, and the Simplex IRT
+model by Flores et al. (2020)<doi:10.1007/978-3-030-43469-4_8>.  All models can
+be fitted with or without zero-one inflation (Molenaar et al.,
+2022)<doi:10.3102/10769986221108455>.  Model fit comparisons can be conducted
+using the WatanabeâAkaike information criterion (WAIC), the deviance
+information criterion (DIC), and the fully marginalized likelihood (i.e., Bayes
+factors).")
+    (license license:gpl3)))
+
 (define-public r-boundingbox
   (package
     (name "r-boundingbox")
@@ -12358,13 +12405,13 @@ vignette.  LICENSE: GPL-3 + file license.")
 (define-public r-blindspiker
   (package
     (name "r-blindspiker")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blindspiker" version))
        (sha256
-        (base32 "01wz3q01rvsgfl215jp485brw4kws1qyz2an0s70b700h7zji5zr"))))
+        (base32 "1cdldy920jalx510clmqnq4dvf8zkgrwjff1s0wdkj4gvpdg8khv"))))
     (properties `((upstream-name . "blindspiker")))
     (build-system r-build-system)
     (arguments

@@ -176,6 +176,33 @@ at Arick Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
 <doi:10.5281/zenodo.7979996>.")
     (license license:gpl3+)))
 
+(define-public r-zonohedra
+  (package
+    (name "r-zonohedra")
+    (version "0.6-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zonohedra" version))
+       (sha256
+        (base32 "0wpa7xg0ic7f1cx9xfhcip2k3dk1yww9h48xrhn0sfx0r6qmw7il"))))
+    (properties `((upstream-name . "zonohedra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl r-logger))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/glenndavis52/zonohedra")
+    (synopsis "Compute and Plot Zonohedra from Vector Generators")
+    (description
+     "Computes a zonohedron from real vector generators.  The package also computes
+zonogons (2D zonotopes) and zonosegs (1D zonotopes).  An elementary S3 class for
+matroids is included, which supports matroids with rank 3, 2, and 1.
+Optimization methods are taken from Heckbert (1985)
+<https://www.cs.cmu.edu/~ph/zono.ps.gz>.")
+    (license license:gpl2+)))
+
 (define-public r-zoid
   (package
     (name "r-zoid")

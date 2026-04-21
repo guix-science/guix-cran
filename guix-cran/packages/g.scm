@@ -14077,13 +14077,13 @@ reference for the underlying glue package is Hester and Bryan (2022)
 (define-public r-glsup
   (package
     (name "r-glsup")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLSUP" version))
        (sha256
-        (base32 "1zzkx97y0gs34kfgl0miwafng4l9giirmwl2labwy537i841l9p8"))))
+        (base32 "17l0hbjdyd5z8rf140n9v4qxr0b3njzdkv5hywm8g3q973vhch6y"))))
     (properties `((upstream-name . "GLSUP")))
     (build-system r-build-system)
     (arguments
@@ -19456,47 +19456,6 @@ the University of Ljubljana.")
 a light, pastel aesthetic.  Syntax follows the viridis package.")
     (license license:gpl3+)))
 
-(define-public r-ggtaxplot
-  (package
-    (name "r-ggtaxplot")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggtaxplot" version))
-       (sha256
-        (base32 "004kbplbh72a0yg5m130r5pc4963qj7r70xpb9sgy61b6a7cphny"))))
-    (properties `((upstream-name . "ggtaxplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-tidyverse
-                             r-tidyr
-                             r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-magrittr
-                             r-ggplot2
-                             r-ggalluvial
-                             r-dplyr
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggtaxplot")
-    (synopsis "Create Plots to Visualize Taxonomy")
-    (description
-     "This package provides a comprehensive suite of functions for processing and
-visualizing taxonomic data.  It includes functionality to clean and transform
-taxonomic data, categorize it into hierarchical ranks (such as Phylum, Class,
-Order, Family, and Genus), and calculate the relative abundance of each
-category.  The package also generates a color palette for visual representation
-of the taxonomic data, allowing users to easily identify and differentiate
-between various taxonomic groups.  Additionally, it features a river plot
-visualization to effectively display the distribution of individuals across
-different taxonomic ranks, facilitating insights into taxonomic visualization.")
-    (license license:gpl3)))
-
 (define-public r-ggswissmaps
   (package
     (name "r-ggswissmaps")
@@ -21860,13 +21819,13 @@ and the response is present.  Base on the results published in guide ISO/TS
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.7.2")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "01j4l9my2r21sa8z74kl6v2apf52mhmbpfh84ya0fjis9s0g162s"))))
+        (base32 "18dya7n9134k1y82lf0vk7v96zyji01ayy1vwbl89a7p6dqzzni7"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
@@ -21874,7 +21833,7 @@ and the response is present.  Base on the results published in guide ISO/TS
       #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-generics))
-    (native-inputs (list r-rmarkdown r-rcpp pkg-config r-knitr))
+    (native-inputs (list r-rmarkdown pkg-config r-knitr))
     (home-page "https://github.com/Zabis13/ggmlR")
     (synopsis "'GGML' Tensor Operations for Machine Learning")
     (description
@@ -26524,33 +26483,32 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
 (define-public r-gerda
   (package
     (name "r-gerda")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerda" version))
        (sha256
-        (base32 "0835jdff23kywk4s7vk3zz9r4xdmgljr7kmlg8wfj2pk3lnj2fz4"))))
+        (base32 "11vack9linkhfk1bk2gjp2wzmvbmqvvmvd2c2azcffka2flrzkwn"))))
     (properties `((upstream-name . "gerda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-stringdist r-readr r-knitr r-dplyr))
+    (propagated-inputs (list r-tibble r-stringdist r-readr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hhilbig/gerda")
     (synopsis "German Election Database (GERDA)")
     (description
-     "This package provides tools to download comprehensive datasets of local, state,
-and federal election results in Germany from 1990 to 2025.  The package
-facilitates access to data on turnout, vote shares for major parties, and
-demographic information across different levels of government (municipal, state,
-and federal).  It offers access to geographically harmonized datasets that
-account for changes in municipal boundaries over time and incorporate mail-in
-voting districts.  Includes bundled county-level covariates from INKAR and
-municipality-level Census 2022 data.  Users can easily retrieve, clean, and
-standardize German electoral data, making it ready for analysis.  Data is
-sourced from <https://github.com/awiedem/german_election_data>.")
+     "This package provides tools to download datasets of German elections covering
+local, state, federal, mayoral, European Parliament, and county (Kreistag)
+elections, with federal county-level coverage from 1953 and other families
+extending through 2025.  The package supplies turnout, vote shares, and derived
+indicators at the municipal and county level, including geographically
+harmonized datasets that account for changes in municipal boundaries over time
+and incorporate mail-in voting districts.  Bundled data includes county-level
+INKAR covariates (1995-2022) and municipality-level Zensus 2022 indicators.
+Data is sourced from <https://github.com/awiedem/german_election_data>.")
     (license license:expat)))
 
 (define-public r-gerbil
@@ -30573,13 +30531,13 @@ generalised Dunn indices).  The Python version of genieclust is available via
 (define-public r-geniebpc
   (package
     (name "r-geniebpc")
-    (version "2.0.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genieBPC" version))
        (sha256
-        (base32 "02jfa24qjpdn6z25312hs9vgasr6pkfab5apmmsh3yqhq6l4g7jg"))))
+        (base32 "100bnnlwlnrbzvpi0mnx6sxlxc624azsl546bcy4nr29yhc90si8"))))
     (properties `((upstream-name . "genieBPC")))
     (build-system r-build-system)
     (arguments
@@ -30596,7 +30554,7 @@ generalised Dunn indices).  The Python version of genieclust is available via
                              r-dtplyr
                              r-dplyr
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://genie-bpc.github.io/genieBPC/")
     (synopsis "Project GENIE BioPharma Collaborative Data Processing Pipeline")
     (description
@@ -32845,6 +32803,31 @@ estimating equations with bias-adjusted covariance estimator.  The package
 provides any combination of three modified generalized estimating equations and
 11 bias-adjusted covariance estimators.")
     (license license:gpl2+)))
+
+(define-public r-geesmv
+  (package
+    (name "r-geesmv")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geesmv" version))
+       (sha256
+        (base32 "0gm953z8q5cc1adl3d6vj5djg2inc880zfcdl5gd56fnb5gl6h1w"))))
+    (properties `((upstream-name . "geesmv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlme r-matrixcalc r-mass r-gee))
+    (home-page "https://cran.r-project.org/package=geesmv")
+    (synopsis
+     "Modified Variance Estimators for Generalized Estimating Equations")
+    (description
+     "Generalized estimating equations with the original sandwich variance estimator
+proposed by Liang and Zeger (1986), and eight types of more recent modified
+variance estimators for improving the finite small-sample performance.")
+    (license license:gpl3+)))
 
 (define-public r-geemediate
   (package

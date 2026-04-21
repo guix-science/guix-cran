@@ -11529,6 +11529,40 @@ Policastro et al. (2024) \"INet for network integration\"
 The package consists of wrappers for functions from the hdi package.")
     (license license:gpl2+)))
 
+(define-public r-inequality
+  (package
+    (name "r-inequality")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inequality" version))
+       (sha256
+        (base32 "0ixcbf6qm4biizarsa61bg0kr79x70ysjj35y48gxjzdq9ljqzw6"))))
+    (properties `((upstream-name . "inequality")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/charlescoverdale/inequality")
+    (synopsis "Inequality Measurement, Decomposition, and Poverty Analysis")
+    (description
+     "This package provides tools for measuring income and wealth inequality.
+Computes the Gini coefficient with bootstrap or asymptotic confidence intervals
+following Davidson (2009) <doi:10.1016/j.jeconom.2008.09.011>, the extended
+S-Gini family, Theil T and L indices (generalised entropy family), the Atkinson
+index, the Kolm absolute inequality index, Palma ratio, Hoover index, percentile
+ratios, and Lorenz curves.  Supports between-within group decomposition
+following Bourguignon (1979) <doi:10.2307/1914138>, income share tabulation,
+concentration indices for health inequality with Erreygers (2009) correction,
+Kakwani tax progressivity and Reynolds-Smolensky redistribution indices,
+Foster-Greer-Thorbecke poverty measures including the Sen index, growth
+incidence curves following Ravallion and Chen (2003)
+<doi:10.1016/S0165-1765(02)00205-7>, and Wolfson polarisation.  All functions
+accept optional survey weights and work with data from any source.")
+    (license license:expat)))
+
 (define-public r-ineqjd
   (package
     (name "r-ineqjd")

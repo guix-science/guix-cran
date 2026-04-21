@@ -7476,13 +7476,13 @@ it with additional performance measures and functionality.")
 (define-public r-rsiena
   (package
     (name "r-rsiena")
-    (version "1.6.4")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSiena" version))
        (sha256
-        (base32 "1d14qiy6r34m898194hdhhwldjiiaq0h6sxs2kh1vyd56bw62k1n"))))
+        (base32 "0qmjaq29h5jmpwdyiigwyc27dy9z6519k4a8pllbiav6adjdbc2h"))))
     (properties `((upstream-name . "RSiena")))
     (build-system r-build-system)
     (arguments
@@ -17040,13 +17040,13 @@ Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.4-2")
+    (version "3.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustlmm" version))
        (sha256
-        (base32 "0hdpkbai30nh8x7wz9b2pwjm726s78yiac2wb3gnckif8x5gxck1"))))
+        (base32 "0i86kbwfvm8jxwfrn2yi87qfnqary6dmwr22wz9ilx8fbakirf5z"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (arguments
@@ -33229,13 +33229,13 @@ could happen.")
 (define-public r-retrosheet
   (package
     (name "r-retrosheet")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "retrosheet" version))
        (sha256
-        (base32 "0j4c3a7rm26gx0avn4wgz0jzgff23hxb35j04hdly2h36vhw38xf"))))
+        (base32 "1qr46hpv9xf0cnmqnkamrrp89203v0pxsgs92ha3rkqzd88kf874"))))
     (properties `((upstream-name . "retrosheet")))
     (build-system r-build-system)
     (arguments
@@ -34924,34 +34924,37 @@ persistence using the Hurst coefficient.")
 (define-public r-resemble
   (package
     (name "r-resemble")
-    (version "2.2.5")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resemble" version))
        (sha256
-        (base32 "0cwrq7qa6balam0s3cjfxfh1m7mqs6b5z95xrj28bi3fb3nsisbs"))))
+        (base32 "1cbjrjj3ynj9y60i0bz14jb566fdl1vq4s9b19cclj6j56kd928l"))))
     (properties `((upstream-name . "resemble")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-rhpcblasctl
+                             r-rcpparmadillo
                              r-rcpp
                              r-mathjaxr
-                             r-magrittr
                              r-lifecycle
                              r-iterators
-                             r-foreach
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "http://l-ramirez-lopez.github.io/resemble/")
-    (synopsis "Memory-Based Learning in Spectral Chemometrics")
+                             r-foreach))
+    (native-inputs (list r-quarto))
+    (home-page "https://l-ramirez-lopez.github.io/resemble/")
+    (synopsis
+     "Similarity Retrieval and Local Learning for Spectral Chemometrics")
     (description
-     "This package provides functions for dissimilarity analysis and memory-based
-learning (MBL, a.k.a local modeling) in complex spectral data sets.  Most of
-these functions are based on the methods presented in Ramirez-Lopez et al.
-(2013) <doi:10.1016/j.geoderma.2012.12.014>.")
+     "This package provides functions for dissimilarity analysis and machine learning
+in complex spectral data sets, including memory-based learning (MBL), optimal
+subset search and selection, and retrieval-based modelling with model libraries.
+ Supports local learning, optimisation of spectral libraries, and ensemble
+prediction from precomputed models.  Most of these functions are based on the
+methods presented in Ramirez-Lopez et al. (2013)
+<doi:10.1016/j.geoderma.2012.12.014>.")
     (license license:expat)))
 
 (define-public r-resde

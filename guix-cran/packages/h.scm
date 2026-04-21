@@ -6477,13 +6477,13 @@ predict future sequences.")
 (define-public r-hmetad
   (package
     (name "r-hmetad")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmetad" version))
        (sha256
-        (base32 "0pwhzv55sbsjkg92cxdnf7n6axirv44jimc5v3j0s8x7109km9wb"))))
+        (base32 "11w1r6747g1bg273ncly44mgh3pzklf1yhviq8jahik41r00vdiq"))))
     (properties `((upstream-name . "hmetad")))
     (build-system r-build-system)
     (arguments

@@ -3952,6 +3952,39 @@ the sturdiness of regression coefficients.")
 alignment to uncover the structure of complex DNA rearrangements.")
     (license license:asl2.0)))
 
+(define-public r-suwo
+  (package
+    (name "r-suwo")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "suwo" version))
+       (sha256
+        (base32 "1s5fw5rzll99p234mqfl3ns5mm306adlyrkl1r9hirn0ldqlc2vg"))))
+    (properties `((upstream-name . "suwo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-recordlinkage
+                             r-lubridate
+                             r-leaflet
+                             r-jsonlite
+                             r-httr2
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/suwo/")
+    (synopsis "Access Nature Media Repositories")
+    (description
+     "Streamline searching, downloading and formatting of nature media files (e.g.
+audios, photos) from online repositories.  The package offers functions for
+obtaining media metadata from online repositories, downloading associated media
+files and updating data sets with new records.")
+    (license license:gpl2+)))
+
 (define-public r-susy
   (package
     (name "r-susy")
@@ -21409,13 +21442,13 @@ minimizing requirements on the runtime environment.")
 (define-public r-srcpkgs
   (package
     (name "r-srcpkgs")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srcpkgs" version))
        (sha256
-        (base32 "142rjn60c15apdf316gv9dy8var7359zlic7vs22rn4f13k8xwy4"))))
+        (base32 "0hinfvjrni4z5cnjqjc98mhjjcldpdlrkch8cndpnq7262cdqfl0"))))
     (properties `((upstream-name . "srcpkgs")))
     (build-system r-build-system)
     (arguments
@@ -22231,6 +22264,50 @@ building IN statements, and @code{updatetable()} for building UPDATE statements.
      "Runs SQL statements on in-memory data frames within a temporary in-memory duckdb
 data base.")
     (license license:gpl2+)))
+
+(define-public r-sqipro
+  (package
+    (name "r-sqipro")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SQIpro" version))
+       (sha256
+        (base32 "1q93a0lnfpi76ldyiqs92dj1ninc2fi6ypcmkr8678bcsba0x824"))))
+    (properties `((upstream-name . "SQIpro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-matrixstats
+                             r-glmnet
+                             r-ggplot2
+                             r-factominer
+                             r-factoextra
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SQIpro")
+    (synopsis "Comprehensive Soil Quality Index Computation and Visualization")
+    (description
+     "This package provides a comprehensive, modular framework for computing the Soil
+Quality Index (SQI) using six established methods: Linear Scoring (Doran and
+Parkin, 1994, <doi:10.2136/sssaspecpub35.c1>), Regression-based (Masto et al.,
+2008, <doi:10.1007/s10661-007-9697-z>), Principal Component Analysis-based
+(Andrews et al., 2004, <doi:10.2136/sssaj2004.1945>), Fuzzy Logic, Entropy
+Weighting (Shannon, 1948, <doi:10.1002/j.1538-7305.1948.tb01338.x>), and TOPSIS
+(Hwang and Yoon, 1981, <doi:10.1007/978-3-642-48318-9>).  Implements four
+variable scoring functions: more-is-better, less-is-better, optimum-value, and
+trapezoidal, following Karlen and Stott (1994, <doi:10.2136/sssaspecpub35.c4>).
+Includes automated Minimum Data Set selection via Principal Component Analysis
+with Variance Inflation Factor filtering (Kaiser, 1960,
+<doi:10.1177/001316446002000116>), one-way ANOVA with Tukey HSD post-hoc tests,
+leave-one-out sensitivity analysis, and publication-quality visualization using
+ggplot2'.")
+    (license license:gpl3+)))
 
 (define-public r-sqi
   (package
@@ -25742,13 +25819,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "00s5yq0w69mbskzb8160kfn102b3l7bvlw0idch58gw5sca900v6"))))
+        (base32 "0a82mcfnzvdbzrbzc9gikf3h2m824a4bh2a2f3qhqc3r08jfg77y"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments

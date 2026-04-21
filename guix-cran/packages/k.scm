@@ -401,13 +401,13 @@ method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
 (define-public r-kuenm2
   (package
     (name "r-kuenm2")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kuenm2" version))
        (sha256
-        (base32 "0db1c93vbg7r6ib3xikgrdvb4baggsbzn0b3lpyn40w3q33m6ayd"))))
+        (base32 "0n0k3w1p4q2akdcmwgsij5wrzwvarpzvadqrhvj2rxa5qcf8z13z"))))
     (properties `((upstream-name . "kuenm2")))
     (build-system r-build-system)
     (arguments

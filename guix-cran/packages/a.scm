@@ -5560,13 +5560,13 @@ solution of these differential equations.")
 (define-public r-assessor
   (package
     (name "r-assessor")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assessor" version))
        (sha256
-        (base32 "1ljl02ywr638sgqj1jraf8k73w4byzyv7xaq0s5imxangj2wzhvl"))))
+        (base32 "1dyp1ww50dh1iaap2jfcd6ymmf6hljqyv0q98f07ma5jjlbnrsm4"))))
     (properties `((upstream-name . "assessor")))
     (build-system r-build-system)
     (arguments
@@ -9850,13 +9850,13 @@ in: Manuel Rubio-SÃ¡nchez, Alberto Sanchez, and Dirk J. Lehmann (2017)
 (define-public r-arakno
   (package
     (name "r-arakno")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arakno" version))
        (sha256
-        (base32 "00wpsiwspz2b9in0c35a404amrpwjd4h166pm1yvl2v8qw0z1f7q"))))
+        (base32 "0nnylpzv6p2mvnkn1hm61kr60a4l88c3irg45clzmykn6z8fazn2"))))
     (properties `((upstream-name . "arakno")))
     (build-system r-build-system)
     (arguments
@@ -19009,13 +19009,13 @@ sharing AI capabilities.")
 (define-public r-aiscreenr
   (package
     (name "r-aiscreenr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIscreenR" version))
        (sha256
-        (base32 "0mqhngvk58zj5h6q3jwyhsqrnxm65aqf36mygmia75d2ifcizz8j"))))
+        (base32 "1g6xlb1ch3jyma7ndgxnhl91fsyy5pkw6hljz6dbzgs77ng4iwj8"))))
     (properties `((upstream-name . "AIscreenR")))
     (build-system r-build-system)
     (arguments

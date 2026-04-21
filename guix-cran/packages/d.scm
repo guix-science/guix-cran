@@ -3972,13 +3972,13 @@ spline spaces.  These techniques are described in Tibshirani (2020)
 (define-public r-dsp
   (package
     (name "r-dsp")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsp" version))
        (sha256
-        (base32 "0zrqqjzqn0na5g62594lhawzmgklkjp391adyxprlmz9gdrrasyc"))))
+        (base32 "14mq642lqy4qv4v16zjcqnr8nh1fcm6j69akarw3vr56pasqq5wp"))))
     (properties `((upstream-name . "dsp")))
     (build-system r-build-system)
     (arguments
@@ -5260,6 +5260,34 @@ estimation.  Methods are described in Fang et al. (2025) \"Estimands and doubly
 robust estimation for cluster-randomized trials with survival outcomes\"
 <doi:10.48550/@code{arXiv.2510.08438>}.")
     (license license:expat)))
+
+(define-public r-drrglm
+  (package
+    (name "r-drrglm")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drrglm" version))
+       (sha256
+        (base32 "0l4zbslhz1w4pysjbzkfzr6fz0jn2bpq71iaw2sx6gq63zrpp8la"))))
+    (properties `((upstream-name . "drrglm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet r-data-table))
+    (home-page "https://github.com/paradoxical-rhapsody/drrglm")
+    (synopsis "Doubly Regularized Matrix-Variate Regression")
+    (description
+     "The doubly regularized matrix-variate regression solves a low-rank-plus-sparse
+structure for matrix-variate generalized linear models through a weighted
+combination of nuclear-norm and L1-norm.  The methodology implemented by this
+package is described in the paper \"Doubly Regularized Matrix-Variate
+Regression\", which has been tentatively accepted for publication but does not
+yet have a DOI or URL. A formal citation will be added in a future update once
+the final publication details are available.")
+    (license license:agpl3)))
 
 (define-public r-drquality
   (package
@@ -7130,13 +7158,13 @@ implemented in the R package DQAstats'.  Publication: Mang et al. (2021)
 (define-public r-dqa
   (package
     (name "r-dqa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQA" version))
        (sha256
-        (base32 "0lx26b8j04ddnnrqpf91rh4yxrpc8yn6q8ckrgh6s4a5q1cs7485"))))
+        (base32 "0683ihhf5w8h8zdcxl729s671w6zqm11gqfk49rb0mj77nhm67ya"))))
     (properties `((upstream-name . "DQA")))
     (build-system r-build-system)
     (arguments
@@ -7150,8 +7178,8 @@ implemented in the R package DQAstats'.  Publication: Mang et al. (2021)
 functions for evaluating data quality across various dimensions, including
 completeness, plausibility, concordance, conformance, currency, timeliness, and
 correctness.  It has been developed based on two well-known frameworksâMichael
-G. Kahn (2016) <doi: 10.13063/2327-9214.1244> and Nicole G. Weiskopf (2017)
-<doi: 10.5334/egems.218>âfor data quality assessment.  Using this package,
+G. Kahn (2016) <doi:10.13063/2327-9214.1244> and Nicole G. Weiskopf (2017)
+<doi:10.5334/egems.218>âfor data quality assessment.  Using this package,
 users can evaluate the quality of their datasets, provided that corresponding
 metadata are available.")
     (license license:expat)))

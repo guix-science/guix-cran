@@ -125,13 +125,13 @@ information about the Google Trends API - pytrends', visit
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "1sidk84va9rzivj2m74h056siyvqf2ngnaqhscycni8hjnw5sw4d"))))
+        (base32 "0fx5nr6nncwdpamlkv37g78yrxlf8xhaxs56q93y71175r5kq558"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (arguments
@@ -139,6 +139,7 @@ information about the Google Trends API - pytrends', visit
       #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vctrs
+                             r-uuid
                              r-tidyselect
                              r-tidyr
                              r-sparklyr
@@ -18580,20 +18581,20 @@ by Morris and Doak (2002).")
 (define-public r-popbayes
   (package
     (name "r-popbayes")
-    (version "1.2.0")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popbayes" version))
        (sha256
-        (base32 "1qrxjk1y52rsf203nnylpksjv2hv3x8pk2flvjlwxj5fv5335a9y"))))
+        (base32 "13mj5pwc1bpa5v5fdciykqa1wx3rj4mi6b0ihwasa2h634n7cisp"))))
     (properties `((upstream-name . "popbayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list jags))
-    (propagated-inputs (list r-usethis r-r2jags))
+    (propagated-inputs (list r-r2jags r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://frbcesab.github.io/popbayes/")
     (synopsis
@@ -20906,13 +20907,13 @@ Super Learner framework see van der Laan, Polley and Hubbard (2007)
 (define-public r-poissonreg
   (package
     (name "r-poissonreg")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poissonreg" version))
        (sha256
-        (base32 "1hlp6lvag9a3yv1iapcs3r14w6y5pqdb0zwlhjw88g72amwp7g43"))))
+        (base32 "11mzxgqkdq90jbp1kkz53ii4hy8s4nv0yfd5p597wgn8p54azvh4"))))
     (properties `((upstream-name . "poissonreg")))
     (build-system r-build-system)
     (arguments
@@ -20923,7 +20924,6 @@ Super Learner framework see van der Laan, Polley and Hubbard (2007)
                              r-rlang
                              r-purrr
                              r-parsnip
-                             r-glue
                              r-generics
                              r-dplyr))
     (home-page "https://github.com/tidymodels/poissonreg")

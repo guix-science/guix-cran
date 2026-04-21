@@ -4750,13 +4750,13 @@ mathematically convenient on wide matrices.")
 (define-public r-widr
   (package
     (name "r-widr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "widr" version))
        (sha256
-        (base32 "1vvbvdvwl7rawpac7vy0vi5s0pi3nkzikd94k79j60fk144q081h"))))
+        (base32 "0rclpqz632cr1yj5hzvdgxc6nl2kbzgfxvj6l6nr9v1al34bq4k1"))))
     (properties `((upstream-name . "widr")))
     (build-system r-build-system)
     (arguments

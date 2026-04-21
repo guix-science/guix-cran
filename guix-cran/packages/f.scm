@@ -7906,13 +7906,13 @@ result sets and time-series analysis of island performance.  The API endpoint is
 (define-public r-fortls
   (package
     (name "r-fortls")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FORTLS" version))
        (sha256
-        (base32 "1ycc61qiz146bs9mz7y8fl55qsqaz1qp32nwgnv1dyz4ab5q3f3n"))))
+        (base32 "0fi7l416f8g9p3vcby72rink99j4d0i95y9bafsl43j4ks03hgmx"))))
     (properties `((upstream-name . "FORTLS")))
     (build-system r-build-system)
     (arguments

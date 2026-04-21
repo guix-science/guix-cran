@@ -1605,13 +1605,13 @@ by @code{na.omit()} function before analysis.")
 (define-public r-cusumdesign
   (package
     (name "r-cusumdesign")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CUSUMdesign" version))
        (sha256
-        (base32 "1qxq1a8b5pnmlq6rpjzvcp32scn2qknafch3h7qjsy8499zzbxx8"))))
+        (base32 "1zc964akp1wf6l2hvp8zv64bg1c9d8bwj5zl16dyla5yhsjz48xr"))))
     (properties `((upstream-name . "CUSUMdesign")))
     (build-system r-build-system)
     (arguments
@@ -3277,13 +3277,13 @@ see
 (define-public r-cts
   (package
     (name "r-cts")
-    (version "1.0-24")
+    (version "1.0-25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cts" version))
        (sha256
-        (base32 "0zzwza1wr2xvya5qjfbggw5bmqphadf47z1sw1ni6a91aq08scgj"))))
+        (base32 "0idv1958lknrbdnlkfa3ha1yz18xwd7mnakwgay1wyqf95as8n1i"))))
     (properties `((upstream-name . "cts")))
     (build-system r-build-system)
     (arguments
@@ -4873,13 +4873,13 @@ the national project BOREAS (PID2022-140673OA-I00).  See LledÃ³ et al. (2019)
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.4.6")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSHShydRology" version))
        (sha256
-        (base32 "1zqkcw6x1jdq8f59zczkphj54hnhqv4iga67prh19rvs6q0hssw2"))))
+        (base32 "1slanprnmqcxv00nlh9xh86n4w94mg8f2nkbpd2d2kpcg7f4bysh"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (arguments
@@ -4887,15 +4887,14 @@ the national project BOREAS (PID2022-140673OA-I00).  See LledÃ³ et al. (2019)
       #:tests? #f))
     (propagated-inputs (list r-whitebox
                              r-timedate
+                             r-tidyterra
                              r-tidyhydat
+                             r-terra
                              r-teachingdemos
                              r-stringr
-                             r-sf
-                             r-raster
                              r-plotrix
                              r-outliers
                              r-mgbt
-                             r-magrittr
                              r-lubridate
                              r-kendall
                              r-httr2
@@ -19594,6 +19593,39 @@ will also reflect the relative uncertainty in the Bayesian model, using the
 locally-weighted conformal methods of Lei et al. (2018)
 <doi:10.1080/01621459.2017.1307116>.")
     (license license:expat)))
+
+(define-public r-confmeta
+  (package
+    (name "r-confmeta")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "confMeta" version))
+       (sha256
+        (base32 "0086iljmnqfw3gwfbs6pp112ha3d4dsnq2wrmfxvp3gd5640vl18"))))
+    (properties `((upstream-name . "confMeta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-replicationsuccess
+                             r-patchwork
+                             r-metafor
+                             r-meta
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SaveFonta/confMeta")
+    (synopsis "Confidence Curves and P-Value Functions for Meta-Analysis")
+    (description
+     "This package provides tools for the combination of individual study results in
+meta-analyses using p-value functions.  Implements various combination methods
+including those by Fisher, Stouffer, Tippett, Edgington along with weighted
+generalizations.  Contains functionality for the visualization and calculation
+of confidence curves and drapery plots to summarize evidence across studies.")
+    (license license:gpl3+)))
 
 (define-public r-confmatrix
   (package
@@ -46212,6 +46244,33 @@ for a specified state.  Utilities for fips, abbreviation, and name conversion
 are also provided.  Full functionality requires an internet connection, but data
 sets can be cached for later off-line use.")
     (license (license:fsdg-compatible "Unlimited"))))
+
+(define-public r-cdlsim
+  (package
+    (name "r-cdlsim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cdlsim" version))
+       (sha256
+        (base32 "1awpy3zsd8yvgd5r3azi97qk1xr60jp34gxx5py9z14kl5a7q4nv"))))
+    (properties `((upstream-name . "cdlsim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-readxl r-rcpp r-landscapemetrics
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cdlsim")
+    (synopsis "Simulation of Cropland Data Layer Products from the USDA")
+    (description
+     "This package provides tools to simulate categorical raster data, including
+objects from the terra package.  Functions focus on generating edge pixel values
+from reclassified raster data derived from the United States Department of
+Agriculture (USDA) Cropland Data Layer products.")
+    (license license:expat)))
 
 (define-public r-cdlei
   (package

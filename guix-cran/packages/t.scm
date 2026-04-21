@@ -5,7 +5,6 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
@@ -20,6 +19,7 @@
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages pcre)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages video)
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
@@ -248,35 +248,6 @@ evaluated against these type hint comments at run-time.")
 a script or the body of a function, so variables can't be assigned illegal
 values.  Moreover it supports setting argument and return types for functions.")
     (license license:gpl3)))
-
-(define-public r-tynding
-  (package
-    (name "r-tynding")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tynding" version))
-       (sha256
-        (base32 "12v1bf7pcfsz82rzm4mad0rrkhn4bdl1gn9bc986w23wqlkay8m2"))))
-    (properties `((upstream-name . "tynding")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list xz))
-    (propagated-inputs (list r-jsonlite))
-    (home-page "https://github.com/y-sunflower/tynding")
-    (synopsis "'Typst' Bindings")
-    (description
-     "This package provides bindings to the Typst typesetting system, enabling users
-to compile Typst documents directly from R. The package interfaces with the
-Typst Rust library to render documents, making it possible to integrate
-Typst'-based workflows into R scripts, reports, and reproducible research
-pipelines.  It supports programmatic document generation, compilation, and
-output handling, facilitating seamless use of Typst alongside tools such as
-knitr and Quarto.")
-    (license license:expat)))
 
 (define-public r-txtq
   (package
@@ -15844,13 +15815,13 @@ preserving geographic positions as much as possible.")
 (define-public r-tmap
   (package
     (name "r-tmap")
-    (version "4.2")
+    (version "4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmap" version))
        (sha256
-        (base32 "1a6x67fhli388fdyyjmdczcb0qdb8lp9n72xsyxs1x658m1aswld"))))
+        (base32 "06bcmpd437kh5gkrmc8n9pr430z53rxq3x25gzy02d28rw81vfnl"))))
     (properties `((upstream-name . "tmap")))
     (build-system r-build-system)
     (arguments
@@ -27376,13 +27347,13 @@ family of functions and reporting tools for checking and validating data frames.
 (define-public r-testcorr
   (package
     (name "r-testcorr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testcorr" version))
        (sha256
-        (base32 "08y5jrbp8dys0gqvvvk47pg3a54s8mx5xxapzivczf76qnjkffg7"))))
+        (base32 "1rridkp03ix6s1lvmk3x1sn0vdhzjdkvlj9n4x1lr2g2kfq3chf1"))))
     (properties `((upstream-name . "testcorr")))
     (build-system r-build-system)
     (arguments

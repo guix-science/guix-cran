@@ -14849,19 +14849,20 @@ methods, please refer to the paper by H Du, S Wen, Y Guo, F Jin, BD Gallas
 (define-public r-nestimate
   (package
     (name "r-nestimate")
-    (version "0.3.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Nestimate" version))
        (sha256
-        (base32 "1rr67w6r54jnhcpkwbg8m0gmddmni2wkhzfw9xc0py72qq0mkm0l"))))
+        (base32 "0gn81rgnwpskf44raq9pq3lzx7mp5jl3ziac2wynb54vll676l52"))))
     (properties `((upstream-name . "Nestimate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-glasso r-ggplot2 r-data-table r-cluster))
+    (propagated-inputs (list r-scales r-glasso r-ggplot2 r-data-table
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mohsaqr/Nestimate")
     (synopsis "Network Estimation, Bootstrap, and Higher-Order Analysis")
