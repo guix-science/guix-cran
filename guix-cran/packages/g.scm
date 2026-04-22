@@ -22367,13 +22367,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.3-4")
+    (version "3.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "0w65rh1xq6yl9jipdjclhh9k2yahbh5cqsfxv08bk4rvp6is0fvx"))))
+        (base32 "1l7qrjjvmc6axs8h6z3clv62wb1hrygmrhgkgckzrf22rbzhzl84"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (arguments
@@ -22401,7 +22401,7 @@ raw acceleration sensors as described in Migueles and colleagues (JMPB 2019),
 and van Hees and colleagues (J@code{ApplPhysiol} 2014; P@code{LoSONE} 2015).
 The package has been developed and tested for binary data from GENEActiv
 <https://activinsights.com/>, binary (.gt3x) and .csv-export data from Actigraph
-<https://theactigraph.com> devices, and binary (.cwa) and .csv-export data from
+<https://ametris.com/> devices, and binary (.cwa) and .csv-export data from
 Axivity <https://axivity.com>.  These devices are currently widely used in
 research on human daily physical activity.  Further, the package can handle
 accelerometer data file from any other sensor brand providing that the data is
@@ -23447,6 +23447,33 @@ to represent behavioural variables that are recorded over multiple animals and
 days.  This package is part of the rethomics framework
 <https://rethomics.github.io/>.")
     (license license:gpl3)))
+
+(define-public r-ggerror
+  (package
+    (name "r-ggerror")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggerror" version))
+       (sha256
+        (base32 "0b3hlq669mrwmg9dsbhi9m2qvcw7f6y9cd6c6vj22pmcc56lysx1"))))
+    (properties `((upstream-name . "ggerror")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/iamYannC/ggerror")
+    (synopsis "Extended Error Geoms for 'ggplot2'")
+    (description
+     "Extends the ggplot2 error geoms. @code{geom_error()} accepts an error aesthetic
+with auto-inference of the orientation.  It also supports error_neg and
+error_pos for asymmetric cases, with full control over aesthetics per side, such
+as color, width etc...  The package also includes a vignette covering it's main
+usecases - symmetric, asymmetric, one-sided, and per-side styling.")
+    (license license:expat)))
 
 (define-public r-ggenemy
   (package
@@ -26378,13 +26405,13 @@ composition and the evolutionary history of tumors.")
 (define-public r-germinationmetrics
   (package
     (name "r-germinationmetrics")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "germinationmetrics" version))
        (sha256
-        (base32 "0xrwlrd7gvzf95x30y3zd808il68wf9cwn6d48jgxy5dyvjbghdp"))))
+        (base32 "16nja7aqls013r9s5ghm4lkr16dd2v5g6a5wwfvhbcswcdp5k901"))))
     (properties `((upstream-name . "germinationmetrics")))
     (build-system r-build-system)
     (arguments
@@ -30784,13 +30811,13 @@ respectively.")
 (define-public r-geneticae
   (package
     (name "r-geneticae")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geneticae" version))
        (sha256
-        (base32 "1iif0fjk4i5ssaw9g7lwayv45qcww7z6nlhpfs10jcb83pmaaida"))))
+        (base32 "1gxg4wxpb5x3mbrf0wcxy00rf8xvzlr7ymyzm42f2crz7ps2hhfl"))))
     (properties `((upstream-name . "geneticae")))
     (build-system r-build-system)
     (arguments
@@ -30812,16 +30839,18 @@ respectively.")
     (synopsis
      "Statistical Tools for the Analysis of Multi Environment Agronomic Trials")
     (description
-     "Data from multi environment agronomic trials, which are often carried out by
-plant breeders, can be analyzed with the tools offered by this package such as
-the Additive Main effects and Multiplicative Interaction model or AMMI ('Gauch
-1992, ISBN:9780444892409) and the Site Regression model or SREG ('Cornelius
-1996, <doi:10.1201/9780367802226>).  Since these methods present a poor
-performance under the presence of outliers and missing values, this package
-includes robust versions of the AMMI model ('Rodrigues 2016,
-<doi:10.1093/bioinformatics/btv533>), and also imputation techniques
-specifically developed for this kind of data ('Arciniegas-AlarcÃ³n 2014,
-<doi:10.2478/bile-2014-0006>).")
+     "This package provides tools for the analysis of multi-environment agronomic
+trials, with a specific focus on plant breeding experiments.  Implements the
+Additive Main effects and Multiplicative Interaction (AMMI) model (Gauch, 1992,
+ISBN:9780444892409) and the Site Regression (SREG) model (Cornelius, 1996,
+<doi:10.1201/9780367802226>).  To ensure reliable results even with outliers or
+missing data, it includes robust versions of AMMI (Rodrigues et al., 2016,
+<doi:10.1093/bioinformatics/btv533>) and SREG (Angelini et al., 2022,
+<doi:10.1080/15427528.2022.2051217>).  Furthermore, the package offers advanced
+imputation techniques for multi-environment data, covering classical
+methodologies (Arciniegas-AlarcÃ³n et al., 2014, <doi:10.2478/bile-2014-0006>)
+and recently published imputation methods for MET data (Angelini et al., 2024,
+<doi:10.1007/s10681-024-03344-z>).")
     (license license:gpl2)))
 
 (define-public r-genetic-algo-optimizer
@@ -36183,26 +36212,30 @@ augmented Lagrange multiplier method.")
 (define-public r-garch-x
   (package
     (name "r-garch-x")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GARCH.X" version))
        (sha256
-        (base32 "1rarfkfjxfzjg7v864if0nn8zvnabw9cd5pszq7998avrv9h162k"))))
+        (base32 "1yfqhkqfj17v329203sgym44w40gla18462rxknqgabd237sxk40"))))
     (properties `((upstream-name . "GARCH.X")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pso r-gensa r-ga))
+    (propagated-inputs (list r-pso r-nnls r-kernsmooth r-gensa r-ga))
     (home-page "https://cran.r-project.org/package=GARCH.X")
     (synopsis
-     "Estimation and Exogenous Covariate Selection for GARCH-X Models")
+     "Estimation and Exogenous Covariate Selection for ARCH-m(X), Additive ARCH-m(x), and GARCH-X Models")
     (description
-     "Estimates the parameters of a GARCH-X model with exogenous covariates, performs
-hypothesis tests for the parameters returning the p-values, and uses False
-Discovery Rate p-value corrections to select the exogenous variables.")
+     "Estimates the parameters and nonparametric functions of an ARCH-m(X) model with
+exogenous covariates, estimates the parameters and nonparametric functions of an
+Additive ARCH-m(X) model with exogenous covariates, estimates the parameters of
+a GARCH-X model with exogenous covariates, performs hypothesis tests for the
+covariates returning the p-values, and performs stepwise variable selection on
+the exogenous covariates, and uses False Discovery Rate p-value corrections to
+select the exogenous variables.")
     (license license:gpl2+)))
 
 (define-public r-gapr

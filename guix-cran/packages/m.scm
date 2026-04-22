@@ -646,6 +646,32 @@ metrics and depicts control charts for monitoring Maxwell-distributed quality
 characteristics.")
     (license license:gpl2+)))
 
+(define-public r-mx-api
+  (package
+    (name "r-mx-api")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mx.api" version))
+       (sha256
+        (base32 "0w81dvmggxydic0zwhirfvzlx744bnkd06hsfl6afimaz0cj51pn"))))
+    (properties `((upstream-name . "mx.api")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://github.com/cornball-ai/mx.api")
+    (synopsis "Minimal Matrix Client-Server API")
+    (description
+     "This package provides a minimal-dependency client for the Matrix Client-Server
+HTTP API <https://spec.matrix.org/>, suitable for talking to a Synapse
+homeserver <https://element-hq.github.io/synapse/>.  Covers login, room
+management, message send and history, and media upload or download.  End-to-end
+encryption is out of scope; use unencrypted rooms or a separate crypto package.")
+    (license license:expat)))
+
 (define-public r-mwtensor
   (package
     (name "r-mwtensor")
@@ -9244,6 +9270,37 @@ Mohamed Bisher(2022)
      "Build multiscalar territorial analysis based on various contexts.")
     (license license:gpl3)))
 
+(define-public r-mt-surv
+  (package
+    (name "r-mt-surv")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mt.surv" version))
+       (sha256
+        (base32 "1mmwa50fdfxsrckkpday70zrfr00xnby1gsfpbpgkwl9w1fi2fpp"))))
+    (properties `((upstream-name . "mt.surv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-survival
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=mt.surv")
+    (synopsis "Multi-Threshold Survival Analysis")
+    (description
+     "This package implements survival analyses across multiple abundance thresholds,
+repeatedly partitioning samples into groups and evaluating survival differences
+to assess taxonomic associations with outcomes.")
+    (license license:expat)))
+
 (define-public r-mt
   (package
     (name "r-mt")
@@ -11782,6 +11839,48 @@ jackknifing, or an unbiased method.  Smith and Hillis (2020)
 <doi:10.1117/12.2549075>.")
     (license license:gpl3)))
 
+(define-public r-mrireduce
+  (package
+    (name "r-mrireduce")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MRIreduce" version))
+       (sha256
+        (base32 "04a8rg019m8kmblkml4djgbhk9zbsh2kdsbjapyrp73fv681mblj"))))
+    (properties `((upstream-name . "MRIreduce")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-reticulate
+                             r-reshape2
+                             r-rcpp
+                             r-r6
+                             r-partition
+                             r-oro-nifti
+                             r-neurobase
+                             r-fslr))
+    (native-inputs (list r-knitr))
+    (home-page "https://uscbiostats.github.io/MRIreduce/")
+    (synopsis
+     "ROI-Based Transformation of Neuroimages into High-Dimensional Data Frames")
+    (description
+     "Converts N@code{IfTI} format T1/FL neuroimages into structured, high-dimensional
+2D data frames with a focus on region of interest (ROI) based processing.  The
+package incorporates the partition algorithm, which offers a flexible framework
+for agglomerative partitioning based on the Direct-Measure-Reduce approach.
+This method ensures that each reduced variable maintains a user-specified
+minimum level of information while remaining interpretable, as each maps
+uniquely to one variable in the reduced dataset.  The partition framework is
+described in Millstein et al. (2020) <doi:10.1093/bioinformatics/btz661>.  The
+package allows customization in variable selection, measurement of information
+loss, and data reduction methods for neuroimaging analysis and machine learning
+workflows.")
+    (license license:expat)))
+
 (define-public r-mriml
   (package
     (name "r-mriml")
@@ -13103,6 +13202,49 @@ which applies a mass-preserving spline to soil attributes.  Splining soil data
 is a safe way to make continuous down-profile estimates of attributes measured
 over discrete, often discontinuous depth intervals.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-mpshock
+  (package
+    (name "r-mpshock")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpshock" version))
+       (sha256
+        (base32 "1awrq6axz88fmcpj0b07aa5jr527fdvid1ghqicw7pm3c1vc2k4a"))))
+    (properties `((upstream-name . "mpshock")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/charlescoverdale/mpshock")
+    (synopsis "Monetary Policy Shock Series for Empirical Macroeconomics")
+    (description
+     "This package provides a curated multi-country collection of monetary policy
+shock and stance series from the empirical macroeconomics literature, bundled as
+tidy data frames with provenance metadata.  Version 0.1.0 includes thirteen
+series covering the United States, United Kingdom, and Australia: for the US,
+the policy news shock of Nakamura and Steinsson (2018) <doi:10.1093/qje/qjy004>,
+the orthogonalised surprise of Bauer and Swanson (2023)
+<doi:10.1257/aer.20201220>, the target and path factors of the Swanson (2021)
+<doi:10.1016/j.jmoneco.2020.09.003> extension of Gurkaynak, Sack, and Swanson
+(2005), the pure monetary policy and central bank information shocks of
+Jarocinski and Karadi (2020) <doi:10.1257/mac.20180090>, the
+informationally-robust shock of Miranda-Agrippino and Ricco (2021)
+<doi:10.1257/mac.20180124>, and the shadow federal funds rate of Wu and Xia
+(2016) <doi:10.1111/jmcb.12300>; for the UK, the UK Monetary Policy Event-Study
+Database of Braun, Miranda-Agrippino, and Saha (2025)
+<doi:10.1016/j.jmoneco.2024.103645>, the high-frequency surprise of
+Cesa-Bianchi, Thwaites, and Vicondoa (2020)
+<doi:10.1016/j.euroecorev.2020.103375>, and the narrative shock of Cloyne and
+Hurtgen (2016) <doi:10.1257/mac.20150093>; for Australia, the three-component
+RBA surprise of Hambur and Haque (2023) <doi:10.1111/1475-4932.12786> and the
+credit-spread-augmented RBA narrative shock of Beckers (2020).  Helpers support
+date alignment, frequency conversion, and shock cumulation.  All data is
+bundled; no runtime network access is required.")
+    (license license:expat)))
 
 (define-public r-mpsem
   (package
@@ -15743,6 +15885,32 @@ publication in the journal Landscape Ecology.  Detailed references will be
 updated here once those are known.")
     (license license:gpl3)))
 
+(define-public r-mori
+  (package
+    (name "r-mori")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mori" version))
+       (sha256
+        (base32 "091k3vnxgrizp6rgmqmn6rvyhsjnz74b9xcyzpwn1285p3h556n2"))))
+    (properties `((upstream-name . "mori")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://shikokuchuo.net/mori/")
+    (synopsis "Shared Memory for R Objects")
+    (description
+     "Share R objects across processes on the same machine via a single copy in POSIX
+shared memory (Linux, @code{macOS}) or a Win32 file mapping (Windows).  Every
+process reads from the same physical pages through the R Alternative
+Representation ('ALTREP') framework, giving lazy, zero-copy access.  Shared
+objects serialize compactly as their shared memory name rather than their full
+contents.")
+    (license license:expat)))
+
 (define-public r-morestopwords
   (package
     (name "r-morestopwords")
@@ -17472,13 +17640,13 @@ is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
 (define-public r-moewishart
   (package
     (name "r-moewishart")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moewishart" version))
        (sha256
-        (base32 "1lkrfy1jsjpfqbza88212a7marcygqjydf09ach22hq66al0qa98"))))
+        (base32 "06hvb5w1ql9dzkvbclhg1sdngrwy061qlr3jzbynrzn8fq4p45mq"))))
     (properties `((upstream-name . "moewishart")))
     (build-system r-build-system)
     (arguments
@@ -25082,13 +25250,13 @@ with customisable distance metrics, following Anderson (2001)
 (define-public r-mixtox
   (package
     (name "r-mixtox")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixtox" version))
        (sha256
-        (base32 "1lca26s80f92c18wkpp5gs2ifylnyqyg933w7r5ir3xvsfbk0lfh"))))
+        (base32 "0bns25y2vjx8rp0ix9r2lnf14r5gf9dynizcyn06xak2yqq34314"))))
     (properties `((upstream-name . "mixtox")))
     (build-system r-build-system)
     (arguments
@@ -28407,13 +28575,13 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
 (define-public r-mirdd
   (package
     (name "r-mirdd")
-    (version "0.1.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIRDD" version))
        (sha256
-        (base32 "1m17rrvki6cs5g9axksbgz88l4j48x2zfbhfjl5m9n752s962n5x"))))
+        (base32 "0lrzfkzp0wh1hnp3vqn8bkqjm54mjrrp3q2sff1k3py3dgbdxd36"))))
     (properties `((upstream-name . "MIRDD")))
     (build-system r-build-system)
     (arguments
@@ -28424,10 +28592,12 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
     (synopsis
      "Diagnostic Tool by Multiple Imputation for Regression Discontinuity Designs")
     (description
-     "Estimates local average treatment effects based on regression discontinuity
-designs (RDD) and multiple imputation regression discontinuity designs (MIRDD).
-It provides diagnostic tools for RDD by comparing results with those from MIRDD,
-as proposed in Takahashi (2023) <doi:10.1080/03610918.2021.1960374>.")
+     "Estimates average treatment effects at the cutoff based on sharp regression
+discontinuity designs (RDD) and multiple imputation regression discontinuity
+designs (MIRDD).  It provides diagnostic tools for RDD by comparing results with
+those from MIRDD, as proposed in Takahashi (2023)
+<doi:10.1080/03610918.2021.1960374>.  The package includes datasets from
+Takahashi (2023).")
     (license license:gpl3)))
 
 (define-public r-mipplot
@@ -37835,6 +38005,41 @@ sets are combined.  Package supports Gaussian, binomial, Poisson and Cox PH
 models.")
     (license license:gpl2)))
 
+(define-public r-metafrontier
+  (package
+    (name "r-metafrontier")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metafrontier" version))
+       (sha256
+        (base32 "13lgkif4my97qwr62cyh0a86lk789wwazbjg6ch2mxarrjw2gm9d"))))
+    (properties `((upstream-name . "metafrontier")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-lpsolveapi r-formula))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/iik1/metafrontier")
+    (synopsis
+     "Analysis of Metafrontier Models for Efficiency and Productivity")
+    (description
+     "This package implements metafrontier production function models for estimating
+technical efficiencies and technology gaps for firms operating under different
+technologies.  Supports both stochastic frontier analysis (SFA) and data
+envelopment analysis (DEA) based metafrontiers.  Includes the deterministic
+metafrontier of Battese, Rao, and O'Donnell (2004)
+<doi:10.1023/B:PROD.0000012454.06094.29>, the stochastic metafrontier of Huang,
+Huang, and Liu (2014) <doi:10.1007/s11123-014-0402-2>, and the metafrontier
+Malmquist productivity index of O'Donnell, Rao, and Battese (2008)
+<doi:10.1007/s00181-007-0119-4>.  Additional features include panel SFA with
+time-varying inefficiency, bootstrap confidence intervals for technology gap
+ratios, latent class metafrontier estimation via the EM algorithm, Murphy-Topel
+corrected standard errors, and ggplot2 visualisation methods.")
+    (license license:gpl3+)))
+
 (define-public r-metaforest
   (package
     (name "r-metaforest")
@@ -41797,6 +42002,35 @@ scoring function is vectorized by document, and scores for multiple documents
 are computed in parallel via @code{OpenMP}'.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
+(define-public r-meanimiles
+  (package
+    (name "r-meanimiles")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Meanimiles" version))
+       (sha256
+        (base32 "16srf5ip3p99c79l5yp6kqjghq7jrmskpd1ncmysm9c1zy0m2rmv"))))
+    (properties `((upstream-name . "Meanimiles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fitdistrplus r-copula))
+    (home-page "https://github.com/DieterDebrauwer/Meanimiles")
+    (synopsis "Estimation of Meanimiles")
+    (description
+     "This package provides a comprehensive suite of estimation tools for meanimiles,
+a general class of (risk) functionals.  This package includes nonparametric
+estimators for univariate meanimile evaluation, copula-based estimation for
+portfolio risk aggregation (full parametric, semiparametric, and nonparametric),
+and novel estimators for meanimiles in regression settings.  Following the
+articles D. Debrauwer, I. Gijbels, and K. Herrmann (2025)
+<doi:10.1214/25-EJS2391>, D. Debrauwer and I. Gijbels (2026)
+<doi:10.1007/s00184-026-01022-9>.")
+    (license license:gpl3+)))
+
 (define-public r-meaanalysis
   (package
     (name "r-meaanalysis")
@@ -43689,28 +43923,30 @@ and Stephens (1994) <doi:10.2307/2986119>.")
 (define-public r-mcount
   (package
     (name "r-mcount")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcount" version))
        (sha256
-        (base32 "1l42d4xd2xyvgzvc8sj59qsnpfn2k8x57dqv4bx9yschm25hspdd"))))
+        (base32 "0n9zk3frghhmlby6a08mb084gxg5l1c26rpnd6zdglxwky15wjy9"))))
     (properties `((upstream-name . "mcount")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-bbmle))
+    (propagated-inputs (list r-rootsolve r-robustbase r-boot-pval r-boot
+                             r-bbmle))
     (home-page "https://cran.r-project.org/package=mcount")
     (synopsis "Marginalized Count Regression Models")
     (description
-     "Implementation of marginalized models for zero-inflated count data.  This
-package provides a tool to implement an estimation algorithm for the
-marginalized count models, which directly makes inference on the effect of each
-covariate on the marginal mean of the outcome.  The method involves the
-marginalized zero-inflated Poisson model described in Long et al. (2014)
-<doi:10.1002/sim.6293>.")
+     "Implementation of marginalized models for zero-inflated count data.  The package
+provides tools to estimate marginalized count regression models for direct
+inference on the effect of covariates on the marginal mean of the outcome.  The
+methods include the marginalized zero-inflated Poisson (MZIP) model described in
+Long et al. (2014) <doi:10.1002/sim.6293> and the marginalized zero- and
+N-inflated binomial (MZNIB) model, which extends marginalized modeling to
+fractional count outcomes with boundary inflation at zero and the upper limit.")
     (license license:gpl3)))
 
 (define-public r-mcompanion
@@ -49080,6 +49316,40 @@ generate thresholds for binary masks.")
      "Create vectors with sticky flags for elements that should not be displayed.
 Numeric vectors have basic subset and arithmetic methods implemented.")
     (license license:expat)))
+
+(define-public r-maskedhaz
+  (package
+    (name "r-maskedhaz")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maskedhaz" version))
+       (sha256
+        (base32 "1wjmvq4r5cf0iw9czmfsrk6w8jxcpsqydn29wa5f6m7kgi6m7my6"))))
+    (properties `((upstream-name . "maskedhaz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-serieshaz
+                             r-numderiv
+                             r-maskedcauses
+                             r-likelihood-model
+                             r-generics
+                             r-flexhaz
+                             r-algebraic-dist))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/maskedhaz")
+    (synopsis
+     "Masked-Cause Likelihood Models for Series Systems with Arbitrary Hazard Components")
+    (description
+     "Likelihood-based inference for series systems with masked component cause of
+failure, using arbitrary dynamic failure rate component distributions.  Computes
+log-likelihood, score, Hessian, and maximum likelihood estimates for masked data
+satisfying conditions C1, C2, C3 under general component hazard functions.
+Implements the series_md protocol defined in the maskedcauses package.")
+    (license license:gpl3+)))
 
 (define-public r-maskedcauses
   (package

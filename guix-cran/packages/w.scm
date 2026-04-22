@@ -8096,6 +8096,41 @@ climate data (licensed under CC BY 4.0,
 <https://www.longpaddock.qld.gov.au/silo/>).")
     (license license:expat)))
 
+(define-public r-wdsmatch
+  (package
+    (name "r-wdsmatch")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wdsmatch" version))
+       (sha256
+        (base32 "0qyiwfzhyykmppnc0km23nn9ssgwabcc8vkxfv6ikaf2a36d6dbi"))))
+    (properties `((upstream-name . "wdsmatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/ykzeng-yale/wdsmatch")
+    (synopsis
+     "Weighted Double Score Matching for Survey-Weighted Causal Inference")
+    (description
+     "This package implements weighted double score matching (WDSM) for estimating
+population-level causal effects from complex survey data.  Combines propensity
+scores and prognostic scores with survey design weights for matching,
+survey-weighted imputation within match sets, and Hajek normalization to target
+the population average treatment effect (PATE) and the population average
+treatment effect on the treated (PATT).  Supports both retrospective
+(treatment-dependent) and prospective (treatment-independent) sampling designs.
+Achieves double robustness: consistent estimation when either the propensity
+score or prognostic score model is correctly specified.  Provides polynomial
+sieve bias correction and linearization-based multinomial bootstrap variance
+estimation that preserves the survey-weighted matching structure without
+re-matching.  Methods are described in Zeng, Tong, Tong, Lu, Mukherjee, and Li
+(2026, under review) \"Where to weight? Estimating population causal effects with
+weighted double score matching in complex surveys\".")
+    (license license:gpl3)))
+
 (define-public r-wdpar
   (package
     (name "r-wdpar")
@@ -8220,6 +8255,58 @@ and related asymptotic tests for independence.  Implemented measures are the
 Pearson correlation, Spearman's rho, Kendall's tau, Blomqvist's beta, and
 Hoeffding's D; see, e.g., Nelsen (2006) <doi:10.1007/0-387-28678-0> and
 Hollander et al. (2015, ISBN:9780470387375).")
+    (license license:expat)))
+
+(define-public r-wdiexplorer
+  (package
+    (name "r-wdiexplorer")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wdiexplorer" version))
+       (sha256
+        (base32 "01cjjkwf5x4i196rjs3kclr07cdw0b6hghrk6cbvvpfhvwrryky3"))))
+    (properties `((upstream-name . "wdiexplorer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wdi
+                             r-tsibble
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-patchwork
+                             r-ggtext
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggiraph
+                             r-ggdist
+                             r-forcats
+                             r-feasts
+                             r-fabletools
+                             r-dplyr
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Oluwayomi-Olaitan/wdiexplorer")
+    (synopsis "Explore World Development Indicators Data")
+    (description
+     "This package provides a workflow for exploring World Development Indicators
+(WDI) country-level panel data.  It downloads WDI data using the WDI package and
+computes diagnostic indices that capture the temporal behaviour of the data by
+incorporating the grouping structure of the data.  The set of diagnostic indices
+implemented includes variation features, trend and shape features, and
+sequential temporal features.  This method is described in Akinfenwa, Cahill,
+and Hurley (2025) \"'wdiexplorer': An R package Designed for Exploratory Analysis
+of World Development Indicators (WDI) Data\"
+<doi:10.48550/@code{arXiv.2511.07027>}.  We adapt the clustering diagnostics and
+visualisation methodology described in Rousseeuw (1987)
+<doi:10.1016/0377-0427(87)90125-7> and selected time series features from
+Hyndman and Athanasopoulos (2021) \"Forecasting: Principles and Practice\"
+<https://otexts.com/fpp3/>.")
     (license license:expat)))
 
 (define-public r-wdief
@@ -8639,6 +8726,34 @@ cubic regression splines.")
 Centre for Demography and Human Capital Data Explorer
 <https://dataexplorer.wittgensteincentre.org/>.")
     (license license:gpl3)))
+
+(define-public r-wcc
+  (package
+    (name "r-wcc")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wcc" version))
+       (sha256
+        (base32 "0w3b5yz57ap23rkyxm6plsihljf8k66yz359x491nsfb1gibd4w0"))))
+    (properties `((upstream-name . "wcc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pheatmap r-gtable))
+    (home-page "https://cran.r-project.org/package=wcc")
+    (synopsis "Windowed Cross Correlation")
+    (description
+     "Calculates Windowed Cross Correlation for pairs of time series.  Provides
+support for surrogate analysis for nonparametric test of significance.
+Calculates aggregate statistics over a range of parameter values.  Plots the
+results as Windowed Cross Correlation plots and heat maps.  The method is
+described in \"Boker, S. M., Rotondo, J. L., Xu, M., & King, K. (2002).  Windowed
+cross-correlation and peak picking for the analysis of variability in the
+association between behavioral time series.  Psychological Methods, 7(3), 338.\".")
+    (license license:asl2.0)))
 
 (define-public r-wbwdi
   (package

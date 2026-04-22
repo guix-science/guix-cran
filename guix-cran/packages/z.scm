@@ -56,6 +56,32 @@ density functions, cumulative distribution functions, Kolmogorov-Smirnov tests,
 principal component analysis plots, and prediction plots.")
     (license license:expat)))
 
+(define-public r-zoter
+  (package
+    (name "r-zoter")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zoteR" version))
+       (sha256
+        (base32 "1vy7h246zd75zy0jkfgjpqp34bc5zjhd8pls6byb9niw1vxzy47v"))))
+    (properties `((upstream-name . "zoteR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-rstudioapi r-jsonlite r-httr2 r-clipr))
+    (home-page "https://cran.r-project.org/package=zoteR")
+    (synopsis "R Interface to 'Zotero' via Better BibTeX")
+    (description
+     "Connects R to Zotero through the Better @code{BibTeX} for Zotero connector
+<https://retorque.re/zotero-better-bibtex/>.  Provides functions to insert
+in-text citations and bibliography entries directly into documents, detect
+citations already present in R Markdown and Quarto files, and synchronise
+bibliography files.  Includes an RStudio addin for interactive use.")
+    (license license:gpl3+)))
+
 (define-public r-zoomr
   (package
     (name "r-zoomr")
@@ -202,6 +228,40 @@ matroids is included, which supports matroids with rank 3, 2, and 1.
 Optimization methods are taken from Heckbert (1985)
 <https://www.cs.cmu.edu/~ph/zono.ps.gz>.")
     (license license:gpl2+)))
+
+(define-public r-zonationr
+  (package
+    (name "r-zonationr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZonationR" version))
+       (sha256
+        (base32 "0fcqyjdnq4yyw3l90xavzn618kfkvmvwix87qk510wsm2dgsb6zq"))))
+    (properties `((upstream-name . "ZonationR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-terra
+                             r-rlang
+                             r-ggspatial
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/thiago-cav/ZonationR")
+    (synopsis
+     "Interface to 'Zonation' for Reproducible Prioritization Workflows")
+    (description
+     "An interface to Zonation software, enabling users to run spatial conservation
+prioritization workflows in R'.  It streamlines input preparation, execution,
+and post-processing, while supporting reproducibility and lowering the entry
+barrier for learning, teaching, and research in conservation planning.  The
+methods implemented in Zonation are described in Moilanen et al. (2022)
+<doi:10.1111/2041-210X.13819>.")
+    (license license:gpl3+)))
 
 (define-public r-zoid
   (package

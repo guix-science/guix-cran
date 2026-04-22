@@ -4130,6 +4130,33 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
 <doi:10.1017/thg.2019.2>.")
     (license license:gpl3)))
 
+(define-public r-umweltapir
+  (package
+    (name "r-umweltapir")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "umweltapir" version))
+       (sha256
+        (base32 "0r78fl8d1jlhg36kgj1nvhsnjl0vyj04cmx9dcgac0qymm12pfd0"))))
+    (properties `((upstream-name . "umweltapir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-jsonlite r-httr2))
+    (home-page
+     "https://gitlab.opencode.de/umwelt-info/packages/-/tree/main/umweltapir?ref_type=heads")
+    (synopsis "Access Umwelt.Info API")
+    (description
+     "This package provides an R-based access to the datasets including their
+resources from the portal <https://umwelt.info>.  The package allows for an easy
+integration of those datasets into your R-based workflows.  The functionality of
+the package mirrors the web-based access as provided at <https://umwelt.info>.
+You can use the same queries and get the same datasets by accessing our API.")
+    (license (list license:expat license:asl2.0))))
+
 (define-public r-umpire
   (package
     (name "r-umpire")
@@ -4587,6 +4614,36 @@ Data Dashboard API. The package was originally based on the ukcovid19 package by
 Pouria Hadjibagheri and has been substantially rewritten and extended.  For more
 information on the API, see
 <https://ukhsa-dashboard.data.gov.uk/access-our-data>.")
+    (license license:expat)))
+
+(define-public r-ukhousing
+  (package
+    (name "r-ukhousing")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ukhousing" version))
+       (sha256
+        (base32 "0rzl1qmj8xxiwyhmhcimvsvk7343x6ll7zc6d4dmy39p5q8iql8p"))))
+    (properties `((upstream-name . "ukhousing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2 r-cli))
+    (home-page "https://github.com/charlescoverdale/ukhousing")
+    (synopsis "Access UK Housing Data from Land Registry, EPC, and Planning")
+    (description
+     "Fetch UK housing data from official sources.  Access the UK House Price Index
+and Price Paid Data from HM Land Registry <https://landregistry.data.gov.uk/>,
+domestic and non-domestic Energy Performance Certificates from the MHCLG Open
+Data service <https://epc.opendatacommunities.org/>, and planning application,
+brownfield land, and local plan data from planning.data.gov.uk
+<https://www.planning.data.gov.uk/>.  Data covers all 441 UK local authorities
+from 1995 to the present.  Functions accept flexible filters (postcode, local
+authority, property type, date range) and return tidy data frames.  Downloaded
+data is cached locally for subsequent calls.")
     (license license:expat)))
 
 (define-public r-ukgrid

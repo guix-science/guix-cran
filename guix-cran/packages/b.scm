@@ -581,6 +581,33 @@ minimal importance difference, stratification, non-prioritized endpoints (O
 Brien test), and can handle right-censoring and competing-risks.")
     (license license:gpl3)))
 
+(define-public r-buttr
+  (package
+    (name "r-buttr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ButtR" version))
+       (sha256
+        (base32 "05ybbxncaz6l760aq365i4f5blqdm5ky64km67xwv8fd7166jmwc"))))
+    (properties `((upstream-name . "ButtR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://cran.r-project.org/package=ButtR")
+    (synopsis "Download and Extract Data from the 'OzButterflies' Database")
+    (description
+     "This package provides tools to download and extract data from the
+@code{OzButterflies} Database <doi:10.5281/zenodo.19019034>, which contains
+reflectance spectra, calibrated photographs, and cytochrome c oxidase subunit I
+(COI) sequences of Australian butterflies.  The main function
+@code{get_Oz_butterflies()} downloads the database and extracts selected files
+to a specified directory using user-defined filters.")
+    (license license:expat)))
+
 (define-public r-butterflyoptions
   (package
     (name "r-butterflyoptions")
@@ -3577,13 +3604,13 @@ trials with the objective of equivalence assessment.")
 (define-public r-bs4dashkit
   (package
     (name "r-bs4dashkit")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bs4Dashkit" version))
        (sha256
-        (base32 "1l7lxacgm6zl7j1pb0nn7b8d978m2yfrw14ray397ry34xazbx8j"))))
+        (base32 "0lhb61zmmky2435ikvmxzpz2d8562d2hja7ashxqs483b9pxvbw6"))))
     (properties `((upstream-name . "bs4Dashkit")))
     (build-system r-build-system)
     (arguments
@@ -5688,6 +5715,39 @@ and @code{JavaScript} commands.  This package relies on the X toolkit ('XTK',
 <https://github.com/xtk/X#readme>).")
     (license license:gpl2)))
 
+(define-public r-brainnettest
+  (package
+    (name "r-brainnettest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BrainNetTest" version))
+       (sha256
+        (base32 "0jdggphp2n3ak0fgcgrgzs8y0rlxddzw8v9iyysbk139mk9by518"))))
+    (properties `((upstream-name . "BrainNetTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mmaximiliano/BrainNetTest")
+    (synopsis "Hypothesis Testing for Populations of Brain Networks")
+    (description
+     "Non-parametric hypothesis testing for populations of brain networks represented
+as graphs, following the L1-distance ANOVA framework of Fraiman and Fraiman
+(2018) <doi:10.1038/s41598-018-21688-0>.  The package builds on this
+nonparametric graph-comparison framework, extending it with procedures for
+edge-level inference and identification of the specific connections driving
+group differences.  In particular, it provides utilities to compute central
+(mean) graphs, pairwise Manhattan distances between adjacency matrices, the
+group test statistic T, and a fast permutation procedure to identify the
+critical edges that drive between-group differences.  Helper functions to
+generate synthetic community-structured graphs and to visualise brain networks
+with communities are also included.")
+    (license license:expat)))
+
 (define-public r-brainkcca
   (package
     (name "r-brainkcca")
@@ -6477,13 +6537,13 @@ options.")
 (define-public r-bpca
   (package
     (name "r-bpca")
-    (version "1.3-8")
+    (version "1.3-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpca" version))
        (sha256
-        (base32 "0ybwab06ggy9zkfpnhv5qcij0hnrg08a6p41fvxw81v8bflrwjf9"))))
+        (base32 "1f2cxnqwmfbz8r0w92iq3p2i4h817xms7zy67bsg5hqzkjq07avv"))))
     (properties `((upstream-name . "bpca")))
     (build-system r-build-system)
     (arguments
@@ -28431,6 +28491,41 @@ evolution MCMCs, two DREAM MCMCs, and a sequential Monte Carlo (SMC) particle
 filter.")
     (license license:gpl3)))
 
+(define-public r-bayesiansurpriser
+  (package
+    (name "r-bayesiansurpriser")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesiansurpriser" version))
+       (sha256
+        (base32 "0cxh1slkkdr21463z165f689w428jlx812vain86p0w1mq2l0rhm"))))
+    (properties `((upstream-name . "bayesiansurpriser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-mass
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://dshkol.github.io/bayesiansurpriser/")
+    (synopsis "Bayesian Surprise for De-Biasing Thematic Maps")
+    (description
+     "This package implements Bayesian Surprise methodology for data visualization,
+based on Correll and Heer (2017) <doi:10.1109/TVCG.2016.2598839> \"Surprise!
+Bayesian Weighting for De-Biasing Thematic Maps\".  Provides tools to weight
+event data relative to spatio-temporal models, highlighting unexpected patterns
+while de-biasing against known factors like population density or sampling
+variation.  Integrates seamlessly with sf for spatial data and ggplot2 for
+visualization.  Supports temporal/streaming data analysis.")
+    (license license:expat)))
+
 (define-public r-bayesianreasoning
   (package
     (name "r-bayesianreasoning")
@@ -28469,6 +28564,52 @@ sensitivity, specificity, and prevalence.  See Akobeng, A.K. (2007)
 technical concepts and Navarrete et al. (2015) for a practical explanation about
 the importance of their understanding <doi:10.3389/fpsyg.2015.01327>.")
     (license license:cc0)))
+
+(define-public r-bayesianqdm
+  (package
+    (name "r-bayesianqdm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianQDM" version))
+       (sha256
+        (base32 "0hfwn41ja76xsb7bqwwkb49vbffxgxnpdiskrpbm592l3aycc2sv"))))
+    (properties `((upstream-name . "BayesianQDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-gridextra r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://gosukehommaEX.github.io/BayesianQDM/")
+    (synopsis
+     "Bayesian Quantitative Decision-Making Framework for Binary and Continuous Endpoints")
+    (description
+     "This package provides comprehensive methods to calculate posterior
+probabilities, posterior predictive probabilities, and Go/@code{NoGo/Gray}
+decision probabilities for quantitative decision-making under a Bayesian
+paradigm in clinical trials.  The package supports both single and two-endpoint
+analyses for binary and continuous outcomes, with controlled, uncontrolled, and
+external designs.  For single continuous endpoints, three calculation methods
+are available: numerical integration (NI), Monte Carlo simulation (MC), and
+Moment-Matching approximation (MM).  For two continuous endpoints, a bivariate
+Normal-Inverse-Wishart conjugate model is implemented with MC and MM methods.
+For two binary endpoints, a Dirichlet-multinomial model is implemented.
+External designs incorporate historical data through power priors using exact
+conjugate representations (Normal-Inverse-Chi-squared for single continuous,
+Normal-Inverse-Wishart for two continuous, and Dirichlet for binary endpoints),
+enabling closed-form posterior computation without Markov chain Monte Carlo
+(MCMC) sampling.  This approach significantly reduces computational burden while
+preserving complete Bayesian rigor.  The package also provides grid-search
+functions to find optimal Go and @code{NoGo} thresholds that satisfy
+user-specified operating characteristic criteria for all supported endpoint
+types and study designs.  S3 @code{print()} and @code{plot()} methods are
+provided for all decision probability classes, enabling formatted display and
+visualisation of Go/@code{NoGo/Gray} operating characteristics across treatment
+scenarios.  See Kang, Yamaguchi, and Han (2026)
+<doi:10.1080/10543406.2026.2655410> for the methodological framework.")
+    (license license:gpl2+)))
 
 (define-public r-bayesianpower
   (package
@@ -28905,6 +29046,45 @@ posterior estimation with built-in diagnostic metrics.  While based on
 established PCA (Jolliffe, 2002) <doi:10.1007/b98835> and Bayesian principles
 (Gelman et al., 2013) <doi:10.1201/b16018>, the specific integration for
 economic disaggregation represents an original methodological contribution.")
+    (license license:expat)))
+
+(define-public r-bayesiandeb
+  (package
+    (name "r-bayesiandeb")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianDEB" version))
+       (sha256
+        (base32 "0q8h2j3z8zrdgiy8jzxb1kn9mbhv6mqhy4dx1r1wqq37955zq13s"))))
+    (properties `((upstream-name . "BayesianDEB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rlang
+                             r-posterior
+                             r-ggplot2
+                             r-desolve
+                             r-cli
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sciom/BayesianDEB")
+    (synopsis "Bayesian Dynamic Energy Budget Modelling")
+    (description
+     "This package provides a Bayesian framework for Dynamic Energy Budget (DEB)
+modelling via Stan'.  Implements the standard DEB model of Kooijman (2010,
+<doi:10.1017/CBO9780511805400>) as a state-space model with Hamiltonian Monte
+Carlo inference (Carpenter et al., 2017, <doi:10.18637/jss.v076.i01>).  Includes
+individual-level growth models, growth-reproduction models, hierarchical
+multi-individual models with partial pooling, and toxicokinetic-toxicodynamic
+(TKTD) models for ecotoxicology following the DEBtox framework (Jager et al.,
+2006, <doi:10.1007/s10646-006-0060-x>).  Supports prior specification from
+biological knowledge, convergence diagnostics (Vehtari et al., 2021,
+<doi:10.1214/20-BA1221>), posterior predictive checks, derived quantity
+estimation, and visualisation via ggplot2'.")
     (license license:expat)))
 
 (define-public r-bayesian

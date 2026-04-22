@@ -6506,6 +6506,35 @@ dashboard built with shiny'.  The HNSW method is described by Malkov and
 Yashunin (2018) <doi:10.1109/TPAMI.2018.2889473>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-vectra
+  (package
+    (name "r-vectra")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vectra" version))
+       (sha256
+        (base32 "1r57zw5sw6wg883wh88bsc8psxj4cxvlcyvg67267jm2hikmcvy6"))))
+    (properties `((upstream-name . "vectra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/vectra/")
+    (synopsis "Columnar Query Engine for Larger-than-RAM Data")
+    (description
+     "This package provides a minimal columnar query engine with lazy execution on
+datasets larger than RAM. Provides dplyr'-like verbs @code{(filter()},
+@code{select()}, @code{mutate()}, @code{group_by()}, @code{summarise()}, joins,
+window functions) and common aggregations @code{(n()}, @code{sum()},
+@code{mean()}, @code{min()}, @code{max()}, @code{sd()}, @code{first()},
+@code{last()}) backed by a pure C11 pull-based execution engine and a custom
+on-disk format ('.vtr').")
+    (license license:expat)))
+
 (define-public r-vectorwavelet
   (package
     (name "r-vectorwavelet")
@@ -7459,13 +7488,13 @@ data.  For details on the VCCP methodology, please see Xiong & Cribben (2021).")
 (define-public r-vcbart
   (package
     (name "r-vcbart")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VCBART" version))
        (sha256
-        (base32 "1d38426gnvr5mll5gqs5g5pvvsq8gzhwqmz8xnp1khk76hw1nl90"))))
+        (base32 "02k6vmkfq91yg487flfkj035wg8rnzm63pj19jgmnjbk7nqwb908"))))
     (properties `((upstream-name . "VCBART")))
     (build-system r-build-system)
     (arguments
@@ -7483,7 +7512,7 @@ additional variables known as effect modifiers, by approximating the coefficient
 functions with Bayesian Additive Regression Trees.  Implements a
 Metropolis-within-Gibbs sampler to simulate draws from the posterior over
 coefficient function evaluations.  VC models with independent observations or
-repeated observations can be fit.  For more details see Deshpande et al. (2024)
+repeated observations can be fit.  For more details see Deshpande et al. (2026)
 <doi:10.1214/24-BA1470>.")
     (license license:gpl3+)))
 

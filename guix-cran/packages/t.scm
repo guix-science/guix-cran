@@ -25,6 +25,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -580,6 +581,43 @@ Functions are provided to prepare the raw data for estimation, to fit the model
 and to plot the two-dimensional smooth hazard.  Extension to a competing risks
 model are implemented.  For details about the method please refer to Carollo et
 al. (2025) <doi:10.1002/sim.10297>.")
+    (license license:gpl3)))
+
+(define-public r-twostepsdfm
+  (package
+    (name "r-twostepsdfm")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TwoStepSDFM" version))
+       (sha256
+        (base32 "1dnvbsbfqzhlqi3kcs5bjz687bik3q7f99vc7rw1bjvmk1y6wcj4"))))
+    (properties `((upstream-name . "TwoStepSDFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-withr
+                             r-rdpack
+                             r-rcppeigen
+                             r-rcpp
+                             r-patchwork
+                             r-lubridate
+                             r-ggplot2
+                             r-foreach
+                             r-dosnow
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TwoStepSDFM")
+    (synopsis
+     "Estimate a Sparse Mixed Frequency Gaussian Factor Model Using a Two-Step Procedure")
+    (description
+     "Estimate a sparse Gaussian state-space model with mixed frequency data via
+sparse principal components analysis and the Kalman filter and smoother.  For
+more details see Franjic and Schweikert (2024) <doi:10.2139/ssrn.4733872>.")
     (license license:gpl3)))
 
 (define-public r-twostepclogit
@@ -6289,6 +6327,32 @@ introduced by Karlsson (2006) <doi:10.1007/s00184-005-0023-x>.")
     (description
      "Estimation of models for truncated Gaussian variables by maximum likelihood.")
     (license license:gpl2+)))
+
+(define-public r-truncproxy
+  (package
+    (name "r-truncproxy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "truncProxy" version))
+       (sha256
+        (base32 "1i9x7ldk0bxi0ss8rlp91vra2f4r606r3iv6zp1ng1gpy6gkfyhi"))))
+    (properties `((upstream-name . "truncProxy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/wangyuyao98/truncProxy_weighting")
+    (synopsis "Proximal Weighting Estimation for Dependent Left Truncation")
+    (description
+     "This package implements proximal weighting estimators for the expectation of an
+arbitrarily transformed event time under dependent left truncation, with
+optional inverse probability of censoring weighting to handle right censoring.
+The methods leverage proxy variables to handle dependent left truncation in
+settings where dependence-inducing factors are not fully observed.")
+    (license license:gpl3)))
 
 (define-public r-truncnormbayes
   (package
@@ -19511,13 +19575,13 @@ documentation here for more detail: <https://gtfs.org/>.")
 (define-public r-tidytlg
   (package
     (name "r-tidytlg")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytlg" version))
        (sha256
-        (base32 "04sdcqdwhifxb9d37i6zsmh70sjks1dh5f37wcyhy0p89p6qnaky"))))
+        (base32 "1255fk1bd6cny7vjvkwzj6xah64ynzdwxfz772iprwdjbld5f2bz"))))
     (properties `((upstream-name . "tidytlg")))
     (build-system r-build-system)
     (arguments
@@ -20451,13 +20515,13 @@ documentation and examples.")
 (define-public r-tidyprompt
   (package
     (name "r-tidyprompt")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyprompt" version))
        (sha256
-        (base32 "0mb5id9qq4shv31y2j96iayzvsbh1k8gdc0s3yhcxw1xph2wdbmd"))))
+        (base32 "0lpb5b160773wax3sjvk4dvqfscyq01ccj7xanq56qmxpkmkryfc"))))
     (properties `((upstream-name . "tidyprompt")))
     (build-system r-build-system)
     (arguments
@@ -31807,13 +31871,13 @@ and local taxonomic assignment.")
 (define-public r-taxodist
   (package
     (name "r-taxodist")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxodist" version))
        (sha256
-        (base32 "1xvh7zym2p2vxj20flbzsc13nfvfasjlr5410m8wvk47v2gjjhyc"))))
+        (base32 "0inc7xrimwc9h96p1k1npfrv840vh1q9vlplf9ash5vh3prnj5gx"))))
     (properties `((upstream-name . "taxodist")))
     (build-system r-build-system)
     (arguments
@@ -31829,10 +31893,13 @@ data retrieved from The Taxonomicon <http://taxonomicon.taxonomy.nl>, a
 comprehensive curated classification of all life based on Systema Naturae 2000
 (Brands, 1989 <http://taxonomicon.taxonomy.nl>).  Given any two taxon names,
 retrieves their full lineages, identifies the most recent common ancestor
-(MRCA), and computes a dissimilarity index based on the depth of the most recent
-common ancestor.  Supports individual distance queries, pairwise distance
-matrices, clade filtering, and lineage utilities.")
-    (license license:gpl3)))
+(MRCA), and computes a dissimilarity index based on lineage depth.  Outputs
+native dist objects, enabling direct integration with the R statistical
+ecosystem for hierarchical clustering, principal coordinate analysis
+(P@code{CoA}), and multivariate ecological analyses.  Supports individual
+distance queries, pairwise distance matrices, clade filtering, and lineage
+utilities.")
+    (license license:gpl3+)))
 
 (define-public r-taxnames
   (package
@@ -33172,6 +33239,37 @@ visual insights into the nature, timing and quality of time-aligned annotations
 in conversational corpora.  For more details, see Dingemanse et al., (2022)
 <doi:10.18653/v1/2022.acl-long.385>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-talib
+  (package
+    (name "r-talib")
+    (version "0.9-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "talib" version))
+       (sha256
+        (base32 "0scj90haslvrrmzlv5z3q0imqwjama5smh4s6mfvw0z809hqdc4x"))))
+    (properties `((upstream-name . "talib")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://serkor1.github.io/ta-lib-R/")
+    (synopsis
+     "Interface to 'TA-Lib' for Technical Analysis and Candlestick Patterns")
+    (description
+     "Interface to the TA-Lib (Technical Analysis Library) C library, providing access
+to 150+ indicators (e.g. Average Directional Movement Index (ADX), Moving
+Average Convergence Divergence (MACD), Relative Strength Index (RSI), Stochastic
+Oscillator, Bollinger Bands), candlestick pattern recognition, and
+rolling-window utilities.  Core computations are implemented in C for fast
+Open-High-Low-Close-Volume (OHLCV) time-series feature engineering and
+rule-based signal generation, with optional interactive visualization via
+plotly'.")
+    (license license:bsd-3)))
 
 (define-public r-taipan
   (package

@@ -4200,6 +4200,32 @@ functions are currently implemented.  Such models are described in Manuguerra et
 al (2020) <doi:10.18637/jss.v096.i08>.")
     (license license:gpl2+)))
 
+(define-public r-ordinalclust
+  (package
+    (name "r-ordinalclust")
+    (version "1.3.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalClust" version))
+       (sha256
+        (base32 "0665c4m43bp88lwmcblp6aks867fjxp7kalyrpm5pdi8g6f54j36"))))
+    (properties `((upstream-name . "ordinalClust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ordinalClust")
+    (synopsis "Ordinal Data Clustering, Co-Clustering and Classification")
+    (description
+     "Ordinal data classification, clustering and co-clustering using model-based
+approach with the BOS (Binary Ordinal Search) distribution for ordinal data
+(Christophe Biernacki and Julien Jacques (2016)
+<doi:10.1007/s11222-015-9585-2>).")
+    (license license:gpl2+)))
+
 (define-public r-ordinalbayes
   (package
     (name "r-ordinalbayes")
@@ -4449,6 +4475,41 @@ monotonic', increasing', decreasing order; is_constant and is_incremental test
 for the degree of ordering. `ordering` provides a numeric indication of ordering
 -2 (strictly decreasing) to 2 (strictly increasing).")
     (license license:gpl2+)))
+
+(define-public r-ordered
+  (package
+    (name "r-ordered")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordered" version))
+       (sha256
+        (base32 "0vnd2i6h3d41pl8gcldqrai3n0m205z6zby1kdz28z36h8nbnl0s"))))
+    (properties `((upstream-name . "ordered")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-parsnip
+                             r-dials
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=ordered")
+    (synopsis
+     "'parsnip' Engines and Wrappers for Ordinal Classification Models")
+    (description
+     "Bindings, methods, and tuners for using ordinal classification models with the
+parsnip and dials packages.  These include the regularized elastic net ordinal
+regression of Wurm, Hanlon, and Rathouz (2021) <doi:10.18637/jss.v099.i06> in
+@code{ordinalNet}', the ordinal classification trees of Galimberti, Soffritti,
+and Di Maso (2012) <doi:10.18637/jss.v047.i10> in @code{rpartScore}', and the
+latent variable ordinal forests of Hornung (2020)
+<doi:10.1007/s00357-018-9302-x> in @code{ordinalForest}'.")
+    (license license:expat)))
 
 (define-public r-orderanalyzer
   (package
@@ -4806,6 +4867,37 @@ object from the graph package.")
 high-performance methods for filtering, joining, and mutating data.  Ensures
 that mutations and changes to the graph are performed in place, streamlining
 your workflow for optimal productivity.")
+    (license license:expat)))
+
+(define-public r-orbitr
+  (package
+    (name "r-orbitr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orbitr" version))
+       (sha256
+        (base32 "0cx3xmdynaqzh2b1g1c27npwz9swhfgw47h8k6y650r5fqqby1b2"))))
+    (properties `((upstream-name . "orbitr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rcpp r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://orbit-r.com/")
+    (synopsis
+     "Tidy Physics Engine for Building and Visualizing Orbital Simulations")
+    (description
+     "This package provides a lightweight, fully vectorized N-body physics engine
+built for the R ecosystem.  Simulate and visualize complex orbital mechanics,
+celestial trajectories, and gravitational interactions using tidy data
+principles.  Features multiple numerical integration methods, including the
+energy-conserving velocity Verlet algorithm (Verlet (1967)
+<doi:10.1103/@code{PhysRev.159.98>}), to ensure highly stable orbital
+propagation.  Gravitational N-body methods follow Aarseth (2003,
+ISBN:0-521-43272-3).")
     (license license:expat)))
 
 (define-public r-orbital
@@ -9062,6 +9154,38 @@ generated tests match those suggested in Chang et al. (2009) and Song et al.
 (2020) <doi:10.1080/10584609.2020.1723752>.")
     (license license:lgpl2.1+)))
 
+(define-public r-oofaexp
+  (package
+    (name "r-oofaexp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OofAExp" version))
+       (sha256
+        (base32 "1w3pv615ag0m2h65w86b3bh2af13a8a5bd1cnd4hjf0fxhjjva1b"))))
+    (properties `((upstream-name . "OofAExp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-unrepx
+                             r-matrix
+                             r-mass
+                             r-gtools
+                             r-gmp
+                             r-algdesign))
+    (home-page "https://cran.r-project.org/package=OofAExp")
+    (synopsis "Order-of-Addition Experiments")
+    (description
+     "Order-of-addition experiments are often conducted to address research questions
+in many real-world studies.  This package provides a comprehensive toolbox for
+researchers and practitioners to design and analyze order-of-addition
+experiments.  Detailed comparisons and summary of all statistical methods in
+this package can be found in Tsai (2026), \"Order-of-addition experiments in R
+using @code{OofAExp}\", Journal of Quality Technology (to appear).")
+    (license license:gpl2)))
+
 (define-public r-oobcurve
   (package
     (name "r-oobcurve")
@@ -9468,6 +9592,42 @@ and plotting.  Delivers the same results as the ODRPACK Fortran implementation
 described in Boggs et al. (1989) <doi:10.1145/76909.76913>, but is implemented
 in pure R.")
     (license license:gpl2+)))
+
+(define-public r-onlinesurr
+  (package
+    (name "r-onlinesurr")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OnlineSurr" version))
+       (sha256
+        (base32 "0hh33g7n22ncwjv3vqc9baabpssgzwvf1d19wy4gzjk8apzr80d4"))))
+    (properties `((upstream-name . "OnlineSurr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rfast
+                             r-rdpack
+                             r-latex2exp
+                             r-kdglm
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://silvaneojunior.github.io/OnlineSurr/")
+    (synopsis
+     "Surrogate Evaluation for Jointly Longitudinal Outcome and Surrogate")
+    (description
+     "This package provides tools for surrogate evaluation in longitudinal studies
+using state-space models.  The package estimates treatment effects over time
+with and without adjustment for surrogate information, summarizes the proportion
+of treatment effect explained by a longitudinal surrogate, quantifies
+uncertainty via bootstrap resampling, and provides plotting and summary
+utilities for fitted models.")
+    (license license:gpl3+)))
 
 (define-public r-onlineretail
   (package
@@ -12795,6 +12955,37 @@ Cox proportional hazards, and parametric accelerated-failure-time models, with
 optional stratification by gender and age groups.")
     (license license:asl2.0)))
 
+(define-public r-odysseuspathwaymodule
+  (package
+    (name "r-odysseuspathwaymodule")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OdysseusPathwayModule" version))
+       (sha256
+        (base32 "103lh30p9j8ibzq66j16x3kx9yfqz9gyg6ld90v1hwq03f89ppld"))))
+    (properties `((upstream-name . "OdysseusPathwayModule")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sqlrender r-databaseconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OdysseusPathwayModule")
+    (synopsis "Cohort Pathway Analysis with Pre-Index Event Support")
+    (description
+     "This package provides cohort pathway analysis for Observational Medical Outcomes
+Partnership (OMOP) Common Data Model databases, including both standard
+(post-index) and pre-index pathway analyses.  The pre-index analysis identifies
+sequences of events occurring in a lookback window before the target cohort
+index date.  Built on the @code{CohortPathways} analysis framework originally
+developed by Christopher Knoll and the Observational Health Data Sciences and
+Informatics community through @code{WebAPI}'.  Methodological background and the
+originating implementation are described in
+<https://github.com/OHDSI/@code{CohortPathways>}.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-odt
   (package
     (name "r-odt")
@@ -14056,19 +14247,19 @@ formats include netcdf, Raster, .nc and .gz files.")
 (define-public r-oceanic
   (package
     (name "r-oceanic")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oceanic" version))
        (sha256
-        (base32 "09ysrq81lpws1m07i7ak7hd2kimscm5varxczqh8lxcs2sfx03m4"))))
+        (base32 "0x5fbr5mxnisgy9dbqxsjn2bw8fizlyild5qcw6ln8h1hs0m5v1p"))))
     (properties `((upstream-name . "oceanic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spdata r-sf r-maps r-ggplot2 r-broom))
+    (propagated-inputs (list r-sf r-maps r-ggplot2 r-broom))
     (home-page "https://cran.r-project.org/package=oceanic")
     (synopsis "Location Identify Tool")
     (description

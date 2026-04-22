@@ -12701,6 +12701,43 @@ by the anybadge library in python.")
 <doi:10.3390/bs12100398>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-antsnet
+  (package
+    (name "r-antsnet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AntsNet" version))
+       (sha256
+        (base32 "0ha2fa38d0923plx70736g2vmj5cz8bxbgd04qv6p25dfvasnd7g"))))
+    (properties `((upstream-name . "AntsNet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-ranger
+                             r-patchwork
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/ylevental/IsomorphismSim_Full")
+    (synopsis
+     "Unified Simulation of Isomorphisms Between Ant Colony Intelligence and Machine Learning")
+    (description
+     "This package implements the full suite of simulation, visualization, and
+analysis tools for exploring the mathematical isomorphisms between ant colony
+decision-making and three major paradigms of machine learning: random forests
+(Part I: variance reduction through decorrelation), boosting (Part II: bias
+reduction through adaptive recruitment), and neural networks (Part III:
+gradient-based generational learning).  Accompanies the trilogy \"Isomorphic
+Functionalities between Ant Colony and Ensemble Learning\" (FokouÃ©, Babbitt, and
+Levental, 2026, <doi:10.48550/@code{arXiv.2603.20328>},
+<doi:10.48550/@code{arXiv.2604.00038>}).")
+    (license license:expat)))
+
 (define-public r-antitrust
   (package
     (name "r-antitrust")
@@ -19937,6 +19974,35 @@ package is designed for reproducible and automated analysis in neuroscience
 research.")
     (license license:bsd-3)))
 
+(define-public r-aidif
+  (package
+    (name "r-aidif")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aiDIF" version))
+       (sha256
+        (base32 "1pq8va7q6sfy1jdpygsxg0wr51arkyxjpppr6928q94mbj3k8d92"))))
+    (properties `((upstream-name . "aiDIF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/aiDIF")
+    (synopsis "Differential Item Functioning for AI-Scored Assessments")
+    (description
+     "Detects and quantifies differential item functioning (DIF) in AI-scored
+educational and psychological assessments.  Provides a fully self-contained
+robust DIF engine (M-estimation via iteratively re-weighted least squares with
+the bi-square loss) alongside the novel Differential AI Scoring Bias (DASB)
+test, which detects item-level scoring shifts that differ across subgroups when
+comparing human and AI scoring conditions.  Includes simulation utilities,
+anchor weight diagnostics, and an AI-effect classification framework.")
+    (license license:gpl3+)))
+
 (define-public r-aid
   (package
     (name "r-aid")
@@ -20941,6 +21007,45 @@ Matrix(GLCM), RGB-based Vegetative Index(RGB VI) and Normalized Difference
 Vegetation Index(NDVI) family image features.  GLCM calculations are based on
 Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
     (license license:gpl3)))
+
+(define-public r-agridq
+  (package
+    (name "r-agridq")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "agriDQ" version))
+       (sha256
+        (base32 "1g2ic9844gvjhmypx2ca26cxrif5mik94bb9nij84gsqjw7k7621"))))
+    (properties `((upstream-name . "agriDQ")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tseries r-stringdist r-nortest r-lmtest r-car))
+    (home-page "https://cran.r-project.org/package=agriDQ")
+    (synopsis
+     "Data Quality Checks and Statistical Assumption Testing for Agricultural Experiments")
+    (description
+     "This package provides a comprehensive pipeline for data quality checks and
+statistical assumption diagnostics in agricultural experimental data.  Functions
+cover outlier detection using Interquartile Range (IQR) fence, Z-score, modified
+Z-score (Hampel identifier), Grubbs test and Dixon Q-test with consensus
+flagging; missing data pattern analysis and mechanism classification (Missing
+Completely At Random/Missing At Random/Missing Not At Random (MCAR/MAR/MNAR))
+via Little's test; normality testing using Shapiro-Wilk, Anderson-Darling,
+Kolmogorov-Smirnov, Lilliefors, Pearson chi-square and Jarque-Bera tests;
+homogeneity of variance via Bartlett, Levene and Fligner-Killeen tests;
+independence of errors via Durbin-Watson, Breusch-Godfrey and Wald-Wolfowitz
+runs tests; experimental design validation for Completely Randomised Design
+(CRD), Randomised Complete Block Design (RCBD), Latin Square Design (LSD) and
+factorial designs; qualitative variable consistency checks; and automated
+@code{HyperText} Markup Language (HTML) report generation.  Designed to align
+with Findable, Accessible, Interoperable and Reusable (FAIR) data principles.
+Methods follow Gomez and Gomez (1984, ISBN:978-0471870920) and Montgomery (2017,
+ISBN:978-1119492443).")
+    (license license:gpl3+)))
 
 (define-public r-agridiversix
   (package
@@ -24509,6 +24614,46 @@ or specificity is not given, the crossing point between the sensitivity and
 specificity curves are returned.  For bootstrap procedures, mean and CI
 bootstrap values of sensitivity, specificity, crossing point between specificity
 and specificity as well as AUC and AUCPR can be evaluated.")
+    (license license:expat)))
+
+(define-public r-adjoin
+  (package
+    (name "r-adjoin")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adjoin" version))
+       (sha256
+        (base32 "1akikpzc3cxm3kq6ia65w9iqyj7mpbfl0s0v5g547kicz3mwwzad"))))
+    (properties `((upstream-name . "adjoin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspectra
+                             r-rnanoflann
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-proxy
+                             r-mgcv
+                             r-matrix
+                             r-igraph
+                             r-corpcor
+                             r-chk
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bbuchsbaum/adjoin")
+    (synopsis
+     "Constructing Adjacency Matrices Based on Spatial and Feature Similarity")
+    (description
+     "Constructs sparse adjacency matrices from spatial coordinates, feature
+measurements, class labels, and temporal indices.  Supports nearest-neighbor
+graphs, heat-kernel weights, graph Laplacians, diffusion operators, and
+bilateral smoothers for graph-based data analysis, following spectral graph
+methods in von Luxburg (2007) <doi:10.1007/s11222-007-9033-z>, diffusion maps in
+Coifman and Lafon (2006) <doi:10.1016/j.acha.2006.04.006>, and bilateral
+filtering in Tomasi and Manduchi (1998) <doi:10.1109/ICCV.1998.710815>.")
     (license license:expat)))
 
 (define-public r-adjclust
@@ -28114,6 +28259,87 @@ selection method in a nonlinear multivariate model using B-splines.  For further
 details we refer the reader to the paper Savino, M. E. and LÃ©vy-Leduc, C.
 (2024), <https://hal.science/hal-04434820>.")
     (license license:gpl2)))
+
+(define-public r-absolution
+  (package
+    (name "r-absolution")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AbSolution" version))
+       (sha256
+        (base32 "1h394cnqjm7fxbkdz2hngbwy8g3hfhxbzhiflqfndw62bbrd4pf8"))))
+    (properties `((upstream-name . "AbSolution")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xfun
+                             r-viridis
+                             r-upsetjs
+                             r-umap
+                             r-sunburstr
+                             r-stringr
+                             r-stringdist
+                             r-sortable
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinymeta
+                             r-shinymanager
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shinycssloaders
+                             r-shiny
+                             r-seqinr
+                             r-rmarkdown
+                             r-rlang
+                             r-reactable
+                             r-pwalign
+                             r-plotly
+                             r-peptides
+                             r-knitr
+                             r-iterors
+                             r-iranges
+                             r-htmlwidgets
+                             r-golem
+                             r-ggplot2
+                             r-fs
+                             r-fresh
+                             r-foreach
+                             r-dt
+                             r-dplyr
+                             r-doparallel
+                             r-dockerfiler
+                             r-data-table
+                             r-dashboardthemes
+                             r-config
+                             r-colourpicker
+                             r-callr
+                             r-bs4dash
+                             r-biostrings
+                             r-bigstatsr
+                             r-bigparallelr
+                             r-bigassertr
+                             r-benchmarkme
+                             r-attachment
+                             r-alakazam))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EDS-Bioinformatics-Laboratory/AbSolution")
+    (synopsis "Interactive Feature-Based Analysis of AIRR-Seq Data")
+    (description
+     "An interactive framework for the exploration and analysis of adaptive immune
+receptor repertoire sequencing (AIRR-seq) data.  It enables large-scale
+computation and integrated analysis of sequence-derived features, including
+physicochemical properties, amino acid descriptor sets, sequence motifs,
+compositional patterns, and somatic hypermutation metrics.  The application
+supports multiscale analysis across sequences, clones, and repertoires, with
+interactive visualizations and statistical feature selection. @code{AbSolution}
+also facilitates reproducible research by enabling structured export of data,
+code, parameters, and computational environments.  See
+<https://github.com/EDS-Bioinformatics-Laboratory/@code{AbSolution>} for more
+details.")
+    (license license:gpl3+)))
 
 (define-public r-abseil
   (package

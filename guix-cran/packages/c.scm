@@ -1019,30 +1019,6 @@ S. (2011) <doi:10.1080/03461231003611933>.  Santolino, M. (2023)
 <doi:10.3390/risks11100170>.")
     (license license:expat)))
 
-(define-public r-cvmgof
-  (package
-    (name "r-cvmgof")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cvmgof" version))
-       (sha256
-        (base32 "0s78w8ivxzscn6jbwsw0m15n3xwgbbjdqwpp4dsy3gi0nsmngjyc"))))
-    (properties `((upstream-name . "cvmgof")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lattice))
-    (home-page "https://cran.r-project.org/package=cvmgof")
-    (synopsis "Cramer-von Mises Goodness-of-Fit Tests")
-    (description
-     "It is devoted to Cramer-von Mises goodness-of-fit tests.  It implements three
-statistical methods based on Cramer-von Mises statistics to estimate and test a
-regression model.")
-    (license license:cecill)))
-
 (define-public r-cvmdisc
   (package
     (name "r-cvmdisc")
@@ -3305,6 +3281,33 @@ roots, model selection via AIC, residual and spectral diagnostics, forecasting
 and simulation, and extraction of fitted state estimates.  Methods are described
 in Wang (2013) <doi:10.18637/jss.v053.i05>.")
     (license license:gpl2+)))
+
+(define-public r-ctrlvee
+  (package
+    (name "r-ctrlvee")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ctrlvee" version))
+       (sha256
+        (base32 "0mya4bvwv8lawm1x3lmkz6id0cp6j9jvq2s4wcy02ck4l0wzyq7i"))))
+    (properties `((upstream-name . "ctrlvee")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-rstudioapi r-purrr r-magrittr r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vpnagraj/ctrlvee")
+    (synopsis "Extract External 'R' Code and Insert Inline")
+    (description
+     "An RStudio and Positron add-in that prompts the user for a web URL', fetches the
+page content, extracts R code chunks, and inserts those code chunks into the
+active editor at the current cursor position.  Supports extraction of raw
+Markdown or Quarto source files, @code{GitHub} Gist and rendered HTML pages that
+have markup elements with R'-related classes.")
+    (license license:expat)))
 
 (define-public r-ctrlgene
   (package
@@ -13215,13 +13218,13 @@ observations.  Currently coded for a flat universe only.")
 (define-public r-cosmicsig
   (package
     (name "r-cosmicsig")
-    (version "1.1.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cosmicsig" version))
        (sha256
-        (base32 "1xwbfinh73rfdww58zpqmk17ixpzq5rr6cdf4zlnj25xwvj5458l"))))
+        (base32 "1mqwa008xw7q1fzva6078jglwy9rmsijndfv67xbgp970cyg599k"))))
     (properties `((upstream-name . "cosmicsig")))
     (build-system r-build-system)
     (arguments
@@ -13236,8 +13239,7 @@ and etiology'.  The signature variable contains the latest mutational signature
 profiles released on COSMIC <https://cancer.sanger.ac.uk/signatures/> for 3
 mutation types: * Single base substitutions in the context of preceding and
 following bases, * Doublet base substitutions, and * Small insertions and
-deletions.  The etiology variable provides the known or hypothesized causes of
-signatures.  cosmicsig stands for COSMIC signatures.  Please run ?'cosmicsig for
+deletions.  cosmicsig stands for COSMIC signatures.  Please run ?'cosmicsig for
 more information.")
     (license license:gpl3)))
 
@@ -25768,13 +25770,13 @@ missing multivariate data through conditional copulas.")
 (define-public r-cohorttools
   (package
     (name "r-cohorttools")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cohorttools" version))
        (sha256
-        (base32 "19gk7vscvhhnm0fs24lg6mif7chh9dkb86yx0lqd3h9pnpv69all"))))
+        (base32 "1rfvad2pvw10ziz5r7n29yr2bxk8bsjbldg5ci1qhhh0slkc5vmi"))))
     (properties `((upstream-name . "cohorttools")))
     (build-system r-build-system)
     (arguments
@@ -45068,6 +45070,47 @@ larger-than-memory census data using dplyr familiar functions.
 <https://arrow.apache.org/docs/r/articles/arrow.html#analyzing-arrow-data-with-dplyr>.")
     (license license:expat)))
 
+(define-public r-censo2022arg
+  (package
+    (name "r-censo2022arg")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "censo2022arg" version))
+       (sha256
+        (base32 "1znb3mcgzz7y5il6lsfkiza2h2f6v40i8y4j299q5is74hfww84c"))))
+    (properties `((upstream-name . "censo2022arg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-redatamx
+                             r-readxl
+                             r-haven
+                             r-dplyr
+                             r-data-table
+                             r-cpp11
+                             r-callr
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RodriDuran/censo2022arg")
+    (synopsis
+     "Extraction and Analysis of 2022 Argentina Census Microdata from REDATAM Databases")
+    (description
+     "This package provides tools to extract, label, and read microdata from the 2022
+National Census of Population, Households and Dwellings of Argentina stored in
+REDATAM databases officially distributed by INDEC. Implements a complete
+province-by-province extraction pipeline with efficient memory management,
+reconstruction of hierarchical identifiers, automatic variable labeling from
+official INDEC dictionaries, and integrity verification against published
+totals.  Allows working with census data directly in R without knowledge of
+REDATAM syntax, and supports export to multiple formats including Parquet, CSV,
+SPSS and SAS. Census data must be downloaded directly from the official INDEC
+portal (<https://www.indec.gob.ar>).  This package does not distribute census
+data.  Duran (2026) <doi:10.5281/zenodo.19560728>.")
+    (license license:gpl3+)))
+
 (define-public r-censo2017
   (package
     (name "r-censo2017")
@@ -48581,6 +48624,33 @@ Particularly, it is useful for detecting the metabolites that would be altered
 by the gut bacteria.")
     (license license:expat)))
 
+(define-public r-causalwins
+  (package
+    (name "r-causalwins")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalWins" version))
+       (sha256
+        (base32 "1rcrpcc6knn4lmy9v4mvnaw9v9818wmg3dl0dp7zzlxvz24rnkak"))))
+    (properties `((upstream-name . "causalWins")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matchit r-grf r-factominer r-drf))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=causalWins")
+    (synopsis "Compute the Causal Win Ratio Using Nearest Neighbor Matching")
+    (description
+     "Based on âRethinking the Win Ratio: A Causal Framework for Hierarchical
+Outcome Analysisâ (M. Even and J. Josse, 2025), this package provides
+implementations of three approaches - nearest neighbor matching, distributional
+regression forests, and efficient influence functions - to estimate the causal
+win ratio, win proportion, and net benefit.")
+    (license license:agpl3+)))
+
 (define-public r-causalweight
   (package
     (name "r-causalweight")
@@ -49022,6 +49092,44 @@ such as standardization, IP weighting, propensity matching, outcome regression,
 and doubly-robust estimators.  Estimates of the average treatment effects from
 each model are given with the standard error and a 95% Wald confidence interval
 (Hernan, Robins (2020) <https://miguelhernan.org/whatifbook/>).")
+    (license license:gpl3)))
+
+(define-public r-causalmixgpd
+  (package
+    (name "r-causalmixgpd")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CausalMixGPD" version))
+       (sha256
+        (base32 "13l4i9x8lzzk1c5wk23jwrg1261hcb0r9cvlmrpms52hjxd7glwa"))))
+    (properties `((upstream-name . "CausalMixGPD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nimble r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://arnabaich96.github.io/CausalMixGPD/pkgdown/")
+    (synopsis
+     "Bayesian Nonparametric Conditional Density Modeling in Causal Inference and Clustering with a Heavy-Tail Extension")
+    (description
+     "The presence of a heavy tail is a feature of many scenarios when risk management
+involves extremely rare events.  While parametric distributions may give
+adequate representation of the mode of data, they are likely to misrepresent
+heavy tails, and completely nonparametric approaches lack a rigorous mechanism
+for tail extrapolation; see Pickands (1975) <doi:10.1214/aos/1176343003>.  The
+package @code{CausalMixGPD} implements the semiparametric framework of Aich and
+Bhattacharya (2026) <doi:10.5281/zenodo.19620523> for Bayesian analysis of
+heavy-tailed outcomes by combining Dirichlet process mixture models for the body
+of the distribution with optional generalized Pareto tails.  The method allows
+for unconditional and covariate-modulated mixtures, implements MCMC estimation
+using nimble', and extends to mixtures of different arms outcomes with
+application to causal inference in the Rubin (1974) <doi:10.1037/h0037350>
+framework.  Posterior summaries include density functions, quantiles, expected
+values, survival functions, and causal effects, with an emphasis on tail
+quantiles and functional measures sensitive to the tail.")
     (license license:gpl3)))
 
 (define-public r-causalmetar
@@ -52403,6 +52511,40 @@ Also models the occurrence of radiocarbon samples as a variable-rate
 occurrence rate of the samples over calendar time, and providing information
 about potential change points.")
     (license license:gpl3+)))
+
+(define-public r-carbondata
+  (package
+    (name "r-carbondata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "carbondata" version))
+       (sha256
+        (base32 "1i0x24kly6zfmj4vq7z313g8qmhi1nj0vz3g5rm24zap3m4p066f"))))
+    (properties `((upstream-name . "carbondata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-jsonlite r-httr2 r-cli))
+    (home-page "https://github.com/charlescoverdale/carbondata")
+    (synopsis
+     "Access Carbon Market Data from Emissions Trading Systems and Voluntary Registries")
+    (description
+     "Unified access to carbon market data from compliance emissions trading systems
+('EU ETS', UK ETS', RGGI', California Cap-and-Trade) and voluntary carbon
+markets (Verra, Gold Standard, American Carbon Registry, Climate Action Reserve,
+via the Berkeley Voluntary Registry Offsets Database and the @code{CarbonPlan}
+@code{OffsetsDB} API).  Includes cross-market price data from the International
+Carbon Action Partnership ('ICAP') Allowance Price Explorer
+<https://icapcarbonaction.com/en/ets-prices>, global carbon pricing from the
+World Bank Carbon Pricing Dashboard
+<https://carbonpricingdashboard.worldbank.org/>, and the historical RFF World
+Carbon Pricing Database following Dolphin, Pollitt and Newbery (2020)
+<doi:10.1038/s41597-022-01659-x>.  Data is downloaded from public sources on
+first use and cached locally.")
+    (license license:expat)))
 
 (define-public r-carbayesst
   (package

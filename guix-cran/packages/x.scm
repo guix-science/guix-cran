@@ -402,6 +402,35 @@ frameworks of Pesaran, Shin, and Smith (1999)
 <doi:10.1016/j.energy.2022.124303>.")
     (license license:gpl3)))
 
+(define-public r-xtife
+  (package
+    (name "r-xtife")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtife" version))
+       (sha256
+        (base32 "0yx5wbpxf8w3cylz0y6zhqlp3xhfmldbf9lwmzrmny27mzv91lp2"))))
+    (properties `((upstream-name . "xtife")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Rickchen0910/xtife")
+    (synopsis "Interactive Fixed Effects Estimator for Balanced Panel Data")
+    (description
+     "This package implements the interactive fixed effects ('IFE') panel estimator of
+Bai (2009) <doi:10.3982/ECTA6135> with analytical standard errors
+('homoskedastic', HC1 robust, and cluster-robust by unit).  Supports asymptotic
+bias correction for large panels (Bai 2009) and a dynamic extension for
+predetermined regressors (Moon and Weidner 2017
+<doi:10.1017/S0266466615000328>).  Includes information-criterion-based factor
+number selection (Bai and Ng 2002 <doi:10.1111/1468-0262.00273>).  All
+computations use base R only with no external dependencies.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-xtdml
   (package
     (name "r-xtdml")
@@ -577,6 +606,33 @@ cross-sectional averages for dealing with cross-sectional dependence.")
      "This package provides tools to download and merge data files on sub-national
 conflict, violence and protests from <http://www.x-sub.org>.")
     (license license:gpl3)))
+
+(define-public r-xsrecencyx
+  (package
+    (name "r-xsrecencyx")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "XSRecencyX" version))
+       (sha256
+        (base32 "1qxjbsz6i109i903pxlsc9kih1aylirkiz9sa5n2lb1jhxgvyb2s"))))
+    (properties `((upstream-name . "XSRecencyX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-magrittr r-geepack r-dplyr r-data-table))
+    (home-page "https://cran.r-project.org/package=XSRecencyX")
+    (synopsis
+     "HIV Incidence Estimation using Recency Testing Data with Population Adjustment")
+    (description
+     "This package provides tools for estimating HIV incidence using cross-sectional
+recency testing data, adjusting for internal and external target populations and
+supporting subtype-specific parameters.  The statistical methodology implemented
+builds on the framework described in Wang, Duerr, and Gao(2025)
+<doi:10.1002/sim.70216>.")
+    (license license:expat)))
 
 (define-public r-xsp
   (package
@@ -814,13 +870,13 @@ objects.")
 (define-public r-xpose-xtras
   (package
     (name "r-xpose-xtras")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose.xtras" version))
        (sha256
-        (base32 "0fi6lrk3v0mg7qh745ypdgvdfy47979rfjzsdvjwkfs5z24rr7m1"))))
+        (base32 "1wabd3i2k926ywcrfl0vi9z4bhwx6c02qvp6k9rkmi8vqkkh3mia"))))
     (properties `((upstream-name . "xpose.xtras")))
     (build-system r-build-system)
     (arguments

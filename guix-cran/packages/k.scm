@@ -3185,13 +3185,13 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
 (define-public r-klink
   (package
     (name "r-klink")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KLINK" version))
        (sha256
-        (base32 "1z7fvs7imlz7lmq8hyzpgchsfqdfzyl8qyp1353k0rxnn3kxvvig"))))
+        (base32 "1mzalxng6jqf9iy2gaamr1blpi5vhd9i08jrvxip9gzmpzldx46h"))))
     (properties `((upstream-name . "KLINK")))
     (build-system r-build-system)
     (arguments
@@ -3201,6 +3201,7 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
                              r-verbalisr
                              r-shinyjs
                              r-shinydashboard
+                             r-shinybs
                              r-shiny
                              r-pedtools
                              r-pedprobr
@@ -7314,5 +7315,34 @@ combinations of functions or different default arguments.  Not to be used in
 production level scripts, but useful for exploring and quickly manipulating data
 for easy analysis.  Also imports a variety of packages to facilitate the
 installation of those imported packages on the host machine.")
+    (license license:gpl3)))
+
+(define-public r-k4sekolah
+  (package
+    (name "r-k4sekolah")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "K4Sekolah" version))
+       (sha256
+        (base32 "0cm72r4rzgg5rlalc9gn46avs169wa2rmsfcwym2qsw347awrggb"))))
+    (properties `((upstream-name . "K4Sekolah")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=K4Sekolah")
+    (synopsis "School Context Data Files for TIMSS 2023 Grade 4")
+    (description
+     "The official TIMSS 2023 website provides the School Context Data Files for TIMSS
+2023 Grade 4 in rdata format.  However, the available data are presented solely
+in the form of numerical values.  This package aims to transform the numerical
+data into categorical data, thereby enabling clearer interpretation and reducing
+ambiguity in statistical data analysis.  Furthermore, the category labels are
+presented in Bahasa Indonesia.  This initiative is intended as a contribution to
+promoting and expanding the use of Bahasa Indonesia in the field of programming,
+in line with its designation as one of the official languages of the United
+Nations General Assembly.")
     (license license:gpl3)))
 

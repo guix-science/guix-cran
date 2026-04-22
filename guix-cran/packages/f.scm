@@ -2641,6 +2641,67 @@ Wilson, Joan E. Bailey-Wilson, and Momiao Xiong (2013)
 <doi:10.1002/gepi.21757>).")
     (license license:gpl2+)))
 
+(define-public r-funcml
+  (package
+    (name "r-funcml")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funcml" version))
+       (sha256
+        (base32 "1620shs60ws2d3x7wklrf5wxw9qcqsgxpmd3r6z068hrkyvsgb0h"))))
+    (properties `((upstream-name . "funcml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-shapviz
+                             r-rpart
+                             r-ranger
+                             r-randomforest
+                             r-pls
+                             r-partykit
+                             r-nnet
+                             r-naivebayes
+                             r-mgcv
+                             r-mda
+                             r-mass
+                             r-lightgbm
+                             r-kknn
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-functionals
+                             r-earth
+                             r-e1071
+                             r-dbarts
+                             r-c50
+                             r-ada))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ielbadisy/funcml")
+    (synopsis "Functional Machine Learning Framework")
+    (description
+     "This package provides a compact and explicit machine learning framework for
+supervised learning, resampling-based evaluation, hyperparameter tuning, learner
+comparison, interpretation, and plug-in g-computation.  The package uses
+standard formulas for model specification and provides stable S3 interfaces for
+fitting, evaluation, tuning, interpretation, and causal estimation across a
+learner registry with multiple backend engines.  Implemented interpretation
+methods build on established approaches such as permutation-based variable
+importance, partial dependence, individual conditional expectation, accumulated
+local effects, SHAP, and LIME; see Friedman (2001) <doi:10.1214/aos/1013203451>,
+Goldstein et al. (2015) <doi:10.1080/10618600.2014.907095>, Apley and Zhu (2020)
+<doi:10.1111/rssb.12377>, Lundberg and Lee (2017)
+<doi:10.48550/@code{arXiv.1705.07874>}, and Ribeiro et al. (2016)
+<doi:10.48550/@code{arXiv.1602.04938>}.  The framework is intentionally
+opinionated: preprocessing is expected to occur outside the modeling step, and
+the API emphasizes explicit inputs, consistent object contracts, and compact
+interfaces rather than feature-by-feature competition with larger machine
+learning ecosystems.")
+    (license license:gpl3)))
+
 (define-public r-funcmapper
   (package
     (name "r-funcmapper")
@@ -5348,6 +5409,32 @@ Freesurfer completely in R, where you pass R objects of class nifti',
 implemented by package oro.nifti', and the function executes an Freesurfer
 command and returns an R object of class nifti or necessary output.")
     (license license:gpl3)))
+
+(define-public r-freestiler
+  (package
+    (name "r-freestiler")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "freestiler" version))
+       (sha256
+        (base32 "0qg8c8n2axymzx6fgrx3iq81681i74kfw5afwx8v5wk2klp3mlr2"))))
+    (properties `((upstream-name . "freestiler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-sf))
+    (home-page "https://walker-data.com/freestiler/")
+    (synopsis "Create Vector Tiles from Spatial Data")
+    (description
+     "Create vector tile archives in PMTiles format from sf spatial data frames.
+Supports Mapbox Vector Tile ('MVT') and @code{MapLibre} Tile ('MLT') output
+formats.  Uses a Rust backend via extendr for fast, in-memory tiling with zero
+external system dependencies.")
+    (license license:expat)))
 
 (define-public r-freesortr
   (package
@@ -9462,6 +9549,40 @@ based on fixed-b asymptotics together with the Bartlett kernel.  To compute
 finite-sample size and power, it fits a best approximating ARMA process to the
 input data and reports how the truncation parameter performs and how robust
 testing outcomes are to its choice.")
+    (license license:gpl3+)))
+
+(define-public r-forecoml
+  (package
+    (name "r-forecoml")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FoRecoML" version))
+       (sha256
+        (base32 "0zrbbmjl98m5alhwwsdmmhijhcfa2byb5ga0pgghyzkh7w9y0qbk"))))
+    (properties `((upstream-name . "FoRecoML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-randomforest
+                             r-paradox
+                             r-mlr3tuning
+                             r-mlr3learners
+                             r-mlr3
+                             r-matrix
+                             r-lightgbm
+                             r-foreco
+                             r-cli))
+    (home-page "https://github.com/danigiro/FoRecoML")
+    (synopsis "Forecast Reconciliation with Machine Learning")
+    (description
+     "Nonlinear forecast reconciliation with machine learning in cross-sectional
+(Spiliotis et al.  2021 <doi:10.1016/j.asoc.2021.107756>), temporal, and
+cross-temporal (Rombouts et al.  2024 <doi:10.1016/j.ijforecast.2024.05.008>)
+frameworks.")
     (license license:gpl3+)))
 
 (define-public r-foreco
@@ -24731,6 +24852,44 @@ algorithm is described in Duembgen, Nordhausen and Schuhmacher (2016)
 <doi:10.1016/j.jmva.2015.11.009>.")
     (license license:gpl2+)))
 
+(define-public r-fastlpr
+  (package
+    (name "r-fastlpr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastlpr" version))
+       (sha256
+        (base32 "13b69wrm3fki0bdf9n5bnpv46mq6pfjd02si4f6sfng6qkpcakcj"))))
+    (properties `((upstream-name . "fastlpr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/rigelfalcon/fastLPR")
+    (synopsis "Fast Local Polynomial Regression and Kernel Density Estimation")
+    (description
+     "Non-Uniform Fast Fourier Transform ('NUFFT')-accelerated local polynomial
+regression and kernel density estimation for large, scattered, or complex-valued
+datasets.  Provides automatic bandwidth selection via Generalized
+Cross-Validation (GCV) for regression and Likelihood Cross-Validation (LCV) for
+density estimation.  This is the R port of the @code{fastLPR} MATLAB'/'Python
+toolbox, achieving O(N + M log M) computational complexity through custom NUFFT
+implementation with Gaussian gridding.  Supports 1D/2D/3D data, complex-valued
+responses, heteroscedastic variance estimation, and confidence interval
+computation.  Performance optimized with vectorized R code and compiled helpers
+via Rcpp'/'@code{RcppArmadillo}'.  Extends the FKreg toolbox of Wang et al.
+(2022) <doi:10.48550/@code{arXiv.2204.07716>} with Python and R ports.  Applied
+in Li et al. (2022) <doi:10.1016/j.neuroimage.2022.119190>.  Uses NUFFT methods
+based on Greengard and Lee (2004) <doi:10.1137/S003614450343200X>,
+binning-accelerated kernel estimation of Wand (1994)
+<doi:10.1080/10618600.1994.10474656>, and local polynomial regression framework
+of Fan and Gijbels (1996, ISBN:978-0412983214).")
+    (license license:gpl3)))
+
 (define-public r-fastlogitme
   (package
     (name "r-fastlogitme")
@@ -26212,6 +26371,40 @@ a set of results are displayed which include efficiency scores, peers
 determination, scale efficiencies evaluation and slacks calculation.  Fore more
 information about the theoretical background of the package, please refer to
 Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
+    (license license:expat)))
+
+(define-public r-farr
+  (package
+    (name "r-farr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "farr" version))
+       (sha256
+        (base32 "1l524fas45xna3k72d01bh5l29s6ki21n91fgd71356y1xnsv72z"))))
+    (properties `((upstream-name . "farr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rpart
+                             r-rlang
+                             r-readr
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi))
+    (home-page "https://github.com/iangow/farr")
+    (synopsis "Data and Code for Empirical Research in Accounting")
+    (description
+     "Handy functions and data to support the course book Empirical Research in
+Accounting: Tools and Methods (1st ed.).  Chapman and Hall/CRC.
+<doi:10.1201/9781003456230> and <https://iangow.github.io/far_book/>.")
     (license license:expat)))
 
 (define-public r-farff

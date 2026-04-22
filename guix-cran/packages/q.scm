@@ -872,6 +872,44 @@ made with large data sets in mind and derives matches more than an order of
 magnitude quicker than other methods.")
     (license license:gpl3+)))
 
+(define-public r-quickexplore
+  (package
+    (name "r-quickexplore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuickExplore" version))
+       (sha256
+        (base32 "0ch5ckym0yys09jn84nvr0kzr565xbnc518ppv3iq9viyxfhz801"))))
+    (properties `((upstream-name . "QuickExplore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-shiny
+                             r-rlang
+                             r-readr
+                             r-jsonlite
+                             r-haven
+                             r-dt
+                             r-dplyr
+                             r-digest
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ramsas88/QuickExplore")
+    (synopsis
+     "Interactive Dataset Explorer for 'R' and 'SAS' and Other Data Formats")
+    (description
+     "This package provides a Shiny application that provides nice interface for
+browsing, exploring, summarising, and converting datasets stored in SAS
+(.sas7bdat, .xpt), CSV (.csv), and R (.rds) formats.  Users can register
+multiple directory-based libraries, interactively filter data using dplyr
+expressions, inspect per-variable statistics, and export datasets to Excel,
+JSON, CSV, R data, or SAS transport formats.")
+    (license license:expat)))
+
 (define-public r-quickcode
   (package
     (name "r-quickcode")
@@ -7019,6 +7057,33 @@ models, (2) 2025 prices, and (3) metric measurements, making it more appropriate
 for use as an example dataset outside the United States.  For more details see
 Musgrave (2025) <doi:10.1080/15512169.2025.2572320>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-qarpi
+  (package
+    (name "r-qarpi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qarPI" version))
+       (sha256
+        (base32 "1pwszf676sycwljbcllld6qb1vs4vfjszjc1xgw6liwklhhy95d5"))))
+    (properties `((upstream-name . "qarPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg))
+    (home-page "https://github.com/SilviaNovo/qarPI")
+    (synopsis "Prediction Intervals for Quantile Autoregression")
+    (description
+     "This package provides prediction intervals for classical homoscedastic
+autoregressive models (AR(p)) and quantile autoregressive models (QAR(p)).  The
+package implements percentile-based and predictive-root-based bootstrap
+procedures for constructing multi-step-ahead prediction intervals.  For more
+details, see Novo and Sanchez-Sellero (2025)
+<doi:10.48550/@code{arXiv.2512.22018>}.")
+    (license license:gpl3)))
 
 (define-public r-qardlr
   (package

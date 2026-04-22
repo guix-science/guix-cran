@@ -3441,6 +3441,42 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
 <doi:10.1198/016214504000001583>.")
     (license license:expat)))
 
+(define-public r-htabim
+  (package
+    (name "r-htabim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htaBIM" version))
+       (sha256
+        (base32 "1cyrb957xh7c4733apxay9mkvq9kckl0bvcyzwy8nz7vwzfi6z7k"))))
+    (properties `((upstream-name . "htaBIM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/heorlytics/htaBIM")
+    (synopsis "Budget Impact Modelling for Health Technology Assessment")
+    (description
+     "This package implements a structured, reproducible framework for budget impact
+modelling (BIM) in health technology assessment (HTA), following the ISPOR Task
+Force guidelines (Sullivan et al. (2014) <doi:10.1016/j.jval.2013.08.2291> and
+Mauskopf et al. (2007) <doi:10.1111/j.1524-4733.2007.00187.x>).  Provides
+functions for epidemiology-driven population estimation, market share modelling
+with flexible uptake dynamics, per-patient cost calculation across multiple cost
+categories, multi-year budget projections, payer perspective analysis,
+deterministic sensitivity analysis (DSA), and probabilistic sensitivity analysis
+(PSA) via Monte Carlo simulation.  Produces submission-quality outputs including
+ISPOR-aligned summary tables, scenario comparison tables, per-patient cost
+breakdowns, tornado diagrams, PSA histograms, and text and HTML reports
+compatible with NICE, CADTH, and EU-HTA dossier formats.  Ships with an
+interactive shiny dashboard built on bslib for point-and-click model building
+and exploration.")
+    (license license:expat)))
+
 (define-public r-hstats
   (package
     (name "r-hstats")
@@ -6829,6 +6865,32 @@ with the R Package hlt\"
     (description
      "Fits latent space models for single networks and hierarchical latent space
 models for ensembles of networks as described in Sweet, Thomas & Junker (2013).")
+    (license license:gpl2+)))
+
+(define-public r-hlrhotrix
+  (package
+    (name "r-hlrhotrix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hlrhotrix" version))
+       (sha256
+        (base32 "0n01zad5kygfhisl4crg77bgdxrf0hr5riah3nn7mf3px3iqm8nr"))))
+    (properties `((upstream-name . "hlrhotrix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork r-ggplot2 r-ggforce))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hlrhotrix")
+    (synopsis "Algebraic Operations and Visualisation for Hl-Rhotrices")
+    (description
+     "This package provides constructors for hl-rhotrices of dimension 2, 4 and 6,
+together with computation of the determinant, adjoint, inverse and eigenvalues
+under the Robust Multiplication Method (RMM).  A ggplot2'-based function
+visualises the rhomboidal layout and the decomposition into principal minors.")
     (license license:gpl2+)))
 
 (define-public r-hlmlab

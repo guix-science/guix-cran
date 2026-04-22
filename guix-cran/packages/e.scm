@@ -18787,6 +18787,47 @@ methods can be found in the following texts.  Dieter Britz, Jorg Strutwolf
 <ISBN:978-0-471-04372-0>.")
     (license license:gpl3)))
 
+(define-public r-elcf4r
+  (package
+    (name "r-elcf4r")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "elcf4R" version))
+       (sha256
+        (base32 "0k3fydlcw1abn2hi2pysdqipfzv9i5p8dfh875da80alzh0lx9xq"))))
+    (properties `((upstream-name . "elcf4R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-wavelets
+                             r-tensorflow
+                             r-rsqlite
+                             r-rcpp
+                             r-mgcv
+                             r-keras3
+                             r-jsonlite
+                             r-earth
+                             r-dbi
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/elcf4R/")
+    (synopsis "Electricity Load Curves Forecasting at Individual Level")
+    (description
+     "This package implements forecasting methods for individual electricity load
+curves, including Kernel Wavelet Functional (KWF), clustered KWF, Generalized
+Additive Models (GAM), Multivariate Adaptive Regression Splines (MARS), and Long
+Short-Term Memory (LSTM) models.  Provides normalized dataset adapters for
+@code{iFlex}, @code{StoreNet}, Low Carbon London, and REFIT; download and read
+support for IDEAL and GX; explicit Python backend selection for
+@code{TensorFlow-based} LSTM fits; helpers for daily segmentation and
+rolling-origin benchmarking; and compact shipped example panels and
+benchmark-result datasets.")
+    (license license:gpl3)))
+
 (define-public r-elastic
   (package
     (name "r-elastic")

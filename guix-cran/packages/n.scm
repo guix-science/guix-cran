@@ -4893,6 +4893,40 @@ variability metrics that can be used to assess the impact of normalization on
 variance.")
     (license license:gpl3)))
 
+(define-public r-nordstatextras
+  (package
+    (name "r-nordstatextras")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nordstatExtras" version))
+       (sha256
+        (base32 "1x0clry7bbpbaxkc1xp86j9zwx7hb42k332hphijzyxiwvm47azk"))))
+    (properties `((upstream-name . "nordstatExtras")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rsqlite
+                             r-rlang
+                             r-jsonlite
+                             r-digest
+                             r-dbi))
+    (home-page "https://github.com/LCHansson/nordstatExtras")
+    (synopsis
+     "Shared 'SQLite' Cache Backend for the 'nordstat' Package Family")
+    (description
+     "This package provides a SQLite-backed cell-level cache that can be used as a
+drop-in backend by the nordstat family of packages ('@code{rKolada}',
+@code{rTrafa}', and pixieweb').  Designed for multi-user web applications where
+minimal fetch latency and asynchronous writes are required.  Individual
+statistical values (\"cells\") are stored in a gatekeeper schema with a sidecar
+table for arbitrary metadata dimensions, enabling deduplication across
+overlapping queries.")
+    (license license:expat)))
+
 (define-public r-nordklimdata1
   (package
     (name "r-nordklimdata1")
@@ -10695,13 +10729,13 @@ dedicated SCAN function.")
 (define-public r-nhppp
   (package
     (name "r-nhppp")
-    (version "1.0.2")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhppp" version))
        (sha256
-        (base32 "060y05h9mqnv22cp9fc8wxxisj9gf049ca4va768wmh4dh31zjha"))))
+        (base32 "1767kj48pc850s5bj2pkh71lkx744yrkz0xwij72csaa1sjswjyw"))))
     (properties `((upstream-name . "nhppp")))
     (build-system r-build-system)
     (arguments
@@ -13527,6 +13561,37 @@ Implements the following: Amini, Chen, Bickel and Levina (2013)
 Zhang and Amini (2020) <@code{arXiv:2012.15047>} Le and Levina (2022)
 <doi:10.1214/21-EJS1971>.")
     (license license:expat)))
+
+(define-public r-netsubsamp
+  (package
+    (name "r-netsubsamp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netsubsamp" version))
+       (sha256
+        (base32 "0n7gj4mipcrzx2i853s4qg441h4n19dxacc7vxrhsvkpgaix2dky"))))
+    (properties `((upstream-name . "netsubsamp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=netsubsamp")
+    (synopsis "Multivariate Inference of Network Moments by Subsampling")
+    (description
+     "This package implements node subsampling methods for multivariate inference on
+network moments (rescaled motif counts), including: uniform node subsampling to
+approximate the joint distribution of multiple network moments (Algorithm 1);
+externally sparsified moments for density-matched comparisons (Algorithm 2); and
+a two-sample test for unmatchable networks with unequal edge densities via a
+split-and-sparsify subsampling procedure (Algorithm 3).  Built-in support for
+V-shape (2-star), triangle, and 3-star motifs, with a user-extensible interface
+for arbitrary additional motifs.  Parallel execution is supported via
+@code{doParallel} and foreach'.  Based on Qi, Hua, Li and Zhou (2024)
+<doi:10.48550/@code{arXiv.2409.01599>}.")
+    (license license:gpl3)))
 
 (define-public r-netstat
   (package
@@ -16816,13 +16881,13 @@ this package can be found here: <https://repub.eur.nl/pub/78323/> or
 (define-public r-nc
   (package
     (name "r-nc")
-    (version "2026.2.20")
+    (version "2026.4.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nc" version))
        (sha256
-        (base32 "1bfnxr63k4lcpnfywjnqrxjg44ybmaq45ik50bfm5s6axd9kv6ij"))))
+        (base32 "0vssw7djvc2xnk81zm2kh2m26szk5vvj7j9pl87an5sq90dlp6hs"))))
     (properties `((upstream-name . "nc")))
     (build-system r-build-system)
     (arguments

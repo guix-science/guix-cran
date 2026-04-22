@@ -18,6 +18,8 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages package-management)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages linux)
   #:use-module (guix-cran packages z)
@@ -2763,6 +2765,35 @@ Based on Maximum Lq-likelihood Estimation.  Statistics in Medicine,
 40:6818-6834.<doi:10.1002/sim.9212>.")
     (license license:gpl3)))
 
+(define-public r-lpstimeseries
+  (package
+    (name "r-lpstimeseries")
+    (version "1.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LPStimeSeries" version))
+       (sha256
+        (base32 "11kmm5fnjrm5wfv39ay061iyff5vqpyf5a9syllimkgwaa9qsk0b"))))
+    (properties `((upstream-name . "LPStimeSeries")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer))
+    (home-page "https://cran.r-project.org/package=LPStimeSeries")
+    (synopsis "Learned Pattern Similarity and Representation for Time Series")
+    (description
+     "Learned Pattern Similarity (LPS) for time series, as described in Baydogan and
+Runger (2016) <doi:10.1007/s10618-015-0425-y>.  Implements an approach to model
+the dependency structure in time series that generalizes the concept of
+autoregression to local auto-patterns.  Generates a pattern-based representation
+of time series along with a similarity measure called Learned Pattern Similarity
+(LPS).  Introduces a generalized autoregressive kernel.  This package adapts C
+code from the @code{randomForest} package by Andy Liaw and Matthew Wiener,
+itself based on original Fortran code by Leo Breiman and Adele Cutler.")
+    (license license:gpl2+)))
+
 (define-public r-lpsmooth
   (package
     (name "r-lpsmooth")
@@ -3837,6 +3868,40 @@ dichotomous and polytomous items using an iterative hybrid of ordinal logistic
 regression and item response theory (IRT) according to Choi, Gibbons, and Crane
 (2011) <doi:10.18637/jss.v039.i08>.")
     (license license:gpl2+)))
+
+(define-public r-lorbridge
+  (package
+    (name "r-lorbridge")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lorbridge" version))
+       (sha256
+        (base32 "18pxc2l7r8k9afcq9im6n69i35aah2yixnahqamc4dy9jjpsjziz"))))
+    (properties `((upstream-name . "lorbridge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nnet r-cavariants))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sekangakim/lorbridge")
+    (synopsis
+     "Bridging Log-Odds Ratios and Correspondence Analysis via Closeness-of-Concordance Measures")
+    (description
+     "This package provides a unified analytical workflow that bridges conventional
+binary and multinomial logistic regression with singly-ordered (SONSCA) and
+doubly-ordered (DONSCA) nonsymmetric correspondence analysis.  Log-odds ratios
+(LORs) from logistic regression are re-expressed as cosine theta estimates and
+closeness-of-concordance measures (CCMs) -- including Yule's Q, Yule's Y, and
+r_meta -- on the familiar [-1, +1] scale introduced by Kim and Grochowalski
+(2019) <doi:10.3758/s13428-018-1161-1>.  Bootstrap confidence intervals for
+cosine theta are provided throughout.  The package is intended to help clinical
+and medical researchers interpret association strength from logistic regression
+in an intuitive, correlation-like metric, and to connect conventional regression
+results with geometric correspondence analysis visualisations.")
+    (license license:gpl3+)))
 
 (define-public r-lorad
   (package
@@ -6687,13 +6752,13 @@ Economics (http://www.sgh.waw.pl/en/).")
 (define-public r-localscore
   (package
     (name "r-localscore")
-    (version "2.0.3")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localScore" version))
        (sha256
-        (base32 "1nbdj9s1s32hm8fswg61yxcf9z9npybkyp2mipci0h45lfzhxvys"))))
+        (base32 "1df7x3scv169ljb1qbcs2bpsby04r1p2h88g9wzcpl53is4kr7wm"))))
     (properties `((upstream-name . "localScore")))
     (build-system r-build-system)
     (arguments
@@ -6706,11 +6771,12 @@ Economics (http://www.sgh.waw.pl/en/).")
     (description
      "Functionalities for calculating the local score and calculating statistical
 relevance (p-value) to find a local Score in a sequence of given distribution
-(S. Mercier and J.-J. Daudin (2001) <https://hal.science/hal-00714174/>) ; S.
-Karlin and S. Altschul (1990) <https://pmc.ncbi.nlm.nih.gov/articles/PMC53667/>
-; S. Mercier, D. Cellier and F. Charlot (2003)
-<https://hal.science/hal-00937529v1/> ; A. Lagnoux, S. Mercier and P. Valois
-(2017) <doi:10.1093/bioinformatics/btw699> ).")
+(D. Robelin, S. DÃ©jean, S. Mercier (2025) <doi:10.24072/pcjournal.650> ; S.
+Mercier and J.-J. Daudin (2001) <https://hal.science/hal-00714174/>) ; S. Karlin
+and S. Altschul (1990) <https://pmc.ncbi.nlm.nih.gov/articles/PMC53667/> ; S.
+Mercier, D. Cellier and F. Charlot (2003) <https://hal.science/hal-00937529v1/>
+; A. Lagnoux, S. Mercier and P. Valois (2017)
+<doi:10.1093/bioinformatics/btw699> ).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -7718,20 +7784,20 @@ values.")
 (define-public r-lmomco
   (package
     (name "r-lmomco")
-    (version "2.5.3")
+    (version "2.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmomco" version))
        (sha256
-        (base32 "0llz55bn2x03bs8xrl07c7yvbyackj3nslvpkyjcwmfsrk0l6fdb"))))
+        (base32 "1abknkaflnr132s1sn58xw98x822gsj7zym3djbxvz8x9hwbkxab"))))
     (properties `((upstream-name . "lmomco")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mass r-lmoments r-goftest))
-    (home-page "https://www.amazon.com/dp/1463508417/")
+    (home-page "https://www.amazon.com/dp/1463508417")
     (synopsis
      "L-Moments, Censored L-Moments, Trimmed L-Moments, L-Comoments, and Many Distributions")
     (description
@@ -12520,13 +12586,13 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.3.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "1xszjwc1xmxa3bip7ly1ld7cwdqw4j99a2nxr0jziszql1nca81s"))))
+        (base32 "1q64zrjfka1ggspf7ydxvfnhc689akb1z3n6h2bc5c2687zj1y9x"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (arguments
@@ -14836,6 +14902,41 @@ or algorithmic approaches such as Horiuchi et al (2008)
 <doi:10.4054/@code{DemRes.2002.7.14>}.")
     (license license:gpl3)))
 
+(define-public r-leaveoutkss
+  (package
+    (name "r-leaveoutkss")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LeaveOutKSS" version))
+       (sha256
+        (base32 "0csx7lrwh7r9wbaqvyfin4qsgjcw53z089nwgpwa1nw0v2v600zp"))))
+    (properties `((upstream-name . "LeaveOutKSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sanic
+                             r-matrix
+                             r-igraph
+                             r-foreach
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LeaveOutKSS")
+    (synopsis
+     "Leave-Out Variance Component Estimation for Two-Way Fixed Effects Models")
+    (description
+     "This package implements leave-out estimation of variance components in two-way
+fixed effects models as an R translation of the original MATLAB package of
+Kline, Saggio, and Solvsten (2020) <doi:10.3982/ECTA16410>.  The package
+includes graph-based connected-set pruning, leave-out bias correction, leverage
+computation by exact and randomized algorithms, fixed effect estimation helpers,
+and companion model-fit summaries for matched worker-firm panels in the spirit
+of Abowd, Kramarz, and Margolis (1999) <doi:10.1111/1468-0262.00020>.")
+    (license license:expat)))
+
 (define-public r-leastcostpath
   (package
     (name "r-leastcostpath")
@@ -15828,6 +15929,51 @@ rapid digital image analysis for particle sizes.  This package includes function
 to write an @code{ImageJ} macro which is optimized for a leaf area analysis by
 default.")
     (license license:gpl2)))
+
+(define-public r-leaf
+  (package
+    (name "r-leaf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "leaf" version))
+       (sha256
+        (base32 "0jlnxwn6v61xrz9v7g88a3cs0v9hvhxy1hsq61r6v7cbhcvw8jb1"))))
+    (properties `((upstream-name . "leaf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python conda))
+    (propagated-inputs (list r-rstudioapi
+                             r-rlang
+                             r-reticulate
+                             r-rappdirs
+                             r-r6
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NabiaAI/Leaf")
+    (synopsis "Learning Equations for Automated Function Discovery")
+    (description
+     "This package provides a unified framework for symbolic regression (SR) and
+multi-view symbolic regression (@code{MvSR}) designed for complex, nonlinear
+systems, with particular applicability to ecological datasets.  The package
+implements a four-stage workflow: data subset generation, functional form
+discovery, numerical parameter optimization, and multi-objective evaluation.  It
+provides a high-level formula-style interface that abstracts and extends
+multiple discovery engines: genetic programming (via @code{PySR}), Reinforcement
+Learning with Monte Carlo Tree Search (via RSRM), and exhaustive generalized
+linear model search.  leaf extends these methods by enabling multi-view
+discovery, where functional structures are shared across groups while parameters
+are fitted locally, and by supporting the enforcement of domain-specific
+constraints, such as sign consistency across groups.  The framework
+automatically handles data normalization, link functions, and
+back-transformation, ensuring that discovered symbolic equations remain
+interpretable and valid on the original data scale.  Implements methods
+following ongoing work by the authors (2026, in preparation).")
+    (license license:expat)))
 
 (define-public r-leadsense
   (package

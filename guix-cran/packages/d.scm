@@ -3913,6 +3913,45 @@ output files.")
 and obtain the matching confidence interval using a choice of methods.")
     (license license:gpl2+)))
 
+(define-public r-dsrocrate
+  (package
+    (name "r-dsrocrate")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsROCrate" version))
+       (sha256
+        (base32 "1wj6kyxq9csjh2rlc802pwkzxl59m9yb666n84qy2kxpz4bgszfm"))))
+    (properties `((upstream-name . "dsROCrate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xptr
+                             r-vtree
+                             r-tibble
+                             r-rocrater
+                             r-rmarkdown
+                             r-rcpptoml
+                             r-purrr
+                             r-opalr
+                             r-jsonlite
+                             r-dsmolgenisarmadillo
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FederatedMethods/dsROCrate")
+    (synopsis "'DataSHIELD' RO-Crate Governance Functions")
+    (description
+     "This package provides tools for wrapping @code{DataSHIELD} analyses into
+RO-Crate (Research Object Crate) objects.  Provides functions to create
+structured metadata for federated data analysis projects, enabling governance
+tracking of data access, project membership, analysis execution and output
+validation across distributed data sources.")
+    (license license:expat)))
+
 (define-public r-dspoty
   (package
     (name "r-dspoty")
@@ -4351,6 +4390,33 @@ implemented based on the DStorage class.")
     (description
      "Dataset containing information about job listings for data science job roles.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-dsir
+  (package
+    (name "r-dsir")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DSIR" version))
+       (sha256
+        (base32 "1zxgn2w0w7snrhb8dsmncyljdxanlpjyncsnnh8xbich76wc54rf"))))
+    (properties `((upstream-name . "DSIR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-httr2 r-ggplot2 r-flextable r-cli))
+    (home-page "https://github.com/shanlong-who/DSIR")
+    (synopsis "Data Science Infrastructure for Global Health in R")
+    (description
+     "This package provides tools for global health data analysis, including a
+publication-ready ggplot2 theme, a flextable defaults helper, a thin pie chart
+wrapper, built-in regional country-code datasets, and convenience clients for
+the World Health Organization Global Health Observatory (GHO) OData API
+<https://ghoapi.azureedge.net/api/> and the United Nations Sustainable
+Development Goals (SDG) API <https://unstats.un.org/SDGAPI/swagger/>.")
+    (license license:expat)))
 
 (define-public r-dsims
   (package
@@ -10183,38 +10249,6 @@ method; rather it is a pre-processing method for outlier detection.  It brings
 outliers to the fore-front using fewer basis vectors (Kandanaarachchi, Hyndman
 2020) <doi:10.1080/10618600.2020.1807353>.")
     (license license:expat)))
-
-(define-public r-do3pca
-  (package
-    (name "r-do3pca")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "do3PCA" version))
-       (sha256
-        (base32 "11ilwy7iqia6nxqphycq526crg5q1y0giqfy8q66ibj3zzql8xbs"))))
-    (properties `((upstream-name . "do3PCA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdimtools
-                             r-ratematrix
-                             r-phytools
-                             r-nloptr
-                             r-mclust
-                             r-matrixcalc
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=do3PCA")
-    (synopsis "Probabilistic Phylogenetic Principal Component Analysis")
-    (description
-     "Estimates probabilistic phylogenetic Principal Component Analysis (PCA) and
-non-phylogenetic probabilistic PCA. Provides methods to implement alternative
-models of trait evolution including Brownian motion (BM), Ornstein-Uhlenbeck
-(OU), Early Burst (EB), and Pagel's lambda.  Also provides flexible biplot
-functions.")
-    (license license:gpl2+)))
 
 (define-public r-do
   (package
@@ -25964,6 +25998,33 @@ as much compatibility as possible with these packages, while offering an
 alternative in the objects of class \"declared\".")
     (license license:gpl3+)))
 
+(define-public r-deckroadmap
+  (package
+    (name "r-deckroadmap")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deckroadmap" version))
+       (sha256
+        (base32 "0sdbs2a6i747f1qv8xkmshjjsz4yjzx5i0fifkxb3685pjl8sg77"))))
+    (properties `((upstream-name . "deckroadmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CodingTigerTang/deckroadmap")
+    (synopsis
+     "Roadmap Footers for 'Reveal.js' Slides in 'Quarto' and 'R Markdown'")
+    (description
+     "Adds section-aware roadmap footers to Reveal.js slide decks created with Quarto
+or R Markdown'.  The footer highlights completed, current, and upcoming sections
+as slides advance.  Supports multiple visual styles with configurable colors,
+size, and positioning options.")
+    (license license:expat)))
+
 (define-public r-deckgl
   (package
     (name "r-deckgl")
@@ -26292,6 +26353,31 @@ simulation, standardised stress tests, and IMF- style heat map risk assessments.
  Computes S1/S2 sustainability gap indicators used by the European Commission.
 All methods are pure computation with no external dependencies beyond base R;
 works with fiscal data from any source.")
+    (license license:expat)))
+
+(define-public r-debrief
+  (package
+    (name "r-debrief")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "debrief" version))
+       (sha256
+        (base32 "0v06yiwskfax24q0qg3knbj99hfin4ibxjh2pnnpb923b3snjgvv"))))
+    (properties `((upstream-name . "debrief")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-lib/debrief")
+    (synopsis "Text-Based Summaries for 'profvis' Profiling Data")
+    (description
+     "This package provides text-based summaries and analysis tools for profvis
+profiling output.  Designed for terminal workflows and artificial intelligence
+(AI) agent consumption, offering views including hotspot analysis, call trees,
+source context, caller/callee relationships, and memory allocation breakdowns.")
     (license license:expat)))
 
 (define-public r-deboinr
@@ -28377,6 +28463,39 @@ Reference: Parichit Sharma, Hasan Kurban, Mehmet Dalkilic (2022)
 <doi:10.1016/j.softx.2021.100944>.  Hasan Kurban, Mark Jenne, Mehmet Dalkilic
 (2016) <doi:10.1007/s41060-017-0062-1>.")
     (license license:gpl3)))
+
+(define-public r-dceasimr
+  (package
+    (name "r-dceasimr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dceasimR" version))
+       (sha256
+        (base32 "12v9671grll0f6i3i6p6cd0r64cvmnc8cgnkwli0nlc7b8vlaw7x"))))
+    (properties `((upstream-name . "dceasimR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-scales r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://heorlytics.github.io/dceasimR/")
+    (synopsis
+     "Distributional Cost-Effectiveness Analysis for Health Technology Assessment")
+    (description
+     "This package implements distributional cost-effectiveness analysis (DCEA) as
+described in Cookson et al. (2020, ISBN:9780198838197) and the methods endorsed
+by NICE (2025) for health technology evaluation.  Provides functions for both
+aggregate and full-form DCEA, inequality measurement (Atkinson index, Gini
+coefficient, slope index of inequality, relative index of inequality), social
+welfare function evaluation, equity-efficiency impact plane visualisation, and
+sensitivity analysis over inequality aversion parameters.  Includes baseline
+health distributions for England (by IMD quintile), Canada (income quintile),
+and global WHO regions.  Suitable for academic research, health technology
+assessment submissions, and public health policy analysis.")
+    (license license:expat)))
 
 (define-public r-dccpp
   (package

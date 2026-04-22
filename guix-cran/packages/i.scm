@@ -3684,13 +3684,13 @@ community, but do not impose many dependencies on the user.")
 (define-public r-isar
   (package
     (name "r-isar")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISAR" version))
        (sha256
-        (base32 "1frb62jrpm9fywzslly98q3x9lh0576wg5my762r1kpi6fshv64z"))))
+        (base32 "19gnp9a8i3qbrs5apj8jy6ks617a86vxrb01r4nxy412qhzq9k7b"))))
     (properties `((upstream-name . "ISAR")))
     (build-system r-build-system)
     (arguments
@@ -3890,13 +3890,13 @@ estimation.  The methods are described in our paper (Zimmer et al. (2022)
 (define-public r-irtm
   (package
     (name "r-irtm")
-    (version "0.0.1.1")
+    (version "0.0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRTM" version))
        (sha256
-        (base32 "0vy6q335qkqv0vyfrrdcj1gk484d4fl4lwk9ripq6npc77yvv1c7"))))
+        (base32 "1z6gmyzhmnmqg4q507figjwaqlsl1lh7q1qdh9j1cl2zxczd66zs"))))
     (properties `((upstream-name . "IRTM")))
     (build-system r-build-system)
     (arguments
@@ -6312,13 +6312,13 @@ as well as internationalized ('IDN') domain lookup with and whois query.")
 (define-public r-iotarelr
   (package
     (name "r-iotarelr")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iotarelr" version))
        (sha256
-        (base32 "0rdnkk8zwzak1bpzlm2b75hh4h2vqd2sy5z55pvfah5hqx8vh47h"))))
+        (base32 "1lx08kzsn43ixkr1l1qkr40pw2520222dw3dn31g1p766d80a9ca"))))
     (properties `((upstream-name . "iotarelr")))
     (build-system r-build-system)
     (arguments
@@ -17873,6 +17873,56 @@ conducting simulations on composite scores.")
      "This package provides a personalized dynamic latent factor model (Zhang et al.
 (2024) <doi:10.1093/biomet/asae015>) for irregular multi-resolution time series
 data, to interpolate unsampled measurements from low-resolution time series.")
+    (license license:expat)))
+
+(define-public r-idionomics
+  (package
+    (name "r-idionomics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idionomics" version))
+       (sha256
+        (base32 "08a1rlsrwz2fmk3abmrpnlmqv5g854dj826hr4iq79kyfaphcksc"))))
+    (properties `((upstream-name . "idionomics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-metafor
+                             r-ggplot2
+                             r-forecast
+                             r-forcats
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cristobalehc/idionomics")
+    (synopsis "Conduct Idionomic Analyses for Time Series Modeling")
+    (description
+     "This package provides a toolkit for idionomic science, a research philosophy
+that places the unit of the ensemble (individual/couple/group) at the center of
+analysis.  Rather than assuming a common distribution, a similar enough process
+for each unit, and fitting a single model to the whole ensemble, idionomic
+methods model each unit separately, then aggregate upward if sensible.  The
+group-level picture emerges from individual results, not the other way around,
+while explicitly evaluating whether aggregation is reasonable given the measured
+level of heterogeneity of effects.  The package is built around intensive
+longitudinal data where each participant contributes a time series.  It provides
+a pipeline from preprocessing through modeling to group-level summaries.
+Current functions: data quality screening @code{(i_screener()}), within-person
+standardization @code{(pmstandardize()}), linear detrending
+@code{(i_detrender()}), per-subject ARIMAX (@code{AutoRegressive} Integrated
+Moving Average with @code{eXogenous} inputs) modeling and meta-analysis
+@code{(iarimax()}), individual p-values @code{(i_pval()}), Sign Divergence and
+Equisyncratic Null tests @code{(sden_test()}), and directed loop detection
+@code{(looping_machine()}).  Methods are described in Hernandez et al. (2024)
+<doi:10.1007/978-3-030-77644-2_136-1>, Ciarrochi et al. (2024)
+<doi:10.1007/s10608-024-10486-w>, and Sahdra et al. (2024)
+<doi:10.1016/j.jcbs.2024.100728>.")
     (license license:expat)))
 
 (define-public r-idiolect

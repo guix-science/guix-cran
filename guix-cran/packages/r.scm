@@ -9,6 +9,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages duckdb)
+  #:use-module (gnu packages autotools)
   #:use-module (gnu packages java)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages spreadsheet)
@@ -973,6 +974,41 @@ format data for further analysis with mark-recapture applications like Program
 MARK (which can be accessed via the RMark package in R').  Further information
 on the Wildbook framework is available at: <http://www.wildbook.org/doku.php>.")
     (license license:gpl2+)))
+
+(define-public r-rwig
+  (package
+    (name "r-rwig")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rwig" version))
+       (sha256
+        (base32 "101ilybs91s2f367w6wpxjfqadizkbgdb7a82pb6v2kq8yzk4va2"))))
+    (properties `((upstream-name . "rwig")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list autoconf))
+    (propagated-inputs (list r-word2vec
+                             r-tokenizers
+                             r-stopwords
+                             r-rlang
+                             r-rhpcblasctl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-lubridate
+                             r-cli))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/fangzhou-xie/rwig")
+    (synopsis "Wasserstein Index Generation (WIG) Model")
+    (description
+     "Efficient implementation of several Optimal Transport algorithms in Fangzhou Xie
+(2025) <doi:10.48550/@code{arXiv.2504.08722>} and the Wasserstein Index
+Generation (WIG) model in Fangzhou Xie (2020)
+<doi:10.1016/j.econlet.2019.108874>.")
+    (license license:expat)))
 
 (define-public r-rwhois
   (package
@@ -4603,6 +4639,33 @@ proper R session information as well as examples using DT tables and ggplot2
 graphs.  The bookdown Lite template theme supports code folding.")
     (license license:expat)))
 
+(define-public r-rtemis-core
+  (package
+    (name "r-rtemis-core")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtemis.core" version))
+       (sha256
+        (base32 "0pxms5zj4yyz60srfmwzbar2xfi2ap3z1slkxgizvvnn8dj962dd"))))
+    (properties `((upstream-name . "rtemis.core")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7 r-data-table r-cli))
+    (home-page "https://www.rtemis.org")
+    (synopsis "Core Utilities for the 'rtemis' Ecosystem")
+    (description
+     "Utilities used across packages of the rtemis ecosystem.  Includes the
+@code{msg()} messaging system and the @code{fmt()} formatting system.  Provides
+test_* functions that return logical values, check_* functions that throw
+informative errors, and clean_* functions that return validated and coerced
+values.  This code began as part of the rtemis package
+(<doi:10.32614/CRAN.package.rtemis>).")
+    (license license:gpl3+)))
+
 (define-public r-rtemis
   (package
     (name "r-rtemis")
@@ -7442,13 +7505,13 @@ throughout Mexico.  See <https://sinaica.inecc.gob.mx> for more information.")
 (define-public r-rsimsum
   (package
     (name "r-rsimsum")
-    (version "0.13.0")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsimsum" version))
        (sha256
-        (base32 "1crxqx3vhnwrjwr556dw6qq9789jgccvv9z2bbqi003h7w483q5k"))))
+        (base32 "1qmb79f5clg0vv218bry78xdn8cz02qz1g45w6fjryr73701f36h"))))
     (properties `((upstream-name . "rsimsum")))
     (build-system r-build-system)
     (arguments
@@ -13167,6 +13230,39 @@ round 0.5 up to 1.")
 from the scrutiny package.")
     (license license:expat)))
 
+(define-public r-roundrobinr
+  (package
+    (name "r-roundrobinr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roundRobinR" version))
+       (sha256
+        (base32 "1qb8crhkjbqgpbxssq741l3g6qsnci29aklix6jlslwfg9qss3rh"))))
+    (properties `((upstream-name . "roundRobinR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlme r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andrewpknight/roundRobinR")
+    (synopsis "Manipulate and Analyze Round Robin Dyadic Data")
+    (description
+     "This package provides utilities for processing and analyzing dyadic data
+collected using a round-robin design, in which each person in a group rates or
+interacts with every other person on at least one variable.  Data manipulation
+functions prepare datasets for dyadic data analysis by creating the actor and
+partner dummy variables required by the social relations model (SRM).  Analysis
+functions implement the SRM using multilevel modeling via a custom nlme
+covariance class ('@code{pdSRM}'), following the approach of Snijders and Kenny
+(1999) <doi:10.1111/j.1475-6811.1999.tb00204.x> and Knight and Humphrey (2019)
+<doi:10.1037/0000115-019>.  The package estimates group, actor, partner, and
+relationship variance components along with generalized and dyadic reciprocity
+correlations, and supports both null and fixed-effects models.")
+    (license license:expat)))
+
 (define-public r-roundhouse
   (package
     (name "r-roundhouse")
@@ -14633,13 +14729,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.25")
+    (version "0.9.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "1vxxx4amhvmqd8hi6s8jq6bisvh8rvzdf8abqrdx72hs7cvachkm"))))
+        (base32 "0rva07i7fa8z1lapz6b24pl242py4lj49a4pbgp25mjgb5q0h85x"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (arguments
@@ -15508,6 +15604,36 @@ file illustrates how to use this package.")
 bounds transformed into ROI optimization problems.  This package provides a
 wrapper around the @code{globalOptTests} which provides a collection of global
 optimization problems.  More information can be found in the README file.")
+    (license license:gpl3)))
+
+(define-public r-roi-format-cbf
+  (package
+    (name "r-roi-format-cbf")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ROI.format.cbf" version))
+       (sha256
+        (base32 "12d0qq6dawprw8cyyavxycy1v23mg6p556k93bqn7n9nwkg9r22w"))))
+    (properties `((upstream-name . "ROI.format.cbf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam r-roi))
+    (home-page "https://gitlab.com/roigrp/tools/roi.format.cbf")
+    (synopsis
+     "Conic Benchmark Format (CBF) Plugin for the R Optimization Infrastructure")
+    (description
+     "This package provides read and write support for the Conic Benchmark Format
+(CBF, version 4) within the R Optimization Infrastructure ('ROI').  Supported
+cone types include the positive orthant, second-order (SOC), rotated
+second-order (bridged automatically to standard SOC), exponential (primal and
+dual), power (primal and dual), and semidefinite (symmetric-vectorised) cones,
+as well as their mixed-integer variants.  The reader translates a .cbf file into
+an ROI OP object, handling coordinate-convention differences between CBF and ROI
+transparently; the writer serialises an ROI OP object back to CBF plain-text.")
     (license license:gpl3)))
 
 (define-public r-rogue
@@ -17334,6 +17460,35 @@ under the null hypothesis is asymptotically equal to the level of the test.  See
 <doi:10.48550/@code{arXiv.2211.08784>} for more details on the statistical
 tests.")
     (license license:expat)))
+
+(define-public r-robustdif
+  (package
+    (name "r-robustdif")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robustDIF" version))
+       (sha256
+        (base32 "04mavjry8ji80a9g7gncy1z2mlxi0k33ak2mrl4r17vw0cwvw2j5"))))
+    (properties `((upstream-name . "robustDIF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mirt r-matrix r-lavaan))
+    (home-page "https://cran.r-project.org/package=robustDIF")
+    (synopsis "Differential Item Functioning Using Robust Scaling")
+    (description
+     "This package provides tools for testing differential item functioning (DIF) and
+differential test functioning (DTF) in two-group item response theory models.
+The package estimates robust scaling parameters via iteratively reweighted least
+squares with Tukey's bisquare loss, and supports Wald-type tests of item-level
+and test-level differences from robust scaling parameters.  Inputs can be
+supplied directly from model parameter/covariance objects or extracted from
+fitted mirt and lavaan models.  Methods are described in Halpin (2022)
+<doi:10.48550/@code{arXiv.2207.04598>}.")
+    (license license:gpl3+)))
 
 (define-public r-robustda
   (package
@@ -22194,6 +22349,34 @@ build these distributions from raw data.  Resulting metalog objects are then
 useful for exploratory and probabilistic analysis.")
     (license license:expat)))
 
+(define-public r-rmet
+  (package
+    (name "r-rmet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmet" version))
+       (sha256
+        (base32 "0sqwbp5nmgpv066wds387qjp95iwi9acd249mxi9fncjzjw1ja9f"))))
+    (properties `((upstream-name . "rmet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rodrigosqrt3/rmet")
+    (synopsis "Download and Read Brazilian Meteorological Data from INMET")
+    (description
+     "Automates the download and processing of historical weather data from the
+Brazilian National Institute of Meteorology (INMET).  It resolves formatting
+inconsistencies in raw CSV files across different years, removes structural
+artifacts, standardizes column names, converts timestamps to local Brazilian
+time zones, and outputs tidy data frames ready for analysis.  Data are retrieved
+from <https://portal.inmet.gov.br/dadoshistoricos>.")
+    (license license:gpl3+)))
+
 (define-public r-rmerec
   (package
     (name "r-rmerec")
@@ -25298,6 +25481,31 @@ leading seasonal adjustment methods TRAMO/SEATS+ and X-12ARIMA/X-13ARIMA-SEATS."
 back-end.  This allows R to connect to any DBMS that has a JDBC driver.")
     (license license:expat)))
 
+(define-public r-rjd3xjars
+  (package
+    (name "r-rjd3xjars")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3xjars" version))
+       (sha256
+        (base32 "09zhr6rh36r2gc85xyl30l32jxyi2x3y5cmkfgg3y4ljkm31sh4s"))))
+    (properties `((upstream-name . "rjd3xjars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjd3toolkit r-rjava))
+    (home-page "https://github.com/rjdverse/rjd3xjars")
+    (synopsis "R Interface to 'JDemetra+ 3.x' Time Series Analysis Software")
+    (description
+     "R Interface to JDemetra+ 3.x (<https://github.com/jdemetra>) time series
+analysis software.  It provides functions allowing to decompose a time series,
+including high-frequency data with multiple periodicities.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-rjd3x13
   (package
     (name "r-rjd3x13")
@@ -25431,6 +25639,48 @@ in pre-adjustment and benchmarking when using rjd3x13 or rjd3tramoseats'.")
      "Interface to JDemetra+ 3.x (<https://github.com/jdemetra>) time series analysis
 software.  It offers full access to txt, csv, xml and spreadsheets files which
 are meant to be read by JDemetra+ Graphical User Interface.")
+    (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-rjd3production
+  (package
+    (name "r-rjd3production")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3production" version))
+       (sha256
+        (base32 "0rfxxq1qibg2ggz2x3pcrr7k85y9rwna70jvf6dpq4biyibr851x"))))
+    (properties `((upstream-name . "rjd3production")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-yaml
+                             r-usethis
+                             r-tidyr
+                             r-tbox
+                             r-shiny
+                             r-rjd3x13
+                             r-rjd3workspace
+                             r-rjd3toolkit
+                             r-rjd3providers
+                             r-lintr
+                             r-flextable
+                             r-dygraphs
+                             r-date4ts
+                             r-constructive))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://inseefr.github.io/rjd3production/")
+    (synopsis "Prepare for Production of Seasonal Adjustment with 'JDemetra+'")
+    (description
+     "This package provides a comprehensive tool for setting up seasonal data
+pipelines using JDemetra+ (version 3) and rjdverse'.  This includes setting up a
+new working environment, creating and selecting calendar regressors, managing
+specifications (trading-days regressors and outliers) at the workspace level,
+making a workspace usable by the cruncher', removing insignificant outliers, and
+comparing workspaces.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-rjd3jars
@@ -26120,6 +26370,33 @@ experiments.")
 (<https://www.itis.gov>).  Includes functions to work with the ITIS REST API
 methods (<https://www.itis.gov/ws_description.html>), as well as the Solr web
 service (<https://www.itis.gov/solr_documentation.html>).")
+    (license license:expat)))
+
+(define-public r-ritch
+  (package
+    (name "r-ritch")
+    (version "0.1.30")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RITCH" version))
+       (sha256
+        (base32 "0z2c3i0xbqb3j6bz6667n83mabis36fmiai2z1f63hd3vq1yk7l1"))))
+    (properties `((upstream-name . "RITCH")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpp r-nanotime r-data-table r-bit64))
+    (home-page "https://davzim.github.io/RITCH/")
+    (synopsis "Parser for the ITCH Protocol")
+    (description
+     "Efficiently parses, filters, and writes binary ITCH files (Version 5.0)
+containing detailed financial transactions as distributed by NASDAQ to a
+data.table.  Includes functions to interact with NASDAQ data services at
+<https://emi.nasdaq.com/ITCH/> and
+<https://emi.nasdaq.com/ITCH/Stock_Locate_Codes/>.")
     (license license:expat)))
 
 (define-public r-ritc
@@ -33653,6 +33930,33 @@ Health Data Sciences and Informatics programme. @code{ResultModelManager}
 provides utility functions to allow package maintainers to migrate existing SQL
 database models, export and import results in consistent patterns.")
     (license license:asl2.0)))
+
+(define-public r-resultcheck
+  (package
+    (name "r-resultcheck")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "resultcheck" version))
+       (sha256
+        (base32 "042fcyj5mqgir1yrfxvwnlhinfxwdvb77x2schr15wd8jn5ax0sc"))))
+    (properties `((upstream-name . "resultcheck")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-withr r-rprojroot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kv9898/resultcheck/")
+    (synopsis "Result Stability Checks for Empirical R Projects")
+    (description
+     "Lightweight helpers for checking whether empirical results remain substantively
+unchanged across code revisions, platform differences, and package updates.  The
+package supports regression-style testing of derived datasets, statistical model
+outputs, tables, and plots, helping researchers detect unintended result drift
+early and distinguish material from non-material changes in empirical workflows.")
+    (license license:expat)))
 
 (define-public r-result
   (package
@@ -46849,13 +47153,13 @@ natively.")
 (define-public r-rdacca-hp
   (package
     (name "r-rdacca-hp")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdacca.hp" version))
        (sha256
-        (base32 "16sa350s7i2z6pqpkx5gxsnrd04gk6vfxsm4fvpw7xxxmv8f2y2k"))))
+        (base32 "1d9b4gh0kaxg0cmqn8yzfw2z0yz3rgf16sz6c54r1j6rgkr1n9bb"))))
     (properties `((upstream-name . "rdacca.hp")))
     (build-system r-build-system)
     (arguments
@@ -55553,6 +55857,42 @@ size, and power are provided.  Five allocation functions for DBCD and six
 addition rule functions for SEU are implemented to target allocations such as
 Neyman', Rosenberger Rosenberger et al. (2001)
 <doi:10.1111/j.0006-341X.2001.00909.x> and Urn allocations.")
+    (license license:expat)))
+
+(define-public r-raretrans
+  (package
+    (name "r-raretrans")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raretrans" version))
+       (sha256
+        (base32 "0mz3d1s6a5i6lq23djxh81q06qzsyj7fbbljdx5bm924p0b6jxhz"))))
+    (properties `((upstream-name . "raretrans")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://atiretoo.github.io/raretrans/")
+    (synopsis "Bayesian Priors for Matrix Population Models")
+    (description
+     "This package provides functions to correct biased transition and fertility
+estimates in population projection matrices caused by small sample sizes.  Small
+or short-term studies frequently produce structural zeros (biologically possible
+transitions never observed) and structural ones (transitions estimated at 100%
+survival, stasis, or mortality that are biologically implausible).  Both distort
+matrix structure and bias estimates of population growth.  Implements a
+multinomial-Dirichlet Bayesian prior for transition probabilities and a
+Gamma-Poisson prior for reproduction, allowing analysts to incorporate prior
+biological knowledge and regularise estimates from rare or unobserved events.
+Includes functions to compute marginal posterior credible intervals for all
+transition probabilities @code{(transition_CrI()}), visualise those intervals as
+point-range plots @code{(plot_transition_CrI()}), and display the full posterior
+beta density for each matrix entry @code{(plot_transition_density()}).  Methods
+are described in Tremblay et al. (2021) <doi:10.1016/j.ecolmodel.2021.109526>.")
     (license license:expat)))
 
 (define-public r-rarestr

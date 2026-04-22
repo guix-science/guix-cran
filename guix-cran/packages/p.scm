@@ -1838,13 +1838,13 @@ the topology of a membrane protein.  This package allows one to use
 (define-public r-puremoe
   (package
     (name "r-puremoe")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "puremoe" version))
        (sha256
-        (base32 "1h48rqvsy1d3nb5y2mjkidn7lj4f13r561av5jim68j2lla2xx5v"))))
+        (base32 "07k8zm53wq5bjkgayjzfqm0nn3zmg3b5hz659jgzb32gqjssc9bb"))))
     (properties `((upstream-name . "puremoe")))
     (build-system r-build-system)
     (arguments
@@ -1858,6 +1858,7 @@ the topology of a membrane protein.  This package allows one to use
                              r-jsonlite
                              r-httr
                              r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jaytimm/puremoe")
     (synopsis "Pubmed Unified REtrieval for Multi-Output Exploration")
     (description
@@ -10764,6 +10765,31 @@ print some objects using an appropriate format such as Markdown or @code{LaTeX}.
 @code{help()} pages can also be rendered in knitr documents.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-printify
+  (package
+    (name "r-printify")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "printify" version))
+       (sha256
+        (base32 "0wndw1gc4p59z5hcznvsrbyynpl70l8fmgyianw9d32s5dbd1r1i"))))
+    (properties `((upstream-name . "printify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/s3rdia/printify")
+    (synopsis "Custom Formatted Console Messages with Timing Support")
+    (description
+     "This package provides a lightweight message system relying purely on base R.
+Comes with built-in and pre styled message types and provides an easy way to
+create custom messages.  Supports individually styled and colored text as well
+as timing information.  Designed to make console output more informative and
+visually organized.")
+    (license license:expat)))
+
 (define-public r-prinsurf
   (package
     (name "r-prinsurf")
@@ -15428,13 +15454,13 @@ based on data nuggets.  Reference papers: [1] Beavers et al., (2024)
 (define-public r-pp
   (package
     (name "r-pp")
-    (version "0.6.3-11")
+    (version "0.6.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PP" version))
        (sha256
-        (base32 "1z7v5jiljm534lhr92vz9z3cafwcp6hdxyrr1nhli2arxc1nin76"))))
+        (base32 "1a00zxm7ika4iv68d0vfg5d22h5dfwpg1mzai5kcjwjzia84dvgi"))))
     (properties `((upstream-name . "PP")))
     (build-system r-build-system)
     (arguments
@@ -22191,6 +22217,47 @@ Fokianos (2023). \"Nonlinear network autoregression\".  Annals of Statistics,
 K. (2023). \"Inference for Network Count Time Series with the R Package PNAR\".
 The R Journal, 15/4: 255--269. <doi:10.32614/RJ-2023-094>.")
     (license license:gpl2+)))
+
+(define-public r-pnadcperiods
+  (package
+    (name "r-pnadcperiods")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PNADCperiods" version))
+       (sha256
+        (base32 "03jgqd35h42pay114lyvrhr84y7h1c8y7gw8m0jsl154cdycp59v"))))
+    (properties `((upstream-name . "PNADCperiods")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sidrar r-lubridate r-data-table r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://antrologos.github.io/PNADCperiods/")
+    (synopsis "Identify Reference Periods in Brazil's PNADC Survey Data")
+    (description
+     "Identifies reference periods (months, fortnights, and weeks) in Brazil's
+quarterly PNADC (Pesquisa Nacional por Amostra de Domicilios Continua) survey
+data and computes calibrated weights for sub-quarterly analysis.  The core
+algorithm uses IBGE (Instituto Brasileiro de Geografia e Estatistica) Parada
+Tecnica (technical break) rules combined with respondent birthdates to determine
+which temporal period each survey observation refers to.  Period identification
+follows a nested hierarchy enforced by construction: fortnights require months,
+weeks require fortnights.  Achieves approximately 97% monthly determination rate
+with the full series (2012-2025).  Strict fortnight and week rates are
+approximately 9% and 3% respectively, as they cannot leverage cross-quarter
+panel aggregation.  Experimental strategies (probabilistic assignment and UPA
+(Primary Sampling Unit) aggregation) further improve these determination rates.
+The package provides adaptive hierarchical weight calibration (4/2/1 cell levels
+for month/fortnight/week) with period-specific smoothing to produce survey
+weights calibrated to SIDRA (Sistema IBGE de Recuperacao Automatica) population
+totals.  Also includes a SIDRA mensalization module that converts 86+ official
+rolling quarter series from the IBGE SIDRA API (Application Programming
+Interface) into exact monthly estimates, without requiring access to microdata.
+Hecksher (2020) <https://repositorio.ipea.gov.br/handle/11058/9859>.")
+    (license license:expat)))
 
 (define-public r-pnadcibge
   (package
@@ -33453,13 +33520,13 @@ sequencing pseudo-time information.")
 (define-public r-pgrdup
   (package
     (name "r-pgrdup")
-    (version "0.2.4.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PGRdup" version))
        (sha256
-        (base32 "1wy2jpm5qzc3v8cmnr4nf3drxm1kwhml5ryjqzyjwdj15db160nl"))))
+        (base32 "1drg2h55lb441xb5928dw31lxqqcvzwa4k8wky50flp8gh9yfisk"))))
     (properties `((upstream-name . "PGRdup")))
     (build-system r-build-system)
     (arguments
@@ -39857,6 +39924,30 @@ Miao. (2020).  An Introduction to Proximal Causal Learning. @code{arXiv}
 e-prints, @code{arXiv-2009} <@code{arXiv:2009.10982>}.")
     (license license:gpl2+)))
 
+(define-public r-pcir
+  (package
+    (name "r-pcir")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pciR" version))
+       (sha256
+        (base32 "0nndyz602nzjv59zsg46085ls2z9nfn0y034d989i8yvg29iinnl"))))
+    (properties `((upstream-name . "pciR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pciR")
+    (synopsis "Proactive Conservation Index")
+    (description
+     "Calculates the Proactive Conservation Index, a new tool to prioritize species
+for conservation, which can incorporate information about future threats.")
+    (license license:gpl3)))
+
 (define-public r-pci
   (package
     (name "r-pci")
@@ -43712,6 +43803,34 @@ visualizations.  Length of color palettes is configurable.")
 simultaneous lower confidence bounds for the number of true discoveries.
 <doi:10.1002/sim.9725>.")
     (license license:gpl2+)))
+
+(define-public r-parglm
+  (package
+    (name "r-parglm")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "parglm" version))
+       (sha256
+        (base32 "0iay1gg38rm72f6vxiqrfnz53n8p94zknqn0aw23r19ys0w2das3"))))
+    (properties `((upstream-name . "parglm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/remlapmot/parglm")
+    (synopsis "Parallel GLM")
+    (description
+     "This package provides a parallel estimation method for generalized linear models
+without compiling with a multithreaded LAPACK or BLAS.")
+    (license license:gpl2)))
 
 (define-public r-pargasite
   (package

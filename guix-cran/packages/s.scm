@@ -1322,6 +1322,35 @@ and code generation.")
 partitioned into file-backed blocks.")
     (license license:expat)))
 
+(define-public r-symbolicr
+  (package
+    (name "r-symbolicr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "symbolicr" version))
+       (sha256
+        (base32 "02f5r4anrqwqx8j1vsgskp2lj4vszlqkdimvbxmcd854dvnd4737"))))
+    (properties `((upstream-name . "symbolicr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rcppalgos r-gtools r-ga r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cosbi-research/symbolicr")
+    (synopsis "Symbolic Regression Framework")
+    (description
+     "Find non-linear formulas that fits your input data.  You can systematically
+explore and memorize the possible formulas and it's cross-validation
+performance, in an incremental fashion.  Three main interoperable search
+functions are available: 1) @code{random.search()} performs a random
+exploration, 2) @code{genetic.search()} employs a genetic optimization
+algorithm, 3) @code{comb.search()} combines best results of the first two.  For
+more details see Tomasoni et al. (2026) <doi:10.1208/s12248-026-01232-z>.")
+    (license license:agpl3+)))
+
 (define-public r-symbolicdeterminants
   (package
     (name "r-symbolicdeterminants")
@@ -1679,6 +1708,35 @@ Estuarine Research Reserve System <https://cdmo.baruch.sc.edu/>.  These tools
 address common challenges associated with continuous time series data for
 environmental decision making.")
     (license license:cc0)))
+
+(define-public r-swjm
+  (package
+    (name "r-swjm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "swjm" version))
+       (sha256
+        (base32 "1j45iqbv1n5vzr571spgb193gpys1rzxdrld3sic7kvigghg2dfq"))))
+    (properties `((upstream-name . "swjm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rereg r-rcpparmadillo r-rcpp r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=swjm")
+    (synopsis
+     "Stagewise Variable Selection for Joint Models of Semi-Competing Risks")
+    (description
+     "This package implements stagewise regression for variable selection in joint
+models of recurrent events and terminal events (semi-competing risks).  Supports
+two model frameworks: the joint frailty model (Cox-type) and the joint
+scale-change model (AFT-type).  Provides cooperative lasso, lasso, and group
+lasso penalties with cross-validation for tuning parameter selection via
+cross-fitted estimating equations.")
+    (license license:gpl3+)))
 
 (define-public r-switchselection
   (package
@@ -4911,6 +4969,39 @@ package identifies the best-fitting distribution and produces realistic
 imputations that respect the censoring thresholds.")
     (license license:expat)))
 
+(define-public r-survkl
+  (package
+    (name "r-survkl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survkl" version))
+       (sha256
+        (base32 "01zyaid5b2lyv18l2808i76vk2ngawzyn3xg1fakickak5kbv8zb"))))
+    (properties `((upstream-name . "survkl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-ggplot2
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://um-kevinhe.github.io/survkl/")
+    (synopsis "Estimate Survival Data with Data Integration")
+    (description
+     "This package provides flexible and efficient tools for integrating external risk
+scores into Cox proportional hazards models while accounting for population
+heterogeneity.  Enables robust estimation, improved predictive accuracy, and
+user-friendly workflows for modern survival analysis.  For more information, see
+Wang et al. (2023) <doi:10.48550/@code{arXiv.2302.11123>}.")
+    (license license:gpl3)))
+
 (define-public r-survivor
   (package
     (name "r-survivor")
@@ -8079,6 +8170,38 @@ predictor variables, such as genes etc, implementing algorithms PELORA and
 WILMA'.")
     (license license:gpl3)))
 
+(define-public r-supabaser
+  (package
+    (name "r-supabaser")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "supabaseR" version))
+       (sha256
+        (base32 "0k9y8cqd7ikl3qibwisbkwakr6181p4jz4693vikvs8kg7y92rrc"))))
+    (properties `((upstream-name . "supabaseR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpostgres
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate))
+    (home-page "https://deepanshkhurana.github.io/supabaseR/")
+    (synopsis "'CRUD' Utils in 'R' for 'Supabase'")
+    (description
+     "An dual-paradigm interface to Supabase (<https://supabase.com/>), an open-source
+backend-as-a-service platform.  Provides comprehensive database operations
+including Create, Read, Update, Delete ('CRUD') functionality through both REST
+API endpoints and direct @code{PostgreSQL} database connections.  Simplifies
+authentication, data management, and schema operations for Supabase projects.")
+    (license license:expat)))
+
 (define-public r-sunsvoc
   (package
     (name "r-sunsvoc")
@@ -8120,6 +8243,36 @@ managed by Oak Ridge Associated Universities (ORAU) under DOE contract number
 DE-SC0014664. [1] Wang, M. et al, 2018. <doi:10.1109/PVSC.2018.8547772>. [2]
 Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 <doi:10.1117/12.2236939>.")
+    (license license:bsd-3)))
+
+(define-public r-sundialr
+  (package
+    (name "r-sundialr")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sundialr" version))
+       (sha256
+        (base32 "14clpqnrsmc8yfwbw8n2i4hpiz8hd1kpln1dslhn7dadac0hzfir"))))
+    (properties `((upstream-name . "sundialr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sn248/sundialr")
+    (synopsis
+     "An Interface to 'SUNDIALS' Ordinary Differential Equation (ODE) Solvers")
+    (description
+     "This package provides a way to call the functions in SUNDIALS C ODE solving
+library (<https://computing.llnl.gov/projects/sundials>).  Currently the serial
+version of ODE solver, CVODE', sensitivity calculator CVODES and differential
+algebraic solver IDA from the SUNDIALS library are implemented.  The package
+requires ODE to be written as an R or Rcpp function and does not require the
+SUNDIALS library to be installed on the local machine.")
     (license license:bsd-3)))
 
 (define-public r-sunclarco
@@ -21076,6 +21229,35 @@ Office, coordinating the authorisation of plant protection products in
 Switzerland, does not answer requests regarding this package.")
     (license license:gpl3+)))
 
+(define-public r-srpi
+  (package
+    (name "r-srpi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "srpi" version))
+       (sha256
+        (base32 "01wbxh9wrhif8fdzvww0bzj969ddyr7v8rd7arn0b17fpi4zdkh9"))))
+    (properties `((upstream-name . "srpi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=srpi")
+    (synopsis "Standardized Ranking Performance Index for Model Selection")
+    (description
+     "Flexible implementation of the Standardized Ranking Performance Index
+(@code{sRPI}) for model selection based on multiple evaluation criteria.  The
+package combines multiple statistical measures into a single index to provide an
+objective and robust ranking of models across calibration, validation, and
+combined scenarios.  It supports evaluation of statistical, machine learning,
+and other predictive models using user-defined performance criteria.  For more
+details see Aschonitis et al. (2019) <doi:10.1016/j.envsoft.2019.01.005> and
+Singh et al. (2023) <doi:10.1016/j.ecoinf.2022.101933>.")
+    (license license:gpl3)))
+
 (define-public r-srp
   (package
     (name "r-srp")
@@ -21747,13 +21929,13 @@ controlled at a user-specified level.")
 (define-public r-sqrl
   (package
     (name "r-sqrl")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SQRL" version))
        (sha256
-        (base32 "05qyrdvgrkv6r88pgwin8llh7qfzkivnrwz5ba1cwkbqg3pvfjhv"))))
+        (base32 "1zg4v6b8y5m0ibnyqvj4jpixcdwi5pplgznbvgdyj9cam5xwxm32"))))
     (properties `((upstream-name . "SQRL")))
     (build-system r-build-system)
     (arguments
@@ -24933,6 +25115,34 @@ the option to sub-sample data, and bootstrapped confidence intervals.")
 split-half reliability approach.  Unofficial release name: \"I eat stickers all
 the time, dude!\".")
     (license license:gpl3)))
+
+(define-public r-splitgraph
+  (package
+    (name "r-splitgraph")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "splitGraph" version))
+       (sha256
+        (base32 "1gl9wrdngxdph2cp42jbb0nlzd1ym5khnm9fddamim4kjn4vg7xb"))))
+    (properties `((upstream-name . "splitGraph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/selcukorkmaz/splitGraph")
+    (synopsis "Dataset Dependency Graphs for Leakage-Aware Evaluation")
+    (description
+     "Represent biomedical dataset structure as typed dependency graphs so that sample
+provenance, repeated-measure structure, study design, batch effects, and
+temporal relationships are explicit and inspectable.  Validates dataset
+structure, detects sample-level overlap, derives deterministic split
+constraints, and produces a tool-agnostic split specification for leakage-aware
+evaluation workflows.")
+    (license license:expat)))
 
 (define-public r-splitglm
   (package
@@ -29881,6 +30091,42 @@ spatio-temporal data.  For more details of the methods, see SipilÃ¤ et al.
 (2025) <doi:10.48550/@code{arXiv.2512.13753>}.")
     (license license:gpl3)))
 
+(define-public r-spatialdata
+  (package
+    (name "r-spatialdata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialData" version))
+       (sha256
+        (base32 "0185vihkrqc8b49qgxjm9a83ihnjmcfry9li5qiq329f7hppamcj"))))
+    (properties `((upstream-name . "spatialData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf))
+    (home-page "https://blasbenito.github.io/spatialData/")
+    (synopsis "Spatial Datasets for Ecological Modeling")
+    (description
+     "This package provides spatial datasets ready to use for ecological modelling and
+raster companion data for prediction: Neanderthal presence during the Last
+Interglacial (Benito et al.  2017 <doi:10.1111/jbi.12845>); Plant diversity
+metrics for the World's Ecoregions (Maestre et al.  2021
+<doi:10.1111/nph.17398>); tree richness across the Americas (Benito et al.  2013
+<doi:10.1111/2041-210X.12022>); plant communities from the Sierra Nevada (Spain)
+with future climate scenarios (Benito et al.  2013
+<doi:10.1111/2041-210X.12022>); butterfly-plant interaction data from Sierra
+Nevada (Spain) (Benito et al.  2011 <doi:10.1007/s10584-010-0015-3>); plant
+species occurrences in Andalusia (Spain) (Benito et al.  2014
+<doi:10.1111/ddi.12148>); presence of the plant Linaria nigricans and
+greenhouses (Benito et al.  2009 <doi:10.1007/s10531-009-9604-8>); global NDVI
+and environmental predictors, and European oak species occurrences.  All
+datasets include pre-processed environmental predictors ready for statistical
+modelling.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-spatialcovariance
   (package
     (name "r-spatialcovariance")
@@ -32704,6 +32950,49 @@ scatter plots of data on any of these systems including on-the-fly system
 conversion.  It supports any type of spherical projection to the plane defined
 by the mapproj package.")
     (license license:gpl3+)))
+
+(define-public r-spada
+  (package
+    (name "r-spada")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spada" version))
+       (sha256
+        (base32 "070dsrprfd1jpvpmdfdvjbs84z1pzrmn3phxwqs5h6m1li1lqmlr"))))
+    (properties `((upstream-name . "spada")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waiter
+                             r-shinywidgets
+                             r-shiny
+                             r-sass
+                             r-rlang
+                             r-qs2
+                             r-mirai
+                             r-htmltools
+                             r-haven
+                             r-gt
+                             r-ggplot2
+                             r-dplyr
+                             r-desctools
+                             r-data-table
+                             r-collapse
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lgschuck/spada")
+    (synopsis "'shiny' Package for Data Analysis")
+    (description
+     "This package provides a shiny application with a user-friendly interface for
+interactive data analysis.  It supports exploratory data analysis through
+descriptive statistics, data visualization, statistical tests (e.g., normality
+assessment), linear modeling, data import, transformation and reporting.  For
+more details see Shapiro and Wilk (1965) <doi:10.2307/2333709>.")
+    (license license:agpl3+)))
 
 (define-public r-spacoap
   (package
@@ -36044,6 +36333,43 @@ determine the number of agonistic interactions between two individuals,
 sociometric and dyadics matrix from dataset obtained through electronic bins.
 In addition, it is possible plotting the results using a bar plot, box plot, and
 sociogram.")
+    (license license:gpl3)))
+
+(define-public r-socialdrift
+  (package
+    (name "r-socialdrift")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "socialdrift" version))
+       (sha256
+        (base32 "0d9nlm90scwdw2pgpaq93ll5k2dvrczi175pva5qkp7sxffq2igz"))))
+    (properties `((upstream-name . "socialdrift")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/socialdrift")
+    (synopsis "Temporal Auditing of Social Interaction Networks")
+    (description
+     "This package provides tools for constructing, auditing, and visualizing temporal
+social interaction networks from event-log data.  Supports graph construction
+from raw user-to-user interaction logs, longitudinal tracking of network
+structure, community dynamics, user role trajectories, and concentration of
+engagement over time.  Designed for computational social science, platform
+analytics, and digital community health monitoring.  Includes four longitudinal
+audit indices: the Network Drift Index ('NDI'), Community Fragmentation Index
+('CFI'), Visibility Concentration Index ('VCI'), and Role Mobility Index
+('RMI').  NDI', CFI', VCI', and RMI are purpose-built composite scores for
+longitudinal platform auditing.")
     (license license:gpl3)))
 
 (define-public r-social
@@ -50226,28 +50552,29 @@ the number of variables is larger than the sample size.")
 (define-public r-shrinkagetrees
   (package
     (name "r-shrinkagetrees")
-    (version "1.2.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShrinkageTrees" version))
        (sha256
-        (base32 "0vnps5kcbl0ly7fy5x87jjvyww3140h1z65xm4b9ypiyg40ys5ah"))))
+        (base32 "1jipfwmnaflpnh8ckflix199q4p368jjjgacfxggjnnfgwr40w89"))))
     (properties `((upstream-name . "ShrinkageTrees")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/tijn-jacobs/ShrinkageTrees")
     (synopsis
      "Bayesian Tree Ensembles for Survival Analysis and Causal Inference")
     (description
      "Bayesian regression tree ensembles for survival analysis and causal inference.
-Implements BART, DART, Bayesian Causal Forests (BCF), and Horseshoe Forests
-models.  Supports right-censored survival outcomes via accelerated failure time
-(AFT) formulations.  Designed for high-dimensional prediction and heterogeneous
-treatment effect estimation in causal inference.")
+Implements BART, DART, Bayesian Causal Forests (BCF), and Horseshoe Forest
+models.  Supports right-censored and interval-censored survival outcomes via
+accelerated failure time (AFT) formulations.  Designed for high-dimensional
+prediction and heterogeneous treatment effect estimation.")
     (license license:expat)))
 
 (define-public r-shrink
@@ -54257,6 +54584,32 @@ facilitates the setup of CI/CD pipelines for building Docker images on both
 @code{GitLab} and @code{GitHub}.")
     (license license:expat)))
 
+(define-public r-shiny-webawesome
+  (package
+    (name "r-shiny-webawesome")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shiny.webawesome" version))
+       (sha256
+        (base32 "0pc6l45hrl2y90v4wqyzdscd1brd3d2f8wi5yky7r8fczmzs6ra6"))))
+    (properties `((upstream-name . "shiny.webawesome")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mbanand/shiny.webawesome")
+    (synopsis "'shiny' Bindings for 'Web Awesome' Components")
+    (description
+     "This package provides an R and shiny interface to the Web Awesome component
+library.  The package is generator-driven, exposing Web Awesome web components
+as R functions that produce HTML tags and integrate with the reactive model that
+shiny uses.")
+    (license license:expat)))
+
 (define-public r-shiny-telemetry
   (package
     (name "r-shiny-telemetry")
@@ -57242,6 +57595,30 @@ Houpt, Blaha, @code{McIntire}, Havig, and Townsend (2013)
 Factorial Technology along with examples using the sft R package.")
     (license license:gpl2+)))
 
+(define-public r-sfreapportion
+  (package
+    (name "r-sfreapportion")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sfReapportion" version))
+       (sha256
+        (base32 "1lwb189ql1i4bgll91zzabqmdm27a0zvrqxw61f5hf3hibklgpah"))))
+    (properties `((upstream-name . "sfReapportion")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp r-sf r-dplyr))
+    (home-page "https://github.com/briatte/sfReapportion")
+    (synopsis "Reapportion Data from One Geography to Another")
+    (description
+     "This package provides a port of the @code{spReapportion} package, using Simple
+Features in order to lose the dependencies to the retired maptools and rgeos
+packages.")
+    (license license:gpl3)))
+
 (define-public r-sfpl
   (package
     (name "r-sfpl")
@@ -59034,13 +59411,13 @@ ratio test (Wald, A. 1945 <http://www.jstor.org/stable/2235829>).")
 (define-public r-sequential
   (package
     (name "r-sequential")
-    (version "4.5.2")
+    (version "4.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sequential" version))
        (sha256
-        (base32 "1nwf9zisc1zmswkn4qb04zp9pnl9k80dxyr7jycy8bwxfdq57aw1"))))
+        (base32 "1zbrf10v664i3cw7xxmpwqwir5c5cfkja4iv5ndjvkhx7k0birxd"))))
     (properties `((upstream-name . "Sequential")))
     (build-system r-build-system)
     (arguments
@@ -70374,13 +70751,13 @@ query parameter.  This packages facilitates such switches.")
 (define-public r-scellpam
   (package
     (name "r-scellpam")
-    (version "1.4.6.2")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scellpam" version))
        (sha256
-        (base32 "0hxbvgq6mq365q8hw91k0pm0ky9psivcd98bxafrgrncqc117cd1"))))
+        (base32 "1nbq0nr16lnnk96wj9x010jjj65n3w4cx9akxx23f4iz80pqr6pj"))))
     (properties `((upstream-name . "scellpam")))
     (build-system r-build-system)
     (arguments
