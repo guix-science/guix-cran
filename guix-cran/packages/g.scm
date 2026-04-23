@@ -6511,13 +6511,13 @@ finalized @code{GreenFeed} data.")
 (define-public r-greener
   (package
     (name "r-greener")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GREENeR" version))
        (sha256
-        (base32 "0j60l0giw1g4ywqmq3kyrqa47hlfzhzqqnb2ajn86nm33bak0w8b"))))
+        (base32 "1qdyb9y3inz9qb9x4khvv88crlc9pcznynpf6iaa001c34ic4064"))))
     (properties `((upstream-name . "GREENeR")))
     (build-system r-build-system)
     (arguments
@@ -7263,32 +7263,6 @@ sample files of personal income tax returns is assumed.")
      "Generates synthetic time series based on various univariate time series models
 including MAR and ARIMA processes.  Kang, Y., Hyndman, R.J., Li, F.(2020)
 <doi:10.1002/sam.11461>.")
-    (license license:gpl3)))
-
-(define-public r-graticule
-  (package
-    (name "r-graticule")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graticule" version))
-       (sha256
-        (base32 "0i2nhsrhixbwisgx8354aqsnik5sax9m63fzagmj4k3fcnpry7b0"))))
-    (properties `((upstream-name . "graticule")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp r-reproj r-raster r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/hypertidy/graticule")
-    (synopsis "Meridional and Parallel Lines for Maps")
-    (description
-     "Create graticule lines and labels for maps.  Control the creation of lines or
-tiles by setting their placement (at particular meridians and parallels) and
-extent (along parallels and meridians).  Labels are created independently of
-lines.")
     (license license:gpl3)))
 
 (define-public r-gratia
@@ -15845,6 +15819,30 @@ value.  Alternatively, find all such graphical models.  Use branch and bound
 algorithm so we do not have to fit all models.")
     (license license:expat)))
 
+(define-public r-glmbasedraschestimation
+  (package
+    (name "r-glmbasedraschestimation")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GLMBasedRaschEstimation" version))
+       (sha256
+        (base32 "1h17f7nxsbsbvw3hypi4jg6jzdfaf8jhscpykkjw32darcfk4m8w"))))
+    (properties `((upstream-name . "GLMBasedRaschEstimation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/DrAhmedSamir/GLMBasedRaschEstimation")
+    (synopsis "GLM-Based Estimation for Rasch Model Parameters")
+    (description
+     "This package provides functions for estimating Rasch model parameters using the
+Generalized Linear Model (GLM) framework.  The methods implemented are based on
+Brown (2018, ISBN:978-3-319-93547-8) <doi:10.1007/978-3-319-93549-2> and Debelak
+et al. (2022, ISBN:978-1-138-71046-7) <doi:10.1201/9781315200620>.")
+    (license license:expat)))
+
 (define-public r-glmaspu
   (package
     (name "r-glmaspu")
@@ -20070,13 +20068,13 @@ compare the segments and their contributions to the total.")
 (define-public r-ggseg3d
   (package
     (name "r-ggseg3d")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg3d" version))
        (sha256
-        (base32 "1h0yclva5mznkihna6pz2qwfq0k2aaafkaqwdcvqa25xpzkrr423"))))
+        (base32 "1cxzm3qgwv65wh046nimc5jxqfrcn4h1llgvknw37xg013snk14j"))))
     (properties `((upstream-name . "ggseg3d")))
     (build-system r-build-system)
     (arguments
@@ -21819,20 +21817,20 @@ and the response is present.  Base on the results published in guide ISO/TS
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "18dya7n9134k1y82lf0vk7v96zyji01ayy1vwbl89a7p6dqzzni7"))))
+        (base32 "099nhaj0v95zpxrczami6412vwv9w79c7530psrs2cgr9s57bvnp"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-generics))
+    (propagated-inputs (list r-r6 r-generics))
     (native-inputs (list r-rmarkdown pkg-config r-knitr))
     (home-page "https://github.com/Zabis13/ggmlR")
     (synopsis "'GGML' Tensor Operations for Machine Learning")
@@ -22833,13 +22831,13 @@ ggplot2 API.")
 (define-public r-ggguides
   (package
     (name "r-ggguides")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggguides" version))
        (sha256
-        (base32 "0nc6sijq6swdjzdgyssbpzc21zs51z8gcfrg9n99lkp4j4rrr50s"))))
+        (base32 "1jz09js85bhm755hllvxhmlmhwdc1xa0fjhacfpgvi1ssj7clq16"))))
     (properties `((upstream-name . "ggguides")))
     (build-system r-build-system)
     (arguments
@@ -23075,13 +23073,13 @@ issue.")
 (define-public r-ggforestplotr
   (package
     (name "r-ggforestplotr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggforestplotR" version))
        (sha256
-        (base32 "1jgp92p329107d3zxlq8srja5b8p5wgj5iw3yigrnri961y9yvm3"))))
+        (base32 "0mgqvxniflwiamh3rhxh2gzsjcgdsc0x7js2aipnwd3a7xx4xyl2"))))
     (properties `((upstream-name . "ggforestplotR")))
     (build-system r-build-system)
     (arguments
@@ -36988,55 +36986,6 @@ linear predictor for both.  The package also allows transformed or truncated
 distributions from the GAMLSS family to be used for the continuous part of the
 distribution.  Standard methods and GAMLSS diagnostics can be used with the
 resulting fitted object.")
-    (license (list license:gpl2 license:gpl3))))
-
-(define-public r-gamlss-foreach
-  (package
-    (name "r-gamlss-foreach")
-    (version "1.1-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gamlss.foreach" version))
-       (sha256
-        (base32 "1bld98lfbgj1v6l4vq3yysg1lnvpgj2r9vykkfy0q1yipv2xbnqb"))))
-    (properties `((upstream-name . "gamlss.foreach")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-glmnet
-                             r-gamlss-dist
-                             r-gamlss-data
-                             r-gamlss
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://www.gamlss.com/")
-    (synopsis "Parallel Computations for Distributional Regression")
-    (description
-     "Computational intensive calculations for Generalized Additive Models for
-Location Scale and Shape, <doi:10.1111/j.1467-9876.2005.00510.x>.")
-    (license (list license:gpl2 license:gpl3))))
-
-(define-public r-gamlss-demo
-  (package
-    (name "r-gamlss-demo")
-    (version "4.3-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gamlss.demo" version))
-       (sha256
-        (base32 "01p6abppwbnh2a2ks1g08z4iwq2fxf125y9s4qzssybsn76a3gf3"))))
-    (properties `((upstream-name . "gamlss.demo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpanel r-gamlss-tr r-gamlss-dist))
-    (home-page "http://www.gamlss.org/")
-    (synopsis "Demos for GAMLSS")
-    (description "Demos for smoothing and gamlss.family distributions.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gamlss-cens

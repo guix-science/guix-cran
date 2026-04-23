@@ -14076,13 +14076,13 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "0m9rx13np7k0j5siwv75ivfp7v6d0xnk74wlwhac9xvqnhm0bhzm"))))
+        (base32 "0h43q4f0y1g9nmmiqr94pnw2fdmsnma7x4l89yadf2a1a672yd04"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (arguments
@@ -27261,13 +27261,13 @@ very useful for shiny apps or other non-package workflows.")
 (define-public r-pkggraph
   (package
     (name "r-pkggraph")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkggraph" version))
        (sha256
-        (base32 "18ir6hfdbgdfdy9wfmrngzb5qslm6rkrjk7zdb001gwkazcvx9da"))))
+        (base32 "121ay5rv7kyvakpbxsp5j8cnxjmgirxyrq86fangbv4zf6iw5z3y"))))
     (properties `((upstream-name . "pkggraph")))
     (build-system r-build-system)
     (arguments

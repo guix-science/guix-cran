@@ -828,6 +828,36 @@ of independence for different problems can also be implemented via the new
 correlation coefficient with this package.")
     (license license:gpl3)))
 
+(define-public r-ivcheck
+  (package
+    (name "r-ivcheck")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivcheck" version))
+       (sha256
+        (base32 "19q8b80lrdm386yfx2s5yxwqkrxkdhwcm9da9bdvqrhhlr8d98ih"))))
+    (properties `((upstream-name . "ivcheck")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/charlescoverdale/ivcheck")
+    (synopsis "Tests for Instrumental Variable Validity")
+    (description
+     "This package implements tests for the identifying assumptions of instrumental
+variable models, the local exclusion restriction and monotonicity conditions
+required for local average treatment effect identification.  Covers Kitagawa
+(2015) <doi:10.3982/ECTA11974>, Mourifie and Wan (2017)
+<doi:10.1162/REST_a_00622>, and Frandsen, Lefgren, and Leslie (2023)
+<doi:10.1257/aer.20201860>.  Includes a one-shot wrapper that runs all
+applicable tests on a fitted instrumental variable model.  Dispatches on fixest
+and ivreg model objects.")
+    (license license:expat)))
+
 (define-public r-ivabss
   (package
     (name "r-ivabss")
@@ -6501,6 +6531,53 @@ corresponds to the correct way to perform the popular log(Y + 1) transformation.
 <https://www.davidbenatia.com/>.")
     (license license:gpl3)))
 
+(define-public r-iobr
+  (package
+    (name "r-iobr")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IOBR" version))
+       (sha256
+        (base32 "0bfc7gzg917sjl5qgam5z5nxs4sv7q12n6a4rvjp17vlsb8w2d28"))))
+    (properties `((upstream-name . "IOBR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survminer
+                             r-survival
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-gsva
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://doi.org/10.3389/fimmu.2021.687975")
+    (synopsis "Immune Oncology Biological Research")
+    (description
+     "This package provides six modules for tumor microenvironment (TME) analysis
+based on multi-omics data.  These modules cover data preprocessing, TME
+estimation, TME infiltrating patterns, cellular interactions, genome and TME
+interaction, and visualization for TME relevant features, as well as modelling
+based on key features.  It integrates multiple microenvironmental analysis
+algorithms and signature estimation methods, simplifying the analysis and
+downstream visualization of the TME. In addition to providing a quick and easy
+way to construct gene signatures from single-cell RNA-seq data, it also provides
+a way to construct a reference matrix for TME deconvolution from single-cell
+RNA-seq data.  The analysis pipeline and feature visualization are user-friendly
+and provide a comprehensive description of the complex TME, offering insights
+into tumour-immune interactions (Zeng D, et al. (2024)
+<doi:10.1016/j.crmeth.2024.100910>.  Fang Y, et al. (2025)
+<doi:10.1002/mdr2.70001>).")
+    (license license:gpl3)))
+
 (define-public r-ioanalysis
   (package
     (name "r-ioanalysis")
@@ -10166,13 +10243,13 @@ workflows, Jamil and Rue (2026b) <doi:10.48550/@code{arXiv.2604.00671>}.")
 (define-public r-inlatools
   (package
     (name "r-inlatools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAtools" version))
        (sha256
-        (base32 "16wj65vx44204q2wbbhmw8qxd59m6bmjy1j7j5gcdh32kb3fc1w3"))))
+        (base32 "0smp906993smp3d3ilrvkhgmlkpp43cdlyrnfvq1nssi0jrfmf8i"))))
     (properties `((upstream-name . "INLAtools")))
     (build-system r-build-system)
     (arguments
@@ -10187,19 +10264,18 @@ Markov random (GMRF) model.  The cgeneric contain code to specify GMRF elements
 such as the graph and the precision matrix, and also the initial and prior for
 its parameters, useful for model inference.  It can be accessed from a C program
 and is the recommended way to implement new GMRF models in the INLA package
-(<https://www.r-inla.org>).  The INLAtools implement functions to evaluate each
-one of the model specifications from R. The implemented functionalities leverage
-the use of cgeneric models and provide a way to debug the code as well to work
-with the prior for the model parameters and to sample from it.  The `generic0`
-can be used to implement intrinsic models with the scaling as proposed in
-SÃ¸rbye & Rue (2014) <doi:10.1016/j.spasta.2013.06.004>, and the required
-contraints.  A very useful functionality is the Kronecker product method that
-creates a new model from multiple cgeneric models.  It also works with the
-rgeneric, the R version of the cgeneric intended to easy try implementation of
-new GMRF models.  The Kronecker between two cgeneric models was used in
-Sterrantino et.  al. (2024) <doi:10.1007/s10260-025-00788-y>, and can be used to
-build the spatio-temporal intrinsic interaction models for what the needed
-constraints are automatically set, as illustrated in the vignette.")
+(<https://r-inla.org>).  The INLAtools implement functions to evaluate each one
+of the model specifications from R. The implemented functionalities leverage the
+use of cgeneric models and provide a way to debug the code as well to work with
+the prior for the model parameters and to sample from it.  The `generic0` can be
+used to implement intrinsic models with the scaling as proposed in SÃ¸rbye & Rue
+(2014) <doi:10.1016/j.spasta.2013.06.004>, and the required contraints.  A very
+useful functionality is the Kronecker product method that creates a new model
+from multiple cgeneric models.  It also works with the rgeneric, the R version
+of the cgeneric intended to easy try implementation of new GMRF models.  The
+Kronecker between two cgeneric models where each one needs a constraint, such as
+spatio-temporal intrinsic interaction models, the needed constraints are
+automatically set.")
     (license license:gpl2+)))
 
 (define-public r-inlaspacetime

@@ -181,19 +181,20 @@ default and can also expose 16-byte raw representations for low-level workflows.
 (define-public r-utsf
   (package
     (name "r-utsf")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utsf" version))
        (sha256
-        (base32 "0gg96l3708bw33hwxqmkfy8rqkj3sb52qvapf9xvh33p3mjj0agg"))))
+        (base32 "0f34r0y3yh2mnqkb4a4j00dsr9x38ihdz6f3xq6d8fmz5b1wg93b"))))
     (properties `((upstream-name . "utsf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctsfr
+    (propagated-inputs (list r-xgboost
+                             r-vctsfr
                              r-rpart
                              r-ranger
                              r-ipred
@@ -5455,6 +5456,38 @@ JK, and Snyder RD (2008) <doi:10.1007/978-3-540-71918-2>.  GÃ³mez V, Maravall 
 (2024) <doi:10.1016/j.ijforecast.2023.09.004>.")
     (license license:gpl3)))
 
+(define-public r-ucminfcpp
+  (package
+    (name "r-ucminfcpp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ucminfcpp" version))
+       (sha256
+        (base32 "11gg4lqbvj33d60cw5fph828109xapa6s6cvpppkirz70cp7wqfv"))))
+    (properties `((upstream-name . "ucminfcpp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/alrobles/ucminfcpp")
+    (synopsis
+     "'C++' Reimplementation of the 'ucminf' Unconstrained Nonlinear Optimizer")
+    (description
+     "This package provides a modern C++17/ reimplementation of the UCMINF/ algorithm
+for unconstrained nonlinear optimization (Nielsen and Mortensen, 2011,
+<doi:10.32614/CRAN.package.ucminf>), offering full API compatibility with the
+original ucminf R package but developed independently.  The optimizer core has
+been rewritten in C with a modern header-only C++17 interface, zero-allocation
+line search, and an Rcpp interface.  The goal is numerical equivalence with
+improved performance, reproducibility, and extensibility.  Includes extensive
+test coverage, performance regression tests, and compatibility checks against
+ucminf'.  This package is not affiliated with the original maintainers but
+acknowledges their authorship of the algorithm and the original R interface.")
+    (license license:gpl3+)))
+
 (define-public r-uclust
   (package
     (name "r-uclust")
@@ -5606,13 +5639,13 @@ introductory statistics courses.")
 (define-public r-ubms
   (package
     (name "r-ubms")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ubms" version))
        (sha256
-        (base32 "1gdkrd90nsp1zqf98linlc002rpwqj0vk5rrisgwbq9mcnr1b926"))))
+        (base32 "06694sdbl0hp75myvpkrzc0wv6v2127pl1g2b52nrd8jzv5idn9a"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (arguments

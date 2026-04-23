@@ -1076,6 +1076,42 @@ formats, such as data frames or zoo series.  The data may optionally be cached,
 so as to avoid repeated downloads of the same series.")
     (license license:gpl3)))
 
+(define-public r-bunddev
+  (package
+    (name "r-bunddev")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bunddev" version))
+       (sha256
+        (base32 "02ppcr1fl6bff6030afpfapjifhd6s6d3y0lpzjigqiiyrvvbaxq"))))
+    (properties `((upstream-name . "bunddev")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://buecker.ms/bunddev/")
+    (synopsis "Discover and Call 'Bund.dev' APIs")
+    (description
+     "This package provides a registry of APIs listed on <https://bund.dev> and a core
+@code{OpenAPI} client layer to explore specs and perform requests.  Adapter
+helpers return tidy data frames for supported APIs, with optional response
+caching and rate limiting guidance.")
+    (license license:expat)))
+
 (define-public r-bunchr
   (package
     (name "r-bunchr")

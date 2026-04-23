@@ -11,6 +11,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
   #:use-module (gnu packages algebra)
@@ -6181,39 +6182,6 @@ standard errors for the rates.  Finally, the package includes betting functions
 that automatically select the matches on which place a bet.")
     (license license:gpl3)))
 
-(define-public r-welchadf
-  (package
-    (name "r-welchadf")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "welchADF" version))
-       (sha256
-        (base32 "02a8w1dhc2nd74hml4z3cdlx0d2a9rcx47v341kgav620i8bn88g"))))
-    (properties `((upstream-name . "welchADF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lme4))
-    (home-page "<http://decsai.ugr.es/~pjvi/r-packages.html>")
-    (synopsis
-     "Welch-James Statistic for Robust Hypothesis Testing under Heterocedasticity and Non-Normality")
-    (description
-     "Implementation of Johansen's general formulation of Welch-James's statistic with
-Approximate Degrees of Freedom, which makes it suitable for testing any linear
-hypothesis concerning cell means in univariate and multivariate mixed model
-designs when the data pose non-normality and non-homogeneous variance.  Some
-improvements, namely trimmed means and Winsorized variances, and bootstrapping
-for calculating an empirical critical value, have been added to the classical
-formulation.  The code departs from a previous SAS implementation by L.M. Lix
-and H.J. Keselman, available at
-<http://supp.apa.org/psycarticles/supplemental/met_13_2_110/SAS_Program.pdf> and
-published in Keselman, H.J., Wilcox, R.R., and Lix, L.M. (2003)
-<DOI:10.1111/1469-8986.00060>.")
-    (license license:lgpl3+)))
-
 (define-public r-weirs
   (package
     (name "r-weirs")
@@ -6388,13 +6356,13 @@ with a condition established upon person ability and item difficulty.")
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "1qf2b3wa52cdm73bwzvz3zw5p3n0q45h8nz9x5zjbzb94r23mqf2"))))
+        (base32 "0rg911ga1i7hmdsvxx9r892r0x8rp7dg531sa5lyqqls2lhhmcqn"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (arguments
@@ -6405,7 +6373,8 @@ with a condition established upon person ability and item difficulty.")
                              r-ggplot2
                              r-generics
                              r-cobalt
-                             r-cli))
+                             r-cli
+                             r-arg))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/WeightIt/")
     (synopsis "Weighting for Covariate Balance in Observational Studies")
@@ -6419,7 +6388,7 @@ for assessment of weights and checking of covariate balance by interfacing
 directly with the cobalt package.  Methods for estimating weighted regression
 models that take into account uncertainty in the estimation of the weights via
 M-estimation or bootstrapping are available.  See the vignette \"Installing
-Supporting Packages\" for instructions on how to install any package
+Supporting Packages\" for instructions on how to install any optional package
 @code{WeightIt} uses, including those that may not be on CRAN.")
     (license license:gpl2+)))
 
@@ -6667,6 +6636,35 @@ Generalised Covariance Measure (GCM) implemented in the R package
 Shah and Peters (2020) \"The Hardness of Conditional Independence Testing and the
 Generalised Covariance Measure\" <doi:10.1214/19-AOS1857>.")
     (license license:gpl2)))
+
+(define-public r-weightederm
+  (package
+    (name "r-weightederm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weightederm" version))
+       (sha256
+        (base32 "13bfd2fnay32nfi0xxi80a6kwzgz03l6yfp1m3c1gjvr3b1gib8r"))))
+    (properties `((upstream-name . "weightederm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://github.com/gabrielarpino/weightederm-r")
+    (synopsis
+     "Weighted Empirical Risk Minimization for Changepoint Regression")
+    (description
+     "R interface to the weightederm package for Python', which provides
+scikit-learn'-style estimators for offline change point regression (data
+segmentation) via weighted empirical risk minimization.  Supports least-squares,
+Huber, and logistic losses with fixed or cross-validated numbers of change
+points.  Wraps Python via reticulate'.  Arpino and Venkataramanan (2026)
+<doi:10.48550/@code{arXiv.2604.11746>}.")
+    (license license:asl2.0)))
 
 (define-public r-weightedensemble
   (package
@@ -10428,6 +10426,39 @@ estimated anew and the approximate Bayesian computation (ABC) were adopted in
 this package.")
     (license license:gpl3+)))
 
+(define-public r-warmasvp
+  (package
+    (name "r-warmasvp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wARMASVp" version))
+       (sha256
+        (base32 "0xrm4lvdcihl8lckmdhlpp3ny5k356xp1wnv64g256rcy3nxrlp8"))))
+    (properties `((upstream-name . "wARMASVp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gsignal))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/roga11/wARMASVp")
+    (synopsis
+     "Winsorized ARMA Estimation for Higher-Order Stochastic Volatility Models")
+    (description
+     "Estimation, simulation, hypothesis testing, and forecasting for univariate
+higher-order stochastic volatility SV(p) models.  Supports Gaussian, Student-t,
+and Generalized Error Distribution (GED) innovations, with optional leverage
+effects.  Estimation uses closed-form Winsorized ARMA-SV (W-ARMA-SV)
+moment-based methods that avoid numerical optimization.  Hypothesis testing
+includes Local Monte Carlo (LMC) and Maximized Monte Carlo (MMC) procedures for
+leverage effects, heavy tails, and autoregressive order selection.  Forecasting
+is based on Kalman filtering and smoothing.  See Ahsan and Dufour (2021)
+<doi:10.1016/j.jeconom.2020.01.018>, Ahsan, Dufour, and Rodriguez Rondon (2025)
+for details.")
+    (license license:gpl3+)))
+
 (define-public r-warehousetools
   (package
     (name "r-warehousetools")
@@ -11234,13 +11265,13 @@ event in the presence of death.")
 (define-public r-w4mrutils
   (package
     (name "r-w4mrutils")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "W4MRUtils" version))
        (sha256
-        (base32 "1xrqs2c78k8havx9v52iqrgspqq2h7q844xqrq9l6gr8581x4jbl"))))
+        (base32 "1hp22s68nakncr0bxv6llab743lrvhzr3jqbmzm07llk5jqj6n7s"))))
     (properties `((upstream-name . "W4MRUtils")))
     (build-system r-build-system)
     (arguments

@@ -1814,6 +1814,43 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
 <doi:10.1111/j.2517-6161.1995.tb02054.x>.")
     (license license:gpl3+)))
 
+(define-public r-nrmsampling
+  (package
+    (name "r-nrmsampling")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NRMSampling" version))
+       (sha256
+        (base32 "09l0bdgl607872c6sk10p205q6zq9d8a5yrb7m10w50arqkjpjw5"))))
+    (properties `((upstream-name . "NRMSampling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NRMSampling")
+    (synopsis
+     "Sampling Design and Estimation Methods for Natural Resource Management")
+    (description
+     "This package provides functions for probability and non-probability sampling
+design, sample selection, and population estimation tailored to natural resource
+management.  Probability methods include simple random sampling, stratified
+sampling, systematic sampling, cluster sampling, and
+probability-proportional-to-size sampling.  Non-probability methods include
+convenience, judgement-based, and quota sampling.  Estimation functions cover
+means, totals, ratio estimators, regression estimators, and the
+unequal-probability estimator of Horvitz and Thompson (1952,
+<doi:10.2307/2280784>) for unequal-probability designs.  Utilities support
+biomass, soil-loss, and carbon-stock estimation from field plots.  Spatial
+extensions provide random, systematic, stratified, and raster-weighted sampling
+within geographic polygons using the sf and terra packages, with extraction of
+remote-sensing covariates at sample locations.  Applications include forest
+inventory, soil erosion monitoring, watershed studies, and ecological field
+surveys.")
+    (license license:gpl3+)))
+
 (define-public r-nrlr
   (package
     (name "r-nrlr")
@@ -16633,13 +16670,13 @@ correlogram, (Partial) Mantel test.")
 (define-public r-ncdfgeom
   (package
     (name "r-ncdfgeom")
-    (version "1.1.6")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncdfgeom" version))
        (sha256
-        (base32 "1scbcysklqi761xbjxkdb54m3k31hps58lyg2l01m9pk117ywkz5"))))
+        (base32 "0y6yax4hdr78h8qkh2h3bvdj2s8k4dmgmmpf6n4jwg8jvpzig3kn"))))
     (properties `((upstream-name . "ncdfgeom")))
     (build-system r-build-system)
     (arguments

@@ -4697,28 +4697,6 @@ in E.D. Gennatas (2017)
 <https://repository.upenn.edu/entities/publication/d81892ea-3087-4b71-a6f5-739c58626d64>.")
     (license license:gpl3+)))
 
-(define-public r-rtematres
-  (package
-    (name "r-rtematres")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rtematres" version))
-       (sha256
-        (base32 "1d0vrprvnlk4hl2dbc6px9xn9kx9d1qvlqxd798hzda6qg5wwvf2"))))
-    (properties `((upstream-name . "rtematres")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml r-rcurl r-plyr r-gdata))
-    (home-page "https://github.com/cpfaff/rtematres")
-    (synopsis "The rtematres API package")
-    (description
-     "Exploit controlled vocabularies organized on tematres servers.")
-    (license license:gpl3)))
-
 (define-public r-rtde
   (package
     (name "r-rtde")
@@ -4887,33 +4865,6 @@ continuous-valued univariate Autoregressive process of first order is generated.
  It is a popular method used in economics and in finance.")
     (license license:gpl2+)))
 
-(define-public r-rtape
-  (package
-    (name "r-rtape")
-    (version "2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rtape" version))
-       (sha256
-        (base32 "0q7rs7pc1k1kayr734lvh367j5qig2nnq5mgak1wbpimhl7z3wm7"))))
-    (properties `((upstream-name . "rtape")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://mbq.me/rtape")
-    (synopsis
-     "Manage and manipulate large collections of R objects stored as tape-like files")
-    (description
-     "Storing huge data in RData format causes problems because of the necessity to
-load the whole file to the memory in order to access and manipulate objects
-inside such file; rtape is a simple solution to this problem.  The package
-contains several wrappers of R built-in serialize/unserialize mechanism allowing
-user to quickly append objects to a tape-like file and later iterate over them
-requiring only one copy of each stored object to reside in memory a time.")
-    (license license:gpl2)))
-
 (define-public r-rtabulator
   (package
     (name "r-rtabulator")
@@ -5000,13 +4951,13 @@ related to the Microsoft Office software suite, including Microsoft Word
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.15")
+    (version "0.6.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "100n5lh5bd6idvy26g3chv260kdvs2rh5ai1iq5rnr6vwx7182fv"))))
+        (base32 "0vkapmssqlrvipr0bj3fzds9vkx8f95219a3hki2qls01by2gm43"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (arguments
@@ -17367,6 +17318,54 @@ toward additive outliers instead of innovation outliers.  This work is based on
 the methodology described by Muler and Yohai (2008)
 <doi:10.1016/j.jspi.2007.11.003>.")
     (license license:expat)))
+
+(define-public r-robustflow
+  (package
+    (name "r-robustflow")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobustFlow" version))
+       (sha256
+        (base32 "033iz7apy3irm2vxwhsldydkvxnsk2994sl67vygd2j5d48mjz1d"))))
+    (properties `((upstream-name . "RobustFlow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-scales
+                             r-rmarkdown
+                             r-plotly
+                             r-htmltools
+                             r-golem
+                             r-ggplot2
+                             r-dt
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/RobustFlow")
+    (synopsis
+     "Robustness and Drift Auditing for Longitudinal Decision Systems")
+    (description
+     "This package provides tools for constructing longitudinal decision paths,
+quantifying temporal drift, tracking subgroup disparity trajectories, and
+stress-testing longitudinal conclusions under hidden bias.  Implements three
+signature metrics: the Drift Intensity Index (DII), which measures structural
+instability in transition dynamics using the Frobenius norm of consecutive
+transition matrix differences; the Bias Amplification Index (BAI), which
+quantifies whether group disparities widen or converge over time; and the
+Temporal Fragility Index (TFI), which estimates the minimum hidden-bias
+perturbation required to nullify a longitudinal trend conclusion.  An
+interactive shiny application supports exploratory analysis, visualization, and
+reproducible reporting.  Methods are motivated by applications in educational
+and social science research, including the Early Childhood Longitudinal Study
+(ECLS).  The DII is based on the Frobenius norm as described in Golub and Van
+Loan (2013, ISBN:9781421407944).  The TFI extends the hidden-bias sensitivity
+framework of Rosenbaum (2002, ISBN:9781441912633).  The BAI draws on
+disparity-trajectory methods discussed in Duncan and Murnane (2011,
+ISBN:9780871542731).")
+    (license license:gpl3+)))
 
 (define-public r-robustfa
   (package
@@ -33742,27 +33741,6 @@ technique and example data (mm1) from Tilsen, S., & Johnson, K. (2008)
 from Names\" by Fangzhou Xie (2021) <doi:10.48550/@code{arXiv.2109.09228>}.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
-(define-public r-rethinker
-  (package
-    (name "r-rethinker")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rethinker" version))
-       (sha256
-        (base32 "02zfx08s5xisv1v4y16iqbddi9kb3fcr249b3414fzvs4nm5as94"))))
-    (properties `((upstream-name . "rethinker")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjson))
-    (home-page "https://github.com/mbq/rethinker")
-    (synopsis "RethinkDB Client")
-    (description "Simple, native @code{RethinkDB} client.")
-    (license license:gpl3)))
-
 (define-public r-retel
   (package
     (name "r-retel")
@@ -38297,21 +38275,23 @@ of useful Tcl/Tk widgets.")
 (define-public r-reliashiny
   (package
     (name "r-reliashiny")
-    (version "0.4.1")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaShiny" version))
        (sha256
-        (base32 "08jqzz5jkqzwfbz63308bqw3gw59vlw9m1x2plvgl17rp2qms3w8"))))
+        (base32 "0934pzx6kh06a6y2f572iw59ana61b6z732jx3256l4h17fvljjs"))))
     (properties `((upstream-name . "ReliaShiny")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-weibullr
+    (propagated-inputs (list r-weibullr-alt
+                             r-weibullr
                              r-shinywidgets
                              r-shinydashboard
+                             r-shinycssloaders
                              r-shiny
                              r-reliaplotr
                              r-reliagrowr
@@ -44536,13 +44516,13 @@ file format and structure.")
 (define-public r-readepi
   (package
     (name "r-readepi")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readepi" version))
        (sha256
-        (base32 "0mghg3yacg8b8vblfkgzaysjlydq0y31306z8x7cqn5fffwsvv9q"))))
+        (base32 "0rwsffj6jxfvafyn4kv1w3dsrc826nlnpnxaq4h1zi0j3l1grin9"))))
     (properties `((upstream-name . "readepi")))
     (build-system r-build-system)
     (arguments
@@ -46246,13 +46226,13 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
 (define-public r-rdistance
   (package
     (name "r-rdistance")
-    (version "4.3.1")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdistance" version))
        (sha256
-        (base32 "1xc43bvdf417a7wk7jmzzd0nzgkl766xqicvhrkfhb6zh8f2i6xg"))))
+        (base32 "0bdik0dwjp4y4hh96hv23z9a9qj6dz45k85ib5n2w0l0sy2z8b0f"))))
     (properties `((upstream-name . "Rdistance")))
     (build-system r-build-system)
     (arguments
@@ -46269,7 +46249,7 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
                              r-dplyr
                              r-dfoptim
                              r-crayon))
-    (home-page "https://mcdonalddata.science/Rdistance.html")
+    (home-page "https://mcdonalddatasciences.com/Rdistance.html")
     (synopsis "Density and Abundance from Distance-Sampling Surveys")
     (description
      "Distance-sampling (<doi:10.1007/978-3-319-19219-2>) is a field survey and
@@ -46622,13 +46602,13 @@ library.")
 (define-public r-rdesk
   (package
     (name "r-rdesk")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RDesk" version))
        (sha256
-        (base32 "1j1hjj8c5cxhwhi7zl2jc5nc66m43n2mlbcrnr1kwcipdxfijrsn"))))
+        (base32 "13xj6kgmg8yn1pjn08jll5yigy9x2qbgf86n56cwk2i388af7ain"))))
     (properties `((upstream-name . "RDesk")))
     (build-system r-build-system)
     (arguments
@@ -49284,6 +49264,36 @@ occupations; science: elements, planets; words: adjectives, verbs, proverbs, US
 president quotes.")
     (license license:cc0)))
 
+(define-public r-rcoregage
+  (package
+    (name "r-rcoregage")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rCoreGage" version))
+       (sha256
+        (base32 "1a4alghm3091csdfzcv89pw85xwcrzrbysdaylci6rph2qhbay3x"))))
+    (properties `((upstream-name . "rCoreGage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-openxlsx r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ganeshbabuNN/rCoreGage")
+    (synopsis "Data Quality Check Framework for Clinical and Analytical Data")
+    (description
+     "This package provides a configuration-driven framework for running domain-level
+data quality checks and consolidating findings into structured Excel reports
+with role-based feedback routing.  It supports trial-level and study-level
+checks across multiple data domains.  Reports are routed to separate feedback
+channels for Data Management (DM), Medical Writing (MW), Study Data Tabulation
+Model (SDTM) programmers, and Analysis Data Model (A@code{DaM}) programmers, as
+well as other relevant data roles.  Reviewer responses are incorporated
+automatically on re-run.")
+    (license license:gpl3+)))
+
 (define-public r-rcope
   (package
     (name "r-rcope")
@@ -51316,13 +51326,13 @@ further details.")
 (define-public r-rchasm
   (package
     (name "r-rchasm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RChASM" version))
        (sha256
-        (base32 "0qc10h2xzb7s928f55shfa7kkjwfqlvlxagkvfv2n0zy3hzlxsn2"))))
+        (base32 "145h4s3bmjykjd5mqg9ql5lxq91xyl55wn8jsp49hc1islliw97w"))))
     (properties `((upstream-name . "RChASM")))
     (build-system r-build-system)
     (arguments
@@ -57934,6 +57944,33 @@ hypothesis testing problem for equality of means in the high dimensional
 setting.  We are interested in detecting the mean vector in the one-sample
 problem or the difference between mean vectors in the two-sample problem.")
     (license license:gpl3)))
+
+(define-public r-randompack
+  (package
+    (name "r-randompack")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "randompack" version))
+       (sha256
+        (base32 "0p5ijk6rgz0lwzmx6ha9lzjl21akfgain4z798p6qaz6jn63gjvd"))))
+    (properties `((upstream-name . "randompack")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6))
+    (home-page "https://github.com/jonasson2/randompack")
+    (synopsis
+     "Fast Random Number Generation with Multiple Engines and Distributions")
+    (description
+     "Random number generation library implemented in C with multiple engines and
+distribution functions, providing an R interface focused on correctness, speed,
+and reproducibility.  Supports various PRNGs including xoshiro256++/**, PCG64,
+Philox, and @code{ChaCha20}, with methods for continuous, discrete, and
+multivariate distributions.")
+    (license license:bsd-3)))
 
 (define-public r-randomnames
   (package

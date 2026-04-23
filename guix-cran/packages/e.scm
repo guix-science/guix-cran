@@ -6181,13 +6181,13 @@ returned.")
 (define-public r-evaluatecore
   (package
     (name "r-evaluatecore")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvaluateCore" version))
        (sha256
-        (base32 "1l5v95zy185b1qnwdd19zcql8mhk8gclzv4p9a8mmng35ywy4rl1"))))
+        (base32 "1xs890mzd2v1rv0f2cs5gm7dm28z9ny8kgzh1q24kd4b029is718"))))
     (properties `((upstream-name . "EvaluateCore")))
     (build-system r-build-system)
     (arguments
@@ -6432,13 +6432,13 @@ under the curve.  Outputs are well suited for nested dataframes.")
 (define-public r-eva3dm
   (package
     (name "r-eva3dm")
-    (version "1.11")
+    (version "1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eva3dm" version))
        (sha256
-        (base32 "1gcnmv5rsi73nxmynpdbqp1vaip1km15ip38dbpwaa4ys92gcnla"))))
+        (base32 "123lsmy5hyjknl9zjh977xfd5jbdn6q4n5wzmbxazzliznbcyia8"))))
     (properties `((upstream-name . "eva3dm")))
     (build-system r-build-system)
     (arguments
@@ -12531,6 +12531,46 @@ between primary and secondary outcomes (e.g., cases to hospitalisations or
 deaths) and forecast both.  Runs across multiple regions in parallel.  Based on
 Abbott et al. (2020) <doi:10.12688/wellcomeopenres.16006.1> and Gostic et al.
 (2020) <doi:10.1101/2020.06.18.20134858>.")
+    (license license:expat)))
+
+(define-public r-epinova
+  (package
+    (name "r-epinova")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EpiNova" version))
+       (sha256
+        (base32 "1qzkpc73r8sxqzbyw3gl998hrlragrqc9q01y5xhr1ka2aglxyf1"))))
+    (properties `((upstream-name . "EpiNova")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-scales r-ggplot2 r-dplyr r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/EpiNova")
+    (synopsis
+     "Flexible Extended State-Space Epidemiological Models with Modern Inference")
+    (description
+     "An extended epidemiological modelling framework that goes beyond the classical
+SIR (Susceptible-Infectious-Recovered) model.  Supports SEIR
+(Susceptible-Exposed-Infectious-Recovered), SEIRD
+(Susceptible-Exposed-Infectious-Recovered-Deceased), SVEIRD
+(Susceptible-Vaccinated-Exposed-Infectious-Recovered-Deceased), and
+age-stratified compartmental models with flexible intervention functions
+(spline-based, Gaussian process, or user-defined).  Inference is available via
+maximum likelihood or sequential Monte Carlo (SMC, also known as particle
+filtering) with no external binary dependencies.  Includes a dependency-free
+real-time effective reproduction number (Rt) estimator, spatial multi-patch
+models with gravity-model mobility, ensemble forecasting via Bayesian model
+averaging (BMA), and proper scoring rules including CRPS (Continuous Ranked
+Probability Score), coverage, and MAE (Mean Absolute Error) for forecast
+evaluation.  Methods follow Anderson and May (1991, ISBN:9780198545996), Doucet,
+de Freitas, and Gordon (2001) <doi:10.1007/978-1-4757-3437-9>, Cori et al.
+(2013) <doi:10.1093/aje/kwt133>, and Gneiting and Raftery (2007)
+<doi:10.1198/016214506000001437>.")
     (license license:expat)))
 
 (define-public r-epinetr

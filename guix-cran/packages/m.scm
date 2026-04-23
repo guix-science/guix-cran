@@ -16021,13 +16021,13 @@ Austin, Texas.")
 (define-public r-mop
   (package
     (name "r-mop")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mop" version))
        (sha256
-        (base32 "0j6x05niqcvrwbbzsnkdnh9ph1p9kp8mflpm281i0lxm0v3pfrf2"))))
+        (base32 "0r9sxrn5hm0vs70lla6xd54l78n2211q0n7hxf1bhn0rr6489k0s"))))
     (properties `((upstream-name . "mop")))
     (build-system r-build-system)
     (arguments
@@ -38356,13 +38356,13 @@ result of each individual.")
 (define-public r-metacore
   (package
     (name "r-metacore")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacore" version))
        (sha256
-        (base32 "05sbj0kcl86farm8ps12zljd3c4l573rjahfbc8bzy8310x8bd0z"))))
+        (base32 "1rlnq57783wax6gfflly760aq5svg2yxw8fpqipwy1fqzhsjiw4c"))))
     (properties `((upstream-name . "metacore")))
     (build-system r-build-system)
     (arguments
@@ -38378,6 +38378,7 @@ result of each individual.")
                              r-r6
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -40404,6 +40405,43 @@ Peruggia (2023) <doi:10.1080/10485252.2023.2206919>.  A companion paper by Kim,
 for further information.  This work was supported by the U.S. National Science
 Foundation under Grants No.  SES-1921523 and DMS-2015552.")
     (license license:gpl2+)))
+
+(define-public r-melidosdata
+  (package
+    (name "r-melidosdata")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "melidosData" version))
+       (sha256
+        (base32 "1z4frkjwddv7g95pfdn9qlc2bklskb4hj67x1ng7nlmm0kmsa4k0"))))
+    (properties `((upstream-name . "melidosData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-hms
+                             r-dplyr))
+    (home-page "https://melidosproject.github.io/melidosData/")
+    (synopsis "Load Data from the MeLiDos Field Study")
+    (description
+     "In the @code{MeLiDos} field study, personal light exposure data were collected
+in 9 sites, 7 countries, and 196 participants following the Guidolin et al.
+(2024) <doi:10.1186/s12889-024-20206-4> protocol.  Data originate from wearable
+devices collecting personal light exposure at the eye level, chest, and the
+wrist.  Questionnaires were collected via REDCap and contain demographic
+information as well as chronotype, current conditions, sleep diaries, wear logs,
+and many more.  This package makes loading the data from the respective
+repositories (<https://github.com/@code{MeLiDosProject>}) into R a breeze.  It
+further contains some quality of life functions for label handling and data from
+REDCap'.")
+    (license license:expat)))
 
 (define-public r-mekko
   (package
@@ -42972,6 +43010,31 @@ al. (2025, manuscript submitted).")
  Primarily used for converting proprietary Microsoft Access files to simple text
 files and then reading those as data frames.")
     (license license:gpl3)))
+
+(define-public r-mdbplyr
+  (package
+    (name "r-mdbplyr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mdbplyr" version))
+       (sha256
+        (base32 "0kls1d5nq3jw7laaa2vi6g0sssglgvj8ijn7v1vi5x85vh3jxahq"))))
+    (properties `((upstream-name . "mdbplyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-jsonlite r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mdbplyr")
+    (synopsis "Native Lazy Analytical Backend for MongoDB")
+    (description
+     "This package provides a disciplined, lazy subset of dplyr semantics for
+@code{MongoDB} aggregation pipelines.  Queries remain lazy until
+@code{collect()} and compile into @code{MongoDB-native} aggregation stages.")
+    (license license:expat)))
 
 (define-public r-mdatools
   (package

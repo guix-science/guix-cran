@@ -8591,13 +8591,13 @@ test.  Some references are: Chen S.X. and Qin Y.L. (2010).
 (define-public r-highcharter
   (package
     (name "r-highcharter")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highcharter" version))
        (sha256
-        (base32 "02yyzfhzgkrp8hgdp2gyqrrvxzh9wqn3c90lyd9nlavn4qn4789z"))))
+        (base32 "0ln4vavi18cs0hf3117ndsyaqpmz2qjn52fam6plbb1aa9332bf5"))))
     (properties `((upstream-name . "highcharter")))
     (build-system r-build-system)
     (arguments
@@ -15891,6 +15891,36 @@ report the high-resolution haplotypes as well as confidence of each phased
 @code{hetSNPs}.  The package also includes a module allowing downstream analyses
 and visualization of identified crossovers in the gametes.")
     (license license:gpl3)))
+
+(define-public r-hanyupinyin
+  (package
+    (name "r-hanyupinyin")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hanyupinyin" version))
+       (sha256
+        (base32 "0pjpfkm4dhhncmfsv8brw7rjvdcn8gdyazsvfl9k9rl02jsf1lsm"))))
+    (properties `((upstream-name . "hanyupinyin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CuiHR17/hanyupinyin")
+    (synopsis "Convert Chinese Characters into Hanyu Pinyin")
+    (description
+     "Convert Chinese characters into Hanyu Pinyin (the official romanization system
+for Standard Chinese) with support for tones, toneless output, initials, URL
+slugs, and valid R variable names.  The package was inspired by the now-orphaned
+CRAN package pinyin (archived in April 2026 after the maintainer became
+unreachable).  hanyupinyin is a ground-up rewrite using the authoritative
+Unicode Unihan database, a vectorized engine, and modern R practices.
+Dictionary data are derived from the Unicode Unihan Database (Unicode
+Consortium, 2025) <https://www.unicode.org/reports/tr38/>.")
+    (license license:expat)))
 
 (define-public r-hanstat
   (package

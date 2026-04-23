@@ -8177,24 +8177,25 @@ Estelle Kuhn (2019) <doi:10.18637/jss.v107.i06>.")
 (define-public r-vartest
   (package
     (name "r-vartest")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vartest" version))
        (sha256
-        (base32 "13wz2k6yl1dhh9zj3hmyd1fh5r965sl68m11pm8345p1xc1cg8ip"))))
+        (base32 "07dc0zvbw2lrp22j8wnfp9m4zb1mx9n5wvnqmc3xwx3x4a9lp1cn"))))
     (properties `((upstream-name . "vartest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-suppdists r-psych))
+    (propagated-inputs (list r-suppdists r-psych r-pearsonds r-moments))
     (home-page "https://cran.r-project.org/package=vartest")
     (synopsis "Tests for Variance Homogeneity")
     (description
-     "This package performs 20 omnibus tests for testing the composite hypothesis of
-variance homogeneity.")
+     "This package performs 18 omnibus tests yielding a total of 28 distinct
+methodological variations for testing the composite hypothesis of variance
+homogeneity.")
     (license license:gpl2+)))
 
 (define-public r-varshrink
@@ -10056,13 +10057,13 @@ athlete reports.")
 (define-public r-valdr
   (package
     (name "r-valdr")
-    (version "2.2.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valdr" version))
        (sha256
-        (base32 "0m2959vq1nf5j0vp1j26zkbr39xix696f8ddx69ajjgg7m8ba1pm"))))
+        (base32 "1474nxi1sy0qrlh11ydn0v9kk1nc218648cvv2dbgcmkvnz0g51k"))))
     (properties `((upstream-name . "valdr")))
     (build-system r-build-system)
     (arguments

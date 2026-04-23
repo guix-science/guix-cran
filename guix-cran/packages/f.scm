@@ -815,35 +815,6 @@ are described by Cox, Earl D. (1995) <isbn:1886801010>.  Executable examples are
 provided in the \"inst/examples\" folder.")
     (license license:expat)))
 
-(define-public r-fuzzylp
-  (package
-    (name "r-fuzzylp")
-    (version "0.1-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FuzzyLP" version))
-       (sha256
-        (base32 "1x584h5a82npxk1jhz0mnn8zkyfd8qvvvhkrv3bfi81w2l893hi7"))))
-    (properties `((upstream-name . "FuzzyLP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-roi-plugin-glpk r-roi r-fuzzynumbers))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/olbapjose/FuzzyLP")
-    (synopsis "Fuzzy Linear Programming")
-    (description
-     "This package provides methods to solve Fuzzy Linear Programming Problems with
-fuzzy constraints (following different approaches proposed by Verdegay,
-Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
-    (license license:gpl3+)))
-
 (define-public r-fuzzylink
   (package
     (name "r-fuzzylink")
@@ -2044,13 +2015,13 @@ first-first and last-firstafter.")
 (define-public r-funmodisco
   (package
     (name "r-funmodisco")
-    (version "1.1.0")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funMoDisco" version))
        (sha256
-        (base32 "0gjp1xppa0xc3fbi1pr8qcp9qczminwxvdv5w3m7z3nhw6knyffh"))))
+        (base32 "18n6gxr09c27vrpinfly6n4ksa4a9hh73qvkffrfrlxwg94l1aig"))))
     (properties `((upstream-name . "funMoDisco")))
     (build-system r-build-system)
     (arguments
@@ -17176,6 +17147,45 @@ API <https://api.finna.fi/>, which aggregates content from Finnish archives,
 libraries, and museums.")
     (license license:bsd-2)))
 
+(define-public r-finlabr
+  (package
+    (name "r-finlabr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "finlabR" version))
+       (sha256
+        (base32 "15agckszz7nlk1277wyxd4y8w95lz94pcnr0bh85kcgdynns2knr"))))
+    (properties `((upstream-name . "finlabR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-shiny
+                             r-reshape2
+                             r-quantmod
+                             r-quadprog
+                             r-performanceanalytics
+                             r-mclust
+                             r-ggplot2
+                             r-class))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=finlabR")
+    (synopsis "Portfolio Analytics and Simulation Toolkit")
+    (description
+     "This package provides tools for portfolio construction and risk analytics,
+including mean-variance optimization, conditional value at risk (expected
+shortfall) minimization, risk parity, regime clustering, correlation analysis,
+Monte Carlo simulation, and option pricing.  Includes utilities for portfolio
+evaluation, clustering, and risk reporting.  Methods are based in part on
+Markowitz (1952) <doi:10.1111/j.1540-6261.1952.tb01525.x>, Rockafellar and
+Uryasev (2000) <doi:10.21314/JOR.2000.038>, Maillard et al. (2010)
+<doi:10.3905/jpm.2010.36.4.060>, Black and Scholes (1973) <doi:10.1086/260062>,
+and Cox et al. (1979) <doi:10.1016/0304-405X(79)90015-1>.")
+    (license license:expat)))
+
 (define-public r-finity
   (package
     (name "r-finity")
@@ -28268,6 +28278,36 @@ a final sample by removing variables in a iterable manner while keeping account
 of the variables that were removed in each step.  It follows the best practices
 and assumptions according to Hair, Black, Babin & Anderson (2018,
 ISBN:9781473756540).")
+    (license license:gpl3)))
+
+(define-public r-factorana
+  (package
+    (name "r-factorana")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "factorana" version))
+       (sha256
+        (base32 "100clhb91jhz5xwrnfd31cqjf2lqpf4k384zsi266hc2pn5llcai"))))
+    (properties `((upstream-name . "factorana")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-nnet r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=factorana")
+    (synopsis "Factor Model Estimation with Latent Variables")
+    (description
+     "This package provides a flexible framework for estimating factor models with
+multiple latent variables.  Supports linear, probit, ordered probit, and
+multinomial logit model components.  Features include multi-stage estimation,
+automatic parameter initialization, analytical gradients and Hessians, and
+parallel estimation.  Methods are described in Heckman, Humphries, and Veramendi
+(2016) <doi:10.1016/j.jeconom.2015.12.001>, Heckman, Humphries, and Veramendi
+(2018) <doi:10.1086/698760>, and Humphries, Joensen, and Veramendi (2024)
+<doi:10.1257/pandp.20241026>.")
     (license license:gpl3)))
 
 (define-public r-factor256

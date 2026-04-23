@@ -2181,29 +2181,6 @@ download page or, when the package is loaded in an R session, with
 vignette(\"@code{turboEM}\").")
     (license license:gpl2)))
 
-(define-public r-tuple
-  (package
-    (name "r-tuple")
-    (version "0.4-02")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tuple" version))
-       (sha256
-        (base32 "0fm8fsdfiwknjpc20ivi5m5b19r9scdxhzij70l8qi3ixw1f0rnk"))))
-    (properties `((upstream-name . "tuple")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://statistics.lazaridis.eu")
-    (synopsis
-     "Find every match, or orphan, duplicate, triplicate, or other replicated values")
-    (description
-     "This package provides functions to find all matches or non-matches, orphans, and
-duplicate or other replicated elements.")
-    (license license:lgpl3)))
-
 (define-public r-tuneranger
   (package
     (name "r-tuneranger")
@@ -13660,13 +13637,13 @@ learning models.")
 (define-public r-torchvision
   (package
     (name "r-torchvision")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchvision" version))
        (sha256
-        (base32 "0xqym9p5vkwh54k55hbvvy4y8jqi699z7dzjgs02ia914m6a8adh"))))
+        (base32 "03j75rcyhkqiww589mprcz842xj8lw9ykw39flm1hsv4kqx3spfc"))))
     (properties `((upstream-name . "torchvision")))
     (build-system r-build-system)
     (arguments
@@ -13686,12 +13663,13 @@ learning models.")
                              r-fs
                              r-cli
                              r-abind))
+    (native-inputs (list r-knitr))
     (home-page "https://torchvision.mlverse.org")
     (synopsis "Models, Datasets and Transformations for Images")
     (description
      "This package provides access to datasets, models and preprocessing facilities
 for deep learning with images.  Integrates seamlessly with the torch package and
-it's API borrows heavily from @code{PyTorch} vision package.")
+its API borrows heavily from the @code{PyTorch} vision package.")
     (license license:expat)))
 
 (define-public r-torchopt
@@ -14914,13 +14892,13 @@ annotate the texts.")
 (define-public r-tok
   (package
     (name "r-tok")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tok" version))
        (sha256
-        (base32 "1jp92am22jr0w7wxbnbjk9p8lk8vkwkgwm8q6p6fz4crc8v9d0f0"))))
+        (base32 "16zdzsra97xi9mfa3x8if6jp0yvk8m7ci6i65pq0v9lmbwfi63n9"))))
     (properties `((upstream-name . "tok")))
     (build-system r-build-system)
     (arguments
@@ -17596,6 +17574,34 @@ parsing, no inference magic, and explicit-only behavior.")
      "Lightweight extension of the base R graphics system, with support for automatic
 legends, facets, themes, and various other enhancements.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-tinypkgr
+  (package
+    (name "r-tinypkgr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinypkgr" version))
+       (sha256
+        (base32 "11gbgxxwzk72nvgq57bg0avg96rvdcbyyypwdhr6la88zc0mf57k"))))
+    (properties `((upstream-name . "tinypkgr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-curl))
+    (home-page "https://github.com/cornball-ai/tinypkgr")
+    (synopsis "Minimal R Package Development Utilities")
+    (description
+     "Lightweight wrappers around R CMD INSTALL', R CMD check', R CMD build',
+win-builder uploads, and CRAN submission.  Provides functions for installing,
+loading, checking, building, and submitting R packages with minimal dependencies
+(only curl for uploads).  Background on R package development is in Wickham and
+Bryan (2023, ISBN:9781098134945), \"Writing R Extensions\"
+<https://cran.r-project.org/doc/manuals/R-exts.html>, and the CRAN Repository
+Policy <https://cran.r-project.org/web/packages/policies.html>.")
+    (license license:gpl3)))
 
 (define-public r-tinylens
   (package
@@ -27732,13 +27738,13 @@ about tesselle at <https://www.tesselle.org>.")
 (define-public r-tesiprov
   (package
     (name "r-tesiprov")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TesiproV" version))
        (sha256
-        (base32 "0fqy3kl182gwp82mhdxlw1q2gbc5zpsyxc4y060ashk516a155yr"))))
+        (base32 "10gq5bp61rqv4f9a8wggv514qhg72axk36wl9nk9d2z4a7sgv43l"))))
     (properties `((upstream-name . "TesiproV")))
     (build-system r-build-system)
     (arguments
@@ -30483,13 +30489,13 @@ multi-threaded TDCMs.")
 (define-public r-tdcm
   (package
     (name "r-tdcm")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDCM" version))
        (sha256
-        (base32 "0wvm92y7slx69kri8kxf05ran9sbg3mkfm9h2wny7g5lwv627mvq"))))
+        (base32 "0l6qip37dbdnx85gz4rllywyi8zvjl56vaa14kn9xczanlad5ivh"))))
     (properties `((upstream-name . "TDCM")))
     (build-system r-build-system)
     (arguments
@@ -30498,7 +30504,7 @@ multi-threaded TDCMs.")
     (inputs (list pandoc))
     (propagated-inputs (list r-stringr r-polycor r-gtools r-cdm))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/cotterell/tdcm")
+    (home-page "https://cotterell.github.io/tdcm/")
     (synopsis "The Transition Diagnostic Classification Model Framework")
     (description
      "Estimate the transition diagnostic classification model (TDCM) described in

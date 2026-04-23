@@ -9596,13 +9596,13 @@ in pure R.")
 (define-public r-onlinesurr
   (package
     (name "r-onlinesurr")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OnlineSurr" version))
        (sha256
-        (base32 "0hh33g7n22ncwjv3vqc9baabpssgzwvf1d19wy4gzjk8apzr80d4"))))
+        (base32 "03cp5klyv638rxmmmmqplm5xvn2r0y4wdiv22plis1xg5ni02k7k"))))
     (properties `((upstream-name . "OnlineSurr")))
     (build-system r-build-system)
     (arguments
@@ -9622,11 +9622,12 @@ in pure R.")
      "Surrogate Evaluation for Jointly Longitudinal Outcome and Surrogate")
     (description
      "This package provides tools for surrogate evaluation in longitudinal studies
-using state-space models.  The package estimates treatment effects over time
-with and without adjustment for surrogate information, summarizes the proportion
-of treatment effect explained by a longitudinal surrogate, quantifies
-uncertainty via bootstrap resampling, and provides plotting and summary
-utilities for fitted models.")
+using state-space models as proposed in Santos Jr.  and Parast
+(2026)<doi:10.48550/@code{arXiv.2604.12882>}.  The package estimates treatment
+effects over time with and without adjustment for surrogate information,
+summarizes the proportion of treatment effect explained by a longitudinal
+surrogate, quantifies uncertainty via bootstrap resampling, and provides
+plotting and summary utilities for fitted models.")
     (license license:gpl3+)))
 
 (define-public r-onlineretail
@@ -11620,13 +11621,13 @@ distributions from the resampling processes.")
 (define-public r-olsrr
   (package
     (name "r-olsrr")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "olsrr" version))
        (sha256
-        (base32 "0hvz8kab1bwnm36npdsk54yav3ga268a54rirjh1xij0nvc9hwp9"))))
+        (base32 "0mc6cw09g8jkz6daij7fba5qwng9hjnz2l41rz3xcjw757rb2909"))))
     (properties `((upstream-name . "olsrr")))
     (build-system r-build-system)
     (arguments
@@ -12984,6 +12985,38 @@ developed by Christopher Knoll and the Observational Health Data Sciences and
 Informatics community through @code{WebAPI}'.  Methodological background and the
 originating implementation are described in
 <https://github.com/OHDSI/@code{CohortPathways>}.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-odysseuscharacterizationmodule
+  (package
+    (name "r-odysseuscharacterizationmodule")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OdysseusCharacterizationModule" version))
+       (sha256
+        (base32 "1jxiivdainbsdah0y9zsghsydmfljd767619d812kabirnp2770v"))))
+    (properties `((upstream-name . "OdysseusCharacterizationModule")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sqlrender r-jsonlite r-databaseconnector
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://cran.r-project.org/package=OdysseusCharacterizationModule")
+    (synopsis "Handy and Minimalistic Common Data Model Characterization")
+    (description
+     "Extracts covariates from Observational Medical Outcomes Partnership (OMOP)
+Common Data Model (CDM) domains using an R-only pipeline.  Supports configurable
+temporal windows, domain-specific covariates for drug exposure, drug era
+(including Anatomical Therapeutic Chemical (ATC) groupings), condition
+occurrence, condition era, concept sets and cohorts.  Methods are based on the
+Observational Health Data Sciences and Informatics (OHDSI) framework described
+in Hripcsak et al. (2015) <doi:10.1038/sdata.2015.35> and \"The Book of OHDSI\"
+OHDSI (2019, ISBN:978-1-7923-0589-8).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-odt

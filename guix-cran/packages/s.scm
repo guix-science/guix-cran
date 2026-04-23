@@ -21561,38 +21561,6 @@ a partial least squares framework, for more details see Csala et al. (2017)
 <doi:10.1093/bioinformatics/btx374>.")
     (license license:expat)))
 
-(define-public r-srcs
-  (package
-    (name "r-srcs")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SRCS" version))
-       (sha256
-        (base32 "13zf3cqs53w68f9zc1fkb9ql84rvzn7g1hbykqrbvss8hjaq8x1r"))))
-    (properties `((upstream-name . "SRCS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (native-inputs (list r-r-rsp))
-    (home-page "http://decsai.ugr.es/~pjvi/r-packages.html")
-    (synopsis
-     "Statistical Ranking Color Scheme for Multiple Pairwise Comparisons")
-    (description
-     "Implementation of the SRCS method for a color-based visualization of the results
-of multiple pairwise tests on a large number of problem configurations, proposed
-in: I.G. del Amo, D.A. Pelta.  SRCS: a technique for comparing multiple
-algorithms under several factors in dynamic optimization problems.  In: E. Alba,
-A. Nakib, P. Siarry (Eds.), Metaheuristics for Dynamic Optimization.  Series:
-Studies in Computational Intelligence 433, Springer, Berlin/Heidelberg, 2012.")
-    (license license:lgpl3+)))
-
 (define-public r-srcr
   (package
     (name "r-srcr")
@@ -24011,6 +23979,37 @@ read and write in plain text, and easy to convert to equivalent presentations in
 plotmath', latex', and html'.  Greek symbols and a multiplication symbol are
 explicitly supported.  See ?as_spork and ?as_previews.")
     (license license:gpl3)))
+
+(define-public r-spopt
+  (package
+    (name "r-spopt")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spopt" version))
+       (sha256
+        (base32 "16nafl7s9k1z8dliwgfzvgy9sfhjf5aw8a7pmn0r83spj62kqwl3"))))
+    (properties `((upstream-name . "spopt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-spdep r-sf r-matrix r-highs))
+    (home-page "https://walker-data.com/spopt-r/")
+    (synopsis
+     "Spatial Optimization for Regionalization, Facility Location, and Market Analysis")
+    (description
+     "This package implements spatial optimization algorithms across several problem
+families including contiguity-constrained regionalization, discrete facility
+location, market share analysis, and least-cost corridor and route optimization
+over raster cost surfaces.  Facility location problems also accept user-supplied
+network travel-time matrices.  Uses a Rust backend via extendr for graph and
+routing algorithms, and the @code{HiGHS} solver via the highs package for
+facility location mixed-integer programs.  Method-level references are provided
+in the documentation of the individual functions.")
+    (license license:expat)))
 
 (define-public r-spooky
   (package
@@ -26588,6 +26587,44 @@ matrices and perform supervised or unsupervised semiparametric spatial filtering
 in a regression framework.  The package supports unsupervised spatial filtering
 in standard linear as well as some generalized linear regression models.")
     (license license:gpl3)))
+
+(define-public r-spffbs
+  (package
+    (name "r-spffbs")
+    (version "0.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spFFBS" version))
+       (sha256
+        (base32 "1qbgb4zqmwfn1zk6rhnq8p55mqiwchh55rcbk8fk1g0qfk4gzpn6"))))
+    (properties `((upstream-name . "spFFBS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tictoc
+                             r-spbps
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-foreach
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://lucapresicce.github.io/spFFBS/")
+    (synopsis
+     "Spatiotemporal Propagation for Multivariate Bayesian Dynamic Learning")
+    (description
+     "Implementation of the Forward Filtering Backward Sampling (FFBS) algorithm with
+Dynamic Bayesian Predictive Stacking (DYNBPS) integration for multivariate
+spatiotemporal models, as introduced in \"Adaptive Markovian Spatiotemporal
+Transfer Learning in Multivariate Bayesian Modeling\" (Presicce and Banerjee,
+2026+) <doi:10.48550/@code{arXiv.2602.08544>}.  This methodology enables
+efficient Bayesian multivariate spatiotemporal modeling, utilizing dynamic
+predictive stacking to improve inference across multivariate time series of
+spatial datasets.  The core functions leverage C++ for high-performance
+computation, making the framework well-suited for large-scale spatiotemporal
+data analysis in parallel computing environments.")
+    (license license:gpl3+)))
 
 (define-public r-spfda
   (package
@@ -35727,13 +35764,13 @@ growth\".")
 (define-public r-soilassessment
   (package
     (name "r-soilassessment")
-    (version "0.3.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilassessment" version))
        (sha256
-        (base32 "0jjwv8kmwbvh588f00smfnlw82gf9icp0fnk2agw2pcaaq1clnm6"))))
+        (base32 "180yfgpgmwpik2xwhiirn1bw811lcjky9vw8qj1kwwqmpw2gvp11"))))
     (properties `((upstream-name . "soilassessment")))
     (build-system r-build-system)
     (arguments
@@ -40431,6 +40468,40 @@ implemented as well.")
 family of Multiple Criteria Decision Analysis (MCDA) methods.  Tervonen, T. and
 Figueira, J. R. (2008) <doi:10.1002/mcda.407>.")
     (license license:gpl3)))
+
+(define-public r-slxr
+  (package
+    (name "r-slxr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "slxr" version))
+       (sha256
+        (base32 "10i3n1npx400hk9j7xpx3s9gldy6ximf9a0xih9wns32vzknh5dx"))))
+    (properties `((upstream-name . "slxr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-spdep
+                             r-sf
+                             r-rlang
+                             r-matrix
+                             r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cwimpy/slxr")
+    (synopsis "Spatial-X (SLX) Models for Applied Researchers")
+    (description
+     "This package provides tools for estimating, interpreting, and visualizing
+Spatial-X (SLX) regression models.  Provides a formula-based interface with
+first-class support for variable-specific weights matrices, higher-order spatial
+lags, temporally-lagged spatial variables (TSLS), and tidy effects decomposition
+(direct, indirect, total).  Designed to lower the barrier to SLX modeling for
+applied researchers who already work with sf and lm'-style formulas.  Methods
+follow Wimpy, Whitten, and Williams (2021) <doi:10.1086/710089>.")
+    (license license:expat)))
 
 (define-public r-slurmr
   (package
@@ -67433,6 +67504,41 @@ and a summary file (like HALO').
 Scryfall card data API <https://scryfall.com/docs/api>.")
     (license license:expat)))
 
+(define-public r-scrutr
+  (package
+    (name "r-scrutr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scrutr" version))
+       (sha256
+        (base32 "1p524g9p243pzgpqrznp25r0ipcgfgsnf7sbzlxjdqk60rna7rs9"))))
+    (properties `((upstream-name . "scrutr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-tibble
+                             r-stringr
+                             r-rio
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/danielrak/scrutr")
+    (synopsis "Scrutinizing Collections of Structured Datasets")
+    (description
+     "This package provides a coherent interface for exploring and transforming
+multiple related data frames that share a common structure.  Complements
+single-dataset inspection tools by operating across an entire collection at
+once.  Also includes lightweight utilities for related file and folder
+management tasks.")
+    (license license:expat)))
+
 (define-public r-scrutiny
   (package
     (name "r-scrutiny")
@@ -69670,19 +69776,19 @@ includes functions for Winsorizing data based on a Z-statistic cutoff.")
 (define-public r-sciproj
   (package
     (name "r-sciproj")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCIproj" version))
        (sha256
-        (base32 "1crsiznqlci6inhcpzj9g9hwrfxy0d8yzl34gjayrl0693lywiky"))))
+        (base32 "0cbs7yfwxf9wjqa2618dvcm2cp3nf71x7ql90mwkq6gnc82h1g20"))))
     (properties `((upstream-name . "SCIproj")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-usethis r-rstudioapi))
+    (propagated-inputs (list r-usethis r-rstudioapi r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/saskiaotto/SCIproj")
     (synopsis "Creates a Scientific Project Skeleton as an R Package")
@@ -73434,29 +73540,6 @@ blocks interactively, send data back and forth between SAS and R, and render SAS
 output within quarto documents.  SAS connections are established through a
 combination of SASPy and reticulate'.")
     (license license:expat)))
-
-(define-public r-sasmixed
-  (package
-    (name "r-sasmixed")
-    (version "1.0-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SASmixed" version))
-       (sha256
-        (base32 "0491x4a3fwiy26whclrc19alcdxccn40ghpsgwjkn9sxi8vj5wvm"))))
-    (properties `((upstream-name . "SASmixed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=SASmixed")
-    (synopsis "Data sets from \"SAS System for Mixed Models\"")
-    (description
-     "Data sets and sample lmer analyses corresponding to the examples in Littell,
-Milliken, Stroup and Wolfinger (1996), \"SAS System for Mixed Models\", SAS
-Institute.")
-    (license license:gpl2+)))
 
 (define-public r-sasmarkdown
   (package

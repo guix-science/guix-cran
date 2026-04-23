@@ -1019,6 +1019,30 @@ S. (2011) <doi:10.1080/03461231003611933>.  Santolino, M. (2023)
 <doi:10.3390/risks11100170>.")
     (license license:expat)))
 
+(define-public r-cvmgof
+  (package
+    (name "r-cvmgof")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cvmgof" version))
+       (sha256
+        (base32 "0s78w8ivxzscn6jbwsw0m15n3xwgbbjdqwpp4dsy3gi0nsmngjyc"))))
+    (properties `((upstream-name . "cvmgof")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lattice))
+    (home-page "https://cran.r-project.org/package=cvmgof")
+    (synopsis "Cramer-von Mises Goodness-of-Fit Tests")
+    (description
+     "It is devoted to Cramer-von Mises goodness-of-fit tests.  It implements three
+statistical methods based on Cramer-von Mises statistics to estimate and test a
+regression model.")
+    (license license:cecill)))
+
 (define-public r-cvmdisc
   (package
     (name "r-cvmdisc")
@@ -24167,13 +24191,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "16nqd8aa75glk5l5fjap7qjmiffx5wxfx9p6d4glz50fw9vkzz0c"))))
+        (base32 "0l1vddk32djrpg1dz3ckyg9cfwnalfqs7dj3vgxblqm4dwzxxpa7"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
@@ -45962,19 +45986,21 @@ learning objects).")
 (define-public r-cdsim
   (package
     (name "r-cdsim")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDSim" version))
        (sha256
-        (base32 "1s86ffppcdsxcgp3ghwigws787qvscp5pfrmvs18c7hapbh6xx57"))))
+        (base32 "17ff0ysds9a964szfkdxdh2r5q0x6kspsn0sm79f5bz2w7pq22vp"))))
     (properties `((upstream-name . "CDSim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vroom
+                             r-truncnorm
+                             r-trend
                              r-tidyr
                              r-tibble
                              r-rlang
@@ -45990,7 +46016,7 @@ learning objects).")
      "Generate synthetic station-based monthly climate time-series including
 temperature and rainfall, export to Network Common Data Form (@code{NetCDF}),
 and provide visualization helpers for climate workflows.  The approach is
-inspired by statistical weather generator concepts described in Wilks (1992)
+inspired by statistical weather generator concepts described in Wilks (1999)
 <doi:10.1016/S0168-1923(99)00037-4> and Richardson (1981)
 <doi:10.1029/WR017i001p00182>.")
     (license license:expat)))

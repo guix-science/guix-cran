@@ -6720,35 +6720,6 @@ association changes spatially and in local regions, as outlined in Hu et al.
 (2024) <doi:10.1080/13658816.2024.2437811>.")
     (license license:gpl3)))
 
-(define-public r-localsolver
-  (package
-    (name "r-localsolver")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "localsolver" version))
-       (sha256
-        (base32 "1d18rihzqf1f5j9agfp8jysll7lqk1ai23hkdqkn6wwxj442llv4"))))
-    (properties `((upstream-name . "localsolver")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=localsolver")
-    (synopsis "R API to LocalSolver")
-    (description
-     "The package converts R data onto input and data for @code{LocalSolver}, executes
-optimization and exposes optimization results as R data. @code{LocalSolver}
-(http://www.localsolver.com/) is an optimization engine developed by
-Innovation24 (http://www.innovation24.fr/).  It is designed to solve large-scale
-mixed-variable non-convex optimization problems.  The localsolver package is
-developed and maintained by WLOG Solutions (http://www.wlogsolutions.com/en/) in
-collaboration with Decision Support and Analysis Division at Warsaw School of
-Economics (http://www.sgh.waw.pl/en/).")
-    (license license:lgpl2.1)))
-
 (define-public r-localscore
   (package
     (name "r-localscore")
@@ -8900,6 +8871,42 @@ execution, intelligent error handling with retry mechanisms, persistent session
 management, structured JSON output validation, and context-aware conversation
 management.")
     (license license:gpl3+)))
+
+(define-public r-llmclean
+  (package
+    (name "r-llmclean")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llmclean" version))
+       (sha256
+        (base32 "025flalbz3i6py4y4kqzdhk2jpy29795h80w9bv45gazdf0kq13q"))))
+    (properties `((upstream-name . "llmclean")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=llmclean")
+    (synopsis "'LLM'-Assisted Data Cleaning with Multi-Provider Support")
+    (description
+     "Detects and suggests fixes for semantic inconsistencies in data frames by
+calling large language models (LLMs) through a unified, provider-agnostic
+interface.  Supported providers include @code{OpenAI} ('GPT-4o', GPT-4o-mini'),
+Anthropic ('Claude'), Google ('Gemini'), Groq (free-tier L@code{LaMA} and
+Mixtral'), and local Ollama models.  The package identifies issues that
+rule-based tools cannot detect: abbreviation variants, typographic errors, case
+inconsistencies, and malformed values.  Results are returned as tidy data frames
+with column, row index, detected value, issue type, suggested fix, and
+confidence score.  An offline fallback using statistical and fuzzy-matching
+methods is provided for use without any API key.  Interactive fix application
+with human review is supported via @code{apply_fixes()}'.  Methods follow de
+Jonge and van der Loo (2013)
+<https://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf>
+and Chaudhuri et al. (2003) <doi:10.1145/872757.872796>.")
+    (license license:gpl3)))
 
 (define-public r-llmagentr
   (package
@@ -19998,35 +20005,6 @@ Contains the Lakhesis Calculator, a graphical platform for identifying seriated
 sequences.  Collins-Elliott (2024)
 <https://volweb.utk.edu/~scolli46/@code{sceLakhesis.pdf>}.")
     (license license:gpl3+)))
-
-(define-public r-laketemps
-  (package
-    (name "r-laketemps")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "laketemps" version))
-       (sha256
-        (base32 "04742r379bzgbfr4243wwkb26cvfmnw50jzgygq7vblq00grzska"))))
-    (properties `((upstream-name . "laketemps")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=laketemps")
-    (synopsis
-     "Lake Temperatures Collected by Situ and Satellite Methods from 1985-2009")
-    (description
-     "Lake temperature records, metadata, and climate drivers for 291 global lakes
-during the time period 1985-2009.  Temperature observations were collected using
-satellite and in situ methods.  Climatic drivers and geomorphometric
-characteristics were also compiled and are included for each lake.  Data are
-part of the associated publication from the Global Lake Temperature
-Collaboration project (http://www.laketemperature.org).  See
-citation('laketemps') for dataset attribution.")
-    (license license:cc0)))
 
 (define-public r-lakemorpho
   (package

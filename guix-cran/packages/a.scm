@@ -2469,13 +2469,13 @@ history using conventional commit messages
 (define-public r-automr
   (package
     (name "r-automr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoMR" version))
        (sha256
-        (base32 "12xxk7ljddd0wlc4yl3sfa96bdm733qwv8i5q89g94gj0w98s2ds"))))
+        (base32 "1v2zzy5zg9q94imhz7fyf622skaciawjbinky9i91v7a82xm1v2n"))))
     (properties `((upstream-name . "autoMR")))
     (build-system r-build-system)
     (arguments
@@ -3688,13 +3688,13 @@ parametric and empirical SIMEX are considered in the package.")
 (define-public r-audubon
   (package
     (name "r-audubon")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "audubon" version))
        (sha256
-        (base32 "0p4sc904wbmq30gkqsm5qj64s6mh1ha499c36n7y12sy02d7cvxs"))))
+        (base32 "0mw10qlh2yq66ajafv7jppyh69xhjgy5xxj3gkj2r8p9shv9mrak"))))
     (properties `((upstream-name . "audubon")))
     (build-system r-build-system)
     (arguments
@@ -7096,38 +7096,6 @@ H. W. Janson, revised and expanded by Anthony F. Janson (\"History of art,\" 199
 ISBN: 0810934213).")
     (license license:expat)))
 
-(define-public r-art
-  (package
-    (name "r-art")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ART" version))
-       (sha256
-        (base32 "186w1ivj5v3h906crl953qxgai5wiznaih83dgvwgnmabs9p1wvk"))))
-    (properties `((upstream-name . "ART")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-car))
-    (home-page "http://decsai.ugr.es/~pjvi/r-packages.html")
-    (synopsis "Aligned Rank Transform for Nonparametric Factorial Analysis")
-    (description
-     "An implementation of the Aligned Rank Transform technique for factorial analysis
-(see references below for details) including models with missing terms
-(unsaturated factorial models).  The function first computes a separate aligned
-ranked response variable for each effect of the user-specified model, and then
-runs a classic ANOVA on each of the aligned ranked responses.  For further
-details, see Higgins, J. J. and Tashtoush, S. (1994).  An aligned rank transform
-test for interaction.  Nonlinear World 1 (2), pp.  201-211.  Wobbrock, J.O.,
-Findlater, L., Gergle, D. and Higgins,J.J. (2011).  The Aligned Rank Transform
-for nonparametric factorial analyses using only ANOVA procedures.  Proceedings
-of the ACM Conference on Human Factors in Computing Systems (CHI 11).  New York:
-ACM Press, pp.  143-146. <doi:10.1145/1978942.1978963>.")
-    (license license:lgpl3+)))
-
 (define-public r-arse
   (package
     (name "r-arse")
@@ -9394,13 +9362,13 @@ model exploration software.  A demonstration of the app is available at
 (define-public r-archeofrag
   (package
     (name "r-archeofrag")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag" version))
        (sha256
-        (base32 "08cfay2gq416np40cwx1yykqrqh8fj8gz4plnkj2vq09s2aqzm48"))))
+        (base32 "1f0ifcxgl9fyf68wrskf3cnlhp6dlha0ybnh3ghcv9vr3jcvp2d6"))))
     (properties `((upstream-name . "archeofrag")))
     (build-system r-build-system)
     (arguments
@@ -9412,7 +9380,7 @@ model exploration software.  A demonstration of the app is available at
     (synopsis "Spatial Analysis in Archaeology from Refitting Fragments")
     (description
      "This package provides methods to analyse spatial units in archaeology from the
-relationships between refitting fragmented objects scattered in these units
+refitting relationships between fragments of objects scattered in these units
 (e.g. stratigraphic layers).  Graphs are used to model archaeological
 observations.  The package is mainly based on the igraph package for graph
 analysis.  Functions can: 1) create, manipulate, visualise, and simulate
@@ -22130,13 +22098,13 @@ Details on the least-squares estimation can be found in Chiou et al. (2014)
 (define-public r-aftables
   (package
     (name "r-aftables")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aftables" version))
        (sha256
-        (base32 "1xsjwaghxsh06gf78z3k8az3hzgss27ahc1qfjx631lxfmq6j0fy"))))
+        (base32 "07ada84m4vd1r49m61g1r6b82pyv9wjlb7jdr2ls6wslcar73ygg"))))
     (properties `((upstream-name . "aftables")))
     (build-system r-build-system)
     (arguments

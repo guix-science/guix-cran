@@ -1664,13 +1664,13 @@ fluctuations.  This package has been developed using algorithm of Jammazi et al.
 (define-public r-dvir
   (package
     (name "r-dvir")
-    (version "3.3.0")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dvir" version))
        (sha256
-        (base32 "1anqm4lfr911yzj3v9953b72y7mbvbm4x52vkblwzlnxznkhmcn4"))))
+        (base32 "0h9bxaxadzvnhrzbp5pgilzai5cvnd4rpwxiqg78qf5qx0dncbbi"))))
     (properties `((upstream-name . "dvir")))
     (build-system r-build-system)
     (arguments
@@ -4950,13 +4950,13 @@ time series.  Bundesbank Discussion Paper 41/2018.")
 (define-public r-ds4psy
   (package
     (name "r-ds4psy")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ds4psy" version))
        (sha256
-        (base32 "18bim77q06mn7cx34y3fixf1bjcfgkm2h3llk6cspiwg30xxddd7"))))
+        (base32 "1k5rq7mjrhkfnz2bc8sqsmsa4nvzilq5091h5f2kvjclgm0mg6sp"))))
     (properties `((upstream-name . "ds4psy")))
     (build-system r-build-system)
     (arguments
@@ -4964,19 +4964,19 @@ time series.  Bundesbank Discussion Paper 41/2018.")
       #:tests? #f))
     (propagated-inputs (list r-unikn r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://bookdown.org/hneth/ds4psy/")
+    (home-page "https://hneth-ds4psy.share.connect.posit.cloud/")
     (synopsis "Data Science for Psychologists")
     (description
      "All datasets and functions required for the examples and exercises of the book
-\"Data Science for Psychologists\" (by Hansjoerg Neth, Konstanz University, 2025,
+\"Data Science for Psychologists\" (by Hansjoerg Neth, Konstanz University, 2026,
 <doi:10.5281/zenodo.7229812>), freely available at
-<https://bookdown.org/hneth/ds4psy/>.  The book and corresponding courses
-introduce principles and methods of data science to students of psychology and
-other biological or social sciences.  The ds4psy package primarily provides
-datasets, but also functions for data generation and manipulation (e.g., of text
-and time data) and graphics that are used in the book and its exercises.  All
-functions included in ds4psy are designed to be explicit and instructive, rather
-than efficient or elegant.")
+<https://hneth-ds4psy.share.connect.posit.cloud/>.  The book and corresponding
+courses introduce principles and methods of data science to students of
+psychology and other biological or social sciences.  The ds4psy package
+primarily provides datasets, but also functions for data generation and
+manipulation (e.g., of text and time data) and graphics that are used in the
+book and its exercises.  All functions included in ds4psy are designed to be
+explicit and instructive, rather than efficient or elegant.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-ds
@@ -10249,6 +10249,38 @@ method; rather it is a pre-processing method for outlier detection.  It brings
 outliers to the fore-front using fewer basis vectors (Kandanaarachchi, Hyndman
 2020) <doi:10.1080/10618600.2020.1807353>.")
     (license license:expat)))
+
+(define-public r-do3pca
+  (package
+    (name "r-do3pca")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "do3PCA" version))
+       (sha256
+        (base32 "11ilwy7iqia6nxqphycq526crg5q1y0giqfy8q66ibj3zzql8xbs"))))
+    (properties `((upstream-name . "do3PCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdimtools
+                             r-ratematrix
+                             r-phytools
+                             r-nloptr
+                             r-mclust
+                             r-matrixcalc
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=do3PCA")
+    (synopsis "Probabilistic Phylogenetic Principal Component Analysis")
+    (description
+     "Estimates probabilistic phylogenetic Principal Component Analysis (PCA) and
+non-phylogenetic probabilistic PCA. Provides methods to implement alternative
+models of trait evolution including Brownian motion (BM), Ornstein-Uhlenbeck
+(OU), Early Burst (EB), and Pagel's lambda.  Also provides flexible biplot
+functions.")
+    (license license:gpl2+)))
 
 (define-public r-do
   (package
@@ -20547,19 +20579,19 @@ maintainability of your code.")
 (define-public r-detzrcr
   (package
     (name "r-detzrcr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "detzrcr" version))
        (sha256
-        (base32 "0afi1ir8il5xmzkpmbc2m5mvmgzlqw8qdn04gbnwl74a03yaxxmj"))))
+        (base32 "0hm70pgf370m596izlk4m4zr42ba8gwcg88dlfh7gf3dq6m1i40g"))))
     (properties `((upstream-name . "detzrcr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-mass r-ggplot2 r-dt))
+    (propagated-inputs (list r-shiny r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/magnuskristoffersen/detzrcr")
     (synopsis "Compare Detrital Zircon Suites")
@@ -27589,6 +27621,43 @@ conditional models (i.e., models with interaction terms) For more information
 see <https://www.ddaproject.com>.")
     (license license:expat)))
 
+(define-public r-dcvar
+  (package
+    (name "r-dcvar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dcvar" version))
+       (sha256
+        (base32 "18rypsa48h12pn1nb0jzixi862cb5ckbak5qqj0r53iz2m8fccca"))))
+    (properties `((upstream-name . "dcvar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstan
+                             r-rlang
+                             r-posterior
+                             r-patchwork
+                             r-loo
+                             r-ggplot2
+                             r-cli
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/benlug/dcvar")
+    (synopsis "Dynamic Copula VAR Models for Time-Varying Dependence")
+    (description
+     "Fits Bayesian copula vector autoregressive models for bivariate time series with
+dynamic, regime-switching, and constant dependence structures.  The package
+includes simulation, data preparation, estimation with Stan through rstan or
+cmdstanr', posterior summaries, diagnostics, trajectory extraction, fitted and
+predictive summaries, and approximate leave-one-out cross-validation model
+comparison for supported fits.  For Bayesian computation and model comparison,
+see Carpenter et al. (2017) <doi:10.18637/jss.v076.i01> and Vehtari, Gelman and
+Gabry (2017) <doi:10.1007/s11222-016-9696-4>.")
+    (license license:gpl3+)))
+
 (define-public r-dcurves
   (package
     (name "r-dcurves")
@@ -31846,6 +31915,46 @@ treat and format data.")
 entering, filtering and editing of data in R
 <https://dillonhammill.github.io/@code{DataEditR/>}.")
     (license license:gpl2)))
+
+(define-public r-datadriftr
+  (package
+    (name "r-datadriftr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datadriftR" version))
+       (sha256
+        (base32 "1z9gb2si292xy4r8h7aa8gipcz9jcsy5wp6ccapf4xic6m2ikc4q"))))
+    (properties `((upstream-name . "datadriftR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-fda-usc))
+    (native-inputs (list r-knitr))
+    (home-page "https://ugurdar.github.io/datadriftR/")
+    (synopsis "Concept Drift Detection Methods for Stream Data")
+    (description
+     "This package provides a system designed for detecting concept drift in streaming
+datasets.  It offers a comprehensive suite of statistical methods to detect
+concept drift, including methods for monitoring changes in data distributions
+over time.  The package supports several tests, such as Drift Detection Method
+(DDM), Early Drift Detection Method (EDDM), Hoeffding Drift Detection Methods
+(HDDM_A, HDDM_W), Kolmogorov-Smirnov test-based Windowing (KSWIN), Adaptive
+WINdowing (ADWIN) and Page Hinkley (PH) tests.  The methods implemented in this
+package are based on established research and have been demonstrated to be
+effective in real-time data analysis.  For more details on the methods, please
+check to the following sources.  KobyliÅska et al. (2023)
+<doi:10.48550/@code{arXiv.2308.11446>}, S. Kullback & R.A. Leibler (1951)
+<doi:10.1214/aoms/1177729694>, Gama et al. (2004)
+<doi:10.1007/978-3-540-28645-5_29>, Baena-Garcia et al. (2006)
+<https://www.researchgate.net/publication/245999704_Early_Drift_Detection_Method>,
+FrÃ­as-Blanco et al. (2014) <https://ieeexplore.ieee.org/document/6871418>,
+Bifet and Gavalda (2007) <doi:10.1137/1.9781611972771>, Raab et al. (2020)
+<doi:10.1016/j.neucom.2019.11.111>, Page (1954) <doi:10.1093/biomet/41.1-2.100>,
+Montiel et al. (2018) <https://jmlr.org/papers/volume19/18-251/18-251.pdf>.")
+    (license license:expat)))
 
 (define-public r-datadogr
   (package
