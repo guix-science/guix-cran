@@ -3787,13 +3787,13 @@ for supporting this research.")
 (define-public r-wintime
   (package
     (name "r-wintime")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wintime" version))
        (sha256
-        (base32 "1h4ihqhpi2763rc6n9nlayjvi9kkw5svs4fi8z2n6gymiksndr8p"))))
+        (base32 "1s7w13navbds9931pb95mzy0ky77w8bmf0vdd5a2c9b40dnjg2w4"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
     (arguments
@@ -4034,13 +4034,13 @@ suitable for direct use in the WINFAP software, hence the name of the package.")
 (define-public r-wineq
   (package
     (name "r-wineq")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wINEQ" version))
        (sha256
-        (base32 "09iqi3z6lw5mv4d8hl19c11slvy0gfgv99rhvia637wdihgbg8j2"))))
+        (base32 "174s9621nl6h4id4sr9x8n89cla1sdldk9a81825kpar5rh2dfp4"))))
     (properties `((upstream-name . "wINEQ")))
     (build-system r-build-system)
     (arguments
@@ -6185,13 +6185,13 @@ that automatically select the matches on which place a bet.")
 (define-public r-weirs
   (package
     (name "r-weirs")
-    (version "0.25")
+    (version "0.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weirs" version))
        (sha256
-        (base32 "17a0ppi7ghikrwn39zvhg2cvhmnr3w0qi7r9lj22x65ii9nzadd7"))))
+        (base32 "0j308gi9iipfq2dfnfg9ciwpyj1a81lmbmxm3x5mhyx0yrg7w2hv"))))
     (properties `((upstream-name . "weirs")))
     (build-system r-build-system)
     (arguments

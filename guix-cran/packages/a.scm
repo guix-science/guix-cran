@@ -6601,13 +6601,13 @@ or pandoc syntax.  Package comes with a set of drivers for Sweave'.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.13")
+    (version "1.13-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asbio" version))
        (sha256
-        (base32 "04r9b1vny71zn68xwcwa1p3d6ak3qhlkdi35d2ai5cfp509j8vps"))))
+        (base32 "0b3vj70zw15lb77jnwb3qjf5mlm6mfi0sp3dajr7fz5ldpdm9jy1"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (arguments
@@ -12069,13 +12069,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.8.1")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apache.sedona" version))
        (sha256
-        (base32 "0c2jkgzfgd0nl06ajmsixhy9mi4fv380flfcp3sgfy47s0w755kf"))))
+        (base32 "067pxx8irshmhbsy4gpaf9fl4p34ar3xcw7f61jy3dgyzxnq1d0q"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (arguments
@@ -22001,13 +22001,13 @@ proposed in Chan et.  al. (2018) <doi:10.1080/03610918.2016.1177072>.")
 (define-public r-aftpencda
   (package
     (name "r-aftpencda")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aftPenCDA" version))
        (sha256
-        (base32 "0lxgwpp7igddnga2j9fa572zzblz5qx0nx877wpdg2zz4xwn697y"))))
+        (base32 "0qqwq5gh23k9p6gr27p3l93iq2x7qyws2jb3spvqszw96par4l03"))))
     (properties `((upstream-name . "aftPenCDA")))
     (build-system r-build-system)
     (arguments
@@ -22016,7 +22016,7 @@ proposed in Chan et.  al. (2018) <doi:10.1080/03610918.2016.1177072>.")
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/seonsy/aftPenCDA")
-    (synopsis "Penalized AFT Estimation via Coordinate Descent")
+    (synopsis "Estimating Penalized AFT Models via Coordinate Descent")
     (description
      "This package provides penalized accelerated failure time (AFT) model estimation
 for right-censored and partly interval-censored survival data using induced

@@ -21641,6 +21641,37 @@ be approximated.  fddm implements all published approximations (Navarro & Fuss,
 are implemented purely in C++ providing faster speed than existing packages.")
     (license license:gpl2+)))
 
+(define-public r-fdclassify
+  (package
+    (name "r-fdclassify")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdclassify" version))
+       (sha256
+        (base32 "1cbhw5wr7l22nqkjw9pn5cajhf7az5y20bz2v0jl6y3b1ih7f6r4"))))
+    (properties `((upstream-name . "fdclassify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-modeest r-mgcv))
+    (home-page "https://github.com/dapr12/fdclassify")
+    (synopsis "Supervised Classification for Functional Data via Signed Depth")
+    (description
+     "This package provides a suite of supervised classifiers for functional data
+based on the concept of signed depth.  The core pipeline computes Fraiman-Muniz
+(FM) functional depth in either its Tukey or Simplicial variant, derives a
+signed depth by comparing each curve to a reference median curve via the signed
+distance integral, and feeds the resulting scalar summary into several
+classifiers: the k-Ranked Nearest Neighbour (k-RNN) rule, a moving-average
+smoother, a kernel-density Bayes rule, logistic regression on signed depth and
+distance to the mode, and a generalised additive model (GAM) classifier.
+Cross-validation routines for tuning the neighbourhood size k and parametric
+bootstrap confidence intervals are also included.")
+    (license license:gpl3)))
+
 (define-public r-fdboost
   (package
     (name "r-fdboost")
@@ -26959,13 +26990,13 @@ implementation is described in Egeland, Mostad and Olaisen (1997)
 (define-public r-familiar
   (package
     (name "r-familiar")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "familiar" version))
        (sha256
-        (base32 "1r1dbwv2k15w1rs8n26x11mfw8nr23f2sdjvinxdi90wpcxg77fj"))))
+        (base32 "1865vlz0zz94k6mvyr27ds7dapzqllbcv98kca94z95a6v2czjd5"))))
     (properties `((upstream-name . "familiar")))
     (build-system r-build-system)
     (arguments
@@ -26973,7 +27004,7 @@ implementation is described in Egeland, Mostad and Olaisen (1997)
       #:tests? #f))
     (propagated-inputs (list r-survival r-rstream r-rlang r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/alexzwanenburg/familiar")
+    (home-page "https://github.com/oncoray/familiar")
     (synopsis "End-to-End Automated Machine Learning and Model Evaluation")
     (description
      "Single unified interface for end-to-end modelling of regression, categorical and

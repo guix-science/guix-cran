@@ -2627,13 +2627,13 @@ building block for workflows within more applied projects.")
 (define-public r-unix
   (package
     (name "r-unix")
-    (version "1.5.9")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unix" version))
        (sha256
-        (base32 "0jbbdrrcb13w7c3rb2f3z4mja2cw0lf2c45pf4294qzsrnkq422j"))))
+        (base32 "1x5aicvk266lz3gjn09yca3nar44kv2f5cj9hxakv1rxbdjkznlw"))))
     (properties `((upstream-name . "unix")))
     (build-system r-build-system)
     (arguments
@@ -4385,26 +4385,32 @@ the method can be used to generate new data.")
 (define-public r-ultrapolarplot
   (package
     (name "r-ultrapolarplot")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ultrapolaRplot" version))
        (sha256
-        (base32 "0a1dyz59ian3l1d4qjj8zqnmaiix33nwlsg42m2rq87p3zhh3h6z"))))
+        (base32 "07qkzwmg1d24sjigrid1zkjgnbs1j8vnac6jjgnsv477zd92ncgq"))))
     (properties `((upstream-name . "ultrapolaRplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
                              r-stringr
+                             r-rstatix
                              r-rjson
                              r-readr
                              r-rcolorbrewer
                              r-purrr
                              r-plyr
+                             r-ggsignif
+                             r-ggpubr
                              r-ggplot2
+                             r-car
                              r-cairo))
     (home-page "https://cran.r-project.org/package=ultrapolaRplot")
     (synopsis "Plotting Ultrasound Tongue Traces")
@@ -4413,7 +4419,11 @@ the method can be used to generate new data.")
 system.  There is currently support for plotting means and standard deviations
 of each category's trace; Smoothing Splines Analysis of Variance (SSANOVA) could
 be implemented as well.  The origin of the polar coordinates may be defined
-manually or automatically determined based on different algorithms.  Currently
+manually or automatically determined based on different algorithms.  Points for
+each category can be split into two groups (anterior and posterior) at the point
+of maximum curvature of each trace.  User can specify rays to intersect various
+parts of the tongue; intersections along these rays serve as input for a
+pairwise t-test to measure significant contrasts between segments.  Currently
 @code{ultrapolaRplot} supports ultrasound tongue imaging trace data from
 @code{UltraTrace} (<https://github.com/@code{SwatPhonLab/UltraTrace>}).
 @code{UltraTrace} is capable of importing data from Articulate Instruments AAA.

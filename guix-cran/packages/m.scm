@@ -26553,13 +26553,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "0ik2hplzp57y7l1bbhmspipw6lqz406w880jb0j8zrw9g0yry8rc"))))
+        (base32 "1rxbrm24pzhiarggv3s5bn7wa1pypwlnkzj7varfb044hx2g746a"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments

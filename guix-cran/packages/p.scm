@@ -2904,13 +2904,13 @@ model for each response.")
 (define-public r-ptxqc
   (package
     (name "r-ptxqc")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PTXQC" version))
        (sha256
-        (base32 "1nw068ir8j9raylfi821sf3zxhkgf94d0n1ql6f3lb0qiyfps67s"))))
+        (base32 "1rqa5njcpg1lymnxihzc41jvrpvs2afikx0zzab9afkw4xg39xgv"))))
     (properties `((upstream-name . "PTXQC")))
     (build-system r-build-system)
     (arguments
@@ -13408,29 +13408,6 @@ models.  This package aims to provide an alternative to fairness treatment in
 predictive models.  The ROC method implemented in this package is described by
 Kamiran, Karim and Zhang (2012) <https://ieeexplore.ieee.org/document/6413831/>.")
     (license license:gpl2+)))
-
-(define-public r-precondition
-  (package
-    (name "r-precondition")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "precondition" version))
-       (sha256
-        (base32 "0srmr33q56dimkn0m7aad19ddrp28a0dzrpnyh4hglwy9zxfqz9j"))))
-    (properties `((upstream-name . "precondition")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang))
-    (home-page "https://cran.r-project.org/package=precondition")
-    (synopsis "Lightweight Precondition, Postcondition, and Sanity Checks")
-    (description
-     "This package implements fast, safe, and customizable assertions routines, which
-can be used in place of @code{base::stopifnot()}.")
-    (license license:expat)))
 
 (define-public r-precommit
   (package
@@ -34218,6 +34195,34 @@ Mayrink et al. (2021) <doi:10.18637/jss.v100.i08>.")
 Center.")
     (license license:expat)))
 
+(define-public r-peticontrast
+  (package
+    (name "r-peticontrast")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "peticontrast" version))
+       (sha256
+        (base32 "0z7gdcdf1plrg706gvy7rhgk95d9la6w88dv3cfs9qhdccq0sbqz"))))
+    (properties `((upstream-name . "peticontrast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=peticontrast")
+    (synopsis "Professional Contrast Coding for OLS Models")
+    (description
+     "Automates sum coding (also known as effect coding) for Ordinary Least Squares
+(OLS) regression models.  This approach is specifically designed to handle
+seasonal time series and categorical variables by comparing each group to the
+grand mean, rather than a single baseline category.  This ensures that the
+intercept represents the unweighted grand mean of the dependent variable.  For a
+comprehensive overview of contrast coding systems, see the UCLA Advanced
+Research Computing documentation (2021)
+<https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/>.")
+    (license license:expat)))
+
 (define-public r-petfinder
   (package
     (name "r-petfinder")
@@ -42175,13 +42180,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "9.5.0")
+    (version "9.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "141zz2xsq8aa38h7mkb23fdsiv0204n1x6zm7yx6bf2gqm5pyrgh"))))
+        (base32 "0lzcbkaly16avm78g7pk8mi3ljc1jqqcxfgck7mdzxcpiabrwpf2"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments
@@ -44394,13 +44399,13 @@ estimators from census data.")
 (define-public r-paramanova
   (package
     (name "r-paramanova")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParamANOVA" version))
        (sha256
-        (base32 "0gs7xmjr3s5c913f18yllgr3b1x6sfmjbha8qr7w7mv3sp600v79"))))
+        (base32 "1g7cpdgzp2m2rzi7spizknv10aviclp1fkgbipxwbzad8vsj3d87"))))
     (properties `((upstream-name . "ParamANOVA")))
     (build-system r-build-system)
     (arguments
@@ -45958,13 +45963,13 @@ Michael Oswald.")
 (define-public r-pam
   (package
     (name "r-pam")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pam" version))
        (sha256
-        (base32 "0ln1sz4s208gs00c7z9f1pah9b4g5w447wdzld2bk305g5573sxl"))))
+        (base32 "0sq7a1i57bw4qwf0vrwklqmp3zc4pqzanx1n1xppvdh4q6z1ym59"))))
     (properties `((upstream-name . "pam")))
     (build-system r-build-system)
     (arguments

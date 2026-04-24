@@ -9,13 +9,13 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages image)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages xorg)
   #:use-module (guix-cran packages z)
@@ -3756,6 +3756,44 @@ using R\" by Elmore and Urbaczweski (2025).")
 module or bicluster is a block of the reordered input matrix.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
+(define-public r-irtsim
+  (package
+    (name "r-irtsim")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtsim" version))
+       (sha256
+        (base32 "1jahg7aninaarfgll0hwvhsh5a2d4ljps667n50p2z9s1qsj7s98"))))
+    (properties `((upstream-name . "irtsim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-rlang r-mirt r-ggplot2 r-future-apply r-cli))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/sward1/irtsim")
+    (synopsis
+     "Monte Carlo Simulation-Based Sample-Size Planning for Item Response Theory")
+    (description
+     "This package provides a pipeline application programming interface (API) for
+Monte Carlo simulation-based sample-size planning in item response theory (IRT).
+ Implements the 10-decision framework from Schroeders and Gnambs (2025)
+<doi:10.1177/25152459251314798> as a three-step workflow: specify the
+data-generating model with @code{irt_design()}, add study conditions with
+@code{irt_study()}, and run simulations with @code{irt_simulate()}.  Supports
+one-parameter logistic (1PL), two-parameter logistic (2PL), and graded response
+models with missing-completely-at-random (MCAR), missing-at-random (MAR),
+booklet, and linking missingness mechanisms.  Results include mean squared error
+(MSE), bias, root mean squared error (RMSE), standard error (SE), and coverage
+criteria with summary and plot methods.")
+    (license license:gpl3+)))
+
 (define-public r-irtshiny
   (package
     (name "r-irtshiny")
@@ -6312,32 +6350,6 @@ or hostname originates from.  Supported IPv4 and IPv6.  Please visit
 requires IP2Location Python module.  At the terminal, please run pip install
 IP2Location to install the module.")
     (license license:expat)))
-
-(define-public r-ip
-  (package
-    (name "r-ip")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IP" version))
-       (sha256
-        (base32 "1fablbj94ppcmzixjqhfrkjxirmc6vvyl6dldni2jmyjvsixvbpv"))))
-    (properties `((upstream-name . "IP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://cran.r-project.org/package=IP")
-    (synopsis "Classes and Methods for 'IP' Addresses")
-    (description
-     "This package provides S4 classes for Internet Protocol (IP) versions 4 and 6
-addresses and efficient methods for IP addresses comparison, arithmetic, bit
-manipulation and lookup.  Both IPv4 and IPv6 arbitrary ranges are also supported
-as well as internationalized ('IDN') domain lookup with and whois query.")
-    (license license:gpl2+)))
 
 (define-public r-iotarelr
   (package
@@ -10240,79 +10252,6 @@ using the lavaan syntax.  See also the companion paper on implementation and
 workflows, Jamil and Rue (2026b) <doi:10.48550/@code{arXiv.2604.00671>}.")
     (license license:gpl3+)))
 
-(define-public r-inlatools
-  (package
-    (name "r-inlatools")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "INLAtools" version))
-       (sha256
-        (base32 "0smp906993smp3d3ilrvkhgmlkpp43cdlyrnfvq1nssi0jrfmf8i"))))
-    (properties `((upstream-name . "INLAtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix))
-    (home-page "https://github.com/eliaskrainski/INLAtools")
-    (synopsis "Functionalities for the 'INLA' Package")
-    (description
-     "Contain code to work with a C struct, in short cgeneric, to define a Gaussian
-Markov random (GMRF) model.  The cgeneric contain code to specify GMRF elements
-such as the graph and the precision matrix, and also the initial and prior for
-its parameters, useful for model inference.  It can be accessed from a C program
-and is the recommended way to implement new GMRF models in the INLA package
-(<https://r-inla.org>).  The INLAtools implement functions to evaluate each one
-of the model specifications from R. The implemented functionalities leverage the
-use of cgeneric models and provide a way to debug the code as well to work with
-the prior for the model parameters and to sample from it.  The `generic0` can be
-used to implement intrinsic models with the scaling as proposed in SÃ¸rbye & Rue
-(2014) <doi:10.1016/j.spasta.2013.06.004>, and the required contraints.  A very
-useful functionality is the Kronecker product method that creates a new model
-from multiple cgeneric models.  It also works with the rgeneric, the R version
-of the cgeneric intended to easy try implementation of new GMRF models.  The
-Kronecker between two cgeneric models where each one needs a constraint, such as
-spatio-temporal intrinsic interaction models, the needed constraints are
-automatically set.")
-    (license license:gpl2+)))
-
-(define-public r-inlaspacetime
-  (package
-    (name "r-inlaspacetime")
-    (version "0.1.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "INLAspacetime" version))
-       (sha256
-        (base32 "03kzhnrvb7jqr27vvi5sp9ld4czjj7vi3zhs5hz4qq4k45794mjm"))))
-    (properties `((upstream-name . "INLAspacetime")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-sp
-                             r-sf
-                             r-matrix
-                             r-inlatools
-                             r-fmesher))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/eliaskrainski/INLAspacetime")
-    (synopsis "Spatial and Spatio-Temporal Models using 'INLA'")
-    (description
-     "Prepare objects to implement models over spatial and spacetime domains with the
-INLA package (<https://www.r-inla.org>).  These objects contain data to for the
-cgeneric interface in INLA', enabling fast parallel computations.  We
-implemented the spatial barrier model, see Bakka et.  al. (2019)
-<doi:10.1016/j.spasta.2019.01.002>, and some of the spatio-temporal models
-proposed in Lindgren et.  al. (2024)
-<https://raco.cat/index.php/SORT/article/view/428665>.  Details are provided in
-the available vignettes and from the URL bellow.")
-    (license license:gpl2+)))
-
 (define-public r-inlamemi
   (package
     (name "r-inlamemi")
@@ -10922,6 +10861,38 @@ conventional SIR model to rank vertex influence in an unsupervised manner.
 Additional functions support assessment of dependence and correlation between
 network centrality measures, as well as estimation of conditional probabilities
 of deviation from their corresponding means in opposite directions.")
+    (license license:gpl3)))
+
+(define-public r-influenceborrowing
+  (package
+    (name "r-influenceborrowing")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InfluenceBorrowing" version))
+       (sha256
+        (base32 "0x18qlvp66v8343y94zis90wqalcz33zw8pl46m1ywngdqyzqi6a"))))
+    (properties `((upstream-name . "InfluenceBorrowing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-krls))
+    (home-page "https://cran.r-project.org/package=InfluenceBorrowing")
+    (synopsis "Adaptive Influence-Based Borrowing for Hybrid Control Trials")
+    (description
+     "This package implements the adaptive influence-based borrowing framework
+proposed by Qinwei Yang, Jingyi Li, Peng Wu, and Shu Yang (2026+) in the paper
+``Improving Treatment Effect Estimation in Trials through Adaptive Borrowing of
+External Controls\" <doi:10.48550/@code{arXiv.2604.13973>} for augmenting
+Randomized Controlled Trials (RCTs) with External Control (EC) data.  This
+package provides a comprehensive workflow to: (1) quantify the comparability of
+external control samples using influence scores approximated via the influence
+function of the M-estimator; (2) construct candidate borrowing subsets and
+select the optimal subset that minimizes the Mean Squared Error (MSE); and (3)
+calibrate systematic differences in external outcomes using R-learner methods
+implemented via Ordinary Least Squares or Kernel Ridge Regression.")
     (license license:gpl3)))
 
 (define-public r-influenceauc
@@ -16533,13 +16504,13 @@ plots, lasagna plots and ambulatory glucose profile report.")
 (define-public r-iglm
   (package
     (name "r-iglm")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglm" version))
        (sha256
-        (base32 "0prabwi84blm43gzh89y40q6wmni88y20my3l6jblqhjbkxjlva9"))))
+        (base32 "15df27kzxlygzq666wbalsslwmz90yljr30pq4srxjq5ab5f8wjn"))))
     (properties `((upstream-name . "iglm")))
     (build-system r-build-system)
     (arguments
@@ -16548,6 +16519,7 @@ plots, lasagna plots and ambulatory glucose profile report.")
     (propagated-inputs (list r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
+                             r-ragg
                              r-r6
                              r-matrix
                              r-mass

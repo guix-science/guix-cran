@@ -7265,6 +7265,32 @@ including MAR and ARIMA processes.  Kang, Y., Hyndman, R.J., Li, F.(2020)
 <doi:10.1002/sam.11461>.")
     (license license:gpl3)))
 
+(define-public r-graticule
+  (package
+    (name "r-graticule")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "graticule" version))
+       (sha256
+        (base32 "0i2nhsrhixbwisgx8354aqsnik5sax9m63fzagmj4k3fcnpry7b0"))))
+    (properties `((upstream-name . "graticule")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp r-reproj r-raster r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hypertidy/graticule")
+    (synopsis "Meridional and Parallel Lines for Maps")
+    (description
+     "Create graticule lines and labels for maps.  Control the creation of lines or
+tiles by setting their placement (at particular meridians and parallels) and
+extent (along parallels and meridians).  Labels are created independently of
+lines.")
+    (license license:gpl3)))
+
 (define-public r-gratia
   (package
     (name "r-gratia")
@@ -7535,41 +7561,6 @@ p-values.  For methodological details, see Zhou and Chen (2023)
      "Bindings to the libgraphqlparser C++ library.  Parses @code{GraphQL}
 <https://graphql.org> syntax and exports the AST in JSON format.")
     (license license:expat)))
-
-(define-public r-graphpcor
-  (package
-    (name "r-graphpcor")
-    (version "0.1.24")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graphpcor" version))
-       (sha256
-        (base32 "0jmv63r4v78ip2jx9bx71l7928spanjd5wl3cqi3l1xpdn2xcch7"))))
-    (properties `((upstream-name . "graphpcor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv r-matrix r-inlatools r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=graphpcor")
-    (synopsis "Models for Correlation Matrices Based on Graphs")
-    (description
-     "Implement some models for correlation/covariance matrices including two
-approaches to model correlation matrices from a graphical structure.  One use
-latent parent variables as proposed in Sterrantino et.  al. (2024)
-<doi:10.1007/s10260-025-00788-y>.  The other uses a graph to specify conditional
-relations between the variables.  The graphical structure makes correlation
-matrices interpretable and avoids the quadratic increase of parameters as a
-function of the dimension.  In the first approach a natural sequence of simpler
-models along with a complexity penalization is used.  The second penalizes
-deviations from a base model.  These can be used as prior for model parameters,
-considering C code through the cgeneric interface for the INLA package
-(<https://www.r-inla.org>).  This allows one to use these models as building
-blocks combined and to other latent Gaussian models in order to build complex
-data models.")
-    (license license:gpl2+)))
 
 (define-public r-graphpaf
   (package
@@ -11261,26 +11252,31 @@ Erdos-Renyi (ER) and Beta versions.")
 (define-public r-goodfibes
   (package
     (name "r-goodfibes")
-    (version "0.1.13")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GoodFibes" version))
        (sha256
-        (base32 "1a99kzpxahn3ip2j91gy6c4bxb6xyapc48w17jwzvdy2jpzjhvga"))))
+        (base32 "0563lh7my29fyd1qxvnmcjn7kbcdr1l1l3k4fqqnv66hbj5yw9jx"))))
     (properties `((upstream-name . "GoodFibes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-splines2 r-rgl r-prodlim r-imager r-concaveman))
+    (propagated-inputs (list r-splines2
+                             r-rgl
+                             r-prodlim
+                             r-matlib
+                             r-imager
+                             r-concaveman))
     (home-page "https://cran.r-project.org/package=GoodFibes")
     (synopsis
      "Detection and Reconstruction of Muscle Fibers from diceCT Image Data")
     (description
      "Reconstruction of muscle fibers from image stacks using textural analysis.
 Includes functions for tracking, smoothing, cleaning, plotting and exporting
-muscle fibers.  Also calculates basic fiber properties (e.g., length and
+muscle fibers.  Also calculates basic fiber properties (e.g., length, angle and
 curvature).")
     (license license:gpl2+)))
 
@@ -16889,13 +16885,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "15r9nl0kisisyyp5znbswbvcv9hbv8yvz4wdz5m4imqfd35m31bk"))))
+        (base32 "0vvjgisgyygv1dr2maplw7a6w9yf61xpj2ffw3f8wr6yyvv4cs60"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -22831,13 +22827,13 @@ ggplot2 API.")
 (define-public r-ggguides
   (package
     (name "r-ggguides")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggguides" version))
        (sha256
-        (base32 "1jz09js85bhm755hllvxhmlmhwdc1xa0fjhacfpgvi1ssj7clq16"))))
+        (base32 "02lprgwqyhl7ljp3wx0fxl10gd45lb0dq0clbrwgxrm4zpl5kglp"))))
     (properties `((upstream-name . "ggguides")))
     (build-system r-build-system)
     (arguments

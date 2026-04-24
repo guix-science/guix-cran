@@ -17478,13 +17478,13 @@ package also includes visualization tools for exploring discovered connections."
 (define-public r-lbbnn
   (package
     (name "r-lbbnn")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBBNN" version))
        (sha256
-        (base32 "18i0703b4smgz7clgn3zkkri539pcxddar2b4ljv4cqkyf76vnrv"))))
+        (base32 "0gf41jqml2gbv6q950gh5njxzlhvx2mw3z4r2xfzchc58wrg891j"))))
     (properties `((upstream-name . "LBBNN")))
     (build-system r-build-system)
     (arguments
@@ -19106,13 +19106,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.3.2")
+    (version "5.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "18zmbb0c3nxz9v4pf5kxdz17my31a1nrkgh9y0h8lcg73vqm6mad"))))
+        (base32 "17wc2inpj0y1yxyg3rbcz3qvhgcwmhhx7hwkg6s6b53xgkz3kf5p"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (arguments
@@ -19133,6 +19133,7 @@ visualization tools.")
                              r-httr
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/laresbernardo/lares")
     (synopsis "Lean Analytics and Robust Exploration Sidekick")
     (description
@@ -19141,7 +19142,7 @@ machine learning tasks.  With a wide variety of family functions, like Machine
 Learning, Data Wrangling, Marketing Mix Modeling (Robyn), Exploratory, API, and
 Scrapper, it helps the analyst or data scientist to get quick and robust
 results, without the need of repetitive coding or advanced R programming skills.")
-    (license license:agpl3)))
+    (license license:expat)))
 
 (define-public r-laopendata
   (package

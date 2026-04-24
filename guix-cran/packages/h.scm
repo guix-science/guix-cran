@@ -10370,13 +10370,13 @@ generate and take coefficient modulo are provided.")
 (define-public r-hetgp
   (package
     (name "r-hetgp")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hetGP" version))
        (sha256
-        (base32 "1qpp7w0zjvgr1r5rdviy776qs55jynrnpmlk36vqb72x507gc08z"))))
+        (base32 "0h8gddjnxy00738qjr7n05bg203a398irsk3zwf0828vw978zlwa"))))
     (properties `((upstream-name . "hetGP")))
     (build-system r-build-system)
     (arguments
@@ -16196,29 +16196,6 @@ Codemeta', RDF XML', RIS', Schema.org', and Citation File Format'.  A low level
 R6 class is provided, as well as stand-alone functions for each citation format
 for both read and write.")
     (license license:expat)))
-
-(define-public r-handcoder
-  (package
-    (name "r-handcoder")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "handcodeR" version))
-       (sha256
-        (base32 "1icr2474y2q2jnax7ps9lmh13hkrpq4z2yacffc1scm2cpg18y6a"))))
-    (properties `((upstream-name . "handcodeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinywidgets r-shiny))
-    (home-page "https://github.com/liserman/handcodeR/")
-    (synopsis "Text Annotation App")
-    (description
-     "Shiny-App that allows to annotate vectors of texts to predefined categories by
-hand.")
-    (license license:asl2.0)))
 
 (define-public r-hamlet
   (package

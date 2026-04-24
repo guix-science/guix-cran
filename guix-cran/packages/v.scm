@@ -4214,13 +4214,13 @@ available.")
 (define-public r-vip
   (package
     (name "r-vip")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vip" version))
        (sha256
-        (base32 "1g85jm7531r34aha03rdywnlhnk3wdh2hrb2pmw24833l3rqg7wq"))))
+        (base32 "0m45d17ryqi8rafgx4l5kh40g0ikvb86hxsdyxlw6akbk0djhlkj"))))
     (properties `((upstream-name . "vip")))
     (build-system r-build-system)
     (arguments

@@ -14514,6 +14514,52 @@ Not At Random (MNAR) missing-data mechanisms, and allow auxiliary variables.
 Models are fitted via rjags (interface to JAGS') and summarized with coda'.")
     (license license:gpl3)))
 
+(define-public r-rome
+  (package
+    (name "r-rome")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RoME" version))
+       (sha256
+        (base32 "0k96m492a15v8ar24dvph2bp7wli18afgl5r0swh3nwmi3vjhq01"))))
+    (properties `((upstream-name . "RoME")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-timedate
+                             r-stringr
+                             r-sp
+                             r-shiny
+                             r-rnaturalearthdata
+                             r-rnaturalearth
+                             r-maps
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RoME")
+    (synopsis "Multiple Checks on MEDITS Trawl Survey Data")
+    (description
+     "This package provides quality checks for MEDITS (International Bottom Trawl
+Survey in the Mediterranean) trawl survey exchange data tables (TA (Haul data),
+TB (Catch data), TC (Biological data), TE (Biological individual data), TL
+(Litter data)).  The main function @code{RoME()} calls all check functions in a
+defined sequence to perform a complete quality control of TX (Generic exchange
+data) data, including header validation, controlled-vocabulary checks,
+cross-table consistency tests, and biological plausibility checks.  No automatic
+correction is applied: the package detects errors, warns the user, and specifies
+the type of error to ease data correction.  Checks can be run simultaneously on
+multi-year datasets.  An embedded shiny application is also provided via
+@code{run_RoME_app()}.  References describing the methods: MEDITS Working Group
+(2017) <https://www.sibm.it/MEDITS%202011/principaledownload.htm>.")
+    (license license:gpl3)))
+
 (define-public r-romdb
   (package
     (name "r-romdb")
@@ -33741,6 +33787,31 @@ technique and example data (mm1) from Tilsen, S., & Johnson, K. (2008)
 from Names\" by Fangzhou Xie (2021) <doi:10.48550/@code{arXiv.2109.09228>}.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
+(define-public r-rethinker
+  (package
+    (name "r-rethinker")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rethinker" version))
+       (sha256
+        (base32 "1j1yy6qvayzmsjbllagplnxlqzrhsaaa292krqkvw5vh9gn7s674"))))
+    (properties `((upstream-name . "rethinker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rjson))
+    (home-page "https://gitlab.com/mbq/rethinker")
+    (synopsis "'RethinkDB' Client")
+    (description
+     "This package provides a full-featured @code{RethinkDB} <https://rethinkdb.com/>
+client for R; allows users to store JSON-serialised data in a robust,
+distributed no-SQL system, use rich queries and react to data changes in
+real-time.")
+    (license license:gpl3)))
+
 (define-public r-retel
   (package
     (name "r-retel")
@@ -44516,13 +44587,13 @@ file format and structure.")
 (define-public r-readepi
   (package
     (name "r-readepi")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readepi" version))
        (sha256
-        (base32 "0rwsffj6jxfvafyn4kv1w3dsrc826nlnpnxaq4h1zi0j3l1grin9"))))
+        (base32 "1faq7y0g5wkc7vnili3pqv81c5i19grhpz3lvf3p74kidvj70hyg"))))
     (properties `((upstream-name . "readepi")))
     (build-system r-build-system)
     (arguments
@@ -49549,19 +49620,19 @@ Biological Statistics.  Vignettes are available at <https://rcompanion.org>.")
 (define-public r-rcompadre
   (package
     (name "r-rcompadre")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcompadre" version))
        (sha256
-        (base32 "1r9krnrxpnz3pqfj4ir22gsbpdbsdyi5liwa5kfmn9xsz8jnf5qx"))))
+        (base32 "1cjqx1ki2z9r69a3pymvfp2k8yww0z2ckmwr1i6830skh1sxhkyv"))))
     (properties `((upstream-name . "Rcompadre")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-popdemo))
+    (propagated-inputs (list r-tibble r-popdemo r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jonesor/Rcompadre")
     (synopsis "Utilities for using the 'COM(P)ADRE' Matrix Model Database")
@@ -58315,6 +58386,37 @@ Square (GLS) based Random Forest (RF-GLS) detailed in Saha, Basu and Datta
 (2021) <doi:10.1080/01621459.2021.1950003>.")
     (license license:gpl2+)))
 
+(define-public r-randomforestrhf
+  (package
+    (name "r-randomforestrhf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "randomForestRHF" version))
+       (sha256
+        (base32 "1kxzmgyb9vwrwx7cv8rxhiq61z7j4p5515y7cr23349d1w253685"))))
+    (properties `((upstream-name . "randomForestRHF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-varpro r-survival r-randomforestsrc))
+    (home-page "https://cran.r-project.org/package=randomForestRHF")
+    (synopsis "Random Hazard Forests")
+    (description
+     "Random Hazard Forests (RHF) extend Random Survival Forests (RSF) by directly
+estimating the hazard function and by accommodating time-dependent covariates
+through counting-process style inputs.  The package fits tree ensembles for
+dynamic survival prediction, returning hazard, cumulative hazard, integrated
+hazard, and related performance summaries for training and test data.  The
+methods build on Random Survival Forests described by Ishwaran et al. (2008)
+<doi:10.1214/08-AOAS169> and on nonparametric hazard modeling with
+time-dependent covariates described by Lee et al. (2021)
+<doi:10.1214/20-AOS2028>.")
+    (license license:gpl3+)))
+
 (define-public r-randomcolor
   (package
     (name "r-randomcolor")
@@ -59583,13 +59685,13 @@ equivalent of the python package RAG@code{FlowChain} available at
 (define-public r-rage
   (package
     (name "r-rage")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rage" version))
        (sha256
-        (base32 "111bbil6f5c8prrnwhzwaqhg4r4bawh2d2jjs7sbl8p7pr19h7sj"))))
+        (base32 "0l94yllq09rwzm06vk85fgj5xib3bys0vxzcaxwz8z792cs65vh8"))))
     (properties `((upstream-name . "Rage")))
     (build-system r-build-system)
     (arguments

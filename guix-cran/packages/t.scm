@@ -8496,20 +8496,19 @@ quantitative structure models (QSMs).")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "1aawk7z2i5rlkq20lgbvaz0yipi5dlg5r2z1752p48vlrnp3fq2s"))))
+        (base32 "1bz1jbdm95rf8vln2yvn58fsvyg2f2g6k1sjziwsrmj34z7y54mi"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-rdpack
+    (propagated-inputs (list r-rdpack
                              r-rcpp
                              r-plottools
                              r-fastmatch
@@ -16136,13 +16135,13 @@ variables.")
 (define-public r-tlsr
   (package
     (name "r-tlsr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tlsR" version))
        (sha256
-        (base32 "1hcxvi3zs0a37hv1cdgcr6k3frmin6lj53kal2ck8ygxjq7jhdr0"))))
+        (base32 "1zpz75xka19idcdwiw1wkwc0wkvjjdsyjy09vk1mz35jn2ivdl1d"))))
     (properties `((upstream-name . "tlsR")))
     (build-system r-build-system)
     (arguments
@@ -33249,13 +33248,13 @@ in conversational corpora.  For more details, see Dingemanse et al., (2022)
 (define-public r-talib
   (package
     (name "r-talib")
-    (version "0.9-0")
+    (version "0.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "talib" version))
        (sha256
-        (base32 "0scj90haslvrrmzlv5z3q0imqwjama5smh4s6mfvw0z809hqdc4x"))))
+        (base32 "0s00mcddbf8mwgsl3d1982bki04aik6b70z3whg8k8h0mj27i2r0"))))
     (properties `((upstream-name . "talib")))
     (build-system r-build-system)
     (arguments

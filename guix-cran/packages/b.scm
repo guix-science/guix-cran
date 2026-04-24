@@ -5754,13 +5754,13 @@ and @code{JavaScript} commands.  This package relies on the X toolkit ('XTK',
 (define-public r-brainnettest
   (package
     (name "r-brainnettest")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrainNetTest" version))
        (sha256
-        (base32 "0jdggphp2n3ak0fgcgrgzs8y0rlxddzw8v9iyysbk139mk9by518"))))
+        (base32 "00vhk03wz28fl5b87q8qa1kpzc91wc9q9brdrx965aik7hr06z7y"))))
     (properties `((upstream-name . "BrainNetTest")))
     (build-system r-build-system)
     (arguments
@@ -11170,13 +11170,13 @@ graphical representations or apply clustering techniques.")
 (define-public r-blsloadr
   (package
     (name "r-blsloadr")
-    (version "0.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BLSloadR" version))
        (sha256
-        (base32 "0qrykk6j3iry0fkk86khlv3vmrzz5dhvr4i38w7smyjzflpf6myp"))))
+        (base32 "1gf1nar886nj35is6cj1l5vgkzy6wi82c4gp0n3fd3h68q15asak"))))
     (properties `((upstream-name . "BLSloadR")))
     (build-system r-build-system)
     (arguments
@@ -28760,13 +28760,13 @@ recommendations from Gelman (2006) <doi:10.1214/06-BA117A> for scale parameters.
 (define-public r-bayesiannetwork
   (package
     (name "r-bayesiannetwork")
-    (version "0.3.2")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianNetwork" version))
        (sha256
-        (base32 "1j0mgjib2v60sfjic8kli69lcbdkakp0fcgx2dhh7p1rq4xx88j1"))))
+        (base32 "0bs4rx8wpcswxvd0363rbjhg2v0mzrkw8zannksd0c8wf25r15j3"))))
     (properties `((upstream-name . "BayesianNetwork")))
     (build-system r-build-system)
     (arguments
@@ -28782,13 +28782,14 @@ recommendations from Gelman (2006) <doi:10.1214/06-BA117A> for scale parameters.
                              r-lattice
                              r-heatmaply
                              r-bnlearn))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/paulgovan/bayesiannetwork")
     (synopsis "Bayesian Network Modeling and Analysis")
     (description
      "This package provides a \"Shiny\"\" web application for creating interactive
 Bayesian Network models, learning the structure and parameters of Bayesian
 networks, and utilities for classic network analysis.")
-    (license (license:fsdg-compatible "Apache License"))))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bayesianmediationa
   (package
@@ -29619,13 +29620,13 @@ models.  For a web-based Shiny application related to this package, see
 (define-public r-bayesertools
   (package
     (name "r-bayesertools")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesERtools" version))
        (sha256
-        (base32 "1lc2zkxzpwj6zd37gmgnc4z1lwmjm6yimn9f77ibvdvrh0vd9nb6"))))
+        (base32 "1sdgydzbpfrkmdv7qrgmw3zgj15s7z2zqiv6g1j6lc8jvfx1ihs0"))))
     (properties `((upstream-name . "BayesERtools")))
     (build-system r-build-system)
     (arguments
@@ -35195,6 +35196,45 @@ of setting up command line usage.")
      "Included here are babel routines for identifying unusual ribosome protected
 fragment counts given @code{mRNA} counts.")
     (license license:lgpl2.1+)))
+
+(define-public r-babebi
+  (package
+    (name "r-babebi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "babebi" version))
+       (sha256
+        (base32 "0isk38d6va4zmp64d35j5snmz7v045k28pisbbpi91ghnwjhpk8w"))))
+    (properties `((upstream-name . "babebi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=babebi")
+    (synopsis
+     "Bayesian Estimation and Validation for Small-N Designs with Rater Bias")
+    (description
+     "Approximate Bayesian inference and Monte Carlo validation for small-N
+repeated-measures designs with two time points and two raters.  The package is
+intended for applications in which sample size is limited and the observed
+outcome may be affected by rater-specific bias.  User-supplied data are
+standardised into a common long-format structure.  Pre-post effects are analysed
+using difference scores in a linear model with a rater indicator as covariate.
+Posterior summaries for the regression coefficients are obtained from a
+large-sample normal approximation centred at the least-squares estimate with
+plug-in covariance under a flat improper prior.  Evidence for a non-zero
+pre-post effect, adjusted for rater differences, is summarised using a BIC-based
+approximation to the Bayes factor for comparison between models with and without
+the pre-post effect.  Monte Carlo validation uses design quantities estimated
+from the observed data, including sample size, mean pre-post change, and
+second-rater additive discrepancy, and summarises inferential performance in
+terms of bias, root mean squared error, credible interval coverage, posterior
+tail probabilities, and mean Bayes factor values.  For background on the BIC
+approximation and Bayes factors, see Schwarz (1978) <doi:10.1214/aos/1176344136>
+and Kass and Raftery (1995) <doi:10.1080/01621459.1995.10476572>.")
+    (license license:gpl3)))
 
 (define-public r-b64
   (package

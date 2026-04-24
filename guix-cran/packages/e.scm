@@ -18050,32 +18050,6 @@ channel-specific cost curves, and when advertising costs are fixed at each
 channel.")
     (license license:gpl3)))
 
-(define-public r-elmr
-  (package
-    (name "r-elmr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ELMR" version))
-       (sha256
-        (base32 "0pd3drv485xbdyfwm28kjpd0nd0zv1khfwzki1gh5p1gz9ndwr2x"))))
-    (properties `((upstream-name . "ELMR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=ELMR")
-    (synopsis "Extreme Machine Learning (ELM)")
-    (description
-     "Training and prediction functions are provided for the Extreme Learning Machine
-algorithm (ELM).  The ELM use a Single Hidden Layer Feedforward Neural Network
-(SLFN) with random generated weights and no gradient-based backpropagation.  The
-training time is very short and the online version allows to update the model
-using small chunk of the training set at each iteration.  The only parameter to
-tune is the hidden layer size and the learning function.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-elmnnrcpp
   (package
     (name "r-elmnnrcpp")
@@ -26397,13 +26371,13 @@ non-zero effects.")
 (define-public r-ebdm
   (package
     (name "r-ebdm")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebdm" version))
        (sha256
-        (base32 "089ykv6vmnk8ng7wkxn5l40lq6sdynq4na9yn0kflmnxazpw20aj"))))
+        (base32 "13ci053dp4v7r7l4h8nljxz0pyiy42nqxrx1h07z8w4fnvdr5vj6"))))
     (properties `((upstream-name . "ebdm")))
     (build-system r-build-system)
     (arguments
@@ -26414,14 +26388,12 @@ non-zero effects.")
     (description
      "This package provides statistical methods for estimating bivariate dependency
 (correlation) from marginal summary statistics across multiple studies.  The
-package supports three modules: (1) bivariate correlation estimation for binary
-outcomes, (2) bivariate correlation estimation for continuous outcomes, and (3)
-estimation of component-wise means and variances under a conditional
-two-component Gaussian mixture model for a continuous variable stratified by a
-binary class label.  These methods enable privacy-preserving joint estimation
-when individual-level data are unavailable.  The approaches are detailed in
-Shang, Tsao, and Zhang (2025a) <doi:10.48550/@code{arXiv.2505.03995>} and Shang,
-Tsao, and Zhang (2025b) <doi:10.48550/@code{arXiv.2508.02057>}.")
+package supports three modules of bivariate joint distribution estimated from
+marginal summary data: (1) two binary, (2) two continuous, (3) one binary and
+one continuous These methods enable privacy-preserving joint estimation when
+individual-level data are unavailable.  The approaches are detailed in Shang,
+Tsao, and Zhang (2025a) <doi:10.48550/@code{arXiv.2505.03995>} and Shang, Tsao,
+and Zhang (2025b) <doi:10.48550/@code{arXiv.2508.02057>}.")
     (license license:gpl3+)))
 
 (define-public r-ebdbnet
@@ -27216,13 +27188,13 @@ interface for batch processing.")
 (define-public r-easyraschbayes
   (package
     (name "r-easyraschbayes")
-    (version "0.2.0")
+    (version "0.2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyRaschBayes" version))
        (sha256
-        (base32 "1x6xvfbd1xilx7l2p3s0b8hq8mwh4wllxmqqd8ahl3xyil638bw1"))))
+        (base32 "0nhlcc1mj0jicn1avr075g3a6bhkymv1f93rwrgzbqsi5dyvzp50"))))
     (properties `((upstream-name . "easyRaschBayes")))
     (build-system r-build-system)
     (arguments

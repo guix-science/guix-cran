@@ -4302,6 +4302,33 @@ calculate scores for each dimension of the KHQ; converts KHQ item scores to
 KHQ5D scores; and also calculates the utility index of the KHQ5D.")
     (license license:expat)))
 
+(define-public r-khaos
+  (package
+    (name "r-khaos")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "khaos" version))
+       (sha256
+        (base32 "1c2wi905nf6f7nrs4m3xxv5v4n7xiak8bngykl10018pw5h3a3vz"))))
+    (properties `((upstream-name . "khaos")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-glmnet))
+    (home-page "https://cran.r-project.org/package=khaos")
+    (synopsis "Bayesian Sparse Polynomial Chaos Expansion")
+    (description
+     "This package implements Bayesian polynomial chaos expansion methods for
+surrogate modeling, uncertainty quantification, and sensitivity analysis.
+Includes sparse regression-based approaches and adaptive Bayesian models based
+on reversible-jump Markov chain Monte Carlo.  Optional screening and
+basis-enrichment strategies are provided to improve scalability in moderate to
+high dimensions.")
+    (license license:bsd-3)))
+
 (define-public r-kgschart
   (package
     (name "r-kgschart")
@@ -5607,30 +5634,6 @@ composite kernels through a formula mechanism.  Useful methods include parameter
 estimation by maximum likelihood, simulation, prediction and leave-one-out
 validation.")
     (license license:gpl3)))
-
-(define-public r-kere
-  (package
-    (name "r-kere")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "KERE" version))
-       (sha256
-        (base32 "1b16cb3ihcsp9jffmd45sd7ia4pibikmj62ad344wmq22q4fpliy"))))
-    (properties `((upstream-name . "KERE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=KERE")
-    (synopsis "Expectile Regression in Reproducing Kernel Hilbert Space")
-    (description
-     "An efficient algorithm inspired by majorization-minimization principle for
-solving the entire solution path of a flexible nonparametric expectile
-regression estimator constructed in a reproducing kernel Hilbert space.")
-    (license license:gpl2)))
 
 (define-public r-kerdiest
   (package

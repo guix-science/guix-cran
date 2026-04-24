@@ -15252,13 +15252,13 @@ nephrology.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "0sxqjc2r6m55i98m1j3gjpj6n4nzrj18c39ijzk12048g54s6h0y"))))
+        (base32 "1hssq63i2pa71inxsq1l81wblgy2h4bncrah93awgiylh3mkkjka"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (arguments
@@ -16384,13 +16384,13 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
 (define-public r-ndi
   (package
     (name "r-ndi")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ndi" version))
        (sha256
-        (base32 "0964x1gdq5vd4lppwkxg0ca95kap3z247xf72h6kazd6qsfhvkny"))))
+        (base32 "1mslnnm8sq02xd68fvk79bi7hrm3bvzpp6pd24j0fxwihwq4glrr"))))
     (properties `((upstream-name . "ndi")))
     (build-system r-build-system)
     (arguments
@@ -16421,7 +16421,7 @@ in the United States.  Some indices are considered \"spatial\" because they
 consider the values of neighboring (i.e., adjacent) census geographies in their
 computation, while other indices are \"aspatial\" because they only consider the
 value within each census geography.  Two types of aspatial neighborhood
-deprivation indices (NDI) are available: including: (1) based on Messer et al.
+deprivation indices (NDI) are available, including: (1) based on Messer et al.
 (2006) <doi:10.1007/s11524-006-9094-x> and (2) based on Andrews et al. (2020)
 <doi:10.1080/17445647.2020.1750066> and Slotman et al. (2022)
 <doi:10.1016/j.dib.2022.108002> who use variables chosen by Roux and Mair (2010)

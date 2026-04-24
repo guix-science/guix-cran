@@ -12,11 +12,11 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages python)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages compression)
@@ -931,6 +931,28 @@ models which can be created using the @code{dynatopGIS} package.")
      "This package provides a set of tools to generate dynamic spectrogram
 visualizations in video format.")
     (license license:gpl2+)))
+
+(define-public r-dynasim
+  (package
+    (name "r-dynasim")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dynasim" version))
+       (sha256
+        (base32 "1hwy3akl3m55fqbrjd4wxqbrx6yqjfmlyzil3dj1j2dhc19yvim5"))))
+    (properties `((upstream-name . "dynasim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=dynasim")
+    (synopsis "Dynamics Similarity Coefficient")
+    (description
+     "This package implements the quantile-graph based Dynamics Similarity Coefficient
+(DSC) for comparing intrinsic dynamics of time series.")
+    (license license:gpl3)))
 
 (define-public r-dynarer
   (package
@@ -2460,13 +2482,13 @@ and reference).")
 (define-public r-dtts
   (package
     (name "r-dtts")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtts" version))
        (sha256
-        (base32 "0n13q14a4vhfx6jvjg4zbch0874agfm8z5mlwzvpvh4vc5rcc4bk"))))
+        (base32 "1fp1i1pdn6n9cmd0ygg9vw8w4x8jgfhda3kbwa17904whvc0338m"))))
     (properties `((upstream-name . "dtts")))
     (build-system r-build-system)
     (arguments
@@ -4589,35 +4611,6 @@ simplified specification for simultaneous and lagged effects.  Methods are
 described in Thorson et al. (2024) \"Dynamic structural equation models
 synthesize ecosystem dynamics constrained by ecological mechanisms.\".")
     (license license:gpl3)))
-
-(define-public r-dsdp
-  (package
-    (name "r-dsdp")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dsdp" version))
-       (sha256
-        (base32 "0n0cyqzwv97wqq8m8a3qr6bg2p07ky9dm6hmlxwd2ggxrn3kmxv8"))))
-    (properties `((upstream-name . "dsdp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-ggplot2))
-    (native-inputs (list r-rmarkdown r-knitr gfortran))
-    (home-page "https://tsuchiya-lab.github.io/dsdp/")
-    (synopsis "Density Estimation with Semidefinite Programming")
-    (description
-     "The models of probability density functions are Gaussian or exponential
-distributions with polynomial correction terms.  Using a maximum likelihood
-method, dsdp computes parameters of Gaussian or exponential distributions
-together with degrees of polynomials by a grid search, and coefficient of
-polynomials by a variant of semidefinite programming.  It adopts Akaike
-Information Criterion for model selection.  See a vignette for a tutorial and
-more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
-    (license license:expat)))
 
 (define-public r-dscoremsm
   (package
@@ -8180,6 +8173,37 @@ modelling.  See Marsh et.  al. (2018) <doi:10.18637/jss.v086.c03>.")
      "Implement download buttons in HTML output from rmarkdown without the need for
 runtime:shiny'.")
     (license license:expat)))
+
+(define-public r-downballotr
+  (package
+    (name "r-downballotr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DownBallotR" version))
+       (sha256
+        (base32 "1s8j5sqc7xyg4diw8rfazjvbh9dbva6zbawz5c7r7xvblnnvlcgw"))))
+    (properties `((upstream-name . "DownBallotR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-rlang r-reticulate r-purrr))
+    (home-page "https://gchickering21.github.io/DownBallotR/")
+    (synopsis "Access Federal, State, and Local Election Data")
+    (description
+     "This package provides an R interface for downloading and standardizing election
+data to support research workflows.  Election results are published by states
+through heterogeneous and often dynamic web interfaces that are not consistently
+accessible through existing R packages or APIs.  To address this, the package
+wraps state-specific Python web scrapers through the reticulate package,
+enabling access to dynamic content while exposing consistent R functions for
+querying election availability and results across jurisdictions.  The package is
+intended for responsible use and relies on publicly accessible election result
+pages.")
+    (license license:asl2.0)))
 
 (define-public r-dowd
   (package
@@ -13238,6 +13262,36 @@ of R packages.")
 descriptions, see Fronzetti Colladon and Naldi (2020)
 <doi:10.1371/journal.pone.0233276>.")
     (license license:expat)))
+
+(define-public r-distiller
+  (package
+    (name "r-distiller")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distilleR" version))
+       (sha256
+        (base32 "0m0bl9dhfm1zx25s317v8vsiixm9gkb0wcqlyw0hcyhfcp7a5qry"))))
+    (properties `((upstream-name . "distilleR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-readxl
+                             r-readr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://openefsa.github.io/distilleR/")
+    (synopsis "Wrap Around the 'DistillerSR' APIs")
+    (description "Interface to @code{DistillerSR} APIs.  See
+<https://apidocs.evidencepartners.com/> for more details.")
+    (license (license:fsdg-compatible "EUPL-1.2"))))
 
 (define-public r-distill
   (package

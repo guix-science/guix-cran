@@ -12784,13 +12784,13 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "0fzvinn4qny6d2vsgq94pmjpsn7qnm5pxj4ivwgkbpc49wx4gf81"))))
+        (base32 "16xfdh6cy209cx03nxr62lxz5x9b09jvak692x9a2jsw87y942zj"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (arguments

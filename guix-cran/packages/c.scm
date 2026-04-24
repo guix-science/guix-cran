@@ -31224,13 +31224,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.9.9")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "03fapfckdgyjy3y3c3jfnkawax4b49j0vafdwj98bcmzbabj0gn2"))))
+        (base32 "0ackzznm4ql0zyn36zfzcgpaxs34rgqvda5jay3f2kn24ka7h7ih"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (arguments
@@ -31241,7 +31241,7 @@ clusters that exist across the datasets.")
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://mschubert.github.io/clustermq/")
     (synopsis
-     "Evaluate Function Calls on HPC Schedulers (LSF, SGE, SLURM, PBS/Torque)")
+     "Evaluate Function Calls on HPC Schedulers (SLURM, LSF, SGE, GCS, OCS, PBS, Torque)")
     (description
      "Evaluate arbitrary function calls using workers on HPC schedulers in single line
 of code.  All processing is done on the network without accessing the file
@@ -32526,6 +32526,33 @@ and covariance matrix with parallel processing option.  Moreover, the proposed
 surrogate residual, which extends the results of Liu and Zhang (2017) <doi:
 10.1080/01621459.2017.1292915>, can act as a useful tool for model diagnostics.")
     (license license:gpl2)))
+
+(define-public r-clootl
+  (package
+    (name "r-clootl")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clootl" version))
+       (sha256
+        (base32 "141sxrayzg7zkl9m6277l3n1fvwyybxlldlpj8j7i98cifv54b4n"))))
+    (properties `((upstream-name . "clootl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcurl r-jsonlite r-dplyr r-ape))
+    (home-page "https://github.com/eliotmiller/clootl")
+    (synopsis
+     "Fetch and Explore the Cornell Lab of Ornithology Open Tree of Life Avian Phylogeny")
+    (description
+     "Fetches the Cornell Lab of Ornithology Open Tree of Life (clootl) tree in a
+specified taxonomy.  Optionally prune it to a given set of study taxa.  Provide
+a recommended citation list for the studies that informed the extracted tree.
+Tree generated as described in @code{McTavish} et al. (2024)
+<doi:10.1101/2024.05.20.595017>.")
+    (license license:gpl3)))
 
 (define-public r-clonetv2
   (package
@@ -35372,23 +35399,19 @@ the vignettes: \"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples
 (define-public r-classifyits
   (package
     (name "r-classifyits")
-    (version "0.1.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassifyITS" version))
        (sha256
-        (base32 "0z68g4pjv0a777l53rbxll7c53ih5l7k7c8xym6r0razp5jd77va"))))
+        (base32 "0ld9vi86jiz46yp0xsfjldfp08rrm0d4n005wkgwf12cgwaxa4x5"))))
     (properties `((upstream-name . "ClassifyITS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-seqinr
-                             r-reshape2
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
+    (propagated-inputs (list r-seqinr r-reshape2 r-gridextra r-ggplot2
                              r-data-table))
     (native-inputs (list r-rmarkdown r-knitr r-formatr))
     (home-page "https://cran.r-project.org/package=ClassifyITS")
@@ -46880,13 +46903,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "0fba0c4bma2vaphqjm8f1n0v6xv06dilmjrj0j3fib8sxl9dgmhs"))))
+        (base32 "14zv1pqgg3p7kd4bzns0x9b00qm62lqzz9gcklan7ig2vl2afk6z"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments
@@ -47371,13 +47394,13 @@ in a data set.")
 (define-public r-cclrforr
   (package
     (name "r-cclrforr")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ccLRforR" version))
        (sha256
-        (base32 "0k9q7zb2w2pjdspbh6q6ph34xxrng8bfxdbabsk8bpky1xz7b4ma"))))
+        (base32 "1kpxj93xqc4dy80lfsk7gpjl4ympq73cs66m15xjnpr0fzf08qgp"))))
     (properties `((upstream-name . "ccLRforR")))
     (build-system r-build-system)
     (arguments

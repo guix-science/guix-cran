@@ -6692,6 +6692,75 @@ differences of two Kaplan-Meier curves.")
 true/false positive rates and AUC curves from a set of censored survival data.")
     (license license:gpl2)))
 
+(define-public r-survalis
+  (package
+    (name "r-survalis")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survalis" version))
+       (sha256
+        (base32 "1w1kspwvmlvm31rn3sh1bskz31nq2h0x8ywd7wz9ly94q44v33xq"))))
+    (properties `((upstream-name . "survalis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-torch
+                             r-timereg
+                             r-tidyr
+                             r-tibble
+                             r-survivalsvm
+                             r-survival
+                             r-survdnn
+                             r-rstpm2
+                             r-rsample
+                             r-rpart
+                             r-rlang
+                             r-ranger
+                             r-randomforestsrc
+                             r-purrr
+                             r-pracma
+                             r-pec
+                             r-partykit
+                             r-party
+                             r-nnls
+                             r-mboost
+                             r-gower
+                             r-glue
+                             r-glmnet
+                             r-ggplot2
+                             r-functionals
+                             r-flexsurv
+                             r-dplyr
+                             r-data-table
+                             r-cli
+                             r-bnnsurvival
+                             r-bart
+                             r-aorsf
+                             r-aftgee))
+    (home-page "https://github.com/ielbadisy/survalis")
+    (synopsis "Interpretable Survival Machine Learning Framework")
+    (description
+     "This package provides a modular toolkit for interpretable survival machine
+learning with a unified interface for fitting, prediction, evaluation, and
+interpretation.  It includes semiparametric, parametric, tree-based, ensemble,
+boosting, kernel, and deep-learning survival learners, together with
+benchmarking, scoring, calibration, and model-agnostic interpretation utilities.
+ Representative methodological anchors include Cox (1972)
+<doi:10.1111/j.2517-6161.1972.tb00899.x>, Royston and Parmar (2002)
+<doi:10.1002/sim.1203>, Ishwaran et al. (2008) <doi:10.1214/08-AOAS169>, Jaeger
+et al. (2019) <doi:10.1214/19-AOAS1261>, Harrell et al. (1982)
+<doi:10.1001/jama.1982.03320430047030>, Graf et al. (1999)
+<doi:10.1002/(SICI)1097-0258(19990915/30)18:17/18%3C2529::AID-SIM274%3E3.0.CO;2-5>,
+Friedman (2001) <doi:10.1214/aos/1013203451>, Apley and Zhu (2020)
+<doi:10.1111/rssb.12377>, and Lundberg and Lee (2017)
+<https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions>,
+and other related methods for survival modeling, prediction, and interpretation.")
+    (license license:expat)))
+
 (define-public r-survah
   (package
     (name "r-survah")
@@ -7159,33 +7228,26 @@ diagnostics.")
 (define-public r-surprisalanalysis
   (package
     (name "r-surprisalanalysis")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurprisalAnalysis" version))
        (sha256
-        (base32 "1i9kpljzzfic4mchw5y77i598qffqrnjn4h3n1jq18i8q8aphm7g"))))
+        (base32 "0ja5glyf8s8yvyaq9nwj71768djp9j4wmcmrb5vamsphzig31nar"))))
     (properties `((upstream-name . "SurprisalAnalysis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
-                             r-shinywidgets
-                             r-shinythemes
+    (propagated-inputs (list r-shinythemes
                              r-shinyjs
                              r-shinycssloaders
                              r-shiny
                              r-patchwork
                              r-matlib
-                             r-httpuv
                              r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-clusterprofiler
-                             r-annotationdbi))
+                             r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SurprisalAnalysis")
     (synopsis "Information Theoretic Analysis of Gene Expression Data")
@@ -29601,13 +29663,13 @@ is linked to a regressive relationship underlying the spatial process.")
 (define-public r-spatialreg-hp
   (package
     (name "r-spatialreg-hp")
-    (version "0.0-1")
+    (version "0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialreg.hp" version))
        (sha256
-        (base32 "0q9fdk20081szwvlhlljmhfbrlspb5p8vh6qyn9j8xdrx15d4zig"))))
+        (base32 "0ygqj1k8vqbir5l2qakmmp1afmhncfssngv8ysly4q0wmsj1f6fq"))))
     (properties `((upstream-name . "spatialreg.hp")))
     (build-system r-build-system)
     (arguments
