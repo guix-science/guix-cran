@@ -1175,13 +1175,13 @@ change, it gives identical results, and behaves exactly the same.")
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.21.0")
+    (version "0.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.batchtools" version))
        (sha256
-        (base32 "1wi9hml706gkaqi4sv57c5ihl6dd8yn7dw0j3ya7q0a3hlr9gqm1"))))
+        (base32 "0hmyb6fv4dz7qmx02w5vkj286ppyxfilj42wkcsxv45210ih5myv"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (arguments
@@ -4168,13 +4168,13 @@ al (1998, ISBN:92-5-104219-5)).")
 (define-public r-fru
   (package
     (name "r-fru")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fru" version))
        (sha256
-        (base32 "07bv9n4s10vj9bxnp21dridcy2hhqzyyqdw7v7g372r26rf82khn"))))
+        (base32 "18xb8iqfcx1wqndpp56azfp7gwdn3rib6r8krdy8ifd76gb59ncn"))))
     (properties `((upstream-name . "fru")))
     (build-system r-build-system)
     (arguments

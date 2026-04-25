@@ -8854,6 +8854,33 @@ birth-death species trees, and @code{sim.genetree()} simulates coalescent gene
 trees.")
     (license license:gpl2)))
 
+(define-public r-treeshap
+  (package
+    (name "r-treeshap")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treeshap" version))
+       (sha256
+        (base32 "1ag5pjyv7m7b6iinvay85m95bi156l3ay26209lfmk8f8243wq9l"))))
+    (properties `((upstream-name . "treeshap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-ggplot2 r-data-table))
+    (home-page "https://modeloriented.github.io/treeshap/")
+    (synopsis
+     "Compute SHAP Values for Your Tree-Based Models Using the 'TreeSHAP' Algorithm")
+    (description
+     "An efficient implementation of the @code{TreeSHAP} algorithm introduced by
+Lundberg et al., (2020) <doi:10.1038/s42256-019-0138-9>.  It is capable of
+calculating SHAP (SHapley Additive @code{exPlanations}) values for tree-based
+models in polynomial time.  Currently supported models include gbm',
+@code{randomForest}', ranger', xgboost', lightgbm'.")
+    (license license:gpl3)))
+
 (define-public r-treesearch
   (package
     (name "r-treesearch")
@@ -14709,6 +14736,43 @@ Quantitative, Comparative, Statistical Algorithm\" by Chumbley et al (2010)
 based on correlation measures in a diamond shaped area of the toolmark as
 described in Hadler (2017).")
     (license license:gpl3)))
+
+(define-public r-toolero
+  (package
+    (name "r-toolero")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toolero" version))
+       (sha256
+        (base32 "00lg0b0mli30lc7vqp90gdk5mzlwxrf7yr3jxmnqk4q3i8qbgg8w"))))
+    (properties `((upstream-name . "toolero")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-usethis
+                             r-tibble
+                             r-renv
+                             r-readr
+                             r-purrr
+                             r-janitor
+                             r-glue
+                             r-fs
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/erwinlares/toolero")
+    (synopsis "Toolkit for Research Workflows")
+    (description
+     "This package provides utility functions to help researchers implement best
+practices for their coding projects.  Includes tools for reading and cleaning
+data files, initializing R projects with a standard folder structure, creating
+Quarto documents from a reproducible template, detecting the execution context
+across interactive, Quarto, and script-based workflows, and splitting data
+frames into group-level output files.")
+    (license license:expat)))
 
 (define-public r-toolbox
   (package
@@ -21723,13 +21787,13 @@ any other data frame.  The main function is @code{predict_gam()}.")
 (define-public r-tidyfun
   (package
     (name "r-tidyfun")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfun" version))
        (sha256
-        (base32 "1mii71rccn3jsxpfdg48q7drkc3fblfvlr10q5gmgpw43405n4w6"))))
+        (base32 "1c5xi0hyzaqgns9qp1jjvy5w84wm2yh8snpdvfz1ij0g69g3sv2q"))))
     (properties `((upstream-name . "tidyfun")))
     (build-system r-build-system)
     (arguments
@@ -23922,13 +23986,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "1wf93k476k7084mjpfyx9a1250mcgk9bki2jrw3ga1px4jd0ri16"))))
+        (base32 "15sjs8dlmpb040h0vg7a892s0bmffd5jwif3z8dw8wyjy1r0462b"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -23936,9 +24000,11 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpp
+                             r-rann
                              r-pak
                              r-matrix
                              r-foreach
+                             r-fnn
                              r-doparallel
                              r-cli))
     (home-page "https://mengxu98.github.io/thisutils/")
@@ -23953,13 +24019,13 @@ tasks to streamline workflows.")
 (define-public r-thisplot
   (package
     (name "r-thisplot")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisplot" version))
        (sha256
-        (base32 "1f3j2hdsih7ck6nsd3vsqg258vsmvgjmwc2c61rpw2hr2hdbpzsv"))))
+        (base32 "16i8s3gwh8abmkk14lwqqc4iy7zw4as4kvfa1fd7cz6nxpcn3pfl"))))
     (properties `((upstream-name . "thisplot")))
     (build-system r-build-system)
     (arguments

@@ -3061,6 +3061,38 @@ testing and simultaneous confidence intervals are calculated using a
 multivariate normal approximation to the set of selected parameters.")
     (license license:gpl3)))
 
+(define-public r-npfseir
+  (package
+    (name "r-npfseir")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npfseir" version))
+       (sha256
+        (base32 "1z6xwx6s1nxi6819rx8d54yv90hi991946m65frwmfa4vxdghjnx"))))
+    (properties `((upstream-name . "npfseir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=npfseir")
+    (synopsis "Nested Particle Filter for Stochastic SEIR Epidemic Models")
+    (description
+     "This package implements the online Bayesian inference framework for joint state
+and parameter estimation in a stochastic
+Susceptible-Exposed-Infectious-Recovered (SEIR) epidemic model with a
+time-varying transmission rate.  The log-transmission rate is modelled as a
+latent Ornstein-Uhlenbeck (OU) process with exact Gaussian discrete-time
+transitions.  Inference is performed via the nested particle filter (NPF) of
+Crisan and Miguez (2018) <doi:10.3150/17-BEJ954>, which maintains an outer
+particle layer over the OU hyperparameters and, for each outer particle, an
+inner bootstrap filter over epidemic states.  The Cori-style renewal-equation
+estimator follows Cori et al. (2013) <doi:10.1093/aje/kwt133>.  The package also
+provides utilities for simulation, posterior summarisation, and forecasting.")
+    (license license:expat)))
+
 (define-public r-npflow
   (package
     (name "r-npflow")
@@ -5766,13 +5798,13 @@ that there are only Compliers and Never Takers in the population.")
 (define-public r-noncompart
   (package
     (name "r-noncompart")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NonCompart" version))
        (sha256
-        (base32 "0s4y6hxqp21f04fxpxdnfqsz41j5ds3w2aly5sm0nb7kggn9ifzb"))))
+        (base32 "0hfrhcahr0l8pqhsv70f162jxmvik0g8hlajbzp2l93y9kqhf8sg"))))
     (properties `((upstream-name . "NonCompart")))
     (build-system r-build-system)
     (arguments
@@ -13871,13 +13903,13 @@ randomization and non-degree preserving.")
 (define-public r-netropy
   (package
     (name "r-netropy")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netropy" version))
        (sha256
-        (base32 "1v5nmcpf47jxqdzxaly649fvbcn3li3lpfp540rgd2prlaplialc"))))
+        (base32 "04i13dzggg25v83jd9xzkp1b8bzs9i5l18sjqci0847lwgy1xr58"))))
     (properties `((upstream-name . "netropy")))
     (build-system r-build-system)
     (arguments
@@ -16760,13 +16792,13 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
 (define-public r-ncar
   (package
     (name "r-ncar")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncar" version))
        (sha256
-        (base32 "05kkab117hf11bjpfd13pd9wql386196lqxsgrx7hrrkm535rzbj"))))
+        (base32 "1rkw69rfz3fhk87icwf0gdapifas4wd2kbxq37q9rvdvxjg1bnav"))))
     (properties `((upstream-name . "ncar")))
     (build-system r-build-system)
     (arguments

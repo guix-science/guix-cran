@@ -4105,6 +4105,32 @@ toward the parallel model.  For details, refer to Wurm, Hanlon, and Rathouz
 block model (OLBM), as described in Corneli, Bouveyron and Latouche (2019).")
     (license license:gpl2+)))
 
+(define-public r-ordinalgof
+  (package
+    (name "r-ordinalgof")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalGOF" version))
+       (sha256
+        (base32 "1w2lsphcwqyzdz4crgcj1ggjdflwgzxmghfr4a0rj4h86y453bmq"))))
+    (properties `((upstream-name . "ordinalGOF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-mass r-magrittr r-dplyr))
+    (home-page "https://github.com/Funto-Aladekomo/ordinalGOF")
+    (synopsis "Goodness-of-Fit Tests for Ordinal Regression Models")
+    (description
+     "This package provides goodness-of-fit tests for ordinal regression models,
+including the Fagerland-Hosmer ordinal test, reproducing same output as Stata'.
+Supports @code{polr()}, @code{vglm()}, and binary @code{glm()} models.  See
+Fagerland and Hosmer (2013) <doi:10.1002/sim.5645> and Fagerland and Hosmer
+(2017) <doi:10.1177/1536867X1701700308> for details.")
+    (license license:expat)))
+
 (define-public r-ordinalgmifs
   (package
     (name "r-ordinalgmifs")

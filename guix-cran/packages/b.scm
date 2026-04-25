@@ -3941,6 +3941,41 @@ identify an optimal number of clusters; the results of the clustering can be
 optionally used to sort the heatmap.")
     (license license:gpl2+)))
 
+(define-public r-brrat
+  (package
+    (name "r-brrat")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BRRAT" version))
+       (sha256
+        (base32 "1yhsslrbcs8xayf79w0ph5akb11aavpsvg3gbzrl82iv2rslv770"))))
+    (properties `((upstream-name . "BRRAT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-mass
+                             r-ggplot2
+                             r-dplyr
+                             r-bh))
+    (home-page "https://github.com/csiro/hydro_BRRAT_Package")
+    (synopsis "Bayesian Regression Robustness Assessment Test")
+    (description
+     "Tests for a linear relationship in the log ratio between an observed and
+simulated series and an independent variable.  Typically this the error in
+modelled streamflow at an annual time scale, and a rainfall input.  The approach
+allows for multiple sites as random factors and for multiple replicates of the
+simulated values.  The approach is outlined in Gibbs et al. (2026) in review.")
+    (license license:gpl3+)))
+
 (define-public r-brq
   (package
     (name "r-brq")

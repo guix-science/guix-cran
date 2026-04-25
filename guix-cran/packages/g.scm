@@ -15839,43 +15839,6 @@ Brown (2018, ISBN:978-3-319-93547-8) <doi:10.1007/978-3-319-93549-2> and Debelak
 et al. (2022, ISBN:978-1-138-71046-7) <doi:10.1201/9781315200620>.")
     (license license:expat)))
 
-(define-public r-glmaspu
-  (package
-    (name "r-glmaspu")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GLMaSPU" version))
-       (sha256
-        (base32 "0zx2bza5v5cfp9v7hf42s57522b6prawcwl77aa3kvjcnb0ish6g"))))
-    (properties `((upstream-name . "GLMaSPU")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-mnormt r-mass))
-    (home-page "https://cran.r-project.org/package=GLMaSPU")
-    (synopsis
-     "An Adaptive Test on High Dimensional Parameters in Generalized Linear Models")
-    (description
-     "Several tests for high dimensional generalized linear models have been proposed
-recently.  In this package, we implemented a new test called adaptive sum of
-powered score (@code{aSPU}) for high dimensional generalized linear models,
-which is often more powerful than the existing methods in a wide scenarios.  We
-also implemented permutation based version of several existing methods for
-research purpose.  We recommend users use the @code{aSPU} test for their real
-testing problem.  You can learn more about the tests implemented in the package
-via the following papers: 1.  Pan, W., Kim, J., Zhang, Y., Shen, X. and Wei, P.
-(2014) <DOI:10.1534/genetics.114.165035> A powerful and adaptive association
-test for rare variants, Genetics, 197(4).  2.  Guo, B., and Chen, S. X. (2016)
-<DOI:10.1111/rssb.12152>.  Tests for high dimensional generalized linear models.
- Journal of the Royal Statistical Society: Series B. 3.  Goeman, J. J., Van
-Houwelingen, H. C., and Finos, L. (2011) <DOI:10.1093/biomet/asr016>.  Testing
-against a high-dimensional alternative in the generalized linear model:
-asymptotic type I error control.  Biometrika, 98(2).")
-    (license license:gpl2)))
-
 (define-public r-glm4
   (package
     (name "r-glm4")
@@ -35184,6 +35147,31 @@ relative risk.  References: Laurent (2012) <doi:10.1214/11-BJPS139>, Hamza &
 Vallois (2016) <doi:10.1016/j.spl.2016.03.014>, Chen & Novick (1984)
 <doi:10.3102/10769986009002163>.")
     (license license:gpl2+)))
+
+(define-public r-gbass
+  (package
+    (name "r-gbass")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GBASS" version))
+       (sha256
+        (base32 "1sg6hv8yc88whzkbjijms5hj7ghv68q8lq3bz6hx1cl8il8vxr12"))))
+    (properties `((upstream-name . "GBASS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-gigrvg r-bass))
+    (home-page "https://cran.r-project.org/package=GBASS")
+    (synopsis "Generalized Bayesian Adaptive Smoothing Splines")
+    (description
+     "Bayesian nonlinear regression under a range of likelihood models using
+generalized Bayesian adaptive smoothing splines.  Robust regression with
+Student's t likelihoods, quantile regression, and related latent-scale models
+are included as special cases.")
+    (license license:bsd-3)))
 
 (define-public r-gb5mcpred
   (package

@@ -5005,6 +5005,39 @@ accuracy, we recommend to predict the serotypes of unknown Salmonella isolates
 using CSESA before doing the traditional serotyping.")
     (license license:gpl2+)))
 
+(define-public r-cseqtl
+  (package
+    (name "r-cseqtl")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CSeQTL" version))
+       (sha256
+        (base32 "0r67w21263lhvbw646nbimrm1fbpmf8g20q5l76gz7llcb9c38pn"))))
+    (properties `((upstream-name . "CSeQTL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-smarter
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r-utils
+                             r-multcomp
+                             r-matrixeqtl
+                             r-helpersmg
+                             r-ggplot2
+                             r-emdbook
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pllittle/cseqtl")
+    (synopsis "Cell Type-Specific Expression Quantitative Trait Loci Mapping")
+    (description
+     "Perform bulk and cell type-specific expression quantitative trait loci mapping
+with our novel method (Little et al. (2023) <doi:10.1038/s41467-023-38795-w>).")
+    (license license:gpl3+)))
+
 (define-public r-cseqpat
   (package
     (name "r-cseqpat")
@@ -16568,6 +16601,36 @@ interval were developed in Mainali and Slud, 2022
 package.")
     (license license:expat)))
 
+(define-public r-cooccure
+  (package
+    (name "r-cooccure")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cooccure" version))
+       (sha256
+        (base32 "1yvc3jbpkk20mx99kj194w0pnn742qp9r40a1x4zrsh60iggaf5v"))))
+    (properties `((upstream-name . "cooccure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mohsaqr/cooccure")
+    (synopsis "Co-Occurrence Network Construction and Manipulation")
+    (description
+     "Constructs co-occurrence networks from several types of input data, such as
+delimited fields, long/bipartite tables, binary matrices, or wide sequences.
+Returns tidy edge data frames and supports optional scaling, splitting into
+several networks, thresholding, and subsetting.  Provides eight similarity
+measures, including Jaccard, cosine, and association strength.  Supports export
+to several network and file formats.  Network construction and analysis methods
+follow Saqr, Lopez-Pernas, Conde, and Hernandez-Garcia (2024,
+<doi:10.1007/978-3-031-54464-4_15>).")
+    (license license:expat)))
+
 (define-public r-convospat
   (package
     (name "r-convospat")
@@ -25232,13 +25295,13 @@ name) and half a million packages and functions on CRAN.")
 (define-public r-colleyrstats
   (package
     (name "r-colleyrstats")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colleyRstats" version))
        (sha256
-        (base32 "1z5m3kc8c4x4mkq5qjr4k9nm4x8qcmmlryz2sa6yz0lbrry92dn9"))))
+        (base32 "171qjlwny9933wjpfl5fahw85x37z10bxiayi5y5gbfbqyi0khaz"))))
     (properties `((upstream-name . "colleyRstats")))
     (build-system r-build-system)
     (arguments
@@ -25248,6 +25311,7 @@ name) and half a million packages and functions on CRAN.")
                              r-writexl
                              r-tidyr
                              r-stringr
+                             r-statsexpressions
                              r-see
                              r-rstatix
                              r-rlang
@@ -43361,25 +43425,29 @@ Guo G. (2023) <doi:10.1007/s00180-022-01270-z>.")
 (define-public r-cfilt
   (package
     (name "r-cfilt")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFilt" version))
        (sha256
-        (base32 "0gngc6z9ssrniycn1p2apjdhlz78ykbv51nxxr85rvqiiz1lx515"))))
+        (base32 "0i73pgxmxlwjaa38bwjjj4p0lww9qvj1hn326d9wjy6r95ar8rcd"))))
     (properties `((upstream-name . "CFilt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-r6 r-matrix))
     (home-page "https://cran.r-project.org/package=CFilt")
-    (synopsis "Recommendation by Collaborative Filtering")
+    (synopsis "Collaborative Filtering Models for Recommendation Systems")
     (description
-     "This package provides methods and functions to implement a Recommendation System
-based on Collaborative Filtering Methodology.  See Aggarwal (2016)
-<doi:10.1007/978-3-319-29659-3> for an overview.")
-    (license license:gpl3)))
+     "This package implements collaborative filtering methods for recommendation
+systems based on user-item interaction data.  Supports both explicit feedback
+(ratings) and implicit feedback (consumption).  The package uses efficient
+sparse matrix representations and provides incremental updates for users, items,
+and similarity structures through an R6 class-based architecture.  See Aggarwal
+(2016) <doi:10.1007/978-3-319-29659-3> for an overview.")
+    (license license:expat)))
 
 (define-public r-cfid
   (package

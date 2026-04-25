@@ -4846,6 +4846,41 @@ for evaluating the global behaviour of formal computational models as described
 by Pitt, Kim, Navarro and Myung (2006) <doi:10.1037/0033-295X.113.1.57>.")
     (license license:gpl3+)))
 
+(define-public r-psor
+  (package
+    (name "r-psor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSor" version))
+       (sha256
+        (base32 "0lkp9yxjg3vysvz0wlhpb19y2639n4jmar5g6lnp7hqc0llwkad5"))))
+    (properties `((upstream-name . "PSor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-superlearner
+                             r-numderiv
+                             r-magrittr
+                             r-geex
+                             r-dplyr
+                             r-caret))
+    (home-page "https://github.com/deckardt98/PSor")
+    (synopsis
+     "Semiparametric Principal Stratification Analysis Beyond Monotonicity")
+    (description
+     "Estimates principal causal effects under principal stratification using a
+margin-free, conditional odds ratio sensitivity parameter.  This framework
+unifies the monotonicity assumption and the counterfactual intermediate
+independence assumption, allowing for robust analysis when monotonicity may not
+hold.  Computes point estimates, standard errors, and confidence intervals for
+conditionally doubly robust and debiased machine learning estimators.  The
+methodological details are described in Tong, Kahan, Harhay, and Li (2025)
+<doi:10.48550/@code{arXiv.2501.17514>}.")
+    (license license:expat)))
+
 (define-public r-psoptim
   (package
     (name "r-psoptim")
@@ -13765,37 +13800,6 @@ hierarchical clustering is performed to determine the initial partition for the
 subsequent k-means clustering procedure.")
     (license license:expat)))
 
-(define-public r-prclust
-  (package
-    (name "r-prclust")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prclust" version))
-       (sha256
-        (base32 "0p0sf8248aigs99py8mpzz743jnrf7n1nv5shag15arxz9yx7zn3"))))
-    (properties `((upstream-name . "prclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=prclust")
-    (synopsis "Penalized Regression-Based Clustering Method")
-    (description
-     "Clustering is unsupervised and exploratory in nature.  Yet, it can be performed
-through penalized regression with grouping pursuit.  In this package, we provide
-two algorithms for fitting the penalized regression-based clustering (PRclust)
-with non-convex grouping penalties, such as group truncated lasso, MCP and SCAD.
-One algorithm is based on quadratic penalty and difference convex method.
-Another algorithm is based on difference convex and ADMM, called DC-ADD, which
-is more efficient.  Generalized cross validation and stability based method were
-provided to select the tuning parameters.  Rand index, adjusted Rand index and
-Jaccard index were provided to estimate the agreement between estimated cluster
-memberships and the truth.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-prcbench
   (package
     (name "r-prcbench")
@@ -20022,13 +20026,13 @@ translation services online.")
 (define-public r-polycub
   (package
     (name "r-polycub")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyCub" version))
        (sha256
-        (base32 "1859ly5mq4n185fnwc9i7d168q5rbmbyk8gyqbjrf8jx518kykvy"))))
+        (base32 "0b7li5zk7f2pyj3ra4ykknniz0rlnb2yzhpiag3b7hxzgl17470l"))))
     (properties `((upstream-name . "polyCub")))
     (build-system r-build-system)
     (arguments
@@ -36256,13 +36260,13 @@ forecasts.  Main references: Qu et al. (2024)
 (define-public r-pep725
   (package
     (name "r-pep725")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pep725" version))
        (sha256
-        (base32 "0s4c2k1j4ly0jq1k4ymzbai5z9szh586n70n390h4skg3vca1f16"))))
+        (base32 "0ffi3xxrq8fi3gzk1cyhzd2190i61y7y7h5d8laxnd82x0a61d5i"))))
     (properties `((upstream-name . "pep725")))
     (build-system r-build-system)
     (arguments
@@ -46239,6 +46243,40 @@ palettes using a new family of colour classes (palettes_colour and
 palettes_palette) that always print as hex codes with colour previews.
 Capabilities include: formatting, casting and coercion, extraction and updating
 of components, plotting, colour mixing arithmetic, and colour interpolation.")
+    (license license:expat)))
+
+(define-public r-palettephines
+  (package
+    (name "r-palettephines")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "palettephines" version))
+       (sha256
+        (base32 "0kfwqwlxglllw1166jd691lvd7ig4faf5aywjqbxw7x826imn24g"))))
+    (properties `((upstream-name . "palettephines")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pinasr/palettephines")
+    (synopsis "Analytical Color Palettes for Philippine Phenology")
+    (description
+     "This package provides specialized color palettes representing phenological
+transitions and biological lifecycles within Philippine landscapes.  Rather than
+abstract gradients, these scales are anchored to topologically grounded states
+such as agricultural maturity, seasonal vegetation shifts, and environmental
+readiness.  Palettes are indexed against the Biologische Bundesanstalt,
+Bundessortenamt und CHemische Industrie (BBCH) scale (Meier, 2023)
+<https://www.openagrar.de/servlets/MCR@code{FileNodeServlet/openagrar_derivate_00010428/BBCH-Skala_en.pdf>}
+for terrestrial vegetation and the Reef Health Index (RHI) framework
+(@code{McField} and Kramer, 2007) <https://www.healthyreefs.org> for marine
+ecosystems.  This ensures scientific interoperability across archipelagic
+spatial models, aligning with global standards for ecological state-transition
+modeling (Schwartz, 2013) <doi:10.1007/978-94-007-6925-0>.")
     (license license:expat)))
 
 (define-public r-paletteknife

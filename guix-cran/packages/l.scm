@@ -13625,6 +13625,37 @@ different styles (Bochvar, Sobocinski, Kleene etc.), computation of Sugeno
 integrals and fuzzy transform.")
     (license license:gpl3)))
 
+(define-public r-lfebd3
+  (package
+    (name "r-lfebd3")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lfebd3" version))
+       (sha256
+        (base32 "1mhb4wp7xibqcrl3x6kig1ypjwc5ivpkgld7yxnv996q2vmcl50s"))))
+    (properties `((upstream-name . "lfebd3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=lfebd3")
+    (synopsis
+     "Generation and Analysis of Confounded and Fractional Factorial Block Designs")
+    (description
+     "This package provides tools to generate and analyze 3-level linear factorial
+block designs, including complete factorial layouts, fractional factorial
+layouts, confounded factorial layouts, and design-characteristic summaries.  The
+package includes utilities for recursive ternary construction, defining-contrast
+identification, alias/confounding summaries, incidence matrix construction, and
+design optimality diagnostics.The methodological framework follows foundational
+work on Gupta (1983) <doi:10.1111/j.2517-6161.1983.tb01253.x>.  These methods
+assist in selecting, comparing, and studying factorial and fractional factorial
+block designs for large experimental situations.")
+    (license license:gpl3)))
+
 (define-public r-lfe
   (package
     (name "r-lfe")
@@ -14787,13 +14818,13 @@ colour displays.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.7.2")
+    (version "6.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "09r23wgxfbzxwlghj4i0jwisnhv56x40s18r92l7gyyx2a4znfrm"))))
+        (base32 "03k5plsm51cr0kk7jzivdgnkz707nsi9gfjjy1jrn86a639dkw3h"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (arguments

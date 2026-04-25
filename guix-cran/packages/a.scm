@@ -12946,6 +12946,37 @@ account complex sample designs.  More information on the methods is available
 online: <https://www.who.int/tools/child-growth-standards>.")
     (license license:gpl3)))
 
+(define-public r-antedep
+  (package
+    (name "r-antedep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "antedep" version))
+       (sha256
+        (base32 "0nbd0s0lqrm3mp5bgfgk0kcsczjaqlkdqw7sbj691k1zhvzxc95z"))))
+    (properties `((upstream-name . "antedep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nloptr r-mass r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://tanchyking.github.io/antedep/")
+    (synopsis "Antedependence Models for Longitudinal Data")
+    (description
+     "Fitting, simulation, and inference for antedependence models for longitudinal
+data, as described in Zimmerman and Nunez-Anton (2009, ISBN:9781420011074).
+Supports integer-valued antedependence (INAD) models for count data with
+thinning operators (binomial, Poisson, negative binomial) and flexible
+innovation distributions (Poisson, Bell, negative binomial), categorical
+antedependence models for discrete-state longitudinal outcomes, and Gaussian
+antedependence (AD) models for continuous data.  Implements maximum likelihood
+estimation via time-separable optimization and block coordinate descent, with
+confidence intervals based on Louis identity and profile likelihood.")
+    (license license:expat)))
+
 (define-public r-antclassify
   (package
     (name "r-antclassify")

@@ -13471,13 +13471,13 @@ Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
 (define-public r-mpmsim
   (package
     (name "r-mpmsim")
-    (version "3.2.1")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmsim" version))
        (sha256
-        (base32 "0fqwy52wn86kvyi28z6pc68pb8jkg4zzq7rqjz4qlbg6agzfm3vj"))))
+        (base32 "19ykqsmw8s0v515qfx4kd6xs4vr6ajabfjsv5mva7xzsbc8x7ykj"))))
     (properties `((upstream-name . "mpmsim")))
     (build-system r-build-system)
     (arguments
@@ -18956,6 +18956,35 @@ See Rossell (2025) <doi:10.5281/zenodo.17119597> (see the URL field below for
 its URL) for a hands-on book describing the methods, examples and suggested
 citations if you use the package.")
     (license license:gpl2+)))
+
+(define-public r-modelscompete4
+  (package
+    (name "r-modelscompete4")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modelscompete4" version))
+       (sha256
+        (base32 "0fb25a30pbf0k55h8c1r6bkjzs3wz761vgav283gwr1dfx2y3gg7"))))
+    (properties `((upstream-name . "modelscompete4")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-nonnest2 r-lavaan r-ggplot2 r-boot))
+    (home-page "https://github.com/ssjerf-stack/modelscompete4")
+    (synopsis "Compare Nested and Non-Nested Structural Equation Models")
+    (description
+     "This package provides a comprehensive package for comparing multiple Structural
+Equation Models (SEM).  Supports both nested and non-nested model comparisons,
+chi-square difference tests, and extraction of multiple fit indices including
+AIC (Akaike Information Criterion), BIC (Bayesian Information Criterion), CFI
+(Comparative Fit Index), TLI (Tucker-Lewis Index), RMSEA (Root Mean Square Error
+of Approximation), and SRMR (Standardized Root Mean Square Residual).  Built on
+top of the lavaan package for seamless SEM model comparison workflows.  The
+Vuong test (Vuong, 1989) for non-nested models is used as the statistical test.")
+    (license license:gpl3+)))
 
 (define-public r-modelobj
   (package
@@ -27835,39 +27864,6 @@ optimization literature.")
 misreported continuous time series.  See MoriÃ±a, D, FernÃ¡ndez-Fontelo, A,
 CabaÃ±a, A, Puig P. (2021) <@code{arXiv:2003.09202v2>}.")
     (license license:gpl2+)))
-
-(define-public r-mispu
-  (package
-    (name "r-mispu")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MiSPU" version))
-       (sha256
-        (base32 "1l6q0fm5z5i6gigr940h8kc5rka08psmhcprp8grmsxk3qy2kply"))))
-    (properties `((upstream-name . "MiSPU")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-cluster
-                             r-aspu
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=MiSPU")
-    (synopsis "Microbiome Based Sum of Powered Score (MiSPU) Tests")
-    (description
-     "There is an increasing interest in investigating how the compositions of
-microbial communities are associated with human health and disease.  In this
-package, we present a novel global testing method called @code{aMiSPU}, that is
-highly adaptive and thus high powered across various scenarios, alleviating the
-issue with the choice of a phylogenetic distance.  Our simulations and real data
-analysis demonstrated that @code{aMiSPU} test was often more powerful than
-several competing methods while correctly controlling type I error rates.")
-    (license license:gpl2)))
 
 (define-public r-misprime
   (package
@@ -53518,32 +53514,6 @@ methods based on the msma package.  The functions used in the book entitled
 \"Multivariate Analysis for Neuroimaging Data\" (2021, ISBN-13: 978-0367255329)
 are contained.")
     (license license:gpl2+)))
-
-(define-public r-mancie
-  (package
-    (name "r-mancie")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MANCIE" version))
-       (sha256
-        (base32 "0940xl3z5bca6hcnj2bj341l79wajilxlxzmyz3dlgrz0b3bbdmm"))))
-    (properties `((upstream-name . "MANCIE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=MANCIE")
-    (synopsis
-     "Matrix Analysis and Normalization by Concordant Information Enhancement")
-    (description
-     "High-dimensional data integration is a critical but difficult problem in
-genomics research because of potential biases from high-throughput experiments.
-We present MANCIE, a computational method for integrating two genomic data sets
-with homogenous dimensions from different sources based on a PCA procedure as an
-approximation to a Bayesian approach.")
-    (license license:gpl2)))
 
 (define-public r-managelocalrepo
   (package

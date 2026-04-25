@@ -2155,6 +2155,38 @@ for performance.  Offers convenient utilities for working with in-memory and
 larger-than-memory data while retaining full dplyr compatibility.")
     (license license:expat)))
 
+(define-public r-duckh3
+  (package
+    (name "r-duckh3")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "duckh3" version))
+       (sha256
+        (base32 "00bh50h2zpmsc4fy0kfq2vsbqhcf7afqmzcxwb1apfv0mjh3kr24"))))
+    (properties `((upstream-name . "duckh3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glue
+                             r-duckspatial
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli))
+    (home-page "https://cidree.github.io/duckh3/")
+    (synopsis "H3 Extension of 'DuckDB'")
+    (description
+     "Fast & memory-efficient functions to analyze and manipulate large data sets.  It
+leverages the fast analytical capabilities of @code{DuckDB} and its spatial
+extension (see <https://duckdb.org/community_extensions/extensions/h3>) while
+maintaining compatibility with Râs spatial data ecosystem to work with spatial
+vector data.")
+    (license license:gpl3+)))
+
 (define-public r-duckduckr
   (package
     (name "r-duckduckr")
@@ -14178,32 +14210,6 @@ quantitative variables, calculate conditional probability for each pair of
 attribute values, distance between every pair of attribute values, significance
 of attributes, calculate dissimilarity between each pair of objects.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-dishet
-  (package
-    (name "r-dishet")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DisHet" version))
-       (sha256
-        (base32 "056jcs1qpiyadnmlzd0cj4kp0qzkichxi0pdnxypyq1fsqnpvan3"))))
-    (properties `((upstream-name . "DisHet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrixstats r-gtools))
-    (home-page "https://cran.r-project.org/package=DisHet")
-    (synopsis
-     "Estimate the Gene Expression Levels and Component Proportions of the Normal, Stroma (Immune) and Tumor Components of Bulk Tumor Samples")
-    (description
-     "Model cell type heterogeneity of bulk renal cell carcinoma.  The observed gene
-expression in bulk tumor sample is modeled by a log-normal distribution with the
-location parameter structured as a linear combination of the component-specific
-gene expressions.")
-    (license license:gpl2)))
 
 (define-public r-diseasystore
   (package

@@ -1032,6 +1032,33 @@ with the log uniform and mixture distributions.")
 tool to determine the optimal number of components to retain in PCA.")
     (license license:gpl2)))
 
+(define-public r-kronx
+  (package
+    (name "r-kronx")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KRONX" version))
+       (sha256
+        (base32 "0x1f6csaafmx82ip6yidva8d4y8nfxwcsbnlv0v4rv0kjqp0pqsh"))))
+    (properties `((upstream-name . "KRONX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list))
+    (home-page "https://cran.r-project.org/package=KRONX")
+    (synopsis "Clock of Regimes for Regime-Switching Fragility Analysis")
+    (description
+     "This package implements the Clock of Regimes (KRONX) framework for
+regime-switching fragility analysis of financial time series.  The package fits
+Gaussian and Student-t Hidden Markov Models (HMMs) to return data, constructs a
+hazard-adjusted transition operator Q, derives the associated generator K = Q -
+I, and computes the fundamental matrix N = -K inverse to characterize expected
+residence times under structural fragility.")
+    (license license:gpl3+)))
+
 (define-public r-kronos
   (package
     (name "r-kronos")

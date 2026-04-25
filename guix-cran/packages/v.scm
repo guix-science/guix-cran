@@ -2710,6 +2710,41 @@ validation, whilst at the same time implements a set of best practices in
 analyzing and visualizing data specific to Microsoft Viva Insights'.")
     (license license:expat)))
 
+(define-public r-vivaglint
+  (package
+    (name "r-vivaglint")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vivaglint" version))
+       (sha256
+        (base32 "1q06jxwbl0djb2k6vh514gc6gyjihzyhx4nqn8p7dpbxk18vrs23"))))
+    (properties `((upstream-name . "vivaglint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/microsoft/vivaglint")
+    (synopsis "Analysis Tools for 'Viva Glint' Survey Data")
+    (description
+     "This package provides functions for importing, validating, and analyzing Viva
+Glint survey data exports, with optional API-based import via the Microsoft
+Graph API. Includes tools for data reshaping, question-level analysis,
+multi-cycle comparisons, organizational hierarchy analysis, factor analysis, and
+correlation analysis.  Harman (1960, ISBN: 0226316513); Husser (2017)
+<doi:10.1002/9781118901731.iecrm0048>.")
+    (license license:expat)))
+
 (define-public r-vitals
   (package
     (name "r-vitals")

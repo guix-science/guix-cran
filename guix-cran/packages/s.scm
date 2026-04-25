@@ -5336,6 +5336,37 @@ define clusters.  Details about this method is described in
 <https://github.com/luyouepiusf/@code{SurvivalClusteringTree>}.")
     (license license:gpl2+)))
 
+(define-public r-surviv
+  (package
+    (name "r-surviv")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surviv" version))
+       (sha256
+        (base32 "1vb0bz1pn49al3ai99kc2x5drmhl04s5rqb3l3hf3nh68rnmdlca"))))
+    (properties `((upstream-name . "surviv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rootsolve r-mass))
+    (home-page "https://github.com/tonyhbc/surviv")
+    (synopsis "Flexible Instrumental Variable Methods for Survival Analysis")
+    (description
+     "Instrumental variable analysis methods for causal inference on survival data
+based on the Cox model allowing for various treatment and effect types,
+including orthogonality method-of-moments instrumental variable estimation for
+the Cox model, two-stage residual inclusion Cox estimation with frailty,
+sequential trial emulation, sequential Cox analyses, and sequential two-stage
+residual inclusion Cox analyses.  Methodological background includes
+@code{MacKenzie} et al. (2014) <doi:10.1007/s10742-014-0117-x>, Martinez-Camblor
+et al. (2019) <doi:10.1093/biostatistics/kxx062>, Martinez-Camblor et al. (2019)
+<doi:10.1111/rssc.12341>, Gran et al. (2010) <doi:10.1002/sim.4048>, and Keogh
+et al. (2023) <doi:10.1002/sim.9718>.")
+    (license license:expat)))
+
 (define-public r-survinger
   (package
     (name "r-survinger")
@@ -31107,47 +31138,6 @@ pre-trains the model to generate a complete (fully connected) graph; and 2) uses
 the complete graph as the initial state to fit the `elastic net` penalized SEM.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-sparsereg
-  (package
-    (name "r-sparsereg")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sparsereg" version))
-       (sha256
-        (base32 "1ipsang2fppmjx4h5ljgzx3c44z3lggc376ghrqqgmxb5ql8bcp3"))))
-    (properties `((upstream-name . "sparsereg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-msm
-                             r-mcmcpack
-                             r-mass
-                             r-gridextra
-                             r-glmnet
-                             r-gigrvg
-                             r-ggplot2
-                             r-coda))
-    (home-page "https://cran.r-project.org/package=sparsereg")
-    (synopsis
-     "Sparse Bayesian Models for Regression, Subgroup Analysis, and Panel Data")
-    (description
-     "Sparse modeling provides a mean selecting a small number of non-zero effects
-from a large possible number of candidate effects.  This package includes a
-suite of methods for sparse modeling: estimation via EM or MCMC, approximate
-confidence intervals with nominal coverage, and diagnostic and summary plots.
-The method can implement sparse linear regression and sparse probit regression.
-Beyond regression analyses, applications include subgroup analysis, particularly
-for conjoint experiments, and panel data.  Future versions will include
-extensions to models with truncated outcomes, propensity score, and instrumental
-variable analysis.")
-    (license license:gpl2+)))
-
 (define-public r-sparser
   (package
     (name "r-sparser")
@@ -47735,13 +47725,13 @@ Lesaffre (2006) <doi:10.1111/j.1541-0420.2005.00396.x>.")
 (define-public r-simevent
   (package
     (name "r-simevent")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simevent" version))
        (sha256
-        (base32 "1n7rjgw7lf3x7jiyh4mjs0sf0d5jl3b8yynwsb2y63qnrl8gjdbr"))))
+        (base32 "00br50ygra35aqqaqrmhzqd7gd8rg2crc7pw7nb1l4a03xwvlgdi"))))
     (properties `((upstream-name . "simevent")))
     (build-system r-build-system)
     (arguments
@@ -63572,13 +63562,13 @@ studies.")
 (define-public r-select
   (package
     (name "r-select")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Select" version))
        (sha256
-        (base32 "09vdk1wchqc4avaym8g8y02z2hdgdrag2h2w11xl48w50gvi0m19"))))
+        (base32 "1jz66jym8m9xjd2qb8j3rj137shygd12gp4ixf5r4ykcb7vpbppz"))))
     (properties `((upstream-name . "Select")))
     (build-system r-build-system)
     (arguments
@@ -63603,7 +63593,8 @@ only optimised the entropy of the community, and can optimise both functional
 diversity and entropy simultaneously.  This package can also be used to generate
 experimental assemblages to test the effects of community-level traits on
 community dynamics and ecosystem function.  The method is based on theory
-discussed in Laughlin (2014, Ecology Letters) <doi:10.1111/ele.12288>.")
+discussed in Laughlin (2014, Ecology Letters) and Laughlin et al. (2018, Methods
+in Ecology and Evolution).")
     (license license:gpl2+)))
 
 (define-public r-selcorr
@@ -70453,13 +70444,13 @@ DOI, PMID, PMCID, @code{arXiv}, and ORCID.")
 (define-public r-scholid
   (package
     (name "r-scholid")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scholid" version))
        (sha256
-        (base32 "1wn5wxsll3966qxz20iclk3bj6akmawzgldwhx92rl0i93wj8gm3"))))
+        (base32 "12i7zpa84hvkg27wzdxbkbllsffsw34hq3wxpy9if6z0chbbp3fz"))))
     (properties `((upstream-name . "scholid")))
     (build-system r-build-system)
     (arguments
@@ -70467,14 +70458,15 @@ DOI, PMID, PMCID, @code{arXiv}, and ORCID.")
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://thomas-rauter.github.io/scholid/")
-    (synopsis "Tools for Scholarly and Academic Identifiers")
+    (synopsis "Scholarly and Academic Identifier Utilities")
     (description
-     "This package provides tools for detecting, normalizing, classifying, and
-extracting scholarly identifier strings.  The package provides lightweight,
-dependency-free helpers for common identifier systems such as DOIs, ORCID
-@code{iDs}, ISBNs, ISSNs, @code{arXiv} identifiers, and @code{PubMed}
-identifiers.  Functions are designed to be vectorized, predictable, and suitable
-as low-level building blocks for other R packages and data workflows.")
+     "Detects, normalizes, classifies, and extracts scholarly identifier strings.
+Provides lightweight, dependency-free helpers for common identifier systems such
+as DOIs, ORCID @code{iDs}, ISBNs, ISSNs, @code{arXiv} identifiers, and
+@code{PubMed} identifiers.  Functions are vectorized, predictable, and suitable
+as low-level building blocks for other R packages and data workflows.  For
+online lookup, conversion, metadata retrieval, and linked identifier discovery,
+see scholidonline'.")
     (license license:expat)))
 
 (define-public r-scholar

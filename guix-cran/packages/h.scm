@@ -4700,6 +4700,38 @@ other values are similarly large.")
 performing the analysis itself.")
     (license license:gpl2+)))
 
+(define-public r-hotpatchr
+  (package
+    (name "r-hotpatchr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hotpatchR" version))
+       (sha256
+        (base32 "0k3dgbxiif4k8i10yq70jac1kqssnbr8dkdfmzijr6whzz5p4nan"))))
+    (properties `((upstream-name . "hotpatchR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-testthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hotpatchR")
+    (synopsis "Runtime Namespace Patching Utilities for R Packages")
+    (description
+     "This package provides utilities for runtime hotpatching of locked R package
+namespaces.  The package enables dynamic injection of function patches into
+sealed package environments without rebuilding or redeploying the package.  This
+is particularly useful for legacy containerized workflows where package versions
+are frozen in place.  The core functionality includes @code{inject_patch()} to
+inject patches into package namespaces, @code{undo_patch()} to restore original
+functions, @code{apply_hotfix_file()} to apply patches from external R scripts,
+and @code{test_patched_dir()} to run test suites against patched packages.  The
+package implements namespace surgery techniques that allow internal callers to
+automatically see patched functions.")
+    (license license:expat)))
+
 (define-public r-hotellingellipse
   (package
     (name "r-hotellingellipse")
@@ -16196,6 +16228,29 @@ Codemeta', RDF XML', RIS', Schema.org', and Citation File Format'.  A low level
 R6 class is provided, as well as stand-alone functions for each citation format
 for both read and write.")
     (license license:expat)))
+
+(define-public r-handcoder
+  (package
+    (name "r-handcoder")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "handcodeR" version))
+       (sha256
+        (base32 "1icr2474y2q2jnax7ps9lmh13hkrpq4z2yacffc1scm2cpg18y6a"))))
+    (properties `((upstream-name . "handcodeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets r-shiny))
+    (home-page "https://github.com/liserman/handcodeR/")
+    (synopsis "Text Annotation App")
+    (description
+     "Shiny-App that allows to annotate vectors of texts to predefined categories by
+hand.")
+    (license license:asl2.0)))
 
 (define-public r-hamlet
   (package

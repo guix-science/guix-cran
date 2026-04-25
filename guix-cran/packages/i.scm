@@ -6446,27 +6446,6 @@ initiatives.")
 flat-top kernels.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-iopsych
-  (package
-    (name "r-iopsych")
-    (version "0.90.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iopsych" version))
-       (sha256
-        (base32 "0adxwxnb1zdlld3icdggx7cq6cp8z4h1jf105485w322a8c6s9ik"))))
-    (properties `((upstream-name . "iopsych")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-mco))
-    (home-page "https://cran.r-project.org/package=iopsych")
-    (synopsis "Methods for Industrial/Organizational Psychology")
-    (description "Collection of functions for IO Psychologists.")
-    (license license:bsd-3)))
-
 (define-public r-ionet
   (package
     (name "r-ionet")

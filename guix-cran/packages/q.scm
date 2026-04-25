@@ -5278,6 +5278,30 @@ file AUTHORS for a full list of contributors to @code{QuantLib} (and hence also
 Quantuccia').")
     (license license:gpl2+)))
 
+(define-public r-qkiosk
+  (package
+    (name "r-qkiosk")
+    (version "0.2.31")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qkiosk" version))
+       (sha256
+        (base32 "1ickavkhsql6v0jc6fp7sxnpph1kv540d98qpcwphjsarb3wmk8l"))))
+    (properties `((upstream-name . "qkiosk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-xts r-stringdist r-jsonlite r-curl))
+    (home-page "https://quantkiosk.com/")
+    (synopsis "'QUANTkiosk' API Client")
+    (description
+     "Provide access to QUANTkiosk platform of regulatory and corporate data relevant
+to financial markets including point-in-time fundamentals, ownership and
+symbology.")
+    (license license:gpl3)))
+
 (define-public r-qindex-data
   (package
     (name "r-qindex-data")

@@ -11171,6 +11171,41 @@ testing on the mean of a normal random vector subject to linear constraints.")
 quantitative treatments.")
     (license license:gpl2)))
 
+(define-public r-eppofinder
+  (package
+    (name "r-eppofinder")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eppoFindeR" version))
+       (sha256
+        (base32 "1dlcxrvfh4n8z86hn9drbh5cnpfxzid7y1phwakv3f06ck3c84fv"))))
+    (properties `((upstream-name . "eppoFindeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://openefsa.github.io/eppoFindeR/")
+    (synopsis "Interface to the EPPO Database and Public APIs")
+    (description
+     "This package provides an interface to the public APIs of the European and
+Mediterranean Plant Protection Organization (EPPO) database.  It enables users
+to retrieve EPPO data by accessing specific services and datasets.  The package
+also includes utilities for data wrangling, including the integration of
+taxonomy with rank information.  See <https://data.eppo.int/apis/> for more
+details.")
+    (license (license:fsdg-compatible "EUPL-1.2"))))
+
 (define-public r-epoxy
   (package
     (name "r-epoxy")

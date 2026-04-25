@@ -4632,6 +4632,43 @@ BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z> BÃ¶schen, I. (2021)
 <doi:10.48550/@code{arXiv.2408.07948>}.")
     (license license:gpl3)))
 
+(define-public r-jarbes
+  (package
+    (name "r-jarbes")
+    (version "2.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jarbes" version))
+       (sha256
+        (base32 "0430cxrx24rmm6zii4aams7wkgyavsyg5p6phwsn3lichml6068v"))))
+    (properties `((upstream-name . "jarbes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-tidyr
+                             r-rjags
+                             r-r2jags
+                             r-qpdf
+                             r-mass
+                             r-kableextra
+                             r-gridextra
+                             r-ggplot2
+                             r-ggextra
+                             r-ggally
+                             r-bookdown))
+    (home-page "https://cran.r-project.org/package=jarbes")
+    (synopsis "Just a Rather Bayesian Evidence Synthesis")
+    (description
+     "This package provides a new class of Bayesian meta-analysis models that
+incorporates a model for internal and external validity bias.  In this way, it
+is possible to combine studies of diverse quality and different types.  For
+example, we can combine the results of randomized control trials (RCTs) with the
+results of observational studies (OS).")
+    (license license:gpl2+)))
+
 (define-public r-japanstat
   (package
     (name "r-japanstat")

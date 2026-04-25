@@ -1724,13 +1724,13 @@ Linux for haplotyping.")
 (define-public r-rvg
   (package
     (name "r-rvg")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvg" version))
        (sha256
-        (base32 "0zl1ln1m91bg9wl995n1kwjrqsb38ixmplkhnhwvha7nxk3zyzf8"))))
+        (base32 "1scdf9arj00g0j8qdzwskfs2dbg8dd1kf5j7a8kxwdgcydnpj0jl"))))
     (properties `((upstream-name . "rvg")))
     (build-system r-build-system)
     (arguments
@@ -4120,6 +4120,34 @@ trading professionals.  Includes functions for API calls to
      "R tools to measure and compare inequality, welfare and poverty using the EU
 statistics on income and living conditions surveys.")
     (license license:gpl3)))
+
+(define-public r-rtinycc
+  (package
+    (name "r-rtinycc")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rtinycc" version))
+       (sha256
+        (base32 "149k053m79glb8qhr7dyi7nc877jrfg00rvwiwff8m14kqxbyyk4"))))
+    (properties `((upstream-name . "Rtinycc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lambda-r))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sounkou-bioinfo/Rtinycc")
+    (synopsis
+     "Builds the 'TinyCC' Command-Line Interface and Library for 'C' Scripting in 'R'")
+    (description
+     "Builds the @code{TinyCC} (Tiny C Compiler) command-line interface and library
+for package use in R'.  The package compiles @code{TinyCC} from source and
+provides R functions to interact with the compiler. @code{TinyCC} can be used
+for header preprocessing, just-in-time compilation of C code in R', and
+lightweight C scripting workflows.")
+    (license license:gpl3+)))
 
 (define-public r-rtiktoken
   (package
@@ -18948,13 +18976,13 @@ Ye (2024)<doi:10.48550/@code{arXiv.2306.10213>}.")
 (define-public r-robincar
   (package
     (name "r-robincar")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobinCar" version))
        (sha256
-        (base32 "0qmdn9q7yyp3xn4s6lfjafh701ib84pvfq7sizgsd2kkr41l8rnx"))))
+        (base32 "0n3p35lfvwyqvkk16i44b4m5q05sl0cj7mndzjc1gg5by3h1appj"))))
     (properties `((upstream-name . "RobinCar")))
     (build-system r-build-system)
     (arguments
@@ -27844,32 +27872,34 @@ knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents."
 (define-public r-rilostat
   (package
     (name "r-rilostat")
-    (version "2.3.4")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rilostat" version))
        (sha256
-        (base32 "1lqg8s6bfh7y0a73swjfibj44f4ab1pbqwqdmqi4k28xgdx2m0kr"))))
+        (base32 "05g21c856dzwj1473xchicjbv5vvsychcwb9zyd9cnpm2dbfc04i"))))
     (properties `((upstream-name . "Rilostat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
                              r-stringr
+                             r-rlang
                              r-readr
-                             r-plyr
                              r-httr2
                              r-haven
                              r-dplyr
                              r-data-table))
     (home-page "https://ilostat.github.io/Rilostat/")
-    (synopsis "R Interface to ILOSTAT Open Data")
+    (synopsis "Access and Manipulation of ILOSTAT Labour Statistics")
     (description
-     "This package provides tools to access, search, and manipulate ILO's ilostat
-database, including bulk download of statistical data, dictionary lookups, and
-table of contents.")
+     "This package provides functions to access and manipulate data from the ILOSTAT
+database <https://ilostat.ilo.org>, the International Labour Organization's
+repository of labour statistics.  Supports bulk download of datasets, metadata
+retrieval, and tools for filtering, reshaping, and analysing data.")
     (license license:bsd-2)))
 
 (define-public r-riingo
