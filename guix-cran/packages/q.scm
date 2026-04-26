@@ -3375,13 +3375,13 @@ chromatography (TLC) plates.")
 (define-public r-qtl2pleio
   (package
     (name "r-qtl2pleio")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtl2pleio" version))
        (sha256
-        (base32 "0az71vgj1gv7rfz0hnc9rysh49ak2pnkvmih5mwmymr4an84c34k"))))
+        (base32 "1rhk8vi07c2sdzhqpj6y9iwcyna4sif72rfcfdvin5igrk9phnwj"))))
     (properties `((upstream-name . "qtl2pleio")))
     (build-system r-build-system)
     (arguments
@@ -3396,17 +3396,15 @@ chromatography (TLC) plates.")
                              r-ggplot2
                              r-gemma2
                              r-dplyr))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/fboehm/qtl2pleio")
     (synopsis "Testing Pleiotropy in Multiparental Populations")
     (description
      "We implement an adaptation of Jiang & Zeng's (1995)
-<https://www.genetics.org/content/140/3/1111> likelihood ratio test for testing
-the null hypothesis of pleiotropy against the alternative hypothesis, two
-separate quantitative trait loci.  The test differs from that in Jiang & Zeng
-(1995) <https://www.genetics.org/content/140/3/1111> and that in Tian et al.
-(2016) <doi:10.1534/genetics.115.183624> in that our test accommodates
-multiparental populations.")
+<doi:10.1093/genetics/140.3.1111> likelihood ratio test for testing the null
+hypothesis of pleiotropy against the alternative hypothesis, two separate
+quantitative trait loci.  The test differs from that in Jiang & Zeng (1995) and
+that in Tian et al. (2016) <doi:10.1534/genetics.115.183624> in that our test
+accommodates multiparental populations.")
     (license license:expat)))
 
 (define-public r-qtl2pattern

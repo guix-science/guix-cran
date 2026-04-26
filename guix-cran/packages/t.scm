@@ -5628,13 +5628,13 @@ determine a good training set and its size.")
 (define-public r-tsdf
   (package
     (name "r-tsdf")
-    (version "1.1-8")
+    (version "1.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsdf" version))
        (sha256
-        (base32 "00s0aiis88611xsq9px61f9gwprp803wcvi5milvc7qckrh1kw0z"))))
+        (base32 "13aw0kdqfr6va2hbi4fxlxl6ga46l9gljpbhqlg9g5pk0gfn596b"))))
     (properties `((upstream-name . "tsdf")))
     (build-system r-build-system)
     (arguments
@@ -5644,10 +5644,11 @@ determine a good training set and its size.")
     (home-page "https://cran.r-project.org/package=tsdf")
     (synopsis "Two-/Three-Stage Designs for Phase 1&2 Clinical Trials")
     (description
-     "Calculate optimal Zhong's two-/three-stage Phase II designs (see Zhong (2012)
-<doi:10.1016/j.cct.2012.07.006>).  Generate Target Toxicity decision table for
-Phase I dose-finding (two-/three-stage).  This package also allows users to run
-dose-finding simulations based on customized decision table.")
+     "Calculates Zhong's optimal two-/three-stage Phase II designs for single-arm
+trials, generates target-toxicity decision tables for two-/three-stage Phase I
+dose-finding, and supports dose-finding simulations using custom decision
+tables.  The Phase II design is based on Zhong (2012)
+<doi:10.1016/j.cct.2012.07.006>.")
     (license license:gpl2)))
 
 (define-public r-tsdeeplearning

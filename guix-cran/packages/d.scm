@@ -24066,13 +24066,13 @@ via the Delta method, which can account for within-user correlation.")
 (define-public r-deltaplotr
   (package
     (name "r-deltaplotr")
-    (version "1.6")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deltaPlotR" version))
        (sha256
-        (base32 "15vjg3viyfrxvvh34p8i7j8p0vpg5628g8198adhi0i2ri3ygz9a"))))
+        (base32 "0lgipalayjlwngn5saxj1la9aszk92zhvgypwa0abrszhbp9z97k"))))
     (properties `((upstream-name . "deltaPlotR")))
     (build-system r-build-system)
     (arguments
@@ -33220,13 +33220,13 @@ and discrete Laplacian distributions see Canonne et al. (2020)
 (define-public r-dann
   (package
     (name "r-dann")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dann" version))
        (sha256
-        (base32 "0bi2xwl27lwnmqmb2m2drqz0qk83wf4kk9jc8fkin35z2mj0znki"))))
+        (base32 "131rsl0g83lbvjq7c85hpqz73nrdcllm0ifscnhwz3cxqkh842dk"))))
     (properties `((upstream-name . "dann")))
     (build-system r-build-system)
     (arguments
@@ -33237,8 +33237,6 @@ and discrete Laplacian distributions see Canonne et al. (2020)
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
-                             r-purrr
-                             r-mass
                              r-hardhat
                              r-ggplot2
                              r-fpc))

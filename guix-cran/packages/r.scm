@@ -30053,13 +30053,13 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "0d4g5bjpx72fqc3xzb3rlw490bvp5rpnijirs51m4zr7mkjjfv4d"))))
+        (base32 "011gakc27ixbflw33fs1r67m7dg1h3rz16fqb51avavdgfdmnlk9"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (arguments
@@ -30067,23 +30067,23 @@ still permitting the use of GRASS 7'.")
       #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rlang
-                             r-patchwork
                              r-lifecycle
                              r-igraph
-                             r-gtable
                              r-ggrastr
-                             r-ggplot2
-                             r-cowplot
-                             r-circlize))
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sysbiolab/RGraphSpace")
     (synopsis "Lightweight Interface Between 'igraph' and 'ggplot2' Graphics")
     (description
-     "Interface to integrate igraph and ggplot2 graphics in a normalized coordinate
-system.  R@code{GraphSpace} implements new geometric objects using ggplot2
-prototypes, customized for side-by-side visualization of multiple graphs.  By
-scaling shapes and graph elements, R@code{GraphSpace} helps to create layered
-visualizations that stay coherent across multiple graphs.")
+     "An interface to integrate igraph and ggplot2 graphics within a normalized
+coordinate system.  R@code{GraphSpace} implements geometric objects based on
+ggplot2 prototypes, optimized for the representation of large networks.  The
+package provides three specialized geoms to translate graph data into geometric
+layers, supporting customization of aesthetics and visual styles.  These geoms
+use a dual-anchor normalization approach to align layers, required for analyses
+where network elements must be referenced to a spatial map.  R@code{GraphSpace}
+aims to facilitate side-by-side visualization of multiple graphs spatially
+aligned with reference maps and images.")
     (license license:artistic2.0)))
 
 (define-public r-rgraphics
@@ -49368,13 +49368,13 @@ president quotes.")
 (define-public r-rcoregage
   (package
     (name "r-rcoregage")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rCoreGage" version))
        (sha256
-        (base32 "1a4alghm3091csdfzcv89pw85xwcrzrbysdaylci6rph2qhbay3x"))))
+        (base32 "0pmkq8p42ysqj8rzlnins1srb4riyf1i5jv9q95pqqizl6s98cyq"))))
     (properties `((upstream-name . "rCoreGage")))
     (build-system r-build-system)
     (arguments

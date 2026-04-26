@@ -9627,13 +9627,13 @@ functions in this package are designed to be used with pipes.")
 (define-public r-listo
   (package
     (name "r-listo")
-    (version "0.6.5")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LISTO" version))
        (sha256
-        (base32 "11mkbxd7wljr9frry0qmwrs9cwdmdx4l22yn7q9b87mb1zywwh0j"))))
+        (base32 "1gh1c3g9lkh4bb2w722yyrwy6m5p0rg23sjfcwqlbm47q856whl0"))))
     (properties `((upstream-name . "LISTO")))
     (build-system r-build-system)
     (arguments
@@ -9647,10 +9647,11 @@ functions in this package are designed to be used with pipes.")
 on lists comprising sets of strings (such as lists of gene sets) described in
 Stoica (2023)
 <https://ora.ox.ac.uk/objects/uuid:b0847284-a02f-47ee-88e3-a3c4e0cdb8b1>.  It
-can assess overlaps of pair of sets of strings selected from the same universe
-or from different universes, and overlaps of triplets of sets of strings
-selected from the same universe.  Designed for single-cell RNA-sequencing data
-analysis applications, but suitable for other purposes as well.")
+can assess overlaps of pairs of sets of strings selected either from the same
+universe or from different universes, and overlaps of triplets of sets of
+strings selected from the same universe.  Designed for single-cell
+RNA-sequencing data analysis applications, but suitable for other purposes as
+well.")
     (license license:expat)))
 
 (define-public r-listcompr
@@ -20008,13 +20009,13 @@ Greenland, 2014; <doi:10.1093/aje/kwt245>).")
 (define-public r-lakhesis
   (package
     (name "r-lakhesis")
-    (version "0.0.1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lakhesis" version))
        (sha256
-        (base32 "0jbzzpvqid3samq90m3d8p0ac2cfh1qaqiglr19xpzlif63sl34y"))))
+        (base32 "10ll1z1wqblc2fdh1l68wy2akzjf45lahiw9zppz151mh9by6hng"))))
     (properties `((upstream-name . "lakhesis")))
     (build-system r-build-system)
     (arguments
@@ -20024,9 +20025,12 @@ Greenland, 2014; <doi:10.1093/aje/kwt245>).")
                              r-shiny
                              r-readr
                              r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
                              r-ggplot2
                              r-ca
                              r-bslib))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lakhesis")
     (synopsis "Consensus Seriation for Binary Data")
     (description

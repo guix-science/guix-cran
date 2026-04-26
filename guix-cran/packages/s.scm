@@ -15545,13 +15545,13 @@ assessed employing STB-methodology.")
 (define-public r-statuser
   (package
     (name "r-statuser")
-    (version "0.1.9")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statuser" version))
        (sha256
-        (base32 "00m0p13wbk55fnwjcvnci1gwis9gz0ii4nw38qhaxbxld57klbdy"))))
+        (base32 "0aw0w0glhr5kjsjcv761mwvx9lg36z2n9wmb0jql045pg49d8r77"))))
     (properties `((upstream-name . "statuser")))
     (build-system r-build-system)
     (arguments
@@ -15560,9 +15560,9 @@ assessed employing STB-methodology.")
     (propagated-inputs (list r-sandwich
                              r-rsvg
                              r-mgcv
+                             r-marginaleffects
                              r-magick
-                             r-lmtest
-                             r-labelled))
+                             r-lmtest))
     (home-page "https://cran.r-project.org/package=statuser")
     (synopsis "Statistical Tools Designed for End Users")
     (description
@@ -60793,13 +60793,13 @@ clustering and imputation simultaneously.")
 (define-public r-sensortowerr
   (package
     (name "r-sensortowerr")
-    (version "0.9.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensortowerR" version))
        (sha256
-        (base32 "1qlb8rxwfmkigidw4sqcqcz5hn1mr55v4qj280xyllpdik3vrjc9"))))
+        (base32 "0nsc1pv3imbshhhn2zbymmsg5hrazpiardqns0h967dr1h3j8x90"))))
     (properties `((upstream-name . "sensortowerR")))
     (build-system r-build-system)
     (arguments
@@ -60818,18 +60818,18 @@ clustering and imputation simultaneously.")
                              r-glue
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sensortowerR")
+    (home-page "https://github.com/econosopher/sensortowerR")
     (synopsis "Interface to 'Sensor Tower' Mobile App Intelligence API")
     (description
      "Interface to the Sensor Tower API
 <https://app.sensortower.com/api/docs/app_analysis> for mobile app analytics and
-market intelligence.  Provides functions to retrieve app metadata, publisher
-information, download and revenue estimates, active user metrics, category
-rankings, and market trends.  The package includes data processing utilities to
-clean and aggregate metrics across platforms, automatic app name resolution, and
-tools for generating professional analytics dashboards.  Supports both
-@code{iOS} and Android app ecosystems with unified data structures for
-cross-platform analysis.")
+market intelligence.  Provides a small, consistent set of functions to retrieve
+app metadata, publisher information, download and revenue estimates, active user
+metrics, category rankings, and market trends.  Four core verbs ('st_metrics',
+st_rankings', st_app'/'st_apps', st_filter') cover the common workflows with
+standardized parameters and tidyverse-friendly output.  Supports both @code{iOS}
+and Android app ecosystems with unified data structures for cross-platform
+analysis.")
     (license license:expat)))
 
 (define-public r-sensominer
@@ -67560,13 +67560,13 @@ Scryfall card data API <https://scryfall.com/docs/api>.")
 (define-public r-scrutr
   (package
     (name "r-scrutr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scrutr" version))
        (sha256
-        (base32 "1p524g9p243pzgpqrznp25r0ipcgfgsnf7sbzlxjdqk60rna7rs9"))))
+        (base32 "0iyg17bs51k4jgpw3hg3ml1s8hbbkzz4px0692v1hv825p63as4c"))))
     (properties `((upstream-name . "scrutr")))
     (build-system r-build-system)
     (arguments
@@ -72210,13 +72210,13 @@ using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
 (define-public r-scaledescr
   (package
     (name "r-scaledescr")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scaledescr" version))
        (sha256
-        (base32 "038gdc9m3q8hr7x9xwszxsfdbf9kj9g7c0smng39j5q6r5jaj9jr"))))
+        (base32 "1bvl54pxji16hcinp7fx9vg7sj96w2n6qbsgncv9dcb8vdk6nd06"))))
     (properties `((upstream-name . "scaledescr")))
     (build-system r-build-system)
     (arguments
@@ -72228,6 +72228,7 @@ using the methods described in Goldstein, H., Harron, K. and Cortina-Borja, M.
                              r-psych
                              r-openxlsx
                              r-officer
+                             r-lavaan
                              r-gtsummary
                              r-flextable
                              r-dplyr))
@@ -76274,13 +76275,13 @@ Dahl, Johnson, MÃ¼ller (2022) <doi:10.1080/10618600.2022.2069779>.")
 (define-public r-salmonmse
   (package
     (name "r-salmonmse")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salmonMSE" version))
        (sha256
-        (base32 "1ss6541i0rj3cdgrnfx4r4j2j94rhd0yscv18i8h2ra941z6qyv4"))))
+        (base32 "19hcwnk65f6qg2ynck5nj9d7zri2q94ybrg14f8y4iw4izqwv2yw"))))
     (properties `((upstream-name . "salmonMSE")))
     (build-system r-build-system)
     (arguments

@@ -12836,6 +12836,30 @@ body.  Messages can be sent through an SMTP server, through the Posit Connect
 service, or through the Mailgun API service <https://www.mailgun.com/>.")
     (license license:expat)))
 
+(define-public r-blaster
+  (package
+    (name "r-blaster")
+    (version "1.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blaster" version))
+       (sha256
+        (base32 "13q0iwqf6mb7jc1w4i7v3plwy77zyvkjpsp8mayw5xpn6lc69pks"))))
+    (properties `((upstream-name . "blaster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/tamminenlab/blaster")
+    (synopsis "Native R Implementation of an Efficient BLAST-Like Algorithm")
+    (description
+     "Implementation of an efficient BLAST-like sequence comparison algorithm, written
+in C++11 and using native R datatypes.  Blaster is based on nsearch - Schmid et
+al (2018) <doi:10.1101/399782>.")
+    (license license:bsd-3)))
+
 (define-public r-blapsr
   (package
     (name "r-blapsr")

@@ -1538,13 +1538,13 @@ port of the original code published in the early 1990's by Steven Fortune.")
 (define-public r-voronoibiomedplot
   (package
     (name "r-voronoibiomedplot")
-    (version "0.3")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VoronoiBiomedPlot" version))
        (sha256
-        (base32 "19qsv54d6srdwqyf354ak134x595s5r1aarxxhpwz71d5kpzv79h"))))
+        (base32 "0l8h90axgimaf0snyvizw9zbwybsi1r9qjdy4jbnz9wjvqgyl0wx"))))
     (properties `((upstream-name . "VoronoiBiomedPlot")))
     (build-system r-build-system)
     (arguments
@@ -1558,9 +1558,9 @@ port of the original code published in the early 1990's by Steven Fortune.")
 Voronoi tesselation plots, and combined ellipse-Voronoi plots.  Designed to
 visualize class separation in 2D data, raw of from projection techniques like
 principal component analysis (PCA), partial least squares discriminant analysis
-(PLS-DA) or others.  For more details see Lotsch and Kringel (2026) and Lotsch
-and Ultsch (2024) <doi:10.1016/j.imu.2024.101573>.")
-    (license license:gpl3)))
+(PLS-DA) or others.  For more details see Lotsch and Kringel (2026) and Lotsch,
+J., and Kringel, D. (2026) <doi:10.1371/journal.pone.0333653>.")
+    (license license:gpl3+)))
 
 (define-public r-volumodel
   (package

@@ -8884,13 +8884,13 @@ Regression?\"<doi:10.1177/25152459251407860>.")
 (define-public r-inteq
   (package
     (name "r-inteq")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inteq" version))
        (sha256
-        (base32 "16a9qvrsskz61y9qj5spqpffm5a8y9ziyszki5nznj98805r9474"))))
+        (base32 "1d419wh53q39rck7wv18dpjr842czbksm9sx1y23lzil6mcpmrvc"))))
     (properties `((upstream-name . "inteq")))
     (build-system r-build-system)
     (arguments
@@ -15690,13 +15690,13 @@ data modeling.")
 (define-public r-ilora
   (package
     (name "r-ilora")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILORA" version))
        (sha256
-        (base32 "1ip8r6dnyxd7j85bbdb6irbn2mqrjy9v3wlny6s3qhx09gc9hx5h"))))
+        (base32 "1b4r5vlarlv8m34k3j7xiaky0wn9pdlyg3nc3akslr7f35xvrzkf"))))
     (properties `((upstream-name . "ILORA")))
     (build-system r-build-system)
     (arguments
@@ -15717,15 +15717,15 @@ data modeling.")
                              r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ILORA")
-    (synopsis "'ILORA': Indian Alien Flora Information Database Retrieval")
+    (synopsis "Indian Alien Flora Information Database Retrieval")
     (description
-     "This package provides tools to access, query, and visualize species occurrence
-data from the ILORA package.  The package enables users to retrieve species
-names, explore available variables, and extract species-level data based on
-user-defined criteria.  It also supports exploratory data analysis and
-visualization to facilitate ecological and bio-geographical research.  Further
-details about the database are available at
-<https://ilora2020.wixsite.com/ilora2020>.")
+     "The Indian Alien Flora Information (ILORA) database contains 14
+invasion-relevant variables for 1388 alien plant species in India.  The package
+enables exploration of the database using user-defined criteria.  Using this
+package, users can retrieve variable-specific and species-level data from the
+database.  The package also supports exploratory data analysis and visualization
+to give users an idea of the variables of interest.  Further details about the
+database are available at <https://iloradb.wixsite.com/alienflora>.")
     (license license:expat)))
 
 (define-public r-ilabelled

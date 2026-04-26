@@ -23626,20 +23626,19 @@ regression and classification is supported.")
 (define-public r-plssem
   (package
     (name "r-plssem")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plssem" version))
        (sha256
-        (base32 "1436rf01dp5j9aizc0n603dxy75m6my56ib1s7pq7090119sas6p"))))
+        (base32 "0p4l46s7xrpfy713h06a6hla3sj3c49fszn9l9p8kbs18985ha5v"))))
     (properties `((upstream-name . "plssem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringr
-                             r-simdesign
                              r-rfast
                              r-reformulas
                              r-purrr
@@ -23648,8 +23647,8 @@ regression and classification is supported.")
                              r-matrixstats
                              r-lme4
                              r-lavaan
-                             r-collapse
-                             r-cli))
+                             r-fnn
+                             r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kss2k/plssem")
     (synopsis "Complex Partial Least Squares Structural Equation Modeling")
@@ -23661,15 +23660,20 @@ categorical data, non-linear relations, and multilevel structures.  The
 implementation follows LohmÃ¶ller (1989) for the classic PLS-SEM algorithm,
 Dijkstra and Henseler (2015) for consistent PLSc-SEM, Dijkstra et al., (2014)
 for nonlinear PLSc-SEM, and Schuberth, Henseler, Dijkstra (2018) for ordinal
-PLS-SEM and PLSc-SEM. Additional extensions are under development.  References:
-LohmÃ¶ller, J.-B. (1989, ISBN:9783790803002). \"Latent Variable Path Modeling
-with Partial Least Squares.\" Dijkstra, T. K., & Henseler, J. (2015).
-<doi:10.1016/j.jmva.2015.06.002>. \"Consistent partial least squares path
-modeling.\" Dijkstra, T. K., & Schermelleh-Engel, K. (2014).
-<doi:10.1016/j.csda.2014.07.008>. \"Consistent partial least squares for
-nonlinear structural equation models.\" Schuberth, F., Henseler, J., & Dijkstra,
-T. K. (2018). <doi:10.1007/s11135-018-0767-9>. \"Partial least squares path
-modeling using ordinal categorical indicators.\".")
+PLS-SEM and PLSc-SEM. Additional extensions are under development.  The
+MC-@code{OrdPLSc} algorithm, used to handle ordinal interaction models is
+detailed in Slupphaug et al., (2026).  References: LohmÃ¶ller, J.-B. (1989,
+ISBN:9783790803002). \"Latent Variable Path Modeling with Partial Least Squares.\"
+Dijkstra, T. K., & Henseler, J. (2015). <doi:10.1016/j.jmva.2015.06.002>.
+\"Consistent partial least squares path modeling.\" Dijkstra, T. K., &
+Schermelleh-Engel, K. (2014). <doi:10.1016/j.csda.2014.07.008>. \"Consistent
+partial least squares for nonlinear structural equation models.\" Schuberth, F.,
+Henseler, J., & Dijkstra, T. K. (2018). <doi:10.1007/s11135-018-0767-9>.
+\"Partial least squares path modeling using ordinal categorical indicators.\"
+Slupphaug, K. Mehmetoglu, M. & Mittner, M. (2026).
+<doi:10.31234/osf.io/fwzj6_v1>. \"Consistent Estimates from Biased Estimators:
+Monte-Carlo Consistent Partial Least Squares for Latent Interaction Models with
+Ordinal Indicators.\".")
     (license license:gpl3)))
 
 (define-public r-plsrglm
@@ -42013,13 +42017,13 @@ robust to parameter perturbations.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "1ph9ggsy5qy6qdc7vm93mldjd8lp4571rr6ynwbmhafwr8bgfiq6"))))
+        (base32 "1cazdg4kllk6q8k8171bbndlqzasv9lwlysdnwdbcgbc5szxd9zy"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (arguments
@@ -42028,6 +42032,7 @@ robust to parameter perturbations.")
     (propagated-inputs (list r-scales
                              r-rgraphspace
                              r-rann
+                             r-patchwork
                              r-lifecycle
                              r-igraph
                              r-ggrepel
@@ -42040,14 +42045,15 @@ robust to parameter perturbations.")
      "For a given graph containing vertices, edges, and a signal associated with the
 vertices, the @code{PathwaySpace} package performs a convolution operation,
 which involves a weighted combination of neighboring vertices and their
-associated signals.  The package then uses a decay function to project these
-signals, creating geodesic paths on a 2D-image space. @code{PathwaySpace} could
-have various applications, such as visualizing network data in a graphical
-format that highlights the relationships and signal strengths between vertices.
-It can be particularly useful for understanding the influence of signals through
-complex networks.  By combining graph theory, signal processing, and
-visualization, the @code{PathwaySpace} package provides a novel way of
-representing graph data.")
+associated signals.  The package uses a decay function to project these signals,
+creating geodesic paths on a 2D-image space. @code{PathwaySpace} has various
+applications, such as visualizing network data in a graphical format that
+highlights the relationships and signal strengths between vertices.  By
+combining graph theory, signal processing, and visualization,
+@code{PathwaySpace} provides a way of representing graph data on a continuous
+projection space.  Based on methods introduced in Tercan et al. (2025)
+<doi:10.1016/j.xpro.2025.103681> and Ellrott et al. (2025)
+<doi:10.1016/j.ccell.2024.12.002>.")
     (license license:artistic2.0)))
 
 (define-public r-pathviewr

@@ -8158,13 +8158,13 @@ stochastic invariability.  Figueiredo et al. (2025) <doi:10.32942/X2M053>.")
 (define-public r-estadistica
   (package
     (name "r-estadistica")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estadistica" version))
        (sha256
-        (base32 "0j3ahz8g9k3y31kiki5w2xv8mcg8hj0n5ijrc5rfwr6xcd3hiji5"))))
+        (base32 "1ng7z8fj1ziz17h825lz5a45il7v1h395s80bkc9yzjhxvr8z0pv"))))
     (properties `((upstream-name . "estadistica")))
     (build-system r-build-system)
     (arguments

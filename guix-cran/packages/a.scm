@@ -3972,13 +3972,13 @@ Deep Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "0.4.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "attachment" version))
        (sha256
-        (base32 "02gg8ak70y7sqxmrf3y7gq107p15v6mnhbkmi3i17g7bmwkpwpkg"))))
+        (base32 "053zaj7fhkvf5aiiyavgnnaczm6fcavwwx1498ga28lznr22354w"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
     (arguments
@@ -16095,13 +16095,13 @@ estuarine and coastal environments\" <doi:10.1016/S0025-326X(00)00061-8>.")
 (define-public r-ambiorix
   (package
     (name "r-ambiorix")
-    (version "2.2.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ambiorix" version))
        (sha256
-        (base32 "0my6vc237xfggmxdg6wr5i7wa1zhf9q2lh1xkxnhqhcsyx7y8s6x"))))
+        (base32 "0g0ag6inw4dksn220xq3flx2j57p07l342q2cyjmia9m91pic4l9"))))
     (properties `((upstream-name . "ambiorix")))
     (build-system r-build-system)
     (arguments
@@ -16109,10 +16109,11 @@ estuarine and coastal environments\" <doi:10.1016/S0025-326X(00)00061-8>.")
       #:tests? #f))
     (propagated-inputs (list r-yyjsonr
                              r-webutils
+                             r-promises
+                             r-mime
                              r-log
                              r-httpuv
                              r-glue
-                             r-fs
                              r-cli
                              r-assertthat))
     (home-page "https://github.com/ambiorix-web/ambiorix")
@@ -19896,13 +19897,13 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "0nhm7pmp5macca3vy993w0vhdlififk2r811i1lrrcmxzrkgfv5y"))))
+        (base32 "04ai4m5yz134mfc14al5ppy29r1pk73gichddwfa5smpch8m6xhl"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments

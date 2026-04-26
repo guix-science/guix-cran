@@ -10934,13 +10934,13 @@ comprehensive guide, additional applications, and detailed examples, see
 (define-public r-mschart
   (package
     (name "r-mschart")
-    (version "0.4.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mschart" version))
        (sha256
-        (base32 "0w0x4vlrndyrr1zn74yh8m8x19v178ms9szarj2v6amlz6ri3zg8"))))
+        (base32 "11ihbdj4k5p3sgnwq0gqy0ipng2x69c63x4c2l01sr45kywrjc26"))))
     (properties `((upstream-name . "mschart")))
     (build-system r-build-system)
     (arguments
@@ -10955,14 +10955,14 @@ comprehensive guide, additional applications, and detailed examples, see
                              r-cellranger))
     (home-page "https://ardata-fr.github.io/officeverse/")
     (synopsis
-     "Chart Generation for 'Microsoft Word' and 'Microsoft PowerPoint' Documents")
+     "Chart Generation for 'Microsoft Word', 'Microsoft Excel' and 'Microsoft PowerPoint' Documents")
     (description
-     "Create native charts for Microsoft @code{PowerPoint} and Microsoft Word
-documents.  These can then be edited and annotated.  Functions are provided to
-let users create charts, modify and format their content.  The chart's
-underlying data is automatically saved within the Word document or
-@code{PowerPoint} presentation.  It extends package officer that does not
-contain any feature for Microsoft native charts production.")
+     "Create native charts for Microsoft @code{PowerPoint}', Microsoft Excel and
+Microsoft Word documents.  The resulting charts can then be edited and annotated
+in the host application.  It provides functions to create charts and to modify
+their content and formatting.  The chart's underlying data is automatically
+saved within the Word', Excel or @code{PowerPoint} file.  It extends the officer
+package, which does not provide native Microsoft chart production.")
     (license license:expat)))
 
 (define-public r-msce
@@ -12575,13 +12575,13 @@ precision matrix and a sparse estimator of the regression coefficient matrix.")
 (define-public r-mrc
   (package
     (name "r-mrc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mRc" version))
        (sha256
-        (base32 "0gl1kxyx2i1c5b3fpa34xxh5zcsmsj6z0b6vxaypzdjns4v7104p"))))
+        (base32 "171vcarkxis0ydhl9xmyvk9rsnjgqmbszbxx2rbbzr9h6k22y9b0"))))
     (properties `((upstream-name . "mRc")))
     (build-system r-build-system)
     (arguments
