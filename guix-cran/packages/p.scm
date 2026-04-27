@@ -8189,19 +8189,24 @@ Decision Analysis (MCDA) process involving multiple criteria, by PROMETHEE
 (define-public r-prome
   (package
     (name "r-prome")
-    (version "4.0.0.3")
+    (version "4.0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prome" version))
        (sha256
-        (base32 "1p0kq0l8g88450wcw6k75ligrwh249h5276q6simxz834wvig0xx"))))
+        (base32 "140bd972m1r0l8g910vd1kwys05ygl3qgk9sy1fr8qvf5bxf24zc"))))
     (properties `((upstream-name . "prome")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stanheaders r-rstan r-rcppeigen r-rcpp))
+    (propagated-inputs (list r-stanheaders
+                             r-rstan
+                             r-rcppeigen
+                             r-rcpp
+                             r-bridgesampling
+                             r-bi))
     (home-page "https://cran.r-project.org/package=prome")
     (synopsis "Patient-Reported Outcome Data Analysis with Stan")
     (description
@@ -42771,32 +42776,6 @@ distributions.")
 multilevel linear mixed effect models with one or more than one independent
 populations.  Laird, Nan M. and Ware, James H. (1982) <doi:10.2307/2529876>.")
     (license license:gpl3)))
-
-(define-public r-pasensewear
-  (package
-    (name "r-pasensewear")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PASenseWear" version))
-       (sha256
-        (base32 "0x84j1vdds4g08birmjxb0c2g1ahwv83bk11532jkmg32dnhmj58"))))
-    (properties `((upstream-name . "PASenseWear")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=PASenseWear")
-    (synopsis
-     "Summarize Daily Physical Activity from 'SenseWear' Accelerometer Data")
-    (description
-     "Provide summary table of daily physical activity and per-person/grouped heat map
-for accelerometer data from @code{SenseWear} Armband.  See
-<https://templehealthcare.wordpress.com/the-sensewear-armband/> for more
-information about @code{SenseWear} Armband.")
-    (license license:gpl2)))
 
 (define-public r-pasadr
   (package

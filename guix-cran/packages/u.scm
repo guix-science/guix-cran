@@ -4974,37 +4974,6 @@ the treated) with possibly unobserved confounding introduced in Genbaeck, M., de
 Luna, X. (2018) <doi:10.1111/biom.13001>.")
     (license license:gpl2)))
 
-(define-public r-uhmm
-  (package
-    (name "r-uhmm")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "uHMM" version))
-       (sha256
-        (base32 "1516ipadxi7rc1dbinr5rva2fbcr5i2zg3rlli5wy7r6naf8fzzl"))))
-    (properties `((upstream-name . "uHMM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tkrplot
-                             r-tcltk2
-                             r-hmm
-                             r-factominer
-                             r-corrplot
-                             r-clvalid
-                             r-cluster
-                             r-class
-                             r-chron))
-    (home-page "https://cran.r-project.org/package=uHMM")
-    (synopsis "Construct an Unsupervised Hidden Markov Model")
-    (description
-     "Construct a Hidden Markov Model with states learnt by unsupervised
-classification.")
-    (license license:gpl2+)))
-
 (define-public r-uhm
   (package
     (name "r-uhm")

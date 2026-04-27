@@ -3251,13 +3251,13 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 (define-public r-htgm3d
   (package
     (name "r-htgm3d")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HTGM3D" version))
        (sha256
-        (base32 "0571lkmm2gf3ps17dsbcyw4yn1zbic519y5qx8ihqb1lhfyhgg91"))))
+        (base32 "1msmhb1qzkb2bg2jwdxq5fd2ycvb1dsa5xx6cczmpbag31y0q54c"))))
     (properties `((upstream-name . "HTGM3D")))
     (build-system r-build-system)
     (arguments
@@ -6126,30 +6126,32 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
 (define-public r-hmrc
   (package
     (name "r-hmrc")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmrc" version))
        (sha256
-        (base32 "105vg52sdcpi6imbli7zhmiviq5r77a8pzl6fihshf52mmqcyp10"))))
+        (base32 "0p3q883xfjdsl1lvzlk4cvpa9vw092zm2cf2fxcpx9a1sh2maw58"))))
     (properties `((upstream-name . "hmrc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readxl r-readods r-httr2 r-cli))
+    (propagated-inputs (list r-readxl r-readods r-lifecycle r-httr2 r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/charlescoverdale/hmrc")
+    (home-page "https://charlescoverdale.github.io/hmrc/")
     (synopsis "Download and Tidy 'HMRC' Statistical Data")
     (description
      "This package provides functions to download, parse, and tidy statistical data
-published by HM Revenue and Customs ('HMRC') on GOV.UK'.  Covers monthly tax
-receipts (41 tax heads from 2016), VAT (from 1973), fuel duties (from 1990),
-tobacco duties (from 1991), annual Corporation Tax receipts, stamp duty,
-research and development tax credit statistics (from 2000), tax gap estimates,
-Income Tax liabilities by income range, and monthly property transaction counts.
- File URLs are resolved at runtime via the GOV.UK Content API
+published by HM Revenue and Customs ('HMRC') on GOV.UK'.  Returns annotated
+hmrc_tbl data frames with provenance metadata (source URL, fetch time, vintage,
+cell methods) for reproducible fiscal research.  Covers monthly tax receipts (41
+tax heads from 2008), VAT (from 1973), fuel duties (from 1990), tobacco duties
+(from 1991), annual Corporation Tax receipts, stamp duty, research and
+development tax credit statistics (from 2000), tax gap estimates, Income Tax
+liabilities by income range, and monthly property transaction counts.  File URLs
+are resolved at runtime via the GOV.UK Content API
 <https://www.gov.uk/api/content>, so data is always current without hardcoded
 URLs.  Files are cached locally between sessions.")
     (license license:expat)))
@@ -8388,29 +8390,6 @@ threshold values.  The functions methodology is based on by Sonabend et al
 (2021) <doi:10.1093/bioinformatics/btab039> and Bhattacharjee et al (2021)
 <@code{arXiv:2012.02102>}.")
     (license license:gpl3)))
-
-(define-public r-highmean
-  (package
-    (name "r-highmean")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "highmean" version))
-       (sha256
-        (base32 "1lq7z0l1737j4wvsy7951405afylyywp7vf2i7girzh459fdfzpc"))))
-    (properties `((upstream-name . "highmean")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-mnormt r-mass))
-    (home-page "https://cran.r-project.org/package=highmean")
-    (synopsis "Two-Sample Tests for High-Dimensional Mean Vectors")
-    (description
-     "This package provides various tests for comparing high-dimensional mean vectors
-in two sample populations.")
-    (license license:gpl2+)))
 
 (define-public r-highlightr
   (package

@@ -3962,32 +3962,6 @@ method is described in Briet OJT, Amerasinghe PH, and Vounatsou P (2013)
 <doi:10.1371/journal.pone.0065761>.")
     (license license:gpl2+)))
 
-(define-public r-gsaq
-  (package
-    (name "r-gsaq")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GSAQ" version))
-       (sha256
-        (base32 "1p1rab2dlh4h9bfg464nhx708p7kc4q01ifccdh5756lq1qh2kzv"))))
-    (properties `((upstream-name . "GSAQ")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=GSAQ")
-    (synopsis "Gene Set Analysis with QTL")
-    (description
-     "Computation of Quantitative Trait Loci hits in the selected gene set.
-Performing gene set validation with Quantitative Trait Loci information.
-Performing gene set enrichment analysis with available Quantitative Trait Loci
-data and computation of statistical significance value from gene set analysis.
-Obtaining the list of Quantitative Trait Loci hit genes along with their
-overlapped Quantitative Trait Loci names.")
-    (license license:gpl2+)))
-
 (define-public r-gsaot
   (package
     (name "r-gsaot")
@@ -13830,13 +13804,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "14zz8ib2s85h2bf3ifc316p1ka34zccbis6vyx1zib18kv0jba1d"))))
+        (base32 "1h0wmz10z993ysir0nlkk00bdwwqdhgpzrg8x1sh0pszn0f5d6bd"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments

@@ -35009,38 +35009,6 @@ analysis.  The data is obtained from the Central Bank of Brazil API:
 <https://api.bcb.gov.br/dados/serie/bcdata.sgs.{series_code}/dados?formato=json&@code{dataInicial={start_date}&dataFinal={end_date}>}.")
     (license license:expat)))
 
-(define-public r-bacct
-  (package
-    (name "r-bacct")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BACCT" version))
-       (sha256
-        (base32 "0bpm4l27vbblzi2hhfbjw2af3ic2jbnyghkvchpq8ww43k8068iv"))))
-    (properties `((upstream-name . "BACCT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjags r-reshape2 r-ggplot2))
-    (home-page "https://cran.r-project.org/package=BACCT")
-    (synopsis "Bayesian Augmented Control for Clinical Trials")
-    (description
-     "This package implements the Bayesian Augmented Control (BAC, a.k.a.  Bayesian
-historical data borrowing) method under clinical trial setting by calling Just
-Another Gibbs Sampler ('JAGS') software.  In addition, the BACCT package
-evaluates user-specified decision rules by computing the type-I error/power, or
-probability of correct go/no-go decision at interim look.  The evaluation can be
-presented numerically or graphically.  Users need to have JAGS 4.0.0 or newer
-installed due to a compatibility issue with rjags package.  Currently, the
-package implements the BAC method for binary outcome only.  Support for
-continuous and survival endpoints will be added in future releases.  We would
-like to thank @code{AbbVie's} Statistical Innovation group and Clinical
-Statistics group for their support in developing the BACCT package.")
-    (license license:gpl3+)))
-
 (define-public r-bacco
   (package
     (name "r-bacco")

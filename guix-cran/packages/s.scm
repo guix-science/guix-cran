@@ -27514,30 +27514,6 @@ data are obtained through the Google Earth Engine service
 (<https://earthengine.google.com/>) and used as a source of spectral data.")
     (license license:gpl3)))
 
-(define-public r-spectralmap
-  (package
-    (name "r-spectralmap")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpectralMap" version))
-       (sha256
-        (base32 "15689023k9jzg3s7bx5m97dmn00z876amqhxsxksy8n8wf09wr57"))))
-    (properties `((upstream-name . "SpectralMap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scatterplot3d r-fields))
-    (home-page "https://cran.r-project.org/package=SpectralMap")
-    (synopsis "Diffusion Map and Spectral Map")
-    (description
-     "This package implements the diffusion map method of dimensionality reduction and
-spectral method of combining multiple diffusion maps, including creation of the
-spectra and visualization of maps.")
-    (license license:gpl2)))
-
 (define-public r-spectralgp
   (package
     (name "r-spectralgp")
@@ -60139,30 +60115,6 @@ endpoint problem).  The code can be used for a single active treatment versus
 control design and for a single-stage design.")
     (license license:gpl2)))
 
-(define-public r-seqalloc
-  (package
-    (name "r-seqalloc")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeqAlloc" version))
-       (sha256
-        (base32 "04rhr3gb2p9i35a3x4k8m0lv42ncfqlhx6sf3bq8yihppwrag8x3"))))
-    (properties `((upstream-name . "SeqAlloc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=SeqAlloc")
-    (synopsis "Sequential Allocation for Prospective Experiments")
-    (description
-     "Potential randomization schemes are prospectively evaluated when units are
-assigned to treatment arms upon entry into the experiment.  The schemes are
-evaluated for balance on covariates and on predictability (i.e., how well could
-a site worker guess the treatment of the next unit enrolled).")
-    (license license:gpl2)))
-
 (define-public r-seqalignr
   (package
     (name "r-seqalignr")
@@ -78251,31 +78203,6 @@ function callers across projects, discovers project dependency graphs, generates
 project briefings, and provides package introspection tools.  Designed for AI
 coding agents that need structured code understanding.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-saascnv
-  (package
-    (name "r-saascnv")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "saasCNV" version))
-       (sha256
-        (base32 "12h5vrl55sb4wmx0hzib5iax8p0q2qzk19h15r0asfkh9l7qz94l"))))
-    (properties `((upstream-name . "saasCNV")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rann r-dnacopy))
-    (home-page "https://zhangz05.u.hpc.mssm.edu/saasCNV/")
-    (synopsis
-     "Somatic Copy Number Alteration Analysis Using Sequencing and SNP Array Data")
-    (description
-     "Perform joint segmentation on two signal dimensions derived from total read
-depth (intensity) and allele specific read depth (intensity) for whole genome
-sequencing (WGS), whole exome sequencing (WES) and SNP array data.")
-    (license license:gpl2+)))
 
 (define-public r-s7schema
   (package

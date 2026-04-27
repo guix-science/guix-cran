@@ -17765,19 +17765,24 @@ Antonio Punzo, Angelo Mazza, and Paul D @code{McNicholas} (2018)
 (define-public r-containr
   (package
     (name "r-containr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "containr" version))
        (sha256
-        (base32 "1mr6df3y74f7lnhws4asy2id9l5kzgdqpba0hg4v2jpj0yyx02z7"))))
+        (base32 "0yy0lcpxjcznr7b11sd6na0j740550vh2fs7svprdj2g9v2n933r"))))
     (properties `((upstream-name . "containr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readr r-purrr r-httr r-glue r-dplyr))
+    (propagated-inputs (list r-readr
+                             r-purrr
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/erwinlares/containr")
     (synopsis "Containerize Your 'R' Project")
     (description

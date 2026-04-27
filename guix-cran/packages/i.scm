@@ -9101,26 +9101,6 @@ taking care of the effect due to a fingerprint feature and helps with several
 plots to better understand the analysis.")
     (license license:gpl3)))
 
-(define-public r-integratebs
-  (package
-    (name "r-integratebs")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IntegrateBs" version))
-       (sha256
-        (base32 "1pkx4wpahd1sabzx55law3710x3vbh9yi6kii8gs2xfq3cb1llmq"))))
-    (properties `((upstream-name . "IntegrateBs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=IntegrateBs")
-    (synopsis "Integration for B-Spline")
-    (description "Integrated B-spline function.")
-    (license license:gpl2)))
-
 (define-public r-integr
   (package
     (name "r-integr")

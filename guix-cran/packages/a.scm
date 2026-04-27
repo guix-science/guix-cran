@@ -15815,28 +15815,29 @@ on the source code (with permission) from Ram and Wickham (2015).")
 (define-public r-ameras
   (package
     (name "r-ameras")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ameras" version))
        (sha256
-        (base32 "123sm220xr65ifb9mh9wl77lvkjqmgxhzq6b71sr8pignbxdqpk2"))))
+        (base32 "09w60m18sz6fvd55gd3mx121azf2yvg73yzkk63bf0gfk5mwxz6w"))))
     (properties `((upstream-name . "ameras")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen
+    (propagated-inputs (list r-tidyselect
+                             r-rcppeigen
                              r-rcpp
                              r-numderiv
                              r-nimble
                              r-mvtnorm
-                             r-memoise
                              r-mcmcvis
+                             r-lifecycle
                              r-coda))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ameras")
+    (home-page "https://ameras.sanderroberti.com")
     (synopsis "Analyze Multiple Exposure Realizations in Association Studies")
     (description
      "Analyze association studies with multiple realizations of a noisy or uncertain
@@ -18752,13 +18753,13 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
 (define-public r-akin
   (package
     (name "r-akin")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akin" version))
        (sha256
-        (base32 "0m1gysn2xmv4q2hna04i5vwfz69f7skynvhj9f0k7bi9y577prsk"))))
+        (base32 "1fk5qisjpsipdgl640n9k9mwpyl8cx5ybasq2xp1305vns3saqcc"))))
     (properties `((upstream-name . "akin")))
     (build-system r-build-system)
     (arguments
@@ -18768,6 +18769,7 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
                              r-rcppalgos
                              r-matrix
                              r-listenv
+                             r-future-apply
                              r-fastmatch
                              r-data-table
                              r-callr))
@@ -18778,7 +18780,7 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
 large data files, data tiling, one-hot encoding and decoding of data tiles,
 stratified proportional (random or probabilistic) data sampling, data
 normalization and thresholding, substring location and commonalities inside
-strings and location and tabulation of amino acids, modifications or associated
+strings, and location and tabulation of amino acids, modifications or associated
 monoisotopic masses inside modified peptides.  The extractor utility implements
 code from Matrix.utils', Varrichio C (2020),
 <https://cran.r-project.org/package=Matrix.utils>.")

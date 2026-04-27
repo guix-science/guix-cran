@@ -5256,13 +5256,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "10.1.5")
+    (version "10.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "0qw2dypz5ap79879fqnxd2bd5gcq788g4dh2a4mjrdjd9xashvqv"))))
+        (base32 "1khr4g7hms3xghy8vpa6rayyhhvgq040p6y4bh4rskd3km6sa0ly"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -5292,7 +5292,7 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
                   expat
                   libarchive
                   cmake))
-    (propagated-inputs (list r-rcpp r-gmp))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list pkg-config esbuild))
     (home-page "https://github.com/mgondan/rswipl")
     (synopsis "Embed 'SWI'-'Prolog'")
@@ -9734,29 +9734,6 @@ transfer between R and @code{OpenRefine}'.  Available functionality includes
 project import, export and deletion.")
     (license license:gpl3)))
 
-(define-public r-rredshiftsql
-  (package
-    (name "r-rredshiftsql")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RRedshiftSQL" version))
-       (sha256
-        (base32 "03jbml8d19hcg6achnyc4hcnl5j10yvsx59j80r46zyn0flsnizq"))))
-    (properties `((upstream-name . "RRedshiftSQL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpostgresql r-dbi))
-    (home-page "https://cran.r-project.org/package=RRedshiftSQL")
-    (synopsis "R Interface to the 'Redshift' Database")
-    (description
-     "Superclasses @code{PostgreSQL} connection to help enable full dplyr
-functionality on Redshift'.")
-    (license license:gpl2)))
-
 (define-public r-rredlist
   (package
     (name "r-rredlist")
@@ -10969,13 +10946,13 @@ Lindy Hop and West Coast Swing dance contests.")
 (define-public r-rprotobuf
   (package
     (name "r-rprotobuf")
-    (version "0.4.26")
+    (version "0.4.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RProtoBuf" version))
        (sha256
-        (base32 "0a9a0fm0hy5r49xkk69c86b23ypq48bpb1ylwr79fck11zlrj31l"))))
+        (base32 "0nrbka7zl6drb6dmpfs2h3m6p47wnwbbyc6cl65wv5rcfzjn7wak"))))
     (properties `((upstream-name . "RProtoBuf")))
     (build-system r-build-system)
     (arguments
@@ -40140,29 +40117,6 @@ datasets.")
      "shiny extension that adds regular expression filtering capabilities to the
 choice vector of the select list.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-regexpipes
-  (package
-    (name "r-regexpipes")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "regexPipes" version))
-       (sha256
-        (base32 "1hk0rhvmgzcyf5cyl8hjznl3ll25kpasqikfr6nxd6ian2slvmmb"))))
-    (properties `((upstream-name . "regexPipes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=regexPipes")
-    (synopsis "Wrappers Around 'base::grep()' for Use with Pipes")
-    (description
-     "This package provides wrappers around @code{base::grep()} where the first
-argument is standardized to take the data object.  This makes it less of a pain
-to use regular expressions with magrittr or other pipe operators.")
-    (license license:gpl2+)))
 
 (define-public r-regenrf
   (package

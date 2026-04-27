@@ -14087,33 +14087,6 @@ carrying capacity, growth and mobility.  Multiple centres of origin with their
 respective starting times can be specified.")
     (license license:expat)))
 
-(define-public r-disparityfilter
-  (package
-    (name "r-disparityfilter")
-    (version "2.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "disparityfilter" version))
-       (sha256
-        (base32 "0dkk3qws631mf0g02di5rsrvh5954cykysyri0g8aqgik0j9dg06"))))
-    (properties `((upstream-name . "disparityfilter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph))
-    (home-page "https://github.com/alessandrobessi/disparityfilter")
-    (synopsis "Disparity Filter Algorithm for Weighted Networks")
-    (description
-     "The disparity filter algorithm is a network reduction technique to identify the
-backbone structure of a weighted network without destroying its multi-scale
-nature.  The algorithm is documented in M. Angeles Serrano, Marian Boguna and
-Alessandro Vespignani in \"Extracting the multiscale backbone of complex weighted
-networks\", Proceedings of the National Academy of Sciences 106 (16), 2009.  This
-implementation of the algorithm supports both directed and undirected networks.")
-    (license license:gpl2+)))
-
 (define-public r-disordr
   (package
     (name "r-disordr")
@@ -31689,13 +31662,13 @@ data to daily, monthly and annual data.")
 (define-public r-datamedios
   (package
     (name "r-datamedios")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamedios" version))
        (sha256
-        (base32 "06nif692h901iknlz7w8c2v2p7cm1m85lj2653qx2fdmm29gmlb9"))))
+        (base32 "1jm0if2glqsx03k8cjzwavjw25i39wi8iyhw7997pghh3iq96nlf"))))
     (properties `((upstream-name . "datamedios")))
     (build-system r-build-system)
     (arguments
@@ -31709,6 +31682,7 @@ data to daily, monthly and annual data.")
                              r-rlang
                              r-purrr
                              r-plotly
+                             r-pbapply
                              r-magrittr
                              r-lubridate
                              r-jsonlite
@@ -31716,7 +31690,7 @@ data to daily, monthly and annual data.")
                              r-ggplot2
                              r-dt
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=datamedios")
+    (home-page "https://socialtec-cl.github.io/datamedios/")
     (synopsis "Scraping Chilean Media")
     (description
      "This package provides a system for extracting news from Chilean media,

@@ -2878,44 +2878,6 @@ and Bayesian information criteria (BIC).  An illustration utilizing data of egg
 price indices has also been provided.")
     (license license:gpl3)))
 
-(define-public r-expandfunctions
-  (package
-    (name "r-expandfunctions")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "expandFunctions" version))
-       (sha256
-        (base32 "0661l4ab0xhjidmh8ycvymhp3wgxafm7nd1c59bfpxhyhz76n1p4"))))
-    (properties `((upstream-name . "expandFunctions")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-polynom r-plyr r-orthopolynom r-glmnet))
-    (home-page "https://cran.r-project.org/package=expandFunctions")
-    (synopsis "Feature Matrix Builder")
-    (description
-     "Generates feature matrix outputs from R object inputs using a variety of
-expansion functions.  The generated feature matrices have applications as inputs
-for a variety of machine learning algorithms.  The expansion functions are based
-on coercing the input to a matrix, treating the columns as features and
-converting individual columns or combinations into blocks of columns.  Currently
-these include expansion of columns by efficient sparse embedding by vectors of
-lags, quadratic expansion into squares and unique products, powers by vectors of
-degree, vectors of orthogonal polynomials functions, and block random affine
-projection transformations (RAPTs).  The transformations are magrittr- and
-cbind-friendly, and can be used in a building block fashion.  For instance,
-taking the @code{cos()} of the output of the RAPT transformation generates a
-stationary kernel expansion via Bochner's theorem, and this expansion can then
-be cbind-ed with other features.  Additionally, there are utilities for
-replacing features, removing rows with NAs, creating matrix samples of a given
-distribution, a simple wrapper for LASSO with CV, a Freeman-Tukey transform,
-generalizations of the outer function, matrix size-preserving discrete
-difference by row, plotting, etc.")
-    (license license:gpl2)))
-
 (define-public r-expandar
   (package
     (name "r-expandar")
@@ -15521,36 +15483,6 @@ militant groups.  The model is fitted with a Markov chain Monte Carlo algorithm
 and produces the output containing draws from the posterior distribution.")
     (license license:gpl2+)))
 
-(define-public r-endogenous
-  (package
-    (name "r-endogenous")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "endogenous" version))
-       (sha256
-        (base32 "079fmfxl9gf080zq5m1ixmgry9dawg2y6ixbfyc5da5jxf3zk9h8"))))
-    (properties `((upstream-name . "endogenous")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=endogenous")
-    (synopsis "Classical Simultaneous Equation Models")
-    (description
-     "Likelihood-based approaches to estimate linear regression parameters and
-treatment effects in the presence of endogeneity.  Specifically, this package
-includes James Heckman's classical simultaneous equation models-the sample
-selection model for outcome selection bias and hybrid model with structural
-shift for endogenous treatment.  For more information, see the seminal paper of
-Heckman (1978) <DOI:10.3386/w0177> in which the details of these models are
-provided.  This package accommodates repeated measures on subjects with a
-working independence approach.  The hybrid model further accommodates treatment
-effect modification.")
-    (license license:gpl2)))
-
 (define-public r-endogeneity
   (package
     (name "r-endogeneity")
@@ -24323,29 +24255,6 @@ illustrated using data from Battaglini and Patacchini (2018) and Battaglini,
 Patacchini, and Leone Sciabolazza (2020).  For additional details, see the
 vignette <doi:10.18637/jss.v102.i08>.")
     (license license:expat)))
-
-(define-public r-econdemand
-  (package
-    (name "r-econdemand")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EconDemand" version))
-       (sha256
-        (base32 "1slpwiaxj7w21zdri9myrzwbwzl62m3cnp0g4fr2rkdlzgb6j5yj"))))
-    (properties `((upstream-name . "EconDemand")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=EconDemand")
-    (synopsis "General Analysis of Various Economics Demand Systems")
-    (description
-     "This package provides tools for general properties including price, quantity,
-elasticity, convexity, marginal revenue and manifold of various economics demand
-systems including Linear, Translog, CES, LES and CREMR.")
-    (license license:gpl2)))
 
 (define-public r-econdataverse
   (package

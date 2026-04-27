@@ -32950,33 +32950,6 @@ level alpha and make decisions.  For users convenience, the functions also
 provide the output option for printing decision rules.")
     (license license:gpl2+)))
 
-(define-public r-mhtboot
-  (package
-    (name "r-mhtboot")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mhtboot" version))
-       (sha256
-        (base32 "1z0p8ny9lpnrshgas7cad2lv7j0blw0n6ihiimw600n70h73jwrn"))))
-    (properties `((upstream-name . "mhtboot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mhtboot")
-    (synopsis "Multiple Hypothesis Test Based on Distribution of p Values")
-    (description
-     "This package provides a framework for multiple hypothesis testing based on
-distribution of p values.  It is well known that the p values come from
-different distribution for null and alternatives, in this package we provide
-functions to detect that change.  We provide a method for using the change in
-distribution of p values as a way to detect the true signals in the data.")
-    (license license:gpl3)))
-
 (define-public r-mhqol
   (package
     (name "r-mhqol")
@@ -47828,29 +47801,6 @@ normal distributions are also implemented by using expectation-maximization
 algorithms.")
     (license license:gpl2+)))
 
-(define-public r-matrixlaplacian
-  (package
-    (name "r-matrixlaplacian")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "matrixLaplacian" version))
-       (sha256
-        (base32 "1ixqdv3sz3sc79wn3vqhlq79j7x7cvl878m5hgvbcg6klfvlmmci"))))
-    (properties `((upstream-name . "matrixLaplacian")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scatterplot3d))
-    (home-page "https://cran.r-project.org/package=matrixLaplacian")
-    (synopsis "Normalized Laplacian Matrix and Laplacian Map")
-    (description
-     "Constructs the normalized Laplacian matrix of a square matrix, returns the
-eigenvectors (singular vectors) and visualization of normalized Laplacian map.")
-    (license license:gpl2)))
-
 (define-public r-matrixhmm
   (package
     (name "r-matrixhmm")
@@ -55342,33 +55292,6 @@ By no means we expect this package to deliver everything what is needed to
 achieve full reproducibility and transparency, but we believe that it supports
 efforts in this direction.")
     (license license:bsd-2)))
-
-(define-public r-madr
-  (package
-    (name "r-madr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "madr" version))
-       (sha256
-        (base32 "0lzg75kphz4a0w6n0jbsq87g72jvrbkyas4j813mryq2nv4lmsl4"))))
-    (properties `((upstream-name . "madr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=madr")
-    (synopsis "Model Averaged Double Robust Estimation")
-    (description
-     "Estimates average treatment effects using model average double robust (MA-DR)
-estimation.  The MA-DR estimator is defined as weighted average of double robust
-estimators, where each double robust estimator corresponds to a specific choice
-of the outcome model and the propensity score model.  The MA-DR estimator extend
-the desirable double robustness property by achieving consistency under the much
-weaker assumption that either the true propensity score model or the true
-outcome model be within a specified, possibly large, class of models.")
-    (license license:gpl3)))
 
 (define-public r-madpop
   (package

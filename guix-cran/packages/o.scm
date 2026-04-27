@@ -2051,13 +2051,13 @@ handle servers that run locally as well as the OSRM webserver.")
 (define-public r-osrm-backend
   (package
     (name "r-osrm-backend")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osrm.backend" version))
        (sha256
-        (base32 "18ybv287qm2802fbn4pij5g3698kfqffya0p68q9y7hnh73fv238"))))
+        (base32 "0j3kdgx47qnn6z180q8j74ady710kzdnlwplhja17k6cxgjwc3hn"))))
     (properties `((upstream-name . "osrm.backend")))
     (build-system r-build-system)
     (arguments
@@ -4339,13 +4339,13 @@ non-penalized parameters.  For more details, see Lambert and Gressani (2023)
 (define-public r-ordfacreg
   (package
     (name "r-ordfacreg")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OrdFacReg" version))
        (sha256
-        (base32 "16mavsmp6d8rfmimmp5ynwyzir0gycpg8rhd8cwanlrndyclqlpv"))))
+        (base32 "0nd9zihz65m084xgjzpl3skjl1z8h7whl9s2qwmlrsg1s5634g8r"))))
     (properties `((upstream-name . "OrdFacReg")))
     (build-system r-build-system)
     (arguments

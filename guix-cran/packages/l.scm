@@ -5979,13 +5979,13 @@ Please see the vignettes for detailed example use cases.")
 (define-public r-logcondiscr
   (package
     (name "r-logcondiscr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logcondiscr" version))
        (sha256
-        (base32 "08wwxsrpflwbzgs6vb3r0f52hscxz1f4q0xabr1yqns06gir1kxd"))))
+        (base32 "1d4ncdpzrl255sgd51mkflbv74z5rg2p1rjimlyh0ma4xkncj2yi"))))
     (properties `((upstream-name . "logcondiscr")))
     (build-system r-build-system)
     (arguments
@@ -5994,7 +5994,7 @@ Please see the vignettes for detailed example use cases.")
     (propagated-inputs (list r-mvtnorm r-matrix r-cobs))
     (home-page "http://www.kasparrufibach.ch")
     (synopsis
-     "Estimate a Log-Concave Probability Mass Function from Discrete i.i.d. Observations")
+     "Estimate a Log-Concave Probability Mass Function from Discrete I.i.d. Observations")
     (description
      "Given independent and identically distributed observations X(1), ..., X(n),
 allows to compute the maximum likelihood estimator (MLE) of probability mass
@@ -6009,13 +6009,13 @@ a point mass at k.")
 (define-public r-logcondens
   (package
     (name "r-logcondens")
-    (version "2.1.8")
+    (version "2.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logcondens" version))
        (sha256
-        (base32 "001a2qr2bsdcw784s9mr5j4srqkw3l64aj4jngy7y1yi8xp20fgi"))))
+        (base32 "0jw7f6n2kh9a3lqwbzr75660qwly3968rjp9zdkyxhx3b181vic0"))))
     (properties `((upstream-name . "logcondens")))
     (build-system r-build-system)
     (arguments

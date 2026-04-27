@@ -15270,13 +15270,13 @@ nodes in the network.")
 (define-public r-tna
   (package
     (name "r-tna")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tna" version))
        (sha256
-        (base32 "1vk0y3as7dc5km33ypkcg81s62jv0a0vqd3q7cz71lb8x3h7l3j1"))))
+        (base32 "1xrkw2x8lqgpbl2m827532gfabj55drcyp432xr4vl9jlp49lmxw"))))
     (properties `((upstream-name . "tna")))
     (build-system r-build-system)
     (arguments
