@@ -2972,13 +2972,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.12")
+    (version "0.4.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "07wklvg318v75ki4kz60hvw3afl4c0yh7jj7q0f8c0m6h7dv1z2p"))))
+        (base32 "13pp2bs30svli9aff8la7lq283y5ffb1lzlnp0nj3p8q3vxan74n"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (arguments
@@ -3661,21 +3661,21 @@ finalizers for safe cross-runtime garbage collection.")
 (define-public r-jlpm
   (package
     (name "r-jlpm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JLPM" version))
        (sha256
-        (base32 "0xagw84mgbqrdyz9h8d9fw2yibx7k9cp5y1pd8v835n4s10m8wx2"))))
+        (base32 "0shgp6slrfacjc80pdhq0ddlazh1s28ykad8hwxm1if0d4y42nml"))))
     (properties `((upstream-name . "JLPM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-stringr r-randtoolbox r-marqlevalg
+    (propagated-inputs (list r-survival r-stringr r-spacefillr r-marqlevalg
                              r-lcmm))
-    (native-inputs (list gfortran))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=JLPM")
     (synopsis "Joint Latent Process Models")
     (description

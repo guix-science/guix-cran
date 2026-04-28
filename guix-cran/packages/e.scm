@@ -9321,34 +9321,6 @@ reports the goodness-of-fit statistics.  The recurrence interval estimations of
 earthquakes are computed for each distribution.")
     (license license:gpl3)))
 
-(define-public r-erp-easy
-  (package
-    (name "r-erp-easy")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "erp.easy" version))
-       (sha256
-        (base32 "193n45w0rq3cy0nmxvv0h6s3yr8kfjlg90nd4dnqlsq85zlsizij"))))
-    (properties `((upstream-name . "erp.easy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-signal r-plyr r-gtools))
-    (home-page "https://github.com/mooretm/erp.easy")
-    (synopsis "Event-Related Potential (ERP) Data Exploration Made Easy")
-    (description
-     "This package provides a set of user-friendly functions to aid in organizing,
-plotting and analyzing event-related potential (ERP) data.  Provides an
-easy-to-learn method to explore ERP data.  Should be useful to those without a
-background in computer programming, and to those who are new to ERPs (or new to
-the more advanced ERP software available).  Emphasis has been placed on highly
-automated processes using functions with as few arguments as possible.  Expects
-processed (cleaned) data.")
-    (license license:gpl3)))
-
 (define-public r-erp
   (package
     (name "r-erp")
@@ -20812,13 +20784,13 @@ signal.  Journal of the American Statistical Association 97.460 (2002):
 (define-public r-efdm
   (package
     (name "r-efdm")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "efdm" version))
        (sha256
-        (base32 "1xkc0xmc826s53jrp24b4zf1a7qzfqjri1bs93m8i8hr6w4bnh83"))))
+        (base32 "0cv5bdg3l1hl46g4id2wzixjbx5j506pi8zmrby1cncn46jv7zi2"))))
     (properties `((upstream-name . "efdm")))
     (build-system r-build-system)
     (arguments
@@ -24581,13 +24553,13 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
 (define-public r-ecoensemble
   (package
     (name "r-ecoensemble")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EcoEnsemble" version))
        (sha256
-        (base32 "0ax439za50bx5wpvm8xr674pilp7nlk3ybrfaaix7li1nj7jky7k"))))
+        (base32 "1qip9gdz7c1r4piwlq0ikslkv5vigbv3i06zcjc1cnq5a0gn36vn"))))
     (properties `((upstream-name . "EcoEnsemble")))
     (build-system r-build-system)
     (arguments
@@ -24601,6 +24573,7 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
+                             r-posterior
                              r-matrixcalc
                              r-ggplot2
                              r-dplyr
@@ -25688,21 +25661,28 @@ the recommended procedures.  It is described in Lisec et al (2023)
 (define-public r-ecdfniche
   (package
     (name "r-ecdfniche")
-    (version "0.1.0")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECDFniche" version))
        (sha256
-        (base32 "0559c32mhlfng6cr9mkj30321fq7mzds2j8aycf70dd8xqmgafm6"))))
+        (base32 "0y1464pacvj1xnl51hcq7gqrhx859dx0vsr5xa65qbh4baa9gss1"))))
     (properties `((upstream-name . "ECDFniche")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-lemon r-ggplot2))
+    (propagated-inputs (list r-tidyr
+                             r-purrr
+                             r-mass
+                             r-lemon
+                             r-ggpp
+                             r-ggplot2
+                             r-dplyr
+                             r-checkcli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ECDFniche")
+    (home-page "https://luizesser.github.io/ECDFniche/")
     (synopsis
      "Empirical Cumulative Distribution Function Niche Modeling Tools")
     (description

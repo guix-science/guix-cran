@@ -9944,13 +9944,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.6.6")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "07hy30frisp4ff1yxfq3j69sd2h4nwzlj3m3nwg7bb43kaxndvsr"))))
+        (base32 "0nf0wn67snyp78hj2gj76qinaszndj5m0plqw44vzq1zqis1yfj8"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -32741,13 +32741,13 @@ covariance estimators.")
 (define-public r-geess
   (package
     (name "r-geess")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geess" version))
        (sha256
-        (base32 "043m0s5fvhzhf2lhwd9l161awm3iajsp095206pdrjyhn176f34m"))))
+        (base32 "0jfk3r4jny0vhs8srhipwmz2dlv398i5377yi02sf4fqpp7bgw9h"))))
     (properties `((upstream-name . "geess")))
     (build-system r-build-system)
     (arguments
@@ -36027,13 +36027,13 @@ of triggers, so that reactive contexts can be invalidated with more control.")
 (define-public r-gareg
   (package
     (name "r-gareg")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GAReg" version))
        (sha256
-        (base32 "1f8sgfrlj7y0v68hfv51x9pv0v5yajd4zz92cm5m15fxgawixcr5"))))
+        (base32 "1kb117nlclx999gpjjhf9g67p9ras8hg7ibw0iwsafi3qrhq6bhm"))))
     (properties `((upstream-name . "GAReg")))
     (build-system r-build-system)
     (arguments
@@ -38093,13 +38093,13 @@ these topics.")
 (define-public r-g6r
   (package
     (name "r-g6r")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "g6R" version))
        (sha256
-        (base32 "0g46swgn49nh63y0gf6j82b8adn407s4wcwpl9dr2rrgv08xfg8l"))))
+        (base32 "0rj0ms3hayh7cni3r7443m73r00j359lnpz2bbhxim7qmzabpj0w"))))
     (properties `((upstream-name . "g6R")))
     (build-system r-build-system)
     (arguments

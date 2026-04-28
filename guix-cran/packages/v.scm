@@ -3595,19 +3595,19 @@ comparing them with re-imputed values, and convergence diagnostics.")
 (define-public r-vismeteor
   (package
     (name "r-vismeteor")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vismeteor" version))
        (sha256
-        (base32 "17l5a9ndnvc6b09jbv89rz9wh0468pry9mxd3r0abd2z7xi1psfr"))))
+        (base32 "0hkqzjvxs7myvkqap4rwsdpq2p1a3gfiy97lib9jh2p7qfy1q2vc"))))
     (properties `((upstream-name . "vismeteor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-dbi))
+    (propagated-inputs (list r-httr2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jankorichter/vismeteor")
     (synopsis "Analysis of Visual Meteor Data")
@@ -5511,13 +5511,13 @@ Davidian, M. (2022) <doi:10.1111/biom.13509>.")
 (define-public r-vetr
   (package
     (name "r-vetr")
-    (version "0.2.21")
+    (version "0.2.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vetr" version))
        (sha256
-        (base32 "1qhlgwsffs1pkin06qadqlpnz6f2qasii5xfj8n9a13rscnkba67"))))
+        (base32 "1pwls4p2s86l7jggpxwvcqj0hjfryzcr5ld772fmd3mac734n00x"))))
     (properties `((upstream-name . "vetr")))
     (build-system r-build-system)
     (arguments
@@ -6480,19 +6480,19 @@ systems, and helpful in examining its impact in the time series analysis domain.
 (define-public r-vecvec
   (package
     (name "r-vecvec")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecvec" version))
        (sha256
-        (base32 "0jmd0rw78v4r60zrna02134zkr4arm0zg0ldwnah2v3qy33h5hm1"))))
+        (base32 "0kl5m87lii84l39a97l5fywzw7vbprmvvisdp3cld0n79wq9h8yv"))))
     (properties `((upstream-name . "vecvec")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-rlang))
+    (propagated-inputs (list r-vctrs r-s7 r-rlang))
     (home-page "https://pkg.mitchelloharawild.com/vecvec/")
     (synopsis "Construct Mixed Type Data Structures with Vectors of Vectors")
     (description

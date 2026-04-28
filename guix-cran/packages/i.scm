@@ -4269,6 +4269,35 @@ of irregularity, fit inverse-intensity weighted Generalized Estimating Equations
 models (Liang Y (2009) <doi: 10.1111/j.1541-0420.2008.01104.x>).")
     (license license:gpl3)))
 
+(define-public r-irrcac
+  (package
+    (name "r-irrcac")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irrCAC" version))
+       (sha256
+        (base32 "09g1pp6kyq4zqa1jdia0if95v8fa82fnjiq4paz8jnfdx2wjn8q7"))))
+    (properties `((upstream-name . "irrCAC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-stringr r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=irrCAC")
+    (synopsis
+     "Computing the Extent of Agreement among Raters with Chance-Corrected Agreement Coefficient (CAC)")
+    (description
+     "This package contains a series of R functions for calculating various
+chance-corrected agreement coefficients (CAC) among 2 or more raters.  Among the
+CAC coefficients covered are Cohen's kappa, Conger's kappa, Fleiss kappa,
+Brennan-Prediger coefficient, Gwet's AC1/AC2 coefficients, and Krippendorff's
+alpha.  Multiple sets of weights are proposed for computing weighted analyses.
+Also included in this package is Bangdiwala's B coefficient.")
+    (license license:gpl2+)))
+
 (define-public r-irr2fpr
   (package
     (name "r-irr2fpr")
@@ -6423,28 +6452,6 @@ inputâoutput tables, and basic inputâoutput economics calculations.  P
 @code{rOpenGov} <https://ropengov.github.io/> for open source open government
 initiatives.")
     (license license:expat)))
-
-(define-public r-iosmooth
-  (package
-    (name "r-iosmooth")
-    (version "0.94")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iosmooth" version))
-       (sha256
-        (base32 "06xgzhjgb6pznjzfli193q7kn8sh5jmqsssgymwj98bw7iwn4q3z"))))
-    (properties `((upstream-name . "iosmooth")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=iosmooth")
-    (synopsis "Functions for Smoothing with Infinite Order Flat-Top Kernels")
-    (description
-     "Density, spectral density, and regression estimation using infinite order
-flat-top kernels.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ionet
   (package

@@ -14224,13 +14224,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.5.3")
+    (version "4.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "0s1nqq2bngvv77ysxslfabc05qfzzg7yjbr4p244hhk290jc0f6x"))))
+        (base32 "1z4spxsy936mi91hk5f4046xbyxlzpysm49j17sd84pzv9mj7i3j"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -21564,13 +21564,13 @@ solving change point detection problems.  References: Wen et al. (2020)
 (define-public r-l0ara
   (package
     (name "r-l0ara")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "l0ara" version))
        (sha256
-        (base32 "1cv48rbq080z7zx32hmlkpq7mi5axr09a1hyv3knl1vb9gql4qjq"))))
+        (base32 "16qkq0n312q848icd4hl8rr644ssmgcwgc80idvlhnsa33zmmn0z"))))
     (properties `((upstream-name . "l0ara")))
     (build-system r-build-system)
     (arguments
@@ -21581,8 +21581,9 @@ solving change point detection problems.  References: Wen et al. (2020)
     (synopsis
      "Sparse Generalized Linear Model with L0 Approximation for Feature Selection")
     (description
-     "An efficient procedure for feature selection for generalized linear models with
-L0 penalty, including linear, logistic, Poisson, gamma, inverse Gaussian
-regression.  Adaptive ridge algorithms are used to fit the models.")
+     "Fits sparse generalized linear models using an adaptive ridge approximation to
+an L0 penalty.  Supported model families include Gaussian, logistic, Poisson,
+gamma, and inverse Gaussian regression.  The package also provides
+cross-validation for selecting the penalty parameter.")
     (license license:gpl2)))
 

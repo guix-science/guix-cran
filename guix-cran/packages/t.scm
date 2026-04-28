@@ -7635,19 +7635,19 @@ onerous calculations - these calculations are automated by this package.")
 (define-public r-triangle
   (package
     (name "r-triangle")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "triangle" version))
        (sha256
-        (base32 "0vl8rgasmxb64kkk4vph4b7jzmyq9c0lp5jfr9ybmd8czaz6947l"))))
+        (base32 "0b5yfc93haffpb1mjww1pcp064f9zvxh1q9z70lkvywz9r4kwddv"))))
     (properties `((upstream-name . "triangle")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-assertthat))
+    (propagated-inputs (list r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://bertcarnell.github.io/triangle/")
     (synopsis
@@ -7684,13 +7684,13 @@ Clinical Research.")
 (define-public r-trialsimulator
   (package
     (name "r-trialsimulator")
-    (version "1.16.0")
+    (version "1.17.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialSimulator" version))
        (sha256
-        (base32 "1r701zqb9wzyapdigq0cka10s71vps04dq7l96nczn44aj63ba01"))))
+        (base32 "160dvyywq9cjfiaa1s17p15x0v54iawmh1k1yawba02gw7662d1p"))))
     (properties `((upstream-name . "TrialSimulator")))
     (build-system r-build-system)
     (arguments
@@ -7707,6 +7707,7 @@ Clinical Research.")
                              r-ggplot2
                              r-emmeans
                              r-dplyr
+                             r-copula
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://zhangh12.github.io/TrialSimulator/")
@@ -14358,13 +14359,13 @@ Dieng, Francisco J. R. Ruiz, David M. Blei (2019), available at
 (define-public r-topiclabels
   (package
     (name "r-topiclabels")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topiclabels" version))
        (sha256
-        (base32 "03k8sggdlh1nw81qll35vz1dynlsw2ix1s3i9qwm7cqby9y1p39v"))))
+        (base32 "1a3fdkpr3xpi3d4sy0n26m21bmhkr2mix2iz0zpd64dv0ysbqkad"))))
     (properties `((upstream-name . "topiclabels")))
     (build-system r-build-system)
     (arguments
@@ -14741,23 +14742,28 @@ described in Hadler (2017).")
 (define-public r-toolero
   (package
     (name "r-toolero")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toolero" version))
        (sha256
-        (base32 "00lg0b0mli30lc7vqp90gdk5mzlwxrf7yr3jxmnqk4q3i8qbgg8w"))))
+        (base32 "0izi4azwj3hnjgn3rvd3zwv2n726cz0nc8i7xcyhq8sg54aisyc1"))))
     (properties `((upstream-name . "toolero")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-withr
                              r-usethis
                              r-tibble
+                             r-rvest
+                             r-rlang
                              r-renv
                              r-readr
+                             r-quarto
                              r-purrr
                              r-janitor
                              r-glue
@@ -21824,19 +21830,19 @@ visualization with ggplot2 geoms designed for functional data.")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.8.3")
+    (version "1.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfst" version))
        (sha256
-        (base32 "1y8ayz39i7f3lgnvig999xprh45mjznxcp97f0lb9cy13bb4zbra"))))
+        (base32 "1r3inrs89kzqpfnkk0vf2lcchdv1kd0ivnl7i3vngijgvxavzk39"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-fst r-data-table))
+    (propagated-inputs (list r-stringr r-pak r-fst r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hope-data-science/tidyfst")
     (synopsis "Tidy Verbs for Fast Data Manipulation")
@@ -25316,13 +25322,13 @@ generalization, and speed up training.")
 (define-public r-tfevents
   (package
     (name "r-tfevents")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfevents" version))
        (sha256
-        (base32 "06ll43agal3pgq6avfmz5fsf8kzgrh4c2zk823hk80mfpilrskj1"))))
+        (base32 "1rp6vdqkrgxx529rhw7rv5il6xg9vx9hax4k6lrp4n27w656y49i"))))
     (properties `((upstream-name . "tfevents")))
     (build-system r-build-system)
     (arguments
@@ -29592,34 +29598,6 @@ in Tao et al. (2023) <doi:10.1016/j.fmre.2023.01.007>, following a systematic
 description proposed in Lyu et al. (2026)
 <doi:10.1016/j.compenvurbsys.2026.102435>.")
     (license license:gpl3)))
-
-(define-public r-teda
-  (package
-    (name "r-teda")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "teda" version))
-       (sha256
-        (base32 "0yx469jbkw9cgx73zi5mkykrdn16kn01zh524x9411314aa32avx"))))
-    (properties `((upstream-name . "teda")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=teda")
-    (synopsis
-     "An Implementation of the Typicality and Eccentricity Data Analysis Framework")
-    (description
-     "The typicality and eccentricity data analysis (TEDA) framework was put forward
-by Angelov (2013) <DOI:10.14313/JAMRIS_2-2014/16>.  It has been further
-developed into multiple different techniques since, and provides a
-non-parametric way of determining how similar an observation, from a process
-that is not purely random, is to other observations generated by the process.
-This package provides code to use the batch and recursive TEDA methods that have
-been published.")
-    (license license:gpl3+)))
 
 (define-public r-tectonicr
   (package

@@ -9044,29 +9044,6 @@ Lasso.  They are able to produce consistent estimates for both fixed and
 high-dimensional settings.")
     (license license:gpl3)))
 
-(define-public r-mtdrh
-  (package
-    (name "r-mtdrh")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MTDrh" version))
-       (sha256
-        (base32 "0ass3b90nr4i0y7v30hk8xhq3hj9bxaxcsr4f8wfi0lnvzfv6aaa"))))
-    (properties `((upstream-name . "MTDrh")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=MTDrh")
-    (synopsis "Mass Transportation Distance Rank Histogram")
-    (description
-     "The Mass Transportation Distance rank histogram was developed to assess the
-reliability of scenarios with equal or different probabilities of occurrence
-<doi:10.1002/we.1872>.")
-    (license license:gpl2)))
-
 (define-public r-mtdesign
   (package
     (name "r-mtdesign")
@@ -12928,6 +12905,35 @@ simultaneously.  See Xu S., Wang P., Fung W.K. and Liu Z. (2022)
      "This package provides an implementation of methods for multivariate multiple
 regression with adaptive shrinkage priors as described in F. Morgante et al
 (2023) <doi:10.1371/journal.pgen.1010539>.")
+    (license license:expat)))
+
+(define-public r-mqriskr
+  (package
+    (name "r-mqriskr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mqriskR" version))
+       (sha256
+        (base32 "1aww67k1rnqbjhi34sgm6i5bgv5w7x34j3izjx1qh8jma0sp3d8q"))))
+    (properties `((upstream-name . "mqriskR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mqriskR")
+    (synopsis "Actuarial Risk Modeling and Life Contingencies")
+    (description
+     "This package provides functions for actuarial risk modeling, including survival
+models, life annuities, multiple-decrement models, and mortality improvement
+projections.  The package is designed to align with standard actuarial notation
+and supports teaching, exam preparation, and reproducible actuarial analysis.
+The methods are based on standard actuarial references including Camilli, Duncan
+and London (2014, ISBN:9781625423474) \"Models for Quantifying Risk\" and Dickson,
+Hardy and Waters (2020, ISBN:9781108478083) \"Actuarial Mathematics for Life
+Contingent Risks\".")
     (license license:expat)))
 
 (define-public r-mqrcm
@@ -37052,13 +37058,13 @@ provides a layout method applicable for large trophic networks.")
 (define-public r-metanet
   (package
     (name "r-metanet")
-    (version "0.2.8")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaNet" version))
        (sha256
-        (base32 "0nfv8ma6cy0lfwrw030vy91gvmxssq6m01h3yp6dqvlv7c3y0dzb"))))
+        (base32 "1l8syjgjdl5hhzm3c6svw1k321fdhknj8hrrm3zfxifkwjwx1qck"))))
     (properties `((upstream-name . "MetaNet")))
     (build-system r-build-system)
     (arguments
@@ -42305,29 +42311,6 @@ Classical Scaling, Least Squares Scaling, Metric SMACOF, Non-Metric SMACOF,
 Kruskal's Analysis and Sammon Mapping with animated optimisation.")
     (license license:gpl3+)))
 
-(define-public r-mdscore
-  (package
-    (name "r-mdscore")
-    (version "0.1-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mdscore" version))
-       (sha256
-        (base32 "10cl5r6kd9chdik5v0q91x40xpw2cjvvyi220z4bvngpb0989x8j"))))
-    (properties `((upstream-name . "mdscore")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=mdscore")
-    (synopsis "Improved Score Tests for Generalized Linear Models")
-    (description
-     "This package provides a set of functions to obtain modified score test for
-generalized linear models.")
-    (license license:gpl2+)))
-
 (define-public r-mds
   (package
     (name "r-mds")
@@ -45799,32 +45782,6 @@ using numerical optimization techniques (Lizandra C. Fabio, Vanessa Barros,
 Cristian Lobos, Jalmar M. F. Carrasco, Marginal multivariate approach: A novel
 strategy for handling correlated binary outcomes, 2025, under submission).")
     (license license:gpl3)))
-
-(define-public r-mbrglm
-  (package
-    (name "r-mbrglm")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mbrglm" version))
-       (sha256
-        (base32 "0yxq1xk8qy5hpiqqldyrs78lp4ggdp5lj2lmh8rqq1xvsfr6nrh4"))))
-    (properties `((upstream-name . "mbrglm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nleqslv r-enrichwith))
-    (home-page "https://cran.r-project.org/package=mbrglm")
-    (synopsis "Median Bias Reduction in Binomial-Response GLMs")
-    (description
-     "Fit generalized linear models with binomial responses using a median modified
-score approach (Kenne Pagui et al., 2016, <https://arxiv.org/abs/1604.04768>) to
-median bias reduction.  This method respects equivariance under
-reparameterizations for each parameter component and also solves the infinite
-estimates problem (data separation).")
-    (license license:gpl2)))
 
 (define-public r-mbres
   (package
@@ -51741,13 +51698,13 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "0pnmxlm8dblqc0yl4w85qff72gssdllc741wc4llq7z2kqygnjkb"))))
+        (base32 "0p9dajh3h9r34cpgv5m6ywl3yqar25q4d5j7srhyb0pddmd685c2"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (arguments

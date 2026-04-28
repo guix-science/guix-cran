@@ -988,13 +988,13 @@ serves as a Dynare Knit-Engine for knitr package.  The package requires Dynare
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamite" version))
        (sha256
-        (base32 "1wpqlac2w3gs6ai5d3q28hqq7cmz819kcpns2mj5v97f223xlvld"))))
+        (base32 "1kqbw30lfjwr5ndwc9krgvddxy4i80s6ycllzfd5kdk7myhilvg4"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (arguments
@@ -3620,29 +3620,6 @@ works for the developed functions are: @code{funGP()} - Prakash et al. (2022)
 <doi:10.1002/we.2722>, All other functions - Ding (2019, ISBN:9780429956508).")
     (license license:expat)))
 
-(define-public r-dsva
-  (package
-    (name "r-dsva")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dSVA" version))
-       (sha256
-        (base32 "0vy0flyg82x0n9vw6jf9f76qy84sp0wnis91faj37ac5hdv3pvsb"))))
-    (properties `((upstream-name . "dSVA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sva))
-    (home-page "https://cran.r-project.org/package=dSVA")
-    (synopsis "Direct Surrogate Variable Analysis")
-    (description
-     "This package provides functions for direct surrogate variable analysis, which
-can identify hidden factors in high-dimensional biomedical data.")
-    (license license:gpl2+)))
-
 (define-public r-dstidyverseclient
   (package
     (name "r-dstidyverseclient")
@@ -3677,30 +3654,30 @@ is installed on the remote server holding the data.  For more information, see
 (define-public r-dstidyverse
   (package
     (name "r-dstidyverse")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsTidyverse" version))
        (sha256
-        (base32 "01pq24nk3ph3lymgvba6bps36v8md7mrjmyb00y2smq89251d6r6"))))
+        (base32 "1vaxxk1kap3skcixa4rr47mj00jc4l5j7cmhnmv7d72zrx8ia5v3"))))
     (properties `((upstream-name . "dsTidyverse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-cli))
+    (propagated-inputs (list r-rlang r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dsTidyverse")
-    (synopsis "'DataSHIELD' 'Tidyverse' Serverside Package")
+    (synopsis "'DataSHIELD' 'Tidyverse' Server-Side Package")
     (description
      "Implementation of selected Tidyverse functions within @code{DataSHIELD}', an
 open-source federated analysis solution in R. Currently, @code{DataSHIELD}
 contains very limited tools for data manipulation, so the aim of this package is
 to improve the researcher experience by implementing essential functions for
 data manipulation, including subsetting, filtering, grouping, and renaming
-variables.  This is the serverside package which should be installed on the
-server holding the data, and is used in conjuncture with the clientside package
+variables.  This is the server-side package which should be installed on the
+server holding the data, and is used in conjunction with the client-side package
 @code{dsTidyverseClient} which is installed in the local R environment of the
 analyst.  For more information, see <https://tidyverse.org/> and
 <https://datashield.org/>.")
@@ -3970,13 +3947,13 @@ and obtain the matching confidence interval using a choice of methods.")
 (define-public r-dsrocrate
   (package
     (name "r-dsrocrate")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsROCrate" version))
        (sha256
-        (base32 "1wj6kyxq9csjh2rlc802pwkzxl59m9yb666n84qy2kxpz4bgszfm"))))
+        (base32 "0cafp4d8iq14qs5ygq4si9ss3pi50pc6c14x0d1p3g16kzrfqmlv"))))
     (properties `((upstream-name . "dsROCrate")))
     (build-system r-build-system)
     (arguments
@@ -9780,6 +9757,35 @@ and also to extract/clean tables and comments from Microsoft Word docx
 documents.  There is also nascent support for .doc and .pptx files.")
     (license license:expat)))
 
+(define-public r-documentosbr
+  (package
+    (name "r-documentosbr")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "documentosbr" version))
+       (sha256
+        (base32 "1hrn8dqyzd87a2vv20424wgv66v0gs74fnnlfw2pxpkqzlp42gym"))))
+    (properties `((upstream-name . "documentosbr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rcpp r-data-table r-bit64 r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipea/documentosbr")
+    (synopsis
+     "Validate Brazilian Administrative Registers - Valida Documentos")
+    (description
+     "This package contains functions to validate administrative register as CPF
+(Cadastro de Pessoa Fisica), CNPJ (Cadastro de Pessoa Juridica), PIS (Programa
+de Integracao Social), CNES (Cadastro Nacional de Saude).  Builds from and
+improves on previous package from IPEA @code{validaRA}
+<https://github.com/ipea/@code{validaRA>}.  It can check individual registers or
+help creating a table summarizing validity of a set.")
+    (license license:gpl3)))
+
 (define-public r-documenter
   (package
     (name "r-documenter")
@@ -12189,13 +12195,13 @@ C++ implementation.")
 (define-public r-diversityarch
   (package
     (name "r-diversityarch")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diversityArch" version))
        (sha256
-        (base32 "1072v46q22zj6s6rbrs8xzgj7z1ygwmkm9djmi45pjhsjbqlkklp"))))
+        (base32 "1nc8priyxli39jiznnl56q94gxy05vipxg3l5am0nwa43m78i402"))))
     (properties `((upstream-name . "diversityArch")))
     (build-system r-build-system)
     (arguments
@@ -13247,19 +13253,19 @@ function.")
 (define-public r-distionary
   (package
     (name "r-distionary")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distionary" version))
        (sha256
-        (base32 "13xc6i1fvp5dfp8sv5h2b2zi545idqmmnwra73yv9n44kq1rilfr"))))
+        (base32 "1swwxcifyxqk4qy3wzk6bzrcwgk615l48gmysr2rdpgh6g9ccl92"))))
     (properties `((upstream-name . "distionary")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-rlang r-ellipsis r-checkmate))
+    (propagated-inputs (list r-vctrs r-rlang r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://distionary.probaverse.com/")
     (synopsis "Create and Evaluate Probability Distributions")
@@ -15349,13 +15355,13 @@ AUC.")
 (define-public r-disbayes
   (package
     (name "r-disbayes")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disbayes" version))
        (sha256
-        (base32 "0dzgs048pwpl59fpnvqdra001xkwllxpkaxanwdbmzc8l1xmrwb2"))))
+        (base32 "0z9bc4zjagp59ixy7wj8yn2yxw7qyyscr9w6a4w5ygmr5nwyi9xc"))))
     (properties `((upstream-name . "disbayes")))
     (build-system r-build-system)
     (arguments
@@ -18715,13 +18721,13 @@ approach.")
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiagrammeR" version))
        (sha256
-        (base32 "1py4yii88lsyj8y71d2v0rb9lk5hvhfh0q8n2q4288wqw7bf6wz8"))))
+        (base32 "0dkyx0jyv5xs8gsvmv82mcmnasw4ql9pzmfvabv8qcfq13wzn1a2"))))
     (properties `((upstream-name . "DiagrammeR")))
     (build-system r-build-system)
     (arguments
@@ -18896,13 +18902,13 @@ sampling type or other probability weighted samples.")
 (define-public r-diagfdr
   (package
     (name "r-diagfdr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diagFDR" version))
        (sha256
-        (base32 "09px6dqb04kp5xwg28avdyxyaj7z5z69f1xs0flw0ayyfy4mhr7w"))))
+        (base32 "0vhbv1mv115m52i5vrrajk7qr00wcffn59zqhnmzfnnmszw2hkiv"))))
     (properties `((upstream-name . "diagFDR")))
     (build-system r-build-system)
     (arguments
@@ -18920,14 +18926,17 @@ sampling type or other probability weighted samples.")
                              r-data-table
                              r-cp4p))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=diagFDR")
+    (home-page "https://www.biorxiv.org/content/10.64898/2026.04.16.718468")
     (synopsis "Verifiable FDR Diagnostics for Proteomics")
     (description
      "This package provides methods to compute verifiable false discovery rate (FDR)
 diagnostic checks for workflows based on target-decoy competition and related
 confidence measures.  Implements calibration, stability and tail diagnostics,
 including tail support, threshold elasticity, posterior error probability (PEP)
-reliability, and equal-chance checks.")
+reliability, and equal-chance checks.  If you used this package in your
+research, please cite the associated preprint <doi:10.64898/2026.04.16.718468>.
+Detailed examples of using this package can also be found on the @code{GitHub}
+repository (<https://github.com/Jacky11/@code{diagFDR>}).")
     (license license:gpl3)))
 
 (define-public r-diagcounts
@@ -27657,13 +27666,13 @@ see <https://www.ddaproject.com>.")
 (define-public r-dcvar
   (package
     (name "r-dcvar")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcvar" version))
        (sha256
-        (base32 "18rypsa48h12pn1nb0jzixi862cb5ckbak5qqj0r53iz2m8fccca"))))
+        (base32 "13sgvpmcizpywimbm86lyfsnd9fkjy6kyr0blpp23qa49xn7br82"))))
     (properties `((upstream-name . "dcvar")))
     (build-system r-build-system)
     (arguments
@@ -30159,19 +30168,19 @@ the @code{JavaScript} library daterangepicker which is available at
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datefixR" version))
        (sha256
-        (base32 "0apvzb7ypm3wx7m2gkrq933cgbkd1yx0fm974b4qvbsfx41fmlq8"))))
+        (base32 "1qjcrlypbpx3ym2wvl3rk2sy23dchlfq0055d3jsyh3fc8rg2z7b"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
+    (inputs (list xz))
     (propagated-inputs (list r-rlang r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/datefixR/")

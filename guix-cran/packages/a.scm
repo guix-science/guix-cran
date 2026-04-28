@@ -16990,13 +16990,13 @@ manipulating data and summarizing, visualizing, and saving results.")
 (define-public r-alphaoutlier
   (package
     (name "r-alphaoutlier")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alphaOutlier" version))
        (sha256
-        (base32 "09yrbv7jsiymw5gzp8p92ki70v1fys2k75x4sb9s7wy3c58wn1cd"))))
+        (base32 "1n6f5m6f5x3p787f00zkf3gq9d5bi2p9hbwrmaqn81q6lmb19r8d"))))
     (properties `((upstream-name . "alphaOutlier")))
     (build-system r-build-system)
     (arguments
@@ -28265,13 +28265,13 @@ details we refer the reader to the paper Savino, M. E. and LÃ©vy-Leduc, C.
 (define-public r-absolution
   (package
     (name "r-absolution")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AbSolution" version))
        (sha256
-        (base32 "1h394cnqjm7fxbkdz2hngbwy8g3hfhxbzhiflqfndw62bbrd4pf8"))))
+        (base32 "0lpsck1g14b732dzmkq0rl295xlih55xcb9bmjw430rdw7pxch3y"))))
     (properties `((upstream-name . "AbSolution")))
     (build-system r-build-system)
     (arguments

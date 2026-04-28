@@ -25014,38 +25014,6 @@ predictors.  This package provides functions to construct the quantitative
 prediction model with less overfitting and robust to noise.")
     (license license:expat)))
 
-(define-public r-plordprob
-  (package
-    (name "r-plordprob")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PLordprob" version))
-       (sha256
-        (base32 "1g23h3121g9csr85falm6vgzbva42wz3skhfr2rxmvlc3ca4afyp"))))
-    (properties `((upstream-name . "PLordprob")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mnormt))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=PLordprob")
-    (synopsis "Multivariate Ordered Probit Model via Pairwise Likelihood")
-    (description
-     "Multivariate ordered probit model, i.e.  the extension of the scalar ordered
-probit model where the observed variables have dimension greater than one.
-Estimation of the parameters is done via maximization of the pairwise
-likelihood, a special case of the composite likelihood obtained as product of
-bivariate marginal distributions.  The package uses the Fortran 77 subroutine
-SADMVN by Alan Genz, with minor adaptations made by Adelchi Azzalini in his
-\"mvnormt\" package for evaluating the two-dimensional Gaussian integrals involved
-in the pairwise log-likelihood.  Optimization of the latter objective function
-is performed via quasi-Newton box-constrained optimization algorithm, as
-implemented in nlminb.")
-    (license license:gpl2)))
-
 (define-public r-plnr
   (package
     (name "r-plnr")
@@ -35944,38 +35912,6 @@ their use with machine learning.")
 for amino-acid sequences as well as to read and plot XVG output files from the
 GROMACS molecular dynamics package.")
     (license license:gpl2)))
-
-(define-public r-pepsavims
-  (package
-    (name "r-pepsavims")
-    (version "0.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PepSAVIms" version))
-       (sha256
-        (base32 "0m4jrq6wcjy0k80gvrnm9f7kvi1ifx9182xfq0psyaxpj0ggvzij"))))
-    (properties `((upstream-name . "PepSAVIms")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-elasticnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dpritchLibre/PepSAVIms")
-    (synopsis "PepSAVI-MS Data Analysis")
-    (description
-     "An implementation of the data processing and data analysis portion of a pipeline
-named the @code{PepSAVI-MS} which is currently under development by the Hicks
-laboratory at the University of North Carolina.  The statistical analysis
-package presented herein provides a collection of software tools used to
-facilitate the prioritization of putative bioactive peptides from a complex
-biological matrix.  Tools are provided to deconvolute mass spectrometry features
-into a single representation for each peptide charge state, filter compounds to
-include only those possibly contributing to the observed bioactivity, and
-prioritize these remaining compounds for those most likely contributing to each
-bioactivity data set.")
-    (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-pepr
   (package

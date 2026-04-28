@@ -268,25 +268,28 @@ theorem is given in Basu (2023) <doi:10.48550/@code{arXiv.2307.00369>}.")
 (define-public r-fwdselect
   (package
     (name "r-fwdselect")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FWDselect" version))
        (sha256
-        (base32 "0w0hkmhcz7h1lixk7p3yffbbalgxwh2lv463vqz361k80sri6wz7"))))
+        (base32 "0hws1yg9a3nc7zz68hvc1rnf5kjhr8wr6z2f0ps2l6cl64f82y48"))))
     (properties `((upstream-name . "FWDselect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mgcv r-cvtools))
-    (home-page "http://cran.r-project.org/package=FWDselect")
+    (home-page "https://CRAN.R-project.org/package=FWDselect")
     (synopsis "Selecting Variables in Regression Models")
     (description
      "This package provides a simple method to select the best model or best subset of
 variables using different types of data (binary, Gaussian or Poisson) and
-applying it in different contexts (parametric or non-parametric).")
+applying it in different contexts (parametric or non-parametric).  Implemented
+methodology described in: M. Sestelo, N. M. Villanueva, L. Meira-Machado and J.
+Roca-PardiÃ±as (2016).  FWDselect: an R package for variable selection in
+regression models.  The R Journal, 8 (1), 132-148. <doi:10.32614/RJ-2016-009>.")
     (license license:expat)))
 
 (define-public r-fwb
@@ -1606,13 +1609,13 @@ trends in multiple time series.")
 (define-public r-funta
   (package
     (name "r-funta")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FUNTA" version))
        (sha256
-        (base32 "02yxz95s2hs26mfmgwhv5d54yyjz0aczjpnay8b4gpzbpd6aci61"))))
+        (base32 "06iwml9ay7zvr528vpqzi9z3v5qh93i786phiignqw6l73xpsw59"))))
     (properties `((upstream-name . "FUNTA")))
     (build-system r-build-system)
     (arguments
@@ -1621,10 +1624,11 @@ trends in multiple time series.")
     (home-page "https://cran.r-project.org/package=FUNTA")
     (synopsis "Functional Tangential Angle Pseudo-Depth")
     (description
-     "Computes the functional tangential angle pseudo-depth and its robustified
-version from the paper by Kuhnt and Rehage (2016).  See Kuhnt, S.; Rehage, A.
-(2016): An angle-based multivariate functional pseudo-depth for shape outlier
-detection, JMVA 146, 325-340, <doi:10.1016/j.jmva.2015.10.016> for details.")
+     "This package contains functions to compute the functional tangential angle
+pseudo-depth and its robustified version from the paper by Kuhnt and Rehage
+(2016).  See Kuhnt, S.; Rehage, A. (2016): An angle-based multivariate
+functional pseudo-depth for shape outlier detection, JMVA 146, 325-340,
+<doi:10.1016/j.jmva.2015.10.016> for details.")
     (license license:gpl3)))
 
 (define-public r-funsurv
@@ -6322,6 +6326,39 @@ distributions, such as the the gamma, positive stable and the Power Variance
 Family are supported.")
     (license license:gpl2+)))
 
+(define-public r-frailtycomprisk
+  (package
+    (name "r-frailtycomprisk")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FrailtyCompRisk" version))
+       (sha256
+        (base32 "0aycihnfqqmn8j1i4ys9a6vlfvpydkxq6l3jhfik2ff6wjrvwfw8"))))
+    (properties `((upstream-name . "FrailtyCompRisk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TeamHeKA/FrailtyCompRisk")
+    (synopsis
+     "Competing Risks Models for Multi-Center Survival Data with Frailty")
+    (description
+     "This package implements methods for analyzing competing risks data in
+multi-center survival studies using frailty models.  The approach relies on a
+mixed proportional hazards model for the sub-distribution, allowing for
+cluster-specific random effects.  The package provides tools for model
+estimation with or without frailty using Maximum Likelihood (ML) and Restricted
+Maximum Likelihood (REML).  It supports flexible modeling of between-center
+heterogeneity and is particularly suited for multi-center clinical trials or
+registries.  Core features include data simulation, likelihood computation,
+cluster-dependent censoring options, and testing of frailty effects.  For
+methodological details, see Katsahian et al. (2006) <doi:10.1002/sim.2684>.")
+    (license license:gpl3+)))
+
 (define-public r-fragman
   (package
     (name "r-fragman")
@@ -8735,13 +8772,13 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 (define-public r-forestploter
   (package
     (name "r-forestploter")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestploter" version))
        (sha256
-        (base32 "0mbk6692w3w2sny2sl3pg94j46k13vgfd84zqhyvmr75ihxzgrhb"))))
+        (base32 "00a3d6cq10m6z7y178cv4k0yvqspgzzyy4581kgfb6s859j6jg71"))))
     (properties `((upstream-name . "forestploter")))
     (build-system r-build-system)
     (arguments
@@ -15758,13 +15795,13 @@ surfaces\", Computer Vision, Editor S. R. Yoshida, Nova Science Publishers, pp.
 (define-public r-fitbitviz
   (package
     (name "r-fitbitviz")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitbitViz" version))
        (sha256
-        (base32 "1gw9glpphjyi6a3dviar1zyn0jqv07j46clz4skdawfwnqvnnny2"))))
+        (base32 "1hkkfahks51zz6xsrcw5v8z12mlg5hzdscyhfczk8a66w8vyvish"))))
     (properties `((upstream-name . "fitbitViz")))
     (build-system r-build-system)
     (arguments
@@ -15772,13 +15809,11 @@ surfaces\", Computer Vision, Editor S. R. Yoshida, Nova Science Publishers, pp.
       #:tests? #f))
     (propagated-inputs (list r-xml
                              r-viridis
-                             r-varian
                              r-terra
                              r-sf
                              r-scales
                              r-rstudioapi
                              r-reshape2
-                             r-rayshader
                              r-raster
                              r-patchwork
                              r-paletteer
@@ -15787,20 +15822,16 @@ surfaces\", Computer Vision, Editor S. R. Yoshida, Nova Science Publishers, pp.
                              r-lifecycle
                              r-leaflet
                              r-leafgl
-                             r-jsonlite
-                             r-httr
                              r-hms
                              r-glue
                              r-ggthemes
                              r-ggplot2
-                             r-data-table
-                             r-base64enc))
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlampros/fitbitViz")
     (synopsis "'Fitbit' Visualizations")
     (description
-     "Connection to the Fitbit Web API
-<https://dev.fitbit.com/build/reference/web-api/> by including ggplot2
+     "Visualization of pre-downloaded Fitbit personal health data using ggplot2
 Visualizations, Leaflet and 3-dimensional Rayshader Maps.  The 3-dimensional
 Rayshader Map requires the installation of the @code{CopernicusDEM} R package
 which includes the 30- and 90-meter elevation data.")
@@ -21779,13 +21810,13 @@ of functional data through phase and amplitude separation.")
 (define-public r-fdasp
   (package
     (name "r-fdasp")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaSP" version))
        (sha256
-        (base32 "1vhnrw2shxnpd2vnqkjq8lqx344p3z488x8wzpkb8hxnxzmfp08w"))))
+        (base32 "0h79yp82vvq87icmafvw1bxhkn61gz819544ib7q3g42dx9wdvmm"))))
     (properties `((upstream-name . "fdaSP")))
     (build-system r-build-system)
     (arguments
@@ -21797,7 +21828,8 @@ of functional data through phase and amplitude separation.")
                              r-pracma
                              r-ks
                              r-foreach
-                             r-doparallel))
+                             r-doparallel
+                             r-cvxr))
     (home-page "https://cran.r-project.org/package=fdaSP")
     (synopsis "Sparse Functional Data Analysis Methods")
     (description

@@ -30,7 +30,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages video)
   #:use-module (gnu packages sqlite)
-  #:use-module (gnu packages perl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -5782,13 +5781,13 @@ details on sampling methodology, see, Cochran (1977) \"Sampling Techniques\"
 (define-public r-surveysd
   (package
     (name "r-surveysd")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveysd" version))
        (sha256
-        (base32 "14p92fh6vrmcwdi1c0w3hl6pqlmmd82lpbrrpx6gx78yk654gi8c"))))
+        (base32 "04v5q4fl1b6asz9fplvab9wswnj133d54hw7hy70q2v0hidkkcj7"))))
     (properties `((upstream-name . "surveysd")))
     (build-system r-build-system)
     (arguments
@@ -26121,13 +26120,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "0a82mcfnzvdbzrbzc9gikf3h2m824a4bh2a2f3qhqc3r08jfg77y"))))
+        (base32 "1m5lpxn41fb99g278xc5394npsdb7lcd2p3hfmpb0hl7g35zdzdk"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments
@@ -28230,28 +28229,6 @@ in Boag (1949) and Berkson and Gage (1952), and extended in Schmidt and Witte
 (1989).")
     (license license:gpl3)))
 
-(define-public r-spdownscale
-  (package
-    (name "r-spdownscale")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spdownscale" version))
-       (sha256
-        (base32 "0pl560km9629iwy13h7359ab7ixzs09hg986kvk0xbnc348srb86"))))
-    (properties `((upstream-name . "spdownscale")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=spdownscale")
-    (synopsis "Spatial Downscaling Using Bias Correction Approach")
-    (description
-     "Spatial downscaling of climate data (Global Circulation Models/Regional Climate
-Models) using quantile-quantile bias correction technique.")
-    (license license:gpl2)))
-
 (define-public r-spdgp
   (package
     (name "r-spdgp")
@@ -29091,30 +29068,38 @@ Baddeley and Nair (2019).")
 (define-public r-spatsoc
   (package
     (name "r-spatsoc")
-    (version "0.2.2")
+    (version "0.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatsoc" version))
        (sha256
-        (base32 "0aj9kg9013m0j3nx5qr2mvwczskkk0wy19yx1pb33wnqvhv2w0n0"))))
+        (base32 "1zg02bj881yfrc5501xfq549rzbdw2mgqzycca4xcik4lwkp7dvp"))))
     (properties `((upstream-name . "spatsoc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list sqlite proj geos gdal))
-    (propagated-inputs (list r-units r-sf r-igraph r-data-table r-adehabitathr))
+    (propagated-inputs (list r-units
+                             r-sf
+                             r-rlang
+                             r-lwgeom
+                             r-igraph
+                             r-data-table
+                             r-circstats
+                             r-adehabitathr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/spatsoc/")
     (synopsis
-     "Group Animal Relocation Data by Spatial and Temporal Relationship")
+     "Group Animal Relocation Data by Spatial and Temporal Relationship and Measure Intragroup Social Dynamics")
     (description
      "Detects spatial and temporal groups in GPS relocations (Robitaille et al. (2019)
 <doi:10.1111/2041-210X.13215>).  It can be used to convert GPS relocations to
-gambit-of-the-group format to build proximity-based social networks In addition,
-the randomizations function provides data-stream randomization methods suitable
-for GPS data.")
+gambit-of-the-group format to build proximity-based social networks, and perform
+data-stream randomization methods suitable for GPS data.  Also provides measures
+of intragroup social dynamics including distance and direction to leaders,
+centroids and nearest neighbours.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -36029,35 +36014,6 @@ Yang (2018) <doi:10.1111/rssb.12293>, with the optional use of a
 sparsity-inducing prior to allow for variable selection.  For usability, the
 package maintains the same style as the @code{BayesTree} package.")
     (license license:gpl2+)))
-
-(define-public r-sofia
-  (package
-    (name "r-sofia")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SOFIA" version))
-       (sha256
-        (base32 "1jlaggxa2nz2r5yb2xmf0dh5wmxfdk6xwn0l3nwsqh82vyxhp7l9"))))
-    (properties `((upstream-name . "SOFIA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list circos))
-    (propagated-inputs (list r-png))
-    (home-page "http://cggl.horticulture.wisc.edu")
-    (synopsis "Making Sophisticated and Aesthetical Figures in R")
-    (description
-     "Software that leverages the capabilities of Circos by manipulating data,
-preparing configuration files, and running the Perl-native Circos directly from
-the R environment with minimal user intervention.  Circos is a novel software
-that addresses the challenges in visualizing genetic data by creating circular
-ideograms composed of tracks of heatmaps, scatter plots, line plots, histograms,
-links between common markers, glyphs, text, and etc.  Please see
-<http://www.circos.ca>.")
-    (license license:gpl3)))
 
 (define-public r-sofi
   (package
@@ -51475,38 +51431,6 @@ automatically update input values.  The mocked bindings simulate the
 communication between the server and UI components of a Shiny module in
 @code{testServer()}.")
     (license license:gpl3)))
-
-(define-public r-shinytester
-  (package
-    (name "r-shinytester")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ShinyTester" version))
-       (sha256
-        (base32 "0wm4rl2p8ggw6v2chk9b6ygh5y8p8cwzbyra0nr0qr2ka97didp8"))))
-    (properties `((upstream-name . "ShinyTester")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork
-                             r-tidyr
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ShinyTester")
-    (synopsis
-     "Functions to Minimize Bonehead Moves While Working with 'shiny'")
-    (description
-     "It's my experience that working with shiny is intuitive once you're into it, but
-can be quite daunting at first.  Several common mistakes are fairly predictable,
-and therefore we can control for these.  The functions in this package help
-match up the assets listed in the UI and the SERVER files, and Visualize the ad
-hoc structure of the shiny App.")
-    (license license:gpl2)))
 
 (define-public r-shinytest2
   (package
@@ -75021,13 +74945,13 @@ linear predictor.")
 (define-public r-samprior
   (package
     (name "r-samprior")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMprior" version))
        (sha256
-        (base32 "1n1i1db04lsc9wqici1gyblikm8ka9pigyypp9kzsaas6c69yh4r"))))
+        (base32 "17w8cjm0sfyan3wsyw411gvlacr8q7n6a43yjc3w4zpij3y5n0iy"))))
     (properties `((upstream-name . "SAMprior")))
     (build-system r-build-system)
     (arguments
@@ -75219,31 +75143,6 @@ Sampling), systematic and PPS (Probability Proportional to Size) sampling
 methods, ensuring a methodical and representative selection of data.  Seamlessly
 allocate predetermined allocations to smaller levels.")
     (license license:expat)))
-
-(define-public r-samplingdatacrt
-  (package
-    (name "r-samplingdatacrt")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "samplingDataCRT" version))
-       (sha256
-        (base32 "0ah3fi2sn642c8nicikhjhl1hdsjzshrf1j02swq0jaqggcqjdvk"))))
-    (properties `((upstream-name . "samplingDataCRT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=samplingDataCRT")
-    (synopsis
-     "Sampling Data Within Different Study Designs for Cluster Randomized Trials")
-    (description
-     "Package provides the possibility to sampling complete datasets from a normal
-distribution to simulate cluster randomized trails for different study designs.")
-    (license license:gpl3)))
 
 (define-public r-samplingbook
   (package

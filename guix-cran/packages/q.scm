@@ -1998,54 +1998,6 @@ nonparametric confidence intervals for quantiles using fractional order
 statistics\", Journal of Applied Statistics, 26:3, 343-353.")
     (license license:gpl3)))
 
-(define-public r-quantilegrader
-  (package
-    (name "r-quantilegrader")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QuantileGradeR" version))
-       (sha256
-        (base32 "1zwc6bg636gk8zll7wpznd3pzl611hcj2fmzp8b9505rra13p0g2"))))
-    (properties `((upstream-name . "QuantileGradeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page
-     "http://www.kingcounty.gov/depts/health/environmental-health/food-safety/inspection-system/food-safety-rating.aspx")
-    (synopsis "Quantile-Adjusted Restaurant Grading")
-    (description
-     "Implementation of the food safety restaurant grading system adopted by Public
-Health - Seattle & King County (see Ashwood, Z.C., Elias, B., and Ho.  D.E.
-\"Improving the Reliability of Food Safety Disclosure: A Quantile Adjusted
-Restaurant Grading System for Seattle-King County\" (working paper)).  As
-reported in the accompanying paper, this package allows jurisdictions to easily
-implement refinements that address common challenges with unadjusted grading
-systems.  First, in contrast to unadjusted grading, where the most recent single
-routine inspection is the primary determinant of a grade, grading inputs are
-allowed to be flexible.  For instance, it is straightforward to base the grade
-on average inspection scores across multiple inspection cycles.  Second, the
-package can identify quantile cutoffs by inputting substantively meaningful
-regulatory thresholds (e.g., the proportion of establishments receiving
-sufficient violation points to warrant a return visit).  Third, the quantile
-adjustment equalizes the proportion of establishments in a flexible number of
-grading categories (e.g., A/B/C) across areas (e.g., ZIP codes, inspector areas)
-to account for inspector differences.  Fourth, the package implements a refined
-quantile adjustment that addresses two limitations with the
-@code{stats::quantile()} function when applied to inspection score datasets with
-large numbers of score ties.  The quantile adjustment algorithm iterates over
-quantiles until, over all restaurants in all areas, grading proportions are
-within a tolerance of desired global proportions.  In addition the package
-allows a modified definition of \"quantile\" from \"Nearest Rank\".  Instead of
-requiring that at least p[1]% of restaurants receive the top grade and at least
-(p[1]+p[2])% of restaurants receive the top or second best grade for quantiles
-p, the algorithm searches for cutoffs so that as close as possible p[1]% of
-restaurants receive the top grade, and as close as possible to p[2]% of
-restaurants receive the second top grade.")
-    (license license:gpl2+)))
-
 (define-public r-quantilegh
   (package
     (name "r-quantilegh")
@@ -6743,30 +6695,6 @@ regression model is useful for the case where you want to model data of a nature
 limited to the intervals [0,1], (0,1], [0,1) or (0,1) and you want to use a
 quantile approach.")
     (license license:gpl3)))
-
-(define-public r-qcatools
-  (package
-    (name "r-qcatools")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QCAtools" version))
-       (sha256
-        (base32 "1q49l2mf02hqvz2ahqjdx7i3yxniy7dn2s74xjl9l6zdq8bypfw2"))))
-    (properties `((upstream-name . "QCAtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-qca r-ggplot2 r-directlabels))
-    (home-page "https://cran.r-project.org/package=QCAtools")
-    (synopsis "Helper Functions for QCA in R")
-    (description
-     "Helper functions for Qualitative Comparative Analysis: evaluate and plot Boolean
-formulae on fuzzy set score data, apply Boolean operations, compute consistency
-and coverage measures.")
-    (license license:gpl3+)))
 
 (define-public r-qcapro
   (package

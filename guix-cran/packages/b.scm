@@ -8657,30 +8657,6 @@ Provides also functions to analyze and visualize attractors in Boolean networks
 <doi:10.1093/bioinformatics/btq124>.")
     (license license:artistic2.0)))
 
-(define-public r-boolfilter
-  (package
-    (name "r-boolfilter")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BoolFilter" version))
-       (sha256
-        (base32 "14z4fzf8p4wgi939qs6v39a3xizccjcx7j4szsydllpkvxbwggbw"))))
-    (properties `((upstream-name . "BoolFilter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlab r-boolnet))
-    (home-page "https://cran.r-project.org/package=BoolFilter")
-    (synopsis
-     "Optimal Estimation of Partially Observed Boolean Dynamical Systems")
-    (description
-     "This package provides tools for optimal and approximate state estimation as well
-as network inference of Partially-Observed Boolean Dynamical Systems.")
-    (license license:artistic2.0)))
-
 (define-public r-booklet
   (package
     (name "r-booklet")
@@ -9543,20 +9519,20 @@ amplification curve is 40 cycles long.  Original raw data file:
 (define-public r-boe
   (package
     (name "r-boe")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boe" version))
        (sha256
-        (base32 "0nl2z0a9vk40mvlrdrgqdrzfrbj3ss3lnk1w6xy8z9krb6vi5nw1"))))
+        (base32 "1cnn2f7v2m2li2cad2fdaib5cvhlni0xdnhrxzn1gp7879abldgy"))))
     (properties `((upstream-name . "boe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-httr2 r-cli))
-    (home-page "https://github.com/charlescoverdale/boe")
+    (home-page "https://charlescoverdale.github.io/boe/")
     (synopsis "Download Data from the 'Bank of England' Statistical Database")
     (description
      "This package provides functions to download and tidy statistical data published

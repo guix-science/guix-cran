@@ -2697,13 +2697,13 @@ nlist package implements many of the methods for its nlist class.")
 (define-public r-universalcvi
   (package
     (name "r-universalcvi")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UniversalCVI" version))
        (sha256
-        (base32 "1x90004q9d52bh51vy7a3048m1n8p10gw87rhv5b4vhcpmj4m5xa"))))
+        (base32 "002n8zaz1gbgzppk5g0zkzja9hqv4zysgdwy2xazjsqnnl5w64ks"))))
     (properties `((upstream-name . "UniversalCVI")))
     (build-system r-build-system)
     (arguments
@@ -2736,9 +2736,9 @@ M. Popescu, J. C. Bezdek, T. C. Havens, J. M. Keller (2013)
 <doi:10.1016/j.patcog.2023.109910>, N. Wiroonsri, O. Preedasawakul (2023)
 <doi:10.48550/@code{arXiv.2308.14785>}, C. H. Wu, C. S. Ouyang, L. W. Chen, L.
 W. Lu (2015) <doi:10.1109/TFUZZ.2014.2322495>, X. Xie, G. Beni (1991)
-<doi:10.1109/34.85677> and Rousseeuw (1987) and Kaufman and Rousseeuw(2009)
-<doi:10.1016/0377-0427(87)90125-7> and <doi:10.1002/9780470316801> C. Alok.
-(2010).")
+<doi:10.1109/34.85677> and P.J. Rousseeuw (1987) and L. Kaufman and P.J.
+Rousseeuw(2009) <doi:10.1016/0377-0427(87)90125-7> and
+<doi:10.1002/9780470316801> C. Alok. (2010).")
     (license license:gpl3+)))
 
 (define-public r-univariateml

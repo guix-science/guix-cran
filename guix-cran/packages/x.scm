@@ -561,13 +561,13 @@ components and break structures.")
 (define-public r-xtbhst
   (package
     (name "r-xtbhst")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtbhst" version))
        (sha256
-        (base32 "1v0xfngc6h3w2x3cr8a0pyixwl09xwzbs9km83vkjgb3q06fq0w9"))))
+        (base32 "0fk8d97h4sf9c31n1zgml8d0h38d3dxbaab2kbldph54b4wiv7pm"))))
     (properties `((upstream-name . "xtbhst")))
     (build-system r-build-system)
     (arguments
@@ -1924,13 +1924,13 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 (define-public r-xiacf
   (package
     (name "r-xiacf")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xiacf" version))
        (sha256
-        (base32 "0i6wsb5n72v7xywr6svvzfp52aw4vk25i63v4w2q49sdhixs1npd"))))
+        (base32 "13c512v291yc8jmlqc24wvywpkihgliy24lwwlk6i70xx95w5kzp"))))
     (properties `((upstream-name . "xiacf")))
     (build-system r-build-system)
     (arguments

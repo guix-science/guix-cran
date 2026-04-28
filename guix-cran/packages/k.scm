@@ -4966,6 +4966,30 @@ players in a network.")
 linguistics as described in Mildenberger (2023) <@code{arXiv:2308.13383>}.")
     (license license:gpl2+)))
 
+(define-public r-keylist
+  (package
+    (name "r-keylist")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "keylist" version))
+       (sha256
+        (base32 "1fx3c7hknbas7zcn882sijhd3n0np86bpfsqgdrdfw28h14gwky5"))))
+    (properties `((upstream-name . "keylist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://lj-jenkins.github.io/keylist/")
+    (synopsis "Lightweight List Extensions that Enforce Unique Keys")
+    (description
+     "This package provides two lightweight keylist S3 classes klist and knlist':
+extensions of list that enforce unique keys, supporting either mixed
+named/unnamed elements or fully named elements, ensuring predictable key-value
+access.")
+    (license license:expat)))
+
 (define-public r-keyholder
   (package
     (name "r-keyholder")

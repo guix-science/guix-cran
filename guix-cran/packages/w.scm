@@ -10340,39 +10340,6 @@ will be updated once the surveys in other cities are completed and datasets have
 been made available.")
     (license license:cc0)))
 
-(define-public r-warpmix
-  (package
-    (name "r-warpmix")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "warpMix" version))
-       (sha256
-        (base32 "13zbl4aifhg7j5b3vpwgzgs09hr7yblz0rckmj5qh40s78j8cpfn"))))
-    (properties `((upstream-name . "warpMix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-nlme
-                             r-mass
-                             r-lme4
-                             r-fields
-                             r-fda))
-    (home-page "https://cran.r-project.org/package=warpMix")
-    (synopsis
-     "Mixed Effects Modeling with Warping for Functional Data Using B-Spline")
-    (description
-     "Mixed effects modeling with warping for functional data using B- spline.
-Warping coefficients are considered as random effects, and warping functions are
-general functions, parameters representing the projection onto B- spline basis
-of a part of the warping functions.  Warped data are modelled by a linear mixed
-effect functional model, the noise is Gaussian and independent from the warping
-functions.")
-    (license license:gpl3+)))
-
 (define-public r-warnepi
   (package
     (name "r-warnepi")

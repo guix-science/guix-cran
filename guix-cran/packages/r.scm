@@ -4124,13 +4124,13 @@ statistics on income and living conditions surveys.")
 (define-public r-rtinycc
   (package
     (name "r-rtinycc")
-    (version "0.1.8")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rtinycc" version))
        (sha256
-        (base32 "149k053m79glb8qhr7dyi7nc877jrfg00rvwiwff8m14kqxbyyk4"))))
+        (base32 "1ia0i63jywysxpr6zic7rac56z6svn5a26fcdv1sscvwk110ryad"))))
     (properties `((upstream-name . "Rtinycc")))
     (build-system r-build-system)
     (arguments
@@ -13132,6 +13132,29 @@ Determinant (MMCD) for multivariate outliers; Leys, C., Klein, O., Dominicy, Y.
 but less robust Mahalanobis distance method, only for comparison purposes.")
     (license license:expat)))
 
+(define-public r-routing
+  (package
+    (name "r-routing")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "routing" version))
+       (sha256
+        (base32 "0c07s3x1amr4199if92fryff8mnhx6idkc6snpj4q20zvj8lydj0"))))
+    (properties `((upstream-name . "routing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-promises r-pater r-httpcode))
+    (home-page "https://github.com/JulioCollazos64/routing")
+    (synopsis "'Express.js' Like Routing for R Web Frameworks")
+    (description
+     "It aims to provide R web frameworks a routing mechanism of HTTP requests
+inspired by the battle tested Express.js web framework.")
+    (license license:expat)))
+
 (define-public r-roundyh
   (package
     (name "r-roundyh")
@@ -20118,31 +20141,6 @@ also specify other colours.")
 tools <https://github.com/KCL-BMEIS/niftyreg>.  Linear and nonlinear
 registration are supported, in two and three dimensions.")
     (license license:gpl2)))
-
-(define-public r-rnhanes
-  (package
-    (name "r-rnhanes")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RNHANES" version))
-       (sha256
-        (base32 "045ykpgxvc22blbp47ysbk6a6x4akjd39pjr114cr23s7f48g6h4"))))
-    (properties `((upstream-name . "RNHANES")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2 r-survey r-rvest r-foreign r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/silentspringinstitute/RNHANES")
-    (synopsis "Facilitates Analysis of CDC NHANES Data")
-    (description
-     "This package provides tools for downloading and analyzing CDC NHANES data, with
-a focus on analytical laboratory data.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-rngforgpd
   (package
@@ -41150,28 +41148,6 @@ assets that generate Redoc documentation from an @code{OpenAPI} Specification:
 <https://redocly.com/redoc/>.")
     (license (list license:expat license:asl2.0))))
 
-(define-public r-redmonder
-  (package
-    (name "r-redmonder")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Redmonder" version))
-       (sha256
-        (base32 "02qrz1b0g7hdacj2s2bks5gfwnypkbiwlmn0bv7im1zz1swg9cp8"))))
-    (properties `((upstream-name . "Redmonder")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=Redmonder")
-    (synopsis "Microsoft(r)-Inspired Color Palettes")
-    (description
-     "Provide color schemes for maps (and other graphics) based on the color palettes
-of several Microsoft(r) products.  Forked from R@code{ColorBrewer} v1.1-2.")
-    (license license:asl2.0)))
-
 (define-public r-redm
   (package
     (name "r-redm")
@@ -51284,13 +51260,13 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.5.3.0")
+    (version "4.6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "05zx1ywpsdapwdf8mfgbgfbk4jc289akic5wdjqwh9g5fvz542dn"))))
+        (base32 "1azdfrcj64ni409gc74lcfmwr9jzqkc8s8s7i9kizav7hhqcjnky"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (arguments
@@ -61678,31 +61654,6 @@ allow students to demonstrate (and their instructors to be sure) that all work
 has been completed.  See Kane (2023)
 <https://ppbds.github.io/tutorial.helpers/articles/instructions.html> from the
 tutorial.helpers package for a background discussion.")
-    (license license:expat)))
-
-(define-public r-r4couchdb
-  (package
-    (name "r-r4couchdb")
-    (version "0.7.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "R4CouchDB" version))
-       (sha256
-        (base32 "1wd1yqbs8m4zqvdm6x7mrcyk5b5pr4azm3r49nrilg8fnr2bk9rz"))))
-    (properties `((upstream-name . "R4CouchDB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjsonio r-rcurl r-bitops))
-    (home-page "https://github.com/wactbprot/R4CouchDB")
-    (synopsis "R Convenience Layer for CouchDB 2.0")
-    (description
-     "This package provides a collection of functions for basic database and document
-management operations such as add, get, list access or delete.  Every
-@code{cdbFunction()} gets and returns a @code{list()} containing the connection
-setup.  Such a list can be generated by @code{cdbIni()}.")
     (license license:expat)))
 
 (define-public r-r3port

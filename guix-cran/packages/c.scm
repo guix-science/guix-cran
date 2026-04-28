@@ -46059,19 +46059,20 @@ package has been developed using concept of Shankar et al.
 (define-public r-cdss
   (package
     (name "r-cdss")
-    (version "0.3-0")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDSS" version))
        (sha256
-        (base32 "0w1i5vr5fbh1mra5w7dfq7fyy5gz1alx315zc28lxlsadz5c9vyh"))))
+        (base32 "1qsf9h7b451fvb39r6vqqracg9jl5x4fgjvpr86w7v0x7jdqpikf"))))
     (properties `((upstream-name . "CDSS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-readods r-openxlsx))
+    (native-inputs (list r-litedown))
     (home-page "https://cran.r-project.org/package=CDSS")
     (synopsis "Course-Dependent Skill Structures")
     (description
@@ -50544,13 +50545,13 @@ tibbles, lists, etc..")
 (define-public r-catastro
   (package
     (name "r-catastro")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatastRo" version))
        (sha256
-        (base32 "1kxzpi7gpxyc6dwkp8q5wihh8ls16dj9v99pmmwcp05gx116wia7"))))
+        (base32 "0m86ykjavgh2yhzaj4cxh34wlk5gjbr4yanaql167686hq2zhzal"))))
     (properties `((upstream-name . "CatastRo")))
     (build-system r-build-system)
     (arguments
