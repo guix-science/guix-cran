@@ -1144,27 +1144,28 @@ sequence.  This package is described in Fong et al. (2015)
 (define-public r-krls
   (package
     (name "r-krls")
-    (version "1.0-0")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KRLS" version))
        (sha256
-        (base32 "1zyf3smfzfm3n43i35rlj1w6vcip2hxkvk4f8lp77xbsry0gmwjw"))))
+        (base32 "0jc8jar8zrfrjqm87caji31rbdnbk90vlcyq33nx3mhi12xwnchk"))))
     (properties `((upstream-name . "KRLS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://www.r-project.org")
+    (home-page "https://web.stanford.edu/~jhain/")
     (synopsis "Kernel-Based Regularized Least Squares")
     (description
-     "Package implements Kernel-based Regularized Least Squares (KRLS), a machine
-learning method to fit multidimensional functions y=f(x) for regression and
+     "This package implements Kernel-based Regularized Least Squares (KRLS), a machine
+learning method to fit multidimensional functions y = f(x) for regression and
 classification problems without relying on linearity or additivity assumptions.
 KRLS finds the best fitting function by minimizing the squared loss of a
 Tikhonov regularization problem, using Gaussian kernels as radial basis
-functions.  For further details see Hainmueller and Hazlett (2014).")
+functions.  For further details see Hainmueller and Hazlett (2014,
+<doi:10.1093/pan/mpt019>).")
     (license license:gpl2+)))
 
 (define-public r-kris
@@ -1526,13 +1527,13 @@ important ones.")
 (define-public r-kpc
   (package
     (name "r-kpc")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KPC" version))
        (sha256
-        (base32 "1i9kpr0pib6a8qn7ibmhbay4vxr96ca4kcp5aswmlvcv4ycmw6lx"))))
+        (base32 "03idvlxfsi358q1fsq839l9j4kdg2qk33i405n2m49lkh7f3l1cr"))))
     (properties `((upstream-name . "KPC")))
     (build-system r-build-system)
     (arguments
@@ -1563,9 +1564,9 @@ measure of conditional dependenceâ (URL listed below).  When X is empty, KP
 measures the unconditional dependence between Y and Z, which has been described
 in Deb, N., P. Ghosal, and B. Sen (2020), âMeasuring association on
 topological spaces using kernels and geometric graphsâ
-<@code{arXiv:2010.01768>}, and it is implemented in the functions @code{KMAc()}
-and @code{Klin()} in this package.  The latter can be computed in near linear
-time.")
+<doi:10.48550/@code{arXiv.2010.01768>}, and it is implemented in the functions
+@code{KMAc()} and @code{Klin()} in this package.  The latter can be computed in
+near linear time.")
     (license license:gpl3)))
 
 (define-public r-kpart
@@ -1849,13 +1850,13 @@ layout based on DIN 5008B'.")
 (define-public r-kollar
   (package
     (name "r-kollar")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kollaR" version))
        (sha256
-        (base32 "1azqbgh149xm7ymmgznwj3kdzc1301apsyb46pi483id5a6l74mb"))))
+        (base32 "0ah2hncf1i9bsl0za3b1cx7il4b04z19vqc2vgw6pjpwnr56pcqi"))))
     (properties `((upstream-name . "kollaR")))
     (build-system r-build-system)
     (arguments
@@ -1865,7 +1866,6 @@ layout based on DIN 5008B'.")
                              r-tidyr
                              r-shiny
                              r-scales
-                             r-plotly
                              r-patchwork
                              r-magick
                              r-jpeg
@@ -2296,13 +2296,13 @@ Statist.  Soc.  B (2018) 80, 3, pp.  551-577.")
 (define-public r-knobi
   (package
     (name "r-knobi")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "knobi" version))
        (sha256
-        (base32 "0cm2ripqiqak14xdf2n64h7zfbaa3cpv7l28i3zlw09lmz52wd66"))))
+        (base32 "102gbwb0ng9vdvv1w74zzd8bby4s32dc9d0n97lkzbg5fay5021n"))))
     (properties `((upstream-name . "knobi")))
     (build-system r-build-system)
     (arguments
@@ -4107,13 +4107,13 @@ checking containment in an interval, and an alternative interface to
 (define-public r-kimfilter
   (package
     (name "r-kimfilter")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kimfilter" version))
        (sha256
-        (base32 "04z8ih8azsc5b4h9ivkmnqwl9gnlp7fm3rn1w1z9v9c977rh4rqk"))))
+        (base32 "1nps73c6w05zm4hgqyzv16mq2365r7ldm5zwk05d7xvhxdvsj8ld"))))
     (properties `((upstream-name . "kimfilter")))
     (build-system r-build-system)
     (arguments
@@ -5418,31 +5418,6 @@ or multivariate responses, with one or more bandwidths.  K-fold cross-validation
 is also performed.")
     (license license:gpl2+)))
 
-(define-public r-kernplus
-  (package
-    (name "r-kernplus")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kernplus" version))
-       (sha256
-        (base32 "0z5zpj89nw7cdphg6frmjwqjxsl6g95xsa8zgsxmw2q75wwj1saz"))))
-    (properties `((upstream-name . "kernplus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mixtools r-kernsmooth r-circular))
-    (home-page "https://cran.r-project.org/package=kernplus")
-    (synopsis
-     "Kernel Regression-Based Multidimensional Wind Turbine Power Curve")
-    (description
-     "This package provides wind energy practitioners with an effective machine
-learning-based tool that estimates a multivariate power curve and predicts the
-wind power output for a specific environmental condition.")
-    (license license:gpl3)))
-
 (define-public r-kernopt
   (package
     (name "r-kernopt")
@@ -5739,13 +5714,13 @@ conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
 (define-public r-kerasnip
   (package
     (name "r-kerasnip")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerasnip" version))
        (sha256
-        (base32 "0ap9b375pssh345q01a553cqkg5xwqish2zwxpy253gh3nhriqny"))))
+        (base32 "10xmmhbvfrlbwq1fbjnb2xksbm5wrk72j7pj5m873655q6q9z6ff"))))
     (properties `((upstream-name . "kerasnip")))
     (build-system r-build-system)
     (arguments
@@ -5757,12 +5732,14 @@ conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
                              r-recipes
                              r-purrr
                              r-parsnip
+                             r-lobstr
                              r-keras3
+                             r-generics
                              r-dplyr
                              r-cli
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=kerasnip")
+    (home-page "https://davidrsch.github.io/kerasnip/")
     (synopsis "Bridge Between 'keras' and 'tidymodels'")
     (description
      "This package provides a seamless bridge between keras and the tidymodels
@@ -6269,19 +6246,19 @@ high-dimensional applications.")
 (define-public r-kdensity
   (package
     (name "r-kdensity")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdensity" version))
        (sha256
-        (base32 "1gqa73ycs86in449y71dsasbc0ppflbbla44bhi13c9ma9kwbpc7"))))
+        (base32 "01jgv0c1qpl26bhp7mlhvc5x34mwj6gchq0888lzghnb7k1lk1qr"))))
     (properties `((upstream-name . "kdensity")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-univariateml r-eql r-assertthat))
+    (propagated-inputs (list r-univariateml))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JonasMoss/kdensity")
     (synopsis
@@ -6870,13 +6847,13 @@ in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
 (define-public r-kardl
   (package
     (name "r-kardl")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kardl" version))
        (sha256
-        (base32 "1h29k9rsf145sbgckhl6wlfrjzgzngybv8yxfbj39llzh5nk8nkj"))))
+        (base32 "1x9xrnc4xgs9wij5qfbwlmjlmhsw28whz5nx9llm1j4i4c2dzh08"))))
     (properties `((upstream-name . "kardl")))
     (build-system r-build-system)
     (arguments
@@ -6884,7 +6861,7 @@ in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
       #:tests? #f))
     (propagated-inputs (list r-nlwaldtest r-msm r-lmtest r-ggplot2 r-car))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=kardl")
+    (home-page "https://karamelikli.github.io/kardl/")
     (synopsis "Make Symmetric and Asymmetric ARDL Estimations")
     (description
      "This package implements estimation procedures for Autoregressive Distributed Lag
@@ -7398,5 +7375,63 @@ presented in Bahasa Indonesia.  This initiative is intended as a contribution to
 promoting and expanding the use of Bahasa Indonesia in the field of programming,
 in line with its designation as one of the official languages of the United
 Nations General Assembly.")
+    (license license:gpl3)))
+
+(define-public r-k4prosessiswa
+  (package
+    (name "r-k4prosessiswa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "K4ProsesSiswa" version))
+       (sha256
+        (base32 "0ixqplla4978laiymv62sl87c2gvbayv5qppi1kfyljkgp1sz342"))))
+    (properties `((upstream-name . "K4ProsesSiswa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=K4ProsesSiswa")
+    (synopsis "Student Process Data Files for TIMSS 2023 Grade 4")
+    (description
+     "The official website of the Trends in International Mathematics and Science
+Study (TIMSS) 2023 provides Student Process Data Files for Grade 4 in RData
+format.  However, the data are presented exclusively in numerical form.  This
+package converts the numeric values into categorical variables, allowing for
+easier interpretation and reducing ambiguity in statistical analysis.  The
+category labels are presented in Bahasa Indonesia.  This effort also supports
+the promotion of Bahasa Indonesia in programming, in line with its recognition
+as one of the official languages of the United Nations.  For further
+information, visit <https://timss2023.org/>.")
+    (license license:gpl3)))
+
+(define-public r-k4prestasisiswa
+  (package
+    (name "r-k4prestasisiswa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "K4PrestasiSiswa" version))
+       (sha256
+        (base32 "1ckvlx02gnaviyzhfvyqnb67znpfk6q8qzn5v768l43j6kyl9q58"))))
+    (properties `((upstream-name . "K4PrestasiSiswa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=K4PrestasiSiswa")
+    (synopsis "Student Achievement Data Files for TIMSS 2023 Grade 4")
+    (description
+     "The official Trends in International Mathematics and Science Study (TIMSS) 2023
+website provides Student Achievement Data Files for Grade 4 in RData format.
+However, the available data are presented solely as numerical values.  This
+package transforms the numerical data into categorical variables, enabling
+clearer interpretation and reducing ambiguity in statistical analysis.  The
+category labels are provided in Bahasa Indonesia.  This initiative contributes
+to promoting the use of Bahasa Indonesia in programming, in line with its
+designation as one of the official languages of the United Nations.  For more
+details see <https://timss2023.org/>.")
     (license license:gpl3)))
 

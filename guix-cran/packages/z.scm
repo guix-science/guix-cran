@@ -846,31 +846,6 @@ Taconeli and Rodrigues de Lara (2022) <doi:10.1080/00949655.2021.2005597>, and
 Yeh and Young (2025) <doi:10.1080/03610918.2025.2464076>.")
     (license license:gpl2+)))
 
-(define-public r-zic
-  (package
-    (name "r-zic")
-    (version "0.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "zic" version))
-       (sha256
-        (base32 "1vd64ljigf6iwgzlgdxgj65nlwir176h7ddznddpaz2abh6n6zwp"))))
-    (properties `((upstream-name . "zic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-coda))
-    (home-page "https://cran.r-project.org/package=zic")
-    (synopsis "Bayesian Inference for Zero-Inflated Count Models")
-    (description
-     "This package provides MCMC algorithms for the analysis of zero-inflated count
-models.  The case of stochastic search variable selection (SVS) is also
-considered.  All MCMC samplers are coded in C++ for improved efficiency.  A data
-set considering the demand for health care is provided.")
-    (license license:gpl2+)))
-
 (define-public r-zibr
   (package
     (name "r-zibr")
@@ -944,13 +919,13 @@ rare variant association tests in exome sequencing data.")
 (define-public r-zetasuite
   (package
     (name "r-zetasuite")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZetaSuite" version))
        (sha256
-        (base32 "09g67b4lv8vafbvrgv1bh6yiswjc5s6rmdjzmzczzdk32q01fcbh"))))
+        (base32 "1dcv896cas9w7zbl7w58l45jqrl8s60lq7qw7vrbi59pzn1l85fy"))))
     (properties `((upstream-name . "ZetaSuite")))
     (build-system r-build-system)
     (arguments

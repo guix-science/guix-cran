@@ -1132,26 +1132,27 @@ predictors exceeds the number of observations.")
 (define-public r-cvglasso
   (package
     (name "r-cvglasso")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CVglasso" version))
        (sha256
-        (base32 "1bh09cd0yabhqv5yfahhvayx3f09yqapzl1yr9nc9xqwyx1d0cfd"))))
+        (base32 "05pkm359ahpshk47bs15glgin7bjy8pdiasrzssai6cx4xshy0yw"))))
     (properties `((upstream-name . "CVglasso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-glasso r-ggplot2 r-foreach r-dplyr r-doparallel))
-    (home-page "https://github.com/MGallow/CVglasso")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jmcurran/CVglasso")
     (synopsis "Lasso Penalized Precision Matrix Estimation")
     (description
-     "Estimates a lasso penalized precision matrix via the blockwise coordinate
-descent (BCD).  This package is a simple wrapper around the popular glasso
-package that extends and enhances its capabilities.  These enhancements include
-built-in cross validation and visualizations.  See Friedman et al (2008)
+     "Estimates a lasso penalized precision matrix via blockwise coordinate descent
+(BCD).  This package is a simple wrapper around the popular glasso package and
+extends and enhances its capabilities.  These enhancements include built-in
+cross validation and visualizations.  See Friedman et al. (2008)
 <doi:10.1093/biostatistics/kxm045> for details regarding the estimation method.")
     (license license:gpl2+)))
 
@@ -1605,13 +1606,13 @@ by @code{na.omit()} function before analysis.")
 (define-public r-cusumdesign
   (package
     (name "r-cusumdesign")
-    (version "1.1.6")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CUSUMdesign" version))
        (sha256
-        (base32 "1zc964akp1wf6l2hvp8zv64bg1c9d8bwj5zl16dyla5yhsjz48xr"))))
+        (base32 "0z7vlhpx6hyrdw42cqq80jzycxdy882w9wxbvg5xnf2nzpk9h2xa"))))
     (properties `((upstream-name . "CUSUMdesign")))
     (build-system r-build-system)
     (arguments
@@ -1919,6 +1920,35 @@ included.  For more details, see Chen et al. (2023)
 M.P. (2010) <DOI:10.1186/1471-2105-11-44>.")
     (license license:gpl2+)))
 
+(define-public r-curves
+  (package
+    (name "r-curves")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "curves" version))
+       (sha256
+        (base32 "0mwbrdv07yhdqriqkd170w9bjgzpq21pjg4albd2fw3dhk1c4l9v"))))
+    (properties `((upstream-name . "curves")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rvalavi/curves")
+    (synopsis "Model-Agnostic Response Curves for Fitted Models")
+    (description
+     "Create model-agnostic response-curve diagnostics for fitted prediction models.
+Supports profile curves, partial dependence, individual conditional expectation,
+and accumulated local effects; univariate curves, bivariate surfaces, ensemble
+summaries across multiple models, ALE-based interaction ranking, and optional
+raster-linked exploration with terra and shiny'.  Static displays are returned
+as ggplot2 plots.  For more details on the methods see Molnar (2025)
+<https://christophm.github.io/interpretable-ml-book/>.")
+    (license license:gpl3)))
+
 (define-public r-curvedepth
   (package
     (name "r-curvedepth")
@@ -2047,16 +2077,56 @@ are running in a background job.  Parallel computing is also easier with the
 workers parameter.")
     (license license:expat)))
 
+(define-public r-curriculr
+  (package
+    (name "r-curriculr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "curriculr" version))
+       (sha256
+        (base32 "08c3nci1hc8yvmrjkbkg29bs1y6ip1bs541cya02w8cjxh1hypcr"))))
+    (properties `((upstream-name . "curriculr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr
+                             r-quarto
+                             r-openxlsx2
+                             r-lifecycle
+                             r-fs
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/erwinlares/curriculr")
+    (synopsis "Data-Driven CVs with 'Quarto' and 'Typst'")
+    (description
+     "This package provides tools for producing data-driven curriculum vitae documents
+from structured data stored in an Excel workbook.  The core workflow reads CV
+content from a workbook, converts it into Typst layout blocks, and renders a
+polished PDF via the Quarto publishing system.  Includes functions for reading
+and cleaning CV data, building Typst section headings and entries, rendering CV
+sections from data frames, and scaffolding new CV projects with a standard
+folder structure and template workbook.  Designed to separate content from
+layout: CV data lives in the spreadsheet, rendering configuration lives in
+Quarto', and transformation logic lives in small, reusable R functions.  See the
+Typst typesetting system at <https://typst.app> and the Quarto publishing system
+at <https://quarto.org>.  Inspired by the vitae package
+<https://CRAN.R-project.org/package=vitae> and the Awesome CV @code{LaTeX}
+template <https://github.com/posquit0/Awesome-CV>.")
+    (license license:expat)))
+
 (define-public r-curricularcomplexitydata
   (package
     (name "r-curricularcomplexitydata")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CurricularComplexityData" version))
        (sha256
-        (base32 "1b9z22lav84ii845xjhq5nyc89nkbn8bmjpz002dx2ml2aw8qbfv"))))
+        (base32 "0hm881pr73ga1w8mkd8q3lmsp1xwhlh1iv7cpxy5r3f4v8n49aph"))))
     (properties `((upstream-name . "CurricularComplexityData")))
     (build-system r-build-system)
     (arguments
@@ -2068,10 +2138,8 @@ workers parameter.")
      "This package provides igraph objects representing engineering plans of study
 across multiple disciplines and institutions.  The data are intended for use
 with the @code{CurricularComplexity} package (Reeping, 2026)
-<https://CRAN.R-project.org/package=@code{CurricularComplexity>} to support
-analyses of curricular structure.  The package leverages network analysis
-approaches implemented in igraph (CsÃ¡rdi et al., 2025)
-<doi:10.5281/zenodo.7682609>.")
+<doi:10.32614/CRAN.package.@code{CurricularComplexity>} to support analyses of
+curricular structure.")
     (license license:expat)))
 
 (define-public r-curricularcomplexity
@@ -2526,13 +2594,13 @@ manage character vectors for nice display.")
 (define-public r-cuda-ml
   (package
     (name "r-cuda-ml")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cuda.ml" version))
        (sha256
-        (base32 "0vqmy8qs3234gllpymvnf2x4a5g9rcmn9ja8cvccksvx6bh10mgz"))))
+        (base32 "04gdl5cfngw7ifxmgjf7sip0n38r2aip5s3sazisdxmi41sprqai"))))
     (properties `((upstream-name . "cuda.ml")))
     (build-system r-build-system)
     (arguments
@@ -2755,39 +2823,6 @@ structure to separate the recording of time variant/ invariant variables.  See
 the Journal of Statistical Software reference: <doi:10.18637/jss.v110.i07>.")
     (license license:expat)))
 
-(define-public r-cubar
-  (package
-    (name "r-cubar")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cubar" version))
-       (sha256
-        (base32 "0v3i7n452zma836gp6di40kq4wnbpa69gnaf6gkqngpkb7p3742m"))))
-    (properties `((upstream-name . "cubar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-iranges r-ggplot2 r-data-table
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mt1022/cubar")
-    (synopsis "Codon Usage Bias Analysis")
-    (description
-     "This package provides a suite of functions for rapid and flexible analysis of
-codon usage bias.  It provides in-depth analysis at the codon level, including
-relative synonymous codon usage (RSCU), @code{tRNA} weight calculations, machine
-learning predictions for optimal or preferred codons, and visualization of
-codon-anticodon pairing.  Additionally, it can calculate various gene- specific
-codon indices such as codon adaptation index (CAI), effective number of codons
-(ENC), fraction of optimal codons (Fop), @code{tRNA} adaptation index
-(@code{tAI}), mean codon stabilization coefficients (CSCg), and GC contents
-(GC/GC3s/GC4d).  It also supports both standard and non-standard genetic code
-tables found in NCBI, as well as custom genetic code tables.")
-    (license license:expat)))
-
 (define-public r-cub
   (package
     (name "r-cub")
@@ -2985,29 +3020,6 @@ discrimination, and coefficient alpha for ease of result communication.")
     (description
      "Interactive shiny application for running classical test theory (item analysis).")
     (license license:gpl3)))
-
-(define-public r-cttinshiny
-  (package
-    (name "r-cttinshiny")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CTTinShiny" version))
-       (sha256
-        (base32 "1dc6kaxajkvviszmrcvhh9cg2k8g1hbpf1f6fg3wlgnb80fsx9b7"))))
-    (properties `((upstream-name . "CTTinShiny")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-foreign r-ctt))
-    (home-page "https://cran.r-project.org/package=CTTinShiny")
-    (synopsis "Shiny Interface for the CTT Package")
-    (description
-     "This package provides a Shiny interface developed in close coordination with the
-CTT package, providing a GUI that guides the user through CTT analyses.")
-    (license license:gpl2)))
 
 (define-public r-ctt
   (package
@@ -3277,23 +3289,19 @@ see
 (define-public r-cts
   (package
     (name "r-cts")
-    (version "1.0-25")
+    (version "1.0-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cts" version))
        (sha256
-        (base32 "0idv1958lknrbdnlkfa3ha1yz18xwd7mnakwgay1wyqf95as8n1i"))))
+        (base32 "0fk294p4zgkm3z575wrsxdbxkdwvkdjy20n9jbyn54020zw90hw1"))))
     (properties `((upstream-name . "cts")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (native-inputs (list r-r-rsp gfortran))
+      #:tests? #f))
+    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=cts")
     (synopsis "Continuous Time Autoregressive Models")
     (description
@@ -4571,31 +4579,6 @@ their search results, create map visualizations, export the citations associated
 with their searches, and more.")
     (license license:gpl3+)))
 
-(define-public r-cspec
-  (package
-    (name "r-cspec")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cspec" version))
-       (sha256
-        (base32 "049vynbffxyd5zwxwyz1jv05zgq7zrx1ypzv5j62ph64gl42m13p"))))
-    (properties `((upstream-name . "cspec")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=cspec")
-    (synopsis "Complete Discrete Fourier Transform (DFT) and Periodogram")
-    (description
-     "Calculate the predictive discrete Fourier transform, complete discrete Fourier
-transform, complete periodogram, and tapered complete periodogram.  This
-algorithm is based on the preprint \"Spectral methods for small sample time
-series: A complete periodogram approach\" (2020) by Sourav Das, Suhasini Subba
-Rao, and Junho Yang.")
-    (license license:gpl2)))
-
 (define-public r-csodata
   (package
     (name "r-csodata")
@@ -5184,13 +5167,13 @@ cross-sectional dependence, including mean group (MG), common correlated effects
 (define-public r-csdb
   (package
     (name "r-csdb")
-    (version "2026.2.2")
+    (version "2026.5.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csdb" version))
        (sha256
-        (base32 "1p8m2d3r0x9zvlp2drk3zm07vjvh9gga7pjff2ds7ag12xq8pnjh"))))
+        (base32 "1ax9px2my8macfcc0f5z9i7bf8cwmcci0xwjfl6p9gyv70sr8a65"))))
     (properties `((upstream-name . "csdb")))
     (build-system r-build-system)
     (arguments
@@ -5763,28 +5746,6 @@ References: D. G. Waterman, J. Foadi, G. Evans (2011)
 <doi:10.1107/S0108767311084303>.")
     (license license:gpl2)))
 
-(define-public r-crwrm
-  (package
-    (name "r-crwrm")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CRWRM" version))
-       (sha256
-        (base32 "0w6lg5q2c0w5p9vg5qr32pycyl8d1zp0s55jlvf2xhmqx34677hd"))))
-    (properties `((upstream-name . "CRWRM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=CRWRM")
-    (synopsis "Changing the Reference Group without Re-Running the Model")
-    (description
-     "To re-calculate the coefficients and the standard deviation when changing the
-reference group.")
-    (license license:gpl3)))
-
 (define-public r-crwbmetareg
   (package
     (name "r-crwbmetareg")
@@ -6127,47 +6088,6 @@ functionalities of the package are described in Pozzi et al. (2026)
 <doi:10.31223/X5K17P> (pre-print).")
     (license license:gpl3+)))
 
-(define-public r-crso
-  (package
-    (name "r-crso")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crso" version))
-       (sha256
-        (base32 "1r10vz8z5y52a5v5phw22fhqwv9p7g66xfsx0906bcx74dn3f2b3"))))
-    (properties `((upstream-name . "crso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-foreach))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=crso")
-    (synopsis "Cancer Rule Set Optimization ('crso')")
-    (description
-     "An algorithm for identifying candidate driver combinations in cancer.  CRSO is
-based on a theoretical model of cancer in which a cancer rule is defined to be a
-collection of two or more events (i.e., alterations) that are minimally
-sufficient to cause cancer.  A cancer rule set is a set of cancer rules that
-collectively are assumed to account for all of ways to cause cancer in the
-population.  In CRSO every event is designated explicitly as a passenger or
-driver within each patient.  Each event is associated with a patient-specific,
-event-specific passenger penalty, reflecting how unlikely the event would have
-happened by chance, i.e., as a passenger.  CRSO evaluates each rule set by
-assigning all samples to a rule in the rule set, or to the null rule, and then
-calculating the total statistical penalty from all unassigned event.  CRSO uses
-a three phase procedure find the best rule set of fixed size K for a range of
-Ks.  A core rule set is then identified from among the best rule sets of size K
-as the rule set that best balances rule set size and statistical penalty.  Users
-should consult the crso vignette for an example walk through of a full CRSO run.
- The full description, of the CRSO algorithm is presented in: Klein MI,
-Cannataro V, Townsend J, Stern DF and Zhao H. \"Identifying combinations of
-cancer driver in individual patients.\" @code{BioRxiv} 674234 [Preprint].  June
-19, 2019. <doi:10.1101/674234>.  Please cite this article if you use crso'.")
-    (license license:gpl2)))
-
 (define-public r-crsnls
   (package
     (name "r-crsnls")
@@ -6259,13 +6179,13 @@ correlation, autocorrelation, and volatility clustering without power loss.")
 (define-public r-crs
   (package
     (name "r-crs")
-    (version "0.15-41")
+    (version "0.15-43")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crs" version))
        (sha256
-        (base32 "16ry4vrnx5nskspnghabbr9ijpy5i6pr8lpl2z0qfmgvigqr5al2"))))
+        (base32 "0h35rak6ngkagjhx6qra3rm6spxv1cqblxs51sxllhbny221q3p5"))))
     (properties `((upstream-name . "crs")))
     (build-system r-build-system)
     (arguments
@@ -9636,27 +9556,50 @@ shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
 
+(define-public r-cppally
+  (package
+    (name "r-cppally")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cppally" version))
+       (sha256
+        (base32 "1wcmcldxkzy9vl1nzn1yl3ncbj1igkfnga0jqnwj11a289l6nkj1"))))
+    (properties `((upstream-name . "cppally")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://nicchr.github.io/cppally/")
+    (synopsis "'C++20' API for R")
+    (description
+     "This package provides a header-only C++20 API for manipulating R data structures
+from C++'.  Provides C++20 concepts specific to R, custom scalar and vector
+classes with built-in NA handling, automatic object protection, SIMD
+(single-instruction-multiple-data), parallelisation, and a streamlined system
+for registering C++ functions, including templates, to R. Full API reference and
+documentation are available at <https://nicchr.github.io/cppally/>.")
+    (license license:expat)))
+
 (define-public r-cpp4r
   (package
     (name "r-cpp4r")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp4r" version))
        (sha256
-        (base32 "0c5zs7w273jblp8hk4c1bl90pmq7sq2azlafw45an5csj2rg913k"))))
+        (base32 "09bhs8ff9xbcix0yqclfms521gb2rvcxdn529yv21nksngjlbjmh"))))
     (properties `((upstream-name . "cpp4r")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-tibble
-                             r-glue
-                             r-desc
-                             r-decor))
+    (propagated-inputs (list r-withr r-glue r-desc))
     (home-page "https://cpp4r.org")
     (synopsis "Header-Only 'C++' and 'R' Interface")
     (description
@@ -10171,13 +10114,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.2-8")
+    (version "1.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "07i54g3nyiyh401m9y04vm19xai9jgzzvqs4yg7xcjzjqymd2gcy"))))
+        (base32 "0bz6xgc5k66kqjn0sk3hakx3325cvb0kdsqpsp2lpc6fjd012jzs"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -10194,7 +10137,7 @@ sites.")
                              r-dorng
                              r-doparallel))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=cpfa")
+    (home-page "https://github.com/matthewasisgress/cpfa")
     (synopsis "Classification with Parallel Factor Analysis")
     (description
      "Classification using Richard A. Harshman's Parallel Factor Analysis-1 (Parafac)
@@ -10517,31 +10460,6 @@ its basic form, where explanatory variables are time independent with one event
 per subject.  Method is based on a smooth modification of the partial
 likelihood.")
     (license license:gpl3)))
-
-(define-public r-coxr2
-  (package
-    (name "r-coxr2")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CoxR2" version))
-       (sha256
-        (base32 "1fjsa403lbx0hi7b0gsdaz0q9axw521q4xzphbfbknify4y72md6"))))
-    (properties `((upstream-name . "CoxR2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=CoxR2")
-    (synopsis
-     "R-Squared Measure Based on Partial LR Statistic, for the Cox PH Regression Model")
-    (description
-     "Calculate the R-squared, aka explained randomness, based on the partial
-likelihood ratio statistic under the Cox Proportional Hazard model [J O'Quigley,
-R Xu, J Stare (2005) <doi:10.1002/sim.1946>].")
-    (license license:gpl2)))
 
 (define-public r-coxplus
   (package
@@ -11156,35 +11074,6 @@ generator) and PLSIM (piecewise linear) algorithms, see Foldnes and Olsson
 (2016) <doi:10.1080/00273171.2015.1133274> and Foldnes and GrÃ¸nneberg (2021)
 <doi:10.1080/10705511.2021.1949323>, respectively.")
     (license license:gpl2+)))
-
-(define-public r-covsep
-  (package
-    (name "r-covsep")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covsep" version))
-       (sha256
-        (base32 "19dvwhl85yx9ddwxvnq5sdd534s6llcw61gckrav48hq49x1bqld"))))
-    (properties `((upstream-name . "covsep")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "http://arxiv.org/abs/1505.02023")
-    (synopsis
-     "Tests for Determining if the Covariance Structure of 2-Dimensional Data is Separable")
-    (description
-     "This package provides functions for testing if the covariance structure of
-2-dimensional data (e.g. samples of surfaces X_i = X_i(s,t)) is separable, i.e.
-if covariance(X) = C_1 x C_2.  A complete descriptions of the implemented tests
-can be found in the paper Aston, John A. D.; Pigoli, Davide; Tavakoli, Shahin.
-Tests for separability in nonparametric covariance operators of random surfaces.
- Ann.  Statist.  45 (2017), no.  4, 1431--1461. <doi:10.1214/16-AOS1495>
-<https://projecteuclid.org/euclid.aos/1498636862> <@code{arXiv:1505.02023>}.")
-    (license license:gpl2)))
 
 (define-public r-covsel
   (package
@@ -12061,13 +11950,13 @@ effects models using the structures and methods of the nlme package.")
 (define-public r-covatest
   (package
     (name "r-covatest")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "covatest" version))
        (sha256
-        (base32 "0qh4b5bphsr6c7q96pyl88xyim16y53h29cdlagaf4qmjdwx7qv7"))))
+        (base32 "0riiv1c4bgpjm6bdgrp2mpwmqqmaa0d321467yxwnlk221lqwsgb"))))
     (properties `((upstream-name . "covatest")))
     (build-system r-build-system)
     (arguments
@@ -12187,57 +12076,16 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (2022) <doi:10.1007/s00362-022-01381-1> for details.")
     (license license:gpl3+)))
 
-(define-public r-coursekata
-  (package
-    (name "r-coursekata")
-    (version "0.19.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coursekata" version))
-       (sha256
-        (base32 "147f3ywvz9pnz8j3dfz311br6ss85686v40p0874gw3mc1lnb29n"))))
-    (properties `((upstream-name . "coursekata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-vctrs
-                             r-supernova
-                             r-rlang
-                             r-remotes
-                             r-purrr
-                             r-palmerpenguins
-                             r-mosaic
-                             r-metrics
-                             r-lsr
-                             r-lifecycle
-                             r-glue
-                             r-ggplot2
-                             r-ggformula
-                             r-dslabs
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/coursekata/coursekata-r")
-    (synopsis "Packages and Functions for 'CourseKata' Courses")
-    (description
-     "Easily install and load all packages and functions used in @code{CourseKata}
-courses.  Aid teaching with helper functions and augment generic functions to
-provide cohesion between the network of packages.  Learn more about
-@code{CourseKata} at <https://www.coursekata.org>.")
-    (license license:agpl3+)))
-
 (define-public r-couplr
   (package
     (name "r-couplr")
-    (version "1.2.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "couplr" version))
        (sha256
-        (base32 "1a3xah686x5ackxwpdr50h3i3x4j1kwmf15msv6mc8xx3qhsk0x0"))))
+        (base32 "0cf28swa8k71i696rx9h7rdzsnxxhr30j26v0vl2c97l7k8b4041"))))
     (properties `((upstream-name . "couplr")))
     (build-system r-build-system)
     (arguments
@@ -12249,6 +12097,7 @@ provide cohesion between the network of packages.  Learn more about
                              r-rcppeigen
                              r-rcpp
                              r-purrr
+                             r-htmlwidgets
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://gillescolling.com/couplr/")
@@ -12271,6 +12120,31 @@ robust), greedy matching algorithms, and comprehensive balance diagnostics for
 assessing match quality using standardized differences and distribution
 comparisons.")
     (license license:expat)))
+
+(define-public r-coupling
+  (package
+    (name "r-coupling")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coupling" version))
+       (sha256
+        (base32 "0iz8bgcky2hj8cw3yai6llh27xwpr4qhk35r7nwj93p278kvzi88"))))
+    (properties `((upstream-name . "coupling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppthread r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://stscl.github.io/coupling/")
+    (synopsis "Analysis of Coupling Coordination Degree")
+    (description
+     "This package implements coupling coordination degree (CCD) models and supports
+metacoupling analysis following Tang et al. (2021)
+<doi:10.1016/j.scs.2021.103405>.")
+    (license license:gpl3)))
 
 (define-public r-countyhealthr
   (package
@@ -12337,36 +12211,6 @@ sampling Zero-inflated Negative Binomial.  Additionally, it can generate regret
 plots to evaluate the performance of contextual bandit algorithms.  This package
 is based on the algorithms by Liu et al. (2023) <@code{arXiv:2311.14359>}.")
     (license license:gpl2+)))
-
-(define-public r-counttofpkm
-  (package
-    (name "r-counttofpkm")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "countToFPKM" version))
-       (sha256
-        (base32 "0h89knii8zkbq0lw7yn3qzak30s7bifq53ga4vy6za6hqwc53x2j"))))
-    (properties `((upstream-name . "countToFPKM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-complexheatmap r-circlize))
-    (home-page "https://github.com/AAlhendi1707/countToFPKM")
-    (synopsis
-     "Convert Counts to Fragments per Kilobase of Transcript per Million (FPKM)")
-    (description
-     "This package implements the algorithm described in Trapnell,C. et al. (2010)
-<doi: 10.1038/nbt.1621>.  This function takes read counts matrix of RNA-Seq
-data, feature lengths which can be retrieved using @code{biomaRt} package, and
-the mean fragment lengths which can be calculated using the
-@code{CollectInsertSizeMetrics(Picard}) tool.  It then returns a matrix of FPKM
-normalised data by library size and feature effective length.  It also provides
-the user with a quick and reliable function to generate FPKM heatmap plot of the
-highly variable features in RNA-Seq dataset.")
-    (license license:gpl3)))
 
 (define-public r-countstar
   (package
@@ -13210,20 +13054,24 @@ regression, logistic regression and the Cox regression models.")
 (define-public r-cosmos
   (package
     (name "r-cosmos")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoSMoS" version))
        (sha256
-        (base32 "095gqn3akm9v5zfgjr6djdvkspyin57yav6l38jvb5377b4jv8dq"))))
+        (base32 "0gf8my5gxyf84z3m3qss9x173p47z3pg24k75kw56fvhfka5zfwd"))))
     (properties `((upstream-name . "CoSMoS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma
+    (propagated-inputs (list r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpp
+                             r-pracma
                              r-plot3d
+                             r-patchwork
                              r-nloptr
                              r-mvtnorm
                              r-mba
@@ -13232,9 +13080,8 @@ regression, logistic regression and the Cox regression models.")
                              r-mar
                              r-ggquiver
                              r-ggplot2
-                             r-directlabels
                              r-data-table
-                             r-cowplot
+                             r-bh
                              r-animation))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/TycheLab/CoSMoS")
@@ -13247,7 +13094,7 @@ do the rest. @code{CoSMoS} is based on the framework described in Papalexiou
 Papalexiou and Serinaldi (2020, <doi:10.1029/2019WR026331>), and further
 advanced in Papalexiou et al. (2021, <doi:10.1029/2020WR029466>) to allow
 fine-scale space-time simulation of storms (or even cyclone-mimicking fields).")
-    (license license:agpl3)))
+    (license license:gpl3)))
 
 (define-public r-cosmofns
   (package
@@ -13299,6 +13146,42 @@ following bases, * Doublet base substitutions, and * Small insertions and
 deletions.  cosmicsig stands for COSMIC signatures.  Please run ?'cosmicsig for
 more information.")
     (license license:gpl3)))
+
+(define-public r-cosmic
+  (package
+    (name "r-cosmic")
+    (version "0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cosmic" version))
+       (sha256
+        (base32 "1ybd1zcl5ncj28hp0k8sakbxw4vmqalffz70bmbd5hva6wnyyvp6"))))
+    (properties `((upstream-name . "cosmic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-posterior r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cosmic")
+    (synopsis
+     "Conditional Ordinal Stereotype Model for Incident-Level Comparison")
+    (description
+     "This package implements the Conditional Ordinal Stereotype Model for
+Incident-Level Comparison (COSMIC), a method for analyzing ordinal outcomes
+observed across multiple actors within shared events.  The model uses a
+conditional likelihood to remove event-level confounding and estimate
+actor-specific propensities relative to their peers.  Efficient computation is
+achieved via a dynamic programming algorithm for the Poisson-multinomial
+normalization term, enabling scalable estimation with Markov chain Monte Carlo.
+The package provides tools for data preparation, model fitting using Stan, and
+extraction of posterior summaries for comparative inference.  Estimation of
+police officer propensity to escalate force is the primary motivation for the
+model.  For more details see Ridgeway (2026) \"A Conditional Ordinal Stereotype
+Model to Estimate Police Officersâ Propensity to Escalate Force\"
+<doi:10.1080/01621459.2025.2597050>.")
+    (license license:expat)))
 
 (define-public r-cosimmr
   (package
@@ -13497,6 +13380,44 @@ finally provides functions to calculate network enrichment analysis from RNA-Seq
 and ATAC-Seq signatures as described in the article by Giorgi lab (2020)
 <doi:10.1093/bioinformatics/btaa223>.")
     (license license:lgpl3)))
+
+(define-public r-corteza
+  (package
+    (name "r-corteza")
+    (version "0.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corteza" version))
+       (sha256
+        (base32 "13cqy3ja1z2328l3sxwlxkdpxr9galn312cy3z46nr945gxlv95n"))))
+    (properties `((upstream-name . "corteza")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-saber
+                             r-processx
+                             r-printify
+                             r-llm-api
+                             r-jsonlite
+                             r-curl
+                             r-codetools
+                             r-callr))
+    (native-inputs (list r-simplermarkdown))
+    (home-page "https://github.com/cornball-ai/corteza")
+    (synopsis "AI Agent Runtime")
+    (description
+     "An agent runtime that gives Large Language Models (LLMs) from Anthropic
+<https://www.anthropic.com/>, @code{OpenAI} <https://openai.com/>, Moonshot
+<https://www.moonshot.ai/>, and Ollama <https://ollama.com/> direct access to a
+live R session with managed workspace state.  Tools execute as R function calls
+with provenance tracking, and a deterministic retrieval system keeps relevant
+objects in context across turns.  Three entry points: a shell command-line
+interface (CLI), a console read-eval-print-loop via @code{chat()}, and a Model
+Context Protocol (MCP) server via @code{serve()} for external clients.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cortestsrd
   (package
@@ -13874,18 +13795,19 @@ corrected weighted Hochberg for correlated endpoints.")
 (define-public r-corrgram
   (package
     (name "r-corrgram")
-    (version "1.14")
+    (version "1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrgram" version))
        (sha256
-        (base32 "12dhvwaprdmzxxk52w8sb3cx99dmzb9yhcm01pri0vcz671p57v1"))))
+        (base32 "0ap7xg68zl6qi2i6ggvk45rwdllv5v34l2dlzljm1pak7gx0wz81"))))
     (properties `((upstream-name . "corrgram")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-lattice r-ellipse))
     (native-inputs (list r-knitr))
     (home-page "https://kwstat.github.io/corrgram/")
     (synopsis "Plot a Correlogram")
@@ -13894,7 +13816,7 @@ corrected weighted Hochberg for correlated endpoints.")
 Included panel functions can display points, shading, ellipses, and correlation
 values with confidence intervals.  See Friendly (2002)
 <doi:10.1198/000313002533>.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-corrfuns
   (package
@@ -13926,19 +13848,19 @@ likelihood\".  Chapman and Hall/CRC Press.  ISBN: 9781584880714.")
 (define-public r-correspondencetables
   (package
     (name "r-correspondencetables")
-    (version "0.7.4")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "correspondenceTables" version))
        (sha256
-        (base32 "1078da9m8j8ph314f6bdvdcd70rfmjdk7cscchfpq5ggyr2hkrpk"))))
+        (base32 "1d076cal464hr8irgaz60srxcz52hfwysxjay6v3h791q6hk9hyj"))))
     (properties `((upstream-name . "correspondenceTables")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-data-table))
+    (propagated-inputs (list r-stringr r-igraph r-httr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eurostat/correspondenceTables")
     (synopsis
@@ -15242,35 +15164,6 @@ the data into separate modules.")
 (2006) <doi:10.1017/CBO9781139164863.008>, this is a solution for extracting
 cycles from time series, like business cycles etc.  when filtering.  This method
 is valid for both stationary and non-stationary time series.")
-    (license license:gpl3)))
-
-(define-public r-corbin
-  (package
-    (name "r-corbin")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CorBin" version))
-       (sha256
-        (base32 "0mjvhj9cw21xjg96fz5bcyfxgwdw367l1942a38by77ylypdfq3y"))))
-    (properties `((upstream-name . "CorBin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=CorBin")
-    (synopsis
-     "Generate High-Dimensional Binary Data with Correlation Structures")
-    (description
-     "We design algorithms with linear time complexity with respect to the dimension
-for three commonly studied correlation structures, including exchangeable,
-decaying-product and K-dependent correlation structures, and extend the
-algorithms to generate binary data of general non-negative correlation matrices
-with quadratic time complexity.  Jiang, W., Song, S., Hou, L. and Zhao, H. \"A
-set of efficient methods to generate high-dimensional binary data with specified
-correlation structures.\" The American Statistician.  See
-<doi:10.1080/00031305.2020.1816213> for a detailed presentation of the method.")
     (license license:gpl3)))
 
 (define-public r-corazon
@@ -16910,6 +16803,50 @@ modeling: Blei et al. (2003) <doi:10.1162/jmlr.2003.3.4-5.993>; Landauer et al.
 <https://github.com/trinker/sentimentr>.")
     (license license:gpl3+)))
 
+(define-public r-conversationalign
+  (package
+    (name "r-conversationalign")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConversationAlign" version))
+       (sha256
+        (base32 "1mx72jxzk874n1nbzaq5gq8j4j205bpy777cfkd0ch4j08hn4c9m"))))
+    (properties `((upstream-name . "ConversationAlign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-textstem
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-httr
+                             r-dplyr
+                             r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/Reilly-ConceptsCognitionLab/ConversationAlign")
+    (synopsis
+     "Process Text and Compute Linguistic Alignment in Conversation Transcripts")
+    (description
+     "Imports conversation transcripts into R, concatenates them into a single
+dataframe appending event identifiers, cleans and formats the text, then yokes
+user-specified psycholinguistic database values to each word.
+@code{ConversationAlign} then computes alignment indices between two
+interlocutors across each transcript for >40 possible semantic, lexical, and
+affective dimensions.  In addition to alignment, @code{ConversationAlign} also
+produces a table of analytics (e.g., token count, type-token-ratio) in a summary
+table describing your particular text corpus.")
+    (license license:lgpl3+)))
+
 (define-public r-convergeu
   (package
     (name "r-convergeu")
@@ -17393,32 +17330,6 @@ existing packages, to displaying circular shaped plots such as those often seen
 in the semi-conductor industry.")
     (license license:expat)))
 
-(define-public r-contourfunctions
-  (package
-    (name "r-contourfunctions")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ContourFunctions" version))
-       (sha256
-        (base32 "0p18zd9fq7p130b47wsbpqhgqximfmrf5pvhbzscrz2ji7rhsnmr"))))
-    (properties `((upstream-name . "ContourFunctions")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-rlang r-lhs r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CollinErickson/ContourFunctions")
-    (synopsis "Create Contour Plots from Data or a Function")
-    (description
-     "This package provides functions for making contour plots.  The contour plot can
-be created from grid data, a function, or a data set.  If non-grid data is
-given, then a Gaussian process is fit to the data and used to create the contour
-plot.")
-    (license license:gpl3)))
-
 (define-public r-contourforest
   (package
     (name "r-contourforest")
@@ -17627,6 +17538,34 @@ new estimator to measure the distance between word embeddings as described in
 Green et al. (2025) <doi:10.1017/pan.2024.22>.")
     (license license:gpl3)))
 
+(define-public r-contentvalidity
+  (package
+    (name "r-contentvalidity")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contentValidity" version))
+       (sha256
+        (base32 "1wqyjjvqfg7rv4fh16ffwyg6x85bmqpsiza12d1xpc7g8zpayws0"))))
+    (properties `((upstream-name . "contentValidity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Rafhq1403/contentValidity")
+    (synopsis "Content Validity Indices for Instrument Development")
+    (description
+     "Computes content validity indices commonly used in instrument development and
+questionnaire validation, including the Item-level Content Validity Index
+(I-CVI), Scale-level Content Validity Index (S-CVI), modified kappa adjusted for
+chance agreement, Aiken's V, and Lawshe's Content Validity Ratio (CVR).  Methods
+follow Lynn (1986) <doi:10.1097/00006199-198611000-00017>, Polit and Beck (2006)
+<doi:10.1002/nur.20147>, Aiken (1985) <doi:10.1177/0013164485451012>, and Lawshe
+(1975) <doi:10.1111/j.1744-6570.1975.tb01393.x>.")
+    (license license:expat)))
+
 (define-public r-contentid
   (package
     (name "r-contentid")
@@ -17662,13 +17601,13 @@ identifiers permit the same content to be registered in many locations.")
 (define-public r-contentanalysis
   (package
     (name "r-contentanalysis")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contentanalysis" version))
        (sha256
-        (base32 "0qa88jzqcj99abvgk5gxpb57m5ixbq5z2lh5fxwx4w1p7yjinmys"))))
+        (base32 "0ypnyd2clz36sr5zqqr24f477p7rdwidvrcpqhayqkj7vi43hrwj"))))
     (properties `((upstream-name . "contentanalysis")))
     (build-system r-build-system)
     (arguments
@@ -17819,6 +17758,54 @@ Ushey et al. (2025) <https://CRAN.R-project.org/package=renv>, and Docker Inc.
      "Extends the functionality of base R lists and provides specialized data
 structures deque', set', dict', and dict.table', the latter to extend the
 data.table package.")
+    (license license:gpl3)))
+
+(define-public r-contagionchannels
+  (package
+    (name "r-contagionchannels")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contagionchannels" version))
+       (sha256
+        (base32 "1xmgm8hfk06ikf1hjv5dc8w478ci1j9gdlwv7kwbpcl5r41q4lll"))))
+    (properties `((upstream-name . "contagionchannels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-waveslim
+                             r-quantreg
+                             r-mass
+                             r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/avishekb9/contagionchannels")
+    (synopsis
+     "Two-Stage Detection and Attribution of Cross-Border Financial Contagion Channels")
+    (description
+     "Implementation of a two-stage framework for the joint detection-and-attribution
+of cross-border financial contagion.  Stage one detects directional information
+flows between equity markets via Wavelet-Quantile Transfer Entropy, combining
+maximal-overlap discrete wavelet decomposition (Percival and Walden, 2000,
+ISBN:9780521685085) with the transfer-entropy estimator of Schreiber (2000)
+<doi:10.1103/@code{PhysRevLett.85.461>} and quantile conditioning following Han,
+Linton, Oka and Whang (2016) <doi:10.1016/j.jeconom.2016.03.001>.  Stage two
+attributes each significant directional link to one of five mutually exclusive
+transmission channels (Trade, Financial, Geopolitical, Behavioural, Monetary
+Policy) through a multi-method structural identification architecture combining
+instrumental-variables two-stage least squares with channel-specific external
+instruments (Stock and Watson, 2018) <doi:10.1111/ecoj.12593>, LASSO-based
+instrument selection (Belloni, Chernozhukov and Hansen, 2014)
+<doi:10.1093/restud/rdt044>, local projections (Jorda, 2005)
+<doi:10.1257/0002828053828518>, heteroskedasticity-based identification
+(Rigobon, 2003) <doi:10.1162/003465303772815727>, and the Cinelli-Hazlett (2020)
+<doi:10.1111/rssb.12348> robustness-value sensitivity bound.  Bundled datasets
+and replication scripts reproduce the headline findings of Bhandari, Parida and
+Sahu (2026) <doi:10.48550/@code{arXiv.2604.26546>}; the package is
+general-purpose and accommodates user-supplied returns and channel proxies.")
     (license license:gpl3)))
 
 (define-public r-contactsurveys
@@ -18886,13 +18873,13 @@ correctly, OAuth token caching, and refresh behaviour.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "0zzma73iy37sjx6bm55sjvjhklgx7nvp0wzny5xbcbzairrpify9"))))
+        (base32 "1vi82v8a5z8384467fq7c423cx7j4sqpbc2frlpl9f68bx0lhk14"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (arguments
@@ -19392,32 +19379,6 @@ Traditionally, this approach has been used for highlighting model representation
 and feature slippage.")
     (license license:expat)))
 
-(define-public r-confsam
-  (package
-    (name "r-confsam")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "confSAM" version))
-       (sha256
-        (base32 "1l67ndya07hh0yqfbabfhsvp3hryklx0022grpr0cb7ff88d1zam"))))
-    (properties `((upstream-name . "confSAM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=confSAM")
-    (synopsis
-     "Estimates and Bounds for the False Discovery Proportion, by Permutation")
-    (description
-     "For multiple testing.  Computes estimates and confidence bounds for the False
-Discovery Proportion (FDP), the fraction of false positives among all rejected
-hypotheses.  The methods in the package use permutations of the data.  Doing so,
-they take into account the dependence structure in the data.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-confreq
   (package
     (name "r-confreq")
@@ -19634,31 +19595,6 @@ conformal prediction.  The methods were described by Wang and Hyndman (2024)
 <doi:10.48550/@code{arXiv.2410.13115>}.")
     (license license:gpl3)))
 
-(define-public r-conformalclassification
-  (package
-    (name "r-conformalclassification")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "conformalClassification" version))
-       (sha256
-        (base32 "03v6xbgipb97byarqj0d38z9yb2g54mkkw343jxmi2j058z26yw7"))))
-    (properties `((upstream-name . "conformalClassification")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforest r-mlbench r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=conformalClassification")
-    (synopsis
-     "Transductive and Inductive Conformal Predictions for Classification Problems")
-    (description
-     "Implementation of transductive conformal prediction (see Vovk, 2013,
-<doi:10.1007/978-3-642-41142-7_36>) and inductive conformal prediction (see
-Balasubramanian et al., 2014, ISBN:9780124017153) for classification problems.")
-    (license license:gpl3)))
-
 (define-public r-conformalbayes
   (package
     (name "r-conformalbayes")
@@ -19687,6 +19623,32 @@ will also reflect the relative uncertainty in the Bayesian model, using the
 locally-weighted conformal methods of Lei et al. (2018)
 <doi:10.1080/01621459.2017.1307116>.")
     (license license:expat)))
+
+(define-public r-conforest
+  (package
+    (name "r-conforest")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "conforest" version))
+       (sha256
+        (base32 "1nh6rsmjbg0ziw79iqkdhqi0gry4l66c41jic0d2pmf0nxggal8p"))))
+    (properties `((upstream-name . "conforest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rann r-randomforest))
+    (home-page "https://cran.r-project.org/package=conforest")
+    (synopsis "Conformal Random Forests for Response Surface Emulation")
+    (description
+     "Fits emulators, also known as surrogates or response surfaces, using conformal
+inference with random forests.  The conformal calibration is performed using
+out-of-bag samples from the forest, eliminating the need for a separate hold-out
+set.  The method is based on Johansson et al. (2014
+<doi:10.1007/s10994-014-5453-0>).")
+    (license license:bsd-3)))
 
 (define-public r-confmeta
   (package
@@ -19724,13 +19686,13 @@ of confidence curves and drapery plots to summarize evidence across studies.")
 (define-public r-confmatrix
   (package
     (name "r-confmatrix")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConfMatrix" version))
        (sha256
-        (base32 "0f7wk0sdfqbrbnyjdjx0vssmf03ddp9b64jl7scmv5lfvy2y6zk2"))))
+        (base32 "0rx3863wddn2c5g812y1fpf50jkyd41cpqy1l6k67dmb2g9gvrl4"))))
     (properties `((upstream-name . "ConfMatrix")))
     (build-system r-build-system)
     (arguments
@@ -19795,39 +19757,6 @@ calibration and uncertainty estimation.  For more details see Gartiser et al.
 (2025a) <doi:10.21105/joss.08094> and Gartiser et al. (2025b)
 <doi:10.1111/ejss.70126>.")
     (license license:gpl3+)))
-
-(define-public r-confintvariance
-  (package
-    (name "r-confintvariance")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ConfIntVariance" version))
-       (sha256
-        (base32 "0xm3vh3vmf16faa3934100rnrg4rvlqkgjlsqa2smzcvy5vb86z4"))))
-    (properties `((upstream-name . "ConfIntVariance")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=ConfIntVariance")
-    (synopsis
-     "Confidence Interval for the Univariate Population Variance without Normality Assumption")
-    (description
-     "Surrounds the usual sample variance of a univariate numeric sample with a
-confidence interval for the population variance.  This has been done so far only
-under the assumption that the underlying distribution is normal.  Under the
-hood, this package implements the unique least-variance unbiased estimator of
-the variance of the sample variance, in a formula that is equivalent to
-estimating kurtosis and square of the population variance in an unbiased way and
-combining them according to the classical formula into an estimator of the
-variance of the sample variance.  Both the sample variance and the estimator of
-its variance are U-statistics.  By the theory of U-statistic, the resulting
-estimator is unique.  See Fuchs, Krautenbacher (2016)
-<doi:10.1080/15598608.2016.1158675> and the references therein for an overview
-of unbiased estimation of variances of U-statistics.")
-    (license license:gpl3)))
 
 (define-public r-confintrob
   (package
@@ -20607,44 +20536,6 @@ survival time.")
     (description
      "Set of functions for the easy analyses of conditioning data.")
     (license license:gpl3)))
-
-(define-public r-condindtests
-  (package
-    (name "r-condindtests")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CondIndTests" version))
-       (sha256
-        (base32 "0km4z8wnj5msg1pmphk2fccbw1cidsxv174817lwcyii9nf5iwsm"))))
-    (properties `((upstream-name . "CondIndTests")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rptests
-                             r-randomforest
-                             r-quantregforest
-                             r-pracma
-                             r-mize
-                             r-mgcv
-                             r-mass
-                             r-lawstat
-                             r-kernlab
-                             r-catools))
-    (home-page
-     "https://github.com/christinaheinze/nonlinearICP-and-CondIndTests")
-    (synopsis "Nonlinear Conditional Independence Tests")
-    (description
-     "Code for a variety of nonlinear conditional independence tests: Kernel
-conditional independence test (Zhang et al., UAI 2011,
-<@code{arXiv:1202.3775>}), Residual Prediction test (based on Shah and
-Buehlmann, <@code{arXiv:1511.03334>}), Invariant environment prediction,
-Invariant target prediction, Invariant residual distribution test, Invariant
-conditional quantile prediction (all from Heinze-Deml et al.,
-<@code{arXiv:1706.08576>}).")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-condgee
   (package
@@ -23567,6 +23458,35 @@ These statistics can be used to describe biogeographic patterns and infer
 community assembly processes.  Includes a vignette outlining usage.")
     (license license:gpl3)))
 
+(define-public r-combss
+  (package
+    (name "r-combss")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "combss" version))
+       (sha256
+        (base32 "0afhpskpr0m9qhcnjdxydamp92sha0vnpy8lkrj04rh027vfw73c"))))
+    (properties `((upstream-name . "combss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/benoit-liquet/combss")
+    (synopsis "Continuous Optimisation Towards Best Subset Selection")
+    (description
+     "Best subset selection in generalised linear models via continuous optimisation.
+Reformulates the NP-hard discrete subset selection problem as a continuous
+optimisation over the hypercube [0,1]^p, solved via a Frank-Wolfe homotopy
+algorithm with closed-form ridge inner solves.  Supports linear (Gaussian),
+binary logistic, and multinomial regression.  For methodological details see
+Moka, Liquet, Zhu and Muller (2024) <doi:10.1007/s11222-024-10387-8> and Mathur,
+Liquet, Muller and Moka (2026) <doi:10.48550/@code{arXiv.2603.21952>}.")
+    (license license:gpl3)))
+
 (define-public r-combo
   (package
     (name "r-combo")
@@ -24940,13 +24860,13 @@ process.")
 (define-public r-colombiapi
   (package
     (name "r-colombiapi")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ColombiAPI" version))
        (sha256
-        (base32 "0j4syl1w59x7157x1085bnzkaqzmpbpad5jkajji9ql5lfs99pjn"))))
+        (base32 "0p174ivf794hd8018a0739ags0bkmd7bz2wghl7nsf4g5d3qsxd6"))))
     (properties `((upstream-name . "ColombiAPI")))
     (build-system r-build-system)
     (arguments
@@ -25129,28 +25049,6 @@ functions.")
 <doi:10.1371/journal.pgen.1009440>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-colmozzie
-  (package
-    (name "r-colmozzie")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "colmozzie" version))
-       (sha256
-        (base32 "0sn7dqg7rnddnmdb10c6scws6kgi1lz4lw8nc698x63z431ah1p8"))))
-    (properties `((upstream-name . "colmozzie")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=colmozzie")
-    (synopsis "Dengue Cases and Climate Variables in Colombo Sri Lanka")
-    (description
-     "Weekly notified dengue cases and climate variables in Colombo district Sri Lanka
-from 2008/ week-52 to 2014/ week-21.")
-    (license license:cc0)))
-
 (define-public r-collpcm
   (package
     (name "r-collpcm")
@@ -25205,19 +25103,20 @@ gradient-matching, generalized profiling and forwards prediction error methods."
 (define-public r-collinear
   (package
     (name "r-collinear")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collinear" version))
        (sha256
-        (base32 "1s7xq386zdql9269pzdwcpzrahgy3j7plzkyvcrn4g5rvdn2gkmr"))))
+        (base32 "0c4cfpfh45yvgxh7c5nwgaifi90yyi3vxiqx0rqxavyjqw78ikp7"))))
     (properties `((upstream-name . "collinear")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-spatialdata
+                             r-rlang
                              r-recipes
                              r-ranger
                              r-progressr
@@ -25300,13 +25199,13 @@ name) and half a million packages and functions on CRAN.")
 (define-public r-colleyrstats
   (package
     (name "r-colleyrstats")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colleyRstats" version))
        (sha256
-        (base32 "171qjlwny9933wjpfl5fahw85x37z10bxiayi5y5gbfbqyi0khaz"))))
+        (base32 "1xwi4lqjqf5gv360gg03jmkc203dpblmscsdqq2x7qarmi0knz3x"))))
     (properties `((upstream-name . "colleyRstats")))
     (build-system r-build-system)
     (arguments
@@ -25335,6 +25234,7 @@ name) and half a million packages and functions on CRAN.")
                              r-clipr
                              r-car
                              r-artool))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/M-Colley/colleyRstats")
     (synopsis "Functions to Streamline Statistical Analysis and Reporting")
     (description
@@ -25447,31 +25347,6 @@ that both P and a can't be 0.  For further reading, see
      "Map functions while capturing results, errors, warnings, messages and other
 output tidily, then filter and summarise data frames or lists on the basis of
 those side effects.")
-    (license license:expat)))
-
-(define-public r-colf
-  (package
-    (name "r-colf")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "colf" version))
-       (sha256
-        (base32 "1av82yrp6csw7700ymipd02j73cmzn0apv7ykachjw09nzk86kvj"))))
-    (properties `((upstream-name . "colf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlsr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/LyzandeR/colf")
-    (synopsis "Constrained Optimization on Linear Function")
-    (description
-     "This package performs least squares constrained optimization on a linear
-objective function.  It contains a number of algorithms to choose from and
-offers a formula syntax similar to @code{lm()}.")
     (license license:expat)))
 
 (define-public r-coldrift
@@ -25692,13 +25567,13 @@ cointegration tests with structural breaks using the Common Correlated Effects
 (define-public r-coint
   (package
     (name "r-coint")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COINT" version))
        (sha256
-        (base32 "0grvn11bswd8gw7par8r181yijp83vpl2pix6h70jfz1g87iyzpc"))))
+        (base32 "0qd8cz9v5mmzq97fj347sh8231mngy5bnmr098lsr6v0sknd7gy2"))))
     (properties `((upstream-name . "COINT")))
     (build-system r-build-system)
     (arguments
@@ -25931,13 +25806,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "09zq1kw3k4mgijlfdnrx1z7khb5yh5dibq0bdgkn3i99i0plalld"))))
+        (base32 "1y4xgzwx99vs2a48nffpns8ki5k0cxxhhh18kkhk00szrk2cfk98"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (arguments
@@ -25956,10 +25831,9 @@ Common Data Model.")
                              r-dbi
                              r-clock
                              r-cli
-                             r-cdmconnector
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu-dev.github.io/CohortSurvival/")
+    (home-page "https://darwin-eu.github.io/CohortSurvival/")
     (synopsis "Estimate Survival from Common Data Model Cohorts")
     (description
      "Estimate survival using data mapped to the Observational Medical Outcomes
@@ -26040,13 +25914,13 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 (define-public r-cohortmethod
   (package
     (name "r-cohortmethod")
-    (version "6.0.1")
+    (version "6.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortMethod" version))
        (sha256
-        (base32 "00q6y0y0sfw9k9zpby9qss2ylfi08rjlhvdp5rx2wh3randzfg1g"))))
+        (base32 "04rvcxs22q4pnibvfh2y7903fbif7kbcm1j9rl4x18xkhlcpjniq"))))
     (properties `((upstream-name . "CohortMethod")))
     (build-system r-build-system)
     (arguments
@@ -26219,13 +26093,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "0mhs4klc9pk517xyncgryfl9pg0lg6mk82b46k3205ks0xhh2cyz"))))
+        (base32 "0zwz4ks33ls0y8z7f8yqh4zz5ycb9bg7qq323z1pibxb5vws0vml"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (arguments
@@ -26241,8 +26115,7 @@ Outcomes Partnership Common Data Model.")
                              r-lifecycle
                              r-dplyr
                              r-clock
-                             r-cli
-                             r-cdmconnector))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu.github.io/CohortCharacteristics/")
     (synopsis
@@ -27802,13 +27675,13 @@ helper tools to install development extensions from @code{GitHub}'.")
 (define-public r-coda-base
   (package
     (name "r-coda-base")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda.base" version))
        (sha256
-        (base32 "00s82hxpsh3lw889rbiyprdrvhdmk0x4r4rykqabw5jahmzc33j1"))))
+        (base32 "14nin2zknzxvjywsbybc2k3insazha4gi186m44fhv86mn38k8vf"))))
     (properties `((upstream-name . "coda.base")))
     (build-system r-build-system)
     (arguments
@@ -28394,6 +28267,43 @@ estimate a large coefficient matrix for overdispersed count data.  More details
 can be referred to Liu et al. (2024) <doi:10.1093/biomtc/ujae031>.")
     (license license:gpl3)))
 
+(define-public r-coalitions
+  (package
+    (name "r-coalitions")
+    (version "0.6.27")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coalitions" version))
+       (sha256
+        (base32 "1b6d18sms3i7p53bji851jzjh0w8xjvr9vv9n0ddghz0v2w0nfw4"))))
+    (properties `((upstream-name . "coalitions")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-gtools
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://adibender.github.io/coalitions/")
+    (synopsis
+     "Bayesian \"Now-Cast\" Estimation of Event Probabilities in Multi-Party Democracies")
+    (description
+     "An implementation of a Bayesian framework for the opinion poll based estimation
+of event probabilities in multi-party electoral systems (Bender and Bauer (2018)
+<doi:10.21105/joss.00606>).")
+    (license license:expat)))
+
 (define-public r-coalescentmcmc
   (package
     (name "r-coalescentmcmc")
@@ -28715,13 +28625,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.5.2")
+    (version "3.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "1dbzylndab0m65vnw4xpsh5dlw0gd4zmq8lqng7ca1wm7h3kwwfy"))))
+        (base32 "06ychfshm0y9ipfqa70cafwvbgvf3vap4f9jlqk7qnm4ifdgihvk"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (arguments
@@ -29452,29 +29362,6 @@ support is only provided for the Medicare Physician Fee Schedule, but support
 will be expanded for other CMS databases in future versions.")
     (license license:gpl3)))
 
-(define-public r-cmrutils
-  (package
-    (name "r-cmrutils")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cmrutils" version))
-       (sha256
-        (base32 "0nrq84bkd23lvvg8ls2smkjcnfnydhbcni3n6s8w0579i9xga8dv"))))
-    (properties `((upstream-name . "cmrutils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-chron))
-    (home-page "https://github.com/aparamon/cmrutils")
-    (synopsis "Misc Functions of the Center for Mathematical Research")
-    (description
-     "This package provides a collection of useful helper routines developed by
-students of the Center for Mathematical Research, Stankin, Moscow.")
-    (license license:gpl3+)))
-
 (define-public r-cmr
   (package
     (name "r-cmr")
@@ -30094,32 +29981,6 @@ al. (2012) <http://proceedings.mlr.press/v22/virtanen12.html> for details on
 Bayesian CCA and GFA, respectively.")
     (license license:gpl2+)))
 
-(define-public r-cmce
-  (package
-    (name "r-cmce")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cmce" version))
-       (sha256
-        (base32 "0d52ci906zbd4q43qylcyw93acxh7f20jn3r0k74ynyy47131dnd"))))
-    (properties `((upstream-name . "cmce")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=cmce")
-    (synopsis
-     "Computer Model Calibration for Deterministic and Stochastic Simulators")
-    (description
-     "This package implements the Bayesian calibration model described in Pratola and
-Chkrebtii (2018) <DOI:10.5705/ss.202016.0403> for stochastic and deterministic
-simulators.  Additive and multiplicative discrepancy models are currently
-supported.  See <http://www.matthewpratola.com/software> for more information
-and examples.")
-    (license license:agpl3)))
-
 (define-public r-cmbclust
   (package
     (name "r-cmbclust")
@@ -30267,13 +30128,13 @@ plot.")
 (define-public r-cmanalysis
   (package
     (name "r-cmanalysis")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmAnalysis" version))
        (sha256
-        (base32 "0mpx275m3lbhzzqhqbdx46a1kf5xndjiirlg51y6d6lmhhzf62mj"))))
+        (base32 "19246w8r8j6w7s4mnrz61jca096l5r9ngq7n2a26jrwwq79bibcf"))))
     (properties `((upstream-name . "cmAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -31495,45 +31356,6 @@ GarcÃ­a-Vico, Ã.M., GonzÃ¡lez, P. et al. \"An Evolutionary Fuzzy System f
 Multiclustering in Data Streaming\" <doi:10.1016/j.procs.2023.12.058>.")
     (license license:gpl2+)))
 
-(define-public r-clustergvis
-  (package
-    (name "r-clustergvis")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ClusterGVis" version))
-       (sha256
-        (base32 "02y47pfsinbkfhkav48xvly0c322j3lp2kannp0z5lffdpa0cdan"))))
-    (properties `((upstream-name . "ClusterGVis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-singlecellexperiment
-                             r-scales
-                             r-reshape2
-                             r-purrr
-                             r-matrix
-                             r-magrittr
-                             r-ggplot2
-                             r-factoextra
-                             r-e1071
-                             r-dplyr
-                             r-colorramps))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/junjunlab/ClusterGVis/")
-    (synopsis "One-Step to Cluster and Visualize Gene Expression Data")
-    (description
-     "Streamlining the clustering and visualization of time-series gene expression
-data from RNA-Seq experiments, this tool supports fuzzy c-means and k-means
-clustering algorithms.  It is compatible with outputs from widely-used packages
-such as Seurat', Monocle', and WGCNA', enabling seamless downstream
-visualization and analysis.  See Lokesh Kumar and Matthias E Futschik (2007)
-<doi:10.6026/97320630002005> for more details.")
-    (license license:expat)))
-
 (define-public r-clusterggm
   (package
     (name "r-clusterggm")
@@ -32562,13 +32384,13 @@ research.  Schmitz (2018) <doi:10.1186/s12874-018-0509-7>.")
 (define-public r-clordr
   (package
     (name "r-clordr")
-    (version "1.7.0")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clordr" version))
        (sha256
-        (base32 "0lrws22aijsfdr595g2dfxsvnvbq6bs18glbdc07qkb27kcpvv1p"))))
+        (base32 "15ngdjfbcq5hyz3rlm9623gh953xfgmckq3rvqrlgaisp5d84y8j"))))
     (properties `((upstream-name . "clordr")))
     (build-system r-build-system)
     (arguments
@@ -34180,33 +34002,38 @@ Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
 (define-public r-climatekit
   (package
     (name "r-climatekit")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climatekit" version))
        (sha256
-        (base32 "02pp9a9cmxycdmmavpdw2ih7sb3kw7pancdvcb5ng0yl5ilnn7jy"))))
+        (base32 "1ma1ppwlwhah8kps1xn8z2vjgk944rcgcqp0zabl01f5ci0frrvf"))))
     (properties `((upstream-name . "climatekit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-cli))
-    (home-page "https://github.com/charlescoverdale/climatekit")
+    (native-inputs (list r-knitr))
+    (home-page "https://charlescoverdale.github.io/climatekit/")
     (synopsis
      "Unified Climate Indices for Temperature, Precipitation, and Drought")
     (description
-     "Compute 35+ standard climate indices from daily weather observations.  Includes
-temperature indices (frost days, ice days, growing degree days), precipitation
-indices (dry spells, heavy precipitation, intensity), drought indices
-(Standardized Precipitation Index, Standardized Precipitation-Evapotranspiration
-Index), agroclimatic indices (Huglin, Winkler, Branas), and comfort indices
-(wind chill, heat index, humidex, fire danger).  All functions accept vectors of
-observations with dates and return tidy data frames with metadata.  Implements
-the ET-SCI Expert Team on Sector-specific Climate Indices definitions where
-applicable.  No external API calls; pairs with data packages such as readnoaa
-for acquisition.")
+     "Compute the standard suite of climate indices from daily weather observations.
+Provides the canonical ETCCDI 27 (Expert Team on Climate Change Detection and
+Indices), the ET-SCI heatwave and cold-wave families plus the Excess Heat Factor
+of Nairn and Fawcett (2013), and agroclimatic, drought, and human-comfort
+families.  Drought indices ('SPI', SPEI') accept a choice of distribution (gamma
+or Pearson III for SPI; log-logistic or generalised extreme value for SPEI).
+Reference evapotranspiration is available via Hargreaves and the FAO-56
+Penman-Monteith method (Allen et al.  1998).  Percentile-based indices support
+the Zhang (2005) in-base bootstrap.  Daily inputs are numeric vectors plus a
+Date vector; outputs are tidy data frames.  Optional gridded support via terra
+applies any index over a @code{SpatRaster} and reads @code{netCDF} input.  No
+external API calls; pairs with data packages such as readnoaa'.  References:
+Alexander et al. (2006) <doi:10.1029/2005JD006290>; Zhang et al. (2011)
+<doi:10.1002/wcc.147>; Zhang et al. (2005) <doi:10.1175/JCLI3366.1>.")
     (license license:expat)))
 
 (define-public r-climatehealth
@@ -34553,19 +34380,19 @@ for integral dataset cleaning.")
 (define-public r-clickhousehttp
   (package
     (name "r-clickhousehttp")
-    (version "0.3.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClickHouseHTTP" version))
        (sha256
-        (base32 "1jbkzd65s58nlnsjp579cmni59gp8zg9q3f7q8pdlf2q5vkzz5h4"))))
+        (base32 "0ibr9szm16bpjnab8slw9bfh2r1lgzk4ggdb2804gjlrlxa7r7mz"))))
     (properties `((upstream-name . "ClickHouseHTTP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-dbi r-data-table r-arrow))
+    (propagated-inputs (list r-jsonlite r-httr2 r-dbi r-data-table r-arrow))
     (home-page "https://github.com/patzaw/ClickHouseHTTP")
     (synopsis "Simple HTTP Database Interface to 'ClickHouse'")
     (description
@@ -34574,31 +34401,6 @@ performance columnar OLAP (online analytical processing of queries) database
 management system for real-time analytics using SQL. This DBI backend relies on
 the @code{ClickHouse} HTTP interface and support HTTPS protocol.")
     (license license:gpl3)))
-
-(define-public r-clickclustcont
-  (package
-    (name "r-clickclustcont")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ClickClustCont" version))
-       (sha256
-        (base32 "1caymvpwvxq4rirnjm2kwzvqm1pl01rdc3785k8mq4k2m0n6l2rz"))))
-    (properties `((upstream-name . "ClickClustCont")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-gtools))
-    (home-page "https://cran.r-project.org/package=ClickClustCont")
-    (synopsis "Mixtures of Continuous Time Markov Models")
-    (description
-     "This package provides an expectation maximization (EM) algorithm to fit a
-mixture of continuous time Markov models for use with clickstream or other
-sequence type data.  Gallaugher, M.P.B and @code{McNicholas}, P.D. (2018)
-<@code{arXiv:1802.04849>}.")
-    (license license:gpl2+)))
 
 (define-public r-clickclust
   (package
@@ -34799,40 +34601,6 @@ account during the optimisation process, is also proposed (Roudier et al., 2012,
 algorithms with respect to ground truth.  Includes efficient implementations of
 common performance measures such as pairwise precision/recall, cluster
 homogeneity/completeness, variation of information, Rand index etc.")
-    (license license:gpl2)))
-
-(define-public r-clespr
-  (package
-    (name "r-clespr")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clespr" version))
-       (sha256
-        (base32 "1993kd70w48a110im47vcpll0c6nfrm7m33r6l8rzgwnpsmcls8g"))))
-    (properties `((upstream-name . "clespr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-pbivnorm
-                             r-mass
-                             r-magic
-                             r-foreach
-                             r-doparallel
-                             r-clordr
-                             r-aer))
-    (home-page "https://cran.r-project.org/package=clespr")
-    (synopsis "Composite Likelihood Estimation for Spatial Data")
-    (description
-     "Composite likelihood approach is implemented to estimating statistical models
-for spatial ordinal and proportional data based on Feng et al. (2014)
-<doi:10.1002/env.2306>.  Parameter estimates are identified by maximizing
-composite log-likelihood functions using the limited memory BFGS optimization
-algorithm with bounding constraints, while standard errors are obtained by
-estimating the Godambe information matrix.")
     (license license:gpl2)))
 
 (define-public r-clear
@@ -35422,13 +35190,13 @@ arm binary trial\" by Lloyd, C.J. (2020), Statistics in Medicine, Volume 38,
 (define-public r-classmap
   (package
     (name "r-classmap")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "classmap" version))
        (sha256
-        (base32 "16r7kqlwvw0zrfbp8s2i64fqrllwi694r1yfm67ycsadbdqf2zxx"))))
+        (base32 "0virid31017ir8568zck8j3r9fhrr9m6cmcq4qqd3aa6kzjqkrma"))))
     (properties `((upstream-name . "classmap")))
     (build-system r-build-system)
     (arguments
@@ -35438,14 +35206,16 @@ arm binary trial\" by Lloyd, C.J. (2020), Statistics in Medicine, Volume 38,
                              r-rpart
                              r-robustbase
                              r-randomforest
+                             r-lpsolve
                              r-kernlab
                              r-gridextra
                              r-ggplot2
                              r-e1071
+                             r-diptest
                              r-cluster
                              r-cellwise))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://doi.org/10.1080/00401706.2021.1927849")
+    (home-page "<doi:10.1080/00401706.2021.1927849>")
     (synopsis "Visualizing Classification Results")
     (description
      "This package provides tools to visualize the results of a classification or a
@@ -35454,15 +35224,18 @@ quasi residual plots, class maps, predictions plots, and predictions correlation
 plots.  Implements the techniques described and illustrated in Raymaekers J.,
 Rousseeuw P.J., Hubert M. (2022).  Class maps for visualizing classification
 results. \\emph{Technometrics}, 64(2), 151â165.
-\\doi{10.1080/00401706.2021.1927849} (open access), Raymaekers J., Rousseeuw
+<doi:10.1080/00401706.2021.1927849> (open access), Raymaekers J., Rousseeuw
 P.J.(2022).  Silhouettes and quasi residual plots for neural nets and tree-based
 classifiers. \\emph{Journal of Computational and Graphical Statistics}, 31(4),
-1332â1343. \\doi{10.1080/10618600.2022.2050249}, and Rousseeuw, P.J. (2025).
-Explainable Linear and Generalized Linear Models by the Predictions Plot.
-<doi:10.48550/@code{arXiv.2412.16980>} (open access).  Examples can be found in
-the vignettes: \"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples\",
+1332â1343. <doi:10.1080/10618600.2022.2050249>, and Rousseeuw, P.J. (2026).
+Explainable Linear and Generalized Linear Models by the Predictions Plot.  The
+American Statistician, 80, 157-163, <doi:10.1080/00031305.2025.2539235> (open
+access), and Montalcini, C., Rousseeuw, P.J. (2025).  The bixplot: A variation
+on the boxplot suited for bimodal data, <doi:10.48550/@code{arXiv.2510.09276>}
+(open access).  Examples can be found in the vignettes:
+\"Discriminant_analysis_examples\",\"K_nearest_neighbors_examples\",
 \"Support_vector_machine_examples\", \"Rpart_examples\", \"Random_forest_examples\",
-\"Neural_net_examples\", and \"predsplot_examples\".")
+\"Neural_net_examples\", \"predsplot_examples\", and \"bixplot_examples\".")
     (license license:gpl2+)))
 
 (define-public r-classifyits
@@ -36158,13 +35931,13 @@ provides an interface to the datastore API.")
 (define-public r-cjoint
   (package
     (name "r-cjoint")
-    (version "2.1.1")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cjoint" version))
        (sha256
-        (base32 "1byahl2x3mdz66cicyjbi5qrcbq9xqcyyny5rzxkg5m5nfgxprqk"))))
+        (base32 "1shybwr0yl7rgp9qn5dn1802f3vga6l36zx88dpnzvim62zyapsd"))))
     (properties `((upstream-name . "cjoint")))
     (build-system r-build-system)
     (arguments
@@ -37135,6 +36908,36 @@ Tsuruta & Sagae (2017) <doi:10.1016/j.spl.2017.08.003>.")
     (home-page "https://cran.r-project.org/package=CircularDDM")
     (synopsis "Circular Drift-Diffusion Model")
     (description "Circular drift-diffusion model for continuous reports.")
+    (license license:gpl2)))
+
+(define-public r-circularboxplots
+  (package
+    (name "r-circularboxplots")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CircularBoxplots" version))
+       (sha256
+        (base32 "18a7b28ssa0k7cgx17q7myh1bkly7mvya3gycyan787aznja3rq7"))))
+    (properties `((upstream-name . "CircularBoxplots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl r-rcolorbrewer r-plotrix r-plot3d
+                             r-circular))
+    (home-page "https://cran.r-project.org/package=CircularBoxplots")
+    (synopsis "Grouped Boxplots for Circular Data")
+    (description
+     "Plotting functions to create circular boxplots for grouped data.  The primary
+2-dimensional version creates concentric circular boxplots for specified groups,
+scaling the width of each boxplot to adjust for human perception.  The
+3-dimensional version maps these plots onto a torus which is suitable for
+periodic circular data such as wind direction over the course of a year.  An
+example dataset of this type is provided for reference.  For examples of
+circular boxplots and additional implementation details, see Berlinski et al.
+(2026) <doi:10.48550/@code{arXiv.2602.05335>}.")
     (license license:gpl2)))
 
 (define-public r-circuitscaper
@@ -38552,13 +38355,13 @@ standard errors (Pawel et al., 2022) <doi:10.48550/@code{arXiv.2206.12290>}.")
 (define-public r-cicalc
   (package
     (name "r-cicalc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cicalc" version))
        (sha256
-        (base32 "1r7yszw563jzn8whj8szpl39p9xrc2x05k8835rfgr5b3lpazfyp"))))
+        (base32 "0fvp6p4p00cpzdrdmbmqpyg8gv2jiiy3811n8ssjlhbvpif5srcf"))))
     (properties `((upstream-name . "cicalc")))
     (build-system r-build-system)
     (arguments
@@ -39267,33 +39070,6 @@ file.")
     (description "Maximum likelihood estimation in respondent driven samples.")
     (license license:gpl2)))
 
-(define-public r-chor
-  (package
-    (name "r-chor")
-    (version "0.0-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ChoR" version))
-       (sha256
-        (base32 "08mildsx542zfm0kcdakcv7c71hb4jgbcq1lhidf0fz76zj1pzk1"))))
-    (properties `((upstream-name . "ChoR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (propagated-inputs (list r-rjava r-commonsmath))
-    (home-page "https://cran.r-project.org/package=ChoR")
-    (synopsis "Chordalysis R Package")
-    (description
-     "Learning the structure of graphical models from datasets with thousands of
-variables.  More information about the research papers detailing the theory
-behind Chordalysis is available at <http://www.francois-petitjean.com/Research>
-(KDD 2016, SDM 2015, ICDM 2014, ICDM 2013).  The R package development site is
-<https://github.com/@code{HerrmannM/Monash-ChoR>}.")
-    (license license:gpl3)))
-
 (define-public r-chopthin
   (package
     (name "r-chopthin")
@@ -39622,6 +39398,34 @@ London cholera outbreak.")
      "Collection of utility functions for visualizing body map data collected with the
 Collaborative Health Outcomes Information Registry.")
     (license license:expat)))
+
+(define-public r-choicer
+  (package
+    (name "r-choicer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "choicer" version))
+       (sha256
+        (base32 "16b6yl8ij3vv3m8bsfn965bcmyl3zig7h4rfm13a6v6l4iiipvpa"))))
+    (properties `((upstream-name . "choicer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-randtoolbox r-nloptr
+                             r-data-table))
+    (home-page "https://github.com/fpcordeiro/choicer")
+    (synopsis "Discrete Choice Models for Economic Applications")
+    (description
+     "Fast estimation of discrete-choice models for applied economics.  Likelihoods,
+analytical gradients and Hessians are implemented in C++ with @code{OpenMP}
+parallelism, scaling efficiently to specifications with many
+alternative-specific constants.  Post-estimation routines return predicted
+shares, own- and cross-price elasticities, and diversion ratios.  Supports
+multinomial logit ('MNL'), mixed logit ('MXL'), and nested logit ('NL').")
+    (license license:lgpl3+)))
 
 (define-public r-choicemodelr
   (package
@@ -41315,13 +41119,13 @@ or any other Luhn based number is correct.  For more info see:
 (define-public r-checkhelper
   (package
     (name "r-checkhelper")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checkhelper" version))
        (sha256
-        (base32 "0lhrhygma1n98f2k7ly29ildxl5zg5qwrlflrhf19xdi9qmzzvmz"))))
+        (base32 "1wnjr07zsmsg68mg38h5j2vfds4z1pn1805a6krf1gfa3r4m6kaw"))))
     (properties `((upstream-name . "checkhelper")))
     (build-system r-build-system)
     (arguments
@@ -41329,17 +41133,22 @@ or any other Luhn based number is correct.  For more info see:
       #:tests? #f))
     (propagated-inputs (list r-withr
                              r-whisker
+                             r-tibble
                              r-stringr
+                             r-stringi
                              r-roxygen2
                              r-rcmdcheck
                              r-purrr
+                             r-pkgload
                              r-pkgbuild
                              r-magrittr
                              r-lifecycle
+                             r-knitr
                              r-glue
                              r-dplyr
                              r-devtools
                              r-desc
+                             r-covr
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://thinkr-open.github.io/checkhelper/")
@@ -41682,23 +41491,27 @@ comes with back-ends for @code{OpenAI}', @code{GitHub} Copilot', and
 (define-public r-chatrater
   (package
     (name "r-chatrater")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatRater" version))
        (sha256
-        (base32 "182dwpgvpk5gm4szzvf3bybbgvrfr7hqclg2fscd2a48j3xp52h4"))))
+        (base32 "135bcl94qsd3306vv94nsvahx4zj5ls5ak1fbbkcxxivryvcim3q"))))
     (properties `((upstream-name . "chatRater")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-openai))
-    (home-page "https://cran.r-project.org/package=chatRater")
-    (synopsis "Tool for Rating Text/Image Stimuli")
+    (propagated-inputs (list r-jsonlite r-httr2 r-curl r-base64enc))
+    (home-page "https://github.com/ShiyangZheng/chatRater")
+    (synopsis "Tool for Rating Text/Image/Audio Stimuli via 'LLMs'")
     (description
-     "Evaluates stimuli using Large Language Models APIs with URL support.")
+     "Evaluates stimuli using Large Language Models.  Supports multiple LLM providers:
+@code{OpenAI}', Anthropic', Ollama', LM Studio', @code{DeepSeek}', Groq',
+Mistral', and @code{OpenAI-compatible} endpoints.  Stimuli: plain text, local
+image/audio files, or image URLs.  Audio is transcribed via @code{OpenAI}
+Whisper before rating.  Supports numeric, text, and raw return types.")
     (license license:expat)))
 
 (define-public r-chatllm
@@ -41983,16 +41796,48 @@ a vector of individual characters, making strings iterable.  This class enables
 vector operations on strings such as reverse, sort, head, and set operations.")
     (license license:expat)))
 
+(define-public r-charanalysis
+  (package
+    (name "r-charanalysis")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CharAnalysis" version))
+       (sha256
+        (base32 "101dfihm3v5bib0gyyc2z78z9kqpprk5zfm9ssag5lmrlr1rzhj3"))))
+    (properties `((upstream-name . "CharAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/phiguera/CharAnalysis")
+    (synopsis "Peak Detection and Fire History from Sediment-Charcoal Records")
+    (description
+     "This package provides a program for reconstructing local fire histories from
+high-resolution, continuously sampled lake-sediment charcoal records.
+@code{CharAnalysis} decomposes a charcoal record into low- and high-frequency
+components and uses locally defined thresholds to separate fire signal from
+noise, following the approach of Higuera et al. (2009) <doi:10.1890/07-2019.1>,
+with underlying assumptions and rationale described in Higuera et al. (2010)
+<doi:10.1071/WF09134>.  The package is designed for macroscopic charcoal records
+with contiguous sampling fine enough to resolve individual fire events, and is
+not appropriate for low-resolution or discontinuously sampled records.  See the
+package URL for the User's Guide and application examples.")
+    (license license:gpl3)))
+
 (define-public r-characterization
   (package
     (name "r-characterization")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Characterization" version))
        (sha256
-        (base32 "1mfiar365r3niy72dhmif06a6bp1rqq7q78m6vlzxbs9kc8za54b"))))
+        (base32 "077qfmlhf5k0b4dpd8bpm3v94kbm5lv92vlk34ap8sr6gly0kz8z"))))
     (properties `((upstream-name . "Characterization")))
     (build-system r-build-system)
     (arguments
@@ -42430,13 +42275,13 @@ univariate mean against adversarial attacks: <@code{arXiv:2105.10417>}.")
 (define-public r-changepointga
   (package
     (name "r-changepointga")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepointGA" version))
        (sha256
-        (base32 "0n518b7q1xwll3c3qzv0r6hg6fyvz3my07xn6hxbcx4kh0pnlwx8"))))
+        (base32 "067di9jqngb6xzspp4cnlyjgqhylhczk0397py0jcy7kdpxm8mvm"))))
     (properties `((upstream-name . "changepointGA")))
     (build-system r-build-system)
     (arguments
@@ -42446,7 +42291,7 @@ univariate mean against adversarial attacks: <@code{arXiv:2105.10417>}.")
                              r-clue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mli171/changepointGA")
-    (synopsis "Changepoint Detection via Modified Genetic Algorithm")
+    (synopsis "Changepoint Detection via Modified Genetic Algorithms")
     (description
      "The Genetic Algorithm (GA) is used to perform changepoint analysis in time
 series data.  The package also includes an extended island version of GA, as
@@ -42463,7 +42308,7 @@ simultaneous estimation of model hyperparameters, changepoint configurations,
 and associated parameters.  The detailed algorithmic implementation can be found
 in the package vignettes and in the paper of Li (2024,
 <doi:10.48550/@code{arXiv.2410.15571>}).")
-    (license license:asl2.0)))
+    (license license:expat)))
 
 (define-public r-changepoint-np
   (package
@@ -42671,6 +42516,37 @@ including head', tail ,'pushd ,and popd'.  Various other goodies included as
 well.")
     (license license:lgpl3)))
 
+(define-public r-cgvr
+  (package
+    (name "r-cgvr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cgvR" version))
+       (sha256
+        (base32 "1m3ga030p3d456jzz19n6xiahrvd604bwvmcxvdymijpky1m55j8"))))
+    (properties `((upstream-name . "cgvR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list pkg-config))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/Zabis13/cgvR")
+    (synopsis "Interactive 3D Visualization of Large Cayley Graphs via Vulkan")
+    (description
+     "This package provides interactive 3D visualization for large-scale Cayley
+graphs.  Specifically designed for analyzing state spaces of the @code{TopSpin}
+puzzle.  Leverages the Datoviz library and Vulkan-based GPU rendering for smooth
+real-time exploration of large graphs and complex state transitions.  Implements
+efficient coordinate mapping for high-dimensional permutation groups, allowing
+users to visualize the connectivity and structural properties of the puzzle's
+state space.  The rendering engine provides high-performance visuals and
+interactive camera controls, making it suitable for mathematical analysis of
+group-theoretic puzzles within the R environment.")
+    (license license:expat)))
+
 (define-public r-cgr
   (package
     (name "r-cgr")
@@ -42829,13 +42705,13 @@ error and R-squared across missingness rates.")
 (define-public r-cgmguru
   (package
     (name "r-cgmguru")
-    (version "0.1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgmguru" version))
        (sha256
-        (base32 "1f0n3azlqg0wrwzxcrg8d0p2i7pvxcci8hgsrc5bbn4zm3v7g3yy"))))
+        (base32 "1lqj172z90spfarkl51nqlr2gfxsaqaifyv0j8cn2isv4vsjhvsm"))))
     (properties `((upstream-name . "cgmguru")))
     (build-system r-build-system)
     (arguments
@@ -43485,20 +43361,20 @@ based on the counterfactual query and the causal diagram.  See Tikka, S. (2023)
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffr" version))
        (sha256
-        (base32 "158yhw142r719ssiv4l7b6w2ny038wdzgcasq91p9x51nypyzmbg"))))
+        (base32 "11l58qvvr6q3wrax9xqdy648r3aa7h4xvl6v1jjdz739k573xg1v"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-cli))
-    (native-inputs (list r-quarto r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://docs.ropensci.org/cffr/")
     (synopsis "Generate Citation File Format ('cff') Metadata for R Packages")
     (description
@@ -43849,6 +43725,31 @@ accessed from multiple sources including the Borealis Data repository
 <https://ces-eec.arts.ubc.ca/>.  This package is not officially affiliated with
 the Canadian Election Study, Borealis Data, or the University of British
 Columbia, and users should cite the original data sources in their work.")
+    (license license:expat)))
+
+(define-public r-certify
+  (package
+    (name "r-certify")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "certify" version))
+       (sha256
+        (base32 "02n807s5gzkrkfr45d7ifd2m8n6g8a503izm2hwh1xcyzm8f5pck"))))
+    (properties `((upstream-name . "certify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-png))
+    (home-page "https://github.com/cwimpy/certify")
+    (synopsis "Generate Branded PDF Certificates")
+    (description
+     "This package produces formal landscape PDF certificates with configurable color
+themes, optional logos, decorative borders, laurels, and corner ornaments.
+Built on grid with no external @code{LaTeX} or Quarto dependency.  Suitable for
+academic awards, professional recognition, and similar uses.")
     (license license:expat)))
 
 (define-public r-certara-xpose-nlme
@@ -44339,19 +44240,20 @@ See also Chapter 2 of Green (2017)
 (define-public r-cerfit
   (package
     (name "r-cerfit")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CERFIT" version))
        (sha256
-        (base32 "0lz8kk4fz515q7mj2a3zv2hcli70sccf6bnrk0yljfaidfdsmi4s"))))
+        (base32 "10923bj40bxraqsna2lxz69cbrq44qsdiwsassbmqc0gjj4kj56n"))))
     (properties `((upstream-name . "CERFIT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-twang
+                             r-survival
                              r-rcpparmadillo
                              r-rcpp
                              r-randomforest
@@ -44361,38 +44263,13 @@ See also Chapter 2 of Green (2017)
     (home-page "https://cran.r-project.org/package=CERFIT")
     (synopsis "Causal Effect Random Forest of Interaction Trees")
     (description
-     "Fits a Causal Effect Random Forest of Interaction Tress (CERFIT) which is a
+     "Fits a Causal Effect Random Forest of Interaction Trees (CERFIT) which is a
 modification of the Random Forest algorithm where each split is chosen to
 maximize subgroup treatment heterogeneity.  Doing this allows it to estimate the
 individualized treatment effect for each observation in either randomized
 controlled trial (RCT) or observational data.  For more information see L. Li,
 R. A. Levine, and J. Fan (2022) <doi:10.1002/sta4.457>.")
     (license license:gpl2+)))
-
-(define-public r-cereal
-  (package
-    (name "r-cereal")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cereal" version))
-       (sha256
-        (base32 "02s9hwp387dwzfbwwga05rxayk67zvj49hii7b4ksznynad7khsr"))))
-    (properties `((upstream-name . "cereal")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs r-tibble r-rlang r-jsonlite))
-    (home-page "https://r-lib.github.io/cereal/")
-    (synopsis "Serialize 'vctrs' Objects to 'JSON'")
-    (description
-     "The vctrs package provides a concept of vector prototype that can be especially
-useful when deploying models and code.  Serialize these object prototypes to
-JSON so they can be used to check and coerce data in production systems, and
-deserialize JSON back to the correct object prototypes.")
-    (license license:expat)))
 
 (define-public r-cercospora
   (package
@@ -44463,6 +44340,43 @@ objects.  Facilities for AWS terrain
 <https://registry.opendata.aws/terrain-tiles/> terrain and Mapbox
 <https://www.mapbox.com/> servers are provided.")
     (license license:gpl3)))
+
+(define-public r-cer
+  (package
+    (name "r-cer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cer" version))
+       (sha256
+        (base32 "1iv2ppsvfmcp0m670g3gbdc9wqagxddgk54rg7y6ksz11jd4d619"))))
+    (properties `((upstream-name . "cer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://charlescoverdale.github.io/cer/")
+    (synopsis "Download and Tidy Australian Clean Energy Regulator Data")
+    (description
+     "Fetch Australian Clean Energy Regulator data on carbon credits, safeguard
+mechanism facilities, renewable energy certificates, and greenhouse gas
+reporting.  Provides tidy access to the Australian Carbon Credit Unit ('ACCU')
+Scheme project register, Safeguard Mechanism baselines and covered emissions,
+Large-scale Renewable Energy Target ('LRET') power station accreditations,
+Small-scale Renewable Energy Scheme ('SRES') installation data, the National
+Greenhouse and Energy Reporting ('NGER') scheme, and Quarterly Carbon Market
+Reports <https://cer.gov.au/markets/reports-and-data>.  Includes a post-Chubb
+ACCU integrity layer (Chubb 2022 Independent Review), Safeguard reform handling
+(declining industry baselines from July 2023), National Greenhouse and Energy
+Reporting scope discipline (Scope 1 / Scope 2 market vs location / Climate
+Active), reconciliation against the Quarterly Carbon Market Report, and
+reproducibility helpers (snapshot pinning, SHA-256 cache integrity, session
+manifest, optional Zenodo deposit).  Data is published by the Clean Energy
+Regulator under a Creative Commons Attribution 4.0 International licence.")
+    (license license:expat)))
 
 (define-public r-cequre
   (package
@@ -44681,6 +44595,45 @@ The reference article for these datasets is Mayer and Zignago (2011)
 <http://www.cepii.fr/CEPII/en/publications/wp/abstract.asp?@code{NoDoc=3877>}.")
     (license license:cc0)))
 
+(define-public r-cepalstatr
+  (package
+    (name "r-cepalstatr")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CepalStatR" version))
+       (sha256
+        (base32 "0h24x5cpavs33k6gq9b38b4apmgrxxx26gp2q15wrwkmyv4f1zxh"))))
+    (properties `((upstream-name . "CepalStatR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-stringr
+                             r-rlang
+                             r-reactable
+                             r-magrittr
+                             r-jsonlite
+                             r-httr2
+                             r-htmlwidgets
+                             r-htmltools
+                             r-gridextra
+                             r-dplyr
+                             r-collapsibletree
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Henry-Osorto/CepalStatR")
+    (synopsis "Access to the 'CEPALSTAT API'")
+    (description
+     "Explore metadata and retrieve indicators from the statistical portal of the
+Economic Commission for Latin America and the Caribbean
+<https://statistics.cepal.org/portal/cepalstat/>.  Provides a reproducible
+interface to access the CEPALSTAT API', organize data into tidy formats, and
+generate both static and interactive visualizations.")
+    (license license:expat)))
+
 (define-public r-cepa
   (package
     (name "r-cepa")
@@ -44878,30 +44831,6 @@ methods for sf', terra', and geos objects to compute polygon centerlines based
 on the generated skeletons.  Voronoi, G. (1908) <doi:10.1515/crll.1908.134.198>.")
     (license license:expat)))
 
-(define-public r-censusr
-  (package
-    (name "r-censusr")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "censusr" version))
-       (sha256
-        (base32 "1n9571fyr46wj1dcxc2xgns9865655yzlq7yfz8im014wh0ycwqc"))))
-    (properties `((upstream-name . "censusr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-httr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/transportfoundry/censusr")
-    (synopsis "Collect Data from the Census API")
-    (description
-     "Use the US Census API to collect summary data tables for SF1 and ACS datasets at
-arbitrary geographies.")
-    (license license:expat)))
-
 (define-public r-censuspyrid
   (package
     (name "r-censuspyrid")
@@ -44942,13 +44871,13 @@ processed from IPUMS International (1971â2010) and the Population Census 20
 (define-public r-censusapi
   (package
     (name "r-censusapi")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censusapi" version))
        (sha256
-        (base32 "06m5lbhzm3hpnrdaslikm889rd23v4ha9li94wks6akygmz9ckjm"))))
+        (base32 "0hjalhi33m5yiwvhb96acci07bagy0cx0ff75pqw6wzpjwsnrgyv"))))
     (properties `((upstream-name . "censusapi")))
     (build-system r-build-system)
     (arguments
@@ -45298,31 +45227,6 @@ distributions.  This package is an complement of Lachos, V. H., Moreno, E. J.
 L., Chen, K. & Cabral, C. R. B. (2017) <doi:10.1016/j.jmva.2017.05.005> for the
 multivariate skew-normal case.")
     (license license:gpl2+)))
-
-(define-public r-censcov
-  (package
-    (name "r-censcov")
-    (version "1.0-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "censCov" version))
-       (sha256
-        (base32 "0i9vmyi12f1m5xnrl4cxk3z9qv7ymzxsyf4gbnpg1ph63yfnhv3g"))))
-    (properties `((upstream-name . "censCov")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=censCov")
-    (synopsis "Linear Regression with a Randomly Censored Covariate")
-    (description
-     "Implementations of threshold regression approaches for linear regression models
-with a covariate subject to random censoring, including deletion threshold
-regression and completion threshold regression.  Reverse survival regression,
-which flip the role of response variable and the covariate, is also considered.")
-    (license license:gpl3+)))
 
 (define-public r-censable
   (package
@@ -45997,38 +45901,6 @@ automated Seahorse data analysis and visualization using the methods described
 by Mookerjee et al. (2017) <doi:10.1074/jbc.m116.774471>.")
     (license license:expat)))
 
-(define-public r-cdvinecopulaconditional
-  (package
-    (name "r-cdvinecopulaconditional")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CDVineCopulaConditional" version))
-       (sha256
-        (base32 "1wyy324vrwipdsq0p021bj1gdhyxg09g3dkw8wv5v6rfrrs84m9k"))))
-    (properties `((upstream-name . "CDVineCopulaConditional")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vinecopula r-combinat))
-    (home-page "https://cran.r-project.org/package=CDVineCopulaConditional")
-    (synopsis "Sampling from Conditional C- and D-Vine Copulas")
-    (description
-     "This package provides tools for sampling from a conditional copula density
-decomposed via Pair-Copula Constructions as C- or D- vine.  Here, the vines
-which can be used for such a sampling are those which sample as first the
-conditioning variables (when following the sampling algorithms shown in Aas et
-al. (2009) <DOI:10.1016/j.insmatheco.2007.02.001>).  The used sampling algorithm
-is presented and discussed in Bevacqua et al. (2017)
-<DOI:10.5194/hess-2016-652>, and it is a modified version of that from Aas et
-al. (2009) <DOI:10.1016/j.insmatheco.2007.02.001>.  A function is available to
-select the best vine (based on information criteria) among those which allow for
-such a conditional sampling.  The package includes a function to compare
-scatterplot matrices and pair-dependencies of two multivariate datasets.")
-    (license license:gpl2+)))
-
 (define-public r-cdvi
   (package
     (name "r-cdvi")
@@ -46250,19 +46122,19 @@ values.")
 (define-public r-cdom
   (package
     (name "r-cdom")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdom" version))
        (sha256
-        (base32 "00xqqqhskjlkz8ii7kqyabxk8995w7g9jiz1isyqjpwg8nsa3x28"))))
+        (base32 "0k403z60jx2hz8wp24bq0ldz691zij0if4x02kycldqam3b8d8r2"))))
     (properties `((upstream-name . "cdom")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-minpack-lm r-ggplot2 r-broom))
+    (propagated-inputs (list r-tidyr r-purrr r-minpack-lm r-ggplot2 r-broom))
     (home-page "https://github.com/PMassicotte/cdom")
     (synopsis "R Functions to Model CDOM Spectra")
     (description
@@ -47360,31 +47232,6 @@ Handcock et al. (2008) <doi:10.18637/jss.v024.i01>.")
 clustering loss function.")
     (license license:gpl3+)))
 
-(define-public r-ccmm
-  (package
-    (name "r-ccmm")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ccmm" version))
-       (sha256
-        (base32 "0855nr74xxpy7in2vrw15g8pv7nm1374irc1c5hikr5hadk5pf8v"))))
-    (properties `((upstream-name . "ccmm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=ccmm")
-    (synopsis "Compositional Mediation Model")
-    (description
-     "Estimate the direct and indirect (mediation) effects of treatment on the outcome
-when intermediate variables (mediators) are compositional and high-dimensional.
-Sohn, M.B. and Li, H. (2017).  Compositional Mediation Analysis for Microbiome
-Studies. (AOAS: In revision).")
-    (license license:gpl2+)))
-
 (define-public r-ccmestimator
   (package
     (name "r-ccmestimator")
@@ -47440,6 +47287,50 @@ Bansak(2020)<doi:10.1017/pan.2019.31>.")
 class with the maximum mean (or any other function of) correlation between the
 test and training samples with known classes.")
     (license license:gpl2+)))
+
+(define-public r-cclustr
+  (package
+    (name "r-cclustr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cclustr" version))
+       (sha256
+        (base32 "0abarxmwkiv8q7bn76kb1j1y17gxc850022iwl5sf0mbnpjv9p97"))))
+    (properties `((upstream-name . "cclustr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-proxy
+                             r-mclust
+                             r-klar
+                             r-fpc
+                             r-e1071
+                             r-clustmixtype
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andrews06ml/cclustr")
+    (synopsis "Consensus Clustering Methods for Multiple Imputed Data")
+    (description
+     "This package provides tools for performing consensus clustering on multiple
+imputed datasets.  The package supports a range of clustering algorithms across
+imputations, including hierarchical methods (e.g., Ward, single, complete,
+average) and partition-based approaches such as k-means, k-medoids (PAM), fuzzy
+clustering, model-based clustering ('mclust'), and methods for mixed or
+categorical data (k-modes and k-prototypes).  A co-assignment matrix is
+constructed to quantify agreement between partitions, and consensus solutions
+are derived via hierarchical clustering applied to the resulting dissimilarity
+matrix.  Additional functions are provided for validation and visualization of
+clustering results, facilitating robust analysis in the presence of missing
+data.  Consensus clustering framework is based on Monti et al. (2003)
+<doi:10.1023/A:1023949509487>, rank aggregation methods follow Pihur et al.
+(2007) <doi:10.1093/bioinformatics/btm158>, and the PAC (Proportion of Ambiguous
+Clustering) metric is based on Senbabaoglu et al. (2014)
+<doi:10.1038/srep06207>.")
+    (license license:expat)))
 
 (define-public r-cclust
   (package
@@ -47651,32 +47542,6 @@ APIs.  Most data is also available on the @code{CompTox} Chemical Dashboard
 EPA Computational Toxicology and Exposure Online Resources
 <https://www.epa.gov/comptox-tools>.")
     (license license:gpl3+)))
-
-(define-public r-ccda
-  (package
-    (name "r-ccda")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ccda" version))
-       (sha256
-        (base32 "1kka4vmhpcnl4skdmijzsxrfj6dgax6hhlxvp7gkqlfaazq8pzf0"))))
-    (properties `((upstream-name . "ccda")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=ccda")
-    (synopsis "Combined Cluster and Discriminant Analysis")
-    (description
-     "This package implements the combined cluster and discriminant analysis method
-for finding homogeneous groups of data with known origin as described in Kovacs
-et.  al (2014): Classification into homogeneous groups using combined cluster
-and discriminant analysis (CCDA).  Environmental Modelling & Software.
-<doi:10.1016/j.envsoft.2014.01.010>.")
-    (license license:gpl2)))
 
 (define-public r-ccd
   (package
@@ -48774,50 +48639,6 @@ regression forests, and efficient influence functions - to estimate the causal
 win ratio, win proportion, and net benefit.")
     (license license:agpl3+)))
 
-(define-public r-causalweight
-  (package
-    (name "r-causalweight")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "causalweight" version))
-       (sha256
-        (base32 "0w2400pklbmf19x3d7fakvx6844k0g6mj1510mhv1dakclz97ydb"))))
-    (properties `((upstream-name . "causalweight")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-superlearner
-                             r-sandwich
-                             r-ranger
-                             r-np
-                             r-mvtnorm
-                             r-larf
-                             r-hdm
-                             r-grf
-                             r-glmnet
-                             r-fastdummies
-                             r-e1071
-                             r-checkmate))
-    (home-page "https://cran.r-project.org/package=causalweight")
-    (synopsis
-     "Estimation Methods for Causal Inference Based on Inverse Probability Weighting and Doubly Robust Estimation")
-    (description
-     "Various estimators of causal effects based on inverse probability weighting,
-doubly robust estimation, and double machine learning.  Specifically, the
-package includes methods for estimating average treatment effects, direct and
-indirect effects in causal mediation analysis, and dynamic treatment effects.
-The models refer to studies of Froelich (2007)
-<doi:10.1016/j.jeconom.2006.06.004>, Huber (2012)
-<doi:10.3102/1076998611411917>, Huber (2014) <doi:10.1080/07474938.2013.806197>,
-Huber (2014) <doi:10.1002/jae.2341>, Froelich and Huber (2017)
-<doi:10.1111/rssb.12232>, Hsu, Huber, Lee, and Lettry (2020)
-<doi:10.1002/jae.2765>, and others.")
-    (license license:expat)))
-
 (define-public r-causalspline
   (package
     (name "r-causalspline")
@@ -49220,13 +49041,13 @@ each model are given with the standard error and a 95% Wald confidence interval
 (define-public r-causalmixgpd
   (package
     (name "r-causalmixgpd")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalMixGPD" version))
        (sha256
-        (base32 "13l4i9x8lzzk1c5wk23jwrg1261hcb0r9cvlmrpms52hjxd7glwa"))))
+        (base32 "1rsnrcrzxcbclv64z579rr87ppcrx2c75sa54fdkgvkbap778wh8"))))
     (properties `((upstream-name . "CausalMixGPD")))
     (build-system r-build-system)
     (arguments
@@ -49243,8 +49064,7 @@ involves extremely rare events.  While parametric distributions may give
 adequate representation of the mode of data, they are likely to misrepresent
 heavy tails, and completely nonparametric approaches lack a rigorous mechanism
 for tail extrapolation; see Pickands (1975) <doi:10.1214/aos/1176343003>.  The
-package @code{CausalMixGPD} implements the semiparametric framework of Aich and
-Bhattacharya (2026) <doi:10.5281/zenodo.19620523> for Bayesian analysis of
+package @code{CausalMixGPD} implements tools for Bayesian analysis of
 heavy-tailed outcomes by combining Dirichlet process mixture models for the body
 of the distribution with optional generalized Pareto tails.  The method allows
 for unconditional and covariate-modulated mixtures, implements MCMC estimation
@@ -49415,34 +49235,6 @@ Dominici, F. and Braun, D., 2022.  Matching on generalized propensity scores
 with continuous exposures.  Journal of the American Statistical Association,
 pp.1-29.")
     (license license:gpl3)))
-
-(define-public r-causalgam
-  (package
-    (name "r-causalgam")
-    (version "0.1-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CausalGAM" version))
-       (sha256
-        (base32 "1riz11hfg96iks7734rg692l75nfrd3hmr9gw563j27rkk1nfkl6"))))
-    (properties `((upstream-name . "CausalGAM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-gam))
-    (home-page "https://cran.r-project.org/package=CausalGAM")
-    (synopsis "Estimation of Causal Effects with Generalized Additive Models")
-    (description
-     "This package implements various estimators for average treatment effects - an
-inverse probability weighted (IPW) estimator, an augmented inverse probability
-weighted (AIPW) estimator, and a standard regression estimator - that make use
-of generalized additive models for the treatment assignment model and/or outcome
-model.  See: Glynn, Adam N. and Kevin M. Quinn.  2010. \"An Introduction to the
-Augmented Inverse Propensity Weighted Estimator.\" Political Analysis.  18:
-36-56.")
-    (license license:gpl2)))
 
 (define-public r-causaleffect
   (package
@@ -49852,13 +49644,13 @@ trait reconstruction.  See Bastide and Didier (2023)
 (define-public r-caugi
   (package
     (name "r-caugi")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caugi" version))
        (sha256
-        (base32 "1p3vd4wp266qhfr8j81ql1n55ql4l656pm466iq1wgx3k4l27lxl"))))
+        (base32 "192fl5vrngln00i3nclnvxmlqjbzbz5ibq44fkh329vsm1b59r9z"))))
     (properties `((upstream-name . "caugi")))
     (build-system r-build-system)
     (arguments
@@ -50216,6 +50008,41 @@ first item(s) to administer and optimally select the next item, as well as
 several stopping rules.  Options to control for item exposure and content
 balancing are also available (Magis and Barrada (2017)
 <doi:10.18637/jss.v076.c01>).")
+    (license license:gpl3+)))
+
+(define-public r-catpredi
+  (package
+    (name "r-catpredi")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CatPredi" version))
+       (sha256
+        (base32 "1g2s0sl8a93zvnn1iqwg8zyazbl3xz4iha8j5rdiih4mzjc0mbbq"))))
+    (properties `((upstream-name . "CatPredi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rms
+                             r-rgenoud
+                             r-mgcv
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-cpe))
+    (home-page "https://cran.r-project.org/package=CatPredi")
+    (synopsis
+     "Optimal Categorisation of Continuous Variables in Prediction Models")
+    (description
+     "Allows the user to categorise a continuous predictor variable in a logistic or a
+Cox proportional hazards regression setting, by maximising the discriminative
+ability of the model.  I Barrio, I Arostegui, MX Rodriguez-Alvarez, JM Quintana
+(2015) <doi:10.1177/0962280215601873>.  I Barrio, MX Rodriguez-Alvarez, L
+Meira-Machado, C Esteban, I Arostegui (2017)
+<https://www.idescat.cat/sort/sort411/41.1.3.barrio-etal.pdf>.")
     (license license:gpl3+)))
 
 (define-public r-catool
@@ -50699,13 +50526,13 @@ Chaya, Castura & Greenacre (2025) <doi:10.1016/j.foodqual.2025.105639>.")
 (define-public r-cat2cat
   (package
     (name "r-cat2cat")
-    (version "0.4.7")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cat2cat" version))
        (sha256
-        (base32 "0bfrl4mzkl7diigzksdri7kl549bxf767hl7s0whs6n7dyif0ap8"))))
+        (base32 "1685a85lzwd6idn000xqs5gf9z0kdl8xz52fzq4510nvqawvypax"))))
     (properties `((upstream-name . "cat2cat")))
     (build-system r-build-system)
     (arguments
@@ -50722,7 +50549,7 @@ points in accordance with a mapping table.  The main rule is to replicate the
 observation if it could be assigned to a few categories.  Then using frequencies
 or statistical methods to approximate the probabilities of being assigned to
 each of them.  This procedure was invented and implemented in the paper by
-Nasinski, Majchrowska, and Broniatowska (2020)
+Nasinski', Majchrowska', and Broniatowska (2020)
 <doi:10.24425/cejeme.2020.134747>.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -51300,13 +51127,13 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
 (define-public r-cascade
   (package
     (name "r-cascade")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cascade" version))
        (sha256
-        (base32 "1dls503x1bf40mr9lr9yw589mb19zfrcjik1j38s9csqjhfx57q4"))))
+        (base32 "1j1y846zmjk7b8ynzh63awmfxid7qk81d94hdw22mkzaz12yzwhb"))))
     (properties `((upstream-name . "Cascade")))
     (build-system r-build-system)
     (arguments
@@ -51318,9 +51145,7 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-vgam
                              r-tnet
-                             r-survival
                              r-nnls
-                             r-magic
                              r-limma
                              r-lattice
                              r-lars
@@ -51959,13 +51784,13 @@ H, q) process given the model parameters and observation times.")
 (define-public r-caretsdm
   (package
     (name "r-caretsdm")
-    (version "1.5")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caretSDM" version))
        (sha256
-        (base32 "1y24k1rlasynxxk3kfpyzpg175phbwr9ph5pz8fpqhis02xmlnl8"))))
+        (base32 "02awx416lq7ywpk5wq5rpbdbwljfmh4kv5rz1q5scwxa1wnmy1bc"))))
     (properties `((upstream-name . "caretSDM")))
     (build-system r-build-system)
     (arguments
@@ -51998,6 +51823,7 @@ H, q) process given the model parameters and observation times.")
                              r-furrr
                              r-fs
                              r-ecospat
+                             r-ecdfniche
                              r-dplyr
                              r-dismo
                              r-data-table
@@ -52835,13 +52661,13 @@ tests based on various criteria.  See Ma W, Ye X, Tu F, and Hu F (2023) <doi:
 (define-public r-caramel
   (package
     (name "r-caramel")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caRamel" version))
        (sha256
-        (base32 "17g1y634a02819kw19kbvifzpsacifvgw2gifjmw99vf1mijyj9h"))))
+        (base32 "0z80kb3xsvcq53dxz2dxxv6qd0vli3rxqs2j3xwb1d54m4pyxppv"))))
     (properties `((upstream-name . "caRamel")))
     (build-system r-build-system)
     (arguments
@@ -53388,6 +53214,36 @@ al., 2018 <doi:10.1038/s41467-018-06461-1>).  A database of amino acid
 compositions of human proteins derived from @code{UniProt} is provided.")
     (license license:gpl3)))
 
+(define-public r-canonicalfamilyextra
+  (package
+    (name "r-canonicalfamilyextra")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CanonicalFamilyExtra" version))
+       (sha256
+        (base32 "0gq4m9iv2v815bjqx59nynkqg6m43hbmd25abhw17nxm3s2vj3bc"))))
+    (properties `((upstream-name . "CanonicalFamilyExtra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=CanonicalFamilyExtra")
+    (synopsis
+     "Extra Canonical Link Family Objects for Generalized Linear Models")
+    (description
+     "Extra family objects in \"weird\" scenarios, particularly logistic or log-linear
+model with unbounded or non-binary/non-integer outcomes.  Provides
+@code{binomial_extra()} and @code{poisson_extra()} as generalizations of
+@code{binomial()} and @code{poisson()}.  The use of canonical link with the
+corresponding working likelihood in @code{glm()} ensures convexity, making model
+fitting reliable and independent of starting value.  Robert WM Wedderburn (1974)
+<doi:10.1093/biomet/61.3.439> and Peter @code{McCullagh} (1983)
+<doi:10.1214/aos/1176346056> justified this method to fit generalized linear
+(mean) models with quasi-/working likelihood.")
+    (license license:gpl2+)))
+
 (define-public r-canek
   (package
     (name "r-canek")
@@ -53801,13 +53657,13 @@ Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
 (define-public r-camtrapr
   (package
     (name "r-camtrapr")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapR" version))
        (sha256
-        (base32 "1gs2p2sa0pi9mn3yycrva8vqgx7rhk94h0dynp677s2fhcs6sas9"))))
+        (base32 "1iycnljms147crcp7p7pb4grhqm9bji0mcs51pibr45slx0ikwfi"))))
     (properties `((upstream-name . "camtrapR")))
     (build-system r-build-system)
     (arguments
@@ -53915,13 +53771,13 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "1mx9zid19192c2np7n8f1vfhbdk0589qy80nslsi2a7z4mm04z0g"))))
+        (base32 "1297qbv22v3nl363z4lf824ij7jq5micrgmp5ak470hxhs37p0ri"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (arguments
@@ -54892,34 +54748,6 @@ to work with these such as text conversion to other variable types (e.g.
 rows or more.")
     (license license:expat)))
 
-(define-public r-calculator-lr-fns
-  (package
-    (name "r-calculator-lr-fns")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Calculator.LR.FNs" version))
-       (sha256
-        (base32 "03qg9rnz623dwnp68xhhsh9788s49n6xp0migg1nnjaqhrahlgdd"))))
-    (properties `((upstream-name . "Calculator.LR.FNs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=Calculator.LR.FNs")
-    (synopsis "Calculator for LR Fuzzy Numbers")
-    (description
-     "Arithmetic operations scalar multiplication, addition, subtraction,
-multiplication and division of LR fuzzy numbers (which are on the basis of
-extension principle) have a complicate form for using in fuzzy Statistics, fuzzy
-Mathematics, machine learning, fuzzy data analysis and etc.  Calculator for LR
-Fuzzy Numbers package relieve and aid applied users to achieve a simple and
-closed form for some complicated operator based on LR fuzzy numbers and also the
-user can easily draw the membership function of the obtained result by this
-package.")
-    (license license:lgpl3+)))
-
 (define-public r-calcthemall-prm
   (package
     (name "r-calcthemall-prm")
@@ -55534,6 +55362,36 @@ the user's preferences and can include the initiation of a git repository, an
 RStudio R project, and project-local dependency management with the renv
 package.")
     (license license:expat)))
+
+(define-public r-cabcanalysis
+  (package
+    (name "r-cabcanalysis")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cABCanalysis" version))
+       (sha256
+        (base32 "18flwpas8bp6kiny9yxdx7v558iapgjr4v2x3nsg5g915qs4zvwa"))))
+    (properties `((upstream-name . "cABCanalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotrix r-ggplot2))
+    (home-page "https://github.com/AndreHDev/cABC_Analysis")
+    (synopsis "Computed ABC Analysis")
+    (description
+     "Identify the most relative data points by dividing a numeric data set into three
+classes A, B, and C, where class A items are the \"import few\", class C items are
+the \"trivial many\" with class B items being something in between, resembling the
+idea of the Pareto principle.  This ABC classification is done using an ABC
+curve, which plots cumulative \"Yield\" against \"Effort\", similar to a Lorenz
+curve.  Class borders are then precisely mathematically defined on that curve,
+aiding in interpretation.  Based on: Ultsch A, Lotsch J (2015) \"Computed ABC
+Analysis for rational Selection of most informative Variables in multivariate
+Data\".  P@code{LoS} ONE 10(6): e0129767. <doi:10.1371/journal.pone.0129767>.")
+    (license license:gpl3)))
 
 (define-public r-ca3variants
   (package

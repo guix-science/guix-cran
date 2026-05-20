@@ -182,13 +182,13 @@ smart summaries that allows you to focus on dysfunctional cases.")
 (define-public r-wxgenr
   (package
     (name "r-wxgenr")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wxgenR" version))
        (sha256
-        (base32 "0gx5gyc5af3rzj9rhz3pvyhb3z5njqcg474lpwi78bhvlrd1wzaq"))))
+        (base32 "01d9a5z4vmmqs9ab4cvyjnvabf515c7d1wdpid739fzs42qaav7b"))))
     (properties `((upstream-name . "wxgenR")))
     (build-system r-build-system)
     (arguments
@@ -745,26 +745,24 @@ backfitting.  Based on Roca-Pardinas J and Sperlich S (2010)
 (define-public r-wru
   (package
     (name "r-wru")
-    (version "3.0.3")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wru" version))
        (sha256
-        (base32 "1d8k9bmzwg11ypkhhcnj2l6i2qnk13a09la0nc713nlwc21zqc44"))))
+        (base32 "003facaghvaq4l3zw6clgikpx2n6436gsbjlq1v0s3dkbx0ajmz8"))))
     (properties `((upstream-name . "wru")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
                              r-pl94171
                              r-piggyback
-                             r-future
                              r-furrr
                              r-dplyr
                              r-cli))
@@ -863,26 +861,24 @@ see Beck and Hagy (2015) <doi:10.1007/s10666-015-9452-8> for details.")
 (define-public r-wrswor
   (package
     (name "r-wrswor")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrswoR" version))
        (sha256
-        (base32 "0f8lbpypik0vl7dldpgviyqigc1qgf74g2l2xj5r0g01vl9826k1"))))
+        (base32 "1ygcvlspcqqk8xxdc96b6h1fmrshys4kg5b66pidlmqj19jnm4ls"))))
     (properties `((upstream-name . "wrswoR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-logging))
-    (home-page "http://krlmlr.github.io/wrswoR/")
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://krlmlr.github.io/wrswoR/")
     (synopsis "Weighted Random Sampling without Replacement")
     (description
      "This package provides a collection of implementations of classical and novel
-algorithms for weighted sampling without replacement.  Implementations include
-the algorithm of Efraimidis and Spirakis (2006) <doi:10.1016/j.ipl.2005.11.003>
-and Wong and Easton (1980) <doi:10.1137/0209009>.")
+algorithms for weighted sampling without replacement.")
     (license license:gpl3)))
 
 (define-public r-wrss
@@ -915,13 +911,13 @@ strategies and hydropower operations within integrated water resources systems."
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "2.0.0.2")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrProteo" version))
        (sha256
-        (base32 "1vy5y5m4dsz5b7cqkw9rmlld3myagh2v057pgaqj6g1pk90a0r4r"))))
+        (base32 "1pvcbr449z160rbq27v0rk6bwxrrrpxcf3lx4iy917765cwq0jg7"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (arguments
@@ -975,13 +971,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "06sj8l6m34imb14yr87f62blvlsl4bd23dw6f4gsjskhw4y51cdh"))))
+        (base32 "01ln1jj6fsx68gj4jaxn7161r81xv7xhs3b1xcmq3yj9fyph3gq6"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (arguments
@@ -1119,6 +1115,40 @@ frames for easy data manipulation, bundled in a CQmodel object.  The
 to create Wright Maps directly from data frames of person and item parameters.")
     (license license:bsd-2)))
 
+(define-public r-wrictools
+  (package
+    (name "r-wrictools")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wrictools" version))
+       (sha256
+        (base32 "1fgz81kfx8y8mjp4b5qvrn333lblg9pcwl6hmzl4vwly28kmanib"))))
+    (properties `((upstream-name . "wrictools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-rcurl
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NinaZiegenbein/wrictools")
+    (synopsis "Analyze Whole Room Indirect Calorimetry (WRIC) Data")
+    (description
+     "This package provides functions, tutorials, and examples to preprocess, analyze,
+and visualize data from whole room indirect calorimeters (WRIC) by Maastricht
+Instruments, using the @code{OmniCal} software.  Some functions may also work
+with WRICs from other manufacturers, though full functionality has only been
+validated for Maastricht Instruments devices.")
+    (license license:gpl3+)))
+
 (define-public r-wri
   (package
     (name "r-wri")
@@ -1160,13 +1190,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.13")
+    (version "1.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "0iwaprmvmg9scg6jsacxnfwd1j56qd0la29vfk91z7pcfpgfjr1w"))))
+        (base32 "1swzfp75ixnk1vq9r1rf72y4vnwpsbj5zxgh1mph5rbfaxja089n"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (arguments
@@ -1244,13 +1274,13 @@ desired number/specific colors.")
 (define-public r-wrds
   (package
     (name "r-wrds")
-    (version "0.0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrds" version))
        (sha256
-        (base32 "0av31ikwbg0vz94wi4fp61cl48b47zfpgcyfvsbqyp2zzqvwkcrn"))))
+        (base32 "0awph7fjq5b5vjnj9d1vz8dankcl0z3awrgybagg87xr843490yd"))))
     (properties `((upstream-name . "wrds")))
     (build-system r-build-system)
     (arguments
@@ -1847,32 +1877,6 @@ interface.")
      "Weighted Piecewise Kernel Density Estimation for large data.")
     (license license:gpl2+)))
 
-(define-public r-wperm
-  (package
-    (name "r-wperm")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wPerm" version))
-       (sha256
-        (base32 "0f3v0kba87wkwyii0pzvs6a8ja897aifpvwkvryl2hzxxxaml7z4"))))
-    (properties `((upstream-name . "wPerm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=wPerm")
-    (synopsis "Permutation Tests")
-    (description
-     "Supplies permutation-test alternatives to traditional hypothesis-test procedures
-such as two-sample tests for means, medians, and standard deviations;
-correlation tests; tests for homogeneity and independence; and more.  Suitable
-for general audiences, including individual and group users, introductory
-statistics courses, and more advanced statistics courses that desire an
-introduction to permutation tests.")
-    (license license:gpl2+)))
-
 (define-public r-wper
   (package
     (name "r-wper")
@@ -2140,13 +2144,13 @@ calculated distance matrices from figshare <https://figshare.com>.")
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldmet" version))
        (sha256
-        (base32 "0bfn23511ff194vkyzj9ilbkcpr260hspnf6240fzdkcx74y1r6q"))))
+        (base32 "087x792qh339ziy9wcfqawjc9yb66zc0vidmpf6k0g0f77vzw2f5"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (arguments
@@ -2278,13 +2282,13 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "1rffv2ziwysxyhz5zzp4mbfmwxzcf1ry9v49rwiv1gzyn7xy0fhj"))))
+        (base32 "01bk868r627ffbd3mangvwvfrrn3inp68jlp3q4nc024lr90lrv5"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (arguments
@@ -2793,33 +2797,6 @@ programmatically.  Based on Josh Wardle's game
 wordcloud2.js'.  wordcloud2.js is a @code{JavaScript} library to create wordle
 presentation on 2D canvas or HTML <https://timdream.org/wordcloud2.js/>.")
     (license license:gpl2)))
-
-(define-public r-word-alignment
-  (package
-    (name "r-word-alignment")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "word.alignment" version))
-       (sha256
-        (base32 "0inlq96j4zkjncz2v66amz91l5y3b5lx49qi2jg6jbqdldw7aa02"))))
-    (properties `((upstream-name . "word.alignment")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-openxlsx r-data-table))
-    (home-page "https://cran.r-project.org/package=word.alignment")
-    (synopsis
-     "Computing Word Alignment Using IBM Model 1 (and Symmetrization) for a Given Parallel Corpus and Its Evaluation")
-    (description
-     "For a given Sentence-Aligned Parallel Corpus, it aligns words for each sentence
-pair.  It considers one-to-many and symmetrization alignments.  Moreover, it
-evaluates the quality of word alignment based on this package and some other
-software.  It also builds an automatic dictionary of two languages based on
-given parallel corpus.")
-    (license license:gpl2+)))
 
 (define-public r-worcs
   (package
@@ -3552,16 +3529,59 @@ specified by the Open Geospatial Consortium'.  Supports Spatial objects of class
 Spotfire'.")
     (license license:bsd-3)))
 
+(define-public r-wjake
+  (package
+    (name "r-wjake")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wjake" version))
+       (sha256
+        (base32 "1lipxaazckhnqcl849xhk2c11fhhb45vdkjh5zcbrdfnh11ra2wd"))))
+    (properties `((upstream-name . "wjake")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xfun
+                             r-systemfonts
+                             r-sysfonts
+                             r-stringr
+                             r-showtextdb
+                             r-scales
+                             r-rstudioapi
+                             r-rlang
+                             r-pak
+                             r-knitr
+                             r-gt
+                             r-glue
+                             r-gh
+                             r-ggtext
+                             r-ggplot2
+                             r-english
+                             r-dplyr
+                             r-colorspace
+                             r-cli))
+    (home-page "https://github.com/wjakethompson/wjake")
+    (synopsis "Personal Themes and Formatting Preferences")
+    (description
+     "This package provides a collection of utility functions, themes, and templates
+to support personal data analysis workflows.  Includes functions for formatting
+numeric values as text, custom themes and color scales for ggplot2', and
+automatic formatting for tables created with gt'.")
+    (license license:expat)))
+
 (define-public r-wizardry
   (package
     (name "r-wizardry")
-    (version "0.6.7")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wizaRdry" version))
        (sha256
-        (base32 "0zlpdsvv3iv0wk1rpz3rwvr6n4fkm30z2vbj2y6xa4y1cb5q8pi3"))))
+        (base32 "1w7nlrizh55i5szwnwm1y82bj33xbkc95n5qy4i38f7cmzfn0yvy"))))
     (properties `((upstream-name . "wizaRdry")))
     (build-system r-build-system)
     (arguments
@@ -4170,19 +4190,25 @@ provided.")
 (define-public r-windac
   (package
     (name "r-windac")
-    (version "1.2.10")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "windAC" version))
        (sha256
-        (base32 "077kl7j1db0g2pnr7gc91x2anbw80y5sbl4gy49rzclbhhnwjlrs"))))
+        (base32 "0n4gzbav4ad7nvs7q3nikb6nr2fa37rfdca022m1ymz76xh0scv2"))))
     (properties `((upstream-name . "windAC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-mvtnorm))
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-mvtnorm
+                             r-magrittr
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=windAC")
     (synopsis "Area Correction Methods")
     (description
@@ -5223,34 +5249,6 @@ number assuming a flux between various adjacent states, adapted into STAN from
 Zhou (2021) <doi:10.1371/journal.pcbi.1010434>.")
     (license license:expat)))
 
-(define-public r-whitechapelr
-  (package
-    (name "r-whitechapelr")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "whitechapelR" version))
-       (sha256
-        (base32 "0mnq5m59mw8w5g1p0h2xzlz738j397b3444km59bm5yln3j0nsbi"))))
-    (properties `((upstream-name . "whitechapelR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-igraph))
-    (home-page "https://cran.r-project.org/package=whitechapelR")
-    (synopsis
-     "Advanced Policing Techniques for the Board Game \"Letters from Whitechapel\"")
-    (description
-     "This package provides a set of functions to make tracking the hidden movements
-of the Jack player easier.  By tracking every possible path Jack might have
-traveled from the point of the initial murder including special movement such as
-through alleyways and via carriages, the police can more accurately narrow the
-field of their search.  Additionally, by tracking all possible hideouts from
-round to round, rounds 3 and 4 should have a vastly reduced field of search.")
-    (license license:expat)))
-
 (define-public r-whitebox
   (package
     (name "r-whitebox")
@@ -6054,33 +6052,35 @@ dynamic factor models.  See the README for examples.")
 (define-public r-wevid
   (package
     (name "r-wevid")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wevid" version))
        (sha256
-        (base32 "1ranmqhgfkrky7r4qk563n9nlz2syn3vj85lmfajq01csadzjdpl"))))
+        (base32 "0bh20i2knmz6mv8wq8wij1gns9d3k16abk26waahwqrgry9hisbm"))))
     (properties `((upstream-name . "wevid")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-reshape2 r-proc r-mclust r-ggplot2))
+    (propagated-inputs (list r-zoo r-reshape2 r-proc r-ggplot2))
     (home-page
-     "http://www.homepages.ed.ac.uk/pmckeigu/preprints/classify/wevidtutorial.html")
+     "https://precmed.cphs.mvm.ed.ac.uk/pmckeigue/preprints/cstatistic.pdf")
     (synopsis
-     "Quantifying Performance of a Binary Classifier Through Weight of Evidence")
+     "Weight of Evidence for Quantifying Performance of a Binary Classifier")
     (description
      "The distributions of the weight of evidence (log Bayes factor) favouring case
 over noncase status in a test dataset (or test folds generated by
-cross-validation) can be used to quantify the performance of a diagnostic test
-(@code{McKeigue} (2019), <doi:10.1177/0962280218776989>).  The package can be
-used with any test dataset on which you have observed case-control status and
-have computed prior and posterior probabilities of case status using a model
-learned on a training dataset.  To quantify how the predictor will behave as a
-risk stratifier, the quantiles of the distributions of weight of evidence in
-cases and controls can be calculated and plotted.")
+cross-validation) can be used to quantify the performance of a diagnostic test.
+This package can be used with any test dataset on which you have computed prior
+probabilities of case status, posterior probabilities of case status, and you
+have the observed case-control status.  In comparison with the C-statistic (area
+under ROC curve), the expected weight of evidence (expected information for
+discrimination) has several advantages as a summary measure of predictive
+performance.  To quantify how the predictor will behave as a risk stratifier,
+the quantiles of the distributions of weight of evidence in cases and controls
+can be calculated and plotted.")
     (license license:gpl3)))
 
 (define-public r-westerlund
@@ -6208,13 +6208,13 @@ broad- and sharp-crested weirs.")
 (define-public r-weird
   (package
     (name "r-weird")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weird" version))
        (sha256
-        (base32 "1mygq0amyijnqb226b3z0hv24hca845ac0p81v07rjlrgrr2la92"))))
+        (base32 "1izkswzh2jcjxg2pmqpi5c3h06b0cf2psy9zzryh70x6g8hcwx0g"))))
     (properties `((upstream-name . "weird")))
     (build-system r-build-system)
     (arguments
@@ -6228,7 +6228,7 @@ broad- and sharp-crested weirs.")
                              r-rann
                              r-purrr
                              r-mvtnorm
-                             r-lookout
+                             r-mlpack
                              r-ks
                              r-ggplot2
                              r-evd
@@ -6759,35 +6759,6 @@ weighted composite likelihood estimating equations in Nikoloulopoulos (2023)
 correlation structures and binary, ordinal, Poisson, and negative binomial
 regressions.")
     (license license:gpl2+)))
-
-(define-public r-weighted-desc-stat
-  (package
-    (name "r-weighted-desc-stat")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Weighted.Desc.Stat" version))
-       (sha256
-        (base32 "030i12mnwlj976avvk3grrccgprsckmc35dm2ajwdfc9dijhypnj"))))
-    (properties `((upstream-name . "Weighted.Desc.Stat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=Weighted.Desc.Stat")
-    (synopsis "Weighted Descriptive Statistics")
-    (description
-     "Weighted descriptive statistics is the discipline of quantitatively describing
-the main features of real-valued fuzzy data which usually given from a fuzzy
-population.  One can summarize this special kind of fuzzy data numerically or
-graphically using this package.  To interpret some of the properties of one or
-several sets of real-valued fuzzy data, numerically summarize is possible by
-some weighted statistics which are designed in this package such as mean,
-variance, covariance and correlation coefficent.  Also, graphically
-interpretation can be given by weighted histogram and weighted scatter plot
-using this package to describe properties of real-valued fuzzy data set.")
-    (license license:lgpl3+)))
 
 (define-public r-weightcraft
   (package
@@ -7803,6 +7774,29 @@ convert wind direction from character to degrees, and fetch active warnings.
 Results are returned as simple feature objects whenever possible.")
     (license license:expat)))
 
+(define-public r-weatherstats
+  (package
+    (name "r-weatherstats")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weatherStats" version))
+       (sha256
+        (base32 "0x3ilqdr39r0n5y453mnjan2fxjkjrjg9hx3r0bqv4yx5v9mnla9"))))
+    (properties `((upstream-name . "weatherStats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=weatherStats")
+    (synopsis "Airport Weather Station Statistics")
+    (description
+     "Download daily weather data recorded at airport weather stations using the
+National Centers for Environmental Information (NCEI) API
+<https://www.ncei.noaa.gov/support/access-search-service-api-user-documentation>.")
+    (license license:gpl3+)))
+
 (define-public r-weathersentiment
   (package
     (name "r-weathersentiment")
@@ -7932,13 +7926,13 @@ from air temperature and air moisture.")
 (define-public r-weatherjoin
   (package
     (name "r-weatherjoin")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weatherjoin" version))
        (sha256
-        (base32 "0d5sqp7cv14dy1z98v3n81z0ldmn083wywi1217h5fs6rjqm8vfq"))))
+        (base32 "04khql970xfrxz24hlxj7qj2avc3vrrszfl3azin5vgrrq82k13q"))))
     (properties `((upstream-name . "weatherjoin")))
     (build-system r-build-system)
     (arguments
@@ -7988,45 +7982,6 @@ Dhakre, DS, & Bhattacharya, D (2022), \"Weather Based Potato Yield Modelling
 using Statistical and Machine Learning Technique\",Environment and Ecology,
 40(3B), 1444â1449,<https://www.environmentandecology.com/volume-40-2022>.")
     (license license:gpl3+)))
-
-(define-public r-wearables
-  (package
-    (name "r-wearables")
-    (version "0.11.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wearables" version))
-       (sha256
-        (base32 "06yhg1q8k38cwsp1xdi5fvbmxzsrpasfnbqyvlbq30m0njdqgg39"))))
-    (properties `((upstream-name . "wearables")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts
-                             r-waveslim
-                             r-varian
-                             r-sparklyr
-                             r-signal
-                             r-rlang
-                             r-rhrv
-                             r-r-utils
-                             r-padr
-                             r-magrittr
-                             r-lubridate
-                             r-kernlab
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr
-                             r-cli))
-    (home-page "https://cran.r-project.org/package=wearables")
-    (synopsis "Tools to Read and Convert Wearables Data")
-    (description
-     "Package to read Empatica E4, Embrace Plus, and Nowatch data, perform several
-transformations, perform signal processing and analyses, including batch
-analyses.")
-    (license license:gpl2)))
 
 (define-public r-weakarma
   (package
@@ -8850,13 +8805,13 @@ Locally Stationary Wavelet model of Korkas and Fryzlewicz (2017)
 (define-public r-wbsd
   (package
     (name "r-wbsd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbsd" version))
        (sha256
-        (base32 "16jhimsq8symf6f2awczqkaqkdmlkzhmgk01iimhkvqlx8g2v219"))))
+        (base32 "1j57vsxq8rmskx6a01rm7l43h8nb8vixxfn07da7jsknjp9ln6j1"))))
     (properties `((upstream-name . "wbsd")))
     (build-system r-build-system)
     (arguments
@@ -8868,9 +8823,11 @@ Locally Stationary Wavelet model of Korkas and Fryzlewicz (2017)
     (description
      "This package implements the diagnostic \"theta\" developed in Poetscher and
 Preinerstorfer (2020) \"How Reliable are Bootstrap-based Heteroskedasticity
-Robust Tests?\" <@code{arXiv:2005.04089>}.  This diagnostic can be used to detect
-and weed out bootstrap-based procedures that provably have size equal to one for
-a given testing problem.  The implementation covers a large variety of
+Robust Tests?\" <doi:10.48550/@code{arXiv.2005.04089>}, which appeared as
+<doi:10.1017/S0266466622000184> in Econometric Theory , Volume 39 , Issue 4 ,
+August 2023 , pp.  789 - 847.  The diagnostic \"theta\" can be used to detect and
+weed out bootstrap-based procedures that provably have size equal to one for a
+given testing problem.  The implementation covers a large variety of
 bootstrap-based procedures, cf.  the above mentioned article for details.  A
 function for computing bootstrap p-values is provided.")
     (license license:gpl2)))
@@ -9868,13 +9825,13 @@ Barber, S., Nason, G.P. and Silverman, B.W. (2002)
 (define-public r-wav
   (package
     (name "r-wav")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wav" version))
        (sha256
-        (base32 "0yn7fc7mlrv0pkpr707v4vbsky6pg2mask4czipc8yqniabxxc29"))))
+        (base32 "1x3ag28chi6idqb8x59sj3xdnqfn91i53hlp7ndbgpmkc2v4hjp4"))))
     (properties `((upstream-name . "wav")))
     (build-system r-build-system)
     (arguments
@@ -10014,19 +9971,19 @@ Johansen et al. (2019) <doi:10.21079/11681/35053>.")
 (define-public r-waterfalls
   (package
     (name "r-waterfalls")
-    (version "1.0.0")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waterfalls" version))
        (sha256
-        (base32 "1wj1wlih1fh3y3wj3czhz5fzik7i499l6pycj44rq8rpvi7bkj0d"))))
+        (base32 "1lvjy00xqsq9y22ahxi60dpbnaqy6m28lwr8ndx2l5wvh93yj30r"))))
     (properties `((upstream-name . "waterfalls")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://github.com/hughparsonage/waterfalls")
     (synopsis "Create Waterfall Charts using 'ggplot2' Simply")
     (description
@@ -10092,13 +10049,13 @@ irrigation information.  For more details see Piernicke et al. (2025)
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "1rsc6gfgv248s1dc8in8zr3a4igbg2yzvnihbq957a6c6cj5h3nn"))))
+        (base32 "0cy7ma3bs1y617id4ndi60bbcvsviir75s4zwgymzqvf0x3csnw0"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments
@@ -10393,16 +10350,56 @@ estimated anew and the approximate Bayesian computation (ABC) were adopted in
 this package.")
     (license license:gpl3+)))
 
+(define-public r-warmthcompetence
+  (package
+    (name "r-warmthcompetence")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "warmthcompetence" version))
+       (sha256
+        (base32 "0ic3l8xm2s1mkil09jlmf0pgvc2spdzagjwpgdicc2q7r51f3syr"))))
+    (properties `((upstream-name . "warmthcompetence")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tm
+                             r-tidytext
+                             r-tidyr
+                             r-spacyr
+                             r-sentimentr
+                             r-quanteda-textstats
+                             r-quanteda
+                             r-qdapdictionaries
+                             r-qdap
+                             r-politeness
+                             r-ngram
+                             r-lexicon
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bushraguenoun/warmthcompetence")
+    (synopsis "Warmth and Competence Detectors")
+    (description
+     "Detects perceptions of warmth and competence in American English
+self-presentation language.  Using trained elastic net regression models, this
+package provides a numerical representation of warmth and competence
+perceptions.  Methods are described
+here:<https://github.com/bushraguenoun/warmthcompetence/tree/master/paper>.")
+    (license license:agpl3+)))
+
 (define-public r-warmasvp
   (package
     (name "r-warmasvp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wARMASVp" version))
        (sha256
-        (base32 "0xrm4lvdcihl8lckmdhlpp3ny5k356xp1wnv64g256rcy3nxrlp8"))))
+        (base32 "09s41gm61yhxs5i8vjbkkkk14q8zmqzdxs9cc4zm1rzlsz9dcqfz"))))
     (properties `((upstream-name . "wARMASVp")))
     (build-system r-build-system)
     (arguments
@@ -10414,16 +10411,19 @@ this package.")
     (synopsis
      "Winsorized ARMA Estimation for Higher-Order Stochastic Volatility Models")
     (description
-     "Estimation, simulation, hypothesis testing, and forecasting for univariate
-higher-order stochastic volatility SV(p) models.  Supports Gaussian, Student-t,
-and Generalized Error Distribution (GED) innovations, with optional leverage
-effects.  Estimation uses closed-form Winsorized ARMA-SV (W-ARMA-SV)
-moment-based methods that avoid numerical optimization.  Hypothesis testing
-includes Local Monte Carlo (LMC) and Maximized Monte Carlo (MMC) procedures for
-leverage effects, heavy tails, and autoregressive order selection.  Forecasting
-is based on Kalman filtering and smoothing.  See Ahsan and Dufour (2021)
-<doi:10.1016/j.jeconom.2020.01.018>, Ahsan, Dufour, and Rodriguez Rondon (2025)
-for details.")
+     "Estimation, simulation, hypothesis testing, AR-order selection, and forecasting
+for univariate higher-order stochastic volatility SV(p) models.  Supports
+Gaussian, Student-t, and Generalized Error Distribution (GED) innovations, with
+optional leverage effects.  Estimation uses closed-form Winsorized ARMA-SV
+(W-ARMA-SV) moment-based methods that avoid numerical optimization.  Hypothesis
+testing includes Local Monte Carlo (LMC) and Maximized Monte Carlo (MMC)
+procedures for leverage effects, heavy tails, and autoregressive order.
+AR-order selection is also available via information criteria (BIC/AIC) using
+the Kalman-filter quasi-likelihood and the Hannan-Rissanen ARMA residual
+variance.  Forecasting is based on Kalman filtering and smoothing.  See Ahsan
+and Dufour (2021) <doi:10.1016/j.jeconom.2021.03.008>, Ahsan, Dufour, and
+Rodriguez-Rondon (2025) <doi:10.1111/jtsa.12851>, and Ahsan, Dufour, and
+Rodriguez-Rondon (2026) <doi:10.34989/swp-2026-8> for details.")
     (license license:gpl3+)))
 
 (define-public r-warehousetools
@@ -10896,6 +10896,58 @@ of the model plant Arabidopsis thaliana exposed to two temperature growth
 conditions.  Exploratory and integrative analyses of these data are presented in
 Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 <doi:10.3390/cells9102249>.")
+    (license license:gpl3)))
+
+(define-public r-wallace
+  (package
+    (name "r-wallace")
+    (version "2.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wallace" version))
+       (sha256
+        (base32 "0g3j1vlvmmrh0wrbik6v097bz22r4cd6j2d5zmwbqqx7yq8y85m4"))))
+    (properties `((upstream-name . "wallace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-spthin
+                             r-spocc
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyalert
+                             r-shiny
+                             r-sf
+                             r-rmarkdown
+                             r-rlang
+                             r-rjava
+                             r-rcolorbrewer
+                             r-markdown
+                             r-magrittr
+                             r-leaflet
+                             r-leafem
+                             r-knitcitations
+                             r-htmltools
+                             r-geodata
+                             r-enmeval
+                             r-ecospat
+                             r-dt
+                             r-dplyr))
+    (home-page "https://wallaceecomod.github.io/wallace/")
+    (synopsis
+     "Modular Platform for Reproducible Modeling of Species Niches and Distributions")
+    (description
+     "The shiny application Wallace is a modular platform for reproducible modeling of
+species niches and distributions.  Wallace guides users through a complete
+analysis, from the acquisition of species occurrence and environmental data to
+visualizing model predictions on an interactive map, thus bundling complex
+workflows into a single, streamlined interface.  An extensive vignette, which
+guides users through most package functionality can be found on the package's
+@code{GitHub} Pages website:
+<https://wallaceecomod.github.io/wallace/articles/tutorial-v2.html>.")
     (license license:gpl3)))
 
 (define-public r-walkscoreapi

@@ -441,6 +441,31 @@ Calculators for the Basal Metabolic Rate are based on Mifflin et al. (1990)
 L. (2010, ISBN:9780812109917).")
     (license license:gpl3+)))
 
+(define-public r-nutrinetwork
+  (package
+    (name "r-nutrinetwork")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nutriNetwork" version))
+       (sha256
+        (base32 "1bwdsy54m11lbvb2q9349in36nk4a18yl23jgghicm7gpbncakpx"))))
+    (properties `((upstream-name . "nutriNetwork")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmvtnorm r-matrix r-igraph r-huge r-glasso))
+    (home-page "https://cran.r-project.org/package=nutriNetwork")
+    (synopsis "Structure Learning with Copula Graphical Model")
+    (description
+     "Statistical tool for learning the structure of direct associations among
+variables for continuous data, discrete data and mixed discrete-continuous data.
+ The package is based on the copula graphical model in Behrouzi and Wit (2017)
+<doi:10.1111/rssc.12287>.")
+    (license license:gpl3)))
+
 (define-public r-nutrientracker
   (package
     (name "r-nutrientracker")
@@ -576,28 +601,6 @@ statistical plot visualization.")
      "To add the table of numbers at risk below the Kaplan-Meier plot.")
     (license license:gpl3)))
 
-(define-public r-numgen
-  (package
-    (name "r-numgen")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "numGen" version))
-       (sha256
-        (base32 "1y41wq31r8126dz1sj23smq2k6v9yqczq4ddgzqb73dsrx9dmmc0"))))
-    (properties `((upstream-name . "numGen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=numGen")
-    (synopsis "Number Series Generator")
-    (description
-     "This package provides a number series generator that creates number series items
-based on cognitive models.")
-    (license license:gpl3)))
-
 (define-public r-numform
   (package
     (name "r-numform")
@@ -628,20 +631,19 @@ their names easy to remember and easy to deploy.")
 (define-public r-numericensembles
   (package
     (name "r-numericensembles")
-    (version "1.0.5")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NumericEnsembles" version))
        (sha256
-        (base32 "0m7i0pf9kdfgpbc03bwklbk4z3wbd74adwx1dvjmy8ilx4knpmm6"))))
+        (base32 "12gicyillbxsp4i15jbd62p7029dx6fc8ckp49sxphzg01n88xj4"))))
     (properties `((upstream-name . "NumericEnsembles")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
-                             r-vip
                              r-tree
                              r-tidyr
                              r-scales
@@ -893,6 +895,32 @@ capabilities for handling large datasets, and built-in visualization tools using
 ggplot2'.  Designed to streamline the workflow from raw agronomic data to
 publication-ready metrics and plots.")
     (license license:gpl3)))
+
+(define-public r-nudibranch
+  (package
+    (name "r-nudibranch")
+    (version "0.0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nudibranch" version))
+       (sha256
+        (base32 "02c5rhmc9ypphzjibvlwgi62b0blvh8wlw7d502r2scxhfnjl15v"))))
+    (properties `((upstream-name . "nudibranch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/nikihubbard/nudibranch")
+    (synopsis
+     "Colour Palettes Inspired by Sea Slugs and Nudibranchs of Sydney")
+    (description
+     "This package provides a collection of colour palettes derived from photographs
+of nudis and sea slugs I have encountered in intertidal zones and shallow rocky
+reefs around Sydney, Australia.  Palettes can be used in base R or with
+ggplot2'.")
+    (license license:expat)))
 
 (define-public r-nucombog
   (package
@@ -2016,27 +2044,29 @@ provide an overview of the methods implemented in this package.")
 (define-public r-npwbs
   (package
     (name "r-npwbs")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npwbs" version))
        (sha256
-        (base32 "029vxc6iy1p6nv0vw6097rvpkwlf0a24643gr6dbycpbail9qlqg"))))
+        (base32 "1mm9dfdqrcj6dclxjsz32q17620xa37w9wjrhm1pgvlq7jl774nx"))))
     (properties `((upstream-name . "npwbs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=npwbs")
-    (synopsis "Nonparametric Multiple Change Point Detection Using WBS")
+    (synopsis
+     "Nonparametric Multiple Change Point Detection Using Wild Binary Segmentation")
     (description
-     "This package implements the procedure from G. J. Ross (2021) - \"Nonparametric
-Detection of Multiple Location-Scale Change Points via Wild Binary Segmentation\"
-<arxiv:2107.01742>.  This uses a version of Wild Binary Segmentation to detect
-multiple location-scale (i.e.  mean and/or variance) change points in a sequence
-of univariate observations, with a strict control on the probability of
-incorrectly detecting a change point in a sequence which does not contain any.")
+     "This package implements a procedure for detecting multiple location-scale change
+points in a sequence of univariate observations, as described in Ross (2026)
+\"Nonparametric Detection of Multiple Location-Scale Change Points via Wild
+Binary Segmentation\" <doi:10.48550/@code{arXiv.2107.01742>}.  The method
+combines Wild Binary Segmentation with a rank-based statistic and provides
+calibrated thresholds for controlling the probability of incorrectly detecting a
+change point in a homogeneous sequence.")
     (license license:gpl3)))
 
 (define-public r-nptest
@@ -2325,52 +2355,53 @@ adaptive way and compare different NP classifiers.")
 (define-public r-nprobust
   (package
     (name "r-nprobust")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nprobust" version))
        (sha256
-        (base32 "08ms4jcy9h9yp1vrvj7vabilykhdx5v03wcy3z945xvbi2g1s4xi"))))
+        (base32 "0lpbd6hfzki7gpxmp69bn6axpws0xf8968wd2zdh15sfxb5nlpvy"))))
     (properties `((upstream-name . "nprobust")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
-    (home-page "https://cran.r-project.org/package=nprobust")
-    (synopsis
-     "Nonparametric Robust Estimation and Inference Methods using Local Polynomial Regression and Kernel Density Estimation")
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/nppackages/nprobust")
+    (synopsis "Kernel Density and Local Polynomial Regression Methods")
     (description
-     "This package provides tools for data-driven statistical analysis using local
-polynomial regression and kernel density estimation methods as described in
-Calonico, Cattaneo and Farrell (2018, <doi:10.1080/01621459.2017.1285776>):
-@code{lprobust()} for local polynomial point estimation and robust
-bias-corrected inference, @code{lpbwselect()} for local polynomial bandwidth
-selection, @code{kdrobust()} for kernel density point estimation and robust
-bias-corrected inference, @code{kdbwselect()} for kernel density bandwidth
-selection, and @code{nprobust.plot()} for plotting results.  The main
-methodological and numerical features of this package are described in Calonico,
-Cattaneo and Farrell (2019, <doi:10.18637/jss.v091.i08>).")
-    (license license:gpl2)))
+     "Estimation, inference, bandwidth selection, and graphical procedures for kernel
+density and local polynomial regression methods, including robust bias-corrected
+confidence intervals as described in Calonico, Cattaneo and Farrell (2018,
+<doi:10.1080/01621459.2017.1285776>).  The package includes @code{lprobust()}
+for local polynomial point estimation and robust bias-corrected inference,
+@code{lpbwselect()} for local polynomial bandwidth selection, @code{kdrobust()}
+for kernel density point estimation and robust bias-corrected inference,
+@code{kdbwselect()} for kernel density bandwidth selection, and
+@code{nprobust.plot()} for plotting results.  The main methodological and
+numerical features are described in Calonico, Cattaneo and Farrell (2019,
+<doi:10.18637/jss.v091.i08>).")
+    (license license:gpl3)))
 
 (define-public r-nprmpi
   (package
     (name "r-nprmpi")
-    (version "0.60-20")
+    (version "0.70-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npRmpi" version))
        (sha256
-        (base32 "0yflr13chmsvqc1qxz3qvwsg1pmiqs56s4060i60idnrhafl2w12"))))
+        (base32 "034npwc1rk2wlah8zhhgnkf6v01z9k3i5awi6qbk9ps7ryxcpd4j"))))
     (properties `((upstream-name . "npRmpi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list))
     (propagated-inputs (list r-quantreg r-quadprog r-cubature r-boot))
-    (native-inputs (list pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/JeffreyRacine/R-Package-np")
     (synopsis
      "Parallel Nonparametric Kernel Smoothing Methods for Mixed Data Types Using 'MPI'")
@@ -2556,29 +2587,6 @@ prior as described in Duan, Ye and Smith (2006) <doi:10.1002/env.752> and
 Ibrahim et.al. (2015) <doi:10.1002/sim.6728>.  Sampling of the power parameter
 is achieved via either independence Metropolis-Hastings or random walk
 Metropolis-Hastings based on transformation.")
-    (license license:gpl2+)))
-
-(define-public r-npordtests
-  (package
-    (name "r-npordtests")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "npordtests" version))
-       (sha256
-        (base32 "1axzcyy45h3rs67m0i3cvwbmza1mnmraxan9j4zlpxdd5x9nz4h8"))))
-    (properties `((upstream-name . "npordtests")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=npordtests")
-    (synopsis
-     "Nonparametric Tests for Equality of Location Against Ordered Alternatives")
-    (description
-     "This package performs nonparametric tests for equality of location against
-ordered alternatives.")
     (license license:gpl2+)))
 
 (define-public r-npmv
@@ -4748,42 +4756,6 @@ normative data for psychological assessment.  A hands-on approach using R.
 Springer Nature.")
     (license license:gpl2+)))
 
-(define-public r-normalr
-  (package
-    (name "r-normalr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "normalr" version))
-       (sha256
-        (base32 "1ahrg188vbhnrnwag0zi6lcb3g0y1mbz06sl3j1wyllq5l918cc7"))))
-    (properties `((upstream-name . "normalr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-rlang r-purrr r-mass r-magrittr))
-    (home-page "https://github.com/kcha193/normalr")
-    (synopsis "Normalisation of Multiple Variables in Large-Scale Datasets")
-    (description
-     "The robustness of many of the statistical techniques, such as factor analysis,
-applied in the social sciences rests upon the assumption of item-level
-normality.  However, when dealing with real data, these assumptions are often
-not met.  The Box-Cox transformation (Box & Cox, 1964)
-<http://www.jstor.org/stable/2984418> provides an optimal transformation for
-non-normal variables.  Yet, for large datasets of continuous variables, its
-application in current software programs is cumbersome with analysts having to
-take several steps to normalise each variable.  We present an R package normalr
-that enables researchers to make convenient optimal transformations of multiple
-variables in datasets.  This R package enables users to quickly and accurately:
-(1) anchor all of their variables at 1.00, (2) select the desired precision with
-which the optimal lambda is estimated, (3) apply each unique exponent to its
-variable, (4) rescale resultant values to within their original X1 and X(n)
-ranges, and (5) provide original and transformed estimates of skewness,
-kurtosis, and other inferential assessments of normality.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-normalp
   (package
     (name "r-normalp")
@@ -5645,36 +5617,6 @@ applied.  It is possible to estimate nonlinear error correction models.  The
 Granger causality test performed using nonlinear models can also be applied.")
     (license license:gpl2+)))
 
-(define-public r-nonlinearicp
-  (package
-    (name "r-nonlinearicp")
-    (version "0.1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nonlinearICP" version))
-       (sha256
-        (base32 "1m9a1f0yrbjl0nx2l7r76pyi78b2bxj8v4jx92yga91f975mw6np"))))
-    (properties `((upstream-name . "nonlinearICP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforest r-data-tree r-condindtests
-                             r-catools))
-    (home-page
-     "https://github.com/christinaheinze/nonlinearICP-and-CondIndTests")
-    (synopsis "Invariant Causal Prediction for Nonlinear Models")
-    (description
-     "This package performs nonlinear Invariant Causal Prediction to estimate the
-causal parents of a given target variable from data collected in different
-experimental or environmental conditions, extending Invariant Causal Prediction
-from Peters, Buehlmann and Meinshausen (2016), <@code{arXiv:1501.01332>}, to
-nonlinear settings.  For more details, see C. Heinze-Deml, J. Peters and N.
-Meinshausen: Invariant Causal Prediction for Nonlinear Models',
-<@code{arXiv:1706.08576>}.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-nonlineardotplot
   (package
     (name "r-nonlineardotplot")
@@ -5700,41 +5642,38 @@ Weiskopf, \"Nonlinear Dot Plots\", IEEE Transactions on Visualization and Comput
 Graphics, vol.  24, no.  1, pp.  616-625, 2018. <doi:10.1109/TVCG.2017.2744018>.")
     (license license:expat)))
 
-(define-public r-nonet
+(define-public r-nonlineardid
   (package
-    (name "r-nonet")
-    (version "0.4.0")
+    (name "r-nonlineardid")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "nonet" version))
+       (uri (cran-uri "NonlinearDiD" version))
        (sha256
-        (base32 "1043vplj8libbzll172h82dfwnz2lsdba5na2g9liryg8p08h4v8"))))
-    (properties `((upstream-name . "nonet")))
+        (base32 "0p75whzrxgbw77iqkg9gvvinx1lqq1hc7f5llcn15kmfcacm9h7k"))))
+    (properties `((upstream-name . "NonlinearDiD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-rlist
-                             r-rlang
-                             r-randomforest
-                             r-purrr
-                             r-proc
-                             r-glmnet
-                             r-ggplot2
-                             r-e1071
-                             r-dplyr
-                             r-caret))
+    (propagated-inputs (list r-sandwich r-rcpp r-mass r-lmtest r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://open.gslab.com/nonet/")
-    (synopsis "Weighted Average Ensemble without Training Labels")
+    (home-page "https://github.com/causalfragility-lab/NonlinearDiD")
+    (synopsis "Staggered Difference-in-Differences with Nonlinear Outcomes")
     (description
-     "It provides ensemble capabilities to supervised and unsupervised learning models
-predictions without using training labels.  It decides the relative weights of
-the different models predictions by using best models predictions as response
-variable and rest of the mo.  User can decide the best model, therefore, It
-provides freedom to user to ensemble models based on their design solutions.")
+     "This package implements difference-in-differences estimators for staggered
+treatment adoption with binary, count, and other nonlinear outcomes.  Extends
+Callaway and Sant'Anna (2021) <doi:10.1016/j.jeconom.2020.12.001> to handle the
+fundamental identification challenges that arise with nonlinear outcome models
+(logit, probit, Poisson) in heterogeneous treatment timing designs.  Provides
+group-time average treatment effects on the treated (ATT), aggregation schemes,
+and pre-treatment parallel trends tests appropriate for nonlinear settings.
+Methods include doubly-robust semiparametric estimators, nonparametric bounds,
+and an odds-ratio @code{DiD} approach for binary outcomes.  Methods extend
+Callaway and Sant'Anna (2021) <doi:10.1016/j.jeconom.2020.12.001>, Roth and
+Sant'Anna (2023) <doi:10.3982/ECTA19255>, and Wooldridge (2023)
+<doi:10.1093/ectj/utad016>.")
     (license license:expat)))
 
 (define-public r-noncomplyr
@@ -6605,19 +6544,20 @@ Truncated Multivariate Normals Using Sequential Nearest-Neighbor Approximation\"
 (define-public r-nntensor
   (package
     (name "r-nntensor")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnTensor" version))
        (sha256
-        (base32 "1kkv3788qh3ls49d2ixvpyky96qz0qij8mbxaczqgrdmxpyfnc8k"))))
+        (base32 "1b5y525zpcfinx9n1fv86lgdk9sfpdh4iqs2afxrk85x1inymsal"))))
     (properties `((upstream-name . "nnTensor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tagcloud
+    (propagated-inputs (list r-vicus
+                             r-tagcloud
                              r-rtensor
                              r-plot3d
                              r-mass
@@ -7185,13 +7125,13 @@ a tool for interpretability or @code{eXplainable} Artificial Intelligence (XAI).
 (define-public r-nmw
   (package
     (name "r-nmw")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmw" version))
        (sha256
-        (base32 "13g6yzicdbhzw918cf2a7dkk26n76xa4zcixc3yvmc6ybcnbkrnq"))))
+        (base32 "16qdkrni98628zcwmsm4xl8fx8f6xj0p572202nz4hl4njixcqjx"))))
     (properties `((upstream-name . "nmw")))
     (build-system r-build-system)
     (arguments
@@ -7544,29 +7484,6 @@ at the data science firm Numeract LLC and are used in several packages and
 projects.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
-(define-public r-nmi
-  (package
-    (name "r-nmi")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NMI" version))
-       (sha256
-        (base32 "1rxphy9rhy9zhdiz48dvl9m26x6k681lnyn39lqxs0a6jhrxg7y3"))))
-    (properties `((upstream-name . "NMI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=NMI")
-    (synopsis
-     "Normalized Mutual Information of Community Structure in Network")
-    (description
-     "Calculates the normalized mutual information (NMI) of two community structures
-in network analysis.")
-    (license license:gpl2)))
-
 (define-public r-nmfn
   (package
     (name "r-nmfn")
@@ -7590,13 +7507,13 @@ in network analysis.")
 (define-public r-nmfkc
   (package
     (name "r-nmfkc")
-    (version "0.6.7")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmfkc" version))
        (sha256
-        (base32 "0rzsk35svw94k6indqq95gis1q7nj9pcw2ii90bk9bgy8grw56qf"))))
+        (base32 "0wrr8541cxx5kv6v67yjyb590468g72lpksbaxnksv9g6mnw9r62"))))
     (properties `((upstream-name . "nmfkc")))
     (build-system r-build-system)
     (arguments
@@ -8163,13 +8080,13 @@ Torvisco, Rodriguez-Arias Fernandez and Cabello Sanchez (2018)
 (define-public r-nlsr
   (package
     (name "r-nlsr")
-    (version "2023.8.31")
+    (version "2026.4.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlsr" version))
        (sha256
-        (base32 "0df3q1lmqy9abbfqxffssy0vkaizsmfqyr8fx88a2id4dbj5j6xl"))))
+        (base32 "1x7f5cfzgdpk63inl4aw6kinmc816p30dig8rc7zh55bgjzqyx2g"))))
     (properties `((upstream-name . "nlsr")))
     (build-system r-build-system)
     (arguments
@@ -11017,16 +10934,41 @@ available in the NHDPlus documentation available from the US Environmental
 Protection Agency <https://www.epa.gov/waterdata/basic-information>.")
     (license license:cc0)))
 
+(define-public r-nhanesdiva
+  (package
+    (name "r-nhanesdiva")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhanesdiva" version))
+       (sha256
+        (base32 "0dh5ddi5b1n7zrh93f66m5jjs2vxiz8sbhy4ibfqf8xv3npq5zdq"))))
+    (properties `((upstream-name . "nhanesdiva")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Snowepi/nhanesdiva")
+    (synopsis "NHANES Data Search, Preview, and Download Tools")
+    (description
+     "Search, preview, and download datasets from the National Health and Nutrition
+Examination Survey (NHANES) across survey cycles.  The package provides
+functions to identify relevant datasets by keyword, inspect available .XPT files
+before downloading, and organize retrieved data locally.  Data are retrieved
+from the NHANES web services available at <https://wwwn.cdc.gov/nchs/nhanes/> .")
+    (license license:expat)))
+
 (define-public r-nhanesdata
   (package
     (name "r-nhanesdata")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhanesdata" version))
        (sha256
-        (base32 "12jxh52pzihcbjslm061dql78ld8a62zslzyhrvsfaxrvdqvpwpz"))))
+        (base32 "0y43i5ljg0p9zlrxc4a9gmv6xya54s91vxjf7mskbw4b3xlgvxn0"))))
     (properties `((upstream-name . "nhanesdata")))
     (build-system r-build-system)
     (arguments
@@ -11219,6 +11161,49 @@ complete example workflows and information about the utilities offered in the
 package.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
+(define-public r-ngme2
+  (package
+    (name "r-ngme2")
+    (version "0.9.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ngme2" version))
+       (sha256
+        (base32 "1kji41hn4fx6s07dda33ly9hqjhq5bjxs74vamnxf3qp11kad510"))))
+    (properties `((upstream-name . "ngme2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-gridextra
+                             r-ggplot2
+                             r-fmesher))
+    (native-inputs (list r-knitr))
+    (home-page "https://davidbolin.github.io/ngme2/")
+    (synopsis "Linear Latent Non-Gaussian Models with Flexible Distributions")
+    (description
+     "Fits and analyzes linear latent non-Gaussian models for temporal, spatial, and
+space-time data.  The package provides model components for autoregressive and
+Ornstein-Uhlenbeck processes, random walks, Matern fields based on stochastic
+partial differential equations, separable and non-separable space-time models,
+graph-based Matern models, bivariate type-G fields, and user-defined sparse
+operators.  Latent fields and observation models can use Gaussian and
+non-Gaussian noise distributions, including normal inverse Gaussian, generalized
+asymmetric Laplace, and skew-t distributions.  Functions are included for
+simulation, likelihood-based estimation, prediction, cross-validation,
+convergence diagnostics, stochastic gradient optimization, batch-means
+confidence intervals, and posterior-like sampling.  The modeling framework is
+described in Bolin, Jin, Simas and Wallin (2026) \"A Unified and Computationally
+Efficient Non-Gaussian Statistical Modeling Framework\"
+<doi:10.48550/@code{arXiv.2602.23987>}.")
+    (license license:gpl3+)))
+
 (define-public r-nglviewer
   (package
     (name "r-nglviewer")
@@ -11352,31 +11337,6 @@ Probabilistic Prediction.")
 3D Navarro, Frenk & White (NFW) profile.  For details see Robotham & Howlett
 (2018) <@code{arXiv:1805.09550>}.")
     (license license:gpl3)))
-
-(define-public r-nfunnn
-  (package
-    (name "r-nfunnn")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nFunNN" version))
-       (sha256
-        (base32 "07ivkql315nd68x4z7amnpbkznj3d6x8msrjfnmj2g5y8dgwmmny"))))
-    (properties `((upstream-name . "nFunNN")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-torch r-fda))
-    (home-page "https://cran.r-project.org/package=nFunNN")
-    (synopsis
-     "Nonlinear Functional Principal Component Analysis using Neural Networks")
-    (description
-     "Implementation for @code{nFunNN} method, which is a novel nonlinear functional
-principal component analysis method using neural networks.  The crucial function
-of this package is @code{nFunNNmodel()}.")
-    (license license:gpl3+)))
 
 (define-public r-nftbart
   (package
@@ -11931,6 +11891,53 @@ of the <https://github.com/kotartemiy/newscatcher> Python module.")
 <https://newsapi.org/>.  A personal API key is required.")
     (license license:expat)))
 
+(define-public r-newmark
+  (package
+    (name "r-newmark")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newmark" version))
+       (sha256
+        (base32 "1iiz2lhnlwly1djkgmpl1abqx6wz41gj86yb76ff1hzasji42cc1"))))
+    (properties `((upstream-name . "newmark")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-triangle
+                             r-stringr
+                             r-rpart
+                             r-readxl
+                             r-randomforest
+                             r-mvtnorm
+                             r-hmisc
+                             r-digest
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/averriK/newmark")
+    (synopsis "Uncertainty Analysis in Dynamic Site and Slope Response")
+    (description
+     "This package implements a four-stage pipeline for probabilistic seismic
+performance analysis of slopes and embankments.  The package takes a
+uniform-hazard spectrum at multiple return periods as input (any source) and
+produces: (1) synthetic soil profile generation and fundamental period
+estimation from USCS classification via Ishihara's small-strain shear-modulus
+model and the inhomogeneous truncated shear-beam theory of Gazetas and Dakoulas;
+(2) nonlinear site amplification using the Seyhan & Stewart (2014) model
+<doi:10.1193/063013EQS181M>, with inter-period correlation via Baker & Jayaram
+(2008) <doi:10.1193/1.2857544>; (3) Monte Carlo ensemble of six empirical
+Newmark sliding-block displacement models (Ambraseys & Menu (1988)
+<doi:10.1002/eqe.4290160704>, Jibson (2007) <doi:10.1016/j.enggeo.2007.01.013>,
+Saygili & Rathje (2008) <doi:10.1061/(ASCE)1090-0241(2008)134:6(790)>, Bray &
+Travasarou (2007) <doi:10.1061/(ASCE)1090-0241(2007)133:4(381)>, Bray & Macedo
+(2017) <doi:10.1016/j.soildyn.2017.05.024>, and the Bray and Macedo
+shallow-crustal update) with coherent correlated draws; (4) log-log inversion to
+the performance-based seismic coefficient kmax at user-specified displacement
+targets.  All outputs are data.table objects.")
+    (license license:expat)))
+
 (define-public r-newmanomics
   (package
     (name "r-newmanomics")
@@ -12397,13 +12404,13 @@ Annals of Applied Statistics.  A preprint may be found at
 (define-public r-neuromapr
   (package
     (name "r-neuromapr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuromapr" version))
        (sha256
-        (base32 "1j8wb33i53vnqxzp11y7m0pmkhbrkvw1h5x2qdvhppnfc2zpd4lr"))))
+        (base32 "0q8a8ndqyrh59r0axskyyhz24cvh3fg0msf9w2qjzbz8610iqsgn"))))
     (properties `((upstream-name . "neuromapr")))
     (build-system r-build-system)
     (arguments
@@ -12437,13 +12444,13 @@ transforms.")
 (define-public r-neuroimagene
   (package
     (name "r-neuroimagene")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuroimaGene" version))
        (sha256
-        (base32 "1h1a5ilcp093q8g866zy139asrngv5sz77lxv2i30y5ffns2y3zn"))))
+        (base32 "09sns5fnn32ijp28990mlpfgy21dz0v8xa5xk7dc9w7ci610kg5g"))))
     (properties `((upstream-name . "neuroimaGene")))
     (build-system r-build-system)
     (arguments
@@ -12842,13 +12849,13 @@ decision-making should be based on accountable and interpretable algorithms.")
 (define-public r-neuralestimators
   (package
     (name "r-neuralestimators")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuralEstimators" version))
        (sha256
-        (base32 "0baq9nzn55wa0hbvb2kz751zf8vhx3ri84s1ch5m3vz894iz2mml"))))
+        (base32 "0h4wy3nymj94qxwppkps2zfvs9r8143wxn6ccq8rarrixd70pjna"))))
     (properties `((upstream-name . "NeuralEstimators")))
     (build-system r-build-system)
     (arguments
@@ -13989,36 +13996,6 @@ with all classes of network data covered in manynet', and on directed,
 undirected, multiplex, multimodal, signed, and other networks.")
     (license license:expat)))
 
-(define-public r-netregr
-  (package
-    (name "r-netregr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netregR" version))
-       (sha256
-        (base32 "0n5absjra0imddz1spy1piij5rdz76wi4g568yby3rbhkm1896rs"))))
-    (properties `((upstream-name . "netregR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=netregR")
-    (synopsis "Regression of Network Responses")
-    (description
-     "Regress network responses (both directed and undirected) onto covariates of
-interest that may be actor-, relation-, or network-valued.  In addition, compute
-principled variance estimates of the coefficients assuming that the errors are
-jointly exchangeable.  Missing data is accommodated.  Additionally implements
-building and inversion of covariance matrices under joint exchangeability, and
-generates random covariance matrices from this class.  For more detail on
-methods, see Marrs, Fosdick, and @code{McCormick} (2017)
-<@code{arXiv:1701.05530>}.")
-    (license license:expat)))
-
 (define-public r-netrankr
   (package
     (name "r-netrankr")
@@ -14532,6 +14509,47 @@ to estimate the history of the immune pressure on the evolution of the tumor
 clones.The model is based on the estimation result from Andrew Roth (2014)
 <doi:10.1038/nmeth.2883>.")
     (license (license:fsdg-compatible "Apache License"))))
+
+(define-public r-netgwas
+  (package
+    (name "r-netgwas")
+    (version "1.14.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netgwas" version))
+       (sha256
+        (base32 "0s5wflm17303qx9zpj5z7rc3q74q937wgm6hwxjqkxwqhnglzjh5"))))
+    (properties `((upstream-name . "netgwas")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmvtnorm
+                             r-qtl
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-huge
+                             r-glasso))
+    (home-page "https://cran.r-project.org/package=netgwas")
+    (synopsis "Network-Based Genome Wide Association Studies")
+    (description
+     "This package provides a multi-core R package that contains a set of tools based
+on copula graphical models for accomplishing the three interrelated goals in
+genetics and genomics in an unified way: (1) linkage map construction, (2)
+constructing linkage disequilibrium networks, and (3) exploring high-dimensional
+genotype-phenotype network and genotype- phenotype-environment interactions
+networks.  The netgwas package can deal with biparental inbreeding and
+outbreeding species with any ploidy level, namely diploid (2 sets of
+chromosomes), triploid (3 sets of chromosomes), tetraploid (4 sets of
+chromosomes) and so on.  We target on high-dimensional data where number of
+variables p is considerably larger than number of sample sizes (p >> n).  The
+computations is memory-optimized using the sparse matrix output.  The netgwas
+implements the methodological developments in Behrouzi and Wit (2017)
+<doi:10.1111/rssc.12287> and Behrouzi and Wit (2017)
+<doi:10.1093/bioinformatics/bty777>.")
+    (license license:gpl3)))
 
 (define-public r-netgreg
   (package
@@ -15232,6 +15250,31 @@ Includes sensitivity and elasticity analyses for Ne/N with respect to vital
 rates.")
     (license license:gpl3)))
 
+(define-public r-nestable
+  (package
+    (name "r-nestable")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestable" version))
+       (sha256
+        (base32 "02fifj4nzzdqbyywypmjpaqc0v82gwvc841di2b7x19vka16m9ry"))))
+    (properties `((upstream-name . "nestable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-htmltools))
+    (home-page "https://cran.r-project.org/package=nestable")
+    (synopsis "Collapsible 'HTML' Tables from Hierarchical Data")
+    (description
+     "This package creates collapsible, expandable HTML tables from hierarchical data.
+ Supports data frame input with multi-level grouping, custom column formatters,
+bottom-up rollup aggregation, and CSS-variable-based theming.  Works in Shiny
+applications, R Markdown, Quarto', and the RStudio Viewer.")
+    (license license:gpl3+)))
+
 (define-public r-neptune
   (package
     (name "r-neptune")
@@ -15619,29 +15662,26 @@ Stasinopoulos, M. D., Heller, G. Z., & Bastiani, F. D. (2019)
 (define-public r-neo4r
   (package
     (name "r-neo4r")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neo4r" version))
        (sha256
-        (base32 "0s4rjhn2mc8ca4p8p474a83dc277vrf7l968xwxkiac0d4fgbra7"))))
+        (base32 "01a9wrr3q6nnqqpn5rha257zf99dzjqdh6zdq50vld8kk194q81n"))))
     (properties `((upstream-name . "neo4r")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shiny
                              r-rstudioapi
-                             r-rlang
                              r-r6
                              r-purrr
                              r-magrittr
                              r-jsonlite
-                             r-igraph
                              r-httr
                              r-glue
                              r-data-table
@@ -15688,28 +15728,28 @@ management of data on the Neo4J server and basic local server admin.")
 (define-public r-neo2r
   (package
     (name "r-neo2r")
-    (version "2.4.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neo2R" version))
        (sha256
-        (base32 "1y7sjjz0ychjqi22x0vcinw35ldabm9m74qciav3qrqzjynvhgnd"))))
+        (base32 "0vyfcrjdplhz9h1ija9mvdpczbprk4hlab6c47a3wnwm4m7w4vyn"))))
     (properties `((upstream-name . "neo2R")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-jsonlite r-httr r-base64enc))
+    (propagated-inputs (list r-jsonlite r-httr2))
     (home-page "https://github.com/patzaw/neo2r")
     (synopsis "Neo4j to R")
     (description
      "The aim of neo2R is to provide simple and low level connectors for querying
 neo4j graph databases (<https://neo4j.com/>).  The objects returned by the query
-functions are either lists or data.frames with very few post-processing.  It
-allows fast processing of queries returning many records.  And it let the user
-handle post-processing according to the data model and his needs.")
+functions are either lists or data.frames with very little post-processing.  It
+allows fast processing of queries returning many records.  And it let the users
+handle post-processing according to the data model and their needs.")
     (license license:gpl3)))
 
 (define-public r-nemtr
@@ -15741,13 +15781,13 @@ are out of control.")
 (define-public r-nemsqar
   (package
     (name "r-nemsqar")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nemsqar" version))
        (sha256
-        (base32 "021gsrz0b1r034qc89yppvr63ri8dzwjc9iy1qk82jzrj6hgz5x9"))))
+        (base32 "105ih7djkrmhahh9k3f1nr1h45xbamvyqqkpl8my0bkwj7aawgqj"))))
     (properties `((upstream-name . "nemsqar")))
     (build-system r-build-system)
     (arguments
@@ -15758,9 +15798,11 @@ are out of control.")
                              r-rlang
                              r-lubridate
                              r-lifecycle
+                             r-hms
                              r-glue
                              r-dplyr
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bemts-hhs/nemsqar")
     (synopsis
      "National Emergency Medical Service Quality Alliance Measure Calculations")
@@ -15864,32 +15906,6 @@ with a variable shape simplex made, 1965) <doi:10.1093/comjnl/7.4.308>, and
 Box's complex method (constrained optimization with a variable shape simplex,
 1965) <doi: 10.1093/comjnl/8.1.42>.")
     (license (license:fsdg-compatible "CeCILL-2"))))
-
-(define-public r-neighbr
-  (package
-    (name "r-neighbr")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neighbr" version))
-       (sha256
-        (base32 "1rmglfjmx6bfd4w1cpx4rvp7hy2vqvcamy854h5dq0l3kwk4pjcm"))))
-    (properties `((upstream-name . "neighbr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=neighbr")
-    (synopsis
-     "Classification, Regression, Clustering with K Nearest Neighbors")
-    (description
-     "Classification, regression, and clustering with k nearest neighbors algorithm.
-Implements several distance and similarity measures, covering continuous and
-logical features.  Outputs ranked neighbors.  Most features of this package are
-directly based on the PMML specification for KNN.")
-    (license (license:fsdg-compatible "GPL (>= 2.1)"))))
 
 (define-public r-neighbours
   (package
@@ -16627,33 +16643,6 @@ taken from Section 3 of Nasri, Remillard and Bouezmarni (2019)
 <doi:10.1016/j.jmva.2019.03.007>.")
     (license license:gpl2+)))
 
-(define-public r-ncsampling
-  (package
-    (name "r-ncsampling")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NCSampling" version))
-       (sha256
-        (base32 "0bv93xffnzvbip86b3pg7apxzh3410mxff77q119m0z7f6vm3fam"))))
-    (properties `((upstream-name . "NCSampling")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaimpute r-randomforest r-lattice))
-    (home-page "https://cran.r-project.org/package=NCSampling")
-    (synopsis "Nearest Centroid (NC) Sampling")
-    (description
-     "This package provides functionality for performing Nearest Centroid (NC)
-Sampling.  The NC sampling procedure was developed for forestry applications and
-selects plots for ground measurement so as to maximize the efficiency of
-imputation estimates.  It uses multiple auxiliary variables and multivariate
-clustering to search for an optimal sample.  Further details are given in
-Melville G. & Stone C. (2016) <doi:10.1080/00049158.2016.1218265>.")
-    (license license:gpl2)))
-
 (define-public r-ncoder
   (package
     (name "r-ncoder")
@@ -16684,24 +16673,29 @@ data: large document collections, logfiles, and other text data.")
 (define-public r-ncmr
   (package
     (name "r-ncmr")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncmR" version))
        (sha256
-        (base32 "1723cbz61nj5vgj8wkvbmbcmp9dzip9igns5191fwbdmfc1ac5ia"))))
+        (base32 "03c01x2s0hqsqcf83v908hivdv2z5g7fj96f2akh7sbr269cigl2"))))
     (properties `((upstream-name . "ncmR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-showtext
+    (propagated-inputs (list r-zip
+                             r-shinyjs
+                             r-shiny
                              r-minpack-lm
                              r-hmisc
                              r-ggtext
                              r-ggplot2
-                             r-dplyr))
+                             r-dt
+                             r-dplyr
+                             r-colourpicker
+                             r-bslib))
     (home-page "https://github.com/h-xuanjiu/ncmR")
     (synopsis "Fit Neutral Community Model to Microbiome or Ecological Data")
     (description
@@ -16826,33 +16820,6 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
      "Makes NCBI taxonomic data locally available and searchable as an R object.")
     (license license:gpl2+)))
 
-(define-public r-ncar
-  (package
-    (name "r-ncar")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ncar" version))
-       (sha256
-        (base32 "1rkw69rfz3fhk87icwf0gdapifas4wd2kbxq37q9rvdvxjg1bnav"))))
-    (properties `((upstream-name . "ncar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rtf r-noncompart))
-    (home-page "https://cran.r-project.org/package=ncar")
-    (synopsis "Noncompartmental Analysis for Pharmacokinetic Report")
-    (description
-     "Conduct a noncompartmental analysis with industrial strength.  Some features are
-1) CDISC SDTM terms 2) Automatic or manual slope selection 3) Supporting both
-linear-up linear-down and linear-up log-down method 4) Interval(partial) AUCs
-with linear or log interpolation method 5) Produce pdf, rtf, text report files.
-* Reference: Gabrielsson J, Weiner D. Pharmacokinetic and Pharmacodynamic Data
-Analysis - Concepts and Applications.  5th ed.  2016. (ISBN:9198299107).")
-    (license license:gpl3)))
-
 (define-public r-ncappc
   (package
     (name "r-ncappc")
@@ -16938,13 +16905,13 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "5.0.0")
+    (version "5.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NCA" version))
        (sha256
-        (base32 "1kb9cw93virb5i584816jfvma6745r7k4wp6br77rh8kygfqxv7x"))))
+        (base32 "01nhgcs8b83gbrml3vw0xmsjrarhr0xq3l3pk0i8b9l2kwwvsf5a"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (arguments
@@ -16962,7 +16929,8 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
                              r-foreach
                              r-doparallel
                              r-dbi))
-    (home-page "https://www.erim.eur.nl/necessary-condition-analysis/")
+    (home-page
+     "https://www.eur.nl/en/erim/erim/research-initiatives/necessary-condition-analysis")
     (synopsis "Necessary Condition Analysis")
     (description
      "This package performs a Necessary Condition Analysis (NCA). (Dul, J. 2016.
@@ -17927,6 +17895,36 @@ a suite of R packages for computational neuroanatomy built on top of the nat
 suite requires a @code{GitHub} user account and personal access token
 GITHUB_PAT'.  natmanager will help the end user set this up if necessary.")
     (license license:gpl3)))
+
+(define-public r-nativeort
+  (package
+    (name "r-nativeort")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nativeORT" version))
+       (sha256
+        (base32 "087najpcjzmivl371ib7yzls5wdljw4yq0zd75wd8yvmq66bh4jq"))))
+    (properties `((upstream-name . "nativeORT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp r-glue r-digest))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/calebmcarr/nativeORT")
+    (synopsis "Native R 'ONNX' Runtime")
+    (description
+     "This package provides R native ONNX model inference without requiring Python',
+reticulate bindings, or @code{TensorFlow}'.  This package directly binds the
+ONNX Runtime C API via Rcpp', enabling real-time inference for .onnx engines,
+all within R. Standard CPU execution is supported as well as the @code{CoreML}
+Execution Provider (CEP) for Apple Silicon, all without external bindings.  This
+package handles OS detection, linking ONNX libraries, and inference.  For more
+information about ONNX Runtime see <https://onnxruntime.ai/>.")
+    (license license:expat)))
 
 (define-public r-natcpp
   (package
@@ -18944,13 +18942,13 @@ specified checks.")
 (define-public r-naepprimer
   (package
     (name "r-naepprimer")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NAEPprimer" version))
        (sha256
-        (base32 "19p1livdnayfcl88f8r9x1vg30x522q8lgx66pfgwpkxjzvrqa2l"))))
+        (base32 "1niqkcj18h5yxv1035js0dzmz69m5jydg8qldianm0p8lkzvjc00"))))
     (properties `((upstream-name . "NAEPprimer")))
     (build-system r-build-system)
     (arguments

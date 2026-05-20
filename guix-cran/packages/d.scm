@@ -12,14 +12,15 @@
   #:use-module (gnu packages video)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages tls)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages statistics)
@@ -1071,19 +1072,19 @@ species distribution modelling at high spatio-temporal resolution.")
 (define-public r-dynamicpv
   (package
     (name "r-dynamicpv")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamicpv" version))
        (sha256
-        (base32 "0glgajrmlpgb6azmn0n91mksqmyx7mncm4lgk1nj423s8w6ncprp"))))
+        (base32 "1377s8kldgbgzj010y0rn6gcvrh4x029jc6p47686xkv0gqas51v"))))
     (properties `((upstream-name . "dynamicpv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-rlang r-readr r-dplyr))
+    (propagated-inputs (list r-tidyr r-rlang r-readr r-heemod r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://MSDLLCpapers.github.io/dynamicpv/")
     (synopsis
@@ -1356,30 +1357,32 @@ the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
 (define-public r-dyadratios
   (package
     (name "r-dyadratios")
-    (version "1.4")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DyadRatios" version))
        (sha256
-        (base32 "15f0i8gn37sfvirc16bpbibnjfjhyyiqvkks37jn3d3s1cffgkzn"))))
+        (base32 "1pm9614c64x217j9npyipi5k81r97gi2pz00482mgmhqvhg5pyg3"))))
     (properties `((upstream-name . "DyadRatios")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-progress r-lubridate r-ggplot2))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DyadRatios")
-    (synopsis "Dyad Ratios Algorithm")
+    (synopsis "Dyad Ratios Algorithm for Latent Variable Estimation")
     (description
-     "Estimates the Dyad Ratios Algorithm for pooling and smoothing poll estimates.
-The Dyad Ratios Algorithm smooths both forward and backward in time over polling
-results allowing differences in both question type and polling house.  The
-result is an estimate of a single latent variable that describes the systematic
-trend over time in the (noisy) polling results.  See James A. Stimson (2018)
-<doi:10.1177/0759106318761614> and the package's vignette for more details.")
-    (license license:gpl2+)))
+     "This package implements the Dyad Ratios algorithm for estimating latent
+variables from time-series survey data.  The algorithm estimates a latent mood
+dimension (or two dimensions) from a set of issue opinion series.  Supports
+annual, quarterly, monthly, and daily aggregation intervals, optional
+exponential smoothing, and up to two latent dimensions.  Input data can be
+provided as a data frame or read from delimited text files.  Based on Stimson's
+MCalc C++ program.  See Stimson (2018) <doi:10.1177/0759106318761614> for more
+details.")
+    (license license:gpl3)))
 
 (define-public r-dyadicmarkov
   (package
@@ -1686,13 +1689,13 @@ fluctuations.  This package has been developed using algorithm of Jammazi et al.
 (define-public r-dvir
   (package
     (name "r-dvir")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dvir" version))
        (sha256
-        (base32 "0h9bxaxadzvnhrzbp5pgilzai5cvnd4rpwxiqg78qf5qx0dncbbi"))))
+        (base32 "187gbjclb724dfm7ypi8zwdrb1bv3wvl5dad3w9adx2fcskd285a"))))
     (properties `((upstream-name . "dvir")))
     (build-system r-build-system)
     (arguments
@@ -2075,13 +2078,13 @@ on human communication dynamics.")
 (define-public r-duckspatial
   (package
     (name "r-duckspatial")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckspatial" version))
        (sha256
-        (base32 "09q7d4xsqpq5p6dyzkp25n8w8xdcnmvabj8gk8k6j1gfgkaznq7n"))))
+        (base32 "1cymmhqva6r97bxl4zwnxzkl5zc6jbjkwpwxrzdh6qfb9xicpdk1"))))
     (properties `((upstream-name . "duckspatial")))
     (build-system r-build-system)
     (arguments
@@ -2096,6 +2099,7 @@ on human communication dynamics.")
                              r-rlang
                              r-nanoarrow
                              r-lifecycle
+                             r-jsonlite
                              r-glue
                              r-geoarrow
                              r-duckdb
@@ -2683,19 +2687,19 @@ Holloway, S. T., and Kosorok, M. R. (2022) <doi:10.1093/biomet/asac047>.")
 (define-public r-dtrreg
   (package
     (name "r-dtrreg")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTRreg" version))
        (sha256
-        (base32 "13gmy3yvjyha8d6bjvcaky8m21hhs622nr1nqn24vdrpjil6962c"))))
+        (base32 "02v1dway6zbziy3jglc3firknkbvy8yijzm58hhyzl1czz38xlqf"))))
     (properties `((upstream-name . "DTRreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-nnet))
+    (propagated-inputs (list r-r6 r-nnet r-ggplotify r-ggplot2))
     (home-page "https://cran.r-project.org/package=DTRreg")
     (synopsis
      "DTR Estimation and Inference via G-Estimation, Dynamic WOLS, Q-Learning, and Dynamic Weighted Survival Modeling (DWSurv)")
@@ -3028,13 +3032,13 @@ is data of one competition and one matchday as test data.")
 (define-public r-dtlg
   (package
     (name "r-dtlg")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtlg" version))
        (sha256
-        (base32 "07yzm9dr1k29gz5mf16ylfz33jrv1lg87w4cn8kx3qc1x6xqx3s7"))))
+        (base32 "02ghchllm41ac9k1ksxybv3l35kx1pc8nkib7gv8j7ym3pssmhdq"))))
     (properties `((upstream-name . "dtlg")))
     (build-system r-build-system)
     (arguments
@@ -3552,32 +3556,47 @@ information on dtangle see Hunt et al. (2019)
 <doi:10.1093/bioinformatics/bty926>.")
     (license license:gpl3)))
 
-(define-public r-dtableone
+(define-public r-dt2
   (package
-    (name "r-dtableone")
-    (version "1.1.0")
+    (name "r-dt2")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "Dtableone" version))
+       (uri (cran-uri "DT2" version))
        (sha256
-        (base32 "0pv04l4wxf44zva5w96i02g4z8zx3zgjxxjacfg0vh2f7gx4pjnq"))))
-    (properties `((upstream-name . "Dtableone")))
+        (base32 "0lijb82sgg1vvh6rg5rlzv9v4h63y11ah6b18ccjpqwp0vn1lv98"))))
+    (properties `((upstream-name . "DT2")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-proc r-irr r-epir r-dplyr))
-    (home-page "https://cran.r-project.org/package=Dtableone")
-    (synopsis "Tabular Comparison of Paired Diagnostic Tests")
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-jsonlite r-htmlwidgets r-htmltools r-cli))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/StrategicProjects/DT2")
+    (synopsis "'DataTables' 2.x for R")
     (description
-     "Offers statistical methods to compare diagnostic performance between two binary
-diagnostic tests on the same subject in clinical studies.  Includes functions
-for generating formatted tables to display diagnostic outcomes, facilitating a
-clear and comprehensive comparison directly through the R console.  Inspired by
-and extending the functionalities of the DT@code{ComPair}', tableone', and
-gtsummary packages.")
-    (license license:gpl2)))
+     "This package provides a modern R binding for @code{DataTables} V2 with modular
+extension loading, Bootstrap 5 styling, Shiny integration (proxy, events, inline
+inputs), server-side processing helpers, and standalone (non-Shiny) support.
+Configure @code{DataTables} options directly via R lists, a 1:1 mapping to the
+@code{JavaScript} API.")
+    (license license:expat)))
 
 (define-public r-dswe
   (package
@@ -3623,13 +3642,13 @@ works for the developed functions are: @code{funGP()} - Prakash et al. (2022)
 (define-public r-dstidyverseclient
   (package
     (name "r-dstidyverseclient")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsTidyverseClient" version))
        (sha256
-        (base32 "191agg3pjx51pydqv5rxxj5cgg466q5566fm7jpa5j84ivc2236s"))))
+        (base32 "1innlf96y2r0ijbv4drvqir3f2grawqsxa4q51j546jvcfa7karg"))))
     (properties `((upstream-name . "dsTidyverseClient")))
     (build-system r-build-system)
     (arguments
@@ -3645,8 +3664,8 @@ open-source federated analysis solution in R. Currently, @code{DataSHIELD}
 contains very limited tools for data manipulation, so the aim of this package is
 to improve the researcher experience by implementing essential functions for
 data manipulation, including subsetting, filtering, grouping, and renaming
-variables.  This is the clientside package which should be installed locally,
-and is used in conjuncture with the serverside package @code{dsTidyverse} which
+variables.  This is the client-side package which should be installed locally,
+and is used in conjunction with the server-side package @code{dsTidyverse} which
 is installed on the remote server holding the data.  For more information, see
 <https://tidyverse.org/> and <https://datashield.org/>.")
     (license license:lgpl3+)))
@@ -4042,13 +4061,13 @@ spline spaces.  These techniques are described in Tibshirani (2020)
 (define-public r-dsp
   (package
     (name "r-dsp")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsp" version))
        (sha256
-        (base32 "14mq642lqy4qv4v16zjcqnr8nh1fcm6j69akarw3vr56pasqq5wp"))))
+        (base32 "077c05bad919xy9xd6kwrd07r33hidmm6c6lvnps1msay96x8d0q"))))
     (properties `((upstream-name . "dsp")))
     (build-system r-build-system)
     (arguments
@@ -4591,20 +4610,19 @@ related distributed PC methods.  The methodological background follows Guo G.
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.7.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "0ld0hqqxsw6i5s0zy3c94pfm31sz8cmi2g3hwnbnw1ljn4ia9hm5"))))
+        (base32 "14flccyzzw7f1cafq9al2m1qg63xm414d3q0491wh1r9xfkba4pb"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tmb
-                             r-sem
                              r-rtmb
                              r-rcppeigen
                              r-matrix
@@ -5677,6 +5695,33 @@ and Larras et al (2018) <DOI:10.1021/acs.est.8b04752>.")
 calculating success probabilities, and plotting outcome distributions.")
     (license license:expat)))
 
+(define-public r-drogonr
+  (package
+    (name "r-drogonr")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drogonR" version))
+       (sha256
+        (base32 "1rs25a5hab2lfiqys1zj27ydgzijpspvcmpapmx7izp2rvnwpc2r"))))
+    (properties `((upstream-name . "drogonR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib openssl))
+    (propagated-inputs (list r-processx r-later r-jsonlite))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/Zabis13/drogonR")
+    (synopsis "High-Performance HTTP Server for R via 'Drogon'")
+    (description
+     "This package provides an R interface to the Drogon high-performance C++ HTTP
+server framework (<https://github.com/drogonframework/drogon>).  Offers a
+plumber'-style application programming interface for building REST services from
+R with substantially higher throughput.")
+    (license license:expat)))
+
 (define-public r-drmeta
   (package
     (name "r-drmeta")
@@ -6142,36 +6187,6 @@ Michel & Naf & Meinshausen & Buhlmann (2022)
 <doi:10.48550/@code{arXiv.2005.14458>}.")
     (license license:gpl3)))
 
-(define-public r-dress-graph
-  (package
-    (name "r-dress-graph")
-    (version "0.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dress.graph" version))
-       (sha256
-        (base32 "1j7rldmia11h37fq4a8cbdm0ip1zzrnc2f9lvvgbha1frlzi6w6v"))))
-    (properties `((upstream-name . "dress.graph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (home-page "https://github.com/velicast/dress-graph")
-    (synopsis "DRESS - A Continuous Framework for Structural Graph Refinement")
-    (description
-     "DRESS is a deterministic, parameter-free framework that iteratively refines the
-structural similarity of edges in a graph to produce a canonical fingerprint: a
-real-valued edge vector, obtained by converging a non-linear dynamical system to
-its unique fixed point.  The fingerprint is isomorphism-invariant by
-construction, guaranteed bitwise-equal across any vertex labeling, numerically
-stable (no overflow, no error amplification, no undefined behavior), fast and
-embarrassingly parallel to compute: DRESS total runtime is O(I * m * d_max) for
-I iterations to convergence, and convergence is guaranteed by Birkhoff
-contraction.")
-    (license license:expat)))
-
 (define-public r-dregar
   (package
     (name "r-dregar")
@@ -6280,85 +6295,6 @@ and conclusions, or recommendations expressed in this material are those of the
 authors and do not necessarily reflect the views of the NSF.")
     (license license:expat)))
 
-(define-public r-drdrtest
-  (package
-    (name "r-drdrtest")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DRDRtest" version))
-       (sha256
-        (base32 "1vrvwr441w526a80s0r2fwqlllvn05ir8v2152jz2wxrwhnpq1s0"))))
-    (properties `((upstream-name . "DRDRtest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-superlearner r-kernsmooth))
-    (home-page "https://cran.r-project.org/package=DRDRtest")
-    (synopsis
-     "Nonparametric Doubly Robust Test for Continuous Treatment Effect")
-    (description
-     "Implement the statistical test proposed in Weng et al. (2021) to test whether
-the average treatment effect curve is constant and whether a discrete covariate
-is a significant effect modifier.")
-    (license license:gpl3+)))
-
-(define-public r-drdimont
-  (package
-    (name "r-drdimont")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DrDimont" version))
-       (sha256
-        (base32 "1xz8vhin0h6c9552lvnm16n3z2c8d44756ni665l6814wrxbymmj"))))
-    (properties `((upstream-name . "DrDimont")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wgcna
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rfast
-                             r-reticulate
-                             r-readr
-                             r-magrittr
-                             r-igraph
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DrDimont")
-    (synopsis
-     "Drug Response Prediction from Differential Multi-Omics Networks")
-    (description
-     "While it has been well established that drugs affect and help patients
-differently, personalized drug response predictions remain challenging.
-Solutions based on single omics measurements have been proposed, and networks
-provide means to incorporate molecular interactions into reasoning.  However,
-how to integrate the wealth of information contained in multiple omics layers
-still poses a complex problem.  We present a novel network analysis pipeline,
-@code{DrDimont}, Drug response prediction from Differential analysis of
-multi-omics networks.  It allows for comparative conclusions between two
-conditions and translates them into differential drug response predictions.
-@code{DrDimont} focuses on molecular interactions.  It establishes
-condition-specific networks from correlation within an omics layer that are then
-reduced and combined into heterogeneous, multi-omics molecular networks.  A
-novel semi-local, path-based integration step ensures integrative conclusions.
-Differential predictions are derived from comparing the condition-specific
-integrated networks. @code{DrDimont's} predictions are explainable, i.e.,
-molecular differences that are the source of high differential drug scores can
-be retrieved.  Our proposed pipeline leverages multi-omics data for differential
-predictions, e.g. on drug response, and includes prior information on
-interactions.  The case study presented in the vignette uses data published by
-Krug (2020) <doi:10.1016/j.cell.2020.10.036>.  The package license applies only
-to the software and explicitly not to the included data.")
-    (license license:expat)))
-
 (define-public r-drdid
   (package
     (name "r-drdid")
@@ -6386,6 +6322,36 @@ weighting and outcome regression estimators (also implemented in the package) to
 form estimators with more attractive statistical properties.  Two different
 estimation methods can be used to estimate the nuisance functions.")
     (license license:gpl3)))
+
+(define-public r-drdata
+  (package
+    (name "r-drdata")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DrData" version))
+       (sha256
+        (base32 "1mc9simaaa4wn24zk0aqp0qxm8n1ggp83r7w82swwzxl8hfha2m5"))))
+    (properties `((upstream-name . "DrData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mohsenmehdinia/DrData")
+    (synopsis "Interactive Statistical Analysis and Machine Learning Platform")
+    (description
+     "This package provides a Shiny'-based interactive platform for end-to-end data
+science workflows.  Provides modules for data import (CSV, Excel', RDS, TXT),
+data preprocessing (missing value imputation, encoding, scaling, outlier
+removal), exploratory data analysis with interactive plots and normality tests,
+supervised learning (regression and classification each with eight algorithms),
+and unsupervised learning (k-means, hierarchical clustering, density-based
+spatial clustering of applications with noise).  Designed for students and
+practitioners in data science and artificial intelligence.")
+    (license license:expat)))
 
 (define-public r-drda
   (package
@@ -6634,34 +6600,6 @@ algorithm with STAN. See G. Weinrott, B. Fontez, N. Hilgert and S. Holmes,
 @code{JdS} 2016.")
     (license license:gpl3)))
 
-(define-public r-drayl
-  (package
-    (name "r-drayl")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DRAYL" version))
-       (sha256
-        (base32 "0cf5pyx6nwh8srdylpnmymv3dr67fm6qqpwd1hvj1wmyfc8fznpp"))))
-    (properties `((upstream-name . "DRAYL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmutil r-rconics r-pracma r-cubature))
-    (home-page "https://cran.r-project.org/package=DRAYL")
-    (synopsis "Computation of Rayleigh Densities of Arbitrary Dimension")
-    (description
-     "We offer an implementation of the series representation put forth in \"A series
-representation for multidimensional Rayleigh distributions\" by Wiegand and
-Nadarajah <DOI: 10.1002/dac.3510>.  Furthermore we have implemented an
-integration approach proposed by Beaulieu et al.  for 3 and 4-dimensional
-Rayleigh densities (Beaulieu, Zhang, \"New simplest exact forms for the 3D and 4D
-multivariate Rayleigh PDFs with applications to antenna array geometrics\", <DOI:
-10.1109/TCOMM.2017.2709307>).")
-    (license license:gpl2)))
-
 (define-public r-drawsample
   (package
     (name "r-drawsample")
@@ -6807,40 +6745,6 @@ for estimating score functions using smoothing splines.  Details of the method
 can be found in Harvey Klyne and Rajen D. Shah (2023)
 <doi:10.48550/@code{arXiv.2308.09207>}.")
     (license license:expat)))
-
-(define-public r-dramaanalysis
-  (package
-    (name "r-dramaanalysis")
-    (version "3.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DramaAnalysis" version))
-       (sha256
-        (base32 "0nsnwais0r592c50nphfzkr1bbygl67mriwsx7dxbvmpdsswlvl1"))))
-    (properties `((upstream-name . "DramaAnalysis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tokenizers
-                             r-stringr
-                             r-reshape2
-                             r-readr
-                             r-httr
-                             r-git2r
-                             r-data-table))
-    (home-page "https://github.com/quadrama/DramaAnalysis")
-    (synopsis "Analysis of Dramatic Texts")
-    (description
-     "Analysis of preprocessed dramatic texts, with respect to literary research.  The
-package provides functions to analyze and visualize information about
-characters, stage directions, the dramatic structure and the text itself.  The
-dramatic texts are expected to be in CSV format, which can be installed from
-within the package, sample texts are provided.  The package and the reasoning
-behind it are described in Reiter et al. (2017) <doi:10.18420/in2017_119>.")
-    (license license:gpl3+)))
 
 (define-public r-drake
   (package
@@ -7148,6 +7052,45 @@ to identify extremely over-dominant and small-effect genes in F2.  Li P, Li G,
 Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
     (license license:gpl2+)))
 
+(define-public r-dqcheckr
+  (package
+    (name "r-dqcheckr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dqcheckr" version))
+       (sha256
+        (base32 "1irpfkqk80apw4w0000k8alw0diwkhivjqr5x226l3gc350bs86w"))))
+    (properties `((upstream-name . "dqcheckr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-rsqlite
+                             r-rmarkdown
+                             r-rlang
+                             r-readr
+                             r-knitr
+                             r-kableextra
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mickmioduszewski/dqcheckr")
+    (synopsis "Automated Data Quality Checks for Recurring Dataset Deliveries")
+    (description
+     "Automates quality verification of recurring external dataset deliveries.  For
+each new file arrival, it runs single-snapshot quality checks, compares the file
+to the previous delivery, writes a self-contained HTML report, and records
+summary statistics in a local SQLite database for long-term trend tracking.
+Supports CSV and fixed-width formats.  Custom organisation-specific checks can
+be supplied as plain R files.")
+    (license license:expat)))
+
 (define-public r-dqastats
   (package
     (name "r-dqastats")
@@ -7250,30 +7193,6 @@ G. Kahn (2016) <doi:10.13063/2327-9214.1244> and Nicole G. Weiskopf (2017)
 <doi:10.5334/egems.218>âfor data quality assessment.  Using this package,
 users can evaluate the quality of their datasets, provided that corresponding
 metadata are available.")
-    (license license:expat)))
-
-(define-public r-dptree
-  (package
-    (name "r-dptree")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DPtree" version))
-       (sha256
-        (base32 "0d7zf695lwkx4gv50f08cbi3p3mjjay0qgrbmvybf9m15i4zmyd7"))))
-    (properties `((upstream-name . "DPtree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-plyr r-mcmcpack r-mass))
-    (home-page "https://cran.r-project.org/package=DPtree")
-    (synopsis "Dirichlet-Based Polya Tree")
-    (description
-     "This package contains functions to perform copula estimation by the
-non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
-<doi:10.1080/00949655.2017.1421194>.")
     (license license:expat)))
 
 (define-public r-dptm
@@ -7392,6 +7311,31 @@ distributions.")
 Probability (cdf) and Quantile) functions, where the functions here partly use
 the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
     (license license:gpl2+)))
+
+(define-public r-dpqbootstrap
+  (package
+    (name "r-dpqbootstrap")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DPQBootstrap" version))
+       (sha256
+        (base32 "1sdiplf9x465kyq7zxcylgbqiqd9hvhq1rh4d9khgkswsgmnkvpw"))))
+    (properties `((upstream-name . "DPQBootstrap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang))
+    (home-page "https://cran.r-project.org/package=DPQBootstrap")
+    (synopsis "Dirichlet Quantile Bootstrap for Time Series")
+    (description
+     "This package provides a Dirichlet-based quantile bootstrap method for time
+series with rank-preserving reconstruction and averaged bootstrap samples.  The
+package generates bootstrap trajectories, a mean bootstrap series, and
+uncertainty intervals for time series resampling.")
+    (license license:expat)))
 
 (define-public r-dpq
   (package
@@ -9546,31 +9490,6 @@ Republic of Venice, and use it for social network analysis, as used in Merelo
 (2022) <doi:10.48550/@code{arXiv.2209.07334>}.")
     (license license:gpl3)))
 
-(define-public r-doestrare
-  (package
-    (name "r-doestrare")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DoEstRare" version))
-       (sha256
-        (base32 "0y9ymw7114jk1rwiasq400bpgvkxv6rpc954c7v9mgxd3c2nfza7"))))
-    (properties `((upstream-name . "DoEstRare")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=DoEstRare")
-    (synopsis
-     "Rare Variant Association Test Based on Position Density Estimation")
-    (description
-     "Rare variant association test integrating variant position information.  It aims
-to identify the presence of clusters of disease-risk variants in specific gene
-regions.  For more details, please read the publication from Persyn et al.
-(2017) <doi:10.1371/journal.pone.0179364>.")
-    (license license:gpl2+)))
-
 (define-public r-doem
   (package
     (name "r-doem")
@@ -9760,13 +9679,13 @@ documents.  There is also nascent support for .doc and .pptx files.")
 (define-public r-documentosbr
   (package
     (name "r-documentosbr")
-    (version "0.1.8")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "documentosbr" version))
        (sha256
-        (base32 "1hrn8dqyzd87a2vv20424wgv66v0gs74fnnlfw2pxpkqzlp42gym"))))
+        (base32 "19rii2aq66nya9xxp4zi8h8gqzbxkgmgm2k25adn4mmwg2p41jns"))))
     (properties `((upstream-name . "documentosbr")))
     (build-system r-build-system)
     (arguments
@@ -10193,13 +10112,13 @@ container.")
 (define-public r-dockerfiler
   (package
     (name "r-dockerfiler")
-    (version "0.2.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dockerfiler" version))
        (sha256
-        (base32 "1l57lfh8q0ra3715bilkb0071ysw4mxbrc2j5dzykfdgm9a2psar"))))
+        (base32 "1a4ma29lj8f8zp59ybr73cfj04n7g8924pkxp5jzm15y0hrp7hb9"))))
     (properties `((upstream-name . "dockerfiler")))
     (build-system r-build-system)
     (arguments
@@ -10508,13 +10427,13 @@ Cognitive neurodynamics 6.6 (2012): 525-535.")
 (define-public r-dng
   (package
     (name "r-dng")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dng" version))
        (sha256
-        (base32 "0yi1fs4yvlsy3j128l7s5kwq8mhdd5fr74y2bzj7cjrxi7wgz2hg"))))
+        (base32 "159lqwlxjjqxzh1askjfvzgp0jhbgrvgv50g8m6g982hj947w0gb"))))
     (properties `((upstream-name . "dng")))
     (build-system r-build-system)
     (arguments
@@ -11204,13 +11123,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "084jgmdj73nxcb563jab1sa8bm1k588x1y5n5mm43wvhzbjkx5zm"))))
+        (base32 "09pqsb066s7xxa4zdi5gxy9g2j87faryxi04xxy1l5mqh1vsrnyb"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (arguments
@@ -11633,13 +11552,13 @@ use dlib through Rcpp'.")
 (define-public r-dlfm
   (package
     (name "r-dlfm")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DLFM" version))
        (sha256
-        (base32 "1synvz9ww9mwci6rrap99cyfiipram65hkviam33pjnx5gw7wf79"))))
+        (base32 "0gnf4dinj1pys304f2lh90cwg1hbj5whl9387q0rbz53f4p0vjdn"))))
     (properties `((upstream-name . "DLFM")))
     (build-system r-build-system)
     (arguments
@@ -11676,32 +11595,6 @@ described in Guangbao Guo. (2022). <doi:10.1007/s00180-022-01270-z>.")
      "The load estimation method is based on a general factor model to solve the
 estimates of load and specific variance.  The philosophy of the package is
 described in Guangbao Guo. (2022). <doi:10.1007/s00180-022-01270-z>.")
-    (license license:expat)))
-
-(define-public r-dlbayes
-  (package
-    (name "r-dlbayes")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dlbayes" version))
-       (sha256
-        (base32 "058kkh67npai2ffrjdpjn4pzj8f233znl16nj6yx8wz8lkb17cb0"))))
-    (properties `((upstream-name . "dlbayes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-laplacesdemon r-glmnet r-gigrvg r-expm))
-    (home-page "https://cran.r-project.org/package=dlbayes")
-    (synopsis
-     "Use Dirichlet Laplace Prior to Solve Linear Regression Problem and Do Variable Selection")
-    (description
-     "The Dirichlet Laplace shrinkage prior in Bayesian linear regression and variable
-selection, featuring: utility functions in implementing Dirichlet-Laplace priors
-such as visualization; scalability in Bayesian linear regression; penalized
-credible regions for variable selection.")
     (license license:expat)))
 
 (define-public r-dlasso
@@ -12137,6 +12030,43 @@ process more efficient, transparent, and reproducible.")
 convert them to N@code{IfTI-1} format.")
     (license (license:fsdg-compatible "BSD_3_clause + file LICENCE"))))
 
+(define-public r-diversitystats
+  (package
+    (name "r-diversitystats")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiversityStats" version))
+       (sha256
+        (base32 "1aq19bmz5vs0j3k99xlx0hhq21gx95f6yhmxsa79hviv4gb6vhlq"))))
+    (properties `((upstream-name . "DiversityStats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rdpack
+                             r-multcompview
+                             r-mathjaxr
+                             r-dplyr
+                             r-boot))
+    (home-page "https://cran.r-project.org/package=DiversityStats")
+    (synopsis "Diversity Indices with Statistical Inference")
+    (description
+     "This package provides a comprehensive framework for analyzing diversity from
+frequency/abundance count data.  Implements a wide range of classical and
+entropy-based diversity indices, including Berger-Parker, Simpson (and related
+variants), Shannon, Brillouin, @code{McIntosh}, Margalef, Menhinick and
+Smith-Wilson.  Supports permutation-based hypothesis tests for comparing groups
+with respect to diversity (global and pairwise comparisons), as well as
+confidence interval estimation using multiple bootstrap methods.  Includes
+functionality for generating diversity profiles based on parametric families
+such as Hill numbers, RÃ©nyi entropy, and Tsallis entropy.  The methods are
+applicable to ecological community data (species abundance counts) and genetic
+or phenotypic class frequency data.")
+    (license license:gpl2+)))
+
 (define-public r-diversityforest
   (package
     (name "r-diversityforest")
@@ -12195,13 +12125,13 @@ C++ implementation.")
 (define-public r-diversityarch
   (package
     (name "r-diversityarch")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diversityArch" version))
        (sha256
-        (base32 "1nc8priyxli39jiznnl56q94gxy05vipxg3l5am0nwa43m78i402"))))
+        (base32 "19lh4j62p43b5pjymwjfgysp7kzqds44h1kzlbjy941rnjxdlyld"))))
     (properties `((upstream-name . "diversityArch")))
     (build-system r-build-system)
     (arguments
@@ -12321,13 +12251,13 @@ and installs all these related packages in a single step.")
 (define-public r-divent
   (package
     (name "r-divent")
-    (version "0.5-3")
+    (version "0.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divent" version))
        (sha256
-        (base32 "0yl9p7qhv8sh23bnd4n4752naazhmancdxds16i3jy2f9lpwbl4q"))))
+        (base32 "1ywhc3kps8368vccx7zh34hhxdr2cgisxnrirzhg3p6jjbsr24j5"))))
     (properties `((upstream-name . "divent")))
     (build-system r-build-system)
     (arguments
@@ -12361,7 +12291,7 @@ and installs all these related packages in a single step.")
 Marcon and Herault (2015) <doi:10.18637/jss.v067.i08>.  divent provides
 functions to estimate alpha, beta and gamma diversity of communities, including
 phylogenetic and functional diversity.")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl3+)))
 
 (define-public r-divemove
   (package
@@ -12995,34 +12925,6 @@ expand the stats package so as to enable students to develop an intuition for
 probability.")
     (license license:expat)))
 
-(define-public r-distrib
-  (package
-    (name "r-distrib")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DISTRIB" version))
-       (sha256
-        (base32 "0whwmmdx2k2vrjjkz4ww9v7z9ad3835819pby91119lyic27w727"))))
-    (properties `((upstream-name . "DISTRIB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=DISTRIB")
-    (synopsis
-     "Four Essential Functions for Statistical Distributions Analysis: A New Functional Approach")
-    (description
-     "This package provides a different way for calculating pdf/pmf, cdf, quantile and
-random data such that the user is able to consider the name of related
-distribution as an argument and so easily can changed by a changing argument by
-user.  It must be mentioned that the core and computation base of package
-DISTRIB is package stats'.  Although similar functions are introduced previously
-in package stats', but the package DISTRIB has some special applications in some
-special computational programs.")
-    (license license:lgpl3+)))
-
 (define-public r-distrex
   (package
     (name "r-distrex")
@@ -13420,13 +13322,13 @@ location-scale family.")
 (define-public r-distfreereg
   (package
     (name "r-distfreereg")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distfreereg" version))
        (sha256
-        (base32 "01hvgqgidzqna6hxdm2rpqsr1b7v1lv1mvcmivxf90zcmi0cgps6"))))
+        (base32 "032zldq7zsml483aszcnf1a51mhah5z0h3jcgsa6fils0r2d4xfx"))))
     (properties `((upstream-name . "distfreereg")))
     (build-system r-build-system)
     (arguments
@@ -13437,11 +13339,12 @@ location-scale family.")
     (home-page "https://cran.r-project.org/package=distfreereg")
     (synopsis "Distribution-Free Goodness-of-Fit Testing for Regression")
     (description
-     "This package implements the distribution-free goodness-of-fit regression test
-for the mean structure of parametric models introduced in Khmaladze (2021)
-<doi:10.1007/s10463-021-00786-3>.  The test is implemented for general functions
-with minimal distributional assumptions as well as common models (e.g., lm, glm)
-with the usual assumptions.")
+     "This package implements the distribution-free goodness-of-fit regression testing
+procedure, introduced by Estate Khmaladze (2021,
+<doi:10.1007/s10463-021-00786-3>) to test whether or not the mean structure of a
+parametric model belongs to a specified model family.  The test is implemented
+for general mean functions with minimal distributional assumptions as well as
+common models (e.g., lm, glm) with the usual model assumptions.")
     (license license:gpl3)))
 
 (define-public r-distfree-cr
@@ -13593,13 +13496,13 @@ methods are based on Abdi, H., Williams, L.J., Valentin, D., & Bennani-Dosse, M.
 (define-public r-distantia
   (package
     (name "r-distantia")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distantia" version))
        (sha256
-        (base32 "0kxfqn90abzgxmxsjh3h9p2nd5h9dds84kprvhc9c9q5hn08adng"))))
+        (base32 "1nn1h3q3l174f2jqhw8pk7vs23cq58f8ak0w12cw2ic0d48qpm8j"))))
     (properties `((upstream-name . "distantia")))
     (build-system r-build-system)
     (arguments
@@ -13739,6 +13642,40 @@ Miller et al. (2019) <doi:10.18637/jss.v089.i01> for more information on methods
 and <https://distancesampling.org/resources/vignettes.html> for example
 analyses.")
     (license license:gpl2+)))
+
+(define-public r-dist-structure
+  (package
+    (name "r-dist-structure")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dist.structure" version))
+       (sha256
+        (base32 "0cb89r5wq52hzi48shpffc7prg0wy61mxr0z4hkf21amcpxcyfim"))))
+    (properties `((upstream-name . "dist.structure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-algebraic-dist))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/dist.structure")
+    (synopsis
+     "Structured Random Variables for Reliability System Distributions")
+    (description
+     "Extends the algebraic.dist distribution algebra to random variables with
+internal structure: coherent reliability systems decomposed into components
+arranged by a structure function (series, parallel, k-out-of-n, bridge, and
+arbitrary topologies via minimal path sets).  Every dist_structure object is a
+dist', so the full distribution algebra (mean, vcov, sampler, surv, cdf) works
+automatically via default methods that compose component-level distributions
+through the topology.  Adds structural queries: structure function evaluation,
+minimal path and cut sets, system signature, critical states, dual, Birnbaum
+structural importance, and system reliability.  Topology shortcut constructors
+(series_dist, parallel_dist, kofn_dist, bridge_dist) produce ready-to-use dists
+from component dists and a chosen structure.")
+    (license license:expat)))
 
 (define-public r-dissmod
   (package
@@ -14262,13 +14199,13 @@ Ratios, and fitting the BYM model using INLA'.  For details see Brown (2015)
 (define-public r-disdat
   (package
     (name "r-disdat")
-    (version "1.0-1")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disdat" version))
        (sha256
-        (base32 "1m22pichm603gn9h94vx0kmds28krlp9ax1yrsfwx12rqchcdhk7"))))
+        (base32 "1hrlws1z56m4iwm47y0z4j7ppclvp2wzydyyx74nrjzp9n5pizn8"))))
     (properties `((upstream-name . "disdat")))
     (build-system r-build-system)
     (arguments
@@ -14315,13 +14252,13 @@ Political Sophistication.\" American Political Science Review (forthcoming).")
 (define-public r-discsurv
   (package
     (name "r-discsurv")
-    (version "2.0.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discSurv" version))
        (sha256
-        (base32 "0k585cyz02vqk4w7w20rhn6g9rspmmlbdpv7k837021iyhwwb838"))))
+        (base32 "0hwlm0n05zs4wvlpkr0h81fyknkwh873xwq43hwwrd83y8w2ggbl"))))
     (properties `((upstream-name . "discSurv")))
     (build-system r-build-system)
     (arguments
@@ -14329,15 +14266,20 @@ Political Sophistication.\" American Political Science Review (forthcoming).")
       #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-treeclust
+                             r-rpart-plot
                              r-rpart
                              r-rdpack
                              r-ranger
                              r-mvtnorm
                              r-mvnfast
+                             r-moments
                              r-mgcv
-                             r-geepack
-                             r-functional
-                             r-data-table))
+                             r-lmtest
+                             r-lme4
+                             r-gee
+                             r-gbutils
+                             r-data-table
+                             r-car))
     (home-page "https://cran.r-project.org/package=discSurv")
     (synopsis "Discrete Time Survival Analysis")
     (description
@@ -14447,13 +14389,13 @@ distributions.")
 (define-public r-discretetests
   (package
     (name "r-discretetests")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteTests" version))
        (sha256
-        (base32 "0k2k575gdzqx7g0afppyippizyrk6pkfbn68q5fhjdcw1akidcvn"))))
+        (base32 "0mv0kc4z9ngm3nsxcxsl1cnhrdm23m6i9clnrba612nfzx244mzx"))))
     (properties `((upstream-name . "DiscreteTests")))
     (build-system r-build-system)
     (arguments
@@ -15044,6 +14986,36 @@ pairs.  See [Garrison and Rodgers, 2016 <doi:10.1016/j.intell.2016.08.008>],
 empirical examples, and [Garrison and colleagues for theoretical work
 <doi:10.1101/2025.08.25.25334395>].")
     (license license:gpl3)))
+
+(define-public r-discocvi
+  (package
+    (name "r-discocvi")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "discoCVI" version))
+       (sha256
+        (base32 "18ylx9dik1vv68yyj6srzjnj0gfhcgxlryaq7wr06qxrppnf6iyc"))))
+    (properties `((upstream-name . "discoCVI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fnn))
+    (home-page "https://github.com/aminentezari/discoCVI")
+    (synopsis
+     "Implementation of the DISCO Metric for Internal Clustering Evaluation")
+    (description
+     "Implementation of the DISCO (Density-based Internal Score for Clusterings with
+@code{nOise}) metric, a cluster validity index for evaluating density-based
+clustering results without ground truth labels.  DISCO is the first index to
+explicitly assess the quality of noise point assignments in addition to cluster
+quality.  It uses density-connectivity distance derived from a minimum spanning
+tree of the mutual-reachability graph, providing interpretable, bounded scores
+in [-1, 1].  Higher scores indicate better clustering.  Based on Beer et al.
+(2025) <doi:10.48550/@code{arXiv.2503.00127>}.")
+    (license license:expat)))
 
 (define-public r-discnorm
   (package
@@ -15791,41 +15763,16 @@ microarray, RNA-seq, proteomics, or phosphoproteomics data.  See Yang P et al
 <doi:10.1002/pmic.201600068>.")
     (license license:gpl3)))
 
-(define-public r-directotree
-  (package
-    (name "r-directotree")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "directotree" version))
-       (sha256
-        (base32 "1yv703mb3fnvjxr2rrxvb8x869hbbjx4l94qbbsmy0ssknayq60y"))))
-    (properties `((upstream-name . "directotree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-data-tree r-collapsibletree))
-    (home-page "https://cran.r-project.org/package=directotree")
-    (synopsis "Creates an Interactive Tree Structure of a Directory")
-    (description
-     "Represents the content of a directory as an interactive collapsible tree.
-Offers the possibility to assign a text (e.g., a Readme.txt') to each folder
-(represented as a clickable node), so that when the user hovers the pointer over
-a node, the corresponding text is displayed as a tooltip.")
-    (license license:gpl3+)))
-
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "7.4")
+    (version "7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "1l1cn3pbjlx62i7g7kc5ziarqs7bly21bhg4b10fypajyiq6ir8s"))))
+        (base32 "04kv5srw3jln8kd8fwfb8lqx512lcd7czkg49xbvwbz5jw6d8kbb"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (arguments
@@ -16568,13 +16515,13 @@ a wide range of user-defined DI models (the @code{DI()} function).")
 (define-public r-dimodal
   (package
     (name "r-dimodal")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Dimodal" version))
        (sha256
-        (base32 "0xkgjb6ksfjs01fl17g701vc52vk1spiyg6878l7gsigsgph8wdn"))))
+        (base32 "10bhsdf899cp85zhcgiq0vl5l4g1plsdslpxz86bav3kkr2w88mr"))))
     (properties `((upstream-name . "Dimodal")))
     (build-system r-build-system)
     (arguments
@@ -17501,39 +17448,6 @@ are differentially enriched between the two gene sets.  In addition to the
 analysis pipeline, this package also provides a plotting function.")
     (license license:gpl2)))
 
-(define-public r-diffee
-  (package
-    (name "r-diffee")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diffee" version))
-       (sha256
-        (base32 "01lb1prz70mxgymhhsvx48kbfy69xyyaabsmfhf28af9wfb89662"))))
-    (properties `((upstream-name . "diffee")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pcapp r-igraph))
-    (home-page "https://github.com/QData/DIFFEE")
-    (synopsis
-     "Fast and Scalable Learning of Sparse Changes in High-Dimensional Gaussian Graphical Model Structure")
-    (description
-     "This is an R implementation of Fast and Scalable Learning of Sparse Changes in
-High-Dimensional Gaussian Graphical Model Structure (DIFFEE).  The DIFFEE
-algorithm can be used to fast estimate the differential network between two
-related datasets.  For instance, it can identify differential gene network from
-datasets of case and control.  By performing data-driven network inference from
-two high-dimensional data sets, this tool can help users effectively translate
-two aggregated data blocks into knowledge of the changes among entities between
-two Gaussian Graphical Model.  Please run demo(@code{diffeeDemo}) to learn the
-basic functions provided by this package.  For further details, please read the
-original paper: Beilun Wang, Arshdeep Sekhon, Yanjun Qi (2018)
-<@code{arXiv:1710.11223>}.")
-    (license license:gpl2)))
-
 (define-public r-diffdfs
   (package
     (name "r-diffdfs")
@@ -17582,6 +17496,33 @@ other.  The core functionality is to provide a detailed breakdown of any
 differences between two data.frames as well as providing utility functions to
 help narrow down the source of problems and differences.")
     (license license:expat)))
+
+(define-public r-diffcp
+  (package
+    (name "r-diffcp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diffcp" version))
+       (sha256
+        (base32 "15gdi1a746fvlyv1vmjlg7dxipdnfma784mvb8qk6m3f42zs9l64"))))
+    (properties `((upstream-name . "diffcp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-cli r-clarabel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bnaras/diffcp")
+    (synopsis "Differentiating Through Cone Programs")
+    (description
+     "This package provides a pure-R port of the Python diffcp package.  Computes the
+derivative of the optimal solution map of a convex cone program, treating the
+program as an implicit function of its data (constraint matrix, offset,
+objective coefficients, and optionally a quadratic), mirroring Agrawal et al.
+(2019) <doi:10.48550/@code{arXiv.1904.09043>}.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-diffcorr
   (package
@@ -18230,30 +18171,6 @@ which is designed to be similar usages with other languages dictionary (e.g.
 Python') with reference semantics and extendabilities by R6.")
     (license license:expat)))
 
-(define-public r-diconvex
-  (package
-    (name "r-diconvex")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DIconvex" version))
-       (sha256
-        (base32 "0bnrq9nmryshir6ll43nz20aaqmmw0zjvfml72cpwbvrma8a3qmz"))))
-    (properties `((upstream-name . "DIconvex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lpsolveapi))
-    (home-page "https://cran.r-project.org/package=DIconvex")
-    (synopsis "Finding Patterns of Monotonicity and Convexity in Data")
-    (description
-     "Given an initial set of points, this package minimizes the number of elements to
-discard from this set such that there exists at least one monotonic and convex
-mapping within pre-specified upper and lower bounds.")
-    (license license:gpl2)))
-
 (define-public r-dicomread
   (package
     (name "r-dicomread")
@@ -18280,13 +18197,13 @@ processing for reading and saving DICOM images.")
 (define-public r-diceview
   (package
     (name "r-diceview")
-    (version "3.1-3")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiceView" version))
        (sha256
-        (base32 "06n28iin6yh3hn037sgy3f2xggxbfcsir8sj4ahdqwgcjjbgxsid"))))
+        (base32 "0dhx2x5rh1c1yxk4lmxrllc3cis59jphjfgr80znqqlmqli40c11"))))
     (properties `((upstream-name . "DiceView")))
     (build-system r-build-system)
     (arguments
@@ -19044,13 +18961,13 @@ respective p-values and map those estimates.")
 (define-public r-dhsic
   (package
     (name "r-dhsic")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dHSIC" version))
        (sha256
-        (base32 "1c1xz1f1fp937w4rlylvqv3ii0p9dafvmn4fqq8rzxhcg5rn9j4l"))))
+        (base32 "0kyvh07wx1w7wi9p6xq5040insls6asq8jlljv4l7dh727hd97hk"))))
     (properties `((upstream-name . "dHSIC")))
     (build-system r-build-system)
     (arguments
@@ -19063,8 +18980,9 @@ respective p-values and map those estimates.")
     (description
      "This package contains an implementation of the d-variable Hilbert Schmidt
 independence criterion and several hypothesis tests based on it, as described in
-Pfister et al. (2017) <doi:10.1111/rssb.12235>.")
-    (license license:gpl3)))
+Pfister et al. (2018) <doi:10.1111/rssb.12235>.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-dhsage
   (package
@@ -20544,13 +20462,13 @@ any practical use.")
 (define-public r-devianlm
   (package
     (name "r-devianlm")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devianLM" version))
        (sha256
-        (base32 "1ql0w2lxyrqh1iwybpn2fv39rblr6i1k96dwhi3ir51mc6j70m6c"))))
+        (base32 "15rgww7j9qp6qisq8ckxh6fhg5wmm55w8q1p8a7qj96jn553x3ja"))))
     (properties `((upstream-name . "devianLM")))
     (build-system r-build-system)
     (arguments
@@ -20621,19 +20539,19 @@ maintainability of your code.")
 (define-public r-detzrcr
   (package
     (name "r-detzrcr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "detzrcr" version))
        (sha256
-        (base32 "0hm70pgf370m596izlk4m4zr42ba8gwcg88dlfh7gf3dq6m1i40g"))))
+        (base32 "04sqxpf26gsmrl6d71x9krvy8i9ql0asq7ihyjzxpxb0vb9d62mv"))))
     (properties `((upstream-name . "detzrcr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-mass r-ggplot2))
+    (propagated-inputs (list r-yaml r-shiny r-mass r-ggplot2 r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/magnuskristoffersen/detzrcr")
     (synopsis "Compare Detrital Zircon Suites")
@@ -23042,13 +22960,13 @@ Based on Density Functions\" (Submitted).")
 (define-public r-densratio
   (package
     (name "r-densratio")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "densratio" version))
        (sha256
-        (base32 "0x333kfx5mdzzjsqy37j4bmv9iddlgp3wi4774lx8d159lbr6irp"))))
+        (base32 "159dk1yaispyn2z43nkksibm5pyjbdpznmjq5603mz4fz00lijnf"))))
     (properties `((upstream-name . "densratio")))
     (build-system r-build-system)
     (arguments
@@ -23308,13 +23226,13 @@ multinomial @code{(multinomial()}), fixed transition probability
 (define-public r-denguedatahub
   (package
     (name "r-denguedatahub")
-    (version "3.2.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denguedatahub" version))
        (sha256
-        (base32 "1kp66g0mjj2bk1p3y6mb0355qmj4ahixp560xw9khj6slgdpvbw8"))))
+        (base32 "17r6l8vgb0d1hqgmr7yachyhw9qvn8an3jxd41f19mzxp6837cqa"))))
     (properties `((upstream-name . "denguedatahub")))
     (build-system r-build-system)
     (arguments
@@ -23827,20 +23745,21 @@ comparison(s) over one or more groups.")
 (define-public r-demofit
   (package
     (name "r-demofit")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "demofit" version))
        (sha256
-        (base32 "14wjdhh58g7iwa94yfdlj6pz59db18ijv56cd34374rj1rls7wjv"))))
+        (base32 "160ymrmxdzqh13g94w687q3rgn4x6z4wapzbcch3hnrmhzhnjvx2"))))
     (properties `((upstream-name . "demofit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nlcoptim r-mortalitylaws r-minpack-lm
+    (propagated-inputs (list r-nlcoptim r-mortalitylaws r-minpack-lm r-mass
                              r-forecast))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=demofit")
     (synopsis
      "Parametric Mortality Curve Fitting and Mortality Forecasting Tools")
@@ -23851,7 +23770,8 @@ parameter estimation.  Offers tools for forecasting mortality rates guided by
 mortality curves.  For modelling details see: Tabeau (2001)
 <doi:10.1007/0-306-47562-6_1>, Renshaw and Haberman (2006)
 <doi:10.1016/j.insmatheco.2005.12.001>, Cairns et al. (2009)
-<doi:10.1080/10920277.2009.10597538>.")
+<doi:10.1080/10920277.2009.10597538>, Li and Lee (2005) <doi:
+10.1353/dem.2005.0021>.")
     (license license:gpl3)))
 
 (define-public r-demodelr
@@ -24365,6 +24285,30 @@ described in Xu, Z., Zhen, B., Park, Y., & Zhu, B. (2017)
 resources available.  It provides access to \"delayed\" computations, which may be
 parallelized using futures.  It is, to an extent, a facsimile of the Dask
 library (<https://www.dask.org/>), for the Python language.")
+    (license license:gpl3)))
+
+(define-public r-delaydiscount
+  (package
+    (name "r-delaydiscount")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "delaydiscount" version))
+       (sha256
+        (base32 "1s3l4f0y5p5bww8x14xfv6vxkjjb9xzr14gfqbaw1wd878387bxn"))))
+    (properties `((upstream-name . "delaydiscount")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/davideh-vt/delaydiscount")
+    (synopsis "Fit Linearized Hyperbolic Model for Delay Discounting Curves")
+    (description
+     "This package provides functions for estimating parameters and hyperparameters of
+the linearized hyperbolic model, and testing equality of hyperparameters.")
     (license license:gpl3)))
 
 (define-public r-dejavu
@@ -25469,19 +25413,19 @@ input and expanding the results at the end.")
 (define-public r-deductiver
   (package
     (name "r-deductiver")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeductiveR" version))
        (sha256
-        (base32 "1ra5vyh1mzr4215sa1ryx7cxa0f2rwmpr5asl7zy0lzghhxk5ffh"))))
+        (base32 "1iwgaajgzia3gz1p2lkvbdinpjmwdfajnlbdvafg9ci4z7217nyn"))))
     (properties `((upstream-name . "DeductiveR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2
+    (propagated-inputs (list r-tidyr
                              r-moments
                              r-lmomco
                              r-ggpubr
@@ -25546,13 +25490,13 @@ all actions are logged.")
 (define-public r-deducer
   (package
     (name "r-deducer")
-    (version "0.9-1")
+    (version "0.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Deducer" version))
        (sha256
-        (base32 "1a32p8biz9kmcs2kif5zqd79r6vyvha3azhgsqx7p7yvfaxr8rkz"))))
+        (base32 "1b52hczfrmsp385k5qq24r28jhvjagp39hx8j397q71kz0ckznyk"))))
     (properties `((upstream-name . "Deducer")))
     (build-system r-build-system)
     (arguments
@@ -25965,20 +25909,20 @@ absolute error (MAE).  For method details see Choudhary, K. et al. (2023).
 (define-public r-decoder
   (package
     (name "r-decoder")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decoder" version))
        (sha256
-        (base32 "1jxgd32bn36ldal26wivhdxgjy247l7r4ickacr1p8rrwxvhpk18"))))
+        (base32 "0v2nyx3mn91lq1na7c726iqbrq524flpb0qxbs4237v5d833lvi5"))))
     (properties `((upstream-name . "decoder")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://www.bitbucket.com/cancercentrum/decoder")
+    (home-page "https://github.com/eribul/decoder")
     (synopsis "Decode Coded Variables to Plain Text and the Other Way Around")
     (description
      "Main function \"decode\" is used to decode coded key values to plain text.
@@ -26017,13 +25961,13 @@ CO-expression and Differential Expression) algorithm.")
 (define-public r-declaredesign
   (package
     (name "r-declaredesign")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeclareDesign" version))
        (sha256
-        (base32 "1lhd6nhryizx4z4mq0vk2mgdgy5wqm9s141rhkx3bgirwz1jp29i"))))
+        (base32 "1aihqvwzp81fkwq6xj2rbaxhpydpf1nv0ag3gf3wkbx65kkzydg3"))))
     (properties `((upstream-name . "DeclareDesign")))
     (build-system r-build-system)
     (arguments
@@ -26031,7 +25975,6 @@ CO-expression and Differential Expression) algorithm.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-randomizr r-generics r-fabricatr
                              r-estimatr))
-    (native-inputs (list r-knitr))
     (home-page "https://declaredesign.org/r/declaredesign/")
     (synopsis "Declare and Diagnose Research Designs")
     (description
@@ -27061,45 +27004,6 @@ straightforward R API. The package relies on the r2d3 R package and the D3
 <https://d3js.org/> respectively.")
     (license license:gpl3+)))
 
-(define-public r-ddpcr
-  (package
-    (name "r-ddpcr")
-    (version "1.16.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ddpcr" version))
-       (sha256
-        (base32 "1lid37pbgkgrk8cvl2cg12iz5apkj3ynivv3s1azk5clz2qy72k9"))))
-    (properties `((upstream-name . "ddpcr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-shinyjs
-                             r-shinydisconnect
-                             r-shiny
-                             r-rlang
-                             r-readr
-                             r-plyr
-                             r-mixtools
-                             r-magrittr
-                             r-ggplot2
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/daattali/ddpcr")
-    (synopsis
-     "Analysis and Visualization of Droplet Digital PCR in R and on the Web")
-    (description
-     "An interface to explore, analyze, and visualize droplet digital PCR
-(@code{ddPCR}) data in R. This is the first non-proprietary software for
-analyzing two-channel @code{ddPCR} data.  An interactive tool was also created
-and is available online to facilitate this analysis for anyone who is not
-comfortable with using R.")
-    (license license:expat)))
-
 (define-public r-ddpca
   (package
     (name "r-ddpca")
@@ -27566,13 +27470,13 @@ point.  This approach is as described by Hairer, Norsett and Wanner (1993)
 (define-public r-ddd
   (package
     (name "r-ddd")
-    (version "5.2.4")
+    (version "5.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDD" version))
        (sha256
-        (base32 "1gw22gcn5i5rgr58v571n3d91kpw8jin4wl2vxl89nmi27iq0qdg"))))
+        (base32 "1s33n40mhipvlbsgmxjwvqj4qxls48m5x8p4zcr7fsm7rsm76jpx"))))
     (properties `((upstream-name . "DDD")))
     (build-system r-build-system)
     (arguments
@@ -27582,6 +27486,7 @@ point.  This approach is as described by Hairer, Norsett and Wanner (1993)
                              r-sparsem
                              r-rcppeigen
                              r-rcpp
+                             r-pso
                              r-phytools
                              r-matrix
                              r-expm
@@ -28335,13 +28240,13 @@ under the Double Chain Ladder framework by Martinez-Miranda, Nielsen and Verrall
 (define-public r-dcifer
   (package
     (name "r-dcifer")
-    (version "1.5.0")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcifer" version))
        (sha256
-        (base32 "11c048vai2kka6npchgqp29d90r240yz5bjxq0fs36212jy3psmd"))))
+        (base32 "1ifs6q139i0c9hmfgsxdpcsikr87w3ahcsrhl5qx1nda37gxvm94"))))
     (properties `((upstream-name . "dcifer")))
     (build-system r-build-system)
     (arguments
@@ -28703,6 +28608,66 @@ nonparametric models for single-, one-and-one-half-, and double-bounded CV data.
  For details, see Aizaki et al. (2022) <doi:10.1007/s42081-022-00171-1>.")
     (license license:gpl2+)))
 
+(define-public r-dcce
+  (package
+    (name "r-dcce")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dcce" version))
+       (sha256
+        (base32 "0lp5bdwavnbmfwmsf15c4vwlnllwgfj5zpl4xhmdpy8a4imvywjh"))))
+    (properties `((upstream-name . "dcce")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-sandwich
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-generics
+                             r-collapse
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dcce")
+    (synopsis "Dynamic Common Correlated Effects Estimation for Panel Data")
+    (description
+     "Estimates heterogeneous coefficient models for large panels with cross-sectional
+dependence.  Implements the Mean Group (MG) estimator of Pesaran and Smith
+(1995) <doi:10.1016/0304-4076(94)01644-F>, the Common Correlated Effects (CCE)
+and Dynamic CCE (DCCE) estimators of Pesaran (2006)
+<doi:10.1111/j.1468-0262.2006.00692.x> and Chudik and Pesaran (2015)
+<doi:10.1016/j.jeconom.2015.03.007>, the regularized CCE of Juodis (2022), the
+Augmented Mean Group (AMG) of Eberhardt and Teal (2010), the Interactive Fixed
+Effects (IFE) estimator of Bai (2009) <doi:10.3982/ECTA6135>, and long-run
+estimators including Cross-Sectionally augmented Distributed Lag (CS-DL),
+Cross-Sectionally augmented Autoregressive Distributed Lag (CS-ARDL), and Pooled
+Mean Group (PMG) (Chudik et al.  2016; Shin et al.  1999).  Also provides
+rolling-window estimation, high-dimensional fixed effect absorption, spatial CCE
+via user-supplied weight matrices, and structural break tests (Chow and
+sup-Wald) following Andrews (1993), Bai and Perron (1998), and Ditzen, Karavias
+and Westerlund (2024).  Supplies a comprehensive cross-sectional dependence (CD)
+test suite including the Pesaran (2015) CD test
+<doi:10.1080/07474938.2014.956623>, the Juodis and Reese (2022) randomized
+weighted CD (CDw) test, the Baltagi et al. (2012) bias-adjusted weighted CD
+(CDw+) test, the Fan et al. (2015) Power Enhancement Approach (PEA) test, and
+the Pesaran and Xie (2021) bias-corrected CD (CD*) test.  Further diagnostics
+include the Pesaran (2007) Cross-sectionally Augmented IPS (CIPS) panel unit
+root test <doi:10.1002/jae.951>, the Westerlund (2007) panel cointegration
+tests, the Dumitrescu and Hurlin (2012) panel Granger causality test, the
+Im-Pesaran-Shin (IPS) and Levin-Lin-Chu (LLC) panel unit root tests, the Pedroni
+(2004) and Kao (1999) residual cointegration tests, the Swamy (1970) and Pesaran
+and Yamagata (2008) slope homogeneity tests, a Hausman-type test for MG versus
+pooled, the exponent of cross-sectional dependence from Bailey et al. (2016)
+<doi:10.1002/jae.2490>, information criteria for Cross-Sectional Average (CSA)
+selection, the rank condition classifier, impulse response functions,
+cross-section and wild bootstrap inference, and broom'-compatible methods.")
+    (license license:gpl3+)))
+
 (define-public r-dcca
   (package
     (name "r-dcca")
@@ -28958,6 +28923,46 @@ using a Gibbs wrapper around univariate slice sampler (Neal (2003)
 (Mahani and Sharabiani (2017) <DOI: 10.18637/jss.v078.c01>).")
     (license license:gpl2+)))
 
+(define-public r-dbproject
+  (package
+    (name "r-dbproject")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dbProject" version))
+       (sha256
+        (base32 "1vcpan92lfcdqkczirkpay4xr2hckx6ma1ypl27kln2l3pfn002l"))))
+    (properties `((upstream-name . "dbProject")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-r6
+                             r-pins
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-connections
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dbverse-org/dbproject-r")
+    (synopsis "Database Connection Management and Utilities for 'dbverse'")
+    (description
+     "This package provides an R6-based project container for managing @code{DuckDB}
+connections, reconnecting lazy database tables after session restarts, and
+storing metadata for database-backed objects used by packages in the dbverse'.
+The package supplies S4 base classes and generics for database-backed data,
+helpers for validating @code{DuckDB} connections and table names, utilities for
+creating persistent database views, and methods for writing and restoring pinned
+lazy tables through the pins package.  These tools help package authors and
+analysts keep database paths, cached connections, and table references
+synchronized across interactive sessions and project directories.")
+    (license license:expat)))
+
 (define-public r-dbplot
   (package
     (name "r-dbplot")
@@ -29204,6 +29209,51 @@ also available.")
 and provides confidence intervals for entries of interest.  See: by Chen et al.
 (2019) <doi:10.1073/pnas.1910053116>, Mai (2021) <@code{arXiv:2103.11749>}.")
     (license license:gpl2)))
+
+(define-public r-dbmatrix
+  (package
+    (name "r-dbmatrix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dbMatrix" version))
+       (sha256
+        (base32 "0d6a0dff8y7xyg3i3pns74a0dv73aj7fhz3yd1idmlc00xz84xd5"))))
+    (properties `((upstream-name . "dbMatrix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspectra
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-nanoarrow
+                             r-matrixgenerics
+                             r-matrix
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dbproject
+                             r-dbplyr
+                             r-dbi
+                             r-data-table
+                             r-cli
+                             r-bit64
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dbverse-org/dbmatrix-r")
+    (synopsis "Database-Backed Matrix Classes and Operations")
+    (description
+     "This package provides S4 classes and methods for storing dense and sparse
+matrices in @code{DuckDB} databases.  The package supports constructing
+database-backed matrices from base R and Matrix objects, extracting slices and
+summaries, performing arithmetic and selected linear algebra operations, and
+materializing results for larger-than-memory workflows.  It integrates with
+@code{dbProject} to keep database paths, live connections, and lazy matrix
+tables synchronized across interactive analyses.")
+    (license license:gpl3)))
 
 (define-public r-dbmaps
   (package
@@ -30224,13 +30274,13 @@ available on a specific day.")
 (define-public r-date4ts
   (package
     (name "r-date4ts")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "date4ts" version))
        (sha256
-        (base32 "0mg3kcah793hd5hxdh753x815h3wiqxxilvl5l2yh9b8zzsz5rrs"))))
+        (base32 "1yqhahvsnnhppp7ywjzs0jhw8pb4mg59sg90wkf0vyaifr00p2r0"))))
     (properties `((upstream-name . "date4ts")))
     (build-system r-build-system)
     (arguments
@@ -30278,6 +30328,42 @@ crÃ©ation et de gestion des sÃ©ries temporelles @code{(ts()}, @code{window()
     (synopsis "Functions for Handling Dates")
     (description "This package provides functions for handling dates.")
     (license license:gpl2)))
+
+(define-public r-datazoom-social
+  (package
+    (name "r-datazoom-social")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datazoom.social" version))
+       (sha256
+        (base32 "1k6bbdijzrfq4npsnkqazsgj6agqfds4v6bx7jq2hhmr5204g21m"))))
+    (properties `((upstream-name . "datazoom.social")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pnadcibge
+                             r-magrittr
+                             r-dplyr
+                             r-data-table
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://datazoom.com.br/en/")
+    (synopsis "Simplify Access to Brazilian Social Data")
+    (description
+     "This package provides tools for downloading and processing microdata from the
+PNAD ContÃ­nua (PNADC, Continuous National Household Sample Survey), a rotating
+panel survey published quarterly by IBGE (Brazilian Institute of Geography and
+Statistics).  Includes panel identification algorithms for linking individuals
+across survey waves.")
+    (license license:expat)))
 
 (define-public r-datazoom-amazonia
   (package
@@ -30509,6 +30595,44 @@ package acts as a thin wrapper around more powerful data packages such as
 dplyr', data.table', arrow', and DBI ('SQL'), which do the heavy lifting.")
     (license license:expat)))
 
+(define-public r-datasusr
+  (package
+    (name "r-datasusr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datasusr" version))
+       (sha256
+        (base32 "03i5npd363k9z0xi92mzvqpl2ydp06wlhhm48kzqcyrjjp4xzpwq"))))
+    (properties `((upstream-name . "datasusr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://strategicprojects.github.io/datasusr/")
+    (synopsis "Fast Access to Brazilian Public Health Data from 'DATASUS'")
+    (description
+     "This package provides fast, in-memory reading of DATASUS DBC files using native
+C code, along with a catalog of public health data sources, FTP file discovery,
+caching downloads, and a high-level @code{datasus_fetch()} function that lists,
+downloads, and reads files in a single call.  Bundles the blast decompressor
+from zlib contrib/blast to decode PKWare DCL compressed DBC files and parses DBF
+records directly for efficient import into tibbles.  See the DATASUS file
+transfer site <https://datasus.saude.gov.br> and Adler (2003)
+<https://github.com/madler/zlib/tree/master/contrib/blast> for details on the
+underlying data and compression format.")
+    (license license:expat)))
+
 (define-public r-datasum
   (package
     (name "r-datasum")
@@ -30737,13 +30861,13 @@ pre-clinical and clinical HIV vaccine studies.")
 (define-public r-datasimilarity
   (package
     (name "r-datasimilarity")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataSimilarity" version))
        (sha256
-        (base32 "139s4c18q4jjkry9raxb418xl0wkhi4llngk5xxhdzy9809i47wr"))))
+        (base32 "1rkq0qp598rkcc5qlf2sylgjs4nxcya6f36dmwhj877yzwmb6kvj"))))
     (properties `((upstream-name . "DataSimilarity")))
     (build-system r-build-system)
     (arguments
@@ -30759,8 +30883,10 @@ two or more datasets, many of which can be used for two- or k-sample testing.
 It provides newly implemented methods as well as wrapper functions for existing
 methods that enable calling many different methods in a unified framework.  The
 methods were selected from the review and comparison of Stolte et al. (2024)
-<doi:10.1214/24-SS149>.  An empirical comparison of the methods for categorical
-data was performed in Stolte et al. (2025) <doi:10.17877/DE290R-25572>.")
+<doi:10.1214/24-SS149>.  An empirical comparison of the methods was performed in
+Stolte et al. (2026) <doi:10.48550/@code{arXiv.2604.11458>} for categorical data
+and in Stolte et al. (2026) <doi:10.48550/@code{arXiv.2604.12327>} for numeric
+data.")
     (license license:gpl3+)))
 
 (define-public r-datasetsverse
@@ -30905,6 +31031,38 @@ Dataset JSON (@code{JavaScript} Object Notation) files, while validating per the
 Dataset JSON schema file, as described in CDISC (2023)
 <https://www.cdisc.org/standards/data-exchange/dataset-json>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-dataset
+  (package
+    (name "r-dataset")
+    (version "0.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dataset" version))
+       (sha256
+        (base32 "1wzd317a1x44w5jkblaw84d17rip8c35f55wrh2gnpg7f2afxm5l"))))
+    (properties `((upstream-name . "dataset")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-pillar
+                             r-labelled
+                             r-isocodes
+                             r-haven
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/dataset/")
+    (synopsis "Create Data Frames for Exchange and Reuse")
+    (description
+     "The dataset package helps create semantically rich, machine-readable, and
+interoperable datasets in R. It extends tidy data frames with metadata that
+preserves meaning, improves interoperability, and makes datasets easier to
+publish, exchange, and reuse in line with ISO and W3C standards.")
+    (license license:gpl3+)))
 
 (define-public r-dataseries
   (package
@@ -31151,13 +31309,13 @@ information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "2.8.7")
+    (version "2.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataquieR" version))
        (sha256
-        (base32 "101jf39kl297dnw7nhagc9rlv7xyb6xrq6k9vjw5ap1pa16rm9kw"))))
+        (base32 "0fdrszl4wgrjjhscc1lr60mknfygm5qk4v107668brk5n9sm8l0y"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
     (arguments
@@ -31189,7 +31347,6 @@ information.")
                              r-qmrparser
                              r-patchwork
                              r-parallelmap
-                             r-multinomialci
                              r-mass
                              r-lubridate
                              r-lme4
@@ -31216,13 +31373,13 @@ website
 (define-public r-dataqualitydashboard
   (package
     (name "r-dataqualitydashboard")
-    (version "2.8.7")
+    (version "2.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataQualityDashboard" version))
        (sha256
-        (base32 "004b49nld7i4bg7gf7jyyp9d8whih98nfzqacjdyqhwyyg0rz6r7"))))
+        (base32 "1jxyzmnkj52b9f93khc7qwwm6a32inf88yikdv8aqzqlsk0vzb8m"))))
     (properties `((upstream-name . "DataQualityDashboard")))
     (build-system r-build-system)
     (arguments
@@ -31575,6 +31732,47 @@ estadistico R: una introduccion aplicada by Salas-Eljatib (2021, ISBN:
 9789566086109).  The package helps carry out data management, exploratory
 analyses, and model fitting.")
     (license license:gpl3+)))
+
+(define-public r-datamuseum
+  (package
+    (name "r-datamuseum")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datamuseum" version))
+       (sha256
+        (base32 "0xq00vg2x6kmaixnc1l8fx05p1vi8bshmn0z9a35j86z2zcfbibc"))))
+    (properties `((upstream-name . "datamuseum")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-taxize
+                             r-stringr
+                             r-sf
+                             r-rnaturalearth
+                             r-rlang
+                             r-rgbif
+                             r-memoise
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://btorgovitsky00.github.io/datamuseum/")
+    (synopsis "Spatial and Taxonomic Data Utilities for Specimen Datasets")
+    (description
+     "This package provides a management tool for specimen data ranging from public
+museum collections to private specimen repositories.  The main types of data
+addressed are spatial (coordinates, longitude and latitude) and taxonomic data
+(ranking and nomenclature validity) with some additional options for
+user-determined dataset refinement.  Combined or individual calls to the online
+repositories of the Global Biodiversity Information Facility (GBIF) via rgbif
+and the Integrated Taxonomic Information System (ITIS) via taxize enable
+built-in taxonomic checks.")
+    (license license:expat)))
 
 (define-public r-datamojo
   (package
@@ -32027,6 +32225,32 @@ Montiel et al. (2018) <https://jmlr.org/papers/volume19/18-251/18-251.pdf>.")
     (synopsis "R Client for 'Datadog' API")
     (description
      "Query for metrics from Datadog (<https://www.datadoghq.com/>) via its API.")
+    (license license:expat)))
+
+(define-public r-datadna
+  (package
+    (name "r-datadna")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataDNA" version))
+       (sha256
+        (base32 "1v6lwclf36g7p4ymsgc9ggml8n9j11r3qia7zp73hal3aqckl7g2"))))
+    (properties `((upstream-name . "DataDNA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-htmltools))
+    (home-page "https://cran.r-project.org/package=DataDNA")
+    (synopsis "Data Frame Fingerprints and Lineage Figures")
+    (description
+     "Profiles R data frames as compact data fingerprints using schema, shape,
+missingness, distribution, category, uniqueness, time, and role signals.  It
+compares versions, identifies close relatives in a library of historical data
+sets, and renders portable HTML cards plus static PNG/PDF lineage figures for
+reports.")
     (license license:expat)))
 
 (define-public r-datadiff
@@ -33302,6 +33526,38 @@ methods described in Quartagno et al. (2019) <@code{arXiv:1905.00241>}.")
     (description "This package provides a collection of utility functions.")
     (license license:gpl2+)))
 
+(define-public r-dandelion
+  (package
+    (name "r-dandelion")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DANDELION" version))
+       (sha256
+        (base32 "16pn5ycwr6my72h1xfgcakb2hjn9k330lw7qlp3lkwh9wbdga6lc"))))
+    (properties `((upstream-name . "DANDELION")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (home-page "https://cran.r-project.org/package=DANDELION")
+    (synopsis
+     "Discovery of Candidate Disease Genes Using Trans-Regulatory Effects")
+    (description
+     "This package implements the DANDELION method for prioritizing candidate
+disease-related proximal genes by integrating trans-regulatory association
+p-values and gene-level trait association p-values.  The statistical testing
+framework builds on the divide-aggregate composite-null test described by Liu et
+al. (2022) <doi:10.1080/01621459.2021.1914634>.  The biological application and
+SNP/gene-based prioritization workflow are motivated by Salamone et al. (under
+review), \"Leveraging trans-gene regulation prioritizes central genes and
+pathways in asthma\".  The package provides functions for identifying
+distal-proximal gene pairs, organizing significant pairs into genomic loci, and
+visualizing resulting gene networks.")
+    (license license:gpl3)))
+
 (define-public r-dandefa
   (package
     (name "r-dandefa")
@@ -33576,13 +33832,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.2.747")
+    (version "1.3.737")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "03p7anaj68g4blxihzkff1d2q4alnl3labs90mn9m2y58flq4a8j"))))
+        (base32 "1danvqkaz0g8wkkxq3l0h3k52zz19fd6h00dwkjik74rhg7j0a34"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments
@@ -33604,13 +33860,13 @@ Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.3.727")
+    (version "1.3.747")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "02s2vsjshd9n5dmddvp7h3zkygwr6a0b21s8csgix6gzndz38m7p"))))
+        (base32 "0637gmg2xdij5mjyigm2gabw46gwyz32kgd1cw6lqvgj8jrh5848"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (arguments
@@ -34171,13 +34427,13 @@ Analysis of Experiments with R\", Lawson(2015) ISBN-13:978-1-4398-6813-3.")
 (define-public r-dados
   (package
     (name "r-dados")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dados" version))
        (sha256
-        (base32 "1jdna8s10qz50zrsrm36y1jx489sznd86akx2lwdmriiiz3abn65"))))
+        (base32 "07x9cz0x2bsacqzyxfh4nhf4dcqvzlffp2n67kmzpm76z7gm89l1"))))
     (properties `((upstream-name . "dados")))
     (build-system r-build-system)
     (arguments
@@ -34281,31 +34537,6 @@ function.  The package provides tools to create or manage such data and
 functional methods (principal component analysis, multidimensional scaling,
 cluster analysis, discriminant analysis...) for such probability densities.")
     (license license:gpl2+)))
-
-(define-public r-dacf
-  (package
-    (name "r-dacf")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DACF" version))
-       (sha256
-        (base32 "0hv7c9lk6ivj4iz953yn11iy5p611q4si4ghn9d5a9i229s5hig8"))))
-    (properties `((upstream-name . "DACF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DACF")
-    (synopsis "Data Analysis with Ceiling and/or Floor Data")
-    (description
-     "An implementation of data analytic methods in R for analyses for data with
-ceiling/floor effects.  The package currently includes functions for
-mean/variance estimation and mean comparison tests.  Implemented methods are
-from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
-    (license license:gpl2)))
 
 (define-public r-dacc
   (package

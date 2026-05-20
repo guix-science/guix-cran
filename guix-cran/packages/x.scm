@@ -44,13 +44,13 @@
 (define-public r-xyomics
   (package
     (name "r-xyomics")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XYomics" version))
        (sha256
-        (base32 "14958x25kx8rz1kbyznmi0hx3vl6764zyvjfnb4lhgbi1chszw2s"))))
+        (base32 "0dj2ka85fs6fv6r19y782jl4r89pj7px0w7l5haiq93pv96qdqwf"))))
     (properties `((upstream-name . "XYomics")))
     (build-system r-build-system)
     (arguments
@@ -59,18 +59,21 @@
     (propagated-inputs (list r-tidyr
                              r-seuratobject
                              r-seurat
-                             r-scales
+                             r-s4vectors
                              r-rcpp
+                             r-patchwork
                              r-limma
                              r-igraph
-                             r-gprofiler2
                              r-ggrepel
                              r-ggraph
                              r-ggplot2
                              r-edger
                              r-dplyr
+                             r-deseq2
                              r-data-table
-                             r-clusterprofiler))
+                             r-cowplot
+                             r-clusterprofiler
+                             r-annotationdbi))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=XYomics")
     (synopsis "Analysis of Sex Differences in Omics Data for Complex Diseases")
@@ -113,22 +116,22 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
 (define-public r-xxdi
   (package
     (name "r-xxdi")
-    (version "1.3.1")
+    (version "1.26.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xxdi" version))
        (sha256
-        (base32 "0s7a7q53g1fps5aaxn6pvj0ds6x5l95fncn1z12i0d32xg2z4q58"))))
+        (base32 "15085mcdnz3hz1rq4vp3ffa621p3jlhnfxgfahcplhz5c2dpsxi8"))))
     (properties `((upstream-name . "xxdi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-matrix r-ggplot2 r-dplyr r-agop))
+    (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-agop))
     (home-page "https://cran.r-project.org/package=xxdi")
     (synopsis
-     "An R Package for Evaluating Scholarly Expertise Indices for Institutional Research Assessment")
+     "An R Package for Evaluating Expertise Indices for Research Strength Assessment")
     (description
      "Institutional performance assessment remains a key challenge to a multitude of
 stakeholders.  Existing indicators such as h-type indicators, g-type indicators,
@@ -431,6 +434,36 @@ number selection (Bai and Ng 2002 <doi:10.1111/1468-0262.00273>).  All
 computations use base R only with no external dependencies.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-xtfifevd
+  (package
+    (name "r-xtfifevd")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtfifevd" version))
+       (sha256
+        (base32 "18nnbhry2p0nxyibklw1dmf1mqaj1zg5hlm34vi238f7iqb1vyz7"))))
+    (properties `((upstream-name . "xtfifevd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/muhammedalkhalaf/xtfifevd")
+    (synopsis
+     "Panel Fixed Effects Filtered and Variance Decomposition Estimation")
+    (description
+     "This package implements fixed effects estimators for time-invariant variables in
+panel data models.  Provides three estimation methods: FEVD (Fixed Effects
+Vector Decomposition) from Plumper and Troeger (2007) <doi:10.1093/pan/mpm002>,
+and FEF (Fixed Effects Filtered) and FEF-IV (instrumental variables variant)
+from Pesaran and Zhou (2018) <doi:10.1080/07474938.2016.1222225>.  All methods
+use the correct Pesaran-Zhou variance estimators that account for generated
+regressor uncertainty, avoiding the size distortions documented in the
+literature.")
+    (license license:gpl3)))
+
 (define-public r-xtdml
   (package
     (name "r-xtdml")
@@ -634,29 +667,6 @@ builds on the framework described in Wang, Duerr, and Gao(2025)
 <doi:10.1002/sim.70216>.")
     (license license:expat)))
 
-(define-public r-xsp
-  (package
-    (name "r-xsp")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xsp" version))
-       (sha256
-        (base32 "1jbmxa234v52qji8sz4bkg24c2n65b0zh9py1wyyfzw9n1wx5w0r"))))
-    (properties `((upstream-name . "xsp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-ggplot2))
-    (home-page "https://cran.r-project.org/package=xsp")
-    (synopsis "The Chi-Square Periodogram")
-    (description
-     "The circadian period of a time series data is predicted and the statistical
-significance of the periodicity are calculated using the chi-square periodogram.")
-    (license license:expat)))
-
 (define-public r-xslt
   (package
     (name "r-xslt")
@@ -795,6 +805,32 @@ algorithms scale to several million rows and support sparse representations to
 handle tens of thousands of dimensions.")
     (license license:expat)))
 
+(define-public r-xreg2
+  (package
+    (name "r-xreg2")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xreg2" version))
+       (sha256
+        (base32 "03d9hhx3v39xc6njr35cm34404szqaw28z2lcif2a7d85d2riqya"))))
+    (properties `((upstream-name . "xreg2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ucminf r-numderiv))
+    (home-page "https://github.com/MathsinHealth/xreg2")
+    (synopsis
+     "Flexible Maximum Likelihood Regression with Gradient-Based Optimisation")
+    (description
+     "Fits flexible maximum likelihood regression models supporting censored,
+interval, and hybrid continuous/dichotomous data.  Provides explicit analytic
+and numerical gradient computation, random intercept models via Gauss-Hermite
+quadrature, and multiple distribution families.")
+    (license license:gpl2)))
+
 (define-public r-xray
   (package
     (name "r-xray")
@@ -918,13 +954,13 @@ likelihood-based models.")
 (define-public r-xpose-nlmixr2
   (package
     (name "r-xpose-nlmixr2")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose.nlmixr2" version))
        (sha256
-        (base32 "0a9asdq9d5g39bhb75ks698izbgs6x1npsq53b7kznl40kpcjc2a"))))
+        (base32 "1fjg1srdzgk3312msf1bqrq6kz1cjxc2d21a0krw5wl9x6ki1a3n"))))
     (properties `((upstream-name . "xpose.nlmixr2")))
     (build-system r-build-system)
     (arguments
@@ -1023,13 +1059,13 @@ CDISC compliance.")
 (define-public r-xplortext
   (package
     (name "r-xplortext")
-    (version "1.5.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Xplortext" version))
        (sha256
-        (base32 "0j7a603c5240fc16fmjyzrgjgrxay0mn1bam7ikwfw7g0bmah4s0"))))
+        (base32 "0326vwzpzz8pnb4gxma7hg335plakwgcj4g2vfndbyzl3cfkzm59"))))
     (properties `((upstream-name . "Xplortext")))
     (build-system r-build-system)
     (arguments
@@ -1164,13 +1200,13 @@ function.")
 (define-public r-xpectr
   (package
     (name "r-xpectr")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpectr" version))
        (sha256
-        (base32 "0bmj4qlpaiyilhphswvh22jz6cws81qpjhq0nb60450jy65asf5h"))))
+        (base32 "0yg1ag26bmfx6raxaq8msj7rfhs228bsp3zka1rm4nhcym02q504"))))
     (properties `((upstream-name . "xpectr")))
     (build-system r-build-system)
     (arguments
@@ -1373,31 +1409,6 @@ and documents.  It can be used in companion with R packages XML or xml2 to
 generate XML documents.  The fast XML generation is implemented using the Rcpp
 package.")
     (license license:expat)))
-
-(define-public r-xmlrpc2
-  (package
-    (name "r-xmlrpc2")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xmlrpc2" version))
-       (sha256
-        (base32 "0adrq6r5kp3cx4mnpsa1dzaznj843fkmzch2z4j5l592x9zzywad"))))
-    (properties `((upstream-name . "xmlrpc2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2 r-curl r-base64enc))
-    (home-page "https://cran.r-project.org/package=xmlrpc2")
-    (synopsis
-     "Implementation of the Remote Procedure Call Protocol ('XML-RPC')")
-    (description
-     "The XML-RPC is a remote procedure call protocol based on XML'.  The xmlrpc2
-package is inspired by the XMLRPC package but uses the curl and xml2 packages
-instead RCurl and XML'.")
-    (license license:gpl3)))
 
 (define-public r-xmlr
   (package
@@ -1924,13 +1935,13 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 (define-public r-xiacf
   (package
     (name "r-xiacf")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xiacf" version))
        (sha256
-        (base32 "13c512v291yc8jmlqc24wvywpkihgliy24lwwlk6i70xx95w5kzp"))))
+        (base32 "01wi2p0kaf2i6msh21f3ydn5gklq8ghgbdkhlxfx85hsbpxvl13c"))))
     (properties `((upstream-name . "xiacf")))
     (build-system r-build-system)
     (arguments
@@ -1939,25 +1950,24 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-progressr
-                             r-latex2exp
+                             r-patchwork
                              r-ggplot2
                              r-future
                              r-foreach
                              r-dplyr
                              r-dofuture))
     (home-page "https://cran.r-project.org/package=xiacf")
-    (synopsis
-     "Quantifying Nonlinear Dependence and Lead-Lag Dynamics via Chatterjee's Xi")
+    (synopsis "Nonlinear Dependence and Lead-Lag Analysis via Chatterjee's Xi")
     (description
      "Computes Chatterjee's non-parametric correlation coefficient for time series
 data.  It extends the original metric to time series analysis by providing the
 Xi-Autocorrelation Function (Xi-ACF) and Xi-Cross-Correlation Function (Xi-CCF).
  The package allows users to test for non-linear dependence using Iterative
-Amplitude Adjusted Fourier Transform (IAAFT) surrogate data.  Main functions
-include @code{xi_acf()} and @code{xi_ccf()} for computation, along with matrix
-extraction tools.  Methodologies are based on Chatterjee (2021)
-<doi:10.1080/01621459.2020.1758115> and surrogate data testing methods by
-Schreiber and Schmitz (1996) <doi:10.1103/@code{PhysRevLett.77.635>}.")
+Amplitude Adjusted Fourier Transform (IAAFT) surrogate data with strict
+Family-Wise Error Rate ('FWER') control via Max-statistic approaches.
+Methodologies are based on Chatterjee (2021) <doi:10.1080/01621459.2020.1758115>
+and surrogate data testing methods by Schreiber and Schmitz (1996)
+<doi:10.1103/@code{PhysRevLett.77.635>}.")
     (license license:expat)))
 
 (define-public r-xhaz
@@ -2079,6 +2089,35 @@ pharmacokinetics and pharmacodynamics (PKPD) datasets.")
 analyze complexity vs. explanatory power of an explanation according to
 Szepannek, G. and von Holt, B. (2023) <doi:10.1007/s41237-023-00205-2>.")
     (license license:gpl2+)))
+
+(define-public r-xgeortr
+  (package
+    (name "r-xgeortr")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "XGeoRTR" version))
+       (sha256
+        (base32 "0hnh8pvmgzdj87yvcrqlpbvyaa1kffair2ilzpj3gznzvvinnx63"))))
+    (properties `((upstream-name . "XGeoRTR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://fbertran.github.io/XGeoRTR/")
+    (synopsis "Backend-Neutral Explainable Geometry State and Operators")
+    (description
+     "This package provides the platform layer for explanation geometry in R. The
+package standardizes generic explanation tables into a normalized backend state
+object, computes embeddings, diagnostics, and multiscale level-of-detail
+summaries, and serializes backend-neutral state for reproducible workflows.  It
+also exposes selected long-table and regular-grid views for downstream use-case
+packages.  Rendering and viewport orchestration are delegated to downstream
+frontends such as @code{ggWebGL}'.")
+    (license license:gpl3)))
 
 (define-public r-xgb2sql
   (package

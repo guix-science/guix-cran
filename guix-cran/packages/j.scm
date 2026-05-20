@@ -226,13 +226,13 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
 (define-public r-junco
   (package
     (name "r-junco")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "junco" version))
        (sha256
-        (base32 "0rjzgkhqrw869av1bdsilmiyvdw64dh0h2alydybx4mmpp3aygbp"))))
+        (base32 "1sih83jfwql26k425h0nsh6l1av9wmazcyzigrb6lb2cdsn1ycm0"))))
     (properties `((upstream-name . "junco")))
     (build-system r-build-system)
     (arguments
@@ -243,7 +243,6 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
                              r-tidytlg
                              r-tibble
                              r-tern
-                             r-systemfonts
                              r-survival
                              r-stringi
                              r-rtables-officer
@@ -273,10 +272,10 @@ and Johnson Clinical and Statistical Programming's table and listing shells,
 junco provides functionality that is general and reusable.  Major features
 include a) alternative and extended statistical analyses beyond what tern
 supports for use in standard safety and efficacy tables, b) a robust
-production-grade Rich Text Format (RTF) exporter for both tables and listings,
-c) structural support for spanning column headers and risk difference columns in
-tables, and d) robust font-aware automatic column width algorithms for both
-listings and tables.")
+production-grade Rich Text Format (RTF) and DOCX exporter for tables, listings
+and graphs, c) structural support for spanning column headers and risk
+difference columns in tables, and d) robust font-aware automatic column width
+algorithms for both listings and tables.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-jumps
@@ -334,13 +333,13 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
 (define-public r-jumble
   (package
     (name "r-jumble")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jumble" version))
        (sha256
-        (base32 "0kmkb8xalhfbp395q1apgj7w8d9ma2589li8jb0mg8i7g6v15129"))))
+        (base32 "1i308b1a9izwfj1qhw7zkadyn6b6vxb5xp389qm6z8jf4jm7n9sj"))))
     (properties `((upstream-name . "jumble")))
     (build-system r-build-system)
     (arguments
@@ -349,8 +348,8 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
     (home-page "https://github.com/davidhodge931/jumble")
     (synopsis "Discrete Colour Palette")
     (description
-     "This package provides a pretty discrete colour palette that is also relatively
-colourblind and contrast-safe for a light background.")
+     "This package provides a discrete colour palette.  These colours make it easier
+to create relatively accessible and colour-blind safe visualisation.")
     (license license:expat)))
 
 (define-public r-juliaformulae
@@ -712,20 +711,20 @@ et al. (2023) <doi:10.1111/geb.13706>.")
 (define-public r-jsutils
   (package
     (name "r-jsutils")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsutils" version))
        (sha256
-        (base32 "0la268d5ysb5c668bbyi25k28nrfwjjsqhrq7xmzm9lafqx1r4zl"))))
+        (base32 "09rfksmlhf21fb6bj46p0wwlmnpr7jpw89y6q0jw2hah9pdp3qdk"))))
     (properties `((upstream-name . "jsutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-quickjsr))
-    (home-page "https://github.com/andrjohns/QuickJSR")
+    (home-page "https://github.com/andrjohns/jsutils")
     (synopsis "'JavaScript' Utilities for 'R'")
     (description
      "This package provides a collection of popular/useful @code{JavaScript}
@@ -1542,20 +1541,19 @@ functions.")
 (define-public r-jrsicklsnmf
   (package
     (name "r-jrsicklsnmf")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jrSiCKLSNMF" version))
        (sha256
-        (base32 "1fiw72mk70fh4mnsmzq0a08ahxl9hl9da0wj48f4b18j512jhjvl"))))
+        (base32 "18s3ascby47spmj05qlx04wchh9s7s231dgg32153f3m3nkvysh4"))))
     (properties `((upstream-name . "jrSiCKLSNMF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-umap
-                             r-scran
                              r-rlang
                              r-rdpack
                              r-rcppprogress
@@ -1573,7 +1571,8 @@ functions.")
                              r-factoextra
                              r-data-table
                              r-clvalid
-                             r-cluster))
+                             r-cluster
+                             r-bluster))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=jrSiCKLSNMF")
     (synopsis "Multimodal Single-Cell Omics Dimensionality Reduction")
@@ -1648,41 +1647,6 @@ conservation analysis.  The algorithm is described in: Miranda-Esquivel, D
 to exchange commands and data between a web page and a currently running R
 session.")
     (license license:gpl3)))
-
-(define-public r-jql
-  (package
-    (name "r-jql")
-    (version "3.6.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "JQL" version))
-       (sha256
-        (base32 "0d926hngv4r6zl5f6yai3jwhl9hql2hv6ja3yjgplglkns66g4lh"))))
-    (properties `((upstream-name . "JQL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforest r-pdist r-caret))
-    (home-page "https://cran.r-project.org/package=JQL")
-    (synopsis "Jump Q-Learning for Individualized Interval-Valued Dose Rule")
-    (description
-     "We provide tools to estimate the individualized interval-valued dose rule (I2DR)
-that maximizes the expected beneficial clinical outcome for each individual and
-returns an optimal interval-valued dose, by using the jump Q-learning (JQL)
-method.  The jump Q-learning method directly models the conditional mean of the
-response given the dose level and the baseline covariates via jump penalized
-least squares regression under the framework of Q learning.  We develop a
-searching algorithm by dynamic programming in order to find the optimal I2DR
-with the time complexity O(n2) and spatial complexity O(n).  To alleviate the
-effects of misspecification of the Q-function, a residual jump Q-learning is
-further proposed to estimate the optimal I2DR. The outcome of interest includes
-the best partition of the entire dosage of interest, the regression coefficients
-of each partition, and the value function under the estimated I2DR as well as
-the Wald-type confidence interval of value function constructed through the
-Bootstrap.")
-    (license license:lgpl3)))
 
 (define-public r-jqbr
   (package
@@ -1825,13 +1789,13 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpinfect
   (package
     (name "r-jpinfect")
-    (version "2023.2026.06")
+    (version "2024.2026.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpinfect" version))
        (sha256
-        (base32 "0q7fmxp6jv4qx11s2nlpx8ccl4xydcmwaj7m842m8pvkw911rh44"))))
+        (base32 "10i8fgwv5pgr30b0kbls64y8068q50nlprlchcdd3i3yym5rm8v8"))))
     (properties `((upstream-name . "jpinfect")))
     (build-system r-build-system)
     (arguments
@@ -1984,29 +1948,6 @@ city codes at a specific point in time.")
      "Tool for diagnosing table joins.  It combines the speed of `collapse` and
 `data.table`, the flexibility of `dplyr`, and the diagnosis and features of the
 `merge` command in `Stata`.")
-    (license license:expat)))
-
-(define-public r-jousboost
-  (package
-    (name "r-jousboost")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "JOUSBoost" version))
-       (sha256
-        (base32 "0f3rr7aw20nvmlpqrq3wzgmr55lqdqhk3wphpqq7msgvaf1zrcl7"))))
-    (properties `((upstream-name . "JOUSBoost")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpart r-rcpp r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=JOUSBoost")
-    (synopsis "Implements Under/Oversampling for Probability Estimation")
-    (description
-     "This package implements under/oversampling for probability estimation.  To be
-used with machine learning methods such as @code{AdaBoost}, random forests, etc.")
     (license license:expat)))
 
 (define-public r-journalr
@@ -2715,6 +2656,44 @@ Concepts and diagnostics build on tidy data principles as described in Wickham
 (2014) <doi:10.18637/jss.v059.i10>.")
     (license license:expat)))
 
+(define-public r-joinpointr
+  (package
+    (name "r-joinpointr")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joinpointR" version))
+       (sha256
+        (base32 "0389n33rnryvsrq53gwdhbbx910b1f5ld940gy8kk5a8bv4wgpz9"))))
+    (properties `((upstream-name . "joinpointR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-segmented
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-officer
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr))
+    (home-page "https://github.com/datos-ine/joinpointR")
+    (synopsis "Tidy Tools for Joinpoint Regression Models")
+    (description
+     "This package provides tools to fit joinpoint regression models with a log-linear
+specification by levels of a categorical variable.  The package acts as a
+wrapper around the segmented package, facilitating model fitting, selection, and
+interpretation.  It includes functions to estimate the Annual Percent Change
+(APC) and the Average Annual Percent Change (AAPC), along with their 95%
+confidence intervals, and to generate formatted summary tables and plots of
+results.")
+    (license license:expat)))
+
 (define-public r-joinless
   (package
     (name "r-joinless")
@@ -2880,34 +2859,6 @@ based on Sedlmeier (2002, ISBN:978-0198508632), MINERVA 2 baesd on Hintzman
 frequency by determining the core aspects of these four models (attention,
 decay, and presented frequency) that can be compared to empirical results.")
     (license license:gpl3)))
-
-(define-public r-jocre
-  (package
-    (name "r-jocre")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jocre" version))
-       (sha256
-        (base32 "1i9n3r16pq6r4sy3fc1rxpil5ws8v2is0xdxafinvwr1hzkv1gz6"))))
-    (properties `((upstream-name . "jocre")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsp r-plyr r-kernsmooth r-boot))
-    (home-page "https://cran.r-project.org/package=jocre")
-    (synopsis "Joint Confidence Regions")
-    (description
-     "Computing and plotting joint confidence regions and intervals.  Regions include
-classical ellipsoids, minimum-volume or minimum-length regions, and an empirical
-Bayes region.  Intervals include the TOST procedure with ordinary or expanded
-intervals and a fixed-sequence procedure.  Such regions and intervals are useful
-e.g., for the assessment of multi-parameter (bio-)equivalence.  Joint confidence
-regions for the mean and variance of a normal distribution are available as
-well.")
-    (license license:gpl2)))
 
 (define-public r-jobqueue
   (package
@@ -3608,6 +3559,36 @@ Additionally, users can process the best track data of typhoons and easily
 handle earthquake record files.")
     (license license:expat)))
 
+(define-public r-jm4qtn
+  (package
+    (name "r-jm4qtn")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JM4QTN" version))
+       (sha256
+        (base32 "0ja5dwwcrm9x9r359zpmig0kjg8zn8bibx8ln8yy1p8j5l3mldpw"))))
+    (properties `((upstream-name . "JM4QTN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stepreg r-lsmeans))
+    (home-page "https://cran.r-project.org/package=JM4QTN")
+    (synopsis "Joint Mapping for Quantitative Trait Loci")
+    (description
+     "This package provides a comprehensive computational framework for joint mapping,
+developed by Li (2016) <doi:10.11841/j.issn.1007-4333.2016.06.002>, supports
+quantitative trait locus detection in structured genetic populations.  It
+integrates robust phenotype summarization, computes genotype probabilities, and
+imputes missing markers for association and linkage mapping.  Empirical
+significance thresholds are estimated via permutation testing coupled with
+stepwise regression.  The framework enables genome-wide scans under both
+univariate and multivariate trait models, streamlining the discovery of complex
+genetic architectures.")
+    (license license:gpl2+)))
+
 (define-public r-jm
   (package
     (name "r-jm")
@@ -3661,13 +3642,13 @@ finalizers for safe cross-runtime garbage collection.")
 (define-public r-jlpm
   (package
     (name "r-jlpm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JLPM" version))
        (sha256
-        (base32 "0shgp6slrfacjc80pdhq0ddlazh1s28ykad8hwxm1if0d4y42nml"))))
+        (base32 "015wd95mzl6984cq7y16ngazgc0r2dav4ca0k4bsaphskzncwahr"))))
     (properties `((upstream-name . "JLPM")))
     (build-system r-build-system)
     (arguments
@@ -3675,8 +3656,8 @@ finalizers for safe cross-runtime garbage collection.")
       #:tests? #f))
     (propagated-inputs (list r-survival r-stringr r-spacefillr r-marqlevalg
                              r-lcmm))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=JLPM")
+    (native-inputs (list gfortran))
+    (home-page "https://VivianePhilipps.github.io/JLPM/")
     (synopsis "Joint Latent Process Models")
     (description
      "Estimation of extended joint models with shared random effects.  Longitudinal
@@ -3873,6 +3854,32 @@ by grosse Schlarmann (2010-2024) <https://www.produnis.de/R/>.")
 for R. For full functionality on Windows and Mac OS X JGR requires a start
 application which depends on your OS.")
     (license license:gpl2)))
+
+(define-public r-jgd
+  (package
+    (name "r-jgd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jgd" version))
+       (sha256
+        (base32 "1v98ssk8v1yhs7qw5nazyd591mxfcj815mycw2xih1ny1hfwg8w0"))))
+    (properties `((upstream-name . "jgd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/grantmcdermott/jgd")
+    (synopsis "JSON Graphics Device")
+    (description
+     "This package provides a graphics device that translates R plotting operations
+into JSON and streams them over a local connection to an external display
+application.  The device acts as a pure recorder with no rendering dependencies;
+all rendering occurs in that application (e.g. a VS Code extension or a web
+browser).  Official display applications are available from the project
+homepage.")
+    (license license:expat)))
 
 (define-public r-jfm
   (package
@@ -4164,40 +4171,6 @@ sequencing data.  The clonevol package is not available on CRAN but can be
 installed from its @code{GitHub} repository
 (<https://github.com/hdng/clonevol>).")
     (license license:expat)))
-
-(define-public r-jeek
-  (package
-    (name "r-jeek")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jeek" version))
-       (sha256
-        (base32 "15n0k0i1wwp72g8zqrjmglnckab3p65q3rnpg6d6h8hjcpv82i7g"))))
-    (properties `((upstream-name . "jeek")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pcapp r-lpsolve r-igraph))
-    (home-page "https://github.com/QData/jeek")
-    (synopsis
-     "Fast and Scalable Joint Estimator for Integrating Additional Knowledge in Learning Multiple Related Sparse Gaussian Graphical Models")
-    (description
-     "This package provides a fast and scalable joint estimator for integrating
-additional knowledge in learning multiple related sparse Gaussian Graphical
-Models (JEEK).  The JEEK algorithm can be used to fast estimate multiple related
-precision matrices in a large-scale.  For instance, it can identify multiple
-gene networks from multi-context gene expression datasets.  By performing
-data-driven network inference from high-dimensional and heterogeneous data sets,
-this tool can help users effectively translate aggregated data into knowledge
-that take the form of graphs among entities.  Please run demo(jeek) to learn the
-basic functions provided by this package.  For further details, please read the
-original paper: Beilun Wang, Arshdeep Sekhon, Yanjun Qi \"A Fast and Scalable
-Joint Estimator for Integrating Additional Knowledge in Learning Multiple
-Related Sparse Gaussian Graphical Models\" (ICML 2018) <@code{arXiv:1806.00548>}.")
-    (license license:gpl2)))
 
 (define-public r-jds-rmd
   (package
@@ -4739,6 +4712,41 @@ see: Nager.Date <https://date.nager.at/Api>, World Bank API
 <https://datahelpdesk.worldbank.org/knowledgebase/articles/889392>, and REST
 Countries API <https://restcountries.com/>.")
     (license license:expat)))
+
+(define-public r-janusplot
+  (package
+    (name "r-janusplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "janusplot" version))
+       (sha256
+        (base32 "1pha3q7kix6fasw920zdjpykamqgj69cpp3kdchvqaw1i3wijrfc"))))
+    (properties `((upstream-name . "janusplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-patchwork
+                             r-mgcv
+                             r-lifecycle
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/max578/janusplot")
+    (synopsis "Asymmetric Smoothed-Association Matrices via GAM Fits")
+    (description
+     "Render a pairwise, asymmetric smoothed-association matrix of continuous
+variables.  Each cell shows the fitted spline from an mgcv generalised additive
+model, with the upper triangle displaying gam(x_j ~ s(x_i)) and the lower
+triangle gam(x_i ~ s(x_j))'.  Unlike Pearson's correlation matrix, the
+visualisation is intentionally asymmetric, revealing heteroscedasticity,
+leverage, and directional non-linearity that a single scalar correlation hides.
+An asymmetry index and a 24-category shape taxonomy quantify the directional
+difference and qualitative form of each fitted smooth.")
+    (license license:gpl3+)))
 
 (define-public r-janus
   (package

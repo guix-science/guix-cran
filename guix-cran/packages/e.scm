@@ -181,45 +181,6 @@ variables.")
 bar, line, area, ROC, waterfall, pie) while aiming to reduce typing.")
     (license license:expat)))
 
-(define-public r-ezmmek
-  (package
-    (name "r-ezmmek")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ezmmek" version))
-       (sha256
-        (base32 "0x62nzs1kayv95a6ldav732v79gahrri2khy1w678rxbzfx5wkqy"))))
-    (properties `((upstream-name . "ezmmek")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-nls2
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-assertable))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ezmmek")
-    (synopsis "Easy Michaelis-Menten Enzyme Kinetics")
-    (description
-     "Serves as a platform for published fluorometric enzyme assay protocols.  ezmmek
-calibrates, calculates, and plots enzyme activities as they relate to the
-transformation of synthetic substrates.  At present, ezmmek implements two
-common protocols found in the literature, and is modular to accommodate
-additional protocols.  Here, these protocols are referred to as the In-Sample
-Calibration (Hoppe, 1983; <doi:10.3354/meps011299>) and In-Buffer Calibration
-(German et al., 2011; <doi:10.1016/j.soilbio.2011.03.017>).  protocols.  By
-containing multiple protocols, ezmmek aims to stimulate discussion about how to
-best optimize fluorometric enzyme assays.  A standardized approach would make
-studies more comparable and reproducible.")
-    (license license:agpl3)))
-
 (define-public r-ezknitr
   (package
     (name "r-ezknitr")
@@ -1027,13 +988,13 @@ L-moment Statistics [...] ISBN 1463508417.")
 (define-public r-extremerisks
   (package
     (name "r-extremerisks")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtremeRisks" version))
        (sha256
-        (base32 "02jm5072yndyzg0wax1m0vg704dmwdpq3l593m3q8sjpa6177h57"))))
+        (base32 "1q65n6mqc5nzym2r962v87y4js8im8ncizs76l9ng2wn4gwzy164"))))
     (properties `((upstream-name . "ExtremeRisks")))
     (build-system r-build-system)
     (arguments
@@ -1045,7 +1006,7 @@ L-moment Statistics [...] ISBN 1463508417.")
                              r-mvtnorm
                              r-evd
                              r-copula))
-    (home-page "https://faculty.unibocconi.it/simonepadoan/")
+    (home-page "https://www.unibocconi.it/en/faculty/simone-padoan")
     (synopsis "Extreme Risk Measures")
     (description
      "This package provides a set of procedures for estimating risks related to
@@ -1152,6 +1113,47 @@ contexts.  This is the implementation of the index in Taillardat et al. (2019)
 probabilities, extreme conditional quantile, adaptive estimation, quantile
 regression, survival probabilities.")
     (license license:gpl2)))
+
+(define-public r-extremeci
+  (package
+    (name "r-extremeci")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExtremeCI" version))
+       (sha256
+        (base32 "1l0290x85lfk2d9dkqlwa7mqr7qj0i8lbn4l91plqyxj5isz2b03"))))
+    (properties `((upstream-name . "ExtremeCI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-evd
+                             r-dplyr
+                             r-dofuture))
+    (home-page "https://github.com/opasche/ExtremeCI")
+    (synopsis
+     "Realistic Confidence Intervals for Non-Stationary Extreme Value Statistics")
+    (description
+     "This framework provides versatile algorithms to efficiently infer confidence
+intervals for extreme value statistics, such as extreme quantiles and return
+levels, that are representative of the asymmetric uncertainty spread, using
+extreme value theory extrapolation and the profile likelihood (see e.g., Coles
+(2001) <doi:10.1007/978-1-4471-3675-0>).  Unlike existing algorithms, the CI
+endpoints are found without the need for a strict prespecified range, can be
+covariate-dependent, and can be based on weighted samples.  This package is
+motivated by Zeder et al. (2023) <doi:10.1029/2023GL104090> and by Pasche et al.
+(2026) <doi:10.1007/s10687-026-00536-9>.")
+    (license license:gpl3+)))
 
 (define-public r-extremebounds
   (package
@@ -1381,13 +1383,13 @@ Builder) functions.")
 (define-public r-extraoperators
   (package
     (name "r-extraoperators")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extraoperators" version))
        (sha256
-        (base32 "1kv72s5fcaiyp4sa2r4plm6psjhh07cdkl0zd7mdl25r8ixs1k3h"))))
+        (base32 "0vms1gwxz9b4vvw6psbz0nds5l3r0kchrzfq41sk0p0zaj0fjk87"))))
     (properties `((upstream-name . "extraoperators")))
     (build-system r-build-system)
     (arguments
@@ -1406,7 +1408,7 @@ implemented.  The chaining operator, %c%, allows multiple relational operations
 to be used in quotes on the right hand side for the same object, on the left
 hand side.  The %e% operator allows something like set-builder notation (see for
 example <https://en.wikipedia.org/wiki/Set-builder_notation>) to be used on the
-right hand side.  All operators have built in prefixes defined for all, subset,
+right hand side.  Operators have built in prefixes defined for all, any, subset,
 and which to reduce the amount of code needed for common tasks, such as return
 those values that are true.")
     (license license:gpl3)))
@@ -3209,13 +3211,13 @@ R and shiny on their system.")
 (define-public r-exdqlm
   (package
     (name "r-exdqlm")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exdqlm" version))
        (sha256
-        (base32 "1jjv0val1nwfahz8giqfgrrz1pnjylhc4j478hq4440xsni6cnsq"))))
+        (base32 "0aiavwmlc4x4s7lb3462yk3qkcphkh5jxg5mnizbnkxss51sq9dx"))))
     (properties `((upstream-name . "exdqlm")))
     (build-system r-build-system)
     (arguments
@@ -3226,10 +3228,11 @@ R and shiny on their system.")
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
+                             r-numderiv
+                             r-nimble
                              r-matrixstats
                              r-magic
                              r-laplacesdemon
-                             r-generalizedhyperbolic
                              r-fnn
                              r-crch
                              r-coda
@@ -3237,10 +3240,17 @@ R and shiny on their system.")
     (home-page "https://github.com/AntonioAPDL/exdqlm")
     (synopsis "Extended Dynamic Quantile Linear Models")
     (description
-     "Routines for Bayesian estimation and analysis of dynamic quantile linear models
-utilizing the extended asymmetric Laplace error distribution, also known as
-extended dynamic quantile linear models (@code{exDQLM}) described in Barata et
-al (2020) <doi:10.1214/21-AOAS1497>.")
+     "Bayesian quantile-regression routines for dynamic state-space models and static
+regression under the extended asymmetric Laplace (@code{exAL}) error
+distribution.  The dynamic state-space models are extended dynamic quantile
+linear models (@code{exDQLMs}).  The package combines dynamic @code{exDQLM}
+inference via LDVB, MCMC, and legacy ISVB with static @code{exAL} regression via
+LDVB and MCMC, reduced AL/DQLM paths through fixed skewness, component builders
+for trend/seasonality/regression blocks, static shrinkage priors including
+ridge, regularized horseshoe, and rhs_ns', evidence lower bound diagnostics,
+optional C++ accelerators, and posterior predictive synthesis across separately
+fitted quantiles through @code{quantileSynthesis()}'.  Dynamic @code{exDQLM}
+methods are described in Barata et al. (2020) <doi:10.1214/21-AOAS1497>.")
     (license license:expat)))
 
 (define-public r-exdex
@@ -3672,16 +3682,45 @@ format required by Sakai'.")
 based on R/exams exercises.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-exams2ilias
+  (package
+    (name "r-exams2ilias")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exams2ilias" version))
+       (sha256
+        (base32 "0g429kv36imia9yzqf874al11s3ndas5m1fh6cav5385idgzg9m3"))))
+    (properties `((upstream-name . "exams2ilias")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-exams r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mchlbckr/exams2ilias")
+    (synopsis "ILIAS Export Interface for R/Exams")
+    (description
+     "Utilities for exporting exercises from R/exams to question pools for the
+learning management system ILIAS'.  The package implements a Question and Test
+Interoperability 1.2 rendering path tailored to ILIAS and writes the
+question-pool XML layout validated for imports in ILIAS 9.17.  Supported
+exercise types include single-choice, multiple-choice, numeric, string, and
+combined gap questions.  The underlying R/exams framework is described in
+Zeileis, Umlauf, and Leisch (2014) <doi:10.18637/jss.v058.i01>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-exams2forms
   (package
     (name "r-exams2forms")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams2forms" version))
        (sha256
-        (base32 "1xvpmf26ala5w3sc36r8smw8vjky0brabfy28d8415043p6jazq7"))))
+        (base32 "12nhwrpihvbcb8c6xclsf8qjwvp8w216p0qxr480vxjg024fy7gk"))))
     (properties `((upstream-name . "exams2forms")))
     (build-system r-build-system)
     (arguments
@@ -3903,13 +3942,13 @@ R.")
 (define-public r-examly
   (package
     (name "r-examly")
-    (version "0.2.0")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "examly" version))
        (sha256
-        (base32 "1n7rz49pbqagzx8znj1pmv7zdir90kqn3h5jfvhsxl4p4v72azph"))))
+        (base32 "08pl47j3ash12pxf8w1630g6lavb0gsqf8sbwr9ljpysb4smqx11"))))
     (properties `((upstream-name . "examly")))
     (build-system r-build-system)
     (arguments
@@ -3937,21 +3976,21 @@ R.")
      "This package provides a Shiny'-based toolkit for item/test analysis.  It is
 designed for multiple-choice, true-false, and open-ended questions.  The toolkit
 is usable with datasets in 1-0 or other formats.  Key analyses include
-difficulty, discrimination, response-option analysis, reports.  The classical
-test theory methods used are described in Ebel & Frisbie (1991,
+difficulty, discrimination, response-option analysis, and reports.  The
+classical test theory methods used are described in Ebel and Frisbie (1991,
 ISBN:978-0132892314).")
     (license license:expat)))
 
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.11.0")
+    (version "1.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "1jabbpwkfbhf39kbqqw7z5bg0v8by01vr9h5l2ywrqk5fj0pa4fa"))))
+        (base32 "0j7ad2mwndgmrq0i8y048d2lfg6gs00fc4pkz9azjrp8wnijrf52"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -4515,6 +4554,31 @@ the tests based on the normalized spacings, the tests based on the Laplace
 transform and the likelihood based tests.")
     (license license:gpl2+)))
 
+(define-public r-ewens
+  (package
+    (name "r-ewens")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ewens" version))
+       (sha256
+        (base32 "006bhz6x13w1ayv1ia6w3gl5ywha72dyhz57qjvmsxbw31fd1hsi"))))
+    (properties `((upstream-name . "ewens")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-copula))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/chrishanretty/ewens")
+    (synopsis "Ewens Distribution")
+    (description
+     "This package implements the probability mass function of, and random draws from,
+the Ewens distribution, a probability distribution over partitions of integer,
+as described in Ewens (1972) <doi:10.1016/0040-5809(72)90035-4>.")
+    (license license:expat)))
+
 (define-public r-evtree
   (package
     (name "r-evtree")
@@ -4546,33 +4610,6 @@ R. CPU and memory-intensive tasks are fully computed in C++ while the partykit
 package is leveraged to represent the resulting trees in R, providing unified
 infrastructure for summaries, visualizations, and predictions.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-evtclass
-  (package
-    (name "r-evtclass")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "evtclass" version))
-       (sha256
-        (base32 "1ny43sry257cxlg56f0lj1szv9ci3ymskj6l5sn43l5a2pq62g4l"))))
-    (properties `((upstream-name . "evtclass")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rann r-fitdistrplus r-evd))
-    (home-page "https://cran.r-project.org/package=evtclass")
-    (synopsis
-     "Extreme Value Theory for Open Set Classification - GPD and GEV Classifiers")
-    (description
-     "Two classifiers for open set recognition and novelty detection based on extreme
-value theory.  The first classifier is based on the generalized Pareto
-distribution (GPD) and the second classifier is based on the generalized extreme
-value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
-<@code{arXiv:1808.09902>}.")
-    (license license:gpl3)))
 
 (define-public r-evt0
   (package
@@ -4742,13 +4779,13 @@ SimÃµes and Pierce (2021) <doi:10.1038/s41559-021-01532-x>.")
 (define-public r-evoper
   (package
     (name "r-evoper")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evoper" version))
        (sha256
-        (base32 "1krk5jhv5vk1cb8j2bl9k1kjqq53nz2wzrh0y6wb2pjazqiyb51c"))))
+        (base32 "0aix8fr4w8j0i4qzab0i7420b435n6w5zfly5nla2sam3wb63mw8"))))
     (properties `((upstream-name . "evoper")))
     (build-system r-build-system)
     (arguments
@@ -4759,7 +4796,7 @@ SimÃµes and Pierce (2021) <doi:10.1038/s41559-021-01532-x>.")
                              r-reshape
                              r-plyr
                              r-plot3d
-                             r-logging
+                             r-logger
                              r-ggplot2
                              r-desolve
                              r-data-table
@@ -5379,33 +5416,6 @@ of integrated evidence factors analysis in a longitudinal study with continuous
 outcome and in a case-control study.  Karmakar, B., French, B., and Small, D. S.
 (2019)<DOI:10.1093/biomet/asz003>.")
     (license license:expat)))
-
-(define-public r-evian
-  (package
-    (name "r-evian")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "evian" version))
-       (sha256
-        (base32 "1slnzq55gg3p16fs22v69mafiggiy5f70sj8fh65lc0hphybh6w2"))))
-    (properties `((upstream-name . "evian")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sandwich r-profilelikelihood r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=evian")
-    (synopsis "Evidential Analysis of Genetic Association Data")
-    (description
-     "Evidential regression analysis for dichotomous and quantitative outcome data.
-The following references described the methods in this package: Strug, L. J.,
-Hodge, S. E., Chiang, T., Pal, D. K., Corey, P. N., & Rohde, C. (2010)
-<doi:10.1038/ejhg.2010.47>.  Strug, L. J., & Hodge, S. E. (2006)
-<doi:10.1159/000094709>.  Royall, R. (1997) <ISBN:0-412-04411-0>.")
-    (license license:gpl2+)))
 
 (define-public r-evi
   (package
@@ -6580,36 +6590,6 @@ Eurostat dataset or its subset (based on the @code{eurodata::importData()}
 function).")
     (license license:gpl2)))
 
-(define-public r-eurlex
-  (package
-    (name "r-eurlex")
-    (version "0.4.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eurlex" version))
-       (sha256
-        (base32 "0gxkwlw06r20sw397jppcw53qij1lazkdac42fm8gailrijj04bh"))))
-    (properties `((upstream-name . "eurlex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-rvest
-                             r-pdftools
-                             r-httr
-                             r-curl
-                             r-antiword))
-    (native-inputs (list r-knitr))
-    (home-page "https://michalovadek.github.io/eurlex/")
-    (synopsis "Retrieve Data on European Union Law")
-    (description
-     "Access to data on European Union laws and court decisions made easy with
-pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
-<doi:10.1080/2474736X.2020.1870150> .")
-    (license license:gpl3)))
-
 (define-public r-eunomia
   (package
     (name "r-eunomia")
@@ -6801,39 +6781,6 @@ needed by @code{EudraCT} and formats them into the precise requirements to
 directly upload an XML file into the web portal, with no further data entry by
 hand.")
     (license license:gpl2)))
-
-(define-public r-eudata
-  (package
-    (name "r-eudata")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eudata" version))
-       (sha256
-        (base32 "1i4v967r3fkqg35gzd5ylkyg7i1n94vmi16c5592vzirgj75sxk7"))))
-    (properties `((upstream-name . "eudata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rappdirs
-                             r-purrr
-                             r-httr2
-                             r-fs
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/prokaj/eudata")
-    (synopsis "Access Data from 'GISCO'")
-    (description
-     "Access data related to the European union from GISCO
-<https://ec.europa.eu/eurostat/web/gisco>, the Geographic Information System of
-the European Commission, via its rest API at
-<https://gisco-services.ec.europa.eu>.  This package tries to make it easier to
-get these data into R.")
-    (license license:expat)))
 
 (define-public r-euclimatch
   (package
@@ -7971,13 +7918,13 @@ inference.")
 (define-public r-estempmm
   (package
     (name "r-estempmm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EstemPMM" version))
        (sha256
-        (base32 "0avnjikh3z6rnp68ks5yaqs1yxfjkf0fkgd98k93j2qcn0y0prm4"))))
+        (base32 "02iiaz28pq9m2c65f63p80z2wbs29skgysp10bdrm1kv6fwy23f4"))))
     (properties `((upstream-name . "EstemPMM")))
     (build-system r-build-system)
     (arguments
@@ -7997,7 +7944,8 @@ automatic method selection ('pmm_dispatch'), linear regression,
 AR'/'MA'/'ARMA'/'ARIMA models, and bootstrap inference.  Methodology described
 in Zabolotnii, Warsza, and Tkachenko (2018) <doi:10.1007/978-3-319-77179-3_75>,
 Zabolotnii, Tkachenko, and Warsza (2022) <doi:10.1007/978-3-031-03502-9_37>, and
-Zabolotnii, Tkachenko, and Warsza (2023) <doi:10.1007/978-3-031-25844-2_21>.")
+Zabolotnii, Tkachenko, and Warsza (2023) <doi:10.1007/978-3-031-25844-2_21>, and
+Zabolotnii (2025) <doi:10.48550/@code{arXiv.2511.07059>}.")
     (license license:gpl3)))
 
 (define-public r-estcrm
@@ -8222,13 +8170,13 @@ mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
 (define-public r-essentialstools
   (package
     (name "r-essentialstools")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "essentialstools" version))
        (sha256
-        (base32 "156yqskpbrl3hb53sz3w2pjrhpql5cybgvsbrmb6y3r8k9dgsr0f"))))
+        (base32 "1iyyswbv0wnzaxizx0ymvfqcn69v63j3jwdycjc43w8vywj7ybwf"))))
     (properties `((upstream-name . "essentialstools")))
     (build-system r-build-system)
     (arguments
@@ -8240,13 +8188,12 @@ mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
      "Datasets and Utilities for Essentials of Statistics for the Behavioral Sciences")
     (description
      "This package provides instructional datasets and simple wrapper functions for
-selected analyses used in Essentials of Statistics for the Behavioral Sciences'.
- The package is intended to support textbook examples by distributing data in a
-form that is easy for students and instructors to access within R. Current
-functionality includes packaged datasets and convenience wrappers for functions
-from ez', pwr', and @code{WebPower} for analysis of variance and statistical
-power calculations.  The package is designed as a companion resource for
-teaching and learning in introductory and intermediate statistics courses.")
+selected analyses used in Essentials of Statistics for the Behavioral Sciences
+(Gravetter et al., 2026).  The package is intended to support textbook examples
+by distributing data in a form that is easy for students and instructors to
+access within R. Current functionality includes packaged datasets and
+convenience wrappers for functions from ez', pwr', and @code{WebPower} for
+analysis of variance and statistical power calculations.")
     (license license:expat)))
 
 (define-public r-ess
@@ -8355,13 +8302,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.11.3")
+    (version "1.11.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "19vfmbzp6b3kxfc5bfy4q8px57v9v7l03bh8hij4a8adcq51xn7d"))))
+        (base32 "1gl2fnhpvn59yjp5i1y87wpz1qg8lwyh710mysdni1ga894z1y2h"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (arguments
@@ -8379,7 +8326,6 @@ formats, and retrieve the code to reproduce the plot.")
                              r-openxlsx
                              r-misc3d
                              r-matrix
-                             r-mathjaxr
                              r-js
                              r-igraph
                              r-dt
@@ -8388,9 +8334,9 @@ formats, and retrieve the code to reproduce the plot.")
     (home-page "https://espadon.cnrs.fr")
     (synopsis "Easy Study of Patient DICOM Data in Oncology")
     (description
-     "Exploitation, processing and 2D-3D visualization of DICOM-RT files (structures,
-dosimetry, imagery) for medical physics and clinical research, in a
-patient-oriented perspective.")
+     "Read, process, and export DICOM and DICOM-RT files (structures, dosimetry,
+imagery) for medical physics and clinical research, with patient-oriented 2D-3D
+visualization.")
     (license license:gpl3)))
 
 (define-public r-esmtools
@@ -8786,47 +8732,6 @@ subgroup-specific test statistics, conduct the simulation studies in AED, SSR,
 AED1-SSR, AED2-SSR and AED3-SSR.")
     (license license:gpl2)))
 
-(define-public r-escvtmle
-  (package
-    (name "r-escvtmle")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EScvtmle" version))
-       (sha256
-        (base32 "0bp5ykqczj6zyb9g5rg9zwwdyvd3l530km927wwxdi862sh5ri5g"))))
-    (properties `((upstream-name . "EScvtmle")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-superlearner
-                             r-stringr
-                             r-origami
-                             r-mass
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/Lauren-EylerDang/EScvtmle/tree/main")
-    (synopsis
-     "Experiment-Selector CV-TMLE for Integration of Observational and RCT Data")
-    (description
-     "The experiment selector cross-validated targeted maximum likelihood estimator
-(ES-CVTMLE) aims to select the experiment that optimizes the bias-variance
-tradeoff for estimating a causal average treatment effect (ATE) where different
-experiments may include a randomized controlled trial (RCT) alone or an RCT
-combined with real-world data.  Using cross-validation, the ES-CVTMLE separates
-the selection of the optimal experiment from the estimation of the ATE for the
-chosen experiment.  The estimated bias term in the selector is a function of the
-difference in conditional mean outcome under control for the RCT compared to the
-combined experiment.  In order to help include truly unbiased external data in
-the analysis, the estimated average treatment effect on a negative control
-outcome may be added to the bias term in the selector.  For more details about
-this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
-    (license license:gpl3)))
-
 (define-public r-esci
   (package
     (name "r-esci")
@@ -9192,6 +9097,40 @@ and residuals.")
 model (@code{ErRUM}) described by Culpepper and Chen (2018)
 <doi:10.3102/1076998618791306>.")
     (license license:gpl2+)))
+
+(define-public r-errortracer
+  (package
+    (name "r-errortracer")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ErrorTracer" version))
+       (sha256
+        (base32 "16qakmzjcsh4ah46kgxn4z1r4y14drdrfwr6rr4hggbv9bx9jmz1"))))
+    (properties `((upstream-name . "ErrorTracer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ErrorTracer")
+    (synopsis
+     "Bayesian Error Propagation and Forecast Uncertainty Decomposition")
+    (description
+     "This package provides a full pipeline from regularized or standard regression
+models (elastic net, linear models, generalized linear models, random forests)
+to informed Bayesian priors, three-way forecast uncertainty decomposition
+(parameter / environmental / residual), and forecast shelf life analysis (the
+quantification of when a forecast becomes uninformative).  Designed for
+ecological and genomic forecasting with climate or environmental covariates.
+Methods build on BÃ¼rkner (2017) <doi:10.18637/jss.v080.i01> for Bayesian
+regression via Stan', Friedman, Hastie, and Tibshirani (2010)
+<doi:10.18637/jss.v033.i01> for elastic net regularization, Wright and Ziegler
+(2017) <doi:10.18637/jss.v077.i01> for random forests, and Vehtari, Gelman, and
+Gabry (2017) <doi:10.1007/s11222-016-9696-4> for leave-one-out cross-validation.")
+    (license license:expat)))
 
 (define-public r-errors
   (package
@@ -10534,13 +10473,13 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
 (define-public r-equalrepeat
   (package
     (name "r-equalrepeat")
-    (version "0.4.0")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EQUALrepeat" version))
        (sha256
-        (base32 "0djrdakdz9fhd7gvz80ky9wsjdvpv3j834arfnc9djnzmizg9732"))))
+        (base32 "0a081vd2vcjirs3n2k7d9jy7g6jb7h87m9jy0lw0adv5983k3g64"))))
     (properties `((upstream-name . "EQUALrepeat")))
     (build-system r-build-system)
     (arguments
@@ -10553,7 +10492,6 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
                              r-tseries
                              r-stringr
                              r-rstatix
-                             r-irr
                              r-ggplot2
                              r-forecast
                              r-desctools
@@ -10803,13 +10741,13 @@ polynomials).")
 (define-public r-eq5dsuite
   (package
     (name "r-eq5dsuite")
-    (version "1.0.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5dsuite" version))
        (sha256
-        (base32 "12m4sf2axgb0jbmvgs7wpra7nidimygc7kz0rbsb4p887draffrf"))))
+        (base32 "1d6bd490rbkd0780bwja8n39q241rzvi89snsmldfqczvsj3injr"))))
     (properties `((upstream-name . "eq5dsuite")))
     (build-system r-build-system)
     (arguments
@@ -10820,7 +10758,9 @@ polynomials).")
                              r-rcolorbrewer
                              r-rappdirs
                              r-moments
-                             r-ggplot2))
+                             r-ggplot2
+                             r-curl))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=eq5dsuite")
     (synopsis "Handling and Analysing EQ-5d Data")
     (description
@@ -11992,13 +11932,13 @@ epidemiological and public health research.")
 (define-public r-episomer
   (package
     (name "r-episomer")
-    (version "3.0.34")
+    (version "3.0.35")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "episomer" version))
        (sha256
-        (base32 "1293dnlbs17nvy4qs9gxnjq5mz35z0fjd7cg8kaih0dzhvggibx3"))))
+        (base32 "1mr5fk6a98s7y3qhs8lsadqcnc0p46ph2ngk5kl6gqf9alycaayw"))))
     (properties `((upstream-name . "episomer")))
     (build-system r-build-system)
     (arguments
@@ -12244,45 +12184,6 @@ European Economic Area level.  Two types of datasets can be used: - The default
 dataset of dengue 2015-2019 data; - Any dataset specified as described in the
 vignette.")
     (license (license:fsdg-compatible "EUPL"))))
-
-(define-public r-epir
-  (package
-    (name "r-epir")
-    (version "2.0.92")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epiR" version))
-       (sha256
-        (base32 "0lkkplzyc83ami0m03if2dmc26f7gws6ikgnkg622lkfclx67rnq"))))
-    (properties `((upstream-name . "epiR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-survival
-                             r-sf
-                             r-pander
-                             r-officer
-                             r-lubridate
-                             r-flextable
-                             r-biasedurn))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=epiR")
-    (synopsis "Tools for the Analysis of Epidemiological Data")
-    (description
-     "This package provides tools for the analysis of epidemiological and surveillance
-data.  Contains functions for directly and indirectly adjusting measures of
-disease frequency, quantifying measures of association on the basis of single or
-multiple strata of count data presented in a contingency table, computation of
-confidence intervals around incidence risk and incidence rate estimates and
-sample size calculations for cross-sectional, case-control and cohort studies.
-Surveillance tools include functions to calculate an appropriate sample size for
-1- and 2-stage representative freedom surveys, functions to estimate
-surveillance system sensitivity and functions to support scenario tree modelling
-analyses.")
-    (license license:gpl2+)))
 
 (define-public r-epipvr
   (package
@@ -12599,13 +12500,13 @@ on network and epidemic parameters, given epidemic data.")
 (define-public r-epimodel
   (package
     (name "r-epimodel")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiModel" version))
        (sha256
-        (base32 "0b6mj6km2avghd6xyfrr4zz3wz5k85bzivg9dhl1c23f27v820z9"))))
+        (base32 "090jh0jiwkkp4hp2ksa2knb5yz2f5ddhwcr9l903jplbmpq6p3zl"))))
     (properties `((upstream-name . "EpiModel")))
     (build-system r-build-system)
     (arguments
@@ -13233,6 +13134,39 @@ and Event Based Surveillance) - as described in the following
  In addition, a data generator from these dictionaries is provided.  It is also
 possible to read in any Open Data Kit format data dictionary.")
     (license license:gpl3)))
+
+(define-public r-epideaths
+  (package
+    (name "r-epideaths")
+    (version "1.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiDeaths" version))
+       (sha256
+        (base32 "196gmga58jk3lpqkj2ndy0xmz6ayvv5fcy99widphqwc6g5b0zdm"))))
+    (properties `((upstream-name . "epiDeaths")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=epiDeaths")
+    (synopsis "Functions for Calculating Mortality Indicators")
+    (description
+     "This package provides functions for calculating mortality indicators.  These
+include geometric interpolation between two periods and projections for future
+years, as described in the textbook by Laurenti, Mello Jorge, LebrÃ£o and
+Gotlieb (2005, ISBN:9788512408309), the standardised mortality ratio (Bruce,
+Pope and Stanistreet, 2018, ISBN:9781118665411), the age-adjusted mortality rate
+(direct standardisation), years of potential life lost (Gardner and Sanborn,
+1990, <doi:10.1097/00001648-199007000-00012>; Ma, Ward, Siegel and Jemal, 2015,
+<doi:10.1001/jama.2015.12319>), and age-standardised years of potential life
+lost (Silva Filho et al., 2024 <doi:10.1590/1413-81232024293.04702023EN>).
+Confidence intervals for the standardised mortality ratio are obtained according
+to Vandenbroucke (1982) <doi:10.1093/oxfordjournals.aje.a113306> and Ulm (1990)
+<doi:10.1093/oxfordjournals.aje.a115507>.  The function also includes a function
+that produces a graph similar to an age pyramid.")
+    (license license:gpl3+)))
 
 (define-public r-epidatr
   (package
@@ -15628,6 +15562,31 @@ vector has an encoded guide attribute, @code{as_factor()} uses it to coerce to
 factor.")
     (license license:gpl3)))
 
+(define-public r-encharter
+  (package
+    (name "r-encharter")
+    (version "0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "encharter" version))
+       (sha256
+        (base32 "0bhj6pyj5zz26jn79ajrg9vrmh2ndplln3n4nr639xh5vfjjibaw"))))
+    (properties `((upstream-name . "encharter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-openxlsx2))
+    (home-page "https://janmarvin.github.io/encharter/")
+    (synopsis "Enhanced Office Open XML Charting for 'openxlsx2'")
+    (description
+     "This package provides a high-level R6 interface for creating complex Office Open
+XML (OOXML) charts.  Allows users to build multi-series combo charts with
+secondary axes and granular styling options, designed to integrate seamlessly
+with openxlsx2'.")
+    (license license:expat)))
+
 (define-public r-enchange
   (package
     (name "r-enchange")
@@ -16534,6 +16493,43 @@ set's underlying distributions and their contribution to the data set.  EMMAgeo
 provides deterministic and robust protocols for that purpose.")
     (license license:gpl3)))
 
+(define-public r-emln
+  (package
+    (name "r-emln")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emln" version))
+       (sha256
+        (base32 "07kyl4r1w30g8m8cc81crr857hr2laq2yjw2lw3j36jyf4nf7bcq"))))
+    (properties `((upstream-name . "emln")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-matrix
+                             r-magrittr
+                             r-igraph
+                             r-hablar
+                             r-dt
+                             r-dplyr))
+    (home-page "https://emln.ecomplab.com/")
+    (synopsis "Organize, Handle, and Explore Ecological Multilayer Networks")
+    (description
+     "Data and analysis of ecological multilayer networks, including standardization
+of data structures and functions to convert between them.  Includes an
+interactive multilayer network visualizer (beta, paper forthcoming), and a
+collection of 78 empirical ecological multilayer network datasets.  This work
+was supported by research grant ISF (Israel Science Foundation) 1281/20 to Shai
+Pilosof.  Noa Frydman (2023) <doi:10.1111/2041-210X.14225>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-emli
   (package
     (name "r-emli")
@@ -17257,13 +17253,13 @@ al. (2024) <doi:10.31234/osf.io/2e4dq>.")
 (define-public r-emburden
   (package
     (name "r-emburden")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emburden" version))
        (sha256
-        (base32 "0c63fhvihspqzkdawzr61hv2d7mvrl2y1q31gczhq6ds6r2yhdvh"))))
+        (base32 "0r7h9khrplycdh0n60rbms0rfd5fvwifzp78glg8qrlz9yca4mc3"))))
     (properties `((upstream-name . "emburden")))
     (build-system r-build-system)
     (arguments
@@ -17318,45 +17314,6 @@ into publication-ready tables.  Methods are based on Scheier & Kittner (2022)
 thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
 <doi:10.1016/j.jtherbio.2014.08.005> for thermal reaction norm of embryo growth.")
     (license license:gpl2)))
-
-(define-public r-embed
-  (package
-    (name "r-embed")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "embed" version))
-       (sha256
-        (base32 "0qnblnr9az2bhk3d0i39n774zks9bjks00ldibcn6n13wrc9lchn"))))
-    (properties `((upstream-name . "embed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-uwot
-                             r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-rlang
-                             r-recipes
-                             r-purrr
-                             r-lifecycle
-                             r-glue
-                             r-generics
-                             r-dplyr
-                             r-cli))
-    (home-page "https://embed.tidymodels.org")
-    (synopsis "Extra Recipes for Encoding Predictors")
-    (description
-     "Predictors can be converted to one or more numeric representations using a
-variety of methods.  Effect encodings using simple generalized linear models
-<doi:10.48550/@code{arXiv.1611.09477>} or nonlinear models
-<doi:10.48550/@code{arXiv.1604.06737>} can be used.  There are also functions
-for dimension reduction and other approaches.")
-    (license license:expat)))
 
 (define-public r-embc
   (package
@@ -17611,36 +17568,6 @@ subscription.  You can find the full API documentation at
 with function, based on httr'.  You can also make a shiny ui and server
 function.  It can be used for making feedback form, inquiry, and so on.")
     (license license:expat)))
-
-(define-public r-em-fuzzy
-  (package
-    (name "r-em-fuzzy")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EM.Fuzzy" version))
-       (sha256
-        (base32 "0sz4zkjn6rdzdqmkq6j24bd4sj91y5lan31bldxdfskgz0jpzhbr"))))
-    (properties `((upstream-name . "EM.Fuzzy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-fuzzynumbers r-distrib))
-    (home-page "https://cran.r-project.org/package=EM.Fuzzy")
-    (synopsis
-     "EM Algorithm for Maximum Likelihood Estimation by Non-Precise Information")
-    (description
-     "The EM algorithm is a powerful tool for computing maximum likelihood estimates
-with incomplete data.  This package will help to applying EM algorithm based on
-triangular and trapezoidal fuzzy numbers (as two kinds of incomplete data).  A
-method is proposed for estimating the unknown parameter in a parametric
-statistical model when the observations are triangular or trapezoidal fuzzy
-numbers.  This method is based on maximizing the observed-data likelihood
-defined as the conditional probability of the fuzzy data; for more details and
-formulas see Denoeux (2011) <doi:10.1016/j.fss.2011.05.022>.")
-    (license license:lgpl3+)))
 
 (define-public r-elyp
   (package
@@ -17955,40 +17882,6 @@ Bayesian hierarchical models on covariates.  Zhang et al. (2023)
 <doi:10.1186/s12859-023-05556-x>.")
     (license license:gpl2+)))
 
-(define-public r-elmso
-  (package
-    (name "r-elmso")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ELMSO" version))
-       (sha256
-        (base32 "14wnrqrbbfb37f3wp91qib28bcanflw3asv1y0v748n36x1xbv3m"))))
-    (properties `((upstream-name . "ELMSO")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "<https://journals.sagepub.com/doi/abs/10.1509/jmr.15.0307>")
-    (synopsis
-     "Implementation of the Efficient Large-Scale Online Display Advertising Algorithm")
-    (description
-     "An implementation of the algorithm described in \"Efficient Large- Scale Internet
-Media Selection Optimization for Online Display Advertising\" by Paulson, Luo,
-and James (Journal of Marketing Research 2018; see URL below for journal
-text/citation and
-<http://faculty.marshall.usc.edu/gareth-james/Research/ELMSO.pdf> for a
-full-text version of the paper).  The algorithm here is designed to allocate
-budget across a set of online advertising opportunities using a
-coordinate-descent approach, but it can be used in any resource-allocation
-problem with a matrix of visitation (in the case of the paper, website page-
-views) and channels (in the paper, websites).  The package contains allocation
-functions both in the presence of bidding, when allocation is dependent on
-channel-specific cost curves, and when advertising costs are fixed at each
-channel.")
-    (license license:gpl3)))
-
 (define-public r-elmnnrcpp
   (package
     (name "r-elmnnrcpp")
@@ -18047,13 +17940,13 @@ variance components in linear mixed-effects models.")
 (define-public r-ellmer
   (package
     (name "r-ellmer")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmer" version))
        (sha256
-        (base32 "1cf8b63vz0hdn7gzfbak4i4xcyxy79ya2cv97grny17pngww4y37"))))
+        (base32 "1daxnvr90rn7x49bb53c8vhc6bb66jw37csbgz7rfff2s79dppq0"))))
     (properties `((upstream-name . "ellmer")))
     (build-system r-build-system)
     (arguments
@@ -18964,13 +18857,13 @@ the one-sided/two-sided EL tests.")
 (define-public r-el
   (package
     (name "r-el")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EL" version))
        (sha256
-        (base32 "1ci1nb9ajw2qgirmi66r06dlsmhkzjw0kgvyvgys6c286i2sad05"))))
+        (base32 "01mhs91y7nrymbvshc5bvc2pl29bpm3y65gcqgwhcl7pimyq2hj1"))))
     (properties `((upstream-name . "EL")))
     (build-system r-build-system)
     (arguments
@@ -18982,38 +18875,38 @@ the one-sided/two-sided EL tests.")
     (description
      "Empirical likelihood (EL) inference for two-sample problems.  The following
 statistics are included: the difference of two-sample means, smooth Huber
-estimators, quantile (qdiff) and cumulative distribution functions (ddiff),
+estimators, quantile (qdiff) and cumulative distribution functions (fdiff),
 probability-probability (P-P) and quantile-quantile (Q-Q) plots as well as
-receiver operating characteristic (ROC) curves.  EL calculations are based on J.
-Valeinis, E. Cers (2011)
+receiver operating characteristic (ROC) curves.  Also includes two-sample
+block-wise empirical likelihood (BEL) and a frequency-domain empirical
+likelihood test for autocorrelation differences (FDEL).  Methods for EL, P-P,
+Q-Q, ROC, qdiff and fdiff are based on Valeinis and Cers (2011)
 <http://home.lu.lv/~valeinis/lv/petnieciba/EL_@code{TwoSample_2011.pdf>}.")
     (license license:gpl2+)))
 
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eks" version))
        (sha256
-        (base32 "0zf121kaaj2vmnhh9jiyg46ki7adymz5j7lw14cqccxh9pyyxby1"))))
+        (base32 "0x7gh7lnbz6vzjl4anycsfkbqm502v7il23xs8nmb8pjcfdvsnyh"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sf
-                             r-lwgeom
                              r-ks
                              r-isoband
                              r-ggplot2
-                             r-geos
                              r-dplyr
                              r-colorspace))
     (native-inputs (list r-knitr))
-    (home-page "https://www.mvstat.net/mvksa/")
+    (home-page "https://mvstat.net/eks/")
     (synopsis "Tidy and Geospatial Kernel Smoothing")
     (description
      "Extensions of the kernel smoothing functions from the ks package for
@@ -19764,6 +19657,53 @@ the epigraph and hypograph indices.  See Pulido et al. (2023)
 <doi:10.48550/@code{arXiv.2307.16720>}.")
     (license license:expat)))
 
+(define-public r-ehrtemporalvariability
+  (package
+    (name "r-ehrtemporalvariability")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EHRtemporalVariability" version))
+       (sha256
+        (base32 "0hgx4m2plwxwv8c3n7srafz2aggrgk7llh6nl0d7fy4lkh6j78ga"))))
+    (properties `((upstream-name . "EHRtemporalVariability")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-viridis
+                             r-scales
+                             r-rcolorbrewer
+                             r-plotly
+                             r-mass
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hms-dbmi/EHRtemporalVariability")
+    (synopsis
+     "Delineating Temporal Dataset Shifts in Electronic Health Records")
+    (description
+     "This package provides functions to delineate temporal dataset shifts in
+Electronic Health Records through the projection and visualization of
+dissimilarities among data temporal batches.  This is done through the
+estimation of data statistical distributions over time and their projection in
+non-parametric statistical manifolds, uncovering the patterns of the data latent
+temporal variability.  EH@code{RtemporalVariability} is particularly suitable
+for multi-modal data and categorical variables with a high number of values,
+common features of biomedical data where traditional statistical process control
+or time-series methods may not be appropriate.  EH@code{RtemporalVariability}
+allows you to explore and identify dataset shifts through visual analytics
+formats such as Data Temporal heatmaps and Information Geometric Temporal (IGT)
+plots.  An additional EH@code{RtemporalVariability} Shiny app can be used to
+load and explore the package results and even to allow the use of these
+functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
+<doi:10.1093/gigascience/giaa079>.")
+    (license (list license:asl2.0
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-ehrmuse
   (package
     (name "r-ehrmuse")
@@ -20374,6 +20314,39 @@ grid zones to blood glucose values, and for plotting both types of error grids
 in both mg/@code{mL} and mmol/L units.")
     (license license:expat)))
 
+(define-public r-efsatools
+  (package
+    (name "r-efsatools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EFSATools" version))
+       (sha256
+        (base32 "0ij2xb889qj0ajs3ik8w4dmnmsjjfnbzj9j08c2pzmdsp2pbn4dy"))))
+    (properties `((upstream-name . "EFSATools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-glue
+                             r-eppofinder
+                             r-dplyr
+                             r-distiller
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://openefsa.github.io/EFSATools/")
+    (synopsis "EFSA Ensemble of Data Collections Tools")
+    (description
+     "This package provides tools for dataset operations and utilities designed to
+preserve data history within EFSA's ad hoc data collections.  It also imports
+packages developed by EFSA that provide additional support for data collection
+activities.")
+    (license (license:fsdg-compatible "EUPL-1.2"))))
+
 (define-public r-efred
   (package
     (name "r-efred")
@@ -20876,13 +20849,13 @@ conditions.")
 (define-public r-efatools
   (package
     (name "r-efatools")
-    (version "0.6.1")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAtools" version))
        (sha256
-        (base32 "0x2c1a1fwa79pdam2day57rpcyxf195a4kqsnwzr2xh6x1fjrnad"))))
+        (base32 "06i0mq583477xxik2x2nppsljy9k9z7cnps1w2bqfqjvallr2nxk"))))
     (properties `((upstream-name . "EFAtools")))
     (build-system r-build-system)
     (arguments
@@ -20906,6 +20879,7 @@ conditions.")
                              r-future
                              r-dplyr
                              r-crayon
+                             r-clue
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -22095,13 +22069,13 @@ pyndl <https://pyndl.readthedocs.io/en/latest/> for that purpose.).")
 (define-public r-ediutils
   (package
     (name "r-ediutils")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDIutils" version))
        (sha256
-        (base32 "17a0pfya513sln67k30y7mzd92d5z5xbjil64g10glagbii06sji"))))
+        (base32 "1lnwckrnfpfqln8gcz02j4ldkkswsizrx6kmdidygj18q6idldp8"))))
     (properties `((upstream-name . "EDIutils")))
     (build-system r-build-system)
     (arguments
@@ -23228,13 +23202,13 @@ C. (2023). <doi:10.57805/revstat.v21i2.405>.")
 (define-public r-ecoxcorr
   (package
     (name "r-ecoxcorr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoXCorr" version))
        (sha256
-        (base32 "12bjgcbph52bl5wm39550znmmy5qdzx5sj9xffm2b4y882ya8m5s"))))
+        (base32 "1ic6px5gx8g1ahih0p73pryx1cy00awzrsslshzadbj8z3kkrn37"))))
     (properties `((upstream-name . "ecoXCorr")))
     (build-system r-build-system)
     (arguments
@@ -23500,51 +23474,6 @@ Preisler, H.K. (2007, ISBN: 0849323312).")
     (description
      "This is a collection of data files for exploring sightings of wild things,
 relative to weather and tourism patterns in Australia.")
-    (license license:expat)))
-
-(define-public r-ecotonefinder
-  (package
-    (name "r-ecotonefinder")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EcotoneFinder" version))
-       (sha256
-        (base32 "1liqjakzg4c5kgjiir8i4fp4ax0737lfwriz277crh9p3jn3dgmh"))))
-    (properties `((upstream-name . "EcotoneFinder")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-vegclust
-                             r-vegan
-                             r-rmisc
-                             r-rlang
-                             r-reshape
-                             r-qgraph
-                             r-purrr
-                             r-plyr
-                             r-philentropy
-                             r-igraph
-                             r-ggplot2
-                             r-e1071
-                             r-corrplot
-                             r-colorspace
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=EcotoneFinder")
-    (synopsis "Characterising and Locating Ecotones and Communities")
-    (description
-     "Analytical methods to locate and characterise ecotones, ecosystems and
-environmental patchiness along ecological gradients.  Methods are implemented
-for isolated sampling or for space/time series.  It includes Detrended
-Correspondence Analysis (Hill & Gauch (1980) <doi:10.1007/BF00048870>), fuzzy
-clustering (De CÃ¡ceres et al. (2010) <doi:10.1080/01621459.1963.10500845>),
-biodiversity indices (Jost (2006) <doi:10.1111/j.2006.0030-1299.14714.x>), and
-network analyses (Epskamp et al. (2012) <doi:10.18637/jss.v048.i04>) - as well
-as tools to explore the number of clusters in the data.  Functions to produce
-synthetic ecological datasets are also provided.")
     (license license:expat)))
 
 (define-public r-ecotolerance
@@ -24418,18 +24347,19 @@ community ecology statistical tests, including Hutcheson's t-test (Hutcheson
 (define-public r-ecolrxc
   (package
     (name "r-ecolrxc")
-    (version "0.1.1-10")
+    (version "0.1.1-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecolRxC" version))
        (sha256
-        (base32 "0m7c8ifmzq5s6sh8xp09ald7rd47ga66gzmsqn8028xylf8rpsbf"))))
+        (base32 "0mawpmaxikmvp89h7bl6fia16x68w9pp3knyifd2fm7wwkjr6d75"))))
     (properties `((upstream-name . "ecolRxC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm))
     (home-page "https://cran.r-project.org/package=ecolRxC")
     (synopsis
      "Ecological Inference of RxC Tables by Latent Structure Approaches")
@@ -24439,8 +24369,14 @@ tables) from aggregate data building on Thomsen (1987) and Park (2008)
 approaches.  References: Park, W.-H. (2008).  Ecological Inference and Aggregate
 Analysis of Election''. @code{PhD} Dissertation.  University of Michigan.
 <https://deepblue.lib.umich.edu/bitstream/handle/2027.42/58525/wpark_1.pdf>
+PavÃ­a, J.M. and Thomsen, S.R. (2025) @code{ecolRxC}: Ecological inference
+estimation of @code{RxC} tables using latent structure approaches''.  Political
+Science Research and Methods, 13(4), 943-961. <doi:10.1017/psrm.2024.57>
 Thomsen, S.R. (1987, ISBN:87-7335-037-2).  Danish Elections 1920 79: a Logit
-Approach to Ecological Analysis and Inference''.  Politica, Aarhus, Denmark.")
+Approach to Ecological Analysis and Inference''.  Politica, Aarhus, Denmark.
+Acknowledgements: The authors wish to thank Generalitat Valenciana (Conselleria
+de Educacion, Cultura y Universidades), grant CIACIO/2023/031, and Ministerio de
+Economia e Innovacion, grant PID2021-128228NB-I00, for supporting this research.")
     (license license:gpl2+)))
 
 (define-public r-ecolottery
@@ -24501,13 +24437,13 @@ model projects are in the same subdirectories.")
 (define-public r-ecol
   (package
     (name "r-ecol")
-    (version "0.3.0")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECoL" version))
        (sha256
-        (base32 "02j4yl6hi83f6m529r6n0gaz8wsy2pi0ncy2g95fjhs8ib0kfn4f"))))
+        (base32 "1984a0g03xy90qc2fc7bx7pblqk34x2yslqqqi1j2f4c222hfpad"))))
     (properties `((upstream-name . "ECoL")))
     (build-system r-build-system)
     (arguments
@@ -25027,41 +24963,6 @@ described in Naderi et al. (2025) <doi:10.48550/@code{arXiv.2510.20617>}.")
 (ECM) for time series regression.")
     (license license:gpl2+)))
 
-(define-public r-eclrmc
-  (package
-    (name "r-eclrmc")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ECLRMC" version))
-       (sha256
-        (base32 "01z2hmbpb754s2rsvx3i5wf7kkkr2mvs2g89ih2bqrif7w5rmgyg"))))
-    (properties `((upstream-name . "ECLRMC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-softimpute))
-    (home-page "https://cran.r-project.org/package=ECLRMC")
-    (synopsis "Ensemble Correlation-Based Low-Rank Matrix Completion")
-    (description
-     "Ensemble correlation-based low-rank matrix completion method (ECLRMC) is an
-extension to the LRMC based methods.  Traditionally, the LRMC based methods give
-identical importance to the whole data which results in emphasizing on the
-commonality of the data and overlooking the subtle but crucial differences.
-This method aims to overcome the equality assumption problem that exists in the
-current LRMS based methods.  Ensemble correlation-based low-rank matrix
-completion (ECLRMC) takes consideration of the specific characteristic of each
-sample and performs LRMC on the set of samples with a strong correlation.  It
-uses an ensemble learning method to improve the imputation performance.  Since
-each sample is analyzed independently this method can be parallelized by
-distributing imputation across many computation units or GPU platforms.  This
-package provides three different methods (LRMC, CLRMC and ECLRMC) for data
-imputation.  There is also an NRMS function for evaluating the result.  Chen,
-Xiaobo, et al (2017) <doi:10.1016/j.knosys.2017.06.010>.")
-    (license license:gpl2)))
-
 (define-public r-eclosure
   (package
     (name "r-eclosure")
@@ -25089,13 +24990,13 @@ Closed Benjamini-Yekutieli procedures.")
 (define-public r-eclipseplot
   (package
     (name "r-eclipseplot")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eclipseplot" version))
        (sha256
-        (base32 "19rai0rg2dlvmjq5ik4wsw89sa2nzhcf0xijy4cgsil2695y1diq"))))
+        (base32 "0p4zc3zr1n6ndf6b3r27wxg20rxzqk6dm0agxay8gfnsifsac2y2"))))
     (properties `((upstream-name . "eclipseplot")))
     (build-system r-build-system)
     (arguments
@@ -25882,48 +25783,6 @@ authentication and endpoints for interacting with Earth Blox geospatial
 analytics services.  Compatible with Shiny applications.")
     (license license:expat)))
 
-(define-public r-ebvcube
-  (package
-    (name "r-ebvcube")
-    (version "0.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ebvcube" version))
-       (sha256
-        (base32 "1pr8adwmqar11r89zjnxnyg2hya282nhap8fyhmharpqq8swm681"))))
-    (properties `((upstream-name . "ebvcube")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyterra
-                             r-terra
-                             r-stringr
-                             r-rhdf5
-                             r-reshape2
-                             r-ncmeta
-                             r-ncdf4
-                             r-memuse
-                             r-jsonlite
-                             r-httr
-                             r-hdf5array
-                             r-ggplot2
-                             r-delayedarray
-                             r-curl
-                             r-checkmate))
-    (home-page "https://github.com/EBVCube/ebvcube")
-    (synopsis "Working with netCDF for Essential Biodiversity Variables")
-    (description
-     "The concept of Essential Biodiversity Variables (EBV,
-<https://geobon.org/ebvs/what-are-ebvs/>) comes with a data structure based on
-the Network Common Data Form (@code{netCDF}).  The ebvcube R package provides
-functionality to easily create, access and visualise this data.  The EBV
-@code{netCDFs} can be downloaded from the EBV Data Portal: Christian Langer/
-@code{iDiv} (2020) <https://portal.geobon.org/>.")
-    (license license:gpl3+)))
-
 (define-public r-ebtobit
   (package
     (name "r-ebtobit")
@@ -26044,36 +25903,6 @@ details see Hosmer (1980) <doi:10.1080/03610928008827941> and Farrington (1996)
 <doi:10.1111/j.2517-6161.1996.tb02086.x>.")
     (license license:gpl3)))
 
-(define-public r-ebprs
-  (package
-    (name "r-ebprs")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EBPRS" version))
-       (sha256
-        (base32 "14wal81cai08xr26fpc2w4ramr5jyv7vwfyqb5hzw3kqxx76y9xx"))))
-    (properties `((upstream-name . "EBPRS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rocr r-data-table r-bedmatrix))
-    (home-page "https://cran.r-project.org/package=EBPRS")
-    (synopsis "Derive Polygenic Risk Score Based on Emprical Bayes Theory")
-    (description
-     "EB-PRS is a novel method that leverages information for effect sizes across all
-the markers to improve the prediction accuracy.  No parameter tuning is needed
-in the method, and no external information is needed.  This R-package provides
-the calculation of polygenic risk scores from the given training summary
-statistics and testing data.  We can use EB-PRS to extract main information,
-estimate Empirical Bayes parameters, derive polygenic risk scores for each
-individual in testing data, and evaluate the PRS according to AUC and predictive
-r2.  See Song et al. (2020) <doi:10.1371/journal.pcbi.1007565> for a detailed
-presentation of the method.")
-    (license license:gpl3)))
-
 (define-public r-ebnm
   (package
     (name "r-ebnm")
@@ -26170,6 +25999,40 @@ Khoshgoftaar, Jason Van Hulse, and Amri Napolitano (2010)
 <doi:10.1109/CIDM.2009.4938667>, Yoav Freund and Robert E. Schapire (1997)
 <doi:10.1006/jcss.1997.1504>.")
     (license license:gpl3+)))
+
+(define-public r-ebmaforecast
+  (package
+    (name "r-ebmaforecast")
+    (version "1.0.33")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EBMAforecast" version))
+       (sha256
+        (base32 "0j0skkmkl1v2v0289jw3qc71i46zkzh2nk2jvm0v9qdn4drz91xc"))))
+    (properties `((upstream-name . "EBMAforecast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-separationplot
+                             r-rcpp
+                             r-plyr
+                             r-hmisc
+                             r-gtools
+                             r-glue
+                             r-abind))
+    (home-page "https://github.com/fhollenbach/EBMA/")
+    (synopsis
+     "Estimate Ensemble Bayesian Model Averaging Forecasts using Gibbs Sampling or EM-Algorithms")
+    (description
+     "Create forecasts from multiple predictions using ensemble Bayesian model
+averaging (EBMA).  EBMA models can be estimated using an expectation
+maximization (EM) algorithm or as fully Bayesian models via Gibbs sampling.  The
+methods in this package are Montgomery, Hollenbach, and Ward (2015)
+<doi:10.1016/j.ijforecast.2014.08.001> and Montgomery, Hollenbach, and Ward
+(2012) <doi:10.1093/pan/mps002>.")
+    (license license:gpl2+)))
 
 (define-public r-ebm
   (package
@@ -26498,13 +26361,13 @@ et al. (2015) <doi:10.1002/lom3.10011> and Wanninkhof (2014)
 (define-public r-ebal
   (package
     (name "r-ebal")
-    (version "0.1-8")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebal" version))
        (sha256
-        (base32 "06hkk0fargzhzqn841c406r72y7jd53mjxgi4hzb2ahnpaiq2q1l"))))
+        (base32 "0q1j0s97f978lj8b1al06qqspl4fs0p5bxlm7xa0hwyhxnw5gby8"))))
     (properties `((upstream-name . "ebal")))
     (build-system r-build-system)
     (arguments
@@ -26513,14 +26376,13 @@ et al. (2015) <doi:10.1002/lom3.10011> and Wanninkhof (2014)
     (home-page "https://web.stanford.edu/~jhain/")
     (synopsis "Entropy Reweighting to Create Balanced Samples")
     (description
-     "Package implements entropy balancing, a data preprocessing procedure described
-in Hainmueller (2008, <doi:10.1093/pan/mpr025>) that allows users to reweight a
-dataset such that the covariate distributions in the reweighted data satisfy a
-set of user specified moment conditions.  This can be useful to create balanced
+     "This package implements entropy balancing, a data preprocessing procedure
+described in Hainmueller (2012, <doi:10.1093/pan/mpr025>) that allows users to
+reweight a dataset such that the covariate distributions in the reweighted data
+satisfy a set of user-specified moment conditions.  Useful for creating balanced
 samples in observational studies with a binary treatment where the control group
-data can be reweighted to match the covariate moments in the treatment group.
-Entropy balancing can also be used to reweight a survey sample to known
-characteristics from a target population.")
+is reweighted to match the covariate moments of the treatment group, and for
+reweighting a survey sample to known characteristics from a target population.")
     (license license:gpl2+)))
 
 (define-public r-eba
@@ -26890,6 +26752,34 @@ user-defined forecast scores can be implemented using the example scores
 provided and applied using the functionality of this package.")
     (license license:gpl3)))
 
+(define-public r-easytable
+  (package
+    (name "r-easytable")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easytable" version))
+       (sha256
+        (base32 "1hm5d01mxflwibwbyzww4wmjck07yz57rk467snxmvvs4jdjgf89"))))
+    (properties `((upstream-name . "easytable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-flextable r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alfredo-hs/easytable")
+    (synopsis "Create Multi-Format Regression Tables")
+    (description
+     "Create publication-ready regression tables in multiple formats, including Word',
+HTML', @code{LaTeX}', and PDF', from statistical models.  Supports @code{lm()}
+and @code{glm()} models.  Includes options for marginal effects, control
+variable grouping, and robust standard errors using methods described in Zeileis
+(2004) <doi:10.18637/jss.v011.i10>.  Tables can be exported to Word via
+flextable or to @code{LaTeX} for PDF output.")
+    (license license:expat)))
+
 (define-public r-easysvg
   (package
     (name "r-easysvg")
@@ -26997,6 +26887,53 @@ reporting.  Additionally, it provides articles targeted at instructors for
 teaching easystats', and a dashboard targeted at new R users for easily
 conducting statistical analysis by accessing summary results, model fit indices,
 and visualizations with minimal programming.")
+    (license license:expat)))
+
+(define-public r-easystat
+  (package
+    (name "r-easystat")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EasyStat" version))
+       (sha256
+        (base32 "1nyg605d74f19jmk9199r3q2bsriq7p13yhhkksfyxb69ybhysyf"))))
+    (properties `((upstream-name . "EasyStat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-officer
+                             r-knitr
+                             r-kableextra
+                             r-htmltools
+                             r-glue
+                             r-ggplot2
+                             r-flextable
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/itsmdivakaran/Easystat")
+    (synopsis
+     "Automated Statistical Analysis, Visualization and Multi-Format Narrative Reporting")
+    (description
+     "This package provides automated statistical analysis, rich visualization, and
+multi-format narrative reporting through a unified pipeline.  Descriptive
+statistics are available via @code{easy_describe()} and
+@code{easy_group_summary()}.  Inferential tests with plain-language narratives
+are provided by @code{easy_regression()}, @code{easy_logistic_regression()},
+@code{easy_ttest()}, @code{easy_anova()}, @code{easy_chisq()},
+@code{easy_ztest()}, @code{easy_ftest()}, @code{easy_correlation()},
+@code{easy_wilcox()}, and @code{easy_kruskal()}.  Publication-ready ggplot2
+visualizations are produced by @code{easy_histogram()}, @code{easy_boxplot()},
+@code{easy_scatter()}, @code{easy_barplot()}, @code{easy_qqplot()},
+@code{easy_density()}, @code{easy_correlation_heatmap()},
+@code{easy_regression_diagnostics()}, and @code{easy_odds_ratio_plot()}.  The
+core Narrative Generator Module applies conditional logic to extracted p-values,
+effect sizes, and model-fit metrics to produce statistically sound,
+human-readable explanations automatically.  Results render in the RStudio Viewer
+(HTML), the console (ASCII), or export directly to Microsoft Word via flextable
+and officer'.")
     (license license:expat)))
 
 (define-public r-easysdctable
@@ -27725,13 +27662,13 @@ maximum temperatures) for points and polygons within Europe.")
 (define-public r-easycensus
   (package
     (name "r-easycensus")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easycensus" version))
        (sha256
-        (base32 "17qybjns9hi191s3c890pcvla24ggvw2d4bv5jjvhik61hhd7fqr"))))
+        (base32 "0a15jhj8rajjghv4m78rjc5zfracapbw47kfk97blbxzq7yz6vza"))))
     (properties `((upstream-name . "easycensus")))
     (build-system r-build-system)
     (arguments
@@ -28204,13 +28141,13 @@ size.  These might aid in deciding what design to use for the early phase trial.
 (define-public r-eanalytics
   (package
     (name "r-eanalytics")
-    (version "0.3.1")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eAnalytics" version))
        (sha256
-        (base32 "1hphh2b8il1gj5kyz7xgq195gldq3xpkslaxz1rcc9kgqw1dyd5x"))))
+        (base32 "00rjpmxkr5z1h5474l1p10ispv1gzqly75xl61nlkxzfqb6cjfma"))))
     (properties `((upstream-name . "eAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -28225,6 +28162,7 @@ size.  These might aid in deciding what design to use for the early phase trial.
                              r-energyr
                              r-dt
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "http://paulgovan.github.io/eAnalytics/")
     (synopsis "Dynamic Web-Based Analytics for the Energy Industry")
     (description
@@ -28236,13 +28174,13 @@ changes in the industry over time, and discover new relationships in the data.")
 (define-public r-eam
   (package
     (name "r-eam")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eam" version))
        (sha256
-        (base32 "0nhhccpy0q6fkz3n6bm90w25p6029wcy2wr819in9866xnzkgnn8"))))
+        (base32 "0xi8al3lwm3szd7p2km6yz0nz2p8r1c1db1xc2645r1ayyfj12cl"))))
     (properties `((upstream-name . "eam")))
     (build-system r-build-system)
     (arguments
@@ -28255,6 +28193,7 @@ changes in the industry over time, and discover new relationships in the data.")
                              r-rlang
                              r-rcpp
                              r-purrr
+                             r-pbapply
                              r-neuralestimators
                              r-juliaconnector
                              r-gridextra
@@ -28263,7 +28202,8 @@ changes in the industry over time, and discover new relationships in the data.")
                              r-distributional
                              r-data-table
                              r-codetools
-                             r-arrow))
+                             r-arrow
+                             r-abc))
     (home-page "https://y-guang.github.io/eam/")
     (synopsis "Evidence Accumulation Models")
     (description
@@ -28367,19 +28307,20 @@ E., Motsinger-Reif, A.; Dose-Response 18(2):1559325820926734 (2020)
 (define-public r-e2tree
   (package
     (name "r-e2tree")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "e2tree" version))
        (sha256
-        (base32 "0svrffa9vb706bapkg0dia9nsjf4iyzdq33lhgafz26vll7fwv4i"))))
+        (base32 "1q33k28gx2mbjn4fyrqbiacyfdg5sf6vaxzx6dp5h9j853fhha2r"))))
     (properties `((upstream-name . "e2tree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-rpart-plot
                              r-rcpp
                              r-purrr
                              r-partitions
@@ -28388,6 +28329,7 @@ E., Motsinger-Reif, A.; Dose-Response 18(2):1559325820926734 (2020)
                              r-future-apply
                              r-dplyr
                              r-ape))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/massimoaria/e2tree")
     (synopsis "Explainable Ensemble Trees")
     (description

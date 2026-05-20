@@ -1099,6 +1099,37 @@ the concept of space exploration and are described in Lecigne et al. (2018,
 <doi:10.1093/aob/mcx095>).")
     (license license:gpl3)))
 
+(define-public r-vowr
+  (package
+    (name "r-vowr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VOWR" version))
+       (sha256
+        (base32 "1i7grd9m2vql39fs2v43q1lcw4z9r83s47vm7zwqhzkvlx7s83ld"))))
+    (properties `((upstream-name . "VOWR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer r-survival r-ggplot2 r-dplyr))
+    (home-page "https://github.com/zerish12/VOWR")
+    (synopsis "Vital Operational Waiting Risk for Healthcare Systems")
+    (description
+     "Vital Operational Waiting Risk (VOWR) provides tools for analysing monthly
+Referral-to-Treatment (RTT) panel data in healthcare systems.  The package
+supports provider-level profiling, operational risk classification, waiting-time
+volatility assessment, Kaplan-Meier survival analysis, Cox proportional hazards
+modelling, and visualisation of time-to-threshold breach patterns.  It is
+designed to help analysts and decision-makers identify providers with high
+waiting times, unstable performance, and increased risk of earlier threshold
+breach.  The survival modelling methods follow Cox (1972)
+<doi:10.1111/j.2517-6161.1972.tb00899.x> and Kaplan and Meier (1958)
+<doi:10.1080/01621459.1958.10501452>.")
+    (license license:expat)))
+
 (define-public r-vowels
   (package
     (name "r-vowels")
@@ -1562,50 +1593,6 @@ principal component analysis (PCA), partial least squares discriminant analysis
 J., and Kringel, D. (2026) <doi:10.1371/journal.pone.0333653>.")
     (license license:gpl3+)))
 
-(define-public r-volumodel
-  (package
-    (name "r-volumodel")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "voluModel" version))
-       (sha256
-        (base32 "0qvyysd975p3nrm3k4pnqan4qlgwd0lc5316qqfjfxiiil6vpfgp"))))
-    (properties `((upstream-name . "voluModel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-terra
-                             r-sf
-                             r-rnaturalearth
-                             r-rangebuilder
-                             r-modeva
-                             r-metr
-                             r-ggtext
-                             r-ggplot2
-                             r-fields
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://hannahlowens.github.io/voluModel/")
-    (synopsis "Modeling Species Distributions in Three Dimensions")
-    (description
-     "Facilitates modeling species ecological niches and geographic distributions
-based on occurrences and environments that have a vertical as well as horizontal
-component, and projecting models into three-dimensional geographic space.
-Working in three dimensions is useful in an aquatic context when the organisms
-one wishes to model can be found across a wide range of depths in the water
-column.  The package also contains functions to automatically generate marine
-training model training regions using machine learning, and interpolate and
-smooth patchily sampled environmental rasters using thin plate splines.  Davis
-Rabosky AR, Cox CL, Rabosky DL, Title PO, Holmes IA, Feldman A, @code{McGuire}
-JA (2016) <doi:10.1038/ncomms11484>.  Nychka D, Furrer R, Paige J, Sain S (2021)
-<doi:10.5065/D6W957CT>.  Pateiro-Lopez B, Rodriguez-Casal A (2022)
-<https://CRAN.R-project.org/package=alphahull>.")
-    (license license:gpl3)))
-
 (define-public r-volrisk
   (package
     (name "r-volrisk")
@@ -1941,13 +1928,13 @@ the @code{voiceR} package is provided in Hildebrand et al.  2020
 (define-public r-voice
   (package
     (name "r-voice")
-    (version "0.5.4")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voice" version))
        (sha256
-        (base32 "1b9gqjwci1ysxxf0xmyhng286lc792wj87l5aqlkwd5xmzynyl4v"))))
+        (base32 "1khfijzg9jy1kv6pi50iydclmbqjb13n59dcy05dppwbsaf3h9nc"))))
     (properties `((upstream-name . "voice")))
     (build-system r-build-system)
     (arguments
@@ -1962,6 +1949,7 @@ the @code{voiceR} package is provided in Hildebrand et al.  2020
                              r-seewave
                              r-reticulate
                              r-r-utils
+                             r-httr2
                              r-httr
                              r-htmltools
                              r-ggplot2
@@ -2046,13 +2034,13 @@ segmentation (Luz, 2012) <doi:10.1145/2328967.2328970> and classification (Luz,
 (define-public r-vntrs
   (package
     (name "r-vntrs")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vntrs" version))
        (sha256
-        (base32 "16w5lcbwfi97h99mkqji12iwrc17vvin8hhvlsb5mmzz8ykiln8x"))))
+        (base32 "0ijxp7svavsxrahylv242hlx6l84vi2dihi8ndaam2rw4pi9brzm"))))
     (properties `((upstream-name . "vntrs")))
     (build-system r-build-system)
     (arguments
@@ -2062,15 +2050,14 @@ segmentation (Luz, 2012) <doi:10.1145/2328967.2328970> and classification (Luz,
     (home-page "https://loelschlaeger.de/vntrs/")
     (synopsis "Variable Neighborhood Trust Region Search")
     (description
-     "An algorithm for nonlinear global optimization based on the variable
-neighbourhood trust region search (VNTRS) algorithm proposed by Bierlaire et al.
-(2009) \"A Heuristic for Nonlinear Global Optimization\"
-<doi:10.1287/ijoc.1090.0343>.  The algorithm combines variable neighbourhood
-exploration with a trust-region framework to efficiently search the solution
-space.  It can terminate a local search early if the iterates are converging
-toward a previously visited local optimum or if further improvement within the
-current region is unlikely.  In addition to global optimization, the algorithm
-can also be applied to identify multiple local optima.")
+     "This package implements the variable neighborhood trust region search (VNTRS)
+algorithm for nonlinear global optimization, following Bierlaire et al. (2009)
+\"A Heuristic for Nonlinear Global Optimization\" <doi:10.1287/ijoc.1090.0343>.
+The method combines neighborhood exploration with a trust-region framework to
+search the solution space efficiently.  It can terminate a local search early
+when the iterates converge toward a previously visited local optimum or when
+further improvement within the current region is unlikely.  The algorithm can
+also be used to identify multiple local optima.")
     (license license:gpl3)))
 
 (define-public r-vmtools
@@ -2668,13 +2655,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "1ibval5nvj0gc0gcv47lgbw8fjdp42yhynqj31h8wlgnwb1a344m"))))
+        (base32 "07a6lwqql8bwcxrnkdrs0qwyvwzs202l9qb63k8ag1y787dp5p99"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (arguments
@@ -2684,6 +2671,7 @@ Functions in vivaldi primarily operate on vcf files.")
                              r-tidytext
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-scales
                              r-rmarkdown
                              r-rlang
@@ -2745,16 +2733,52 @@ correlation analysis.  Harman (1960, ISBN: 0226316513); Husser (2017)
 <doi:10.1002/9781118901731.iecrm0048>.")
     (license license:expat)))
 
+(define-public r-vitopack
+  (package
+    (name "r-vitopack")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vitopack" version))
+       (sha256
+        (base32 "0an8k73ddj9ff5h1dsgd5c7z3lh62w9dc12ssr5lh2v6282f48ix"))))
+    (properties `((upstream-name . "vitopack")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-lubridate
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Com-PASS-OV/vitopack")
+    (synopsis
+     "Actuarial Helpers for Triangles, Exposures and Czech Birth Numbers")
+    (description
+     "This package provides a collection of utilities that grew out of day-to-day
+non-life actuarial work at Com-PASS Advisory.  Provides helpers for building
+chain-ladder triangles (cumulative, decumulative, run-off, development factors
+with optional weighting), constructing exposure columns from policy start/end
+dates, parsing Czech birth numbers ('rodnÃ© ÄÃ­slo') into dates, generating
+smooth RGB color palettes for charts, and loading multi-sheet xlsx'/'xlsb files
+into a list of data frames.  The chain-ladder helpers follow the standard
+methodology of Mack (1993) <doi:10.2143/AST.23.2.2005092>.")
+    (license license:expat)))
+
 (define-public r-vitals
   (package
     (name "r-vitals")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vitals" version))
        (sha256
-        (base32 "07n02ad8h8g33pgm118cv3g1mbnvg0z3xnvaxaq22j65lqy1xc51"))))
+        (base32 "0rjjghkibl0hs9xnpkbjjv1zz0fvnq116645nc55x05bdn4al50a"))))
     (properties `((upstream-name . "vitals")))
     (build-system r-build-system)
     (arguments
@@ -3374,13 +3398,13 @@ with the plot using mouse hover or zoom.")
 (define-public r-visstatistics
   (package
     (name "r-visstatistics")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visStatistics" version))
        (sha256
-        (base32 "0fjqyfgjvrnmcj1w0pjkkhsn876iip49yzmr3647g9bksvwn88g1"))))
+        (base32 "06dygh7yhhk7yk1lkr8sx1b6pl05ma9j1vfdb2dnmvij83rlhbmk"))))
     (properties `((upstream-name . "visStatistics")))
     (build-system r-build-system)
     (arguments
@@ -3392,38 +3416,48 @@ with the plot using mouse hover or zoom.")
     (synopsis
      "Automated Selection and Visualisation of Statistical Hypothesis Tests")
     (description
-     "Automatically selects and visualises statistical hypothesis tests between two
-vectors, based on their class, distribution, sample size, and a user-defined
-confidence level (conf.level).  Visual outputs - including box plots, bar
+     "The right test, visualised. @code{visStatistics} automatically selects and
+visualises statistical hypothesis tests comparing two vectors, based on their
+class, distribution, and sample size.  Visual outputs, including box plots, bar
 charts, regression lines with confidence bands, mosaic plots, residual plots,
-and Q-Q plots - are annotated with relevant test statistics, assumption checks,
-and post-hoc analyses where applicable.  The algorithmic workflow helps the user
-focus on the interpretation of test results rather than test selection.  It is
-particularly suited for quick data analysis, e.g., in statistical consulting
-projects or educational settings.  The test selection algorithm proceeds as
-follows: Input vectors of class numeric or integer are considered numerical;
-those of class factor are considered categorical.  Assumptions of residual
-normality and homogeneity of variances are considered met if the corresponding
-test yields a p-value greater than the significance level alpha = 1 -
-conf.level. (1) When the response vector is numerical and the predictor vector
-is categorical, a test of central tendencies is selected.  If the categorical
-predictor has exactly two levels, @code{t.test()} is applied when group sizes
-exceed 30 (Lumley et al. (2002)
-<doi:10.1146/annurev.publhealth.23.100901.140546>).  For smaller samples,
-normality of residuals is tested using @code{shapiro.test()}; if met,
-@code{t.test()} is used; otherwise, @code{wilcox.test()}.  If the predictor is
-categorical with more than two levels, an @code{aov()} is initially fitted.
-Residual normality is evaluated using both @code{shapiro.test()} and
-@code{ad.test()}; residuals are considered approximately normal if at least one
-test yields a p-value above alpha.  If this assumption is met,
-@code{bartlett.test()} assesses variance homogeneity.  If variances are
-homogeneous, @code{aov()} is used; otherwise @code{oneway.test()}.  Both tests
-are followed by @code{TukeyHSD()}.  If residual normality cannot be assumed,
-@code{kruskal.test()} is followed by @code{pairwise.wilcox.test()}. (2) When
-both the response and predictor vectors are numerical, a simple linear
-regression model is fitted using @code{lm()}. (3) When both vectors are
-categorical, Cochran's rule (Cochran (1954) <doi:10.2307/3001666>) is applied to
-test independence either by @code{chisq.test()} or @code{fisher.test()}.")
+and Q-Q plots, are annotated with relevant test statistics, assumption checks,
+and post-hoc analyses where applicable.  The algorithmic workflow shifts
+attention from ad-hoc test selection to visual diagnostic assessment and
+statistical interpretation.  It is particularly suited for server-side R
+applications, where end users interact solely through a web interface to select
+data groups and receive a complete visual statistical analysis automatically.
+The same automation makes it useful in time-constrained contexts such as
+statistical consulting, where it reduces effort spent on test selection and
+leaves more room for interpretation.  The implemented tests cover the most
+frequently applied inferential methods in biomedical research (Hayat et al.
+(2017) <doi:10.1371/journal.pone.0179032>).  The test selection algorithm
+proceeds as follows: Input vectors of class numeric or integer are considered
+numerical; those of class factor are considered categorical; those of class
+ordered are considered ordinal.  Assumptions of residual normality and
+homogeneity of variances are considered met if the corresponding test yields a
+p-value greater than the significance level alpha = 1 - conf.level. (1) When the
+response is numerical and the predictor is categorical, a test comparing central
+tendencies is selected.  If every group contains more than 50 observations, the
+sampling distribution of the group means is assumed approximately normal by the
+central limit theorem (Lumley et al. (2002)
+<doi:10.1146/annurev.publhealth.23.100901.140546>); otherwise, residual
+normality is assessed using @code{shapiro.test()} applied to the standardised
+residuals of @code{lm()}.  If normality is not met, @code{wilcox.test()} is used
+when the predictor has two levels and @code{kruskal.test()} followed by
+@code{pairwise.wilcox.test()} otherwise.  If normality is met,
+@code{levene.test()} assesses variance homogeneity.  For two-level predictors,
+Student's t.test(var.equal = TRUE) is applied if variances are homogeneous and
+Welch's @code{t.test()} otherwise.  For predictors with more than two levels,
+@code{aov()} followed by @code{TukeyHSD()} is applied if variances are
+homogeneous, and @code{oneway.test()} followed by @code{games.howell()}
+otherwise. (2) When both vectors are numerical, @code{lm()} is fitted by default
+(correlation = FALSE).  If correlation = TRUE, Spearman rank correlation is
+performed. (3) When the response is ordinal, it is converted to numeric ranks
+and the non-parametric path from (1) is followed (Wilcoxon or Kruskal-Wallis).
+When both variables are ordinal and correlation = TRUE, Kendall's tau_b is used
+instead. (4) When both vectors are categorical, Cochran's rule (Cochran (1954)
+<doi:10.2307/3001666>) is applied to test independence either by
+@code{chisq.test()} or @code{fisher.test()}.")
     (license license:expat)))
 
 (define-public r-visreg
@@ -3519,13 +3553,13 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "1b8h5vcjah1psa4zwpn2ggrx2zyw62w1qma3hipb4vwfq6nc5ab7"))))
+        (base32 "077b80vvknml2nzvg1y19s475m0pkdmd0iv2yr392a08ym8pijbp"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
@@ -3595,13 +3629,13 @@ comparing them with re-imputed values, and convergence diagnostics.")
 (define-public r-vismeteor
   (package
     (name "r-vismeteor")
-    (version "2.1.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vismeteor" version))
        (sha256
-        (base32 "0hkqzjvxs7myvkqap4rwsdpq2p1a3gfiy97lib9jh2p7qfy1q2vc"))))
+        (base32 "0vsl6hk2klyk9sns7izgn8dj8skbf5zwdm4f2gfds3qk6ygg55v7"))))
     (properties `((upstream-name . "vismeteor")))
     (build-system r-build-system)
     (arguments
@@ -4693,6 +4727,47 @@ based on the work of Franklin & Ray. (1994)
 <https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=555780f6f5d7e537eb1edb28862c86d1519af2be>.")
     (license license:gpl3)))
 
+(define-public r-viewr
+  (package
+    (name "r-viewr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ViewR" version))
+       (sha256
+        (base32 "0vfcyrfkkj5320p0wdd98rxnjb0qal7in9al8nlgh7wgswhwij9k"))))
+    (properties `((upstream-name . "ViewR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinythemes
+                             r-shinyjs
+                             r-shiny
+                             r-rhandsontable
+                             r-jsonlite
+                             r-htmltools
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/itsmdivakaran/viewR")
+    (synopsis "Interactive Data Viewer, Filter, and Editor")
+    (description
+     "This package provides a feature-rich, popup-based interactive interface for
+viewing, exploring, filtering, sorting, editing, analysing, and plotting R data
+frames.  Key features include: a searchable, paginated data table with
+drag-and-drop column reordering and variable-label tooltips'; multi-condition
+filters (AND/OR) with live preview; multi-column sorting; column visibility
+management with search; an Excel-like cell editor powered by rhandsontable';
+find-and-replace across one or all columns (literal or regex) with automatic
+live preview; a Plots tab with auto-detected histograms and bar charts for every
+column; automatic dplyr code generation reflecting every operation performed in
+the UI'; one-click CSV export; and a Variable Info tab with type, missing
+values, and summary statistics.  The entire interface is launched with a single
+call to @code{ViewR()} and works as a popup dialog, in the RStudio Viewer pane,
+or in the system browser.")
+    (license license:expat)))
+
 (define-public r-viewpoly
   (package
     (name "r-viewpoly")
@@ -5508,6 +5583,31 @@ an unblinded placebo participant accepts study vaccine: Tsiatis, A. A. and
 Davidian, M. (2022) <doi:10.1111/biom.13509>.")
     (license license:gpl2)))
 
+(define-public r-vetresearchlmm
+  (package
+    (name "r-vetresearchlmm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VetResearchLMM" version))
+       (sha256
+        (base32 "00clqb2g3y67szw93fxn1z97pqralysjvdj799qxxg9agwrdj8lz"))))
+    (properties `((upstream-name . "VetResearchLMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-quarto))
+    (home-page "https://myaseen208.com/VetResearchLMM/")
+    (synopsis
+     "Linear Mixed Models - An Introduction with Applications in Veterinary Research")
+    (description
+     "R Codes and Datasets for Duchateau, L. and Janssen, P. and Rowlands, G. J.
+(1998).  Linear Mixed Models.  An Introduction with applications in Veterinary
+Research.  International Livestock Research Institute.")
+    (license license:gpl2)))
+
 (define-public r-vetr
   (package
     (name "r-vetr")
@@ -5530,49 +5630,6 @@ Davidian, M. (2022) <doi:10.1111/biom.13509>.")
      "Declarative template-based framework for verifying that objects meet structural
 requirements, and auto-composing error messages when they do not.")
     (license license:gpl2+)))
-
-(define-public r-vetiver
-  (package
-    (name "r-vetiver")
-    (version "0.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vetiver" version))
-       (sha256
-        (base32 "1nqs5panpqr2ga3nz2hbmngrrklbjdqqlh8xd572yvvca57wm8ak"))))
-    (properties `((upstream-name . "vetiver")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-tibble
-                             r-rlang
-                             r-readr
-                             r-rapidoc
-                             r-purrr
-                             r-pins
-                             r-lifecycle
-                             r-hardhat
-                             r-glue
-                             r-generics
-                             r-fs
-                             r-cli
-                             r-cereal
-                             r-butcher
-                             r-bundle))
-    (native-inputs (list r-knitr))
-    (home-page "https://vetiver.posit.co")
-    (synopsis "Version, Share, Deploy, and Monitor Models")
-    (description
-     "The goal of vetiver is to provide fluent tooling to version, share, deploy, and
-monitor a trained model.  Functions handle both recording and checking the
-model's input data prototype, and predicting from a remote API endpoint.  The
-vetiver package is extensible, with generics that can support many kinds of
-models.")
-    (license license:expat)))
 
 (define-public r-verylargeintegers
   (package
@@ -5924,13 +5981,13 @@ the impact of missing fields and fully missing observations.")
 (define-public r-verdadecu
   (package
     (name "r-verdadecu")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verdadecu" version))
        (sha256
-        (base32 "119dmk6fifpgxihxhwdnjijkgbxcna0qmyph48y1cqjwcwl5hhn3"))))
+        (base32 "1kxgmwrg82b2xvxjindmf35f0fm3jivbisyd9j2rglf0vrvm55zf"))))
     (properties `((upstream-name . "verdadecu")))
     (build-system r-build-system)
     (arguments
@@ -6064,6 +6121,44 @@ further customisations.")
     (synopsis "Venn and Euler Diagrams")
     (description "Calculates and displays Venn and Euler Diagrams.")
     (license (license:fsdg-compatible "MPL-1.1"))))
+
+(define-public r-venndiagramlab
+  (package
+    (name "r-venndiagramlab")
+    (version "2.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vennDiagramLab" version))
+       (sha256
+        (base32 "0j3jq33l95jm6kk7g5zh8hvr9advgpc0zqvabdldpnpfw0bygq6p"))))
+    (properties `((upstream-name . "vennDiagramLab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidygraph
+                             r-rsvg
+                             r-patchwork
+                             r-jsonlite
+                             r-gridextra
+                             r-ggraph
+                             r-ggplot2
+                             r-complexupset
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://zoliqua.github.io/Venn-Diagram-Lab/r/")
+    (synopsis "Headless Venn Diagram Analysis and Rendering")
+    (description
+     "Headless companion to the Venn Diagram Lab web tool
+(<https://www.venndiagramlab.org/>).  Build, render, and statistically analyze
+Venn / @code{UpSet} diagrams from CSV / TSV / GMT / GMX inputs.  Provides the
+same 44 SVG models, intersection / Jaccard / hypergeometric statistics, and PDF
+report layout as the web tool, with byte-equivalent TSV exports (parity-tested
+against the published Python package).  Integrates with ggplot2', tidygraph',
+and broom'.")
+    (license license:expat)))
 
 (define-public r-vembedr
   (package
@@ -6265,6 +6360,30 @@ package, users can effectively extract and analyze critical information from
 remote sensing imagery, enhancing their comprehension of vegetation dynamics and
 their importance in global ecosystems.  The package includes the function
 @code{vegetation_indices()}.")
+    (license license:gpl3)))
+
+(define-public r-vegetablessrilanka
+  (package
+    (name "r-vegetablessrilanka")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegetablesSriLanka" version))
+       (sha256
+        (base32 "0s667fl9205y40jgz7951kdifz3273l2f6mswf3vjw65l4k186s9"))))
+    (properties `((upstream-name . "vegetablesSriLanka")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visdat r-tsibble r-naniar r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=vegetablesSriLanka")
+    (synopsis "Daily Vegetable Prices of Sri Lanka")
+    (description
+     "This package provides retail and wholesale vegetable price data from two major
+market hubs in Sri Lanka, Dambulla and Pettah.  Includes tools for analyzing,
+visualizing, and comparing vegetable prices across markets.")
     (license license:gpl3)))
 
 (define-public r-vegclust
@@ -6544,13 +6663,13 @@ Yashunin (2018) <doi:10.1109/TPAMI.2018.2889473>.")
 (define-public r-vectra
   (package
     (name "r-vectra")
-    (version "0.5.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectra" version))
        (sha256
-        (base32 "1r57zw5sw6wg883wh88bsc8psxj4cxvlcyvg67267jm2hikmcvy6"))))
+        (base32 "1m7z8apn6zvmpz815svjp8qpn140bsvrc2ykas90rv8hcprw87sd"))))
     (properties `((upstream-name . "vectra")))
     (build-system r-build-system)
     (arguments
@@ -6567,7 +6686,9 @@ datasets larger than RAM. Provides dplyr'-like verbs @code{(filter()},
 window functions) and common aggregations @code{(n()}, @code{sum()},
 @code{mean()}, @code{min()}, @code{max()}, @code{sd()}, @code{first()},
 @code{last()}) backed by a pure C11 pull-based execution engine and a custom
-on-disk format ('.vtr').")
+on-disk format ('.vtr').  Reads and writes @code{GeoTIFF} (including tiled and
+@code{BigTIFF} layouts) and a tiled raster format ('.vec') with overview
+pyramids and time cubes for larger-than-RAM raster data.")
     (license license:expat)))
 
 (define-public r-vectorwavelet
@@ -6910,38 +7031,6 @@ Under Linear Restrictions: Simulation and Estimation via Minimax Tilting\"
 <doi:10.48550/@code{arXiv.1603.04166>}.")
     (license license:gpl2+)))
 
-(define-public r-veccompare
-  (package
-    (name "r-veccompare")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "veccompare" version))
-       (sha256
-        (base32 "03nyyxvhhwfxxg5w6qflk7q234ipbhj9fd4abcp50sxz3diabch1"))))
-    (properties `((upstream-name . "veccompare")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-venndiagram
-                             r-reshape2
-                             r-qgraph
-                             r-purrr
-                             r-pander
-                             r-gtools
-                             r-corrplot))
-    (home-page "https://github.com/publicus/r-veccompare")
-    (synopsis
-     "Perform Set Operations on Vectors, Automatically Generating All n-Wise Comparisons, and Create Markdown Output")
-    (description
-     "Automates set operations (i.e., comparisons of overlap) between multiple
-vectors.  It also contains a function for automating reporting in RMarkdown', by
-generating markdown output for easy analysis, as well as an RMarkdown template
-for use with RStudio'.")
-    (license license:bsd-3)))
-
 (define-public r-vec2dtransf
   (package
     (name "r-vec2dtransf")
@@ -7084,6 +7173,45 @@ immune V-D-J genomic segments from a variety of species.  Sources include IMGT
 from MP Lefranc (2009) <doi:10.1093/nar/gkn838> and Vgenerepertoire from
 publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
     (license license:gpl2)))
+
+(define-public r-vdiver
+  (package
+    (name "r-vdiver")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vDiveR" version))
+       (sha256
+        (base32 "0zqp60byky2snqk0911lp6cbs9jijciq9yxbhqmbn1dsm7z9yljw"))))
+    (properties `((upstream-name . "vDiveR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stringdist
+                             r-scales
+                             r-rlang
+                             r-rentrez
+                             r-patchwork
+                             r-maps
+                             r-magrittr
+                             r-ggtext
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://cran.r-project.org/package=vDiveR")
+    (synopsis "Visualization of Viral Protein Sequence Diversity Dynamics")
+    (description
+     "To ease the visualization of outputs from Diversity Motif Analyser
+('@code{DiMA}'; <https://github.com/BVU-BILSAB/@code{DiMA>}). @code{vDiveR}
+allows visualization of the diversity motifs (index and its variants â major,
+minor and unique) for elucidation of the underlying inherent dynamics.  Please
+refer <https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
+    (license license:expat)))
 
 (define-public r-vdar
   (package
@@ -7642,35 +7770,6 @@ Honour of Prof. Siegfried Heiler.  Series: Advanced Studies in Theoretical and
 Applied Econometrics.  Springer 2014, p.  9-40.")
     (license license:gpl3+)))
 
-(define-public r-vbtree
-  (package
-    (name "r-vbtree")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VBTree" version))
-       (sha256
-        (base32 "052d4vykm87z3d9rmh8bfx7qkcyx6gkrnsyb79ag1z9lb0gpky17"))))
-    (properties `((upstream-name . "VBTree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensora))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CubicZebra/VBTree")
-    (synopsis "Vector Binary Tree to Make Your Data Management More Efficient")
-    (description
-     "Vector binary tree provides a new data structure, to make your data visiting and
-management more efficient.  If the data has structured column names, it can read
-these names and factorize them through specific split pattern, then build the
-mappings within double list, vector binary tree, array and tensor mutually,
-through which the batched data processing is achievable easily.  The methods of
-array and tensor are also applicable.  Detailed methods are described in Chen
-Zhang et al. (2020) <doi:10.35566/isdsa2019c8>.")
-    (license license:gpl3)))
-
 (define-public r-vbsparsepca
   (package
     (name "r-vbsparsepca")
@@ -8073,6 +8172,31 @@ for Location, Scale and Shape introduced by Rigby and Stasinopoulos (2005,
 <doi:10.1111/j.1467-9876.2005.00510.x>).  Some functions are written in C++
 using Rcpp', developed by Eddelbuettel and Francois (2011,
 <doi:10.18637/jss.v040.i08>).")
+    (license license:expat)))
+
+(define-public r-vasicekfit
+  (package
+    (name "r-vasicekfit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vasicekfit" version))
+       (sha256
+        (base32 "12n8kj1n7bg7s07lmv1anzx9xlk9n9d9jvszgki9cwjp6i84g1pa"))))
+    (properties `((upstream-name . "vasicekfit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/externalmemory/vasicekfit-cran-package")
+    (synopsis "Extended Vasicek Credit Loss Model with Macroeconomic Factors")
+    (description
+     "Fits the extended Vasicek single-factor credit loss model where the probability
+of default depends on macroeconomic covariates.  Maximum likelihood estimates of
+all parameters, including asset value correlation, are obtained via closed-form
+probit-transformed OLS regression; see Mayorov (2026) <doi:10.2139/ssrn.6506378>
+for derivation.")
     (license license:expat)))
 
 (define-public r-vasicek
@@ -8486,36 +8610,6 @@ characteristics (ROC) curve to assess both classification and continuity
 performances of biomarkers, diagnostic tests, or risk prediction models.")
     (license license:gpl2+)))
 
-(define-public r-varjmcm
-  (package
-    (name "r-varjmcm")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "varjmcm" version))
-       (sha256
-        (base32 "1xgy3n57pxhv6wrsw9h4dranxbw6hdpm1f9ra3kwlzrpz5c3289x"))))
-    (properties `((upstream-name . "varjmcm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass r-jmcm r-expm))
-    (home-page "https://cran.r-project.org/package=varjmcm")
-    (synopsis
-     "Estimations for the Covariance of Estimated Parameters in Joint Mean-Covariance Models")
-    (description
-     "The goal of the package is to equip the jmcm package (current version 0.2.1)
-with estimations of the covariance of estimated parameters.  Two methods are
-provided.  The first method is to use the inverse of estimated Fisher's
-information matrix, see M. Pourahmadi (2000) <doi:10.1093/biomet/87.2.425>, M.
-Maadooliat, M. Pourahmadi and J. Z. Huang (2013)
-<doi:10.1007/s11222-011-9284-6>, and W. Zhang, C. Leng, C. Tang (2015)
-<doi:10.1111/rssb.12065>.  The second method is bootstrap based, see Liu, R.Y.
-(1988) <doi:10.1214/aos/1176351062> for reference.")
-    (license license:gpl2+)))
-
 (define-public r-varitas
   (package
     (name "r-varitas")
@@ -8579,31 +8673,6 @@ young and racial/ethnic minority women.  See the reference: JeonâSlaughter,
 H., Chen, X., Tsai, S., Ramanan, B., & Ebrahimi, R. (2021)
 <doi:10.1161/JAHA.120.019217>.")
     (license license:gpl3)))
-
-(define-public r-variosig
-  (package
-    (name "r-variosig")
-    (version "0.3-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "variosig" version))
-       (sha256
-        (base32 "09cxigii0sj78yqd18p4mm9jjqvd1k2cgjy43pxpmqdhia0q2pmv"))))
-    (properties `((upstream-name . "variosig")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-testthat r-sp r-gstat))
-    (home-page "https://cran.r-project.org/package=variosig")
-    (synopsis "Testing Spatial Dependence Using Empirical Variogram")
-    (description
-     "Applying Monte Carlo permutation to generate pointwise variogram envelope and
-checking for spatial dependence at different scales using permutation test.
-Empirical Brown's method and Fisher's method are used to compute overall p-value
-for hypothesis test.")
-    (license license:gpl3+)))
 
 (define-public r-varimp
   (package
@@ -8726,29 +8795,6 @@ the variance gamma distribution of any order about any location.  In addition,
 there are functions for checking the validity of parameters and to interchange
 different sets of parameterizations for the variance gamma distribution.")
     (license license:gpl2+)))
-
-(define-public r-varian
-  (package
-    (name "r-varian")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "varian" version))
-       (sha256
-        (base32 "0jyw46qx2w19h02mrwv3w3n8qc1n4b3ckm38qly1y4a4w9ib6c2i"))))
-    (properties `((upstream-name . "varian")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstan r-mass r-gridextra r-ggplot2 r-formula))
-    (home-page "https://github.com/ElkhartGroup/varian")
-    (synopsis "Variability Analysis in R")
-    (description
-     "Uses a Bayesian model to estimate the variability in a repeated measure outcome
-and use that as an outcome or a predictor in a second stage model.")
-    (license license:expat)))
 
 (define-public r-variableselection
   (package
@@ -9048,6 +9094,36 @@ clusters and their dimensions are selected based on BIC. Candidate models are
 identified based on many runs of K-means algorithm with different random
 initializations of cluster centers.")
     (license license:gpl3)))
+
+(define-public r-varcheck
+  (package
+    (name "r-varcheck")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VARcheck" version))
+       (sha256
+        (base32 "03fhj7jj47iyq40p3vqgx9f3ppvp2rk2bydsli40rshgz4j1mczy"))))
+    (properties `((upstream-name . "VARcheck")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bsiepe/VARcheck")
+    (synopsis "Visual Diagnostic Checks for Vector Autoregressive Models")
+    (description
+     "This package provides model-agnostic visual diagnostics for vector
+autoregressive (VAR) models.  Given empirical data, model predictions,
+residuals, and optionally simulated data, the package assembles a multi-panel
+diagnostic grid: empirical vs. predicted time series, residual inspection,
+residuals vs. predictions scatter, and posterior predictive style checks via
+simulated trajectories.  Output is a patchwork object composed of ggplot2 plots,
+allowing further customisation via standard ggplot2 theme calls.  Follows the
+approach described in Haslbeck et al. (2026) <doi:10.31234/osf.io/k6uz4_v3>.")
+    (license license:expat)))
 
 (define-public r-varbvs
   (package
@@ -10020,34 +10096,6 @@ the @code{roses()} function to make \"roses are red, ...\" style poems and the
 the model.")
     (license license:expat)))
 
-(define-public r-valection
-  (package
-    (name "r-valection")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "valection" version))
-       (sha256
-        (base32 "0104zcg3cw57ksgmb321hnyv095mn3frxci9vikj1smwarpnrpzc"))))
-    (properties `((upstream-name . "valection")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-testthat))
-    (home-page "http://labs.oicr.on.ca/boutros-lab/software/valection")
-    (synopsis "Sampler for Verification Studies")
-    (description
-     "This package provides a binding for the valection program which offers various
-ways to sample the outputs of competing algorithms or parameterizations, and
-fairly assess their performance against each other.  The valection C library is
-required to use this package and can be downloaded from:
-<http://labs.oicr.on.ca/boutros-lab/software/valection>.  Cooper CI, et al;
-Valection: Design Optimization for Validation and Verification Studies; Biorxiv
-2018; <doi:10.1101/254839>.")
-    (license license:gpl3)))
-
 (define-public r-valdrviz
   (package
     (name "r-valdrviz")
@@ -10185,35 +10233,6 @@ comprehensive documentation and error handling.")
 with input validation checks, in a manner suitable for both programmatic and
 interactive use.")
     (license license:expat)))
-
-(define-public r-vagam
-  (package
-    (name "r-vagam")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vagam" version))
-       (sha256
-        (base32 "1bgpf0z23yqyaz7dfmqilyqvr5v4w891027xrlr0mk9grj4srmiq"))))
-    (properties `((upstream-name . "vagam")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncnorm r-mvtnorm r-mgcv r-matrix r-gamm4))
-    (home-page "https://cran.r-project.org/package=vagam")
-    (synopsis "Variational Approximations for Generalized Additive Models")
-    (description
-     "Fits generalized additive models (GAMs) using a variational approximations (VA)
-framework.  In brief, the VA framework provides a fully or at least closed to
-fully tractable lower bound approximation to the marginal likelihood of a GAM
-when it is parameterized as a mixed model (using penalized splines, say).  In
-doing so, the VA framework aims offers both the stability and natural inference
-tools available in the mixed model approach to GAMs, while achieving computation
-times comparable to that of using the penalized likelihood approach to GAMs. See
-Hui et al. (2018) <doi:10.1080/01621459.2018.1518235>.")
-    (license license:gpl3)))
 
 (define-public r-vagalumer
   (package

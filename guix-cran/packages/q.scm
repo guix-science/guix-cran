@@ -1564,39 +1564,40 @@ well as @code{McNeil}, J., Frey, R., and Embrechts, P. (2015)
 <https://ideas.repec.org/b/pup/pbooks/10496.html>.")
     (license license:gpl3)))
 
-(define-public r-quantumops
+(define-public r-quaqcr
   (package
-    (name "r-quantumops")
-    (version "3.0.1")
+    (name "r-quaqcr")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "QuantumOps" version))
+       (uri (cran-uri "quaqcr" version))
        (sha256
-        (base32 "0gl1myf7q444imyvsjvxiaxaahf0n0bsggwbd0z3az73l6yf1gjh"))))
-    (properties `((upstream-name . "QuantumOps")))
+        (base32 "0wsyz78q7xwca1bp3xaw3ix0v1gx4magik46jgqcqw8iggxzmfzg"))))
+    (properties `((upstream-name . "quaqcr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=QuantumOps")
-    (synopsis
-     "Performs Common Linear Algebra Operations Used in Quantum Computing and Implements Quantum Algorithms")
+    (inputs (list))
+    (propagated-inputs (list r-jsonlite))
+    (home-page "https://github.com/bjmt/quaqcr")
+    (synopsis "Quick ATAC-Seq QC")
     (description
-     "This package contains basic structures and operations used frequently in quantum
-computing.  Intended to be a convenient tool to help learn quantum mechanics and
-algorithms.  Can create arbitrarily sized kets and bras and implements quantum
-gates, inner products, and tensor products.  Creates arbitrarily controlled
-versions of all gates and can simulate complete or partial measurements of kets.
- Has functionality to convert functions into equivalent quantum gates and model
-quantum noise.  Includes larger applications, such as Steane error correction
-<DOI:10.1103/physrevlett.77.793>, Quantum Fourier Transform and Shor's algorithm
-(Shor 1999), Grover's algorithm (1996), Quantum Approximation Optimization
-Algorithm (QAOA) (Farhi, Goldstone, and Gutmann 2014) <@code{arXiv:1411.4028>},
-and a variational quantum classifier (Schuld 2018) <@code{arXiv:1804.00633>}.
-Can be used with the gridsynth algorithm <@code{arXiv:1212.6253>} to perform
-decomposition into the Clifford+T set.")
-    (license license:gpl3)))
+     "This package provides a wrapper around the quaqc program described in Tremblay
+and Questa (2024) <doi:10.1093/bioinformatics/btae649>.  quaqc allows for assay
+for transposase-accessible chromatin using sequencing (ATAC-seq) specific
+quality control and read filtering of next-generation sequencing (NGS) data with
+minimal processing time and extremely low memory overhead.  Any number of
+samples can be processed, using multiple threads if desired.  quaqc outputs a
+comprehensive set of aligned read metrics, including alignment size, fragment
+size, percent duplicates, mapq scores, read depth, GC content, and others.
+Although designed for ATAC-seq data, quaqc can also be used for other unspliced
+DNA sequencing experiments (such as chromatin immunoprecipitation sequencing, or
+@code{ChIP-seq}) as many of the metrics are related to general sequencing
+quality.  This R package also provides additional utilities for custom analyses
+and plotting of quaqc results.")
+    (license license:gpl3+)))
 
 (define-public r-quantspec
   (package
@@ -1760,59 +1761,6 @@ models.  Provides point estimates of the conditional quantile function and its
 derivatives based on series approximations to the nonparametric part of the
 model.  Provides pointwise and uniform confidence intervals using analytic and
 resampling methods.")
-    (license license:gpl2+)))
-
-(define-public r-quantoptr
-  (package
-    (name "r-quantoptr")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quantoptr" version))
-       (sha256
-        (base32 "0f9vy9yhya4wpya8n345s6n7a5sb29chdkl5fz6dwa31lp1mvvj3"))))
-    (properties `((upstream-name . "quantoptr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rgenoud r-rdpack r-quantreg))
-    (home-page "https://cran.r-project.org/package=quantoptr")
-    (synopsis "Algorithms for Quantile- And Mean-Optimal Treatment Regimes")
-    (description
-     "Estimation methods for optimal treatment regimes under three different criteria,
-namely marginal quantile, marginal mean, and mean absolute difference.  For the
-first two criteria, both one-stage and two-stage estimation method are
-implemented.  A doubly robust estimator for estimating the quantile-optimal
-treatment regime is also included.")
-    (license license:gpl2+)))
-
-(define-public r-quantnorm
-  (package
-    (name "r-quantnorm")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QuantNorm" version))
-       (sha256
-        (base32 "1hds9ybwsgnmcpa22vlmgdq02ilhn0c6a7z1qjiq4i5iqjd4gwf6"))))
-    (properties `((upstream-name . "QuantNorm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=QuantNorm")
-    (synopsis
-     "Mitigating the Adverse Impact of Batch Effects in Sample Pattern Detection")
-    (description
-     "Modifies the distance matrix obtained from data with batch effects, so as to
-improve the performance of sample pattern detection, such as clustering,
-dimension reduction, and construction of networks between subjects.  The method
-has been published in Bioinformatics (Fei et al, 2018,
-<doi:10.1093/bioinformatics/bty117>).  Also available on @code{GitHub}
-<https://github.com/tengfei-emory/@code{QuantNorm>}.")
     (license license:gpl2+)))
 
 (define-public r-quantkriging
@@ -2365,19 +2313,24 @@ tunes the quantile level to reflect class imbalance.")
 (define-public r-qualypso
   (package
     (name "r-qualypso")
-    (version "2.3")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QUALYPSO" version))
        (sha256
-        (base32 "1nbkbc5lcglrpp4k3jphdzqr9xl5kgdv6sg05ibdcwidn6bk3y5l"))))
+        (base32 "00d3m5g41bzypgm4flal307xcz6casjlqs29abzwqfyxickg1rmz"))))
     (properties `((upstream-name . "QUALYPSO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast r-mass r-expm))
+    (propagated-inputs (list r-statmod
+                             r-rfast
+                             r-mass
+                             r-gamlss-dist
+                             r-gamlss
+                             r-expm))
     (home-page "https://cran.r-project.org/package=QUALYPSO")
     (synopsis
      "Partitioning Uncertainty Components of an Incomplete Ensemble of Climate Projections")
@@ -2559,25 +2512,25 @@ scores following Sokolova and Lapalme (2009 <doi:10.1016/j.ipm.2009.03.002>).")
 (define-public r-quallmer
   (package
     (name "r-quallmer")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quallmer" version))
        (sha256
-        (base32 "194x090jih4wdib7sl5v9r731vssi5pp0w8g0y8x6y7gr1chkhda"))))
+        (base32 "0ffr41gpbqcv5yr91i9m90mzv8av284zka33wmydi688psv9dvxa"))))
     (properties `((upstream-name . "quallmer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-yardstick
-                             r-tidyr
+                             r-vctrs
+                             r-tibble
                              r-rlang
                              r-lifecycle
                              r-irr
                              r-ellmer
-                             r-dplyr
                              r-digest
                              r-cli))
     (native-inputs (list r-knitr))
@@ -2600,7 +2553,7 @@ accuracy, precision, recall, and F1 scores following Sokolova and Lapalme (2009,
 documenting coding workflows following Lincoln and Guba's (1985,
 ISBN:0803924313) framework for establishing trustworthiness in qualitative
 research.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-qualitymeasure
   (package
@@ -2747,13 +2700,13 @@ equation.")
 (define-public r-quadratik
   (package
     (name "r-quadratik")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuadratiK" version))
        (sha256
-        (base32 "1f49hx9a5clif0d144k3vlkf101v1rasa6ayi7yxsw4xln5ifk59"))))
+        (base32 "1r44ydhqhw8kfvzivzqgcqaqh44y9q1j3hi0c7mgx15d33mpb1br"))))
     (properties `((upstream-name . "QuadratiK")))
     (build-system r-build-system)
     (arguments
@@ -3044,36 +2997,6 @@ discrete variables, quantile-based multiple imputation, restricted quantile
 regression, directional quantile classification, and quantile ratio regression.
 A vignette is given in Geraci (2016, The R Journal) <doi:10.32614/RJ-2016-037>
 and included in the package.")
-    (license license:gpl2+)))
-
-(define-public r-qtocen
-  (package
-    (name "r-qtocen")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QTOCen" version))
-       (sha256
-        (base32 "0wlbxk1rd56k02jf3pfzbx6xx5mmf6sb7gvds0067cvb7m42ghcr"))))
-    (properties `((upstream-name . "QTOCen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-rgenoud r-rdpack r-quantreg
-                             r-matrixmodels))
-    (home-page "https://cran.r-project.org/package=QTOCen")
-    (synopsis "Quantile-Optimal Treatment Regimes with Censored Data")
-    (description
-     "This package provides methods for estimation of mean- and quantile-optimal
-treatment regimes from censored data.  Specifically, we have developed distinct
-functions for three types of right censoring for static treatment using quantile
-criterion: (1) independent/random censoring, (2) treatment-dependent random
-censoring, and (3) covariates-dependent random censoring.  It also includes a
-function to estimate quantile-optimal dynamic treatment regimes for independent
-censored data.  Finally, this package also includes a simulation data generative
-model of a dynamic treatment experiment proposed in literature.")
     (license license:gpl2+)))
 
 (define-public r-qtlrel
@@ -3459,13 +3382,13 @@ reduced memory usage with only a modest increase in computation time.")
 (define-public r-qtl2convert
   (package
     (name "r-qtl2convert")
-    (version "0.30")
+    (version "0.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtl2convert" version))
        (sha256
-        (base32 "1rpg74gblh30qy0byxvyhlrimcgx7ml5jn7dxs032my7pa58mspf"))))
+        (base32 "0y6d1bhvmrjsmb15gs024dvkgm5rs0qb50b38jaw4yhydxp8mipb"))))
     (properties `((upstream-name . "qtl2convert")))
     (build-system r-build-system)
     (arguments
@@ -3730,6 +3653,53 @@ is intended to work as a drop-in replacement for the @code{write_*()} and
 @code{read_*()} functions provided by similar packages.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-qsrutils
+  (package
+    (name "r-qsrutils")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QsRutils" version))
+       (sha256
+        (base32 "11i4f68a43qll28qx7p9640pmx37prvd7kpa2zb4zzvn9rg2smp2"))))
+    (properties `((upstream-name . "QsRutils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-stringr
+                             r-srs
+                             r-shortread
+                             r-scales
+                             r-readr
+                             r-rcpp
+                             r-phyloseq
+                             r-multcompview
+                             r-magrittr
+                             r-insect
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-dada2
+                             r-biostrings
+                             r-ape
+                             r-agricolae))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jfq3/QsRutils")
+    (synopsis "R Functions Useful for Community Ecology")
+    (description
+     "This package provides a collection of utility functions for community ecology
+analyses, with emphasis on workflows using the phyloseq and vegan packages.
+Includes functions for normalizing OTU tables, computing alpha diversity via
+rarefaction (using a fast C++ implementation), differential abundance
+comparisons with compact letter displays, primer checking for amplicon
+sequencing, plotting QIIME 2/DADA2 generated transition stats and miscellaneous
+helpers for ordination plots and taxonomic name formatting.")
+    (license license:gpl2)))
+
 (define-public r-qsplines
   (package
     (name "r-qsplines")
@@ -3834,13 +3804,13 @@ hardware <https://quantum-computing.ibm.com/>.")
 (define-public r-qshap
   (package
     (name "r-qshap")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qshap" version))
        (sha256
-        (base32 "11xxihcja4s2y3r6saih11a2f249152ni5dmfz37l3rgnmz1khcv"))))
+        (base32 "0rmkhrrkyw25j76llbx48qj7hp6i4d65i9bf24f8nmxivh27dcaz"))))
     (properties `((upstream-name . "qshap")))
     (build-system r-build-system)
     (arguments
@@ -3859,11 +3829,15 @@ hardware <https://quantum-computing.ibm.com/>.")
     (description
      "Computes feature-specific R-squared (R2) contributions for boosting tree models
 using a Shapley-value-based decomposition of the total R-squared in polynomial
-time.  Supports models fitted with XGBoost and @code{LightGBM}', and provides
-efficient parallel implementations suitable for large-scale problems.  Multiple
-visualization tools are included for interpreting and communicating feature
-contributions.  The methodology is described in Jiang, Zhang, and Zhang (2025)
-<doi:10.48550/@code{arXiv.2407.03515>}.")
+time.  Supports models fitted with XGBoost', @code{LightGBM}', and
+@code{CatBoost}', with optimized backend-specific implementations and cached
+tree summaries suitable for large-scale problems.  Multiple visualization tools
+are included for interpreting and communicating feature contributions.  The
+methodology is described in Jiang, Zhang, and Zhang (2025)
+<doi:10.48550/@code{arXiv.2407.03515>}.  Optional @code{CatBoost} support uses
+the R package catboost', which is not distributed on CRAN; installation
+instructions and released binaries are provided by the @code{CatBoost} project
+at <https://catboost.ai/docs/en/concepts/r-installation>.")
     (license license:gpl2+)))
 
 (define-public r-qsardata
@@ -4001,29 +3975,6 @@ Furthermore, new developments and auxiliary functions for Quantitative Risk
 Management practice.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file LICENCE")))))
-
-(define-public r-qrmix
-  (package
-    (name "r-qrmix")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qrmix" version))
-       (sha256
-        (base32 "1r695d9bmmngvblh9jj0rnjymdaln9w0jywz51wla0bdssssf845"))))
-    (properties `((upstream-name . "qrmix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quantreg r-mass))
-    (home-page "https://cran.r-project.org/package=qrmix")
-    (synopsis "Quantile Regression Mixture Models")
-    (description
-     "This package implements the robust algorithm for fitting finite mixture models
-based on quantile regression proposed by Emir et al., 2017 (unpublished).")
-    (license license:lgpl2.0+)))
 
 (define-public r-qrmdata
   (package
@@ -4893,13 +4844,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "0zzg2p5y8ha8768bx83ywpj06qzs72rgs4jqg91fqxzc5zc1l5ln"))))
+        (base32 "1r46gcvw1k6njcahxc19h4ml460240amcd0w1bv3ly9n1fpiq9wj"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments
@@ -5146,29 +5097,6 @@ ModelizaciÃ³n espacial e intra-anual de la mortalidad en EspaÃ±a.  Una
 herramienta automÃ¡tica para el calculo de productos de vida') for supporting
 this research.")
     (license (license:fsdg-compatible "EPL"))))
-
-(define-public r-qlearning
-  (package
-    (name "r-qlearning")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QLearning" version))
-       (sha256
-        (base32 "1bx77yxsnzh0ny3ghala5fw54lxzrxqk9s32qk3dzvfbyp4paggn"))))
-    (properties `((upstream-name . "QLearning")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=QLearning")
-    (synopsis "Reinforcement Learning using the Q Learning Algorithm")
-    (description
-     "This package implements Q-Learning, a model-free form of reinforcement learning,
-described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
-<doi:10.1145/1143844.1143955>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-qlcdata
   (package
@@ -5721,6 +5649,34 @@ mixtures; <doi:10.1289/EHP5838>.")
 q-gaussian distribution with parameters mu and sig.")
     (license license:gpl2+)))
 
+(define-public r-qgarch
+  (package
+    (name "r-qgarch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qgarch" version))
+       (sha256
+        (base32 "18paqnllhdv96jp7cb8kx8zz4k7k2hnzpjd185y2ngmbas8qnxah"))))
+    (properties `((upstream-name . "qgarch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/sho-125/qgarch")
+    (synopsis "Quadratic GARCH-in-Mean Models for Volatility Feedback")
+    (description
+     "Fits quadratic generalized autoregressive conditional heteroskedasticity-in-mean
+(QGARCH-M) models motivated by Campbell and Hentschel (1992).  The package
+supports models with lambda fixed at zero, lambda restricted to a function of
+the remaining parameters, lambda estimated freely, and a threshold extension
+with state-dependent lambda.  It also provides tools for starting values,
+estimation, forecasting, likelihood-ratio testing, moment diagnostics, and
+replication with the included monthly U.S. stock market dataset.")
+    (license license:expat)))
+
 (define-public r-qgametheory
   (package
     (name "r-qgametheory")
@@ -5851,40 +5807,6 @@ a broader class of statistics.  Generating functions for these moments are also
 closely related to the top-order zonal and invariant polynomials of matrix
 arguments.")
     (license license:gpl3+)))
-
-(define-public r-qfasar
-  (package
-    (name "r-qfasar")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qfasar" version))
-       (sha256
-        (base32 "14370bmq4qx5j02va13wz52m2lgl4vb992p9587z9v2sxl1v4jjg"))))
-    (properties `((upstream-name . "qfasar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=qfasar")
-    (synopsis "Quantitative Fatty Acid Signature Analysis in R")
-    (description
-     "An implementation of Quantitative Fatty Acid Signature Analysis (QFASA) in R.
-QFASA is a method of estimating the diet composition of predators.  The
-fundamental unit of information in QFASA is a fatty acid signature (signature),
-which is a vector of proportions describing the composition of fatty acids
-within lipids.  Signature data from at least one predator and from samples of
-all potential prey types are required.  Calibration coefficients, which adjust
-for the differential metabolism of individual fatty acids by predators, are also
-required.  Given those data inputs, a predator signature is modeled as a mixture
-of prey signatures and its diet estimate is obtained as the mixture that
-minimizes a measure of distance between the observed and modeled signatures.  A
-variety of estimation options and simulation capabilities are implemented.
-Please refer to the vignette for additional details and references.")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-qfasa
   (package
@@ -6696,48 +6618,22 @@ limited to the intervals [0,1], (0,1], [0,1) or (0,1) and you want to use a
 quantile approach.")
     (license license:gpl3)))
 
-(define-public r-qcapro
-  (package
-    (name "r-qcapro")
-    (version "1.1-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QCApro" version))
-       (sha256
-        (base32 "1glfb1x1h05cs07nq5glqvlil58wp3c0kaxi1l7k94y797i8r7hq"))))
-    (properties `((upstream-name . "QCApro")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lpsolve))
-    (home-page "https://cran.r-project.org/package=QCApro")
-    (synopsis
-     "Advanced Functionality for Performing and Evaluating Qualitative Comparative Analysis")
-    (description
-     "This package provides advanced functionality for performing configurational
-comparative research with Qualitative Comparative Analysis (QCA), including
-crisp-set, multi-value, and fuzzy-set QCA. It also offers advanced tools for
-sensitivity diagnostics and methodological evaluations of QCA.")
-    (license license:gpl3)))
-
 (define-public r-qcapower
   (package
     (name "r-qcapower")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qcapower" version))
        (sha256
-        (base32 "14vszidjvyi8namwv5k0hpgdw1dpns5ilvxfwa920ivdg35709ki"))))
+        (base32 "0zndgqm0n9iawwa6fckv2kzmgdly663r17yaw92n6mvhi4gcm58g"))))
     (properties `((upstream-name . "qcapower")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-ggforce r-devtools))
+    (propagated-inputs (list r-ggplot2 r-ggforce))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ingorohlfing/qcapower")
     (synopsis "Estimate Power and Required Sample Size in QCA")
@@ -6755,29 +6651,28 @@ introducing power estimation for QCA is: Rohlfing, Ingo (2018)
 (define-public r-qca
   (package
     (name "r-qca")
-    (version "3.24")
+    (version "3.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QCA" version))
        (sha256
-        (base32 "0ycvlw1kzhz033gj6g314li7hnvawk2napz8sy6h4qxbad30fnc4"))))
+        (base32 "1wvqgv0pg06zgrjncbcs77v8j1rshqjwv09cdaycwp3gp6aq5m47"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-venn r-lpsolve r-declared r-admisc))
+    (propagated-inputs (list r-venn r-declared r-admisc))
     (home-page "https://github.com/dusadrian/QCA")
     (synopsis "Qualitative Comparative Analysis")
     (description
      "An extensive set of functions to perform Qualitative Comparative Analysis: crisp
 sets ('@code{csQCA}'), temporal ('@code{tQCA}'), multi-value ('@code{mvQCA}')
-and fuzzy sets ('@code{fsQCA}'), using a GUI - graphical user interface.  QCA is
-a methodology that bridges the qualitative and quantitative divide in social
-science research.  It uses a Boolean minimization algorithm, resulting in a
-minimal causal configuration associated with a given phenomenon.")
+and fuzzy sets ('@code{fsQCA}').  QCA is a methodology that bridges the
+qualitative and quantitative divide in social science research.  It uses a
+Boolean minimization algorithm, resulting in a minimal causal configuration
+associated with a given phenomenon.")
     (license license:gpl3+)))
 
 (define-public r-qbrms

@@ -185,13 +185,13 @@ channel including geography, traffic sources, time period, etc.")
 (define-public r-yrnd
   (package
     (name "r-yrnd")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yrnd" version))
        (sha256
-        (base32 "1yvszbylc90dlvgn703lfnwx4yf8fr8sz8zshq53gh8096ywpvcr"))))
+        (base32 "08ijhkb3vyg41zg1pi4s2dcwph6bivjp6123wgx2crh3cmqlhl73"))))
     (properties `((upstream-name . "yrnd")))
     (build-system r-build-system)
     (arguments
@@ -208,7 +208,7 @@ channel including geography, traffic sources, time period, etc.")
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=yrnd")
     (synopsis
-     "Extracts Risk Neutral Densities of Prices, Money Market Rates and Government Bond Yields from Fixed Income Options Prices")
+     "Extracts Risk Neutral Densities of Prices, Money Market Rates and Government Bond Yields from Interest Rates Futures Options Prices")
     (description
      "This package provides with parametric risk neutral densities and cumulative
 densities for futures prices on fixed-income products.  It relies on options on
