@@ -5645,35 +5645,36 @@ Graphics, vol.  24, no.  1, pp.  616-625, 2018. <doi:10.1109/TVCG.2017.2744018>.
 (define-public r-nonlineardid
   (package
     (name "r-nonlineardid")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NonlinearDiD" version))
        (sha256
-        (base32 "0p75whzrxgbw77iqkg9gvvinx1lqq1hc7f5llcn15kmfcacm9h7k"))))
+        (base32 "0alnb1y85dn40ym2vrdhnm4d93km7b651dnxfj8b69w2llsxhzpg"))))
     (properties `((upstream-name . "NonlinearDiD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sandwich r-rcpp r-mass r-lmtest r-ggplot2))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-sandwich r-mass r-lmtest r-ggplot2))
     (home-page "https://github.com/causalfragility-lab/NonlinearDiD")
     (synopsis "Staggered Difference-in-Differences with Nonlinear Outcomes")
     (description
-     "This package implements difference-in-differences estimators for staggered
-treatment adoption with binary, count, and other nonlinear outcomes.  Extends
-Callaway and Sant'Anna (2021) <doi:10.1016/j.jeconom.2020.12.001> to handle the
-fundamental identification challenges that arise with nonlinear outcome models
-(logit, probit, Poisson) in heterogeneous treatment timing designs.  Provides
-group-time average treatment effects on the treated (ATT), aggregation schemes,
-and pre-treatment parallel trends tests appropriate for nonlinear settings.
-Methods include doubly-robust semiparametric estimators, nonparametric bounds,
-and an odds-ratio @code{DiD} approach for binary outcomes.  Methods extend
-Callaway and Sant'Anna (2021) <doi:10.1016/j.jeconom.2020.12.001>, Roth and
-Sant'Anna (2023) <doi:10.3982/ECTA19255>, and Wooldridge (2023)
-<doi:10.1093/ectj/utad016>.")
+     "Supports staggered difference-in-differences designs with nonlinear outcomes for
+both panel and repeated cross-section data.  Implements estimators for staggered
+treatment adoption with binary, count, and other nonlinear outcomes, extending
+Callaway and Sant'Anna (2021) <doi:10.1016/j.jeconom.2020.12.001> to settings
+with nonlinear outcome models such as logit, probit, and Poisson.  For panel
+data, units are followed over time and idname identifies repeated observations.
+For repeated cross-section data, observations are independent within each time
+period; idname is optional and may identify survey records or households, but
+the estimator does not require the same units to appear across periods.
+Repeated cross-section estimation includes pooled quasi-maximum likelihood
+approaches motivated by Wooldridge (2023) <doi:10.1093/ectj/utad016>, with
+optional weighting and clustered inference.  Methods also draw on Roth and
+Sant'Anna (2023) <doi:10.3982/ECTA19402> and Sant'Anna and Zhao (2020)
+<doi:10.1016/j.jeconom.2020.06.003>.")
     (license license:expat)))
 
 (define-public r-noncomplyr

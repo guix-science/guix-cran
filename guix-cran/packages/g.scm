@@ -29341,27 +29341,42 @@ other Geocaching-related tasks.")
 (define-public r-geobr
   (package
     (name "r-geobr")
-    (version "1.9.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geobr" version))
        (sha256
-        (base32 "0mn6qrlxxhf444ngdvq5gwvi1kadpg57zgg4gzmmrv186n709s0j"))))
+        (base32 "0lpp9dy4y7jbl3m7ar8ynp496357xvakd647yq295f9b9is6x4q9"))))
     (properties `((upstream-name . "geobr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-fs r-dplyr r-data-table r-curl))
+    (propagated-inputs (list r-stringr
+                             r-sfheaders
+                             r-sf
+                             r-rlang
+                             r-piggyback
+                             r-nanoarrow
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-duckspatial
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-curl
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://ipeagit.github.io/geobr/")
     (synopsis "Download Official Spatial Data Sets of Brazil")
     (description
-     "Easy access to official spatial data sets of Brazil as sf objects in R. The
-package includes a wide range of geospatial data available at various geographic
-scales and for various years with harmonized attributes, projection and fixed
-topology.")
+     "Easy access to official spatial data sets of Brazil.  The package offers a wide
+range of spatial data sets available at various geographic scales and for
+various years with harmonized attributes, projection and fixed topology.  All
+functions allow for seamless integration sf, @code{DuckDB} and Arrow.")
     (license license:expat)))
 
 (define-public r-geobounds
@@ -34217,13 +34232,13 @@ user-defined allometric relationships.")
 (define-public r-gctsc
   (package
     (name "r-gctsc")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gctsc" version))
        (sha256
-        (base32 "0alyxbv38748kw8vb5c7gi7w7476pf1h6mqk8jlcjmq555p5x7ag"))))
+        (base32 "0yslsr1rhhha2fhdklygwixbx133qc9rfwl5ibfjs18afqq9amfa"))))
     (properties `((upstream-name . "gctsc")))
     (build-system r-build-system)
     (arguments
@@ -34234,7 +34249,9 @@ user-defined allometric relationships.")
                              r-truncatednormal
                              r-rcpparmadillo
                              r-rcpp
-                             r-matrix))
+                             r-nlme
+                             r-matrix
+                             r-car))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/QNNHU/gctsc")
     (synopsis "Gaussian and Student-t Copula Models for Count Time Series")

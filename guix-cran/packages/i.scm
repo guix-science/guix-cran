@@ -5819,13 +5819,13 @@ model/data set combination is close-to-linear or not.  See Bates and Watts
 (define-public r-ipeaplot
   (package
     (name "r-ipeaplot")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipeaplot" version))
        (sha256
-        (base32 "1nbgk4vb1a997zim44kpm0wbmx2f43m848pi28x0qfhx7fnn1cmm"))))
+        (base32 "1fys49mx6f1plagj522v3w5il15mysgda5l2j4jw23pfw8ka3nf0"))))
     (properties `((upstream-name . "ipeaplot")))
     (build-system r-build-system)
     (arguments

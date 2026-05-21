@@ -2823,6 +2823,39 @@ structure to separate the recording of time variant/ invariant variables.  See
 the Journal of Statistical Software reference: <doi:10.18637/jss.v110.i07>.")
     (license license:expat)))
 
+(define-public r-cubar
+  (package
+    (name "r-cubar")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cubar" version))
+       (sha256
+        (base32 "0v3i7n452zma836gp6di40kq4wnbpa69gnaf6gkqngpkb7p3742m"))))
+    (properties `((upstream-name . "cubar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-iranges r-ggplot2 r-data-table
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mt1022/cubar")
+    (synopsis "Codon Usage Bias Analysis")
+    (description
+     "This package provides a suite of functions for rapid and flexible analysis of
+codon usage bias.  It provides in-depth analysis at the codon level, including
+relative synonymous codon usage (RSCU), @code{tRNA} weight calculations, machine
+learning predictions for optimal or preferred codons, and visualization of
+codon-anticodon pairing.  Additionally, it can calculate various gene- specific
+codon indices such as codon adaptation index (CAI), effective number of codons
+(ENC), fraction of optimal codons (Fop), @code{tRNA} adaptation index
+(@code{tAI}), mean codon stabilization coefficients (CSCg), and GC contents
+(GC/GC3s/GC4d).  It also supports both standard and non-standard genetic code
+tables found in NCBI, as well as custom genetic code tables.")
+    (license license:expat)))
+
 (define-public r-cub
   (package
     (name "r-cub")

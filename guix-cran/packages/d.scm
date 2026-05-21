@@ -3556,6 +3556,33 @@ information on dtangle see Hunt et al. (2019)
 <doi:10.1093/bioinformatics/bty926>.")
     (license license:gpl3)))
 
+(define-public r-dtableone
+  (package
+    (name "r-dtableone")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Dtableone" version))
+       (sha256
+        (base32 "0pv04l4wxf44zva5w96i02g4z8zx3zgjxxjacfg0vh2f7gx4pjnq"))))
+    (properties `((upstream-name . "Dtableone")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proc r-irr r-epir r-dplyr))
+    (home-page "https://cran.r-project.org/package=Dtableone")
+    (synopsis "Tabular Comparison of Paired Diagnostic Tests")
+    (description
+     "Offers statistical methods to compare diagnostic performance between two binary
+diagnostic tests on the same subject in clinical studies.  Includes functions
+for generating formatted tables to display diagnostic outcomes, facilitating a
+clear and comprehensive comparison directly through the R console.  Inspired by
+and extending the functionalities of the DT@code{ComPair}', tableone', and
+gtsummary packages.")
+    (license license:gpl2)))
+
 (define-public r-dt2
   (package
     (name "r-dt2")
@@ -23287,13 +23314,13 @@ Application to Visualization\", Journal of Computational and Graphical Statistic
 (define-public r-dendrotools
   (package
     (name "r-dendrotools")
-    (version "1.2.15")
+    (version "1.2.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendroTools" version))
        (sha256
-        (base32 "02q20ramz2g3ry2rv6f480w9y1vnsnr6mjfcwby9adbfnylrqyp2"))))
+        (base32 "0bgkhvm8f90bgcljqmjlacn59ipygrr4790wvw4f644r8k523k7g"))))
     (properties `((upstream-name . "dendroTools")))
     (build-system r-build-system)
     (arguments
@@ -23498,31 +23525,37 @@ dendrogram and hclust objects and to set/get labels.")
 (define-public r-dendroanalyst
   (package
     (name "r-dendroanalyst")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendRoAnalyst" version))
        (sha256
-        (base32 "16pj1s9ph0gfk9n2kxwinvmxqzwzqlryn7ph15x8navxxwwbss9g"))))
+        (base32 "1vi57yfn3aybyc245qg9a7c7mmvr8rsyrcr5zi04id9hac33nyls"))))
     (properties `((upstream-name . "dendRoAnalyst")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo
+                             r-waveletcomp
                              r-tidyverse
                              r-tidyr
                              r-tibble
-                             r-stringr
+                             r-signal
+                             r-rlang
                              r-readxl
+                             r-readr
                              r-pspline
+                             r-moments
                              r-minpack-lm
                              r-mgcv
                              r-lubridate
                              r-ggplot2
                              r-forecast
-                             r-dplyr))
+                             r-dplyr
+                             r-changepoint
+                             r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dendRoAnalyst")
     (synopsis "Tool for Processing and Analyzing Dendrometer Data")

@@ -55403,13 +55403,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "0qf83bc0x4v38gsk6xp1vfyallf5gwxas0w8zpra1bx2jn0mb0nm"))))
+        (base32 "1w3a82jgd1xbff879zbkhv5igjcf4w6abqkrzrm80wbnffcmsbbx"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

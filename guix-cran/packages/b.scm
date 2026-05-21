@@ -34894,13 +34894,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backbone" version))
        (sha256
-        (base32 "0p7i2m6gs8vy5br7450b20b4jsj6k1si3fmikrkmgcsniwchyp3s"))))
+        (base32 "003cy2b8f9z42dd9kw3rw9m4xl9h5ghl85ajbcfl5hcxw5sm9bxb"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (arguments
@@ -34908,7 +34908,7 @@ add-in that can be bound to a keyboard shortcut.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-matrix r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://www.zacharyneal.com/backbone")
+    (home-page "https://rbackbone.net")
     (synopsis "Extracts the Backbone from Networks")
     (description
      "An implementation of methods for extracting a sparse unweighted network (i.e.  a

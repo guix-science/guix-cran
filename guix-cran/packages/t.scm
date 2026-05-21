@@ -14911,13 +14911,13 @@ their sources.")
 (define-public r-tokenizers-bpe
   (package
     (name "r-tokenizers-bpe")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tokenizers.bpe" version))
        (sha256
-        (base32 "191mnii9fvh81qsx1sigkk662l4n125w6977wif6fngvsn8a74xi"))))
+        (base32 "0mnsj4bnvlckkfg7vrp4629ygmp9hd3fdccnkm1dxpd6fzrwy1bi"))))
     (properties `((upstream-name . "tokenizers.bpe")))
     (build-system r-build-system)
     (arguments

@@ -15669,13 +15669,13 @@ assessed employing STB-methodology.")
 (define-public r-statuser
   (package
     (name "r-statuser")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statuser" version))
        (sha256
-        (base32 "0aw0w0glhr5kjsjcv761mwvx9lg36z2n9wmb0jql045pg49d8r77"))))
+        (base32 "11qkmc7i5lx9ibhi7k1vqnmyamamx70d6bilkshdmgxjc2lqns1l"))))
     (properties `((upstream-name . "statuser")))
     (build-system r-build-system)
     (arguments
@@ -15686,7 +15686,10 @@ assessed employing STB-methodology.")
                              r-mgcv
                              r-marginaleffects
                              r-magick
-                             r-lmtest))
+                             r-lmtest
+                             r-lmertest
+                             r-digest
+                             r-beeswarm))
     (home-page "https://cran.r-project.org/package=statuser")
     (synopsis "Statistical Tools Designed for End Users")
     (description

@@ -25518,13 +25518,13 @@ OS@code{GeoW4} installer version) of GRASS 8.0 or higher.")
 (define-public r-fastei
   (package
     (name "r-fastei")
-    (version "0.0.16")
+    (version "0.0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastei" version))
        (sha256
-        (base32 "0f7m4glnfi2w13swjkjp27dd33gwnf4d2y1x9v144vi9b4wg9137"))))
+        (base32 "0zvp6y6ac1l2mmn8ih50axb9bpd1qmz55xypp2ajjriqz6q4i2g1"))))
     (properties `((upstream-name . "fastei")))
     (build-system r-build-system)
     (arguments
@@ -29288,13 +29288,13 @@ cloud @code{FaaS} platforms, use the main @code{FaaSr} package available at
 (define-public r-f1pits
   (package
     (name "r-f1pits")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1pits" version))
        (sha256
-        (base32 "1x4zfz3j98qhxr047k3632wcgxphskyrspzz86495nlrrz3v5ydp"))))
+        (base32 "11vgcnx0kf0g1m0fg6ndqwcqwwj4qqj6glvlvgxvwi288j9k6p8m"))))
     (properties `((upstream-name . "f1pits")))
     (build-system r-build-system)
     (arguments

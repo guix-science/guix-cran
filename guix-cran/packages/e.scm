@@ -23476,6 +23476,51 @@ Preisler, H.K. (2007, ISBN: 0849323312).")
 relative to weather and tourism patterns in Australia.")
     (license license:expat)))
 
+(define-public r-ecotonefinder
+  (package
+    (name "r-ecotonefinder")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EcotoneFinder" version))
+       (sha256
+        (base32 "1liqjakzg4c5kgjiir8i4fp4ax0737lfwriz277crh9p3jn3dgmh"))))
+    (properties `((upstream-name . "EcotoneFinder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-vegclust
+                             r-vegan
+                             r-rmisc
+                             r-rlang
+                             r-reshape
+                             r-qgraph
+                             r-purrr
+                             r-plyr
+                             r-philentropy
+                             r-igraph
+                             r-ggplot2
+                             r-e1071
+                             r-corrplot
+                             r-colorspace
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=EcotoneFinder")
+    (synopsis "Characterising and Locating Ecotones and Communities")
+    (description
+     "Analytical methods to locate and characterise ecotones, ecosystems and
+environmental patchiness along ecological gradients.  Methods are implemented
+for isolated sampling or for space/time series.  It includes Detrended
+Correspondence Analysis (Hill & Gauch (1980) <doi:10.1007/BF00048870>), fuzzy
+clustering (De CÃ¡ceres et al. (2010) <doi:10.1080/01621459.1963.10500845>),
+biodiversity indices (Jost (2006) <doi:10.1111/j.2006.0030-1299.14714.x>), and
+network analyses (Epskamp et al. (2012) <doi:10.18637/jss.v048.i04>) - as well
+as tools to explore the number of clusters in the data.  Functions to produce
+synthetic ecological datasets are also provided.")
+    (license license:expat)))
+
 (define-public r-ecotolerance
   (package
     (name "r-ecotolerance")
