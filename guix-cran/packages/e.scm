@@ -7233,13 +7233,13 @@ high-performance C++ code through Rcpp package.")
 (define-public r-etdqualitizer
   (package
     (name "r-etdqualitizer")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETDQualitizer" version))
        (sha256
-        (base32 "1hhn1n98w1pg43wi4rcissw7hhlcfsnz9yb1c1s23mmv716wqvfq"))))
+        (base32 "13ylkgcinqc02ak2iy93qqi99b3brhwbixrj5l7s3pr0ml1llyj1"))))
     (properties `((upstream-name . "ETDQualitizer")))
     (build-system r-build-system)
     (arguments
@@ -7251,9 +7251,12 @@ high-performance C++ code through Rcpp package.")
      "Automated Eye Tracking Data Quality Determination for Screen-Based Eye Trackers")
     (description
      "Compute common data quality metrics for accuracy, precision and data loss for
-screen-based eye trackers.  Supports input data both in pixels on the screen and
-in degrees, output measures are (where appropriate) expressed as angles in
-degrees.")
+screen-based eye trackers.  The package supports gaze input in screen pixels or
+degrees and reports angular measures in degrees where appropriate.  If you use
+this package, please cite Niehorster, D.C., NystrÃ¶m, M., Hessels, R.S.,
+Benjamins, J.S., Andersson, R., and Hooge, I.T.C. (2026).  The fundamentals of
+eye tracking part 7: Determining data quality.  Behavior Research Methods.
+<doi:10.3758/s13428-026-03039-4>.")
     (license license:expat)))
 
 (define-public r-etc
@@ -21742,20 +21745,20 @@ Computer and Information Literacy Study (ICILS), and Civic Education Study
 (define-public r-edotrans
   (package
     (name "r-edotrans")
-    (version "0.2.5")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDOtrans" version))
        (sha256
-        (base32 "0qyg9gcpdh9fchn3ylww1cmb4x1zrrapy9n26gqxncc728526gn7"))))
+        (base32 "1pnkyhwg2nh1k00aqvc53mlmmpannzd6hqcfaccdk0n5pbpvidxn"))))
     (properties `((upstream-name . "EDOtrans")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-opgmmassessment r-abcanalysis))
-    (home-page "https://cran.r-project.org/package=EDOtrans")
+    (propagated-inputs (list r-rcpp r-opgmmassessment r-cabcanalysis))
+    (home-page "https://github.com/JornLotsch/EDOtrans")
     (synopsis "Euclidean Distance-Optimized Data Transformation")
     (description
      "This package provides a data transformation method which takes into account the
@@ -23821,13 +23824,13 @@ quantitative analyses.")
 (define-public r-ecorest
   (package
     (name "r-ecorest")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecorest" version))
        (sha256
-        (base32 "05vrfcsi3z1j8lc8lpmqb7rrgr00xvi6f71x1gp2mqc8rf3f0f4p"))))
+        (base32 "1z95r4pg6lx2y1g2dfg9svl6dm5rmjffz84z4zwf1p06h4036f2x"))))
     (properties `((upstream-name . "ecorest")))
     (build-system r-build-system)
     (arguments

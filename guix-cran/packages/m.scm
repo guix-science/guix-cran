@@ -6039,13 +6039,13 @@ missing information, Computational Statistics & Data Analysis, 41(3-4),
 (define-public r-multimediate
   (package
     (name "r-multimediate")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multimediate" version))
        (sha256
-        (base32 "01bs0ai756p59jk3wp8zl9dpdi5h1ay51bsfhfdabpr4f7m161fg"))))
+        (base32 "0bf95m5q563pgxbpksf6725y4b7qzlyd34nywlmshnmf91b44i6h"))))
     (properties `((upstream-name . "multimediate")))
     (build-system r-build-system)
     (arguments
@@ -6059,8 +6059,8 @@ missing information, Computational Statistics & Data Analysis, 41(3-4),
      "Estimates key quantities in causal mediation analysis - including average causal
 mediation effects (indirect effects), average direct effects, total effects, and
 proportions mediated - in the presence of multiple uncausally related mediators.
- Methods are described by JÃ©rolon et al., (2021) <doi:10.1515/ijb-2019-0088>
-and extended to accommodate survival outcomes as described by Domingo-Relloso et
+ Methods are described by Jerolon et al., (2021) <doi:10.1515/ijb-2019-0088> and
+extended to accommodate survival outcomes as described by Domingo-Relloso et
 al., (2024) <doi:10.1101/2024.02.16.24302923>.")
     (license license:gpl3)))
 
@@ -14157,13 +14157,13 @@ aprendizaje estadistico\"
 (define-public r-mpactr
   (package
     (name "r-mpactr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpactr" version))
        (sha256
-        (base32 "17npn6c722awgvzwjrjbxmlj85r05b1nv82ajhpapz4bk79irvql"))))
+        (base32 "0bhfp660qm1jk3c5ag4czakibrj29n0yh2llwd362br52db4k8q3"))))
     (properties `((upstream-name . "mpactr")))
     (build-system r-build-system)
     (arguments
@@ -15815,6 +15815,33 @@ diaphysis.  Calculate two and three-dimensional morphometric maps,
 cross-sectional geometric parameters, and semilandmarks on the periosteal and
 endosteal contours of each cross section.")
     (license license:gpl2)))
+
+(define-public r-morpheus
+  (package
+    (name "r-morpheus")
+    (version "1.0-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "morpheus" version))
+       (sha256
+        (base32 "107q6449pbhfhq6w2jdvfrmmlcax6349y327y585grli3g3scsf2"))))
+    (properties `((upstream-name . "morpheus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-mass r-jointdiag))
+    (home-page "https://github.com/yagu0/morpheus")
+    (synopsis "Estimate Parameters of Mixtures of Logistic Regressions")
+    (description
+     "Mixture of logistic regressions parameters (H)estimation with (U)spectral
+methods.  The main methods take d-dimensional inputs and a vector of binary
+outputs, and return parameters according to the GLMs mixture model (General
+Linear Model).  For more details see chapter 3 in the @code{PhD} thesis of
+Mor-Absa Loum: <https://theses.fr/s156435>, available here
+<https://theses.hal.science/tel-01877796/document>.")
+    (license license:expat)))
 
 (define-public r-morphemepiece-data
   (package
@@ -18284,19 +18311,19 @@ synthetic data sets according to user's needs.")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.41")
+    (version "3.45")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "1lk5hzm4zvlfkanw2m5ihdwy3pdmjva1yk4d0lz0mjjkjnwfnla5"))))
+        (base32 "0h3i70hvn56w38kh391sg9f4q499mzwb49irs6d6qsdrc88q88jg"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra))
+    (propagated-inputs (list r-terra r-effectsize))
     (home-page "http://modeva.r-forge.r-project.org/")
     (synopsis "Model Evaluation and Analysis")
     (description
@@ -20487,6 +20514,34 @@ restricted or standard maximum likelihood inference, perform hypothesis testing
 with Satterthwaite or Kenward-Roger adjustment, and extract least square means
 estimates by using emmeans'.")
     (license license:asl2.0)))
+
+(define-public r-mmrcaseselection
+  (package
+    (name "r-mmrcaseselection")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MMRcaseselection" version))
+       (sha256
+        (base32 "06kqmy4f8s0sj44xa9kplh0rml8y4mlr4lzzf454zkign8m51im3"))))
+    (properties `((upstream-name . "MMRcaseselection")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ingorohlfing/MMRcaseselection")
+    (synopsis "Case Classification and Selection Based on Regression Results")
+    (description
+     "Researchers doing a mixed-methods analysis (nested analysis as developed by
+Lieberman (2005) <doi:10.1017/S0003055405051762>) can use the package for the
+classification of cases and case selection using results of a linear regression.
+ One can designate cases as typical, deviant, extreme and pathway case and use
+different case selection strategies for the choice of a case belonging to one of
+these types.")
+    (license license:gpl3)))
 
 (define-public r-mmr
   (package

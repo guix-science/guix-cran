@@ -1933,13 +1933,13 @@ compatible with ggplot2 and dplyr'.")
 (define-public r-autotab
   (package
     (name "r-autotab")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autotab" version))
        (sha256
-        (base32 "1fc6j2dxkaqh7wygzh266gilj15kg5gviwmh4x9kxci3flcn6v0a"))))
+        (base32 "1587y5q4d9j5aliiwhbg8sgb4mxhk1x81whnr9rhsf18n74wcxw0"))))
     (properties `((upstream-name . "autotab")))
     (build-system r-build-system)
     (arguments
@@ -2591,13 +2591,13 @@ data, returning clear, easy-to-read results.  Ideal for all experience levels.")
 (define-public r-automatedreclin
   (package
     (name "r-automatedreclin")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "automatedRecLin" version))
        (sha256
-        (base32 "0q9999l7zqhlkakz2q8g9zdbvxl73g1d2fjzg6mc41d3jqfyj1hs"))))
+        (base32 "14bn74gl6ph1d5pix7y49l28fvwacv942bp2g75ixhpdnxl1dmhr"))))
     (properties `((upstream-name . "automatedRecLin")))
     (build-system r-build-system)
     (arguments
@@ -16472,30 +16472,26 @@ guarantees.  Chen, S., Ma, S., Xue, L., & Zou, H. (2020)
 (define-public r-amadeus
   (package
     (name "r-amadeus")
-    (version "1.3.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amadeus" version))
        (sha256
-        (base32 "1sh5w6lsvq9k86y2v7hiy14xsq31sk8g8flvdb95j3rpkjddpqx9"))))
+        (base32 "0rbb25xqqcpl74hv1sxxswbhcfpfbcbk171r4bj1xpxv49xmx6dp"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-testthat
                              r-terra
                              r-stringi
                              r-stars
                              r-sftime
                              r-sf
-                             r-rvest
                              r-rlang
                              r-rdpack
-                             r-nhdplustools
-                             r-jsonlite
                              r-httr2
                              r-exactextractr
                              r-dplyr
@@ -24217,13 +24213,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralonco" version))
        (sha256
-        (base32 "0vmafmv7nmsx901jxqrd1h5jhrsbmwyab7mmv3fl0dra9dqs16y3"))))
+        (base32 "164ibk76iklq3g1wgbwc6kpj2kw3jkfhbrbr6cwm19jddq7isljb"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (arguments

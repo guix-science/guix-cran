@@ -909,13 +909,13 @@ Two-sample Kolmogorov-Smirnov and Kuiper Tests.  submitted.")
 (define-public r-ksformat
   (package
     (name "r-ksformat")
-    (version "0.4.2")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ksformat" version))
        (sha256
-        (base32 "0i7rcrcgxqp9qgp5lsqna2l0gfgf28z7nsamnlnx18cyr1nc004h"))))
+        (base32 "1cfnfp57gnhyrhxv0qkvzm1bnvvx47wjh4hj4j6bv50v90cjwm7m"))))
     (properties `((upstream-name . "ksformat")))
     (build-system r-build-system)
     (arguments

@@ -557,13 +557,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.50")
+    (version "4.54")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "07zlw7l600gmwzcjra9x6d4ll8s7iyxs9ihqsjqaw5qh1n9xqjkd"))))
+        (base32 "0jr875204qy14ay6mn3vkwh5c0xj2x35fqppgf8ff46kzh5d5njf"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -16692,13 +16692,13 @@ described in the Nature Communications article by Nowatzky (2025)
 (define-public r-fiodata
   (package
     (name "r-fiodata")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fiodata" version))
        (sha256
-        (base32 "0ck2lh6mk8iklz2g0kc3wrx3knlhrlv29y7czbrr760vzgyds91g"))))
+        (base32 "1c4d3533bwpx7k7jv2acx26xp4yadrqwq08ja84hv1i0l7736wz1"))))
     (properties `((upstream-name . "fiodata")))
     (build-system r-build-system)
     (arguments

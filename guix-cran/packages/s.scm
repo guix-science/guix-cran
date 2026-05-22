@@ -14404,13 +14404,13 @@ the ability to export results in common formats.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "11ddk9gpim5fsci15iq3f4n931cr444n4whzkqah2nrii69sz2ci"))))
+        (base32 "1p95knp3lwb6222b7hjrsc2ihgm921ji52zm06fya45i9041yfvc"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
@@ -16670,13 +16670,13 @@ developed by Biometris.")
 (define-public r-statgenhtp
   (package
     (name "r-statgenhtp")
-    (version "1.0.9.1")
+    (version "1.0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenHTP" version))
        (sha256
-        (base32 "1hsyhcc2pmgxjngv2ldjhaarj2i1098n65p8yfrg94p7w2i7qlqx"))))
+        (base32 "0whjhmxi3102m5knrnd97xwcqlcs4bv68rr4wh1sjw27vfijh9nd"))))
     (properties `((upstream-name . "statgenHTP")))
     (build-system r-build-system)
     (arguments
@@ -23867,13 +23867,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "0q7r6dzzpc34wa67ryn7ssxvpfj2aqs59sh4s08xrgmcarq3wjzz"))))
+        (base32 "1y06sc66xhvlrpk5zx232gyz38pfjx2z0ya6plimb7lx27w636wq"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -32686,13 +32686,13 @@ and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "4.0.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "0ylhhxixlikgw02ylwkmcwi8m5vb8wwpmmh7m32j9lmwqrd4fpck"))))
+        (base32 "0645gyc7qwl92hicd7iv06bsqhpx8vzf7jn55d06bv4jzbk20f2n"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -38268,6 +38268,31 @@ Manly BFJ, Navarro Alberto JA & Gerow K (2024) <doi:10.1201/9781003453482>.")
     (description
      "Produce small area population estimates by fitting census data to survey data.")
     (license license:gpl3)))
+
+(define-public r-smriti
+  (package
+    (name "r-smriti")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smriti" version))
+       (sha256
+        (base32 "0fn6hkr9g9q7d1cfcs6lclnbs8qkmzm4nr9n0i3z4zmrnadcrh13"))))
+    (properties `((upstream-name . "smriti")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-missforest r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=smriti")
+    (synopsis "Automated Routing Engine for Longitudinal Missing Data")
+    (description
+     "An automated routing engine for longitudinal missing data.  It utilizes a
+Lagrange-constrained Random Forest based on sample size, missingness rate, and
+skew to preserve structural variance.")
+    (license license:expat)))
 
 (define-public r-smr
   (package
@@ -59895,13 +59920,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "1kwrwqzppw1l4y32gfgz55ikb257gfl5gz41f0wfnwp8h8sqdm1c"))))
+        (base32 "0mhbraysvwpzh474zznc2qyzdwfwym1vzhbr352jpj0wxwnlahrr"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -59909,6 +59934,7 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
       #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
+                             r-parglm
                              r-parallelly
                              r-knitr
                              r-ggplot2
@@ -62245,13 +62271,13 @@ and Van Keilegom (2024) <doi:10.1080/01621459.2022.2161387>.")
 (define-public r-seminrextras
   (package
     (name "r-seminrextras")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminrExtras" version))
        (sha256
-        (base32 "0jydd8qkmzdmbrnhd28j9afwlk936lgdhjs9hir66n8z4hhbjlbp"))))
+        (base32 "0v9cj39is8k1pa3gnxa7589dimv1mzy48019w6kvzawj05qxmpgs"))))
     (properties `((upstream-name . "seminrExtras")))
     (build-system r-build-system)
     (arguments
@@ -69940,6 +69966,46 @@ Please also see Qian K, Fu SW, Li HW, Li WV (2022)
 <doi:10.1186/s13059-022-02649-3>.")
     (license license:gpl3)))
 
+(define-public r-scindex
+  (package
+    (name "r-scindex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scindex" version))
+       (sha256
+        (base32 "1dh6xjwgj9zbdz8vf1k5sq8ngavlypckir0lbp7bv2zydk5vv9fk"))))
+    (properties `((upstream-name . "scindex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=scindex")
+    (synopsis "Strategic Convergence Index for Inter-Rater Reliability")
+    (description
+     "Inter-rater reliability analysis for binary classification tasks involving two
+or more raters within a signal detection-theoretic framework.  User-supplied
+rating data are standardised into a common long-format structure.  The package
+automatically computes Cohen's kappa for two raters and Fleiss kappa for
+multiple raters.  When ground-truth labels are available, rater-specific hit
+rates, false-alarm rates, sensitivity, specificity, and decision thresholds are
+estimated from observed classification responses using standard signal
+detection-theoretic transformations (@code{DeCarlo}, 1998)
+<doi:10.1037/1082-989X.3.2.186>.  The package implements the Strategic
+Convergence Index (SCI; Gianeselli, 2026) <doi:10.1177/00131644261417643>,
+defined as SCI = 1 - [Var(t_i) / Var_max], where Var(t_i) denotes the variance
+of rater-specific decision thresholds and Var_max denotes the reference variance
+under maximal threshold dispersion.  SCI quantifies convergence in rater
+decision criteria beyond observed agreement alone and complements classical
+agreement coefficients by distinguishing agreement in observed categorical
+outcomes from convergence in latent decision thresholds under an explicit signal
+detection-theoretic model of categorical judgment.  The package provides
+structured summaries and threshold-based diagnostics for applications in which
+similar agreement coefficients may reflect substantively different underlying
+decision criteria across raters.")
+    (license license:gpl3)))
+
 (define-public r-scimo
   (package
     (name "r-scimo")
@@ -70732,13 +70798,13 @@ Gaussian'.")
 (define-public r-scf
   (package
     (name "r-scf")
-    (version "1.0.8")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scf" version))
        (sha256
-        (base32 "1bxi2v38da5bwkl1qxi7jiqfgk7dvh5vgs9acp1d6knwlw7dgzyd"))))
+        (base32 "1cfvp2lz1gpnqah9phr153dy1xyd4kjk6lpwmmpiwazi0i65wn27"))))
     (properties `((upstream-name . "scf")))
     (build-system r-build-system)
     (arguments

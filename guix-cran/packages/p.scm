@@ -24914,13 +24914,13 @@ given non negative random variables.")
 (define-public r-plotbb
   (package
     (name "r-plotbb")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotbb" version))
        (sha256
-        (base32 "1f0g5yqjm49bly36advf47j3z2c7acry795s8zdnn0j2y06rz1n0"))))
+        (base32 "14db3z33qxm4i7prcc5x8si6b63dr6dk4ycvgzdmscy9640bzh6a"))))
     (properties `((upstream-name . "plotbb")))
     (build-system r-build-system)
     (arguments
@@ -45427,13 +45427,13 @@ versions.")
 (define-public r-pandemonium
   (package
     (name "r-pandemonium")
-    (version "0.2.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pandemonium" version))
        (sha256
-        (base32 "1sryfw4sfsl31rp49r4bk9r21kx4yiyl69dzl6g63fhd44smj4cb"))))
+        (base32 "0ci022khrn2vyzv4m5c87y047s0c616svmnrh8p3lr9mh1cdblxd"))))
     (properties `((upstream-name . "pandemonium")))
     (build-system r-build-system)
     (arguments

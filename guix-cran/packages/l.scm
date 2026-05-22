@@ -3168,31 +3168,30 @@ of the methods used in the package to calculate the indicator.")
 (define-public r-lpdensity
   (package
     (name "r-lpdensity")
-    (version "2.5")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpdensity" version))
        (sha256
-        (base32 "15w6paw8kd0sblmsif7bg0g6zm47c87x8isjj0a36gs65fwx5mad"))))
+        (base32 "1lylm3if944p9dx31js4553frabwiqnqlxcgvsgamka30vvmn4sx"))))
     (properties `((upstream-name . "lpdensity")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mass r-ggplot2))
-    (home-page "https://cran.r-project.org/package=lpdensity")
+    (home-page "https://nppackages.github.io/")
     (synopsis "Local Polynomial Density Estimation and Inference")
     (description
-     "Without imposing stringent distributional assumptions or shape restrictions,
-nonparametric estimation has been popular in economics and other social sciences
-for counterfactual analysis, program evaluation, and policy recommendations.
-This package implements a novel density (and derivatives) estimator based on
-local polynomial regressions, documented in Cattaneo, Jansson and Ma (2022)
-<doi:10.18637/jss.v101.i02>: @code{lpdensity()} to construct local polynomial
-based density (and derivatives) estimator, and @code{lpbwdensity()} to perform
-data-driven bandwidth selection.")
-    (license license:gpl2)))
+     "This package implements local polynomial distribution and density methods for
+point estimation, inference and bandwidth selection, documented in Cattaneo,
+Jansson and Ma (2020) <doi:10.1080/01621459.2019.1635480>, Cattaneo, Jansson and
+Ma (2022) <doi:10.18637/jss.v101.i02>, and Cattaneo, Jansson and Ma (2024)
+<doi:10.1016/j.jeconom.2021.01.006>. @code{lpdensity()} constructs local
+polynomial distribution and density estimators with robust bias-corrected
+inference, and @code{lpbwdensity()} implements data-driven bandwidth selection.")
+    (license license:gpl3)))
 
 (define-public r-lpda
   (package
@@ -3250,13 +3249,13 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
 (define-public r-lpcde
   (package
     (name "r-lpcde")
-    (version "0.1.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpcde" version))
        (sha256
-        (base32 "0b7hycykr29m7alsjfjlr34z70rvjpan9x9iich9bfmx9qs4662i"))))
+        (base32 "0p1zijij8lwaafzp0wr9ndw0r6wycvlh71zapz2vz3ympf78x0yj"))))
     (properties `((upstream-name . "lpcde")))
     (build-system r-build-system)
     (arguments
@@ -3271,14 +3270,14 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
                              r-mass
                              r-ggplot2
                              r-combinat))
-    (home-page "https://cran.r-project.org/package=lpcde")
+    (home-page "https://nppackages.github.io/lpcde/")
     (synopsis
      "Boundary Adaptive Local Polynomial Conditional Density Estimator")
     (description
      "This package provides tools for estimation and inference of conditional
 densities, derivatives and functions.  This is the companion software for
 Cattaneo, Chandak, Jansson and Ma (2024) <doi:10.3150/23-BEJ1711>.")
-    (license license:gpl3+)))
+    (license license:gpl3)))
 
 (define-public r-lpc
   (package
@@ -8624,13 +8623,13 @@ Wild et al. (2005) <doi:10.1111/j.1524-4733.2005.04054.x>.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "1mi5bn85kjwy9bvpamn3l1hnwrcq9bds5p6vhzxfk76jpgbdx3c1"))))
+        (base32 "0zzs98qjsdkci949j32gn67zqv0hkpmshwy4mlg2y7lh4cr99gym"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
@@ -8656,9 +8655,10 @@ Wild et al. (2005) <doi:10.1111/j.1524-4733.2005.04054.x>.")
     (synopsis "Interface for Large Language Model APIs in R")
     (description
      "This package provides a unified interface to large language models across
-multiple providers.  Supports text generation, structured output with optional
-JSON Schema validation, and embeddings.  Includes tidyverse-friendly helpers,
-chat session, consistent error handling, and parallel batch tools.")
+multiple providers.  Supports text generation, tidy data workflows, structured
+output with optional JSON Schema validation, XML-like tag extraction, and
+embeddings.  Includes chat sessions, consistent error handling, and parallel
+batch tools.")
     (license license:expat)))
 
 (define-public r-llmjson
@@ -11525,24 +11525,24 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "2.0.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "0s3jszczs6w81yqipyjqk30rcz5mz1674a7bv9h5vnr3mblfqpw5"))))
+        (base32 "1sa89r5p27bhbsfy0ci7jl22kq2ydpk61z8vdcfn0qhfbym9zi1j"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-matrixstats
                              r-matrix
+                             r-gtools
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WinzarH/LikertMakeR/")
@@ -20702,31 +20702,6 @@ Barbash & Amos Tanay, <doi:10.1038/s41591-021-01468-6>).  Allows users to easily
 obtain normalized values for standard lab results, and to visualize their
 distributions.  See more at <https://tanaylab.weizmann.ac.il/labs/>.")
     (license license:expat)))
-
-(define-public r-lablaster
-  (package
-    (name "r-lablaster")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lablaster" version))
-       (sha256
-        (base32 "082gyfqaakl08d016p7sk1qapdkpry82sbxcsj46z50ls7sza3ab"))))
-    (properties `((upstream-name . "lablaster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-smooth r-scales r-rlang r-magrittr r-ggplot2))
-    (home-page "https://github.com/alexsb1/lablaster")
-    (synopsis "Laser Ablation Blast Through Endpoint Detection")
-    (description
-     "Imports a data frame containing a single time resolved laser ablation mass
-spectrometry analysis of a foraminifera (or other carbonate shell), then detects
-when the laser has burnt through the foraminifera test as a function of change
-in signal over time.")
-    (license license:lgpl3+)))
 
 (define-public r-labelvector
   (package

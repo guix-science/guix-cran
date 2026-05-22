@@ -3528,13 +3528,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.1.7")
+    (version "2.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "07394w77dc295k9fpv6wwx8py8jbqj19x3w0y3akqx4nald344b4"))))
+        (base32 "0gsccpn6mxk5456jac3i3m6kcrz6cj9r2nig37sqrhrnbr8f7m0d"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -14161,13 +14161,13 @@ more information.")
 (define-public r-ropencvlite
   (package
     (name "r-ropencvlite")
-    (version "4.110.0")
+    (version "4.130.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROpenCVLite" version))
        (sha256
-        (base32 "1jls8am2k7xlly10q0jy9mkvmpw7azysfdq0jxzzih75gvnw3c4w"))))
+        (base32 "1i01wgi7vxflay2rr89k01fk75i1gd07sywf0x0z25r9kmm51zi7"))))
     (properties `((upstream-name . "ROpenCVLite")))
     (build-system r-build-system)
     (arguments
@@ -14176,7 +14176,7 @@ more information.")
     (inputs (list cmake))
     (native-inputs (list r-knitr))
     (home-page "https://swarm-lab.github.io/ROpenCVLite/")
-    (synopsis "Helper Package for Installing OpenCV with R")
+    (synopsis "Helper Package for Installing 'OpenCV'")
     (description
      "Installs @code{OpenCV} for use by other packages. @code{OpenCV}
 <https://opencv.org/> is library of programming functions mainly aimed at
@@ -14841,6 +14841,42 @@ clauses in a single statement.  For more detailed information on these
 functions, please refer to \"Enhanced Aggregation, Cube, Grouping and Rollup\"
 <https://cwiki.apache.org/confluence/display/Hive/Enhanced+Aggregation%2C+Cube%2C+Grouping+and+Rollup>.")
     (license license:expat)))
+
+(define-public r-rollshap
+  (package
+    (name "r-rollshap")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rollshap" version))
+       (sha256
+        (base32 "1b2vm25g145yg88rls829v5g9y9q7n68mbfc5frifh9i66hf4v5d"))))
+    (properties `((upstream-name . "rollshap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-roll r-rcppparallel r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/jasonjfoster/rollshap")
+    (synopsis "Rolling Shapley Values")
+    (description
+     "Analytical computation of rolling and expanding Shapley values for time-series
+data.  The rollshap package decomposes the coefficient of determination
+(R-squared) of a linear regression into nonnegative contributions from each
+explanatory variable using the Shapley value from cooperative game theory
+(Shapley, 1953, <doi:10.1515/9781400881970-018>).  For each window, the exact
+Shapley value is computed by fitting all subsets of the explanatory variables
+and averaging the marginal contribution to R-squared across all orderings, which
+returns an order-invariant attribution that sums to the full-model R-squared.
+Use cases include variable importance, factor attribution, and feature selection
+in time-series regression.  The package supports rolling and expanding windows,
+weights, and handling of missing values via min_obs', complete_obs', and
+na_restore arguments.  The implementation uses the online and offline algorithms
+from the roll package to compute rolling and expanding cross-products
+efficiently with parallelism across columns and windows provided by
+@code{RcppParallel}'.")
+    (license license:gpl2+)))
 
 (define-public r-rollout
   (package
@@ -24412,13 +24448,13 @@ Based on \"Robust Likelihood Cross-Validation for Kernel Density Estimation,\" W
 (define-public r-rlas
   (package
     (name "r-rlas")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlas" version))
        (sha256
-        (base32 "0bf6qyfvnwkvbpilrrmyg8ba6d9x6qx4aw95gh8csa6qsfg95b1m"))))
+        (base32 "19j56l4x2r0i418kml4v0k5izs8mhrp210vmlr51421pmawbai1m"))))
     (properties `((upstream-name . "rlas")))
     (build-system r-build-system)
     (arguments
@@ -32879,6 +32915,32 @@ documents by Facebook Marketing API
     (description "This package provides an interface to the Facebook API.")
     (license license:gpl2)))
 
+(define-public r-rextor
+  (package
+    (name "r-rextor")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rextor" version))
+       (sha256
+        (base32 "0hc6cb5pizb840wi9ap7grkpr8hgim40lnp9nghkffwlqlv97d9q"))))
+    (properties `((upstream-name . "rextor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://iscience-kn.github.io/rextor/")
+    (synopsis "Prepare 'WEXTOR' Data")
+    (description
+     "Facilitate data preparation for data collected on WEXTOR <https://wextor.eu>,
+created by Reips and Neuhaus (2002) <doi:10.3758/bf03195449>.  Perform
+plausibility and other checks and make use of cool color palettes and themes for
+data visualization.")
+    (license license:gpl3+)))
+
 (define-public r-rextendr
   (package
     (name "r-rextendr")
@@ -33658,6 +33720,50 @@ play-by-play) files can be especially difficult to parse.  This package does the
 parsing on those files, returning the requested data in the most practical R
 structure to use for sabermetric or other analyses.")
     (license license:gpl2+)))
+
+(define-public r-retroharmonize
+  (package
+    (name "r-retroharmonize")
+    (version "0.2.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "retroharmonize" version))
+       (sha256
+        (base32 "0c7c3myrh2fqg2sqnr9z0xmm23kk0vl9fdhcxddp3jwsdnz6zwz0"))))
+    (properties `((upstream-name . "retroharmonize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-snakecase
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-labelled
+                             r-here
+                             r-haven
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-dataset
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://retroharmonize.dataobservatory.eu/")
+    (synopsis "Ex Post Survey Data Harmonization")
+    (description
+     "Assist in reproducible retrospective (ex-post) harmonization of data,
+particularly individual level survey data, by providing tools for organizing
+metadata, standardizing the coding of variables, and variable names and value
+labels, including missing values, and documenting the data transformations, with
+the help of comprehensive s3 classes.")
+    (license license:gpl3)))
 
 (define-public r-retrodesign
   (package
@@ -35612,13 +35718,13 @@ to simplify the creation of maps of the data.")
 (define-public r-rerddaputils
   (package
     (name "r-rerddaputils")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddapUtils" version))
        (sha256
-        (base32 "063gr1m873vm3jbrbjbxc6b0rm7m5zq8d1a1m3w77b1av93n2m3r"))))
+        (base32 "0r1m3y0j39jscqlpm1nhb3b23a380dv6jg8hi610fvb525pwynmd"))))
     (properties `((upstream-name . "rerddapUtils")))
     (build-system r-build-system)
     (arguments
@@ -41823,6 +41929,51 @@ documents, e.g. using Sweave'.")
 instruments and event arms.")
     (license license:expat)))
 
+(define-public r-redcapsync
+  (package
+    (name "r-redcapsync")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "REDCapSync" version))
+       (sha256
+        (base32 "1im1xzsk00a30k5sidih77nkajj7wz6s6d8m6vy6j9pcxaxycqy5"))))
+    (properties `((upstream-name . "REDCapSync")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-skimr
+                             r-redcapr
+                             r-redcapapi
+                             r-readxl
+                             r-r6
+                             r-openxlsx
+                             r-lubridate
+                             r-hoardr
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thecodingdocs/REDCapSync")
+    (synopsis "Encapsulated 'REDCap' Projects for Synchronized Data Pipelines")
+    (description
+     "Wraps dozens of REDCap API endpoints into a standardized R6 object.  Research
+Electronic Data Capture ('REDCap') is a survey and database web application
+software maintained by Vanderbilt University.  It has a robust application
+programming interface (API) utilized by several R packages.  RED@code{CapSync}
+uses @code{redcapAPI} and RED@code{CapR} behind-the-scenes to retrieve all
+metadata, data, and log details for a project.  To minimize unnecessary server
+calls, the interim REDCap log is analyzed and used to only update necessary
+records.  Furthermore, the user can define custom datasets that save to a
+directory.  Those datasets continue to refresh when projects are synced.  Having
+a secure, standardized, API-efficient, project-agnostic R object for REDCap
+projects, streamlines downstream use in scripts, functions, and shiny
+applications.")
+    (license license:gpl3+)))
+
 (define-public r-redcapr
   (package
     (name "r-redcapr")
@@ -46876,31 +47027,31 @@ DDI Codebook 2.5 with flexible API creation.")
 (define-public r-rddensity
   (package
     (name "r-rddensity")
-    (version "2.6")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rddensity" version))
        (sha256
-        (base32 "0a72cfy1y2q4hkq66h0xcwiincvj9x1dlzi4j9cmxn0689hsy2rr"))))
+        (base32 "0p9hdzp5vsrxnq82aixhb5znn5fl2djv2k88j56ssvmqysq5mi59"))))
     (properties `((upstream-name . "rddensity")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-lpdensity r-ggplot2))
-    (home-page "https://cran.r-project.org/package=rddensity")
+    (home-page "https://rdpackages.github.io/")
     (synopsis "Manipulation Testing Based on Density Discontinuity")
     (description
      "Density discontinuity testing (a.k.a.  manipulation testing) is commonly
 employed in regression discontinuity designs and other program evaluation
 settings to detect perfect self-selection (manipulation) around a cutoff where
 treatment/policy assignment changes.  This package implements manipulation
-testing procedures using the local polynomial density estimators:
-@code{rddensity()} to construct test statistics and p-values given a
-prespecified cutoff, @code{rdbwdensity()} to perform data-driven bandwidth
-selection, and @code{rdplotdensity()} to construct density plots.")
-    (license license:gpl2)))
+testing procedures using local polynomial density estimators: @code{rddensity()}
+constructs test statistics and p-values given a prespecified cutoff,
+@code{rdbwdensity()} performs data-driven bandwidth selection, and
+@code{rdplotdensity()} constructs density plots.")
+    (license license:gpl3)))
 
 (define-public r-rddapp
   (package
@@ -55328,25 +55479,28 @@ in research.  Trends in Ecology and Evolution, 37: 725-728.")
 (define-public r-rasterpic
   (package
     (name "r-rasterpic")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterpic" version))
        (sha256
-        (base32 "0x1ilss73b95964k5p5nwjidddsgn6gpcp9lnqxchp5mar1bvxn7"))))
+        (base32 "0zp9nhn1dm85ix2ni5sa7qgcyp6wsl744kj57vnkd3mm35dbmv4f"))))
     (properties `((upstream-name . "rasterpic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-terra r-sf r-png))
-    (native-inputs (list r-quarto r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/rasterpic/")
     (synopsis "Convert Digital Images into 'SpatRaster' Objects")
     (description
-     "Generate @code{SpatRaster} objects, as defined by the terra package, from
-digital images, using a specified spatial object as a geographical reference.")
+     "Create @code{SpatRaster} objects, as defined by the terra package, from digital
+images using a spatial object as a geographic reference.  Supported inputs
+include objects from the sf', terra and stars packages.  The main function is an
+S3 generic, so other packages can provide methods for additional spatial
+classes.")
     (license license:expat)))
 
 (define-public r-rasterpdf

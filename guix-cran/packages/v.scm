@@ -6055,6 +6055,31 @@ start of sentences, writing out dates in full following US or UK style, and
 managing capitalisations in tidy data.")
     (license license:expat)))
 
+(define-public r-venny
+  (package
+    (name "r-venny")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "venny" version))
+       (sha256
+        (base32 "121s621c984alvs3224q7x7k3vgvipmv7lg5bf3cqy4n3qfpb7c0"))))
+    (properties `((upstream-name . "venny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-polyclip r-ggplot2))
+    (home-page "https://cran.r-project.org/package=venny")
+    (synopsis "Venn Diagram")
+    (description
+     "Generate Venn plots, summary tables, and ellipse paths for polygon clipping.
+Provides direct access to subsets of interest and offers flexible customization
+of Venn diagrams.  Summary tables are also available when Venn diagram
+visualization is not suitable.")
+    (license license:expat)))
+
 (define-public r-vennplot
   (package
     (name "r-vennplot")

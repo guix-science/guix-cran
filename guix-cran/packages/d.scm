@@ -4471,26 +4471,33 @@ implemented based on the DStorage class.")
 (define-public r-dsir
   (package
     (name "r-dsir")
-    (version "0.2.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSIR" version))
        (sha256
-        (base32 "1zxgn2w0w7snrhb8dsmncyljdxanlpjyncsnnh8xbich76wc54rf"))))
+        (base32 "10imq51gw75fz8vqh0d1y464lwfsll4b3hl26azrznq1xa1k81hl"))))
     (properties `((upstream-name . "DSIR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-httr2 r-ggplot2 r-flextable r-cli))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-httr2
+                             r-ggplot2
+                             r-flextable
+                             r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/shanlong-who/DSIR")
-    (synopsis "Data Science Infrastructure for Global Health in R")
+    (synopsis "Data Science Infrastructure for Global Health")
     (description
-     "This package provides tools for global health data analysis, including a
-publication-ready ggplot2 theme, a flextable defaults helper, a thin pie chart
-wrapper, built-in regional country-code datasets, and convenience clients for
-the World Health Organization Global Health Observatory (GHO) OData API
+     "Supports global health data analysis, including a publication-ready ggplot2
+theme, a flextable defaults helper, a thin pie chart wrapper, built-in regional
+country-code datasets with a WHO region lookup helper, a geometric mean function
+for indicator aggregation, and convenience clients for the World Health
+Organization Global Health Observatory (GHO) OData API
 <https://ghoapi.azureedge.net/api/> and the United Nations Sustainable
 Development Goals (SDG) API <https://unstats.un.org/SDGAPI/swagger/>.")
     (license license:expat)))
@@ -7574,13 +7581,13 @@ manipulation.")
 (define-public r-dplr
   (package
     (name "r-dplr")
-    (version "1.7.8")
+    (version "1.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dplR" version))
        (sha256
-        (base32 "0jrbcwq0cdv5m4i2wm9m2z93hssl08gnxg7nrsix644ifk0k737p"))))
+        (base32 "0axhacqfvdds6g2grl6j69rh97hbm6ygyi6a4q3danfssy82fysc"))))
     (properties `((upstream-name . "dplR")))
     (build-system r-build-system)
     (arguments

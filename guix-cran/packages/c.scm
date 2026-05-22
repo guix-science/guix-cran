@@ -1304,6 +1304,34 @@ clustered permutation test on the individual-level outcomes for cluster
 randomized trials.")
     (license license:gpl2+)))
 
+(define-public r-cvcqv
+  (package
+    (name "r-cvcqv")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cvcqv" version))
+       (sha256
+        (base32 "1mznvwdqywyc85jn9xhbvf3q4f0gag9dks96swz31ahcvs6wb56j"))))
+    (properties `((upstream-name . "cvcqv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sciviews r-r6 r-mbess r-dplyr r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MaaniBeigy/cvcqv")
+    (synopsis "Coefficient of Variation (CV) with Confidence Intervals (CI)")
+    (description
+     "This package provides some easy-to-use functions and classes to calculate
+variability measures such as coefficient of variation with confidence intervals
+provided with all available methods.  References are Panichkitkosolkul (2013)
+<doi:10.1155/2013/324940>, Altunkaynak & Gamgam (2018)
+<doi:10.1080/03610918.2018.1435800>, Albatineh', Kibria', Wilcox & Zogheib
+(2014) <doi:10.1080/02664763.2013.847405>.")
+    (license license:gpl3)))
+
 (define-public r-cvcovest
   (package
     (name "r-cvcovest")
@@ -16007,6 +16035,46 @@ Registry of Open Data on AWS (Amazon Web Services) and represents the surface of
 the Earth including buildings, infrastructure and vegetation.")
     (license license:gpl3)))
 
+(define-public r-copernicusdataspace
+  (package
+    (name "r-copernicusdataspace")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CopernicusDataspace" version))
+       (sha256
+        (base32 "1s5vd3n4xlp670f83zqkf9hp5lqlsdy6lzgqxjxyhd783zn2aick"))))
+    (properties `((upstream-name . "CopernicusDataspace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-memoise
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli
+                             r-aws-s3))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pepijn-devries/CopernicusDataspace")
+    (synopsis
+     "Search Download and Handle Data from the Copernicus Data Space Ecosystem")
+    (description
+     "The Copernicus Data Space Ecosystem, is an open ecosystem that provides free
+instant access to a wide range of data and services from the Copernicus Sentinel
+missions and more on our planetâs land, oceans and atmosphere.  This package
+provides entry points to several APIs allowing users to access the data directly
+in R.")
+    (license license:gpl3+)))
+
 (define-public r-copernicusclimate
   (package
     (name "r-copernicusclimate")
@@ -23371,13 +23439,13 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-comexr
   (package
     (name "r-comexr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comexr" version))
        (sha256
-        (base32 "06jlw75y7lcd4n0zkzy2pph7g8556kyxhsxx999gqnk7vlwzdwyi"))))
+        (base32 "1jkdc73vpp8x0yrb9v3rfl6l9255i4i2scavd0dfk7iwhvixf9n2"))))
     (properties `((upstream-name . "comexr")))
     (build-system r-build-system)
     (arguments
@@ -54486,27 +54554,27 @@ construction details see also Dimitriadis, DÃ¼mbgen, Henzi, Puke, Ziegel (2022
 (define-public r-calibratessb
   (package
     (name "r-calibratessb")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalibrateSSB" version))
        (sha256
-        (base32 "0qwqvyrpprxc5v0ng6qjp9gmdf0n0iiv46z14d8h303xpi84g42x"))))
+        (base32 "027lqwlimb6zwcfzrlvw9sf0lkn12czc3zrfyihapyxyrq2jdxab"))))
     (properties `((upstream-name . "CalibrateSSB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survey))
-    (home-page "https://github.com/statisticsnorway/CalibrateSSB")
+    (home-page "https://github.com/statisticsnorway/ssb-calibratessb")
     (synopsis "Weighting and Estimation for Panel Data with Non-Response")
     (description
      "This package provides functions to calculate weights, estimates of changes and
 corresponding variance estimates for panel data with non-response.  Partially
 overlapping samples are handled.  Initially, weights are calculated by linear
 calibration.  By default, the survey package is used for this purpose.  It is
-also possible to use @code{ReGenesees}, which can be installed from
+also possible to use @code{ReGenesees}', which can be installed from
 <https://github.com/@code{DiegoZardetto/ReGenesees>}.  Variances of linear
 combinations (changes and averages) and ratios are calculated from a covariance
 matrix based on residuals according to the calibration model.  The methodology

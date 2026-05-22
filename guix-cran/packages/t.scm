@@ -2470,13 +2470,13 @@ Tufte-style handouts in html formats with full support for rmarkdown features.")
 (define-public r-tufte
   (package
     (name "r-tufte")
-    (version "0.14.0")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tufte" version))
        (sha256
-        (base32 "0jkp90678xrgzq6qd7n6wxmbd0s52q32n30d33jlg1w511adss8b"))))
+        (base32 "1znl5rpjwmpavi9l7mabidd7i3fil96h3x2jfn6qllbizvjyvzn9"))))
     (properties `((upstream-name . "tufte")))
     (build-system r-build-system)
     (arguments
@@ -22853,13 +22853,13 @@ automatically summarize the properties of the binned columns.")
 (define-public r-tidybde
   (package
     (name "r-tidybde")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyBdE" version))
        (sha256
-        (base32 "1sc6kp9hvc22swmdfqjhqfqmp6lv4831zkmv2c99m63nc63qgwmk"))))
+        (base32 "0xjwgg6vmjhv1yqm8ciqvpwzlqrwab5iqy06zinih2iyg9xzq4zj"))))
     (properties `((upstream-name . "tidyBdE")))
     (build-system r-build-system)
     (arguments
@@ -22873,14 +22873,14 @@ automatically summarize the properties of the binned columns.")
                              r-dplyr))
     (native-inputs (list r-quarto))
     (home-page "https://ropenspain.github.io/tidyBdE/")
-    (synopsis "Download Data from Bank of Spain")
+    (synopsis "Retrieve Data from 'Banco de EspaÃ±a'")
     (description
-     "This package provides tools to download data series from Banco de EspaÃ±a
-('@code{BdE}') on tibble format.  Banco de EspaÃ±a is the national central bank
-and, within the framework of the Single Supervisory Mechanism ('SSM'), the
-supervisor of the Spanish banking system along with the European Central Bank.
-This package is in no way sponsored endorsed or administered by Banco de
-EspaÃ±a'.")
+     "This package provides tools for retrieving time series data from Banco de
+EspaÃ±a ('@code{BdE}') as tibble objects.  Banco de EspaÃ±a is the national
+central bank and, within the framework of the Single Supervisory Mechanism
+('SSM'), the supervisor of the Spanish banking system alongside the European
+Central Bank.  This package is not sponsored, endorsed or administered by Banco
+de EspaÃ±a'.")
     (license license:gpl3+)))
 
 (define-public r-tidybayes

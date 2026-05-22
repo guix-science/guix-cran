@@ -8823,13 +8823,13 @@ in practical clinical trial analyses.")
 (define-public r-bonsai
   (package
     (name "r-bonsai")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bonsai" version))
        (sha256
-        (base32 "01li3l7fas15gg2ibvxv50gy6y6c1q3466z5y13s0kjmxd1534ib"))))
+        (base32 "1c2a1kgm92qzciyw5m5x8g8qwkwy064g3fhwmyx680ii1fafvhkb"))))
     (properties `((upstream-name . "bonsai")))
     (build-system r-build-system)
     (arguments
@@ -10674,13 +10674,13 @@ and plottings.")
 (define-public r-bmgarch
   (package
     (name "r-bmgarch")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmgarch" version))
        (sha256
-        (base32 "0a0svnb7wxm9v8mzk0ld28scp51sp4rsgspxccqpkbmj31njc4d0"))))
+        (base32 "0w1a4yl5nvbrgyx8yhzmakrap9ls9wv3cbacjxqx2fzi300510z8"))))
     (properties `((upstream-name . "bmgarch")))
     (build-system r-build-system)
     (arguments
@@ -10704,13 +10704,15 @@ and plottings.")
      "Fit Bayesian multivariate GARCH models using Stan for full Bayesian inference.
 Generate (weighted) forecasts for means, variances (volatility) and
 correlations.  Currently DCC(P,Q), CCC(P,Q), @code{pdBEKK(P,Q}), and BEKK(P,Q)
-parameterizations are implemented, based either on a multivariate gaussian
-normal or student-t distribution.  DCC and CCC models are based on Engle (2002)
-<doi:10.1198/073500102288618487> and Bollerslev (1990).  The BEKK
-parameterization follows Engle and Kroner (1995) <doi:10.1017/S0266466600009063>
-while the @code{pdBEKK} as well as the estimation approach for this package is
-described in Rast et al. (2020) <doi:10.31234/osf.io/j57pk>.  The fitted models
-contain rstan objects and can be examined with rstan functions.")
+parameterizations are implemented, alongside a constant covariance baseline
+(that can be used for testing whether GARCH is warranted), based either on a
+multivariate gaussian normal or student-t distribution.  DCC and CCC models are
+based on Engle (2002) <doi:10.1198/073500102288618487> and Bollerslev (1990).
+The BEKK parameterization follows Engle and Kroner (1995)
+<doi:10.1017/S0266466600009063> while the @code{pdBEKK} as well as the
+estimation approach for this package is described in Rast et al. (2020)
+<doi:10.31234/osf.io/j57pk>.  The fitted models contain rstan objects and can be
+examined with rstan functions.")
     (license license:gpl3+)))
 
 (define-public r-bmet
@@ -15863,13 +15865,13 @@ Ontology, KEGG', CRAN and Bioconductor.")
 (define-public r-bioleak
   (package
     (name "r-bioleak")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioLeak" version))
        (sha256
-        (base32 "0y6yxambih49jfxr2q3ajz5a7gphdyk82syphxk96jv5wzvwggs6"))))
+        (base32 "1400hgbn4jzvry2d28hxh03vwi1ilhswpch0c57pdxckjqwf5w91"))))
     (properties `((upstream-name . "bioLeak")))
     (build-system r-build-system)
     (arguments
@@ -29124,6 +29126,35 @@ methods and generate forecasts with uncertainty quantification.  Implements
 approaches described in <doi:10.48550/@code{arXiv.2411.05371>} and
 <doi:10.1002/sim.9164>.")
     (license license:cc0)))
+
+(define-public r-bayesianetas
+  (package
+    (name "r-bayesianetas")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesianETAS" version))
+       (sha256
+        (base32 "06w1qsam4ibzdm5cm0b3hzby7cy7421ksz9j4ah0myjlz7aywz1i"))))
+    (properties `((upstream-name . "bayesianETAS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://doi.org/10.1785/0120200198")
+    (synopsis
+     "Bayesian Estimation of the Temporal and Spatio-Temporal ETAS Models for Earthquake Occurrences")
+    (description
+     "The Epidemic Type Aftershock Sequence (ETAS) model is widely used for modelling
+and forecasting earthquake occurrences.  This package implements Bayesian
+estimation routines for both the temporal and spatial ETAS model, allowing
+samples to be drawn from the full posterior distribution of the model parameters
+given an earthquake catalogue.  The methods are described in Ross (2021)
+\"Bayesian Estimation of the ETAS Model for Earthquake Occurrences\"
+<doi:10.1785/0120200198>.")
+    (license license:gpl3)))
 
 (define-public r-bayesiandisaggregation
   (package

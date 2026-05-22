@@ -16618,13 +16618,13 @@ not adequately captured by simpler models.")
 (define-public r-gkwdist
   (package
     (name "r-gkwdist")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkwdist" version))
        (sha256
-        (base32 "1hm7814k220sy2yxb97z3rn1xg7143cjv6614cgz7p253ly0mgx7"))))
+        (base32 "02w99rapcvql4mwpyhmspnslj4jyjv7zpk25ls2k3mim7wfgxip8"))))
     (properties `((upstream-name . "gkwdist")))
     (build-system r-build-system)
     (arguments
@@ -20991,23 +20991,33 @@ point-to-point connections in a polar coordinate space.")
 (define-public r-ggpointless
   (package
     (name "r-ggpointless")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpointless" version))
        (sha256
-        (base32 "0n68m4p0k3a3kqb38h8i6vzcddfy8xc5zsk9jy126cijbgzqjkgb"))))
+        (base32 "08k837fxdvzi68lil9arbqgd1f1vh2m21z24dyrykgkm19gr92qb"))))
     (properties `((upstream-name . "ggpointless")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-lifecycle r-ggplot2 r-cli))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-farver
+                             r-cli))
     (home-page "https://flrd.github.io/ggpointless/")
     (synopsis "Extra Geometries and Stats for 'ggplot2'")
-    (description "This package provides a collection of layers for ggplot2'.")
+    (description
+     "This package provides a collection of layers for ggplot2'.  Provides geoms built
+on linear and radial gradients from the grid package, giving areas, bars, paths,
+rectangles, and ridgelines a fading or glowing visual effect.  Also includes
+mathematically driven layers â catenary curves, Chaikin's corner-cutting
+smoothing (Chaikin, 1974, <doi:10.1016/0146-664X(74)90028-8>), and
+Fourier-series reconstruction â plus Lexis diagrams, isotype bar charts.")
     (license license:expat)))
 
 (define-public r-ggpmx

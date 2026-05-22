@@ -3025,6 +3025,53 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
 (2024) <doi:10.1038/s41586-023-06618-z>.")
     (license license:gpl3)))
 
+(define-public r-htrspranalysis
+  (package
+    (name "r-htrspranalysis")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htrSPRanalysis" version))
+       (sha256
+        (base32 "1rnhk1n70dbynkbjsk24z6xsfhj3fjm5r4spfgim5yp69m1x2l5v"))))
+    (properties `((upstream-name . "htrSPRanalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-openxlsx
+                             r-minpack-lm
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=htrSPRanalysis")
+    (synopsis "Analysis of Surface Plasmon Resonance Data")
+    (description
+     "Analysis of Surface Plasmon Resonance (SPR) and Biolayer Interferometry data,
+with automations for high-throughput SPR. This version of the package fits the
+1: 1 binding model, with and without bulkshift.  It offers optional local or
+global Rmax fitting.  The user must provide a sample sheet and a Carterra output
+file in Carterra's current format.  There is a utility function to convert from
+Carterra's old output format.  The user may run a custom pipeline or use the
+provided Runscript', which will produce a pdf file containing fitted Rmax, ka,
+kd and standard errors, a plot of the sensorgram and fits, and a plot of
+residuals.  The script will also produce a .csv file with all of the relevant
+parameters for each spot on the SPR chip.")
+    (license license:gpl3+)))
+
 (define-public r-htmxr
   (package
     (name "r-htmxr")
@@ -10572,6 +10619,52 @@ trait-specific heritability and classification to enhance accuracy in sample
 size estimation.")
     (license license:gpl3)))
 
+(define-public r-hespdiv
+  (package
+    (name "r-hespdiv")
+    (version "1.2.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hespdiv" version))
+       (sha256
+        (base32 "11skrfbibjgka1zklv9fwvsy4cwa4bs2kihgbksqq6hk76b283s2"))))
+    (properties `((upstream-name . "hespdiv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-scales
+                             r-rlang
+                             r-rgl
+                             r-rcolorbrewer
+                             r-pracma
+                             r-magick
+                             r-igraph
+                             r-gridgraphics
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-desctools))
+    (home-page "https://doi.org/10.1111/pala.12702")
+    (synopsis
+     "Hierarchical Spatial Data Subdivision into Topologically Contiguous Units")
+    (description
+     "Implementation of the @code{HespDiv} framework for hierarchical spatial
+subdivision of geographical occurrence data.  The main function @code{hespdiv()}
+performs iterative spatially constrained subdivision of a study area to identify
+topologically contiguous clusters in geographic space using user-defined or
+preset subdivision methods.  Additional functions provide tools for analysing
+subdivision results, visualizing hierarchical spatial structures, and evaluating
+robustness through sensitivity analyses and statistical testing.  Some examples
+use the optional HDData data package, which is available from @code{GitHub} at
+Liudas-Dau/hespdiv_data.  The methodology is described in Daumantas and
+Spiridonov (2024) <doi:10.1111/pala.12702>.")
+    (license license:gpl3)))
+
 (define-public r-hesim
   (package
     (name "r-hesim")
@@ -15926,13 +16019,13 @@ and visualization of identified crossovers in the gametes.")
 (define-public r-hanyupinyin
   (package
     (name "r-hanyupinyin")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hanyupinyin" version))
        (sha256
-        (base32 "0pjpfkm4dhhncmfsv8brw7rjvdcn8gdyazsvfl9k9rl02jsf1lsm"))))
+        (base32 "0369y1j6cpgm1s2pr6xlff0idjcismav8q7y01sq14i72ycy0bdg"))))
     (properties `((upstream-name . "hanyupinyin")))
     (build-system r-build-system)
     (arguments

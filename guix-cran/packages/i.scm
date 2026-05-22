@@ -1671,13 +1671,13 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 (define-public r-iswr
   (package
     (name "r-iswr")
-    (version "2.0-11")
+    (version "2.0-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISwR" version))
        (sha256
-        (base32 "00p9r7czmxgh0kxf6lk4ql5avp99s4lm100fsm0l0c1vfgkixqii"))))
+        (base32 "11bf4gakz4bjazjx4xrng1af8b9llv9k8bgdxz02ivsy95cwsip2"))))
     (properties `((upstream-name . "ISwR")))
     (build-system r-build-system)
     (arguments
