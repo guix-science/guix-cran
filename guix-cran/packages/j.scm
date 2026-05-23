@@ -3376,13 +3376,13 @@ medical and health sciences.")
 (define-public r-jmbdirect
   (package
     (name "r-jmbdirect")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMbdirect" version))
        (sha256
-        (base32 "03fa4jx66k1fkyjx3brxz30yrrc9mgrhlcna8qzxd8rswplz7zfi"))))
+        (base32 "1azx3xld6msiyl4pi639h3h7zpx3iq94nmgkbnyp1vwj74v2q70l"))))
     (properties `((upstream-name . "JMbdirect")))
     (build-system r-build-system)
     (arguments

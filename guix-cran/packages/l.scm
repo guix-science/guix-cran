@@ -20703,6 +20703,31 @@ obtain normalized values for standard lab results, and to visualize their
 distributions.  See more at <https://tanaylab.weizmann.ac.il/labs/>.")
     (license license:expat)))
 
+(define-public r-lablaster
+  (package
+    (name "r-lablaster")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lablaster" version))
+       (sha256
+        (base32 "082gyfqaakl08d016p7sk1qapdkpry82sbxcsj46z50ls7sza3ab"))))
+    (properties `((upstream-name . "lablaster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-smooth r-scales r-rlang r-magrittr r-ggplot2))
+    (home-page "https://github.com/alexsb1/lablaster")
+    (synopsis "Laser Ablation Blast Through Endpoint Detection")
+    (description
+     "Imports a data frame containing a single time resolved laser ablation mass
+spectrometry analysis of a foraminifera (or other carbonate shell), then detects
+when the laser has burnt through the foraminifera test as a function of change
+in signal over time.")
+    (license license:lgpl3+)))
+
 (define-public r-labelvector
   (package
     (name "r-labelvector")

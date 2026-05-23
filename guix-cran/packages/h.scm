@@ -15689,13 +15689,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "2.0.747")
+    (version "2.0.757")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "0dbia3caqpcy21x6dzsprlwvmnadd2brh1xcmvjlbz8ca8406cph"))))
+        (base32 "130y2hav6zaj03qlf3qqafl3s95sz0i4c5x8fbrlcxrvc1pjdy6j"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (arguments
@@ -16916,13 +16916,13 @@ property lists.  Uses the HDF5 library developed by The HDF Group
 (define-public r-h3sdm
   (package
     (name "r-h3sdm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h3sdm" version))
        (sha256
-        (base32 "0rj9vy3r38n4c486khp8wb308c6n7qa4r4wcani91lr9w1y2z08g"))))
+        (base32 "0fngvxl5a6bw79mh62qalyflancpb9lp82q3ivryh822v5i0lry7"))))
     (properties `((upstream-name . "h3sdm")))
     (build-system r-build-system)
     (arguments

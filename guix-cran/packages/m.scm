@@ -4822,13 +4822,13 @@ digital terrain models using a variable focal windows size (Ilich et al. (2023)
 (define-public r-multisa
   (package
     (name "r-multisa")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiSA" version))
        (sha256
-        (base32 "1ym1kqf062a08nl4dsqc7jsh90jbk0mvl82nnfizpxg8wh8m6rmr"))))
+        (base32 "1wkdxv5xnp1j8jzk0yhis3llii4wgmbz7gpb9j3m284ywd4psd1n"))))
     (properties `((upstream-name . "multiSA")))
     (build-system r-build-system)
     (arguments
@@ -9792,13 +9792,13 @@ information for the same.")
 (define-public r-mspca
   (package
     (name "r-mspca")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msPCA" version))
        (sha256
-        (base32 "1llckhamdsbacjmd0rq46fq44ky9jd3rjznl7kn7gphjcscq7f33"))))
+        (base32 "09dsylgyp04kh4bwpkfa0zjrmjb148sgs191gpiwysw9k8ny6cvf"))))
     (properties `((upstream-name . "msPCA")))
     (build-system r-build-system)
     (arguments
@@ -9811,7 +9811,7 @@ information for the same.")
     (description
      "This package implements an algorithm for computing multiple sparse principal
 components of a dataset.  The method is based on Cory-Wright and Pauphilet
-\"Sparse PCA with Multiple Principal Components\" (2022)
+\"Sparse PCA with Multiple Principal Components\" (2026)
 <doi:10.48550/@code{arXiv.2209.14790>}.  The algorithm uses an iterative
 deflation heuristic with a truncated power method applied at each iteration to
 compute sparse principal components with controlled sparsity.")
@@ -22963,13 +22963,13 @@ joint tuning of machine learning algorithms and debiasing methods.")
 (define-public r-mlr3db
   (package
     (name "r-mlr3db")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3db" version))
        (sha256
-        (base32 "08wacgh54s1a6r5ky9ns9gcm214wz0jc4k3vxhmj63n5x6fp02w1"))))
+        (base32 "1i5lnyg9g0lkrbph5myaidw8k0gpm0cwpv6g7yi2b0h91771znhg"))))
     (properties `((upstream-name . "mlr3db")))
     (build-system r-build-system)
     (arguments
@@ -36093,13 +36093,13 @@ detection of fronts based on the thermic front parameter [Hewson, 1998,
 (define-public r-meteo
   (package
     (name "r-meteo")
-    (version "2.0-4")
+    (version "2.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteo" version))
        (sha256
-        (base32 "04fwyqi40fdg9zp6dc3018plca8v7xx7dmsqy4lq58da79q01ns4"))))
+        (base32 "0b24drf23skmj2sd4ffvznhsnbahj58nwvfn4dqg5kjh6wd4l1pi"))))
     (properties `((upstream-name . "meteo")))
     (build-system r-build-system)
     (arguments
@@ -40749,6 +40749,35 @@ predictors greatly exceeds the number of observations (p>>n) making it
 particularly suitable for genomics data and other large-scale biomedical
 studies.")
     (license license:gpl2)))
+
+(define-public r-megatrees
+  (package
+    (name "r-megatrees")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "megatrees" version))
+       (sha256
+        (base32 "048sffq90gp0lw11jmf5nwpd1jl3w0nxd27z1ca8wi4pclza4fbi"))))
+    (properties `((upstream-name . "megatrees")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ape))
+    (home-page "https://cran.r-project.org/package=megatrees")
+    (synopsis
+     "Subsets of Randomly Selected Phylogenies from Existing Mega-Phylogenies")
+    (description
+     "There are an increasing number of mega-phylogenies available nowadays, with many
+of them being sets of thousands of posterior distribution phylogenies.  For
+ecological studies, we may need to randomly select many such posterior
+phylogenies to conduct analyses.  This data package serves this purpose by
+providing a small number (100 or 50) of randomly selected posterior phylogenies
+(if available) so that we can readily use them for our downstream analyses
+without repeating the downloading and selecting processes.")
+    (license license:expat)))
 
 (define-public r-mefm
   (package
@@ -48641,13 +48670,13 @@ and use of the API is subject to their terms and conditions.")
 (define-public r-mathml
   (package
     (name "r-mathml")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mathml" version))
        (sha256
-        (base32 "0mw801lnah0d6ayldfi4m7xnffd6mm60ii7wp1kmf5mpgsa8az0y"))))
+        (base32 "0z236rpm19l8knmcjz2kr2apb319ibnk25hp91qxnpd4zjvsqvf6"))))
     (properties `((upstream-name . "mathml")))
     (build-system r-build-system)
     (arguments

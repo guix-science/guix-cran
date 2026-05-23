@@ -3396,6 +3396,45 @@ Foundation of Korea (NRF) grants funded by the Korea government (MSIT) (No.
 2022R1A2C1091319, RS-2023-00242528).")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-bset
+  (package
+    (name "r-bset")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BSET" version))
+       (sha256
+        (base32 "0w2dw6lg58gmmsplm1zan9lpmbx9wpafzjczg9301l73j3irjai5"))))
+    (properties `((upstream-name . "BSET")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-surrogaterank
+                             r-rstan
+                             r-rlang
+                             r-rdpack
+                             r-mvtnorm
+                             r-ggplot2
+                             r-future
+                             r-dplyr))
+    (native-inputs (list r-knitr r-bookdown))
+    (home-page "https://pietrocarlotti.github.io/BSET/")
+    (synopsis "Bayesian Surrogate Evaluation Test")
+    (description
+     "An implementation of the Bayesian Surrogate Evaluation Test (BSET) for assessing
+the validity of surrogate markers in clinical trials.  Provides hypothesis
+testing tools to evaluate whether a surrogate can reliably estimate the causal
+effect of a treatment on a primary outcome.  Implements the imputation-based
+Bayesian methodology of Carlotti and Parast (2026)
+<doi:10.48550/@code{arXiv.2603.14381>}, extending the frequentist rank-based
+approach of Parast et al. (2024) <doi:10.1093/biomtc/ujad035>.  Addresses key
+limitations of the frequentist method, including the lack of causal
+interpretability and the inability to adjust for covariates in the estimation
+process.")
+    (license license:gpl3)))
+
 (define-public r-bsearchtools
   (package
     (name "r-bsearchtools")
@@ -14686,6 +14725,45 @@ IDs.  In SVG mode, text and numbers can be dragged and dropped.  Based on the
 (2021) <doi:10.3233/DS-210032>.")
     (license license:gpl3)))
 
+(define-public r-bioutils
+  (package
+    (name "r-bioutils")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioUtils" version))
+       (sha256
+        (base32 "1q8cbbw08ij1h0h1x6n7ik6xpnvxvi3nh0lmpwqywp5j5lh03m1s"))))
+    (properties `((upstream-name . "BioUtils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-pheatmap
+                             r-limma
+                             r-glmnet
+                             r-ggplot2
+                             r-geoquery
+                             r-fgsea
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://spencertreadway.github.io/BioUtils/")
+    (synopsis "Biological Data Analysis and Visualization")
+    (description
+     "This package provides tools for the analysis and visualization of gene
+expression data from the NCBI Gene Expression Omnibus (GEO).  Implements a
+complete workflow including data import, quality control, differential
+expression analysis, co-expression network analysis, pathway enrichment, and
+multi-gene biomarker discovery.  Differential expression uses the empirical
+Bayes moderated t-statistic of Smyth (2004) <doi:10.2202/1544-6115.1027>.  Gene
+set enrichment analysis follows Subramanian et al. (2005)
+<doi:10.1073/pnas.0506580102>.  Multi-gene biomarker selection uses the LASSO
+method of Tibshirani (1996) <doi:10.1111/j.2517-6161.1996.tb02080.x>.  Effect
+sizes are computed as Cohen's d following Cohen (1988).")
+    (license license:expat)))
+
 (define-public r-biotrajectory
   (package
     (name "r-biotrajectory")
@@ -16637,13 +16715,13 @@ recursive partition methods and clustering.")
 (define-public r-binsreg
   (package
     (name "r-binsreg")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binsreg" version))
        (sha256
-        (base32 "1071g3n3c1l9yxjpbj0b678a45h85bvhaf31x0vcfb8wpac1isyi"))))
+        (base32 "1h8vnvfq7z0acb3xfpw1mmgy83bzwqclqpasfg84314ic5sbdhbh"))))
     (properties `((upstream-name . "binsreg")))
     (build-system r-build-system)
     (arguments
@@ -23100,13 +23178,13 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "066c776np23p3n5yhpa06wkkr3d1ry1nbbzxc38gzxnkx0bgxvlc"))))
+        (base32 "03scdf81ngnvkm8ip5l7yr8cyfqib04k8y1vlfba0ch84p50k95n"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (arguments
@@ -29066,13 +29144,13 @@ and execution on CPU, GPU, or TPU.")
 (define-public r-bayesiangammareg
   (package
     (name "r-bayesiangammareg")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bayesiangammareg" version))
        (sha256
-        (base32 "0b0fqmig7vgmlrq2884q0apfd89nn5k4dj8rqjizkkbw4qpzmylb"))))
+        (base32 "0mva0n5ki1y98qcc56f6zim063zsnrsvc87bpyhggbhynnqggccl"))))
     (properties `((upstream-name . "Bayesiangammareg")))
     (build-system r-build-system)
     (arguments
@@ -29080,14 +29158,16 @@ and execution on CPU, GPU, or TPU.")
       #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://www.r-project.org")
-    (synopsis "Bayesian Gamma Regression: Joint Mean and Shape Modeling")
+    (synopsis "Double Generalized Gamma Regression Models")
     (description
-     "Adjust the Gamma regression models from a Bayesian perspective described by
-Cepeda and Urdinola (2012) <doi:10.1080/03610918.2011.600500>, modeling the
-parameters of mean and shape and using different link functions for the
-parameter associated to the mean.  And calculates different adjustment
-statistics such as the Akaike information criterion and Bayesian information
-criterion.")
+     "Fits double generalized Gamma regression models from a Bayesian perspective,
+where both the mean and shape parameters are modeled simultaneously using
+flexible link functions.  The methodology is based on Cepeda-Cuervo and Urdinola
+(2012) <doi:10.1080/03610918.2011.600500> and extended in Cepeda-Cuervo (2026),
+Double Generalized Linear Models: Likelihood and Bayesian Methods (ISBN:
+9781041169970).  The package provides parameter estimation, model fitting, and
+model comparison tools, including Akaike Information Criterion (AIC) and
+Bayesian Information Criterion (BIC).")
     (license license:gpl2+)))
 
 (define-public r-bayesianfitforecast

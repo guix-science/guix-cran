@@ -15856,40 +15856,6 @@ generalized circular projected Cauchy distribution.
 <doi:10.48550/@code{arXiv.2603.04030>}.")
     (license license:gpl2+)))
 
-(define-public r-directeffects
-  (package
-    (name "r-directeffects")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DirectEffects" version))
-       (sha256
-        (base32 "181m5xhlgrpmj4c9zdr70sn8gwxlpd54cc5yjngyx5j0l9mfi5a3"))))
-    (properties `((upstream-name . "DirectEffects")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-matching
-                             r-glue
-                             r-generics
-                             r-formula
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://mattblackwell.github.io/DirectEffects/")
-    (synopsis
-     "Estimating Controlled Direct Effects for Explaining Causal Findings")
-    (description
-     "This package provides a set of functions to estimate the controlled direct
-effect of treatment fixing a potential mediator to a specific value.  Implements
-the sequential g-estimation estimator described in Vansteelandt (2009)
-<doi:10.1097/EDE.0b013e3181b6f4c9> and Acharya, Blackwell, and Sen (2016)
-<doi:10.1017/S0003055416000216> and the telescope matching estimator described
-in Blackwell and Strezhnev (2020) <doi:10.1111/rssa.12759>.")
-    (license license:gpl2+)))
-
 (define-public r-directedclustering
   (package
     (name "r-directedclustering")
@@ -23642,6 +23608,37 @@ demulticoder R package see Sudermann et al. (2025)
      "Mimics the demo functionality for Shiny apps in a package.  Apps stored to the
 package subdirectory inst/shiny can be called by @code{demoShiny(topic}).")
     (license license:gpl3)))
+
+(define-public r-demor
+  (package
+    (name "r-demor")
+    (version "1.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "demor" version))
+       (sha256
+        (base32 "0ryywzlqz7z3ilh3d9vsm5zd6zx764aqdwpf5hb749byv66pnj2q"))))
+    (properties `((upstream-name . "demor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-magrittr
+                             r-ggplot2
+                             r-forecast
+                             r-dplyr))
+    (home-page "https://vadvu.github.io/demor/")
+    (synopsis "Methods for Demographic Analysis")
+    (description
+     "This package implements life tables, fertility and mortality indicators,
+decomposition methods, Lee-Carter mortality forecasting, Leslie matrices, and
+population pyramids for demographic analysis.  Methods are described in Preston
+et al. (2001, ISBN:1557864519) and Ustyuzhanin (2025)
+<doi:10.17323/demreview.v12i4.30415>.")
+    (license license:expat)))
 
 (define-public r-demokin
   (package
@@ -33872,13 +33869,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.3.737")
+    (version "1.3.747")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "1danvqkaz0g8wkkxq3l0h3k52zz19fd6h00dwkjik74rhg7j0a34"))))
+        (base32 "1gnadprgzaf9v9cr2cy1v9pcis2kbwdj9zhw53gmdwv9s0yb7nim"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments

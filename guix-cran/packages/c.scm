@@ -16262,13 +16262,13 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.11")
+    (version "2.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "1h6v3n73zhchipxxkki8l10kzr1qfcnfkkdghy5djdb06cspmy6n"))))
+        (base32 "0nsaxsqac1c1sbzzr7r1mfa4x13rmjs2zcwznnhs4x7g7a95w4ys"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (arguments
@@ -46710,13 +46710,13 @@ assumption of two multivariate variable.")
 (define-public r-cdcplaces
   (package
     (name "r-cdcplaces")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDCPLACES" version))
        (sha256
-        (base32 "0s7w037fxvgxmn3ymff2vvrrj0lcjw1h20229dmd2svvzz0jccaq"))))
+        (base32 "16mfq5xv92rmkj02661rqvlqfx11a45p2jfv2g9x4c2kfmvar2mb"))))
     (properties `((upstream-name . "CDCPLACES")))
     (build-system r-build-system)
     (arguments
@@ -46772,28 +46772,29 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 (define-public r-cdcanthro
   (package
     (name "r-cdcanthro")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdcanthro" version))
        (sha256
-        (base32 "04sd4pz375flhgc65zs5kx4nqyljfg3yw62wm20wyhc0mfb8120j"))))
+        (base32 "0972yxgpmabwc9xlillvyys88jsw6ylyv4zdlwinbr3xjjr64zg4"))))
     (properties `((upstream-name . "cdcanthro")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-data-table))
+    (propagated-inputs (list r-tibble r-data-table))
     (home-page "https://cran.r-project.org/package=cdcanthro")
     (synopsis
-     "Sex- and Age-Standardized Metrics from the Centers for Disease and Control (CDC) Growth Charts")
+     "Sex- and Age-Standardized Metrics from the Centers for Disease Control and Prevention (CDC) Growth Charts")
     (description
      "Calculation of sex- and age-standardized growth metrics based on the 2000 CDC
 growth charts.  Provides functions to generate z-scores and percentiles for
-weight, height, and BMI using the LMS method (lambda-mu-sigma).  Includes
-extended BMI-z scores for values above the 95th percentile to more accurately
-characterize the sex- and age-standardized BMI of children with very high BMIs.")
+weight, height, and body mass index (BMI) using the LMS method
+(lambda-mu-sigma).  Includes extended BMI z-scores for values above the 95th
+percentile to more accurately characterize the sex- and age-standardized BMI of
+children with very high BMIs.")
     (license license:gpl3)))
 
 (define-public r-cdatanet

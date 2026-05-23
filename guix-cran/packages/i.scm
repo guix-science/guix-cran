@@ -2127,13 +2127,13 @@ calender format yyyy-mm-dd to and from ISO 8601 week format yyyy-Www-d.")
 (define-public r-isowater
   (package
     (name "r-isowater")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isoWater" version))
        (sha256
-        (base32 "0rhl57071xk97d5si5mqr3dkj47lwbfbkcy4qq1k93n95q4br2jd"))))
+        (base32 "1ylp3sym75j29kc6a5803jifllxygrr2y4appz5zdd7kxy65q32z"))))
     (properties `((upstream-name . "isoWater")))
     (build-system r-build-system)
     (arguments

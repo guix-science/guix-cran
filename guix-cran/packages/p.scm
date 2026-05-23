@@ -43717,13 +43717,13 @@ simultaneous lower confidence bounds for the number of true discoveries.
 (define-public r-parglm
   (package
     (name "r-parglm")
-    (version "0.1.9-1")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parglm" version))
        (sha256
-        (base32 "0lrki075h5d8p80yd5xnpgascxbk78vgx26nlaq74l0zl6na39ga"))))
+        (base32 "0gwschx1jdyvnm24fkz964bnh4iwg6zjx2m3bpyd875gjq1xf5kc"))))
     (properties `((upstream-name . "parglm")))
     (build-system r-build-system)
     (arguments

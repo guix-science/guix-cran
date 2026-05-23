@@ -30046,19 +30046,20 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "011gakc27ixbflw33fs1r67m7dg1h3rz16fqb51avavdgfdmnlk9"))))
+        (base32 "086vbfb44gkfpzqpjvj85fzq58vspfn2fr559v0xrlyxsld46x6n"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-tidygraph
+                             r-scales
                              r-rlang
                              r-lifecycle
                              r-igraph
@@ -38661,13 +38662,13 @@ Reliability Testing.")
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "0jndprm3r9q4dz20ib1df4dmdswp0n7as8lfdcq6xiam3j1kjaaj"))))
+        (base32 "19jsf024c6vl3ynid2bh8jczkrr54k8h4x7w9nhrxyv1ppx6dqm9"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (arguments

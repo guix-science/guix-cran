@@ -5561,6 +5561,32 @@ discipline (Hankin, 2022, <doi:10.48550/ARXIV.2210.03856>).  To cite the package
 in publications please use Hankin (2022) <doi:10.48550/ARXIV.2211.04002>.")
     (license license:gpl2+)))
 
+(define-public r-free1way-docreg
+  (package
+    (name "r-free1way-docreg")
+    (version "1.0-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "free1way.docreg" version))
+       (sha256
+        (base32 "1885p3cngf801hqfvp6hxx9pw699hgpkqz1hij7j9s4iwsn4855l"))))
+    (properties `((upstream-name . "free1way.docreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=free1way.docreg")
+    (synopsis
+     "Additional Documentation and Regression Tests for 'stats::free1way()'")
+    (description
+     "Function @code{stats::free1way()} implements semiparametrically efficient
+population- and permutation-based inference in distribution-free stratified
+K-sample oneway layouts.  This package provides additional documentation,
+including a detailed description of the implementation, and serves as a home for
+extensive regression tests.")
+    (license license:gpl2)))
+
 (define-public r-free
   (package
     (name "r-free")
@@ -11053,13 +11079,13 @@ details, see Peeters et al. (2019) <doi:10.48550/@code{arXiv.1903.11696>}.")
 (define-public r-fmpcloudr
   (package
     (name "r-fmpcloudr")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmpcloudr" version))
        (sha256
-        (base32 "07fvmrprv0pka1wgp5ygcvv86jvn3h30xxkx44ssin15hfmank69"))))
+        (base32 "1gqirhj296v8dzgmj8qinz4qwfsqyr3imp11bjbr6dsf76s0vxsr"))))
     (properties `((upstream-name . "fmpcloudr")))
     (build-system r-build-system)
     (arguments
@@ -11071,14 +11097,13 @@ details, see Peeters et al. (2019) <doi:10.48550/@code{arXiv.1903.11696>}.")
                              r-jsonlite
                              r-httr
                              r-dplyr))
-    (home-page "https://exploringfinance.github.io/fmpcloudr/")
+    (home-page "https://altanalytics.github.io/fmpcloudr/index.html")
     (synopsis "R Access to the 'FMP Cloud' and 'Financial Modeling Prep' API")
     (description
-     "Use R to access to the FMP Cloud API <https://fmpcloud.io/> and Financial
-Modeling Prep API <https://financialmodelingprep.com/developer/docs/>.  Data
-available includes stock prices, market indexes, company fundamentals, 13F
-holdings data, and much more.  A valid API token must be set to enable
-functions.")
+     "Use R to access to the Financial Modeling Prep API
+<https://site.financialmodelingprep.com>.  Data available includes stock prices,
+market indexes, company fundamentals, 13F holdings data, and much more.  A valid
+API token must be set to enable functions.")
     (license license:gpl3)))
 
 (define-public r-fmpapi
@@ -26812,13 +26837,13 @@ implementation is described in Egeland, Mostad and Olaisen (1997)
 (define-public r-familiar
   (package
     (name "r-familiar")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "familiar" version))
        (sha256
-        (base32 "1865vlz0zz94k6mvyr27ds7dapzqllbcv98kca94z95a6v2czjd5"))))
+        (base32 "14cyh09n63gjin8ikzvmm26b607z65hakqrm6dzbygvrj7jkmbw5"))))
     (properties `((upstream-name . "familiar")))
     (build-system r-build-system)
     (arguments

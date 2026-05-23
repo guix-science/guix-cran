@@ -29121,13 +29121,13 @@ regression').")
 (define-public r-spatstat-knet
   (package
     (name "r-spatstat-knet")
-    (version "3.1-2")
+    (version "3.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatstat.Knet" version))
        (sha256
-        (base32 "1l5742m0sq94fl055anxdxl5fr3b4nv6l82kjrxfrpfnyv6kpkib"))))
+        (base32 "0004wgwqm585581vcmh3inh0z2zxvr56m5y52477203kgbjfg8y3"))))
     (properties `((upstream-name . "spatstat.Knet")))
     (build-system r-build-system)
     (arguments
@@ -37822,6 +37822,36 @@ fabulous @code{LaTeX} and console output formatting.  See the package website at
 cosmological and merger simulations.  To find out more about Gadget see the main
 distribution page at www.mpa-garching.mpg.de/gadget/.")
     (license license:gpl2)))
+
+(define-public r-snapr
+  (package
+    (name "r-snapr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snapr" version))
+       (sha256
+        (base32 "0q4hbaq80wnxrp2s93z5iszrzh2829imhms9av2rvsdc85n96mry"))))
+    (properties `((upstream-name . "snapr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waldo
+                             r-tidyselect
+                             r-testthat
+                             r-readr
+                             r-jsonlite
+                             r-dplyr))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/d-morrison/snapr")
+    (synopsis "Convenient Snapshot Testing Functions for Packages")
+    (description
+     "This package provides convenient snapshot testing functions for packages,
+including @code{expect_snapshot_data()} for data.frames and
+@code{expect_snapshot_object()} for any R object.")
+    (license license:expat)))
 
 (define-public r-snapkrig
   (package
@@ -59252,13 +59282,13 @@ and descriptive tools.  For details on the implemented penalty method, see Ugba
 (define-public r-serotrackr
   (package
     (name "r-serotrackr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeroTrackR" version))
        (sha256
-        (base32 "0yl9np08mydg9f9j1wnyphgy0w58cflvqjv61px7fkxsp0n3ak53"))))
+        (base32 "10jhv7j1hal01bb4fpbbp34md5aljvdngklqamm8f7q2ixmcbll5"))))
     (properties `((upstream-name . "SeroTrackR")))
     (build-system r-build-system)
     (arguments
@@ -59270,7 +59300,6 @@ and descriptive tools.  For details on the implemented penalty method, see Ugba
                              r-stringr
                              r-rmarkdown
                              r-readxl
-                             r-readr
                              r-ranger
                              r-purrr
                              r-parsnip

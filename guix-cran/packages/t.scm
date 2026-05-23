@@ -3810,13 +3810,13 @@ protocols by Rubinson et al. (2019) <doi:10.1177/00491241211036158>.")
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.3.707")
+    (version "2.0.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "1x8v41pqybsj4jv9in9klz9v2lri78j64gsc9dagazn964d17swq"))))
+        (base32 "05z2a7l1pvk88m4jbwlnhkfqsdw9sz0gb7nwyl05snav0am88gzl"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments
@@ -4328,6 +4328,30 @@ classification problems by solving the optimization problem via the smoothing
 proximal gradient descent algorithm (Chen et al. (2012)
 <doi:10.1214/11-AOAS514>).")
     (license license:gpl3)))
+
+(define-public r-tsitter
+  (package
+    (name "r-tsitter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsitter" version))
+       (sha256
+        (base32 "0kvr2szxka4q520d5878hbccjc1idr5fh53bxlmsvvpgf0d7mhm3"))))
+    (properties `((upstream-name . "tsitter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/r-lib/tsitter")
+    (synopsis "Tree-Sitter Parsing Tools")
+    (description
+     "Common tree-sitter (<https://tree-sitter.github.io/tree-sitter/>) parsing tools
+for R. It is meant to be used by other packages that specialize in particular
+languages and file formats.")
+    (license license:expat)))
 
 (define-public r-tsissm
   (package
