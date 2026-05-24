@@ -3163,13 +3163,13 @@ provides tools to help make such choices.  Sen and others (2007)
 (define-public r-qtlcharts
   (package
     (name "r-qtlcharts")
-    (version "0.18")
+    (version "0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtlcharts" version))
        (sha256
-        (base32 "1a1lafr40a9rd9wms9jkjyxbm9351pphdbgmy2vlx6bqhk35y2dg"))))
+        (base32 "08pbadpvyrvhv5x0va9pz66kc31ngzmgnzd3xwkzhfa1mv1jn0w2"))))
     (properties `((upstream-name . "qtlcharts")))
     (build-system r-build-system)
     (arguments
@@ -6646,6 +6646,45 @@ estimate the number of cases required to achieve a certain level of power, given
 a prespecified null and alternative hypothesis.  Reference for the article
 introducing power estimation for QCA is: Rohlfing, Ingo (2018)
 <doi:10.1017/pan.2017.30> (ungated version: <doi:10.17605/OSF.IO/PC4DF>).")
+    (license license:gpl3)))
+
+(define-public r-qcacluster
+  (package
+    (name "r-qcacluster")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QCAcluster" version))
+       (sha256
+        (base32 "0qdpv3zlc5d8lhf8ibwccxx3vprhwcshy7ryjzpbzg36jl8jrhns"))))
+    (properties `((upstream-name . "QCAcluster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-upsetr
+                             r-testit
+                             r-stringi
+                             r-rlist
+                             r-qca
+                             r-purrr
+                             r-plyr
+                             r-magrittr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ingorohlfing/QCAcluster")
+    (synopsis "Tools for the Analysis of Clustered Data in QCA")
+    (description
+     "Clustered set-relational data in Qualitative Comparative Analysis (QCA) can have
+a hierarchical structure, a panel structure or repeated cross sections.
+QCAcluster allows researchers to supplement the analysis of pooled the data with
+a differentiated perspective focusing on selected partitions of the data.  The
+pooled data can be partitioned along the dimensions of the clustered data
+(individual cross sections or time series) to perform partition-specific truth
+table minimization.  Empirical researchers can further calculate the weight that
+each partition has on the parameters of the pooled solution and the diversity of
+the cases under analysis within and across partitions (see
+<https://ingorohlfing.github.io/QCAcluster/>).")
     (license license:gpl3)))
 
 (define-public r-qca

@@ -3168,13 +3168,13 @@ of the methods used in the package to calculate the indicator.")
 (define-public r-lpdensity
   (package
     (name "r-lpdensity")
-    (version "3.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpdensity" version))
        (sha256
-        (base32 "1lylm3if944p9dx31js4553frabwiqnqlxcgvsgamka30vvmn4sx"))))
+        (base32 "119hcvwd1w4iksisvmw7s3wd8pgzmv8xp7cmpcdpbnl7wjfbyfv9"))))
     (properties `((upstream-name . "lpdensity")))
     (build-system r-build-system)
     (arguments
@@ -17340,13 +17340,13 @@ convergence issues.")
 (define-public r-lbi
   (package
     (name "r-lbi")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBI" version))
        (sha256
-        (base32 "12bj9b1ym2jr6vkjr194cvnn30rbfdx3ax9v2149jcjrq96b9aw0"))))
+        (base32 "1bg1xzj52sh9p5gyg70qbv8bi9m0p7l34px7m096gpjs79f5hykl"))))
     (properties `((upstream-name . "LBI")))
     (build-system r-build-system)
     (arguments

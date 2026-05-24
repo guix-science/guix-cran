@@ -4471,13 +4471,13 @@ implemented based on the DStorage class.")
 (define-public r-dsir
   (package
     (name "r-dsir")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSIR" version))
        (sha256
-        (base32 "10imq51gw75fz8vqh0d1y464lwfsll4b3hl26azrznq1xa1k81hl"))))
+        (base32 "1l0mlnd7hrxhamkh1ipi4wl6rl1p0rx4i5m4hibi7gpyi1qgqys4"))))
     (properties `((upstream-name . "DSIR")))
     (build-system r-build-system)
     (arguments
@@ -15856,6 +15856,40 @@ generalized circular projected Cauchy distribution.
 <doi:10.48550/@code{arXiv.2603.04030>}.")
     (license license:gpl2+)))
 
+(define-public r-directeffects
+  (package
+    (name "r-directeffects")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DirectEffects" version))
+       (sha256
+        (base32 "181m5xhlgrpmj4c9zdr70sn8gwxlpd54cc5yjngyx5j0l9mfi5a3"))))
+    (properties `((upstream-name . "DirectEffects")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-matching
+                             r-glue
+                             r-generics
+                             r-formula
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://mattblackwell.github.io/DirectEffects/")
+    (synopsis
+     "Estimating Controlled Direct Effects for Explaining Causal Findings")
+    (description
+     "This package provides a set of functions to estimate the controlled direct
+effect of treatment fixing a potential mediator to a specific value.  Implements
+the sequential g-estimation estimator described in Vansteelandt (2009)
+<doi:10.1097/EDE.0b013e3181b6f4c9> and Acharya, Blackwell, and Sen (2016)
+<doi:10.1017/S0003055416000216> and the telescope matching estimator described
+in Blackwell and Strezhnev (2020) <doi:10.1111/rssa.12759>.")
+    (license license:gpl2+)))
+
 (define-public r-directedclustering
   (package
     (name "r-directedclustering")
@@ -16059,13 +16093,13 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipsaus" version))
        (sha256
-        (base32 "18rr4n9rc80nh3mf6ks0d1wg0bm6dagq15k76f1f5bm6iq1wmy9m"))))
+        (base32 "18035pyhzqwvxl2shwasm14i09jiw4x1pqpmx4bbrjr8r9v86zjl"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (arguments
@@ -16078,6 +16112,7 @@ the documentation for Rmosek'.")
                              r-rcpp
                              r-r6
                              r-progressr
+                             r-parallelly
                              r-jsonlite
                              r-future-apply
                              r-future

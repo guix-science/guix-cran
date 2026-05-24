@@ -16394,13 +16394,13 @@ et al (1997) <doi:10.1080/01621459.1997.10473658>; Clogg and Goodman (1985)
 (define-public r-glasstabs
   (package
     (name "r-glasstabs")
-    (version "0.2.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glasstabs" version))
        (sha256
-        (base32 "1s7r64jkfx9k0am49d9i64xhrkryrkqzwhld51n7973pg8hgqk2x"))))
+        (base32 "1cgsxpccijaj0hbbd9ipii8fl6444kf1zln0wkpd691dxqnvaal9"))))
     (properties `((upstream-name . "glasstabs")))
     (build-system r-build-system)
     (arguments
@@ -16412,11 +16412,19 @@ et al (1997) <doi:10.1080/01621459.1997.10473658>; Clogg and Goodman (1985)
     (synopsis "Animated Glass-Style Tabs and Multi-Select Filter for 'Shiny'")
     (description
      "This package provides tools for creating animated glassmorphism-style tab
-navigation and multi-select dropdown filters in shiny applications.  The package
-provides a tab navigation component and a searchable multi-select widget with
-multiple checkbox indicator styles, select-all controls, and customizable colour
-themes.  The widgets are compatible with standard shiny layouts and bs4Dash
-dashboards.")
+navigation and select filter widgets in Shiny applications.  Provides a tab
+navigation component with a sliding glass halo animation, a searchable
+multi-select dropdown, and a single-select dropdown â all with multiple colour
+themes and server-side update helpers.  Tabs support icons, numeric badges,
+disable/enable toggling, runtime append/remove, reactive rendering via
+@code{renderGlassTabs()}', URL bookmarking, and compact mode for dashboard card
+layouts. @code{glassTabCondition()} generates @code{conditionalPanel()}
+condition strings without needing to recall the internal input key pattern.
+@code{glasstabs_news()} displays the release notes from the R console.  Built-in
+example apps can be launched with @code{runGlassExample()}'.  All widgets are
+compatible with standard Shiny layouts and bs4Dash dashboards.  For full
+documentation and examples see Arthur (2026)
+<https://prigasg.github.io/glasstabs/>.")
     (license license:expat)))
 
 (define-public r-glassdoor
@@ -24001,13 +24009,13 @@ into it's signal suppression counterpart.")
 (define-public r-ggdiagram
   (package
     (name "r-ggdiagram")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdiagram" version))
        (sha256
-        (base32 "0mvbr8033g20b1dd9hbkw62n558lvsfz4sfy6y14kfa80pf3hfiq"))))
+        (base32 "1bcj7n5jx460vz7hxvrb2k8p5mzj1wdipa4jxfrb5z7v5rfzyy87"))))
     (properties `((upstream-name . "ggdiagram")))
     (build-system r-build-system)
     (arguments
@@ -36491,6 +36499,51 @@ cluster heatmaps.  The gaps can be of the same distance based on a height
 threshold to cut the dendrogram.  Another option is to vary the size of gaps
 based on the distance between clusters.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-gapclosing
+  (package
+    (name "r-gapclosing")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gapclosing" version))
+       (sha256
+        (base32 "0liv347qvsjryyzq10v3mscnlxzv1rsrhc4yx6mfr0sls231kbs8"))))
+    (properties `((upstream-name . "gapclosing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-ranger
+                             r-mgcv
+                             r-magrittr
+                             r-glmnet
+                             r-ggplot2
+                             r-foreach
+                             r-forcats
+                             r-dplyr
+                             r-dorng
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://ilundberg.github.io/gapclosing/")
+    (synopsis "Estimate Gaps Under an Intervention")
+    (description
+     "This package provides functions to estimate the disparities across categories
+(e.g. Black and white) that persists if a treatment variable (e.g. college) is
+equalized.  Makes estimates by treatment modeling, outcome modeling, and
+doubly-robust augmented inverse probability weighting estimation, with standard
+errors calculated by a nonparametric bootstrap.  Cross-fitting is supported.
+Survey weights are supported for point estimation but not for standard error
+estimation; those applying this package with complex survey samples should
+consult the data distributor to select an appropriate approach for standard
+error construction, which may involve calling the functions repeatedly for many
+sets of replicate weights provided by the data distributor.  The methods in this
+package are described in the accompanying paper:
+<doi:10.1177/00491241211055769>.")
+    (license license:expat)))
 
 (define-public r-gaparsimony
   (package

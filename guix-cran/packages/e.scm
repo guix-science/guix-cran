@@ -18304,13 +18304,13 @@ This work was supported by the U.S. National Science Foundation under Grants No.
 (define-public r-elfgen
   (package
     (name "r-elfgen")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elfgen" version))
        (sha256
-        (base32 "1ych2xwz3d27sbkz7dbz2pkyby93v16d9v4wwb5x73qiyqgzsv1f"))))
+        (base32 "1zi4d3g8wb68sb54lfainvxv4y4mxbhlc4l9w27jzyyzn2g1z7l0"))))
     (properties `((upstream-name . "elfgen")))
     (build-system r-build-system)
     (arguments

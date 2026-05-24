@@ -4685,13 +4685,13 @@ and Kattuman (2020) <doi:10.1162/99608f92.828f40de>, Harvey and Kattuman (2021)
 (define-public r-tsgarch
   (package
     (name "r-tsgarch")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsgarch" version))
        (sha256
-        (base32 "0ivrn2lm41dggld9dh8ag9r9pxpfc3gmh53gzzlw13vn0snbpk49"))))
+        (base32 "1cbaghc36cdkdiidc42q9zzjr2gb9v6vwz52322dy86rcn7hfs4d"))))
     (properties `((upstream-name . "tsgarch")))
     (build-system r-build-system)
     (arguments

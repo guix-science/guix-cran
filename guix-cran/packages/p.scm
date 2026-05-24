@@ -2616,13 +2616,13 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
 (define-public r-publicationbiasbenchmark
   (package
     (name "r-publicationbiasbenchmark")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PublicationBiasBenchmark" version))
        (sha256
-        (base32 "1wxyhqiwkva6a6php93n5hw6hwiibk7k5ccw087kmhqags9gkccn"))))
+        (base32 "14h734cpq00chm56ysdsrzq61vk4hnby03iflnvbds72sg3vq24j"))))
     (properties `((upstream-name . "PublicationBiasBenchmark")))
     (build-system r-build-system)
     (arguments
@@ -18845,54 +18845,6 @@ SNPs or probes and outputs a p-value for each gene.  The procedures builds upon
 the method described in <doi:10.1093/Bioinformatics/Bty373> and will be
 published soon.")
     (license license:gpl2+)))
-
-(define-public r-pooltestr
-  (package
-    (name "r-pooltestr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PoolTestR" version))
-       (sha256
-        (base32 "01av654dz2pk01751ijd2n5c0lp98jzxkwcyk5md5x1v9q377dib"))))
-    (properties `((upstream-name . "PoolTestR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rlang
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-progress
-                             r-lme4
-                             r-dplyr
-                             r-brms
-                             r-bh))
-    (home-page "https://github.com/AngusMcLure/PoolTestR")
-    (synopsis "Prevalence and Regression for Pool-Tested (Group-Tested) Data")
-    (description
-     "An easy-to-use tool for working with presence/absence tests on pooled or grouped
-samples.  The primary application is for estimating prevalence of a marker in a
-population based on the results of tests on pooled specimens.  This sampling
-method is often employed in surveillance of rare conditions in humans or animals
-(e.g. molecular xenomonitoring).  The package was initially conceived as an
-R-based alternative to the molecular xenomonitoring software, @code{PoolScreen}
-<https://sites.uab.edu/statgenetics/software/>.  However, it goes further,
-allowing for estimates of prevalence to be adjusted for hierarchical sampling
-frames, and perform flexible mixed-effect regression analyses (@code{McLure} et
-al.  Environmental Modelling and Software. <DOI:10.1016/j.envsoft.2021.105158>).
- The package is currently in early stages, however more features are planned or
-in the works: e.g. adjustments for imperfect test specificity/sensitivity,
-functions for helping with optimal experimental design, and functions for
-spatial modelling.")
-    (license license:gpl3+)))
 
 (define-public r-poolr
   (package
@@ -41938,13 +41890,13 @@ robust to parameter perturbations.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "1cazdg4kllk6q8k8171bbndlqzasv9lwlysdnwdbcgbc5szxd9zy"))))
+        (base32 "0blzsp2bb9vixd8r3wibxgfw4v3lsf8gni29i9pcz0sznhlxwc5c"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (arguments

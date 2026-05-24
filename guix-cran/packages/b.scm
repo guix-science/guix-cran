@@ -12096,6 +12096,36 @@ dynamic networks by simulations with application to Slovenian co-authorship
 networks).")
     (license license:gpl3+)))
 
+(define-public r-blockmissingdata
+  (package
+    (name "r-blockmissingdata")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BlockMissingData" version))
+       (sha256
+        (base32 "1bx66lba9fa6glb7mzdjdq851c6i0izjqwci9jb9lsi15w48yxdm"))))
+    (properties `((upstream-name . "BlockMissingData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix
+                             r-mass
+                             r-glmnetcr
+                             r-glmnet
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=BlockMissingData")
+    (synopsis
+     "Integrating Multi-Source Block-Wise Missing Data in Model Selection")
+    (description
+     "Model selection method with multiple block-wise imputation for block-wise
+missing data; see Xue, F., and Qu, A. (2021)
+<doi:10.1080/01621459.2020.1751176>.")
+    (license license:expat)))
+
 (define-public r-blockmatrix
   (package
     (name "r-blockmatrix")
@@ -15678,13 +15708,13 @@ Rapid Bioassessment Protocols (Barbour et al.  1999)
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "4.3-4-5")
+    (version "4.3-4-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biomod2" version))
        (sha256
-        (base32 "1jbiz3lwqd6qm300hnygcm4kaaqrgw3pmp8w673i3s91wp8rmjhr"))))
+        (base32 "07rm4392vxh8cd45wl3qybmjcp19m52z8qf7gq6idd454hk9qikv"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
     (arguments
@@ -21943,31 +21973,35 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
 (define-public r-betaarma
   (package
     (name "r-betaarma")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaARMA" version))
        (sha256
-        (base32 "0wr8nnr34y8rl2m515xcc4x08afd8zlsrkwmm66xvk2iq07mp1c1"))))
+        (base32 "142mmgmrqxlw5m6kfjbk4a2fswy5h8pwkvfjy5p806j5s0ga452c"))))
     (properties `((upstream-name . "betaARMA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-forecast))
+    (propagated-inputs (list r-rlang r-gridextra r-ggplot2 r-forecast))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Everton-da-Costa/betaARMA")
     (synopsis "Beta Autoregressive Moving Average Models")
     (description
      "Fits Beta Autoregressive Moving Average (BARMA) models for time series data
 distributed in the standard unit interval (0, 1).  The estimation is performed
 via the conditional maximum likelihood method using the
-Broyden-Fletcher-Goldfarb-Shanno (BFGS) quasi-Newton algorithm.  The package
-includes tools for model fitting, diagnostic checking, and forecasting.  Based
-on the work of Rocha and Cribari-Neto (2009) <doi:10.1007/s11749-008-0112-z> and
-the associated erratum Rocha and Cribari-Neto (2017)
-<doi:10.1007/s11749-017-0528-4>.  The original code was developed by Fabio M.
-Bayer.")
+Broyden-Fletcher-Goldfarb-Shanno (BFGS) quasi-Newton algorithm.  A ridge
+penalization scheme is available to improve numerical stability of the
+estimation, as proposed by Cribari-Neto, Costa and Fonseca (2025)
+<doi:10.1214/25-BJPS645>.  The package includes tools for model fitting,
+diagnostic checking, and forecasting, along with two hydro-environmental
+datasets from Brazil.  Based on the work of Rocha and Cribari-Neto (2009)
+<doi:10.1007/s11749-008-0112-z> and the associated erratum Rocha and
+Cribari-Neto (2017) <doi:10.1007/s11749-017-0528-4>.  The original code was
+developed by Fabio M. Bayer.")
     (license license:expat)))
 
 (define-public r-bet
@@ -35315,34 +35349,6 @@ package in the Monolix installation, as described at the following url
  When @code{lixoftConnectors} is available, Monolix can be run directly instead
 of setting up command line usage.")
     (license license:gpl3+)))
-
-(define-public r-babel
-  (package
-    (name "r-babel")
-    (version "0.3-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "babel" version))
-       (sha256
-        (base32 "1iwvx69051yhlxbcl6bypvc3mcih0q8bf3i29r3i79356hp12xqa"))))
-    (properties `((upstream-name . "babel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-edger))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=babel")
-    (synopsis "Ribosome Profiling Data Analysis")
-    (description
-     "Included here are babel routines for identifying unusual ribosome protected
-fragment counts given @code{mRNA} counts.")
-    (license license:lgpl2.1+)))
 
 (define-public r-babebi
   (package

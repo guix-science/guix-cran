@@ -4055,13 +4055,13 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
 (define-public r-rtl
   (package
     (name "r-rtl")
-    (version "1.3.7")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTL" version))
        (sha256
-        (base32 "000fb8bim23lmpp7489zzly8rb51dqkysbhl1zisvg6m06mxhxki"))))
+        (base32 "15jmbgd81rpr4qrmz6195rrpg8nsiwhljcxzh4kmxjk8z5gpgd30"))))
     (properties `((upstream-name . "RTL")))
     (build-system r-build-system)
     (arguments
@@ -4069,15 +4069,12 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
       #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
-                             r-ttr
                              r-tsibble
-                             r-timetk
                              r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
-                             r-readr
                              r-rcpp
                              r-purrr
                              r-plotly
@@ -4096,8 +4093,8 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
     (description
      "This package provides a toolkit for Commodities analytics', risk management and
 trading professionals.  Includes functions for API calls to
-<https://commodities.morningstar.com/#/>, <https://developer.genscape.com/>, and
-<https://www.bankofcanada.ca/valet/docs>.")
+<https://www.zema.global/platforms/zema-marketplace>,
+<https://developer.genscape.com/>, and <https://www.bankofcanada.ca/valet/docs>.")
     (license license:expat)))
 
 (define-public r-rtist
@@ -10704,13 +10701,13 @@ the reference: Portnoy (2022) <doi:10.1016/j.jmva.2022.105071>.")
 (define-public r-rpymat
   (package
     (name "r-rpymat")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpymat" version))
        (sha256
-        (base32 "1yajp34ns3q2nyqw29f155db171lim9ya852smvf9bllg5k732r3"))))
+        (base32 "085219h6chc64zd1gng9ymqnxsy8f3vcimcvycmpfjxx4w57yn1r"))))
     (properties `((upstream-name . "rpymat")))
     (build-system r-build-system)
     (arguments
@@ -44382,13 +44379,13 @@ in a form directly compatible with the rgl package.")
 (define-public r-readnsx
   (package
     (name "r-readnsx")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readNSx" version))
        (sha256
-        (base32 "0ggg4l13x8j8l358snjwmw1aivwzxf30n8r9xpj0025z2swwg8iz"))))
+        (base32 "1l63czl50sw07czmmaj0714m2r60hdvginv1rdkdd24a2ppcm65d"))))
     (properties `((upstream-name . "readNSx")))
     (build-system r-build-system)
     (arguments
@@ -47460,13 +47457,13 @@ into a markdown version of the package reference manual.")
 (define-public r-rd2d
   (package
     (name "r-rd2d")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rd2d" version))
        (sha256
-        (base32 "0vb7ijf9wph9q7fjz49r1icz5ivkvyh7m2vbf63slgal1yn47hyf"))))
+        (base32 "1cr10i0k5w3ixc8ksx35vxn60jybgqn17myn3q0mxm48lqhplf8m"))))
     (properties `((upstream-name . "rd2d")))
     (build-system r-build-system)
     (arguments
@@ -47489,7 +47486,7 @@ distance-based methods.  For an overview and empirical guidance, see Cattaneo,
 Titiunik, and Yu (2026) <doi:10.48550/@code{arXiv.2511.06474>}.  The companion
 software article is Cattaneo, Titiunik, and Yu (2025)
 <doi:10.48550/@code{arXiv.2505.07989>}.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-rczechia
   (package
@@ -54623,13 +54620,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "1n0ilcccdyhn98f11v6wahzgs78ss03mhjbb0dqa44v0rmpknyhp"))))
+        (base32 "0hah9m4n98d42pacc6jhansr62vxnnirah9crc8n2gpb3g367b42"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (arguments

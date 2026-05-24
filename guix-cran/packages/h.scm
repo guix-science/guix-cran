@@ -1284,13 +1284,13 @@ water retention characteristic curves.")
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroloom" version))
        (sha256
-        (base32 "010mng5nrgqp4vnhy6xjkjmx2r9fsykcy0walnpmsbzwz7mddvab"))))
+        (base32 "0ziaxa1cpwvfqknhnhfylpy5wf44lxmwx2l3gmbm3b7bhdc0z8pm"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
     (arguments
@@ -8407,37 +8407,57 @@ Design via Parametric Skew-t Distribution.\" <@code{arXiv:2206.02412>}.")
 (define-public r-highmlr
   (package
     (name "r-highmlr")
-    (version "0.1.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highMLR" version))
        (sha256
-        (base32 "0jkv6blkzdnn263wxy7p0hspgf5fchl5fbmzpqb5lfvl2f3pi3j9"))))
+        (base32 "0dc8z0a6ms2q7y0ra8fhimkp79bd5sbvv39yj25v9bjdbg4xjfdx"))))
     (properties `((upstream-name . "highMLR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-xgboost
+                             r-tibble
                              r-survival
-                             r-r6
-                             r-mlr3learners
-                             r-mlr3
-                             r-missforest
-                             r-gtools
-                             r-dplyr
-                             r-coxme))
+                             r-survex
+                             r-stabs
+                             r-rlang
+                             r-ranger
+                             r-prodlim
+                             r-grf
+                             r-glmnet
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-cmprsk
+                             r-aorsf))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=highMLR")
-    (synopsis "Feature Selection for High Dimensional Survival Data")
+    (synopsis
+     "Machine Learning Feature Selection for High Dimensional Survival Data")
     (description
-     "Perform high dimensional Feature Selection in the presence of survival outcome.
-Based on Feature Selection method and different survival analysis, it will
-obtain the best markers with optimal threshold levels according to their effect
-on disease progression and produce the most consistent level according to those
-threshold values.  The functions methodology is based on by Sonabend et al
-(2021) <doi:10.1093/bioinformatics/btab039> and Bhattacharjee et al (2021)
-<@code{arXiv:2012.02102>}.")
+     "This package provides a unified, flexible framework for high dimensional feature
+selection in the presence of a survival outcome.  Provides multiple machine
+learning approaches (Cox elastic net, random survival forest, accelerated
+oblique random survival forest, gradient-boosted Cox, stability selection,
+classical univariate Cox screening, pseudo- observation bridging to arbitrary
+regression learners, and Fine-Gray competing risks selection) under a single
+interface.  Adds causal survival forest estimation of heterogeneous treatment
+effects on survival (experimental), conformal survival prediction with finite-
+sample coverage guarantees, and time-dependent SHAP explanations via
+@code{SurvSHAP(t})'.  Methodology is based on regularised Cox regression (2011)
+<doi:10.18637/jss.v039.i05>, random survival forests (2008)
+<doi:10.1214/08-AOAS169>, oblique random survival forests (2024)
+<doi:10.1080/10618600.2023.2231048>, stability selection (2010)
+<doi:10.1111/j.1467-9868.2010.00740.x>, causal survival forests (2023)
+<doi:10.1111/rssb.12538>, time-dependent survival explanations (2023)
+<doi:10.1016/j.knosys.2022.110234>, conformal survival prediction (2023)
+<doi:10.1093/biomet/asad043>, the Fine-Gray model for competing risks (1999)
+<doi:10.1080/01621459.1999.10474144>, and pseudo-observation regression (2010)
+<doi:10.1177/0962280209105020>.")
     (license license:gpl3)))
 
 (define-public r-highlightr

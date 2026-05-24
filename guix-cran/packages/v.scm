@@ -1593,6 +1593,50 @@ principal component analysis (PCA), partial least squares discriminant analysis
 J., and Kringel, D. (2026) <doi:10.1371/journal.pone.0333653>.")
     (license license:gpl3+)))
 
+(define-public r-volumodel
+  (package
+    (name "r-volumodel")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voluModel" version))
+       (sha256
+        (base32 "1spn605bfl236gv6h5cbs6qyg6sjd08zg81y49yvfaca1miv9mgq"))))
+    (properties `((upstream-name . "voluModel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-terra
+                             r-sf
+                             r-rnaturalearth
+                             r-rangebuilder
+                             r-predicts
+                             r-metr
+                             r-ggtext
+                             r-ggplot2
+                             r-fields
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://hannahlowens.github.io/voluModel/")
+    (synopsis "Modeling Species Distributions in Three Dimensions")
+    (description
+     "Facilitates modeling species ecological niches and geographic distributions
+based on occurrences and environments that have a vertical as well as horizontal
+component, and projecting models into three-dimensional geographic space.
+Working in three dimensions is useful in an aquatic context when the organisms
+one wishes to model can be found across a wide range of depths in the water
+column.  The package also contains functions to automatically generate marine
+training model training regions using machine learning, and interpolate and
+smooth patchily sampled environmental rasters using thin plate splines.  Davis
+Rabosky AR, Cox CL, Rabosky DL, Title PO, Holmes IA, Feldman A, @code{McGuire}
+JA (2016) <doi:10.1038/ncomms11484>.  Nychka D, Furrer R, Paige J, Sain S (2021)
+<doi:10.5065/D6W957CT>.  Pateiro-Lopez B, Rodriguez-Casal A (2022)
+<https://CRAN.R-project.org/package=alphahull>.")
+    (license license:gpl3)))
+
 (define-public r-volrisk
   (package
     (name "r-volrisk")
@@ -5848,13 +5892,13 @@ series x 3 replicates + no template controls (NTC) x 3 replicates).")
 (define-public r-verifyr2
   (package
     (name "r-verifyr2")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verifyr2" version))
        (sha256
-        (base32 "09sd9cj699knznqifm3x3zly817s3nhk16s3rbsz4n604lkndrkv"))))
+        (base32 "06idggal42x6cxig04fjh932vlcfmsxqb3wav2jrff61zp8i3ffk"))))
     (properties `((upstream-name . "verifyr2")))
     (build-system r-build-system)
     (arguments

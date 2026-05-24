@@ -1935,13 +1935,13 @@ segmentation.")
 (define-public r-otargen
   (package
     (name "r-otargen")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otargen" version))
        (sha256
-        (base32 "0abqf3ibhnm5p1qiwqjvwvg87i7l4q22m35gv7qgxqpwvq8hxn6p"))))
+        (base32 "14vpgmf8jdx1ajzxg1k612w98m1grv2n8gzk34w44clxyx32hgi1"))))
     (properties `((upstream-name . "otargen")))
     (build-system r-build-system)
     (arguments

@@ -12140,13 +12140,13 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (define-public r-couplr
   (package
     (name "r-couplr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "couplr" version))
        (sha256
-        (base32 "0cf28swa8k71i696rx9h7rdzsnxxhr30j26v0vl2c97l7k8b4041"))))
+        (base32 "0va8nqnk87n1pnb3pzr9cnqgxg3dz68nsh0lqxk3jl53yarfy8n7"))))
     (properties `((upstream-name . "couplr")))
     (build-system r-build-system)
     (arguments
@@ -21692,13 +21692,13 @@ algebraic.mle for downstream analysis.  Methods based on Nocedal J, Wright SJ
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "8.1")
+    (version "8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "00axm6nznh77cwnrayizlsm1yxc9b66vzvjdjha56sw2b551vgas"))))
+        (base32 "0gdx94yq0sbd55l0yang6ml61ga958ggd8i90lpgb9s445wl9jl2"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -21709,6 +21709,7 @@ algebraic.mle for downstream analysis.  Methods based on Nocedal J, Wright SJ
                              r-rgl
                              r-rfast2
                              r-rfast
+                             r-rangen
                              r-quantreg
                              r-quadprog
                              r-osqp
@@ -21719,7 +21720,6 @@ algebraic.mle for downstream analysis.  Methods based on Nocedal J, Wright SJ
                              r-matrix
                              r-mass
                              r-glmnet
-                             r-energy
                              r-emplik
                              r-cluster
                              r-bigstatsr))
@@ -21731,9 +21731,9 @@ distributions for compositional data are some of the functions included.  We
 further include functions for percentages (or proportions).  The standard
 textbook for such data is John Aitchison's (1986) \"The statistical analysis of
 compositional data\".  Relevant papers include: a) Tsagris M.T., Preston S. and
-Wood A.T.A. (2011). \"A data-based power transformation for compositional data\".
-Fourth International International Workshop on Compositional Data Analysis.
-<doi:10.48550/@code{arXiv.1106.1451>}.  b) Tsagris M. (2014). \"The k-NN
+Wood A.T.A. (2011). \"A data--based power transformation for compositional data\".
+ Fourth International International Workshop on Compositional Data Analysis.
+<doi:10.48550/@code{arXiv.1106.1451>}.  b) Tsagris M. (2014). \"The k--NN
 algorithm for compositional data: a revised approach with and without zero
 values present\".  Journal of Data Science, 12(3): 519--534.
 <doi:10.6339/JDS.201407_12(3).0008>.  c) Tsagris M. (2015). \"A novel, divergence
@@ -21756,7 +21756,7 @@ predictor variables with or without zero values\".  Journal of Data Science,
 17(1): 219--238. <doi:10.6339/JDS.201901_17(1).0010>.  i) Tsagris M. and Stewart
 C. (2020). \"A folded model for compositional data analysis\".  Australian and New
 Zealand Journal of Statistics, 62(2): 249--277. <doi:10.1111/anzs.12289>.  j)
-Alenazi A.A. (2022). \"f-divergence regression models for compositional data\".
+Alenazi A.A. (2022). \"f--divergence regression models for compositional data\".
 Pakistan Journal of Statistics and Operation Research, 18(4): 867--882.
 <doi:10.18187/pjsor.v18i4.3969>.  k) Tsagris M. and Stewart C. (2022). \"A Review
 of Flexible Transformations for Modeling Compositional Data\".  In Advances and
@@ -21765,16 +21765,16 @@ Innovations in Statistics and Data Science, pp.  225--234.
 compositional data analysis and recent advances\".  Communications in
 Statistics--Theory and Methods, 52(16): 5535--5567.
 <doi:10.1080/03610926.2021.2014890>.  m) Tsagris M., Alenazi A. and Stewart C.
-(2023). \"Flexible non-parametric regression models for compositional response
+(2023). \"Flexible non--parametric regression models for compositional response
 data with zeros\".  Statistics and Computing, 33(106).
 <doi:10.1007/s11222-023-10277-5>.  n) Tsagris.  M. (2025). \"Constrained least
-squares simplicial-simplicial regression\".  Statistics and Computing, 35(27).
-<doi:10.1007/s11222-024-10560-z>.  o) Sevinc V. and Tsagris.  M. (2025). \"Energy
-Based Equality of Distributions Testing for Compositional Data\".
-<doi:10.48550/@code{arXiv.2412.05199>}.  p) Tsagris M. and Alzeley O. (2025).
-\"Scalable approximation of the transformation-free linear simplicial-simplicial
-regression via constrained iterative reweighted least squares\".
-<doi:10.48550/@code{arXiv.2511.13296>}.")
+squares simplicial--simplicial regression\".  Statistics and Computing, 35(27).
+<doi:10.1007/s11222-024-10560-z>.  o) Sevinc V. and Tsagris.  M. (2026). \"Energy
+Based Equality of Distributions Testing for Compositional Data\".  Communications
+in Statistics--Simulation and Computation. <doi:10.1080/03610918.2026.2636167>.
+p) Tsagris M. and Alzeley O. (2025). \"Scalable approximation of the
+transformation--free linear simplicial--simplicial regression via constrained
+iterative reweighted least squares\". <doi:10.48550/@code{arXiv.2511.13296>}.")
     (license license:gpl2+)))
 
 (define-public r-compositereliabilityinnesteddesigns

@@ -35198,13 +35198,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.9")
+    (version "1.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mets" version))
        (sha256
-        (base32 "0albfa5njy20iv59s5a90csm2sgrhbjl58mjhmf4c1mr476r9w02"))))
+        (base32 "1j7zkyik4dlfgvjr5a4hh58vmx77w34g0d77n68isa83j84l3lhb"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (arguments
@@ -43329,26 +43329,29 @@ al. (2025, manuscript submitted).")
 (define-public r-mdbr
   (package
     (name "r-mdbr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdbr" version))
        (sha256
-        (base32 "0mzd0qvwq3dvqdhp0dk7ad11m9bqh8jf3m7b8i6255s7c3rs3r0h"))))
+        (base32 "1675g8z8ipfgwxr69pdh3b2akvbrnd7hjawbjjcy0bivjr6kg97a"))))
     (properties `((upstream-name . "mdbr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readr))
+    (propagated-inputs (list r-tibble r-lifecycle r-jsonlite r-dbi))
     (home-page "https://k5cents.github.io/mdbr/")
     (synopsis "Work with Microsoft Access Files")
     (description
-     "Use the open source MDB Tools utilities <https://github.com/mdbtools/mdbtools/>.
- Primarily used for converting proprietary Microsoft Access files to simple text
-files and then reading those as data frames.")
-    (license license:gpl3)))
+     "Work with Microsoft Access .mdb and .accdb files using the open source MDB Tools
+library <https://github.com/mdbtools/mdbtools/>.  The library is compiled and
+bundled with the package, so no external installation is required.  Provides
+high-level helpers for reading tables, exporting to CSV or JSON, inspecting
+table definitions, and running SQL queries.  Also exposes a full read-only DBI
+interface for use with standard database workflows.")
+    (license (list license:gpl3 license:lgpl2.0))))
 
 (define-public r-mdbplyr
   (package
@@ -49694,19 +49697,20 @@ Implements the series_md protocol defined in the maskedcauses package.")
 (define-public r-maskedcauses
   (package
     (name "r-maskedcauses")
-    (version "0.9.3")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maskedcauses" version))
        (sha256
-        (base32 "091aml3mc96q7krlymdzlajljh28nihw08n3n0jz98zhayyn35sz"))))
+        (base32 "1gznpqhgagni4zdzy56w9snxrgq9xlwszm2biy58xd97sfq743br"))))
     (properties `((upstream-name . "maskedcauses")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-numderiv r-likelihood-model r-generics))
+    (propagated-inputs (list r-numderiv r-likelihood-model r-generics
+                             r-dist-structure))
     (native-inputs (list r-knitr))
     (home-page "https://queelius.github.io/maskedcauses/")
     (synopsis

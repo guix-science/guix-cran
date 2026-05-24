@@ -17470,25 +17470,27 @@ Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
 (define-public r-allometry
   (package
     (name "r-allometry")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allometry" version))
        (sha256
-        (base32 "1kscdir0dkzn7cqmwdrkqcbjbgfc511vzlxj9h7fkizvysp3rlpl"))))
+        (base32 "0rkhpqbhjs9vhb7p68mr1jmf9hbpvricnld6aaanfsyk9a64f2lj"))))
     (properties `((upstream-name . "allometry")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=allometry")
+    (home-page "https://github.com/tabe/allometry")
     (synopsis "Examples of Datasets on Allometry")
     (description
      "Examples of datasets on allometry, the study of the relationship of biological
-traits to body size.  This package contains the dataset of morphological
+traits to body size.  This package contains the datasets of morphological
 measurement taken from 113 maritime earwigs (Anisolabis maritima) by Matsuzawa
-and Konuma (2025) <doi:10.1093/biolinnean/blaf031>.")
+and Konuma (2025) <doi:10.1093/biolinnean/blaf031>, and taken from 507 Helmâs
+stag beetles (Geodorcus helmsi) collected by Grey et al. (2025)
+<doi:10.1093/biolinnean/blae024>.")
     (license license:gpl3+)))
 
 (define-public r-allofus

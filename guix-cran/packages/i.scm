@@ -14031,6 +14031,33 @@ methodology derived from Tiruviluamala, N., Port, A., and Lewis, E. (2022)
  The package can retrieve data such as events or match sums.")
     (license license:expat)))
 
+(define-public r-impari
+  (package
+    (name "r-impari")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impARI" version))
+       (sha256
+        (base32 "0b8yiw0zlz5v8c035ya2xrx6nv74v3crq7vnyfl1h6pwgymicbp6"))))
+    (properties `((upstream-name . "impARI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=impARI")
+    (synopsis
+     "Improving Permutation-Based All-Resolutions Inference ('impARI')")
+    (description
+     "The goal is to improve a permutation-based approach (R package: @code{pARI}')
+for simultaneous inference on the true discovery proportion by a
+branch-and-bound algorithm.  It is designed to return a list with a bracketing
+for the true discovery proportion, rather than a single lower bound from
+@code{pARI}'.  For more details see Andreella.  A (2023) <doi:10.1002/sim.9725>.")
+    (license license:gpl2+)))
+
 (define-public r-impactr
   (package
     (name "r-impactr")
@@ -16598,13 +16625,13 @@ recording and analysing neuronal data.  See
 (define-public r-igor
   (package
     (name "r-igor")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igoR" version))
        (sha256
-        (base32 "110k9h2gna2f9m6sy3i510rg1f9g3jgqav5farxlh58gw57jad4r"))))
+        (base32 "17q8y2x70vm8i4wfiq8ycp5dpzpblqrrynwbijwkifj50sw3kffy"))))
     (properties `((upstream-name . "igoR")))
     (build-system r-build-system)
     (arguments
@@ -16612,12 +16639,12 @@ recording and analysing neuronal data.  See
       #:tests? #f))
     (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/igoR/")
-    (synopsis "Intergovernmental Organizations Database")
+    (synopsis "Access the Intergovernmental Organizations Database")
     (description
-     "This package provides tools to extract information from the Intergovernmental
-Organizations ('IGO') Database (v3), provided by the Correlates of War Project
-<https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al. (2020)
-<doi:10.1177/0022343319881175>.")
+     "This package provides tools for searching, extracting and recoding information
+from the Intergovernmental Organizations ('IGO') Database (v3), distributed by
+the Correlates of War Project <https://correlatesofwar.org/>.  See also
+Pevehouse, J. C. et al. (2020) <doi:10.1177/0022343319881175>.")
     (license license:gpl3+)))
 
 (define-public r-iglu

@@ -33000,13 +33000,13 @@ suggested package NLMR can be installed from the following repository:
 (define-public r-spades-core
   (package
     (name "r-spades-core")
-    (version "3.1.0")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.core" version))
        (sha256
-        (base32 "1yvs6hjh5ijykjns9lb4lvh11bsmmhifmp882rhbjr3khn3n8kn0"))))
+        (base32 "016srgdpjzi3dgrfm1i4pgqiy0s1ad6mk3sj7x12lpzi3m4jf86y"))))
     (properties `((upstream-name . "SpaDES.core")))
     (build-system r-build-system)
     (arguments
@@ -33036,9 +33036,7 @@ include additional functionality by running user-built modules.  Includes
 conditional scheduling, restart after interruption, packaging of reusable
 modules, tools for developing arbitrary automated workflows, automated
 interweaving of modules of different temporal resolution, and tools for
-visualizing and understanding the within-project dependencies.  The suggested
-package NLMR can be installed from the repository
-(<https://@code{PredictiveEcology.r-universe.dev>}).")
+visualizing and understanding the within-project dependencies.")
     (license license:gpl3)))
 
 (define-public r-spades
@@ -52711,23 +52709,26 @@ interactively.")
 (define-public r-shinyoauth
   (package
     (name "r-shinyoauth")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyOAuth" version))
        (sha256
-        (base32 "03yv3h0jr6fv0fw6qimd8199jxhx3qmlnicphz4ybdr2xp3w8jjy"))))
+        (base32 "1bp6m4i01q8bd2kq0zr07bpl7kz8jp1hrbipdqyj87f4328p7y97"))))
     (properties `((upstream-name . "shinyOAuth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-urltools
+                             r-shiny
                              r-s7
                              r-rlang
                              r-r6
+                             r-otel
                              r-openssl
+                             r-lifecycle
                              r-jsonlite
                              r-jose
                              r-httr2
@@ -59574,20 +59575,24 @@ methods.")
 (define-public r-serieshaz
   (package
     (name "r-serieshaz")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serieshaz" version))
        (sha256
-        (base32 "0a5nnll9wi93qjs2xqlzmsdy775p19m5cgi04yhd75cwsxih8a7j"))))
+        (base32 "0nkw8iwldh2lvwp0bz0knzbgr880zrrysy7d6gc44ba2gwr5i0yh"))))
     (properties `((upstream-name . "serieshaz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-numderiv r-likelihood-model r-generics
-                             r-flexhaz r-algebraic-dist))
+    (propagated-inputs (list r-numderiv
+                             r-likelihood-model
+                             r-generics
+                             r-flexhaz
+                             r-dist-structure
+                             r-algebraic-dist))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/queelius/serieshaz")
     (synopsis
@@ -59597,8 +59602,11 @@ methods.")
 distributions where the system hazard equals the sum of component hazards.
 Supports hazard, survival, cumulative distribution function, density, sampling,
 and maximum likelihood estimation fitting via the @code{dfr_dist()} class from
-flexhaz'.  Methods for series system reliability follow Barlow and Proschan
-(1975, ISBN:0898713692).")
+flexhaz'.  Series distributions implement the dist.structure protocol so
+structural queries (phi, min_paths, min_cuts, system_signature, structural
+importance, reliability, dual) and the importance measures from dist.structure
+work directly on serieshaz objects.  Methods for series system reliability
+follow Barlow and Proschan (1975, ISBN:0898713692).")
     (license license:gpl3+)))
 
 (define-public r-serial

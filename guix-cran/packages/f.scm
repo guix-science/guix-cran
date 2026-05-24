@@ -13672,13 +13672,13 @@ be linked against the @code{FlexiBLAS} wrapper library
 (define-public r-flexhaz
   (package
     (name "r-flexhaz")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexhaz" version))
        (sha256
-        (base32 "0iw95l5jfpgjp96ish4q7l7fg8zqgxb9v3fa5ymf531hnd5whdsx"))))
+        (base32 "1c5l9j56fganm5cpih3p1hi44n11z8wsjdzw7cd7wrr8qvlaxz4a"))))
     (properties `((upstream-name . "flexhaz")))
     (build-system r-build-system)
     (arguments
@@ -18223,13 +18223,13 @@ convenient file sharing on the web.")
 (define-public r-filearray
   (package
     (name "r-filearray")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filearray" version))
        (sha256
-        (base32 "09yypjnk5x5ls4lpvx84fc79dyivffhq3cpii5139cgcg9ifkw37"))))
+        (base32 "1z1ndvipfq1nan9rjr8rkhwlc738zknq9anqq7dp886fhnjnk19p"))))
     (properties `((upstream-name . "filearray")))
     (build-system r-build-system)
     (arguments
@@ -19718,19 +19718,19 @@ computation of the extreme index.")
 (define-public r-fetwfe
   (package
     (name "r-fetwfe")
-    (version "1.5.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fetwfe" version))
        (sha256
-        (base32 "04pg6lj3wgid3crqnhd7bzlbqa6nghx5pcjx1l2bxk2m8srmalcf"))))
+        (base32 "14gmp3yckc1x3xp2c74kh5lqpi6pxixy42p4dwxkbi33iqr63fzs"))))
     (properties `((upstream-name . "fetwfe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-grpreg r-glmnet r-expm))
+    (propagated-inputs (list r-matrix r-grpreg r-glmnet r-generics))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gregfaletto/fetwfePackage")
     (synopsis "Fused Extended Two-Way Fixed Effects")
@@ -22459,13 +22459,13 @@ manner.")
 (define-public r-fcmfd
   (package
     (name "r-fcmfd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcmfd" version))
        (sha256
-        (base32 "047dhi0s8mxmfn6pw8c9jsc9g1ywd4h28k22gwkznmplp6i92xz1"))))
+        (base32 "1w5c8cy4bjk0p51mpd4fan2qcpzdpncw90s8hvx1cdw30lvaymdm"))))
     (properties `((upstream-name . "fcmfd")))
     (build-system r-build-system)
     (arguments
@@ -22479,9 +22479,9 @@ manner.")
 using triangular fuzzy numbers (TFNs).  The package extends the classical fuzzy
 C-means algorithm to better handle uncertainty in ordinal scales and includes
 automatic selection of the number of clusters using the Xie-Beni validity index.
- References: Coppi, R., D'Urso, P., and Giordani, P. (2012), Fuzzy and
-possibilistic clustering for fuzzy data, <doi:10.1016/j.csda.2010.09.013>.  Xie,
-X. L. and Beni, G. (1991), A validity measure for fuzzy clustering,
+ References: Coppi, R., D'Urso, P., and Giordani, P. (2012), \"Fuzzy and
+possibilistic clustering for fuzzy data\", <doi:10.1016/j.csda.2010.09.013>.
+Xie, X. L. and Beni, G. (1991), \"A validity measure for fuzzy clustering\",
 <doi:10.1109/34.85677>.")
     (license license:expat)))
 
