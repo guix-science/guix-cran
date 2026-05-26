@@ -1181,13 +1181,13 @@ Kopka et al. (2023) <doi:10.1177/20552076231194929>.")
 (define-public r-symphony
   (package
     (name "r-symphony")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symphony" version))
        (sha256
-        (base32 "1kbiy5gpg6s5whkgnwa1bchnf96i89cc3lh1ycpkqbwg8b5xkqh9"))))
+        (base32 "1s9phkxhkzsq2xphmsk249r0agr16z969dp7ld6a8g153a6jhndx"))))
     (properties `((upstream-name . "symphony")))
     (build-system r-build-system)
     (arguments
@@ -2468,13 +2468,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "0bccsr98k53yd3kfyp0rcpmbs1f9342h07py3jb7x1pnxs5jkwv8"))))
+        (base32 "12liv1vmclyg625vdrlnpcf3k7cawjv82k8jqgijd807l1j0aijr"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -11261,34 +11261,6 @@ depletion apportionment equations and Zipper et al. (2019)
 functions, which combine analytical models and depletion apportionment
 equations.")
     (license license:bsd-3)))
-
-(define-public r-streamdag
-  (package
-    (name "r-streamdag")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "streamDAG" version))
-       (sha256
-        (base32 "01j2b7aw3qb3r68g6p84b699550i42dfy724hpbg9x13xhjh2id4"))))
-    (properties `((upstream-name . "streamDAG")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotrix r-missforest r-igraph r-asbio))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=streamDAG")
-    (synopsis "Analytical Methods for Stream DAGs")
-    (description
-     "This package provides indices and tools for directed acyclic graphs (DAGs),
-particularly DAG representations of intermittent streams.  A detailed
-introduction to the package can be found in the publication: \"Non-perennial
-stream networks as directed acyclic graphs: The R-package @code{streamDAG}\" (Aho
-et al., 2023) <doi:10.1016/j.envsoft.2023.105775>, and in the introductory
-package vignette.")
-    (license license:gpl2+)))
 
 (define-public r-streamcattools
   (package
@@ -22324,30 +22296,6 @@ query result.")
 files and load it into an R list, where the list elements contain the individual
 statements and queries as strings.  This works by annotating the SQL code with a
 name comment, which also will be the name of the list element.")
-    (license license:expat)))
-
-(define-public r-sqlserverconnect
-  (package
-    (name "r-sqlserverconnect")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sqlserverconnect" version))
-       (sha256
-        (base32 "0bx6kdsird2h2x5d7nb067crsimp803k4l0rfvvgs8z7zygjxqw3"))))
-    (properties `((upstream-name . "sqlserverconnect")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pool r-odbc r-dbi r-cli))
-    (home-page "https://cran.r-project.org/package=sqlserverconnect")
-    (synopsis "Simple Helpers for Connecting to 'SQL Server'")
-    (description
-     "Lightweight helpers for connecting to Microsoft SQL Server using DBI', odbc',
-and pool'.  Provides simple wrappers for building connection arguments,
-establishing connections, and safely disconnecting.")
     (license license:expat)))
 
 (define-public r-sqlrender
@@ -41170,35 +41118,6 @@ et al. (2022)<https://pubmed.ncbi.nlm.nih.gov/35988701/>, Peres et al.
 <https://github.com/igor-peres/ICU-Length-of-Stay-Prediction>.")
     (license license:expat)))
 
-(define-public r-slopes
-  (package
-    (name "r-slopes")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "slopes" version))
-       (sha256
-        (base32 "1nhn30gk0rxd9gp8x7chv3hyf6g0hrwyczlz174phz19rf75pvf8"))))
-    (properties `((upstream-name . "slopes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf r-raster r-pbapply r-geodist r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/slopes/")
-    (synopsis "Calculate Slopes of Roads, Rivers and Trajectories")
-    (description
-     "Calculates the slope (longitudinal gradient or steepness) of linear geographic
-features such as roads (for more details, see Ariza-LÃ³pez et al. (2019)
-<doi:10.1038/s41597-019-0147-x>) and rivers (for more details, see Cohen et al.
-(2018) <doi:10.1016/j.jhydrol.2018.06.066>).  It can use local Digital Elevation
-Model (DEM) data or download DEM data via the ceramic package.  The package also
-provides functions to add elevation data to linestrings and visualize elevation
-profiles.")
-    (license license:gpl3)))
-
 (define-public r-slope
   (package
     (name "r-slope")
@@ -59222,13 +59141,13 @@ weighted particles.")
 (define-public r-serpstatr
   (package
     (name "r-serpstatr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serpstatr" version))
        (sha256
-        (base32 "1wap8fbzi19vgjspdlszaq8sz48ik20a79188cyhb0sb2rqz21by"))))
+        (base32 "0z979py70vz8d3lg48g22k272lqq9ik4gccabc3bfsqxzipwbw40"))))
     (properties `((upstream-name . "serpstatr")))
     (build-system r-build-system)
     (arguments
@@ -62338,13 +62257,13 @@ print, summary, and plot methods.")
 (define-public r-seminr
   (package
     (name "r-seminr")
-    (version "2.4.2")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminr" version))
        (sha256
-        (base32 "04ybrih34fqg6skjpdkvf0c707d44wlmk1v2vc6vkc423dqn5l6j"))))
+        (base32 "1xjgfq4k3z5n7bf2qdj7s7ca1rv5zvxgrmf6bzxprmsaz8d7qzpl"))))
     (properties `((upstream-name . "seminr")))
     (build-system r-build-system)
     (arguments
@@ -64859,13 +64778,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "1icsg5fyjy885jhhp9z1sj1dnvqi7fy4ybbnsisgva3cb0glmym0"))))
+        (base32 "00wh29f656jq340181i5iy5fdk2432ac84kx8hr1cr6mp38xyxqv"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (arguments
@@ -68899,23 +68818,27 @@ et al., (2018) <doi:10.1109/TSE.2018.2794977>].")
 (define-public r-scottknott
   (package
     (name "r-scottknott")
-    (version "1.3-3")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ScottKnott" version))
        (sha256
-        (base32 "011kyhf2pk0cwac6jll4r2r16z0ka158n2bs14v3zblixia3sqss"))))
+        (base32 "0s4179j60j8g2i39rf52raim0qzikk9kj3277zhg52pndxxjv3kw"))))
     (properties `((upstream-name . "ScottKnott")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xtable r-doby))
+    (propagated-inputs (list r-xtable r-emmeans))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ivanalaman/ScottKnott")
     (synopsis "The ScottKnott Clustering Algorithm")
-    (description "Perform the balanced (Scott and Knott, 1974) and unbalanced
-<doi:10.1590/1984-70332017v17n1a1> Scott & Knott algorithm.")
+    (description
+     "This package performs the Scott & Knott (1974) clustering algorithm as a
+multiple comparison method in the Analysis of Variance context, for both
+balanced and unbalanced <doi:10.1590/1984-70332017v17n1a1> designs.  Accepts
+input from formula', aov', lm', aovlist', and @code{lmerMod} objects.")
     (license license:gpl2+)))
 
 (define-public r-scorpion

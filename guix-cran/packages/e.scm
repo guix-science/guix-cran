@@ -9104,13 +9104,13 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
 (define-public r-errortracer
   (package
     (name "r-errortracer")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ErrorTracer" version))
        (sha256
-        (base32 "16qakmzjcsh4ah46kgxn4z1r4y14drdrfwr6rr4hggbv9bx9jmz1"))))
+        (base32 "0p5mpf59xksrlvzd5677fc1pfw6959fk7blhyjsp4qqihpg25ni4"))))
     (properties `((upstream-name . "ErrorTracer")))
     (build-system r-build-system)
     (arguments
@@ -9124,8 +9124,9 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
     (description
      "This package provides a full pipeline from regularized or standard regression
 models (elastic net, linear models, generalized linear models, random forests)
-to informed Bayesian priors, three-way forecast uncertainty decomposition
-(parameter / environmental / residual), and forecast shelf life analysis (the
+to informed Bayesian priors, structured forecast uncertainty decomposition
+(parameter / environmental / residual, plus a temporal component when the model
+carries an autocorrelation term), and forecast shelf life analysis (the
 quantification of when a forecast becomes uninformative).  Designed for
 ecological and genomic forecasting with climate or environmental covariates.
 Methods build on BÃ¼rkner (2017) <doi:10.18637/jss.v080.i01> for Bayesian
@@ -22863,26 +22864,27 @@ Electronic Data Capture (EDC) software @code{TrialMaster}'.")
 (define-public r-edar
   (package
     (name "r-edar")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edar" version))
        (sha256
-        (base32 "1m7vbcdpbc8ss69hvxwaaak87aq32pnpx6b1kr5l0gv3nanflr9f"))))
+        (base32 "0lyr1dz707szws44zzhcjly6y36znv59axmiwmp9biz6jx454dih"))))
     (properties `((upstream-name . "edar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgxr
+                             r-tidyselect
                              r-tidyr
                              r-scales
                              r-rstudioapi
                              r-rlang
+                             r-purrr
                              r-patchwork
                              r-magrittr
-                             r-listr
                              r-knitr
                              r-kableextra
                              r-janitor
@@ -22890,7 +22892,7 @@ Electronic Data Capture (EDC) software @code{TrialMaster}'.")
                              r-ggplot2
                              r-flextable
                              r-dplyr))
-    (home-page "https://soutomas.github.io/edar/")
+    (home-page "https://github.com/soutomas/edar/")
     (synopsis "Convenient Functions for Exploratory Data Analysis")
     (description
      "This package provides a collection of convenient functions to facilitate common
@@ -25783,28 +25785,29 @@ visualisation functions of ordination and clustering.")
 (define-public r-ec50estimator
   (package
     (name "r-ec50estimator")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ec50estimator" version))
        (sha256
-        (base32 "1zg4p1734q2jzifzfi2lf9wz3687s3cdn0yzkiwbc6w49mgdw877"))))
+        (base32 "0qyqb5ybm8d2gbhc9n0rirbjdihyq4ylzqpdaha20q7yqr36h3f0"))))
     (properties `((upstream-name . "ec50estimator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-magrittr r-drc r-dplyr))
+    (propagated-inputs (list r-ggplot2 r-drc))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/AlvesKS/ec50estimator")
+    (home-page "https://alvesks.github.io/ec50estimator/")
     (synopsis "An Automated Way to Estimate EC50 for Stratified Datasets")
     (description
-     "An implementation for estimating Effective control to 50% of growth inhibition
-(EC50) for multi isolates and stratified datasets.  It implements functions from
-the drc package in a way that is displayed a tidy data.frame as output.  Info
-about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
-(2015) <doi:10.1371/journal.pone.0146021>.")
+     "Estimates effective concentrations that reduce growth by 50 percent (EC50) in
+multi-isolate and stratified dose-response experiments.  The package wraps model
+fitting from drc, returns data-frame outputs, and provides helper functions for
+data checks, model selection, fitted-curve plotting, prediction, diagnostics,
+and reporting.  Information about drc is available in Ritz C, Baty F, Streibig
+JC, Gerhard D (2015) <doi:10.1371/journal.pone.0146021>.")
     (license license:expat)))
 
 (define-public r-ebx
@@ -26901,13 +26904,13 @@ survival models using @code{flexsurv::flexsurvreg()},
 (define-public r-easystats
   (package
     (name "r-easystats")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easystats" version))
        (sha256
-        (base32 "1x53ibvsq96nay4xjj6bq621a85hc3zbx3cwm7428n65ynlanfyj"))))
+        (base32 "00ngg1i274mpgdcwi2391d3bn93mfz0qsqvall3iz2sp3sgna7k6"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
     (arguments

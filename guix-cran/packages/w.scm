@@ -4484,13 +4484,13 @@ correct, and receive results in tidy tibbles.")
 (define-public r-wikitools
   (package
     (name "r-wikitools")
-    (version "1.2.21")
+    (version "1.2.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikiTools" version))
        (sha256
-        (base32 "1bq0dca0axjw4apidfdaazcphlgflx3p678vp2b3dpby5x3xbwm4"))))
+        (base32 "1f958ws5n4x2sh5k9p2dxwdrrsbplsbc19b42jrda3imzmxf4jwh"))))
     (properties `((upstream-name . "wikiTools")))
     (build-system r-build-system)
     (arguments

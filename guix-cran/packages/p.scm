@@ -18846,6 +18846,54 @@ the method described in <doi:10.1093/Bioinformatics/Bty373> and will be
 published soon.")
     (license license:gpl2+)))
 
+(define-public r-pooltestr
+  (package
+    (name "r-pooltestr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PoolTestR" version))
+       (sha256
+        (base32 "01av654dz2pk01751ijd2n5c0lp98jzxkwcyk5md5x1v9q377dib"))))
+    (properties `((upstream-name . "PoolTestR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-progress
+                             r-lme4
+                             r-dplyr
+                             r-brms
+                             r-bh))
+    (home-page "https://github.com/AngusMcLure/PoolTestR")
+    (synopsis "Prevalence and Regression for Pool-Tested (Group-Tested) Data")
+    (description
+     "An easy-to-use tool for working with presence/absence tests on pooled or grouped
+samples.  The primary application is for estimating prevalence of a marker in a
+population based on the results of tests on pooled specimens.  This sampling
+method is often employed in surveillance of rare conditions in humans or animals
+(e.g. molecular xenomonitoring).  The package was initially conceived as an
+R-based alternative to the molecular xenomonitoring software, @code{PoolScreen}
+<https://sites.uab.edu/statgenetics/software/>.  However, it goes further,
+allowing for estimates of prevalence to be adjusted for hierarchical sampling
+frames, and perform flexible mixed-effect regression analyses (@code{McLure} et
+al.  Environmental Modelling and Software. <DOI:10.1016/j.envsoft.2021.105158>).
+ The package is currently in early stages, however more features are planned or
+in the works: e.g. adjustments for imperfect test specificity/sensitivity,
+functions for helping with optimal experimental design, and functions for
+spatial modelling.")
+    (license license:gpl3+)))
+
 (define-public r-poolr
   (package
     (name "r-poolr")
@@ -40944,19 +40992,20 @@ find and return the nearest location where you can get a cold one.")
 (define-public r-pboost
   (package
     (name "r-pboost")
-    (version "0.4.8")
+    (version "0.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pboost" version))
        (sha256
-        (base32 "10kzxyp0pcpsfz5vs16nrlnabl7n0pizqczzxwa9bvcb3bymfm7m"))))
+        (base32 "132kybdy8p7wpb4vzm7bd5j0q07z66abs0w87z2jcvj0r0q9zr68"))))
     (properties `((upstream-name . "pboost")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
+                             r-spatialreg
                              r-rqpen
                              r-quantreg
                              r-ncvreg
@@ -44705,35 +44754,34 @@ original PANPRS package as found in: Chen, Chatterjee, Landi, and Shi (2020)
 (define-public r-pannotator
   (package
     (name "r-pannotator")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pannotator" version))
        (sha256
-        (base32 "0060lmsd9mrra26jjpf9inpwp91rv4pisjhklqmmv3ar6iv22kxl"))))
+        (base32 "0kl45fknh0aqs91cfr48zaqkqqqkc2xsdi847i904v1mrgb1j21n"))))
     (properties `((upstream-name . "pannotator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-shinywidgets
-                             r-shinythemes
+    (propagated-inputs (list r-shinywidgets
                              r-shinyjs
                              r-shinyhelper
                              r-shinyfiles
                              r-shiny
                              r-sf
                              r-scales
-                             r-readr
-                             r-magrittr
+                             r-rintrojs
+                             r-rhandsontable
                              r-leafpm
                              r-leaflet
                              r-jsonlite
                              r-jsonify
                              r-jpeg
                              r-htmlwidgets
+                             r-htmltools
                              r-golem
                              r-ggplot2
                              r-geojsonsf

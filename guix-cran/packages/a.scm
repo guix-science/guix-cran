@@ -19000,19 +19000,20 @@ will automatically be reflected in the original expression.")
 (define-public r-aiuq
   (package
     (name "r-aiuq")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIUQ" version))
        (sha256
-        (base32 "0bbqckp0s9f9ljp0b8z65pzfh3hhfp910ca7hsivwi9j7vr61jaz"))))
+        (base32 "122kbz3v4fznhh1sndlvpwdgs1g9ra1n8wkk3ij8chjy1kziyn1k"))))
     (properties `((upstream-name . "AIUQ")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-supergauss r-plot3d r-fftwtools))
+    (propagated-inputs (list r-supergauss r-robustgasp r-plot3d r-geometry
+                             r-fftwtools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AIUQ")
     (synopsis "Ab Initio Uncertainty Quantification")

@@ -6486,13 +6486,13 @@ corresponds to the correct way to perform the popular log(Y + 1) transformation.
 (define-public r-iobr
   (package
     (name "r-iobr")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IOBR" version))
        (sha256
-        (base32 "0h2ggaqs1h4bnxhzl2qc7mspjj57yj5mzbwhd074q4dwcidpqv6c"))))
+        (base32 "1smskav6qqhkm6a663mjcsnd3g45jl3c896vb3dcs5rcxwb6jsh6"))))
     (properties `((upstream-name . "IOBR")))
     (build-system r-build-system)
     (arguments
@@ -8973,13 +8973,13 @@ focus on data validation and data documentation.")
 (define-public r-inteli
   (package
     (name "r-inteli")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inteli" version))
        (sha256
-        (base32 "0ag3ibps50zqydq9h0xlnnh8i1c9k941681d9zhq7cq6h6i1x9mn"))))
+        (base32 "01vw0jvgyf4v0n2ajssk49n668yvmfy9633zvswbz9r891vjsx90"))))
     (properties `((upstream-name . "inteli")))
     (build-system r-build-system)
     (arguments

@@ -10803,13 +10803,13 @@ transition probabilities.")
 (define-public r-nhlscraper
   (package
     (name "r-nhlscraper")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhlscraper" version))
        (sha256
-        (base32 "00qrggyqia3lq4yz8gs3b3nvm7r1szknb74d2chbj440dp92dv5f"))))
+        (base32 "14m16vsg2kn7fnc0s568662ivg33m0nsgl0fd6b7v2bdsl4x09ba"))))
     (properties `((upstream-name . "nhlscraper")))
     (build-system r-build-system)
     (arguments

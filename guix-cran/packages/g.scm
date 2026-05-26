@@ -21881,13 +21881,13 @@ coefficients, and statistical inference (JankovÃ¡ and van de Geer, 2015)
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "099nhaj0v95zpxrczami6412vwv9w79c7530psrs2cgr9s57bvnp"))))
+        (base32 "0kz4x6ibc87kpb0sidywrln50ads35dvd50d4xnsr8pj08a3caab"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
@@ -22602,13 +22602,13 @@ test for association/correlation between paired samples.")
 (define-public r-ggincerta
   (package
     (name "r-ggincerta")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggincerta" version))
        (sha256
-        (base32 "143hvynxwybbfvxc7wpl6cw76ns5m7wylm7arf9x1fcr0ag5k1nx"))))
+        (base32 "1xvm5il26mmdr66n95f0xp2gyc0gb2wmhs1v9g4iz3ysl0ad5hm0"))))
     (properties `((upstream-name . "ggincerta")))
     (build-system r-build-system)
     (arguments
@@ -22618,9 +22618,12 @@ test for association/correlation between paired samples.")
                              r-sf
                              r-scales
                              r-rlang
+                             r-purrr
                              r-gtable
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-colorspace
+                             r-cli))
     (home-page "https://github.com/maggiexma/ggincerta")
     (synopsis
      "Extend 'ggplot2' with Layers and Scales for Spatial Uncertainty Visualization")
@@ -28422,13 +28425,13 @@ libraries.")
 (define-public r-geohabnet
   (package
     (name "r-geohabnet")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geohabnet" version))
        (sha256
-        (base32 "09rhs8h290q2jlkcbbyzzyfimq3mlmhyjm63107ldvpyvawrlaps"))))
+        (base32 "09p0nz6hx5bccvn3rwf5gz5d8lk5jl07xzrfplcx7g019w184agy"))))
     (properties `((upstream-name . "geohabnet")))
     (build-system r-build-system)
     (arguments
@@ -29186,13 +29189,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "01xhkh47i5dmcmqaw73zii515q6mbqf9k8ax1z7nl2hcxg6drd3g"))))
+        (base32 "0hkn041p0gg16n0grf8d4r97lccs9rpj2r0bw6lj1ghl3d4h675l"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -29207,7 +29210,6 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
                              r-httr2
                              r-h3r
                              r-glue
-                             r-geoarrow
                              r-fs
                              r-enderecobr
                              r-duckspatial
@@ -29220,7 +29222,7 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
                              r-callr
                              r-arrow))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ipeaGIT/geocodebr")
+    (home-page "https://github.com/ipea/geocodebr")
     (synopsis
      "GeolocalizaÃ§Ã£o De EndereÃ§os Brasileiros (Geocoding Brazilian Addresses)")
     (description
@@ -29289,13 +29291,13 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 (define-public r-geocausal
   (package
     (name "r-geocausal")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocausal" version))
        (sha256
-        (base32 "1hfr78hmxrbp3mww2d0mp6aa8g1dsi4p7xfqpvwwnimbc5dlx601"))))
+        (base32 "0szjgh47rjzmcqkx6lmpk28zlrqnbwjp0pxjfljyw4h9l2rkhbqw"))))
     (properties `((upstream-name . "geocausal")))
     (build-system r-build-system)
     (arguments
@@ -29304,6 +29306,7 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
     (propagated-inputs (list r-tidyterra
                              r-tidyselect
                              r-tidyr
+                             r-tibble
                              r-terra
                              r-spatstat-univar
                              r-spatstat-random
@@ -29311,6 +29314,7 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
                              r-spatstat-geom
                              r-spatstat-explore
                              r-sf
+                             r-rglpk
                              r-purrr
                              r-progressr
                              r-mclust

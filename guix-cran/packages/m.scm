@@ -2761,13 +2761,13 @@ ISBN:978-0124712522.  Academic Press, London.")
 (define-public r-mvbutils
   (package
     (name "r-mvbutils")
-    (version "2.8.232")
+    (version "2.12.120")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvbutils" version))
        (sha256
-        (base32 "0awd0jy492ha321c20kmmgl20kqphdmrmswakc0rq6h8z9d55kdg"))))
+        (base32 "11bjfky3f3mn8k8nfp033qkzln9zks74ppwkfsc6wrkqcz8jaali"))))
     (properties `((upstream-name . "mvbutils")))
     (build-system r-build-system)
     (arguments
@@ -2775,11 +2775,12 @@ ISBN:978-0124712522.  Academic Press, London.")
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=mvbutils")
     (synopsis
-     "Workspace Organization, Code and Documentation Editing, Package Prep and Editing, Etc")
+     "General utilities, workspace organization, code and doc editing, live package maintenance, etc")
     (description
      "Hierarchical workspace tree, code editing and backup, easy package prep, editing
 of packages while loaded, per-object lazy-loading, easy documentation, macro
-functions, and miscellaneous utilities.  Needed by debug package.")
+functions, and miscellaneous utilities.  Needed by various packages including
+debug, offarray, and kinference.")
     (license license:gpl2+)))
 
 (define-public r-mvbinary
@@ -13566,13 +13567,13 @@ Mantel correlograms.")
 (define-public r-mpmaggregate
   (package
     (name "r-mpmaggregate")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmaggregate" version))
        (sha256
-        (base32 "05l2adw4rfb47f19ihznmf4wpw0xs1rv6cscckmw80jx05mi35pc"))))
+        (base32 "1f9jwjgzidkfq08qpgqjyr52q3vi9vvclfl619a3y0pm3cxcv7q1"))))
     (properties `((upstream-name . "mpmaggregate")))
     (build-system r-build-system)
     (arguments
@@ -37298,44 +37299,6 @@ on a diffusion graph kernel and trophic levels.  Importantly, this package
 provides a layout method applicable for large trophic networks.")
     (license license:gpl3)))
 
-(define-public r-metanet
-  (package
-    (name "r-metanet")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MetaNet" version))
-       (sha256
-        (base32 "1l8syjgjdl5hhzm3c6svw1k321fdhknj8hrrm3zfxifkwjwx1qck"))))
-    (properties `((upstream-name . "MetaNet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-reshape2
-                             r-pcutils
-                             r-magrittr
-                             r-igraph
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggnewscale
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Asa12138/MetaNet")
-    (synopsis "Network Analysis for Omics Data")
-    (description
-     "Comprehensive network analysis package.  Calculate correlation network fastly,
-accelerate lots of analysis by parallel computing.  Support for multi-omics
-data, search sub-nets fluently.  Handle bigger data, more than 10,000 nodes in
-each omics.  Offer various layout method for multi-omics network and some
-interfaces to other software ('Gephi', Cytoscape', ggplot2'), easy to visualize.
- Provide comprehensive topology indexes calculation, including ecological
-network stability.")
-    (license license:gpl3)))
-
 (define-public r-metan
   (package
     (name "r-metan")
@@ -39486,13 +39449,13 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "8.3-0")
+    (version "8.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meta" version))
        (sha256
-        (base32 "06x7byw6rc3sv6hn0ygr4l672w4pbmfc6h3zda0rigz74glszcwh"))))
+        (base32 "16w9z7yz6q0hp6gxch5nwzilmydyc2q4rydn0lbwywdc5l4dkj93"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (arguments
@@ -39506,13 +39469,13 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
                              r-readr
                              r-purrr
                              r-metafor
-                             r-metadat
                              r-metabook
                              r-magrittr
                              r-lme4
                              r-ggplot2
                              r-dplyr
-                             r-compquadform))
+                             r-compquadform
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=meta")
     (synopsis "General Package for Meta-Analysis")
@@ -44686,13 +44649,13 @@ subnational estimates in data- sparse settings.  For more details see Comiskey
 (define-public r-mcmodule
   (package
     (name "r-mcmodule")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmodule" version))
        (sha256
-        (base32 "1cq5i901vmvpx1cajgfl4drwbs2j7pj31b2kp3vhwamblk39x94k"))))
+        (base32 "0x2c8zngfk6xrbqx5b4dq8jf9vpnbjhx7p675x18kg6rx6hvps3z"))))
     (properties `((upstream-name . "mcmodule")))
     (build-system r-build-system)
     (arguments
@@ -44706,9 +44669,9 @@ subnational estimates in data- sparse settings.  For more details see Comiskey
      "Framework for building modular Monte Carlo risk analysis models.  It extends the
 capabilities of mc2d to facilitate working with multiple risk pathways, variates
 and scenarios.  It provides tools to organize risk analysis in independent
-flexible modules, perform multivariate Monte Carlo node operations, automate the
-creation of Monte Carlo nodes and visualise risk analysis models.  For more
-details see Ciria (2025) <https://nataliaciria.com/mcmodule/>.")
+flexible modules, align multivariate mcnodes, automate the creation of mcnodes,
+visualise model structure, assess convergence, and perform sensitivity analysis.
+ For more details see Ciria (2026) <https://nataliaciria.com/mcmodule/>.")
     (license license:gpl3+)))
 
 (define-public r-mcmiso
@@ -49262,13 +49225,13 @@ documentation for \"Epitab - Tables for Epidemologists\"
 (define-public r-matahari
   (package
     (name "r-matahari")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matahari" version))
        (sha256
-        (base32 "03mhn4qh1vcz2hr0mxp6gijwgrzvbpfb8dq7lqhchbk5gq5g3fnh"))))
+        (base32 "1plmv9rjgari0xzdvq7larps51c9f5s40xvvk5sw1dp3h8qhp4y5"))))
     (properties `((upstream-name . "matahari")))
     (build-system r-build-system)
     (arguments

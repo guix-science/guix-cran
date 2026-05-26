@@ -6590,13 +6590,13 @@ options.")
 (define-public r-bpca
   (package
     (name "r-bpca")
-    (version "1.4-3")
+    (version "1.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpca" version))
        (sha256
-        (base32 "10vrl90brmhapq5wsbgip47argbhmhwci49yxwwqjgmmnfd7v4wn"))))
+        (base32 "0jcdxvwyrnsa590ka38jfdwjhvdihrccfx7h0qc2jl4a1zi18pdy"))))
     (properties `((upstream-name . "bpca")))
     (build-system r-build-system)
     (arguments
@@ -6616,13 +6616,13 @@ quality and enhanced visualization of variables and objects.")
 (define-public r-bpbounds
   (package
     (name "r-bpbounds")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpbounds" version))
        (sha256
-        (base32 "0f8knwvwllzraxkhawkljdm7mj2i0crd6yj415dya7nvp01ilaql"))))
+        (base32 "0if1i26vim7w0mv834a42mvyy28dy3ishhqrnr5k0r5kdn7wyg7s"))))
     (properties `((upstream-name . "bpbounds")))
     (build-system r-build-system)
     (arguments
@@ -6636,12 +6636,12 @@ quality and enhanced visualization of variables and objects.")
      "Implementation of the nonparametric bounds for the average causal effect under
 an instrumental variable model by Balke and Pearl (Bounds on Treatment Effects
 from Studies with Imperfect Compliance, JASA, 1997, 92, 439, 1171-1176,
-<doi:10.2307/2965583>).  The package can calculate bounds for a binary outcome,
-a binary treatment/phenotype, and an instrument with either 2 or 3 categories.
-The package implements bounds for situations where these 3 variables are
-measured in the same dataset (trivariate data) or where the outcome and
-instrument are measured in one study and the treatment/phenotype and instrument
-are measured in another study (bivariate data).")
+<doi:10.1080/01621459.1997.10474074>).  The package can calculate bounds for a
+binary outcome, a binary treatment/phenotype, and an instrument with either 2 or
+3 categories.  The package implements bounds for situations where these 3
+variables are measured in the same dataset (trivariate data) or where the
+outcome and instrument are measured in one study and the treatment/phenotype and
+instrument are measured in another study (bivariate data).")
     (license license:gpl3)))
 
 (define-public r-bpacc
@@ -29244,13 +29244,13 @@ approaches described in <doi:10.48550/@code{arXiv.2411.05371>} and
 (define-public r-bayesianetas
   (package
     (name "r-bayesianetas")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesianETAS" version))
        (sha256
-        (base32 "06w1qsam4ibzdm5cm0b3hzby7cy7421ksz9j4ah0myjlz7aywz1i"))))
+        (base32 "18qvmcm00ckmyv3v9iawcfmhvw3539fcnmpp46h1qy4c4zrm8zkw"))))
     (properties `((upstream-name . "bayesianETAS")))
     (build-system r-build-system)
     (arguments
@@ -35349,6 +35349,34 @@ package in the Monolix installation, as described at the following url
  When @code{lixoftConnectors} is available, Monolix can be run directly instead
 of setting up command line usage.")
     (license license:gpl3+)))
+
+(define-public r-babel
+  (package
+    (name "r-babel")
+    (version "0.3-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "babel" version))
+       (sha256
+        (base32 "1iwvx69051yhlxbcl6bypvc3mcih0q8bf3i29r3i79356hp12xqa"))))
+    (properties `((upstream-name . "babel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-edger))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=babel")
+    (synopsis "Ribosome Profiling Data Analysis")
+    (description
+     "Included here are babel routines for identifying unusual ribosome protected
+fragment counts given @code{mRNA} counts.")
+    (license license:lgpl2.1+)))
 
 (define-public r-babebi
   (package

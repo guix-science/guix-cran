@@ -24517,13 +24517,13 @@ for details.")
 (define-public r-degreenet
   (package
     (name "r-degreenet")
-    (version "1.3-6")
+    (version "1.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "degreenet" version))
        (sha256
-        (base32 "1z9b91c5ngjs3rngfvnk3j5q5vjnj08y8amd2xm50xyvlkcblgxh"))))
+        (base32 "0bvrqqbmhfmkaq0vv066rw5kp92mrkv5sr7f5ahzr6rh47m49rln"))))
     (properties `((upstream-name . "degreenet")))
     (build-system r-build-system)
     (arguments
@@ -30732,13 +30732,13 @@ character, and factor columns with NA-aware computations.")
 (define-public r-datastudio
   (package
     (name "r-datastudio")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DATAstudio" version))
        (sha256
-        (base32 "1y5myg8p8x1qzfy3jf7qs58h0xmh1yd66yvydjahfgzvdkqjhxan"))))
+        (base32 "1cmz625ny2w26430hlbm8ph6ajybszpmha7s3h3b2l20mwmkcx4l"))))
     (properties `((upstream-name . "DATAstudio")))
     (build-system r-build-system)
     (arguments

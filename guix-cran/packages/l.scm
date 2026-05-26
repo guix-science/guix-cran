@@ -6493,26 +6493,26 @@ functions.")
 (define-public r-locatexec
   (package
     (name "r-locatexec")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locatexec" version))
        (sha256
-        (base32 "03vssc243nczwqp6z4adchcxql5aq0h3cs0daq5xwnncjmy3k7mx"))))
+        (base32 "028a1rwfydriq0lbqkx0xlwygyw5azla6j2zpqydkgdwny2dbm0w"))))
     (properties `((upstream-name . "locatexec")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=locatexec")
+    (home-page "https://ardata-fr.github.io/locatexec/")
     (synopsis "Detection and Localization of Executable Files")
     (description
      "This package provides a set of functions to locate some programs available on
-the user machine.  The package provides functions to locate Node.js', npm',
-@code{LibreOffice}', Microsoft Word', Microsoft @code{PowerPoint}', Microsoft
-Excel', Python', pip', Mozilla Firefox and Google Chrome'.  User can test the
-availability of a program with eventually a version and call it with function
+the user machine.  It can locate Node.js', npm', @code{LibreOffice}', Microsoft
+Word', Microsoft @code{PowerPoint}', Microsoft Excel', Python', pip', Mozilla
+Firefox', Google Chrome', Air and Pandoc'.  The user can test the availability
+of a program, optionally with a required version, and call it with the functions
 @code{system2()} or @code{system()}.  This allows the use of a single function
 to retrieve the path to a program regardless of the operating system and its
 configuration.")
@@ -8914,13 +8914,13 @@ by the Python package langagent'.")
 (define-public r-llm-api
   (package
     (name "r-llm-api")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "llm.api" version))
        (sha256
-        (base32 "07dlchh4db0pjy6x60i5ah3shag6687i0knyibn83fppllvvi4jz"))))
+        (base32 "1xf4lkvpqi76hi0qnha1db21737n8ds4rxd64k9qyb306mr4hr9v"))))
     (properties `((upstream-name . "llm.api")))
     (build-system r-build-system)
     (arguments
@@ -11737,13 +11737,13 @@ for the (modified) profile likelihood.")
 (define-public r-likelihood-model
   (package
     (name "r-likelihood-model")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "likelihood.model" version))
        (sha256
-        (base32 "06id8zlv9m8d9q85l62hzicqlf6z33wg4hvz6la789vrg8psbbs1"))))
+        (base32 "14y9wjkwhlgjhlznvgbi54r042q6di0ml485kb2svbk69hra33am"))))
     (properties `((upstream-name . "likelihood.model")))
     (build-system r-build-system)
     (arguments

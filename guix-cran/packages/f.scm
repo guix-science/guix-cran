@@ -2699,37 +2699,6 @@ the @code{find_dependencies()} function from the functiondepends package to
 recursively trace all user-defined function dependencies.")
     (license license:expat)))
 
-(define-public r-funcmap
-  (package
-    (name "r-funcmap")
-    (version "1.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FuncMap" version))
-       (sha256
-        (base32 "0iaay6qz9a2s77xjfpp7wm37y7xwnvmlw6s5k5riccmqzc6dcjs7"))))
-    (properties `((upstream-name . "FuncMap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvbutils))
-    (home-page "https://cran.r-project.org/package=FuncMap")
-    (synopsis "Hive Plots of R Package Function Calls")
-    (description
-     "Analyzes the function calls in an R package and creates a hive plot of the
-calls, dividing them among functions that only make outgoing calls (sources),
-functions that have only incoming calls (sinks), and those that have both
-incoming calls and make outgoing calls (managers).  Function calls can be mapped
-by their absolute numbers, their normalized absolute numbers, or their rank.
-@code{FuncMap} should be useful for comparing packages at a high level for their
-overall design.  Plus, it's just plain fun.  The hive plot concept was developed
-by Martin Krzywinski (www.hiveplot.com) and inspired this package.  Note: this
-package is maintained for historical reasons. @code{HiveR} is a full package for
-creating hive plots.")
-    (license license:gpl3)))
-
 (define-public r-funchisq
   (package
     (name "r-funchisq")
@@ -4747,13 +4716,13 @@ downloaded from the authors website.")
 (define-public r-frf2
   (package
     (name "r-frf2")
-    (version "2.3-4")
+    (version "2.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FrF2" version))
        (sha256
-        (base32 "04driqjz17y872a0v26xl55d298lzg8mzyw0yf8hy7nfbyzykx5g"))))
+        (base32 "1xxrgvzidk5wn1m3vjg0qshf4rw583sxcxvl8kdb9nm1l7x7mnlb"))))
     (properties `((upstream-name . "FrF2")))
     (build-system r-build-system)
     (arguments
@@ -6359,19 +6328,19 @@ methodological details, see Katsahian et al. (2006) <doi:10.1002/sim.2684>.")
 (define-public r-fragman
   (package
     (name "r-fragman")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Fragman" version))
        (sha256
-        (base32 "03vmvmnyza4i46v1awkdjz6ccbsiq49dm0mlmwsm801rq6yfihgp"))))
+        (base32 "05h1lgh5zv4kq1lak2y7bp36yks0ncw56jj320hc57rzc470s35a"))))
     (properties `((upstream-name . "Fragman")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://www.wisc.edu")
+    (home-page "https://cran.r-project.org/package=Fragman")
     (synopsis "Fragment Analysis in R")
     (description
      "This package performs fragment analysis using genetic data coming from capillary
@@ -6382,7 +6351,7 @@ performs automatic scoring of SSRs (Sample Sequence Repeats; a type of genetic
 marker very common across the genome) and other type of PCR markers (standing
 for Polymerase Chain Reaction) in biparental populations such as F1, F2, BC
 (backcross), and diversity panels (collection of genetic diversity).")
-    (license license:gpl3)))
+    (license license:gpl2+)))
 
 (define-public r-fragility
   (package
@@ -21074,13 +21043,13 @@ structure as in Masarotto & Masarotto (2023) <doi:10.1111/sjos.12692>.")
 (define-public r-fdth
   (package
     (name "r-fdth")
-    (version "1.3-4")
+    (version "1.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdth" version))
        (sha256
-        (base32 "0y4yp0rxhy3xrpcznb45x370jwmcma2ic4ad4daf1mi2igdy4pfv"))))
+        (base32 "0jpq5p5xsjn1wdmmw6q6pqflgx57rfrybm3p8xpawm1i4rmc9jxd"))))
     (properties `((upstream-name . "fdth")))
     (build-system r-build-system)
     (arguments

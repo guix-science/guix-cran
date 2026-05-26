@@ -2351,29 +2351,28 @@ also provided.")
 (define-public r-tukeyc
   (package
     (name "r-tukeyc")
-    (version "1.3-44")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TukeyC" version))
        (sha256
-        (base32 "0wpbh1b5v6pnc9fvid9pa08vaw2bwxglayngicl26xd1ickg5kc8"))))
+        (base32 "0bhv60fzihrjk0dqww3psvav4zm8kia5nx8x4br0vb58vqcdp17k"))))
     (properties `((upstream-name . "TukeyC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xtable r-emmeans))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jcfaria/TukeyC")
     (synopsis "Conventional Tukey Test")
     (description
-     "This package provides tools to perform multiple comparison analyses, based on
-the well-known Tukey's \"Honestly Significant Difference\" (HSD) test.  In models
-involving interactions, @code{TukeyC} stands out from other R packages by
-implementing intuitive and easy-to-use functions.  In addition to accommodating
-traditional R methods such as @code{lm()} and @code{aov()}, it has also been
-extended to objects of the @code{lmer()} class, that is, mixed models with fixed
-effects.  For more details see Tukey (1949) <doi:10.2307/3001913>.")
+     "This package performs multiple comparison analyses using Tukey's Honestly
+Significant Difference (HSD) test, with intuitive letter grouping of means for
+balanced and unbalanced designs.  Accepts input from formula', aov', lm',
+aovlist', and @code{lmerMod} objects, including straightforward handling of
+interactions.  For more details see Tukey (1949) <doi:10.2307/3001913>.")
     (license license:gpl2+)))
 
 (define-public r-tuglab
@@ -22662,13 +22661,13 @@ administrative data sources and pre-generated files in South Korea.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "1bapg4x5406pa8q99m2p7k8yzm4b7pyggqwkavi5irza4rfry78s"))))
+        (base32 "1s6sr8x3jl60qdgqwr4j73dmnyym8d35nzrrbhz37pa8686j7vnk"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (arguments
@@ -22684,7 +22683,6 @@ administrative data sources and pre-generated files in South Korea.")
                              r-rvest
                              r-rlang
                              r-readr
-                             r-rappdirs
                              r-purrr
                              r-jsonlite
                              r-httr
@@ -24011,13 +24009,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.4.5")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "15sjs8dlmpb040h0vg7a892s0bmffd5jwif3z8dw8wyjy1r0462b"))))
+        (base32 "14gafz908ab2s8aygkp5syqbrbyq0frv1wlkqsshw7qd6ybvy4vl"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -24025,11 +24023,9 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpp
-                             r-rann
                              r-pak
                              r-matrix
                              r-foreach
-                             r-fnn
                              r-doparallel
                              r-cli))
     (home-page "https://mengxu98.github.io/thisutils/")
@@ -24044,13 +24040,13 @@ tasks to streamline workflows.")
 (define-public r-thisplot
   (package
     (name "r-thisplot")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisplot" version))
        (sha256
-        (base32 "16i8s3gwh8abmkk14lwqqc4iy7zw4as4kvfa1fd7cz6nxpcn3pfl"))))
+        (base32 "1d70b7aybc262lwa5q7fww1ccx2h7ccj0q0c18ashyi6xym48m3n"))))
     (properties `((upstream-name . "thisplot")))
     (build-system r-build-system)
     (arguments
@@ -24065,6 +24061,7 @@ tasks to streamline workflows.")
                              r-ggrepel
                              r-ggplot2
                              r-ggnewscale
+                             r-ggforce
                              r-geomtextpath
                              r-dendextend
                              r-cli))
@@ -31950,13 +31947,13 @@ and local taxonomic assignment.")
 (define-public r-taxodist
   (package
     (name "r-taxodist")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxodist" version))
        (sha256
-        (base32 "1a25cbvp3m9ny2ybgmfms1x84q50xz80bqyxfkmph4xh646prpy7"))))
+        (base32 "11sqgj14w904bd3p0nq9rvsx8fllgngvkzf6mhahmgnkjiam91rh"))))
     (properties `((upstream-name . "taxodist")))
     (build-system r-build-system)
     (arguments
@@ -34169,13 +34166,13 @@ a tibble of tables is created with captions and automatic printing using
 (define-public r-tabstats
   (package
     (name "r-tabstats")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabstats" version))
        (sha256
-        (base32 "09bb49n4jxrg3f04c8b79gs28z4vlj76ggw7cm4k424wyc8zawm6"))))
+        (base32 "18s620ls995fvmwzrriygky8b0z8a36ks2c6nwrjvi9k2pca59x9"))))
     (properties `((upstream-name . "tabstats")))
     (build-system r-build-system)
     (arguments

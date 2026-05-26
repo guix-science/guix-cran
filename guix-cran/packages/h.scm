@@ -6347,22 +6347,22 @@ Methods are described in Gamiz, Limnios, and Segovia-Garcia (2023)
 (define-public r-hmmr
   (package
     (name "r-hmmr")
-    (version "1.0-0.1")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmmr" version))
        (sha256
-        (base32 "1kc7axp36gvinki40jpaaw6byzvqj65p0fhryf9wa4i95mb4nl3p"))))
+        (base32 "0f3l4dch7z2r1na41pqp1amwb650c1frs62j0x5fid79pw37rczs"))))
     (properties `((upstream-name . "hmmr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-depmixs4))
+    (propagated-inputs (list r-depmixs4 r-boot))
     (home-page "<https://depmix.github.io/hmmr/>")
     (synopsis
-     "\"Mixture and Hidden Markov Models with R\" Datasets and Example Code")
+     "Mixture and Hidden Markov Models with R: Datasets and Example Code")
     (description
      "Datasets and code examples that accompany our book Visser & Speekenbrink (2021),
 \"Mixture and Hidden Markov Models with R\", <https://depmix.github.io/hmmr/>.")
@@ -14813,48 +14813,33 @@ models.")
 (define-public r-hbsaems
   (package
     (name "r-hbsaems")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbsaems" version))
        (sha256
-        (base32 "1fbqfid8ivamrxjgzvv2kps7k9i4pwd7rwryz28vqj7y0k8lhfls"))))
+        (base32 "051fwqyc10m3gj3hr5ashc67sl89si72dc454h015z53q6l2xh7m"))))
     (properties `((upstream-name . "hbsaems")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xicor
-                             r-shinywidgets
-                             r-shinydashboard
-                             r-shiny
-                             r-readxl
-                             r-priorsense
-                             r-posterior
-                             r-minerva
-                             r-mice
-                             r-ggplot2
-                             r-energy
-                             r-dt
-                             r-coda
-                             r-brms
-                             r-bridgesampling
-                             r-bayesplot))
+    (propagated-inputs (list r-rstantools r-mice r-ggplot2 r-coda r-brms))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/madsyair/hbsaems")
-    (synopsis "Hierarchical Bayes Small Area Estimation Model using 'Stan'")
+    (home-page "https://madsyair.github.io/hbsaems/")
+    (synopsis "Hierarchical Bayesian Area-Level Small Area Estimation Models")
     (description
-     "Implementing Hierarchical Bayesian Small Area Estimation models using the brms
-package as the computational backend.  The modeling framework follows the
-methodological foundations described in area-level models.  This package is
-designed to facilitate a principled Bayesian workflow, enabling users to conduct
-prior predictive checks, model fitting, posterior predictive checks, model
-comparison, and sensitivity analysis in a coherent and reproducible manner.  It
-supports flexible model specifications via brms and promotes transparency in
-model development, aligned with the recommendations of modern Bayesian data
-analysis practices, implementing methods described in Rao and Molina (2015)
-<doi:10.1002/9781118735855>.")
+     "Fits area-level Hierarchical Bayesian Small Area Estimation models.  The
+methodological foundation follows the standard area-level Small Area Estimation
+literature, primarily Rao and Molina (2015, ISBN: 9781118735787)
+<doi:10.1002/9781118735855>, while computational implementation is adapted to
+the parameterisation and prior-specification conventions of the brms package
+<doi:10.18637/jss.v080.i01>, which targets the Stan back-end.  Supports a
+principled Bayesian workflow <doi:10.48550/@code{arXiv.2011.01808>}, with prior
+predictive checks, convergence diagnostics, model comparison, spatial random
+effects, custom distributions, missing-data handling, and a bilingual shiny
+application for non-programmer analysts.")
     (license license:gpl3+)))
 
 (define-public r-hbsae

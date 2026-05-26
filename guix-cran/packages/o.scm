@@ -7433,13 +7433,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.26")
+    (version "1.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1ziss4a4lxv1jrclv685b4b98r9kj0f59m8g5fnmhc9c1nkvnh0w"))))
+        (base32 "1z3lfyl7svmmmvxan1qpgjbhki2f6xhv8lph23n1xvy3zlicjqzr"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -11157,13 +11157,13 @@ functionality is supported.")
 (define-public r-omophub
   (package
     (name "r-omophub")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omophub" version))
        (sha256
-        (base32 "1g8gfzfy5n79c0ldxgsd4a14cmh449f17wwmmmp1yz7nsaxr22n6"))))
+        (base32 "0dibgw44rp4hxqv2w63vf67b73q5h0gbr0z98l2flxvxwv1v57zk"))))
     (properties `((upstream-name . "omophub")))
     (build-system r-build-system)
     (arguments

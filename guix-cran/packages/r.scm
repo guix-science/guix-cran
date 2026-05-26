@@ -3926,39 +3926,6 @@ W., Skaug, H., & Bell, B. M. (2016) <DOI:10.18637/jss.v070.i05> and Thygesen,
 U.H., Albertsen, C.M., Berg, C.W. et al. (2017) <DOI:10.1007/s10651-017-0372-4>.")
     (license license:gpl2+)))
 
-(define-public r-rtlsdeep
-  (package
-    (name "r-rtlsdeep")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rTLsDeep" version))
-       (sha256
-        (base32 "1hkhshpcfdrv7df8lawsgmbrfkmbasd1jc4dddz6yzc21fkg136p"))))
-    (properties `((upstream-name . "rTLsDeep")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorflow
-                             r-sf
-                             r-rgl
-                             r-reticulate
-                             r-matrixstats
-                             r-lidr
-                             r-keras
-                             r-ggplot2
-                             r-caret))
-    (home-page "https://github.com/carlos-alberto-silva/rTLsDeep")
-    (synopsis "Post-Hurricane Damage Severity Classification from TLS and AI")
-    (description
-     "Terrestrial laser scanning (TLS) data processing and post-hurricane damage
-severity classification at the individual tree level usingÂ deepÂ Learning.
-Further details were published in Klauberg et al. (2023)
-<doi:10.3390/rs15041165>.")
-    (license license:gpl3)))
-
 (define-public r-rtls
   (package
     (name "r-rtls")
@@ -32524,6 +32491,34 @@ prediction interval, the split conformal method, and the quantile regression
 forest.")
     (license license:gpl3)))
 
+(define-public r-rfif
+  (package
+    (name "r-rfif")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RFIF" version))
+       (sha256
+        (base32 "1ldsjsjp608klwmv4axpg3l351d3rns993hl24ld1p3bx7r4arg8"))))
+    (properties `((upstream-name . "RFIF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/ChuckColeman/RFIF")
+    (synopsis "Fast Iterative Filtering (FIF) with Portable FFT Backend")
+    (description
+     "This package provides an R interface to a C implementation of Fast Iterative
+Filtering (FIF) for decomposing a univariate signal into intrinsic mode
+functions (IMFs) and a residual.  The package uses Fast Fourier Transform
+library FFTW, if found.  If not, it provides instructions to install it for your
+OS. This is recommended, as R's internal @code{fft()}, while avoiding external
+FFT dependencies, is two orders of magnitude slower.  See vignette Installing
+FFTW for RFIF for RFIF installation instructions.")
+    (license license:expat)))
+
 (define-public r-rfieldclimate
   (package
     (name "r-rfieldclimate")
@@ -34918,54 +34913,6 @@ elevation variance spectral density.")
     (description
      "Compress local and online images using the @code{reSmush.it} API service
 <https://resmush.it/>.")
-    (license license:expat)))
-
-(define-public r-reslr
-  (package
-    (name "r-reslr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "reslr" version))
-       (sha256
-        (base32 "0hklhkr0fxrhhi6apskq498z1vv1w90zsfvvc344rmj9qid2lj2a"))))
-    (properties `((upstream-name . "reslr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tidybayes
-                             r-stringr
-                             r-r2jags
-                             r-purrr
-                             r-posterior
-                             r-plyr
-                             r-ncdf4
-                             r-magrittr
-                             r-ggplot2
-                             r-geosphere
-                             r-fields
-                             r-fastdummies
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/maeveupton/reslr")
-    (synopsis "Modelling Relative Sea Level Data")
-    (description
-     "The Bayesian modelling of relative sea-level data using a comprehensive approach
-that incorporates various statistical models within a unifying framework.
-Details regarding each statistical models; linear regression (Ashe et al 2019)
-<doi:10.1016/j.quascirev.2018.10.032>, change point models (Cahill et al 2015)
-<doi:10.1088/1748-9326/10/8/084002>, integrated Gaussian process models (Cahill
-et al 2015) <doi:10.1214/15-AOAS824>, temporal splines (Upton et al 2023)
-<@code{arXiv:2301.09556>}, spatio-temporal splines (Upton et al 2023)
-<@code{arXiv:2301.09556>} and generalised additive models (Upton et al 2023)
-<@code{arXiv:2301.09556>}.  This package facilitates data loading, model fitting
-and result summarisation.  Notably, it accommodates the inherent measurement
-errors found in relative sea-level data across multiple dimensions, allowing for
-their inclusion in the statistical models.")
     (license license:expat)))
 
 (define-public r-reslik

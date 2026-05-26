@@ -15685,13 +15685,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "1qbhl8sapj7w49pxxbr77bfxvm4a0c4jdsw3dsmp53br75mdbzwk"))))
+        (base32 "0pyp8li3jdgwfdhfplmnlqlw34ymljfjwiahwrahp262x3irwn98"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (arguments
@@ -15701,11 +15701,12 @@ from Gaussian, if specified.")
     (home-page "https://cran.r-project.org/package=Copula.surv")
     (synopsis "Analysis of Bivariate Survival Data Based on Copulas")
     (description
-     "Simulating bivariate survival data from copula models.  Estimation of the
-association parameter in copula models.  Two different ways to estimate the
-association parameter in copula models are implemented.  A goodness-of-fit test
-for a given copula model is implemented.  See Emura, Lin and Wang (2010)
-<doi:10.1016/j.csda.2010.03.013> for details.")
+     "Simulating bivariate survival data from various copula models.  Estimating
+bivariate copula models with semiparametric or Weibull margins under various
+copulas.  Two different ways to estimate the association parameter in copula
+models are implemented.  A goodness-of-fit test for the Gumbel and Clayton
+copulas is also implemented for semiparametric models.  See Emura, Lin and Wang
+(2010) <doi:10.1016/j.csda.2010.03.013> for details.")
     (license license:gpl2)))
 
 (define-public r-copula-markov-survival
@@ -33215,13 +33216,13 @@ number needed to treat, number needed to diagnose, and predictive summary index.
 (define-public r-clinpubr
   (package
     (name "r-clinpubr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinpubr" version))
        (sha256
-        (base32 "0d5b40iyqnz1zxg2dpaw8hfw68q5h38qks8gcm704namz07zp58x"))))
+        (base32 "0z5ifdqh9dxrxpicd7ba6pw0j69pk9ynbyqiv91s9h51f3p1ypaa"))))
     (properties `((upstream-name . "clinpubr")))
     (build-system r-build-system)
     (arguments
@@ -33240,8 +33241,10 @@ number needed to treat, number needed to diagnose, and predictive summary index.
                              r-fbasics
                              r-dplyr
                              r-desctools
+                             r-data-table
                              r-car
                              r-broom))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/yotasama/clinpubr")
     (synopsis "Clinical Publication")
     (description
@@ -36900,13 +36903,13 @@ coefficients.")
 (define-public r-circumplex
   (package
     (name "r-circumplex")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circumplex" version))
        (sha256
-        (base32 "1fm9alnfbszc8qlfg9bkjm2yxnkby5f5pisi8p6vyi8f72v3q1ar"))))
+        (base32 "1sggizxydfyfrz5fkls5990h1rw2kjf0cb9gh8yx70577c0q1nff"))))
     (properties `((upstream-name . "circumplex")))
     (build-system r-build-system)
     (arguments
@@ -47273,13 +47276,13 @@ for an overview.")
 (define-public r-ccmnet
   (package
     (name "r-ccmnet")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCMnet" version))
        (sha256
-        (base32 "0dqcrn7kpf7py9i68bk3x8pn4pm1v3xd43q75s622dkpswgkxfg0"))))
+        (base32 "1vrpd8dvaqsl1g496q92jmdqjg7v5hqkjivyv3sbzcff57bapzb2"))))
     (properties `((upstream-name . "CCMnet")))
     (build-system r-build-system)
     (arguments
@@ -47302,11 +47305,14 @@ for an overview.")
     (home-page "https://cran.r-project.org/package=CCMnet")
     (synopsis "Congruence Class Models for Networks")
     (description
-     "This package provides an implementation of Congruence Class Models for
-generating networks.  It facilitates sampling networks based on specific
-topological properties and attribute mixing patterns using a Markov Chain Monte
-Carlo framework.  The implementation builds upon code from the ergm package; see
-Handcock et al. (2008) <doi:10.18637/jss.v024.i01>.")
+     "This package provides an implementation of Congruence Class Models (CCMs) for
+generating networks.  For additional details on CCMs see Goyal, Blitzstein, and
+De Gruttola (2014) <doi:10.1017/nws.2014.2> and Goyal, De Gruttola, Martin,
+Rennert, and Onnela <doi:10.48550/@code{arXiv.2603.02467>}.  ccmnet facilitates
+sampling networks based on specific topological properties and attribute mixing
+patterns using a Markov Chain Monte Carlo framework.  The implementation builds
+upon code from the ergm package; see Handcock, Hunter, Butts, Goodreau, and
+Morris (2008) <doi:10.18637/jss.v024.i01>.")
     (license license:gpl3)))
 
 (define-public r-ccmmr
