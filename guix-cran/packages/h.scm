@@ -12359,13 +12359,13 @@ Absolute Concentration Index) also accept individual and survey data.")
 (define-public r-healthdb
   (package
     (name "r-healthdb")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthdb" version))
        (sha256
-        (base32 "1wyhbv545xcn79mvavchmjcy3wac2qpwa6h4340jbd0yzkx2qnqw"))))
+        (base32 "1wmzbh8dxz5ikmrr9y7hsvwridvqa0y0j06ikcnw046f0ri8w7kj"))))
     (properties `((upstream-name . "healthdb")))
     (build-system r-build-system)
     (arguments

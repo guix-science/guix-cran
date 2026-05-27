@@ -19885,13 +19885,13 @@ Pav (2004) <doi:10.48550/@code{arXiv.2410.22698>}.")
 (define-public r-rnndescent
   (package
     (name "r-rnndescent")
-    (version "0.1.8")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnndescent" version))
        (sha256
-        (base32 "1p5w1v42dk990ssq7894vcz73hy3binjjizcsgnb8m56y5ri9sn6"))))
+        (base32 "0jz3fqqi30waj2v4ws0b6n9i03v6v3s624gaga8vipxlq4dlssqw"))))
     (properties `((upstream-name . "rnndescent")))
     (build-system r-build-system)
     (arguments
@@ -34915,6 +34915,54 @@ elevation variance spectral density.")
 <https://resmush.it/>.")
     (license license:expat)))
 
+(define-public r-reslr
+  (package
+    (name "r-reslr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reslr" version))
+       (sha256
+        (base32 "1ljrsysc8nv7m2ngr1j1k3jvhzfs46bjlxzvnpk4a327gal2mk8p"))))
+    (properties `((upstream-name . "reslr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tidybayes
+                             r-stringr
+                             r-r2jags
+                             r-purrr
+                             r-posterior
+                             r-plyr
+                             r-ncdf4
+                             r-magrittr
+                             r-ggplot2
+                             r-geosphere
+                             r-fields
+                             r-fastdummies
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maeveupton/reslr")
+    (synopsis "Modelling Relative Sea Level Data")
+    (description
+     "The Bayesian modelling of relative sea-level data using a comprehensive approach
+that incorporates various statistical models within a unifying framework.
+Details regarding each statistical models; linear regression (Ashe et al 2019)
+<doi:10.1016/j.quascirev.2018.10.032>, change point models (Cahill et al 2015)
+<doi:10.1088/1748-9326/10/8/084002>, integrated Gaussian process models (Cahill
+et al 2015) <doi:10.1214/15-AOAS824>, temporal splines (Upton et al 2025)
+<doi:10.32614/RJ-2024-018>, spatio-temporal splines (Upton et al 2025)
+<doi:10.32614/RJ-2024-018> and generalised additive models (Upton et al 2025)
+<doi:10.1093/jrsssc/qlae044>.  This package facilitates data loading, model
+fitting and result summarisation.  Notably, it accommodates the inherent
+measurement errors found in relative sea-level data across multiple dimensions,
+allowing for their inclusion in the statistical models.")
+    (license license:expat)))
+
 (define-public r-reslik
   (package
     (name "r-reslik")
@@ -41835,13 +41883,13 @@ documents, e.g. using Sweave'.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "192a2mdv0zcm8rqas58cx23xaqjs4awibakb3jgp7ybpmhpcvs5n"))))
+        (base32 "0506855m40ppy2gr4w5nv216rv5cd7cnk9pnnyki0kjs85x481yw"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (arguments
@@ -46610,13 +46658,13 @@ Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
 (define-public r-rdhte
   (package
     (name "r-rdhte")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdhte" version))
        (sha256
-        (base32 "1wk759h2dcf52pyrk4qsl8kzjr2g9q92d56ck6iiah3fjij8sdry"))))
+        (base32 "185279rqlv0g65095vyf60s33n7lfsikc1dy5w37kiamdl6b5s2b"))))
     (properties `((upstream-name . "rdhte")))
     (build-system r-build-system)
     (arguments
@@ -46630,8 +46678,7 @@ Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
     (description
      "Understanding heterogeneous causal effects based on pretreatment covariates is a
 crucial step in modern empirical work in data science.  Building on the recent
-developments in Calonico et al (2025)
-<https://rdpackages.github.io/references/Calonico-Cattaneo-Farrell-Palomba-Titiunik_2025_HTERD.pdf>,
+developments in Calonico et al (2025) <doi:10.48550/@code{arXiv.2503.13696>},
 this package provides tools for estimation and inference of heterogeneous
 treatment effects in Regression Discontinuity (RD) Designs.  The package
 includes two main commands: rdhte to conduct estimation and robust

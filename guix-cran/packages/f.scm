@@ -7388,20 +7388,20 @@ data sets.")
 (define-public r-fpcompare
   (package
     (name "r-fpcompare")
-    (version "0.2.4")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fpCompare" version))
        (sha256
-        (base32 "0w15ylisx7md3nyclqbd13n23f2r36875pdiskav4rry28m892bi"))))
+        (base32 "0a65sr4p1flac55f1583kw9p7q9m661j4bcdf9qpzkymmnzfb29m"))))
     (properties `((upstream-name . "fpCompare")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/PredictiveEcology/fpCompare")
+    (home-page "https://fpcompare.predictiveecology.org")
     (synopsis "Reliable Comparison of Floating Point Numbers")
     (description
      "Comparisons of floating point numbers are problematic due to errors associated

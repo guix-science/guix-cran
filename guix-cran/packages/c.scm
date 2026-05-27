@@ -6358,13 +6358,13 @@ and the MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
 (define-public r-crqa
   (package
     (name "r-crqa")
-    (version "2.0.7")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crqa" version))
        (sha256
-        (base32 "1ic503sivm94d6ib4zlr0c4dfvgz17ivzflcdf79qbvb60zxwbm8"))))
+        (base32 "0wjh7vcanqdkkz1gzwd3nnlnwbb8n1a6xl067mk0bx8fpi2pkbqx"))))
     (properties `((upstream-name . "crqa")))
     (build-system r-build-system)
     (arguments
@@ -6372,13 +6372,16 @@ and the MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
       #:tests? #f))
     (propagated-inputs (list r-tserieschaos
                              r-rdist
+                             r-rcpp
                              r-pracma
                              r-matrix
                              r-gplots
                              r-ggplot2
+                             r-future
+                             r-furrr
                              r-dplyr))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=crqa")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/morenococo/crqa")
     (synopsis
      "Unidimensional and Multidimensional Methods for Recurrence Quantification Analysis")
     (description
@@ -19055,13 +19058,13 @@ see Bodner et al.(2021) <doi:10.3758/s13428-021-01760-w>.")
 (define-public r-conmition
   (package
     (name "r-conmition")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conMItion" version))
        (sha256
-        (base32 "1mdgwb3slsp1rlnlk2kcsid6smw5s2k9g7dwqr4jygz1b2qzh88v"))))
+        (base32 "05074wwj9sfy0aba1mf4f0982c4ws8z60s3764a7wrj8ddy466dc"))))
     (properties `((upstream-name . "conMItion")))
     (build-system r-build-system)
     (arguments

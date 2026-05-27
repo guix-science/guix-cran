@@ -20001,13 +20001,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.9.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "0k1fiv0si2zf1nvig6c6rvxf882r868xwai6n2xapfqnxl1x2jky"))))
+        (base32 "02mmd7mbv3ji87crphipak1l0ab2jdcpf6qvrgjxx0gj9bmhjx70"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments

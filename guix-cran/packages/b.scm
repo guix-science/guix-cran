@@ -33908,13 +33908,13 @@ Published by Chapman and Hall/CRC (2002, 2007, 2014) <doi:10.1201/b17888>.")
 (define-public r-balnet
   (package
     (name "r-balnet")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "balnet" version))
        (sha256
-        (base32 "10rdy2bcrhmq9xf823f7v0m5v1w15jj04340j6a2q748vg4j20yd"))))
+        (base32 "0vkpqm3k3p92mbq0bc5jgh0w3rmqi8nkisl3hf5q3bwpr0lmca5r"))))
     (properties `((upstream-name . "balnet")))
     (build-system r-build-system)
     (arguments
@@ -33929,7 +33929,9 @@ Published by Chapman and Hall/CRC (2002, 2007, 2014) <doi:10.1201/b17888>.")
 score models using covariate balancing loss functions rather than maximum
 likelihood.  Regularization paths are fit via the adelie elastic-net solver with
 a glmnet'-like interface, yielding balancing weights that target covariate
-balance for the ATE and ATT. For details, see Sverdrup & Hastie (2026)
+balance for the ATE and ATT. Under lasso penalization, lambda bounds the maximum
+covariate imbalance, so the regularization path traces a sequence of decreasing
+imbalance tolerances.  For details, see Sverdrup & Hastie (2026)
 <doi:10.48550/@code{arXiv.2602.18577>}.")
     (license license:expat)))
 

@@ -10800,21 +10800,26 @@ delete this entity in the less sensible mode and combine both matrices.")
 (define-public r-mscmt
   (package
     (name "r-mscmt")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCMT" version))
        (sha256
-        (base32 "114j39igzcjfq3fyhjygx0xa2n1qy9js5wbk20kl8xw69gy8haiq"))))
+        (base32 "143qcnaj211cg0qprxcc2447lhd7yq64ln8vxjvw63w87vdswfkd"))))
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rglpk r-rdpack r-lpsolveapi r-lpsolve r-ggplot2))
+    (propagated-inputs (list r-rlang
+                             r-rglpk
+                             r-rdpack
+                             r-lpsolveapi
+                             r-lpsolve
+                             r-ggplot2))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=MSCMT")
+    (home-page "https://github.com/mabe0033/MSCMT")
     (synopsis "Multivariate Synthetic Control Method Using Time Series")
     (description
      "Three generalizations of the synthetic control method (which has already an
@@ -37299,6 +37304,44 @@ on a diffusion graph kernel and trophic levels.  Importantly, this package
 provides a layout method applicable for large trophic networks.")
     (license license:gpl3)))
 
+(define-public r-metanet
+  (package
+    (name "r-metanet")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetaNet" version))
+       (sha256
+        (base32 "0v9gyq8y3zd0xiy9j4llyml1k39qpndx72kz7drx22bm6f3v85jr"))))
+    (properties `((upstream-name . "MetaNet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-reshape2
+                             r-pcutils
+                             r-magrittr
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Asa12138/MetaNet")
+    (synopsis "Network Analysis for Omics Data")
+    (description
+     "Comprehensive network analysis package.  Calculate correlation network fastly,
+accelerate lots of analysis by parallel computing.  Support for multi-omics
+data, search sub-nets fluently.  Handle bigger data, more than 10,000 nodes in
+each omics.  Offer various layout method for multi-omics network and some
+interfaces to other software ('Gephi', Cytoscape', ggplot2'), easy to visualize.
+ Provide comprehensive topology indexes calculation, including ecological
+network stability.")
+    (license license:gpl3)))
+
 (define-public r-metan
   (package
     (name "r-metan")
@@ -53266,13 +53309,13 @@ action.  The reports are self-contained and shareable without a web server.")
 (define-public r-mantar
   (package
     (name "r-mantar")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mantar" version))
        (sha256
-        (base32 "1sla73qydyd7bm7c5gldb6hpbmjc6f39yp2fcfqh6xilhk874cd2"))))
+        (base32 "1da35xrkkp5ygzhm2s1bmlc658x9ykhyflc0p3dwm1d1vfnxhmx2"))))
     (properties `((upstream-name . "mantar")))
     (build-system r-build-system)
     (arguments
@@ -53288,9 +53331,9 @@ structures representing partial correlations while accounting for missing data.
 Networks are estimated via neighborhood selection or regularization, with model
 selection guided by information criteria.  Missing data can be handled primarily
 via multiple imputation or a maximum likelihood-based approach, as demonstrated
-by Nehler and Schultze (2025a) <doi:10.31234/osf.io/qpj35> and Nehler and
-Schultze (2025b) <doi:10.1080/00273171.2025.2503833>.  Deletion-based approaches
-are also available but play a secondary role.")
+by Nehler and Schultze (2025) <doi:10.1080/00273171.2025.2503833> and Nehler and
+Schultze (2026) <doi:10.1037/met0000828>.  Deletion-based approaches are also
+available but play a secondary role.")
     (license license:gpl3+)))
 
 (define-public r-mantaid

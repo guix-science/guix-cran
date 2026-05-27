@@ -18640,13 +18640,13 @@ methods can be found in the following texts.  Dieter Britz, Jorg Strutwolf
 (define-public r-elcf4r
   (package
     (name "r-elcf4r")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elcf4R" version))
        (sha256
-        (base32 "0k3fydlcw1abn2hi2pysdqipfzv9i5p8dfh875da80alzh0lx9xq"))))
+        (base32 "0dxflgvq69hz2rb50a5qwlh95smvcjlwx5z7hscyxx0k9qr41f5f"))))
     (properties `((upstream-name . "elcf4R")))
     (build-system r-build-system)
     (arguments
@@ -18671,10 +18671,10 @@ methods can be found in the following texts.  Dieter Britz, Jorg Strutwolf
 curves, including Kernel Wavelet Functional (KWF), clustered KWF, Generalized
 Additive Models (GAM), Multivariate Adaptive Regression Splines (MARS), and Long
 Short-Term Memory (LSTM) models.  Provides normalized dataset adapters for
-@code{iFlex}, @code{StoreNet}, Low Carbon London, and REFIT; download and read
-support for IDEAL and GX; explicit Python backend selection for
-@code{TensorFlow-based} LSTM fits; helpers for daily segmentation and
-rolling-origin benchmarking; and compact shipped example panels and
+@code{iFlex}, @code{StoreNet}, Smart-Grid Smart-City, Low Carbon London, and
+REFIT; download and read support for IDEAL and GX; explicit Python backend
+selection for @code{TensorFlow-based} LSTM fits; helpers for daily segmentation
+and rolling-origin benchmarking; and compact shipped example panels and
 benchmark-result datasets.")
     (license license:gpl3)))
 
@@ -22367,13 +22367,13 @@ aids in experimental planning, management and workflow.")
 (define-public r-edgemodelr
   (package
     (name "r-edgemodelr")
-    (version "0.2.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgemodelr" version))
        (sha256
-        (base32 "0p1y9dwg3hls5mzj3ylrc4ps1fnbym38r0m367y2izlx07zixprk"))))
+        (base32 "1k6s90xpsg0yz11i1fjg1x5988k5lz4559288dvazb37bbks4iy3"))))
     (properties `((upstream-name . "edgemodelr")))
     (build-system r-build-system)
     (arguments
@@ -22385,10 +22385,13 @@ aids in experimental planning, management and workflow.")
     (description
      "Enables R users to run large language models locally using GGUF model files and
 the llama.cpp inference engine.  Provides a complete R interface for loading
-models, generating text completions, and streaming responses in real-time.
-Supports local inference without requiring cloud APIs or internet connectivity,
-ensuring complete data privacy and control.  Based on the llama.cpp project by
-Georgi Gerganov (2023) <https://github.com/ggml-org/llama.cpp>.")
+models, generating text completions, extracting vector representations, and
+streaming responses in real-time.  Includes grammar-constrained generation for
+structured output, text classification, and retrieval-augmented generation (RAG)
+pipelines.  Supports local inference without requiring cloud APIs or internet
+connectivity, ensuring complete data privacy and control.  Based on the
+llama.cpp project by Georgi Gerganov (2023)
+<https://github.com/ggml-org/llama.cpp>.")
     (license license:expat)))
 
 (define-public r-edgedata

@@ -5004,13 +5004,13 @@ Wang et al. (2023) <doi:10.48550/@code{arXiv.2302.11123>}.")
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.10")
+    (version "2.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "0jn8lrhkkc7ma9pb2d8gjr9fcl1jy1rb0jfqjq91fbk45raj4gr3"))))
+        (base32 "07h1r4j4yb7xzjyc9j3iva8r42bpwlr71xvp68rln2dl0ki1188d"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (arguments
@@ -11261,6 +11261,34 @@ depletion apportionment equations and Zipper et al. (2019)
 functions, which combine analytical models and depletion apportionment
 equations.")
     (license license:bsd-3)))
+
+(define-public r-streamdag
+  (package
+    (name "r-streamdag")
+    (version "1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "streamDAG" version))
+       (sha256
+        (base32 "01j2b7aw3qb3r68g6p84b699550i42dfy724hpbg9x13xhjh2id4"))))
+    (properties `((upstream-name . "streamDAG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotrix r-missforest r-igraph r-asbio))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=streamDAG")
+    (synopsis "Analytical Methods for Stream DAGs")
+    (description
+     "This package provides indices and tools for directed acyclic graphs (DAGs),
+particularly DAG representations of intermittent streams.  A detailed
+introduction to the package can be found in the publication: \"Non-perennial
+stream networks as directed acyclic graphs: The R-package @code{streamDAG}\" (Aho
+et al., 2023) <doi:10.1016/j.envsoft.2023.105775>, and in the introductory
+package vignette.")
+    (license license:gpl2+)))
 
 (define-public r-streamcattools
   (package
@@ -32775,13 +32803,13 @@ thresholds.  Built on @code{lidR} (Roussel et al., 2020)
 (define-public r-spanishoddata
   (package
     (name "r-spanishoddata")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spanishoddata" version))
        (sha256
-        (base32 "1pi6nx67kmrj30ycvgr9l8d2x3546plnzqimn0plx4xclskvkpav"))))
+        (base32 "1lb2imr1bvwb5b0nfg6v5iw20xy8w9fj17q60wkbmwmhcrvy241a"))))
     (properties `((upstream-name . "spanishoddata")))
     (build-system r-build-system)
     (arguments
@@ -70592,13 +70620,13 @@ or plumber'.")
 (define-public r-schangeblock
   (package
     (name "r-schangeblock")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SChangeBlock" version))
        (sha256
-        (base32 "101la1fmixbmyqz8fzxyf20vlm4wkh9dgq1yh3qm9i34np82zlzx"))))
+        (base32 "0zd0kjwk401cmk10q19w28hz1s4q23c6l1j7qpdp3znk9lz39bg3"))))
     (properties `((upstream-name . "SChangeBlock")))
     (build-system r-build-system)
     (arguments

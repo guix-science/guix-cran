@@ -10894,13 +10894,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "1c5d1g3rj1qlddg1yybshn1394kibw9af0fk79q8vyqvbf485xz5"))))
+        (base32 "05m4k1w35y6rmk92f9m482f6ps4fxg9dnfsl91qc9aji6sp8xc4j"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (arguments

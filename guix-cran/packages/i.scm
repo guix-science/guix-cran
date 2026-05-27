@@ -9000,13 +9000,13 @@ Testing functions are also provided.")
 (define-public r-integrity
   (package
     (name "r-integrity")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "integrity" version))
        (sha256
-        (base32 "1hl35z6j9v5zg5aj0vfssk4rw99pmcgs00szl4lf2bsnfvjykvk7"))))
+        (base32 "1lz1zj0bh8his4fl6jb3xm3cr44x111xvywmvlh6k9gsfh22xrmf"))))
     (properties `((upstream-name . "integrity")))
     (build-system r-build-system)
     (arguments
@@ -9023,18 +9023,20 @@ Testing functions are also provided.")
     (native-inputs (list r-knitr))
     (home-page
      "https://github.sydney.edu.au/Charles-Perkins-Centre-Data-Science-Hub/CPCDASH0010")
-    (synopsis "Tests Checking for Implausible Values in Clinical Trials Data")
+    (synopsis
+     "Assessing the Integrity and Trustworthiness of Clinical Trials Data")
     (description
-     "Sixteen individual participant data-specific checks in a report-style result.
-Items are automated where possible, and are grouped into eight domains,
-including unusual data patterns, baseline characteristics, correlations, date
-violations, patterns of allocation, internal and external inconsistencies, and
-plausibility of data.  The package may be applied by evidence synthesists,
-editors, and others to determine whether a randomised controlled trial may be
-considered trustworthy to contribute to the evidence base that informs policy
-and practice.  For more details, see Hunter et al. (2024)
-<doi:10.1002/jrsm.1738> and <doi:10.32614/RJ-2017-008> in the same issue of
-Research Synthesis Methods.")
+     "The integrity package implements the IPD Integrity Tool, a structured and
+transparent framework for evaluating the integrity of individual participant
+data (IPD) from randomised trials (see Hunter et al. (2024)
+<doi:10.1002/jrsm.1738> and <doi:10.32614/RJ-2017-008>).  It supports users to
+identify potential issues, such as unusual data patterns, implausible values,
+lack of expected correlations, date violations, and inconsistencies.  The
+package provides reproducible workflows for screening, documenting and
+summarising integrity concerns, and may be applied by evidence synthesists,
+editors, and others to determine whether a randomised trial may be considered
+sufficiently trustworthy to contribute to the evidence base that informs policy
+and practice.")
     (license license:gpl3)))
 
 (define-public r-integratedjm
@@ -14320,13 +14322,13 @@ of Hinze and Paterson (2006) <doi:10.1017/S0956796805005769>.")
 (define-public r-immunogenetr
   (package
     (name "r-immunogenetr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immunogenetr" version))
        (sha256
-        (base32 "0skmbjpa5x73sdsivm5lq684hylxjmx4asxd5l5iyg3fh67pa1ji"))))
+        (base32 "1yfs01vf53pgmyid8sgc0nsapgav7pf9f237g5jfmprwml7qq6rs"))))
     (properties `((upstream-name . "immunogenetr")))
     (build-system r-build-system)
     (arguments
@@ -14337,14 +14339,13 @@ of Hinze and Paterson (2006) <doi:10.1017/S0956796805005769>.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-stringi
                              r-rlang
                              r-purrr
-                             r-magrittr
-                             r-glue
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/k96nb01/immunogenetr_package")
+    (home-page "https://immunogenetr.org")
     (synopsis "Comprehensive Toolkit for Clinical HLA Informatics")
     (description
      "This package provides a comprehensive toolkit for clinical Human Leukocyte
@@ -19620,6 +19621,45 @@ Kan Ling and Chaoyu Yuan (2024, <doi:10.48550/@code{arXiv.2411.19878>}).")
      "This package provides a GUI designed to support the analysis of
 financial-economic time series data.")
     (license license:gpl2+)))
+
+(define-public r-ichimoku
+  (package
+    (name "r-ichimoku")
+    (version "1.5.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ichimoku" version))
+       (sha256
+        (base32 "0l32a2r2w4jkn0zqf57rjzfjbw5hssdyvq1wai4b8zxhs6c11ya2"))))
+    (properties `((upstream-name . "ichimoku")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-shiny
+                             r-secretbase
+                             r-nanonext
+                             r-mirai
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://shikokuchuo.net/ichimoku/")
+    (synopsis "Visualization and Tools for Ichimoku Kinko Hyo Strategies")
+    (description
+     "An implementation of Ichimoku Kinko Hyo', also commonly known as cloud charts.
+Static and interactive visualizations with tools for creating, backtesting and
+development of quantitative ichimoku strategies.  As described in Sasaki (1996,
+ISBN:4925152009), the technique is a refinement on candlestick charting,
+originating from Japan and now in widespread use in technical analysis
+worldwide.  Translating as one-glance equilibrium chart, it allows the price
+action and market structure of financial securities to be determined
+at-a-glance.  Incorporates an interface with the OANDA @code{fxTrade} API
+<https://developer.oanda.com/> for retrieving historical and live streaming
+price data for major currencies, metals, commodities, government bonds and stock
+indices.")
+    (license license:gpl3+)))
 
 (define-public r-icgor
   (package

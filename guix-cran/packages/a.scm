@@ -12239,19 +12239,20 @@ frames.")
 (define-public r-apa7
   (package
     (name "r-apa7")
-    (version "0.1.0")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apa7" version))
        (sha256
-        (base32 "0gmchbc26pmm80ssy83q9mw12ky74sfks95bw0sl35s4jb8nzj57"))))
+        (base32 "0ag2s7733fd47b83ghm8gz44x0qbn1bwhghzcy0vmy9j47ng504p"))))
     (properties `((upstream-name . "apa7")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-xfun
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-signs

@@ -22203,13 +22203,13 @@ such clustering.")
 (define-public r-pnd
   (package
     (name "r-pnd")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pnd" version))
        (sha256
-        (base32 "07y2apdg4skavabkfjvllzwr8lyys49jmzimd9pcchfhyjsylz98"))))
+        (base32 "1s8rs8zyfxf295ak0jrvzmf0ns1ikv97iz72bgcmv8ilv5dd1wm9"))))
     (properties `((upstream-name . "pnd")))
     (build-system r-build-system)
     (arguments
@@ -29870,19 +29870,19 @@ with the INLA package (<https://www.r-inla.org>).")
 (define-public r-phymapnet
   (package
     (name "r-phymapnet")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phymapnet" version))
        (sha256
-        (base32 "01ahk4l9z8r05kwj4dq8x9ina5dy3kq8sg2jcp8lavrjh312bfhq"))))
+        (base32 "0arxmsbw5fxd0q3pcj0i72hn57j6qvkadjlzj0ciqcwyw1n8971l"))))
     (properties `((upstream-name . "phymapnet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gunifrac r-compositions r-ape))
+    (propagated-inputs (list r-compositions r-ape))
     (home-page "https://cran.r-project.org/package=phymapnet")
     (synopsis "Phylogeny-Guided Bayesian Microbial Network Inference")
     (description

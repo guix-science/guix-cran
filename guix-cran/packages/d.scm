@@ -17861,13 +17861,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0h80rlywwf9aih0qyj6v4fxyqhlzw87qshid7iajhzw66350mqbx"))))
+        (base32 "1amlva2p230nv3binmwpr6hrhri87b6fsv7biv6yi8kp1y356ly3"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (arguments
@@ -17889,7 +17889,7 @@ the sales information.")
                              r-car))
     (home-page "https://github.com/Credible-Answers/did_multiplegt_dyn")
     (synopsis
-     "Estimation in Difference-in-Difference Designs with Multiple Groups and Periods")
+     "Estimation in Staggered First Switch Designs, where Groups Experience their First Treatment Change at Different Points in Time")
     (description
      "Estimation of heterogeneity-robust difference-in-differences estimators, with a
 binary, discrete, or continuous treatment, in designs where past treatments may
@@ -31186,13 +31186,13 @@ data format.")
 (define-public r-datarobot
   (package
     (name "r-datarobot")
-    (version "2.18.7")
+    (version "2.18.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datarobot" version))
        (sha256
-        (base32 "1wvhyjvkvzrrrvbn4pq6v8jzwcriigyj7mbhs1lzhmqavl4h4shl"))))
+        (base32 "1q6ffwkjsd2x1p8yf0xk4v28s838kvgh5lhiy3z35j3qcqx3i165"))))
     (properties `((upstream-name . "datarobot")))
     (build-system r-build-system)
     (arguments

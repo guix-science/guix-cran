@@ -6670,13 +6670,13 @@ release files.  For more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "01whgayz2v88mwlml0xx4w9gpff24223ikvi7lg2jhh2dvy75q5l"))))
+        (base32 "0z7rgg8j6ms9l48pr0pb805ni3f670yrca4zvac0z67cpnsg3szl"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -6691,7 +6691,7 @@ release files.  For more information on the API, see
                              r-cowplot
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/kaifenglu/trtswitch")
+    (home-page "https://kaifenglu.github.io/trtswitch/")
     (synopsis "Treatment Switching")
     (description
      "This package implements rank preserving structural failure time model (RPSFTM),
@@ -27106,21 +27106,23 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
 (define-public r-testgenerator
   (package
     (name "r-testgenerator")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGenerator" version))
        (sha256
-        (base32 "0rhq7v5xhwydnifiwfmr9n6ll4ih1dy31w0wngsg0lg755dm4sxi"))))
+        (base32 "0y09qdlfw1lyjpkwrrh5gv6ypnnvp16lqhixczlh6nfzw47klj76"))))
     (properties `((upstream-name . "TestGenerator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
+                             r-usethis
                              r-tibble
                              r-testthat
+                             r-stringr
                              r-rpostgres
                              r-rlang
                              r-readxl
@@ -27129,7 +27131,7 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
                              r-omopgenerics
                              r-jsonlite
                              r-glue
-                             r-ggplot2
+                             r-fs
                              r-duckdb
                              r-dplyr
                              r-dbi
